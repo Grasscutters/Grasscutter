@@ -35,7 +35,7 @@ public final class GachaHandler implements Router {
         express.get("/gacha", GachaHandler::gachaRecords);
         express.get("/gacha/details", GachaHandler::gachaDetails);
         
-        express.useStaticFallback("/gacha/mappings", this.gachaMappings, Location.EXTERNAL);
+        express.useStaticFallback("/gacha/mappings", gachaMappings, Location.EXTERNAL);
     }
     
     private static void gachaRecords(Request request, Response response) {
