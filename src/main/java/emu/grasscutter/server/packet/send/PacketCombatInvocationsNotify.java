@@ -1,0 +1,32 @@
+package emu.grasscutter.server.packet.send;
+
+import java.util.List;
+
+import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify;
+import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
+
+public class PacketCombatInvocationsNotify extends GenshinPacket {
+	
+	public PacketCombatInvocationsNotify(CombatInvokeEntry entry) {
+		super(PacketOpcodes.CombatInvocationsNotify, true);
+		
+		CombatInvocationsNotify proto = CombatInvocationsNotify.newBuilder()
+				.addInvokeList(entry)
+				.build();
+		
+		this.setData(proto);
+	}
+	
+	public PacketCombatInvocationsNotify(List<CombatInvokeEntry> entries) {
+		super(PacketOpcodes.CombatInvocationsNotify, true);
+	
+		CombatInvocationsNotify proto = CombatInvocationsNotify.newBuilder()
+				.addAllInvokeList(entries)
+				.build();
+		
+		this.setData(proto);
+	}
+	
+}

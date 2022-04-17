@@ -1,0 +1,77 @@
+package emu.grasscutter.tools;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import com.google.gson.reflect.TypeToken;
+
+import emu.grasscutter.GenshinConstants;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.ResourceLoader;
+import emu.grasscutter.data.def.AvatarData;
+import emu.grasscutter.data.def.ItemData;
+import emu.grasscutter.data.def.MonsterData;
+
+public class Tools {
+	
+	@SuppressWarnings("deprecation")
+	public static void createGmHandbook() throws Exception {
+		ResourceLoader.loadResources();
+		
+		Map<Long, String> map;
+		try (FileReader fileReader = new FileReader(Grasscutter.getConfig().RESOURCE_FOLDER + "TextMapEN.json")) {
+			map = Grasscutter.getGsonFactory().fromJson(fileReader, new TypeToken<Map<Long, String>>() {}.getType());
+		}
+		
+		List<Integer> list;
+		String fileName = "./GM Handbook.txt";
+		try (FileWriter fileWriter = new FileWriter(fileName); PrintWriter writer = new PrintWriter(fileWriter)) {
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+			LocalDateTime now = LocalDateTime.now();
+			   
+			writer.println("// Genshin Impact " + GenshinConstants.VERSION + " GM Handbook");
+			writer.println("// Created " + dtf.format(now) + System.lineSeparator() + System.lineSeparator());
+			
+			list = GenshinData.getAvatarDataMap().keySet().stream().collect(Collectors.toList());
+			Collections.sort(list); 
+			 
+			writer.println("// Avatars");
+			for (Integer id : list) {
+				AvatarData data = GenshinData.getAvatarDataMap().get(id);
+				writer.println(data.getId() + " : " + map.get(data.getNameTextMapHash()));
+			}
+			
+			writer.println();
+			
+			list = GenshinData.getItemDataMap().keySet().stream().collect(Collectors.toList());
+			Collections.sort(list); 
+			
+			writer.println("// Items");
+			for (Integer id : list) {
+				ItemData data = GenshinData.getItemDataMap().get(id);
+				writer.println(data.getId() + " : " + map.get(data.getNameTextMapHash()));
+			}
+			
+			writer.println();
+			
+			writer.println("// Monsters");
+			list = GenshinData.getMonsterDataMap().keySet().stream().collect(Collectors.toList());
+			Collections.sort(list); 
+			
+			for (Integer id : list) {
+				MonsterData data = GenshinData.getMonsterDataMap().get(id);
+				writer.println(data.getId() + " : " + map.get(data.getNameTextMapHash()));
+			}
+		}
+		
+		Grasscutter.getLogger().info("GM Handbook generated!");
+	}
+}
