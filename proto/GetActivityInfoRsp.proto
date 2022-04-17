@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ActivityInfo.proto";
+
+message GetActivityInfoRsp {
+	int32 retcode = 1;
+	repeated ActivityInfo activityInfoList = 2;
+	repeated uint32 activatedSaleIdList = 3;
+}

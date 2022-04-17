@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlayerApplyEnterMpReason.proto";
+
+message PlayerApplyEnterMpResultNotify {
+	uint32 targetUid = 1;
+	bool isAgreed = 2;
+	PlayerApplyEnterMpReason reason = 3;
+	string targetNickname = 4;
+}

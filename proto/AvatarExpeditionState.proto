@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum AvatarExpeditionState {
+	AvatarExpeditionNone = 0;
+	AvatarExpeditionDoing = 1;
+	AvatarExpeditionFinishWaitReward = 2;
+	AvatarExpeditionCallbackWaitReward = 3;
+}

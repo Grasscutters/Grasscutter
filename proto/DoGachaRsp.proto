@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GachaItem.proto";
+
+message DoGachaRsp {
+	int32 retcode = 1;
+	uint32 gachaType = 2;
+	uint32 gachaTimes = 3;
+	uint32 gachaScheduleId = 4;
+	repeated GachaItem gachaItemList = 5;
+	uint32 newGachaRandom = 6;
+	uint32 costItemId = 7;
+	uint32 costItemNum = 8;
+	uint32 tenCostItemId = 9;
+	uint32 tenCostItemNum = 10;
+	uint32 leftGachaTimes = 11;
+	uint32 gachaTimesLimit = 12;
+}

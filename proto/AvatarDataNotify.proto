@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AvatarInfo.proto";
+import "AvatarTeam.proto";
+
+message AvatarDataNotify {
+	repeated AvatarInfo avatarList = 1;
+	map<uint32, AvatarTeam> avatarTeamMap = 2;
+	uint32 curAvatarTeamId = 3;
+	fixed64 chooseAvatarGuid = 4;
+	repeated uint64 tempAvatarGuidList = 5;
+	repeated uint32 ownedFlycloakList = 6;
+	repeated uint32 ownedCostumeList = 7;
+}

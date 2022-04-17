@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message GetPlayerTokenReq {
+	uint32 accountType = 1;
+	string accountUid = 2;
+	string accountToken = 3;
+	uint64 platformType = 7;
+	uint64 schannelId = 11;
+}

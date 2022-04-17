@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum EnterType {
+	EnterNone = 0;
+	EnterSelf = 1;
+	EnterGoto = 2;
+	EnterJump = 3;
+	EnterOther = 4;
+	EnterBack = 5;
+	EnterDungeon = 6;
+	EnterDungeonReplay = 7;
+	EnterGotoByPortal = 8;
+	EnterSelfHome = 9;
+	EnterOtherHome = 10;
+}

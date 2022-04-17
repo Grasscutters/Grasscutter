@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AbilitySyncStateInfo.proto";
+
+message SceneWeaponInfo {
+	uint32 entityId = 1;
+	uint32 gadgetId = 2;
+	uint32 itemId = 3;
+	uint64 guid = 4;
+	uint32 level = 5;
+	uint32 promoteLevel = 6;
+	AbilitySyncStateInfo abilityInfo = 7;
+	map<uint32, uint32> affixMap = 8;
+}

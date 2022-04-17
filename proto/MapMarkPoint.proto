@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MapMarkFromType.proto";
+import "MapMarkPointType.proto";
+import "Vector.proto";
+
+message MapMarkPoint {
+	uint32 sceneId = 1;
+	string name = 2;
+	Vector pos = 3;
+	MapMarkPointType pointType = 4;
+	uint32 monsterId = 5;
+	MapMarkFromType fromType = 6;
+	uint32 questId = 7;
+}

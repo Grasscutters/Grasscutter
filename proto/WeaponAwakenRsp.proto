@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message WeaponAwakenRsp {
+	int32 retcode = 1;
+	uint64 targetWeaponGuid = 2;
+	uint32 targetWeaponAwakenLevel = 3;
+	map<uint32, uint32> oldAffixLevelMap = 4;
+	map<uint32, uint32> curAffixLevelMap = 5;
+	uint64 avatarGuid = 6;
+}

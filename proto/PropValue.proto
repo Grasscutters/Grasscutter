@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message PropValue {
+	uint32 type = 1;
+	oneof value {
+		uint32 ival = 2;
+		float fval = 3;
+	}
+	uint32 val = 4;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AbilityInvokeEntry.proto";
+
+message ClientAbilityChangeNotify {
+	uint32 entityId = 1;
+	repeated AbilityInvokeEntry invokes = 2;
+}

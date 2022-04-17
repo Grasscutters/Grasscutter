@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message GetScenePointRsp {
+	int32 retcode = 1;
+	uint32 sceneId = 2;
+	repeated uint32 unlockedPointList = 3;
+	uint32 belongUid = 4;
+	repeated uint32 unlockAreaList = 5;
+	repeated uint32 lockedPointList = 6;
+	repeated uint32 toBeExploreDungeonEntryList = 7;
+	repeated uint32 notExploredDungeonEntryList = 8;
+	repeated uint32 groupUnlimitPointList = 9;
+	repeated uint32 notInteractDungeonEntryList = 10;
+}

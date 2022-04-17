@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ChangeMpTeamAvatarRsp {
+	int32 retcode = 1;
+	repeated uint64 avatarGuidList = 2;
+	uint64 curAvatarGuid = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PropValue.proto";
+
+message EntityPropNotify {
+	uint32 entityId = 1;
+	map<uint32, PropValue> propMap = 2;
+}

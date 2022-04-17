@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SceneEntityInfo.proto";
+import "VisionType.proto";
+
+message SceneEntityAppearNotify {
+	repeated SceneEntityInfo entityList = 1;
+	VisionType appearType = 2;
+	uint32 param = 3;
+}

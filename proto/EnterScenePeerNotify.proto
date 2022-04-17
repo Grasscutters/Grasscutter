@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message EnterScenePeerNotify {
+	uint32 destSceneId = 1;
+	uint32 peerId = 2;
+	uint32 hostPeerId = 3;
+	uint32 EnterSceneToken = 4;
+}

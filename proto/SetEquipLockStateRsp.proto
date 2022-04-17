@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message SetEquipLockStateRsp {
+	int32 retcode = 1;
+	uint64 targetEquipGuid = 2;
+	bool isLocked = 3;
+}

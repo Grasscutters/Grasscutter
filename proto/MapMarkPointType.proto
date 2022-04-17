@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum MapMarkPointType {
+	Npc = 0;
+	Quest = 1;
+	Special = 2;
+	Mine = 3;
+	Collection = 4;
+	Monster = 5;
+}

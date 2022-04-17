@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AbilityControlBlock.proto";
+import "AbilitySyncStateInfo.proto";
+import "AvatarInfo.proto";
+import "SceneAvatarInfo.proto";
+import "SceneEntityInfo.proto";
+import "ServerBuff.proto";
+
+message SceneTeamAvatar {
+	uint32 playerId = 1;
+	uint64 avatarGuid = 2;
+	uint32 sceneId = 3;
+	uint32 entityId = 4;
+	AvatarInfo avatarInfo = 5;
+	SceneAvatarInfo sceneAvatarInfo = 6;
+	AbilitySyncStateInfo avatarAbilityInfo = 7;
+	repeated ServerBuff serverBuffList = 8;
+	SceneEntityInfo sceneEntityInfo = 9;
+	uint64 weaponGuid = 10;
+	uint32 weaponEntityId = 11;
+	AbilitySyncStateInfo weaponAbilityInfo = 12;
+	AbilityControlBlock abilityControlBlock = 13;
+	bool isReconnect = 14;
+	bool isPlayerCurAvatar = 15;
+	bool isOnScene = 16;
+}

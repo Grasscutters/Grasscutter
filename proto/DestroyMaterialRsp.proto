@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message DestroyMaterialRsp {
+	int32 retcode = 1;
+	repeated uint32 itemIdList = 2;
+	repeated uint32 itemCountList = 3;
+}

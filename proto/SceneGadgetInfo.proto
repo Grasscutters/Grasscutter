@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GadgetBornType.proto";
+import "GadgetClientParam.proto";
+import "GadgetPlayInfo.proto";
+import "Item.proto";
+import "PlatformInfo.proto";
+
+message SceneGadgetInfo {
+	uint32 gadgetId = 1;
+	uint32 groupId = 2;
+	uint32 configId = 3;
+	uint32 ownerEntityId = 4;
+	GadgetBornType bornType = 5;
+	uint32 gadgetState = 6;
+	uint32 gadgetType = 7;
+	bool isShowCutscene = 8;
+	uint32 authorityPeerId = 9;
+	bool isEnableInteract = 10;
+	uint32 interactId = 11;
+	Item trifleItem = 12;
+	uint32 gatherGadget = 13;
+	uint32 worktop = 14;
+	GadgetClientParam clientGadget = 15;
+	uint32 weather = 17;
+	uint32 abilityGadget = 18;
+	uint32 statueGadget = 19;
+	uint32 bossChest = 20;
+	uint32 blossomChest = 41;
+	uint32 mpPlayReward = 42;
+	uint32 generalReward = 43;
+	uint32 offeringInfo = 44;
+	uint32 foundationInfo = 45;
+	uint32 markFlag = 21;
+	uint32 propOwnerEntityId = 22;
+	PlatformInfo platform = 23;
+	repeated uint32 interactUidList = 24;
+	uint32 draftId = 25;
+	uint32 gadgetTalkState = 26;
+	GadgetPlayInfo playInfo = 100;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message TowerMonthlyBrief {
+	uint32 towerScheduleId = 1;
+	uint32 bestFloorIndex = 2;
+	uint32 bestLevelIndex = 3;
+	uint32 totalStarCount = 4;
+}

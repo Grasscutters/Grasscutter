@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SceneReliquaryInfo.proto";
+import "SceneWeaponInfo.proto";
+import "ServerBuff.proto";
+
+message SceneAvatarInfo {
+	uint32 playerId = 1;
+	uint32 avatarId = 2;
+	uint64 guid = 3;
+	uint32 peerId = 4;
+	repeated uint32 equipIdList = 5;
+	uint32 skillDepotId = 6;
+	repeated uint32 talentIdList = 7;
+	SceneWeaponInfo weapon = 8;
+	repeated SceneReliquaryInfo reliquaryList = 9;
+	uint32 coreProudSkillLevel = 11;
+	repeated uint32 inherentProudSkillList = 12;
+	map<uint32, uint32> skillLevelMap = 13;
+	map<uint32, uint32> proudSkillExtraLevelMap = 14;
+	repeated ServerBuff serverBuffList = 15;
+	repeated uint32 teamResonanceList = 16;
+	uint32 wearingFlycloakId = 17;
+	uint32 bornTime = 18;
+	uint32 costumeId = 19;
+}

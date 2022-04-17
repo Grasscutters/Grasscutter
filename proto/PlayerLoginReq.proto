@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "TrackingIOInfo.proto";
+
+message PlayerLoginReq {
+	string token = 1;
+	string clientVersion = 2;
+	string systemVersion = 3;
+	string deviceName = 4;
+	string deviceUuid = 5;
+	uint32 targetUid = 6;
+	uint64 loginRand = 7;
+	bool isEditor = 8;
+	uint32 languageType = 9;
+	uint32 accountType = 10;
+	string accountUid = 11;
+	string platform = 12;
+	string deviceInfo = 13;
+	uint32 platformType = 14;
+	bool isGuest = 15;
+	uint32 cloudClientIp = 16;
+	uint32 gmUid = 17;
+	string checksum = 18;
+	string onlineId = 19;
+	uint32 clientToken = 20;
+	bytes securityCmdReply = 21;
+	bytes extraBinData = 22;
+	string cps = 23;
+	uint32 channelId = 24;
+	uint32 subChannelId = 25;
+	string checksumClientVersion = 26;
+	uint32 tag = 27;
+	TrackingIOInfo trackingIoInfo = 28;
+	string countryCode = 29;
+	uint32 clientDataVersion = 30;
+	bytes environmentErrorCode = 31;
+	uint32 targetHomeOwnerUid = 32;
+	string psnId = 33;
+}

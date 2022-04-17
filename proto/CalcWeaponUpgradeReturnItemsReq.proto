@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+message CalcWeaponUpgradeReturnItemsReq {
+	uint64 targetWeaponGuid = 1;
+	repeated uint64 foodWeaponGuidList = 2;
+	repeated ItemParam itemParamList = 3;
+}

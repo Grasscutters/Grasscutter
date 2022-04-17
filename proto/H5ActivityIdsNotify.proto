@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message H5ActivityIdsNotify {
+	map<uint32, uint32> h5ActivityMap = 1;
+}

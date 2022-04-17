@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum CoopRewardState {
+	Unlock = 0;
+	Lock = 1;
+	Taken = 2;
+}

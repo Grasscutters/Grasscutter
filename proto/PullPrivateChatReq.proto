@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message PullPrivateChatReq {
+	uint32 targetUid = 1;
+	uint32 fromSequence = 2;
+	uint32 pullNum = 3;
+}

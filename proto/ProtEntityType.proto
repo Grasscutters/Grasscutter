@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum ProtEntityType {
+	ProtEntityNone = 0;
+	ProtEntityAvatar = 1;
+	ProtEntityMonster = 2;
+	ProtEntityNpc = 3;
+	ProtEntityGadget = 4;
+	ProtEntityRegion = 5;
+	ProtEntityWeapon = 6;
+	ProtEntityWeather = 7;
+	ProtEntityScene = 8;
+	ProtEntityTeam = 9;
+	ProtEntityMassiveEntity = 10;
+	ProtEntityMpLevel = 11;
+	ProtEntityPlayTeamEntity = 12;
+	ProtEntityEyePoint = 13;
+	ProtEntityMax = 14;
+}

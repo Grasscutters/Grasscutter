@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ModifierDurability {
+	float reduceRatio = 1;
+	float remainingDurability = 2;
+}

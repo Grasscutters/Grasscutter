@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message SetPlayerBornDataReq {
+	uint32 avatarId = 1;
+	string nickName = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ActivityWatcherInfo {
+	uint32 watcherId = 1;
+	uint32 curProgress = 2;
+	uint32 totalProgress = 3;
+	bool isTakenReward = 4;
+}

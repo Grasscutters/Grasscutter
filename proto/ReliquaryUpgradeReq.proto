@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+message ReliquaryUpgradeReq {
+	uint64 targetReliquaryGuid = 1;
+	repeated uint64 foodReliquaryGuidList = 2;
+	repeated ItemParam itemParamList = 3;
+}

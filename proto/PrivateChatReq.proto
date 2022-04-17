@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message PrivateChatReq {
+	uint32 targetUid = 1;
+	oneof content {
+		string text = 2;
+		uint32 icon = 3;
+	}
+}

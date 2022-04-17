@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message Reliquary {
+	uint32 level = 1;
+	uint32 exp = 2;
+	uint32 promoteLevel = 3;
+	uint32 mainPropId = 4;
+	repeated uint32 appendPropIdList = 5;
+}

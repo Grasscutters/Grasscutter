@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message GetScenePointReq {
+	uint32 sceneId = 1;
+	uint32 belongUid = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SceneTeamAvatar.proto";
+
+message SceneTeamUpdateNotify {
+	repeated SceneTeamAvatar sceneTeamAvatarList = 1;
+	bool isInMp = 3;
+}

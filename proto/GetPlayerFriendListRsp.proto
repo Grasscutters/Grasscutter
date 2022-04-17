@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FriendBrief.proto";
+
+message GetPlayerFriendListRsp {
+	int32 retcode = 1;
+	repeated FriendBrief friendList = 2;
+	repeated FriendBrief askFriendList = 3;
+}

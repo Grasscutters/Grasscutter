@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MonsterBornType.proto";
+import "MonsterRoute.proto";
+import "SceneWeaponInfo.proto";
+
+message SceneMonsterInfo {
+	uint32 monsterId = 1;
+	uint32 groupId = 2;
+	uint32 configId = 3;
+	SceneWeaponInfo weaponList = 4;
+	uint32 authorityPeerId = 5;
+	repeated uint32 affixList = 6;
+	bool isElite = 7;
+	uint32 ownerEntityId = 8;
+	uint32 summonedTag = 9;
+	map<uint32, uint32> summonTagMap = 10;
+	uint32 poseId = 11;
+	MonsterBornType bornType = 12; 
+	uint32 blockId = 13;
+	uint32 markFlag = 14;
+	uint32 titleId = 15;
+	uint32 specialNameId = 16;
+	uint32 attackTargetId = 17;
+	MonsterRoute monsterRoute = 18;
+	uint32 aiConfigId = 19;
+	uint32 unk1 = 21;
+}

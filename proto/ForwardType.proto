@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum ForwardType {
+	ForwardLocal = 0;
+	ForwardToAll = 1;
+	ForwardToAllExceptCur = 2;
+	ForwardToHost = 3;
+	ForwardToAllGuest = 4;
+	ForwardToPeer = 5;
+	ForwardToPeers = 6;
+	ForwardOnlyServer = 7;
+	ForwardToAllExistExceptCur = 8;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AbilityScalarValueEntry.proto";
+import "AbilityString.proto";
+
+message AbilityAppliedAbility {
+	AbilityString abilityName = 1;
+	AbilityString abilityOverride = 2;
+	repeated AbilityScalarValueEntry overrideMap = 3;
+	uint32 instancedAbilityId = 4;
+}

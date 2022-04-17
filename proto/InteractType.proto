@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum InteractType {
+	InteractNone = 0;
+	InteractPickItem = 1;
+	InteractGather = 2;
+	InteractOpenChest = 3;
+	InteractOpenStatue = 4;
+	InteractConsum = 5;
+	InteractMpPlayReward = 6;
+	InteractView = 7;
+	InteractGeneralReward = 8;
+	InteractMiracleRing = 9;
+	InteractFoundation = 10;
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EnterType.proto";
+import "Vector.proto";
+
+message PlayerEnterSceneNotify {
+	uint32 sceneId = 1;
+	Vector pos = 2;
+	uint64 sceneBeginTime = 3;
+	EnterType type = 4;
+	uint32 targetUid = 6;
+	uint32 prevSceneId = 9;
+	Vector prevPos = 10;
+	uint32 dungeonId = 11;
+	uint32 worldLevel = 12;
+	uint32 enterSceneToken = 13;
+	bool isFirstLoginEnterScene = 14;
+	repeated uint32 sceneTagIdList = 15;
+	bool isSkipUi = 16;
+	uint32 enterReason = 17;
+	uint32 unk1 = 18;
+	string unk2 = 19;
+}

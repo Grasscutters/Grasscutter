@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum HitColliderType {
+	HitColliderInvalid = 0;
+	HitColliderHitBox = 1;
+	HitColliderWetHitBox = 2;
+	HitColliderHeadBox = 3;
+}

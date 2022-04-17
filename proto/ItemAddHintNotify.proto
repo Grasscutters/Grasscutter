@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemHint.proto";
+import "Vector.proto";
+
+message ItemAddHintNotify {
+	repeated ItemHint itemList = 1;
+	Vector position = 2;
+	bool isPositionValid = 3;
+	uint32 reason = 4;
+	uint32 questId = 5;
+	bool isTransferedFromAvatarCard = 6;
+	repeated ItemHint overflowTransformedItemList = 7;
+}

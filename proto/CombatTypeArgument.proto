@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum CombatTypeArgument {
+	CombatNone = 0;
+	CombatEvtBeingHit = 1;
+	CombatAnimatorStateChanged = 2;
+	CombatFaceToDir = 3;
+	CombatSetAttackTarget = 4;
+	CombatRushMove = 5;
+	CombatAnimatorParameterChanged = 6;
+	EntityMove = 7;
+	SyncEntityPosition = 8;
+	CombatSteerMotionInfo = 9;
+	CombatForceSetPosInfo = 10;
+	CombatCompensatePosDiff = 11;
+	CombatMonsterDoBlink = 12;
+	CombatFixedRushMove = 13;
+	CombatSyncTransform = 14;
+}

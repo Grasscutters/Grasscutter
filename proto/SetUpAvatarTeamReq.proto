@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message SetUpAvatarTeamReq {
+	uint32 teamId = 1;
+	repeated uint64 avatarTeamGuidList = 2;
+	uint64 curAvatarGuid = 3;
+}

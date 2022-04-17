@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "RegionInfo.proto";
+
+message QueryCurrRegionHttpRsp {
+  int32 retcode = 1;
+  string message = 2;
+  RegionInfo regionInfo = 3;
+  bytes clientSecretKey = 11;
+  bytes regionCustomConfigEncrypted = 12;
+  bytes clientRegionCustomConfigEncrypted = 13;
+}

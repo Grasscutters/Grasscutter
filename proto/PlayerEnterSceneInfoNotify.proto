@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AvatarEnterSceneInfo.proto";
+import "MPLevelEntityInfo.proto";
+import "TeamEnterSceneInfo.proto";
+
+message PlayerEnterSceneInfoNotify {
+	uint32 curAvatarEntityId = 1;
+	repeated AvatarEnterSceneInfo avatarEnterInfo = 2;
+	TeamEnterSceneInfo teamEnterInfo = 3;
+	MPLevelEntityInfo mpLevelEntityInfo = 4;
+	uint32 enterSceneToken = 5;
+}

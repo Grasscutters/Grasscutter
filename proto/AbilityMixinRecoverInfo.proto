@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MassivePropSyncInfo.proto";
+
+message AbilityMixinRecoverInfo {
+	oneof source {
+		uint32 instancedAbilityId = 1;
+		uint32 instancedModifierId = 2;
+	}
+	uint32 localId = 3;
+	repeated uint32 dataList = 4;
+	bool isServerbuffModifier = 5;
+	repeated MassivePropSyncInfo massivePropList = 6;
+}

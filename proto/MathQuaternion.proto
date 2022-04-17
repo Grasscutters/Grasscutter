@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message MathQuaternion {
+	float x = 1;
+	float y = 2;
+	float z = 3;
+	float w = 4;
+}

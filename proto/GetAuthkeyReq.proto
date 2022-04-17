@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message GetAuthkeyReq {
+	string authAppid = 1;
+	uint32 signType = 2;
+	uint32 authkeyVer = 3;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CountDownDelete.proto";
+import "DateTimeDelete.proto";
+import "DelayWeekCountDownDelete.proto";
+
+message MaterialDeleteInfo {
+	bool hasDeleteConfig = 1;
+	oneof deleteInfo {
+		CountDownDelete countDownDelete = 2;
+		DateTimeDelete dateDelete = 3;
+		DelayWeekCountDownDelete delayWeekCountDownDelete = 4;
+	}
+}

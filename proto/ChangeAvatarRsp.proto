@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ChangeAvatarRsp {
+	uint32 retcode = 1;
+	uint64 currGuid = 2;
+	uint32 skillId = 3;
+}

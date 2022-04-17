@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AvatarEquipAffixInfo.proto";
+import "AvatarExpeditionState.proto";
+import "AvatarFetterInfo.proto";
+import "AvatarSkillInfo.proto";
+import "PropValue.proto";
+import "TrialAvatarInfo.proto";
+
+message AvatarInfo {
+	uint32 avatarId = 1;
+	uint64 guid = 2;
+	map<uint32, PropValue> propMap = 3;
+	uint32 lifeState = 4;
+	repeated uint64 equipGuidList = 5;
+	repeated uint32 talentIdList = 6;
+	map<uint32, float> fightPropMap = 7;
+	TrialAvatarInfo trialAvatarInfoField = 9;
+	map<uint32, AvatarSkillInfo> skillMap = 10; 
+	uint32 skillDepotId = 11;
+	AvatarFetterInfo fetterInfo = 12;
+	uint32 coreProudSkillLevel = 13;
+	repeated uint32 inherentProudSkillList = 14;
+	map<uint32, uint32> skillLevelMap = 15;
+	AvatarExpeditionState expeditionState = 16;
+	map<uint32, uint32> proudSkillExtraLevel = 17;
+	bool isFocusFieldNumber = 18;
+	uint32 avatarType = 19;
+	repeated uint32 teamResonanceList = 20;
+	uint32 wearingFlycloakId = 21;
+	repeated AvatarEquipAffixInfo equipAffixList = 22;
+	uint32 bornTime = 23;
+	repeated uint32 pendingPromoteRewardListFieldNumber = 24;
+	uint32 costumeId = 25;
+}

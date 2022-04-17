@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum MpSettingType {
+	MpSettingNoEnter = 0;
+	MpSettingEnterFreely = 1;
+	MpSettingEnterAfterApply = 2;
+}

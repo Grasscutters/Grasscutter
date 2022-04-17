@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PropValue.proto";
+
+message PlayerDataNotify {
+	string nickName = 1;
+	uint64 clientTime = 2;
+	bool isFirstLoginToday = 3;
+	uint32 regionId = 4;
+	map<uint32, PropValue> propMap = 6;
+}

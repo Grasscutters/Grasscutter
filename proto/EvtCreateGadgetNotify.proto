@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ForwardType.proto";
+import "Vector.proto";
+
+message EvtCreateGadgetNotify {
+	ForwardType forwardType = 1;
+	uint32 entityId = 2;
+	uint32 configId = 3;
+	uint32 campId = 4;
+	uint32 campType = 5;
+	Vector initPos = 6;
+	Vector initEulerAngles = 7;
+	uint64 guid = 8;
+	uint32 ownerEntityId = 9;
+	uint32 targetEntityId = 10;
+	bool isAsyncLoad = 11;
+	uint32 targetLockPointIndex = 12;
+	uint32 roomId = 13;
+	uint32 propOwnerEntityId = 14;
+	bool sightGroupWithOwner = 15;
+}

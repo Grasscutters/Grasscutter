@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message SetPlayerPropRsp {
+	int32 retcode = 1;
+}

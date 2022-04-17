@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ServerBuff {
+	uint32 serverBuffUid = 1;
+	uint32 serverBuffId = 2;
+	uint32 serverBuffType = 3;
+	uint32 instancedModifierId = 4;
+	repeated uint32 doneOnaddedActionList = 5;
+	bool isOnaddedActionAllow = 6;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlayerDieType.proto";
+
+message LifeStateChangeNotify {
+	uint32 entityId = 1;
+	uint32 lifeState = 2;
+	uint32 sourceEntityId = 3;
+	string attackTag = 4;
+	PlayerDieType dieType = 5;
+	uint32 moveReliableSeq = 6;
+}

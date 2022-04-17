@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum PropChangeReason {
+	PropChangeNone = 0;
+	PropChangeStatueRecover = 1;
+	PropChangeEnergyBall = 2;
+	PropChangeAbility = 3;
+	PropChangeLevelup = 4;
+	PropChangeItem = 5;
+	PropChangeAvatarCard = 6;
+	PropChangeCityLevelup = 7;
+	PropChangeAvatarUpgrade = 8;
+	PropChangeAvatarPromote = 9;
+	PropChangePlayerAddExp = 10;
+	PropChangeFinishQuest = 11;
+	PropChangeGm = 12;
+	PropChangeManualAdjustWorldLevel = 13;
+}

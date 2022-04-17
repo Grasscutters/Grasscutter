@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum InterOpType {
+	InterOpFinish = 0;
+	InterOpStart = 1;
+}

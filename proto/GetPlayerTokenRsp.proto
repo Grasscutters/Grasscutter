@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message GetPlayerTokenRsp {
+	uint32 playerUid = 3;
+	string accountToken = 4;
+	int32 accountType = 6;
+	bool isProficientPlayer = 8;
+	uint32 gmUid = 10;
+	uint64 secretKey = 11;
+	bytes secretKeyBuffer = 12;
+	uint64 platformType = 13;
+	uint32 channelId = 16;
+	string countryCode = 19;
+	string unk1 = 22;
+	uint32 unk3 = 23;
+	string clientIp = 24;
+}

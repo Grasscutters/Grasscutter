@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Item.proto";
+import "StoreType.proto";
+
+message StoreItemChangeNotify {
+	StoreType storeType = 1;
+	repeated Item itemList = 2;
+}

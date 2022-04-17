@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ActivityNullDetailInfo.proto";
+import "ActivityWatcherInfo.proto";
+
+message ActivityInfo {
+	uint32 activityId = 1;
+	uint32 scheduleId = 2;
+	uint32 beginTime = 3;
+	uint32 endTime = 4;
+	uint32 activityType = 5;
+	bool isPlayOpenAnim = 6;
+	bool isFinished = 7;
+	bool isStarting = 8;
+	repeated ActivityWatcherInfo watcherInfoList = 9;
+	repeated uint32 meetCondList = 10;
+	repeated uint32 expireCondList = 15;
+	uint32 selectedAvatarRewardId = 17;
+	map<uint32, uint32> activityCoinMap = 18;
+	uint32 scoreLimit = 19;
+	uint32 curScore = 20;
+	repeated uint32 takenRewardList = 24;
+	oneof detail {
+		ActivityNullDetailInfo samLampInfo = 11;
+		ActivityNullDetailInfo crucibleInfo = 12;
+		ActivityNullDetailInfo salesmanInfo = 13;
+		ActivityNullDetailInfo trialAvatarInfo = 14;
+		ActivityNullDetailInfo deliveryInfo = 16;
+		ActivityNullDetailInfo asterInfo = 21;
+		ActivityNullDetailInfo flightInfo = 25;
+		ActivityNullDetailInfo dragonSpineInfo = 31;
+		ActivityNullDetailInfo effigyInfo = 32;
+		ActivityNullDetailInfo treasureMapInfo = 35;
+		ActivityNullDetailInfo blessingInfo = 41;
+		ActivityNullDetailInfo seaLampInfo = 42;
+		ActivityNullDetailInfo expeditionInfo = 43;
+		ActivityNullDetailInfo arenaChallengeInfo = 44;
+		ActivityNullDetailInfo fleurFairInfo = 51;
+		ActivityNullDetailInfo waterSpiritInfo = 52;
+		ActivityNullDetailInfo challnelerSlabInfo = 61;
+		ActivityNullDetailInfo mistTrialActivityInfo = 62;
+		ActivityNullDetailInfo hideAndSeekInfo = 63;
+		ActivityNullDetailInfo findHilichurlInfo = 64;
+	}
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message PingReq {
+	int32 seq = 1;
+	int32 clientTime = 2;
+}

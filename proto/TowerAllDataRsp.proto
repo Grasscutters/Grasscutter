@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "TowerCurLevelRecord.proto";
+import "TowerFloorRecord.proto";
+import "TowerMonthlyBrief.proto";
+
+message TowerAllDataRsp {
+	uint32 towerScheduleId = 1;
+	repeated TowerFloorRecord towerFloorRecordList = 2;
+	uint32 dailyFloorId = 3;
+	uint32 dailyLevelIndex = 4;
+	TowerCurLevelRecord curLevelRecord = 5;
+	uint32 nextScheduleChangeTime = 6;
+	map<uint32, uint32> floorOpenTimeMap = 7;
+	bool isFirstInteract = 8;
+	TowerMonthlyBrief monthlyBrief = 9;
+	uint32 skipToFloorIndex = 10;
+	uint32 commemorativeRewardId = 11;
+	map<uint32, uint32> skipFloorGrantedRewardItemMap = 12;
+	uint32 validTowerRecordNum = 13;
+	int32 retcode = 14;
+	bool isFinishedEntranceFloor = 15;
+	uint32 scheduleStartTime = 16;
+	TowerMonthlyBrief lastScheduleMonthlyBrief = 17;
+}

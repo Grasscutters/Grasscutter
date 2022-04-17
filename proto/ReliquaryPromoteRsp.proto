@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ReliquaryPromoteRsp {
+	int32 retcode = 1;
+	uint64 targetReliquaryGuid = 2;
+	uint32 oldPromoteLevel = 3;
+	uint32 curPromoteLevel = 4;
+	repeated uint32 oldAppendPropList = 5;
+	repeated uint32 curAppendPropList = 6;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ShopMcoinProduct {
+	string productId = 1;
+	string priceTier = 2;
+	uint32 mcoinBase = 3;
+	uint32 mcoinNonFirst = 4;
+	uint32 mcoinFirst = 5;
+	uint32 boughtNum = 6;
+	bool isAudit = 7;
+}

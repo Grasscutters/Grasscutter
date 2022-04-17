@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ResVersionConfig.proto";
+
+message RegionInfo {
+    string ip = 1;
+    int32 port = 2;
+    string payCallbackUrl = 3;
+    string areaType = 7;
+    string resourceUrl = 8;
+    string dataUrl = 9;
+    string feedbackUrl = 10;
+    string bulletinUrl = 11;
+    string version = 12;
+    int32 clientDataVersion = 14;
+    int32 clientSilenceDataVersion = 18;
+    string clientDataMd5 = 19;
+    string clientSilenceDataMd5 = 20;
+    ResVersionConfig config = 22;
+    bytes secretKey = 23;
+    string communityUrl = 24;
+    string clientVersionSuffix = 26;
+    string clientSilenceVersionSuffix = 27;
+    string accountUrl = 31;
+    string cdkeyUrl = 32;
+    string privacyUrl = 33;
+  }

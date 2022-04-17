@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BlockInfo.proto";
+import "FeatureBlockInfo.proto";
+import "ResVersionConfig.proto";
+import "ShortAbilityHashPair.proto";
+
+message PlayerLoginRsp {
+	int32 retcode = 1;
+	bytes playerData = 2;
+	bool isNewPlayer = 3;
+	uint32 targetUid = 4;
+	uint64 loginRand = 5;
+	bool isUseAbilityHash = 6;
+	int32 abilityHashCode = 7;
+	map<string, int32> abilityHashMap = 8;
+	uint32 clientDataVersion = 9;
+	bool isRelogin = 11;
+	uint32 clientSilenceDataVersion = 13;
+	string gameBiz = 14;
+	uint32 playerDataVersion = 15;
+	string clientMd5 = 16;
+	string clientSilenceMd5 = 17;
+	ResVersionConfig resVersionConfig = 20;
+	map<uint32, BlockInfo> blockInfoMap = 21;
+	string clientVersionSuffix = 24;
+	string clientSilenceVersionSuffix = 25;
+	repeated ShortAbilityHashPair shortAbilityHashMap = 27;
+	bytes scInfo = 28;
+	bool isAudit = 29;
+	bool isScOpen = 30;
+	string registerCps = 31;
+	repeated FeatureBlockInfo featureBlockInfoList = 32;
+	bool isDataNeedRelogin = 33;
+	string countryCode = 34;
+	ResVersionConfig nextResVersionConfig = 35;
+	string nextResourceUrl = 36;
+	uint32 targetHomeOwnerUid = 37;
+}

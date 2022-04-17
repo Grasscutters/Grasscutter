@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message FeatureBlockInfo {
+	uint32 featureType = 1;
+	uint32 endTime = 2;
+}

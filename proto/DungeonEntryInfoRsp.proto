@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DungeonEntryInfo.proto";
+
+message DungeonEntryInfoRsp {
+	int32 retcode = 1;
+	uint32 pointId = 2;
+	repeated DungeonEntryInfo dungeonEntryList = 3;
+	uint32 recommendDungeonId = 4;
+}

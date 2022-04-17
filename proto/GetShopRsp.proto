@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Shop.proto";
+
+message GetShopRsp {
+	int32 retcode = 1;
+	Shop shop = 2;
+}

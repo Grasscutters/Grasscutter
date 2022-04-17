@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ResinChangeNotify {
+	int32 currValue = 1;
+	int32 nextAddTimestamp = 2;
+	int32 curBuyCount = 3;
+}

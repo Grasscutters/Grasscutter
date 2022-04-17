@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message SceneReliquaryInfo {
+	uint32 itemId = 1;
+	uint64 guid = 2;
+	uint32 level = 3;
+	uint32 promoteLevel = 4;
+}

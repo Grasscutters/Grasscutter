@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "RegionSimpleInfo.proto";
+
+message QueryRegionListHttpRsp {
+  uint32 retcode = 1;
+  repeated RegionSimpleInfo servers = 2;
+  bytes clientSecretKey = 5;
+  bytes clientCustomConfigEncrypted = 6;
+  bool enableLoginPc = 7;
+}

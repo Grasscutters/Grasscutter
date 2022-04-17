@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum DealAddFriendResultType  {
+	DealAddFriendReject = 0;
+	DealAddFriendAccept = 1;
+}

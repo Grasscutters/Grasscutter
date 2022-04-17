@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AiSyncInfo.proto";
+
+message EntityAiSyncNotify {
+	repeated AiSyncInfo infoList = 1;
+	repeated uint32 localAvatarAlertedMonsterList = 2;
+}

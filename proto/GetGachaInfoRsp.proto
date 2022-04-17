@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GachaInfo.proto";
+
+message GetGachaInfoRsp {
+	int32 retcode = 1;
+	repeated GachaInfo gachaInfoList = 2;
+	uint32 gachaRandom = 3;
+}

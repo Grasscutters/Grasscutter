@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ResinCard.proto";
+
+message ShopCardProduct {
+	string productId = 1;
+	string priceTier = 2;
+	uint32 mcoinBase = 3;
+	uint32 hcoinPerDay = 4;
+	uint32 days = 5;
+	uint32 remainRewardDays = 6;
+	uint32 cardProductType = 7;
+	oneof extraCardData {
+		ResinCard resinCard = 101;
+	}
+}
