@@ -2,9 +2,12 @@ package emu.grasscutter.game;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GenshinConstants;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
@@ -47,14 +50,14 @@ public class TeamManager {
 	@Transient private TeamInfo mpTeam;
 	@Transient private int entityId;
 	@Transient private final List<EntityAvatar> avatars;
-	@Transient private final List<EntityGadget> gadgets;
+	@Transient private final Set<EntityGadget> gadgets;
 	@Transient private final IntSet teamResonances;
 	@Transient private final IntSet teamResonancesConfig;
 	
 	public TeamManager() {
 		this.mpTeam = new TeamInfo();
 		this.avatars = new ArrayList<>();
-		this.gadgets = new ArrayList<>();
+		this.gadgets = new HashSet<>();
 		this.teamResonances = new IntOpenHashSet();
 		this.teamResonancesConfig = new IntOpenHashSet();
 	}
@@ -132,6 +135,10 @@ public class TeamManager {
 
 	public void setEntityId(int entityId) {
 		this.entityId = entityId;
+	}
+
+	public Set<EntityGadget> getGadgets() {
+		return gadgets;
 	}
 
 	public IntSet getTeamResonances() {
