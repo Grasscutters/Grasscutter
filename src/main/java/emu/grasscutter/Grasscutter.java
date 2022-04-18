@@ -23,6 +23,10 @@ import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
 
 public final class Grasscutter {
+	static { 
+		System.setProperty("logback.configurationFile", "src/main/resources/logback.xml");
+	}
+	
 	private static final Logger log = (Logger) LoggerFactory.getLogger(Grasscutter.class);
 	private static Config config;
 	
