@@ -43,8 +43,7 @@ import emu.grasscutter.utils.Utils;
 
 import com.sun.net.httpserver.HttpServer;
 
-public class DispatchServer {
-	private HttpsServer server;
+public final class DispatchServer {
 	private final InetSocketAddress address;
 	private final Gson gson;
 	private QueryCurrRegionHttpRsp currRegion;
@@ -135,12 +134,12 @@ public class DispatchServer {
 			this.regionCurrentBase64 = Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray());
 			this.currRegion = parsedRegionQuery;
 		} catch (Exception e) {
-			e.printStackTrace();
+			Grasscutter.getLogger().error("Error while initializing region info!", e);
 		}
 	}
 
 	public void start() throws Exception {
-		server = HttpsServer.create(getAddress(), 0);
+		HttpsServer server = HttpsServer.create(getAddress(), 0);
 		SSLContext sslContext = SSLContext.getInstance("TLS");
 		
 		try (FileInputStream fis = new FileInputStream(Grasscutter.getConfig().DispatchServerKeystorePath)) {
@@ -158,187 +157,169 @@ public class DispatchServer {
 			return;
 		}
 		
-		server.createContext("/", new HttpHandler() {
-			@Override
-			public void handle(HttpExchange t) throws IOException {
-				//Create a response form the request query parameters
-		        String response = "Hello";
-		        //Set the response header status and length
-		        t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
-		        t.sendResponseHeaders(200, response.getBytes().length);
-		        //Write the response string
-		        OutputStream os = t.getResponseBody();
-		        os.write(response.getBytes());
-		        os.close();
-			}
+		server.createContext("/", t -> {
+			//Create a response form the request query parameters
+			String response = "Hello";
+			//Set the response header status and length
+			t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
+			t.sendResponseHeaders(200, response.getBytes().length);
+			//Write the response string
+			OutputStream os = t.getResponseBody();
+			os.write(response.getBytes());
+			os.close();
 		});
 		
 		// Dispatch
-		server.createContext("/query_region_list", new HttpHandler() {
-			@Override
-			public void handle(HttpExchange t) throws IOException {
-				// Log
-				Grasscutter.getLogger().info("Client request: query_region_list");
-				// Create a response form the request query parameters
-		        String response = regionListBase64;
-		        // Set the response header status and length
-		        t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
-		        t.sendResponseHeaders(200, response.getBytes().length);
-		        // Write the response string
-		        OutputStream os = t.getResponseBody();
-		        os.write(response.getBytes());
-		        os.close();
-			}
+		server.createContext("/query_region_list", t -> {
+			// Log
+			Grasscutter.getLogger().info("Client request: query_region_list");
+			// Create a response form the request query parameters
+			String response = regionListBase64;
+			// Set the response header status and length
+			t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
+			t.sendResponseHeaders(200, response.getBytes().length);
+			// Write the response string
+			OutputStream os = t.getResponseBody();
+			os.write(response.getBytes());
+			os.close();
 		});
-		server.createContext("/query_cur_region", new HttpHandler() {
-			@Override
-			public void handle(HttpExchange t) throws IOException {
-				// Log
-				Grasscutter.getLogger().info("Client request: query_cur_region");
-				// Create a response form the request query parameters
-		        URI uri = t.getRequestURI();
-		        String response = "CAESGE5vdCBGb3VuZCB2ZXJzaW9uIGNvbmZpZw==";
-		        if (uri.getQuery() != null && uri.getQuery().length() > 0) {
-		        	response = regionCurrentBase64;
-		        }
-		        // Set the response header status and length
-		        t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
-		        t.sendResponseHeaders(200, response.getBytes().length);
-		        // Write the response string
-		        OutputStream os = t.getResponseBody();
-		        os.write(response.getBytes());
-		        os.close();
+		server.createContext("/query_cur_region", t -> {
+			// Log
+			Grasscutter.getLogger().info("Client request: query_cur_region");
+			// Create a response form the request query parameters
+			URI uri = t.getRequestURI();
+			String response = "CAESGE5vdCBGb3VuZCB2ZXJzaW9uIGNvbmZpZw==";
+			if (uri.getQuery() != null && uri.getQuery().length() > 0) {
+				response = regionCurrentBase64;
 			}
+			// Set the response header status and length
+			t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
+			t.sendResponseHeaders(200, response.getBytes().length);
+			// Write the response string
+			OutputStream os = t.getResponseBody();
+			os.write(response.getBytes());
+			os.close();
 		});
 		// Login via account
-		server.createContext("/hk4e_global/mdk/shield/api/login", new HttpHandler() {
-			@Override
-			public void handle(HttpExchange t) throws IOException {
-				// Get post data
-				LoginAccountRequestJson requestData = null;
-				try {
-					String body = Utils.toString(t.getRequestBody());
-					requestData = getGsonFactory().fromJson(body, LoginAccountRequestJson.class);
-				} catch (Exception e) {
-					
-				}
-				// Create response json
-				if (requestData == null) {
-					return;
-				}
-				LoginResultJson responseData = new LoginResultJson();
+		server.createContext("/hk4e_global/mdk/shield/api/login", t -> {
+			// Get post data
+			LoginAccountRequestJson requestData = null;
+			try {
+				String body = Utils.toString(t.getRequestBody());
+				requestData = getGsonFactory().fromJson(body, LoginAccountRequestJson.class);
+			} catch (Exception e) {
 				
-				// Login
-				Account account = DatabaseHelper.getAccountByName(requestData.account);
-				
-				// Test
-				if (account == null) {
-					responseData.retcode = -201;
-					responseData.message = "Username not found.";
-				} else {
-					responseData.message = "OK";
-					responseData.data.account.uid = account.getId();
-					responseData.data.account.token = account.generateSessionKey();
-					responseData.data.account.email = account.getEmail();
-				}
-				
-				// Create a response
-		        String response = getGsonFactory().toJson(responseData);
-		        // Set the response header status and length
-		        t.getResponseHeaders().put("Content-Type", Collections.singletonList("application/json"));
-		        t.sendResponseHeaders(200, response.getBytes().length);
-		        // Write the response string
-		        OutputStream os = t.getResponseBody();
-		        os.write(response.getBytes());
-		        os.close();
 			}
+			// Create response json
+			if (requestData == null) {
+				return;
+			}
+			LoginResultJson responseData = new LoginResultJson();
+			
+			// Login
+			Account account = DatabaseHelper.getAccountByName(requestData.account);
+			
+			// Test
+			if (account == null) {
+				responseData.retcode = -201;
+				responseData.message = "Username not found.";
+			} else {
+				responseData.message = "OK";
+				responseData.data.account.uid = account.getId();
+				responseData.data.account.token = account.generateSessionKey();
+				responseData.data.account.email = account.getEmail();
+			}
+			
+			// Create a response
+			String response = getGsonFactory().toJson(responseData);
+			// Set the response header status and length
+			t.getResponseHeaders().put("Content-Type", Collections.singletonList("application/json"));
+			t.sendResponseHeaders(200, response.getBytes().length);
+			// Write the response string
+			OutputStream os = t.getResponseBody();
+			os.write(response.getBytes());
+			os.close();
 		});
 		// Login via token
-		server.createContext("/hk4e_global/mdk/shield/api/verify", new HttpHandler() {
-			@Override
-			public void handle(HttpExchange t) throws IOException {
-				// Get post data
-				LoginTokenRequestJson requestData = null;
-				try {
-					String body = Utils.toString(t.getRequestBody());
-					requestData = getGsonFactory().fromJson(body, LoginTokenRequestJson.class);
-				} catch (Exception e) {
-					
-				}
-				// Create response json
-				if (requestData == null) {
-					return;
-				}
-				LoginResultJson responseData = new LoginResultJson();
-
-				// Login
-				Account account = DatabaseHelper.getAccountById(requestData.uid);
+		server.createContext("/hk4e_global/mdk/shield/api/verify", t -> {
+			// Get post data
+			LoginTokenRequestJson requestData = null;
+			try {
+				String body = Utils.toString(t.getRequestBody());
+				requestData = getGsonFactory().fromJson(body, LoginTokenRequestJson.class);
+			} catch (Exception e) {
 				
-				// Test
-				if (account == null || !account.getSessionKey().equals(requestData.token)) {
-					responseData.retcode = -111;
-					responseData.message = "Game account cache information error";
-				} else {
-					responseData.message = "OK";
-					responseData.data.account.uid = requestData.uid;
-					responseData.data.account.token = requestData.token;
-					responseData.data.account.email = account.getEmail();
-				}
-				
-				// Create a response
-		        String response = getGsonFactory().toJson(responseData);
-		        // Set the response header status and length
-		        t.getResponseHeaders().put("Content-Type", Collections.singletonList("application/json"));
-		        t.sendResponseHeaders(200, response.getBytes().length);
-		        // Write the response string
-		        OutputStream os = t.getResponseBody();
-		        os.write(response.getBytes());
-		        os.close();
 			}
+			// Create response json
+			if (requestData == null) {
+				return;
+			}
+			LoginResultJson responseData = new LoginResultJson();
+
+			// Login
+			Account account = DatabaseHelper.getAccountById(requestData.uid);
+			
+			// Test
+			if (account == null || !account.getSessionKey().equals(requestData.token)) {
+				responseData.retcode = -111;
+				responseData.message = "Game account cache information error";
+			} else {
+				responseData.message = "OK";
+				responseData.data.account.uid = requestData.uid;
+				responseData.data.account.token = requestData.token;
+				responseData.data.account.email = account.getEmail();
+			}
+			
+			// Create a response
+			String response = getGsonFactory().toJson(responseData);
+			// Set the response header status and length
+			t.getResponseHeaders().put("Content-Type", Collections.singletonList("application/json"));
+			t.sendResponseHeaders(200, response.getBytes().length);
+			// Write the response string
+			OutputStream os = t.getResponseBody();
+			os.write(response.getBytes());
+			os.close();
 		});
 		// Exchange for combo token
-		server.createContext("/hk4e_global/combo/granter/login/v2/login", new HttpHandler() {
-			@Override
-			public void handle(HttpExchange t) throws IOException {
-				// Get post data
-				ComboTokenReqJson requestData = null;
-				try {
-					String body = Utils.toString(t.getRequestBody());
-					requestData = getGsonFactory().fromJson(body, ComboTokenReqJson.class);
-				} catch (Exception e) {
-					
-				}
-				// Create response json
-				if (requestData == null || requestData.data == null) {
-					return;
-				}
-				LoginTokenData loginData = getGsonFactory().fromJson(requestData.data, LoginTokenData.class); // Get login data
-				ComboTokenResJson responseData = new ComboTokenResJson();
-
-				// Login
-				Account account = DatabaseHelper.getAccountById(loginData.uid);
+		server.createContext("/hk4e_global/combo/granter/login/v2/login", t -> {
+			// Get post data
+			ComboTokenReqJson requestData = null;
+			try {
+				String body = Utils.toString(t.getRequestBody());
+				requestData = getGsonFactory().fromJson(body, ComboTokenReqJson.class);
+			} catch (Exception e) {
 				
-				// Test
-				if (account == null || !account.getSessionKey().equals(loginData.token)) {
-					responseData.retcode = -201;
-					responseData.message = "Wrong session key.";
-				} else {
-					responseData.message = "OK";
-					responseData.data.open_id = loginData.uid;
-					responseData.data.combo_id = "157795300";
-					responseData.data.combo_token = account.generateLoginToken();
-				}
-				
-				// Create a response
-		        String response = getGsonFactory().toJson(responseData);
-		        // Set the response header status and length
-		        t.getResponseHeaders().put("Content-Type", Collections.singletonList("application/json"));
-		        t.sendResponseHeaders(200, response.getBytes().length);
-		        // Write the response string
-		        OutputStream os = t.getResponseBody();
-		        os.write(response.getBytes());
-		        os.close();
 			}
+			// Create response json
+			if (requestData == null || requestData.data == null) {
+				return;
+			}
+			LoginTokenData loginData = getGsonFactory().fromJson(requestData.data, LoginTokenData.class); // Get login data
+			ComboTokenResJson responseData = new ComboTokenResJson();
+
+			// Login
+			Account account = DatabaseHelper.getAccountById(loginData.uid);
+			
+			// Test
+			if (account == null || !account.getSessionKey().equals(loginData.token)) {
+				responseData.retcode = -201;
+				responseData.message = "Wrong session key.";
+			} else {
+				responseData.message = "OK";
+				responseData.data.open_id = loginData.uid;
+				responseData.data.combo_id = "157795300";
+				responseData.data.combo_token = account.generateLoginToken();
+			}
+			
+			// Create a response
+			String response = getGsonFactory().toJson(responseData);
+			// Set the response header status and length
+			t.getResponseHeaders().put("Content-Type", Collections.singletonList("application/json"));
+			t.sendResponseHeaders(200, response.getBytes().length);
+			// Write the response string
+			OutputStream os = t.getResponseBody();
+			os.write(response.getBytes());
+			os.close();
 		});
 		// Agreement and Protocol
 		server.createContext( // hk4e-sdk-os.hoyoverse.com
@@ -420,19 +401,16 @@ public class DispatchServer {
 				"/crash/dataUpload", 
 				new DispatchHttpJsonHandler("{\"code\":0}")
 		);
-		uploadLogServer.createContext("/gacha", new HttpHandler() {
-			@Override
-			public void handle(HttpExchange t) throws IOException {
-				//Create a response form the request query parameters
-		        String response = "<!doctype html><html lang=\"en\"><head><title>Gacha</title></head><body></body></html>";
-		        //Set the response header status and length
-		        t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
-		        t.sendResponseHeaders(200, response.getBytes().length);
-		        //Write the response string
-		        OutputStream os = t.getResponseBody();
-		        os.write(response.getBytes());
-		        os.close();
-			}
+		uploadLogServer.createContext("/gacha", t -> {
+			//Create a response form the request query parameters
+			String response = "<!doctype html><html lang=\"en\"><head><title>Gacha</title></head><body></body></html>";
+			//Set the response header status and length
+			t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
+			t.sendResponseHeaders(200, response.getBytes().length);
+			//Write the response string
+			OutputStream os = t.getResponseBody();
+			os.write(response.getBytes());
+			os.close();
 		});
 		uploadLogServer.start();
 		Grasscutter.getLogger().info("Log server (log-upload-os) started on port " + 80);

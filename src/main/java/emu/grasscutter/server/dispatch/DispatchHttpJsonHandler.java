@@ -7,7 +7,7 @@ import java.util.Collections;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-public class DispatchHttpJsonHandler implements HttpHandler {
+public final class DispatchHttpJsonHandler implements HttpHandler {
 	private final String response;
 	
 	public DispatchHttpJsonHandler(String response) {
@@ -24,5 +24,4 @@ public class DispatchHttpJsonHandler implements HttpHandler {
         os.write(response.getBytes());
         os.close();
 	}
-
 }
