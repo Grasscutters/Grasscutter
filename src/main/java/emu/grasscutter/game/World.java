@@ -28,7 +28,6 @@ import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
 import emu.grasscutter.server.packet.send.PacketScenePlayerInfoNotify;
-import emu.grasscutter.server.packet.send.PacketSceneTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketSyncScenePlayTeamEntityNotify;
 import emu.grasscutter.server.packet.send.PacketSyncTeamEntityNotify;
 import emu.grasscutter.server.packet.send.PacketWorldPlayerInfoNotify;
@@ -169,7 +168,7 @@ public class World implements Iterable<GenshinPlayer> {
 		player.setPeerId(this.getNextPeerId());
 		player.getTeamManager().setEntityId(getNextEntityId(EntityIdType.TEAM));
 		
-		// TODO Update team of all players
+		// Setup team avatars
 		this.setupPlayerAvatars(player);
 		
 		// Info packet for other players
@@ -212,18 +211,23 @@ public class World implements Iterable<GenshinPlayer> {
 	
 	private void updatePlayerInfos(GenshinPlayer paramPlayer) {
 		for (GenshinPlayer player : getPlayers()) {
-			// Dont send packets if player is loading in
+			// Dont send packets if player is loading in and filter out joining player
 			if (!player.hasSentAvatarDataNotify() || player.getSceneLoadState().getValue() < SceneLoadState.INIT.getValue() || player == paramPlayer) {
 				continue;
 			}
 			
+			// Update team of all players since max players has been changed - Probably not the best way to do it
+			if (this.isMultiplayer()) {
+				player.getTeamManager().getMpTeam().copyFrom(player.getTeamManager().getMpTeam(), player.getTeamManager().getMaxTeamSize());
+				player.getTeamManager().updateTeamEntities(null);
+			}
+
 			// World player info packets
 			player.getSession().send(new PacketWorldPlayerInfoNotify(this));
 			player.getSession().send(new PacketScenePlayerInfoNotify(this));
 			player.getSession().send(new PacketWorldPlayerRTTNotify(this));
 			
 			// Team packets
-			player.getSession().send(new PacketSceneTeamUpdateNotify(player));
 			player.getSession().send(new PacketSyncTeamEntityNotify(player));
 			player.getSession().send(new PacketSyncScenePlayTeamEntityNotify(player));
 		}
@@ -282,6 +286,11 @@ public class World implements Iterable<GenshinPlayer> {
 		for (int avatarId : teamInfo.getAvatars()) {
 			EntityAvatar entity = new EntityAvatar(this, player.getAvatars().getAvatarById(avatarId));
 			player.getTeamManager().getActiveTeam().add(entity);
+		}
+		
+		// Limit character index in case its out of bounds
+		if (player.getTeamManager().getCurrentCharacterIndex() >= player.getTeamManager().getActiveTeam().size() || player.getTeamManager().getCurrentCharacterIndex() < 0) {
+			player.getTeamManager().setCurrentCharacterIndex(player.getTeamManager().getCurrentCharacterIndex() - 1);
 		}
 	}
 	

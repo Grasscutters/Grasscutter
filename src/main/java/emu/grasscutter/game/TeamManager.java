@@ -166,7 +166,7 @@ public class TeamManager {
 	
 	// Methods
 	
-	public void updateTeamResonances() {
+	private void updateTeamResonances() {
 		Int2IntOpenHashMap map = new Int2IntOpenHashMap();
 		
 		this.getTeamResonances().clear();
@@ -196,7 +196,7 @@ public class TeamManager {
 		}
 	}
 	
-	private void updateTeamEntities(GenshinPacket responsePacket) {
+	public void updateTeamEntities(GenshinPacket responsePacket) {
 		// Sanity check - Should never happen
 		if (this.getCurrentTeamInfo().getAvatars().size() <= 0) {
 			return;
@@ -241,7 +241,7 @@ public class TeamManager {
 		// Set new selected character index
 		if (prevSelectedAvatarIndex == -1) {
 			// Previous selected avatar is not in the same spot, we will select the current one in the prev slot
-			prevSelectedAvatarIndex = Math.min(this.currentCharacterIndex, getCurrentTeamInfo().getAvatars().size() - 1);
+			prevSelectedAvatarIndex = Math.min(this.currentCharacterIndex, this.getActiveTeam().size() - 1);
 		}
 		this.currentCharacterIndex = prevSelectedAvatarIndex;
 		
