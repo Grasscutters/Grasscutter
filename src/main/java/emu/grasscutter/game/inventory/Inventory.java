@@ -15,6 +15,7 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.packet.send.PacketAvatarEquipChangeNotify;
 import emu.grasscutter.server.packet.send.PacketStoreItemChangeNotify;
@@ -187,6 +188,8 @@ public class Inventory implements Iterable<GenshinItem> {
 				existingItem.save();
 				return existingItem;
 			}
+		} else {
+			return null;
 		}
 		
 		// Set ownership and save to db
@@ -207,6 +210,11 @@ public class Inventory implements Iterable<GenshinItem> {
 	
 	private void addVirtualItem(int itemId, int count) {
 		switch (itemId) {
+			case 101: // Character exp
+				for (EntityAvatar entity : getPlayer().getTeamManager().getActiveTeam()) {
+					getPlayer().getServer().getInventoryManager().upgradeAvatar(player, entity.getAvatar(), count);
+				}
+				break;
 			case 102: // Adventure exp
 				getPlayer().addExpDirectly(count);
 				break;
