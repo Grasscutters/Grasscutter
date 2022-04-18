@@ -1,6 +1,8 @@
 # Grasscutter
 A WIP server emulator for Genshin Impact 2.3-2.6
 
+**Note**: For support please join the [Discord server](https://discord.gg/T5vZU6UyeG).
+
 # Current features
 * Logging in
 * Spawning monsters via console
