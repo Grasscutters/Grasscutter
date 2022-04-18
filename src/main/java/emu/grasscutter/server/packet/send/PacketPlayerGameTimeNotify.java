@@ -8,11 +8,11 @@ import emu.grasscutter.net.proto.PlayerGameTimeNotifyOuterClass.PlayerGameTimeNo
 
 public class PacketPlayerGameTimeNotify extends GenshinPacket {
 	
-	public PacketPlayerGameTimeNotify(World world, GenshinPlayer player) {
+	public PacketPlayerGameTimeNotify(GenshinPlayer player) {
 		super(PacketOpcodes.PlayerGameTimeNotify);
 		
 		PlayerGameTimeNotify proto = PlayerGameTimeNotify.newBuilder()
-				.setGameTime(world.getTime())
+				.setGameTime(player.getScene().getTime())
 				.setUid(player.getId())
 				.build();
 		

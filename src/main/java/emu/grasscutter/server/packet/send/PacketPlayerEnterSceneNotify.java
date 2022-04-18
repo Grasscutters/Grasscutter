@@ -29,10 +29,6 @@ public class PacketPlayerEnterSceneNotify extends GenshinPacket {
 				.setWorldLevel(player.getWorldLevel())
 				.setEnterReason(EnterReason.Login.getValue())
 				.setIsFirstLoginEnterScene(player.isFirstLoginEnterScene())
-				.addSceneTagIdList(102)
-				.addSceneTagIdList(107)
-				.addSceneTagIdList(113)
-				.addSceneTagIdList(117)
 				.setUnk1(1)
 				.setUnk2("3-" + player.getId() + "-" + (int) (System.currentTimeMillis() / 1000) + "-" + 18402)
 				.build();

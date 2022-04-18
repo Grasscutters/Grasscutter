@@ -21,7 +21,7 @@ public class PacketScenePlayerInfoNotify extends GenshinPacket {
 					.setUid(p.getId())
 					.setPeerId(p.getPeerId())
 					.setName(p.getNickname())
-					.setSceneId(world.getSceneId())
+					.setSceneId(p.getSceneId())
 					.setOnlinePlayerInfo(p.getOnlinePlayerInfo())
 					.build();
 			

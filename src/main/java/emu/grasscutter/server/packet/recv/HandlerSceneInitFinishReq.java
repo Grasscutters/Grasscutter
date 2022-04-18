@@ -14,6 +14,7 @@ import emu.grasscutter.server.packet.send.PacketSceneInitFinishRsp;
 import emu.grasscutter.server.packet.send.PacketScenePlayerInfoNotify;
 import emu.grasscutter.server.packet.send.PacketSceneTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketSceneTimeNotify;
+import emu.grasscutter.server.packet.send.PacketSceneUnlockInfoNotify;
 import emu.grasscutter.server.packet.send.PacketServerTimeNotify;
 import emu.grasscutter.server.packet.send.PacketSyncScenePlayTeamEntityNotify;
 import emu.grasscutter.server.packet.send.PacketSyncTeamEntityNotify;
@@ -29,13 +30,14 @@ public class HandlerSceneInitFinishReq extends PacketHandler {
 		session.send(new PacketServerTimeNotify());
 		session.send(new PacketWorldPlayerInfoNotify(session.getPlayer().getWorld()));
 		session.send(new PacketWorldDataNotify(session.getPlayer().getWorld()));
+		session.send(new PacketSceneUnlockInfoNotify());
 		session.send(new GenshinPacket(PacketOpcodes.SceneForceUnlockNotify));
 		session.send(new PacketHostPlayerNotify(session.getPlayer().getWorld()));
 		
 		session.send(new PacketSceneTimeNotify(session.getPlayer()));
-		session.send(new PacketPlayerGameTimeNotify(session.getPlayer().getWorld(), session.getPlayer()));
+		session.send(new PacketPlayerGameTimeNotify(session.getPlayer()));
 		session.send(new PacketPlayerEnterSceneInfoNotify(session.getPlayer()));
-		session.send(new PacketSceneAreaWeatherNotify(session.getPlayer().getWorld(), session.getPlayer()));
+		session.send(new PacketSceneAreaWeatherNotify(session.getPlayer()));
 		session.send(new PacketScenePlayerInfoNotify(session.getPlayer().getWorld()));
 		session.send(new PacketSceneTeamUpdateNotify(session.getPlayer()));
 		

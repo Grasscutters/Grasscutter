@@ -83,6 +83,7 @@ public class GenshinPlayer {
 	@Transient private long nextGuid = 0;
 	@Transient private int peerId;
 	@Transient private World world;
+	@Transient private GenshinScene scene;
 	@Transient private GameSession session;
 	@Transient private AvatarStorage avatars;
 	@Transient private Inventory inventory;
@@ -206,6 +207,14 @@ public class GenshinPlayer {
 		this.world = world;
 	}
 	
+	public GenshinScene getScene() {
+		return scene;
+	}
+
+	public void setScene(GenshinScene scene) {
+		this.scene = scene;
+	}
+
 	public int getGmLevel() {
 		return 1;
 	}
@@ -560,14 +569,14 @@ public class GenshinPlayer {
 	}
 	
 	public void interactWith(int gadgetEntityId) {
-		GenshinEntity entity = getWorld().getEntityById(gadgetEntityId);
+		GenshinEntity entity = getScene().getEntityById(gadgetEntityId);
 		
 		if (entity == null) {
 			return;
 		}
 		
 		// Delete
-		entity.getWorld().removeEntity(entity);
+		entity.getScene().removeEntity(entity);
 		
 		// Handle
 		if (entity instanceof EntityItem) {

@@ -35,10 +35,12 @@ public class MultiplayerManager {
 			return;
 		}
 		
+		/*
 		if (target.getWorld().isDungeon()) {
 			player.sendPacket(new PacketPlayerApplyEnterMpResultNotify(targetUid, "", false, PlayerApplyEnterMpReason.SceneCannotEnter));
 			return;
 		}
+		*/
 		
 		// Get request
 		CoopRequest request = target.getCoopRequests().get(player.getId());
@@ -90,14 +92,14 @@ public class MultiplayerManager {
 			world.addPlayer(player);
 			
 			// Rejoin packet
-			player.sendPacket(new PacketPlayerEnterSceneNotify(player, player, EnterType.EnterSelf, EnterReason.HostFromSingleToMp, player.getWorld().getSceneId(), player.getPos()));
+			player.sendPacket(new PacketPlayerEnterSceneNotify(player, player, EnterType.EnterSelf, EnterReason.HostFromSingleToMp, player.getScene().getId(), player.getPos()));
 		}
 		
 		// Make requester join
 		player.getWorld().addPlayer(requester);
 		
 		// Packet
-		requester.sendPacket(new PacketPlayerEnterSceneNotify(requester, player, EnterType.EnterOther, EnterReason.TeamJoin, player.getWorld().getSceneId(), player.getPos()));
+		requester.sendPacket(new PacketPlayerEnterSceneNotify(requester, player, EnterType.EnterOther, EnterReason.TeamJoin, player.getScene().getId(), player.getPos()));
 		requester.getPos().set(player.getPos());
 		requester.getRotation().set(player.getRotation());
 	}
@@ -120,7 +122,7 @@ public class MultiplayerManager {
 		world.addPlayer(player);
 	
 		// Packet
-		player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterSelf, EnterReason.TeamBack, player.getWorld().getSceneId(), player.getPos()));
+		player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterSelf, EnterReason.TeamBack, player.getScene().getId(), player.getPos()));
 		
 		return true;
 	}
@@ -147,7 +149,7 @@ public class MultiplayerManager {
 		World world = new World(victim);
 		world.addPlayer(victim);
 		
-		victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.EnterSelf, EnterReason.TeamKick, victim.getWorld().getSceneId(), victim.getPos()));
+		victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.EnterSelf, EnterReason.TeamKick, victim.getScene().getId(), victim.getPos()));
 		return true;
 	}
 }

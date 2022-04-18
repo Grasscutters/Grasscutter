@@ -958,6 +958,7 @@ public class PacketOpcodes {
     public static final int SceneTimeNotify = 229;
     public static final int SceneTransToPointReq = 256;
     public static final int SceneTransToPointRsp = 283;
+    public static final int SceneUnlockInfoNotify = 3386;
     public static final int SceneWeatherForcastReq = 3167;
     public static final int SceneWeatherForcastRsp = 3023;
     public static final int SeaLampCoinNotify = 2028;

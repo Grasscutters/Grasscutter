@@ -170,12 +170,12 @@ public class PlayerCommands {
 				float range = (5f + (.1f * count));
 				for (int i = 0; i < count; i++) {
 					Position pos = player.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-					EntityItem entity = new EntityItem(player.getWorld(), player, itemData, pos, 1);
-					player.getWorld().addEntity(entity);
+					EntityItem entity = new EntityItem(player.getScene(), player, itemData, pos, 1);
+					player.getScene().addEntity(entity);
 				}
 			} else {
-				EntityItem entity = new EntityItem(player.getWorld(), player, itemData, player.getPos().clone().addY(3f), count);
-				player.getWorld().addEntity(entity);
+				EntityItem entity = new EntityItem(player.getScene(), player, itemData, player.getPos().clone().addY(3f), count);
+				player.getScene().addEntity(entity);
 			}
 		}
 	}
@@ -216,8 +216,8 @@ public class PlayerCommands {
 			float range = (5f + (.1f * count));
 			for (int i = 0; i < count; i++) {
 				Position pos = player.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-				EntityMonster entity = new EntityMonster(player.getWorld(), monsterData, pos, level);
-				player.getWorld().addEntity(entity);
+				EntityMonster entity = new EntityMonster(player.getScene(), monsterData, pos, level);
+				player.getScene().addEntity(entity);
 			}
 		}
 	}
@@ -227,12 +227,12 @@ public class PlayerCommands {
 		@Override
 		public void execute(GenshinPlayer player, String raw) {
 			List<GenshinEntity> toRemove = new LinkedList<>();
-			for (GenshinEntity entity : player.getWorld().getEntities().values()) {
+			for (GenshinEntity entity : player.getScene().getEntities().values()) {
 				if (entity instanceof EntityMonster) {
 					toRemove.add(entity);
 				}
 			}
-			toRemove.forEach(e -> player.getWorld().killEntity(e, 0));
+			toRemove.forEach(e -> player.getScene().killEntity(e, 0));
 		}
 	}
 	
@@ -286,7 +286,7 @@ public class PlayerCommands {
 			}
 			
 			entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, hp);
-			entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
+			entity.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
 		}
 	}
 	
