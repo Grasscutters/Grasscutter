@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -20,7 +21,7 @@ import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.MonsterData;
 
-public class Tools {
+public final class Tools {
 	
 	@SuppressWarnings("deprecation")
 	public static void createGmHandbook() throws Exception {
@@ -40,7 +41,7 @@ public class Tools {
 			writer.println("// Genshin Impact " + GenshinConstants.VERSION + " GM Handbook");
 			writer.println("// Created " + dtf.format(now) + System.lineSeparator() + System.lineSeparator());
 			
-			list = GenshinData.getAvatarDataMap().keySet().stream().collect(Collectors.toList());
+			list = new ArrayList<>(GenshinData.getAvatarDataMap().keySet());
 			Collections.sort(list); 
 			 
 			writer.println("// Avatars");
@@ -51,7 +52,7 @@ public class Tools {
 			
 			writer.println();
 			
-			list = GenshinData.getItemDataMap().keySet().stream().collect(Collectors.toList());
+			list = new ArrayList<>(GenshinData.getItemDataMap().keySet());
 			Collections.sort(list); 
 			
 			writer.println("// Items");
@@ -63,7 +64,7 @@ public class Tools {
 			writer.println();
 			
 			writer.println("// Monsters");
-			list = GenshinData.getMonsterDataMap().keySet().stream().collect(Collectors.toList());
+			list = new ArrayList<>(GenshinData.getMonsterDataMap().keySet());
 			Collections.sort(list); 
 			
 			for (Integer id : list) {
