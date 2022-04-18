@@ -22,13 +22,13 @@ A WIP server emulator for Genshin Impact 2.3-2.6
 ### Starting up the server (Assuming you are on Windows)
 1. Setup compile environment `gradlew.bat`
 2. Compile the server with `gradlew jar`
-3. Create a folder named `resources` in your server directory, you will need to copy `BinData` and `ExcelBinOutput` folders which you can get from a repo like [https://github.com/Dimbreath/GenshinData](https://github.com/Dimbreath/GenshinData) into your resources folder.
+3. Create a folder named `resources` in your server directory, you will need to copy `BinOutput` and `ExcelBinOutput` folders which you can get from a repo like [https://github.com/Dimbreath/GenshinData](https://github.com/Dimbreath/GenshinData) into your resources folder.
 4. Run the server with `java -jar grasscutter.jar`. Make sure mongodb is running as well.
 
 ### Connecting with the client
 ½. Create an account using command below
 1. Run Fiddler and turn on `Decrypt https traffic` in setting 
-2. Set your hosts file to redirect at least api-account-os.hoyoverse.com and dispatchosglobal.yuanshen.com to your dispatch server ip. Or use Fiddler with script from [https://github.lunatic.moe/fiddlerscript](https://github.lunatic.moe/fiddlerscript) (Recommended)
+2. Set your hosts file to redirect at least api-account-os.hoyoverse.com and dispatchosglobal.yuanshen.com to your dispatch server ip. Or use Fiddler with script from [https://github.lunatic.moe/fiddlerscript](https://github.lunatic.moe/fiddlerscript) (Recommended for beginners)
 3. yoink
 
 ### Server console commands
@@ -54,7 +54,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 `!clearartifacts` - Deletes all unequipped and unlocked level 0 artifacts, **including yellow rarity ones** from your inventory
 
-### Troubleshooting
+### Quick Troubleshooting
 * If compiling wasnt successful, please check your JDK installation (must be JDK 8 and JDK's bin PATH variable is correct)
 * My client doesn't connect, doesn't login, 4206, etc... - Mostly your fiddler is the issue, make sure it running on another port except 8888
 * Startup sequence: Mongodb > The server > Fiddler > Client
