@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.game.entity.EntityGadget;
@@ -14,6 +15,7 @@ import emu.grasscutter.game.entity.GenshinEntity;
 import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
+import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
@@ -26,29 +28,37 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class GenshinScene {
 	private final World world;
+	private final SceneData sceneData;
 	private final List<GenshinPlayer> players;
 	private final Int2ObjectMap<GenshinEntity> entities;
-	private final int id;
 	
 	private int time;
 	private ClimateType climate;
 	
-	public GenshinScene(World world, int sceneId) {
+	public GenshinScene(World world, SceneData sceneData) {
 		this.world = world;
+		this.sceneData = sceneData;
 		this.players = Collections.synchronizedList(new ArrayList<>());
 		this.entities = new Int2ObjectOpenHashMap<>();
-		this.id = sceneId;
-		
+
 		this.time = 8 * 60;
 		this.climate = ClimateType.CLIMATE_SUNNY;
 	}
 	
 	public int getId() {
-		return id;
+		return sceneData.getId();
 	}
 
 	public World getWorld() {
 		return world;
+	}
+	
+	public SceneData getSceneData() {
+		return this.sceneData;
+	}
+	
+	public SceneType getSceneType() {
+		return getSceneData().getSceneType();
 	}
 
 	public List<GenshinPlayer> getPlayers() {
