@@ -104,14 +104,14 @@ public final class DispatchServer {
 					.setName("os_usa")
 					.setTitle(Grasscutter.getConfig().GameServerName)
 					.setType("DEV_PUBLIC")
-					.setDispatchUrl("https://" + Grasscutter.getConfig().DispatchServerIp + ":" + getAddress().getPort() + "/query_cur_region")
+					.setDispatchUrl("https://" + (Grasscutter.getConfig().DispatchServerPublicIp.isEmpty() ? Grasscutter.getConfig().DispatchServerIp : Grasscutter.getConfig().DispatchServerPublicIp) + ":" + getAddress().getPort() + "/query_cur_region")
 					.build();
 			
 			RegionSimpleInfo serverTest2 = RegionSimpleInfo.newBuilder()
 					.setName("os_euro")
 					.setTitle("Grasscutter")
 					.setType("DEV_PUBLIC")
-					.setDispatchUrl("https://" + Grasscutter.getConfig().DispatchServerIp + ":" + getAddress().getPort() + "/query_cur_region")
+					.setDispatchUrl("https://" + (Grasscutter.getConfig().DispatchServerPublicIp.isEmpty() ? Grasscutter.getConfig().DispatchServerIp : Grasscutter.getConfig().DispatchServerPublicIp) + ":" + getAddress().getPort() + "/query_cur_region")
 					.build();
 				
 			QueryRegionListHttpRsp regionList = QueryRegionListHttpRsp.newBuilder()
@@ -123,7 +123,7 @@ public final class DispatchServer {
 				.build();
 						
 			RegionInfo currentRegion = regionQuery.getRegionInfo().toBuilder()
-					.setIp(Grasscutter.getConfig().GameServerIp)
+					.setIp((Grasscutter.getConfig().GameServerPublicIp.isEmpty() ? Grasscutter.getConfig().GameServerIp : Grasscutter.getConfig().GameServerPublicIp))
 					.setPort(Grasscutter.getConfig().GameServerPort)
 					.setSecretKey(ByteString.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
 					.build();
