@@ -338,7 +338,11 @@ public class PlayerCommands {
 				return;
 			}
 			
-			player.getWorld().transferPlayerToScene(player, sceneId, player.getPos());
+			boolean result = player.getWorld().transferPlayerToScene(player, sceneId, player.getPos());
+			
+			if (!result) {
+				player.dropMessage("Scene does not exist!");
+			}
 		}
 	}
 }

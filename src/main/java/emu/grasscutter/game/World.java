@@ -14,6 +14,8 @@ import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
+import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.game.GenshinPlayer.SceneLoadState;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
@@ -99,7 +101,21 @@ public class World implements Iterable<GenshinPlayer> {
 	}
 	
 	public GenshinScene getSceneById(int sceneId) {
-		return getScenes().computeIfAbsent(sceneId, id -> new GenshinScene(this, id));
+		// Get scene normally
+		GenshinScene scene = getScenes().get(sceneId);
+		if (scene != null) {
+			return scene;
+		}
+		
+		// Create scene from scene data if it doesnt exist
+		SceneData sceneData = GenshinData.getSceneDataMap().get(sceneId);
+		if (sceneData != null) {
+			scene = new GenshinScene(this, sceneData);
+			this.getScenes().put(sceneId, scene);
+			return scene;
+		}
+		
+		return null;
 	}
 	
 	public int getPlayerCount() {
@@ -182,9 +198,9 @@ public class World implements Iterable<GenshinPlayer> {
 		}
 	}
 	
-	public void transferPlayerToScene(GenshinPlayer player, int sceneId, Position pos) {
-		if (player.getScene().getId() == sceneId) {
-			return;
+	public boolean transferPlayerToScene(GenshinPlayer player, int sceneId, Position pos) {
+		if (player.getScene().getId() == sceneId || GenshinData.getSceneDataMap().get(sceneId) == null) {
+			return false;
 		}
 		
 		if (player.getScene() != null) {
@@ -193,10 +209,11 @@ public class World implements Iterable<GenshinPlayer> {
 		
 		GenshinScene scene = this.getSceneById(sceneId);
 		scene.addPlayer(player);
-		
 		player.getPos().set(pos);
-
+		
+		// Teleport packet
 		player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterSelf, EnterReason.TransPoint, sceneId, pos));
+		return true;
 	}
 	
 	private void updatePlayerInfos(GenshinPlayer paramPlayer) {
