@@ -1,9 +1,11 @@
 package emu.grasscutter.commands;
 
 import java.lang.reflect.Modifier;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GenshinData;
@@ -65,6 +67,35 @@ public class ServerCommands {
 			Grasscutter.loadConfig();
 			Grasscutter.getDispatchServer().loadQueries();
 			Grasscutter.getLogger().info("Reload complete.");
+		}
+	}
+
+	public static class sendMsg extends ServerCommand {
+		@Override
+		public void execute(String raw) {
+			List<String> split = Arrays.asList(raw.split(" "));
+
+			if (split.size() < 2) {
+				Grasscutter.getLogger().error("Invalid amount of args");
+				return;
+			}
+
+			String playerID = split.get(0);
+			String message = split.stream().skip(1).collect(Collectors.joining(" "));
+
+
+			emu.grasscutter.game.Account account = DatabaseHelper.getAccountByPlayerId(Integer.parseInt(playerID));
+			if (account != null) {
+				GenshinPlayer player = Grasscutter.getGameServer().getPlayerById(Integer.parseInt(playerID));
+				if(player != null) {
+					player.dropMessage(message);
+					Grasscutter.getLogger().info(String.format("Successfully sent message to %s: %s", playerID, message));
+				} else {
+					Grasscutter.getLogger().error("Player not online");
+				}
+			} else {
+				Grasscutter.getLogger().error(String.format("Player %s does not exist", playerID));
+			}
 		}
 	}
 	
