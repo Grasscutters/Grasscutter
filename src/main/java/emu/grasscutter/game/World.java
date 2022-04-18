@@ -183,6 +183,10 @@ public class World implements Iterable<GenshinPlayer> {
 	}
 	
 	public void transferPlayerToScene(GenshinPlayer player, int sceneId, Position pos) {
+		if (player.getScene().getId() == sceneId) {
+			return;
+		}
+		
 		if (player.getScene() != null) {
 			player.getScene().removePlayer(player);
 		}
