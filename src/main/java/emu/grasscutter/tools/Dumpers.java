@@ -8,10 +8,8 @@ import emu.grasscutter.game.props.OpenState;
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
 import emu.grasscutter.net.proto.GetShopRspOuterClass.GetShopRsp;
 import emu.grasscutter.net.proto.OpenStateUpdateNotifyOuterClass.OpenStateUpdateNotify;
-import emu.grasscutter.utils.FileUtils;
 
-public class Dumpers {
-	
+public final class Dumpers {
 	public static void extractBanner(byte[] data) throws Exception {
 		GetGachaInfoRsp proto = GetGachaInfoRsp.parseFrom(data);
 		System.out.println(proto);

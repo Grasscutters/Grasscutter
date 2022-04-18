@@ -7,8 +7,8 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp;
 
-public class Crypto {
-	private static SecureRandom secureRandom = new SecureRandom();
+public final class Crypto {
+	private static final SecureRandom secureRandom = new SecureRandom();
 	public static final long ENCRYPT_SEED = Long.parseUnsignedLong("11468049314633205968");
 	public static byte[] ENCRYPT_SEED_BUFFER = new byte[0];
 
@@ -37,8 +37,7 @@ public class Crypto {
 			FileUtils.write(Grasscutter.getConfig().KEY_FOLDER + "secretKeyBuffer.bin", p.getSecretKeyBuffer().toByteArray());
 			Grasscutter.getLogger().info("Secret Key: " + p.getSecretKey());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Grasscutter.getLogger().error("Crypto error.", e);
 		}
 	}
 	
@@ -47,7 +46,7 @@ public class Crypto {
 			QueryCurrRegionHttpRsp p = QueryCurrRegionHttpRsp.parseFrom(Base64.getDecoder().decode(data));
 			FileUtils.write(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin", p.getRegionInfo().getSecretKey().toByteArray());
 		} catch (Exception e) {
-			e.printStackTrace();
+			Grasscutter.getLogger().error("Crypto error.", e);
 		}
 	}
 	
