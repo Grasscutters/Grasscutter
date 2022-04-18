@@ -341,7 +341,7 @@ public class PlayerCommands {
 			boolean result = player.getWorld().transferPlayerToScene(player, sceneId, player.getPos());
 			
 			if (!result) {
-				player.dropMessage("Scene does not exist!");
+				player.dropMessage("Scene does not exist or you are already in it");
 			}
 		}
 	}
