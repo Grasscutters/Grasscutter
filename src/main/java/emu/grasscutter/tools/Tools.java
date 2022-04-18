@@ -20,6 +20,7 @@ import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.MonsterData;
+import emu.grasscutter.data.def.SceneData;
 
 public final class Tools {
 	
@@ -59,6 +60,17 @@ public final class Tools {
 			for (Integer id : list) {
 				ItemData data = GenshinData.getItemDataMap().get(id);
 				writer.println(data.getId() + " : " + map.get(data.getNameTextMapHash()));
+			}
+			
+			writer.println();
+			
+			writer.println("// Scenes");
+			list = new ArrayList<>(GenshinData.getSceneDataMap().keySet());
+			Collections.sort(list); 
+			
+			for (Integer id : list) {
+				SceneData data = GenshinData.getSceneDataMap().get(id);
+				writer.println(data.getId() + " : " + data.getScriptData());
 			}
 			
 			writer.println();
