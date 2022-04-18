@@ -1,6 +1,6 @@
 package emu.grasscutter.game.managers;
 
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.commands.CommandMap;
 import emu.grasscutter.commands.PlayerCommands;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.net.packet.GenshinPacket;
@@ -26,8 +26,8 @@ public class ChatManager {
 		}
 				
 		// Check if command
-		if (message.charAt(0) == '!' || message.charAt(0) == '/') {
-			PlayerCommands.handle(player, message);
+		if (message.charAt(0) == '!') {
+			CommandMap.getInstance().invoke(player, message);
 			return;
 		}
 		
@@ -68,7 +68,7 @@ public class ChatManager {
 				
 		// Check if command
 		if (message.charAt(0) == '!') {
-			PlayerCommands.handle(player, message);
+			CommandMap.getInstance().invoke(player, message);
 			return;
 		}
 
