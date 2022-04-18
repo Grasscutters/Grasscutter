@@ -1,6 +1,7 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.GenshinScene;
 import emu.grasscutter.game.World;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
@@ -34,8 +35,8 @@ public class EntityClientGadget extends EntityGadget {
 	private int targetEntityId;
 	private boolean asyncLoad;
 	
-	public EntityClientGadget(World world, GenshinPlayer player, EvtCreateGadgetNotify notify) {
-		super(world);
+	public EntityClientGadget(GenshinScene scene, GenshinPlayer player, EvtCreateGadgetNotify notify) {
+		super(scene);
 		this.owner = player;
 		this.id = notify.getEntityId();
 		this.pos = new Position(notify.getInitPos());

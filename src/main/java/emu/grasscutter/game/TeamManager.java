@@ -158,7 +158,7 @@ public class TeamManager {
 	}
 	
 	public boolean isSpawned() {
-		return getPlayer().getWorld() != null && getPlayer().getWorld().getEntities().containsKey(getCurrentAvatarEntity().getId());
+		return getPlayer().getWorld() != null && getPlayer().getScene().getEntities().containsKey(getCurrentAvatarEntity().getId());
 	}
 	
 	public int getMaxTeamSize() {
@@ -233,7 +233,7 @@ public class TeamManager {
 					prevSelectedAvatarIndex = i;
 				}
 			} else {
-				entity = new EntityAvatar(getPlayer().getWorld(), getPlayer().getAvatars().getAvatarById(avatarId));
+				entity = new EntityAvatar(getPlayer().getScene(), getPlayer().getAvatars().getAvatarById(avatarId));
 			}
 			
 			this.getActiveTeam().add(entity);
@@ -241,7 +241,7 @@ public class TeamManager {
 		
 		// Unload removed entities
 		for (EntityAvatar entity : existingAvatars.values()) {
-			getPlayer().getWorld().removeEntity(entity);
+			getPlayer().getScene().removeEntity(entity);
 			entity.getAvatar().save();
 		}
 		
@@ -256,7 +256,7 @@ public class TeamManager {
 		updateTeamResonances();
 		
 		// Packets
-		getPlayer().getWorld().broadcastPacket(new PacketSceneTeamUpdateNotify(getPlayer()));
+		getPlayer().getScene().broadcastPacket(new PacketSceneTeamUpdateNotify(getPlayer()));
 		
 		// Run callback
 		if (responsePacket != null) {
@@ -266,7 +266,7 @@ public class TeamManager {
 		// Check if character changed
 		if (currentEntity != getCurrentAvatarEntity()) {
 			// Remove and Add
-			getWorld().replaceEntity(currentEntity, getCurrentAvatarEntity());
+			getPlayer().getScene().replaceEntity(currentEntity, getCurrentAvatarEntity());
 		}
 	}
 	
@@ -396,7 +396,7 @@ public class TeamManager {
 		oldEntity.setMotionState(MotionState.MotionStandby);
 
 		// Remove and Add
-		getWorld().replaceEntity(oldEntity, newEntity);
+		getPlayer().getScene().replaceEntity(oldEntity, newEntity);
 		getPlayer().sendPacket(new PacketChangeAvatarRsp(guid));
 	}
 	
@@ -426,7 +426,7 @@ public class TeamManager {
 		} else {
 			// Set index and spawn replacement member
 			this.setCurrentCharacterIndex(replaceIndex);
-			getWorld().addEntity(replacement);
+			getPlayer().getScene().addEntity(replacement);
 		}
 
 		// Response packet
