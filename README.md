@@ -29,7 +29,8 @@ A WIP server emulator for Genshin Impact 2.3-2.6
 ½. Create an account using command below
 1. Run Fiddler and turn on `Decrypt https traffic` in setting 
 2. Set your hosts file to redirect at least api-account-os.hoyoverse.com and dispatchosglobal.yuanshen.com to your dispatch server ip. Or use Fiddler with script from [https://github.lunatic.moe/fiddlerscript](https://github.lunatic.moe/fiddlerscript) (Recommended for beginners)
-3. yoink
+3. If you're using Fiddler, change the default port there (Tools -> Options -> Connections) to anything other than 8888, otherwise the server won't boot.
+4. yoink
 
 ### Server console commands
 
