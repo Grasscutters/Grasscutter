@@ -325,4 +325,20 @@ public class PlayerCommands {
 			player.getInventory().removeItems(toRemove);
 		}
 	}
+	
+	@Command(aliases = {"scene"}, helpText = "/Changescene [Scene id]")
+	public static class ChangeScene extends PlayerCommand {
+		@Override
+		public void execute(GenshinPlayer player, String raw) {
+			int sceneId = 0;
+		
+			try {
+				sceneId = Integer.parseInt(raw);
+			} catch (Exception e) {
+				return;
+			}
+			
+			player.getWorld().transferPlayerToScene(player, sceneId, player.getPos());
+		}
+	}
 }
