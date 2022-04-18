@@ -4,6 +4,7 @@ import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import emu.grasscutter.data.GenshinData;
 import emu.grasscutter.data.def.ItemData;
@@ -23,7 +24,9 @@ import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
 import emu.grasscutter.utils.Position;
 
 public class PlayerCommands {
-	private static HashMap<String, PlayerCommand> list = new HashMap<String, PlayerCommand>();
+	private static HashMap<String, PlayerCommand> commandList = new HashMap<String, PlayerCommand>();
+	private static HashMap<String, PlayerCommand> commandAliasList = new HashMap<String, PlayerCommand>();
+
 	
 	static {
 		try {
@@ -36,22 +39,19 @@ public class PlayerCommands {
 			    	
 			    	if (commandAnnotation != null) {
 			    		command.setLevel(commandAnnotation.gmLevel());
-			    		for (String alias : commandAnnotation.aliases()) {
+						command.setHelpText(commandAnnotation.helpText());
+						for (String alias : commandAnnotation.aliases()) {
 			    			if (alias.length() == 0) {
 			    				continue;
 			    			}
-			    			
-			    			String commandName = "!" + alias;
-					    	list.put(commandName, command);
-					    	commandName = "/" + alias;
-					    	list.put(commandName, command);
+
+							String commandName = alias;
+							commandAliasList.put(commandName, command);
 			    		}
 			    	}
-			    	
-			    	String commandName = "!" + cls.getSimpleName().toLowerCase();
-			    	list.put(commandName, command);
-			    	commandName = "/" + cls.getSimpleName().toLowerCase();
-			    	list.put(commandName, command);
+
+			    	String commandName = cls.getSimpleName().toLowerCase();
+			    	commandList.put(commandName, command);
 			    }
 		
 			}
@@ -67,33 +67,54 @@ public class PlayerCommands {
 		if (split.length == 0) {
 			return;
 		}
+
+		String first = split[0].toLowerCase().substring(1);
+		PlayerCommand c = PlayerCommands.commandList.get(first);
+		PlayerCommand a = PlayerCommands.commandAliasList.get(first);
 		
-		//
-		String first = split[0].toLowerCase();
-		PlayerCommand c = PlayerCommands.list.get(first);
-		
-		if (c != null) {
+		if (c != null || a != null) {
+			PlayerCommand cmd = c != null ? c : a;
 			// Level check
-			if (player.getGmLevel() < c.getLevel()) {
+			if (player.getGmLevel() < cmd.getLevel()) {
 				return;
 			}
 			// Execute
 			int len = Math.min(first.length() + 1, msg.length());
-			c.execute(player, msg.substring(len));
+			cmd.execute(player, msg.substring(len));
 		}
 	}
 	
 	public static abstract class PlayerCommand {
 		// GM level required to use this command
 		private int level;
+		private String helpText;
+
 		protected int getLevel() { return this.level; }
 		protected void setLevel(int minLevel) { this.level = minLevel; }
-		
+
+		protected String getHelpText() { return this.helpText; }
+		protected void setHelpText(String helpText) { this.helpText = helpText; }
+
 		// Main
 		public abstract void execute(GenshinPlayer player, String raw);
 	}
 	
 	// ================ Commands ================
+
+	@Command(aliases = {"h"}, helpText = "Shows this command")
+	public static class Help extends PlayerCommand {
+
+		@Override
+		public void execute(GenshinPlayer player, String raw) {
+			String helpMessage = "Grasscutter Commands: ";
+			for (Map.Entry<String, PlayerCommand> cmd : commandList.entrySet()) {
+
+				helpMessage += "\n" + cmd.getKey() + " - " + cmd.getValue().helpText;
+			}
+
+			player.dropMessage(helpMessage);
+		}
+	}
 	
 	@Command(aliases = {"g", "item", "additem"}, helpText = "/give [item id] [count] - Gives {count} amount of {item id}")
 	public static class Give extends PlayerCommand {
