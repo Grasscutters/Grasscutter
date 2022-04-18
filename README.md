@@ -15,7 +15,7 @@ A WIP server emulator for Genshin Impact 2.3-2.6
 # Running the server and client
 
 ### Prerequisites
-* [JDK-8u202](https://mirrors.huaweicloud.com/java/jdk/8u202-b08/)
+* JDK-8u202 ([mirror link since Oracle required an account to download old builds](https://mirrors.huaweicloud.com/java/jdk/8u202-b08/))
 * Mongodb (recommended 4.0+)
 * Fiddler Classic
 
