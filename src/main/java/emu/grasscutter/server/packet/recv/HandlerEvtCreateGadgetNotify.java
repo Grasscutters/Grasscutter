@@ -19,6 +19,11 @@ public class HandlerEvtCreateGadgetNotify extends PacketHandler {
 			return;
 		}
 		
+		// Sanity check - dont add duplicate entities
+		if (session.getPlayer().getWorld().getEntityById(notify.getEntityId()) != null) {
+			return;
+		}
+		
 		// Create entity and summon in world
 		EntityClientGadget gadget = new EntityClientGadget(session.getPlayer().getWorld(), session.getPlayer(), notify);
 		session.getPlayer().getWorld().onPlayerCreateGadget(gadget);

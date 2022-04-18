@@ -17,6 +17,7 @@ import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.GenshinPlayer.SceneLoadState;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
+import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
@@ -195,6 +196,11 @@ public class World implements Iterable<GenshinPlayer> {
 		// Info packet for other players
 		if (this.getPlayers().size() > 0) {
 			this.updatePlayerInfos(player);
+		}
+		
+		// Remove player gadgets
+		for (EntityGadget gadget : player.getTeamManager().getGadgets()) {
+			this.removeEntity(gadget);
 		}
 		
 		// Disband world if host leaves
@@ -377,7 +383,8 @@ public class World implements Iterable<GenshinPlayer> {
 		// Directly add
 		this.addEntityDirectly(gadget);
 		
-		// Add to owner's gadget list TODO
+		// Add to owner's gadget list
+		gadget.getOwner().getTeamManager().getGadgets().add(gadget);
 		
 		// Optimization
 		if (this.getPlayerCount() == 1 && this.getPlayers().get(0) == gadget.getOwner()) {
@@ -398,7 +405,8 @@ public class World implements Iterable<GenshinPlayer> {
 		EntityClientGadget gadget = (EntityClientGadget) entity;
 		this.removeEntityDirectly(gadget);
 		
-		// Remove from owner's gadget list TODO
+		// Remove from owner's gadget list
+		gadget.getOwner().getTeamManager().getGadgets().remove(gadget);
 		
 		// Optimization
 		if (this.getPlayerCount() == 1 && this.getPlayers().get(0) == gadget.getOwner()) {
