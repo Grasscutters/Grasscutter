@@ -95,7 +95,7 @@ public class DatabaseHelper {
 		return cursor.next();
 	}
 	
-	private static Account getAccountByPlayerId(int playerId) {
+	public static Account getAccountByPlayerId(int playerId) {
 		MorphiaCursor<Account> cursor = DatabaseManager.getDatastore().createQuery(Account.class).field("playerId").equal(playerId).find(FIND_ONE);
 		if (!cursor.hasNext()) return null;
 		return cursor.next();
