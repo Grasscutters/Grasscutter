@@ -15,7 +15,7 @@ A WIP server emulator for Genshin Impact 2.3-2.6
 # Running the server and client
 
 ### Prerequisites
-* Java 8 JDK
+* [JDK-8u202](https://mirrors.huaweicloud.com/java/jdk/8u202-b08/)
 * Mongodb (recommended 4.0+)
 * Fiddler Classic
 
@@ -58,3 +58,4 @@ There is a dummy user named "Server" in every player's friends list that you can
 * If compiling wasnt successful, please check your JDK installation (must be JDK 8 and JDK's bin PATH variable is correct)
 * My client doesn't connect, doesn't login, 4206, etc... - Mostly your fiddler is the issue, make sure it running on another port except 8888
 * Startup sequence: Mongodb > The server > Fiddler > Client
+* If `4206` error constantly prompt up, try to use [jdk-8u202-b08](https://mirrors.huaweicloud.com/java/jdk/8u202-b08/) instead of other versions of JDK
