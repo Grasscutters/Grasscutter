@@ -79,7 +79,7 @@ public class PlayerCommands {
 				return;
 			}
 			// Execute
-			int len = Math.min(first.length() + 1, msg.length());
+			int len = Math.min(split[0].length() + 1, msg.length());
 			cmd.execute(player, msg.substring(len));
 		}
 	}
