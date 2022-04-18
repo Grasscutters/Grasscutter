@@ -1,17 +1,19 @@
 package emu.grasscutter.utils;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.Random;
 
+import emu.grasscutter.Config;
 import emu.grasscutter.Grasscutter;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
+import org.slf4j.Logger;
 
-public class Utils {
+@SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
+public final class Utils {
 	public static final Random random = new Random();
 	
 	public static int randomRange(int min, int max) {
@@ -75,5 +77,78 @@ public class Utils {
 	    	v7 = str.charAt(v8++) + 131 * v7;
 	    }
 	    return v7;
+	}
+
+	/**
+	 * Checks if a file exists on the file system.
+	 * @param path The path to the file.
+	 * @return True if the file exists, false otherwise.
+	 */
+	public static boolean fileExists(String path) {
+		return new File(path).exists();
+	}
+
+	/**
+	 * Creates a folder on the file system.
+	 * @param path The path to the folder.
+	 * @return True if the folder was created, false otherwise.
+	 */
+	public static boolean createFolder(String path) {
+		return new File(path).mkdirs();
+	}
+
+	/**
+	 * Copies a file from the archive's resources to the file system.
+	 * @param resource The path to the resource.
+	 * @param destination The path to copy the resource to.
+	 * @return True if the file was copied, false otherwise.
+	 */
+	public static boolean copyFromResources(String resource, String destination) {
+		try (InputStream stream = Grasscutter.class.getResourceAsStream(resource)) {
+			if(stream == null) {
+				Grasscutter.getLogger().warn("Could not find resource: " + resource);
+				return false;
+			}
+
+			Files.copy(stream, new File(destination).toPath(), StandardCopyOption.REPLACE_EXISTING);
+			return true;
+		} catch (Exception e) {
+			Grasscutter.getLogger().warn("Unable to copy resource " + resource + " to " + destination, e);
+			return false;
+		}
+	}
+
+	/**
+	 * Checks for required files and folders before startup.
+	 */
+	public static void startupCheck() {
+		Config config = Grasscutter.getConfig();
+		Logger logger = Grasscutter.getLogger();
+		boolean exit = false;
+
+		String resourcesFolder = config.RESOURCE_FOLDER;
+		String dataFolder = config.DATA_FOLDER;
+
+		// Check for resources folder.
+		if(!fileExists(resourcesFolder)) {
+			logger.info("Creating resources folder...");
+			logger.info("Place a copy of 'GenshinData' in the resources folder.");
+			createFolder(resourcesFolder); exit = true;
+		}
+
+		// Check for GenshinData.
+		if(!fileExists(resourcesFolder + "BinOutput") ||
+				!fileExists(resourcesFolder + "ExcelBinOutput")) {
+			logger.info("Place a copy of 'GenshinData' in the resources folder.");
+			exit = true;
+		}
+
+		// Check for game data.
+		if(!fileExists(dataFolder))
+			createFolder(dataFolder);
+		if(!fileExists(dataFolder + "AbilityEmbryos.json"))
+			copyFromResources("data/AbilityEmbryos.json", dataFolder);
+
+		if(exit) System.exit(1);
 	}
 }

@@ -1,6 +1,6 @@
 package emu.grasscutter;
 
-public class Config {
+public final class Config {
 	public String DispatchServerIp = "127.0.0.1";
 	public int DispatchServerPort = 443;
 	public String DispatchServerKeystorePath = "./keystore.p12";
@@ -31,14 +31,14 @@ public class Config {
 		return ServerOptions;
 	}
 	
-	public class GameRates {
+	public static class GameRates {
 		public float ADVENTURE_EXP_RATE = 1.0f;
 		public float MORA_RATE = 1.0f;
 		public float DOMAIN_DROP_RATE = 1.0f;
 	}
 	
-	public class ServerOptions {
-		public int MaxEntityLimit = 1000; // Max entity limit per world. TODO Unenforced for now
+	public static class ServerOptions {
+		public int MaxEntityLimit = 1000; // Max entity limit per world. // TODO: Enforce later.
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
 		public String WelcomeMotd = "Welcome to Grasscutter emu";
 	}
