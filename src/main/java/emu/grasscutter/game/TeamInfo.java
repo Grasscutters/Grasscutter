@@ -60,13 +60,16 @@ public class TeamInfo {
 	}
 	
 	public void copyFrom(TeamInfo team, int maxTeamSize) {
-		// Clear
+		// Clone avatar ids from team to copy from
+		List<Integer> avatarIds = new ArrayList<>(team.getAvatars());
+		
+		// Clear current avatar list first
 		this.getAvatars().clear();
 		
 		// Copy from team
-		int len = Math.min(team.getAvatars().size(), maxTeamSize);
+		int len = Math.min(avatarIds.size(), maxTeamSize);
 		for (int i = 0; i < len; i++) {
-			int id = team.getAvatars().get(i);
+			int id = avatarIds.get(i);
 			this.getAvatars().add(id);
 		}
 	}
