@@ -15,6 +15,7 @@ A WIP server emulator for Genshin Impact 2.3-2.6
 ### Prerequisites
 * Java 8 JDK
 * Mongodb (recommended 4.0+)
+* Fiddler Classic
 
 ### Starting up the server (Assuming you are on Windows)
 1. Setup compile environment `gradlew.bat`
