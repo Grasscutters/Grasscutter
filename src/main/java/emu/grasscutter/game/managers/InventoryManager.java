@@ -660,6 +660,19 @@ public class InventoryManager {
 		player.getInventory().removeItem(feedItem, count);
 		
 		// Level up
+		upgradeAvatar(player, avatar, promoteData, expGain);
+	}
+	
+	public void upgradeAvatar(GenshinPlayer player, GenshinAvatar avatar, int expGain) {
+		AvatarPromoteData promoteData = GenshinData.getAvatarPromoteData(avatar.getAvatarData().getAvatarPromoteId(), avatar.getPromoteLevel());
+		if (promoteData == null) {
+			return;
+		}
+		
+		upgradeAvatar(player, avatar, promoteData, expGain);
+	}
+	
+	public void upgradeAvatar(GenshinPlayer player, GenshinAvatar avatar, AvatarPromoteData promoteData, int expGain) {
 		int maxLevel = promoteData.getUnlockMaxLevel();
 		int level = avatar.getLevel();
 		int oldLevel = level;
