@@ -1,8 +1,5 @@
 package emu.grasscutter.database;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.MongoCommandException;
@@ -18,12 +15,11 @@ import emu.grasscutter.game.avatar.GenshinAvatar;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.inventory.GenshinItem;
 
-public class DatabaseManager {
+public final class DatabaseManager {
 	private static MongoClient mongoClient;
-	private static Morphia morphia;
 	private static Datastore datastore;
 	
-	private static Class<?>[] mappedClasses = new Class<?>[] {
+	private static final Class<?>[] mappedClasses = new Class<?>[] {
 		DatabaseCounter.class, Account.class, GenshinPlayer.class, GenshinAvatar.class, GenshinItem.class, Friendship.class
 	};
     
@@ -38,15 +34,11 @@ public class DatabaseManager {
     public static MongoDatabase getDatabase() {
     	return getDatastore().getDatabase();
     }
-    
-    public static Connection getConnection() throws SQLException {
-        return null;
-    }
 	
 	public static void initialize() {
 		// Initialize
 		mongoClient = new MongoClient(new MongoClientURI(Grasscutter.getConfig().DatabaseUrl));
-		morphia = new Morphia();
+		Morphia morphia = new Morphia();
 		
 		// TODO Update when migrating to Morphia 2.0
 		morphia.getMapper().getOptions().setStoreEmpties(true);

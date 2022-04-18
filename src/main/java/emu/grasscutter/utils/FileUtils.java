@@ -1,21 +1,21 @@
 package emu.grasscutter.utils;
 
+import emu.grasscutter.Grasscutter;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class FileUtils {
-	
+public final class FileUtils {
 	public static void write(String dest, byte[] bytes) {
 		Path path = Paths.get(dest);
 		
 		try {
 			Files.write(path, bytes);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Grasscutter.getLogger().warn("Failed to write file: " + dest);
 		}
 	}
 	
@@ -27,8 +27,7 @@ public class FileUtils {
 		try {
 			return Files.readAllBytes(path);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Grasscutter.getLogger().warn("Failed to read file: " + path);
 		}
 		
 		return new byte[0];
