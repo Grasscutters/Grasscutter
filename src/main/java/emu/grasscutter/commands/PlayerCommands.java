@@ -184,13 +184,13 @@ public final class PlayerCommands {
             int target, avatarID, level = 1;
 
             if(args.size() < 2) {
-                CommandHandler.sendMessage(null, "Usage: give <player> <avatarId> [level]");
+                CommandHandler.sendMessage(null, "Usage: givechar <player> <avatarId> [level]");
                 return;
             }
             
             switch(args.size()) {
                 default:
-                CommandHandler.sendMessage(null, "Usage: give <player> <avatarId> [level]");
+                CommandHandler.sendMessage(null, "Usage: givechar <player> <avatarId> [level]");
                     return;
                 case 1:
                     try {
@@ -253,7 +253,7 @@ public final class PlayerCommands {
         @Override
         public void execute(List<String> args) {
             if(args.size() < 2) {
-                CommandHandler.sendMessage(null, "Usage: give <player> <itemId|itemName> [amount]");
+                CommandHandler.sendMessage(null, "Usage: givechar <player> <itemId|itemName> [amount]");
                 return;
             }
 
