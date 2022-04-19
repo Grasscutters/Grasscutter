@@ -176,6 +176,35 @@ public final class PlayerCommands {
             }
         }
     }
+
+    @Command(label = "givechar", aliases = { "givec" }, usage = "Usage: givechar [avatar id] [level]")
+    public static class GiveCharCommand implements CommandHandler {
+
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            int avatarID = Integer.parseInt(args.get(0));
+            int level = Integer.parseInt(args.get(1));
+
+            if(player == null) {
+                CommandHandler.sendMessage(null, "Player not found."); return;
+            }
+            
+            AvatarData avatarData = GenshinData.getAvatarDataMap().get(avatarID);
+            if(avatarData == null) {
+                CommandHandler.sendMessage(null, "Invalid avatar id."); return;
+            }
+
+            if (args.size() == 0) {
+                CommandHandler.sendMessage(player, "Usage: givechar [avatar id] [level]");
+                return;
+            }
+
+            GenshinAvatar avatar = new GenshinAvatar(avatarID);
+            avatar.setLevel(level);
+
+            player.addAvatar(avatar);
+        }
+    }
     
     @Command(label = "spawn", execution = Command.Execution.PLAYER, 
             usage = "Usage: spawn <entityId|entityName> [level] [amount]")
