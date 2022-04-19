@@ -17,6 +17,7 @@ import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
 import emu.grasscutter.utils.Position;
@@ -428,6 +429,29 @@ public final class PlayerCommands {
                 player.dropMessage("Health set to " + health + ".");
             } catch (NumberFormatException ignored) {
                 CommandHandler.sendMessage(null, "Invalid health value.");
+            }
+        }
+    }
+
+    @Command(label = "setworldlevel", aliases = {"setworldlvl"}, 
+            usage = "Usage: setworldlevel <level>", execution = Command.Execution.PLAYER)
+    public static class SetWorldLevelCommand implements CommandHandler {
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            if(args.size() < 1) {
+                CommandHandler.sendMessage(null, "Usage: setworldlevel <level>"); return;
+            }
+            
+            try {
+                int level = Integer.parseInt(args.get(0));
+
+                // Set in both world and player props
+                player.getWorld().setWorldLevel(level);
+                player.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level);
+
+                player.dropMessage("World level set to " + level + ".");
+            } catch (NumberFormatException ignored) {
+                CommandHandler.sendMessage(null, "Invalid world level.");
             }
         }
     }
