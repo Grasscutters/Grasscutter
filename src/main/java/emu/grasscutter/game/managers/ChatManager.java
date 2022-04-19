@@ -36,14 +36,14 @@ public class ChatManager {
 		}
 		
 		// Get target
-		GenshinPlayer target = getServer().getPlayerById(targetUid);
+		GenshinPlayer target = getServer().getPlayerByUid(targetUid);
 		
 		if (target == null) {
 			return;
 		}
 		
 		// Create chat packet
-		GenshinPacket packet = new PacketPrivateChatNotify(player.getId(), target.getId(), message);
+		GenshinPacket packet = new PacketPrivateChatNotify(player.getUid(), target.getUid(), message);
 		
 		player.sendPacket(packet);
 		target.sendPacket(packet);
@@ -51,14 +51,14 @@ public class ChatManager {
 	
 	public void sendPrivateMessage(GenshinPlayer player, int targetUid, int emote) {
 		// Get target
-		GenshinPlayer target = getServer().getPlayerById(targetUid);
+		GenshinPlayer target = getServer().getPlayerByUid(targetUid);
 		
 		if (target == null) {
 			return;
 		}
 		
 		// Create chat packet
-		GenshinPacket packet = new PacketPrivateChatNotify(player.getId(), target.getId(), emote);
+		GenshinPacket packet = new PacketPrivateChatNotify(player.getUid(), target.getUid(), emote);
 		
 		player.sendPacket(packet);
 		target.sendPacket(packet);

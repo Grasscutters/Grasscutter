@@ -14,7 +14,7 @@ public class PacketGetPlayerAskFriendListRsp extends GenshinPacket {
 		GetPlayerAskFriendListRsp.Builder proto = GetPlayerAskFriendListRsp.newBuilder();
 
 		for (Friendship friendship : player.getFriendsList().getPendingFriends().values()) {
-			if (friendship.getAskerId() == player.getId()) {
+			if (friendship.getAskerId() == player.getUid()) {
 				continue;
 			}
 			proto.addAskFriendList(friendship.toProto());

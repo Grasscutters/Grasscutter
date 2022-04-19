@@ -18,7 +18,7 @@ public class HandlerEvtDestroyGadgetNotify extends PacketHandler {
 			return;
 		}
 
-		session.getPlayer().getWorld().onPlayerDestroyGadget(notify.getEntityId());
+		session.getPlayer().getScene().onPlayerDestroyGadget(notify.getEntityId());
 	}
 
 }

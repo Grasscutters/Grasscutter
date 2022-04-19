@@ -12,7 +12,7 @@ public class PacketPlayerApplyEnterMpResultNotify extends GenshinPacket {
 		super(PacketOpcodes.PlayerApplyEnterMpResultNotify);
 
 		PlayerApplyEnterMpResultNotify proto = PlayerApplyEnterMpResultNotify.newBuilder()
-				.setTargetUid(target.getId())
+				.setTargetUid(target.getUid())
 				.setTargetNickname(target.getNickname())
 				.setIsAgreed(isAgreed)
 				.setReason(reason)

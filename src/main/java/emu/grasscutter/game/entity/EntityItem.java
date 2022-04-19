@@ -2,6 +2,7 @@ package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.GenshinScene;
 import emu.grasscutter.game.World;
 import emu.grasscutter.game.inventory.GenshinItem;
 import emu.grasscutter.game.props.EntityIdType;
@@ -30,12 +31,12 @@ public class EntityItem extends EntityGadget {
 	private final GenshinItem item;
 	private final long guid;
 	
-	public EntityItem(World world, GenshinPlayer player, ItemData itemData, Position pos, int count) {
-		super(world);
-		this.id = world.getNextEntityId(EntityIdType.GADGET);
+	public EntityItem(GenshinScene scene, GenshinPlayer player, ItemData itemData, Position pos, int count) {
+		super(scene);
+		this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
 		this.pos = new Position(pos);
 		this.rot = new Position();
-		this.guid = player.getNextGuid();
+		this.guid = player.getNextGenshinGuid();
 		this.item = new GenshinItem(itemData, count);
 	}
 	

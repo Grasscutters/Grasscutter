@@ -21,7 +21,7 @@ public class PacketPullRecentChatRsp extends GenshinPacket {
 			ChatInfo welcomeEmote = ChatInfo.newBuilder()
 				.setTime((int) (System.currentTimeMillis() / 1000))
 				.setUid(GenshinConstants.SERVER_CONSOLE_UID)
-				.setToUid(player.getId())
+				.setToUid(player.getUid())
 				.setIcon(serverOptions.WelcomeEmotes[Utils.randomRange(0, serverOptions.WelcomeEmotes.length - 1)])
 				.build();
 			
@@ -32,7 +32,7 @@ public class PacketPullRecentChatRsp extends GenshinPacket {
 			ChatInfo welcomeMotd = ChatInfo.newBuilder()
 				.setTime((int) (System.currentTimeMillis() / 1000))
 				.setUid(GenshinConstants.SERVER_CONSOLE_UID)
-				.setToUid(player.getId())
+				.setToUid(player.getUid())
 				.setText(Grasscutter.getConfig().getServerOptions().WelcomeMotd)
 				.build();
 			

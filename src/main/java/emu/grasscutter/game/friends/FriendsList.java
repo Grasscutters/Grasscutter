@@ -79,11 +79,11 @@ public class FriendsList {
 		}
 		
 		// Make sure asker cant do anything
-		if (myFriendship.getAskerId() == this.getPlayer().getId()) {
+		if (myFriendship.getAskerId() == this.getPlayer().getUid()) {
 			return;
 		}
 
-		GenshinPlayer target = getPlayer().getSession().getServer().forceGetPlayerById(targetUid);
+		GenshinPlayer target = getPlayer().getSession().getServer().getPlayerByUid(targetUid, true);
 		if (target == null) {
 			return; // Should never happen
 		}
@@ -91,7 +91,7 @@ public class FriendsList {
 		// Get target's friendship
 		Friendship theirFriendship = null;
 		if (target.isOnline()) {
-			theirFriendship = target.getFriendsList().getPendingFriendById(this.getPlayer().getId());
+			theirFriendship = target.getFriendsList().getPendingFriendById(this.getPlayer().getUid());
 		} else {
 			theirFriendship = DatabaseHelper.getReverseFriendship(myFriendship);
 		}
@@ -112,7 +112,7 @@ public class FriendsList {
 			this.addFriend(myFriendship);
 			
 			if (target.isOnline()) {
-				target.getFriendsList().getPendingFriends().remove(this.getPlayer().getId());
+				target.getFriendsList().getPendingFriends().remove(this.getPlayer().getUid());
 				target.getFriendsList().addFriend(theirFriendship);
 			}
 			
@@ -124,7 +124,7 @@ public class FriendsList {
 			myFriendship.delete();
 			// Delete from target uid
 			if (target.isOnline()) {
-				theirFriendship = target.getFriendsList().getPendingFriendById(this.getPlayer().getId());
+				theirFriendship = target.getFriendsList().getPendingFriendById(this.getPlayer().getUid());
 			}
 			theirFriendship.delete();
 		} 
@@ -146,7 +146,7 @@ public class FriendsList {
 		GenshinPlayer friend = myFriendship.getFriendProfile().getPlayer();
 		if (friend != null) {
 			// Friend online
-			theirFriendship = friend.getFriendsList().getFriendById(this.getPlayer().getId());
+			theirFriendship = friend.getFriendsList().getFriendById(this.getPlayer().getUid());
 			if (theirFriendship != null) {
 				friend.getFriendsList().getFriends().remove(theirFriendship.getFriendId());
 				theirFriendship.delete();
@@ -165,7 +165,7 @@ public class FriendsList {
 	}
 	
 	public synchronized void sendFriendRequest(int targetUid) {
-		GenshinPlayer target = getPlayer().getSession().getServer().forceGetPlayerById(targetUid);
+		GenshinPlayer target = getPlayer().getSession().getServer().getPlayerByUid(targetUid, true);
 
 		if (target == null || target == this.getPlayer()) {
 			return;
@@ -220,14 +220,14 @@ public class FriendsList {
 		friendship.setOwner(getPlayer());
 
 		// Check if friend is online
-		GenshinPlayer friend = getPlayer().getSession().getServer().getPlayerById(friendship.getFriendProfile().getId());
+		GenshinPlayer friend = getPlayer().getSession().getServer().getPlayerByUid(friendship.getFriendProfile().getId());
 		if (friend != null) {
 			// Set friend to online mode
 			friendship.setFriendProfile(friend);
 			
 			// Update our status on friend's client if theyre online
 			if (friend.getFriendsList().hasLoaded()) {
-				Friendship theirFriendship = friend.getFriendsList().getFriendshipById(getPlayer().getId());
+				Friendship theirFriendship = friend.getFriendsList().getFriendshipById(getPlayer().getUid());
 				if (theirFriendship != null) {
 					// Update friend profile
 					theirFriendship.setFriendProfile(getPlayer());

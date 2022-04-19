@@ -15,7 +15,7 @@ public class HandlerEntityAiSyncNotify extends PacketHandler {
 		EntityAiSyncNotify notify = EntityAiSyncNotify.parseFrom(payload);
 		
 		if (notify.getLocalAvatarAlertedMonsterListCount() > 0) {
-			session.getPlayer().getWorld().broadcastPacket(new PacketEntityAiSyncNotify(notify));
+			session.getPlayer().getScene().broadcastPacket(new PacketEntityAiSyncNotify(notify));
 		}
 	}
 

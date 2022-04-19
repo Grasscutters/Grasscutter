@@ -43,6 +43,13 @@ public final class Config {
 	}
 	
 	public static class ServerOptions {
+		public int InventoryLimitWeapon = 2000;
+		public int InventoryLimitRelic = 2000;
+		public int InventoryLimitMaterial = 2000;
+		public int InventoryLimitFurniture = 2000;
+		public int InventoryLimitAll = 30000;
+		public int MaxAvatarsInTeam = 4;
+		public int MaxAvatarsInTeamMultiplayer = 4;
 		public int MaxEntityLimit = 1000; // Max entity limit per world. // TODO: Enforce later.
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
 		public String WelcomeMotd = "Welcome to Grasscutter emu";
