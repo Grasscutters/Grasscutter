@@ -8,6 +8,7 @@ import emu.grasscutter.GenshinConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.commands.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.Account;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.gacha.GachaManager;
@@ -136,6 +137,14 @@ public final class GameServer extends MihoyoKcpServer {
 		}
 		
 		return player.getSocialDetail();
+	}
+	
+	public Account getAccountByName(String username) {
+		Optional<GenshinPlayer> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getUsername().equals(username)).findFirst();
+		if (playerOpt.get() != null) {
+			return playerOpt.get().getAccount();
+		}
+		return DatabaseHelper.getAccountByName(username);
 	}
 	
 	public void onTick() throws Exception {
