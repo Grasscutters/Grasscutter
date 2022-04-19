@@ -152,6 +152,7 @@ public class World implements Iterable<GenshinPlayer> {
 		// Copy main team to mp team
 		if (this.isMultiplayer()) {
 			player.getTeamManager().getMpTeam().copyFrom(player.getTeamManager().getCurrentSinglePlayerTeamInfo(), player.getTeamManager().getMaxTeamSize());
+			player.getTeamManager().setCurrentCharacterIndex(0);
 		}
 		
 		// Add to scene

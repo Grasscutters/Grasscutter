@@ -158,7 +158,7 @@ public class TeamManager {
 	}
 	
 	public boolean isSpawned() {
-		return getPlayer().getWorld() != null && getPlayer().getScene().getEntities().containsKey(getCurrentAvatarEntity().getId());
+		return getPlayer().getScene() != null && getPlayer().getScene().getEntities().containsKey(getCurrentAvatarEntity().getId());
 	}
 	
 	public int getMaxTeamSize() {
@@ -256,7 +256,7 @@ public class TeamManager {
 		updateTeamResonances();
 		
 		// Packets
-		getPlayer().getScene().broadcastPacket(new PacketSceneTeamUpdateNotify(getPlayer()));
+		getPlayer().getWorld().broadcastPacket(new PacketSceneTeamUpdateNotify(getPlayer()));
 		
 		// Run callback
 		if (responsePacket != null) {
