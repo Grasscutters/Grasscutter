@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GenshinData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.AvatarData;
+import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.World;
@@ -254,6 +255,9 @@ public final class PlayerCommands {
             GenshinAvatar avatar = new GenshinAvatar(avatarID);
             avatar.setLevel(level);
             avatar.setPromoteLevel(ascension);
+            
+            // This will handle stats and talents
+            avatar.recalcStats();
     
             targetPlayer.addAvatar(avatar);
         }
@@ -291,6 +295,9 @@ public final class PlayerCommands {
                 GenshinAvatar avatar = new GenshinAvatar(avatarID);
                 avatar.setLevel(level);
                 avatar.setPromoteLevel(ascension);
+
+                // This will handle stats and talents
+                avatar.recalcStats();
         
                 targetPlayer.addAvatar(avatar);
             } catch (NumberFormatException ignored) {
