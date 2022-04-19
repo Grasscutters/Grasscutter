@@ -95,14 +95,14 @@ public class MultiplayerManager {
 			hostPlayer.sendPacket(new PacketPlayerEnterSceneNotify(hostPlayer, hostPlayer, EnterType.EnterSelf, EnterReason.HostFromSingleToMp, hostPlayer.getScene().getId(), hostPlayer.getPos()));
 		}
 		
-		// Make requester join
-		hostPlayer.getWorld().addPlayer(requester);
-		
 		// Set scene pos and id of requester to the host player's
 		requester.getPos().set(hostPlayer.getPos());
 		requester.getRotation().set(hostPlayer.getRotation());
 		requester.setSceneId(hostPlayer.getSceneId());
 		
+		// Make requester join
+		hostPlayer.getWorld().addPlayer(requester);
+
 		// Packet
 		requester.sendPacket(new PacketPlayerEnterSceneNotify(requester, hostPlayer, EnterType.EnterOther, EnterReason.TeamJoin, hostPlayer.getScene().getId(), hostPlayer.getPos()));
 	}
