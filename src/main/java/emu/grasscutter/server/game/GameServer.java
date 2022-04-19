@@ -110,12 +110,6 @@ public final class GameServer extends MihoyoKcpServer {
 		return this.getPlayers().get(id);
 	}
 	
-	public GenshinPlayer getPlayerByUid(int uid) {
-		return this.getPlayers().values().stream()
-				.filter(player -> player.getAccount().getPlayerId() == uid)
-				.findFirst().orElse(this.getPlayerById(uid));
-	}
-	
 	public GenshinPlayer forceGetPlayerById(int id) {
 		// Console check
 		if (id == GenshinConstants.SERVER_CONSOLE_UID) {

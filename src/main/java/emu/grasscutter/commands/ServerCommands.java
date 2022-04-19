@@ -43,7 +43,7 @@ public final class ServerCommands {
                 int target = Integer.parseInt(args.get(0));
                 String message = String.join(" ", args.subList(1, args.size()));
 
-                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
                 if(targetPlayer == null) {
                     CommandHandler.sendMessage(null, "Player not found."); return;
                 }
@@ -65,7 +65,7 @@ public final class ServerCommands {
                 int target = Integer.parseInt(args.get(0));
                 String message = String.join(" ", args.subList(1, args.size()));
 
-                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
                 if(targetPlayer == null) {
                     CommandHandler.sendMessage(player, "Player not found."); return;
                 }
