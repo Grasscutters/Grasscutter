@@ -4,6 +4,7 @@ import dev.morphia.annotations.Collation;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import dev.morphia.annotations.Indexed;
+import dev.morphia.annotations.PreLoad;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
@@ -11,6 +12,8 @@ import dev.morphia.annotations.IndexOptions;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.mongodb.DBObject;
 
 @Entity(value = "accounts", noClassnameStored = true)
 public class Account {
@@ -112,6 +115,14 @@ public class Account {
 		this.token = Utils.bytesToHex(Crypto.createSessionKey(32));
 		this.save();
 		return this.token;
+	}
+	
+	@PreLoad
+	public void onLoad(DBObject dbObj) {
+		// Grant the superuser permissions to accounts created before the permissions update
+		if (!dbObj.containsField("permissions")) {
+			this.addPermission("*");
+		}
 	}
 	
 	public void save() {
