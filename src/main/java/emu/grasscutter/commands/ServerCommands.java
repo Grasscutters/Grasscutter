@@ -138,7 +138,7 @@ public final class ServerCommands {
             String username = args.get(1);
             String permission = args.get(2);
             
-            Account account = DatabaseHelper.getAccountByName(username);
+            Account account = Grasscutter.getGameServer().getAccountByName(username);
             if(account == null) {
                 CommandHandler.sendMessage(null, "Account not found."); return;
             }
@@ -146,18 +146,20 @@ public final class ServerCommands {
             switch(action) {
                 default:
                     CommandHandler.sendMessage(null, "Usage: permission <add|remove> <username> <permission>");
-                    return;
+                    break;
                 case "add":
                     if(account.addPermission(permission)) {
-                        CommandHandler.sendMessage(null, "Permission added."); return;
+                        CommandHandler.sendMessage(null, "Permission added.");
                     } else CommandHandler.sendMessage(null, "They already have this permission!");
-                    return;
+                    break;
                 case "remove":
                     if(account.removePermission(permission)) {
-                        CommandHandler.sendMessage(null, "Permission removed."); return;
+                        CommandHandler.sendMessage(null, "Permission removed.");
                     } else CommandHandler.sendMessage(null, "They don't have this permission!");
-                    return;
+                    break;
             }
+            
+            account.save();
         }
     }
     
