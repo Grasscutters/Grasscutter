@@ -139,22 +139,28 @@ public final class DispatchServer {
 	}
 
 	public void start() throws Exception {
-		HttpsServer server = HttpsServer.create(getAddress(), 0);
-		SSLContext sslContext = SSLContext.getInstance("TLS");
-		
-		try (FileInputStream fis = new FileInputStream(Grasscutter.getConfig().DispatchServerKeystorePath)) {
-			char[] keystorePassword = Grasscutter.getConfig().DispatchServerKeystorePassword.toCharArray();
-			KeyStore ks = KeyStore.getInstance("PKCS12");
-			ks.load(fis, keystorePassword);
-			KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
-			kmf.init(ks, keystorePassword);
-			
-			sslContext.init(kmf.getKeyManagers(), null, null);
-			
-			server.setHttpsConfigurator(new HttpsConfigurator(sslContext));
-		} catch (Exception e) {
-			Grasscutter.getLogger().error("No SSL cert found!");
-			return;
+		HttpServer server;
+		if(Grasscutter.getConfig().UseSSL) {
+			HttpsServer httpsServer;
+			httpsServer = HttpsServer.create(getAddress(), 0);
+			SSLContext sslContext = SSLContext.getInstance("TLS");
+			try (FileInputStream fis = new FileInputStream(Grasscutter.getConfig().DispatchServerKeystorePath)) {
+				char[] keystorePassword = Grasscutter.getConfig().DispatchServerKeystorePassword.toCharArray();
+				KeyStore ks = KeyStore.getInstance("PKCS12");
+				ks.load(fis, keystorePassword);
+				KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
+				kmf.init(ks, keystorePassword);
+				
+				sslContext.init(kmf.getKeyManagers(), null, null);
+				
+				httpsServer.setHttpsConfigurator(new HttpsConfigurator(sslContext));
+				server = httpsServer;
+			} catch (Exception e) {
+				Grasscutter.getLogger().error("No SSL cert found!");
+				return;
+			}
+		} else {
+			server = HttpServer.create(getAddress(), 0);
 		}
 		
 		server.createContext("/", t -> {
@@ -396,7 +402,7 @@ public final class DispatchServer {
 		overseaLogServer.start();
 		Grasscutter.getLogger().info("Log server (overseauspider) started on port " + 8888);
 		
-		HttpServer uploadLogServer = HttpServer.create(new InetSocketAddress(Grasscutter.getConfig().DispatchServerIp, 80), 0);
+		HttpServer uploadLogServer = HttpServer.create(new InetSocketAddress(Grasscutter.getConfig().DispatchServerIp, Grasscutter.getConfig().UploadLogPort), 0);
 		uploadLogServer.createContext( // log-upload-os.mihoyo.com
 				"/crash/dataUpload", 
 				new DispatchHttpJsonHandler("{\"code\":0}")
@@ -413,7 +419,7 @@ public final class DispatchServer {
 			os.close();
 		});
 		uploadLogServer.start();
-		Grasscutter.getLogger().info("Log server (log-upload-os) started on port " + 80);
+		Grasscutter.getLogger().info("Log server (log-upload-os) started on port " + Grasscutter.getConfig().UploadLogPort);
 	}
 	
 	private Map<String, String> parseQueryString(String qs) {
