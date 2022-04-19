@@ -59,6 +59,7 @@ public class PacketPlayerEnterSceneNotify extends GenshinPacket {
 				.setEnterReason(reason.getValue())
 				.addSceneTagIdList(102)
 				.addSceneTagIdList(107)
+				.addSceneTagIdList(109)
 				.addSceneTagIdList(113)
 				.addSceneTagIdList(117)
 				.setUnk1(1)
