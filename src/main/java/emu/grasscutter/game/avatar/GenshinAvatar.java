@@ -510,6 +510,21 @@ public class GenshinAvatar {
 			}
 		}
 		
+		// Add proud skills and unlock them if needed
+		AvatarSkillDepotData skillDepot = GenshinData.getAvatarSkillDepotDataMap().get(this.getSkillDepotId());
+		this.getProudSkillList().clear();
+		for (InherentProudSkillOpens openData : skillDepot.getInherentProudSkillOpens()) {
+			if (openData.getProudSkillGroupId() == 0) {
+				continue;
+			}
+			if (openData.getNeedAvatarPromoteLevel() <= this.getPromoteLevel()) {
+				int proudSkillId = (openData.getProudSkillGroupId() * 100) + 1;
+				if (GenshinData.getProudSkillDataMap().containsKey(proudSkillId)) {
+					this.getProudSkillList().add(proudSkillId);
+				}
+			}
+		}
+
 		// Proud skills
 		for (int proudSkillId : this.getProudSkillList()) {
 			ProudSkillData proudSkillData = GenshinData.getProudSkillDataMap().get(proudSkillId);
