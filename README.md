@@ -27,7 +27,7 @@ A WIP server emulator for Genshin Impact 2.3-2.6
 
 ### Connecting with the client
 ½. Create an account using command below
-1. Run a proxy daemon:
+1. Run a proxy daemon: (choose either one)
 	- mitmdump: `mitmdump -s proxy.py --ssl-insecure`
 	- Fiddler Classic: Run Fiddler Classic, turn on `Decrypt https traffic` in setting and change the default port there (Tools -> Options -> Connections) to anything other than `8888`, and load [this script](https://github.lunatic.moe/fiddlerscript).
 	- [Hosts file](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
@@ -38,7 +38,8 @@ A WIP server emulator for Genshin Impact 2.3-2.6
 
 * or you can use `run.cmd` to start Server & Proxy daemon with one click
 
-### Grasscutter server console commands
+# Grasscutter commands
+### Server console commands
 
 `account create [username] {playerid}` - Creates an account with the specified username and the in-game uid for that account. The playerid parameter is optional and will be auto generated if not set.
 
@@ -63,7 +64,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 `!clearartifacts` - Deletes all unequipped and unlocked level 0 artifacts, **including yellow rarity ones** from your inventory
 
-### Quick Troubleshooting
+# Quick Troubleshooting
 * If compiling wasnt successful, please check your JDK installation (must be JDK 8 and validated JDK's bin PATH variable)
 * My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is the issue, if using Fiddler make sure it running on another port except 8888
 * Startup sequence: Mongodb > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Client
