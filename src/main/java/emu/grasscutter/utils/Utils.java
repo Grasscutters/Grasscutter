@@ -80,6 +80,15 @@ public final class Utils {
 	}
 
 	/**
+	 * Creates a string with the path to a file.
+	 * @param path The path to the file.
+	 * @return A path using the operating system's file separator.
+	 */
+	public static String toFilePath(String path) {
+		return path.replace("/", File.separator);
+	}
+
+	/**
 	 * Checks if a file exists on the file system.
 	 * @param path The path to the file.
 	 * @return True if the file exists, false otherwise.
