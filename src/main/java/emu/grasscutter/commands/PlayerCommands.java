@@ -180,7 +180,8 @@ public final class PlayerCommands {
         }
     }
 
-    @Command(label = "givechar", aliases = { "givec" }, usage = "Usage: givechar <playerId> <avatarId> [level]")
+    @Command(label = "givechar", aliases = { "givec" }, usage = "givechar <playerId> <avatarId> [level]",
+            description = "Gives the player a specified character", permission = "player.givechar")
     public static class GiveCharCommand implements CommandHandler {
         @Override public void execute(GenshinPlayer player, List<String> args) {
             int target, avatarID, level = 1, ascension = 1;
@@ -435,8 +436,9 @@ public final class PlayerCommands {
         }
     }
 
-    @Command(label = "setworldlevel", aliases = {"setworldlvl"}, 
-            usage = "Usage: setworldlevel <level>", execution = Command.Execution.PLAYER)
+    @Command(label = "setworldlevel", aliases = {"setworldlvl"}, usage = "setworldlevel <level>",
+            description = "Sets your world level (Relog to see proper effects)", permission = "player.setworldlevel",
+            execution = Command.Execution.PLAYER)
     public static class SetWorldLevelCommand implements CommandHandler {
         @Override
         public void execute(GenshinPlayer player, List<String> args) {
