@@ -40,16 +40,26 @@ public final class ServerCommands {
     public static class KickCommand implements CommandHandler {
         @Override
         public void execute(List<String> args) {
+            this.execute(null, args);
+        }
+
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
             int target = Integer.parseInt(args.get(0));
             String message = String.join(" ", args.subList(1, args.size()));
 
-            GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+            GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
             if(targetPlayer == null) {
-                CommandHandler.sendMessage(null, "Player not found."); return;
+                CommandHandler.sendMessage(player, "Player not found.");
+                return;
+            }
+            if(player != null) {
+                CommandHandler.sendMessage(null, String.format("Player [%s:%s] has kicked player [%s:%s]", player.getAccount().getPlayerId(), player.getAccount().getUsername(), target, targetPlayer.getAccount().getUsername()));
             }
 
-            targetPlayer.sendPacket(new PacketSceneKickPlayerRsp(targetPlayer.getId()));
-            //targetPlayer.getSession().close();
+                CommandHandler.sendMessage(player, String.format("Kicking player [%s:%s]", target, targetPlayer.getAccount().getUsername()));
+
+            targetPlayer.getSession().close();
         }
     }
 
