@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface CommandHandler {
     /* Invoked on player execution. */
-    void execute(GenshinPlayer player, List<String> args);
+    default void execute(GenshinPlayer player, List<String> args) { }
     /* Invoked on server execution. */
-    void execute(List<String> args);
+    default void execute(List<String> args) { }
     
     /*
      * Utilities.
