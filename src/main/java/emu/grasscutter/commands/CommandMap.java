@@ -21,7 +21,15 @@ public final class CommandMap {
      * @return Instance chaining.
      */
     public CommandMap registerCommand(String label, CommandHandler command) {
-        this.commands.put(label, command); return this;
+        Grasscutter.getLogger().debug("Registered command: " + label);
+        
+        Command annotation = command.getClass().getAnnotation(Command.class);
+        if(annotation.aliases().length > 0) {
+            for (String alias : annotation.aliases())
+                this.commands.put(alias, command);
+        } this.commands.put(label, command);
+        
+        return this;
     }
 
     /**
@@ -30,7 +38,17 @@ public final class CommandMap {
      * @return Instance chaining.
      */
     public CommandMap unregisterCommand(String label) {
-        this.commands.remove(label); return this;
+        Grasscutter.getLogger().debug("Unregistered command: " + label);
+        CommandHandler handler = this.commands.get(label);
+        if(handler == null) return this;
+        
+        Command annotation = handler.getClass().getAnnotation(Command.class);
+        if(annotation.aliases().length > 0) {
+            for (String alias : annotation.aliases())
+                this.commands.remove(alias);
+        } this.commands.remove(label); 
+        
+        return this;
     }
 
     /**
@@ -39,13 +57,18 @@ public final class CommandMap {
      * @param rawMessage The messaged used to invoke the command.
      */
     public void invoke(GenshinPlayer player, String rawMessage) {
+        rawMessage = rawMessage.trim();
+        if(rawMessage.length() == 0) {
+            CommandHandler.sendMessage(player, "No command specified.");
+        }
+        
         // Remove prefix if present.
         if(!Character.isLetter(rawMessage.charAt(0)))
             rawMessage = rawMessage.substring(1);
         
         // Parse message.
         String[] split = rawMessage.split(" ");
-        List<String> args = Arrays.asList(split);
+        List<String> args = new LinkedList<>(Arrays.asList(split));
         String label = args.remove(0);
         
         // Get command handler.
@@ -73,15 +96,17 @@ public final class CommandMap {
      */
     private void scan() {
         Reflections reflector = Grasscutter.reflector;
-        Set<?> classes = reflector.getTypesAnnotatedWith(Command.class);
+        Set<Class<?>> classes = reflector.getTypesAnnotatedWith(Command.class);
         classes.forEach(annotated -> {
             try {
-                Class<?> cls = annotated.getClass();
-                Command cmdData = cls.getAnnotation(Command.class);
-                Object object = cls.getDeclaredConstructors()[0].newInstance();
+                Command cmdData = annotated.getAnnotation(Command.class);
+                Object object = annotated.newInstance();
                 if (object instanceof CommandHandler)
                     this.registerCommand(cmdData.label(), (CommandHandler) object);
-            } catch (Exception ignored) { }
+                else Grasscutter.getLogger().error("Class " + annotated.getName() + " is not a CommandHandler!");
+            } catch (Exception exception) {
+                Grasscutter.getLogger().error("Failed to register command handler for " + annotated.getSimpleName(), exception);
+            }
         });
     }
 }

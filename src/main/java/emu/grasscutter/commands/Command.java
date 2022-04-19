@@ -7,7 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 public @interface Command {
 	String label() default "";
 	
-	String[] aliases() default "";
+	String[] aliases() default {""};
 	
 	int gmLevel() default 1;
 	
