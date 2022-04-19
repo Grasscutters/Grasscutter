@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message SetPlayerNameRsp {
-	int32 retcode = 1;
-	string nickName = 2;
-}

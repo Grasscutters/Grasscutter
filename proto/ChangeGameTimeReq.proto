@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message ChangeGameTimeReq {
-	uint32 gameTime = 1;
-	bool isForceSet = 2;
-}

@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message UnionCmd {
-	uint32 messageId = 1;
-	bytes body = 2;
-}

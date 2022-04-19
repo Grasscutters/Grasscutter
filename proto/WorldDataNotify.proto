@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-import "PropValue.proto";
-
-message WorldDataNotify {
-	map<uint32, PropValue> worldPropMap = 1;
-}

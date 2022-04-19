@@ -17,39 +17,24 @@
 		"gachaType": 301,
 		"scheduleId": 903,
 		"bannerType": "EVENT",
-		"prefabPath": "GachaShowPanel_A076",
-		"previewPrefabPath": "UI_Tab_GachaShowPanel_A076",
-		"titlePath": "UI_GACHA_SHOW_PANEL_A076_TITLE",
+		"prefabPath": "GachaShowPanel_A079",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A079",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A079_TITLE",
 		"costItem": 223,
 		"beginTime": 0,
 		"endTime": 1924992000,
 		"sortId": 9998,
 		"maxItemType": 1,
-		"rateUpItems1": [1066],
-		"rateUpItems2": [1023, 1043, 1064]
-	},
-	{
-		"gachaType": 400,
-		"scheduleId": 913,
-		"bannerType": "EVENT",
-		"prefabPath": "GachaShowPanel_A077",
-		"previewPrefabPath": "UI_Tab_GachaShowPanel_A077",
-		"titlePath": "UI_Tab_GachaShowPanel_A077",
-		"costItem": 223,
-		"beginTime": 0,
-		"endTime": 1924992000,
-		"sortId": 9998,
-		"maxItemType": 1,
-		"rateUpItems1": [1022],
-		"rateUpItems2": [1023, 1043, 1064]
+		"rateUpItems1": [1002],
+		"rateUpItems2": [1053, 1020, 1045]
 	},
 	{
 		"gachaType": 302,
-		"scheduleId": 923,
+		"scheduleId": 913,
 		"bannerType": "WEAPON",
-		"prefabPath": "GachaShowPanel_A078",
-		"previewPrefabPath": "UI_Tab_GachaShowPanel_A078",
-		"titlePath": "UI_GACHA_SHOW_PANEL_A078_TITLE",
+		"prefabPath": "GachaShowPanel_A080",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A080",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A080_TITLE",
 		"costItem": 223,
 		"beginTime": 0,
 		"endTime": 1924992000,
@@ -58,7 +43,7 @@
 		"eventChance": 75,
 		"softPity": 80,
 		"hardPity": 80,
-		"rateUpItems1": [11510, 15503],
-		"rateUpItems2": [11402, 12403, 13401, 14402, 15405]
+		"rateUpItems1": [11509, 12504],
+		"rateUpItems2": [11401, 12402, 13407, 14401, 15401]
 	}
 ]

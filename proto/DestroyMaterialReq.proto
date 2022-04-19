@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-import "MaterialInfo.proto";
-
-message DestroyMaterialReq {
-	repeated MaterialInfo materialList = 1;
-}
