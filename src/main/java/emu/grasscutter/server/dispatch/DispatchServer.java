@@ -389,6 +389,10 @@ public final class DispatchServer {
 				"/sdk/upload", 
 				new DispatchHttpJsonHandler("{\"code\":0}")
 		);
+		server.createContext( // /perf/config/verify?device_id=xxx&platform=x&name=xxx
+				"/perf/config/verify", 
+				new DispatchHttpJsonHandler("{\"code\":0}")
+		);
 		// Start server
 		server.start();
 		Grasscutter.getLogger().info("Dispatch server started on port " + getAddress().getPort());
