@@ -117,6 +117,7 @@ public class GenshinScene {
 	}
 	
 	public void removePlayer(GenshinPlayer player) {
+		// Remove player from scene
 		getPlayers().remove(player);
 		player.setScene(null);
 		
@@ -126,6 +127,11 @@ public class GenshinScene {
 		// Remove player gadgets
 		for (EntityGadget gadget : player.getTeamManager().getGadgets()) {
 			this.removeEntity(gadget);
+		}
+		
+		// Deregister scene if not in use
+		if (this.getEntities().size() <= 0) {
+			this.getWorld().deregisterScene(this);
 		}
 	}
 	
