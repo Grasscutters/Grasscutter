@@ -105,6 +105,10 @@ public class Account {
 		if(this.permissions.contains(permission)) return false;
 		this.permissions.add(permission); return true;
 	}
+
+	public boolean hasPermission(String permission) {
+		return this.permissions.contains(permission) || this.permissions.contains("*") ? true : false;
+	}
 	
 	public boolean removePermission(String permission) {
 		return this.permissions.remove(permission);
