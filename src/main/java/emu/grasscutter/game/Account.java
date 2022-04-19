@@ -9,6 +9,8 @@ import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
 import dev.morphia.annotations.IndexOptions;
 
+import java.util.List;
+
 @Entity(value = "accounts", noClassnameStored = true)
 public class Account {
 	@Id private String id;
@@ -23,6 +25,7 @@ public class Account {
 	
 	private String token;
 	private String sessionKey; // Session token for dispatch server
+	private List<String> permissions;
 
 	@Deprecated
 	public Account() {}
@@ -83,6 +86,22 @@ public class Account {
 		this.sessionKey = Utils.bytesToHex(Crypto.createSessionKey(32));
 		this.save();
 		return this.sessionKey;
+	}
+
+	/**
+	 * The collection of a player's permissions.
+	 */
+	public List<String> getPermissions() {
+		return this.permissions;
+	}
+	
+	public boolean addPermission(String permission) {
+		if(this.permissions.contains(permission)) return false;
+		this.permissions.add(permission); return true;
+	}
+	
+	public boolean removePermission(String permission) {
+		return this.permissions.remove(permission);
 	}
 	
 	// TODO make unique

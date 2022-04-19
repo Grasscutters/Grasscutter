@@ -1,171 +1,212 @@
 package emu.grasscutter.commands;
 
-import java.lang.reflect.Modifier;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedList;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.Account;
+import emu.grasscutter.game.GenshinPlayer;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.GenshinData;
-import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.inventory.GenshinItem;
-import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.Utils;
+/**
+ * A container for server-related commands.
+ */
+public final class ServerCommands {
+    @Command(label = "reload", usage = "Usage: reload")
+    public static class ReloadCommand implements CommandHandler {
 
-public class ServerCommands {
-	private static HashMap<String, ServerCommand> list = new HashMap<>();
-	
-	static {
-		try {
-			// Look for classes
-			for (Class<?> cls : ServerCommands.class.getDeclaredClasses()) {
-				// Get non abstract classes
-			    if (!Modifier.isAbstract(cls.getModifiers())) {
-			    	String commandName = cls.getSimpleName().toLowerCase();
-			    	list.put(commandName, (ServerCommand) cls.newInstance());
-			    }
-		
-			}
-		} catch (Exception e) {
-			
-		}
-	}
+        @Override
+        public void execute(List<String> args) {
+            Grasscutter.getLogger().info("Reloading config.");
+            Grasscutter.loadConfig();
+            Grasscutter.getDispatchServer().loadQueries();
+            Grasscutter.getLogger().info("Reload complete.");
+        }
 
-	public static void handle(String msg) {
-		String[] split = msg.split(" ");
-		
-		// End if invalid
-		if (split.length == 0) {
-			return;
-		}
-		
-		//
-		String first = split[0].toLowerCase();
-		ServerCommand c = ServerCommands.list.get(first);
-		
-		if (c != null) {
-			// Execute
-			int len = Math.min(first.length() + 1, msg.length());
-			c.execute(msg.substring(len));
-		}
-	}
-	
-	public static abstract class ServerCommand {
-		public abstract void execute(String raw);
-	}
-	
-	// ================ Commands ================
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            this.execute(args);
+        }
+    }
+    
+    @Command(label = "sendmessage", aliases = {"sendmsg", "msg"}, 
+            usage = "Usage: sendmessage <player> <message>")
+    public static class SendMessageCommand implements CommandHandler {
 
-	public static class Reload extends ServerCommand {
-		@Override
-		public void execute(String raw) {
-			Grasscutter.getLogger().info("Reloading config.");
-			Grasscutter.loadConfig();
-			Grasscutter.getDispatchServer().loadQueries();
-			Grasscutter.getLogger().info("Reload complete.");
-		}
-	}
+        @Override
+        public void execute(List<String> args) {
+            if(args.size() < 2) {
+                CommandHandler.sendMessage(null, "Usage: sendmessage <player> <message>"); return;
+            }
+            
+            try {
+                int target = Integer.parseInt(args.get(0));
+                String message = String.join(" ", args.subList(1, args.size()));
 
-	public static class sendMsg extends ServerCommand {
-		@Override
-		public void execute(String raw) {
-			List<String> split = Arrays.asList(raw.split(" "));
+                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+                if(targetPlayer == null) {
+                    CommandHandler.sendMessage(null, "Player not found."); return;
+                }
+                
+                targetPlayer.dropMessage(message);
+                CommandHandler.sendMessage(null, "Message sent.");
+            } catch (NumberFormatException ignored) {
+                CommandHandler.sendMessage(null, "Invalid player ID.");
+            }
+        }
 
-			if (split.size() < 2) {
-				Grasscutter.getLogger().error("Invalid amount of args");
-				return;
-			}
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            if(args.size() < 2) {
+                CommandHandler.sendMessage(player, "Usage: sendmessage <player> <message>"); return;
+            }
 
-			String playerID = split.get(0);
-			String message = split.stream().skip(1).collect(Collectors.joining(" "));
+            try {
+                int target = Integer.parseInt(args.get(0));
+                String message = String.join(" ", args.subList(1, args.size()));
 
+                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+                if(targetPlayer == null) {
+                    CommandHandler.sendMessage(player, "Player not found."); return;
+                }
 
-			emu.grasscutter.game.Account account = DatabaseHelper.getAccountByPlayerId(Integer.parseInt(playerID));
-			if (account != null) {
-				GenshinPlayer player = Grasscutter.getGameServer().getPlayerById(Integer.parseInt(playerID));
-				if(player != null) {
-					player.dropMessage(message);
-					Grasscutter.getLogger().info(String.format("Successfully sent message to %s: %s", playerID, message));
-				} else {
-					Grasscutter.getLogger().error("Player not online");
-				}
-			} else {
-				Grasscutter.getLogger().error(String.format("Player %s does not exist", playerID));
-			}
-		}
-	}
-	
-	public static class Account extends ServerCommand {
-		@Override
-		public void execute(String raw) {
-			String[] split = raw.split(" ");
-			
-			if (split.length < 2) {
-				Grasscutter.getLogger().error("Invalid amount of args");
-				return;
-			}		
-			
-			String command = split[0].toLowerCase();
-			String username = split[1];
+                targetPlayer.sendMessage(player, message);
+                CommandHandler.sendMessage(player, "Message sent.");
+            } catch (NumberFormatException ignored) {
+                CommandHandler.sendMessage(player, "Invalid player ID.");
+            }
+        }
+    }
+    
+    @Command(label = "account", 
+            usage = "Usage: account <create|delete> <username> [uid]", 
+            execution = Command.Execution.CONSOLE)
+    public static class AccountCommand implements CommandHandler {
 
-			switch (command) {
-				case "create":
-					if (split.length < 2) {
-						Grasscutter.getLogger().error("Invalid amount of args");
-						return;
-					}		
-					
-					int reservedId = 0;		
-					try {
-						reservedId = Integer.parseInt(split[2]);
-					} catch (Exception e) {
-						reservedId = 0;
-					}
-					
-					emu.grasscutter.game.Account account = DatabaseHelper.createAccountWithId(username, reservedId);
-					if (account != null) {
-						Grasscutter.getLogger().info("Account created" + (reservedId > 0 ? " with an id of " + reservedId : ""));
-					} else {
-						Grasscutter.getLogger().error("Account already exists");
-					}
-					break;
-				case "delete":
-					boolean success = DatabaseHelper.deleteAccount(username);
-					
-					if (success) {
-						Grasscutter.getLogger().info("Account deleted");
-					}
-					break;
-				/*
-				case "setpw":
-				case "setpass":
-				case "setpassword":
-					if (split.length < 3) {
-						Grasscutter.getLogger().error("Invalid amount of args");
-						return;
-					}		
-					
-					account = DatabaseHelper.getAccountByName(username);
-					
-					if (account == null) {
-						Grasscutter.getLogger().error("No account found!");
-						return;
-					}
-					
-					token = split[2];
-					token = PasswordHelper.hashPassword(token);
-					
-					account.setPassword(token);
-					DatabaseHelper.saveAccount(account);
-					
-					Grasscutter.getLogger().info("Password set");
-					break;
-				*/
-			}
-		}
-	}
+        @Override
+        public void execute(List<String> args) {
+            if(args.size() < 2) {
+                CommandHandler.sendMessage(null, "Usage: account <create|delete> <username> [uid]"); return;
+            }
+            
+            String action = args.get(0);
+            String username = args.get(1);
+            
+            switch(action) {
+                default:
+                    CommandHandler.sendMessage(null, "Usage: account <create|delete> <username> [uid]");
+                    return;
+                case "create":
+                    int uid = 0;
+                    if(args.size() > 2) {
+                        try {
+                            uid = Integer.parseInt(args.get(2));
+                        } catch (NumberFormatException ignored) {
+                            CommandHandler.sendMessage(null, "Invalid UID."); return;
+                        }
+                    }
+
+                    Account account = DatabaseHelper.createAccountWithId(username, uid);
+                    if(account == null) {
+                        CommandHandler.sendMessage(null, "Account already exists."); return;
+                    } else {
+                        CommandHandler.sendMessage(null, "Account created with UID " + account.getPlayerId() + ".");
+                        account.addPermission("*"); // Grant the player superuser permissions.
+                    }
+                    return;
+                case "delete":
+                    if(DatabaseHelper.deleteAccount(username)) {
+                        CommandHandler.sendMessage(null, "Account deleted."); return;
+                    } else CommandHandler.sendMessage(null, "Account not found.");
+                    return;
+            }
+        }
+    }
+    
+    @Command(label = "permission", 
+            usage = "Usage: permission <add|remove> <username> <permission>", 
+            execution = Command.Execution.CONSOLE)
+    public static class PermissionCommand implements CommandHandler {
+
+        @Override
+        public void execute(List<String> args) {
+            if(args.size() < 3) {
+                CommandHandler.sendMessage(null, "Usage: permission <add|remove> <username> <permission>"); return;
+            }
+            
+            String action = args.get(0);
+            String username = args.get(1);
+            String permission = args.get(2);
+            
+            Account account = DatabaseHelper.getAccountByName(username);
+            if(account == null) {
+                CommandHandler.sendMessage(null, "Account not found."); return;
+            }
+            
+            switch(action) {
+                default:
+                    CommandHandler.sendMessage(null, "Usage: permission <add|remove> <username> <permission>");
+                    return;
+                case "add":
+                    if(account.addPermission(permission)) {
+                        CommandHandler.sendMessage(null, "Permission added."); return;
+                    } else CommandHandler.sendMessage(null, "They already have this permission!");
+                    return;
+                case "remove":
+                    if(account.removePermission(permission)) {
+                        CommandHandler.sendMessage(null, "Permission removed."); return;
+                    } else CommandHandler.sendMessage(null, "They don't have this permission!");
+                    return;
+            }
+        }
+    }
+    
+    @Command(label = "help", 
+            usage = "Usage: help [command]")
+    public static class HelpCommand implements CommandHandler {
+
+        @Override
+        public void execute(List<String> args) {
+            List<CommandHandler> handlers = CommandMap.getInstance().getHandlers();
+            List<Command> annotations = handlers.stream()
+                    .map(handler -> handler.getClass().getAnnotation(Command.class))
+                    .collect(Collectors.toList());
+            
+            if(args.size() < 1) {
+                StringBuilder builder = new StringBuilder("Available commands:\n");
+                annotations.forEach(annotation -> builder.append(annotation.usage()).append("\n"));
+                CommandHandler.sendMessage(null, builder.toString());
+            } else {
+                String command = args.get(0);
+                CommandHandler handler = CommandMap.getInstance().getHandler(command);
+                if(handler == null) {
+                    CommandHandler.sendMessage(null, "Command not found."); return;
+                }
+                
+                Command annotation = handler.getClass().getAnnotation(Command.class);
+                CommandHandler.sendMessage(null, annotation.usage());
+            }
+        }
+
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            List<CommandHandler> handlers = CommandMap.getInstance().getHandlers();
+            List<Command> annotations = handlers.stream()
+                    .map(handler -> handler.getClass().getAnnotation(Command.class))
+                    .collect(Collectors.toList());
+
+            if(args.size() < 1) {
+                annotations.forEach(annotation -> player.dropMessage(annotation.usage()));
+            } else {
+                String command = args.get(0);
+                CommandHandler handler = CommandMap.getInstance().getHandler(command);
+                if(handler == null) {
+                    CommandHandler.sendMessage(player, "Command not found."); return;
+                }
+
+                Command annotation = handler.getClass().getAnnotation(Command.class);
+                CommandHandler.sendMessage(player, annotation.usage());
+            }
+        }
+    }
 }

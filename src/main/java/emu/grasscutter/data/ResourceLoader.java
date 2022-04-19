@@ -2,20 +2,12 @@ package emu.grasscutter.data;
 
 import java.io.File;
 import java.io.FileReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
+import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
 
 import com.google.gson.reflect.TypeToken;
@@ -39,19 +31,12 @@ public class ResourceLoader {
 			}
 		});
 
-		classList.sort((a, b) -> {
-			return b.getAnnotation(ResourceType.class).loadPriority().value() - a.getAnnotation(ResourceType.class).loadPriority().value();
-		});
+		classList.sort((a, b) -> b.getAnnotation(ResourceType.class).loadPriority().value() - a.getAnnotation(ResourceType.class).loadPriority().value());
 
 		return classList;
 	}
 	
 	public static void loadAll() {
-		// Create resource folder if it doesnt exist
-		File resFolder = new File(Grasscutter.getConfig().RESOURCE_FOLDER);
-		if (!resFolder.exists()) {
-			resFolder.mkdir();
-		}
 		// Load ability lists
 		loadAbilityEmbryos();
 		loadOpenConfig();
@@ -110,7 +95,7 @@ public class ResourceLoader {
 			try {
 				loadFromResource(resourceDefinition, type, map);
 			} catch (Exception e) {
-				Grasscutter.getLogger().error("Error loading resource file: " + type.name(), e);
+				Grasscutter.getLogger().error("Error loading resource file: " + Arrays.toString(type.name()), e);
 			}
 		}
 	}
@@ -153,10 +138,16 @@ public class ResourceLoader {
 			Pattern pattern = Pattern.compile("(?<=ConfigAvatar_)(.*?)(?=.json)");
 			
 			embryoList = new LinkedList<>();
-			File folder = new File(Grasscutter.getConfig().RESOURCE_FOLDER + "BinOutput\\Avatar\\");
-			for (File file : folder.listFiles()) {
-				AvatarConfig config = null;
-				String avatarName = null;
+			File folder = new File(Utils.toFilePath(Grasscutter.getConfig().RESOURCE_FOLDER + "BinOutput/Avatar/"));
+			File[] files = folder.listFiles();
+			if(files == null) {
+				Grasscutter.getLogger().error("Error loading ability embryos: no files found in " + folder.getAbsolutePath());
+				return;
+			}
+			
+			for (File file : files) {
+				AvatarConfig config;
+				String avatarName;
 				
 				Matcher matcher = pattern.matcher(file.getName());
 				if (matcher.find()) {
@@ -209,14 +200,18 @@ public class ResourceLoader {
 			String[] folderNames = {"BinOutput\\Talent\\EquipTalents\\", "BinOutput\\Talent\\AvatarTalents\\"};
 			
 			for (String name : folderNames) {
-				File folder = new File(Grasscutter.getConfig().RESOURCE_FOLDER + name);
+				File folder = new File(Utils.toFilePath(Grasscutter.getConfig().RESOURCE_FOLDER + name));
+				File[] files = folder.listFiles();
+				if(files == null) {
+					Grasscutter.getLogger().error("Error loading open config: no files found in " + folder.getAbsolutePath()); return;
+				}
 				
-				for (File file : folder.listFiles()) {
+				for (File file : files) {
 					if (!file.getName().endsWith(".json")) {
 						continue;
 					}
 					
-					Map<String, OpenConfigData[]> config = null;
+					Map<String, OpenConfigData[]> config;
 					
 					try (FileReader fileReader = new FileReader(file)) {
 						config = Grasscutter.getGsonFactory().fromJson(fileReader, type);

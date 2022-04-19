@@ -1,11 +1,6 @@
 package emu.grasscutter.game;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.GenshinConstants;
@@ -494,7 +489,7 @@ public class GenshinPlayer {
 		this.regionId = regionId;
 	}
 	
-	public boolean hasGodmode() {
+	public boolean inGodmode() {
 		return godmode;
 	}
 
@@ -566,6 +561,15 @@ public class GenshinPlayer {
 	
 	public void dropMessage(Object message) {
 		this.sendPacket(new PacketPrivateChatNotify(GenshinConstants.SERVER_CONSOLE_UID, getId(), message.toString()));
+	}
+
+	/**
+	 * Sends a message to another player.
+	 * @param sender The sender of the message.
+	 * @param message The message to send.
+	 */
+	public void sendMessage(GenshinPlayer sender, Object message) {
+		this.sendPacket(new PacketPrivateChatNotify(sender.getId(), this.getId(), message.toString()));
 	}
 	
 	public void interactWith(int gadgetEntityId) {
