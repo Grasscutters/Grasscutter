@@ -181,7 +181,7 @@ public final class PlayerCommands {
     @Command(label = "givechar", aliases = { "givec" }, usage = "Usage: givechar <playerId> <avatarId> [level]")
     public static class GiveCharCommand implements CommandHandler {
         @Override public void execute(GenshinPlayer player, List<String> args) {
-            int target, avatarID, level = 1;
+            int target, avatarID, level = 1, ascension = 1;
 
             if(args.size() < 2) {
                 CommandHandler.sendMessage(null, "Usage: givechar <player> <avatarId> [level]");
@@ -244,8 +244,16 @@ public final class PlayerCommands {
                 CommandHandler.sendMessage(null, "Invalid avatar id."); return;
             }
 
+            // Calculate ascension level.
+            if (level <= 40) {
+                ascension = (int)Math.ceil(level / 20);
+            } else if (level > 20) {
+                ascension = (int)Math.ceil(level / 10) - 3;
+            }
+
             GenshinAvatar avatar = new GenshinAvatar(avatarID);
             avatar.setLevel(level);
+            avatar.setPromoteLevel(ascension);
     
             targetPlayer.addAvatar(avatar);
         }
@@ -261,6 +269,7 @@ public final class PlayerCommands {
                 int target = Integer.parseInt(args.get(0));
                 int avatarID = Integer.parseInt(args.get(1));
                 int level = 1; if(args.size() > 2) level = Integer.parseInt(args.get(2));
+                int ascension = 1;
                 
                 GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
                 if(targetPlayer == null) {
@@ -272,8 +281,16 @@ public final class PlayerCommands {
                     CommandHandler.sendMessage(null, "Invalid avatar id."); return;
                 }
                 
+                // Calculate ascension level.
+                if (level <= 40) {
+                    ascension = (int)Math.ceil(level / 20);
+                } else if (level > 20) {
+                    ascension = (int)Math.ceil(level / 10) - 3;
+                }
+                
                 GenshinAvatar avatar = new GenshinAvatar(avatarID);
                 avatar.setLevel(level);
+                avatar.setPromoteLevel(ascension);
         
                 targetPlayer.addAvatar(avatar);
             } catch (NumberFormatException ignored) {
