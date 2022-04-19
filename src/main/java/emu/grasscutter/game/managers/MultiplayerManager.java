@@ -58,25 +58,25 @@ public class MultiplayerManager {
 		target.sendPacket(new PacketPlayerApplyEnterMpNotify(player));
 	}
 
-	public void applyEnterMpReply(GenshinPlayer player, int applyUid, boolean isAgreed) {
+	public void applyEnterMpReply(GenshinPlayer hostPlayer, int applyUid, boolean isAgreed) {
 		// Checks
-		CoopRequest request = player.getCoopRequests().get(applyUid);
+		CoopRequest request = hostPlayer.getCoopRequests().get(applyUid);
 		if (request == null || request.isExpired()) {
 			return;
 		}
 		
 		// Remove now that we are handling it
 		GenshinPlayer requester = request.getRequester();
-		player.getCoopRequests().remove(applyUid);
+		hostPlayer.getCoopRequests().remove(applyUid);
 		
-		// Sanity checks - Dont let player join if already in multiplayer
+		// Sanity checks - Dont let the requesting player join if they are already in multiplayer
 		if (requester.getWorld().isMultiplayer()) {
-			request.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(player, false, PlayerApplyEnterMpReason.PlayerCannotEnterMp));
+			request.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(hostPlayer, false, PlayerApplyEnterMpReason.PlayerCannotEnterMp));
 			return;
 		}
 		
 		// Response packet
-		request.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(player, isAgreed, PlayerApplyEnterMpReason.PlayerJudge));
+		request.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(hostPlayer, isAgreed, PlayerApplyEnterMpReason.PlayerJudge));
 		
 		// Declined
 		if (!isAgreed) {
@@ -84,24 +84,27 @@ public class MultiplayerManager {
 		}
 
 		// Success
-		if (!player.getWorld().isMultiplayer()) {
+		if (!hostPlayer.getWorld().isMultiplayer()) {
 			// Player not in multiplayer, create multiplayer world
-			World world = new World(player, true);
+			World world = new World(hostPlayer, true);
 
 			// Add
-			world.addPlayer(player);
+			world.addPlayer(hostPlayer);
 			
 			// Rejoin packet
-			player.sendPacket(new PacketPlayerEnterSceneNotify(player, player, EnterType.EnterSelf, EnterReason.HostFromSingleToMp, player.getScene().getId(), player.getPos()));
+			hostPlayer.sendPacket(new PacketPlayerEnterSceneNotify(hostPlayer, hostPlayer, EnterType.EnterSelf, EnterReason.HostFromSingleToMp, hostPlayer.getScene().getId(), hostPlayer.getPos()));
 		}
 		
 		// Make requester join
-		player.getWorld().addPlayer(requester);
+		hostPlayer.getWorld().addPlayer(requester);
+		
+		// Set scene pos and id of requester to the host player's
+		requester.getPos().set(hostPlayer.getPos());
+		requester.getRotation().set(hostPlayer.getRotation());
+		requester.setSceneId(hostPlayer.getSceneId());
 		
 		// Packet
-		requester.sendPacket(new PacketPlayerEnterSceneNotify(requester, player, EnterType.EnterOther, EnterReason.TeamJoin, player.getScene().getId(), player.getPos()));
-		requester.getPos().set(player.getPos());
-		requester.getRotation().set(player.getRotation());
+		requester.sendPacket(new PacketPlayerEnterSceneNotify(requester, hostPlayer, EnterType.EnterOther, EnterReason.TeamJoin, hostPlayer.getScene().getId(), hostPlayer.getPos()));
 	}
 	
 	public boolean leaveCoop(GenshinPlayer player) {
