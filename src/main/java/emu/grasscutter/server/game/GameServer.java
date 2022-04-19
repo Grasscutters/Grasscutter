@@ -1,17 +1,14 @@
 package emu.grasscutter.server.game;
 
 import java.net.InetSocketAddress;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 import emu.grasscutter.GenshinConstants;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.commands.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.Account;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.gacha.GachaManager;
@@ -23,11 +20,10 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.netty.MihoyoKcpServer;
 
-public class GameServer extends MihoyoKcpServer {
+public final class GameServer extends MihoyoKcpServer {
 	private final InetSocketAddress address;
 	private final GameServerPacketHandler packetHandler;
-	private final Timer gameLoop;
-	
+
 	private final Map<Integer, GenshinPlayer> players;
 	
 	private final ChatManager chatManager;
@@ -36,9 +32,11 @@ public class GameServer extends MihoyoKcpServer {
 	private final ShopManager shopManager;
 	private final MultiplayerManager multiplayerManager;
 	private final DungeonManager dungeonManager;
+	private final CommandMap commandMap;
 	
 	public GameServer(InetSocketAddress address) {
 		super(address);
+		
 		this.setServerInitializer(new GameServerInitializer(this));
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
@@ -50,22 +48,22 @@ public class GameServer extends MihoyoKcpServer {
 		this.shopManager = new ShopManager(this);
 		this.multiplayerManager = new MultiplayerManager(this);
 		this.dungeonManager = new DungeonManager(this);
+		this.commandMap = new CommandMap(true);
 		
-		// Ticker
-		this.gameLoop = new Timer();
-		this.gameLoop.scheduleAtFixedRate(new TimerTask() {
+		// Schedule game loop.
+		Timer gameLoop = new Timer();
+		gameLoop.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
 				try {
 					onTick();
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					Grasscutter.getLogger().error("An error occurred during game update.", e);
 				}
 			}
 		}, new Date(), 1000L);
 		
-		// Shutdown hook
+		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
 	
@@ -99,6 +97,10 @@ public class GameServer extends MihoyoKcpServer {
 	
 	public DungeonManager getDungeonManager() {
 		return dungeonManager;
+	}
+	
+	public CommandMap getCommandMap() {
+		return this.commandMap;
 	}
 	
 	public void registerPlayer(GenshinPlayer player) {
@@ -135,6 +137,14 @@ public class GameServer extends MihoyoKcpServer {
 		}
 		
 		return player.getSocialDetail();
+	}
+	
+	public Account getAccountByName(String username) {
+		Optional<GenshinPlayer> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getUsername().equals(username)).findFirst();
+		if (playerOpt.get() != null) {
+			return playerOpt.get().getAccount();
+		}
+		return DatabaseHelper.getAccountByName(username);
 	}
 	
 	public void onTick() throws Exception {

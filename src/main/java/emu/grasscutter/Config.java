@@ -6,11 +6,14 @@ public final class Config {
 	public int DispatchServerPort = 443;
 	public String DispatchServerKeystorePath = "./keystore.p12";
 	public String DispatchServerKeystorePassword = "";
+	public Boolean UseSSL = true;
 	
 	public String GameServerName = "Test";
 	public String GameServerIp = "127.0.0.1";
 	public String GameServerPublicIp = "";
 	public int GameServerPort = 22102;
+	
+	public int UploadLogPort = 80;
 	
 	public String DatabaseUrl = "mongodb://localhost:27017";
 	public String DatabaseCollection = "grasscutter";

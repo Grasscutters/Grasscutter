@@ -5,9 +5,19 @@ import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME) 
 public @interface Command {
-	String[] aliases() default "";
+	String label() default "";
+
+	String usage() default "";
 	
-	int gmLevel() default 1;
+	String[] aliases() default {""};
 	
-	String helpText() default "";
+	Execution execution() default Execution.ALL;
+	
+	String permission() default "";
+	
+	enum Execution {
+		ALL,
+		CONSOLE,
+		PLAYER
+	}
 }

@@ -17,9 +17,9 @@ public class HandlerPlayerChatReq extends PacketHandler {
 		ChatInfo.ContentCase content = req.getChatInfo().getContentCase();
 		
 		if (content == ChatInfo.ContentCase.TEXT) {
-			session.getServer().getChatManager().sendTeamChat(session.getPlayer(), req.getChannelId(), req.getChatInfo().getText());
+			session.getServer().getChatManager().sendTeamMessage(session.getPlayer(), req.getChannelId(), req.getChatInfo().getText());
 		} else if (content == ChatInfo.ContentCase.ICON) {
-			session.getServer().getChatManager().sendTeamChat(session.getPlayer(), req.getChannelId(), req.getChatInfo().getIcon());
+			session.getServer().getChatManager().sendTeamMessage(session.getPlayer(), req.getChannelId(), req.getChatInfo().getIcon());
 		}
 		
 		session.send(new PacketPlayerChatRsp());
