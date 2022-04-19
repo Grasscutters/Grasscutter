@@ -27,7 +27,7 @@ import java.util.List;
  */
 public final class PlayerCommands {
     @Command(label = "give", aliases = {"g", "item", "giveitem"}, 
-            usage = "Usage: give [player] <itemId|itemName> [amount]")
+            usage = "give [player] <itemId|itemName> [amount]", description = "Gives an item to you or the specified player", permission = "player.give")
     public static class GiveCommand implements CommandHandler {
 
         @Override
@@ -140,8 +140,8 @@ public final class PlayerCommands {
     }
     
     @Command(label = "drop", aliases = {"d", "dropitem"}, 
-            usage = "Usage: drop <itemId|itemName> [amount]", 
-            execution = Command.Execution.PLAYER)
+            usage = "drop <itemId|itemName> [amount]",
+            execution = Command.Execution.PLAYER, description = "Drops an item near you", permission = "server.drop")
     public static class DropCommand implements CommandHandler {
 
         @Override
@@ -178,7 +178,7 @@ public final class PlayerCommands {
     }
     
     @Command(label = "spawn", execution = Command.Execution.PLAYER, 
-            usage = "Usage: spawn <entityId|entityName> [level] [amount]")
+            usage = "spawn <entityId|entityName> [level] [amount]", description = "Spawns an entity near you", permission = "server.spawn")
     public static class SpawnCommand implements CommandHandler {
         
         @Override
@@ -211,7 +211,7 @@ public final class PlayerCommands {
     }
     
     @Command(label = "killall", 
-            usage = "Usage: killall [sceneId]")
+            usage = "killall [sceneId]", description = "Kill all entities", permission = "server.killall")
     public static class KillAllCommand implements CommandHandler {
 
         @Override
@@ -239,7 +239,8 @@ public final class PlayerCommands {
     }
     
     @Command(label = "resetconst", aliases = {"resetconstellation"}, 
-            usage = "Usage: resetconst [all]", execution = Command.Execution.PLAYER)
+            usage = "resetconst [all]", execution = Command.Execution.PLAYER, permission = "player.resetconstellation",
+            description = "Resets the constellation level on your current active character, will need to relog after using the command to see any changes.")
     public static class ResetConstellationCommand implements CommandHandler {
         
         @Override
@@ -268,7 +269,7 @@ public final class PlayerCommands {
     }
     
     @Command(label = "godmode",
-            usage = "Usage: godmode", execution = Command.Execution.PLAYER)
+            usage = "godmode", execution = Command.Execution.PLAYER, description = "Prevents you from taking damage", permission = "player.godmode")
     public static class GodModeCommand implements CommandHandler {
         
         @Override
@@ -279,7 +280,8 @@ public final class PlayerCommands {
     }
     
     @Command(label = "sethealth", aliases = {"sethp"}, 
-            usage = "Usage: sethealth <hp>", execution = Command.Execution.PLAYER)
+            usage = "sethealth <hp>", execution = Command.Execution.PLAYER, description = "Sets your health to the specified value",
+            permission = "player.sethealth")
     public static class SetHealthCommand implements CommandHandler {
 
         @Override
@@ -304,7 +306,8 @@ public final class PlayerCommands {
     }
     
     @Command(label = "clearartifacts", aliases = {"clearart"}, 
-            usage = "Usage: clearartifacts", execution = Command.Execution.PLAYER)
+            usage = "clearartifacts", execution = Command.Execution.PLAYER, permission = "player.clearartifacts",
+            description = "Deletes all unequipped and unlocked level 0 artifacts, including yellow rarity ones from your inventory")
     public static class ClearArtifactsCommand implements CommandHandler {
 
         @Override
@@ -315,6 +318,33 @@ public final class PlayerCommands {
                     .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                     .filter(item -> !item.isLocked() && !item.isEquipped())
                     .forEach(item -> playerInventory.removeItem(item, item.getCount()));
+        }
+    }
+
+    @Command(label = "sendservermessage", aliases = {"sendservmsg"},
+            usage = "sendservermessage <player> <message>", description = "Sends a message to a player as the server",
+            execution = Command.Execution.PLAYER, permission = "server.sendmessage")
+    public static class SendServerMessageCommand implements CommandHandler {
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            if(args.size() < 2) {
+                CommandHandler.sendMessage(null, "Usage: sendmessage <player> <message>"); return;
+            }
+
+            try {
+                int target = Integer.parseInt(args.get(0));
+                String message = String.join(" ", args.subList(1, args.size()));
+
+                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+                if(targetPlayer == null) {
+                    CommandHandler.sendMessage(null, "Player not found."); return;
+                }
+
+                targetPlayer.dropMessage(message);
+                CommandHandler.sendMessage(null, "Message sent.");
+            } catch (NumberFormatException ignored) {
+                CommandHandler.sendMessage(null, "Invalid player ID.");
+            }
         }
     }
 }
