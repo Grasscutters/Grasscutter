@@ -1,17 +1,11 @@
 package emu.grasscutter.commands;
 
-import com.mongodb.internal.connection.CommandHelper;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.server.packet.send.PacketSceneKickPlayerRsp;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*;
 
 /**
  * A container for server-related commands.
@@ -46,18 +40,17 @@ public final class ServerCommands {
         @Override
         public void execute(GenshinPlayer player, List<String> args) {
             int target = Integer.parseInt(args.get(0));
-            String message = String.join(" ", args.subList(1, args.size()));
 
             GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
             if(targetPlayer == null) {
                 CommandHandler.sendMessage(player, "Player not found.");
                 return;
             }
+            
             if(player != null) {
                 CommandHandler.sendMessage(null, String.format("Player [%s:%s] has kicked player [%s:%s]", player.getAccount().getPlayerId(), player.getAccount().getUsername(), target, targetPlayer.getAccount().getUsername()));
             }
-
-                CommandHandler.sendMessage(player, String.format("Kicking player [%s:%s]", target, targetPlayer.getAccount().getUsername()));
+            CommandHandler.sendMessage(player, String.format("Kicking player [%s:%s]", target, targetPlayer.getAccount().getUsername()));
 
             targetPlayer.getSession().close();
         }
@@ -259,12 +252,12 @@ public final class ServerCommands {
         public void execute(GenshinPlayer player, List<String> args) {
             if(args.size() < 1) {
                 HashMap<String, CommandHandler> handlers = CommandMap.getInstance().getHandlers();
-                List<Command> annotations = new ArrayList<Command>();
+                List<Command> annotations = new ArrayList<>();
                 for(String key : handlers.keySet()) {
                     Command annotation = handlers.get(key).getClass().getAnnotation(Command.class);
 
                     if(!Arrays.asList(annotation.aliases()).contains(key)) {
-                        if(player != null && annotation.permission() != "" && !player.getAccount().hasPermission(annotation.permission())) continue;
+                        if(player != null && !Objects.equals(annotation.permission(), "") && !player.getAccount().hasPermission(annotation.permission())) continue;
                         annotations.add(annotation);
                     }
                 }
@@ -288,7 +281,7 @@ public final class ServerCommands {
                             builder.append(alias).append(" ");
                         }
                     }
-                    if(player != null && annotation.permission() != "" && !player.getAccount().hasPermission(annotation.permission())) {
+                    if(player != null && !Objects.equals(annotation.permission(), "") && !player.getAccount().hasPermission(annotation.permission())) {
                         builder.append("\n Warning: You do not have permission to run this command.");
                     }
                 }
@@ -301,7 +294,7 @@ public final class ServerCommands {
             if(player == null) {
                 StringBuilder builder = new StringBuilder("\nAvailable commands:\n");
                 annotations.forEach(annotation -> {
-                    if (annotation.execution() != (player == null ? Command.Execution.PLAYER : Command.Execution.CONSOLE)) {
+                    if (annotation.execution() != Command.Execution.PLAYER) {
                         builder.append(annotation.label()).append("\n");
                         builder.append("   ").append(annotation.description()).append("\n");
                         builder.append("   Usage: ").append(annotation.usage());
@@ -320,7 +313,7 @@ public final class ServerCommands {
             } else {
                 CommandHandler.sendMessage(player, "Available commands:");
                 annotations.forEach(annotation -> {
-                    if (annotation.execution() != (player == null ? Command.Execution.PLAYER : Command.Execution.CONSOLE)) {
+                    if (annotation.execution() != Command.Execution.CONSOLE) {
                         StringBuilder builder = new StringBuilder(annotation.label()).append("\n");
                         builder.append("   ").append(annotation.description()).append("\n");
                         builder.append("   Usage: ").append(annotation.usage());
