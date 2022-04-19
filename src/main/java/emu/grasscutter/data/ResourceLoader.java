@@ -197,7 +197,7 @@ public class ResourceLoader {
 		} else {
 			Map<String, OpenConfigEntry> map = new TreeMap<>();
 			java.lang.reflect.Type type = new TypeToken<Map<String, OpenConfigData[]>>() {}.getType();
-			String[] folderNames = {"BinOutput\\Talent\\EquipTalents\\", "BinOutput\\Talent\\AvatarTalents\\"};
+			String[] folderNames = {"BinOutput/Talent/EquipTalents/", "BinOutput/Talent/AvatarTalents/"};
 			
 			for (String name : folderNames) {
 				File folder = new File(Utils.toFilePath(Grasscutter.getConfig().RESOURCE_FOLDER + name));
