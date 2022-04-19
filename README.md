@@ -19,11 +19,11 @@ A WIP server emulator for Genshin Impact 2.3-2.6
 * Mongodb (recommended 4.0+)
 * Proxy daemon: mitmproxy (mitmdump, recommended), Fiddler Classic, etc.
 
-### Starting up the server (Assuming you are on Windows)
+### Starting up Grasscutter server (Assuming you are on Windows)
 1. Setup compile environment `gradlew.bat`
-2. Compile the server with `gradlew jar`
+2. Compile Grasscutter with `gradlew jar`
 3. Create a folder named `resources` in your Grasscutter directory, bring your `BinOutput` and `ExcelBinOutput` folders into it *(Check the wiki for more details where to get those.)*
-4. Run the server with `java -jar grasscutter.jar`. Make sure mongodb is running as well.
+4. Run Grasscutter with `java -jar grasscutter.jar`. Make sure mongodb is running as well.
 
 ### Connecting with the client
 ½. Create an account using command below
