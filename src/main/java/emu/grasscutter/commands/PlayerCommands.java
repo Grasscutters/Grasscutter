@@ -185,38 +185,29 @@ public final class PlayerCommands {
         }
     }
 
-    @Command(label = "givechar", aliases = { "givec" }, usage = "Usage: givechar <playerId> <avatarId> [level]")
+    @Command(label = "givechar", aliases = {"givec"}, 
+            usage = "Usage: givechar <player|avatarId> [avatarId] [level]")
     public static class GiveCharCommand implements CommandHandler {
         @Override public void execute(GenshinPlayer player, List<String> args) {
-            int target, avatarID, level = 1, ascension = 1;
+            int target, avatarId, level = 1, ascension = 1;
 
             if(args.size() < 2) {
-                CommandHandler.sendMessage(null, "Usage: givechar <player> <avatarId> [level]");
+                CommandHandler.sendMessage(player, "Usage: givechar <player> <avatarId> [level]");
                 return;
             }
             
             switch(args.size()) {
                 default:
-                CommandHandler.sendMessage(null, "Usage: givechar <player> <avatarId> [level]");
+                CommandHandler.sendMessage(player, "Usage: givechar <player> <avatarId> [level]");
                     return;
-                case 1:
-                    try {
-                        avatarID = Integer.parseInt(args.get(0));
-                        target = player.getAccount().getPlayerId();
-                    } catch (NumberFormatException ignored) {
-                        // TODO: Parse from avatar name using GM Handbook.
-                        CommandHandler.sendMessage(player, "Invalid avatar id.");
-                        return;
-                    }
-                    break;
                 case 2:
                     try {
                         target = Integer.parseInt(args.get(0));
                         if(Grasscutter.getGameServer().getPlayerByUid(target) == null) {
                             target = player.getUid(); level = Integer.parseInt(args.get(1));
-                            avatarID = Integer.parseInt(args.get(0));
+                            avatarId = Integer.parseInt(args.get(0));
                         } else {
-                            avatarID = Integer.parseInt(args.get(1));
+                            avatarId = Integer.parseInt(args.get(1));
                         }
                     } catch (NumberFormatException ignored) {
                         // TODO: Parse from avatar name using GM Handbook.
@@ -231,7 +222,7 @@ public final class PlayerCommands {
                             CommandHandler.sendMessage(player, "Invalid player ID."); return;
                         }
 
-                        avatarID = Integer.parseInt(args.get(1));
+                        avatarId = Integer.parseInt(args.get(1));
                         level = Integer.parseInt(args.get(2));
                     } catch (NumberFormatException ignored) {
                         // TODO: Parse from avatar name using GM Handbook.
@@ -243,22 +234,22 @@ public final class PlayerCommands {
 
             GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
             if(targetPlayer == null) {
-                CommandHandler.sendMessage(null, "Player not found."); return;
+                CommandHandler.sendMessage(player, "Player not found."); return;
             }
                 
-            AvatarData avatarData = GenshinData.getAvatarDataMap().get(avatarID);
+            AvatarData avatarData = GenshinData.getAvatarDataMap().get(avatarId);
             if(avatarData == null) {
-                CommandHandler.sendMessage(null, "Invalid avatar id."); return;
+                CommandHandler.sendMessage(player, "Invalid avatar id."); return;
             }
 
             // Calculate ascension level.
             if (level <= 40) {
-                ascension = (int)Math.ceil(level / 20);
-            } else if (level > 20) {
-                ascension = (int)Math.ceil(level / 10) - 3;
+                ascension = (int) Math.ceil(level / 20f);
+            } else {
+                ascension = (int) Math.ceil(level / 10f) - 3;
             }
 
-            GenshinAvatar avatar = new GenshinAvatar(avatarID);
+            GenshinAvatar avatar = new GenshinAvatar(avatarId);
             avatar.setLevel(level);
             avatar.setPromoteLevel(ascension);
             
@@ -279,7 +270,7 @@ public final class PlayerCommands {
                 int target = Integer.parseInt(args.get(0));
                 int avatarID = Integer.parseInt(args.get(1));
                 int level = 1; if(args.size() > 2) level = Integer.parseInt(args.get(2));
-                int ascension = 1;
+                int ascension;
                 
                 GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
                 if(targetPlayer == null) {
@@ -293,9 +284,9 @@ public final class PlayerCommands {
                 
                 // Calculate ascension level.
                 if (level <= 40) {
-                    ascension = (int)Math.ceil(level / 20);
-                } else if (level > 20) {
-                    ascension = (int)Math.ceil(level / 10) - 3;
+                    ascension = (int) Math.ceil(level / 20f);
+                } else {
+                    ascension = (int) Math.ceil(level / 10f) - 3;
                 }
                 
                 GenshinAvatar avatar = new GenshinAvatar(avatarID);
@@ -461,7 +452,7 @@ public final class PlayerCommands {
         @Override
         public void execute(GenshinPlayer player, List<String> args) {
             if(args.size() < 1) {
-                CommandHandler.sendMessage(null, "Usage: setworldlevel <level>"); return;
+                CommandHandler.sendMessage(player, "Usage: setworldlevel <level>"); return;
             }
             
             try {
@@ -498,21 +489,18 @@ public final class PlayerCommands {
         @Override
         public void execute(GenshinPlayer player, List<String> args) {
             if(args.size() < 1) {
-                CommandHandler.sendMessage(null, "Usage: changescene <scene id>"); return;
+                CommandHandler.sendMessage(player, "Usage: changescene <scene id>"); return;
             }
-
-            int sceneId = 0;
         
             try {
-                sceneId = Integer.parseInt(args.get(0));
+                int sceneId = Integer.parseInt(args.get(0));
+                boolean result = player.getWorld().transferPlayerToScene(player, sceneId, player.getPos());
+
+                if (!result) {
+                    CommandHandler.sendMessage(null, "Scene does not exist or you are already in it");
+                }
             } catch (Exception e) {
-                return;
-            }
-            
-            boolean result = player.getWorld().transferPlayerToScene(player, sceneId, player.getPos());
-            
-            if (!result) {
-                CommandHandler.sendMessage(null, "Scene does not exist or you are already in it");
+                CommandHandler.sendMessage(player, "Usage: changescene <scene id>"); return;
             }
         }
     }
