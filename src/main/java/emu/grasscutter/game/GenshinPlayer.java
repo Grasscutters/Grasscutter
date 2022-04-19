@@ -1,11 +1,6 @@
 package emu.grasscutter.game;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.GenshinConstants;

@@ -109,12 +109,53 @@ public final class ServerCommands {
                     Account account = DatabaseHelper.createAccountWithId(username, uid);
                     if(account == null) {
                         CommandHandler.sendMessage(null, "Account already exists."); return;
-                    } else CommandHandler.sendMessage(null, "Account created with UID " + account.getPlayerId() + ".");
+                    } else {
+                        CommandHandler.sendMessage(null, "Account created with UID " + account.getPlayerId() + ".");
+                        account.addPermission("*"); // Grant the player superuser permissions.
+                    }
                     return;
                 case "delete":
                     if(DatabaseHelper.deleteAccount(username)) {
                         CommandHandler.sendMessage(null, "Account deleted."); return;
                     } else CommandHandler.sendMessage(null, "Account not found.");
+                    return;
+            }
+        }
+    }
+    
+    @Command(label = "permission", 
+            usage = "Usage: permission <add|remove> <username> <permission>", 
+            execution = Command.Execution.CONSOLE)
+    public static class PermissionCommand implements CommandHandler {
+
+        @Override
+        public void execute(List<String> args) {
+            if(args.size() < 3) {
+                CommandHandler.sendMessage(null, "Usage: permission <add|remove> <username> <permission>"); return;
+            }
+            
+            String action = args.get(0);
+            String username = args.get(1);
+            String permission = args.get(2);
+            
+            Account account = DatabaseHelper.getAccountByName(username);
+            if(account == null) {
+                CommandHandler.sendMessage(null, "Account not found."); return;
+            }
+            
+            switch(action) {
+                default:
+                    CommandHandler.sendMessage(null, "Usage: permission <add|remove> <username> <permission>");
+                    return;
+                case "add":
+                    if(account.addPermission(permission)) {
+                        CommandHandler.sendMessage(null, "Permission added."); return;
+                    } else CommandHandler.sendMessage(null, "They already have this permission!");
+                    return;
+                case "remove":
+                    if(account.removePermission(permission)) {
+                        CommandHandler.sendMessage(null, "Permission removed."); return;
+                    } else CommandHandler.sendMessage(null, "They don't have this permission!");
                     return;
             }
         }

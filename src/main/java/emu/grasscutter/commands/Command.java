@@ -13,7 +13,7 @@ public @interface Command {
 	
 	Execution execution() default Execution.ALL;
 	
-	int gmLevel() default 1;
+	String permission() default "";
 	
 	enum Execution {
 		ALL,

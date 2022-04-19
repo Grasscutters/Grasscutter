@@ -1,6 +1,7 @@
 package emu.grasscutter.commands;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.Account;
 import emu.grasscutter.game.GenshinPlayer;
 import org.reflections.Reflections;
 
@@ -13,7 +14,7 @@ public final class CommandMap {
     }
     
     private final Map<String, CommandHandler> commands = new HashMap<>();
-    private final Map<String, Command.Execution> executionPower = new HashMap<>();
+    private final Map<String, Command> annotations = new HashMap<>();
 
     /**
      * Register a command handler.
@@ -26,14 +27,14 @@ public final class CommandMap {
         
         // Get command data.
         Command annotation = command.getClass().getAnnotation(Command.class);
-        this.executionPower.put(label, annotation.execution());
+        this.annotations.put(label, annotation);
         this.commands.put(label, command);
         
         // Register aliases.
         if(annotation.aliases().length > 0) {
             for (String alias : annotation.aliases()) {
                 this.commands.put(alias, command);
-                this.executionPower.put(alias, annotation.execution());
+                this.annotations.put(alias, annotation);
             }
         } return this;
     }
@@ -49,14 +50,14 @@ public final class CommandMap {
         if(handler == null) return this;
         
         Command annotation = handler.getClass().getAnnotation(Command.class);
-        this.executionPower.remove(label);
+        this.annotations.remove(label);
         this.commands.remove(label);
         
         // Unregister aliases.
         if(annotation.aliases().length > 0) {
             for (String alias : annotation.aliases()) {
                 this.commands.remove(alias);
-                this.executionPower.remove(alias);
+                this.annotations.remove(alias);
             }
         }
         
@@ -106,8 +107,18 @@ public final class CommandMap {
             CommandHandler.sendMessage(player, "Unknown command: " + label); return;
         }
         
+        // Check for permission.
+        if(player != null) {
+            String permissionNode = this.annotations.get(label).permission();
+            Account account = player.getAccount();
+            List<String> permissions = account.getPermissions();
+            if(!permissions.contains("*") && !permissions.contains(permissionNode)) {
+                CommandHandler.sendMessage(player, "You do not have permission to run this command."); return;
+            }
+        }
+        
         // Execution power check.
-        Command.Execution executionPower = this.executionPower.get(label);
+        Command.Execution executionPower = this.annotations.get(label).execution();
         if(player == null && executionPower == Command.Execution.PLAYER) {
             CommandHandler.sendMessage(null, "Run this command in-game."); return;
         } else if (player != null && executionPower == Command.Execution.CONSOLE) {
