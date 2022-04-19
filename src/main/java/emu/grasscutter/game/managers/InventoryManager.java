@@ -438,8 +438,14 @@ public class InventoryManager {
 			return;
 		}
 		
-		if (weapon.getItemType() != ItemType.ITEM_WEAPON || weapon.getItemId() != feed.getItemId()) {
-			return;
+		if (weapon.getItemData().getAwakenMaterial() == 0) {
+			if (weapon.getItemType() != ItemType.ITEM_WEAPON || weapon.getItemId() != feed.getItemId()) {
+				return;
+			}
+		} else {
+			if (weapon.getItemType() != ItemType.ITEM_WEAPON || weapon.getItemData().getAwakenMaterial() != feed.getItemId()) {
+				return;
+			}
 		}
 		
 		if (weapon.getRefinement() >= 4 || weapon.getAffixes() == null || weapon.getAffixes().size() == 0) {
