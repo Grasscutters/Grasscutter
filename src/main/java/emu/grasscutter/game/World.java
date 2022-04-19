@@ -344,7 +344,7 @@ public class World implements Iterable<GenshinPlayer> {
 		
 		// Godmode check
 		if (target instanceof EntityAvatar) {
-			if (((EntityAvatar) target).getPlayer().hasGodmode()) {
+			if (((EntityAvatar) target).getPlayer().inGodmode()) {
 				return;
 			}
 		}
