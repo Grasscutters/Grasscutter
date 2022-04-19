@@ -156,17 +156,17 @@ public class GenshinPlayer {
 		this.getRotation().set(0, 307, 0);
 	}
 
-	public int getId() {
+	public int getUid() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setUid(int id) {
 		this.id = id;
 	}
 	
-	public long getNextGuid() {
+	public long getNextGenshinGuid() {
 		long nextId = ++this.nextGuid;
-		return ((long) this.getId() << 32) + nextId;
+		return ((long) this.getUid() << 32) + nextId;
 	}
 
 	public Account getAccount() {
@@ -175,7 +175,7 @@ public class GenshinPlayer {
 
 	public void setAccount(Account account) {
 		this.account = account;
-		this.account.setPlayerId(getId());
+		this.account.setPlayerId(getUid());
 	}
 
 	public GameSession getSession() {
@@ -560,7 +560,7 @@ public class GenshinPlayer {
 	}
 	
 	public void dropMessage(Object message) {
-		this.sendPacket(new PacketPrivateChatNotify(GenshinConstants.SERVER_CONSOLE_UID, getId(), message.toString()));
+		this.sendPacket(new PacketPrivateChatNotify(GenshinConstants.SERVER_CONSOLE_UID, getUid(), message.toString()));
 	}
 
 	/**
@@ -569,7 +569,7 @@ public class GenshinPlayer {
 	 * @param message The message to send.
 	 */
 	public void sendMessage(GenshinPlayer sender, Object message) {
-		this.sendPacket(new PacketPrivateChatNotify(sender.getId(), this.getId(), message.toString()));
+		this.sendPacket(new PacketPrivateChatNotify(sender.getUid(), this.getUid(), message.toString()));
 	}
 	
 	public void interactWith(int gadgetEntityId) {
@@ -614,7 +614,7 @@ public class GenshinPlayer {
 	
 	public OnlinePlayerInfo getOnlinePlayerInfo() {
 		OnlinePlayerInfo.Builder onlineInfo = OnlinePlayerInfo.newBuilder()
-				.setUid(this.getId())
+				.setUid(this.getUid())
 				.setNickname(this.getNickname())
 				.setPlayerLevel(this.getLevel())
 				.setMpSettingType(this.getMpSetting())
@@ -633,7 +633,7 @@ public class GenshinPlayer {
 
 	public SocialDetail.Builder getSocialDetail() {
 		SocialDetail.Builder social = SocialDetail.newBuilder()
-				.setUid(this.getId())
+				.setUid(this.getUid())
 				.setAvatar(HeadImage.newBuilder().setAvatarId(this.getHeadImage()))
 				.setNickname(this.getNickname())
 				.setSignature(this.getSignature())
@@ -649,7 +649,7 @@ public class GenshinPlayer {
 	
 	public PlayerLocationInfo getPlayerLocationInfo() {
 		return PlayerLocationInfo.newBuilder()
-					.setUid(this.getId())
+					.setUid(this.getUid())
 					.setPos(this.getPos().toProto())
 					.setRot(this.getRotation().toProto())
 					.build();
@@ -699,7 +699,7 @@ public class GenshinPlayer {
 		
 		// Check if player object exists in server
 		// TODO - optimize
-		GenshinPlayer exists = this.getServer().getPlayerById(getId());
+		GenshinPlayer exists = this.getServer().getPlayerByUid(getUid());
 		if (exists != null) {
 			exists.getSession().close();
 		}

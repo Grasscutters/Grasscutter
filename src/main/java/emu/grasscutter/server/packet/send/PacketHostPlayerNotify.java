@@ -11,7 +11,7 @@ public class PacketHostPlayerNotify extends GenshinPacket {
 		super(PacketOpcodes.HostPlayerNotify);
 		
 		HostPlayerNotify proto = HostPlayerNotify.newBuilder()
-				.setHostUid(world.getHost().getId())
+				.setHostUid(world.getHost().getUid())
 				.setHostPeerId(world.getHost().getPeerId())
 				.build();
 		

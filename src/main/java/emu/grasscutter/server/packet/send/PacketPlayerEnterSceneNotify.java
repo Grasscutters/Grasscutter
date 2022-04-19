@@ -24,13 +24,13 @@ public class PacketPlayerEnterSceneNotify extends GenshinPacket {
 				.setPos(player.getPos().toProto())
 				.setSceneBeginTime(System.currentTimeMillis())
 				.setType(EnterType.EnterSelf)
-				.setTargetUid(player.getId())
+				.setTargetUid(player.getUid())
 				.setEnterSceneToken(player.getEnterSceneToken())
 				.setWorldLevel(player.getWorldLevel())
 				.setEnterReason(EnterReason.Login.getValue())
 				.setIsFirstLoginEnterScene(player.isFirstLoginEnterScene())
 				.setUnk1(1)
-				.setUnk2("3-" + player.getId() + "-" + (int) (System.currentTimeMillis() / 1000) + "-" + 18402)
+				.setUnk2("3-" + player.getUid() + "-" + (int) (System.currentTimeMillis() / 1000) + "-" + 18402)
 				.build();
 		
 		this.setData(proto);
@@ -53,7 +53,7 @@ public class PacketPlayerEnterSceneNotify extends GenshinPacket {
 				.setPos(newPos.toProto())
 				.setSceneBeginTime(System.currentTimeMillis())
 				.setType(EnterType.EnterSelf)
-				.setTargetUid(target.getId())
+				.setTargetUid(target.getUid())
 				.setEnterSceneToken(player.getEnterSceneToken())
 				.setWorldLevel(target.getWorld().getWorldLevel())
 				.setEnterReason(reason.getValue())
@@ -62,7 +62,7 @@ public class PacketPlayerEnterSceneNotify extends GenshinPacket {
 				.addSceneTagIdList(113)
 				.addSceneTagIdList(117)
 				.setUnk1(1)
-				.setUnk2(newScene + "-" + target.getId() + "-" + (int) (System.currentTimeMillis() / 1000) + "-" + 18402)
+				.setUnk2(newScene + "-" + target.getUid() + "-" + (int) (System.currentTimeMillis() / 1000) + "-" + 18402)
 				.build();
 		
 		this.setData(proto);

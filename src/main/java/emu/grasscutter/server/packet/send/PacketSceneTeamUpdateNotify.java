@@ -19,7 +19,7 @@ public class PacketSceneTeamUpdateNotify extends GenshinPacket {
 		for (GenshinPlayer p : player.getWorld().getPlayers()) {
 			for (EntityAvatar entityAvatar : p.getTeamManager().getActiveTeam()) {
 				SceneTeamAvatar.Builder avatarProto = SceneTeamAvatar.newBuilder()
-						.setPlayerId(p.getId())
+						.setPlayerId(p.getUid())
 						.setAvatarGuid(entityAvatar.getAvatar().getGuid())
 						.setSceneId(p.getSceneId())
 						.setEntityId(entityAvatar.getId())

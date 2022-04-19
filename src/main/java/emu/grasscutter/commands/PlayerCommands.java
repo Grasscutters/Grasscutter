@@ -52,8 +52,8 @@ public final class PlayerCommands {
                 case 2:
                     try {
                         target = Integer.parseInt(args.get(0));
-                        if(Grasscutter.getGameServer().getPlayerById(target) == null) {
-                            target = player.getId(); amount = Integer.parseInt(args.get(1));
+                        if(Grasscutter.getGameServer().getPlayerByUid(target) == null) {
+                            target = player.getUid(); amount = Integer.parseInt(args.get(1));
                             item = Integer.parseInt(args.get(0));
                         } else {
                             item = Integer.parseInt(args.get(1));
@@ -67,7 +67,7 @@ public final class PlayerCommands {
                 case 3:
                     try {
                         target = Integer.parseInt(args.get(0));
-                        if(Grasscutter.getGameServer().getPlayerById(target) == null) {
+                        if(Grasscutter.getGameServer().getPlayerByUid(target) == null) {
                             CommandHandler.sendMessage(player, "Invalid player ID."); return;
                         }
 
@@ -81,7 +81,7 @@ public final class PlayerCommands {
                     break;
             }
 
-            GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+            GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
             if(targetPlayer == null) {
                 CommandHandler.sendMessage(player, "Player not found."); return;
             }
@@ -108,7 +108,7 @@ public final class PlayerCommands {
                 int item = Integer.parseInt(args.get(1));
                 int amount = 1; if(args.size() > 2) amount = Integer.parseInt(args.get(2));
                 
-                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
                 if(targetPlayer == null) {
                     CommandHandler.sendMessage(null, "Player not found."); return;
                 }
@@ -233,7 +233,7 @@ public final class PlayerCommands {
             	int playerUid = Integer.parseInt(args.get(0));
                 int sceneId = Integer.parseInt(args.get(1));
                 
-                GenshinPlayer player = Grasscutter.getGameServer().getPlayerById(playerUid);
+                GenshinPlayer player = Grasscutter.getGameServer().getPlayerByUid(playerUid);
                 if (player == null) {
                 	CommandHandler.sendMessage(null, "Player not found or offline.");
                 	return;

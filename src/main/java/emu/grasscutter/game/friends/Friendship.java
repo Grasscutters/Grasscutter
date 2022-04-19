@@ -27,10 +27,10 @@ public class Friendship {
 	
 	public Friendship(GenshinPlayer owner, GenshinPlayer friend, GenshinPlayer asker) {
 		this.setOwner(owner);
-		this.ownerId = owner.getId();
-		this.friendId = friend.getId();
+		this.ownerId = owner.getUid();
+		this.friendId = friend.getUid();
 		this.profile = friend.getProfile();
-		this.askerId = asker.getId();
+		this.askerId = asker.getUid();
 	}
 
 	public GenshinPlayer getOwner() {
@@ -70,7 +70,7 @@ public class Friendship {
 	}
 	
 	public void setFriendProfile(GenshinPlayer character) {
-		if (character == null || this.friendId != character.getId()) return;
+		if (character == null || this.friendId != character.getUid()) return;
 		this.profile = character.getProfile();
 	}
 	

@@ -24,7 +24,7 @@ public class MultiplayerManager {
 	}
 
 	public void applyEnterMp(GenshinPlayer player, int targetUid) {
-		GenshinPlayer target = getServer().getPlayerById(targetUid);
+		GenshinPlayer target = getServer().getPlayerByUid(targetUid);
 		if (target == null) {
 			player.sendPacket(new PacketPlayerApplyEnterMpResultNotify(targetUid, "", false, PlayerApplyEnterMpReason.PlayerCannotEnterMp));
 			return;
@@ -43,7 +43,7 @@ public class MultiplayerManager {
 		*/
 		
 		// Get request
-		CoopRequest request = target.getCoopRequests().get(player.getId());
+		CoopRequest request = target.getCoopRequests().get(player.getUid());
 		
 		if (request != null && !request.isExpired()) {
 			// Join request already exists
@@ -52,7 +52,7 @@ public class MultiplayerManager {
 		
 		// Put request in
 		request = new CoopRequest(player);
-		target.getCoopRequests().put(player.getId(), request);
+		target.getCoopRequests().put(player.getUid(), request);
 		
 		// Packet
 		target.sendPacket(new PacketPlayerApplyEnterMpNotify(player));
@@ -137,7 +137,7 @@ public class MultiplayerManager {
 		}
 		
 		// Get victim and sanity checks
-		GenshinPlayer victim = player.getServer().getPlayerById(targetUid);
+		GenshinPlayer victim = player.getServer().getPlayerByUid(targetUid);
 		
 		if (victim == null || victim == player) {
 			return false;
