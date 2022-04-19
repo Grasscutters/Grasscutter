@@ -56,6 +56,8 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 `!killall`
 
+`!setworldlevel [level]` - Relog to see effects properly
+
 `!godmode` - Prevents you from taking damage
 
 `!resetconst` - Resets the constellation level on your current active character, will need to relog after using the command to see any changes.
