@@ -571,15 +571,6 @@ public class GenshinPlayer {
 	public void sendMessage(GenshinPlayer sender, Object message) {
 		this.sendPacket(new PacketPrivateChatNotify(sender.getUid(), this.getUid(), message.toString()));
 	}
-
-	/**
-	 * Sends a message to another player.
-	 * @param sender The sender of the message.
-	 * @param message The message to send.
-	 */
-	public void sendMessage(GenshinPlayer sender, Object message) {
-		this.sendPacket(new PacketPrivateChatNotify(sender.getId(), this.getId(), message.toString()));
-	}
 	
 	public void interactWith(int gadgetEntityId) {
 		GenshinEntity entity = getScene().getEntityById(gadgetEntityId);

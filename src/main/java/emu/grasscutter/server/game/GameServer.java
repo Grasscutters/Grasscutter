@@ -118,7 +118,7 @@ public final class GameServer extends MihoyoKcpServer {
 		}
 		
 		// Get from online players
-		GenshinPlayer player = this.getPlayerByUid(id);
+		GenshinPlayer player = this.getPlayers().get(id);
 		
 		if (!allowOfflinePlayers) {
 			return player;
