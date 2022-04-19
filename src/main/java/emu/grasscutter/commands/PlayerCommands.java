@@ -41,7 +41,7 @@ public final class PlayerCommands {
                 case 1:
                     try {
                         item = Integer.parseInt(args.get(0));
-                        target = player.getId();
+                        target = player.getAccount().getPlayerId();
                     } catch (NumberFormatException ignored) {
                         // TODO: Parse from item name using GM Handbook.
                         CommandHandler.sendMessage(player, "Invalid item id.");
@@ -147,7 +147,7 @@ public final class PlayerCommands {
         @Override
         public void execute(GenshinPlayer player, List<String> args) {
             if(args.size() < 1) {
-                CommandHandler.sendMessage(null, "Usage: drop <itemId|itemName> [amount]");
+                CommandHandler.sendMessage(player, "Usage: drop <itemId|itemName> [amount]");
                 return;
             }
 
@@ -157,7 +157,7 @@ public final class PlayerCommands {
 
                 ItemData itemData = GenshinData.getItemDataMap().get(item);
                 if(itemData == null) {
-                    CommandHandler.sendMessage(null, "Invalid item id."); return;
+                    CommandHandler.sendMessage(player, "Invalid item id."); return;
                 }
 
                 if (itemData.isEquip()) {
@@ -172,7 +172,7 @@ public final class PlayerCommands {
                     player.getWorld().addEntity(entity);
                 }
             } catch (NumberFormatException ignored) {
-                CommandHandler.sendMessage(null, "Invalid item or player ID.");
+                CommandHandler.sendMessage(player, "Invalid item or player ID.");
             }
         }
     }
