@@ -27,7 +27,8 @@ hs_err_pid*
 .gradle
 
 # Ignore Gradle build output directory
-build
+build/
+out/
 
 # Eclipse
 .project
