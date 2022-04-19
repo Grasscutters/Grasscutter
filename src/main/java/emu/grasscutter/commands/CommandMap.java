@@ -13,6 +13,7 @@ public final class CommandMap {
     }
     
     private final Map<String, CommandHandler> commands = new HashMap<>();
+    private final Map<String, Command.Execution> executionPower = new HashMap<>();
 
     /**
      * Register a command handler.
@@ -23,13 +24,18 @@ public final class CommandMap {
     public CommandMap registerCommand(String label, CommandHandler command) {
         Grasscutter.getLogger().debug("Registered command: " + label);
         
+        // Get command data.
         Command annotation = command.getClass().getAnnotation(Command.class);
-        if(annotation.aliases().length > 0) {
-            for (String alias : annotation.aliases())
-                this.commands.put(alias, command);
-        } this.commands.put(label, command);
+        this.executionPower.put(label, annotation.execution());
+        this.commands.put(label, command);
         
-        return this;
+        // Register aliases.
+        if(annotation.aliases().length > 0) {
+            for (String alias : annotation.aliases()) {
+                this.commands.put(alias, command);
+                this.executionPower.put(alias, annotation.execution());
+            }
+        } return this;
     }
 
     /**
@@ -43,10 +49,16 @@ public final class CommandMap {
         if(handler == null) return this;
         
         Command annotation = handler.getClass().getAnnotation(Command.class);
+        this.executionPower.remove(label);
+        this.commands.remove(label);
+        
+        // Unregister aliases.
         if(annotation.aliases().length > 0) {
-            for (String alias : annotation.aliases())
+            for (String alias : annotation.aliases()) {
                 this.commands.remove(alias);
-        } this.commands.remove(label); 
+                this.executionPower.remove(alias);
+            }
+        }
         
         return this;
     }
@@ -77,9 +89,16 @@ public final class CommandMap {
             CommandHandler.sendMessage(player, "Unknown command: " + label); return;
         }
         
+        // Execution power check.
+        Command.Execution executionPower = this.executionPower.get(label);
+        if(player == null && executionPower == Command.Execution.PLAYER) {
+            CommandHandler.sendMessage(null, "Run this command in-game."); return;
+        } else if (player != null && executionPower == Command.Execution.CONSOLE) {
+            CommandHandler.sendMessage(player, "This command can only be run from the console."); return;
+        }
+        
         // Invoke execute method for handler.
-        if(player == null)
-            handler.execute(args);
+        if(player == null) handler.execute(args); 
         else handler.execute(player, args);
     }
     
