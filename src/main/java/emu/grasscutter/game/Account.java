@@ -9,6 +9,7 @@ import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
 import dev.morphia.annotations.IndexOptions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(value = "accounts", noClassnameStored = true)
@@ -28,7 +29,9 @@ public class Account {
 	private List<String> permissions;
 
 	@Deprecated
-	public Account() {}
+	public Account() {
+		this.permissions = new ArrayList<>();
+	}
 
 	public String getId() {
 		return id;
