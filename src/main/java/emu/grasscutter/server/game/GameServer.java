@@ -1,12 +1,7 @@
 package emu.grasscutter.server.game;
 
 import java.net.InetSocketAddress;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 import emu.grasscutter.GenshinConstants;
@@ -113,6 +108,12 @@ public final class GameServer extends MihoyoKcpServer {
 
 	public GenshinPlayer getPlayerById(int id) {
 		return this.getPlayers().get(id);
+	}
+	
+	public GenshinPlayer getPlayerByUid(int uid) {
+		return this.getPlayers().values().stream()
+				.filter(player -> player.getAccount().getPlayerId() == uid)
+				.findFirst().orElse(this.getPlayerById(uid));
 	}
 	
 	public GenshinPlayer forceGetPlayerById(int id) {
