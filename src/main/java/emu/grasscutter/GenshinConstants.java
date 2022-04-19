@@ -9,14 +9,6 @@ public final class GenshinConstants {
 	public static String VERSION = "2.6.0";
 	
 	public static final int MAX_TEAMS = 4;
-	public static final int MAX_AVATARS_IN_TEAM = 4;
-	
-	public static final int LIMIT_WEAPON = 2000;
-	public static final int LIMIT_RELIC = 2000;
-	public static final int LIMIT_MATERIAL = 2000;
-	public static final int LIMIT_FURNITURE = 2000;
-	public static final int LIMIT_ALL = 30000;
-	
 	public static final int MAIN_CHARACTER_MALE = 10000005;
 	public static final int MAIN_CHARACTER_FEMALE = 10000007;
 	public static final Position START_POSITION = new Position(2747, 194, -1719);

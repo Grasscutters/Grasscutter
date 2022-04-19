@@ -46,12 +46,12 @@ public class InvokeHandler<T> {
 		try {
 			if (entryListForwardAll.size() > 0) {
 				GenshinPacket packet = packetClass.getDeclaredConstructor(List.class).newInstance(this.entryListForwardAll);
-				player.getWorld().broadcastPacket(packet);
+				player.getScene().broadcastPacket(packet);
 				this.entryListForwardAll.clear();
 			}
 			if (entryListForwardAllExceptCur.size() > 0) {
 				GenshinPacket packet = packetClass.getDeclaredConstructor(List.class).newInstance(this.entryListForwardAllExceptCur);
-				player.getWorld().broadcastPacketToOthers(player, packet);
+				player.getScene().broadcastPacketToOthers(player, packet);
 				this.entryListForwardAllExceptCur.clear();
 			}
 			if (entryListForwardHost.size() > 0) {

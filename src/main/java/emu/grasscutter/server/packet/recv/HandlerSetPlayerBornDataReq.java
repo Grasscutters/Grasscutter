@@ -57,7 +57,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			}
 			
 			// Save account
-			session.getAccount().setPlayerId(player.getId());
+			session.getAccount().setPlayerId(player.getUid());
 			session.getAccount().save();
 			
 			// Set character

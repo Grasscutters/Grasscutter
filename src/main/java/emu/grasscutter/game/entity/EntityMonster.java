@@ -4,6 +4,7 @@ import emu.grasscutter.data.GenshinData;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.def.MonsterCurveData;
 import emu.grasscutter.data.def.MonsterData;
+import emu.grasscutter.game.GenshinScene;
 import emu.grasscutter.game.World;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
@@ -36,9 +37,9 @@ public class EntityMonster extends GenshinEntity {
 	private final int level;
 	private int weaponEntityId;
 	
-	public EntityMonster(World world, MonsterData monsterData, Position pos, int level) {
-		super(world);
-		this.id = world.getNextEntityId(EntityIdType.MONSTER);
+	public EntityMonster(GenshinScene scene, MonsterData monsterData, Position pos, int level) {
+		super(scene);
+		this.id = getWorld().getNextEntityId(EntityIdType.MONSTER);
 		this.monsterData = monsterData;
 		this.fightProp = new Int2FloatOpenHashMap();
 		this.pos = new Position(pos);
@@ -48,7 +49,7 @@ public class EntityMonster extends GenshinEntity {
 		
 		// Monster weapon
 		if (getMonsterWeaponId() > 0) {
-			this.weaponEntityId = world.getNextEntityId(EntityIdType.WEAPON);
+			this.weaponEntityId = getWorld().getNextEntityId(EntityIdType.WEAPON);
 		}
 		
 		this.recalcStats();

@@ -125,8 +125,8 @@ public class GenshinItem {
 	}
 
 	public void setOwner(GenshinPlayer player) {
-		this.ownerId = player.getId();
-		this.guid = player.getNextGuid();
+		this.ownerId = player.getUid();
+		this.guid = player.getNextGenshinGuid();
 	}
 	public int getItemId() {
 		return itemId;

@@ -22,12 +22,12 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 				case CombatEvtBeingHit:
 					// Handle damage
 					EvtBeingHitInfo hitInfo = EvtBeingHitInfo.parseFrom(entry.getCombatData());
-					session.getPlayer().getWorld().handleAttack(hitInfo.getAttackResult());
+					session.getPlayer().getScene().handleAttack(hitInfo.getAttackResult());
 					break;
 				case EntityMove:
 					// Handle movement
 					EntityMoveInfo moveInfo = EntityMoveInfo.parseFrom(entry.getCombatData());
-					GenshinEntity entity = session.getPlayer().getWorld().getEntityById(moveInfo.getEntityId());
+					GenshinEntity entity = session.getPlayer().getScene().getEntityById(moveInfo.getEntityId());
 					if (entity != null) {
 						entity.getPosition().set(moveInfo.getMotionInfo().getPos());
 						entity.getRotation().set(moveInfo.getMotionInfo().getRot());

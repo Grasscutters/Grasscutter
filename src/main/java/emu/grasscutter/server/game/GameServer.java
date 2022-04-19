@@ -104,21 +104,25 @@ public final class GameServer extends MihoyoKcpServer {
 	}
 	
 	public void registerPlayer(GenshinPlayer player) {
-		getPlayers().put(player.getId(), player);
+		getPlayers().put(player.getUid(), player);
 	}
 
-	public GenshinPlayer getPlayerById(int id) {
-		return this.getPlayers().get(id);
+	public GenshinPlayer getPlayerByUid(int id) {
+		return this.getPlayerByUid(id, false);
 	}
 	
-	public GenshinPlayer forceGetPlayerById(int id) {
+	public GenshinPlayer getPlayerByUid(int id, boolean allowOfflinePlayers) {
 		// Console check
 		if (id == GenshinConstants.SERVER_CONSOLE_UID) {
 			return null;
 		}
 		
 		// Get from online players
-		GenshinPlayer player = this.getPlayerById(id);
+		GenshinPlayer player = this.getPlayers().get(id);
+		
+		if (!allowOfflinePlayers) {
+			return player;
+		}
 		
 		// Check database if character isnt here
 		if (player == null) {
@@ -128,9 +132,9 @@ public final class GameServer extends MihoyoKcpServer {
 		return player;
 	}
 	
-	public SocialDetail.Builder getSocialDetailById(int id) {
+	public SocialDetail.Builder getSocialDetailByUid(int id) {
 		// Get from online players
-		GenshinPlayer player = this.forceGetPlayerById(id);
+		GenshinPlayer player = this.getPlayerByUid(id, true);
 	
 		if (player == null) {
 			return null;

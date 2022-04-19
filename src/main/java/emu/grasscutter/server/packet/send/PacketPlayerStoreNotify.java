@@ -1,6 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.GenshinConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.inventory.GenshinItem;
 import emu.grasscutter.net.packet.GenshinPacket;
@@ -18,7 +19,7 @@ public class PacketPlayerStoreNotify extends GenshinPacket {
 		
 		PlayerStoreNotify.Builder p = PlayerStoreNotify.newBuilder()
 				.setStoreType(StoreType.StorePack)
-				.setWeightLimit(GenshinConstants.LIMIT_ALL);
+				.setWeightLimit(Grasscutter.getConfig().getServerOptions().InventoryLimitAll);
 		
 		for (GenshinItem item : player.getInventory()) {
 			Item itemProto = item.toProto();
