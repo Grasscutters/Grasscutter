@@ -20,6 +20,7 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketGetPlayerTokenRsp;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerLoginRsp;
 import emu.grasscutter.utils.Position;
@@ -544,7 +545,8 @@ public final class PlayerCommands {
 
         @Override
         public void execute(GenshinPlayer player, List<String> args) {
-            player.getSession().close();
+            // player.getSession().close();
+            player.getSession().send(new PacketGetPlayerTokenRsp(player.getSession(), true));
         }
     }
 }
