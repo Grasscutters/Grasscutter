@@ -471,7 +471,7 @@ public class InventoryManager {
 		}
 		
 		// Consume weapon
-		player.getInventory().removeItem(feed);
+		player.getInventory().removeItem(feed, 1);
 		
 		// Get 
 		weapon.setRefinement(targetRefineLevel);
@@ -804,6 +804,12 @@ public class InventoryManager {
 		// Get talent
 		int currentTalentLevel = avatar.getCoreProudSkillLevel();
 		int nextTalentId = ((avatar.getAvatarId() % 10000000) * 10) + currentTalentLevel + 1;
+		
+		if (avatar.getAvatarId() == 10000006) {
+			// Lisa is special in that her talentId starts with 4 instead of 6.
+			nextTalentId = 40 + currentTalentLevel + 1;
+		}
+		
 		AvatarTalentData talentData = GenshinData.getAvatarTalentDataMap().get(nextTalentId);
 		
 		if (talentData == null) {
