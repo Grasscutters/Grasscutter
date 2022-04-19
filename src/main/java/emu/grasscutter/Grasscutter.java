@@ -16,7 +16,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import ch.qos.logback.classic.Logger;
-import emu.grasscutter.commands.ServerCommands;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.server.dispatch.DispatchServer;
@@ -103,7 +102,11 @@ public final class Grasscutter {
 		String input;
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
 			while ((input = br.readLine()) != null) {
-				CommandMap.getInstance().invoke(null, input);
+				try {
+					CommandMap.getInstance().invoke(null, input);
+				} catch (Exception e) {
+					Grasscutter.getLogger().error("Command error: " + e.getMessage());
+				}
 			}
 		} catch (Exception e) {
 			Grasscutter.getLogger().error("An error occurred.", e);
