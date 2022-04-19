@@ -111,7 +111,7 @@ public class World implements Iterable<GenshinPlayer> {
 		SceneData sceneData = GenshinData.getSceneDataMap().get(sceneId);
 		if (sceneData != null) {
 			scene = new GenshinScene(this, sceneData);
-			this.getScenes().put(sceneId, scene);
+			this.registerScene(scene);
 			return scene;
 		}
 		
@@ -196,6 +196,14 @@ public class World implements Iterable<GenshinPlayer> {
 				victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.EnterSelf, EnterReason.TeamKick, victim.getSceneId(), victim.getPos()));
 			}
 		}
+	}
+	
+	public void registerScene(GenshinScene scene) {
+		this.getScenes().put(scene.getId(), scene);
+	}
+	
+	public void deregisterScene(GenshinScene scene) {
+		this.getScenes().remove(scene.getId());
 	}
 	
 	public boolean transferPlayerToScene(GenshinPlayer player, int sceneId, Position pos) {
