@@ -10,11 +10,40 @@ call :LOG [INFO] Initializing...
 
 @rem This will not work if your java or mitmproxy is in a different location, plugin as necessary
 @rem this just saves you from changing your PATH
-set JAVA_PATH=C:\Program Files\Java\jdk1.8.0_202\
-set MITMPROXY_PATH=%~dp0
+set JAVA_PATH=
+set MITMPROXY_PATH=
 set PROXY_SCRIPT=proxy
 @rem TODO: MongoDB integration
 set SERVER_PATH=%~dp0
+
+@rem detect java
+setlocal enabledelayedexpansion
+if "%JAVA_PATH%" == "" (
+	if not "%JAVA_HOME%" == "" (
+		set JAVA_PATH=%JAVA_HOME%
+	)
+)
+
+if "%JAVA_PATH%" == "" (
+	where java >nul 2>nul
+	if "!ERRORLEVEL!" == "0" (
+		for /f "usebackq tokens=*" %%F in (`where java`) do ( 
+			set JAVA_PATH=%%F
+		)
+		set JAVA_PATH=!JAVA_PATH:~0,-12!
+	)
+)
+
+@rem detect mitmproxy
+if "%MITMPROXY_PATH%" == "" (
+	where mitmdump >nul 2>nul
+	if "!ERRORLEVEL!" == "0" (
+		for /F "usebackq tokens=*" %%F in (`where mitmdump`) do ( 
+			set MITMPROXY_PATH=%%F
+		)
+		set MITMPROXY_PATH=!MITMPROXY_PATH:~0,-12!
+	)
+)
 
 @rem mitmproxy not found, server only
 if not exist "%MITMPROXY_PATH%mitmdump.exe" (
@@ -107,6 +136,7 @@ if "%PROXY%" == "" (
 
 	certutil -delstore root %SERIAL% >nul 2>nul
 )
+setlocal disabledelayedexpansion
 
 call :LOG [INFO] See you again :)
 goto :EOF
