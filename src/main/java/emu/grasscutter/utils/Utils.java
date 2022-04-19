@@ -80,6 +80,15 @@ public final class Utils {
 	}
 
 	/**
+	 * Creates a string with the path to a file.
+	 * @param path The path to the file.
+	 * @return A path using the operating system's file separator.
+	 */
+	public static String toFilePath(String path) {
+		return path.replace("/", File.separator);
+	}
+
+	/**
 	 * Checks if a file exists on the file system.
 	 * @param path The path to the file.
 	 * @return True if the file exists, false otherwise.
@@ -116,6 +125,16 @@ public final class Utils {
 			Grasscutter.getLogger().warn("Unable to copy resource " + resource + " to " + destination, e);
 			return false;
 		}
+	}
+
+	/**
+	 * Get object with null fallback.
+	 * @param nonNull The object to return if not null.
+	 * @param fallback The object to return if null.
+	 * @return One of the two provided objects.
+	 */
+	public static <T> T requireNonNullElseGet(T nonNull, T fallback) {
+		return nonNull != null ? nonNull : fallback;
 	}
 
 	/**

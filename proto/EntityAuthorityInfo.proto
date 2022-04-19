@@ -8,7 +8,7 @@ import "EntityRendererChangedInfo.proto";
 import "SceneEntityAiInfo.proto";
 import "Vector.proto";
 
-message EntityAuthorityInfo {;
+message EntityAuthorityInfo {
 	AbilitySyncStateInfo abilityInfo = 1;
 	EntityRendererChangedInfo rendererChangedInfo = 2;
 	SceneEntityAiInfo aiInfo = 3;

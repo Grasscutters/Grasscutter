@@ -1,21 +1,18 @@
 package emu.grasscutter.commands;
 
-import java.lang.reflect.Modifier;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GenshinData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.GenshinScene;
+import emu.grasscutter.game.World;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.entity.GenshinEntity;
 import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.FightProperty;
@@ -23,326 +20,342 @@ import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
 import emu.grasscutter.utils.Position;
 
-public class PlayerCommands {
-	private static HashMap<String, PlayerCommand> commandList = new HashMap<String, PlayerCommand>();
-	private static HashMap<String, PlayerCommand> commandAliasList = new HashMap<String, PlayerCommand>();
+import java.util.LinkedList;
+import java.util.List;
 
-	
-	static {
-		try {
-			// Look for classes
-			for (Class<?> cls : PlayerCommands.class.getDeclaredClasses()) {
-				// Get non abstract classes
-			    if (!Modifier.isAbstract(cls.getModifiers())) {
-			    	Command commandAnnotation = cls.getAnnotation(Command.class);
-			    	PlayerCommand command = (PlayerCommand) cls.newInstance();
-			    	
-			    	if (commandAnnotation != null) {
-			    		command.setLevel(commandAnnotation.gmLevel());
-						command.setHelpText(commandAnnotation.helpText());
-						for (String alias : commandAnnotation.aliases()) {
-			    			if (alias.length() == 0) {
-			    				continue;
-			    			}
+/**
+ * A container for player-related commands.
+ */
+public final class PlayerCommands {
+    @Command(label = "give", aliases = {"g", "item", "giveitem"}, 
+            usage = "Usage: give [player] <itemId|itemName> [amount]")
+    public static class GiveCommand implements CommandHandler {
 
-							String commandName = alias;
-							commandAliasList.put(commandName, command);
-			    		}
-			    	}
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            int target, item, amount = 1;
 
-			    	String commandName = cls.getSimpleName().toLowerCase();
-			    	commandList.put(commandName, command);
-			    }
-		
-			}
-		} catch (Exception e) {
-			
-		}
-	}
+            switch(args.size()) {
+                default:
+                    CommandHandler.sendMessage(player, "Usage: give <player> <itemId|itemName> [amount]");
+                    return;
+                case 1:
+                    try {
+                        item = Integer.parseInt(args.get(0));
+                        target = player.getAccount().getPlayerId();
+                    } catch (NumberFormatException ignored) {
+                        // TODO: Parse from item name using GM Handbook.
+                        CommandHandler.sendMessage(player, "Invalid item id.");
+                        return;
+                    }
+                    break;
+                case 2:
+                    try {
+                        target = Integer.parseInt(args.get(0));
+                        if(Grasscutter.getGameServer().getPlayerById(target) == null) {
+                            target = player.getId(); amount = Integer.parseInt(args.get(1));
+                            item = Integer.parseInt(args.get(0));
+                        } else {
+                            item = Integer.parseInt(args.get(1));
+                        }
+                    } catch (NumberFormatException ignored) {
+                        // TODO: Parse from item name using GM Handbook.
+                        CommandHandler.sendMessage(player, "Invalid item or player ID.");
+                        return;
+                    }
+                    break;
+                case 3:
+                    try {
+                        target = Integer.parseInt(args.get(0));
+                        if(Grasscutter.getGameServer().getPlayerById(target) == null) {
+                            CommandHandler.sendMessage(player, "Invalid player ID."); return;
+                        }
 
-	public static void handle(GenshinPlayer player, String msg) {
-		String[] split = msg.split(" ");
-		
-		// End if invalid
-		if (split.length == 0) {
-			return;
-		}
+                        item = Integer.parseInt(args.get(1));
+                        amount = Integer.parseInt(args.get(2));
+                    } catch (NumberFormatException ignored) {
+                        // TODO: Parse from item name using GM Handbook.
+                        CommandHandler.sendMessage(player, "Invalid item or player ID.");
+                        return;
+                    }
+                    break;
+            }
 
-		String first = split[0].toLowerCase().substring(1);
-		PlayerCommand c = PlayerCommands.commandList.get(first);
-		PlayerCommand a = PlayerCommands.commandAliasList.get(first);
-		
-		if (c != null || a != null) {
-			PlayerCommand cmd = c != null ? c : a;
-			// Level check
-			if (player.getGmLevel() < cmd.getLevel()) {
-				return;
-			}
-			// Execute
-			int len = Math.min(split[0].length() + 1, msg.length());
-			cmd.execute(player, msg.substring(len));
-		}
-	}
-	
-	public static abstract class PlayerCommand {
-		// GM level required to use this command
-		private int level;
-		private String helpText;
+            GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+            if(targetPlayer == null) {
+                CommandHandler.sendMessage(player, "Player not found."); return;
+            }
 
-		protected int getLevel() { return this.level; }
-		protected void setLevel(int minLevel) { this.level = minLevel; }
+            ItemData itemData = GenshinData.getItemDataMap().get(item);
+            if(itemData == null) {
+                CommandHandler.sendMessage(player, "Invalid item id."); return;
+            }
+            
+            this.item(targetPlayer, itemData, amount);
+        }
 
-		protected String getHelpText() { return this.helpText; }
-		protected void setHelpText(String helpText) { this.helpText = helpText; }
+        /**
+         * give [player] [itemId|itemName] [amount]
+         */
+        @Override public void execute(List<String> args) {
+            if(args.size() < 2) {
+                CommandHandler.sendMessage(null, "Usage: give <player> <itemId|itemName> [amount]");
+                return;
+            }
 
-		// Main
-		public abstract void execute(GenshinPlayer player, String raw);
-	}
-	
-	// ================ Commands ================
+            try {
+                int target = Integer.parseInt(args.get(0));
+                int item = Integer.parseInt(args.get(1));
+                int amount = 1; if(args.size() > 2) amount = Integer.parseInt(args.get(2));
+                
+                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+                if(targetPlayer == null) {
+                    CommandHandler.sendMessage(null, "Player not found."); return;
+                }
+                
+                ItemData itemData = GenshinData.getItemDataMap().get(item);
+                if(itemData == null) {
+                    CommandHandler.sendMessage(null, "Invalid item id."); return;
+                }
+                
+                this.item(targetPlayer, itemData, amount);
+            } catch (NumberFormatException ignored) {
+                CommandHandler.sendMessage(null, "Invalid item or player ID.");
+            }
+        }
+        
+        private void item(GenshinPlayer player, ItemData itemData, int amount) {
+            GenshinItem genshinItem = new GenshinItem(itemData);
+            if(itemData.isEquip()) {
+                List<GenshinItem> items = new LinkedList<>();
+                for(int i = 0; i < amount; i++) {
+                    items.add(genshinItem);
+                } player.getInventory().addItems(items);
+                player.sendPacket(new PacketItemAddHintNotify(items, ActionReason.SubfieldDrop));
+            } else {
+                genshinItem.setCount(amount);
+                player.getInventory().addItem(genshinItem);
+                player.sendPacket(new PacketItemAddHintNotify(genshinItem, ActionReason.SubfieldDrop));
+            }
+        }
+    }
+    
+    @Command(label = "drop", aliases = {"d", "dropitem"}, 
+            usage = "Usage: drop <itemId|itemName> [amount]", 
+            execution = Command.Execution.PLAYER)
+    public static class DropCommand implements CommandHandler {
 
-	@Command(aliases = {"h"}, helpText = "Shows this command")
-	public static class Help extends PlayerCommand {
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            if(args.size() < 1) {
+                CommandHandler.sendMessage(player, "Usage: drop <itemId|itemName> [amount]");
+                return;
+            }
 
-		@Override
-		public void execute(GenshinPlayer player, String raw) {
-			String helpMessage = "Grasscutter Commands: ";
-			for (Map.Entry<String, PlayerCommand> cmd : commandList.entrySet()) {
+            try {
+                int item = Integer.parseInt(args.get(0));
+                int amount = 1; if(args.size() > 1) amount = Integer.parseInt(args.get(1));
 
-				helpMessage += "\n" + cmd.getKey() + " - " + cmd.getValue().helpText;
-			}
+                ItemData itemData = GenshinData.getItemDataMap().get(item);
+                if(itemData == null) {
+                    CommandHandler.sendMessage(player, "Invalid item id."); return;
+                }
+                if (itemData.isEquip()) {
+                    float range = (5f + (.1f * amount));
+                    for (int i = 0; i < amount; i++) {
+                        Position pos = player.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
+                        EntityItem entity = new EntityItem(player.getScene(), player, itemData, pos, 1);
+                        player.getScene().addEntity(entity);
+                    }
+                } else {
+                    EntityItem entity = new EntityItem(player.getScene(), player, itemData, player.getPos().clone().addY(3f), amount);
+                    player.getScene().addEntity(entity);
+                }
+            } catch (NumberFormatException ignored) {
+                CommandHandler.sendMessage(player, "Invalid item or player ID.");
+            }
+        }
+    }
+    
+    @Command(label = "spawn", execution = Command.Execution.PLAYER, 
+            usage = "Usage: spawn <entityId|entityName> [level] [amount]")
+    public static class SpawnCommand implements CommandHandler {
+        
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            if(args.size() < 1) {
+                CommandHandler.sendMessage(null, "Usage: spawn <entityId|entityName> [amount]");
+                return;
+            }
+            
+            try {
+                int entity = Integer.parseInt(args.get(0));
+                int level = 1; if(args.size() > 1) level = Integer.parseInt(args.get(1));
+                int amount = 1; if(args.size() > 2) amount = Integer.parseInt(args.get(2));
 
-			player.dropMessage(helpMessage);
-		}
-	}
-	
-	@Command(aliases = {"g", "item", "additem"}, helpText = "/give [item id] [count] - Gives {count} amount of {item id}")
-	public static class Give extends PlayerCommand {
-		@Override
-		public void execute(GenshinPlayer player, String raw) {
-			String[] split = raw.split(" ");
-			int itemId = 0, count = 1;
-			
-			try {
-				itemId = Integer.parseInt(split[0]);
-			} catch (Exception e) {
-				itemId = 0;
-			}
-			
-			try {
-				count = Math.max(Math.min(Integer.parseInt(split[1]), Integer.MAX_VALUE), 1);
-			} catch (Exception e) {
-				count = 1;
-			}
-			
-			// Give
-			ItemData itemData = GenshinData.getItemDataMap().get(itemId);
-			GenshinItem item;
-			
-			if (itemData == null) {
-				player.dropMessage("Error: Item data not found");
-				return;
-			}
-			
-			if (itemData.isEquip()) {
-				List<GenshinItem> items = new LinkedList<>();
-				for (int i = 0; i < count; i++) {
-					item = new GenshinItem(itemData);
-					items.add(item);
-				}
-				player.getInventory().addItems(items);
-				player.sendPacket(new PacketItemAddHintNotify(items, ActionReason.SubfieldDrop));
-			} else {
-				item = new GenshinItem(itemData, count);
-				player.getInventory().addItem(item);
-				player.sendPacket(new PacketItemAddHintNotify(item, ActionReason.SubfieldDrop));
-			}
-		}
-	}
-	
-	@Command(aliases = {"d"}, helpText = "/drop [item id] [count] - Drops {count} amount of {item id}")
-	public static class Drop extends PlayerCommand {
-		@Override
-		public void execute(GenshinPlayer player, String raw) {
-			String[] split = raw.split(" ");
-			int itemId = 0, count = 1;
-			
-			try {
-				itemId = Integer.parseInt(split[0]);
-			} catch (Exception e) {
-				itemId = 0;
-			}
-			
-			try {
-				count = Math.max(Math.min(Integer.parseInt(split[1]), Integer.MAX_VALUE), 1);
-			} catch (Exception e) {
-				count = 1;
-			}
-			
-			// Give
-			ItemData itemData = GenshinData.getItemDataMap().get(itemId);
-			
-			if (itemData == null) {
-				player.dropMessage("Error: Item data not found");
-				return;
-			}
-			
-			if (itemData.isEquip()) {
-				float range = (5f + (.1f * count));
-				for (int i = 0; i < count; i++) {
-					Position pos = player.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-					EntityItem entity = new EntityItem(player.getScene(), player, itemData, pos, 1);
-					player.getScene().addEntity(entity);
-				}
-			} else {
-				EntityItem entity = new EntityItem(player.getScene(), player, itemData, player.getPos().clone().addY(3f), count);
-				player.getScene().addEntity(entity);
-			}
-		}
-	}
-	
-	@Command(helpText = "/spawn [monster id] [count] - Creates {count} amount of {item id}")
-	public static class Spawn extends PlayerCommand {
-		@Override
-		public void execute(GenshinPlayer player, String raw) {
-			String[] split = raw.split(" ");
-			int monsterId = 0, count = 1, level = 1;
-			
-			try {
-				monsterId = Integer.parseInt(split[0]);
-			} catch (Exception e) {
-				monsterId = 0;
-			}
-			
-			try {
-				level = Math.max(Math.min(Integer.parseInt(split[1]), 200), 1);
-			} catch (Exception e) {
-				level = 1;
-			}
-			
-			try {
-				count = Math.max(Math.min(Integer.parseInt(split[2]), 1000), 1);
-			} catch (Exception e) {
-				count = 1;
-			}
-			
-			// Give
-			MonsterData monsterData = GenshinData.getMonsterDataMap().get(monsterId);
-			
-			if (monsterData == null) {
-				player.dropMessage("Error: Monster data not found");
-				return;
-			}
-			
-			float range = (5f + (.1f * count));
-			for (int i = 0; i < count; i++) {
-				Position pos = player.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-				EntityMonster entity = new EntityMonster(player.getScene(), monsterData, pos, level);
-				player.getScene().addEntity(entity);
-			}
-		}
-	}
-	
-	@Command(helpText = "/killall")
-	public static class KillAll extends PlayerCommand {
-		@Override
-		public void execute(GenshinPlayer player, String raw) {
-			List<GenshinEntity> toRemove = new LinkedList<>();
-			for (GenshinEntity entity : player.getScene().getEntities().values()) {
-				if (entity instanceof EntityMonster) {
-					toRemove.add(entity);
-				}
-			}
-			toRemove.forEach(e -> player.getScene().killEntity(e, 0));
-		}
-	}
-	
-	@Command(helpText = "/resetconst - Resets all constellations for the currently active character")
-	public static class ResetConst extends PlayerCommand {
-		@Override
-		public void execute(GenshinPlayer player, String raw) {
-			EntityAvatar entity = player.getTeamManager().getCurrentAvatarEntity();
-			
-			if (entity == null) {
-				return;
-			}
-			
-			GenshinAvatar avatar = entity.getAvatar();
-			
-			avatar.getTalentIdList().clear();
-			avatar.setCoreProudSkillLevel(0);
-			avatar.recalcStats();
-			avatar.save();
-			
-			player.dropMessage("Constellations for " + entity.getAvatar().getAvatarData().getName() + " have been reset. Please relogin to see changes.");
-		}
-	}
-	
-	@Command(helpText = "/godmode - Prevents you from taking damage")
-	public static class Godmode extends PlayerCommand {
-		@Override
-		public void execute(GenshinPlayer player, String raw) {
-			player.setGodmode(!player.hasGodmode());
-			player.dropMessage("Godmode is now " + (player.hasGodmode() ? "ON" : "OFF"));
-		}
-	}
-	
-	@Command(helpText = "/sethp [hp]")
-	public static class Sethp extends PlayerCommand {
-		@Override
-		public void execute(GenshinPlayer player, String raw) {
-			String[] split = raw.split(" ");
-			int hp = 0;
-			
-			try {
-				hp = Math.max(Integer.parseInt(split[0]), 1);
-			} catch (Exception e) {
-				hp = 1;
-			}
-			
-			EntityAvatar entity = player.getTeamManager().getCurrentAvatarEntity();
-			
-			if (entity == null) {
-				return;
-			}
-			
-			entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, hp);
-			entity.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
-		}
-	}
-	
-	@Command(aliases = {"clearart"}, helpText = "/clearartifacts")
-	public static class ClearArtifacts extends PlayerCommand {
-		@Override
-		public void execute(GenshinPlayer player, String raw) {
-			List<GenshinItem> toRemove = new LinkedList<>();
-			for (GenshinItem item : player.getInventory().getItems().values()) {
-				if (item.getItemType() == ItemType.ITEM_RELIQUARY && item.getLevel() == 1 && item.getExp() == 0 && !item.isLocked() && !item.isEquipped()) {
-					toRemove.add(item);
-				}
-			}
-			
-			player.getInventory().removeItems(toRemove);
-		}
-	}
-	
-	@Command(aliases = {"scene"}, helpText = "/Changescene [Scene id]")
-	public static class ChangeScene extends PlayerCommand {
-		@Override
-		public void execute(GenshinPlayer player, String raw) {
-			int sceneId = 0;
-		
-			try {
-				sceneId = Integer.parseInt(raw);
-			} catch (Exception e) {
-				return;
-			}
-			
-			boolean result = player.getWorld().transferPlayerToScene(player, sceneId, player.getPos());
-			
-			if (!result) {
-				player.dropMessage("Scene does not exist or you are already in it");
-			}
-		}
-	}
+                MonsterData entityData = GenshinData.getMonsterDataMap().get(entity);
+                if(entityData == null) {
+                    CommandHandler.sendMessage(null, "Invalid entity id."); return;
+                }
+
+                float range = (5f + (.1f * amount));
+                for (int i = 0; i < amount; i++) {
+                    Position pos = player.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
+                    EntityMonster monster = new EntityMonster(player.getScene(), entityData, pos, level);
+                    player.getScene().addEntity(monster);
+                }
+            } catch (NumberFormatException ignored) {
+                CommandHandler.sendMessage(null, "Invalid item or player ID.");
+            }
+        }
+    }
+    
+    @Command(label = "killall", 
+            usage = "Usage: killall [playerUid] [sceneId]")
+    public static class KillAllCommand implements CommandHandler {
+
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            GenshinScene scene = player.getScene();
+            scene.getEntities().values().stream()
+                    .filter(entity -> entity instanceof EntityMonster)
+                    .forEach(entity -> scene.killEntity(entity, 0));
+            CommandHandler.sendMessage(null, "Killing all monsters in scene " + scene.getId());
+        }
+        
+        @Override
+        public void execute(List<String> args) {
+            if(args.size() < 2) {
+                CommandHandler.sendMessage(null, "Usage: killall [playerUid] [sceneId]"); return;
+            }
+
+            try {
+            	int playerUid = Integer.parseInt(args.get(0));
+                int sceneId = Integer.parseInt(args.get(1));
+                
+                GenshinPlayer player = Grasscutter.getGameServer().getPlayerById(playerUid);
+                if (player == null) {
+                	CommandHandler.sendMessage(null, "Player not found or offline.");
+                	return;
+                }
+                
+                GenshinScene scene = player.getWorld().getSceneById(sceneId);
+                if (scene == null) {
+                	CommandHandler.sendMessage(null, "Scene not found in player world");
+                	return;
+                }
+                
+                scene.getEntities().values().stream()
+                        .filter(entity -> entity instanceof EntityMonster)
+                        .forEach(entity -> scene.killEntity(entity, 0));
+                CommandHandler.sendMessage(null, "Killing all monsters in scene " + scene.getId());
+            } catch (NumberFormatException ignored) {
+                CommandHandler.sendMessage(null, "Invalid arguments.");
+            }
+        }
+    }
+    
+    @Command(label = "resetconst", aliases = {"resetconstellation"}, 
+            usage = "Usage: resetconst [all]", execution = Command.Execution.PLAYER)
+    public static class ResetConstellationCommand implements CommandHandler {
+        
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            if(args.size() > 0 && args.get(0).equalsIgnoreCase("all")) {
+                player.getAvatars().forEach(this::resetConstellation);
+                player.dropMessage("Reset all avatars' constellations.");
+            } else {
+                EntityAvatar entity = player.getTeamManager().getCurrentAvatarEntity(); 
+                if(entity == null)
+                    return;
+                
+                GenshinAvatar avatar = entity.getAvatar();
+                this.resetConstellation(avatar);
+
+                player.dropMessage("Constellations for " + avatar.getAvatarData().getName() + " have been reset. Please relog to see changes.");
+            }
+        }
+        
+        private void resetConstellation(GenshinAvatar avatar) {
+            avatar.getTalentIdList().clear();
+            avatar.setCoreProudSkillLevel(0);
+            avatar.recalcStats();
+            avatar.save();
+        }
+    }
+    
+    @Command(label = "godmode",
+            usage = "Usage: godmode", execution = Command.Execution.PLAYER)
+    public static class GodModeCommand implements CommandHandler {
+        
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            player.setGodmode(!player.inGodmode());
+            player.dropMessage("Godmode is now " + (player.inGodmode() ? "enabled" : "disabled") + ".");
+        }
+    }
+    
+    @Command(label = "sethealth", aliases = {"sethp"}, 
+            usage = "Usage: sethealth <hp>", execution = Command.Execution.PLAYER)
+    public static class SetHealthCommand implements CommandHandler {
+
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            if(args.size() < 1) {
+                CommandHandler.sendMessage(null, "Usage: sethealth <hp>"); return;
+            }
+            
+            try {
+                int health = Integer.parseInt(args.get(0));
+                EntityAvatar entity = player.getTeamManager().getCurrentAvatarEntity();
+                if(entity == null)
+                    return;
+                
+                entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, health);
+                entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
+                player.dropMessage("Health set to " + health + ".");
+            } catch (NumberFormatException ignored) {
+                CommandHandler.sendMessage(null, "Invalid health value.");
+            }
+        }
+    }
+    
+    @Command(label = "clearartifacts", aliases = {"clearart"}, 
+            usage = "Usage: clearartifacts", execution = Command.Execution.PLAYER)
+    public static class ClearArtifactsCommand implements CommandHandler {
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            Inventory playerInventory = player.getInventory();
+            playerInventory.getItems().values().stream()
+                    .filter(item -> item.getItemType() == ItemType.ITEM_RELIQUARY)
+                    .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
+                    .filter(item -> !item.isLocked() && !item.isEquipped())
+                    .forEach(item -> playerInventory.removeItem(item, item.getCount()));
+        }
+    }
+
+    @Command(label = "changescene", aliases = {"scene"}, 
+            usage = "Usage: changescene <scene id>", execution = Command.Execution.PLAYER)
+    public static class ChangeSceneCommand implements CommandHandler {
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            if(args.size() < 1) {
+                CommandHandler.sendMessage(null, "Usage: changescene <scene id>"); return;
+            }
+
+            int sceneId = 0;
+        
+            try {
+                sceneId = Integer.parseInt(args.get(0));
+            } catch (Exception e) {
+                return;
+            }
+            
+            boolean result = player.getWorld().transferPlayerToScene(player, sceneId, player.getPos());
+            
+            if (!result) {
+                CommandHandler.sendMessage(null, "Scene does not exist or you are already in it");
+            }
+        }
+    }
 }
