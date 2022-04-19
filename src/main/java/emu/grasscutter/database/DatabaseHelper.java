@@ -36,6 +36,7 @@ public class DatabaseHelper {
 			if (reservedId == GenshinConstants.SERVER_CONSOLE_UID) {
 				return null;
 			}
+			
 			exists = DatabaseHelper.getAccountByPlayerId(reservedId);
 			if (exists != null) {
 				return null;

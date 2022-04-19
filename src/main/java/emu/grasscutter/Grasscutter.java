@@ -7,14 +7,15 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
 
+import emu.grasscutter.commands.CommandMap;
 import emu.grasscutter.utils.Utils;
+import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import ch.qos.logback.classic.Logger;
-import emu.grasscutter.commands.ServerCommands;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.server.dispatch.DispatchServer;
@@ -23,10 +24,6 @@ import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
 
 public final class Grasscutter {
-	static { 
-		System.setProperty("logback.configurationFile", "src/main/resources/logback.xml");
-	}
-	
 	private static final Logger log = (Logger) LoggerFactory.getLogger(Grasscutter.class);
 	private static Config config;
 	
@@ -37,8 +34,13 @@ public final class Grasscutter {
 	private static DispatchServer dispatchServer;
 	private static GameServer gameServer;
 	
+	public static final Reflections reflector = new Reflections();
+	
 	static {
-		// Load configuration.
+		// Declare logback configuration.
+		System.setProperty("logback.configurationFile", "src/main/resources/logback.xml");
+		
+		// Load server configuration.
 		Grasscutter.loadConfig();
 		// Check server structure.
 		Utils.startupCheck();
@@ -100,7 +102,11 @@ public final class Grasscutter {
 		String input;
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
 			while ((input = br.readLine()) != null) {
-				ServerCommands.handle(input);
+				try {
+					CommandMap.getInstance().invoke(null, input);
+				} catch (Exception e) {
+					Grasscutter.getLogger().error("Command error: " + e.getMessage());
+				}
 			}
 		} catch (Exception e) {
 			Grasscutter.getLogger().error("An error occurred.", e);
