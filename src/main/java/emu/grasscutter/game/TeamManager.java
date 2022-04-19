@@ -10,6 +10,7 @@ import java.util.Set;
 
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GenshinConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 import emu.grasscutter.game.entity.EntityAvatar;
@@ -158,17 +159,18 @@ public class TeamManager {
 	}
 	
 	public boolean isSpawned() {
-		return getPlayer().getWorld() != null && getPlayer().getWorld().getEntities().containsKey(getCurrentAvatarEntity().getId());
+		return getPlayer().getScene() != null && getPlayer().getScene().getEntities().containsKey(getCurrentAvatarEntity().getId());
 	}
 	
 	public int getMaxTeamSize() {
 		if (getPlayer().isInMultiplayer()) {
+			int max = Grasscutter.getConfig().getServerOptions().MaxAvatarsInTeamMultiplayer;
 			if (getPlayer().getWorld().getHost() == this.getPlayer()) {
-				return Math.max(1, (int) Math.ceil(GenshinConstants.MAX_AVATARS_IN_TEAM / (double) getWorld().getPlayerCount()));
+				return Math.max(1, (int) Math.ceil(max / (double) getWorld().getPlayerCount()));
 			}
-			return Math.max(1, (int) Math.floor(GenshinConstants.MAX_AVATARS_IN_TEAM / (double) getWorld().getPlayerCount()));
+			return Math.max(1, (int) Math.floor(max / (double) getWorld().getPlayerCount()));
 		}
-		return GenshinConstants.MAX_AVATARS_IN_TEAM;
+		return Grasscutter.getConfig().getServerOptions().MaxAvatarsInTeam;
 	}
 	
 	// Methods
@@ -233,7 +235,7 @@ public class TeamManager {
 					prevSelectedAvatarIndex = i;
 				}
 			} else {
-				entity = new EntityAvatar(getPlayer().getWorld(), getPlayer().getAvatars().getAvatarById(avatarId));
+				entity = new EntityAvatar(getPlayer().getScene(), getPlayer().getAvatars().getAvatarById(avatarId));
 			}
 			
 			this.getActiveTeam().add(entity);
@@ -241,7 +243,7 @@ public class TeamManager {
 		
 		// Unload removed entities
 		for (EntityAvatar entity : existingAvatars.values()) {
-			getPlayer().getWorld().removeEntity(entity);
+			getPlayer().getScene().removeEntity(entity);
 			entity.getAvatar().save();
 		}
 		
@@ -266,7 +268,7 @@ public class TeamManager {
 		// Check if character changed
 		if (currentEntity != getCurrentAvatarEntity()) {
 			// Remove and Add
-			getWorld().replaceEntity(currentEntity, getCurrentAvatarEntity());
+			getPlayer().getScene().replaceEntity(currentEntity, getCurrentAvatarEntity());
 		}
 	}
 	
@@ -396,7 +398,7 @@ public class TeamManager {
 		oldEntity.setMotionState(MotionState.MotionStandby);
 
 		// Remove and Add
-		getWorld().replaceEntity(oldEntity, newEntity);
+		getPlayer().getScene().replaceEntity(oldEntity, newEntity);
 		getPlayer().sendPacket(new PacketChangeAvatarRsp(guid));
 	}
 	
@@ -426,7 +428,7 @@ public class TeamManager {
 		} else {
 			// Set index and spawn replacement member
 			this.setCurrentCharacterIndex(replaceIndex);
-			getWorld().addEntity(replacement);
+			getPlayer().getScene().addEntity(replacement);
 		}
 
 		// Response packet

@@ -22,7 +22,7 @@ public class PlayerProfile {
 	public PlayerProfile() { }
 	
 	public PlayerProfile(GenshinPlayer player) {
-		this.id = player.getId();
+		this.id = player.getUid();
 		this.syncWithCharacter(player);
 	}
 	

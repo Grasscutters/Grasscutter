@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import emu.grasscutter.GenshinConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 
 public class TeamInfo {
@@ -12,7 +13,7 @@ public class TeamInfo {
 	
 	public TeamInfo() {
 		this.name = "";
-		this.avatars = new ArrayList<>(GenshinConstants.MAX_AVATARS_IN_TEAM);
+		this.avatars = new ArrayList<>(Grasscutter.getConfig().getServerOptions().MaxAvatarsInTeam);
 	}
 
 	public String getName() {
@@ -36,7 +37,7 @@ public class TeamInfo {
 	}
 
 	public boolean addAvatar(GenshinAvatar avatar) {
-		if (size() >= GenshinConstants.MAX_AVATARS_IN_TEAM || contains(avatar)) {
+		if (size() >= Grasscutter.getConfig().getServerOptions().MaxAvatarsInTeam || contains(avatar)) {
 			return false;
 		}
 		
@@ -56,7 +57,7 @@ public class TeamInfo {
 	}
 	
 	public void copyFrom(TeamInfo team) {
-		copyFrom(team, GenshinConstants.MAX_AVATARS_IN_TEAM);
+		copyFrom(team, Grasscutter.getConfig().getServerOptions().MaxAvatarsInTeam);
 	}
 	
 	public void copyFrom(TeamInfo team, int maxTeamSize) {

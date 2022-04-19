@@ -17,7 +17,7 @@ public class PacketWorldPlayerInfoNotify extends GenshinPacket {
 			GenshinPlayer p = world.getPlayers().get(i);
 			
 			proto.addPlayerInfoList(p.getOnlinePlayerInfo());
-			proto.addPlayerUidList(p.getId());
+			proto.addPlayerUidList(p.getUid());
 		}
 		
 		this.setData(proto.build());

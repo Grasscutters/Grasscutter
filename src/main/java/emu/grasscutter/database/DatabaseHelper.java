@@ -124,13 +124,13 @@ public class DatabaseHelper {
 		int id = 0;
 		if (reservedId > 0 && !checkPlayerExists(reservedId)) {
 			id = reservedId;
-			character.setId(id);
+			character.setUid(id);
 		} else {
 			do {
 				id = DatabaseManager.getNextId(character);
 			}
 			while (checkPlayerExists(id));
-			character.setId(id);
+			character.setUid(id);
 		}
 		// Save to database
 		DatabaseManager.getDatastore().save(character);
@@ -160,7 +160,7 @@ public class DatabaseHelper {
 	}
 	
 	public static List<GenshinAvatar> getAvatars(GenshinPlayer player) {
-		Query<GenshinAvatar> query = DatabaseManager.getDatastore().createQuery(GenshinAvatar.class).filter("ownerId", player.getId());
+		Query<GenshinAvatar> query = DatabaseManager.getDatastore().createQuery(GenshinAvatar.class).filter("ownerId", player.getUid());
 		return query.find().toList();
 	}
 	
@@ -174,16 +174,16 @@ public class DatabaseHelper {
 	}
 	
 	public static List<GenshinItem> getInventoryItems(GenshinPlayer player) {
-		Query<GenshinItem> query = DatabaseManager.getDatastore().createQuery(GenshinItem.class).filter("ownerId", player.getId());
+		Query<GenshinItem> query = DatabaseManager.getDatastore().createQuery(GenshinItem.class).filter("ownerId", player.getUid());
 		return query.find().toList();
 	}
 	public static List<Friendship> getFriends(GenshinPlayer player) {
-		Query<Friendship> query = DatabaseManager.getDatastore().createQuery(Friendship.class).filter("ownerId", player.getId());
+		Query<Friendship> query = DatabaseManager.getDatastore().createQuery(Friendship.class).filter("ownerId", player.getUid());
 		return query.find().toList();
 	}
 	
 	public static List<Friendship> getReverseFriends(GenshinPlayer player) {
-		Query<Friendship> query = DatabaseManager.getDatastore().createQuery(Friendship.class).filter("friendId", player.getId());
+		Query<Friendship> query = DatabaseManager.getDatastore().createQuery(Friendship.class).filter("friendId", player.getUid());
 		return query.find().toList();
 	}
 

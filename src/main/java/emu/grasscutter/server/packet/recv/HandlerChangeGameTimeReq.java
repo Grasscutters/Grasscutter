@@ -14,8 +14,8 @@ public class HandlerChangeGameTimeReq extends PacketHandler {
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		ChangeGameTimeReq req = ChangeGameTimeReq.parseFrom(payload);
 		
-		session.getPlayer().getWorld().changeTime(req.getGameTime());
-		session.getPlayer().sendPacket(new PacketChangeGameTimeRsp(session.getPlayer().getWorld()));
+		session.getPlayer().getScene().changeTime(req.getGameTime());
+		session.getPlayer().sendPacket(new PacketChangeGameTimeRsp(session.getPlayer()));
 	}
 
 }

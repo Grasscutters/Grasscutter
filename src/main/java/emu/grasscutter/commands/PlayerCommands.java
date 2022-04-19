@@ -7,6 +7,7 @@ import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.GenshinScene;
 import emu.grasscutter.game.World;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 import emu.grasscutter.game.entity.EntityAvatar;
@@ -54,8 +55,9 @@ public final class PlayerCommands {
                 case 2:
                     try {
                         target = Integer.parseInt(args.get(0));
-                        if(Grasscutter.getGameServer().getPlayerById(target) == null) {
-                            target = player.getId(); amount = Integer.parseInt(args.get(1));
+
+                        if(Grasscutter.getGameServer().getPlayerByUid(target) == null) {
+                            target = player.getUid(); amount = Integer.parseInt(args.get(1));
                             item = Integer.parseInt(args.get(0));
                         } else {
                             item = Integer.parseInt(args.get(1));
@@ -69,7 +71,8 @@ public final class PlayerCommands {
                 case 3:
                     try {
                         target = Integer.parseInt(args.get(0));
-                        if(Grasscutter.getGameServer().getPlayerById(target) == null) {
+                        
+                        if(Grasscutter.getGameServer().getPlayerByUid(target) == null) {
                             CommandHandler.sendMessage(player, "Invalid player ID."); return;
                         }
 
@@ -83,7 +86,8 @@ public final class PlayerCommands {
                     break;
             }
 
-            GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+            GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+
             if(targetPlayer == null) {
                 CommandHandler.sendMessage(player, "Player not found."); return;
             }
@@ -110,7 +114,8 @@ public final class PlayerCommands {
                 int item = Integer.parseInt(args.get(1));
                 int amount = 1; if(args.size() > 2) amount = Integer.parseInt(args.get(2));
                 
-                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+
                 if(targetPlayer == null) {
                     CommandHandler.sendMessage(null, "Player not found."); return;
                 }
@@ -167,12 +172,12 @@ public final class PlayerCommands {
                     float range = (5f + (.1f * amount));
                     for (int i = 0; i < amount; i++) {
                         Position pos = player.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-                        EntityItem entity = new EntityItem(player.getWorld(), player, itemData, pos, 1);
-                        player.getWorld().addEntity(entity);
+                        EntityItem entity = new EntityItem(player.getScene(), player, itemData, pos, 1);
+                        player.getScene().addEntity(entity);
                     }
                 } else {
-                    EntityItem entity = new EntityItem(player.getWorld(), player, itemData, player.getPos().clone().addY(3f), amount);
-                    player.getWorld().addEntity(entity);
+                    EntityItem entity = new EntityItem(player.getScene(), player, itemData, player.getPos().clone().addY(3f), amount);
+                    player.getScene().addEntity(entity);
                 }
             } catch (NumberFormatException ignored) {
                 CommandHandler.sendMessage(player, "Invalid item or player ID.");
@@ -208,8 +213,8 @@ public final class PlayerCommands {
                 case 2:
                     try {
                         target = Integer.parseInt(args.get(0));
-                        if(Grasscutter.getGameServer().getPlayerById(target) == null) {
-                            target = player.getId(); level = Integer.parseInt(args.get(1));
+                        if(Grasscutter.getGameServer().getPlayerByUid(target) == null) {
+                            target = player.getUid(); level = Integer.parseInt(args.get(1));
                             avatarID = Integer.parseInt(args.get(0));
                         } else {
                             avatarID = Integer.parseInt(args.get(1));
@@ -223,7 +228,7 @@ public final class PlayerCommands {
                 case 3:
                     try {
                         target = Integer.parseInt(args.get(0));
-                        if(Grasscutter.getGameServer().getPlayerById(target) == null) {
+                        if(Grasscutter.getGameServer().getPlayerByUid(target) == null) {
                             CommandHandler.sendMessage(player, "Invalid player ID."); return;
                         }
 
@@ -237,7 +242,7 @@ public final class PlayerCommands {
                     break;
             }
 
-            GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+            GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
             if(targetPlayer == null) {
                 CommandHandler.sendMessage(null, "Player not found."); return;
             }
@@ -277,7 +282,7 @@ public final class PlayerCommands {
                 int level = 1; if(args.size() > 2) level = Integer.parseInt(args.get(2));
                 int ascension = 1;
                 
-                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
                 if(targetPlayer == null) {
                     CommandHandler.sendMessage(null, "Player not found."); return;
                 }
@@ -307,7 +312,7 @@ public final class PlayerCommands {
             }
         }
     }
-    
+
     @Command(label = "spawn", execution = Command.Execution.PLAYER, 
             usage = "spawn <entityId|entityName> [level] [amount]", description = "Spawns an entity near you", permission = "server.spawn")
     public static class SpawnCommand implements CommandHandler {
@@ -332,8 +337,8 @@ public final class PlayerCommands {
                 float range = (5f + (.1f * amount));
                 for (int i = 0; i < amount; i++) {
                     Position pos = player.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-                    EntityMonster monster = new EntityMonster(player.getWorld(), entityData, pos, level);
-                    player.getWorld().addEntity(monster);
+                    EntityMonster monster = new EntityMonster(player.getScene(), entityData, pos, level);
+                    player.getScene().addEntity(monster);
                 }
             } catch (NumberFormatException ignored) {
                 CommandHandler.sendMessage(null, "Invalid item or player ID.");
@@ -342,29 +347,46 @@ public final class PlayerCommands {
     }
     
     @Command(label = "killall", 
-            usage = "killall [sceneId]", description = "Kill all entities", permission = "server.killall")
+            usage = "killall [playerUid] [sceneId]", description = "Kill all entities", permission = "server.killall")
     public static class KillAllCommand implements CommandHandler {
 
         @Override
         public void execute(GenshinPlayer player, List<String> args) {
-            World world = player.getWorld();
-            world.getEntities().values().stream()
+            GenshinScene scene = player.getScene();
+            scene.getEntities().values().stream()
                     .filter(entity -> entity instanceof EntityMonster)
-                    .forEach(entity -> world.killEntity(entity, 0));
+                    .forEach(entity -> scene.killEntity(entity, 0));
+            CommandHandler.sendMessage(null, "Killing all monsters in scene " + scene.getId());
         }
         
         @Override
         public void execute(List<String> args) {
-            if(args.size() < 1) {
-                CommandHandler.sendMessage(null, "Usage: killall [sceneId]"); return;
+            if(args.size() < 2) {
+                CommandHandler.sendMessage(null, "Usage: killall [playerUid] [sceneId]"); return;
             }
-            
+
             try {
-                int sceneId = Integer.parseInt(args.get(0));
-                CommandHandler.sendMessage(null, "Killing all monsters in scene " + sceneId);
-                // TODO: Implement getting worlds by scene ID.
+            	int playerUid = Integer.parseInt(args.get(0));
+                int sceneId = Integer.parseInt(args.get(1));
+                
+                GenshinPlayer player = Grasscutter.getGameServer().getPlayerByUid(playerUid);
+                if (player == null) {
+                	CommandHandler.sendMessage(null, "Player not found or offline.");
+                	return;
+                }
+                
+                GenshinScene scene = player.getWorld().getSceneById(sceneId);
+                if (scene == null) {
+                	CommandHandler.sendMessage(null, "Scene not found in player world");
+                	return;
+                }
+                
+                scene.getEntities().values().stream()
+                        .filter(entity -> entity instanceof EntityMonster)
+                        .forEach(entity -> scene.killEntity(entity, 0));
+                CommandHandler.sendMessage(null, "Killing all monsters in scene " + scene.getId());
             } catch (NumberFormatException ignored) {
-                CommandHandler.sendMessage(null, "Invalid scene id.");
+                CommandHandler.sendMessage(null, "Invalid arguments.");
             }
         }
     }
@@ -464,7 +486,6 @@ public final class PlayerCommands {
             usage = "clearartifacts", execution = Command.Execution.PLAYER, permission = "player.clearartifacts",
             description = "Deletes all unequipped and unlocked level 0 artifacts, including yellow rarity ones from your inventory")
     public static class ClearArtifactsCommand implements CommandHandler {
-
         @Override
         public void execute(GenshinPlayer player, List<String> args) {
             Inventory playerInventory = player.getInventory();
@@ -473,6 +494,31 @@ public final class PlayerCommands {
                     .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                     .filter(item -> !item.isLocked() && !item.isEquipped())
                     .forEach(item -> playerInventory.removeItem(item, item.getCount()));
+        }
+    }
+
+    @Command(label = "changescene", aliases = {"scene"}, 
+            usage = "changescene <scene id>", description = "Changes your scene", permission = "player.changescene", execution = Command.Execution.PLAYER)
+    public static class ChangeSceneCommand implements CommandHandler {
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            if(args.size() < 1) {
+                CommandHandler.sendMessage(null, "Usage: changescene <scene id>"); return;
+            }
+
+            int sceneId = 0;
+        
+            try {
+                sceneId = Integer.parseInt(args.get(0));
+            } catch (Exception e) {
+                return;
+            }
+            
+            boolean result = player.getWorld().transferPlayerToScene(player, sceneId, player.getPos());
+            
+            if (!result) {
+                CommandHandler.sendMessage(null, "Scene does not exist or you are already in it");
+            }
         }
     }
 
@@ -490,7 +536,7 @@ public final class PlayerCommands {
                 int target = Integer.parseInt(args.get(0));
                 String message = String.join(" ", args.subList(1, args.size()));
 
-                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerById(target);
+                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
                 if(targetPlayer == null) {
                     CommandHandler.sendMessage(null, "Player not found."); return;
                 }

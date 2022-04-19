@@ -42,6 +42,7 @@ public final class Grasscutter {
 		
 		// Load server configuration.
 		Grasscutter.loadConfig();
+		
 		// Check server structure.
 		Utils.startupCheck();
 	}

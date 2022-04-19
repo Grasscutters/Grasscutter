@@ -123,7 +123,7 @@ public class GameSession extends MihoyoKcpChannel {
 			// Save
 			getPlayer().onLogout();
 			// Remove from gameserver
-			getServer().getPlayers().remove(getPlayer().getId());
+			getServer().getPlayers().remove(getPlayer().getUid());
 		}
 	}
 	

@@ -8,12 +8,12 @@ import emu.grasscutter.net.proto.SceneAreaWeatherNotifyOuterClass.SceneAreaWeath
 
 public class PacketSceneAreaWeatherNotify extends GenshinPacket {
 	
-	public PacketSceneAreaWeatherNotify(World world, GenshinPlayer player) {
+	public PacketSceneAreaWeatherNotify(GenshinPlayer player) {
 		super(PacketOpcodes.SceneAreaWeatherNotify);
 		
 		SceneAreaWeatherNotify proto = SceneAreaWeatherNotify.newBuilder()
 				.setWeatherAreaId(1)
-				.setClimateType(world.getClimate().getValue())
+				.setClimateType(player.getScene().getClimate().getValue())
 				.build();
 		
 		this.setData(proto);

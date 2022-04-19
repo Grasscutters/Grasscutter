@@ -17,7 +17,7 @@ public class PacketWorldPlayerRTTNotify extends GenshinPacket {
 		for (GenshinPlayer player : world.getPlayers()) {
 			proto.addPlayerRttList(
 					PlayerRTTInfo.newBuilder()
-							.setUid(player.getId())
+							.setUid(player.getUid())
 							.setRtt(10) // TODO - put player ping here
 			);
 		}

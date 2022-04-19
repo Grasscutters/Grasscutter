@@ -48,6 +48,7 @@ public class ItemData extends GenshinResource {
     private int WeaponBaseExp;
     private int StoryId;
     private int AvatarPromoteId;
+    private int AwakenMaterial;
     private int[] AwakenCosts;
     private int[] SkillAffix;
     private WeaponProperty[] WeaponProp;
@@ -159,6 +160,10 @@ public class ItemData extends GenshinResource {
 	public int getWeaponBaseExp() {
 		return WeaponBaseExp;
 	}
+	
+	public int getAwakenMaterial() {
+        	return AwakenMaterial;
+    	}
 	
 	public int[] getAwakenCosts() {
 		return AwakenCosts;

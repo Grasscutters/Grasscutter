@@ -5,6 +5,7 @@ import emu.grasscutter.data.GenshinData;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.GenshinScene;
 import emu.grasscutter.game.World;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 import emu.grasscutter.game.inventory.EquipType;
@@ -39,14 +40,14 @@ public class EntityAvatar extends GenshinEntity {
 	private PlayerDieType killedType;
 	private int killedBy;
 	
-	public EntityAvatar(World world, GenshinAvatar avatar) {
-		super(world);
+	public EntityAvatar(GenshinScene scene, GenshinAvatar avatar) {
+		super(scene);
 		this.avatar = avatar;
-		this.id = world.getNextEntityId(EntityIdType.AVATAR);
+		this.id = getScene().getWorld().getNextEntityId(EntityIdType.AVATAR);
 		
 		GenshinItem weapon = this.getAvatar().getWeapon();
 		if (weapon != null) {
-			weapon.setWeaponEntityId(world.getNextEntityId(EntityIdType.WEAPON));
+			weapon.setWeaponEntityId(getScene().getWorld().getNextEntityId(EntityIdType.WEAPON));
 		}
 	}
 	
@@ -106,7 +107,7 @@ public class EntityAvatar extends GenshinEntity {
 	
 	public SceneAvatarInfo getSceneAvatarInfo() {
 		SceneAvatarInfo.Builder avatarInfo = SceneAvatarInfo.newBuilder()
-				.setPlayerId(this.getPlayer().getId())
+				.setPlayerId(this.getPlayer().getUid())
 				.setAvatarId(this.getAvatar().getAvatarId())
 				.setGuid(this.getAvatar().getGuid())
 				.setPeerId(this.getPlayer().getPeerId())
@@ -152,7 +153,7 @@ public class EntityAvatar extends GenshinEntity {
 				.setLastMoveReliableSeq(this.getLastMoveReliableSeq())
 				.setLifeState(this.getLifeState().getValue());
 		
-		if (this.getWorld() != null) {
+		if (this.getScene() != null) {
 			entityInfo.setMotionInfo(this.getMotionInfo());
 		}
 		
