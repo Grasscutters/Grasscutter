@@ -1,5 +1,6 @@
 package emu.grasscutter.game.entity;
 
+import emu.grasscutter.game.GenshinScene;
 import emu.grasscutter.game.World;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
@@ -12,23 +13,27 @@ import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 
 public abstract class GenshinEntity {
 	protected int id;
-	private final World world;
+	private final GenshinScene scene;
 	
 	private MotionState moveState;
 	private int lastMoveSceneTimeMs;
 	private int lastMoveReliableSeq;
 	
-	public GenshinEntity(World world) {
-		this.world = world;
+	public GenshinEntity(GenshinScene scene) {
+		this.scene = scene;
 		this.moveState = MotionState.MotionNone;
 	}
 	
 	public int getId() {
 		return this.id;
 	}
-
+	
 	public World getWorld() {
-		return world;
+		return this.getScene().getWorld();
+	}
+
+	public GenshinScene getScene() {
+		return this.scene;
 	}
 	
 	public boolean isAlive() {

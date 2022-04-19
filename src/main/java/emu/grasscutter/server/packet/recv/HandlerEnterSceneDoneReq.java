@@ -24,10 +24,10 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
 		session.send(new PacketPlayerTimeNotify(session.getPlayer())); // Probably not the right place
 		
 		// Spawn player in world
-		session.getPlayer().getWorld().spawnPlayer(session.getPlayer());
+		session.getPlayer().getScene().spawnPlayer(session.getPlayer());
 		
 		// Spawn other entites already in world
-		session.getPlayer().getWorld().showOtherEntities(session.getPlayer());
+		session.getPlayer().getScene().showOtherEntities(session.getPlayer());
 		
 		// Locations
 		session.send(new PacketWorldPlayerLocationNotify(session.getPlayer().getWorld()));

@@ -165,8 +165,6 @@ public final class Utils {
 		// Check for game data.
 		if(!fileExists(dataFolder))
 			createFolder(dataFolder);
-		if(!fileExists(dataFolder + "AbilityEmbryos.json"))
-			copyFromResources("data/AbilityEmbryos.json", dataFolder);
 
 		if(exit) System.exit(1);
 	}

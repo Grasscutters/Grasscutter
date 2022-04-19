@@ -14,7 +14,7 @@ public class PacketPlayerChatNotify extends GenshinPacket {
 		
 		ChatInfo info = ChatInfo.newBuilder()
 				.setTime((int) (System.currentTimeMillis() / 1000))
-				.setUid(sender.getId())
+				.setUid(sender.getUid())
 				.setText(message)
 				.build();
 		
@@ -31,7 +31,7 @@ public class PacketPlayerChatNotify extends GenshinPacket {
 		
 		ChatInfo info = ChatInfo.newBuilder()
 				.setTime((int) (System.currentTimeMillis() / 1000))
-				.setUid(sender.getId())
+				.setUid(sender.getUid())
 				.setIcon(emote)
 				.build();
 		
@@ -48,7 +48,7 @@ public class PacketPlayerChatNotify extends GenshinPacket {
 		
 		ChatInfo info = ChatInfo.newBuilder()
 				.setTime((int) (System.currentTimeMillis() / 1000))
-				.setUid(sender.getId())
+				.setUid(sender.getUid())
 				.setSystemHint(systemHint)
 				.build();
 		

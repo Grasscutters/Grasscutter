@@ -51,6 +51,8 @@ public class GenshinData {
 	private static final Int2ObjectMap<AvatarCostumeData> avatarCostumeDataMap = new Int2ObjectLinkedOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarCostumeData> avatarCostumeDataItemIdMap = new Int2ObjectLinkedOpenHashMap<>();
 	
+	private static final Int2ObjectMap<SceneData> sceneDataMap = new Int2ObjectLinkedOpenHashMap<>();
+	
 	public static Int2ObjectMap<?> getMapByResourceDef(Class<?> resourceDefinition) {
 		Int2ObjectMap<?> map = null;
 		
@@ -208,5 +210,9 @@ public class GenshinData {
 	
 	public static Int2ObjectMap<AvatarCostumeData> getAvatarCostumeDataItemIdMap() {
 		return avatarCostumeDataItemIdMap;
+	}
+
+	public static Int2ObjectMap<SceneData> getSceneDataMap() {
+		return sceneDataMap;
 	}
 }

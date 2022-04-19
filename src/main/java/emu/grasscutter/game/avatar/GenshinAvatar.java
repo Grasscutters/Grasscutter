@@ -148,8 +148,8 @@ public class GenshinAvatar {
 
 	public void setOwner(GenshinPlayer player) {
 		this.owner = player;
-		this.ownerId = player.getId();
-		this.guid = player.getNextGuid();
+		this.ownerId = player.getUid();
+		this.guid = player.getNextGenshinGuid();
 	}
 	
 	public int getSatiation() {
