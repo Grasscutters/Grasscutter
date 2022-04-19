@@ -36,7 +36,7 @@ A WIP server emulator for Genshin Impact 2.3-2.6
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
 4. *yoink*
 
-* or you can use `run.cmd` to start Server & Proxy daemon with one click
+* or you can use `Start.cmd` to start Server & Proxy daemon with one click
 
 # Grasscutter commands
 ### Server console commands
