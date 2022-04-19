@@ -119,6 +119,16 @@ public final class Utils {
 	}
 
 	/**
+	 * Get object with null fallback.
+	 * @param nonNull The object to return if not null.
+	 * @param fallback The object to return if null.
+	 * @return One of the two provided objects.
+	 */
+	public static <T> T requireNonNullElseGet(T nonNull, T fallback) {
+		return nonNull != null ? nonNull : fallback;
+	}
+
+	/**
 	 * Checks for required files and folders before startup.
 	 */
 	public static void startupCheck() {
