@@ -20,7 +20,7 @@
 #
 ##
 
-from mitmproxy import ctx, http
+from mitmproxy import http
 
 class MlgmXyysd_Genshin_Impact_Proxy:
 
@@ -53,14 +53,11 @@ class MlgmXyysd_Genshin_Impact_Proxy:
             "hk4e-sdk-os-static.hoyoverse.com",
             "sdk-os-static.hoyoverse.com",
             "api-account-os.hoyoverse.com",
-            "hk4e-sdk-os.hoyoverse.com"
+            "hk4e-sdk-os.hoyoverse.com",
+            "overseauspider.yuanshen.com"
         ]
         
-        if flow.request.url.startswith("http://overseauspider.yuanshen.com:8888/log"):
-            ctx.log.info("Block overseauspider.yuanshen.com")
-            flow.response = http.HTTPResponse.make(404)
-        elif flow.request.host in LIST_DOMAINS:
-            ctx.log.info("Redirect " + flow.request.host)
+        if flow.request.host in LIST_DOMAINS:
             flow.request.host = REMOTE_HOST
 
 addons = [
