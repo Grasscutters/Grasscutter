@@ -49,6 +49,8 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 `!give [item id] [amount]`
 
+`!givechar [avatar id] [level]`
+
 `!drop [item id] [amount]`
 
 `!killall`
