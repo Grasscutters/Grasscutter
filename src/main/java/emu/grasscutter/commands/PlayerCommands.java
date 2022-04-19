@@ -186,12 +186,12 @@ public final class PlayerCommands {
     }
 
     @Command(label = "givechar", aliases = {"givec"}, 
-            usage = "Usage: givechar <player|avatarId> [avatarId] [level]")
+            usage = "Usage: givechar <player|avatarId> [level|avatarId] [level]")
     public static class GiveCharCommand implements CommandHandler {
         @Override public void execute(GenshinPlayer player, List<String> args) {
             int target, avatarId, level = 1, ascension = 1;
 
-            if(args.size() < 2) {
+            if(args.size() < 1) {
                 CommandHandler.sendMessage(player, "Usage: givechar <player> <avatarId> [level]");
                 return;
             }
@@ -204,7 +204,8 @@ public final class PlayerCommands {
                     try {
                         target = Integer.parseInt(args.get(0));
                         if(Grasscutter.getGameServer().getPlayerByUid(target) == null) {
-                            target = player.getUid(); level = Integer.parseInt(args.get(1));
+                            target = player.getUid(); 
+                            level = Integer.parseInt(args.get(1));
                             avatarId = Integer.parseInt(args.get(0));
                         } else {
                             avatarId = Integer.parseInt(args.get(1));
