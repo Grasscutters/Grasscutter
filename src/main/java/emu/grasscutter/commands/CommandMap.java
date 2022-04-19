@@ -64,6 +64,23 @@ public final class CommandMap {
     }
 
     /**
+     * Returns a list of all registered commands.
+     * @return All command handlers as a list.
+     */
+    public List<CommandHandler> getHandlers() {
+        return new LinkedList<>(this.commands.values());
+    }
+
+    /**
+     * Returns a handler by label/alias.
+     * @param label The command label.
+     * @return The command handler.
+     */
+    public CommandHandler getHandler(String label) {
+        return this.commands.get(label);
+    }
+
+    /**
      * Invoke a command handler with the given arguments.
      * @param player The player invoking the command or null for the server console.
      * @param rawMessage The messaged used to invoke the command.

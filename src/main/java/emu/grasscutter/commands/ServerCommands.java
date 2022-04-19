@@ -6,6 +6,7 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.GenshinPlayer;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * A container for server-related commands.
@@ -57,7 +58,7 @@ public final class ServerCommands {
         @Override
         public void execute(GenshinPlayer player, List<String> args) {
             if(args.size() < 2) {
-                CommandHandler.sendMessage(null, "Usage: sendmessage <player> <message>"); return;
+                CommandHandler.sendMessage(player, "Usage: sendmessage <player> <message>"); return;
             }
 
             try {
@@ -66,13 +67,13 @@ public final class ServerCommands {
 
                 GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
                 if(targetPlayer == null) {
-                    CommandHandler.sendMessage(null, "Player not found."); return;
+                    CommandHandler.sendMessage(player, "Player not found."); return;
                 }
 
                 targetPlayer.sendMessage(player, message);
-                CommandHandler.sendMessage(null, "Message sent.");
+                CommandHandler.sendMessage(player, "Message sent.");
             } catch (NumberFormatException ignored) {
-                CommandHandler.sendMessage(null, "Invalid player ID.");
+                CommandHandler.sendMessage(player, "Invalid player ID.");
             }
         }
     }
@@ -115,6 +116,55 @@ public final class ServerCommands {
                         CommandHandler.sendMessage(null, "Account deleted."); return;
                     } else CommandHandler.sendMessage(null, "Account not found.");
                     return;
+            }
+        }
+    }
+    
+    @Command(label = "help", 
+            usage = "Usage: help [command]")
+    public static class HelpCommand implements CommandHandler {
+
+        @Override
+        public void execute(List<String> args) {
+            List<CommandHandler> handlers = CommandMap.getInstance().getHandlers();
+            List<Command> annotations = handlers.stream()
+                    .map(handler -> handler.getClass().getAnnotation(Command.class))
+                    .collect(Collectors.toList());
+            
+            if(args.size() < 1) {
+                StringBuilder builder = new StringBuilder("Available commands:\n");
+                annotations.forEach(annotation -> builder.append(annotation.usage()).append("\n"));
+                CommandHandler.sendMessage(null, builder.toString());
+            } else {
+                String command = args.get(0);
+                CommandHandler handler = CommandMap.getInstance().getHandler(command);
+                if(handler == null) {
+                    CommandHandler.sendMessage(null, "Command not found."); return;
+                }
+                
+                Command annotation = handler.getClass().getAnnotation(Command.class);
+                CommandHandler.sendMessage(null, annotation.usage());
+            }
+        }
+
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            List<CommandHandler> handlers = CommandMap.getInstance().getHandlers();
+            List<Command> annotations = handlers.stream()
+                    .map(handler -> handler.getClass().getAnnotation(Command.class))
+                    .collect(Collectors.toList());
+
+            if(args.size() < 1) {
+                annotations.forEach(annotation -> player.dropMessage(annotation.usage()));
+            } else {
+                String command = args.get(0);
+                CommandHandler handler = CommandMap.getInstance().getHandler(command);
+                if(handler == null) {
+                    CommandHandler.sendMessage(player, "Command not found."); return;
+                }
+
+                Command annotation = handler.getClass().getAnnotation(Command.class);
+                CommandHandler.sendMessage(player, annotation.usage());
             }
         }
     }
