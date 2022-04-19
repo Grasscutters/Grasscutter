@@ -810,6 +810,8 @@ public class InventoryManager {
 			nextTalentId = 40 + currentTalentLevel + 1;
 		}
 		
+		AvatarTalentData talentData = GenshinData.getAvatarTalentDataMap().get(nextTalentId);
+		
 		if (talentData == null) {
 			return;
 		}
