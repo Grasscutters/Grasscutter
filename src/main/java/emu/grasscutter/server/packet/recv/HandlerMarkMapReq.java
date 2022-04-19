@@ -28,7 +28,7 @@ public class HandlerMarkMapReq extends PacketHandler {
 		session.getPlayer().getPos().setZ(req.getMark().getPos().getZ());
 		session.getPlayer().getPos().setY(300);
 		
-		Grasscutter.getLogger().info("Player [" + session.getPlayer().getId() + ":" + session.getPlayer().getNickname() + "] tp to " + session.getPlayer().getPos() + " Scene id: " + req.getMark().getSceneId());
+		Grasscutter.getLogger().info("Player [" + session.getPlayer().getUid() + ":" + session.getPlayer().getNickname() + "] tp to " + session.getPlayer().getPos() + " Scene id: " + req.getMark().getSceneId());
 		
 		if (req.getMark().getSceneId() != session.getPlayer().getSceneId()) {
 			session.getPlayer().getWorld().transferPlayerToScene(session.getPlayer(), req.getMark().getSceneId(), session.getPlayer().getPos());

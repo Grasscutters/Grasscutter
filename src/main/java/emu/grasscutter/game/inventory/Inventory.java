@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import emu.grasscutter.GenshinConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GenshinData;
 import emu.grasscutter.data.def.AvatarCostumeData;
 import emu.grasscutter.data.def.AvatarData;
@@ -36,10 +37,10 @@ public class Inventory implements Iterable<GenshinItem> {
 		this.store = new Long2ObjectOpenHashMap<>();
 		this.inventoryTypes = new Int2ObjectOpenHashMap<>();
 		
-		this.createInventoryTab(ItemType.ITEM_WEAPON, new EquipInventoryTab(GenshinConstants.LIMIT_WEAPON));
-		this.createInventoryTab(ItemType.ITEM_RELIQUARY, new EquipInventoryTab(GenshinConstants.LIMIT_RELIC));
-		this.createInventoryTab(ItemType.ITEM_MATERIAL, new MaterialInventoryTab(GenshinConstants.LIMIT_MATERIAL));
-		this.createInventoryTab(ItemType.ITEM_FURNITURE, new MaterialInventoryTab(GenshinConstants.LIMIT_FURNITURE));
+		this.createInventoryTab(ItemType.ITEM_WEAPON, new EquipInventoryTab(Grasscutter.getConfig().getServerOptions().InventoryLimitWeapon));
+		this.createInventoryTab(ItemType.ITEM_RELIQUARY, new EquipInventoryTab(Grasscutter.getConfig().getServerOptions().InventoryLimitRelic));
+		this.createInventoryTab(ItemType.ITEM_MATERIAL, new MaterialInventoryTab(Grasscutter.getConfig().getServerOptions().InventoryLimitMaterial));
+		this.createInventoryTab(ItemType.ITEM_FURNITURE, new MaterialInventoryTab(Grasscutter.getConfig().getServerOptions().InventoryLimitFurniture));
 	}
 
 	public GenshinPlayer getPlayer() {

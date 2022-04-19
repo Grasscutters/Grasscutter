@@ -36,7 +36,7 @@ public class EntityItem extends EntityGadget {
 		this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
 		this.pos = new Position(pos);
 		this.rot = new Position();
-		this.guid = player.getNextGuid();
+		this.guid = player.getNextGenshinGuid();
 		this.item = new GenshinItem(itemData, count);
 	}
 	

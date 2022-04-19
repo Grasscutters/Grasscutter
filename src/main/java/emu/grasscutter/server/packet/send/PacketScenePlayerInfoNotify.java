@@ -18,7 +18,7 @@ public class PacketScenePlayerInfoNotify extends GenshinPacket {
 			GenshinPlayer p = world.getPlayers().get(i);
 
 			ScenePlayerInfo pInfo = ScenePlayerInfo.newBuilder()
-					.setUid(p.getId())
+					.setUid(p.getUid())
 					.setPeerId(p.getPeerId())
 					.setName(p.getNickname())
 					.setSceneId(p.getSceneId())

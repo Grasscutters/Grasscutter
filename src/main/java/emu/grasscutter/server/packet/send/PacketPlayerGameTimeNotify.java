@@ -13,7 +13,7 @@ public class PacketPlayerGameTimeNotify extends GenshinPacket {
 		
 		PlayerGameTimeNotify proto = PlayerGameTimeNotify.newBuilder()
 				.setGameTime(player.getScene().getTime())
-				.setUid(player.getId())
+				.setUid(player.getUid())
 				.build();
 		
 		this.setData(proto);

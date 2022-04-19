@@ -10,6 +10,7 @@ import java.util.Set;
 
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GenshinConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 import emu.grasscutter.game.entity.EntityAvatar;
@@ -163,12 +164,13 @@ public class TeamManager {
 	
 	public int getMaxTeamSize() {
 		if (getPlayer().isInMultiplayer()) {
+			int max = Grasscutter.getConfig().getServerOptions().MaxAvatarsInTeamMultiplayer;
 			if (getPlayer().getWorld().getHost() == this.getPlayer()) {
-				return Math.max(1, (int) Math.ceil(GenshinConstants.MAX_AVATARS_IN_TEAM / (double) getWorld().getPlayerCount()));
+				return Math.max(1, (int) Math.ceil(max / (double) getWorld().getPlayerCount()));
 			}
-			return Math.max(1, (int) Math.floor(GenshinConstants.MAX_AVATARS_IN_TEAM / (double) getWorld().getPlayerCount()));
+			return Math.max(1, (int) Math.floor(max / (double) getWorld().getPlayerCount()));
 		}
-		return GenshinConstants.MAX_AVATARS_IN_TEAM;
+		return Grasscutter.getConfig().getServerOptions().MaxAvatarsInTeam;
 	}
 	
 	// Methods

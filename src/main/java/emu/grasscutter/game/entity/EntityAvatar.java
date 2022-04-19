@@ -107,7 +107,7 @@ public class EntityAvatar extends GenshinEntity {
 	
 	public SceneAvatarInfo getSceneAvatarInfo() {
 		SceneAvatarInfo.Builder avatarInfo = SceneAvatarInfo.newBuilder()
-				.setPlayerId(this.getPlayer().getId())
+				.setPlayerId(this.getPlayer().getUid())
 				.setAvatarId(this.getAvatar().getAvatarId())
 				.setGuid(this.getAvatar().getGuid())
 				.setPeerId(this.getPlayer().getPeerId())
