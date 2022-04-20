@@ -8,6 +8,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.data.custom.AbilityEmbryoEntry;
 import emu.grasscutter.data.custom.OpenConfigEntry;
+import emu.grasscutter.data.custom.ScenePointEntry;
 import emu.grasscutter.data.def.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -18,6 +19,7 @@ public class GenshinData {
 	private static final Int2ObjectMap<String> abilityHashes = new Int2ObjectOpenHashMap<>();
 	private static final Map<String, AbilityEmbryoEntry> abilityEmbryos = new HashMap<>();
 	private static final Map<String, OpenConfigEntry> openConfigEntries = new HashMap<>();
+	private static final Map<String, ScenePointEntry> scenePointEntries = new HashMap<>();
 	
 	// ExcelConfigs
 	private static final Int2ObjectMap<PlayerLevelData> playerLevelDataMap = new Int2ObjectOpenHashMap<>();
@@ -80,6 +82,10 @@ public class GenshinData {
 
 	public static Map<String, OpenConfigEntry> getOpenConfigEntries() {
 		return openConfigEntries;
+	}
+
+	public static Map<String, ScenePointEntry> getScenePointEntries() {
+		return scenePointEntries;
 	}
 
 	public static Int2ObjectMap<AvatarData> getAvatarDataMap() {
