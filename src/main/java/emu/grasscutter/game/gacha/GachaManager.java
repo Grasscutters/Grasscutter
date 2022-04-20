@@ -10,6 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import com.google.gson.reflect.TypeToken;
 
+import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GenshinData;
 import emu.grasscutter.data.def.ItemData;
@@ -31,14 +32,11 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import org.greenrobot.eventbus.Subscribe;
 
-import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
-
 public class GachaManager {
 	private final GameServer server;
 	private final Int2ObjectMap<GachaBanner> gachaBanners;
 	private GetGachaInfoRsp cachedProto;
 	WatchService watchService;
-	WatchKey watchKey;
 
 	private int[] yellowAvatars = new int[] {1003, 1016, 1042, 1035, 1041};
 	private int[] yellowWeapons = new int[] {11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502};
@@ -74,9 +72,16 @@ public class GachaManager {
 	
 	public synchronized void load() {
 		try (FileReader fileReader = new FileReader(Grasscutter.getConfig().DATA_FOLDER + "Banners.json")) {
+			getGachaBanners().clear();
 			List<GachaBanner> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, GachaBanner.class).getType());
-			for (GachaBanner banner : banners) {
-				getGachaBanners().put(banner.getGachaType(), banner);
+			if(banners.size() > 0) {
+				for (GachaBanner banner : banners) {
+					getGachaBanners().put(banner.getGachaType(), banner);
+				}
+				Grasscutter.getLogger().info("Banners successfully loaded.");
+				this.cachedProto = createProto();
+			} else {
+				Grasscutter.getLogger().error("Unable to load banners. Banners size is 0.");
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -281,8 +286,7 @@ public class GachaManager {
 			try {
 				this.watchService = FileSystems.getDefault().newWatchService();
 				Path path = new File(Grasscutter.getConfig().DATA_FOLDER).toPath();
-				path.register(watchService, ENTRY_MODIFY);
-				watchKey = watchService.take();
+				path.register(watchService, new WatchEvent.Kind[]{StandardWatchEventKinds.ENTRY_MODIFY}, SensitivityWatchEventModifier.HIGH);
 
 				server.OnGameServerTick.register(this);
 			} catch (Exception e) {
@@ -298,12 +302,20 @@ public class GachaManager {
 	public synchronized void watchBannerJson(GameServerTickEvent tickEvent) {
 		if(Grasscutter.getConfig().getServerOptions().WatchGacha) {
 			try {
+				WatchKey watchKey = watchService.take();
+
 				for (WatchEvent<?> event : watchKey.pollEvents()) {
 					final Path changed = (Path) event.context();
 					if (changed.endsWith("Banners.json")) {
 						Grasscutter.getLogger().info("Change detected with banners.json. Reloading gacha config");
 						this.load();
 					}
+				}
+
+				boolean valid = watchKey.reset();
+				if (!valid) {
+					Grasscutter.getLogger().error("Unable to reset Gacha Manager Watch Key. Auto-reload of banners.json will no longer work.");
+					return;
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
