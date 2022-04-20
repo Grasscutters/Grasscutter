@@ -226,18 +226,22 @@ public final class DispatchServer {
 			Account account = DatabaseHelper.getAccountByName(requestData.account);
 			
 			// Check if account exists, else create a new one.
-			if (account == null && Grasscutter.getConfig().ServerOptions.AutomaticallyCreateAccounts) {
-				// This account has been created AUTOMATICALLY. There will be no permissions added.
-				account = DatabaseHelper.createAccountWithId(requestData.account, 0);
-				
-				responseData.message = "OK";
-				responseData.data.account.uid = account.getId();
-				responseData.data.account.token = account.generateSessionKey();
-				responseData.data.account.email = account.getEmail();
-			} else if (!Grasscutter.getConfig().ServerOptions.AutomaticallyCreateAccounts) {
-				responseData.retcode = -201;
-				responseData.message = "Username not found.";
+			if (account == null) {
+				// Account doesnt exist, so we can either auto create it if the config value is set
+				if (Grasscutter.getConfig().ServerOptions.AutomaticallyCreateAccounts) {
+					// This account has been created AUTOMATICALLY. There will be no permissions added.
+					account = DatabaseHelper.createAccountWithId(requestData.account, 0);
+					
+					responseData.message = "OK";
+					responseData.data.account.uid = account.getId();
+					responseData.data.account.token = account.generateSessionKey();
+					responseData.data.account.email = account.getEmail();
+				} else {
+					responseData.retcode = -201;
+					responseData.message = "Username not found.";
+				} 
 			} else {
+				// Account was found, log the player in
 				responseData.message = "OK";
 				responseData.data.account.uid = account.getId();
 				responseData.data.account.token = account.generateSessionKey();
