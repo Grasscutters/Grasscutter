@@ -573,6 +573,17 @@ public final class PlayerCommands {
             }
         }
     }
+    
+    @Command(label = "pos",
+            usage = "Usage: pos", description = "Get coordinates.",
+            execution = Command.Execution.PLAYER)
+    public static class CordCommand implements CommandHandler {
+        
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            player.dropMessage(String.format("Coord: %.3f, %.3f, %.3f", player.getPos().getX(), player.getPos().getY(), player.getPos().getZ()));
+        }
+    }
 
     @Command(label = "restart", usage = "Usage: restart", description = "Restarts the current session", execution = Command.Execution.PLAYER, permission = "player.restart")
     public static class RestartCommand implements CommandHandler {
