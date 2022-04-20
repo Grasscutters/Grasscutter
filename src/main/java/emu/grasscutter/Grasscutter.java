@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
 
-import emu.grasscutter.commands.CommandMap;
+import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
