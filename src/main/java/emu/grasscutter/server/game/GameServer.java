@@ -38,13 +38,14 @@ public final class GameServer extends MihoyoKcpServer {
 	private final CommandMap commandMap;
 
 	public EventBus OnGameServerTick;
-	public EventBus OnGameServerStop; // TODO
+	public EventBus OnGameServerStop;
 	
 	public GameServer(InetSocketAddress address) {
 		super(address);
 
 		OnGameServerTick = EventBus.builder().throwSubscriberException(true).build();
-		
+		OnGameServerStop = EventBus.builder().throwSubscriberException(true).build();
+
 		this.setServerInitializer(new GameServerInitializer(this));
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
@@ -173,6 +174,11 @@ public final class GameServer extends MihoyoKcpServer {
 	}
 	
 	public void onServerShutdown() {
+		OnGameServerStop.post(new GameServerStopEvent());
+		Grasscutter.getLogger().info("Ignore the 'No subscribers registered' error");
+		// TODO: Remove the log once things actually listen to OnGameServerStop.
+		//  I just added it there to prevent people from flooding #support with this error
+
 		// Kick and save all players
 		List<GenshinPlayer> list = new ArrayList<>(this.getPlayers().size());
 		list.addAll(this.getPlayers().values());
