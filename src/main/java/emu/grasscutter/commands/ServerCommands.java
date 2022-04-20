@@ -18,6 +18,7 @@ public final class ServerCommands {
         public void execute(List<String> args) {
             Grasscutter.getLogger().info("Reloading config.");
             Grasscutter.loadConfig();
+            Grasscutter.getGameServer().getGachaManager().load();
             Grasscutter.getDispatchServer().loadQueries();
             Grasscutter.getLogger().info("Reload complete.");
         }
