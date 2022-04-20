@@ -9,7 +9,7 @@ import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 
 import java.util.List;
 
-@Command(label = "setstats", usage = "setstats <hp|def|atk|em|er|crate|cdmg> <value>",
+@Command(label = "setstats", usage = "setstats|stats <stat> <value>",
         aliases = {"stats"})
 public class SetStats implements CommandHandler {
 
@@ -23,7 +23,8 @@ public class SetStats implements CommandHandler {
         String stat = args.get(0);
         switch (stat) {
             default:
-                CommandHandler.sendMessage(sender, "Usage: setstats|stats <hp|def|atk|em|er|crate|cdmg> <value>");
+                CommandHandler.sendMessage(sender, "Usage: /setstats|stats <hp | def | atk | em | er | crate | cdmg> <value> for basic stats");
+                CommandHandler.sendMessage(sender, "Usage: /stats <epyro | ecryo | ehydro | egeo | edend | eelec | ephys> <amount> for elemental bonus");
                 return;
             case "hp":
                 try {
