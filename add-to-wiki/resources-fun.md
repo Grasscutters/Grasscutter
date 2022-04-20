@@ -22,6 +22,7 @@ Enjoy your colorful name :sparkles:
 
 
 ***
+This guide is recommended if you have the character/weapon. If you want to get a character at Level Z, then use !givechar <avatarID> [level]
 ## Avatar/Character
 ### Changing Level/Ascension/Talents
 > Make sure you have created an account with the avatars/characters.
