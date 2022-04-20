@@ -24,7 +24,7 @@ public final class Config {
 	public String DUMPS_FOLDER = "./dumps/";
 	public String KEY_FOLDER = "./keys/";
 	public boolean LOG_PACKETS = false;
-	
+
 	public GameRates Game = new GameRates();
 	public ServerOptions ServerOptions = new ServerOptions();
 	
@@ -51,6 +51,7 @@ public final class Config {
 		public int MaxAvatarsInTeam = 4;
 		public int MaxAvatarsInTeamMultiplayer = 4;
 		public int MaxEntityLimit = 1000; // Max entity limit per world. // TODO: Enforce later.
+		public boolean WatchGacha = false;
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
 		public String WelcomeMotd = "Welcome to Grasscutter emu";
 	}

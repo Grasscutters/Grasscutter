@@ -1,6 +1,8 @@
 package emu.grasscutter.game.gacha;
 
+import java.io.File;
 import java.io.FileReader;
+import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -21,17 +23,23 @@ import emu.grasscutter.net.proto.GachaTransferItemOuterClass.GachaTransferItem;
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.game.GameServer;
+import emu.grasscutter.server.game.GameServerTickEvent;
 import emu.grasscutter.server.packet.send.PacketDoGachaRsp;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import org.greenrobot.eventbus.Subscribe;
+
+import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
 
 public class GachaManager {
 	private final GameServer server;
 	private final Int2ObjectMap<GachaBanner> gachaBanners;
 	private GetGachaInfoRsp cachedProto;
-	
+	WatchService watchService;
+	WatchKey watchKey;
+
 	private int[] yellowAvatars = new int[] {1003, 1016, 1042, 1035, 1041};
 	private int[] yellowWeapons = new int[] {11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502};
 	private int[] purpleAvatars = new int[] {1006, 1014, 1015, 1020, 1021, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1053, 1055, 1056, 1064};
@@ -40,11 +48,12 @@ public class GachaManager {
 	
 	private static int starglitterId = 221;
 	private static int stardustId = 222;
-	
+
 	public GachaManager(GameServer server) {
 		this.server = server;
 		this.gachaBanners = new Int2ObjectOpenHashMap<>();
 		this.load();
+		this.startWatcher(server);
 	}
 
 	public GameServer getServer() {
@@ -265,6 +274,39 @@ public class GachaManager {
 		
 		// Packets
 		player.sendPacket(new PacketDoGachaRsp(banner, list));
+	}
+
+	private synchronized void startWatcher(GameServer server) {
+		if(this.watchService == null) {
+			try {
+				this.watchService = FileSystems.getDefault().newWatchService();
+				Path path = new File(Grasscutter.getConfig().DATA_FOLDER).toPath();
+				path.register(watchService, ENTRY_MODIFY);
+				watchKey = watchService.take();
+
+				server.OnGameServerTick.register(this);
+			} catch (Exception e) {
+				Grasscutter.getLogger().error("Unable to load the Gacha Manager Watch Service. If ServerOptions.watchGacha is true it will not auto-reload");
+				e.printStackTrace();
+			}
+		} else {
+			Grasscutter.getLogger().error("Cannot reinitialise watcher ");
+		}
+	}
+
+	@Subscribe
+	public synchronized void watchBannerJson(GameServerTickEvent tickEvent) {
+		try {
+			for (WatchEvent<?> event : watchKey.pollEvents()) {
+				final Path changed = (Path) event.context();
+				if (changed.endsWith("Banners.json")) {
+					Grasscutter.getLogger().info("Change detected with banners.json. Reloading gacha config");
+					this.load();
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private synchronized GetGachaInfoRsp createProto() {

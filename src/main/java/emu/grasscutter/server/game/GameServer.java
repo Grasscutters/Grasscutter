@@ -3,6 +3,7 @@ package emu.grasscutter.server.game;
 import java.net.InetSocketAddress;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CountDownLatch;
 
 import emu.grasscutter.GenshinConstants;
 import emu.grasscutter.Grasscutter;
@@ -19,6 +20,8 @@ import emu.grasscutter.game.shop.ShopManager;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.netty.MihoyoKcpServer;
+import jdk.internal.event.Event;
+import org.greenrobot.eventbus.EventBus;
 
 public final class GameServer extends MihoyoKcpServer {
 	private final InetSocketAddress address;
@@ -33,9 +36,14 @@ public final class GameServer extends MihoyoKcpServer {
 	private final MultiplayerManager multiplayerManager;
 	private final DungeonManager dungeonManager;
 	private final CommandMap commandMap;
+
+	public EventBus OnGameServerTick;
+	public EventBus OnGameServerStop; // TODO
 	
 	public GameServer(InetSocketAddress address) {
 		super(address);
+
+		OnGameServerTick = EventBus.builder().throwSubscriberException(true).build();
 		
 		this.setServerInitializer(new GameServerInitializer(this));
 		this.address = address;
@@ -155,6 +163,8 @@ public final class GameServer extends MihoyoKcpServer {
 		for (GenshinPlayer player : this.getPlayers().values()) {
 			player.onTick();
 		}
+
+		OnGameServerTick.post(new GameServerTickEvent());
 	}
 
 	@Override
