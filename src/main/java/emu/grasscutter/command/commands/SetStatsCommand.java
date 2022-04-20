@@ -11,7 +11,7 @@ import java.util.List;
 
 @Command(label = "setstats", usage = "setstats|stats <stat> <value>",
         aliases = {"stats"})
-public class SetStats implements CommandHandler {
+public final class SetStatsCommand implements CommandHandler {
 
     @Override
     public void execute(GenshinPlayer sender, List<String> args) {
