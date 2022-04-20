@@ -16,10 +16,12 @@ import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.inventory.GenshinItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketSceneAreaWeatherNotify;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
 import emu.grasscutter.utils.Position;
 
@@ -533,6 +535,31 @@ public final class PlayerCommands {
                 CommandHandler.sendMessage(null, "Message sent.");
             } catch (NumberFormatException ignored) {
                 CommandHandler.sendMessage(null, "Invalid player ID.");
+            }
+        }
+    }
+    
+    @Command(label = "weather", aliases = {"weather", "w"},
+        usage = "weather <weather id>", description = "Changes the weather.",
+        execution = Command.Execution.PLAYER, permission = "player.weather"
+    )
+    public static class ChangeWeatherCommand implements CommandHandler  {
+        @Override
+        public void execute(GenshinPlayer player, List<String> args) {
+            if (args.size() < 1) {
+                CommandHandler.sendMessage(player, "Usage: weather <weather id>");
+                return;
+            }
+            
+            try {
+                int weatherId = Integer.parseInt(args.get(0));
+
+                ClimateType climate = ClimateType.getTypeByValue(weatherId);
+
+                player.getScene().setClimate(climate);
+                player.getScene().broadcastPacket(new PacketSceneAreaWeatherNotify(player));
+            } catch (NumberFormatException ignored) {
+                CommandHandler.sendMessage(player, "Invalid weather ID.");
             }
         }
     }
