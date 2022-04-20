@@ -15,6 +15,7 @@ public class Reload implements CommandHandler {
     public void execute(GenshinPlayer sender, List<String> args) {
         CommandHandler.sendMessage(sender, "Reloading config.");
         Grasscutter.loadConfig();
+        Grasscutter.getGameServer().getGachaManager().load();
         Grasscutter.getDispatchServer().loadQueries();
         CommandHandler.sendMessage(sender, "Reload complete.");
     }
