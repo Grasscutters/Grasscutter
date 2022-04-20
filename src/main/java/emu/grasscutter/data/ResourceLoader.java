@@ -10,11 +10,15 @@ import java.util.regex.Pattern;
 import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
 
+import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.common.PointData;
+import emu.grasscutter.data.common.ScenePointConfig;
 import emu.grasscutter.data.custom.AbilityEmbryoEntry;
 import emu.grasscutter.data.custom.OpenConfigEntry;
+import emu.grasscutter.data.custom.ScenePointEntry;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 public class ResourceLoader {
@@ -42,6 +46,7 @@ public class ResourceLoader {
 		loadOpenConfig();
 		// Load resources
 		loadResources();
+		loadScenePoints();
 		// Process into depots
 		GenshinDepot.load();
 		// Custom - TODO move this somewhere else
@@ -117,6 +122,45 @@ public class ResourceLoader {
 				GenshinResource res = (GenshinResource) o;
 				res.onLoad();
 				map.put(res.getId(), res);
+			}
+		}
+	}
+
+	private static void loadScenePoints() {
+		Pattern pattern = Pattern.compile("(?<=scene)(.*?)(?=_point.json)");
+		File folder = new File(Grasscutter.getConfig().RESOURCE_FOLDER + "BinOutPut/Scene/Point");
+		List<ScenePointEntry> scenePointList = new ArrayList<>();
+		for (File file : folder.listFiles()) {
+			ScenePointConfig config = null;
+			Integer sceneId = null;
+			
+			Matcher matcher = pattern.matcher(file.getName());
+			if (matcher.find()) {
+				sceneId = Integer.parseInt(matcher.group(1));
+			} else {
+				continue;
+			}
+
+			try (FileReader fileReader = new FileReader(file)) {
+				config = Grasscutter.getGsonFactory().fromJson(fileReader, ScenePointConfig.class);
+			} catch (Exception e) {
+				e.printStackTrace();
+				continue;
+			}
+
+			if (config.points == null) {
+				continue;
+			}
+
+			for (Map.Entry<String, JsonElement> entry : config.points.entrySet()) {
+				PointData pointData = Grasscutter.getGsonFactory().fromJson(entry.getValue(), PointData.class);
+
+				ScenePointEntry sl = new ScenePointEntry(sceneId + "_" + entry.getKey(), pointData);
+				scenePointList.add(sl);
+			}
+
+			for (ScenePointEntry entry : scenePointList) {
+				GenshinData.getScenePointEntries().put(entry.getName(), entry);
 			}
 		}
 	}
