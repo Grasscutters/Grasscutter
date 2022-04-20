@@ -19,6 +19,7 @@ import emu.grasscutter.game.shop.ShopManager;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.netty.MihoyoKcpServer;
+import org.greenrobot.eventbus.EventBus;
 
 public final class GameServer extends MihoyoKcpServer {
 	private final InetSocketAddress address;
@@ -33,10 +34,18 @@ public final class GameServer extends MihoyoKcpServer {
 	private final MultiplayerManager multiplayerManager;
 	private final DungeonManager dungeonManager;
 	private final CommandMap commandMap;
+
+	public EventBus OnGameServerStartFinish;
+	public EventBus OnGameServerTick;
+	public EventBus OnGameServerStop;
 	
 	public GameServer(InetSocketAddress address) {
 		super(address);
-		
+
+		OnGameServerStartFinish = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
+		OnGameServerTick = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
+		OnGameServerStop = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
+
 		this.setServerInitializer(new GameServerInitializer(this));
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
@@ -155,14 +164,20 @@ public final class GameServer extends MihoyoKcpServer {
 		for (GenshinPlayer player : this.getPlayers().values()) {
 			player.onTick();
 		}
+
+		OnGameServerTick.post(new GameServerTickEvent());
 	}
 
 	@Override
 	public void onStartFinish() {
 		Grasscutter.getLogger().info("Game Server started on port " + address.getPort());
+
+		OnGameServerStartFinish.post(new GameServerStartFinishEvent());
 	}
 	
 	public void onServerShutdown() {
+		OnGameServerStop.post(new GameServerStopEvent());
+
 		// Kick and save all players
 		List<GenshinPlayer> list = new ArrayList<>(this.getPlayers().size());
 		list.addAll(this.getPlayers().values());
