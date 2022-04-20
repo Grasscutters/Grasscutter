@@ -39,33 +39,8 @@ A WIP server emulator for Genshin Impact 2.3-2.6
 * or you can use `run.cmd` to start Server & Proxy daemon with one click
 
 # Grasscutter commands
-### Server console commands
 
-`account create [username] {playerid}` - Creates an account with the specified username and the in-game uid for that account. The playerid parameter is optional and will be auto generated if not set.
-
-### In-Game commands
-There is a dummy user named "Server" in every player's friends list that you can message to use commands. Commands also work in other chat rooms, such as private/team chats.
-
-`!spawn [monster id] [level] [amount]`
-
-`!give [item id] [amount]`
-
-`!givechar [avatar id] [level]`
-
-`!drop [item id] [amount]`
-
-`!killall`
-
-`!setworldlevel [level]` - Relog to see effects properly
-
-`!godmode` - Prevents you from taking damage
-
-`!resetconst` - Resets the constellation level on your current active character, will need to relog after using the command to see any changes.
-
-`!sethp [hp]`
-
-`!clearartifacts` - Deletes all unequipped and unlocked level 0 artifacts, **including yellow rarity ones** from your inventory
-
+A full list of commands, both for servers and for users, [can be found here](COMMANDS.md)
 # Quick Troubleshooting
 * If compiling wasnt successful, please check your JDK installation (must be JDK 8 and validated JDK's bin PATH variable)
 * My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is the issue, if using Fiddler make sure it running on another port except 8888
