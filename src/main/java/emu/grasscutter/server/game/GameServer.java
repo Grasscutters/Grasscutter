@@ -145,7 +145,7 @@ public final class GameServer extends MihoyoKcpServer {
 	
 	public Account getAccountByName(String username) {
 		Optional<GenshinPlayer> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getUsername().equals(username)).findFirst();
-		if (playerOpt.get() != null) {
+		if (playerOpt.isPresent()) {
 			return playerOpt.get().getAccount();
 		}
 		return DatabaseHelper.getAccountByName(username);
