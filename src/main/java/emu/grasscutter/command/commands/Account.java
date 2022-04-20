@@ -48,6 +48,7 @@ public class Account implements CommandHandler {
                 } else {
                     CommandHandler.sendMessage(null, "Account created with UID " + account.getPlayerId() + ".");
                     account.addPermission("*"); // Grant the player superuser permissions.
+                    account.save(); // Save account to database.
                 }
                 return;
             case "delete":
