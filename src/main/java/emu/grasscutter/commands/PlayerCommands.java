@@ -545,8 +545,7 @@ public final class PlayerCommands {
 
         @Override
         public void execute(GenshinPlayer player, List<String> args) {
-            // player.getSession().close();
-            player.getSession().send(new PacketGetPlayerTokenRsp(player.getSession(), true));
+            player.getSession().close();
         }
     }
 }
