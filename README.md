@@ -1,7 +1,7 @@
 # Grasscutter
 A WIP server reimplementation for *some anime game* 2.3-2.6
 
-**Documentation**: [Grasscutter Wiki](https://github.com/Melledy/Grasscutter/wiki/)
+**Documentation**: [Grasscutter Wiki](https://github.com/Melledy/Grasscutter/wiki/)  
 **Note**: For support please join the [Discord server](https://discord.gg/T5vZU6UyeG).
 # Current features
 * Logging in
