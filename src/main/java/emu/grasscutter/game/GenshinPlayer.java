@@ -38,6 +38,7 @@ import emu.grasscutter.server.packet.send.PacketAvatarAddNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarDataNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarGainCostumeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarGainFlycloakNotify;
+import emu.grasscutter.server.packet.send.PacketClientAbilityInitFinishNotify;
 import emu.grasscutter.server.packet.send.PacketCombatInvocationsNotify;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
@@ -104,6 +105,7 @@ public class GenshinPlayer {
 	@Transient private final Int2ObjectMap<CoopRequest> coopRequests;
 	@Transient private final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
 	@Transient private final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
+	@Transient private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
 	
 	@Deprecated @SuppressWarnings({ "rawtypes", "unchecked" }) // Morphia only!
 	public GenshinPlayer() { 
@@ -126,6 +128,7 @@ public class GenshinPlayer {
 		this.coopRequests = new Int2ObjectOpenHashMap<>();
 		this.combatInvokeHandler = new InvokeHandler(PacketCombatInvocationsNotify.class);
 		this.abilityInvokeHandler = new InvokeHandler(PacketAbilityInvocationsNotify.class);
+		this.clientAbilityInitFinishHandler = new InvokeHandler(PacketClientAbilityInitFinishNotify.class);
 	}
 	
 	// On player creation
@@ -387,6 +390,10 @@ public class GenshinPlayer {
 	
 	public InvokeHandler<AbilityInvokeEntry> getAbilityInvokeHandler() {
 		return this.abilityInvokeHandler;
+	}
+
+	public InvokeHandler<AbilityInvokeEntry> getClientAbilityInitFinishHandler() {
+		return clientAbilityInitFinishHandler;
 	}
 
 	public void setMpSetting(MpSettingType mpSetting) {
