@@ -67,7 +67,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 `!clearartifacts` - Deletes all unequipped and unlocked level 0 artifacts, **including yellow rarity ones** from your inventory
 
 ### Bonus
-When you want to teleport to somewhere, use the ingame marking function on Map, then named it `pos`, click Confirm. You will see your character falling from a very high destination, exact location that you marked.
+When you want to teleport to somewhere, use the ingame marking function on Map, click Confirm. You will see your character falling from a very high destination, exact location that you marked.
 
 # Quick Troubleshooting
 * If compiling wasnt successful, please check your JDK installation (must be JDK 8 and validated JDK's bin PATH variable)
