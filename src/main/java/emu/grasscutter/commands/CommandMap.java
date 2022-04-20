@@ -68,9 +68,11 @@ public final class CommandMap {
      * Returns a list of all registered commands.
      * @return All command handlers as a list.
      */
-    public List<CommandHandler> getHandlers() {
+    public List<CommandHandler> getHandlersAsList() {
         return new LinkedList<>(this.commands.values());
     }
+
+    public HashMap<String, CommandHandler> getHandlers() { return new LinkedHashMap<>(this.commands); }
 
     /**
      * Returns a handler by label/alias.
@@ -111,8 +113,7 @@ public final class CommandMap {
         if(player != null) {
             String permissionNode = this.annotations.get(label).permission();
             Account account = player.getAccount();
-            List<String> permissions = account.getPermissions();
-            if(!permissions.contains("*") && !permissions.contains(permissionNode)) {
+            if(permissionNode != "" && !account.hasPermission(permissionNode)) {
                 CommandHandler.sendMessage(player, "You do not have permission to run this command."); return;
             }
         }
