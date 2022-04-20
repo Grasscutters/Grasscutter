@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message WearEquipReq {
-	uint64 avatarGuid = 1;
-	uint64 equipGuid = 2;
-}

@@ -21,6 +21,7 @@ import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.SceneData;
+import emu.grasscutter.utils.Utils;
 
 public final class Tools {
 	
@@ -29,7 +30,7 @@ public final class Tools {
 		ResourceLoader.loadResources();
 		
 		Map<Long, String> map;
-		try (FileReader fileReader = new FileReader(Grasscutter.getConfig().RESOURCE_FOLDER + "TextMapEN.json")) {
+		try (FileReader fileReader = new FileReader(Utils.toFilePath(Grasscutter.getConfig().RESOURCE_FOLDER + "TextMap/TextMapEN.json"))) {
 			map = Grasscutter.getGsonFactory().fromJson(fileReader, new TypeToken<Map<Long, String>>() {}.getType());
 		}
 		

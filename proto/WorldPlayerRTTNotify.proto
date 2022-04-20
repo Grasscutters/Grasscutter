@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-import "PlayerRTTInfo.proto";
-
-message WorldPlayerRTTNotify {
-	repeated PlayerRTTInfo playerRttList = 1;
-}

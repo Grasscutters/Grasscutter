@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message ItemGivingRsp {
-	int32 retcode = 1;
-	uint32 givingId = 2;
-}
