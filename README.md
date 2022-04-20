@@ -25,7 +25,7 @@ A WIP server emulator for Genshin Impact 2.3-2.6
 3. Create a folder named `resources` in your Grasscutter directory, bring your `BinOutput` and `ExcelBinOutput` folders into it *(Check the wiki for more details where to get those.)*
 4. Run Grasscutter with `java -jar grasscutter.jar`. Make sure mongodb is running as well.
 
-### Connecting with the client
+### Connecting to the client
 ½. Create an account using command below
 1. Run a proxy daemon: (choose either one)
 	- mitmdump: `mitmdump -s proxy.py --ssl-insecure`
@@ -38,7 +38,7 @@ A WIP server emulator for Genshin Impact 2.3-2.6
 
 * or you can use `run.cmd` to start Server & Proxy daemon with one click
 
-# Grasscutter commands
+# Grasscutter Commands
 
 A full list of commands, both for servers and for users, [can be found here](COMMANDS.md)
 # Quick Troubleshooting
