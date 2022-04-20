@@ -225,8 +225,16 @@ public final class DispatchServer {
 			// Login
 			Account account = DatabaseHelper.getAccountByName(requestData.account);
 			
-			// Test
-			if (account == null) {
+			// Check if account exists, else create a new one.
+			if (account == null && Grasscutter.getConfig().ServerOptions.AutomaticallyCreateAccounts) {
+				// This account has been created AUTOMATICALLY. There will be no permissions added.
+				account = DatabaseHelper.createAccountWithId(requestData.account, 0);
+				
+				responseData.message = "OK";
+				responseData.data.account.uid = account.getId();
+				responseData.data.account.token = account.generateSessionKey();
+				responseData.data.account.email = account.getEmail();
+			} else if (!Grasscutter.getConfig().ServerOptions.AutomaticallyCreateAccounts) {
 				responseData.retcode = -201;
 				responseData.message = "Username not found.";
 			} else {
