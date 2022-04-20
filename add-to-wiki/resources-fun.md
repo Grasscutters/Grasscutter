@@ -23,7 +23,7 @@ Enjoy your colorful name :sparkles:
 
 ***
 ## Avatar/Character
-This guide is recommended if you have the character/weapon. If you want to get a character at Level Z, then use !givechar <avatarID> [level]
+This guide is recommended if you have the character/weapon. If you want to get a character at Level Z, then use !givechar [avatarID] [level]
 ### Changing Level/Ascension/Talents
 > Make sure you have created an account with the avatars/characters.
 1. Open **MongoDBCompass**
