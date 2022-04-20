@@ -3,7 +3,6 @@ package emu.grasscutter.server.game;
 import java.net.InetSocketAddress;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CountDownLatch;
 
 import emu.grasscutter.GenshinConstants;
 import emu.grasscutter.Grasscutter;
@@ -20,7 +19,6 @@ import emu.grasscutter.game.shop.ShopManager;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.netty.MihoyoKcpServer;
-import jdk.internal.event.Event;
 import org.greenrobot.eventbus.EventBus;
 
 public final class GameServer extends MihoyoKcpServer {
@@ -37,14 +35,16 @@ public final class GameServer extends MihoyoKcpServer {
 	private final DungeonManager dungeonManager;
 	private final CommandMap commandMap;
 
+	public EventBus OnGameServerStartFinish;
 	public EventBus OnGameServerTick;
 	public EventBus OnGameServerStop;
 	
 	public GameServer(InetSocketAddress address) {
 		super(address);
 
-		OnGameServerTick = EventBus.builder().throwSubscriberException(true).build();
-		OnGameServerStop = EventBus.builder().throwSubscriberException(true).build();
+		OnGameServerStartFinish = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
+		OnGameServerTick = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
+		OnGameServerStop = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
 
 		this.setServerInitializer(new GameServerInitializer(this));
 		this.address = address;
@@ -171,13 +171,12 @@ public final class GameServer extends MihoyoKcpServer {
 	@Override
 	public void onStartFinish() {
 		Grasscutter.getLogger().info("Game Server started on port " + address.getPort());
+
+		OnGameServerStartFinish.post(new GameServerStartFinishEvent());
 	}
 	
 	public void onServerShutdown() {
 		OnGameServerStop.post(new GameServerStopEvent());
-		Grasscutter.getLogger().info("Ignore the 'No subscribers registered' error");
-		// TODO: Remove the log once things actually listen to OnGameServerStop.
-		//  I just added it there to prevent people from flooding #support with this error
 
 		// Kick and save all players
 		List<GenshinPlayer> list = new ArrayList<>(this.getPlayers().size());
