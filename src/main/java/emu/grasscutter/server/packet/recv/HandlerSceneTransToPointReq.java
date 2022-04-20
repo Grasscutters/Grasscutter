@@ -13,6 +13,7 @@ public class HandlerSceneTransToPointReq extends PacketHandler {
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		SceneTransToPointReq req = SceneTransToPointReq.parseFrom(payload);
+        session.send(new PacketSceneTransToPointRsp(session.getPlayer(), req.getPointId(), req.getSceneId()));
 	}
 
 }
