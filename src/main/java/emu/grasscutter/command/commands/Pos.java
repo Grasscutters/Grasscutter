@@ -6,8 +6,8 @@ import emu.grasscutter.game.GenshinPlayer;
 
 import java.util.List;
 
-@Command(label = "pos",
-        usage = "Usage: pos", description = "Get coordinates.")
+@Command(label = "pos", usage = "pos",
+        description = "Get coordinates.")
 public class Pos implements CommandHandler {
 
     @Override
