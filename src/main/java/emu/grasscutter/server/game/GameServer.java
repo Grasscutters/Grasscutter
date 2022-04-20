@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import emu.grasscutter.GenshinConstants;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.commands.CommandMap;
+import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.GenshinPlayer;
