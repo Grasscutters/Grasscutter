@@ -226,15 +226,23 @@ public final class DispatchServer {
 			Account account = DatabaseHelper.getAccountByName(requestData.account);
 			
 			// Check if account exists, else create a new one.
-			if (account == null) {
-				account = DatabaseHelper.createAccountWithId(requestData.account, 0);
+			if (account == null && Grasscutter.getConfig().ServerOptions.AutomaticallyCreateAccounts) {
 				// This account has been created AUTOMATICALLY. There will be no permissions added.
+				account = DatabaseHelper.createAccountWithId(requestData.account, 0);
+				
+				responseData.message = "OK";
+				responseData.data.account.uid = account.getId();
+				responseData.data.account.token = account.generateSessionKey();
+				responseData.data.account.email = account.getEmail();
+			} else if (!Grasscutter.getConfig().ServerOptions.AutomaticallyCreateAccounts) {
+				responseData.retcode = -201;
+				responseData.message = "Username not found.";
+			} else {
+				responseData.message = "OK";
+				responseData.data.account.uid = account.getId();
+				responseData.data.account.token = account.generateSessionKey();
+				responseData.data.account.email = account.getEmail();
 			}
-
-			responseData.message = "OK";
-			responseData.data.account.uid = account.getId();
-			responseData.data.account.token = account.generateSessionKey();
-			responseData.data.account.email = account.getEmail();
 			
 			// Create a response
 			String response = getGsonFactory().toJson(responseData);
