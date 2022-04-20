@@ -296,16 +296,18 @@ public class GachaManager {
 
 	@Subscribe
 	public synchronized void watchBannerJson(GameServerTickEvent tickEvent) {
-		try {
-			for (WatchEvent<?> event : watchKey.pollEvents()) {
-				final Path changed = (Path) event.context();
-				if (changed.endsWith("Banners.json")) {
-					Grasscutter.getLogger().info("Change detected with banners.json. Reloading gacha config");
-					this.load();
+		if(Grasscutter.getConfig().getServerOptions().WatchGacha) {
+			try {
+				for (WatchEvent<?> event : watchKey.pollEvents()) {
+					final Path changed = (Path) event.context();
+					if (changed.endsWith("Banners.json")) {
+						Grasscutter.getLogger().info("Change detected with banners.json. Reloading gacha config");
+						this.load();
+					}
 				}
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 	}
 	
