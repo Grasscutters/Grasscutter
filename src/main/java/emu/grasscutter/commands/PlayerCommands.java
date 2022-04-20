@@ -455,32 +455,111 @@ public final class PlayerCommands {
         }
     }
 
-    @Command(label = "sethealth", aliases = {"sethp"}, 
-            usage = "sethealth <hp>", execution = Command.Execution.PLAYER, description = "Sets your health to the specified value",
-            permission = "player.sethealth")
-    public static class SetHealthCommand implements CommandHandler {
-
-        @Override
+@Command(label = "setstats", aliases = {"stats"}, 
+            usage = "Usage: setstats|stats <hp|def|atk|em|er|crate|cdmg> <value>", execution = Command.Execution.PLAYER)
+    public static class SetStatsCommand implements CommandHandler {
+        @Override    
         public void execute(GenshinPlayer player, List<String> args) {
-            if (args.size() < 1) {
-                CommandHandler.sendMessage(null, "Usage: sethealth <hp>");
-                return;
-            }
-
-            try {
-                int health = Integer.parseInt(args.get(0));
-                EntityAvatar entity = player.getTeamManager().getCurrentAvatarEntity();
-                if (entity == null)
+            String stat = args.get(0);
+            switch(stat){
+                default:
+                    CommandHandler.sendMessage(player, "Usage: setstats|stats <hp|def|atk|em|er|crate|cdmg> <value>");
                     return;
-
-                entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, health);
-                entity.getWorld().broadcastPacket(
-                        new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
-                player.dropMessage("Health set to " + health + ".");
-            } catch (NumberFormatException ignored) {
-                CommandHandler.sendMessage(null, "Invalid health value.");
+                case "hp":
+                    try {
+                        int health = Integer.parseInt(args.get(1));
+                        EntityAvatar entity = player.getTeamManager().getCurrentAvatarEntity();
+                        entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, health);
+                        entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
+                        player.dropMessage("HP set to " + health + ".");
+                    } catch (NumberFormatException ignored) {
+                        CommandHandler.sendMessage(null, "Invalid HP value.");
+                       return;
+                    }
+                    break;
+                case "def":
+                    try {
+                        int def = Integer.parseInt(args.get(1));
+                        EntityAvatar entity = player.getTeamManager().getCurrentAvatarEntity();
+                        entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE, def);
+                        entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_DEFENSE));
+                        player.dropMessage("DEF set to " + def + ".");
+                    } catch (NumberFormatException ignored) {
+                        CommandHandler.sendMessage(null, "Invalid DEF value.");
+                        return;
+                    }
+                    break; 
+                case "atk":
+                    try {
+                        int atk = Integer.parseInt(args.get(1));
+                        EntityAvatar entity = player.getTeamManager().getCurrentAvatarEntity();
+                        entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK, atk);
+                        entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_ATTACK));
+                        player.dropMessage("ATK set to " + atk + ".");
+                    } catch (NumberFormatException ignored) {
+                        CommandHandler.sendMessage(null, "Invalid ATK value.");
+                        return;
+                    }
+                    break; 
+                case "em":
+                    try {
+                        int em = Integer.parseInt(args.get(1));
+                        EntityAvatar entity = player.getTeamManager().getCurrentAvatarEntity(); 
+                        entity.setFightProperty(FightProperty.FIGHT_PROP_ELEMENT_MASTERY, em);
+                        entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ELEMENT_MASTERY));
+                        player.dropMessage("Elemental Mastery set to " + em + ".");
+                    } catch (NumberFormatException ignored) {
+                        CommandHandler.sendMessage(null, "Invalid EM value.");
+                        return;
+                    }
+                    break;
+                case "er":
+                    try {
+                        float er = Integer.parseInt(args.get(1));                    
+                        EntityAvatar entity = player.getTeamManager().getCurrentAvatarEntity();
+                        float erecharge = er / 10000;
+                        entity.setFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, erecharge);
+                        entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY));                      
+                        float iger = erecharge * 100;
+                        player.dropMessage("Energy recharge set to " + iger + "%.");     
+                    } catch (NumberFormatException ignored) {
+                        CommandHandler.sendMessage(null, "Invalid ER value.");
+                        return;
+                    }
+                    break; 
+                case "crate":
+                    try {
+                        float cr = Integer.parseInt(args.get(1));
+                        EntityAvatar entity = player.getTeamManager().getCurrentAvatarEntity();
+                        float crate = cr / 10000;
+                        entity.setFightProperty(FightProperty.FIGHT_PROP_CRITICAL, crate);
+                        entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CRITICAL));
+                        float igcrate = crate * 100;
+                        player.dropMessage("Crit Rate set to " + igcrate + "%.");
+                        
+                    } catch (NumberFormatException ignored) {
+                        CommandHandler.sendMessage(null, "Invalid Crit Rate value.");
+                        return;
+                    }
+                    break;     
+                case "cdmg":
+                    try {
+                        float cdmg = Integer.parseInt(args.get(1));
+                        EntityAvatar entity = player.getTeamManager().getCurrentAvatarEntity();
+                        float cdamage = cdmg / 10000;
+                        entity.setFightProperty(FightProperty.FIGHT_PROP_CRITICAL_HURT, cdamage);
+                        entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CRITICAL_HURT));
+                        float igcdmg = cdamage * 100;
+                        player.dropMessage("Crit DMG set to " + igcdmg + "%");
+                        
+                    } catch (NumberFormatException ignored) {
+                        CommandHandler.sendMessage(null, "Invalid Crit DMG value.");
+                        return;
+                    }
+                    break;    
+                
             }
-        }
+        }  
     }
 
     @Command(label = "setworldlevel", aliases = {"setworldlvl"}, usage = "setworldlevel <level>",
