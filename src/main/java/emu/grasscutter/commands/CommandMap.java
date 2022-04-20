@@ -113,7 +113,7 @@ public final class CommandMap {
         if(player != null) {
             String permissionNode = this.annotations.get(label).permission();
             Account account = player.getAccount();
-            if(!permissionNode.equals("*") && !account.hasPermission(permissionNode)) {
+            if(!permissionNode.isEmpty() && !account.hasPermission(permissionNode)) {
                 CommandHandler.sendMessage(player, "You do not have permission to run this command."); return;
             }
         }
