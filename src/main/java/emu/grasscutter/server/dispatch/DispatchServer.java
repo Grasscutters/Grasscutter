@@ -225,16 +225,16 @@ public final class DispatchServer {
 			// Login
 			Account account = DatabaseHelper.getAccountByName(requestData.account);
 			
-			// Test
+			// Check if account exists, else create a new one.
 			if (account == null) {
-				responseData.retcode = -201;
-				responseData.message = "Username not found.";
-			} else {
-				responseData.message = "OK";
-				responseData.data.account.uid = account.getId();
-				responseData.data.account.token = account.generateSessionKey();
-				responseData.data.account.email = account.getEmail();
+				account = DatabaseHelper.createAccountWithId(requestData.account, 0);
+				// This account has been created AUTOMATICALLY. There will be no permissions added.
 			}
+
+			responseData.message = "OK";
+			responseData.data.account.uid = account.getId();
+			responseData.data.account.token = account.generateSessionKey();
+			responseData.data.account.email = account.getEmail();
 			
 			// Create a response
 			String response = getGsonFactory().toJson(responseData);

@@ -91,7 +91,7 @@ public final class CommandMap {
     public void invoke(GenshinPlayer player, String rawMessage) {
         rawMessage = rawMessage.trim();
         if(rawMessage.length() == 0) {
-            CommandHandler.sendMessage(player, "No command specified.");
+            CommandHandler.sendMessage(player, "No command specified."); return;
         }
         
         // Remove prefix if present.
@@ -113,7 +113,7 @@ public final class CommandMap {
         if(player != null) {
             String permissionNode = this.annotations.get(label).permission();
             Account account = player.getAccount();
-            if(permissionNode != "" && !account.hasPermission(permissionNode)) {
+            if(!Objects.equals(permissionNode, "") && !account.hasPermission(permissionNode)) {
                 CommandHandler.sendMessage(player, "You do not have permission to run this command."); return;
             }
         }
