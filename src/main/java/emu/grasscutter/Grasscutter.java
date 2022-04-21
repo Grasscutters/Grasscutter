@@ -86,8 +86,10 @@ public final class Grasscutter {
 	public static void loadConfig() {
 		try (FileReader file = new FileReader(configFile)) {
 			config = gson.fromJson(file, Config.class);
+			saveConfig();
 		} catch (Exception e) {
-			Grasscutter.config = new Config(); saveConfig();
+			Grasscutter.config = new Config(); 
+			saveConfig();
 		}
 	}
 	
