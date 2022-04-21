@@ -150,48 +150,26 @@ public final class DispatchServer {
 			server = HttpServer.create(getAddress(), 0);
 		}
 
-		server.createContext("/", t -> {
-			//Create a response form the request query parameters
-			String response = "Hello";
-			//Set the response header status and length
-			t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
-			t.sendResponseHeaders(200, response.getBytes().length);
-			//Write the response string
-			OutputStream os = t.getResponseBody();
-			os.write(response.getBytes());
-			os.close();
-		});
+		server.createContext("/", t -> responseHTML(t, "Hello"));
 
 		// Dispatch
 		server.createContext("/query_region_list", t -> {
 			// Log
-			Grasscutter.getLogger().info("Client request: query_region_list");
-			// Create a response form the request query parameters
-			String response = regionListBase64;
-			// Set the response header status and length
-			t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
-			t.sendResponseHeaders(200, response.getBytes().length);
-			// Write the response string
-			OutputStream os = t.getResponseBody();
-			os.write(response.getBytes());
-			os.close();
+			Grasscutter.getLogger().info(String.format("Client %s request: query_region_list", t.getRemoteAddress()));
+
+			responseHTML(t, regionListBase64);
 		});
 		server.createContext("/query_cur_region", t -> {
 			// Log
-			Grasscutter.getLogger().info("Client request: query_cur_region");
+			Grasscutter.getLogger().info(String.format("Client %s request: query_cur_region", t.getRemoteAddress()));
 			// Create a response form the request query parameters
 			URI uri = t.getRequestURI();
 			String response = "CAESGE5vdCBGb3VuZCB2ZXJzaW9uIGNvbmZpZw==";
 			if (uri.getQuery() != null && uri.getQuery().length() > 0) {
 				response = regionCurrentBase64;
 			}
-			// Set the response header status and length
-			t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
-			t.sendResponseHeaders(200, response.getBytes().length);
-			// Write the response string
-			OutputStream os = t.getResponseBody();
-			os.write(response.getBytes());
-			os.close();
+
+			responseHTML(t, response);
 		});
 		// Login via account
 		server.createContext("/hk4e_global/mdk/shield/api/login", t -> {
@@ -201,13 +179,14 @@ public final class DispatchServer {
 				String body = Utils.toString(t.getRequestBody());
 				requestData = getGsonFactory().fromJson(body, LoginAccountRequestJson.class);
 			} catch (Exception ignored) {
-
 			}
 			// Create response json
 			if (requestData == null) {
 				return;
 			}
 			LoginResultJson responseData = new LoginResultJson();
+
+			Grasscutter.getLogger().info(String.format("Client %s is trying to log in", t.getRemoteAddress()));
 
 			// Login
 			Account account = DatabaseHelper.getAccountByName(requestData.account);
@@ -224,13 +203,19 @@ public final class DispatchServer {
 						responseData.data.account.uid = account.getId();
 						responseData.data.account.token = account.generateSessionKey();
 						responseData.data.account.email = account.getEmail();
+
+						Grasscutter.getLogger().info(String.format("Client %s failed to log in: Account %s created", t.getRemoteAddress(), responseData.data.account.uid));
 					} else {
 						responseData.retcode = -201;
 						responseData.message = "Username not found, create failed.";
+
+						Grasscutter.getLogger().info(String.format("Client %s failed to log in: Account create failed", t.getRemoteAddress()));
 					}
 				} else {
 					responseData.retcode = -201;
 					responseData.message = "Username not found.";
+
+					Grasscutter.getLogger().info(String.format("Client %s failed to log in: Account no found", t.getRemoteAddress()));
 				}
 			} else {
 				// Account was found, log the player in
@@ -238,10 +223,13 @@ public final class DispatchServer {
 				responseData.data.account.uid = account.getId();
 				responseData.data.account.token = account.generateSessionKey();
 				responseData.data.account.email = account.getEmail();
+
+				Grasscutter.getLogger().info(String.format("Client %s logged in as %s", t.getRemoteAddress(), responseData.data.account.uid));
 			}
 
-			responseJson(t, responseData);
+			responseJSON(t, responseData);
 		});
+
 		// Login via token
 		server.createContext("/hk4e_global/mdk/shield/api/verify", t -> {
 			// Get post data
@@ -250,13 +238,13 @@ public final class DispatchServer {
 				String body = Utils.toString(t.getRequestBody());
 				requestData = getGsonFactory().fromJson(body, LoginTokenRequestJson.class);
 			} catch (Exception ignored) {
-
 			}
 			// Create response json
 			if (requestData == null) {
 				return;
 			}
 			LoginResultJson responseData = new LoginResultJson();
+			Grasscutter.getLogger().info(String.format("Client %s is trying to log in via token", t.getRemoteAddress()));
 
 			// Login
 			Account account = DatabaseHelper.getAccountById(requestData.uid);
@@ -265,14 +253,18 @@ public final class DispatchServer {
 			if (account == null || !account.getSessionKey().equals(requestData.token)) {
 				responseData.retcode = -111;
 				responseData.message = "Game account cache information error";
+
+				Grasscutter.getLogger().info(String.format("Client %s failed to log in via token", t.getRemoteAddress()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.account.uid = requestData.uid;
 				responseData.data.account.token = requestData.token;
 				responseData.data.account.email = account.getEmail();
+
+				Grasscutter.getLogger().info(String.format("Client %s logged in via token as %s", t.getRemoteAddress(), responseData.data.account.uid));
 			}
 
-			responseJson(t, responseData);
+			responseJSON(t, responseData);
 		});
 		// Exchange for combo token
 		server.createContext("/hk4e_global/combo/granter/login/v2/login", t -> {
@@ -282,7 +274,6 @@ public final class DispatchServer {
 				String body = Utils.toString(t.getRequestBody());
 				requestData = getGsonFactory().fromJson(body, ComboTokenReqJson.class);
 			} catch (Exception ignored) {
-
 			}
 			// Create response json
 			if (requestData == null || requestData.data == null) {
@@ -298,14 +289,18 @@ public final class DispatchServer {
 			if (account == null || !account.getSessionKey().equals(loginData.token)) {
 				responseData.retcode = -201;
 				responseData.message = "Wrong session key.";
+
+				Grasscutter.getLogger().info(String.format("Client %s failed to exchange combo token", t.getRemoteAddress()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.open_id = loginData.uid;
 				responseData.data.combo_id = "157795300";
 				responseData.data.combo_token = account.generateLoginToken();
+
+				Grasscutter.getLogger().info(String.format("Client %s succeed to exchange combo token", t.getRemoteAddress()));
 			}
 
-			responseJson(t, responseData);
+			responseJSON(t, responseData);
 		});
 		// Agreement and Protocol
 		server.createContext( // hk4e-sdk-os.hoyoverse.com
@@ -384,23 +379,13 @@ public final class DispatchServer {
 				"/crash/dataUpload",
 				new DispatchHttpJsonHandler("{\"code\":0}")
 		);
-		server.createContext("/gacha", t -> {
-			//Create a response form the request query parameters
-			String response = "<!doctype html><html lang=\"en\"><head><title>Gacha</title></head><body></body></html>";
-			//Set the response header status and length
-			t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
-			t.sendResponseHeaders(200, response.getBytes().length);
-			//Write the response string
-			OutputStream os = t.getResponseBody();
-			os.write(response.getBytes());
-			os.close();
-		});
+		server.createContext("/gacha", t -> responseHTML(t, "<!doctype html><html lang=\"en\"><head><title>Gacha</title></head><body></body></html>"));
 		// Start server
 		server.start();
 		Grasscutter.getLogger().info("Dispatch server started on port " + getAddress().getPort());
 	}
 
-	private void responseJson(HttpExchange t, Object data) throws IOException {
+	private void responseJSON(HttpExchange t, Object data) throws IOException {
 		// Create a response
 		String response = getGsonFactory().toJson(data);
 		// Set the response header status and length
@@ -412,24 +397,37 @@ public final class DispatchServer {
 		os.close();
 	}
 
+	private void responseHTML(HttpExchange t, String response) throws IOException {
+		// Set the response header status and length
+		t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
+		t.sendResponseHeaders(200, response.getBytes().length);
+		//Write the response string
+		OutputStream os = t.getResponseBody();
+		os.write(response.getBytes());
+		os.close();
+	}
+
 	private Map<String, String> parseQueryString(String qs) {
 		Map<String, String> result = new HashMap<>();
-		if (qs == null)
+		if (qs == null) {
 			return result;
+		}
 
 		int last = 0, next, l = qs.length();
 		while (last < l) {
 			next = qs.indexOf('&', last);
-			if (next == -1)
+			if (next == -1) {
 				next = l;
+			}
 
 			if (next > last) {
 				int eqPos = qs.indexOf('=', last);
 				try {
-					if (eqPos < 0 || eqPos > next)
+					if (eqPos < 0 || eqPos > next) {
 						result.put(URLDecoder.decode(qs.substring(last, next), "utf-8"), "");
-					else
+					} else {
 						result.put(URLDecoder.decode(qs.substring(last, eqPos), "utf-8"), URLDecoder.decode(qs.substring(eqPos + 1, next), "utf-8"));
+					}
 				} catch (UnsupportedEncodingException e) {
 					throw new RuntimeException(e); // will never happen, utf-8 support is mandatory for java
 				}
