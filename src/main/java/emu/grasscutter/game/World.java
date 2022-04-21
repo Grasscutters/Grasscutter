@@ -212,7 +212,10 @@ public class World implements Iterable<GenshinPlayer> {
 			return false;
 		}
 		
+		Integer oldSceneId = null;
+
 		if (player.getScene() != null) {
+			oldSceneId = player.getScene().getId();
 			player.getScene().removePlayer(player);
 		}
 		
@@ -221,7 +224,11 @@ public class World implements Iterable<GenshinPlayer> {
 		player.getPos().set(pos);
 		
 		// Teleport packet
-		player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterSelf, EnterReason.TransPoint, sceneId, pos));
+		if (oldSceneId.equals(sceneId)) {
+			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterGoto, EnterReason.TransPoint, sceneId, pos));
+		} else {
+			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterJump, EnterReason.TransPoint, sceneId, pos));
+		}
 		return true;
 	}
 	
