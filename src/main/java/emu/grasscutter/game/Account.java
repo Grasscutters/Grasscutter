@@ -15,7 +15,7 @@ import java.util.List;
 
 import com.mongodb.DBObject;
 
-@Entity(value = "accounts", noClassnameStored = true)
+@Entity(value = "accounts", useDiscriminator = false)
 public class Account {
 	@Id private String id;
 	
