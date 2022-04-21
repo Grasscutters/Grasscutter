@@ -95,18 +95,19 @@ public final class GiveCommand implements CommandHandler {
     }
 
     private void item(GenshinPlayer player, ItemData itemData, int amount) {
-        GenshinItem genshinItem = new GenshinItem(itemData);
         if (itemData.isEquip()) {
             List<GenshinItem> items = new LinkedList<>();
             for (int i = 0; i < amount; i++) {
-                items.add(genshinItem);
+                items.add(new GenshinItem(itemData));
             }
             player.getInventory().addItems(items);
             player.sendPacket(new PacketItemAddHintNotify(items, ActionReason.SubfieldDrop));
         } else {
+            GenshinItem genshinItem = new GenshinItem(itemData);
             genshinItem.setCount(amount);
             player.getInventory().addItem(genshinItem);
             player.sendPacket(new PacketItemAddHintNotify(genshinItem, ActionReason.SubfieldDrop));
         }
     }
 }
+
