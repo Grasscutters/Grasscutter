@@ -293,7 +293,7 @@ public class GenshinPlayer {
 	}
 	
 	private float getExpModifier() {
-		return Grasscutter.getConfig().getGameRates().ADVENTURE_EXP_RATE;
+		return Grasscutter.getConfig().getGameServerOptions().getGameRates().ADVENTURE_EXP_RATE;
 	}
 	
 	// Affected by exp rate

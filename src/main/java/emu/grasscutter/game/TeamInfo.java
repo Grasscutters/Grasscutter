@@ -13,7 +13,7 @@ public class TeamInfo {
 	
 	public TeamInfo() {
 		this.name = "";
-		this.avatars = new ArrayList<>(Grasscutter.getConfig().getServerOptions().MaxAvatarsInTeam);
+		this.avatars = new ArrayList<>(Grasscutter.getConfig().getGameServerOptions().MaxAvatarsInTeam);
 	}
 
 	public String getName() {
@@ -37,7 +37,7 @@ public class TeamInfo {
 	}
 
 	public boolean addAvatar(GenshinAvatar avatar) {
-		if (size() >= Grasscutter.getConfig().getServerOptions().MaxAvatarsInTeam || contains(avatar)) {
+		if (size() >= Grasscutter.getConfig().getGameServerOptions().MaxAvatarsInTeam || contains(avatar)) {
 			return false;
 		}
 		
@@ -57,7 +57,7 @@ public class TeamInfo {
 	}
 	
 	public void copyFrom(TeamInfo team) {
-		copyFrom(team, Grasscutter.getConfig().getServerOptions().MaxAvatarsInTeam);
+		copyFrom(team, Grasscutter.getConfig().getGameServerOptions().MaxAvatarsInTeam);
 	}
 	
 	public void copyFrom(TeamInfo team, int maxTeamSize) {

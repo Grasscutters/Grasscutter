@@ -299,7 +299,7 @@ public class GachaManager {
 
 	@Subscribe
 	public synchronized void watchBannerJson(GameServerTickEvent tickEvent) {
-		if(Grasscutter.getConfig().getServerOptions().WatchGacha) {
+		if(Grasscutter.getConfig().getGameServerOptions().WatchGacha) {
 			try {
 				WatchKey watchKey = watchService.take();
 
