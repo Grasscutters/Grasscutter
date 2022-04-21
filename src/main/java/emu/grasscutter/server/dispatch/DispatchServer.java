@@ -405,25 +405,18 @@ public final class DispatchServer {
 				"/perf/config/verify", 
 				new DispatchHttpJsonHandler("{\"code\":0}")
 		);
-		// Start server
-		server.start();
-		Grasscutter.getLogger().info("Dispatch server started on port " + getAddress().getPort());
 		
 		// Logging servers
-		HttpServer overseaLogServer = HttpServer.create(new InetSocketAddress(Grasscutter.getConfig().DispatchServerIp, Grasscutter.getConfig().OverseaLogPort), 0);
-		overseaLogServer.createContext( // overseauspider.yuanshen.com
+		server.createContext( // overseauspider.yuanshen.com
 				"/log", 
 				new DispatchHttpJsonHandler("{\"code\":0}")
 		);
-		overseaLogServer.start();
-		Grasscutter.getLogger().info("Log server (overseauspider) started on port " + 8888);
 		
-		HttpServer uploadLogServer = HttpServer.create(new InetSocketAddress(Grasscutter.getConfig().DispatchServerIp, Grasscutter.getConfig().UploadLogPort), 0);
-		uploadLogServer.createContext( // log-upload-os.mihoyo.com
+		server.createContext( // log-upload-os.mihoyo.com
 				"/crash/dataUpload", 
 				new DispatchHttpJsonHandler("{\"code\":0}")
 		);
-		uploadLogServer.createContext("/gacha", t -> {
+		server.createContext("/gacha", t -> {
 			//Create a response form the request query parameters
 			String response = "<!doctype html><html lang=\"en\"><head><title>Gacha</title></head><body></body></html>";
 			//Set the response header status and length
@@ -434,8 +427,9 @@ public final class DispatchServer {
 			os.write(response.getBytes());
 			os.close();
 		});
-		uploadLogServer.start();
-		Grasscutter.getLogger().info("Log server (log-upload-os) started on port " + Grasscutter.getConfig().UploadLogPort);
+		// Start server
+		server.start();
+		Grasscutter.getLogger().info("Dispatch server started on port " + getAddress().getPort());
 	}
 	
 	private Map<String, String> parseQueryString(String qs) {
