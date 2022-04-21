@@ -34,7 +34,8 @@ public class GenshinScene {
 	
 	private int time;
 	private ClimateType climate;
-	
+	private int weather;
+
 	public GenshinScene(World world, SceneData sceneData) {
 		this.world = world;
 		this.sceneData = sceneData;
@@ -89,8 +90,16 @@ public class GenshinScene {
 		return climate;
 	}
 
+	public int getWeather() {
+		return weather;
+	}
+
 	public void setClimate(ClimateType climate) {
 		this.climate = climate;
+	}
+
+	public void setWeather(int weather) {
+		this.weather = weather;
 	}
 
 	public boolean isInScene(GenshinEntity entity) {
