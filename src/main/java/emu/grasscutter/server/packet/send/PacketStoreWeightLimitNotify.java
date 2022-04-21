@@ -13,11 +13,11 @@ public class PacketStoreWeightLimitNotify extends GenshinPacket {
 
 		StoreWeightLimitNotify p = StoreWeightLimitNotify.newBuilder()
 				.setStoreType(StoreType.StorePack)
-				.setWeightLimit(Grasscutter.getConfig().getServerOptions().InventoryLimitAll)
-				.setWeaponCountLimit(Grasscutter.getConfig().getServerOptions().InventoryLimitWeapon)
-				.setReliquaryCountLimit(Grasscutter.getConfig().getServerOptions().InventoryLimitRelic)
-				.setMaterialCountLimit(Grasscutter.getConfig().getServerOptions().InventoryLimitMaterial)
-				.setFurnitureCountLimit(Grasscutter.getConfig().getServerOptions().InventoryLimitFurniture)
+				.setWeightLimit(Grasscutter.getConfig().getGameServerOptions().InventoryLimitAll)
+				.setWeaponCountLimit(Grasscutter.getConfig().getGameServerOptions().InventoryLimitWeapon)
+				.setReliquaryCountLimit(Grasscutter.getConfig().getGameServerOptions().InventoryLimitRelic)
+				.setMaterialCountLimit(Grasscutter.getConfig().getGameServerOptions().InventoryLimitMaterial)
+				.setFurnitureCountLimit(Grasscutter.getConfig().getGameServerOptions().InventoryLimitFurniture)
 				.build();
 		
 		this.setData(p);

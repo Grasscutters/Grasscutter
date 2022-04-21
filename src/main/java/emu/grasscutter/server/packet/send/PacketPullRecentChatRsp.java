@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.Config.ServerOptions;
+import emu.grasscutter.Config.GameServerOptions;
 import emu.grasscutter.GenshinConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.GenshinPlayer;
@@ -14,7 +14,7 @@ public class PacketPullRecentChatRsp extends GenshinPacket {
 	public PacketPullRecentChatRsp(GenshinPlayer player) {
 		super(PacketOpcodes.PullRecentChatRsp);
 		
-		ServerOptions serverOptions = Grasscutter.getConfig().getServerOptions();
+		GameServerOptions serverOptions = Grasscutter.getConfig().getGameServerOptions();
 		PullRecentChatRsp.Builder proto = PullRecentChatRsp.newBuilder();
 		
 		if (serverOptions.WelcomeEmotes != null && serverOptions.WelcomeEmotes.length > 0) {
@@ -33,7 +33,7 @@ public class PacketPullRecentChatRsp extends GenshinPacket {
 				.setTime((int) (System.currentTimeMillis() / 1000))
 				.setUid(GenshinConstants.SERVER_CONSOLE_UID)
 				.setToUid(player.getUid())
-				.setText(Grasscutter.getConfig().getServerOptions().WelcomeMotd)
+				.setText(Grasscutter.getConfig().getGameServerOptions().WelcomeMotd)
 				.build();
 			
 			proto.addChatInfo(welcomeMotd);
