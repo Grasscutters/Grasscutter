@@ -73,11 +73,26 @@ public final class Grasscutter {
 		DatabaseManager.initialize();
 		
 		// Start servers.
-		dispatchServer = new DispatchServer();
-		dispatchServer.start();
-		
-		gameServer = new GameServer(new InetSocketAddress(getConfig().getGameServerOptions().Ip, getConfig().getGameServerOptions().Port));
-		gameServer.start();
+		if(getConfig().RunMode.equalsIgnoreCase("HYBRID")) {
+			dispatchServer = new DispatchServer();
+			dispatchServer.start();
+
+			gameServer = new GameServer(new InetSocketAddress(getConfig().getGameServerOptions().Ip, getConfig().getGameServerOptions().Port));
+			gameServer.start();
+		} else if(getConfig().RunMode.equalsIgnoreCase("DISPATCH_ONLY")) {
+			dispatchServer = new DispatchServer();
+			dispatchServer.start();
+		} else if(getConfig().RunMode.equalsIgnoreCase("GAME_ONLY")) {
+			gameServer = new GameServer(new InetSocketAddress(getConfig().getGameServerOptions().Ip, getConfig().getGameServerOptions().Port));
+			gameServer.start();
+		} else {
+			getLogger().error("Invalid server run mode. " + getConfig().RunMode);
+			getLogger().error("Server run mode must be 'HYBRID', 'DISPATCH_ONLY', or 'GAME_ONLY'. Unable to start Grasscutter...");
+			getLogger().error("Shutting down...");
+			System.exit(1);
+		}
+
+
 		
 		// Open console.
 		startConsole();
@@ -104,9 +119,14 @@ public final class Grasscutter {
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
 			while ((input = br.readLine()) != null) {
 				try {
+					if(getConfig().RunMode.equalsIgnoreCase("DISPATCH_ONLY")) {
+						getLogger().error("Commands are not supported in dispatch only mode");
+						return;
+					}
 					CommandMap.getInstance().invoke(null, input);
 				} catch (Exception e) {
-					Grasscutter.getLogger().error("Command error: " + e.getMessage());
+					Grasscutter.getLogger().error("Command error: ");
+					e.printStackTrace();
 				}
 			}
 		} catch (Exception e) {
