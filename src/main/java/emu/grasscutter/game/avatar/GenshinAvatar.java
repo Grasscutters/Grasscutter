@@ -50,7 +50,7 @@ import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-@Entity(value = "avatars", noClassnameStored = true)
+@Entity(value = "avatars", useDiscriminator = false)
 public class GenshinAvatar {
 	@Id private ObjectId id;
 	@Indexed private int ownerId;	// Id of player that this avatar belongs to

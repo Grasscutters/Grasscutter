@@ -1,13 +1,15 @@
 package emu.grasscutter.database;
 
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
 import com.mongodb.MongoCommandException;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoIterable;
 
 import dev.morphia.Datastore;
 import dev.morphia.Morphia;
+import dev.morphia.mapping.MapperOptions;
+import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.GenshinPlayer;
@@ -23,10 +25,6 @@ public final class DatabaseManager {
 		DatabaseCounter.class, Account.class, GenshinPlayer.class, GenshinAvatar.class, GenshinItem.class, Friendship.class
 	};
     
-    public static MongoClient getMongoClient() {
-        return mongoClient;
-    }
-    
     public static Datastore getDatastore() {
     	return datastore;
     }
@@ -37,27 +35,23 @@ public final class DatabaseManager {
 	
 	public static void initialize() {
 		// Initialize
-		mongoClient = new MongoClient(new MongoClientURI(Grasscutter.getConfig().DatabaseUrl));
-		Morphia morphia = new Morphia();
+		mongoClient = MongoClients.create(Grasscutter.getConfig().DatabaseUrl);
 		
-		// TODO Update when migrating to Morphia 2.0
-		morphia.getMapper().getOptions().setStoreEmpties(true);
-		morphia.getMapper().getOptions().setStoreNulls(false);
-		morphia.getMapper().getOptions().setDisableEmbeddedIndexes(true);
-		
-		// Map
-		morphia.map(mappedClasses);
-		
-		// Build datastore
-		datastore = morphia.createDatastore(mongoClient, Grasscutter.getConfig().DatabaseCollection);
+		// Set mapper options.
+		MapperOptions mapperOptions = MapperOptions.builder()
+				.storeEmpties(true).storeNulls(false).build();
+		// Create data store.
+		datastore = Morphia.createDatastore(mongoClient, Grasscutter.getConfig().DatabaseCollection, mapperOptions);
+		// Map classes.
+		datastore.getMapper().map(mappedClasses);
 		
 		// Ensure indexes
 		try {
 			datastore.ensureIndexes();
-		} catch (MongoCommandException e) {
-			Grasscutter.getLogger().info("Mongo index error: ", e);
+		} catch (MongoCommandException exception) {
+			Grasscutter.getLogger().info("Mongo index error: ", exception);
 			// Duplicate index error
-			if (e.getCode() == 85) {
+			if (exception.getCode() == 85) {
 				// Drop all indexes and re add them
 				MongoIterable<String> collections = datastore.getDatabase().listCollectionNames();
 				for (String name : collections) {
@@ -68,9 +62,9 @@ public final class DatabaseManager {
 			}
 		}
 	}
-	
+
 	public static synchronized int getNextId(Class<?> c) {
-		DatabaseCounter counter = getDatastore().createQuery(DatabaseCounter.class).field("_id").equal(c.getSimpleName()).find().tryNext();
+		DatabaseCounter counter = getDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", c.getName())).first();
 		if (counter == null) {
 			counter = new DatabaseCounter(c.getSimpleName());
 		}
@@ -80,7 +74,7 @@ public final class DatabaseManager {
 			getDatastore().save(counter);
 		}
 	}
-	
+
 	public static synchronized int getNextId(Object o) {
 		return getNextId(o.getClass());
 	}
