@@ -7,7 +7,7 @@ public class ComboTokenReqJson {
 	public String device;
 	public String sign;
 	
-	public class LoginTokenData {
+	public static class LoginTokenData {
 		public String uid;
 		public String token;
 		public boolean guest;
