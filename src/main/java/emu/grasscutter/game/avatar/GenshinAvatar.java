@@ -274,11 +274,11 @@ public class GenshinAvatar {
 	}
 
 	public void setFetterList(List<Integer> fetterList) {
-		this.fetterList = fetterList;
+		this.fetters = fetterList;
 	}
 
 	public List<Integer> getFetterList() {
-		return fetterList;
+		return fetters;
 	}
 
 	public float getCurrentHp() {
