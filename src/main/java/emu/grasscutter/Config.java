@@ -1,16 +1,16 @@
 package emu.grasscutter;
 
 public final class Config {
-	public String DispatchServerIp = "127.0.0.1";
-	public String DispatchServerPublicIp = "";
+	public String DispatchServerIp = "0.0.0.0";
+	public String DispatchServerPublicIp = "127.0.0.1";
 	public int DispatchServerPort = 443;
 	public String DispatchServerKeystorePath = "./keystore.p12";
 	public String DispatchServerKeystorePassword = "";
 	public Boolean UseSSL = true;
 	
 	public String GameServerName = "Test";
-	public String GameServerIp = "127.0.0.1";
-	public String GameServerPublicIp = "";
+	public String GameServerIp = "0.0.0.0";
+	public String GameServerPublicIp = "127.0.0.1";
 	public int GameServerPort = 22102;
 
 	public String DatabaseUrl = "mongodb://localhost:27017";
