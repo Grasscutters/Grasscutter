@@ -31,6 +31,7 @@ import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
+import emu.grasscutter.net.proto.WorldPlayerLocationInfoOuterClass.WorldPlayerLocationInfo;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketAbilityInvocationsNotify;
@@ -49,9 +50,11 @@ import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerPropNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerStoreNotify;
 import emu.grasscutter.server.packet.send.PacketPrivateChatNotify;
+import emu.grasscutter.server.packet.send.PacketScenePlayerLocationNotify;
 import emu.grasscutter.server.packet.send.PacketSetNameCardRsp;
 import emu.grasscutter.server.packet.send.PacketStoreWeightLimitNotify;
 import emu.grasscutter.server.packet.send.PacketUnlockNameCardNotify;
+import emu.grasscutter.server.packet.send.PacketWorldPlayerLocationNotify;
 import emu.grasscutter.server.packet.send.PacketWorldPlayerRTTNotify;
 import emu.grasscutter.utils.Position;
 
@@ -101,6 +104,7 @@ public class GenshinPlayer {
 	@Transient private int enterSceneToken;
 	@Transient private SceneLoadState sceneState;
 	@Transient private boolean hasSentAvatarDataNotify;
+	@Transient private long nextSendPlayerLocTime = 0;
 	
 	@Transient private final Int2ObjectMap<CoopRequest> coopRequests;
 	@Transient private final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
@@ -654,6 +658,13 @@ public class GenshinPlayer {
 		return social;
 	}
 	
+	public WorldPlayerLocationInfo getWorldPlayerLocationInfo() {
+		return WorldPlayerLocationInfo.newBuilder()
+					.setSceneId(this.getSceneId())
+					.setPlayerLoc(this.getPlayerLocationInfo())
+					.build();
+	}
+	
 	public PlayerLocationInfo getPlayerLocationInfo() {
 		return PlayerLocationInfo.newBuilder()
 					.setUid(this.getUid())
@@ -679,8 +690,21 @@ public class GenshinPlayer {
 		}
 		// Ping
 		if (this.getWorld() != null) {
-			this.sendPacket(new PacketWorldPlayerRTTNotify(this.getWorld())); // Player ping
+			// RTT notify - very important to send this often
+			this.sendPacket(new PacketWorldPlayerRTTNotify(this.getWorld()));
+			
+			// Update player locations if in multiplayer every 5 seconds
+			long time = System.currentTimeMillis();
+			if (this.getWorld().isMultiplayer() && this.getScene() != null && time > nextSendPlayerLocTime) {
+				this.sendPacket(new PacketWorldPlayerLocationNotify(this.getWorld()));
+				this.sendPacket(new PacketScenePlayerLocationNotify(this.getScene()));
+				this.resetSendPlayerLocTime();
+			}
 		}
+	}
+	
+	public void resetSendPlayerLocTime() {
+		this.nextSendPlayerLocTime = System.currentTimeMillis() + 5000;
 	}
 
 	@PostLoad
