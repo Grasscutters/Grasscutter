@@ -12,10 +12,10 @@ public final class Config {
 	public String GameServerIp = "127.0.0.1";
 	public String GameServerPublicIp = "";
 	public int GameServerPort = 22102;
-	
+
 	public String DatabaseUrl = "mongodb://localhost:27017";
 	public String DatabaseCollection = "grasscutter";
-	
+
 	public String RESOURCE_FOLDER = "./resources/";
 	public String DATA_FOLDER = "./data/";
 	public String PACKETS_FOLDER = "./packets/";
@@ -25,21 +25,21 @@ public final class Config {
 
 	public GameRates Game = new GameRates();
 	public ServerOptions ServerOptions = new ServerOptions();
-	
+
 	public GameRates getGameRates() {
 		return Game;
 	}
-	
+
 	public ServerOptions getServerOptions() {
 		return ServerOptions;
 	}
-	
+
 	public static class GameRates {
 		public float ADVENTURE_EXP_RATE = 1.0f;
 		public float MORA_RATE = 1.0f;
 		public float DOMAIN_DROP_RATE = 1.0f;
 	}
-	
+
 	public static class ServerOptions {
 		public int InventoryLimitWeapon = 2000;
 		public int InventoryLimitRelic = 2000;
