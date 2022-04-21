@@ -223,8 +223,8 @@ public class EntityAvatar extends GenshinEntity {
 			}
 		}
 		// Add equip abilities
-		if (this.getAvatar().getBonusAbilityList().size() > 0) {
-			for (String skill : this.getAvatar().getBonusAbilityList()) {
+		if (this.getAvatar().getExtraAbilityEmbryos().size() > 0) {
+			for (String skill : this.getAvatar().getExtraAbilityEmbryos()) {
 				AbilityEmbryo emb = AbilityEmbryo.newBuilder()
 						.setAbilityId(++embryoId)
 						.setAbilityNameHash(Utils.abilityHash(skill))

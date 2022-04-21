@@ -13,23 +13,22 @@ public class PacketSceneTransToPointRsp extends GenshinPacket {
 	public PacketSceneTransToPointRsp(GenshinPlayer player, int pointId, int sceneId) {
 		super(PacketOpcodes.SceneTransToPointRsp);
 
-		String code = sceneId + "_" + pointId;
-		ScenePointEntry scenePointEntry = GenshinData.getScenePointEntries().get(code);
-
-		float x = scenePointEntry.getPointData().getTranPos().getX();
-		float y = scenePointEntry.getPointData().getTranPos().getY();
-		float z = scenePointEntry.getPointData().getTranPos().getZ();
-
-		player.getPos().set(new Position(x, y, z));
-
-		player.getWorld().forceTransferPlayerToScene(player, sceneId, player.getPos());
-
 		SceneTransToPointRsp proto = SceneTransToPointRsp.newBuilder()
-                .setRetcode(0)
-                .setPointId(pointId)
-                .setSceneId(sceneId)
-                .build();
+				.setRetcode(0)
+	            .setPointId(pointId)
+	            .setSceneId(sceneId)
+	            .build();
+
+		this.setData(proto);
+	}
+
+	public PacketSceneTransToPointRsp() {
+		super(PacketOpcodes.SceneTransToPointRsp);
 		
+		SceneTransToPointRsp proto = SceneTransToPointRsp.newBuilder()
+				.setRetcode(1) // Internal server error
+	            .build();
+
 		this.setData(proto);
 	}
 }
