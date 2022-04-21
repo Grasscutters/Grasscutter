@@ -10,13 +10,18 @@ import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import java.util.List;
 
 @Command(label = "setstats", usage = "setstats|stats <stat> <value>",
-        aliases = {"stats"})
+        description = "Set fight property for your current active character", aliases = {"stats"}, permission = "player.setstats")
 public final class SetStatsCommand implements CommandHandler {
 
     @Override
     public void execute(GenshinPlayer sender, List<String> args) {
         if (sender == null) {
             CommandHandler.sendMessage(null, "Run this command in-game.");
+            return;
+        }
+
+        if (args.size() < 2){
+            CommandHandler.sendMessage(sender, "Usage: setstats|stats <stat> <value>");
             return;
         }
 
