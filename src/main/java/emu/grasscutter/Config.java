@@ -13,9 +13,6 @@ public final class Config {
 	public String GameServerPublicIp = "";
 	public int GameServerPort = 22102;
 	
-	public int OverseaLogPort = 8888;
-	public int UploadLogPort = 80;
-	
 	public String DatabaseUrl = "mongodb://localhost:27017";
 	public String DatabaseCollection = "grasscutter";
 	
