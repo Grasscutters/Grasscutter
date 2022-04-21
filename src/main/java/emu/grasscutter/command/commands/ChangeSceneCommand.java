@@ -23,11 +23,17 @@ public final class ChangeSceneCommand implements CommandHandler {
 
         try {
             int sceneId = Integer.parseInt(args.get(0));
+            
+            if (sceneId == sender.getSceneId()) {
+            	CommandHandler.sendMessage(sender, "You are already in that scene");
+            	return;
+            }
+            
             boolean result = sender.getWorld().transferPlayerToScene(sender, sceneId, sender.getPos());
-
             CommandHandler.sendMessage(sender, "Changed to scene " + sceneId);
+            
             if (!result) {
-                CommandHandler.sendMessage(sender, "Scene does not exist or you are already in it");
+                CommandHandler.sendMessage(sender, "Scene does not exist");
             }
         } catch (Exception e) {
             CommandHandler.sendMessage(sender, "Usage: changescene <scene id>");
