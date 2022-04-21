@@ -18,7 +18,6 @@ import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.inventory.GenshinItem;
 
 public final class DatabaseManager {
-	private static MongoClient mongoClient;
 	private static Datastore datastore;
 	
 	private static final Class<?>[] mappedClasses = new Class<?>[] {
@@ -35,7 +34,7 @@ public final class DatabaseManager {
 	
 	public static void initialize() {
 		// Initialize
-		mongoClient = MongoClients.create(Grasscutter.getConfig().DatabaseUrl);
+		MongoClient mongoClient = MongoClients.create(Grasscutter.getConfig().DatabaseUrl);
 		
 		// Set mapper options.
 		MapperOptions mapperOptions = MapperOptions.builder()
