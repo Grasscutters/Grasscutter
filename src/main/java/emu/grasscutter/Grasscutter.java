@@ -76,7 +76,7 @@ public final class Grasscutter {
 		dispatchServer = new DispatchServer();
 		dispatchServer.start();
 		
-		gameServer = new GameServer(new InetSocketAddress(getConfig().GameServerIp, getConfig().GameServerPort));
+		gameServer = new GameServer(new InetSocketAddress(getConfig().getGameServerOptions().Ip, getConfig().getGameServerOptions().Port));
 		gameServer.start();
 		
 		// Open console.

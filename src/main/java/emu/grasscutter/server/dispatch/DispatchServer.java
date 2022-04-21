@@ -55,7 +55,7 @@ public final class DispatchServer {
 	public static String query_cur_region = "";
 	
 	public DispatchServer() {
-		this.address = new InetSocketAddress(Grasscutter.getConfig().DispatchServerIp, Grasscutter.getConfig().DispatchServerPort);
+		this.address = new InetSocketAddress(Grasscutter.getConfig().getDispatchOptions().Ip, Grasscutter.getConfig().getDispatchOptions().Port);
 		this.gson = new GsonBuilder().create();
 		
 		this.loadQueries();
@@ -99,19 +99,19 @@ public final class DispatchServer {
 			
 			byte[] decoded2 = Base64.getDecoder().decode(query_cur_region);
 			QueryCurrRegionHttpRsp regionQuery = QueryCurrRegionHttpRsp.parseFrom(decoded2);
-			
+
 			RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
 					.setName("os_usa")
-					.setTitle(Grasscutter.getConfig().GameServerName)
+					.setTitle(Grasscutter.getConfig().getGameServerOptions().Name)
 					.setType("DEV_PUBLIC")
-					.setDispatchUrl("https://" + (Grasscutter.getConfig().DispatchServerPublicIp.isEmpty() ? Grasscutter.getConfig().DispatchServerIp : Grasscutter.getConfig().DispatchServerPublicIp) + ":" + getAddress().getPort() + "/query_cur_region")
+					.setDispatchUrl("https://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + ":" + getAddress().getPort() + "/query_cur_region")
 					.build();
 			
 			RegionSimpleInfo serverTest2 = RegionSimpleInfo.newBuilder()
 					.setName("os_euro")
 					.setTitle("Grasscutter")
 					.setType("DEV_PUBLIC")
-					.setDispatchUrl("https://" + (Grasscutter.getConfig().DispatchServerPublicIp.isEmpty() ? Grasscutter.getConfig().DispatchServerIp : Grasscutter.getConfig().DispatchServerPublicIp) + ":" + getAddress().getPort() + "/query_cur_region")
+					.setDispatchUrl("https://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + ":" + getAddress().getPort() + "/query_cur_region")
 					.build();
 				
 			QueryRegionListHttpRsp regionList = QueryRegionListHttpRsp.newBuilder()
@@ -123,8 +123,8 @@ public final class DispatchServer {
 				.build();
 						
 			RegionInfo currentRegion = regionQuery.getRegionInfo().toBuilder()
-					.setIp((Grasscutter.getConfig().GameServerPublicIp.isEmpty() ? Grasscutter.getConfig().GameServerIp : Grasscutter.getConfig().GameServerPublicIp))
-					.setPort(Grasscutter.getConfig().GameServerPort)
+					.setIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getGameServerOptions().Ip : Grasscutter.getConfig().getGameServerOptions().PublicIp))
+					.setPort(Grasscutter.getConfig().getGameServerOptions().Port)
 					.setSecretKey(ByteString.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
 					.build();
 			
@@ -140,12 +140,12 @@ public final class DispatchServer {
 
 	public void start() throws Exception {
 		HttpServer server;
-		if(Grasscutter.getConfig().UseSSL) {
+		if(Grasscutter.getConfig().getDispatchOptions().UseSSL) {
 			HttpsServer httpsServer;
 			httpsServer = HttpsServer.create(getAddress(), 0);
 			SSLContext sslContext = SSLContext.getInstance("TLS");
-			try (FileInputStream fis = new FileInputStream(Grasscutter.getConfig().DispatchServerKeystorePath)) {
-				char[] keystorePassword = Grasscutter.getConfig().DispatchServerKeystorePassword.toCharArray();
+			try (FileInputStream fis = new FileInputStream(Grasscutter.getConfig().getDispatchOptions().KeystorePath)) {
+				char[] keystorePassword = Grasscutter.getConfig().getDispatchOptions().KeystorePassword.toCharArray();
 				KeyStore ks = KeyStore.getInstance("PKCS12");
 				ks.load(fis, keystorePassword);
 				KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
@@ -228,7 +228,7 @@ public final class DispatchServer {
 			// Check if account exists, else create a new one.
 			if (account == null) {
 				// Account doesnt exist, so we can either auto create it if the config value is set
-				if (Grasscutter.getConfig().ServerOptions.AutomaticallyCreateAccounts) {
+				if (Grasscutter.getConfig().getDispatchOptions().AutomaticallyCreateAccounts) {
 					// This account has been created AUTOMATICALLY. There will be no permissions added.
 					account = DatabaseHelper.createAccountWithId(requestData.account, 0);
 					
@@ -410,7 +410,7 @@ public final class DispatchServer {
 		Grasscutter.getLogger().info("Dispatch server started on port " + getAddress().getPort());
 		
 		// Logging servers
-		HttpServer overseaLogServer = HttpServer.create(new InetSocketAddress(Grasscutter.getConfig().DispatchServerIp, 8888), 0);
+		HttpServer overseaLogServer = HttpServer.create(new InetSocketAddress(Grasscutter.getConfig().getDispatchOptions().Ip, 8888), 0);
 		overseaLogServer.createContext( // overseauspider.yuanshen.com
 				"/log", 
 				new DispatchHttpJsonHandler("{\"code\":0}")
@@ -418,7 +418,7 @@ public final class DispatchServer {
 		overseaLogServer.start();
 		Grasscutter.getLogger().info("Log server (overseauspider) started on port " + 8888);
 		
-		HttpServer uploadLogServer = HttpServer.create(new InetSocketAddress(Grasscutter.getConfig().DispatchServerIp, Grasscutter.getConfig().UploadLogPort), 0);
+		HttpServer uploadLogServer = HttpServer.create(new InetSocketAddress(Grasscutter.getConfig().getDispatchOptions().Ip, Grasscutter.getConfig().getDispatchOptions().UploadLogPort), 0);
 		uploadLogServer.createContext( // log-upload-os.mihoyo.com
 				"/crash/dataUpload", 
 				new DispatchHttpJsonHandler("{\"code\":0}")
@@ -435,7 +435,7 @@ public final class DispatchServer {
 			os.close();
 		});
 		uploadLogServer.start();
-		Grasscutter.getLogger().info("Log server (log-upload-os) started on port " + Grasscutter.getConfig().UploadLogPort);
+		Grasscutter.getLogger().info("Log server (log-upload-os) started on port " + Grasscutter.getConfig().getDispatchOptions().UploadLogPort);
 	}
 	
 	private Map<String, String> parseQueryString(String qs) {
