@@ -67,14 +67,14 @@ public final class DispatchServer {
 		if (file.exists()) {
 			query_region_list = new String(FileUtils.read(file));
 		} else {
-			Grasscutter.getLogger().warn("query_region_list not found! Using default region list.");
+			Grasscutter.getLogger().warn("[Dispatch] query_region_list not found! Using default region list.");
 		}
 
 		file = new File(Grasscutter.getConfig().DATA_FOLDER + "query_cur_region.txt");
 		if (file.exists()) {
 			query_cur_region = new String(FileUtils.read(file));
 		} else {
-			Grasscutter.getLogger().warn("query_cur_region not found! Using default current region.");
+			Grasscutter.getLogger().warn("[Dispatch] query_cur_region not found! Using default current region.");
 		}
 	}
 
@@ -120,7 +120,7 @@ public final class DispatchServer {
 			this.regionCurrentBase64 = Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray());
 			this.currRegion = parsedRegionQuery;
 		} catch (Exception e) {
-			Grasscutter.getLogger().error("Error while initializing region info!", e);
+			Grasscutter.getLogger().error("[Dispatch] Error while initializing region info!", e);
 		}
 	}
 
@@ -142,7 +142,7 @@ public final class DispatchServer {
 				httpsServer.setHttpsConfigurator(new HttpsConfigurator(sslContext));
 				server = httpsServer;
 			} catch (Exception e) {
-				Grasscutter.getLogger().error("No SSL cert found! Falling back to HTTP server.");
+				Grasscutter.getLogger().warn("[Dispatch] No SSL cert found! Falling back to HTTP server.");
 				Grasscutter.getConfig().UseSSL = false;
 				server = HttpServer.create(getAddress(), 0);
 			}
@@ -155,13 +155,13 @@ public final class DispatchServer {
 		// Dispatch
 		server.createContext("/query_region_list", t -> {
 			// Log
-			Grasscutter.getLogger().info(String.format("Client %s request: query_region_list", t.getRemoteAddress()));
+			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s request: query_region_list", t.getRemoteAddress()));
 
 			responseHTML(t, regionListBase64);
 		});
 		server.createContext("/query_cur_region", t -> {
 			// Log
-			Grasscutter.getLogger().info(String.format("Client %s request: query_cur_region", t.getRemoteAddress()));
+			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s request: query_cur_region", t.getRemoteAddress()));
 			// Create a response form the request query parameters
 			URI uri = t.getRequestURI();
 			String response = "CAESGE5vdCBGb3VuZCB2ZXJzaW9uIGNvbmZpZw==";
@@ -186,7 +186,7 @@ public final class DispatchServer {
 			}
 			LoginResultJson responseData = new LoginResultJson();
 
-			Grasscutter.getLogger().info(String.format("Client %s is trying to log in", t.getRemoteAddress()));
+			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s is trying to log in", t.getRemoteAddress()));
 
 			// Login
 			Account account = DatabaseHelper.getAccountByName(requestData.account);
@@ -204,18 +204,18 @@ public final class DispatchServer {
 						responseData.data.account.token = account.generateSessionKey();
 						responseData.data.account.email = account.getEmail();
 
-						Grasscutter.getLogger().info(String.format("Client %s failed to log in: Account %s created", t.getRemoteAddress(), responseData.data.account.uid));
+						Grasscutter.getLogger().info(String.format("[Dispatch] Client %s failed to log in: Account %s created", t.getRemoteAddress(), responseData.data.account.uid));
 					} else {
 						responseData.retcode = -201;
 						responseData.message = "Username not found, create failed.";
 
-						Grasscutter.getLogger().info(String.format("Client %s failed to log in: Account create failed", t.getRemoteAddress()));
+						Grasscutter.getLogger().info(String.format("[Dispatch] Client %s failed to log in: Account create failed", t.getRemoteAddress()));
 					}
 				} else {
 					responseData.retcode = -201;
 					responseData.message = "Username not found.";
 
-					Grasscutter.getLogger().info(String.format("Client %s failed to log in: Account no found", t.getRemoteAddress()));
+					Grasscutter.getLogger().info(String.format("[Dispatch] Client %s failed to log in: Account no found", t.getRemoteAddress()));
 				}
 			} else {
 				// Account was found, log the player in
@@ -224,7 +224,7 @@ public final class DispatchServer {
 				responseData.data.account.token = account.generateSessionKey();
 				responseData.data.account.email = account.getEmail();
 
-				Grasscutter.getLogger().info(String.format("Client %s logged in as %s", t.getRemoteAddress(), responseData.data.account.uid));
+				Grasscutter.getLogger().info(String.format("[Dispatch] Client %s logged in as %s", t.getRemoteAddress(), responseData.data.account.uid));
 			}
 
 			responseJSON(t, responseData);
@@ -244,7 +244,7 @@ public final class DispatchServer {
 				return;
 			}
 			LoginResultJson responseData = new LoginResultJson();
-			Grasscutter.getLogger().info(String.format("Client %s is trying to log in via token", t.getRemoteAddress()));
+			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s is trying to log in via token", t.getRemoteAddress()));
 
 			// Login
 			Account account = DatabaseHelper.getAccountById(requestData.uid);
@@ -254,14 +254,14 @@ public final class DispatchServer {
 				responseData.retcode = -111;
 				responseData.message = "Game account cache information error";
 
-				Grasscutter.getLogger().info(String.format("Client %s failed to log in via token", t.getRemoteAddress()));
+				Grasscutter.getLogger().info(String.format("[Dispatch] Client %s failed to log in via token", t.getRemoteAddress()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.account.uid = requestData.uid;
 				responseData.data.account.token = requestData.token;
 				responseData.data.account.email = account.getEmail();
 
-				Grasscutter.getLogger().info(String.format("Client %s logged in via token as %s", t.getRemoteAddress(), responseData.data.account.uid));
+				Grasscutter.getLogger().info(String.format("[Dispatch] Client %s logged in via token as %s", t.getRemoteAddress(), responseData.data.account.uid));
 			}
 
 			responseJSON(t, responseData);
@@ -290,14 +290,14 @@ public final class DispatchServer {
 				responseData.retcode = -201;
 				responseData.message = "Wrong session key.";
 
-				Grasscutter.getLogger().info(String.format("Client %s failed to exchange combo token", t.getRemoteAddress()));
+				Grasscutter.getLogger().info(String.format("[Dispatch] Client %s failed to exchange combo token", t.getRemoteAddress()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.open_id = loginData.uid;
 				responseData.data.combo_id = "157795300";
 				responseData.data.combo_token = account.generateLoginToken();
 
-				Grasscutter.getLogger().info(String.format("Client %s succeed to exchange combo token", t.getRemoteAddress()));
+				Grasscutter.getLogger().info(String.format("[Dispatch] Client %s succeed to exchange combo token", t.getRemoteAddress()));
 			}
 
 			responseJSON(t, responseData);
@@ -382,7 +382,7 @@ public final class DispatchServer {
 		server.createContext("/gacha", t -> responseHTML(t, "<!doctype html><html lang=\"en\"><head><title>Gacha</title></head><body></body></html>"));
 		// Start server
 		server.start();
-		Grasscutter.getLogger().info("Dispatch server started on port " + getAddress().getPort());
+		Grasscutter.getLogger().info("[Dispatch] Dispatch server started on port " + getAddress().getPort());
 	}
 
 	private void responseJSON(HttpExchange t, Object data) throws IOException {
