@@ -515,9 +515,4 @@ public final class DispatchServer {
 			this.Base64 = b64;
 		}
 	}
-
-	public static class UserConnnectionData {
-		public InetAddress dispatchConnectedAddress;
-		public String connectedRegion;
-	}
 }
