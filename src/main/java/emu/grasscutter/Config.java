@@ -53,5 +53,6 @@ public final class Config {
 		public int MaxEntityLimit = 1000; // Max entity limit per world. // TODO: Enforce later.
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
 		public String WelcomeMotd = "Welcome to Grasscutter emu";
+		public boolean AutomaticallyCreateAccounts = false;
 	}
 }
