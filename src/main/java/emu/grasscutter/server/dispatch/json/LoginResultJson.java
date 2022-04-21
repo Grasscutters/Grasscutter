@@ -5,7 +5,7 @@ public class LoginResultJson {
 	public int retcode;
 	public VerifyData data = new VerifyData();
 	
-	public class VerifyData {
+	public static class VerifyData {
 		public VerifyAccountData account = new VerifyAccountData();
 		public boolean device_grant_required = false;
 		public String realname_operation = "NONE";
@@ -13,7 +13,7 @@ public class LoginResultJson {
 		public boolean safe_mobile_required = false;
 	}
 	
-	public class VerifyAccountData {
+	public static class VerifyAccountData {
 		public String uid;
 		public String name = "";
 		public String email;

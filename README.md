@@ -60,11 +60,18 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 `!resetconst` - Resets the constellation level on your current active character, will need to relog after using the command to see any changes.
 
-`!setstats [stat] [value]`
+`!setstats [stats] [amount]` - Changes the current character's specified stat.
 
 `!clearartifacts` - Deletes all unequipped and unlocked level 0 artifacts, **including yellow rarity ones** from your inventory
 
+`!pos` - Gets your current coordinate.
+
+`!weather [weather id] [climate id]` - Changes the current weather.
+
 *More commands will be updated in the [wiki](https://github.com/Melledy/Grasscutter/wiki/).*
+
+### Bonus
+When you want to teleport to somewhere, use the ingame marking function on Map, click Confirm. You will see your character falling from a very high destination, exact location that you marked.
 
 # Quick Troubleshooting
 * If compiling wasn't successful, please check your JDK installation (must be JDK 8 and validated JDK's bin PATH variable)

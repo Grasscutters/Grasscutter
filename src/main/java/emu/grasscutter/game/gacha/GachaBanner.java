@@ -92,7 +92,7 @@ public class GachaBanner {
 	}
 
 	public GachaInfo toProto() {
-		String record = "http://" + (Grasscutter.getConfig().DispatchServerPublicIp.isEmpty() ? Grasscutter.getConfig().DispatchServerIp : Grasscutter.getConfig().DispatchServerPublicIp) + "/gacha";
+		String record = "http://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + "/gacha";
 		
 		GachaInfo.Builder info = GachaInfo.newBuilder()
 				.setGachaType(this.getGachaType())
