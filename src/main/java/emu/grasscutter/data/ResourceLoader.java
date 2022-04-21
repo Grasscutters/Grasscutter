@@ -129,6 +129,12 @@ public class ResourceLoader {
 	private static void loadScenePoints() {
 		Pattern pattern = Pattern.compile("(?<=scene)(.*?)(?=_point.json)");
 		File folder = new File(Grasscutter.getConfig().RESOURCE_FOLDER + "BinOutPut/Scene/Point");
+
+		if (!folder.isDirectory() || !folder.exists() || folder.listFiles() == null) {
+			Grasscutter.getLogger().error("Scene point files cannot be found, you cannot use teleport waypoints!");
+			return;
+		}
+
 		List<ScenePointEntry> scenePointList = new ArrayList<>();
 		for (File file : folder.listFiles()) {
 			ScenePointConfig config = null;
