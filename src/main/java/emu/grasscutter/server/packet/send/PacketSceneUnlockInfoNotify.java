@@ -13,7 +13,7 @@ public class PacketSceneUnlockInfoNotify extends GenshinPacket {
 		SceneUnlockInfoNotify proto = SceneUnlockInfoNotify.newBuilder()
 				.addUnlockInfos(SceneUnlockInfo.newBuilder().setSceneId(1))
 				.addUnlockInfos(SceneUnlockInfo.newBuilder().setSceneId(3))
-				.addUnlockInfos(SceneUnlockInfo.newBuilder().setSceneId(4))
+				.addUnlockInfos(SceneUnlockInfo.newBuilder().setSceneId(4).addSceneTagIdList(106).addSceneTagIdList(109))
 				.addUnlockInfos(SceneUnlockInfo.newBuilder().setSceneId(5))
 				.addUnlockInfos(SceneUnlockInfo.newBuilder().setSceneId(6))
 				.addUnlockInfos(SceneUnlockInfo.newBuilder().setSceneId(7))
