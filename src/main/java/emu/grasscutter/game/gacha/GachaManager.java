@@ -218,7 +218,6 @@ public class GachaManager {
 						addStarglitter = 2;
 						// Add 1 const
 						gachaItem.addTransferItems(GachaTransferItem.newBuilder().setItem(ItemParam.newBuilder().setItemId(constItemId).setCount(1)).setIsTransferItemNew(constItem == null));
-						gachaItem.addTokenItemList(ItemParam.newBuilder().setItemId(constItemId).setCount(1));
 						player.getInventory().addItem(constItemId, 1);
 					} else {
 						// Is max const
