@@ -60,9 +60,13 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 `!resetconst` - Resets the constellation level on your current active character, will need to relog after using the command to see any changes.
 
-`!sethp [hp]`
+`!setstats [stats] [amount]` - Changes the current character's specified stat.
 
 `!clearartifacts` - Deletes all unequipped and unlocked level 0 artifacts, **including yellow rarity ones** from your inventory
+
+`!pos` - Gets your current coordinate.
+
+`!weather [weather id]` - Changes the current weather.
 
 *More commands will be updated in the [wiki](https://github.com/Melledy/Grasscutter/wiki/).*
 
