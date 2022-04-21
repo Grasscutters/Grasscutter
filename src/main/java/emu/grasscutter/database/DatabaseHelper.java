@@ -74,36 +74,36 @@ public class DatabaseHelper {
 	}
 
 	public static void saveAccount(Account account) {
-		DatabaseManager.getDatastore().save(account);
+		DatabaseManager.getAccountDatastore().save(account);
 	}
 	
 	public static Account getAccountByName(String username) {
-		MorphiaCursor<Account> cursor = DatabaseManager.getDatastore().createQuery(Account.class).field("username").equalIgnoreCase(username).find(FIND_ONE);
+		MorphiaCursor<Account> cursor = DatabaseManager.getAccountDatastore().createQuery(Account.class).field("username").equalIgnoreCase(username).find(FIND_ONE);
 		if (!cursor.hasNext()) return null;
 		return cursor.next();
 	}
 	
 	public static Account getAccountByToken(String token) {
 		if (token == null) return null;
-		MorphiaCursor<Account> cursor = DatabaseManager.getDatastore().createQuery(Account.class).field("token").equal(token).find(FIND_ONE);
+		MorphiaCursor<Account> cursor = DatabaseManager.getAccountDatastore().createQuery(Account.class).field("token").equal(token).find(FIND_ONE);
 		if (!cursor.hasNext()) return null;
 		return cursor.next();
 	}
 	
 	public static Account getAccountById(String uid) {
-		MorphiaCursor<Account> cursor = DatabaseManager.getDatastore().createQuery(Account.class).field("_id").equal(uid).find(FIND_ONE);
+		MorphiaCursor<Account> cursor = DatabaseManager.getAccountDatastore().createQuery(Account.class).field("_id").equal(uid).find(FIND_ONE);
 		if (!cursor.hasNext()) return null;
 		return cursor.next();
 	}
 	
 	public static Account getAccountByPlayerId(int playerId) {
-		MorphiaCursor<Account> cursor = DatabaseManager.getDatastore().createQuery(Account.class).field("playerId").equal(playerId).find(FIND_ONE);
+		MorphiaCursor<Account> cursor = DatabaseManager.getAccountDatastore().createQuery(Account.class).field("playerId").equal(playerId).find(FIND_ONE);
 		if (!cursor.hasNext()) return null;
 		return cursor.next();
 	}
 	
 	public static boolean deleteAccount(String username) {
-		Query<Account> q = DatabaseManager.getDatastore().createQuery(Account.class).field("username").equalIgnoreCase(username);
+		Query<Account> q = DatabaseManager.getAccountDatastore().createQuery(Account.class).field("username").equalIgnoreCase(username);
 		return DatabaseManager.getDatastore().findAndDelete(q) != null;
 	}
 	

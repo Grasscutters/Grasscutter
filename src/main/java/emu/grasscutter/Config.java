@@ -1,5 +1,7 @@
 package emu.grasscutter;
 
+import java.util.ArrayList;
+
 public final class Config {
 
 	public String DatabaseUrl = "mongodb://localhost:27017";
@@ -11,6 +13,7 @@ public final class Config {
 	public String DUMPS_FOLDER = "./dumps/";
 	public String KEY_FOLDER = "./keys/";
 
+	public String RunMode = "HYBRID"; // HYBRID, DISPATCH_ONLY, GAME_ONLY
 	public GameServerOptions GameServer = new GameServerOptions();
 	public DispatchServerOptions DispatchServer = new DispatchServerOptions();
 
@@ -30,6 +33,19 @@ public final class Config {
 		public Boolean UseSSL = true;
 
 		public boolean AutomaticallyCreateAccounts = false;
+
+		public RegionInfo[] GameServers = {};
+
+		public RegionInfo[] getGameServers() {
+			return GameServers;
+		}
+
+		public static class RegionInfo {
+			public String Name = "os_usa";
+			public String Title = "Test";
+			public String Ip = "127.0.0.1";
+			public int Port = 22102;
+		}
 	}
 	
 	public static class GameServerOptions {
@@ -37,6 +53,9 @@ public final class Config {
 		public String Ip = "127.0.0.1";
 		public String PublicIp = "";
 		public int Port = 22102;
+
+		public String DispatchServerDatabaseUrl = "mongodb://localhost:27017";
+		public String DispatchServerDatabaseCollection = "grasscutter";
 
 		public boolean LOG_PACKETS = false;
 

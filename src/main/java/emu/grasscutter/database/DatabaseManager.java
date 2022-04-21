@@ -17,7 +17,10 @@ import emu.grasscutter.game.inventory.GenshinItem;
 
 public final class DatabaseManager {
 	private static MongoClient mongoClient;
+	private static MongoClient dispatchMongoClient;
+
 	private static Datastore datastore;
+	private static Datastore dispatchDatastore;
 	
 	private static final Class<?>[] mappedClasses = new Class<?>[] {
 		DatabaseCounter.class, Account.class, GenshinPlayer.class, GenshinAvatar.class, GenshinItem.class, Friendship.class
@@ -26,18 +29,28 @@ public final class DatabaseManager {
     public static MongoClient getMongoClient() {
         return mongoClient;
     }
-    
-    public static Datastore getDatastore() {
-    	return datastore;
-    }
-    
-    public static MongoDatabase getDatabase() {
+
+	public static Datastore getDatastore() {
+		return datastore;
+	}
+
+	public static MongoDatabase getDatabase() {
     	return getDatastore().getDatabase();
     }
+
+	// Yes. I very dislike this method also but I'm lazy. Probably replace it by making the game server connect to the dispatch server instead.
+	public static Datastore getAccountDatastore() {
+		if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("GAME_ONLY")) {
+			return dispatchDatastore;
+		} else {
+			return datastore;
+		}
+	}
 	
 	public static void initialize() {
 		// Initialize
 		mongoClient = new MongoClient(new MongoClientURI(Grasscutter.getConfig().DatabaseUrl));
+		dispatchMongoClient = new MongoClient(new MongoClientURI(Grasscutter.getConfig().getGameServerOptions().DispatchServerDatabaseUrl));
 		Morphia morphia = new Morphia();
 		
 		// TODO Update when migrating to Morphia 2.0
@@ -50,6 +63,7 @@ public final class DatabaseManager {
 		
 		// Build datastore
 		datastore = morphia.createDatastore(mongoClient, Grasscutter.getConfig().DatabaseCollection);
+		dispatchDatastore = morphia.createDatastore(dispatchMongoClient, Grasscutter.getConfig().getGameServerOptions().DispatchServerDatabaseCollection);
 		
 		// Ensure indexes
 		try {
@@ -65,6 +79,23 @@ public final class DatabaseManager {
 				}
 				// Add back indexes
 				datastore.ensureIndexes();
+			}
+		}
+
+		// Ensure indexes for dispatch server
+		try {
+			dispatchDatastore.ensureIndexes();
+		} catch (MongoCommandException e) {
+			Grasscutter.getLogger().info("Mongo index error: ", e);
+			// Duplicate index error
+			if (e.getCode() == 85) {
+				// Drop all indexes and re add them
+				MongoIterable<String> collections = dispatchDatastore.getDatabase().listCollectionNames();
+				for (String name : collections) {
+					dispatchDatastore.getDatabase().getCollection(name).dropIndexes();
+				}
+				// Add back indexes
+				dispatchDatastore.ensureIndexes();
 			}
 		}
 	}

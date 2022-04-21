@@ -9,10 +9,7 @@ import java.net.InetSocketAddress;
 import java.net.URI;
 import java.net.URLDecoder;
 import java.security.KeyStore;
-import java.util.Base64;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
@@ -25,6 +22,7 @@ import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpsConfigurator;
 import com.sun.net.httpserver.HttpsServer;
 
+import emu.grasscutter.Config;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
@@ -46,15 +44,18 @@ import com.sun.net.httpserver.HttpServer;
 public final class DispatchServer {
 	private final InetSocketAddress address;
 	private final Gson gson;
-	private QueryCurrRegionHttpRsp currRegion;
+	//private QueryCurrRegionHttpRsp currRegion;
 	
 	public String regionListBase64;
-	public String regionCurrentBase64;
-	
+	public HashMap<String, RegionData> regions;
+	public HashMap<InetSocketAddress, String> usersIngame;
+
 	public static String query_region_list = "";
 	public static String query_cur_region = "";
-	
+
 	public DispatchServer() {
+		this.regions = new HashMap<String, RegionData>();
+		this.usersIngame = new HashMap<InetSocketAddress, String>();
 		this.address = new InetSocketAddress(Grasscutter.getConfig().getDispatchOptions().Ip, Grasscutter.getConfig().getDispatchOptions().Port);
 		this.gson = new GsonBuilder().create();
 		
@@ -70,8 +71,13 @@ public final class DispatchServer {
 		return gson;
 	}
 
-	public QueryCurrRegionHttpRsp getCurrRegion() {
-		return currRegion;
+	public QueryCurrRegionHttpRsp getCurrRegion(InetSocketAddress address) {
+		if(usersIngame.containsKey(address)) {
+			return regions.get(usersIngame.get(address)).parsedRegionQuery;
+		}
+
+		Grasscutter.getLogger().error("User is not logged in to dispatch server. " + address.getAddress() + ":" + address.getPort());
+		return null;
 	}
 	
 	public void loadQueries() {
@@ -100,39 +106,67 @@ public final class DispatchServer {
 			byte[] decoded2 = Base64.getDecoder().decode(query_cur_region);
 			QueryCurrRegionHttpRsp regionQuery = QueryCurrRegionHttpRsp.parseFrom(decoded2);
 
-			RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
-					.setName("os_usa")
-					.setTitle(Grasscutter.getConfig().getGameServerOptions().Name)
-					.setType("DEV_PUBLIC")
-					.setDispatchUrl("https://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + ":" + getAddress().getPort() + "/query_cur_region")
-					.build();
-			
-			RegionSimpleInfo serverTest2 = RegionSimpleInfo.newBuilder()
-					.setName("os_euro")
-					.setTitle("Grasscutter")
-					.setType("DEV_PUBLIC")
-					.setDispatchUrl("https://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + ":" + getAddress().getPort() + "/query_cur_region")
-					.build();
-				
+			List<RegionSimpleInfo> servers = new ArrayList<RegionSimpleInfo>();
+			List<String> usedNames = new ArrayList<String>(); // List to check for potential naming conflicts
+			if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("HYBRID")) { // Automatically add the game server if in hybrid mode
+				String defaultServerName = "os_usa";
+				RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
+						.setName("os_usa")
+						.setTitle(Grasscutter.getConfig().getGameServerOptions().Name)
+						.setType("DEV_PUBLIC")
+						.setDispatchUrl("https://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + ":" + getAddress().getPort() + "/query_cur_region_" + defaultServerName)
+						.build();
+				usedNames.add(defaultServerName);
+				servers.add(server);
+
+				RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
+						.setIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getGameServerOptions().Ip : Grasscutter.getConfig().getGameServerOptions().PublicIp))
+						.setPort(Grasscutter.getConfig().getGameServerOptions().Port)
+						.setSecretKey(ByteString.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
+						.build();
+
+				QueryCurrRegionHttpRsp parsedRegionQuery = regionQuery.toBuilder().setRegionInfo(serverRegion).build();
+				regions.put(defaultServerName, new RegionData(parsedRegionQuery, Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray())));
+
+			} else {
+				if(Grasscutter.getConfig().getDispatchOptions().getGameServers().length == 0) {
+					Grasscutter.getLogger().error("Dispatch server has no game servers available. Exiting due to unplayable state.");
+					System.exit(1);
+				}
+			}
+
+			for (Config.DispatchServerOptions.RegionInfo regionInfo : Grasscutter.getConfig().getDispatchOptions().getGameServers()) {
+				if(usedNames.contains(regionInfo.Name)) {
+					Grasscutter.getLogger().error("Region name already in use.");
+					continue;
+				}
+				RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
+						.setName(regionInfo.Name)
+						.setTitle(regionInfo.Title)
+						.setType("DEV_PUBLIC")
+						.setDispatchUrl("https://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + ":" + getAddress().getPort() + "/query_cur_region_" + regionInfo.Name)
+						.build();
+				usedNames.add(regionInfo.Name);
+				servers.add(server);
+
+				RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
+						.setIp(regionInfo.Ip)
+						.setPort(regionInfo.Port)
+						.setSecretKey(ByteString.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
+						.build();
+
+				QueryCurrRegionHttpRsp parsedRegionQuery = regionQuery.toBuilder().setRegionInfo(serverRegion).build();
+				regions.put(regionInfo.Name, new RegionData(parsedRegionQuery, Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray())));
+			}
+
 			QueryRegionListHttpRsp regionList = QueryRegionListHttpRsp.newBuilder()
-				.addServers(server)
-				.addServers(serverTest2)
+				.addAllServers(servers)
 				.setClientSecretKey(rl.getClientSecretKey())
 			    .setClientCustomConfigEncrypted(rl.getClientCustomConfigEncrypted())
 			    .setEnableLoginPc(true)
 				.build();
-						
-			RegionInfo currentRegion = regionQuery.getRegionInfo().toBuilder()
-					.setIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getGameServerOptions().Ip : Grasscutter.getConfig().getGameServerOptions().PublicIp))
-					.setPort(Grasscutter.getConfig().getGameServerOptions().Port)
-					.setSecretKey(ByteString.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
-					.build();
-			
-			QueryCurrRegionHttpRsp parsedRegionQuery = regionQuery.toBuilder().setRegionInfo(currentRegion).build();
 
 			this.regionListBase64 = Base64.getEncoder().encodeToString(regionList.toByteString().toByteArray());
-			this.regionCurrentBase64 = Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray());
-			this.currRegion = parsedRegionQuery;
 		} catch (Exception e) {
 			Grasscutter.getLogger().error("Error while initializing region info!", e);
 		}
@@ -188,24 +222,36 @@ public final class DispatchServer {
 			OutputStream os = t.getResponseBody();
 			os.write(response.getBytes());
 			os.close();
-		});
-		server.createContext("/query_cur_region", t -> {
-			// Log
-			Grasscutter.getLogger().info("Client request: query_cur_region");
-			// Create a response form the request query parameters
-			URI uri = t.getRequestURI();
-			String response = "CAESGE5vdCBGb3VuZCB2ZXJzaW9uIGNvbmZpZw==";
-			if (uri.getQuery() != null && uri.getQuery().length() > 0) {
-				response = regionCurrentBase64;
+
+			if(usersIngame.containsKey(t.getRemoteAddress())) {
+				usersIngame.remove(t.getRemoteAddress());
 			}
-			// Set the response header status and length
-			t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
-			t.sendResponseHeaders(200, response.getBytes().length);
-			// Write the response string
-			OutputStream os = t.getResponseBody();
-			os.write(response.getBytes());
-			os.close();
 		});
+
+		for (String regionName : regions.keySet()) {
+			server.createContext("/query_cur_region_" + regionName, t -> {
+				String regionCurrentBase64 = regions.get(regionName).Base64;
+
+				// Log
+				Grasscutter.getLogger().info("Client request: query_cur_region_" + regionName);
+				// Create a response form the request query parameters
+				URI uri = t.getRequestURI();
+				String response = "CAESGE5vdCBGb3VuZCB2ZXJzaW9uIGNvbmZpZw==";
+				if (uri.getQuery() != null && uri.getQuery().length() > 0) {
+					response = regionCurrentBase64;
+				}
+				// Set the response header status and length
+				t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
+				t.sendResponseHeaders(200, response.getBytes().length);
+				// Write the response string
+				OutputStream os = t.getResponseBody();
+				os.write(response.getBytes());
+				os.close();
+				//Save region info to hashmap for user, this for getCurrRegion();
+				usersIngame.put(t.getRemoteAddress(), regionName);
+			});
+		}
+
 		// Login via account
 		server.createContext("/hk4e_global/mdk/shield/api/login", t -> {
 			// Get post data
@@ -463,5 +509,16 @@ public final class DispatchServer {
 	        last = next + 1;
 	    }
 	    return result;
+	}
+
+	public static class RegionData {
+
+		QueryCurrRegionHttpRsp parsedRegionQuery;
+		String Base64;
+
+		public RegionData(QueryCurrRegionHttpRsp prq, String b64) {
+			this.parsedRegionQuery = prq;
+			this.Base64 = b64;
+		}
 	}
 }
