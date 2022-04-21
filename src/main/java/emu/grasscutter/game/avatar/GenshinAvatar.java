@@ -77,7 +77,7 @@ public class GenshinAvatar {
 	@Transient private final Int2FloatOpenHashMap fightProp;
 	@Transient private Set<String> extraAbilityEmbryos;
 	
-	private List<Interget> fetters;
+	private List<Integer> fetters;
 
 	private Map<Integer, Integer> skillLevelMap; // Talent levels
 	private Map<Integer, Integer> proudSkillBonusMap; // Talent bonus levels (from const)
