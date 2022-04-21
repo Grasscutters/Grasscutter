@@ -7,7 +7,7 @@ import emu.grasscutter.utils.Utils;
 public class PlayerProfile {
 	@Transient private GenshinPlayer player;
 	
-	private int id;
+	@AlsoLoad("id") private int uid;
 	private int nameCard;
 	private int avatarId;
 	private String name;
@@ -22,12 +22,12 @@ public class PlayerProfile {
 	public PlayerProfile() { }
 	
 	public PlayerProfile(GenshinPlayer player) {
-		this.id = player.getUid();
+		this.uid = player.getUid();
 		this.syncWithCharacter(player);
 	}
 	
-	public int getId() {
-		return id;
+	public int getUid() {
+		return uid;
 	}
 
 	public GenshinPlayer getPlayer() {
@@ -87,7 +87,7 @@ public class PlayerProfile {
 			return;
 		}
 		
-		this.id = player.getUid();
+		this.uid = player.getUid();
 		this.name = player.getNickname();
 		this.avatarId = player.getHeadImage();
 		this.signature = player.getSignature();
