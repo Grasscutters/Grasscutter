@@ -66,7 +66,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 `!pos` - Gets your current coordinate.
 
-`!weather [weather id]` - Changes the current weather.
+`!weather [weather id] [climate id]` - Changes the current weather.
 
 *More commands will be updated in the [wiki](https://github.com/Melledy/Grasscutter/wiki/).*
 
