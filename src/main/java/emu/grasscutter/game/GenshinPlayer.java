@@ -125,6 +125,12 @@ public class GenshinPlayer {
 			}
 			this.properties.put(prop.getId(), 0);
 		}
+		
+		this.gachaInfo = new PlayerGachaInfo();
+		this.nameCardList = new HashSet<>();
+		this.flyCloakList = new HashSet<>();
+		this.costumeList = new HashSet<>();
+		
 		this.setSceneId(3);
 		this.setRegionId(1);
 		this.sceneState = SceneLoadState.NONE;
@@ -144,11 +150,6 @@ public class GenshinPlayer {
 		this.nickname = "Traveler";
 		this.signature = "";
 		this.teamManager = new TeamManager(this);
-		this.gachaInfo = new PlayerGachaInfo();
-		this.playerProfile = new PlayerProfile(this);
-		this.nameCardList = new HashSet<>();
-		this.flyCloakList = new HashSet<>();
-		this.costumeList = new HashSet<>();
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
 		this.setProperty(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50);
@@ -169,6 +170,7 @@ public class GenshinPlayer {
 
 	public void setUid(int id) {
 		this.id = id;
+		this.getProfile().syncWithCharacter(this);
 	}
 	
 	public long getNextGenshinGuid() {
@@ -720,12 +722,8 @@ public class GenshinPlayer {
 		// Make sure these exist
 		if (this.getTeamManager() == null) {
 			this.teamManager = new TeamManager(this);
-		} if (this.getGachaInfo() == null) {
-			this.gachaInfo = new PlayerGachaInfo();
-		} if (this.nameCardList == null) {
-			this.nameCardList = new HashSet<>();
-		} if (this.costumeList == null) {
-			this.costumeList = new HashSet<>();
+		} if (this.getProfile().getId() == 0) {
+			this.getProfile().syncWithCharacter(this);
 		}
 		
 		// Check if player object exists in server

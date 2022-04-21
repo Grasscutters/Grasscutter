@@ -87,6 +87,7 @@ public class PlayerProfile {
 			return;
 		}
 		
+		this.id = player.getUid();
 		this.name = player.getNickname();
 		this.avatarId = player.getHeadImage();
 		this.signature = player.getSignature();
