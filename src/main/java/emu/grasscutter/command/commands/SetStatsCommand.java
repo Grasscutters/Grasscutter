@@ -20,6 +20,11 @@ public final class SetStatsCommand implements CommandHandler {
             return;
         }
 
+        if (args.size() < 2){
+            CommandHandler.sendMessage(sender, "Usage: setstats|stats <stat> <value>");
+            return;
+        }
+
         String stat = args.get(0);
         switch (stat) {
             default:
