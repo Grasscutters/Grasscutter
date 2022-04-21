@@ -27,6 +27,7 @@ public final class Config {
 		public String Ip = "127.0.0.1";
 		public String PublicIp = "";
 		public int Port = 443;
+		public int OverseaLogPort = 8888;
 		public int UploadLogPort = 80;
 		public String KeystorePath = "./keystore.p12";
 		public String KeystorePassword = "";
