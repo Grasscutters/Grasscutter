@@ -6,7 +6,7 @@ public final class Config {
 
 	public String DatabaseUrl = "mongodb://localhost:27017";
 	public String DatabaseCollection = "grasscutter";
-	
+
 	public String RESOURCE_FOLDER = "./resources/";
 	public String DATA_FOLDER = "./data/";
 	public String PACKETS_FOLDER = "./packets/";
@@ -24,11 +24,9 @@ public final class Config {
 	public DispatchServerOptions getDispatchOptions() { return DispatchServer; }
 
 	public static class DispatchServerOptions {
-		public String Ip = "127.0.0.1";
-		public String PublicIp = "";
+		public String Ip = "0.0.0.0";
+		public String PublicIp = "127.0.0.1";
 		public int Port = 443;
-		public int OverseaLogPort = 8888;
-		public int UploadLogPort = 80;
 		public String KeystorePath = "./keystore.p12";
 		public String KeystorePassword = "";
 		public Boolean UseSSL = true;
@@ -51,8 +49,8 @@ public final class Config {
 	
 	public static class GameServerOptions {
 		public String Name = "Test";
-		public String Ip = "127.0.0.1";
-		public String PublicIp = "";
+		public String Ip = "0.0.0.0";
+		public String PublicIp = "127.0.0.1";
 		public int Port = 22102;
 
 		public String DispatchServerDatabaseUrl = "mongodb://localhost:27017";
