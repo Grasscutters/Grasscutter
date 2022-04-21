@@ -410,7 +410,7 @@ public final class DispatchServer {
 		Grasscutter.getLogger().info("Dispatch server started on port " + getAddress().getPort());
 		
 		// Logging servers
-		HttpServer overseaLogServer = HttpServer.create(new InetSocketAddress(Grasscutter.getConfig().DispatchServerIp, 8888), 0);
+		HttpServer overseaLogServer = HttpServer.create(new InetSocketAddress(Grasscutter.getConfig().DispatchServerIp, Grasscutter.getConfig().OverseaLogPort), 0);
 		overseaLogServer.createContext( // overseauspider.yuanshen.com
 				"/log", 
 				new DispatchHttpJsonHandler("{\"code\":0}")
