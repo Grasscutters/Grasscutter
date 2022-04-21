@@ -170,7 +170,6 @@ public class GenshinPlayer {
 
 	public void setUid(int id) {
 		this.id = id;
-		this.getProfile().syncWithCharacter(this);
 	}
 	
 	public long getNextGenshinGuid() {
@@ -353,7 +352,6 @@ public class GenshinPlayer {
 	public PlayerProfile getProfile() {
 		if (this.playerProfile == null) {
 			this.playerProfile = new PlayerProfile(this);
-			this.save();
 		}
 		return playerProfile;
 	}
