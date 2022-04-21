@@ -142,8 +142,9 @@ public final class DispatchServer {
 				httpsServer.setHttpsConfigurator(new HttpsConfigurator(sslContext));
 				server = httpsServer;
 			} catch (Exception e) {
-				Grasscutter.getLogger().error("No SSL cert found!");
-				return;
+				Grasscutter.getLogger().error("No SSL cert found! Falling back to HTTP server.");
+				Grasscutter.getConfig().UseSSL = false;
+				server = HttpServer.create(getAddress(), 0);
 			}
 		} else {
 			server = HttpServer.create(getAddress(), 0);
