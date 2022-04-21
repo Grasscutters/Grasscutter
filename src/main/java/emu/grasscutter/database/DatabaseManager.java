@@ -38,7 +38,8 @@ public final class DatabaseManager {
     	return getDatastore().getDatabase();
     }
 
-	// Yes. I very dislike this method also but I'm lazy. Probably replace it by making the game server connect to the dispatch server instead.
+	// Yes. I very dislike this method. However, this will be good for now.
+	// TODO: Add dispatch routes for player account management
 	public static Datastore getAccountDatastore() {
 		if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("GAME_ONLY")) {
 			return dispatchDatastore;
@@ -50,7 +51,6 @@ public final class DatabaseManager {
 	public static void initialize() {
 		// Initialize
 		mongoClient = new MongoClient(new MongoClientURI(Grasscutter.getConfig().DatabaseUrl));
-		dispatchMongoClient = new MongoClient(new MongoClientURI(Grasscutter.getConfig().getGameServerOptions().DispatchServerDatabaseUrl));
 		Morphia morphia = new Morphia();
 		
 		// TODO Update when migrating to Morphia 2.0
@@ -63,7 +63,6 @@ public final class DatabaseManager {
 		
 		// Build datastore
 		datastore = morphia.createDatastore(mongoClient, Grasscutter.getConfig().DatabaseCollection);
-		dispatchDatastore = morphia.createDatastore(dispatchMongoClient, Grasscutter.getConfig().getGameServerOptions().DispatchServerDatabaseCollection);
 		
 		// Ensure indexes
 		try {
@@ -82,20 +81,25 @@ public final class DatabaseManager {
 			}
 		}
 
-		// Ensure indexes for dispatch server
-		try {
-			dispatchDatastore.ensureIndexes();
-		} catch (MongoCommandException e) {
-			Grasscutter.getLogger().info("Mongo index error: ", e);
-			// Duplicate index error
-			if (e.getCode() == 85) {
-				// Drop all indexes and re add them
-				MongoIterable<String> collections = dispatchDatastore.getDatabase().listCollectionNames();
-				for (String name : collections) {
-					dispatchDatastore.getDatabase().getCollection(name).dropIndexes();
-				}
-				// Add back indexes
+		if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("GAME_ONLY")) {
+			dispatchMongoClient = new MongoClient(new MongoClientURI(Grasscutter.getConfig().getGameServerOptions().DispatchServerDatabaseUrl));
+			dispatchDatastore = morphia.createDatastore(dispatchMongoClient, Grasscutter.getConfig().getGameServerOptions().DispatchServerDatabaseCollection);
+
+			// Ensure indexes for dispatch server
+			try {
 				dispatchDatastore.ensureIndexes();
+			} catch (MongoCommandException e) {
+				Grasscutter.getLogger().info("Mongo index error: ", e);
+				// Duplicate index error
+				if (e.getCode() == 85) {
+					// Drop all indexes and re add them
+					MongoIterable<String> collections = dispatchDatastore.getDatabase().listCollectionNames();
+					for (String name : collections) {
+						dispatchDatastore.getDatabase().getCollection(name).dropIndexes();
+					}
+					// Add back indexes
+					dispatchDatastore.ensureIndexes();
+				}
 			}
 		}
 	}
