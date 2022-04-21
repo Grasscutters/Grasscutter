@@ -5,7 +5,7 @@ public class ComboTokenResJson {
 	public int retcode;
 	public LoginData data = new LoginData();
 	
-	public class LoginData {
+	public static class LoginData {
 		public int account_type = 1;
 		public boolean heartbeat;
 		public String combo_id;
