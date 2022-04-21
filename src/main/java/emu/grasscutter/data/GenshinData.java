@@ -1,7 +1,9 @@
 package emu.grasscutter.data;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
@@ -54,6 +56,7 @@ public class GenshinData {
 	private static final Int2ObjectMap<AvatarCostumeData> avatarCostumeDataItemIdMap = new Int2ObjectLinkedOpenHashMap<>();
 	
 	private static final Int2ObjectMap<SceneData> sceneDataMap = new Int2ObjectLinkedOpenHashMap<>();
+	private static final Int2ObjectMap<FetterData> fetterDataMap = new Int2ObjectOpenHashMap<>();
 	
 	public static Int2ObjectMap<?> getMapByResourceDef(Class<?> resourceDefinition) {
 		Int2ObjectMap<?> map = null;
@@ -220,5 +223,17 @@ public class GenshinData {
 
 	public static Int2ObjectMap<SceneData> getSceneDataMap() {
 		return sceneDataMap;
+	}
+
+	public static Map<Integer, List<Integer>> getFetterDataEntries() {
+		// Can I do this?
+		Map<Integer, List<Integer>> fetters = new HashMap<>();
+		fetterDataMap.forEach((k, v) -> {
+			if (!fetters.containsKey(v.getAvatarId())) {
+				fetters.put(v.getAvatarId(), new ArrayList<>());
+			}
+			fetters.get(v.getAvatarId()).add(k);
+		});
+		return fetters;
 	}
 }
