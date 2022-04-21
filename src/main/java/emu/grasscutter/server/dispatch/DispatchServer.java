@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.net.URLDecoder;
@@ -44,18 +45,18 @@ import com.sun.net.httpserver.HttpServer;
 public final class DispatchServer {
 	private final InetSocketAddress address;
 	private final Gson gson;
+	private final String defaultServerName = "os_usa";
 	//private QueryCurrRegionHttpRsp currRegion;
 	
 	public String regionListBase64;
 	public HashMap<String, RegionData> regions;
-	public HashMap<InetSocketAddress, String> usersIngame;
+	public HashMap<String, UserConnnectionData> usersConnected;
 
 	public static String query_region_list = "";
 	public static String query_cur_region = "";
 
 	public DispatchServer() {
 		this.regions = new HashMap<String, RegionData>();
-		this.usersIngame = new HashMap<InetSocketAddress, String>();
 		this.address = new InetSocketAddress(Grasscutter.getConfig().getDispatchOptions().Ip, Grasscutter.getConfig().getDispatchOptions().Port);
 		this.gson = new GsonBuilder().create();
 		
@@ -71,12 +72,13 @@ public final class DispatchServer {
 		return gson;
 	}
 
-	public QueryCurrRegionHttpRsp getCurrRegion(InetSocketAddress address) {
-		if(usersIngame.containsKey(address)) {
-			return regions.get(usersIngame.get(address)).parsedRegionQuery;
+	public QueryCurrRegionHttpRsp getCurrRegion() {
+		// Needs to be fixed by having the game servers connect to the dispatch server.
+		if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("HYBRID")) {
+			return regions.get(defaultServerName).parsedRegionQuery;
 		}
 
-		Grasscutter.getLogger().error("User is not logged in to dispatch server. " + address.getAddress() + ":" + address.getPort());
+		Grasscutter.getLogger().error("Ignore the error below");
 		return null;
 	}
 	
@@ -109,7 +111,6 @@ public final class DispatchServer {
 			List<RegionSimpleInfo> servers = new ArrayList<RegionSimpleInfo>();
 			List<String> usedNames = new ArrayList<String>(); // List to check for potential naming conflicts
 			if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("HYBRID")) { // Automatically add the game server if in hybrid mode
-				String defaultServerName = "os_usa";
 				RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
 						.setName("os_usa")
 						.setTitle(Grasscutter.getConfig().getGameServerOptions().Name)
@@ -222,16 +223,11 @@ public final class DispatchServer {
 			OutputStream os = t.getResponseBody();
 			os.write(response.getBytes());
 			os.close();
-
-			if(usersIngame.containsKey(t.getRemoteAddress())) {
-				usersIngame.remove(t.getRemoteAddress());
-			}
 		});
 
 		for (String regionName : regions.keySet()) {
 			server.createContext("/query_cur_region_" + regionName, t -> {
 				String regionCurrentBase64 = regions.get(regionName).Base64;
-
 				// Log
 				Grasscutter.getLogger().info("Client request: query_cur_region_" + regionName);
 				// Create a response form the request query parameters
@@ -247,8 +243,6 @@ public final class DispatchServer {
 				OutputStream os = t.getResponseBody();
 				os.write(response.getBytes());
 				os.close();
-				//Save region info to hashmap for user, this for getCurrRegion();
-				usersIngame.put(t.getRemoteAddress(), regionName);
 			});
 		}
 
@@ -520,5 +514,10 @@ public final class DispatchServer {
 			this.parsedRegionQuery = prq;
 			this.Base64 = b64;
 		}
+	}
+
+	public static class UserConnnectionData {
+		public InetAddress dispatchConnectedAddress;
+		public String connectedRegion;
 	}
 }

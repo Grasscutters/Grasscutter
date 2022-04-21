@@ -14,7 +14,7 @@ public class PacketPlayerLoginRsp extends GenshinPacket {
 		
 		this.setUseDispatchKey(true);
 		
-		RegionInfo info = Grasscutter.getDispatchServer().getCurrRegion(session.getAddress()).getRegionInfo();
+		RegionInfo info = Grasscutter.getDispatchServer().getCurrRegion().getRegionInfo();
 		
 		PlayerLoginRsp p = PlayerLoginRsp.newBuilder()
 				.setIsUseAbilityHash(true) // true
