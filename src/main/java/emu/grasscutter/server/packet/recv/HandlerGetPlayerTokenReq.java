@@ -35,15 +35,15 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 		
 		// Has character
 		boolean doesPlayerExist = false;
-		if (account.getPlayerId() > 0) {
+		if (account.getPlayerUid() > 0) {
 			// Set flag for player existing
-			doesPlayerExist = DatabaseHelper.checkPlayerExists(account.getPlayerId());
+			doesPlayerExist = DatabaseHelper.checkPlayerExists(account.getPlayerUid());
 		}
 		
 		// Set reserve player id if account doesnt exist
 		if (!doesPlayerExist) {
-			int id = DatabaseHelper.getNextPlayerId(session.getAccount().getPlayerId());
-			if (id != session.getAccount().getPlayerId()) {
+			int id = DatabaseHelper.getNextPlayerId(session.getAccount().getPlayerUid());
+			if (id != session.getAccount().getPlayerUid()) {
 				session.getAccount().setPlayerId(id);
 				session.getAccount().save();
 			}

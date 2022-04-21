@@ -722,7 +722,7 @@ public class GenshinPlayer {
 		// Make sure these exist
 		if (this.getTeamManager() == null) {
 			this.teamManager = new TeamManager(this);
-		} if (this.getProfile().getId() == 0) {
+		} if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
 		}
 		

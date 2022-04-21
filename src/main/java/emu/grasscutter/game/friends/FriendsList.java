@@ -220,7 +220,7 @@ public class FriendsList {
 		friendship.setOwner(getPlayer());
 
 		// Check if friend is online
-		GenshinPlayer friend = getPlayer().getSession().getServer().getPlayerByUid(friendship.getFriendProfile().getId());
+		GenshinPlayer friend = getPlayer().getSession().getServer().getPlayerByUid(friendship.getFriendProfile().getUid());
 		if (friend != null) {
 			// Set friend to online mode
 			friendship.setFriendProfile(friend);
