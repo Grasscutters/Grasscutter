@@ -155,7 +155,7 @@ public final class DispatchServer {
 
 			this.regionListBase64 = Base64.getEncoder().encodeToString(regionList.toByteString().toByteArray());
 		} catch (Exception e) {
-			Grasscutter.getLogger().error("Error while initializing region info!", e);
+			Grasscutter.getLogger().error("[Dispatch] Error while initializing region info!", e);
 		}
 	}
 
