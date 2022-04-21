@@ -50,7 +50,6 @@ public final class DispatchServer {
 	
 	public String regionListBase64;
 	public HashMap<String, RegionData> regions;
-	public HashMap<String, UserConnnectionData> usersConnected;
 
 	public static String query_region_list = "";
 	public static String query_cur_region = "";
