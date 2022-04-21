@@ -12,7 +12,7 @@ public class PacketSceneAreaWeatherNotify extends GenshinPacket {
 		super(PacketOpcodes.SceneAreaWeatherNotify);
 		
 		SceneAreaWeatherNotify proto = SceneAreaWeatherNotify.newBuilder()
-				.setWeatherAreaId(1)
+				.setWeatherAreaId(player.getScene().getWeather())
 				.setClimateType(player.getScene().getClimate().getValue())
 				.build();
 		
