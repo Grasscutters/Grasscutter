@@ -23,7 +23,6 @@ public class PacketGetPlayerFriendListRsp extends GenshinPacket {
 				.setWorldLevel(0)
 				.setSignature("")
 				.setLastActiveTime((int) (System.currentTimeMillis() / 1000f))
-				.setIsMpModeAvailable(true)
 				.setNameCardId(210001)
 				.setOnlineState(FriendOnlineState.FRIEND_ONLINE)
 				.setParam(1)

@@ -165,7 +165,7 @@ public class GameSession extends MihoyoKcpChannel {
     	byte[] data = genshinPacket.build();
     	
     	// Log
-    	if (Grasscutter.getConfig().LOG_PACKETS) {
+    	if (Grasscutter.getConfig().getGameServerOptions().LOG_PACKETS) {
     		logPacket(genshinPacket);
     	}
     	
@@ -225,7 +225,7 @@ public class GameSession extends MihoyoKcpChannel {
 				}
 				
 				// Log packet
-				if (Grasscutter.getConfig().LOG_PACKETS) {
+				if (Grasscutter.getConfig().getGameServerOptions().LOG_PACKETS) {
 					Grasscutter.getLogger().info("RECV: " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
 					System.out.println(Utils.bytesToHex(payload));
 				}

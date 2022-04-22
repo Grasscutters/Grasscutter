@@ -14,7 +14,7 @@ public class PacketWorldPlayerLocationNotify extends GenshinPacket {
 		WorldPlayerLocationNotify.Builder proto = WorldPlayerLocationNotify.newBuilder();
 		
 		for (GenshinPlayer p : world.getPlayers()) {
-			proto.addPlayerLocList(p.getPlayerLocationInfo());
+			proto.addPlayerLocList(p.getWorldPlayerLocationInfo());
 		}
 		
 		this.setData(proto);

@@ -55,6 +55,8 @@ public class AvatarData extends GenshinResource {
     private float[] defenseGrowthCurve;
     private AvatarSkillDepotData skillDepot;
     private IntList abilities;
+
+    private List<Integer> fetters;
     
 	@Override
 	public int getId(){
@@ -193,9 +195,16 @@ public class AvatarData extends GenshinResource {
 		return abilities;
 	}
 
+    public List<Integer> getFetters() {
+        return fetters;
+    }
+
 	@Override
 	public void onLoad() {
     	this.skillDepot = GenshinData.getAvatarSkillDepotDataMap().get(this.SkillDepotId);
+
+        // Get fetters from GenshinData
+        this.fetters = GenshinData.getFetterDataEntries().get(this.Id);
     	
     	int size = GenshinData.getAvatarCurveDataMap().size();
     	this.hpGrowthCurve = new float[size];
