@@ -57,6 +57,9 @@ public class GenshinData {
 	
 	private static final Int2ObjectMap<SceneData> sceneDataMap = new Int2ObjectLinkedOpenHashMap<>();
 	private static final Int2ObjectMap<FetterData> fetterDataMap = new Int2ObjectOpenHashMap<>();
+
+	// Cache
+	private static Map<Integer, List<Integer>> fetters = new HashMap<>();
 	
 	public static Int2ObjectMap<?> getMapByResourceDef(Class<?> resourceDefinition) {
 		Int2ObjectMap<?> map = null;
@@ -226,14 +229,15 @@ public class GenshinData {
 	}
 
 	public static Map<Integer, List<Integer>> getFetterDataEntries() {
-		// Can I do this?
-		Map<Integer, List<Integer>> fetters = new HashMap<>();
-		fetterDataMap.forEach((k, v) -> {
-			if (!fetters.containsKey(v.getAvatarId())) {
-				fetters.put(v.getAvatarId(), new ArrayList<>());
-			}
-			fetters.get(v.getAvatarId()).add(k);
-		});
+		if (fetters.isEmpty()) {
+			fetterDataMap.forEach((k, v) -> {
+				if (!fetters.containsKey(v.getAvatarId())) {
+					fetters.put(v.getAvatarId(), new ArrayList<>());
+				}
+				fetters.get(v.getAvatarId()).add(k);
+			});
+		}
+
 		return fetters;
 	}
 }
