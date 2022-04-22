@@ -1,5 +1,6 @@
 package emu.grasscutter.game;
 
+import dev.morphia.annotations.AlsoLoad;
 import dev.morphia.annotations.Collation;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
@@ -24,7 +25,7 @@ public class Account {
 	private String username;
 	private String password; // Unused for now
 	
-	private int playerId;
+	@AlsoLoad("playerUid") private int playerId;
 	private String email;
 	
 	private String token;
@@ -68,7 +69,7 @@ public class Account {
 		this.token = token;
 	}
 
-	public int getPlayerId() {
+	public int getPlayerUid() {
 		return this.playerId;
 	}
 
@@ -104,6 +105,10 @@ public class Account {
 	public boolean addPermission(String permission) {
 		if(this.permissions.contains(permission)) return false;
 		this.permissions.add(permission); return true;
+	}
+
+	public boolean hasPermission(String permission) {
+		return this.permissions.contains(permission) || this.permissions.contains("*") ? true : false;
 	}
 	
 	public boolean removePermission(String permission) {

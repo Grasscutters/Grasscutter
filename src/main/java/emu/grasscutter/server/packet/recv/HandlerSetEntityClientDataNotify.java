@@ -1,7 +1,9 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.SetEntityClientDataNotify;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 
@@ -10,7 +12,18 @@ public class HandlerSetEntityClientDataNotify extends PacketHandler {
 	
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		// Auto template
+		// Skip if there is no one to broadcast it too
+		if (session.getPlayer().getScene().getPlayerCount() <= 1) {
+			return;
+		}
+		
+		// Make sure packet is a valid proto before replaying it to the other players
+		SetEntityClientDataNotify notif = SetEntityClientDataNotify.parseFrom(payload);
+		
+		GenshinPacket packet = new GenshinPacket(PacketOpcodes.SetEntityClientDataNotify, true);
+		packet.setData(notif);
+		
+		session.getPlayer().getScene().broadcastPacketToOthers(session.getPlayer(), packet);
 	}
 
 }

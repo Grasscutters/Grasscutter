@@ -31,8 +31,11 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
 		
 		// Locations
 		session.send(new PacketWorldPlayerLocationNotify(session.getPlayer().getWorld()));
-		session.send(new PacketScenePlayerLocationNotify(session.getPlayer()));
+		session.send(new PacketScenePlayerLocationNotify(session.getPlayer().getScene()));
 		session.send(new PacketWorldPlayerRTTNotify(session.getPlayer().getWorld()));
+		
+		// Reset timer for sending player locations
+		session.getPlayer().resetSendPlayerLocTime();
 	}
 
 }

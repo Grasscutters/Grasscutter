@@ -43,7 +43,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 		
 		try {
 			// Save to db
-			DatabaseHelper.createPlayer(player, session.getAccount().getPlayerId());
+			DatabaseHelper.createPlayer(player, session.getAccount().getPlayerUid());
 			
 			// Create avatar
 			if (player.getAvatars().getAvatarCount() == 0) {

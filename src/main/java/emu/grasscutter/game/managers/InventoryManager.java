@@ -471,7 +471,7 @@ public class InventoryManager {
 		}
 		
 		// Consume weapon
-		player.getInventory().removeItem(feed);
+		player.getInventory().removeItem(feed, 1);
 		
 		// Get 
 		weapon.setRefinement(targetRefineLevel);
@@ -589,7 +589,6 @@ public class InventoryManager {
 		
 		// Update proud skills
 		AvatarSkillDepotData skillDepot = GenshinData.getAvatarSkillDepotDataMap().get(avatar.getSkillDepotId());
-		boolean hasAddedProudSkill = false;
 		
 		if (skillDepot != null && skillDepot.getInherentProudSkillOpens() != null) {
 			for (InherentProudSkillOpens openData : skillDepot.getInherentProudSkillOpens()) {
@@ -599,7 +598,6 @@ public class InventoryManager {
 				if (openData.getNeedAvatarPromoteLevel() == avatar.getPromoteLevel()) {
 					int proudSkillId = (openData.getProudSkillGroupId() * 100) + 1;
 					if (GenshinData.getProudSkillDataMap().containsKey(proudSkillId)) {
-						hasAddedProudSkill = true;
 						avatar.getProudSkillList().add(proudSkillId);
 						player.sendPacket(new PacketProudSkillChangeNotify(avatar));
 					}
@@ -607,20 +605,13 @@ public class InventoryManager {
 			}
 		}
 		
-		// Racalc stats and save avatar
-		avatar.recalcStats();
-		avatar.save();
-		
-		// Resend ability embryos if proud skill has been added
-		if (hasAddedProudSkill && avatar.getAsEntity() != null) {
-			player.sendPacket(new PacketAbilityChangeNotify(avatar.getAsEntity()));
-		}
-		
-		// TODO Send entity prop update packet to world
-		
 		// Packets 
 		player.sendPacket(new PacketAvatarPropNotify(avatar));
 		player.sendPacket(new PacketAvatarPromoteRsp(avatar));
+		
+		// TODO Send entity prop update packet to world
+		avatar.recalcStats(true);
+		avatar.save();
 	}
 
 	public void upgradeAvatar(GenshinPlayer player, long guid, int itemId, int count) {
@@ -804,6 +795,12 @@ public class InventoryManager {
 		// Get talent
 		int currentTalentLevel = avatar.getCoreProudSkillLevel();
 		int nextTalentId = ((avatar.getAvatarId() % 10000000) * 10) + currentTalentLevel + 1;
+		
+		if (avatar.getAvatarId() == 10000006) {
+			// Lisa is special in that her talentId starts with 4 instead of 6.
+			nextTalentId = 40 + currentTalentLevel + 1;
+		}
+		
 		AvatarTalentData talentData = GenshinData.getAvatarTalentDataMap().get(nextTalentId);
 		
 		if (talentData == null) {
@@ -821,25 +818,20 @@ public class InventoryManager {
 		// Apply + recalc
 		avatar.getTalentIdList().add(talentData.getId());
 		avatar.setCoreProudSkillLevel(currentTalentLevel + 1);
-		avatar.recalcStats();
 
 		// Packet
 		player.sendPacket(new PacketAvatarUnlockTalentNotify(avatar, nextTalentId));
 		player.sendPacket(new PacketUnlockAvatarTalentRsp(avatar, nextTalentId));
 		
-		// Proud skill bonus map
+		// Proud skill bonus map (Extra skills)
 		OpenConfigEntry entry = GenshinData.getOpenConfigEntries().get(talentData.getOpenConfig());
 		if (entry != null && entry.getExtraTalentIndex() > 0) {
 			avatar.recalcProudSkillBonusMap();
 			player.sendPacket(new PacketProudSkillExtraLevelNotify(avatar, entry.getExtraTalentIndex()));
 		}
 		
-		// Resend ability embryos
-		if (avatar.getAsEntity() != null) {
-			player.sendPacket(new PacketAbilityChangeNotify(avatar.getAsEntity()));
-		}
-		
-		// Save avatar
+		// Recalc + save avatar
+		avatar.recalcStats(true);
 		avatar.save();
 	}
 
