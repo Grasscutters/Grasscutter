@@ -101,7 +101,7 @@ public final class DispatchServer {
 						.setName("os_usa")
 						.setTitle(Grasscutter.getConfig().getGameServerOptions().Name)
 						.setType("DEV_PUBLIC")
-						.setDispatchUrl("https://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + ":" + getAddress().getPort() + "/query_cur_region_" + defaultServerName)
+						.setDispatchUrl("http" + (Grasscutter.getConfig().getDispatchOptions().FrontHTTPS ? "s" : "") + "://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + ":" + getAddress().getPort() + "/query_cur_region_" + defaultServerName)
 						.build();
 				usedNames.add(defaultServerName);
 				servers.add(server);
@@ -131,7 +131,7 @@ public final class DispatchServer {
 						.setName(regionInfo.Name)
 						.setTitle(regionInfo.Title)
 						.setType("DEV_PUBLIC")
-						.setDispatchUrl("https://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + ":" + getAddress().getPort() + "/query_cur_region_" + regionInfo.Name)
+						.setDispatchUrl("http" + (Grasscutter.getConfig().getDispatchOptions().FrontHTTPS ? "s" : "") + "://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + ":" + getAddress().getPort() + "/query_cur_region_" + regionInfo.Name)
 						.build();
 				usedNames.add(regionInfo.Name);
 				servers.add(server);
