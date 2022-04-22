@@ -139,7 +139,7 @@ public final class DatabaseHelper {
 	}
 
 	public static List<GenshinAvatar> getAvatars(GenshinPlayer player) {
-		return DatabaseManager.getDatastore().find(GenshinAvatar.class).filter(Filters.eq("playerId", player.getUid())).stream().toList();
+		return DatabaseManager.getDatastore().find(GenshinAvatar.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
 
 	public static void saveItem(GenshinItem item) {
@@ -155,7 +155,7 @@ public final class DatabaseHelper {
 		return DatabaseManager.getDatastore().find(GenshinItem.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
 	public static List<Friendship> getFriends(GenshinPlayer player) {
-		return DatabaseManager.getDatastore().find(Friendship.class).filter(Filters.eq("playerId", player.getUid())).stream().toList();
+		return DatabaseManager.getDatastore().find(Friendship.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
 
 	public static List<Friendship> getReverseFriends(GenshinPlayer player) {
