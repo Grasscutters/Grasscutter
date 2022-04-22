@@ -47,6 +47,7 @@ tmp/
 
 # Grasscutter
 resources/*
+logs/*
 data/AbilityEmbryos.json
 data/OpenConfig.json
 proto/auto/
