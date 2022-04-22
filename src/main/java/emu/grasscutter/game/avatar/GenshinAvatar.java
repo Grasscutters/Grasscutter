@@ -705,12 +705,14 @@ public class GenshinAvatar {
 				.setExpLevel(10)
 				.setExpNumber(6325); // Highest Level
 		
-		for (int i = 0; i < this.getFetterList().size(); i++) {
-			avatarFetter.addFetterList(
-				FetterData.newBuilder()
-					.setFetterId(this.getFetterList().get(i))
-					.setFetterState(FetterState.FINISH.getValue())
-			);
+		if (this.getFetterList() != null) {
+			for (int i = 0; i < this.getFetterList().size(); i++) {
+				avatarFetter.addFetterList(
+					FetterData.newBuilder()
+						.setFetterId(this.getFetterList().get(i))
+						.setFetterState(FetterState.FINISH.getValue())
+				);
+			}
 		}
 
 		AvatarInfo.Builder avatarInfo = AvatarInfo.newBuilder()
