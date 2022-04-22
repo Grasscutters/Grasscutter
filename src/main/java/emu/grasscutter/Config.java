@@ -30,6 +30,7 @@ public final class Config {
 		public String KeystorePath = "./keystore.p12";
 		public String KeystorePassword = "";
 		public Boolean UseSSL = true;
+		public Boolean FrontHTTPS = true;
 
 		public boolean AutomaticallyCreateAccounts = false;
 
