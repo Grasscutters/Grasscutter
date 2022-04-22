@@ -92,6 +92,8 @@ public class GenshinAvatar {
 
 	private int fetterLevel = 1;
 	private int fetterExp;
+
+	private int nameCardRewardId;
 	
 	public GenshinAvatar() {
 		// Morhpia only!
@@ -110,6 +112,7 @@ public class GenshinAvatar {
 	public GenshinAvatar(AvatarData data) {
 		this();
 		this.avatarId = data.getId();
+		this.nameCardRewardId = data.getNameCardRewardId();
 		this.data = data;
 		this.bornTime = (int) (System.currentTimeMillis() / 1000);
 		this.flyCloak = 140001;
@@ -170,6 +173,14 @@ public class GenshinAvatar {
 
 	public void setSatiation(int satiation) {
 		this.satiation = satiation;
+	}
+
+	public int getNameCardRewardId() {
+		return nameCardRewardId;
+	}
+
+	public void setNameCardRewardId(int nameCardRewardId) {
+		this.nameCardRewardId = nameCardRewardId;
 	}
 
 	public int getSatiationPenalty() {
