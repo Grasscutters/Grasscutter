@@ -11,6 +11,8 @@ call :LOG [INFO] To proper exit this console, use [Ctrl + C] and enter N not Y.
 call :LOG [INFO]
 call :LOG [INFO] Initializing...
 
+set CONFIG=start_config
+
 set JAVA_PATH=DO_NOT_CHECK_PATH
 set MITMDUMP_PATH=DO_NOT_CHECK_PATH
 set MONGODB_PATH=DO_NOT_CHECK_PATH
@@ -20,6 +22,10 @@ set DATABASE_STORAGE_PATH=%CUR_PATH%resources\Database
 
 set SERVER_JAR_NAME=grasscutter.jar
 set PROXY_SCRIPT_NAME=proxy
+
+if exist "%CUR_PATH%%CONFIG%.cmd" (
+	call "%CUR_PATH%%CONFIG%.cmd" >nul 2>nul
+)
 
 if not "%JAVA_PATH%" == "DO_NOT_CHECK_PATH" (
 	if not exist "%JAVA_PATH%java.exe" (
