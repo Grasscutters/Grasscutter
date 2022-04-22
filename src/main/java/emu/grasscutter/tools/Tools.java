@@ -1,9 +1,11 @@
 package emu.grasscutter.tools;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
@@ -39,7 +41,7 @@ public final class Tools {
 		
 		List<Integer> list;
 		String fileName = "./GM Handbook.txt";
-		try (FileWriter fileWriter = new FileWriter(fileName); PrintWriter writer = new PrintWriter(fileWriter)) {
+		try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8), false)) {
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
 			LocalDateTime now = LocalDateTime.now();
 			   
