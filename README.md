@@ -68,6 +68,8 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 `weather [weather id] [climate id]` - Changes the current weather.
 
+`heal` - Heal all characters in your current team.
+
 *More commands will be updated in the [wiki](https://github.com/Melledy/Grasscutter/wiki/).*
 
 ### Bonus
