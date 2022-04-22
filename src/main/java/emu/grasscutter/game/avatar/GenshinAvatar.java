@@ -89,6 +89,9 @@ public class GenshinAvatar {
 	private int flyCloak;
 	private int costume;
 	private int bornTime;
+
+	private int fetterLevel = 1;
+	private int fetterExp;
 	
 	public GenshinAvatar() {
 		// Morhpia only!
@@ -279,6 +282,22 @@ public class GenshinAvatar {
 
 	public List<Integer> getFetterList() {
 		return fetters;
+	}
+
+	public int getFetterLevel() {
+		return fetterLevel;
+	}
+
+	public void setFetterLevel(int fetterLevel) {
+		this.fetterLevel = fetterLevel;
+	}
+
+	public int getFetterExp() {
+		return fetterExp;
+	}
+
+	public void setFetterExp(int fetterExp) {
+		this.fetterExp = fetterExp;
 	}
 
 	public float getCurrentHp() {
@@ -702,8 +721,8 @@ public class GenshinAvatar {
 	
 	public AvatarInfo toProto() {
 		AvatarFetterInfo.Builder avatarFetter = AvatarFetterInfo.newBuilder()
-				.setExpLevel(10)
-				.setExpNumber(6325); // Highest Level
+				.setExpLevel(this.getFetterLevel())
+				.setExpNumber(this.getFetterExp());
 		
 		if (this.getFetterList() != null) {
 			for (int i = 0; i < this.getFetterList().size(); i++) {
