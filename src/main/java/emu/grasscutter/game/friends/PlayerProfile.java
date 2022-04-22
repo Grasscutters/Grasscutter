@@ -4,6 +4,7 @@ import dev.morphia.annotations.*;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.utils.Utils;
 
+@Entity
 public class PlayerProfile {
 	@Transient private GenshinPlayer player;
 	
