@@ -1,7 +1,9 @@
 package emu.grasscutter.game.avatar;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -39,9 +41,11 @@ import emu.grasscutter.game.inventory.EquipType;
 import emu.grasscutter.game.inventory.GenshinItem;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EntityIdType;
+import emu.grasscutter.game.props.FetterState;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo;
+import emu.grasscutter.net.proto.FetterDataOuterClass.FetterData;
 import emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo;
 import emu.grasscutter.server.packet.send.PacketAbilityChangeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarEquipChangeNotify;
@@ -73,6 +77,8 @@ public class GenshinAvatar {
 	@Transient private final Int2FloatOpenHashMap fightProp;
 	@Transient private Set<String> extraAbilityEmbryos;
 	
+	private List<Integer> fetters;
+
 	private Map<Integer, Integer> skillLevelMap; // Talent levels
 	private Map<Integer, Integer> proudSkillBonusMap; // Talent bonus levels (from const)
 	private int skillDepotId;
@@ -89,7 +95,8 @@ public class GenshinAvatar {
 		this.equips = new Int2ObjectOpenHashMap<>();
 		this.fightProp = new Int2FloatOpenHashMap();
 		this.extraAbilityEmbryos = new HashSet<>();
-		this.proudSkillBonusMap = new HashMap<>(); // TODO Move to genshin avatar
+		this.proudSkillBonusMap = new HashMap<>(); 
+		this.fetters = new ArrayList<>(); // TODO Move to genshin avatar
 	}
 	
 	// On creation
@@ -266,6 +273,14 @@ public class GenshinAvatar {
 		return extraAbilityEmbryos;
 	}
 
+	public void setFetterList(List<Integer> fetterList) {
+		this.fetters = fetterList;
+	}
+
+	public List<Integer> getFetterList() {
+		return fetters;
+	}
+
 	public float getCurrentHp() {
 		return currentHp;
 	}
@@ -385,6 +400,9 @@ public class GenshinAvatar {
 		// Extra ability embryos
 		Set<String> prevExtraAbilityEmbryos = this.getExtraAbilityEmbryos();
 		this.extraAbilityEmbryos = new HashSet<>();
+
+		// Fetters
+		this.setFetterList(data.getFetters());
 		
 		// Get hp percent, set to 100% if none
 		float hpPercent = this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) <= 0 ? 1f : this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) / this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
@@ -683,6 +701,20 @@ public class GenshinAvatar {
 	}
 	
 	public AvatarInfo toProto() {
+		AvatarFetterInfo.Builder avatarFetter = AvatarFetterInfo.newBuilder()
+				.setExpLevel(10)
+				.setExpNumber(6325); // Highest Level
+		
+		if (this.getFetterList() != null) {
+			for (int i = 0; i < this.getFetterList().size(); i++) {
+				avatarFetter.addFetterList(
+					FetterData.newBuilder()
+						.setFetterId(this.getFetterList().get(i))
+						.setFetterState(FetterState.FINISH.getValue())
+				);
+			}
+		}
+
 		AvatarInfo.Builder avatarInfo = AvatarInfo.newBuilder()
 				.setAvatarId(this.getAvatarId())
 				.setGuid(this.getGuid())
@@ -696,7 +728,7 @@ public class GenshinAvatar {
 				.putAllProudSkillExtraLevel(getProudSkillBonusMap())
 				.setAvatarType(1)
 				.setBornTime(this.getBornTime())
-				.setFetterInfo(AvatarFetterInfo.newBuilder().setExpLevel(1))
+				.setFetterInfo(avatarFetter)
 				.setWearingFlycloakId(this.getFlyCloak())
 				.setCostumeId(this.getCostume());
 		
