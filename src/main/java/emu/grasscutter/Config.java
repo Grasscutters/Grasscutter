@@ -27,6 +27,7 @@ public final class Config {
 		public String Ip = "0.0.0.0";
 		public String PublicIp = "127.0.0.1";
 		public int Port = 443;
+		public int PublicPort = 0;
 		public String KeystorePath = "./keystore.p12";
 		public String KeystorePassword = "";
 		public Boolean UseSSL = true;
