@@ -91,17 +91,16 @@ public final class GiveCommand implements CommandHandler {
 
         this.item(targetPlayer, itemData, amount);
 
-        CommandHandler.sendMessage(sender, String.format("Given %s of %s to %s.", amount, item, target));
+        if (!itemData.isEquip()) CommandHandler.sendMessage(sender, String.format("Given %s of %s to %s.", amount, item, target));
+        else CommandHandler.sendMessage(sender, String.format("Given %s with level %s to %s", item, amount, target));
     }
 
     private void item(GenshinPlayer player, ItemData itemData, int amount) {
         if (itemData.isEquip()) {
-            List<GenshinItem> items = new LinkedList<>();
-            for (int i = 0; i < amount; i++) {
-                items.add(new GenshinItem(itemData));
-            }
-            player.getInventory().addItems(items);
-            player.sendPacket(new PacketItemAddHintNotify(items, ActionReason.SubfieldDrop));
+            GenshinItem item = new GenshinItem(itemData);
+            item.setLevel(amount);
+            player.getInventory().addItem(item);
+            player.sendPacket(new PacketItemAddHintNotify(item, ActionReason.SubfieldDrop));
         } else {
             GenshinItem genshinItem = new GenshinItem(itemData);
             genshinItem.setCount(amount);
