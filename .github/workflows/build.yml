@@ -1,5 +1,8 @@
 name: "Build"
-on: "push"
+on:
+  push:
+    branches:
+      - "stable"
 jobs:
   Build-Server-Jar:
     runs-on: windows-latest
