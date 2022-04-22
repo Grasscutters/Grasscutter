@@ -12,6 +12,9 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 * Friends list
 * Co-op *partially* work
 # Quick setup guide
+### Note
+* If you update from an older version, delete `config.json` for regeneration
+
 ### Prerequisites
 * JDK-8u202 ([mirror link](https://mirrors.huaweicloud.com/java/jdk/8u202-b08/) since Oracle required an account to download old builds)
 * Mongodb (recommended 4.0+)
@@ -26,7 +29,7 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 ### Connecting with the client
 ½. Create an account using *server console command* below
 1. Run a proxy daemon: (choose either one)
-	- mitmdump: `mitmdump -s proxy.py --ssl-insecure`
+	- mitmdump: `mitmdump -s proxy.py -k`
 	- Fiddler Classic: Run Fiddler Classic, turn on `Decrypt https traffic` in setting and change the default port there (Tools -> Options -> Connections) to anything other than `8888`, and load [this script](https://github.lunatic.moe/fiddlerscript).
 	- [Hosts file](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
 2. Trust CA certificate:
@@ -37,36 +40,33 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 * or you can use `run.cmd` to start Server & Proxy daemon with one click
 
 # Grasscutter commands
-### Server console commands
+There is a dummy user named "Server" in every player's friends list that you can message to use commands. Commands also work in other chat rooms, such as private/team chats.
 
 `account create [username] {playerid}` - Creates an account with the specified username and the in-game uid for that account. The playerid parameter is optional and will be auto generated if not set.
 
-### In-Game commands
-There is a dummy user named "Server" in every player's friends list that you can message to use commands. Commands also work in other chat rooms, such as private/team chats.
+`spawn [monster id] [level] [amount]`
 
-`!spawn [monster id] [level] [amount]`
+`give [item id] [amount]`
 
-`!give [item id] [amount]`
+`givechar [avatar id] [level]`
 
-`!givechar [avatar id] [level]`
+`drop [item id] [amount]`
 
-`!drop [item id] [amount]`
+`killall`
 
-`!killall`
+`setworldlevel [level]` - Relog to see effects properly
 
-`!setworldlevel [level]` - Relog to see effects properly
+`godmode` - Prevents you from taking damage
 
-`!godmode` - Prevents you from taking damage
+`resetconst` - Resets the constellation level on your current active character, will need to relog after using the command to see any changes.
 
-`!resetconst` - Resets the constellation level on your current active character, will need to relog after using the command to see any changes.
+`setstats [stats] [amount]` - Changes the current character's specified stat.
 
-`!setstats [stats] [amount]` - Changes the current character's specified stat.
+`clearartifacts` - Deletes all unequipped and unlocked level 0 artifacts, **including yellow rarity ones** from your inventory
 
-`!clearartifacts` - Deletes all unequipped and unlocked level 0 artifacts, **including yellow rarity ones** from your inventory
+`pos` - Gets your current coordinate.
 
-`!pos` - Gets your current coordinate.
-
-`!weather [weather id] [climate id]` - Changes the current weather.
+`weather [weather id] [climate id]` - Changes the current weather.
 
 *More commands will be updated in the [wiki](https://github.com/Melledy/Grasscutter/wiki/).*
 
