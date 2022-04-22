@@ -164,13 +164,13 @@ public class TeamManager {
 	
 	public int getMaxTeamSize() {
 		if (getPlayer().isInMultiplayer()) {
-			int max = Grasscutter.getConfig().getServerOptions().MaxAvatarsInTeamMultiplayer;
+			int max = Grasscutter.getConfig().getGameServerOptions().MaxAvatarsInTeamMultiplayer;
 			if (getPlayer().getWorld().getHost() == this.getPlayer()) {
 				return Math.max(1, (int) Math.ceil(max / (double) getWorld().getPlayerCount()));
 			}
 			return Math.max(1, (int) Math.floor(max / (double) getWorld().getPlayerCount()));
 		}
-		return Grasscutter.getConfig().getServerOptions().MaxAvatarsInTeam;
+		return Grasscutter.getConfig().getGameServerOptions().MaxAvatarsInTeam;
 	}
 	
 	// Methods
