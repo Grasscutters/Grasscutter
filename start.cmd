@@ -11,11 +11,12 @@ call :LOG [INFO] To proper exit this console, use [Ctrl + C] and enter N not Y.
 call :LOG [INFO]
 call :LOG [INFO] Initializing...
 
-@rem TODO: MongoDB integration
 set JAVA_PATH=DO_NOT_CHECK_PATH
 set MITMDUMP_PATH=DO_NOT_CHECK_PATH
+set MONGODB_PATH=DO_NOT_CHECK_PATH
 
 set SERVER_JAR_PATH=%CUR_PATH%
+set DATABASE_STORAGE_PATH=%CUR_PATH%resources\Database
 
 set SERVER_JAR_NAME=grasscutter.jar
 set PROXY_SCRIPT_NAME=proxy
@@ -98,11 +99,35 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v Pr
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer /d "127.0.0.1:8080" /f >nul 2>nul
 
 :SERVER
+if not "%MONGODB_PATH%" == "DO_NOT_CHECK_PATH" (
+	if not exist "%MONGODB_PATH%mongod.exe" (
+		call :LOG [WARN] MongoDB daemon not found, server only mode.
+		goto :GAME
+	)
+) else set MONGODB_PATH=
+call :LOG [INFO] Starting MongoDB daemon...
+set DATABASE=true
+
+mkdir "%DATABASE_STORAGE_PATH%" >nul 2>nul
+
+echo set ws = createobject("wscript.shell") > "%temp%\db.vbs"
+echo ws.currentdirectory = "%MONGODB_PATH%" >> "%temp%\db.vbs"
+echo ws.run "cmd /c mongod.exe --dbpath "^&chr(34)^&"%DATABASE_STORAGE_PATH%"^&chr(34)^&"",0 >> "%temp%\db.vbs"
+"%temp%\db.vbs"
+del /f /q "%temp%\db.vbs" >nul 2>nul
+
+:GAME
 call :LOG [INFO] Starting server...
 "%JAVA_PATH%java.exe" -jar "%SERVER_PATH%grasscutter.jar"
 call :LOG [INFO] Server stopped
 
 :EXIT
+if "%DATABASE%" == "" (
+	call :LOG [INFO] MongoDB daemon not started, no need to clean up.
+) else (
+	call :LOG [INFO] Shutting down MongoDB daemon...
+	taskkill /t /f /im mongod.exe >nul 2>nul
+)
 if "%PROXY%" == "" (
 	call :LOG [INFO] Proxy daemon not started, no need to clean up.
 ) else (
