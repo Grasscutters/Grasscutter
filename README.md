@@ -62,7 +62,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 `setstats [stats] [amount]` - Changes the currently selected character's specified stat.
 
-`clearartifacts` - Deletes all unequipped and unlocked level 0 artifacts, **including 5* rarity ones** from your inventory
+`clearartifacts` - Deletes all unequipped and unlocked level 0 artifacts, **including 5-star rarity ones** from your inventory
 
 `pos` - Gets your current coordinates.
 
