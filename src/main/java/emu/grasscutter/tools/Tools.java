@@ -1,8 +1,11 @@
 package emu.grasscutter.tools;
 
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -30,7 +33,7 @@ public final class Tools {
 		ResourceLoader.loadResources();
 		
 		Map<Long, String> map;
-		try (FileReader fileReader = new FileReader(Utils.toFilePath(Grasscutter.getConfig().RESOURCE_FOLDER + "TextMap/TextMapEN.json"))) {
+		try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(Grasscutter.getConfig().RESOURCE_FOLDER + "TextMap/TextMapEN.json")), StandardCharsets.UTF_8)) {
 			map = Grasscutter.getGsonFactory().fromJson(fileReader, new TypeToken<Map<Long, String>>() {}.getType());
 		}
 		
