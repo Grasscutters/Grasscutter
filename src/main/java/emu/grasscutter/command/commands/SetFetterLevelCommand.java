@@ -4,8 +4,10 @@ import java.util.List;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.data.GenshinData;
 import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
 
 @Command(label = "setfetterlevel", usage = "setfetterlevel <level>",
         description = "Sets your fetter level for your current active character",
@@ -30,8 +32,13 @@ public final class SetFetterLevelCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, "Fetter level must be between 0 and 10.");
                 return;
             }
-            EntityAvatar avatar = sender.getTeamManager().getCurrentAvatarEntity();
-            avatar.getAvatar().setFetterLevel(fetterLevel);
+            GenshinAvatar avatar = sender.getTeamManager().getCurrentAvatarEntity().getAvatar();
+
+            avatar.setFetterLevel(fetterLevel);
+		    avatar.setFetterExp(GenshinData.getAvatarFetterLevelDataMap().get(fetterLevel).getExp());
+		    avatar.save();
+		
+		    sender.sendPacket(new PacketAvatarFetterDataNotify(avatar));
             CommandHandler.sendMessage(sender, "Fetter level set to " + fetterLevel);
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(null, "Invalid fetter level.");
