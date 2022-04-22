@@ -4,67 +4,90 @@
 
 @if "%DEBUG%" == "" echo off
 pushd %~dp0
+set CUR_PATH=%~dp0
 title Grasscutter
-call :LOG [INFO] Grasscutter
+call :LOG [INFO] Welcome to Grasscutter
+call :LOG [INFO] To proper exit this console, use [Ctrl + C] and enter N not Y.
+call :LOG [INFO]
 call :LOG [INFO] Initializing...
 
-@rem This will not work if your java or mitmproxy is in a different location, plugin as necessary
-@rem this just saves you from changing your PATH
-set JAVA_PATH=C:\Program Files\Java\jdk1.8.0_202\
-set MITMPROXY_PATH=%~dp0
-set PROXY_SCRIPT=proxy
 @rem TODO: MongoDB integration
-set SERVER_PATH=%~dp0
+set JAVA_PATH=DO_NOT_CHECK_PATH
+set MITMDUMP_PATH=DO_NOT_CHECK_PATH
+
+set SERVER_JAR_PATH=%CUR_PATH%
+
+set SERVER_JAR_NAME=grasscutter.jar
+set PROXY_SCRIPT_NAME=proxy
+
+if not "%JAVA_PATH%" == "DO_NOT_CHECK_PATH" (
+	if not exist "%JAVA_PATH%java.exe" (
+		call :LOG [ERROR] Java not found.
+		goto :EXIT
+	)
+) else set JAVA_PATH=
+if not exist "%SERVER_PATH%grasscutter.jar" (
+	call :LOG [ERROR] Server jar not found.
+	goto :EXIT
+)
 
 @rem mitmproxy not found, server only
-if not exist "%MITMPROXY_PATH%mitmdump.exe" (
-	call :LOG [WARN] mitmproxy not found, server only mode.
-	goto :SERVER
-)
+if not "%MITMDUMP_PATH%" == "DO_NOT_CHECK_PATH" (
+	if not exist "%MITMDUMP_PATH%mitmdump.exe" (
+		call :LOG [WARN] mitmdump not found, server only mode.
+		goto :SERVER
+	)
+) else set MITMDUMP_PATH=
 @rem proxy script not found, server only
-if not exist "%PROXY_SCRIPT%.py" (
-	if not exist "%PROXY_SCRIPT%.pyc" (
+if not exist "%PROXY_SCRIPT_NAME%.py" (
+	if not exist "%PROXY_SCRIPT_NAME%.pyc" (
 		call :LOG [WARN] Missing proxy script or compiled proxy script, server only mode.
 		goto :SERVER
-	) else set PROXY_SCRIPT=%PROXY_SCRIPT%.pyc
-) else set PROXY_SCRIPT=%PROXY_SCRIPT%.py
+	) else set PROXY_SCRIPT_NAME=%PROXY_SCRIPT_NAME%.pyc
+) else set PROXY_SCRIPT_NAME=%PROXY_SCRIPT_NAME%.py
 
 :PROXY
 @rem UAC Administrator privileges
 >nul 2>&1 reg query "HKU\S-1-5-19" || (
 	call :LOG [WARN] Currently running with non Administrator privileges, raising...
 	echo set UAC = CreateObject^("Shell.Application"^) > "%temp%\UAC.vbs"
-	echo UAC.ShellExecute "%~f0", "%1", "", "runas", 1 >> "%temp%\UAC.vbs"
+	echo UAC.ShellExecute "%~f0","%1","","runas",1 >> "%temp%\UAC.vbs"
 	"%temp%\UAC.vbs"
 	del /f /q "%temp%\UAC.vbs" >nul 2>nul
 	exit /b
 )
 
+call :LOG [INFO] Starting proxy daemon...
+
 set PROXY=true
+
 @rem Store original proxy settings
 for /f "tokens=2*" %%a in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable 2^>nul') do set "ORIG_PROXY_ENABLE=%%b"
 for /f "tokens=2*" %%a in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer 2^>nul') do set "ORIG_PROXY_SERVER=%%b"
 
-call :LOG [INFO] Starting proxy daemon...
 @rem TODO: External proxy when ORIG_PROXY_ENABLE == 0x1
-start /min "" "%MITMPROXY_PATH%mitmdump.exe" -s %PROXY_SCRIPT% --ssl-insecure
+echo set ws = createobject("wscript.shell") > "%temp%\proxy.vbs"
+echo ws.currentdirectory = "%MITMDUMP_PATH%" >> "%temp%\proxy.vbs"
+echo ws.run "cmd /c mitmdump.exe -s "^&chr(34)^&"%PROXY_SCRIPT_NAME%"^&chr(34)^&" -k",0 >> "%temp%\proxy.vbs"
+"%temp%\proxy.vbs"
+del /f /q "%temp%\proxy.vbs" >nul 2>nul
 
-@rem CA certificate for possible HTTPS scheme
+@rem CA certificate for HTTPS scheme
 call :LOG [INFO] Waiting for CA certificate generation...
 set CA_CERT_FILE="%USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer"
 
-set /A TIMEOUT_COUNT=0
+set /a TIMEOUT_COUNT=0
 
 :CERT_CA_CHECK
 if not exist %CA_CERT_FILE% (
-	timeout /T 1 >nul 2>nul
-	set /A TIMEOUT_COUNT+=1
+	timeout /t 1 >nul 2>nul
+	set /a TIMEOUT_COUNT+=1
 	goto CERT_CA_CHECK
 )
 :EXTRA_TIMEOUT
 if %TIMEOUT_COUNT% LEQ 2 (
-	timeout /T 1 >nul 2>nul
-	set /A TIMEOUT_COUNT+=1
+	timeout /t 1 >nul 2>nul
+	set /a TIMEOUT_COUNT+=1
 	goto EXTRA_TIMEOUT
 )
 call :LOG [INFO] Adding CA certificate to store...
@@ -75,21 +98,13 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v Pr
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer /d "127.0.0.1:8080" /f >nul 2>nul
 
 :SERVER
-if not exist "%JAVA_PATH%bin\java.exe" (
-	call :LOG [ERROR] Java not found.
-	goto :EXIT
-)
-if not exist "%SERVER_PATH%grasscutter.jar" (
-	call :LOG [ERROR] Server jar not found.
-	goto :EXIT
-)
 call :LOG [INFO] Starting server...
-"%JAVA_PATH%bin\java.exe" -jar "%SERVER_PATH%grasscutter.jar"
+"%JAVA_PATH%java.exe" -jar "%SERVER_PATH%grasscutter.jar"
 call :LOG [INFO] Server stopped
 
 :EXIT
 if "%PROXY%" == "" (
-	call :LOG [INFO] Proxy not started, no need to clean up.
+	call :LOG [INFO] Proxy daemon not started, no need to clean up.
 ) else (
 	call :LOG [INFO] Restoring network settings...
 
@@ -100,7 +115,6 @@ if "%PROXY%" == "" (
 	taskkill /t /f /im mitmdump.exe >nul 2>nul
 
 	call :LOG [INFO] Removing CA certificate...
-
 	for /F "tokens=2" %%s in ('certutil -dump %CA_CERT_FILE% ^| findstr ^"^sha1^"') do (
 		set SERIAL=%%s
 	)
