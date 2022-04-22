@@ -713,7 +713,7 @@ public class InventoryManager {
 
 	public void upgradeAvatarFetterLevel(GenshinPlayer player, GenshinAvatar avatar, int expGain) {
 		// May work. Not test.
-		int maxLevel = GenshinData.getAvatarFetterLevelDataMap().get(GenshinData.getAvatarFetterLevelDataMap().size() - 1).getLevel();
+		int maxLevel = 10; // Keep it until I think of a more "elegant" way
 		int level = avatar.getFetterLevel();
 		int exp = avatar.getFetterExp();
 		int reqExp = GenshinData.getAvatarFetterLevelExpRequired(level);
