@@ -57,6 +57,7 @@ public class AvatarData extends GenshinResource {
     private IntList abilities;
 
     private List<Integer> fetters;
+    private int nameCardRewardId;
     
 	@Override
 	public int getId(){
@@ -199,12 +200,20 @@ public class AvatarData extends GenshinResource {
         return fetters;
     }
 
+    public int getNameCardRewardId() {
+        return nameCardRewardId;
+    }
+
 	@Override
 	public void onLoad() {
     	this.skillDepot = GenshinData.getAvatarSkillDepotDataMap().get(this.SkillDepotId);
 
         // Get fetters from GenshinData
         this.fetters = GenshinData.getFetterDataEntries().get(this.Id);
+        
+        if (GenshinData.getFetterCharacterCardDataMap().get(this.Id) != null) {
+            this.nameCardRewardId = GenshinData.getFetterCharacterCardDataMap().get(this.Id).getRewardId();
+        }
     	
     	int size = GenshinData.getAvatarCurveDataMap().size();
     	this.hpGrowthCurve = new float[size];
