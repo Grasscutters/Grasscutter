@@ -3,10 +3,12 @@ package emu.grasscutter.game;
 import java.util.ArrayList;
 import java.util.List;
 
+import dev.morphia.annotations.Entity;
 import emu.grasscutter.GenshinConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 
+@Entity
 public class TeamInfo {
 	private String name;
 	private List<Integer> avatars;
