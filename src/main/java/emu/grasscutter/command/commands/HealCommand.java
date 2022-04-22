@@ -11,9 +11,9 @@ import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 
 import java.util.List;
 
-@Command(label = "fullhp", usage = "fullhp|fhp",
-        description = "Recover all characters in your current team to full health.", aliases = {"fhp"}, permission = "player.fullhp")
-public class FullHpCommand implements CommandHandler {
+@Command(label = "heal", usage = "heal|h",
+        description = "Heal all characters in your current team.", aliases = {"h"}, permission = "player.heal")
+public class HealCommand implements CommandHandler {
     @Override
     public void execute(GenshinPlayer sender, List<String> args) {
         if (sender == null) {
@@ -31,6 +31,6 @@ public class FullHpCommand implements CommandHandler {
                 entity.getWorld().broadcastPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
             }
         });
-        CommandHandler.sendMessage(sender, "All hp recover to full.");
+        CommandHandler.sendMessage(sender, "All characters are healed.");
     }
 }
