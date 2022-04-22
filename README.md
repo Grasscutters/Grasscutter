@@ -10,20 +10,20 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 * Inventory features (recieving items/characters, upgrading items/characters, etc)
 * Gacha system
 * Friends list
-* Co-op *partially* work
+* Co-op *partially* works
 # Quick setup guide
 ### Note
-* If you update from an older version, delete `config.json` for regeneration
+* If you updated from an older version, delete `config.json` to regenerate it.
 
 ### Prerequisites
-* JDK-8u202 ([mirror link](https://mirrors.huaweicloud.com/java/jdk/8u202-b08/) since Oracle required an account to download old builds)
+* JDK-8u202 ([mirror link](https://mirrors.huaweicloud.com/java/jdk/8u202-b08/) since Oracle requires an account to download old builds)
 * Mongodb (recommended 4.0+)
 * Proxy daemon: mitmproxy (mitmdump, recommended), Fiddler Classic, etc.
 
 ### Starting up Grasscutter server (Assuming you are on Windows)
-1. Setup compile environment `gradlew.bat`
+1. Setup the compile environment with `gradlew.bat`
 2. Compile Grasscutter with `gradlew jar`
-3. Create a folder named `resources` in your Grasscutter directory, bring your `BinOutput` and `ExcelBinOutput` folders into it *(Check the wiki for more details how to get those.)*
+3. Create a folder named `resources` in your Grasscutter directory, move your `BinOutput` and `ExcelBinOutput` folders there *(Check the wiki for more details on how to get those.)*
 4. Run Grasscutter with `java -jar grasscutter.jar`. Make sure mongodb service is running as well.
 
 ### Connecting with the client
@@ -37,7 +37,7 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
 4. *yoink*
 
-* or you can use `run.cmd` to start Server & Proxy daemon with one click
+* or you can use `run.cmd` to start the Server & Proxy daemon with one click
 
 # Grasscutter commands
 There is a dummy user named "Server" in every player's friends list that you can message to use commands. Commands also work in other chat rooms, such as private/team chats.
@@ -54,26 +54,26 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 `killall`
 
-`setworldlevel [level]` - Relog to see effects properly
+`setworldlevel [level]` - Changes your world level, relog to see effects properly
 
 `godmode` - Prevents you from taking damage
 
-`resetconst` - Resets the constellation level on your current active character, will need to relog after using the command to see any changes.
+`resetconst` - Resets the constellation level on your currently selected character, will need to relog after using the command to see any changes.
 
-`setstats [stats] [amount]` - Changes the current character's specified stat.
+`setstats [stats] [amount]` - Changes the currently selected character's specified stat.
 
-`clearartifacts` - Deletes all unequipped and unlocked level 0 artifacts, **including yellow rarity ones** from your inventory
+`clearartifacts` - Deletes all unequipped and unlocked level 0 artifacts, **including 5* rarity ones** from your inventory
 
-`pos` - Gets your current coordinate.
+`pos` - Gets your current coordinates.
 
 `weather [weather id] [climate id]` - Changes the current weather.
 
 *More commands will be updated in the [wiki](https://github.com/Melledy/Grasscutter/wiki/).*
 
 ### Bonus
-When you want to teleport to somewhere, use the ingame marking function on Map, click Confirm. You will see your character falling from a very high destination, exact location that you marked.
+When you want to teleport somewhere, use the in-game marking function on the Map, click Confirm. You will see your character falling from a very high spot at the exact location you marked.
 
 # Quick Troubleshooting
 * If compiling wasn't successful, please check your JDK installation (must be JDK 8 and validated JDK's bin PATH variable)
-* My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*, if using Fiddler make sure it running on another port except 8888
+* My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*, if you're using Fiddler make sure it's running on a port other than 8888
 * Startup sequence: Mongodb > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Client
