@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message HostPlayerNotify {
-	uint32 hostUid = 1;
-	uint32 hostPeerId = 2;
-}

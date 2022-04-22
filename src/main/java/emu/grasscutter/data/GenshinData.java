@@ -1,13 +1,16 @@
 package emu.grasscutter.data;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.data.custom.AbilityEmbryoEntry;
 import emu.grasscutter.data.custom.OpenConfigEntry;
+import emu.grasscutter.data.custom.ScenePointEntry;
 import emu.grasscutter.data.def.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -18,6 +21,7 @@ public class GenshinData {
 	private static final Int2ObjectMap<String> abilityHashes = new Int2ObjectOpenHashMap<>();
 	private static final Map<String, AbilityEmbryoEntry> abilityEmbryos = new HashMap<>();
 	private static final Map<String, OpenConfigEntry> openConfigEntries = new HashMap<>();
+	private static final Map<String, ScenePointEntry> scenePointEntries = new HashMap<>();
 	
 	// ExcelConfigs
 	private static final Int2ObjectMap<PlayerLevelData> playerLevelDataMap = new Int2ObjectOpenHashMap<>();
@@ -52,6 +56,10 @@ public class GenshinData {
 	private static final Int2ObjectMap<AvatarCostumeData> avatarCostumeDataItemIdMap = new Int2ObjectLinkedOpenHashMap<>();
 	
 	private static final Int2ObjectMap<SceneData> sceneDataMap = new Int2ObjectLinkedOpenHashMap<>();
+	private static final Int2ObjectMap<FetterData> fetterDataMap = new Int2ObjectOpenHashMap<>();
+
+	// Cache
+	private static Map<Integer, List<Integer>> fetters = new HashMap<>();
 	
 	public static Int2ObjectMap<?> getMapByResourceDef(Class<?> resourceDefinition) {
 		Int2ObjectMap<?> map = null;
@@ -80,6 +88,10 @@ public class GenshinData {
 
 	public static Map<String, OpenConfigEntry> getOpenConfigEntries() {
 		return openConfigEntries;
+	}
+
+	public static Map<String, ScenePointEntry> getScenePointEntries() {
+		return scenePointEntries;
 	}
 
 	public static Int2ObjectMap<AvatarData> getAvatarDataMap() {
@@ -214,5 +226,18 @@ public class GenshinData {
 
 	public static Int2ObjectMap<SceneData> getSceneDataMap() {
 		return sceneDataMap;
+	}
+
+	public static Map<Integer, List<Integer>> getFetterDataEntries() {
+		if (fetters.isEmpty()) {
+			fetterDataMap.forEach((k, v) -> {
+				if (!fetters.containsKey(v.getAvatarId())) {
+					fetters.put(v.getAvatarId(), new ArrayList<>());
+				}
+				fetters.get(v.getAvatarId()).add(k);
+			});
+		}
+
+		return fetters;
 	}
 }

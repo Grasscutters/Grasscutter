@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-import "SceneUnlockInfo.proto";
-
-message SceneUnlockInfoNotify {
-	repeated SceneUnlockInfo unlockInfos = 1;
-}

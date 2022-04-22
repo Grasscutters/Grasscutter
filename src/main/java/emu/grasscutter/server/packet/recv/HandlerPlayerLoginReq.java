@@ -30,7 +30,7 @@ public class HandlerPlayerLoginReq extends PacketHandler {
 		}
 		
 		// Load character from db
-		GenshinPlayer player = DatabaseHelper.getPlayerById(session.getAccount().getPlayerId());
+		GenshinPlayer player = DatabaseHelper.getPlayerById(session.getAccount().getPlayerUid());
 		
 		if (player == null) {
 			// Send packets
