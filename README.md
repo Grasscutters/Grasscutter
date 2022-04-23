@@ -16,7 +16,7 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 * If you update from an older version, delete `config.json` for regeneration
 
 ### Prerequisites
-* JDK-8u202 ([mirror link](https://mirrors.huaweicloud.com/java/jdk/8u202-b08/) since Oracle required an account to download old builds)
+* Java 16
 * Mongodb (recommended 4.0+)
 * Proxy daemon: mitmproxy (mitmdump, recommended), Fiddler Classic, etc.
 
