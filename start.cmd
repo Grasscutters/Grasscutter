@@ -74,7 +74,7 @@ for /f "tokens=2*" %%a in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVe
 
 @rem TODO: External proxy when ORIG_PROXY_ENABLE == 0x1
 echo set ws = createobject("wscript.shell") > "%temp%\proxy.vbs"
-echo ws.run "cmd /c %MITMDUMP_PATH%mitmdump.exe -s "^&chr(34)^&"%PROXY_SCRIPT_NAME%"^&chr(34)^&" -k",0 >> "%temp%\proxy.vbs"
+echo ws.run "cmd /c "^&chr(34)^&chr(34)^&"%MITMDUMP_PATH%mitmdump.exe"^&chr(34)^&" -s "^&chr(34)^&"%PROXY_SCRIPT_NAME%"^&chr(34)^&" -k"^&chr(34),0 >> "%temp%\proxy.vbs"
 "%temp%\proxy.vbs"
 del /f /q "%temp%\proxy.vbs" >nul 2>nul
 
