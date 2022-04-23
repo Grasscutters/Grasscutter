@@ -46,7 +46,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 `spawn [monster id] [level] [amount]`
 
-`give [item id] [amount]`
+`give [item id] [amount] [level]`
 
 `givechar [avatar id] [level]`
 
