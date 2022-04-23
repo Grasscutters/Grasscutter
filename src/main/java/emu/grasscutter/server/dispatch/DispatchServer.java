@@ -18,6 +18,8 @@ import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.server.dispatch.json.*;
 import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
+import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
+import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 
@@ -189,24 +191,32 @@ public final class DispatchServer {
 		
 		// Dispatch
 		server.createContext("/query_region_list", t -> {
-			// Log
+			// Log incoming request.
 			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s request: query_region_list", t.getRemoteAddress()));
-
-			responseHTML(t, regionListBase64);
+			
+			// Invoke event.
+			QueryAllRegionsEvent event = new QueryAllRegionsEvent(this.regionListBase64); event.call();
+			// Respond with event result.
+			responseHTML(t, event.getRegionList());
 		});
 
 		for (String regionName : regions.keySet()) {
 			server.createContext("/query_cur_region_" + regionName, t -> {
 				String regionCurrentBase64 = regions.get(regionName).Base64;
-				// Log
+				// Log incoming request.
 				Grasscutter.getLogger().info(String.format("Client %s request: query_cur_region_%s", t.getRemoteAddress(), regionName));
-				// Create a response form the request query parameters
+				
+				// Create a response from the request query parameters.
 				URI uri = t.getRequestURI();
 				String response = "CAESGE5vdCBGb3VuZCB2ZXJzaW9uIGNvbmZpZw==";
 				if (uri.getQuery() != null && uri.getQuery().length() > 0) {
 					response = regionCurrentBase64;
 				}
-				responseHTML(t, response);
+				
+				// Invoke event.
+				QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(response); event.call();
+				// Respond with event result.
+				responseHTML(t, event.getRegionInfo());
 			});
 		}
 
