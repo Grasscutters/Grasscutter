@@ -118,6 +118,7 @@ public final class Grasscutter {
 	
 	public static void startConsole() {
 		String input;
+		getLogger().info("Done! For help, type \"help\"");
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
 			while ((input = br.readLine()) != null) {
 				try {
