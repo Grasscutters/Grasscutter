@@ -8,7 +8,6 @@ import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
 
 import emu.grasscutter.command.CommandMap;
-import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
@@ -36,7 +35,6 @@ public final class Grasscutter {
 	private static GameServer gameServer;
 	
 	public static final Reflections reflector = new Reflections();
-	public static final PluginManager pluginManager;
 	
 	static {
 		// Declare logback configuration.
@@ -47,9 +45,6 @@ public final class Grasscutter {
 		
 		// Check server structure.
 		Utils.startupCheck();
-		
-		// Call plugin manager.
-		pluginManager = new PluginManager();
 	}
 	
     public static void main(String[] args) throws Exception {
@@ -96,6 +91,8 @@ public final class Grasscutter {
 			getLogger().error("Shutting down...");
 			System.exit(1);
 		}
+
+
 		
 		// Open console.
 		startConsole();
@@ -163,9 +160,5 @@ public final class Grasscutter {
 
 	public static GameServer getGameServer() {
 		return gameServer;
-	}
-	
-	public static PluginManager getPluginManager() {
-		return pluginManager;
 	}
 }
