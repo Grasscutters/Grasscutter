@@ -36,13 +36,14 @@ public class HandlerAvatarFetterLevelRewardReq extends PacketHandler {
 
             if (session.getPlayer().getNameCardList().contains(cardId)) {
                 // Already got divorce certificate.
-                session.send(new PacketAvatarFetterLevelRewardRsp(req.getAvatarGuid(), req.getFetterLevel()));
+                session.getPlayer().sendPacket(new PacketAvatarFetterLevelRewardRsp(req.getAvatarGuid(), req.getFetterLevel()));
                 return;
             }
 
             GenshinItem item = new GenshinItem(cardId);
+            session.getPlayer().getInventory().addItem(item);
             session.getPlayer().sendPacket(new PacketItemAddHintNotify(item, ActionReason.FetterLevelReward));
-            session.send(new PacketUnlockNameCardNotify(cardId));
+            session.getPlayer().sendPacket(new PacketUnlockNameCardNotify(cardId));
             session.send(new PacketAvatarFetterLevelRewardRsp(avatarGuid, req.getFetterLevel(), rewardId));
         }
 	}
