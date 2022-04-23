@@ -24,9 +24,36 @@ public class TelePortCommand implements CommandHandler {
         }
 
         try {
-            float x = Float.parseFloat(args.get(0));
-            float y = Float.parseFloat(args.get(1));
-            float z = Float.parseFloat(args.get(2));
+            float x = 0f;
+            float y = 0f;
+            float z = 0f;
+            if (args.get(0).contains("~")) {
+                if (args.get(0).equals("~")) {
+                    x = sender.getPos().getX();
+                } else {
+                    x = Float.parseFloat(args.get(0).replace("~", "")) + sender.getPos().getX();
+                }
+            } else {
+                x = Float.parseFloat(args.get(0));
+            }
+            if (args.get(1).contains("~")) {
+                if (args.get(1).equals("~")) {
+                    y = sender.getPos().getY();
+                } else {
+                    y = Float.parseFloat(args.get(1).replace("~", "")) + sender.getPos().getY();
+                }
+            } else {
+                y = Float.parseFloat(args.get(1));
+            }
+            if (args.get(2).contains("~")) {
+                if (args.get(2).equals("~")) {
+                    z = sender.getPos().getZ();
+                } else {
+                    z = Float.parseFloat(args.get(2).replace("~", "")) + sender.getPos().getZ();
+                }
+            } else {
+                z = Float.parseFloat(args.get(2));
+            }
             int sceneId = sender.getSceneId();
             if (args.size() == 4){
                 sceneId = Integer.parseInt(args.get(3));
