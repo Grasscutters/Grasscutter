@@ -433,6 +433,7 @@ public class GenshinAvatar {
 
 		// Fetters
 		this.setFetterList(data.getFetters());
+		this.setNameCardRewardId(data.getNameCardRewardId());
 		
 		// Get hp percent, set to 100% if none
 		float hpPercent = this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) <= 0 ? 1f : this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) / this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
