@@ -29,7 +29,7 @@ public final class Config {
 		public int Port = 443;
 		public int PublicPort = 0;
 		public String KeystorePath = "./keystore.p12";
-		public String KeystorePassword = "";
+		public String KeystorePassword = "123456";
 		public Boolean UseSSL = true;
 		public Boolean FrontHTTPS = true;
 
