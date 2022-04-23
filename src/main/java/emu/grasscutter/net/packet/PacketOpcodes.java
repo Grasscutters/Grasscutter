@@ -1034,6 +1034,8 @@ public class PacketOpcodes {
     public static final int ShowTemplateReminderNotify = 3164;
     public static final int SignInInfoReq = 2510;
     public static final int SignInInfoRsp = 2515;
+    public static final int SitReq = 354;
+    public static final int SitRsp = 335;
     public static final int SocialDataNotify = 4063;
     public static final int SpringUseReq = 1720;
     public static final int SpringUseRsp = 1727;
@@ -1208,5 +1210,4 @@ public class PacketOpcodes {
     public static final int WorldRoutineChangeNotify = 3548;
     public static final int WorldRoutineTypeCloseNotify = 3513;
     public static final int WorldRoutineTypeRefreshNotify = 3545;
-
 }
