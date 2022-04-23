@@ -8,9 +8,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SceneEntityDrownReqOuterClass.SceneEntityDrownReq;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketAvatarChangeCostumeRsp;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
-import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityDrownRsp;
 
 @Opcodes(PacketOpcodes.SceneEntityDrownReq)
