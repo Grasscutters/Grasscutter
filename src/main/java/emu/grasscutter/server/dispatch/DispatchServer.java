@@ -345,7 +345,18 @@ public final class DispatchServer {
 					.info(String.format("[Dispatch] Client %s is trying to log in", t.getRemoteAddress()));
 
 			// Login
-			Account account = DatabaseHelper.getAccountByOneTimeToken(requestData.account);//getAccountByName(requestData.account);
+			Account account = null; //getAccountByName(requestData.account);
+			if(Grasscutter.getConfig().getDispatchOptions().useAuth){
+				account = DatabaseHelper.getAccountByOneTimeToken(requestData.account);
+				if(account == null) {
+					responseData.retcode = -201;
+					responseData.message = "Account not found";
+					responseJSON(t, responseData);
+				}
+				;
+			}else{
+				account = DatabaseHelper.getAccountByName(requestData.account);
+			}
 
 			// Check if account exists, else create a new one.
 			if (account == null) {
