@@ -7,22 +7,18 @@ import emu.grasscutter.server.game.GameServer;
  * The base class for all plugins to extend.
  */
 public abstract class Plugin {
-    private final PluginIdentifier identifier;
+    private PluginIdentifier identifier;
 
     /**
-     * Empty constructor for developers.
-     * Should not be called by users.
-     */
-    public Plugin() {
-        this(new PluginIdentifier("", "", "", new String[]{}));
-    }
-    
-    /**
-     * Constructor for plugins.
+     * This method is reflected into.
+     * 
+     * Set plugin variables.
      * @param identifier The plugin's identifier.
      */
-    public Plugin(PluginIdentifier identifier) {
-        this.identifier = identifier;
+    private void initializePlugin(PluginIdentifier identifier) {
+        if(this.identifier == null)
+            this.identifier = identifier;
+        else Grasscutter.getLogger().warn(this.identifier.name + " had a reinitialization attempt.");
     }
 
     /**
