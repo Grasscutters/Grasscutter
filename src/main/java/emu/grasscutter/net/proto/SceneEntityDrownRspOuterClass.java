@@ -42,7 +42,7 @@ public final class SceneEntityDrownRspOuterClass {
     private SceneEntityDrownRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SceneEntityDrownRsp() {
+    public SceneEntityDrownRsp() {
     }
 
     @java.lang.Override
