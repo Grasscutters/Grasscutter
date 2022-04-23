@@ -3,9 +3,14 @@ on:
   push:
     branches:
       - "stable"
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
 jobs:
   Build-Server-Jar:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -15,10 +20,9 @@ jobs:
           distribution: temurin
           java-version: '8'
       - name: Run Gradle
-        run: .\gradlew.bat && .\gradlew jar
+        run: ./gradlew && ./gradlew jar
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
           name: Grasscutter
           path: grasscutter.jar
-      
