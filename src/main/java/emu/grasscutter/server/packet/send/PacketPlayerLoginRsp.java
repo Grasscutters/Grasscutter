@@ -41,7 +41,7 @@ public class PacketPlayerLoginRsp extends GenshinPacket {
 
 					RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
 							.setIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getGameServerOptions().Ip : Grasscutter.getConfig().getGameServerOptions().PublicIp))
-							.setPort(Grasscutter.getConfig().getGameServerOptions().Port)
+							.setPort(Grasscutter.getConfig().getGameServerOptions().PublicPort != 0 ? Grasscutter.getConfig().getGameServerOptions().PublicPort : Grasscutter.getConfig().getGameServerOptions().Port)
 							.setSecretKey(ByteString.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
 							.build();
 
