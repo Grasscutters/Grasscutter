@@ -16,7 +16,5 @@ public class PacketSetPlayerBirthdayRsp extends GenshinPacket {
                 .build();
 
         this.setData(proto);
-
-        if(Grasscutter.getConfig().DebugMode == true) Grasscutter.getLogger().info("Sending packet");
     }
 }
