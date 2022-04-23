@@ -38,6 +38,8 @@ dependencies {
 
     implementation group: 'org.greenrobot', name: 'eventbus-java', version: '3.3.1'
     implementation group: 'org.danilopianini', name: 'java-quadtree', version: '0.1.9'
+    implementation 'de.mkammerer:argon2-jvm:2.11'
+
 }
 
 application {

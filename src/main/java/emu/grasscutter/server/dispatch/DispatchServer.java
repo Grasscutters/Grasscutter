@@ -1,5 +1,4 @@
 package emu.grasscutter.server.dispatch;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.protobuf.ByteString;
@@ -8,6 +7,8 @@ import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.HttpsConfigurator;
 import com.sun.net.httpserver.HttpsServer;
 
+import de.mkammerer.argon2.Argon2;
+import de.mkammerer.argon2.Argon2Factory;
 import emu.grasscutter.Config;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
@@ -262,6 +263,38 @@ public final class DispatchServer {
 
 		server.createContext("/", t -> responseHTML(t, "Hello"));
 
+		server.createContext("/grasscutter/login", t -> {
+			try {
+				String requestBody = Utils.toString(t.getRequestBody());
+				LoginGenerateToken loginGenerateToken = new Gson().fromJson(requestBody, LoginGenerateToken.class);
+				Grasscutter.getLogger().info("[Dispatch] Received login request from " + loginGenerateToken.toString());
+				Account account = DatabaseHelper.getAccountByUsernameAndPassword(loginGenerateToken.username, loginGenerateToken.password);
+				if (account != null) {
+					account.generateOneTimeToken();
+					responseHTML(t, account.getOneTimeToken());
+				}
+			}catch (Exception ignore) {}
+		});
+
+		server.createContext("/grasscutter/register", t -> {
+			try {
+				String requestBody = Utils.toString(t.getRequestBody());
+				Grasscutter.getLogger().info(requestBody);
+				RegisterAccount registerAccount = new Gson().fromJson(requestBody, RegisterAccount.class);
+				if (registerAccount != null) {
+					Grasscutter.getLogger().info(registerAccount.toString());
+					String password = Utils.argon2.hash(10, 65536, 1, registerAccount.password.toCharArray());
+					Grasscutter.getLogger().info(password);
+					Account account = DatabaseHelper.createAccountWithPassword(registerAccount.username, password);
+					if (account != null) {
+						account.generateOneTimeToken();
+						responseHTML(t, account.getOneTimeToken());
+					}
+				}
+			}catch (Exception ignore) {
+			}
+		});
+
 		// Dispatch
 		server.createContext("/query_region_list", t -> {
 			// Log
@@ -297,6 +330,7 @@ public final class DispatchServer {
 			LoginAccountRequestJson requestData = null;
 			try {
 				String body = Utils.toString(t.getRequestBody());
+				Grasscutter.getLogger().info(body);
 				requestData = getGsonFactory().fromJson(body, LoginAccountRequestJson.class);
 			} catch (Exception ignored) {
 			}
@@ -311,7 +345,7 @@ public final class DispatchServer {
 					.info(String.format("[Dispatch] Client %s is trying to log in", t.getRemoteAddress()));
 
 			// Login
-			Account account = DatabaseHelper.getAccountByName(requestData.account);
+			Account account = DatabaseHelper.getAccountByOneTimeToken(requestData.account);//getAccountByName(requestData.account);
 
 			// Check if account exists, else create a new one.
 			if (account == null) {

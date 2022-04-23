@@ -1,8 +1,8 @@
 package emu.grasscutter.database;
 
 import java.util.List;
-
 import com.mongodb.client.result.DeleteResult;
+import de.mkammerer.argon2.Argon2;
 import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.GenshinConstants;
 import emu.grasscutter.game.Account;
@@ -10,6 +10,7 @@ import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.utils.Utils;
 
 public final class DatabaseHelper {
 	public static Account createAccount(String username) {
@@ -63,6 +64,22 @@ public final class DatabaseHelper {
 		account.setPassword(password);
 		DatabaseHelper.saveAccount(account);
 		return account;
+	}
+
+	public static Account getAccountByUsernameAndPassword(String username, String password) {
+		Account account = DatabaseHelper.getAccountByName(username);
+		if (account == null) {
+			return null;
+		}
+
+		if (Utils.argon2.verify(account.getPassword(), password.toCharArray())) {
+			return account;
+		}
+		return null;
+	}
+
+	public static Account getAccountByOneTimeToken(String token) {
+		return DatabaseManager.getDatastore().find(Account.class).filter(Filters.eq("oneTimeToken", token)).first();
 	}
 
 	public static void saveAccount(Account account) {

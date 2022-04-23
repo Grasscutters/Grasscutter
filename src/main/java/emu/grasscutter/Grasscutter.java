@@ -7,6 +7,8 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
 
+import de.mkammerer.argon2.Argon2;
+import de.mkammerer.argon2.Argon2Factory;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.utils.Utils;
@@ -51,7 +53,6 @@ public final class Grasscutter {
 	
     public static void main(String[] args) throws Exception {
     	Crypto.loadKeys();
-    	
 		for (String arg : args) {
 			switch (arg.toLowerCase()) {
 				case "-auth" -> MODE = RunMode.AUTH;

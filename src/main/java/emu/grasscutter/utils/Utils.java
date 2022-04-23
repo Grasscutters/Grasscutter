@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.Random;
 
+import de.mkammerer.argon2.Argon2;
+import de.mkammerer.argon2.Argon2Factory;
 import emu.grasscutter.Config;
 import emu.grasscutter.Grasscutter;
 import io.netty.buffer.ByteBuf;
@@ -41,7 +43,9 @@ public final class Utils {
 	public static int getCurrentSeconds() {
 		return (int) (System.currentTimeMillis() / 1000.0);
 	}
-	
+
+	public static Argon2 argon2 = Argon2Factory.create();
+
 	public static String lowerCaseFirstChar(String s) {
 		StringBuilder sb = new StringBuilder(s);
 		sb.setCharAt(0, Character.toLowerCase(sb.charAt(0)));
