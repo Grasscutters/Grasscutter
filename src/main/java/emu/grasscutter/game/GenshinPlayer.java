@@ -18,6 +18,7 @@ import emu.grasscutter.game.friends.PlayerProfile;
 import emu.grasscutter.game.gacha.PlayerGachaInfo;
 import emu.grasscutter.game.inventory.GenshinItem;
 import emu.grasscutter.game.inventory.Inventory;
+import emu.grasscutter.game.player.PlayerBirthday;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.packet.GenshinPacket;
@@ -40,7 +41,7 @@ import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-@Entity(value = "players", noClassnameStored = true)
+@Entity(value = "players", useDiscriminator = false)
 public class GenshinPlayer {
 	@Id private int id;
 	@Indexed(options = @IndexOptions(unique = true)) private String accountId;
@@ -52,6 +53,7 @@ public class GenshinPlayer {
 	private int nameCardId = 210001;
 	private Position pos;
 	private Position rotation;
+	private PlayerBirthday birthday;
 	
 	private Map<Integer, Integer> properties;
 	private Set<Integer> nameCardList;
@@ -121,6 +123,8 @@ public class GenshinPlayer {
 		this.combatInvokeHandler = new InvokeHandler(PacketCombatInvocationsNotify.class);
 		this.abilityInvokeHandler = new InvokeHandler(PacketAbilityInvocationsNotify.class);
 		this.clientAbilityInitFinishHandler = new InvokeHandler(PacketClientAbilityInitFinishNotify.class);
+
+		this.birthday = new PlayerBirthday();
 	}
 	
 	// On player creation
@@ -132,6 +136,7 @@ public class GenshinPlayer {
 		this.nickname = "Traveler";
 		this.signature = "";
 		this.teamManager = new TeamManager(this);
+		this.birthday = new PlayerBirthday();
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
 		this.setProperty(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50);
@@ -634,6 +639,15 @@ public class GenshinPlayer {
 		return onlineInfo.build();
 	}
 
+	public PlayerBirthday getBirthday(){
+		return this.birthday;
+	}
+
+	public void setBirthday(int d, int m) {
+		this.birthday = new PlayerBirthday(d, m);
+		this.updateProfile();
+	}
+
 	public SocialDetail.Builder getSocialDetail() {
 		SocialDetail.Builder social = SocialDetail.newBuilder()
 				.setUid(this.getUid())
@@ -641,7 +655,7 @@ public class GenshinPlayer {
 				.setNickname(this.getNickname())
 				.setSignature(this.getSignature())
 				.setLevel(this.getLevel())
-				.setBirthday(Birthday.newBuilder())
+				.setBirthday(this.getBirthday().getFilledProtoWhenNotEmpty())
 				.setWorldLevel(this.getWorldLevel())
 				.setUnk1(1)
 				.setUnk3(1)
