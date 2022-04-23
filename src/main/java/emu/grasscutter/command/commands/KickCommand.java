@@ -22,7 +22,7 @@ public final class KickCommand implements CommandHandler {
         }
 
         if (sender != null) {
-            CommandHandler.sendMessage(sender, String.format("Player [%s:%s] has kicked player [%s:%s]", sender.getAccount().getPlayerId(), sender.getAccount().getUsername(), target, targetPlayer.getAccount().getUsername()));
+            CommandHandler.sendMessage(sender, String.format("Player [%s:%s] has kicked player [%s:%s]", sender.getAccount().getPlayerUid(), sender.getAccount().getUsername(), target, targetPlayer.getAccount().getUsername()));
         }
         CommandHandler.sendMessage(sender, String.format("Kicking player [%s:%s]", target, targetPlayer.getAccount().getUsername()));
 

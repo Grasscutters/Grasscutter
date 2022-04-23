@@ -206,14 +206,16 @@ public class World implements Iterable<GenshinPlayer> {
 	public void deregisterScene(GenshinScene scene) {
 		this.getScenes().remove(scene.getId());
 	}
-
-	public boolean forceTransferPlayerToScene(GenshinPlayer player, int sceneId, Position pos) {
-		// Forces the client to reload the scene map to prevent the player from falling off the map.
+	
+	public boolean transferPlayerToScene(GenshinPlayer player, int sceneId, Position pos) {
 		if (GenshinData.getSceneDataMap().get(sceneId) == null) {
 			return false;
 		}
+		
+		Integer oldSceneId = null;
 
 		if (player.getScene() != null) {
+			oldSceneId = player.getScene().getId();
 			player.getScene().removePlayer(player);
 		}
 		
@@ -222,25 +224,11 @@ public class World implements Iterable<GenshinPlayer> {
 		player.getPos().set(pos);
 		
 		// Teleport packet
-		player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterSelf, EnterReason.TransPoint, sceneId, pos));
-		return true;
-	}
-	
-	public boolean transferPlayerToScene(GenshinPlayer player, int sceneId, Position pos) {
-		if (player.getScene().getId() == sceneId || GenshinData.getSceneDataMap().get(sceneId) == null) {
-			return false;
+		if (oldSceneId.equals(sceneId)) {
+			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterGoto, EnterReason.TransPoint, sceneId, pos));
+		} else {
+			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterJump, EnterReason.TransPoint, sceneId, pos));
 		}
-		
-		if (player.getScene() != null) {
-			player.getScene().removePlayer(player);
-		}
-		
-		GenshinScene scene = this.getSceneById(sceneId);
-		scene.addPlayer(player);
-		player.getPos().set(pos);
-		
-		// Teleport packet
-		player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterSelf, EnterReason.TransPoint, sceneId, pos));
 		return true;
 	}
 	

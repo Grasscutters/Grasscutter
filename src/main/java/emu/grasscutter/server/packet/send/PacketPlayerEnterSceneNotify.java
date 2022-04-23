@@ -52,7 +52,7 @@ public class PacketPlayerEnterSceneNotify extends GenshinPacket {
 				.setSceneId(newScene)
 				.setPos(newPos.toProto())
 				.setSceneBeginTime(System.currentTimeMillis())
-				.setType(EnterType.EnterSelf)
+				.setType(type)
 				.setTargetUid(target.getUid())
 				.setEnterSceneToken(player.getEnterSceneToken())
 				.setWorldLevel(target.getWorld().getWorldLevel())

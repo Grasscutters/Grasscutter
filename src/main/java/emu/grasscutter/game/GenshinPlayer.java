@@ -31,6 +31,7 @@ import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
+import emu.grasscutter.net.proto.WorldPlayerLocationInfoOuterClass.WorldPlayerLocationInfo;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketAbilityInvocationsNotify;
@@ -49,9 +50,11 @@ import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerPropNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerStoreNotify;
 import emu.grasscutter.server.packet.send.PacketPrivateChatNotify;
+import emu.grasscutter.server.packet.send.PacketScenePlayerLocationNotify;
 import emu.grasscutter.server.packet.send.PacketSetNameCardRsp;
 import emu.grasscutter.server.packet.send.PacketStoreWeightLimitNotify;
 import emu.grasscutter.server.packet.send.PacketUnlockNameCardNotify;
+import emu.grasscutter.server.packet.send.PacketWorldPlayerLocationNotify;
 import emu.grasscutter.server.packet.send.PacketWorldPlayerRTTNotify;
 import emu.grasscutter.utils.Position;
 
@@ -101,6 +104,7 @@ public class GenshinPlayer {
 	@Transient private int enterSceneToken;
 	@Transient private SceneLoadState sceneState;
 	@Transient private boolean hasSentAvatarDataNotify;
+	@Transient private long nextSendPlayerLocTime = 0;
 	
 	@Transient private final Int2ObjectMap<CoopRequest> coopRequests;
 	@Transient private final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
@@ -121,6 +125,12 @@ public class GenshinPlayer {
 			}
 			this.properties.put(prop.getId(), 0);
 		}
+		
+		this.gachaInfo = new PlayerGachaInfo();
+		this.nameCardList = new HashSet<>();
+		this.flyCloakList = new HashSet<>();
+		this.costumeList = new HashSet<>();
+		
 		this.setSceneId(3);
 		this.setRegionId(1);
 		this.sceneState = SceneLoadState.NONE;
@@ -140,11 +150,6 @@ public class GenshinPlayer {
 		this.nickname = "Traveler";
 		this.signature = "";
 		this.teamManager = new TeamManager(this);
-		this.gachaInfo = new PlayerGachaInfo();
-		this.playerProfile = new PlayerProfile(this);
-		this.nameCardList = new HashSet<>();
-		this.flyCloakList = new HashSet<>();
-		this.costumeList = new HashSet<>();
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
 		this.setProperty(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50);
@@ -288,7 +293,7 @@ public class GenshinPlayer {
 	}
 	
 	private float getExpModifier() {
-		return Grasscutter.getConfig().getGameRates().ADVENTURE_EXP_RATE;
+		return Grasscutter.getConfig().getGameServerOptions().getGameRates().ADVENTURE_EXP_RATE;
 	}
 	
 	// Affected by exp rate
@@ -347,7 +352,6 @@ public class GenshinPlayer {
 	public PlayerProfile getProfile() {
 		if (this.playerProfile == null) {
 			this.playerProfile = new PlayerProfile(this);
-			this.save();
 		}
 		return playerProfile;
 	}
@@ -654,6 +658,13 @@ public class GenshinPlayer {
 		return social;
 	}
 	
+	public WorldPlayerLocationInfo getWorldPlayerLocationInfo() {
+		return WorldPlayerLocationInfo.newBuilder()
+					.setSceneId(this.getSceneId())
+					.setPlayerLoc(this.getPlayerLocationInfo())
+					.build();
+	}
+	
 	public PlayerLocationInfo getPlayerLocationInfo() {
 		return PlayerLocationInfo.newBuilder()
 					.setUid(this.getUid())
@@ -679,8 +690,21 @@ public class GenshinPlayer {
 		}
 		// Ping
 		if (this.getWorld() != null) {
-			this.sendPacket(new PacketWorldPlayerRTTNotify(this.getWorld())); // Player ping
+			// RTT notify - very important to send this often
+			this.sendPacket(new PacketWorldPlayerRTTNotify(this.getWorld()));
+			
+			// Update player locations if in multiplayer every 5 seconds
+			long time = System.currentTimeMillis();
+			if (this.getWorld().isMultiplayer() && this.getScene() != null && time > nextSendPlayerLocTime) {
+				this.sendPacket(new PacketWorldPlayerLocationNotify(this.getWorld()));
+				this.sendPacket(new PacketScenePlayerLocationNotify(this.getScene()));
+				this.resetSendPlayerLocTime();
+			}
 		}
+	}
+	
+	public void resetSendPlayerLocTime() {
+		this.nextSendPlayerLocTime = System.currentTimeMillis() + 5000;
 	}
 
 	@PostLoad
@@ -696,12 +720,8 @@ public class GenshinPlayer {
 		// Make sure these exist
 		if (this.getTeamManager() == null) {
 			this.teamManager = new TeamManager(this);
-		} if (this.getGachaInfo() == null) {
-			this.gachaInfo = new PlayerGachaInfo();
-		} if (this.nameCardList == null) {
-			this.nameCardList = new HashSet<>();
-		} if (this.costumeList == null) {
-			this.costumeList = new HashSet<>();
+		} if (this.getProfile().getUid() == 0) {
+			this.getProfile().syncWithCharacter(this);
 		}
 		
 		// Check if player object exists in server

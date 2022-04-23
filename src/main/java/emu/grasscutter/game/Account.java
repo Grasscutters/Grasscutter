@@ -8,6 +8,10 @@ import emu.grasscutter.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bson.Document;
+
+import com.mongodb.DBObject;
+
 @Entity(value = "accounts", useDiscriminator = false)
 public class Account {
 	@Id private String id;
@@ -17,7 +21,7 @@ public class Account {
 	private String username;
 	private String password; // Unused for now
 	
-	private int playerId;
+	@AlsoLoad("playerUid") private int playerId;
 	private String email;
 	
 	private String token;
@@ -61,7 +65,7 @@ public class Account {
 		this.token = token;
 	}
 
-	public int getPlayerId() {
+	public int getPlayerUid() {
 		return this.playerId;
 	}
 
@@ -117,13 +121,12 @@ public class Account {
 	public void save() {
 		DatabaseHelper.saveAccount(this);
 	}
-	
-//  TODO: Find an implementation for this. Morphia 2.0 breaks this method for some reason?
-//	@PreLoad
-//	public void onLoad(DBObject object) {
-//		// Grant the superuser permissions to accounts created before the permissions update
-//		if (!object.containsField("permissions")) {
-//			this.addPermission("*");
-//		}
-//	}
+
+	@PreLoad
+	public void onLoad(Document document) {
+		// Grant the superuser permissions to accounts created before the permissions update
+		if (!document.containsKey("permissions")) {
+			this.addPermission("*");
+		}
+	}
 }

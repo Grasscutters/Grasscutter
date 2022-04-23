@@ -16,7 +16,7 @@ public class PacketGetPlayerTokenRsp extends GenshinPacket {
 		this.setUseDispatchKey(true);
 		
 		GetPlayerTokenRsp p = GetPlayerTokenRsp.newBuilder()
-				.setPlayerUid(session.getAccount().getPlayerId())
+				.setPlayerUid(session.getAccount().getPlayerUid())
 				.setAccountToken(session.getAccount().getToken())
 				.setAccountType(1)
 				.setIsProficientPlayer(doesPlayerExist) // Not sure where this goes
