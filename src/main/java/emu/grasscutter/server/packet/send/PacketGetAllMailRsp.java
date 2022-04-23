@@ -3,15 +3,16 @@ package emu.grasscutter.server.packet.send;
 import com.google.gson.Gson;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Mail;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.DateTimeDeleteOuterClass;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.GetAllMailRspOuterClass.GetAllMailRsp;
-import emu.grasscutter.net.proto.ItemParamOuterClass;
 import emu.grasscutter.net.proto.MailDataOuterClass.MailData;
-import emu.grasscutter.net.proto.MailItemOuterClass;
 import emu.grasscutter.net.proto.MailTextContentOuterClass.MailTextContent;
-import emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PacketGetAllMailRsp extends GenshinPacket {
 
@@ -21,33 +22,43 @@ public class PacketGetAllMailRsp extends GenshinPacket {
 
         GetAllMailRsp.Builder proto = GetAllMailRsp.newBuilder();
 
+        List<MailData> mailDataList = new ArrayList<MailData>();
+
         // Dummy data.
-        MailTextContent.Builder mailTextContent = MailTextContent.newBuilder();
-        mailTextContent.setTitle("Hello Traveller..");
-        mailTextContent.setContent("You've called me emergency food for the last time. \n Get ready to die!");
-        mailTextContent.setSender("P·A·I·M·O·N");
+        for(Mail message : player.getMail()) {
+            MailTextContent.Builder mailTextContent = MailTextContent.newBuilder();
+            mailTextContent.setTitle(message.mailContent.title);
+            mailTextContent.setContent(message.mailContent.content);
+            mailTextContent.setSender(message.mailContent.sender);
 
-        MailItemOuterClass.MailItem.Builder mailItem = MailItemOuterClass.MailItem.newBuilder();
-        ItemParamOuterClass.ItemParam.Builder itemParam = ItemParamOuterClass.ItemParam.newBuilder();
+            List<MailItemOuterClass.MailItem> mailItems = new ArrayList<MailItemOuterClass.MailItem>();
 
-        itemParam.setItemId(1062);
-        itemParam.setCount(1);
-        mailItem.setItemParam(itemParam.build());
+            for(Mail.MailItem item : message.itemList) {
+                MailItemOuterClass.MailItem.Builder mailItem = MailItemOuterClass.MailItem.newBuilder();
+                ItemParamOuterClass.ItemParam.Builder itemParam = ItemParamOuterClass.ItemParam.newBuilder();
+                itemParam.setItemId(item.itemId);
+                itemParam.setCount(item.itemCount);
+                mailItem.setItemParam(itemParam.build());
 
-        MailData.Builder mailData = MailData.newBuilder();
-        mailData.setMailId(100);
-        mailData.setMailTextContent(mailTextContent.build());
-        mailData.addItemList(mailItem.build());
-        mailData.setSendTime(1634100481);
-        mailData.setExpireTime(1664498747);
-        mailData.setImportance(1);
-        mailData.setIsRead(false);
-        mailData.setIsAttachmentGot(false);
-        mailData.setStateValue(1);
+                mailItems.add(mailItem.build());
+            }
 
-        proto.addMailList(mailData.build());
-        proto.addMailList(mailData.setMailId(101).build());
-        proto.setIsTruncated(true);
+            MailDataOuterClass.MailData.Builder mailData = MailDataOuterClass.MailData.newBuilder();
+            mailData.setMailId(message._id);
+            mailData.setMailTextContent(mailTextContent.build());
+            mailData.addAllItemList(mailItems);
+            mailData.setSendTime((int)message.sendTime);
+            mailData.setExpireTime((int)message.expireTime);
+            mailData.setImportance(message.importance);
+            mailData.setIsRead(message.isRead);
+            mailData.setIsAttachmentGot(message.isAttachmentGot);
+            mailData.setStateValue(message.stateValue);
+
+            mailDataList.add(mailData.build());
+        }
+
+        proto.addAllMailList(mailDataList);
+        //proto.setIsTruncated(true);
 
         Grasscutter.getLogger().info(Grasscutter.getDispatchServer().getGsonFactory().toJson(proto.build()));
 
