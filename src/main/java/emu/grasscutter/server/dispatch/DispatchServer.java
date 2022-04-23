@@ -24,6 +24,7 @@ import emu.grasscutter.utils.Utils;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import java.io.*;
+import java.net.BindException;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.net.URLDecoder;
@@ -158,12 +159,21 @@ public final class DispatchServer {
 			Grasscutter.getLogger().error("[Dispatch] Error while initializing region info!", e);
 		}
 	}
+	
+	private HttpServer safelyCreateServer(InetSocketAddress address) {
+		try {
+			return HttpServer.create(address, 0);
+		} catch (BindException ignored) {
+			Grasscutter.getLogger().error("Unable to bind to port: " + getAddress().getPort() + " (HTTP)");
+		} catch (Exception exception) {
+			Grasscutter.getLogger().error("Unable to start HTTP server.", exception);
+		} return null;
+	}
 
 	public void start() throws Exception {
 		HttpServer server;
 		if (Grasscutter.getConfig().getDispatchOptions().UseSSL) {
-			HttpsServer httpsServer;
-			httpsServer = HttpsServer.create(getAddress(), 0);
+			HttpsServer httpsServer = HttpsServer.create(getAddress(), 0);
 			SSLContext sslContext = SSLContext.getInstance("TLS");
 			try (FileInputStream fis = new FileInputStream(Grasscutter.getConfig().getDispatchOptions().KeystorePath)) {
 				char[] keystorePassword = Grasscutter.getConfig().getDispatchOptions().KeystorePassword.toCharArray();
@@ -176,14 +186,20 @@ public final class DispatchServer {
 				
 				httpsServer.setHttpsConfigurator(new HttpsConfigurator(sslContext));
 				server = httpsServer;
+			} catch (BindException ignored) {
+				Grasscutter.getLogger().error("Unable to bind to port: " + getAddress().getPort() + " (HTTPS)");
+				server = this.safelyCreateServer(this.getAddress());
 			} catch (Exception e) {
 				Grasscutter.getLogger().warn("[Dispatch] No SSL cert found! Falling back to HTTP server.");
 				Grasscutter.getConfig().getDispatchOptions().UseSSL = false;
-				server = HttpServer.create(getAddress(), 0);
+				server = this.safelyCreateServer(this.getAddress());
 			}
 		} else {
-			server = HttpServer.create(getAddress(), 0);
+			server = this.safelyCreateServer(this.getAddress());
 		}
+		
+		if(server == null)
+			throw new NullPointerException("An HTTP server was not created.");
 
 		server.createContext("/", t -> responseHTML(t, "Hello"));
 		
