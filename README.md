@@ -37,7 +37,7 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
 4. *yoink*
 
-* or you can use `run.cmd` to start Server & Proxy daemon with one click
+* or you can use `start.cmd` to start Server & Proxy daemon with one click
 
 # Grasscutter commands
 There is a dummy user named "Server" in every player's friends list that you can message to use commands. Commands also work in other chat rooms, such as private/team chats.
