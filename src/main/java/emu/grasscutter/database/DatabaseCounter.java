@@ -3,7 +3,7 @@ package emu.grasscutter.database;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 
-@Entity(value = "counters", noClassnameStored = true)
+@Entity(value = "counters", useDiscriminator = false)
 public class DatabaseCounter {
 	@Id
 	private String id;
