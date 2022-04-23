@@ -101,7 +101,7 @@ public final class DatabaseManager {
 	}
 
 	public static synchronized int getNextId(Class<?> c) {
-		DatabaseCounter counter = getDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", c.getName())).first();
+		DatabaseCounter counter = getDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", c.getSimpleName())).first();
 		if (counter == null) {
 			counter = new DatabaseCounter(c.getSimpleName());
 		}
