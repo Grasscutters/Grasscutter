@@ -16,7 +16,7 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 * If you updated from an older version, delete `config.json` to regenerate it.
 
 ### Prerequisites
-* JDK-8u202 ([mirror link](https://mirrors.huaweicloud.com/java/jdk/8u202-b08/) since Oracle requires an account to download old builds)
+* Java 16
 * Mongodb (recommended 4.0+)
 * Proxy daemon: mitmproxy (mitmdump, recommended), Fiddler Classic, etc.
 
@@ -37,7 +37,7 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
 4. *yoink*
 
-* or you can use `run.cmd` to start the Server & Proxy daemon with one click
+* or you can use `start.cmd` to start Server & Proxy daemon with one click
 
 # Grasscutter commands
 There is a dummy user named "Server" in every player's friends list that you can message to use commands. Commands also work in other chat rooms, such as private/team chats.

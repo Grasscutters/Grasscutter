@@ -9,7 +9,7 @@ import emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief;
 import emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState;
 import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
 
-@Entity(value = "friendships", noClassnameStored = true)
+@Entity(value = "friendships", useDiscriminator = false)
 public class Friendship {
 	@Id private ObjectId id;
 	
