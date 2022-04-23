@@ -34,7 +34,7 @@ public final class Grasscutter {
 	private static DispatchServer dispatchServer;
 	private static GameServer gameServer;
 	
-	public static final Reflections reflector = new Reflections();
+	public static final Reflections reflector = new Reflections("emu.grasscutter");
 	
 	static {
 		// Declare logback configuration.
@@ -118,6 +118,7 @@ public final class Grasscutter {
 	
 	public static void startConsole() {
 		String input;
+		getLogger().info("Done! For help, type \"help\"");
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
 			while ((input = br.readLine()) != null) {
 				try {

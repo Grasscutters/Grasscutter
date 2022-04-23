@@ -24,6 +24,7 @@ import emu.grasscutter.utils.Utils;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import java.io.*;
+import java.net.BindException;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.net.URLDecoder;
@@ -101,14 +102,14 @@ public final class DispatchServer {
 						.setName("os_usa")
 						.setTitle(Grasscutter.getConfig().getGameServerOptions().Name)
 						.setType("DEV_PUBLIC")
-						.setDispatchUrl("http" + (Grasscutter.getConfig().getDispatchOptions().FrontHTTPS ? "s" : "") + "://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + ":" + getAddress().getPort() + "/query_cur_region_" + defaultServerName)
+						.setDispatchUrl("http" + (Grasscutter.getConfig().getDispatchOptions().FrontHTTPS ? "s" : "") + "://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + ":" + (Grasscutter.getConfig().getDispatchOptions().PublicPort != 0 ? Grasscutter.getConfig().getDispatchOptions().PublicPort : Grasscutter.getConfig().getDispatchOptions().Port) + "/query_cur_region_" + defaultServerName)
 						.build();
 				usedNames.add(defaultServerName);
 				servers.add(server);
 
 				RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
 						.setIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getGameServerOptions().Ip : Grasscutter.getConfig().getGameServerOptions().PublicIp))
-						.setPort(Grasscutter.getConfig().getGameServerOptions().Port)
+						.setPort(Grasscutter.getConfig().getGameServerOptions().PublicPort != 0 ? Grasscutter.getConfig().getGameServerOptions().PublicPort : Grasscutter.getConfig().getGameServerOptions().Port)
 						.setSecretKey(ByteString.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
 						.build();
 
@@ -158,12 +159,21 @@ public final class DispatchServer {
 			Grasscutter.getLogger().error("[Dispatch] Error while initializing region info!", e);
 		}
 	}
+	
+	private HttpServer safelyCreateServer(InetSocketAddress address) {
+		try {
+			return HttpServer.create(address, 0);
+		} catch (BindException ignored) {
+			Grasscutter.getLogger().error("Unable to bind to port: " + getAddress().getPort() + " (HTTP)");
+		} catch (Exception exception) {
+			Grasscutter.getLogger().error("Unable to start HTTP server.", exception);
+		} return null;
+	}
 
 	public void start() throws Exception {
 		HttpServer server;
 		if (Grasscutter.getConfig().getDispatchOptions().UseSSL) {
-			HttpsServer httpsServer;
-			httpsServer = HttpsServer.create(getAddress(), 0);
+			HttpsServer httpsServer = HttpsServer.create(getAddress(), 0);
 			SSLContext sslContext = SSLContext.getInstance("TLS");
 			try (FileInputStream fis = new FileInputStream(Grasscutter.getConfig().getDispatchOptions().KeystorePath)) {
 				char[] keystorePassword = Grasscutter.getConfig().getDispatchOptions().KeystorePassword.toCharArray();
@@ -176,14 +186,20 @@ public final class DispatchServer {
 				
 				httpsServer.setHttpsConfigurator(new HttpsConfigurator(sslContext));
 				server = httpsServer;
+			} catch (BindException ignored) {
+				Grasscutter.getLogger().error("Unable to bind to port: " + getAddress().getPort() + " (HTTPS)");
+				server = this.safelyCreateServer(this.getAddress());
 			} catch (Exception e) {
 				Grasscutter.getLogger().warn("[Dispatch] No SSL cert found! Falling back to HTTP server.");
 				Grasscutter.getConfig().getDispatchOptions().UseSSL = false;
-				server = HttpServer.create(getAddress(), 0);
+				server = this.safelyCreateServer(this.getAddress());
 			}
 		} else {
-			server = HttpServer.create(getAddress(), 0);
+			server = this.safelyCreateServer(this.getAddress());
 		}
+		
+		if(server == null)
+			throw new NullPointerException("An HTTP server was not created.");
 
 		server.createContext("/", t -> responseHTML(t, "Hello"));
 		

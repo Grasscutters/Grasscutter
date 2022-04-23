@@ -34,7 +34,7 @@ import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo;
 import emu.grasscutter.net.proto.WeaponOuterClass.Weapon;
 import emu.grasscutter.utils.WeightedList;
 
-@Entity(value = "items", noClassnameStored = true)
+@Entity(value = "items", useDiscriminator = false)
 public class GenshinItem {
 	@Id private ObjectId id;
 	@Indexed private int ownerId;
