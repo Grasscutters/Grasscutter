@@ -10,6 +10,7 @@ import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.utils.Authentication;
 import emu.grasscutter.utils.Utils;
 
 public final class DatabaseHelper {
@@ -79,7 +80,10 @@ public final class DatabaseHelper {
 	}
 
 	public static Account getAccountByOneTimeToken(String token) {
-		return DatabaseManager.getDatastore().find(Account.class).filter(Filters.eq("oneTimeToken", token)).first();
+		String username = Authentication.tokenStorage.get(token);
+		if (username == null) return null;
+		Authentication.tokenStorage.remove(token);
+		return DatabaseHelper.getAccountByName(username);
 	}
 
 	public static void saveAccount(Account account) {

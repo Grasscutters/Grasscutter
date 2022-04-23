@@ -6,6 +6,7 @@ import java.util.Base64;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp;
+import javax.crypto.SecretKey;
 
 public final class Crypto {
 	private static final SecureRandom secureRandom = new SecureRandom();

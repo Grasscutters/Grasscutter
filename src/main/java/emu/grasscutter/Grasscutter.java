@@ -7,8 +7,6 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
 
-import de.mkammerer.argon2.Argon2;
-import de.mkammerer.argon2.Argon2Factory;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.utils.Utils;
@@ -25,6 +23,8 @@ import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
+
+import javax.crypto.SecretKey;
 
 public final class Grasscutter {
 	private static final Logger log = (Logger) LoggerFactory.getLogger(Grasscutter.class);

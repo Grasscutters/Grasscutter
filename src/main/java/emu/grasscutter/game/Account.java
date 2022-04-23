@@ -2,15 +2,13 @@ package emu.grasscutter.game;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.utils.Authentication;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.bson.Document;
-
-import com.mongodb.DBObject;
 
 @Entity(value = "accounts", useDiscriminator = false)
 public class Account {
@@ -20,7 +18,6 @@ public class Account {
 	@Collation(locale = "simple", caseLevel = true)
 	private String username;
 	private String password; // Unused for now
-	private String oneTimeToken;
 	
 	@AlsoLoad("playerUid") private int playerId;
 	private String email;
@@ -92,22 +89,15 @@ public class Account {
 		return this.sessionKey;
 	}
 
-	public String getOneTimeToken() {
-		return oneTimeToken;
-	}
 
-	public void setOneTimeToken(String oneTimeToken) {
-		this.oneTimeToken = oneTimeToken;
-	}
-
-	public void generateOneTimeToken() {
+	public String generateOneTimeToken() {
 		String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i < 32; i++) {
 			sb.append(chars.charAt((int) (Math.random() * chars.length())));
 		}
-		this.oneTimeToken = sb.toString();
-		this.save();
+		Authentication.tokenStorage.put(sb.toString(), this.username);
+		return sb.toString();
 	}
 	/**
 	 * The collection of a player's permissions.

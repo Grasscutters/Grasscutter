@@ -7,8 +7,6 @@ import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.HttpsConfigurator;
 import com.sun.net.httpserver.HttpsServer;
 
-import de.mkammerer.argon2.Argon2;
-import de.mkammerer.argon2.Argon2Factory;
 import emu.grasscutter.Config;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
@@ -267,11 +265,10 @@ public final class DispatchServer {
 			try {
 				String requestBody = Utils.toString(t.getRequestBody());
 				LoginGenerateToken loginGenerateToken = new Gson().fromJson(requestBody, LoginGenerateToken.class);
-				Grasscutter.getLogger().info("[Dispatch] Received login request from " + loginGenerateToken.toString());
 				Account account = DatabaseHelper.getAccountByUsernameAndPassword(loginGenerateToken.username, loginGenerateToken.password);
 				if (account != null) {
-					account.generateOneTimeToken();
-					responseHTML(t, account.getOneTimeToken());
+					String token = account.generateOneTimeToken();
+					responseHTML(t, token);
 				}
 			}catch (Exception ignore) {}
 		});
@@ -279,20 +276,15 @@ public final class DispatchServer {
 		server.createContext("/grasscutter/register", t -> {
 			try {
 				String requestBody = Utils.toString(t.getRequestBody());
-				Grasscutter.getLogger().info(requestBody);
 				RegisterAccount registerAccount = new Gson().fromJson(requestBody, RegisterAccount.class);
 				if (registerAccount != null) {
-					Grasscutter.getLogger().info(registerAccount.toString());
 					String password = Utils.argon2.hash(10, 65536, 1, registerAccount.password.toCharArray());
-					Grasscutter.getLogger().info(password);
 					Account account = DatabaseHelper.createAccountWithPassword(registerAccount.username, password);
 					if (account != null) {
-						account.generateOneTimeToken();
-						responseHTML(t, account.getOneTimeToken());
+						responseHTML(t, account.generateOneTimeToken());
 					}
 				}
-			}catch (Exception ignore) {
-			}
+			}catch (Exception ignore) {}
 		});
 
 		// Dispatch
