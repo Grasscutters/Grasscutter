@@ -94,6 +94,7 @@ public class GenshinAvatar {
 	private int fetterExp;
 
 	private int nameCardRewardId;
+	private int nameCardId;
 	
 	public GenshinAvatar() {
 		// Morhpia only!
@@ -113,6 +114,7 @@ public class GenshinAvatar {
 		this();
 		this.avatarId = data.getId();
 		this.nameCardRewardId = data.getNameCardRewardId();
+		this.nameCardId = data.getNameCardId();
 		this.data = data;
 		this.bornTime = (int) (System.currentTimeMillis() / 1000);
 		this.flyCloak = 140001;
@@ -311,6 +313,14 @@ public class GenshinAvatar {
 		this.fetterExp = fetterExp;
 	}
 
+	public int getNameCardId() {
+		return nameCardId;
+	}
+
+	public void setNameCardId(int nameCardId) {
+		this.nameCardId = nameCardId;
+	}
+
 	public float getCurrentHp() {
 		return currentHp;
 	}
@@ -434,6 +444,7 @@ public class GenshinAvatar {
 		// Fetters
 		this.setFetterList(data.getFetters());
 		this.setNameCardRewardId(data.getNameCardRewardId());
+		this.setNameCardId(data.getNameCardId());
 		
 		// Get hp percent, set to 100% if none
 		float hpPercent = this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) <= 0 ? 1f : this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) / this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
@@ -744,6 +755,13 @@ public class GenshinAvatar {
 						.setFetterState(FetterState.FINISH.getValue())
 				);
 			}
+		}
+
+		int rewardId = this.getNameCardRewardId();
+		int cardId = this.getNameCardId();
+
+		if (this.getPlayer().getNameCardList().contains(cardId)) {
+			avatarFetter.addRewardedFetterLevelList(rewardId);
 		}
 
 		AvatarInfo.Builder avatarInfo = AvatarInfo.newBuilder()

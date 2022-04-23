@@ -26,6 +26,13 @@ public class PacketAvatarFetterDataNotify extends GenshinPacket {
 				);
 			}
 		}
+		
+		int rewardId = avatar.getNameCardRewardId();
+		int cardId = avatar.getNameCardId();
+
+		if (avatar.getPlayer().getNameCardList().contains(cardId)) {
+			avatarFetter.addRewardedFetterLevelList(rewardId);
+		}
 
 		AvatarFetterInfo avatarFetterInfo = avatarFetter.build();
 		
