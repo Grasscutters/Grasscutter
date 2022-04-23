@@ -74,6 +74,8 @@ public class GenshinPlayer {
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
+	
+	private ArrayList<Mail> mail;
 
 	private int sceneId;
 	private int regionId;
@@ -111,6 +113,8 @@ public class GenshinPlayer {
 		this.nameCardList = new HashSet<>();
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
+
+		this.mail = new ArrayList<>();
 
 		this.setSceneId(3);
 		this.setRegionId(1);
@@ -569,6 +573,16 @@ public class GenshinPlayer {
 		this.sendPacket(new PacketPrivateChatNotify(sender.getUid(), this.getUid(), message.toString()));
 	}
 
+	public List<Mail> getMail() { return mail; }
+
+	public void sendMail(Mail message) {
+
+		this.mail.add(message);
+		message._id = this.mail.size() + 1;
+		this.save();
+		this.sendPacket(new PacketMailChangeNotify(this, message));
+	}
+	
 	public void interactWith(int gadgetEntityId) {
 		GenshinEntity entity = getScene().getEntityById(gadgetEntityId);
 
