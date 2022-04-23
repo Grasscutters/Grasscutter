@@ -138,6 +138,15 @@ public final class Utils {
 	}
 
 	/**
+	 * Logs an object to the console.
+	 * @param object The object to log.
+	 */
+	public static void logObject(Object object) {
+		String asJson = Grasscutter.getGsonFactory().toJson(object);
+		Grasscutter.getLogger().info(asJson);
+	}
+	
+	/**
 	 * Checks for required files and folders before startup.
 	 */
 	public static void startupCheck() {
