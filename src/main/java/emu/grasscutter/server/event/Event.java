@@ -18,10 +18,9 @@ public abstract class Event {
     /**
      * Cancels the event if possible.
      */
-    public void cancel() throws IllegalAccessException {
-        if(!(this instanceof Cancellable))
-            throw new IllegalAccessException("Event is not cancellable.");
-        this.cancelled = true;
+    public void cancel() {
+        if(this instanceof Cancellable)
+            this.cancelled = true;
     }
 
     /**
