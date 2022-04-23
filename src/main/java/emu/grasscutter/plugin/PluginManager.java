@@ -1,23 +1,25 @@
 package emu.grasscutter.plugin;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.server.event.Event;
+import emu.grasscutter.server.event.EventHandler;
+import emu.grasscutter.server.event.Listener;
 import emu.grasscutter.utils.Utils;
+import org.reflections.Reflections;
 
 import java.io.File;
 import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Manages the server's plugins & the event system.
  */
 public final class PluginManager {
     private final Map<String, Plugin> plugins = new HashMap<>();
+    private final Map<Plugin, List<Listener>> listeners = new HashMap<>();
     
     public PluginManager() {
         this.loadPlugins(); // Load all plugins from the plugins directory.
@@ -112,5 +114,39 @@ public final class PluginManager {
             Grasscutter.getLogger().info("Disabling plugin: " + name);
             plugin.onDisable();
         });
+    }
+
+    /**
+     * Registers a plugin's event listener.
+     * @param plugin The plugin instance.
+     * @param listener The event listener.
+     */
+    public void registerListener(Plugin plugin, Listener listener) {
+        this.listeners.computeIfAbsent(plugin, k -> new ArrayList<>()).add(listener);
+    }
+    
+    /**
+     * Invoke the provided event on all registered event listeners.
+     * @param event The event to invoke.
+     */
+    public void invokeEvent(Event event) {
+        this.listeners.values().stream()
+                .flatMap(Collection::stream)
+                .forEach(listener -> this.invokeOnListener(listener, event));
+    }
+    
+    /**
+     * Attempts to invoke the event on the provided listener.
+     */
+    private void invokeOnListener(Listener listener, Event event) {
+        try {
+            Class<?> listenerClass = listener.getClass();
+            Method[] methods = listenerClass.getMethods();
+            for (Method method : methods) {
+                if(!method.isAnnotationPresent(EventHandler.class)) return;
+                if(!method.getParameterTypes()[0].isAssignableFrom(event.getClass())) return;
+                method.invoke(listener, event);
+            }
+        } catch (Exception ignored) { }
     }
 }
