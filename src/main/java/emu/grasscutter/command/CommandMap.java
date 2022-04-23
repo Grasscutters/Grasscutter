@@ -11,6 +11,7 @@ import java.util.*;
 public final class CommandMap {
     private final Map<String, CommandHandler> commands = new HashMap<>();
     private final Map<String, Command> annotations = new HashMap<>();
+    
     public CommandMap() {
         this(false);
     }
