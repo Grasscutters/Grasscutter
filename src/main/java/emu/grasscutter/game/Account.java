@@ -1,22 +1,18 @@
 package emu.grasscutter.game;
 
-import dev.morphia.annotations.AlsoLoad;
-import dev.morphia.annotations.Collation;
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
-import dev.morphia.annotations.Indexed;
-import dev.morphia.annotations.PreLoad;
+import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
-import dev.morphia.annotations.IndexOptions;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bson.Document;
+
 import com.mongodb.DBObject;
 
-@Entity(value = "accounts", noClassnameStored = true)
+@Entity(value = "accounts", useDiscriminator = false)
 public class Account {
 	@Id private String id;
 	
@@ -31,7 +27,7 @@ public class Account {
 	private String token;
 	private String sessionKey; // Session token for dispatch server
 	private List<String> permissions;
-
+	
 	@Deprecated
 	public Account() {
 		this.permissions = new ArrayList<>();
@@ -122,15 +118,15 @@ public class Account {
 		return this.token;
 	}
 	
-	@PreLoad
-	public void onLoad(DBObject dbObj) {
-		// Grant the superuser permissions to accounts created before the permissions update
-		if (!dbObj.containsField("permissions")) {
-			this.addPermission("*");
-		}
-	}
-	
 	public void save() {
 		DatabaseHelper.saveAccount(this);
+	}
+
+	@PreLoad
+	public void onLoad(Document document) {
+		// Grant the superuser permissions to accounts created before the permissions update
+		if (!document.containsKey("permissions")) {
+			this.addPermission("*");
+		}
 	}
 }

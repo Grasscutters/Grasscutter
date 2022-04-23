@@ -1,5 +1,8 @@
 package emu.grasscutter.game.avatar;
 
+import dev.morphia.annotations.Entity;
+
+@Entity
 public class AvatarProfileData {
 	private int avatarId;
 	private int level;
