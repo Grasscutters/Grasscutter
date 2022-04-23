@@ -29,7 +29,7 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 ### Connecting with the client
 ½. Create an account using *server console command* below
 1. Run a proxy daemon: (choose either one)
-	- mitmdump: `mitmdump -s proxy.py -k`
+	- mitmdump: `mitmdump -s proxy.py -k`--allow-hosts ".*\.yuanshen\.com|.*\.mihoyo\.com|.*\.hoyoverse\.com"
 	- Fiddler Classic: Run Fiddler Classic, turn on `Decrypt https traffic` in setting and change the default port there (Tools -> Options -> Connections) to anything other than `8888`, and load [this script](https://github.lunatic.moe/fiddlerscript).
 	- [Hosts file](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
 2. Trust CA certificate:
