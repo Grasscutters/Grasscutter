@@ -88,7 +88,7 @@ public class Friendship {
 	
 	public FriendBrief toProto() {
 		FriendBrief proto = FriendBrief.newBuilder()
-				.setUid(getFriendProfile().getId())
+				.setUid(getFriendProfile().getUid())
 				.setNickname(getFriendProfile().getName())
 				.setLevel(getFriendProfile().getPlayerLevel())
 				.setAvatar(HeadImage.newBuilder().setAvatarId(getFriendProfile().getAvatarId()))

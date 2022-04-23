@@ -8,8 +8,8 @@ import emu.grasscutter.net.proto.AbilityChangeNotifyOuterClass.AbilityChangeNoti
 public class PacketAbilityChangeNotify extends GenshinPacket {
 	
 	public PacketAbilityChangeNotify(EntityAvatar entity) {
-		super(PacketOpcodes.AbilityChangeNotify);
-		
+		super(PacketOpcodes.AbilityChangeNotify, true);
+
 		AbilityChangeNotify proto = AbilityChangeNotify.newBuilder()
 				.setEntityId(entity.getId())
 				.setAbilityControlBlock(entity.getAbilityControlBlock())

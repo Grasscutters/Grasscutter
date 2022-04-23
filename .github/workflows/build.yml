@@ -1,0 +1,24 @@
+name: "Build"
+on:
+  push:
+    branches:
+      - "stable"
+jobs:
+  Build-Server-Jar:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '8'
+      - name: Run Gradle
+        run: .\gradlew.bat && .\gradlew jar
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: Grasscutter
+          path: grasscutter.jar
+      

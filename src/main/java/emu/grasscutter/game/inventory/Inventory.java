@@ -37,10 +37,10 @@ public class Inventory implements Iterable<GenshinItem> {
 		this.store = new Long2ObjectOpenHashMap<>();
 		this.inventoryTypes = new Int2ObjectOpenHashMap<>();
 		
-		this.createInventoryTab(ItemType.ITEM_WEAPON, new EquipInventoryTab(Grasscutter.getConfig().getServerOptions().InventoryLimitWeapon));
-		this.createInventoryTab(ItemType.ITEM_RELIQUARY, new EquipInventoryTab(Grasscutter.getConfig().getServerOptions().InventoryLimitRelic));
-		this.createInventoryTab(ItemType.ITEM_MATERIAL, new MaterialInventoryTab(Grasscutter.getConfig().getServerOptions().InventoryLimitMaterial));
-		this.createInventoryTab(ItemType.ITEM_FURNITURE, new MaterialInventoryTab(Grasscutter.getConfig().getServerOptions().InventoryLimitFurniture));
+		this.createInventoryTab(ItemType.ITEM_WEAPON, new EquipInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitWeapon));
+		this.createInventoryTab(ItemType.ITEM_RELIQUARY, new EquipInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitRelic));
+		this.createInventoryTab(ItemType.ITEM_MATERIAL, new MaterialInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitMaterial));
+		this.createInventoryTab(ItemType.ITEM_FURNITURE, new MaterialInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitFurniture));
 	}
 
 	public GenshinPlayer getPlayer() {

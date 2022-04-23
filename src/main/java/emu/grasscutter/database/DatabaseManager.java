@@ -1,5 +1,6 @@
 package emu.grasscutter.database;
 
+import com.mongodb.MongoClientURI;
 import com.mongodb.MongoCommandException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -18,7 +19,12 @@ import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.inventory.GenshinItem;
 
 public final class DatabaseManager {
+
+	private static MongoClient mongoClient;
+	private static MongoClient dispatchMongoClient;
+
 	private static Datastore datastore;
+	private static Datastore dispatchDatastore;
 	
 	private static final Class<?>[] mappedClasses = new Class<?>[] {
 		DatabaseCounter.class, Account.class, GenshinPlayer.class, GenshinAvatar.class, GenshinItem.class, Friendship.class
@@ -31,6 +37,16 @@ public final class DatabaseManager {
     public static MongoDatabase getDatabase() {
     	return getDatastore().getDatabase();
     }
+
+	// Yes. I very dislike this method. However, this will be good for now.
+	// TODO: Add dispatch routes for player account management
+	public static Datastore getAccountDatastore() {
+		if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("GAME_ONLY")) {
+			return dispatchDatastore;
+		} else {
+			return datastore;
+		}
+	}
 	
 	public static void initialize() {
 		// Initialize
@@ -58,6 +74,28 @@ public final class DatabaseManager {
 				}
 				// Add back indexes
 				datastore.ensureIndexes();
+			}
+		}
+
+		if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("GAME_ONLY")) {
+			dispatchMongoClient = MongoClients.create(Grasscutter.getConfig().getGameServerOptions().DispatchServerDatabaseUrl);
+			dispatchDatastore = Morphia.createDatastore(dispatchMongoClient, Grasscutter.getConfig().getGameServerOptions().DispatchServerDatabaseCollection);
+
+			// Ensure indexes for dispatch server
+			try {
+				dispatchDatastore.ensureIndexes();
+			} catch (MongoCommandException e) {
+				Grasscutter.getLogger().info("Mongo index error: ", e);
+				// Duplicate index error
+				if (e.getCode() == 85) {
+					// Drop all indexes and re add them
+					MongoIterable<String> collections = dispatchDatastore.getDatabase().listCollectionNames();
+					for (String name : collections) {
+						dispatchDatastore.getDatabase().getCollection(name).dropIndexes();
+					}
+					// Add back indexes
+					dispatchDatastore.ensureIndexes();
+				}
 			}
 		}
 	}
