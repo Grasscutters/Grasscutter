@@ -2,42 +2,48 @@ package emu.grasscutter.server.packet.send;
 
 
 import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Mail;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PacketMailChangeNotify extends GenshinPacket {
 
-    public PacketMailChangeNotify(GenshinPlayer player) {
+    public PacketMailChangeNotify(GenshinPlayer player, Mail message) {
         super(PacketOpcodes.MailChangeNotify);
 
         MailChangeNotifyOuterClass.MailChangeNotify.Builder proto = MailChangeNotifyOuterClass.MailChangeNotify.newBuilder();
 
-        // Dummy data.
         MailTextContentOuterClass.MailTextContent.Builder mailTextContent = MailTextContentOuterClass.MailTextContent.newBuilder();
-        mailTextContent.setTitle("System Message");
-        mailTextContent.setContent("I'm going to kill you...");
-        mailTextContent.setSender("YOU");
+        mailTextContent.setTitle(message.mailContent.title);
+        mailTextContent.setContent(message.mailContent.content);
+        mailTextContent.setSender(message.mailContent.sender);
 
-        MailItemOuterClass.MailItem.Builder mailItem = MailItemOuterClass.MailItem.newBuilder();
-        ItemParamOuterClass.ItemParam.Builder itemParam = ItemParamOuterClass.ItemParam.newBuilder();
+        List<MailItemOuterClass.MailItem> mailItems = new ArrayList<MailItemOuterClass.MailItem>();
 
-        itemParam.setItemId(1062);
-        itemParam.setCount(1);
-        mailItem.setItemParam(itemParam.build());
+        for(Mail.MailItem item : message.itemList) {
+            MailItemOuterClass.MailItem.Builder mailItem = MailItemOuterClass.MailItem.newBuilder();
+            ItemParamOuterClass.ItemParam.Builder itemParam = ItemParamOuterClass.ItemParam.newBuilder();
+            itemParam.setItemId(item.itemId);
+            itemParam.setCount(item.itemCount);
+            mailItem.setItemParam(itemParam.build());
+
+            mailItems.add(mailItem.build());
+        }
 
         MailDataOuterClass.MailData.Builder mailData = MailDataOuterClass.MailData.newBuilder();
-        mailData.setMailId(100);
+        mailData.setMailId(message._id);
         mailData.setMailTextContent(mailTextContent.build());
-        mailData.addItemList(mailItem.build());
-        mailData.setSendTime(1634100481);
-        mailData.setExpireTime(1664498747);
-        mailData.setImportance(1);
+        mailData.addAllItemList(mailItems);
+        mailData.setSendTime((int)message.sendTime);
+        mailData.setExpireTime((int)message.expireTime);
+        mailData.setImportance(message.importance);
         mailData.setIsRead(false);
         mailData.setIsAttachmentGot(false);
-        mailData.setStateValue(1);
+        mailData.setStateValue(message.stateValue);
 
         proto.addMailList(mailData.build());
 

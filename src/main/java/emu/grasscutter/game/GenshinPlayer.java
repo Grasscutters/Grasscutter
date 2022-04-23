@@ -34,28 +34,7 @@ import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.net.proto.WorldPlayerLocationInfoOuterClass.WorldPlayerLocationInfo;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketAbilityInvocationsNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarAddNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarDataNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarGainCostumeNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarGainFlycloakNotify;
-import emu.grasscutter.server.packet.send.PacketClientAbilityInitFinishNotify;
-import emu.grasscutter.server.packet.send.PacketCombatInvocationsNotify;
-import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
-import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
-import emu.grasscutter.server.packet.send.PacketOpenStateUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerApplyEnterMpResultNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerDataNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerPropNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerStoreNotify;
-import emu.grasscutter.server.packet.send.PacketPrivateChatNotify;
-import emu.grasscutter.server.packet.send.PacketScenePlayerLocationNotify;
-import emu.grasscutter.server.packet.send.PacketSetNameCardRsp;
-import emu.grasscutter.server.packet.send.PacketStoreWeightLimitNotify;
-import emu.grasscutter.server.packet.send.PacketUnlockNameCardNotify;
-import emu.grasscutter.server.packet.send.PacketWorldPlayerLocationNotify;
-import emu.grasscutter.server.packet.send.PacketWorldPlayerRTTNotify;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -94,6 +73,7 @@ public class GenshinPlayer {
 	private MpSettingType mpSetting = MpSettingType.MpSettingEnterAfterApply;
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
+	private ArrayList<Mail> mail;
 	
 	private int sceneId;
 	private int regionId;
@@ -130,7 +110,9 @@ public class GenshinPlayer {
 		this.nameCardList = new HashSet<>();
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
-		
+
+		this.mail = new ArrayList<>();
+
 		this.setSceneId(3);
 		this.setRegionId(1);
 		this.sceneState = SceneLoadState.NONE;
@@ -581,6 +563,16 @@ public class GenshinPlayer {
 	 */
 	public void sendMessage(GenshinPlayer sender, Object message) {
 		this.sendPacket(new PacketPrivateChatNotify(sender.getUid(), this.getUid(), message.toString()));
+	}
+
+	public List<Mail> getMail() { return mail; }
+
+	public void sendMail(Mail message) {
+
+		this.mail.add(message);
+		message._id = this.mail.size() + 1;
+		this.save();
+		this.sendPacket(new PacketMailChangeNotify(this, message));
 	}
 	
 	public void interactWith(int gadgetEntityId) {
