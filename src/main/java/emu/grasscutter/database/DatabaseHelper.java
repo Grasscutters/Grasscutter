@@ -2,7 +2,6 @@ package emu.grasscutter.database;
 
 import java.util.List;
 import com.mongodb.client.result.DeleteResult;
-import de.mkammerer.argon2.Argon2;
 import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.GenshinConstants;
 import emu.grasscutter.game.Account;

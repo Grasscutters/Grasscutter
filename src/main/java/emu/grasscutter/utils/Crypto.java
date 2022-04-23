@@ -6,8 +6,6 @@ import java.util.Base64;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp;
-import javax.crypto.SecretKey;
-
 public final class Crypto {
 	private static final SecureRandom secureRandom = new SecureRandom();
 	public static final long ENCRYPT_SEED = Long.parseUnsignedLong("11468049314633205968");

@@ -8,6 +8,8 @@ import emu.grasscutter.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.jsonwebtoken.Jwts;
 import org.bson.Document;
 
 @Entity(value = "accounts", useDiscriminator = false)
@@ -98,6 +100,16 @@ public class Account {
 		}
 		Authentication.tokenStorage.put(sb.toString(), this.username);
 		return sb.toString();
+	}
+
+	public String generateJWT(){
+		String jws = Jwts.builder()
+				.signWith(Authentication.getKey())
+				.claim("token",generateOneTimeToken())
+				.claim("username",this.username)
+				.claim("uid",this.playerId)
+				.compact();
+		return jws;
 	}
 	/**
 	 * The collection of a player's permissions.

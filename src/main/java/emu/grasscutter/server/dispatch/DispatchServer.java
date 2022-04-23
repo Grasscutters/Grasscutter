@@ -267,8 +267,7 @@ public final class DispatchServer {
 				LoginGenerateToken loginGenerateToken = new Gson().fromJson(requestBody, LoginGenerateToken.class);
 				Account account = DatabaseHelper.getAccountByUsernameAndPassword(loginGenerateToken.username, loginGenerateToken.password);
 				if (account != null) {
-					String token = account.generateOneTimeToken();
-					responseHTML(t, token);
+					responseHTML(t, account.generateJWT());
 				}
 			}catch (Exception ignore) {}
 		});
@@ -281,7 +280,7 @@ public final class DispatchServer {
 					String password = Utils.argon2.hash(10, 65536, 1, registerAccount.password.toCharArray());
 					Account account = DatabaseHelper.createAccountWithPassword(registerAccount.username, password);
 					if (account != null) {
-						responseHTML(t, account.generateOneTimeToken());
+						responseHTML(t, account.generateJWT());
 					}
 				}
 			}catch (Exception ignore) {}
