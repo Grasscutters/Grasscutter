@@ -61,7 +61,7 @@ import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-@Entity(value = "players", noClassnameStored = true)
+@Entity(value = "players", useDiscriminator = false)
 public class GenshinPlayer {
 	@Id private int id;
 	@Indexed(options = @IndexOptions(unique = true)) private String accountId;

@@ -2,8 +2,10 @@ package emu.grasscutter.utils;
 
 import java.io.Serializable;
 
+import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 
+@Entity
 public class Position implements Serializable {
 	private static final long serialVersionUID = -2001232313615923575L;
 	

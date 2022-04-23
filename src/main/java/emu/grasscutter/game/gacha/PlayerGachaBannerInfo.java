@@ -1,5 +1,8 @@
 package emu.grasscutter.game.gacha;
 
+import dev.morphia.annotations.Entity;
+
+@Entity
 public class PlayerGachaBannerInfo {
 	private int pity5 = 0;
 	private int pity4 = 0;
