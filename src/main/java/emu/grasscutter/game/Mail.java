@@ -1,9 +1,12 @@
 package emu.grasscutter.game;
 
+import dev.morphia.annotations.Entity;
+
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Mail {
 
     public int _id;
@@ -52,6 +55,7 @@ public class Mail {
         this.stateValue = state;
     }
 
+    @Entity
     public static class MailContent {
         public String title;
         public String content;
@@ -78,6 +82,7 @@ public class Mail {
         }
     }
 
+    @Entity
     public static class MailItem {
         public int itemId;
         public int itemCount;
