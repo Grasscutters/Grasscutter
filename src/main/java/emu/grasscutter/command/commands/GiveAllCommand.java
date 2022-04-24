@@ -21,7 +21,7 @@ public class GiveAllCommand implements CommandHandler {
         int target,amount=99999;
 
         switch (args.size()) {
-            default: // giveall *no args*
+            default: // *no args*
                 try {
                     target = sender.getUid();
                 }catch (NullPointerException ignored){
@@ -29,7 +29,7 @@ public class GiveAllCommand implements CommandHandler {
                     return;
                 }
                 break;
-            case 1: //[player]
+            case 1: // [player]
                 try {
                     target = Integer.parseInt(args.get(0));
                     if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
@@ -37,11 +37,11 @@ public class GiveAllCommand implements CommandHandler {
                         return;
                     }
                 }catch (NumberFormatException ignored){
-                    CommandHandler.sendMessage(sender, "Invalid amount or player ID.");
+                    CommandHandler.sendMessage(sender, "Invalid player ID.");
                     return;
                 }
                 break;
-            case 2: //[player] [amount]
+            case 2: // [player] [amount]
                 try {
                     target = Integer.parseInt(args.get(0));
                     if (Grasscutter.getGameServer().getPlayerByUid(target) == null && sender != null) {
@@ -85,19 +85,11 @@ public class GiveAllCommand implements CommandHandler {
         }
         player.getInventory().addItems(genshinItemList);
 
-        for(AvatarData avatarData:GenshinData.getAvatarDataMap().values())
-        {
-            int ascension;
-            int level = 90;
+        for(AvatarData avatarData:GenshinData.getAvatarDataMap().values()) {
             // Calculate ascension level.
-            if (level <= 40) {
-                ascension = (int) Math.ceil(90 / 20f);
-            } else {
-                ascension = (int) Math.ceil(90 / 10f) - 3;
-            }
-
+            int ascension = (int) Math.ceil(90 / 10f) - 3;
             GenshinAvatar avatar = new GenshinAvatar(avatarData);
-            avatar.setLevel(level);
+            avatar.setLevel(90);
             avatar.setPromoteLevel(ascension);
             for (int i = 1;i<=6;i++){
                 avatar.getTalentIdList().add((avatar.getAvatarId()-10000000)*10+i);//(10000058-10000000)*10+i
