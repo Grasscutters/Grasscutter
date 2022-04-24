@@ -7,7 +7,7 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 * Logging in
 * Combat
 * Spawning monsters via console
-* Inventory features (recieving items/characters, upgrading items/characters, etc)
+* Inventory features (receiving items/characters, upgrading items/characters, etc)
 * Gacha system
 * Friends list
 * Co-op *partially* works
