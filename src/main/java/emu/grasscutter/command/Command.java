@@ -15,5 +15,5 @@ public @interface Command {
 
     String permission() default "";
 
-    boolean threading() default  false;
+    boolean threading() default false;
 }
