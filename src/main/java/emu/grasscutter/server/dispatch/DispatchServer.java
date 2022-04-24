@@ -173,17 +173,15 @@ public final class DispatchServer {
 	public void start() throws Exception {
 		HttpServer server;
 		if (Grasscutter.getConfig().getDispatchOptions().UseSSL) {
-			HttpsServer httpsServer = HttpsServer.create(getAddress(), 0);
-			SSLContext sslContext = SSLContext.getInstance("TLS");
 			try (FileInputStream fis = new FileInputStream(Grasscutter.getConfig().getDispatchOptions().KeystorePath)) {
 				char[] keystorePassword = Grasscutter.getConfig().getDispatchOptions().KeystorePassword.toCharArray();
 				KeyStore ks = KeyStore.getInstance("PKCS12");
 				ks.load(fis, keystorePassword);
 				KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
 				kmf.init(ks, keystorePassword);
-				
+				SSLContext sslContext = SSLContext.getInstance("TLS");
 				sslContext.init(kmf.getKeyManagers(), null, null);
-				
+				HttpsServer httpsServer = HttpsServer.create(getAddress(), 0);
 				httpsServer.setHttpsConfigurator(new HttpsConfigurator(sslContext));
 				server = httpsServer;
 			} catch (BindException ignored) {
