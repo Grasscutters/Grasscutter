@@ -345,7 +345,7 @@ public final class DispatchServer {
 				account = DatabaseHelper.getAccountByOneTimeToken(requestData.account);
 				if(account == null) {
 					responseData.retcode = -201;
-					responseData.message = "Account not found";
+					responseData.message = "Token is invalid";
 					responseJSON(t, responseData);
 				}
 				;
