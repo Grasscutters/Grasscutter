@@ -31,6 +31,7 @@ public class GenshinData {
 	private static final Int2ObjectMap<AvatarSkillDepotData> avatarSkillDepotDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarSkillData> avatarSkillDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarCurveData> avatarCurveDataMap = new Int2ObjectLinkedOpenHashMap<>();
+	private static final Int2ObjectMap<AvatarFetterLevelData> avatarFetterLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarPromoteData> avatarPromoteDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarTalentData> avatarTalentDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<ProudSkillData> proudSkillDataMap = new Int2ObjectOpenHashMap<>();
@@ -57,6 +58,8 @@ public class GenshinData {
 	
 	private static final Int2ObjectMap<SceneData> sceneDataMap = new Int2ObjectLinkedOpenHashMap<>();
 	private static final Int2ObjectMap<FetterData> fetterDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<FetterCharacterCardData> fetterCharacterCardDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<RewardData> rewardDataMap = new Int2ObjectOpenHashMap<>();
 
 	// Cache
 	private static Map<Integer, List<Integer>> fetters = new HashMap<>();
@@ -112,6 +115,14 @@ public class GenshinData {
 
 	public static Int2ObjectMap<PlayerLevelData> getPlayerLevelDataMap() {
 		return playerLevelDataMap;
+	}
+
+	public static Int2ObjectMap<AvatarFetterLevelData> getAvatarFetterLevelDataMap() {
+		return avatarFetterLevelDataMap;
+	}
+
+	public static Int2ObjectMap<FetterCharacterCardData> getFetterCharacterCardDataMap() {
+		return fetterCharacterCardDataMap;
 	}
 
 	public static Int2ObjectMap<AvatarLevelData> getAvatarLevelDataMap() {
@@ -175,6 +186,11 @@ public class GenshinData {
 		AvatarLevelData levelData = avatarLevelDataMap.get(level);
 		return levelData != null ? levelData.getExp() : 0;
 	}
+
+	public static int getAvatarFetterLevelExpRequired(int level) {
+		AvatarFetterLevelData levelData = avatarFetterLevelDataMap.get(level);
+		return levelData != null ? levelData.getExp() : 0;
+	}
 	
 	public static Int2ObjectMap<ProudSkillData> getProudSkillDataMap() {
 		return proudSkillDataMap;
@@ -226,6 +242,10 @@ public class GenshinData {
 
 	public static Int2ObjectMap<SceneData> getSceneDataMap() {
 		return sceneDataMap;
+	}
+
+	public static Int2ObjectMap<RewardData> getRewardDataMap() {
+		return rewardDataMap;
 	}
 
 	public static Map<Integer, List<Integer>> getFetterDataEntries() {

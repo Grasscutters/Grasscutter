@@ -711,6 +711,31 @@ public class InventoryManager {
 		player.sendPacket(new PacketAvatarUpgradeRsp(avatar, oldLevel, oldPropMap));
 	}
 
+	public void upgradeAvatarFetterLevel(GenshinPlayer player, GenshinAvatar avatar, int expGain) {
+		// May work. Not test.
+		int maxLevel = 10; // Keep it until I think of a more "elegant" way
+		int level = avatar.getFetterLevel();
+		int exp = avatar.getFetterExp();
+		int reqExp = GenshinData.getAvatarFetterLevelExpRequired(level);
+
+		while (expGain > 0 && reqExp > 0 && level < maxLevel) {
+			int toGain = Math.min(expGain, reqExp - exp);
+			exp += toGain;
+			expGain -= toGain;
+			if (exp >= reqExp) {
+				exp = 0;
+				level += 1;
+				reqExp = GenshinData.getAvatarFetterLevelExpRequired(level);
+			}
+		}
+		
+		avatar.setFetterLevel(level);
+		avatar.setFetterExp(exp);
+		avatar.save();
+		
+		player.sendPacket(new PacketAvatarPropNotify(avatar));
+	}
+
 	public void upgradeAvatarSkill(GenshinPlayer player, long guid, int skillId) {
 		// Sanity checks
 		GenshinAvatar avatar = player.getAvatars().getAvatarByGuid(guid);

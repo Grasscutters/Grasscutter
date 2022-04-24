@@ -35,7 +35,30 @@ import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.net.proto.WorldPlayerLocationInfoOuterClass.WorldPlayerLocationInfo;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.server.packet.send.PacketAbilityInvocationsNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarAddNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarDataNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarGainCostumeNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarGainFlycloakNotify;
+import emu.grasscutter.server.packet.send.PacketClientAbilityInitFinishNotify;
+import emu.grasscutter.server.packet.send.PacketCombatInvocationsNotify;
+import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
+import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
+import emu.grasscutter.server.packet.send.PacketOpenStateUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerApplyEnterMpResultNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerDataNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerPropNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerStoreNotify;
+import emu.grasscutter.server.packet.send.PacketPrivateChatNotify;
+import emu.grasscutter.server.packet.send.PacketScenePlayerLocationNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerLevelRewardUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketSetNameCardRsp;
+import emu.grasscutter.server.packet.send.PacketStoreWeightLimitNotify;
+import emu.grasscutter.server.packet.send.PacketUnlockNameCardNotify;
+import emu.grasscutter.server.packet.send.PacketWorldPlayerLocationNotify;
+import emu.grasscutter.server.packet.send.PacketWorldPlayerRTTNotify;
+import emu.grasscutter.server.packet.send.PacketMailChangeNotify;
 import emu.grasscutter.utils.Position;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -75,6 +98,7 @@ public class GenshinPlayer {
 	private MpSettingType mpSetting = MpSettingType.MpSettingEnterAfterApply;
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
+	private Set<Integer> rewardedLevels;
 	private ArrayList<Mail> mail;
 	
 	private int sceneId;
@@ -125,6 +149,7 @@ public class GenshinPlayer {
 		this.clientAbilityInitFinishHandler = new InvokeHandler(PacketClientAbilityInitFinishNotify.class);
 
 		this.birthday = new PlayerBirthday();
+		this.rewardedLevels = new HashSet<>();
 	}
 	
 	// On player creation
@@ -648,6 +673,14 @@ public class GenshinPlayer {
 		this.updateProfile();
 	}
 
+	public Set<Integer> getRewardedLevels() {
+		return rewardedLevels;
+	}
+
+	public void setRewardedLevels(Set<Integer> rewardedLevels) {
+		this.rewardedLevels = rewardedLevels;
+	}
+
 	public SocialDetail.Builder getSocialDetail() {
 		SocialDetail.Builder social = SocialDetail.newBuilder()
 				.setUid(this.getUid())
@@ -765,6 +798,7 @@ public class GenshinPlayer {
 		session.send(new PacketAvatarDataNotify(this));
 		
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
+		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
 		session.send(new PacketOpenStateUpdateNotify());
 
 		// First notify packets sent
