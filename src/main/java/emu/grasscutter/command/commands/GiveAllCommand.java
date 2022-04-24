@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import com.thoughtworks.proxy.toys.nullobject.Null;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
@@ -21,7 +22,7 @@ public class GiveAllCommand implements CommandHandler {
         int target,amount=99999;
 
         switch (args.size()) {
-            default: // *no args*
+            default: // giveall *no args*
                 try {
                     target = sender.getUid();
                 }catch (NullPointerException ignored){
@@ -37,7 +38,7 @@ public class GiveAllCommand implements CommandHandler {
                         return;
                     }
                 }catch (NumberFormatException ignored){
-                    CommandHandler.sendMessage(sender, "Invalid player ID.");
+                    CommandHandler.sendMessage(sender, "Invalid amount or player ID.");
                     return;
                 }
                 break;
@@ -72,7 +73,7 @@ public class GiveAllCommand implements CommandHandler {
 
         Collection<GenshinItem> genshinItemList =new LinkedList<>();
         for (ItemData itemdata: GenshinData.getItemDataMap().values()) {
-            if(itemdata.getId() > 1000 && itemdata.getId() <= 1099) continue;
+            if(itemdata.getId() > 1000 && itemdata.getId() <= 1099)continue;//is avatar
             if (itemdata.isEquip()) {
                 for (int i = 0; i < 20; i++) {
                     genshinItemList.add(new GenshinItem(itemdata));
@@ -85,14 +86,22 @@ public class GiveAllCommand implements CommandHandler {
         }
         player.getInventory().addItems(genshinItemList);
 
-        for(AvatarData avatarData:GenshinData.getAvatarDataMap().values()) {
+        for(AvatarData avatarData:GenshinData.getAvatarDataMap().values())
+        {
+            int ascension;
+            int level = 90;
             // Calculate ascension level.
-            int ascension = (int) Math.ceil(90 / 10f) - 3;
+            if (level <= 40) {
+                ascension = (int) Math.ceil(90 / 20f);
+            } else {
+                ascension = (int) Math.ceil(90 / 10f) - 3;
+            }
+
             GenshinAvatar avatar = new GenshinAvatar(avatarData);
-            avatar.setLevel(90);
+            avatar.setLevel(level);
             avatar.setPromoteLevel(ascension);
             for (int i = 1;i<=6;i++){
-                avatar.getTalentIdList().add((avatar.getAvatarId()-10000000)*10+i);
+                avatar.getTalentIdList().add((avatar.getAvatarId()-10000000)*10+i);//(10000058-10000000)*10+i
             }
             // This will handle stats and talents
             avatar.recalcStats();
