@@ -743,9 +743,14 @@ public class GenshinAvatar {
 	}
 	
 	public AvatarInfo toProto() {
+		int fetterLevel = this.getFetterLevel();
 		AvatarFetterInfo.Builder avatarFetter = AvatarFetterInfo.newBuilder()
-				.setExpLevel(this.getFetterLevel())
-				.setExpNumber(this.getFetterExp());
+				.setExpLevel(fetterLevel);
+		
+		if (fetterLevel != 10) {
+			avatarFetter.setExpNumber(this.getFetterExp());
+		}
+				
 		
 		if (this.getFetterList() != null) {
 			for (int i = 0; i < this.getFetterList().size(); i++) {
@@ -757,11 +762,10 @@ public class GenshinAvatar {
 			}
 		}
 
-		int rewardId = this.getNameCardRewardId();
 		int cardId = this.getNameCardId();
 
 		if (this.getPlayer().getNameCardList().contains(cardId)) {
-			avatarFetter.addRewardedFetterLevelList(rewardId);
+			avatarFetter.addRewardedFetterLevelList(10);
 		}
 
 		AvatarInfo.Builder avatarInfo = AvatarInfo.newBuilder()

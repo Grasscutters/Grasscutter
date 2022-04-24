@@ -9,6 +9,7 @@ import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarFetterLevelRewardReqOuterClass.AvatarFetterLevelRewardReq;
 import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.server.packet.send.PacketAvatarDataNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarFetterLevelRewardRsp;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
@@ -46,8 +47,9 @@ public class HandlerAvatarFetterLevelRewardReq extends PacketHandler {
             session.getPlayer().getInventory().addItem(item);
             session.getPlayer().sendPacket(new PacketItemAddHintNotify(item, ActionReason.FetterLevelReward));
             session.getPlayer().sendPacket(new PacketUnlockNameCardNotify(cardId));
-            session.send(new PacketAvatarFetterLevelRewardRsp(avatarGuid, req.getFetterLevel(), rewardId));
             session.send(new PacketAvatarFetterDataNotify(avatar));
+            session.send(new PacketAvatarDataNotify(avatar.getPlayer()));
+            session.send(new PacketAvatarFetterLevelRewardRsp(avatarGuid, req.getFetterLevel(), rewardId));
         }
 	}
 }
