@@ -21,7 +21,7 @@
 
 ### Requirements
 
-* Java - 8u202 ([mirror link](https://mirrors.huaweicloud.com/java/jdk/8u202-b08/) since Oracle required an account to download old builds)
+* Java - 16 ([mirror link](https://github.com/adoptium/temurin16-binaries/releases) since Oracle required an account to download old builds)
 
   **Note:** If you just want to **run it**, then **jre** is fine 
 
@@ -66,6 +66,35 @@
 
 **you can also use `run.cmd` to start servers and proxy daemons automatically**
 
+## Building
+
+Grasscutter uses Gradle to handle dependencies & building.
+
+**Requirements:**
+
+- Java Development Kits - 16
+- Git
+
+#### Windows
+
+```shell
+git clone https://github.com/Grasscutters/Grasscutter.git
+cd Grasscutter
+.\gradlew.bat # Setting up environments
+.\gradlew jar # Compile
+```
+
+#### Linux
+
+```bash
+git clone https://github.com/Grasscutters/Grasscutter.git
+cd Grasscutter
+chmod +x gradlew
+./gradlew jar # Compile
+```
+
+You can find the output jar in the root of the project folder
+
 ## Commands
 
 | Commands       | Usage                                             | Permission node           | Availability | description                                                  | Alias                                           |
@@ -104,34 +133,6 @@
 When you want to teleport to somewhere, use the ingame marking function on Map, click Confirm. You will see your
 character falling from a very high destination, exact location that you marked.
 
-## Building
-
-Grasscutter uses Gradle to handle dependencies & building.
-
-**Requirements:**
-
-- Java Development Kits - 8u202
-- Git
-
-#### Windows
-
-```shell
-git clone https://github.com/Grasscutters/Grasscutter.git
-cd Grasscutter
-.\gradlew.bat # Setting up environments
-.\gradlew jar # Compile
-```
-
-#### Linux
-
-```bash
-git clone https://github.com/Grasscutters/Grasscutter.git
-cd Grasscutter
-chmod +x gradlew
-./gradlew jar # Compile
-```
-
-You can find the output jar in the root of the project folder
 
 # Quick Troubleshooting
 
