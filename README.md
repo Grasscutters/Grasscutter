@@ -64,7 +64,7 @@
     
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
 
-**you can also use `run.cmd` to start servers and proxy daemons automatically**
+**you can also use `start.cmd` to start servers and proxy daemons automatically**
 
 ## Building
 
