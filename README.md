@@ -21,28 +21,32 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 * Proxy daemon: mitmproxy (mitmdump, recommended), Fiddler Classic, etc.
 
 ### Starting up Grasscutter server (Assuming you are on Windows)
-1. Setup compile environment `gradlew.bat`
-2. Compile Grasscutter with `gradlew jar`
-3. Create a folder named `resources` in your Grasscutter directory, bring your `BinOutput` and `ExcelBinOutput` folders into it *(Check the wiki for more details how to get those.)*
-4. Run Grasscutter with `java -jar grasscutter.jar`. Make sure mongodb service is running as well.
+1. Setup compile environment using `gradlew.bat`
+2. Open cmd and go to the Grasscutter folder
+3. Compile Grasscutter with `gradlew jar`
+4. Create a folder named `resources` in your Grasscutter directory, bring your `BinOutput` and `ExcelBinOutput` folders into it *(Check the wiki for more details how to get those.)*
+5. Run Grasscutter with the start.cmd file. Make sure you open MongoDB before you run the server
 
 ### Connecting with the client
 ½. Create an account using *server console command* below
+
+`account create [username] {playerid}` - Creates an account with the specified username and the in-game uid for that account. The playerid parameter is optional and will be auto generated if not set.
+
 1. Run a proxy daemon: (choose either one)
 	- mitmdump: `mitmdump -s proxy.py -k`
 	- Fiddler Classic: Run Fiddler Classic, turn on `Decrypt https traffic` in setting and change the default port there (Tools -> Options -> Connections) to anything other than `8888`, and load [this script](https://github.lunatic.moe/fiddlerscript).
-	- [Hosts file](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
 2. Trust CA certificate:
 	- mitmdump: `certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer`
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
 4. *yoink*
 
-* or you can use `run.cmd` to start Server & Proxy daemon with one click
+### or you can use `start.cmd` file to start Server & Proxy daemon with one click
 
 # Grasscutter commands
-There is a dummy user named "Server" in every player's friends list that you can message to use commands. Commands also work in other chat rooms, such as private/team chats.
 
-`account create [username] {playerid}` - Creates an account with the specified username and the in-game uid for that account. The playerid parameter is optional and will be auto generated if not set.
+You might want to use this command (`java -jar grasscutter.jar -handbook`) in a cmd that is in the grasscutter folder. It will create a handbook file (GM Handbook.txt) where you can find the item IDs for stuff you want
+
+There is a dummy user named "Server" in every player's friends list that you can message to use commands. Commands also work in other chat rooms, such as private/team chats. Example command: `!give 223 1000` 
 
 `spawn [monster id] [level] [amount]`
 
