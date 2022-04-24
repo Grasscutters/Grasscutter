@@ -136,9 +136,11 @@ public final class CommandMap {
         }
 
         // Invoke execute method for handler.
+        // Get whether the command starts a thread
         boolean threading  = this.annotations.get(label).threading();
         Runnable runnable = () -> handler.execute(player, args);
         if(threading) {
+            //start thread
             Thread command = new Thread(runnable);
             command.start();
         }
