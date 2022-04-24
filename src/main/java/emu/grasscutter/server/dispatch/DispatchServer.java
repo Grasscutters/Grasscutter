@@ -177,11 +177,12 @@ public final class DispatchServer {
 			SSLContext sslContext = SSLContext.getInstance("TLS");
 			try (FileInputStream fis = new FileInputStream(Grasscutter.getConfig().getDispatchOptions().KeystorePath)) {
 				char[] keystorePassword = Grasscutter.getConfig().getDispatchOptions().KeystorePassword.toCharArray();
-
+				KeyManagerFactory _kmf;
 				try {
 					KeyStore ks = KeyStore.getInstance("PKCS12");
 					ks.load(fis, keystorePassword);
 					KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
+					_kmf = kmf;
 					kmf.init(ks, keystorePassword);
 				} catch (Exception e) {
 					Grasscutter.getLogger().warn("[Dispatch] Unable to load keystore. Using default keystore password...");
@@ -189,11 +190,10 @@ public final class DispatchServer {
 					ks.load(fis, "123456".toCharArray());
 					KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
 					kmf.init(ks, "123456".toCharArray());
-				} catch (Exception e) {
-					Grasscutter.getLogger().warn("[Dispatch] Error while loading keystore!");
+					_kmf = kmf;
 				}
 				
-				sslContext.init(kmf.getKeyManagers(), null, null);
+				sslContext.init(_kmf.getKeyManagers(), null, null);
 				
 				httpsServer.setHttpsConfigurator(new HttpsConfigurator(sslContext));
 				server = httpsServer;
