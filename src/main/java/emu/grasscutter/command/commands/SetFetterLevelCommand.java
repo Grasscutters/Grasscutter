@@ -11,7 +11,7 @@ import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
 
 @Command(label = "setfetterlevel", usage = "setfetterlevel <level>",
         description = "Sets your fetter level for your current active character",
-        aliases = {"setfetterlvl"}, permission = "player.setfetterlevel")
+        aliases = {"setfetterlvl", "setfriendship"}, permission = "player.setfetterlevel")
 public final class SetFetterLevelCommand implements CommandHandler {
 
     @Override
