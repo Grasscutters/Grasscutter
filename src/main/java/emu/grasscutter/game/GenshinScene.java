@@ -164,7 +164,7 @@ public class GenshinScene {
 	private void removePlayerAvatars(GenshinPlayer player) {
 		Iterator<EntityAvatar> it = player.getTeamManager().getActiveTeam().iterator();
 		while (it.hasNext()) {
-			this.removeEntity(it.next(), VisionType.VisionRemove);
+			this.removeEntity(it.next(), VisionType.VISION_REMOVE);
 			it.remove();
 		}
 	}
@@ -195,7 +195,7 @@ public class GenshinScene {
 			this.addEntityDirectly(entity);
 		}
 		
-		this.broadcastPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VisionBorn));
+		this.broadcastPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VISION_BORN));
 	}
 	
 	private GenshinEntity removeEntityDirectly(GenshinEntity entity) {
@@ -203,7 +203,7 @@ public class GenshinScene {
 	}
 	
 	public void removeEntity(GenshinEntity entity) {
-		this.removeEntity(entity, VisionType.VisionDie);
+		this.removeEntity(entity, VisionType.VISION_DIE);
 	}
 	
 	public synchronized void removeEntity(GenshinEntity entity, VisionType visionType) {
@@ -216,8 +216,8 @@ public class GenshinScene {
 	public synchronized void replaceEntity(EntityAvatar oldEntity, EntityAvatar newEntity) {
 		this.removeEntityDirectly(oldEntity);
 		this.addEntityDirectly(newEntity);
-		this.broadcastPacket(new PacketSceneEntityDisappearNotify(oldEntity, VisionType.VisionReplace));
-		this.broadcastPacket(new PacketSceneEntityAppearNotify(newEntity, VisionType.VisionReplace, oldEntity.getId()));
+		this.broadcastPacket(new PacketSceneEntityDisappearNotify(oldEntity, VisionType.VISION_REPLACE));
+		this.broadcastPacket(new PacketSceneEntityAppearNotify(newEntity, VisionType.VISION_REPLACE, oldEntity.getId()));
 	}
 	
 	public void showOtherEntities(GenshinPlayer player) {
@@ -231,7 +231,7 @@ public class GenshinScene {
 			entities.add(entity);
 		}
 		
-		player.sendPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VisionMeet));
+		player.sendPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VISION_MEET));
 	}
 	
 	public void handleAttack(AttackResult result) {
@@ -313,7 +313,7 @@ public class GenshinScene {
 			return;
 		}
 		
-		this.broadcastPacketToOthers(gadget.getOwner(), new PacketSceneEntityDisappearNotify(gadget, VisionType.VisionDie));
+		this.broadcastPacketToOthers(gadget.getOwner(), new PacketSceneEntityDisappearNotify(gadget, VisionType.VISION_DIE));
 	}
 
 	// Broadcasting

@@ -18,7 +18,7 @@ public class PacketPlayerStoreNotify extends GenshinPacket {
 		this.buildHeader(2);
 		
 		PlayerStoreNotify.Builder p = PlayerStoreNotify.newBuilder()
-				.setStoreType(StoreType.StorePack)
+				.setStoreType(StoreType.STORE_PACK)
 				.setWeightLimit(Grasscutter.getConfig().getGameServerOptions().InventoryLimitAll);
 		
 		for (GenshinItem item : player.getInventory()) {

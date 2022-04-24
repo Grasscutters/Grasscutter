@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum CoopChapterState {
+	Close = 0;
+	CondNotMeet = 1;
+	CondMeet = 2;
+	Accept = 3;
+}

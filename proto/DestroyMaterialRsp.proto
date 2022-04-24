@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message DestroyMaterialRsp {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 641;
+	}
+
+	int32 retcode = 1;
+	repeated uint32 item_id_list = 2;
+	repeated uint32 item_count_list = 3;
+}

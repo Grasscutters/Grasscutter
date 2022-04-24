@@ -13,7 +13,7 @@ public class PacketPlayerDataNotify extends GenshinPacket {
 		
 		PlayerDataNotify.Builder p = PlayerDataNotify.newBuilder()
 				.setNickName(player.getNickname())
-				.setClientTime(System.currentTimeMillis())
+				.setServerTime(System.currentTimeMillis())
 				.setIsFirstLoginToday(true)
 				.setRegionId(player.getRegionId());
 				

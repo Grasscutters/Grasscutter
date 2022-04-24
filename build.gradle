@@ -6,24 +6,39 @@
  * User Manual available at https://docs.gradle.org/5.6.3/userguide/tutorial_java_projects.html
  */
 
+buildscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.18'
+    }
+}
+
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
+
+    // Apply the protobuf auto generator
+    id 'com.google.protobuf' version "0.8.18"
+    id 'idea'
 
     // Apply the application plugin to add support for building a CLI application
     id 'application'
 }
 
-sourceCompatibility = 16
-targetCompatibility = 16
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
-    
+
 	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
 	implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.9'
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.9'
@@ -37,6 +52,9 @@ dependencies {
 	implementation group: 'dev.morphia.morphia', name: 'morphia-core', version: '2.2.6'
 
     implementation group: 'org.greenrobot', name: 'eventbus-java', version: '3.3.1'
+
+    protobuf files('proto/')
+
 }
 
 application {
@@ -62,5 +80,31 @@ jar {
 	}
 
     destinationDir = file(".")
+}
+
+
+clean {
+    delete protobuf.generatedFilesBaseDir
+}
+
+protobuf {
+    protoc {
+        // The artifact spec for the Protobuf Compiler
+        artifact = 'com.google.protobuf:protoc:3.18.1'
+    }
+//    generatedFilesBaseDir = "$projectDir/src/main/java/emu/grasscutter/net/proto/"
+    generatedFilesBaseDir = "$projectDir/src/generated/"
+}
+
+sourceSets {
+    main {
+        proto {
+            // In addition to the default 'src/main/proto'
+            srcDir 'src/generated'
+        }
+        java {
+            srcDir 'src/java'
+        }
+    }
 }
 

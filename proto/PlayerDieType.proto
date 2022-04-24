@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum PlayerDieType {
+	PLAYER_DIE_NONE = 0;
+	PLAYER_DIE_KILL_BY_MONSTER = 1;
+	PLAYER_DIE_KILL_BY_GEAR = 2;
+	PLAYER_DIE_FALL = 3;
+	PLAYER_DIE_DRAWN = 4;
+	PLAYER_DIE_ABYSS = 5;
+	PLAYER_DIE_GM = 6;
+	PLAYER_DIE_CLIMATE_COLD = 7;
+	PLAYER_DIE_STORM_LIGHTING = 8;
+}

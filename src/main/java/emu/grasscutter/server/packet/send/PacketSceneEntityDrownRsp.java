@@ -11,7 +11,7 @@ public class PacketSceneEntityDrownRsp extends GenshinPacket {
     public PacketSceneEntityDrownRsp(int entityId) {
         super(PacketOpcodes.SceneEntityDrownRsp);
 
-        SceneEntityDrownRsp proto = new SceneEntityDrownRsp().toBuilder().setEntityId(entityId).build();
+        SceneEntityDrownRsp proto = SceneEntityDrownRsp.newBuilder().setEntityId(entityId).build();
 
         this.setData(proto);
     }

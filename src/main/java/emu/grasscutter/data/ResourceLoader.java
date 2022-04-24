@@ -136,7 +136,7 @@ public class ResourceLoader {
 		}
 
 		List<ScenePointEntry> scenePointList = new ArrayList<>();
-		for (File file : folder.listFiles()) {
+		for (File file : Objects.requireNonNull(folder.listFiles())) {
 			ScenePointConfig config = null;
 			Integer sceneId = null;
 			
@@ -186,7 +186,7 @@ public class ResourceLoader {
 		} else {
 			// Load from BinOutput
 			Pattern pattern = Pattern.compile("(?<=ConfigAvatar_)(.*?)(?=.json)");
-			
+
 			embryoList = new LinkedList<>();
 			File folder = new File(Utils.toFilePath(Grasscutter.getConfig().RESOURCE_FOLDER + "BinOutput/Avatar/"));
 			File[] files = folder.listFiles();
@@ -194,29 +194,29 @@ public class ResourceLoader {
 				Grasscutter.getLogger().error("Error loading ability embryos: no files found in " + folder.getAbsolutePath());
 				return;
 			}
-			
+
 			for (File file : files) {
 				AvatarConfig config;
 				String avatarName;
-				
+
 				Matcher matcher = pattern.matcher(file.getName());
 				if (matcher.find()) {
 					avatarName = matcher.group(0);
 				} else {
 					continue;
 				}
-				
+
 				try (FileReader fileReader = new FileReader(file)) {
 					config = Grasscutter.getGsonFactory().fromJson(fileReader, AvatarConfig.class);
 				} catch (Exception e) {
 					e.printStackTrace();
 					continue;
 				}
-				
+
 				if (config.abilities == null) {
 					continue;
 				}
-				
+
 				int s = config.abilities.size();
 				AbilityEmbryoEntry al = new AbilityEmbryoEntry(avatarName, config.abilities.stream().map(Object::toString).toArray(size -> new String[s]));
 				embryoList.add(al);
@@ -300,7 +300,7 @@ public class ResourceLoader {
 			GenshinData.getOpenConfigEntries().put(entry.getName(), entry);
 		}
 	}
-	
+
 	// BinOutput configs
 	
 	private static class AvatarConfig {

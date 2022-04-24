@@ -1009,8 +1009,6 @@ public class PacketOpcodes {
     public static final int SetNameCardRsp = 4009;
     public static final int SetOpenStateReq = 162;
     public static final int SetOpenStateRsp = 189;
-    public static final int SetPlayerBirthdayReq = 4097;
-    public static final int SetPlayerBirthdayRsp = 4088;
     public static final int SetPlayerBornDataReq = 155;
     public static final int SetPlayerBornDataRsp = 146;
     public static final int SetPlayerHeadImageReq = 4046;
@@ -1034,8 +1032,6 @@ public class PacketOpcodes {
     public static final int ShowTemplateReminderNotify = 3164;
     public static final int SignInInfoReq = 2510;
     public static final int SignInInfoRsp = 2515;
-    public static final int SitReq = 354;
-    public static final int SitRsp = 335;
     public static final int SocialDataNotify = 4063;
     public static final int SpringUseReq = 1720;
     public static final int SpringUseRsp = 1727;

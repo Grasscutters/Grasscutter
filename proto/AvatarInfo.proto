@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "TrialAvatarInfo.proto";
+import "AvatarFetterInfo.proto";
+import "AvatarExpeditionState.proto";
+import "AvatarExcelInfo.proto";
+import "PropValue.proto";
+import "AvatarSkillInfo.proto";
+import "AvatarEquipAffixInfo.proto";
+
+message AvatarInfo {
+	uint32 avatar_id = 1;
+	uint64 guid = 2;
+	map<uint32, PropValue> prop_map = 3;
+	uint32 life_state = 4;
+	repeated uint64 equip_guid_list = 5;
+	repeated uint32 talent_id_list = 6;
+	map<uint32, float> fight_prop_map = 7;
+	TrialAvatarInfo trial_avatar_info = 9;
+	map<uint32, AvatarSkillInfo> skill_map = 10;
+	uint32 skill_depot_id = 11;
+	AvatarFetterInfo fetter_info = 12;
+	uint32 core_proud_skill_level = 13;
+	repeated uint32 inherent_proud_skill_list = 14;
+	map<uint32, uint32> skill_level_map = 15;
+	AvatarExpeditionState expedition_state = 16;
+	map<uint32, uint32> proud_skill_extra_level_map = 17;
+	bool is_focus = 18;
+	uint32 avatar_type = 19;
+	repeated uint32 team_resonance_list = 20;
+	uint32 wearing_flycloak_id = 21;
+	repeated AvatarEquipAffixInfo equip_affix_list = 22;
+	uint32 born_time = 23;
+	repeated uint32 pending_promote_reward_list = 24;
+	uint32 costume_id = 25;
+	AvatarExcelInfo excel_info = 26;
+	uint32 anim_hash = 27;
+}

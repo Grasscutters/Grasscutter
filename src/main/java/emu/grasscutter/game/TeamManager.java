@@ -397,7 +397,7 @@ public class TeamManager {
 		this.setCurrentCharacterIndex(index);
 		
 		// Old entity motion state
-		oldEntity.setMotionState(MotionState.MotionStandby);
+		oldEntity.setMotionState(MotionState.MOTION_STANDBY);
 
 		// Remove and Add
 		getPlayer().getScene().replaceEntity(oldEntity, newEntity);
@@ -476,7 +476,7 @@ public class TeamManager {
 		}
 		
 		// Teleport player
-		getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(getPlayer(), EnterType.EnterSelf, EnterReason.Revival, 3, GenshinConstants.START_POSITION));
+		getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(getPlayer(), EnterType.ENTER_SELF, EnterReason.Revival, 3, GenshinConstants.START_POSITION));
 		
 		// Set player position
 		player.setSceneId(3);

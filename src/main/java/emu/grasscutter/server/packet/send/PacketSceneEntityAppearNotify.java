@@ -15,7 +15,7 @@ public class PacketSceneEntityAppearNotify extends GenshinPacket {
 		super(PacketOpcodes.SceneEntityAppearNotify, true);
 
 		SceneEntityAppearNotify.Builder proto = SceneEntityAppearNotify.newBuilder()
-				.setAppearType(VisionType.VisionBorn)
+				.setAppearType(VisionType.VISION_BORN)
 				.addEntityList(entity.toProto());
 
 		this.setData(proto.build());

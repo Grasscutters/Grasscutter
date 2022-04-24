@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum PlayerApplyEnterMpReason {
+	PlayerJudge = 0;
+	SceneCannotEnter = 1;
+	PlayerCannotEnterMp = 2;
+	SystemJudge = 3;
+	AllowEnterPlayerFull = 4;
+	WorldLevelLowerThanHost = 5;
+	HostInMatch = 6;
+	PlayerInBlacklist = 7;
+	PsPlayerNotAcceptOthers = 8;
+	HostIsBlocked = 9;
+	OtherDataVersionNotLatest = 10;
+	DataVersionNotLatest = 11;
+	PlayerNotInPlayerWorld = 12;
+}

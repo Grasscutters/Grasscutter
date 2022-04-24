@@ -23,16 +23,16 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
-import emu.grasscutter.net.proto.BirthdayOuterClass.Birthday;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
+import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
+import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.net.proto.WorldPlayerLocationInfoOuterClass.WorldPlayerLocationInfo;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketAbilityInvocationsNotify;
@@ -94,7 +94,7 @@ public class GenshinPlayer {
 	private TeamManager teamManager;
 	private PlayerGachaInfo gachaInfo;
 	private PlayerProfile playerProfile;
-	private MpSettingType mpSetting = MpSettingType.MpSettingEnterAfterApply;
+	private MpSettingType mpSetting = MpSettingType.MP_SETTING_ENTER_AFTER_APPLY;
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
@@ -609,7 +609,7 @@ public class GenshinPlayer {
 			// Add to inventory
 			boolean success = getInventory().addItem(item);
 			if (success) {
-				this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.InteractPickItem));
+				this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
 				this.sendPacket(new PacketItemAddHintNotify(item, ActionReason.SubfieldDrop));
 			}
 		}
@@ -639,7 +639,7 @@ public class GenshinPlayer {
 				.setMpSettingType(this.getMpSetting())
 				.setNameCardId(this.getNameCardId())
 				.setSignature(this.getSignature())
-				.setAvatar(HeadImage.newBuilder().setAvatarId(this.getHeadImage()));
+				.setAvatarId(HeadImage.newBuilder().setAvatarId(this.getHeadImage()).getAvatarId());
 		
 		if (this.getWorld() != null) {
 			onlineInfo.setCurPlayerNumInWorld(this.getWorld().getPlayers().indexOf(this) + 1);
@@ -670,21 +670,19 @@ public class GenshinPlayer {
 	public SocialDetail.Builder getSocialDetail() {
 		SocialDetail.Builder social = SocialDetail.newBuilder()
 				.setUid(this.getUid())
-				.setAvatar(HeadImage.newBuilder().setAvatarId(this.getHeadImage()))
+				.setAvatarId(HeadImage.newBuilder().setAvatarId(this.getHeadImage()).getAvatarId())
 				.setNickname(this.getNickname())
 				.setSignature(this.getSignature())
 				.setLevel(this.getLevel())
 				.setBirthday(this.getBirthday().getFilledProtoWhenNotEmpty())
 				.setWorldLevel(this.getWorldLevel())
-				.setUnk1(1)
-				.setUnk3(1)
 				.setNameCardId(this.getNameCardId())
 				.setFinishAchievementNum(0);
 		return social;
 	}
 	
-	public WorldPlayerLocationInfo getWorldPlayerLocationInfo() {
-		return WorldPlayerLocationInfo.newBuilder()
+	public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getWorldPlayerLocationInfo() {
+		return PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.newBuilder()
 					.setSceneId(this.getSceneId())
 					.setPlayerLoc(this.getPlayerLocationInfo())
 					.build();
@@ -709,7 +707,7 @@ public class GenshinPlayer {
 		while (it.hasNext()) {
 			CoopRequest req = it.next();
 			if (req.isExpired()) {
-				req.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(this, false, PlayerApplyEnterMpReason.SystemJudge));
+				req.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(this, false, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.SYSTEM_JUDGE));
 				it.remove();
 			}
 		}

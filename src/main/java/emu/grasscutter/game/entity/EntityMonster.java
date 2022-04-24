@@ -167,7 +167,7 @@ public class EntityMonster extends GenshinEntity {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.ProtEntityMonster)
+				.setEntityType(ProtEntityType.PROT_ENTITY_MONSTER)
 				.setMotionInfo(this.getMotionInfo())
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())
@@ -178,7 +178,7 @@ public class EntityMonster extends GenshinEntity {
 			if (entry.getIntKey() == 0) {
 				continue;
 			}
-			FightPropPair fightProp = FightPropPair.newBuilder().setType(entry.getIntKey()).setPropValue(entry.getFloatValue()).build();
+			FightPropPair fightProp = FightPropPair.newBuilder().setPropType(entry.getIntKey()).setPropValue(entry.getFloatValue()).build();
 			entityInfo.addFightPropList(fightProp);
 		}
 		
@@ -196,7 +196,7 @@ public class EntityMonster extends GenshinEntity {
 				.setAuthorityPeerId(getWorld().getHostPeerId())
 				.setPoseId(0)
 				.setBlockId(3001)
-				.setBornType(MonsterBornType.MonsterBornDefault)
+				.setBornType(MonsterBornType.MONSTER_BORN_DEFAULT)
 				.setSpecialNameId(40);
 		
 		if (getMonsterData().getDescribeData() != null) {
@@ -210,7 +210,7 @@ public class EntityMonster extends GenshinEntity {
 					.setAbilityInfo(AbilitySyncStateInfo.newBuilder())
 					.build();
 			
-			monsterInfo.setWeaponList(weaponInfo);
+			monsterInfo.addWeaponList(weaponInfo);
 		}
 		
 		entityInfo.setMonster(monsterInfo);

@@ -34,7 +34,7 @@ public class HandlerSceneEntityDrownReq extends PacketHandler {
 
         //TODO: make a list somewhere of all entities to remove per tick rather than one by one
 
-        session.getPlayer().getScene().removeEntity(entity, VisionTypeOuterClass.VisionType.VisionDie);
+        session.getPlayer().getScene().removeEntity(entity, VisionTypeOuterClass.VisionType.VISION_DIE);
 
     }
 
