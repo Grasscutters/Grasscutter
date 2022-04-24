@@ -1,9 +1,14 @@
 name: "Build"
 on:
+  workflow_dispatch: ~
   push:
+    paths:
+      - "**.java"
     branches:
       - "stable"
   pull_request:
+    paths:
+      - "**.java"
     types:
       - opened
       - synchronize
