@@ -184,6 +184,7 @@ public final class DispatchServer {
 					KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
 					kmf.init(ks, keystorePassword);
 				} catch (Exception e) {
+					Grasscutter.getLogger().warn("[Dispatch] Unable to load keystore. Using default keystore password...");
 					KeyStore ks = KeyStore.getInstance("PKCS12");
 					ks.load(fis, "123456");
 					KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
