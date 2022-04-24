@@ -52,6 +52,7 @@ import emu.grasscutter.server.packet.send.PacketPlayerPropNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerStoreNotify;
 import emu.grasscutter.server.packet.send.PacketPrivateChatNotify;
 import emu.grasscutter.server.packet.send.PacketScenePlayerLocationNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerLevelRewardUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketSetNameCardRsp;
 import emu.grasscutter.server.packet.send.PacketStoreWeightLimitNotify;
 import emu.grasscutter.server.packet.send.PacketUnlockNameCardNotify;
@@ -96,6 +97,7 @@ public class GenshinPlayer {
 	private MpSettingType mpSetting = MpSettingType.MpSettingEnterAfterApply;
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
+	private Set<Integer> rewardedLevels;
 	
 	private int sceneId;
 	private int regionId;
@@ -143,6 +145,7 @@ public class GenshinPlayer {
 		this.clientAbilityInitFinishHandler = new InvokeHandler(PacketClientAbilityInitFinishNotify.class);
 
 		this.birthday = new PlayerBirthday();
+		this.rewardedLevels = new HashSet<>();
 	}
 	
 	// On player creation
@@ -656,6 +659,14 @@ public class GenshinPlayer {
 		this.updateProfile();
 	}
 
+	public Set<Integer> getRewardedLevels() {
+		return rewardedLevels;
+	}
+
+	public void setRewardedLevels(Set<Integer> rewardedLevels) {
+		this.rewardedLevels = rewardedLevels;
+	}
+
 	public SocialDetail.Builder getSocialDetail() {
 		SocialDetail.Builder social = SocialDetail.newBuilder()
 				.setUid(this.getUid())
@@ -773,6 +784,7 @@ public class GenshinPlayer {
 		session.send(new PacketAvatarDataNotify(this));
 		
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
+		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
 		session.send(new PacketOpenStateUpdateNotify());
 
 		// First notify packets sent
