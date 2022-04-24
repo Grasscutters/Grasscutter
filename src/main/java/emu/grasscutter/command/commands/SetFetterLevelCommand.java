@@ -35,7 +35,9 @@ public final class SetFetterLevelCommand implements CommandHandler {
             GenshinAvatar avatar = sender.getTeamManager().getCurrentAvatarEntity().getAvatar();
 
             avatar.setFetterLevel(fetterLevel);
-		    avatar.setFetterExp(GenshinData.getAvatarFetterLevelDataMap().get(fetterLevel).getExp());
+            if (fetterLevel != 10) {
+                avatar.setFetterExp(GenshinData.getAvatarFetterLevelDataMap().get(fetterLevel).getExp());
+            }
 		    avatar.save();
 		
 		    sender.sendPacket(new PacketAvatarFetterDataNotify(avatar));
