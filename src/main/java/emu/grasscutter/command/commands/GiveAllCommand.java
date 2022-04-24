@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import com.thoughtworks.proxy.toys.nullobject.Null;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
@@ -9,14 +10,11 @@ import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 import emu.grasscutter.game.inventory.GenshinItem;
-import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @Command(label = "giveall", usage = "giveall [player] <amount>",
-        description = "Gives All item to you or the specified player", aliases = {"givea"}, permission = "player.giveall")
+        description = "Gives all items", aliases = {"givea"}, permission = "player.giveall",threading = true)
 public class GiveAllCommand implements CommandHandler {
 
     @Override
@@ -25,7 +23,12 @@ public class GiveAllCommand implements CommandHandler {
 
         switch (args.size()) {
             default: // giveall *no args*
-                target = sender.getUid();
+                try {
+                    target = sender.getUid();
+                }catch (NullPointerException ignored){
+                    CommandHandler.sendMessage(sender, "Player not found.");
+                    return;
+                }
                 break;
             case 1: //[player]
                 try {
@@ -62,27 +65,27 @@ public class GiveAllCommand implements CommandHandler {
         }
 
         this.GetAllItem(targetPlayer,amount);
-        CommandHandler.sendMessage(sender, String.format("Get All Items Done."));
+        CommandHandler.sendMessage(sender, "Done! or Getting all items done");
     }
 
     public void GetAllItem(GenshinPlayer player, int amount){
-        CommandHandler.sendMessage(player, "Get All Items...");
+        CommandHandler.sendMessage(player, "Getting all items…");
+
+        Collection<GenshinItem> genshinItemList =new LinkedList<>();
         for (ItemData itemdata: GenshinData.getItemDataMap().values()) {
-            if(itemdata.getId() > 1000 && itemdata.getId() <= 2000)continue;//is avatar
+            if(itemdata.getId() > 1000 && itemdata.getId() <= 1099)continue;//is avatar
             if (itemdata.isEquip()) {
-                List<GenshinItem> items = new LinkedList<>();
                 for (int i = 0; i < 20; i++) {
-                    items.add(new GenshinItem(itemdata));
+                    genshinItemList.add(new GenshinItem(itemdata));
                 }
-                player.getInventory().addItems(items);
-                player.sendPacket(new PacketItemAddHintNotify(items, ActionReason.SubfieldDrop));
             } else {
                 GenshinItem genshinItem = new GenshinItem(itemdata);
                 genshinItem.setCount(amount);
-                player.getInventory().addItem(genshinItem);
-                player.sendPacket(new PacketItemAddHintNotify(genshinItem, ActionReason.SubfieldDrop));
+                genshinItemList.add(genshinItem);
             }
         }
+        player.getInventory().addItems(genshinItemList);
+
         for(AvatarData avatarData:GenshinData.getAvatarDataMap().values())
         {
             int ascension;
