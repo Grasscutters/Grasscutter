@@ -2,7 +2,9 @@ package emu.grasscutter.server.packet.recv;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GenshinData;
 import emu.grasscutter.data.common.RewardItemData;
 import emu.grasscutter.game.inventory.GenshinItem;
@@ -36,6 +38,9 @@ public class HandlerTakePlayerLevelRewardReq extends PacketHandler {
             }
             session.getPlayer().getInventory().addItems(items);
             session.getPlayer().sendPacket(new PacketItemAddHintNotify(items, ActionReason.PlayerUpgradeReward));
+            Set<Integer> rewardedLevels = session.getPlayer().getRewardedLevels();
+            rewardedLevels.add(level);
+            session.getPlayer().setRewardedLevels(rewardedLevels);
         }
 
         session.send(new PacketTakePlayerLevelRewardRsp(level, rewardId));
