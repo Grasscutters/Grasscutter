@@ -47,7 +47,7 @@ public class Mail {
         this._id = _id;
         this.mailContent = mailContent;
         this.itemList = itemList;
-        this.sendTime = (int) Instant.now().EPOCH.getEpochSecond();
+        this.sendTime = (int) Instant.now().getEpochSecond();
         this.expireTime = expireTime;
         this.importance = importance;
         this.isRead = false;
