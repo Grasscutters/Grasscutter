@@ -1,5 +1,7 @@
 # Grasscutter
-A WIP server reimplementation for *some anime game* 2.3-2.6
+A WIP server reimplementation for *certain anime game* 2.3-2.6  
+
+We always welcome contributors to the project. Before adding your contribution, please carefully read our [Code of Conduct](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
 **Documentation**: [Grasscutter Wiki](https://github.com/Melledy/Grasscutter/wiki/)  
 **Note**: For support please join the [Discord server](https://discord.gg/T5vZU6UyeG).
@@ -16,7 +18,7 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 * If you updated from an older version, delete `config.json` to regenerate it.
 
 ### Prerequisites
-* Java 16
+* Java SE Development Kit 16
 * Mongodb (recommended 4.0+)
 * Proxy daemon: mitmproxy (mitmdump, recommended), Fiddler Classic, etc.
 
@@ -68,10 +70,9 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 `weather [weather id] [climate id]` - Changes the current weather.
 
-*More commands will be updated in the [wiki](https://github.com/Melledy/Grasscutter/wiki/).*
-
-### Bonus
 When you want to teleport somewhere, use the in-game marking function on the Map, click Confirm. You will see your character falling from a very high spot at the exact location you marked.
+
+*More commands will be updated in the [wiki](https://github.com/Melledy/Grasscutter/wiki/).*
 
 # Quick Troubleshooting
 * If compiling wasn't successful, please check your JDK installation (must be JDK 8 and validated JDK's bin PATH variable)
