@@ -9,7 +9,7 @@ We always welcome contributors to the project. Before adding your contribution, 
 * Logging in
 * Combat
 * Spawning monsters via console
-* Inventory features (recieving items/characters, upgrading items/characters, etc)
+* Inventory features (receiving items/characters, upgrading items/characters, etc)
 * Gacha system
 * Friends list
 * Co-op *partially* works
