@@ -13,9 +13,14 @@ public class PacketAvatarFetterDataNotify extends GenshinPacket {
 	public PacketAvatarFetterDataNotify(GenshinAvatar avatar) {
 		super(PacketOpcodes.AvatarFetterDataNotify);
 
+		int fetterLevel = avatar.getFetterLevel();
+
 		AvatarFetterInfo.Builder avatarFetter = AvatarFetterInfo.newBuilder()
-				.setExpLevel(avatar.getFetterLevel())
-				.setExpNumber(avatar.getFetterExp());
+				.setExpLevel(avatar.getFetterLevel());
+		
+		if (fetterLevel != 10) {
+			avatarFetter.setExpNumber(avatar.getFetterExp());
+		}
 		
 		if (avatar.getFetterList() != null) {
 			for (int i = 0; i < avatar.getFetterList().size(); i++) {
@@ -27,11 +32,10 @@ public class PacketAvatarFetterDataNotify extends GenshinPacket {
 			}
 		}
 		
-		int rewardId = avatar.getNameCardRewardId();
 		int cardId = avatar.getNameCardId();
 
 		if (avatar.getPlayer().getNameCardList().contains(cardId)) {
-			avatarFetter.addRewardedFetterLevelList(rewardId);
+			avatarFetter.addRewardedFetterLevelList(10);
 		}
 
 		AvatarFetterInfo avatarFetterInfo = avatarFetter.build();
