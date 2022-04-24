@@ -197,8 +197,8 @@ public final class SetStatsCommand implements CommandHandler {
                     float eelec = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     float elec = eelec / 10000;
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_CRITICAL_HURT, elec);
-                    entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CRITICAL_HURT));
+                    entity.setFightProperty(FightProperty.FIGHT_PROP_ELEC_ADD_HURT, elec);
+                    entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ELEC_ADD_HURT));
                     float igelec = elec * 100;
                     CommandHandler.sendMessage(sender, "Electro DMG Bonus set to " + igelec + "%");
                 } catch (NumberFormatException ignored) {
