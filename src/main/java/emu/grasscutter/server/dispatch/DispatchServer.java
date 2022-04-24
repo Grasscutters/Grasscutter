@@ -266,7 +266,9 @@ public final class DispatchServer {
 				String requestBody = Utils.toString(t.getRequestBody());
 				LoginGenerateToken loginGenerateToken = new Gson().fromJson(requestBody, LoginGenerateToken.class);
 				Account account = DatabaseHelper.getAccountByUsernameAndPassword(loginGenerateToken.username, loginGenerateToken.password);
-				if (account != null) {
+				if (account == null) {
+					responseHTML(t, "Invalid username or password.");
+				}else{
 					responseHTML(t, account.generateJWT());
 				}
 			}catch (Exception ignore) {}
@@ -279,7 +281,9 @@ public final class DispatchServer {
 				if (registerAccount != null) {
 					String password = Utils.argon2.hash(10, 65536, 1, registerAccount.password.toCharArray());
 					Account account = DatabaseHelper.createAccountWithPassword(registerAccount.username, password);
-					if (account != null) {
+					if (account == null) {
+						responseHTML(t, "Error while creating account. (Username or Uid already exists)");
+					} else {
 						responseHTML(t, account.generateJWT());
 					}
 				}
