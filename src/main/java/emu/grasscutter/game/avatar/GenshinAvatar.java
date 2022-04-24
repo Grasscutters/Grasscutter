@@ -89,6 +89,12 @@ public class GenshinAvatar {
 	private int flyCloak;
 	private int costume;
 	private int bornTime;
+
+	private int fetterLevel = 1;
+	private int fetterExp;
+
+	private int nameCardRewardId;
+	private int nameCardId;
 	
 	public GenshinAvatar() {
 		// Morhpia only!
@@ -107,6 +113,8 @@ public class GenshinAvatar {
 	public GenshinAvatar(AvatarData data) {
 		this();
 		this.avatarId = data.getId();
+		this.nameCardRewardId = data.getNameCardRewardId();
+		this.nameCardId = data.getNameCardId();
 		this.data = data;
 		this.bornTime = (int) (System.currentTimeMillis() / 1000);
 		this.flyCloak = 140001;
@@ -167,6 +175,14 @@ public class GenshinAvatar {
 
 	public void setSatiation(int satiation) {
 		this.satiation = satiation;
+	}
+
+	public int getNameCardRewardId() {
+		return nameCardRewardId;
+	}
+
+	public void setNameCardRewardId(int nameCardRewardId) {
+		this.nameCardRewardId = nameCardRewardId;
 	}
 
 	public int getSatiationPenalty() {
@@ -279,6 +295,30 @@ public class GenshinAvatar {
 
 	public List<Integer> getFetterList() {
 		return fetters;
+	}
+
+	public int getFetterLevel() {
+		return fetterLevel;
+	}
+
+	public void setFetterLevel(int fetterLevel) {
+		this.fetterLevel = fetterLevel;
+	}
+
+	public int getFetterExp() {
+		return fetterExp;
+	}
+
+	public void setFetterExp(int fetterExp) {
+		this.fetterExp = fetterExp;
+	}
+
+	public int getNameCardId() {
+		return nameCardId;
+	}
+
+	public void setNameCardId(int nameCardId) {
+		this.nameCardId = nameCardId;
 	}
 
 	public float getCurrentHp() {
@@ -403,6 +443,8 @@ public class GenshinAvatar {
 
 		// Fetters
 		this.setFetterList(data.getFetters());
+		this.setNameCardRewardId(data.getNameCardRewardId());
+		this.setNameCardId(data.getNameCardId());
 		
 		// Get hp percent, set to 100% if none
 		float hpPercent = this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) <= 0 ? 1f : this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) / this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
@@ -702,8 +744,8 @@ public class GenshinAvatar {
 	
 	public AvatarInfo toProto() {
 		AvatarFetterInfo.Builder avatarFetter = AvatarFetterInfo.newBuilder()
-				.setExpLevel(10)
-				.setExpNumber(6325); // Highest Level
+				.setExpLevel(this.getFetterLevel())
+				.setExpNumber(this.getFetterExp());
 		
 		if (this.getFetterList() != null) {
 			for (int i = 0; i < this.getFetterList().size(); i++) {
@@ -713,6 +755,13 @@ public class GenshinAvatar {
 						.setFetterState(FetterState.FINISH.getValue())
 				);
 			}
+		}
+
+		int rewardId = this.getNameCardRewardId();
+		int cardId = this.getNameCardId();
+
+		if (this.getPlayer().getNameCardList().contains(cardId)) {
+			avatarFetter.addRewardedFetterLevelList(rewardId);
 		}
 
 		AvatarInfo.Builder avatarInfo = AvatarInfo.newBuilder()
