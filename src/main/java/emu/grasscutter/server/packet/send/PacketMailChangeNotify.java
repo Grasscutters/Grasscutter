@@ -18,44 +18,52 @@ public class PacketMailChangeNotify extends GenshinPacket {
     }
 
     public PacketMailChangeNotify(GenshinPlayer player, List<Mail> mailList) {
+        this(player, mailList, null);
+    }
+
+    public PacketMailChangeNotify(GenshinPlayer player, List<Mail> mailList, List<Integer> delMailIdList) {
         super(PacketOpcodes.MailChangeNotify);
 
         MailChangeNotifyOuterClass.MailChangeNotify.Builder proto = MailChangeNotifyOuterClass.MailChangeNotify.newBuilder();
 
-        for(Mail message : mailList) {
-            MailTextContentOuterClass.MailTextContent.Builder mailTextContent = MailTextContentOuterClass.MailTextContent.newBuilder();
-            mailTextContent.setTitle(message.mailContent.title);
-            mailTextContent.setContent(message.mailContent.content);
-            mailTextContent.setSender(message.mailContent.sender);
+        if (mailList != null) {
+            for (Mail message : mailList) {
+                MailTextContentOuterClass.MailTextContent.Builder mailTextContent = MailTextContentOuterClass.MailTextContent.newBuilder();
+                mailTextContent.setTitle(message.mailContent.title);
+                mailTextContent.setContent(message.mailContent.content);
+                mailTextContent.setSender(message.mailContent.sender);
 
-            List<MailItemOuterClass.MailItem> mailItems = new ArrayList<MailItemOuterClass.MailItem>();
+                List<MailItemOuterClass.MailItem> mailItems = new ArrayList<MailItemOuterClass.MailItem>();
 
-            for(Mail.MailItem item : message.itemList) {
-                MailItemOuterClass.MailItem.Builder mailItem = MailItemOuterClass.MailItem.newBuilder();
-                ItemParamOuterClass.ItemParam.Builder itemParam = ItemParamOuterClass.ItemParam.newBuilder();
-                itemParam.setItemId(item.itemId);
-                itemParam.setCount(item.itemCount);
-                mailItem.setItemParam(itemParam.build());
+                for (Mail.MailItem item : message.itemList) {
+                    MailItemOuterClass.MailItem.Builder mailItem = MailItemOuterClass.MailItem.newBuilder();
+                    ItemParamOuterClass.ItemParam.Builder itemParam = ItemParamOuterClass.ItemParam.newBuilder();
+                    itemParam.setItemId(item.itemId);
+                    itemParam.setCount(item.itemCount);
+                    mailItem.setItemParam(itemParam.build());
 
-                mailItems.add(mailItem.build());
+                    mailItems.add(mailItem.build());
+                }
+
+                MailDataOuterClass.MailData.Builder mailData = MailDataOuterClass.MailData.newBuilder();
+                mailData.setMailId(message._id);
+                mailData.setMailTextContent(mailTextContent.build());
+                mailData.addAllItemList(mailItems);
+                mailData.setSendTime((int) message.sendTime);
+                mailData.setExpireTime((int) message.expireTime);
+                mailData.setImportance(message.importance);
+                mailData.setIsRead(message.isRead);
+                mailData.setIsAttachmentGot(message.isAttachmentGot);
+                mailData.setStateValue(message.stateValue);
+
+                proto.addMailList(mailData.build());
             }
-
-            MailDataOuterClass.MailData.Builder mailData = MailDataOuterClass.MailData.newBuilder();
-            mailData.setMailId(message._id);
-            mailData.setMailTextContent(mailTextContent.build());
-            mailData.addAllItemList(mailItems);
-            mailData.setSendTime((int)message.sendTime);
-            mailData.setExpireTime((int)message.expireTime);
-            mailData.setImportance(message.importance);
-            mailData.setIsRead(message.isRead);
-            mailData.setIsAttachmentGot(message.isAttachmentGot);
-            mailData.setStateValue(message.stateValue);
-
-            proto.addMailList(mailData.build());
-
-            Grasscutter.getLogger().info(Grasscutter.getDispatchServer().getGsonFactory().toJson(proto.build()));
-
-            this.setData(proto.build());
         }
+
+        if(delMailIdList != null) {
+            proto.addAllDelMailIdList(delMailIdList);
+        }
+
+        this.setData(proto.build());
     }
 }
