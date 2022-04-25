@@ -1,5 +1,5 @@
 ![Grasscutter](https://socialify.git.ci/Grasscutters/Grasscutter/image?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fs2.loli.net%2F2022%2F04%2F25%2FxOiJn7lCdcT5Mw1.png&name=1&owner=1&pulls=1&stargazers=1&theme=Light)
-<div align="center"><img alt="Documention" src="https://img.shields.io/badge/Wiki-Grasscutter-blue?style=for-the-badge&link=https://github.com/Grasscutters/Grasscutter/wiki&link=https://github.com/Grasscutters/Grasscutter/wiki"> <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Grasscutters/Grasscutter?logo=java&style=for-the-badge"> <img alt="GitHub" src="https://img.shields.io/github/license/Grasscutters/Grasscutter?style=for-the-badge"> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/Grasscutters/Grasscutter/Build?logo=github&style=for-the-badge"></div>
+<div align="center"><img alt="Documention" src="https://img.shields.io/badge/Wiki-Grasscutter-blue?style=for-the-badge&link=https://github.com/Grasscutters/Grasscutter/wiki&link=https://github.com/Grasscutters/Grasscutter/wiki"> <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Grasscutters/Grasscutter?logo=java&style=for-the-badge"> <img alt="GitHub" src="https://img.shields.io/github/license/Grasscutters/Grasscutter?style=for-the-badge"> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Grasscutters/Grasscutter?style=for-the-badge"> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/Grasscutters/Grasscutter/Build?logo=github&style=for-the-badge"></div>
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
@@ -110,7 +110,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 | broadcast      | broadcast <message>                               | server.broadcast          | Both side    | Sends a message to all the players.                          | b                                               |
 | changescene    | changescene <scene id>                            | player.changescene        | Client only  | Switch scenes by scene ID.                                   | scene                                           |
 | clearartifacts | clearartifacts                                    | player.clearartifacts     | Client only  | Deletes all unequipped and unlocked level 0 artifacts, including yellow rarity ones from your inventory. | clearart                                        |
-| clearweapons   | clearweapons                                      | player.clearweapons       | Client only  | Deletes all unequipped and unlocked weapons, including yellow rarity ones from your inventory. | clearwp                                         |
+| clearweapons   | clearweapons                                      | player.clearweapons       | Client only  | Deletes all unequipped and unlocked weapons, including yellow rarity ones from your inventory. | clearwpns                                       |
 | drop           | drop <itemID\|itemName> [amount]                  | server.drop               | Client only  | Drops an item around you.                                    | `d` `dropitem`                                  |
 | give           | give [player] <itemId\|itemName> [amount] [level] | player.give               | Both side    | Gives item(s) to you or the specified player.                | `g` `item` `giveitem`                           |
 | givechar       | givechar <uid> <avatarId> [level]                 | player.givechar           | Both side    | Gives the player a specified character.                      | givec                                           |
@@ -126,7 +126,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 | resetconst     | resetconst [all]                                  | player.resetconstellation | Client only  | Resets the constellation level on your current active character, will need to relog after using the command to see any changes. | resetconstellation                              |
 | restart        |                                                   |                           | Both side    | Restarts the current session                                 |                                                 |
 | say            | say <player> <message>                            | server.sendmessage        | Both side    | Sends a message to a player as the server                    | `sendservmsg` `sendservermessage` `sendmessage` |
-| setfetterlevel | setfetterlevel <level>                            | player.setfetterlevel     | Client only  | Sets your fetter level for your current active character     | `setfetterlvl` `setfriendship`                  |
+| setfetterlevel | setfetterlevel <level>                            | player.setfetterlevel     | Client only  | Sets your fetter level for your current active character     | setfetterlvl                                    |
 | setstats       | setstats <stat> <value>                           | player.setstats           | Client only  | Set fight property for your current active character         | stats                                           |
 | setworldlevel  | setworldlevel <level>                             | player.setworldlevel      | Client only  | Sets your world level (Relog to see proper effects)          | setworldlvl                                     |
 | spawn          | spanw <entityID\|entityName> [level] [amount]     | server.spawn              | Client only  | Spawns an entity near you                                    |                                                 |
@@ -142,7 +142,7 @@ character falling from a very high destination, exact location that you marked.
 
 # Quick Troubleshooting
 
-* If compiling wasn't successful, please check your JDK installation (must be JDK 16 and validated JDK's bin PATH variable)
+* If compiling wasn't successful, please check your JDK installation (JDK 16 and validated JDK's bin PATH variable)
 * My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*, if using
   Fiddler make sure it running on another port except 8888
 * Startup sequence: Mongodb > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Client
