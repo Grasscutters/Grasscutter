@@ -60,7 +60,8 @@ public class GenshinData {
 	private static final Int2ObjectMap<FetterData> fetterDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<FetterCharacterCardData> fetterCharacterCardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<RewardData> rewardDataMap = new Int2ObjectOpenHashMap<>();
-
+	private static final Int2ObjectMap<WorldLevelData> worldLevelDataMap = new Int2ObjectOpenHashMap<>();
+	
 	// Cache
 	private static Map<Integer, List<Integer>> fetters = new HashMap<>();
 	
@@ -259,5 +260,9 @@ public class GenshinData {
 		}
 
 		return fetters;
+	}
+
+	public static Int2ObjectMap<WorldLevelData> getWorldLevelDataMap() {
+		return worldLevelDataMap;
 	}
 }
