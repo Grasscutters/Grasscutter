@@ -25,14 +25,14 @@ public class Mail {
         itemList = new ArrayList<>();
         sendTime = 0;
         expireTime = 0;
-        importance = 1;
+        importance = 0; // Starred mail, 0 = No star, 1 = Star.
         isRead = true;
         isAttachmentGot = true;
-        stateValue = 1;
+        stateValue = 1; // Different mailboxes, 1 = Default, 3 = Gift-box.
     }
 
     public Mail(MailContent mailContent, List<MailItem> itemList, long expireTime) {
-        this(mailContent, itemList, expireTime, 1);
+        this(mailContent, itemList, expireTime, 0);
     }
 
     public Mail(MailContent mailContent, List<MailItem> itemList, long expireTime, int importance) {
@@ -90,19 +90,24 @@ public class Mail {
     public static class MailItem {
         public int itemId;
         public int itemCount;
+        public int itemLevel;
 
         public MailItem() {
             this.itemId = 11101;
             this.itemCount = 1;
+            this.itemLevel = 1;
         }
 
         public MailItem(int itemId) {
             this(itemId, 1);
         }
 
-        public MailItem(int itemId, int itemCount) {
+        public MailItem(int itemId, int itemCount) { this(itemId, itemCount, 1); }
+
+        public MailItem(int itemId, int itemCount, int itemLevel) {
             this.itemId = itemId;
             this.itemCount = itemCount;
+            this.itemLevel = itemLevel;
         }
     }
 }

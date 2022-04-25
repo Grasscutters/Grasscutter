@@ -1,5 +1,6 @@
 package emu.grasscutter.game;
 
+import java.time.Instant;
 import java.util.*;
 
 import dev.morphia.annotations.*;
@@ -609,8 +610,9 @@ public class GenshinPlayer {
 		Mail message = getMailById(mailId);
 
 		if(message != null) {
-			this.mail.remove(message);
-			this.save();
+			int index = getMailIndex(message);
+			message.expireTime = (int) Instant.now().getEpochSecond(); // Just set the mail as expired for now. I don't want to implement a counter specifically for an account...
+			this.replaceMailByIndex(index, message);
 			return true;
 		}
 
@@ -625,9 +627,10 @@ public class GenshinPlayer {
 		return this.mail.indexOf(message);
 	}
 
-	public boolean replaceMailByIndex(int mailId, Mail message) {
-		if(getMailById(mailId) != null) {
-			this.mail.set(mailId, message);
+	public boolean replaceMailByIndex(int index, Mail message) {
+		if(getMailById(index) != null) {
+			this.mail.set(index, message);
+			this.save();
 			return true;
 		} else {
 			return false;
