@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  server:
+    image: grasscutter:1.0
+    build: .
+    volumes:
+      - ./resources:/app/resources
+    network_mode: service:mongodb
+    stdin_open: true
+    tty: true
+
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - 80:80
+      - 443:443
+      - 8888:8888/tcp
+      - 8888:8888/udp
+      - 27017:27017
+      - 22102:22102/tcp
+      - 22102:22102/udp
+    volumes:
+      - ./docker_data/mongo:/data/db
