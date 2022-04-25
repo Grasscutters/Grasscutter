@@ -3,9 +3,14 @@ package emu.grasscutter.data;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.danilopianini.util.FlexibleQuadTree;
+import org.danilopianini.util.SpatialIndex;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.def.ReliquaryAffixData;
 import emu.grasscutter.data.def.ReliquaryMainPropData;
+import emu.grasscutter.game.world.SpawnDataEntry;
+import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.utils.WeightedList;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -13,6 +18,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 public class GenshinDepot {
 	private static Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicMainPropDepot = new Int2ObjectOpenHashMap<>();
 	private static Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot = new Int2ObjectOpenHashMap<>();
+	
+	private static Int2ObjectMap<SpatialIndex<SpawnGroupEntry>> spawnLists = new Int2ObjectOpenHashMap<>();
 	
 	public static void load() {
 		for (ReliquaryMainPropData data : GenshinData.getReliquaryMainPropDataMap().values()) {
@@ -45,5 +52,13 @@ public class GenshinDepot {
 	
 	public static List<ReliquaryAffixData> getRandomRelicAffixList(int depot) {
 		return relicAffixDepot.get(depot);
+	}
+	
+	public static Int2ObjectMap<SpatialIndex<SpawnGroupEntry>> getSpawnLists() {
+		return spawnLists;
+	}
+	
+	public static SpatialIndex<SpawnGroupEntry> getSpawnListById(int sceneId) {
+		return getSpawnLists().computeIfAbsent(sceneId, id -> new FlexibleQuadTree<>());
 	}
 }
