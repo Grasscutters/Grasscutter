@@ -38,6 +38,7 @@ import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class GenshinScene {
@@ -58,7 +59,7 @@ public class GenshinScene {
 		this.world = world;
 		this.sceneData = sceneData;
 		this.players = Collections.synchronizedList(new ArrayList<>());
-		this.entities = new Int2ObjectOpenHashMap<>();
+		this.entities = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
 
 		this.time = 8 * 60;
 		this.climate = ClimateType.CLIMATE_SUNNY;
