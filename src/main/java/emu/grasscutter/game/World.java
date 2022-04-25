@@ -212,19 +212,29 @@ public class World implements Iterable<GenshinPlayer> {
 			return false;
 		}
 		
-		Integer oldSceneId = null;
+		GenshinScene oldScene = null;
 
 		if (player.getScene() != null) {
-			oldSceneId = player.getScene().getId();
-			player.getScene().removePlayer(player);
+			oldScene = player.getScene();
+			
+			// Dont deregister scenes if the player is going to tp back into them
+			if (oldScene.getId() == sceneId) {
+				oldScene.setDontDestroyWhenEmpty(true);
+			}
+			
+			oldScene.removePlayer(player);
 		}
 		
-		GenshinScene scene = this.getSceneById(sceneId);
-		scene.addPlayer(player);
+		GenshinScene newScene = this.getSceneById(sceneId);
+		newScene.addPlayer(player);
 		player.getPos().set(pos);
 		
+		if (oldScene != null) {
+			oldScene.setDontDestroyWhenEmpty(false);
+		}
+		
 		// Teleport packet
-		if (oldSceneId.equals(sceneId)) {
+		if (oldScene == newScene) {
 			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterGoto, EnterReason.TransPoint, sceneId, pos));
 		} else {
 			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterJump, EnterReason.TransPoint, sceneId, pos));
