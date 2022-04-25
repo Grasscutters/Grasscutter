@@ -14,6 +14,18 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 # Quick setup guide
 ### Note
 * If you update from an older version, delete `config.json` for regeneration
+## Docker
+```
+git clone https://github.com/Grasscutters/Grasscutter.git
+cd Grasscutter
+git submodule update --init --recursive
+
+# Prepare resources folder (Check wiki for details)
+
+docker-compose run config-gen
+docker-compose up -d
+```
+## Manually
 
 ### Prerequisites
 * JDK-8u202 ([mirror link](https://mirrors.huaweicloud.com/java/jdk/8u202-b08/) since Oracle required an account to download old builds)
