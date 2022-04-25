@@ -12,6 +12,7 @@ import emu.grasscutter.net.proto.MailDataOuterClass.MailData;
 import emu.grasscutter.net.proto.MailItemOuterClass;
 import emu.grasscutter.net.proto.MailTextContentOuterClass.MailTextContent;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -38,41 +39,45 @@ public class PacketGetAllMailRsp extends GenshinPacket {
                 List<MailData> mailDataList = new ArrayList<MailData>();
 
                 for (Mail message : player.getAllMail()) {
-                    if(message.stateValue == 1) { //Make sure it isn't a gift
-                        MailTextContent.Builder mailTextContent = MailTextContent.newBuilder();
-                        mailTextContent.setTitle(message.mailContent.title);
-                        mailTextContent.setContent(message.mailContent.content);
-                        mailTextContent.setSender(message.mailContent.sender);
+                    if(message.stateValue == 1) { // Make sure it isn't a gift
+                        if (message.expireTime < Instant.now().getEpochSecond()) { // Make sure the message isn't expired (The game won't show expired mail, but I don't want to send unnecessary information).
+                            if(mailDataList.size() <= 1000) { // Make sure that there isn't over 1000 messages in the mailbox. (idk what will happen if there is but the game probably won't like it.)
+                                MailTextContent.Builder mailTextContent = MailTextContent.newBuilder();
+                                mailTextContent.setTitle(message.mailContent.title);
+                                mailTextContent.setContent(message.mailContent.content);
+                                mailTextContent.setSender(message.mailContent.sender);
 
-                        List<MailItemOuterClass.MailItem> mailItems = new ArrayList<>();
+                                List<MailItemOuterClass.MailItem> mailItems = new ArrayList<>();
 
-                        for (Mail.MailItem item : message.itemList) {
-                            MailItemOuterClass.MailItem.Builder mailItem = MailItemOuterClass.MailItem.newBuilder();
-                            ItemParamOuterClass.ItemParam.Builder itemParam = ItemParamOuterClass.ItemParam.newBuilder();
-                            itemParam.setItemId(item.itemId);
-                            itemParam.setCount(item.itemCount);
-                            mailItem.setItemParam(itemParam.build());
+                                for (Mail.MailItem item : message.itemList) {
+                                    MailItemOuterClass.MailItem.Builder mailItem = MailItemOuterClass.MailItem.newBuilder();
+                                    ItemParamOuterClass.ItemParam.Builder itemParam = ItemParamOuterClass.ItemParam.newBuilder();
+                                    itemParam.setItemId(item.itemId);
+                                    itemParam.setCount(item.itemCount);
+                                    mailItem.setItemParam(itemParam.build());
 
-                            mailItems.add(mailItem.build());
+                                    mailItems.add(mailItem.build());
+                                }
+
+                                MailDataOuterClass.MailData.Builder mailData = MailDataOuterClass.MailData.newBuilder();
+                                mailData.setMailId(message._id);
+                                mailData.setMailTextContent(mailTextContent.build());
+                                mailData.addAllItemList(mailItems);
+                                mailData.setSendTime((int) message.sendTime);
+                                mailData.setExpireTime((int) message.expireTime);
+                                mailData.setImportance(message.importance);
+                                mailData.setIsRead(message.isRead);
+                                mailData.setIsAttachmentGot(message.isAttachmentGot);
+                                mailData.setStateValue(1);
+
+                                mailDataList.add(mailData.build());
+                            }
                         }
-
-                        MailDataOuterClass.MailData.Builder mailData = MailDataOuterClass.MailData.newBuilder();
-                        mailData.setMailId(message._id);
-                        mailData.setMailTextContent(mailTextContent.build());
-                        mailData.addAllItemList(mailItems);
-                        mailData.setSendTime((int) message.sendTime);
-                        mailData.setExpireTime((int) message.expireTime);
-                        mailData.setImportance(message.importance);
-                        mailData.setIsRead(message.isRead);
-                        mailData.setIsAttachmentGot(message.isAttachmentGot);
-                        mailData.setStateValue(1);
-
-                        mailDataList.add(mailData.build());
                     }
                 }
 
                 proto.addAllMailList(mailDataList);
-                proto.setIsTruncated(false); // When enabled this will send a notification to the user that their inbox is full when opening the mailbox.
+                proto.setIsTruncated(mailDataList.size() <= 1000 ? false : true); // When enabled this will send a notification to the user telling them their inbox is full and they should delete old messages when opening the mailbox.
 
                 this.setData(proto.build());
             } else {
