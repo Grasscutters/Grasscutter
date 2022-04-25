@@ -24,7 +24,7 @@
 
 ### 环境需求
 
-* Java SE - 16 ([镜像](https://github.com/adoptium/temurin16-binaries/releases/tag/jdk-16.0.2+7) 若您没有Oracle账户)
+* Java SE - 16 (当您没有Oracle账户，可以使用[镜像](https://github.com/adoptium/temurin16-binaries/releases/tag/jdk-16.0.2+7))
 
   **注:** 如果您仅仅想要简单地**运行服务端**, 那么使用 **jre** 便足够了 
 
