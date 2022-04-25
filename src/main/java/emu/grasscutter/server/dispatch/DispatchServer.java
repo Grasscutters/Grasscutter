@@ -264,52 +264,73 @@ public final class DispatchServer {
 		if(Grasscutter.getConfig().getDispatchOptions().UseAuth) {
 			server.createContext("/grasscutter/login", t -> {
 				try {
+					AuthResponseJson authResponse = new AuthResponseJson();
 					String requestBody = Utils.toString(t.getRequestBody());
 					LoginGenerateToken loginGenerateToken = new Gson().fromJson(requestBody, LoginGenerateToken.class);
 					Account account = DatabaseHelper.getAccountByUsernameAndPassword(loginGenerateToken.username, loginGenerateToken.password);
 					if (account == null) {
-						responseHTML(t, "Invalid username or password.");
+						authResponse.success = false;
+						authResponse.message = "Invalid username or password.";
+						authResponse.jwt = "";
 					}else{
-						responseHTML(t, account.generateJWT());
+						authResponse.success = true;
+						authResponse.message = "Successfully logged in.";
+						authResponse.jwt = account.generateJWT();
 					}
+					responseJSON(t, authResponse);
 				}catch (Exception ignore) {}
 			});
 
 			server.createContext("/grasscutter/register", t -> {
 				try {
+					AuthResponseJson authResponse = new AuthResponseJson();
 					String requestBody = Utils.toString(t.getRequestBody());
 					RegisterAccount registerAccount = new Gson().fromJson(requestBody, RegisterAccount.class);
 					if(registerAccount.password.equals(registerAccount.password_confirmation)) {
 						String password = Utils.argon2.hash(10, 65536, 1, registerAccount.password.toCharArray());
 						Account account = DatabaseHelper.createAccountWithPassword(registerAccount.username, password);
 						if (account == null) {
-							responseHTML(t, "Error while creating account. Username already exists.");
+							authResponse.success = false;
+							authResponse.message = "Username already exists.";
+							authResponse.jwt = "";
 						} else {
-							responseHTML(t, account.generateJWT());
+							authResponse.success = true;
+							authResponse.message = "Successfully registered.";
+							authResponse.jwt = account.generateJWT();
 						}
 					}else{
-						responseHTML(t, "Passwords do not match.");
+						authResponse.success = false;
+						authResponse.message = "Passwords do not match.";
+						authResponse.jwt = "";
 					}
+					responseJSON(t, authResponse);
 				}catch (Exception ignore) {}
 			});
 
 			server.createContext("/grasscutter/change_password",t->{
 				try {
+					AuthResponseJson authResponse = new AuthResponseJson();
 					String requestBody = Utils.toString(t.getRequestBody());
 					ChangePasswordAccount changePasswordAccount = new Gson().fromJson(requestBody, ChangePasswordAccount.class);
 					if (changePasswordAccount.new_password.equals(changePasswordAccount.new_password_confirmation)) {
 						Account account = DatabaseHelper.getAccountByUsernameAndPassword(changePasswordAccount.username, changePasswordAccount.old_password);
 						if (account == null) {
-							responseHTML(t, "Invalid username or password.");
-							return;
+							authResponse.success = false;
+							authResponse.message = "Invalid username or password.";
+							authResponse.jwt = "";
 						}
 						String newPassword = Utils.argon2.hash(10, 65536, 1, changePasswordAccount.new_password.toCharArray());
 						account.setPassword(newPassword);
 						account.save();
-						responseHTML(t, "Password changed.");
+						authResponse.success = true;
+						authResponse.message = "Successfully changed password.";
+						authResponse.jwt = account.generateJWT();
 					}else{
-						responseHTML(t, "Passwords do not match.");
+						authResponse.success = false;
+						authResponse.message = "Passwords do not match.";
+						authResponse.jwt = "";
 					}
+					responseJSON(t, authResponse);
 				}
 				catch (Exception ignore) {}
 			});
