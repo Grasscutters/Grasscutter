@@ -96,8 +96,11 @@ chmod +x gradlew
 
 You can find the output jar in the root of the project folder
 
-
 ## Commands
+
+You might want to use this command (`java -jar grasscutter.jar -handbook`) in a cmd that is in the grasscutter folder. It will create a handbook file (GM Handbook.txt) where you can find the item IDs for stuff you want
+
+There is a dummy user named "Server" in every player's friends list that you can message to use commands. Commands also work in other chat rooms, such as private/team chats. to run commands ingame, you need to add prefix `/` or `!` such as `/pos`
 
 | Commands       | Usage                                             | Permission node           | Availability | description                                                  | Alias                                           |
 | -------------- | ------------------------------------------------- | ------------------------- | ------------ | ------------------------------------------------------------ | ----------------------------------------------- |
