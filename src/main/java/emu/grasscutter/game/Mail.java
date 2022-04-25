@@ -55,6 +55,10 @@ public class Mail {
         this.stateValue = state;
     }
 
+    public int getId() {
+        return this._id;
+    }
+
     @Entity
     public static class MailContent {
         public String title;

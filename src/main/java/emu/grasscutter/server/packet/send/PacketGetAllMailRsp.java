@@ -1,17 +1,17 @@
 package emu.grasscutter.server.packet.send;
 
-import com.google.gson.Gson;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.Mail;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.GetAllMailRspOuterClass.GetAllMailRsp;
+import emu.grasscutter.net.proto.ItemParamOuterClass;
+import emu.grasscutter.net.proto.MailDataOuterClass;
 import emu.grasscutter.net.proto.MailDataOuterClass.MailData;
+import emu.grasscutter.net.proto.MailItemOuterClass;
 import emu.grasscutter.net.proto.MailTextContentOuterClass.MailTextContent;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -20,7 +20,6 @@ public class PacketGetAllMailRsp extends GenshinPacket {
 
     public PacketGetAllMailRsp(GenshinPlayer player, boolean isGiftMail) {
         super(PacketOpcodes.GetAllMailRsp);
-        Grasscutter.getLogger().info(String.valueOf(isGiftMail));
 
         if (isGiftMail) {
             // TODO: Gift Mail
@@ -34,11 +33,11 @@ public class PacketGetAllMailRsp extends GenshinPacket {
             }
 
         } else {
-            if (player.getMail().size() != 0) { // Make sure the player has mail
+            if (player.getAllMail().size() != 0) { // Make sure the player has mail
                 GetAllMailRsp.Builder proto = GetAllMailRsp.newBuilder();
                 List<MailData> mailDataList = new ArrayList<MailData>();
 
-                for (Mail message : player.getMail()) {
+                for (Mail message : player.getAllMail()) {
                     if(message.stateValue == 1) { //Make sure it isn't a gift
                         MailTextContent.Builder mailTextContent = MailTextContent.newBuilder();
                         mailTextContent.setTitle(message.mailContent.title);
@@ -73,7 +72,7 @@ public class PacketGetAllMailRsp extends GenshinPacket {
                 }
 
                 proto.addAllMailList(mailDataList);
-                proto.setIsTruncated(true);
+                proto.setIsTruncated(false); // When enabled this will send a notification to the user that their inbox is full when opening the mailbox.
 
                 this.setData(proto.build());
             } else {

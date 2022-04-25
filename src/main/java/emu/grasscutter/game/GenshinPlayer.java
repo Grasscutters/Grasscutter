@@ -23,7 +23,6 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
-import emu.grasscutter.net.proto.BirthdayOuterClass.Birthday;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
@@ -595,14 +594,44 @@ public class GenshinPlayer {
 		this.sendPacket(new PacketPrivateChatNotify(sender.getUid(), this.getUid(), message.toString()));
 	}
 
-	public List<Mail> getMail() { return mail; }
+	// ---------------------MAIL------------------------
+
+	public List<Mail> getAllMail() { return this.mail; }
 
 	public void sendMail(Mail message) {
-
 		this.mail.add(message);
 		message._id = this.mail.size() + 1;
 		this.save();
 		this.sendPacket(new PacketMailChangeNotify(this, message));
+	}
+
+	public boolean deleteMail(int mailId) {
+		Mail message = getMailById(mailId);
+
+		if(message != null) {
+			this.mail.remove(message);
+			this.save();
+			return true;
+		}
+
+		return false;
+	}
+
+	public Mail getMailById(int mailId) {
+		return this.mail.stream().filter(message -> message._id == mailId).findFirst().orElse(null);
+	}
+
+	public int getMailIndex(Mail message) {
+		return this.mail.indexOf(message);
+	}
+
+	public boolean replaceMailByIndex(int mailId, Mail message) {
+		if(getMailById(mailId) != null) {
+			this.mail.set(mailId, message);
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public void interactWith(int gadgetEntityId) {
