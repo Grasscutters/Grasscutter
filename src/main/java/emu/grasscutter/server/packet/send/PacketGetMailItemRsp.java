@@ -30,12 +30,31 @@ public class PacketGetMailItemRsp  extends GenshinPacket {
 
             for(Mail.MailItem mailItem : message.itemList) {
                 EquipParamOuterClass.EquipParam.Builder item = EquipParamOuterClass.EquipParam.newBuilder();
+                int promoteLevel = 0;
+                if (mailItem.itemLevel > 20) { // 20/40
+                    promoteLevel = 1;
+                } else if (mailItem.itemLevel > 40) { // 40/50
+                    promoteLevel = 2;
+                } else if (mailItem.itemLevel > 50) { // 50/60
+                    promoteLevel = 3;
+                } else if (mailItem.itemLevel > 60) { // 60/70
+                    promoteLevel = 4;
+                } else if (mailItem.itemLevel > 70) { // 70/80
+                    promoteLevel = 5;
+                } else if (mailItem.itemLevel > 80) { // 80/90
+                    promoteLevel = 6;
+                }
+
                 item.setItemId(mailItem.itemId);
                 item.setItemNum(mailItem.itemCount);
+                item.setItemLevel(mailItem.itemLevel);
+                item.setPromoteLevel(promoteLevel);
                 claimedItems.add(item.build());
 
                 GenshinItem genshinItem = new GenshinItem(GenshinData.getItemDataMap().get(mailItem.itemId));
                 genshinItem.setCount(mailItem.itemCount);
+                genshinItem.setLevel(mailItem.itemLevel);
+                genshinItem.setPromoteLevel(promoteLevel);
                 player.getInventory().addItem(genshinItem);
                 player.sendPacket(new PacketItemAddHintNotify(genshinItem, ActionReason.MailAttachment));
             }
