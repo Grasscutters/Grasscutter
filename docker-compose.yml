@@ -6,9 +6,23 @@ services:
     build: .
     volumes:
       - ./resources:/app/resources
+      - ./data:/app/data
+      - ./config.json:/app/config.json
+      - ./keystore.p12:/app/keystore.p12
     network_mode: service:mongodb
+    depends_on:
+      - mongodb
     stdin_open: true
     tty: true
+  
+  config-gen:
+    image: grasscutter:1.0
+    build: .
+    volumes:
+      - ./:/app/src
+    entrypoint: ["/bin/sh", "-c", "java -jar grasscutter.jar; mv config.json ./src; echo config generated"]
+    profiles:
+      - donotstart
 
   mongodb:
     image: mongo:5.0.7

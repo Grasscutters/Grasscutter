@@ -12,10 +12,9 @@ WORKDIR /app
 
 COPY --from=builder /build/grasscutter.jar grasscutter.jar
 
-# mount resources at runtime plz
+# mount these folder/file at runtime please
+# resources/ data/ config.json keystore.p12
 COPY Grasscutter-Protos/proto/ ./proto
 COPY keys/ ./keys
-COPY data/ ./data
-COPY keystore.p12 .
 
 ENTRYPOINT ["java", "-jar", "grasscutter.jar"]
