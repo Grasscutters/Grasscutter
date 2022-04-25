@@ -17,6 +17,7 @@ public final class PositionCommand implements CommandHandler {
             return;
         }
 
-        sender.dropMessage(String.format("Coord: %.3f, %.3f, %.3f", sender.getPos().getX(), sender.getPos().getY(), sender.getPos().getZ()));
+        sender.dropMessage(String.format("Coord: %.3f, %.3f, %.3f\nScene id: %d",
+                sender.getPos().getX(), sender.getPos().getY(), sender.getPos().getZ(), sender.getSceneId()));
     }
 }

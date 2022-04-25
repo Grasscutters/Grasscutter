@@ -1,7 +1,9 @@
 package emu.grasscutter.game.player;
 
+import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.BirthdayOuterClass.Birthday;
 
+@Entity
 public class PlayerBirthday {
     private int day;
     private int month;
