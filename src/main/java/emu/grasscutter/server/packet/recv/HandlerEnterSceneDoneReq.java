@@ -4,6 +4,7 @@ import emu.grasscutter.game.GenshinPlayer.SceneLoadState;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEnterSceneDoneRsp;
 import emu.grasscutter.server.packet.send.PacketPlayerTimeNotify;
@@ -28,6 +29,9 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
 		
 		// Spawn other entites already in world
 		session.getPlayer().getScene().showOtherEntities(session.getPlayer());
+
+		// Spawn other entites such as gadget, monster in world
+		session.getPlayer().getScene().showSceneGroups(session.getPlayer());
 		
 		// Locations
 		session.send(new PacketWorldPlayerLocationNotify(session.getPlayer().getWorld()));

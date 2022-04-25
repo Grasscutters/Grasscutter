@@ -50,6 +50,9 @@ public class ResourceLoader {
 		// Process into depots
 		GenshinDepot.load();
 		// Custom - TODO move this somewhere else
+
+		LuaSceneDataLoader.init();
+
 		try {
 			GenshinData.getAvatarSkillDepotDataMap().get(504).setAbilities(
 				new AbilityEmbryoEntry(

@@ -1,17 +1,17 @@
 package emu.grasscutter.game;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.LuaSceneDataLoader;
+import emu.grasscutter.data.Scene;
+import emu.grasscutter.data.Vector2;
+import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.SceneData;
-import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.entity.EntityClientGadget;
-import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.game.entity.GenshinEntity;
+import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
@@ -23,6 +23,7 @@ import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
+import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -212,7 +213,7 @@ public class GenshinScene {
 			this.broadcastPacket(new PacketSceneEntityDisappearNotify(removed, visionType));
 		}
 	}
-	
+
 	public synchronized void replaceEntity(EntityAvatar oldEntity, EntityAvatar newEntity) {
 		this.removeEntityDirectly(oldEntity);
 		this.addEntityDirectly(newEntity);
@@ -233,6 +234,63 @@ public class GenshinScene {
 		
 		player.sendPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VisionMeet));
 	}
+
+
+	private final ConcurrentHashMap<Integer, Integer> loadedGadgetBlock = new ConcurrentHashMap<>();
+	private final ConcurrentLinkedDeque<Integer> loadedMonsterBlock = new ConcurrentLinkedDeque<>();
+
+	private static final Float DESPAWN_DISTANCE = 100.0f;
+	private static final Float SPAWN_DISTANCE = DESPAWN_DISTANCE * 0.8f;
+//	private static final int RESPAWN_TIME = 10; // In seconds
+
+
+	public void showSceneGroups(GenshinPlayer player) {
+		Scene scene = LuaSceneDataLoader.scenes.get(getId());
+
+		if (scene != null) {
+			scene.getPlayerBlock(new Vector2(player.getPos().getX(), player.getPos().getZ())).forEach((blockId, block) -> {
+				if (!loadedMonsterBlock.contains(blockId) && (!loadedGadgetBlock.containsKey(player.getUid()) || !Objects.equals(loadedGadgetBlock.get(player.getUid()), blockId))) {
+					block.getGroups().forEach((groupId, group) -> {
+						group.getGadgets().forEach((gadget -> {
+							EntityClientGadget entity = new EntityClientGadget(this, player, gadget);
+							this.addEntityDirectly(entity);
+						}));
+						group.getMonsters().forEach((monster -> {
+							MonsterData entityData = GenshinData.getMonsterDataMap().get(monster.getMonsterId());
+							EntityMonster entity = new EntityMonster(this, entityData, new Position(monster.getPos().getX(), monster.getPos().getY(), monster.getPos().getZ()), monster.getLevel());
+							this.addEntityDirectly(entity);
+						}));
+//					group.getNpcs().forEach((npc -> {
+//						EntityClientGadget entity = new EntityNPC(this, player, )
+//						this.addEntityDirectly(entity);
+//						entities.add(entity);
+//					}));
+					});
+					loadedGadgetBlock.put(player.getUid(), blockId);
+					loadedMonsterBlock.push(blockId);
+				}
+			});
+			List<GenshinEntity> disappear = new LinkedList<>();
+			this.getEntities().forEach((id, entity) -> {
+				if (entity.getPosition().distance(player.getPos()) >= DESPAWN_DISTANCE) {
+					this.removeEntityDirectly(entity);
+					disappear.add(entity);
+				}
+			});
+			List<GenshinEntity> appear = new LinkedList<>();
+			this.getEntities().forEach((id, entity) -> {
+				if (entity.getPosition().distance(player.getPos()) <= SPAWN_DISTANCE) {
+					this.addEntityDirectly(entity);
+					appear.add(entity);
+				}
+			});
+			player.sendPacket(new PacketSceneEntityDisappearNotify(disappear, VisionType.VisionTransport));
+			player.sendPacket(new PacketSceneEntityAppearNotify(appear, VisionType.VisionMeet));
+		} else {
+			Grasscutter.getLogger().error("Player scene is wrong, could not get any scene groups from player "+ player.getNickname());
+		}
+	}
+
 	
 	public void handleAttack(AttackResult result) {
 		//GenshinEntity attacker = getEntityById(result.getAttackerId());

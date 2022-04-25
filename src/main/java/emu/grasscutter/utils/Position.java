@@ -137,6 +137,14 @@ public class Position implements Serializable {
 		this.y += -dist * Math.cos(angle);
 		return this;
 	}
+
+	public Float square() {
+		return this.x * this.x + this.y * this.y + this.z * this.z;
+	}
+
+	public Double distance(Position pos2) {
+		return Math.sqrt(this.clone().subtract(pos2).square());
+	}
 	
 	@Override
 	public Position clone() {

@@ -1,5 +1,7 @@
 package emu.grasscutter.game.entity;
 
+import emu.grasscutter.data.Gadget;
+import emu.grasscutter.data.LuaSceneDataLoader;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.GenshinScene;
 import emu.grasscutter.game.World;
@@ -47,6 +49,19 @@ public class EntityClientGadget extends EntityGadget {
 		this.ownerEntityId = notify.getPropOwnerEntityId();
 		this.targetEntityId = notify.getTargetEntityId();
 		this.asyncLoad = notify.getIsAsyncLoad();
+	}
+
+	public EntityClientGadget(GenshinScene scene, GenshinPlayer player, Gadget gadget) {
+		super(scene);
+		this.owner = player;
+		this.id = gadget.getGadgetId();
+		this.pos = new Position(gadget.getPos().getX(), gadget.getPos().getY(), gadget.getPos().getZ());
+		this.rot = new Position(gadget.getRot().getX(), gadget.getRot().getY(), gadget.getRot().getZ());
+		this.configId = gadget.getConfigId();
+		this.campId = LuaSceneDataLoader.entityCampData.get(gadget.getGadgetId());
+		if (gadget.getOwner() != null) {
+			this.ownerEntityId = gadget.getOwner();
+		}
 	}
 	
 	@Override

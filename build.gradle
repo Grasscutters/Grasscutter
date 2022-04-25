@@ -12,6 +12,8 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application
     id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.21'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.6.20'
 }
 
 sourceCompatibility = 16
@@ -23,7 +25,7 @@ repositories {
 
 dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
-    
+
 	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
 	implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.9'
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.9'
@@ -37,6 +39,10 @@ dependencies {
 	implementation group: 'dev.morphia.morphia', name: 'morphia-core', version: '2.2.6'
 
     implementation group: 'org.greenrobot', name: 'eventbus-java', version: '3.3.1'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2"
+
 }
 
 application {
@@ -64,3 +70,13 @@ jar {
     destinationDir = file(".")
 }
 
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
