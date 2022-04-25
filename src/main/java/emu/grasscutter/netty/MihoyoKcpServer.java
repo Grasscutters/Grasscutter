@@ -64,9 +64,8 @@ public class MihoyoKcpServer extends Thread {
 
             // Wait until the server socket is closed.
             f.channel().closeFuture().sync();
-        } catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+        } catch (Exception exception) {
+			Grasscutter.getLogger().error("Unable to start game server.", exception);
 		} finally {
         	// Close
 			finish();

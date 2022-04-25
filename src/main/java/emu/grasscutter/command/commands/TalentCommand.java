@@ -2,6 +2,7 @@ package emu.grasscutter.command.commands;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 import emu.grasscutter.game.entity.EntityAvatar;
@@ -21,8 +22,9 @@ public class TalentCommand implements CommandHandler {
             return;
         }
 
-        if (args.size() < 0 || args.size() < 1){
+        if (args.size() < 1){
             CommandHandler.sendMessage(sender, "To set talent level: /talent set <talentID> <value>");
+            CommandHandler.sendMessage(sender, "Another way to set talent level: /talent <n or e or q> <value>");
             CommandHandler.sendMessage(sender, "To get talent ID: /talent getid");
             return;
         }
@@ -31,6 +33,7 @@ public class TalentCommand implements CommandHandler {
         switch (cmdSwitch) {
             default:
                 CommandHandler.sendMessage(sender, "To set talent level: /talent set <talentID> <value>");
+                CommandHandler.sendMessage(sender, "Another way to set talent level: /talent <n or e or q> <value>");
                 CommandHandler.sendMessage(sender, "To get talent ID: /talent getid");
             return;
             case "set":
@@ -90,6 +93,45 @@ public class TalentCommand implements CommandHandler {
                         return;
                     }
                 
+                break;
+            case "n": case "e": case "q":
+                try {
+                    EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
+                    GenshinAvatar avatar = entity.getAvatar();
+                    AvatarSkillDepotData SkillDepot = avatar.getData().getSkillDepot();
+                    int skillId;
+                    switch (cmdSwitch) {
+                        default:
+                            skillId = SkillDepot.getSkills().get(0);
+                            break;
+                        case "e":
+                            skillId = SkillDepot.getSkills().get(1);
+                            break;
+                        case "q":
+                            skillId = SkillDepot.getEnergySkill();
+                            break;
+                    }
+                    int nextLevel = Integer.parseInt(args.get(1));
+                    int currentLevel = avatar.getSkillLevelMap().get(skillId);
+                    if (args.size() < 1){
+                        CommandHandler.sendMessage(sender, "To set talent level: /talent <n or e or q> <value>");
+                        return;
+                    }
+                    if (nextLevel > 16){
+                        CommandHandler.sendMessage(sender, "Invalid talent level. Level should be lower than 16");
+                        return;
+                    }
+                    // Upgrade skill
+                    avatar.getSkillLevelMap().put(skillId, nextLevel);
+                    avatar.save();
+                    // Packet
+                    sender.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillId, currentLevel, nextLevel));
+                    sender.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillId, currentLevel, nextLevel));
+                    CommandHandler.sendMessage(sender, "Set this talent to " + nextLevel + ".");
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, "Invalid talent level.");
+                    return;
+                }
                 break;
             case "getid":           
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();

@@ -45,13 +45,15 @@ tmp/
 .loadpath
 .recommenders
 
+# VSCode
+.vscode
+
 # Grasscutter
 resources/*
 logs/*
 data/AbilityEmbryos.json
 data/OpenConfig.json
-proto/auto/
-proto/protoc.exe
+proto/*
 GM Handbook.txt
 config.json
 mitmdump.exe
