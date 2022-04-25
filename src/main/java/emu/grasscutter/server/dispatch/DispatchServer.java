@@ -279,16 +279,39 @@ public final class DispatchServer {
 				try {
 					String requestBody = Utils.toString(t.getRequestBody());
 					RegisterAccount registerAccount = new Gson().fromJson(requestBody, RegisterAccount.class);
-					if (registerAccount != null) {
+					if(registerAccount.password.equals(registerAccount.password_confirmation)) {
 						String password = Utils.argon2.hash(10, 65536, 1, registerAccount.password.toCharArray());
 						Account account = DatabaseHelper.createAccountWithPassword(registerAccount.username, password);
 						if (account == null) {
-							responseHTML(t, "Error while creating account. (Username or Uid already exists)");
+							responseHTML(t, "Error while creating account. Username already exists.");
 						} else {
 							responseHTML(t, account.generateJWT());
 						}
+					}else{
+						responseHTML(t, "Passwords do not match.");
 					}
 				}catch (Exception ignore) {}
+			});
+
+			server.createContext("/grasscutter/change_password",t->{
+				try {
+					String requestBody = Utils.toString(t.getRequestBody());
+					ChangePasswordAccount changePasswordAccount = new Gson().fromJson(requestBody, ChangePasswordAccount.class);
+					if (changePasswordAccount.new_password.equals(changePasswordAccount.new_password_confirmation)) {
+						Account account = DatabaseHelper.getAccountByUsernameAndPassword(changePasswordAccount.username, changePasswordAccount.old_password);
+						if (account == null) {
+							responseHTML(t, "Invalid username or password.");
+							return;
+						}
+						String newPassword = Utils.argon2.hash(10, 65536, 1, changePasswordAccount.new_password.toCharArray());
+						account.setPassword(newPassword);
+						account.save();
+						responseHTML(t, "Password changed.");
+					}else{
+						responseHTML(t, "Passwords do not match.");
+					}
+				}
+				catch (Exception ignore) {}
 			});
 		}
 
@@ -327,7 +350,6 @@ public final class DispatchServer {
 			LoginAccountRequestJson requestData = null;
 			try {
 				String body = Utils.toString(t.getRequestBody());
-				Grasscutter.getLogger().info(body);
 				requestData = getGsonFactory().fromJson(body, LoginAccountRequestJson.class);
 			} catch (Exception ignored) {
 			}
