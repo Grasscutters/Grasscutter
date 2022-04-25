@@ -144,7 +144,7 @@ public class GenshinScene {
 		return this.entities.containsKey(entity.getId());
 	}
 	
-	public void addPlayer(GenshinPlayer player) {
+	public synchronized void addPlayer(GenshinPlayer player) {
 		// Check if player already in
 		if (getPlayers().contains(player)) {
 			return;
@@ -163,7 +163,7 @@ public class GenshinScene {
 		this.setupPlayerAvatars(player);
 	}
 	
-	public void removePlayer(GenshinPlayer player) {
+	public synchronized void removePlayer(GenshinPlayer player) {
 		// Remove player from scene
 		getPlayers().remove(player);
 		player.setScene(null);
@@ -367,7 +367,6 @@ public class GenshinScene {
 				entity.setSpawnEntry(entry);
 				
 				toAdd.add(entity);
-				this.addEntityDirectly(entity);
 				
 				// Add to spawned list
 				this.getSpawnedEntities().add(entry);
@@ -377,14 +376,15 @@ public class GenshinScene {
 		for (GenshinEntity entity : this.getEntities().values()) {
 			if (entity.getSpawnEntry() != null && !visible.contains(entity.getSpawnEntry())) {
 				toRemove.add(entity);
-				this.removeEntityDirectly(entity);
 			}
 		}
 		
 		if (toAdd.size() > 0) {
+			toAdd.stream().forEach(this::addEntityDirectly);
 			this.broadcastPacket(new PacketSceneEntityAppearNotify(toAdd, VisionType.VisionBorn));
 		}
 		if (toRemove.size() > 0) {
+			toRemove.stream().forEach(this::removeEntityDirectly);
 			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VisionRemove));
 		}
 	}
