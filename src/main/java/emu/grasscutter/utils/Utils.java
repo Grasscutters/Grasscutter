@@ -10,6 +10,7 @@ import emu.grasscutter.Grasscutter;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
+
 import org.slf4j.Logger;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
@@ -24,6 +25,19 @@ public final class Utils {
 		return random.nextFloat() * (max - min) + min;
 	}
 	
+	public static double getDist(Position pos1, Position pos2) {
+		double xs = pos1.getX() - pos2.getX();
+		xs = xs * xs;
+		
+		double ys = pos1.getY() - pos2.getY();
+		ys = ys * ys;
+
+		double zs = pos1.getZ() - pos2.getZ();
+		zs = zs * zs;
+
+		return Math.sqrt(xs + zs + ys);
+	}
+
 	public static int getCurrentSeconds() {
 		return (int) (System.currentTimeMillis() / 1000.0);
 	}
