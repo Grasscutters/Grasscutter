@@ -695,10 +695,6 @@ public class GenshinPlayer {
 				it.remove();
 			}
 		}
-		// 
-		if (this.getScene() != null && this.getSceneLoadState() == SceneLoadState.LOADED) {
-			this.getScene().checkSpawns(this);
-		}
 		// Ping
 		if (this.getWorld() != null) {
 			// RTT notify - very important to send this often
