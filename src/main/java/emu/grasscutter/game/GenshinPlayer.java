@@ -195,11 +195,11 @@ public class GenshinPlayer {
 		this.world = world;
 	}
 
-	public GenshinScene getScene() {
+	public synchronized GenshinScene getScene() {
 		return scene;
 	}
 
-	public void setScene(GenshinScene scene) {
+	public synchronized void setScene(GenshinScene scene) {
 		this.scene = scene;
 	}
 
@@ -694,6 +694,10 @@ public class GenshinPlayer {
 				req.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(this, false, PlayerApplyEnterMpReason.SystemJudge));
 				it.remove();
 			}
+		}
+		// 
+		if (this.getScene() != null && this.getSceneLoadState() == SceneLoadState.LOADED) {
+			this.getScene().checkSpawns(this);
 		}
 		// Ping
 		if (this.getWorld() != null) {

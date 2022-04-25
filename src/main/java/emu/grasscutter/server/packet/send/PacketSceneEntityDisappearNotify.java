@@ -1,5 +1,8 @@
 package emu.grasscutter.server.packet.send;
 
+import java.util.Collection;
+import java.util.List;
+
 import emu.grasscutter.game.entity.GenshinEntity;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -15,6 +18,17 @@ public class PacketSceneEntityDisappearNotify extends GenshinPacket {
 				.setDisappearType(disappearType)
 				.addEntityList(entity.getId())
 				.build();
+
+		this.setData(proto);
+	}
+	
+	public PacketSceneEntityDisappearNotify(Collection<GenshinEntity> entities, VisionType disappearType) {
+		super(PacketOpcodes.SceneEntityDisappearNotify);
+
+		SceneEntityDisappearNotify.Builder proto = SceneEntityDisappearNotify.newBuilder()
+				.setDisappearType(disappearType);
+		
+		entities.forEach(e -> proto.addEntityList(e.getId()));
 
 		this.setData(proto);
 	}
