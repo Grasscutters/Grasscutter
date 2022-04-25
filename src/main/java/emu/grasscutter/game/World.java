@@ -37,6 +37,7 @@ import emu.grasscutter.server.packet.send.PacketWorldPlayerInfoNotify;
 import emu.grasscutter.server.packet.send.PacketWorldPlayerRTTNotify;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class World implements Iterable<GenshinPlayer> {
@@ -58,11 +59,13 @@ public class World implements Iterable<GenshinPlayer> {
 	public World(GenshinPlayer player, boolean isMultiplayer) {
 		this.owner = player;
 		this.players = Collections.synchronizedList(new ArrayList<>());
-		this.scenes = new Int2ObjectOpenHashMap<>();
+		this.scenes = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
 		
 		this.levelEntityId = getNextEntityId(EntityIdType.MPLEVEL);
 		this.worldLevel = player.getWorldLevel();
 		this.isMultiplayer = isMultiplayer;
+		
+		this.owner.getServer().registerWorld(this);
 	}
 	
 	public GenshinPlayer getHost() {
@@ -271,6 +274,12 @@ public class World implements Iterable<GenshinPlayer> {
     	for (GenshinPlayer player : this.getPlayers()) {
     		player.getSession().send(packet);
     	}
+	}
+	
+	public void onTick() {
+		for (GenshinScene scene : this.getScenes().values()) {
+			scene.onTick();
+		}
 	}
 	
 	public void close() {
