@@ -7,7 +7,7 @@ RUN chmod +x gradlew-unix
 RUN ./gradlew-unix jar
 
 
-FROM lwieske/java-8:jdk-8u202
+FROM lwieske/java-8:server-jre-8u202-slim
 WORKDIR /app
 
 COPY --from=builder /build/grasscutter.jar grasscutter.jar

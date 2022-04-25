@@ -56,3 +56,6 @@ config.json
 mitmdump.exe
 grasscutter.jar
 mongod.exe
+
+# Docker
+docker_data/
