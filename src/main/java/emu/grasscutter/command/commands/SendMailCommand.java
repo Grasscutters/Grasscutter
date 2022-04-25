@@ -24,7 +24,7 @@ public class SendMailCommand implements CommandHandler {
             sender = Grasscutter.getGameServer().getPlayerByUid(7006);
         }
         sender.sendMail(new Mail(new Mail.MailContent("Test", "This is a test"),
-                new ArrayList<Mail.MailItem>(){{add(new Mail.MailItem(1062));}},
+                new ArrayList<Mail.MailItem>(){{add(new Mail.MailItem(23411 ));}},
                 Instant.now().getEpochSecond() + 4000));
 
         sender.dropMessage("Check your inbox");

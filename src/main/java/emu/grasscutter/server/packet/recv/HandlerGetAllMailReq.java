@@ -15,7 +15,6 @@ public class HandlerGetAllMailReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        Grasscutter.getLogger().info("Mail Req");
         GetAllMailReqOuterClass.GetAllMailReq req = GetAllMailReqOuterClass.GetAllMailReq.parseFrom(payload);
         session.send(new PacketGetAllMailRsp(session.getPlayer(), req.getIsGiftMail()));
     }
