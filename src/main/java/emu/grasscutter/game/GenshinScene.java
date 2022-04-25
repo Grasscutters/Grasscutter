@@ -315,32 +315,31 @@ public class GenshinScene {
 		target.onDeath(attackerId);
 	}
 	
-	// TODO Do not use yet
-	public synchronized void onTick() {
-		for (GenshinPlayer player : this.getPlayers()) {
-			this.checkSpawns(player);
-		}
+	public void onTick() {
+		this.checkSpawns();
 	}
 	
 	// TODO - Test
-	public void checkSpawns(GenshinPlayer player) {
+	public void checkSpawns() {
 		SpatialIndex<SpawnGroupEntry> list = GenshinDepot.getSpawnListById(this.getId());
 		Set<SpawnDataEntry> visible = new HashSet<>();
 		
-		int RANGE = 100;
-		Collection<SpawnGroupEntry> entries = list.query(
-			new double[] {player.getPos().getX() - RANGE, player.getPos().getZ() - RANGE}, 
-			new double[] {player.getPos().getX() + RANGE, player.getPos().getZ() + RANGE}
-		);
-		
-		for (SpawnGroupEntry entry : entries) {
-			for (SpawnDataEntry spawnData : entry.getSpawns()) {
-				visible.add(spawnData);
+		for (GenshinPlayer player : this.getPlayers()) {
+			int RANGE = 100;
+			Collection<SpawnGroupEntry> entries = list.query(
+				new double[] {player.getPos().getX() - RANGE, player.getPos().getZ() - RANGE}, 
+				new double[] {player.getPos().getX() + RANGE, player.getPos().getZ() + RANGE}
+			);
+			
+			for (SpawnGroupEntry entry : entries) {
+				for (SpawnDataEntry spawnData : entry.getSpawns()) {
+					visible.add(spawnData);
+				}
 			}
 		}
 		
 		// World level
-		WorldLevelData worldLevelData = GenshinData.getWorldLevelDataMap().get(player.getWorldLevel());
+		WorldLevelData worldLevelData = GenshinData.getWorldLevelDataMap().get(getWorld().getWorldLevel());
 		int worldLevelOverride = 0;
 		
 		if (worldLevelData != null) {
