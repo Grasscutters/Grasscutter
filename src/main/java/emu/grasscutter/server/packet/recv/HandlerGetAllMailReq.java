@@ -18,5 +18,4 @@ public class HandlerGetAllMailReq extends PacketHandler {
         GetAllMailReqOuterClass.GetAllMailReq req = GetAllMailReqOuterClass.GetAllMailReq.parseFrom(payload);
         session.send(new PacketGetAllMailRsp(session.getPlayer(), req.getIsGiftMail()));
     }
-
 }
