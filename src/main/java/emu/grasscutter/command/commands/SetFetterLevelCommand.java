@@ -11,7 +11,7 @@ import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
 
 @Command(label = "setfetterlevel", usage = "setfetterlevel <level>",
         description = "Sets your fetter level for your current active character",
-        aliases = {"setfetterlvl"}, permission = "player.setfetterlevel")
+        aliases = {"setfetterlvl", "setfriendship"}, permission = "player.setfetterlevel")
 public final class SetFetterLevelCommand implements CommandHandler {
 
     @Override
@@ -35,7 +35,9 @@ public final class SetFetterLevelCommand implements CommandHandler {
             GenshinAvatar avatar = sender.getTeamManager().getCurrentAvatarEntity().getAvatar();
 
             avatar.setFetterLevel(fetterLevel);
-		    avatar.setFetterExp(GenshinData.getAvatarFetterLevelDataMap().get(fetterLevel).getExp());
+            if (fetterLevel != 10) {
+                avatar.setFetterExp(GenshinData.getAvatarFetterLevelDataMap().get(fetterLevel).getExp());
+            }
 		    avatar.save();
 		
 		    sender.sendPacket(new PacketAvatarFetterDataNotify(avatar));

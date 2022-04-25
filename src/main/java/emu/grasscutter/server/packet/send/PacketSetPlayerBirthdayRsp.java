@@ -1,20 +1,29 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SetPlayerBirthdayRspOuterClass.SetPlayerBirthdayRsp;
-import emu.grasscutter.net.proto.BirthdayOuterClass.Birthday;
 
 public class PacketSetPlayerBirthdayRsp extends GenshinPacket {
-    public PacketSetPlayerBirthdayRsp(GenshinPlayer player) {
-        super(PacketOpcodes.SetPlayerBirthdayRsp);
 
-        SetPlayerBirthdayRsp proto = SetPlayerBirthdayRsp.newBuilder()
-                .setBirth(player.getBirthday().toProto())
-                .build();
+	public PacketSetPlayerBirthdayRsp(int retCode) {
+		super(PacketOpcodes.SetPlayerBirthdayRsp);
 
-        this.setData(proto);
-    }
+		SetPlayerBirthdayRsp proto = SetPlayerBirthdayRsp.newBuilder()
+				.setRetcode(retCode)
+				.build();
+
+		this.setData(proto);
+	}
+
+	public PacketSetPlayerBirthdayRsp(GenshinPlayer player) {
+		super(PacketOpcodes.SetPlayerBirthdayRsp);
+
+		SetPlayerBirthdayRsp proto = SetPlayerBirthdayRsp.newBuilder()
+				.setBirthday(player.getBirthday().toProto())
+				.build();
+
+		this.setData(proto);
+	}
 }

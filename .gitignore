@@ -45,6 +45,9 @@ tmp/
 .loadpath
 .recommenders
 
+# VSCode
+.vscode
+
 # Grasscutter
 resources/*
 logs/*
