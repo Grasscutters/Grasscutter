@@ -1009,6 +1009,9 @@ public class PacketOpcodes {
     public static final int SetNameCardRsp = 4009;
     public static final int SetOpenStateReq = 162;
     public static final int SetOpenStateRsp = 189;
+
+    public static final int SetPlayerBirthdayReq = 4097;
+    public static final int SetPlayerBirthdayRsp = 4088;
     public static final int SetPlayerBornDataReq = 155;
     public static final int SetPlayerBornDataRsp = 146;
     public static final int SetPlayerHeadImageReq = 4046;

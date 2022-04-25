@@ -71,7 +71,7 @@ public class GenshinPlayer {
 	private TeamManager teamManager;
 	private PlayerGachaInfo gachaInfo;
 	private PlayerProfile playerProfile;
-	private MpSettingType mpSetting = MpSettingType.MpSettingEnterAfterApply;
+	private MpSettingType mpSetting = MpSettingType.MP_SETTING_ENTER_AFTER_APPLY;
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
@@ -619,8 +619,6 @@ public class GenshinPlayer {
 				.setNameCardId(this.getNameCardId())
 				.setSignature(this.getSignature())
 				.setAvatarId(HeadImage.newBuilder().setAvatarId(this.getHeadImage()).getAvatarId());
-		
-				.setAvatar(HeadImage.newBuilder().setAvatarId(this.getHeadImage()));
 
 		if (this.getWorld() != null) {
 			onlineInfo.setCurPlayerNumInWorld(this.getWorld().getPlayers().indexOf(this) + 1);
@@ -668,12 +666,6 @@ public class GenshinPlayer {
 	
 	public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getWorldPlayerLocationInfo() {
 		return PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.newBuilder()
-					.setSceneId(this.getSceneId())
-					.setPlayerLoc(this.getPlayerLocationInfo())
-					.build();
-
-	public WorldPlayerLocationInfo getWorldPlayerLocationInfo() {
-		return WorldPlayerLocationInfo.newBuilder()
 				.setSceneId(this.getSceneId())
 				.setPlayerLoc(this.getPlayerLocationInfo())
 				.build();
@@ -698,7 +690,7 @@ public class GenshinPlayer {
 		while (it.hasNext()) {
 			CoopRequest req = it.next();
 			if (req.isExpired()) {
-				req.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(this, false, PlayerApplyEnterMpReason.SystemJudge));
+				req.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(this, false, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.SYSTEM_JUDGE));
 				it.remove();
 			}
 		}

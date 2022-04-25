@@ -25,8 +25,6 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application
     id 'application'
-    id 'org.jetbrains.kotlin.jvm' version '1.6.21'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '1.6.20'
 }
 
 
@@ -56,8 +54,6 @@ dependencies {
     implementation group: 'org.greenrobot', name: 'eventbus-java', version: '3.3.1'
 
     protobuf files('Grasscutter-Protos/proto/')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2"
 
 }
 
@@ -111,14 +107,12 @@ sourceSets {
         }
     }
 }
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-compileTestKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
 
+idea {
+    module {
+        // proto files and generated Java files are automatically added as
+        // source dirs.
+        // If you have additional sources, add them here:
+        sourceDirs += file("/Grasscutter-Protos/proto/");
+    }
+}
