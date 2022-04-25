@@ -10,6 +10,7 @@ import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodesUtil;
 import emu.grasscutter.netty.MihoyoKcpChannel;
+import emu.grasscutter.server.event.game.SendPacketEvent;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
@@ -161,16 +162,15 @@ public class GameSession extends MihoyoKcpChannel {
     		genshinPacket.buildHeader(this.getNextClientSequence());
     	}
     	
-    	// Build packet
-    	byte[] data = genshinPacket.build();
-    	
     	// Log
     	if (Grasscutter.getConfig().getGameServerOptions().LOG_PACKETS) {
     		logPacket(genshinPacket);
     	}
-    	
-    	// Send
-    	send(data);
+		
+		// Invoke event.
+		SendPacketEvent event = new SendPacketEvent(this, genshinPacket); event.call();
+    	if(!event.isCanceled()) // If event is not cancelled, continue.
+			this.send(event.getPacket().build());
     }
     
     private void logPacket(int opcode) {
