@@ -2,9 +2,9 @@ FROM gradle:7.4.2-jdk8 AS builder
 WORKDIR /build
 COPY . .
 
-RUN tr -d '\015' <gradlew >gradlew-unix
-RUN chmod +x gradlew-unix
-RUN ./gradlew-unix jar
+RUN tr -d '\015' <gradlew >gradlew-unix && \
+    chmod +x gradlew-unix && \
+    ./gradlew-unix jar
 
 
 FROM lwieske/java-8:server-jre-8u202-slim
