@@ -13,30 +13,41 @@ import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import java.util.List;
 
 @Command(label = "killcharacter", usage = "killcharacter [playerId]", aliases = {"suicide", "kill"},
-        description = "Directly kill a player's current active character", permission = "player.killcharacter")
+        description = "Kills the players current character", permission = "player.killcharacter")
 public final class KillCharacterCommand implements CommandHandler {
 
     @Override
     public void execute(GenshinPlayer sender, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
-            return; // TODO: kill a player's current active character from console
-        }
-
         int target;
-        if (args.size() == 1) {
-            try {
-                target = Integer.parseInt(args.get(0));
-                if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
-                    target = sender.getUid();
+        if (sender == null) {
+            // from console
+            if (args.size() == 1) {
+                try {
+                    target = Integer.parseInt(args.get(0));
+                } catch (NumberFormatException e) {
+                    CommandHandler.sendMessage(null, "Invalid player id.");
+                    return;
                 }
-            } catch (NumberFormatException e) {
-                CommandHandler.sendMessage(sender, "Invalid player id.");
+            } else {
+                CommandHandler.sendMessage(null, "Usage: /killcharacter [playerId]");
                 return;
             }
         } else {
-            target = sender.getUid();
+            if (args.size() == 1) {
+                try {
+                    target = Integer.parseInt(args.get(0));
+                    if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
+                        target = sender.getUid();
+                    }
+                } catch (NumberFormatException e) {
+                    CommandHandler.sendMessage(sender, "Invalid player id.");
+                    return;
+                }
+            } else {
+                target = sender.getUid();
+            }
         }
+
         GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
             CommandHandler.sendMessage(sender, "Player not found or offline.");
@@ -52,6 +63,6 @@ public final class KillCharacterCommand implements CommandHandler {
         targetPlayer.getScene().removeEntity(entity);
         entity.onDeath(0);
 
-        sender.dropMessage("Killed " + targetPlayer.getNickname() + "'s current active character.");
+        CommandHandler.sendMessage(sender, "Killed " + targetPlayer.getNickname() + " current character.");
     }
 }
