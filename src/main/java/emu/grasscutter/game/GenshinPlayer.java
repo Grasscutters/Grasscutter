@@ -6,6 +6,7 @@ import java.util.*;
 import dev.morphia.annotations.*;
 import emu.grasscutter.GenshinConstants;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GenshinData;
 import emu.grasscutter.data.def.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
@@ -603,10 +604,13 @@ public class GenshinPlayer {
 	public List<Mail> getAllMail() { return this.mail; }
 
 	public void sendMail(Mail message) {
-		this.mail.add(message);
 		message._id = this.mail.size() + 1;
+		this.mail.add(message);
 		this.save();
-		this.sendPacket(new PacketMailChangeNotify(this, message));
+		Grasscutter.getLogger().info("Message sent to user [" + this.getUid()  + ":" + this.getNickname() + "]!");
+		if(this.getSession() != null) {
+			this.sendPacket(new PacketMailChangeNotify(this, message));
+		} // TODO: setup a way for the mail notification to show up when someone receives mail when they were offline
 	}
 
 	public boolean deleteMail(int mailId) {

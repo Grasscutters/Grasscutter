@@ -20,15 +20,7 @@ public class Mail {
     public int stateValue;
 
     public Mail() {
-        _id = 1;
-        mailContent = new MailContent("No title set...", "No content set...");
-        itemList = new ArrayList<>();
-        sendTime = 0;
-        expireTime = 0;
-        importance = 0; // Starred mail, 0 = No star, 1 = Star.
-        isRead = true;
-        isAttachmentGot = true;
-        stateValue = 1; // Different mailboxes, 1 = Default, 3 = Gift-box.
+        this(new MailContent(), new ArrayList<MailItem>(), (int) Instant.now().getEpochSecond() + 604800); // TODO: add expire time to send mail command
     }
 
     public Mail(MailContent mailContent, List<MailItem> itemList, long expireTime) {
@@ -49,10 +41,10 @@ public class Mail {
         this.itemList = itemList;
         this.sendTime = (int) Instant.now().getEpochSecond();
         this.expireTime = expireTime;
-        this.importance = importance;
+        this.importance = importance; // Starred mail, 0 = No star, 1 = Star.
         this.isRead = false;
         this.isAttachmentGot = false;
-        this.stateValue = state;
+        this.stateValue = state; // Different mailboxes, 1 = Default, 3 = Gift-box.
     }
 
     public int getId() {
