@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message EchoShellInfo {
-	uint32 shell_id = 1;
-}

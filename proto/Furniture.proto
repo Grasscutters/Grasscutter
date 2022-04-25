@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-
-message Furniture {
-	uint32 count = 1;
-}

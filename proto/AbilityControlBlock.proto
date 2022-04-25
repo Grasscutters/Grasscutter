@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-import "AbilityEmbryo.proto";
-
-message AbilityControlBlock {
-	repeated AbilityEmbryo ability_embryo_list = 1;
-}
