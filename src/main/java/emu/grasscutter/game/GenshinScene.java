@@ -47,6 +47,7 @@ public class GenshinScene {
 	
 	private final Set<SpawnDataEntry> spawnedEntities;
 	private final Set<SpawnDataEntry> deadSpawnedEntities;
+	private boolean dontDestroyWhenEmpty;
 	
 	private int time;
 	private ClimateType climate;
@@ -121,6 +122,14 @@ public class GenshinScene {
 		this.weather = weather;
 	}
 
+	public boolean dontDestroyWhenEmpty() {
+		return dontDestroyWhenEmpty;
+	}
+
+	public void setDontDestroyWhenEmpty(boolean dontDestroyWhenEmpty) {
+		this.dontDestroyWhenEmpty = dontDestroyWhenEmpty;
+	}
+
 	public Set<SpawnDataEntry> getSpawnedEntities() {
 		return spawnedEntities;
 	}
@@ -166,7 +175,7 @@ public class GenshinScene {
 		}
 		
 		// Deregister scene if not in use
-		if (this.getEntities().size() <= 0) {
+		if (this.getEntities().size() <= 0 && !this.dontDestroyWhenEmpty()) {
 			this.getWorld().deregisterScene(this);
 		}
 	}
