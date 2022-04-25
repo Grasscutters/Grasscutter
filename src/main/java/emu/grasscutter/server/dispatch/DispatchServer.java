@@ -261,34 +261,36 @@ public final class DispatchServer {
 
 		server.createContext("/", t -> responseHTML(t, "Hello"));
 
-		server.createContext("/grasscutter/login", t -> {
-			try {
-				String requestBody = Utils.toString(t.getRequestBody());
-				LoginGenerateToken loginGenerateToken = new Gson().fromJson(requestBody, LoginGenerateToken.class);
-				Account account = DatabaseHelper.getAccountByUsernameAndPassword(loginGenerateToken.username, loginGenerateToken.password);
-				if (account == null) {
-					responseHTML(t, "Invalid username or password.");
-				}else{
-					responseHTML(t, account.generateJWT());
-				}
-			}catch (Exception ignore) {}
-		});
-
-		server.createContext("/grasscutter/register", t -> {
-			try {
-				String requestBody = Utils.toString(t.getRequestBody());
-				RegisterAccount registerAccount = new Gson().fromJson(requestBody, RegisterAccount.class);
-				if (registerAccount != null) {
-					String password = Utils.argon2.hash(10, 65536, 1, registerAccount.password.toCharArray());
-					Account account = DatabaseHelper.createAccountWithPassword(registerAccount.username, password);
+		if(Grasscutter.getConfig().getDispatchOptions().UseAuth) {
+			server.createContext("/grasscutter/login", t -> {
+				try {
+					String requestBody = Utils.toString(t.getRequestBody());
+					LoginGenerateToken loginGenerateToken = new Gson().fromJson(requestBody, LoginGenerateToken.class);
+					Account account = DatabaseHelper.getAccountByUsernameAndPassword(loginGenerateToken.username, loginGenerateToken.password);
 					if (account == null) {
-						responseHTML(t, "Error while creating account. (Username or Uid already exists)");
-					} else {
+						responseHTML(t, "Invalid username or password.");
+					}else{
 						responseHTML(t, account.generateJWT());
 					}
-				}
-			}catch (Exception ignore) {}
-		});
+				}catch (Exception ignore) {}
+			});
+
+			server.createContext("/grasscutter/register", t -> {
+				try {
+					String requestBody = Utils.toString(t.getRequestBody());
+					RegisterAccount registerAccount = new Gson().fromJson(requestBody, RegisterAccount.class);
+					if (registerAccount != null) {
+						String password = Utils.argon2.hash(10, 65536, 1, registerAccount.password.toCharArray());
+						Account account = DatabaseHelper.createAccountWithPassword(registerAccount.username, password);
+						if (account == null) {
+							responseHTML(t, "Error while creating account. (Username or Uid already exists)");
+						} else {
+							responseHTML(t, account.generateJWT());
+						}
+					}
+				}catch (Exception ignore) {}
+			});
+		}
 
 		// Dispatch
 		server.createContext("/query_region_list", t -> {
@@ -340,8 +342,8 @@ public final class DispatchServer {
 					.info(String.format("[Dispatch] Client %s is trying to log in", t.getRemoteAddress()));
 
 			// Login
-			Account account = null; //getAccountByName(requestData.account);
-			if(Grasscutter.getConfig().getDispatchOptions().useAuth){
+			Account account = null;
+			if(Grasscutter.getConfig().getDispatchOptions().UseAuth){
 				account = DatabaseHelper.getAccountByOneTimeToken(requestData.account);
 				if(account == null) {
 					responseData.retcode = -201;
