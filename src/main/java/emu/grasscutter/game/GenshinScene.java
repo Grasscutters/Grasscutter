@@ -3,19 +3,31 @@ package emu.grasscutter.game;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
+import org.danilopianini.util.SpatialIndex;
+
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GenshinDepot;
+import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.game.entity.EntityGadget;
+import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GenshinEntity;
 import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.props.SceneType;
+import emu.grasscutter.game.world.SpawnDataEntry;
+import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
@@ -23,6 +35,7 @@ import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
+import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -31,6 +44,9 @@ public class GenshinScene {
 	private final SceneData sceneData;
 	private final List<GenshinPlayer> players;
 	private final Int2ObjectMap<GenshinEntity> entities;
+	
+	private final Set<SpawnDataEntry> spawnedEntities;
+	private final Set<SpawnDataEntry> deadSpawnedEntities;
 	
 	private int time;
 	private ClimateType climate;
@@ -44,6 +60,9 @@ public class GenshinScene {
 
 		this.time = 8 * 60;
 		this.climate = ClimateType.CLIMATE_SUNNY;
+		
+		this.spawnedEntities = new HashSet<>();
+		this.deadSpawnedEntities = new HashSet<>();
 	}
 	
 	public int getId() {
@@ -100,6 +119,14 @@ public class GenshinScene {
 
 	public void setWeather(int weather) {
 		this.weather = weather;
+	}
+
+	public Set<SpawnDataEntry> getSpawnedEntities() {
+		return spawnedEntities;
+	}
+
+	public Set<SpawnDataEntry> getDeadSpawnedEntities() {
+		return deadSpawnedEntities;
 	}
 
 	public boolean isInScene(GenshinEntity entity) {
@@ -275,6 +302,73 @@ public class GenshinScene {
 		
 		// Death event
 		target.onDeath(attackerId);
+	}
+	
+	// TODO Do not use yet
+	public synchronized void onTick() {
+		for (GenshinPlayer player : this.getPlayers()) {
+			this.checkSpawns(player);
+		}
+	}
+	
+	// TODO - Test
+	public void checkSpawns(GenshinPlayer player) {
+		SpatialIndex<SpawnGroupEntry> list = GenshinDepot.getSpawnListById(this.getId());
+		Set<SpawnDataEntry> visible = new HashSet<>();
+		
+		int RANGE = 100;
+		Collection<SpawnGroupEntry> entries = list.query(
+			new double[] {player.getPos().getX() - RANGE, player.getPos().getZ() - RANGE}, 
+			new double[] {player.getPos().getX() + RANGE, player.getPos().getZ() + RANGE}
+		);
+		
+		for (SpawnGroupEntry entry : entries) {
+			for (SpawnDataEntry spawnData : entry.getSpawns()) {
+				visible.add(spawnData);
+			}
+		}
+		
+		// Todo
+		List<GenshinEntity> toAdd = new LinkedList<>();
+		List<GenshinEntity> toRemove = new LinkedList<>();
+		
+		for (SpawnDataEntry entry : visible) {
+			if (!this.getSpawnedEntities().contains(entry) && !this.getDeadSpawnedEntities().contains(entry)) {
+				// Spawn entity
+				MonsterData data = GenshinData.getMonsterDataMap().get(entry.getMonsterId());
+				
+				if (data == null) {
+					continue;
+				}
+				
+				EntityMonster entity = new EntityMonster(this, data, entry.getPos(), entry.getLevel());
+				entity.getRotation().set(entry.getRot());
+				entity.setGroupId(entry.getGroup().getGroupId());
+				entity.setPoseId(entry.getPoseId());
+				entity.setConfigId(entry.getConfigId());
+				entity.setSpawnEntry(entry);
+				
+				toAdd.add(entity);
+				this.addEntityDirectly(entity);
+				
+				// Add to spawned list
+				this.getSpawnedEntities().add(entry);
+			}
+		}
+		
+		for (GenshinEntity entity : this.getEntities().values()) {
+			if (entity.getSpawnEntry() != null && !visible.contains(entity.getSpawnEntry())) {
+				toRemove.add(entity);
+				this.removeEntityDirectly(entity);
+			}
+		}
+		
+		if (toAdd.size() > 0) {
+			this.broadcastPacket(new PacketSceneEntityAppearNotify(toAdd, VisionType.VisionBorn));
+		}
+		if (toRemove.size() > 0) {
+			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VisionRemove));
+		}
 	}
 	
 	// Gadgets
