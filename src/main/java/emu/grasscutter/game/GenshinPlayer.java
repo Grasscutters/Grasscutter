@@ -101,8 +101,6 @@ public class GenshinPlayer {
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
 	private ArrayList<Mail> mail;
-	
-	private ArrayList<Mail> mail;
 
 	private int sceneId;
 	private int regionId;
