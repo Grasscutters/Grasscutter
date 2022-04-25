@@ -90,6 +90,10 @@ public final class DatabaseHelper {
 		return DatabaseManager.getDatastore().find(Account.class).filter(Filters.eq("username", username)).delete().getDeletedCount() > 0;
 	}
 
+	public static List<GenshinPlayer> getAllPlayers() {
+		return DatabaseManager.getDatastore().find(GenshinPlayer.class).stream().toList();
+	}
+
 	public static GenshinPlayer getPlayerById(int id) {
 		return DatabaseManager.getDatastore().find(GenshinPlayer.class).filter(Filters.eq("_id", id)).first();
 	}
