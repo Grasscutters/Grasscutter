@@ -7,7 +7,7 @@ RUN tr -d '\015' <gradlew >gradlew-unix && \
     ./gradlew-unix jar
 
 
-FROM lwieske/java-8:server-jre-8u202-slim
+FROM azul/zulu-openjdk:8u202
 WORKDIR /app
 
 COPY --from=builder /build/grasscutter.jar grasscutter.jar
