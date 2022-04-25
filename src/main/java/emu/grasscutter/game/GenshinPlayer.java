@@ -611,13 +611,13 @@ public class GenshinPlayer {
 
 	public OnlinePlayerInfo getOnlinePlayerInfo() {
 		OnlinePlayerInfo.Builder onlineInfo = OnlinePlayerInfo.newBuilder()
-                .setUid(this.getUid())
-                .setNickname(this.getNickname())
-                .setPlayerLevel(this.getLevel())
-                .setMpSettingType(this.getMpSetting())
-                .setNameCardId(this.getNameCardId())
-                .setSignature(this.getSignature())
-                .setAvatar(HeadImage.newBuilder().setAvatarId(this.getHeadImage()));
+				.setUid(this.getUid())
+				.setNickname(this.getNickname())
+				.setPlayerLevel(this.getLevel())
+				.setMpSettingType(this.getMpSetting())
+				.setNameCardId(this.getNameCardId())
+				.setSignature(this.getSignature())
+				.setAvatar(HeadImage.newBuilder().setAvatarId(this.getHeadImage()));
 
 		if (this.getWorld() != null) {
 			onlineInfo.setCurPlayerNumInWorld(this.getWorld().getPlayers().indexOf(this) + 1);
@@ -650,16 +650,34 @@ public class GenshinPlayer {
 	}
 
 	public SocialDetail.Builder getSocialDetail() {
-		SocialDetail.Builder social = SocialDetail.newBuilder().setUid(this.getUid()).setAvatar(HeadImage.newBuilder().setAvatarId(this.getHeadImage())).setNickname(this.getNickname()).setSignature(this.getSignature()).setLevel(this.getLevel()).setBirthday(this.getBirthday().getFilledProtoWhenNotEmpty()).setWorldLevel(this.getWorldLevel()).setUnk1(1).setUnk3(1).setNameCardId(this.getNameCardId()).setFinishAchievementNum(0);
+		SocialDetail.Builder social = SocialDetail.newBuilder()
+				.setUid(this.getUid())
+				.setAvatar(HeadImage.newBuilder().setAvatarId(this.getHeadImage()))
+				.setNickname(this.getNickname())
+				.setSignature(this.getSignature())
+				.setLevel(this.getLevel())
+				.setBirthday(this.getBirthday().getFilledProtoWhenNotEmpty())
+				.setWorldLevel(this.getWorldLevel())
+				.setUnk1(1)
+				.setUnk3(1)
+				.setNameCardId(this.getNameCardId())
+				.setFinishAchievementNum(0);
 		return social;
 	}
 
 	public WorldPlayerLocationInfo getWorldPlayerLocationInfo() {
-		return WorldPlayerLocationInfo.newBuilder().setSceneId(this.getSceneId()).setPlayerLoc(this.getPlayerLocationInfo()).build();
+		return WorldPlayerLocationInfo.newBuilder()
+				.setSceneId(this.getSceneId())
+				.setPlayerLoc(this.getPlayerLocationInfo())
+				.build();
 	}
 
 	public PlayerLocationInfo getPlayerLocationInfo() {
-		return PlayerLocationInfo.newBuilder().setUid(this.getUid()).setPos(this.getPos().toProto()).setRot(this.getRotation().toProto()).build();
+		return PlayerLocationInfo.newBuilder()
+				.setUid(this.getUid())
+				.setPos(this.getPos().toProto())
+				.setRot(this.getRotation().toProto())
+				.build();
 	}
 
 	public synchronized void onTick() {
