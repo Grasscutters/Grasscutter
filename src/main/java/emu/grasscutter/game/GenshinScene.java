@@ -17,6 +17,7 @@ import emu.grasscutter.data.GenshinDepot;
 import emu.grasscutter.data.GenshinResource;
 import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.SceneData;
+import emu.grasscutter.data.def.WorldLevelData;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.game.entity.EntityGadget;
@@ -337,6 +338,14 @@ public class GenshinScene {
 			}
 		}
 		
+		// World level
+		WorldLevelData worldLevelData = GenshinData.getWorldLevelDataMap().get(player.getWorldLevel());
+		int worldLevelOverride = 0;
+		
+		if (worldLevelData != null) {
+			worldLevelOverride = worldLevelData.getMonsterLevel();
+		}
+				
 		// Todo
 		List<GenshinEntity> toAdd = new LinkedList<>();
 		List<GenshinEntity> toRemove = new LinkedList<>();
@@ -350,7 +359,7 @@ public class GenshinScene {
 					continue;
 				}
 				
-				EntityMonster entity = new EntityMonster(this, data, entry.getPos(), entry.getLevel());
+				EntityMonster entity = new EntityMonster(this, data, entry.getPos(), worldLevelOverride > 0 ? worldLevelOverride : entry.getLevel());
 				entity.getRotation().set(entry.getRot());
 				entity.setGroupId(entry.getGroup().getGroupId());
 				entity.setPoseId(entry.getPoseId());
