@@ -30,6 +30,9 @@ hs_err_pid*
 build/
 out/
 
+# Ignore Gradle properties
+gradle.properties
+
 # Eclipse
 .project
 .classpath
