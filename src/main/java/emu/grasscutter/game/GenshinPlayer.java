@@ -225,11 +225,11 @@ public class GenshinPlayer {
 		this.world = world;
 	}
 
-	public GenshinScene getScene() {
+	public synchronized GenshinScene getScene() {
 		return scene;
 	}
 
-	public void setScene(GenshinScene scene) {
+	public synchronized void setScene(GenshinScene scene) {
 		this.scene = scene;
 	}
 
