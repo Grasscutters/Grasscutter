@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ForwardType.proto";
+import "Vector.proto";
+
+message EvtDoSkillSuccNotify {
+	enum CmdId {
+		option allow_alias = true;
+		ENET_CHANNEL_ID = 0;
+		NONE = 0;
+		ENET_IS_RELIABLE = 1;
+		IS_ALLOW_CLIENT = 1;
+		CMD_ID = 384;
+	}
+
+	ForwardType forward_type = 1;
+	uint32 caster_id = 2;
+	uint32 skill_id = 3;
+	Vector forward = 4;
+}

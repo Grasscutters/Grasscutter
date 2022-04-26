@@ -3,6 +3,7 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarWearFlycloakRspOuterClass.AvatarWearFlycloakRsp;
+import emu.grasscutter.net.proto.RetcodeOuterClass;
 
 public class PacketAvatarWearFlycloakRsp extends GenshinPacket {
 	public PacketAvatarWearFlycloakRsp(long avatarGuid, int costumeId) {
@@ -20,7 +21,7 @@ public class PacketAvatarWearFlycloakRsp extends GenshinPacket {
 		super(PacketOpcodes.AvatarWearFlycloakRsp);
 
 		AvatarWearFlycloakRsp proto = AvatarWearFlycloakRsp.newBuilder()
-				.setRetcode(1)
+				.setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
 				.build();
 		
 		this.setData(proto);

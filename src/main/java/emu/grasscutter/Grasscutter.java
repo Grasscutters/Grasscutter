@@ -36,7 +36,7 @@ public final class Grasscutter {
 	private static GameServer gameServer;
 	private static PluginManager pluginManager;
 	
-	public static final Reflections reflector = new Reflections();
+	public static final Reflections reflector = new Reflections("emu.grasscutter");
 	
 	static {
 		// Declare logback configuration.
@@ -70,12 +70,12 @@ public final class Grasscutter {
 		// Database
 		DatabaseManager.initialize();
 
+		// Create plugin manager instance.
+		pluginManager = new PluginManager();
+		
 		// Create server instances.
 		dispatchServer = new DispatchServer();
 		gameServer = new GameServer(new InetSocketAddress(getConfig().getGameServerOptions().Ip, getConfig().getGameServerOptions().Port));
-		
-		// Create plugin manager instance.
-		pluginManager = new PluginManager();
 		
 		// Start servers.
 		if(getConfig().RunMode.equalsIgnoreCase("HYBRID")) {

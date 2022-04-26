@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlayerLocationInfo.proto";
+import "PlayerWorldLocationInfo.proto";
+
+message WorldPlayerLocationNotify {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 253;
+	}
+
+	repeated PlayerLocationInfo player_loc_list = 1;
+	repeated PlayerWorldLocationInfo player_world_loc_list = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message FetterData {
+	uint32 fetter_id = 1;
+	uint32 fetter_state = 2;
+	repeated uint32 cond_index_list = 3;
+}

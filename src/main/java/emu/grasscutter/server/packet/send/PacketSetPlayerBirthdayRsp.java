@@ -4,6 +4,7 @@ import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SetPlayerBirthdayRspOuterClass.SetPlayerBirthdayRsp;
+import emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass;
 
 public class PacketSetPlayerBirthdayRsp extends GenshinPacket {
 

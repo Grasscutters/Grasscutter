@@ -32,7 +32,7 @@ public class HandlerMarkMapReq extends PacketHandler {
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		MarkMapReq req = MarkMapReq.parseFrom(payload);
 
-		if (req.getOp() != Operation.Add) {
+		if (req.getOp() != MarkMapReq.Operation.ADD) {
 			return;
 		}
 

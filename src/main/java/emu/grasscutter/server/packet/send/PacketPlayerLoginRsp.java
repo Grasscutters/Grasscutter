@@ -40,8 +40,8 @@ public class PacketPlayerLoginRsp extends GenshinPacket {
 					QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp regionQuery = QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp.parseFrom(decodedCurRegion);
 
 					RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
-							.setIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getGameServerOptions().Ip : Grasscutter.getConfig().getGameServerOptions().PublicIp))
-							.setPort(Grasscutter.getConfig().getGameServerOptions().PublicPort != 0 ? Grasscutter.getConfig().getGameServerOptions().PublicPort : Grasscutter.getConfig().getGameServerOptions().Port)
+							.setGateserverIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getGameServerOptions().Ip : Grasscutter.getConfig().getGameServerOptions().PublicIp))
+							.setGateserverPort(Grasscutter.getConfig().getGameServerOptions().PublicPort != 0 ? Grasscutter.getConfig().getGameServerOptions().PublicPort : Grasscutter.getConfig().getGameServerOptions().Port)
 							.setSecretKey(ByteString.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
 							.build();
 
@@ -64,7 +64,7 @@ public class PacketPlayerLoginRsp extends GenshinPacket {
 				.setClientSilenceDataVersion(info.getClientSilenceDataVersion())
 				.setClientMd5(info.getClientDataMd5())
 				.setClientSilenceMd5(info.getClientSilenceDataMd5())
-				.setResVersionConfig(info.getConfig())
+				.setResVersionConfig(info.getResVersionConfig())
 				.setClientVersionSuffix(info.getClientVersionSuffix())
 				.setClientSilenceVersionSuffix(info.getClientSilenceVersionSuffix())
 				.setIsScOpen(false)

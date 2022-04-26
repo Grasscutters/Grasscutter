@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PropValue.proto";
+
+message PropPair {
+	uint32 type = 1;
+	PropValue prop_value = 2;
+}

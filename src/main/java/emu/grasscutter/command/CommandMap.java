@@ -11,7 +11,6 @@ import java.util.*;
 public final class CommandMap {
     private final Map<String, CommandHandler> commands = new HashMap<>();
     private final Map<String, Command> annotations = new HashMap<>();
-    
     public CommandMap() {
         this(false);
     }
@@ -106,8 +105,9 @@ public final class CommandMap {
      */
     public void invoke(GenshinPlayer player, String rawMessage) {
         rawMessage = rawMessage.trim();
-        if(rawMessage.length() == 0) {
-            CommandHandler.sendMessage(player, "No command specified."); return;
+        if (rawMessage.length() == 0) {
+            CommandHandler.sendMessage(player, "No command specified.");
+            return;
         }
 
         // Remove prefix if present.
@@ -118,7 +118,6 @@ public final class CommandMap {
         String[] split = rawMessage.split(" ");
         List<String> args = new LinkedList<>(Arrays.asList(split));
         String label = args.remove(0);
-
         // Get command handler.
         CommandHandler handler = this.commands.get(label);
         if (handler == null) {
@@ -130,14 +129,22 @@ public final class CommandMap {
         if (player != null) {
             String permissionNode = this.annotations.get(label).permission();
             Account account = player.getAccount();
-            if(!permissionNode.isEmpty() && !account.hasPermission(permissionNode)) {
+            if (!permissionNode.isEmpty() && !account.hasPermission(permissionNode)) {
                 CommandHandler.sendMessage(player, "You do not have permission to run this command.");
                 return;
             }
         }
 
         // Invoke execute method for handler.
-        handler.execute(player, args);
+        boolean threading  = this.annotations.get(label).threading();
+        Runnable runnable = () -> handler.execute(player, args);
+        if(threading) {
+            Thread command = new Thread(runnable);
+            command.start();
+        }
+        else {
+            runnable.run();
+        }
     }
 
     /**

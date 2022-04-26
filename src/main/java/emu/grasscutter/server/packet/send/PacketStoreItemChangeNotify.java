@@ -18,7 +18,7 @@ public class PacketStoreItemChangeNotify extends GenshinPacket {
 		this();
 		
 		StoreItemChangeNotify.Builder proto = StoreItemChangeNotify.newBuilder()
-				.setStoreType(StoreType.StorePack)
+				.setStoreType(StoreType.STORE_PACK)
 				.addItemList(item.toProto());
 		
 		this.setData(proto);
@@ -28,9 +28,9 @@ public class PacketStoreItemChangeNotify extends GenshinPacket {
 		this();
 
 		StoreItemChangeNotify.Builder proto = StoreItemChangeNotify.newBuilder()
-				.setStoreType(StoreType.StorePack);
+				.setStoreType(StoreType.STORE_PACK);
 		
-		items.stream().forEach(item -> proto.addItemList(item.toProto()));
+		items.forEach(item -> proto.addItemList(item.toProto()));
 		
 		this.setData(proto);
 	}
