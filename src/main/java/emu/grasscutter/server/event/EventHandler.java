@@ -5,9 +5,22 @@ import emu.grasscutter.Grasscutter;
 import java.util.function.Consumer;
 
 public final class EventHandler {
-    private final Class<Event> event;
+    private final Class<? extends Event> event;
+
+    /**
+     * Creates an instance of {@link EventHandler} for the specified event.
+     * @param event The event to handle.
+     * @return An instance of {@link EventHandler}.
+     */
+    public static EventHandler forEvent(Class<? extends Event> event) {
+        return new EventHandler(event);
+    }
     
-    public EventHandler(Class<Event> event) {
+    /**
+     * @deprecated Will be replaced with a private constructor instead. Use {@link #forEvent(Class)} instead.
+     */
+    @Deprecated(forRemoval = true, since = "1.0.1")
+    public EventHandler(Class<? extends Event> event) {
         this.event = event;
     }
     
@@ -19,7 +32,7 @@ public final class EventHandler {
      * Gets which event this handler is handling.
      * @return An event class.
      */
-    public Class<Event> handles() {
+    public Class<? extends Event> handles() {
         return this.event;
     }
 
