@@ -10,6 +10,10 @@ public abstract class ServerEvent extends Event {
         this.type = type;
     }
     
+    public Type getServerType() {
+        return this.type;
+    }
+    
     public enum Type {
         DISPATCH,
         GAME

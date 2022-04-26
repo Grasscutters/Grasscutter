@@ -103,8 +103,8 @@ public final class DispatchServer {
 			byte[] decoded2 = Base64.getDecoder().decode(query_cur_region);
 			QueryCurrRegionHttpRsp regionQuery = QueryCurrRegionHttpRsp.parseFrom(decoded2);
 
-			List<RegionSimpleInfo> servers = new ArrayList<RegionSimpleInfo>();
-			List<String> usedNames = new ArrayList<String>(); // List to check for potential naming conflicts
+			List<RegionSimpleInfo> servers = new ArrayList<>();
+			List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts
 			if (Grasscutter.getConfig().RunMode.equalsIgnoreCase("HYBRID")) { // Automatically add the game server if in
 																				// hybrid mode
 				RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
@@ -268,7 +268,10 @@ public final class DispatchServer {
 			Grasscutter.getLogger()
 					.info(String.format("[Dispatch] Client %s request: query_region_list", t.getRemoteAddress()));
 
-			responseHTML(t, regionListBase64);
+			// Invoke event.
+			QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListBase64); event.call();
+			// Respond with event result.
+			responseHTML(t, event.getRegionList());
 		});
 
 		for (String regionName : regions.keySet()) {
