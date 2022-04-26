@@ -1,7 +1,5 @@
 package emu.grasscutter;
 
-import java.util.ArrayList;
-
 public final class Config {
 
 	public String DatabaseUrl = "mongodb://localhost:27017";
@@ -12,6 +10,7 @@ public final class Config {
 	public String PACKETS_FOLDER = "./packets/";
 	public String DUMPS_FOLDER = "./dumps/";
 	public String KEY_FOLDER = "./keys/";
+	public String PLUGINS_FOLDER = "./plugins/";
 
 	public String RunMode = "HYBRID"; // HYBRID, DISPATCH_ONLY, GAME_ONLY
 	public GameServerOptions GameServer = new GameServerOptions();
