@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Calendar;
 
 public final class DateHelper {
-    public static Date onlyYDM(Date now) {
+    public static Date onlyYearMonthDay(Date now) {
         Calendar calendar = Calendar.getInstance();
 		calendar.setTime(now);
 		calendar.set(Calendar.HOUR_OF_DAY, 0);

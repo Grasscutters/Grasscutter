@@ -534,7 +534,7 @@ public class GenshinPlayer {
 		remainCalendar.setTime(moonCardStartTime);
 		remainCalendar.add(Calendar.DATE, moonCardDuration);
 		Date theLastDay = remainCalendar.getTime();
-		Date now = DateHelper.onlyYDM(new Date());
+		Date now = DateHelper.onlyYearMonthDay(new Date());
 		return (int) ((theLastDay.getTime() - now.getTime()) / (24 * 60 * 60 * 1000)); // By copilot 
 	}
 
@@ -547,7 +547,7 @@ public class GenshinPlayer {
 		if (!moonCard) {
 			moonCard = true;
 			Date now = new Date();
-			moonCardStartTime = DateHelper.onlyYDM(now);
+			moonCardStartTime = DateHelper.onlyYearMonthDay(now);
 			moonCardDuration = 30;
 		} else {
 			moonCardDuration += 30;
@@ -561,7 +561,7 @@ public class GenshinPlayer {
 		if (!moonCard) {
 			return;
 		}
-		Date now = DateHelper.onlyYDM(new Date());
+		Date now = DateHelper.onlyYearMonthDay(new Date());
 		if (moonCardGetTimes.contains(now)) {
 			return;
 		}
