@@ -36,7 +36,7 @@ public final class Grasscutter {
 	private static GameServer gameServer;
 	private static PluginManager pluginManager;
 	
-	public static final Reflections reflector = new Reflections("emu.grasscutter");
+	public static final Reflections reflector = new Reflections("emu.grasscutter.command.commands");
 	
 	static {
 		// Declare logback configuration.
