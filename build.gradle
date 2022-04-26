@@ -67,7 +67,7 @@ dependencies {
     implementation group: 'org.greenrobot', name: 'eventbus-java', version: '3.3.1'
     implementation group: 'org.danilopianini', name: 'java-quadtree', version: '0.1.9'
 
-    protobuf files('Grasscutter-Protos/proto/')
+    protobuf files('proto/')
 
 }
 
@@ -182,7 +182,7 @@ idea {
         // proto files and generated Java files are automatically added as
         // source dirs.
         // If you have additional sources, add them here:
-        sourceDirs += file("/Grasscutter-Protos/proto/");
+        sourceDirs += file("/proto/");
     }
 }
 

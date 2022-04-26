@@ -381,11 +381,11 @@ public class GenshinScene {
 		
 		if (toAdd.size() > 0) {
 			toAdd.stream().forEach(this::addEntityDirectly);
-			this.broadcastPacket(new PacketSceneEntityAppearNotify(toAdd, VisionType.VisionBorn));
+			this.broadcastPacket(new PacketSceneEntityAppearNotify(toAdd, VisionType.VISION_BORN));
 		}
 		if (toRemove.size() > 0) {
 			toRemove.stream().forEach(this::removeEntityDirectly);
-			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VisionRemove));
+			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_REMOVE));
 		}
 	}
 	
