@@ -80,9 +80,8 @@ public class SendMailCommand implements CommandHandler {
                                 Grasscutter.getGameServer().getPlayerByUid(mailBuilder.recipient, true).sendMail(mailBuilder.mail);
                                 CommandHandler.sendMessage(sender, "Message sent to user " + mailBuilder.recipient + "!");
                             } else {
-                                // TODO: More testing required. This probably won't work for online players if DatabaseHelper.getPlayerById(string) didn't work.
                                 for (GenshinPlayer player : DatabaseHelper.getAllPlayers()) {
-                                    player.sendMail(mailBuilder.mail);
+                                    Grasscutter.getGameServer().getPlayerByUid(player.getUid(), true).sendMail(mailBuilder.mail);
                                 }
                                 CommandHandler.sendMessage(sender, "Message sent to all users!");
                             }

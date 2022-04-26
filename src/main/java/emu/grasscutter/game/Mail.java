@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 public class Mail {
 
-    public int _id;
     public MailContent mailContent;
     public List<MailItem> itemList;
     public long sendTime;
@@ -32,11 +31,6 @@ public class Mail {
     }
 
     public Mail(MailContent mailContent, List<MailItem> itemList, long expireTime, int importance, int state) {
-        this(0, mailContent, itemList, expireTime, importance, state);
-    }
-
-    public Mail(int _id, MailContent mailContent, List<MailItem> itemList, long expireTime, int importance, int state) {
-        this._id = _id;
         this.mailContent = mailContent;
         this.itemList = itemList;
         this.sendTime = (int) Instant.now().getEpochSecond();
@@ -45,10 +39,6 @@ public class Mail {
         this.isRead = false;
         this.isAttachmentGot = false;
         this.stateValue = state; // Different mailboxes, 1 = Default, 3 = Gift-box.
-    }
-
-    public int getId() {
-        return this._id;
     }
 
     @Entity

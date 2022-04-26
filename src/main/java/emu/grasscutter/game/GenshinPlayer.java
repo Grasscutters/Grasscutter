@@ -604,20 +604,20 @@ public class GenshinPlayer {
 	public List<Mail> getAllMail() { return this.mail; }
 
 	public void sendMail(Mail message) {
-		message._id = this.mail.size() + 1;
 		this.mail.add(message);
 		this.save();
-		Grasscutter.getLogger().info("Message sent to user [" + this.getUid()  + ":" + this.getNickname() + "]!");
-		if(this.getSession() != null) {
+		Grasscutter.getLogger().info("Mail sent to user [" + this.getUid()  + ":" + this.getNickname() + "]!");
+		if(this.isOnline()) {
+			Grasscutter.getLogger().info("user online.");
 			this.sendPacket(new PacketMailChangeNotify(this, message));
 		} // TODO: setup a way for the mail notification to show up when someone receives mail when they were offline
 	}
 
 	public boolean deleteMail(int mailId) {
-		Mail message = getMailById(mailId);
+		Mail message = getMail(mailId);
 
 		if(message != null) {
-			int index = getMailIndex(message);
+			int index = getMailId(message);
 			message.expireTime = (int) Instant.now().getEpochSecond(); // Just set the mail as expired for now. I don't want to implement a counter specifically for an account...
 			this.replaceMailByIndex(index, message);
 			return true;
@@ -626,16 +626,13 @@ public class GenshinPlayer {
 		return false;
 	}
 
-	public Mail getMailById(int mailId) {
-		return this.mail.stream().filter(message -> message._id == mailId).findFirst().orElse(null);
-	}
-
-	public int getMailIndex(Mail message) {
+	public Mail getMail(int index) { return this.mail.get(index); }
+	public int getMailId(Mail message) {
 		return this.mail.indexOf(message);
 	}
 
 	public boolean replaceMailByIndex(int index, Mail message) {
-		if(getMailById(index) != null) {
+		if(getMail(index) != null) {
 			this.mail.set(index, message);
 			this.save();
 			return true;

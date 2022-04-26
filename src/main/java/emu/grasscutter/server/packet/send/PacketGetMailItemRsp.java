@@ -25,8 +25,7 @@ public class PacketGetMailItemRsp  extends GenshinPacket {
         GetMailItemRsp.Builder proto = GetMailItemRsp.newBuilder();
 
         for (int mailId : mailList) {
-            Mail message = player.getMailById(mailId);
-            int messageIndex = player.getMailIndex(message);
+            Mail message = player.getMail(mailId);
 
             for(Mail.MailItem mailItem : message.itemList) {
                 EquipParamOuterClass.EquipParam.Builder item = EquipParamOuterClass.EquipParam.newBuilder();
@@ -62,10 +61,10 @@ public class PacketGetMailItemRsp  extends GenshinPacket {
             message.isAttachmentGot = true;
             claimedMessages.add(message);
 
-            player.replaceMailByIndex(messageIndex, message);
+            player.replaceMailByIndex(mailId, message);
         }
 
-        proto.addAllMailIdList(claimedMessages.stream().map(Mail::getId).collect(Collectors.toList()));
+        proto.addAllMailIdList(claimedMessages.stream().map(message -> player.getMailId(message)).collect(Collectors.toList()));
         proto.addAllItemList(claimedItems);
 
         this.setData(proto.build());
