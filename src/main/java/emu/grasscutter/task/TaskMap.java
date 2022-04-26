@@ -79,7 +79,6 @@ public final class TaskMap {
     private void scan() {
         Reflections reflector = Grasscutter.reflector;
         Set<Class<?>> classes = reflector.getTypesAnnotatedWith(Task.class);
-        System.out.println("Found " + classes.size() + " tasks.");
         classes.forEach(annotated -> {
             try {
                 Task taskData = annotated.getAnnotation(Task.class);
