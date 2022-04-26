@@ -264,7 +264,10 @@ public final class DispatchServer {
 			Grasscutter.getLogger()
 					.info(String.format("[Dispatch] Client %s request: query_region_list", t.getRemoteAddress()));
 
-			responseHTML(t, regionListBase64);
+			// Invoke event.
+			QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListBase64); event.call();
+			// Respond with event result.
+			responseHTML(t, event.getRegionList());
 		});
 
 		for (String regionName : regions.keySet()) {
