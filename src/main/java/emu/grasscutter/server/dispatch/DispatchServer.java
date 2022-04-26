@@ -43,6 +43,7 @@ public final class DispatchServer {
 
 	public String regionListBase64;
 	public HashMap<String, RegionData> regions;
+	private HttpServer server;
 
 	public DispatchServer() {
 		this.regions = new HashMap<String, RegionData>();
@@ -52,6 +53,10 @@ public final class DispatchServer {
 
 		this.loadQueries();
 		this.initRegion();
+	}
+
+	public HttpServer getServer() {
+		return server;
 	}
 
 	public InetSocketAddress getAddress() {
@@ -200,7 +205,6 @@ public final class DispatchServer {
 	}
 
 	public void start() throws Exception {
-		HttpServer server;
 		if (Grasscutter.getConfig().getDispatchOptions().UseSSL) {
 			HttpsServer httpsServer = HttpsServer.create(getAddress(), 0);
 			SSLContext sslContext = SSLContext.getInstance("TLS");
