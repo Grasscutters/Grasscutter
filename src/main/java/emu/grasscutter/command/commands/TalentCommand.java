@@ -13,7 +13,7 @@ import java.util.List;
 
 @Command(label = "talent", usage = "talent <talentID> <value>",
         description = "Set talent level for your current active character", permission = "player.settalent")
-public class TalentCommand implements CommandHandler {
+public final class TalentCommand implements CommandHandler {
 
     @Override
     public void execute(GenshinPlayer sender, List<String> args) {

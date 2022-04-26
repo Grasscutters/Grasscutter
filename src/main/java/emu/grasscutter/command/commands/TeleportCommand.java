@@ -9,7 +9,7 @@ import java.util.List;
 
 @Command(label = "teleport", usage = "teleport <x> <y> <z>", aliases = {"tp"},
         description = "Change the player's position.", permission = "player.teleport")
-public class TelePortCommand implements CommandHandler {
+public final class TeleportCommand implements CommandHandler {
 
     @Override
     public void execute(GenshinPlayer sender, List<String> args) {
