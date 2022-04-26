@@ -11,6 +11,7 @@ import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.World;
 import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.gacha.GachaManager;
 import emu.grasscutter.game.managers.ChatManager;
@@ -30,6 +31,7 @@ public final class GameServer extends MihoyoKcpServer {
 	private final GameServerPacketHandler packetHandler;
 
 	private final Map<Integer, GenshinPlayer> players;
+	private final Set<World> worlds;
 	
 	private final ChatManager chatManager;
 	private final InventoryManager inventoryManager;
@@ -46,6 +48,7 @@ public final class GameServer extends MihoyoKcpServer {
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
 		this.players = new ConcurrentHashMap<>();
+		this.worlds = Collections.synchronizedSet(new HashSet<>());
 		
 		this.chatManager = new ChatManager(this);
 		this.inventoryManager = new InventoryManager(this);
@@ -78,6 +81,10 @@ public final class GameServer extends MihoyoKcpServer {
 
 	public Map<Integer, GenshinPlayer> getPlayers() {
 		return players;
+	}
+
+	public Set<World> getWorlds() {
+		return worlds;
 	}
 
 	public ChatManager getChatManager() {
@@ -156,12 +163,28 @@ public final class GameServer extends MihoyoKcpServer {
 		return DatabaseHelper.getAccountByName(username);
 	}
 	
-	public void onTick() {
-		for (GenshinPlayer player : this.getPlayers().values()) {
-			player.onTick();
+	public void onTick() throws Exception {
+		Iterator<World> it = this.getWorlds().iterator();
+		while (it.hasNext()) {
+			World world = it.next();
+			
+			if (world.getPlayerCount() == 0) {
+				it.remove();
+			}
+			
+			world.onTick();
 		}
-
-		ServerTickEvent event = new ServerTickEvent(); event.call();
+  
+    ServerTickEvent event = new ServerTickEvent(); event.call();
+	}
+	
+	public void registerWorld(World world) {
+		this.getWorlds().add(world);
+	}
+	
+	public void deregisterWorld(World world) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
