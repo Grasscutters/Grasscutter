@@ -22,12 +22,11 @@ public class HandlerReadMailNotify extends PacketHandler {
         List<Mail> updatedMail = new ArrayList<>();
 
         for (int mailId : req.getMailIdListList()) {
-            Mail message = session.getPlayer().getMailById(mailId);
-            int messageIndex = session.getPlayer().getMailIndex(message);
+            Mail message = session.getPlayer().getMail(mailId);
 
             message.isRead = true;
 
-            session.getPlayer().replaceMailByIndex(messageIndex, message);
+            session.getPlayer().replaceMailByIndex(mailId, message);
             updatedMail.add(message);
         }
 

@@ -21,12 +21,11 @@ public class HandlerChangeMailStarNotify extends PacketHandler {
         List<Mail> updatedMail = new ArrayList<>();
 
         for (int mailId : req.getMailIdListList()) {
-            Mail message = session.getPlayer().getMailById(mailId);
-            int messageIndex = session.getPlayer().getMailIndex(message);
+            Mail message = session.getPlayer().getMail(mailId);
 
             message.importance = req.getIsStar() == true ? 1 : 0;
 
-            session.getPlayer().replaceMailByIndex(messageIndex, message);
+            session.getPlayer().replaceMailByIndex(mailId, message);
             updatedMail.add(message);
         }
 

@@ -64,7 +64,7 @@ public class PacketGetAllMailRsp extends GenshinPacket {
                                 }
 
                                 MailDataOuterClass.MailData.Builder mailData = MailDataOuterClass.MailData.newBuilder();
-                                mailData.setMailId(message._id);
+                                mailData.setMailId(player.getMailId(message));
                                 mailData.setMailTextContent(mailTextContent.build());
                                 mailData.addAllItemList(mailItems);
                                 mailData.setSendTime((int) message.sendTime);
