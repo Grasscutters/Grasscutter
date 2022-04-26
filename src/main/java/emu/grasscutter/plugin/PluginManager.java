@@ -3,9 +3,8 @@ package emu.grasscutter.plugin;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.Event;
 import emu.grasscutter.server.event.EventHandler;
-import emu.grasscutter.server.event.Listener;
+import emu.grasscutter.server.event.HandlerPriority;
 import emu.grasscutter.utils.Utils;
-import org.reflections.Reflections;
 
 import java.io.File;
 import java.io.InputStreamReader;
@@ -15,13 +14,14 @@ import java.net.URLClassLoader;
 import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.stream.Stream;
 
 /**
  * Manages the server's plugins & the event system.
  */
 public final class PluginManager {
     private final Map<String, Plugin> plugins = new HashMap<>();
-    private final Map<Plugin, List<Listener>> listeners = new HashMap<>();
+    private final List<EventHandler<?>> listeners = new LinkedList<>();
     
     public PluginManager() {
         this.loadPlugins(); // Load all plugins from the plugins directory.
@@ -68,7 +68,7 @@ public final class PluginManager {
                         JarEntry entry = entries.nextElement();
                         if(entry.isDirectory() || !entry.getName().endsWith(".class")) continue;
                         String className = entry.getName().replace(".class", "").replace("/", ".");
-                        Class<?> clazz = loader.loadClass(className);
+                        loader.loadClass(className);
                     }
                     
                     Class<?> pluginClass = loader.loadClass(pluginConfig.mainClass);
@@ -129,11 +129,10 @@ public final class PluginManager {
 
     /**
      * Registers a plugin's event listener.
-     * @param plugin The plugin instance.
      * @param listener The event listener.
      */
-    public void registerListener(Plugin plugin, Listener listener) {
-        this.listeners.computeIfAbsent(plugin, k -> new ArrayList<>()).add(listener);
+    public void registerListener(EventHandler<?> listener) {
+        this.listeners.add(listener);
     }
     
     /**
@@ -141,23 +140,24 @@ public final class PluginManager {
      * @param event The event to invoke.
      */
     public void invokeEvent(Event event) {
-        this.listeners.values().stream()
-                .flatMap(Collection::stream)
-                .forEach(listener -> this.invokeOnListener(listener, event));
+        Stream<EventHandler<?>> handlers = this.listeners.stream()
+                .filter(handler -> event.getClass().isInstance(event));
+        handlers.filter(handler -> handler.getPriority() == HandlerPriority.HIGH)
+                .toList().forEach(handler -> this.invokeHandler(event, handler));
+        handlers.filter(handler -> handler.getPriority() == HandlerPriority.NORMAL)
+                .toList().forEach(handler -> this.invokeHandler(event, handler));
+        handlers.filter(handler -> handler.getPriority() == HandlerPriority.LOW)
+                .toList().forEach(handler -> this.invokeHandler(event, handler));
     }
-    
+
     /**
-     * Attempts to invoke the event on the provided listener.
+     * Performs logic checks then invokes the provided event handler.
+     * @param event The event passed through to the handler.
+     * @param handler The handler to invoke.
      */
-    private void invokeOnListener(Listener listener, Event event) {
-        try {
-            Class<?> listenerClass = listener.getClass();
-            Method[] methods = listenerClass.getMethods();
-            for (Method method : methods) {
-                if(!method.isAnnotationPresent(EventHandler.class)) return;
-                if(!method.getParameterTypes()[0].isAssignableFrom(event.getClass())) return;
-                method.invoke(listener, event);
-            }
-        } catch (Exception ignored) { }
+    private void invokeHandler(Event event, EventHandler<?> handler) {
+        if(!event.isCanceled() ||
+                (event.isCanceled() && handler.ignoresCanceled())
+        ) handler.getCallback().accept(event);
     }
 }
