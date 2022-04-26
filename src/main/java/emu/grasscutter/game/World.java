@@ -37,6 +37,7 @@ import emu.grasscutter.server.packet.send.PacketWorldPlayerInfoNotify;
 import emu.grasscutter.server.packet.send.PacketWorldPlayerRTTNotify;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class World implements Iterable<GenshinPlayer> {
@@ -58,11 +59,13 @@ public class World implements Iterable<GenshinPlayer> {
 	public World(GenshinPlayer player, boolean isMultiplayer) {
 		this.owner = player;
 		this.players = Collections.synchronizedList(new ArrayList<>());
-		this.scenes = new Int2ObjectOpenHashMap<>();
+		this.scenes = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
 		
 		this.levelEntityId = getNextEntityId(EntityIdType.MPLEVEL);
 		this.worldLevel = player.getWorldLevel();
 		this.isMultiplayer = isMultiplayer;
+		
+		this.owner.getServer().registerWorld(this);
 	}
 	
 	public GenshinPlayer getHost() {
@@ -212,19 +215,29 @@ public class World implements Iterable<GenshinPlayer> {
 			return false;
 		}
 		
-		Integer oldSceneId = null;
+		GenshinScene oldScene = null;
 
 		if (player.getScene() != null) {
-			oldSceneId = player.getScene().getId();
-			player.getScene().removePlayer(player);
+			oldScene = player.getScene();
+			
+			// Dont deregister scenes if the player is going to tp back into them
+			if (oldScene.getId() == sceneId) {
+				oldScene.setDontDestroyWhenEmpty(true);
+			}
+			
+			oldScene.removePlayer(player);
 		}
 		
-		GenshinScene scene = this.getSceneById(sceneId);
-		scene.addPlayer(player);
+		GenshinScene newScene = this.getSceneById(sceneId);
+		newScene.addPlayer(player);
 		player.getPos().set(pos);
 		
+		if (oldScene != null) {
+			oldScene.setDontDestroyWhenEmpty(false);
+		}
+		
 		// Teleport packet
-		if (oldSceneId.equals(sceneId)) {
+		if (oldScene == newScene) {
 			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterGoto, EnterReason.TransPoint, sceneId, pos));
 		} else {
 			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterJump, EnterReason.TransPoint, sceneId, pos));
@@ -261,6 +274,12 @@ public class World implements Iterable<GenshinPlayer> {
     	for (GenshinPlayer player : this.getPlayers()) {
     		player.getSession().send(packet);
     	}
+	}
+	
+	public void onTick() {
+		for (GenshinScene scene : this.getScenes().values()) {
+			scene.onTick();
+		}
 	}
 	
 	public void close() {
