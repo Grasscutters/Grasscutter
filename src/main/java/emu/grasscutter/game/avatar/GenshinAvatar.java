@@ -778,7 +778,7 @@ public class GenshinAvatar {
 				.setCoreProudSkillLevel(this.getCoreProudSkillLevel())
 				.putAllSkillLevelMap(this.getSkillLevelMap())
 				.addAllInherentProudSkillList(this.getProudSkillList())
-				.putAllProudSkillExtraLevel(getProudSkillBonusMap())
+				.putAllProudSkillExtraLevelMap(getProudSkillBonusMap())
 				.setAvatarType(1)
 				.setBornTime(this.getBornTime())
 				.setFetterInfo(avatarFetter)

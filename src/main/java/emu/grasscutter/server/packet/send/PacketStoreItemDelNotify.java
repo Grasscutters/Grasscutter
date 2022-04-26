@@ -18,7 +18,7 @@ public class PacketStoreItemDelNotify extends GenshinPacket {
 		this();
 		
 		StoreItemDelNotify.Builder proto = StoreItemDelNotify.newBuilder()
-				.setStoreType(StoreType.StorePack)
+				.setStoreType(StoreType.STORE_PACK)
 				.addGuidList(item.getGuid());
 		
 		this.setData(proto);
@@ -28,7 +28,7 @@ public class PacketStoreItemDelNotify extends GenshinPacket {
 		this();
 
 		StoreItemDelNotify.Builder proto = StoreItemDelNotify.newBuilder()
-				.setStoreType(StoreType.StorePack);
+				.setStoreType(StoreType.STORE_PACK);
 		
 		items.stream().forEach(item -> proto.addGuidList(item.getGuid()));
 		

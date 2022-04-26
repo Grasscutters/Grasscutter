@@ -12,7 +12,7 @@ public class PacketSetPlayerHeadImageRsp extends GenshinPacket {
 		super(PacketOpcodes.SetPlayerHeadImageRsp);
 		
 		SetPlayerHeadImageRsp proto = SetPlayerHeadImageRsp.newBuilder()
-				.setAvatar(HeadImage.newBuilder().setAvatarId(player.getHeadImage()))
+				.setAvatarId(HeadImage.newBuilder().setAvatarId(player.getHeadImage()).getAvatarId())
 				.build();
 		
 		this.setData(proto);

@@ -101,13 +101,13 @@ public class EntityAvatar extends GenshinEntity {
 
 	@Override
 	public void onDeath(int killerId) {
-		this.killedType = PlayerDieType.PlayerDieKillByMonster;
+		this.killedType = PlayerDieType.PLAYER_DIE_KILL_BY_MONSTER;
 		this.killedBy = killerId;
 	}
 	
 	public SceneAvatarInfo getSceneAvatarInfo() {
 		SceneAvatarInfo.Builder avatarInfo = SceneAvatarInfo.newBuilder()
-				.setPlayerId(this.getPlayer().getUid())
+				.setUid(this.getPlayer().getUid())
 				.setAvatarId(this.getAvatar().getAvatarId())
 				.setGuid(this.getAvatar().getGuid())
 				.setPeerId(this.getPlayer().getPeerId())
@@ -145,7 +145,7 @@ public class EntityAvatar extends GenshinEntity {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.ProtEntityAvatar)
+				.setEntityType(ProtEntityType.PROT_ENTITY_AVATAR)
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())
 				.setEntityAuthorityInfo(authority)
@@ -161,7 +161,7 @@ public class EntityAvatar extends GenshinEntity {
 			if (entry.getIntKey() == 0) {
 				continue;
 			}
-			FightPropPair fightProp = FightPropPair.newBuilder().setType(entry.getIntKey()).setPropValue(entry.getFloatValue()).build();
+			FightPropPair fightProp = FightPropPair.newBuilder().setPropType(entry.getIntKey()).setPropValue(entry.getFloatValue()).build();
 			entityInfo.addFightPropList(fightProp);
 		}
 		

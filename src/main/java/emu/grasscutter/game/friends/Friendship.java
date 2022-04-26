@@ -1,5 +1,6 @@
 package emu.grasscutter.game.friends;
 
+import emu.grasscutter.net.proto.PlatformTypeOuterClass;
 import org.bson.types.ObjectId;
 
 import dev.morphia.annotations.*;
@@ -91,16 +92,16 @@ public class Friendship {
 				.setUid(getFriendProfile().getUid())
 				.setNickname(getFriendProfile().getName())
 				.setLevel(getFriendProfile().getPlayerLevel())
-				.setAvatar(HeadImage.newBuilder().setAvatarId(getFriendProfile().getAvatarId()))
+				.setAvatarId(HeadImage.newBuilder().setAvatarId(getFriendProfile().getAvatarId()).getAvatarId())
 				.setWorldLevel(getFriendProfile().getWorldLevel())
 				.setSignature(getFriendProfile().getSignature())
-				.setOnlineState(getFriendProfile().isOnline() ? FriendOnlineState.FRIEND_ONLINE : FriendOnlineState.FRIEND_DISCONNECT)
+				.setOnlineState(getFriendProfile().isOnline() ? FriendOnlineState.FRIEND_ONLINE : FriendOnlineState.FREIEND_DISCONNECT)
 				.setIsMpModeAvailable(true)
 				.setLastActiveTime(getFriendProfile().getLastActiveTime())
 				.setNameCardId(getFriendProfile().getNameCard())
 				.setParam(getFriendProfile().getDaysSinceLogin())
-				.setUnk1(1)
-				.setUnk2(3)
+				.setIsGameSource(true)
+				.setPlatformType(PlatformTypeOuterClass.PlatformType.PC)
 				.build();
 
 		return proto;

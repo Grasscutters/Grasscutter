@@ -19,12 +19,12 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 		
 		for (CombatInvokeEntry entry : notif.getInvokeListList()) {
 			switch (entry.getArgumentType()) {
-				case CombatEvtBeingHit:
+				case COMBAT_EVT_BEING_HIT:
 					// Handle damage
 					EvtBeingHitInfo hitInfo = EvtBeingHitInfo.parseFrom(entry.getCombatData());
 					session.getPlayer().getScene().handleAttack(hitInfo.getAttackResult());
 					break;
-				case EntityMove:
+				case ENTITY_MOVE:
 					// Handle movement
 					EntityMoveInfo moveInfo = EntityMoveInfo.parseFrom(entry.getCombatData());
 					GenshinEntity entity = session.getPlayer().getScene().getEntityById(moveInfo.getEntityId());
