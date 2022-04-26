@@ -557,6 +557,27 @@ public class GenshinPlayer {
 		}
 	}
 
+		public void TimerManager() {
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		calendar.set(Calendar.MILLISECOND, 0);
+		Date taskDate = calendar.getTime();
+		if (taskDate.before(new Date())) {
+			taskDate.setTime(taskDate.getTime() + 24 * 60 * 60 * 1000);
+		}
+		Timer timer = new Timer();
+		timer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				if (moonCard) {
+					getTodayMoonCard();
+				}
+			}
+		}, taskDate, 24 * 60 * 60 * 1000);
+	}
+
 	public void getTodayMoonCard() {
 		if (!moonCard) {
 			return;
@@ -574,12 +595,13 @@ public class GenshinPlayer {
 			moonCard = false;
 			return;
 		}
-		this.moonCardGetTimes.add(now);
-		this.addMoonCardDays(1);
+		moonCardGetTimes.add(now);
+		addMoonCardDays(1);
 		GenshinItem genshinItem = new GenshinItem(201, 90);
-		this.getInventory().addItem(genshinItem);
+		getInventory().addItem(genshinItem);
 		session.send(new PacketItemAddHintNotify(genshinItem, ActionReason.BlessingRedeemReward));
 		session.send(new PacketCardProductRewardNotify(getMoonCardRemainDays()));
+		TimerManager();
 	}
 
 	public boolean inGodmode() {
