@@ -4,6 +4,7 @@ import emu.grasscutter.game.GenshinScene;
 import emu.grasscutter.game.World;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
+import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
@@ -14,6 +15,7 @@ import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 public abstract class GenshinEntity {
 	protected int id;
 	private final GenshinScene scene;
+	private SpawnDataEntry spawnEntry;
 	
 	private MotionState moveState;
 	private int lastMoveSceneTimeMs;
@@ -103,5 +105,13 @@ public abstract class GenshinEntity {
 				.build();
 		
 		return proto;
+	}
+
+	public SpawnDataEntry getSpawnEntry() {
+		return spawnEntry;
+	}
+
+	public void setSpawnEntry(SpawnDataEntry spawnEntry) {
+		this.spawnEntry = spawnEntry;
 	}
 }

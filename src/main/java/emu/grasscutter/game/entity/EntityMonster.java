@@ -37,6 +37,10 @@ public class EntityMonster extends GenshinEntity {
 	private final int level;
 	private int weaponEntityId;
 	
+	private int groupId;
+	private int configId;
+	private int poseId;
+	
 	public EntityMonster(GenshinScene scene, MonsterData monsterData, Position pos, int level) {
 		super(scene);
 		this.id = getWorld().getNextEntityId(EntityIdType.MONSTER);
@@ -100,9 +104,35 @@ public class EntityMonster extends GenshinEntity {
 		return this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) > 0f;
 	}
 	
+	public int getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(int groupId) {
+		this.groupId = groupId;
+	}
+
+	public int getConfigId() {
+		return configId;
+	}
+
+	public void setConfigId(int configId) {
+		this.configId = configId;
+	}
+
+	public int getPoseId() {
+		return poseId;
+	}
+
+	public void setPoseId(int poseId) {
+		this.poseId = poseId;
+	}
+	
 	@Override
 	public void onDeath(int killerId) {
-		
+		if (this.getSpawnEntry() != null) {
+			this.getScene().getDeadSpawnedEntities().add(getSpawnEntry());
+		}
 	}
 	
 	public void recalcStats() {
@@ -190,11 +220,11 @@ public class EntityMonster extends GenshinEntity {
 		
 		SceneMonsterInfo.Builder monsterInfo = SceneMonsterInfo.newBuilder()
 				.setMonsterId(getMonsterId())
-				.setGroupId(133003095)
-				.setConfigId(95001)
+				.setGroupId(this.getGroupId())
+				.setConfigId(this.getConfigId())
 				.addAllAffixList(getMonsterData().getAffix())
 				.setAuthorityPeerId(getWorld().getHostPeerId())
-				.setPoseId(0)
+				.setPoseId(this.getPoseId())
 				.setBlockId(3001)
 				.setBornType(MonsterBornType.MONSTER_BORN_DEFAULT)
 				.setSpecialNameId(40);

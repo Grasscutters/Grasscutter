@@ -25,15 +25,28 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application
     id 'application'
+
+    id 'maven-publish'
+    id 'signing'
 }
 
 
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
+group = 'tech.xigam'
+version = '1.0.0-dev'
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
@@ -52,6 +65,7 @@ dependencies {
 	implementation group: 'dev.morphia.morphia', name: 'morphia-core', version: '2.2.6'
 
     implementation group: 'org.greenrobot', name: 'eventbus-java', version: '3.3.1'
+    implementation group: 'org.danilopianini', name: 'java-quadtree', version: '0.1.9'
 
     protobuf files('Grasscutter-Protos/proto/')
 
@@ -82,6 +96,61 @@ jar {
     destinationDir = file(".")
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'grasscutter'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'Grasscutter'
+                description = 'A server software reimplementation for an anime game.'
+                url = 'https://github.com/Grasscutters/Grasscutter'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'melledy'
+                        name = 'Melledy'
+                        email = 'melledy@xigam.tech' // not a real email kek
+                    }
+                    developer {
+                        id = 'magix'
+                        name = 'Magix'
+                        email = 'magix@xigam.tech'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git@github.com:Grasscutters/Grasscutter.git'
+                    developerConnection = 'scm:git:ssh://github.com:Grasscutters/Grasscutter.git'
+                    url = 'https://github.com/Grasscutters/Grasscutter'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            // change URLs to point to your repos, e.g. http://my.org/repo
+            def releasesRepoUrl = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+            def snapshotsRepoUrl = 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+
+            name = 'sonatype'
+            credentials(PasswordCredentials)
+        }
+    }
+}
 
 clean {
     delete protobuf.generatedFilesBaseDir
@@ -114,5 +183,15 @@ idea {
         // source dirs.
         // If you have additional sources, add them here:
         sourceDirs += file("/Grasscutter-Protos/proto/");
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
     }
 }
