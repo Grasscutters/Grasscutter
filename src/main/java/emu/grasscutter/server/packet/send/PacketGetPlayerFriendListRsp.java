@@ -9,6 +9,7 @@ import emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief;
 import emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState;
 import emu.grasscutter.net.proto.GetPlayerFriendListRspOuterClass.GetPlayerFriendListRsp;
 import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
+import emu.grasscutter.net.proto.PlatformTypeOuterClass;
 
 public class PacketGetPlayerFriendListRsp extends GenshinPacket {
 	
@@ -19,15 +20,15 @@ public class PacketGetPlayerFriendListRsp extends GenshinPacket {
 				.setUid(GenshinConstants.SERVER_CONSOLE_UID)
 				.setNickname("Server")
 				.setLevel(1)
-				.setAvatar(HeadImage.newBuilder().setAvatarId(GenshinConstants.MAIN_CHARACTER_FEMALE))
+				.setAvatarId(HeadImage.newBuilder().setAvatarId(GenshinConstants.MAIN_CHARACTER_FEMALE).getAvatarId())
 				.setWorldLevel(0)
 				.setSignature("")
 				.setLastActiveTime((int) (System.currentTimeMillis() / 1000f))
 				.setNameCardId(210001)
 				.setOnlineState(FriendOnlineState.FRIEND_ONLINE)
 				.setParam(1)
-				.setUnk1(1)
-				.setUnk2(3)
+				.setIsGameSource(true)
+				.setPlatformType(PlatformTypeOuterClass.PlatformType.PC)
 				.build();
 		
 		GetPlayerFriendListRsp.Builder proto = GetPlayerFriendListRsp.newBuilder().addFriendList(serverFriend);

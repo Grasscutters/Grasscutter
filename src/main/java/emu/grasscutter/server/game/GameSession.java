@@ -3,11 +3,14 @@ package emu.grasscutter.server.game;
 import java.io.File;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
+import java.util.HashSet;
+import java.util.Set;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.packet.PacketOpcodesUtil;
 import emu.grasscutter.netty.MihoyoKcpChannel;
 import emu.grasscutter.server.event.game.SendPacketEvent;
@@ -177,10 +180,20 @@ public class GameSession extends MihoyoKcpChannel {
     	//Grasscutter.getLogger().info("SEND: " + PacketOpcodesUtil.getOpcodeName(opcode));
     	//System.out.println(Utils.bytesToHex(genshinPacket.getData()));
     }
-    
+
+	private static final Set<Integer> loopPacket = Set.of(
+			PacketOpcodes.PingReq,
+			PacketOpcodes.PingRsp,
+			PacketOpcodes.WorldPlayerRTTNotify,
+			PacketOpcodes.UnionCmdNotify,
+			PacketOpcodes.QueryPathReq
+	);
+
     private void logPacket(GenshinPacket genshinPacket) {
-    	Grasscutter.getLogger().info("SEND: " + PacketOpcodesUtil.getOpcodeName(genshinPacket.getOpcode()) + " (" + genshinPacket.getOpcode() + ")");
-    	System.out.println(Utils.bytesToHex(genshinPacket.getData()));
+		if (!loopPacket.contains(genshinPacket.getOpcode())) {
+			Grasscutter.getLogger().info("SEND: " + PacketOpcodesUtil.getOpcodeName(genshinPacket.getOpcode()) + " (" + genshinPacket.getOpcode() + ")");
+			System.out.println(Utils.bytesToHex(genshinPacket.getData()));
+		}
     }
 
 	@Override
@@ -226,8 +239,10 @@ public class GameSession extends MihoyoKcpChannel {
 				
 				// Log packet
 				if (Grasscutter.getConfig().getGameServerOptions().LOG_PACKETS) {
-					Grasscutter.getLogger().info("RECV: " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
-					System.out.println(Utils.bytesToHex(payload));
+					if (!loopPacket.contains(opcode)) {
+						Grasscutter.getLogger().info("RECV: " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
+						System.out.println(Utils.bytesToHex(payload));
+					}
 				}
 				
 				// Handle
