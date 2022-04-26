@@ -15,15 +15,6 @@ services:
     stdin_open: true
     tty: true
   
-  config-gen:
-    image: grasscutter:1.0
-    build: .
-    volumes:
-      - ./:/app/src
-    entrypoint: ["/bin/sh", "-c", "java -jar grasscutter.jar; mv config.json ./src; echo config generated"]
-    profiles:
-      - donotstart
-
   mongodb:
     image: mongo:5.0.7
     ports:
@@ -36,3 +27,46 @@ services:
       - 22102:22102/udp
     volumes:
       - ./docker_data/mongo:/data/db
+
+  config-gen:
+    image: grasscutter:1.0
+    build: .
+    volumes:
+      - ./:/app/src
+    entrypoint: ["/bin/sh", "-c", "java -jar grasscutter.jar; mv config.json ./src; echo config generated"]
+    profiles:
+      - donotstart
+
+  res-gen:
+    image: alpine/git:v2.34.1
+    volumes:
+      - ./:/app/src
+    entrypoint: ["/bin/sh", "-c", "
+      echo [!!] resources folder will be deleted;
+      echo - Any key to continue;
+      echo - Ctrl+C  to abort;
+      read answer;
+
+      echo Deleting old resources...;
+      rm -rf /app/src/resources;
+      
+      echo Downloading resources...;
+      git clone --depth 1 https://github.com/Dimbreath/GenshinData.git /tmp/GenshinData;
+      git clone --depth 1 https://github.com/radioegor146/gi-bin-output.git /tmp/gi-bin-output;
+
+      echo Copying resources...;
+      mkdir -p /app/src/resources/;
+      mv /tmp/GenshinData/TextMap /app/src/resources;
+      mv /tmp/GenshinData/Subtitle /app/src/resources;
+      mv /tmp/GenshinData/Readable /app/src/resources;
+      mv /tmp/GenshinData/ExcelBinOutput /app/src/resources;
+      mv /tmp/gi-bin-output/2.5.52/Data/_BinOutput /app/src/resources/BinOutput;
+
+      echo Initializing submodules...;
+      cd /app/src;
+      git submodule update --init;
+      echo Done."]
+    stdin_open: true
+    tty: true
+    profiles:
+      - donotstart

@@ -14,16 +14,20 @@ A WIP server reimplementation for *some anime game* 2.3-2.6
 # Quick setup guide
 ### Note
 * If you update from an older version, delete `config.json` for regeneration
-## Docker
+## Automate
+1. Install docker: https://www.docker.com/products/docker-desktop/
+2. Install git: https://git-scm.com/downloads
+
+3. Run these commands:
 ```
 git clone https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
-git submodule update --init --recursive
 
-# Prepare resources folder (Check wiki for details)
-
+docker-compose build
+docker-compose run res-gen
 docker-compose run config-gen
 docker-compose up -d
+docker-compose logs -f server
 ```
 ## Manually
 
