@@ -1,4 +1,5 @@
 package emu.grasscutter.server.dispatch;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.protobuf.ByteString;
@@ -261,80 +262,144 @@ public final class DispatchServer {
 
 		server.createContext("/", t -> responseHTML(t, "Hello"));
 
-		if(Grasscutter.getConfig().getDispatchOptions().UseAuth) {
-			server.createContext("/grasscutter/login", t -> {
-				try {
-					AuthResponseJson authResponse = new AuthResponseJson();
-					String requestBody = Utils.toString(t.getRequestBody());
-					LoginGenerateToken loginGenerateToken = new Gson().fromJson(requestBody, LoginGenerateToken.class);
-					Account account = DatabaseHelper.getAccountByUsernameAndPassword(loginGenerateToken.username, loginGenerateToken.password);
-					if (account == null) {
-						authResponse.success = false;
-						authResponse.message = "Invalid username or password.";
-						authResponse.jwt = "";
-					}else{
-						authResponse.success = true;
-						authResponse.message = "Successfully logged in.";
-						authResponse.jwt = account.generateJWT();
-					}
-					responseJSON(t, authResponse);
-				}catch (Exception ignore) {}
-			});
+		server.createContext("/grasscutter/login", t -> {
+			AuthResponseJson authResponse = new AuthResponseJson();
 
-			server.createContext("/grasscutter/register", t -> {
+			if (Grasscutter.getConfig().getDispatchOptions().UseAuth) {
 				try {
-					AuthResponseJson authResponse = new AuthResponseJson();
 					String requestBody = Utils.toString(t.getRequestBody());
-					RegisterAccount registerAccount = new Gson().fromJson(requestBody, RegisterAccount.class);
-					if(registerAccount.password.equals(registerAccount.password_confirmation)) {
-						String password = Utils.argon2.hash(10, 65536, 1, registerAccount.password.toCharArray());
-						Account account = DatabaseHelper.createAccountWithPassword(registerAccount.username, password);
+					if (requestBody.isEmpty()) {
+						authResponse.success = false;
+						authResponse.message = "EMPTY_BODY"; // ENG = "No data was sent with the request"
+						authResponse.jwt = "";
+					} else {
+						LoginGenerateToken loginGenerateToken = new Gson().fromJson(requestBody, LoginGenerateToken.class);
+						Account account = DatabaseHelper.getAccountByUsernameAndPassword(loginGenerateToken.username, loginGenerateToken.password);
 						if (account == null) {
 							authResponse.success = false;
-							authResponse.message = "Username already exists.";
+							authResponse.message = "INVALID_ACCOUNT"; // ENG = "Invalid username or password"
 							authResponse.jwt = "";
 						} else {
-							authResponse.success = true;
-							authResponse.message = "Successfully registered.";
-							authResponse.jwt = account.generateJWT();
+							if (account.getPassword() != null && !account.getPassword().isEmpty()) {
+								authResponse.success = true;
+								authResponse.message = "";
+								authResponse.jwt = account.generateJWT();
+							} else {
+								authResponse.success = false;
+								authResponse.message = "NO_PASSWORD"; // ENG = "There is no account password set. Please create a password by resetting it."
+								authResponse.jwt = "";
+							}
 						}
-					}else{
-						authResponse.success = false;
-						authResponse.message = "Passwords do not match.";
-						authResponse.jwt = "";
 					}
-					responseJSON(t, authResponse);
-				}catch (Exception ignore) {}
-			});
+				} catch (Exception e) {
+					authResponse.success = false;
+					authResponse.message = "UNKNOWN"; // ENG = "An unknown error has occurred..."
+					authResponse.jwt = "";
+					Grasscutter.getLogger().error("[Dispatch] An error occurred while a user was logging in.");
+					e.printStackTrace();
+				}
+			} else {
+				authResponse.success = false;
+				authResponse.message = "AUTH_DISABLED"; // ENG = "Authentication is not required for this server..."
+				authResponse.jwt = "";
+			}
 
-			server.createContext("/grasscutter/change_password",t->{
+			responseJSON(t, authResponse);
+		});
+
+		server.createContext("/grasscutter/register", t -> {
+			AuthResponseJson authResponse = new AuthResponseJson();
+
+			if (Grasscutter.getConfig().getDispatchOptions().UseAuth) {
 				try {
-					AuthResponseJson authResponse = new AuthResponseJson();
 					String requestBody = Utils.toString(t.getRequestBody());
-					ChangePasswordAccount changePasswordAccount = new Gson().fromJson(requestBody, ChangePasswordAccount.class);
-					if (changePasswordAccount.new_password.equals(changePasswordAccount.new_password_confirmation)) {
-						Account account = DatabaseHelper.getAccountByUsernameAndPassword(changePasswordAccount.username, changePasswordAccount.old_password);
-						if (account == null) {
+					if (requestBody.isEmpty()) {
+						authResponse.success = false;
+						authResponse.message = "EMPTY_BODY"; // ENG = "No data was sent with the request"
+						authResponse.jwt = "";
+					} else {
+						RegisterAccount registerAccount = new Gson().fromJson(requestBody, RegisterAccount.class);
+						if (registerAccount.password.equals(registerAccount.password_confirmation)) {
+							String password = Utils.argon2.hash(10, 65536, 1, registerAccount.password.toCharArray());
+							Account account = DatabaseHelper.createAccountWithPassword(registerAccount.username, password);
+							if (account == null) {
+								authResponse.success = false;
+								authResponse.message = "USERNAME_TAKEN"; // ENG = "Username has already been taken by another user."
+								authResponse.jwt = "";
+							} else {
+								authResponse.success = true;
+								authResponse.message = "";
+								authResponse.jwt = "";
+							}
+						} else {
 							authResponse.success = false;
-							authResponse.message = "Invalid username or password.";
+							authResponse.message = "PASSWORD_MISMATCH"; // ENG = "Passwords do not match."
 							authResponse.jwt = "";
 						}
-						String newPassword = Utils.argon2.hash(10, 65536, 1, changePasswordAccount.new_password.toCharArray());
-						account.setPassword(newPassword);
-						account.save();
-						authResponse.success = true;
-						authResponse.message = "Successfully changed password.";
-						authResponse.jwt = account.generateJWT();
-					}else{
-						authResponse.success = false;
-						authResponse.message = "Passwords do not match.";
-						authResponse.jwt = "";
 					}
+				} catch (Exception e) {
+					authResponse.success = false;
+					authResponse.message = "UNKNOWN"; // ENG = "An unknown error has occurred..."
+					authResponse.jwt = "";
+					Grasscutter.getLogger().error("[Dispatch] An error occurred while creating an account.");
+					e.printStackTrace();
+				}
+			} else {
+				authResponse.success = false;
+				authResponse.message = "AUTH_DISABLED"; // ENG = "Authentication is not required for this server..."
+				authResponse.jwt = "";
+			}
+
+			responseJSON(t, authResponse);
+		});
+
+		server.createContext("/grasscutter/change_password", t -> {
+			AuthResponseJson authResponse = new AuthResponseJson();
+
+			if (Grasscutter.getConfig().getDispatchOptions().UseAuth) {
+				try {
+					String requestBody = Utils.toString(t.getRequestBody());
+					if (requestBody.isEmpty()) {
+						authResponse.success = false;
+						authResponse.message = "EMPTY_BODY"; // ENG = "No data was sent with the request"
+						authResponse.jwt = "";
+					} else {
+						ChangePasswordAccount changePasswordAccount = new Gson().fromJson(requestBody, ChangePasswordAccount.class);
+						if (changePasswordAccount.new_password.equals(changePasswordAccount.new_password_confirmation)) {
+							Account account = DatabaseHelper.getAccountByUsernameAndPassword(changePasswordAccount.username, changePasswordAccount.old_password);
+							if (account == null) {
+								authResponse.success = false;
+								authResponse.message = "INVALID_ACCOUNT"; // ENG = "Invalid username or password"
+								authResponse.jwt = "";
+							}
+							String newPassword = Utils.argon2.hash(10, 65536, 1, changePasswordAccount.new_password.toCharArray());
+							account.setPassword(newPassword);
+							account.save();
+							authResponse.success = true;
+							authResponse.message = "";
+							authResponse.jwt = "";
+						} else {
+							authResponse.success = false;
+							authResponse.message = "PASSWORD_MISMATCH"; // ENG = "Passwords do not match."
+							authResponse.jwt = "";
+						}
+					}
+				} catch (Exception e) {
+					authResponse.success = false;
+					authResponse.message = "UNKNOWN"; // ENG = "An unknown error has occurred..."
+					authResponse.jwt = "";
+					Grasscutter.getLogger().error("[Dispatch] Error while changing user password.");
+					e.printStackTrace();
 					responseJSON(t, authResponse);
 				}
-				catch (Exception ignore) {}
-			});
-		}
+			} else {
+				authResponse.success = false;
+				authResponse.message = "AUTH_DISABLED"; // ENG = "Authentication is not required for this server..."
+				authResponse.jwt = "";
+			}
+
+			responseJSON(t, authResponse);
+		});
 
 		// Dispatch
 		server.createContext("/query_region_list", t -> {
