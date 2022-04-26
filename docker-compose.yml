@@ -33,7 +33,16 @@ services:
     build: .
     volumes:
       - ./:/app/src
-    entrypoint: ["/bin/sh", "-c", "java -jar grasscutter.jar; mv config.json ./src; echo config generated"]
+    entrypoint: ["/bin/sh", "-c", "
+      echo [!!] config.json will be deleted;
+      echo - Any key to continue;
+      echo - Ctrl+C  to abort;
+      read answer;
+
+      java -jar grasscutter.jar;
+      rm -rf ./src/config.json;
+      mv config.json ./src;
+      echo config generated"]
     profiles:
       - donotstart
 
