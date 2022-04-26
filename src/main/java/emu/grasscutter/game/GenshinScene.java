@@ -308,8 +308,8 @@ public class GenshinScene {
 					appear.add(entity);
 				}
 			});
-			player.sendPacket(new PacketSceneEntityDisappearNotify(disappear, VisionType.VisionTransport));
-			player.sendPacket(new PacketSceneEntityAppearNotify(appear, VisionType.VisionMeet));
+			player.sendPacket(new PacketSceneEntityDisappearNotify(disappear, VisionType.VISION_REMOVE));
+			player.sendPacket(new PacketSceneEntityAppearNotify(appear, VisionType.VISION_MEET));
 		} else {
 			Grasscutter.getLogger().error("Player scene is wrong, could not get any scene groups from player " + player.getNickname());
 		}
@@ -427,10 +427,10 @@ public class GenshinScene {
 		}
 
 		if (toAdd.size() > 0) {
-			this.broadcastPacket(new PacketSceneEntityAppearNotify(toAdd, VisionType.VisionBorn));
+			this.broadcastPacket(new PacketSceneEntityAppearNotify(toAdd, VisionType.VISION_BORN));
 		}
 		if (toRemove.size() > 0) {
-			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VisionRemove));
+			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_REMOVE));
 		}
 	}
 

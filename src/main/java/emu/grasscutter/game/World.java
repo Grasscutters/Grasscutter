@@ -235,7 +235,7 @@ public class World implements Iterable<GenshinPlayer> {
 
 		// Teleport packet
 		if (oldScene == newScene) {
-			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterGoto, EnterReason.TransPoint, sceneId, pos));
+			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.ENTER_GOTO, EnterReason.TransPoint, sceneId, pos));
 		} else {
 			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.ENTER_JUMP, EnterReason.TransPoint, sceneId, pos));
 		}
