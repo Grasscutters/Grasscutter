@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HitColliderType.proto";
+import "Vector.proto";
+
+message HitCollision {
+	HitColliderType hit_collider_type = 1;
+	int32 hit_box_index = 2;
+	Vector hit_point = 3;
+	Vector hit_dir = 4;
+	float attackee_hit_force_angle = 5;
+	float attackee_hit_entity_angle = 6;
+}

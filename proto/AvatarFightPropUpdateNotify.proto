@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message AvatarFightPropUpdateNotify {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 1201;
+	}
+
+	uint64 avatar_guid = 1;
+	map<uint32, float> fight_prop_map = 2;
+}

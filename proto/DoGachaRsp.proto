@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GachaItem.proto";
+
+message DoGachaRsp {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 1584;
+	}
+
+	int32 retcode = 1;
+	uint32 gacha_type = 2;
+	uint32 gacha_times = 3;
+	uint32 gacha_schedule_id = 4;
+	repeated GachaItem gacha_item_list = 5;
+	uint32 new_gacha_random = 6;
+	uint32 cost_item_id = 7;
+	uint32 cost_item_num = 8;
+	uint32 ten_cost_item_id = 9;
+	uint32 ten_cost_item_num = 10;
+	uint32 left_gacha_times = 11;
+	uint32 gacha_times_limit = 12;
+	uint32 wish_item_id = 13;
+	uint32 wish_progress = 14;
+	uint32 wish_max_progress = 15;
+}

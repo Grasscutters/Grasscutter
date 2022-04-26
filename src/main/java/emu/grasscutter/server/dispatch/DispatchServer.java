@@ -18,6 +18,8 @@ import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.server.dispatch.json.*;
 import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
+import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
+import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 
@@ -41,6 +43,7 @@ public final class DispatchServer {
 
 	public String regionListBase64;
 	public HashMap<String, RegionData> regions;
+	private HttpServer server;
 
 	public DispatchServer() {
 		this.regions = new HashMap<String, RegionData>();
@@ -50,6 +53,10 @@ public final class DispatchServer {
 
 		this.loadQueries();
 		this.initRegion();
+	}
+
+	public HttpServer getServer() {
+		return server;
 	}
 
 	public InetSocketAddress getAddress() {
@@ -198,7 +205,6 @@ public final class DispatchServer {
 	}
 
 	public void start() throws Exception {
-		HttpServer server;
 		if (Grasscutter.getConfig().getDispatchOptions().UseSSL) {
 			HttpsServer httpsServer = HttpsServer.create(getAddress(), 0);
 			SSLContext sslContext = SSLContext.getInstance("TLS");
@@ -262,7 +268,10 @@ public final class DispatchServer {
 			Grasscutter.getLogger()
 					.info(String.format("[Dispatch] Client %s request: query_region_list", t.getRemoteAddress()));
 
-			responseHTML(t, regionListBase64);
+			// Invoke event.
+			QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListBase64); event.call();
+			// Respond with event result.
+			responseHTML(t, event.getRegionList());
 		});
 
 		for (String regionName : regions.keySet()) {
@@ -277,7 +286,11 @@ public final class DispatchServer {
 				if (uri.getQuery() != null && uri.getQuery().length() > 0) {
 					response = regionCurrentBase64;
 				}
-				responseHTML(t, response);
+				
+				// Invoke event.
+				QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(response); event.call();
+				// Respond with event result.
+				responseHTML(t, event.getRegionInfo());
 			});
 		}
 

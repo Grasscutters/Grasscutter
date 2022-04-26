@@ -24,7 +24,7 @@
 
 ### 环境需求
 
-* Java SE - 16 (当您没有Oracle账户，可以使用[镜像](https://github.com/adoptium/temurin16-binaries/releases/tag/jdk-16.0.2+7))
+* Java SE - 17 (当您没有Oracle账户，可以使用[镜像](https://mirrors.tuna.tsinghua.edu.cn/Adoptium/17/jdk/))
 
   **注:** 如果您仅仅想要简单地**运行服务端**, 那么使用 **jre** 便足够了 
 
@@ -75,7 +75,7 @@ Grasscutter 使用 Gradle 来处理依赖及构建.
 
 **依赖:**
 
-- Java SE Development Kits - 16
+- Java SE Development Kits - 17
 - Git
 
 ##### Windows
@@ -142,6 +142,6 @@ chmod +x gradlew
 
 # 快速排除问题
 
-* 如果编译未能成功,请检查您的jdk安装 (JDK 16并确认jdk处于环境变量`PATH`中
+* 如果编译未能成功,请检查您的jdk安装 (JDK 17并确认jdk处于环境变量`PATH`中
 * 我的客户端无法登录/连接, 4206, 其它... - 大部分情况下这是因为您的代理存在问题.如果使用Fiddler请确认Fiddler监听端口不是`8888`
 * 启动顺序: MongoDB > Grasscutter > 代理程序 (mitmdump, fiddler等.) > 客户端

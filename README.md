@@ -24,7 +24,7 @@ EN | [中文](README_zh-CN.md)
 
 ### Requirements
 
-* Java SE - 16 ([mirror link](https://github.com/adoptium/temurin16-binaries/releases/tag/jdk-16.0.2+7) since Oracle required an account to download old builds)
+* Java SE - 17 ([mirror link](https://github.com/adoptium/temurin17-binaries/releases/tag/jdk-17.0.3+7) since Oracle required an account to download old builds)
 
   **Note:** If you just want to **run it**, then **jre** is fine 
 
@@ -75,7 +75,7 @@ Grasscutter uses Gradle to handle dependencies & building.
 
 **Requirements:**
 
-- Java SE Development Kits - 16
+- Java SE Development Kits - 17
 - Git
 
 ##### Windows
@@ -142,7 +142,7 @@ character falling from a very high destination, exact location that you marked.
 
 # Quick Troubleshooting
 
-* If compiling wasn't successful, please check your JDK installation (JDK 16 and validated JDK's bin PATH variable)
+* If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)
 * My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*, if using
   Fiddler make sure it running on another port except 8888
 * Startup sequence: Mongodb > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Client

@@ -1,6 +1,7 @@
 package emu.grasscutter.server.game;
 
 import java.net.InetSocketAddress;
+import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -10,6 +11,7 @@ import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.World;
 import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.gacha.GachaManager;
 import emu.grasscutter.game.managers.ChatManager;
@@ -19,13 +21,17 @@ import emu.grasscutter.game.shop.ShopManager;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.netty.MihoyoKcpServer;
-import org.greenrobot.eventbus.EventBus;
+import emu.grasscutter.server.event.ServerEvent;
+import emu.grasscutter.server.event.game.ServerTickEvent;
+import emu.grasscutter.server.event.internal.ServerStartEvent;
+import emu.grasscutter.server.event.internal.ServerStopEvent;
 
 public final class GameServer extends MihoyoKcpServer {
 	private final InetSocketAddress address;
 	private final GameServerPacketHandler packetHandler;
 
 	private final Map<Integer, GenshinPlayer> players;
+	private final Set<World> worlds;
 	
 	private final ChatManager chatManager;
 	private final InventoryManager inventoryManager;
@@ -34,22 +40,15 @@ public final class GameServer extends MihoyoKcpServer {
 	private final MultiplayerManager multiplayerManager;
 	private final DungeonManager dungeonManager;
 	private final CommandMap commandMap;
-
-	public EventBus OnGameServerStartFinish;
-	public EventBus OnGameServerTick;
-	public EventBus OnGameServerStop;
 	
 	public GameServer(InetSocketAddress address) {
 		super(address);
-
-		OnGameServerStartFinish = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
-		OnGameServerTick = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
-		OnGameServerStop = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
 
 		this.setServerInitializer(new GameServerInitializer(this));
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
 		this.players = new ConcurrentHashMap<>();
+		this.worlds = Collections.synchronizedSet(new HashSet<>());
 		
 		this.chatManager = new ChatManager(this);
 		this.inventoryManager = new InventoryManager(this);
@@ -82,6 +81,10 @@ public final class GameServer extends MihoyoKcpServer {
 
 	public Map<Integer, GenshinPlayer> getPlayers() {
 		return players;
+	}
+
+	public Set<World> getWorlds() {
+		return worlds;
 	}
 
 	public ChatManager getChatManager() {
@@ -161,22 +164,37 @@ public final class GameServer extends MihoyoKcpServer {
 	}
 	
 	public void onTick() throws Exception {
-		for (GenshinPlayer player : this.getPlayers().values()) {
-			player.onTick();
+		Iterator<World> it = this.getWorlds().iterator();
+		while (it.hasNext()) {
+			World world = it.next();
+			
+			if (world.getPlayerCount() == 0) {
+				it.remove();
+			}
+			
+			world.onTick();
 		}
-
-		OnGameServerTick.post(new GameServerTickEvent());
+  
+    ServerTickEvent event = new ServerTickEvent(); event.call();
+	}
+	
+	public void registerWorld(World world) {
+		this.getWorlds().add(world);
+	}
+	
+	public void deregisterWorld(World world) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void onStartFinish() {
 		Grasscutter.getLogger().info("Game Server started on port " + address.getPort());
-
-		OnGameServerStartFinish.post(new GameServerStartFinishEvent());
+		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
 	
 	public void onServerShutdown() {
-		OnGameServerStop.post(new GameServerStopEvent());
+		ServerStopEvent event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 
 		// Kick and save all players
 		List<GenshinPlayer> list = new ArrayList<>(this.getPlayers().size());

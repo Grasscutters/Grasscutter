@@ -2,6 +2,7 @@ package emu.grasscutter.server.game;
 
 import java.util.Set;
 
+import emu.grasscutter.server.event.game.ReceivePacketEvent;
 import org.reflections.Reflections;
 
 import emu.grasscutter.Grasscutter;
@@ -48,9 +49,7 @@ public class GameServerPacketHandler {
 	}
 	
 	public void handle(GameSession session, int opcode, byte[] header, byte[] payload) {
-		PacketHandler handler = null;
-		
-		handler = this.handlers.get(opcode);
+		PacketHandler handler = this.handlers.get(opcode);
 		
 		if (handler != null) {
 			try {
@@ -77,8 +76,10 @@ public class GameServerPacketHandler {
 					}
 				}
 				
-				// Handle
-				handler.handle(session, header, payload);				
+				// Invoke event.
+				ReceivePacketEvent event = new ReceivePacketEvent(session, opcode, payload); event.call();
+				if(!event.isCanceled()) // If event is not canceled, continue.
+					handler.handle(session, header, event.getPacketData());				
 			} catch (Exception ex) {
 				// TODO Remove this when no more needed
 				ex.printStackTrace();

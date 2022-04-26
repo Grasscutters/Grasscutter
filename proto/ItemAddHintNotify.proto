@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+import "ItemHint.proto";
+
+message ItemAddHintNotify {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 700;
+	}
+
+	repeated ItemHint item_list = 1;
+	Vector position = 2;
+	bool is_position_valid = 3;
+	uint32 reason = 4;
+	uint32 quest_id = 5;
+	bool is_transfered_from_avatar_card = 6;
+	repeated ItemHint overflow_transformed_item_list = 7;
+	bool is_general_reward_hiden = 8;
+}

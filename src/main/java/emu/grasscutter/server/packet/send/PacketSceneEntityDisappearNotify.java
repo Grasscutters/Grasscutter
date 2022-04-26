@@ -1,12 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
+import java.util.Collection;
+
 import emu.grasscutter.game.entity.GenshinEntity;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 
-import java.util.Collection;
 
 public class PacketSceneEntityDisappearNotify extends GenshinPacket {
 	

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FriendBrief.proto";
+
+message GetPlayerBlacklistRsp {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 4020;
+	}
+
+	int32 retcode = 1;
+	repeated FriendBrief blacklist = 2;
+}
