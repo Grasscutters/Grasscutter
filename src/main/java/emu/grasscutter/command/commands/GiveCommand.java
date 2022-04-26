@@ -21,8 +21,9 @@ public final class GiveCommand implements CommandHandler {
 
     @Override
     public void execute(GenshinPlayer sender, List<String> args) {
-        int target, amount = 1;
+        int amount = 1;
         String item;
+        GenshinPlayer player;
 
         if (sender == null && args.size() < 2) {
             CommandHandler.sendMessage(null, "Usage: give <player> <itemId|itemName> [amount]");
@@ -35,23 +36,22 @@ public final class GiveCommand implements CommandHandler {
                 return;
             case 1: // <itemId|itemName>
                 item = args.get(0);
-                target = sender.getUid();
+                player = Grasscutter.getGameServer().getPlayerByUid(sender.getUid());
                 break;
             case 2: // <itemId|itemName> [amount] | [player] <itemId|itemName>
-                target = Integer.parseInt(args.get(0));
-
-                if (Grasscutter.getGameServer().getPlayerByUid(target) == null && sender != null) {
-                    target = sender.getUid();
+                if (sender != null) {
+                    player = Grasscutter.getGameServer().getPlayerByUid(sender.getUid());
                     item = args.get(0);
                     amount = Integer.parseInt(args.get(1));
                 } else {
+                    player = Grasscutter.getGameServer().getPlayerByUid(args.get(0));
                     item = args.get(1);
                 }
                 break;
             case 3: // [player] <itemId|itemName> [amount]
-                target = Integer.parseInt(args.get(0));
+                player = Grasscutter.getGameServer().getPlayerByUid(args.get(0));
 
-                if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
+                if (player == null) {
                     CommandHandler.sendMessage(sender, "Invalid player ID.");
                     return;
                 }
@@ -61,16 +61,14 @@ public final class GiveCommand implements CommandHandler {
                 break;
         }
 
-        GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
-
-        if (targetPlayer == null) {
+        if (player == null) {
             CommandHandler.sendMessage(sender, "Player not found.");
             return;
         }
 
         if (item.equals("all")) {
             List<ItemData> items = new ArrayList<>(GenshinData.getItemDataMap().values());
-            this.item(targetPlayer, items, amount);
+            this.item(player, items, amount);
         } else {
             try {
                 ItemData itemData = GenshinData.getItemDataMap().get(Integer.parseInt(item));
@@ -78,7 +76,7 @@ public final class GiveCommand implements CommandHandler {
                     CommandHandler.sendMessage(sender, "Invalid item id.");
                     return;
                 }
-                this.item(targetPlayer, itemData, amount);
+                this.item(player, itemData, amount);
             } catch (NumberFormatException e) {
                 CommandHandler.sendMessage(sender, "Invalid item id.");
                 return;
@@ -86,7 +84,7 @@ public final class GiveCommand implements CommandHandler {
         }
 
 
-        CommandHandler.sendMessage(sender, String.format("Given %s of %s to %s.", amount, item, target));
+        CommandHandler.sendMessage(sender, String.format("Given %s of %s to %s.", amount, item, player.getAccount().getUsername()));
     }
 
     private void item(GenshinPlayer player, ItemData itemData, int amount) {
@@ -106,16 +104,15 @@ public final class GiveCommand implements CommandHandler {
     }
 
     private void item(GenshinPlayer player, List<ItemData> itemDataList, int amount) {
-        List<GenshinItem> genshinItems = new LinkedList<GenshinItem>();
+        List<GenshinItem> items = new LinkedList<GenshinItem>();
         for (ItemData itemData : itemDataList) {
             // Ignore give weapon to character
             if (itemData.isEquip()) continue;
             GenshinItem genshinItem = new GenshinItem(itemData);
             genshinItem.setCount(amount);
-            player.getInventory().addItem(genshinItem);
-            genshinItems.add(genshinItem);
+            items.add(genshinItem);
         }
-        player.sendPacket(new PacketItemAddHintNotify(genshinItems, ActionReason.SubfieldDrop));
+        player.getInventory().addItems(items);
     }
 }
 

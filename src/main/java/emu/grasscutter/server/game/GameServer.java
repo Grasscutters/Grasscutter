@@ -119,6 +119,14 @@ public final class GameServer extends MihoyoKcpServer {
 	public GenshinPlayer getPlayerByUid(int id) {
 		return this.getPlayerByUid(id, false);
 	}
+
+	public GenshinPlayer getPlayerByUid(String id) {
+		try {
+			return this.getPlayerByUid(Integer.parseInt(id));
+		} catch (NumberFormatException exception) {
+			return null;
+		}
+	}
 	
 	public GenshinPlayer getPlayerByUid(int id, boolean allowOfflinePlayers) {
 		// Console check
