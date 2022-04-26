@@ -6,9 +6,22 @@
  * User Manual available at https://docs.gradle.org/5.6.3/userguide/tutorial_java_projects.html
  */
 
+buildscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.18'
+    }
+}
+
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
+
+    // Apply the protobuf auto generator
+    id 'com.google.protobuf' version "0.8.18"
+    id 'idea'
 
     // Apply the application plugin to add support for building a CLI application
     id 'application'
@@ -16,11 +29,13 @@ plugins {
     id 'org.jetbrains.kotlin.plugin.serialization' version '1.6.20'
 }
 
-sourceCompatibility = 16
-targetCompatibility = 16
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -39,10 +54,13 @@ dependencies {
 	implementation group: 'dev.morphia.morphia', name: 'morphia-core', version: '2.2.6'
 
     implementation group: 'org.greenrobot', name: 'eventbus-java', version: '3.3.1'
+
     implementation group: 'org.danilopianini', name: 'java-quadtree', version: '0.1.9'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2"
+
+    protobuf files('Grasscutter-Protos/proto/')
 
 }
 
@@ -71,6 +89,32 @@ jar {
     destinationDir = file(".")
 }
 
+
+clean {
+    delete protobuf.generatedFilesBaseDir
+}
+
+protobuf {
+    protoc {
+        // The artifact spec for the Protobuf Compiler
+        artifact = 'com.google.protobuf:protoc:3.18.1'
+    }
+//    generatedFilesBaseDir = "$projectDir/src/main/java/emu/grasscutter/net/proto/"
+    generatedFilesBaseDir = "$projectDir/src/generated/"
+}
+
+sourceSets {
+    main {
+        proto {
+            // In addition to the default 'src/main/proto'
+            srcDir 'src/generated'
+        }
+        java {
+            srcDir 'src/java'
+        }
+    }
+}
+
 compileKotlin {
     kotlinOptions {
         jvmTarget = "1.8"
@@ -79,5 +123,14 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+}
+
+idea {
+    module {
+        // proto files and generated Java files are automatically added as
+        // source dirs.
+        // If you have additional sources, add them here:
+        sourceDirs += file("/Grasscutter-Protos/proto/");
     }
 }

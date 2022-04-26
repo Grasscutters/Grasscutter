@@ -53,9 +53,11 @@ resources/*
 logs/*
 data/AbilityEmbryos.json
 data/OpenConfig.json
-proto/*
 GM Handbook.txt
 config.json
 mitmdump.exe
 grasscutter.jar
 mongod.exe
+/src/generated/
+/*.sh
+/proto/*.proto

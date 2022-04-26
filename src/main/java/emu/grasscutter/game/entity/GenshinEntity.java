@@ -23,7 +23,7 @@ public abstract class GenshinEntity {
 	
 	public GenshinEntity(GenshinScene scene) {
 		this.scene = scene;
-		this.moveState = MotionState.MotionNone;
+		this.moveState = MotionState.MOTION_NONE;
 	}
 	
 	public int getId() {

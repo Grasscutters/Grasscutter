@@ -194,7 +194,7 @@ public class World implements Iterable<GenshinPlayer> {
 				World world = new World(victim);
 				world.addPlayer(victim);
 				
-				victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.EnterSelf, EnterReason.TeamKick, victim.getSceneId(), victim.getPos()));
+				victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.ENTER_SELF, EnterReason.TeamKick, victim.getSceneId(), victim.getPos()));
 			}
 		}
 	}
@@ -216,12 +216,12 @@ public class World implements Iterable<GenshinPlayer> {
 
 		if (player.getScene() != null) {
 			oldScene = player.getScene();
-			
+
 			// Dont deregister scenes if the player is going to tp back into them
 			if (oldScene.getId() == sceneId) {
 				oldScene.setDontDestroyWhenEmpty(true);
 			}
-			
+
 			oldScene.removePlayer(player);
 		}
 		
@@ -232,12 +232,12 @@ public class World implements Iterable<GenshinPlayer> {
 		if (oldScene != null) {
 			oldScene.setDontDestroyWhenEmpty(false);
 		}
-		
+
 		// Teleport packet
 		if (oldScene == newScene) {
 			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterGoto, EnterReason.TransPoint, sceneId, pos));
 		} else {
-			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterJump, EnterReason.TransPoint, sceneId, pos));
+			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.ENTER_JUMP, EnterReason.TransPoint, sceneId, pos));
 		}
 		return true;
 	}

@@ -4,9 +4,9 @@ import java.util.List;
 
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.packet.Retcode;
 import emu.grasscutter.net.proto.CalcWeaponUpgradeReturnItemsRspOuterClass.CalcWeaponUpgradeReturnItemsRsp;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
+import emu.grasscutter.net.proto.RetcodeOuterClass;
 
 public class PacketCalcWeaponUpgradeReturnItemsRsp extends GenshinPacket {
 	
@@ -25,7 +25,7 @@ public class PacketCalcWeaponUpgradeReturnItemsRsp extends GenshinPacket {
 		super(PacketOpcodes.CalcWeaponUpgradeReturnItemsRsp);
 		
 		CalcWeaponUpgradeReturnItemsRsp proto = CalcWeaponUpgradeReturnItemsRsp.newBuilder()
-				.setRetcode(Retcode.FAIL)
+				.setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
 				.build();
 		
 		this.setData(proto);

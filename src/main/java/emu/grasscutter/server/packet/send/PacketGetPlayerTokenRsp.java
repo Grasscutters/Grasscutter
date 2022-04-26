@@ -16,18 +16,18 @@ public class PacketGetPlayerTokenRsp extends GenshinPacket {
 		this.setUseDispatchKey(true);
 		
 		GetPlayerTokenRsp p = GetPlayerTokenRsp.newBuilder()
-				.setPlayerUid(session.getAccount().getPlayerUid())
-				.setAccountToken(session.getAccount().getToken())
+				.setUid(session.getAccount().getPlayerUid())
+				.setToken(session.getAccount().getToken())
 				.setAccountType(1)
 				.setIsProficientPlayer(doesPlayerExist) // Not sure where this goes
-				.setSecretKey(Crypto.ENCRYPT_SEED)
-				.setSecretKeyBuffer(ByteString.copyFrom(Crypto.ENCRYPT_SEED_BUFFER))
+				.setSecretKeySeed(Crypto.ENCRYPT_SEED)
+				.setSecurityCmdBuffer(ByteString.copyFrom(Crypto.ENCRYPT_SEED_BUFFER))
 				.setPlatformType(3)
 				.setChannelId(1)
 				.setCountryCode("US")
-				.setUnk1("c25-314dd05b0b5f")
-				.setUnk3(3)
-				.setClientIp(session.getAddress().getAddress().getHostAddress())
+				.setClientVersionRandomKey("c25-314dd05b0b5f")
+				.setRegPlatform(3)
+				.setClientIpStr(session.getAddress().getAddress().getHostAddress())
 				.build();
 	
 		this.setData(p.toByteArray());

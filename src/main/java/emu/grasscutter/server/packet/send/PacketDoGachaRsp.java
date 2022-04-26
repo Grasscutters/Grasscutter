@@ -7,6 +7,7 @@ import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DoGachaRspOuterClass.DoGachaRsp;
 import emu.grasscutter.net.proto.GachaItemOuterClass.GachaItem;
+import emu.grasscutter.net.proto.RetcodeOuterClass;
 
 public class PacketDoGachaRsp extends GenshinPacket {
 	
@@ -33,7 +34,7 @@ public class PacketDoGachaRsp extends GenshinPacket {
 		super(PacketOpcodes.DoGachaRsp);
 
 		DoGachaRsp p = DoGachaRsp.newBuilder()
-				.setRetcode(1)
+				.setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
 				.build();
 		
 		this.setData(p);
