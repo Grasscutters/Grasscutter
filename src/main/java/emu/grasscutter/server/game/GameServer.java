@@ -1,6 +1,7 @@
 package emu.grasscutter.server.game;
 
 import java.net.InetSocketAddress;
+import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -20,7 +21,10 @@ import emu.grasscutter.game.shop.ShopManager;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.netty.MihoyoKcpServer;
-import org.greenrobot.eventbus.EventBus;
+import emu.grasscutter.server.event.ServerEvent;
+import emu.grasscutter.server.event.game.ServerTickEvent;
+import emu.grasscutter.server.event.internal.ServerStartEvent;
+import emu.grasscutter.server.event.internal.ServerStopEvent;
 
 public final class GameServer extends MihoyoKcpServer {
 	private final InetSocketAddress address;
@@ -36,17 +40,9 @@ public final class GameServer extends MihoyoKcpServer {
 	private final MultiplayerManager multiplayerManager;
 	private final DungeonManager dungeonManager;
 	private final CommandMap commandMap;
-
-	public EventBus OnGameServerStartFinish;
-	public EventBus OnGameServerTick;
-	public EventBus OnGameServerStop;
 	
 	public GameServer(InetSocketAddress address) {
 		super(address);
-
-		OnGameServerStartFinish = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
-		OnGameServerTick = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
-		OnGameServerStop = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
 
 		this.setServerInitializer(new GameServerInitializer(this));
 		this.address = address;
@@ -178,12 +174,8 @@ public final class GameServer extends MihoyoKcpServer {
 			
 			world.onTick();
 		}
-		
-		for (GenshinPlayer player : this.getPlayers().values()) {
-			player.onTick();
-		}
-
-		OnGameServerTick.post(new GameServerTickEvent());
+  
+    ServerTickEvent event = new ServerTickEvent(); event.call();
 	}
 	
 	public void registerWorld(World world) {
@@ -198,12 +190,11 @@ public final class GameServer extends MihoyoKcpServer {
 	@Override
 	public void onStartFinish() {
 		Grasscutter.getLogger().info("Game Server started on port " + address.getPort());
-
-		OnGameServerStartFinish.post(new GameServerStartFinishEvent());
+		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
 	
 	public void onServerShutdown() {
-		OnGameServerStop.post(new GameServerStopEvent());
+		ServerStopEvent event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 
 		// Kick and save all players
 		List<GenshinPlayer> list = new ArrayList<>(this.getPlayers().size());
