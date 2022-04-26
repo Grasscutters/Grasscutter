@@ -18,6 +18,8 @@ import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.server.dispatch.json.*;
 import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
+import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
+import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 
@@ -277,7 +279,11 @@ public final class DispatchServer {
 				if (uri.getQuery() != null && uri.getQuery().length() > 0) {
 					response = regionCurrentBase64;
 				}
-				responseHTML(t, response);
+				
+				// Invoke event.
+				QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(response); event.call();
+				// Respond with event result.
+				responseHTML(t, event.getRegionInfo());
 			});
 		}
 
