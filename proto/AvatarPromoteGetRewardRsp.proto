@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message AvatarPromoteGetRewardRsp {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 1764;
+	}
+
+	int32 retcode = 1;
+	uint64 avatar_guid = 2;
+	uint32 promote_level = 3;
+	uint32 reward_id = 4;
+}

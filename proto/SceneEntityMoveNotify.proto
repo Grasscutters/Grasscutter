@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MotionInfo.proto";
+
+message SceneEntityMoveNotify {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_IS_RELIABLE = 1;
+		ENET_CHANNEL_ID = 1;
+		CMD_ID = 226;
+	}
+
+	uint32 entity_id = 1;
+	MotionInfo motion_info = 2;
+	uint32 scene_time = 3;
+	uint32 reliable_seq = 4;
+}

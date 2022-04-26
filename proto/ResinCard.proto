@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+message ResinCard {
+	repeated ItemParam baseItemList = 1;
+	repeated ItemParam perDayItemList = 2;
+}

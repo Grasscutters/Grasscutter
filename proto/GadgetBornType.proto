@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum GadgetBornType {
+	GADGET_BORN_NONE = 0;
+	GADGET_BORN_IN_AIR = 1;
+	GADGET_BORN_PLAYER = 2;
+	GADGET_BORN_MONSTER_HIT = 3;
+	GADGET_BORN_MONSTER_DIE = 4;
+	GADGET_BORN_GADGET = 5;
+	GADGET_BORN_GROUND = 6;
+}

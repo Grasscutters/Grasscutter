@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message ChangeMpTeamAvatarRsp {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 1640;
+	}
+
+	int32 retcode = 1;
+	repeated uint64 avatar_guid_list = 2;
+	uint64 cur_avatar_guid = 3;
+}
