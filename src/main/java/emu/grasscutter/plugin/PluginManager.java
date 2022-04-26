@@ -17,11 +17,11 @@ import java.util.jar.JarFile;
 import java.util.stream.Stream;
 
 /**
- * Manages the server's plugins & the event system.
+ * Manages the server's plugins and the event system.
  */
 public final class PluginManager {
     private final Map<String, Plugin> plugins = new HashMap<>();
-    private final List<EventHandler<?>> listeners = new LinkedList<>();
+    private final List<EventHandler> listeners = new LinkedList<>();
     
     public PluginManager() {
         this.loadPlugins(); // Load all plugins from the plugins directory.
@@ -131,7 +131,7 @@ public final class PluginManager {
      * Registers a plugin's event listener.
      * @param listener The event listener.
      */
-    public void registerListener(EventHandler<?> listener) {
+    public void registerListener(EventHandler listener) {
         this.listeners.add(listener);
     }
     
@@ -140,8 +140,8 @@ public final class PluginManager {
      * @param event The event to invoke.
      */
     public void invokeEvent(Event event) {
-        Stream<EventHandler<?>> handlers = this.listeners.stream()
-                .filter(handler -> event.getClass().isInstance(event));
+        Stream<EventHandler> handlers = this.listeners.stream()
+                .filter(handler -> handler.handles().isInstance(event));
         handlers.filter(handler -> handler.getPriority() == HandlerPriority.HIGH)
                 .toList().forEach(handler -> this.invokeHandler(event, handler));
         handlers.filter(handler -> handler.getPriority() == HandlerPriority.NORMAL)
@@ -155,7 +155,7 @@ public final class PluginManager {
      * @param event The event passed through to the handler.
      * @param handler The handler to invoke.
      */
-    private void invokeHandler(Event event, EventHandler<?> handler) {
+    private void invokeHandler(Event event, EventHandler handler) {
         if(!event.isCanceled() ||
                 (event.isCanceled() && handler.ignoresCanceled())
         ) handler.getCallback().accept(event);
