@@ -922,6 +922,13 @@ public class InventoryManager {
 			default:
 				break;
 		}
+
+		if (useItem.getItemId() == 1202) {
+			for (int i = 0; i < useItem.getCount(); i++) {
+				player.rechargeMoonCard();
+			}
+			used = useItem.getCount();
+		}
 		
 		if (used > 0) {
 			player.getInventory().removeItem(useItem, used);
