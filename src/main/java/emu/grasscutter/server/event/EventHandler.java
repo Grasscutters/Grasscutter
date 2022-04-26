@@ -4,8 +4,12 @@ import emu.grasscutter.Grasscutter;
 
 import java.util.function.Consumer;
 
-public final class EventHandler<E extends Event> {
-    private E event;
+public final class EventHandler {
+    private final Class<Event> event;
+    
+    public EventHandler(Class<Event> event) {
+        this.event = event;
+    }
     
     private Consumer<Event> listener;
     private HandlerPriority priority;
@@ -15,7 +19,7 @@ public final class EventHandler<E extends Event> {
      * Gets which event this handler is handling.
      * @return An event class.
      */
-    public Event handles() {
+    public Class<Event> handles() {
         return this.event;
     }
 
@@ -48,7 +52,7 @@ public final class EventHandler<E extends Event> {
      * @param listener An event handler method.
      * @return Method chaining.
      */
-    public EventHandler<E> listener(Consumer<Event> listener) {
+    public EventHandler listener(Consumer<Event> listener) {
         this.listener = listener; return this;
     }
 
@@ -57,7 +61,7 @@ public final class EventHandler<E extends Event> {
      * @param priority The priority of the handler.
      * @return Method chaining.
      */
-    public EventHandler<E> priority(HandlerPriority priority) {
+    public EventHandler priority(HandlerPriority priority) {
         this.priority = priority; return this;
     }
 
@@ -66,7 +70,7 @@ public final class EventHandler<E extends Event> {
      * @param ignore If the handler should ignore cancelled events.
      * @return Method chaining.
      */
-    public EventHandler<E> ignore(boolean ignore) {
+    public EventHandler ignore(boolean ignore) {
         this.handleCanceled = ignore; return this;
     }
 
