@@ -27,6 +27,7 @@ import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
+import emu.grasscutter.net.proto.ItemAddHintNotifyOuterClass.ItemAddHintNotify;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.net.proto.WorldPlayerLocationInfoOuterClass.WorldPlayerLocationInfo;
@@ -34,6 +35,7 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
+import emu.grasscutter.utils.DateHelper;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -80,6 +82,11 @@ public class GenshinPlayer {
 	private int mainCharacterId;
 	private boolean godmode;
 
+	private boolean moonCard;
+	private Date moonCardStartTime;
+	private int moonCardDuration;
+	private Set<Date> moonCardGetTimes;
+
 	@Transient private boolean paused;
 	@Transient private int enterSceneToken;
 	@Transient private SceneLoadState sceneState;
@@ -123,6 +130,7 @@ public class GenshinPlayer {
 
 		this.birthday = new PlayerBirthday();
 		this.rewardedLevels = new HashSet<>();
+		this.moonCardGetTimes = new HashSet<>();
 	}
 
 	// On player creation
@@ -485,6 +493,117 @@ public class GenshinPlayer {
 		this.regionId = regionId;
 	}
 
+	public boolean inMoonCard() {
+		return moonCard;
+	}
+
+	public void setMoonCard(boolean moonCard) {
+		this.moonCard = moonCard;
+	}
+
+	public void addMoonCardDays(int days) {
+		this.moonCardDuration += days;
+	}
+
+	public int getMoonCardDuration() {
+		return moonCardDuration;
+	}
+
+	public void setMoonCardDuration(int moonCardDuration) {
+		this.moonCardDuration = moonCardDuration;
+	}
+
+	public Date getMoonCardStartTime() {
+		return moonCardStartTime;
+	}
+
+	public void setMoonCardStartTime(Date moonCardStartTime) {
+		this.moonCardStartTime = moonCardStartTime;
+	}
+
+	public Set<Date> getMoonCardGetTimes() {
+		return moonCardGetTimes;
+	}
+
+	public void setMoonCardGetTimes(Set<Date> moonCardGetTimes) {
+		this.moonCardGetTimes = moonCardGetTimes;
+	}
+
+	public int getMoonCardRemainDays() {
+		Calendar remainCalendar = Calendar.getInstance();
+		remainCalendar.setTime(moonCardStartTime);
+		remainCalendar.add(Calendar.DATE, moonCardDuration);
+		Date theLastDay = remainCalendar.getTime();
+		Date now = DateHelper.onlyYDM(new Date());
+		return (int) ((theLastDay.getTime() - now.getTime()) / (24 * 60 * 60 * 1000)); // By copilot 
+	}
+
+	public void rechargeMoonCard() {
+		LinkedList<GenshinItem> items = new LinkedList<GenshinItem>();
+		for (int i = 0; i < 300; i++) {
+			items.add(new GenshinItem(203));
+		} 
+		inventory.addItems(items);
+		if (!moonCard) {
+			moonCard = true;
+			Date now = new Date();
+			moonCardStartTime = DateHelper.onlyYDM(now);
+			moonCardDuration = 30;
+		} else {
+			moonCardDuration += 30;
+		}
+		if (!moonCardGetTimes.contains(moonCardStartTime)) {
+			moonCardGetTimes.add(moonCardStartTime);
+		}
+	}
+
+		public void TimerManager() {
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		calendar.set(Calendar.MILLISECOND, 0);
+		Date taskDate = calendar.getTime();
+		if (taskDate.before(new Date())) {
+			taskDate.setTime(taskDate.getTime() + 24 * 60 * 60 * 1000);
+		}
+		Timer timer = new Timer();
+		timer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				if (moonCard) {
+					getTodayMoonCard();
+				}
+			}
+		}, taskDate, 24 * 60 * 60 * 1000);
+	}
+
+	public void getTodayMoonCard() {
+		if (!moonCard) {
+			return;
+		}
+		Date now = DateHelper.onlyYDM(new Date());
+		if (moonCardGetTimes.contains(now)) {
+			return;
+		}
+		Date stopTime = new Date();
+		Calendar stopCalendar = Calendar.getInstance();
+		stopCalendar.setTime(stopTime);
+		stopCalendar.add(Calendar.DATE, moonCardDuration);
+		stopTime = stopCalendar.getTime();
+		if (now.after(stopTime)) {
+			moonCard = false;
+			return;
+		}
+		moonCardGetTimes.add(now);
+		addMoonCardDays(1);
+		GenshinItem genshinItem = new GenshinItem(201, 90);
+		getInventory().addItem(genshinItem);
+		session.send(new PacketItemAddHintNotify(genshinItem, ActionReason.BlessingRedeemReward));
+		session.send(new PacketCardProductRewardNotify(getMoonCardRemainDays()));
+		TimerManager();
+	}
+
 	public boolean inGodmode() {
 		return godmode;
 	}
@@ -765,6 +884,9 @@ public class GenshinPlayer {
 		session.send(new PacketStoreWeightLimitNotify());
 		session.send(new PacketPlayerStoreNotify(this));
 		session.send(new PacketAvatarDataNotify(this));
+
+		// Moon card
+		getTodayMoonCard();
 
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
 		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
