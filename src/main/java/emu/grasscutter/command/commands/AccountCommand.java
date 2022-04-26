@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.database.DatabaseHelper;
@@ -47,6 +48,9 @@ public final class AccountCommand implements CommandHandler {
                     return;
                 } else {
                     CommandHandler.sendMessage(null, "Account created with UID " + account.getPlayerUid() + ".");
+                    if(Grasscutter.getConfig().getDispatchOptions().UseAuth) {
+                        CommandHandler.sendMessage(null, "This server uses authentication.\nPlease notify the user that they need to reset their password before logging in");
+                    }
                     account.addPermission("*"); // Grant the player superuser permissions.
                     account.save(); // Save account to database.
                 }

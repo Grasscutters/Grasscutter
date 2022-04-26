@@ -72,10 +72,13 @@ public final class DatabaseHelper {
 			return null;
 		}
 
-		if (Utils.argon2.verify(account.getPassword(), password.toCharArray())) {
-			return account;
+		if (account.getPassword() != null && !account.getPassword().isEmpty()) { // Make sure the variable was initialized in db (coming from old version) & Make sure that password is set.
+			if (!Utils.argon2.verify(account.getPassword(), password.toCharArray())) { // Check if password cannot be verified just so there isn't more than 2 returns
+				account = null;
+			}
 		}
-		return null;
+
+		return account;
 	}
 
 	public static Account getAccountByOneTimeToken(String token) {
