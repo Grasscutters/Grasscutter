@@ -25,6 +25,7 @@ import emu.grasscutter.server.event.ServerEvent;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
+import emu.grasscutter.task.TaskMap;
 
 public final class GameServer extends MihoyoKcpServer {
 	private final InetSocketAddress address;
@@ -40,6 +41,7 @@ public final class GameServer extends MihoyoKcpServer {
 	private final MultiplayerManager multiplayerManager;
 	private final DungeonManager dungeonManager;
 	private final CommandMap commandMap;
+	private final TaskMap taskMap;
 	
 	public GameServer(InetSocketAddress address) {
 		super(address);
@@ -57,6 +59,7 @@ public final class GameServer extends MihoyoKcpServer {
 		this.multiplayerManager = new MultiplayerManager(this);
 		this.dungeonManager = new DungeonManager(this);
 		this.commandMap = new CommandMap(true);
+		this.taskMap = new TaskMap(true);
 		
 		// Schedule game loop.
 		Timer gameLoop = new Timer();
@@ -113,6 +116,10 @@ public final class GameServer extends MihoyoKcpServer {
 	
 	public CommandMap getCommandMap() {
 		return this.commandMap;
+	}
+
+	public TaskMap getTaskMap() {
+		return this.taskMap;
 	}
 	
 	public void registerPlayer(GenshinPlayer player) {
