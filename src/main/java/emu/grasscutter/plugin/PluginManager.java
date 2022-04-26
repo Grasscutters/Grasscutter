@@ -140,13 +140,19 @@ public final class PluginManager {
      * @param event The event to invoke.
      */
     public void invokeEvent(Event event) {
-        Stream<EventHandler> handlers = this.listeners.stream()
-                .filter(handler -> handler.handles().isInstance(event));
-        handlers.filter(handler -> handler.getPriority() == HandlerPriority.HIGH)
-                .toList().forEach(handler -> this.invokeHandler(event, handler));
-        handlers.filter(handler -> handler.getPriority() == HandlerPriority.NORMAL)
-                .toList().forEach(handler -> this.invokeHandler(event, handler));
-        handlers.filter(handler -> handler.getPriority() == HandlerPriority.LOW)
+        EnumSet.allOf(HandlerPriority.class)
+                .forEach(priority -> this.checkAndFilter(event, priority));
+    }
+
+    /**
+     * Check an event to handlers for the priority.
+     * @param event The event being called.
+     * @param priority The priority to call for.
+     */
+    private void checkAndFilter(Event event, HandlerPriority priority) {
+        this.listeners.stream()
+                .filter(handler -> handler.handles().isInstance(event))
+                .filter(handler -> handler.getPriority() == priority)
                 .toList().forEach(handler -> this.invokeHandler(event, handler));
     }
 
