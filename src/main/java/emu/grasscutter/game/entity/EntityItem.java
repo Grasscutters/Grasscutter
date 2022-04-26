@@ -92,7 +92,7 @@ public class EntityItem extends EntityGadget {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.ProtEntityGadget)
+				.setEntityType(ProtEntityType.PROT_ENTITY_GADGET)
 				.setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())
@@ -108,7 +108,7 @@ public class EntityItem extends EntityGadget {
 		SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
 				.setGadgetId(this.getItemData().getGadgetId())
 				.setTrifleItem(this.getItem().toProto())
-				.setBornType(GadgetBornType.GadgetBornInAir)
+				.setBornType(GadgetBornType.GADGET_BORN_IN_AIR)
 				.setAuthorityPeerId(this.getWorld().getHostPeerId())
 				.setIsEnableInteract(true);
 

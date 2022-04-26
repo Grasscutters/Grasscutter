@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message ServantInfo {
+	uint32 master_entity_id = 1;
+	uint32 born_slot_index = 2;
+}

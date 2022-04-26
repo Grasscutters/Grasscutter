@@ -43,7 +43,7 @@ public class PacketPlayerChatNotify extends GenshinPacket {
 		this.setData(proto);
 	}
 	
-	public PacketPlayerChatNotify(GenshinPlayer sender, int channelId, SystemHint systemHint) {
+	public PacketPlayerChatNotify(GenshinPlayer sender, int channelId, ChatInfo.SystemHint systemHint) {
 		super(PacketOpcodes.PlayerChatNotify);
 		
 		ChatInfo info = ChatInfo.newBuilder()

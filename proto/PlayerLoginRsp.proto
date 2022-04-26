@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ResVersionConfig.proto";
+import "BlockInfo.proto";
+import "ShortAbilityHashPair.proto";
+import "FeatureBlockInfo.proto";
+
+message PlayerLoginRsp {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 184;
+	}
+
+	int32 retcode = 1;
+	bytes player_data = 2;
+	bool is_new_player = 3;
+	uint32 target_uid = 4;
+	uint64 login_rand = 5;
+	bool is_use_ability_hash = 6;
+	int32 ability_hash_code = 7;
+	map<string, int32> ability_hash_map = 8;
+	uint32 client_data_version = 9;
+	bool is_relogin = 11;
+	uint32 client_silence_data_version = 13;
+	string game_biz = 14;
+	uint32 player_data_version = 15;
+	string client_md5 = 16;
+	string client_silence_md5 = 17;
+	ResVersionConfig res_version_config = 20;
+	map<uint32, BlockInfo> block_info_map = 21;
+	string client_version_suffix = 24;
+	string client_silence_version_suffix = 25;
+	repeated ShortAbilityHashPair short_ability_hash_map = 27;
+	bytes sc_info = 28;
+	bool is_audit = 29;
+	bool is_sc_open = 30;
+	string register_cps = 31;
+	repeated FeatureBlockInfo feature_block_info_list = 32;
+	bool is_data_need_relogin = 33;
+	string country_code = 34;
+	ResVersionConfig next_res_version_config = 35;
+	string next_resource_url = 36;
+	uint32 target_home_owner_uid = 37;
+	bool is_enable_client_hash_debug = 38;
+	bool is_transfer = 39;
+	double total_tick_time = 40;
+}

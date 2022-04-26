@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum CoopPointState {
+	Unstarted = 0;
+	Started = 1;
+	Finished = 2;
+}

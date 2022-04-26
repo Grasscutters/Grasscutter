@@ -17,7 +17,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 /**
- * Manages the server's plugins & the event system.
+ * Manages the server's plugins and the event system.
  */
 public final class PluginManager {
     private final Map<String, Plugin> plugins = new HashMap<>();

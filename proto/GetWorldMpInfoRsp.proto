@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message GetWorldMpInfoRsp {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 3394;
+	}
+
+	int32 retcode = 1;
+	bool is_in_mp_mode = 2;
+	uint32 quit_mp_valid_time = 3;
+}

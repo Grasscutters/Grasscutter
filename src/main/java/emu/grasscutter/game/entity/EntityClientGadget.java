@@ -6,6 +6,7 @@ import emu.grasscutter.game.World;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
+import emu.grasscutter.net.proto.ClientGadgetInfoOuterClass;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
 import emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
@@ -112,7 +113,7 @@ public class EntityClientGadget extends EntityGadget {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.ProtEntityGadget)
+				.setEntityType(ProtEntityType.PROT_ENTITY_GADGET)
 				.setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())
@@ -125,7 +126,7 @@ public class EntityClientGadget extends EntityGadget {
 				.build();
 		entityInfo.addPropList(pair);
 		
-		GadgetClientParam clientGadget = GadgetClientParam.newBuilder()
+		ClientGadgetInfoOuterClass.ClientGadgetInfo clientGadget = ClientGadgetInfoOuterClass.ClientGadgetInfo.newBuilder()
 				.setCampId(this.getCampId())
 				.setCampType(this.getCampType())
 				.setOwnerEntityId(this.getOwnerEntityId())

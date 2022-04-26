@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ItemExceedLimitNotify {
+	bool isMaterialExceedLimit = 1;
+	bool isWeaponExceedLimit = 2;
+	bool isReliquaryExceedLimit = 3;
+	repeated uint32 itemIdList = 4;
+}

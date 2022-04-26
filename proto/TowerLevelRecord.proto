@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message TowerLevelRecord {
+	uint32 level_id = 1;
+	repeated uint32 satisfied_cond_list = 2;
+}

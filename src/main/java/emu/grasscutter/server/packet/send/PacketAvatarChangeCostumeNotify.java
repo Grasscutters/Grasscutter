@@ -11,7 +11,7 @@ public class PacketAvatarChangeCostumeNotify extends GenshinPacket {
 		super(PacketOpcodes.AvatarChangeCostumeNotify);
 
 		AvatarChangeCostumeNotify proto = AvatarChangeCostumeNotify.newBuilder()
-				.setEntity(entity.toProto())
+				.setEntityInfo(entity.toProto())
 				.build();
 		
 		this.setData(proto);

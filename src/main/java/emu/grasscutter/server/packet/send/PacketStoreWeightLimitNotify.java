@@ -12,7 +12,7 @@ public class PacketStoreWeightLimitNotify extends GenshinPacket {
 		super(PacketOpcodes.StoreWeightLimitNotify);
 
 		StoreWeightLimitNotify p = StoreWeightLimitNotify.newBuilder()
-				.setStoreType(StoreType.StorePack)
+				.setStoreType(StoreType.STORE_PACK)
 				.setWeightLimit(Grasscutter.getConfig().getGameServerOptions().InventoryLimitAll)
 				.setWeaponCountLimit(Grasscutter.getConfig().getGameServerOptions().InventoryLimitWeapon)
 				.setReliquaryCountLimit(Grasscutter.getConfig().getGameServerOptions().InventoryLimitRelic)
