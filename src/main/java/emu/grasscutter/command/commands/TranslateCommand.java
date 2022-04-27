@@ -9,72 +9,55 @@ import emu.grasscutter.utils.Position;
 
 import java.util.List;
 
-@Command(label = "teleport", usage = "teleport [UID] <x|~rx> <y|~ry> <z|~rz>",
-        description = "Teleport a player to the position. Use ~ to use relative position.",
-        aliases = {"tp"}, permission = "player.teleport")
-public final class TeleportCommand implements CommandHandler {
-
+@Command(label = "trnslate", usage = "translate [UID] <distance>",
+        description = "Translate a player forward to the distance.",
+        aliases = {"tr"},
+        permission = "player.translate")
+public class TranslateCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         switch (args.size()) {
             default:
                 CommandHandler.sendMessage(sender, "Usage: " + getClass().getAnnotation(Command.class).usage());
                 return;
-            case 3:
+            case 1:
                 if (sender == null) {
                     CommandHandler.sendMessage(sender, "Run this command in-game.");
                 } else {
                     try {
-                        teleport(sender, args.get(0), args.get(1), args.get(2));
+                        translate(sender, args.get(0));
                     } catch (NumberFormatException ignored) {
-                        CommandHandler.sendMessage(sender, "Invalid position.");
+                        CommandHandler.sendMessage(sender, "Invalid distance.");
                     }
                 }
                 return;
-            case 4:
+            case 2:
                 try {
                     Player player = Grasscutter.getGameServer().getPlayerByUid(Integer.parseInt(args.get(0)));
                     if (player == null) {
                         CommandHandler.sendMessage(sender, "Player not found.");
                     } else {
                         try {
-                            teleport(player, args.get(1), args.get(2), args.get(3));
+                            translate(player, args.get(1));
                         } catch (NumberFormatException ignored) {
-                            CommandHandler.sendMessage(sender, "Invalid position.");
+                            CommandHandler.sendMessage(sender, "Invalid distance.");
                         }
                     }
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, "Invalid UID.");
                 }
         }
-
     }
 
-    private void teleport(Player player, String x, String y, String z) {
+    private void translate(Player player, String disntance) {
         Position pos = player.getPos();
+        double dist = Double.parseDouble(disntance);
+        double angle = Math.toRadians(player.getRotation().getY());
 
-        if (x.contains("~")) {
-            x = x.substring(1);
-            pos.addX(Float.parseFloat(x.equals("") ? "0" : x));
-        } else {
-            pos.setX(Float.parseFloat(x));
-        }
-
-        if (y.contains("~")) {
-            y = y.substring(1);
-            pos.addY(Float.parseFloat(y.equals("") ? "0" : y));
-        } else {
-            pos.setY(Float.parseFloat(y));
-        }
-
-        if (z.contains("~")) {
-            z = z.substring(1);
-            pos.addZ(Float.parseFloat(z.equals("") ? "0" : z));
-        } else {
-            pos.setZ(Float.parseFloat(z));
-        }
+        pos.addX((float) (dist * Math.sin(angle)));
+        pos.addZ((float) (dist * Math.cos(angle)));
 
         player.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(player));
-        CommandHandler.sendMessage(player, "Teleport " + player.getUid() + " to " + pos);
+        CommandHandler.sendMessage(player, "Translate " + player.getUid() + " to " + pos);
     }
 }

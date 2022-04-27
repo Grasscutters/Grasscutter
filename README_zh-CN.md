@@ -133,9 +133,9 @@ chmod +x gradlew
 | spawn          | spanw <实体ID\|实体名称> [等级] [数量]       | server.spawn              | 仅客户端 | 在你周围生成实体                           |                                                 |
 | stop           | stop                                         | server.stop               | 均可使用 | 停止服务器                                 |                                                 |
 | talent         | talent <天赋ID> <等级>                       | player.settalent          | 仅客户端 | 设置当前角色的天赋等级                     |                                                 |
-| teleport       | teleport <x> <y> <z>                         | player.teleport           | 仅客户端 | 传送玩家到指定坐标                         | tp                                              |
+| teleport       | teleport [UID] <x\|~rx> <y\|~ry> <z\|~rz>   | player.teleport           | 均可使用  | 传送玩家到指定位置,使用~来使用相对位置     | tp                                               |
 | weather        | weather <天气ID> <气候ID>                    | player.weather            | 仅客户端 | 改变天气                                   | w                                               |
-
+| translate      | translate [UID] \<distance\>                | player.translate          | 均可使用  | 将玩家向前移动一定距离                     | tr                                               |
 ### 额外功能
 
 当你想传送到某个地点, 只需要在地图中创建标记, 关闭地图后即可到达目标地点上空
