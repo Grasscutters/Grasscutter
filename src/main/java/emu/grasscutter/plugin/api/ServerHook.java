@@ -1,6 +1,7 @@
 package emu.grasscutter.plugin.api;
 
 import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 
 import java.util.LinkedList;
@@ -11,7 +12,8 @@ import java.util.List;
  */
 public final class ServerHook {
     private static ServerHook instance;
-    private final GameServer server;
+    private final GameServer gameServer;
+    private final DispatchServer dispatchServer;
 
     /**
      * Gets the server hook instance.
@@ -23,10 +25,12 @@ public final class ServerHook {
 
     /**
      * Hooks into a server.
-     * @param server The server to hook into.
+     * @param gameServer The game server to hook into.
+     * @param dispatchServer The dispatch server to hook into.
      */
-    public ServerHook(GameServer server) {
-        this.server = server;
+    public ServerHook(GameServer gameServer, DispatchServer dispatchServer) {
+        this.gameServer = gameServer;
+        this.dispatchServer = dispatchServer;
         
         instance = this;
     }
@@ -36,6 +40,6 @@ public final class ServerHook {
      * @return Players connected to the server.
      */
     public List<GenshinPlayer> getOnlinePlayers() {
-        return new LinkedList<>(this.server.getPlayers().values());
+        return new LinkedList<>(this.gameServer.getPlayers().values());
     }
 }
