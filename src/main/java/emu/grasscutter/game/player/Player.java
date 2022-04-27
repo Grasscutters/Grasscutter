@@ -867,7 +867,7 @@ public class Player {
 
 		SocialDetail.Builder social = SocialDetail.newBuilder()
 				.setUid(this.getUid())
-				.setAvatarId(HeadImage.newBuilder().setAvatarId(this.getHeadImage()).getAvatarId())
+				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()))
 				.setNickname(this.getNickname())
 				.setSignature(this.getSignature())
 				.setLevel(this.getLevel())
