@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GetWidgetSlotItem.proto";
+
+message WidgetSlotChangeNotify {
+	bool unequip = 1;
+	GetWidgetSlotItem widgetItem = 2;
+}

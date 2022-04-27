@@ -22,9 +22,11 @@ import emu.grasscutter.game.friends.PlayerProfile;
 import emu.grasscutter.game.gacha.PlayerGachaInfo;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
+import emu.grasscutter.game.lunchbox.LunchBoxData;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
@@ -46,8 +48,6 @@ import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.DateHelper;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
-import java.util.*;
 
 @Entity(value = "players", useDiscriminator = false)
 public class Player {
@@ -84,6 +84,10 @@ public class Player {
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
 	private ArrayList<Mail> mail;
+
+	private ArrayList<LunchBoxData> lunchBoxData;
+	private ArrayList<ShopLimit> shopLimit;
+	private int equipedWidget;
 
 	private int sceneId;
 	private int regionId;
@@ -141,6 +145,9 @@ public class Player {
 		this.birthday = new PlayerBirthday();
 		this.rewardedLevels = new HashSet<>();
 		this.moonCardGetTimes = new HashSet<>();
+
+		this.shopLimit = new ArrayList<>();
+		this.lunchBoxData = new ArrayList<>(); // TODO: should it be in widget collection data?
 	}
 
 	// On player creation
@@ -339,6 +346,52 @@ public class Player {
 
 		// Update player with packet
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_EXP));
+	}
+
+	public ArrayList<LunchBoxData> getLunchBoxData() {
+		return lunchBoxData;
+	}
+
+	public void setLunchBoxData(ArrayList<LunchBoxData> lunchBoxData) {
+		this.lunchBoxData = lunchBoxData;
+	}
+
+
+	public List<ShopLimit> getShopLimit() {
+		return shopLimit;
+	}
+
+	public int getGoodsLimitNum(int goodsId) {
+		for (ShopLimit sl : getShopLimit()) {
+			if (sl.getShopGoodId() == goodsId)
+				return sl.getHasBought();
+		}
+		return 0;
+	}
+
+	public void addShopLimit(int goodsId, int boughtCount) {
+		boolean found = false;
+		for (ShopLimit sl : getShopLimit()) {
+			if (sl.getShopGoodId() == goodsId){
+				sl.setHasBought(sl.getHasBought() + boughtCount);
+				found = true;
+			}
+		}
+		if (!found) {
+			ShopLimit sl = new ShopLimit();
+			sl.setShopGoodId(goodsId);
+			sl.setHasBought(boughtCount);
+			shopLimit.add(sl);
+		}
+		this.save();
+	}
+
+	public int getEquipedWidget() {
+		return equipedWidget;
+	}
+
+	public void setEquipedWidget(int equipedWidget) {
+		this.equipedWidget = equipedWidget;
 	}
 
 	private void updateProfile() {
@@ -714,19 +767,30 @@ public class Player {
 			return;
 		}
 
-		// Delete
-		entity.getScene().removeEntity(entity);
-
 		// Handle
 		if (entity instanceof EntityItem) {
 			// Pick item
 			EntityItem drop = (EntityItem) entity;
+			if (!drop.isShare()) // check drop owner to avoid someone picked up item in others' world
+			{
+				int dropOwner = (int)(drop.getGuid() >> 32);
+				if (dropOwner != getUid())
+					return;
+			}
+			entity.getScene().removeEntity(entity);
 			GameItem item = new GameItem(drop.getItemData(), drop.getCount());
 			// Add to inventory
 			boolean success = getInventory().addItem(item, ActionReason.SubfieldDrop);
 			if (success) {
-				this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
+
+				if (!drop.isShare()) // not shared drop
+					this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
+				else
+					this.getScene().broadcastPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
 			}
+		} else {
+			// Delete directly
+			entity.getScene().removeEntity(entity);
 		}
 
 		return;
@@ -904,6 +968,8 @@ public class Player {
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
 		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
 		session.send(new PacketOpenStateUpdateNotify());
+
+		session.send(new PacketAllWidgetDataNotify(this));
 
 		// First notify packets sent
 		this.setHasSentAvatarDataNotify(true);

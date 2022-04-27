@@ -12,8 +12,7 @@ public class HandlerGetShopReq extends PacketHandler {
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		GetShopReq req = GetShopReq.parseFrom(payload);
-		
-		// TODO
-		session.send(new PacketGetShopRsp(req.getShopType()));
+
+		session.send(new PacketGetShopRsp(session.getPlayer(), req.getShopType()));
 	}
 }

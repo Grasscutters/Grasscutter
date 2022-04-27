@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "LunchBoxWidget.proto";
+
+message AllWidgetDataNotify {
+	uint64 clientTime = 3;
+	LunchBoxWidget lunchBoxWidget = 5;
+}

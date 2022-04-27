@@ -37,7 +37,6 @@ import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
-import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -228,6 +227,11 @@ public class Scene {
 		this.addEntityDirectly(entity);
 		this.broadcastPacket(new PacketSceneEntityAppearNotify(entity));
 	}
+
+	public synchronized void addEntityToSingleClient(Player player, GameEntity entity) {
+		this.addEntityDirectly(entity);
+		player.sendPacket(new PacketSceneEntityAppearNotify(entity));
+	}
 	
 	public synchronized void addEntities(Collection<GameEntity> entities) {
 		for (GameEntity entity : entities) {
@@ -310,6 +314,12 @@ public class Scene {
 	public void killEntity(GameEntity target, int attackerId) {
 		// Packet
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
+
+		// Reward drop
+		if (target instanceof EntityMonster) {
+			Grasscutter.getGameServer().getDropManager().callDrop((EntityMonster) target);
+		}
+
 		this.removeEntity(target);
 		
 		// Death event

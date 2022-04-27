@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message GetWidgetSlotItem {
+	uint32 unk_1 = 1; // what's this?
+	uint32 widgetId = 2;
+	bool equiped = 4;
+}

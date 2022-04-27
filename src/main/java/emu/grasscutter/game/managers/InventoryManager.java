@@ -20,26 +20,11 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
 import emu.grasscutter.server.game.GameServer;
-import emu.grasscutter.server.packet.send.PacketAbilityChangeNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarPromoteRsp;
-import emu.grasscutter.server.packet.send.PacketAvatarPropNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarSkillChangeNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarSkillUpgradeRsp;
-import emu.grasscutter.server.packet.send.PacketAvatarUnlockTalentNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarUpgradeRsp;
-import emu.grasscutter.server.packet.send.PacketDestroyMaterialRsp;
-import emu.grasscutter.server.packet.send.PacketProudSkillChangeNotify;
-import emu.grasscutter.server.packet.send.PacketProudSkillExtraLevelNotify;
-import emu.grasscutter.server.packet.send.PacketReliquaryUpgradeRsp;
-import emu.grasscutter.server.packet.send.PacketSetEquipLockStateRsp;
-import emu.grasscutter.server.packet.send.PacketStoreItemChangeNotify;
-import emu.grasscutter.server.packet.send.PacketUnlockAvatarTalentRsp;
-import emu.grasscutter.server.packet.send.PacketWeaponAwakenRsp;
-import emu.grasscutter.server.packet.send.PacketWeaponPromoteRsp;
-import emu.grasscutter.server.packet.send.PacketWeaponUpgradeRsp;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
@@ -901,15 +886,38 @@ public class InventoryManager {
 	public GameItem useItem(Player player, long targetGuid, long itemGuid, int count) {
 		Avatar target = player.getAvatars().getAvatarByGuid(targetGuid);
 		GameItem useItem = player.getInventory().getItemByGuid(itemGuid);
-		
+
 		if (useItem == null) {
 			return null;
 		}
 		
 		int used = 0;
-		
+
 		// Use
 		switch (useItem.getItemData().getMaterialType()) {
+			case MATERIAL_NOTICE_ADD_HP:
+				if (useItem.getItemData().getUseTarget().equals("ITEM_USE_TARGET_SPECIFY_ALIVE_AVATAR")) {
+					if (target == null)
+						break;
+					for (int i = 0; i < count; i++) {
+						if (useItem.getItemId() == 108033) { // TODO: Delicious Sweet Madame only
+							float curHp = player.getTeamManager().getCurrentAvatarEntity().getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+							float targetMaxHp = player.getTeamManager().getCurrentAvatarEntity().getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+							double heal = curHp + targetMaxHp * 0.24 + 1500;
+							if (heal > targetMaxHp)
+								heal = targetMaxHp;
+							player.getTeamManager().getCurrentAvatarEntity().setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, (float) heal);
+
+							// ServerBuffChangeNotify required
+
+							player.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(player.getTeamManager().getCurrentAvatarEntity(), FightProperty.FIGHT_PROP_CUR_HP));
+							player.getWorld().broadcastPacket(new PacketAvatarFightPropUpdateNotify(player.getTeamManager().getCurrentAvatarEntity().getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
+
+							used++;
+						}
+					}
+				}
+				break;
 			case MATERIAL_FOOD:
 				if (useItem.getItemData().getUseTarget().equals("ITEM_USE_TARGET_SPECIFY_DEAD_AVATAR")) {
 					if (target == null) {
