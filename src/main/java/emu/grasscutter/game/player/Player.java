@@ -1,20 +1,16 @@
 package emu.grasscutter.game.player;
 
-import java.time.Instant;
-import java.util.*;
-
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.avatar.AvatarProfileData;
-import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.avatar.AvatarProfileData;
+import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.friends.FriendsList;
@@ -34,7 +30,6 @@ import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
-import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
@@ -42,11 +37,12 @@ import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
-import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.DateHelper;
+import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
+import java.time.Instant;
 import java.util.*;
 
 @Entity(value = "players", useDiscriminator = false)
@@ -714,19 +710,30 @@ public class Player {
 			return;
 		}
 
-		// Delete
-		entity.getScene().removeEntity(entity);
-
 		// Handle
 		if (entity instanceof EntityItem) {
 			// Pick item
 			EntityItem drop = (EntityItem) entity;
+			if (!drop.isShare()) // check drop owner to avoid someone picked up item in others' world
+			{
+				int dropOwner = (int)(drop.getGuid() >> 32);
+				if (dropOwner != getUid())
+					return;
+			}
+			entity.getScene().removeEntity(entity);
 			GameItem item = new GameItem(drop.getItemData(), drop.getCount());
 			// Add to inventory
 			boolean success = getInventory().addItem(item, ActionReason.SubfieldDrop);
 			if (success) {
-				this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
+
+				if (!drop.isShare()) // not shared drop
+					this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
+				else
+					this.getScene().broadcastPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
 			}
+		} else {
+			// Delete directly
+			entity.getScene().removeEntity(entity);
 		}
 
 		return;
