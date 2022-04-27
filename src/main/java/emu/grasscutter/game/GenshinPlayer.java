@@ -267,6 +267,11 @@ public class GenshinPlayer {
 	public int getWorldLevel() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL);
 	}
+	
+	public void setWorldLevel(int level) {
+		this.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level);
+		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_WORLD_LEVEL));
+	}
 
 	public int getPrimogems() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_HCOIN);

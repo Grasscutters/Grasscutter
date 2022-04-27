@@ -29,7 +29,7 @@ public final class SetWorldLevelCommand implements CommandHandler {
 
             // Set in both world and player props
             sender.getWorld().setWorldLevel(level);
-            sender.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level);
+            sender.setWorldLevel(level);
 
             sender.dropMessage("World level set to " + level + ".");
         } catch (NumberFormatException ignored) {
