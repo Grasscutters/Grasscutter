@@ -1,8 +1,7 @@
 package emu.grasscutter.server.event;
 
 import emu.grasscutter.Grasscutter;
-
-import java.util.function.Consumer;
+import emu.grasscutter.utils.EventConsumer;
 
 public final class EventHandler {
     private final Class<? extends Event> event;
@@ -16,15 +15,11 @@ public final class EventHandler {
         return new EventHandler(event);
     }
     
-    /**
-     * @deprecated Will be replaced with a private constructor instead. Use {@link #forEvent(Class)} instead.
-     */
-    @Deprecated(forRemoval = true, since = "1.0.1")
-    public EventHandler(Class<? extends Event> event) {
+    private EventHandler(Class<? extends Event> event) {
         this.event = event;
     }
     
-    private Consumer<Event> listener;
+    private EventConsumer listener;
     private HandlerPriority priority;
     private boolean handleCanceled;
 
@@ -40,7 +35,7 @@ public final class EventHandler {
      * Returns the callback for the handler.
      * @return A consumer callback.
      */
-    public Consumer<Event> getCallback() {
+    public EventConsumer getCallback() {
         return this.listener;
     }
 
@@ -65,7 +60,7 @@ public final class EventHandler {
      * @param listener An event handler method.
      * @return Method chaining.
      */
-    public EventHandler listener(Consumer<Event> listener) {
+    public EventHandler listener(EventConsumer listener) {
         this.listener = listener; return this;
     }
 
