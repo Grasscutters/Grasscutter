@@ -923,6 +923,7 @@ public class InventoryManager {
 				break;
 		}
 
+		// Welkin
 		if (useItem.getItemId() == 1202) {
 			player.rechargeMoonCard();
 			used = 1;
