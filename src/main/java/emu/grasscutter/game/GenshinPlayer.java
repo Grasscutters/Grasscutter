@@ -1,8 +1,12 @@
 package emu.grasscutter.game;
 
+import java.time.Instant;
+import java.util.*;
+
 import dev.morphia.annotations.*;
 import emu.grasscutter.GenshinConstants;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GenshinData;
 import emu.grasscutter.data.def.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
@@ -76,6 +80,7 @@ public class GenshinPlayer {
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
+	private ArrayList<Mail> mail;
 
 	private int sceneId;
 	private int regionId;
@@ -118,6 +123,8 @@ public class GenshinPlayer {
 		this.nameCardList = new HashSet<>();
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
+
+		this.mail = new ArrayList<>();
 
 		this.setSceneId(3);
 		this.setRegionId(1);
@@ -666,6 +673,47 @@ public class GenshinPlayer {
 		this.sendPacket(new PacketPrivateChatNotify(sender.getUid(), this.getUid(), message.toString()));
 	}
 
+	// ---------------------MAIL------------------------
+
+	public List<Mail> getAllMail() { return this.mail; }
+
+	public void sendMail(Mail message) {
+		this.mail.add(message);
+		this.save();
+		Grasscutter.getLogger().info("Mail sent to user [" + this.getUid()  + ":" + this.getNickname() + "]!");
+		if(this.isOnline()) {
+			this.sendPacket(new PacketMailChangeNotify(this, message));
+		} // TODO: setup a way for the mail notification to show up when someone receives mail when they were offline
+	}
+
+	public boolean deleteMail(int mailId) {
+		Mail message = getMail(mailId);
+
+		if(message != null) {
+			int index = getMailId(message);
+			message.expireTime = (int) Instant.now().getEpochSecond(); // Just set the mail as expired for now. I don't want to implement a counter specifically for an account...
+			this.replaceMailByIndex(index, message);
+			return true;
+		}
+
+		return false;
+	}
+
+	public Mail getMail(int index) { return this.mail.get(index); }
+	public int getMailId(Mail message) {
+		return this.mail.indexOf(message);
+	}
+
+	public boolean replaceMailByIndex(int index, Mail message) {
+		if(getMail(index) != null) {
+			this.mail.set(index, message);
+			this.save();
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	public void interactWith(int gadgetEntityId) {
 		GenshinEntity entity = getScene().getEntityById(gadgetEntityId);
 
