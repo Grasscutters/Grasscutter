@@ -58,6 +58,10 @@ public final class DispatchServer {
 	public HttpServer getServer() {
 		return server;
 	}
+	
+	public HttpServer getHttpServer() {
+		return server;
+	}
 
 	public InetSocketAddress getAddress() {
 		return address;
