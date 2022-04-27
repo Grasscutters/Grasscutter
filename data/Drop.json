@@ -1,11 +1,11 @@
 [
   {
-    "monsterId": 20010201,
+    "monsterId": 21010101,
     "dropDataList": [
       {
-        "itemId": 223,
+        "itemId": 112005,
         "minCount": 1,
-        "maxCount": 100,
+        "maxCount": 3,
         "minWeight": 0,
         "maxWeight": 10000
       }
