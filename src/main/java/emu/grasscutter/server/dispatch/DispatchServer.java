@@ -373,7 +373,7 @@ public final class DispatchServer {
 		// Captcha
 		server.createContext( // api-account-os.hoyoverse.com
 				"/account/risky/api/check", 
-				new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"id\":\"none\",\"action\":\"ACTION_NONE\",\"geetest\":null}}") );
+				new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"id\":\"none\",\"action\":\"ACTION_NONE\",\"geetest\":null}}")
 		);
 		// Config	
 		server.createContext( // sdk-os-static.hoyoverse.com
