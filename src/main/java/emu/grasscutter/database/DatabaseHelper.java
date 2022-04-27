@@ -10,7 +10,7 @@ import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.utils.Authentication;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.player.Player
+import emu.grasscutter.game.player.Player;
 
 public final class DatabaseHelper {
 	public static Account createAccount(String username) {
