@@ -41,11 +41,8 @@ public class PacketGetAllMailRsp extends GenshinPacket {
                 for (Mail message : player.getAllMail()) {
 
                     if(message.stateValue == 1) { // Make sure it isn't a gift
-                        Grasscutter.getLogger().info("a");
                         if (message.expireTime > (int) Instant.now().getEpochSecond()) { // Make sure the message isn't expired (The game won't show expired mail, but I don't want to send unnecessary information).
-                            Grasscutter.getLogger().info("b");
                             if(mailDataList.size() <= 1000) { // Make sure that there isn't over 1000 messages in the mailbox. (idk what will happen if there is but the game probably won't like it.)
-                                Grasscutter.getLogger().info("c");
                                 MailTextContent.Builder mailTextContent = MailTextContent.newBuilder();
                                 mailTextContent.setTitle(message.mailContent.title);
                                 mailTextContent.setContent(message.mailContent.content);
