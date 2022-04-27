@@ -941,6 +941,8 @@ public class Player {
 		session.send(new PacketPlayerStoreNotify(this));
 		session.send(new PacketAvatarDataNotify(this));
 
+		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
+
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
 		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
 		session.send(new PacketOpenStateUpdateNotify());
