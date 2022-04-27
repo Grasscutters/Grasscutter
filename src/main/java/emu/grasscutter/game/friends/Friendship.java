@@ -8,7 +8,7 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief;
 import emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState;
-import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
+import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 
 @Entity(value = "friendships", useDiscriminator = false)
 public class Friendship {
@@ -92,7 +92,7 @@ public class Friendship {
 				.setUid(getFriendProfile().getUid())
 				.setNickname(getFriendProfile().getName())
 				.setLevel(getFriendProfile().getPlayerLevel())
-				.setAvatarId(HeadImage.newBuilder().setAvatarId(getFriendProfile().getAvatarId()).getAvatarId())
+				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(getFriendProfile().getAvatarId()))
 				.setWorldLevel(getFriendProfile().getWorldLevel())
 				.setSignature(getFriendProfile().getSignature())
 				.setOnlineState(getFriendProfile().isOnline() ? FriendOnlineState.FRIEND_ONLINE : FriendOnlineState.FREIEND_DISCONNECT)
