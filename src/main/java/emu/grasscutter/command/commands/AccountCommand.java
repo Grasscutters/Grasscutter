@@ -46,7 +46,7 @@ public final class AccountCommand implements CommandHandler {
                     CommandHandler.sendMessage(null, "Account already exists.");
                     return;
                 } else {
-                    account.addPermission('*');
+                    account.addPermission("*");
                     account.save(); // Save account to database.
 
                     CommandHandler.sendMessage(null, "Account created with UID " + account.getPlayerUid() + ".");
