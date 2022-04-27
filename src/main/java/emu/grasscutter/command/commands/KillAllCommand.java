@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Scene;
 
@@ -53,10 +54,12 @@ public final class KillAllCommand implements CommandHandler {
                     return;
             }
 
-            mainScene.getEntities().values().stream()
+            // Separate into list to avoid concurrency issue
+            List<GameEntity> toKill = mainScene.getEntities().values().stream()
                     .filter(entity -> entity instanceof EntityMonster)
-                    .forEach(entity -> mainScene.killEntity(entity, 0));
-            CommandHandler.sendMessage(sender, "Killing all monsters in scene " + mainScene.getId());
+                    .toList();
+            toKill.stream().forEach(entity -> mainScene.killEntity(entity, 0));
+            CommandHandler.sendMessage(sender, "Killing " + toKill.size() + " monsters in scene " + mainScene.getId());
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(sender, "Invalid arguments.");
         }
