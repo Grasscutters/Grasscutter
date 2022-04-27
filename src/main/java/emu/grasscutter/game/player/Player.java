@@ -93,6 +93,9 @@ public class Player {
 	private int moonCardDuration;
 	private Set<Date> moonCardGetTimes;
 
+	private List<Integer> showAvatarList;
+	private boolean showAvatars;
+
 	@Transient private boolean paused;
 	@Transient private int enterSceneToken;
 	@Transient private SceneLoadState sceneState;
@@ -513,6 +516,22 @@ public class Player {
 		this.regionId = regionId;
 	}
 
+	public void setShowAvatars(boolean showAvatars) {
+		this.showAvatars = showAvatars;
+	}
+
+	public boolean isShowAvatars() {
+		return showAvatars;
+	}
+
+	public void setShowAvatarList(List<Integer> showAvatarList) {
+		this.showAvatarList = showAvatarList;
+	}
+
+	public List<Integer> getShowAvatarList() {
+		return showAvatarList;
+	}
+
 	public boolean inMoonCard() {
 		return moonCard;
 	}
@@ -832,15 +851,29 @@ public class Player {
 	}
 
 	public SocialDetail.Builder getSocialDetail() {
+		List<SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> socialShowAvatarInfoList = new ArrayList<>();
+		for (int avatarId : this.getShowAvatarList()) {
+			socialShowAvatarInfoList.add(
+					socialShowAvatarInfoList.size(),
+					SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.newBuilder()
+							.setAvatarId(avatarId)
+							.setLevel(getAvatars().getAvatarById(avatarId).getLevel())
+							.setCostumeId(getAvatars().getAvatarById(avatarId).getCostume())
+							.build()
+			);
+		}
+
 		SocialDetail.Builder social = SocialDetail.newBuilder()
 				.setUid(this.getUid())
-				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()))
+				.setAvatarId(HeadImage.newBuilder().setAvatarId(this.getHeadImage()).getAvatarId())
 				.setNickname(this.getNickname())
 				.setSignature(this.getSignature())
 				.setLevel(this.getLevel())
 				.setBirthday(this.getBirthday().getFilledProtoWhenNotEmpty())
 				.setWorldLevel(this.getWorldLevel())
 				.setNameCardId(this.getNameCardId())
+				.setIsShowAvatar(this.isShowAvatars())
+				.addAllShowAvatarInfoList(socialShowAvatarInfoList)
 				.setFinishAchievementNum(0);
 		return social;
 	}
