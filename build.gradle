@@ -23,6 +23,8 @@ plugins {
     id 'com.google.protobuf' version "0.8.18"
     id 'idea'
 
+    id 'eclipse'
+
     // Apply the application plugin to add support for building a CLI application
     id 'application'
 
@@ -186,6 +188,14 @@ idea {
         // source dirs.
         // If you have additional sources, add them here:
         sourceDirs += file("/proto/");
+    }
+}
+
+eclipse {
+    classpath {
+        file.whenMerged { cp ->
+            cp.entries.add( new org.gradle.plugins.ide.eclipse.model.SourceFolder('src/generated/main/java', null) )
+        }
     }
 }
 
