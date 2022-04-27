@@ -54,19 +54,19 @@ public final class TeleportCommand implements CommandHandler {
         Position pos = player.getPos();
 
         if (x.contains("~")) {
-            pos.addX(getByStr(x));
+            pos.addX(getRelativePosByStr(x));
         } else {
             pos.setX(Float.parseFloat(x));
         }
 
         if (y.contains("~")) {
-            pos.addY(getByStr(y));
+            pos.addY(getRelativePosByStr(y));
         } else {
             pos.setY(Float.parseFloat(y));
         }
 
         if (z.contains("~")) {
-            pos.addZ(getByStr(z));
+            pos.addZ(getRelativePosByStr(z));
         } else {
             pos.setZ(Float.parseFloat(z));
         }
@@ -75,7 +75,7 @@ public final class TeleportCommand implements CommandHandler {
         CommandHandler.sendMessage(player, "Teleport " + player.getUid() + " to " + pos);
     }
 
-    private float getByStr(String s)
+    private float getRelativePosByStr(String s)
     {
          return s.equals("~") ? 0 : Float.parseFloat(s.substring(1));
     }

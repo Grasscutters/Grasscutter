@@ -9,7 +9,7 @@ import emu.grasscutter.utils.Position;
 
 import java.util.List;
 
-@Command(label = "trnslate", usage = "translate [UID] <distance>",
+@Command(label = "translate", usage = "translate [UID] <distance>",
         description = "Translate a player forward to the distance.",
         aliases = {"tr"},
         permission = "player.translate")
