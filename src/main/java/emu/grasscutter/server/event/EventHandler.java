@@ -3,17 +3,14 @@ package emu.grasscutter.server.event;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.EventConsumer;
 
-import java.lang.reflect.ParameterizedType;
-
 public final class EventHandler<T extends Event> {
     private final Class<T> eventClass;
     private EventConsumer<T> listener;
     private HandlerPriority priority;
     private boolean handleCanceled;
     
-    @SuppressWarnings("unchecked")
-    public EventHandler() {
-        this.eventClass = (Class<T>) ((ParameterizedType) (getClass().getGenericSuperclass())).getActualTypeArguments()[0];
+    public EventHandler(Class<T> eventClass) {
+        this.eventClass = eventClass;
     }
 
     /**
