@@ -27,13 +27,13 @@ import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
-import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
+import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
@@ -799,7 +799,7 @@ public class Player {
 				.setMpSettingType(this.getMpSetting())
 				.setNameCardId(this.getNameCardId())
 				.setSignature(this.getSignature())
-				.setAvatarId(HeadImage.newBuilder().setAvatarId(this.getHeadImage()).getAvatarId());
+				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()));
 
 		if (this.getWorld() != null) {
 			onlineInfo.setCurPlayerNumInWorld(this.getWorld().getPlayers().indexOf(this) + 1);
@@ -834,7 +834,7 @@ public class Player {
 	public SocialDetail.Builder getSocialDetail() {
 		SocialDetail.Builder social = SocialDetail.newBuilder()
 				.setUid(this.getUid())
-				.setAvatarId(HeadImage.newBuilder().setAvatarId(this.getHeadImage()).getAvatarId())
+				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()))
 				.setNickname(this.getNickname())
 				.setSignature(this.getSignature())
 				.setLevel(this.getLevel())
