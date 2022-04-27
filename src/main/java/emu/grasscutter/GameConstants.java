@@ -5,7 +5,7 @@ import java.util.Arrays;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 
-public final class GenshinConstants {
+public final class GameConstants {
 	public static String VERSION = "2.6.0";
 	
 	public static final int MAX_TEAMS = 4;

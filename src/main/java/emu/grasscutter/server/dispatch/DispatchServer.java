@@ -55,6 +55,7 @@ public final class DispatchServer {
 		this.initRegion();
 	}
 
+	@Deprecated
 	public HttpServer getServer() {
 		return server;
 	}

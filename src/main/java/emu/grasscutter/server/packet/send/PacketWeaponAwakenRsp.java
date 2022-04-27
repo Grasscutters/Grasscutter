@@ -1,14 +1,14 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.avatar.GenshinAvatar;
-import emu.grasscutter.game.inventory.GenshinItem;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRsp;
 
-public class PacketWeaponAwakenRsp extends GenshinPacket {
+public class PacketWeaponAwakenRsp extends BasePacket {
 	
-	public PacketWeaponAwakenRsp(GenshinAvatar avatar, GenshinItem item, GenshinItem feedWeapon, int oldRefineLevel) {
+	public PacketWeaponAwakenRsp(Avatar avatar, GameItem item, GameItem feedWeapon, int oldRefineLevel) {
 		super(PacketOpcodes.WeaponAwakenRsp);
 
 		WeaponAwakenRsp.Builder proto = WeaponAwakenRsp.newBuilder()

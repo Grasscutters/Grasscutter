@@ -1,10 +1,10 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp;
 
-public class PacketAvatarFetterLevelRewardRsp extends GenshinPacket {
+public class PacketAvatarFetterLevelRewardRsp extends BasePacket {
 	
 	public PacketAvatarFetterLevelRewardRsp(long guid, int fetterLevel, int rewardId) {
 		super(PacketOpcodes.AvatarFetterLevelRewardRsp);

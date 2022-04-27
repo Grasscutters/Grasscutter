@@ -10,16 +10,16 @@ import java.util.Set;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
-import emu.grasscutter.GenshinConstants;
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
@@ -44,7 +44,7 @@ import it.unimi.dsi.fastutil.ints.IntSet;
 
 @Entity
 public class TeamManager {
-	@Transient private GenshinPlayer player;
+	@Transient private Player player;
 	
 	private Map<Integer, TeamInfo> teams;
 	private int currentTeamIndex;
@@ -65,18 +65,18 @@ public class TeamManager {
 		this.teamResonancesConfig = new IntOpenHashSet();
 	}
 	
-	public TeamManager(GenshinPlayer player) {
+	public TeamManager(Player player) {
 		this();
 		this.player = player;
 		
 		this.teams = new HashMap<>();
 		this.currentTeamIndex = 1;
-		for (int i = 1; i <= GenshinConstants.MAX_TEAMS; i++) {
+		for (int i = 1; i <= GameConstants.MAX_TEAMS; i++) {
 			this.teams.put(i, new TeamInfo());
 		}
 	}
 	
-	public GenshinPlayer getPlayer() {
+	public Player getPlayer() {
 		return player;
 	}
 	
@@ -84,7 +84,7 @@ public class TeamManager {
 		return player.getWorld();
 	}
 
-	public void setPlayer(GenshinPlayer player) {
+	public void setPlayer(Player player) {
 		this.player = player;
 	}
 	
@@ -207,7 +207,7 @@ public class TeamManager {
 		}
 	}
 	
-	public void updateTeamEntities(GenshinPacket responsePacket) {
+	public void updateTeamEntities(BasePacket responsePacket) {
 		// Sanity check - Should never happen
 		if (this.getCurrentTeamInfo().getAvatars().size() <= 0) {
 			return;
@@ -287,9 +287,9 @@ public class TeamManager {
 		}
 		
 		// Set team data
-		LinkedHashSet<GenshinAvatar> newTeam = new LinkedHashSet<>();
+		LinkedHashSet<Avatar> newTeam = new LinkedHashSet<>();
 		for (int i = 0; i < list.size(); i++) {
-			GenshinAvatar avatar = getPlayer().getAvatars().getAvatarByGuid(list.get(i));
+			Avatar avatar = getPlayer().getAvatars().getAvatarByGuid(list.get(i));
 			if (avatar == null || newTeam.contains(avatar)) {
 				// Should never happen
 				return;
@@ -299,7 +299,7 @@ public class TeamManager {
 		
 		// Clear current team info and add avatars from our new team
 		teamInfo.getAvatars().clear();
-		for (GenshinAvatar avatar : newTeam) {
+		for (Avatar avatar : newTeam) {
 			teamInfo.addAvatar(avatar);
 		}
 		
@@ -323,9 +323,9 @@ public class TeamManager {
 		TeamInfo teamInfo = this.getMpTeam();
 		
 		// Set team data
-		LinkedHashSet<GenshinAvatar> newTeam = new LinkedHashSet<>();
+		LinkedHashSet<Avatar> newTeam = new LinkedHashSet<>();
 		for (int i = 0; i < list.size(); i++) {
-			GenshinAvatar avatar = getPlayer().getAvatars().getAvatarByGuid(list.get(i));
+			Avatar avatar = getPlayer().getAvatars().getAvatarByGuid(list.get(i));
 			if (avatar == null || newTeam.contains(avatar)) {
 				// Should never happen
 				return;
@@ -335,7 +335,7 @@ public class TeamManager {
 		
 		// Clear current team info and add avatars from our new team
 		teamInfo.getAvatars().clear();
-		for (GenshinAvatar avatar : newTeam) {
+		for (Avatar avatar : newTeam) {
 			teamInfo.addAvatar(avatar);
 		}
 		
@@ -437,7 +437,7 @@ public class TeamManager {
 		getPlayer().sendPacket(new PacketAvatarDieAnimationEndRsp(deadAvatar.getId(), 0));
 	}
 	
-	public boolean reviveAvatar(GenshinAvatar avatar) {
+	public boolean reviveAvatar(Avatar avatar) {
 		for (EntityAvatar entity : getActiveTeam()) {
 			if (entity.getAvatar() == avatar) {
 				if (entity.isAlive()) {
@@ -476,14 +476,14 @@ public class TeamManager {
 		}
 		
 		// Teleport player
-		getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(getPlayer(), EnterType.ENTER_SELF, EnterReason.Revival, 3, GenshinConstants.START_POSITION));
+		getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(getPlayer(), EnterType.ENTER_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
 		
 		// Set player position
 		player.setSceneId(3);
-		player.getPos().set(GenshinConstants.START_POSITION);
+		player.getPos().set(GameConstants.START_POSITION);
 
 		// Packets
-		getPlayer().sendPacket(new GenshinPacket(PacketOpcodes.WorldPlayerReviveRsp));
+		getPlayer().sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));
 	}
 
 	public void saveAvatars() {

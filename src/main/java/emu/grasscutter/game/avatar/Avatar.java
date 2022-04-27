@@ -16,7 +16,7 @@ import dev.morphia.annotations.PostLoad;
 import dev.morphia.annotations.PrePersist;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.custom.OpenConfigEntry;
 import emu.grasscutter.data.def.AvatarData;
@@ -35,10 +35,10 @@ import emu.grasscutter.data.def.WeaponPromoteData;
 import emu.grasscutter.data.def.ItemData.WeaponProperty;
 import emu.grasscutter.data.def.ProudSkillData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Player;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.EquipType;
-import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FetterState;
@@ -57,11 +57,11 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 @Entity(value = "avatars", useDiscriminator = false)
-public class GenshinAvatar {
+public class Avatar {
 	@Id private ObjectId id;
 	@Indexed private int ownerId;	// Id of player that this avatar belongs to
 	
-	@Transient private GenshinPlayer owner;
+	@Transient private Player owner;
 	@Transient private AvatarData data;
 	@Transient private long guid;	// Player unique id
 	private int avatarId;			// Id of avatar
@@ -73,7 +73,7 @@ public class GenshinAvatar {
 	private int satiationPenalty; // ?
 	private float currentHp;
 	
-	@Transient private final Int2ObjectMap<GenshinItem> equips;
+	@Transient private final Int2ObjectMap<GameItem> equips;
 	@Transient private final Int2FloatOpenHashMap fightProp;
 	@Transient private Set<String> extraAbilityEmbryos;
 	
@@ -96,21 +96,21 @@ public class GenshinAvatar {
 	private int nameCardRewardId;
 	private int nameCardId;
 	
-	public GenshinAvatar() {
+	public Avatar() {
 		// Morhpia only!
 		this.equips = new Int2ObjectOpenHashMap<>();
 		this.fightProp = new Int2FloatOpenHashMap();
 		this.extraAbilityEmbryos = new HashSet<>();
 		this.proudSkillBonusMap = new HashMap<>(); 
-		this.fetters = new ArrayList<>(); // TODO Move to genshin avatar
+		this.fetters = new ArrayList<>(); // TODO Move to avatar
 	}
 	
 	// On creation
-	public GenshinAvatar(int avatarId) {
-		this(GenshinData.getAvatarDataMap().get(avatarId));
+	public Avatar(int avatarId) {
+		this(GameData.getAvatarDataMap().get(avatarId));
 	}
 	
-	public GenshinAvatar(AvatarData data) {
+	public Avatar(AvatarData data) {
 		this();
 		this.avatarId = data.getId();
 		this.nameCardRewardId = data.getNameCardRewardId();
@@ -143,7 +143,7 @@ public class GenshinAvatar {
 		this.onLoad();
 	}
 	
-	public GenshinPlayer getPlayer() {
+	public Player getPlayer() {
 		return this.owner;
 	}
 
@@ -163,10 +163,10 @@ public class GenshinAvatar {
 		return ownerId;
 	}
 
-	public void setOwner(GenshinPlayer player) {
+	public void setOwner(Player player) {
 		this.owner = player;
 		this.ownerId = player.getUid();
-		this.guid = player.getNextGenshinGuid();
+		this.guid = player.getNextGameGuid();
 	}
 	
 	public int getSatiation() {
@@ -229,19 +229,19 @@ public class GenshinAvatar {
 		this.promoteLevel = promoteLevel;
 	}
 
-	public Int2ObjectMap<GenshinItem> getEquips() {
+	public Int2ObjectMap<GameItem> getEquips() {
 		return equips;
 	}
 	
-	public GenshinItem getEquipBySlot(EquipType slot) {
+	public GameItem getEquipBySlot(EquipType slot) {
 		return this.getEquips().get(slot.getValue());
 	}
 	
-	private GenshinItem getEquipBySlot(int slotId) {
+	private GameItem getEquipBySlot(int slotId) {
 		return this.getEquips().get(slotId);
 	}
 	
-	public GenshinItem getWeapon() {
+	public GameItem getWeapon() {
 		return this.getEquipBySlot(EquipType.EQUIP_WEAPON);
 	}
 
@@ -270,7 +270,7 @@ public class GenshinAvatar {
 			}
 			if (openData.getNeedAvatarPromoteLevel() <= this.getPromoteLevel()) {
 				int proudSkillId = (openData.getProudSkillGroupId() * 100) + 1;
-				if (GenshinData.getProudSkillDataMap().containsKey(proudSkillId)) {
+				if (GameData.getProudSkillDataMap().containsKey(proudSkillId)) {
 					this.getProudSkillList().add(proudSkillId);
 				}
 			}
@@ -385,7 +385,7 @@ public class GenshinAvatar {
 		return bornTime;
 	}
 	
-	public boolean equipItem(GenshinItem item, boolean shouldRecalc) {
+	public boolean equipItem(GameItem item, boolean shouldRecalc) {
 		EquipType itemEquipType = item.getItemData().getEquipType();
 		if (itemEquipType == EquipType.EQUIP_NONE) {
 			return false;
@@ -416,7 +416,7 @@ public class GenshinAvatar {
 	}
 	
 	public boolean unequipItem(EquipType slot) {
-		GenshinItem item = getEquips().remove(slot.getValue());
+		GameItem item = getEquips().remove(slot.getValue());
 		
 		if (item != null) {
 			item.setEquipCharacter(0);
@@ -434,7 +434,7 @@ public class GenshinAvatar {
 	public void recalcStats(boolean forceSendAbilityChange) {
 		// Setup
 		AvatarData data = this.getAvatarData();
-		AvatarPromoteData promoteData = GenshinData.getAvatarPromoteData(data.getAvatarPromoteId(), this.getPromoteLevel());
+		AvatarPromoteData promoteData = GameData.getAvatarPromoteData(data.getAvatarPromoteId(), this.getPromoteLevel());
 		Int2IntOpenHashMap setMap = new Int2IntOpenHashMap();
 		
 		// Extra ability embryos
@@ -476,21 +476,21 @@ public class GenshinAvatar {
 		// Artifacts
 		for (int slotId = 1; slotId <= 5; slotId++) {
 			// Get artifact
-			GenshinItem equip = this.getEquipBySlot(slotId);
+			GameItem equip = this.getEquipBySlot(slotId);
 			if (equip == null) {
 				continue;
 			}
 			// Artifact main stat
-			ReliquaryMainPropData mainPropData = GenshinData.getReliquaryMainPropDataMap().get(equip.getMainPropId());
+			ReliquaryMainPropData mainPropData = GameData.getReliquaryMainPropDataMap().get(equip.getMainPropId());
 			if (mainPropData != null) {
-				ReliquaryLevelData levelData = GenshinData.getRelicLevelData(equip.getItemData().getRankLevel(), equip.getLevel());
+				ReliquaryLevelData levelData = GameData.getRelicLevelData(equip.getItemData().getRankLevel(), equip.getLevel());
 				if (levelData != null) {
 					this.addFightProperty(mainPropData.getFightProp(), levelData.getPropValue(mainPropData.getFightProp()));
 				}	
 			}
 			// Artifact sub stats
 			for (int appendPropId : equip.getAppendPropIdList()) {
-				ReliquaryAffixData affixData = GenshinData.getReliquaryAffixDataMap().get(appendPropId);
+				ReliquaryAffixData affixData = GameData.getReliquaryAffixDataMap().get(appendPropId);
 				if (affixData != null) {
 					this.addFightProperty(affixData.getFightProp(), affixData.getPropValue());
 				}
@@ -503,7 +503,7 @@ public class GenshinAvatar {
 
 		// Set stuff
 		for (Int2IntOpenHashMap.Entry e : setMap.int2IntEntrySet()) {
-			ReliquarySetData setData = GenshinData.getReliquarySetDataMap().get(e.getIntKey());
+			ReliquarySetData setData = GameData.getReliquarySetDataMap().get(e.getIntKey());
 			if (setData == null) {
 				continue;
 			}
@@ -516,7 +516,7 @@ public class GenshinAvatar {
 				if (amount >= setData.getSetNeedNum()[setIndex]) {
 					int affixId = (setData.getEquipAffixId() * 10) + setIndex;
 					
-					EquipAffixData affix = GenshinData.getEquipAffixDataMap().get(affixId);
+					EquipAffixData affix = GameData.getEquipAffixDataMap().get(affixId);
 					if (affix == null) {
 						continue;
 					}
@@ -535,17 +535,17 @@ public class GenshinAvatar {
 		}
 		
 		// Weapon
-		GenshinItem weapon = this.getWeapon();
+		GameItem weapon = this.getWeapon();
 		if (weapon != null) {
 			// Add stats
-			WeaponCurveData curveData = GenshinData.getWeaponCurveDataMap().get(weapon.getLevel());
+			WeaponCurveData curveData = GameData.getWeaponCurveDataMap().get(weapon.getLevel());
 			if (curveData != null) {
 				for (WeaponProperty weaponProperty : weapon.getItemData().getWeaponProperties()) {
 					this.addFightProperty(weaponProperty.getFightProp(), weaponProperty.getInitValue() * curveData.getMultByProp(weaponProperty.getType()));
 				}
 			}
 			// Weapon promotion stats
-			WeaponPromoteData wepPromoteData = GenshinData.getWeaponPromoteData(weapon.getItemData().getWeaponPromoteId(), weapon.getPromoteLevel());
+			WeaponPromoteData wepPromoteData = GameData.getWeaponPromoteData(weapon.getItemData().getWeaponPromoteId(), weapon.getPromoteLevel());
 			if (wepPromoteData != null) {
 				for (FightPropData prop : wepPromoteData.getAddProps()) {
 					if (prop.getValue() == 0f || prop.getProp() == null) {
@@ -563,7 +563,7 @@ public class GenshinAvatar {
 					}
 					// Calculate affix id
 					int affixId = (af * 10) + weapon.getRefinement();
-					EquipAffixData affix = GenshinData.getEquipAffixDataMap().get(affixId);
+					EquipAffixData affix = GameData.getEquipAffixDataMap().get(affixId);
 					if (affix == null) {
 						continue;
 					}
@@ -580,7 +580,7 @@ public class GenshinAvatar {
 		}
 		
 		// Add proud skills and unlock them if needed
-		AvatarSkillDepotData skillDepot = GenshinData.getAvatarSkillDepotDataMap().get(this.getSkillDepotId());
+		AvatarSkillDepotData skillDepot = GameData.getAvatarSkillDepotDataMap().get(this.getSkillDepotId());
 		this.getProudSkillList().clear();
 		for (InherentProudSkillOpens openData : skillDepot.getInherentProudSkillOpens()) {
 			if (openData.getProudSkillGroupId() == 0) {
@@ -588,7 +588,7 @@ public class GenshinAvatar {
 			}
 			if (openData.getNeedAvatarPromoteLevel() <= this.getPromoteLevel()) {
 				int proudSkillId = (openData.getProudSkillGroupId() * 100) + 1;
-				if (GenshinData.getProudSkillDataMap().containsKey(proudSkillId)) {
+				if (GameData.getProudSkillDataMap().containsKey(proudSkillId)) {
 					this.getProudSkillList().add(proudSkillId);
 				}
 			}
@@ -596,7 +596,7 @@ public class GenshinAvatar {
 
 		// Proud skills
 		for (int proudSkillId : this.getProudSkillList()) {
-			ProudSkillData proudSkillData = GenshinData.getProudSkillDataMap().get(proudSkillId);
+			ProudSkillData proudSkillData = GameData.getProudSkillDataMap().get(proudSkillId);
 			if (proudSkillData == null) {
 				continue;
 			} 
@@ -613,7 +613,7 @@ public class GenshinAvatar {
 		// Constellations
 		if (this.getTalentIdList().size() > 0) {
 			for (int talentId : this.getTalentIdList()) {
-				AvatarTalentData avatarTalentData = GenshinData.getAvatarTalentDataMap().get(talentId);
+				AvatarTalentData avatarTalentData = GameData.getAvatarTalentDataMap().get(talentId);
 				if (avatarTalentData == null) {
 					return;
 				}
@@ -657,7 +657,7 @@ public class GenshinAvatar {
 			return;
 		}
 		
-		OpenConfigEntry entry = GenshinData.getOpenConfigEntries().get(openConfig);
+		OpenConfigEntry entry = GameData.getOpenConfigEntries().get(openConfig);
 		if (entry == null) {
 			if (forceAdd) {
 				// Add config string to ability skill list anyways
@@ -684,14 +684,14 @@ public class GenshinAvatar {
 				
 		if (this.getTalentIdList().size() > 0) {
 			for (int talentId : this.getTalentIdList()) {
-				AvatarTalentData avatarTalentData = GenshinData.getAvatarTalentDataMap().get(talentId);
+				AvatarTalentData avatarTalentData = GameData.getAvatarTalentDataMap().get(talentId);
 				
 				if (avatarTalentData == null || avatarTalentData.getOpenConfig() == null || avatarTalentData.getOpenConfig().length() == 0) {
 					continue;
 				}
 				
 				// Get open config to find which skill should be boosted
-				OpenConfigEntry entry = GenshinData.getOpenConfigEntries().get(avatarTalentData.getOpenConfig());
+				OpenConfigEntry entry = GameData.getOpenConfigEntries().get(avatarTalentData.getOpenConfig());
 				if (entry == null) {
 					continue;
 				}
@@ -712,7 +712,7 @@ public class GenshinAvatar {
 				}
 				
 				// Get proud skill group id
-				AvatarSkillData skillData = GenshinData.getAvatarSkillDataMap().get(skillId);
+				AvatarSkillData skillData = GameData.getAvatarSkillDataMap().get(skillId);
 				
 				if (skillData == null) {
 					continue;
@@ -785,7 +785,7 @@ public class GenshinAvatar {
 				.setWearingFlycloakId(this.getFlyCloak())
 				.setCostumeId(this.getCostume());
 		
-		for (GenshinItem item : this.getEquips().values()) {
+		for (GameItem item : this.getEquips().values()) {
 			avatarInfo.addEquipGuidList(item.getGuid());
 		}
 		

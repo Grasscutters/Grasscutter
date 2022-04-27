@@ -1,11 +1,11 @@
 package emu.grasscutter.server.packet.send;
 
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.CardProductRewardNotifyOuterClass.CardProductRewardNotify;
 
-public class PacketCardProductRewardNotify extends GenshinPacket {
+public class PacketCardProductRewardNotify extends BasePacket {
 
     public PacketCardProductRewardNotify(int remainsDay) {
         super(PacketOpcodes.CardProductRewardNotify);

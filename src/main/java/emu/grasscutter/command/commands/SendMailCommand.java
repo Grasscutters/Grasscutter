@@ -4,7 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Player;
 import emu.grasscutter.game.Mail;
 import emu.grasscutter.server.packet.send.PacketMailChangeNotify;
 
@@ -27,7 +27,7 @@ public class SendMailCommand implements CommandHandler {
 
     // Yes this is awful and I hate it.
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         int senderId;
         if(sender != null) {
             senderId = sender.getUid();
@@ -77,7 +77,7 @@ public class SendMailCommand implements CommandHandler {
                                 Grasscutter.getGameServer().getPlayerByUid(mailBuilder.recipient, true).sendMail(mailBuilder.mail);
                                 CommandHandler.sendMessage(sender, "Message sent to user " + mailBuilder.recipient + "!");
                             } else {
-                                for (GenshinPlayer player : DatabaseHelper.getAllPlayers()) {
+                                for (Player player : DatabaseHelper.getAllPlayers()) {
                                     Grasscutter.getGameServer().getPlayerByUid(player.getUid(), true).sendMail(mailBuilder.mail);
                                 }
                                 CommandHandler.sendMessage(sender, "Message sent to all users!");

@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.CurveInfo;
 
 @ResourceType(name = "WeaponCurveExcelConfigData.json")
-public class WeaponCurveData extends GenshinResource {
+public class WeaponCurveData extends GameResource {
 	private int Level;
     private CurveInfo[] CurveInfos;
     

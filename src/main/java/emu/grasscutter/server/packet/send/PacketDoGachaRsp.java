@@ -3,13 +3,13 @@ package emu.grasscutter.server.packet.send;
 import java.util.List;
 
 import emu.grasscutter.game.gacha.GachaBanner;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DoGachaRspOuterClass.DoGachaRsp;
 import emu.grasscutter.net.proto.GachaItemOuterClass.GachaItem;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 
-public class PacketDoGachaRsp extends GenshinPacket {
+public class PacketDoGachaRsp extends BasePacket {
 	
 	public PacketDoGachaRsp(GachaBanner banner, List<GachaItem> list) {
 		super(PacketOpcodes.DoGachaRsp);

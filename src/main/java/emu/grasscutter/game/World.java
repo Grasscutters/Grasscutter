@@ -8,19 +8,19 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import emu.grasscutter.game.entity.GenshinEntity;
+import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.SceneData;
-import emu.grasscutter.game.GenshinPlayer.SceneLoadState;
+import emu.grasscutter.game.Player.SceneLoadState;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
@@ -40,10 +40,10 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-public class World implements Iterable<GenshinPlayer> {
-	private final GenshinPlayer owner;
-	private final List<GenshinPlayer> players;
-	private final Int2ObjectMap<GenshinScene> scenes;
+public class World implements Iterable<Player> {
+	private final Player owner;
+	private final List<Player> players;
+	private final Int2ObjectMap<Scene> scenes;
 	
 	private int levelEntityId;
 	private int nextEntityId = 0;
@@ -52,11 +52,11 @@ public class World implements Iterable<GenshinPlayer> {
 
 	private boolean isMultiplayer;
 	
-	public World(GenshinPlayer player) {
+	public World(Player player) {
 		this(player, false);
 	}
 	
-	public World(GenshinPlayer player, boolean isMultiplayer) {
+	public World(Player player, boolean isMultiplayer) {
 		this.owner = player;
 		this.players = Collections.synchronizedList(new ArrayList<>());
 		this.scenes = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
@@ -68,7 +68,7 @@ public class World implements Iterable<GenshinPlayer> {
 		this.owner.getServer().registerWorld(this);
 	}
 	
-	public GenshinPlayer getHost() {
+	public Player getHost() {
 		return owner;
 	}
 
@@ -95,25 +95,25 @@ public class World implements Iterable<GenshinPlayer> {
 		this.worldLevel = worldLevel;
 	}
 
-	public List<GenshinPlayer> getPlayers() {
+	public List<Player> getPlayers() {
 		return players;
 	}
 	
-	public Int2ObjectMap<GenshinScene> getScenes() {
+	public Int2ObjectMap<Scene> getScenes() {
 		return this.scenes;
 	}
 	
-	public GenshinScene getSceneById(int sceneId) {
+	public Scene getSceneById(int sceneId) {
 		// Get scene normally
-		GenshinScene scene = getScenes().get(sceneId);
+		Scene scene = getScenes().get(sceneId);
 		if (scene != null) {
 			return scene;
 		}
 		
 		// Create scene from scene data if it doesnt exist
-		SceneData sceneData = GenshinData.getSceneDataMap().get(sceneId);
+		SceneData sceneData = GameData.getSceneDataMap().get(sceneId);
 		if (sceneData != null) {
-			scene = new GenshinScene(this, sceneData);
+			scene = new Scene(this, sceneData);
 			this.registerScene(scene);
 			return scene;
 		}
@@ -133,7 +133,7 @@ public class World implements Iterable<GenshinPlayer> {
 		return (idType.getId() << 24) + ++this.nextEntityId;
 	}
 	
-	public synchronized void addPlayer(GenshinPlayer player) {
+	public synchronized void addPlayer(Player player) {
 		// Check if player already in
 		if (getPlayers().contains(player)) {
 			return;
@@ -159,7 +159,7 @@ public class World implements Iterable<GenshinPlayer> {
 		}
 		
 		// Add to scene
-		GenshinScene scene = this.getSceneById(player.getSceneId());
+		Scene scene = this.getSceneById(player.getSceneId());
 		scene.addPlayer(player);
 
 		// Info packet for other players
@@ -168,7 +168,7 @@ public class World implements Iterable<GenshinPlayer> {
 		}
 	}
 
-	public synchronized void removePlayer(GenshinPlayer player) {
+	public synchronized void removePlayer(Player player) {
 		// Remove team entities
 		player.sendPacket(
 				new PacketDelTeamEntityNotify(
@@ -182,7 +182,7 @@ public class World implements Iterable<GenshinPlayer> {
 		player.setWorld(null);
 		
 		// Remove from scene
-		GenshinScene scene = this.getSceneById(player.getSceneId());
+		Scene scene = this.getSceneById(player.getSceneId());
 		scene.removePlayer(player);
 
 		// Info packet for other players
@@ -192,8 +192,8 @@ public class World implements Iterable<GenshinPlayer> {
 
 		// Disband world if host leaves
 		if (getHost() == player) {
-			List<GenshinPlayer> kicked = new ArrayList<>(this.getPlayers());
-			for (GenshinPlayer victim : kicked) {
+			List<Player> kicked = new ArrayList<>(this.getPlayers());
+			for (Player victim : kicked) {
 				World world = new World(victim);
 				world.addPlayer(victim);
 				
@@ -202,20 +202,20 @@ public class World implements Iterable<GenshinPlayer> {
 		}
 	}
 	
-	public void registerScene(GenshinScene scene) {
+	public void registerScene(Scene scene) {
 		this.getScenes().put(scene.getId(), scene);
 	}
 	
-	public void deregisterScene(GenshinScene scene) {
+	public void deregisterScene(Scene scene) {
 		this.getScenes().remove(scene.getId());
 	}
 	
-	public boolean transferPlayerToScene(GenshinPlayer player, int sceneId, Position pos) {
-		if (GenshinData.getSceneDataMap().get(sceneId) == null) {
+	public boolean transferPlayerToScene(Player player, int sceneId, Position pos) {
+		if (GameData.getSceneDataMap().get(sceneId) == null) {
 			return false;
 		}
 		
-		GenshinScene oldScene = null;
+		Scene oldScene = null;
 
 		if (player.getScene() != null) {
 			oldScene = player.getScene();
@@ -228,7 +228,7 @@ public class World implements Iterable<GenshinPlayer> {
 			oldScene.removePlayer(player);
 		}
 		
-		GenshinScene newScene = this.getSceneById(sceneId);
+		Scene newScene = this.getSceneById(sceneId);
 		newScene.addPlayer(player);
 		player.getPos().set(pos);
 		
@@ -245,8 +245,8 @@ public class World implements Iterable<GenshinPlayer> {
 		return true;
 	}
 	
-	private void updatePlayerInfos(GenshinPlayer paramPlayer) {
-		for (GenshinPlayer player : getPlayers()) {
+	private void updatePlayerInfos(Player paramPlayer) {
+		for (Player player : getPlayers()) {
 			// Dont send packets if player is loading in and filter out joining player
 			if (!player.hasSentAvatarDataNotify() || player.getSceneLoadState().getValue() < SceneLoadState.INIT.getValue() || player == paramPlayer) {
 				continue;
@@ -269,15 +269,15 @@ public class World implements Iterable<GenshinPlayer> {
 		}
 	}
 	
-	public void broadcastPacket(GenshinPacket packet) {
+	public void broadcastPacket(BasePacket packet) {
     	// Send to all players - might have to check if player has been sent data packets
-    	for (GenshinPlayer player : this.getPlayers()) {
+    	for (Player player : this.getPlayers()) {
     		player.getSession().send(packet);
     	}
 	}
 	
 	public void onTick() {
-		for (GenshinScene scene : this.getScenes().values()) {
+		for (Scene scene : this.getScenes().values()) {
 			scene.onTick();
 		}
 	}
@@ -287,7 +287,7 @@ public class World implements Iterable<GenshinPlayer> {
 	}
 
 	@Override
-	public Iterator<GenshinPlayer> iterator() {
+	public Iterator<Player> iterator() {
 		return getPlayers().iterator();
 	}
 }

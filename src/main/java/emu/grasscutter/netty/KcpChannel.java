@@ -8,7 +8,7 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
-public abstract class MihoyoKcpChannel extends ChannelInboundHandlerAdapter {
+public abstract class KcpChannel extends ChannelInboundHandlerAdapter {
 	private UkcpChannel kcpChannel;
 	private ChannelHandlerContext ctx;
 	private boolean isActive;

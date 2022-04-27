@@ -2,26 +2,26 @@ package emu.grasscutter.server.packet.send;
 
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Player;
 import emu.grasscutter.game.Mail;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PacketMailChangeNotify extends GenshinPacket {
+public class PacketMailChangeNotify extends BasePacket {
 
-    public PacketMailChangeNotify(GenshinPlayer player, Mail message) {
+    public PacketMailChangeNotify(Player player, Mail message) {
         this (player, new ArrayList<Mail>(){{add(message);}});
     }
 
-    public PacketMailChangeNotify(GenshinPlayer player, List<Mail> mailList) {
+    public PacketMailChangeNotify(Player player, List<Mail> mailList) {
         this(player, mailList, null);
     }
 
-    public PacketMailChangeNotify(GenshinPlayer player, List<Mail> mailList, List<Integer> delMailIdList) {
+    public PacketMailChangeNotify(Player player, List<Mail> mailList, List<Integer> delMailIdList) {
         super(PacketOpcodes.MailChangeNotify);
 
         MailChangeNotifyOuterClass.MailChangeNotify.Builder proto = MailChangeNotifyOuterClass.MailChangeNotify.newBuilder();

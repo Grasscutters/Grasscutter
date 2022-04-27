@@ -1,10 +1,10 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.GenshinScene;
+import emu.grasscutter.game.Player;
+import emu.grasscutter.game.Scene;
 import emu.grasscutter.game.World;
-import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
@@ -28,16 +28,16 @@ public class EntityItem extends EntityGadget {
 	private final Position pos;
 	private final Position rot;
 	
-	private final GenshinItem item;
+	private final GameItem item;
 	private final long guid;
 	
-	public EntityItem(GenshinScene scene, GenshinPlayer player, ItemData itemData, Position pos, int count) {
+	public EntityItem(Scene scene, Player player, ItemData itemData, Position pos, int count) {
 		super(scene);
 		this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
 		this.pos = new Position(pos);
 		this.rot = new Position();
-		this.guid = player.getNextGenshinGuid();
-		this.item = new GenshinItem(itemData, count);
+		this.guid = player.getNextGameGuid();
+		this.item = new GameItem(itemData, count);
 	}
 	
 	@Override
@@ -45,7 +45,7 @@ public class EntityItem extends EntityGadget {
 		return this.id;
 	}
 	
-	private GenshinItem getItem() {
+	private GameItem getItem() {
 		return this.item;
 	}
 

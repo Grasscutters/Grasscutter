@@ -1,10 +1,10 @@
 package emu.grasscutter.data.def;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "AvatarFlycloakExcelConfigData.json")
-public class AvatarFlycloakData extends GenshinResource {
+public class AvatarFlycloakData extends GameResource {
 	private int FlycloakId;
     private long NameTextMapHash;
 
