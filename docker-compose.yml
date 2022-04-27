@@ -43,6 +43,8 @@ services:
       rm -rf ./src/config.json;
       mv config.json ./src;
       echo config generated"]
+    stdin_open: true
+    tty: true
     profiles:
       - donotstart
 
