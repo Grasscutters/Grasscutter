@@ -2,12 +2,12 @@ package emu.grasscutter.server.packet.send;
 
 import java.util.List;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.ClientAbilityInitFinishNotifyOuterClass.ClientAbilityInitFinishNotify;
 
-public class PacketClientAbilityInitFinishNotify extends GenshinPacket {
+public class PacketClientAbilityInitFinishNotify extends BasePacket {
 	
 	public PacketClientAbilityInitFinishNotify(List<AbilityInvokeEntry> entries) {
 		super(PacketOpcodes.ClientAbilityInitFinishNotify, true);

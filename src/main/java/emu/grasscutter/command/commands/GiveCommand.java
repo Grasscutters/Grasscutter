@@ -3,10 +3,10 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.Player;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
 
@@ -18,7 +18,7 @@ import java.util.List;
 public final class GiveCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         int target, item, lvl, amount = 1;
         if (sender == null && args.size() < 2) {
             CommandHandler.sendMessage(null, "Usage: give <player> <itemId|itemName> [amount] [level]");
@@ -99,14 +99,14 @@ public final class GiveCommand implements CommandHandler {
                 break;
         }
 
-        GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
 
         if (targetPlayer == null) {
             CommandHandler.sendMessage(sender, "Player not found.");
             return;
         }
 
-        ItemData itemData = GenshinData.getItemDataMap().get(item);
+        ItemData itemData = GameData.getItemDataMap().get(item);
         if (itemData == null) {
             CommandHandler.sendMessage(sender, "Invalid item id.");
             return;
@@ -121,11 +121,11 @@ public final class GiveCommand implements CommandHandler {
                     String.format("Given %s with level %s %s times to %s", item, lvl, amount, target));
     }
 
-    private void item(GenshinPlayer player, ItemData itemData, int amount, int lvl) {
+    private void item(Player player, ItemData itemData, int amount, int lvl) {
         if (itemData.isEquip()) {
-            List<GenshinItem> items = new LinkedList<>();
+            List<GameItem> items = new LinkedList<>();
             for (int i = 0; i < amount; i++) {
-                GenshinItem item = new GenshinItem(itemData);
+                GameItem item = new GameItem(itemData);
                 item.setCount(amount);
                 item.setLevel(lvl);
                 item.setPromoteLevel(0);
@@ -146,9 +146,9 @@ public final class GiveCommand implements CommandHandler {
             }
             player.getInventory().addItems(items, ActionReason.SubfieldDrop);
         } else {
-            GenshinItem genshinItem = new GenshinItem(itemData);
-            genshinItem.setCount(amount);
-            player.getInventory().addItem(genshinItem, ActionReason.SubfieldDrop);
+            GameItem item = new GameItem(itemData);
+            item.setCount(amount);
+            player.getInventory().addItem(item, ActionReason.SubfieldDrop);
         }
     }
 }

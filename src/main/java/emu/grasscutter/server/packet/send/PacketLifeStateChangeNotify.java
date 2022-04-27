@@ -1,13 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.entity.GenshinEntity;
+import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.LifeState;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify;
 
-public class PacketLifeStateChangeNotify extends GenshinPacket {
-	public PacketLifeStateChangeNotify(GenshinEntity attacker, GenshinEntity target, LifeState lifeState) {
+public class PacketLifeStateChangeNotify extends BasePacket {
+	public PacketLifeStateChangeNotify(GameEntity attacker, GameEntity target, LifeState lifeState) {
 		super(PacketOpcodes.LifeStateChangeNotify);
 
 		LifeStateChangeNotify proto = LifeStateChangeNotify.newBuilder()
@@ -18,7 +18,7 @@ public class PacketLifeStateChangeNotify extends GenshinPacket {
 		
 		this.setData(proto);
 	}
-	public PacketLifeStateChangeNotify(int attackerId, GenshinEntity target, LifeState lifeState) {
+	public PacketLifeStateChangeNotify(int attackerId, GameEntity target, LifeState lifeState) {
 		super(PacketOpcodes.LifeStateChangeNotify);
 
 		LifeStateChangeNotify proto = LifeStateChangeNotify.newBuilder()

@@ -4,12 +4,12 @@ import java.util.List;
 
 import com.mongodb.client.result.DeleteResult;
 import dev.morphia.query.experimental.filters.Filters;
-import emu.grasscutter.GenshinConstants;
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.Player;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.friends.Friendship;
-import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.inventory.GameItem;
 
 public final class DatabaseHelper {
 	public static Account createAccount(String username) {
@@ -26,7 +26,7 @@ public final class DatabaseHelper {
 		// Make sure there are no id collisions
 		if (reservedId > 0) {
 			// Cannot make account with the same uid as the server console
-			if (reservedId == GenshinConstants.SERVER_CONSOLE_UID) {
+			if (reservedId == GameConstants.SERVER_CONSOLE_UID) {
 				return null;
 			}
 			exists = DatabaseHelper.getAccountByPlayerId(reservedId);
@@ -90,19 +90,19 @@ public final class DatabaseHelper {
 		return DatabaseManager.getDatastore().find(Account.class).filter(Filters.eq("username", username)).delete().getDeletedCount() > 0;
 	}
 
-	public static List<GenshinPlayer> getAllPlayers() {
-		return DatabaseManager.getDatastore().find(GenshinPlayer.class).stream().toList();
+	public static List<Player> getAllPlayers() {
+		return DatabaseManager.getDatastore().find(Player.class).stream().toList();
 	}
 
-	public static GenshinPlayer getPlayerById(int id) {
-		return DatabaseManager.getDatastore().find(GenshinPlayer.class).filter(Filters.eq("_id", id)).first();
+	public static Player getPlayerById(int id) {
+		return DatabaseManager.getDatastore().find(Player.class).filter(Filters.eq("_id", id)).first();
 	}
 
 	public static boolean checkPlayerExists(int id) {
-		return DatabaseManager.getDatastore().find(GenshinPlayer.class).filter(Filters.eq("_id", id)).first() != null;
+		return DatabaseManager.getDatastore().find(Player.class).filter(Filters.eq("_id", id)).first() != null;
 	}
 
-	public static synchronized GenshinPlayer createPlayer(GenshinPlayer character, int reservedId) {
+	public static synchronized Player createPlayer(Player character, int reservedId) {
 		// Check if reserved id
 		int id;
 		if (reservedId > 0 && !checkPlayerExists(reservedId)) {
@@ -127,42 +127,42 @@ public final class DatabaseHelper {
 			id = reservedId;
 		} else {
 			do {
-				id = DatabaseManager.getNextId(GenshinPlayer.class);
+				id = DatabaseManager.getNextId(Player.class);
 			}
 			while (checkPlayerExists(id));
 		}
 		return id;
 	}
 
-	public static void savePlayer(GenshinPlayer character) {
+	public static void savePlayer(Player character) {
 		DatabaseManager.getDatastore().save(character);
 	}
 
-	public static void saveAvatar(GenshinAvatar avatar) {
+	public static void saveAvatar(Avatar avatar) {
 		DatabaseManager.getDatastore().save(avatar);
 	}
 
-	public static List<GenshinAvatar> getAvatars(GenshinPlayer player) {
-		return DatabaseManager.getDatastore().find(GenshinAvatar.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
+	public static List<Avatar> getAvatars(Player player) {
+		return DatabaseManager.getDatastore().find(Avatar.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
 
-	public static void saveItem(GenshinItem item) {
+	public static void saveItem(GameItem item) {
 		DatabaseManager.getDatastore().save(item);
 	}
 
-	public static boolean deleteItem(GenshinItem item) {
+	public static boolean deleteItem(GameItem item) {
 		DeleteResult result = DatabaseManager.getDatastore().delete(item);
 		return result.wasAcknowledged();
 	}
 
-	public static List<GenshinItem> getInventoryItems(GenshinPlayer player) {
-		return DatabaseManager.getDatastore().find(GenshinItem.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
+	public static List<GameItem> getInventoryItems(Player player) {
+		return DatabaseManager.getDatastore().find(GameItem.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
-	public static List<Friendship> getFriends(GenshinPlayer player) {
+	public static List<Friendship> getFriends(Player player) {
 		return DatabaseManager.getDatastore().find(Friendship.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
 
-	public static List<Friendship> getReverseFriends(GenshinPlayer player) {
+	public static List<Friendship> getReverseFriends(Player player) {
 		return DatabaseManager.getDatastore().find(Friendship.class).filter(Filters.eq("friendId", player.getUid())).stream().toList();
 	}
 

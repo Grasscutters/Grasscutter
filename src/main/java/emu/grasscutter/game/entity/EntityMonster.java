@@ -1,10 +1,10 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.def.MonsterCurveData;
 import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.game.GenshinScene;
+import emu.grasscutter.game.Scene;
 import emu.grasscutter.game.World;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
@@ -27,7 +27,7 @@ import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 
-public class EntityMonster extends GenshinEntity {
+public class EntityMonster extends GameEntity {
 	private final MonsterData monsterData;
 	private final Int2FloatOpenHashMap fightProp;
 	
@@ -41,7 +41,7 @@ public class EntityMonster extends GenshinEntity {
 	private int configId;
 	private int poseId;
 	
-	public EntityMonster(GenshinScene scene, MonsterData monsterData, Position pos, int level) {
+	public EntityMonster(Scene scene, MonsterData monsterData, Position pos, int level) {
 		super(scene);
 		this.id = getWorld().getNextEntityId(EntityIdType.MONSTER);
 		this.monsterData = monsterData;
@@ -160,7 +160,7 @@ public class EntityMonster extends GenshinEntity {
 		this.setFightProperty(FightProperty.FIGHT_PROP_ICE_SUB_HURT, data.getIceSubHurt());
 		
 		// Level curve
-		MonsterCurveData curve = GenshinData.getMonsterCurveDataMap().get(this.getLevel());
+		MonsterCurveData curve = GameData.getMonsterCurveDataMap().get(this.getLevel());
 		if (curve != null) {
 			for (PropGrowCurve growCurve : data.getPropGrowCurves()) {
 				FightProperty prop = FightProperty.getPropByName(growCurve.getType());

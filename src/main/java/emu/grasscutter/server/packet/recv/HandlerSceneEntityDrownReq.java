@@ -2,7 +2,7 @@ package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.entity.GenshinEntity;
+import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.net.packet.Opcodes;
@@ -19,7 +19,7 @@ public class HandlerSceneEntityDrownReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         SceneEntityDrownReq req = SceneEntityDrownReq.parseFrom(payload);
 
-        GenshinEntity entity = session.getPlayer().getScene().getEntityById(req.getEntityId());
+        GameEntity entity = session.getPlayer().getScene().getEntityById(req.getEntityId());
 
         if (entity == null || !(entity instanceof EntityMonster || entity instanceof EntityAvatar)) {
         	return;

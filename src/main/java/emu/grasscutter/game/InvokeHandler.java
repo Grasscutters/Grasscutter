@@ -2,16 +2,16 @@ package emu.grasscutter.game;
 
 import java.util.ArrayList;
 import java.util.List;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType;
 
 public class InvokeHandler<T> {
 	private final List<T> entryListForwardAll;
 	private final List<T> entryListForwardAllExceptCur;
 	private final List<T> entryListForwardHost;
-	private final Class<? extends GenshinPacket> packetClass;
+	private final Class<? extends BasePacket> packetClass;
 	
-	public InvokeHandler(Class<? extends GenshinPacket> packetClass) {
+	public InvokeHandler(Class<? extends BasePacket> packetClass) {
 		this.entryListForwardAll = new ArrayList<>();
 		this.entryListForwardAllExceptCur = new ArrayList<>();
 		this.entryListForwardHost = new ArrayList<>();
@@ -28,7 +28,7 @@ public class InvokeHandler<T> {
 		}
 	}
 	
-	public synchronized void update(GenshinPlayer player) {
+	public synchronized void update(Player player) {
 		if (player.getWorld() == null) {
 			this.entryListForwardAll.clear();
 			this.entryListForwardAllExceptCur.clear();
@@ -38,17 +38,17 @@ public class InvokeHandler<T> {
 		
 		try {
 			if (entryListForwardAll.size() > 0) {
-				GenshinPacket packet = packetClass.getDeclaredConstructor(List.class).newInstance(this.entryListForwardAll);
+				BasePacket packet = packetClass.getDeclaredConstructor(List.class).newInstance(this.entryListForwardAll);
 				player.getScene().broadcastPacket(packet);
 				this.entryListForwardAll.clear();
 			}
 			if (entryListForwardAllExceptCur.size() > 0) {
-				GenshinPacket packet = packetClass.getDeclaredConstructor(List.class).newInstance(this.entryListForwardAllExceptCur);
+				BasePacket packet = packetClass.getDeclaredConstructor(List.class).newInstance(this.entryListForwardAllExceptCur);
 				player.getScene().broadcastPacketToOthers(player, packet);
 				this.entryListForwardAllExceptCur.clear();
 			}
 			if (entryListForwardHost.size() > 0) {
-				GenshinPacket packet = packetClass.getDeclaredConstructor(List.class).newInstance(this.entryListForwardHost);
+				BasePacket packet = packetClass.getDeclaredConstructor(List.class).newInstance(this.entryListForwardHost);
 				player.getWorld().getHost().sendPacket(packet);
 				this.entryListForwardHost.clear();
 			}

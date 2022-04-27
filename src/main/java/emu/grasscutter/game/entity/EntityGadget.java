@@ -1,11 +1,11 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.game.GenshinScene;
+import emu.grasscutter.game.Scene;
 import emu.grasscutter.game.World;
 
-public abstract class EntityGadget extends GenshinEntity {
+public abstract class EntityGadget extends GameEntity {
 
-	public EntityGadget(GenshinScene scene) {
+	public EntityGadget(Scene scene) {
 		super(scene);
 	}
 	

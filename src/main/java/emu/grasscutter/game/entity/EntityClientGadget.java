@@ -1,7 +1,7 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.GenshinScene;
+import emu.grasscutter.game.Player;
+import emu.grasscutter.game.Scene;
 import emu.grasscutter.game.World;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
@@ -24,7 +24,7 @@ import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 
 public class EntityClientGadget extends EntityGadget {
-	private final GenshinPlayer owner;
+	private final Player owner;
 	
 	private final Position pos;
 	private final Position rot;
@@ -36,7 +36,7 @@ public class EntityClientGadget extends EntityGadget {
 	private int targetEntityId;
 	private boolean asyncLoad;
 	
-	public EntityClientGadget(GenshinScene scene, GenshinPlayer player, EvtCreateGadgetNotify notify) {
+	public EntityClientGadget(Scene scene, Player player, EvtCreateGadgetNotify notify) {
 		super(scene);
 		this.owner = player;
 		this.id = notify.getEntityId();
@@ -55,7 +55,7 @@ public class EntityClientGadget extends EntityGadget {
 		return configId;
 	}
 	
-	public GenshinPlayer getOwner() {
+	public Player getOwner() {
 		return owner;
 	}
 	

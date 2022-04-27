@@ -1,11 +1,11 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo;
 import emu.grasscutter.net.proto.SceneEntityMoveNotifyOuterClass.SceneEntityMoveNotify;
 
-public class PacketSceneEntityMoveNotify extends GenshinPacket {
+public class PacketSceneEntityMoveNotify extends BasePacket {
 	
 	public PacketSceneEntityMoveNotify(EntityMoveInfo moveInfo) {
 		super(PacketOpcodes.SceneEntityMoveNotify, true);

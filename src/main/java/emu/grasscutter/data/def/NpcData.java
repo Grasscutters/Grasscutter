@@ -1,10 +1,10 @@
 package emu.grasscutter.data.def;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "NpcExcelConfigData.json")
-public class NpcData extends GenshinResource {
+public class NpcData extends GameResource {
 	private int Id;
 	
 	private String JsonName;

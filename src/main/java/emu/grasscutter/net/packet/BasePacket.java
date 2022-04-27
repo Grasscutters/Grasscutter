@@ -7,7 +7,7 @@ import com.google.protobuf.GeneratedMessageV3;
 import emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead;
 import emu.grasscutter.utils.Crypto;
 
-public class GenshinPacket {
+public class BasePacket {
 	private static final int const1 = 17767; // 0x4567
 	private static final int const2 = -30293; // 0x89ab
 	
@@ -21,16 +21,16 @@ public class GenshinPacket {
 	private boolean useDispatchKey;
 	public boolean shouldEncrypt = true;
 	
-	public GenshinPacket(int opcode) {
+	public BasePacket(int opcode) {
 		this.opcode = opcode;
 	}
 	
-	public GenshinPacket(int opcode, int clientSequence) {
+	public BasePacket(int opcode, int clientSequence) {
 		this.opcode = opcode;
 		this.buildHeader(clientSequence);
 	}
 	
-	public GenshinPacket(int opcode, boolean buildHeader) {
+	public BasePacket(int opcode, boolean buildHeader) {
 		this.opcode = opcode;
 		this.shouldBuildHeader = buildHeader;
 	}
@@ -80,7 +80,7 @@ public class GenshinPacket {
 		this.data = proto.build().toByteArray();
 	}
 	
-	public GenshinPacket buildHeader(int clientSequence) {
+	public BasePacket buildHeader(int clientSequence) {
 		if (this.getHeader() != null && clientSequence == 0) {
 			return this;
 		}
