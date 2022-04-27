@@ -32,7 +32,7 @@ public class HandlerBuyGoodsReq extends PacketHandler {
             if (sg.getHcoin() > 0 && session.getPlayer().getPrimogems() < buyGoodsReq.getBoughtNum() * sg.getHcoin()) {
                 return;
             }
-            if (sg.getMcoin() > 0 && session.getPlayer().getProperty(PlayerProperty.PROP_PLAYER_MCOIN) < buyGoodsReq.getBoughtNum() * sg.getMcoin()) {
+            if (sg.getMcoin() > 0 && session.getPlayer().getCrystals() < buyGoodsReq.getBoughtNum() * sg.getMcoin()) {
                 return;
             }
 
@@ -46,7 +46,7 @@ public class HandlerBuyGoodsReq extends PacketHandler {
 
             session.getPlayer().setMora(session.getPlayer().getMora() - buyGoodsReq.getBoughtNum() * sg.getScoin());
             session.getPlayer().setPrimogems(session.getPlayer().getPrimogems() - buyGoodsReq.getBoughtNum() * sg.getHcoin());
-            session.getPlayer().setProperty(PlayerProperty.PROP_PLAYER_MCOIN, session.getPlayer().getProperty(PlayerProperty.PROP_PLAYER_MCOIN) - buyGoodsReq.getBoughtNum() * sg.getMcoin());
+            session.getPlayer().setCrystals(session.getPlayer().getCrystals() - buyGoodsReq.getBoughtNum() * sg.getMcoin());
 
             if (!itemsCache.isEmpty()) {
                 for (GameItem gi : itemsCache.keySet()) {
