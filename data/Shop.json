@@ -1,0 +1,54 @@
+[
+  {
+    "shopId": 1004,
+    "items": [
+      {
+        "goodsId": 1004202,
+        "goodsItem": {
+          "Id": 202,
+          "Count": 1000000
+        },
+        "scoin": 1,
+        "buyLimit": 500,
+        "beginTime": 1575129600,
+        "endTime": 2051193600,
+        "minLevel": 1,
+        "maxLevel": 99,
+        "costItemList": [
+          {
+            "Id": 223,
+            "Count": 100
+          }
+        ]
+      },
+      {
+        "goodsId": 10048006,
+        "goodsItem": {
+          "Id": 108006,
+          "Count": 20
+        },
+        "scoin": 100,
+        "hcoin": 100,
+        "mcoin": 100,
+        "buyLimit": 50000,
+        "beginTime": 1575129600,
+        "endTime": 2051193600,
+        "minLevel": 1,
+        "maxLevel": 99
+      },
+      {
+        "goodsId": 10048033,
+        "goodsItem": {
+          "Id": 108033,
+          "Count": 20
+        },
+        "scoin": 1,
+        "buyLimit": 50000,
+        "beginTime": 1575129600,
+        "endTime": 2051193600,
+        "minLevel": 1,
+        "maxLevel": 99
+      }
+    ]
+  }
+]

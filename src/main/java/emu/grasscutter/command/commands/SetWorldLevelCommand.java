@@ -2,7 +2,7 @@ package emu.grasscutter.command.commands;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
 public final class SetWorldLevelCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         if (sender == null) {
             CommandHandler.sendMessage(null, "Run this command in-game.");
             return; // TODO: set player's world level from console or other players
@@ -29,7 +29,7 @@ public final class SetWorldLevelCommand implements CommandHandler {
 
             // Set in both world and player props
             sender.getWorld().setWorldLevel(level);
-            sender.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level);
+            sender.setWorldLevel(level);
 
             sender.dropMessage("World level set to " + level + ".");
         } catch (NumberFormatException ignored) {

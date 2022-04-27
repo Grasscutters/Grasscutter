@@ -1,18 +1,18 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.GenshinConstants;
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.GameConstants;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.GenshinScene;
-import emu.grasscutter.game.World;
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.EquipType;
-import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock;
 import emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
@@ -34,29 +34,29 @@ import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 
-public class EntityAvatar extends GenshinEntity {
-	private final GenshinAvatar avatar;
+public class EntityAvatar extends GameEntity {
+	private final Avatar avatar;
 	
 	private PlayerDieType killedType;
 	private int killedBy;
 	
-	public EntityAvatar(GenshinScene scene, GenshinAvatar avatar) {
+	public EntityAvatar(Scene scene, Avatar avatar) {
 		super(scene);
 		this.avatar = avatar;
 		this.id = getScene().getWorld().getNextEntityId(EntityIdType.AVATAR);
 		
-		GenshinItem weapon = this.getAvatar().getWeapon();
+		GameItem weapon = this.getAvatar().getWeapon();
 		if (weapon != null) {
 			weapon.setWeaponEntityId(getScene().getWorld().getNextEntityId(EntityIdType.WEAPON));
 		}
 	}
 	
-	public EntityAvatar(GenshinAvatar avatar) {
+	public EntityAvatar(Avatar avatar) {
 		super(null);
 		this.avatar = avatar;
 	}
 
-	public GenshinPlayer getPlayer() {
+	public Player getPlayer() {
 		return avatar.getPlayer();
 	}
 
@@ -70,7 +70,7 @@ public class EntityAvatar extends GenshinEntity {
 		return getPlayer().getRotation();
 	}
 
-	public GenshinAvatar getAvatar() {
+	public Avatar getAvatar() {
 		return avatar;
 	}
 	
@@ -101,13 +101,13 @@ public class EntityAvatar extends GenshinEntity {
 
 	@Override
 	public void onDeath(int killerId) {
-		this.killedType = PlayerDieType.PlayerDieKillByMonster;
+		this.killedType = PlayerDieType.PLAYER_DIE_KILL_BY_MONSTER;
 		this.killedBy = killerId;
 	}
 	
 	public SceneAvatarInfo getSceneAvatarInfo() {
 		SceneAvatarInfo.Builder avatarInfo = SceneAvatarInfo.newBuilder()
-				.setPlayerId(this.getPlayer().getUid())
+				.setUid(this.getPlayer().getUid())
 				.setAvatarId(this.getAvatar().getAvatarId())
 				.setGuid(this.getAvatar().getGuid())
 				.setPeerId(this.getPlayer().getPeerId())
@@ -122,7 +122,7 @@ public class EntityAvatar extends GenshinEntity {
 				.setCostumeId(this.getAvatar().getCostume())
 				.setBornTime(this.getAvatar().getBornTime());
 		
-		for (GenshinItem item : avatar.getEquips().values()) {
+		for (GameItem item : avatar.getEquips().values()) {
 			if (item.getItemData().getEquipType() == EquipType.EQUIP_WEAPON) {
 				avatarInfo.setWeapon(item.createSceneWeaponInfo());
 			} else {
@@ -145,7 +145,7 @@ public class EntityAvatar extends GenshinEntity {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.ProtEntityAvatar)
+				.setEntityType(ProtEntityType.PROT_ENTITY_AVATAR)
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())
 				.setEntityAuthorityInfo(authority)
@@ -161,7 +161,7 @@ public class EntityAvatar extends GenshinEntity {
 			if (entry.getIntKey() == 0) {
 				continue;
 			}
-			FightPropPair fightProp = FightPropPair.newBuilder().setType(entry.getIntKey()).setPropValue(entry.getFloatValue()).build();
+			FightPropPair fightProp = FightPropPair.newBuilder().setPropType(entry.getIntKey()).setPropValue(entry.getFloatValue()).build();
 			entityInfo.addFightPropList(fightProp);
 		}
 		
@@ -187,17 +187,17 @@ public class EntityAvatar extends GenshinEntity {
 				AbilityEmbryo emb = AbilityEmbryo.newBuilder()
 						.setAbilityId(++embryoId)
 						.setAbilityNameHash(id)
-						.setAbilityOverrideNameHash(GenshinConstants.DEFAULT_ABILITY_NAME)
+						.setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
 						.build();
 				abilityControlBlock.addAbilityEmbryoList(emb);
 			}
 		}
 		// Add default abilities 
-		for (int id : GenshinConstants.DEFAULT_ABILITY_HASHES) {
+		for (int id : GameConstants.DEFAULT_ABILITY_HASHES) {
 			AbilityEmbryo emb = AbilityEmbryo.newBuilder()
 					.setAbilityId(++embryoId)
 					.setAbilityNameHash(id)
-					.setAbilityOverrideNameHash(GenshinConstants.DEFAULT_ABILITY_NAME)
+					.setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
 					.build();
 			abilityControlBlock.addAbilityEmbryoList(emb);
 		}
@@ -206,18 +206,18 @@ public class EntityAvatar extends GenshinEntity {
 			AbilityEmbryo emb = AbilityEmbryo.newBuilder()
 					.setAbilityId(++embryoId)
 					.setAbilityNameHash(id)
-					.setAbilityOverrideNameHash(GenshinConstants.DEFAULT_ABILITY_NAME)
+					.setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
 					.build();
 			abilityControlBlock.addAbilityEmbryoList(emb);
 		}
 		// Add skill depot abilities
-		AvatarSkillDepotData skillDepot = GenshinData.getAvatarSkillDepotDataMap().get(this.getAvatar().getSkillDepotId());
+		AvatarSkillDepotData skillDepot = GameData.getAvatarSkillDepotDataMap().get(this.getAvatar().getSkillDepotId());
 		if (skillDepot != null && skillDepot.getAbilities() != null) {
 			for (int id : skillDepot.getAbilities()) {
 				AbilityEmbryo emb = AbilityEmbryo.newBuilder()
 						.setAbilityId(++embryoId)
 						.setAbilityNameHash(id)
-						.setAbilityOverrideNameHash(GenshinConstants.DEFAULT_ABILITY_NAME)
+						.setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
 						.build();
 				abilityControlBlock.addAbilityEmbryoList(emb);
 			}
@@ -228,7 +228,7 @@ public class EntityAvatar extends GenshinEntity {
 				AbilityEmbryo emb = AbilityEmbryo.newBuilder()
 						.setAbilityId(++embryoId)
 						.setAbilityNameHash(Utils.abilityHash(skill))
-						.setAbilityOverrideNameHash(GenshinConstants.DEFAULT_ABILITY_NAME)
+						.setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
 						.build();
 				abilityControlBlock.addAbilityEmbryoList(emb);
 			}
