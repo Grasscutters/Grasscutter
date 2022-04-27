@@ -1,13 +1,14 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.inventory.GenshinItem;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.net.proto.UseItemRspOuterClass.UseItemRsp;
 
-public class PacketUseItemRsp extends GenshinPacket {
+public class PacketUseItemRsp extends BasePacket {
 	
-	public PacketUseItemRsp(long targetGuid, GenshinItem useItem) {
+	public PacketUseItemRsp(long targetGuid, GameItem useItem) {
 		super(PacketOpcodes.UseItemRsp);
 		
 		UseItemRsp proto = UseItemRsp.newBuilder()
@@ -22,7 +23,7 @@ public class PacketUseItemRsp extends GenshinPacket {
 	public PacketUseItemRsp() {
 		super(PacketOpcodes.UseItemRsp);
 		
-		UseItemRsp proto = UseItemRsp.newBuilder().setRetcode(1).build();
+		UseItemRsp proto = UseItemRsp.newBuilder().setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE).build();
 		
 		this.setData(proto);
 	}

@@ -1,15 +1,15 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo;
 import emu.grasscutter.net.proto.PlayerChatNotifyOuterClass.PlayerChatNotify;
 import emu.grasscutter.net.proto.SystemHintOuterClass.SystemHint;
 
-public class PacketPlayerChatNotify extends GenshinPacket {
+public class PacketPlayerChatNotify extends BasePacket {
 	
-	public PacketPlayerChatNotify(GenshinPlayer sender, int channelId, String message) {
+	public PacketPlayerChatNotify(Player sender, int channelId, String message) {
 		super(PacketOpcodes.PlayerChatNotify);
 		
 		ChatInfo info = ChatInfo.newBuilder()
@@ -26,7 +26,7 @@ public class PacketPlayerChatNotify extends GenshinPacket {
 		this.setData(proto);
 	}
 	
-	public PacketPlayerChatNotify(GenshinPlayer sender, int channelId, int emote) {
+	public PacketPlayerChatNotify(Player sender, int channelId, int emote) {
 		super(PacketOpcodes.PlayerChatNotify);
 		
 		ChatInfo info = ChatInfo.newBuilder()
@@ -43,7 +43,7 @@ public class PacketPlayerChatNotify extends GenshinPacket {
 		this.setData(proto);
 	}
 	
-	public PacketPlayerChatNotify(GenshinPlayer sender, int channelId, SystemHint systemHint) {
+	public PacketPlayerChatNotify(Player sender, int channelId, ChatInfo.SystemHint systemHint) {
 		super(PacketOpcodes.PlayerChatNotify);
 		
 		ChatInfo info = ChatInfo.newBuilder()

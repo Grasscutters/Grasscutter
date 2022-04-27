@@ -1,10 +1,10 @@
 package emu.grasscutter.data.def;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "PlayerLevelExcelConfigData.json")
-public class PlayerLevelData extends GenshinResource {
+public class PlayerLevelData extends GameResource {
 	private int Level;
 	private int Exp;
 	private int RewardId;

@@ -2,10 +2,10 @@ package emu.grasscutter.command.commands;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.Position;
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
 public final class SpawnCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         if (sender == null) {
             CommandHandler.sendMessage(null, "Run this command in-game.");
             return;
@@ -31,7 +31,7 @@ public final class SpawnCommand implements CommandHandler {
             int level = args.size() > 1 ? Integer.parseInt(args.get(1)) : 1;
             int amount = args.size() > 2 ? Integer.parseInt(args.get(2)) : 1;
 
-            MonsterData entityData = GenshinData.getMonsterDataMap().get(entity);
+            MonsterData entityData = GameData.getMonsterDataMap().get(entity);
             if (entityData == null) {
                 CommandHandler.sendMessage(sender, "Invalid entity id.");
                 return;

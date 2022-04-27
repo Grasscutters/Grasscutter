@@ -1,13 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.World;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.world.World;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ScenePlayerInfoNotifyOuterClass.ScenePlayerInfoNotify;
 import emu.grasscutter.net.proto.ScenePlayerInfoOuterClass.ScenePlayerInfo;
 
-public class PacketScenePlayerInfoNotify extends GenshinPacket {
+public class PacketScenePlayerInfoNotify extends BasePacket {
 	
 	public PacketScenePlayerInfoNotify(World world) {
 		super(PacketOpcodes.ScenePlayerInfoNotify);
@@ -15,7 +15,7 @@ public class PacketScenePlayerInfoNotify extends GenshinPacket {
 		ScenePlayerInfoNotify.Builder proto = ScenePlayerInfoNotify.newBuilder();
 		
 		for (int i = 0; i < world.getPlayers().size(); i++) {
-			GenshinPlayer p = world.getPlayers().get(i);
+			Player p = world.getPlayers().get(i);
 
 			ScenePlayerInfo pInfo = ScenePlayerInfo.newBuilder()
 					.setUid(p.getUid())
