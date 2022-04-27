@@ -609,7 +609,6 @@ public class GenshinPlayer {
 		this.save();
 		Grasscutter.getLogger().info("Mail sent to user [" + this.getUid()  + ":" + this.getNickname() + "]!");
 		if(this.isOnline()) {
-			Grasscutter.getLogger().info("user online.");
 			this.sendPacket(new PacketMailChangeNotify(this, message));
 		} // TODO: setup a way for the mail notification to show up when someone receives mail when they were offline
 	}
