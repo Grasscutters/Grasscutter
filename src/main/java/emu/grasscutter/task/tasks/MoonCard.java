@@ -1,7 +1,7 @@
 package emu.grasscutter.task.tasks;
 
 import emu.grasscutter.database.DatabaseManager;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.task.Task;
 import emu.grasscutter.task.TaskHandler;
 
@@ -15,8 +15,8 @@ import org.quartz.JobExecutionException;
 public final class MoonCard implements TaskHandler {
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
-        List<GenshinPlayer> players = DatabaseManager.getDatastore().find(GenshinPlayer.class).stream().toList();
-        for (GenshinPlayer player : players) {
+        List<Player> players = DatabaseManager.getDatastore().find(Player.class).stream().toList();
+        for (Player player : players) {
             if (player.isOnline()) {
                 if (player.inMoonCard()) {
                     player.getTodayMoonCard();

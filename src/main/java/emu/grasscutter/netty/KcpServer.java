@@ -13,14 +13,14 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 
 @SuppressWarnings("rawtypes")
-public class MihoyoKcpServer extends Thread {
+public class KcpServer extends Thread {
 	private EventLoopGroup group;
 	private UkcpServerBootstrap bootstrap;
 	
 	private ChannelInitializer serverInitializer;
 	private InetSocketAddress address;
 	 
-	public MihoyoKcpServer(InetSocketAddress address) {
+	public KcpServer(InetSocketAddress address) {
     	this.address = address;
     	this.setName("Netty Server Thread");
     }
@@ -40,7 +40,7 @@ public class MihoyoKcpServer extends Thread {
 	@Override
 	public void run() {
 		if (getServerInitializer() == null) {
-			this.setServerInitializer(new MihoyoKcpServerInitializer());
+			this.setServerInitializer(new KcpServerInitializer());
 		}
 		
         try {

@@ -1,8 +1,8 @@
 package emu.grasscutter.game.managers;
 
 import emu.grasscutter.command.CommandMap;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketPlayerChatNotify;
 import emu.grasscutter.server.packet.send.PacketPrivateChatNotify;
@@ -23,7 +23,7 @@ public class ChatManager {
 		return server;
 	}
 
-	public void sendPrivateMessage(GenshinPlayer player, int targetUid, String message) {
+	public void sendPrivateMessage(Player player, int targetUid, String message) {
 		// Sanity checks
 		if (message == null || message.length() == 0) {
 			return;
@@ -36,35 +36,35 @@ public class ChatManager {
 		}
 		
 		// Get target
-		GenshinPlayer target = getServer().getPlayerByUid(targetUid);
+		Player target = getServer().getPlayerByUid(targetUid);
 		
 		if (target == null) {
 			return;
 		}
 		
 		// Create chat packet
-		GenshinPacket packet = new PacketPrivateChatNotify(player.getUid(), target.getUid(), message);
+		BasePacket packet = new PacketPrivateChatNotify(player.getUid(), target.getUid(), message);
 		
 		player.sendPacket(packet);
 		target.sendPacket(packet);
 	}
 	
-	public void sendPrivateMessage(GenshinPlayer player, int targetUid, int emote) {
+	public void sendPrivateMessage(Player player, int targetUid, int emote) {
 		// Get target
-		GenshinPlayer target = getServer().getPlayerByUid(targetUid);
+		Player target = getServer().getPlayerByUid(targetUid);
 		
 		if (target == null) {
 			return;
 		}
 		
 		// Create chat packet
-		GenshinPacket packet = new PacketPrivateChatNotify(player.getUid(), target.getUid(), emote);
+		BasePacket packet = new PacketPrivateChatNotify(player.getUid(), target.getUid(), emote);
 		
 		player.sendPacket(packet);
 		target.sendPacket(packet);
 	}
 	
-	public void sendTeamMessage(GenshinPlayer player, int channel, String message) {
+	public void sendTeamMessage(Player player, int channel, String message) {
 		// Sanity checks
 		if (message == null || message.length() == 0) {
 			return;
@@ -80,7 +80,7 @@ public class ChatManager {
 		player.getWorld().broadcastPacket(new PacketPlayerChatNotify(player, channel, message));
 	}
 
-	public void sendTeamMessage(GenshinPlayer player, int channel, int icon) {
+	public void sendTeamMessage(Player player, int channel, int icon) {
 		// Create and send chat packet
 		player.getWorld().broadcastPacket(new PacketPlayerChatNotify(player, channel, icon));
 	}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message DelMailReq {
+  repeated uint32 mail_id_list = 1;
+}

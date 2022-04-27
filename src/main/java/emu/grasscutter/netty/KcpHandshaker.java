@@ -10,9 +10,9 @@ import io.netty.channel.ChannelMetadata;
 import io.netty.channel.ChannelOutboundBuffer;
 import io.netty.channel.nio.AbstractNioMessageChannel;
 
-public class MihoyoKcpHandshaker extends AbstractNioMessageChannel {
+public class KcpHandshaker extends AbstractNioMessageChannel {
 
-	protected MihoyoKcpHandshaker(Channel parent, SelectableChannel ch, int readInterestOp) {
+	protected KcpHandshaker(Channel parent, SelectableChannel ch, int readInterestOp) {
 		super(parent, ch, readInterestOp);
 	}
 

@@ -1,6 +1,6 @@
 package emu.grasscutter.data;
 
-public abstract class GenshinResource {
+public abstract class GameResource {
 	
 	public int getId() {
 		return 0;

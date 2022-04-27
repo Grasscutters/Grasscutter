@@ -1,8 +1,8 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerLoginReqOuterClass.PlayerLoginReq;
@@ -30,12 +30,12 @@ public class HandlerPlayerLoginReq extends PacketHandler {
 		}
 		
 		// Load character from db
-		GenshinPlayer player = DatabaseHelper.getPlayerById(session.getAccount().getPlayerUid());
+		Player player = DatabaseHelper.getPlayerById(session.getAccount().getPlayerUid());
 		
 		if (player == null) {
 			// Send packets
 			session.setState(SessionState.PICKING_CHARACTER);
-			session.send(new GenshinPacket(PacketOpcodes.DoSetPlayerBornDataNotify));
+			session.send(new BasePacket(PacketOpcodes.DoSetPlayerBornDataNotify));
 		} else {
 			// Set character
 			session.setPlayer(player);

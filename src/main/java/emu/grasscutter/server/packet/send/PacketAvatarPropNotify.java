@@ -1,13 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarPropNotifyOuterClass.AvatarPropNotify;
 
-public class PacketAvatarPropNotify extends GenshinPacket {
-	public PacketAvatarPropNotify(GenshinAvatar avatar) {
+public class PacketAvatarPropNotify extends BasePacket {
+	public PacketAvatarPropNotify(Avatar avatar) {
 		super(PacketOpcodes.AvatarPropNotify);
 		
 		AvatarPropNotify proto = AvatarPropNotify.newBuilder()
@@ -22,7 +22,7 @@ public class PacketAvatarPropNotify extends GenshinPacket {
 		this.setData(proto);
 	}
 	
-	public PacketAvatarPropNotify(GenshinAvatar avatar, PlayerProperty prop, int value) {
+	public PacketAvatarPropNotify(Avatar avatar, PlayerProperty prop, int value) {
 		super(PacketOpcodes.AvatarPropNotify);
 
 		AvatarPropNotify proto = AvatarPropNotify.newBuilder()

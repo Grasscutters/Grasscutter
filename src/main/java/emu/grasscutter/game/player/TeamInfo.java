@@ -1,12 +1,12 @@
-package emu.grasscutter.game;
+package emu.grasscutter.game.player;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import dev.morphia.annotations.Entity;
-import emu.grasscutter.GenshinConstants;
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.avatar.Avatar;
 
 @Entity
 public class TeamInfo {
@@ -34,11 +34,11 @@ public class TeamInfo {
 		return avatars.size();
 	}
 	
-	public boolean contains(GenshinAvatar avatar) {
+	public boolean contains(Avatar avatar) {
 		return getAvatars().contains(avatar.getAvatarId());
 	}
 
-	public boolean addAvatar(GenshinAvatar avatar) {
+	public boolean addAvatar(Avatar avatar) {
 		if (size() >= Grasscutter.getConfig().getGameServerOptions().MaxAvatarsInTeam || contains(avatar)) {
 			return false;
 		}
