@@ -262,6 +262,14 @@ public final class DispatchServer {
 
 		server.createContext("/", t -> responseHTML(t, "Hello"));
 
+		server.createContext("/grasscutter/auth_status",t->{
+			AuthResponseJson authResponse = new AuthResponseJson();
+			authResponse.success = true;
+			authResponse.message = Grasscutter.getConfig().getDispatchOptions().UseAuth ? "AUTH_ENABLED" : "AUTH_DISABLED";
+			authResponse.jwt = "";
+			responseJSON(t, authResponse);
+		});
+
 		server.createContext("/grasscutter/login", t -> {
 			AuthResponseJson authResponse = new AuthResponseJson();
 
