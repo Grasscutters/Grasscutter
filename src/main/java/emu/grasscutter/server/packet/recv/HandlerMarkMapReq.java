@@ -1,8 +1,8 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.World;
 import emu.grasscutter.game.props.EnterReason;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
@@ -32,7 +32,7 @@ public class HandlerMarkMapReq extends PacketHandler {
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		MarkMapReq req = MarkMapReq.parseFrom(payload);
 
-		if (req.getOp() != Operation.Add) {
+		if (req.getOp() != MarkMapReq.Operation.ADD) {
 			return;
 		}
 

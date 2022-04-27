@@ -1,19 +1,20 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.inventory.GenshinItem;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.AbilityControlBlockOuterClass;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo;
 import emu.grasscutter.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo;
 import emu.grasscutter.net.proto.PlayerEnterSceneInfoNotifyOuterClass.PlayerEnterSceneInfoNotify;
 import emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo;
 
-public class PacketPlayerEnterSceneInfoNotify extends GenshinPacket {
+public class PacketPlayerEnterSceneInfoNotify extends BasePacket {
 	
-	public PacketPlayerEnterSceneInfoNotify(GenshinPlayer player) {
+	public PacketPlayerEnterSceneInfoNotify(Player player) {
 		super(PacketOpcodes.PlayerEnterSceneInfoNotify);
 		
 		AbilitySyncStateInfo empty = AbilitySyncStateInfo.newBuilder().build();
@@ -26,7 +27,7 @@ public class PacketPlayerEnterSceneInfoNotify extends GenshinPacket {
 				TeamEnterSceneInfo.newBuilder()
 					.setTeamEntityId(player.getTeamManager().getEntityId()) // 150995833
 					.setTeamAbilityInfo(empty)
-					.setUnk(empty)
+					.setAbilityControlBlock(AbilityControlBlockOuterClass.AbilityControlBlock.newBuilder().build())
 		);
 		proto.setMpLevelEntityInfo(
 				MPLevelEntityInfo.newBuilder()
@@ -36,7 +37,7 @@ public class PacketPlayerEnterSceneInfoNotify extends GenshinPacket {
 		);
 		
 		for (EntityAvatar avatarEntity : player.getTeamManager().getActiveTeam()) {
-			GenshinItem weapon = avatarEntity.getAvatar().getWeapon();
+			GameItem weapon = avatarEntity.getAvatar().getWeapon();
 			long weaponGuid = weapon != null ? weapon.getGuid() : 0;
 			
 			AvatarEnterSceneInfo avatarInfo = AvatarEnterSceneInfo.newBuilder()

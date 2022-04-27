@@ -13,9 +13,11 @@ import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.*;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 /**
- * Manages the server's plugins & the event system.
+ * Manages the server's plugins and the event system.
  */
 public final class PluginManager {
     private final Map<String, Plugin> plugins = new HashMap<>();
@@ -52,12 +54,21 @@ public final class PluginManager {
                 try (URLClassLoader loader = new URLClassLoader(new URL[]{url})) {
                     URL configFile = loader.findResource("plugin.json");
                     InputStreamReader fileReader = new InputStreamReader(configFile.openStream());
-                    
+
                     PluginConfig pluginConfig = Grasscutter.getGsonFactory().fromJson(fileReader, PluginConfig.class);
                     if(!pluginConfig.validate()) {
                         Utils.logObject(pluginConfig);
                         Grasscutter.getLogger().warn("Plugin " + plugin.getName() + " has an invalid config file.");
                         return;
+                    }
+
+                    JarFile jarFile = new JarFile(plugin);
+                    Enumeration<JarEntry> entries = jarFile.entries();
+                    while(entries.hasMoreElements()) {
+                        JarEntry entry = entries.nextElement();
+                        if(entry.isDirectory() || !entry.getName().endsWith(".class")) continue;
+                        String className = entry.getName().replace(".class", "").replace("/", ".");
+                        Class<?> clazz = loader.loadClass(className);
                     }
                     
                     Class<?> pluginClass = loader.loadClass(pluginConfig.mainClass);

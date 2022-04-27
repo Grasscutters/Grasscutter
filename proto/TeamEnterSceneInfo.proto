@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AbilitySyncStateInfo.proto";
+import "AbilityControlBlock.proto";
+
+message TeamEnterSceneInfo {
+	uint32 team_entity_id = 1;
+	AbilitySyncStateInfo team_ability_info = 2;
+	AbilityControlBlock ability_control_block = 3;
+}

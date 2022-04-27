@@ -12,13 +12,13 @@ import com.google.gson.reflect.TypeToken;
 
 import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.avatar.GenshinAvatar;
-import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.inventory.MaterialType;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.GachaItemOuterClass.GachaItem;
 import emu.grasscutter.net.proto.GachaTransferItemOuterClass.GachaTransferItem;
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
@@ -89,7 +89,7 @@ public class GachaManager {
 		}
 	}
 	
-	public synchronized void doPulls(GenshinPlayer player, int gachaType, int times) {
+	public synchronized void doPulls(Player player, int gachaType, int times) {
 		// Sanity check
 		if (times != 10 && times != 1) {
 			return;
@@ -108,7 +108,7 @@ public class GachaManager {
 
 		// Spend currency
 		if (banner.getCostItem() > 0) {
-			GenshinItem costItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(banner.getCostItem());
+			GameItem costItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(banner.getCostItem());
 			if (costItem == null || costItem.getCount() < times) {
 				return;
 			}
@@ -191,7 +191,7 @@ public class GachaManager {
 		int stardust = 0, starglitter = 0;
 		
 		for (int itemId : wonItems) {
-			ItemData itemData = GenshinData.getItemDataMap().get(itemId);
+			ItemData itemData = GameData.getItemDataMap().get(itemId);
 			if (itemData == null) {
 				continue;
 			}
@@ -204,11 +204,11 @@ public class GachaManager {
 			// Const check
 			if (itemData.getMaterialType() == MaterialType.MATERIAL_AVATAR) {
 				int avatarId = (itemData.getId() % 1000) + 10000000;
-				GenshinAvatar avatar = player.getAvatars().getAvatarById(avatarId);
+				Avatar avatar = player.getAvatars().getAvatarById(avatarId);
 				if (avatar != null) {
 					int constLevel = avatar.getCoreProudSkillLevel();
 					int constItemId = itemData.getId() + 100;
-					GenshinItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId);
+					GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId);
 					if (constItem != null) {
 						constLevel += constItem.getCount();
 					}
@@ -249,7 +249,7 @@ public class GachaManager {
 			}
 
 			// Create item
-			GenshinItem item = new GenshinItem(itemData);
+			GameItem item = new GameItem(itemData);
 			gachaItem.setGachaItem(item.toItemParam());
 			player.getInventory().addItem(item);
 			
@@ -286,8 +286,6 @@ public class GachaManager {
 				this.watchService = FileSystems.getDefault().newWatchService();
 				Path path = new File(Grasscutter.getConfig().DATA_FOLDER).toPath();
 				path.register(watchService, new WatchEvent.Kind[]{StandardWatchEventKinds.ENTRY_MODIFY}, SensitivityWatchEventModifier.HIGH);
-
-				server.OnGameServerTick.register(this);
 			} catch (Exception e) {
 				Grasscutter.getLogger().error("Unable to load the Gacha Manager Watch Service. If ServerOptions.watchGacha is true it will not auto-reload");
 				e.printStackTrace();

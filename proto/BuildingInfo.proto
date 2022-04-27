@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message BuildingInfo {
+	uint32 building_id = 1;
+	uint32 point_config_id = 2;
+	uint32 cost = 3;
+	uint32 level = 4;
+	uint32 refund = 5;
+	uint32 owner_uid = 6;
+}

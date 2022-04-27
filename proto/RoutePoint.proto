@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+import "MathQuaternion.proto";
+
+message RoutePoint {
+	oneof MoveParams {
+		float velocity = 11;
+		float time = 12;
+	}
+	oneof RotateParams {
+		Vector rotation = 21;
+		MathQuaternion rotation_speed = 22;
+		MathQuaternion axis_speed = 23;
+	}
+	Vector position = 1;
+	float arrive_range = 2;
+}

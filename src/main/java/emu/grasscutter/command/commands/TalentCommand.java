@@ -3,9 +3,9 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketAvatarSkillChangeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarSkillUpgradeRsp;
 
@@ -13,10 +13,10 @@ import java.util.List;
 
 @Command(label = "talent", usage = "talent <talentID> <value>",
         description = "Set talent level for your current active character", permission = "player.settalent")
-public class TalentCommand implements CommandHandler {
+public final class TalentCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         if (sender == null) {
             CommandHandler.sendMessage(null, "Run this command in-game.");
             return;
@@ -41,7 +41,7 @@ public class TalentCommand implements CommandHandler {
                         int skillId = Integer.parseInt(args.get(1));
                         int nextLevel = Integer.parseInt(args.get(2));
                         EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                        GenshinAvatar avatar = entity.getAvatar(); 
+                        Avatar avatar = entity.getAvatar(); 
                         int skillIdNorAtk = avatar.getData().getSkillDepot().getSkills().get(0);
                         int skillIdE = avatar.getData().getSkillDepot().getSkills().get(1);
                         int skillIdQ = avatar.getData().getSkillDepot().getEnergySkill();
@@ -97,7 +97,7 @@ public class TalentCommand implements CommandHandler {
             case "n": case "e": case "q":
                 try {
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    GenshinAvatar avatar = entity.getAvatar();
+                    Avatar avatar = entity.getAvatar();
                     AvatarSkillDepotData SkillDepot = avatar.getData().getSkillDepot();
                     int skillId;
                     switch (cmdSwitch) {
@@ -135,7 +135,7 @@ public class TalentCommand implements CommandHandler {
                 break;
             case "getid":           
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    GenshinAvatar avatar = entity.getAvatar(); 
+                    Avatar avatar = entity.getAvatar(); 
                     int skillIdNorAtk = avatar.getData().getSkillDepot().getSkills().get(0);
                     int skillIdE = avatar.getData().getSkillDepot().getSkills().get(1);
                     int skillIdQ = avatar.getData().getSkillDepot().getEnergySkill();

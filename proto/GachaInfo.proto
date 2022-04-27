@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GachaUpInfo.proto";
+
+message GachaInfo {
+	uint32 gachaType = 1;
+	uint32 scheduleId = 2;
+	uint32 beginTime = 3;
+	uint32 endTime = 4;
+	uint32 costItemId = 5;
+	uint32 costItemNum = 6;
+	string gachaPrefabPath = 7;
+	string gachaProbUrl = 8;
+	string gachaRecordUrl = 9;
+	string gachaPreviewPrefabPath = 10;
+	uint32 tenCostItemId = 11;
+	uint32 tenCostItemNum = 12;
+	uint32 leftGachaTimes = 13;
+	uint32 gachaTimesLimit = 14;
+	uint32 gachaSortId = 15;
+	string gachaProbUrlOversea = 16;
+	string gachaRecordUrlOversea = 17;
+	repeated GachaUpInfo gachaUpInfoList = 18;
+	string gachaTitlePath = 19;
+	repeated uint32 mainNameId = 20;
+	repeated uint32 subNameId = 21;
+}

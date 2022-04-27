@@ -7,7 +7,7 @@ public class AvatarProfileData {
 	private int avatarId;
 	private int level;
 	
-	public AvatarProfileData(GenshinAvatar avatar) {
+	public AvatarProfileData(Avatar avatar) {
 		this.update(avatar);
 	}
 
@@ -19,7 +19,7 @@ public class AvatarProfileData {
 		return level;
 	}
 
-	public void update(GenshinAvatar avatar) {
+	public void update(Avatar avatar) {
 		this.avatarId = avatar.getAvatarId();
 		this.level = avatar.getLevel();
 	}

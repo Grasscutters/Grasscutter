@@ -1,13 +1,13 @@
 package emu.grasscutter.data.def;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.props.FightProperty;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 
 @ResourceType(name = {"MaterialExcelConfigData.json", "WeaponExcelConfigData.json", "ReliquaryExcelConfigData.json"})
-public class ItemData extends GenshinResource {
+public class ItemData extends GameResource {
 	
 	private int Id;
     private int StackLimit = 1;

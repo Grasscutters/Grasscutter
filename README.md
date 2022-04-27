@@ -75,7 +75,7 @@ Grasscutter uses Gradle to handle dependencies & building.
 
 **Requirements:**
 
-- Java SE Development Kits - 16
+- Java SE Development Kits - 17
 - Git
 
 ##### Windows

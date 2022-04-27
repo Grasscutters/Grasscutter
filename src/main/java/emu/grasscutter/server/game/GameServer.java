@@ -1,32 +1,37 @@
 package emu.grasscutter.server.game;
 
 import java.net.InetSocketAddress;
+import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-import emu.grasscutter.GenshinConstants;
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.World;
 import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.gacha.GachaManager;
 import emu.grasscutter.game.managers.ChatManager;
 import emu.grasscutter.game.managers.InventoryManager;
 import emu.grasscutter.game.managers.MultiplayerManager;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.shop.ShopManager;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.netty.MihoyoKcpServer;
-import org.greenrobot.eventbus.EventBus;
+import emu.grasscutter.netty.KcpServer;
+import emu.grasscutter.server.event.ServerEvent;
+import emu.grasscutter.server.event.game.ServerTickEvent;
+import emu.grasscutter.server.event.internal.ServerStartEvent;
+import emu.grasscutter.server.event.internal.ServerStopEvent;
+import emu.grasscutter.task.TaskMap;
 
-public final class GameServer extends MihoyoKcpServer {
+public final class GameServer extends KcpServer {
 	private final InetSocketAddress address;
 	private final GameServerPacketHandler packetHandler;
 
-	private final Map<Integer, GenshinPlayer> players;
+	private final Map<Integer, Player> players;
 	private final Set<World> worlds;
 	
 	private final ChatManager chatManager;
@@ -36,17 +41,10 @@ public final class GameServer extends MihoyoKcpServer {
 	private final MultiplayerManager multiplayerManager;
 	private final DungeonManager dungeonManager;
 	private final CommandMap commandMap;
-
-	public EventBus OnGameServerStartFinish;
-	public EventBus OnGameServerTick;
-	public EventBus OnGameServerStop;
+	private final TaskMap taskMap;
 	
 	public GameServer(InetSocketAddress address) {
 		super(address);
-
-		OnGameServerStartFinish = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
-		OnGameServerTick = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
-		OnGameServerStop = EventBus.builder().throwSubscriberException(true).logNoSubscriberMessages(false).build();
 
 		this.setServerInitializer(new GameServerInitializer(this));
 		this.address = address;
@@ -61,6 +59,7 @@ public final class GameServer extends MihoyoKcpServer {
 		this.multiplayerManager = new MultiplayerManager(this);
 		this.dungeonManager = new DungeonManager(this);
 		this.commandMap = new CommandMap(true);
+		this.taskMap = new TaskMap(true);
 		
 		// Schedule game loop.
 		Timer gameLoop = new Timer();
@@ -83,7 +82,7 @@ public final class GameServer extends MihoyoKcpServer {
 		return packetHandler;
 	}
 
-	public Map<Integer, GenshinPlayer> getPlayers() {
+	public Map<Integer, Player> getPlayers() {
 		return players;
 	}
 
@@ -118,23 +117,27 @@ public final class GameServer extends MihoyoKcpServer {
 	public CommandMap getCommandMap() {
 		return this.commandMap;
 	}
+
+	public TaskMap getTaskMap() {
+		return this.taskMap;
+	}
 	
-	public void registerPlayer(GenshinPlayer player) {
+	public void registerPlayer(Player player) {
 		getPlayers().put(player.getUid(), player);
 	}
 
-	public GenshinPlayer getPlayerByUid(int id) {
+	public Player getPlayerByUid(int id) {
 		return this.getPlayerByUid(id, false);
 	}
 	
-	public GenshinPlayer getPlayerByUid(int id, boolean allowOfflinePlayers) {
+	public Player getPlayerByUid(int id, boolean allowOfflinePlayers) {
 		// Console check
-		if (id == GenshinConstants.SERVER_CONSOLE_UID) {
+		if (id == GameConstants.SERVER_CONSOLE_UID) {
 			return null;
 		}
 		
 		// Get from online players
-		GenshinPlayer player = this.getPlayers().get(id);
+		Player player = this.getPlayers().get(id);
 		
 		if (!allowOfflinePlayers) {
 			return player;
@@ -150,7 +153,7 @@ public final class GameServer extends MihoyoKcpServer {
 	
 	public SocialDetail.Builder getSocialDetailByUid(int id) {
 		// Get from online players
-		GenshinPlayer player = this.getPlayerByUid(id, true);
+		Player player = this.getPlayerByUid(id, true);
 	
 		if (player == null) {
 			return null;
@@ -160,7 +163,7 @@ public final class GameServer extends MihoyoKcpServer {
 	}
 	
 	public Account getAccountByName(String username) {
-		Optional<GenshinPlayer> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getUsername().equals(username)).findFirst();
+		Optional<Player> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getUsername().equals(username)).findFirst();
 		if (playerOpt.isPresent()) {
 			return playerOpt.get().getAccount();
 		}
@@ -178,12 +181,8 @@ public final class GameServer extends MihoyoKcpServer {
 			
 			world.onTick();
 		}
-		
-		for (GenshinPlayer player : this.getPlayers().values()) {
-			player.onTick();
-		}
-
-		OnGameServerTick.post(new GameServerTickEvent());
+  
+    ServerTickEvent event = new ServerTickEvent(); event.call();
 	}
 	
 	public void registerWorld(World world) {
@@ -198,18 +197,17 @@ public final class GameServer extends MihoyoKcpServer {
 	@Override
 	public void onStartFinish() {
 		Grasscutter.getLogger().info("Game Server started on port " + address.getPort());
-
-		OnGameServerStartFinish.post(new GameServerStartFinishEvent());
+		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
 	
 	public void onServerShutdown() {
-		OnGameServerStop.post(new GameServerStopEvent());
+		ServerStopEvent event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 
 		// Kick and save all players
-		List<GenshinPlayer> list = new ArrayList<>(this.getPlayers().size());
+		List<Player> list = new ArrayList<>(this.getPlayers().size());
 		list.addAll(this.getPlayers().values());
 		
-		for (GenshinPlayer player : list) {
+		for (Player player : list) {
 			player.getSession().close();
 		}
 	}

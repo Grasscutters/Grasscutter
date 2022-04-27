@@ -56,7 +56,12 @@ public final class DispatchServer {
 		this.initRegion();
 	}
 
+	@Deprecated
 	public HttpServer getServer() {
+		return server;
+	}
+	
+	public HttpServer getHttpServer() {
 		return server;
 	}
 
@@ -104,8 +109,8 @@ public final class DispatchServer {
 			byte[] decoded2 = Base64.getDecoder().decode(query_cur_region);
 			QueryCurrRegionHttpRsp regionQuery = QueryCurrRegionHttpRsp.parseFrom(decoded2);
 
-			List<RegionSimpleInfo> servers = new ArrayList<RegionSimpleInfo>();
-			List<String> usedNames = new ArrayList<String>(); // List to check for potential naming conflicts
+			List<RegionSimpleInfo> servers = new ArrayList<>();
+			List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts
 			if (Grasscutter.getConfig().RunMode.equalsIgnoreCase("HYBRID")) { // Automatically add the game server if in
 																				// hybrid mode
 				RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
@@ -127,10 +132,10 @@ public final class DispatchServer {
 				servers.add(server);
 
 				RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
-						.setIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty()
+						.setGateserverIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty()
 								? Grasscutter.getConfig().getGameServerOptions().Ip
 								: Grasscutter.getConfig().getGameServerOptions().PublicIp))
-						.setPort(Grasscutter.getConfig().getGameServerOptions().PublicPort != 0
+						.setGateserverPort(Grasscutter.getConfig().getGameServerOptions().PublicPort != 0
 								? Grasscutter.getConfig().getGameServerOptions().PublicPort
 								: Grasscutter.getConfig().getGameServerOptions().Port)
 						.setSecretKey(ByteString
@@ -170,8 +175,8 @@ public final class DispatchServer {
 				servers.add(server);
 
 				RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
-						.setIp(regionInfo.Ip)
-						.setPort(regionInfo.Port)
+						.setGateserverIp(regionInfo.Ip)
+						.setGateserverPort(regionInfo.Port)
 						.setSecretKey(ByteString
 								.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
 						.build();
@@ -182,7 +187,7 @@ public final class DispatchServer {
 			}
 
 			QueryRegionListHttpRsp regionList = QueryRegionListHttpRsp.newBuilder()
-					.addAllServers(servers)
+					.addAllRegionList(servers)
 					.setClientSecretKey(rl.getClientSecretKey())
 					.setClientCustomConfigEncrypted(rl.getClientCustomConfigEncrypted())
 					.setEnableLoginPc(true)
@@ -204,55 +209,64 @@ public final class DispatchServer {
 		}
 		return null;
 	}
+	
+	private KeyManagerFactory createKeyManagerFactory(File keystore, String password) throws Exception {
+		char[] pass = password.toCharArray();
+		KeyManagerFactory kmf = null;
+		
+		try (FileInputStream fis = new FileInputStream(keystore)) {
+			
+			KeyStore ks = KeyStore.getInstance("PKCS12");
+			ks.load(fis, pass);
+			
+			kmf = KeyManagerFactory.getInstance("SunX509");
+			kmf.init(ks, pass);
+		} catch (Exception e) {
+			throw e;
+		}
+		
+		return kmf;
+	}
 
 	public void start() throws Exception {
 		if (Grasscutter.getConfig().getDispatchOptions().UseSSL) {
-			HttpsServer httpsServer = HttpsServer.create(getAddress(), 0);
+			// Keystore
 			SSLContext sslContext = SSLContext.getInstance("TLS");
-			try (FileInputStream fis = new FileInputStream(Grasscutter.getConfig().getDispatchOptions().KeystorePath)) {
-				char[] keystorePassword = Grasscutter.getConfig().getDispatchOptions().KeystorePassword.toCharArray();
-				KeyManagerFactory _kmf;
+			KeyManagerFactory kmf = null;
+			File keystoreFile = new File(Grasscutter.getConfig().getDispatchOptions().KeystorePath);
+			
+			if (keystoreFile.exists()) {
 				try {
-					KeyStore ks = KeyStore.getInstance("PKCS12");
-					ks.load(fis, keystorePassword);
-					KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
-					_kmf = kmf;
-					kmf.init(ks, keystorePassword);
-				} catch (Exception originalEx) {
+					kmf = createKeyManagerFactory(keystoreFile, Grasscutter.getConfig().getDispatchOptions().KeystorePassword);
+				} catch (Exception e) {
+					Grasscutter.getLogger().warn("[Dispatch] Unable to load keystore. Trying default keystore password...");
+					
 					try {
-						// try to initialize kmf with the default password
-						char[] defaultPassword = "123456".toCharArray();
-
-						Grasscutter.getLogger()
-								.warn("[Dispatch] Unable to load keystore. Trying default keystore password...");
-						KeyStore ks = KeyStore.getInstance("PKCS12");
-						ks.load(fis, defaultPassword);
-						KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
-						kmf.init(ks, defaultPassword);
-						_kmf = kmf;
-
+						kmf = createKeyManagerFactory(keystoreFile, "123456");
 						Grasscutter.getLogger().warn(
-								"[Dispatch] The default keystore password was loaded successfully. Please consider setting the password in config.json.");
-					} catch (Exception ignored) {
+							"[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to 123456 in config.json.");
+					} catch (Exception e2) {
 						Grasscutter.getLogger().warn("[Dispatch] Error while loading keystore!");
-
-						// don't care about the exception for the "123456" default password attempt
-						originalEx.printStackTrace();
-						throw originalEx;
+						e2.printStackTrace();
 					}
 				}
-
-				sslContext.init(_kmf.getKeyManagers(), null, null);
-
-				httpsServer.setHttpsConfigurator(new HttpsConfigurator(sslContext));
-				server = httpsServer;
-			} catch (BindException ignored) {
-				Grasscutter.getLogger().error("Unable to bind to port: " + getAddress().getPort() + " (HTTPS)");
-				server = this.safelyCreateServer(this.getAddress());
-			} catch (Exception e) {
+			}
+			
+			if (kmf == null) {
 				Grasscutter.getLogger().warn("[Dispatch] No SSL cert found! Falling back to HTTP server.");
 				Grasscutter.getConfig().getDispatchOptions().UseSSL = false;
 				server = this.safelyCreateServer(this.getAddress());
+			}
+			
+			HttpsServer httpsServer = null;
+			
+			try {
+				httpsServer = HttpsServer.create(getAddress(), 0);
+				sslContext.init(kmf.getKeyManagers(), null, null);
+				httpsServer.setHttpsConfigurator(new HttpsConfigurator(sslContext));
+				server = httpsServer;
+			} catch (BindException e) {
+				Grasscutter.getLogger().error("Unable to bind to port: " + getAddress().getPort() + " (HTTPS)");
 			}
 		} else {
 			server = this.safelyCreateServer(this.getAddress());
@@ -416,7 +430,10 @@ public final class DispatchServer {
 			Grasscutter.getLogger()
 					.info(String.format("[Dispatch] Client %s request: query_region_list", t.getRemoteAddress()));
 
-			responseHTML(t, regionListBase64);
+			// Invoke event.
+			QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListBase64); event.call();
+			// Respond with event result.
+			responseHTML(t, event.getRegionList());
 		});
 
 		for (String regionName : regions.keySet()) {

@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "TrackingIOInfo.proto";
+import "AdjustTrackingInfo.proto";
+
+message PlayerLoginReq {
+	enum CmdId {
+		option allow_alias = true;
+		ENET_CHANNEL_ID = 0;
+		NONE = 0;
+		ENET_IS_RELIABLE = 1;
+		IS_ALLOW_CLIENT = 1;
+		CMD_ID = 189;
+	}
+
+	string token = 1;
+	string client_version = 2;
+	string system_version = 3;
+	string device_name = 4;
+	string device_uuid = 5;
+	uint32 target_uid = 6;
+	uint64 login_rand = 7;
+	bool is_editor = 8;
+	uint32 language_type = 9;
+	uint32 account_type = 10;
+	string account_uid = 11;
+	string platform = 12;
+	string device_info = 13;
+	uint32 platform_type = 14;
+	bool is_guest = 15;
+	uint32 cloud_client_ip = 16;
+	uint32 gm_uid = 17;
+	string checksum = 18;
+	string online_id = 19;
+	uint32 client_token = 20;
+	bytes security_cmd_reply = 21;
+	bytes extra_bin_data = 22;
+	string cps = 23;
+	uint32 channel_id = 24;
+	uint32 sub_channel_id = 25;
+	string checksum_client_version = 26;
+	uint32 tag = 27;
+	TrackingIOInfo tracking_io_info = 28;
+	string country_code = 29;
+	uint32 client_data_version = 30;
+	bytes environment_error_code = 31;
+	uint32 target_home_owner_uid = 32;
+	string psn_id = 33;
+	string client_verison_hash = 34;
+	bool is_transfer = 35;
+	uint32 reg_platform = 36;
+	uint32 target_home_param = 37;
+	AdjustTrackingInfo adjust_tracking_info = 38;
+}
