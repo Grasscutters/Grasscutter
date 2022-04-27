@@ -4,11 +4,12 @@ import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
+import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify;
 
 public class PacketPlayerApplyEnterMpResultNotify extends GenshinPacket {
 	
-	public PacketPlayerApplyEnterMpResultNotify(GenshinPlayer target, boolean isAgreed, PlayerApplyEnterMpResultNotify.Reason reason) {
+	public PacketPlayerApplyEnterMpResultNotify(GenshinPlayer target, boolean isAgreed, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason reason) {
 		super(PacketOpcodes.PlayerApplyEnterMpResultNotify);
 
 		PlayerApplyEnterMpResultNotify proto = PlayerApplyEnterMpResultNotify.newBuilder()
