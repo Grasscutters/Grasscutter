@@ -144,13 +144,11 @@ public final class GiveCommand implements CommandHandler {
                 }
                 items.add(item);
             }
-            player.getInventory().addItems(items);
-            player.sendPacket(new PacketItemAddHintNotify(items, ActionReason.SubfieldDrop));
+            player.getInventory().addItems(items, ActionReason.SubfieldDrop);
         } else {
             GenshinItem genshinItem = new GenshinItem(itemData);
             genshinItem.setCount(amount);
-            player.getInventory().addItem(genshinItem);
-            player.sendPacket(new PacketItemAddHintNotify(genshinItem, ActionReason.SubfieldDrop));
+            player.getInventory().addItem(genshinItem, ActionReason.SubfieldDrop);
         }
     }
 }
