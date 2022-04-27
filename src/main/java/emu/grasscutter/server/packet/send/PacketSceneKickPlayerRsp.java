@@ -1,11 +1,11 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.net.proto.SceneKickPlayerRspOuterClass.SceneKickPlayerRsp;
 
-public class PacketSceneKickPlayerRsp extends GenshinPacket {
+public class PacketSceneKickPlayerRsp extends BasePacket {
 	
 	public PacketSceneKickPlayerRsp(int targetUid) {
 		super(PacketOpcodes.SceneKickPlayerRsp);

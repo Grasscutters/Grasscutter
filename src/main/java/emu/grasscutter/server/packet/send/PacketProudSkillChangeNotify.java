@@ -1,13 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.avatar.GenshinAvatar;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify;
 
-public class PacketProudSkillChangeNotify extends GenshinPacket {
+public class PacketProudSkillChangeNotify extends BasePacket {
 	
-	public PacketProudSkillChangeNotify(GenshinAvatar avatar) {
+	public PacketProudSkillChangeNotify(Avatar avatar) {
 		super(PacketOpcodes.ProudSkillChangeNotify);
 		
 		ProudSkillChangeNotify proto = ProudSkillChangeNotify.newBuilder()

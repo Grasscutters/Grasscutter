@@ -1,10 +1,10 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SceneEntityDrownRspOuterClass.SceneEntityDrownRsp;
 
-public class PacketSceneEntityDrownRsp extends GenshinPacket {
+public class PacketSceneEntityDrownRsp extends BasePacket {
 
     public PacketSceneEntityDrownRsp(int entityId) {
         super(PacketOpcodes.SceneEntityDrownRsp);

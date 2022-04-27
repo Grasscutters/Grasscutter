@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.NpcTalkReqOuterClass.NpcTalkReq;

@@ -13,13 +13,13 @@ import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.PostLoad;
 import dev.morphia.annotations.Transient;
 
-import emu.grasscutter.data.GenshinData;
-import emu.grasscutter.data.GenshinDepot;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.ReliquaryAffixData;
 import emu.grasscutter.data.def.ReliquaryMainPropData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.EquipOuterClass.Equip;
@@ -35,7 +35,7 @@ import emu.grasscutter.net.proto.WeaponOuterClass.Weapon;
 import emu.grasscutter.utils.WeightedList;
 
 @Entity(value = "items", useDiscriminator = false)
-public class GenshinItem {
+public class GameItem {
 	@Id private ObjectId id;
 	@Indexed private int ownerId;
 	private int itemId;
@@ -62,23 +62,23 @@ public class GenshinItem {
 	private int equipCharacter;
 	@Transient private int weaponEntityId;
 	
-	public GenshinItem() {
+	public GameItem() {
 		// Morphia only
 	}
 	
-	public GenshinItem(int itemId) {
-		this(GenshinData.getItemDataMap().get(itemId));
+	public GameItem(int itemId) {
+		this(GameData.getItemDataMap().get(itemId));
 	}
 	
-	public GenshinItem(int itemId, int count) {
-		this(GenshinData.getItemDataMap().get(itemId), count);
+	public GameItem(int itemId, int count) {
+		this(GameData.getItemDataMap().get(itemId), count);
 	}
 	
-	public GenshinItem(ItemData data) {
+	public GameItem(ItemData data) {
 		this(data, 1);
 	}
 	
-	public GenshinItem(ItemData data, int count) {
+	public GameItem(ItemData data, int count) {
 		this.itemId = data.getId();
 		this.itemData = data;
 		
@@ -103,7 +103,7 @@ public class GenshinItem {
 			this.level = 1;
 			this.appendPropIdList = new ArrayList<>();
 			// Create main property
-			ReliquaryMainPropData mainPropData = GenshinDepot.getRandomRelicMainProp(getItemData().getMainPropDepotId());
+			ReliquaryMainPropData mainPropData = GameDepot.getRandomRelicMainProp(getItemData().getMainPropDepotId());
 			if (mainPropData != null) {
 				this.mainPropId = mainPropData.getId();
 			}
@@ -124,9 +124,9 @@ public class GenshinItem {
 		return ownerId;
 	}
 
-	public void setOwner(GenshinPlayer player) {
+	public void setOwner(Player player) {
 		this.ownerId = player.getUid();
-		this.guid = player.getNextGenshinGuid();
+		this.guid = player.getNextGameGuid();
 	}
 	public int getItemId() {
 		return itemId;
@@ -261,7 +261,7 @@ public class GenshinItem {
 	}
 	
 	private void addNewAppendProp() {
-		List<ReliquaryAffixData> affixList = GenshinDepot.getRandomRelicAffixList(getItemData().getAppendPropDepotId());
+		List<ReliquaryAffixData> affixList = GameDepot.getRandomRelicAffixList(getItemData().getAppendPropDepotId());
 		
 		if (affixList == null) {
 			return;
@@ -269,13 +269,13 @@ public class GenshinItem {
 		
 		// Build blacklist - Dont add same stat as main/sub stat
 		Set<FightProperty> blacklist = new HashSet<>();
-		ReliquaryMainPropData mainPropData = GenshinData.getReliquaryMainPropDataMap().get(this.getMainPropId());
+		ReliquaryMainPropData mainPropData = GameData.getReliquaryMainPropDataMap().get(this.getMainPropId());
 		if (mainPropData != null) {
 			blacklist.add(mainPropData.getFightProp());
 		}
 		int len = Math.min(4, this.getAppendPropIdList().size());
 		for (int i = 0; i < len; i++) {
-			ReliquaryAffixData affixData = GenshinData.getReliquaryAffixDataMap().get((int) this.getAppendPropIdList().get(i));
+			ReliquaryAffixData affixData = GameData.getReliquaryAffixDataMap().get((int) this.getAppendPropIdList().get(i));
 			if (affixData != null) {
 				blacklist.add(affixData.getFightProp());
 			}
@@ -299,7 +299,7 @@ public class GenshinItem {
 	}
 	
 	private void upgradeRandomAppendProp() {
-		List<ReliquaryAffixData> affixList = GenshinDepot.getRandomRelicAffixList(getItemData().getAppendPropDepotId());
+		List<ReliquaryAffixData> affixList = GameDepot.getRandomRelicAffixList(getItemData().getAppendPropDepotId());
 		
 		if (affixList == null) {
 			return;
@@ -309,7 +309,7 @@ public class GenshinItem {
 		Set<FightProperty> whitelist = new HashSet<>();
 		int len = Math.min(4, this.getAppendPropIdList().size());
 		for (int i = 0; i < len; i++) {
-			ReliquaryAffixData affixData = GenshinData.getReliquaryAffixDataMap().get((int) this.getAppendPropIdList().get(i));
+			ReliquaryAffixData affixData = GameData.getReliquaryAffixDataMap().get((int) this.getAppendPropIdList().get(i));
 			if (affixData != null) {
 				whitelist.add(affixData.getFightProp());
 			}
@@ -331,7 +331,7 @@ public class GenshinItem {
 	@PostLoad 
 	public void onLoad() {
 		if (this.itemData == null) {
-			this.itemData = GenshinData.getItemDataMap().get(getItemId());
+			this.itemData = GameData.getItemDataMap().get(getItemId());
 		}
 	}
 	

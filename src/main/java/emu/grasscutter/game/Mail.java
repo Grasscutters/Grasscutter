@@ -57,7 +57,7 @@ public class Mail {
             this(title, content, "Server");
         }
 
-        public MailContent(String title, String content, GenshinPlayer sender) {
+        public MailContent(String title, String content, Player sender) {
             this(title, content, sender.getNickname());
         }
 

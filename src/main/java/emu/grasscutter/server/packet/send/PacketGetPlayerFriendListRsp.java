@@ -1,9 +1,9 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.GenshinConstants;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.GameConstants;
+import emu.grasscutter.game.Player;
 import emu.grasscutter.game.friends.Friendship;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief;
 import emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState;
@@ -11,16 +11,16 @@ import emu.grasscutter.net.proto.GetPlayerFriendListRspOuterClass.GetPlayerFrien
 import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
 import emu.grasscutter.net.proto.PlatformTypeOuterClass;
 
-public class PacketGetPlayerFriendListRsp extends GenshinPacket {
+public class PacketGetPlayerFriendListRsp extends BasePacket {
 	
-	public PacketGetPlayerFriendListRsp(GenshinPlayer player) {
+	public PacketGetPlayerFriendListRsp(Player player) {
 		super(PacketOpcodes.GetPlayerFriendListRsp);
 		
 		FriendBrief serverFriend = FriendBrief.newBuilder()
-				.setUid(GenshinConstants.SERVER_CONSOLE_UID)
+				.setUid(GameConstants.SERVER_CONSOLE_UID)
 				.setNickname("Server")
 				.setLevel(1)
-				.setAvatarId(HeadImage.newBuilder().setAvatarId(GenshinConstants.MAIN_CHARACTER_FEMALE).getAvatarId())
+				.setAvatarId(HeadImage.newBuilder().setAvatarId(GameConstants.MAIN_CHARACTER_FEMALE).getAvatarId())
 				.setWorldLevel(0)
 				.setSignature("")
 				.setLastActiveTime((int) (System.currentTimeMillis() / 1000f))

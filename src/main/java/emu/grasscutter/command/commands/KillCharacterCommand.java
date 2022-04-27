@@ -3,7 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Player;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
@@ -17,7 +17,7 @@ import java.util.List;
 public final class KillCharacterCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         int target;
         if (sender == null) {
             // from console
@@ -48,7 +48,7 @@ public final class KillCharacterCommand implements CommandHandler {
             }
         }
 
-        GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
             CommandHandler.sendMessage(sender, "Player not found or offline.");
             return;

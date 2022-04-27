@@ -3,7 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Player;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
 
@@ -16,7 +16,7 @@ import java.util.List;
 public final class ClearCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         int target;
         if (sender == null) {
             CommandHandler.sendMessage(null, "Run this command in-game.");
@@ -27,7 +27,7 @@ public final class ClearCommand implements CommandHandler {
         Inventory playerInventory = sender.getInventory();
             try {
                 target = Integer.parseInt(args.get(0));
-                GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+                Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
                 if (targetPlayer == null) {
                     target = sender.getUid();
                 } else {
@@ -92,7 +92,7 @@ public final class ClearCommand implements CommandHandler {
                 return;
             }
 
-        GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
             CommandHandler.sendMessage(sender, "Player not found.");
             return;

@@ -1,12 +1,12 @@
 package emu.grasscutter.data.def;
 
 import java.util.ArrayList;
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.FightPropData;
 
 @ResourceType(name = "EquipAffixExcelConfigData.json")
-public class EquipAffixData extends GenshinResource {
+public class EquipAffixData extends GameResource {
 
 	private int AffixId;
     private int Id;

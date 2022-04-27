@@ -2,7 +2,7 @@ package emu.grasscutter.task;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Player;
 
 import org.quartz.CronScheduleBuilder;
 import org.quartz.CronTrigger;

@@ -1,6 +1,6 @@
 package emu.grasscutter.plugin.api;
 
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Player;
 import emu.grasscutter.server.game.GameServer;
 
 import java.util.LinkedList;
@@ -35,7 +35,7 @@ public final class ServerHook {
      * Gets all online players.
      * @return Players connected to the server.
      */
-    public List<GenshinPlayer> getOnlinePlayers() {
+    public List<Player> getOnlinePlayers() {
         return new LinkedList<>(this.server.getPlayers().values());
     }
 }

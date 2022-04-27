@@ -1,11 +1,11 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.data.GenshinData;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.game.Player;
 import emu.grasscutter.game.Mail;
-import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EquipParamOuterClass;
 import emu.grasscutter.net.proto.GetMailItemRspOuterClass.GetMailItemRsp;
@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class PacketGetMailItemRsp  extends GenshinPacket {
+public class PacketGetMailItemRsp  extends BasePacket {
 
-    public PacketGetMailItemRsp(GenshinPlayer player, List<Integer> mailList) {
+    public PacketGetMailItemRsp(Player player, List<Integer> mailList) {
         super(PacketOpcodes.GetMailItemRsp);
 
         List<Mail> claimedMessages = new ArrayList<>();
@@ -50,11 +50,11 @@ public class PacketGetMailItemRsp  extends GenshinPacket {
                 item.setPromoteLevel(promoteLevel);
                 claimedItems.add(item.build());
 
-                GenshinItem genshinItem = new GenshinItem(GenshinData.getItemDataMap().get(mailItem.itemId));
-                genshinItem.setCount(mailItem.itemCount);
-                genshinItem.setLevel(mailItem.itemLevel);
-                genshinItem.setPromoteLevel(promoteLevel);
-                player.getInventory().addItem(genshinItem, ActionReason.MailAttachment);
+                GameItem gameItem = new GameItem(GameData.getItemDataMap().get(mailItem.itemId));
+                gameItem.setCount(mailItem.itemCount);
+                gameItem.setLevel(mailItem.itemLevel);
+                gameItem.setPromoteLevel(promoteLevel);
+                player.getInventory().addItem(gameItem, ActionReason.MailAttachment);
             }
 
             message.isAttachmentGot = true;

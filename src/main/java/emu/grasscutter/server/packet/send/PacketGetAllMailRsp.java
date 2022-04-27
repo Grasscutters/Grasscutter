@@ -1,9 +1,9 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Player;
 import emu.grasscutter.game.Mail;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GetAllMailRspOuterClass.GetAllMailRsp;
 import emu.grasscutter.net.proto.ItemParamOuterClass;
@@ -17,9 +17,9 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
-public class PacketGetAllMailRsp extends GenshinPacket {
+public class PacketGetAllMailRsp extends BasePacket {
 
-    public PacketGetAllMailRsp(GenshinPlayer player, boolean isGiftMail) {
+    public PacketGetAllMailRsp(Player player, boolean isGiftMail) {
         super(PacketOpcodes.GetAllMailRsp);
 
         if (isGiftMail) {

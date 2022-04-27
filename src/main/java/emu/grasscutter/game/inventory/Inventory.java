@@ -5,17 +5,17 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import emu.grasscutter.GenshinConstants;
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarCostumeData;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.AvatarFlycloakData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Player;
 import emu.grasscutter.game.avatar.AvatarStorage;
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
@@ -28,13 +28,13 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 
-public class Inventory implements Iterable<GenshinItem> {
-	private final GenshinPlayer player;
+public class Inventory implements Iterable<GameItem> {
+	private final Player player;
 	
-	private final Long2ObjectMap<GenshinItem> store;
+	private final Long2ObjectMap<GameItem> store;
 	private final Int2ObjectMap<InventoryTab> inventoryTypes;
 	
-	public Inventory(GenshinPlayer player) {
+	public Inventory(Player player) {
 		this.player = player;
 		this.store = new Long2ObjectOpenHashMap<>();
 		this.inventoryTypes = new Int2ObjectOpenHashMap<>();
@@ -45,7 +45,7 @@ public class Inventory implements Iterable<GenshinItem> {
 		this.createInventoryTab(ItemType.ITEM_FURNITURE, new MaterialInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitFurniture));
 	}
 
-	public GenshinPlayer getPlayer() {
+	public Player getPlayer() {
 		return player;
 	}
 	
@@ -53,7 +53,7 @@ public class Inventory implements Iterable<GenshinItem> {
 		return this.getPlayer().getAvatars();
 	}
 
-	public Long2ObjectMap<GenshinItem> getItems() {
+	public Long2ObjectMap<GameItem> getItems() {
 		return store;
 	}
 	
@@ -69,7 +69,7 @@ public class Inventory implements Iterable<GenshinItem> {
 		this.getInventoryTypes().put(type.getValue(), tab);
 	}
 	
-	public GenshinItem getItemByGuid(long id) {
+	public GameItem getItemByGuid(long id) {
 		return this.getItems().get(id);
 	}
 	
@@ -78,19 +78,19 @@ public class Inventory implements Iterable<GenshinItem> {
 	}
 	
 	public boolean addItem(int itemId, int count) {
-		ItemData itemData = GenshinData.getItemDataMap().get(itemId);
+		ItemData itemData = GameData.getItemDataMap().get(itemId);
 		
 		if (itemData == null) {
 			return false;
 		}
 		
-		GenshinItem item = new GenshinItem(itemData, count);
+		GameItem item = new GameItem(itemData, count);
 		
 		return addItem(item);
 	}
 
-	public boolean addItem(GenshinItem item) {
-		GenshinItem result = putItem(item);
+	public boolean addItem(GameItem item) {
+		GameItem result = putItem(item);
 		
 		if (result != null) {
 			getPlayer().sendPacket(new PacketStoreItemChangeNotify(result));
@@ -100,7 +100,7 @@ public class Inventory implements Iterable<GenshinItem> {
 		return false;
 	}
 	
-	public boolean addItem(GenshinItem item, ActionReason reason) {
+	public boolean addItem(GameItem item, ActionReason reason) {
 		boolean result = addItem(item);
 		
 		if (result && reason != null) {
@@ -110,15 +110,15 @@ public class Inventory implements Iterable<GenshinItem> {
 		return result;
 	}
 	
-	public void addItems(Collection<GenshinItem> items) {
+	public void addItems(Collection<GameItem> items) {
 		this.addItems(items, null);
 	}
 	
-	public void addItems(Collection<GenshinItem> items, ActionReason reason) {
-		List<GenshinItem> changedItems = new LinkedList<>();
+	public void addItems(Collection<GameItem> items, ActionReason reason) {
+		List<GameItem> changedItems = new LinkedList<>();
 		
-		for (GenshinItem item : items) {
-			GenshinItem result = putItem(item);
+		for (GameItem item : items) {
+			GameItem result = putItem(item);
 			if (result != null) {
 				changedItems.add(result);
 			}
@@ -136,10 +136,10 @@ public class Inventory implements Iterable<GenshinItem> {
 	}
 	
 	public void addItemParams(Collection<ItemParam> items) {
-		addItems(items.stream().map(param -> new GenshinItem(param.getItemId(), param.getCount())).toList(), null);
+		addItems(items.stream().map(param -> new GameItem(param.getItemId(), param.getCount())).toList(), null);
 	}
 	
-	private synchronized GenshinItem putItem(GenshinItem item) {
+	private synchronized GameItem putItem(GameItem item) {
 		// Dont add items that dont have a valid item definition.
 		if (item.getItemData() == null) {
 			return null;
@@ -163,23 +163,23 @@ public class Inventory implements Iterable<GenshinItem> {
 			// Get avatar id
 			int avatarId = (item.getItemId() % 1000) + 10000000;
 			// Dont let people give themselves extra main characters
-			if (avatarId == GenshinConstants.MAIN_CHARACTER_MALE || avatarId == GenshinConstants.MAIN_CHARACTER_FEMALE) {
+			if (avatarId == GameConstants.MAIN_CHARACTER_MALE || avatarId == GameConstants.MAIN_CHARACTER_FEMALE) {
 				return null;
 			}
 			// Add avatar
-			AvatarData avatarData = GenshinData.getAvatarDataMap().get(avatarId);
+			AvatarData avatarData = GameData.getAvatarDataMap().get(avatarId);
 			if (avatarData != null && !player.getAvatars().hasAvatar(avatarId)) {
-				this.getPlayer().addAvatar(new GenshinAvatar(avatarData));
+				this.getPlayer().addAvatar(new Avatar(avatarData));
 			}
 			return null;
 		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_FLYCLOAK) {
-			AvatarFlycloakData flycloakData = GenshinData.getAvatarFlycloakDataMap().get(item.getItemId());
+			AvatarFlycloakData flycloakData = GameData.getAvatarFlycloakDataMap().get(item.getItemId());
 			if (flycloakData != null && !player.getFlyCloakList().contains(item.getItemId())) {
 				getPlayer().addFlycloak(item.getItemId());
 			}
 			return null;
 		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_COSTUME) {
-			AvatarCostumeData costumeData = GenshinData.getAvatarCostumeDataItemIdMap().get(item.getItemId());
+			AvatarCostumeData costumeData = GameData.getAvatarCostumeDataItemIdMap().get(item.getItemId());
 			if (costumeData != null && !player.getCostumeList().contains(costumeData.getId())) {
 				getPlayer().addCostume(costumeData.getId());
 			}
@@ -190,7 +190,7 @@ public class Inventory implements Iterable<GenshinItem> {
 			}
 			return null;
 		} else if (tab != null) {
-			GenshinItem existingItem = tab.getItemById(item.getItemId());
+			GameItem existingItem = tab.getItemById(item.getItemId());
 			if (existingItem == null) {
 				// Item type didnt exist before, we will add it to main inventory map if there is enough space
 				if (tab.getSize() >= tab.getMaxCapacity()) {
@@ -213,7 +213,7 @@ public class Inventory implements Iterable<GenshinItem> {
 		return item;
 	}
 	
-	private synchronized void putItem(GenshinItem item, InventoryTab tab) {
+	private synchronized void putItem(GameItem item, InventoryTab tab) {
 		// Set owner and guid FIRST!
 		item.setOwner(getPlayer());
 		// Put in item store
@@ -242,9 +242,9 @@ public class Inventory implements Iterable<GenshinItem> {
 		}
 	}
 	
-	public void removeItems(List<GenshinItem> items) {
+	public void removeItems(List<GameItem> items) {
 		// TODO Bulk delete
-		for (GenshinItem item : items) {
+		for (GameItem item : items) {
 			this.removeItem(item, item.getCount());
 		}
 	}
@@ -254,7 +254,7 @@ public class Inventory implements Iterable<GenshinItem> {
 	}
 	
 	public synchronized boolean removeItem(long guid, int count) {
-		GenshinItem item = this.getItemByGuid(guid);
+		GameItem item = this.getItemByGuid(guid);
 		
 		if (item == null) {
 			return false;
@@ -263,11 +263,11 @@ public class Inventory implements Iterable<GenshinItem> {
 		return removeItem(item, count);
 	}
 	
-	public synchronized boolean removeItem(GenshinItem item) {
+	public synchronized boolean removeItem(GameItem item) {
 		return removeItem(item, item.getCount());
 	}
 	
-	public synchronized boolean removeItem(GenshinItem item, int count) {
+	public synchronized boolean removeItem(GameItem item, int count) {
 		// Sanity check
 		if (count <= 0 || item == null) {
 			return false;
@@ -296,7 +296,7 @@ public class Inventory implements Iterable<GenshinItem> {
 		return true;
 	}
 	
-	private void deleteItem(GenshinItem item, InventoryTab tab) {
+	private void deleteItem(GameItem item, InventoryTab tab) {
 		getItems().remove(item.getGuid());
 		if (tab != null) {
 			tab.onRemoveItem(item);
@@ -304,8 +304,8 @@ public class Inventory implements Iterable<GenshinItem> {
 	}
 	
 	public boolean equipItem(long avatarGuid, long equipGuid) {
-		GenshinAvatar avatar = getPlayer().getAvatars().getAvatarByGuid(avatarGuid);
-		GenshinItem item = this.getItemByGuid(equipGuid);
+		Avatar avatar = getPlayer().getAvatars().getAvatarByGuid(avatarGuid);
+		GameItem item = this.getItemByGuid(equipGuid);
 		
 		if (avatar != null && item != null) {
 			return avatar.equipItem(item, true);
@@ -315,7 +315,7 @@ public class Inventory implements Iterable<GenshinItem> {
 	}
 	
 	public boolean unequipItem(long avatarGuid, int slot) {
-		GenshinAvatar avatar = getPlayer().getAvatars().getAvatarByGuid(avatarGuid);
+		Avatar avatar = getPlayer().getAvatars().getAvatarByGuid(avatarGuid);
 		EquipType equipType = EquipType.getTypeByValue(slot);
 		
 		if (avatar != null && equipType != EquipType.EQUIP_WEAPON) {
@@ -330,15 +330,15 @@ public class Inventory implements Iterable<GenshinItem> {
 	}
 	
 	public void loadFromDatabase() {
-		List<GenshinItem> items = DatabaseHelper.getInventoryItems(getPlayer());
+		List<GameItem> items = DatabaseHelper.getInventoryItems(getPlayer());
 		
-		for (GenshinItem item : items) {
+		for (GameItem item : items) {
 			// Should never happen
 			if (item.getObjectId() == null) {
 				continue;
 			}
 			
-			ItemData itemData = GenshinData.getItemDataMap().get(item.getItemId());
+			ItemData itemData = GameData.getItemDataMap().get(item.getItemId());
 			if (itemData == null) {
 				continue;
 			}
@@ -354,7 +354,7 @@ public class Inventory implements Iterable<GenshinItem> {
 			
 			// Equip to a character if possible
 			if (item.isEquipped()) {
-				GenshinAvatar avatar = getPlayer().getAvatars().getAvatarById(item.getEquipCharacter());
+				Avatar avatar = getPlayer().getAvatars().getAvatarById(item.getEquipCharacter());
 				boolean hasEquipped = false;
 				
 				if (avatar != null) {
@@ -370,7 +370,7 @@ public class Inventory implements Iterable<GenshinItem> {
 	}
 
 	@Override
-	public Iterator<GenshinItem> iterator() {
+	public Iterator<GameItem> iterator() {
 		return this.getItems().values().iterator();
 	}
 }

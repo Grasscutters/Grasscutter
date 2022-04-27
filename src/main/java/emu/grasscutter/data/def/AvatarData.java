@@ -2,8 +2,8 @@ package emu.grasscutter.data.def;
 
 import java.util.List;
 
-import emu.grasscutter.data.GenshinData;
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.PropGrowCurve;
@@ -15,7 +15,7 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 
 @ResourceType(name = "AvatarExcelConfigData.json", loadPriority = LoadPriority.LOW)
-public class AvatarData extends GenshinResource {
+public class AvatarData extends GameResource {
 	
 	private String name;
 	private String IconName;
@@ -178,7 +178,7 @@ public class AvatarData extends GenshinResource {
     	if (growCurve == null) {
     		return 1f;
     	}
-    	AvatarCurveData curveData = GenshinData.getAvatarCurveDataMap().get(level);
+    	AvatarCurveData curveData = GameData.getAvatarCurveDataMap().get(level);
     	if (curveData == null) {
     		return 1f;
     	}
@@ -211,24 +211,24 @@ public class AvatarData extends GenshinResource {
 
 	@Override
 	public void onLoad() {
-    	this.skillDepot = GenshinData.getAvatarSkillDepotDataMap().get(this.SkillDepotId);
+    	this.skillDepot = GameData.getAvatarSkillDepotDataMap().get(this.SkillDepotId);
 
-        // Get fetters from GenshinData
-        this.fetters = GenshinData.getFetterDataEntries().get(this.Id);
+        // Get fetters from GameData
+        this.fetters = GameData.getFetterDataEntries().get(this.Id);
         
-        if (GenshinData.getFetterCharacterCardDataMap().get(this.Id) != null) {
-            this.nameCardRewardId = GenshinData.getFetterCharacterCardDataMap().get(this.Id).getRewardId();
+        if (GameData.getFetterCharacterCardDataMap().get(this.Id) != null) {
+            this.nameCardRewardId = GameData.getFetterCharacterCardDataMap().get(this.Id).getRewardId();
         }
 
-        if (GenshinData.getRewardDataMap().get(this.nameCardRewardId) != null) {
-            this.nameCardId = GenshinData.getRewardDataMap().get(this.nameCardRewardId).getRewardItemList().get(0).getItemId();
+        if (GameData.getRewardDataMap().get(this.nameCardRewardId) != null) {
+            this.nameCardId = GameData.getRewardDataMap().get(this.nameCardRewardId).getRewardItemList().get(0).getItemId();
         }
     	
-    	int size = GenshinData.getAvatarCurveDataMap().size();
+    	int size = GameData.getAvatarCurveDataMap().size();
     	this.hpGrowthCurve = new float[size];
     	this.attackGrowthCurve = new float[size];
     	this.defenseGrowthCurve = new float[size];
-    	for (AvatarCurveData curveData : GenshinData.getAvatarCurveDataMap().values()) {
+    	for (AvatarCurveData curveData : GameData.getAvatarCurveDataMap().values()) {
     		int level = curveData.getLevel() - 1;
     		for (PropGrowCurve growCurve : this.PropGrowCurves) {
     			FightProperty prop = FightProperty.getPropByName(growCurve.getType());
@@ -260,7 +260,7 @@ public class AvatarData extends GenshinResource {
     	if (split.length > 0) {
     		this.name = split[split.length - 1];
     		
-    		AbilityEmbryoEntry info = GenshinData.getAbilityEmbryoInfo().get(this.name);
+    		AbilityEmbryoEntry info = GameData.getAbilityEmbryoInfo().get(this.name);
     		if (info != null) {
     			this.abilities = new IntArrayList(info.getAbilities().length);
     			for (String ability : info.getAbilities()) {

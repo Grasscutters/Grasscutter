@@ -3,12 +3,12 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.avatar.GenshinAvatar;
-import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.Player;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 
 import java.util.*;
@@ -18,7 +18,7 @@ import java.util.*;
 public class GiveAllCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         int target, amount = 99999;
 
         switch (args.size()) {
@@ -63,7 +63,7 @@ public class GiveAllCommand implements CommandHandler {
                 return;
         }
 
-        GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
             CommandHandler.sendMessage(sender, "Player not found.");
             return;
@@ -73,14 +73,14 @@ public class GiveAllCommand implements CommandHandler {
         CommandHandler.sendMessage(sender, "Giving all items done");
     }
 
-    public void giveAllItems(GenshinPlayer player, int amount) {
+    public void giveAllItems(Player player, int amount) {
         CommandHandler.sendMessage(player, "Giving all items...");
 
-        for (AvatarData avatarData: GenshinData.getAvatarDataMap().values()) {
+        for (AvatarData avatarData: GameData.getAvatarDataMap().values()) {
             //Exclude test avatar
             if (isTestAvatar(avatarData.getId())) continue;
 
-            GenshinAvatar avatar = new GenshinAvatar(avatarData);
+            Avatar avatar = new Avatar(avatarData);
             avatar.setLevel(90);
             avatar.setPromoteLevel(6);
             for (int i = 1; i <= 6; ++i) {
@@ -92,41 +92,41 @@ public class GiveAllCommand implements CommandHandler {
         }
 
         //some test items
-        List<GenshinItem> genshinItemList = new ArrayList<>();
-        for (ItemData itemdata: GenshinData.getItemDataMap().values()) {
+        List<GameItem> itemList = new ArrayList<>();
+        for (ItemData itemdata: GameData.getItemDataMap().values()) {
             //Exclude test item
             if (isTestItem(itemdata.getId())) continue;
 
             if (itemdata.isEquip()) {
                 for (int i = 0; i < 10; ++i) {
-                    GenshinItem genshinItem = new GenshinItem(itemdata);
+                    GameItem item = new GameItem(itemdata);
                     if (itemdata.getItemType() == ItemType.ITEM_WEAPON) {
-                        genshinItem.setLevel(90);
-                        genshinItem.setPromoteLevel(6);
-                        genshinItem.setRefinement(4);
+                        item.setLevel(90);
+                        item.setPromoteLevel(6);
+                        item.setRefinement(4);
                     }
-                    genshinItemList.add(genshinItem);
+                    itemList.add(item);
                 }
             }
             else {
-                GenshinItem genshinItem = new GenshinItem(itemdata);
-                genshinItem.setCount(amount);
-                genshinItemList.add(genshinItem);
+                GameItem item = new GameItem(itemdata);
+                item.setCount(amount);
+                itemList.add(item);
             }
         }
         int packetNum = 20;
-        int itemLength = genshinItemList.size();
+        int itemLength = itemList.size();
         int number = itemLength / packetNum;
         int remainder = itemLength % packetNum;
         int offset = 0;
         for (int i = 0; i < packetNum; ++i) {
             if (remainder > 0) {
-                player.getInventory().addItems(genshinItemList.subList(i * number + offset, (i + 1) * number + offset + 1));
+                player.getInventory().addItems(itemList.subList(i * number + offset, (i + 1) * number + offset + 1));
                 --remainder;
                 ++offset;
             }
             else {
-                player.getInventory().addItems(genshinItemList.subList(i * number + offset, (i + 1) * number + offset));
+                player.getInventory().addItems(itemList.subList(i * number + offset, (i + 1) * number + offset));
             }
         }
     }

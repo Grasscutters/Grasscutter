@@ -2,7 +2,7 @@ package emu.grasscutter.command;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.Player;
 import org.reflections.Reflections;
 
 import java.util.*;
@@ -103,7 +103,7 @@ public final class CommandMap {
      * @param player     The player invoking the command or null for the server console.
      * @param rawMessage The messaged used to invoke the command.
      */
-    public void invoke(GenshinPlayer player, String rawMessage) {
+    public void invoke(Player player, String rawMessage) {
         rawMessage = rawMessage.trim();
         if (rawMessage.length() == 0) {
             CommandHandler.sendMessage(player, "No command specified.");
