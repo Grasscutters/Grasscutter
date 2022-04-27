@@ -3,7 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
 
 import java.util.*;
 
@@ -12,7 +12,7 @@ import java.util.*;
 public final class HelpCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer player, List<String> args) {
+    public void execute(Player player, List<String> args) {
         if (args.size() < 1) {
             HashMap<String, CommandHandler> handlers = CommandMap.getInstance().getHandlers();
             List<Command> annotations = new ArrayList<>();
@@ -53,7 +53,7 @@ public final class HelpCommand implements CommandHandler {
         }
     }
 
-    void SendAllHelpMessage(GenshinPlayer player, List<Command> annotations) {
+    void SendAllHelpMessage(Player player, List<Command> annotations) {
         if (player == null) {
             StringBuilder builder = new StringBuilder("\nAvailable commands:\n");
             annotations.forEach(annotation -> {

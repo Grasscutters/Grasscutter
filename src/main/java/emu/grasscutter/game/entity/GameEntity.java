@@ -1,10 +1,10 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.game.GenshinScene;
-import emu.grasscutter.game.World;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
+import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.SpawnDataEntry;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
@@ -12,16 +12,16 @@ import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 
-public abstract class GenshinEntity {
+public abstract class GameEntity {
 	protected int id;
-	private final GenshinScene scene;
+	private final Scene scene;
 	private SpawnDataEntry spawnEntry;
 	
 	private MotionState moveState;
 	private int lastMoveSceneTimeMs;
 	private int lastMoveReliableSeq;
 	
-	public GenshinEntity(GenshinScene scene) {
+	public GameEntity(Scene scene) {
 		this.scene = scene;
 		this.moveState = MotionState.MOTION_NONE;
 	}
@@ -34,7 +34,7 @@ public abstract class GenshinEntity {
 		return this.getScene().getWorld();
 	}
 
-	public GenshinScene getScene() {
+	public Scene getScene() {
 		return this.scene;
 	}
 	

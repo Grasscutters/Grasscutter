@@ -5,7 +5,7 @@ import org.bson.types.ObjectId;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief;
 import emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState;
 import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
@@ -14,7 +14,7 @@ import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
 public class Friendship {
 	@Id private ObjectId id;
 	
-	@Transient private GenshinPlayer owner;
+	@Transient private Player owner;
 	
 	@Indexed private int ownerId;
 	@Indexed private int friendId;
@@ -26,7 +26,7 @@ public class Friendship {
 	@Deprecated // Morphia use only
 	public Friendship() { }
 	
-	public Friendship(GenshinPlayer owner, GenshinPlayer friend, GenshinPlayer asker) {
+	public Friendship(Player owner, Player friend, Player asker) {
 		this.setOwner(owner);
 		this.ownerId = owner.getUid();
 		this.friendId = friend.getUid();
@@ -34,11 +34,11 @@ public class Friendship {
 		this.askerId = asker.getUid();
 	}
 
-	public GenshinPlayer getOwner() {
+	public Player getOwner() {
 		return owner;
 	}
 
-	public void setOwner(GenshinPlayer owner) {
+	public void setOwner(Player owner) {
 		this.owner = owner;
 	}
 
@@ -70,7 +70,7 @@ public class Friendship {
 		return profile;
 	}
 	
-	public void setFriendProfile(GenshinPlayer character) {
+	public void setFriendProfile(Player character) {
 		if (character == null || this.friendId != character.getUid()) return;
 		this.profile = character.getProfile();
 	}

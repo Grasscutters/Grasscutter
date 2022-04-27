@@ -4,7 +4,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class MaterialInventoryTab implements InventoryTab {
-	private final Int2ObjectMap<GenshinItem> items;
+	private final Int2ObjectMap<GameItem> items;
 	private final int maxCapacity;
 	
 	public MaterialInventoryTab(int maxCapacity) {
@@ -13,17 +13,17 @@ public class MaterialInventoryTab implements InventoryTab {
 	}
 	
 	@Override
-	public GenshinItem getItemById(int id) {
+	public GameItem getItemById(int id) {
 		return this.items.get(id);
 	}
 
 	@Override
-	public void onAddItem(GenshinItem item) {
+	public void onAddItem(GameItem item) {
 		this.items.put(item.getItemId(), item);
 	}
 
 	@Override
-	public void onRemoveItem(GenshinItem item) {
+	public void onRemoveItem(GameItem item) {
 		this.items.remove(item.getItemId());
 	}
 

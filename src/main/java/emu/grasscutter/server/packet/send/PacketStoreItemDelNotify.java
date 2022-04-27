@@ -2,19 +2,19 @@ package emu.grasscutter.server.packet.send;
 
 import java.util.Collection;
 
-import emu.grasscutter.game.inventory.GenshinItem;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.StoreItemDelNotifyOuterClass.StoreItemDelNotify;
 import emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType;
 
-public class PacketStoreItemDelNotify extends GenshinPacket {
+public class PacketStoreItemDelNotify extends BasePacket {
 	
 	private PacketStoreItemDelNotify() {
 		super(PacketOpcodes.StoreItemDelNotify);
 	}
 	
-	public PacketStoreItemDelNotify(GenshinItem item) {
+	public PacketStoreItemDelNotify(GameItem item) {
 		this();
 		
 		StoreItemDelNotify.Builder proto = StoreItemDelNotify.newBuilder()
@@ -24,7 +24,7 @@ public class PacketStoreItemDelNotify extends GenshinPacket {
 		this.setData(proto);
 	}
 	
-	public PacketStoreItemDelNotify(Collection<GenshinItem> items) {
+	public PacketStoreItemDelNotify(Collection<GameItem> items) {
 		this();
 
 		StoreItemDelNotify.Builder proto = StoreItemDelNotify.newBuilder()

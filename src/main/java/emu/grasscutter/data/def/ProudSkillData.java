@@ -3,13 +3,13 @@ package emu.grasscutter.data.def;
 import java.util.ArrayList;
 import java.util.List;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.common.ItemParamData;
 
 @ResourceType(name = "ProudSkillExcelConfigData.json")
-public class ProudSkillData extends GenshinResource {
+public class ProudSkillData extends GameResource {
 	
 	private int ProudSkillId;
     private int ProudSkillGroupId;

@@ -16,7 +16,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-public class GenshinData {
+public class GameData {
 	// BinOutputs
 	private static final Int2ObjectMap<String> abilityHashes = new Int2ObjectOpenHashMap<>();
 	private static final Map<String, AbilityEmbryoEntry> abilityEmbryos = new HashMap<>();
@@ -69,7 +69,7 @@ public class GenshinData {
 		Int2ObjectMap<?> map = null;
 		
 		try {
-			Field field = GenshinData.class.getDeclaredField(Utils.lowerCaseFirstChar(resourceDefinition.getSimpleName()) + "Map");
+			Field field = GameData.class.getDeclaredField(Utils.lowerCaseFirstChar(resourceDefinition.getSimpleName()) + "Map");
 			field.setAccessible(true);
 			
 			map = (Int2ObjectMap<?>) field.get(null);

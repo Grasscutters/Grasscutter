@@ -1,14 +1,14 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.World;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.world.World;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp;
 
-public class PacketChangeGameTimeRsp extends GenshinPacket {
+public class PacketChangeGameTimeRsp extends BasePacket {
 	
-	public PacketChangeGameTimeRsp(GenshinPlayer player) {
+	public PacketChangeGameTimeRsp(Player player) {
 		super(PacketOpcodes.ChangeGameTimeRsp);
 		
 		ChangeGameTimeRsp proto = ChangeGameTimeRsp.newBuilder()

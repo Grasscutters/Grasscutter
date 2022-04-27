@@ -1,4 +1,4 @@
-package emu.grasscutter.game;
+package emu.grasscutter.game.world;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,9 +12,9 @@ import java.util.Set;
 import org.danilopianini.util.SpatialIndex;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.GenshinData;
-import emu.grasscutter.data.GenshinDepot;
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameDepot;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.data.def.WorldLevelData;
@@ -22,14 +22,15 @@ import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.entity.GenshinEntity;
+import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.TeamInfo;
 import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.props.SceneType;
-import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
@@ -41,11 +42,11 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-public class GenshinScene {
+public class Scene {
 	private final World world;
 	private final SceneData sceneData;
-	private final List<GenshinPlayer> players;
-	private final Int2ObjectMap<GenshinEntity> entities;
+	private final List<Player> players;
+	private final Int2ObjectMap<GameEntity> entities;
 	
 	private final Set<SpawnDataEntry> spawnedEntities;
 	private final Set<SpawnDataEntry> deadSpawnedEntities;
@@ -55,7 +56,7 @@ public class GenshinScene {
 	private ClimateType climate;
 	private int weather;
 
-	public GenshinScene(World world, SceneData sceneData) {
+	public Scene(World world, SceneData sceneData) {
 		this.world = world;
 		this.sceneData = sceneData;
 		this.players = Collections.synchronizedList(new ArrayList<>());
@@ -84,7 +85,7 @@ public class GenshinScene {
 		return getSceneData().getSceneType();
 	}
 
-	public List<GenshinPlayer> getPlayers() {
+	public List<Player> getPlayers() {
 		return players;
 	}
 	
@@ -92,11 +93,11 @@ public class GenshinScene {
 		return this.getPlayers().size();
 	}
 
-	public Int2ObjectMap<GenshinEntity> getEntities() {
+	public Int2ObjectMap<GameEntity> getEntities() {
 		return entities;
 	}
 	
-	public GenshinEntity getEntityById(int id) {
+	public GameEntity getEntityById(int id) {
 		return this.entities.get(id);
 	}
 	
@@ -140,11 +141,11 @@ public class GenshinScene {
 		return deadSpawnedEntities;
 	}
 
-	public boolean isInScene(GenshinEntity entity) {
+	public boolean isInScene(GameEntity entity) {
 		return this.entities.containsKey(entity.getId());
 	}
 	
-	public synchronized void addPlayer(GenshinPlayer player) {
+	public synchronized void addPlayer(Player player) {
 		// Check if player already in
 		if (getPlayers().contains(player)) {
 			return;
@@ -163,7 +164,7 @@ public class GenshinScene {
 		this.setupPlayerAvatars(player);
 	}
 	
-	public synchronized void removePlayer(GenshinPlayer player) {
+	public synchronized void removePlayer(Player player) {
 		// Remove player from scene
 		getPlayers().remove(player);
 		player.setScene(null);
@@ -182,7 +183,7 @@ public class GenshinScene {
 		}
 	}
 	
-	private void setupPlayerAvatars(GenshinPlayer player) {
+	private void setupPlayerAvatars(Player player) {
 		// Clear entities from old team
 		player.getTeamManager().getActiveTeam().clear();
 
@@ -199,7 +200,7 @@ public class GenshinScene {
 		}
 	}
 	
-	private void removePlayerAvatars(GenshinPlayer player) {
+	private void removePlayerAvatars(Player player) {
 		Iterator<EntityAvatar> it = player.getTeamManager().getActiveTeam().iterator();
 		while (it.hasNext()) {
 			this.removeEntity(it.next(), VisionType.VISION_REMOVE);
@@ -207,7 +208,7 @@ public class GenshinScene {
 		}
 	}
 	
-	public void spawnPlayer(GenshinPlayer player) {
+	public void spawnPlayer(Player player) {
 		if (this.isInScene(player.getTeamManager().getCurrentAvatarEntity())) {
 			return;
 		}
@@ -219,33 +220,33 @@ public class GenshinScene {
 		this.addEntity(player.getTeamManager().getCurrentAvatarEntity());
 	}
 	
-	private void addEntityDirectly(GenshinEntity entity) {
+	private void addEntityDirectly(GameEntity entity) {
 		getEntities().put(entity.getId(), entity);
 	}
 	
-	public synchronized void addEntity(GenshinEntity entity) {
+	public synchronized void addEntity(GameEntity entity) {
 		this.addEntityDirectly(entity);
 		this.broadcastPacket(new PacketSceneEntityAppearNotify(entity));
 	}
 	
-	public synchronized void addEntities(Collection<GenshinEntity> entities) {
-		for (GenshinEntity entity : entities) {
+	public synchronized void addEntities(Collection<GameEntity> entities) {
+		for (GameEntity entity : entities) {
 			this.addEntityDirectly(entity);
 		}
 		
 		this.broadcastPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VISION_BORN));
 	}
 	
-	private GenshinEntity removeEntityDirectly(GenshinEntity entity) {
+	private GameEntity removeEntityDirectly(GameEntity entity) {
 		return getEntities().remove(entity.getId());
 	}
 	
-	public void removeEntity(GenshinEntity entity) {
+	public void removeEntity(GameEntity entity) {
 		this.removeEntity(entity, VisionType.VISION_DIE);
 	}
 	
-	public synchronized void removeEntity(GenshinEntity entity, VisionType visionType) {
-		GenshinEntity removed = this.removeEntityDirectly(entity);
+	public synchronized void removeEntity(GameEntity entity, VisionType visionType) {
+		GameEntity removed = this.removeEntityDirectly(entity);
 		if (removed != null) {
 			this.broadcastPacket(new PacketSceneEntityDisappearNotify(removed, visionType));
 		}
@@ -258,11 +259,11 @@ public class GenshinScene {
 		this.broadcastPacket(new PacketSceneEntityAppearNotify(newEntity, VisionType.VISION_REPLACE, oldEntity.getId()));
 	}
 	
-	public void showOtherEntities(GenshinPlayer player) {
-		List<GenshinEntity> entities = new LinkedList<>();
-		GenshinEntity currentEntity = player.getTeamManager().getCurrentAvatarEntity();
+	public void showOtherEntities(Player player) {
+		List<GameEntity> entities = new LinkedList<>();
+		GameEntity currentEntity = player.getTeamManager().getCurrentAvatarEntity();
 		
-		for (GenshinEntity entity : this.getEntities().values()) {
+		for (GameEntity entity : this.getEntities().values()) {
 			if (entity == currentEntity) {
 				continue;
 			}
@@ -273,8 +274,8 @@ public class GenshinScene {
 	}
 	
 	public void handleAttack(AttackResult result) {
-		//GenshinEntity attacker = getEntityById(result.getAttackerId());
-		GenshinEntity target = getEntityById(result.getDefenseId());
+		//GameEntity attacker = getEntityById(result.getAttackerId());
+		GameEntity target = getEntityById(result.getDefenseId());
 		
 		if (target == null) {
 			return;
@@ -306,7 +307,7 @@ public class GenshinScene {
 		}
 	}
 	
-	public void killEntity(GenshinEntity target, int attackerId) {
+	public void killEntity(GameEntity target, int attackerId) {
 		// Packet
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
 		this.removeEntity(target);
@@ -321,10 +322,10 @@ public class GenshinScene {
 	
 	// TODO - Test
 	public void checkSpawns() {
-		SpatialIndex<SpawnGroupEntry> list = GenshinDepot.getSpawnListById(this.getId());
+		SpatialIndex<SpawnGroupEntry> list = GameDepot.getSpawnListById(this.getId());
 		Set<SpawnDataEntry> visible = new HashSet<>();
 		
-		for (GenshinPlayer player : this.getPlayers()) {
+		for (Player player : this.getPlayers()) {
 			int RANGE = 100;
 			Collection<SpawnGroupEntry> entries = list.query(
 				new double[] {player.getPos().getX() - RANGE, player.getPos().getZ() - RANGE}, 
@@ -339,7 +340,7 @@ public class GenshinScene {
 		}
 		
 		// World level
-		WorldLevelData worldLevelData = GenshinData.getWorldLevelDataMap().get(getWorld().getWorldLevel());
+		WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(getWorld().getWorldLevel());
 		int worldLevelOverride = 0;
 		
 		if (worldLevelData != null) {
@@ -347,13 +348,13 @@ public class GenshinScene {
 		}
 				
 		// Todo
-		List<GenshinEntity> toAdd = new LinkedList<>();
-		List<GenshinEntity> toRemove = new LinkedList<>();
+		List<GameEntity> toAdd = new LinkedList<>();
+		List<GameEntity> toRemove = new LinkedList<>();
 		
 		for (SpawnDataEntry entry : visible) {
 			if (!this.getSpawnedEntities().contains(entry) && !this.getDeadSpawnedEntities().contains(entry)) {
 				// Spawn entity
-				MonsterData data = GenshinData.getMonsterDataMap().get(entry.getMonsterId());
+				MonsterData data = GameData.getMonsterDataMap().get(entry.getMonsterId());
 				
 				if (data == null) {
 					continue;
@@ -373,7 +374,7 @@ public class GenshinScene {
 			}
 		}
 		
-		for (GenshinEntity entity : this.getEntities().values()) {
+		for (GameEntity entity : this.getEntities().values()) {
 			if (entity.getSpawnEntry() != null && !visible.contains(entity.getSpawnEntry())) {
 				toRemove.add(entity);
 			}
@@ -407,7 +408,7 @@ public class GenshinScene {
 	}
 	
 	public void onPlayerDestroyGadget(int entityId) {
-		GenshinEntity entity = getEntities().get(entityId);
+		GameEntity entity = getEntities().get(entityId);
 		
 		if (entity == null || !(entity instanceof EntityClientGadget)) {
 			return;
@@ -430,20 +431,20 @@ public class GenshinScene {
 
 	// Broadcasting
 	
-	public void broadcastPacket(GenshinPacket packet) {
+	public void broadcastPacket(BasePacket packet) {
     	// Send to all players - might have to check if player has been sent data packets
-    	for (GenshinPlayer player : this.getPlayers()) {
+    	for (Player player : this.getPlayers()) {
     		player.getSession().send(packet);
     	}
 	}
 	
-	public void broadcastPacketToOthers(GenshinPlayer excludedPlayer, GenshinPacket packet) {
+	public void broadcastPacketToOthers(Player excludedPlayer, BasePacket packet) {
 		// Optimization
 		if (this.getPlayerCount() == 1 && this.getPlayers().get(0) == excludedPlayer) {
 			return;
 		}
     	// Send to all players - might have to check if player has been sent data packets
-    	for (GenshinPlayer player : this.getPlayers()) {
+    	for (Player player : this.getPlayers()) {
     		if (player == excludedPlayer) {
     			continue;
     		}

@@ -174,11 +174,11 @@ public final class Utils {
 		// Check for resources folder.
 		if(!fileExists(resourcesFolder)) {
 			logger.info("Creating resources folder...");
-			logger.info("Place a copy of 'GenshinData' in the resources folder.");
+			logger.info("Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.");
 			createFolder(resourcesFolder); exit = true;
 		}
 
-		// Check for GenshinData.
+		// Check for BinOutput + ExcelBinOuput.
 		if(!fileExists(resourcesFolder + "BinOutput") ||
 				!fileExists(resourcesFolder + "ExcelBinOutput")) {
 			logger.info("Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.");

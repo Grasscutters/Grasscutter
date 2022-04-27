@@ -1,10 +1,10 @@
 package emu.grasscutter.data.def;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "AvatarLevelExcelConfigData.json")
-public class AvatarLevelData extends GenshinResource {
+public class AvatarLevelData extends GameResource {
 	private int Level;
 	private int Exp;
 	

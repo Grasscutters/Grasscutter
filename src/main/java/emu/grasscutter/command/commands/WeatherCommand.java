@@ -2,7 +2,7 @@ package emu.grasscutter.command.commands;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.server.packet.send.PacketSceneAreaWeatherNotify;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public final class WeatherCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         if (sender == null) {
             CommandHandler.sendMessage(null, "Run this command in-game.");
             return;

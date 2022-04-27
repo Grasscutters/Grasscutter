@@ -2,13 +2,13 @@ package emu.grasscutter.data.def;
 
 import java.util.List;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.OpenCondData;
 
 @ResourceType(name = {"FetterInfoExcelConfigData.json", "FettersExcelConfigData.json", "FetterStoryExcelConfigData.json"}, loadPriority = LoadPriority.HIGHEST)
-public class FetterData extends GenshinResource {
+public class FetterData extends GameResource {
     private int AvatarId;
     private int FetterId;
     private List<OpenCondData> OpenCond;

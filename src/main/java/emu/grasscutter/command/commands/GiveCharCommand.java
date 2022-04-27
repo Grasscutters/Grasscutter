@@ -3,10 +3,10 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarData;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
 public final class GiveCharCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         int target, avatarId, level = 1, ascension;
 
         if (sender == null && args.size() < 2) {
@@ -61,13 +61,13 @@ public final class GiveCharCommand implements CommandHandler {
                 break;
         }
 
-        GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
             CommandHandler.sendMessage(sender, "Player not found.");
             return;
         }
 
-        AvatarData avatarData = GenshinData.getAvatarDataMap().get(avatarId);
+        AvatarData avatarData = GameData.getAvatarDataMap().get(avatarId);
         if (avatarData == null) {
             CommandHandler.sendMessage(sender, "Invalid avatar id.");
             return;
@@ -80,7 +80,7 @@ public final class GiveCharCommand implements CommandHandler {
             ascension = (int) Math.ceil(level / 10f) - 3;
         }
 
-        GenshinAvatar avatar = new GenshinAvatar(avatarId);
+        Avatar avatar = new Avatar(avatarId);
         avatar.setLevel(level);
         avatar.setPromoteLevel(ascension);
 
