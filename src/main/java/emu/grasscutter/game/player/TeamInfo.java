@@ -1,4 +1,4 @@
-package emu.grasscutter.game;
+package emu.grasscutter.game.player;
 
 import java.util.ArrayList;
 import java.util.List;

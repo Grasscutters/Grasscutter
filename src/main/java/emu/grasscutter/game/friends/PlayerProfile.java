@@ -1,7 +1,7 @@
 package emu.grasscutter.game.friends;
 
 import dev.morphia.annotations.*;
-import emu.grasscutter.game.Player;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.Utils;
 
 @Entity

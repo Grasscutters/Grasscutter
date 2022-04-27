@@ -1,5 +1,7 @@
 package emu.grasscutter.game;
 
+import emu.grasscutter.game.player.Player;
+
 public class CoopRequest {
 	private final Player requester;
 	private final long requestTime;

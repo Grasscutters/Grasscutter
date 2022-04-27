@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.Mail;
+import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;

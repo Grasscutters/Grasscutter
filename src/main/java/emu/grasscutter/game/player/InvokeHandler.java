@@ -1,7 +1,8 @@
-package emu.grasscutter.game;
+package emu.grasscutter.game.player;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType;
 

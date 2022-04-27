@@ -1,10 +1,10 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.game.Scene;
-import emu.grasscutter.game.World;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
+import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.SpawnDataEntry;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;

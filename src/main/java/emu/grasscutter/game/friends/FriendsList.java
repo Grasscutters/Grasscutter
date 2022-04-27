@@ -3,7 +3,7 @@ package emu.grasscutter.game.friends;
 import java.util.List;
 
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.Player;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.DealAddFriendResultTypeOuterClass.DealAddFriendResultType;
 import emu.grasscutter.server.packet.send.PacketAskAddFriendNotify;
 import emu.grasscutter.server.packet.send.PacketAskAddFriendRsp;

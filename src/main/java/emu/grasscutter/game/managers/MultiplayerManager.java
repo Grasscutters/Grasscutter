@@ -1,12 +1,12 @@
 package emu.grasscutter.game.managers;
 
 import emu.grasscutter.game.CoopRequest;
-import emu.grasscutter.game.Player;
-import emu.grasscutter.game.Player.SceneLoadState;
 import emu.grasscutter.game.props.EnterReason;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
-import emu.grasscutter.game.World;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.Player.SceneLoadState;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketPlayerApplyEnterMpNotify;

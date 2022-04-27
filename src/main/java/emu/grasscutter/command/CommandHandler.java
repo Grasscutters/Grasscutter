@@ -1,7 +1,7 @@
 package emu.grasscutter.command;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.Player;
+import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 

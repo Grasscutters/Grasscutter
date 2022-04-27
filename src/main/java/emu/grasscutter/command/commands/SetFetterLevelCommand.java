@@ -5,8 +5,8 @@ import java.util.List;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.game.Player;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
 
 @Command(label = "setfetterlevel", usage = "setfetterlevel <level>",
