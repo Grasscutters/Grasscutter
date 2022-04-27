@@ -14,19 +14,19 @@ EN | [中文](README_zh-CN.md)
 * Friends list
 * Teleportation
 * Gacha system
-* Co-op *partially* work
+* Co-op *partially* works
 * Spawning monsters via console
 * Inventory features (recieving items/characters, upgrading items/characters, etc)
 
 ## Quick setup guide
 
-**Note:** for support please join our [Discord](https://discord.gg/T5vZU6UyeG)
+**Note:** For support please join our [Discord](https://discord.gg/T5vZU6UyeG).
 
 ### Requirements
 
-* Java SE - 17 ([mirror link](https://github.com/adoptium/temurin17-binaries/releases/tag/jdk-17.0.3+7) since Oracle required an account to download old builds)
+* Java SE - 17 ([link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
 
-  **Note:** If you just want to **run it**, then **jre** is fine 
+  **Note:** If you just want to **run it**, then **jre** only is fine.
 
 * MongoDB (recommended 4.0+)
 
@@ -34,12 +34,12 @@ EN | [中文](README_zh-CN.md)
 
 ### Running
 
-**Note:** If you update from an older version, delete `config.json` for regeneration
+**Note:** If you updated from an older version, delete `config.json` to regenerate it.
 
 1. Get `grasscutter.jar`
    - Download from [actions](https://nightly.link/Grasscutters/Grasscutter/workflows/build/stable/Grasscutter.zip)
    - [Build by yourself](#Building)
-2. Create a `resources` folder in the directory where grasscutter.jar is located and bring your `BinOutput` and `ExcelBinOutput` folders into it *(Check the [wiki](https://github.com/Grasscutters/Grasscutter/wiki) for more details how to get those.)*
+2. Create a `resources` folder in the directory where grasscutter.jar is located and move your `BinOutput` and `ExcelBinOutput` folders there *(Check the [wiki](https://github.com/Grasscutters/Grasscutter/wiki) for more details how to get those.)*
 3. Run Grasscutter with `java -jar grasscutter.jar`. **Make sure mongodb service is running as well.**
 
 ### Connecting with the client
@@ -96,7 +96,7 @@ chmod +x gradlew
 ./gradlew jar # Compile
 ```
 
-You can find the output jar in the root of the project folder
+You can find the output jar in the root of the project folder.
 
 ## Commands
 
@@ -106,32 +106,32 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 | Commands       | Usage                                             | Permission node           | Availability | description                                                  | Alias                                           |
 | -------------- | ------------------------------------------------- | ------------------------- | ------------ | ------------------------------------------------------------ | ----------------------------------------------- |
-| account        | account <create\|delete> <username> [uid]         |                           | Server only  | Creates an account with the specified username and the in-game uid for that account. The uid will be auto generated if not set. |                                                 |
+| account        | account <create\|delete> <username> [UID]         |                           | Server only  | Creates an account with the specified username and the in-game UID for that account. The UID will be auto generated if not set. |                                                 |
 | broadcast      | broadcast <message>                               | server.broadcast          | Both side    | Sends a message to all the players.                          | b                                               |
 | changescene    | changescene <scene id>                            | player.changescene        | Client only  | Switch scenes by scene ID.                                   | scene                                           |
-| clearartifacts | clearartifacts                                    | player.clearartifacts     | Client only  | Deletes all unequipped and unlocked level 0 artifacts, including yellow rarity ones from your inventory. | clearart                                        |
-| clearweapons   | clearweapons                                      | player.clearweapons       | Client only  | Deletes all unequipped and unlocked weapons, including yellow rarity ones from your inventory. | clearwpns                                       |
+| clearartifacts | clearartifacts                                    | player.clearartifacts     | Client only  | Deletes all unequipped and unlocked level 0 artifacts, including 5-star rarity ones from your inventory. | clearart                                        |
+| clearweapons   | clearweapons                                      | player.clearweapons       | Client only  | Deletes all unequipped and unlocked weapons, including 5-star rarity ones from your inventory. | clearwpns                                       |
 | drop           | drop <itemID\|itemName> [amount]                  | server.drop               | Client only  | Drops an item around you.                                    | `d` `dropitem`                                  |
 | give           | give [player] <itemId\|itemName> [amount] [level] | player.give               | Both side    | Gives item(s) to you or the specified player.                | `g` `item` `giveitem`                           |
 | givechar       | givechar <uid> <avatarId> [level]                 | player.givechar           | Both side    | Gives the player a specified character.                      | givec                                           |
 | godmode        | godmode [uid]                                     | player.godmode            | Client only  | Prevents you from taking damage.                             |                                                 |
-| heal           | heal                                              | player.heal               | Client only  | Heal all characters in your current team.                    | h                                               |
+| heal           | heal                                              | player.heal               | Client only  | Heals all characters in your current team.                    | h                                               |
 | help           | help [command]                                    |                           | Both side    | Sends the help message or shows information about a specified command. |                                                 |
 | kick           | kick <player>                                     | server.kick               | Both side    | Kicks the specified player from the server. (WIP)            | k                                               |
-| killall        | killall [playerUid] [sceneId]                     | server.killall            | Both side    | Kill all entities in the current scene or specified scene of the corresponding player. |                                                 |
-| list           | list                                              |                           | Both side    | List online players.                                         |                                                 |
+| killall        | killall [playerUid] [sceneId]                     | server.killall            | Both side    | Kills all entities in the current scene or specified scene of the corresponding player. |                                                 |
+| list           | list                                              |                           | Both side    | Lists online players.                                         |                                                 |
 | permission     | permission <add\|remove> <username> <permission>  | *                         | Both side    | Grants or removes a permission for a user.                   |                                                 |
-| position       | position                                          |                           | Client only  | Get coordinates.                                             | pos                                             |
-| reload         | reload                                            | server.reload             | Both side    | Reload server config                                         |                                                 |
-| resetconst     | resetconst [all]                                  | player.resetconstellation | Client only  | Resets the constellation level on your current active character, will need to relog after using the command to see any changes. | resetconstellation                              |
+| position       | position                                          |                           | Client only  | Sends your current coordinates.                                             | pos                                             |
+| reload         | reload                                            | server.reload             | Both side    | Reloads the server config                                         |                                                 |
+| resetconst     | resetconst [all]                                  | player.resetconstellation | Client only  | Resets the constellation level on your currently selected character, will need to relog after using the command to see any changes. | resetconstellation                              |
 | restart        |                                                   |                           | Both side    | Restarts the current session                                 |                                                 |
 | say            | say <player> <message>                            | server.sendmessage        | Both side    | Sends a message to a player as the server                    | `sendservmsg` `sendservermessage` `sendmessage` |
-| setfetterlevel | setfetterlevel <level>                            | player.setfetterlevel     | Client only  | Sets your fetter level for your current active character     | setfetterlvl                                    |
-| setstats       | setstats <stat> <value>                           | player.setstats           | Client only  | Set fight property for your current active character         | stats                                           |
+| setfetterlevel | setfetterlevel <level>                            | player.setfetterlevel     | Client only  | Sets the friendship level for your currently selected character     | setfetterlvl                                    |
+| setstats       | setstats <stat> <value>                           | player.setstats           | Client only  | Sets a stat for your currently selected character         | stats                                           |
 | setworldlevel  | setworldlevel <level>                             | player.setworldlevel      | Client only  | Sets your world level (Relog to see proper effects)          | setworldlvl                                     |
 | spawn          | spanw <entityID\|entityName> [level] [amount]     | server.spawn              | Client only  | Spawns an entity near you                                    |                                                 |
 | stop           | stop                                              | server.stop               | Both side    | Stops the server                                             |                                                 |
-| talent         | talent <talentID> <value>                         | player.settalent          | Client only  | Set talent level for your current active character           |                                                 |
+| talent         | talent <talentID> <value>                         | player.settalent          | Client only  | Sets talent level for your currently selected character           |                                                 |
 | teleport       | teleport <x> <y> <z>                              | player.teleport           | Client only  | Change the player's position.                                | tp                                              |
 | weather        | weather <weatherID> <climateID>                   | player.weather            | Client only  | Changes the weather                                          | w                                               |
 
@@ -145,4 +145,4 @@ character falling from a very high destination, exact location that you marked.
 * If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)
 * My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*, if using
   Fiddler make sure it running on another port except 8888
-* Startup sequence: Mongodb > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Client
+* Startup sequence: Mongodb -> Grasscutter -> Proxy daemon (mitmdump, fiddler, etc.) -> Client
