@@ -21,7 +21,7 @@ import java.util.jar.JarFile;
  */
 public final class PluginManager {
     private final Map<String, Plugin> plugins = new HashMap<>();
-    private final List<EventHandler> listeners = new LinkedList<>();
+    private final List<EventHandler<? extends Event>> listeners = new LinkedList<>();
     
     public PluginManager() {
         this.loadPlugins(); // Load all plugins from the plugins directory.
@@ -131,7 +131,7 @@ public final class PluginManager {
      * Registers a plugin's event listener.
      * @param listener The event listener.
      */
-    public void registerListener(EventHandler listener) {
+    public void registerListener(EventHandler<? extends Event> listener) {
         this.listeners.add(listener);
     }
     
@@ -161,9 +161,10 @@ public final class PluginManager {
      * @param event The event passed through to the handler.
      * @param handler The handler to invoke.
      */
-    private void invokeHandler(Event event, EventHandler handler) {
+    @SuppressWarnings("unchecked")
+    private <T extends Event> void invokeHandler(Event event, EventHandler<T> handler) {
         if(!event.isCanceled() ||
                 (event.isCanceled() && handler.ignoresCanceled())
-        ) handler.getCallback().consume(event);
+        ) handler.getCallback().consume((T) event);
     }
 }
