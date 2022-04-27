@@ -17,6 +17,7 @@ public final class ReloadCommand implements CommandHandler {
         Grasscutter.loadConfig();
         Grasscutter.getGameServer().getGachaManager().load();
         Grasscutter.getGameServer().getDropManager().load();
+        Grasscutter.getGameServer().getShopManager().load();
         Grasscutter.getDispatchServer().loadQueries();
         CommandHandler.sendMessage(sender, "Reload complete.");
     }
