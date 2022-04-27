@@ -14,7 +14,7 @@ EN | [中文](README_zh-CN.md)
 * Friends list
 * Teleportation
 * Gacha system
-* Co-op *partially* work
+* Co-op *partially* works
 * Spawning monsters via console
 * Inventory features (recieving items/characters, upgrading items/characters, etc)
 
@@ -140,9 +140,11 @@ There is a dummy user named "Server" in every player's friends list that you can
 When you want to teleport to somewhere, use the ingame marking function on Map, click Confirm. You will see your
 character falling from a very high destination, exact location that you marked.
 
+You can also specify a set Y coordinate by renaming the map marker.
+
 # Quick Troubleshooting
 
 * If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)
 * My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*, if using
   Fiddler make sure it running on another port except 8888
-* Startup sequence: Mongodb > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Client
+* Startup sequence: Mongodb > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Genshin Impact Client
