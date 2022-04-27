@@ -124,7 +124,7 @@ public class GachaManager {
 			int random = this.randomRange(1, 10000);
 			int itemId = 0;
 			
-			int bonusYellowChance = gachaInfo.getPity5() >= banner.getSoftPity() ? (10000 - 60) / (banner.getHardPity() - banner.getSoftPity()) * (gachaInfo.getPity5() - banner.getSoftPity() - 1): 0;
+			int bonusYellowChance = gachaInfo.getPity5() >= banner.getSoftPity() ? 100 * (gachaInfo.getPity5() - banner.getSoftPity() - 1): 0;
 			int yellowChance = 60 + (int) Math.floor(100f * (gachaInfo.getPity5() / (banner.getSoftPity() - 1D))) + bonusYellowChance;
 			int purpleChance = 10000 - (510 + (int) Math.floor(790f * (gachaInfo.getPity4() / 8f)));
 		
