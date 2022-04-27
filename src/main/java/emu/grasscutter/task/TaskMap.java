@@ -30,7 +30,7 @@ public final class TaskMap {
     public void resetNow() {
         // Unregister all tasks
         for (TaskHandler task : this.tasks.values()) {
-            unregisterTask(task.getClass().getAnnotation(Task.class).taskName());
+            unregisterTask(task);
         }
 
         // Run all afterReset tasks
@@ -51,16 +51,18 @@ public final class TaskMap {
         }
     }
 
-    public TaskMap unregisterTask(String taskName) {
-        this.tasks.remove(taskName);
-        this.annotations.remove(taskName);
+    public TaskMap unregisterTask(TaskHandler task) {
+        this.tasks.remove(task.getClass().getAnnotation(Task.class).taskName());
+        this.annotations.remove(task.getClass().getAnnotation(Task.class).taskName());
 
         try {
             Scheduler scheduler = schedulerFactory.getScheduler();
-            scheduler.deleteJob(new JobKey(taskName));
+            scheduler.deleteJob(new JobKey(task.getClass().getAnnotation(Task.class).taskName()));
         } catch (SchedulerException e) {
             e.printStackTrace();
         }
+
+        task.onDisable();
 
         return this;
     }
@@ -88,6 +90,7 @@ public final class TaskMap {
             if (annotation.executeImmediately()) {
                 task.execute(null);
             }
+            task.onEnable();
         } catch (SchedulerException e) {
             e.printStackTrace();
         }
