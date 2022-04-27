@@ -108,6 +108,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 | -------------- | ------------------------------------------------- | ------------------------- | ------------ | ------------------------------------------------------------ | ----------------------------------------------- |
 | account        | account <create\|delete> <username> [uid]         |                           | Server only  | Creates an account with the specified username and the in-game uid for that account. The uid will be auto generated if not set. |                                                 |
 | broadcast      | broadcast <message>                               | server.broadcast          | Both side    | Sends a message to all the players.                          | b                                               |
+| coop           | coop <playerId> <target playerId>                 | server.coop               | Both side    | Forces someone to join the world of others.                  |                                                 |                                           
 | changescene    | changescene <scene id>                            | player.changescene        | Client only  | Switch scenes by scene ID.                                   | scene                                           |
 | clearartifacts | clearartifacts                                    | player.clearartifacts     | Client only  | Deletes all unequipped and unlocked level 0 artifacts, including yellow rarity ones from your inventory. | clearart                                        |
 | clearweapons   | clearweapons                                      | player.clearweapons       | Client only  | Deletes all unequipped and unlocked weapons, including yellow rarity ones from your inventory. | clearwpns                                       |
@@ -133,6 +134,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 | stop           | stop                                              | server.stop               | Both side    | Stops the server                                             |                                                 |
 | talent         | talent <talentID> <value>                         | player.settalent          | Client only  | Set talent level for your current active character           |                                                 |
 | teleport       | teleport <x> <y> <z>                              | player.teleport           | Client only  | Change the player's position.                                | tp                                              |
+| tpall          |                                                   | player.tpall              | Client only  | Teleports all players in your world to your position         |                                                 |
 | weather        | weather <weatherID> <climateID>                   | player.weather            | Client only  | Changes the weather                                          | w                                               |
 
 ### Bonus
