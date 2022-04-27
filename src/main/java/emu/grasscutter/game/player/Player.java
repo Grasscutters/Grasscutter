@@ -294,6 +294,15 @@ public class Player {
 		this.setProperty(PlayerProperty.PROP_PLAYER_SCOIN, mora);
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_SCOIN));
 	}
+	
+	public int getCrystals() {
+		return this.getProperty(PlayerProperty.PROP_PLAYER_MCOIN);
+	}
+
+	public void setCrystals(int crystals) {
+		this.setProperty(PlayerProperty.PROP_PLAYER_MCOIN, crystals);
+		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_MCOIN));
+	}
 
 	private int getExpRequired(int level) {
 		PlayerLevelData levelData = GameData.getPlayerLevelDataMap().get(level);
@@ -550,11 +559,7 @@ public class Player {
 	}
 
 	public void rechargeMoonCard() {
-		LinkedList<GameItem> items = new LinkedList<GameItem>();
-		for (int i = 0; i < 300; i++) {
-			items.add(new GameItem(203));
-		} 
-		inventory.addItems(items);
+		inventory.addItem(new GameItem(203, 300));
 		if (!moonCard) {
 			moonCard = true;
 			Date now = new Date();

@@ -249,6 +249,9 @@ public class Inventory implements Iterable<GameItem> {
 			case 202: // Mora
 				getPlayer().setMora(player.getMora() + count);
 				break;
+			case 203: // Genesis Crystals
+				getPlayer().setCrystals(player.getCrystals() + count);
+				break;
 		}
 	}
 	
