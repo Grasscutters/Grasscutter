@@ -67,6 +67,9 @@ dependencies {
     implementation group: 'org.greenrobot', name: 'eventbus-java', version: '3.3.1'
     implementation group: 'org.danilopianini', name: 'java-quadtree', version: '0.1.9'
 
+    implementation group: 'org.quartz-scheduler', name: 'quartz', version: '2.3.2'
+    implementation group: 'org.quartz-scheduler', name: 'quartz-jobs', version: '2.3.2'
+
     protobuf files('proto/')
 
 }
