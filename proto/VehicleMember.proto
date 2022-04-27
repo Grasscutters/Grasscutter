@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message VehicleMember {
+	uint32 uid = 1;
+	uint64 avatar_guid = 2;
+	uint32 pos = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MassivePropParam.proto";
+
+message MassivePropSyncInfo {
+	int64 id = 1;
+	repeated MassivePropParam prop_list = 2;
+}

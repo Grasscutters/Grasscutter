@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message ServerBuff {
+	uint32 server_buff_uid = 1;
+	uint32 server_buff_id = 2;
+	uint32 server_buff_type = 3;
+	uint32 instanced_modifier_id = 4;
+	bool is_modifier_added = 5;
+}

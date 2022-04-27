@@ -1,22 +1,22 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.SyncTeamEntityNotifyOuterClass.SyncTeamEntityNotify;
 import emu.grasscutter.net.proto.TeamEntityInfoOuterClass.TeamEntityInfo;
 
-public class PacketSyncTeamEntityNotify extends GenshinPacket {
+public class PacketSyncTeamEntityNotify extends BasePacket {
 	
-	public PacketSyncTeamEntityNotify(GenshinPlayer player) {
+	public PacketSyncTeamEntityNotify(Player player) {
 		super(PacketOpcodes.SyncTeamEntityNotify);
 		
 		SyncTeamEntityNotify.Builder proto = SyncTeamEntityNotify.newBuilder()
 				.setSceneId(player.getSceneId());
 		
 		if (player.getWorld().isMultiplayer()) {
-			for (GenshinPlayer p : player.getWorld().getPlayers()) {
+			for (Player p : player.getWorld().getPlayers()) {
 				// Skip if same player
 				if (player == p) {
 					continue;

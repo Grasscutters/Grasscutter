@@ -3,12 +3,12 @@ package emu.grasscutter.server.packet.send;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.CityInfoOuterClass.CityInfo;
 import emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRsp;
 
-public class PacketGetSceneAreaRsp extends GenshinPacket {
+public class PacketGetSceneAreaRsp extends BasePacket {
 	
 	public PacketGetSceneAreaRsp(int sceneId) {
 		super(PacketOpcodes.GetSceneAreaRsp);

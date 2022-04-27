@@ -4,26 +4,26 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class EquipInventoryTab implements InventoryTab {
-	private final Set<GenshinItem> items;
+	private final Set<GameItem> items;
 	private final int maxCapacity;
 	
 	public EquipInventoryTab(int maxCapacity) {
-		this.items = new HashSet<GenshinItem>();
+		this.items = new HashSet<GameItem>();
 		this.maxCapacity = maxCapacity;
 	}
 
 	@Override
-	public GenshinItem getItemById(int id) {
+	public GameItem getItemById(int id) {
 		return null;
 	}
 
 	@Override
-	public void onAddItem(GenshinItem item) {
+	public void onAddItem(GameItem item) {
 		this.items.add(item);
 	}
 
 	@Override
-	public void onRemoveItem(GenshinItem item) {
+	public void onRemoveItem(GameItem item) {
 		this.items.remove(item);
 	}
 

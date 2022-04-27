@@ -2,9 +2,9 @@ package emu.grasscutter.command.commands;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
 public final class ResetConstCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         if (sender == null) {
             CommandHandler.sendMessage(null, "Run this command in-game.");
             return;
@@ -29,14 +29,14 @@ public final class ResetConstCommand implements CommandHandler {
                 return;
             }
 
-            GenshinAvatar avatar = entity.getAvatar();
+            Avatar avatar = entity.getAvatar();
             this.resetConstellation(avatar);
 
             sender.dropMessage("Constellations for " + avatar.getAvatarData().getName() + " have been reset. Please relog to see changes.");
         }
     }
 
-    private void resetConstellation(GenshinAvatar avatar) {
+    private void resetConstellation(Avatar avatar) {
         avatar.getTalentIdList().clear();
         avatar.setCoreProudSkillLevel(0);
         avatar.recalcStats();

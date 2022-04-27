@@ -2,12 +2,12 @@ package emu.grasscutter.data.def;
 
 import java.util.List;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 
 @ResourceType(name = "AvatarSkillExcelConfigData.json", loadPriority = LoadPriority.HIGHEST)
-public class AvatarSkillData extends GenshinResource {
+public class AvatarSkillData extends GameResource {
 	private int Id;
     private	float CdTime;
     private int CostElemVal;

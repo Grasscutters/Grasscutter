@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message BlockInfo {
+	uint32 block_id = 1;
+	uint32 data_version = 2;
+	bytes bin_data = 3;
+	bool is_dirty = 4;
+}
