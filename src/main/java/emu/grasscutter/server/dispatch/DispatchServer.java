@@ -203,55 +203,64 @@ public final class DispatchServer {
 		}
 		return null;
 	}
+	
+	private KeyManagerFactory createKeyManagerFactory(File keystore, String password) throws Exception {
+		char[] pass = password.toCharArray();
+		KeyManagerFactory kmf = null;
+		
+		try (FileInputStream fis = new FileInputStream(keystore)) {
+			
+			KeyStore ks = KeyStore.getInstance("PKCS12");
+			ks.load(fis, pass);
+			
+			kmf = KeyManagerFactory.getInstance("SunX509");
+			kmf.init(ks, pass);
+		} catch (Exception e) {
+			throw e;
+		}
+		
+		return kmf;
+	}
 
 	public void start() throws Exception {
 		if (Grasscutter.getConfig().getDispatchOptions().UseSSL) {
-			HttpsServer httpsServer = HttpsServer.create(getAddress(), 0);
+			// Keystore
 			SSLContext sslContext = SSLContext.getInstance("TLS");
-			try (FileInputStream fis = new FileInputStream(Grasscutter.getConfig().getDispatchOptions().KeystorePath)) {
-				char[] keystorePassword = Grasscutter.getConfig().getDispatchOptions().KeystorePassword.toCharArray();
-				KeyManagerFactory _kmf;
+			KeyManagerFactory kmf = null;
+			File keystoreFile = new File(Grasscutter.getConfig().getDispatchOptions().KeystorePath);
+			
+			if (keystoreFile.exists()) {
 				try {
-					KeyStore ks = KeyStore.getInstance("PKCS12");
-					ks.load(fis, keystorePassword);
-					KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
-					_kmf = kmf;
-					kmf.init(ks, keystorePassword);
-				} catch (Exception originalEx) {
+					kmf = createKeyManagerFactory(keystoreFile, Grasscutter.getConfig().getDispatchOptions().KeystorePassword);
+				} catch (Exception e) {
+					Grasscutter.getLogger().warn("[Dispatch] Unable to load keystore. Trying default keystore password...");
+					
 					try {
-						// try to initialize kmf with the default password
-						char[] defaultPassword = "123456".toCharArray();
-
-						Grasscutter.getLogger()
-								.warn("[Dispatch] Unable to load keystore. Trying default keystore password...");
-						KeyStore ks = KeyStore.getInstance("PKCS12");
-						ks.load(fis, defaultPassword);
-						KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
-						kmf.init(ks, defaultPassword);
-						_kmf = kmf;
-
+						kmf = createKeyManagerFactory(keystoreFile, "123456");
 						Grasscutter.getLogger().warn(
-								"[Dispatch] The default keystore password was loaded successfully. Please consider setting the password in config.json.");
-					} catch (Exception ignored) {
+							"[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to 123456 in config.json.");
+					} catch (Exception e2) {
 						Grasscutter.getLogger().warn("[Dispatch] Error while loading keystore!");
-
-						// don't care about the exception for the "123456" default password attempt
-						originalEx.printStackTrace();
-						throw originalEx;
+						e2.printStackTrace();
 					}
 				}
-
-				sslContext.init(_kmf.getKeyManagers(), null, null);
-
-				httpsServer.setHttpsConfigurator(new HttpsConfigurator(sslContext));
-				server = httpsServer;
-			} catch (BindException ignored) {
-				Grasscutter.getLogger().error("Unable to bind to port: " + getAddress().getPort() + " (HTTPS)");
-				server = this.safelyCreateServer(this.getAddress());
-			} catch (Exception e) {
+			}
+			
+			if (kmf == null) {
 				Grasscutter.getLogger().warn("[Dispatch] No SSL cert found! Falling back to HTTP server.");
 				Grasscutter.getConfig().getDispatchOptions().UseSSL = false;
 				server = this.safelyCreateServer(this.getAddress());
+			}
+			
+			HttpsServer httpsServer = null;
+			
+			try {
+				httpsServer = HttpsServer.create(getAddress(), 0);
+				sslContext.init(kmf.getKeyManagers(), null, null);
+				httpsServer.setHttpsConfigurator(new HttpsConfigurator(sslContext));
+				server = httpsServer;
+			} catch (BindException e) {
+				Grasscutter.getLogger().error("Unable to bind to port: " + getAddress().getPort() + " (HTTPS)");
 			}
 		} else {
 			server = this.safelyCreateServer(this.getAddress());
