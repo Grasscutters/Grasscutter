@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - "stable"
+      - "development"
   pull_request:
     types:
       - opened
