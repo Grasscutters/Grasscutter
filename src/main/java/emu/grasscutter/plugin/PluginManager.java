@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.Event;
 import emu.grasscutter.server.event.EventHandler;
 import emu.grasscutter.server.event.HandlerPriority;
+import emu.grasscutter.utils.EventConsumer;
 import emu.grasscutter.utils.Utils;
 
 import java.io.File;
@@ -14,7 +15,6 @@ import java.net.URLClassLoader;
 import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-import java.util.stream.Stream;
 
 /**
  * Manages the server's plugins and the event system.
@@ -164,6 +164,6 @@ public final class PluginManager {
     private void invokeHandler(Event event, EventHandler handler) {
         if(!event.isCanceled() ||
                 (event.isCanceled() && handler.ignoresCanceled())
-        ) handler.getCallback().accept(event);
+        ) handler.getCallback().consume(event);
     }
 }
