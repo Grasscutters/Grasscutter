@@ -38,7 +38,6 @@ dependencies {
 
     implementation group: 'org.greenrobot', name: 'eventbus-java', version: '3.3.1'
     implementation group: 'org.danilopianini', name: 'java-quadtree', version: '0.1.9'
-    implementation 'de.mkammerer:argon2-jvm:2.11'
 
     implementation 'io.jsonwebtoken:jjwt-api:0.11.3'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.3', 'io.jsonwebtoken:jjwt-gson:0.11.3'

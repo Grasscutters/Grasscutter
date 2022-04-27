@@ -381,7 +381,7 @@ public final class DispatchServer {
 								authResponse.message = "INVALID_ACCOUNT"; // ENG = "Invalid username or password"
 								authResponse.jwt = "";
 							}
-							String newPassword = Utils.argon2.hash(10, 65536, 1, changePasswordAccount.new_password.toCharArray());
+							String newPassword = Authentication.generateHash(changePasswordAccount.new_password);
 							account.setPassword(newPassword);
 							account.save();
 							authResponse.success = true;
