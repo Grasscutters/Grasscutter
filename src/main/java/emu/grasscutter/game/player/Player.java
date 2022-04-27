@@ -853,15 +853,35 @@ public class Player {
 
 	public SocialDetail.Builder getSocialDetail() {
 		List<SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> socialShowAvatarInfoList = new ArrayList<>();
-		for (int avatarId : this.getShowAvatarList()) {
-			socialShowAvatarInfoList.add(
-					socialShowAvatarInfoList.size(),
-					SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.newBuilder()
-							.setAvatarId(avatarId)
-							.setLevel(getAvatars().getAvatarById(avatarId).getLevel())
-							.setCostumeId(getAvatars().getAvatarById(avatarId).getCostume())
-							.build()
-			);
+		if (this.isOnline()) {
+			if (this.getShowAvatarList() != null) {
+				for (int avatarId : this.getShowAvatarList()) {
+					socialShowAvatarInfoList.add(
+							socialShowAvatarInfoList.size(),
+							SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.newBuilder()
+									.setAvatarId(avatarId)
+									.setLevel(getAvatars().getAvatarById(avatarId).getLevel())
+									.setCostumeId(getAvatars().getAvatarById(avatarId).getCostume())
+									.build()
+					);
+				}
+			}
+		} else {
+			List<Integer> showAvatarList = DatabaseHelper.getPlayerById(id).getShowAvatarList();
+			AvatarStorage avatars = DatabaseHelper.getPlayerById(id).getAvatars();
+			avatars.loadFromDatabase();
+			if (showAvatarList != null) {
+				for (int avatarId : showAvatarList) {
+					socialShowAvatarInfoList.add(
+							socialShowAvatarInfoList.size(),
+							SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.newBuilder()
+									.setAvatarId(avatarId)
+									.setLevel(avatars.getAvatarById(avatarId).getLevel())
+									.setCostumeId(avatars.getAvatarById(avatarId).getCostume())
+									.build()
+					);
+				}
+			}
 		}
 
 		SocialDetail.Builder social = SocialDetail.newBuilder()
