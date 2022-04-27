@@ -58,7 +58,7 @@ public class DropManager {
         int target = Utils.randomRange(1, 10000);
         if (target >= dd.getMinWeight() && target < dd.getMaxWeight()) {
             ItemData itemData = GameData.getItemDataMap().get(dd.getItemId());
-            int num = Grasscutter.getGameServer().getGachaManager().randomRange(dd.getMinCount(), dd.getMaxCount());
+            int num = Utils.randomRange(dd.getMinCount(), dd.getMaxCount());
             if (!dd.isGive()) {
                 if (itemData.isEquip()) {
                     for (int i = 0; i < num; i++) {
