@@ -1,15 +1,11 @@
 package emu.grasscutter.server.game;
 
-import java.net.InetSocketAddress;
-import java.time.OffsetDateTime;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.drop.DropManager;
 import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.gacha.GachaManager;
 import emu.grasscutter.game.managers.ChatManager;
@@ -27,6 +23,11 @@ import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
 import emu.grasscutter.task.TaskMap;
 
+import java.net.InetSocketAddress;
+import java.time.OffsetDateTime;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
 public final class GameServer extends KcpServer {
 	private final InetSocketAddress address;
 	private final GameServerPacketHandler packetHandler;
@@ -42,6 +43,7 @@ public final class GameServer extends KcpServer {
 	private final DungeonManager dungeonManager;
 	private final CommandMap commandMap;
 	private final TaskMap taskMap;
+	private final DropManager dropManager;
 	
 	public GameServer(InetSocketAddress address) {
 		super(address);
@@ -60,6 +62,7 @@ public final class GameServer extends KcpServer {
 		this.dungeonManager = new DungeonManager(this);
 		this.commandMap = new CommandMap(true);
 		this.taskMap = new TaskMap(true);
+		this.dropManager = new DropManager(this);
 		
 		// Schedule game loop.
 		Timer gameLoop = new Timer();
@@ -108,6 +111,10 @@ public final class GameServer extends KcpServer {
 
 	public MultiplayerManager getMultiplayerManager() {
 		return multiplayerManager;
+	}
+
+	public DropManager getDropManager() {
+		return dropManager;
 	}
 	
 	public DungeonManager getDungeonManager() {
