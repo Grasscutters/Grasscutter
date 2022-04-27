@@ -1,16 +1,17 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.custom.ScenePointEntry;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPointRsp;
 import emu.grasscutter.utils.Position;
 
-public class PacketSceneTransToPointRsp extends GenshinPacket {
+public class PacketSceneTransToPointRsp extends BasePacket {
 	
-	public PacketSceneTransToPointRsp(GenshinPlayer player, int pointId, int sceneId) {
+	public PacketSceneTransToPointRsp(Player player, int pointId, int sceneId) {
 		super(PacketOpcodes.SceneTransToPointRsp);
 
 		SceneTransToPointRsp proto = SceneTransToPointRsp.newBuilder()
@@ -26,7 +27,7 @@ public class PacketSceneTransToPointRsp extends GenshinPacket {
 		super(PacketOpcodes.SceneTransToPointRsp);
 		
 		SceneTransToPointRsp proto = SceneTransToPointRsp.newBuilder()
-				.setRetcode(1) // Internal server error
+				.setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE) // Internal server error
 	            .build();
 
 		this.setData(proto);

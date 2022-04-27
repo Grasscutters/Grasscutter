@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AbilityScalarValueEntry.proto";
+import "AbilityAppliedAbility.proto";
+import "AbilityAppliedModifier.proto";
+import "AbilityMixinRecoverInfo.proto";
+
+message AbilitySyncStateInfo {
+	bool is_inited = 1;
+	repeated AbilityScalarValueEntry dynamic_value_map = 2;
+	repeated AbilityAppliedAbility applied_abilities = 3;
+	repeated AbilityAppliedModifier applied_modifiers = 4;
+	repeated AbilityMixinRecoverInfo mixin_recover_infos = 5;
+	repeated AbilityScalarValueEntry sgv_dynamic_value_map = 6;
+}

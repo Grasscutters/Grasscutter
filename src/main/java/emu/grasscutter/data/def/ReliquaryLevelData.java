@@ -2,14 +2,14 @@ package emu.grasscutter.data.def;
 
 import java.util.List;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.props.FightProperty;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 @ResourceType(name = "ReliquaryLevelExcelConfigData.json")
-public class ReliquaryLevelData extends GenshinResource {
+public class ReliquaryLevelData extends GameResource {
 	private int id;
 	private Int2ObjectMap<Float> propMap;
 	

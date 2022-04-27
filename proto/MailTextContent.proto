@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message MailTextContent {
+  string title = 1;
+  string content = 2;
+  string sender = 3;
+}

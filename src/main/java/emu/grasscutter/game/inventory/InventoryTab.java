@@ -1,11 +1,11 @@
 package emu.grasscutter.game.inventory;
 
 public interface InventoryTab {
-	public GenshinItem getItemById(int id);
+	public GameItem getItemById(int id);
 	
-	public void onAddItem(GenshinItem item);
+	public void onAddItem(GameItem item);
 	
-	public void onRemoveItem(GenshinItem item);
+	public void onRemoveItem(GameItem item);
 	
 	public int getSize();
 	

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+message GadgetGeneralRewardInfo {
+	uint32 resin = 1;
+	uint32 dead_time = 2;
+	repeated uint32 remain_uid_list = 3;
+	repeated uint32 qualify_uid_list = 4;
+	ItemParam item_param = 5;
+}

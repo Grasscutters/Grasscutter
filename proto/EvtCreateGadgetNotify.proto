@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ForwardType.proto";
+import "Vector.proto";
+
+message EvtCreateGadgetNotify {
+	enum CmdId {
+		option allow_alias = true;
+		ENET_CHANNEL_ID = 0;
+		NONE = 0;
+		ENET_IS_RELIABLE = 1;
+		IS_ALLOW_CLIENT = 1;
+		CMD_ID = 400;
+	}
+
+	ForwardType forward_type = 1;
+	uint32 entity_id = 2;
+	uint32 config_id = 3;
+	uint32 camp_id = 4;
+	uint32 camp_type = 5;
+	Vector init_pos = 6;
+	Vector init_euler_angles = 7;
+	uint64 guid = 8;
+	uint32 owner_entity_id = 9;
+	uint32 target_entity_id = 10;
+	bool is_async_load = 11;
+	uint32 target_lock_point_index = 12;
+	uint32 room_id = 13;
+	uint32 prop_owner_entity_id = 14;
+	bool sight_group_with_owner = 15;
+}

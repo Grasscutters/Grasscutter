@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message AvatarUpgradeRsp {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 1720;
+	}
+
+	int32 retcode = 1;
+	uint64 avatar_guid = 2;
+	uint32 old_level = 3;
+	uint32 cur_level = 4;
+	map<uint32, float> old_fight_prop_map = 5;
+	map<uint32, float> cur_fight_prop_map = 6;
+}

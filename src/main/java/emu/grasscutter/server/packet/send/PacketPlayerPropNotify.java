@@ -1,15 +1,15 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerPropNotifyOuterClass.PlayerPropNotify;
 import emu.grasscutter.utils.ProtoHelper;
 
-public class PacketPlayerPropNotify extends GenshinPacket {
+public class PacketPlayerPropNotify extends BasePacket {
 	
-	public PacketPlayerPropNotify(GenshinPlayer player, PlayerProperty prop) {
+	public PacketPlayerPropNotify(Player player, PlayerProperty prop) {
 		super(PacketOpcodes.PlayerPropNotify);
 		
 		this.buildHeader(0);

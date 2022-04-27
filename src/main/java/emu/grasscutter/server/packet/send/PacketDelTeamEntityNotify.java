@@ -2,11 +2,11 @@ package emu.grasscutter.server.packet.send;
 
 import java.util.List;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DelTeamEntityNotifyOuterClass.DelTeamEntityNotify;
 
-public class PacketDelTeamEntityNotify extends GenshinPacket {
+public class PacketDelTeamEntityNotify extends BasePacket {
 	
 	public PacketDelTeamEntityNotify(int sceneId, int teamEntityId) {
 		super(PacketOpcodes.DelTeamEntityNotify);

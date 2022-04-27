@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message AiThreatInfo {
+	map<uint32, uint32> ai_threat_map = 1;
+}
