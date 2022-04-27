@@ -32,6 +32,7 @@ public final class Config {
 		public Boolean UseSSL = true;
 		public Boolean FrontHTTPS = true;
 		public Boolean UseAuth = false;
+		public String AuthHash = "BCRYPT";
 
 		public boolean AutomaticallyCreateAccounts = false;
 

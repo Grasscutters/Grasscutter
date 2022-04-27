@@ -20,6 +20,7 @@ import emu.grasscutter.server.dispatch.json.*;
 import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
 import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
+import emu.grasscutter.utils.Authentication;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 
@@ -328,7 +329,7 @@ public final class DispatchServer {
 					} else {
 						RegisterAccount registerAccount = new Gson().fromJson(requestBody, RegisterAccount.class);
 						if (registerAccount.password.equals(registerAccount.password_confirmation)) {
-							String password = Utils.argon2.hash(10, 65536, 1, registerAccount.password.toCharArray());
+							String password = Authentication.generateHash(registerAccount.password);
 							Account account = DatabaseHelper.createAccountWithPassword(registerAccount.username, password);
 							if (account == null) {
 								authResponse.success = false;

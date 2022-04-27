@@ -68,16 +68,10 @@ public final class DatabaseHelper {
 
 	public static Account getAccountByUsernameAndPassword(String username, String password) {
 		Account account = DatabaseHelper.getAccountByName(username);
-		if (account == null) {
-			return null;
-		}
-
+		if (account == null) return null;
 		if (account.getPassword() != null && !account.getPassword().isEmpty()) { // Make sure the variable was initialized in db (coming from old version) & Make sure that password is set.
-			if (!Utils.argon2.verify(account.getPassword(), password.toCharArray())) { // Check if password cannot be verified just so there isn't more than 2 returns
-				account = null;
-			}
+			if(!Authentication.verifyHash(password, account.getPassword())) return null;
 		}
-
 		return account;
 	}
 
@@ -94,11 +88,6 @@ public final class DatabaseHelper {
 
 	public static Account getAccountByName(String username) {
 		return DatabaseManager.getDatastore().find(Account.class).filter(Filters.eq("username", username)).first();
-	}
-
-	public static Account getAccountByToken(String token) {
-		if(token == null) return null;
-		return DatabaseManager.getDatastore().find(Account.class).filter(Filters.eq("token", token)).first();
 	}
 
 	public static Account getAccountById(String uid) {
