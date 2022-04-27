@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.World;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify;

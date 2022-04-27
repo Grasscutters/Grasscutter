@@ -6,10 +6,10 @@ import com.mongodb.client.result.DeleteResult;
 import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.game.Player;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.Player;
 
 public final class DatabaseHelper {
 	public static Account createAccount(String username) {

@@ -1,4 +1,4 @@
-package emu.grasscutter.game;
+package emu.grasscutter.game.player;
 
 import java.time.Instant;
 import java.util.*;
@@ -12,6 +12,8 @@ import emu.grasscutter.data.def.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
+import emu.grasscutter.game.Account;
+import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
@@ -20,9 +22,11 @@ import emu.grasscutter.game.friends.PlayerProfile;
 import emu.grasscutter.game.gacha.PlayerGachaInfo;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
-import emu.grasscutter.game.player.PlayerBirthday;
+import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;

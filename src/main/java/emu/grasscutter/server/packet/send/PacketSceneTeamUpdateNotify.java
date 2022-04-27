@@ -1,7 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.Player;
 import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;

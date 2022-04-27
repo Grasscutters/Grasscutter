@@ -1,6 +1,7 @@
-package emu.grasscutter.game;
+package emu.grasscutter.game.mail;
 
 import dev.morphia.annotations.Entity;
+import emu.grasscutter.game.player.Player;
 
 import java.time.Instant;
 import java.util.ArrayList;

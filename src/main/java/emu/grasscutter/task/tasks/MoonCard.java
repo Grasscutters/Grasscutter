@@ -1,7 +1,7 @@
 package emu.grasscutter.task.tasks;
 
 import emu.grasscutter.database.DatabaseManager;
-import emu.grasscutter.game.Player;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.task.Task;
 import emu.grasscutter.task.TaskHandler;
 

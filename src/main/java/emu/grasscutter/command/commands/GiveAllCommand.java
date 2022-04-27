@@ -6,10 +6,10 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.game.Player;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.player.Player;
 
 import java.util.*;
 

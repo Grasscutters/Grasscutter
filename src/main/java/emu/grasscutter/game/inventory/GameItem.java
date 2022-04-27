@@ -19,7 +19,7 @@ import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.ReliquaryAffixData;
 import emu.grasscutter.data.def.ReliquaryMainPropData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.Player;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.EquipOuterClass.Equip;

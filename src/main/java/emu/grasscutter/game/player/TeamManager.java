@@ -1,4 +1,4 @@
-package emu.grasscutter.game;
+package emu.grasscutter.game.player;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +19,7 @@ import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;

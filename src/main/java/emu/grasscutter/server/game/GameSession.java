@@ -8,7 +8,7 @@ import java.util.Set;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.game.Player;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.packet.PacketOpcodesUtil;
