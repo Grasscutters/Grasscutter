@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.database.DatabaseHelper;
@@ -7,8 +8,7 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "account", usage = "account <create|delete> <username> [uid]",
-        description = "Modify user accounts")
+@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "Modify user accounts")
 public final class AccountCommand implements CommandHandler {
 
     @Override
@@ -47,7 +47,13 @@ public final class AccountCommand implements CommandHandler {
                     return;
                 } else {
                     CommandHandler.sendMessage(null, "Account created with UID " + account.getPlayerUid() + ".");
-                    account.addPermission("*"); // Grant the player superuser permissions.
+
+                    for (String permission : Grasscutter.getConfig().getDispatchOptions().defaultPermissions) {
+                        if (!permission.isBlank()) {
+                            account.addPermission(permission);
+                        }
+                    }
+
                     account.save(); // Save account to database.
                 }
                 return;
