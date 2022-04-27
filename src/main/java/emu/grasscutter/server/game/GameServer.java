@@ -203,6 +203,7 @@ public final class GameServer extends KcpServer {
 
 	@Override
 	public void onStartFinish() {
+		Grasscutter.getLogger().info("Grasscutter is FREE software. If you have paid for this, you may have been scammed. Homepage: https://github.com/Grasscutters/Grasscutter");
 		Grasscutter.getLogger().info("Game Server started on port " + address.getPort());
 		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
