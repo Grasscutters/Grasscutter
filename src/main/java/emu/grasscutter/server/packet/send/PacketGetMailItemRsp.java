@@ -54,8 +54,7 @@ public class PacketGetMailItemRsp  extends GenshinPacket {
                 genshinItem.setCount(mailItem.itemCount);
                 genshinItem.setLevel(mailItem.itemLevel);
                 genshinItem.setPromoteLevel(promoteLevel);
-                player.getInventory().addItem(genshinItem);
-                player.sendPacket(new PacketItemAddHintNotify(genshinItem, ActionReason.MailAttachment));
+                player.getInventory().addItem(genshinItem, ActionReason.MailAttachment);
             }
 
             message.isAttachmentGot = true;

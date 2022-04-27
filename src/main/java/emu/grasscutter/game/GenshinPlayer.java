@@ -584,8 +584,7 @@ public class GenshinPlayer {
 		moonCardGetTimes.add(now);
 		addMoonCardDays(1);
 		GenshinItem genshinItem = new GenshinItem(201, 90);
-		getInventory().addItem(genshinItem);
-		session.send(new PacketItemAddHintNotify(genshinItem, ActionReason.BlessingRedeemReward));
+		getInventory().addItem(genshinItem, ActionReason.BlessingRedeemReward);
 		session.send(new PacketCardProductRewardNotify(getMoonCardRemainDays()));
 	}
 
@@ -730,10 +729,9 @@ public class GenshinPlayer {
 			EntityItem drop = (EntityItem) entity;
 			GenshinItem item = new GenshinItem(drop.getItemData(), drop.getCount());
 			// Add to inventory
-			boolean success = getInventory().addItem(item);
+			boolean success = getInventory().addItem(item, ActionReason.SubfieldDrop);
 			if (success) {
 				this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
-				this.sendPacket(new PacketItemAddHintNotify(item, ActionReason.SubfieldDrop));
 			}
 		}
 
