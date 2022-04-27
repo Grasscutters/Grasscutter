@@ -11,6 +11,17 @@ import org.quartz.JobExecutionException;
 @Task(taskName = "MoonCard", taskCronExpression = "0 0 0 * * ?", triggerName = "MoonCardTrigger")
 // taskCronExpression: Fixed time period: 0:0:0 every day (twenty-four hour system)
 public class MoonCard extends TaskHandler {
+
+    @Override
+    public void onEnable() {
+        Grasscutter.getLogger().info("[Task] MoonCard task enabled.");
+    }
+
+    @Override
+    public void onDisable() {
+        Grasscutter.getLogger().info("[Task] MoonCard task disabled.");
+    }
+
     @Override
     public synchronized void execute(JobExecutionContext context) throws JobExecutionException {
         Grasscutter.getGameServer().getPlayers().forEach((uid, player) -> {
