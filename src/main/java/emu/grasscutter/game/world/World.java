@@ -1,4 +1,4 @@
-package emu.grasscutter.game;
+package emu.grasscutter.game.world;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.Player.SceneLoadState;
 import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.EntityIdType;
@@ -16,7 +18,6 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.SceneData;
-import emu.grasscutter.game.Player.SceneLoadState;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.game.entity.EntityGadget;

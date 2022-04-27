@@ -1,8 +1,8 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.World;
 import emu.grasscutter.game.props.EnterReason;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;

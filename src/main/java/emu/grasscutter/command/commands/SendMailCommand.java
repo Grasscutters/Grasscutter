@@ -4,8 +4,8 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.Player;
-import emu.grasscutter.game.Mail;
+import emu.grasscutter.game.mail.Mail;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketMailChangeNotify;
 
 import java.time.Instant;

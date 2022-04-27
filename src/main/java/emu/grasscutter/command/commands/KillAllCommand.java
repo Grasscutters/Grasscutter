@@ -3,9 +3,9 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.Player;
-import emu.grasscutter.game.Scene;
 import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.world.Scene;
 
 import java.util.List;
 

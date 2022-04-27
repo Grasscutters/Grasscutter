@@ -1,6 +1,6 @@
 package emu.grasscutter.plugin.api;
 
-import emu.grasscutter.game.Player;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.game.GameServer;
 
 import java.util.LinkedList;

@@ -1,7 +1,7 @@
 package emu.grasscutter.game.managers;
 
 import emu.grasscutter.command.CommandMap;
-import emu.grasscutter.game.Player;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketPlayerChatNotify;

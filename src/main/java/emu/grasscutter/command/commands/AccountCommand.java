@@ -3,7 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.Player;
+import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 

@@ -5,7 +5,7 @@ import org.bson.types.ObjectId;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.Player;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief;
 import emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState;
 import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;

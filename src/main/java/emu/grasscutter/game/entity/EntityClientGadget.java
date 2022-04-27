@@ -1,9 +1,9 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.game.Player;
-import emu.grasscutter.game.Scene;
-import emu.grasscutter.game.World;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.ClientGadgetInfoOuterClass;
