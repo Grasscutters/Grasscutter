@@ -1,10 +1,10 @@
 package emu.grasscutter.data.def;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "WeaponLevelExcelConfigData.json")
-public class WeaponLevelData extends GenshinResource {
+public class WeaponLevelData extends GameResource {
 	private int Level;
 	private int[] RequiredExps;
 	

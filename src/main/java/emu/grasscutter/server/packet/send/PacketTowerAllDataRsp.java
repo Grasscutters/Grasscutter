@@ -1,12 +1,12 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp;
 import emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord;
 import emu.grasscutter.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord;
 
-public class PacketTowerAllDataRsp extends GenshinPacket {
+public class PacketTowerAllDataRsp extends BasePacket {
 	
 	public PacketTowerAllDataRsp() {
 		super(PacketOpcodes.TowerAllDataRsp);

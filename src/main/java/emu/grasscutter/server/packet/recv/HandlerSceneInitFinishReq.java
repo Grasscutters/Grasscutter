@@ -1,7 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.GenshinPlayer.SceneLoadState;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player.SceneLoadState;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.packet.PacketHandler;
@@ -31,7 +31,7 @@ public class HandlerSceneInitFinishReq extends PacketHandler {
 		session.send(new PacketWorldPlayerInfoNotify(session.getPlayer().getWorld()));
 		session.send(new PacketWorldDataNotify(session.getPlayer().getWorld()));
 		session.send(new PacketSceneUnlockInfoNotify());
-		session.send(new GenshinPacket(PacketOpcodes.SceneForceUnlockNotify));
+		session.send(new BasePacket(PacketOpcodes.SceneForceUnlockNotify));
 		session.send(new PacketHostPlayerNotify(session.getPlayer().getWorld()));
 		
 		session.send(new PacketSceneTimeNotify(session.getPlayer()));

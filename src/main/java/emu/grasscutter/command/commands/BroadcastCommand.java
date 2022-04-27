@@ -3,7 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
 public final class BroadcastCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         if (args.size() < 1) {
             CommandHandler.sendMessage(sender, "Usage: broadcast <message>");
             return;
@@ -20,7 +20,7 @@ public final class BroadcastCommand implements CommandHandler {
 
         String message = String.join(" ", args.subList(0, args.size()));
 
-        for (GenshinPlayer p : Grasscutter.getGameServer().getPlayers().values()) {
+        for (Player p : Grasscutter.getGameServer().getPlayers().values()) {
             CommandHandler.sendMessage(p, message);
         }
 

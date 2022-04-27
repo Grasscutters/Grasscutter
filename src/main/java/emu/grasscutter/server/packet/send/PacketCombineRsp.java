@@ -1,13 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.CombineReqOuterClass;
 import emu.grasscutter.net.proto.CombineRspOuterClass;
 import emu.grasscutter.net.proto.ItemParamOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 
-public class PacketCombineRsp extends GenshinPacket {
+public class PacketCombineRsp extends BasePacket {
 
     public PacketCombineRsp() {
         super(PacketOpcodes.CombineRsp);

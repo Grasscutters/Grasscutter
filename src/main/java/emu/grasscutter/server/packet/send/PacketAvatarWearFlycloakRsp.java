@@ -1,11 +1,11 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarWearFlycloakRspOuterClass.AvatarWearFlycloakRsp;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 
-public class PacketAvatarWearFlycloakRsp extends GenshinPacket {
+public class PacketAvatarWearFlycloakRsp extends BasePacket {
 	public PacketAvatarWearFlycloakRsp(long avatarGuid, int costumeId) {
 		super(PacketOpcodes.AvatarWearFlycloakRsp);
 

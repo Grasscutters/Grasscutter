@@ -5,7 +5,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 
 @SuppressWarnings("unused")
-public class MihoyoKcpServerInitializer extends ChannelInitializer<UkcpChannel> {
+public class KcpServerInitializer extends ChannelInitializer<UkcpChannel> {
 	
 	@Override
 	protected void initChannel(UkcpChannel ch) throws Exception {

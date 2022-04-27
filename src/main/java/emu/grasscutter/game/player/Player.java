@@ -1,25 +1,33 @@
-package emu.grasscutter.game;
+package emu.grasscutter.game.player;
+
+import java.time.Instant;
+import java.util.*;
 
 import dev.morphia.annotations.*;
-import emu.grasscutter.GenshinConstants;
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.Account;
+import emu.grasscutter.game.CoopRequest;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityItem;
-import emu.grasscutter.game.entity.GenshinEntity;
+import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.friends.FriendsList;
 import emu.grasscutter.game.friends.PlayerProfile;
 import emu.grasscutter.game.gacha.PlayerGachaInfo;
-import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
-import emu.grasscutter.game.player.PlayerBirthday;
+import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.World;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
@@ -42,7 +50,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import java.util.*;
 
 @Entity(value = "players", useDiscriminator = false)
-public class GenshinPlayer {
+public class Player {
 	@Id private int id;
 	@Indexed(options = @IndexOptions(unique = true)) private String accountId;
 
@@ -63,7 +71,7 @@ public class GenshinPlayer {
 	@Transient private long nextGuid = 0;
 	@Transient private int peerId;
 	@Transient private World world;
-	@Transient private GenshinScene scene;
+	@Transient private Scene scene;
 	@Transient private GameSession session;
 	@Transient private AvatarStorage avatars;
 	@Transient private Inventory inventory;
@@ -72,10 +80,10 @@ public class GenshinPlayer {
 	private TeamManager teamManager;
 	private PlayerGachaInfo gachaInfo;
 	private PlayerProfile playerProfile;
-	private MpSettingType mpSetting = MpSettingType.MP_SETTING_ENTER_AFTER_APPLY;
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
+	private ArrayList<Mail> mail;
 
 	private int sceneId;
 	private int regionId;
@@ -100,7 +108,7 @@ public class GenshinPlayer {
 
 	@Deprecated
 	@SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
-	public GenshinPlayer() {
+	public Player() {
 		this.inventory = new Inventory(this);
 		this.avatars = new AvatarStorage(this);
 		this.friendsList = new FriendsList(this);
@@ -119,6 +127,8 @@ public class GenshinPlayer {
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
 
+		this.mail = new ArrayList<>();
+
 		this.setSceneId(3);
 		this.setRegionId(1);
 		this.sceneState = SceneLoadState.NONE;
@@ -134,7 +144,7 @@ public class GenshinPlayer {
 	}
 
 	// On player creation
-	public GenshinPlayer(GameSession session) {
+	public Player(GameSession session) {
 		this();
 		this.account = session.getAccount();
 		this.accountId = this.getAccount().getId();
@@ -153,7 +163,7 @@ public class GenshinPlayer {
 		this.setProperty(PlayerProperty.PROP_PLAYER_RESIN, 160);
 		this.getFlyCloakList().add(140001);
 		this.getNameCardList().add(210001);
-		this.getPos().set(GenshinConstants.START_POSITION);
+		this.getPos().set(GameConstants.START_POSITION);
 		this.getRotation().set(0, 307, 0);
 	}
 
@@ -165,7 +175,7 @@ public class GenshinPlayer {
 		this.id = id;
 	}
 
-	public long getNextGenshinGuid() {
+	public long getNextGameGuid() {
 		long nextId = ++this.nextGuid;
 		return ((long) this.getUid() << 32) + nextId;
 	}
@@ -203,11 +213,11 @@ public class GenshinPlayer {
 		this.world = world;
 	}
 
-	public synchronized GenshinScene getScene() {
+	public synchronized Scene getScene() {
 		return scene;
 	}
 
-	public synchronized void setScene(GenshinScene scene) {
+	public synchronized void setScene(Scene scene) {
 		this.scene = scene;
 	}
 
@@ -261,6 +271,11 @@ public class GenshinPlayer {
 	public int getWorldLevel() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL);
 	}
+	
+	public void setWorldLevel(int level) {
+		this.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level);
+		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_WORLD_LEVEL));
+	}
 
 	public int getPrimogems() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_HCOIN);
@@ -281,7 +296,7 @@ public class GenshinPlayer {
 	}
 
 	private int getExpRequired(int level) {
-		PlayerLevelData levelData = GenshinData.getPlayerLevelDataMap().get(level);
+		PlayerLevelData levelData = GameData.getPlayerLevelDataMap().get(level);
 		return levelData != null ? levelData.getExp() : 0;
 	}
 
@@ -374,7 +389,7 @@ public class GenshinPlayer {
 	}
 
 	public MpSettingType getMpSetting() {
-		return mpSetting;
+		return MpSettingType.MP_SETTING_ENTER_AFTER_APPLY; // TEMP
 	}
 
 	public synchronized Int2ObjectMap<CoopRequest> getCoopRequests() {
@@ -391,10 +406,6 @@ public class GenshinPlayer {
 
 	public InvokeHandler<AbilityInvokeEntry> getClientAbilityInitFinishHandler() {
 		return clientAbilityInitFinishHandler;
-	}
-
-	public void setMpSetting(MpSettingType mpSetting) {
-		this.mpSetting = mpSetting;
 	}
 
 	public AvatarStorage getAvatars() {
@@ -539,9 +550,9 @@ public class GenshinPlayer {
 	}
 
 	public void rechargeMoonCard() {
-		LinkedList<GenshinItem> items = new LinkedList<GenshinItem>();
+		LinkedList<GameItem> items = new LinkedList<GameItem>();
 		for (int i = 0; i < 300; i++) {
-			items.add(new GenshinItem(203));
+			items.add(new GameItem(203));
 		} 
 		inventory.addItems(items);
 		if (!moonCard) {
@@ -576,9 +587,8 @@ public class GenshinPlayer {
 		}
 		moonCardGetTimes.add(now);
 		addMoonCardDays(1);
-		GenshinItem genshinItem = new GenshinItem(201, 90);
-		getInventory().addItem(genshinItem);
-		session.send(new PacketItemAddHintNotify(genshinItem, ActionReason.BlessingRedeemReward));
+		GameItem item = new GameItem(201, 90);
+		getInventory().addItem(item, ActionReason.BlessingRedeemReward);
 		session.send(new PacketCardProductRewardNotify(getMoonCardRemainDays()));
 	}
 
@@ -598,29 +608,19 @@ public class GenshinPlayer {
 		this.hasSentAvatarDataNotify = hasSentAvatarDataNotify;
 	}
 
-	public void addAvatar(GenshinAvatar avatar) {
+	public void addAvatar(Avatar avatar) {
 		boolean result = getAvatars().addAvatar(avatar);
 
 		if (result) {
 			// Add starting weapon
 			getAvatars().addStartingWeapon(avatar);
 
-			// Try adding to team if possible
-			//List<EntityAvatar> currentTeam = this.getTeamManager().getCurrentTeam();
-			boolean addedToTeam = false;
-			
-			/*
-			if (currentTeam.size() <= GenshinConstants.MAX_AVATARS_IN_TEAM) {
-				addedToTeam = currentTeam
-			}
-			*/
-
 			// Done
 			if (hasSentAvatarDataNotify()) {
 				// Recalc stats
 				avatar.recalcStats();
 				// Packet
-				sendPacket(new PacketAvatarAddNotify(avatar, addedToTeam));
+				sendPacket(new PacketAvatarAddNotify(avatar, false));
 			}
 		} else {
 			// Failed adding avatar
@@ -653,7 +653,7 @@ public class GenshinPlayer {
 	}
 
 	public void dropMessage(Object message) {
-		this.sendPacket(new PacketPrivateChatNotify(GenshinConstants.SERVER_CONSOLE_UID, getUid(), message.toString()));
+		this.sendPacket(new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, getUid(), message.toString()));
 	}
 
 	/**
@@ -662,12 +662,53 @@ public class GenshinPlayer {
 	 * @param sender  The sender of the message.
 	 * @param message The message to send.
 	 */
-	public void sendMessage(GenshinPlayer sender, Object message) {
+	public void sendMessage(Player sender, Object message) {
 		this.sendPacket(new PacketPrivateChatNotify(sender.getUid(), this.getUid(), message.toString()));
 	}
 
+	// ---------------------MAIL------------------------
+
+	public List<Mail> getAllMail() { return this.mail; }
+
+	public void sendMail(Mail message) {
+		this.mail.add(message);
+		this.save();
+		Grasscutter.getLogger().info("Mail sent to user [" + this.getUid()  + ":" + this.getNickname() + "]!");
+		if(this.isOnline()) {
+			this.sendPacket(new PacketMailChangeNotify(this, message));
+		} // TODO: setup a way for the mail notification to show up when someone receives mail when they were offline
+	}
+
+	public boolean deleteMail(int mailId) {
+		Mail message = getMail(mailId);
+
+		if(message != null) {
+			int index = getMailId(message);
+			message.expireTime = (int) Instant.now().getEpochSecond(); // Just set the mail as expired for now. I don't want to implement a counter specifically for an account...
+			this.replaceMailByIndex(index, message);
+			return true;
+		}
+
+		return false;
+	}
+
+	public Mail getMail(int index) { return this.mail.get(index); }
+	public int getMailId(Mail message) {
+		return this.mail.indexOf(message);
+	}
+
+	public boolean replaceMailByIndex(int index, Mail message) {
+		if(getMail(index) != null) {
+			this.mail.set(index, message);
+			this.save();
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	public void interactWith(int gadgetEntityId) {
-		GenshinEntity entity = getScene().getEntityById(gadgetEntityId);
+		GameEntity entity = getScene().getEntityById(gadgetEntityId);
 
 		if (entity == null) {
 			return;
@@ -680,12 +721,11 @@ public class GenshinPlayer {
 		if (entity instanceof EntityItem) {
 			// Pick item
 			EntityItem drop = (EntityItem) entity;
-			GenshinItem item = new GenshinItem(drop.getItemData(), drop.getCount());
+			GameItem item = new GameItem(drop.getItemData(), drop.getCount());
 			// Add to inventory
-			boolean success = getInventory().addItem(item);
+			boolean success = getInventory().addItem(item, ActionReason.SubfieldDrop);
 			if (success) {
 				this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
-				this.sendPacket(new PacketItemAddHintNotify(item, ActionReason.SubfieldDrop));
 			}
 		}
 
@@ -700,7 +740,7 @@ public class GenshinPlayer {
 
 	}
 
-	public void sendPacket(GenshinPacket packet) {
+	public void sendPacket(BasePacket packet) {
 		if (this.hasSentAvatarDataNotify) {
 			this.getSession().send(packet);
 		}
@@ -829,7 +869,7 @@ public class GenshinPlayer {
 
 		// Check if player object exists in server
 		// TODO - optimize
-		GenshinPlayer exists = this.getServer().getPlayerByUid(getUid());
+		Player exists = this.getServer().getPlayerByUid(getUid());
 		if (exists != null) {
 			exists.getSession().close();
 		}

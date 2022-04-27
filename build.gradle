@@ -23,6 +23,8 @@ plugins {
     id 'com.google.protobuf' version "0.8.18"
     id 'idea'
 
+    id 'eclipse'
+
     // Apply the application plugin to add support for building a CLI application
     id 'application'
 
@@ -189,6 +191,14 @@ idea {
     }
 }
 
+eclipse {
+    classpath {
+        file.whenMerged { cp ->
+            cp.entries.add( new org.gradle.plugins.ide.eclipse.model.SourceFolder('src/generated/main/java', null) )
+        }
+    }
+}
+
 signing {
     sign publishing.publications.mavenJava
 }
@@ -197,4 +207,8 @@ javadoc {
     if(JavaVersion.current().isJava9Compatible()) {
         options.addBooleanOption('html5', true)
     }
+}
+
+processResources {
+    dependsOn "generateProto"
 }

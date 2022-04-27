@@ -8,7 +8,7 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEvtAvatarSitDownNotify;
 
 @Opcodes(PacketOpcodes.EvtAvatarSitDownNotify)
-public class HandleEvtAvatarSitDownNotify extends PacketHandler {
+public class HandlerEvtAvatarSitDownNotify extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
