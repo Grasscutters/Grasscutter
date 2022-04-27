@@ -25,6 +25,7 @@ import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
@@ -84,6 +85,7 @@ public class Player {
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
 	private ArrayList<Mail> mail;
+	private ArrayList<ShopLimit> shopLimit;
 
 	private int sceneId;
 	private int regionId;
@@ -141,6 +143,8 @@ public class Player {
 		this.birthday = new PlayerBirthday();
 		this.rewardedLevels = new HashSet<>();
 		this.moonCardGetTimes = new HashSet<>();
+
+		this.shopLimit = new ArrayList<>();
 	}
 
 	// On player creation
@@ -590,6 +594,35 @@ public class Player {
 		GameItem item = new GameItem(201, 90);
 		getInventory().addItem(item, ActionReason.BlessingRedeemReward);
 		session.send(new PacketCardProductRewardNotify(getMoonCardRemainDays()));
+	}
+
+	public List<ShopLimit> getShopLimit() {
+		return shopLimit;
+	}
+
+	public int getGoodsLimitNum(int goodsId) {
+		for (ShopLimit sl : getShopLimit()) {
+			if (sl.getShopGoodId() == goodsId)
+				return sl.getHasBought();
+		}
+		return 0;
+	}
+
+	public void addShopLimit(int goodsId, int boughtCount) {
+		boolean found = false;
+		for (ShopLimit sl : getShopLimit()) {
+			if (sl.getShopGoodId() == goodsId){
+				sl.setHasBought(sl.getHasBought() + boughtCount);
+				found = true;
+			}
+		}
+		if (!found) {
+			ShopLimit sl = new ShopLimit();
+			sl.setShopGoodId(goodsId);
+			sl.setHasBought(boughtCount);
+			shopLimit.add(sl);
+		}
+		this.save();
 	}
 
 	public boolean inGodmode() {
