@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Grasscutter
-          path: grasscutter.jar
+          path: grasscutter-*-dev.jar
