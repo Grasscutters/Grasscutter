@@ -1,11 +1,18 @@
 package emu.grasscutter.task;
 
-import org.quartz.Job;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
+import org.quartz.*;
 
-public interface TaskHandler extends Job {
-    default void execute(JobExecutionContext context) throws JobExecutionException {
-        
+@PersistJobDataAfterExecution
+public class TaskHandler implements Job {
+
+    public void restartExecute() throws JobExecutionException {
+        execute(null);
     }
+
+    @Override
+    public void execute(JobExecutionContext context) throws JobExecutionException {
+        // TODO Auto-generated method stub
+
+    }
+
 }
