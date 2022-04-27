@@ -6,23 +6,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShopInfo {
-    public int shopId = 1004;
-    public int goodsId = 0;
-    public ItemParamData goodsItem;
-    public int scoin = 0;
-    public List<ItemParamData> costItemList;
-    public int boughtNum = 0;
-    public int buyLimit = 0;
-    public int beginTime = 0;
-    public int endTime = 1924992000;
-    public int nextRefreshTime = 1924992000;
-    public int minLevel = 0;
-    public int maxLevel = 61;
-    public List<Integer> preGoodsIdList = new ArrayList<>();
-    public int mcoin = 0;
-    public int hcoin = 0;
-    public int disableType = 0;
-    public int secondarySheetId = 0;
+    private int goodsId = 0;
+    private ItemParamData goodsItem;
+    private int scoin = 0;
+    private List<ItemParamData> costItemList;
+    private int boughtNum = 0;
+    private int buyLimit = 0;
+    private int beginTime = 0;
+    private int endTime = 1924992000;
+    private int nextRefreshTime = 1924992000;
+    private int minLevel = 0;
+    private int maxLevel = 61;
+    private List<Integer> preGoodsIdList = new ArrayList<>();
+    private int mcoin = 0;
+    private int hcoin = 0;
+    private int disableType = 0;
+    private int secondarySheetId = 0;
 
     public int getHcoin() {
         return hcoin;
@@ -62,14 +61,6 @@ public class ShopInfo {
 
     public void setSecondarySheetId(int secondarySheetId) {
         this.secondarySheetId = secondarySheetId;
-    }
-
-    public int getShopId() {
-        return shopId;
-    }
-
-    public void setShopId(int shopId) {
-        this.shopId = shopId;
     }
 
     public int getGoodsId() {
