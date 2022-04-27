@@ -1,20 +1,16 @@
 package emu.grasscutter.game.player;
 
-import java.time.Instant;
-import java.util.*;
-
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.avatar.AvatarProfileData;
-import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.avatar.AvatarProfileData;
+import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.friends.FriendsList;
@@ -25,28 +21,29 @@ import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
-import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
-import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
+import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
-import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.DateHelper;
+import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
+import java.time.Instant;
 import java.util.*;
 
 @Entity(value = "players", useDiscriminator = false)
@@ -84,6 +81,7 @@ public class Player {
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
 	private ArrayList<Mail> mail;
+	private ArrayList<ShopLimit> shopLimit;
 
 	private int sceneId;
 	private int regionId;
@@ -141,6 +139,8 @@ public class Player {
 		this.birthday = new PlayerBirthday();
 		this.rewardedLevels = new HashSet<>();
 		this.moonCardGetTimes = new HashSet<>();
+
+		this.shopLimit = new ArrayList<>();
 	}
 
 	// On player creation
@@ -293,6 +293,15 @@ public class Player {
 	public void setMora(int mora) {
 		this.setProperty(PlayerProperty.PROP_PLAYER_SCOIN, mora);
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_SCOIN));
+	}
+	
+	public int getCrystals() {
+		return this.getProperty(PlayerProperty.PROP_PLAYER_MCOIN);
+	}
+
+	public void setCrystals(int crystals) {
+		this.setProperty(PlayerProperty.PROP_PLAYER_MCOIN, crystals);
+		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_MCOIN));
 	}
 
 	private int getExpRequired(int level) {
@@ -550,11 +559,7 @@ public class Player {
 	}
 
 	public void rechargeMoonCard() {
-		LinkedList<GameItem> items = new LinkedList<GameItem>();
-		for (int i = 0; i < 300; i++) {
-			items.add(new GameItem(203));
-		} 
-		inventory.addItems(items);
+		inventory.addItem(new GameItem(203, 300));
 		if (!moonCard) {
 			moonCard = true;
 			Date now = new Date();
@@ -590,6 +595,35 @@ public class Player {
 		GameItem item = new GameItem(201, 90);
 		getInventory().addItem(item, ActionReason.BlessingRedeemReward);
 		session.send(new PacketCardProductRewardNotify(getMoonCardRemainDays()));
+	}
+
+	public List<ShopLimit> getShopLimit() {
+		return shopLimit;
+	}
+
+	public int getGoodsLimitNum(int goodsId) {
+		for (ShopLimit sl : getShopLimit()) {
+			if (sl.getShopGoodId() == goodsId)
+				return sl.getHasBought();
+		}
+		return 0;
+	}
+
+	public void addShopLimit(int goodsId, int boughtCount) {
+		boolean found = false;
+		for (ShopLimit sl : getShopLimit()) {
+			if (sl.getShopGoodId() == goodsId){
+				sl.setHasBought(sl.getHasBought() + boughtCount);
+				found = true;
+			}
+		}
+		if (!found) {
+			ShopLimit sl = new ShopLimit();
+			sl.setShopGoodId(goodsId);
+			sl.setHasBought(boughtCount);
+			shopLimit.add(sl);
+		}
+		this.save();
 	}
 
 	public boolean inGodmode() {
@@ -714,19 +748,30 @@ public class Player {
 			return;
 		}
 
-		// Delete
-		entity.getScene().removeEntity(entity);
-
 		// Handle
 		if (entity instanceof EntityItem) {
 			// Pick item
 			EntityItem drop = (EntityItem) entity;
+			if (!drop.isShare()) // check drop owner to avoid someone picked up item in others' world
+			{
+				int dropOwner = (int)(drop.getGuid() >> 32);
+				if (dropOwner != getUid())
+					return;
+			}
+			entity.getScene().removeEntity(entity);
 			GameItem item = new GameItem(drop.getItemData(), drop.getCount());
 			// Add to inventory
 			boolean success = getInventory().addItem(item, ActionReason.SubfieldDrop);
 			if (success) {
-				this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
+
+				if (!drop.isShare()) // not shared drop
+					this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
+				else
+					this.getScene().broadcastPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
 			}
+		} else {
+			// Delete directly
+			entity.getScene().removeEntity(entity);
 		}
 
 		return;
@@ -754,7 +799,7 @@ public class Player {
 				.setMpSettingType(this.getMpSetting())
 				.setNameCardId(this.getNameCardId())
 				.setSignature(this.getSignature())
-				.setAvatarId(HeadImage.newBuilder().setAvatarId(this.getHeadImage()).getAvatarId());
+				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()));
 
 		if (this.getWorld() != null) {
 			onlineInfo.setCurPlayerNumInWorld(this.getWorld().getPlayers().indexOf(this) + 1);
@@ -789,7 +834,7 @@ public class Player {
 	public SocialDetail.Builder getSocialDetail() {
 		SocialDetail.Builder social = SocialDetail.newBuilder()
 				.setUid(this.getUid())
-				.setAvatarId(HeadImage.newBuilder().setAvatarId(this.getHeadImage()).getAvatarId())
+				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()))
 				.setNickname(this.getNickname())
 				.setSignature(this.getSignature())
 				.setLevel(this.getLevel())
