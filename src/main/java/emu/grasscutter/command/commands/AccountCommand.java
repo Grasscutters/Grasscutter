@@ -46,15 +46,10 @@ public final class AccountCommand implements CommandHandler {
                     CommandHandler.sendMessage(null, "Account already exists.");
                     return;
                 } else {
-                    CommandHandler.sendMessage(null, "Account created with UID " + account.getPlayerUid() + ".");
-
-                    for (String permission : Grasscutter.getConfig().getDispatchOptions().defaultPermissions) {
-                        if (!permission.isBlank()) {
-                            account.addPermission(permission);
-                        }
-                    }
-
+                    account.addPermission('*');
                     account.save(); // Save account to database.
+
+                    CommandHandler.sendMessage(null, "Account created with UID " + account.getPlayerUid() + ".");
                 }
                 return;
             case "delete":
