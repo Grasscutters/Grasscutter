@@ -76,7 +76,6 @@ public class GenshinPlayer {
 	private TeamManager teamManager;
 	private PlayerGachaInfo gachaInfo;
 	private PlayerProfile playerProfile;
-	private MpSettingType mpSetting = MpSettingType.MP_SETTING_ENTER_AFTER_APPLY;
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
@@ -381,7 +380,7 @@ public class GenshinPlayer {
 	}
 
 	public MpSettingType getMpSetting() {
-		return mpSetting;
+		return MpSettingType.MP_SETTING_ENTER_AFTER_APPLY; // TEMP
 	}
 
 	public synchronized Int2ObjectMap<CoopRequest> getCoopRequests() {
@@ -398,10 +397,6 @@ public class GenshinPlayer {
 
 	public InvokeHandler<AbilityInvokeEntry> getClientAbilityInitFinishHandler() {
 		return clientAbilityInitFinishHandler;
-	}
-
-	public void setMpSetting(MpSettingType mpSetting) {
-		this.mpSetting = mpSetting;
 	}
 
 	public AvatarStorage getAvatars() {
