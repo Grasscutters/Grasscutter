@@ -1,5 +1,6 @@
 package emu.grasscutter.server.packet.send;
 
+import java.util.Collection;
 import java.util.List;
 
 import emu.grasscutter.game.inventory.GenshinItem;
@@ -21,7 +22,7 @@ public class PacketItemAddHintNotify extends GenshinPacket {
 		this.setData(proto);
 	}
 
-	public PacketItemAddHintNotify(List<GenshinItem> items, ActionReason reason) {
+	public PacketItemAddHintNotify(Collection<GenshinItem> items, ActionReason reason) {
 		super(PacketOpcodes.ItemAddHintNotify);
 		
 		ItemAddHintNotify.Builder proto = ItemAddHintNotify.newBuilder()

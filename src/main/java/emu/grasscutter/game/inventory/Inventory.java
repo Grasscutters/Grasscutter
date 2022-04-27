@@ -17,8 +17,10 @@ import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.packet.send.PacketAvatarEquipChangeNotify;
+import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
 import emu.grasscutter.server.packet.send.PacketStoreItemChangeNotify;
 import emu.grasscutter.server.packet.send.PacketStoreItemDelNotify;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -86,7 +88,7 @@ public class Inventory implements Iterable<GenshinItem> {
 		
 		return addItem(item);
 	}
-	
+
 	public boolean addItem(GenshinItem item) {
 		GenshinItem result = putItem(item);
 		
@@ -98,7 +100,21 @@ public class Inventory implements Iterable<GenshinItem> {
 		return false;
 	}
 	
+	public boolean addItem(GenshinItem item, ActionReason reason) {
+		boolean result = addItem(item);
+		
+		if (result && reason != null) {
+			getPlayer().sendPacket(new PacketItemAddHintNotify(item, reason));
+		}
+		
+		return result;
+	}
+	
 	public void addItems(Collection<GenshinItem> items) {
+		this.addItems(items, null);
+	}
+	
+	public void addItems(Collection<GenshinItem> items, ActionReason reason) {
 		List<GenshinItem> changedItems = new LinkedList<>();
 		
 		for (GenshinItem item : items) {
@@ -108,21 +124,19 @@ public class Inventory implements Iterable<GenshinItem> {
 			}
 		}
 		
+		if (changedItems.size() == 0) {
+			return;
+		}
+		
+		if (reason != null) {
+			getPlayer().sendPacket(new PacketItemAddHintNotify(changedItems, reason));
+		}
+		
 		getPlayer().sendPacket(new PacketStoreItemChangeNotify(changedItems));
 	}
 	
 	public void addItemParams(Collection<ItemParam> items) {
-		List<GenshinItem> changedItems = new LinkedList<>();
-		
-		for (ItemParam itemParam : items) {
-			GenshinItem toAdd = new GenshinItem(itemParam.getItemId(), itemParam.getCount());
-			GenshinItem result = putItem(toAdd);
-			if (result != null) {
-				changedItems.add(result);
-			}
-		}
-		
-		getPlayer().sendPacket(new PacketStoreItemChangeNotify(changedItems));
+		addItems(items.stream().map(param -> new GenshinItem(param.getItemId(), param.getCount())).toList(), null);
 	}
 	
 	private synchronized GenshinItem putItem(GenshinItem item) {

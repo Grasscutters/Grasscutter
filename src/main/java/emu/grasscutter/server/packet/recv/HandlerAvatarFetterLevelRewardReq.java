@@ -44,8 +44,7 @@ public class HandlerAvatarFetterLevelRewardReq extends PacketHandler {
             }
 
             GenshinItem item = new GenshinItem(cardId);
-            session.getPlayer().getInventory().addItem(item);
-            session.getPlayer().sendPacket(new PacketItemAddHintNotify(item, ActionReason.FetterLevelReward));
+            session.getPlayer().getInventory().addItem(item, ActionReason.FetterLevelReward);
             session.getPlayer().sendPacket(new PacketUnlockNameCardNotify(cardId));
             session.send(new PacketAvatarFetterDataNotify(avatar));
             session.send(new PacketAvatarDataNotify(avatar.getPlayer()));
