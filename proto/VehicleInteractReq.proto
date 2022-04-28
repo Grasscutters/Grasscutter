@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "VehicleInteractType.proto";
+
+message VehicleInteractReq {
+	uint32 entity_id = 1;
+	VehicleInteractType interact_type = 2;
+	uint32 pos = 3;
+}
