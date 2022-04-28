@@ -6,7 +6,11 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
@@ -53,31 +57,41 @@ public class DropManager {
             e.printStackTrace();
         }
     }
+    private void addDropEntity(DropData dd, Scene dropScene, ItemData itemData, Position pos, int num, Player target) {
+        if (!dd.isGive() && (itemData.getItemType() != ItemType.ITEM_VIRTUAL || itemData.getGadgetId() != 0)) {
+            EntityItem entity = new EntityItem(dropScene, target.getNextGameGuid(), itemData, num, dd.isShare(), pos);
+            if (!dd.isShare())
+                dropScene.addEntityToSingleClient(target, entity);
+            else
+                dropScene.addEntity(entity);
+        } else {
+            if (target != null) {
+                target.getInventory().addItem(new GameItem(itemData, num), ActionReason.SubfieldDrop, true);
+            } else {
+                // target is null if items will be added are shared. no one could pick it up because of the combination(give + shared)
+                // so it will be sent to all players' inventories directly.
+                dropScene.getPlayers().forEach(x -> {
+                    x.getInventory().addItem(new GameItem(itemData, num), ActionReason.SubfieldDrop, true);
+                });
+            }
+        }
+    }
 
     private void processDrop(DropData dd, EntityMonster em, Player gp) {
         int target = Utils.randomRange(1, 10000);
         if (target >= dd.getMinWeight() && target < dd.getMaxWeight()) {
             ItemData itemData = GameData.getItemDataMap().get(dd.getItemId());
             int num = Utils.randomRange(dd.getMinCount(), dd.getMaxCount());
-            if (!dd.isGive()) {
-                if (itemData.isEquip()) {
-                    for (int i = 0; i < num; i++) {
-                        float range = (5f + (.1f * num));
-                        Position pos = em.getPosition().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-                        EntityItem entity = new EntityItem(em.getScene(), gp.getNextGameGuid(), itemData, num, dd.isShare(), pos);
-                        if (!dd.isShare())
-                            em.getScene().addEntityToSingleClient(gp, entity);
-                        else
-                            em.getScene().addEntity(entity);
-                    }
-                } else {
-                    Position pos = em.getPosition().clone().addY(3f);
-                    EntityItem entity = new EntityItem(em.getScene(), gp.getNextGameGuid(), itemData, num, dd.isShare(), pos);
-                    if (!dd.isShare())
-                        em.getScene().addEntityToSingleClient(gp, entity);
-                    else
-                        em.getScene().addEntity(entity);
+
+            if (itemData.isEquip()) {
+                for (int i = 0; i < num; i++) {
+                    float range = (5f + (.1f * num));
+                    Position pos = em.getPosition().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
+                    addDropEntity(dd, em.getScene(), itemData, pos, num, gp);
                 }
+            } else {
+                Position pos = em.getPosition().clone().addY(3f);
+                addDropEntity(dd, em.getScene(), itemData, pos, num, gp);
             }
         }
     }
