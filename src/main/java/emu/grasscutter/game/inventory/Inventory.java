@@ -218,7 +218,8 @@ public class Inventory implements Iterable<GameItem> {
 		}
 		
 		// Set ownership and save to db
-		item.save();
+		if (item.getItemData().getItemType() != ItemType.ITEM_VIRTUAL)
+			item.save();
 		
 		return item;
 	}
