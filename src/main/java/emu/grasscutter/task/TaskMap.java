@@ -1,20 +1,9 @@
 package emu.grasscutter.task;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.Account;
-import emu.grasscutter.game.player.Player;
 
-import org.quartz.CronScheduleBuilder;
-import org.quartz.CronTrigger;
-import org.quartz.JobBuilder;
-import org.quartz.JobDetail;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerException;
-import org.quartz.SchedulerFactory;
-import org.quartz.Trigger;
-import org.quartz.TriggerBuilder;
+import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
-import org.quartz.spi.MutableTrigger;
 import org.reflections.Reflections;
 
 import java.util.*;
@@ -23,6 +12,7 @@ import java.util.*;
 public final class TaskMap {
     private final Map<String, TaskHandler> tasks = new HashMap<>();
     private final Map<String, Task> annotations = new HashMap<>();
+    private final Map<String, TaskHandler> afterReset = new HashMap<>();
     private final SchedulerFactory schedulerFactory = new StdSchedulerFactory();
     
     public TaskMap() {
@@ -35,6 +25,46 @@ public final class TaskMap {
 
     public static TaskMap getInstance() {
         return Grasscutter.getGameServer().getTaskMap();
+    }
+
+    public void resetNow() {
+        // Unregister all tasks
+        for (TaskHandler task : this.tasks.values()) {
+            unregisterTask(task);
+        }
+
+        // Run all afterReset tasks
+        for (TaskHandler task : this.afterReset.values()) {
+            try {
+                task.restartExecute();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        // Remove all afterReset tasks
+        this.afterReset.clear();
+
+        // Register all tasks
+        for (TaskHandler task : this.tasks.values()) {
+            registerTask(task.getClass().getAnnotation(Task.class).taskName(), task);
+        }
+    }
+
+    public TaskMap unregisterTask(TaskHandler task) {
+        this.tasks.remove(task.getClass().getAnnotation(Task.class).taskName());
+        this.annotations.remove(task.getClass().getAnnotation(Task.class).taskName());
+
+        try {
+            Scheduler scheduler = schedulerFactory.getScheduler();
+            scheduler.deleteJob(new JobKey(task.getClass().getAnnotation(Task.class).taskName()));
+        } catch (SchedulerException e) {
+            e.printStackTrace();
+        }
+
+        task.onDisable();
+
+        return this;
     }
 
     public TaskMap registerTask(String taskName, TaskHandler task) {
@@ -56,7 +86,11 @@ public final class TaskMap {
                         .build();
             
             scheduler.scheduleJob(job, convTrigger);
-            scheduler.start();
+
+            if (annotation.executeImmediately()) {
+                task.execute(null);
+            }
+            task.onEnable();
         } catch (SchedulerException e) {
             e.printStackTrace();
         }
@@ -83,12 +117,24 @@ public final class TaskMap {
             try {
                 Task taskData = annotated.getAnnotation(Task.class);
                 Object object = annotated.newInstance();
-                if (object instanceof TaskHandler)
+                if (object instanceof TaskHandler) {
                     this.registerTask(taskData.taskName(), (TaskHandler) object);
-                else Grasscutter.getLogger().error("Class " + annotated.getName() + " is not a TaskHandler!");
+                    if (taskData.executeImmediatelyAfterReset()) {
+                        this.afterReset.put(taskData.taskName(), (TaskHandler) object);
+                    }
+                } else {
+                    Grasscutter.getLogger().error("Class " + annotated.getName() + " is not a TaskHandler!");
+                }
             } catch (Exception exception) {
                 Grasscutter.getLogger().error("Failed to register task handler for " + annotated.getSimpleName(), exception);
             }
         });
+        try {
+            Scheduler scheduler = schedulerFactory.getScheduler();
+            scheduler.start();
+        } catch (SchedulerException e) {
+            e.printStackTrace();
+        }
+
     }
 }
