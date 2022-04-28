@@ -15,7 +15,6 @@ public class ShopInfo {
     private int buyLimit = 0;
     private int beginTime = 0;
     private int endTime = 1924992000;
-    private int nextRefreshTime = 1924992000;
     private int minLevel = 0;
     private int maxLevel = 61;
     private List<Integer> preGoodsIdList = new ArrayList<>();
@@ -23,6 +22,25 @@ public class ShopInfo {
     private int hcoin = 0;
     private int disableType = 0;
     private int secondarySheetId = 0;
+
+    public enum ShopRefreshType {
+        NONE(0),
+        SHOP_REFRESH_DAILY(1),
+        SHOP_REFRESH_WEEKLY(2),
+        SHOP_REFRESH_MONTHLY(3);
+
+        private final int value;
+        ShopRefreshType(int value) {
+            this.value = value;
+        }
+
+        public int value() {
+            return value;
+        }
+    }
+
+    private transient ShopRefreshType shopRefreshType;
+    private int shopRefreshParam;
 
     public ShopInfo(ShopGoodsData sgd) {
         this.goodsId = sgd.getGoodsId();
@@ -36,6 +54,8 @@ public class ShopInfo {
         this.maxLevel = sgd.getMaxPlayerLevel();
         this.costItemList = sgd.getCostItems().stream().filter(x -> x.getId() != 0).map(x -> new ItemParamData(x.getId(), x.getCount())).toList();
         this.secondarySheetId = sgd.getSubTabId();
+        this.shopRefreshType = sgd.getRefreshType();
+        this.shopRefreshParam = sgd.getRefreshParam();
     }
 
     public int getHcoin() {
@@ -142,14 +162,6 @@ public class ShopInfo {
         this.endTime = endTime;
     }
 
-    public int getNextRefreshTime() {
-        return nextRefreshTime;
-    }
-
-    public void setNextRefreshTime(int nextRefreshTime) {
-        this.nextRefreshTime = nextRefreshTime;
-    }
-
     public int getMinLevel() {
         return minLevel;
     }
@@ -164,5 +176,23 @@ public class ShopInfo {
 
     public void setMaxLevel(int maxLevel) {
         this.maxLevel = maxLevel;
+    }
+
+    public ShopRefreshType getShopRefreshType() {
+        if (shopRefreshType == null)
+            return ShopRefreshType.NONE;
+        return shopRefreshType;
+    }
+
+    public void setShopRefreshType(ShopRefreshType shopRefreshType) {
+        this.shopRefreshType = shopRefreshType;
+    }
+
+    public int getShopRefreshParam() {
+        return shopRefreshParam;
+    }
+
+    public void setShopRefreshParam(int shopRefreshParam) {
+        this.shopRefreshParam = shopRefreshParam;
     }
 }
