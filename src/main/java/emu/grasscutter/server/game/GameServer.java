@@ -188,8 +188,12 @@ public final class GameServer extends KcpServer {
 			
 			world.onTick();
 		}
+		
+		for (Player player : this.getPlayers().values()) {
+			player.onTick();
+		}
   
-    ServerTickEvent event = new ServerTickEvent(); event.call();
+		ServerTickEvent event = new ServerTickEvent(); event.call();
 	}
 	
 	public void registerWorld(World world) {
