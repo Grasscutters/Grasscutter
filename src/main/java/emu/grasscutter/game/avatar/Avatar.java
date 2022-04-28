@@ -75,6 +75,8 @@ public class Avatar {
 	
 	@Transient private final Int2ObjectMap<GameItem> equips;
 	@Transient private final Int2FloatOpenHashMap fightProp;
+
+	private final Int2FloatOpenHashMap overrideFightProp;
 	@Transient private Set<String> extraAbilityEmbryos;
 	
 	private List<Integer> fetters;
@@ -100,6 +102,7 @@ public class Avatar {
 		// Morhpia only!
 		this.equips = new Int2ObjectOpenHashMap<>();
 		this.fightProp = new Int2FloatOpenHashMap();
+		this.overrideFightProp = new Int2FloatOpenHashMap();
 		this.extraAbilityEmbryos = new HashSet<>();
 		this.proudSkillBonusMap = new HashMap<>(); 
 		this.fetters = new ArrayList<>(); // TODO Move to avatar
@@ -332,6 +335,10 @@ public class Avatar {
 	public Int2FloatOpenHashMap getFightProperties() {
 		return fightProp;
 	}
+
+	public Int2FloatOpenHashMap getOverrideFightProp() {
+		return overrideFightProp;
+	}
 	
 	public void setFightProperty(FightProperty prop, float value) {
 		this.getFightProperties().put(prop.getId(), value);
@@ -339,6 +346,11 @@ public class Avatar {
 	
 	private void setFightProperty(int id, float value) {
 		this.getFightProperties().put(id, value);
+	}
+
+	public void setOverrideFightProperty(FightProperty prop, float value) {
+		this.getFightProperties().put(prop.getId(), value);
+		this.getOverrideFightProp().put(prop.getId(), value);
 	}
 	
 	public void addFightProperty(FightProperty prop, float value) {
@@ -639,7 +651,10 @@ public class Avatar {
 		
 		// Set current hp
 		this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * hpPercent);
-		
+
+		// Set Override Fight Prop by Stats commands or such like this
+		this.getOverrideFightProp().forEach(this::setFightProperty);
+
 		// Packet
 		if (getPlayer() != null && getPlayer().hasSentAvatarDataNotify()) {
 			// Update stats for client

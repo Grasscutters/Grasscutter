@@ -35,7 +35,7 @@ public final class SetStatsCommand implements CommandHandler {
                 try {
                     int health = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    entity.getAvatar().setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, health);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_CUR_HP, health);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
                     CommandHandler.sendMessage(sender, "HP set to " + health + ".");
                 } catch (NumberFormatException ignored) {
@@ -47,7 +47,7 @@ public final class SetStatsCommand implements CommandHandler {
                 try {
                     int def = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    entity.getAvatar().setFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE, def);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE, def);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_DEFENSE));
                     CommandHandler.sendMessage(sender, "DEF set to " + def + ".");
                 } catch (NumberFormatException ignored) {
@@ -59,7 +59,7 @@ public final class SetStatsCommand implements CommandHandler {
                 try {
                     int atk = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    entity.getAvatar().setFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK, atk);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK, atk);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_ATTACK));
                     CommandHandler.sendMessage(sender, "ATK set to " + atk + ".");
                 } catch (NumberFormatException ignored) {
@@ -71,7 +71,7 @@ public final class SetStatsCommand implements CommandHandler {
                 try {
                     int em = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    entity.getAvatar().setFightProperty(FightProperty.FIGHT_PROP_ELEMENT_MASTERY, em);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_ELEMENT_MASTERY, em);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ELEMENT_MASTERY));
                     CommandHandler.sendMessage(sender, "Elemental Mastery set to " + em + ".");
                 } catch (NumberFormatException ignored) {
@@ -84,7 +84,7 @@ public final class SetStatsCommand implements CommandHandler {
                     float er = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     float erecharge = er / 10000;
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, erecharge);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, erecharge);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY));
                     float iger = erecharge * 100;
                     CommandHandler.sendMessage(sender, "Energy recharge set to " + iger + "%.");
@@ -98,7 +98,7 @@ public final class SetStatsCommand implements CommandHandler {
                     float cr = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     float crate = cr / 10000;
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_CRITICAL, crate);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_CRITICAL, crate);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CRITICAL));
                     float igcrate = crate * 100;
                     CommandHandler.sendMessage(sender, "Crit Rate set to " + igcrate + "%.");
@@ -112,7 +112,7 @@ public final class SetStatsCommand implements CommandHandler {
                     float cdmg = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     float cdamage = cdmg / 10000;
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_CRITICAL_HURT, cdamage);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_CRITICAL_HURT, cdamage);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CRITICAL_HURT));
                     float igcdmg = cdamage * 100;
                     CommandHandler.sendMessage(sender, "Crit DMG set to " + igcdmg + "%");
@@ -126,7 +126,7 @@ public final class SetStatsCommand implements CommandHandler {
                     float epyro = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     float pyro = epyro / 10000;
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_FIRE_ADD_HURT, pyro);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_FIRE_ADD_HURT, pyro);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_FIRE_ADD_HURT));
                     float igpyro = pyro * 100;
                     CommandHandler.sendMessage(sender, "Pyro DMG Bonus set to " + igpyro + "%");
@@ -140,7 +140,7 @@ public final class SetStatsCommand implements CommandHandler {
                     float ecryo = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     float cryo = ecryo / 10000;
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_ICE_ADD_HURT, cryo);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_ICE_ADD_HURT, cryo);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ICE_ADD_HURT));
                     float igcyro = cryo * 100;
                     CommandHandler.sendMessage(sender, "Cyro DMG Bonus set to " + igcyro + "%");
@@ -154,7 +154,7 @@ public final class SetStatsCommand implements CommandHandler {
                     float ehydro = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     float hydro = ehydro / 10000;
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_WATER_ADD_HURT, hydro);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_WATER_ADD_HURT, hydro);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_WATER_ADD_HURT));
                     float ighydro = hydro * 100;
                     CommandHandler.sendMessage(sender, "Hydro DMG Bonus set to " + ighydro + "%");
@@ -168,7 +168,7 @@ public final class SetStatsCommand implements CommandHandler {
                     float eanemo = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     float anemo = eanemo / 10000;
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_WIND_ADD_HURT, anemo);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_WIND_ADD_HURT, anemo);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_WIND_ADD_HURT));
                     float iganemo = anemo * 100;
                     CommandHandler.sendMessage(sender, "Anemo DMG Bonus set to " + iganemo + "%");
@@ -182,7 +182,7 @@ public final class SetStatsCommand implements CommandHandler {
                     float egeo = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     float geo = egeo / 10000;
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_ROCK_ADD_HURT, geo);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_ROCK_ADD_HURT, geo);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ROCK_ADD_HURT));
                     float iggeo = geo * 100;
                     CommandHandler.sendMessage(sender, "Geo DMG Bonus set to " + iggeo + "%");
@@ -197,7 +197,7 @@ public final class SetStatsCommand implements CommandHandler {
                     float eelec = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     float elec = eelec / 10000;
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_ELEC_ADD_HURT, elec);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_ELEC_ADD_HURT, elec);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ELEC_ADD_HURT));
                     float igelec = elec * 100;
                     CommandHandler.sendMessage(sender, "Electro DMG Bonus set to " + igelec + "%");
@@ -211,7 +211,7 @@ public final class SetStatsCommand implements CommandHandler {
                     float ephys = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     float phys = ephys / 10000;
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_PHYSICAL_ADD_HURT, phys);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_PHYSICAL_ADD_HURT, phys);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_PHYSICAL_ADD_HURT));
                     float igphys = phys * 100;
                     CommandHandler.sendMessage(sender, "Physical DMG Bonus set to " + igphys + "%");
@@ -225,7 +225,7 @@ public final class SetStatsCommand implements CommandHandler {
                     float edend = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     float dend = edend / 10000;
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_GRASS_ADD_HURT, dend);
+                    entity.getAvatar().setOverrideFightProperty(FightProperty.FIGHT_PROP_GRASS_ADD_HURT, dend);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_GRASS_ADD_HURT));
                     float igdend = dend * 100;
                     CommandHandler.sendMessage(sender, "Dendro DMG Bonus set to " + igdend + "%");
