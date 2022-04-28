@@ -178,18 +178,19 @@ public final class GameServer extends KcpServer {
 	}
 	
 	public void onTick() throws Exception {
-		Iterator<World> it = this.getWorlds().iterator();
-		while (it.hasNext()) {
-			World world = it.next();
-			
+
+		this.getWorlds()
+				.stream().toList() // Avoid ConcurrentModificationException
+				.forEach((world) -> {
 			if (world.getPlayerCount() == 0) {
-				it.remove();
+				this.getWorlds().remove(world);
 			}
-			
 			world.onTick();
-		}
-  
-    ServerTickEvent event = new ServerTickEvent(); event.call();
+		});
+
+		this.players.forEach((uid, player) -> player.onTick());
+
+		ServerTickEvent event = new ServerTickEvent(); event.call();
 	}
 	
 	public void registerWorld(World world) {

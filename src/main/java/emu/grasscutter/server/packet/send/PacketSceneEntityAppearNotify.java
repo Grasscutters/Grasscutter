@@ -2,8 +2,8 @@ package emu.grasscutter.server.packet.send;
 
 import java.util.Collection;
 
-import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SceneEntityAppearNotifyOuterClass.SceneEntityAppearNotify;

@@ -56,7 +56,7 @@ public class GameData {
 	private static final Int2ObjectMap<AvatarCostumeData> avatarCostumeDataMap = new Int2ObjectLinkedOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarCostumeData> avatarCostumeDataItemIdMap = new Int2ObjectLinkedOpenHashMap<>();
 	
-	private static final Int2ObjectMap<SceneData> sceneDataMap = new Int2ObjectLinkedOpenHashMap<>();
+	private static final Int2ObjectMap<ExcelSceneData> excelSceneDataMap = new Int2ObjectLinkedOpenHashMap<>();
 	private static final Int2ObjectMap<FetterData> fetterDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<FetterCharacterCardData> fetterCharacterCardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<RewardData> rewardDataMap = new Int2ObjectOpenHashMap<>();
@@ -241,8 +241,8 @@ public class GameData {
 		return avatarCostumeDataItemIdMap;
 	}
 
-	public static Int2ObjectMap<SceneData> getSceneDataMap() {
-		return sceneDataMap;
+	public static Int2ObjectMap<ExcelSceneData> getSceneDataMap() {
+		return excelSceneDataMap;
 	}
 
 	public static Int2ObjectMap<RewardData> getRewardDataMap() {

@@ -64,7 +64,7 @@ public class DropManager {
                     for (int i = 0; i < num; i++) {
                         float range = (5f + (.1f * num));
                         Position pos = em.getPosition().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-                        EntityItem entity = new EntityItem(em.getScene(), gp, itemData, pos, num, dd.isShare());
+                        EntityItem entity = new EntityItem(em.getScene(), gp.getNextGameGuid(), itemData, num, dd.isShare(), pos);
                         if (!dd.isShare())
                             em.getScene().addEntityToSingleClient(gp, entity);
                         else
@@ -72,7 +72,7 @@ public class DropManager {
                     }
                 } else {
                     Position pos = em.getPosition().clone().addY(3f);
-                    EntityItem entity = new EntityItem(em.getScene(), gp, itemData, pos, num, dd.isShare());
+                    EntityItem entity = new EntityItem(em.getScene(), gp.getNextGameGuid(), itemData, num, dd.isShare(), pos);
                     if (!dd.isShare())
                         em.getScene().addEntityToSingleClient(gp, entity);
                     else

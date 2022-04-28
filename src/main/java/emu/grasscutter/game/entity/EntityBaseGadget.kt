@@ -1,6 +1,5 @@
 package emu.grasscutter.game.entity
 
-import emu.grasscutter.game.props.LifeState
 import emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType
 import emu.grasscutter.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfo
 import emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo

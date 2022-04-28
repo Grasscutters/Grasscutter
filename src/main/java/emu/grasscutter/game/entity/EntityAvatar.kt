@@ -1,12 +1,12 @@
 package emu.grasscutter.game.entity
 
-import emu.grasscutter.GenshinConstants
-import emu.grasscutter.data.GenshinData
-import emu.grasscutter.game.GenshinPlayer
-import emu.grasscutter.game.GenshinScene
-import emu.grasscutter.game.avatar.GenshinAvatar
+import emu.grasscutter.GameConstants
+import emu.grasscutter.data.GameData
+import emu.grasscutter.game.avatar.Avatar
 import emu.grasscutter.game.inventory.EquipType
+import emu.grasscutter.game.player.Player
 import emu.grasscutter.game.props.EntityIdType
+import emu.grasscutter.game.world.Scene
 import emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock
 import emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo
 import emu.grasscutter.net.proto.AvatarExcelInfoOuterClass.AvatarExcelInfo
@@ -18,7 +18,7 @@ import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo
 import emu.grasscutter.utils.Position
 import emu.grasscutter.utils.Utils
 
-class EntityAvatar(override val scene: GenshinScene, val avatar: GenshinAvatar) :
+class EntityAvatar(override val scene: Scene, val avatar: Avatar) :
 	EntityLife(avatar.level) {
 
 	override val entityType: ProtEntityType = ProtEntityType.PROT_ENTITY_AVATAR
@@ -45,7 +45,7 @@ class EntityAvatar(override val scene: GenshinScene, val avatar: GenshinAvatar) 
 
 	}
 
-	val player: GenshinPlayer
+	val player: Player
 		get() = avatar.player
 
 	val weaponEntityId: Int
@@ -119,17 +119,17 @@ class EntityAvatar(override val scene: GenshinScene, val avatar: GenshinAvatar) 
 					val emb = AbilityEmbryo.newBuilder()
 						.setAbilityId(++embryoId)
 						.setAbilityNameHash(id)
-						.setAbilityOverrideNameHash(GenshinConstants.DEFAULT_ABILITY_NAME)
+						.setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
 						.build()
 					abilityControlBlock.addAbilityEmbryoList(emb)
 				}
 			}
 			// Add default abilities
-			for (id in GenshinConstants.DEFAULT_ABILITY_HASHES) {
+			for (id in GameConstants.DEFAULT_ABILITY_HASHES) {
 				val emb = AbilityEmbryo.newBuilder()
 					.setAbilityId(++embryoId)
 					.setAbilityNameHash(id)
-					.setAbilityOverrideNameHash(GenshinConstants.DEFAULT_ABILITY_NAME)
+					.setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
 					.build()
 				abilityControlBlock.addAbilityEmbryoList(emb)
 			}
@@ -138,18 +138,18 @@ class EntityAvatar(override val scene: GenshinScene, val avatar: GenshinAvatar) 
 				val emb = AbilityEmbryo.newBuilder()
 					.setAbilityId(++embryoId)
 					.setAbilityNameHash(id)
-					.setAbilityOverrideNameHash(GenshinConstants.DEFAULT_ABILITY_NAME)
+					.setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
 					.build()
 				abilityControlBlock.addAbilityEmbryoList(emb)
 			}
 			// Add skill depot abilities
-			val skillDepot = GenshinData.getAvatarSkillDepotDataMap()[avatar.skillDepotId]
+			val skillDepot = GameData.getAvatarSkillDepotDataMap()[avatar.skillDepotId]
 			if (skillDepot != null && skillDepot.abilities != null) {
 				for (id in skillDepot.abilities) {
 					val emb = AbilityEmbryo.newBuilder()
 						.setAbilityId(++embryoId)
 						.setAbilityNameHash(id)
-						.setAbilityOverrideNameHash(GenshinConstants.DEFAULT_ABILITY_NAME)
+						.setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
 						.build()
 					abilityControlBlock.addAbilityEmbryoList(emb)
 				}
@@ -160,7 +160,7 @@ class EntityAvatar(override val scene: GenshinScene, val avatar: GenshinAvatar) 
 					val emb = AbilityEmbryo.newBuilder()
 						.setAbilityId(++embryoId)
 						.setAbilityNameHash(Utils.abilityHash(skill))
-						.setAbilityOverrideNameHash(GenshinConstants.DEFAULT_ABILITY_NAME)
+						.setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
 						.build()
 					abilityControlBlock.addAbilityEmbryoList(emb)
 				}

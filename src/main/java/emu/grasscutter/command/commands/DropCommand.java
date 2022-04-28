@@ -41,11 +41,11 @@ public final class DropCommand implements CommandHandler {
                 float range = (5f + (.1f * amount));
                 for (int i = 0; i < amount; i++) {
                     Position pos = sender.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-                    EntityItem entity = new EntityItem(sender.getScene(), sender.getNextGenshinGuid(),itemData, 1, pos);
+                    EntityItem entity = new EntityItem(sender.getScene(), sender.getNextGameGuid(),itemData, 1, pos);
                     sender.getScene().addEntity(entity);
                 }
             } else {
-                EntityItem entity = new EntityItem(sender.getScene(), sender.getNextGenshinGuid(), itemData, amount, sender.getPos().clone().addY(3f));
+                EntityItem entity = new EntityItem(sender.getScene(), sender.getNextGameGuid(), itemData, amount, sender.getPos().clone().addY(3f));
                 sender.getScene().addEntity(entity);
             }
             CommandHandler.sendMessage(sender, String.format("Dropped %s of %s.", amount, item));

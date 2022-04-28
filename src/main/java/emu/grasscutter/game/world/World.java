@@ -6,14 +6,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.Player.SceneLoadState;
-import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.SceneData;
+import emu.grasscutter.data.def.ExcelSceneData;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.server.packet.send.PacketDelTeamEntityNotify;
@@ -99,7 +97,7 @@ public class World implements Iterable<Player> {
 		}
 		
 		// Create scene from scene data if it doesnt exist
-		SceneData sceneData = GameData.getSceneDataMap().get(sceneId);
+		ExcelSceneData sceneData = GameData.getSceneDataMap().get(sceneId);
 		if (sceneData != null) {
 			scene = new Scene(this, sceneData);
 			this.registerScene(scene);

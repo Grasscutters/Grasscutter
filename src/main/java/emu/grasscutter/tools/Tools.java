@@ -2,8 +2,6 @@ package emu.grasscutter.tools;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -14,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -25,7 +22,7 @@ import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.data.def.SceneData;
+import emu.grasscutter.data.def.ExcelSceneData;
 import emu.grasscutter.utils.Utils;
 
 public final class Tools {
@@ -75,7 +72,7 @@ public final class Tools {
 			Collections.sort(list); 
 			
 			for (Integer id : list) {
-				SceneData data = GameData.getSceneDataMap().get(id);
+				ExcelSceneData data = GameData.getSceneDataMap().get(id);
 				writer.println(data.getId() + " : " + data.getScriptData());
 			}
 			

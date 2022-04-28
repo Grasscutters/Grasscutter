@@ -1,15 +1,15 @@
 package emu.grasscutter.game.entity
 
 import emu.grasscutter.data.def.ItemData
-import emu.grasscutter.game.GenshinScene
-import emu.grasscutter.game.inventory.GenshinItem
+import emu.grasscutter.game.inventory.GameItem
 import emu.grasscutter.game.props.EntityIdType
+import emu.grasscutter.game.world.Scene
 import emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo
 import emu.grasscutter.utils.Position
 
-class EntityItem @JvmOverloads constructor(override val scene: GenshinScene,
-				 val guid: Long, val itemData: ItemData, val count: Int,
+class EntityItem @JvmOverloads constructor(override val scene: Scene,
+				 val guid: Long, val itemData: ItemData, val count: Int, val isShare: Boolean = true,
 				 override val position: Position,
 				 override val rotation: Position = Position()
 ) : EntityBaseGadget() {
@@ -17,7 +17,7 @@ class EntityItem @JvmOverloads constructor(override val scene: GenshinScene,
 	override val gadgetId: Int = itemData.gadgetId
 	override val authorityPeerId: Int = getWorld().hostPeerId
 
-	private val item: GenshinItem = GenshinItem(itemData, count)
+	private val item: GameItem = GameItem(itemData, count)
 
 
 	init {

@@ -184,7 +184,7 @@ public class GameSession extends KcpChannel {
     private void logPacket(BasePacket packet) {
 		if (!loopPacket.contains(packet.getOpcode())) {
 			Grasscutter.getLogger().info("SEND: " + PacketOpcodesUtil.getOpcodeName(packet.getOpcode()) + " (" + packet.getOpcode() + ")");
-			System.out.println(Utils.bytesToHex(packet.getData()));
+			if (packet.getData() != null && packet.getData().length != 0) System.out.println(Utils.bytesToHex(packet.getData()));
 		}
     }
 

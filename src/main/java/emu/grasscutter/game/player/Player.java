@@ -931,7 +931,7 @@ public class Player {
 		}
 		// 
 		if (this.getScene() != null && this.getSceneLoadState() == SceneLoadState.LOADED) {
-			this.getScene().checkSpawns(this);
+			this.getScene().checkSpawns();
 		}
 		// Ping
 		if (this.getWorld() != null) {

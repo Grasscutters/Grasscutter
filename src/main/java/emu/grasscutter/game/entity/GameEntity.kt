@@ -1,10 +1,10 @@
 package emu.grasscutter.game.entity
 
-import emu.grasscutter.game.GenshinScene
-import emu.grasscutter.game.World
 import emu.grasscutter.game.props.FightProperty
 import emu.grasscutter.game.props.LifeState
 import emu.grasscutter.game.props.PlayerProperty
+import emu.grasscutter.game.world.Scene
+import emu.grasscutter.game.world.World
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair
@@ -15,7 +15,6 @@ import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRende
 import emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState
-import emu.grasscutter.net.proto.PropPairOuterClass
 import emu.grasscutter.net.proto.PropPairOuterClass.PropPair
 import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType
 import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo
@@ -27,7 +26,7 @@ import emu.grasscutter.utils.ProtoHelper
 
 abstract class GameEntity {
 
-	abstract val scene: GenshinScene
+	abstract val scene: Scene
 	abstract val position: Position
 	abstract val rotation: Position
 	abstract val entityType: ProtEntityType

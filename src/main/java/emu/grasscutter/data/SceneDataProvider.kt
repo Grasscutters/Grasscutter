@@ -19,7 +19,7 @@ val jsonFormatter = Json {
 object SceneDataLoader {
 
 	@JvmField
-	val scenes: ConcurrentHashMap<Int, Scene> = ConcurrentHashMap()
+	val scenes: ConcurrentHashMap<Int, SceneData> = ConcurrentHashMap()
 
 	@JvmField
 	val entityCampData: ConcurrentHashMap<Int, Int> = ConcurrentHashMap()
@@ -69,7 +69,7 @@ class SceneDataProvider(
 	private val sceneFile = File("$scenePath/scene$sceneId.json")
 	val scene by lazy {
 //        println("Current decoding ${sceneFile.path}")
-		jsonFormatter.decodeFromString<Scene>(sceneFile.readText()).apply { sceneDataProvider = this@SceneDataProvider }
+		jsonFormatter.decodeFromString<SceneData>(sceneFile.readText()).apply { sceneDataProvider = this@SceneDataProvider }
 	}
 
 
@@ -96,7 +96,7 @@ class SceneDataProvider(
 
 
 @Serializable
-data class Scene(
+data class SceneData(
 	@Transient var sceneDataProvider: SceneDataProvider? = null,
 	@SerialName("blocks") val rawBlocks: List<Int>,
 	@SerialName("block_rects") val blockRectangles: List<BlockRectangle> = emptyList(),

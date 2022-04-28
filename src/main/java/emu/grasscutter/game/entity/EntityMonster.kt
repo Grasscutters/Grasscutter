@@ -1,10 +1,10 @@
 package emu.grasscutter.game.entity
 
-import emu.grasscutter.data.GenshinData
+import emu.grasscutter.data.GameData
 import emu.grasscutter.data.def.MonsterData
-import emu.grasscutter.game.GenshinScene
 import emu.grasscutter.game.props.EntityIdType
 import emu.grasscutter.game.props.FightProperty
+import emu.grasscutter.game.world.Scene
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo
 import emu.grasscutter.net.proto.MonsterBornTypeOuterClass.MonsterBornType
 import emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute
@@ -15,7 +15,7 @@ import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo
 import emu.grasscutter.utils.Position
 
 class EntityMonster @JvmOverloads constructor(
-	override val scene: GenshinScene,
+	override val scene: Scene,
 	val monsterData: MonsterData,
 	override val position: Position,
 	val level: Int,
@@ -103,7 +103,7 @@ class EntityMonster @JvmOverloads constructor(
 		this.setFightProperty(FightProperty.FIGHT_PROP_ICE_SUB_HURT, data.iceSubHurt)
 
 		// Level curve
-		val curve = GenshinData.getMonsterCurveDataMap()[level]
+		val curve = GameData.getMonsterCurveDataMap()[level]
 		if (curve != null) {
 			for (growCurve in data.propGrowCurves) {
 				val prop = FightProperty.getPropByName(growCurve.type)

@@ -1,14 +1,14 @@
 package emu.grasscutter.game.entity
 
-import emu.grasscutter.game.GenshinPlayer
-import emu.grasscutter.game.GenshinScene
+import emu.grasscutter.game.player.Player
 import emu.grasscutter.game.props.LifeState
+import emu.grasscutter.game.world.Scene
 import emu.grasscutter.net.proto.ClientGadgetInfoOuterClass.ClientGadgetInfo
 import emu.grasscutter.net.proto.EvtCreateGadgetNotifyOuterClass.EvtCreateGadgetNotify
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass
 import emu.grasscutter.utils.Position
 
-class EntityClientGadget(override val scene: GenshinScene, val owner: GenshinPlayer, notify: EvtCreateGadgetNotify) : EntityBaseGadget() {
+class EntityClientGadget(override val scene: Scene, val owner: Player, notify: EvtCreateGadgetNotify) : EntityBaseGadget() {
 
 	override val gadgetId: Int = notify.configId
 	override val authorityPeerId = owner.peerId

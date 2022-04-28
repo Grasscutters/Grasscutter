@@ -1,14 +1,16 @@
-package emu.grasscutter.game;
+package emu.grasscutter.game.world;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.Scene;
+import emu.grasscutter.data.SceneData;
 import emu.grasscutter.data.SceneDataLoader;
 import emu.grasscutter.data.Vector2;
 import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.data.def.SceneData;
+import emu.grasscutter.data.def.ExcelSceneData;
 import emu.grasscutter.data.def.WorldLevelData;
 import emu.grasscutter.game.entity.*;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.TeamInfo;
 import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
@@ -28,10 +30,10 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.stream.Collectors;
 
-public class GenshinScene {
+public class Scene {
 	private final World world;
-	private final SceneData sceneData;
-	private final List<GenshinPlayer> players;
+	private final ExcelSceneData sceneData;
+	private final List<Player> players;
 	private final Int2ObjectMap<GameEntity> entities;
 	private boolean dontDestroyWhenEmpty;
 
@@ -39,7 +41,7 @@ public class GenshinScene {
 	private ClimateType climate;
 	private int weather;
 
-	public Scene(World world, SceneData sceneData) {
+	public Scene(World world, ExcelSceneData sceneData) {
 		this.world = world;
 		this.sceneData = sceneData;
 		this.players = Collections.synchronizedList(new ArrayList<>());
@@ -58,7 +60,7 @@ public class GenshinScene {
 		return world;
 	}
 
-	public SceneData getSceneData() {
+	public ExcelSceneData getSceneData() {
 		return this.sceneData;
 	}
 
@@ -201,7 +203,7 @@ public class GenshinScene {
 		this.addEntityDirectly(entity);
 		this.broadcastPacket(new PacketSceneEntityAppearNotify(entity));
 	}
-public synchronized void addEntityToSingleClient(Player player, GameEntity entity) {
+	public synchronized void addEntityToSingleClient(Player player, GameEntity entity) {
 		this.addEntityDirectly(entity);
 		player.sendPacket(new PacketSceneEntityAppearNotify(entity));
 	}
@@ -314,84 +316,86 @@ public synchronized void addEntityToSingleClient(Player player, GameEntity entit
 	}
 
 	// TODO - Test
-	public void checkSpawns(GenshinPlayer player) {
-		Scene scene = SceneDataLoader.scenes.get(getId());
+	public void checkSpawns() {
+		players.forEach((player) -> {
+			SceneData scene = SceneDataLoader.scenes.get(getId());
 
-		// World level
-		WorldLevelData worldLevelData = GenshinData.getWorldLevelDataMap().get(player.getWorldLevel());
-		int worldLevelOverride = 0;
+			// World level
+			WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(player.getWorldLevel());
+			int worldLevelOverride = 0;
 
-		if (worldLevelData != null) {
-			worldLevelOverride = worldLevelData.getMonsterLevel();
-		}
+			if (worldLevelData != null) {
+				worldLevelOverride = worldLevelData.getMonsterLevel();
+			}
 
-		if (scene != null) {
-			int finalWorldLevelOverride = worldLevelOverride;
-			// Load All Block Entities Data
+			if (scene != null) {
+				int finalWorldLevelOverride = worldLevelOverride;
+				// Load All Block Entities Data
 
-			var visionBlocks = scene.getPlayerVisionBlock(new Vector2(player.getPos().getX(), player.getPos().getZ()), DESPAWN_DISTANCE);
+				var visionBlocks = scene.getPlayerVisionBlock(new Vector2(player.getPos().getX(), player.getPos().getZ()), DESPAWN_DISTANCE);
 
-			loadedBlock.stream()
-				.filter((blockId) -> !visionBlocks.containsKey(blockId)).toList()
-				.forEach((blockId) -> {
-					preloadedEntityData.get(blockId).forEach(this::removeEntityDirectly);
-					preloadedEntityData.remove(blockId);
-					loadedBlock.remove(blockId);
-				});
+				loadedBlock.stream()
+					.filter((blockId) -> !visionBlocks.containsKey(blockId)).toList()
+					.forEach((blockId) -> {
+						preloadedEntityData.get(blockId).forEach(this::removeEntityDirectly);
+						preloadedEntityData.remove(blockId);
+						loadedBlock.remove(blockId);
+					});
 
-			visionBlocks.entrySet().stream()
-				.filter((entry) -> !loadedBlock.contains(entry.getKey()))
-				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))
-				.forEach((blockId, block) -> {
-					if (!loadedBlock.contains(blockId)) {
-						this.preloadedEntityData.putIfAbsent(blockId, new ArrayList<>());
-						block.getGroups().forEach((groupId, group) -> {
-							group.getGadgets().forEach((gadget -> {
-								EntityGadget entity = new EntityGadget(this, gadget);
-								this.preloadedEntityData.get(blockId).add(entity);
-							}));
-							group.getMonsters().forEach((monster -> {
-								MonsterData entityData = GenshinData.getMonsterDataMap().get(monster.getMonsterId());
-								EntityMonster entity = new EntityMonster(this, entityData, monster.getPos().toPos(), finalWorldLevelOverride > 0 ? finalWorldLevelOverride : monster.getLevel());
-								entity.getRotation().set(monster.getRot().toPos());
-								entity.getGroupId().set(groupId);
-								entity.getPoseId().set(monster.getPoseId());
-								entity.getConfigId().set(monster.getConfigId());
-								entity.getAffixList().set(monster.getAffix());
-								entity.getTitleId().set(monster.getTitleId());
-								entity.getSpecialNameId().set(monster.getSpecialNameId());
-								entity.getMarkFlag().set(monster.getMarkFlag());
-								entity.isElite().set(monster.isElite());
-								this.preloadedEntityData.get(blockId).add(entity);
-							}));
+				visionBlocks.entrySet().stream()
+					.filter((entry) -> !loadedBlock.contains(entry.getKey()))
+					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))
+					.forEach((blockId, block) -> {
+						if (!loadedBlock.contains(blockId)) {
+							this.preloadedEntityData.putIfAbsent(blockId, new ArrayList<>());
+							block.getGroups().forEach((groupId, group) -> {
+								group.getGadgets().forEach((gadget -> {
+									EntityGadget entity = new EntityGadget(this, gadget);
+									this.preloadedEntityData.get(blockId).add(entity);
+								}));
+								group.getMonsters().forEach((monster -> {
+									MonsterData entityData = GameData.getMonsterDataMap().get(monster.getMonsterId());
+									EntityMonster entity = new EntityMonster(this, entityData, monster.getPos().toPos(), finalWorldLevelOverride > 0 ? finalWorldLevelOverride : monster.getLevel());
+									entity.getRotation().set(monster.getRot().toPos());
+									entity.getGroupId().set(groupId);
+									entity.getPoseId().set(monster.getPoseId());
+									entity.getConfigId().set(monster.getConfigId());
+									entity.getAffixList().set(monster.getAffix());
+									entity.getTitleId().set(monster.getTitleId());
+									entity.getSpecialNameId().set(monster.getSpecialNameId());
+									entity.getMarkFlag().set(monster.getMarkFlag());
+									entity.isElite().set(monster.isElite());
+									this.preloadedEntityData.get(blockId).add(entity);
+								}));
 //					group.getNpcs().forEach((npc -> {
 //						EntityClientGadget entity = new EntityNPC(this, player, )
 //						this.addEntityDirectly(entity);
 //						entities.add(entity);
 //					}));
-						});
-						loadedBlock.push(blockId);
+							});
+							loadedBlock.push(blockId);
+						}
+					});
+				List<GameEntity> disappear = new LinkedList<>();
+				this.preloadedEntityData.values().forEach((list) -> list.stream().filter((gameEntity -> this.entities.containsKey(gameEntity.getId()))).forEach((entity) -> {
+					if (entity.getPosition().distance(player.getPos()) >= DESPAWN_DISTANCE) {
+						this.removeEntityDirectly(entity);
+						disappear.add(entity);
 					}
-				});
-			List<GameEntity> disappear = new LinkedList<>();
-			this.preloadedEntityData.values().forEach((list) -> list.stream().filter((gameEntity -> this.entities.containsKey(gameEntity.getId()))).forEach((entity) -> {
-				if (entity.getPosition().distance(player.getPos()) >= DESPAWN_DISTANCE) {
-					this.removeEntityDirectly(entity);
-					disappear.add(entity);
-				}
-			}));
-			List<GameEntity> appear = new LinkedList<>();
-			this.preloadedEntityData.values().forEach((list) -> list.stream().filter((gameEntity -> !this.entities.containsKey(gameEntity.getId()))).forEach((entity) -> {
-				if (entity.getPosition().distance(player.getPos()) <= SPAWN_DISTANCE) {
-					this.addEntityDirectly(entity);
-					appear.add(entity);
-				}
-			}));
-			if (appear.size() > 0) this.broadcastPacket(new PacketSceneEntityAppearNotify(appear, VisionType.VISION_BORN));
-			if (disappear.size() > 0) this.broadcastPacket(new PacketSceneEntityDisappearNotify(disappear, VisionType.VISION_REMOVE));
-		} else {
-			Grasscutter.getLogger().error("Player scene is wrong, could not get any scene groups from player " + player.getNickname());
-		}
+				}));
+				List<GameEntity> appear = new LinkedList<>();
+				this.preloadedEntityData.values().forEach((list) -> list.stream().filter((gameEntity -> !this.entities.containsKey(gameEntity.getId()))).forEach((entity) -> {
+					if (entity.getPosition().distance(player.getPos()) <= SPAWN_DISTANCE) {
+						this.addEntityDirectly(entity);
+						appear.add(entity);
+					}
+				}));
+				if (appear.size() > 0) this.broadcastPacket(new PacketSceneEntityAppearNotify(appear, VisionType.VISION_BORN));
+				if (disappear.size() > 0) this.broadcastPacket(new PacketSceneEntityDisappearNotify(disappear, VisionType.VISION_REMOVE));
+			} else {
+				Grasscutter.getLogger().error("Player scene is wrong, could not get any scene groups from player " + player.getNickname());
+			}
+		});
 //		SpatialIndex<SpawnGroupEntry> list = GenshinDepot.getSpawnListById(this.getId());
 //		Set<SpawnDataEntry> visible = new HashSet<>();
 //
@@ -414,7 +418,7 @@ public synchronized void addEntityToSingleClient(Player player, GameEntity entit
 //		for (SpawnDataEntry entry : visible) {
 //			if (!this.getSpawnedEntities().contains(entry) && !this.getDeadSpawnedEntities().contains(entry)) {
 //				// Spawn entity
-//				MonsterData data = GenshinData.getMonsterDataMap().get(entry.getMonsterId());
+//				MonsterData data = GameData.getMonsterDataMap().get(entry.getMonsterId());
 //
 //				if (data == null) {
 //					continue;
