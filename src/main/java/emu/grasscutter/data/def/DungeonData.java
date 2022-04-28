@@ -6,28 +6,23 @@ import emu.grasscutter.data.ResourceType;
 
 import emu.grasscutter.game.props.SceneType;
 
-@ResourceType(name = "SceneExcelConfigData.json")
-public class SceneData extends GameResource {
+@ResourceType(name = "DungeonExcelConfigData.json")
+public class DungeonData extends GameResource {
 	private int Id;
-	private SceneType Type;
-	private String ScriptData;
-
+	private int SceneId;
+	private String InvolveType; // TODO enum
 	    
 	@Override
 	public int getId() {
 		return this.Id;
 	}
 
-	public SceneType getSceneType() {
-		return Type;
+	public int getSceneId() {
+		return SceneId;
 	}
-
-	public String getScriptData() {
-		return ScriptData;
-	}
-
+	
 	@Override
 	public void onLoad() {
-
+		
 	}
 }
