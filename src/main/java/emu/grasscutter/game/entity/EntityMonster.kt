@@ -61,6 +61,7 @@ class EntityMonster @JvmOverloads constructor(
 				.setAbilityInfo(AbilitySyncStateInfo.newBuilder())
 				.build()
 			weaponList.value.add(weaponInfo)
+			weaponList.hasChanged = true
 		}
 
 		recalcStats()

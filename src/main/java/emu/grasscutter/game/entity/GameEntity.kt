@@ -44,10 +44,10 @@ abstract class GameEntity {
 	val name = SettingContainer("none")
 	val propPairList = SettingContainer(arrayListOf(PropPair.newBuilder()
 		.setType(PlayerProperty.PROP_LEVEL.id)
-		.setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1)).build()))
-	val fightPropPairList = SettingContainer(hashMapOf<Int, Float>())
+		.setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1)).build()), changed=true)
+	val fightPropPairList = SettingContainer(hashMapOf<Int, Float>(), changed=true)
 	val lifeState = SettingContainer(LifeState.LIFE_ALIVE)
-	val animatorParaList = SettingContainer(hashMapOf<Int,AnimatorParameterValueInfo>())
+	val animatorParaList = SettingContainer(hashMapOf<Int,AnimatorParameterValueInfo>(), changed=true)
 	val lastMoveSceneTimeMs = SettingContainer(-1)
 	val lastMoveReliableSeq = SettingContainer(-1)
 	val entityClientData = SettingContainer(EntityClientData.newBuilder(), changed=true)
@@ -161,7 +161,6 @@ class SettingContainer<T>(val defaultValue: T, currentValue: T? = null, changed:
 		private set
 
 	var hasChanged: Boolean = (currentValue != null || changed)
-		private set
 	
 
 	fun set(change: T?) {
