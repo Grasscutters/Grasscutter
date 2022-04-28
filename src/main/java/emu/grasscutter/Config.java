@@ -75,6 +75,8 @@ public final class Config {
 		public String WelcomeMailContent = "Hi there!\r\nFirst of all, welcome to Grasscutter. If you have any issues, please let us know so that Lawnmower can help you! \r\n\r\nCheck out our:\r\n<type=\"browser\" text=\"Discord\" href=\"https://discord.gg/T5vZU6UyeG\"/> <type=\"browser\" text=\"GitHub\" href=\"https://github.com/Melledy/Grasscutter\"/>";
 		public int[] WelcomeMailItems = {13509};
 
+		public boolean EnableOfficialShop = true;
+
 		public GameRates Game = new GameRates();
 
 		public GameRates getGameRates() { return Game; }

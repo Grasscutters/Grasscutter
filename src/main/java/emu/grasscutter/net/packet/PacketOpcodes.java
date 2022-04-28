@@ -1172,6 +1172,11 @@ public class PacketOpcodes {
     public static final int UseWidgetCreateGadgetRsp = 4290;
     public static final int UseWidgetRetractGadgetReq = 4255;
     public static final int UseWidgetRetractGadgetRsp = 4297;
+    public static final int VehicleSpawnReq = 809;
+    public static final int VehicleSpawnRsp = 865;
+    public static final int VehicleInteractReq = 862;
+    public static final int VehicleInteractRsp = 889;
+    public static final int VehicleStaminaNotify = 866;
     public static final int ViewCodexReq = 4210;
     public static final int ViewCodexRsp = 4209;
     public static final int WatcherAllDataNotify = 2260;

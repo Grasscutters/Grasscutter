@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message VehicleSpawnRsp {
+	uint32 vehicleId = 2;
+	uint32 entityId = 3;
+}
