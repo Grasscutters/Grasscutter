@@ -8,6 +8,7 @@ import emu.grasscutter.data.def.ShopGoodsData;
 import emu.grasscutter.net.proto.ItemParamOuterClass;
 import emu.grasscutter.net.proto.ShopGoodsOuterClass;
 import emu.grasscutter.server.game.GameServer;
+import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -30,6 +31,18 @@ public class ShopManager {
 		this.server = server;
 		this.shopData = new Int2ObjectOpenHashMap<>();
 		this.load();
+	}
+
+	private static final int REFRESH_HOUR = 4; // In GMT+8 server
+	private static final String TIME_ZONE = "Asia/Shanghai"; // GMT+8 Timezone
+
+	public static int getShopNextRefreshTime(ShopInfo shopInfo) {
+		return switch (shopInfo.getShopRefreshType()) {
+			case SHOP_REFRESH_DAILY -> Utils.GetNextTimestampOfThisHour(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+			case SHOP_REFRESH_WEEKLY ->  Utils.GetNextTimestampOfThisHourInNextWeek(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+			case SHOP_REFRESH_MONTHLY -> Utils.GetNextTimestampOfThisHourInNextMonth(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+			default -> 0;
+		};
 	}
 
 	public synchronized void load() {
