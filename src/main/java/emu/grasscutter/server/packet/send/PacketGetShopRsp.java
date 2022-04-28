@@ -1,6 +1,8 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.def.ShopGoodsData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.shop.ShopInfo;
 import emu.grasscutter.game.shop.ShopManager;
@@ -43,12 +45,14 @@ public class PacketGetShopRsp extends BasePacket {
 						.setNextRefreshTime(info.getNextRefreshTime())
 						.setMinLevel(info.getMinLevel())
 						.setMaxLevel(info.getMaxLevel())
-						.addAllPreGoodsIdList(info.getPreGoodsIdList())
 						.setMcoin(info.getMcoin())
 						.setDisableType(info.getDisableType())
 						.setSecondarySheetId(info.getSecondarySheetId());
 				if (info.getCostItemList() != null) {
 					goods.addAllCostItemList(info.getCostItemList().stream().map(x -> ItemParamOuterClass.ItemParam.newBuilder().setItemId(x.getId()).setCount(x.getCount()).build()).collect(Collectors.toList()));
+				}
+				if (info.getPreGoodsIdList() != null) {
+					goods.addAllPreGoodsIdList(info.getPreGoodsIdList());
 				}
 				goodsList.add(goods.build());
 			}
