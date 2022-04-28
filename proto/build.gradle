@@ -42,10 +42,8 @@ dependencies {
 
 protobuf {
     protoc {
-        // The artifact spec for the Protobuf Compiler
         artifact = 'com.google.protobuf:protoc:3.18.1'
     }
-//    generatedFilesBaseDir = "$projectDir/src/main/java/emu/grasscutter/net/proto/"
     generatedFilesBaseDir = "$projectDir/src/generated/"
 }
 
