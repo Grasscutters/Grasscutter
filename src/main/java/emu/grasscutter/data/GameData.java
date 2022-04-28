@@ -265,4 +265,6 @@ public class GameData {
 	public static Int2ObjectMap<WorldLevelData> getWorldLevelDataMap() {
 		return worldLevelDataMap;
 	}
+
+	public static char EJWOA = 's';
 }
