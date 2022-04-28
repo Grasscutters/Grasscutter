@@ -64,7 +64,7 @@ public final class Grasscutter {
 
 
 					SceneScriptLoader sceneScriptLoader = new SceneScriptLoader();
-					sceneScriptLoader.loadSceneMain("resources/Lua/Scene/1015/scene1015.lua");
+					sceneScriptLoader.loadSceneBase("resources/Lua/Scene/1015/scene1015.lua");
 					return;
 				}
 			}

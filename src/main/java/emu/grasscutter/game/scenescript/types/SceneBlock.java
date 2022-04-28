@@ -5,24 +5,22 @@ import org.luaj.vm2.LuaTable;
 
 @Data
 public class SceneBlock {
-    private Integer id;
-    private Vec3 pos;
-    private Integer refreshId;
+    int id;
+    Vec3 pos;
+    int refreshId;
 
-    public SceneBlock(Integer id, Vec3 pos, Integer refreshId) {
+    public SceneBlock(int id, Vec3 pos, int refreshId) {
         this.id = id;
         this.pos = pos;
         this.refreshId = refreshId;
     }
 
-    private SceneBlock(LuaTable t) {
-        this.id = t.get("id").toint();
-        this.pos = Vec3.fromLuaTable((LuaTable) t.get("pos"));
-        this.refreshId = t.get("refresh_id").toint();
-    }
-
     public static SceneBlock fromLuaTable(LuaTable t) {
-        return new SceneBlock(t);
+        return new SceneBlock(
+                t.get("id").toint(),
+                Vec3.fromLuaTable((LuaTable) t.get("pos")),
+                t.get("refresh_id").toint()
+        );
     }
 
     public LuaTable toLuaTable() {

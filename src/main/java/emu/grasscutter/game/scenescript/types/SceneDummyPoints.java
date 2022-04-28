@@ -19,9 +19,10 @@ public class SceneDummyPoints {
 
     public static SceneDummyPoints fromLuaTable(LuaTable table) {
         final Map<String, SceneDummyPointsElement> elements = new HashMap<>();
-        Arrays.stream(((LuaTable) table.get("dummy_points")).keys())
+        final var dummyPointsTable = (LuaTable) table.get("dummy_points");
+        Arrays.stream(dummyPointsTable.keys())
                 .forEach((LuaValue key) -> {
-                    LuaTable elementTable = (LuaTable) table.get(key);
+                    var elementTable = (LuaTable) dummyPointsTable.get(key);
                     elements.put(key.toString(), SceneDummyPointsElement.fromLuaTable(elementTable));
                 });
         return new SceneDummyPoints(elements);

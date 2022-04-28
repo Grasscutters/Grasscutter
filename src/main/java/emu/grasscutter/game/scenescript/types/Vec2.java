@@ -27,7 +27,7 @@ public class Vec2 {
     }
 
     public LuaTable toLuaTable() {
-        LuaTable table = new LuaTable();
+        var table = new LuaTable();
         table.set("x", x);
         table.set("z", z);
         return table;
