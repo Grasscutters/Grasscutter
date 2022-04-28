@@ -83,6 +83,9 @@ public class DropManager {
             ItemData itemData = GameData.getItemDataMap().get(dd.getItemId());
             int num = Utils.randomRange(dd.getMinCount(), dd.getMaxCount());
 
+            if (itemData == null) {
+                return;
+            }
             if (itemData.isEquip()) {
                 for (int i = 0; i < num; i++) {
                     float range = (5f + (.1f * num));
