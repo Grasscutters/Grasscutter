@@ -1,0 +1,80 @@
+import org.gradle.plugins.ide.eclipse.model.SourceFolder
+
+buildscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.18'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    // Apply the protobuf auto generator
+    id 'com.google.protobuf' version "0.8.18"
+}
+
+group 'emu.grasscutter'
+version '1.0.0-dev'
+
+sourceSets {
+    main {
+        proto {
+            srcDir 'src/generated/java'
+        }
+        java {
+            srcDir 'src/java'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.18.2'
+    protobuf files('protos')
+}
+
+protobuf {
+    protoc {
+        // The artifact spec for the Protobuf Compiler
+        artifact = 'com.google.protobuf:protoc:3.18.1'
+    }
+//    generatedFilesBaseDir = "$projectDir/src/main/java/emu/grasscutter/net/proto/"
+    generatedFilesBaseDir = "$projectDir/src/generated/"
+}
+
+idea {
+    module {
+        // proto files and generated Java files are automatically added as
+        // source dirs.
+        // If you have additional sources, add them here:
+        sourceDirs += file("/protos/")
+    }
+}
+
+eclipse {
+    classpath {
+        file.whenMerged { cp ->
+            cp.entries.add(new SourceFolder('src/generated/main/java', null))
+        }
+    }
+}
+
+jar {
+    exclude '*.proto'
+    includeEmptyDirs false
+}
+
+processResources {
+    dependsOn "generateProto"
+}
+
+clean {
+    delete protobuf.generatedFilesBaseDir
+}

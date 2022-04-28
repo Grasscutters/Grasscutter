@@ -63,3 +63,4 @@ mitmdump.exe
 mongod.exe
 /src/generated/
 /*.sh
+/proto/src/generated/

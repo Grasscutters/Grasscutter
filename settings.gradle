@@ -8,3 +8,4 @@
  */
 
 rootProject.name = 'Grasscutter'
+include 'proto'

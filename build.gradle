@@ -6,41 +6,26 @@
  * User Manual available at https://docs.gradle.org/5.6.3/userguide/tutorial_java_projects.html
  */
 
-buildscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2/" }
-    }
-    dependencies {
-        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.18'
-    }
-}
 
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
-
-    // Apply the protobuf auto generator
-    id 'com.google.protobuf' version "0.8.18"
-    id 'idea'
-
-    id 'eclipse'
-
     // Apply the application plugin to add support for building a CLI application
     id 'application'
-
     id 'maven-publish'
     id 'signing'
+    // Lombok support for java projects https://projectlombok.org/
+    id "io.freefair.lombok" version "6.4.3"
 }
 
 
+//noinspection GroovyUnusedAssignment
 sourceCompatibility = JavaVersion.VERSION_17
+//noinspection GroovyUnusedAssignment
 targetCompatibility = JavaVersion.VERSION_17
 
-group = 'tech.xigam'
+group = 'emu.grasscutter'
 version = '1.0.0-dev'
-
-sourceCompatibility = 17
-targetCompatibility = 17
 
 java {
     withJavadocJar()
@@ -52,19 +37,20 @@ repositories {
 }
 
 dependencies {
+    implementation project(':proto')
     implementation fileTree(dir: 'lib', include: ['*.jar'])
 
-	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
-	implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.9'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.9'
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.9'
     implementation group: 'io.netty', name: 'netty-all', version: '4.1.71.Final'
-    
-	implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.8'
-	implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.18.2'
-	
-	implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'
 
-	implementation group: 'dev.morphia.morphia', name: 'morphia-core', version: '2.2.6'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.8'
+    implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.18.2'
+
+    implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'
+
+    implementation group: 'dev.morphia.morphia', name: 'morphia-core', version: '2.2.6'
 
     implementation group: 'org.greenrobot', name: 'eventbus-java', version: '3.3.1'
     implementation group: 'org.danilopianini', name: 'java-quadtree', version: '0.1.9'
@@ -73,14 +59,6 @@ dependencies {
     implementation group: 'org.quartz-scheduler', name: 'quartz-jobs', version: '2.3.2'
 
     implementation group: 'org.luaj', name: 'luaj-jse', version: '3.0.1'
-    compileOnly 'org.projectlombok:lombok:1.18.24'
-    annotationProcessor 'org.projectlombok:lombok:1.18.24'
-
-    testCompileOnly 'org.projectlombok:lombok:1.18.24'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
-
-    protobuf files('proto/')
-
 }
 
 application {
@@ -93,19 +71,20 @@ jar {
         attributes 'Main-Class': 'emu.grasscutter.Grasscutter'
     }
 
-    jar.baseName = 'grasscutter'
+    jar.getArchiveBaseName().set('grasscutter')
 
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
-    
+
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
 
     from('src/main/java') {
-		include '*.xml'
-	}
+        include '*.xml'
+    }
 
-    destinationDir = file(".")
+    getDestinationDirectory().set file('.')
+    includeEmptyDirs false
 }
 
 publishing {
@@ -128,7 +107,7 @@ publishing {
                 licenses {
                     license {
                         name = 'The Apache License, Version 2.0'
-                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
                     }
                 }
                 developers {
@@ -164,44 +143,10 @@ publishing {
     }
 }
 
-clean {
-    delete protobuf.generatedFilesBaseDir
-}
-
-protobuf {
-    protoc {
-        // The artifact spec for the Protobuf Compiler
-        artifact = 'com.google.protobuf:protoc:3.18.1'
-    }
-//    generatedFilesBaseDir = "$projectDir/src/main/java/emu/grasscutter/net/proto/"
-    generatedFilesBaseDir = "$projectDir/src/generated/"
-}
-
 sourceSets {
     main {
-        proto {
-            // In addition to the default 'src/main/proto'
-            srcDir 'src/generated'
-        }
         java {
-            srcDir 'src/java'
-        }
-    }
-}
-
-idea {
-    module {
-        // proto files and generated Java files are automatically added as
-        // source dirs.
-        // If you have additional sources, add them here:
-        sourceDirs += file("/proto/");
-    }
-}
-
-eclipse {
-    classpath {
-        file.whenMerged { cp ->
-            cp.entries.add( new org.gradle.plugins.ide.eclipse.model.SourceFolder('src/generated/main/java', null) )
+            srcDirs 'src/java'
         }
     }
 }
@@ -211,11 +156,10 @@ signing {
 }
 
 javadoc {
-    if(JavaVersion.current().isJava9Compatible()) {
+    source = sourceSets.main.allJava
+    if (JavaVersion.current().isJava9Compatible()) {
         options.addBooleanOption('html5', true)
     }
-}
-
-processResources {
-    dependsOn "generateProto"
+    options.encoding = 'UTF-8'
+    options.jFlags('-Dfile.encoding=UTF-8')
 }
