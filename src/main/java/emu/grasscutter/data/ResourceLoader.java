@@ -164,6 +164,7 @@ public class ResourceLoader {
 
 			for (Map.Entry<String, JsonElement> entry : config.points.entrySet()) {
 				PointData pointData = Grasscutter.getGsonFactory().fromJson(entry.getValue(), PointData.class);
+				pointData.setId(Integer.parseInt(entry.getKey()));
 
 				ScenePointEntry sl = new ScenePointEntry(sceneId + "_" + entry.getKey(), pointData);
 				scenePointList.add(sl);

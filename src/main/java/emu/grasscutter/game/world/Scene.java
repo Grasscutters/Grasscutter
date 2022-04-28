@@ -3,6 +3,7 @@ package emu.grasscutter.game.world;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
+import emu.grasscutter.data.def.DungeonData;
 import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.data.def.WorldLevelData;
@@ -41,6 +42,9 @@ public class Scene {
 	private int time;
 	private ClimateType climate;
 	private int weather;
+	
+	private DungeonData dungeonData;
+	private int prevScene; // Id of the previous scene
 
 	public Scene(World world, SceneData sceneData) {
 		this.world = world;
@@ -50,6 +54,7 @@ public class Scene {
 
 		this.time = 8 * 60;
 		this.climate = ClimateType.CLIMATE_SUNNY;
+		this.prevScene = 3;
 		
 		this.spawnedEntities = new HashSet<>();
 		this.deadSpawnedEntities = new HashSet<>();
@@ -111,6 +116,14 @@ public class Scene {
 		this.weather = weather;
 	}
 
+	public int getPrevScene() {
+		return prevScene;
+	}
+
+	public void setPrevScene(int prevScene) {
+		this.prevScene = prevScene;
+	}
+
 	public boolean dontDestroyWhenEmpty() {
 		return dontDestroyWhenEmpty;
 	}
@@ -125,6 +138,17 @@ public class Scene {
 
 	public Set<SpawnDataEntry> getDeadSpawnedEntities() {
 		return deadSpawnedEntities;
+	}
+
+	public DungeonData getDungeonData() {
+		return dungeonData;
+	}
+
+	public void setDungeonData(DungeonData dungeonData) {
+		if (this.dungeonData != null || this.getSceneType() != SceneType.SCENE_DUNGEON || dungeonData.getSceneId() != this.getId()) {
+			return;
+		}
+		this.dungeonData = dungeonData;
 	}
 
 	public boolean isInScene(GameEntity entity) {
