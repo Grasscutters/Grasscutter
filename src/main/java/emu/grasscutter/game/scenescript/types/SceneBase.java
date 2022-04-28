@@ -52,11 +52,11 @@ public class SceneBase {
         private int dieY;
 
         public SceneConfig(LuaTable t) {
-            beginPos = new Vec2((LuaTable) t.get("begin_pos"));
-            size = new Vec2((LuaTable) t.get("size"));
-            bornPos = new Vec3((LuaTable) t.get("born_pos"));
-            bornRot = new Vec3((LuaTable) t.get("born_rot"));
-            visionAnchor = new Vec2((LuaTable) t.get("vision_anchor"));
+            beginPos = Vec2.fromLuaTable((LuaTable) t.get("begin_pos"));
+            size = Vec2.fromLuaTable((LuaTable) t.get("size"));
+            bornPos = Vec3.fromLuaTable((LuaTable) t.get("born_pos"));
+            bornRot = Vec3.fromLuaTable((LuaTable) t.get("born_rot"));
+            visionAnchor = Vec2.fromLuaTable((LuaTable) t.get("vision_anchor"));
             dieY = t.get("die_y").toint();
         }
     }
@@ -67,8 +67,8 @@ public class SceneBase {
         private Vec2 max;
 
         public BlockRects(LuaTable t) {
-            min = new Vec2((LuaTable) t.get("min"));
-            max = new Vec2((LuaTable) t.get("max"));
+            min = Vec2.fromLuaTable((LuaTable) t.get("min"));
+            max = Vec2.fromLuaTable((LuaTable) t.get("max"));
         }
     }
 }
