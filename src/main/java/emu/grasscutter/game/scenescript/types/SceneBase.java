@@ -1,23 +1,56 @@
 package emu.grasscutter.game.scenescript.types;
 
-import emu.grasscutter.Grasscutter;
 import lombok.Data;
-import lombok.ToString;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 
-import javax.script.ScriptEngine;
-@ToString
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Data
 public class SceneBase {
 
-    @ToString
+    private SceneConfig config;
+    private List<Integer> blocks;
+    private List<BlockRects> blockRects;
+    private List<String> dummyPoints;
+    private List<String> routesConfig;
+
+    public SceneBase(LuaValue e) {
+        config = new SceneConfig((LuaTable) e.get("scene_config"));
+        LuaTable blockTable = ((LuaTable) e.get("blocks"));
+        blocks = Arrays.stream(blockTable.keys())
+                .map(LuaValue::toint)
+                .collect(Collectors.toList());
+
+        LuaTable blockRectsTable = ((LuaTable) e.get("block_rects"));
+        blockRects =
+                Arrays.stream(blockRectsTable.keys())
+                        .map(LuaValue::toint)
+                        .map(i -> new BlockRects((LuaTable) blockRectsTable.get(i)))
+                        .collect(Collectors.toList());
+
+        LuaTable dummyPointsTable = ((LuaTable) e.get("dummy_points"));
+        dummyPoints = Arrays.stream(dummyPointsTable.keys())
+                .map(LuaValue::toString)
+                .collect(Collectors.toList());
+
+        LuaTable routesConfigTable = ((LuaTable) e.get("routes_config"));
+        routesConfig = Arrays.stream(routesConfigTable.keys())
+                .map(LuaValue::toString)
+                .collect(Collectors.toList());
+    }
+
+    @Data
     public static class SceneConfig {
-        Vec2 beginPos;
-        Vec2 size;
-        Vec3 bornPos;
-        Vec3 bornRot;
-        Vec2 visionAnchor;
-        int dieY;
+        private Vec2 beginPos;
+        private Vec2 size;
+        private Vec3 bornPos;
+        private Vec3 bornRot;
+        private Vec2 visionAnchor;
+        private int dieY;
+
         public SceneConfig(LuaTable t) {
             beginPos = new Vec2((LuaTable) t.get("begin_pos"));
             size = new Vec2((LuaTable) t.get("size"));
@@ -27,43 +60,15 @@ public class SceneBase {
             dieY = t.get("die_y").toint();
         }
     }
+
     @Data
     public static class BlockRects {
-        Vec2 Min;
-        Vec2 Max;
+        private Vec2 min;
+        private Vec2 max;
+
         public BlockRects(LuaTable t) {
-            Min = new Vec2((LuaTable) t.get("min"));
-            Max = new Vec2((LuaTable) t.get("max"));
-        }
-    }
-
-    private SceneConfig config;
-    private int[] blocks;
-    private BlockRects[] blockRects;
-    private String[] dummyPoints;
-    private String[] routesConfig;
-
-    public SceneBase(ScriptEngine e) {
-        config = new SceneConfig((LuaTable) e.get("scene_config"));
-        LuaTable mBlocks = ((LuaTable) e.get("blocks"));
-        blocks = new int[mBlocks.length()];
-        for (int i = 0; i < mBlocks.length(); i++) {
-            blocks[i] = mBlocks.get(i + 1).toint();
-        }
-        LuaTable mBlockRects = ((LuaTable) e.get("block_rects"));
-        blockRects = new BlockRects[mBlockRects.length()];
-        for (int i = 0; i < mBlockRects.length(); i++) {
-            blockRects[i] = new BlockRects((LuaTable) mBlockRects.get(i + 1));
-        }
-        LuaTable mDummyPoints = ((LuaTable) e.get("dummy_points"));
-        dummyPoints = new String[mDummyPoints.length()];
-        for (int i = 0; i < mDummyPoints.length(); i++) {
-            dummyPoints[i] = mDummyPoints.get(i + 1).toString();
-        }
-        LuaTable mRoutesConfig = ((LuaTable) e.get("routes_config"));
-        routesConfig = new String[mRoutesConfig.length()];
-        for (int i = 0; i < mRoutesConfig.length(); i++) {
-            routesConfig[i] = mRoutesConfig.get(i + 1).toString();
+            min = new Vec2((LuaTable) t.get("min"));
+            max = new Vec2((LuaTable) t.get("max"));
         }
     }
 }

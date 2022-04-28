@@ -1,11 +1,9 @@
 package emu.grasscutter.game.scenescript.types;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 import org.luaj.vm2.LuaTable;
-@ToString @Data
+
+@Data
 public class Vec3 {
     private float x;
     private float y;
@@ -16,11 +14,17 @@ public class Vec3 {
         this.y = y;
         this.z = z;
     }
-    public Vec3(LuaTable table) {
+
+    private Vec3(LuaTable table) {
         x = table.get("x").tofloat();
         y = table.get("y").tofloat();
         z = table.get("z").tofloat();
     }
+
+    public static Vec3 fromLuaTable(LuaTable table) {
+        return new Vec3(table);
+    }
+
     public LuaTable toLuaTable() {
         LuaTable table = new LuaTable();
         table.set("x", x);
