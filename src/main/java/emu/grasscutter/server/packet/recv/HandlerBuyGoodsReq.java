@@ -1,9 +1,11 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.shop.ShopInfo;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -16,6 +18,7 @@ import emu.grasscutter.server.packet.send.PacketStoreItemChangeNotify;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 
 @Opcodes(PacketOpcodes.BuyGoodsReq)
@@ -24,8 +27,18 @@ public class HandlerBuyGoodsReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         BuyGoodsReqOuterClass.BuyGoodsReq buyGoodsReq = BuyGoodsReqOuterClass.BuyGoodsReq.parseFrom(payload);
+        List<ShopInfo> configShop = session.getServer().getShopManager().getShopData().get(buyGoodsReq.getShopType());
+        if (configShop == null)
+            return;
 
-        for (ShopGoodsOuterClass.ShopGoods sg : buyGoodsReq.getGoodsListList()) {
+        // Don't trust your users' input
+        List<Integer> targetShopGoodsId = buyGoodsReq.getGoodsListList().stream().map(ShopGoodsOuterClass.ShopGoods::getGoodsId).toList();
+        for (int goodsId : targetShopGoodsId) {
+            Optional<ShopInfo> sg2 = configShop.stream().filter(x -> x.getGoodsId() == goodsId).findFirst();
+            if (sg2.isEmpty())
+                continue;
+            ShopInfo sg = sg2.get();
+
             if (sg.getScoin() > 0 && session.getPlayer().getMora() < buyGoodsReq.getBoughtNum() * sg.getScoin()) {
                 return;
             }
@@ -37,11 +50,13 @@ public class HandlerBuyGoodsReq extends PacketHandler {
             }
 
             HashMap<GameItem, Integer> itemsCache = new HashMap<>();
-            for (ItemParamOuterClass.ItemParam p : sg.getCostItemListList()) {
-                Optional<GameItem> invItem = session.getPlayer().getInventory().getItems().values().stream().filter(x -> x.getItemId() == p.getItemId()).findFirst();
-                if (invItem.isEmpty() || invItem.get().getCount() < p.getCount())
-                    return;
-                itemsCache.put(invItem.get(), p.getCount() * buyGoodsReq.getBoughtNum());
+            if (sg.getCostItemList() != null) {
+                for (ItemParamData p : sg.getCostItemList()) {
+                    Optional<GameItem> invItem = session.getPlayer().getInventory().getItems().values().stream().filter(x -> x.getItemId() == p.getId()).findFirst();
+                    if (invItem.isEmpty() || invItem.get().getCount() < p.getCount())
+                        return;
+                    itemsCache.put(invItem.get(), p.getCount() * buyGoodsReq.getBoughtNum());
+                }
             }
 
             session.getPlayer().setMora(session.getPlayer().getMora() - buyGoodsReq.getBoughtNum() * sg.getScoin());
@@ -56,10 +71,10 @@ public class HandlerBuyGoodsReq extends PacketHandler {
             }
 
             session.getPlayer().addShopLimit(sg.getGoodsId(), buyGoodsReq.getBoughtNum());
-            GameItem item = new GameItem(GameData.getItemDataMap().get(sg.getGoodsItem().getItemId()));
+            GameItem item = new GameItem(GameData.getItemDataMap().get(sg.getGoodsItem().getId()));
             item.setCount(buyGoodsReq.getBoughtNum() * sg.getGoodsItem().getCount());
             session.getPlayer().getInventory().addItem(item, ActionReason.Shop, true); // fix: not notify when got virtual item from shop
-            session.send(new PacketBuyGoodsRsp(buyGoodsReq.getShopType(), session.getPlayer().getGoodsLimitNum(sg.getGoodsId()), sg));
+            session.send(new PacketBuyGoodsRsp(buyGoodsReq.getShopType(), session.getPlayer().getGoodsLimitNum(sg.getGoodsId()), buyGoodsReq.getGoodsListList().stream().filter(x -> x.getGoodsId() == goodsId).findFirst().get()));
         }
 
         session.getPlayer().save();

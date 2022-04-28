@@ -1,6 +1,7 @@
 package emu.grasscutter.game.shop;
 
 import emu.grasscutter.data.common.ItemParamData;
+import emu.grasscutter.data.def.ShopGoodsData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,20 @@ public class ShopInfo {
     private int hcoin = 0;
     private int disableType = 0;
     private int secondarySheetId = 0;
+
+    public ShopInfo(ShopGoodsData sgd) {
+        this.goodsId = sgd.getGoodsId();
+        this.goodsItem = new ItemParamData(sgd.getItemId(), sgd.getItemCount());
+        this.scoin = sgd.getCostScoin();
+        this.mcoin = sgd.getCostMcoin();
+        this.hcoin = sgd.getCostHcoin();
+        this.buyLimit = sgd.getBuyLimit();
+
+        this.minLevel = sgd.getMinPlayerLevel();
+        this.maxLevel = sgd.getMaxPlayerLevel();
+        this.costItemList = sgd.getCostItems().stream().filter(x -> x.getId() != 0).map(x -> new ItemParamData(x.getId(), x.getCount())).toList();
+        this.secondarySheetId = sgd.getSubTabId();
+    }
 
     public int getHcoin() {
         return hcoin;

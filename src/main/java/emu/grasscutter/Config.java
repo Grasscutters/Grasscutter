@@ -72,6 +72,7 @@ public final class Config {
 		public boolean WatchGacha = false;
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
 		public String WelcomeMotd = "Welcome to Grasscutter emu";
+		public boolean EnableOfficialShop = true;
 
 		public GameRates Game = new GameRates();
 
