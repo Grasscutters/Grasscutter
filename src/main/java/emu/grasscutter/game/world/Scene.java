@@ -1,28 +1,12 @@
 package emu.grasscutter.game.world;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-
-import org.danilopianini.util.SpatialIndex;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
-import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.data.def.WorldLevelData;
-import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.entity.EntityClientGadget;
-import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamInfo;
 import emu.grasscutter.game.props.ClimateType;
@@ -37,10 +21,12 @@ import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
-import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import org.danilopianini.util.SpatialIndex;
+
+import java.util.*;
 
 public class Scene {
 	private final World world;
@@ -228,6 +214,11 @@ public class Scene {
 		this.addEntityDirectly(entity);
 		this.broadcastPacket(new PacketSceneEntityAppearNotify(entity));
 	}
+
+	public synchronized void addEntityToSingleClient(Player player, GameEntity entity) {
+		this.addEntityDirectly(entity);
+		player.sendPacket(new PacketSceneEntityAppearNotify(entity));
+	}
 	
 	public synchronized void addEntities(Collection<GameEntity> entities) {
 		for (GameEntity entity : entities) {
@@ -310,6 +301,12 @@ public class Scene {
 	public void killEntity(GameEntity target, int attackerId) {
 		// Packet
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
+
+		// Reward drop
+		if (target instanceof EntityMonster) {
+			Grasscutter.getGameServer().getDropManager().callDrop((EntityMonster) target);
+		}
+
 		this.removeEntity(target);
 		
 		// Death event
