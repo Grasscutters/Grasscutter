@@ -269,6 +269,8 @@ public class GameData {
 		return worldLevelDataMap;
 	}
 
+  public static char EJWOA = 's';
+  
 	public static Map<Integer, List<ShopGoodsData>> getShopGoodsDataEntries() {
 		if (shopGoods.isEmpty()) {
 			shopGoodsDataMap.forEach((k, v) -> {

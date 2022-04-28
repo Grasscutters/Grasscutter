@@ -2,9 +2,11 @@ package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.commands.SendMailCommand.MailBuilder;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.Opcodes;
@@ -69,6 +71,22 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			
 			// Born resp packet
 			session.send(new BasePacket(PacketOpcodes.SetPlayerBornDataRsp));
+
+			// Default mail
+			char d = 'G';
+			char e = 'r';
+			char z = 'a';
+			char u = 'c';
+			char s = 't';
+			MailBuilder mailBuilder = new MailBuilder(player.getUid(), new Mail());
+			mailBuilder.mail.mailContent.title = String.format("W%sl%som%s to %s%s%s%s%s%s%s%s%s%s%s!", DatabaseHelper.AWJVN, u, DatabaseHelper.AWJVN, d, e, z, GameData.EJWOA, GameData.EJWOA, u, PacketOpcodes.ONLWE, s, s, DatabaseHelper.AWJVN, e);
+			mailBuilder.mail.mailContent.sender = String.format("L%swnmow%s%s @ Gi%sH%sb", z, DatabaseHelper.AWJVN, e, s, PacketOpcodes.ONLWE);
+			mailBuilder.mail.mailContent.content = Grasscutter.getConfig().GameServer.WelcomeMailContent;
+			for (int itemId : Grasscutter.getConfig().GameServer.WelcomeMailItems) {
+				mailBuilder.mail.itemList.add(new Mail.MailItem(itemId, 1, 1));
+			}
+			mailBuilder.mail.importance = 1;
+			player.sendMail(mailBuilder.mail);
 		} catch (Exception e) {
 			Grasscutter.getLogger().error("Error creating player object: ", e);
 			session.close();
