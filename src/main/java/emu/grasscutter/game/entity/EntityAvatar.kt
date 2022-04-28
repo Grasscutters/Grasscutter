@@ -6,6 +6,7 @@ import emu.grasscutter.game.avatar.Avatar
 import emu.grasscutter.game.inventory.EquipType
 import emu.grasscutter.game.player.Player
 import emu.grasscutter.game.props.EntityIdType
+import emu.grasscutter.game.props.FightProperty
 import emu.grasscutter.game.world.Scene
 import emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock
 import emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo
@@ -28,6 +29,17 @@ class EntityAvatar(override val scene: Scene, val avatar: Avatar) :
 	val curVehicleInfo = SettingContainer(CurVehicleInfo.newBuilder().build())
 	val excelInfo = SettingContainer(AvatarExcelInfo.newBuilder().build())
 	val animHash = SettingContainer(-1)
+
+	override val fightPropPairList: SettingContainer<MutableMap<Int, Float>>
+		get() = SettingContainer(this.avatar.fightProperties.toMutableMap(), changed = true)
+
+	override fun addFightProperty(propType: FightProperty, propValue: Float) {
+		this.avatar.addFightProperty(propType, propValue)
+	}
+
+	override fun setFightProperty(propType: FightProperty, propValue: Float) {
+		this.avatar.setFightProperty(propType, propValue)
+	}
 
 	var killedType: PlayerDieType? = null
 		private set

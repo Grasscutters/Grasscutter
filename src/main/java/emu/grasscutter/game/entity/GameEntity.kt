@@ -45,9 +45,9 @@ abstract class GameEntity {
 	val propPairList = SettingContainer(arrayListOf(PropPair.newBuilder()
 		.setType(PlayerProperty.PROP_LEVEL.id)
 		.setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1)).build()), changed=true)
-	val fightPropPairList = SettingContainer(hashMapOf<Int, Float>(), changed=true)
+	open val fightPropPairList = SettingContainer(mutableMapOf<Int, Float>(), changed=true)
 	val lifeState = SettingContainer(LifeState.LIFE_ALIVE)
-	val animatorParaList = SettingContainer(hashMapOf<Int,AnimatorParameterValueInfo>(), changed=true)
+	val animatorParaList = SettingContainer(mutableMapOf<Int,AnimatorParameterValueInfo>(), changed=true)
 	val lastMoveSceneTimeMs = SettingContainer(-1)
 	val lastMoveReliableSeq = SettingContainer(-1)
 	val entityClientData = SettingContainer(EntityClientData.newBuilder(), changed=true)
@@ -67,15 +67,15 @@ abstract class GameEntity {
 		}
 
 
-	fun getFightProperty(propType: FightProperty): Float {
+	open fun getFightProperty(propType: FightProperty): Float {
 		return fightPropPairList.value[propType.id]?:0f
 	}
 
-	fun setFightProperty(propType: FightProperty, propValue: Float) {
+	open fun setFightProperty(propType: FightProperty, propValue: Float) {
 		fightPropPairList.value[propType.id] = propValue
 	}
 
-	fun addFightProperty(propType: FightProperty, propValue: Float) {
+	open fun addFightProperty(propType: FightProperty, propValue: Float) {
 		fightPropPairList.value[propType.id] = fightPropPairList.value.getOrDefault(propType.id, 0f) + propValue
 	}
 

@@ -34,7 +34,7 @@ class EntityMonster @JvmOverloads constructor(
 	val isElite = SettingContainer(false)
 	val ownerEntityId = SettingContainer(-1)
 	val summonedTag = SettingContainer(-1)
-	val summonTagMap = SettingContainer(hashMapOf<Int, Int>())
+	val summonTagMap = SettingContainer(mutableMapOf<Int, Int>())
  	val poseId = SettingContainer(-1)
 	val bornType = SettingContainer(MonsterBornType.MONSTER_BORN_DEFAULT)
 	val blockId = SettingContainer(3001)

@@ -35,7 +35,7 @@ public final class SetStatsCommand implements CommandHandler {
                 try {
                     int health = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, health);
+                    entity.getAvatar().setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, health);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
                     CommandHandler.sendMessage(sender, "HP set to " + health + ".");
                 } catch (NumberFormatException ignored) {
@@ -47,7 +47,7 @@ public final class SetStatsCommand implements CommandHandler {
                 try {
                     int def = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE, def);
+                    entity.getAvatar().setFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE, def);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_DEFENSE));
                     CommandHandler.sendMessage(sender, "DEF set to " + def + ".");
                 } catch (NumberFormatException ignored) {
@@ -59,7 +59,7 @@ public final class SetStatsCommand implements CommandHandler {
                 try {
                     int atk = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK, atk);
+                    entity.getAvatar().setFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK, atk);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_ATTACK));
                     CommandHandler.sendMessage(sender, "ATK set to " + atk + ".");
                 } catch (NumberFormatException ignored) {
@@ -71,7 +71,7 @@ public final class SetStatsCommand implements CommandHandler {
                 try {
                     int em = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_ELEMENT_MASTERY, em);
+                    entity.getAvatar().setFightProperty(FightProperty.FIGHT_PROP_ELEMENT_MASTERY, em);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ELEMENT_MASTERY));
                     CommandHandler.sendMessage(sender, "Elemental Mastery set to " + em + ".");
                 } catch (NumberFormatException ignored) {
