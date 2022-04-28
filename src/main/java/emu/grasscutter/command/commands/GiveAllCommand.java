@@ -13,7 +13,7 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.*;
 
-@Command(label = "giveall", usage = "giveall [player] <amount>",
+@Command(label = "giveall", usage = "giveall [player] [amount]",
         description = "Gives all items", aliases = {"givea"}, permission = "player.giveall", threading = true)
 public class GiveAllCommand implements CommandHandler {
 
@@ -59,7 +59,7 @@ public class GiveAllCommand implements CommandHandler {
                 break;
 
             default: // invalid
-                CommandHandler.sendMessage(null, "Usage: giveall [player] <amount>");
+                CommandHandler.sendMessage(null, "Usage: giveall [player] [amount]");
                 return;
         }
 
@@ -142,7 +142,7 @@ public class GiveAllCommand implements CommandHandler {
             }
         }
 
-        if (testItemsList.contains(itemId)) {
+       if (testItemsList.contains(itemId)) {
             return true;
         }
 
@@ -175,7 +175,6 @@ public class GiveAllCommand implements CommandHandler {
             new Range(2017, 2029),
           //  new Range(108001, 108387) //food
     };
-
     private static final Integer[] testItemsIds = new Integer[] {
             210, 211, 314, 315, 317, 1005, 1007, 1105, 1107, 1201, 1202, 2800,
             100001, 100002, 100244, 100305, 100312, 100313, 101212, 11411, 11506, 11507, 11508, 12505,

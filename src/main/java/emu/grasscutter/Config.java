@@ -35,6 +35,7 @@ public final class Config {
 		public String AuthHash = "BCRYPT";
 
 		public boolean AutomaticallyCreateAccounts = false;
+		public String[] defaultPermissions = new String[] { "" };
 
 		public RegionInfo[] GameServers = {};
 

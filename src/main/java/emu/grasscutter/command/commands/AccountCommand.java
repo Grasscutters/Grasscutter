@@ -8,8 +8,7 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "account", usage = "account <create|delete> <username> [uid]",
-        description = "Modify user accounts")
+@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "Modify user accounts")
 public final class AccountCommand implements CommandHandler {
 
     @Override
@@ -51,8 +50,10 @@ public final class AccountCommand implements CommandHandler {
                     if(Grasscutter.getConfig().getDispatchOptions().UseAuth) {
                         CommandHandler.sendMessage(null, "This server uses authentication.\nPlease notify the user that they need to reset their password before logging in");
                     }
-                    account.addPermission("*"); // Grant the player superuser permissions.
+                    account.addPermission("*");
                     account.save(); // Save account to database.
+
+                    CommandHandler.sendMessage(null, "Account created with UID " + account.getPlayerUid() + ".");
                 }
                 return;
             case "delete":
