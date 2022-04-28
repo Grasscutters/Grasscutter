@@ -1,12 +1,12 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GetPlayerSocialDetailRspOuterClass.GetPlayerSocialDetailRsp;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 
-public class PacketGetPlayerSocialDetailRsp extends GenshinPacket {
+public class PacketGetPlayerSocialDetailRsp extends BasePacket {
 	
 	public PacketGetPlayerSocialDetailRsp(SocialDetail.Builder detail) {
 		super(PacketOpcodes.GetPlayerSocialDetailRsp);

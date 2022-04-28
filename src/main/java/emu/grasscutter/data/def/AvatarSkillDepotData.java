@@ -2,8 +2,8 @@ package emu.grasscutter.data.def;
 
 import java.util.List;
 
-import emu.grasscutter.data.GenshinData;
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.custom.AbilityEmbryoEntry;
@@ -13,7 +13,7 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 
 @ResourceType(name = "AvatarSkillDepotExcelConfigData.json", loadPriority = LoadPriority.HIGH)
-public class AvatarSkillDepotData extends GenshinResource {
+public class AvatarSkillDepotData extends GameResource {
 	
     private int Id;
     private int EnergySkill;
@@ -94,7 +94,7 @@ public class AvatarSkillDepotData extends GenshinResource {
 	
 	@Override
 	public void onLoad() {
-    	this.energySkillData = GenshinData.getAvatarSkillDataMap().get(this.EnergySkill);
+    	this.energySkillData = GameData.getAvatarSkillDataMap().get(this.EnergySkill);
     	if (getEnergySkillData() != null) {
     		this.elementType = ElementType.getTypeByName(getEnergySkillData().getCostElemType());
     	} else {

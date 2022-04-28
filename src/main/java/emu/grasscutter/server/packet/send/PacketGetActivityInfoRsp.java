@@ -1,10 +1,10 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRsp;
 
-public class PacketGetActivityInfoRsp extends GenshinPacket {
+public class PacketGetActivityInfoRsp extends BasePacket {
 	public PacketGetActivityInfoRsp() {
 		super(PacketOpcodes.GetActivityInfoRsp);
 		

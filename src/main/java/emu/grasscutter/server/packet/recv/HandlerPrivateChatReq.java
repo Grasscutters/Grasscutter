@@ -19,8 +19,6 @@ public class HandlerPrivateChatReq extends PacketHandler {
 		} else if (content == PrivateChatReq.ContentCase.ICON) {
 			session.getServer().getChatManager().sendPrivateMessage(session.getPlayer(), req.getTargetUid(), req.getIcon());
 		}
-		
-		//session.send(new GenshinPacket(PacketOpcodes.PrivateChatRsp)); // Unused by server
 	}
 
 }

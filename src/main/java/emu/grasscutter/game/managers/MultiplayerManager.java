@@ -1,12 +1,12 @@
 package emu.grasscutter.game.managers;
 
 import emu.grasscutter.game.CoopRequest;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.GenshinPlayer.SceneLoadState;
 import emu.grasscutter.game.props.EnterReason;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
-import emu.grasscutter.game.World;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.Player.SceneLoadState;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketPlayerApplyEnterMpNotify;
@@ -24,8 +24,8 @@ public class MultiplayerManager {
 		return server;
 	}
 
-	public void applyEnterMp(GenshinPlayer player, int targetUid) {
-		GenshinPlayer target = getServer().getPlayerByUid(targetUid);
+	public void applyEnterMp(Player player, int targetUid) {
+		Player target = getServer().getPlayerByUid(targetUid);
 		if (target == null) {
 			player.sendPacket(new PacketPlayerApplyEnterMpResultNotify(targetUid, "", false, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.PLAYER_CANNOT_ENTER_MP));
 			return;
@@ -59,7 +59,7 @@ public class MultiplayerManager {
 		target.sendPacket(new PacketPlayerApplyEnterMpNotify(player));
 	}
 
-	public void applyEnterMpReply(GenshinPlayer hostPlayer, int applyUid, boolean isAgreed) {
+	public void applyEnterMpReply(Player hostPlayer, int applyUid, boolean isAgreed) {
 		// Checks
 		CoopRequest request = hostPlayer.getCoopRequests().get(applyUid);
 		if (request == null || request.isExpired()) {
@@ -67,7 +67,7 @@ public class MultiplayerManager {
 		}
 		
 		// Remove now that we are handling it
-		GenshinPlayer requester = request.getRequester();
+		Player requester = request.getRequester();
 		hostPlayer.getCoopRequests().remove(applyUid);
 		
 		// Sanity checks - Dont let the requesting player join if they are already in multiplayer
@@ -108,14 +108,14 @@ public class MultiplayerManager {
 		requester.sendPacket(new PacketPlayerEnterSceneNotify(requester, hostPlayer, EnterType.ENTER_OTHER, EnterReason.TeamJoin, hostPlayer.getScene().getId(), hostPlayer.getPos()));
 	}
 	
-	public boolean leaveCoop(GenshinPlayer player) {
+	public boolean leaveCoop(Player player) {
 		// Make sure player's world is multiplayer
 		if (!player.getWorld().isMultiplayer()) {
 			return false;
 		}
 		
 		// Make sure everyone's scene is loaded
-		for (GenshinPlayer p : player.getWorld().getPlayers()) {
+		for (Player p : player.getWorld().getPlayers()) {
 			if (p.getSceneLoadState() != SceneLoadState.LOADED) {
 				return false;
 			}
@@ -131,14 +131,14 @@ public class MultiplayerManager {
 		return true;
 	}
 
-	public boolean kickPlayer(GenshinPlayer player, int targetUid) {
+	public boolean kickPlayer(Player player, int targetUid) {
 		// Make sure player's world is multiplayer and that player is owner
 		if (!player.getWorld().isMultiplayer() || player.getWorld().getHost() != player) {
 			return false;
 		}
 		
 		// Get victim and sanity checks
-		GenshinPlayer victim = player.getServer().getPlayerByUid(targetUid);
+		Player victim = player.getServer().getPlayerByUid(targetUid);
 		
 		if (victim == null || victim == player) {
 			return false;

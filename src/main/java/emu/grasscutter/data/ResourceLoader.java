@@ -25,7 +25,7 @@ public class ResourceLoader {
 
 	public static List<Class<?>> getResourceDefClasses() {
 		Reflections reflections = new Reflections(ResourceLoader.class.getPackage().getName());
-		Set<?> classes = reflections.getSubTypesOf(GenshinResource.class);
+		Set<?> classes = reflections.getSubTypesOf(GameResource.class);
 
 		List<Class<?>> classList = new ArrayList<>(classes.size());
 		classes.forEach(o -> {
@@ -48,7 +48,7 @@ public class ResourceLoader {
 		loadResources();
 		loadScenePoints();
 		// Process into depots
-		GenshinDepot.load();
+		GameDepot.load();
 		// Load spawn data
 //		loadSpawnData();
 		// Custom - TODO move this somewhere else
@@ -56,7 +56,7 @@ public class ResourceLoader {
 		SceneDataLoader.init();
 
 		try {
-			GenshinData.getAvatarSkillDepotDataMap().get(504).setAbilities(
+			GameData.getAvatarSkillDepotDataMap().get(504).setAbilities(
 				new AbilityEmbryoEntry(
 					"", 
 					new String[] {
@@ -69,7 +69,7 @@ public class ResourceLoader {
 						"Avatar_Player_WindBreathe_CameraController"
 					}
 			));
-			GenshinData.getAvatarSkillDepotDataMap().get(704).setAbilities(
+			GameData.getAvatarSkillDepotDataMap().get(704).setAbilities(
 				new AbilityEmbryoEntry(
 					"", 
 					new String[] {
@@ -96,7 +96,7 @@ public class ResourceLoader {
 			}
 
 			@SuppressWarnings("rawtypes")
-			Int2ObjectMap map = GenshinData.getMapByResourceDef(resourceDefinition);
+			Int2ObjectMap map = GameData.getMapByResourceDef(resourceDefinition);
 
 			if (map == null) {
 				continue;
@@ -124,7 +124,7 @@ public class ResourceLoader {
 			List list = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, c).getType());
 
 			for (Object o : list) {
-				GenshinResource res = (GenshinResource) o;
+				GameResource res = (GameResource) o;
 				res.onLoad();
 				map.put(res.getId(), res);
 			}
@@ -171,7 +171,7 @@ public class ResourceLoader {
 			}
 
 			for (ScenePointEntry entry : scenePointList) {
-				GenshinData.getScenePointEntries().put(entry.getName(), entry);
+				GameData.getScenePointEntries().put(entry.getName(), entry);
 			}
 		}
 	}
@@ -234,7 +234,7 @@ public class ResourceLoader {
 		}
 
 		for (AbilityEmbryoEntry entry : embryoList) {
-			GenshinData.getAbilityEmbryoInfo().put(entry.getName(), entry);
+			GameData.getAbilityEmbryoInfo().put(entry.getName(), entry);
 		}
 	}
 	
@@ -329,7 +329,7 @@ public class ResourceLoader {
 		}
 		
 		for (OpenConfigEntry entry : list) {
-			GenshinData.getOpenConfigEntries().put(entry.getName(), entry);
+			GameData.getOpenConfigEntries().put(entry.getName(), entry);
 		}
 	}
 

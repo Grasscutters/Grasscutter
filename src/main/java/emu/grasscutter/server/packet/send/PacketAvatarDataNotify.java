@@ -2,17 +2,17 @@ package emu.grasscutter.server.packet.send;
 
 import java.util.Map.Entry;
 
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.TeamInfo;
-import emu.grasscutter.game.avatar.GenshinAvatar;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.TeamInfo;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarDataNotifyOuterClass.AvatarDataNotify;
 import emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam;
 
-public class PacketAvatarDataNotify extends GenshinPacket {
+public class PacketAvatarDataNotify extends BasePacket {
 	
-	public PacketAvatarDataNotify(GenshinPlayer player) {
+	public PacketAvatarDataNotify(Player player) {
 		super(PacketOpcodes.AvatarDataNotify, 2);
 
 		AvatarDataNotify.Builder proto = AvatarDataNotify.newBuilder()
@@ -21,7 +21,7 @@ public class PacketAvatarDataNotify extends GenshinPacket {
 				.addAllOwnedFlycloakList(player.getFlyCloakList())
 				.addAllOwnedCostumeList(player.getCostumeList());
 				
-		for (GenshinAvatar avatar : player.getAvatars()) {
+		for (Avatar avatar : player.getAvatars()) {
 			proto.addAvatarList(avatar.toProto());
 		}
 		
@@ -31,7 +31,7 @@ public class PacketAvatarDataNotify extends GenshinPacket {
 					.setTeamName(teamInfo.getName());
 			
 			for (int i = 0; i < teamInfo.getAvatars().size(); i++) {
-				GenshinAvatar avatar = player.getAvatars().getAvatarById(teamInfo.getAvatars().get(i));
+				Avatar avatar = player.getAvatars().getAvatarById(teamInfo.getAvatars().get(i));
 				avatarTeam.addAvatarGuidList(avatar.getGuid());
 			}
 			

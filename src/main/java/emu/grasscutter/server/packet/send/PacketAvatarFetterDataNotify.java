@@ -1,16 +1,16 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.props.FetterState;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarFetterDataNotifyOuterClass.AvatarFetterDataNotify;
 import emu.grasscutter.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo;
 import emu.grasscutter.net.proto.FetterDataOuterClass.FetterData;
 
-public class PacketAvatarFetterDataNotify extends GenshinPacket {
+public class PacketAvatarFetterDataNotify extends BasePacket {
 	
-	public PacketAvatarFetterDataNotify(GenshinAvatar avatar) {
+	public PacketAvatarFetterDataNotify(Avatar avatar) {
 		super(PacketOpcodes.AvatarFetterDataNotify);
 
 		int fetterLevel = avatar.getFetterLevel();

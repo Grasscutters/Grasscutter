@@ -2,11 +2,11 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.LifeState;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify;
 
-public class PacketLifeStateChangeNotify extends GenshinPacket {
+public class PacketLifeStateChangeNotify extends BasePacket {
 	public PacketLifeStateChangeNotify(GameEntity attacker, GameEntity target, LifeState lifeState) {
 		super(PacketOpcodes.LifeStateChangeNotify);
 

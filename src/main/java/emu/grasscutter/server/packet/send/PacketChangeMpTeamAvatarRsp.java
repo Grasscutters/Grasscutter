@@ -1,14 +1,14 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.TeamInfo;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.TeamInfo;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ChangeMpTeamAvatarRspOuterClass.ChangeMpTeamAvatarRsp;
 
-public class PacketChangeMpTeamAvatarRsp extends GenshinPacket {
+public class PacketChangeMpTeamAvatarRsp extends BasePacket {
 	
-	public PacketChangeMpTeamAvatarRsp(GenshinPlayer player, TeamInfo teamInfo) {
+	public PacketChangeMpTeamAvatarRsp(Player player, TeamInfo teamInfo) {
 		super(PacketOpcodes.ChangeMpTeamAvatarRsp);
 		
 		ChangeMpTeamAvatarRsp.Builder proto = ChangeMpTeamAvatarRsp.newBuilder()

@@ -2,7 +2,7 @@ package emu.grasscutter.server.packet.send;
 
 import com.google.protobuf.ByteString;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerLoginRspOuterClass.PlayerLoginRsp;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass;
@@ -14,7 +14,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.Base64;
 
-public class PacketPlayerLoginRsp extends GenshinPacket {
+public class PacketPlayerLoginRsp extends BasePacket {
 
 	private static QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp regionCache;
 

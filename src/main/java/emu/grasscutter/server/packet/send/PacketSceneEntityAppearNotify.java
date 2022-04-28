@@ -4,12 +4,12 @@ import java.util.Collection;
 
 import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.entity.GameEntity;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SceneEntityAppearNotifyOuterClass.SceneEntityAppearNotify;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 
-public class PacketSceneEntityAppearNotify extends GenshinPacket {
+public class PacketSceneEntityAppearNotify extends BasePacket {
 	
 	public PacketSceneEntityAppearNotify(GameEntity entity) {
 		super(PacketOpcodes.SceneEntityAppearNotify, true);
@@ -32,7 +32,7 @@ public class PacketSceneEntityAppearNotify extends GenshinPacket {
 		this.setData(proto.build());
 	}
 	
-	public PacketSceneEntityAppearNotify(GenshinPlayer player) {
+	public PacketSceneEntityAppearNotify(Player player) {
 		this(player.getTeamManager().getCurrentAvatarEntity());
 	}
 

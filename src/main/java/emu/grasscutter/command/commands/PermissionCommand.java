@@ -4,7 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public final class PermissionCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         if (args.size() < 3) {
             CommandHandler.sendMessage(sender, "Usage: permission <add|remove> <username> <permission>");
             return;

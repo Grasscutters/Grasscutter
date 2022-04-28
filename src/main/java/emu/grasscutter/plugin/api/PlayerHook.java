@@ -1,11 +1,11 @@
 package emu.grasscutter.plugin.api;
 
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
@@ -13,16 +13,16 @@ import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
 import emu.grasscutter.utils.Position;
 
 /**
- * Hooks into the {@link GenshinPlayer} class, adding convenient ways to do certain things.
+ * Hooks into the {@link Player} class, adding convenient ways to do certain things.
  */
 public final class PlayerHook {
-    private final GenshinPlayer player;
+    private final Player player;
 
     /**
      * Hooks into the player. 
      * @param player The player to hook into.
      */
-    public PlayerHook(GenshinPlayer player) {
+    public PlayerHook(Player player) {
         this.player = player;
     }
     
@@ -53,7 +53,7 @@ public final class PlayerHook {
      * Broadcasts the packet sent to all world players.
      * @param packet The packet to send.
      */
-    public void broadcastPacketToWorld(GenshinPacket packet) {
+    public void broadcastPacketToWorld(BasePacket packet) {
         this.player.getWorld().broadcastPacket(packet);
     }
 
@@ -70,7 +70,7 @@ public final class PlayerHook {
      * Revives the specified avatar.
      * @param avatar The avatar to revive.
      */
-    public void reviveAvatar(GenshinAvatar avatar) {
+    public void reviveAvatar(Avatar avatar) {
         this.broadcastPacketToWorld(new PacketAvatarLifeStateChangeNotify(avatar));
     }
 
@@ -105,9 +105,9 @@ public final class PlayerHook {
 
     /**
      * Gets the currently selected avatar.
-     * @return The avatar as an {@link GenshinAvatar}.
+     * @return The avatar as an {@link Avatar}.
      */
-    public GenshinAvatar getCurrentAvatar() {
+    public Avatar getCurrentAvatar() {
         return this.getCurrentAvatarEntity().getAvatar();
     }
 }
