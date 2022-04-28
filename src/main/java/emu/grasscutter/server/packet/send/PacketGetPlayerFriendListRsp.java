@@ -8,7 +8,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief;
 import emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState;
 import emu.grasscutter.net.proto.GetPlayerFriendListRspOuterClass.GetPlayerFriendListRsp;
-import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
+import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.PlatformTypeOuterClass;
 
 public class PacketGetPlayerFriendListRsp extends BasePacket {
@@ -20,7 +20,7 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
 				.setUid(GameConstants.SERVER_CONSOLE_UID)
 				.setNickname("Server")
 				.setLevel(1)
-				.setAvatarId(HeadImage.newBuilder().setAvatarId(GameConstants.MAIN_CHARACTER_FEMALE).getAvatarId())
+				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(GameConstants.MAIN_CHARACTER_FEMALE))
 				.setWorldLevel(0)
 				.setSignature("")
 				.setLastActiveTime((int) (System.currentTimeMillis() / 1000f))

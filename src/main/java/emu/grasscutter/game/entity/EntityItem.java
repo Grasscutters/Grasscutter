@@ -6,7 +6,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
@@ -30,14 +29,30 @@ public class EntityItem extends EntityGadget {
 	
 	private final GameItem item;
 	private final long guid;
-	
+
+	private final boolean share;
+
 	public EntityItem(Scene scene, Player player, ItemData itemData, Position pos, int count) {
 		super(scene);
 		this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
 		this.pos = new Position(pos);
 		this.rot = new Position();
-		this.guid = player.getNextGameGuid();
+		this.guid = player == null ? scene.getWorld().getHost().getNextGameGuid() : player.getNextGameGuid();
 		this.item = new GameItem(itemData, count);
+		this.share = true;
+	}
+
+	// In official game, some drop items are shared to all players, and some other items are independent to all players
+	// For example, if you killed a monster in MP mode, all players could get drops but rarity and number of them are different
+	// but if you broke regional mine, when someone picked up the drop then it disappeared
+	public EntityItem(Scene scene, Player player, ItemData itemData, Position pos, int count, boolean share) {
+		super(scene);
+		this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
+		this.pos = new Position(pos);
+		this.rot = new Position();
+		this.guid = player == null ? scene.getWorld().getHost().getNextGameGuid() : player.getNextGameGuid();
+		this.item = new GameItem(itemData, count);
+		this.share = share;
 	}
 	
 	@Override
@@ -79,6 +94,10 @@ public class EntityItem extends EntityGadget {
 	@Override
 	public Int2FloatOpenHashMap getFightProperties() {
 		return null;
+	}
+
+	public boolean isShare() {
+		return share;
 	}
 
 	@Override
