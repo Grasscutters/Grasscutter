@@ -23,6 +23,8 @@ public class ShopInfo {
     private int disableType = 0;
     private int secondarySheetId = 0;
 
+    private String refreshType;
+
     public enum ShopRefreshType {
         NONE(0),
         SHOP_REFRESH_DAILY(1),
@@ -179,9 +181,14 @@ public class ShopInfo {
     }
 
     public ShopRefreshType getShopRefreshType() {
-        if (shopRefreshType == null)
+        if (refreshType == null)
             return ShopRefreshType.NONE;
-        return shopRefreshType;
+        return switch (refreshType) {
+            case "SHOP_REFRESH_DAILY" -> ShopInfo.ShopRefreshType.SHOP_REFRESH_DAILY;
+            case "SHOP_REFRESH_WEEKLY" -> ShopInfo.ShopRefreshType.SHOP_REFRESH_WEEKLY;
+            case "SHOP_REFRESH_MONTHLY" -> ShopInfo.ShopRefreshType.SHOP_REFRESH_MONTHLY;
+            default -> ShopInfo.ShopRefreshType.NONE;
+        };
     }
 
     public void setShopRefreshType(ShopRefreshType shopRefreshType) {
