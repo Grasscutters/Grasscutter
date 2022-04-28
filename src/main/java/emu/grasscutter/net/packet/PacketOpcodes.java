@@ -3,6 +3,7 @@ package emu.grasscutter.net.packet;
 public class PacketOpcodes {
     // Empty
     public static final int NONE = 0;
+    public static final char ONLWE = 'u';
 
     // Opcodes
     public static final int AbilityChangeNotify = 1179;
