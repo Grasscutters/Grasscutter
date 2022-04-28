@@ -13,14 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-@Command(label = "giverelic", usage = "giverelic|giver [player] <relicId> <mainPropId> [<appendPropId>...] [level]",
-		description = "Gives the player a specified reliquary", aliases = {"giver"}, permission = "player.giverelic")
-public final class GiveRelicCommand implements CommandHandler {
+@Command(label = "giveart", usage = "giveart|givea [player] <artifactId> <mainPropId> [<appendPropId>...] [level]",
+		description = "Gives the player a specified reliquary", aliases = {"givea"}, permission = "player.giveart")
+public final class GiveArtifactCommand implements CommandHandler {
 	@Override
 	public void execute(Player sender, List<String> args) {
 		int target, itemId, mainPropId, level;
 		ArrayList<Integer> appendPropIdList = new ArrayList<>();
-		String msg = "Usage: giverelic|giver [player] <relicId> <mainPropId> [<appendPropId>...] [level]";
+		String msg = "Usage: giveart|givea [player] <artifactId> <mainPropId> [<appendPropId>...] [level]";
 
 		if (sender == null && args.size() < 2) {
 			CommandHandler.sendMessage(null, msg);
@@ -63,7 +63,7 @@ public final class GiveRelicCommand implements CommandHandler {
 		ItemData itemData = GameData.getItemDataMap().get(itemId);
 
 		if (itemData.getItemType() != ItemType.ITEM_RELIQUARY) {
-			CommandHandler.sendMessage(sender, "Invalid item ID.");
+			CommandHandler.sendMessage(sender, "Invalid artifact ID.");
 			return;
 		}
 
