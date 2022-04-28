@@ -168,7 +168,7 @@ public class Inventory implements Iterable<GameItem> {
 		} else if (type == ItemType.ITEM_VIRTUAL) {
 			// Handle
 			this.addVirtualItem(item.getItemId(), item.getCount());
-			return null;
+			return item;
 		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_AVATAR) {
 			// Get avatar id
 			int avatarId = (item.getItemId() % 1000) + 10000000;
@@ -236,9 +236,7 @@ public class Inventory implements Iterable<GameItem> {
 	private void addVirtualItem(int itemId, int count) {
 		switch (itemId) {
 			case 101: // Character exp
-				for (EntityAvatar entity : getPlayer().getTeamManager().getActiveTeam()) {
-					getPlayer().getServer().getInventoryManager().upgradeAvatar(player, entity.getAvatar(), count);
-				}
+				getPlayer().getServer().getInventoryManager().upgradeAvatar(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
 				break;
 			case 102: // Adventure exp
 				getPlayer().addExpDirectly(count);
