@@ -63,7 +63,7 @@ dependencies {
 
 application {
     // Define the main class for the application
-    mainClassName = 'emu.grasscutter.Grasscutter'
+    getMainClass().set('emu.grasscutter.Grasscutter')
 }
 
 jar {
@@ -97,7 +97,7 @@ publishing {
                     fromResolutionOf('runtimeClasspath')
                 }
                 usage('java-runtime') {
-                    fromResolutionResult()
+                    fromResolutionResult(null)
                 }
             }
             pom {
@@ -161,5 +161,6 @@ javadoc {
         options.addBooleanOption('html5', true)
     }
     options.encoding = 'UTF-8'
+    options.addStringOption('Xdoclint:none', '-quiet')
     options.jFlags('-Dfile.encoding=UTF-8')
 }
