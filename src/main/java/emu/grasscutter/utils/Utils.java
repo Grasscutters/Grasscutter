@@ -3,6 +3,8 @@ package emu.grasscutter.utils;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.time.*;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Random;
 
 import emu.grasscutter.Config;
@@ -190,5 +192,41 @@ public final class Utils {
 			createFolder(dataFolder);
 
 		if(exit) System.exit(1);
+	}
+
+	public static int GetNextTimestampOfThisHour(int hour, String timeZone, int param) {
+		ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
+		for (int i = 0; i < param; i ++){
+			if (zonedDateTime.getHour() < hour) {
+				zonedDateTime = zonedDateTime.withHour(hour).withMinute(0).withSecond(0);
+			} else {
+				zonedDateTime = zonedDateTime.plusDays(1).withHour(hour).withMinute(0).withSecond(0);
+			}
+		}
+		return (int)zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
+	}
+
+	public static int GetNextTimestampOfThisHourInNextWeek(int hour, String timeZone, int param) {
+		ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
+		for (int i = 0; i < param; i++) {
+			if (zonedDateTime.getDayOfWeek() == DayOfWeek.MONDAY && zonedDateTime.getHour() < hour) {
+				zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone)).withHour(hour).withMinute(0).withSecond(0);
+			} else {
+				zonedDateTime = zonedDateTime.with(TemporalAdjusters.next(DayOfWeek.MONDAY)).withHour(hour).withMinute(0).withSecond(0);
+			}
+		}
+		return (int)zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
+	}
+
+	public static int GetNextTimestampOfThisHourInNextMonth(int hour, String timeZone, int param) {
+		ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
+		for (int i = 0; i < param; i++) {
+			if (zonedDateTime.getDayOfMonth() == 1 && zonedDateTime.getHour() < hour) {
+				zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone)).withHour(hour).withMinute(0).withSecond(0);
+			} else {
+				zonedDateTime = zonedDateTime.with(TemporalAdjusters.firstDayOfNextMonth()).withHour(hour).withMinute(0).withSecond(0);
+			}
+		}
+		return (int)zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
 	}
 }
