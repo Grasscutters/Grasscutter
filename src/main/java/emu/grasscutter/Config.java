@@ -33,6 +33,7 @@ public final class Config {
 		public Boolean FrontHTTPS = true;
 
 		public boolean AutomaticallyCreateAccounts = false;
+		public String[] defaultPermissions = new String[] { "" };
 
 		public RegionInfo[] GameServers = {};
 

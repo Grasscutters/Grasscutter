@@ -15,6 +15,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.gacha.GachaBanner.BannerType;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.inventory.MaterialType;
@@ -125,8 +126,8 @@ public class GachaManager {
 			int itemId = 0;
 			
 			int bonusYellowChance = gachaInfo.getPity5() >= banner.getSoftPity() ? 100 * (gachaInfo.getPity5() - banner.getSoftPity() - 1): 0;
-			int yellowChance = 60 + (int) Math.floor(100f * (gachaInfo.getPity5() / (banner.getSoftPity() - 1D))) + bonusYellowChance;
-			int purpleChance = 10000 - (510 + (int) Math.floor(790f * (gachaInfo.getPity4() / 8f)));
+			int yellowChance = banner.getBaseYellowWeight() + (int) Math.floor(100f * (gachaInfo.getPity5() / (banner.getSoftPity() - 1D))) + bonusYellowChance;
+			int purpleChance = 10000 - (banner.getBasePurpleWeight() + (int) Math.floor(790f * (gachaInfo.getPity4() / 8f)));
 		
 			if (random <= yellowChance || gachaInfo.getPity5() >= banner.getHardPity()) {
 				if (banner.getRateUpItems1().length > 0) {
@@ -142,7 +143,7 @@ public class GachaManager {
 				}
 				
 				if (itemId == 0) {
-					int typeChance = this.randomRange(banner.getMinItemType(), banner.getMaxItemType());
+					int typeChance = this.randomRange(banner.getBannerType() == BannerType.WEAPON ? 2 : 1, banner.getBannerType() == BannerType.EVENT ? 1 : 2);
 					if (typeChance == 1) {
 						itemId = getRandom(this.yellowAvatars);
 					} else {
@@ -163,7 +164,7 @@ public class GachaManager {
 				}
 				
 				if (itemId == 0) {
-					int typeChance = this.randomRange(banner.getMinItemType(), banner.getMaxItemType());
+					int typeChance = this.randomRange(banner.getBannerType() == BannerType.WEAPON ? 2 : 1, banner.getBannerType() == BannerType.EVENT ? 1 : 2);
 					if (typeChance == 1) {
 						itemId = getRandom(this.purpleAvatars);
 					} else {
