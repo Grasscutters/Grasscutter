@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
 
 import emu.grasscutter.command.CommandMap;
+import emu.grasscutter.game.scenescript.SceneScriptLoader;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
@@ -59,12 +60,18 @@ public final class Grasscutter {
 				case "-handbook" -> {
 					Tools.createGmHandbook(); return;
 				}
+				case "-test" -> {
+
+
+					SceneScriptLoader sceneScriptLoader = new SceneScriptLoader();
+					sceneScriptLoader.LoadSceneMain("resources/Lua/Scene/1015/scene1015.lua");
+					return;
+				}
 			}
 		}
-		
 		// Initialize server.
-		Grasscutter.getLogger().info("Starting Grasscutter...");
-		
+		Grasscutter.getLogger().info("Starting Grasscutter.....");
+
 		// Load all resources.
 		ResourceLoader.loadAll();
 		// Database
