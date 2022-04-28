@@ -23,23 +23,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
 import emu.grasscutter.server.game.GameServer;
-import emu.grasscutter.server.packet.send.PacketAbilityChangeNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarPromoteRsp;
-import emu.grasscutter.server.packet.send.PacketAvatarPropNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarSkillChangeNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarSkillUpgradeRsp;
-import emu.grasscutter.server.packet.send.PacketAvatarUnlockTalentNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarUpgradeRsp;
-import emu.grasscutter.server.packet.send.PacketDestroyMaterialRsp;
-import emu.grasscutter.server.packet.send.PacketProudSkillChangeNotify;
-import emu.grasscutter.server.packet.send.PacketProudSkillExtraLevelNotify;
-import emu.grasscutter.server.packet.send.PacketReliquaryUpgradeRsp;
-import emu.grasscutter.server.packet.send.PacketSetEquipLockStateRsp;
-import emu.grasscutter.server.packet.send.PacketStoreItemChangeNotify;
-import emu.grasscutter.server.packet.send.PacketUnlockAvatarTalentRsp;
-import emu.grasscutter.server.packet.send.PacketWeaponAwakenRsp;
-import emu.grasscutter.server.packet.send.PacketWeaponPromoteRsp;
-import emu.grasscutter.server.packet.send.PacketWeaponUpgradeRsp;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
@@ -659,7 +643,7 @@ public class InventoryManager {
 		// Level up
 		upgradeAvatar(player, avatar, promoteData, expGain);
 	}
-	
+
 	public void upgradeAvatar(Player player, Avatar avatar, int expGain) {
 		AvatarPromoteData promoteData = GameData.getAvatarPromoteData(avatar.getAvatarData().getAvatarPromoteId(), avatar.getPromoteLevel());
 		if (promoteData == null) {
@@ -668,14 +652,14 @@ public class InventoryManager {
 		
 		upgradeAvatar(player, avatar, promoteData, expGain);
 	}
-	
+
 	public void upgradeAvatar(Player player, Avatar avatar, AvatarPromoteData promoteData, int expGain) {
 		int maxLevel = promoteData.getUnlockMaxLevel();
 		int level = avatar.getLevel();
 		int oldLevel = level;
 		int exp = avatar.getExp();
 		int reqExp = GameData.getAvatarLevelExpRequired(level);
-		
+
 		while (expGain > 0 && reqExp > 0 && level < maxLevel) {
 			// Do calculations
 			int toGain = Math.min(expGain, reqExp - exp);
@@ -690,7 +674,7 @@ public class InventoryManager {
 				reqExp = GameData.getAvatarLevelExpRequired(level);
 			}
 		}
-		
+
 		// Old map for packet
 		Map<Integer, Float> oldPropMap = avatar.getFightProperties();
 		if (oldLevel != level) {
@@ -734,6 +718,7 @@ public class InventoryManager {
 		avatar.save();
 		
 		player.sendPacket(new PacketAvatarPropNotify(avatar));
+		player.sendPacket(new PacketAvatarFetterDataNotify(avatar));
 	}
 
 	public void upgradeAvatarSkill(Player player, long guid, int skillId) {
