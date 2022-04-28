@@ -33,7 +33,7 @@ if not "%JAVA_PATH%" == "DO_NOT_CHECK_PATH" (
 		goto :EXIT
 	)
 ) else set JAVA_PATH=
-if not exist "%SERVER_PATH%grasscutter.jar" (
+if not exist "%SERVER_PATH%%SERVER_JAR_NAME%" (
 	call :LOG [ERROR] Server jar not found.
 	goto :EXIT
 )
@@ -129,7 +129,7 @@ del /f /q "%temp%\db.vbs" >nul 2>nul
 
 :GAME
 call :LOG [INFO] Starting server...
-"%JAVA_PATH%java.exe" -jar "%SERVER_PATH%grasscutter.jar"
+"%JAVA_PATH%java.exe" -jar "%SERVER_PATH%%SERVER_JAR_NAME%"
 call :LOG [INFO] Server stopped
 
 :EXIT

@@ -109,6 +109,16 @@ public class Inventory implements Iterable<GameItem> {
 		
 		return result;
 	}
+
+	public boolean addItem(GameItem item, ActionReason reason, boolean forceNotify) {
+		boolean result = addItem(item);
+
+		if (reason != null && (forceNotify || result)) {
+			getPlayer().sendPacket(new PacketItemAddHintNotify(item, reason));
+		}
+
+		return result;
+	}
 	
 	public void addItems(Collection<GameItem> items) {
 		this.addItems(items, null);
@@ -238,6 +248,9 @@ public class Inventory implements Iterable<GameItem> {
 				break;
 			case 202: // Mora
 				getPlayer().setMora(player.getMora() + count);
+				break;
+			case 203: // Genesis Crystals
+				getPlayer().setCrystals(player.getCrystals() + count);
 				break;
 		}
 	}

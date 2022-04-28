@@ -339,6 +339,10 @@ public final class DispatchServer {
 					// added.
 					account = DatabaseHelper.createAccountWithId(requestData.account, 0);
 
+					for (String permission : Grasscutter.getConfig().getDispatchOptions().defaultPermissions) {
+						account.addPermission(permission);
+					}
+
 					if (account != null) {
 						responseData.message = "OK";
 						responseData.data.account.uid = account.getId();
