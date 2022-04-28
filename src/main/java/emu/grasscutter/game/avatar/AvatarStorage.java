@@ -119,7 +119,7 @@ public class AvatarStorage implements Iterable<GenshinAvatar> {
 		// Update entity
 		EntityAvatar entity = avatar.getAsEntity();
 		if (entity == null) {
-			entity = new EntityAvatar(avatar);
+			entity = new EntityAvatar(avatar.getPlayer().getScene(), avatar);
 			getPlayer().sendPacket(new PacketAvatarChangeCostumeNotify(entity));
 		} else {
 			getPlayer().getScene().broadcastPacket(new PacketAvatarChangeCostumeNotify(entity));

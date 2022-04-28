@@ -1,6 +1,7 @@
 package emu.grasscutter.data
 
 import emu.grasscutter.Grasscutter
+import emu.grasscutter.utils.Position
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
 import java.io.BufferedReader
@@ -15,7 +16,7 @@ val jsonFormatter = Json {
 	encodeDefaults = true
 }
 
-object LuaSceneDataLoader {
+object SceneDataLoader {
 
 	@JvmField
 	val scenes: ConcurrentHashMap<Int, Scene> = ConcurrentHashMap()
@@ -29,8 +30,8 @@ object LuaSceneDataLoader {
 		val directory = File(scenePath)
 		directory.listFiles().forEach { sceneFile ->
 			sceneFile.path.takeLastWhile { it.isDigit() }.toIntOrNull()?.also { sceneId ->
-				val sceneDataLoader = SceneDataLoader(sceneFile.path, sceneId)
-				val scene = sceneDataLoader.scene
+				val sceneDataProvider = SceneDataProvider(sceneFile.path, sceneId)
+				val scene = sceneDataProvider.scene
 				scenes[sceneId] = scene
 			}
 		}
@@ -60,7 +61,7 @@ class EntityCampData(
 	@SerialName("CampID") val campId: Int? = null
 )
 
-class SceneDataLoader(
+class SceneDataProvider(
 	val scenePath: String,
 	val sceneId: Int,
 ) {
@@ -68,7 +69,7 @@ class SceneDataLoader(
 	private val sceneFile = File("$scenePath/scene$sceneId.json")
 	val scene by lazy {
 //        println("Current decoding ${sceneFile.path}")
-		jsonFormatter.decodeFromString<Scene>(sceneFile.readText()).apply { sceneDataLoader = this@SceneDataLoader }
+		jsonFormatter.decodeFromString<Scene>(sceneFile.readText()).apply { sceneDataProvider = this@SceneDataProvider }
 	}
 
 
@@ -79,14 +80,14 @@ class SceneDataLoader(
 	fun getBlock(blockId: Int): Block {
 //        println("Current decoding ${getBlockFile(blockId)}")
 		return jsonFormatter.decodeFromString<Block>(getBlockFile(blockId).readText())
-			.apply { sceneDataLoader = this@SceneDataLoader }
+			.apply { sceneDataProvider = this@SceneDataProvider }
 	}
 
-	private fun getGroupFile(groupId: Long): File {
+	private fun getGroupFile(groupId: Int): File {
 		return File("${scenePath}/scene${sceneId}_group${groupId}.json")
 	}
 
-	fun getGroup(groupId: Long): Group {
+	fun getGroup(groupId: Int): Group {
 //        println("Current decoding ${getGroupFile(groupId)}")
 		return jsonFormatter.decodeFromString(getGroupFile(groupId).readText())
 	}
@@ -96,7 +97,7 @@ class SceneDataLoader(
 
 @Serializable
 data class Scene(
-	@Transient var sceneDataLoader: SceneDataLoader? = null,
+	@Transient var sceneDataProvider: SceneDataProvider? = null,
 	@SerialName("blocks") val rawBlocks: List<Int>,
 	@SerialName("block_rects") val blockRectangles: List<BlockRectangle> = emptyList(),
 	@SerialName("scene_config") val sceneConfig: SceneConfig,
@@ -106,13 +107,19 @@ data class Scene(
 	}
 
 	val blocks: Map<Int, Block> by lazy {
-		sceneDataLoader?.let { sceneDataLoader ->
+		sceneDataProvider?.let { sceneDataLoader ->
 			rawBlocks.associateWith { id -> sceneDataLoader.getBlock(id) }
 		} ?: throw NullPointerException()
 	}
 
 	fun getPlayerBlock(pos: Vector2): Map<Int, Block> {
 		return block2Rectangle.filter { entry -> entry.value.contains(pos) }.mapValues { blocks[it.key]!! }
+	}
+
+	fun getPlayerVisionBlock(pos: Vector2, r: Float): Map<Int, Block> {
+		return block2Rectangle.filter {
+				entry -> Position.intersectWithCircle(entry.value.max.toPos(), entry.value.min.toPos(), pos.toPos(), r)
+		}.mapValues { blocks[it.key]!! }
 	}
 
 }
@@ -129,11 +136,11 @@ data class SceneConfig(
 
 @Serializable
 data class Block(
-	@Transient var sceneDataLoader: SceneDataLoader? = null,
+	@Transient var sceneDataProvider: SceneDataProvider? = null,
 	@SerialName("groups") val groupInfo: List<GroupInfo>
 ) {
-	val groups: Map<Long, Group> by lazy {
-		sceneDataLoader?.let { sceneDataLoader ->
+	val groups: Map<Int, Group> by lazy {
+		sceneDataProvider?.let { sceneDataLoader ->
 			groupInfo.associate { info -> info.id to sceneDataLoader.getGroup(info.id) }
 		} ?: throw NullPointerException()
 	}
@@ -142,7 +149,7 @@ data class Block(
 @Serializable
 data class GroupInfo(
 	val area: Int? = null,
-	val id: Long,
+	val id: Int,
 	@SerialName("dynamic_load") val dynamicLoad: Boolean? = null,
 	@SerialName("refresh_id") val refreshId: Int? = null,
 	@SerialName("is_replaceable") val isReplaceable: ReplaceAble? = null,
@@ -230,6 +237,12 @@ data class Gadget(
 	@SerialName("is_use_point_array") val isUsePointArray: Boolean? = null,
 	@SerialName("owner") val owner: Int? = null,
 	@SerialName("point_type") val pointType: Int? = null,
+	@SerialName("mark_flag") val markFlag: Int? = null,
+	@SerialName("is_enable_interact") val isEnableInteract: Boolean? = null,
+	@SerialName("state") val gadgetState: Int? = null,
+	@SerialName("showcutscene") val showCutscene: Boolean? = null,
+	@SerialName("interact_id") val interactId: Int? = null,
+	@SerialName("draft_id") val draftId: Int? = null
 )
 
 @Serializable
@@ -237,8 +250,14 @@ data class Monster(
 	val rot: Vector3,
 	val pos: Vector3,
 	@SerialName("config_id") val configId: Int,
+	@SerialName("pose_id") val poseId: Int? = null,
 	val level: Int,
 	@SerialName("monster_id") val monsterId: Int,
+	@SerialName("affix") val affix: List<Int>? = null,
+	@SerialName("title_id") val titleId: Int? = null,
+	@SerialName("special_name_id") val specialNameId: Int? = null,
+	@SerialName("mark_flag") val markFlag: Int? = null,
+	@SerialName("isElite") val isElite: Boolean? = null
 )
 
 @Serializable
@@ -282,11 +301,19 @@ data class BlockRectangle(
 data class Vector2(
 	val x: Float,
 	val z: Float
-)
+) {
+
+	fun toPos(): Position = Position(x, 0.0f, z)
+
+}
 
 @Serializable
 data class Vector3(
 	val x: Float,
 	val y: Float,
 	val z: Float
-)
+) {
+
+	fun toPos(): Position = Position(x, y, z)
+
+}

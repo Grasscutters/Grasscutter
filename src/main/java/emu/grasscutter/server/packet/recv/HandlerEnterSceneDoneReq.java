@@ -30,8 +30,6 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
 		// Spawn other entites already in world
 		session.getPlayer().getScene().showOtherEntities(session.getPlayer());
 
-		// Spawn other entites such as gadget, monster in world
-		session.getPlayer().getScene().showSceneGroups(session.getPlayer());
 		
 		// Locations
 		session.send(new PacketWorldPlayerLocationNotify(session.getPlayer().getWorld()));

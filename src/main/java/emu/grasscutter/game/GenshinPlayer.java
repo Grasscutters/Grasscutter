@@ -10,7 +10,7 @@ import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.GenshinAvatar;
 import emu.grasscutter.game.entity.EntityItem;
-import emu.grasscutter.game.entity.GenshinEntity;
+import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.friends.FriendsList;
 import emu.grasscutter.game.friends.PlayerProfile;
 import emu.grasscutter.game.gacha.PlayerGachaInfo;
@@ -26,7 +26,6 @@ import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
-import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
@@ -571,7 +570,7 @@ public class GenshinPlayer {
 	}
 
 	public void interactWith(int gadgetEntityId) {
-		GenshinEntity entity = getScene().getEntityById(gadgetEntityId);
+		GameEntity entity = getScene().getEntityById(gadgetEntityId);
 
 		if (entity == null) {
 			return;

@@ -1,35 +1,20 @@
 package emu.grasscutter.game;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import emu.grasscutter.game.entity.GenshinEntity;
-import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.EntityIdType;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.data.GenshinData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.game.GenshinPlayer.SceneLoadState;
-import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.entity.EntityClientGadget;
-import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.net.packet.GenshinPacket;
-import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
-import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.server.packet.send.PacketDelTeamEntityNotify;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
-import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
-import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
 import emu.grasscutter.server.packet.send.PacketScenePlayerInfoNotify;
 import emu.grasscutter.server.packet.send.PacketSyncScenePlayTeamEntityNotify;
 import emu.grasscutter.server.packet.send.PacketSyncTeamEntityNotify;

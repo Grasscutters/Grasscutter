@@ -192,7 +192,7 @@ public class GameSession extends MihoyoKcpChannel {
     private void logPacket(GenshinPacket genshinPacket) {
 		if (!loopPacket.contains(genshinPacket.getOpcode())) {
 			Grasscutter.getLogger().info("SEND: " + PacketOpcodesUtil.getOpcodeName(genshinPacket.getOpcode()) + " (" + genshinPacket.getOpcode() + ")");
-			System.out.println(Utils.bytesToHex(genshinPacket.getData()));
+//			System.out.println(Utils.bytesToHex(genshinPacket.getData()));
 		}
     }
 

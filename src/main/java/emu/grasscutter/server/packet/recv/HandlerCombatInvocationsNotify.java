@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.entity.GenshinEntity;
+import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify;
@@ -27,12 +27,12 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 				case ENTITY_MOVE:
 					// Handle movement
 					EntityMoveInfo moveInfo = EntityMoveInfo.parseFrom(entry.getCombatData());
-					GenshinEntity entity = session.getPlayer().getScene().getEntityById(moveInfo.getEntityId());
+					GameEntity entity = session.getPlayer().getScene().getEntityById(moveInfo.getEntityId());
 					if (entity != null) {
 						entity.getPosition().set(moveInfo.getMotionInfo().getPos());
 						entity.getRotation().set(moveInfo.getMotionInfo().getRot());
-						entity.setLastMoveSceneTimeMs(moveInfo.getSceneTime());
-						entity.setLastMoveReliableSeq(moveInfo.getReliableSeq());
+						entity.getLastMoveSceneTimeMs().set(moveInfo.getSceneTime());
+						entity.getLastMoveReliableSeq().set(moveInfo.getReliableSeq());
 						entity.setMotionState(moveInfo.getMotionInfo().getState());
 					}
 					break;

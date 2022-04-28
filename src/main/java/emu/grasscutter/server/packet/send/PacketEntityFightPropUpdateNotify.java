@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.entity.GenshinEntity;
+import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.packet.GenshinPacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -8,7 +8,7 @@ import emu.grasscutter.net.proto.EntityFightPropUpdateNotifyOuterClass.EntityFig
 
 public class PacketEntityFightPropUpdateNotify extends GenshinPacket {
 	
-	public PacketEntityFightPropUpdateNotify(GenshinEntity entity, FightProperty prop) {
+	public PacketEntityFightPropUpdateNotify(GameEntity entity, FightProperty prop) {
 		super(PacketOpcodes.EntityFightPropUpdateNotify);
 		
 		EntityFightPropUpdateNotify proto = EntityFightPropUpdateNotify.newBuilder()

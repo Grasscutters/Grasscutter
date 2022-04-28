@@ -19,8 +19,6 @@ import emu.grasscutter.data.common.ScenePointConfig;
 import emu.grasscutter.data.custom.AbilityEmbryoEntry;
 import emu.grasscutter.data.custom.OpenConfigEntry;
 import emu.grasscutter.data.custom.ScenePointEntry;
-import emu.grasscutter.game.world.SpawnDataEntry;
-import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 public class ResourceLoader {
@@ -52,10 +50,10 @@ public class ResourceLoader {
 		// Process into depots
 		GenshinDepot.load();
 		// Load spawn data
-		loadSpawnData();
+//		loadSpawnData();
 		// Custom - TODO move this somewhere else
 
-		LuaSceneDataLoader.init();
+		SceneDataLoader.init();
 
 		try {
 			GenshinData.getAvatarSkillDepotDataMap().get(504).setAbilities(
@@ -240,32 +238,32 @@ public class ResourceLoader {
 		}
 	}
 	
-	private static void loadSpawnData() {
-		// Read from cached file if exists
-		File spawnDataEntries = new File(Grasscutter.getConfig().DATA_FOLDER + "Spawns.json");
-		List<SpawnGroupEntry> spawnEntryList = null;
-		
-		if (spawnDataEntries.exists()) {
-			// Load from cache
-			try (FileReader fileReader = new FileReader(spawnDataEntries)) {
-				spawnEntryList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		
-		if (spawnEntryList == null || spawnEntryList.isEmpty()) {
-			Grasscutter.getLogger().error("No spawn data loaded!");
-			return;
-		}
-
-		for (SpawnGroupEntry entry : spawnEntryList) {
-			entry.getSpawns().stream().forEach(s -> {
-				s.setGroup(entry);
-			});
-			GenshinDepot.getSpawnListById(entry.getSceneId()).insert(entry, entry.getPos().getX(), entry.getPos().getZ());
-		}
-	}
+//	private static void loadSpawnData() {
+//		// Read from cached file if exists
+//		File spawnDataEntries = new File(Grasscutter.getConfig().DATA_FOLDER + "Spawns.json");
+//		List<SpawnGroupEntry> spawnEntryList = null;
+//
+//		if (spawnDataEntries.exists()) {
+//			// Load from cache
+//			try (FileReader fileReader = new FileReader(spawnDataEntries)) {
+//				spawnEntryList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType());
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+//
+//		if (spawnEntryList == null || spawnEntryList.isEmpty()) {
+//			Grasscutter.getLogger().error("No spawn data loaded!");
+//			return;
+//		}
+//
+//		for (SpawnGroupEntry entry : spawnEntryList) {
+//			entry.getSpawns().stream().forEach(s -> {
+//				s.setGroup(entry);
+//			});
+//			GenshinDepot.getSpawnListById(entry.getSceneId()).insert(entry, entry.getPos().getX(), entry.getPos().getZ());
+//		}
+//	}
 	
 	private static void loadOpenConfig() {
 		// Read from cached file if exists
