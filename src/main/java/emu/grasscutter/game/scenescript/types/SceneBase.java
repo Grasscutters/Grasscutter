@@ -6,7 +6,6 @@ import org.luaj.vm2.LuaValue;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Data
 public class SceneBase {
@@ -17,29 +16,36 @@ public class SceneBase {
     private List<String> dummyPoints;
     private List<String> routesConfig;
 
-    public SceneBase(LuaValue e) {
-        config = new SceneConfig((LuaTable) e.get("scene_config"));
+    public SceneBase(SceneConfig config, List<Integer> blocks, List<BlockRects> blockRects, List<String> dummyPoints,
+                     List<String> routesConfig) {
+        this.config = config;
+        this.blocks = blocks;
+        this.blockRects = blockRects;
+        this.dummyPoints = dummyPoints;
+        this.routesConfig = routesConfig;
+    }
+
+    public static SceneBase fromLuaTable(LuaTable e) {
+        var config = new SceneConfig((LuaTable) e.get("scene_config"));
         LuaTable blockTable = ((LuaTable) e.get("blocks"));
-        blocks = Arrays.stream(blockTable.keys())
-                .map(LuaValue::toint)
-                .collect(Collectors.toList());
+        var blocks = Arrays.stream(blockTable.keys())
+                .map(LuaValue::toint).toList();
 
         LuaTable blockRectsTable = ((LuaTable) e.get("block_rects"));
-        blockRects =
+        var blockRects =
                 Arrays.stream(blockRectsTable.keys())
                         .map(LuaValue::toint)
-                        .map(i -> new BlockRects((LuaTable) blockRectsTable.get(i)))
-                        .collect(Collectors.toList());
+                        .map(i -> new BlockRects((LuaTable) blockRectsTable.get(i))).toList();
 
         LuaTable dummyPointsTable = ((LuaTable) e.get("dummy_points"));
-        dummyPoints = Arrays.stream(dummyPointsTable.keys())
-                .map(LuaValue::toString)
-                .collect(Collectors.toList());
+        var dummyPoints = Arrays.stream(dummyPointsTable.keys())
+                .map(LuaValue::toString).toList();
 
         LuaTable routesConfigTable = ((LuaTable) e.get("routes_config"));
-        routesConfig = Arrays.stream(routesConfigTable.keys())
-                .map(LuaValue::toString)
-                .collect(Collectors.toList());
+        var routesConfig = Arrays.stream(routesConfigTable.keys())
+                .map(LuaValue::toString).toList();
+
+        return new SceneBase(config, blocks, blockRects, dummyPoints, routesConfig);
     }
 
     @Data

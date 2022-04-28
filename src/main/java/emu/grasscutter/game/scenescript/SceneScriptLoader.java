@@ -10,7 +10,7 @@ public class SceneScriptLoader {
     public void loadSceneMain(String scriptPath) {
         Globals globals = JsePlatform.standardGlobals();
         globals.loadfile(scriptPath).call();
-        SceneBase sceneBase = new SceneBase(globals);
+        SceneBase sceneBase = SceneBase.fromLuaTable(globals);
         Grasscutter.getLogger().info("Loaded scene script: " + sceneBase);
     }
 

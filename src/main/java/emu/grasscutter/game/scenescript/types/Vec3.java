@@ -15,14 +15,12 @@ public class Vec3 {
         this.z = z;
     }
 
-    private Vec3(LuaTable table) {
-        x = table.get("x").tofloat();
-        y = table.get("y").tofloat();
-        z = table.get("z").tofloat();
-    }
-
     public static Vec3 fromLuaTable(LuaTable table) {
-        return new Vec3(table);
+        return new Vec3(
+                table.get("x").tofloat(),
+                table.get("y").tofloat(),
+                table.get("z").tofloat()
+        );
     }
 
     public LuaTable toLuaTable() {
