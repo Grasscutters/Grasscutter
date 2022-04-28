@@ -1,5 +1,7 @@
 package emu.grasscutter.task;
 
+import org.quartz.JobDataMap;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
@@ -27,4 +29,6 @@ public @interface Task {
     String taskName() default "NO_NAME";
     String taskCronExpression() default "0 0 0 0 0 ?";
     String triggerName() default "NO_NAME";
+    boolean executeImmediatelyAfterReset() default false;
+    boolean executeImmediately() default false;
 }
