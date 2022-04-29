@@ -83,6 +83,9 @@ public class GiveAllCommand implements CommandHandler {
             Avatar avatar = new Avatar(avatarData);
             avatar.setLevel(90);
             avatar.setPromoteLevel(6);
+            for(int i = 1;i <= 6;++i){
+                avatar.getTalentIdList().add((avatar.getAvatarId()-10000000)*10+i);
+            }
             // This will handle stats and talents
             avatar.recalcStats();
             player.addAvatar(avatar);

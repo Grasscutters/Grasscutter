@@ -1,0 +1,10 @@
+syntax = "proto3";
+option java_package = "emu.grasscutter.net.proto";
+import "OnlinePlayerInfo.proto";
+
+message GetOnlinePlayerListRsp {
+	int32 retcode = 1;
+	repeated OnlinePlayerInfo player_info_list = 2;
+	uint32 param = 3;
+	uint32 targetUid = 4;
+}
