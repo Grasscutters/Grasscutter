@@ -7,6 +7,15 @@ public class DropData {
     private int minCount;
     private int maxCount;
     private boolean share = false;
+    private boolean give = false;
+
+    public boolean isGive() {
+        return give;
+    }
+
+    public void setGive(boolean give) {
+        this.give = give;
+    }
 
     public int getItemId() {
         return itemId;
@@ -43,15 +52,4 @@ public class DropData {
         this.share = share;
     }
 
-    public boolean isGive() {
-        return give;
-    }
-
-    private boolean give = false;
-
-    public boolean isExp() {
-        return exp;
-    }
-
-    private boolean exp = false;
 }
