@@ -28,7 +28,7 @@ public class DungeonManager {
 	public void getEntryInfo(Player player, int pointId) {
 		ScenePointEntry entry = GameData.getScenePointEntryById(player.getScene().getId(), pointId);
 		
-		if (entry == null || entry.getPointData().getDungeonIds() == null) {
+		if (entry == null) {
 			// Error
 			player.sendPacket(new PacketDungeonEntryInfoRsp());
 			return;
@@ -78,5 +78,11 @@ public class DungeonManager {
 		// Transfer player back to world
 		player.getWorld().transferPlayerToScene(player, prevScene, prevPos);
 		player.sendPacket(new BasePacket(PacketOpcodes.PlayerQuitDungeonRsp));
+	}
+	
+	public void updateDailyDungeons() {
+		for (ScenePointEntry entry : GameData.getScenePointEntries().values()) {
+			entry.getPointData().updateDailyDungeon();
+		}
 	}
 }
