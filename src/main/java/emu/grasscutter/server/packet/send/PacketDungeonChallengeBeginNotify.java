@@ -13,6 +13,7 @@ public class PacketDungeonChallengeBeginNotify extends BasePacket {
 		DungeonChallengeBeginNotify proto = DungeonChallengeBeginNotify.newBuilder()
 				.setChallengeId(challenge.getChallengeId())
 				.setChallengeIndex(challenge.getChallengeIndex())
+				.setGroupId(challenge.getGroup().id)
 				.build();
 		
 		this.setData(proto);

@@ -139,6 +139,10 @@ public class ScriptLib {
 		return 0;
 	}
 	
+	public int AddExtraGroupSuite(int groupId, int param2) {
+		return 0;
+	}
+	
 	public int ActiveChallenge(int challengeId, int challengeIndex, int param3, int groupId, int param4, int param5) {
 		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
 		

@@ -17,4 +17,6 @@ message DungeonChallengeFinishNotify {
 	uint32 challenge_record_type = 4;
 	uint32 current_value = 5;
 	map<uint32, StrengthenPointData> strengthen_point_data_map = 6;
+	uint32 unk1 = 7;
+	uint32 unk2 = 8;
 }
