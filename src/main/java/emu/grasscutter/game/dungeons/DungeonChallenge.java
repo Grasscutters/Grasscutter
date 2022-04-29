@@ -23,7 +23,8 @@ public class DungeonChallenge {
 	
 	private int challengeIndex;
 	private int challengeId;
-	private boolean isSuccess;
+	private boolean success;
+	private boolean progress;
 	
 	private int score;
 	private int objective = 0;
@@ -60,11 +61,15 @@ public class DungeonChallenge {
 	}
 
 	public boolean isSuccess() {
-		return isSuccess;
+		return success;
 	}
 
 	public void setSuccess(boolean isSuccess) {
-		this.isSuccess = isSuccess;
+		this.success = isSuccess;
+	}
+	
+	public boolean inProgress() {
+		return progress;
 	}
 
 	public int getScore() {
@@ -72,10 +77,12 @@ public class DungeonChallenge {
 	}
 
 	public void start() {
+		this.progress = true;
 		getScene().broadcastPacket(new PacketDungeonChallengeBeginNotify(this));
 	}
 	
 	public void finish() {
+		this.progress = false;
 		getScene().broadcastPacket(new PacketDungeonChallengeFinishNotify(this));
 		
 		if (this.isSuccess()) {
