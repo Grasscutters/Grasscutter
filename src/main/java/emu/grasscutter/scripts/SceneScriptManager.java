@@ -151,7 +151,9 @@ public class SceneScriptManager {
 			this.blocks = blocks;
 		} catch (ScriptException e) {
 			Grasscutter.getLogger().error("Error running script", e);
+			return;
 		}
+		
 		// TEMP
 		this.isInit = true;
 	}
