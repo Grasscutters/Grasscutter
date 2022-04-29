@@ -8,6 +8,7 @@ import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +72,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		item.setLevel(level);
 		item.setMainPropId(mainPropId);
 		item.getAppendPropIdList().addAll(appendPropIdList);
-		targetPlayer.getInventory().addItem(item);
+		targetPlayer.getInventory().addItem(item, ActionReason.SubfieldDrop);
 
 		CommandHandler.sendMessage(sender, String.format("Given %s to %s.", itemId, target));
 	}
