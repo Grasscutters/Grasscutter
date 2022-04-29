@@ -1,0 +1,11 @@
+<profiles version="15">
+  <profile kind="CodeFormatterProfile" name="CodeStyle" version="15">
+    <setting id="org.eclipse.jdt.core.formatter.disabling_tag" value="@formatter:off"/>
+    <setting id="org.eclipse.jdt.core.formatter.use_on_off_tags" value="true"/>
+    <setting id="org.eclipse.jdt.core.formatter.comment.line_length" value="100"/>
+    <setting id="org.eclipse.jdt.core.formatter.lineSplit" value="100"/>
+    <setting id="org.eclipse.jdt.core.formatter.indentation.size" value="4"/>
+    <setting id="org.eclipse.jdt.core.formatter.tabulation.char" value="space"/>
+    <setting id="org.eclipse.jdt.core.formatter.alignment_for_selector_in_method_invocation" value="80" />
+  </profile>
+</profiles>

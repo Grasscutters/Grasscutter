@@ -12,6 +12,9 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application
     id 'application'
+
+    // Apply the spotless plugin for code format
+    id "com.diffplug.spotless" version "6.5.1"
 }
 
 sourceCompatibility = 1.8
@@ -65,3 +68,12 @@ jar {
     destinationDir = file(".")
 }
 
+spotless {
+    java {
+        importOrder('emu.grasscutter', '', 'java', 'javax', '\\#java', '\\#')
+        removeUnusedImports()
+
+        eclipse().configFile('code-format.xml')
+        endWithNewline()
+    }
+}
