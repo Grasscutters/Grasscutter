@@ -78,7 +78,7 @@ public final class Config {
 		
 		public String WelcomeMailSender  = "Yuuki";
 		public String WelcomeMailTitle   = "Welcome to Yuuki Server";
-		public String WelcomeMailContent = "Thank you for registering on Yuuki Server, as a thank you to you we give you a gift, please enjoy. \r\n\r\nCheck out our:\r\n<type=\"browser\" text=\"Discord\" href=\"https://discord.gg/tRYMG7Nm2D\"/>";		
+		public String WelcomeMailContent = "";
 		public int[] WelcomeMailItems = {1002,1003,1005,1006,1007,1014,1015,1016,1020,1021,1022,1023,1024,1025,1026,1027,1029,1030,1031,1032,1033,1034,1035,1036,1037,1038,1039,1041,1042,1043,1044,1045,1046,1047,1048,1049,1050,1051,1052,1053,1054,1055,1056,1057,1058,1062,1063,1064};
 
 		public boolean EnableOfficialShop = true;
