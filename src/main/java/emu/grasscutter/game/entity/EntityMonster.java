@@ -23,6 +23,7 @@ import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo;
 import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo;
+import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
@@ -114,6 +115,9 @@ public class EntityMonster extends GameEntity {
 	public void onDeath(int killerId) {
 		if (this.getSpawnEntry() != null) {
 			this.getScene().getDeadSpawnedEntities().add(getSpawnEntry());
+		}
+		if (getScene().getScriptManager().isInit() && this.getGroupId() > 0) {
+			getScene().getScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_DIE, null);
 		}
 		if (getScene().getChallenge() != null && getScene().getChallenge().getGroup().id == this.getGroupId()) {
 			getScene().getChallenge().onMonsterDie(this);

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.script.Bindings;
@@ -33,6 +34,7 @@ import emu.grasscutter.scripts.data.SceneInitConfig;
 import emu.grasscutter.scripts.data.SceneMonster;
 import emu.grasscutter.scripts.data.SceneSuite;
 import emu.grasscutter.scripts.data.SceneTrigger;
+import emu.grasscutter.scripts.data.SceneVar;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -41,8 +43,9 @@ public class SceneScriptManager {
 	private final Scene scene;
 	private final ScriptLib scriptLib;
 	private final LuaValue scriptLibLua;
-	private Bindings bindings;
+	private final Map<String, LuaValue> variables;
 	
+	private Bindings bindings;
 	private SceneConfig config;
 	private List<SceneBlock> blocks;
 	private Int2ObjectOpenHashMap<Set<SceneTrigger>> triggers;
@@ -53,6 +56,7 @@ public class SceneScriptManager {
 		this.scriptLib = new ScriptLib(this);
 		this.scriptLibLua = CoerceJavaToLua.coerce(this.scriptLib);
 		this.triggers = new Int2ObjectOpenHashMap<>();
+		this.variables = new HashMap<>();
 		
 		// TEMPORARY
 		if (this.getScene().getId() < 10) {
@@ -85,6 +89,10 @@ public class SceneScriptManager {
 
 	public List<SceneBlock> getBlocks() {
 		return blocks;
+	}
+
+	public Map<String, LuaValue> getVariables() {
+		return variables;
 	}
 
 	public Set<SceneTrigger> getTriggersByEvent(int eventId) {
@@ -203,6 +211,9 @@ public class SceneScriptManager {
 			group.triggers = ScriptLoader.getSerializer().toList(SceneTrigger.class, bindings.get("triggers"));
 			group.suites = ScriptLoader.getSerializer().toList(SceneSuite.class, bindings.get("suites"));
 			group.init_config = ScriptLoader.getSerializer().toObject(SceneInitConfig.class, bindings.get("init_config"));
+			
+			List<SceneVar> variables = ScriptLoader.getSerializer().toList(SceneVar.class, bindings.get("variables"));
+			variables.forEach(var -> this.getVariables().put(var.name, LuaValue.valueOf(var.value)));
 		} catch (ScriptException e) {
 			Grasscutter.getLogger().error("Error loading group " + group.id + " in scene " + getScene().getId(), e);
 		}
