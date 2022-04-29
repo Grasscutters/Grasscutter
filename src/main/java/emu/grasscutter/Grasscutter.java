@@ -9,6 +9,7 @@ import java.net.InetSocketAddress;
 
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.plugin.PluginManager;
+import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
@@ -67,6 +68,7 @@ public final class Grasscutter {
 		
 		// Load all resources.
 		ResourceLoader.loadAll();
+		ScriptLoader.init();
 		// Database
 		DatabaseManager.initialize();
 
