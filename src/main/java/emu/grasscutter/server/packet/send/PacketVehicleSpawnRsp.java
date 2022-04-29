@@ -9,6 +9,7 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 
+import emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember;
 import emu.grasscutter.net.proto.VehicleSpawnRspOuterClass.VehicleSpawnRsp;
 
 import emu.grasscutter.utils.Position;
@@ -32,9 +33,12 @@ public class PacketVehicleSpawnRsp extends BasePacket {
 				.toList();
 
 		previousVehicles.stream().forEach(entity -> {
-			((EntityVehicle) entity).getVehicleMembers().stream().forEach(vehicleMember -> {
+			List<VehicleMember> vehicleMembers = ((EntityVehicle) entity).getVehicleMembers().stream().toList();
+
+			vehicleMembers.stream().forEach(vehicleMember -> {
 				player.getScene().broadcastPacket(new PacketVehicleInteractRsp(((EntityVehicle) entity), vehicleMember, VEHICLE_INTERACT_OUT));
 			});
+
 			player.getScene().killEntity(entity, 0);
 		});
 
