@@ -44,6 +44,8 @@ public class DungeonManager {
 			return;
 		}
 		
+		Grasscutter.getLogger().info(player.getNickname() + " is trying to enter dungeon " + dungeonId);
+		
 		int sceneId = data.getSceneId();
 		player.getScene().setPrevScene(sceneId);
 		

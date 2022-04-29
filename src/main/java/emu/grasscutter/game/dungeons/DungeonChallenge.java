@@ -12,6 +12,7 @@ import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneMonster;
+import emu.grasscutter.server.packet.send.PacketChallengeDataNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeBeginNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
@@ -66,6 +67,10 @@ public class DungeonChallenge {
 		this.isSuccess = isSuccess;
 	}
 
+	public int getScore() {
+		return score;
+	}
+
 	public void start() {
 		getScene().broadcastPacket(new PacketDungeonChallengeBeginNotify(this));
 	}
@@ -81,9 +86,11 @@ public class DungeonChallenge {
 	}
 
 	public void onMonsterDie(EntityMonster entity) {
-		score++;
+		score = getScore() + 1;
 		
-		if (score >= objective) {
+		getScene().broadcastPacket(new PacketChallengeDataNotify(this, 1, getScore()));
+		
+		if (getScore() >= objective) {
 			this.setSuccess(true);
 			finish();
 		}
