@@ -145,7 +145,7 @@ public class SceneScriptManager {
 				SceneBlock block = blocks.get(0);
 				block.id = blockIds.get(i);
 				
-				loadBlock(block);
+				loadBlockFromScript(block);
 			}
 			
 			this.blocks = blocks;
@@ -162,7 +162,7 @@ public class SceneScriptManager {
 		return isInit;
 	}
 	
-	private void loadBlock(SceneBlock block) {
+	private void loadBlockFromScript(SceneBlock block) {
 		CompiledScript cs = ScriptLoader.getScriptByPath(
 			Grasscutter.getConfig().SCRIPTS_FOLDER + "Scene/" + getScene().getId() + "/scene" + getScene().getId() + "_block" + block.id + "." + ScriptLoader.getScriptType());
 	
@@ -176,13 +176,16 @@ public class SceneScriptManager {
 			
 			// Set groups
 			block.groups = ScriptLoader.getSerializer().toList(SceneGroup.class, bindings.get("groups"));
-			block.groups.forEach(this::loadGroup);
+			block.groups.forEach(g -> g.block_id = block.id);
 		} catch (ScriptException e) {
 			Grasscutter.getLogger().error("Error loading block " + block.id + " in scene " + getScene().getId(), e);
 		}
 	}
 	
-	private void loadGroup(SceneGroup group) {
+	public void loadGroupFromScript(SceneGroup group) {
+		// Set flag here so if there is no script, we dont call this function over and over again.
+		group.setLoaded(true);
+		
 		CompiledScript cs = ScriptLoader.getScriptByPath(
 			Grasscutter.getConfig().SCRIPTS_FOLDER + "Scene/" + getScene().getId() + "/scene" + getScene().getId() + "_group" + group.id + "." + ScriptLoader.getScriptType());
 	
@@ -213,13 +216,13 @@ public class SceneScriptManager {
 
 	}
 	
-	public void spawnGadgetsInGroup(SceneBlock block, SceneGroup group) {
+	public void spawnGadgetsInGroup(SceneGroup group) {
 		for (SceneGadget g : group.gadgets) {
 			EntityGadget entity = new EntityGadget(getScene(), g.gadget_id, g.pos);
 			
 			if (entity.getGadgetData() == null) continue;
 			
-			entity.setBlockId(block.id);
+			entity.setBlockId(group.block_id);
 			entity.setConfigId(g.config_id);
 			entity.setGroupId(group.id);
 			entity.getRotation().set(g.rot);
