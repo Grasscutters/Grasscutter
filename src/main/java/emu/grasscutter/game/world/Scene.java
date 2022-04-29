@@ -482,8 +482,8 @@ public class Scene {
 		
 		for (SceneBlock block : visible) {
 			if (!this.getLoadedBlocks().contains(block)) {
-				this.getLoadedBlocks().add(block);
 				this.onLoadBlock(block);
+				this.getLoadedBlocks().add(block);
 			}
 		}
 	}
@@ -491,11 +491,17 @@ public class Scene {
 	// TODO optimize
 	public void onLoadBlock(SceneBlock block) {
 		for (SceneGroup group : block.groups) {
+			// We load the script files for the groups here
+			if (!group.isLoaded()) {
+				this.getScriptManager().loadGroupFromScript(group);
+			}
+			
 			group.triggers.forEach(getScriptManager()::registerTrigger);
 		}
 		
+		// Spawn gadgets AFTER triggers are added
 		for (SceneGroup group : block.groups) {
-			this.getScriptManager().spawnGadgetsInGroup(block, group);
+			this.getScriptManager().spawnGadgetsInGroup(group);
 		}
 	}
 	
