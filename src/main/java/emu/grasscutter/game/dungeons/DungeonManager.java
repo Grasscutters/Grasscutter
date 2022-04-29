@@ -45,9 +45,11 @@ public class DungeonManager {
 		}
 		
 		int sceneId = data.getSceneId();
+		player.getScene().setPrevScene(sceneId);
 		
 		player.getWorld().transferPlayerToScene(player, sceneId, data);
 		
+		player.getScene().setPrevScenePoint(pointId);
 		player.sendPacket(new PacketPlayerEnterDungeonRsp(pointId, dungeonId));
 	}
 	
@@ -64,7 +66,7 @@ public class DungeonManager {
 		Position prevPos = new Position(GameConstants.START_POSITION);
 		
 		if (dungeonData != null) {
-			ScenePointEntry entry = GameData.getScenePointEntryById(prevScene, dungeonData.getId());
+			ScenePointEntry entry = GameData.getScenePointEntryById(prevScene, player.getScene().getPrevScenePoint());
 			
 			if (entry != null) {
 				prevPos.set(entry.getPointData().getTranPos());

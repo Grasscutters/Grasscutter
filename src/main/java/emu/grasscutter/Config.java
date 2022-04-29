@@ -10,6 +10,7 @@ public final class Config {
 	public String PACKETS_FOLDER = "./packets/";
 	public String DUMPS_FOLDER = "./dumps/";
 	public String KEY_FOLDER = "./keys/";
+	public String SCRIPTS_FOLDER = "./resources/Scripts/";
 	public String PLUGINS_FOLDER = "./plugins/";
 
 	public String RunMode = "HYBRID"; // HYBRID, DISPATCH_ONLY, GAME_ONLY
