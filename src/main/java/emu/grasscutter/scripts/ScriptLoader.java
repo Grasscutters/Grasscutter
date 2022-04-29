@@ -13,6 +13,10 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineFactory;
 import javax.script.ScriptEngineManager;
 
+import org.luaj.vm2.LuaValue;
+import org.luaj.vm2.lib.OneArgFunction;
+import org.luaj.vm2.script.LuajContext;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.serializer.LuaSerializer;
 import emu.grasscutter.scripts.serializer.Serializer;
@@ -31,11 +35,23 @@ public class ScriptLoader {
 			throw new Exception("Script loader already initialized");
 		}
 		
+		// Create script engine
 		sm = new ScriptEngineManager();
         engine = sm.getEngineByName("luaj");
         factory = getEngine().getFactory();
+        
+        // Lua stuff
         fileType = "lua";
         serializer = new LuaSerializer();
+        
+        // Set engine to replace require as a temporary fix to missing scripts
+        LuajContext ctx = (LuajContext) engine.getContext();
+		ctx.globals.set("require", new OneArgFunction() {
+		    @Override
+		    public LuaValue call(LuaValue arg0) {
+		        return LuaValue.ZERO;
+		    }
+		});
 	}
 	
 	public static ScriptEngine getEngine() {
