@@ -25,9 +25,11 @@ import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
-public class EntityVehicle extends EntityGadget {
+public class EntityVehicle extends EntityBaseGadget {
+
 	private final Player owner;
 	private final Int2FloatOpenHashMap fightProp;
 

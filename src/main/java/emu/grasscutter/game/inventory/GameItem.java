@@ -244,6 +244,10 @@ public class GameItem {
 		return mainPropId;
 	}
 
+	public void setMainPropId(int mainPropId) {
+		this.mainPropId = mainPropId;
+	}
+
 	public List<Integer> getAppendPropIdList() {
 		return appendPropIdList;
 	}

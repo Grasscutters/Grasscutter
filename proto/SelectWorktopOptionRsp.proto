@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message SelectWorktopOptionRsp {
+	int32 retcode = 1;
+	uint32 gadget_entity_id = 2;
+	uint32 option_id = 3;
+}

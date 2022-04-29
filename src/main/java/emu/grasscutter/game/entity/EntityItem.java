@@ -23,7 +23,7 @@ import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 
-public class EntityItem extends EntityGadget {
+public class EntityItem extends EntityBaseGadget {
 	private final Position pos;
 	private final Position rot;
 	

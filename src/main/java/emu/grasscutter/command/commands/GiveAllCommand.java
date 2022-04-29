@@ -83,9 +83,6 @@ public class GiveAllCommand implements CommandHandler {
             Avatar avatar = new Avatar(avatarData);
             avatar.setLevel(90);
             avatar.setPromoteLevel(6);
-            for (int i = 1; i <= 6; ++i) {
-                avatar.getTalentIdList().add((avatar.getAvatarId() - 10000000) * 10 + i);
-            }
             // This will handle stats and talents
             avatar.recalcStats();
             player.addAvatar(avatar);
@@ -98,7 +95,7 @@ public class GiveAllCommand implements CommandHandler {
             if (isTestItem(itemdata.getId())) continue;
 
             if (itemdata.isEquip()) {
-                for (int i = 0; i < 10; ++i) {
+                for (int i = 0; i < 5; ++i) {
                     GameItem item = new GameItem(itemdata);
                     if (itemdata.getItemType() == ItemType.ITEM_WEAPON) {
                         item.setLevel(90);
@@ -114,7 +111,7 @@ public class GiveAllCommand implements CommandHandler {
                 itemList.add(item);
             }
         }
-        int packetNum = 20;
+        int packetNum = 10;
         int itemLength = itemList.size();
         int number = itemLength / packetNum;
         int remainder = itemLength % packetNum;
@@ -171,15 +168,27 @@ public class GiveAllCommand implements CommandHandler {
     private static final Range[] testItemRanges = new Range[] {
             new Range(106, 139),
             new Range(1000, 1099),
-            new Range(2001, 2008),
-            new Range(2017, 2029),
-          //  new Range(108001, 108387) //food
+            new Range(2001, 3022),
+            new Range(23300, 23340),
+            new Range(23383, 23385),
+            new Range(78310, 78554),
+            new Range(99310, 99554),
+            new Range(100001, 100187),
+            new Range(100210, 100214),
+            new Range(100303, 100398),
+            new Range(100414, 100425),
+            new Range(100454, 103008),
+            new Range(109000, 109492),
+            new Range(115001, 118004),
+            new Range(141001, 141072),
+            new Range(220050, 221016),
     };
     private static final Integer[] testItemsIds = new Integer[] {
-            210, 211, 314, 315, 317, 1005, 1007, 1105, 1107, 1201, 1202, 2800,
-            100001, 100002, 100244, 100305, 100312, 100313, 101212, 11411, 11506, 11507, 11508, 12505,
-            12506, 12508, 12509, 13503, 13506, 14411, 14503, 14505, 14508, 15411, 15504, 15505,
-            15506, 15508, 20001, 10002, 10003, 10004, 10005, 10006, 10008 //9
+            210, 211, 314, 315, 317, 1005, 1007, 1105, 1107, 1201, 1202,10366,
+            101212, 11411, 11506, 11507, 11508, 12505, 12506, 12508, 12509, 13503,
+            13506, 14411, 14503, 14505, 14508, 15411, 15504, 15505, 15506, 15508,
+            20001, 10002, 10003, 10004, 10005, 10006, 10008,100231,100232,100431,
+            101689,105001,105004, 106000,106001,108000,110000
     };
 
     private static final Collection<Integer> testItemsList = Arrays.asList(testItemsIds);
