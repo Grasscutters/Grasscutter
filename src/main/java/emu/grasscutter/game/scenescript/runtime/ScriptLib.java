@@ -24,6 +24,7 @@ public class ScriptLib extends TwoArgFunction {
         scriptLib.set("GetServerTime", new GetServerTimeImpl());
         scriptLib.set("GetGroupVariableValue", new GetGroupVariableValueImpl());
         scriptLib.set("CancelGroupTimerEvent",new CancelGroupTimerEventImpl());
+        scriptLib.set("RefreshGroup", new RefreshGroupImpl());
         env.set("ScriptLib", scriptLib);
         env.get("package").get("loaded").set("ScriptLib", scriptLib);
         return scriptLib;
