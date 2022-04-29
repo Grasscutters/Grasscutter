@@ -48,11 +48,12 @@ public class ResourceLoader {
 		loadOpenConfig();
 		// Load resources
 		loadResources();
-		loadScenePoints();
 		// Process into depots
 		GameDepot.load();
 		// Load spawn data
 		loadSpawnData();
+		// Load scene points - must be done AFTER resources are loaded
+		loadScenePoints();
 		// Custom - TODO move this somewhere else
 		try {
 			GameData.getAvatarSkillDepotDataMap().get(504).setAbilities(
@@ -168,6 +169,9 @@ public class ResourceLoader {
 
 				ScenePointEntry sl = new ScenePointEntry(sceneId + "_" + entry.getKey(), pointData);
 				scenePointList.add(sl);
+				GameData.getScenePointIdList().add(pointData.getId());
+				
+				pointData.updateDailyDungeon();
 			}
 
 			for (ScenePointEntry entry : scenePointList) {
