@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.luaj.vm2.LuaTable;
+import org.luaj.vm2.LuaValue;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
@@ -120,7 +121,7 @@ public class ScriptLib {
 		return 0;
 	}
 	
-	public int AddExtraGroupSuite(int groupId, int param2) {
+	public int AddExtraGroupSuite(int groupId, int suite) {
 		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
 		
 		if (group == null || group.monsters == null) {
@@ -151,8 +152,35 @@ public class ScriptLib {
 		return 0;
 	}
 	
+	public int GetGroupMonsterCountByGroupId(int groupId) {
+		return (int) getSceneScriptManager().getScene().getEntities().values().stream()
+								.filter(e -> e instanceof EntityMonster && e.getGroupId() == groupId)
+								.count();
+	}
+	
+	public LuaValue GetGroupVariableValue(String var) {
+		return getSceneScriptManager().getVariables().getOrDefault(var, LuaValue.NIL);
+	}
+	
+	public LuaValue ChangeGroupVariableValue(String var, LuaValue value) {
+		getSceneScriptManager().getVariables().put(var, value);
+		return LuaValue.ZERO;
+	}
+	
 	public int RefreshGroup(LuaTable table) {
-		// Add group back to suite
+		// Kill and Respawn?
+		int groupId = table.get("group_id").toint();
+		int suite = table.get("suite").toint();
+		
+		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
+		
+		if (group == null || group.monsters == null) {
+			return 1;
+		}
+		
+		// TODO just spawn all from group for now
+		this.getSceneScriptManager().spawnMonstersInGroup(group);
+		
 		return 0;
 	}
 	
