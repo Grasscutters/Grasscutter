@@ -109,12 +109,14 @@ chmod +x gradlew
 | -------------- | -------------------------------------------- | ------------------------- | -------- | ------------------------------------------ | ----------------------------------------------- |
 | account        | account <create\|delete> <用户名> [uid]      |                           | 仅服务端 | 通过指定用户名和uid增删账户                |                                                 |
 | broadcast      | broadcast <消息内容>                         | server.broadcast          | 均可使用 | 给所有玩家发送公告                         | b                                               |
+| coop           | coop <uid> <目标uid>                 | server.coop               | 均可使用    | 强制某位玩家进入指定玩家的多人世界                  |                                                 |
 | changescene    | changescene <场景ID>                         | player.changescene        | 仅客户端 | 切换到指定场景                             | scene                                           |
 | clearartifacts | clearartifacts                               | player.clearartifacts     | 仅客户端 | 删除所有未装备及未解锁的圣遗物,包括五星    | clearart                                        |
 | clearweapons   | clearweapons                                 | player.clearweapons       | 仅客户端 | 删除所有未装备及未解锁的武器,包括五星      | clearwp                                         |
 | drop           | drop <物品ID\|物品名称> [数量]               | server.drop               | 仅客户端 | 在指定玩家周围掉落指定物品                 | `d` `dropitem`                                  |
 | give           | give [uid] <物品ID\|物品名称> [数量] [等级]  |                           |          | 给予指定玩家一定数量及等级的物品           | `g` `item` `giveitem`                           |
 | givechar       | givechar <uid> <角色ID> [等级]               | player.givechar           | 均可使用 | 给予指定玩家对应角色                       | givec                                           |
+| giveall        | giveall [uid] [数量]                         | player.giveall            | 均可使用 | 给予指定玩家全部物品                       | givea                                           |
 | godmode        | godmode [uid]                                | player.godmode            | 仅客户端 | 保护你不受到任何伤害(依然会被击退)         |                                                 |
 | heal           | heal                                         | player.heal               | 仅客户端 | 治疗队伍中所有角色                         | h                                               |
 | help           | help [命令]                                  |                           | 均可使用 | 显示帮助或展示指定命令的帮助               |                                                 |
@@ -134,6 +136,7 @@ chmod +x gradlew
 | stop           | stop                                         | server.stop               | 均可使用 | 停止服务器                                 |                                                 |
 | talent         | talent <天赋ID> <等级>                       | player.settalent          | 仅客户端 | 设置当前角色的天赋等级                     |                                                 |
 | teleport       | teleport <x> <y> <z>                         | player.teleport           | 仅客户端 | 传送玩家到指定坐标                         | tp                                              |
+| tpall          |                                                   | player.tpall              | 仅客户端  | 传送多人世界中所有的玩家到自身地点         |                                                 |
 | weather        | weather <天气ID> <气候ID>                    | player.weather            | 仅客户端 | 改变天气                                   | w                                               |
 
 ### 额外功能

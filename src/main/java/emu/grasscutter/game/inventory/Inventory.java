@@ -168,7 +168,7 @@ public class Inventory implements Iterable<GameItem> {
 		} else if (type == ItemType.ITEM_VIRTUAL) {
 			// Handle
 			this.addVirtualItem(item.getItemId(), item.getCount());
-			return null;
+			return item;
 		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_AVATAR) {
 			// Get avatar id
 			int avatarId = (item.getItemId() % 1000) + 10000000;
@@ -218,7 +218,8 @@ public class Inventory implements Iterable<GameItem> {
 		}
 		
 		// Set ownership and save to db
-		item.save();
+		if (item.getItemData().getItemType() != ItemType.ITEM_VIRTUAL)
+			item.save();
 		
 		return item;
 	}
@@ -236,18 +237,22 @@ public class Inventory implements Iterable<GameItem> {
 	private void addVirtualItem(int itemId, int count) {
 		switch (itemId) {
 			case 101: // Character exp
-				for (EntityAvatar entity : getPlayer().getTeamManager().getActiveTeam()) {
-					getPlayer().getServer().getInventoryManager().upgradeAvatar(player, entity.getAvatar(), count);
-				}
+				getPlayer().getServer().getInventoryManager().upgradeAvatar(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
 				break;
 			case 102: // Adventure exp
 				getPlayer().addExpDirectly(count);
+				break;
+			case 105: // Companionship exp
+				getPlayer().getServer().getInventoryManager().upgradeAvatarFetterLevel(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
 				break;
 			case 201: // Primogem
 				getPlayer().setPrimogems(player.getPrimogems() + count);
 				break;
 			case 202: // Mora
 				getPlayer().setMora(player.getMora() + count);
+				break;
+			case 203: // Genesis Crystals
+				getPlayer().setCrystals(player.getCrystals() + count);
 				break;
 		}
 	}

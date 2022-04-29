@@ -21,20 +21,22 @@ import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.shop.ShopInfo;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
-import emu.grasscutter.net.proto.HeadImageOuterClass.HeadImage;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
+import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
+import emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
@@ -92,6 +94,9 @@ public class Player {
 	private Date moonCardStartTime;
 	private int moonCardDuration;
 	private Set<Date> moonCardGetTimes;
+
+	private List<Integer> showAvatarList;
+	private boolean showAvatars;
 
 	@Transient private boolean paused;
 	@Transient private int enterSceneToken;
@@ -293,6 +298,15 @@ public class Player {
 	public void setMora(int mora) {
 		this.setProperty(PlayerProperty.PROP_PLAYER_SCOIN, mora);
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_SCOIN));
+	}
+	
+	public int getCrystals() {
+		return this.getProperty(PlayerProperty.PROP_PLAYER_MCOIN);
+	}
+
+	public void setCrystals(int crystals) {
+		this.setProperty(PlayerProperty.PROP_PLAYER_MCOIN, crystals);
+		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_MCOIN));
 	}
 
 	private int getExpRequired(int level) {
@@ -504,6 +518,22 @@ public class Player {
 		this.regionId = regionId;
 	}
 
+	public void setShowAvatars(boolean showAvatars) {
+		this.showAvatars = showAvatars;
+	}
+
+	public boolean isShowAvatars() {
+		return showAvatars;
+	}
+
+	public void setShowAvatarList(List<Integer> showAvatarList) {
+		this.showAvatarList = showAvatarList;
+	}
+
+	public List<Integer> getShowAvatarList() {
+		return showAvatarList;
+	}
+
 	public boolean inMoonCard() {
 		return moonCard;
 	}
@@ -550,11 +580,7 @@ public class Player {
 	}
 
 	public void rechargeMoonCard() {
-		LinkedList<GameItem> items = new LinkedList<GameItem>();
-		for (int i = 0; i < 300; i++) {
-			items.add(new GameItem(203));
-		} 
-		inventory.addItems(items);
+		inventory.addItem(new GameItem(203, 300));
 		if (!moonCard) {
 			moonCard = true;
 			Date now = new Date();
@@ -596,27 +622,26 @@ public class Player {
 		return shopLimit;
 	}
 
-	public int getGoodsLimitNum(int goodsId) {
-		for (ShopLimit sl : getShopLimit()) {
-			if (sl.getShopGoodId() == goodsId)
-				return sl.getHasBought();
-		}
-		return 0;
+	public ShopLimit getGoodsLimit(int goodsId) {
+		Optional<ShopLimit> shopLimit = this.shopLimit.stream().filter(x -> x.getShopGoodId() == goodsId).findFirst();
+		if (shopLimit.isEmpty())
+			return null;
+		return shopLimit.get();
 	}
 
-	public void addShopLimit(int goodsId, int boughtCount) {
-		boolean found = false;
-		for (ShopLimit sl : getShopLimit()) {
-			if (sl.getShopGoodId() == goodsId){
-				sl.setHasBought(sl.getHasBought() + boughtCount);
-				found = true;
-			}
-		}
-		if (!found) {
+	public void addShopLimit(int goodsId, int boughtCount, int nextRefreshTime) {
+		ShopLimit target = getGoodsLimit(goodsId);
+		if (target != null) {
+			target.setHasBought(target.getHasBought() + boughtCount);
+			target.setHasBoughtInPeriod(target.getHasBoughtInPeriod() + boughtCount);
+			target.setNextRefreshTime(nextRefreshTime);
+		} else {
 			ShopLimit sl = new ShopLimit();
 			sl.setShopGoodId(goodsId);
 			sl.setHasBought(boughtCount);
-			shopLimit.add(sl);
+			sl.setHasBoughtInPeriod(boughtCount);
+			sl.setNextRefreshTime(nextRefreshTime);
+			getShopLimit().add(sl);
 		}
 		this.save();
 	}
@@ -794,7 +819,7 @@ public class Player {
 				.setMpSettingType(this.getMpSetting())
 				.setNameCardId(this.getNameCardId())
 				.setSignature(this.getSignature())
-				.setAvatarId(HeadImage.newBuilder().setAvatarId(this.getHeadImage()).getAvatarId());
+				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()));
 
 		if (this.getWorld() != null) {
 			onlineInfo.setCurPlayerNumInWorld(this.getWorld().getPlayers().indexOf(this) + 1);
@@ -827,15 +852,49 @@ public class Player {
 	}
 
 	public SocialDetail.Builder getSocialDetail() {
+		List<SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> socialShowAvatarInfoList = new ArrayList<>();
+		if (this.isOnline()) {
+			if (this.getShowAvatarList() != null) {
+				for (int avatarId : this.getShowAvatarList()) {
+					socialShowAvatarInfoList.add(
+							socialShowAvatarInfoList.size(),
+							SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.newBuilder()
+									.setAvatarId(avatarId)
+									.setLevel(getAvatars().getAvatarById(avatarId).getLevel())
+									.setCostumeId(getAvatars().getAvatarById(avatarId).getCostume())
+									.build()
+					);
+				}
+			}
+		} else {
+			List<Integer> showAvatarList = DatabaseHelper.getPlayerById(id).getShowAvatarList();
+			AvatarStorage avatars = DatabaseHelper.getPlayerById(id).getAvatars();
+			avatars.loadFromDatabase();
+			if (showAvatarList != null) {
+				for (int avatarId : showAvatarList) {
+					socialShowAvatarInfoList.add(
+							socialShowAvatarInfoList.size(),
+							SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.newBuilder()
+									.setAvatarId(avatarId)
+									.setLevel(avatars.getAvatarById(avatarId).getLevel())
+									.setCostumeId(avatars.getAvatarById(avatarId).getCostume())
+									.build()
+					);
+				}
+			}
+		}
+
 		SocialDetail.Builder social = SocialDetail.newBuilder()
 				.setUid(this.getUid())
-				.setAvatarId(HeadImage.newBuilder().setAvatarId(this.getHeadImage()).getAvatarId())
+				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()))
 				.setNickname(this.getNickname())
 				.setSignature(this.getSignature())
 				.setLevel(this.getLevel())
 				.setBirthday(this.getBirthday().getFilledProtoWhenNotEmpty())
 				.setWorldLevel(this.getWorldLevel())
 				.setNameCardId(this.getNameCardId())
+				.setIsShowAvatar(this.isShowAvatars())
+				.addAllShowAvatarInfoList(socialShowAvatarInfoList)
 				.setFinishAchievementNum(0);
 		return social;
 	}
