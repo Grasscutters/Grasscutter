@@ -274,7 +274,8 @@ public final class DispatchServer {
 		if (server == null)
 			throw new NullPointerException("An HTTP server was not created.");
 
-		server.createContext("/", t -> responseHTML(t, "Hello"));
+		String ver = new String(Files.readAllBytes(Paths.get(Grasscutter.getConfig().VERSION)));
+		server.createContext("/", t -> responseHTML(t, "Server <a href='https://github.com/akbaryahya/DockerGC'>DockerGC "+ver+"</a>"));
 
 		// Dispatch
 		server.createContext("/query_region_list", t -> {
