@@ -17,6 +17,10 @@ public abstract class GameEntity {
 	private final Scene scene;
 	private SpawnDataEntry spawnEntry;
 	
+	private int blockId;
+	private int configId;
+	private int groupId;
+	
 	private MotionState moveState;
 	private int lastMoveSceneTimeMs;
 	private int lastMoveReliableSeq;
@@ -94,6 +98,30 @@ public abstract class GameEntity {
 	
 	public float getFightProperty(FightProperty prop) {
 		return getFightProperties().getOrDefault(prop.getId(), 0f);
+	}
+	
+	public int getBlockId() {
+		return blockId;
+	}
+
+	public void setBlockId(int blockId) {
+		this.blockId = blockId;
+	}
+	
+	public int getConfigId() {
+		return configId;
+	}
+
+	public void setConfigId(int configId) {
+		this.configId = configId;
+	}
+	
+	public int getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(int groupId) {
+		this.groupId = groupId;
 	}
 	
 	protected MotionInfo getMotionInfo() {

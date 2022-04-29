@@ -15,7 +15,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.entity.EntityGadget;
+import emu.grasscutter.game.entity.EntityBaseGadget;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.FightProperty;
@@ -54,7 +54,7 @@ public class TeamManager {
 	@Transient private TeamInfo mpTeam;
 	@Transient private int entityId;
 	@Transient private final List<EntityAvatar> avatars;
-	@Transient private final Set<EntityGadget> gadgets;
+	@Transient private final Set<EntityBaseGadget> gadgets;
 	@Transient private final IntSet teamResonances;
 	@Transient private final IntSet teamResonancesConfig;
 	
@@ -141,7 +141,7 @@ public class TeamManager {
 		this.entityId = entityId;
 	}
 
-	public Set<EntityGadget> getGadgets() {
+	public Set<EntityBaseGadget> getGadgets() {
 		return gadgets;
 	}
 
