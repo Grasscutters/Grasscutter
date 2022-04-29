@@ -158,7 +158,7 @@ public final class GiveCommand implements CommandHandler {
         }
     }
 
-    private boolean item(Player player, ItemData itemData, int amount, int lvl, int refinement) {
+    private void item(Player player, ItemData itemData, int amount, int lvl, int refinement) {
         if (itemData.isEquip()) {
             List<GameItem> items = new LinkedList<>();
             for (int i = 0; i < amount; i++) {
@@ -188,12 +188,10 @@ public final class GiveCommand implements CommandHandler {
                 items.add(item);
             }
             player.getInventory().addItems(items, ActionReason.SubfieldDrop);
-            return true;
         } else {
             GameItem item = new GameItem(itemData);
             item.setCount(amount);
             player.getInventory().addItem(item, ActionReason.SubfieldDrop);
-            return true;
         }
     }
 }
