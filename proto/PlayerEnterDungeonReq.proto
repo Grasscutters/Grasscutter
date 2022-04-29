@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message PlayerEnterDungeonReq {
+	uint32 point_id = 1;
+	uint32 dungeon_id = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message PlayerEnterDungeonRsp {
+	int32 retcode = 1;
+	uint32 point_id = 2;
+	uint32 dungeon_id = 3;
+}
