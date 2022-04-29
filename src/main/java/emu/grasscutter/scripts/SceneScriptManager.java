@@ -18,7 +18,7 @@ import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.scripts.constants.ScriptEventType;
+import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.constants.ScriptGadgetState;
 import emu.grasscutter.scripts.constants.ScriptRegionShape;
 import emu.grasscutter.scripts.data.SceneBlock;
@@ -29,6 +29,7 @@ import emu.grasscutter.scripts.data.SceneInitConfig;
 import emu.grasscutter.scripts.data.SceneMonster;
 import emu.grasscutter.scripts.data.SceneSuite;
 import emu.grasscutter.scripts.data.SceneTrigger;
+import emu.grasscutter.scripts.data.ScriptArgs;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -120,7 +121,7 @@ public class SceneScriptManager {
 		bindings = ScriptLoader.getEngine().createBindings();
 		
 		// Set variables
-		bindings.put("EventType", new ScriptEventType()); // TODO - make static class to avoid instantiating a new class every scene
+		bindings.put("EventType", new EventType()); // TODO - make static class to avoid instantiating a new class every scene
 		bindings.put("GadgetState", new ScriptGadgetState());
 		bindings.put("RegionShape", new ScriptRegionShape());
 		bindings.put("ScriptLib", getScriptLib());
@@ -208,76 +209,30 @@ public class SceneScriptManager {
 	
 	// Events
 	
-	private LuaValue getFunc(String name) {
-		return (LuaValue) this.getBindings().get(name);
-	}
-	
-	public void onGadgetCreate(EntityGadget gadget) {
-		LuaTable params = new LuaTable();
-		params.set("param1", gadget.getConfigId());
-		
-		for (SceneTrigger trigger : this.getTriggersByEvent(ScriptEventType.EVENT_GADGET_CREATE)) {
-			LuaValue condition = getFunc(trigger.condition);
-
-			LuaValue ret = condition.call(this.getScriptLibLua(), params);
+	public void callEvent(int eventType, ScriptArgs params) {
+		for (SceneTrigger trigger : this.getTriggersByEvent(eventType)) {
+			LuaValue condition = null;
+			
+			if (trigger.condition != null && !trigger.condition.isEmpty()) {
+				condition = (LuaValue) this.getBindings().get(trigger.condition);
+			}
+			
+			LuaValue ret = LuaValue.TRUE;
+			
+			if (condition != null) {
+				LuaValue args = LuaValue.NIL;
+				
+				if (params != null) {
+					args = CoerceJavaToLua.coerce(params);
+				}
+				
+				ret = condition.call(this.getScriptLibLua(), args);
+			}
 			
 			if (ret.checkboolean() == true) {
-				LuaValue action = getFunc(trigger.action);
+				LuaValue action = (LuaValue) this.getBindings().get(trigger.action);
 				action.call(this.getScriptLibLua(), LuaValue.NIL);
 			}
-		}
-	}
-	
-	public void onOptionSelect(int entityId, int optionId) {
-		GameEntity entity = this.getScene().getEntityById(entityId);
-
-		if (entity == null || !(entity instanceof EntityGadget)) {
-			return;
-		}
-		
-		LuaTable params = new LuaTable();
-		params.set("param1", entity.getConfigId());
-		params.set("param2", optionId);
-		
-		for (SceneTrigger trigger : this.getTriggersByEvent(ScriptEventType.EVENT_SELECT_OPTION)) {
-			LuaValue condition = getFunc(trigger.condition);
-
-			LuaValue ret = condition.call(this.getScriptLibLua(), params);
-			
-			if (ret.checkboolean() == true) {
-				LuaValue action = getFunc(trigger.action);
-				action.call(this.getScriptLibLua(), LuaValue.NIL);
-			}
-		}
-	}
-	
-	public void onMonsterSpawn(EntityMonster entity) {
-		LuaTable params = new LuaTable();
-		params.set("param1", entity.getConfigId());
-		
-		for (SceneTrigger trigger : this.getTriggersByEvent(ScriptEventType.EVENT_ANY_MONSTER_LIVE)) {
-			LuaValue condition = getFunc(trigger.condition);
-
-			LuaValue ret = condition.call(this.getScriptLibLua(), params);
-			
-			if (ret.checkboolean() == true) {
-				LuaValue action = getFunc(trigger.action);
-				action.call(this.getScriptLibLua(), LuaValue.NIL);
-			}
-		}
-	}
-	
-	public void onChallengeSuccess() {
-		for (SceneTrigger trigger : this.getTriggersByEvent(ScriptEventType.EVENT_CHALLENGE_SUCCESS)) {
-			LuaValue action = getFunc(trigger.action);
-			action.call(this.getScriptLibLua(), LuaValue.NIL);
-		}
-	}
-	
-	public void onChallengeFailure() {
-		for (SceneTrigger trigger : this.getTriggersByEvent(ScriptEventType.EVENT_CHALLENGE_FAIL)) {
-			LuaValue action = getFunc(trigger.action);
-			action.call(this.getScriptLibLua(), LuaValue.NIL);
 		}
 	}
 }

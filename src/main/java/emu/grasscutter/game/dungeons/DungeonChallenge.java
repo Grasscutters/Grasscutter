@@ -9,6 +9,7 @@ import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
+import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneMonster;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeBeginNotify;
@@ -73,9 +74,9 @@ public class DungeonChallenge {
 		getScene().broadcastPacket(new PacketDungeonChallengeFinishNotify(this));
 		
 		if (this.isSuccess()) {
-			this.getScene().getScriptManager().onChallengeSuccess();
+			this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_SUCCESS, null);
 		} else {
-			this.getScene().getScriptManager().onChallengeFailure();
+			this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_FAIL, null);
 		}
 	}
 
