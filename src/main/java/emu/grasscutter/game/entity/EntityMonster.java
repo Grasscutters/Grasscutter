@@ -4,6 +4,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.def.MonsterCurveData;
 import emu.grasscutter.data.def.MonsterData;
+import emu.grasscutter.game.dungeons.DungeonChallenge;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
@@ -22,6 +23,7 @@ import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo;
 import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo;
+import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
@@ -36,9 +38,6 @@ public class EntityMonster extends GameEntity {
 	private final Position bornPos;
 	private final int level;
 	private int weaponEntityId;
-	
-	private int groupId;
-	private int configId;
 	private int poseId;
 	
 	public EntityMonster(Scene scene, MonsterData monsterData, Position pos, int level) {
@@ -103,22 +102,6 @@ public class EntityMonster extends GameEntity {
 	public boolean isAlive() {
 		return this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) > 0f;
 	}
-	
-	public int getGroupId() {
-		return groupId;
-	}
-
-	public void setGroupId(int groupId) {
-		this.groupId = groupId;
-	}
-
-	public int getConfigId() {
-		return configId;
-	}
-
-	public void setConfigId(int configId) {
-		this.configId = configId;
-	}
 
 	public int getPoseId() {
 		return poseId;
@@ -127,11 +110,17 @@ public class EntityMonster extends GameEntity {
 	public void setPoseId(int poseId) {
 		this.poseId = poseId;
 	}
-	
+
 	@Override
 	public void onDeath(int killerId) {
 		if (this.getSpawnEntry() != null) {
 			this.getScene().getDeadSpawnedEntities().add(getSpawnEntry());
+		}
+		if (getScene().getScriptManager().isInit() && this.getGroupId() > 0) {
+			getScene().getScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_DIE, null);
+		}
+		if (getScene().getChallenge() != null && getScene().getChallenge().getGroup().id == this.getGroupId()) {
+			getScene().getChallenge().onMonsterDie(this);
 		}
 	}
 	

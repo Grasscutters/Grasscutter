@@ -2,12 +2,13 @@ package emu.grasscutter.data.def;
 
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.game.props.EntityType;
 
 @ResourceType(name = "GadgetExcelConfigData.json")
 public class GadgetData extends GameResource {
 	private int Id;
-	
-	private String Type;
+
+	private EntityType Type;
 	private String JsonName;
 	private boolean IsInteractive;
 	private String[] Tags;
@@ -22,7 +23,7 @@ public class GadgetData extends GameResource {
 		return this.Id;
 	}
 
-	public String getType() {
+	public EntityType getType() {
 		return Type;
 	}
 
