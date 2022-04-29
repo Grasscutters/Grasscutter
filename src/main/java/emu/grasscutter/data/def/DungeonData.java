@@ -10,6 +10,7 @@ import emu.grasscutter.game.props.SceneType;
 public class DungeonData extends GameResource {
 	private int Id;
 	private int SceneId;
+	private int ShowLevel;
 	private String InvolveType; // TODO enum
 	    
 	@Override
@@ -21,6 +22,10 @@ public class DungeonData extends GameResource {
 		return SceneId;
 	}
 	
+	public int getShowLevel() {
+		return ShowLevel;
+	}
+
 	@Override
 	public void onLoad() {
 		

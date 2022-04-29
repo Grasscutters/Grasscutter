@@ -1,5 +1,6 @@
 package emu.grasscutter.scripts;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -14,6 +15,9 @@ import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.def.MonsterData;
+import emu.grasscutter.data.def.WorldLevelData;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
@@ -205,6 +209,64 @@ public class SceneScriptManager {
 	
 	public void checkTriggers() {
 
+	}
+	
+	public void spawnGadgetsInGroup(SceneBlock block, SceneGroup group) {
+		for (SceneGadget g : group.gadgets) {
+			EntityGadget entity = new EntityGadget(getScene(), g.gadget_id, g.pos);
+			
+			if (entity.getGadgetData() == null) continue;
+			
+			entity.setBlockId(block.id);
+			entity.setConfigId(g.config_id);
+			entity.setGroupId(group.id);
+			entity.getRotation().set(g.rot);
+			entity.setState(g.state);
+			
+			getScene().addEntity(entity);
+			this.callEvent(EventType.EVENT_GADGET_CREATE, new ScriptArgs(entity.getConfigId()));
+		}
+	}
+	
+	public void spawnMonstersInGroup(SceneGroup group) {
+		List<GameEntity> toAdd = new ArrayList<>();
+		
+		for (SceneMonster monster : group.monsters) {
+			MonsterData data = GameData.getMonsterDataMap().get(monster.monster_id);
+			
+			if (data == null) {
+				continue;
+			}
+			
+			// Calculate level
+			int level = monster.level;
+			
+			if (getScene().getDungeonData() != null) {
+				level = getScene().getDungeonData().getShowLevel();
+			} else if (getScene().getWorld().getWorldLevel() > 0) {
+				WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(getScene().getWorld().getWorldLevel());
+				
+				if (worldLevelData != null) {
+					level = worldLevelData.getMonsterLevel();
+				}
+			}
+			
+			// Spawn mob
+			EntityMonster entity = new EntityMonster(getScene(), data, monster.pos, level);
+			entity.getRotation().set(monster.rot);
+			entity.setGroupId(group.id);
+			entity.setConfigId(monster.config_id);
+			
+			toAdd.add(entity);
+		}
+		
+		if (toAdd.size() > 0) {
+			getScene().addEntities(toAdd);
+			
+			for (GameEntity entity : toAdd) {
+				callEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs(entity.getConfigId()));
+			}
+		}
 	}
 	
 	// Events

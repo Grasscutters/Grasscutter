@@ -115,30 +115,7 @@ public class ScriptLib {
 		}
 		
 		// TODO just spawn all from group for now
-		List<GameEntity> toAdd = new ArrayList<>();
-		
-		for (SceneMonster monster : group.monsters) {
-			MonsterData data = GameData.getMonsterDataMap().get(monster.monster_id);
-			
-			if (data == null) {
-				continue;
-			}
-			
-			EntityMonster entity = new EntityMonster(getSceneScriptManager().getScene(), data, monster.pos, monster.level);
-			entity.getRotation().set(monster.rot);
-			entity.setGroupId(group.id);
-			entity.setConfigId(monster.config_id);
-			
-			toAdd.add(entity);
-		}
-		
-		if (toAdd.size() > 0) {
-			getSceneScriptManager().getScene().addEntities(toAdd);
-			
-			for (GameEntity entity : toAdd) {
-				this.getSceneScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs(entity.getConfigId()));
-			}
-		}
+		this.getSceneScriptManager().spawnMonstersInGroup(group);
 		
 		return 0;
 	}
@@ -151,30 +128,7 @@ public class ScriptLib {
 		}
 		
 		// TODO just spawn all from group for now
-		List<GameEntity> toAdd = new ArrayList<>();
-		
-		for (SceneMonster monster : group.monsters) {
-			MonsterData data = GameData.getMonsterDataMap().get(monster.monster_id);
-			
-			if (data == null) {
-				continue;
-			}
-			
-			EntityMonster entity = new EntityMonster(getSceneScriptManager().getScene(), data, monster.pos, monster.level);
-			entity.getRotation().set(monster.rot);
-			entity.setGroupId(group.id);
-			entity.setConfigId(monster.config_id);
-			
-			toAdd.add(entity);
-		}
-		
-		if (toAdd.size() > 0) {
-			getSceneScriptManager().getScene().addEntities(toAdd);
-			
-			for (GameEntity entity : toAdd) {
-				this.getSceneScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs(entity.getConfigId()));
-			}
-		}
+		this.getSceneScriptManager().spawnMonstersInGroup(group);
 		
 		return 0;
 	}

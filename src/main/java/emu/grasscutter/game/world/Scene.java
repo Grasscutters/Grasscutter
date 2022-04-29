@@ -495,20 +495,7 @@ public class Scene {
 		}
 		
 		for (SceneGroup group : block.groups) {
-			for (SceneGadget g : group.gadgets) {
-				EntityGadget entity = new EntityGadget(this, g.gadget_id, g.pos);
-				
-				if (entity.getGadgetData() == null) continue;
-				
-				entity.setBlockId(block.id);
-				entity.setConfigId(g.config_id);
-				entity.setGroupId(group.id);
-				entity.getRotation().set(g.rot);
-				entity.setState(g.state);
-				
-				this.addEntity(entity);
-				this.getScriptManager().callEvent(EventType.EVENT_GADGET_CREATE, new ScriptArgs(entity.getConfigId()));
-			}
+			this.getScriptManager().spawnGadgetsInGroup(block, group);
 		}
 	}
 	
