@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.script.Bindings;
 import javax.script.CompiledScript;
@@ -43,7 +44,7 @@ public class SceneScriptManager {
 	private final Scene scene;
 	private final ScriptLib scriptLib;
 	private final LuaValue scriptLibLua;
-	private final Map<String, LuaValue> variables;
+	private final Map<String, Integer> variables;
 	
 	private Bindings bindings;
 	private SceneConfig config;
@@ -91,7 +92,7 @@ public class SceneScriptManager {
 		return blocks;
 	}
 
-	public Map<String, LuaValue> getVariables() {
+	public Map<String, Integer> getVariables() {
 		return variables;
 	}
 
@@ -212,8 +213,22 @@ public class SceneScriptManager {
 			group.suites = ScriptLoader.getSerializer().toList(SceneSuite.class, bindings.get("suites"));
 			group.init_config = ScriptLoader.getSerializer().toObject(SceneInitConfig.class, bindings.get("init_config"));
 			
+			// Add variables to suite
 			List<SceneVar> variables = ScriptLoader.getSerializer().toList(SceneVar.class, bindings.get("variables"));
-			variables.forEach(var -> this.getVariables().put(var.name, LuaValue.valueOf(var.value)));
+			variables.forEach(var -> this.getVariables().put(var.name, var.value));
+			
+			// Add monsters to suite TODO optimize
+			HashMap<Integer, SceneMonster> map = (HashMap<Integer, SceneMonster>) group.monsters.stream().collect(Collectors.toMap(m -> m.config_id, m -> m));
+			
+			for (SceneSuite suite : group.suites) {
+				suite.sceneMonsters = new ArrayList<>(suite.monsters.size());
+				for (int id : suite.monsters) {
+					SceneMonster monster = map.get(id);
+					if (monster != null) {
+						suite.sceneMonsters.add(monster);
+					}
+				}
+			}
 		} catch (ScriptException e) {
 			Grasscutter.getLogger().error("Error loading group " + group.id + " in scene " + getScene().getId(), e);
 		}
@@ -244,10 +259,24 @@ public class SceneScriptManager {
 		}
 	}
 	
+	public void spawnMonstersInGroup(SceneGroup group, int suiteIndex) {
+		spawnMonstersInGroup(group, group.getSuiteByIndex(suiteIndex));
+	}
+	
 	public void spawnMonstersInGroup(SceneGroup group) {
+		spawnMonstersInGroup(group, null);
+	}
+	
+	public void spawnMonstersInGroup(SceneGroup group, SceneSuite suite) {
+		List<SceneMonster> monsters = group.monsters;
+		
+		if (suite != null) {
+			monsters = suite.sceneMonsters;
+		}
+
 		List<GameEntity> toAdd = new ArrayList<>();
 		
-		for (SceneMonster monster : group.monsters) {
+		for (SceneMonster monster : monsters) {
 			MonsterData data = GameData.getMonsterDataMap().get(monster.monster_id);
 			
 			if (data == null) {
