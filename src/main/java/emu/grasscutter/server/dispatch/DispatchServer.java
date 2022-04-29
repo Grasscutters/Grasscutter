@@ -209,7 +209,7 @@ public final class DispatchServer {
 		return null;
 	}
 	
-	private KeyManagerFactory createKeyManagerFactory(File keystore, String password) throws Exception {
+	private KeyManagerFactory createKeyManagerFactory(File keystore, String password) {
 		char[] pass = password.toCharArray();
 		KeyManagerFactory kmf = null;
 		
@@ -220,8 +220,8 @@ public final class DispatchServer {
 			
 			kmf = KeyManagerFactory.getInstance("SunX509");
 			kmf.init(ks, pass);
-		} catch (Exception e) {
-			throw e;
+		} catch (Exception exception) {
+			Grasscutter.getLogger().error("Unable to load keystore.", exception);
 		}
 		
 		return kmf;
@@ -257,7 +257,7 @@ public final class DispatchServer {
 				server = this.safelyCreateServer(this.getAddress());
 			}
 			
-			HttpsServer httpsServer = null;
+			HttpsServer httpsServer;
 			
 			try {
 				httpsServer = HttpsServer.create(getAddress(), 0);
