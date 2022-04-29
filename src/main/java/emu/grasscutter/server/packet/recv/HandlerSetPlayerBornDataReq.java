@@ -13,6 +13,7 @@ import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq;
 import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.server.event.game.PlayerJoinEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 
@@ -25,7 +26,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 		
 		// Sanity checks
 		int avatarId = req.getAvatarId();
-		int startingSkillDepot = 0;
+		int startingSkillDepot;
 		if (avatarId == GameConstants.MAIN_CHARACTER_MALE) {
 			startingSkillDepot = 504;
 		} else if (avatarId == GameConstants.MAIN_CHARACTER_FEMALE) {
@@ -91,6 +92,10 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			Grasscutter.getLogger().error("Error creating player object: ", e);
 			session.close();
 		}
-	}
 
+		// Call join event.
+		PlayerJoinEvent event = new PlayerJoinEvent(player); event.call();
+		if(event.isCanceled()) // If event is not cancelled, continue.
+			session.close();
+	}
 }
