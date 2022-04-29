@@ -822,7 +822,7 @@ public class Player {
 				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()));
 
 		if (this.getWorld() != null) {
-			onlineInfo.setCurPlayerNumInWorld(this.getWorld().getPlayers().indexOf(this) + 1);
+			onlineInfo.setCurPlayerNumInWorld(getWorld().getPlayerCount());
 		} else {
 			onlineInfo.setCurPlayerNumInWorld(1);
 		}
