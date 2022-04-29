@@ -40,6 +40,11 @@ public class ConstGlobals {
         globals.load(new Common.MaterialType());
         globals.load(new Common.StateType());
         globals.load(new Common.WeaponType());
+        globals.load(new CommonScript.EventType());
+        globals.load(new CommonScript.GadgetType());
+        globals.load(new CommonScript.GroupKillPolicy());
+        globals.load(new CommonScript.RegionShape());
+        globals.load(new CommonScript.PlatformRotType());
         globals.load(new Compound.CompoundType());
         globals.load(new ConstValue.ConstValueType());
         globals.load(new Cook.CookBonusType());
