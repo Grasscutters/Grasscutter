@@ -51,7 +51,6 @@ public final class Config {
 	
 	public static class GameServerOptions {
 		public String Name = "Test";
-		public String NickName = "Server";
 		public String Ip = "0.0.0.0";
 		public String PublicIp = "127.0.0.1";
 		public int Port = 22102;
@@ -71,6 +70,7 @@ public final class Config {
 		public int MaxAvatarsInTeamMultiplayer = 4;
 		public int MaxEntityLimit = 1000; // Max entity limit per world. // TODO: Enforce later.
 		public boolean WatchGacha = false;
+		public String ServerNickname = "Server";
 		public int ServerAvatarId = 10000007;
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
 		public String WelcomeMotd = "Welcome to Grasscutter emu";
