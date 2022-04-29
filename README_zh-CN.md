@@ -116,7 +116,7 @@ chmod +x gradlew
 | drop           | drop <物品ID\|物品名称> [数量]               | server.drop               | 仅客户端 | 在指定玩家周围掉落指定物品                 | `d` `dropitem`                                  |
 | give           | give [uid] <物品ID\|物品名称> [数量] [等级]  |                           |          | 给予指定玩家一定数量及等级的物品           | `g` `item` `giveitem`                           |
 | givechar       | givechar \<uid> <角色ID> [等级]               | player.givechar           | 均可使用 | 给予指定玩家对应角色                       | givec                                           |
-| giveart        | giveart [uid] \<圣遗物ID> \<主属性ID> [\<副属性ID>...] [等级] | player.giveart            | 均可使用 | 给予玩家指定属性的圣遗物                   | givea                                           |
+| giveart        | giveart [uid] \<圣遗物ID> \<主属性ID> [\<副属性ID>[,<次数>]]... [等级] | player.giveart            | 均可使用 | 给予玩家指定属性的圣遗物                   | givea                                           |
 | giveall        | giveall [uid] [数量]                         | player.giveall            | 均可使用 | 给予指定玩家全部物品                       | givea                                           |
 | godmode        | godmode [uid]                                | player.godmode            | 仅客户端 | 保护你不受到任何伤害(依然会被击退)         |                                                 |
 | heal           | heal                                         | player.heal               | 仅客户端 | 治疗队伍中所有角色                         | h                                               |

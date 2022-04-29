@@ -11,41 +11,49 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.stream.IntStream;
 
-@Command(label = "giveart", usage = "giveart|givea [player] <artifactId> <mainPropId> [<appendPropId>...] [level]",
-		description = "Gives the player a specified reliquary", aliases = {"givea"}, permission = "player.giveart")
+@Command(label = "giveart", usage = "giveart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]", description = "Gives the player a specified reliquary", aliases = {"givea"}, permission = "player.giveart")
 public final class GiveArtifactCommand implements CommandHandler {
 	@Override
 	public void execute(Player sender, List<String> args) {
-		int target, itemId, mainPropId, level;
+		int size = args.size(), target, itemId, mainPropId, level;
 		ArrayList<Integer> appendPropIdList = new ArrayList<>();
-		String msg = "Usage: giveart|givea [player] <artifactId> <mainPropId> [<appendPropId>...] [level]";
+		String msg = "Usage: giveart|givea [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]";
 
-		if (sender == null && args.size() < 2) {
+		if (sender == null && size < 2) {
 			CommandHandler.sendMessage(null, msg);
 			return;
 		}
 
-		int size = args.size();
 		if (size >= 2) {
 			try {
 				level = Integer.parseInt(args.get(size - 1));
-				if (level <= 21) size -= 1;
+				if (level <= 21) size--;
 				else level = 1;
 				target = Integer.parseInt(args.get(0));
+				int fromIdx;
 				if (Grasscutter.getGameServer().getPlayerByUid(target) == null && sender != null) {
 					target = sender.getUid();
 					itemId = Integer.parseInt(args.get(0));
 					mainPropId = Integer.parseInt(args.get(1));
-					args.subList(2, size).stream().flatMapToInt(num -> IntStream.of(Integer.parseInt(num))).forEach(appendPropIdList::add);
+					fromIdx = 2;
 				} else {
 					target = Integer.parseInt(args.get(0));
 					itemId = Integer.parseInt(args.get(1));
 					mainPropId = Integer.parseInt(args.get(2));
-					args.subList(3, size).stream().flatMapToInt(num -> IntStream.of(Integer.parseInt(num))).forEach(appendPropIdList::add);
+					fromIdx = 3;
 				}
+				args.subList(fromIdx, size).forEach(it -> {
+					String[] arr;
+					int n = 1;
+					if ((arr = it.split(",")).length == 2) {
+						it = arr[0];
+						n = Integer.parseInt(arr[1]);
+					}
+					appendPropIdList.addAll(Collections.nCopies(n, Integer.parseInt(it)));
+				});
 			} catch (NumberFormatException | IndexOutOfBoundsException ignored) {
 				CommandHandler.sendMessage(sender, msg);
 				return;
