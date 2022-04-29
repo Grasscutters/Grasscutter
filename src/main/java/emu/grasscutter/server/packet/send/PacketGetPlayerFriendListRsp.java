@@ -18,7 +18,7 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
 		
 		FriendBrief serverFriend = FriendBrief.newBuilder()
 				.setUid(GameConstants.SERVER_CONSOLE_UID)
-				.setNickname("Server")
+				.setNickname(GameConstants.SERVER_AVATAR_NAME)
 				.setLevel(1)
 				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(GameConstants.SERVER_AVATAR_ID))
 				.setWorldLevel(0)

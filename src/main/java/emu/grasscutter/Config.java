@@ -51,6 +51,7 @@ public final class Config {
 	
 	public static class GameServerOptions {
 		public String Name = "Test";
+		public String NickName = "Server";
 		public String Ip = "0.0.0.0";
 		public String PublicIp = "127.0.0.1";
 		public int Port = 22102;
