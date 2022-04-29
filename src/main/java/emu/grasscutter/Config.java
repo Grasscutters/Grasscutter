@@ -79,12 +79,11 @@ public final class Config {
 		public String WelcomeMailSender  = "Yuuki";
 		public String WelcomeMailTitle   = "Welcome to Yuuki Server";
 		public String WelcomeMailContent = "";
-		public int[] WelcomeMailItems = {1002,1003,1005,1006,1007,1014,1015,1016,1020,1021,1022,1023,1024,1025,1026,1027,1029,1030,1031,1032,1033,1034,1035,1036,1037,1038,1039,1041,1042,1043,1044,1045,1046,1047,1048,1049,1050,1051,1052,1053,1054,1055,1056,1057,1058,1062,1063,1064};
+		public int[] WelcomeMailItems = {1002};
 
 		public boolean EnableOfficialShop = true;
 
 		public GameRates Game = new GameRates();
-
 		public GameRates getGameRates() { return Game; }
 
 		public static class GameRates {

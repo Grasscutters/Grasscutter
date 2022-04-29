@@ -11,7 +11,8 @@ import emu.grasscutter.utils.Position;
 import java.util.List;
 
 @Command(label = "spawn", usage = "spawn <entityId|entityName> [level] [amount]",
-        description = "Spawns an entity near you", permission = "server.spawn")
+        description = "Spawns an entity near you", aliases = {
+            "s"}, permission = "server.spawn")
 public final class SpawnCommand implements CommandHandler {
 
     @Override
