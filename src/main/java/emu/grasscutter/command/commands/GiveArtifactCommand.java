@@ -54,7 +54,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 					}
 					appendPropIdList.addAll(Collections.nCopies(n, Integer.parseInt(it)));
 				});
-			} catch (NumberFormatException | IndexOutOfBoundsException ignored) {
+			} catch (Exception ignored) {
 				CommandHandler.sendMessage(sender, msg);
 				return;
 			}
