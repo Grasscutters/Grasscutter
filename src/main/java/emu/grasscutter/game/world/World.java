@@ -17,14 +17,16 @@ import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.def.DungeonData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
-import emu.grasscutter.game.entity.EntityGadget;
+import emu.grasscutter.game.entity.EntityBaseGadget;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
+import emu.grasscutter.scripts.data.SceneConfig;
 import emu.grasscutter.server.packet.send.PacketDelTeamEntityNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
@@ -212,6 +214,14 @@ public class World implements Iterable<Player> {
 	}
 	
 	public boolean transferPlayerToScene(Player player, int sceneId, Position pos) {
+		return transferPlayerToScene(player, sceneId, null, pos);
+	}
+	
+	public boolean transferPlayerToScene(Player player, int sceneId, DungeonData data) {
+		return transferPlayerToScene(player, sceneId, data, null);
+	}
+	
+	public boolean transferPlayerToScene(Player player, int sceneId, DungeonData dungeonData, Position pos) {
 		if (GameData.getSceneDataMap().get(sceneId) == null) {
 			return false;
 		}
@@ -224,25 +234,51 @@ public class World implements Iterable<Player> {
 			// Dont deregister scenes if the player is going to tp back into them
 			if (oldScene.getId() == sceneId) {
 				oldScene.setDontDestroyWhenEmpty(true);
-			}
+			} 
 
 			oldScene.removePlayer(player);
 		}
 		
 		Scene newScene = this.getSceneById(sceneId);
+		newScene.setDungeonData(dungeonData);
 		newScene.addPlayer(player);
-		player.getPos().set(pos);
 		
+		// Dungeon
+		SceneConfig config = newScene.getScriptManager().getConfig();
+		if (pos == null && config != null) {
+			if (config.born_pos != null) {
+				pos = newScene.getScriptManager().getConfig().born_pos;
+			} 
+			if (config.born_rot != null) {
+				player.getRotation().set(config.born_rot);
+			}
+		}
+		
+		// Set player position
+		if (pos == null) {
+			pos = player.getPos();
+		}
+		
+		player.getPos().set(pos);
+
 		if (oldScene != null) {
+			newScene.setPrevScene(oldScene.getId());
 			oldScene.setDontDestroyWhenEmpty(false);
 		}
 
-		// Teleport packet
-		if (oldScene == newScene) {
-			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.ENTER_GOTO, EnterReason.TransPoint, sceneId, pos));
-		} else {
-			player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.ENTER_JUMP, EnterReason.TransPoint, sceneId, pos));
+		// Get enter types
+		EnterType enterType = EnterType.ENTER_JUMP;
+		EnterReason enterReason = EnterReason.TransPoint;
+		
+		if (dungeonData != null) {
+			enterType = EnterType.ENTER_DUNGEON;
+			enterReason = EnterReason.DungeonEnter;
+		} else if (oldScene == newScene) {
+			enterType = EnterType.ENTER_GOTO;
 		}
+		
+		// Teleport packet
+		player.sendPacket(new PacketPlayerEnterSceneNotify(player, enterType, enterReason, sceneId, pos));
 		return true;
 	}
 	
