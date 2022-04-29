@@ -66,7 +66,7 @@ public final class PluginManager {
                     Enumeration<JarEntry> entries = jarFile.entries();
                     while(entries.hasMoreElements()) {
                         JarEntry entry = entries.nextElement();
-                        if(entry.isDirectory() || !entry.getName().endsWith(".class")) continue;
+                        if(entry.isDirectory() || !entry.getName().endsWith(".class") || entry.getName().contains("module-info")) continue;
                         String className = entry.getName().replace(".class", "").replace("/", ".");
                         Class<?> clazz = loader.loadClass(className);
                     }

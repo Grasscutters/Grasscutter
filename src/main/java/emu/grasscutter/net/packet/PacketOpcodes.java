@@ -355,6 +355,8 @@ public class PacketOpcodes {
     public static final int EvtAvatarSitDownNotify = 392;
     public static final int EvtAvatarStandUpNotify = 358;
     public static final int EvtAvatarUpdateFocusNotify = 365;
+    public static final int EvtAvatarLockChairReq = 354;
+    public static final int EvtAvatarLockChairRsp = 335;
     public static final int EvtBeingHitNotify = 360;
     public static final int EvtBeingHitsCombineNotify = 381;
     public static final int EvtBulletDeactiveNotify = 388;
