@@ -25,6 +25,7 @@ import emu.grasscutter.scripts.data.SceneBlock;
 import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.ScriptArgs;
+import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
@@ -212,6 +213,11 @@ public class Scene {
 	}
 	
 	public synchronized void removePlayer(Player player) {
+		// Remove from challenge if leaving
+		if (this.getChallenge() != null && this.getChallenge().inProgress()) {
+			player.sendPacket(new PacketDungeonChallengeFinishNotify(this.getChallenge()));
+		}
+		
 		// Remove player from scene
 		getPlayers().remove(player);
 		player.setScene(null);
