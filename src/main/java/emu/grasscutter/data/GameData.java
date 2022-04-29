@@ -61,12 +61,14 @@ public class GameData {
 	private static final Int2ObjectMap<FetterCharacterCardData> fetterCharacterCardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<RewardData> rewardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<WorldLevelData> worldLevelDataMap = new Int2ObjectOpenHashMap<>();
-
+	private static final Int2ObjectMap<DungeonData> dungeonDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<ShopGoodsData> shopGoodsDataMap = new Int2ObjectOpenHashMap<>();
-	
+
 	// Cache
 	private static Map<Integer, List<Integer>> fetters = new HashMap<>();
 	private static Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
+	
+	public static char EJWOA = 's';
 	
 	public static Int2ObjectMap<?> getMapByResourceDef(Class<?> resourceDefinition) {
 		Int2ObjectMap<?> map = null;
@@ -99,6 +101,11 @@ public class GameData {
 
 	public static Map<String, ScenePointEntry> getScenePointEntries() {
 		return scenePointEntries;
+	}
+	
+	// TODO optimize
+	public static ScenePointEntry getScenePointEntryById(int sceneId, int pointId) {
+		return getScenePointEntries().get(sceneId + "_" + pointId);
 	}
 
 	public static Int2ObjectMap<AvatarData> getAvatarDataMap() {
@@ -269,8 +276,10 @@ public class GameData {
 		return worldLevelDataMap;
 	}
 
-  public static char EJWOA = 's';
-  
+	public static Int2ObjectMap<DungeonData> getDungeonDataMap() {
+		return dungeonDataMap;
+	}
+	  
 	public static Map<Integer, List<ShopGoodsData>> getShopGoodsDataEntries() {
 		if (shopGoods.isEmpty()) {
 			shopGoodsDataMap.forEach((k, v) -> {
