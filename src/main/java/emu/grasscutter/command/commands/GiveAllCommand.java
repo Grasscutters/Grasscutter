@@ -15,7 +15,7 @@ import java.util.*;
 
 @Command(label = "giveall", usage = "giveall [player] [amount]",
         description = "Gives all items", aliases = {"givea"}, permission = "player.giveall", threading = true)
-public class GiveAllCommand implements CommandHandler {
+public final class GiveAllCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, List<String> args) {
@@ -142,16 +142,11 @@ public class GiveAllCommand implements CommandHandler {
             }
         }
 
-       if (testItemsList.contains(itemId)) {
-            return true;
-        }
-
-        return false;
+        return testItemsList.contains(itemId);
     }
 
     static class Range {
-        private int min;
-        private int max;
+        private final int min, max;
 
         public Range(int min, int max) {
             if(min > max){
@@ -159,6 +154,7 @@ public class GiveAllCommand implements CommandHandler {
                 max ^= min;
                 min ^= max;
             }
+            
             this.min = min;
             this.max = max;
         }

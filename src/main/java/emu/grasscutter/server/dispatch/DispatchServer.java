@@ -30,6 +30,7 @@ import java.net.BindException;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.security.KeyStore;
 import java.util.*;
 
@@ -243,10 +244,9 @@ public final class DispatchServer {
 					try {
 						kmf = createKeyManagerFactory(keystoreFile, "123456");
 						Grasscutter.getLogger().warn(
-							"[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to 123456 in config.json.");
+							"[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to '123456' in config.json.");
 					} catch (Exception e2) {
-						Grasscutter.getLogger().warn("[Dispatch] Error while loading keystore!");
-						e2.printStackTrace();
+						Grasscutter.getLogger().warn("[Dispatch] Error while loading keystore!", e2);
 					}
 				}
 			}
@@ -339,10 +339,6 @@ public final class DispatchServer {
 					// added.
 					account = DatabaseHelper.createAccountWithId(requestData.account, 0);
 
-					for (String permission : Grasscutter.getConfig().getDispatchOptions().defaultPermissions) {
-						account.addPermission(permission);
-					}
-
 					if (account != null) {
 						responseData.message = "OK";
 						responseData.data.account.uid = account.getId();
@@ -352,6 +348,9 @@ public final class DispatchServer {
 						Grasscutter.getLogger()
 								.info(String.format("[Dispatch] Client %s failed to log in: Account %s created",
 										t.getRemoteAddress(), responseData.data.account.uid));
+						for (String permission : Grasscutter.getConfig().getDispatchOptions().defaultPermissions) {
+							account.addPermission(permission);
+						}
 					} else {
 						responseData.retcode = -201;
 						responseData.message = "Username not found, create failed.";
@@ -575,15 +574,11 @@ public final class DispatchServer {
 
 			if (next > last) {
 				int eqPos = qs.indexOf('=', last);
-				try {
-					if (eqPos < 0 || eqPos > next) {
-						result.put(URLDecoder.decode(qs.substring(last, next), "utf-8"), "");
-					} else {
-						result.put(URLDecoder.decode(qs.substring(last, eqPos), "utf-8"),
-								URLDecoder.decode(qs.substring(eqPos + 1, next), "utf-8"));
-					}
-				} catch (UnsupportedEncodingException e) {
-					throw new RuntimeException(e); // will never happen, utf-8 support is mandatory for java
+				if (eqPos < 0 || eqPos > next) {
+					result.put(URLDecoder.decode(qs.substring(last, next), StandardCharsets.UTF_8), "");
+				} else {
+					result.put(URLDecoder.decode(qs.substring(last, eqPos), StandardCharsets.UTF_8),
+							URLDecoder.decode(qs.substring(eqPos + 1, next), StandardCharsets.UTF_8));
 				}
 			}
 			last = next + 1;
