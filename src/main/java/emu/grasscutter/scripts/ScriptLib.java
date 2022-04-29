@@ -55,6 +55,10 @@ public class ScriptLib {
 												.filter(e -> e.getGroupId() == groupId).toList();
 		
 		for (GameEntity entity : list) {
+			if (!(entity instanceof EntityGadget)) {
+				continue;
+			}
+			
 			EntityGadget gadget = (EntityGadget) entity;
 			gadget.setState(gadgetState);
 			
@@ -140,9 +144,42 @@ public class ScriptLib {
 	}
 	
 	public int AddExtraGroupSuite(int groupId, int param2) {
+		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
+		
+		if (group == null || group.monsters == null) {
+			return 1;
+		}
+		
+		// TODO just spawn all from group for now
+		List<GameEntity> toAdd = new ArrayList<>();
+		
+		for (SceneMonster monster : group.monsters) {
+			MonsterData data = GameData.getMonsterDataMap().get(monster.monster_id);
+			
+			if (data == null) {
+				continue;
+			}
+			
+			EntityMonster entity = new EntityMonster(getSceneScriptManager().getScene(), data, monster.pos, monster.level);
+			entity.getRotation().set(monster.rot);
+			entity.setGroupId(group.id);
+			entity.setConfigId(monster.config_id);
+			
+			toAdd.add(entity);
+		}
+		
+		if (toAdd.size() > 0) {
+			getSceneScriptManager().getScene().addEntities(toAdd);
+			
+			for (GameEntity entity : toAdd) {
+				this.getSceneScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs(entity.getConfigId()));
+			}
+		}
+		
 		return 0;
 	}
 	
+	// param3 (probably time limit for timed dungeons)
 	public int ActiveChallenge(int challengeId, int challengeIndex, int param3, int groupId, int param4, int param5) {
 		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
 		
