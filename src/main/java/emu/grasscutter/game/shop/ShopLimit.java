@@ -20,6 +20,24 @@ public class ShopLimit {
         this.hasBought = hasBought;
     }
 
+    public int getNextRefreshTime() {
+        return nextRefreshTime;
+    }
+
+    public void setNextRefreshTime(int nextRefreshTime) {
+        this.nextRefreshTime = nextRefreshTime;
+    }
+
+    public int getHasBoughtInPeriod() {
+        return hasBoughtInPeriod;
+    }
+
+    public void setHasBoughtInPeriod(int hasBoughtInPeriod) {
+        this.hasBoughtInPeriod = hasBoughtInPeriod;
+    }
+
     private int shopGoodId;
     private int hasBought;
+    private int hasBoughtInPeriod = 0;
+    private int nextRefreshTime = 0;
 }

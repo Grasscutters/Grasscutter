@@ -109,6 +109,7 @@ chmod +x gradlew
 | -------------- | -------------------------------------------- | ------------------------- | -------- | ------------------------------------------ | ----------------------------------------------- |
 | account        | account <create\|delete> <用户名> [uid]      |                           | 仅服务端 | 通过指定用户名和uid增删账户                |                                                 |
 | broadcast      | broadcast <消息内容>                         | server.broadcast          | 均可使用 | 给所有玩家发送公告                         | b                                               |
+| coop           | coop \<uid> <目标uid>                 | server.coop               | 均可使用    | 强制某位玩家进入指定玩家的多人世界                  |                                                 |
 | changescene    | changescene <场景ID>                         | player.changescene        | 仅客户端 | 切换到指定场景                             | scene                                           |
 | clearartifacts | clearartifacts                               | player.clearartifacts     | 仅客户端 | 删除所有未装备及未解锁的圣遗物,包括五星    | clearart                                        |
 | clearweapons   | clearweapons                                 | player.clearweapons       | 仅客户端 | 删除所有未装备及未解锁的武器,包括五星      | clearwp                                         |
@@ -136,6 +137,7 @@ chmod +x gradlew
 | stop           | stop                                         | server.stop               | 均可使用 | 停止服务器                                 |                                                 |
 | talent         | talent <天赋ID> <等级>                       | player.settalent          | 仅客户端 | 设置当前角色的天赋等级                     |                                                 |
 | teleport       | teleport \<x> \<y> \<z>                         | player.teleport           | 仅客户端 | 传送玩家到指定坐标                         | tp                                              |
+| tpall          |                                                   | player.tpall              | 仅客户端  | 传送多人世界中所有的玩家到自身地点         |                                                 |
 | weather        | weather <天气ID> <气候ID>                    | player.weather            | 仅客户端 | 改变天气                                   | w                                               |
 
 ### 额外功能
