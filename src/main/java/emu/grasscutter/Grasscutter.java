@@ -9,7 +9,7 @@ import java.net.InetSocketAddress;
 
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.plugin.PluginManager;
-import emu.grasscutter.plugin.api.ServerHook;
+import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
@@ -68,6 +68,7 @@ public final class Grasscutter {
 		
 		// Load all resources.
 		ResourceLoader.loadAll();
+		ScriptLoader.init();
 		// Database
 		DatabaseManager.initialize();
 
@@ -77,9 +78,6 @@ public final class Grasscutter {
 		// Create server instances.
 		dispatchServer = new DispatchServer();
 		gameServer = new GameServer(new InetSocketAddress(getConfig().getGameServerOptions().Ip, getConfig().getGameServerOptions().Port));
-		
-		// Create server hook instance.
-		new ServerHook(gameServer, dispatchServer);
 		
 		// Start servers.
 		if(getConfig().RunMode.equalsIgnoreCase("HYBRID")) {

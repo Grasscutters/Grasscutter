@@ -7,7 +7,5 @@ public class PacketPathfindingEnterSceneRsp extends BasePacket {
 
 	public PacketPathfindingEnterSceneRsp(int clientSequence) {
 		super(PacketOpcodes.PathfindingEnterSceneRsp);
-		
-		this.buildHeader(clientSequence);
 	}
 }

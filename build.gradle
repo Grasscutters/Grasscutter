@@ -71,9 +71,10 @@ dependencies {
 
     implementation group: 'org.quartz-scheduler', name: 'quartz', version: '2.3.2'
     implementation group: 'org.quartz-scheduler', name: 'quartz-jobs', version: '2.3.2'
-
+    
+    implementation group: 'org.luaj', name: 'luaj-jse', version: '3.0.1'
+    
     protobuf files('proto/')
-
 }
 
 application {
