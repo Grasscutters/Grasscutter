@@ -225,7 +225,7 @@ public class Scene {
 		}
 		
 		// Deregister scene if not in use
-		if (this.getEntities().size() <= 0 && !this.dontDestroyWhenEmpty()) {
+		if (this.getPlayerCount() <= 0 && !this.dontDestroyWhenEmpty()) {
 			this.getWorld().deregisterScene(this);
 		}
 	}
