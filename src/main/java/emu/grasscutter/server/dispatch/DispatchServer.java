@@ -59,7 +59,7 @@ public final class DispatchServer {
 	public HttpServer getServer() {
 		return server;
 	}
-	
+
 	public HttpServer getHttpServer() {
 		return server;
 	}
@@ -208,22 +208,22 @@ public final class DispatchServer {
 		}
 		return null;
 	}
-	
+
 	private KeyManagerFactory createKeyManagerFactory(File keystore, String password) throws Exception {
 		char[] pass = password.toCharArray();
 		KeyManagerFactory kmf = null;
-		
+
 		try (FileInputStream fis = new FileInputStream(keystore)) {
-			
+
 			KeyStore ks = KeyStore.getInstance("PKCS12");
 			ks.load(fis, pass);
-			
+
 			kmf = KeyManagerFactory.getInstance("SunX509");
 			kmf.init(ks, pass);
 		} catch (Exception e) {
 			throw e;
 		}
-		
+
 		return kmf;
 	}
 
@@ -233,32 +233,34 @@ public final class DispatchServer {
 			SSLContext sslContext = SSLContext.getInstance("TLS");
 			KeyManagerFactory kmf = null;
 			File keystoreFile = new File(Grasscutter.getConfig().getDispatchOptions().KeystorePath);
-			
+
 			if (keystoreFile.exists()) {
 				try {
-					kmf = createKeyManagerFactory(keystoreFile, Grasscutter.getConfig().getDispatchOptions().KeystorePassword);
+					kmf = createKeyManagerFactory(keystoreFile,
+							Grasscutter.getConfig().getDispatchOptions().KeystorePassword);
 				} catch (Exception e) {
-					Grasscutter.getLogger().warn("[Dispatch] Unable to load keystore. Trying default keystore password...");
-					
+					Grasscutter.getLogger()
+							.warn("[Dispatch] Unable to load keystore. Trying default keystore password...");
+
 					try {
 						kmf = createKeyManagerFactory(keystoreFile, "123456");
 						Grasscutter.getLogger().warn(
-							"[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to 123456 in config.json.");
+								"[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to 123456 in config.json.");
 					} catch (Exception e2) {
 						Grasscutter.getLogger().warn("[Dispatch] Error while loading keystore!");
 						e2.printStackTrace();
 					}
 				}
 			}
-			
+
 			if (kmf == null) {
 				Grasscutter.getLogger().warn("[Dispatch] No SSL cert found! Falling back to HTTP server.");
 				Grasscutter.getConfig().getDispatchOptions().UseSSL = false;
 				server = this.safelyCreateServer(this.getAddress());
 			}
-			
+
 			HttpsServer httpsServer = null;
-			
+
 			try {
 				httpsServer = HttpsServer.create(getAddress(), 0);
 				sslContext.init(kmf.getKeyManagers(), null, null);
@@ -274,8 +276,13 @@ public final class DispatchServer {
 		if (server == null)
 			throw new NullPointerException("An HTTP server was not created.");
 
-		String ver = new String(Files.readAllBytes(Paths.get(Grasscutter.getConfig().VERSION)));
-		server.createContext("/", t -> responseHTML(t, "Server <a href='https://github.com/akbaryahya/DockerGC'>DockerGC "+ver+"</a>"));
+		File vv;
+		vv = new File(Grasscutter.getConfig().VERSION);
+		if (vv.exists()) {
+			server.createContext("/", t -> responseHTML(t,"Server <a href='https://github.com/akbaryahya/DockerGC'>DockerGC "+new String(FileUtils.read(vv))+"</a>"));
+		} else {
+			server.createContext("/", t -> responseHTML(t,"Hello"));
+		}		
 
 		// Dispatch
 		server.createContext("/query_region_list", t -> {
@@ -284,7 +291,8 @@ public final class DispatchServer {
 					.info(String.format("[Dispatch] Client %s request: query_region_list", t.getRemoteAddress()));
 
 			// Invoke event.
-			QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListBase64); event.call();
+			QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListBase64);
+			event.call();
 			// Respond with event result.
 			responseHTML(t, event.getRegionList());
 		});
@@ -301,9 +309,10 @@ public final class DispatchServer {
 				if (uri.getQuery() != null && uri.getQuery().length() > 0) {
 					response = regionCurrentBase64;
 				}
-				
+
 				// Invoke event.
-				QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(response); event.call();
+				QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(response);
+				event.call();
 				// Respond with event result.
 				responseHTML(t, event.getRegionInfo());
 			});
