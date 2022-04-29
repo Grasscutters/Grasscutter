@@ -129,7 +129,7 @@ public class ScriptLib {
 		}
 		
 		// TODO just spawn all from group for now
-		this.getSceneScriptManager().spawnMonstersInGroup(group);
+		this.getSceneScriptManager().spawnMonstersInGroup(group, suite);
 		
 		return 0;
 	}
@@ -158,11 +158,11 @@ public class ScriptLib {
 								.count();
 	}
 	
-	public LuaValue GetGroupVariableValue(String var) {
-		return getSceneScriptManager().getVariables().getOrDefault(var, LuaValue.NIL);
+	public int GetGroupVariableValue(String var) {
+		return getSceneScriptManager().getVariables().getOrDefault(var, 0);
 	}
 	
-	public LuaValue ChangeGroupVariableValue(String var, LuaValue value) {
+	public LuaValue ChangeGroupVariableValue(String var, int value) {
 		getSceneScriptManager().getVariables().put(var, value);
 		return LuaValue.ZERO;
 	}
@@ -179,7 +179,7 @@ public class ScriptLib {
 		}
 		
 		// TODO just spawn all from group for now
-		this.getSceneScriptManager().spawnMonstersInGroup(group);
+		this.getSceneScriptManager().spawnMonstersInGroup(group, suite);
 		
 		return 0;
 	}

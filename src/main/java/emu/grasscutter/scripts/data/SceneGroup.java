@@ -26,4 +26,8 @@ public class SceneGroup {
 	public boolean setLoaded(boolean loaded) {
 		return loaded;
 	}
+	
+	public SceneSuite getSuiteByIndex(int index) {
+		return suites.get(index - 1);
+	}
 }
