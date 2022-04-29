@@ -7,6 +7,7 @@ import emu.grasscutter.data.def.DungeonData;
 import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.data.def.WorldLevelData;
+import emu.grasscutter.game.dungeons.DungeonChallenge;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamInfo;
@@ -18,6 +19,10 @@ import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
+import emu.grasscutter.scripts.SceneScriptManager;
+import emu.grasscutter.scripts.data.SceneBlock;
+import emu.grasscutter.scripts.data.SceneGadget;
+import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
@@ -37,15 +42,19 @@ public class Scene {
 	
 	private final Set<SpawnDataEntry> spawnedEntities;
 	private final Set<SpawnDataEntry> deadSpawnedEntities;
+	private final Set<SceneBlock> loadedBlocks;
 	private boolean dontDestroyWhenEmpty;
 	
 	private int time;
 	private ClimateType climate;
 	private int weather;
 	
+	private SceneScriptManager scriptManager;
+	private DungeonChallenge challenge;
 	private DungeonData dungeonData;
 	private int prevScene; // Id of the previous scene
-
+	private int prevScenePoint;
+	
 	public Scene(World world, SceneData sceneData) {
 		this.world = world;
 		this.sceneData = sceneData;
@@ -58,6 +67,8 @@ public class Scene {
 		
 		this.spawnedEntities = new HashSet<>();
 		this.deadSpawnedEntities = new HashSet<>();
+		this.loadedBlocks = new HashSet<>();
+		this.scriptManager = new SceneScriptManager(this);
 	}
 	
 	public int getId() {
@@ -124,6 +135,14 @@ public class Scene {
 		this.prevScene = prevScene;
 	}
 
+	public int getPrevScenePoint() {
+		return prevScenePoint;
+	}
+
+	public void setPrevScenePoint(int prevPoint) {
+		this.prevScenePoint = prevPoint;
+	}
+
 	public boolean dontDestroyWhenEmpty() {
 		return dontDestroyWhenEmpty;
 	}
@@ -132,12 +151,20 @@ public class Scene {
 		this.dontDestroyWhenEmpty = dontDestroyWhenEmpty;
 	}
 
+	public Set<SceneBlock> getLoadedBlocks() {
+		return loadedBlocks;
+	}
+
 	public Set<SpawnDataEntry> getSpawnedEntities() {
 		return spawnedEntities;
 	}
 
 	public Set<SpawnDataEntry> getDeadSpawnedEntities() {
 		return deadSpawnedEntities;
+	}
+
+	public SceneScriptManager getScriptManager() {
+		return scriptManager;
 	}
 
 	public DungeonData getDungeonData() {
@@ -149,6 +176,14 @@ public class Scene {
 			return;
 		}
 		this.dungeonData = dungeonData;
+	}
+
+	public DungeonChallenge getChallenge() {
+		return challenge;
+	}
+
+	public void setChallenge(DungeonChallenge challenge) {
+		this.challenge = challenge;
 	}
 
 	public boolean isInScene(GameEntity entity) {
@@ -183,7 +218,7 @@ public class Scene {
 		this.removePlayerAvatars(player);
 		
 		// Remove player gadgets
-		for (EntityGadget gadget : player.getTeamManager().getGadgets()) {
+		for (EntityBaseGadget gadget : player.getTeamManager().getGadgets()) {
 			this.removeEntity(gadget);
 		}
 		
@@ -338,7 +373,15 @@ public class Scene {
 	}
 	
 	public void onTick() {
-		this.checkSpawns();
+		if (this.getScriptManager().isInit()) {
+			this.checkBlocks();
+		} else {
+			// TEMPORARY
+			this.checkSpawns();
+		}
+		
+		// Triggers
+		this.getScriptManager().onTick();
 	}
 	
 	// TODO - Test
@@ -408,6 +451,75 @@ public class Scene {
 		if (toRemove.size() > 0) {
 			toRemove.stream().forEach(this::removeEntityDirectly);
 			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_REMOVE));
+		}
+	}
+	
+	public void checkBlocks() {
+		Set<SceneBlock> visible = new HashSet<>();
+		
+		for (Player player : this.getPlayers()) {
+			for (SceneBlock block : getScriptManager().getBlocks()) {
+				if (!block.contains(player.getPos())) {
+					continue;
+				}
+				
+				visible.add(block);
+			}
+		}
+		
+		Iterator<SceneBlock> it = this.getLoadedBlocks().iterator();
+		while (it.hasNext()) {
+			SceneBlock block = it.next();
+			
+			if (!visible.contains(block)) {
+				it.remove();
+				
+				onUnloadBlock(block);
+			}
+		}
+		
+		for (SceneBlock block : visible) {
+			if (!this.getLoadedBlocks().contains(block)) {
+				this.getLoadedBlocks().add(block);
+				this.onLoadBlock(block);
+			}
+		}
+	}
+	
+	// TODO optimize
+	public void onLoadBlock(SceneBlock block) {
+		for (SceneGroup group : block.groups) {
+			group.triggers.forEach(getScriptManager()::registerTrigger);
+		}
+		
+		for (SceneGroup group : block.groups) {
+			for (SceneGadget g : group.gadgets) {
+				EntityGadget entity = new EntityGadget(this, g.gadget_id, g.pos);
+				
+				if (entity.getGadgetData() == null) continue;
+				
+				entity.setBlockId(block.id);
+				entity.setConfigId(g.config_id);
+				entity.setGroupId(group.id);
+				entity.getRotation().set(g.rot);
+				entity.setState(g.state);
+				
+				this.addEntity(entity);
+				this.getScriptManager().onGadgetCreate(entity);
+			}
+		}
+	}
+	
+	public void onUnloadBlock(SceneBlock block) {
+		List<GameEntity> toRemove = this.getEntities().values().stream().filter(e -> e.getBlockId() == block.id).toList();
+
+		if (toRemove.size() > 0) {
+			toRemove.stream().forEach(this::removeEntityDirectly);
+			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_REMOVE));
+		}
+		
+		for (SceneGroup group : block.groups) {
+			group.triggers.forEach(getScriptManager()::deregisterTrigger);
 		}
 	}
 	

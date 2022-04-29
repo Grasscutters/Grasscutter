@@ -21,11 +21,12 @@ import emu.grasscutter.data.def.DungeonData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
-import emu.grasscutter.game.entity.EntityGadget;
+import emu.grasscutter.game.entity.EntityBaseGadget;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
+import emu.grasscutter.scripts.data.SceneConfig;
 import emu.grasscutter.server.packet.send.PacketDelTeamEntityNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
@@ -243,16 +244,22 @@ public class World implements Iterable<Player> {
 		newScene.addPlayer(player);
 		
 		// Dungeon
-		if (dungeonData != null) {
-			// TODO set position
+		SceneConfig config = newScene.getScriptManager().getConfig();
+		if (pos == null && config != null) {
+			if (config.born_pos != null) {
+				pos = newScene.getScriptManager().getConfig().born_pos;
+			} 
+			if (config.born_rot != null) {
+				player.getRotation().set(config.born_rot);
+			}
 		}
 		
 		// Set player position
-		if (pos != null) {
-			player.getPos().set(pos);
-		} else {
+		if (pos == null) {
 			pos = player.getPos();
 		}
+		
+		player.getPos().set(pos);
 
 		if (oldScene != null) {
 			newScene.setPrevScene(oldScene.getId());
