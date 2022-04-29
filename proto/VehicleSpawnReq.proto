@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message VehicleSpawnReq {
+	uint32 vehicleId = 1;
+	uint32 pointId = 2;
+  Vector pos = 3;
+  Vector rot = 4;
+}

@@ -8,14 +8,15 @@ public class GadgetData extends GameResource {
 	private int Id;
 	
 	private String Type;
-    private String JsonName;
-    private boolean IsInteractive;
-    private String[] Tags;
-    private String ItemJsonName;
-    private String InteeIconName;
-    private long NameTextMapHash;
-    private int CampID;
-	    
+	private String JsonName;
+	private boolean IsInteractive;
+	private String[] Tags;
+	private String ItemJsonName;
+	private String InteeIconName;
+	private long NameTextMapHash;
+	private int CampID;
+	private String LODPatternName;
+
 	@Override
 	public int getId() {
 		return this.Id;
@@ -52,6 +53,8 @@ public class GadgetData extends GameResource {
 	public int getCampID() {
 		return CampID;
 	}
+
+	public String getLODPatternName() { return LODPatternName; }
 
 	@Override
 	public void onLoad() {
