@@ -6,24 +6,20 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.packet.send.PacketMailChangeNotify;
 
-import java.time.Instant;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
 @Command(label = "sendmail", usage = "sendmail <userId|all|help> [templateId]",
         description = "Sends mail to the specified user. The usage of this command changes based on it's composition state.", permission = "server.sendmail")
-public class SendMailCommand implements CommandHandler {
+public final class SendMailCommand implements CommandHandler {
 
     // TODO: You should be able to do /sendmail and then just send subsequent messages until you finish
     //  However, due to the current nature of the command system, I don't think this is possible without rewriting
     //  the command system (again). For now this will do
 
     // Key = User that is constructing the mail.
-    private static HashMap<Integer, MailBuilder> mailBeingConstructed = new HashMap<Integer, MailBuilder>();
+    private static final HashMap<Integer, MailBuilder> mailBeingConstructed = new HashMap<Integer, MailBuilder>();
 
     // Yes this is awful and I hate it.
     @Override
@@ -48,7 +44,6 @@ public class SendMailCommand implements CommandHandler {
                         default -> {
                             if (DatabaseHelper.getPlayerById(Integer.parseInt(args.get(0))) != null) {
                                 mailBuilder = new MailBuilder(Integer.parseInt(args.get(0)), new Mail());
-                                break;
                             } else {
                                 CommandHandler.sendMessage(sender, "The user with an id of '" + args.get(0) + "' does not exist");
                                 return;
@@ -73,7 +68,7 @@ public class SendMailCommand implements CommandHandler {
                     }
                     case "finish" -> {
                         if (mailBuilder.constructionStage == 3) {
-                            if (mailBuilder.sendToAll == false) {
+                            if (!mailBuilder.sendToAll) {
                                 Grasscutter.getGameServer().getPlayerByUid(mailBuilder.recipient, true).sendMail(mailBuilder.mail);
                                 CommandHandler.sendMessage(sender, "Message sent to user " + mailBuilder.recipient + "!");
                             } else {
