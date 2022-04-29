@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.server.game.GameServer;
 
+import java.io.File;
 import java.io.InputStream;
 import java.net.URLClassLoader;
 
@@ -15,6 +16,7 @@ public abstract class Plugin {
     
     private PluginIdentifier identifier;
     private URLClassLoader classLoader;
+    private File dataFolder;
 
     /**
      * This method is reflected into.
@@ -23,11 +25,19 @@ public abstract class Plugin {
      * @param identifier The plugin's identifier.
      */
     private void initializePlugin(PluginIdentifier identifier, URLClassLoader classLoader) {
-        if(this.identifier == null)
-            this.identifier = identifier;
-        if(this.classLoader == null)
-            this.classLoader = classLoader;
-        else Grasscutter.getLogger().warn(this.identifier.name + " had a reinitialization attempt.");
+        if(this.identifier != null) {
+            Grasscutter.getLogger().warn(this.identifier.name + " had a reinitialization attempt.");
+            return;
+        }
+        
+        this.identifier = identifier;
+        this.classLoader = classLoader;
+        this.dataFolder = new File(Grasscutter.getConfig().PLUGINS_FOLDER, identifier.name);
+        
+        if(!this.dataFolder.exists() && !this.dataFolder.mkdirs()) {
+            Grasscutter.getLogger().warn("Failed to create plugin data folder for " + this.identifier.name);
+            return;
+        }
     }
 
     /**
@@ -74,6 +84,14 @@ public abstract class Plugin {
      */
     public final InputStream getResource(String resourceName) {
         return this.classLoader.getResourceAsStream(resourceName);
+    }
+
+    /**
+     * Returns a directory where plugins can store data files.
+     * @return A directory on the file system.
+     */
+    public final File getDataFolder() {
+        return this.dataFolder;
     }
 
     /**
