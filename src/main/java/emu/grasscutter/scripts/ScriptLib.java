@@ -13,8 +13,10 @@ import emu.grasscutter.game.dungeons.DungeonChallenge;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneMonster;
+import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketGadgetStateNotify;
 import emu.grasscutter.server.packet.send.PacketWorktopOptionNotify;
 
@@ -130,7 +132,7 @@ public class ScriptLib {
 			getSceneScriptManager().getScene().addEntities(toAdd);
 			
 			for (GameEntity entity : toAdd) {
-				this.getSceneScriptManager().onMonsterSpawn((EntityMonster) entity);
+				this.getSceneScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs(entity.getConfigId()));
 			}
 		}
 		
