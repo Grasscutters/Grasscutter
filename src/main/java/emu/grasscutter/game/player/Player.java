@@ -21,6 +21,7 @@ import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.shop.ShopInfo;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
@@ -621,27 +622,26 @@ public class Player {
 		return shopLimit;
 	}
 
-	public int getGoodsLimitNum(int goodsId) {
-		for (ShopLimit sl : getShopLimit()) {
-			if (sl.getShopGoodId() == goodsId)
-				return sl.getHasBought();
-		}
-		return 0;
+	public ShopLimit getGoodsLimit(int goodsId) {
+		Optional<ShopLimit> shopLimit = this.shopLimit.stream().filter(x -> x.getShopGoodId() == goodsId).findFirst();
+		if (shopLimit.isEmpty())
+			return null;
+		return shopLimit.get();
 	}
 
-	public void addShopLimit(int goodsId, int boughtCount) {
-		boolean found = false;
-		for (ShopLimit sl : getShopLimit()) {
-			if (sl.getShopGoodId() == goodsId){
-				sl.setHasBought(sl.getHasBought() + boughtCount);
-				found = true;
-			}
-		}
-		if (!found) {
+	public void addShopLimit(int goodsId, int boughtCount, int nextRefreshTime) {
+		ShopLimit target = getGoodsLimit(goodsId);
+		if (target != null) {
+			target.setHasBought(target.getHasBought() + boughtCount);
+			target.setHasBoughtInPeriod(target.getHasBoughtInPeriod() + boughtCount);
+			target.setNextRefreshTime(nextRefreshTime);
+		} else {
 			ShopLimit sl = new ShopLimit();
 			sl.setShopGoodId(goodsId);
 			sl.setHasBought(boughtCount);
-			shopLimit.add(sl);
+			sl.setHasBoughtInPeriod(boughtCount);
+			sl.setNextRefreshTime(nextRefreshTime);
+			getShopLimit().add(sl);
 		}
 		this.save();
 	}
