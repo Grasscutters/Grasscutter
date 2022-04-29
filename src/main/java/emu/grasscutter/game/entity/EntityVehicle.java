@@ -18,23 +18,29 @@ import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.net.proto.VehicleInfoOuterClass.*;
-
+import emu.grasscutter.net.proto.VehicleMemberOuterClass.*;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class EntityVehicle extends EntityBaseGadget {
+
 	private final Player owner;
 	private final Int2FloatOpenHashMap fightProp;
 
 	private final Position pos;
 	private final Position rot;
 
-	private float curStamina;
 	private final int pointId;
 	private final int gadgetId;
+
+	private float curStamina;
+	private List<VehicleMember> vehicleMembers;
 
 	public EntityVehicle(Scene scene, Player player, int gadgetId, int pointId, Position pos, Position rot) {
 		super(scene);
@@ -46,6 +52,7 @@ public class EntityVehicle extends EntityBaseGadget {
 		this.gadgetId = gadgetId;
 		this.pointId = pointId;
 		this.curStamina = 240;
+		this.vehicleMembers = new ArrayList<VehicleMember>();
 	}
 
 	@Override
@@ -60,6 +67,8 @@ public class EntityVehicle extends EntityBaseGadget {
 	public void setCurStamina(float stamina) { this.curStamina = stamina; }
 
 	public int getPointId() { return pointId; }
+
+	public List<VehicleMember> getVehicleMembers() { return vehicleMembers; }
 
 	@Override
 	public Int2FloatOpenHashMap getFightProperties() {
