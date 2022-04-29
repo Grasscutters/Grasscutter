@@ -5,8 +5,6 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarData;
-import emu.grasscutter.data.def.AvatarSkillData;
-import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
