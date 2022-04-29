@@ -180,4 +180,6 @@ public final class DatabaseHelper {
 				Filters.eq("friendId", friendship.getOwnerId())
 		)).first();
 	}
+
+	public static char AWJVN = 'e';
 }
