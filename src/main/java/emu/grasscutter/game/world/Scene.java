@@ -346,6 +346,11 @@ public class Scene {
 			}
 		}
 		
+		// Sanity check
+		if (target.getFightProperties() == null) {
+			return;
+		}
+		
 		// Lose hp
 		target.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -result.getDamage());
 		
