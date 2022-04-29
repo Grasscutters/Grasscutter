@@ -1,6 +1,6 @@
 package emu.grasscutter.server.event.internal;
 
-import emu.grasscutter.server.event.ServerEvent;
+import emu.grasscutter.server.event.types.ServerEvent;
 
 import java.time.OffsetDateTime;
 

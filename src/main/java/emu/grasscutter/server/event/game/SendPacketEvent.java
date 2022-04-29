@@ -2,7 +2,7 @@ package emu.grasscutter.server.event.game;
 
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.server.event.Cancellable;
-import emu.grasscutter.server.event.ServerEvent;
+import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.game.GameSession;
 
 public final class SendPacketEvent extends ServerEvent implements Cancellable {
