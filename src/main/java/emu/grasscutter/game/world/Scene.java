@@ -375,7 +375,7 @@ public class Scene {
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
 
 		// Reward drop
-		if (target instanceof EntityMonster && this.getSceneType() == SceneType.SCENE_WORLD) {
+		if (target instanceof EntityMonster && this.getSceneType() != SceneType.SCENE_DUNGEON) {
 			getWorld().getServer().getDropManager().callDrop((EntityMonster) target);
 		}
 
