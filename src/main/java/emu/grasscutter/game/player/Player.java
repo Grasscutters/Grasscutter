@@ -37,6 +37,9 @@ import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass;
+import emu.grasscutter.server.event.player.PlayerJoinEvent;
+import emu.grasscutter.server.event.player.PlayerQuitEvent;
+import emu.grasscutter.server.event.player.PlayerReceiveMailEvent;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
@@ -725,9 +728,13 @@ public class Player {
 	public List<Mail> getAllMail() { return this.mail; }
 
 	public void sendMail(Mail message) {
+		// Call mail receive event.
+		PlayerReceiveMailEvent event = new PlayerReceiveMailEvent(this, message); event.call();
+		if(event.isCanceled()) return; message = event.getMessage();
+		
 		this.mail.add(message);
 		this.save();
-		Grasscutter.getLogger().info("Mail sent to user [" + this.getUid()  + ":" + this.getNickname() + "]!");
+		Grasscutter.getLogger().debug("Mail sent to user [" + this.getUid()  + ":" + this.getNickname() + "]!");
 		if(this.isOnline()) {
 			this.sendPacket(new PacketMailChangeNotify(this, message));
 		} // TODO: setup a way for the mail notification to show up when someone receives mail when they were offline
@@ -1037,6 +1044,11 @@ public class Player {
 
 		// First notify packets sent
 		this.setHasSentAvatarDataNotify(true);
+
+		// Call join event.
+		PlayerJoinEvent event = new PlayerJoinEvent(this); event.call();
+		if(event.isCanceled()) // If event is not cancelled, continue.
+			session.close();
 	}
 
 	public void onLogout() {
@@ -1055,6 +1067,9 @@ public class Player {
 		this.save();
 		this.getTeamManager().saveAvatars();
 		this.getFriendsList().save();
+		
+		// Call quit event.
+		PlayerQuitEvent event = new PlayerQuitEvent(this); event.call();
 	}
 
 	public enum SceneLoadState {

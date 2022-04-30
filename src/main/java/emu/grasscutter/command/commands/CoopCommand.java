@@ -8,13 +8,14 @@ import java.util.List;
 
 @Command(label = "coop", usage = "coop",
         description = "Forces someone to join the world of others", permission = "server.coop")
-public class CoopCommand implements CommandHandler {
+public final class CoopCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (args.size() < 2) {
             CommandHandler.sendMessage(sender, "Usage: coop <playerId> <target playerId>");
             return;
         }
+        
         try {
             int tid = Integer.parseInt(args.get(0));
             int hostId = Integer.parseInt(args.get(1));

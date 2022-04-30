@@ -1,6 +1,6 @@
 package emu.grasscutter.server.event.dispatch;
 
-import emu.grasscutter.server.event.ServerEvent;
+import emu.grasscutter.server.event.types.ServerEvent;
 
 public final class QueryCurrentRegionEvent extends ServerEvent {
     private String regionInfo;
