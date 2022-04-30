@@ -13,7 +13,7 @@ import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq;
 import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.server.event.game.PlayerJoinEvent;
+import emu.grasscutter.server.event.game.PlayerCreationEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 
@@ -40,8 +40,10 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			nickname = "Traveler";
 		}
 		
-		// Create character
-		Player player = new Player(session);
+		// Call creation event.
+		PlayerCreationEvent event = new PlayerCreationEvent(session, Player.class); event.call();
+		// Create player instance from event.
+		Player player = event.getPlayerClass().getDeclaredConstructor(GameSession.class).newInstance(session);
 		player.setNickname(nickname);
 		
 		try {
@@ -92,10 +94,5 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			Grasscutter.getLogger().error("Error creating player object: ", e);
 			session.close();
 		}
-
-		// Call join event.
-		PlayerJoinEvent event = new PlayerJoinEvent(player); event.call();
-		if(event.isCanceled()) // If event is not cancelled, continue.
-			session.close();
 	}
 }
