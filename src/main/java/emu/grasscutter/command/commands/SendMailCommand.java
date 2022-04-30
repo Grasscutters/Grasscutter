@@ -3,16 +3,13 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.data.LanguageResourceDict;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.packet.send.PacketMailChangeNotify;
 
-import java.time.Instant;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
 @Command(label = "sendmail", usage = "sendmail <userId|all|help> [templateId]",
         description = "Sends mail to the specified user. The usage of this command changes based on it's composition state.", permission = "server.sendmail")
@@ -42,6 +39,14 @@ public class SendMailCommand implements CommandHandler {
                     switch (args.get(0).toLowerCase()) {
                         case "help" -> {
                             CommandHandler.sendMessage(sender, this.getClass().getAnnotation(Command.class).description() + "\nUsage: " + this.getClass().getAnnotation(Command.class).usage());
+                            return;
+                        }
+                        case "帮助" -> {
+                            CommandHandler.sendMessage(sender,
+                                    LanguageResourceDict.getText(this.getClass().getAnnotation(Command.class).description())  + "\n"
+                                            + LanguageResourceDict.getText(LanguageResourceDict.USAGE)
+                                            + LanguageResourceDict.getText(this.getClass().getAnnotation(Command.class).usage())
+                            );
                             return;
                         }
                         case "all" -> mailBuilder = new MailBuilder(true, new Mail());

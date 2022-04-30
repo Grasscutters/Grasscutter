@@ -3,11 +3,12 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
+import emu.grasscutter.data.LanguageResourceDict;
 import emu.grasscutter.game.player.Player;
 
 import java.util.*;
 
-@Command(label = "help", usage = "help [command]",
+@Command(label = "help", usage = "help [command]", aliases = { "帮助" },
         description = "Sends the help message or shows information about a specified command")
 public final class HelpCommand implements CommandHandler {
 
@@ -36,16 +37,17 @@ public final class HelpCommand implements CommandHandler {
             } else {
                 Command annotation = handler.getClass().getAnnotation(Command.class);
 
-                builder.append("   ").append(annotation.description()).append("\n");
-                builder.append("   Usage: ").append(annotation.usage());
+                builder.append("\t"+LanguageResourceDict.getText(annotation.description())).append("\n");
+                builder.append("\t"+LanguageResourceDict.getText(LanguageResourceDict.USAGE)).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
-                    builder.append("\n").append("   Aliases: ");
+                    builder.append("\n")
+                            .append("\t"+LanguageResourceDict.getText(LanguageResourceDict.ALIAS));
                     for (String alias : annotation.aliases()) {
                         builder.append(alias).append(" ");
                     }
                 }
                 if (player != null && !Objects.equals(annotation.permission(), "") && !player.getAccount().hasPermission(annotation.permission())) {
-                    builder.append("\n Warning: You do not have permission to run this command.");
+                    builder.append("\n" + LanguageResourceDict.getText(LanguageResourceDict.DO_NOT_PERMMISSION));
                 }
             }
 
@@ -58,10 +60,11 @@ public final class HelpCommand implements CommandHandler {
             StringBuilder builder = new StringBuilder("\nAvailable commands:\n");
             annotations.forEach(annotation -> {
                 builder.append(annotation.label()).append("\n");
-                builder.append("   ").append(annotation.description()).append("\n");
-                builder.append("   Usage: ").append(annotation.usage());
+                builder.append("\t"+ LanguageResourceDict.getText(annotation.description())).append("\n");
+                builder.append("\t"+ LanguageResourceDict.getText(LanguageResourceDict.USAGE)).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
-                    builder.append("\n").append("   Aliases: ");
+                    builder.append("\n")
+                            .append("\t"+LanguageResourceDict.getText(LanguageResourceDict.ALIAS));
                     for (String alias : annotation.aliases()) {
                         builder.append(alias).append(" ");
                     }
@@ -75,10 +78,10 @@ public final class HelpCommand implements CommandHandler {
             CommandHandler.sendMessage(player, "Available commands:");
             annotations.forEach(annotation -> {
                 StringBuilder builder = new StringBuilder(annotation.label()).append("\n");
-                builder.append("   ").append(annotation.description()).append("\n");
-                builder.append("   Usage: ").append(annotation.usage());
+                builder.append("\t"+ LanguageResourceDict.getText(annotation.description())).append("\n");
+                builder.append("\t"+ LanguageResourceDict.getText(LanguageResourceDict.USAGE)).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
-                    builder.append("\n").append("   Aliases: ");
+                    builder.append("\n").append("\t"+LanguageResourceDict.getText(LanguageResourceDict.ALIAS));
                     for (String alias : annotation.aliases()) {
                         builder.append(alias).append(" ");
                     }

@@ -2,6 +2,7 @@ package emu.grasscutter.command.commands;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.data.LanguageResourceDict;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
@@ -9,13 +10,12 @@ import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
 
 import java.util.List;
 
-@Command(label = "heal", usage = "heal|h", aliases = {"h"},
-        description = "Heal all characters in your current team.", permission = "player.heal")
+@Command(label = "heal", usage = "heal|h", aliases = {"h"}, description = LanguageResourceDict.HEAL_DESC, permission = "player.heal")
 public final class HealCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+            CommandHandler.sendMessage(null, LanguageResourceDict.getText(LanguageResourceDict.RUN_IN_GAME));
             return;
         }
         

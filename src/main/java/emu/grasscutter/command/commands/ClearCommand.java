@@ -3,6 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.data.LanguageResourceDict;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
@@ -20,7 +21,7 @@ public final class ClearCommand implements CommandHandler {
         int target;
         String cmdSwitch = "";
         if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+            CommandHandler.sendMessage(null, LanguageResourceDict.getText(LanguageResourceDict.RUN_IN_GAME));
             return;
         }
         Inventory playerInventory = sender.getInventory();

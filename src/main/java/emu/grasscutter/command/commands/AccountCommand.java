@@ -1,14 +1,14 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.data.LanguageResourceDict;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "Modify user accounts")
+@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = LanguageResourceDict.ACCOUNT_DESC)
 public final class AccountCommand implements CommandHandler {
 
     @Override

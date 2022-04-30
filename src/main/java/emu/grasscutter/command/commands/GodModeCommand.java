@@ -3,6 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.data.LanguageResourceDict;
 import emu.grasscutter.game.player.Player;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public final class GodModeCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+            CommandHandler.sendMessage(null, LanguageResourceDict.getText(LanguageResourceDict.RUN_IN_GAME));
             return; // TODO: toggle player's godmode statue from console or other players
         }
 

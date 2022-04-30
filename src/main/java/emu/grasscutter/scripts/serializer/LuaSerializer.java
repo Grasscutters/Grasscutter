@@ -70,7 +70,7 @@ public class LuaSerializer implements Serializer {
 		}
 		
 		try {
-			object = type.getDeclaredConstructor().newInstance(null);
+			object = type.getDeclaredConstructor().newInstance(new Object[0]);
 			
 			LuaValue[] keys = table.keys();
 			for (LuaValue k : keys) {

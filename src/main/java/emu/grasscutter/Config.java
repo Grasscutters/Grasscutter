@@ -14,6 +14,7 @@ public final class Config {
 	public String KEY_FOLDER = "./keys/";
 	public String SCRIPTS_FOLDER = "./resources/Scripts/";
 	public String PLUGINS_FOLDER = "./plugins/";
+	public String LANGUAGE_LOCAT = "zh_cn";
 
 	public String RunMode = "HYBRID"; // HYBRID, DISPATCH_ONLY, GAME_ONLY
 	public GameServerOptions GameServer = new GameServerOptions();
