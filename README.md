@@ -135,7 +135,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 | spawn          | spanw <entityID\|entityName> [level] [amount]     | server.spawn              | Client only  | Spawns an entity near you                                    |                                                 |
 | stop           | stop                                              | server.stop               | Both side    | Stops the server                                             |                                                 |
 | talent         | talent \<talentID> \<value>                         | player.settalent          | Client only  | Sets talent level for your currently selected character           |                                                 |
-| teleport       | teleport \<x> \<y> \<z>                              | player.teleport           | Client only  | Change the player's position.                                | tp                                              |
+| teleport       | teleport [@playerUid] \<x> \<y> \<z> [sceneId]                             | player.teleport           | Both side  | Change the player's position.                                | tp                                              |
 | tpall          |                                                   | player.tpall              | Client only  | Teleports all players in your world to your position         |                                                 |
 | weather        | weather \<weatherID> \<climateID>                   | player.weather            | Client only  | Changes the weather                                          | w                                               |
 
