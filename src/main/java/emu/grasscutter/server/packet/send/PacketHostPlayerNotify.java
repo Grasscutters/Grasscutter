@@ -1,11 +1,11 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.World;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.world.World;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify;
 
-public class PacketHostPlayerNotify extends GenshinPacket {
+public class PacketHostPlayerNotify extends BasePacket {
 	
 	public PacketHostPlayerNotify(World world) {
 		super(PacketOpcodes.HostPlayerNotify);

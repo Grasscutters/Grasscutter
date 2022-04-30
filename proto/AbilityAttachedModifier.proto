@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message AbilityAttachedModifier {
+	bool is_invalid = 1;
+	uint32 owner_entity_id = 2;
+	uint32 instanced_modifier_id = 3;
+	bool is_serverbuff_modifier = 4;
+	int32 attach_name_hash = 5;
+}

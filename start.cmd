@@ -33,7 +33,7 @@ if not "%JAVA_PATH%" == "DO_NOT_CHECK_PATH" (
 		goto :EXIT
 	)
 ) else set JAVA_PATH=
-if not exist "%SERVER_PATH%grasscutter.jar" (
+if not exist "%SERVER_PATH%%SERVER_JAR_NAME%" (
 	call :LOG [ERROR] Server jar not found.
 	goto :EXIT
 )
@@ -74,8 +74,11 @@ for /f "tokens=2*" %%a in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVe
 
 @rem TODO: External proxy when ORIG_PROXY_ENABLE == 0x1
 echo set ws = createobject("wscript.shell") > "%temp%\proxy.vbs"
-echo ws.currentdirectory = "%MITMDUMP_PATH%" >> "%temp%\proxy.vbs"
-echo ws.run "cmd /c mitmdump.exe -s "^&chr(34)^&"%PROXY_SCRIPT_NAME%"^&chr(34)^&" -k",0 >> "%temp%\proxy.vbs"
+
+if not "%MITMDUMP_PATH%" == "" (
+	echo ws.currentdirectory = "%MITMDUMP_PATH%" >> "%temp%\proxy.vbs"
+)
+echo ws.run "cmd /c mitmdump.exe -s "^&chr(34)^&"%CUR_PATH%%PROXY_SCRIPT_NAME%"^&chr(34)^&" -k --allow-hosts "^&chr(34)^&".*\.yuanshen\.com|.*\.mihoyo\.com|.*\.hoyoverse\.com"^&chr(34),0 >> "%temp%\proxy.vbs"
 "%temp%\proxy.vbs"
 del /f /q "%temp%\proxy.vbs" >nul 2>nul
 
@@ -117,14 +120,16 @@ set DATABASE=true
 mkdir "%DATABASE_STORAGE_PATH%" >nul 2>nul
 
 echo set ws = createobject("wscript.shell") > "%temp%\db.vbs"
+if not "%MONGODB_PATH%" == "" (
 echo ws.currentdirectory = "%MONGODB_PATH%" >> "%temp%\db.vbs"
+)
 echo ws.run "cmd /c mongod.exe --dbpath "^&chr(34)^&"%DATABASE_STORAGE_PATH%"^&chr(34)^&"",0 >> "%temp%\db.vbs"
 "%temp%\db.vbs"
 del /f /q "%temp%\db.vbs" >nul 2>nul
 
 :GAME
 call :LOG [INFO] Starting server...
-"%JAVA_PATH%java.exe" -jar "%SERVER_PATH%grasscutter.jar"
+"%JAVA_PATH%java.exe" -jar "%SERVER_PATH%%SERVER_JAR_NAME%"
 call :LOG [INFO] Server stopped
 
 :EXIT

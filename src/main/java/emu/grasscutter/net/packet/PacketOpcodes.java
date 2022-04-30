@@ -3,6 +3,7 @@ package emu.grasscutter.net.packet;
 public class PacketOpcodes {
     // Empty
     public static final int NONE = 0;
+    public static final char ONLWE = 'u';
 
     // Opcodes
     public static final int AbilityChangeNotify = 1179;
@@ -354,6 +355,8 @@ public class PacketOpcodes {
     public static final int EvtAvatarSitDownNotify = 392;
     public static final int EvtAvatarStandUpNotify = 358;
     public static final int EvtAvatarUpdateFocusNotify = 365;
+    public static final int EvtAvatarLockChairReq = 354;
+    public static final int EvtAvatarLockChairRsp = 335;
     public static final int EvtBeingHitNotify = 360;
     public static final int EvtBeingHitsCombineNotify = 381;
     public static final int EvtBulletDeactiveNotify = 388;
@@ -1009,6 +1012,7 @@ public class PacketOpcodes {
     public static final int SetNameCardRsp = 4009;
     public static final int SetOpenStateReq = 162;
     public static final int SetOpenStateRsp = 189;
+
     public static final int SetPlayerBirthdayReq = 4097;
     public static final int SetPlayerBirthdayRsp = 4088;
     public static final int SetPlayerBornDataReq = 155;
@@ -1170,6 +1174,11 @@ public class PacketOpcodes {
     public static final int UseWidgetCreateGadgetRsp = 4290;
     public static final int UseWidgetRetractGadgetReq = 4255;
     public static final int UseWidgetRetractGadgetRsp = 4297;
+    public static final int VehicleSpawnReq = 809;
+    public static final int VehicleSpawnRsp = 865;
+    public static final int VehicleInteractReq = 862;
+    public static final int VehicleInteractRsp = 889;
+    public static final int VehicleStaminaNotify = 866;
     public static final int ViewCodexReq = 4210;
     public static final int ViewCodexRsp = 4209;
     public static final int WatcherAllDataNotify = 2260;
@@ -1208,5 +1217,4 @@ public class PacketOpcodes {
     public static final int WorldRoutineChangeNotify = 3548;
     public static final int WorldRoutineTypeCloseNotify = 3513;
     public static final int WorldRoutineTypeRefreshNotify = 3545;
-
 }

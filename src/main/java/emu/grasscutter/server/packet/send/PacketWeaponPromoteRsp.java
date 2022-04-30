@@ -1,13 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.inventory.GenshinItem;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.WeaponPromoteRspOuterClass.WeaponPromoteRsp;
 
-public class PacketWeaponPromoteRsp extends GenshinPacket {
+public class PacketWeaponPromoteRsp extends BasePacket {
 	
-	public PacketWeaponPromoteRsp(GenshinItem item, int oldPromoteLevel) {
+	public PacketWeaponPromoteRsp(GameItem item, int oldPromoteLevel) {
 		super(PacketOpcodes.WeaponPromoteRsp);
 
 		WeaponPromoteRsp proto = WeaponPromoteRsp.newBuilder()

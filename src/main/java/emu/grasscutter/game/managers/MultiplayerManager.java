@@ -1,12 +1,13 @@
 package emu.grasscutter.game.managers;
 
 import emu.grasscutter.game.CoopRequest;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.GenshinPlayer.SceneLoadState;
 import emu.grasscutter.game.props.EnterReason;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
-import emu.grasscutter.game.World;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.Player.SceneLoadState;
+import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketPlayerApplyEnterMpNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerApplyEnterMpResultNotify;
@@ -23,10 +24,10 @@ public class MultiplayerManager {
 		return server;
 	}
 
-	public void applyEnterMp(GenshinPlayer player, int targetUid) {
-		GenshinPlayer target = getServer().getPlayerByUid(targetUid);
+	public void applyEnterMp(Player player, int targetUid) {
+		Player target = getServer().getPlayerByUid(targetUid);
 		if (target == null) {
-			player.sendPacket(new PacketPlayerApplyEnterMpResultNotify(targetUid, "", false, PlayerApplyEnterMpReason.PlayerCannotEnterMp));
+			player.sendPacket(new PacketPlayerApplyEnterMpResultNotify(targetUid, "", false, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.PLAYER_CANNOT_ENTER_MP));
 			return;
 		}
 		
@@ -58,7 +59,7 @@ public class MultiplayerManager {
 		target.sendPacket(new PacketPlayerApplyEnterMpNotify(player));
 	}
 
-	public void applyEnterMpReply(GenshinPlayer hostPlayer, int applyUid, boolean isAgreed) {
+	public void applyEnterMpReply(Player hostPlayer, int applyUid, boolean isAgreed) {
 		// Checks
 		CoopRequest request = hostPlayer.getCoopRequests().get(applyUid);
 		if (request == null || request.isExpired()) {
@@ -66,17 +67,17 @@ public class MultiplayerManager {
 		}
 		
 		// Remove now that we are handling it
-		GenshinPlayer requester = request.getRequester();
+		Player requester = request.getRequester();
 		hostPlayer.getCoopRequests().remove(applyUid);
 		
 		// Sanity checks - Dont let the requesting player join if they are already in multiplayer
 		if (requester.getWorld().isMultiplayer()) {
-			request.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(hostPlayer, false, PlayerApplyEnterMpReason.PlayerCannotEnterMp));
+			request.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(hostPlayer, false, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.PLAYER_CANNOT_ENTER_MP));
 			return;
 		}
 		
 		// Response packet
-		request.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(hostPlayer, isAgreed, PlayerApplyEnterMpReason.PlayerJudge));
+		request.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(hostPlayer, isAgreed, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.PLAYER_JUDGE));
 		
 		// Declined
 		if (!isAgreed) {
@@ -92,7 +93,7 @@ public class MultiplayerManager {
 			world.addPlayer(hostPlayer);
 			
 			// Rejoin packet
-			hostPlayer.sendPacket(new PacketPlayerEnterSceneNotify(hostPlayer, hostPlayer, EnterType.EnterSelf, EnterReason.HostFromSingleToMp, hostPlayer.getScene().getId(), hostPlayer.getPos()));
+			hostPlayer.sendPacket(new PacketPlayerEnterSceneNotify(hostPlayer, hostPlayer, EnterType.ENTER_SELF, EnterReason.HostFromSingleToMp, hostPlayer.getScene().getId(), hostPlayer.getPos()));
 		}
 		
 		// Set scene pos and id of requester to the host player's
@@ -104,17 +105,17 @@ public class MultiplayerManager {
 		hostPlayer.getWorld().addPlayer(requester);
 
 		// Packet
-		requester.sendPacket(new PacketPlayerEnterSceneNotify(requester, hostPlayer, EnterType.EnterOther, EnterReason.TeamJoin, hostPlayer.getScene().getId(), hostPlayer.getPos()));
+		requester.sendPacket(new PacketPlayerEnterSceneNotify(requester, hostPlayer, EnterType.ENTER_OTHER, EnterReason.TeamJoin, hostPlayer.getScene().getId(), hostPlayer.getPos()));
 	}
 	
-	public boolean leaveCoop(GenshinPlayer player) {
+	public boolean leaveCoop(Player player) {
 		// Make sure player's world is multiplayer
 		if (!player.getWorld().isMultiplayer()) {
 			return false;
 		}
 		
 		// Make sure everyone's scene is loaded
-		for (GenshinPlayer p : player.getWorld().getPlayers()) {
+		for (Player p : player.getWorld().getPlayers()) {
 			if (p.getSceneLoadState() != SceneLoadState.LOADED) {
 				return false;
 			}
@@ -125,19 +126,19 @@ public class MultiplayerManager {
 		world.addPlayer(player);
 	
 		// Packet
-		player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.EnterSelf, EnterReason.TeamBack, player.getScene().getId(), player.getPos()));
+		player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.ENTER_SELF, EnterReason.TeamBack, player.getScene().getId(), player.getPos()));
 		
 		return true;
 	}
 
-	public boolean kickPlayer(GenshinPlayer player, int targetUid) {
+	public boolean kickPlayer(Player player, int targetUid) {
 		// Make sure player's world is multiplayer and that player is owner
 		if (!player.getWorld().isMultiplayer() || player.getWorld().getHost() != player) {
 			return false;
 		}
 		
 		// Get victim and sanity checks
-		GenshinPlayer victim = player.getServer().getPlayerByUid(targetUid);
+		Player victim = player.getServer().getPlayerByUid(targetUid);
 		
 		if (victim == null || victim == player) {
 			return false;
@@ -152,7 +153,7 @@ public class MultiplayerManager {
 		World world = new World(victim);
 		world.addPlayer(victim);
 		
-		victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.EnterSelf, EnterReason.TeamKick, victim.getScene().getId(), victim.getPos()));
+		victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.ENTER_SELF, EnterReason.TeamKick, victim.getScene().getId(), victim.getPos()));
 		return true;
 	}
 }

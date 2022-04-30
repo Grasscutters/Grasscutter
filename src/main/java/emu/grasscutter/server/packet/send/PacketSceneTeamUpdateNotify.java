@@ -1,25 +1,25 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar;
 import emu.grasscutter.net.proto.SceneTeamUpdateNotifyOuterClass.SceneTeamUpdateNotify;
 
-public class PacketSceneTeamUpdateNotify extends GenshinPacket {
+public class PacketSceneTeamUpdateNotify extends BasePacket {
 	
-	public PacketSceneTeamUpdateNotify(GenshinPlayer player) {
+	public PacketSceneTeamUpdateNotify(Player player) {
 		super(PacketOpcodes.SceneTeamUpdateNotify);
 
 		SceneTeamUpdateNotify.Builder proto = SceneTeamUpdateNotify.newBuilder()
 				.setIsInMp(player.getWorld().isMultiplayer());
 		
-		for (GenshinPlayer p : player.getWorld().getPlayers()) {
+		for (Player p : player.getWorld().getPlayers()) {
 			for (EntityAvatar entityAvatar : p.getTeamManager().getActiveTeam()) {
 				SceneTeamAvatar.Builder avatarProto = SceneTeamAvatar.newBuilder()
-						.setPlayerId(p.getUid())
+						.setPlayerUid(p.getUid())
 						.setAvatarGuid(entityAvatar.getAvatar().getGuid())
 						.setSceneId(p.getSceneId())
 						.setEntityId(entityAvatar.getId())

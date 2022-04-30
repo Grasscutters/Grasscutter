@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message BlossomChestInfo {
+	uint32 resin = 1;
+	repeated uint32 qualify_uid_list = 2;
+	repeated uint32 remain_uid_list = 3;
+	uint32 dead_time = 4;
+	uint32 blossom_refresh_type = 5;
+	uint32 refresh_id = 6;
+}

@@ -1,11 +1,11 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SceneUnlockInfoNotifyOuterClass.SceneUnlockInfoNotify;
 import emu.grasscutter.net.proto.SceneUnlockInfoOuterClass.SceneUnlockInfo;
 
-public class PacketSceneUnlockInfoNotify extends GenshinPacket {
+public class PacketSceneUnlockInfoNotify extends BasePacket {
 	
 	public PacketSceneUnlockInfoNotify() {
 		super(PacketOpcodes.SceneUnlockInfoNotify); // Rename opcode later

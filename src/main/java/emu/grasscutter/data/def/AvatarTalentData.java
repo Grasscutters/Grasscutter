@@ -1,13 +1,13 @@
 package emu.grasscutter.data.def;
 
 import java.util.ArrayList;
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.FightPropData;
 
 @ResourceType(name = "AvatarTalentExcelConfigData.json", loadPriority = LoadPriority.HIGHEST)
-public class AvatarTalentData extends GenshinResource {
+public class AvatarTalentData extends GameResource {
 	private int TalentId;
 	private int PrevTalent;
     private long NameTextMapHash;

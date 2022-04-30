@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+message ShopGoods {
+	uint32 goods_id = 1;
+	ItemParam goods_item = 2;
+	uint32 scoin = 3;
+	uint32 hcoin = 4;
+	repeated ItemParam cost_item_list = 5;
+	uint32 bought_num = 6;
+	uint32 buy_limit = 7;
+	uint32 begin_time = 8;
+	uint32 end_time = 9;
+	uint32 next_refresh_time = 10;
+	uint32 min_level = 11;
+	uint32 max_level = 12;
+	repeated uint32 pre_goods_id_list = 13;
+	uint32 mcoin = 14;
+	uint32 disable_type = 15;
+	uint32 secondary_sheet_id = 16;
+	uint32 discount_id = 17;
+	uint32 discount_begin_time = 18;
+	uint32 discount_end_time = 19;
+	uint32 single_limit = 20;
+}

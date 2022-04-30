@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message CurVehicleInfo {
+	uint32 entity_id = 1;
+	uint32 pos = 2;
+}
