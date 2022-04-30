@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Command(label = "giveart", usage = "giveart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]", description = "Gives the player a specified reliquary", aliases = {"givea"}, permission = "player.giveart")
+@Command(label = "giveart", usage = "giveart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]", description = "Gives the player a specified artifact", aliases = {"gart"}, permission = "player.giveart")
 public final class GiveArtifactCommand implements CommandHandler {
 	@Override
 	public void execute(Player sender, List<String> args) {
-		int size = args.size(), target, itemId, mainPropId, level;
+		int size = args.size(), target, itemId, mainPropId, level = 1;
 		ArrayList<Integer> appendPropIdList = new ArrayList<>();
-		String msg = "Usage: giveart|givea [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]";
+		String msg = "Usage: giveart|gart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]";
 
 		if (sender == null && size < 2) {
 			CommandHandler.sendMessage(null, msg);
@@ -29,9 +29,14 @@ public final class GiveArtifactCommand implements CommandHandler {
 
 		if (size >= 2) {
 			try {
-				level = Integer.parseInt(args.get(size - 1));
-				if (level <= 21) size--;
-				else level = 1;
+				try {
+					int last = Integer.parseInt(args.get(size - 1));
+					if (last >= 1 && last <= 21) {
+						level = last;
+						size--;
+					}
+				} catch (NumberFormatException ignored) {
+				}
 				target = Integer.parseInt(args.get(0));
 				int fromIdx;
 				if (Grasscutter.getGameServer().getPlayerByUid(target) == null && sender != null) {
@@ -79,7 +84,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		GameItem item = new GameItem(itemData);
 		item.setLevel(level);
 		item.setMainPropId(mainPropId);
-		item.getAppendPropIdList().clear();//Clear default random props first
+		item.getAppendPropIdList().clear();
 		item.getAppendPropIdList().addAll(appendPropIdList);
 		targetPlayer.getInventory().addItem(item, ActionReason.SubfieldDrop);
 
