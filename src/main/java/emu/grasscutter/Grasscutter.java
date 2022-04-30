@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
+import java.util.Calendar;
 
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.plugin.PluginManager;
@@ -31,6 +32,8 @@ public final class Grasscutter {
 	
 	private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	private static final File configFile = new File("./config.json");
+	
+	private static int day; // Current day of week
 	
 	public static RunMode MODE = RunMode.BOTH;
 	private static DispatchServer dispatchServer;
@@ -67,8 +70,10 @@ public final class Grasscutter {
 		Grasscutter.getLogger().info("Starting Grasscutter...");
 		
 		// Load all resources.
+		Grasscutter.updateDayOfWeek();
 		ResourceLoader.loadAll();
 		ScriptLoader.init();
+		
 		// Database
 		DatabaseManager.initialize();
 
@@ -178,5 +183,14 @@ public final class Grasscutter {
 	
 	public static PluginManager getPluginManager() {
 		return pluginManager;
+	}
+	
+	public static void updateDayOfWeek() {
+		Calendar calendar = Calendar.getInstance();
+		day = calendar.get(Calendar.DAY_OF_WEEK); 
+	}
+
+	public static int getCurrentDayOfWeek() {
+		return day;
 	}
 }
