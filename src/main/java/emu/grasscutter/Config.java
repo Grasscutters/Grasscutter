@@ -13,6 +13,7 @@ public final class Config {
 	public String SCRIPTS_FOLDER = "./resources/Scripts/";
 	public String PLUGINS_FOLDER = "./plugins/";
 
+	public String DebugMode = "NONE"; // ALL, MISSING, NONE
 	public String RunMode = "HYBRID"; // HYBRID, DISPATCH_ONLY, GAME_ONLY
 	public GameServerOptions GameServer = new GameServerOptions();
 	public DispatchServerOptions DispatchServer = new DispatchServerOptions();
@@ -59,8 +60,6 @@ public final class Config {
 
 		public String DispatchServerDatabaseUrl = "mongodb://localhost:27017";
 		public String DispatchServerDatabaseCollection = "grasscutter";
-
-		public boolean LOG_PACKETS = false;
 
 		public int InventoryLimitWeapon = 2000;
 		public int InventoryLimitRelic = 2000;

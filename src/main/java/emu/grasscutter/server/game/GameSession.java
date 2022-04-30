@@ -163,7 +163,7 @@ public class GameSession extends KcpChannel {
     	}
     	
     	// Log
-    	if (Grasscutter.getConfig().getGameServerOptions().LOG_PACKETS) {
+    	if (Grasscutter.getConfig().DebugMode.equalsIgnoreCase("ALL")) {
     		logPacket(packet);
     	}
 		
@@ -230,7 +230,7 @@ public class GameSession extends KcpChannel {
 				}
 				
 				// Log packet
-				if (Grasscutter.getConfig().getGameServerOptions().LOG_PACKETS) {
+				if (Grasscutter.getConfig().DebugMode.equalsIgnoreCase("ALL")) {
 					if (!loopPacket.contains(opcode)) {
 						Grasscutter.getLogger().info("RECV: " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
 						System.out.println(Utils.bytesToHex(payload));
