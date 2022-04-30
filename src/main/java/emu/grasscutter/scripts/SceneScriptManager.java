@@ -1,6 +1,7 @@
 package emu.grasscutter.scripts;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -23,6 +24,7 @@ import emu.grasscutter.data.def.WorldLevelData;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.constants.ScriptGadgetState;
@@ -134,11 +136,8 @@ public class SceneScriptManager {
 		bindings = ScriptLoader.getEngine().createBindings();
 		
 		// Set variables
-		bindings.put("EventType", new EventType()); // TODO - make static class to avoid instantiating a new class every scene
-		bindings.put("GadgetState", new ScriptGadgetState());
-		bindings.put("RegionShape", new ScriptRegionShape());
 		bindings.put("ScriptLib", getScriptLib());
-		
+
 		// Eval script
 		try {
 			cs.eval(getBindings());
