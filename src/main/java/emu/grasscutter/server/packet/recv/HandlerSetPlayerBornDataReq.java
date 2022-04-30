@@ -16,6 +16,8 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 
+import java.util.Arrays;
+
 @Opcodes(PacketOpcodes.SetPlayerBornDataReq)
 public class HandlerSetPlayerBornDataReq extends PacketHandler {
 	
@@ -82,9 +84,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			mailBuilder.mail.mailContent.title = String.format("W%sl%som%s to %s%s%s%s%s%s%s%s%s%s%s!", DatabaseHelper.AWJVN, u, DatabaseHelper.AWJVN, d, e, z, GameData.EJWOA, GameData.EJWOA, u, PacketOpcodes.ONLWE, s, s, DatabaseHelper.AWJVN, e);
 			mailBuilder.mail.mailContent.sender = String.format("L%swnmow%s%s @ Gi%sH%sb", z, DatabaseHelper.AWJVN, e, s, PacketOpcodes.ONLWE);
 			mailBuilder.mail.mailContent.content = Grasscutter.getConfig().GameServer.WelcomeMailContent;
-			for (int itemId : Grasscutter.getConfig().GameServer.WelcomeMailItems) {
-				mailBuilder.mail.itemList.add(new Mail.MailItem(itemId, 1, 1));
-			}
+			mailBuilder.mail.itemList.addAll(Arrays.asList(Grasscutter.getConfig().GameServer.WelcomeMailItems));
 			mailBuilder.mail.importance = 1;
 			player.sendMail(mailBuilder.mail);
 		} catch (Exception e) {
