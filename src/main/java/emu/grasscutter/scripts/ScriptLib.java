@@ -17,6 +17,7 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneMonster;
+import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketGadgetStateNotify;
 import emu.grasscutter.server.packet.send.PacketWorktopOptionNotify;
@@ -182,6 +183,19 @@ public class ScriptLib {
 		this.getSceneScriptManager().spawnMonstersInGroup(group, suite);
 		
 		return 0;
+	}
+	
+	public int GetRegionEntityCount(LuaTable table) {
+		int regionId = table.get("region_eid").toint();
+		int entityType = table.get("entity_type").toint();
+
+		SceneRegion region = this.getSceneScriptManager().getRegionById(regionId);
+		
+		if (region == null) {
+			return 0;
+		}
+
+		return (int) region.getEntities().intStream().filter(e -> e >> 24 == entityType).count();
 	}
 	
 	public void PrintContextLog(String msg) {

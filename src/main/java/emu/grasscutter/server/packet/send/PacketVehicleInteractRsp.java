@@ -1,6 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.entity.EntityVehicle;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.entity.GameEntity;
 
@@ -17,16 +18,49 @@ public class PacketVehicleInteractRsp extends BasePacket {
 		VehicleInteractRsp.Builder proto = VehicleInteractRsp.newBuilder();
 
 		GameEntity vehicle = player.getScene().getEntityById(entityId);
-		if(vehicle != null) {
+
+		if(vehicle instanceof EntityVehicle) {
 			proto.setEntityId(vehicle.getId());
-			proto.setInteractType(interactType);
 
 			VehicleMember vehicleMember = VehicleMember.newBuilder()
 					.setUid(player.getUid())
 					.setAvatarGuid(player.getTeamManager().getCurrentCharacterGuid())
 					.build();
 
+			proto.setInteractType(interactType);
 			proto.setMember(vehicleMember);
+
+			switch(interactType){
+				case VEHICLE_INTERACT_IN -> {
+					((EntityVehicle) vehicle).getVehicleMembers().add(vehicleMember);
+				}
+				case VEHICLE_INTERACT_OUT -> {
+					((EntityVehicle) vehicle).getVehicleMembers().remove(vehicleMember);
+				}
+				default -> {}
+			}
+		}
+		this.setData(proto.build());
+	}
+
+	public PacketVehicleInteractRsp(EntityVehicle vehicle, VehicleMember vehicleMember, VehicleInteractType interactType) {
+		super(PacketOpcodes.VehicleInteractRsp);
+		VehicleInteractRsp.Builder proto = VehicleInteractRsp.newBuilder();
+
+		if(vehicle != null) {
+			proto.setEntityId(vehicle.getId());
+			proto.setInteractType(interactType);
+			proto.setMember(vehicleMember);
+
+			switch(interactType){
+				case VEHICLE_INTERACT_IN -> {
+					vehicle.getVehicleMembers().add(vehicleMember);
+				}
+				case VEHICLE_INTERACT_OUT -> {
+					vehicle.getVehicleMembers().remove(vehicleMember);
+				}
+				default -> {}
+			}
 		}
 		this.setData(proto.build());
 	}
