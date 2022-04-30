@@ -19,9 +19,20 @@ public final class ListCommand implements CommandHandler {
 
         if (playersMap.size() != 0) {
             StringBuilder playerSet = new StringBuilder();
-            playersMap.values().forEach(player -> 
-                    playerSet.append(player.getNickname()).append(", "));
-            
+            playersMap.values().forEach(player -> {
+                playerSet.append(player.getNickname());
+
+                if (sender != null) {
+                    playerSet.append("<color=green><UID:")
+                            .append(player.getUid())
+                            .append("></color>, ");
+                } else {
+                    playerSet.append("<UID:")
+                            .append(player.getUid())
+                            .append(">, ");
+                }
+            });
+
             String players = playerSet.toString();
             CommandHandler.sendMessage(sender, players.substring(0, players.length() - 2));
         }
