@@ -79,6 +79,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		GameItem item = new GameItem(itemData);
 		item.setLevel(level);
 		item.setMainPropId(mainPropId);
+		item.getAppendPropIdList().clear();
 		item.getAppendPropIdList().addAll(appendPropIdList);
 		targetPlayer.getInventory().addItem(item, ActionReason.SubfieldDrop);
 
