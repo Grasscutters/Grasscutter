@@ -14,6 +14,7 @@ public class SceneGroup {
 	public List<SceneMonster> monsters;
 	public List<SceneGadget> gadgets;
 	public List<SceneTrigger> triggers;
+	public List<SceneRegion> regions;
 	public List<SceneSuite> suites;
 	public SceneInitConfig init_config;
 	

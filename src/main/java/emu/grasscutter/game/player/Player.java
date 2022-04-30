@@ -21,7 +21,6 @@ import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.game.shop.ShopInfo;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
@@ -34,10 +33,12 @@ import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
+import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass;
-import emu.grasscutter.server.event.game.PlayerQuitEvent;
+import emu.grasscutter.server.event.player.PlayerJoinEvent;
+import emu.grasscutter.server.event.player.PlayerQuitEvent;
 import emu.grasscutter.server.event.player.PlayerReceiveMailEvent;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
@@ -828,7 +829,7 @@ public class Player {
 				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()));
 
 		if (this.getWorld() != null) {
-			onlineInfo.setCurPlayerNumInWorld(this.getWorld().getPlayers().indexOf(this) + 1);
+			onlineInfo.setCurPlayerNumInWorld(getWorld().getPlayerCount());
 		} else {
 			onlineInfo.setCurPlayerNumInWorld(1);
 		}
@@ -903,6 +904,35 @@ public class Player {
 				.addAllShowAvatarInfoList(socialShowAvatarInfoList)
 				.setFinishAchievementNum(0);
 		return social;
+	}
+
+	public List<ShowAvatarInfoOuterClass.ShowAvatarInfo> getShowAvatarInfoList() {
+		List<ShowAvatarInfoOuterClass.ShowAvatarInfo> showAvatarInfoList = new ArrayList<>();
+
+		Player player;
+		boolean shouldRecalc;
+		if (this.isOnline()) {
+			player = this;
+			shouldRecalc = false;
+		} else {
+			player = DatabaseHelper.getPlayerById(id);
+			player.getAvatars().loadFromDatabase();
+			player.getInventory().loadFromDatabase();
+			shouldRecalc = true;
+		}
+
+		List<Integer> showAvatarList = player.getShowAvatarList();
+		AvatarStorage avatars = player.getAvatars();
+		if (showAvatarList != null) {
+			for (int avatarId : showAvatarList) {
+				Avatar avatar = avatars.getAvatarById(avatarId);
+				if (shouldRecalc) {
+					avatar.recalcStats();
+				}
+				showAvatarInfoList.add(avatar.toShowAvatarInfoProto());
+			}
+		}
+		return showAvatarInfoList;
 	}
 	
 	public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getWorldPlayerLocationInfo() {
@@ -1014,6 +1044,11 @@ public class Player {
 
 		// First notify packets sent
 		this.setHasSentAvatarDataNotify(true);
+
+		// Call join event.
+		PlayerJoinEvent event = new PlayerJoinEvent(this); event.call();
+		if(event.isCanceled()) // If event is not cancelled, continue.
+			session.close();
 	}
 
 	public void onLogout() {

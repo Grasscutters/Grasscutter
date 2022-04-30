@@ -375,6 +375,32 @@ public class GameItem {
 		return relicInfo;
 	}
 
+	public Weapon toWeaponProto() {
+		Weapon.Builder weapon = Weapon.newBuilder()
+			.setLevel(this.getLevel())
+			.setExp(this.getExp())
+			.setPromoteLevel(this.getPromoteLevel());
+
+		if (this.getAffixes() != null && this.getAffixes().size() > 0) {
+			for (int affix : this.getAffixes()) {
+				weapon.putAffixMap(affix, this.getRefinement());
+			}
+		}
+
+		return weapon.build();
+	}
+
+	public Reliquary toReliquaryProto() {
+		Reliquary.Builder relic = Reliquary.newBuilder()
+			.setLevel(this.getLevel())
+			.setExp(this.getExp())
+			.setPromoteLevel(this.getPromoteLevel())
+			.setMainPropId(this.getMainPropId())
+			.addAllAppendPropIdList(this.getAppendPropIdList());
+
+		return relic.build();
+	}
+
 	public Item toProto() {
 		Item.Builder proto = Item.newBuilder()
 				.setGuid(this.getGuid())
@@ -382,27 +408,11 @@ public class GameItem {
 				
 		switch (getItemType()) {
 			case ITEM_WEAPON:
-				Weapon.Builder weapon = Weapon.newBuilder()
-					.setLevel(this.getLevel())
-					.setExp(this.getExp())
-					.setPromoteLevel(this.getPromoteLevel());
-				
-				if (this.getAffixes() != null && this.getAffixes().size() > 0) {
-					for (int affix : this.getAffixes()) {
-						weapon.putAffixMap(affix, this.getRefinement());
-					}
-				}
-					
+				Weapon weapon = this.toWeaponProto();
 				proto.setEquip(Equip.newBuilder().setWeapon(weapon).setIsLocked(this.isLocked()).build());
 				break;
 			case ITEM_RELIQUARY:
-				Reliquary relic = Reliquary.newBuilder()
-					.setLevel(this.getLevel())
-					.setExp(this.getExp())
-					.setPromoteLevel(this.getPromoteLevel())
-					.setMainPropId(this.getMainPropId())
-					.addAllAppendPropIdList(this.getAppendPropIdList())
-					.build();
+				Reliquary relic = this.toReliquaryProto();
 				proto.setEquip(Equip.newBuilder().setReliquary(relic).setIsLocked(this.isLocked()).build());
 				break;
 			case ITEM_MATERIAL:

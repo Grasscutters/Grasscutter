@@ -27,6 +27,7 @@ import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.data.SceneConfig;
+import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketDelTeamEntityNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
@@ -44,6 +45,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class World implements Iterable<Player> {
+	private final GameServer server;
 	private final Player owner;
 	private final List<Player> players;
 	private final Int2ObjectMap<Scene> scenes;
@@ -61,6 +63,7 @@ public class World implements Iterable<Player> {
 	
 	public World(Player player, boolean isMultiplayer) {
 		this.owner = player;
+		this.server = player.getServer();
 		this.players = Collections.synchronizedList(new ArrayList<>());
 		this.scenes = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
 		
@@ -73,6 +76,10 @@ public class World implements Iterable<Player> {
 	
 	public Player getHost() {
 		return owner;
+	}
+
+	public GameServer getServer() {
+		return server;
 	}
 
 	public int getLevelEntityId() {

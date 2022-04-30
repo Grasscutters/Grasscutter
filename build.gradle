@@ -41,7 +41,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'tech.xigam'
-version = '1.0.1-dev'
+version = '1.0.2-dev'
 
 sourceCompatibility = 17
 targetCompatibility = 17
