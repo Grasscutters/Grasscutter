@@ -88,7 +88,7 @@ public class GameServerPacketHandler {
 		}
 		
 		// Log unhandled packets
-		if (Grasscutter.getConfig().getGameServerOptions().LOG_PACKETS) {
+		if (Grasscutter.getConfig().DebugMode.equalsIgnoreCase("MISSING")) {
 			Grasscutter.getLogger().info("Unhandled packet (" + opcode + "): " + emu.grasscutter.net.packet.PacketOpcodesUtil.getOpcodeName(opcode));
 		}
 	}

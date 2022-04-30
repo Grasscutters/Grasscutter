@@ -54,12 +54,14 @@ tmp/
 # Grasscutter
 resources/*
 logs/*
+plugins/*
 data/AbilityEmbryos.json
 data/OpenConfig.json
 GM Handbook.txt
 config.json
 mitmdump.exe
 *.jar
+!lib/*.jar
 mongod.exe
 /src/generated/
 /*.sh
