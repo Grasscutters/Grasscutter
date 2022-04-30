@@ -36,9 +36,9 @@ public final class ListCommand implements CommandHandler {
                                 .append(player.getUid())
                                 .append("></color>");
                     } else {
-                        playerSet.append("<UID:")
+                        playerSet.append(" (")
                                 .append(player.getUid())
-                                .append(">");
+                                .append(")");
                     }
                 }
 
