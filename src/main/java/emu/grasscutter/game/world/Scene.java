@@ -375,8 +375,8 @@ public class Scene {
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
 
 		// Reward drop
-		if (target instanceof EntityMonster) {
-			Grasscutter.getGameServer().getDropManager().callDrop((EntityMonster) target);
+		if (target instanceof EntityMonster && this.getSceneType() != SceneType.SCENE_WORLD) {
+			getWorld().getServer().getDropManager().callDrop((EntityMonster) target);
 		}
 
 		this.removeEntity(target);
