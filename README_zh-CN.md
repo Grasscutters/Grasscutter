@@ -102,7 +102,7 @@ chmod +x gradlew
 
 你可能需要在终端中运行 `java -jar grasscutter.jar -handbook` 它将会创建一个 `GM Handbook.txt` 以方便您查阅物品ID等
 
-在每个玩家的朋友列表中都有一个名为“服务器”的虚拟用户，你可以通过发送消息来使用命令。命令也适用于其他聊天室，例如私人/团队聊天。
+在每个玩家的朋友列表中都有一个名为“Server”的虚拟用户，你可以通过发送消息来使用命令。命令也适用于其他聊天室，例如私人/团队聊天。
 要在游戏中使用命令，需要添加 `/` 或 `!` 前缀，如 `/pos`
 
 | 命令            | 用法                                         | 权限节点                  | 可用性   | 注释                                       | 别名                                            |
@@ -132,7 +132,7 @@ chmod +x gradlew
 | say            | say \<uid> <消息>                             | server.sendmessage        | 均可使用 | 作为服务器发送消息给玩家                   | `sendservmsg` `sendservermessage` `sendmessage` |
 | setfetterlevel | setfetterlevel <好感等级>                    | player.setfetterlevel     | 仅客户端 | 设置当前角色的好感等级                     | `setfetterlvl` `setfriendship`                  |
 | setstats       | setstats <属性> <数值>                       | player.setstats           | 仅客户端 | 直接修改当前角色的面板                     | stats                                           |
-| setworldlevel  | setworldlevel <世界等级>                     | player.setworldlevel      | 仅客户端 | 设置世界等级(重新登陆即可生效)             | setworldlvl                                     |
+| setworldlevel  | setworldlevel <世界等级>                     | player.setworldlevel      | 仅客户端 | 设置世界等级(重新登录即可生效)             | setworldlvl                                     |
 | spawn          | spanw <实体ID\|实体名称> [等级] [数量]       | server.spawn              | 仅客户端 | 在你周围生成实体                           |                                                 |
 | stop           | stop                                         | server.stop               | 均可使用 | 停止服务器                                 |                                                 |
 | talent         | talent <天赋ID> <等级>                       | player.settalent          | 仅客户端 | 设置当前角色的天赋等级                     |                                                 |
