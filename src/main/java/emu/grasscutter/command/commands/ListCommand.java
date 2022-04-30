@@ -32,9 +32,9 @@ public final class ListCommand implements CommandHandler {
 
                 if (finalNeedUID) {
                     if (sender != null) {
-                        playerSet.append("<color=green><UID:")
+                        playerSet.append(" <color=green>(")
                                 .append(player.getUid())
-                                .append("></color>");
+                                .append(")</color>");
                     } else {
                         playerSet.append(" (")
                                 .append(player.getUid())
