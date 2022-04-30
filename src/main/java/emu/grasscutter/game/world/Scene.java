@@ -375,8 +375,8 @@ public class Scene {
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
 
 		// Reward drop
-		if (target instanceof EntityMonster) {
-			Grasscutter.getGameServer().getDropManager().callDrop((EntityMonster) target);
+		if (target instanceof EntityMonster && this.getSceneType() != SceneType.SCENE_DUNGEON) {
+			getWorld().getServer().getDropManager().callDrop((EntityMonster) target);
 		}
 
 		this.removeEntity(target);
@@ -508,6 +508,7 @@ public class Scene {
 			}
 			
 			group.triggers.forEach(getScriptManager()::registerTrigger);
+			group.regions.forEach(getScriptManager()::registerRegion);
 		}
 		
 		// Spawn gadgets AFTER triggers are added
@@ -526,6 +527,7 @@ public class Scene {
 		
 		for (SceneGroup group : block.groups) {
 			group.triggers.forEach(getScriptManager()::deregisterTrigger);
+			group.regions.forEach(getScriptManager()::deregisterRegion);
 		}
 	}
 	
