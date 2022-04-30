@@ -16,6 +16,8 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 
+import java.util.Arrays;
+
 @Opcodes(PacketOpcodes.SetPlayerBornDataReq)
 public class HandlerSetPlayerBornDataReq extends PacketHandler {
 	
@@ -77,9 +79,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			mailBuilder.mail.mailContent.title = Grasscutter.getConfig().GameServer.WelcomeMailTitle;
 			mailBuilder.mail.mailContent.sender = Grasscutter.getConfig().GameServer.WelcomeMailSender;
 			mailBuilder.mail.mailContent.content = Grasscutter.getConfig().GameServer.WelcomeMailContent;
-			for (int itemId : Grasscutter.getConfig().GameServer.WelcomeMailItems) {
-				mailBuilder.mail.itemList.add(new Mail.MailItem(itemId, 1, 1));
-			}
+			mailBuilder.mail.itemList.addAll(Arrays.asList(Grasscutter.getConfig().GameServer.WelcomeMailItems));
 			mailBuilder.mail.importance = 1;
 			player.sendMail(mailBuilder.mail);
 			

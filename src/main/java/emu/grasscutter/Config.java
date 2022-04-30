@@ -1,5 +1,7 @@
 package emu.grasscutter;
 
+import emu.grasscutter.game.mail.Mail;
+
 public final class Config {
 
 	public String DatabaseUrl = "mongodb://localhost:27017";
@@ -73,14 +75,20 @@ public final class Config {
 		public int MaxEntityLimit = 1000; // Max entity limit per world. // TODO: Enforce later.
 		public boolean WatchGacha = false;
 
-		public int[] WelcomeEmotes = {2007, 1002, 4010};
-		public String WelcomeMotd = "";
-		
 		public String WelcomeMailSender  = "Yuuki";
 		public String WelcomeMailTitle   = "Welcome to Yuuki Server";
 		public String WelcomeMailContent = "";
-		public int[] WelcomeMailItems = {1002};
+		public Mail.MailItem[] WelcomeMailItems = {
+				new Mail.MailItem(13509, 1, 1),
+				new Mail.MailItem(201, 10000, 1),
+		};
 
+		public String ServerNickname = "YukiBot";
+		public int ServerAvatarId = 10000002;
+
+		public int[] WelcomeEmotes = {2007, 1002, 4010};
+		public String WelcomeMotd = "";
+		
 		public boolean EnableOfficialShop = true;
 
 		public GameRates Game = new GameRates();

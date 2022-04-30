@@ -104,7 +104,10 @@ public class Account {
 	}
 
 	public boolean hasPermission(String permission) {
-		return this.permissions.contains(permission) || this.permissions.contains("*") ? true : false;
+		return this.permissions.contains(permission) ||
+                this.permissions.contains("*") ||
+                (this.permissions.contains("player") || this.permissions.contains("player.*")) && permission.startsWith("player.") ||
+                (this.permissions.contains("server") || this.permissions.contains("server.*")) && permission.startsWith("server.");
 	}
 	
 	public boolean removePermission(String permission) {

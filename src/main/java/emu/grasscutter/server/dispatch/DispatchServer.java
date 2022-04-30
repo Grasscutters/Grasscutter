@@ -500,10 +500,10 @@ public final class DispatchServer {
 						"{\"retcode\":0,\"message\":\"OK\",\"data\":{\"suggest_currency\":\"USD\",\"tiers\":[]}}"));
 		// Captcha
 		server.createContext( // api-account-os.hoyoverse.com
-				"/account/risky/api/check",
-				new DispatchHttpJsonHandler(
-						"{\"retcode\":0,\"message\":\"OK\",\"data\":{\"id\":\"none\",\"action\":\"ACTION_NONE\",\"geetest\":null}}"));
-		// Config
+				"/account/risky/api/check", 
+				new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"id\":\"none\",\"action\":\"ACTION_NONE\",\"geetest\":null}}")
+		);
+		// Config	
 		server.createContext( // sdk-os-static.hoyoverse.com
 				"/combo/box/api/config/sdk/combo",
 				new DispatchHttpJsonHandler(
