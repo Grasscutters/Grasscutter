@@ -163,20 +163,28 @@ public final class GiveCommand implements CommandHandler {
             List<GameItem> items = new LinkedList<>();
             for (int i = 0; i < amount; i++) {
                 GameItem item = new GameItem(itemData);
+                if (item.isEquipped()) {
+                    // check item max level
+                    if (item.getItemType() == ItemType.ITEM_WEAPON) {
+                        if (lvl > 90) lvl = 90;
+                    } else {
+                        if (lvl > 21) lvl = 21;
+                    }
+                }
                 item.setCount(amount);
                 item.setLevel(lvl);
-                if (lvl > 20 && lvl < 40) {
-                    item.setPromoteLevel(1);
-                } else if (lvl > 40 && lvl <= 50) {
-                    item.setPromoteLevel(2);
-                } else if (lvl > 50 && lvl <= 60) {
-                    item.setPromoteLevel(3);
-                } else if (lvl > 60 && lvl <= 70) {
-                    item.setPromoteLevel(4);
-                } else if (lvl > 70 && lvl <= 80) {
-                    item.setPromoteLevel(5);
-                } else if (lvl > 80 && lvl <= 90) {
+                if (lvl > 80) {
                     item.setPromoteLevel(6);
+                } else if (lvl > 70) {
+                    item.setPromoteLevel(5);
+                } else if (lvl > 60) {
+                    item.setPromoteLevel(4);
+                } else if (lvl > 50) {
+                    item.setPromoteLevel(3);
+                } else if (lvl > 40) {
+                    item.setPromoteLevel(2);
+                } else if (lvl > 20) {
+                    item.setPromoteLevel(1);
                 }
                 if (item.getItemType() == ItemType.ITEM_WEAPON) {
                     if (refinement > 0) {

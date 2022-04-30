@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ShowAvatarInfo.proto";
+
+message GetFriendShowAvatarInfoRsp {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 4008;
+	}
+
+	int32 retcode = 1;
+	uint32 uid = 2;
+	repeated ShowAvatarInfo show_avatar_info_list = 3;
+}

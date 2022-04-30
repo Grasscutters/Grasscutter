@@ -15,7 +15,6 @@ import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.PostLoad;
 import dev.morphia.annotations.PrePersist;
 import dev.morphia.annotations.Transient;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.custom.OpenConfigEntry;
@@ -26,18 +25,19 @@ import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.data.def.AvatarSkillDepotData.InherentProudSkillOpens;
 import emu.grasscutter.data.def.AvatarTalentData;
 import emu.grasscutter.data.def.EquipAffixData;
+import emu.grasscutter.data.def.ItemData.WeaponProperty;
+import emu.grasscutter.data.def.ProudSkillData;
 import emu.grasscutter.data.def.ReliquaryAffixData;
 import emu.grasscutter.data.def.ReliquaryLevelData;
 import emu.grasscutter.data.def.ReliquaryMainPropData;
 import emu.grasscutter.data.def.ReliquarySetData;
 import emu.grasscutter.data.def.WeaponCurveData;
 import emu.grasscutter.data.def.WeaponPromoteData;
-import emu.grasscutter.data.def.ItemData.WeaponProperty;
-import emu.grasscutter.data.def.ProudSkillData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.EquipType;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EntityIdType;
@@ -45,8 +45,11 @@ import emu.grasscutter.game.props.FetterState;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo;
-import emu.grasscutter.net.proto.FetterDataOuterClass.FetterData;
 import emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo;
+import emu.grasscutter.net.proto.FetterDataOuterClass.FetterData;
+import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
+import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo;
+import emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip;
 import emu.grasscutter.server.packet.send.PacketAbilityChangeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarEquipChangeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropNotify;
@@ -796,6 +799,46 @@ public class Avatar {
 		avatarInfo.putPropMap(PlayerProperty.PROP_SATIATION_PENALTY_TIME.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_SATIATION_PENALTY_TIME, 0));
 		
 		return avatarInfo.build();
+	}
+
+	// used only in character showcase
+	public ShowAvatarInfo toShowAvatarInfoProto() {
+		AvatarFetterInfo.Builder avatarFetter = AvatarFetterInfo.newBuilder()
+				.setExpLevel(this.getFetterLevel());
+
+		ShowAvatarInfo.Builder showAvatarInfo = ShowAvatarInfoOuterClass.ShowAvatarInfo.newBuilder()
+				.setAvatarId(avatarId)
+				.addAllTalentIdList(this.getTalentIdList())
+				.putAllFightPropMap(this.getFightProperties())
+				.setSkillDepotId(this.getSkillDepotId())
+				.setCoreProudSkillLevel(this.getCoreProudSkillLevel())
+				.addAllInherentProudSkillList(this.getProudSkillList())
+				.putAllSkillLevelMap(this.getSkillLevelMap())
+				.putAllProudSkillExtraLevelMap(this.getProudSkillBonusMap())
+				.setFetterInfo(avatarFetter)
+				.setCostumeId(this.getCostume());
+
+		showAvatarInfo.putPropMap(PlayerProperty.PROP_LEVEL.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, this.getLevel()));
+		showAvatarInfo.putPropMap(PlayerProperty.PROP_EXP.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_EXP, this.getExp()));
+		showAvatarInfo.putPropMap(PlayerProperty.PROP_BREAK_LEVEL.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_BREAK_LEVEL, this.getPromoteLevel()));
+		showAvatarInfo.putPropMap(PlayerProperty.PROP_SATIATION_VAL.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_SATIATION_VAL, this.getSatiation()));
+		showAvatarInfo.putPropMap(PlayerProperty.PROP_SATIATION_PENALTY_TIME.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_SATIATION_VAL, this.getSatiationPenalty()));
+		int maxStamina = this.getPlayer().getProperty(PlayerProperty.PROP_MAX_STAMINA);
+		showAvatarInfo.putPropMap(PlayerProperty.PROP_MAX_STAMINA.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_MAX_STAMINA, maxStamina));
+
+		for (GameItem item : this.getEquips().values()) {
+			if (item.getItemType() == ItemType.ITEM_RELIQUARY) {
+				showAvatarInfo.addEquipList(ShowEquip.newBuilder()
+						.setItemId(item.getItemId())
+						.setReliquary(item.toReliquaryProto()));
+			} else if (item.getItemType() == ItemType.ITEM_WEAPON) {
+				showAvatarInfo.addEquipList(ShowEquip.newBuilder()
+						.setItemId(item.getItemId())
+						.setWeapon(item.toWeaponProto()));
+			}
+		}
+
+		return showAvatarInfo.build();
 	}
 	
 	@PostLoad

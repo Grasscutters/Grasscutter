@@ -18,36 +18,19 @@ import java.util.Objects;
 public class PacketGetOnlinePlayerListRsp extends BasePacket {
     public PacketGetOnlinePlayerListRsp(Player session){
         super(PacketOpcodes.GetOnlinePlayerListRsp);
-        Map<Integer, Player> playersMap = Grasscutter.getGameServer().getPlayers();
+        
+        List<Player> players = Grasscutter.getGameServer().getPlayers().values().stream().limit(50).toList();
+        
         GetOnlinePlayerListRsp.Builder proto = GetOnlinePlayerListRsp.newBuilder();
-        if(playersMap.size() != 0){
-            List<OnlinePlayerInfo> playerInfoList = new ArrayList<>();
-
-            for(Player player:playersMap.values()){
-                ProfilePicture.Builder picture = ProfilePicture.newBuilder();
-                OnlinePlayerInfo.Builder playerInfo = OnlinePlayerInfo.newBuilder();
-
-                if(player.getUid() == session.getUid())continue;
-                picture.setAvatarId(player.getProfile().getAvatarId())
-                        .build();
-                System.out.println(player.getHeadImage());
-                playerInfo.setUid(player.getUid())
-                        .setNickname(player.getNickname())
-                        .setPlayerLevel(player.getLevel())
-                        .setMpSettingType(MpSettingTypeOuterClass.MpSettingType.MP_SETTING_ENTER_AFTER_APPLY)
-                        .setCurPlayerNumInWorld(player.getWorld().getPlayerCount())
-                        .setWorldLevel(player.getWorldLevel())
-                        .setNameCardId(player.getNameCardId())
-                        .setProfilePicture(picture);
-                if(!Objects.equals(player.getSignature(), "")){
-                    playerInfo.setSignature(player.getSignature());
-                }
-                playerInfoList.add(playerInfo.build());
-            }
-            for (OnlinePlayerInfo onlinePlayerInfo : playerInfoList) {
-                proto.addPlayerInfoList(onlinePlayerInfo).build();
+        
+        if (players.size() != 0) {
+            for(Player player : players) {
+                if (player.getUid() == session.getUid()) continue;
+                
+                proto.addPlayerInfoList(player.getOnlinePlayerInfo());
             }
         }
+        
         this.setData(proto);
     }
 }
