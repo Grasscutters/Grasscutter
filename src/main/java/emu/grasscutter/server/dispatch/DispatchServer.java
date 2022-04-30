@@ -50,6 +50,12 @@ public final class DispatchServer {
 		return httpServer;
 	}
 
+	public void setHttpServer(Express httpServer) {
+		this.httpServer.stop();
+		this.httpServer = httpServer;
+		this.httpServer.listen(Grasscutter.getConfig().getDispatchOptions().Port);
+	}
+
 	public Gson getGsonFactory() {
 		return gson;
 	}
@@ -271,12 +277,12 @@ public final class DispatchServer {
 		});
 
 		// Login
+
 		httpServer.post("/hk4e_global/mdk/shield/api/login", (req, res) -> {
 			// Get post data
 			LoginAccountRequestJson requestData = null;
 			try {
 				String body = req.ctx().body();
-				Grasscutter.getLogger().info(body);
 				requestData = getGsonFactory().fromJson(body, LoginAccountRequestJson.class);
 			} catch (Exception ignored) {
 			}
