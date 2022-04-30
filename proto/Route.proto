@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "RoutePoint.proto";
+
+message Route {
+	repeated RoutePoint route_points = 1;
+	uint32 route_type = 2;
+}

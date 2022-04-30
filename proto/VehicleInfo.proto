@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "VehicleMember.proto";
+
+message VehicleInfo {
+	repeated VehicleMember member_list = 1;
+	uint32 owner_uid = 2;
+	float cur_stamina = 3;
+}

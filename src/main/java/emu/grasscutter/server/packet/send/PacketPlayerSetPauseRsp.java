@@ -1,9 +1,9 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 
-public class PacketPlayerSetPauseRsp extends GenshinPacket {
+public class PacketPlayerSetPauseRsp extends BasePacket {
 
 	public PacketPlayerSetPauseRsp(int clientSequence) {
 		super(PacketOpcodes.PlayerSetPauseRsp);

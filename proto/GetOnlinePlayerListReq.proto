@@ -1,0 +1,6 @@
+syntax = "proto3";
+option java_package = "emu.grasscutter.net.proto";
+
+message GetOnlinePlayerListReq {
+uint32 targetUid = 1;
+}

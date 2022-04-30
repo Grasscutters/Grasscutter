@@ -1,15 +1,15 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.EquipType;
-import emu.grasscutter.game.inventory.GenshinItem;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarEquipChangeNotifyOuterClass.AvatarEquipChangeNotify;
 
-public class PacketAvatarEquipChangeNotify extends GenshinPacket {
+public class PacketAvatarEquipChangeNotify extends BasePacket {
 	
-	public PacketAvatarEquipChangeNotify(GenshinAvatar avatar, GenshinItem item) {
+	public PacketAvatarEquipChangeNotify(Avatar avatar, GameItem item) {
 		super(PacketOpcodes.AvatarEquipChangeNotify);
 
 		AvatarEquipChangeNotify.Builder proto = AvatarEquipChangeNotify.newBuilder()
@@ -27,7 +27,7 @@ public class PacketAvatarEquipChangeNotify extends GenshinPacket {
 		this.setData(proto);
 	}
 	
-	public PacketAvatarEquipChangeNotify(GenshinAvatar avatar, EquipType slot) {
+	public PacketAvatarEquipChangeNotify(Avatar avatar, EquipType slot) {
 		super(PacketOpcodes.AvatarEquipChangeNotify);
 
 		AvatarEquipChangeNotify.Builder proto = AvatarEquipChangeNotify.newBuilder()

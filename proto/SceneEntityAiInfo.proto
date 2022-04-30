@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+import "ServantInfo.proto";
+
+message SceneEntityAiInfo {
+	bool is_ai_open = 1;
+	Vector born_pos = 2;
+	map<uint32, uint32> skill_cd_map = 3;
+	ServantInfo servant_info = 4;
+	map<uint32, uint32> ai_threat_map = 5;
+	map<uint32, uint32> skill_group_cd_map = 6;
+	uint32 cur_tactic = 7;
+}

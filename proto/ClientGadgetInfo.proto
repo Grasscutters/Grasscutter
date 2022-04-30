@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ClientGadgetInfo {
+	uint32 camp_id = 1;
+	uint32 camp_type = 2;
+	uint64 guid = 3;
+	uint32 owner_entity_id = 4;
+	uint32 target_entity_id = 5;
+	bool async_load = 6;
+}

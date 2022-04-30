@@ -1,11 +1,11 @@
 package emu.grasscutter.data.def;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.game.props.FightProperty;
 
 @ResourceType(name = "ReliquaryAffixExcelConfigData.json")
-public class ReliquaryAffixData extends GenshinResource {
+public class ReliquaryAffixData extends GameResource {
 	private int Id;
 	
 	private int DepotId;

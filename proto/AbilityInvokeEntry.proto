@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AbilityInvokeEntryHead.proto";
+import "AbilityInvokeArgument.proto";
+import "ForwardType.proto";
+
+message AbilityInvokeEntry {
+	AbilityInvokeEntryHead head = 1;
+	AbilityInvokeArgument argument_type = 2;
+	bytes ability_data = 3;
+	uint32 entity_id = 4;
+	ForwardType forward_type = 5;
+	uint32 forward_peer = 6;
+	uint32 event_id = 7;
+	double total_tick_time = 8;
+}

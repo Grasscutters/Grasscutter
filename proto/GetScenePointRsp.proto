@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message GetScenePointRsp {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 236;
+	}
+
+	int32 retcode = 1;
+	uint32 scene_id = 2;
+	repeated uint32 unlocked_point_list = 3;
+	uint32 belong_uid = 4;
+	repeated uint32 unlock_area_list = 5;
+	repeated uint32 locked_point_list = 6;
+	repeated uint32 to_be_explore_dungeon_entry_list = 7;
+	repeated uint32 not_explored_dungeon_entry_list = 8;
+	repeated uint32 group_unlimit_point_list = 9;
+	repeated uint32 not_interact_dungeon_entry_list = 10;
+	repeated uint32 hide_point_list = 11;
+}

@@ -1,12 +1,11 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.GenshinScene;
-import emu.grasscutter.game.World;
-import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
@@ -24,20 +23,36 @@ import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 
-public class EntityItem extends EntityGadget {
+public class EntityItem extends EntityBaseGadget {
 	private final Position pos;
 	private final Position rot;
 	
-	private final GenshinItem item;
+	private final GameItem item;
 	private final long guid;
-	
-	public EntityItem(GenshinScene scene, GenshinPlayer player, ItemData itemData, Position pos, int count) {
+
+	private final boolean share;
+
+	public EntityItem(Scene scene, Player player, ItemData itemData, Position pos, int count) {
 		super(scene);
 		this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
 		this.pos = new Position(pos);
 		this.rot = new Position();
-		this.guid = player.getNextGenshinGuid();
-		this.item = new GenshinItem(itemData, count);
+		this.guid = player == null ? scene.getWorld().getHost().getNextGameGuid() : player.getNextGameGuid();
+		this.item = new GameItem(itemData, count);
+		this.share = true;
+	}
+
+	// In official game, some drop items are shared to all players, and some other items are independent to all players
+	// For example, if you killed a monster in MP mode, all players could get drops but rarity and number of them are different
+	// but if you broke regional mine, when someone picked up the drop then it disappeared
+	public EntityItem(Scene scene, Player player, ItemData itemData, Position pos, int count, boolean share) {
+		super(scene);
+		this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
+		this.pos = new Position(pos);
+		this.rot = new Position();
+		this.guid = player == null ? scene.getWorld().getHost().getNextGameGuid() : player.getNextGameGuid();
+		this.item = new GameItem(itemData, count);
+		this.share = share;
 	}
 	
 	@Override
@@ -45,7 +60,7 @@ public class EntityItem extends EntityGadget {
 		return this.id;
 	}
 	
-	private GenshinItem getItem() {
+	private GameItem getItem() {
 		return this.item;
 	}
 
@@ -81,6 +96,10 @@ public class EntityItem extends EntityGadget {
 		return null;
 	}
 
+	public boolean isShare() {
+		return share;
+	}
+
 	@Override
 	public SceneEntityInfo toProto() {
 		EntityAuthorityInfo authority = EntityAuthorityInfo.newBuilder()
@@ -92,7 +111,7 @@ public class EntityItem extends EntityGadget {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.ProtEntityGadget)
+				.setEntityType(ProtEntityType.PROT_ENTITY_GADGET)
 				.setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())
@@ -108,7 +127,7 @@ public class EntityItem extends EntityGadget {
 		SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
 				.setGadgetId(this.getItemData().getGadgetId())
 				.setTrifleItem(this.getItem().toProto())
-				.setBornType(GadgetBornType.GadgetBornInAir)
+				.setBornType(GadgetBornType.GADGET_BORN_IN_AIR)
 				.setAuthorityPeerId(this.getWorld().getHostPeerId())
 				.setIsEnableInteract(true);
 

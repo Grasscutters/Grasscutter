@@ -1,7 +1,5 @@
 package emu.grasscutter;
 
-import java.util.ArrayList;
-
 public final class Config {
 
 	public String DatabaseUrl = "mongodb://localhost:27017";
@@ -12,6 +10,8 @@ public final class Config {
 	public String PACKETS_FOLDER = "./packets/";
 	public String DUMPS_FOLDER = "./dumps/";
 	public String KEY_FOLDER = "./keys/";
+	public String SCRIPTS_FOLDER = "./resources/Scripts/";
+	public String PLUGINS_FOLDER = "./plugins/";
 
 	public String RunMode = "HYBRID"; // HYBRID, DISPATCH_ONLY, GAME_ONLY
 	public GameServerOptions GameServer = new GameServerOptions();
@@ -27,11 +27,14 @@ public final class Config {
 		public String Ip = "0.0.0.0";
 		public String PublicIp = "127.0.0.1";
 		public int Port = 443;
+		public int PublicPort = 0;
 		public String KeystorePath = "./keystore.p12";
-		public String KeystorePassword = "";
+		public String KeystorePassword = "123456";
 		public Boolean UseSSL = true;
+		public Boolean FrontHTTPS = true;
 
 		public boolean AutomaticallyCreateAccounts = false;
+		public String[] defaultPermissions = new String[] { "" };
 
 		public RegionInfo[] GameServers = {};
 
@@ -52,6 +55,7 @@ public final class Config {
 		public String Ip = "0.0.0.0";
 		public String PublicIp = "127.0.0.1";
 		public int Port = 22102;
+		public int PublicPort = 0;
 
 		public String DispatchServerDatabaseUrl = "mongodb://localhost:27017";
 		public String DispatchServerDatabaseCollection = "grasscutter";
@@ -69,6 +73,10 @@ public final class Config {
 		public boolean WatchGacha = false;
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
 		public String WelcomeMotd = "Welcome to Grasscutter emu";
+		public String WelcomeMailContent = "Hi there!\r\nFirst of all, welcome to Grasscutter. If you have any issues, please let us know so that Lawnmower can help you! \r\n\r\nCheck out our:\r\n<type=\"browser\" text=\"Discord\" href=\"https://discord.gg/T5vZU6UyeG\"/> <type=\"browser\" text=\"GitHub\" href=\"https://github.com/Melledy/Grasscutter\"/>";
+		public int[] WelcomeMailItems = {13509};
+
+		public boolean EnableOfficialShop = true;
 
 		public GameRates Game = new GameRates();
 

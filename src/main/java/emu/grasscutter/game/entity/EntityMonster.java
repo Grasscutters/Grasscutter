@@ -1,14 +1,15 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.def.MonsterCurveData;
 import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.game.GenshinScene;
-import emu.grasscutter.game.World;
+import emu.grasscutter.game.dungeons.DungeonChallenge;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
@@ -22,12 +23,13 @@ import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo;
 import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo;
+import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 
-public class EntityMonster extends GenshinEntity {
+public class EntityMonster extends GameEntity {
 	private final MonsterData monsterData;
 	private final Int2FloatOpenHashMap fightProp;
 	
@@ -36,8 +38,9 @@ public class EntityMonster extends GenshinEntity {
 	private final Position bornPos;
 	private final int level;
 	private int weaponEntityId;
+	private int poseId;
 	
-	public EntityMonster(GenshinScene scene, MonsterData monsterData, Position pos, int level) {
+	public EntityMonster(Scene scene, MonsterData monsterData, Position pos, int level) {
 		super(scene);
 		this.id = getWorld().getNextEntityId(EntityIdType.MONSTER);
 		this.monsterData = monsterData;
@@ -99,10 +102,26 @@ public class EntityMonster extends GenshinEntity {
 	public boolean isAlive() {
 		return this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) > 0f;
 	}
-	
+
+	public int getPoseId() {
+		return poseId;
+	}
+
+	public void setPoseId(int poseId) {
+		this.poseId = poseId;
+	}
+
 	@Override
 	public void onDeath(int killerId) {
-		
+		if (this.getSpawnEntry() != null) {
+			this.getScene().getDeadSpawnedEntities().add(getSpawnEntry());
+		}
+		if (getScene().getScriptManager().isInit() && this.getGroupId() > 0) {
+			getScene().getScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_DIE, null);
+		}
+		if (getScene().getChallenge() != null && getScene().getChallenge().getGroup().id == this.getGroupId()) {
+			getScene().getChallenge().onMonsterDie(this);
+		}
 	}
 	
 	public void recalcStats() {
@@ -130,7 +149,7 @@ public class EntityMonster extends GenshinEntity {
 		this.setFightProperty(FightProperty.FIGHT_PROP_ICE_SUB_HURT, data.getIceSubHurt());
 		
 		// Level curve
-		MonsterCurveData curve = GenshinData.getMonsterCurveDataMap().get(this.getLevel());
+		MonsterCurveData curve = GameData.getMonsterCurveDataMap().get(this.getLevel());
 		if (curve != null) {
 			for (PropGrowCurve growCurve : data.getPropGrowCurves()) {
 				FightProperty prop = FightProperty.getPropByName(growCurve.getType());
@@ -167,7 +186,7 @@ public class EntityMonster extends GenshinEntity {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.ProtEntityMonster)
+				.setEntityType(ProtEntityType.PROT_ENTITY_MONSTER)
 				.setMotionInfo(this.getMotionInfo())
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())
@@ -178,7 +197,7 @@ public class EntityMonster extends GenshinEntity {
 			if (entry.getIntKey() == 0) {
 				continue;
 			}
-			FightPropPair fightProp = FightPropPair.newBuilder().setType(entry.getIntKey()).setPropValue(entry.getFloatValue()).build();
+			FightPropPair fightProp = FightPropPair.newBuilder().setPropType(entry.getIntKey()).setPropValue(entry.getFloatValue()).build();
 			entityInfo.addFightPropList(fightProp);
 		}
 		
@@ -190,13 +209,13 @@ public class EntityMonster extends GenshinEntity {
 		
 		SceneMonsterInfo.Builder monsterInfo = SceneMonsterInfo.newBuilder()
 				.setMonsterId(getMonsterId())
-				.setGroupId(133003095)
-				.setConfigId(95001)
+				.setGroupId(this.getGroupId())
+				.setConfigId(this.getConfigId())
 				.addAllAffixList(getMonsterData().getAffix())
 				.setAuthorityPeerId(getWorld().getHostPeerId())
-				.setPoseId(0)
+				.setPoseId(this.getPoseId())
 				.setBlockId(3001)
-				.setBornType(MonsterBornType.MonsterBornDefault)
+				.setBornType(MonsterBornType.MONSTER_BORN_DEFAULT)
 				.setSpecialNameId(40);
 		
 		if (getMonsterData().getDescribeData() != null) {
@@ -210,7 +229,7 @@ public class EntityMonster extends GenshinEntity {
 					.setAbilityInfo(AbilitySyncStateInfo.newBuilder())
 					.build();
 			
-			monsterInfo.setWeaponList(weaponInfo);
+			monsterInfo.addWeaponList(weaponInfo);
 		}
 		
 		entityInfo.setMonster(monsterInfo);
