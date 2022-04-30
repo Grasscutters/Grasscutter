@@ -36,7 +36,7 @@ public final class DispatchHttpJsonHandler implements HttpContextHandler {
 		// Checking for ALL here isn't required as when ALL is enabled enableDevLogging() gets enabled
 		if(Grasscutter.getConfig().DebugMode.equalsIgnoreCase("MISSING") && Arrays.stream(missingRoutes).anyMatch(x -> x == req.baseUrl())) {
 			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s %s request: ", req.ip(), req.method(), req.baseUrl()) + (Grasscutter.getConfig().DebugMode.equalsIgnoreCase("MISSING") ? "(MISSING)" : ""));
-			res.send(response.getBytes());
 		}
+		res.send(response);
 	}
 }
