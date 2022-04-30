@@ -37,6 +37,7 @@ import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass;
+import emu.grasscutter.server.event.game.PlayerJoinEvent;
 import emu.grasscutter.server.event.game.PlayerQuitEvent;
 import emu.grasscutter.server.event.player.PlayerReceiveMailEvent;
 import emu.grasscutter.server.game.GameServer;
@@ -1014,6 +1015,11 @@ public class Player {
 
 		// First notify packets sent
 		this.setHasSentAvatarDataNotify(true);
+
+		// Call join event.
+		PlayerJoinEvent event = new PlayerJoinEvent(this); event.call();
+		if(event.isCanceled()) // If event is not cancelled, continue.
+			session.close();
 	}
 
 	public void onLogout() {
