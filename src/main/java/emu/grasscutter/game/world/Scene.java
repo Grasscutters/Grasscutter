@@ -508,6 +508,7 @@ public class Scene {
 			}
 			
 			group.triggers.forEach(getScriptManager()::registerTrigger);
+			group.regions.forEach(getScriptManager()::registerRegion);
 		}
 		
 		// Spawn gadgets AFTER triggers are added
@@ -526,6 +527,7 @@ public class Scene {
 		
 		for (SceneGroup group : block.groups) {
 			group.triggers.forEach(getScriptManager()::deregisterTrigger);
+			group.regions.forEach(getScriptManager()::deregisterRegion);
 		}
 	}
 	
