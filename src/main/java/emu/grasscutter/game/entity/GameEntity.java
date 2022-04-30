@@ -34,6 +34,10 @@ public abstract class GameEntity {
 		return this.id;
 	}
 	
+	public int getEntityType() {
+		return getId() >> 24;
+	}
+	
 	public World getWorld() {
 		return this.getScene().getWorld();
 	}

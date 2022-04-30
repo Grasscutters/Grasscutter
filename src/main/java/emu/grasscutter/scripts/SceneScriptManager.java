@@ -1,6 +1,7 @@
 package emu.grasscutter.scripts;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -23,6 +24,7 @@ import emu.grasscutter.data.def.WorldLevelData;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.constants.ScriptGadgetState;
@@ -33,6 +35,7 @@ import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneInitConfig;
 import emu.grasscutter.scripts.data.SceneMonster;
+import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.scripts.data.SceneSuite;
 import emu.grasscutter.scripts.data.SceneTrigger;
 import emu.grasscutter.scripts.data.SceneVar;
@@ -49,14 +52,17 @@ public class SceneScriptManager {
 	private Bindings bindings;
 	private SceneConfig config;
 	private List<SceneBlock> blocks;
-	private Int2ObjectOpenHashMap<Set<SceneTrigger>> triggers;
 	private boolean isInit;
+	
+	private final Int2ObjectOpenHashMap<Set<SceneTrigger>> triggers;
+	private final Int2ObjectOpenHashMap<SceneRegion> regions;
 	
 	public SceneScriptManager(Scene scene) {
 		this.scene = scene;
 		this.scriptLib = new ScriptLib(this);
 		this.scriptLibLua = CoerceJavaToLua.coerce(this.scriptLib);
 		this.triggers = new Int2ObjectOpenHashMap<>();
+		this.regions = new Int2ObjectOpenHashMap<>();
 		this.variables = new HashMap<>();
 		
 		// TEMPORARY
@@ -108,6 +114,18 @@ public class SceneScriptManager {
 		getTriggersByEvent(trigger.event).remove(trigger);
 	}
 	
+	public SceneRegion getRegionById(int id) {
+		return regions.get(id);
+	}
+	
+	public void registerRegion(SceneRegion region) {
+		regions.put(region.config_id, region);
+	}
+	
+	public void deregisterRegion(SceneRegion region) {
+		regions.remove(region.config_id);
+	}
+	
 	// TODO optimize
 	public SceneGroup getGroupById(int groupId) {
 		for (SceneBlock block : this.getScene().getLoadedBlocks()) {
@@ -134,11 +152,8 @@ public class SceneScriptManager {
 		bindings = ScriptLoader.getEngine().createBindings();
 		
 		// Set variables
-		bindings.put("EventType", new EventType()); // TODO - make static class to avoid instantiating a new class every scene
-		bindings.put("GadgetState", new ScriptGadgetState());
-		bindings.put("RegionShape", new ScriptRegionShape());
 		bindings.put("ScriptLib", getScriptLib());
-		
+
 		// Eval script
 		try {
 			cs.eval(getBindings());
@@ -211,6 +226,7 @@ public class SceneScriptManager {
 			group.gadgets = ScriptLoader.getSerializer().toList(SceneGadget.class, bindings.get("gadgets"));
 			group.triggers = ScriptLoader.getSerializer().toList(SceneTrigger.class, bindings.get("triggers"));
 			group.suites = ScriptLoader.getSerializer().toList(SceneSuite.class, bindings.get("suites"));
+			group.regions = ScriptLoader.getSerializer().toList(SceneRegion.class, bindings.get("regions"));
 			group.init_config = ScriptLoader.getSerializer().toObject(SceneInitConfig.class, bindings.get("init_config"));
 			
 			// Add variables to suite
@@ -235,11 +251,27 @@ public class SceneScriptManager {
 	}
 
 	public void onTick() {
-		checkTriggers();
+		checkRegions();
 	}
 	
-	public void checkTriggers() {
+	public void checkRegions() {
+		if (this.regions.size() == 0) {
+			return;
+		}
+		
+		for (SceneRegion region : this.regions.values()) {
+			getScene().getEntities().values()
+				.stream()
+				.filter(e -> e.getEntityType() <= 2 && region.contains(e.getPosition()))
+				.forEach(region::addEntity);
 
+			if (region.hasNewEntities()) {
+				// This is not how it works, source_eid should be region entity id, but we dont have an entity for regions yet
+				callEvent(EventType.EVENT_ENTER_REGION, new ScriptArgs(region.config_id).setSourceEntityId(region.config_id));
+				
+				region.resetNewEntities();
+			}
+		}
 	}
 	
 	public void spawnGadgetsInGroup(SceneGroup group) {

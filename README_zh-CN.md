@@ -105,7 +105,7 @@ chmod +x gradlew
 在每个玩家的朋友列表中都有一个名为“服务器”的虚拟用户，你可以通过发送消息来使用命令。命令也适用于其他聊天室，例如私人/团队聊天。
 要在游戏中使用命令，需要添加 `/` 或 `!` 前缀，如 `/pos`
 
-| 命令           | 用法                                         | 权限节点                  | 可用性   | 注释                                       | 别名                                            |
+| 命令            | 用法                                         | 权限节点                  | 可用性   | 注释                                       | 别名                                            |
 | -------------- | -------------------------------------------- | ------------------------- | -------- | ------------------------------------------ | ----------------------------------------------- |
 | account        | account <create\|delete> <用户名> [uid]      |                           | 仅服务端 | 通过指定用户名和uid增删账户                |                                                 |
 | broadcast      | broadcast <消息内容>                         | server.broadcast          | 均可使用 | 给所有玩家发送公告                         | b                                               |
@@ -116,7 +116,7 @@ chmod +x gradlew
 | drop           | drop <物品ID\|物品名称> [数量]               | server.drop               | 仅客户端 | 在指定玩家周围掉落指定物品                 | `d` `dropitem`                                  |
 | give           | give [uid] <物品ID\|物品名称> [数量] [等级] [精炼等级]  |                           |          | 给予指定玩家一定数量及等级的物品 (精炼等级仅适用于武器)        | `g` `item` `giveitem`                           |
 | givechar       | givechar \<uid> <角色ID> [等级]               | player.givechar           | 均可使用 | 给予指定玩家对应角色                       | givec                                           |
-| giveart        | giveart [uid] \<圣遗物ID> \<主属性ID> [\<副属性ID>[,<次数>]]... [等级] | player.giveart            | 均可使用 | 给予玩家指定属性的圣遗物                   | givea                                           |
+| giveart        | giveart [uid] \<圣遗物ID> \<主属性ID> [\<副属性ID>[,<次数>]]... [等级] | player.giveart            | 均可使用 | 给予玩家指定属性的圣遗物                   | gart                                           |
 | giveall        | giveall [uid] [数量]                         | player.giveall            | 均可使用 | 给予指定玩家全部物品                       | givea                                           |
 | godmode        | godmode [uid]                                | player.godmode            | 仅客户端 | 保护你不受到任何伤害(依然会被击退)         |                                                 |
 | heal           | heal                                         | player.heal               | 仅客户端 | 治疗队伍中所有角色                         | h                                               |
@@ -136,7 +136,7 @@ chmod +x gradlew
 | spawn          | spanw <实体ID\|实体名称> [等级] [数量]       | server.spawn              | 仅客户端 | 在你周围生成实体                           |                                                 |
 | stop           | stop                                         | server.stop               | 均可使用 | 停止服务器                                 |                                                 |
 | talent         | talent <天赋ID> <等级>                       | player.settalent          | 仅客户端 | 设置当前角色的天赋等级                     |                                                 |
-| teleport       | teleport \<x> \<y> \<z>                         | player.teleport           | 仅客户端 | 传送玩家到指定坐标                         | tp                                              |
+| teleport       | teleport [@playerUid] \<x> \<y> \<z> [sceneId] | player.teleport           | 均可使用 | 传送玩家到指定坐标                         | tp                                              |
 | tpall          |                                                   | player.tpall              | 仅客户端  | 传送多人世界中所有的玩家到自身地点         |                                                 |
 | weather        | weather <天气ID> <气候ID>                    | player.weather            | 仅客户端 | 改变天气                                   | w                                               |
 

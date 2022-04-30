@@ -1,12 +1,18 @@
 package emu.grasscutter.data.common;
 
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.def.DailyDungeonData;
 import emu.grasscutter.utils.Position;
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+import it.unimi.dsi.fastutil.ints.IntList;
 
 public class PointData {
 	private int id;
 	private String $type;
     private Position tranPos;
     private int[] dungeonIds;
+    private int[] dungeonRandomList;
     
     public int getId() {
 		return id;
@@ -26,5 +32,32 @@ public class PointData {
 
 	public int[] getDungeonIds() {
 		return dungeonIds;
+	}
+
+	public int[] getDungeonRandomList() {
+		return dungeonRandomList;
+	}
+
+	public void updateDailyDungeon() {
+		if (getDungeonRandomList() == null) {
+			return;
+		}
+		
+		IntList newDungeons = new IntArrayList();
+		int day = Grasscutter.getCurrentDayOfWeek();
+		
+		for (int randomId : getDungeonRandomList()) {
+			DailyDungeonData data = GameData.getDailyDungeonDataMap().get(randomId);
+			
+			if (data != null) {
+				int[] addDungeons = data.getDungeonsByDay(day);
+				
+				for (int d : addDungeons) {
+					newDungeons.add(d);
+				}
+			}
+		}
+		
+		this.dungeonIds = newDungeons.toIntArray();
 	}
 }
