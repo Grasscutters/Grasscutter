@@ -236,7 +236,7 @@ public final class DispatchServer {
 
 		httpServer.raw().error(404, ctx -> {
 			if(Grasscutter.getConfig().DebugMode.equalsIgnoreCase("MISSING")) {
-				Grasscutter.getLogger().info(String.format("[Dispatch] Potentially unhandled route '%s'", ctx.url()));
+				Grasscutter.getLogger().info(String.format("[Dispatch] Potential unhandled %s request: %s", ctx.method(), ctx.url()));
 			}
 			ctx.contentType("text/html");
 			ctx.result("<!doctype html><html lang=\"en\"><body><img src=\"https://http.cat/404\" /></body></html>"); // I'm like 70% sure this won't break anything.
@@ -459,7 +459,7 @@ public final class DispatchServer {
 
 		// Test api?
 		// abtest-api-data-sg.hoyoverse.com
-		httpServer.get("/data_abtest_api/config/experiment/list", new DispatchHttpJsonHandler("{\"retcode\":0,\"success\":true,\"message\":\"\",\"data\":[{\"code\":1000,\"type\":2,\"config_id\":\"14\",\"period_id\":\"6036_99\",\"version\":\"1\",\"configs\":{\"cardType\":\"old\"}}]}"));
+		httpServer.post("/data_abtest_api/config/experiment/list", new DispatchHttpJsonHandler("{\"retcode\":0,\"success\":true,\"message\":\"\",\"data\":[{\"code\":1000,\"type\":2,\"config_id\":\"14\",\"period_id\":\"6036_99\",\"version\":\"1\",\"configs\":{\"cardType\":\"old\"}}]}"));
 
 		// log-upload-os.mihoyo.com
 		httpServer.all("/log/sdk/upload", new DispatchHttpJsonHandler("{\"code\":0}"));
