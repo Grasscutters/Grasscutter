@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Reliquary.proto";
+import "Weapon.proto";
+
+message ShowEquip {
+	oneof Detail {
+		Reliquary reliquary = 2;
+		Weapon weapon = 3;
+	}
+	uint32 item_id = 1;
+}
