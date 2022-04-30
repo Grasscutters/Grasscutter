@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,11 +14,17 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineFactory;
 import javax.script.ScriptEngineManager;
 
+import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
+import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 import org.luaj.vm2.script.LuajContext;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.props.EntityType;
+import emu.grasscutter.scripts.constants.EventType;
+import emu.grasscutter.scripts.constants.ScriptGadgetState;
+import emu.grasscutter.scripts.constants.ScriptRegionShape;
 import emu.grasscutter.scripts.serializer.LuaSerializer;
 import emu.grasscutter.scripts.serializer.Serializer;
 
@@ -52,6 +59,14 @@ public class ScriptLoader {
 		        return LuaValue.ZERO;
 		    }
 		});
+		
+		LuaTable table = new LuaTable();
+		Arrays.stream(EntityType.values()).forEach(e -> table.set(e.name().toUpperCase(), e.getValue()));
+		ctx.globals.set("EntityType", table);
+		
+		ctx.globals.set("EventType", CoerceJavaToLua.coerce(new EventType())); // TODO - make static class to avoid instantiating a new class every scene
+		ctx.globals.set("GadgetState", CoerceJavaToLua.coerce(new ScriptGadgetState()));
+		ctx.globals.set("RegionShape", CoerceJavaToLua.coerce(new ScriptRegionShape()));
 	}
 	
 	public static ScriptEngine getEngine() {
