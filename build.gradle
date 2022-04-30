@@ -16,18 +16,22 @@ buildscript {
 }
 
 plugins {
+    // Apply the application plugin to add support for building a CLI application
+    id 'application'
+
     // Apply the java plugin to add support for Java
     id 'java'
 
     // Apply the protobuf auto generator
     id 'com.google.protobuf' version "0.8.18"
-    id 'idea'
 
+    // Eclipse Support
     id 'eclipse'
 
-    // Apply the application plugin to add support for building a CLI application
-    id 'application'
+    // Intelij Support
+    id 'idea'
 
+    // Maven
     id 'maven-publish'
     id 'signing'
 }
@@ -37,7 +41,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'tech.xigam'
-version = '1.0.2-dev'
+version = '1.0.3-dev'
 
 sourceCompatibility = 17
 targetCompatibility = 17
