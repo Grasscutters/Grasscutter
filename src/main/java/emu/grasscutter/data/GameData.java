@@ -15,6 +15,8 @@ import emu.grasscutter.data.def.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+import it.unimi.dsi.fastutil.ints.IntList;
 
 public class GameData {
 	// BinOutputs
@@ -61,12 +63,14 @@ public class GameData {
 	private static final Int2ObjectMap<FetterCharacterCardData> fetterCharacterCardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<RewardData> rewardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<WorldLevelData> worldLevelDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<DailyDungeonData> dailyDungeonDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<DungeonData> dungeonDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<ShopGoodsData> shopGoodsDataMap = new Int2ObjectOpenHashMap<>();
 
 	// Cache
 	private static Map<Integer, List<Integer>> fetters = new HashMap<>();
 	private static Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
+	private static final IntList scenePointIdList = new IntArrayList();
 	
 	public static char EJWOA = 's';
 	
@@ -280,6 +284,10 @@ public class GameData {
 		return dungeonDataMap;
 	}
 	  
+	public static Int2ObjectMap<DailyDungeonData> getDailyDungeonDataMap() {
+		return dailyDungeonDataMap;
+	}
+
 	public static Map<Integer, List<ShopGoodsData>> getShopGoodsDataEntries() {
 		if (shopGoods.isEmpty()) {
 			shopGoodsDataMap.forEach((k, v) -> {
@@ -290,5 +298,9 @@ public class GameData {
 		}
 
 		return shopGoods;
+	}
+
+	public static IntList getScenePointIdList() {
+		return scenePointIdList;
 	}
 }

@@ -8,16 +8,39 @@ import emu.grasscutter.game.entity.GameEntity;
 
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
+
+import emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember;
 import emu.grasscutter.net.proto.VehicleSpawnRspOuterClass.VehicleSpawnRsp;
 
 import emu.grasscutter.utils.Position;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+
+import java.util.List;
+
+
+import static emu.grasscutter.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.VEHICLE_INTERACT_OUT;
 
 public class PacketVehicleSpawnRsp extends BasePacket {
 
 	public PacketVehicleSpawnRsp(Player player, int vehicleId, int pointId, Position pos, Position rot) {
 		super(PacketOpcodes.VehicleSpawnRsp);
 		VehicleSpawnRsp.Builder proto = VehicleSpawnRsp.newBuilder();
+
+		// Eject vehicle members and Kill previous vehicles if there are any
+		List<GameEntity> previousVehicles = player.getScene().getEntities().values().stream()
+				.filter(entity -> entity instanceof EntityVehicle
+						&& ((EntityVehicle) entity).getGadgetId() == vehicleId
+						&& ((EntityVehicle) entity).getOwner().equals(player))
+				.toList();
+
+		previousVehicles.stream().forEach(entity -> {
+			List<VehicleMember> vehicleMembers = ((EntityVehicle) entity).getVehicleMembers().stream().toList();
+
+			vehicleMembers.stream().forEach(vehicleMember -> {
+				player.getScene().broadcastPacket(new PacketVehicleInteractRsp(((EntityVehicle) entity), vehicleMember, VEHICLE_INTERACT_OUT));
+			});
+
+			player.getScene().killEntity(entity, 0);
+		});
 
 		EntityVehicle vehicle = new EntityVehicle(player.getScene(), player, vehicleId, pointId, pos, rot);
 

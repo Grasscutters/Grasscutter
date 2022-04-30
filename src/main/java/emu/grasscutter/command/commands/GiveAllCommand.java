@@ -83,6 +83,9 @@ public class GiveAllCommand implements CommandHandler {
             Avatar avatar = new Avatar(avatarData);
             avatar.setLevel(90);
             avatar.setPromoteLevel(6);
+            for(int i = 1;i <= 6;++i){
+                avatar.getTalentIdList().add((avatar.getAvatarId()-10000000)*10+i);
+            }
             // This will handle stats and talents
             avatar.recalcStats();
             player.addAvatar(avatar);
@@ -95,14 +98,14 @@ public class GiveAllCommand implements CommandHandler {
             if (isTestItem(itemdata.getId())) continue;
 
             if (itemdata.isEquip()) {
-                for (int i = 0; i < 5; ++i) {
-                    GameItem item = new GameItem(itemdata);
-                    if (itemdata.getItemType() == ItemType.ITEM_WEAPON) {
+                if (itemdata.getItemType() == ItemType.ITEM_WEAPON) {
+                    for (int i = 0; i < 5; ++i) {
+                        GameItem item = new GameItem(itemdata);
                         item.setLevel(90);
                         item.setPromoteLevel(6);
                         item.setRefinement(4);
+                        itemList.add(item);
                     }
-                    itemList.add(item);
                 }
             }
             else {

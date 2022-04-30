@@ -109,18 +109,19 @@ chmod +x gradlew
 | -------------- | -------------------------------------------- | ------------------------- | -------- | ------------------------------------------ | ----------------------------------------------- |
 | account        | account <create\|delete> <用户名> [uid]      |                           | 仅服务端 | 通过指定用户名和uid增删账户                |                                                 |
 | broadcast      | broadcast <消息内容>                         | server.broadcast          | 均可使用 | 给所有玩家发送公告                         | b                                               |
-| coop           | coop <uid> <目标uid>                 | server.coop               | 均可使用    | 强制某位玩家进入指定玩家的多人世界                  |                                                 |
+| coop           | coop \<uid> <目标uid>                 | server.coop               | 均可使用    | 强制某位玩家进入指定玩家的多人世界                  |                                                 |
 | changescene    | changescene <场景ID>                         | player.changescene        | 仅客户端 | 切换到指定场景                             | scene                                           |
 | clearartifacts | clearartifacts                               | player.clearartifacts     | 仅客户端 | 删除所有未装备及未解锁的圣遗物,包括五星    | clearart                                        |
 | clearweapons   | clearweapons                                 | player.clearweapons       | 仅客户端 | 删除所有未装备及未解锁的武器,包括五星      | clearwp                                         |
 | drop           | drop <物品ID\|物品名称> [数量]               | server.drop               | 仅客户端 | 在指定玩家周围掉落指定物品                 | `d` `dropitem`                                  |
 | give           | give [uid] <物品ID\|物品名称> [数量] [等级] [精炼等级]  |                           |          | 给予指定玩家一定数量及等级的物品 (精炼等级仅适用于武器)        | `g` `item` `giveitem`                           |
-| givechar       | givechar <uid> <角色ID> [等级]               | player.givechar           | 均可使用 | 给予指定玩家对应角色                       | givec                                           |
+| givechar       | givechar \<uid> <角色ID> [等级]               | player.givechar           | 均可使用 | 给予指定玩家对应角色                       | givec                                           |
+| giveart        | giveart [uid] \<圣遗物ID> \<主属性ID> [\<副属性ID>[,<次数>]]... [等级] | player.giveart            | 均可使用 | 给予玩家指定属性的圣遗物                   | givea                                           |
 | giveall        | giveall [uid] [数量]                         | player.giveall            | 均可使用 | 给予指定玩家全部物品                       | givea                                           |
 | godmode        | godmode [uid]                                | player.godmode            | 仅客户端 | 保护你不受到任何伤害(依然会被击退)         |                                                 |
 | heal           | heal                                         | player.heal               | 仅客户端 | 治疗队伍中所有角色                         | h                                               |
 | help           | help [命令]                                  |                           | 均可使用 | 显示帮助或展示指定命令的帮助               |                                                 |
-| kick           | kick <uid>                                   | server.kick               | 均可使用 | 从服务器中踢出指定玩家 (WIP)               | k                                               |
+| kick           | kick \<uid>                                   | server.kick               | 均可使用 | 从服务器中踢出指定玩家 (WIP)               | k                                               |
 | killall        | killall [uid] [场景ID]                       | server.killall            | 均可使用 | 杀死指定玩家世界中所在或指定场景的全部生物 |                                                 |
 | list           | list                                         |                           | 均可使用 | 列出在线玩家                               |                                                 |
 | permission     | permission <add\|remove> <用户名> <权限节点> | *                         | 均可使用 | 添加或移除玩家的权限                       |                                                 |
@@ -128,14 +129,14 @@ chmod +x gradlew
 | reload         | reload                                       | server.reload             | 均可使用 | 重载服务器配置                             |                                                 |
 | resetconst     | resetconst [all]                             | player.resetconstellation | 仅客户端 | 重置当前角色的命座,重新登录即可生效        | resetconstellation                              |
 | restart        | restart                                      |                           | 均可使用 | 重启服务端                                 |                                                 |
-| say            | say <uid> <消息>                             | server.sendmessage        | 均可使用 | 作为服务器发送消息给玩家                   | `sendservmsg` `sendservermessage` `sendmessage` |
+| say            | say \<uid> <消息>                             | server.sendmessage        | 均可使用 | 作为服务器发送消息给玩家                   | `sendservmsg` `sendservermessage` `sendmessage` |
 | setfetterlevel | setfetterlevel <好感等级>                    | player.setfetterlevel     | 仅客户端 | 设置当前角色的好感等级                     | `setfetterlvl` `setfriendship`                  |
 | setstats       | setstats <属性> <数值>                       | player.setstats           | 仅客户端 | 直接修改当前角色的面板                     | stats                                           |
 | setworldlevel  | setworldlevel <世界等级>                     | player.setworldlevel      | 仅客户端 | 设置世界等级(重新登陆即可生效)             | setworldlvl                                     |
 | spawn          | spanw <实体ID\|实体名称> [等级] [数量]       | server.spawn              | 仅客户端 | 在你周围生成实体                           |                                                 |
 | stop           | stop                                         | server.stop               | 均可使用 | 停止服务器                                 |                                                 |
 | talent         | talent <天赋ID> <等级>                       | player.settalent          | 仅客户端 | 设置当前角色的天赋等级                     |                                                 |
-| teleport       | teleport [@player id] <x> <y> <z> [scene id]   | player.teleport           | 均可使用 | 传送玩家到指定坐标                         | tp                                              |
+| teleport       | teleport [@playerUid] \<x> \<y> \<z> [sceneId] | player.teleport           | 均可使用 | 传送玩家到指定坐标                         | tp                                              |
 | tpall          |                                                   | player.tpall              | 仅客户端  | 传送多人世界中所有的玩家到自身地点         |                                                 |
 | weather        | weather <天气ID> <气候ID>                    | player.weather            | 仅客户端 | 改变天气                                   | w                                               |
 
