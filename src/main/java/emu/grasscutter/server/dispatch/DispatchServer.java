@@ -524,5 +524,13 @@ public final class DispatchServer {
 			this.parsedRegionQuery = prq;
 			this.Base64 = b64;
 		}
+
+		public QueryCurrRegionHttpRsp getParsedRegionQuery() {
+			return parsedRegionQuery;
+		}
+
+		public String getBase64() {
+			return Base64;
+		}
 	}
 }
