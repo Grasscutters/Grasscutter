@@ -35,7 +35,6 @@ public final class Grasscutter {
 	
 	private static int day; // Current day of week
 	
-	public static RunMode MODE = RunMode.BOTH;
 	private static DispatchServer dispatchServer;
 	private static GameServer gameServer;
 	private static PluginManager pluginManager;
@@ -58,8 +57,6 @@ public final class Grasscutter {
     	
 		for (String arg : args) {
 			switch (arg.toLowerCase()) {
-				case "-auth" -> MODE = RunMode.AUTH;
-				case "-game" -> MODE = RunMode.GAME;
 				case "-handbook" -> {
 					Tools.createGmHandbook(); return;
 				}
@@ -85,12 +82,12 @@ public final class Grasscutter {
 		gameServer = new GameServer(new InetSocketAddress(getConfig().getGameServerOptions().Ip, getConfig().getGameServerOptions().Port));
 		
 		// Start servers.
-		if(getConfig().RunMode.equalsIgnoreCase("HYBRID")) {
+		if (getConfig().RunMode == ServerRunMode.HYBRID) {
 			dispatchServer.start();
 			gameServer.start();
-		} else if (getConfig().RunMode.equalsIgnoreCase("DISPATCH_ONLY")) {
+		} else if (getConfig().RunMode == ServerRunMode.DISPATCH_ONLY) {
 			dispatchServer.start();
-		} else if (getConfig().RunMode.equalsIgnoreCase("GAME_ONLY")) {
+		} else if (getConfig().RunMode == ServerRunMode.GAME_ONLY) {
 			gameServer.start();
 		} else {
 			getLogger().error("Invalid server run mode. " + getConfig().RunMode);
@@ -140,7 +137,7 @@ public final class Grasscutter {
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
 			while ((input = br.readLine()) != null) {
 				try {
-					if(getConfig().RunMode.equalsIgnoreCase("DISPATCH_ONLY")) {
+					if (getConfig().RunMode == ServerRunMode.DISPATCH_ONLY) {
 						getLogger().error("Commands are not supported in dispatch only mode.");
 						return;
 					}
@@ -153,12 +150,6 @@ public final class Grasscutter {
 		} catch (Exception e) {
 			Grasscutter.getLogger().error("An error occurred.", e);
 		}
-	}
-	
-	public enum RunMode {
-		BOTH,
-		AUTH,
-		GAME
 	}
 
 	public static Config getConfig() {
@@ -192,5 +183,13 @@ public final class Grasscutter {
 
 	public static int getCurrentDayOfWeek() {
 		return day;
+	}
+	
+	public enum ServerRunMode {
+		HYBRID, DISPATCH_ONLY, GAME_ONLY
+	}
+	
+	public enum ServerDebugMode {
+		ALL, MISSING, NONE
 	}
 }

@@ -6,6 +6,8 @@ import com.google.protobuf.ByteString;
 
 import emu.grasscutter.Config;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerDebugMode;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp;
@@ -62,7 +64,7 @@ public final class DispatchServer {
 
 	public QueryCurrRegionHttpRsp getCurrRegion() {
 		// Needs to be fixed by having the game servers connect to the dispatch server.
-		if (Grasscutter.getConfig().RunMode.equalsIgnoreCase("HYBRID")) {
+		if (Grasscutter.getConfig().RunMode == ServerRunMode.HYBRID) {
 			return regions.get(defaultServerName).parsedRegionQuery;
 		}
 
@@ -98,7 +100,7 @@ public final class DispatchServer {
 
 			List<RegionSimpleInfo> servers = new ArrayList<>();
 			List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts
-			if (Grasscutter.getConfig().RunMode.equalsIgnoreCase("HYBRID")) { // Automatically add the game server if in
+			if (Grasscutter.getConfig().RunMode == ServerRunMode.HYBRID) { // Automatically add the game server if in
 																				// hybrid mode
 				RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
 						.setName("os_usa")
@@ -233,7 +235,7 @@ public final class DispatchServer {
 			});
 
 			config.enforceSsl = Grasscutter.getConfig().getDispatchOptions().UseSSL;
-			if(Grasscutter.getConfig().DebugMode.equalsIgnoreCase("ALL")) {
+			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.ALL) {
 				config.enableDevLogging();
 			}
 		});
@@ -241,7 +243,7 @@ public final class DispatchServer {
 		httpServer.get("/", (req, res) -> res.send("Welcome to Grasscutter"));
 
 		httpServer.raw().error(404, ctx -> {
-			if(Grasscutter.getConfig().DebugMode.equalsIgnoreCase("MISSING")) {
+			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING) {
 				Grasscutter.getLogger().info(String.format("[Dispatch] Potential unhandled %s request: %s", ctx.method(), ctx.url()));
 			}
 			ctx.contentType("text/html");
