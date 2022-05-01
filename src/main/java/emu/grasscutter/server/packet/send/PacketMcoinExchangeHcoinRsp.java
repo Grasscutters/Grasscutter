@@ -6,13 +6,13 @@ import emu.grasscutter.net.proto.McoinExchangeHcoinRspOuterClass;
 
 public class PacketMcoinExchangeHcoinRsp extends BasePacket {
 
-    public PacketMcoinExchangeHcoinRsp(int mcoin, int hcoin) {
+    public PacketMcoinExchangeHcoinRsp(int retCode) {
         super(PacketOpcodes.McoinExchangeHcoinRsp);
 
-        McoinExchangeHcoinRspOuterClass.McoinExchangeHcoinRsp mcoinExchangeHcoinRsp = McoinExchangeHcoinRspOuterClass.McoinExchangeHcoinRsp.newBuilder()
-                .setMCoinNum(mcoin)
-                .setHCoinNum(hcoin).build();
+        McoinExchangeHcoinRspOuterClass.McoinExchangeHcoinRsp proto = McoinExchangeHcoinRspOuterClass.McoinExchangeHcoinRsp.newBuilder()
+                .setRetcode(retCode)
+                .build();
 
-        this.setData(mcoinExchangeHcoinRsp);
+        this.setData(proto);
     }
 }
