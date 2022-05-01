@@ -20,8 +20,14 @@ public final class GiveCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         int target, item, lvl, amount = 1, refinement = 0;
+
         if (sender == null && args.size() < 2) {
             CommandHandler.sendMessage(null, "Usage: give <player> <itemId|itemName> [amount] [level]");
+            return;
+        }
+
+        if (amount >= 1000) {
+            CommandHandler.sendMessage(sender, "Overmuch :(");
             return;
         }
 

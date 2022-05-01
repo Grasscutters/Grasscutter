@@ -6,6 +6,7 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.ItemData;
+import emu.grasscutter.game.Account;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
@@ -19,7 +20,7 @@ public final class GiveAllCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, List<String> args) {
-        int target, amount = 99999;
+        int target, amount = 1000;
 
         switch (args.size()) {
             case 0: // *no args*
@@ -68,9 +69,19 @@ public final class GiveAllCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, "Player not found.");
             return;
         }
-
+        
         this.giveAllItems(targetPlayer, amount);
         CommandHandler.sendMessage(sender, "Giving all items done");
+
+        Account account = Grasscutter.getGameServer().getAccountByName(sender.getAccount().getUsername());
+        if (account == null) {
+            CommandHandler.sendMessage(sender, "Account not found.");
+            return;
+        }
+
+        if (account.removePermission("player.giveall")) {
+            CommandHandler.sendMessage(sender, "Permission removed, can only be used once");
+        } else CommandHandler.sendMessage(sender, "They don't have this permission!");
     }
 
     public void giveAllItems(Player player, int amount) {

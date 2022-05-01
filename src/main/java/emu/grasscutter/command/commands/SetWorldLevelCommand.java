@@ -27,6 +27,11 @@ public final class SetWorldLevelCommand implements CommandHandler {
         try {
             int level = Integer.parseInt(args.get(0));
 
+            if (level >= 8) {
+                CommandHandler.sendMessage(sender, "Max 8");
+                return;
+            }
+
             // Set in both world and player props
             sender.getWorld().setWorldLevel(level);
             sender.setWorldLevel(level);

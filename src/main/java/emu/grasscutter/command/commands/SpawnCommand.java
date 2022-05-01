@@ -38,6 +38,11 @@ public final class SpawnCommand implements CommandHandler {
                 return;
             }
 
+            if (amount >= 500) {
+                CommandHandler.sendMessage(sender, "Overmuch :(");
+                return;
+            }
+
             float range = (5f + (.1f * amount));
             for (int i = 0; i < amount; i++) {
                 Position pos = sender.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
