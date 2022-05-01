@@ -53,7 +53,7 @@ public final class TalentCommand implements CommandHandler {
                             CommandHandler.sendMessage(sender, "To get talent ID: /talent getid");
                             return;
                         }
-                        if (nextLevel > 16){ 
+                        if (nextLevel >= 16){ 
                             CommandHandler.sendMessage(sender, "Invalid talent level. Level should be lower than 16");
                             return;
                         }
@@ -117,7 +117,7 @@ public final class TalentCommand implements CommandHandler {
                         CommandHandler.sendMessage(sender, "To set talent level: /talent <n or e or q> <value>");
                         return;
                     }
-                    if (nextLevel > 16){
+                    if (nextLevel >= 16){
                         CommandHandler.sendMessage(sender, "Invalid talent level. Level should be lower than 16");
                         return;
                     }
