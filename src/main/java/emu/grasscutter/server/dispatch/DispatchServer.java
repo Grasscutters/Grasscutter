@@ -6,6 +6,8 @@ import com.google.protobuf.ByteString;
 
 import emu.grasscutter.Config;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerDebugMode;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp;
@@ -62,7 +64,7 @@ public final class DispatchServer {
 
 	public QueryCurrRegionHttpRsp getCurrRegion() {
 		// Needs to be fixed by having the game servers connect to the dispatch server.
-		if (Grasscutter.getConfig().RunMode.equalsIgnoreCase("HYBRID")) {
+		if (Grasscutter.getConfig().RunMode == ServerRunMode.HYBRID) {
 			return regions.get(defaultServerName).parsedRegionQuery;
 		}
 
@@ -98,7 +100,7 @@ public final class DispatchServer {
 
 			List<RegionSimpleInfo> servers = new ArrayList<>();
 			List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts
-			if (Grasscutter.getConfig().RunMode.equalsIgnoreCase("HYBRID")) { // Automatically add the game server if in
+			if (Grasscutter.getConfig().RunMode == ServerRunMode.HYBRID) { // Automatically add the game server if in
 																				// hybrid mode
 				RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
 						.setName("os_usa")
@@ -233,7 +235,7 @@ public final class DispatchServer {
 			});
 
 			config.enforceSsl = Grasscutter.getConfig().getDispatchOptions().UseSSL;
-			if(Grasscutter.getConfig().DebugMode.equalsIgnoreCase("ALL")) {
+			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.ALL) {
 				config.enableDevLogging();
 			}
 		});
@@ -241,7 +243,7 @@ public final class DispatchServer {
 		httpServer.get("/", (req, res) -> res.send("Welcome to Grasscutter"));
 
 		httpServer.raw().error(404, ctx -> {
-			if(Grasscutter.getConfig().DebugMode.equalsIgnoreCase("MISSING")) {
+			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING) {
 				Grasscutter.getLogger().info(String.format("[Dispatch] Potential unhandled %s request: %s", ctx.method(), ctx.url()));
 			}
 			ctx.contentType("text/html");
@@ -317,6 +319,9 @@ public final class DispatchServer {
 						responseData.data.account.uid = account.getId();
 						responseData.data.account.token = account.generateSessionKey();
 						responseData.data.account.email = account.getEmail();
+						if (responseData.data.account.email == null) {
+							responseData.data.account.email = "";
+						}
 
 						Grasscutter.getLogger()
 								.info(String.format("[Dispatch] Client %s failed to log in: Account %s created",
@@ -341,6 +346,9 @@ public final class DispatchServer {
 				responseData.data.account.uid = account.getId();
 				responseData.data.account.token = account.generateSessionKey();
 				responseData.data.account.email = account.getEmail();
+				if (responseData.data.account.email == null) {
+					responseData.data.account.email = "";
+				}
 
 				Grasscutter.getLogger().info(String.format("[Dispatch] Client %s logged in as %s", req.ip(),
 						responseData.data.account.uid));
@@ -440,7 +448,8 @@ public final class DispatchServer {
 		// hk4e-sdk-os.hoyoverse.com
 		httpServer.get("/hk4e_global/mdk/agreement/api/getAgreementInfos", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"marketing_agreements\":[]}}"));
 		// hk4e-sdk-os.hoyoverse.com
-		httpServer.get("/hk4e_global/combo/granter/api/compareProtocolVersion", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"modified\":true,\"protocol\":{\"id\":0,\"app_id\":4,\"language\":\"en\",\"user_proto\":\"\",\"priv_proto\":\"\",\"major\":7,\"minimum\":0,\"create_time\":\"0\",\"teenager_proto\":\"\",\"third_proto\":\"\"}}}"));
+		// this could be either GET or POST based on the observation of different clients
+		httpServer.all("/hk4e_global/combo/granter/api/compareProtocolVersion", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"modified\":true,\"protocol\":{\"id\":0,\"app_id\":4,\"language\":\"en\",\"user_proto\":\"\",\"priv_proto\":\"\",\"major\":7,\"minimum\":0,\"create_time\":\"0\",\"teenager_proto\":\"\",\"third_proto\":\"\"}}}"));
 
 		// Game data
 		// hk4e-api-os.hoyoverse.com

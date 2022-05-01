@@ -1,5 +1,7 @@
 package emu.grasscutter;
 
+import emu.grasscutter.Grasscutter.ServerDebugMode;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.mail.Mail;
 
 public final class Config {
@@ -15,8 +17,8 @@ public final class Config {
 	public String SCRIPTS_FOLDER = "./resources/Scripts/";
 	public String PLUGINS_FOLDER = "./plugins/";
 
-	public String DebugMode = "NONE"; // ALL, MISSING, NONE
-	public String RunMode = "HYBRID"; // HYBRID, DISPATCH_ONLY, GAME_ONLY
+	public ServerDebugMode DebugMode = ServerDebugMode.NONE; // ALL, MISSING, NONE
+	public ServerRunMode RunMode = ServerRunMode.HYBRID; // HYBRID, DISPATCH_ONLY, GAME_ONLY
 	public GameServerOptions GameServer = new GameServerOptions();
 	public DispatchServerOptions DispatchServer = new DispatchServerOptions();
 
