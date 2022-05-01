@@ -2,6 +2,8 @@ package emu.grasscutter.server.packet.send;
 
 import com.google.protobuf.ByteString;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerDebugMode;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerLoginRspOuterClass.PlayerLoginRsp;
@@ -25,7 +27,7 @@ public class PacketPlayerLoginRsp extends BasePacket {
 
 		RegionInfo info;
 
-		if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("GAME_ONLY")) {
+		if (Grasscutter.getConfig().RunMode == ServerRunMode.GAME_ONLY) {
 			if (regionCache == null) {
 				try {
 					File file = new File(Grasscutter.getConfig().DATA_FOLDER + "query_cur_region.txt");

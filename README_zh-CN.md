@@ -111,8 +111,7 @@ chmod +x gradlew
 | broadcast      | broadcast <消息内容>                         | server.broadcast          | 均可使用 | 给所有玩家发送公告                         | b                                               |
 | coop           | coop \<uid> <目标uid>                 | server.coop               | 均可使用    | 强制某位玩家进入指定玩家的多人世界                  |                                                 |
 | changescene    | changescene <场景ID>                         | player.changescene        | 仅客户端 | 切换到指定场景                             | scene                                           |
-| clearartifacts | clearartifacts                               | player.clearartifacts     | 仅客户端 | 删除所有未装备及未解锁的圣遗物,包括五星    | clearart                                        |
-| clearweapons   | clearweapons                                 | player.clearweapons       | 仅客户端 | 删除所有未装备及未解锁的武器,包括五星      | clearwp                                         |
+| clear          | clear <all\|wp\|art\|mat> [UID]                     | player.clearinv     | 仅客户端 | 删除所有未装备及未解锁的圣遗物(art)或武器(wp)或材料(mat)或者所有(all),包括五星    | clear                                        |
 | drop           | drop <物品ID\|物品名称> [数量]               | server.drop               | 仅客户端 | 在指定玩家周围掉落指定物品                 | `d` `dropitem`                                  |
 | give           | give [uid] <物品ID\|物品名称> [数量] [等级] [精炼等级]  |                           |          | 给予指定玩家一定数量及等级的物品 (精炼等级仅适用于武器)        | `g` `item` `giveitem`                           |
 | givechar       | givechar \<uid> <角色ID> [等级]               | player.givechar           | 均可使用 | 给予指定玩家对应角色                       | givec                                           |

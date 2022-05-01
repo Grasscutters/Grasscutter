@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
@@ -163,7 +164,7 @@ public class GameSession extends KcpChannel {
     	}
     	
     	// Log
-    	if (Grasscutter.getConfig().DebugMode.equalsIgnoreCase("ALL")) {
+    	if (Grasscutter.getConfig().DebugMode == ServerDebugMode.ALL) {
     		logPacket(packet);
     	}
 		
@@ -230,7 +231,7 @@ public class GameSession extends KcpChannel {
 				}
 				
 				// Log packet
-				if (Grasscutter.getConfig().DebugMode.equalsIgnoreCase("ALL")) {
+				if (Grasscutter.getConfig().DebugMode == ServerDebugMode.ALL) {
 					if (!loopPacket.contains(opcode)) {
 						Grasscutter.getLogger().info("RECV: " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
 						System.out.println(Utils.bytesToHex(payload));

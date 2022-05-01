@@ -13,14 +13,15 @@ public class HandlerMcoinExchangeHcoinReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq exchangeReq = McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq.parseFrom(payload);
-        if (session == null) {
-            return;
-        } else if (session.getPlayer().getCrystals() < exchangeReq.getMCoinNum()) {
+        
+        if (session.getPlayer().getCrystals() < exchangeReq.getMCoinNum() && exchangeReq.getMCoinNum() == exchangeReq.getHCoinNum()) {
             return;
         }
+        
         session.getPlayer().setCrystals(session.getPlayer().getCrystals() - exchangeReq.getMCoinNum());
         session.getPlayer().setPrimogems(session.getPlayer().getPrimogems() + exchangeReq.getHCoinNum());
         session.getPlayer().save();
+
         session.send(new PacketMcoinExchangeHcoinRsp(session.getPlayer().getCrystals(), session.getPlayer().getPrimogems()));
     }
 }
