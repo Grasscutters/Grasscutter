@@ -3,6 +3,5 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 message McoinExchangeHcoinRsp {
-  uint32 mCoinNum = 1;
-  uint32 hCoinNum = 2;
+  int32 retcode = 1;
 }
