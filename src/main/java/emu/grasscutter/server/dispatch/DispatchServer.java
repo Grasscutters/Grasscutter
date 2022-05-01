@@ -317,6 +317,9 @@ public final class DispatchServer {
 						responseData.data.account.uid = account.getId();
 						responseData.data.account.token = account.generateSessionKey();
 						responseData.data.account.email = account.getEmail();
+						if (responseData.data.account.email == null) {
+							responseData.data.account.email = "";
+						}
 
 						Grasscutter.getLogger()
 								.info(String.format("[Dispatch] Client %s failed to log in: Account %s created",
@@ -440,7 +443,8 @@ public final class DispatchServer {
 		// hk4e-sdk-os.hoyoverse.com
 		httpServer.get("/hk4e_global/mdk/agreement/api/getAgreementInfos", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"marketing_agreements\":[]}}"));
 		// hk4e-sdk-os.hoyoverse.com
-		httpServer.get("/hk4e_global/combo/granter/api/compareProtocolVersion", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"modified\":true,\"protocol\":{\"id\":0,\"app_id\":4,\"language\":\"en\",\"user_proto\":\"\",\"priv_proto\":\"\",\"major\":7,\"minimum\":0,\"create_time\":\"0\",\"teenager_proto\":\"\",\"third_proto\":\"\"}}}"));
+		// this could be either GET or POST based on the observation of different clients
+		httpServer.all("/hk4e_global/combo/granter/api/compareProtocolVersion", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"modified\":true,\"protocol\":{\"id\":0,\"app_id\":4,\"language\":\"en\",\"user_proto\":\"\",\"priv_proto\":\"\",\"major\":7,\"minimum\":0,\"create_time\":\"0\",\"teenager_proto\":\"\",\"third_proto\":\"\"}}}"));
 
 		// Game data
 		// hk4e-api-os.hoyoverse.com
