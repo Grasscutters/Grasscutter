@@ -35,11 +35,11 @@ public final class DispatchServer {
 	private final String defaultServerName = "os_usa";
 
 	public String regionListBase64;
-	public HashMap<String, RegionData> regions;
+	public Map<String, RegionData> regions;
 	private Express httpServer;
 
 	public DispatchServer() {
-		this.regions = new HashMap<String, RegionData>();
+		this.regions = new HashMap<>();
 		this.gson = new GsonBuilder().create();
 
 		this.loadQueries();
@@ -475,9 +475,9 @@ public final class DispatchServer {
 
 		// Logging servers
 		// overseauspider.yuanshen.com
-		httpServer.all("/log", new DispatchHttpJsonHandler("{\"code\":0}"));
+		httpServer.all("/log", new ClientLogHandler());
 		// log-upload-os.mihoyo.com
-		httpServer.all("/crash/dataUpload", new DispatchHttpJsonHandler("{\"code\":0}"));
+		httpServer.all("/crash/dataUpload", new ClientLogHandler());
 
 		httpServer.get("/gacha", (req, res) -> res.send("<!doctype html><html lang=\"en\"><head><title>Gacha</title></head><body></body></html>"));
 
