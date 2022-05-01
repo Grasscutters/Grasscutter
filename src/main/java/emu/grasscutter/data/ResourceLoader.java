@@ -307,18 +307,7 @@ public class ResourceLoader {
 					}
 					
 					for (Entry<String, OpenConfigData[]> e : config.entrySet()) {
-						List<String> abilityList = new ArrayList<>();
-						int extraTalentIndex = 0;
-						
-						for (OpenConfigData entry : e.getValue()) {
-							if (entry.$type.contains("AddAbility")) {
-								abilityList.add(entry.abilityName);
-							} else if (entry.talentIndex > 0) {
-								extraTalentIndex = entry.talentIndex;
-							}
-						}
-						
-						OpenConfigEntry entry = new OpenConfigEntry(e.getKey(), abilityList, extraTalentIndex);
+						OpenConfigEntry entry = new OpenConfigEntry(e.getKey(), e.getValue());
 						map.put(entry.getName(), entry);
 					}
 				}
@@ -354,9 +343,11 @@ public class ResourceLoader {
 		public OpenConfigData[] data;
 	}
 	
-	private static class OpenConfigData {
+	public static class OpenConfigData {
 		public String $type;
 		public String abilityName;
 		public int talentIndex;
+		public int skillID;
+		public int pointDelta;
 	}
 }

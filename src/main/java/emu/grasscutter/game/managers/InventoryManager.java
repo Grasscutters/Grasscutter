@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.custom.OpenConfigEntry;
+import emu.grasscutter.data.custom.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.def.AvatarPromoteData;
 import emu.grasscutter.data.def.AvatarSkillData;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
@@ -835,9 +836,22 @@ public class InventoryManager {
 		
 		// Proud skill bonus map (Extra skills)
 		OpenConfigEntry entry = GameData.getOpenConfigEntries().get(talentData.getOpenConfig());
-		if (entry != null && entry.getExtraTalentIndex() > 0) {
-			avatar.recalcProudSkillBonusMap();
-			player.sendPacket(new PacketProudSkillExtraLevelNotify(avatar, entry.getExtraTalentIndex()));
+		if (entry != null) {
+			if (entry.getExtraTalentIndex() > 0) {
+				// Check if new constellation adds +3 to a skill level
+				avatar.recalcConstellations();
+				// Packet
+				player.sendPacket(new PacketProudSkillExtraLevelNotify(avatar, entry.getExtraTalentIndex()));
+			} else if (entry.getSkillPointModifiers() != null) {
+				// Check if new constellation adds skill charges
+				avatar.recalcConstellations();
+				// Packet
+				for (SkillPointModifier mod : entry.getSkillPointModifiers()) {
+					player.sendPacket(
+						new PacketAvatarSkillMaxChargeCountNotify(avatar, mod.getSkillId(), avatar.getSkillExtraChargeMap().getOrDefault(mod.getSkillId(), 0))
+					);
+				}
+			}
 		}
 		
 		// Recalc + save avatar

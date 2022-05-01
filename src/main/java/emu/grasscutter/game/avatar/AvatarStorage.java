@@ -148,7 +148,7 @@ public class AvatarStorage implements Iterable<Avatar> {
 			avatar.setOwner(getPlayer());
 			
 			// Force recalc of const boosted skills
-			avatar.recalcProudSkillBonusMap();
+			avatar.recalcConstellations();
 			
 			// Add to avatar storage
 			this.avatars.put(avatar.getAvatarId(), avatar);

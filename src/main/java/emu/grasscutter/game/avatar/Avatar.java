@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import org.bson.types.ObjectId;
@@ -18,6 +19,7 @@ import dev.morphia.annotations.Transient;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.custom.OpenConfigEntry;
+import emu.grasscutter.data.custom.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.AvatarPromoteData;
 import emu.grasscutter.data.def.AvatarSkillData;
@@ -46,6 +48,7 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo;
 import emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo;
+import emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo;
 import emu.grasscutter.net.proto.FetterDataOuterClass.FetterData;
 import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo;
@@ -83,6 +86,7 @@ public class Avatar {
 	private List<Integer> fetters;
 
 	private Map<Integer, Integer> skillLevelMap; // Talent levels
+	private Map<Integer, Integer> skillExtraChargeMap; // Charges
 	private Map<Integer, Integer> proudSkillBonusMap; // Talent bonus levels (from const)
 	private int skillDepotId;
 	private int coreProudSkillLevel; // Constellation level
@@ -123,6 +127,7 @@ public class Avatar {
 		this.flyCloak = 140001;
 		
 		this.skillLevelMap = new HashMap<>();
+		this.skillExtraChargeMap = new HashMap<>();
 		this.talentIdList = new HashSet<>();
 		this.proudSkillList = new HashSet<>();
 		
@@ -282,6 +287,13 @@ public class Avatar {
 
 	public Map<Integer, Integer> getSkillLevelMap() {
 		return skillLevelMap;
+	}
+	
+	public Map<Integer, Integer> getSkillExtraChargeMap() {
+		if (skillExtraChargeMap == null) {
+			skillExtraChargeMap = new HashMap<>();
+		}
+		return skillExtraChargeMap;
 	}
 
 	public Map<Integer, Integer> getProudSkillBonusMap() {
@@ -676,9 +688,10 @@ public class Avatar {
 		}
 	}
 	
-	public void recalcProudSkillBonusMap() {
+	public void recalcConstellations() {
 		// Clear first
 		this.getProudSkillBonusMap().clear();
+		this.getSkillExtraChargeMap().clear();
 		
 		// Sanity checks
 		if (getData() == null || getData().getSkillDepot() == null) {
@@ -699,6 +712,21 @@ public class Avatar {
 					continue;
 				}
 				
+				// Check if we can add charges to a skill
+				if (entry.getSkillPointModifiers() != null) {
+					for (SkillPointModifier mod : entry.getSkillPointModifiers()) {
+						AvatarSkillData skillData = GameData.getAvatarSkillDataMap().get(mod.getSkillId());
+						
+						if (skillData == null) continue;
+						
+						int charges = skillData.getMaxChargeNum() + mod.getDelta();
+						
+						this.getSkillExtraChargeMap().put(mod.getSkillId(), charges);
+					}
+					continue;
+				}
+				
+				// Check if a skill can be boosted by +3 levels
 				int skillId = 0;
 				
 				if (entry.getExtraTalentIndex() == 2 && this.getData().getSkillDepot().getSkills().size() >= 2) {
@@ -787,6 +815,10 @@ public class Avatar {
 				.setFetterInfo(avatarFetter)
 				.setWearingFlycloakId(this.getFlyCloak())
 				.setCostumeId(this.getCostume());
+		
+		for (Entry<Integer, Integer> entry : this.getSkillExtraChargeMap().entrySet()) {
+			avatarInfo.putSkillMap(entry.getKey(), AvatarSkillInfo.newBuilder().setMaxChargeCount(entry.getValue()).build());
+		}
 		
 		for (GameItem item : this.getEquips().values()) {
 			avatarInfo.addEquipGuidList(item.getGuid());
