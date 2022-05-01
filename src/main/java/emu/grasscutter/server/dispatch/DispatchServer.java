@@ -344,6 +344,9 @@ public final class DispatchServer {
 				responseData.data.account.uid = account.getId();
 				responseData.data.account.token = account.generateSessionKey();
 				responseData.data.account.email = account.getEmail();
+				if (responseData.data.account.email == null) {
+					responseData.data.account.email = "";
+				}
 
 				Grasscutter.getLogger().info(String.format("[Dispatch] Client %s logged in as %s", req.ip(),
 						responseData.data.account.uid));
