@@ -1,12 +1,8 @@
 package emu.grasscutter.server.dispatch;
 
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.Arrays;
-import java.util.Collections;
 
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
 import emu.grasscutter.Grasscutter;
 import express.http.HttpContextHandler;
 import express.http.Request;

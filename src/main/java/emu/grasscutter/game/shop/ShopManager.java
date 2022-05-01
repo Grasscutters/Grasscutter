@@ -85,8 +85,7 @@ public class ShopManager {
 				});
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Grasscutter.getLogger().error("Unable to load shop data.", e);
 		}
 	}
 
