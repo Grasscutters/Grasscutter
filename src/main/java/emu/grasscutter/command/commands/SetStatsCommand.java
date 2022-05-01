@@ -35,9 +35,9 @@ public final class SetStatsCommand implements CommandHandler {
                 try {
                     int health = Integer.parseInt(args.get(1));
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, health);
-                    entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
-                    CommandHandler.sendMessage(sender, "HP set to " + health + ".");
+                    entity.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, health);
+                    entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_MAX_HP));
+                    CommandHandler.sendMessage(sender, "MAX HP set to " + health + ".");
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, "Invalid HP value.");
                     return;
