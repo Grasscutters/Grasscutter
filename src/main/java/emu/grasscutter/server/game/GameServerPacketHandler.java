@@ -6,6 +6,7 @@ import emu.grasscutter.server.event.game.ReceivePacketEvent;
 import org.reflections.Reflections;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -88,7 +89,7 @@ public class GameServerPacketHandler {
 		}
 		
 		// Log unhandled packets
-		if (Grasscutter.getConfig().DebugMode.equalsIgnoreCase("MISSING")) {
+		if (Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING) {
 			Grasscutter.getLogger().info("Unhandled packet (" + opcode + "): " + emu.grasscutter.net.packet.PacketOpcodesUtil.getOpcodeName(opcode));
 		}
 	}
