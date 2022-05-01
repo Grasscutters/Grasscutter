@@ -12,6 +12,7 @@ import dev.morphia.Morphia;
 import dev.morphia.mapping.MapperOptions;
 import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.friends.Friendship;
@@ -41,7 +42,7 @@ public final class DatabaseManager {
 	// Yes. I very dislike this method. However, this will be good for now.
 	// TODO: Add dispatch routes for player account management
 	public static Datastore getAccountDatastore() {
-		if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("GAME_ONLY")) {
+		if(Grasscutter.getConfig().RunMode == ServerRunMode.GAME_ONLY) {
 			return dispatchDatastore;
 		} else {
 			return datastore;
@@ -77,7 +78,7 @@ public final class DatabaseManager {
 			}
 		}
 
-		if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("GAME_ONLY")) {
+		if(Grasscutter.getConfig().RunMode == ServerRunMode.GAME_ONLY) {
 			dispatchMongoClient = MongoClients.create(Grasscutter.getConfig().getGameServerOptions().DispatchServerDatabaseUrl);
 			dispatchDatastore = Morphia.createDatastore(dispatchMongoClient, Grasscutter.getConfig().getGameServerOptions().DispatchServerDatabaseCollection);
 
