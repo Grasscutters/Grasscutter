@@ -472,7 +472,7 @@ public final class DispatchServer {
 		// log-upload-os.mihoyo.com
 		httpServer.all("/log/sdk/upload", new DispatchHttpJsonHandler("{\"code\":0}"));
 		httpServer.all("/sdk/upload", new DispatchHttpJsonHandler("{\"code\":0}"));
-		httpServer.post("/sdk/dataUpload", (req, res) -> res.send("Hello"));
+		httpServer.post("/sdk/dataUpload", new DispatchHttpJsonHandler("{\"code\":0}"));
 		// /perf/config/verify?device_id=xxx&platform=x&name=xxx
 		httpServer.all("/perf/config/verify", new DispatchHttpJsonHandler("{\"code\":0}"));
 
