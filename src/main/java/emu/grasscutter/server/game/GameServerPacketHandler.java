@@ -22,7 +22,11 @@ public class GameServerPacketHandler {
 		
 		this.registerHandlers(handlerClass);
 	}
-	
+
+	public void registerPacketHandler(int opcode, PacketHandler handler) {
+		this.handlers.put(opcode, handler);
+	}
+
 	public void registerHandlers(Class<? extends PacketHandler> handlerClass) {
 		Reflections reflections = new Reflections("emu.grasscutter.server.packet");
 		Set<?> handlerClasses = reflections.getSubTypesOf(handlerClass);
