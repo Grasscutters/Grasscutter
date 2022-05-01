@@ -23,8 +23,20 @@ public class GameServerPacketHandler {
 		this.registerHandlers(handlerClass);
 	}
 
-	public void registerPacketHandler(int opcode, PacketHandler handler) {
-		this.handlers.put(opcode, handler);
+	public void registerPacketHandler(Class<? extends PacketHandler> handlerClass) {
+		try {
+			Opcodes opcode = handlerClass.getAnnotation(Opcodes.class);
+
+			if (opcode == null || opcode.disabled() || opcode.value() <= 0) {
+				return;
+			}
+
+			PacketHandler packetHandler = (PacketHandler) handlerClass.newInstance();
+
+			this.handlers.put(opcode.value(), packetHandler);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void registerHandlers(Class<? extends PacketHandler> handlerClass) {
@@ -32,21 +44,7 @@ public class GameServerPacketHandler {
 		Set<?> handlerClasses = reflections.getSubTypesOf(handlerClass);
 		
 		for (Object obj : handlerClasses) {
-			Class<?> c = (Class<?>) obj;
-			
-			try {
-				Opcodes opcode = c.getAnnotation(Opcodes.class);
-				
-				if (opcode == null || opcode.disabled() || opcode.value() <= 0) {
-					continue;
-				}
-				
-				PacketHandler packetHandler = (PacketHandler) c.newInstance();
-				
-				this.handlers.put(opcode.value(), packetHandler);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			this.registerPacketHandler((Class<? extends PacketHandler>) obj);
 		}
 		
 		// Debug
