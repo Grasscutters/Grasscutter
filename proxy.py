@@ -57,7 +57,9 @@ class MlgmXyysd_Genshin_Impact_Proxy:
         "minor-api.mihoyo.com",
         "public-data-api.mihoyo.com",
         "uspider.yuanshen.com",
-        "sdk-static.mihoyo.com"
+        "sdk-static.mihoyo.com",
+        "abtest-api-data-sg.hoyoverse.com",
+        "log-upload-os.hoyoverse.com"
     ]
 
     def request(self, flow: http.HTTPFlow) -> None:

@@ -1,0 +1,14 @@
+[
+  {
+    "monsterId": 21010101,
+    "dropDataList": [
+      {
+        "itemId": 112005,
+        "minCount": 1,
+        "maxCount": 3,
+        "minWeight": 0,
+        "maxWeight": 10000
+      }
+    ]
+  }
+]

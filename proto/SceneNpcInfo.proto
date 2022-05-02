@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message SceneNpcInfo {
+	uint32 npc_id = 1;
+	uint32 room_id = 2;
+	uint32 parent_quest_id = 3;
+	uint32 block_id = 4;
+}

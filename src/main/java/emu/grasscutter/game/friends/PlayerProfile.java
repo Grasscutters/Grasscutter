@@ -1,11 +1,12 @@
 package emu.grasscutter.game.friends;
 
 import dev.morphia.annotations.*;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.Utils;
 
+@Entity
 public class PlayerProfile {
-	@Transient private GenshinPlayer player;
+	@Transient private Player player;
 	
 	@AlsoLoad("id") private int uid;
 	private int nameCard;
@@ -21,7 +22,7 @@ public class PlayerProfile {
 	@Deprecated // Morphia only
 	public PlayerProfile() { }
 	
-	public PlayerProfile(GenshinPlayer player) {
+	public PlayerProfile(Player player) {
 		this.uid = player.getUid();
 		this.syncWithCharacter(player);
 	}
@@ -30,11 +31,11 @@ public class PlayerProfile {
 		return uid;
 	}
 
-	public GenshinPlayer getPlayer() {
+	public Player getPlayer() {
 		return player;
 	}
 	
-	public synchronized void setPlayer(GenshinPlayer player) {
+	public synchronized void setPlayer(Player player) {
 		this.player = player;
 	}
 	
@@ -82,7 +83,7 @@ public class PlayerProfile {
 		return this.getPlayer() != null;
 	}
 
-	public void syncWithCharacter(GenshinPlayer player) {
+	public void syncWithCharacter(Player player) {
 		if (player == null) {
 			return;
 		}

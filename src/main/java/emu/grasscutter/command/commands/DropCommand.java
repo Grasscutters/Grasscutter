@@ -2,10 +2,10 @@ package emu.grasscutter.command.commands;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.entity.EntityItem;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.Position;
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
 public final class DropCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, List<String> args) {
         if (sender == null) {
             CommandHandler.sendMessage(null, "Run this command in-game.");
             return;
@@ -31,7 +31,7 @@ public final class DropCommand implements CommandHandler {
             int amount = 1;
             if (args.size() > 1) amount = Integer.parseInt(args.get(1));
 
-            ItemData itemData = GenshinData.getItemDataMap().get(item);
+            ItemData itemData = GameData.getItemDataMap().get(item);
             if (itemData == null) {
                 CommandHandler.sendMessage(sender, "Invalid item id.");
                 return;
@@ -41,11 +41,11 @@ public final class DropCommand implements CommandHandler {
                 float range = (5f + (.1f * amount));
                 for (int i = 0; i < amount; i++) {
                     Position pos = sender.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-                    EntityItem entity = new EntityItem(sender.getScene(), sender, itemData, pos, 1);
+                    EntityItem entity = new EntityItem(sender.getScene(), sender.getNextGameGuid(),itemData, 1, pos);
                     sender.getScene().addEntity(entity);
                 }
             } else {
-                EntityItem entity = new EntityItem(sender.getScene(), sender, itemData, sender.getPos().clone().addY(3f), amount);
+                EntityItem entity = new EntityItem(sender.getScene(), sender.getNextGameGuid(), itemData, amount, sender.getPos().clone().addY(3f));
                 sender.getScene().addEntity(entity);
             }
             CommandHandler.sendMessage(sender, String.format("Dropped %s of %s.", amount, item));

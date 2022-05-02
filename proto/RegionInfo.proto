@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ResVersionConfig.proto";
+
+message RegionInfo {
+	string gateserver_ip = 1;
+	uint32 gateserver_port = 2;
+	string pay_callback_url = 3;
+	string area_type = 7;
+	string resource_url = 8;
+	string data_url = 9;
+	string feedback_url = 10;
+	string bulletin_url = 11;
+	string resource_url_bak = 12;
+	string data_url_bak = 13;
+	uint32 client_data_version = 14;
+	string handbook_url = 16;
+	uint32 client_silence_data_version = 18;
+	string client_data_md5 = 19;
+	string client_silence_data_md5 = 20;
+	ResVersionConfig res_version_config = 22;
+	bytes secret_key = 23;
+	string official_community_url = 24;
+	string client_version_suffix = 26;
+	string client_silence_version_suffix = 27;
+	bool use_gateserver_domain_name = 28;
+	string gateserver_domain_name = 29;
+	string user_center_url = 30;
+	string account_bind_url = 31;
+	string cdkey_url = 32;
+	string privacy_policy_url = 33;
+	string next_resource_url = 34;
+	ResVersionConfig next_res_version_config = 35;
+}

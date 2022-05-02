@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Item.proto";
+import "GatherGadgetInfo.proto";
+import "WorktopInfo.proto";
+import "ClientGadgetInfo.proto";
+import "WeatherInfo.proto";
+import "AbilityGadgetInfo.proto";
+import "StatueGadgetInfo.proto";
+import "BossChestInfo.proto";
+import "BlossomChestInfo.proto";
+import "MpPlayRewardInfo.proto";
+import "GadgetGeneralRewardInfo.proto";
+import "OfferingInfo.proto";
+import "FoundationInfo.proto";
+import "VehicleInfo.proto";
+import "EchoShellInfo.proto";
+import "ScreenInfo.proto";
+import "FishPoolInfo.proto";
+import "CustomGadgetTreeInfo.proto";
+import "RoguelikeGadgetInfo.proto";
+import "GadgetBornType.proto";
+import "PlatformInfo.proto";
+import "GadgetPlayInfo.proto";
+
+message SceneGadgetInfo {
+	oneof Content {
+		Item trifle_item = 12;
+		GatherGadgetInfo gather_gadget = 13;
+		WorktopInfo worktop = 14;
+		ClientGadgetInfo client_gadget = 15;
+		WeatherInfo weather = 17;
+		AbilityGadgetInfo ability_gadget = 18;
+		StatueGadgetInfo statue_gadget = 19;
+		BossChestInfo boss_chest = 20;
+		BlossomChestInfo blossom_chest = 41;
+		MpPlayRewardInfo mp_play_reward = 42;
+		GadgetGeneralRewardInfo general_reward = 43;
+		OfferingInfo offering_info = 44;
+		FoundationInfo foundation_info = 45;
+		VehicleInfo vehicle_info = 46;
+		EchoShellInfo shell_info = 47;
+		ScreenInfo screen_info = 48;
+		FishPoolInfo fish_pool_info = 59;
+		CustomGadgetTreeInfo custom_gadget_tree_info = 60;
+		RoguelikeGadgetInfo roguelike_gadget_info = 61;
+	}
+	uint32 gadget_id = 1;
+	uint32 group_id = 2;
+	uint32 config_id = 3;
+	uint32 owner_entity_id = 4;
+	GadgetBornType born_type = 5;
+	uint32 gadget_state = 6;
+	uint32 gadget_type = 7;
+	bool is_show_cutscene = 8;
+	uint32 authority_peer_id = 9;
+	bool is_enable_interact = 10;
+	uint32 interact_id = 11;
+	uint32 mark_flag = 21;
+	uint32 prop_owner_entity_id = 22;
+	PlatformInfo platform = 23;
+	repeated uint32 interact_uid_list = 24;
+	uint32 draft_id = 25;
+	uint32 gadget_talk_state = 26;
+	GadgetPlayInfo play_info = 100;
+}

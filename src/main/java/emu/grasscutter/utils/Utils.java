@@ -10,6 +10,7 @@ import emu.grasscutter.Grasscutter;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
+
 import org.slf4j.Logger;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
@@ -23,7 +24,8 @@ public final class Utils {
 	public static float randomFloatRange(float min, float max) {
 		return random.nextFloat() * (max - min) + min;
 	}
-	
+
+
 	public static int getCurrentSeconds() {
 		return (int) (System.currentTimeMillis() / 1000.0);
 	}
@@ -138,6 +140,15 @@ public final class Utils {
 	}
 
 	/**
+	 * Logs an object to the console.
+	 * @param object The object to log.
+	 */
+	public static void logObject(Object object) {
+		String asJson = Grasscutter.getGsonFactory().toJson(object);
+		Grasscutter.getLogger().info(asJson);
+	}
+	
+	/**
 	 * Checks for required files and folders before startup.
 	 */
 	public static void startupCheck() {
@@ -151,14 +162,14 @@ public final class Utils {
 		// Check for resources folder.
 		if(!fileExists(resourcesFolder)) {
 			logger.info("Creating resources folder...");
-			logger.info("Place a copy of 'GenshinData' in the resources folder.");
+			logger.info("Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.");
 			createFolder(resourcesFolder); exit = true;
 		}
 
-		// Check for GenshinData.
+		// Check for BinOutput + ExcelBinOuput.
 		if(!fileExists(resourcesFolder + "BinOutput") ||
 				!fileExists(resourcesFolder + "ExcelBinOutput")) {
-			logger.info("Place a copy of 'GenshinData' in the resources folder.");
+			logger.info("Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.");
 			exit = true;
 		}
 

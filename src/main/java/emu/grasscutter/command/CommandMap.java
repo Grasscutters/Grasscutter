@@ -2,7 +2,8 @@ package emu.grasscutter.command;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
+
 import org.reflections.Reflections;
 
 import java.util.*;
@@ -103,10 +104,11 @@ public final class CommandMap {
      * @param player     The player invoking the command or null for the server console.
      * @param rawMessage The messaged used to invoke the command.
      */
-    public void invoke(GenshinPlayer player, String rawMessage) {
+    public void invoke(Player player, String rawMessage) {
         rawMessage = rawMessage.trim();
-        if(rawMessage.length() == 0) {
-            CommandHandler.sendMessage(player, "No command specified."); return;
+        if (rawMessage.length() == 0) {
+            CommandHandler.sendMessage(player, "No command specified.");
+            return;
         }
 
         // Remove prefix if present.
@@ -117,7 +119,6 @@ public final class CommandMap {
         String[] split = rawMessage.split(" ");
         List<String> args = new LinkedList<>(Arrays.asList(split));
         String label = args.remove(0);
-
         // Get command handler.
         CommandHandler handler = this.commands.get(label);
         if (handler == null) {
@@ -129,14 +130,22 @@ public final class CommandMap {
         if (player != null) {
             String permissionNode = this.annotations.get(label).permission();
             Account account = player.getAccount();
-            if(!permissionNode.isEmpty() && !account.hasPermission(permissionNode)) {
+            if (!permissionNode.isEmpty() && !account.hasPermission(permissionNode)) {
                 CommandHandler.sendMessage(player, "You do not have permission to run this command.");
                 return;
             }
         }
 
         // Invoke execute method for handler.
-        handler.execute(player, args);
+        boolean threading  = this.annotations.get(label).threading();
+        Runnable runnable = () -> handler.execute(player, args);
+        if(threading) {
+            Thread command = new Thread(runnable);
+            command.start();
+        }
+        else {
+            runnable.run();
+        }
     }
 
     /**

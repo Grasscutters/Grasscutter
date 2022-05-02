@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MailData.proto";
+
+message MailChangeNotify {
+  repeated MailData mail_list = 1;
+  repeated uint32 del_mail_id_list = 2;
+}

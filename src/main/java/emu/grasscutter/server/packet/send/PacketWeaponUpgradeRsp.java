@@ -2,15 +2,15 @@ package emu.grasscutter.server.packet.send;
 
 import java.util.List;
 
-import emu.grasscutter.game.inventory.GenshinItem;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.WeaponUpgradeRspOuterClass.WeaponUpgradeRsp;
 
-public class PacketWeaponUpgradeRsp extends GenshinPacket {
+public class PacketWeaponUpgradeRsp extends BasePacket {
 	
-	public PacketWeaponUpgradeRsp(GenshinItem item, int oldLevel, List<ItemParam> leftoverOres) {
+	public PacketWeaponUpgradeRsp(GameItem item, int oldLevel, List<ItemParam> leftoverOres) {
 		super(PacketOpcodes.WeaponUpgradeRsp);
 		
 		WeaponUpgradeRsp proto = WeaponUpgradeRsp.newBuilder()

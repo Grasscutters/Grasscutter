@@ -2,8 +2,10 @@ package emu.grasscutter.utils;
 
 import java.io.Serializable;
 
+import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 
+@Entity
 public class Position implements Serializable {
 	private static final long serialVersionUID = -2001232313615923575L;
 	
@@ -12,11 +14,11 @@ public class Position implements Serializable {
 	private float z;
 	
 	public Position() {
-
+		set(0, 0 , 0);
 	}
 	
 	public Position(float x, float y) {
-		set(x, y);
+		set(x, y, 0);
 	}
 	
 	public Position(float x, float y, float z) {
@@ -116,7 +118,53 @@ public class Position implements Serializable {
 		this.z -= sub.getZ();
 		return this;
 	}
-	
+
+	public Position abs() {
+		this.x = Math.abs(this.x);
+		this.y = Math.abs(this.y);
+		this.z = Math.abs(this.z);
+		return this;
+	}
+
+	public Position neg() {
+		this.x = 0 - this.x;
+		this.y = 0 - this.y;
+		this.z = 0 - this.z;
+		return this;
+	}
+
+	public Position max(Position another) {
+		this.x = Math.max(this.x, another.x);
+		this.y = Math.max(this.y, another.y);
+		this.z = Math.max(this.z, another.z);
+		return this;
+	}
+
+	public Position min(Position another) {
+		this.x = Math.min(this.x, another.x);
+		this.y = Math.min(this.y, another.y);
+		this.z = Math.min(this.z, another.z);
+		return this;
+	}
+
+	public Position clamp(Position upper, Position lower) {
+		return this.clone().max(lower).clone().min(upper);
+	}
+
+	public static boolean intersectWithCircle(Position rectangleA, Position rectangleB, Position circleCenter, float r) {
+		Position ext = new Position(
+			((rectangleA.x - rectangleB.x)/2),
+			((rectangleA.y - rectangleB.y)/2),
+			((rectangleA.z - rectangleB.z)/2)
+		);
+		Position rectangleCenter = rectangleA.clone().subtract(ext);
+		Position d = circleCenter.clone().subtract(rectangleCenter);
+		Position clamped = d.clamp(ext, ext.clone().neg());
+		Position p = rectangleCenter.clone().add(clamped);
+		d = p.clone().subtract(circleCenter);
+		return d.square() <= r*r;
+	}
+
 	/** In radians
 	 * */
 	public Position translate(float dist, float angle) {
@@ -134,6 +182,14 @@ public class Position implements Serializable {
 		this.x += dist * Math.sin(angle);
 		this.y += -dist * Math.cos(angle);
 		return this;
+	}
+
+	public Float square() {
+		return this.x * this.x + this.y * this.y + this.z * this.z;
+	}
+
+	public Double distance(Position pos2) {
+		return Math.sqrt(this.clone().subtract(pos2).square());
 	}
 	
 	@Override

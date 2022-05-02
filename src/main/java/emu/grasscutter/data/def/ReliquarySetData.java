@@ -1,10 +1,10 @@
 package emu.grasscutter.data.def;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "ReliquarySetExcelConfigData.json")
-public class ReliquarySetData extends GenshinResource {
+public class ReliquarySetData extends GameResource {
 	private int SetId;
     private int[] SetNeedNum;
     private int EquipAffixId;

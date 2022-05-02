@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AbilitySyncStateInfo.proto";
+
+message PlayTeamEntityInfo {
+	uint32 entity_id = 1;
+	uint32 player_uid = 2;
+	uint32 authority_peer_id = 3;
+	uint32 gadget_config_id = 5;
+	AbilitySyncStateInfo ability_info = 6;
+}
