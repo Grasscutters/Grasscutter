@@ -1,5 +1,7 @@
 <html>
     <head>
+         <!--Not sure the page is provided in UTF-8 acutally, just put meta here-->
+        <meta charset="utf-8" />
         <script>
             // Debug entry
             // record = [
@@ -35,7 +37,13 @@
                     302: "Event Weapon",
                 }
             };
-            mappings['default'] = mappings['en-us'];
+        </script>
+        <!-- This file could be generated automatically using `java -jar grasscutter.jar -gachamap` -->
+        <!-- You can also modify the file manually to customize it -->
+        <!-- Otherwise you may onle see number IDs in the gacha record -->
+        <script type="text/javascript" src="/gcstatic/mappings.js"></script>
+        <script>
+            mappings['default'] = mappings['en-us']; // make en-us as default/fallback option
         </script>
         <!-- TODO: Refine the CSS -->
         <style>
@@ -43,7 +51,7 @@
                 text-decoration: none !important;
             }
             .content {
-                width: 400px;
+                width: 600px;
                 margin: auto;
                 display: flex;
                 flex-direction: column;
@@ -119,7 +127,7 @@
                         " "+String(date.getHours()).padStart(2, "0")+
                         ":"+String(date.getMinutes()).padStart(2, "0")+
                         ":"+String(date.getSeconds()).padStart(2, "0")+
-                        "."+date.getMilliseconds();
+                        "."+String(date.getMilliseconds()).padStart(3, "0");
                 } else if (lang == "zh-cn") { // YYYY/MM/DD hh:mm:ss.SSS
                     return date.getFullYear()+ 
                         "/" + String(date.getMonth()+1).padStart(2, "0") + 
@@ -127,7 +135,7 @@
                         " "+String(date.getHours()).padStart(2, "0")+
                         ":"+String(date.getMinutes()).padStart(2, "0")+
                         ":"+String(date.getSeconds()).padStart(2, "0")+
-                        "."+date.getMilliseconds();
+                        "."+String(date.getMilliseconds()).padStart(3, "0");
                 }
             }
             (function (){
