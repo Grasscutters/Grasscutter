@@ -7,11 +7,13 @@ import java.util.stream.Collectors;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
+import emu.grasscutter.data.common.RewardBoxItemData;
 import emu.grasscutter.data.custom.OpenConfigEntry;
 import emu.grasscutter.data.custom.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.def.AvatarPromoteData;
 import emu.grasscutter.data.def.AvatarSkillData;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
+import emu.grasscutter.data.def.RewardBoxData;
 import emu.grasscutter.data.def.WeaponPromoteData;
 import emu.grasscutter.data.def.AvatarSkillDepotData.InherentProudSkillOpens;
 import emu.grasscutter.data.def.AvatarTalentData;
@@ -21,6 +23,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
 import emu.grasscutter.server.game.GameServer;
@@ -897,6 +900,26 @@ public class InventoryManager {
 		player.sendPacket(new PacketDestroyMaterialRsp(returnMaterialMap));
 	}
 
+	private boolean handleRewardBox(Player player, GameItem useItem) {
+		List<RewardBoxData> rewardBoxDataList = GameData.getRewardBoxDataMap().values().stream().filter(x -> x.getId() == useItem.getRewardBoxId()).collect(Collectors.toList());
+		if (rewardBoxDataList.isEmpty()) {
+			return false;
+		}
+		List<GameItem> rewardItemList = new ArrayList<>();
+		for (RewardBoxItemData itemData : rewardBoxDataList.get(0).getRewardBoxItemList()) {
+			if (itemData.getItemId() == 0) {
+				continue;
+			}
+			String[] split = itemData.getItemCount().split(";");
+			int itemCount = Integer.parseInt(split[(int) (Math.random()* split.length)]);
+			rewardItemList.add(new GameItem(itemData.getItemId(), itemCount));
+		}
+		if (!rewardItemList.isEmpty()) {
+			player.getInventory().addItems(rewardItemList, ActionReason.Shop);
+		}
+		return true;
+	}
+
 	public GameItem useItem(Player player, long targetGuid, long itemGuid, int count) {
 		Avatar target = player.getAvatars().getAvatarByGuid(targetGuid);
 		GameItem useItem = player.getInventory().getItemByGuid(itemGuid);
@@ -916,6 +939,11 @@ public class InventoryManager {
 					}
 					
 					used = player.getTeamManager().reviveAvatar(target) ? 1 : 0;
+				}
+				break;
+			case MATERIAL_CHEST:
+				if (useItem.getRewardBoxId() > 0) {
+					used = handleRewardBox(player, useItem) ? 1 : 0;
 				}
 				break;
 			default:

@@ -30,6 +30,7 @@ public class ShopGoodsData extends GameResource {
     private transient ShopInfo.ShopRefreshType RefreshTypeEnum;
     
     private int RefreshParam;
+    private int ShowId;
 
     @Override
     public void onLoad() {
@@ -104,5 +105,9 @@ public class ShopGoodsData extends GameResource {
 
     public int getRefreshParam() {
         return RefreshParam;
+    }
+
+    public int getShowId() {
+        return ShowId;
     }
 }
