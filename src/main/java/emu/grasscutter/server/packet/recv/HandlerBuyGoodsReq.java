@@ -54,7 +54,7 @@ public class HandlerBuyGoodsReq extends PacketHandler {
                 session.getPlayer().save();
             }
 
-            if (bought + buyGoodsReq.getBoughtNum() > sg.getBuyLimit()) {
+            if ((bought + buyGoodsReq.getBoughtNum() > sg.getBuyLimit()) && sg.getBuyLimit() != 0) {
                 return;
             }
 

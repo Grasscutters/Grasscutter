@@ -74,7 +74,11 @@ public class Account {
 	}
 	
 	public String getEmail() {
-		return email;
+		if(email != null && !email.isEmpty()) {
+			return email;
+		} else {
+			return "";
+		}
 	}
 
 	public void setEmail(String email) {

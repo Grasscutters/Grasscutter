@@ -28,9 +28,21 @@ public final class SetStatsCommand implements CommandHandler {
         String stat = args.get(0);
         switch (stat) {
             default:
-                CommandHandler.sendMessage(sender, "Usage: /setstats|stats <hp | def | atk | em | er | crate | cdmg> <value> for basic stats");
+                CommandHandler.sendMessage(sender, "Usage: /setstats|stats <hp | mhp | def | atk | em | er | crate | cdmg> <value> for basic stats");
                 CommandHandler.sendMessage(sender, "Usage: /stats <epyro | ecryo | ehydro | egeo | edend | eelec | ephys> <amount> for elemental bonus");
                 return;
+            case "mhp":
+                try {
+                    int health = Integer.parseInt(args.get(1));
+                    EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
+                    entity.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, health);
+                    entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_MAX_HP));
+                    CommandHandler.sendMessage(sender, "MAX HP set to " + health + ".");
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, "Invalid Max HP value.");
+                    return;
+                }
+                break;
             case "hp":
                 try {
                     int health = Integer.parseInt(args.get(1));
