@@ -66,9 +66,9 @@ public final class Config {
 		public String DispatchServerDatabaseUrl = "mongodb://localhost:27017";
 		public String DispatchServerDatabaseCollection = "grasscutter";
 
-		public int CMD_Spawn = 100;
+		public int CMD_Spawn = 200;
 		public int CMD_Give = 50000;
-		public int CMD_Drop = 50;
+		public int CMD_Drop = 100;
 		public boolean DropMo = false;
 		public boolean DungeonMT = true;
 

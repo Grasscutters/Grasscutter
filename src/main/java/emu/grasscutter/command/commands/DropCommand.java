@@ -32,7 +32,7 @@ public final class DropCommand implements CommandHandler {
             int amount = 1;
             if (args.size() > 1) amount = Integer.parseInt(args.get(1));
 
-            if (amount >= Grasscutter.getConfig().getGameServerOptions().CMD_Drop) {
+            if (amount > Grasscutter.getConfig().getGameServerOptions().CMD_Drop) {
                 CommandHandler.sendMessage(sender, "Overmuch :(");
                 return;
             }

@@ -33,7 +33,7 @@ public final class SpawnCommand implements CommandHandler {
             int level = args.size() > 1 ? Integer.parseInt(args.get(1)) : 1;
             int amount = args.size() > 2 ? Integer.parseInt(args.get(2)) : 1;
 
-            if (amount >= Grasscutter.getConfig().getGameServerOptions().CMD_Spawn) {
+            if (amount > Grasscutter.getConfig().getGameServerOptions().CMD_Spawn) {
                 CommandHandler.sendMessage(sender, "Overmuch :(");
                 return;
             }
