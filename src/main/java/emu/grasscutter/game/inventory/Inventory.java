@@ -15,7 +15,6 @@ import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;

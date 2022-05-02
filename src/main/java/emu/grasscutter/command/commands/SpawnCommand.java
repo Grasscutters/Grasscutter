@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -32,16 +33,16 @@ public final class SpawnCommand implements CommandHandler {
             int level = args.size() > 1 ? Integer.parseInt(args.get(1)) : 1;
             int amount = args.size() > 2 ? Integer.parseInt(args.get(2)) : 1;
 
+            if (amount >= Grasscutter.getConfig().getGameServerOptions().CMD_Spawn) {
+                CommandHandler.sendMessage(sender, "Overmuch :(");
+                return;
+            }
+
             MonsterData entityData = GameData.getMonsterDataMap().get(entity);
             if (entityData == null) {
                 CommandHandler.sendMessage(sender, "Invalid entity id.");
                 return;
-            }
-
-            if (amount >= 500) {
-                CommandHandler.sendMessage(sender, "Overmuch :(");
-                return;
-            }
+            }            
 
             float range = (5f + (.1f * amount));
             for (int i = 0; i < amount; i++) {

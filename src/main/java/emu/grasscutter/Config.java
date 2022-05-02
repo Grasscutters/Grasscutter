@@ -66,6 +66,12 @@ public final class Config {
 		public String DispatchServerDatabaseUrl = "mongodb://localhost:27017";
 		public String DispatchServerDatabaseCollection = "grasscutter";
 
+		public int CMD_Spawn = 100;
+		public int CMD_Give = 50000;
+		public int CMD_Drop = 50;
+		public boolean DropMo = false;
+		public boolean DungeonMT = true;
+
 		public int InventoryLimitWeapon = 2000;
 		public int InventoryLimitRelic = 2000;
 		public int InventoryLimitMaterial = 2000;
@@ -96,9 +102,9 @@ public final class Config {
 		public GameRates getGameRates() { return Game; }
 
 		public static class GameRates {
-			public float ADVENTURE_EXP_RATE = 1.0f;
-			public float MORA_RATE = 1.0f;
-			public float DOMAIN_DROP_RATE = 1.0f;
+			public float ADVENTURE_EXP_RATE = 0.1f;
+			public float MORA_RATE = 0.1f;
+			public float DOMAIN_DROP_RATE = 0.1f;
 		}
 	}
 }

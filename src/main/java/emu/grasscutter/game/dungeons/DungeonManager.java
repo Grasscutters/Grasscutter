@@ -2,6 +2,7 @@ package emu.grasscutter.game.dungeons;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.custom.ScenePointEntry;
 import emu.grasscutter.data.def.DungeonData;
@@ -38,6 +39,12 @@ public class DungeonManager {
 	}
 
 	public void enterDungeon(Player player, int pointId, int dungeonId) {
+		
+		if (Grasscutter.getConfig().getGameServerOptions().DungeonMT) {
+			CommandHandler.sendMessage(player, "Sorry, this function is not stable so it can't be used");
+			return;
+		}
+
 		DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
 		
 		if (data == null) {

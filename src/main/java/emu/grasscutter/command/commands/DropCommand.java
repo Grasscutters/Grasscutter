@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -30,6 +31,11 @@ public final class DropCommand implements CommandHandler {
             int item = Integer.parseInt(args.get(0));
             int amount = 1;
             if (args.size() > 1) amount = Integer.parseInt(args.get(1));
+
+            if (amount >= Grasscutter.getConfig().getGameServerOptions().CMD_Drop) {
+                CommandHandler.sendMessage(sender, "Overmuch :(");
+                return;
+            }
 
             ItemData itemData = GameData.getItemDataMap().get(item);
             if (itemData == null) {
