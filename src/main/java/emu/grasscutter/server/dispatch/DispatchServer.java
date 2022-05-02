@@ -309,7 +309,7 @@ public final class DispatchServer {
 			}
 			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s is trying to log in", req.ip()));
 
-			res.send(authHandler.handleGameLogin(req, requestData));
+			res.send(this.getAuthHandler().handleGameLogin(req, requestData));
 		});
 
 		// Login via token
@@ -491,8 +491,6 @@ public final class DispatchServer {
 		if(authHandler == null) {
 			return new DefaultAuthenticationHandler();
 		}
-		Grasscutter.getLogger().info(authHandler.getClass().getName());
-
 		return authHandler;
 	}
 
