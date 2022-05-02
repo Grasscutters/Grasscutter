@@ -3,7 +3,6 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.PlayerProperty;
 
 import java.util.List;
 
@@ -26,6 +25,10 @@ public final class SetWorldLevelCommand implements CommandHandler {
 
         try {
             int level = Integer.parseInt(args.get(0));
+            if (level > 8 || level < 0) {
+                sender.dropMessage("World level must be between 0-8");
+                return;
+            }
 
             // Set in both world and player props
             sender.getWorld().setWorldLevel(level);
