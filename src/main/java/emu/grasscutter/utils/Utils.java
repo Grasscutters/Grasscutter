@@ -26,6 +26,16 @@ public final class Utils {
 	public static float randomFloatRange(float min, float max) {
 		return random.nextFloat() * (max - min) + min;
 	}
+
+	public static void pause(int time){
+		long Time0 = System.currentTimeMillis();
+		long Time1;
+		long runTime = 0;
+		while (runTime < time) { // 1000 milliseconds or 1 second
+			Time1 = System.currentTimeMillis();
+			runTime = Time1 - Time0;
+		}
+	}
 	
 	public static double getDist(Position pos1, Position pos2) {
 		double xs = pos1.getX() - pos2.getX();
