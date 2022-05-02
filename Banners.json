@@ -1,0 +1,644 @@
+[
+	//   -  初行者推荐祈愿
+	{
+		"gachaType": 200,							// <---- 添加卡池请从400开始添加
+		"scheduleId": 803,							// <---- 这个id需要每个池子不一样
+		"bannerType": "STANDARD",					// <----  这个有3种类型，standard表示常驻池，event表示限时活动祈愿池，weapon表示限时祈愿武器池
+		"prefabPath": "GachaShowPanel_A016",		// <---- prefabPath... 
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A016",		// <---- 这个是抽卡的预览背景id
+		"titlePath": "UI_GACHA_SHOW_PANEL_A016_TITLE",		// <---- 这个是抽卡的标题id，有可能与之前两项的id不同（一般这3项的id只需保持一致即可）
+		"costItem": 224,							// <---- 这个表示祈愿用的道具，224是相遇之缘，223是纠缠之缘 - 选择一个作为该卡池的抽卡道具(提示：请不要随便修改祈愿道具除了蓝球和粉球，有可能会引发bug，比如修改成摩拉抽卡可能导致卡住)
+		"beginTime": 0,								// <---- 祈愿什么时候开始（默认设置为0）
+		"endTime": 1924992000,						// <---- 这个卡池持续多长时间（默认为这个极大的数字）
+		"sortId": 1000,								// <---- 暂时未搞清楚功能，可能与卡池在屏幕的左右顺序有关
+		"rateUpItems1": [],							// <----通常为5星的up角色或物品（可修改，查看gm手册可修改为任意角色或者物品）
+		"rateUpItems2": [1034]						// <----  通常为4星的up物品或者角色(可修改，查看gm手册可修改为任意角色或者物品)
+	},
+	//      常驻祈愿池
+	{
+		"gachaType": 201,
+		"scheduleId": 813,
+		"bannerType": "STANDARD",
+		"prefabPath": "GachaShowPanel_A017",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A017",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A017_TITLE",
+		"costItem": 224,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 1000,
+		"eventChance": 0,
+		"softPity": 1,
+		"hardPity": 1,
+		"rateUpItems1": [1003,1016,1022,1029,1033,1030,1038,1037,1026,1042,1046,1051,1047,1002,1049,1052,1054,1057,1063,1058,1066,15503,11502,15501,12510,13501,12502,15502,13504,13507,13505,13509,14506,11509,13502,11510,15503],
+		"rateUpItems2": [1021, 1006, 1015]
+	},
+	// 1.0 温蒂up - 温蒂，芭芭拉，菲谢尔，香菱
+	{
+		"gachaType": 300,
+		"scheduleId": 823,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A019",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A019",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A019_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1022],
+		"rateUpItems2": [1023, 1031, 1014]
+	},
+	// 1.0 可莉up - 可莉，行秋 诺艾尔 砂糖
+	{
+		"gachaType": 400,
+		"scheduleId": 833,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A018",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A018",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A018_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1029],
+		"rateUpItems2": [1025, 1034, 1043]
+	},
+	// 1.1 达达利亚up - 达达利亚，迪奥娜，北斗，凝光
+	{
+		"gachaType": 401,
+		"scheduleId": 843,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A023",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A023",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A023_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1033],
+		"rateUpItems2": [1027, 1024, 1039]
+	},
+	// 1.1 钟离up - 钟离，辛焱，雷泽，重云
+	{
+		"gachaType": 402,
+		"scheduleId": 853,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A024",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A024",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A024_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1030],
+		"rateUpItems2": [1044, 1020, 1036]
+	},
+	// 1.2 阿贝多up - 阿贝多，菲谢尔，砂糖，班尼特
+	{
+		"gachaType": 403,
+		"scheduleId": 863,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A027",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A027",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A027_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1038],
+		"rateUpItems2": [1031, 1043, 1032]
+	},
+	// 1.2 甘雨up - 甘雨，香菱，行秋，诺埃尔
+	{
+		"gachaType": 404,
+		"scheduleId": 873,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A028",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A028",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A028_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1037],
+		"rateUpItems2": [1023, 1025, 1034]
+	},
+	// 1.3 魈up - 魈，迪奥娜，北斗，辛焱
+	{
+		"gachaType": 405,
+		"scheduleId": 883,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A031",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A031",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A031_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1026],
+		"rateUpItems2": [1039, 1024, 1044]
+	},
+	// 1.3 刻晴up - 刻晴，凝光，班尼特，芭芭拉
+	{
+		"gachaType": 406,
+		"scheduleId": 893,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A032",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A032",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A032_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1042],
+		"rateUpItems2": [1027, 1032, 1014]
+	},
+	// 1.3 胡桃up - 胡桃，行秋，重云，香菱
+	{
+		"gachaType": 406,
+		"scheduleId": 903,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A033",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A033",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A033_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1046],
+		"rateUpItems2": [1025, 1036, 1023]
+	},
+	// 1.4 温蒂复刻up - 温蒂，砂糖，雷泽，诺艾尔
+	{
+		"gachaType": 407,
+		"scheduleId": 913,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A036",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A036",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A036_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1022],
+		"rateUpItems2": [1043, 1020, 1034]
+	},
+    // 1.4 达达利亚复刻up - 达达利亚，罗莎莉亚，芭芭拉，菲谢尔
+	{
+		"gachaType": 408,
+		"scheduleId": 923,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A037",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A037",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A037_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1033],
+		"rateUpItems2": [1045, 1014, 1031]
+	},
+	// 1.5 钟离复刻up - 钟离，烟绯，诺艾尔，迪奥娜
+	{
+		"gachaType": 409,
+		"scheduleId": 933,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A040",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A040",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A038_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1030],
+		"rateUpItems2": [1048, 1034, 1039]
+	},
+	// 1.5 优菈up - 优菈，辛焱，行秋，北斗
+	{
+		"gachaType": 410,
+		"scheduleId": 943,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A041",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A041",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A038_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1051],
+		"rateUpItems2": [1044, 1025, 1024]
+	},
+	// 1.6 可莉复刻up - 可莉，芭芭拉，砂糖，菲谢尔
+	{
+		"gachaType": 411,
+		"scheduleId": 953,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A044",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A044",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A044_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1029],
+		"rateUpItems2": [1014, 1043, 1031]
+	},
+	// 1.6 枫原万叶up - 枫原万叶，罗莎莉亚，班尼特，雷泽
+	{
+		"gachaType": 412,
+		"scheduleId": 963,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A045",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A045",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A045_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1047],
+		"rateUpItems2": [1045, 1032, 1020]
+	},
+	// 2.0 神里绫华up - 神里绫华, 凝光, 重云, 烟绯
+	{
+		"gachaType": 413,
+		"scheduleId": 973,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A048",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A048",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A048_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1002],
+		"rateUpItems2": [1027, 1036, 1048]
+	},
+	// 2.0 宵宫up - 宵宫，早柚，迪奥娜，辛焱
+	{
+		"gachaType": 414,
+		"scheduleId": 983,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A049",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A049",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A049_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1049],
+		"rateUpItems2": [1053, 1039, 1044]
+	},
+	// 2.1 雷电将军up - 雷电将军，九条裟罗，香菱，砂糖
+	{
+		"gachaType": 415,
+		"scheduleId": 993,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A052",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A052",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A052_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1052],
+		"rateUpItems2": [1056, 1023, 1043]
+	},
+	// 2.1 珊瑚宫心海up - 珊瑚宫心海，罗莎莉亚，北斗，行秋
+	{
+		"gachaType": 416,
+		"scheduleId": 1003,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A053",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A053",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A053_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1054],
+		"rateUpItems2": [1045, 1024, 1025]
+	},
+	// 2.2 达达利亚2次复刻up - 达达利亚，凝光，重云，烟绯
+	{
+		"gachaType": 417,
+		"scheduleId": 1013,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A056",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A056",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A056_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1033],
+		"rateUpItems2": [1027, 1036, 1048]
+	},
+	// 2.2 胡桃复刻up - 胡桃，托马，迪奥娜，早柚
+	{
+		"gachaType": 418,
+		"scheduleId": 1023,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A057",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A057",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A057_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1046],
+		"rateUpItems2": [1050, 1039, 1053]
+	},
+	// 2.3 阿贝多复刻up - 阿贝多，班尼特，诺艾尔，罗莎莉亚
+		{
+			"gachaType": 419,
+			"scheduleId": 1033,
+			"bannerType": "EVENT",
+			"prefabPath": "GachaShowPanel_A060",
+			"previewPrefabPath": "UI_Tab_GachaShowPanel_A060",
+			"titlePath": "UI_GACHA_SHOW_PANEL_A025_TITLE",
+			"costItem": 223,
+			"beginTime": 0,
+			"endTime": 1924992000,
+			"sortId": 9998,
+			"maxItemType": 1,
+			"rateUpItems1": [1038],
+			"rateUpItems2": [1032, 1034, 1045, 11415]
+		},
+	// 2.3 优菈复刻up - 优菈，班尼特，诺埃尔，罗莎莉亚
+	{
+		"gachaType": 420,
+		"scheduleId": 1043,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A062",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A062",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A062_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1051],
+		"rateUpItems2": [1032, 1034, 1045]
+	},
+	// 2.3 荒泷一斗up - 荒泷一斗，五郎，芭芭拉，香菱
+	{
+		"gachaType": 421,
+		"scheduleId": 1053,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A061",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A061",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A061_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1057],
+		"rateUpItems2": [1055, 1014, 1023]
+	},
+
+	// 2.4 申鹤up - 申鹤，云瑾，凝光，重云
+	{
+		"gachaType": 422,
+		"scheduleId": 1063,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A065",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A065",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A065_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1063],
+		"rateUpItems2": [1027, 1036, 1064]
+	},
+	// 2.4 甘雨复刻up - 甘雨，行秋，北斗，烟绯
+	{
+		"gachaType": 423,
+		"scheduleId": 1073,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A069",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A069",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A028_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1037],
+		"rateUpItems2": [1024, 1048, 1025]
+	},
+	// 2.5 八重神子up - 八重神子，菲谢尔，迪奥娜，托马
+	{
+		"gachaType": 424,
+		"scheduleId": 1083,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A071",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A071",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A071_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1058],
+		"rateUpItems2": [1031, 1039, 1050]
+	},
+	// 2.6 神里绫人up - 砂糖，香菱，云瑾
+	{
+		"gachaType": 425,
+		"scheduleId": 1093,
+		"bannerType": "EVENT",
+		"prefabPath": "GachaShowPanel_A076",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A076",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A076_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9998,
+		"maxItemType": 1,
+		"rateUpItems1": [1066],
+		"rateUpItems2": [1043, 1023, 1064]
+	},
+	// 1.4 Weapon Banner - Elegy of the End, Skyward Blade
+		// 4-Stars: The Alley Flash, Wine and Song, Favonius Greatsword, Favonius Warbow
+	{
+		"gachaType": 426,
+		"scheduleId": 1103,
+		"bannerType": "WEAPON",
+		"prefabPath": "GachaShowPanel_A038",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A038",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A038_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9997,
+		"minItemType": 2,
+		"eventChance": 50,
+		"softPity": 50,
+		"hardPity": 50,
+		"rateUpItems1": [15503, 11502],
+		"rateUpItems2": [11410, 14410, 12401, 15401, 13401]
+	},
+	// 2.3 Weapon Banner - Skyward Harp, Rehorn Stonethresher
+		// 4-Stars: The Alley Flash, Mitternachts Waltz, The Bell, Favonius Lance, Sacrificial Fragments
+	{
+		"gachaType": 427,
+		"scheduleId": 1113,
+		"bannerType": "WEAPON",
+		"prefabPath": "GachaShowPanel_A064",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A064",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A064_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9997,
+		"minItemType": 2,
+		"eventChance": 50,
+		"softPity": 50,
+		"hardPity": 50,
+		"rateUpItems1": [15501, 12510],
+		"rateUpItems2": [11410, 15412, 12402, 13407, 14403]
+	},
+	// 1.3 Weapon Banner - Staff of Homa, Wolf's Gravestone
+		// 4-Stars: Lithic Blade, Lithic Spear, Lion's Roar, Sacrificial Bow, The Widsith
+	{
+		"gachaType": 428,
+		"scheduleId": 1123,
+		"bannerType": "WEAPON",
+		"prefabPath": "GachaShowPanel_A035",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A035",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A035_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9997,
+		"minItemType": 2,
+		"eventChance": 50,
+		"softPity": 50,
+		"hardPity": 50,
+		"rateUpItems1": [13501, 12502],
+		"rateUpItems2": [12410, 13406, 14405, 15403, 14402]
+	},
+	// 2.4 Weapon Banner - Amos' Bow, Vortex Vanquisher
+		// 4-Stars: Lithic Blade, Favonius Sword, Dragon's Bane, Favonius Codex, Sacrificial Bow
+	{
+		"gachaType": 429,
+		"scheduleId": 1133,
+		"bannerType": "WEAPON",
+		"prefabPath": "GachaShowPanel_A070",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A070",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A070_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9997,
+		"minItemType": 2,
+		"eventChance": 50,
+		"softPity": 50,
+		"hardPity": 50,
+		"rateUpItems1": [15502, 13504],
+		"rateUpItems2": [12410, 11401, 13401, 14401, 15403]
+	},
+	// 2.4 Weapon Banner - Clamity Queller, Primordial Jade Winged-Spear
+		// 4-Stars: Lithic Spear, The Flute, Favonius Greatsword, The Widsith, Favonius Warbow
+	{
+		"gachaType": 430,
+		"scheduleId": 1143,
+		"bannerType": "WEAPON",
+		"prefabPath": "GachaShowPanel_A067",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A067",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A067_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9997,
+		"minItemType": 2,
+		"eventChance": 50,
+		"softPity": 50,
+		"hardPity": 50,
+		"rateUpItems1": [13507, 13505],
+		"rateUpItems2": [13406, 11402, 12401, 14402, 15401]
+	},
+	// 2.5 Weapon Banner - Engulfing Lightning, Everlasting Moonglow
+		// 4-Stars: Akuoumaru, Mouun's Moon, Lion's Roar, Favonius Spear, Sacrificial Fragments
+	{
+		"gachaType": 431,
+		"scheduleId": 1153,
+		"bannerType": "WEAPON",
+		"prefabPath": "GachaShowPanel_A075",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A075",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A075_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9997,
+		"minItemType": 2,
+		"eventChance": 50,
+		"softPity": 50,
+		"hardPity": 50,
+		"rateUpItems1": [13509, 14506],
+		"rateUpItems2": [12416, 15416, 11405, 13407, 14403]
+	},
+	// 2.0 Weapon Banner - Mistsplitter Reforged, Skyward Spine
+		// 4-Stars: Sacrificial Greatsword, Favonius Lance, Favonius Codex, Favonius Sword, The Stringless
+	{
+		"gachaType": 432,
+		"scheduleId": 1163,
+		"bannerType": "WEAPON",
+		"prefabPath": "GachaShowPanel_A050",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A050",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A050_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9997,
+		"minItemType": 2,
+		"eventChance": 50,
+		"softPity": 50,
+		"hardPity": 50,
+		"rateUpItems1": [11509, 13502],
+		"rateUpItems2": [12306, 13407, 14401, 11401, 15402]
+	},
+	// 2.6 Weapon Banner - Haran, Geppaku Futsu, Elegy of the End
+		// 4-Stars: The Flute, Sacrificial Greatsword, Dragon's Bane, The Widsith, Rust
+	{
+		"gachaType": 433,
+		"scheduleId": 1173,
+		"bannerType": "WEAPON",
+		"prefabPath": "GachaShowPanel_A078",
+		"previewPrefabPath": "UI_Tab_GachaShowPanel_A078",
+		"titlePath": "UI_GACHA_SHOW_PANEL_A078_TITLE",
+		"costItem": 223,
+		"beginTime": 0,
+		"endTime": 1924992000,
+		"sortId": 9997,
+		"minItemType": 2,
+		"eventChance": 50,
+		"softPity": 50,
+		"hardPity": 50,
+		"rateUpItems1": [11510, 15503],
+		"rateUpItems2": [11402, 12403, 13401, 14402, 15405]
+	}
+]
