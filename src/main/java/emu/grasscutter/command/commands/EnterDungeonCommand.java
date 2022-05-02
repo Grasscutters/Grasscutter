@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -11,6 +12,7 @@ import java.util.List;
 public final class EnterDungeonCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
+
         if (sender == null) {
             CommandHandler.sendMessage(null, "Run this command in-game.");
             return;
@@ -20,6 +22,11 @@ public final class EnterDungeonCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, "Usage: enterdungeon <dungeon id>");
             return;
         }
+
+        if (Grasscutter.getConfig().getGameServerOptions().DungeonMT) {
+			CommandHandler.sendMessage(sender, "Sorry function dungeon is not stable so it can't be used");
+			return;
+		}
 
         try {
             int dungeonId = Integer.parseInt(args.get(0));

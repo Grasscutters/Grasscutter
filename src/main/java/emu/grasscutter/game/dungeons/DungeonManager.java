@@ -41,7 +41,7 @@ public class DungeonManager {
 	public boolean enterDungeon(Player player, int pointId, int dungeonId) {
 
 		if (Grasscutter.getConfig().getGameServerOptions().DungeonMT) {
-			CommandHandler.sendMessage(player, "Sorry, this function is not stable so it can't be used");
+			CommandHandler.sendMessage(player, "Sorry function dungeon is not stable so it can't be used");
 			return false;
 		}
 
