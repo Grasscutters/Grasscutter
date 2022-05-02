@@ -14,6 +14,8 @@ import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegio
 import emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.QueryRegionListHttpRsp;
 import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
+import emu.grasscutter.server.dispatch.authentication.AuthenticationHandler;
+import emu.grasscutter.server.dispatch.authentication.DefaultAuthenticationHandler;
 import emu.grasscutter.server.dispatch.json.*;
 import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
@@ -39,6 +41,7 @@ public final class DispatchServer {
 
 	public String regionListBase64;
 	public Map<String, RegionData> regions;
+	private AuthenticationHandler authHandler;
 	private Express httpServer;
 
 	public DispatchServer() {
@@ -251,6 +254,16 @@ public final class DispatchServer {
 			ctx.result("<!doctype html><html lang=\"en\"><body><img src=\"https://http.cat/404\" /></body></html>"); // I'm like 70% sure this won't break anything.
 		});
 
+		// Authentication Handler
+		// These routes are so that authentication routes are always the same no matter what auth system is used.
+		httpServer.get("/authentication/type", (req, res) -> {
+			res.send(this.getAuthHandler().getClass().getName());
+		});
+
+		httpServer.post("/authentication/login", (req, res) -> this.getAuthHandler().handleLogin(req, res));
+		httpServer.post("/authentication/register", (req, res) -> this.getAuthHandler().handleRegister(req, res));
+		httpServer.post("/authentication/change_password", (req, res) -> this.getAuthHandler().handleChangePassword(req, res));
+
 		// Dispatch
 		httpServer.get("/query_region_list", (req, res) -> {
 			// Log
@@ -287,69 +300,15 @@ public final class DispatchServer {
 			try {
 				String body = req.ctx().body();
 				requestData = getGsonFactory().fromJson(body, LoginAccountRequestJson.class);
-			} catch (Exception ignored) {
-			}
+			} catch (Exception ignored) { }
 
 			// Create response json
 			if (requestData == null) {
 				return;
 			}
-			LoginResultJson responseData = new LoginResultJson();
+			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s is trying to log in", req.ip()));
 
-			Grasscutter.getLogger()
-					.info(String.format("[Dispatch] Client %s is trying to log in", req.ip()));
-
-			// Login
-			Account account = DatabaseHelper.getAccountByName(requestData.account);
-
-			// Check if account exists, else create a new one.
-			if (account == null) {
-				// Account doesnt exist, so we can either auto create it if the config value is
-				// set
-				if (Grasscutter.getConfig().getDispatchOptions().AutomaticallyCreateAccounts) {
-					// This account has been created AUTOMATICALLY. There will be no permissions
-					// added.
-					account = DatabaseHelper.createAccountWithId(requestData.account, 0);
-
-					for (String permission : Grasscutter.getConfig().getDispatchOptions().defaultPermissions) {
-						account.addPermission(permission);
-					}
-
-					if (account != null) {
-						responseData.message = "OK";
-						responseData.data.account.uid = account.getId();
-						responseData.data.account.token = account.generateSessionKey();
-						responseData.data.account.email = account.getEmail();
-
-						Grasscutter.getLogger()
-								.info(String.format("[Dispatch] Client %s failed to log in: Account %s created",
-										req.ip(), responseData.data.account.uid));
-					} else {
-						responseData.retcode = -201;
-						responseData.message = "Username not found, create failed.";
-
-						Grasscutter.getLogger().info(String.format(
-								"[Dispatch] Client %s failed to log in: Account create failed", req.ip()));
-					}
-				} else {
-					responseData.retcode = -201;
-					responseData.message = "Username not found.";
-
-					Grasscutter.getLogger().info(String
-							.format("[Dispatch] Client %s failed to log in: Account no found", req.ip()));
-				}
-			} else {
-				// Account was found, log the player in
-				responseData.message = "OK";
-				responseData.data.account.uid = account.getId();
-				responseData.data.account.token = account.generateSessionKey();
-				responseData.data.account.email = account.getEmail();
-
-				Grasscutter.getLogger().info(String.format("[Dispatch] Client %s logged in as %s", req.ip(),
-						responseData.data.account.uid));
-			}
-
-			res.send(responseData);
+			res.send(authHandler.handleGameLogin(req, requestData));
 		});
 
 		// Login via token
@@ -521,6 +480,29 @@ public final class DispatchServer {
 			last = next + 1;
 		}
 		return result;
+	}
+
+	public AuthenticationHandler getAuthHandler() {
+		if(authHandler == null) {
+			return new DefaultAuthenticationHandler();
+		}
+		Grasscutter.getLogger().info(authHandler.getClass().getName());
+
+		return authHandler;
+	}
+
+	public boolean registerAuthHandler(AuthenticationHandler authHandler) {
+		if(this.authHandler != null) {
+			Grasscutter.getLogger().error(String.format("[Dispatch] Unable to register '%s' authentication handler. \n" +
+					"The '%s' authentication handler has already been registered", authHandler.getClass().getName(), this.authHandler.getClass().getName()));
+			return false;
+		}
+		this.authHandler = authHandler;
+		return true;
+	}
+
+	public void resetAuthHandler() {
+		this.authHandler = null;
 	}
 
 	public static class RegionData {
