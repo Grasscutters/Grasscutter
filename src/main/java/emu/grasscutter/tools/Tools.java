@@ -1,5 +1,6 @@
 package emu.grasscutter.tools;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
@@ -92,5 +93,97 @@ public final class Tools {
 		}
 		
 		Grasscutter.getLogger().info("GM Handbook generated!");
+	}
+
+	@SuppressWarnings("deprecation")
+	public static void createGachaMapping() throws Exception {
+		ResourceLoader.loadResources();
+		
+		Map<Long, String> map;
+		try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(Grasscutter.getConfig().RESOURCE_FOLDER + "TextMap/TextMapEN.json")), StandardCharsets.UTF_8)) {
+			map = Grasscutter.getGsonFactory().fromJson(fileReader, new TypeToken<Map<Long, String>>() {}.getType());
+		}
+		
+		List<Integer> list;
+
+
+		String fileName = Grasscutter.getConfig().RESOURCE_FOLDER + "/gcstatic";
+		File folder = new File(fileName);
+		if (!folder.exists()) { folder.mkdirs(); } // create folder if it doesn't exist
+		fileName = fileName + "/mappings.js";
+
+		try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8), false)) {
+			
+			list = new ArrayList<>(GameData.getAvatarDataMap().keySet());
+			Collections.sort(list); 
+			 
+			writer.println("mappings = {\"en-us\": {"); 
+
+			// Avatars
+			boolean first = true;
+			for (Integer id : list) {
+				AvatarData data = GameData.getAvatarDataMap().get(id);
+				int avatarID = data.getId();
+				if (avatarID >= 11000000) { // skip test avatar
+					continue;
+				}
+				if (first) { // skip adding comma for the first element
+					first = false;
+				} else {
+					writer.print(",");
+				}
+				String color;
+				switch (data.getQualityType()){
+					case "QUALITY_PURPLE":
+						color = "purple";
+						break;
+					case "QUALITY_ORANGE":
+						color = "yellow";
+						break;
+					case "QUALITY_BLUE":
+					default:
+						color = "blue";
+				}
+				
+				writer.println(
+					"\"" + (avatarID % 1000 + 1000) + "\" : [\"" 
+					+ map.get(data.getNameTextMapHash()) + "(Avatar)\", \"" 
+					+ color + "\"]");
+			}
+			
+			writer.println();
+			
+			list = new ArrayList<>(GameData.getItemDataMap().keySet());
+			Collections.sort(list); 
+			
+			// Weapons
+			for (Integer id : list) {
+				ItemData data = GameData.getItemDataMap().get(id);
+				if (data.getId() <= 11101 || data.getId() >= 20000) {
+					continue; //skip non weapon items
+				}
+				String color;
+
+				switch (data.getRankLevel()){
+					case 3: 
+						color = "blue";
+						break;
+					case 4:
+						color = "purple";
+						break;
+					case 5:
+						color = "yellow";
+						break;
+					default:
+						continue; // skip unnecessary entries
+				}
+				writer.println(",\"" + data.getId() +
+						 "\" : [\"" + map.get(data.getNameTextMapHash()).replaceAll("\"", "")
+						 + "(Weapon)\",\""+ color + "\"]");
+			}
+			writer.println(",\"200\": \"Standard\", \"301\": \"Avatar Event\", \"302\": \"Weapon event\"");
+			writer.println("}\n}");
+		}
+		Grasscutter.getLogger().info("Mappings generated!");
 	}
 }
