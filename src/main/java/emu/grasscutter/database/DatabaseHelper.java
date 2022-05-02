@@ -57,7 +57,13 @@ public final class DatabaseHelper {
 		// Unique names only
 		Account exists = DatabaseHelper.getAccountByName(username);
 		if (exists != null) {
-			return null;
+			if (exists.getPassword() == null) {
+				exists.setPassword(password);
+				DatabaseHelper.saveAccount(exists);
+				return exists;
+			} else {
+				return null;
+			}
 		}
 
 		// Account
