@@ -491,8 +491,6 @@ public final class DispatchServer {
 		if(authHandler == null) {
 			return new DefaultAuthenticationHandler();
 		}
-		Grasscutter.getLogger().info(authHandler.getClass().getName());
-
 		return authHandler;
 	}
 
