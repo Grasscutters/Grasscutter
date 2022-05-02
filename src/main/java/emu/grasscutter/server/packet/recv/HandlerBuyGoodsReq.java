@@ -4,7 +4,6 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.shop.ShopInfo;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.shop.ShopManager;
@@ -19,7 +18,6 @@ import emu.grasscutter.server.packet.send.PacketBuyGoodsRsp;
 import emu.grasscutter.server.packet.send.PacketStoreItemChangeNotify;
 import emu.grasscutter.utils.Utils;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -92,6 +90,9 @@ public class HandlerBuyGoodsReq extends PacketHandler {
             session.getPlayer().addShopLimit(sg.getGoodsId(), buyGoodsReq.getBoughtNum(), ShopManager.getShopNextRefreshTime(sg));
             GameItem item = new GameItem(GameData.getItemDataMap().get(sg.getGoodsItem().getId()));
             item.setCount(buyGoodsReq.getBoughtNum() * sg.getGoodsItem().getCount());
+            if (sg.getShowId() > 0) {
+                item.setRewardBoxId(sg.getShowId());
+            }
             session.getPlayer().getInventory().addItem(item, ActionReason.Shop, true); // fix: not notify when got virtual item from shop
             session.send(new PacketBuyGoodsRsp(buyGoodsReq.getShopType(), session.getPlayer().getGoodsLimit(sg.getGoodsId()).getHasBoughtInPeriod(), buyGoodsReq.getGoodsListList().stream().filter(x -> x.getGoodsId() == goodsId).findFirst().get()));
         }

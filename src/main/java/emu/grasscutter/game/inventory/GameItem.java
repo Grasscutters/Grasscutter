@@ -58,6 +58,9 @@ public class GameItem {
 	// Relic
 	private int mainPropId;
 	private List<Integer> appendPropIdList;
+
+	// shopMailBox
+	private int rewardBoxId;
 	
 	private int equipCharacter;
 	@Transient private int weaponEntityId;
@@ -90,7 +93,7 @@ public class GameItem {
 
 		// Equip data
 		if (getItemType() == ItemType.ITEM_WEAPON) {
-			this.level = this.count > 1 ? this.count : 1;
+			this.level = Math.max(this.count, 1);
 			this.affixes = new ArrayList<>(2);
 			if (getItemData().getSkillAffix() != null) {
 				for (int skillAffix : getItemData().getSkillAffix()) {
@@ -246,6 +249,14 @@ public class GameItem {
 
 	public void setMainPropId(int mainPropId) {
 		this.mainPropId = mainPropId;
+	}
+
+	public int getRewardBoxId() {
+		return rewardBoxId;
+	}
+
+	public void setRewardBoxId(int rewardBoxId) {
+		this.rewardBoxId = rewardBoxId;
 	}
 
 	public List<Integer> getAppendPropIdList() {
