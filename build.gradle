@@ -40,7 +40,7 @@ plugins {
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
-group = 'tech.xigam'
+group = 'xyz.grasscutters'
 version = '1.0.3-dev'
 
 sourceCompatibility = 17
@@ -136,9 +136,9 @@ publishing {
                 }
                 developers {
                     developer {
-                        id = 'melledy'
-                        name = 'Melledy'
-                        email = 'melledy@xigam.tech' // not a real email kek
+                        id = 'meledy'
+                        name = 'Meledy'
+                        email = 'meledy@xigam.tech' // not a real email kek
                     }
                     developer {
                         id = 'magix'
