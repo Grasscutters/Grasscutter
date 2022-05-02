@@ -3,6 +3,9 @@ package emu.grasscutter.utils;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.ConsoleAppender;
 import emu.grasscutter.Grasscutter;
+import org.jline.reader.LineReader;
+
+import java.util.Arrays;
 
 public class JlineLogbackAppender extends ConsoleAppender<ILoggingEvent> {
     @Override
@@ -10,6 +13,8 @@ public class JlineLogbackAppender extends ConsoleAppender<ILoggingEvent> {
         if (!started) {
             return;
         }
-        Grasscutter.getConsole().printAbove(new String(encoder.encode(eventObject)));
+        Arrays.stream(
+                new String(encoder.encode(eventObject)).split("\n")
+        ).forEach(Grasscutter.getConsole()::printAbove);
     }
 }
