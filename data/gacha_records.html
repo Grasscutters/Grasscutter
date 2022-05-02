@@ -1,0 +1,176 @@
+<html>
+    <head>
+        <script>
+            // Debug entry
+            // record = [
+            //     {"time": 10000341, "item": 1001}, 
+            //     {"time": 10000342, "item": 1002}, 
+            //     {"time": 10000343, "item": 1003}, 
+            // ];
+            // maxPage = 5;
+
+            // in production environment
+            record = {{REPLACE_RECORD}};
+            maxPage = {{REPLACE_MAXPAGE}};
+
+            // TODO: implement this mapper by yourself
+            // I don't want to put real items' name here to avoid being DMCA'd
+            mappings = {
+                'en-us': {
+                    200: "Standard",
+                    301: "Event Avatar",
+                    302: "Event Weapon",
+                    1041 : ["M0n4", "yellow"],
+                    1032 : ["B4nn477", "purple"],
+                    1035 : ["77", "yellow"]
+                },
+                'zh-cn': {
+                        // encoding issues here, maybe we should consider load mappings remotely
+                        // will display as "锟斤铐锟斤铐锟斤铐", lmao
+                    // 200: "常驻", 
+                    // 301: "角色UP-1",
+                    // 302: "武器UP"
+                    200: "Standard",
+                    301: "Event Avatar",
+                    302: "Event Weapon",
+                }
+            };
+            mappings['default'] = mappings['en-us'];
+        </script>
+        <!-- TODO: Refine the CSS -->
+        <style>
+            a {
+                text-decoration: none !important;
+            }
+            .content {
+                width: 400px;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content .navbar {
+                margin: auto;
+                width: fit-content;
+                padding-top: 5px;
+                padding-bottom: 30px;
+            }
+
+            .yellow {
+                color: yellow;
+            }
+
+            .blue {
+                color: rgb(75, 107, 251);
+            }
+
+            .purple {
+                color: rgb(242, 40, 242);
+            }
+        </style>
+    </head>
+    <body style="background: skyblue;">
+        <div class="content">
+            <h1>Gacha Records</h1>
+            <h2 id="gacha-type"></h2>
+            <br/>
+            <div style="width: fit-content">
+                <table border="1">
+                    <tbody id="container">
+                        <tr>
+                            <th>Time</th>
+                            <th>Item</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="navbar">
+                <a href="" id="prev"> &lt; </a>
+                <span id="curpage">1</span>
+                <a href="" id="next"> &gt; </a>
+            </div>
+        </div>
+
+        <script>
+            var lang = new window.URLSearchParams(window.location.search).get("lang");
+            function itemMapper(itemID) {
+                if (mappings[lang] != null && mappings[lang][itemID] != null) {
+                    var entry = mappings[lang][itemID];
+                    if (entry){
+                        return "<span class='" + entry[1] + "'>" + entry[0] + "</span>";
+                    }
+                } else {
+                    if (mappings['default'][itemID] != null) {
+                        var entry = mappings['default'][itemID];
+                        if (entry){
+                            return "<span class='" + entry[1] + "'>" + entry[0] + "</span>";
+                        }
+                    }
+                }
+                return "<span class='blue'>" + itemID + "</span>";
+            }
+            function dateFormatter(timeStamp) {
+                var date = new Date(timeStamp);
+                if (lang == "en-us" || lang == null) { // MM/DD/YYYY hh:mm:ss.SSS
+                    return  String(date.getMonth()+1).padStart(2, "0") + 
+                        "/"+String(date.getDate()).padStart(2, "0")+
+                        "/"+date.getFullYear()+
+                        " "+String(date.getHours()).padStart(2, "0")+
+                        ":"+String(date.getMinutes()).padStart(2, "0")+
+                        ":"+String(date.getSeconds()).padStart(2, "0")+
+                        "."+date.getMilliseconds();
+                } else if (lang == "zh-cn") { // YYYY/MM/DD hh:mm:ss.SSS
+                    return date.getFullYear()+ 
+                        "/" + String(date.getMonth()+1).padStart(2, "0") + 
+                        "/"+String(date.getDate()).padStart(2, "0")+
+                        " "+String(date.getHours()).padStart(2, "0")+
+                        ":"+String(date.getMinutes()).padStart(2, "0")+
+                        ":"+String(date.getSeconds()).padStart(2, "0")+
+                        "."+date.getMilliseconds();
+                }
+            }
+            (function (){
+                var container = document.getElementById("container");
+                record.forEach(element => {
+                    var e = document.createElement("tr");
+                    
+                    e.innerHTML= "<td>" + dateFormatter(element.time) + "</td><td>" + itemMapper(element.item) + "</td>";
+                    container.appendChild(e);
+                });
+                // setup pagenation buttons
+                var page = parseInt(new window.URLSearchParams(window.location.search).get("p"));
+                if (!page){
+                    page = 0;
+                }
+                document.getElementById("curpage").innerText = page + 1;
+                var href = new URL(window.location);
+                href.searchParams.set("p", page - 1);
+                document.getElementById("prev").href = href.toString();
+                href.searchParams.set("p", page + 1);
+                document.getElementById("next").href = href.toString();
+
+                if (page <= 0) {
+                    document.getElementById("prev").style.display = "none";
+                }
+                if (page >= maxPage - 1) {
+                    document.getElementById("next").style.display = "none";
+                }
+
+                // setup gacha type info
+                var gachaType = new window.URLSearchParams(window.location.search).get("gachaType");
+                var gachaString;
+                if (mappings[lang] != null && mappings[lang][gachaType] != null) {
+                    gachaString = mappings[lang][gachaType];
+                }else{
+                    gachaString = mappings['default'][gachaType];
+                    if (gachaString == null) {
+                        gachaString = gachaType;
+                    }
+                }
+                document.getElementById("gacha-type").innerText = gachaString;
+        })();
+        </script>
+
+    </body>
+</html>
