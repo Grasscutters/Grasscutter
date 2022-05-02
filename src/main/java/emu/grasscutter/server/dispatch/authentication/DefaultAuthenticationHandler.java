@@ -27,6 +27,9 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
 
     @Override
     public LoginResultJson handleGameLogin(Request req, LoginAccountRequestJson requestData) {
+
+        Grasscutter.getLogger().info(String.format("TES TES TES"));
+
         LoginResultJson responseData = new LoginResultJson();
 
         // Login

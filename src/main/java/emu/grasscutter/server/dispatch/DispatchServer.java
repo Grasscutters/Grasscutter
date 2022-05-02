@@ -251,8 +251,8 @@ public final class DispatchServer {
 			httpServer.get("/", (req, res) -> res.send("Server <a href='https://github.com/akbaryahya/DockerGC'>DockerGC "+new String(FileUtils.read(vv))+"</a>"));
 		} else {
 			httpServer.get("/", (req, res) -> res.send("Welcome to Grasscutter"));
-		}	
-		
+		}
+
 		httpServer.raw().error(404, ctx -> {
 			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING) {
 				Grasscutter.getLogger().info(String.format("[Dispatch] Potential unhandled %s request: %s", ctx.method(), ctx.url()));
@@ -277,8 +277,7 @@ public final class DispatchServer {
 			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s request: query_region_list", req.ip()));
 
 			// Invoke event.
-			QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListBase64);
-			event.call();
+			QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListBase64); event.call();
 			// Respond with event result.
 			res.send(event.getRegionList());
 		});
@@ -334,7 +333,7 @@ public final class DispatchServer {
 				return;
 			}
 			LoginResultJson responseData = new LoginResultJson();
-			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s is trying to log in via token | %S ", req.ip(),req.ctx().header("User-Agent")));
+			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s is trying to log in via token", req.ip()));
 
 			// Login
 			Account account = DatabaseHelper.getAccountById(requestData.uid);
