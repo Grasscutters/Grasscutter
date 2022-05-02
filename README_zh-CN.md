@@ -102,6 +102,8 @@ chmod +x gradlew
 
 你可能需要在终端中运行 `java -jar grasscutter.jar -handbook` 它将会创建一个 `GM Handbook.txt` 以方便您查阅物品ID等
 
+你可能需要在终端中运行 `java -jar grasscutter.jar -gachamap` 来使得祈愿历史记录系统正常显示物品信息。 这个命令生成一个配置文件到如下文件夹：`GRASSCUTTER_RESOURCE/gcstatic`。 不执行此命令，您的祈愿历史记录中将只会显示数字ID而非物品名称。（目前仅支持自动生成英文记录信息）
+
 在每个玩家的朋友列表中都有一个名为“Server”的虚拟用户，你可以通过发送消息来使用命令。命令也适用于其他聊天室，例如私人/团队聊天。
 要在游戏中使用命令，需要添加 `/` 或 `!` 前缀，如 `/pos`
 
