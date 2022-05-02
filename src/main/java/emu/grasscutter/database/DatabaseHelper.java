@@ -43,7 +43,11 @@ public final class DatabaseHelper {
 		Account account = new Account();
 		account.setUsername(username);
 		account.setId(Integer.toString(DatabaseManager.getNextId(account)));
-
+		//add defaultPermissions
+		String[] permissions = Grasscutter.getConfig().getDispatchOptions().defaultPermissions;
+		for (int i = 0; i < permissions.length; i++) {
+			account.addPermission(permissions[i]);
+		}
 		if (reservedId > 0) {
 			account.setPlayerId(reservedId);
 		}
