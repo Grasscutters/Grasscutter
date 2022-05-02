@@ -37,6 +37,7 @@ public class MailHandler {
 		if(event.isCanceled()) return; message = event.getMessage();
 		
 		message.setOwnerUid(this.getPlayer().getUid());
+		message.save();
 		
 		this.mail.add(message);
 		
