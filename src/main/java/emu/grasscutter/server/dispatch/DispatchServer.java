@@ -408,9 +408,9 @@ public final class DispatchServer {
 		// hk4e-api-os.hoyoverse.com
 		httpServer.all("/common/hk4e_global/announcement/api/getAlertAnn", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"alert\":false,\"alert_id\":0,\"remind\":true}}"));
 		// hk4e-api-os.hoyoverse.com
-		httpServer.all("/common/hk4e_global/announcement/api/getAnnList", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"list\":[],\"total\":0,\"type_list\":[],\"alert\":false,\"alert_id\":0,\"timezone\":0,\"t\":\"" + System.currentTimeMillis() + "\"}}"));
+		httpServer.all("/common/hk4e_global/announcement/api/getAnnList", new AnnouncementHandler());
 		// hk4e-api-os-static.hoyoverse.com
-		httpServer.all("/common/hk4e_global/announcement/api/getAnnContent", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"list\":[],\"total\":0}}"));
+		httpServer.all("/common/hk4e_global/announcement/api/getAnnContent", new AnnouncementHandler());
 		// hk4e-sdk-os.hoyoverse.com
 		httpServer.all("/hk4e_global/mdk/shopwindow/shopwindow/listPriceTier", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"suggest_currency\":\"USD\",\"tiers\":[]}}"));
 
