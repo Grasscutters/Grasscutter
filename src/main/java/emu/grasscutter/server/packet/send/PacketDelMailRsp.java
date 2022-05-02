@@ -13,17 +13,10 @@ public class PacketDelMailRsp  extends BasePacket {
     public PacketDelMailRsp(Player player, List<Integer> toDeleteIds) {
         super(PacketOpcodes.DelMailRsp);
 
-        DelMailRsp.Builder proto = DelMailRsp.newBuilder();
-
-        List<Integer> deletedIds = new ArrayList<>();
-
-        for(int mailId : toDeleteIds) {
-            if(player.deleteMail(mailId)) {
-                deletedIds.add(mailId);
-            }
-        }
-
-        this.setData(proto.build());
-        player.getSession().send(new PacketMailChangeNotify(player, null, deletedIds));
+        DelMailRsp proto = DelMailRsp.newBuilder()
+        		.addAllMailIdList(toDeleteIds)
+        		.build();
+        
+        this.setData(proto);
     }
 }
