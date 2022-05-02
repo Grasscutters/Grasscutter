@@ -19,6 +19,7 @@ import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
 import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
 import emu.grasscutter.server.http.gacha.GachaRecordHandler;
+import emu.grasscutter.server.http.gcstatic.StaticFileHandler;
 import emu.grasscutter.utils.FileUtils;
 import express.Express;
 import org.eclipse.jetty.server.Connector;
@@ -486,7 +487,11 @@ public final class DispatchServer {
 		// webstatic-sea.hoyoverse.com
 		httpServer.get("/admin/mi18n/plat_oversea/m202003048/m202003048-version.json", new DispatchHttpJsonHandler("{\"version\":51}"));
 
+		// gacha record
 		httpServer.get("/gacha", new GachaRecordHandler());
+
+		// static file provider
+		httpServer.get("/gcstatic/*", new StaticFileHandler());
 
 		httpServer.listen(Grasscutter.getConfig().getDispatchOptions().Port);
 		Grasscutter.getLogger().info("[Dispatch] Dispatch server started on port " + httpServer.raw().port());

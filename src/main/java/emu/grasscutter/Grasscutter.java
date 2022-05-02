@@ -60,6 +60,9 @@ public final class Grasscutter {
 				case "-handbook" -> {
 					Tools.createGmHandbook(); return;
 				}
+				case "-gachamap" -> {
+					Tools.createGachaMapping(); return;
+				}
 			}
 		}
 		
