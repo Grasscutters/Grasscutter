@@ -50,7 +50,7 @@ public abstract class KcpChannel extends ChannelInboundHandlerAdapter {
     
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-        cause.printStackTrace();
+        //cause.printStackTrace(); hide bug dc
         close();
     }
 

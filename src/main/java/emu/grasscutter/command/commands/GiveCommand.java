@@ -24,12 +24,7 @@ public final class GiveCommand implements CommandHandler {
         if (sender == null && args.size() < 2) {
             CommandHandler.sendMessage(null, "Usage: give <player> <itemId|itemName> [amount] [level]");
             return;
-        }
-
-        if (amount >= 1000) {
-            CommandHandler.sendMessage(sender, "Overmuch :(");
-            return;
-        }
+        }        
 
         switch (args.size()) {
             default: // *No args*
@@ -149,6 +144,11 @@ public final class GiveCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, "Refinement is only applicable to weapons.");
                 return;
             }
+        }
+
+        if (amount >= 1000) {
+            CommandHandler.sendMessage(sender, "Overmuch :(");
+            return;
         }
 
         this.item(targetPlayer, itemData, amount, lvl, refinement);

@@ -9,7 +9,6 @@ import org.danilopianini.util.SpatialIndex;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.def.ReliquaryAffixData;
 import emu.grasscutter.data.def.ReliquaryMainPropData;
-import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.utils.WeightedList;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;

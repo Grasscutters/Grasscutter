@@ -302,9 +302,8 @@ public final class DispatchServer {
 				return;
 			}
 			LoginResultJson responseData = new LoginResultJson();
-
-			Grasscutter.getLogger()
-					.info(String.format("[Dispatch] Client %s is trying to log in", req.ip()));
+			
+			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s is trying to log in | %S ", req.ip(),req.ctx().header("User-Agent")));
 
 			// Login
 			Account account = DatabaseHelper.getAccountByName(requestData.account);
@@ -374,7 +373,7 @@ public final class DispatchServer {
 				return;
 			}
 			LoginResultJson responseData = new LoginResultJson();
-			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s is trying to log in via token", req.ip()));
+			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s is trying to log in via token | %S ", req.ip(),req.ctx().header("User-Agent")));
 
 			// Login
 			Account account = DatabaseHelper.getAccountById(requestData.uid);

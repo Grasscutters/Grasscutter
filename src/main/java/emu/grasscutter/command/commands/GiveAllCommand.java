@@ -43,8 +43,7 @@ public final class GiveAllCommand implements CommandHandler {
             this.giveAllItems(targetPlayer, amount);
             CommandHandler.sendMessage(sender, "Giving all items done, Permission removed, can only be used once.");
         } else
-            CommandHandler.sendMessage(sender, "They don't have this permission!");
-
+            CommandHandler.sendMessage(sender, "It looks like you are already using or not having permission.");
     }
 
     public void giveAllItems(Player player, int amount) {
