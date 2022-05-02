@@ -4,11 +4,13 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.def.GadgetData;
+import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.utils.Position;
-
 import java.util.List;
 
 @Command(label = "spawn", usage = "spawn <entityId|entityName> [level] [amount]",
@@ -24,35 +26,70 @@ public final class SpawnCommand implements CommandHandler {
         }
 
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, "Usage: spawn <entityId|entityName> [amount]");
+            CommandHandler.sendMessage(sender, "Usage: spawn <entityId> [amount] [level(monster only)]");
             return;
         }
 
         try {
-            int entity = Integer.parseInt(args.get(0));
-            int level = args.size() > 1 ? Integer.parseInt(args.get(1)) : 1;
-            int amount = args.size() > 2 ? Integer.parseInt(args.get(2)) : 1;
+            int id = Integer.parseInt(args.get(0));
+            int amount = args.size() > 1 ? Integer.parseInt(args.get(1)) : 1;
+            int level = args.size() > 2 ? Integer.parseInt(args.get(2)) : 1;
 
             if (amount > Grasscutter.getConfig().getGameServerOptions().CMD_Spawn) {
                 CommandHandler.sendMessage(sender, "Overmuch :(");
                 return;
             }
 
-            MonsterData entityData = GameData.getMonsterDataMap().get(entity);
-            if (entityData == null) {
+            MonsterData monsterData = GameData.getMonsterDataMap().get(id);
+            GadgetData gadgetData = GameData.getGadgetDataMap().get(id);
+            ItemData itemData = GameData.getItemDataMap().get(id);
+            if (monsterData == null && gadgetData == null && itemData == null) {
                 CommandHandler.sendMessage(sender, "Invalid entity id.");
                 return;
-            }            
+            }         
 
-            float range = (5f + (.1f * amount));
+            double maxRadius = Math.sqrt(amount * 0.2 / Math.PI);
             for (int i = 0; i < amount; i++) {
-                Position pos = sender.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-                EntityMonster monster = new EntityMonster(sender.getScene(), entityData, pos, level);
-                sender.getScene().addEntity(monster);
+                Position pos = GetRandomPositionInCircle(sender.getPos(), maxRadius).addY(3);
+                GameEntity entity = null;
+                if (itemData != null) {
+                    entity = new EntityItem(sender.getScene(), null, itemData, pos, 1, true);
+                }
+                if (gadgetData != null) {
+                    entity = new EntityVehicle(sender.getScene(), sender.getSession().getPlayer(), gadgetData.getId(), 0, pos, sender.getRotation());
+                    int gadgetId = gadgetData.getId();
+                    switch (gadgetId) {
+                        // TODO: Not hardcode this. Waverider (skiff)
+                        case 45001001, 45001002 -> {
+                            entity.addFightProperty(FightProperty.FIGHT_PROP_BASE_HP, 10000);
+                            entity.addFightProperty(FightProperty.FIGHT_PROP_BASE_ATTACK, 100);
+                            entity.addFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK, 100);
+                            entity.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 10000);
+                            entity.addFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE, 0);
+                            entity.addFightProperty(FightProperty.FIGHT_PROP_CUR_SPEED, 0);
+                            entity.addFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, 0);
+                            entity.addFightProperty(FightProperty.FIGHT_PROP_MAX_HP, 10000);
+                        }
+                        default -> {}
+                    }
+                }
+                if (monsterData != null) {
+                    entity = new EntityMonster(sender.getScene(), monsterData, pos, level);
+                }
+
+                sender.getScene().addEntity(entity);
             }
-            CommandHandler.sendMessage(sender, String.format("Spawned %s of %s.", amount, entity));
+            CommandHandler.sendMessage(sender, String.format("Spawned %s of %s.", amount, id));
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "Invalid item or player ID.");
+            CommandHandler.sendMessage(sender, "Invalid entity ID.");
         }
+    }
+
+    private Position GetRandomPositionInCircle(Position origin, double radius){
+        Position target = origin.clone();
+        double angle = Math.random() * 360;
+        double r = Math.sqrt(Math.random() * radius * radius);
+        target.addX((float) (r * Math.cos(angle))).addZ((float) (r * Math.sin(angle)));
+        return target;
     }
 }
