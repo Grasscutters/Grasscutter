@@ -175,7 +175,7 @@ public class Scene {
 	}
 
 	public void setDungeonData(DungeonData dungeonData) {
-		if (this.dungeonData != null || this.getSceneType() != SceneType.SCENE_DUNGEON || dungeonData.getSceneId() != this.getId()) {
+		if (dungeonData == null || this.dungeonData != null || this.getSceneType() != SceneType.SCENE_DUNGEON || dungeonData.getSceneId() != this.getId()) {
 			return;
 		}
 		this.dungeonData = dungeonData;
