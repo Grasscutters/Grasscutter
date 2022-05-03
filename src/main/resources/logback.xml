@@ -1,5 +1,5 @@
 <Configuration>
-  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+  <appender name="STDOUT" class="emu.grasscutter.utils.JlineLogbackAppender">
     <encoder>
       <pattern>[%d{HH:mm:ss}] [%highlight(%level)] %msg%n</pattern>
     </encoder>

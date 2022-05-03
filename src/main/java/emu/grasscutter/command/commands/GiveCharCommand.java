@@ -67,6 +67,11 @@ public final class GiveCharCommand implements CommandHandler {
             return;
         }
 
+        if(avatarId < 10000002 || avatarId >= 11000000){
+            CommandHandler.sendMessage(sender, "This character cannot be used because it will damage your account");
+            return;
+        }
+
         AvatarData avatarData = GameData.getAvatarDataMap().get(avatarId);
         if (avatarData == null) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveChar_invalid_avatar_id);
