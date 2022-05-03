@@ -27,6 +27,7 @@ import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.server.packet.send.PacketAvatarDieAnimationEndRsp;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarSkillInfoNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketChangeAvatarRsp;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
@@ -262,6 +263,13 @@ public class TeamManager {
 		
 		// Packets
 		getPlayer().getWorld().broadcastPacket(new PacketSceneTeamUpdateNotify(getPlayer()));
+		
+		// Skill charges packet - Yes, this is official server behavior as of 2.6.0
+		for (EntityAvatar entity : getActiveTeam()) {
+			if (entity.getAvatar().getSkillExtraChargeMap().size() > 0) {
+				getPlayer().sendPacket(new PacketAvatarSkillInfoNotify(entity.getAvatar()));
+			}
+		}
 		
 		// Run callback
 		if (responsePacket != null) {
