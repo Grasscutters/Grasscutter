@@ -66,20 +66,26 @@ public final class Config {
 		public String DispatchServerDatabaseUrl = "mongodb://localhost:27017";
 		public String DispatchServerDatabaseCollection = "grasscutter";
 
-		public int CMD_Spawn = 200;
-		public int CMD_Give = 50000;
+		// Limiting for Public Servers
+		public int CMD_Spawn = 150;
+		public int CMD_Give = 10000000;
 		public int CMD_Drop = 100;
+
+		// Dangerous feature for public server, make your database go crazy!
 		public boolean DropMo = false;
-		public boolean DungeonMT = true;
+		public boolean DungeonMT = false;
 
 		public int InventoryLimitWeapon = 2000;
-		public int InventoryLimitRelic = 2000;
+		public int InventoryLimitRelic = 1500;
 		public int InventoryLimitMaterial = 2000;
 		public int InventoryLimitFurniture = 2000;
-		public int InventoryLimitAll = 30000;
+		public int InventoryLimitAll = 10000;
+
 		public int MaxAvatarsInTeam = 4;
-		public int MaxAvatarsInTeamMultiplayer = 4;
-		public int MaxEntityLimit = 1000; // Max entity limit per world. // TODO: Enforce later.
+		public int MaxAvatarsInTeamMultiplayer = 10;
+
+		 // Max entity limit per world. // TODO: Enforce later.
+		public int MaxEntityLimit = 1000;
 		public boolean WatchGacha = false;
 
 		public String WelcomeMailSender  = "Yuuki";
@@ -102,7 +108,7 @@ public final class Config {
 		public GameRates getGameRates() { return Game; }
 
 		public static class GameRates {
-			public float ADVENTURE_EXP_RATE = 0.1f;
+			public float ADVENTURE_EXP_RATE = 6.0f;
 			public float MORA_RATE = 0.1f;
 			public float DOMAIN_DROP_RATE = 0.1f;
 		}

@@ -17,21 +17,24 @@ public final class ClearCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, List<String> args) {
-        int target;
+
         String cmdSwitch = "";
+
+        if (args.size() < 1) {
+            CommandHandler.sendMessage(sender, "Error clear try <all|wp|art|mat>");
+            return;
+        }
+        
         if (sender == null) {
             CommandHandler.sendMessage(null, "Run this command in-game.");
             return;
         }
-        Inventory playerInventory = sender.getInventory();
+        
         try {
-            if (args.size() == 1) {
-                cmdSwitch = args.get(0);
-                target = sender.getUid();
-            }else {
-                cmdSwitch = args.get(1);
-                target = Integer.parseInt(args.get(0));
-            }
+            cmdSwitch = args.get(0);
+            int target = sender.getUid();
+            Inventory playerInventory = sender.getInventory();     
+
             Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
             switch (cmdSwitch) {
                 case "wp" -> {
@@ -96,12 +99,6 @@ public final class ClearCommand implements CommandHandler {
         } catch (NumberFormatException ignored) {
             // TODO: Parse from item name using GM Handbook.
             CommandHandler.sendMessage(sender, "Invalid playerId.");
-            return;
-        }
-
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
             return;
         }
     }
