@@ -52,21 +52,21 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
                     responseData.data.account.email = account.getEmail();
 
                     Grasscutter.getLogger()
-                            .info(String.format("[Dispatch] Client %s failed to log in: Account %s created",
+                            .info(String.format(Grasscutter.getLanguage().Client_failed_login_account_create,
                                     req.ip(), responseData.data.account.uid));
                 } else {
                     responseData.retcode = -201;
-                    responseData.message = "Username not found, create failed.";
+                    responseData.message = Grasscutter.getLanguage().Username_not_found_create_failed;
 
-                    Grasscutter.getLogger().info(String.format(
-                            "[Dispatch] Client %s failed to log in: Account create failed", req.ip()));
+                    Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_failed_login_account_create_failed
+                            , req.ip()));
                 }
             } else {
                 responseData.retcode = -201;
-                responseData.message = "Username not found.";
+                responseData.message = Grasscutter.getLanguage().Username_not_found;
 
                 Grasscutter.getLogger().info(String
-                        .format("[Dispatch] Client %s failed to log in: Account no found", req.ip()));
+                        .format(Grasscutter.getLanguage().Client_failed_login_account_no_found, req.ip()));
             }
         } else {
             // Account was found, log the player in
@@ -75,7 +75,7 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
             responseData.data.account.token = account.generateSessionKey();
             responseData.data.account.email = account.getEmail();
 
-            Grasscutter.getLogger().info(String.format("[Dispatch] Client %s logged in as %s", req.ip(),
+            Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_login, req.ip(),
                     responseData.data.account.uid));
         }
 

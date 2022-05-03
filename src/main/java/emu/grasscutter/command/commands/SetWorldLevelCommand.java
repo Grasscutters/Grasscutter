@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -14,19 +15,19 @@ public final class SetWorldLevelCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return; // TODO: set player's world level from console or other players
         }
 
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, "Usage: setworldlevel <level>");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetWorldLevel_usage);
             return;
         }
 
         try {
             int level = Integer.parseInt(args.get(0));
             if (level > 8 || level < 0) {
-                sender.dropMessage("World level must be between 0-8");
+                sender.dropMessage(Grasscutter.getLanguage().SetWorldLevel_world_level_must_between_0_and_8);
                 return;
             }
 
@@ -34,9 +35,9 @@ public final class SetWorldLevelCommand implements CommandHandler {
             sender.getWorld().setWorldLevel(level);
             sender.setWorldLevel(level);
 
-            sender.dropMessage("World level set to " + level + ".");
+            sender.dropMessage(String.format(Grasscutter.getLanguage().SetWorldLevel_set_world_level, level));
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(null, "Invalid world level.");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().SetWorldLevel_invalid_world_level);
         }
     }
 }

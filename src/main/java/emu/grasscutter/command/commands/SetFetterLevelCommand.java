@@ -2,6 +2,7 @@ package emu.grasscutter.command.commands;
 
 import java.util.List;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -17,19 +18,19 @@ public final class SetFetterLevelCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return;
         }
 
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, "Usage: setfetterlevel <level>");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetFetterLevel_usage);
             return;
         }
 
         try {
             int fetterLevel = Integer.parseInt(args.get(0));
             if (fetterLevel < 0 || fetterLevel > 10) {
-                CommandHandler.sendMessage(sender, "Fetter level must be between 0 and 10.");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetFetterLevel_fetter_level_must_between_0_and_10);
                 return;
             }
             Avatar avatar = sender.getTeamManager().getCurrentAvatarEntity().getAvatar();
@@ -41,9 +42,9 @@ public final class SetFetterLevelCommand implements CommandHandler {
 		    avatar.save();
 		
 		    sender.sendPacket(new PacketAvatarFetterDataNotify(avatar));
-            CommandHandler.sendMessage(sender, "Fetter level set to " + fetterLevel);
+            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetFetterLevel_fetter_set_level, fetterLevel));
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "Invalid fetter level.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetFetterLevel_invalid_fetter_level);
         }
     }
     

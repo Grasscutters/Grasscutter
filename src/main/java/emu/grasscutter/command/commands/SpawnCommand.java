@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -25,12 +26,12 @@ public final class SpawnCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return;
         }
 
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, "Usage: spawn <entityId> [amount] [level(monster only)]");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Spawn_usage);
             return;
         }
 
@@ -43,7 +44,7 @@ public final class SpawnCommand implements CommandHandler {
             GadgetData gadgetData = GameData.getGadgetDataMap().get(id);
             ItemData itemData = GameData.getItemDataMap().get(id);
             if (monsterData == null && gadgetData == null && itemData == null) {
-                CommandHandler.sendMessage(sender, "Invalid entity id.");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_entity_id);
                 return;
             }
 
@@ -78,9 +79,9 @@ public final class SpawnCommand implements CommandHandler {
 
                 sender.getScene().addEntity(entity);
             }
-            CommandHandler.sendMessage(sender, String.format("Spawned %s of %s.", amount, id));
+            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Spawn_message, amount, id));
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "Invalid entity ID.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_entity_id);
         }
     }
 
