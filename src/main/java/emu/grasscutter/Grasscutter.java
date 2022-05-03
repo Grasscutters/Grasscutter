@@ -150,7 +150,7 @@ public final class Grasscutter {
 		boolean isLastInterrupted = false;
 		while (true) {
 			try {
-				input = consoleLineReader.readLine("(Grasscutter)> ");
+				input = consoleLineReader.readLine("> ");
 			} catch (UserInterruptException e) {
 				if (!isLastInterrupted) {
 					isLastInterrupted = true;
