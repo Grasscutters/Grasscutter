@@ -937,8 +937,18 @@ public class InventoryManager {
 					if (target == null) {
 						break;
 					}
-					
+
 					used = player.getTeamManager().reviveAvatar(target) ? 1 : 0;
+				}
+				break;
+			case MATERIAL_NOTICE_ADD_HP:
+				if (useItem.getItemData().getUseTarget().equals("ITEM_USE_TARGET_SPECIFY_ALIVE_AVATAR")) {
+					if (target == null) {
+						break;
+					}
+
+					int[] SatiationParams = useItem.getItemData().getSatiationParams();
+					used = player.getTeamManager().healAvatar(target, SatiationParams[0], SatiationParams[1]) ? 1 : 0;
 				}
 				break;
 			case MATERIAL_CHEST:

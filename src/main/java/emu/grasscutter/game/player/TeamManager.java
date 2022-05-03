@@ -457,7 +457,31 @@ public class TeamManager {
 		
 		return false;
 	}
-	
+
+	public boolean healAvatar(Avatar avatar, int healRate, int healAmount) {
+		for (EntityAvatar entity : getActiveTeam()) {
+			if (entity.getAvatar() == avatar) {
+				if (!entity.isAlive()) {
+					return false;
+				}
+
+				entity.setFightProperty(
+						FightProperty.FIGHT_PROP_CUR_HP,
+						(float) Math.min(
+								(entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) +
+										entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * (float) healRate / 100.0 +
+										(float) healAmount / 100.0),
+								entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP)
+						)
+				);
+				getPlayer().sendPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
+				getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public void respawnTeam() {
 		// Make sure all team members are dead
 		for (EntityAvatar entity : getActiveTeam()) {
