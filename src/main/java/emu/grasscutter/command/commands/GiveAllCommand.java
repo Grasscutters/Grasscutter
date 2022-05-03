@@ -28,7 +28,7 @@ public final class GiveAllCommand implements CommandHandler {
         // Check Uid
         Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
             return;
         }
         // Check Username
@@ -47,7 +47,7 @@ public final class GiveAllCommand implements CommandHandler {
     }
 
     public void giveAllItems(Player player, int amount) {
-        CommandHandler.sendMessage(player, "Giving all items...");
+        CommandHandler.sendMessage(player, Grasscutter.getLanguage().GiveAll_item);
 
         for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
             // Exclude test avatar

@@ -21,7 +21,7 @@ public final class ListCommand implements CommandHandler {
             needUID = args.get(0).equals("uid");
         }
 
-        CommandHandler.sendMessage(sender, String.format("There are %s player(s) online:", playersMap.size()));
+        CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().List_message, playersMap.size()));
 
         if (playersMap.size() != 0) {
             StringBuilder playerSet = new StringBuilder();

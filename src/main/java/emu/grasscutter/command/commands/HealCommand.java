@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -15,7 +16,7 @@ public final class HealCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return;
         }
         
@@ -30,6 +31,6 @@ public final class HealCommand implements CommandHandler {
                 entity.getWorld().broadcastPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
             }
         });
-        CommandHandler.sendMessage(sender, "All characters have been healed.");
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Heal_message);
     }
 }

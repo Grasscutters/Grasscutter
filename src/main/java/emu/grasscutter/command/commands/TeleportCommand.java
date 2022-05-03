@@ -16,20 +16,20 @@ public final class TeleportCommand implements CommandHandler {
     public void execute(Player sender, List<String> args) {
         int target;
         if (args.size() < (sender == null ? 4 : 3)) {
-            CommandHandler.sendMessage(sender, sender == null ? "Usage: /tp @<player id> <x> <y> <z> [scene id]" :
-                    "Usage: /tp [@<player id>] <x> <y> <z> [scene id]");
+            CommandHandler.sendMessage(sender, sender == null ? Grasscutter.getLanguage().Teleport_usage_server :
+                    Grasscutter.getLanguage().Teleport_usage);
             return;
         }
         if (args.get(0).startsWith("@")) {
             try {
                 target = Integer.parseInt(args.get(0).substring(1));
             } catch (NumberFormatException e) {
-                CommandHandler.sendMessage(sender, "Invalid player id.");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
                 return;
             }
         } else {
             if (sender == null) {
-                CommandHandler.sendMessage(null, "You must specify a player id.");
+                CommandHandler.sendMessage(null, Grasscutter.getLanguage().Teleport_specify_player_id);
                 return;
             }
             target = sender.getUid();
@@ -37,7 +37,7 @@ public final class TeleportCommand implements CommandHandler {
 
         Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found or offline.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found_or_offline);
             return;
         }
         args = args.subList(args.get(0).startsWith("@") ? 1 : 0, args.size());
@@ -80,12 +80,12 @@ public final class TeleportCommand implements CommandHandler {
             Position target_pos = new Position(x, y, z);
             boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, target_pos);
             if (!result) {
-                CommandHandler.sendMessage(sender, "Invalid position.");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Teleport_invalid_position);
             } else {
-                CommandHandler.sendMessage(sender, "Teleported " + targetPlayer.getNickname() + " to " + x + "," + y + "," + z + " in scene " + sceneId);
+                CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Teleport_message, targetPlayer.getNickname(), x, y, z, sceneId));
             }
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "Invalid position.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Teleport_invalid_position);
         }
     }
 }

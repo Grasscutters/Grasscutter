@@ -32,7 +32,7 @@ public final class DispatchHttpJsonHandler implements HttpContextHandler {
 	public void handle(Request req, Response res) throws IOException {
 		// Checking for ALL here isn't required as when ALL is enabled enableDevLogging() gets enabled
 		if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING && Arrays.stream(missingRoutes).anyMatch(x -> x == req.baseUrl())) {
-			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s %s request: %s", req.ip(), req.method(), req.baseUrl()) + (Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING ? "(MISSING)" : ""));
+			Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_request, req.ip(), req.method(), req.baseUrl()) + (Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING ? "(MISSING)" : ""));
 		}
 		res.send(response);
 	}

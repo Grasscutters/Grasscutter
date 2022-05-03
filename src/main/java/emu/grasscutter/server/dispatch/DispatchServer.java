@@ -211,21 +211,21 @@ public final class DispatchServer {
 							sslContextFactory.setKeyStorePassword(Grasscutter.getConfig().getDispatchOptions().KeystorePassword);
 						} catch (Exception e) {
 							e.printStackTrace();
-							Grasscutter.getLogger().warn("[Dispatch] Unable to load keystore. Trying default keystore password...");
+							Grasscutter.getLogger().warn(Grasscutter.getLanguage().Not_load_keystore);
 
 							try {
 								sslContextFactory.setKeyStorePath(keystoreFile.getPath());
 								sslContextFactory.setKeyStorePassword("123456");
-								Grasscutter.getLogger().warn("[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to 123456 in config.json.");
+								Grasscutter.getLogger().warn(Grasscutter.getLanguage().Use_default_keystore);
 							} catch (Exception e2) {
-								Grasscutter.getLogger().warn("[Dispatch] Error while loading keystore!");
+								Grasscutter.getLogger().warn(Grasscutter.getLanguage().Load_keystore_error);
 								e2.printStackTrace();
 							}
 						}
 
 						serverConnector = new ServerConnector(server, sslContextFactory);
 					} else {
-						Grasscutter.getLogger().warn("[Dispatch] No SSL cert found! Falling back to HTTP server.");
+						Grasscutter.getLogger().warn(Grasscutter.getLanguage().Not_find_ssl_cert);
 						Grasscutter.getConfig().getDispatchOptions().UseSSL = false;
 
 						serverConnector = new ServerConnector(server);
@@ -250,12 +250,12 @@ public final class DispatchServer {
 		if (vv.exists()) {
 			httpServer.get("/", (req, res) -> res.send("Server <a href='https://github.com/akbaryahya/DockerGC'>DockerGC "+new String(FileUtils.read(vv))+"</a>"));
 		} else {
-			httpServer.get("/", (req, res) -> res.send("Welcome to Grasscutter"));
+			httpServer.get("/", (req, res) -> res.send(Grasscutter.getLanguage().Welcome));
 		}
 
 		httpServer.raw().error(404, ctx -> {
 			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING) {
-				Grasscutter.getLogger().info(String.format("[Dispatch] Potential unhandled %s request: %s", ctx.method(), ctx.url()));
+				Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Potential_unhandled_request, ctx.method(), ctx.url()));
 			}
 			ctx.contentType("text/html");
 			ctx.result("<!doctype html><html lang=\"en\"><body><img src=\"https://http.cat/404\" /></body></html>"); // I'm like 70% sure this won't break anything.
@@ -333,7 +333,7 @@ public final class DispatchServer {
 				return;
 			}
 			LoginResultJson responseData = new LoginResultJson();
-			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s is trying to log in via token", req.ip()));
+			Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_login_token, req.ip()));
 
 			// Login
 			Account account = DatabaseHelper.getAccountById(requestData.uid);
@@ -341,17 +341,17 @@ public final class DispatchServer {
 			// Test
 			if (account == null || !account.getSessionKey().equals(requestData.token)) {
 				responseData.retcode = -111;
-				responseData.message = "Game account cache information error";
+				responseData.message = Grasscutter.getLanguage().Game_account_cache_error;
 
 				Grasscutter.getLogger()
-						.info(String.format("[Dispatch] Client %s failed to log in via token", req.ip()));
+						.info(String.format(Grasscutter.getLanguage().Client_token_login_failed, req.ip()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.account.uid = requestData.uid;
 				responseData.data.account.token = requestData.token;
 				responseData.data.account.email = account.getEmail();
 
-				Grasscutter.getLogger().info(String.format("[Dispatch] Client %s logged in via token as %s",
+				Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_login_in_token,
 						req.ip(), responseData.data.account.uid));
 			}
 
@@ -382,10 +382,10 @@ public final class DispatchServer {
 			// Test
 			if (account == null || !account.getSessionKey().equals(loginData.token)) {
 				responseData.retcode = -201;
-				responseData.message = "Wrong session key.";
+				responseData.message = Grasscutter.getLanguage().Wrong_session_key;
 
 				Grasscutter.getLogger().info(
-						String.format("[Dispatch] Client %s failed to exchange combo token", req.ip()));
+						String.format(Grasscutter.getLanguage().Client_failed_exchange_combo_token, req.ip()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.open_id = loginData.uid;
@@ -393,7 +393,7 @@ public final class DispatchServer {
 				responseData.data.combo_token = account.generateLoginToken();
 
 				Grasscutter.getLogger().info(
-						String.format("[Dispatch] Client %s succeed to exchange combo token", req.ip()));
+						String.format(Grasscutter.getLanguage().Client_exchange_combo_token, req.ip()));
 			}
 
 			res.send(responseData);
@@ -459,7 +459,7 @@ public final class DispatchServer {
 		httpServer.get("/gcstatic/*", new StaticFileHandler());
 
 		httpServer.listen(Grasscutter.getConfig().getDispatchOptions().Port);
-		Grasscutter.getLogger().info("[Dispatch] Dispatch server started on port " + httpServer.raw().port());
+		Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Dispatch_start_server_port, httpServer.raw().port()));
 	}
 
 	private Map<String, String> parseQueryString(String qs) {

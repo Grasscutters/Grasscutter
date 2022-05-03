@@ -107,7 +107,7 @@ public final class CommandMap {
     public void invoke(Player player, String rawMessage) {
         rawMessage = rawMessage.trim();
         if (rawMessage.length() == 0) {
-            CommandHandler.sendMessage(player, "No command specified.");
+            CommandHandler.sendMessage(player, Grasscutter.getLanguage().No_command_specified);
             return;
         }
 
@@ -122,7 +122,7 @@ public final class CommandMap {
         // Get command handler.
         CommandHandler handler = this.commands.get(label);
         if (handler == null) {
-            CommandHandler.sendMessage(player, "Unknown command: " + label);
+            CommandHandler.sendMessage(player, Grasscutter.getLanguage().Unknown_command + label);
             return;
         }
 
@@ -131,7 +131,7 @@ public final class CommandMap {
             String permissionNode = this.annotations.get(label).permission();
             Account account = player.getAccount();
             if (!permissionNode.isEmpty() && !account.hasPermission(permissionNode)) {
-                CommandHandler.sendMessage(player, "You do not have permission to run this command.");
+                CommandHandler.sendMessage(player, Grasscutter.getLanguage().You_not_permission_run_command);
                 return;
             }
         }

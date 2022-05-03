@@ -36,6 +36,8 @@ plugins {
     id 'signing'
 }
 
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
@@ -214,6 +216,7 @@ signing {
 }
 
 javadoc {
+    options.encoding = 'UTF-8'
     if(JavaVersion.current().isJava9Compatible()) {
         options.addBooleanOption('html5', true)
     }

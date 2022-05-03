@@ -90,9 +90,6 @@ public class HandlerBuyGoodsReq extends PacketHandler {
             session.getPlayer().addShopLimit(sg.getGoodsId(), buyGoodsReq.getBoughtNum(), ShopManager.getShopNextRefreshTime(sg));
             GameItem item = new GameItem(GameData.getItemDataMap().get(sg.getGoodsItem().getId()));
             item.setCount(buyGoodsReq.getBoughtNum() * sg.getGoodsItem().getCount());
-            if (sg.getShowId() > 0) {
-                item.setRewardBoxId(sg.getShowId());
-            }
             session.getPlayer().getInventory().addItem(item, ActionReason.Shop, true); // fix: not notify when got virtual item from shop
             session.send(new PacketBuyGoodsRsp(buyGoodsReq.getShopType(), session.getPlayer().getGoodsLimit(sg.getGoodsId()).getHasBoughtInPeriod(), buyGoodsReq.getGoodsListList().stream().filter(x -> x.getGoodsId() == goodsId).findFirst().get()));
         }
