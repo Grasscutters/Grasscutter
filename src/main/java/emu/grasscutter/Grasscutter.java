@@ -134,7 +134,7 @@ public final class Grasscutter {
 	}
 
 	public static void loadLanguage() {
-		try (FileReader file = new FileReader(String.format("./language/%s.json", Grasscutter.config.Language))) {
+		try (FileReader file = new FileReader(String.format(getConfig().LANGUAGE_FOLDER + "%s.json", Grasscutter.config.Language))) {
 			language = gson.fromJson(file, Language.class);
 		} catch (Exception e) {
 			Grasscutter.language = new Language();
@@ -183,7 +183,7 @@ public final class Grasscutter {
 				}
 			}
 		} catch (Exception e) {
-			Grasscutter.getLogger().error(language.error, e);
+			Grasscutter.getLogger().error(language.Error, e);
 		}
 	}
 
