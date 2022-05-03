@@ -65,3 +65,5 @@ mitmdump.exe
 mongod.exe
 /src/generated/
 /*.sh
+language/
+languages/
