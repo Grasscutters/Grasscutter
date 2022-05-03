@@ -38,7 +38,7 @@ public final class SetStatsCommand implements CommandHandler {
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     entity.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, health);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_MAX_HP));
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_max_hp, health));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_max_hp.replace("{int}", Integer.toString(health)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_max_hp_error);
                     return;
@@ -50,7 +50,7 @@ public final class SetStatsCommand implements CommandHandler {
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, health);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_hp, health));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_hp.replace("{int}", Integer.toString(health)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_hp_error);
                     return;
@@ -62,7 +62,7 @@ public final class SetStatsCommand implements CommandHandler {
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE, def);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_DEFENSE));
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_def, def));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_def.replace("{int}", Integer.toString(def)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_def_error);
                     return;
@@ -74,7 +74,7 @@ public final class SetStatsCommand implements CommandHandler {
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK, atk);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_ATTACK));
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_atk, atk));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_atk.replace("{int}", Integer.toString(atk)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_atk_error);
                     return;
@@ -86,7 +86,7 @@ public final class SetStatsCommand implements CommandHandler {
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     entity.setFightProperty(FightProperty.FIGHT_PROP_ELEMENT_MASTERY, em);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ELEMENT_MASTERY));
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_em, em));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_em.replace("{int}", Integer.toString(em)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_em_error);
                     return;
@@ -100,7 +100,7 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, erecharge);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY));
                     float iger = erecharge * 100;
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_er, iger));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_er.replace("{int}", Float.toString(iger)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_er_error);
                     return;
@@ -114,7 +114,7 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_CRITICAL, crate);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CRITICAL));
                     float igcrate = crate * 100;
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_cr, igcrate));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_cr.replace("{int}", Float.toString(igcrate)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_cr_error);
                     return;
@@ -128,7 +128,7 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_CRITICAL_HURT, cdamage);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CRITICAL_HURT));
                     float igcdmg = cdamage * 100;
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_cd, igcdmg));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_cd.replace("{int}", Float.toString(igcdmg)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_cd_error);
                     return;
@@ -142,7 +142,7 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_FIRE_ADD_HURT, pyro);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_FIRE_ADD_HURT));
                     float igpyro = pyro * 100;
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_pdb, igpyro));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_pdb.replace("{int}", Float.toString(igpyro)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_pdb_error);
                     return;
@@ -156,7 +156,7 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_ICE_ADD_HURT, cryo);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ICE_ADD_HURT));
                     float igcyro = cryo * 100;
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_cdb, igcyro));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_cdb.replace("{int}", Float.toString(igcyro)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_cdb_error);
                     return;
@@ -170,7 +170,7 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_WATER_ADD_HURT, hydro);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_WATER_ADD_HURT));
                     float ighydro = hydro * 100;
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_hdb, ighydro));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_hdb.replace("{int}", Float.toString(ighydro)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_hdb_error);
                     return;
@@ -184,7 +184,7 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_WIND_ADD_HURT, anemo);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_WIND_ADD_HURT));
                     float iganemo = anemo * 100;
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_adb, iganemo));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_adb.replace("{int}", Float.toString(iganemo)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_adb_error);
                     return;
@@ -198,7 +198,7 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_ROCK_ADD_HURT, geo);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ROCK_ADD_HURT));
                     float iggeo = geo * 100;
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_gdb, iggeo));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_gdb.replace("{int}", Float.toString(iggeo)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_gdb_error);
                     return;
@@ -213,7 +213,7 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_ELEC_ADD_HURT, elec);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ELEC_ADD_HURT));
                     float igelec = elec * 100;
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_edb, igelec));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_edb.replace("{int}", Float.toString(igelec)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_edb_error);
                     return;
@@ -227,7 +227,7 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_PHYSICAL_ADD_HURT, phys);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_PHYSICAL_ADD_HURT));
                     float igphys = phys * 100;
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_physdb, igphys));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_physdb.replace("{int}", Float.toString(igphys)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_physdb_error);
                     return;
@@ -241,7 +241,7 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_GRASS_ADD_HURT, dend);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_GRASS_ADD_HURT));
                     float igdend = dend * 100;
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_ddb, igdend));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_ddb.replace("{int}", Float.toString(igdend)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_ddb_error);
                     return;

@@ -49,7 +49,7 @@ public final class AccountCommand implements CommandHandler {
                     account.addPermission("*");
                     account.save(); // Save account to database.
 
-                    CommandHandler.sendMessage(null, String.format(Grasscutter.getLanguage().Account_create_UID, account.getPlayerUid()));
+                    CommandHandler.sendMessage(null, Grasscutter.getLanguage().Account_create_UID.replace("{uid}", Integer.toString(account.getPlayerUid())));
                 }
                 return;
             case "delete":

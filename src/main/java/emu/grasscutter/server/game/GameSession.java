@@ -113,12 +113,12 @@ public class GameSession extends KcpChannel {
 	
 	@Override
 	protected void onConnect() {
-		Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_connect, getAddress().getHostString().toLowerCase()));
+		Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_connect.replace("{address}", getAddress().getHostString().toLowerCase()));
 	}
 
 	@Override
 	protected synchronized void onDisconnect() { // Synchronize so we dont add character at the same time
-		Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_disconnect, getAddress().getHostString().toLowerCase()));
+		Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_disconnect.replace("{address}", getAddress().getHostString().toLowerCase()));
 
 		// Set state so no more packets can be handled
 		this.setState(SessionState.INACTIVE);
