@@ -73,7 +73,7 @@ public final class GiveAllCommand implements CommandHandler {
                 continue;
 
             if (itemdata.isEquip()) {
-                if (itemdata.getItemType() == ItemType.ITEM_FURNITURE) {
+                if (itemdata.getItemType() == ItemType.ITEM_WEAPON) {
                     for (int i = 0; i < 5; ++i) {
                         GameItem item = new GameItem(itemdata);
                         item.setLevel(90);
