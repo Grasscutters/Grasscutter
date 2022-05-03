@@ -4,7 +4,6 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.shop.ShopInfo;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.shop.ShopManager;
@@ -19,7 +18,6 @@ import emu.grasscutter.server.packet.send.PacketBuyGoodsRsp;
 import emu.grasscutter.server.packet.send.PacketStoreItemChangeNotify;
 import emu.grasscutter.utils.Utils;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -54,7 +52,7 @@ public class HandlerBuyGoodsReq extends PacketHandler {
                 session.getPlayer().save();
             }
 
-            if (bought + buyGoodsReq.getBoughtNum() > sg.getBuyLimit()) {
+            if ((bought + buyGoodsReq.getBoughtNum() > sg.getBuyLimit()) && sg.getBuyLimit() != 0) {
                 return;
             }
 

@@ -15,7 +15,7 @@ import java.util.*;
 
 @Command(label = "giveall", usage = "giveall [player] [amount]",
         description = "Gives all items", aliases = {"givea"}, permission = "player.giveall", threading = true)
-public class GiveAllCommand implements CommandHandler {
+public final class GiveAllCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, List<String> args) {
@@ -24,7 +24,7 @@ public class GiveAllCommand implements CommandHandler {
         switch (args.size()) {
             case 0: // *no args*
                 if (sender == null) {
-                    CommandHandler.sendMessage(null, "This usage can only be run in-game");
+                    CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
                     return;
                 }
                 target = sender.getUid();
@@ -34,11 +34,11 @@ public class GiveAllCommand implements CommandHandler {
                 try {
                     target = Integer.parseInt(args.get(0));
                     if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
-                        CommandHandler.sendMessage(sender, "Invalid player ID.");
+                        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
                         return;
                     }
                 }catch (NumberFormatException ignored){
-                    CommandHandler.sendMessage(sender, "Invalid player ID.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
                     return;
                 }
                 break;
@@ -53,28 +53,28 @@ public class GiveAllCommand implements CommandHandler {
                         amount = Integer.parseInt(args.get(1));
                     }
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid amount or player ID.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveAll_invalid_amount_or_playerId);
                     return;
                 }
                 break;
 
             default: // invalid
-                CommandHandler.sendMessage(null, "Usage: giveall [player] [amount]");
+                CommandHandler.sendMessage(null, Grasscutter.getLanguage().GiveAll_usage);
                 return;
         }
 
         Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
             return;
         }
 
         this.giveAllItems(targetPlayer, amount);
-        CommandHandler.sendMessage(sender, "Giving all items done");
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveAll_done);
     }
 
     public void giveAllItems(Player player, int amount) {
-        CommandHandler.sendMessage(player, "Giving all items...");
+        CommandHandler.sendMessage(player, Grasscutter.getLanguage().GiveAll_item);
 
         for (AvatarData avatarData: GameData.getAvatarDataMap().values()) {
             //Exclude test avatar
@@ -142,16 +142,11 @@ public class GiveAllCommand implements CommandHandler {
             }
         }
 
-       if (testItemsList.contains(itemId)) {
-            return true;
-        }
-
-        return false;
+        return testItemsList.contains(itemId);
     }
 
     static class Range {
-        private int min;
-        private int max;
+        private final int min, max;
 
         public Range(int min, int max) {
             if(min > max){
@@ -159,6 +154,7 @@ public class GiveAllCommand implements CommandHandler {
                 max ^= min;
                 min ^= max;
             }
+            
             this.min = min;
             this.max = max;
         }

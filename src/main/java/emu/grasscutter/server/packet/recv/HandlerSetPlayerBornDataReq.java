@@ -13,8 +13,11 @@ import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq;
 import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.server.event.game.PlayerCreationEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
+
+import java.util.Arrays;
 
 @Opcodes(PacketOpcodes.SetPlayerBornDataReq)
 public class HandlerSetPlayerBornDataReq extends PacketHandler {
@@ -25,7 +28,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 		
 		// Sanity checks
 		int avatarId = req.getAvatarId();
-		int startingSkillDepot = 0;
+		int startingSkillDepot;
 		if (avatarId == GameConstants.MAIN_CHARACTER_MALE) {
 			startingSkillDepot = 504;
 		} else if (avatarId == GameConstants.MAIN_CHARACTER_FEMALE) {
@@ -39,8 +42,10 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			nickname = "Traveler";
 		}
 		
-		// Create character
-		Player player = new Player(session);
+		// Call creation event.
+		PlayerCreationEvent event = new PlayerCreationEvent(session, Player.class); event.call();
+		// Create player instance from event.
+		Player player = event.getPlayerClass().getDeclaredConstructor(GameSession.class).newInstance(session);
 		player.setNickname(nickname);
 		
 		try {
@@ -82,9 +87,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			mailBuilder.mail.mailContent.title = String.format("W%sl%som%s to %s%s%s%s%s%s%s%s%s%s%s!", DatabaseHelper.AWJVN, u, DatabaseHelper.AWJVN, d, e, z, GameData.EJWOA, GameData.EJWOA, u, PacketOpcodes.ONLWE, s, s, DatabaseHelper.AWJVN, e);
 			mailBuilder.mail.mailContent.sender = String.format("L%swnmow%s%s @ Gi%sH%sb", z, DatabaseHelper.AWJVN, e, s, PacketOpcodes.ONLWE);
 			mailBuilder.mail.mailContent.content = Grasscutter.getConfig().GameServer.WelcomeMailContent;
-			for (int itemId : Grasscutter.getConfig().GameServer.WelcomeMailItems) {
-				mailBuilder.mail.itemList.add(new Mail.MailItem(itemId, 1, 1));
-			}
+			mailBuilder.mail.itemList.addAll(Arrays.asList(Grasscutter.getConfig().GameServer.WelcomeMailItems));
 			mailBuilder.mail.importance = 1;
 			player.sendMail(mailBuilder.mail);
 		} catch (Exception e) {
@@ -92,5 +95,4 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			session.close();
 		}
 	}
-
 }

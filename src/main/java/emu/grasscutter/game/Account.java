@@ -74,7 +74,11 @@ public class Account {
 	}
 	
 	public String getEmail() {
-		return email;
+		if(email != null && !email.isEmpty()) {
+			return email;
+		} else {
+			return "";
+		}
 	}
 
 	public void setEmail(String email) {
@@ -104,7 +108,10 @@ public class Account {
 	}
 
 	public boolean hasPermission(String permission) {
-		return this.permissions.contains(permission) || this.permissions.contains("*") ? true : false;
+		return this.permissions.contains(permission) ||
+                this.permissions.contains("*") ||
+                (this.permissions.contains("player") || this.permissions.contains("player.*")) && permission.startsWith("player.") ||
+                (this.permissions.contains("server") || this.permissions.contains("server.*")) && permission.startsWith("server.");
 	}
 	
 	public boolean removePermission(String permission) {

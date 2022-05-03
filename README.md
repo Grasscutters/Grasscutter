@@ -102,6 +102,8 @@ You can find the output jar in the root of the project folder.
 
 You might want to use this command (`java -jar grasscutter.jar -handbook`) in a cmd that is in the grasscutter folder. It will create a handbook file (GM Handbook.txt) where you can find the item IDs for stuff you want
 
+You may want to use this command (`java -jar grasscutter.jar -gachamap`) to generate a mapping file for the gacha record subsystem. The file will be generated to `GRASSCUTTER_RESOURCE/gcstatic` folder. Otherwise you may only see number IDs in the gacha record page.
+
 There is a dummy user named "Server" in every player's friends list that you can message to use commands. Commands also work in other chat rooms, such as private/team chats. to run commands ingame, you need to add prefix `/` or `!` such as `/pos`
 
 | Commands       | Usage                                             | Permission node           | Availability | description                                                  | Alias                                           |
@@ -110,12 +112,11 @@ There is a dummy user named "Server" in every player's friends list that you can
 | broadcast      | broadcast \<message>                               | server.broadcast          | Both side    | Sends a message to all the players.                          | b                                               |
 | coop           | coop \<playerId> \<target playerId>                 | server.coop               | Both side    | Forces someone to join the world of others.                  |                                                 |                                           
 | changescene    | changescene \<scene id>                            | player.changescene        | Client only  | Switch scenes by scene ID.                                   | scene                                           |
-| clearartifacts | clearartifacts                                    | player.clearartifacts     | Client only  | Deletes all unequipped and unlocked level 0 artifacts, including 5-star rarity ones from your inventory. | clearart                                        |
-| clearweapons   | clearweapons                                      | player.clearweapons       | Client only  | Deletes all unequipped and unlocked weapons, including 5-star rarity ones from your inventory. | clearwpns                                       |
+| clear          | clear <all\|wp\|art\|mat> [UID]                     | player.clearinv         | Client only  | Deletes all unequipped and unlocked level 0 artifacts(art)/weapons(wp)/material(all) or all, including 5-star rarity ones from your inventory. | clear                                        |
 | drop           | drop <itemID\|itemName> [amount]                  | server.drop               | Client only  | Drops an item around you.                                    | `d` `dropitem`                                  |
 | give           | give [player] <itemId\|itemName> [amount] [level] [finement] | player.give               | Both side    | Gives item(s) to you or the specified player. (finement option only weapon.)               | `g` `item` `giveitem`                           |
 | givechar       | givechar \<uid> \<avatarId>                 | player.givechar           | Both side    | Gives the player a specified character.                      | givec                                           |
-| giveart        | giveart [player] \<artifactId> \<mainPropId> [\<appendPropId>[,\<times>]]... [level] | player.giveart            | Both side    | Gives the player a specified reliquary.                      | givea                                           |
+| giveart        | giveart [player] \<artifactId> \<mainPropId> [\<appendPropId>[,\<times>]]... [level] | player.giveart            | Both side    | Gives the player a specified artifact.                      | gart                                           |
 | giveall       | giveall [uid] [amount]             | player.giveall      | Both side    | Gives all items.      | givea                                         |
 | godmode        | godmode [uid]                                     | player.godmode            | Client only  | Prevents you from taking damage.                             |                                                 |
 | heal           | heal                                              | player.heal               | Client only  | Heals all characters in your current team.                    | h                                               |
@@ -135,7 +136,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 | spawn          | spanw <entityID\|entityName> [level] [amount]     | server.spawn              | Client only  | Spawns an entity near you                                    |                                                 |
 | stop           | stop                                              | server.stop               | Both side    | Stops the server                                             |                                                 |
 | talent         | talent \<talentID> \<value>                         | player.settalent          | Client only  | Sets talent level for your currently selected character           |                                                 |
-| teleport       | teleport \<x> \<y> \<z>                              | player.teleport           | Client only  | Change the player's position.                                | tp                                              |
+| teleport       | teleport [@playerUid] \<x> \<y> \<z> [sceneId]                             | player.teleport           | Both side  | Change the player's position.                                | tp                                              |
 | tpall          |                                                   | player.tpall              | Client only  | Teleports all players in your world to your position         |                                                 |
 | weather        | weather \<weatherID> \<climateID>                   | player.weather            | Client only  | Changes the weather                                          | w                                               |
 

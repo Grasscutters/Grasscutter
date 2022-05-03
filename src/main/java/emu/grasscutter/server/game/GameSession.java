@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
@@ -112,12 +113,12 @@ public class GameSession extends KcpChannel {
 	
 	@Override
 	protected void onConnect() {
-		Grasscutter.getLogger().info("Client connected from " + getAddress().getHostString().toLowerCase());
+		Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_connect, getAddress().getHostString().toLowerCase()));
 	}
 
 	@Override
 	protected synchronized void onDisconnect() { // Synchronize so we dont add character at the same time
-		Grasscutter.getLogger().info("Client disconnected from " + getAddress().getHostString().toLowerCase());
+		Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_disconnect, getAddress().getHostString().toLowerCase()));
 
 		// Set state so no more packets can be handled
 		this.setState(SessionState.INACTIVE);
@@ -163,7 +164,7 @@ public class GameSession extends KcpChannel {
     	}
     	
     	// Log
-    	if (Grasscutter.getConfig().getGameServerOptions().LOG_PACKETS) {
+    	if (Grasscutter.getConfig().DebugMode == ServerDebugMode.ALL) {
     		logPacket(packet);
     	}
 		
@@ -230,7 +231,7 @@ public class GameSession extends KcpChannel {
 				}
 				
 				// Log packet
-				if (Grasscutter.getConfig().getGameServerOptions().LOG_PACKETS) {
+				if (Grasscutter.getConfig().DebugMode == ServerDebugMode.ALL) {
 					if (!loopPacket.contains(opcode)) {
 						Grasscutter.getLogger().info("RECV: " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
 						System.out.println(Utils.bytesToHex(payload));

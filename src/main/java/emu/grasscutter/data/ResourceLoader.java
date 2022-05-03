@@ -48,11 +48,12 @@ public class ResourceLoader {
 		loadOpenConfig();
 		// Load resources
 		loadResources();
-		loadScenePoints();
 		// Process into depots
 		GameDepot.load();
 		// Load spawn data
 		loadSpawnData();
+		// Load scene points - must be done AFTER resources are loaded
+		loadScenePoints();
 		// Custom - TODO move this somewhere else
 		try {
 			GameData.getAvatarSkillDepotDataMap().get(504).setAbilities(
@@ -168,6 +169,9 @@ public class ResourceLoader {
 
 				ScenePointEntry sl = new ScenePointEntry(sceneId + "_" + entry.getKey(), pointData);
 				scenePointList.add(sl);
+				GameData.getScenePointIdList().add(pointData.getId());
+				
+				pointData.updateDailyDungeon();
 			}
 
 			for (ScenePointEntry entry : scenePointList) {
@@ -303,18 +307,7 @@ public class ResourceLoader {
 					}
 					
 					for (Entry<String, OpenConfigData[]> e : config.entrySet()) {
-						List<String> abilityList = new ArrayList<>();
-						int extraTalentIndex = 0;
-						
-						for (OpenConfigData entry : e.getValue()) {
-							if (entry.$type.contains("AddAbility")) {
-								abilityList.add(entry.abilityName);
-							} else if (entry.talentIndex > 0) {
-								extraTalentIndex = entry.talentIndex;
-							}
-						}
-						
-						OpenConfigEntry entry = new OpenConfigEntry(e.getKey(), abilityList, extraTalentIndex);
+						OpenConfigEntry entry = new OpenConfigEntry(e.getKey(), e.getValue());
 						map.put(entry.getName(), entry);
 					}
 				}
@@ -350,9 +343,11 @@ public class ResourceLoader {
 		public OpenConfigData[] data;
 	}
 	
-	private static class OpenConfigData {
+	public static class OpenConfigData {
 		public String $type;
 		public String abilityName;
 		public int talentIndex;
+		public int skillID;
+		public int pointDelta;
 	}
 }

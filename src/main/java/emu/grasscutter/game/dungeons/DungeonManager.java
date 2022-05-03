@@ -28,7 +28,7 @@ public class DungeonManager {
 	public void getEntryInfo(Player player, int pointId) {
 		ScenePointEntry entry = GameData.getScenePointEntryById(player.getScene().getId(), pointId);
 		
-		if (entry == null || entry.getPointData().getDungeonIds() == null) {
+		if (entry == null) {
 			// Error
 			player.sendPacket(new PacketDungeonEntryInfoRsp());
 			return;
@@ -37,11 +37,11 @@ public class DungeonManager {
 		player.sendPacket(new PacketDungeonEntryInfoRsp(player, entry.getPointData()));
 	}
 
-	public void enterDungeon(Player player, int pointId, int dungeonId) {
+	public boolean enterDungeon(Player player, int pointId, int dungeonId) {
 		DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
 		
 		if (data == null) {
-			return;
+			return false;
 		}
 		
 		Grasscutter.getLogger().info(player.getNickname() + " is trying to enter dungeon " + dungeonId);
@@ -53,6 +53,7 @@ public class DungeonManager {
 		
 		player.getScene().setPrevScenePoint(pointId);
 		player.sendPacket(new PacketPlayerEnterDungeonRsp(pointId, dungeonId));
+		return true;
 	}
 	
 	public void exitDungeon(Player player) {
@@ -78,5 +79,11 @@ public class DungeonManager {
 		// Transfer player back to world
 		player.getWorld().transferPlayerToScene(player, prevScene, prevPos);
 		player.sendPacket(new BasePacket(PacketOpcodes.PlayerQuitDungeonRsp));
+	}
+	
+	public void updateDailyDungeons() {
+		for (ScenePointEntry entry : GameData.getScenePointEntries().values()) {
+			entry.getPointData().updateDailyDungeon();
+		}
 	}
 }

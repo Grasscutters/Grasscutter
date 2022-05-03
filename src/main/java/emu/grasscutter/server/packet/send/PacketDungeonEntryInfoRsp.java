@@ -17,11 +17,13 @@ public class PacketDungeonEntryInfoRsp extends BasePacket {
 		DungeonEntryInfoRsp.Builder proto = DungeonEntryInfoRsp.newBuilder()
 				.setPointId(pointData.getId());
 		
-		for (int dungeonId : pointData.getDungeonIds()) {
-			DungeonEntryInfo info = DungeonEntryInfo.newBuilder().setDungeonId(dungeonId).build();
-			proto.addDungeonEntryList(info);
+		if (pointData.getDungeonIds() != null) {
+			for (int dungeonId : pointData.getDungeonIds()) {
+				DungeonEntryInfo info = DungeonEntryInfo.newBuilder().setDungeonId(dungeonId).build();
+				proto.addDungeonEntryList(info);
+			}
 		}
-		
+
 		this.setData(proto);
 	}
 	

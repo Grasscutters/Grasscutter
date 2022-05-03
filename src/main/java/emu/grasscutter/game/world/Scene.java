@@ -25,6 +25,7 @@ import emu.grasscutter.scripts.data.SceneBlock;
 import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.ScriptArgs;
+import emu.grasscutter.server.packet.send.PacketAvatarSkillInfoNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
@@ -175,7 +176,7 @@ public class Scene {
 	}
 
 	public void setDungeonData(DungeonData dungeonData) {
-		if (this.dungeonData != null || this.getSceneType() != SceneType.SCENE_DUNGEON || dungeonData.getSceneId() != this.getId()) {
+		if (dungeonData == null || this.dungeonData != null || this.getSceneType() != SceneType.SCENE_DUNGEON || dungeonData.getSceneId() != this.getId()) {
 			return;
 		}
 		this.dungeonData = dungeonData;
@@ -271,6 +272,13 @@ public class Scene {
 		}
 		
 		this.addEntity(player.getTeamManager().getCurrentAvatarEntity());
+		
+		// Notify the client of any extra skill charges
+		for (EntityAvatar entity : player.getTeamManager().getActiveTeam()) {
+			if (entity.getAvatar().getSkillExtraChargeMap().size() > 0) {
+				player.sendPacket(new PacketAvatarSkillInfoNotify(entity.getAvatar()));
+			}
+		}
 	}
 	
 	private void addEntityDirectly(GameEntity entity) {
@@ -375,8 +383,8 @@ public class Scene {
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
 
 		// Reward drop
-		if (target instanceof EntityMonster) {
-			Grasscutter.getGameServer().getDropManager().callDrop((EntityMonster) target);
+		if (target instanceof EntityMonster && this.getSceneType() != SceneType.SCENE_DUNGEON) {
+			getWorld().getServer().getDropManager().callDrop((EntityMonster) target);
 		}
 
 		this.removeEntity(target);
@@ -508,6 +516,7 @@ public class Scene {
 			}
 			
 			group.triggers.forEach(getScriptManager()::registerTrigger);
+			group.regions.forEach(getScriptManager()::registerRegion);
 		}
 		
 		// Spawn gadgets AFTER triggers are added
@@ -526,6 +535,7 @@ public class Scene {
 		
 		for (SceneGroup group : block.groups) {
 			group.triggers.forEach(getScriptManager()::deregisterTrigger);
+			group.regions.forEach(getScriptManager()::deregisterRegion);
 		}
 	}
 	

@@ -17,7 +17,7 @@ import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.netty.KcpServer;
-import emu.grasscutter.server.event.ServerEvent;
+import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
@@ -72,7 +72,7 @@ public final class GameServer extends KcpServer {
 				try {
 					onTick();
 				} catch (Exception e) {
-					Grasscutter.getLogger().error("An error occurred during game update.", e);
+					Grasscutter.getLogger().error(Grasscutter.getLanguage().An_error_occurred_during_game_update, e);
 				}
 			}
 		}, new Date(), 1000L);
@@ -207,8 +207,8 @@ public final class GameServer extends KcpServer {
 
 	@Override
 	public void onStartFinish() {
-		Grasscutter.getLogger().info("Grasscutter is FREE software. If you have paid for this, you may have been scammed. Homepage: https://github.com/Grasscutters/Grasscutter");
-		Grasscutter.getLogger().info("Game Server started on port " + address.getPort());
+		Grasscutter.getLogger().info(Grasscutter.getLanguage().grasscutter_is_free);
+		Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Game_start_port, address.getPort()));
 		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
 	

@@ -3,69 +3,64 @@ package emu.grasscutter.server.dispatch;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.protobuf.ByteString;
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpServer;
-import com.sun.net.httpserver.HttpsConfigurator;
-import com.sun.net.httpserver.HttpsServer;
 
 import emu.grasscutter.Config;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerDebugMode;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp;
 import emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.QueryRegionListHttpRsp;
 import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
+import emu.grasscutter.server.dispatch.authentication.AuthenticationHandler;
+import emu.grasscutter.server.dispatch.authentication.DefaultAuthenticationHandler;
 import emu.grasscutter.server.dispatch.json.*;
 import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
 import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
+import emu.grasscutter.server.http.gacha.GachaRecordHandler;
+import emu.grasscutter.server.http.gcstatic.StaticFileHandler;
 import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.Utils;
+import express.Express;
+import org.eclipse.jetty.server.Connector;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.ServerConnector;
+import org.eclipse.jetty.util.ssl.SslContextFactory;
 
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
 import java.io.*;
-import java.net.BindException;
-import java.net.InetSocketAddress;
-import java.net.URI;
 import java.net.URLDecoder;
-import java.security.KeyStore;
 import java.util.*;
 
 public final class DispatchServer {
 	public static String query_region_list = "";
 	public static String query_cur_region = "";
 
-	private final InetSocketAddress address;
 	private final Gson gson;
 	private final String defaultServerName = "os_usa";
 
 	public String regionListBase64;
-	public HashMap<String, RegionData> regions;
-	private HttpServer server;
+	public Map<String, RegionData> regions;
+	private AuthenticationHandler authHandler;
+	private Express httpServer;
 
 	public DispatchServer() {
-		this.regions = new HashMap<String, RegionData>();
-		this.address = new InetSocketAddress(Grasscutter.getConfig().getDispatchOptions().Ip,
-				Grasscutter.getConfig().getDispatchOptions().Port);
+		this.regions = new HashMap<>();
 		this.gson = new GsonBuilder().create();
 
 		this.loadQueries();
 		this.initRegion();
 	}
 
-	@Deprecated
-	public HttpServer getServer() {
-		return server;
-	}
-	
-	public HttpServer getHttpServer() {
-		return server;
+	public Express getServer() {
+		return httpServer;
 	}
 
-	public InetSocketAddress getAddress() {
-		return address;
+	public void setHttpServer(Express httpServer) {
+		this.httpServer.stop();
+		this.httpServer = httpServer;
+		this.httpServer.listen(Grasscutter.getConfig().getDispatchOptions().Port);
 	}
 
 	public Gson getGsonFactory() {
@@ -74,7 +69,7 @@ public final class DispatchServer {
 
 	public QueryCurrRegionHttpRsp getCurrRegion() {
 		// Needs to be fixed by having the game servers connect to the dispatch server.
-		if (Grasscutter.getConfig().RunMode.equalsIgnoreCase("HYBRID")) {
+		if (Grasscutter.getConfig().RunMode == ServerRunMode.HYBRID) {
 			return regions.get(defaultServerName).parsedRegionQuery;
 		}
 
@@ -110,7 +105,7 @@ public final class DispatchServer {
 
 			List<RegionSimpleInfo> servers = new ArrayList<>();
 			List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts
-			if (Grasscutter.getConfig().RunMode.equalsIgnoreCase("HYBRID")) { // Automatically add the game server if in
+			if (Grasscutter.getConfig().RunMode == ServerRunMode.HYBRID) { // Automatically add the game server if in
 																				// hybrid mode
 				RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
 						.setName("os_usa")
@@ -125,7 +120,7 @@ public final class DispatchServer {
 										+ (Grasscutter.getConfig().getDispatchOptions().PublicPort != 0
 												? Grasscutter.getConfig().getDispatchOptions().PublicPort
 												: Grasscutter.getConfig().getDispatchOptions().Port)
-										+ "/query_cur_region_" + defaultServerName)
+										+ "/query_cur_region/" + defaultServerName)
 						.build();
 				usedNames.add(defaultServerName);
 				servers.add(server);
@@ -168,7 +163,9 @@ public final class DispatchServer {
 										+ (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty()
 												? Grasscutter.getConfig().getDispatchOptions().Ip
 												: Grasscutter.getConfig().getDispatchOptions().PublicIp)
-										+ ":" + getAddress().getPort() + "/query_cur_region_" + regionInfo.Name)
+										+ ":" + (Grasscutter.getConfig().getDispatchOptions().PublicPort != 0
+										? Grasscutter.getConfig().getDispatchOptions().PublicPort
+										: Grasscutter.getConfig().getDispatchOptions().Port) + "/query_cur_region/" + regionInfo.Name)
 						.build();
 				usedNames.add(regionInfo.Name);
 				servers.add(server);
@@ -198,193 +195,129 @@ public final class DispatchServer {
 		}
 	}
 
-	private HttpServer safelyCreateServer(InetSocketAddress address) {
-		try {
-			return HttpServer.create(address, 0);
-		} catch (BindException ignored) {
-			Grasscutter.getLogger().error("Unable to bind to port: " + getAddress().getPort() + " (HTTP)");
-		} catch (Exception exception) {
-			Grasscutter.getLogger().error("Unable to start HTTP server.", exception);
-		}
-		return null;
-	}
-	
-	private KeyManagerFactory createKeyManagerFactory(File keystore, String password) throws Exception {
-		char[] pass = password.toCharArray();
-		KeyManagerFactory kmf = null;
-		
-		try (FileInputStream fis = new FileInputStream(keystore)) {
-			
-			KeyStore ks = KeyStore.getInstance("PKCS12");
-			ks.load(fis, pass);
-			
-			kmf = KeyManagerFactory.getInstance("SunX509");
-			kmf.init(ks, pass);
-		} catch (Exception e) {
-			throw e;
-		}
-		
-		return kmf;
-	}
-
 	public void start() throws Exception {
-		if (Grasscutter.getConfig().getDispatchOptions().UseSSL) {
-			// Keystore
-			SSLContext sslContext = SSLContext.getInstance("TLS");
-			KeyManagerFactory kmf = null;
-			File keystoreFile = new File(Grasscutter.getConfig().getDispatchOptions().KeystorePath);
-			
-			if (keystoreFile.exists()) {
-				try {
-					kmf = createKeyManagerFactory(keystoreFile, Grasscutter.getConfig().getDispatchOptions().KeystorePassword);
-				} catch (Exception e) {
-					Grasscutter.getLogger().warn("[Dispatch] Unable to load keystore. Trying default keystore password...");
-					
-					try {
-						kmf = createKeyManagerFactory(keystoreFile, "123456");
-						Grasscutter.getLogger().warn(
-							"[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to 123456 in config.json.");
-					} catch (Exception e2) {
-						Grasscutter.getLogger().warn("[Dispatch] Error while loading keystore!");
-						e2.printStackTrace();
+		httpServer = new Express(config -> {
+			config.server(() -> {
+				Server server = new Server();
+				ServerConnector serverConnector;
+
+				if(Grasscutter.getConfig().getDispatchOptions().UseSSL) {
+					SslContextFactory.Server sslContextFactory = new SslContextFactory.Server();
+					File keystoreFile = new File(Grasscutter.getConfig().getDispatchOptions().KeystorePath);
+
+					if(keystoreFile.exists()) {
+						try {
+							sslContextFactory.setKeyStorePath(keystoreFile.getPath());
+							sslContextFactory.setKeyStorePassword(Grasscutter.getConfig().getDispatchOptions().KeystorePassword);
+						} catch (Exception e) {
+							e.printStackTrace();
+							Grasscutter.getLogger().warn(Grasscutter.getLanguage().Not_load_keystore);
+
+							try {
+								sslContextFactory.setKeyStorePath(keystoreFile.getPath());
+								sslContextFactory.setKeyStorePassword("123456");
+								Grasscutter.getLogger().warn(Grasscutter.getLanguage().Use_default_keystore);
+							} catch (Exception e2) {
+								Grasscutter.getLogger().warn(Grasscutter.getLanguage().Load_keystore_error);
+								e2.printStackTrace();
+							}
+						}
+
+						serverConnector = new ServerConnector(server, sslContextFactory);
+					} else {
+						Grasscutter.getLogger().warn(Grasscutter.getLanguage().Not_find_ssl_cert);
+						Grasscutter.getConfig().getDispatchOptions().UseSSL = false;
+
+						serverConnector = new ServerConnector(server);
 					}
+				} else {
+					serverConnector = new ServerConnector(server);
 				}
-			}
-			
-			if (kmf == null) {
-				Grasscutter.getLogger().warn("[Dispatch] No SSL cert found! Falling back to HTTP server.");
-				Grasscutter.getConfig().getDispatchOptions().UseSSL = false;
-				server = this.safelyCreateServer(this.getAddress());
-			}
-			
-			HttpsServer httpsServer = null;
-			
-			try {
-				httpsServer = HttpsServer.create(getAddress(), 0);
-				sslContext.init(kmf.getKeyManagers(), null, null);
-				httpsServer.setHttpsConfigurator(new HttpsConfigurator(sslContext));
-				server = httpsServer;
-			} catch (BindException e) {
-				Grasscutter.getLogger().error("Unable to bind to port: " + getAddress().getPort() + " (HTTPS)");
-			}
-		} else {
-			server = this.safelyCreateServer(this.getAddress());
-		}
 
-		if (server == null)
-			throw new NullPointerException("An HTTP server was not created.");
+				serverConnector.setPort(Grasscutter.getConfig().getDispatchOptions().Port);
+				server.setConnectors(new Connector[]{serverConnector});
+				return server;
+			});
 
-		server.createContext("/", t -> responseHTML(t, "Hello"));
+			config.enforceSsl = Grasscutter.getConfig().getDispatchOptions().UseSSL;
+			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.ALL) {
+				config.enableDevLogging();
+			}
+		});
+
+		httpServer.get("/", (req, res) -> res.send(Grasscutter.getLanguage().Welcome));
+
+		httpServer.raw().error(404, ctx -> {
+			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING) {
+				Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Potential_unhandled_request, ctx.method(), ctx.url()));
+			}
+			ctx.contentType("text/html");
+			ctx.result("<!doctype html><html lang=\"en\"><body><img src=\"https://http.cat/404\" /></body></html>"); // I'm like 70% sure this won't break anything.
+		});
+
+		// Authentication Handler
+		// These routes are so that authentication routes are always the same no matter what auth system is used.
+		httpServer.get("/authentication/type", (req, res) -> {
+			res.send(this.getAuthHandler().getClass().getName());
+		});
+
+		httpServer.post("/authentication/login", (req, res) -> this.getAuthHandler().handleLogin(req, res));
+		httpServer.post("/authentication/register", (req, res) -> this.getAuthHandler().handleRegister(req, res));
+		httpServer.post("/authentication/change_password", (req, res) -> this.getAuthHandler().handleChangePassword(req, res));
 
 		// Dispatch
-		server.createContext("/query_region_list", t -> {
+		httpServer.get("/query_region_list", (req, res) -> {
 			// Log
-			Grasscutter.getLogger()
-					.info(String.format("[Dispatch] Client %s request: query_region_list", t.getRemoteAddress()));
+			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s request: query_region_list", req.ip()));
 
 			// Invoke event.
 			QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListBase64); event.call();
 			// Respond with event result.
-			responseHTML(t, event.getRegionList());
+			res.send(event.getRegionList());
 		});
 
-		for (String regionName : regions.keySet()) {
-			server.createContext("/query_cur_region_" + regionName, t -> {
-				String regionCurrentBase64 = regions.get(regionName).Base64;
-				// Log
-				Grasscutter.getLogger().info(
-						String.format("Client %s request: query_cur_region_%s", t.getRemoteAddress(), regionName));
-				// Create a response form the request query parameters
-				URI uri = t.getRequestURI();
-				String response = "CAESGE5vdCBGb3VuZCB2ZXJzaW9uIGNvbmZpZw==";
-				if (uri.getQuery() != null && uri.getQuery().length() > 0) {
-					response = regionCurrentBase64;
-				}
-				
-				// Invoke event.
-				QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(response); event.call();
-				// Respond with event result.
-				responseHTML(t, event.getRegionInfo());
-			});
-		}
+		httpServer.get("/query_cur_region/:id", (req, res) -> {
+			String regionName = req.params("id");
+			// Log
+			Grasscutter.getLogger().info(
+					String.format("Client %s request: query_cur_region/%s", req.ip(), regionName));
+			// Create a response form the request query parameters
+			String response = "CAESGE5vdCBGb3VuZCB2ZXJzaW9uIGNvbmZpZw==";
+			if (req.query().values().size() > 0) {
+				response = regions.get(regionName).Base64;
+			}
 
-		// Login via account
-		server.createContext("/hk4e_global/mdk/shield/api/login", t -> {
+			// Invoke event.
+			QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(response); event.call();
+			// Respond with event result.
+			res.send(event.getRegionInfo());
+		});
+
+		// Login
+
+		httpServer.post("/hk4e_global/mdk/shield/api/login", (req, res) -> {
 			// Get post data
 			LoginAccountRequestJson requestData = null;
 			try {
-				String body = Utils.toString(t.getRequestBody());
+				String body = req.ctx().body();
 				requestData = getGsonFactory().fromJson(body, LoginAccountRequestJson.class);
-			} catch (Exception ignored) {
-			}
+			} catch (Exception ignored) { }
 
 			// Create response json
 			if (requestData == null) {
 				return;
 			}
-			LoginResultJson responseData = new LoginResultJson();
+			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s is trying to log in", req.ip()));
 
-			Grasscutter.getLogger()
-					.info(String.format("[Dispatch] Client %s is trying to log in", t.getRemoteAddress()));
-
-			// Login
-			Account account = DatabaseHelper.getAccountByName(requestData.account);
-
-			// Check if account exists, else create a new one.
-			if (account == null) {
-				// Account doesnt exist, so we can either auto create it if the config value is
-				// set
-				if (Grasscutter.getConfig().getDispatchOptions().AutomaticallyCreateAccounts) {
-					// This account has been created AUTOMATICALLY. There will be no permissions
-					// added.
-					account = DatabaseHelper.createAccountWithId(requestData.account, 0);
-
-					for (String permission : Grasscutter.getConfig().getDispatchOptions().defaultPermissions) {
-						account.addPermission(permission);
-					}
-
-					if (account != null) {
-						responseData.message = "OK";
-						responseData.data.account.uid = account.getId();
-						responseData.data.account.token = account.generateSessionKey();
-						responseData.data.account.email = account.getEmail();
-
-						Grasscutter.getLogger()
-								.info(String.format("[Dispatch] Client %s failed to log in: Account %s created",
-										t.getRemoteAddress(), responseData.data.account.uid));
-					} else {
-						responseData.retcode = -201;
-						responseData.message = "Username not found, create failed.";
-
-						Grasscutter.getLogger().info(String.format(
-								"[Dispatch] Client %s failed to log in: Account create failed", t.getRemoteAddress()));
-					}
-				} else {
-					responseData.retcode = -201;
-					responseData.message = "Username not found.";
-
-					Grasscutter.getLogger().info(String
-							.format("[Dispatch] Client %s failed to log in: Account no found", t.getRemoteAddress()));
-				}
-			} else {
-				// Account was found, log the player in
-				responseData.message = "OK";
-				responseData.data.account.uid = account.getId();
-				responseData.data.account.token = account.generateSessionKey();
-				responseData.data.account.email = account.getEmail();
-
-				Grasscutter.getLogger().info(String.format("[Dispatch] Client %s logged in as %s", t.getRemoteAddress(),
-						responseData.data.account.uid));
-			}
-
-			responseJSON(t, responseData);
+			res.send(this.getAuthHandler().handleGameLogin(req, requestData));
 		});
+
 		// Login via token
-		server.createContext("/hk4e_global/mdk/shield/api/verify", t -> {
+		httpServer.post("/hk4e_global/mdk/shield/api/verify", (req, res) -> {
 			// Get post data
 			LoginTokenRequestJson requestData = null;
 			try {
-				String body = Utils.toString(t.getRequestBody());
+				String body = req.ctx().body();
 				requestData = getGsonFactory().fromJson(body, LoginTokenRequestJson.class);
 			} catch (Exception ignored) {
 			}
@@ -394,8 +327,7 @@ public final class DispatchServer {
 				return;
 			}
 			LoginResultJson responseData = new LoginResultJson();
-			Grasscutter.getLogger()
-					.info(String.format("[Dispatch] Client %s is trying to log in via token", t.getRemoteAddress()));
+			Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_login_token, req.ip()));
 
 			// Login
 			Account account = DatabaseHelper.getAccountById(requestData.uid);
@@ -403,28 +335,29 @@ public final class DispatchServer {
 			// Test
 			if (account == null || !account.getSessionKey().equals(requestData.token)) {
 				responseData.retcode = -111;
-				responseData.message = "Game account cache information error";
+				responseData.message = Grasscutter.getLanguage().Game_account_cache_error;
 
 				Grasscutter.getLogger()
-						.info(String.format("[Dispatch] Client %s failed to log in via token", t.getRemoteAddress()));
+						.info(String.format(Grasscutter.getLanguage().Client_token_login_failed, req.ip()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.account.uid = requestData.uid;
 				responseData.data.account.token = requestData.token;
 				responseData.data.account.email = account.getEmail();
 
-				Grasscutter.getLogger().info(String.format("[Dispatch] Client %s logged in via token as %s",
-						t.getRemoteAddress(), responseData.data.account.uid));
+				Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_login_in_token,
+						req.ip(), responseData.data.account.uid));
 			}
 
-			responseJSON(t, responseData);
+			res.send(responseData);
 		});
+
 		// Exchange for combo token
-		server.createContext("/hk4e_global/combo/granter/login/v2/login", t -> {
+		httpServer.post("/hk4e_global/combo/granter/login/v2/login", (req, res) -> {
 			// Get post data
 			ComboTokenReqJson requestData = null;
 			try {
-				String body = Utils.toString(t.getRequestBody());
+				String body = req.ctx().body();
 				requestData = getGsonFactory().fromJson(body, ComboTokenReqJson.class);
 			} catch (Exception ignored) {
 			}
@@ -434,7 +367,7 @@ public final class DispatchServer {
 				return;
 			}
 			LoginTokenData loginData = getGsonFactory().fromJson(requestData.data, LoginTokenData.class); // Get login
-																											// data
+			// data
 			ComboTokenResJson responseData = new ComboTokenResJson();
 
 			// Login
@@ -443,10 +376,10 @@ public final class DispatchServer {
 			// Test
 			if (account == null || !account.getSessionKey().equals(loginData.token)) {
 				responseData.retcode = -201;
-				responseData.message = "Wrong session key.";
+				responseData.message = Grasscutter.getLanguage().Wrong_session_key;
 
 				Grasscutter.getLogger().info(
-						String.format("[Dispatch] Client %s failed to exchange combo token", t.getRemoteAddress()));
+						String.format(Grasscutter.getLanguage().Client_failed_exchange_combo_token, req.ip()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.open_id = loginData.uid;
@@ -454,110 +387,73 @@ public final class DispatchServer {
 				responseData.data.combo_token = account.generateLoginToken();
 
 				Grasscutter.getLogger().info(
-						String.format("[Dispatch] Client %s succeed to exchange combo token", t.getRemoteAddress()));
+						String.format(Grasscutter.getLanguage().Client_exchange_combo_token, req.ip()));
 			}
 
-			responseJSON(t, responseData);
+			res.send(responseData);
 		});
+
+		// TODO: There are some missing route request types here (You can tell if they are missing if they are .all and not anything else)
+		//  When http requests for theses routes are found please remove it from the list in DispatchHttpJsonHandler and update the route request types here
+
 		// Agreement and Protocol
-		server.createContext( // hk4e-sdk-os.hoyoverse.com
-				"/hk4e_global/mdk/agreement/api/getAgreementInfos",
-				new DispatchHttpJsonHandler(
-						"{\"retcode\":0,\"message\":\"OK\",\"data\":{\"marketing_agreements\":[]}}"));
-		server.createContext( // hk4e-sdk-os.hoyoverse.com
-				"/hk4e_global/combo/granter/api/compareProtocolVersion",
-				new DispatchHttpJsonHandler(
-						"{\"retcode\":0,\"message\":\"OK\",\"data\":{\"modified\":true,\"protocol\":{\"id\":0,\"app_id\":4,\"language\":\"en\",\"user_proto\":\"\",\"priv_proto\":\"\",\"major\":7,\"minimum\":0,\"create_time\":\"0\",\"teenager_proto\":\"\",\"third_proto\":\"\"}}}"));
+		// hk4e-sdk-os.hoyoverse.com
+		httpServer.get("/hk4e_global/mdk/agreement/api/getAgreementInfos", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"marketing_agreements\":[]}}"));
+		// hk4e-sdk-os.hoyoverse.com
+		// this could be either GET or POST based on the observation of different clients
+		httpServer.all("/hk4e_global/combo/granter/api/compareProtocolVersion", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"modified\":true,\"protocol\":{\"id\":0,\"app_id\":4,\"language\":\"en\",\"user_proto\":\"\",\"priv_proto\":\"\",\"major\":7,\"minimum\":0,\"create_time\":\"0\",\"teenager_proto\":\"\",\"third_proto\":\"\"}}}"));
+
 		// Game data
-		server.createContext( // hk4e-api-os.hoyoverse.com
-				"/common/hk4e_global/announcement/api/getAlertPic",
-				new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"total\":0,\"list\":[]}}"));
-		server.createContext( // hk4e-api-os.hoyoverse.com
-				"/common/hk4e_global/announcement/api/getAlertAnn",
-				new DispatchHttpJsonHandler(
-						"{\"retcode\":0,\"message\":\"OK\",\"data\":{\"alert\":false,\"alert_id\":0,\"remind\":true}}"));
-		server.createContext( // hk4e-api-os.hoyoverse.com
-				"/common/hk4e_global/announcement/api/getAnnList",
-				new DispatchHttpJsonHandler(
-						"{\"retcode\":0,\"message\":\"OK\",\"data\":{\"list\":[],\"total\":0,\"type_list\":[],\"alert\":false,\"alert_id\":0,\"timezone\":0,\"t\":\""
-								+ System.currentTimeMillis() + "\"}}"));
-		server.createContext( // hk4e-api-os-static.hoyoverse.com
-				"/common/hk4e_global/announcement/api/getAnnContent",
-				new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"list\":[],\"total\":0}}"));
-		server.createContext( // hk4e-sdk-os.hoyoverse.com
-				"/hk4e_global/mdk/shopwindow/shopwindow/listPriceTier",
-				new DispatchHttpJsonHandler(
-						"{\"retcode\":0,\"message\":\"OK\",\"data\":{\"suggest_currency\":\"USD\",\"tiers\":[]}}"));
+		// hk4e-api-os.hoyoverse.com
+		httpServer.all("/common/hk4e_global/announcement/api/getAlertPic", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"total\":0,\"list\":[]}}"));
+		// hk4e-api-os.hoyoverse.com
+		httpServer.all("/common/hk4e_global/announcement/api/getAlertAnn", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"alert\":false,\"alert_id\":0,\"remind\":true}}"));
+		// hk4e-api-os.hoyoverse.com
+		httpServer.all("/common/hk4e_global/announcement/api/getAnnList", new AnnouncementHandler());
+		// hk4e-api-os-static.hoyoverse.com
+		httpServer.all("/common/hk4e_global/announcement/api/getAnnContent", new AnnouncementHandler());
+		// hk4e-sdk-os.hoyoverse.com
+		httpServer.all("/hk4e_global/mdk/shopwindow/shopwindow/listPriceTier", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"suggest_currency\":\"USD\",\"tiers\":[]}}"));
+
 		// Captcha
-		server.createContext( // api-account-os.hoyoverse.com
-				"/account/risky/api/check",
-				new DispatchHttpJsonHandler(
-						"{\"retcode\":0,\"message\":\"OK\",\"data\":{\"id\":\"c8820f246a5241ab9973f71df3ddd791\",\"action\":\"\",\"geetest\":{\"challenge\":\"\",\"gt\":\"\",\"new_captcha\":0,\"success\":1}}}"));
+		// api-account-os.hoyoverse.com
+		httpServer.post("/account/risky/api/check", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"id\":\"none\",\"action\":\"ACTION_NONE\",\"geetest\":null}}"));
+
 		// Config
-		server.createContext( // sdk-os-static.hoyoverse.com
-				"/combo/box/api/config/sdk/combo",
-				new DispatchHttpJsonHandler(
-						"{\"retcode\":0,\"message\":\"OK\",\"data\":{\"vals\":{\"disable_email_bind_skip\":\"false\",\"email_bind_remind_interval\":\"7\",\"email_bind_remind\":\"true\"}}}"));
-		server.createContext( // hk4e-sdk-os-static.hoyoverse.com
-				"/hk4e_global/combo/granter/api/getConfig",
-				new DispatchHttpJsonHandler(
-						"{\"retcode\":0,\"message\":\"OK\",\"data\":{\"protocol\":true,\"qr_enabled\":false,\"log_level\":\"INFO\",\"announce_url\":\"https://webstatic-sea.hoyoverse.com/hk4e/announcement/index.html?sdk_presentation_style=fullscreen\\u0026sdk_screen_transparent=true\\u0026game_biz=hk4e_global\\u0026auth_appid=announcement\\u0026game=hk4e#/\",\"push_alias_type\":2,\"disable_ysdk_guard\":false,\"enable_announce_pic_popup\":true}}"));
-		server.createContext( // hk4e-sdk-os-static.hoyoverse.com
-				"/hk4e_global/mdk/shield/api/loadConfig",
-				new DispatchHttpJsonHandler(
-						"{\"retcode\":0,\"message\":\"OK\",\"data\":{\"id\":6,\"game_key\":\"hk4e_global\",\"client\":\"PC\",\"identity\":\"I_IDENTITY\",\"guest\":false,\"ignore_versions\":\"\",\"scene\":\"S_NORMAL\",\"name\":\"原神海外\",\"disable_regist\":false,\"enable_email_captcha\":false,\"thirdparty\":[\"fb\",\"tw\"],\"disable_mmt\":false,\"server_guest\":false,\"thirdparty_ignore\":{\"tw\":\"\",\"fb\":\"\"},\"enable_ps_bind_account\":false,\"thirdparty_login_configs\":{\"tw\":{\"token_type\":\"TK_GAME_TOKEN\",\"game_token_expires_in\":604800},\"fb\":{\"token_type\":\"TK_GAME_TOKEN\",\"game_token_expires_in\":604800}}}}"));
+		// sdk-os-static.hoyoverse.com
+		httpServer.get("/combo/box/api/config/sdk/combo", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"vals\":{\"disable_email_bind_skip\":\"false\",\"email_bind_remind_interval\":\"7\",\"email_bind_remind\":\"true\"}}}"));
+		// hk4e-sdk-os-static.hoyoverse.com
+		httpServer.get("/hk4e_global/combo/granter/api/getConfig", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"protocol\":true,\"qr_enabled\":false,\"log_level\":\"INFO\",\"announce_url\":\"https://webstatic-sea.hoyoverse.com/hk4e/announcement/index.html?sdk_presentation_style=fullscreen\\u0026sdk_screen_transparent=true\\u0026game_biz=hk4e_global\\u0026auth_appid=announcement\\u0026game=hk4e#/\",\"push_alias_type\":2,\"disable_ysdk_guard\":false,\"enable_announce_pic_popup\":true}}"));
+		// hk4e-sdk-os-static.hoyoverse.com
+		httpServer.get("/hk4e_global/mdk/shield/api/loadConfig", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"id\":6,\"game_key\":\"hk4e_global\",\"client\":\"PC\",\"identity\":\"I_IDENTITY\",\"guest\":false,\"ignore_versions\":\"\",\"scene\":\"S_NORMAL\",\"name\":\"原神海外\",\"disable_regist\":false,\"enable_email_captcha\":false,\"thirdparty\":[\"fb\",\"tw\"],\"disable_mmt\":false,\"server_guest\":false,\"thirdparty_ignore\":{\"tw\":\"\",\"fb\":\"\"},\"enable_ps_bind_account\":false,\"thirdparty_login_configs\":{\"tw\":{\"token_type\":\"TK_GAME_TOKEN\",\"game_token_expires_in\":604800},\"fb\":{\"token_type\":\"TK_GAME_TOKEN\",\"game_token_expires_in\":604800}}}}"));
 		// Test api?
-		server.createContext( // abtest-api-data-sg.hoyoverse.com
-				"/data_abtest_api/config/experiment/list",
-				new DispatchHttpJsonHandler(
-						"{\"retcode\":0,\"success\":true,\"message\":\"\",\"data\":[{\"code\":1000,\"type\":2,\"config_id\":\"14\",\"period_id\":\"6036_99\",\"version\":\"1\",\"configs\":{\"cardType\":\"old\"}}]}"));
-		// Log Server
-		server.createContext( // log-upload-os.mihoyo.com
-				"/log/sdk/upload",
-				new DispatchHttpJsonHandler("{\"code\":0}"));
-		server.createContext( // log-upload-os.mihoyo.com
-				"/sdk/upload",
-				new DispatchHttpJsonHandler("{\"code\":0}"));
-		server.createContext( // /perf/config/verify?device_id=xxx&platform=x&name=xxx
-				"/perf/config/verify",
-				new DispatchHttpJsonHandler("{\"code\":0}"));
+		// abtest-api-data-sg.hoyoverse.com
+		httpServer.post("/data_abtest_api/config/experiment/list", new DispatchHttpJsonHandler("{\"retcode\":0,\"success\":true,\"message\":\"\",\"data\":[{\"code\":1000,\"type\":2,\"config_id\":\"14\",\"period_id\":\"6036_99\",\"version\":\"1\",\"configs\":{\"cardType\":\"old\"}}]}"));
+
+		// log-upload-os.mihoyo.com
+		httpServer.all("/log/sdk/upload", new DispatchHttpJsonHandler("{\"code\":0}"));
+		httpServer.all("/sdk/upload", new DispatchHttpJsonHandler("{\"code\":0}"));
+		httpServer.post("/sdk/dataUpload", new DispatchHttpJsonHandler("{\"code\":0}"));
+		// /perf/config/verify?device_id=xxx&platform=x&name=xxx
+		httpServer.all("/perf/config/verify", new DispatchHttpJsonHandler("{\"code\":0}"));
 
 		// Logging servers
-		server.createContext( // overseauspider.yuanshen.com
-				"/log",
-				new DispatchHttpJsonHandler("{\"code\":0}"));
+		// overseauspider.yuanshen.com
+		httpServer.all("/log", new ClientLogHandler());
+		// log-upload-os.mihoyo.com
+		httpServer.all("/crash/dataUpload", new ClientLogHandler());
 
-		server.createContext( // log-upload-os.mihoyo.com
-				"/crash/dataUpload",
-				new DispatchHttpJsonHandler("{\"code\":0}"));
-		server.createContext("/gacha", t -> responseHTML(t,
-				"<!doctype html><html lang=\"en\"><head><title>Gacha</title></head><body></body></html>"));
+		// webstatic-sea.hoyoverse.com
+		httpServer.get("/admin/mi18n/plat_oversea/m202003048/m202003048-version.json", new DispatchHttpJsonHandler("{\"version\":51}"));
 
-		// Start server
-		server.start();
-		Grasscutter.getLogger().info("[Dispatch] Dispatch server started on port " + getAddress().getPort());
-	}
+		// gacha record
+		httpServer.get("/gacha", new GachaRecordHandler());
 
-	private void responseJSON(HttpExchange t, Object data) throws IOException {
-		// Create a response
-		String response = getGsonFactory().toJson(data);
-		// Set the response header status and length
-		t.getResponseHeaders().put("Content-Type", Collections.singletonList("application/json"));
-		t.sendResponseHeaders(200, response.getBytes().length);
-		// Write the response string
-		OutputStream os = t.getResponseBody();
-		os.write(response.getBytes());
-		os.close();
-	}
+		// static file provider
+		httpServer.get("/gcstatic/*", new StaticFileHandler());
 
-	private void responseHTML(HttpExchange t, String response) throws IOException {
-		// Set the response header status and length
-		t.getResponseHeaders().put("Content-Type", Collections.singletonList("text/html; charset=UTF-8"));
-		t.sendResponseHeaders(200, response.getBytes().length);
-		// Write the response string
-		OutputStream os = t.getResponseBody();
-		os.write(response.getBytes());
-		os.close();
+		httpServer.listen(Grasscutter.getConfig().getDispatchOptions().Port);
+		Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Dispatch_start_server_port, httpServer.raw().port()));
 	}
 
 	private Map<String, String> parseQueryString(String qs) {
@@ -591,14 +487,42 @@ public final class DispatchServer {
 		return result;
 	}
 
-	public static class RegionData {
+	public AuthenticationHandler getAuthHandler() {
+		if(authHandler == null) {
+			return new DefaultAuthenticationHandler();
+		}
+		return authHandler;
+	}
 
+	public boolean registerAuthHandler(AuthenticationHandler authHandler) {
+		if(this.authHandler != null) {
+			Grasscutter.getLogger().error(String.format("[Dispatch] Unable to register '%s' authentication handler. \n" +
+					"The '%s' authentication handler has already been registered", authHandler.getClass().getName(), this.authHandler.getClass().getName()));
+			return false;
+		}
+		this.authHandler = authHandler;
+		return true;
+	}
+
+	public void resetAuthHandler() {
+		this.authHandler = null;
+	}
+
+	public static class RegionData {
 		QueryCurrRegionHttpRsp parsedRegionQuery;
 		String Base64;
 
 		public RegionData(QueryCurrRegionHttpRsp prq, String b64) {
 			this.parsedRegionQuery = prq;
 			this.Base64 = b64;
+		}
+
+		public QueryCurrRegionHttpRsp getParsedRegionQuery() {
+			return parsedRegionQuery;
+		}
+
+		public String getBase64() {
+			return Base64;
 		}
 	}
 }
