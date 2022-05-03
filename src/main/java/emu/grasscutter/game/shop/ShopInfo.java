@@ -13,7 +13,6 @@ public class ShopInfo {
     private List<ItemParamData> costItemList;
     private int boughtNum = 0;
     private int buyLimit = 0;
-    private int showId = 0;
     private int beginTime = 0;
     private int endTime = 1924992000;
     private int minLevel = 0;
@@ -52,7 +51,6 @@ public class ShopInfo {
         this.mcoin = sgd.getCostMcoin();
         this.hcoin = sgd.getCostHcoin();
         this.buyLimit = sgd.getBuyLimit();
-        this.showId = sgd.getShowId();
 
         this.minLevel = sgd.getMinPlayerLevel();
         this.maxLevel = sgd.getMaxPlayerLevel();
@@ -180,14 +178,6 @@ public class ShopInfo {
 
     public void setMaxLevel(int maxLevel) {
         this.maxLevel = maxLevel;
-    }
-
-    public int getShowId() {
-        return showId;
-    }
-
-    public void setShowId(int showId) {
-        this.showId = showId;
     }
 
     public ShopRefreshType getShopRefreshType() {
