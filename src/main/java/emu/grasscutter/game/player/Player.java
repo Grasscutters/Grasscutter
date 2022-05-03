@@ -46,6 +46,7 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.DateHelper;
 import emu.grasscutter.utils.Position;
+import emu.grasscutter.utils.MessageHandler;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -80,7 +81,8 @@ public class Player {
 	@Transient private Inventory inventory;
 	@Transient private FriendsList friendsList;
 	@Transient private MailHandler mailHandler;
-	
+	@Transient private MessageHandler messageHandler;
+
 	private TeamManager teamManager;
 	private PlayerGachaInfo gachaInfo;
 	private PlayerProfile playerProfile;
@@ -149,6 +151,7 @@ public class Player {
 		this.moonCardGetTimes = new HashSet<>();
 
 		this.shopLimit = new ArrayList<>();
+		this.messageHandler = null;
 	}
 
 	// On player creation
@@ -173,6 +176,7 @@ public class Player {
 		this.getNameCardList().add(210001);
 		this.getPos().set(GameConstants.START_POSITION);
 		this.getRotation().set(0, 307, 0);
+		this.messageHandler = null;
 	}
 
 	public int getUid() {
@@ -714,6 +718,10 @@ public class Player {
 	}
 
 	public void dropMessage(Object message) {
+		if (this.messageHandler != null) {
+			this.messageHandler.append(message.toString());
+			return;
+		}
 		this.sendPacket(new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, getUid(), message.toString()));
 	}
 
@@ -1066,5 +1074,9 @@ public class Player {
 		public int getValue() {
 			return this.value;
 		}
+	}
+
+	public void setMessageHandler(MessageHandler messageHandler) {
+		this.messageHandler = messageHandler;
 	}
 }
