@@ -151,7 +151,7 @@ public final class Grasscutter {
 			saveConfig();
 
 			try {
-				File folder = new File("./language");
+				File folder = new File("./languages");
 				if (!folder.exists() && !folder.isDirectory()) {
 					//noinspection ResultOfMethodCallIgnored
 					folder.mkdirs();
@@ -159,7 +159,7 @@ public final class Grasscutter {
 			} catch (Exception ee) {
 				Grasscutter.getLogger().error("Unable to create language folder.");
 			}
-			try (FileWriter file = new FileWriter("./language/en_us.json")) {
+			try (FileWriter file = new FileWriter("./languages/en_us.json")) {
 				file.write(gson.toJson(language));
 			} catch (Exception ee) {
 				Grasscutter.getLogger().error("Unable to create language file.");
