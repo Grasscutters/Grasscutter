@@ -9,7 +9,7 @@ public final class Language {
     public String Start_done = "Done! For help, type \"help\"";
     public String Dispatch_mode_not_support_command = "Commands are not supported in dispatch only mode.";
     public String Command_error = "Command error:";
-    public String error = "An error occurred.";
+    public String Error = "An error occurred.";
     public String grasscutter_is_free = "Grasscutter is FREE software. If you have paid for this, you may have been scammed. Homepage: https://github.com/Grasscutters/Grasscutter";
     public String Game_start_port = "Game Server started on port {port}";
     public String Client_connect = "Client connected from {address}";
