@@ -13,12 +13,13 @@ public final class ReloadCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, List<String> args) {
-        CommandHandler.sendMessage(sender, "Reloading config.");
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Reload_reload_start);
         Grasscutter.loadConfig();
+        Grasscutter.loadLanguage();
         Grasscutter.getGameServer().getGachaManager().load();
         Grasscutter.getGameServer().getDropManager().load();
         Grasscutter.getGameServer().getShopManager().load();
         Grasscutter.getDispatchServer().loadQueries();
-        CommandHandler.sendMessage(sender, "Reload complete.");
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Reload_reload_done);
     }
 }

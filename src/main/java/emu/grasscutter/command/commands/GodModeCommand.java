@@ -14,7 +14,7 @@ public final class GodModeCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return; // TODO: toggle player's godmode statue from console or other players
         }
 
@@ -26,7 +26,7 @@ public final class GodModeCommand implements CommandHandler {
                     target = sender.getUid();
                 }
             } catch (NumberFormatException e) {
-                CommandHandler.sendMessage(sender, "Invalid player id.");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
                 return;
             }
         } else {
@@ -34,12 +34,14 @@ public final class GodModeCommand implements CommandHandler {
         }
         Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
             return;
         }
 
         targetPlayer.setGodmode(!targetPlayer.inGodmode());
-        sender.dropMessage("Godmode is now " + (targetPlayer.inGodmode() ? "enabled" : "disabled") +
-                "for " + targetPlayer.getNickname() + " .");
+        sender.dropMessage(String.format(Grasscutter.getLanguage().Godmode_status,
+                (targetPlayer.inGodmode() ? Grasscutter.getLanguage().Enabled : Grasscutter.getLanguage().Disabled),
+                targetPlayer.getNickname()
+        ));
     }
 }

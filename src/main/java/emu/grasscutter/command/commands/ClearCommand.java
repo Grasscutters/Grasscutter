@@ -20,7 +20,7 @@ public final class ClearCommand implements CommandHandler {
         int target;
         String cmdSwitch = "";
         if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return;
         }
         Inventory playerInventory = sender.getInventory();
@@ -39,7 +39,7 @@ public final class ClearCommand implements CommandHandler {
                             .filter(item -> item.getItemType() == ItemType.ITEM_WEAPON)
                             .filter(item -> !item.isLocked() && !item.isEquipped())
                             .forEach(item -> playerInventory.removeItem(item, item.getCount()));
-                    sender.dropMessage("Cleared weapons for " + targetPlayer.getNickname() + " .");
+                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_weapons, targetPlayer.getNickname()));
                 }
                 case "art" -> {
                     playerInventory.getItems().values().stream()
@@ -47,7 +47,7 @@ public final class ClearCommand implements CommandHandler {
                             .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                             .filter(item -> !item.isLocked() && !item.isEquipped())
                             .forEach(item -> playerInventory.removeItem(item, item.getCount()));
-                    sender.dropMessage("Cleared artifacts for " + targetPlayer.getNickname() + " .");
+                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_artifacts, targetPlayer.getNickname()));
                 }
                 case "mat" -> {
                     playerInventory.getItems().values().stream()
@@ -55,7 +55,7 @@ public final class ClearCommand implements CommandHandler {
                             .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                             .filter(item -> !item.isLocked() && !item.isEquipped())
                             .forEach(item -> playerInventory.removeItem(item, item.getCount()));
-                    sender.dropMessage("Cleared artifacts for " + targetPlayer.getNickname() + " .");
+                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_artifacts, targetPlayer.getNickname()));
                 }
                 case "all" -> {
                     playerInventory.getItems().values().stream()
@@ -63,45 +63,45 @@ public final class ClearCommand implements CommandHandler {
                             .filter(item1 -> item1.getLevel() == 1 && item1.getExp() == 0)
                             .filter(item1 -> !item1.isLocked() && !item1.isEquipped())
                             .forEach(item1 -> playerInventory.removeItem(item1, item1.getCount()));
-                    sender.dropMessage("Cleared artifacts for " + targetPlayer.getNickname() + " .");
+                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_artifacts, targetPlayer.getNickname()));
                     playerInventory.getItems().values().stream()
                             .filter(item2 -> item2.getItemType() == ItemType.ITEM_MATERIAL)
                             .filter(item2 -> !item2.isLocked() && !item2.isEquipped())
                             .forEach(item2 -> playerInventory.removeItem(item2, item2.getCount()));
-                    sender.dropMessage("Cleared materials for " + targetPlayer.getNickname() + " .");
+                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_materials, targetPlayer.getNickname()));
                     playerInventory.getItems().values().stream()
                             .filter(item3 -> item3.getItemType() == ItemType.ITEM_WEAPON)
                             .filter(item3 -> item3.getLevel() == 1 && item3.getExp() == 0)
                             .filter(item3 -> !item3.isLocked() && !item3.isEquipped())
                             .forEach(item3 -> playerInventory.removeItem(item3, item3.getCount()));
-                    sender.dropMessage("Cleared weapons for " + targetPlayer.getNickname() + " .");
+                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_artifacts, targetPlayer.getNickname()));
                     playerInventory.getItems().values().stream()
                             .filter(item4 -> item4.getItemType() == ItemType.ITEM_FURNITURE)
                             .filter(item4 -> !item4.isLocked() && !item4.isEquipped())
                             .forEach(item4 -> playerInventory.removeItem(item4, item4.getCount()));
-                    sender.dropMessage("Cleared furniture for " + targetPlayer.getNickname() + " .");
+                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_furniture, targetPlayer.getNickname()));
                     playerInventory.getItems().values().stream()
                             .filter(item5 -> item5.getItemType() == ItemType.ITEM_DISPLAY)
                             .filter(item5 -> !item5.isLocked() && !item5.isEquipped())
                             .forEach(item5 -> playerInventory.removeItem(item5, item5.getCount()));
-                    sender.dropMessage("Cleared displays for " + targetPlayer.getNickname() + " .");
+                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_displays, targetPlayer.getNickname()));
                     playerInventory.getItems().values().stream()
                             .filter(item6 -> item6.getItemType() == ItemType.ITEM_VIRTUAL)
                             .filter(item6 -> !item6.isLocked() && !item6.isEquipped())
                             .forEach(item6 -> playerInventory.removeItem(item6, item6.getCount()));
-                    sender.dropMessage("Cleared virtuals for " + targetPlayer.getNickname() + " .");
-                    sender.dropMessage("Cleared everything for " + targetPlayer.getNickname() + " .");
+                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_virtuals, targetPlayer.getNickname()));
+                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_everything, targetPlayer.getNickname()));
                 }
             }
         } catch (NumberFormatException ignored) {
             // TODO: Parse from item name using GM Handbook.
-            CommandHandler.sendMessage(sender, "Invalid playerId.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
             return;
         }
 
         Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
             return;
         }
     }

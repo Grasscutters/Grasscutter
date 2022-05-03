@@ -21,6 +21,7 @@ public final class Config {
 	public ServerRunMode RunMode = ServerRunMode.HYBRID; // HYBRID, DISPATCH_ONLY, GAME_ONLY
 	public GameServerOptions GameServer = new GameServerOptions();
 	public DispatchServerOptions DispatchServer = new DispatchServerOptions();
+	public String Language = "en_us";
 
 	public GameServerOptions getGameServerOptions() {
 		return GameServer;
