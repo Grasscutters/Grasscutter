@@ -10,6 +10,7 @@ import java.util.Calendar;
 
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.plugin.PluginManager;
+import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
@@ -83,6 +84,8 @@ public final class Grasscutter {
 		// Create server instances.
 		dispatchServer = new DispatchServer();
 		gameServer = new GameServer(new InetSocketAddress(getConfig().getGameServerOptions().Ip, getConfig().getGameServerOptions().Port));
+		// Create a server hook instance with both servers.
+		new ServerHook(gameServer, dispatchServer);
 		
 		// Start servers.
 		if (getConfig().RunMode == ServerRunMode.HYBRID) {
