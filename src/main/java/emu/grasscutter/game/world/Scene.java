@@ -25,6 +25,7 @@ import emu.grasscutter.scripts.data.SceneBlock;
 import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.ScriptArgs;
+import emu.grasscutter.server.packet.send.PacketAvatarSkillInfoNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
@@ -271,6 +272,13 @@ public class Scene {
 		}
 		
 		this.addEntity(player.getTeamManager().getCurrentAvatarEntity());
+		
+		// Notify the client of any extra skill charges
+		for (EntityAvatar entity : player.getTeamManager().getActiveTeam()) {
+			if (entity.getAvatar().getSkillExtraChargeMap().size() > 0) {
+				player.sendPacket(new PacketAvatarSkillInfoNotify(entity.getAvatar()));
+			}
+		}
 	}
 	
 	private void addEntityDirectly(GameEntity entity) {
