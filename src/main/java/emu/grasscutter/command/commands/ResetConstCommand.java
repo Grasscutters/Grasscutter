@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.avatar.Avatar;
@@ -16,13 +17,13 @@ public final class ResetConstCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return;
         }
 
         if (args.size() > 0 && args.get(0).equalsIgnoreCase("all")) {
             sender.getAvatars().forEach(this::resetConstellation);
-            sender.dropMessage("Reset all avatars' constellations.");
+            sender.dropMessage(Grasscutter.getLanguage().ResetConst_reset_all);
         } else {
             EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
             if (entity == null) {
@@ -32,7 +33,7 @@ public final class ResetConstCommand implements CommandHandler {
             Avatar avatar = entity.getAvatar();
             this.resetConstellation(avatar);
 
-            sender.dropMessage("Constellations for " + avatar.getAvatarData().getName() + " have been reset. Please relog to see changes.");
+            sender.dropMessage(String.format(Grasscutter.getLanguage().ResetConst_reset_all_done, avatar.getAvatarData().getName()));
         }
     }
 

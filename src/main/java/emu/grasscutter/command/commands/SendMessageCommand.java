@@ -14,7 +14,7 @@ public final class SendMessageCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (args.size() < 2) {
-            CommandHandler.sendMessage(null, "Usage: sendmessage <player> <message>");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().SendMessage_usage);
             return;
         }
 
@@ -24,14 +24,14 @@ public final class SendMessageCommand implements CommandHandler {
 
             Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
             if (targetPlayer == null) {
-                CommandHandler.sendMessage(sender, "Player not found.");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
                 return;
             }
 
             CommandHandler.sendMessage(targetPlayer, message);
-            CommandHandler.sendMessage(sender, "Message sent.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SenaMessage_message_sent);
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "Invalid player ID.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
         }
     }
 }

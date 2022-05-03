@@ -21,13 +21,13 @@ public final class GiveCommand implements CommandHandler {
     public void execute(Player sender, List<String> args) {
         int target, item, lvl, amount = 1, refinement = 0;
         if (sender == null && args.size() < 2) {
-            CommandHandler.sendMessage(null, "Usage: give <player> <itemId|itemName> [amount] [level]");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Give_usage);
             return;
         }
 
         switch (args.size()) {
             default: // *No args*
-                CommandHandler.sendMessage(sender, "Usage: give [player] <itemId|itemName> [amount]");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_usage);
                 return;
             case 1: // <itemId|itemName>
                 try {
@@ -36,7 +36,7 @@ public final class GiveCommand implements CommandHandler {
                     lvl = 1;
                 } catch (NumberFormatException ignored) {
                     // TODO: Parse from item name using GM Handbook.
-                    CommandHandler.sendMessage(sender, "Invalid item id.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_id);
                     return;
                 }
                 break;
@@ -54,7 +54,7 @@ public final class GiveCommand implements CommandHandler {
                     }
                 } catch (NumberFormatException ignored) {
                     // TODO: Parse from item name using GM Handbook.
-                    CommandHandler.sendMessage(sender, "Invalid item or player ID.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_or_player_id);
                     return;
                 }
                 break;
@@ -75,7 +75,7 @@ public final class GiveCommand implements CommandHandler {
 
                 } catch (NumberFormatException ignored) {
                     // TODO: Parse from item name using GM Handbook.
-                    CommandHandler.sendMessage(sender, "Invalid item or player ID.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_or_player_id);
                     return;
                 }
                 break;
@@ -96,7 +96,7 @@ public final class GiveCommand implements CommandHandler {
                     }
                 } catch (NumberFormatException ignored) {
                     // TODO: Parse from item name using GM Handbook.
-                    CommandHandler.sendMessage(sender, "Invalid item or player ID.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_or_player_id);
                     return;
                 }
                 break;
@@ -105,7 +105,7 @@ public final class GiveCommand implements CommandHandler {
                     target = Integer.parseInt(args.get(0));
 
                     if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
-                        CommandHandler.sendMessage(sender, "Invalid player ID.");
+                        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
                         return;
                     } else {
                         item = Integer.parseInt(args.get(1));
@@ -115,7 +115,7 @@ public final class GiveCommand implements CommandHandler {
                     }
                 } catch (NumberFormatException ignored) {
                     // TODO: Parse from item name using GM Handbook.
-                    CommandHandler.sendMessage(sender, "Invalid item or player ID.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_or_player_id);
                     return;
                 }
                 break;
@@ -124,23 +124,23 @@ public final class GiveCommand implements CommandHandler {
         Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
 
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
             return;
         }
 
         ItemData itemData = GameData.getItemDataMap().get(item);
         if (itemData == null) {
-            CommandHandler.sendMessage(sender, "Invalid item id.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_id);
             return;
         }
         if (refinement != 0) {
             if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
                 if (refinement < 1 || refinement > 5) {
-                    CommandHandler.sendMessage(sender, "Refinement must be between 1 and 5.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_refinement_must_between_1_and_5);
                     return;
                 }
             } else {
-                CommandHandler.sendMessage(sender, "Refinement is only applicable to weapons.");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_refinement_only_applicable_weapons);
                 return;
             }
         }
@@ -148,13 +148,13 @@ public final class GiveCommand implements CommandHandler {
         this.item(targetPlayer, itemData, amount, lvl, refinement);
 
         if (!itemData.isEquip()) {
-            CommandHandler.sendMessage(sender, String.format("Given %s of %s to %s.", amount, item, target));
+            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Give_given, amount, item, target));
         } else if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
             CommandHandler.sendMessage(sender,
-                    String.format("Given %s with level %s, refinement %s %s times to %s", item, lvl, refinement, amount, target));
+                    String.format(Grasscutter.getLanguage().Give_given_with_level_and_refinement, item, lvl, refinement, amount, target));
         } else {
             CommandHandler.sendMessage(sender,
-                    String.format("Given %s with level %s %s times to %s", item, lvl, amount, target));
+                    String.format(Grasscutter.getLanguage().Give_given_level, item, lvl, amount, target));
         }
     }
 

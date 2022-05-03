@@ -30,6 +30,7 @@ import emu.grasscutter.utils.Crypto;
 public final class Grasscutter {
 	private static final Logger log = (Logger) LoggerFactory.getLogger(Grasscutter.class);
 	private static Config config;
+	private static Language language;
 	
 	private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	private static final File configFile = new File("./config.json");
@@ -48,6 +49,9 @@ public final class Grasscutter {
 		
 		// Load server configuration.
 		Grasscutter.loadConfig();
+
+		// Load Language
+		Grasscutter.loadLanguage();
 		
 		// Check server structure.
 		Utils.startupCheck();
@@ -68,7 +72,7 @@ public final class Grasscutter {
 		}
 		
 		// Initialize server.
-		Grasscutter.getLogger().info("Starting Grasscutter...");
+		Grasscutter.getLogger().info(language.Starting_Grasscutter);
 		
 		// Load all resources.
 		Grasscutter.updateDayOfWeek();
@@ -96,9 +100,9 @@ public final class Grasscutter {
 		} else if (getConfig().RunMode == ServerRunMode.GAME_ONLY) {
 			gameServer.start();
 		} else {
-			getLogger().error("Invalid server run mode. " + getConfig().RunMode);
-			getLogger().error("Server run mode must be 'HYBRID', 'DISPATCH_ONLY', or 'GAME_ONLY'. Unable to start Grasscutter...");
-			getLogger().error("Shutting down...");
+			getLogger().error(language.Invalid_server_run_mode + " " + getConfig().RunMode);
+			getLogger().error(language.Server_run_mode);
+			getLogger().error(language.Shutting_down);
 			System.exit(1);
 		}
 		
@@ -128,6 +132,31 @@ public final class Grasscutter {
 			saveConfig();
 		}
 	}
+
+	public static void loadLanguage() {
+		try (FileReader file = new FileReader(String.format("./language/%s.json", Grasscutter.config.Language))) {
+			language = gson.fromJson(file, Language.class);
+		} catch (Exception e) {
+			Grasscutter.language = new Language();
+			Grasscutter.config.Language = "en_us";
+			saveConfig();
+
+			try {
+				File folder = new File("./language");
+				if (!folder.exists() && !folder.isDirectory()) {
+					//noinspection ResultOfMethodCallIgnored
+					folder.mkdirs();
+				}
+			} catch (Exception ee) {
+				Grasscutter.getLogger().error("Unable to create language folder.");
+			}
+			try (FileWriter file = new FileWriter("./language/en_us.json")) {
+				file.write(gson.toJson(language));
+			} catch (Exception ee) {
+				Grasscutter.getLogger().error("Unable to create language file.");
+			}
+		}
+	}
 	
 	public static void saveConfig() {
 		try (FileWriter file = new FileWriter(configFile)) {
@@ -139,27 +168,31 @@ public final class Grasscutter {
 	
 	public static void startConsole() {
 		String input;
-		getLogger().info("Done! For help, type \"help\"");
+		getLogger().info(language.Start_done);
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
 			while ((input = br.readLine()) != null) {
 				try {
 					if (getConfig().RunMode == ServerRunMode.DISPATCH_ONLY) {
-						getLogger().error("Commands are not supported in dispatch only mode.");
+						getLogger().error(language.Dispatch_mode_not_support_command);
 						return;
 					}
 					
 					CommandMap.getInstance().invoke(null, input);
 				} catch (Exception e) {
-					Grasscutter.getLogger().error("Command error:", e);
+					Grasscutter.getLogger().error(language.Command_error, e);
 				}
 			}
 		} catch (Exception e) {
-			Grasscutter.getLogger().error("An error occurred.", e);
+			Grasscutter.getLogger().error(language.error, e);
 		}
 	}
 
 	public static Config getConfig() {
 		return config;
+	}
+
+	public static Language getLanguage() {
+		return language;
 	}
 
 	public static Logger getLogger() {

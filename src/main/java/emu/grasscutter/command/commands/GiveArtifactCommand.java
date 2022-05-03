@@ -20,7 +20,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 	public void execute(Player sender, List<String> args) {
 		int size = args.size(), target, itemId, mainPropId, level = 1;
 		ArrayList<Integer> appendPropIdList = new ArrayList<>();
-		String msg = "Usage: giveart|gart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]";
+		String msg = Grasscutter.getLanguage().GiveArtifact_usage;
 
 		if (sender == null && size < 2) {
 			CommandHandler.sendMessage(null, msg);
@@ -70,14 +70,14 @@ public final class GiveArtifactCommand implements CommandHandler {
 
 		Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
 		if (targetPlayer == null) {
-			CommandHandler.sendMessage(sender, "Player not found.");
+			CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
 			return;
 		}
 
 		ItemData itemData = GameData.getItemDataMap().get(itemId);
 
 		if (itemData.getItemType() != ItemType.ITEM_RELIQUARY) {
-			CommandHandler.sendMessage(sender, "Invalid artifact ID.");
+			CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveArtifact_invalid_artifact_id);
 			return;
 		}
 
@@ -88,7 +88,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		item.getAppendPropIdList().addAll(appendPropIdList);
 		targetPlayer.getInventory().addItem(item, ActionReason.SubfieldDrop);
 
-		CommandHandler.sendMessage(sender, String.format("Given %s to %s.", itemId, target));
+		CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().GiveArtifact_given, itemId, target));
 	}
 }
 
