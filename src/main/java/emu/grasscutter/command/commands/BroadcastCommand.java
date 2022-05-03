@@ -14,7 +14,7 @@ public final class BroadcastCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, "Usage: broadcast <message>");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Broadcast_command_usage);
             return;
         }
 
@@ -24,6 +24,6 @@ public final class BroadcastCommand implements CommandHandler {
             CommandHandler.sendMessage(p, message);
         }
 
-        CommandHandler.sendMessage(sender, "Message sent.");
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Broadcast_message_sent);
     }
 }

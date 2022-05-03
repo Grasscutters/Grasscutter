@@ -12,6 +12,7 @@ import emu.grasscutter.data.custom.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.def.AvatarPromoteData;
 import emu.grasscutter.data.def.AvatarSkillData;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
+import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.WeaponPromoteData;
 import emu.grasscutter.data.def.AvatarSkillDepotData.InherentProudSkillOpens;
 import emu.grasscutter.data.def.AvatarTalentData;
@@ -21,6 +22,9 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.shop.ShopChestBatchUseTable;
+import emu.grasscutter.game.shop.ShopChestTable;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
 import emu.grasscutter.server.game.GameServer;
@@ -897,7 +901,7 @@ public class InventoryManager {
 		player.sendPacket(new PacketDestroyMaterialRsp(returnMaterialMap));
 	}
 
-	public GameItem useItem(Player player, long targetGuid, long itemGuid, int count) {
+	public GameItem useItem(Player player, long targetGuid, long itemGuid, int count, int optionId) {
 		Avatar target = player.getAvatars().getAvatarByGuid(targetGuid);
 		GameItem useItem = player.getInventory().getItemByGuid(itemGuid);
 		
@@ -914,8 +918,72 @@ public class InventoryManager {
 					if (target == null) {
 						break;
 					}
-					
+
 					used = player.getTeamManager().reviveAvatar(target) ? 1 : 0;
+				}
+				break;
+			case MATERIAL_NOTICE_ADD_HP:
+				if (useItem.getItemData().getUseTarget().equals("ITEM_USE_TARGET_SPECIFY_ALIVE_AVATAR")) {
+					if (target == null) {
+						break;
+					}
+
+					int[] SatiationParams = useItem.getItemData().getSatiationParams();
+					used = player.getTeamManager().healAvatar(target, SatiationParams[0], SatiationParams[1]) ? 1 : 0;
+				}
+				break;
+			case MATERIAL_CHEST:
+				List<ShopChestTable> shopChestTableList = player.getServer().getShopManager().getShopChestData();
+				List<GameItem> rewardItemList = new ArrayList<>();
+				for (ShopChestTable shopChestTable : shopChestTableList) {
+					if (shopChestTable.getItemId() != useItem.getItemId()) {
+						continue;
+					}
+
+					if (shopChestTable.getContainsItem() == null) {
+						break;
+					}
+
+					for (ItemParamData itemParamData : shopChestTable.getContainsItem()) {
+						ItemData itemData = GameData.getItemDataMap().get(itemParamData.getId());
+						if (itemData == null) {
+							continue;
+						}
+						rewardItemList.add(new GameItem(itemData, itemParamData.getCount()));
+					}
+
+					if (!rewardItemList.isEmpty()) {
+						player.getInventory().addItems(rewardItemList, ActionReason.Shop);
+					}
+
+					used = 1;
+					break;
+				}
+				break;
+			case MATERIAL_CHEST_BATCH_USE:
+				if (optionId < 1) {
+					break;
+				}
+				List<ShopChestBatchUseTable> shopChestBatchUseTableList = player.getServer().getShopManager().getShopChestBatchUseData();
+				for (ShopChestBatchUseTable shopChestBatchUseTable : shopChestBatchUseTableList) {
+					if (shopChestBatchUseTable.getItemId() != useItem.getItemId()) {
+						continue;
+					}
+
+					if (shopChestBatchUseTable.getOptionItem() == null || optionId > shopChestBatchUseTable.getOptionItem().size()) {
+						break;
+					}
+
+					int optionItemId = shopChestBatchUseTable.getOptionItem().get(optionId - 1);
+					ItemData itemData = GameData.getItemDataMap().get(optionItemId);
+					if (itemData == null) {
+						break;
+					}
+
+					player.getInventory().addItem(new GameItem(itemData, count), ActionReason.Shop);
+
+					used = count;
+					break;
 				}
 				break;
 			default:
@@ -927,12 +995,12 @@ public class InventoryManager {
 			player.rechargeMoonCard();
 			used = 1;
 		}
-		
+
 		if (used > 0) {
 			player.getInventory().removeItem(useItem, used);
 			return useItem;
 		}
-		
+
 		return null;
 	}
 }

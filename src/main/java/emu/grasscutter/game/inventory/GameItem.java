@@ -90,7 +90,7 @@ public class GameItem {
 
 		// Equip data
 		if (getItemType() == ItemType.ITEM_WEAPON) {
-			this.level = this.count > 1 ? this.count : 1;
+			this.level = Math.max(this.count, 1);
 			this.affixes = new ArrayList<>(2);
 			if (getItemData().getSkillAffix() != null) {
 				for (int skillAffix : getItemData().getSkillAffix()) {

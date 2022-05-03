@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -12,7 +13,7 @@ public final class CoopCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (args.size() < 2) {
-            CommandHandler.sendMessage(sender, "Usage: coop <playerId> <target playerId>");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Coop_usage);
             return;
         }
         
@@ -22,7 +23,7 @@ public final class CoopCommand implements CommandHandler {
             Player host = sender.getServer().getPlayerByUid(hostId);
             Player want = sender.getServer().getPlayerByUid(tid);
             if (host == null || want == null) {
-                CommandHandler.sendMessage(sender, "Player is offline.");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_is_offline);
                 return;
             }
             if (want.isInMultiplayer()) {
@@ -31,7 +32,7 @@ public final class CoopCommand implements CommandHandler {
             sender.getServer().getMultiplayerManager().applyEnterMp(want, hostId);
             sender.getServer().getMultiplayerManager().applyEnterMpReply(host, tid, true);
         } catch (Exception e) {
-            CommandHandler.sendMessage(sender, "Player id is not valid.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
         }
     }
 }

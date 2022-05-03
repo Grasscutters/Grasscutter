@@ -25,11 +25,11 @@ public final class KillCharacterCommand implements CommandHandler {
                 try {
                     target = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException e) {
-                    CommandHandler.sendMessage(null, "Invalid player id.");
+                    CommandHandler.sendMessage(null, Grasscutter.getLanguage().Invalid_playerId);
                     return;
                 }
             } else {
-                CommandHandler.sendMessage(null, "Usage: /killcharacter [playerId]");
+                CommandHandler.sendMessage(null, Grasscutter.getLanguage().KillCharacter_usage);
                 return;
             }
         } else {
@@ -40,7 +40,7 @@ public final class KillCharacterCommand implements CommandHandler {
                         target = sender.getUid();
                     }
                 } catch (NumberFormatException e) {
-                    CommandHandler.sendMessage(sender, "Invalid player id.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
                     return;
                 }
             } else {
@@ -50,7 +50,7 @@ public final class KillCharacterCommand implements CommandHandler {
 
         Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found or offline.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found_or_offline);
             return;
         }
 
@@ -63,6 +63,6 @@ public final class KillCharacterCommand implements CommandHandler {
         targetPlayer.getScene().removeEntity(entity);
         entity.onDeath(0);
 
-        CommandHandler.sendMessage(sender, "Killed " + targetPlayer.getNickname() + " current character.");
+        CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().KillCharacter_kill_current_character, targetPlayer.getNickname()));
     }
 }
