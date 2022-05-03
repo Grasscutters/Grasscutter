@@ -62,7 +62,6 @@ public class GameData {
 	private static final Int2ObjectMap<FetterData> fetterDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<FetterCharacterCardData> fetterCharacterCardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<RewardData> rewardDataMap = new Int2ObjectOpenHashMap<>();
-	private static final Int2ObjectMap<RewardBoxData> rewardBoxDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<WorldLevelData> worldLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<DailyDungeonData> dailyDungeonDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<DungeonData> dungeonDataMap = new Int2ObjectOpenHashMap<>();
@@ -262,10 +261,6 @@ public class GameData {
 
 	public static Int2ObjectMap<RewardData> getRewardDataMap() {
 		return rewardDataMap;
-	}
-
-	public static Int2ObjectMap<RewardBoxData> getRewardBoxDataMap() {
-		return rewardBoxDataMap;
 	}
 
 	public static Map<Integer, List<Integer>> getFetterDataEntries() {
