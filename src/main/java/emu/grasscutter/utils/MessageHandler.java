@@ -8,7 +8,7 @@ public class MessageHandler {
     }
 
     public void append(String message){
-        this.message += message;
+        this.message += message + "\r\n\r\n";
     }
 
     public String getMessage(){
