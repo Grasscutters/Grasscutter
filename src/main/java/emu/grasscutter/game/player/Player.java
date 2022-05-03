@@ -19,6 +19,7 @@ import emu.grasscutter.game.gacha.PlayerGachaInfo;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
+import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.shop.ShopLimit;
@@ -45,6 +46,7 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.DateHelper;
 import emu.grasscutter.utils.Position;
+import emu.grasscutter.utils.MessageHandler;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -78,6 +80,8 @@ public class Player {
 	@Transient private AvatarStorage avatars;
 	@Transient private Inventory inventory;
 	@Transient private FriendsList friendsList;
+	@Transient private MailHandler mailHandler;
+	@Transient private MessageHandler messageHandler;
 
 	private TeamManager teamManager;
 	private PlayerGachaInfo gachaInfo;
@@ -85,7 +89,6 @@ public class Player {
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
-	private ArrayList<Mail> mail;
 	private ArrayList<ShopLimit> shopLimit;
 
 	private int sceneId;
@@ -118,6 +121,7 @@ public class Player {
 		this.inventory = new Inventory(this);
 		this.avatars = new AvatarStorage(this);
 		this.friendsList = new FriendsList(this);
+		this.mailHandler = new MailHandler(this);
 		this.pos = new Position();
 		this.rotation = new Position();
 		this.properties = new HashMap<>();
@@ -133,8 +137,6 @@ public class Player {
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
 
-		this.mail = new ArrayList<>();
-
 		this.setSceneId(3);
 		this.setRegionId(1);
 		this.sceneState = SceneLoadState.NONE;
@@ -149,6 +151,7 @@ public class Player {
 		this.moonCardGetTimes = new HashSet<>();
 
 		this.shopLimit = new ArrayList<>();
+		this.messageHandler = null;
 	}
 
 	// On player creation
@@ -173,6 +176,7 @@ public class Player {
 		this.getNameCardList().add(210001);
 		this.getPos().set(GameConstants.START_POSITION);
 		this.getRotation().set(0, 307, 0);
+		this.messageHandler = null;
 	}
 
 	public int getUid() {
@@ -435,6 +439,10 @@ public class Player {
 
 	public FriendsList getFriendsList() {
 		return this.friendsList;
+	}
+
+	public MailHandler getMailHandler() {
+		return mailHandler;
 	}
 
 	public int getEnterSceneToken() {
@@ -710,6 +718,10 @@ public class Player {
 	}
 
 	public void dropMessage(Object message) {
+		if (this.messageHandler != null) {
+			this.messageHandler.append(message.toString());
+			return;
+		}
 		this.sendPacket(new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, getUid(), message.toString()));
 	}
 
@@ -725,47 +737,24 @@ public class Player {
 
 	// ---------------------MAIL------------------------
 
-	public List<Mail> getAllMail() { return this.mail; }
+	public List<Mail> getAllMail() { return this.getMailHandler().getMail(); }
 
 	public void sendMail(Mail message) {
-		// Call mail receive event.
-		PlayerReceiveMailEvent event = new PlayerReceiveMailEvent(this, message); event.call();
-		if(event.isCanceled()) return; message = event.getMessage();
-		
-		this.mail.add(message);
-		this.save();
-		Grasscutter.getLogger().debug("Mail sent to user [" + this.getUid()  + ":" + this.getNickname() + "]!");
-		if(this.isOnline()) {
-			this.sendPacket(new PacketMailChangeNotify(this, message));
-		} // TODO: setup a way for the mail notification to show up when someone receives mail when they were offline
+		this.getMailHandler().sendMail(message);
 	}
 
 	public boolean deleteMail(int mailId) {
-		Mail message = getMail(mailId);
-
-		if(message != null) {
-			int index = getMailId(message);
-			message.expireTime = (int) Instant.now().getEpochSecond(); // Just set the mail as expired for now. I don't want to implement a counter specifically for an account...
-			this.replaceMailByIndex(index, message);
-			return true;
-		}
-
-		return false;
+		return this.getMailHandler().deleteMail(mailId);
 	}
 
-	public Mail getMail(int index) { return this.mail.get(index); }
+	public Mail getMail(int index) { return this.getMailHandler().getMailById(index); }
+	
 	public int getMailId(Mail message) {
-		return this.mail.indexOf(message);
+		return this.getMailHandler().getMailIndex(message);
 	}
 
 	public boolean replaceMailByIndex(int index, Mail message) {
-		if(getMail(index) != null) {
-			this.mail.set(index, message);
-			this.save();
-			return true;
-		} else {
-			return false;
-		}
+		return this.getMailHandler().replaceMailByIndex(index, message);
 	}
 	
 	public void interactWith(int gadgetEntityId) {
@@ -1015,6 +1004,7 @@ public class Player {
 		this.getAvatars().postLoad();
 
 		this.getFriendsList().loadFromDatabase();
+		this.getMailHandler().loadFromDatabase();
 
 		// Create world
 		World world = new World(this);
@@ -1084,5 +1074,9 @@ public class Player {
 		public int getValue() {
 			return this.value;
 		}
+	}
+
+	public void setMessageHandler(MessageHandler messageHandler) {
+		this.messageHandler = messageHandler;
 	}
 }

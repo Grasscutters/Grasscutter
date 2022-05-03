@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -13,12 +14,12 @@ public final class TeleportAllCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return;
         }
         
         if (!sender.getWorld().isMultiplayer()) {
-            CommandHandler.sendMessage(sender, "You only can use this command in MP mode.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().TeleportAll_message);
             return;
         }
         

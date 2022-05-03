@@ -37,11 +37,11 @@ public class DungeonManager {
 		player.sendPacket(new PacketDungeonEntryInfoRsp(player, entry.getPointData()));
 	}
 
-	public void enterDungeon(Player player, int pointId, int dungeonId) {
+	public boolean enterDungeon(Player player, int pointId, int dungeonId) {
 		DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
 		
 		if (data == null) {
-			return;
+			return false;
 		}
 		
 		Grasscutter.getLogger().info(player.getNickname() + " is trying to enter dungeon " + dungeonId);
@@ -53,6 +53,7 @@ public class DungeonManager {
 		
 		player.getScene().setPrevScenePoint(pointId);
 		player.sendPacket(new PacketPlayerEnterDungeonRsp(pointId, dungeonId));
+		return true;
 	}
 	
 	public void exitDungeon(Player player) {

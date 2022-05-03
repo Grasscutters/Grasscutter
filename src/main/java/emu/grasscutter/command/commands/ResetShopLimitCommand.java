@@ -13,19 +13,19 @@ public final class ResetShopLimitCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender,"Usage: /resetshop <player id>");
+            CommandHandler.sendMessage(sender,Grasscutter.getLanguage().ResetShopLimit_usage);
             return;
         }
 
         int target = Integer.parseInt(args.get(0));
         Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
             return;
         }
 
         targetPlayer.getShopLimit().forEach(x -> x.setNextRefreshTime(0));
         targetPlayer.save();
-        CommandHandler.sendMessage(sender, "Success");
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Success);
     }
 }

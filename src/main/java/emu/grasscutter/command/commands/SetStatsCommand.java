@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.entity.EntityAvatar;
@@ -16,20 +17,20 @@ public final class SetStatsCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return;
         }
 
         if (args.size() < 2){
-            CommandHandler.sendMessage(sender, "Usage: setstats|stats <stat> <value>");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_usage);
             return;
         }
 
         String stat = args.get(0);
         switch (stat) {
             default:
-                CommandHandler.sendMessage(sender, "Usage: /setstats|stats <hp | mhp | def | atk | em | er | crate | cdmg> <value> for basic stats");
-                CommandHandler.sendMessage(sender, "Usage: /stats <epyro | ecryo | ehydro | egeo | edend | eelec | ephys> <amount> for elemental bonus");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_setstats_help_message);
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_stats_help_message);
                 return;
             case "mhp":
                 try {
@@ -37,9 +38,9 @@ public final class SetStatsCommand implements CommandHandler {
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     entity.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, health);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_MAX_HP));
-                    CommandHandler.sendMessage(sender, "MAX HP set to " + health + ".");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_max_hp, health));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid Max HP value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_max_hp_error);
                     return;
                 }
                 break;
@@ -49,9 +50,9 @@ public final class SetStatsCommand implements CommandHandler {
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, health);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
-                    CommandHandler.sendMessage(sender, "HP set to " + health + ".");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_hp, health));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid HP value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_hp_error);
                     return;
                 }
                 break;
@@ -61,9 +62,9 @@ public final class SetStatsCommand implements CommandHandler {
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE, def);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_DEFENSE));
-                    CommandHandler.sendMessage(sender, "DEF set to " + def + ".");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_def, def));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid DEF value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_def_error);
                     return;
                 }
                 break;
@@ -73,9 +74,9 @@ public final class SetStatsCommand implements CommandHandler {
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK, atk);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_ATTACK));
-                    CommandHandler.sendMessage(sender, "ATK set to " + atk + ".");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_atk, atk));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid ATK value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_atk_error);
                     return;
                 }
                 break;
@@ -85,9 +86,9 @@ public final class SetStatsCommand implements CommandHandler {
                     EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
                     entity.setFightProperty(FightProperty.FIGHT_PROP_ELEMENT_MASTERY, em);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ELEMENT_MASTERY));
-                    CommandHandler.sendMessage(sender, "Elemental Mastery set to " + em + ".");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_em, em));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid EM value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_em_error);
                     return;
                 }
                 break;
@@ -99,9 +100,9 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, erecharge);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY));
                     float iger = erecharge * 100;
-                    CommandHandler.sendMessage(sender, "Energy recharge set to " + iger + "%.");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_er, iger));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid ER value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_er_error);
                     return;
                 }
                 break;
@@ -113,9 +114,9 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_CRITICAL, crate);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CRITICAL));
                     float igcrate = crate * 100;
-                    CommandHandler.sendMessage(sender, "Crit Rate set to " + igcrate + "%.");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_cr, igcrate));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid Crit Rate value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_cr_error);
                     return;
                 }
                 break;
@@ -127,9 +128,9 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_CRITICAL_HURT, cdamage);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CRITICAL_HURT));
                     float igcdmg = cdamage * 100;
-                    CommandHandler.sendMessage(sender, "Crit DMG set to " + igcdmg + "%");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_cd, igcdmg));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid Crit DMG value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_cd_error);
                     return;
                 }
                 break;
@@ -141,9 +142,9 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_FIRE_ADD_HURT, pyro);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_FIRE_ADD_HURT));
                     float igpyro = pyro * 100;
-                    CommandHandler.sendMessage(sender, "Pyro DMG Bonus set to " + igpyro + "%");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_pdb, igpyro));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid Pyro DMG Bonus value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_pdb_error);
                     return;
                 }
                 break;
@@ -155,9 +156,9 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_ICE_ADD_HURT, cryo);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ICE_ADD_HURT));
                     float igcyro = cryo * 100;
-                    CommandHandler.sendMessage(sender, "Cyro DMG Bonus set to " + igcyro + "%");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_cdb, igcyro));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid Cryo DMG Bonus value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_cdb_error);
                     return;
                 }
                 break;
@@ -169,9 +170,9 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_WATER_ADD_HURT, hydro);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_WATER_ADD_HURT));
                     float ighydro = hydro * 100;
-                    CommandHandler.sendMessage(sender, "Hydro DMG Bonus set to " + ighydro + "%");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_hdb, ighydro));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid Hydro DMG Bonus value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_hdb_error);
                     return;
                 }
                 break;
@@ -183,9 +184,9 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_WIND_ADD_HURT, anemo);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_WIND_ADD_HURT));
                     float iganemo = anemo * 100;
-                    CommandHandler.sendMessage(sender, "Anemo DMG Bonus set to " + iganemo + "%");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_adb, iganemo));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid Anemo DMG Bonus value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_adb_error);
                     return;
                 }
                 break;
@@ -197,9 +198,9 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_ROCK_ADD_HURT, geo);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ROCK_ADD_HURT));
                     float iggeo = geo * 100;
-                    CommandHandler.sendMessage(sender, "Geo DMG Bonus set to " + iggeo + "%");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_gdb, iggeo));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid Geo DMG Bonus value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_gdb_error);
                     return;
                 }
                 break;
@@ -212,9 +213,9 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_ELEC_ADD_HURT, elec);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_ELEC_ADD_HURT));
                     float igelec = elec * 100;
-                    CommandHandler.sendMessage(sender, "Electro DMG Bonus set to " + igelec + "%");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_edb, igelec));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid Electro DMG Bonus value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_edb_error);
                     return;
                 }
                 break;
@@ -226,9 +227,9 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_PHYSICAL_ADD_HURT, phys);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_PHYSICAL_ADD_HURT));
                     float igphys = phys * 100;
-                    CommandHandler.sendMessage(sender, "Physical DMG Bonus set to " + igphys + "%");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_physdb, igphys));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid Physical DMG Bonus value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_physdb_error);
                     return;
                 }
                 break;
@@ -240,9 +241,9 @@ public final class SetStatsCommand implements CommandHandler {
                     entity.setFightProperty(FightProperty.FIGHT_PROP_GRASS_ADD_HURT, dend);
                     entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_GRASS_ADD_HURT));
                     float igdend = dend * 100;
-                    CommandHandler.sendMessage(sender, "Dendro DMG Bonus set to " + igdend + "%");
+                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetStats_set_ddb, igdend));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid Dendro DMG Bonus value.");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetStats_set_ddb_error);
                     return;
                 }
                 break;

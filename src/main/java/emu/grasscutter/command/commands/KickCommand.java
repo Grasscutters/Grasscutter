@@ -17,14 +17,14 @@ public final class KickCommand implements CommandHandler {
 
         Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
             return;
         }
 
         if (sender != null) {
-            CommandHandler.sendMessage(sender, String.format("Player [%s:%s] has kicked player [%s:%s]", sender.getAccount().getPlayerUid(), sender.getAccount().getUsername(), target, targetPlayer.getAccount().getUsername()));
+            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Kick_player_kick_player, sender.getAccount().getPlayerUid(), sender.getAccount().getUsername(), target, targetPlayer.getAccount().getUsername()));
         }
-        CommandHandler.sendMessage(sender, String.format("Kicking player [%s:%s]", target, targetPlayer.getAccount().getUsername()));
+        CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Kick_server_player, target, targetPlayer.getAccount().getUsername()));
 
         targetPlayer.getSession().close();
     }

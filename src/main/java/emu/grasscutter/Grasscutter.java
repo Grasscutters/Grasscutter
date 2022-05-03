@@ -9,6 +9,7 @@ import java.util.Calendar;
 
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.plugin.PluginManager;
+import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.utils.Utils;
 import org.jline.reader.EndOfFileException;
@@ -35,6 +36,7 @@ public final class Grasscutter {
 	private static final Logger log = (Logger) LoggerFactory.getLogger(Grasscutter.class);
 	private static Config config;
 	private static LineReader consoleLineReader = null;
+	private static Language language;
 
 	private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	private static final File configFile = new File("./config.json");
@@ -54,6 +56,9 @@ public final class Grasscutter {
 		// Load server configuration.
 		Grasscutter.loadConfig();
 
+		// Load Language
+		Grasscutter.loadLanguage();
+
 		// Check server structure.
 		Utils.startupCheck();
 	}
@@ -66,11 +71,14 @@ public final class Grasscutter {
 				case "-handbook" -> {
 					Tools.createGmHandbook(); return;
 				}
+				case "-gachamap" -> {
+					Tools.createGachaMapping(); return;
+				}
 			}
 		}
 		
 		// Initialize server.
-		Grasscutter.getLogger().info("Starting Grasscutter...");
+		Grasscutter.getLogger().info(language.Starting_Grasscutter);
 		
 		// Load all resources.
 		Grasscutter.updateDayOfWeek();
@@ -86,6 +94,8 @@ public final class Grasscutter {
 		// Create server instances.
 		dispatchServer = new DispatchServer();
 		gameServer = new GameServer(new InetSocketAddress(getConfig().getGameServerOptions().Ip, getConfig().getGameServerOptions().Port));
+		// Create a server hook instance with both servers.
+		new ServerHook(gameServer, dispatchServer);
 		
 		// Start servers.
 		if (getConfig().RunMode == ServerRunMode.HYBRID) {
@@ -96,9 +106,9 @@ public final class Grasscutter {
 		} else if (getConfig().RunMode == ServerRunMode.GAME_ONLY) {
 			gameServer.start();
 		} else {
-			getLogger().error("Invalid server run mode. " + getConfig().RunMode);
-			getLogger().error("Server run mode must be 'HYBRID', 'DISPATCH_ONLY', or 'GAME_ONLY'. Unable to start Grasscutter...");
-			getLogger().error("Shutting down...");
+			getLogger().error(language.Invalid_server_run_mode + " " + getConfig().RunMode);
+			getLogger().error(language.Server_run_mode);
+			getLogger().error(language.Shutting_down);
 			System.exit(1);
 		}
 		
@@ -129,6 +139,31 @@ public final class Grasscutter {
 			saveConfig();
 		}
 	}
+
+	public static void loadLanguage() {
+		try (FileReader file = new FileReader(String.format("./language/%s.json", Grasscutter.config.Language))) {
+			language = gson.fromJson(file, Language.class);
+		} catch (Exception e) {
+			Grasscutter.language = new Language();
+			Grasscutter.config.Language = "en_us";
+			saveConfig();
+
+			try {
+				File folder = new File("./language");
+				if (!folder.exists() && !folder.isDirectory()) {
+					//noinspection ResultOfMethodCallIgnored
+					folder.mkdirs();
+				}
+			} catch (Exception ee) {
+				Grasscutter.getLogger().error("Unable to create language folder.");
+			}
+			try (FileWriter file = new FileWriter("./language/en_us.json")) {
+				file.write(gson.toJson(language));
+			} catch (Exception ee) {
+				Grasscutter.getLogger().error("Unable to create language file.");
+			}
+		}
+	}
 	
 	public static void saveConfig() {
 		try (FileWriter file = new FileWriter(configFile)) {
@@ -141,16 +176,16 @@ public final class Grasscutter {
 	public static void startConsole() {
 		// Console should not start in dispatch only mode.
 		if (getConfig().RunMode == ServerRunMode.DISPATCH_ONLY) {
-			getLogger().info("Commands are not supported in dispatch only mode.");
+			getLogger().info(language.Dispatch_mode_not_support_command);
 			return;
 		}
 
-		getLogger().info("Done! For help, type \"help\"");
+		getLogger().info(language.Start_done);
 		String input = null;
 		boolean isLastInterrupted = false;
 		while (true) {
 			try {
-				input = consoleLineReader.readLine("(Grasscutter)> ");
+				input = consoleLineReader.readLine("> ");
 			} catch (UserInterruptException e) {
 				if (!isLastInterrupted) {
 					isLastInterrupted = true;
@@ -171,13 +206,17 @@ public final class Grasscutter {
 			try {
 				CommandMap.getInstance().invoke(null, input);
 			} catch (Exception e) {
-				Grasscutter.getLogger().error("Command error:", e);
+				Grasscutter.getLogger().error(language.Command_error, e);
 			}
 		}
 	}
 
 	public static Config getConfig() {
 		return config;
+	}
+
+	public static Language getLanguage() {
+		return language;
 	}
 
 	public static Logger getLogger() {

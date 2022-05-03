@@ -14,12 +14,12 @@ public final class AccountCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (sender != null) {
-            CommandHandler.sendMessage(sender, "This command can only be run from the console.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().This_command_can_only_run_from_console);
             return;
         }
 
         if (args.size() < 2) {
-            CommandHandler.sendMessage(null, "Usage: account <create|delete> <username> [uid]");
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Account_command_usage);
             return;
         }
 
@@ -28,7 +28,7 @@ public final class AccountCommand implements CommandHandler {
 
         switch (action) {
             default:
-                CommandHandler.sendMessage(null, "Usage: account <create|delete> <username> [uid]");
+                CommandHandler.sendMessage(null, Grasscutter.getLanguage().Account_command_usage);
                 return;
             case "create":
                 int uid = 0;
@@ -36,27 +36,27 @@ public final class AccountCommand implements CommandHandler {
                     try {
                         uid = Integer.parseInt(args.get(2));
                     } catch (NumberFormatException ignored) {
-                        CommandHandler.sendMessage(null, "Invalid UID.");
+                        CommandHandler.sendMessage(null, Grasscutter.getLanguage().Invalid_UID);
                         return;
                     }
                 }
 
                 emu.grasscutter.game.Account account = DatabaseHelper.createAccountWithId(username, uid);
                 if (account == null) {
-                    CommandHandler.sendMessage(null, "Account already exists.");
+                    CommandHandler.sendMessage(null, Grasscutter.getLanguage().Account_exists);
                     return;
                 } else {
                     account.addPermission("*");
                     account.save(); // Save account to database.
 
-                    CommandHandler.sendMessage(null, "Account created with UID " + account.getPlayerUid() + ".");
+                    CommandHandler.sendMessage(null, String.format(Grasscutter.getLanguage().Account_create_UID, account.getPlayerUid()));
                 }
                 return;
             case "delete":
                 if (DatabaseHelper.deleteAccount(username)) {
-                    CommandHandler.sendMessage(null, "Account deleted.");
+                    CommandHandler.sendMessage(null, Grasscutter.getLanguage().Account_delete);
                 } else {
-                    CommandHandler.sendMessage(null, "Account not found.");
+                    CommandHandler.sendMessage(null, Grasscutter.getLanguage().Account_not_find);
                 }
         }
     }

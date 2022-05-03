@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
@@ -30,16 +31,16 @@ public final class HelpCommand implements CommandHandler {
         } else {
             String command = args.get(0);
             CommandHandler handler = CommandMap.getInstance().getHandler(command);
-            StringBuilder builder = new StringBuilder(player == null ? "\nHelp - " : "Help - ").append(command).append(": \n");
+            StringBuilder builder = new StringBuilder(player == null ? "\n" + Grasscutter.getLanguage().Help + " - " : Grasscutter.getLanguage().Help + " - ").append(command).append(": \n");
             if (handler == null) {
-                builder.append("No command found.");
+                builder.append(Grasscutter.getLanguage().No_command_found);
             } else {
                 Command annotation = handler.getClass().getAnnotation(Command.class);
 
                 builder.append("   ").append(annotation.description()).append("\n");
-                builder.append("   Usage: ").append(annotation.usage());
+                builder.append(Grasscutter.getLanguage().Help_usage).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
-                    builder.append("\n").append("   Aliases: ");
+                    builder.append("\n").append(Grasscutter.getLanguage().Help_aliases);
                     for (String alias : annotation.aliases()) {
                         builder.append(alias).append(" ");
                     }
@@ -55,13 +56,13 @@ public final class HelpCommand implements CommandHandler {
 
     void SendAllHelpMessage(Player player, List<Command> annotations) {
         if (player == null) {
-            StringBuilder builder = new StringBuilder("\nAvailable commands:\n");
+            StringBuilder builder = new StringBuilder("\n" + Grasscutter.getLanguage().Help_available_command + "\n");
             annotations.forEach(annotation -> {
                 builder.append(annotation.label()).append("\n");
                 builder.append("   ").append(annotation.description()).append("\n");
-                builder.append("   Usage: ").append(annotation.usage());
+                builder.append(Grasscutter.getLanguage().Help_usage).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
-                    builder.append("\n").append("   Aliases: ");
+                    builder.append("\n").append(Grasscutter.getLanguage().Help_aliases);
                     for (String alias : annotation.aliases()) {
                         builder.append(alias).append(" ");
                     }
@@ -72,13 +73,13 @@ public final class HelpCommand implements CommandHandler {
 
             CommandHandler.sendMessage(null, builder.toString());
         } else {
-            CommandHandler.sendMessage(player, "Available commands:");
+            CommandHandler.sendMessage(player, Grasscutter.getLanguage().Help_available_command);
             annotations.forEach(annotation -> {
                 StringBuilder builder = new StringBuilder(annotation.label()).append("\n");
                 builder.append("   ").append(annotation.description()).append("\n");
-                builder.append("   Usage: ").append(annotation.usage());
+                builder.append(Grasscutter.getLanguage().Help_usage).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
-                    builder.append("\n").append("   Aliases: ");
+                    builder.append("\n").append(Grasscutter.getLanguage().Help_aliases);
                     for (String alias : annotation.aliases()) {
                         builder.append(alias).append(" ");
                     }

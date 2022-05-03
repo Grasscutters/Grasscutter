@@ -134,7 +134,7 @@ public class GachaManager {
 				if (banner.getRateUpItems1().length > 0) {
 					int eventChance = this.randomRange(1, 100);
 					
-					if (eventChance >= banner.getEventChance() || gachaInfo.getFailedFeaturedItemPulls() >= 1) {
+					if (eventChance <= banner.getEventChance() || gachaInfo.getFailedFeaturedItemPulls() >= 1) {
 						itemId = getRandom(banner.getRateUpItems1());
 						gachaInfo.setFailedFeaturedItemPulls(0);
 					} else {

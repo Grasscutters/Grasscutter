@@ -1,0 +1,119 @@
+{
+  "t": "System.currentTimeMillis()",
+  "list": [
+    {
+      "list": [
+        {
+          "ann_id": 1,
+          "title": "<b>Welcome to Grasscutter!</b>",
+          "subtitle": "<b>Welcome</b>",
+          "banner": "https://uploadstatic-sea.mihoyo.com/announcement/2020/09/22/7d85f19b152d218e73224d7c138a0fd0_5818585260283672899.jpg",
+          "content": "",
+          "type_label": "Juego",
+          "tag_label": "1",
+          "tag_icon": "https://uploadstatic-sea.mihoyo.com/announcement/2020/03/05/a2588f1a51faee9fa8dfe9aead649dd6_7237021399135895303.png",
+          "login_alert": 1,
+          "lang": "es-es",
+          "start_time": "2020-09-25 04:05:30",
+          "end_time": "2023-10-30 11:00:00",
+          "type": 2,
+          "remind": 0,
+          "alert": 0,
+          "tag_start_time": "2000-01-02 15:04:05",
+          "tag_end_time": "2030-01-02 15:04:05",
+          "remind_ver": 1,
+          "has_content": true,
+          "extra_remind": 0
+        },
+        {
+          "ann_id": 2,
+          "title": "<b>这是游戏公告 -- This is the game announcement</b>",
+          "subtitle": "<b>This is the game announcement</b>",
+          "banner": "https://uploadstatic-sea.mihoyo.com/announcement/2020/09/17/85b7163c95745a76d49b3d163d893592_6487108933004985049.jpg",
+          "content": "",
+          "type_label": "Juego",
+          "tag_label": "1",
+          "tag_icon": "https://uploadstatic-sea.mihoyo.com/announcement/2020/03/05/a2588f1a51faee9fa8dfe9aead649dd6_7237021399135895303.png",
+          "login_alert": 1,
+          "lang": "es-es",
+          "start_time": "2020-09-25 15:12:09",
+          "end_time": "2030-10-30 11:00:00",
+          "type": 2,
+          "remind": 0,
+          "alert": 0,
+          "tag_start_time": "2000-01-02 08:04:05",
+          "tag_end_time": "2030-01-02 08:04:05",
+          "remind_ver": 1,
+          "has_content": true,
+          "extra_remind": 0
+        }
+      ],
+      "type_id": 2,
+      "type_label": "Juego"
+    },
+    {
+      "list": [
+        {
+          "ann_id": 3,
+          "title": "<b>这是活动公告--This is the event announcement</b>",
+          "subtitle": "<b>Welcome</b>",
+          "banner": "https://uploadstatic-sea.mihoyo.com/announcement/2020/09/22/7d85f19b152d218e73224d7c138a0fd0_5818585260283672899.jpg",
+          "content": "",
+          "type_label": "Eventos",
+          "tag_label": "1",
+          "tag_icon": "https://uploadstatic-sea.mihoyo.com/announcement/2020/03/05/a2588f1a51faee9fa8dfe9aead649dd6_7237021399135895303.png",
+          "login_alert": 1,
+          "lang": "es-es",
+          "start_time": "2020-09-25 04:05:30",
+          "end_time": "2022-05-02 00:51:00",
+          "type": 2,
+          "remind": 0,
+          "alert": 0,
+          "tag_start_time": "2000-01-02 15:04:05",
+          "tag_end_time": "2022-05-02 00:51:00",
+          "remind_ver": 1,
+          "has_content": true,
+          "extra_remind": 0
+        }
+      ],
+      "type_id": 1,
+      "type_label": "Eventos"
+    },
+    {
+      "list": [
+        {}
+      ],
+      "type_id": 3,
+      "type_label": "Others"
+    }
+  ],
+  "total": 3,
+  "type_list": [
+    {
+      "id": 2,
+      "name": "游戏系统公告",
+      "mi18n_name": "Juego"
+    },
+    {
+      "id": 1,
+      "name": "活动公告",
+      "mi18n_name": "Eventos"
+    },
+    {
+      "id": 3,
+      "name": "其他",
+      "mi18n_name": "Others"
+    }
+  ],
+  "alert": true,
+  "alert_id": 2,
+  "timezone": -5,
+  "pic_list": [
+  ],
+  "pic_total": 0,
+  "pic_type_list": [
+  ],
+  "pic_alert": false,
+  "pic_alert_id": 0,
+  "static_sign": ""
+}

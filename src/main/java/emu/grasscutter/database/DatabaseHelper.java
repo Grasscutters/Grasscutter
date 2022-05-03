@@ -12,6 +12,7 @@ import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.gacha.GachaRecord;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 
 public final class DatabaseHelper {
@@ -166,6 +167,7 @@ public final class DatabaseHelper {
 	public static List<GameItem> getInventoryItems(Player player) {
 		return DatabaseManager.getDatastore().find(GameItem.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
+	
 	public static List<Friendship> getFriends(Player player) {
 		return DatabaseManager.getDatastore().find(Friendship.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
@@ -218,6 +220,19 @@ public final class DatabaseHelper {
 
 	public static void saveGachaRecord(GachaRecord gachaRecord){
 		DatabaseManager.getDatastore().save(gachaRecord);
+	}
+	
+	public static List<Mail> getAllMail(Player player) {
+		return DatabaseManager.getDatastore().find(Mail.class).filter(Filters.eq("ownerUid", player.getUid())).stream().toList();
+	}
+	
+	public static void saveMail(Mail mail) {
+		DatabaseManager.getDatastore().save(mail);
+	}
+	
+	public static boolean deleteMail(Mail mail) {
+		DeleteResult result = DatabaseManager.getDatastore().delete(mail);
+		return result.wasAcknowledged();
 	}
 
 	public static char AWJVN = 'e';

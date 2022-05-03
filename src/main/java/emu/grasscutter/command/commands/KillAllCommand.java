@@ -23,7 +23,7 @@ public final class KillAllCommand implements CommandHandler {
             switch (args.size()) {
                 case 0: // *No args*
                     if (sender == null) {
-                        CommandHandler.sendMessage(null, "Usage: killall [playerUid] [sceneId]");
+                        CommandHandler.sendMessage(null, Grasscutter.getLanguage().Kill_usage);
                         return;
                     }
                     mainScene = sender.getScene();
@@ -31,7 +31,7 @@ public final class KillAllCommand implements CommandHandler {
                 case 1: // [playerUid]
                     targetPlayer = Grasscutter.getGameServer().getPlayerByUid(Integer.parseInt(args.get(0)));
                     if (targetPlayer == null) {
-                        CommandHandler.sendMessage(sender, "Player not found or offline.");
+                        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found_or_offline);
                         return;
                     }
                     mainScene = targetPlayer.getScene();
@@ -39,18 +39,18 @@ public final class KillAllCommand implements CommandHandler {
                 case 2: // [playerUid] [sceneId]
                     targetPlayer = Grasscutter.getGameServer().getPlayerByUid(Integer.parseInt(args.get(0)));
                     if (targetPlayer == null) {
-                        CommandHandler.sendMessage(sender, "Player not found or offline.");
+                        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found_or_offline);
                         return;
                     }
                     Scene scene = sender.getWorld().getSceneById(Integer.parseInt(args.get(1)));
                     if (scene == null) {
-                        CommandHandler.sendMessage(sender, "Scene not found in player world");
+                        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Kill_scene_not_found_in_player_world);
                         return;
                     }
                     mainScene = scene;
                     break;
                 default:
-                    CommandHandler.sendMessage(sender, "Usage: killall [playerUid] [sceneId]");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Kill_usage);
                     return;
             }
 
@@ -59,9 +59,9 @@ public final class KillAllCommand implements CommandHandler {
                     .filter(entity -> entity instanceof EntityMonster)
                     .toList();
             toKill.stream().forEach(entity -> mainScene.killEntity(entity, 0));
-            CommandHandler.sendMessage(sender, "Killing " + toKill.size() + " monsters in scene " + mainScene.getId());
+            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Kill_kill_monsters_in_scene, toKill.size(), mainScene.getId()));
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "Invalid arguments.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_arguments);
         }
     }
 }

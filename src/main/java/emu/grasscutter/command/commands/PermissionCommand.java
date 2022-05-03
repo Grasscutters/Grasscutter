@@ -15,7 +15,7 @@ public final class PermissionCommand implements CommandHandler {
     @Override
     public void execute(Player sender, List<String> args) {
         if (args.size() < 3) {
-            CommandHandler.sendMessage(sender, "Usage: permission <add|remove> <username> <permission>");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_usage);
             return;
         }
 
@@ -25,23 +25,23 @@ public final class PermissionCommand implements CommandHandler {
 
         Account account = Grasscutter.getGameServer().getAccountByName(username);
         if (account == null) {
-            CommandHandler.sendMessage(sender, "Account not found.");
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Account_not_find);
             return;
         }
 
         switch (action) {
             default:
-                CommandHandler.sendMessage(sender, "Usage: permission <add|remove> <username> <permission>");
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_usage);
                 break;
             case "add":
                 if (account.addPermission(permission)) {
-                    CommandHandler.sendMessage(sender, "Permission added.");
-                } else CommandHandler.sendMessage(sender, "They already have this permission!");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_add);
+                } else CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_have_permission);
                 break;
             case "remove":
                 if (account.removePermission(permission)) {
-                    CommandHandler.sendMessage(sender, "Permission removed.");
-                } else CommandHandler.sendMessage(sender, "They don't have this permission!");
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_remove);
+                } else CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_not_have_permission);
                 break;
         }
 
