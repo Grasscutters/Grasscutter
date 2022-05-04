@@ -11,6 +11,7 @@ import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
+import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.friends.FriendsList;
@@ -21,6 +22,7 @@ import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.world.Scene;
@@ -784,6 +786,16 @@ public class Player {
 					this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
 				else
 					this.getScene().broadcastPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
+			}
+		} else if (entity instanceof EntityGadget) {
+			EntityGadget gadget = (EntityGadget) entity;
+			
+			if (gadget.getGadgetData().getType() == EntityType.RewardStatue) {
+				if (scene.getChallenge() != null) {
+					scene.getChallenge().getStatueDrops(this);
+				}
+				
+				this.sendPacket(new PacketGadgetInteractRsp(gadget, InteractType.INTERACT_OPEN_STATUE));
 			}
 		} else {
 			// Delete directly

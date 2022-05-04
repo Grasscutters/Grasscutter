@@ -234,14 +234,31 @@ public class SceneScriptManager {
 			variables.forEach(var -> this.getVariables().put(var.name, var.value));
 			
 			// Add monsters to suite TODO optimize
-			HashMap<Integer, SceneMonster> map = (HashMap<Integer, SceneMonster>) group.monsters.stream().collect(Collectors.toMap(m -> m.config_id, m -> m));
+			Int2ObjectMap<Object> map = new Int2ObjectOpenHashMap<>();
+			group.monsters.forEach(m -> map.put(m.config_id, m));
+			group.gadgets.forEach(m -> map.put(m.config_id, m));
 			
 			for (SceneSuite suite : group.suites) {
 				suite.sceneMonsters = new ArrayList<>(suite.monsters.size());
 				for (int id : suite.monsters) {
-					SceneMonster monster = map.get(id);
-					if (monster != null) {
-						suite.sceneMonsters.add(monster);
+					try {
+						SceneMonster monster = (SceneMonster) map.get(id);
+						if (monster != null) {
+							suite.sceneMonsters.add(monster);
+						}
+					} catch (Exception e) {
+						continue;
+					}
+				}
+				suite.sceneGadgets = new ArrayList<>(suite.gadgets.size());
+				for (int id : suite.gadgets) {
+					try {
+						SceneGadget gadget = (SceneGadget) map.get(id);
+						if (gadget != null) {
+							suite.sceneGadgets.add(gadget);
+						}
+					} catch (Exception e) {
+						continue;
 					}
 				}
 			}
@@ -274,8 +291,22 @@ public class SceneScriptManager {
 		}
 	}
 	
+	public void spawnGadgetsInGroup(SceneGroup group, int suiteIndex) {
+		spawnGadgetsInGroup(group, group.getSuiteByIndex(suiteIndex));
+	}
+	
 	public void spawnGadgetsInGroup(SceneGroup group) {
-		for (SceneGadget g : group.gadgets) {
+		spawnGadgetsInGroup(group, null);
+	}
+	
+	public void spawnGadgetsInGroup(SceneGroup group, SceneSuite suite) {
+		List<SceneGadget> gadgets = group.gadgets;
+		
+		if (suite != null) {
+			gadgets = suite.sceneGadgets;
+		}
+		
+		for (SceneGadget g : gadgets) {
 			EntityGadget entity = new EntityGadget(getScene(), g.gadget_id, g.pos);
 			
 			if (entity.getGadgetData() == null) continue;
