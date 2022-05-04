@@ -47,7 +47,8 @@ public class Scene {
 	private final Set<SpawnDataEntry> spawnedEntities;
 	private final Set<SpawnDataEntry> deadSpawnedEntities;
 	private final Set<SceneBlock> loadedBlocks;
-	private boolean dontDestroyWhenEmpty;
+	private boolean dontDestroyWhenEmpty;	
+	private int autoCloseTime;
 	private int time;
 	private ClimateType climate;
 	private int weather;
@@ -104,6 +105,20 @@ public class Scene {
 
 	public GameEntity getEntityById(int id) {
 		return this.entities.get(id);
+	}
+	
+	/**
+	 * @return the autoCloseTime
+	 */
+	public int getAutoCloseTime() {
+		return autoCloseTime;
+	}
+
+	/**
+	 * @param autoCloseTime the autoCloseTime to set
+	 */
+	public void setAutoCloseTime(int autoCloseTime) {
+		this.autoCloseTime = autoCloseTime;
 	}
 
 	public int getTime() {
