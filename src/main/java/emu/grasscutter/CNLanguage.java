@@ -13,7 +13,7 @@ public final class CNLanguage {
     public String Grasscutter_is_free = "Grasscutter是免费软件，如果你是花钱买到的，你大概被骗了。主页: https://github.com/Grasscutters/Grasscutter";
     public String Game_start_port = "游戏服务器已在端口 {port} 上开启。";
     public String Client_connect = "来自 {address} 的客户端已连接。";
-    public String Client_disconnect = "来自 {address} 的客户端已短裤。";
+    public String Client_disconnect = "来自 {address} 的客户端已断开。";
     public String Client_request = "[Dispatch] 客户端 {ip} 请求:  {method} {url}";
     public String Not_load_keystore = "[Dispatch] 无法加载证书，正在尝试默认密码...";
     public String Use_default_keystore = "[Dispatch] 成功使用默认密码加载证书. 请考虑将config.json中的KeystorePassword项改为123456.";
