@@ -70,9 +70,7 @@ public class HandlerMarkMapReq extends PacketHandler {
 	}
 
 	private void teleport(Player player, MapMark mapMark) {
-		// Increased height means you can fly to the top of dragonspine now,
-		// at the cost of slightly longer falling to your destination.
-		float y = 700;
+		float y = isInt(mapMark.getName()) ? Integer.parseInt(mapMark.getName()) : 300;
 		float x = mapMark.getPosition().getX();
 		float z = mapMark.getPosition().getZ();
 		player.getPos().set(x, y, z);
