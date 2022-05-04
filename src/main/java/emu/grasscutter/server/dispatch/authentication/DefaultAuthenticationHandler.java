@@ -51,15 +51,12 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
                     responseData.data.account.token = account.generateSessionKey();
                     responseData.data.account.email = account.getEmail();
 
-                    Grasscutter.getLogger()
-                            .info(String.format(Grasscutter.getLanguage().Client_failed_login_account_create,
-                                    req.ip(), responseData.data.account.uid));
+                    Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_failed_login_account_create.replace("{ip}", req.ip()).replace("{uid}", responseData.data.account.uid));
                 } else {
                     responseData.retcode = -201;
                     responseData.message = Grasscutter.getLanguage().Username_not_found_create_failed;
 
-                    Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_failed_login_account_create_failed
-                            , req.ip()));
+                    Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_failed_login_account_no_found.replace("{ip}", req.ip()));
                 }
             } else {
                 responseData.retcode = -201;
@@ -75,8 +72,7 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
             responseData.data.account.token = account.generateSessionKey();
             responseData.data.account.email = account.getEmail();
 
-            Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_login, req.ip(),
-                    responseData.data.account.uid));
+            Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_login.replace("{ip}", req.ip()).replace("{uid}", responseData.data.account.uid));
         }
 
         return responseData;
