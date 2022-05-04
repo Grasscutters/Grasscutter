@@ -29,6 +29,7 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
+import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
@@ -54,6 +55,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 import java.time.Instant;
 import java.util.*;
+import java.util.concurrent.LinkedBlockingQueue;
 
 @Entity(value = "players", useDiscriminator = false)
 public class Player {
@@ -113,6 +115,7 @@ public class Player {
 	@Transient private long nextSendPlayerLocTime = 0;
 
 	@Transient private final Int2ObjectMap<CoopRequest> coopRequests;
+	@Transient private final Queue<AttackResult> attackResults;
 	@Transient private final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
 	@Transient private final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
 	@Transient private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
@@ -143,6 +146,7 @@ public class Player {
 		this.setRegionId(1);
 		this.sceneState = SceneLoadState.NONE;
 
+		this.attackResults = new LinkedBlockingQueue<>();
 		this.coopRequests = new Int2ObjectOpenHashMap<>();
 		this.combatInvokeHandler = new InvokeHandler(PacketCombatInvocationsNotify.class);
 		this.abilityInvokeHandler = new InvokeHandler(PacketAbilityInvocationsNotify.class);
@@ -413,6 +417,10 @@ public class Player {
 
 	public MpSettingType getMpSetting() {
 		return MpSettingType.MP_SETTING_ENTER_AFTER_APPLY; // TEMP
+	}
+	
+	public Queue<AttackResult> getAttackResults() {
+		return this.attackResults;
 	}
 
 	public synchronized Int2ObjectMap<CoopRequest> getCoopRequests() {
