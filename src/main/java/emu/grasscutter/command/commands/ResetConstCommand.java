@@ -33,7 +33,7 @@ public final class ResetConstCommand implements CommandHandler {
             Avatar avatar = entity.getAvatar();
             this.resetConstellation(avatar);
 
-            sender.dropMessage(String.format(Grasscutter.getLanguage().ResetConst_reset_all_done, avatar.getAvatarData().getName()));
+            sender.dropMessage(Grasscutter.getLanguage().ResetConst_reset_all_done.replace("{name}", avatar.getAvatarData().getName()));
         }
     }
 

@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.Language;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.languages.Language;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 
 @Command(label = "setstats", usage = "setstats|stats [@UID] <stat> <value>",
@@ -246,9 +246,9 @@ public final class SetStatsCommand implements CommandHandler {
                 valueStr = String.format("%.0f", value);
             }
             if (targetPlayer == sender) {
-                CommandHandler.sendMessage(sender, String.format(lang.SetStats_set_self, stat.name, valueStr));
+                CommandHandler.sendMessage(sender, lang.SetStats_set_self.replace("{name}", stat.name).replace("{value}", valueStr));
             } else {
-                CommandHandler.sendMessage(sender, String.format(lang.SetStats_set_for_uid, stat.name, uidStr, valueStr));
+                CommandHandler.sendMessage(sender, lang.SetStats_set_for_uid.replace("{name}", stat.name).replace("{uid}", uidStr).replace("{value}", valueStr));
             }
             return;
         } else {

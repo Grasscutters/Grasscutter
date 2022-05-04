@@ -52,9 +52,9 @@ tmp/
 .vscode
 
 # Grasscutter
-resources/*
-logs/*
-plugins/*
+resources/
+logs/
+plugins/
 data/AbilityEmbryos.json
 data/OpenConfig.json
 GM Handbook.txt

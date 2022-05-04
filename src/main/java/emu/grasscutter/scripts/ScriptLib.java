@@ -136,7 +136,7 @@ public class ScriptLib {
 	}
 	
 	// param3 (probably time limit for timed dungeons)
-	public int ActiveChallenge(int challengeId, int challengeIndex, int param3, int groupId, int param4, int param5) {
+	public int ActiveChallenge(int challengeId, int challengeIndex, int param3, int groupId, int objectiveKills, int param5) {
 		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
 		
 		if (group == null || group.monsters == null) {
@@ -146,6 +146,7 @@ public class ScriptLib {
 		DungeonChallenge challenge = new DungeonChallenge(getSceneScriptManager().getScene(), group);
 		challenge.setChallengeId(challengeId);
 		challenge.setChallengeIndex(challengeIndex);
+		challenge.setObjective(objectiveKills);
 		
 		getSceneScriptManager().getScene().setChallenge(challenge);
 		
@@ -163,8 +164,13 @@ public class ScriptLib {
 		return getSceneScriptManager().getVariables().getOrDefault(var, 0);
 	}
 	
-	public LuaValue ChangeGroupVariableValue(String var, int value) {
+	public int SetGroupVariableValue(String var, int value) {
 		getSceneScriptManager().getVariables().put(var, value);
+		return 0;
+	}
+	
+	public LuaValue ChangeGroupVariableValue(String var, int value) {
+		getSceneScriptManager().getVariables().put(var, getSceneScriptManager().getVariables().get(var) + value);
 		return LuaValue.ZERO;
 	}
 	
@@ -179,8 +185,8 @@ public class ScriptLib {
 			return 1;
 		}
 		
-		// TODO just spawn all from group for now
 		this.getSceneScriptManager().spawnMonstersInGroup(group, suite);
+		this.getSceneScriptManager().spawnGadgetsInGroup(group, suite);
 		
 		return 0;
 	}

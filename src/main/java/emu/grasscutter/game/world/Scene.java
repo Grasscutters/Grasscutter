@@ -48,7 +48,6 @@ public class Scene {
 	private final Set<SpawnDataEntry> deadSpawnedEntities;
 	private final Set<SceneBlock> loadedBlocks;
 	private boolean dontDestroyWhenEmpty;
-
 	private int time;
 	private ClimateType climate;
 	private int weather;
@@ -524,8 +523,22 @@ public class Scene {
 		}
 
 		// Spawn gadgets AFTER triggers are added
+		// TODO
 		for (SceneGroup group : block.groups) {
-			this.getScriptManager().spawnGadgetsInGroup(group);
+			if (group.init_config == null) {
+				continue;
+			}
+			
+			int suite = group.init_config.suite;
+			
+			if (suite == 0) {
+				continue;
+			}
+			
+			do {
+				this.getScriptManager().spawnGadgetsInGroup(group, suite);
+				suite++;
+			} while (suite < group.init_config.end_suite);
 		}
 	}
 

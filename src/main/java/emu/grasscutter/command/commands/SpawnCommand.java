@@ -79,7 +79,7 @@ public final class SpawnCommand implements CommandHandler {
 
                 sender.getScene().addEntity(entity);
             }
-            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Spawn_message, amount, id));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Spawn_message.replace("{amount}", Integer.toString(amount)).replace("{id}", Integer.toString(id)));
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_entity_id);
         }
