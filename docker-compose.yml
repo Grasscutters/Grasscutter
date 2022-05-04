@@ -63,7 +63,7 @@ services:
       
       echo Downloading resources...;
       git clone --depth 1 https://github.com/Dimbreath/GenshinData.git /tmp/GenshinData;
-      git clone --depth 1 https://github.com/radioegor146/gi-bin-output.git /tmp/gi-bin-output;
+      git clone --depth 1 https://github.com/zhsitao/gi-bin-output.git /tmp/gi-bin-output;
 
       echo Copying resources...;
       mkdir -p /app/src/resources/;
