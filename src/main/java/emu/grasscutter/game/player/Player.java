@@ -25,6 +25,7 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.shop.ShopLimit;
+import emu.grasscutter.game.managers.MapMarkManager.*;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
@@ -37,13 +38,12 @@ import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
-import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
+import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
-import emu.grasscutter.server.event.player.PlayerReceiveMailEvent;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
@@ -53,12 +53,12 @@ import emu.grasscutter.utils.MessageHandler;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import java.time.Instant;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 
 @Entity(value = "players", useDiscriminator = false)
 public class Player {
+
 	@Id private int id;
 	@Indexed(options = @IndexOptions(unique = true)) private String accountId;
 
@@ -120,6 +120,8 @@ public class Player {
 	@Transient private final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
 	@Transient private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
 
+	private MapMarksManager mapMarksManager;
+
 	@Deprecated
 	@SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
 	public Player() {
@@ -158,6 +160,7 @@ public class Player {
 
 		this.shopLimit = new ArrayList<>();
 		this.messageHandler = null;
+		this.mapMarksManager = new MapMarksManager();
 	}
 
 	// On player creation
@@ -183,6 +186,7 @@ public class Player {
 		this.getPos().set(GameConstants.START_POSITION);
 		this.getRotation().set(0, 307, 0);
 		this.messageHandler = null;
+		this.mapMarksManager = new MapMarksManager();
 	}
 
 	public int getUid() {
@@ -957,6 +961,10 @@ public class Player {
 				.setPos(this.getPos().toProto())
 				.setRot(this.getRotation().toProto())
 				.build();
+	}
+
+	public MapMarksManager getMapMarksManager() {
+		return mapMarksManager;
 	}
 
 	public synchronized void onTick() {
