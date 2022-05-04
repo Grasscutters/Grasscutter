@@ -7,32 +7,44 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "coop", usage = "coop",
+@Command(label = "coop", usage = "coop [host UID]",
         description = "Forces someone to join the world of others", permission = "server.coop")
 public final class CoopCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() < 2) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Coop_usage);
-            return;
+		if (targetPlayer == null) {
+			CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
+			return;
+		}
+
+        Player host = sender;
+        switch (args.size()) {
+            case 0:  // Summon target to self
+                break;
+            case 1:  // Summon target to argument
+                try {
+                    int hostId = Integer.parseInt(args.get(1));
+                    host = sender.getServer().getPlayerByUid(hostId);
+                    if (host == null) {
+                        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_is_offline);
+                        return;
+                    }
+                    break;
+                } catch (Exception e) {
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
+                    return;
+                }
+            default:
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Coop_usage);
+                return;
         }
         
-        try {
-            int tid = Integer.parseInt(args.get(0));
-            int hostId = Integer.parseInt(args.get(1));
-            Player host = sender.getServer().getPlayerByUid(hostId);
-            Player want = sender.getServer().getPlayerByUid(tid);
-            if (host == null || want == null) {
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_is_offline);
-                return;
-            }
-            if (want.isInMultiplayer()) {
-                sender.getServer().getMultiplayerManager().leaveCoop(want);
-            }
-            sender.getServer().getMultiplayerManager().applyEnterMp(want, hostId);
-            sender.getServer().getMultiplayerManager().applyEnterMpReply(host, tid, true);
-        } catch (Exception e) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
+        
+        if (targetPlayer.isInMultiplayer()) {
+            sender.getServer().getMultiplayerManager().leaveCoop(targetPlayer);
         }
+        sender.getServer().getMultiplayerManager().applyEnterMp(targetPlayer, host.getUid());
+        sender.getServer().getMultiplayerManager().applyEnterMpReply(host, targetPlayer.getUid(), true);
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Coop_success.replace("{host}", host.getNickname()).replace("{target}", targetPlayer.getNickname()));
     }
 }
