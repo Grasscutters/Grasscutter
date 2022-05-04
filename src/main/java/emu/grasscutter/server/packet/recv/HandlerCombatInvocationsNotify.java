@@ -105,6 +105,10 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 		if (notif.getInvokeListList().size() > 0) {
 			session.getPlayer().getCombatInvokeHandler().update(session.getPlayer());
 		}
+                // Handle attack results last
+		while (!session.getPlayer().getAttackResults().isEmpty()) {
+			session.getPlayer().getScene().handleAttack(session.getPlayer().getAttackResults().poll());
+		}
 	}
 
 	private static MotionState[] consumeStaminaTypes = new MotionState[]{
