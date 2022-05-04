@@ -148,13 +148,11 @@ public final class GiveCommand implements CommandHandler {
         this.item(targetPlayer, itemData, amount, lvl, refinement);
 
         if (!itemData.isEquip()) {
-            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Give_given, amount, item, target));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_given.replace("{amount}", Integer.toString(amount)).replace("{item}", Integer.toString(item)).replace("{target}", Integer.toString(target)));
         } else if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
-            CommandHandler.sendMessage(sender,
-                    String.format(Grasscutter.getLanguage().Give_given_with_level_and_refinement, item, lvl, refinement, amount, target));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_given_with_level_and_refinement.replace("{item}", Integer.toString(item)).replace("{lvl}", Integer.toString(lvl)).replace("{refinement}", Integer.toString(refinement)).replace("{amount}", Integer.toString(amount)).replace("{target}", Integer.toString(target)));
         } else {
-            CommandHandler.sendMessage(sender,
-                    String.format(Grasscutter.getLanguage().Give_given_level, item, lvl, amount, target));
+            CommandHandler.sendMessage(sender,Grasscutter.getLanguage().Give_given_level.replace("{item}", Integer.toString(item)).replace("{lvl}", Integer.toString(lvl)).replace("{amount}", Integer.toString(amount)));
         }
     }
 

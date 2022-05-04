@@ -249,7 +249,7 @@ public final class DispatchServer {
 
 		httpServer.raw().error(404, ctx -> {
 			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING) {
-				Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Potential_unhandled_request, ctx.method(), ctx.url()));
+				Grasscutter.getLogger().info(Grasscutter.getLanguage().Potential_unhandled_request.replace("{method}", ctx.method()).replace("{url}", ctx.url()));
 			}
 			ctx.contentType("text/html");
 			ctx.result("<!doctype html><html lang=\"en\"><body><img src=\"https://http.cat/404\" /></body></html>"); // I'm like 70% sure this won't break anything.
@@ -307,7 +307,7 @@ public final class DispatchServer {
 			if (requestData == null) {
 				return;
 			}
-			Grasscutter.getLogger().info(String.format("[Dispatch] Client %s is trying to log in", req.ip()));
+			Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_try_login.replace("{ip}", req.ip()));
 
 			res.send(this.getAuthHandler().handleGameLogin(req, requestData));
 		});
@@ -327,7 +327,7 @@ public final class DispatchServer {
 				return;
 			}
 			LoginResultJson responseData = new LoginResultJson();
-			Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_login_token, req.ip()));
+			Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_login_token.replace("{ip}", req.ip()));
 
 			// Login
 			Account account = DatabaseHelper.getAccountById(requestData.uid);
@@ -337,16 +337,14 @@ public final class DispatchServer {
 				responseData.retcode = -111;
 				responseData.message = Grasscutter.getLanguage().Game_account_cache_error;
 
-				Grasscutter.getLogger()
-						.info(String.format(Grasscutter.getLanguage().Client_token_login_failed, req.ip()));
+				Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_token_login_failed.replace("{ip}", req.ip()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.account.uid = requestData.uid;
 				responseData.data.account.token = requestData.token;
 				responseData.data.account.email = account.getEmail();
 
-				Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Client_login_in_token,
-						req.ip(), responseData.data.account.uid));
+				Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_login_in_token.replace("{ip}", req.ip()).replace("{uid}", responseData.data.account.uid));
 			}
 
 			res.send(responseData);
@@ -378,16 +376,14 @@ public final class DispatchServer {
 				responseData.retcode = -201;
 				responseData.message = Grasscutter.getLanguage().Wrong_session_key;
 
-				Grasscutter.getLogger().info(
-						String.format(Grasscutter.getLanguage().Client_failed_exchange_combo_token, req.ip()));
+				Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_failed_exchange_combo_token.replace("{ip}", req.ip()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.open_id = loginData.uid;
 				responseData.data.combo_id = "157795300";
 				responseData.data.combo_token = account.generateLoginToken();
 
-				Grasscutter.getLogger().info(
-						String.format(Grasscutter.getLanguage().Client_exchange_combo_token, req.ip()));
+				Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_exchange_combo_token.replace("{ip}", req.ip()));
 			}
 
 			res.send(responseData);
@@ -453,7 +449,7 @@ public final class DispatchServer {
 		httpServer.get("/gcstatic/*", new StaticFileHandler());
 
 		httpServer.listen(Grasscutter.getConfig().getDispatchOptions().Port);
-		Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Dispatch_start_server_port, httpServer.raw().port()));
+		Grasscutter.getLogger().info(Grasscutter.getLanguage().Dispatch_start_server_port.replace("{port}", Integer.toString(httpServer.raw().port())));
 	}
 
 	private Map<String, String> parseQueryString(String qs) {
