@@ -17,7 +17,7 @@ import java.util.List;
 public final class TalentCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (sender == null) {
             CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
             return;

@@ -11,7 +11,7 @@ import java.util.List;
         description = "Forces someone to join the world of others", permission = "server.coop")
 public final class CoopCommand implements CommandHandler {
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 2) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Coop_usage);
             return;

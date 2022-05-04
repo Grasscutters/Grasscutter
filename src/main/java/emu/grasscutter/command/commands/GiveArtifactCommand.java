@@ -17,7 +17,7 @@ import java.util.List;
 @Command(label = "giveart", usage = "giveart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]", description = "Gives the player a specified artifact", aliases = {"gart"}, permission = "player.giveart")
 public final class GiveArtifactCommand implements CommandHandler {
 	@Override
-	public void execute(Player sender, List<String> args) {
+	public void execute(Player sender, Player targetPlayer, List<String> args) {
 		int size = args.size(), target, itemId, mainPropId, level = 1;
 		ArrayList<Integer> appendPropIdList = new ArrayList<>();
 		String msg = Grasscutter.getLanguage().GiveArtifact_usage;
@@ -71,7 +71,6 @@ public final class GiveArtifactCommand implements CommandHandler {
 			return;
 		}
 
-		Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
 		if (targetPlayer == null) {
 			CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
 			return;

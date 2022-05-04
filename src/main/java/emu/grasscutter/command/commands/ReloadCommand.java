@@ -12,7 +12,7 @@ import java.util.List;
 public final class ReloadCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Reload_reload_start);
         Grasscutter.loadConfig();
         Grasscutter.loadLanguage();

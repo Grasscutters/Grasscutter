@@ -58,6 +58,8 @@ public final class Language {
     public String Invalid_arguments = "Invalid arguments.";
     public String Success = "Success";
     public String Invalid_entity_id = "Invalid entity id.";
+    public String Target_cleared = "Target cleared.";
+    public String Target_set = "Subsequent commands will target @{uid} by default.";
 
     // Help
     public String Help_usage = "   Usage: ";
@@ -215,8 +217,6 @@ public final class Language {
         \t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys
         """;
     public String SetStats_value_error = "Invalid stat value.";
-    public String SetStats_uid_error = "Invalid UID.";
-    public String SetStats_player_error = "Player not found or offline.";
     public String SetStats_set_self = "{name} set to {value}.";
     public String SetStats_set_for_uid = "{name} for {uid} set to {value}.";
     public String Stats_FIGHT_PROP_MAX_HP = "Max HP";

@@ -12,10 +12,9 @@ import java.util.List;
 public final class KickCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         int target = Integer.parseInt(args.get(0));
 
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
             return;

@@ -174,49 +174,25 @@ public final class SetStatsCommand implements CommandHandler {
     }
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         Language lang = Grasscutter.getLanguage();
         String syntax = sender == null ? lang.SetStats_usage_console : lang.SetStats_usage_console;
         String usage = syntax + lang.SetStats_help_message;
-        Player targetPlayer = sender;
-        String uidStr = "";
         String statStr;
         String valueStr;
+
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, usage);
+            return;
+        }
 
         switch (args.size()) {
             default:
                 CommandHandler.sendMessage(sender, usage);
                 return;
             case 2:
-                if (sender == null) {
-                    // When run by the server, first parameter is not optional
-                    CommandHandler.sendMessage(sender, usage);
-                    return;
-                }
                 statStr = args.get(0).toLowerCase();
                 valueStr = args.get(1);
-                break;
-            case 3:
-                uidStr = args.get(0);
-                if (uidStr.startsWith("@")) {
-                    uidStr = uidStr.substring(1);
-                } else {
-                    CommandHandler.sendMessage(sender, usage);
-                    return;
-                }
-                try {
-                    int uid = Integer.parseInt(uidStr);
-                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid);
-                    if (targetPlayer == null) {
-                        CommandHandler.sendMessage(sender, lang.SetStats_player_error);
-                        return;
-                    }
-                } catch (NumberFormatException e) {
-                    CommandHandler.sendMessage(sender, lang.SetStats_uid_error);
-                    return;
-                }
-                statStr = args.get(1).toLowerCase();
-                valueStr = args.get(2);
                 break;
         };
 
@@ -248,6 +224,7 @@ public final class SetStatsCommand implements CommandHandler {
             if (targetPlayer == sender) {
                 CommandHandler.sendMessage(sender, lang.SetStats_set_self.replace("{name}", stat.name).replace("{value}", valueStr));
             } else {
+                String uidStr = targetPlayer.getAccount().getId();
                 CommandHandler.sendMessage(sender, lang.SetStats_set_for_uid.replace("{name}", stat.name).replace("{uid}", uidStr).replace("{value}", valueStr));
             }
             return;
