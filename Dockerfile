@@ -14,7 +14,6 @@ COPY --from=builder /build/grasscutter.jar grasscutter.jar
 
 # mount these folder/file at runtime please
 # resources/ data/ config.json keystore.p12
-COPY Grasscutter-Protos/proto/ ./proto
 COPY keys/ ./keys
 
 ENTRYPOINT ["java", "-jar", "grasscutter.jar"]
