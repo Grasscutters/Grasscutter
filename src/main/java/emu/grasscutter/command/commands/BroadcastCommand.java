@@ -12,7 +12,7 @@ import java.util.List;
 public final class BroadcastCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 1) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Broadcast_command_usage);
             return;

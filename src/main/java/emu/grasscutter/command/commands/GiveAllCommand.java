@@ -18,7 +18,7 @@ import java.util.*;
 public final class GiveAllCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         int target, amount = 99999;
 
         switch (args.size()) {
@@ -63,7 +63,6 @@ public final class GiveAllCommand implements CommandHandler {
                 return;
         }
 
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
             return;

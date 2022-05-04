@@ -13,7 +13,7 @@ import java.util.List;
 public final class TeleportCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         int target;
         if (args.size() < (sender == null ? 4 : 3)) {
             CommandHandler.sendMessage(sender, sender == null ? Grasscutter.getLanguage().Teleport_usage_server :
@@ -35,7 +35,6 @@ public final class TeleportCommand implements CommandHandler {
             target = sender.getUid();
         }
 
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found_or_offline);
             return;

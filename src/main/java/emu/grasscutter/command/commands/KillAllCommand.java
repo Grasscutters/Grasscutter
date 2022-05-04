@@ -15,9 +15,8 @@ import java.util.List;
 public final class KillAllCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         Scene mainScene;
-        Player targetPlayer;
 
         try {
             switch (args.size()) {

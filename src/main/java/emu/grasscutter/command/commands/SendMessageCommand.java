@@ -12,7 +12,7 @@ import java.util.List;
 public final class SendMessageCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 2) {
             CommandHandler.sendMessage(null, Grasscutter.getLanguage().SendMessage_usage);
             return;
@@ -22,7 +22,6 @@ public final class SendMessageCommand implements CommandHandler {
             int target = Integer.parseInt(args.get(0));
             String message = String.join(" ", args.subList(1, args.size()));
 
-            Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
             if (targetPlayer == null) {
                 CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
                 return;

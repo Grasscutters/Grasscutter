@@ -15,7 +15,7 @@ import java.util.List;
 public final class GiveCharCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         int target, avatarId, level = 1, ascension;
 
         if (sender == null && args.size() < 2) {
@@ -61,7 +61,6 @@ public final class GiveCharCommand implements CommandHandler {
                 break;
         }
 
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
             return;
