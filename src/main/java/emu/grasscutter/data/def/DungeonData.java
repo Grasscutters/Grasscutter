@@ -11,7 +11,10 @@ public class DungeonData extends GameResource {
 	private int Id;
 	private int SceneId;
 	private int ShowLevel;
+	private int PassRewardPreviewID;
 	private String InvolveType; // TODO enum
+	
+	private RewardPreviewData previewData;
 	    
 	@Override
 	public int getId() {
@@ -26,8 +29,14 @@ public class DungeonData extends GameResource {
 		return ShowLevel;
 	}
 
+	public RewardPreviewData getRewardPreview() {
+		return previewData;
+	}
+
 	@Override
 	public void onLoad() {
-		
+		if (this.PassRewardPreviewID > 0) {
+			this.previewData = GameData.getRewardPreviewDataMap().get(this.PassRewardPreviewID);
+		}
 	}
 }

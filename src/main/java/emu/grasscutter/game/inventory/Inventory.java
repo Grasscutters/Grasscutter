@@ -164,6 +164,9 @@ public class Inventory implements Iterable<GameItem> {
 			if (tab.getSize() >= tab.getMaxCapacity()) {
 				return null;
 			}
+			// Duplicates cause problems
+			item.setCount(Math.max(item.getCount(), 1));
+			// Adds to inventory
 			putItem(item, tab);
 		} else if (type == ItemType.ITEM_VIRTUAL) {
 			// Handle
@@ -288,7 +291,11 @@ public class Inventory implements Iterable<GameItem> {
 			return false;
 		}
 		
-		item.setCount(item.getCount() - count);
+		if (item.getItemData().isEquip()) {
+			item.setCount(0);
+		} else {
+			item.setCount(item.getCount() - count);
+		}
 		
 		if (item.getCount() <= 0) {
 			// Remove from inventory tab too

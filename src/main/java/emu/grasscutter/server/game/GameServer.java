@@ -208,7 +208,7 @@ public final class GameServer extends KcpServer {
 	@Override
 	public void onStartFinish() {
 		Grasscutter.getLogger().info(Grasscutter.getLanguage().Grasscutter_is_free);
-		Grasscutter.getLogger().info(String.format(Grasscutter.getLanguage().Game_start_port, address.getPort()));
+		Grasscutter.getLogger().info(Grasscutter.getLanguage().Game_start_port.replace("{port}", Integer.toString(address.getPort())));
 		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
 	

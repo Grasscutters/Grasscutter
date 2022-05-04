@@ -8,12 +8,14 @@ import emu.grasscutter.net.proto.DungeonChallengeBeginNotifyOuterClass.DungeonCh
 public class PacketDungeonChallengeBeginNotify extends BasePacket {
 	
 	public PacketDungeonChallengeBeginNotify(DungeonChallenge challenge) {
-		super(PacketOpcodes.DungeonChallengeBeginNotify);
+		super(PacketOpcodes.DungeonChallengeBeginNotify, true);
 
 		DungeonChallengeBeginNotify proto = DungeonChallengeBeginNotify.newBuilder()
 				.setChallengeId(challenge.getChallengeId())
 				.setChallengeIndex(challenge.getChallengeIndex())
 				.setGroupId(challenge.getGroup().id)
+				.addParamList(challenge.getObjective())
+				.addParamList(challenge.getTimeLimit())
 				.build();
 		
 		this.setData(proto);

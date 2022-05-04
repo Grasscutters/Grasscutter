@@ -176,15 +176,15 @@ public final class Utils {
 
 		// Check for resources folder.
 		if(!fileExists(resourcesFolder)) {
-			logger.info("Creating resources folder...");
-			logger.info("Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.");
+			logger.info(Grasscutter.getLanguage().Create_resources_folder);
+			logger.info(Grasscutter.getLanguage().Place_copy);
 			createFolder(resourcesFolder); exit = true;
 		}
 
 		// Check for BinOutput + ExcelBinOuput.
 		if(!fileExists(resourcesFolder + "BinOutput") ||
 				!fileExists(resourcesFolder + "ExcelBinOutput")) {
-			logger.info("Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.");
+			logger.info(Grasscutter.getLanguage().Place_copy);
 			exit = true;
 		}
 

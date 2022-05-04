@@ -27,6 +27,8 @@ import com.google.gson.GsonBuilder;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
+import emu.grasscutter.languages.CNLanguage;
+import emu.grasscutter.languages.Language;
 import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.tools.Tools;
@@ -37,6 +39,7 @@ public final class Grasscutter {
 	private static Config config;
 	private static LineReader consoleLineReader = null;
 	private static Language language;
+	private static CNLanguage cn_language;
 
 	private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	private static final File configFile = new File("./config.json");
@@ -141,15 +144,16 @@ public final class Grasscutter {
 	}
 
 	public static void loadLanguage() {
-		try (FileReader file = new FileReader(String.format(getConfig().LANGUAGE_FOLDER + "%s.json", Grasscutter.config.Language))) {
+		try (FileReader file = new FileReader(String.format("%s%s.json", getConfig().LANGUAGE_FOLDER, Grasscutter.config.Language))) {
 			language = gson.fromJson(file, Language.class);
 		} catch (Exception e) {
 			Grasscutter.language = new Language();
+			Grasscutter.cn_language = new CNLanguage();
 			Grasscutter.config.Language = "en_us";
 			saveConfig();
 
 			try {
-				File folder = new File("./language");
+				File folder = new File("./languages");
 				if (!folder.exists() && !folder.isDirectory()) {
 					//noinspection ResultOfMethodCallIgnored
 					folder.mkdirs();
@@ -157,10 +161,15 @@ public final class Grasscutter {
 			} catch (Exception ee) {
 				Grasscutter.getLogger().error("Unable to create language folder.");
 			}
-			try (FileWriter file = new FileWriter("./language/en_us.json")) {
+			try (FileWriter file = new FileWriter("./languages/en_us.json")) {
 				file.write(gson.toJson(language));
 			} catch (Exception ee) {
 				Grasscutter.getLogger().error("Unable to create language file.");
+			}
+			try (FileWriter file = new FileWriter("./languages/zh_cn.json")) {
+				file.write(gson.toJson(cn_language));
+			} catch (Exception ee) {
+				Grasscutter.getLogger().error("无法创建中文语言文件。");
 			}
 		}
 	}
