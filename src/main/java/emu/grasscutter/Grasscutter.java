@@ -27,6 +27,8 @@ import com.google.gson.GsonBuilder;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
+import emu.grasscutter.languages.CNLanguage;
+import emu.grasscutter.languages.Language;
 import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.tools.Tools;
