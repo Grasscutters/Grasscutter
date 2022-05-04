@@ -66,7 +66,7 @@ public final class TalentCommand implements CommandHandler {
                             // Packet
                             sender.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillIdNorAtk, currentLevelNorAtk, nextLevel));
                             sender.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillIdNorAtk, currentLevelNorAtk, nextLevel));
-                            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Talent_set_atk, nextLevel));
+                            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Talent_set_atk.replace("{level}", Integer.toString(nextLevel)));
                         }    
                         if (skillId == skillIdE){ 
                             // Upgrade skill
@@ -76,7 +76,7 @@ public final class TalentCommand implements CommandHandler {
                             // Packet
                             sender.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillIdE, currentLevelE, nextLevel));
                             sender.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillIdE, currentLevelE, nextLevel));
-                            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Talent_set_e, nextLevel));
+                            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Talent_set_e.replace("{level}", Integer.toString(nextLevel)));
                         }
                         if (skillId == skillIdQ){ 
                             // Upgrade skill
@@ -86,7 +86,7 @@ public final class TalentCommand implements CommandHandler {
                             // Packet
                             sender.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillIdQ, currentLevelQ, nextLevel));
                             sender.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillIdQ, currentLevelQ, nextLevel));
-                            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Talent_set_q, nextLevel));
+                            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Talent_set_q.replace("{level}", Integer.toString(nextLevel)));
                         }       
                                 
                     } catch (NumberFormatException ignored) {
@@ -128,7 +128,7 @@ public final class TalentCommand implements CommandHandler {
                     // Packet
                     sender.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillId, currentLevel, nextLevel));
                     sender.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillId, currentLevel, nextLevel));
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Talent_set_this, nextLevel));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Talent_set_this.replace("{level}", Integer.toString(nextLevel)));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Talent_invalid_talent_level);
                     return;
@@ -140,10 +140,10 @@ public final class TalentCommand implements CommandHandler {
                     int skillIdNorAtk = avatar.getData().getSkillDepot().getSkills().get(0);
                     int skillIdE = avatar.getData().getSkillDepot().getSkills().get(1);
                     int skillIdQ = avatar.getData().getSkillDepot().getEnergySkill();
-                    
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Talent_normal_attack_id, skillIdNorAtk));
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Talent_e_skill_id, skillIdE));
-                    CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Talent_q_skill_id, skillIdQ));
+
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Talent_normal_attack_id.replace("{id}", Integer.toString(skillIdNorAtk)));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Talent_e_skill_id.replace("{id}", Integer.toString(skillIdE)));
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Talent_q_skill_id.replace("{id}", Integer.toString(skillIdQ)));
                 break;
         }
     }

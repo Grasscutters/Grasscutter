@@ -59,7 +59,7 @@ public final class KillAllCommand implements CommandHandler {
                     .filter(entity -> entity instanceof EntityMonster)
                     .toList();
             toKill.stream().forEach(entity -> mainScene.killEntity(entity, 0));
-            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Kill_kill_monsters_in_scene, toKill.size(), mainScene.getId()));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Kill_kill_monsters_in_scene.replace("{size}", Integer.toString(toKill.size())).replace("{id}", Integer.toString(mainScene.getId())));
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_arguments);
         }

@@ -246,9 +246,9 @@ public final class SetStatsCommand implements CommandHandler {
                 valueStr = String.format("%.0f", value);
             }
             if (targetPlayer == sender) {
-                CommandHandler.sendMessage(sender, String.format(lang.SetStats_set_self, stat.name, valueStr));
+                CommandHandler.sendMessage(sender, lang.SetStats_set_self.replace("{name}", stat.name).replace("{value}", valueStr));
             } else {
-                CommandHandler.sendMessage(sender, String.format(lang.SetStats_set_for_uid, stat.name, uidStr, valueStr));
+                CommandHandler.sendMessage(sender, lang.SetStats_set_for_uid.replace("{name}", stat.name).replace("{uid}", uidStr).replace("{value}", valueStr));
             }
             return;
         } else {

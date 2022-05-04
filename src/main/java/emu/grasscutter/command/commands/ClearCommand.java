@@ -39,7 +39,7 @@ public final class ClearCommand implements CommandHandler {
                             .filter(item -> item.getItemType() == ItemType.ITEM_WEAPON)
                             .filter(item -> !item.isLocked() && !item.isEquipped())
                             .forEach(item -> playerInventory.removeItem(item, item.getCount()));
-                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_weapons, targetPlayer.getNickname()));
+                    sender.dropMessage(Grasscutter.getLanguage().Clear_weapons.replace("{name}", targetPlayer.getNickname()));
                 }
                 case "art" -> {
                     playerInventory.getItems().values().stream()
@@ -47,7 +47,7 @@ public final class ClearCommand implements CommandHandler {
                             .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                             .filter(item -> !item.isLocked() && !item.isEquipped())
                             .forEach(item -> playerInventory.removeItem(item, item.getCount()));
-                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_artifacts, targetPlayer.getNickname()));
+                    sender.dropMessage(Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));
                 }
                 case "mat" -> {
                     playerInventory.getItems().values().stream()
@@ -55,7 +55,7 @@ public final class ClearCommand implements CommandHandler {
                             .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                             .filter(item -> !item.isLocked() && !item.isEquipped())
                             .forEach(item -> playerInventory.removeItem(item, item.getCount()));
-                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_artifacts, targetPlayer.getNickname()));
+                    sender.dropMessage(Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));
                 }
                 case "all" -> {
                     playerInventory.getItems().values().stream()
@@ -63,34 +63,34 @@ public final class ClearCommand implements CommandHandler {
                             .filter(item1 -> item1.getLevel() == 1 && item1.getExp() == 0)
                             .filter(item1 -> !item1.isLocked() && !item1.isEquipped())
                             .forEach(item1 -> playerInventory.removeItem(item1, item1.getCount()));
-                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_artifacts, targetPlayer.getNickname()));
+                    sender.dropMessage(Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));
                     playerInventory.getItems().values().stream()
                             .filter(item2 -> item2.getItemType() == ItemType.ITEM_MATERIAL)
                             .filter(item2 -> !item2.isLocked() && !item2.isEquipped())
                             .forEach(item2 -> playerInventory.removeItem(item2, item2.getCount()));
-                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_materials, targetPlayer.getNickname()));
+                    sender.dropMessage(Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));
                     playerInventory.getItems().values().stream()
                             .filter(item3 -> item3.getItemType() == ItemType.ITEM_WEAPON)
                             .filter(item3 -> item3.getLevel() == 1 && item3.getExp() == 0)
                             .filter(item3 -> !item3.isLocked() && !item3.isEquipped())
                             .forEach(item3 -> playerInventory.removeItem(item3, item3.getCount()));
-                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_artifacts, targetPlayer.getNickname()));
+                    sender.dropMessage(Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));
                     playerInventory.getItems().values().stream()
                             .filter(item4 -> item4.getItemType() == ItemType.ITEM_FURNITURE)
                             .filter(item4 -> !item4.isLocked() && !item4.isEquipped())
                             .forEach(item4 -> playerInventory.removeItem(item4, item4.getCount()));
-                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_furniture, targetPlayer.getNickname()));
+                    sender.dropMessage(Grasscutter.getLanguage().Clear_furniture.replace("{name}", targetPlayer.getNickname()));
                     playerInventory.getItems().values().stream()
                             .filter(item5 -> item5.getItemType() == ItemType.ITEM_DISPLAY)
                             .filter(item5 -> !item5.isLocked() && !item5.isEquipped())
                             .forEach(item5 -> playerInventory.removeItem(item5, item5.getCount()));
-                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_displays, targetPlayer.getNickname()));
+                    sender.dropMessage(Grasscutter.getLanguage().Clear_displays.replace("{name}", targetPlayer.getNickname()));
                     playerInventory.getItems().values().stream()
                             .filter(item6 -> item6.getItemType() == ItemType.ITEM_VIRTUAL)
                             .filter(item6 -> !item6.isLocked() && !item6.isEquipped())
                             .forEach(item6 -> playerInventory.removeItem(item6, item6.getCount()));
-                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_virtuals, targetPlayer.getNickname()));
-                    sender.dropMessage(String.format(Grasscutter.getLanguage().Clear_everything, targetPlayer.getNickname()));
+                    sender.dropMessage(Grasscutter.getLanguage().Clear_virtuals.replace("{name}", targetPlayer.getNickname()));
+                    sender.dropMessage(Grasscutter.getLanguage().Clear_everything.replace("{name}", targetPlayer.getNickname()));
                 }
             }
         } catch (NumberFormatException ignored) {

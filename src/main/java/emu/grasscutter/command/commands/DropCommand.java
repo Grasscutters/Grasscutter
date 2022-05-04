@@ -49,7 +49,7 @@ public final class DropCommand implements CommandHandler {
                 EntityItem entity = new EntityItem(sender.getScene(), sender, itemData, sender.getPos().clone().addY(3f), amount);
                 sender.getScene().addEntity(entity);
             }
-            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Drop_dropped_of, amount, item));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Drop_dropped_of.replace("{amount}", Integer.toString(amount)).replace("{item}", Integer.toString(item)));
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_or_player_id);
         }

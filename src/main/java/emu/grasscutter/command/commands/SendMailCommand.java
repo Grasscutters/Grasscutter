@@ -45,7 +45,7 @@ public final class SendMailCommand implements CommandHandler {
                             if (DatabaseHelper.getPlayerById(Integer.parseInt(args.get(0))) != null) {
                                 mailBuilder = new MailBuilder(Integer.parseInt(args.get(0)), new Mail());
                             } else {
-                                CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SendMail_user_not_exist, args.get(0)));
+                                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SendMail_user_not_exist.replace("{id}", args.get(0)));
                                 return;
                             }
                         }
@@ -70,7 +70,7 @@ public final class SendMailCommand implements CommandHandler {
                         if (mailBuilder.constructionStage == 3) {
                             if (!mailBuilder.sendToAll) {
                                 Grasscutter.getGameServer().getPlayerByUid(mailBuilder.recipient, true).sendMail(mailBuilder.mail);
-                                CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SendMail_send_done, mailBuilder.recipient));
+                                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SendMail_send_done.replace("{name}", Integer.toString(mailBuilder.recipient)));
                             } else {
                                 for (Player player : DatabaseHelper.getAllPlayers()) {
                                     Grasscutter.getGameServer().getPlayerByUid(player.getUid(), true).sendMail(mailBuilder.mail);
@@ -79,12 +79,12 @@ public final class SendMailCommand implements CommandHandler {
                             }
                             mailBeingConstructed.remove(senderId);
                         } else {
-                            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SendMail_not_composition_end, getConstructionArgs(mailBuilder.constructionStage)));
+                            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SendMail_not_composition_end.replace("{args}", getConstructionArgs(mailBuilder.constructionStage)));
                         }
                         return;
                     }
                     case "help" -> {
-                        CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SendMail_Please_use, getConstructionArgs(mailBuilder.constructionStage)));
+                        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SendMail_please_use.replace("{args}", getConstructionArgs(mailBuilder.constructionStage)));
                         return;
                     }
                     default -> {
@@ -92,19 +92,19 @@ public final class SendMailCommand implements CommandHandler {
                             case 0 -> {
                                 String title = String.join(" ", args.subList(0, args.size()));
                                 mailBuilder.mail.mailContent.title = title;
-                                CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SendMail_set_title, title));
+                                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SendMail_set_title.replace("{title}", title));
                                 mailBuilder.constructionStage++;
                             }
                             case 1 -> {
                                 String contents = String.join(" ", args.subList(0, args.size()));
                                 mailBuilder.mail.mailContent.content = contents;
-                                CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SendMail_set_contents, contents));
+                                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SendMail_set_contents.replace("{contents}", contents));
                                 mailBuilder.constructionStage++;
                             }
                             case 2 -> {
                                 String msgSender = String.join(" ", args.subList(0, args.size()));
                                 mailBuilder.mail.mailContent.sender = msgSender;
-                                CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SendMail_set_message_sender, msgSender));
+                                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SendMail_set_message_sender.replace("{send}", msgSender));
                                 mailBuilder.constructionStage++;
                             }
                             case 3 -> {
@@ -144,13 +144,13 @@ public final class SendMailCommand implements CommandHandler {
                                     }
                                 }
                                 mailBuilder.mail.itemList.add(new Mail.MailItem(item, amount, lvl));
-                                CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SendMail_send, amount, item, lvl));
+                                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SendMail_send.replace("{amount}", Integer.toString(amount)).replace("{item}", Integer.toString(item)).replace("{lvl}", Integer.toString(lvl)));
                             }
                         }
                     }
                 }
             } else {
-                CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SendMail_invalid_arguments_please_use, getConstructionArgs(mailBuilder.constructionStage)));
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SendMail_invalid_arguments_please_use.replace("{args}", getConstructionArgs(mailBuilder.constructionStage)));
             }
         }
     }
@@ -172,7 +172,7 @@ public final class SendMailCommand implements CommandHandler {
             }
             default -> {
                 Thread.dumpStack();
-                return String.format(Grasscutter.getLanguage().SendMail_error, stage);
+                return Grasscutter.getLanguage().SendMail_error.replace("{stage}", Integer.toString(stage));
             }
         }
     }

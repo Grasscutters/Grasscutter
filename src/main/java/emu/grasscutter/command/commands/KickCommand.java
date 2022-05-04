@@ -22,9 +22,10 @@ public final class KickCommand implements CommandHandler {
         }
 
         if (sender != null) {
-            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Kick_player_kick_player, sender.getAccount().getPlayerUid(), sender.getAccount().getUsername(), target, targetPlayer.getAccount().getUsername()));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Kick_player_kick_player.replace("{sendUid}", Integer.toString(sender.getAccount().getPlayerUid())).replace("{sendName}", sender.getAccount().getUsername()).replace("kickUid", Integer.toString(target)).replace("{kickName}", targetPlayer.getAccount().getUsername()));
+        } else {
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Kick_server_player.replace("{kickUid}", Integer.toString(target)).replace("{kickName}", targetPlayer.getAccount().getUsername()));
         }
-        CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Kick_server_player, target, targetPlayer.getAccount().getUsername()));
 
         targetPlayer.getSession().close();
     }
