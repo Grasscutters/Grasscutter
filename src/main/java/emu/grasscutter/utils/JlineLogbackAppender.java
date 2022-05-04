@@ -14,7 +14,7 @@ public class JlineLogbackAppender extends ConsoleAppender<ILoggingEvent> {
             return;
         }
         Arrays.stream(
-                new String(encoder.encode(eventObject)).split("\n")
+                new String(encoder.encode(eventObject)).split("\n\r")
         ).forEach(Grasscutter.getConsole()::printAbove);
     }
 }

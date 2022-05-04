@@ -91,7 +91,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		item.getAppendPropIdList().addAll(appendPropIdList);
 		targetPlayer.getInventory().addItem(item, ActionReason.SubfieldDrop);
 
-		CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().GiveArtifact_given, itemId, target));
+		CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveArtifact_given.replace("{itemId}", Integer.toString(itemId)).replace("target", Integer.toString(target)));
 	}
 }
 

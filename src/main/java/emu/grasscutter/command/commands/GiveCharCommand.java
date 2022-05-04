@@ -94,6 +94,6 @@ public final class GiveCharCommand implements CommandHandler {
         avatar.recalcStats();
 
         targetPlayer.addAvatar(avatar);
-        CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().GiveChar_given, avatarId, level, target));
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveChar_given.replace("{avatarId}", Integer.toString(avatarId)).replace("{level}", Integer.toString(level)).replace("{target}", Integer.toString(target)));
     }
 }

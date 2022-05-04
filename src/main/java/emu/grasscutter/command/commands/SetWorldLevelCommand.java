@@ -35,7 +35,7 @@ public final class SetWorldLevelCommand implements CommandHandler {
             sender.getWorld().setWorldLevel(level);
             sender.setWorldLevel(level);
 
-            sender.dropMessage(String.format(Grasscutter.getLanguage().SetWorldLevel_set_world_level, level));
+            sender.dropMessage(Grasscutter.getLanguage().SetWorldLevel_set_world_level.replace("{level}", Integer.toString(level)));
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(null, Grasscutter.getLanguage().SetWorldLevel_invalid_world_level);
         }

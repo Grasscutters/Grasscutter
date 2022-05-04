@@ -27,6 +27,8 @@ import com.google.gson.GsonBuilder;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
+import emu.grasscutter.languages.CNLanguage;
+import emu.grasscutter.languages.Language;
 import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.tools.Tools;
@@ -142,7 +144,7 @@ public final class Grasscutter {
 	}
 
 	public static void loadLanguage() {
-		try (FileReader file = new FileReader(String.format(getConfig().LANGUAGE_FOLDER + "%s.json", Grasscutter.config.Language))) {
+		try (FileReader file = new FileReader(String.format("%s%s.json", getConfig().LANGUAGE_FOLDER, Grasscutter.config.Language))) {
 			language = gson.fromJson(file, Language.class);
 		} catch (Exception e) {
 			Grasscutter.language = new Language();
