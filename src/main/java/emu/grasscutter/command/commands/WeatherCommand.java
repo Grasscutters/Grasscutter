@@ -34,7 +34,7 @@ public final class WeatherCommand implements CommandHandler {
             sender.getScene().setWeather(weatherId);
             sender.getScene().setClimate(climate);
             sender.getScene().broadcastPacket(new PacketSceneAreaWeatherNotify(sender));
-            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Weather_message, weatherId, climateId));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_message.replace("{weatherId}", Integer.toString(weatherId)).replace("{climateId}", Integer.toString(climateId)));
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_invalid_id);
         }
