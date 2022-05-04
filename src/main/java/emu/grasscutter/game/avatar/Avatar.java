@@ -401,15 +401,32 @@ public class Avatar {
 	}
 	
 	public boolean equipItem(GameItem item, boolean shouldRecalc) {
+		// Sanity check equip type
 		EquipType itemEquipType = item.getItemData().getEquipType();
 		if (itemEquipType == EquipType.EQUIP_NONE) {
 			return false;
 		}
-		
-		if (getEquips().containsKey(itemEquipType.getValue())) {
+
+		// Check if other avatars have this item equipped
+		Avatar otherAvatar = getPlayer().getAvatars().getAvatarById(item.getEquipCharacter());
+		if (otherAvatar != null) {
+			// Unequip other avatar's item
+			if (otherAvatar.unequipItem(item.getItemData().getEquipType())) {
+				getPlayer().sendPacket(new PacketAvatarEquipChangeNotify(otherAvatar, item.getItemData().getEquipType()));
+			} 
+			// Swap with other avatar
+			if (getEquips().containsKey(itemEquipType.getValue())) {
+				GameItem toSwap = this.getEquipBySlot(itemEquipType);
+				otherAvatar.equipItem(toSwap, false);
+			}
+			// Recalc
+			otherAvatar.recalcStats();
+		} else if (getEquips().containsKey(itemEquipType.getValue())) {
+			// Unequip item in current slot if it exists
 			unequipItem(itemEquipType);
 		}
 		
+		// Set equip
 		getEquips().put(itemEquipType.getValue(), item);
 		
 		if (itemEquipType == EquipType.EQUIP_WEAPON && getPlayer().getWorld() != null) {
