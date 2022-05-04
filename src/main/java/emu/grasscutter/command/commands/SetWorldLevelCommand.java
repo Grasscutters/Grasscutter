@@ -14,9 +14,9 @@ public final class SetWorldLevelCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
-            return; // TODO: set player's world level from console or other players
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
+            return;
         }
 
         if (args.size() < 1) {
@@ -32,8 +32,8 @@ public final class SetWorldLevelCommand implements CommandHandler {
             }
 
             // Set in both world and player props
-            sender.getWorld().setWorldLevel(level);
-            sender.setWorldLevel(level);
+            targetPlayer.getWorld().setWorldLevel(level);
+            targetPlayer.setWorldLevel(level);
 
             sender.dropMessage(Grasscutter.getLanguage().SetWorldLevel_set_world_level.replace("{level}", Integer.toString(level)));
         } catch (NumberFormatException ignored) {
