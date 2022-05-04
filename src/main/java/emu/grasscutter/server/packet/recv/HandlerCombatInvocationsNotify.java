@@ -22,7 +22,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 				case COMBAT_EVT_BEING_HIT:
 					// Handle damage
 					EvtBeingHitInfo hitInfo = EvtBeingHitInfo.parseFrom(entry.getCombatData());
-					session.getPlayer().getScene().handleAttack(hitInfo.getAttackResult());
+					session.getPlayer().getAttackResults().add(hitInfo.getAttackResult());
 					break;
 				case ENTITY_MOVE:
 					// Handle movement
@@ -43,9 +43,14 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 			session.getPlayer().getCombatInvokeHandler().addEntry(entry.getForwardType(), entry);
 		}
 		
+		// Handles sending combat invokes to other players/server
 		if (notif.getInvokeListList().size() > 0) {
 			session.getPlayer().getCombatInvokeHandler().update(session.getPlayer());
 		}
+		
+		// Handle attack results last
+		while (!session.getPlayer().getAttackResults().isEmpty()) {
+			session.getPlayer().getScene().handleAttack(session.getPlayer().getAttackResults().poll());
+		}
 	}
-
 }
