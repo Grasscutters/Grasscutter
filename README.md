@@ -143,11 +143,13 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 ### Bonus
 
-When you want to teleport to somewhere, use the ingame marking function on Map, click Confirm. You will see your
-character falling from a very high destination, exact location that you marked.
-
-You can also specify a set Y coordinate by renaming the map marker.
-
+- Teleporting
+  - When you want to teleport to somewhere, use the in-game marking function on Map.
+    - Mark a point on the map using the fish hook marking (the last one.)
+    - (Optional) rename the map marker to a number to override the default Y coordinate (height, default 300.)
+    - Confirm and close the map.
+    - You will see your character falling from a very high destination, exact location that you marked.
+ 
 # Quick Troubleshooting
 
 * If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)
