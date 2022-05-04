@@ -17,7 +17,7 @@ import java.util.List;
 public final class KillCharacterCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         int target;
         if (sender == null) {
             // from console
@@ -48,7 +48,6 @@ public final class KillCharacterCommand implements CommandHandler {
             }
         }
 
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
         if (targetPlayer == null) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found_or_offline);
             return;

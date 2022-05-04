@@ -23,7 +23,7 @@ public final class SendMailCommand implements CommandHandler {
 
     // Yes this is awful and I hate it.
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         int senderId;
         if(sender != null) {
             senderId = sender.getUid();

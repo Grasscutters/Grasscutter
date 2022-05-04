@@ -221,7 +221,7 @@ public final class Grasscutter {
 
 			isLastInterrupted = false;
 			try {
-				CommandMap.getInstance().invoke(null, input);
+				CommandMap.getInstance().invoke(null, null, input);
 			} catch (Exception e) {
 				Grasscutter.getLogger().error(language.Command_error, e);
 			}

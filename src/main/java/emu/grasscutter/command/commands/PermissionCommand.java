@@ -13,7 +13,7 @@ import java.util.List;
 public final class PermissionCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 3) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_usage);
             return;
