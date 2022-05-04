@@ -36,6 +36,8 @@ public final class Language {
     public String Client_login = "[Dispatch] Client {ip} logged in as {uid}";
     public String Username_not_found = "Username not found.";
     public String Username_not_found_create_failed = "Username not found, create failed.";
+    public String Create_resources_folder = "Creating resources folder...";
+    public String Place_copy = "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.";
 
     // Command
     public String No_command_specified = "No command specified.";
