@@ -73,9 +73,6 @@ services:
       mv /tmp/GenshinData/ExcelBinOutput /app/src/resources;
       mv /tmp/gi-bin-output/2.5.52/Data/_BinOutput /app/src/resources/BinOutput;
 
-      echo Initializing submodules...;
-      cd /app/src;
-      git submodule update --init;
       echo Done."]
     stdin_open: true
     tty: true
