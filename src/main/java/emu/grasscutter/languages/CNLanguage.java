@@ -1,4 +1,4 @@
-package emu.grasscutter;
+package emu.grasscutter.languages;
 
 public final class CNLanguage {
     public String An_error_occurred_during_game_update = "游戏更新时发生了错误.";
@@ -188,9 +188,9 @@ public final class CNLanguage {
 	public String SendMail_set_message_sender = "邮件的发送者已设为 '{send}'.\n使用 '/sendmail <物品Id|物品名|finish(结束编辑并发送)> [数量] [等级]";
     public String SendMail_send = "已将 {amount} 个 {item} (等级 {lvl}) 作为邮件附件.\n你可以继续添加附件，也可以使用 `/sendmail finish` 来停止编辑并发送邮件.";
     public String SendMail_invalid_arguments_please_use = "无效的参数 \n 请使用 `/sendmail {args}`";
-    public String SendMail_title = "<title>";
-    public String SendMail_message = "<message>";
-    public String SendMail_sender = "<sender>";
+    public String SendMail_title = "<标题>";
+    public String SendMail_message = "<正文>";
+    public String SendMail_sender = "<发送者>";
     public String SendMail_arguments = "<物品Id|物品名|finish(结束编辑并发送)> [数量] [等级]";
 	public String SendMail_error = "错误:无效的编写阶段 {stage}. 需要stacktrace请看服务器命令行.";
 
