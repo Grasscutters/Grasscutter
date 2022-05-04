@@ -13,7 +13,7 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.languages.Language;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 
-@Command(label = "setstats", usage = "setstats|stats [@UID] <stat> <value>",
+@Command(label = "setstats", usage = "setstats|stats <stat> <value>",
         description = "Set fight property for your current active character", aliases = {"stats"}, permission = "player.setstats")
 public final class SetStatsCommand implements CommandHandler {
     class Stat {
@@ -182,7 +182,7 @@ public final class SetStatsCommand implements CommandHandler {
         String valueStr;
 
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, usage);
+            CommandHandler.sendMessage(sender, lang.Target_needed);
             return;
         }
 
@@ -209,8 +209,6 @@ public final class SetStatsCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, lang.SetStats_value_error);
             return;
         }
-        
-
 
         if (stats.containsKey(statStr)) {
             Stat stat = stats.get(statStr);

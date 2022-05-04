@@ -117,29 +117,37 @@ public final class CommandMap {
         String[] split = rawMessage.split(" ");
         List<String> args = new LinkedList<>(Arrays.asList(split));
         String label = args.remove(0);
-        // Check for special case
         String playerId = (player == null) ? consoleId : player.getAccount().getId();
-        if (label == "target") {  // Sets or clears default targetPlayer
-            if (args.size() < 1) {
-                targetPlayers.remove(playerId);
-                CommandHandler.sendMessage(player, Grasscutter.getLanguage().Target_cleared);
-            } else {
-                try {
-                    String sUid = args.get(0);
-                    int uid = Integer.parseInt(sUid);
-                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid);
-                    if (targetPlayer == null) {
-                        CommandHandler.sendMessage(player, Grasscutter.getLanguage().Player_not_found_or_offline);
-                    } else {
-                        targetPlayers.put(playerId, targetPlayer);
-                        CommandHandler.sendMessage(player, Grasscutter.getLanguage().Target_set.replace("{uid}", sUid));
-                    }
-                } catch (NumberFormatException e) {
-                    CommandHandler.sendMessage(player, Grasscutter.getLanguage().Invalid_UID);
+        // Check for special cases - currently only target command
+        String targetUidStr = null;
+        if (label.startsWith("@")) {  // @[UID]
+            targetUidStr = label.substring(1);
+        } else if (label == "target") {  // target [[@]UID]
+            targetUidStr = args.get(0);
+            if (targetUidStr.startsWith("@")) {
+                targetUidStr = targetUidStr.substring(1);
+            }
+        }
+        if (targetUidStr == "") {  // Clears default targetPlayer
+            targetPlayers.remove(playerId);
+            CommandHandler.sendMessage(player, Grasscutter.getLanguage().Target_cleared);
+            return;
+        } else if (targetUidStr != null) {  // Sets default targetPlayer to the UID given
+            try {
+                int uid = Integer.parseInt(targetUidStr);
+                targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid);
+                if (targetPlayer == null) {
+                    CommandHandler.sendMessage(player, Grasscutter.getLanguage().Player_not_found_or_offline);
+                } else {
+                    targetPlayers.put(playerId, targetPlayer);
+                    CommandHandler.sendMessage(player, Grasscutter.getLanguage().Target_set.replace("{uid}", targetUidStr));
                 }
+            } catch (NumberFormatException e) {
+                CommandHandler.sendMessage(player, Grasscutter.getLanguage().Invalid_UID);
             }
             return;
         } 
+
         // Get command handler.
         CommandHandler handler = this.commands.get(label);
         if (handler == null) {

@@ -13,22 +13,22 @@ import java.util.List;
 public final class TeleportAllCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
             return;
         }
         
-        if (!sender.getWorld().isMultiplayer()) {
+        if (!targetPlayer.getWorld().isMultiplayer()) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().TeleportAll_message);
             return;
         }
         
-        for (Player player : sender.getWorld().getPlayers()) {
-            if (player.equals(sender))
+        for (Player player : targetPlayer.getWorld().getPlayers()) {
+            if (player.equals(targetPlayer))
                 continue;
-            Position pos = sender.getPos();
+            Position pos = targetPlayer.getPos();
 
-            player.getWorld().transferPlayerToScene(player, sender.getSceneId(), pos);
+            player.getWorld().transferPlayerToScene(player, targetPlayer.getSceneId(), pos);
         }
     }
 }

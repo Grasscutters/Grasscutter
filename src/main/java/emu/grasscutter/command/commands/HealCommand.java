@@ -15,12 +15,12 @@ import java.util.List;
 public final class HealCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
             return;
         }
         
-        sender.getTeamManager().getActiveTeam().forEach(entity -> {
+        targetPlayer.getTeamManager().getActiveTeam().forEach(entity -> {
             boolean isAlive = entity.isAlive();
             entity.setFightProperty(
                     FightProperty.FIGHT_PROP_CUR_HP,
