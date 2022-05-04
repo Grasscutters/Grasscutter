@@ -29,7 +29,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 				case COMBAT_EVT_BEING_HIT:
 					// Handle damage
 					EvtBeingHitInfo hitInfo = EvtBeingHitInfo.parseFrom(entry.getCombatData());
-					session.getPlayer().getScene().handleAttack(hitInfo.getAttackResult());
+					session.getPlayer().getAttackResults().add(hitInfo.getAttackResult());
 					break;
 				case ENTITY_MOVE:
 					// Handle movement
