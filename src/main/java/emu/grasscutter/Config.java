@@ -72,7 +72,7 @@ public final class Config {
 		public int CMD_Spawn = 150;
 		public int CMD_Give = 10000000;
 		public int CMD_Drop = 100;
-		public boolean CMD_NoGiveTes = false;
+		public boolean CMD_NoGiveTes = true;
 
 		// Dangerous feature for public server, make your database go crazy!
 		public boolean DropMo = false;
@@ -100,7 +100,7 @@ public final class Config {
 		};
 
 		public String ServerNickname = "YukiBot";
-		public int ServerAvatarId = 11000026;
+		public int ServerAvatarId = 10000002;
 
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
 		public String WelcomeMotd = "";
