@@ -113,10 +113,6 @@ public final class CommandMap {
             return;
         }
 
-        // Remove prefix if present.
-        if (!Character.isLetter(rawMessage.charAt(0)))
-            rawMessage = rawMessage.substring(1);
-
         // Parse message.
         String[] split = rawMessage.split(" ");
         List<String> args = new LinkedList<>(Arrays.asList(split));
