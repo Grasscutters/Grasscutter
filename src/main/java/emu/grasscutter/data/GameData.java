@@ -66,7 +66,8 @@ public class GameData {
 	private static final Int2ObjectMap<DailyDungeonData> dailyDungeonDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<DungeonData> dungeonDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<ShopGoodsData> shopGoodsDataMap = new Int2ObjectOpenHashMap<>();
-
+	private static final Int2ObjectMap<RewardPreviewData> rewardPreviewDataMap = new Int2ObjectOpenHashMap<>();
+	
 	// Cache
 	private static Map<Integer, List<Integer>> fetters = new HashMap<>();
 	private static Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
@@ -298,6 +299,13 @@ public class GameData {
 		}
 
 		return shopGoods;
+	}
+
+	/**
+	 * @return the rewardpreviewdatamap
+	 */
+	public static Int2ObjectMap<RewardPreviewData> getRewardPreviewDataMap() {
+		return rewardPreviewDataMap;
 	}
 
 	public static IntList getScenePointIdList() {
