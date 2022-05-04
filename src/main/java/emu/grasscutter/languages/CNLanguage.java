@@ -159,7 +159,7 @@ public final class CNLanguage {
     public String Permission_not_have_permission = "此玩家未拥有此权限!";
 
     // Position
-    public String Position_message = "坐标: %.3f, %.3f, %.3f\n场景: %d";
+    public String Position_message = "坐标: {x},{y},{z}\n场景: {id}";
 
     // Reload
     public String Reload_reload_start = "正在重新加载配置.";
