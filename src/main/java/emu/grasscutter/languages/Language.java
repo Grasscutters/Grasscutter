@@ -1,4 +1,4 @@
-package emu.grasscutter;
+package emu.grasscutter.languages;
 
 public final class Language {
     public String An_error_occurred_during_game_update = "An error occurred during game update.";

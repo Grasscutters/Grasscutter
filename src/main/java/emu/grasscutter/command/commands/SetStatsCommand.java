@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.Language;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.languages.Language;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 
 @Command(label = "setstats", usage = "setstats|stats [@UID] <stat> <value>",
