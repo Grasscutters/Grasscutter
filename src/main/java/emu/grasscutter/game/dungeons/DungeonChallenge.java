@@ -140,7 +140,7 @@ public class DungeonChallenge {
 		
 		getScene().broadcastPacket(new PacketChallengeDataNotify(this, 1, getScore()));
 		
-		if (getScore() >= getObjective()) {
+		if (getScore() >= getObjective() && this.progress) {
 			this.setSuccess(true);
 			finish();
 		}
