@@ -204,41 +204,51 @@ public final class Language {
     public String SetFetterLevel_invalid_fetter_level = "Invalid fetter level.";
 
     // SetStats
-    public String SetStats_usage = "Usage: setstats|stats <stat> <value>";
-    public String SetStats_setstats_help_message = "Usage: /setstats|stats <hp | mhp | def | atk | em | er | crate | cdmg> <value> for basic stats";
-    public String SetStats_stats_help_message = "Usage: /stats <epyro | ecryo | ehydro | egeo | edend | eelec | ephys> <amount> for elemental bonus";
+    public String SetStats_usage_console = "Usage: setstats|stats @<UID> <stat> <value>";
+    public String SetStats_usage_ingame = "Usage: setstats|stats [@UID] <stat> <value>";
+    public String SetStats_help_message = """
+        \n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi
+        \t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys
+        \t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys
+        """;
+    public String SetStats_value_error = "Invalid stat value.";
+    public String SetStats_uid_error = "Invalid UID.";
+    public String SetStats_player_error = "Player not found or offline.";
+    public String SetStats_set_self = "%s set to %s.";
+    public String SetStats_set_for_uid = "%s for %s set to %s.";
     public String SetStats_set_max_hp = "MAX HP set to %s.";
-    public String SetStats_set_max_hp_error = "Invalid Max HP value.";
-    public String SetStats_set_hp = "HP set to %s.";
-    public String SetStats_set_hp_error = "Invalid HP value.";
-    public String SetStats_set_def = "DEF set to %s.";
-    public String SetStats_set_def_error = "Invalid DEF value.";
-    public String SetStats_set_atk = "ATK set to %s.";
-    public String SetStats_set_atk_error = "Invalid ATK value.";
-    public String SetStats_set_em = "Elemental Mastery set to %s.";
-    public String SetStats_set_em_error = "Invalid EM value.";
-    public String SetStats_set_er = "Energy recharge set to %s%.";
-    public String SetStats_set_er_error = "Invalid ER value.";
-    public String SetStats_set_cr = "Crit Rate set to %s%.";
-    public String SetStats_set_cr_error = "Invalid Crit Rate value.";
-    public String SetStats_set_cd = "Crit DMG set to %s%.";
-    public String SetStats_set_cd_error = "Invalid Crit DMG value.";
-    public String SetStats_set_pdb = "Pyro DMG Bonus set to %s%.";
-    public String SetStats_set_pdb_error = "Invalid Pyro DMG Bonus value.";
-    public String SetStats_set_cdb = "Cyro DMG Bonus set to %s%.";
-    public String SetStats_set_cdb_error = "Invalid Cyro DMG Bonus value.";
-    public String SetStats_set_hdb = "Hydro DMG Bonus set to %s%.";
-    public String SetStats_set_hdb_error = "Invalid Hydro DMG Bonus value.";
-    public String SetStats_set_adb = "Anemo DMG Bonus set to %s%.";
-    public String SetStats_set_adb_error = "Invalid Anemo DMG Bonus value.";
-    public String SetStats_set_gdb = "Geo DMG Bonus set to %s%.";
-    public String SetStats_set_gdb_error = "Invalid Geo DMG Bonus value.";
-    public String SetStats_set_edb = "Electro DMG Bonus set to %s%.";
-    public String SetStats_set_edb_error = "Invalid Electro DMG Bonus value.";
-    public String SetStats_set_physdb = "Physical DMG Bonus set to %s%.";
-    public String SetStats_set_physdb_error = "Invalid Physical DMG Bonus value.";
-    public String SetStats_set_ddb = "Dendro DMG Bonus set to %s%.";
-    public String SetStats_set_ddb_error = "Invalid Dendro DMG Bonus value.";
+    public String Stats_FIGHT_PROP_MAX_HP = "Max HP";
+    public String Stats_FIGHT_PROP_CUR_HP = "Current HP";
+    public String Stats_FIGHT_PROP_CUR_ATTACK = "ATK";
+    public String Stats_FIGHT_PROP_BASE_ATTACK = "Base ATK";
+    public String Stats_FIGHT_PROP_DEFENSE = "DEF";
+    public String Stats_FIGHT_PROP_ELEMENT_MASTERY = "Elemental Mastery";
+    public String Stats_FIGHT_PROP_CHARGE_EFFICIENCY = "Energy Recharge";
+    public String Stats_FIGHT_PROP_CRITICAL = "Crit Rate";
+    public String Stats_FIGHT_PROP_CRITICAL_HURT = "Crit DMG";
+    public String Stats_FIGHT_PROP_ADD_HURT = "DMG Bonus";
+    public String Stats_FIGHT_PROP_WIND_ADD_HURT = "Anemo DMG Bonus";
+    public String Stats_FIGHT_PROP_ICE_ADD_HURT = "Cryo DMG Bonus";
+    public String Stats_FIGHT_PROP_GRASS_ADD_HURT = "Dendro DMG Bonus";
+    public String Stats_FIGHT_PROP_ELEC_ADD_HURT = "Electro DMG Bonus";
+    public String Stats_FIGHT_PROP_ROCK_ADD_HURT = "Geo DMG Bonus";
+    public String Stats_FIGHT_PROP_WATER_ADD_HURT = "Hydro DMG Bonus";
+    public String Stats_FIGHT_PROP_FIRE_ADD_HURT = "Pyro DMG Bonus";
+    public String Stats_FIGHT_PROP_PHYSICAL_ADD_HURT = "Physical DMG Bonus";
+    public String Stats_FIGHT_PROP_SUB_HURT = "DMG Reduction";
+    public String Stats_FIGHT_PROP_WIND_SUB_HURT = "Anemo RES";
+    public String Stats_FIGHT_PROP_ICE_SUB_HURT = "Cryo RES";
+    public String Stats_FIGHT_PROP_GRASS_SUB_HURT = "Dendro RES";
+    public String Stats_FIGHT_PROP_ELEC_SUB_HURT = "Electro RES";
+    public String Stats_FIGHT_PROP_ROCK_SUB_HURT = "Geo RES";
+    public String Stats_FIGHT_PROP_WATER_SUB_HURT = "Hydro RES";
+    public String Stats_FIGHT_PROP_FIRE_SUB_HURT = "Pyro RES";
+    public String Stats_FIGHT_PROP_PHYSICAL_SUB_HURT = "Physical RES";
+    public String Stats_FIGHT_PROP_SKILL_CD_MINUS_RATIO = "Cooldown Reduction";
+    public String Stats_FIGHT_PROP_HEAL_ADD = "Healing Bonus";
+    public String Stats_FIGHT_PROP_HEALED_ADD = "Incoming Healing Bonus";
+    public String Stats_FIGHT_PROP_SHIELD_COST_MINUS_RATIO = "Shield Strength";
+    public String Stats_FIGHT_PROP_DEFENCE_IGNORE_RATIO = "DEF Ignore";
 
     // SetWorldLevel
     public String SetWorldLevel_usage = "Usage: setworldlevel <level>";
