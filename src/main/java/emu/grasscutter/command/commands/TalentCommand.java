@@ -56,7 +56,7 @@ public final class TalentCommand implements CommandHandler {
             return;
         }
 
-        EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
+        EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
         Avatar avatar = entity.getAvatar(); 
         String cmdSwitch = args.get(0);
         switch (cmdSwitch) {

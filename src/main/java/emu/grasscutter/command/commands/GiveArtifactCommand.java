@@ -52,7 +52,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		int level = 1;
 		try {
 			int last = Integer.parseInt(args.get(args.size()-1));
-			if (last > 0 && last < 21) {  // Luckily appendPropIds aren't in the range of [1,20] 
+			if (last > 0 && last < 22) {  // Luckily appendPropIds aren't in the range of [1,21] 
 				level = last;
 				args.remove(args.size()-1);
 			}

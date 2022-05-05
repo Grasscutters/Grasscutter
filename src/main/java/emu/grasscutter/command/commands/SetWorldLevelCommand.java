@@ -27,7 +27,7 @@ public final class SetWorldLevelCommand implements CommandHandler {
         try {
             int level = Integer.parseInt(args.get(0));
             if (level > 8 || level < 0) {
-                sender.dropMessage(Grasscutter.getLanguage().SetWorldLevel_world_level_must_between_0_and_8);
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetWorldLevel_world_level_must_between_0_and_8);
                 return;
             }
 
@@ -35,7 +35,7 @@ public final class SetWorldLevelCommand implements CommandHandler {
             targetPlayer.getWorld().setWorldLevel(level);
             targetPlayer.setWorldLevel(level);
 
-            sender.dropMessage(Grasscutter.getLanguage().SetWorldLevel_set_world_level.replace("{level}", Integer.toString(level)));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetWorldLevel_set_world_level.replace("{level}", Integer.toString(level)));
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(null, Grasscutter.getLanguage().SetWorldLevel_invalid_world_level);
         }

@@ -43,9 +43,9 @@ public final class WeatherCommand implements CommandHandler {
 
         ClimateType climate = ClimateType.getTypeByValue(climateId);
 
-        sender.getScene().setWeather(weatherId);
-        sender.getScene().setClimate(climate);
-        sender.getScene().broadcastPacket(new PacketSceneAreaWeatherNotify(sender));
+        targetPlayer.getScene().setWeather(weatherId);
+        targetPlayer.getScene().setClimate(climate);
+        targetPlayer.getScene().broadcastPacket(new PacketSceneAreaWeatherNotify(targetPlayer));
         CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_message.replace("{weatherId}", Integer.toString(weatherId)).replace("{climateId}", Integer.toString(climateId)));
 
     }
