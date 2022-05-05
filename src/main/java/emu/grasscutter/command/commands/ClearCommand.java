@@ -56,7 +56,6 @@ public final class ClearCommand implements CommandHandler {
             case "all" -> {
             	toDelete = playerInventory.getItems().values().stream()
                         .filter(item1 -> item1.getItemType() == ItemType.ITEM_RELIQUARY)
-                        .filter(item1 -> item1.getLevel() == 1 && item1.getExp() == 0)
                         .filter(item1 -> !item1.isLocked() && !item1.isEquipped())
                         .toList();
                 CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));
@@ -67,7 +66,6 @@ public final class ClearCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));
                 toDelete = playerInventory.getItems().values().stream()
                         .filter(item3 -> item3.getItemType() == ItemType.ITEM_WEAPON)
-                        .filter(item3 -> item3.getLevel() == 1 && item3.getExp() == 0)
                         .filter(item3 -> !item3.isLocked() && !item3.isEquipped())
                         .toList();
                 CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));

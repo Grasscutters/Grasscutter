@@ -37,16 +37,20 @@ public final class GiveAllCommand implements CommandHandler {
 
     // Remove permission
     if (account.removePermission("player.giveall")) {
+      account.save();
       this.giveAllItems(sender, amount);
-      CommandHandler.sendMessage(sender, "Giving all items done, Permission removed, can only be used once.");
-    } else
+      CommandHandler.sendMessage(sender, "Giving all items done, Permission removed, can only be used once.");      
+    } else{
       CommandHandler.sendMessage(sender, "It looks like you are already using or not having permission.");
+    }
+      
   }
 
   public void giveAllItems(Player player, int amount) {
     CommandHandler.sendMessage(player, Grasscutter.getLanguage().GiveAll_item);
 
     for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
+
       // Exclude test avatar
       if (isTestAvatar(avatarData.getId()))
         continue;
@@ -71,7 +75,7 @@ public final class GiveAllCommand implements CommandHandler {
 
       if (itemdata.isEquip()) {
         if (itemdata.getItemType() == ItemType.ITEM_WEAPON) {
-          for (int i = 0; i < 5; ++i) {
+          for (int i = 0; i < 1; ++i) {
             GameItem item = new GameItem(itemdata);
             item.setLevel(90);
             item.setPromoteLevel(6);
