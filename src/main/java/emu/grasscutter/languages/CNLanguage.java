@@ -94,7 +94,7 @@ public final class CNLanguage {
 
     // Drop
     public String Drop_usage = "用法: drop <物品ID|物品名> [数量]";
-    public String Drop_dropped_of = "已投掷 {amount} 个 {item}.";
+    public String Drop_dropped_of = "已在地上丢弃 {amount} 个 {item}.";
 
     // EnterDungeon
     public String EnterDungeon_usage = "用法: enterdungeon <副本 id>";
@@ -103,7 +103,7 @@ public final class CNLanguage {
     public String EnterDungeon_you_in_that_dungeon = "你已经在此副本中了。";
 
     // GiveAll
-    public String GiveAll_usage = "用法: giveall [player] [amount]";
+    public String GiveAll_usage = "用法: giveall [玩家] [数量]";
     public String GiveAll_item = "正在给予所有物品...";
     public String GiveAll_done = "完成。";
     public String GiveAll_invalid_amount_or_playerId = "无效的数量或玩家ID";
