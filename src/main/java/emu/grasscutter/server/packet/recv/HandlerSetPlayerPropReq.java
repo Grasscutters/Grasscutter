@@ -8,7 +8,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PropValueOuterClass.PropValue;
 import emu.grasscutter.net.proto.SetPlayerPropReqOuterClass.SetPlayerPropReq;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketSetPlayerNameRsp;
 import emu.grasscutter.server.packet.send.PacketSetPlayerPropRsp;
 
 import java.util.ArrayList;
@@ -24,8 +23,12 @@ public class HandlerSetPlayerPropReq extends PacketHandler {
         Player player = session.getPlayer();
         List<PropValue> propList = req.getPropListList();
         for (int i = 0; i < propList.size(); i++) {
-            if (!player.setProperty(PlayerProperty.getPropById(propList.get(i).getType()), (int)propList.get(i).getVal())) {
-                session.send(new PacketSetPlayerPropRsp(1));
+            PlayerProperty prop = PlayerProperty.getPropById(propList.get(i).getType());
+            if (prop == PlayerProperty.PROP_IS_MP_MODE_AVAILABLE) {
+                if (!player.setProperty(prop, (int)propList.get(i).getVal())) {
+                    session.send(new PacketSetPlayerPropRsp(1));
+                    return;
+                }
             }
         }
         player.save();
