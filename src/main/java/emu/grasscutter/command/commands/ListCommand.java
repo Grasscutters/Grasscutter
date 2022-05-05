@@ -13,7 +13,7 @@ import java.util.Map;
 public final class ListCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         Map<Integer, Player> playersMap = Grasscutter.getGameServer().getPlayers();
         boolean needUID = false;
 

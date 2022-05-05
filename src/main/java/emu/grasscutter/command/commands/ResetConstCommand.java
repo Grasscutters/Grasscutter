@@ -15,17 +15,17 @@ import java.util.List;
 public final class ResetConstCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
             return;
         }
 
         if (args.size() > 0 && args.get(0).equalsIgnoreCase("all")) {
-            sender.getAvatars().forEach(this::resetConstellation);
-            sender.dropMessage(Grasscutter.getLanguage().ResetConst_reset_all);
+            targetPlayer.getAvatars().forEach(this::resetConstellation);
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().ResetConst_reset_all);
         } else {
-            EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
+            EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
             if (entity == null) {
                 return;
             }
@@ -33,7 +33,7 @@ public final class ResetConstCommand implements CommandHandler {
             Avatar avatar = entity.getAvatar();
             this.resetConstellation(avatar);
 
-            sender.dropMessage(Grasscutter.getLanguage().ResetConst_reset_all_done.replace("{name}", avatar.getAvatarData().getName()));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().ResetConst_reset_all_done.replace("{name}", avatar.getAvatarData().getName()));
         }
     }
 

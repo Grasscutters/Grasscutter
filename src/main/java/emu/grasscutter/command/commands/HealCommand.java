@@ -14,13 +14,13 @@ import java.util.List;
         description = "Heal all characters in your current team.", permission = "player.heal")
 public final class HealCommand implements CommandHandler {
     @Override
-    public void execute(Player sender, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
             return;
         }
         
-        sender.getTeamManager().getActiveTeam().forEach(entity -> {
+        targetPlayer.getTeamManager().getActiveTeam().forEach(entity -> {
             boolean isAlive = entity.isAlive();
             entity.setFightProperty(
                     FightProperty.FIGHT_PROP_CUR_HP,

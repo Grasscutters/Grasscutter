@@ -10,76 +10,57 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "givechar", usage = "givechar <playerId> <avatarId> [level]",
+@Command(label = "givechar", usage = "givechar <avatarId> [level]",
         description = "Gives the player a specified character", aliases = {"givec"}, permission = "player.givechar")
 public final class GiveCharCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        int target, avatarId, level = 1, ascension;
-
-        if (sender == null && args.size() < 2) {
-            CommandHandler.sendMessage(null, Grasscutter.getLanguage().GiveChar_usage);
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
             return;
         }
 
+        int avatarId;
+        int level = 1;
+
         switch (args.size()) {
+            case 2:
+                try {
+                    level = Integer.parseInt(args.get(1));
+                } catch (NumberFormatException ignored) {
+                    // TODO: Parse from avatar name using GM Handbook.
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_avatar_level);
+                    return;
+                }  // Cheeky fall-through to parse first argument too
+            case 1:
+                try {
+                    avatarId = Integer.parseInt(args.get(0));
+                } catch (NumberFormatException ignored) {
+                    // TODO: Parse from avatar name using GM Handbook.
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_avatar_id);
+                    return;
+                }
+                break;
             default:
                 CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveChar_usage);
                 return;
-            case 2:
-                try {
-                    target = Integer.parseInt(args.get(0));
-                    if (Grasscutter.getGameServer().getPlayerByUid(target) == null && sender != null) {
-                        target = sender.getUid();
-                        level = Integer.parseInt(args.get(1));
-                        avatarId = Integer.parseInt(args.get(0));
-                    } else {
-                        avatarId = Integer.parseInt(args.get(1));
-                    }
-                } catch (NumberFormatException ignored) {
-                    // TODO: Parse from avatar name using GM Handbook.
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveChar_invalid_avatar_or_player_id);
-                    return;
-                }
-                break;
-            case 3:
-                try {
-                    target = Integer.parseInt(args.get(0));
-                    if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
-                        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
-                        return;
-                    }
-
-                    avatarId = Integer.parseInt(args.get(1));
-                    level = Integer.parseInt(args.get(2));
-                } catch (NumberFormatException ignored) {
-                    // TODO: Parse from avatar name using GM Handbook.
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveChar_invalid_avatar_or_player_id);
-                    return;
-                }
-                break;
-        }
-
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
-            return;
         }
 
         AvatarData avatarData = GameData.getAvatarDataMap().get(avatarId);
         if (avatarData == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveChar_invalid_avatar_id);
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_avatar_id);
             return;
         }
 
         // Check level.
         if (level > 90) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveChar_invalid_avatar_level);
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_avatar_level);
             return;
         }
 
         // Calculate ascension level.
+        int ascension;
         if (level <= 40) {
             ascension = (int) Math.ceil(level / 20f);
         } else {
@@ -94,6 +75,6 @@ public final class GiveCharCommand implements CommandHandler {
         avatar.recalcStats();
 
         targetPlayer.addAvatar(avatar);
-        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveChar_given.replace("{avatarId}", Integer.toString(avatarId)).replace("{level}", Integer.toString(level)).replace("{target}", Integer.toString(target)));
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveChar_given.replace("{avatarId}", Integer.toString(avatarId)).replace("{level}", Integer.toString(level)).replace("{target}", Integer.toString(targetPlayer.getUid())));
     }
 }

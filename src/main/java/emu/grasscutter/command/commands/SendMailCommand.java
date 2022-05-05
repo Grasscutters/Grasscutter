@@ -23,7 +23,7 @@ public final class SendMailCommand implements CommandHandler {
 
     // Yes this is awful and I hate it.
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         int senderId;
         if(sender != null) {
             senderId = sender.getUid();
@@ -108,40 +108,44 @@ public final class SendMailCommand implements CommandHandler {
                                 mailBuilder.constructionStage++;
                             }
                             case 3 -> {
-                                // Literally just copy-pasted from the give command lol.
-                                int item, lvl, amount = 1;
+                                int item;
+                                int lvl = 1;
+                                int amount = 1;
+                                int refinement = 0;
                                 switch (args.size()) {
-                                    default -> { // *No args*
-                                        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SendMail_usage);
-                                        return;
-                                    }
-                                    case 1 -> { // <itemId|itemName>
+                                    case 4: // <itemId|itemName> [amount] [level] [refinement] // TODO: this requires Mail support but there's no harm leaving it here for now
+                                        try {
+                                            refinement = Integer.parseInt(args.get(3));
+                                        } catch (NumberFormatException ignored) {
+                                            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_refinement);
+                                            return;
+                                        }  // Fallthrough
+                                    case 3: // <itemId|itemName> [amount] [level]
+                                        try {
+                                            lvl = Integer.parseInt(args.get(2));
+                                        } catch (NumberFormatException ignored) {
+                                            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_level);
+                                            return;
+                                        }  // Fallthrough
+                                    case 2: // <itemId|itemName> [amount]
+                                        try {
+                                            amount = Integer.parseInt(args.get(1));
+                                        } catch (NumberFormatException ignored) {
+                                            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_amount);
+                                            return;
+                                        }  // Fallthrough
+                                    case 1: // <itemId|itemName>
                                         try {
                                             item = Integer.parseInt(args.get(0));
-                                            lvl = 1;
                                         } catch (NumberFormatException ignored) {
                                             // TODO: Parse from item name using GM Handbook.
                                             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_id);
                                             return;
                                         }
-                                    }
-                                    case 2 -> { // <itemId|itemName> [amount]
-                                        lvl = 1;
-                                        item = Integer.parseInt(args.get(0));
-                                        amount = Integer.parseInt(args.get(1));
-                                    }
-                                    case 3 -> { // <itemId|itemName> [amount] [level]
-                                        try {
-                                            item = Integer.parseInt(args.get(0));
-                                            amount = Integer.parseInt(args.get(1));
-                                            lvl = Integer.parseInt(args.get(2));
-
-                                        } catch (NumberFormatException ignored) {
-                                            // TODO: Parse from item name using GM Handbook.
-                                            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_or_player_id);
-                                            return;
-                                        }
-                                    }
+                                        break;
+                                    default: // *No args*
+                                        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_usage);
+                                        return;
                                 }
                                 mailBuilder.mail.itemList.add(new Mail.MailItem(item, amount, lvl));
                                 CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SendMail_send.replace("{amount}", Integer.toString(amount)).replace("{item}", Integer.toString(item)).replace("{lvl}", Integer.toString(lvl)));
