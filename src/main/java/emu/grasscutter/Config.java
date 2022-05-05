@@ -84,7 +84,7 @@ public final class Config {
 		public int InventoryLimitRelic = 1500;
 		public int InventoryLimitMaterial = 2000;
 		public int InventoryLimitFurniture = 2000;
-		public int InventoryLimitAll = 10000;
+		public int InventoryLimitAll = 7500;
 
 		public int MaxAvatarsInTeam = 4;
 		public int MaxAvatarsInTeamMultiplayer = 10;
