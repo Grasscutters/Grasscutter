@@ -25,6 +25,6 @@ public interface CommandHandler {
      * @param sender The player/console that invoked the command.
      * @param args The arguments to the command.
      */
-    default void execute(Player sender, List<String> args) {
+    default void execute(Player sender, Player targetPlayer, List<String> args) {
     }
 }

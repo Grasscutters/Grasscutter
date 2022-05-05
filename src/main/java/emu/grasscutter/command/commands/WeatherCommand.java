@@ -14,29 +14,39 @@ import java.util.List;
 public final class WeatherCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
             return;
         }
 
-        if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_usage);
-            return;
+        int weatherId = 0;
+        int climateId = 1;
+        switch (args.size()) {
+            case 2:
+                try {
+                    climateId = Integer.parseInt(args.get(1));
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_invalid_id);
+                }
+            case 1:
+                try {
+                    weatherId = Integer.parseInt(args.get(0));
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_invalid_id);
+                }
+                break;
+            default:
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_usage);
+                return;
         }
 
-        try {
-            int weatherId = Integer.parseInt(args.get(0));
-            int climateId = args.size() > 1 ? Integer.parseInt(args.get(1)) : 1;
+        ClimateType climate = ClimateType.getTypeByValue(climateId);
 
-            ClimateType climate = ClimateType.getTypeByValue(climateId);
+        targetPlayer.getScene().setWeather(weatherId);
+        targetPlayer.getScene().setClimate(climate);
+        targetPlayer.getScene().broadcastPacket(new PacketSceneAreaWeatherNotify(targetPlayer));
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_message.replace("{weatherId}", Integer.toString(weatherId)).replace("{climateId}", Integer.toString(climateId)));
 
-            sender.getScene().setWeather(weatherId);
-            sender.getScene().setClimate(climate);
-            sender.getScene().broadcastPacket(new PacketSceneAreaWeatherNotify(sender));
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_message.replace("{weatherId}", Integer.toString(weatherId)).replace("{climateId}", Integer.toString(climateId)));
-        } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_invalid_id);
-        }
     }
 }

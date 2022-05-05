@@ -28,15 +28,15 @@ public class ChatManager {
 		if (message == null || message.length() == 0) {
 			return;
 		}
-				
-		// Check if command
-		if (PREFIXES.contains(message.charAt(0))) {
-			CommandMap.getInstance().invoke(player, message);
-			return;
-		}
 		
 		// Get target
 		Player target = getServer().getPlayerByUid(targetUid);
+				
+		// Check if command
+		if (PREFIXES.contains(message.charAt(0))) {
+			CommandMap.getInstance().invoke(player, target, message.substring(1));
+			return;
+		}
 		
 		if (target == null) {
 			return;
@@ -72,7 +72,7 @@ public class ChatManager {
 				
 		// Check if command
 		if (PREFIXES.contains(message.charAt(0))) {
-			CommandMap.getInstance().invoke(player, message);
+			CommandMap.getInstance().invoke(player, null, message);
 			return;
 		}
 

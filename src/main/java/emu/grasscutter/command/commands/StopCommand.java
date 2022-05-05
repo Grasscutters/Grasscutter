@@ -12,7 +12,7 @@ import java.util.List;
 public final class StopCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         CommandHandler.sendMessage(null, Grasscutter.getLanguage().Stop_message);
         for (Player p : Grasscutter.getGameServer().getPlayers().values()) {
             CommandHandler.sendMessage(p, Grasscutter.getLanguage().Stop_message);
