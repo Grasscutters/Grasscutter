@@ -31,15 +31,15 @@ public final class SpawnCommand implements CommandHandler {
         switch (args.size()) {
             case 3:
                 try {
-                    level = Integer.parseInt(args.get(2));
+                  amount = Integer.parseInt(args.get(2));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_arguments);
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_amount);
                 }  // Fallthrough
             case 2:
                 try {
-                    amount = Integer.parseInt(args.get(1));
+                    level = Integer.parseInt(args.get(1));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_amount);
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_arguments);
                 }  // Fallthrough
             case 1:
                 try {
