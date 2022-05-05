@@ -16,14 +16,16 @@ import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.server.dispatch.authentication.AuthenticationHandler;
 import emu.grasscutter.server.dispatch.authentication.DefaultAuthenticationHandler;
+import emu.grasscutter.server.dispatch.http.GachaRecordHandler;
 import emu.grasscutter.server.dispatch.json.*;
 import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
 import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
-import emu.grasscutter.server.http.gacha.GachaRecordHandler;
-import emu.grasscutter.server.http.gcstatic.StaticFileHandler;
+import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.FileUtils;
+import emu.grasscutter.utils.Utils;
 import express.Express;
+import io.javalin.http.staticfiles.Location;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
@@ -442,11 +444,18 @@ public final class DispatchServer {
 		// webstatic-sea.hoyoverse.com
 		httpServer.get("/admin/mi18n/plat_oversea/m202003048/m202003048-version.json", new DispatchHttpJsonHandler("{\"version\":51}"));
 
-		// gacha record
+		// gacha record.
+		String gachaMappingsPath = Utils.toFilePath(Grasscutter.getConfig().DATA_FOLDER + "/gacha_mappings.js");
+		// TODO: Only serve the html page and have a subsequent request to fetch the gacha data.
 		httpServer.get("/gacha", new GachaRecordHandler());
+		if(!(new File(gachaMappingsPath).exists())) {
+			Tools.createGachaMapping(gachaMappingsPath);
+		}
 
-		// static file provider
-		httpServer.get("/gcstatic/*", new StaticFileHandler());
+		httpServer.raw().config.addSinglePageRoot("/gacha/mappings", gachaMappingsPath, Location.EXTERNAL);
+
+		// static file support for plugins
+		httpServer.raw().config.precompressStaticFiles = false; // If this isn't set to false, files such as images may appear corrupted when serving static files
 
 		httpServer.listen(Grasscutter.getConfig().getDispatchOptions().Port);
 		Grasscutter.getLogger().info(Grasscutter.getLanguage().Dispatch_start_server_port.replace("{port}", Integer.toString(httpServer.raw().port())));
