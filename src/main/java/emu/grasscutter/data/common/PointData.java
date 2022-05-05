@@ -13,7 +13,8 @@ public class PointData {
     private Position tranPos;
     private int[] dungeonIds;
     private int[] dungeonRandomList;
-    
+
+	private int tranSceneId;
     public int getId() {
 		return id;
 	}
@@ -36,6 +37,14 @@ public class PointData {
 
 	public int[] getDungeonRandomList() {
 		return dungeonRandomList;
+	}
+
+	public int getTranSceneId() {
+		return tranSceneId;
+	}
+
+	public void setTranSceneId(int tranSceneId) {
+		this.tranSceneId = tranSceneId;
 	}
 
 	public void updateDailyDungeon() {
