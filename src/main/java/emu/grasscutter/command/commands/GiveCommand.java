@@ -12,10 +12,23 @@ import emu.grasscutter.game.props.ActionReason;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 @Command(label = "give", usage = "give <itemId|itemName> [amount] [level]", description = "Gives an item to you or the specified player", aliases = {
         "g", "item", "giveitem"}, permission = "player.give")
 public final class GiveCommand implements CommandHandler {
+    Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java is a joke of a proglang that doesn't have raw string literals
+    Pattern refineRegex = Pattern.compile("r(\\d+)");
+    Pattern amountRegex = Pattern.compile("((?<=x)\\d+|\\d+(?=x))");
+
+    private int matchIntOrNeg(Pattern pattern, String arg) {
+        Matcher match = pattern.matcher(arg);
+        if (match.find()) {
+            return Integer.parseInt(match.group(1));  // This should be exception-safe as only \d+ can be passed to it (i.e. non-empty string of pure digits)
+        }
+        return -1;
+    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
@@ -27,6 +40,27 @@ public final class GiveCommand implements CommandHandler {
         int lvl = 1;
         int amount = 1;
         int refinement = 0;
+
+        for (int i = args.size()-1; i>=0; i--) {  // Reverse iteration as we are deleting elements
+            String arg = args.get(i).toLowerCase();
+            boolean deleteArg = false;
+            int argNum;
+            if ((argNum = matchIntOrNeg(lvlRegex, arg)) != -1) {
+                lvl = argNum;
+                deleteArg = true;
+            }
+            if ((argNum = matchIntOrNeg(refineRegex, arg)) != -1) {
+                refinement = argNum;
+                deleteArg = true;
+            }
+            if ((argNum = matchIntOrNeg(amountRegex, arg)) != -1) {
+                amount = argNum;
+                deleteArg = true;
+            }
+            if (deleteArg) {
+                args.remove(i);
+            }
+        }
 
         switch (args.size()) {
             case 4: // <itemId|itemName> [amount] [level] [refinement]
