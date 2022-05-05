@@ -31,7 +31,7 @@ public final class CNLanguage {
     public String Dispatch_start_server_port = "[Dispatch] Dispatch服务器已在端口 {port} 上开启。";
     public String Client_failed_login_account_create = "[Dispatch] 客户端 {ip} 登录失败: 已创建UID为 {uid} 的账户。";
     public String Client_failed_login_account_create_failed = "[Dispatch] 客户端 {ip} 登录失败: 创建账户失败。";
-    public String Client_failed_login_account_no_found = "[Dispatch] Client {ip} 登录失败: 未找到帐户。";
+    public String Client_failed_login_account_no_found = "[Dispatch] 客户端 {ip} 登录失败: 未找到帐户。";
     public String Client_login = "[Dispatch] 客户端 {ip} 以 {uid} 的身份登录。";
     public String Username_not_found = "未找到此用户名.";
     public String Username_not_found_create_failed = "未找到此用户名, 创建失败。.";
