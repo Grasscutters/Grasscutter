@@ -21,6 +21,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
+import emu.grasscutter.game.managers.MotionManager.MotionManager;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
@@ -121,6 +122,8 @@ public class Player {
 	@Transient private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
 
 	private MapMarksManager mapMarksManager;
+	@Transient private MotionManager motionManager;
+
 
 	@Deprecated
 	@SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
@@ -161,6 +164,7 @@ public class Player {
 		this.shopLimit = new ArrayList<>();
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager();
+		this.motionManager = new MotionManager(this);
 	}
 
 	// On player creation
@@ -187,6 +191,7 @@ public class Player {
 		this.getRotation().set(0, 307, 0);
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager();
+		this.motionManager = new MotionManager(this);
 	}
 
 	public int getUid() {
@@ -969,6 +974,8 @@ public class Player {
 		return mapMarksManager;
 	}
 
+	public MotionManager getMotionManager() { return motionManager; }
+
 	public synchronized void onTick() {
 		// Check ping
 		if (this.getLastPingTime() > System.currentTimeMillis() + 60000) {
@@ -997,7 +1004,34 @@ public class Player {
 				this.resetSendPlayerLocTime();
 			}
 		}
+
+		scheduleStaminaNotify();
 	}
+
+	private void scheduleStaminaNotify() {
+		// stamina tick
+		EntityMoveInfoOuterClass.EntityMoveInfo moveInfo = getMotionManager().getMoveInfo();
+		if (moveInfo == null) {
+			return;
+		}
+
+		if (getMotionManager().getMoveInfo().getMotionInfo().getState() == MotionStateOuterClass.MotionState.MOTION_STANDBY) {
+			if (getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA) == getProperty(PlayerProperty.PROP_MAX_STAMINA) ) {
+				return;
+			}
+		}
+
+		for (int i = 0; i <= 1000; i+=200) {
+			Timer timer = new Timer();
+			timer.schedule(new TimerTask() {
+				@Override
+				public void run() {
+					getMotionManager().tick();
+				}
+			}, i);
+		}
+	}
+
 
 	public void resetSendPlayerLocTime() {
 		this.nextSendPlayerLocTime = System.currentTimeMillis() + 5000;
