@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOError;
 import java.net.InetSocketAddress;
 import java.util.Calendar;
+import java.util.Locale;
 
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.plugin.PluginManager;
@@ -144,12 +145,12 @@ public final class Grasscutter {
 	}
 
 	public static void loadLanguage() {
-		try (FileReader file = new FileReader(String.format("%s%s.json", getConfig().LANGUAGE_FOLDER, Grasscutter.config.Language))) {
+		try (FileReader file = new FileReader(String.format("%s%s.json", getConfig().LANGUAGE_FOLDER, Grasscutter.config.LocaleLanguage))) {
 			language = gson.fromJson(file, Language.class);
 		} catch (Exception e) {
 			Grasscutter.language = new Language();
 			Grasscutter.cn_language = new CNLanguage();
-			Grasscutter.config.Language = "en_us";
+			Grasscutter.config.LocaleLanguage = Locale.getDefault();
 			saveConfig();
 
 			try {
@@ -161,15 +162,22 @@ public final class Grasscutter {
 			} catch (Exception ee) {
 				Grasscutter.getLogger().error("Unable to create language folder.");
 			}
-			try (FileWriter file = new FileWriter("./languages/en_us.json")) {
+			try (FileWriter file = new FileWriter("./languages/" + Locale.US + ".json")) {
 				file.write(gson.toJson(language));
 			} catch (Exception ee) {
 				Grasscutter.getLogger().error("Unable to create language file.");
 			}
-			try (FileWriter file = new FileWriter("./languages/zh_cn.json")) {
+			try (FileWriter file = new FileWriter("./languages/" + Locale.SIMPLIFIED_CHINESE + ".json")) {
 				file.write(gson.toJson(cn_language));
 			} catch (Exception ee) {
-				Grasscutter.getLogger().error("无法创建中文语言文件。");
+				Grasscutter.getLogger().error("无法创建简体中文语言文件。");
+			}
+
+			// try again
+			try (FileReader file = new FileReader(String.format("%s%s.json", getConfig().LANGUAGE_FOLDER, Grasscutter.config.LocaleLanguage))) {
+				language = gson.fromJson(file, Language.class);
+			} catch (Exception ee) {
+				Grasscutter.getLogger().error("Unable to load " + Grasscutter.config.LocaleLanguage + ".json");
 			}
 		}
 	}
