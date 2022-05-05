@@ -47,7 +47,7 @@ public final class GachaRecordHandler implements HttpContextHandler {
 
 			res.send(response);
 		} else {
-			res.send("404");
+			res.send("No account found.");
 		}
 	}
 }
