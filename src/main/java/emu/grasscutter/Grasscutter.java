@@ -76,7 +76,7 @@ public final class Grasscutter {
 					Tools.createGmHandbook(); return;
 				}
 				case "-gachamap" -> {
-					Tools.createGachaMapping(); return;
+					Tools.createGachaMapping("./gacha_mappings.js"); return;
 				}
 			}
 		}
