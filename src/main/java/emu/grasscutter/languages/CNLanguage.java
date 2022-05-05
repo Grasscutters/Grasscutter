@@ -134,6 +134,9 @@ public final class CNLanguage {
     // Heal
     public String Heal_message = "所有角色已被治疗。";
 
+    //Join
+    public String Invalid_avatar_index = "错误的角色序号";
+
     // Kick
     public String Kick_player_kick_player = "玩家 [{sendUid}:{sendName}] 已踢出 [{kickUid}:{kickName}]";
     public String Kick_server_player = "正在踢出玩家 [{kickUid}:{kickName}]";

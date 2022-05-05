@@ -74,7 +74,7 @@ public final class Config {
 		public int InventoryLimitMaterial = 2000;
 		public int InventoryLimitFurniture = 2000;
 		public int InventoryLimitAll = 30000;
-		public int MaxAvatarsInTeam = 4;
+		public int MaxAvatarsInTeam = 9;
 		public int MaxAvatarsInTeamMultiplayer = 4;
 		public int MaxEntityLimit = 1000; // Max entity limit per world. // TODO: Enforce later.
 		public boolean WatchGacha = false;

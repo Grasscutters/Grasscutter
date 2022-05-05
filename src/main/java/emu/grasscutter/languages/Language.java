@@ -143,6 +143,9 @@ public final class Language {
     // Heal
     public String Heal_message = "All characters have been healed.";
 
+    //Join
+    public String Invalid_avatar_index = "Invalid avatar index. Start from 1";
+
     // Kick
     public String Kick_player_kick_player = "Player [{sendUid}:{sendName}] has kicked player [{kickUid}:{kickName}]";
     public String Kick_server_player = "Kicking player [{kickUid}:{kickName}]";
