@@ -20,6 +20,6 @@ public final class PositionCommand implements CommandHandler {
         }
 
         Position pos = targetPlayer.getPos();
-        sender.dropMessage(Grasscutter.getLanguage().Position_message.replace("{x}", Float.toString(pos.getX())).replace("{y}", Float.toString(pos.getY())).replace("{z}", Float.toString(pos.getZ())).replace("{id}", Integer.toString(sender.getSceneId())));
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Position_message.replace("{x}", Float.toString(pos.getX())).replace("{y}", Float.toString(pos.getY())).replace("{z}", Float.toString(pos.getZ())).replace("{id}", Integer.toString(targetPlayer.getSceneId())));
     }
 }

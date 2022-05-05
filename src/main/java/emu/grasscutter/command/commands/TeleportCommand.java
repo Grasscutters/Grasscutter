@@ -46,8 +46,8 @@ public final class TeleportCommand implements CommandHandler {
             case 3:
                 try {
                     x = parseRelative(args.get(0), x);
-                    y = parseRelative(args.get(0), y);
-                    z = parseRelative(args.get(0), z);
+                    y = parseRelative(args.get(1), y);
+                    z = parseRelative(args.get(2), z);
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Teleport_invalid_position);
                 }

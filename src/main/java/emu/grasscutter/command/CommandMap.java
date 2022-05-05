@@ -12,7 +12,7 @@ import java.util.*;
 public final class CommandMap {
     private final Map<String, CommandHandler> commands = new HashMap<>();
     private final Map<String, Command> annotations = new HashMap<>();
-    private final Map<String, Player> targetPlayers = new HashMap<>();
+    private final Map<String, Integer> targetPlayerIds = new HashMap<>();
     private static final String consoleId = "console";
     public CommandMap() {
         this(false);
@@ -122,31 +122,37 @@ public final class CommandMap {
         String targetUidStr = null;
         if (label.startsWith("@")) {  // @[UID]
             targetUidStr = label.substring(1);
-        } else if (label == "target") {  // target [[@]UID]
-            targetUidStr = args.get(0);
-            if (targetUidStr.startsWith("@")) {
-                targetUidStr = targetUidStr.substring(1);
+        } else if (label.equalsIgnoreCase("target")) {  // target [[@]UID]
+            if (args.size() > 0) {
+                targetUidStr = args.get(0);
+                if (targetUidStr.startsWith("@")) {
+                    targetUidStr = targetUidStr.substring(1);
+                }
+            } else {
+                targetUidStr = "";
             }
         }
-        if (targetUidStr == "") {  // Clears default targetPlayer
-            targetPlayers.remove(playerId);
-            CommandHandler.sendMessage(player, Grasscutter.getLanguage().Target_cleared);
-            return;
-        } else if (targetUidStr != null) {  // Sets default targetPlayer to the UID given
-            try {
-                int uid = Integer.parseInt(targetUidStr);
-                targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid);
-                if (targetPlayer == null) {
-                    CommandHandler.sendMessage(player, Grasscutter.getLanguage().Player_not_found_or_offline);
-                } else {
-                    targetPlayers.put(playerId, targetPlayer);
-                    CommandHandler.sendMessage(player, Grasscutter.getLanguage().Target_set.replace("{uid}", targetUidStr));
+        if (targetUidStr != null) {
+            if (targetUidStr.equals("")) {  // Clears default targetPlayer
+                targetPlayerIds.remove(playerId);
+                CommandHandler.sendMessage(player, Grasscutter.getLanguage().Target_cleared);
+                return;
+            } else {  // Sets default targetPlayer to the UID given
+                try {
+                    int uid = Integer.parseInt(targetUidStr);
+                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid);
+                    if (targetPlayer == null) {
+                        CommandHandler.sendMessage(player, Grasscutter.getLanguage().Player_not_found_or_offline);
+                    } else {
+                        targetPlayerIds.put(playerId, uid);
+                        CommandHandler.sendMessage(player, Grasscutter.getLanguage().Target_set.replace("{uid}", targetUidStr));
+                    }
+                } catch (NumberFormatException e) {
+                    CommandHandler.sendMessage(player, Grasscutter.getLanguage().Invalid_UID);
                 }
-            } catch (NumberFormatException e) {
-                CommandHandler.sendMessage(player, Grasscutter.getLanguage().Invalid_UID);
+                return;
             }
-            return;
-        } 
+        }
 
         // Get command handler.
         CommandHandler handler = this.commands.get(label);
@@ -178,7 +184,18 @@ public final class CommandMap {
         }
         // If there's still no targetPlayer at this point, use previously-set target
         if (targetPlayer == null) {
-            targetPlayer = targetPlayers.getOrDefault(playerId, null);
+            if (targetPlayerIds.containsKey(playerId)) {
+                targetPlayer = Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.get(playerId));  // We check every time in case the target goes offline after being targeted
+                if (targetPlayer == null) {
+                    CommandHandler.sendMessage(player, Grasscutter.getLanguage().Player_not_found_or_offline);
+                    return;
+                }
+            } else {
+                // If there's still no targetPlayer at this point, use local player
+                if (targetPlayer == null) {
+                    targetPlayer = player;
+                }
+            }
         }
 
         // Check for permission.

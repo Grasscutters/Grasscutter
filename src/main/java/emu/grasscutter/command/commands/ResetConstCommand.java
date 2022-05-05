@@ -23,7 +23,7 @@ public final class ResetConstCommand implements CommandHandler {
 
         if (args.size() > 0 && args.get(0).equalsIgnoreCase("all")) {
             targetPlayer.getAvatars().forEach(this::resetConstellation);
-            targetPlayer.dropMessage(Grasscutter.getLanguage().ResetConst_reset_all);
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().ResetConst_reset_all);
         } else {
             EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
             if (entity == null) {
@@ -33,7 +33,7 @@ public final class ResetConstCommand implements CommandHandler {
             Avatar avatar = entity.getAvatar();
             this.resetConstellation(avatar);
 
-            sender.dropMessage(Grasscutter.getLanguage().ResetConst_reset_all_done.replace("{name}", avatar.getAvatarData().getName()));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().ResetConst_reset_all_done.replace("{name}", avatar.getAvatarData().getName()));
         }
     }
 

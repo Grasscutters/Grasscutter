@@ -35,6 +35,6 @@ public final class GodModeCommand implements CommandHandler {
         }
 
         targetPlayer.setGodmode(enabled);
-        sender.dropMessage(Grasscutter.getLanguage().Godmode_status.replace("{status}", (enabled ? Grasscutter.getLanguage().Enabled : Grasscutter.getLanguage().Disabled)).replace("{name}", targetPlayer.getNickname()));
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Godmode_status.replace("{status}", (enabled ? Grasscutter.getLanguage().Enabled : Grasscutter.getLanguage().Disabled)).replace("{name}", targetPlayer.getNickname()));
     }
 }
