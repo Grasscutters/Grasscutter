@@ -7,24 +7,21 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "kick", usage = "kick <player>",
+@Command(label = "kick", usage = "kick",
         description = "Kicks the specified player from the server (WIP)", permission = "server.kick")
 public final class KickCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        int target = Integer.parseInt(args.get(0));
-
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
             return;
         }
 
         if (sender != null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Kick_player_kick_player.replace("{sendUid}", Integer.toString(sender.getAccount().getPlayerUid())).replace("{sendName}", sender.getAccount().getUsername()).replace("kickUid", Integer.toString(target)).replace("{kickName}", targetPlayer.getAccount().getUsername()));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Kick_player_kick_player.replace("{sendUid}", Integer.toString(sender.getAccount().getPlayerUid())).replace("{sendName}", sender.getAccount().getUsername()).replace("kickUid", Integer.toString(targetPlayer.getUid())).replace("{kickName}", targetPlayer.getAccount().getUsername()));
         } else {
-            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Kick_server_player.replace("{kickUid}", Integer.toString(target)).replace("{kickName}", targetPlayer.getAccount().getUsername()));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Kick_server_player.replace("{kickUid}", Integer.toString(targetPlayer.getUid())).replace("{kickName}", targetPlayer.getAccount().getUsername()));
         }
 
         targetPlayer.getSession().close();

@@ -16,42 +16,52 @@ import java.util.List;
 public final class DropCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Target_needed);
             return;
         }
+        
+        int item = 0;
+        int amount = 1;
 
-        if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Drop_usage);
-            return;
-        }
-
-        try {
-            int item = Integer.parseInt(args.get(0));
-            int amount = 1;
-            if (args.size() > 1) amount = Integer.parseInt(args.get(1));
-
-            ItemData itemData = GameData.getItemDataMap().get(item);
-            if (itemData == null) {
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_id);
-                return;
-            }
-
-            if (itemData.isEquip()) {
-                float range = (5f + (.1f * amount));
-                for (int i = 0; i < amount; i++) {
-                    Position pos = sender.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-                    EntityItem entity = new EntityItem(sender.getScene(), sender, itemData, pos, 1);
-                    sender.getScene().addEntity(entity);
+        switch (args.size()) {
+            case 2:
+                try {
+                    amount = Integer.parseInt(args.get(1));
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_amount);
+                    return;
+                }  // Slightly cheeky here: no break so it falls through to initialize the first argument too
+            case 1:
+                try {
+                    item = Integer.parseInt(args.get(0));
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_id);
+                    return;
                 }
-            } else {
-                EntityItem entity = new EntityItem(sender.getScene(), sender, itemData, sender.getPos().clone().addY(3f), amount);
-                sender.getScene().addEntity(entity);
-            }
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Drop_dropped_of.replace("{amount}", Integer.toString(amount)).replace("{item}", Integer.toString(item)));
-        } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_or_player_id);
+                break;
+            default:
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Drop_usage);
+                return;
         }
+
+        ItemData itemData = GameData.getItemDataMap().get(item);
+        if (itemData == null) {
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_id);
+            return;
+        }
+        if (itemData.isEquip()) {
+            float range = (5f + (.1f * amount));
+            for (int i = 0; i < amount; i++) {
+                Position pos = targetPlayer.getPos().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
+                EntityItem entity = new EntityItem(targetPlayer.getScene(), targetPlayer, itemData, pos, 1);
+                targetPlayer.getScene().addEntity(entity);
+            }
+        } else {
+            EntityItem entity = new EntityItem(targetPlayer.getScene(), targetPlayer, itemData, targetPlayer.getPos().clone().addY(3f), amount);
+            targetPlayer.getScene().addEntity(entity);
+        }
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Drop_dropped_of.replace("{amount}", Integer.toString(amount)).replace("{item}", Integer.toString(item)));
     }
 }

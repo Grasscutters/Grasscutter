@@ -14,6 +14,8 @@ public @interface Command {
     String[] aliases() default {};
 
     String permission() default "";
+    
+    String permissionTargeted() default "";
 
     boolean threading() default false;
 }

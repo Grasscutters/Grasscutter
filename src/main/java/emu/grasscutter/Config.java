@@ -1,5 +1,6 @@
 package emu.grasscutter;
 
+import java.util.Locale;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.mail.Mail;
@@ -22,8 +23,9 @@ public final class Config {
 	public ServerRunMode RunMode = ServerRunMode.HYBRID; // HYBRID, DISPATCH_ONLY, GAME_ONLY
 	public GameServerOptions GameServer = new GameServerOptions();
 	public DispatchServerOptions DispatchServer = new DispatchServerOptions();
-	public String Language = "en_us";
+	public Locale LocaleLanguage = Locale.getDefault();
 
+	public Boolean OpenStamina = true;
 	public GameServerOptions getGameServerOptions() {
 		return GameServer;
 	}
@@ -56,7 +58,7 @@ public final class Config {
 			public int Port = 22102;
 		}
 	}
-	
+
 	public static class GameServerOptions {
 		public String Name = "Test";
 		public String Ip = "0.0.0.0";

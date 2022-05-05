@@ -45,19 +45,28 @@ public final class Language {
     public String You_not_permission_run_command = "You do not have permission to run this command.";
     public String This_command_can_only_run_from_console = "This command can only be run from the console.";
     public String Run_this_command_in_game = "Run this command in-game.";
+    public String Invalid_amount = "Invalid amount.";
+    public String Invalid_arguments = "Invalid arguments.";
+    public String Invalid_artifact_id = "Invalid artifact ID.";
+    public String Invalid_avatar_id = "Invalid avatar id.";
+    public String Invalid_avatar_level = "Invalid avatar level.";
+    public String Invalid_entity_id = "Invalid entity id.";
+    public String Invalid_item_id = "Invalid item id.";
+    public String Invalid_item_level = "Invalid item level.";
+    public String Invalid_item_refinement = "Invalid item refinement level.";
     public String Invalid_playerId = "Invalid playerId.";
+    public String Invalid_UID = "Invalid UID.";
     public String Player_not_found = "Player not found.";
     public String Player_is_offline = "Player is offline.";
-    public String Invalid_item_id = "Invalid item id.";
-    public String Invalid_item_or_player_id = "Invalid item or player ID.";
     public String Enabled = "enabled";
     public String Disabled = "disabled";
     public String No_command_found = "No command found.";
     public String Help = "Help";
     public String Player_not_found_or_offline = "Player not found or offline.";
-    public String Invalid_arguments = "Invalid arguments.";
     public String Success = "Success";
-    public String Invalid_entity_id = "Invalid entity id.";
+    public String Target_cleared = "Target cleared.";
+    public String Target_set = "Subsequent commands will target @{uid} by default.";
+    public String Target_needed = "This command requires a target UID. Add a <@UID> argument or set a persistent target with /target @UID.";
 
     // Help
     public String Help_usage = "   Usage: ";
@@ -66,7 +75,6 @@ public final class Language {
 
     // Account
     public String Modify_user_account = "Modify user accounts";
-    public String Invalid_UID = "Invalid UID.";
     public String Account_exists = "Account already exists.";
     public String Account_create_UID = "Account created with UID {uid}.";
     public String Account_delete = "Account deleted.";
@@ -84,6 +92,7 @@ public final class Language {
     public String Change_screen_not_exist = "Scene does not exist";
 
     // Clear
+    public String Clear_usage = "Usage: clear <all|wp|art|mat>";
     public String Clear_weapons = "Cleared weapons for {name} .";
     public String Clear_artifacts = "Cleared artifacts for {name} .";
     public String Clear_materials = "Cleared materials for {name} .";
@@ -93,7 +102,8 @@ public final class Language {
     public String Clear_everything = "Cleared everything for {name} .";
 
     // Coop
-    public String Coop_usage = "Usage: coop <playerId> <target playerId>";
+    public String Coop_usage = "Usage: coop <host UID>";
+    public String Coop_success = "Summoned {target} to {host}'s world.";
 
     // Drop
     public String Drop_usage = "Usage: drop <itemId|itemName> [amount]";
@@ -106,22 +116,17 @@ public final class Language {
     public String EnterDungeon_you_in_that_dungeon = "You are already in that dungeon";
 
     // GiveAll
-    public String GiveAll_usage = "Usage: giveall [player] [amount]";
+    public String GiveAll_usage = "Usage: giveall [amount]";
     public String GiveAll_item = "Giving all items...";
     public String GiveAll_done = "Giving all items done";
-    public String GiveAll_invalid_amount_or_playerId = "Invalid amount or player ID.";
 
     // GiveArtifact
     public String GiveArtifact_usage = "Usage: giveart|gart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]";
-    public String GiveArtifact_invalid_artifact_id = "Invalid artifact ID.";
     public String GiveArtifact_given = "Given {itemId} to {target}.";
 
     // GiveChar
     public String GiveChar_usage = "Usage: givechar <player> <itemId|itemName> [amount]";
     public String GiveChar_given = "Given {avatarId} with level {level} to {target}.";
-    public String GiveChar_invalid_avatar_id = "Invalid avatar id.";
-    public String GiveChar_invalid_avatar_level = "Invalid avatar level.";
-    public String GiveChar_invalid_avatar_or_player_id = "Invalid avatar or player ID.";
 
     // Give
     public String Give_usage = "Usage: give <player> <itemId|itemName> [amount] [level]";
@@ -132,7 +137,8 @@ public final class Language {
     public String Give_given_level = "Given {item} with level {lvl} {amount} times to {target}";
 
     // GodMode
-    public String Godmode_status = "Godmode is now {status} for {name} .";
+    public String Godmode_usage = "Usage: godmode [on|off|toggle]";
+    public String Godmode_status = "Godmode is now {status} for {name}.";
 
     // Heal
     public String Heal_message = "All characters have been healed.";
@@ -154,7 +160,7 @@ public final class Language {
     public String List_message = "There are {size} player(s) online:";
 
     // Permission
-    public String Permission_usage = "Usage: permission <add|remove> <username> <permission>";
+    public String Permission_usage = "Usage: permission <add|remove> <permission>";
     public String Permission_add = "Permission added.";
     public String Permission_have_permission = "They already have this permission!";
     public String Permission_remove = "Permission removed.";
@@ -215,8 +221,6 @@ public final class Language {
         \t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys
         """;
     public String SetStats_value_error = "Invalid stat value.";
-    public String SetStats_uid_error = "Invalid UID.";
-    public String SetStats_player_error = "Player not found or offline.";
     public String SetStats_set_self = "{name} set to {value}.";
     public String SetStats_set_for_uid = "{name} for {uid} set to {value}.";
     public String Stats_FIGHT_PROP_MAX_HP = "Max HP";
@@ -270,6 +274,7 @@ public final class Language {
     public String Talent_usage_2 = "Another way to set talent level: /talent <n or e or q> <value>";
     public String Talent_usage_3 = "To get talent ID: /talent getid";
     public String Talent_lower_16 = "Invalid talent level. Level should be lower than 16";
+    public String Talent_set_id = "Set talent {id} to {level}.";
     public String Talent_set_atk = "Set talent Normal ATK to {level}.";
     public String Talent_set_e = "Set talent E to {level}.";
     public String Talent_set_q = "Set talent Q to {level}.";
@@ -284,9 +289,7 @@ public final class Language {
     public String TeleportAll_message = "You only can use this command in MP mode.";
 
     // Teleport
-    public String Teleport_usage_server = "Usage: /tp @<player id> <x> <y> <z> [scene id]";
-    public String Teleport_usage = "Usage: /tp [@<player id>] <x> <y> <z> [scene id]";
-    public String Teleport_specify_player_id = "You must specify a player id.";
+    public String Teleport_usage = "Usage: /tp <x> <y> <z> [scene id]";
     public String Teleport_invalid_position = "Invalid position.";
     public String Teleport_message = "Teleported {name} to {x},{y},{z} in scene {id}";
 

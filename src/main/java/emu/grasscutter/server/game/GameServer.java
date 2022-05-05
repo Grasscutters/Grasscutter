@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.combine.CombineManger;
 import emu.grasscutter.game.drop.DropManager;
 import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.gacha.GachaManager;
@@ -44,7 +45,9 @@ public final class GameServer extends KcpServer {
 	private final CommandMap commandMap;
 	private final TaskMap taskMap;
 	private final DropManager dropManager;
-	
+
+	private final CombineManger combineManger;
+
 	public GameServer(InetSocketAddress address) {
 		super(address);
 
@@ -63,7 +66,8 @@ public final class GameServer extends KcpServer {
 		this.commandMap = new CommandMap(true);
 		this.taskMap = new TaskMap(true);
 		this.dropManager = new DropManager(this);
-		
+		this.combineManger = new CombineManger(this);
+
 		// Schedule game loop.
 		Timer gameLoop = new Timer();
 		gameLoop.scheduleAtFixedRate(new TimerTask() {
@@ -125,6 +129,9 @@ public final class GameServer extends KcpServer {
 		return this.commandMap;
 	}
 
+	public CombineManger getCombineManger(){
+		return this.combineManger;
+	}
 	public TaskMap getTaskMap() {
 		return this.taskMap;
 	}

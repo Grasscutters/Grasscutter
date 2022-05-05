@@ -8,22 +8,26 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "permission", usage = "permission <add|remove> <username> <permission>",
+@Command(label = "permission", usage = "permission <add|remove> <permission>",
         description = "Grants or removes a permission for a user", permission = "*")
 public final class PermissionCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        if (args.size() < 3) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
+            return;
+        }
+        
+        if (args.size() != 2) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_usage);
             return;
         }
 
         String action = args.get(0);
-        String username = args.get(1);
-        String permission = args.get(2);
+        String permission = args.get(1);
 
-        Account account = Grasscutter.getGameServer().getAccountByName(username);
+        Account account = targetPlayer.getAccount();
         if (account == null) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Account_not_find);
             return;

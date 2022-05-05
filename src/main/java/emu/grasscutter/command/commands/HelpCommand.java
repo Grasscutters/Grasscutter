@@ -13,7 +13,7 @@ import java.util.*;
 public final class HelpCommand implements CommandHandler {
 
     @Override
-    public void execute(Player player, List<String> args) {
+    public void execute(Player player, Player targetPlayer, List<String> args) {
         if (args.size() < 1) {
             HashMap<String, CommandHandler> handlers = CommandMap.getInstance().getHandlers();
             List<Command> annotations = new ArrayList<>();

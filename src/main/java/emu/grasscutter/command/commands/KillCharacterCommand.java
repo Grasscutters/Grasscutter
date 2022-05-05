@@ -12,45 +12,14 @@ import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 
 import java.util.List;
 
-@Command(label = "killcharacter", usage = "killcharacter [playerId]", aliases = {"suicide", "kill"},
+@Command(label = "killcharacter", usage = "killcharacter", aliases = {"suicide", "kill"},
         description = "Kills the players current character", permission = "player.killcharacter")
 public final class KillCharacterCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        int target;
-        if (sender == null) {
-            // from console
-            if (args.size() == 1) {
-                try {
-                    target = Integer.parseInt(args.get(0));
-                } catch (NumberFormatException e) {
-                    CommandHandler.sendMessage(null, Grasscutter.getLanguage().Invalid_playerId);
-                    return;
-                }
-            } else {
-                CommandHandler.sendMessage(null, Grasscutter.getLanguage().KillCharacter_usage);
-                return;
-            }
-        } else {
-            if (args.size() == 1) {
-                try {
-                    target = Integer.parseInt(args.get(0));
-                    if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
-                        target = sender.getUid();
-                    }
-                } catch (NumberFormatException e) {
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_playerId);
-                    return;
-                }
-            } else {
-                target = sender.getUid();
-            }
-        }
-
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found_or_offline);
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
             return;
         }
 

@@ -125,7 +125,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 | kick           | kick \<player>                                     | server.kick               | Both side    | Kicks the specified player from the server. (WIP)            | k                                               |
 | killall        | killall [playerUid] [sceneId]                     | server.killall            | Both side    | Kills all entities in the current scene or specified scene of the corresponding player. |                                                 |
 | list           | list                                              |                           | Both side    | Lists online players.                                         |                                                 |
-| permission     | permission <add\|remove> \<username> \<permission>  | *                         | Both side    | Grants or removes a permission for a user.                   |                                                 |
+| permission     | permission <add\|remove> \<UID> \<permission>  | *                         | Both side    | Grants or removes a permission for a user.                   |                                                 |
 | position       | position                                          |                           | Client only  | Sends your current coordinates.                                             | pos                                             |
 | reload         | reload                                            | server.reload             | Both side    | Reloads the server config                                         |                                                 |
 | resetconst     | resetconst [all]                                  | player.resetconstellation | Client only  | Resets the constellation level on your currently selected character, will need to relog after using the command to see any changes. | resetconstellation                              |
@@ -143,11 +143,13 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 ### Bonus
 
-When you want to teleport to somewhere, use the ingame marking function on Map, click Confirm. You will see your
-character falling from a very high destination, exact location that you marked.
-
-You can also specify a set Y coordinate by renaming the map marker.
-
+- Teleporting
+  - When you want to teleport to somewhere, use the in-game marking function on Map.
+    - Mark a point on the map using the fish hook marking (the last one.)
+    - (Optional) rename the map marker to a number to override the default Y coordinate (height, default 300.)
+    - Confirm and close the map.
+    - You will see your character falling from a very high destination, exact location that you marked.
+ 
 # Quick Troubleshooting
 
 * If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)

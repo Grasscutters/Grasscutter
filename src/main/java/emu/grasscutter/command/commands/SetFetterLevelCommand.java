@@ -16,13 +16,13 @@ import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
 public final class SetFetterLevelCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Run_this_command_in_game);
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
             return;
         }
 
-        if (args.size() < 1) {
+        if (args.size() != 1) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetFetterLevel_usage);
             return;
         }
@@ -33,7 +33,7 @@ public final class SetFetterLevelCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetFetterLevel_fetter_level_must_between_0_and_10);
                 return;
             }
-            Avatar avatar = sender.getTeamManager().getCurrentAvatarEntity().getAvatar();
+            Avatar avatar = targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar();
 
             avatar.setFetterLevel(fetterLevel);
             if (fetterLevel != 10) {
@@ -41,7 +41,7 @@ public final class SetFetterLevelCommand implements CommandHandler {
             }
 		    avatar.save();
 		
-		    sender.sendPacket(new PacketAvatarFetterDataNotify(avatar));
+		    targetPlayer.sendPacket(new PacketAvatarFetterDataNotify(avatar));
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetFetterLevel_fetter_set_level.replace("{level}", Integer.toString(fetterLevel)));
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetFetterLevel_invalid_fetter_level);

@@ -96,7 +96,7 @@ public final class Tools {
 	}
 
 	@SuppressWarnings("deprecation")
-	public static void createGachaMapping() throws Exception {
+	public static void createGachaMapping(String location) throws Exception {
 		ResourceLoader.loadResources();
 		
 		Map<Long, String> map;
@@ -106,11 +106,7 @@ public final class Tools {
 		
 		List<Integer> list;
 
-
-		String fileName = Grasscutter.getConfig().RESOURCE_FOLDER + "/gcstatic";
-		File folder = new File(fileName);
-		if (!folder.exists()) { folder.mkdirs(); } // create folder if it doesn't exist
-		fileName = fileName + "/mappings.js";
+		String fileName = location;
 
 		try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8), false)) {
 			
