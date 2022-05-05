@@ -1,7 +1,6 @@
 package emu.grasscutter;
 
 import java.util.Locale;
-
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.mail.Mail;
