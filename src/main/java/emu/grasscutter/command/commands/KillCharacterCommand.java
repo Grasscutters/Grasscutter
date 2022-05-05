@@ -63,6 +63,6 @@ public final class KillCharacterCommand implements CommandHandler {
         targetPlayer.getScene().removeEntity(entity);
         entity.onDeath(0);
 
-        CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().KillCharacter_kill_current_character, targetPlayer.getNickname()));
+        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().KillCharacter_kill_current_character.replace("{name}", targetPlayer.getNickname()));
     }
 }

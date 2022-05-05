@@ -8,13 +8,12 @@ import emu.grasscutter.net.proto.DungeonChallengeFinishNotifyOuterClass.DungeonC
 public class PacketDungeonChallengeFinishNotify extends BasePacket {
 	
 	public PacketDungeonChallengeFinishNotify(DungeonChallenge challenge) {
-		super(PacketOpcodes.DungeonChallengeFinishNotify);
+		super(PacketOpcodes.DungeonChallengeFinishNotify, true);
 
 		DungeonChallengeFinishNotify proto = DungeonChallengeFinishNotify.newBuilder()
 				.setChallengeIndex(challenge.getChallengeIndex())
 				.setIsSuccess(challenge.isSuccess())
-				.setUnk1(challenge.getChallengeId())
-				.setUnk2(30)
+				.setUnk1(2)
 				.build();
 		
 		this.setData(proto);

@@ -42,7 +42,7 @@ public final class SetFetterLevelCommand implements CommandHandler {
 		    avatar.save();
 		
 		    sender.sendPacket(new PacketAvatarFetterDataNotify(avatar));
-            CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().SetFetterLevel_fetter_set_level, fetterLevel));
+            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetFetterLevel_fetter_set_level.replace("{level}", Integer.toString(fetterLevel)));
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SetFetterLevel_invalid_fetter_level);
         }

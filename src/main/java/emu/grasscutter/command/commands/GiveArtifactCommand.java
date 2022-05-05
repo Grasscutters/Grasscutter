@@ -56,6 +56,9 @@ public final class GiveArtifactCommand implements CommandHandler {
 					if ((arr = it.split(",")).length == 2) {
 						it = arr[0];
 						n = Integer.parseInt(arr[1]);
+						if (n > 200) {
+							n = 200;
+						}
 					}
 					appendPropIdList.addAll(Collections.nCopies(n, Integer.parseInt(it)));
 				});
@@ -88,7 +91,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		item.getAppendPropIdList().addAll(appendPropIdList);
 		targetPlayer.getInventory().addItem(item, ActionReason.SubfieldDrop);
 
-		CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().GiveArtifact_given, itemId, target));
+		CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveArtifact_given.replace("{itemId}", Integer.toString(itemId)).replace("target", Integer.toString(target)));
 	}
 }
 

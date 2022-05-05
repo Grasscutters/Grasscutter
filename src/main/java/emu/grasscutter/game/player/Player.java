@@ -11,6 +11,7 @@ import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
+import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.friends.FriendsList;
@@ -21,12 +22,15 @@ import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.shop.ShopLimit;
+import emu.grasscutter.game.managers.MapMarkManager.*;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
+import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
@@ -34,13 +38,12 @@ import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
-import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
+import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
-import emu.grasscutter.server.event.player.PlayerReceiveMailEvent;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
@@ -50,11 +53,12 @@ import emu.grasscutter.utils.MessageHandler;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import java.time.Instant;
 import java.util.*;
+import java.util.concurrent.LinkedBlockingQueue;
 
 @Entity(value = "players", useDiscriminator = false)
 public class Player {
+
 	@Id private int id;
 	@Indexed(options = @IndexOptions(unique = true)) private String accountId;
 
@@ -111,9 +115,12 @@ public class Player {
 	@Transient private long nextSendPlayerLocTime = 0;
 
 	@Transient private final Int2ObjectMap<CoopRequest> coopRequests;
+	@Transient private final Queue<AttackResult> attackResults;
 	@Transient private final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
 	@Transient private final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
 	@Transient private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
+
+	private MapMarksManager mapMarksManager;
 
 	@Deprecated
 	@SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
@@ -141,6 +148,7 @@ public class Player {
 		this.setRegionId(1);
 		this.sceneState = SceneLoadState.NONE;
 
+		this.attackResults = new LinkedBlockingQueue<>();
 		this.coopRequests = new Int2ObjectOpenHashMap<>();
 		this.combatInvokeHandler = new InvokeHandler(PacketCombatInvocationsNotify.class);
 		this.abilityInvokeHandler = new InvokeHandler(PacketAbilityInvocationsNotify.class);
@@ -152,6 +160,7 @@ public class Player {
 
 		this.shopLimit = new ArrayList<>();
 		this.messageHandler = null;
+		this.mapMarksManager = new MapMarksManager();
 	}
 
 	// On player creation
@@ -177,6 +186,7 @@ public class Player {
 		this.getPos().set(GameConstants.START_POSITION);
 		this.getRotation().set(0, 307, 0);
 		this.messageHandler = null;
+		this.mapMarksManager = new MapMarksManager();
 	}
 
 	public int getUid() {
@@ -411,6 +421,10 @@ public class Player {
 
 	public MpSettingType getMpSetting() {
 		return MpSettingType.MP_SETTING_ENTER_AFTER_APPLY; // TEMP
+	}
+	
+	public Queue<AttackResult> getAttackResults() {
+		return this.attackResults;
 	}
 
 	public synchronized Int2ObjectMap<CoopRequest> getCoopRequests() {
@@ -785,6 +799,16 @@ public class Player {
 				else
 					this.getScene().broadcastPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
 			}
+		} else if (entity instanceof EntityGadget) {
+			EntityGadget gadget = (EntityGadget) entity;
+			
+			if (gadget.getGadgetData().getType() == EntityType.RewardStatue) {
+				if (scene.getChallenge() != null) {
+					scene.getChallenge().getStatueDrops(this);
+				}
+				
+				this.sendPacket(new PacketGadgetInteractRsp(gadget, InteractType.INTERACT_OPEN_STATUE));
+			}
 		} else {
 			// Delete directly
 			entity.getScene().removeEntity(entity);
@@ -937,6 +961,10 @@ public class Player {
 				.setPos(this.getPos().toProto())
 				.setRot(this.getRotation().toProto())
 				.build();
+	}
+
+	public MapMarksManager getMapMarksManager() {
+		return mapMarksManager;
 	}
 
 	public synchronized void onTick() {

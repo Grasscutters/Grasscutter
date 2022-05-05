@@ -82,7 +82,7 @@ public final class TeleportCommand implements CommandHandler {
             if (!result) {
                 CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Teleport_invalid_position);
             } else {
-                CommandHandler.sendMessage(sender, String.format(Grasscutter.getLanguage().Teleport_message, targetPlayer.getNickname(), x, y, z, sceneId));
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Teleport_message.replace("{name}", targetPlayer.getNickname()).replace("{x}", Float.toString(x)).replace("{y}", Float.toString(y)).replace("{z}", Float.toString(z)).replace("{id}", Integer.toString(sceneId)));
             }
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Teleport_invalid_position);
