@@ -37,7 +37,7 @@ public final class GiveAllCommand implements CommandHandler {
                 }
                 break;
             default: // invalid
-                CommandHandler.sendMessage(null, Grasscutter.getLanguage().GiveAll_usage);
+                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveAll_usage);
                 return;
         }
 
