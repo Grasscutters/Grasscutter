@@ -92,14 +92,13 @@ public final class Grasscutter {
 		// Database
 		DatabaseManager.initialize();
 
-		// Create plugin manager instance.
-		pluginManager = new PluginManager();
-
 		// Create server instances.
 		dispatchServer = new DispatchServer();
 		gameServer = new GameServer(new InetSocketAddress(getConfig().getGameServerOptions().Ip, getConfig().getGameServerOptions().Port));
 		// Create a server hook instance with both servers.
 		new ServerHook(gameServer, dispatchServer);
+		// Create plugin manager instance.
+		pluginManager = new PluginManager();
 
 		// Start servers.
 		if (getConfig().RunMode == ServerRunMode.HYBRID) {
