@@ -29,6 +29,7 @@ import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameServerTickEvent;
 import emu.grasscutter.server.packet.send.PacketDoGachaRsp;
+import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
@@ -42,12 +43,6 @@ public class GachaManager {
 	private final Int2ObjectMap<GachaBanner> gachaBanners;
 	private GetGachaInfoRsp cachedProto;
 	WatchService watchService;
-
-	private final int[] yellowAvatars = new int[] {1003, 1016, 1042, 1035, 1041};
-	private final int[] yellowWeapons = new int[] {11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502};
-	private final int[] purpleAvatars = new int[] {1006, 1014, 1015, 1020, 1021, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1053, 1055, 1056, 1064};
-	private final int[] purpleWeapons = new int[] {11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407, 14401, 14402, 14403, 14409, 15401, 15402, 15403, 15405};
-	private final int[] blueWeapons = new int[] {11301, 11302, 11306, 12301, 12302, 12305, 13303, 14301, 14302, 14304, 15301, 15302, 15304};
 	
 	private static final int starglitterId = 221;
 	private static final int stardustId = 222;
@@ -66,24 +61,8 @@ public class GachaManager {
 	public Int2ObjectMap<GachaBanner> getGachaBanners() {
 		return gachaBanners;
 	}
-
-	public int[] getYellowAvatars() {
-		return this.yellowAvatars;
-	}
-	public int[] getYellowWeapons() {
-		return this.yellowWeapons;
-	}
-	public int[] getPurpleAvatars() {
-		return this.purpleAvatars;
-	}
-	public int[] getPurpleWeapons() {
-		return this.purpleWeapons;
-	}
-	public int[] getBlueWeapons() {
-		return this.blueWeapons;
-	}
-
-	public int randomRange(int min, int max) {
+	
+	public int randomRange(int min, int max) {  // Both are inclusive
 		return ThreadLocalRandom.current().nextInt(max - min + 1) + min;
 	}
 	
@@ -98,8 +77,14 @@ public class GachaManager {
 			if(banners.size() > 0) {
 				for (GachaBanner banner : banners) {
 					getGachaBanners().put(banner.getGachaType(), banner);
+					Grasscutter.getLogger().info(String.format("Testing lerp code for banner gachaType %d :", banner.getGachaType()));  // TODO: remove this before merging!
+					for (int i=1; i<91; i++) {
+						Grasscutter.getLogger().info(String.format("Pity %d : Weight %d", i, banner.getWeight(5, i)));
+					}
 				}
 				Grasscutter.getLogger().info("Banners successfully loaded.");
+
+
 				this.cachedProto = createProto();
 			} else {
 				Grasscutter.getLogger().error("Unable to load banners. Banners size is 0.");
@@ -108,6 +93,139 @@ public class GachaManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	private class BannerPools {
+		public int[] rateUpItems4;
+		public int[] rateUpItems5;
+		public int[] fallbackItems4Pool1;
+		public int[] fallbackItems4Pool2;
+		public int[] fallbackItems5Pool1;
+		public int[] fallbackItems5Pool2;
+
+		public BannerPools(GachaBanner banner) {
+			rateUpItems4 = banner.getRateUpItems4();
+			rateUpItems5 = banner.getRateUpItems5();
+			fallbackItems4Pool1 = banner.getFallbackItems4Pool1();
+			fallbackItems4Pool2 = banner.getFallbackItems4Pool2();
+			fallbackItems5Pool1 = banner.getFallbackItems5Pool1();
+			fallbackItems5Pool2 = banner.getFallbackItems5Pool2();
+
+			if (banner.getAutoStripRateUpFromFallback()) {
+				fallbackItems4Pool1 = Utils.setSubtract(fallbackItems4Pool1, rateUpItems4);
+				fallbackItems4Pool2 = Utils.setSubtract(fallbackItems4Pool2, rateUpItems4);
+				fallbackItems5Pool1 = Utils.setSubtract(fallbackItems5Pool1, rateUpItems5);
+				fallbackItems5Pool2 = Utils.setSubtract(fallbackItems5Pool2, rateUpItems5);
+			}
+		}
+
+		public void removeFromAllPools(int[] itemIds) {
+			rateUpItems4 = Utils.setSubtract(rateUpItems4, itemIds);
+			rateUpItems5 = Utils.setSubtract(rateUpItems5, itemIds);
+			fallbackItems4Pool1 = Utils.setSubtract(fallbackItems4Pool1, itemIds);
+			fallbackItems4Pool2 = Utils.setSubtract(fallbackItems4Pool2, itemIds);
+			fallbackItems5Pool1 = Utils.setSubtract(fallbackItems5Pool1, itemIds);
+			fallbackItems5Pool2 = Utils.setSubtract(fallbackItems5Pool2, itemIds);
+		}
+	}
+
+	private synchronized int checkPlayerAvatarConstellationLevel(Player player, int itemId) {  // Maybe this would be useful in the Player class?
+		ItemData itemData = GameData.getItemDataMap().get(itemId);
+		if ((itemData == null) || (itemData.getMaterialType() != MaterialType.MATERIAL_AVATAR)){
+			return -2;  // Not an Avatar
+		}
+		Avatar avatar = player.getAvatars().getAvatarById((itemId % 1000) + 10000000);
+		if (avatar == null) {
+			return -1;  // Doesn't have
+		}
+		// Constellation
+		int constLevel = avatar.getCoreProudSkillLevel();
+		GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId + 100);
+		constLevel += (constItem == null)? 0 : constItem.getCount();
+		return constLevel;
+	}
+
+	private synchronized int[] removeC6FromPool(int[] itemPool, Player player) {
+		IntList temp = new IntArrayList();
+		for (int itemId : itemPool) {
+			if (checkPlayerAvatarConstellationLevel(player, itemId) < 6) {
+				temp.add(itemId);
+			}
+		}
+		return temp.toIntArray();
+	}
+
+	private synchronized int drawRoulette(int[] weights, int cutoff) {
+		// This follows the logic laid out in issue #183
+		// Simple weighted selection with an upper bound for the roll that cuts off trailing entries
+		// All weights must be >= 0
+		int total = 0;
+		for (int i : weights) {
+			if (i < 0) {
+				throw new IllegalArgumentException("Weights must be non-negative!");
+			}
+			total += i;
+		}
+		int roll = ThreadLocalRandom.current().nextInt((total < cutoff)? total : cutoff);
+		int subTotal = 0;
+		for (int i : weights) {
+			subTotal += i;
+			if (roll < subTotal) {
+				return i;
+			}
+		}
+		// throw new IllegalStateException();
+		return 0;  // This should only be reachable if total==0
+	}
+
+	private synchronized int doRarePull(int[] featured, int[] fallback1, int[] fallback2, int rarity, GachaBanner banner, PlayerGachaBannerInfo gachaInfo) {
+		int itemId = 0;
+		if (	(featured.length > 0)
+				&& (gachaInfo.getFailedFeaturedItemPulls(rarity) >= 1)
+				|| (this.randomRange(1, 100) <= banner.getEventChance(rarity))) {
+			itemId = getRandom(featured);
+			gachaInfo.setFailedFeaturedItemPulls(rarity, 0);
+		} else {
+			gachaInfo.addFailedFeaturedItemPulls(rarity, 1);
+			if (fallback1.length < 1) {
+				itemId = getRandom(fallback2);  // Don't ever run an empty fallback2 btw
+			} else {
+				int pityPool1 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 1));
+				int pityPool2 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 2));
+				int chosenPool = switch ((pityPool1 >= pityPool2)? 1 : 0) {  // Larger weight must come first for the hard cutoff to function correctly
+					case 1 -> 1 + drawRoulette(new int[] {pityPool1, pityPool2}, 10000);
+					default -> 2 - drawRoulette(new int[] {pityPool2, pityPool1}, 10000);
+				};
+				itemId = switch (chosenPool) {
+					case 1:
+						gachaInfo.setPityPool(rarity, 1, 0);
+						yield getRandom(fallback1);
+					default:
+						gachaInfo.setPityPool(rarity, 2, 0);
+						yield getRandom(fallback2);
+				};
+			}
+		}
+		return itemId;
+	}
+
+	private synchronized int doPull(GachaBanner banner, PlayerGachaBannerInfo gachaInfo, BannerPools pools) {
+		// Pre-increment all pity pools (yes this makes all calculations assume 1-indexed pity)
+		gachaInfo.incPityAll();
+
+		int[] weights = {banner.getWeight(5, gachaInfo.getPity5()), banner.getWeight(4, gachaInfo.getPity4()), 10000};
+		int levelWon = 5 - drawRoulette(weights, 10000);
+
+		return switch (levelWon) {
+			case 5:
+				gachaInfo.setPity5(0);
+				yield doRarePull(pools.rateUpItems5, pools.fallbackItems5Pool1, pools.fallbackItems5Pool2, 5, banner, gachaInfo);
+			case 4:
+				gachaInfo.setPity4(0);
+				yield doRarePull(pools.rateUpItems4, pools.fallbackItems4Pool1, pools.fallbackItems4Pool2, 4, banner, gachaInfo);
+			default:
+				yield getRandom(banner.getFallbackItems3());
+		};
 	}
 	
 	public synchronized void doPulls(Player player, int gachaType, int times) {
@@ -132,84 +250,27 @@ public class GachaManager {
 			return;
 		}
 		
-		// Roll
-		PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(banner);
-		IntList wonItems = new IntArrayList(times);
-		
-		for (int i = 0; i < times; i++) {
-			int random = this.randomRange(1, 10000);
-			int itemId = 0;
-			
-			int bonusYellowChance = gachaInfo.getPity5() >= banner.getSoftPity() ? 100 * (gachaInfo.getPity5() - banner.getSoftPity() - 1): 0;
-			int yellowChance = banner.getBaseYellowWeight() + (int) Math.floor(100f * (gachaInfo.getPity5() / (banner.getSoftPity() - 1D))) + bonusYellowChance;
-			int purpleChance = 10000 - (banner.getBasePurpleWeight() + (int) Math.floor(790f * (gachaInfo.getPity4() / 8f)));
-		
-			if (random <= yellowChance || gachaInfo.getPity5() >= banner.getHardPity()) {
-				if (banner.getRateUpItems1().length > 0) {
-					int eventChance = this.randomRange(1, 100);
-					
-					if (eventChance <= banner.getEventChance() || gachaInfo.getFailedFeaturedItemPulls() >= 1) {
-						itemId = getRandom(banner.getRateUpItems1());
-						gachaInfo.setFailedFeaturedItemPulls(0);
-					} else {
-						// Lost the 50/50... rip
-						gachaInfo.addFailedFeaturedItemPulls(1);
-					}
-				}
-				
-				if (itemId == 0) {
-					int typeChance = this.randomRange(banner.getBannerType() == BannerType.WEAPON ? 2 : 1, banner.getBannerType() == BannerType.EVENT ? 1 : 2);
-					if (typeChance == 1) {
-						itemId = getRandom(this.yellowAvatars);
-					} else {
-						itemId = getRandom(this.yellowWeapons);
-					}
-				}
-
-				// Pity
-				gachaInfo.addPity4(1);
-				gachaInfo.setPity5(0);
-			} else if (random >= purpleChance || gachaInfo.getPity4() >= 9) {
-				if (banner.getRateUpItems2().length > 0) {
-					int eventChance = this.randomRange(1, 100);
-					
-					if (eventChance >= 50) {
-						itemId = getRandom(banner.getRateUpItems2());
-					}
-				}
-				
-				if (itemId == 0) {
-					int typeChance = this.randomRange(banner.getBannerType() == BannerType.WEAPON ? 2 : 1, banner.getBannerType() == BannerType.EVENT ? 1 : 2);
-					if (typeChance == 1) {
-						itemId = getRandom(this.purpleAvatars);
-					} else {
-						itemId = getRandom(this.purpleWeapons);
-					}
-				}
-				
-				// Pity
-				gachaInfo.addPity5(1);
-				gachaInfo.setPity4(0);
-			} else {
-				itemId = getRandom(this.blueWeapons);
-				
-				// Pity
-				gachaInfo.addPity4(1);
-				gachaInfo.addPity5(1);
-			}
-			
-			// Add winning item
-			wonItems.add(itemId);
-		}
-		
 		// Add to character
+		PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(banner);
+		BannerPools pools = new BannerPools(banner);
 		List<GachaItem> list = new ArrayList<>();
 		int stardust = 0, starglitter = 0;
+
+		if (banner.getRemoveC6FromPool()) {  // The ultimate form of pity (non-vanilla)
+			pools.rateUpItems4 = removeC6FromPool(pools.rateUpItems4, player);
+			pools.rateUpItems5 = removeC6FromPool(pools.rateUpItems5, player);
+			pools.fallbackItems4Pool1 = removeC6FromPool(pools.fallbackItems4Pool1, player);
+			pools.fallbackItems4Pool2 = removeC6FromPool(pools.fallbackItems4Pool2, player);
+			pools.fallbackItems5Pool1 = removeC6FromPool(pools.fallbackItems5Pool1, player);
+			pools.fallbackItems5Pool2 = removeC6FromPool(pools.fallbackItems5Pool2, player);
+		}
 		
-		for (int itemId : wonItems) {
+		for (int i = 0; i < times; i++) {
+			// Roll
+			int itemId = doPull(banner, gachaInfo, pools);
 			ItemData itemData = GameData.getItemDataMap().get(itemId);
 			if (itemData == null) {
-				continue;
+				continue;  // Maybe we should bail out if an item fails instead of rolling the rest?
 			}
 
 			// Write gacha record
@@ -222,44 +283,33 @@ public class GachaManager {
 			boolean isTransferItem = false;
 			
 			// Const check
-			if (itemData.getMaterialType() == MaterialType.MATERIAL_AVATAR) {
-				int avatarId = (itemData.getId() % 1000) + 10000000;
-				Avatar avatar = player.getAvatars().getAvatarById(avatarId);
-				if (avatar != null) {
-					int constLevel = avatar.getCoreProudSkillLevel();
-					int constItemId = itemData.getId() + 100;
-					GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId);
-					if (constItem != null) {
-						constLevel += constItem.getCount();
+			int constellation = checkPlayerAvatarConstellationLevel(player, itemId);
+			switch (constellation) {
+				case -2:  // Is weapon
+					switch (itemData.getRankLevel()) {
+						case 5 -> addStarglitter = 10;
+						case 4 -> addStarglitter = 2;
+						default -> addStardust = 15;
 					}
-					
-					if (constLevel < 6) {
-						// Not max const
-						addStarglitter = 2;
-						// Add 1 const
+					break;
+				case -1:  // New character
+					gachaItem.setIsGachaItemNew(true);
+					break;
+				default:
+					if (constellation >= 6) {  // C6, give consolation starglitter
+						addStarglitter = (itemData.getRankLevel()==5)? 25 : 5;
+					} else {  // C0-C5, give constellation item
+						if (banner.getRemoveC6FromPool() && constellation == 5) {  // New C6, remove it from the pools so we don't get C7 in a 10pull
+							pools.removeFromAllPools(new int[] {itemId});
+						}
+						addStarglitter = (itemData.getRankLevel()==5)? 10 : 2;
+						int constItemId = itemId + 100;
+						GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId);
 						gachaItem.addTransferItems(GachaTransferItem.newBuilder().setItem(ItemParam.newBuilder().setItemId(constItemId).setCount(1)).setIsTransferItemNew(constItem == null));
 						player.getInventory().addItem(constItemId, 1);
-					} else {
-						// Is max const
-						addStarglitter = 5;
 					}
-					
-					if (itemData.getRankLevel() == 5) {
-						addStarglitter *= 5;
-					}
-					
 					isTransferItem = true;
-				} else {
-					// New
-					gachaItem.setIsGachaItemNew(true);
-				}
-			} else {
-				// Is weapon
-				switch (itemData.getRankLevel()) {
-					case 5 -> addStarglitter = 10;
-					case 4 -> addStarglitter = 2;
-					case 3 -> addStardust = 15;
-				}
+					break;
 			}
 
 			// Create item
@@ -272,7 +322,8 @@ public class GachaManager {
 			
 			if (addStardust > 0) {
 				gachaItem.addTokenItemList(ItemParam.newBuilder().setItemId(stardustId).setCount(addStardust));
-			} if (addStarglitter > 0) {
+			}
+			if (addStarglitter > 0) {
 				ItemParam starglitterParam = ItemParam.newBuilder().setItemId(starglitterId).setCount(addStarglitter).build();
 				if (isTransferItem) {
 					gachaItem.addTransferItems(GachaTransferItem.newBuilder().setItem(starglitterParam));
@@ -286,7 +337,8 @@ public class GachaManager {
 		// Add stardust/starglitter
 		if (stardust > 0) {
 			player.getInventory().addItem(stardustId, stardust);
-		} if (starglitter > 0) {
+		}
+		if (starglitter > 0) {
 			player.getInventory().addItem(starglitterId, starglitter);
 		}
 		
