@@ -60,6 +60,7 @@ public class MovementManager {
     private final Player player;
 
     private float landSpeed = 0;
+    private long landTimeMillisecond = 0;
     private Timer movementManagerTickTimer;
     private GameSession cachedSession = null;
     private GameEntity cachedEntity = null;
@@ -192,12 +193,20 @@ public class MovementManager {
         // cache land speed
         if (state == MotionState.MOTION_LAND_SPEED) {
             landSpeed = motionInfo.getSpeed().getY();
+            landTimeMillisecond = System.currentTimeMillis();
         }
         if (state == MotionState.MOTION_FALL_ON_GROUND) {
+            // if not received immediately after MOTION_LAND_SPEED, discard this packet.
+            // TODO: Test in high latency.
+            int maxDelay = 200;
+            if ((System.currentTimeMillis() - landTimeMillisecond) > maxDelay) {
+                Grasscutter.getLogger().debug("MOTION_FALL_ON_GROUND received after " + maxDelay + "ms, discard.");
+                return;
+            }
             float currentHP = cachedEntity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
             float maxHP = cachedEntity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
             float damage = 0;
-//            Grasscutter.getLogger().debug("LandSpeed: " + landSpeed);
+            Grasscutter.getLogger().debug("LandSpeed: " + landSpeed);
             if (landSpeed < -23.5) {
                 damage = (float)(maxHP * 0.33);
             }
@@ -214,7 +223,7 @@ public class MovementManager {
             if (newHP < 0) {
                 newHP = 0;
             }
-//            Grasscutter.getLogger().debug("Max: " + maxHP + "\tCurr: " + currentHP + "\tDamage: " + damage + "\tnewHP: " + newHP);
+            Grasscutter.getLogger().debug("Max: " + maxHP + "\tCurr: " + currentHP + "\tDamage: " + damage + "\tnewHP: " + newHP);
             cachedEntity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
             cachedEntity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(cachedEntity, FightProperty.FIGHT_PROP_CUR_HP));
             if (newHP == 0) {
