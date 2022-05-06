@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.google.gson.Gson;
 import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
 
@@ -120,15 +121,39 @@ public class ResourceLoader {
 	
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	protected static void loadFromResource(Class<?> c, String fileName, Int2ObjectMap map) throws Exception {
-		try (FileReader fileReader = new FileReader(Grasscutter.getConfig().RESOURCE_FOLDER + "ExcelBinOutput/" + fileName)) {
-			List list = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, c).getType());
+		FileReader fileReader = new FileReader(Grasscutter.getConfig().RESOURCE_FOLDER + "ExcelBinOutput/" + fileName);
+		Gson gson = Grasscutter.getGsonFactory();
+		List list = gson.fromJson(fileReader, List.class);
 
-			for (Object o : list) {
-				GameResource res = (GameResource) o;
-				res.onLoad();
-				map.put(res.getId(), res);
+		for (Object o : list) {
+			Map<String, Object> tempMap = toPascalCaseMap((Map<String, Object>) o);
+			GameResource res = gson.fromJson(gson.toJson(tempMap), TypeToken.get(c).getType());
+			res.onLoad();
+			map.put(res.getId(), res);
+		}
+	}
+
+	/**
+	 * 解决emu.grasscutter.data.def目录下的实体类
+	 * 用Gson转换反序列化后实体类对象属性无数据的问题
+	 * 原因是有很多字段属性名称的首字母大写
+	 * 而对应的json文件的键名称的首字母没有大写
+	 * 导致发序列化后空值的问题
+	 * @param objMap
+	 * @return
+	 */
+	private static Map<String, Object> toPascalCaseMap(Map<String, Object> objMap) {
+		Map<String, Object> map = new HashMap<>(objMap.size());
+		for (String s : objMap.keySet()) {
+			char c = s.charAt(0);
+			if (c >= 'a' && c <= 'z') {
+				String s1 = String.valueOf(c).toUpperCase();
+				String after = s.length() > 1 ? s1 + s.substring(1) : s1;
+				map.put(after, objMap.get(s));
 			}
 		}
+
+		return map;
 	}
 
 	private static void loadScenePoints() {
