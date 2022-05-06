@@ -22,6 +22,7 @@ import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.managers.MovementManager.MovementManager;
+import emu.grasscutter.game.managers.SotSManager.SotSManager;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
@@ -88,6 +89,8 @@ public class Player {
 	@Transient private FriendsList friendsList;
 	@Transient private MailHandler mailHandler;
 	@Transient private MessageHandler messageHandler;
+
+	@Transient private SotSManager sotsManager;
 
 	private TeamManager teamManager;
 
@@ -168,6 +171,7 @@ public class Player {
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager();
 		this.movementManager = new MovementManager(this);
+		this.sotsManager = new SotSManager(this);
 	}
 
 	// On player creation
@@ -196,6 +200,7 @@ public class Player {
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager();
 		this.movementManager = new MovementManager(this);
+		this.sotsManager = new SotSManager(this);
 	}
 
 	public int getUid() {
@@ -983,6 +988,8 @@ public class Player {
 	}
 
 	public MovementManager getMovementManager() { return movementManager; }
+
+	public SotSManager getSotSManager() { return sotsManager; }
 
 	public synchronized void onTick() {
 		// Check ping
