@@ -95,7 +95,7 @@ public final class Config {
 
 		public String WelcomeMailSender  = "Yuuki";
 		public String WelcomeMailTitle   = "Welcome to Yuuki Server";
-		public String WelcomeMailContent = "";
+		public String WelcomeMailContent = "";    
 		public Mail.MailItem[] WelcomeMailItems = {
 				new Mail.MailItem(13509, 1, 1),
 				new Mail.MailItem(201, 10000, 1),

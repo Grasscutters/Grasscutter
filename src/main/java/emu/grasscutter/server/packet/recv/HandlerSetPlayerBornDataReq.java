@@ -37,6 +37,13 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			return;
 		}
 		
+		// Make sure resources folder is set
+		if (!GameData.getAvatarDataMap().containsKey(avatarId)) {
+			Grasscutter.getLogger().error("No avatar data found! Please check your ExcelBinOutput folder.");
+			session.close();
+			return;
+		}
+		
 		String nickname = req.getNickName();
 		if (nickname == null) {
 			nickname = "Traveler";

@@ -82,7 +82,8 @@ public class DungeonManager {
 				prevPos.set(entry.getPointData().getTranPos());
 			}
 		}
-
+		// clean temp team if it has
+		player.getTeamManager().cleanTemporaryTeam();
 		// Transfer player back to world
 		player.getWorld().transferPlayerToScene(player, prevScene, prevPos);
 		player.sendPacket(new BasePacket(PacketOpcodes.PlayerQuitDungeonRsp));
