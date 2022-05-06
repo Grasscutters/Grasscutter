@@ -207,4 +207,19 @@ public class ScriptLib {
 	public void PrintContextLog(String msg) {
 		Grasscutter.getLogger().info("[LUA] " + msg);
 	}
+
+	public int TowerCountTimeStatus(int var1, int var2){
+		return 0;
+	}
+	public int GetGroupMonsterCount(int var1){
+		// Maybe...
+		return GetGroupMonsterCountByGroupId(var1);
+	}
+	public int SetMonsterBattleByGroup(int var1, int var2, int var3){
+		return 0;
+	}
+
+	public int CauseDungeonFail(int var1){
+		return 0;
+	}
 }
