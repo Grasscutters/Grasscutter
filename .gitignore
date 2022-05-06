@@ -52,7 +52,7 @@ tmp/
 .vscode
 
 # Grasscutter
-resources/
+/resources/
 logs/
 plugins/
 data/AbilityEmbryos.json
