@@ -104,6 +104,11 @@ public class EntityAvatar extends GameEntity {
 		this.killedType = PlayerDieType.PLAYER_DIE_KILL_BY_MONSTER;
 		this.killedBy = killerId;
 	}
+
+	public void onDeath(PlayerDieType dieType, int killerId) {
+		this.killedType = dieType;
+		this.killedBy = killerId;
+	}
 	
 	public SceneAvatarInfo getSceneAvatarInfo() {
 		SceneAvatarInfo.Builder avatarInfo = SceneAvatarInfo.newBuilder()

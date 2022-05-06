@@ -21,12 +21,14 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
-import emu.grasscutter.game.managers.MotionManager.MotionManager;
+import emu.grasscutter.game.managers.MovementManager.MovementManager;
+import emu.grasscutter.game.managers.SotSManager.SotSManager;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.managers.MapMarkManager.*;
+import emu.grasscutter.game.tower.TowerManager;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
@@ -88,7 +90,11 @@ public class Player {
 	@Transient private MailHandler mailHandler;
 	@Transient private MessageHandler messageHandler;
 
+	@Transient private SotSManager sotsManager;
+
 	private TeamManager teamManager;
+
+	private TowerManager towerManager;
 	private PlayerGachaInfo gachaInfo;
 	private PlayerProfile playerProfile;
 	private boolean showAvatar;
@@ -122,7 +128,9 @@ public class Player {
 	@Transient private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
 
 	private MapMarksManager mapMarksManager;
-	@Transient private MotionManager motionManager;
+	@Transient private MovementManager movementManager;
+
+	private long springLastUsed;
 
 
 	@Deprecated
@@ -164,7 +172,8 @@ public class Player {
 		this.shopLimit = new ArrayList<>();
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager();
-		this.motionManager = new MotionManager(this);
+		this.movementManager = new MovementManager(this);
+		this.sotsManager = new SotSManager(this);
 	}
 
 	// On player creation
@@ -176,6 +185,7 @@ public class Player {
 		this.nickname = "Traveler";
 		this.signature = "";
 		this.teamManager = new TeamManager(this);
+		this.towerManager = new TowerManager(this);
 		this.birthday = new PlayerBirthday();
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
@@ -191,7 +201,8 @@ public class Player {
 		this.getRotation().set(0, 307, 0);
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager();
-		this.motionManager = new MotionManager(this);
+		this.movementManager = new MovementManager(this);
+		this.sotsManager = new SotSManager(this);
 	}
 
 	public int getUid() {
@@ -389,6 +400,10 @@ public class Player {
 		return this.teamManager;
 	}
 
+	public TowerManager getTowerManager() {
+		return towerManager;
+	}
+
 	public PlayerGachaInfo getGachaInfo() {
 		return gachaInfo;
 	}
@@ -520,6 +535,14 @@ public class Player {
 		} else if (oldPauseState && !newPauseState) {
 			this.onUnpause();
 		}
+	}
+
+	public long getSpringLastUsed() {
+		return springLastUsed;
+	}
+
+	public void setSpringLastUsed(long val) {
+		springLastUsed = val;
 	}
 
 	public SceneLoadState getSceneLoadState() {
@@ -974,7 +997,9 @@ public class Player {
 		return mapMarksManager;
 	}
 
-	public MotionManager getMotionManager() { return motionManager; }
+	public MovementManager getMovementManager() { return movementManager; }
+
+	public SotSManager getSotSManager() { return sotsManager; }
 
 	public synchronized void onTick() {
 		// Check ping
@@ -1004,33 +1029,9 @@ public class Player {
 				this.resetSendPlayerLocTime();
 			}
 		}
-
-		scheduleStaminaNotify();
 	}
 
-	private void scheduleStaminaNotify() {
-		// stamina tick
-		EntityMoveInfoOuterClass.EntityMoveInfo moveInfo = getMotionManager().getMoveInfo();
-		if (moveInfo == null) {
-			return;
-		}
 
-		if (getMotionManager().getMoveInfo().getMotionInfo().getState() == MotionStateOuterClass.MotionState.MOTION_STANDBY) {
-			if (getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA) == getProperty(PlayerProperty.PROP_MAX_STAMINA) ) {
-				return;
-			}
-		}
-
-		for (int i = 0; i <= 1000; i+=200) {
-			Timer timer = new Timer();
-			timer.schedule(new TimerTask() {
-				@Override
-				public void run() {
-					getMotionManager().tick();
-				}
-			}, i);
-		}
-	}
 
 
 	public void resetSendPlayerLocTime() {
@@ -1053,6 +1054,9 @@ public class Player {
 		}
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
+		}
+		if (this.getTowerManager() == null) {
+			this.towerManager = new TowerManager(this);
 		}
 
 		// Check if player object exists in server
