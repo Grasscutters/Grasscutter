@@ -4,6 +4,9 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.GenshinPlayer;
 import org.reflections.Reflections;
+import org.reflections.scanners.FieldAnnotationsScanner;
+import org.reflections.scanners.SubTypesScanner;
+import org.reflections.util.ConfigurationBuilder;
 
 import java.util.*;
 
@@ -143,7 +146,18 @@ public final class CommandMap {
      * Scans for all classes annotated with {@link Command} and registers them.
      */
     private void scan() {
-        Reflections reflector = Grasscutter.reflector;
+        // Reflections reflector = Grasscutter.reflector;
+
+        // 修复打包生成出来的jar包，运行之后报：
+        // org.reflections.ReflectionsException:
+        // Scanner TypeAnnotationsScanner was not configured
+        // 的问题
+        ConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
+                .forPackages(Command.class.getPackage().getName())
+                .addScanners(new SubTypesScanner())
+                .addScanners(new FieldAnnotationsScanner());
+        Reflections reflector = new Reflections(configurationBuilder);
+
         Set<Class<?>> classes = reflector.getTypesAnnotatedWith(Command.class);
         classes.forEach(annotated -> {
             try {
