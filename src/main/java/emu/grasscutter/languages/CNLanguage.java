@@ -45,16 +45,25 @@ public final class CNLanguage {
     public String Invalid_playerId = "无效的玩家ID.";
     public String Player_not_found = "未找到此玩家.";
     public String Player_is_offline = "此玩家已离线.";
+    public String Invalid_amount = "无效的数量.";
+    public String Invalid_arguments = "无效的命令参数.";
+    public String Invalid_artifact_id = "无效的圣遗物ID.";
+    public String Invalid_avatar_id = "无效的角色ID.";
+    public String Invalid_avatar_level = "无效的角色等级.";
+    public String Invalid_entity_id = "无效的物品ID.";
     public String Invalid_item_id = "无效的物品ID.";
-    public String Invalid_item_or_player_id = "无效的玩家或物品ID.";
+    public String Invalid_item_level = "无效的物品等级.";
+    public String Invalid_item_refinement = "无效的精炼等级.";
+    public String Invalid_UID = "无效的UID.";
     public String Enabled = "启用";
     public String Disabled = "禁用";
     public String No_command_found = "未找到命令.";
     public String Help = "帮助";
     public String Player_not_found_or_offline = "此玩家不存在或已离线.";
-    public String Invalid_arguments = "无效的参数.";
     public String Success = "成功";
-    public String Invalid_entity_id = "无效的实体ID.";
+    public String Target_cleared = "已清除选择目标";
+    public String Target_set = "接下来的命令将默认以 @{uid} 为目标。输入命令时不必继续携带UID参数。";
+    public String Target_needed = "此命令需要指定一个目标用户. 输入命令时携带 <@UID> 参数或使用 /target @UID 来指定一个默认目标用户.";
 
     // Help
     public String Help_usage = "   用法: ";
@@ -63,7 +72,6 @@ public final class CNLanguage {
 
     // Account
     public String Modify_user_account = "修改用户帐户";
-    public String Invalid_UID = "无效的UID.";
     public String Account_exists = "账户已存在.";
     public String Account_create_UID = "UID为 {uid} 的账户已创建.";
     public String Account_delete = "已删除账户.";
@@ -80,7 +88,7 @@ public final class CNLanguage {
     public String Change_screen = "切换到场景 ";
     public String Change_screen_not_exist = "此场景不存在。";
 
-    // Clear
+    // Cleart_or_playerId
     public String Clear_weapons = "已清除 {name} 的武器.";
     public String Clear_artifacts = "已清除 {name} 的圣遗物 .";
     public String Clear_materials = "已清除 {name} 的材料.";
@@ -90,8 +98,9 @@ public final class CNLanguage {
     public String Clear_everything = "已清除 {name} 的所有物品.";
 
     // Coop
-    public String Coop_usage = "用法: coop <玩家ID> <房主的玩家ID>";
-
+    public String Coop_usage = "用法: coop <房主的UID>";
+    public String Coop_success = "已将{target}拉进{host}的世界.";
+    
     // Drop
     public String Drop_usage = "用法: drop <物品ID|物品名> [数量]";
     public String Drop_dropped_of = "已在地上丢弃 {amount} 个 {item}.";
@@ -103,22 +112,17 @@ public final class CNLanguage {
     public String EnterDungeon_you_in_that_dungeon = "你已经在此副本中了。";
 
     // GiveAll
-    public String GiveAll_usage = "用法: giveall [玩家] [数量]";
+    public String GiveAll_usage = "用法: giveall [数量]";
     public String GiveAll_item = "正在给予所有物品...";
     public String GiveAll_done = "完成。";
-    public String GiveAll_invalid_amount_or_playerId = "无效的数量或玩家ID";
 
     // GiveArtifact
     public String GiveArtifact_usage = "用法: giveart|gart [玩家] <圣遗物Id> <主词条Id> [<副词条Id>[,<被强化次数>]]... [等级]";
-    public String GiveArtifact_invalid_artifact_id = "无效的圣遗物Id.";
     public String GiveArtifact_given = "已将 {itemId} 给予 {target}.";
 
     // GiveChar
     public String GiveChar_usage = "用法: givechar <p玩家> <角色Id|角色名> [等级]";
     public String GiveChar_given = "将等级为 {level} 的 {avatarId} 给予 {target}.";
-    public String GiveChar_invalid_avatar_id = "无效的角色ID";
-    public String GiveChar_invalid_avatar_level = "无效的角色等级.";
-    public String GiveChar_invalid_avatar_or_player_id = "无效的角色ID或玩家ID.";
 
     // Give
     public String Give_usage = "用法: give [玩家名] <物品ID|物品名> [数量] [等级] ";
@@ -129,7 +133,8 @@ public final class CNLanguage {
     public String Give_given_level = "已将 {amount} 个等级为 {lvl} 的 {item} 给与 {target}.";
 
     // GodMode
-    public String Godmode_status = "设置 {name} 的无敌模式为 {status}  ";
+    public String Godmode_usage = "用法: godmode [on|off|toggle]";
+    public String Godmode_status = "设置 {name} 的无敌模式为: {status}  ";
 
     // Heal
     public String Heal_message = "所有角色已被治疗。";
@@ -151,7 +156,7 @@ public final class CNLanguage {
     public String List_message = "现有 {size} 名玩家在线:";
 
     // Permission
-    public String Permission_usage = "用法: permission <add|remove> <用户名> <权限名>";
+    public String Permission_usage = "用法: permission <add|remove> <权限名>";
     public String Permission_add = "权限已添加。";
     public String Permission_have_permission = "此玩家已拥有此权限!";
     public String Permission_remove = "权限已移除。";
@@ -263,6 +268,7 @@ public final class CNLanguage {
     public String Talent_set_q = "设置元素爆发(q技能)等级为 {level}.";
     public String Talent_invalid_skill_id = "无效的技能ID。";
     public String Talent_set_this = "技能等级已设为 {level}.";
+    public String Talent_set_id = "将技能 {id} 的等级设为 {level}.";
     public String Talent_invalid_talent_level = "无效的技能等级。";
     public String Talent_normal_attack_id = "普通攻击技能ID {id}.";
     public String Talent_e_skill_id = "元素战技(e技能)ID {id}.";
@@ -272,9 +278,7 @@ public final class CNLanguage {
     public String TeleportAll_message = "此命令仅在多人游戏下可用。";
 
     // Teleport
-    public String Teleport_usage_server = "用法: /tp @<玩家ID>  <x> <y> <z> [场景ID]";
-    public String Teleport_usage = "用法: /tp @<玩家ID，不指定则为你自己>  <x> <y> <z> [场景ID]";
-    public String Teleport_specify_player_id = "你必须指定一个玩家。";
+    public String Teleport_usage_server = "用法: /tp  <x> <y> <z> [场景ID]";
     public String Teleport_invalid_position = "无效的位置。";
     public String Teleport_message = "已将 {name} 传送到场景 {id} ，坐标 {x},{y},{z}";
 

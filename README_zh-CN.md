@@ -126,7 +126,7 @@ chmod +x gradlew
 | kick           | kick \<uid>                                   | server.kick               | 均可使用 | 从服务器中踢出指定玩家 (WIP)               | k                                               |
 | killall        | killall [uid] [场景ID]                       | server.killall            | 均可使用 | 杀死指定玩家世界中所在或指定场景的全部生物 |                                                 |
 | list           | list                                         |                           | 均可使用 | 列出在线玩家                               |                                                 |
-| permission     | permission <add\|remove> <用户名> <权限节点> | *                         | 均可使用 | 添加或移除玩家的权限                       |                                                 |
+| permission     | permission <add\|remove> <UID> <权限节点> | *                         | 均可使用 | 添加或移除玩家的权限                       |                                                 |
 | position       | position                                     |                           | 仅客户端 | 获取当前坐标                               | pos                                             |
 | reload         | reload                                       | server.reload             | 均可使用 | 重载服务器配置                             |                                                 |
 | resetconst     | resetconst [all]                             | player.resetconstellation | 仅客户端 | 重置当前角色的命座,重新登录即可生效        | resetconstellation                              |
