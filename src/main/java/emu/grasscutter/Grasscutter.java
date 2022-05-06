@@ -29,6 +29,7 @@ import ch.qos.logback.classic.Logger;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.languages.CNLanguage;
+import emu.grasscutter.languages.PTLanguage;
 import emu.grasscutter.languages.Language;
 import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
@@ -41,7 +42,8 @@ public final class Grasscutter {
 	private static LineReader consoleLineReader = null;
 	private static Language language;
 	private static CNLanguage cn_language;
-
+	private static PTLanguage pt_language;
+	public static final Locale PT_BR = new Locale("pt", "BR"); //Java don't have a pt locale
 	private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	private static final File configFile = new File("./config.json");
 
@@ -150,6 +152,7 @@ public final class Grasscutter {
 		} catch (Exception e) {
 			Grasscutter.language = new Language();
 			Grasscutter.cn_language = new CNLanguage();
+			Grasscutter.pt_language = new PTLanguage();
 			Grasscutter.config.LocaleLanguage = Locale.getDefault();
 			saveConfig();
 
@@ -171,6 +174,11 @@ public final class Grasscutter {
 				file.write(gson.toJson(cn_language));
 			} catch (Exception ee) {
 				Grasscutter.getLogger().error("无法创建简体中文语言文件。");
+			}
+			try (FileWriter file = new FileWriter("./languages/" + PT_BR + ".json")) {
+				file.write(gson.toJson(pt_language));
+			} catch (Exception ee) {
+				Grasscutter.getLogger().error("Não foi possível criar o arquivo de idioma português brasileiro.");
 			}
 
 			// try again
