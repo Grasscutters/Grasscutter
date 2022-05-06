@@ -1,5 +1,6 @@
 package emu.grasscutter.game.world;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.def.DungeonData;
