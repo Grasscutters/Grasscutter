@@ -15,9 +15,7 @@ import java.util.List;
 
 @Entity
 public class TowerManager {
-
-    @Transient private final Player player;
-
+    @Transient private Player player;
 
     public TowerManager(Player player) {
         this.player = player;
