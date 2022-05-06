@@ -124,7 +124,7 @@ public final class GiveCommand implements CommandHandler {
         return;
       }
     }
-    
+
     if (itemData.isEquip()) {
       // jika item bisa di pakai?
       List<GameItem> itemsAdd = new LinkedList<>();
@@ -140,7 +140,7 @@ public final class GiveCommand implements CommandHandler {
               lvl = 21;
           }
         }
-        item_set.setCount(1);
+        item_set.setCount(amount);
         item_set.setLevel(lvl);
         if (lvl > 80) {
           item_set.setPromoteLevel(6);
@@ -162,38 +162,44 @@ public final class GiveCommand implements CommandHandler {
             item_set.setRefinement(0);
           }
         }
+
         itemsAdd.add(item_set);
+
+        // Stop spam notif
+        if (i == 0) {
+          sender.getInventory().addItems(itemsAdd, ActionReason.SubfieldDrop);
+          itemsAdd = new LinkedList<>();
+        }
+            
       }
-      sender.getInventory().addItems(itemsAdd, ActionReason.SubfieldDrop);
+      sender.getInventory().addItems(itemsAdd, null);    
     } else {
       // jika item tidak bisa di pakai?
       GameItem item_set = new GameItem(itemData);
       item_set.setCount(amount);
       sender.getInventory().addItem(item_set, ActionReason.SubfieldDrop);
-
     }
 
     // Notif
     if (!itemData.isEquip()) {
 
-      CommandHandler.sendMessage(sender,Grasscutter.getLanguage()
-      .Give_given
-      .replace("{amount}", Integer.toString(amount))
-      .replace("{item}", Integer.toString(item))
-      .replace("{target}", Integer.toString(targetPlayer.getUid())));
+      CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_given
+          .replace("{amount}", Integer.toString(amount))
+          .replace("{item}", Integer.toString(item))
+          .replace("{target}", Integer.toString(targetPlayer.getUid())));
 
     } else if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
-      CommandHandler.sendMessage(sender,Grasscutter.getLanguage()
-      .Give_given_with_level_and_refinement
-      .replace("{item}", Integer.toString(item))
-      .replace("{lvl}", Integer.toString(lvl)).replace("{refinement}", Integer.toString(refinement))
-      .replace("{amount}", Integer.toString(amount))
-      .replace("{target}", Integer.toString(targetPlayer.getUid())));
+      CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_given_with_level_and_refinement
+          .replace("{item}", Integer.toString(item))
+          .replace("{lvl}", Integer.toString(lvl)).replace("{refinement}", Integer.toString(refinement))
+          .replace("{amount}", Integer.toString(amount))
+          .replace("{target}", Integer.toString(targetPlayer.getUid())));
     } else {
-      CommandHandler.sendMessage(sender,Grasscutter.getLanguage()
-      .Give_given_level.replace("{item}", Integer.toString(item))
-      .replace("{lvl}", Integer.toString(lvl))
-      .replace("{amount}", Integer.toString(amount)));
+      CommandHandler.sendMessage(sender,
+          Grasscutter.getLanguage().Give_given_level
+          .replace("{item}", Integer.toString(item))
+          .replace("{lvl}", Integer.toString(lvl))
+          .replace("{amount}", Integer.toString(amount)));
     }
 
   }
