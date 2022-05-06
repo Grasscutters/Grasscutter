@@ -22,6 +22,8 @@ public class HandlerEnterTransPointRegionNotify extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception{
         Player player = session.getPlayer();
         SotSManager sotsManager = player.getSotSManager();
+
+        sotsManager.refillSpringVolume();
         sotsManager.autoRevive(session);
         sotsManager.scheduleAutoRecover(session);
         // TODO: allow interaction with the SotS?
