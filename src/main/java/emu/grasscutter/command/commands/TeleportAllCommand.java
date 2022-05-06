@@ -10,7 +10,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "tpall", usage = "tpall", permission = "player.tpall", description = "commands.teleportAll.description")
+@Command(label = "tpall", usage = "tpall", permission = "player.tpall", permissionTargeted = "player.tpall.others", description = "commands.teleportAll.description")
 public final class TeleportAllCommand implements CommandHandler {
 
     @Override
