@@ -245,8 +245,11 @@ public final class DispatchServer {
 			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.ALL) {
 				config.enableDevLogging();
 			}
+			if (Grasscutter.getConfig().getDispatchOptions().CORS){
+				if (Grasscutter.getConfig().getDispatchOptions().CORSAllowedOrigins.length > 0) config.enableCorsForOrigin(Grasscutter.getConfig().getDispatchOptions().CORSAllowedOrigins);
+				else config.enableCorsForAllOrigins();
+			}
 		});
-
 		httpServer.get("/", (req, res) -> res.send(Grasscutter.getLanguage().Welcome));
 
 		httpServer.raw().error(404, ctx -> {
