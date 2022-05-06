@@ -18,6 +18,8 @@ import java.util.List;
 // Statue of the Seven Manager
 public class SotSManager {
 
+    // NOTE: Spring volume balance *1  = fight prop HP *100
+
     private final Player player;
 
     public SotSManager(Player player) {
@@ -46,7 +48,8 @@ public class SotSManager {
             boolean isAlive = entity.isAlive();
             if (!isAlive) {
                 float maxHP = entity.getAvatar().getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-                entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, Math.min(150, maxHP));
+                float newHP = (float)(maxHP * 0.3);
+                entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
                 entity.getWorld().broadcastPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
             }
         });
@@ -65,14 +68,31 @@ public class SotSManager {
         }).start();
     }
 
+    public void refillSpringVolume() {
+        // TODO: max spring volume depends on level of the statues in Mondstadt and Liyue.
+        // https://genshin-impact.fandom.com/wiki/Statue_of_The_Seven#:~:text=region%20of%20Inazuma.-,Statue%20Levels,-Upon%20first%20unlocking
+        player.setProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME, 8500000);
+
+        long now = System.currentTimeMillis() / 1000;
+        long secondsSinceLastUsed = now - player.getSpringLastUsed();
+        float percentageRefilled = (float)secondsSinceLastUsed / 15 / 100; // 15s = 1% max volume
+        int maxVolume = player.getProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME);
+        int currentVolume = player.getProperty(PlayerProperty.PROP_CUR_SPRING_VOLUME);
+        if (currentVolume < maxVolume) {
+            int volumeRefilled = (int)(percentageRefilled * maxVolume);
+            int newVolume = currentVolume + volumeRefilled;
+            if (currentVolume + volumeRefilled > maxVolume) {
+                newVolume = maxVolume;
+            }
+            player.setProperty(PlayerProperty.PROP_CUR_SPRING_VOLUME, newVolume);
+        }
+        player.setSpringLastUsed(now);
+        player.save();
+    }
+
     // autoRecover checks player setting to see if auto recover is enabled, and refill HP to the predefined level.
     public void autoRecover(GameSession session) {
-        // TODO: Implement SotS Spring volume refill over time.
-        // Placeholder:
-        player.setProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME, 8500000);
-        player.setProperty(PlayerProperty.PROP_CUR_SPRING_VOLUME, 8500000);
-
-        // TODO: In MP, respect SotS settings from the host.
+        // TODO: In MP, respect SotS settings from the HOST.
         boolean  isAutoRecoveryEnabled = getIsAutoRecoveryEnabled();
         int autoRecoverPercentage = getAutoRecoveryPercentage();
         Grasscutter.getLogger().debug("isAutoRecoveryEnabled: " + isAutoRecoveryEnabled + "\tautoRecoverPercentage: " + autoRecoverPercentage);
@@ -88,27 +108,36 @@ public class SotSManager {
 
                 if (targetHP > currentHP) {
                     float needHP = targetHP - currentHP;
+                    float needSV = needHP * 100; // convert HP needed to Spring Volume needed
 
-                    int sotsHPBalance = player.getProperty(PlayerProperty.PROP_CUR_SPRING_VOLUME);
-                    if (sotsHPBalance >= needHP) {
-                        sotsHPBalance -= needHP;
-                        player.setProperty(PlayerProperty.PROP_CUR_SPRING_VOLUME, sotsHPBalance);
-
-                        float newHP = currentHP + needHP;
-
-                        session.send(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_MAX_HP));
-                        session.send(new PacketEntityFightPropChangeReasonNotify(entity, FightProperty.FIGHT_PROP_CUR_HP,
-                                newHP, List.of(3), PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_STATUE_RECOVER,
-                                ChangeHpReasonOuterClass.ChangeHpReason.ChangeHpAddStatue));
-                        entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
-
-                        Avatar avatar = entity.getAvatar();
-                        session.send(new PacketAvatarFightPropUpdateNotify(avatar, FightProperty.FIGHT_PROP_CUR_HP));
-                        avatar.setCurrentHp(newHP);
-
-                        player.save();
+                    int sotsSVBalance = player.getProperty(PlayerProperty.PROP_CUR_SPRING_VOLUME);
+                    if (sotsSVBalance >= needSV) {
+                        // sufficient
+                        sotsSVBalance -= needSV;
+                    } else {
+                        // insufficient balance
+                        needSV = sotsSVBalance;
+                        sotsSVBalance = 0;
                     }
+                    player.setProperty(PlayerProperty.PROP_CUR_SPRING_VOLUME, sotsSVBalance);
+                    player.setSpringLastUsed(System.currentTimeMillis() / 1000);
 
+                    float newHP = currentHP + needSV / 100; // convert SV to HP
+
+                    // TODO: Figure out why client shows current HP instead of added HP.
+                    //    Say an avatar had 12000 and now has 14000, it should show "2000".
+                    //    The client always show "+14000" which is incorrect.
+
+                    entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
+                    session.send(new PacketEntityFightPropChangeReasonNotify(entity, FightProperty.FIGHT_PROP_CUR_HP,
+                            newHP, List.of(3), PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_STATUE_RECOVER,
+                            ChangeHpReasonOuterClass.ChangeHpReason.ChangeHpAddStatue));
+                    session.send(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
+
+                    Avatar avatar = entity.getAvatar();
+                    avatar.setCurrentHp(newHP);
+                    session.send(new PacketAvatarFightPropUpdateNotify(avatar, FightProperty.FIGHT_PROP_CUR_HP));
+                    player.save();
                 }
             });
         }
