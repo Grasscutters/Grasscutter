@@ -215,7 +215,7 @@ public final class PTLanguage {
     // SetStats
     public String SetStats_usage_console = "Uso: setstats|stats @\u003cUID\u003e \u003cstat\u003e \u003cvalue\u003e";
     public String SetStats_usage_ingame = "Uso: setstats|stats [@UID] \u003cstat\u003e \u003cvalue\u003e";
-	    public String SetStats_help_message = """
+    public String SetStats_help_message = """
         \n\tValores for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi
         \t(cont.) Bônus de Dano Elemental: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys
         \t(cont.) RES Elemental: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys
