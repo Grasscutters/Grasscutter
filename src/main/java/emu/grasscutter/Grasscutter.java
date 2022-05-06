@@ -9,7 +9,6 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import emu.grasscutter.command.CommandMap;
-import emu.grasscutter.languages.PTLanguage;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
@@ -30,6 +29,7 @@ import ch.qos.logback.classic.Logger;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.languages.CNLanguage;
+import emu.grasscutter.languages.PTLanguage;
 import emu.grasscutter.languages.Language;
 import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
