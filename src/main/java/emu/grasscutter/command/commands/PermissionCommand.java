@@ -8,6 +8,8 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
+import static emu.grasscutter.utils.Language.translate;
+
 @Command(label = "permission", usage = "permission <add|remove> <permission>",
         description = "Grants or removes a permission for a user", permission = "*")
 public final class PermissionCommand implements CommandHandler {
@@ -15,7 +17,7 @@ public final class PermissionCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
             return;
         }
         
