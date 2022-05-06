@@ -28,6 +28,7 @@ public final class PlayerHook {
     
     /**
      * Kicks a player from the server.
+     * TODO: Refactor to kick using a packet.
      */
     public void kick() {
         this.player.getSession().close();
