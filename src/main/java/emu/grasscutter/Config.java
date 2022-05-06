@@ -80,6 +80,7 @@ public final class Config {
 		public boolean WatchGacha = false;
 		public String ServerNickname = "Server";
 		public int ServerAvatarId = 10000007;
+		public String ServerSignature = "Server Signature";
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
 		public String WelcomeMotd = "Welcome to Grasscutter emu";
 		public String WelcomeMailTitle = "Welcome to Grasscutter!";
