@@ -2,6 +2,7 @@ package emu.grasscutter.server.packet.send;
 
 import java.util.Map.Entry;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamInfo;
@@ -32,7 +33,11 @@ public class PacketAvatarDataNotify extends BasePacket {
 			
 			for (int i = 0; i < teamInfo.getAvatars().size(); i++) {
 				Avatar avatar = player.getAvatars().getAvatarById(teamInfo.getAvatars().get(i));
-				avatarTeam.addAvatarGuidList(avatar.getGuid());
+        try {
+          avatarTeam.addAvatarGuidList(avatar.getGuid());
+        } catch (Exception e) {
+          Grasscutter.getLogger().info("TODO: Player "+player.getUid()+" failed to add addAvatarGuidList", e);
+        }				
 			}
 			
 			proto.putAvatarTeamMap(entry.getKey(), avatarTeam.build());

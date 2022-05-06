@@ -36,11 +36,19 @@ public class ReliquaryLevelData extends GameResource {
 	}
 	
 	public float getPropValue(FightProperty prop) {
-		return getPropValue(prop.getId());
+    try {
+      return getPropValue(prop.getId());
+    } catch (Exception e) {
+      return 0;
+    }			
 	}
 	
 	public float getPropValue(int id) {
-		return propMap.get(id);
+    try {
+      return propMap.get(id);
+    } catch (Exception e) {
+      return 0;
+    }		
 	}
 	
 	@Override

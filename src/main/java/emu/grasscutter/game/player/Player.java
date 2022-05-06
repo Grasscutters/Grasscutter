@@ -1046,15 +1046,14 @@ public class Player {
 		DatabaseHelper.savePlayer(this);
 	}
 
-	public void onLogin() {
-    
+	public void onLogin() { 
+
 		// Make sure team is there
     if (this.getTeamManager() == null) {
       // New player
       this.teamManager = new TeamManager(this);
     } else {
       // Old player
-
       // Check Team
       Boolean UseLastID = false;
       int LastIndexAvatars = 0;
@@ -1116,32 +1115,51 @@ public class Player {
 		}
 
 		// Load from db
-		this.getAvatars().loadFromDatabase();
-		this.getInventory().loadFromDatabase();
-		this.getAvatars().postLoad();
+    try {
+      this.getAvatars().loadFromDatabase();
+		  this.getInventory().loadFromDatabase();
+		  this.getAvatars().postLoad();
+		  this.getFriendsList().loadFromDatabase();
+		  this.getMailHandler().loadFromDatabase();
+    } catch (Exception e) {
+      Grasscutter.getLogger().info("TODO: User UID: "+this.getProfile().getUid()+" with username "+this.getAccount().getUsername()+" It seems troublesome (Datebase)", e);
+      this.getSession().close();
+    }
 
-		this.getFriendsList().loadFromDatabase();
-		this.getMailHandler().loadFromDatabase();
+    // Find null avatar and remove it?
+    int GetAvatars = this.getAvatars().getAvatars().size();
+      for (int i = 0; i < GetAvatars; i++) {
+        Avatar avatar = this.getAvatars().getAvatars().get(i);
+        if(avatar == null){
+          this.getAvatars().getAvatars().remove(i);
+        } 
+      }
+      //this.save();
 
 		// Create world
 		World world = new World(this);
 		world.addPlayer(this);
-
+    
 		// Add to gameserver
 		if (getSession().isActive()) {
 			getServer().registerPlayer(this);
 			getProfile().setPlayer(this); // Set online
 		}
-
+    
 		// Multiplayer setting
 		this.setProperty(PlayerProperty.PROP_PLAYER_MP_SETTING_TYPE, this.getMpSetting().getNumber());
 		this.setProperty(PlayerProperty.PROP_IS_MP_MODE_AVAILABLE, 1);
 
 		// Packets
-		session.send(new PacketPlayerDataNotify(this)); // Player data
-		session.send(new PacketStoreWeightLimitNotify());
-		session.send(new PacketPlayerStoreNotify(this));
-		session.send(new PacketAvatarDataNotify(this));
+    try {
+      session.send(new PacketPlayerDataNotify(this));
+		  session.send(new PacketStoreWeightLimitNotify());
+		  session.send(new PacketPlayerStoreNotify(this));
+		  session.send(new PacketAvatarDataNotify(this));
+    } catch (Exception e) {
+      Grasscutter.getLogger().info("TODO: User UID: "+this.getProfile().getUid()+" with username "+this.getAccount().getUsername()+" It seems troublesome (Send Pack)", e);
+      this.getSession().close();
+    }
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
