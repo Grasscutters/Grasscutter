@@ -24,6 +24,7 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
+import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
 import emu.grasscutter.server.packet.send.PacketAvatarDieAnimationEndRsp;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
@@ -419,27 +420,37 @@ public class TeamManager {
 		if (deadAvatar.isAlive() || deadAvatar.getId() != dieGuid) {
 			return;
 		}
-		
-		// Replacement avatar
-		EntityAvatar replacement = null;
-		int replaceIndex = -1;
-		
-		for (int i = 0; i < this.getActiveTeam().size(); i++) {
-			EntityAvatar entity = this.getActiveTeam().get(i);
-			if (entity.isAlive()) {
-				replaceIndex = i;
-				replacement = entity;
-				break;
-			}
-		}
-		
-		if (replacement == null) {
-			// No more living team members...
-			getPlayer().sendPacket(new PacketWorldPlayerDieNotify(deadAvatar.getKilledType(), deadAvatar.getKilledBy()));
+
+		PlayerDieType dieType = deadAvatar.getKilledType();
+		int killedBy = deadAvatar.getKilledBy();
+
+		if (dieType == PlayerDieType.PLAYER_DIE_DRAWN) {
+			// Died in water. Do not replace
+			// The official server has skipped this notify and will just respawn the team immediately after the animation.
+			// TODO: Perhaps find a way to get vanilla experience?
+			getPlayer().sendPacket(new PacketWorldPlayerDieNotify(dieType, killedBy));
 		} else {
-			// Set index and spawn replacement member
-			this.setCurrentCharacterIndex(replaceIndex);
-			getPlayer().getScene().addEntity(replacement);
+			// Replacement avatar
+			EntityAvatar replacement = null;
+			int replaceIndex = -1;
+
+			for (int i = 0; i < this.getActiveTeam().size(); i++) {
+				EntityAvatar entity = this.getActiveTeam().get(i);
+				if (entity.isAlive()) {
+					replaceIndex = i;
+					replacement = entity;
+					break;
+				}
+			}
+
+			if (replacement == null) {
+				// No more living team members...
+				getPlayer().sendPacket(new PacketWorldPlayerDieNotify(dieType, killedBy));
+			} else {
+				// Set index and spawn replacement member
+				this.setCurrentCharacterIndex(replaceIndex);
+				getPlayer().getScene().addEntity(replacement);
+			}
 		}
 
 		// Response packet
@@ -492,11 +503,13 @@ public class TeamManager {
 
 	public void respawnTeam() {
 		// Make sure all team members are dead
-		for (EntityAvatar entity : getActiveTeam()) {
-			if (entity.isAlive()) {
-				return;
-			}
-		}
+		// Drowning needs revive when there may be other team members still alive.
+		//  for (EntityAvatar entity : getActiveTeam()) {
+		//      if (entity.isAlive()) {
+		//		     return;
+		//		}
+		//	}
+		player.getMovementManager().resetTimer(); // prevent drowning immediately after respawn
 		
 		// Revive all team members
 		for (EntityAvatar entity : getActiveTeam()) {
