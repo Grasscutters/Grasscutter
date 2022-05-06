@@ -14,7 +14,7 @@ import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "clear", usage = "clear <all|wp|art|mat>", //Merged /clearartifacts and /clearweapons to /clear <args> [uid]
         description = "commands.clear.description",
-        aliases = {"clear"}, permission = "player.clearinv")
+        aliases = {"clear"}, permission = "player.clearinv", permissionTargeted = "player.clearinv.others")
 
 public final class ClearCommand implements CommandHandler {
 

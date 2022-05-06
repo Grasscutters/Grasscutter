@@ -22,7 +22,7 @@ import java.util.Random;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)]", permission = "server.spawn", description = "commands.spawn.description")
+@Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)]", permission = "server.spawn", permissionTargeted = "server.spawn.others", description = "commands.spawn.description")
 public final class SpawnCommand implements CommandHandler {
 
     @Override
