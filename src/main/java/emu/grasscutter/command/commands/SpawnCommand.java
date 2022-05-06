@@ -27,7 +27,7 @@ public final class SpawnCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
             return;
         }
 
