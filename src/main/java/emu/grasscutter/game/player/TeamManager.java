@@ -53,11 +53,11 @@ public class TeamManager {
 	@Transient private final IntSet teamResonances;
 	@Transient private final IntSet teamResonancesConfig;
 
-	private int useTemporarilyTeamIndex = -1;
+	@Transient private int useTemporarilyTeamIndex = -1;
 	/**
 	 * Temporary Team for tower
 	 */
-	private List<TeamInfo> temporaryTeam;
+	@Transient private List<TeamInfo> temporaryTeam;
 
 	public TeamManager() {
 		this.mpTeam = new TeamInfo();
