@@ -4,13 +4,7 @@ import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.ShopGoodsData;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.managers.InventoryManager;
-import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.net.proto.ItemParamOuterClass;
-import emu.grasscutter.net.proto.ShopGoodsOuterClass;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -54,9 +48,9 @@ public class ShopManager {
 
 	public static int getShopNextRefreshTime(ShopInfo shopInfo) {
 		return switch (shopInfo.getShopRefreshType()) {
-			case SHOP_REFRESH_DAILY -> Utils.GetNextTimestampOfThisHour(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
-			case SHOP_REFRESH_WEEKLY ->  Utils.GetNextTimestampOfThisHourInNextWeek(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
-			case SHOP_REFRESH_MONTHLY -> Utils.GetNextTimestampOfThisHourInNextMonth(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+			case SHOP_REFRESH_DAILY -> Utils.getNextTimestampOfThisHour(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+			case SHOP_REFRESH_WEEKLY ->  Utils.getNextTimestampOfThisHourInNextWeek(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+			case SHOP_REFRESH_MONTHLY -> Utils.getNextTimestampOfThisHourInNextMonth(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
 			default -> 0;
 		};
 	}

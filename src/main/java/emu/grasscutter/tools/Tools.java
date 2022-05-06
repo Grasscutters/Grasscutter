@@ -93,6 +93,7 @@ public final class Tools {
 		}
 		
 		Grasscutter.getLogger().info("GM Handbook generated!");
+		System.exit(0);
 	}
 
 	@SuppressWarnings("deprecation")
@@ -180,6 +181,8 @@ public final class Tools {
 			writer.println(",\"200\": \"Standard\", \"301\": \"Avatar Event\", \"302\": \"Weapon event\"");
 			writer.println("}\n}");
 		}
+		
 		Grasscutter.getLogger().info("Mappings generated!");
+		System.exit(0);
 	}
 }
