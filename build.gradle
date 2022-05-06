@@ -28,7 +28,7 @@ plugins {
     // Eclipse Support
     id 'eclipse'
 
-    // Intelij Support
+    // IntelliJ Support
     id 'idea'
 
     // Maven
