@@ -10,8 +10,9 @@
 		"beginTime": 0,
 		"endTime": 1924992000,
 		"sortId": 1000,
-		"rateUpItems1": [],
-		"rateUpItems2": []
+		"fallbackItems4Pool1": [1006, 1014, 1015, 1020, 1021, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1053, 1055, 1056, 1064],
+		"weights4": [[1,510], [8,510], [10,10000]],
+		"weights5": [[1,75], [73,150], [90,10000]]
 	},
 	{
 		"gachaType": 301,
@@ -24,9 +25,10 @@
 		"beginTime": 0,
 		"endTime": 1924992000,
 		"sortId": 9998,
-		"maxItemType": 1,
-		"rateUpItems1": [1002],
-		"rateUpItems2": [1053, 1020, 1045]
+		"rateUpItems4": [1053, 1020, 1045],
+		"rateUpItems5": [1002],
+		"fallbackItems5Pool2": [],
+		"weights5": [[1,80], [73,80], [90,10000]]
 	},
 	{
 		"gachaType": 302,
@@ -39,11 +41,12 @@
 		"beginTime": 0,
 		"endTime": 1924992000,
 		"sortId": 9997,
-		"minItemType": 2,
 		"eventChance": 75,
 		"softPity": 80,
 		"hardPity": 80,
-		"rateUpItems1": [11509, 12504],
-		"rateUpItems2": [11401, 12402, 13407, 14401, 15401]
+		"rateUpItems4": [11401, 12402, 13407, 14401, 15401],
+		"rateUpItems5": [11509, 12504],
+		"fallbackItems5Pool1": [],
+		"weights5": [[1,100], [62,100], [73, 7800], [80,10000]]
 	}
 ]
