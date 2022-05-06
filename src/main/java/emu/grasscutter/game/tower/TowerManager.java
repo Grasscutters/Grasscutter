@@ -1,6 +1,7 @@
 package emu.grasscutter.game.tower;
 
 import dev.morphia.annotations.Entity;
+import dev.morphia.annotations.Transient;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketTowerEnterLevelRsp;
@@ -9,11 +10,12 @@ import java.util.List;
 
 @Entity
 public class TowerManager {
-    private final Player player;
+    @Transient private final Player player;
 
     public TowerManager(Player player) {
         this.player = player;
     }
+    
     private int currentLevel;
     private int currentFloor;
 
