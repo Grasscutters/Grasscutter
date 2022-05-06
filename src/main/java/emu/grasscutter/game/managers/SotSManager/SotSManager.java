@@ -75,7 +75,7 @@ public class SotSManager {
         // TODO: In MP, respect SotS settings from the host.
         boolean  isAutoRecoveryEnabled = getIsAutoRecoveryEnabled();
         int autoRecoverPercentage = getAutoRecoveryPercentage();
-        Grasscutter.getLogger().warn("isAutoRecoveryEnabled: " + isAutoRecoveryEnabled + "\tautoRecoverPercentage: " + autoRecoverPercentage);
+        Grasscutter.getLogger().debug("isAutoRecoveryEnabled: " + isAutoRecoveryEnabled + "\tautoRecoverPercentage: " + autoRecoverPercentage);
 
         if (isAutoRecoveryEnabled) {
             player.getTeamManager().getActiveTeam().forEach(entity -> {
