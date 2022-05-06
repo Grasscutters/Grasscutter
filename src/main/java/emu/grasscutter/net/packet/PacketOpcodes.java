@@ -1,9 +1,11 @@
 package emu.grasscutter.net.packet;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class PacketOpcodes {
     // Empty
     public static final int NONE = 0;
-    public static final char ONLWE = 'u';
 
     // Opcodes
     public static final int AbilityChangeNotify = 1179;
@@ -1567,4 +1569,6 @@ public class PacketOpcodes {
     public static final int UNKNOWN_43 = 8877;
     public static final int UNKNOWN_44 = 8983;
     public static final int UNKNOWN_45 = 943;
+
+    public static final List<Integer> BANNED_PACKETS = Arrays.asList(PacketOpcodes.WindSeedClientNotify, PacketOpcodes.PlayerLuaShellNotify);
 }
