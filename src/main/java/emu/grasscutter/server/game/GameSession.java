@@ -157,6 +157,12 @@ public class GameSession extends KcpChannel {
     		Grasscutter.getLogger().warn("Tried to send packet with missing cmd id!");
     		return;
     	}
+
+		// DO NOT REMOVE (unless we find a way to validate code before sending to client which I don't think we can)
+		// Stop WindSeedClientNotify from being sent for security purposes.
+		if(PacketOpcodes.BANNED_PACKETS.contains(packet.getOpcode())) {
+			return;
+		}
     	
     	// Header
     	if (packet.shouldBuildHeader()) {
