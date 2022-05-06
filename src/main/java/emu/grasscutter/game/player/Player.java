@@ -27,6 +27,7 @@ import emu.grasscutter.game.managers.SotSManager.SotSManager;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.managers.MapMarkManager.*;
 import emu.grasscutter.game.tower.TowerManager;
@@ -1083,6 +1084,7 @@ public class Player {
 	@PostLoad
 	private void onLoad() {
 		this.getTeamManager().setPlayer(this);
+		this.getTowerManager().setPlayer(this);
 	}
 
 	public void save() {
@@ -1152,6 +1154,10 @@ public class Player {
 	}
 
 	public void onLogout() {
+		// force to leave the dungeon
+		if(getScene().getSceneType() == SceneType.SCENE_DUNGEON){
+			this.getServer().getDungeonManager().exitDungeon(this);
+		}
 		// Leave world
 		if (this.getWorld() != null) {
 			this.getWorld().removePlayer(this);
