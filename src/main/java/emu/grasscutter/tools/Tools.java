@@ -245,7 +245,7 @@ final class ToolsWithLanguageOption {
 						 "\" : [\"" + map.get(data.getNameTextMapHash()).replaceAll("\"", "")
 						 + "("+ map.get(4231343903L)+")\",\""+ color + "\"]");
 			}
-			writer.println(",\"200\": \"Standard\", \"301\": \"Avatar Event\", \"302\": \"Weapon event\"");
+			writer.println(",\"200\": \""+map.get(332935371L)+"\", \"301\": \""+ map.get(2272170627L) + "\", \"302\": \""+map.get(2864268523L)+"\"");
 			writer.println("}\n}");
 		}
 		Grasscutter.getLogger().info("Mappings generated!");
