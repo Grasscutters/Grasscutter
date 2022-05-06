@@ -130,6 +130,8 @@ public class Player {
 	private MapMarksManager mapMarksManager;
 	@Transient private MovementManager movementManager;
 
+	private long springLastUsed;
+
 
 	@Deprecated
 	@SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
@@ -533,6 +535,14 @@ public class Player {
 		} else if (oldPauseState && !newPauseState) {
 			this.onUnpause();
 		}
+	}
+
+	public long getSpringLastUsed() {
+		return springLastUsed;
+	}
+
+	public void setSpringLastUsed(long val) {
+		springLastUsed = val;
 	}
 
 	public SceneLoadState getSceneLoadState() {
