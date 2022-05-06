@@ -8,18 +8,21 @@ import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.dungeons.TowerDungeonSettleListener;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketTowerCurLevelRecordChangeNotify;
+
 import emu.grasscutter.server.packet.send.PacketTowerEnterLevelRsp;
 
 import java.util.List;
 
 @Entity
 public class TowerManager {
-    @Transient
-    private Player player;
+
+    @Transient private final Player player;
+
 
     public TowerManager(Player player) {
         this.player = player;
     }
+
     public void setPlayer(Player player) {
         this.player = player;
     }
@@ -51,6 +54,7 @@ public class TowerManager {
         if (entryScene == 0){
             entryScene = player.getSceneId();
         }
+
 
         player.getTeamManager().setupTemporaryTeam(towerTeams);
     }

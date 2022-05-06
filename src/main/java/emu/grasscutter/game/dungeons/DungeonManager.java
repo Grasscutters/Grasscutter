@@ -99,6 +99,7 @@ public class DungeonManager {
 		// clean temp team if it has
 		player.getTeamManager().cleanTemporaryTeam();
 		player.getTowerManager().clearEntry();
+
 		// Transfer player back to world
 		player.getWorld().transferPlayerToScene(player, prevScene, prevPos);
 		player.sendPacket(new BasePacket(PacketOpcodes.PlayerQuitDungeonRsp));
