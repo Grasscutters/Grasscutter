@@ -61,7 +61,7 @@ public final class Language {
         JsonObject object = this.languageData;
 
         int index = 0;
-        String result = "";
+        String result = "This value does not exist. Please report this to the Discord: " + key;
 
         while (true) {
             if(index == keys.length) break;
