@@ -20,7 +20,7 @@ import java.util.regex.Matcher;
 public final class GiveCommand implements CommandHandler {
     Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java is a joke of a proglang that doesn't have raw string literals
     Pattern refineRegex = Pattern.compile("r(\\d+)");
-    Pattern amountRegex = Pattern.compile("((?<=x)\\d+|\\d+(?=x))");
+    Pattern amountRegex = Pattern.compile("((?<=x)\\d+|\\d+(?=x)(?!x\\d))");
 
     private int matchIntOrNeg(Pattern pattern, String arg) {
         Matcher match = pattern.matcher(arg);
