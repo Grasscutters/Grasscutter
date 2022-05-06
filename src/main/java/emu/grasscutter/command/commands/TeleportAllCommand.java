@@ -8,6 +8,8 @@ import emu.grasscutter.utils.Position;
 
 import java.util.List;
 
+import static emu.grasscutter.utils.Language.translate;
+
 @Command(label = "tpall", usage = "tpall",
         description = "Teleports all players in your world to your position", permission = "player.tpall")
 public final class TeleportAllCommand implements CommandHandler {
@@ -19,7 +21,7 @@ public final class TeleportAllCommand implements CommandHandler {
         }
         
         if (!targetPlayer.getWorld().isMultiplayer()) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().TeleportAll_message);
+            CommandHandler.sendMessage(sender, translate("commands.teleportAll.error"));
             return;
         }
         
@@ -30,5 +32,7 @@ public final class TeleportAllCommand implements CommandHandler {
 
             player.getWorld().transferPlayerToScene(player, targetPlayer.getSceneId(), pos);
         }
+        
+        CommandHandler.sendMessage(sender, translate("commands.teleportAll.success"));
     }
 }

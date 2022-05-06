@@ -13,6 +13,8 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.*;
 
+import static emu.grasscutter.utils.Language.translate;
+
 @Command(label = "giveall", usage = "giveall [amount]",
         description = "Gives all items", aliases = {"givea"}, permission = "player.giveall", threading = true)
 public final class GiveAllCommand implements CommandHandler {
@@ -32,21 +34,21 @@ public final class GiveAllCommand implements CommandHandler {
                 try {
                     amount = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_amount);
+                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.amount"));
                     return;
                 }
                 break;
             default: // invalid
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveAll_usage);
+                CommandHandler.sendMessage(sender, translate("commands.giveAll.usage"));
                 return;
         }
 
         this.giveAllItems(targetPlayer, amount);
-        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveAll_done);
+        CommandHandler.sendMessage(sender, translate("commands.giveAll.success", targetPlayer.getNickname()));
     }
 
     public void giveAllItems(Player player, int amount) {
-        CommandHandler.sendMessage(player, Grasscutter.getLanguage().GiveAll_item);
+        CommandHandler.sendMessage(player, translate("commands.giveAll.started"));
 
         for (AvatarData avatarData: GameData.getAvatarDataMap().values()) {
             //Exclude test avatar

@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -20,12 +19,12 @@ public final class SendMessageCommand implements CommandHandler {
             return;
         }
         if (args.size() == 0) {
-            CommandHandler.sendMessage(null, Grasscutter.getLanguage().SendMessage_usage);
+            CommandHandler.sendMessage(null, translate("commands.sendMessage.usage"));
             return;
         }
 
         String message = String.join(" ", args);
         CommandHandler.sendMessage(targetPlayer, message);
-        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().SenaMessage_message_sent);
+        CommandHandler.sendMessage(sender, translate("commands.sendMessage.success"));
     }
 }

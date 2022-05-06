@@ -33,7 +33,6 @@ public final class SetStatsCommand implements CommandHandler {
     Map<String, Stat> stats = new HashMap<>();
     
     public SetStatsCommand() {
-        Language lang = Grasscutter.getLanguage();
         // Default stats
         stats.put("maxhp", new Stat(FightProperty.FIGHT_PROP_MAX_HP.toString(), FightProperty.FIGHT_PROP_MAX_HP, false));
         stats.put("hp", new Stat(FightProperty.FIGHT_PROP_CUR_HP.toString(), FightProperty.FIGHT_PROP_CUR_HP, false));

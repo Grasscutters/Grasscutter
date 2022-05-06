@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.entity.EntityAvatar;
@@ -11,6 +10,8 @@ import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 
 import java.util.List;
+
+import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "killcharacter", usage = "killcharacter", aliases = {"suicide", "kill"},
         description = "Kills the players current character", permission = "player.killcharacter")
@@ -32,6 +33,6 @@ public final class KillCharacterCommand implements CommandHandler {
         targetPlayer.getScene().removeEntity(entity);
         entity.onDeath(0);
 
-        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().KillCharacter_kill_current_character.replace("{name}", targetPlayer.getNickname()));
+        CommandHandler.sendMessage(sender, translate("commands.killCharacter.success", targetPlayer.getNickname()));
     }
 }
