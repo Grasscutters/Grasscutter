@@ -118,7 +118,8 @@
       "everything": "Cleared everything for %s."
     },
     "coop": {
-      "usage": "Usage: coop <playerId> <target playerId>"
+      "usage": "Usage: coop <playerId> <target playerId>",
+      "success": "Summoned %s to %s's world."
     },
     "enter_dungeon": {
       "usage": "Usage: enterdungeon <dungeon id>",
@@ -128,14 +129,14 @@
     },
     "giveAll": {
       "usage": "Usage: giveall [player] [amount]",
-      "item": "Giving all items...",
-      "done": "Giving all items done",
+      "started": "Receiving all items...",
+      "success": "Successfully gave all items to %s.",
       "invalid_amount_or_playerId": "Invalid amount or player ID."
     },
     "giveArtifact": {
       "usage": "Usage: giveart|gart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]",
-      "invalid_artifact_id": "Invalid artifact ID.",
-      "given": "Given %s to %s."
+      "id_error": "Invalid artifact ID.",
+      "success": "Given %s to %s."
     },
     "giveChar": {
       "usage": "Usage: givechar <player> <itemId|itemName> [amount]",
@@ -169,17 +170,18 @@
     },
     "killCharacter": {
       "usage": "Usage: /killcharacter [playerId]",
-      "current_character": "Killed %s current character."
+      "success": "Killed %s's current character."
     },
     "list": {
-      "message": "There are %s player(s) online:"
+      "success": "There are %s player(s) online:"
     },
     "permission": {
       "usage": "Usage: permission <add|remove> <username> <permission>",
       "add": "Permission added.",
-      "have_permission": "They already have this permission!",
+      "has_error": "They already have this permission!",
       "remove": "Permission removed.",
-      "not_have_permission": "They don't have this permission!"
+      "not_have_error": "They don't have this permission!",
+      "account_error": "The account cannot be found."
     },
     "position": {
       "success": "Coordinates: %.3f, %.3f, %.3f\nScene id: %d"
@@ -219,13 +221,13 @@
     },
     "sendMessage": {
       "usage": "Usage: sendmessage <player> <message>",
-      "message_sent": "Message sent."
+      "success": "Message sent."
     },
     "setFetterLevel": {
       "usage": "Usage: setfetterlevel <level>",
-      "fetter_level_must_between_0_and_10": "Fetter level must be between 0 and 10.",
-      "fetter_set_level": "Fetter level set to %s",
-      "invalid_fetter_level": "Invalid fetter level."
+      "range_error": "Fetter level must be between 0 and 10.",
+      "success": "Fetter level set to %s",
+      "level_error": "Invalid fetter level."
     },
     "setStats": {
       "usage_console": "Usage: setstats|stats @<UID> <stat> <value>",
@@ -240,16 +242,16 @@
     },
     "setWorldLevel": {
       "usage": "Usage: setworldlevel <level>",
-      "world_level_must_between_0_and_8": "World level must be between 0-8",
-      "set_world_level": "World level set to %s.",
+      "value_error": "World level must be between 0-8",
+      "success": "World level set to %s.",
       "invalid_world_level": "Invalid world level."
     },
     "spawn": {
       "usage": "Usage: spawn <entityId> [amount] [level(monster only)]",
-      "message": "Spawned %s of %s."
+      "success": "Spawned %s of %s."
     },
     "stop": {
-      "message": "Server shutting down..."
+      "success": "Server shutting down..."
     },
     "talent": {
       "usage_1": "To set talent level: /talent set <talentID> <value>",
@@ -268,18 +270,19 @@
       "q_skill_id": "Q skill ID %s."
     },
     "teleportAll": {
-      "message": "You only can use this command in MP mode."
+      "success": "Summoned all players to your location.",
+      "error": "You only can use this command in MP mode."
     },
     "teleport": {
       "usage_server": "Usage: /tp @<player id> <x> <y> <z> [scene id]",
       "usage": "Usage: /tp [@<player id>] <x> <y> <z> [scene id]",
       "specify_player_id": "You must specify a player id.",
       "invalid_position": "Invalid position.",
-      "message": "Teleported %s to %s,%s,%s in scene %s"
+      "success": "Teleported %s to %s, %s, %s in scene %s"
     },
     "weather": {
       "usage": "Usage: weather <weatherId> [climateId]",
-      "message": "Changed weather to %s with climate %s",
+      "success": "Changed weather to %s with climate %s",
       "invalid_id": "Invalid ID."
     },
     "drop": {
