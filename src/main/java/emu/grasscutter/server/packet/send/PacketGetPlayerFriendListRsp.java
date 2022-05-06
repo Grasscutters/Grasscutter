@@ -22,7 +22,7 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
 				.setLevel(1)
 				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(GameConstants.SERVER_AVATAR_ID))
 				.setWorldLevel(0)
-				.setSignature("")
+				.setSignature(GameConstants.SERVER_SIGNATURE)
 				.setLastActiveTime((int) (System.currentTimeMillis() / 1000f))
 				.setNameCardId(210001)
 				.setOnlineState(FriendOnlineState.FRIEND_ONLINE)
