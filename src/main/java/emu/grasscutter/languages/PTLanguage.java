@@ -209,13 +209,17 @@ public final class PTLanguage {
     // SetFetterLevel
     public String SetFetterLevel_usage = "Uso: setfetterlevel \u003clevel\u003e";
     public String SetFetterLevel_fetter_level_must_between_0_and_10 = "O nível de amizade deve estar entre 0 e 10.";
+    public String SetFetterLevel_fetter_set_level = "Nível de amizade definido para {level}";
+    public String SetFetterLevel_invalid_fetter_level = "Nível de amizade inválido.";																				  
 
     // SetStats
-    public String SetFetterLevel_fetter_set_level = "Nível de amizade definido para {level}";
-    public String SetFetterLevel_invalid_fetter_level = "Nível de amizade inválido.";
     public String SetStats_usage_console = "Uso: setstats|stats @\u003cUID\u003e \u003cstat\u003e \u003cvalue\u003e";
     public String SetStats_usage_ingame = "Uso: setstats|stats [@UID] \u003cstat\u003e \u003cvalue\u003e";
-    public String SetStats_help_message = "\n\tValores para \u003cstat\u003e: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bônus de Dano Elemental: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n";
+	    public String SetStats_help_message = """
+        \n\tValores for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi
+        \t(cont.) Bônus de Dano Elemental: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys
+        \t(cont.) RES Elemental: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys
+        """;
     public String SetStats_value_error = "Valor de status inválido.";
     public String SetStats_set_self = "{name} definido como {value}.";
     public String SetStats_set_for_uid = "{name} para {uid} definido como {value}.";
