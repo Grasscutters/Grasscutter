@@ -94,21 +94,25 @@ public final class Config {
 		 // Max entity limit per world. // TODO: Enforce later.
 		public int MaxEntityLimit = 1000;
 		public boolean WatchGacha = false;
+   
+		public String ServerNickname = "Ayaka";
+		public int ServerAvatarId = 10000002;
+		public int ServerNameCardId = 210081;
+		public int ServerLevel = 60;
+		public int ServerWorldLevel = 8;
+		public String ServerSignature = "Hello, have fun playing :)";
 
-		public String WelcomeMailSender  = "Yuuki";
-		public String WelcomeMailTitle   = "Welcome to Yuuki Server";
-		public String WelcomeMailContent = "";    
+		public int[] WelcomeEmotes = {2007, 1002, 4010};
+		public String WelcomeMotd = "";
+
+		public String WelcomeMailTitle = "Welcome to Yuuki Server";
+		public String WelcomeMailSender = "Yuuki";
+		public String WelcomeMailContent = "";
 		public Mail.MailItem[] WelcomeMailItems = {
 				new Mail.MailItem(13509, 1, 1),
 				new Mail.MailItem(201, 10000, 1),
 		};
 
-		public String ServerNickname = "YukiBot";
-		public int ServerAvatarId = 10000002;
-
-		public int[] WelcomeEmotes = {2007, 1002, 4010};
-		public String WelcomeMotd = "";
-		
 		public boolean EnableOfficialShop = true;
 
 		public GameRates Game = new GameRates();
