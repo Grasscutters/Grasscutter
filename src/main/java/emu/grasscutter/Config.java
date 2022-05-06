@@ -82,7 +82,9 @@ public final class Config {
 		public int ServerAvatarId = 10000007;
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
 		public String WelcomeMotd = "Welcome to Grasscutter emu";
-		public String WelcomeMailContent = "Hi there!\r\nFirst of all, welcome to Grasscutter. If you have any issues, please let us know so that Lawnmower can help you! \r\n\r\nCheck out our:\r\n<type=\"browser\" text=\"Discord\" href=\"https://discord.gg/T5vZU6UyeG\"/> <type=\"browser\" text=\"GitHub\" href=\"https://github.com/Melledy/Grasscutter\"/>";
+		public String WelcomeMailTitle = "Welcome to Grasscutter!";
+		public String WelcomeMailSender = "Lawnmower";
+		public String WelcomeMailContent = "Hi there!\r\nFirst of all, welcome to Grasscutter. If you have any issues, please let us know so that Lawnmower can help you! \r\n\r\nCheck out our:\r\n<type=\"browser\" text=\"Discord\" href=\"https://discord.gg/T5vZU6UyeG\"/>";
 		public Mail.MailItem[] WelcomeMailItems = {
 				new Mail.MailItem(13509, 1, 1),
 				new Mail.MailItem(201, 10000, 1),
