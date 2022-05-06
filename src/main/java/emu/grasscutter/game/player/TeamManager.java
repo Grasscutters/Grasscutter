@@ -1,12 +1,6 @@
 package emu.grasscutter.game.player;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
@@ -59,7 +53,13 @@ public class TeamManager {
 	@Transient private final Set<EntityBaseGadget> gadgets;
 	@Transient private final IntSet teamResonances;
 	@Transient private final IntSet teamResonancesConfig;
-	
+
+	@Transient private int useTemporarilyTeamIndex = -1;
+	/**
+	 * Temporary Team for tower
+	 */
+	@Transient private List<TeamInfo> temporaryTeam;
+
 	public TeamManager() {
 		this.mpTeam = new TeamInfo();
 		this.avatars = new ArrayList<>();
@@ -125,6 +125,10 @@ public class TeamManager {
 	}
 	
 	public TeamInfo getCurrentTeamInfo() {
+		if (useTemporarilyTeamIndex >= 0 &&
+				useTemporarilyTeamIndex < temporaryTeam.size()){
+			return temporaryTeam.get(useTemporarilyTeamIndex);
+		}
 		if (this.getPlayer().isInMultiplayer()) {
 			return this.getMpTeam();
 		}
@@ -352,7 +356,51 @@ public class TeamManager {
 		// Packet
 		this.updateTeamEntities(new PacketChangeMpTeamAvatarRsp(getPlayer(), teamInfo));
 	}
-	
+
+	public void setupTemporaryTeam(List<List<Long>> guidList) {
+		var team = guidList.stream().map(list -> {
+					// Sanity checks
+					if (list.size() == 0 || list.size() > getMaxTeamSize()) {
+						return null;
+					}
+
+					// Set team data
+					LinkedHashSet<Avatar> newTeam = new LinkedHashSet<>();
+					for (int i = 0; i < list.size(); i++) {
+						Avatar avatar = getPlayer().getAvatars().getAvatarByGuid(list.get(i));
+						if (avatar == null || newTeam.contains(avatar)) {
+							// Should never happen
+							return null;
+						}
+						newTeam.add(avatar);
+					}
+
+					// convert to avatar ids
+					return newTeam.stream()
+							.map(Avatar::getAvatarId)
+							.toList();
+				})
+				.filter(Objects::nonNull)
+				.map(TeamInfo::new)
+				.toList();
+		this.temporaryTeam = team;
+	}
+
+	public void useTemporaryTeam(int index) {
+		this.useTemporarilyTeamIndex = index;
+		updateTeamEntities(null);
+	}
+
+	public void cleanTemporaryTeam() {
+		// check if using temporary team
+		if(useTemporarilyTeamIndex < 0){
+			return;
+		}
+
+		this.useTemporarilyTeamIndex = -1;
+		this.temporaryTeam = null;
+		updateTeamEntities(null);
+	}
 	public synchronized void setCurrentTeam(int teamId) {
 		// 
 		if (getPlayer().isInMultiplayer()) {
