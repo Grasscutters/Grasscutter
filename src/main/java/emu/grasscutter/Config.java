@@ -42,6 +42,8 @@ public final class Config {
 		public String KeystorePassword = "123456";
 		public Boolean UseSSL = true;
 		public Boolean FrontHTTPS = true;
+		public Boolean CORS = false;
+		public String[] CORSAllowedOrigins = new String[] { "*" };
 
 		public boolean AutomaticallyCreateAccounts = true;
 		public String[] defaultPermissions = new String[] {""};

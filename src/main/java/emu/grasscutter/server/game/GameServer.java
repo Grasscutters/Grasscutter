@@ -8,6 +8,7 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.combine.CombineManger;
 import emu.grasscutter.game.drop.DropManager;
 import emu.grasscutter.game.dungeons.DungeonManager;
+import emu.grasscutter.game.expedition.ExpeditionManager;
 import emu.grasscutter.game.gacha.GachaManager;
 import emu.grasscutter.game.managers.ChatManager;
 import emu.grasscutter.game.managers.InventoryManager;
@@ -42,6 +43,7 @@ public final class GameServer extends KcpServer {
 	private final ShopManager shopManager;
 	private final MultiplayerManager multiplayerManager;
 	private final DungeonManager dungeonManager;
+	private final ExpeditionManager expeditionManager;
 	private final CommandMap commandMap;
 	private final TaskMap taskMap;
 	private final DropManager dropManager;
@@ -66,6 +68,7 @@ public final class GameServer extends KcpServer {
 		this.commandMap = new CommandMap(true);
 		this.taskMap = new TaskMap(true);
 		this.dropManager = new DropManager(this);
+		this.expeditionManager = new ExpeditionManager(this);
 		this.combineManger = new CombineManger(this);
 
 		// Schedule game loop.
@@ -124,7 +127,11 @@ public final class GameServer extends KcpServer {
 	public DungeonManager getDungeonManager() {
 		return dungeonManager;
 	}
-	
+
+	public ExpeditionManager getExpeditionManager() {
+		return expeditionManager;
+	}
+
 	public CommandMap getCommandMap() {
 		return this.commandMap;
 	}
@@ -132,6 +139,7 @@ public final class GameServer extends KcpServer {
 	public CombineManger getCombineManger(){
 		return this.combineManger;
 	}
+
 	public TaskMap getTaskMap() {
 		return this.taskMap;
 	}
