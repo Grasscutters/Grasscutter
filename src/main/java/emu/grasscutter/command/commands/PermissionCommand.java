@@ -22,7 +22,7 @@ public final class PermissionCommand implements CommandHandler {
         }
         
         if (args.size() != 2) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_usage);
+            CommandHandler.sendMessage(sender, translate("commands.permission.usage"));
             return;
         }
 
@@ -31,23 +31,23 @@ public final class PermissionCommand implements CommandHandler {
 
         Account account = targetPlayer.getAccount();
         if (account == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Account_not_find);
+            CommandHandler.sendMessage(sender, translate("commands.permission.account_error"));
             return;
         }
 
         switch (action) {
             default:
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_usage);
+                CommandHandler.sendMessage(sender, translate("commands.permission.usage"));
                 break;
             case "add":
                 if (account.addPermission(permission)) {
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_add);
-                } else CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_have_permission);
+                    CommandHandler.sendMessage(sender, translate("commands.permission.add"));
+                } else CommandHandler.sendMessage(sender, translate("commands.permission.has_error"));
                 break;
             case "remove":
                 if (account.removePermission(permission)) {
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_remove);
-                } else CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Permission_not_have_permission);
+                    CommandHandler.sendMessage(sender, translate("commands.permission.remove"));
+                } else CommandHandler.sendMessage(sender, translate("commands.permission.not_have_error"));
                 break;
         }
 
