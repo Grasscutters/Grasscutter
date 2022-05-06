@@ -1,19 +1,23 @@
 package emu.grasscutter.utils;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import java.time.*;
-import java.time.temporal.TemporalAdjusters;
-import java.util.Random;
-
 import emu.grasscutter.Config;
 import emu.grasscutter.Grasscutter;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
-
 import org.slf4j.Logger;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.time.DayOfWeek;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.temporal.TemporalAdjusters;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
 public final class Utils {
@@ -230,4 +234,39 @@ public final class Utils {
 		}
 		return (int)zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
 	}
+
+	public static Map<String, Object> switchPropertiesUpperLowerCase(Map<String, Object> objMap, Class<?> cls) {
+		Map<String, Object> map = new HashMap<>(objMap.size());
+		for (String key : objMap.keySet()) {
+			try {
+				char c = key.charAt(0);
+				if (c >= 'a' && c <= 'z') {
+					try {
+						cls.getDeclaredField(key);
+						map.put(key, objMap.get(key));
+					} catch (NoSuchFieldException e) {
+						String s1 = String.valueOf(c).toUpperCase();
+						String after = key.length() > 1 ? s1 + key.substring(1) : s1;
+						cls.getDeclaredField(after);
+						map.put(after, objMap.get(key));
+					}
+				} else if (c >= 'A' && c <= 'Z') {
+					try {
+						cls.getDeclaredField(key);
+						map.put(key, objMap.get(key));
+					} catch (NoSuchFieldException e) {
+						String s1 = String.valueOf(c).toLowerCase();
+						String after = key.length() > 1 ? s1 + key.substring(1) : s1;
+						cls.getDeclaredField(after);
+						map.put(after, objMap.get(key));
+					}
+				}
+			} catch (NoSuchFieldException e) {
+				map.put(key, objMap.get(key));
+			}
+		}
+
+		return map;
+	}
+
 }
