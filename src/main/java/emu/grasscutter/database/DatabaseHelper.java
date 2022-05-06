@@ -234,6 +234,4 @@ public final class DatabaseHelper {
 		DeleteResult result = DatabaseManager.getDatastore().delete(mail);
 		return result.wasAcknowledged();
 	}
-
-	public static char AWJVN = 'e';
 }

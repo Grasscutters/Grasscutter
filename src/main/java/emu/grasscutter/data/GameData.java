@@ -74,8 +74,6 @@ public class GameData {
 	private static Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
 	private static final IntList scenePointIdList = new IntArrayList();
 	
-	public static char EJWOA = 's';
-	
 	public static Int2ObjectMap<?> getMapByResourceDef(Class<?> resourceDefinition) {
 		Int2ObjectMap<?> map = null;
 		
