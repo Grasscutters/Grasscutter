@@ -149,7 +149,13 @@ public final class Grasscutter {
 
 	public static void loadLanguage() {
 		var locale = config.LocaleLanguage;
-		language = Language.getLanguage(locale.toLanguageTag());
+		String languageTag = locale.toLanguageTag();
+		if (languageTag == "und") {
+			Grasscutter.getLogger().error("Illegal locale language, use en-US instead.");
+			language = Language.getLanguage("en-US");
+		} else {
+			language = Language.getLanguage(languageTag);
+		}
 	}
 
 	public static void saveConfig() {
