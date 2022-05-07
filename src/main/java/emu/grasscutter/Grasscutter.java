@@ -77,7 +77,7 @@ public final class Grasscutter {
 					Tools.createGmHandbook(); exitEarly = true;
 				}
 				case "-gachamap" -> {
-					Tools.createGachaMapping("./gacha-mapping.js"); exitEarly = true;
+					Tools.createGachaMapping(Grasscutter.getConfig().DATA_FOLDER + "/gacha_mappings.js"); exitEarly = true;
 				}
 			}
 		} 
