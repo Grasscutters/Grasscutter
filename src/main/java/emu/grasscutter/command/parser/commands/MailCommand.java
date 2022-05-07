@@ -11,10 +11,6 @@ import emu.grasscutter.command.parser.annotation.SubCommandHandler;
 import emu.grasscutter.command.source.BaseCommandSource;
 import emu.grasscutter.game.mail.Mail;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 
 import static emu.grasscutter.command.handler.ContextNaming.TargetUid;
 
