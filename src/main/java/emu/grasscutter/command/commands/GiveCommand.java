@@ -172,3 +172,4 @@ public final class GiveCommand implements CommandHandler {
             player.getInventory().addItem(item, ActionReason.SubfieldDrop);
         }
     }
+}

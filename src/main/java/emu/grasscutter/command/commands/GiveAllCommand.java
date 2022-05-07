@@ -13,7 +13,7 @@ import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 
 import java.util.*;
-
+import static emu.grasscutter.utils.Language.translate;
 @Command(label = "giveall", usage = "giveall", description = "Gives all items", aliases = {
     "givea" }, permission = "player.giveall", threading = true)
 public final class GiveAllCommand implements CommandHandler {

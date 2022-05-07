@@ -49,7 +49,6 @@ public final class Grasscutter {
 	private static DispatchServer dispatchServer;
 	private static GameServer gameServer;
 	private static PluginManager pluginManager;
-  private static CNLanguage cn_language;
 
 	public static final Reflections reflector = new Reflections("emu.grasscutter");
   

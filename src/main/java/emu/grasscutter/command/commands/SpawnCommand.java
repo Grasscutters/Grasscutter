@@ -12,7 +12,7 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.game.world.Scene;
 import java.util.List;
-
+import static emu.grasscutter.utils.Language.translate;
 @Command(label = "spawn", usage = "spawn <entityId|entityName> [level] [amount]",
         description = "Spawns an entity near you", aliases = {
             "s"}, permission = "server.spawn")
