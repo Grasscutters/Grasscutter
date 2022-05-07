@@ -24,7 +24,7 @@ public class MovementManager {
 
     public HashMap<String, HashSet<MotionState>> MotionStatesCategorized = new HashMap<>();
 
-    private enum Consumption {
+    private enum ConsumptionType {
         None(0),
 
         // consume
@@ -46,11 +46,22 @@ public class MovementManager {
         POWERED_FLY(500);
 
         public final int amount;
-        Consumption(int amount) {
+        ConsumptionType(int amount) {
             this.amount = amount;
         }
     }
 
+    private class Consumption {
+        public ConsumptionType consumptionType;
+        public int amount;
+        public Consumption(ConsumptionType ct, int a) {
+            consumptionType = ct;
+            amount = a;
+        }
+        public Consumption(ConsumptionType ct) {
+            this(ct, ct.amount);
+        }
+    }
 
     private MotionState previousState = MotionState.MOTION_STANDBY;
     private MotionState currentState = MotionState.MOTION_STANDBY;
@@ -139,6 +150,7 @@ public class MovementManager {
     }
 
     public void resetTimer() {
+        Grasscutter.getLogger().debug("MovementManager ticker stopped");
         movementManagerTickTimer.cancel();
         movementManagerTickTimer = null;
     }
@@ -269,95 +281,39 @@ public class MovementManager {
                 boolean moving = isPlayerMoving();
                 if (moving || (getCurrentStamina() < getMaximumStamina())) {
                     // Grasscutter.getLogger().debug("Player moving: " + moving + ", stamina full: " + (getCurrentStamina() >= getMaximumStamina()) + ", recalculate stamina");
-                    Consumption consumption = Consumption.None;
+                    Consumption consumption = new Consumption(ConsumptionType.None);
 
                     // TODO: refactor these conditions.
                     if (MotionStatesCategorized.get("CLIMB").contains(currentState)) {
-                        if (currentState == MotionState.MOTION_CLIMB) {
-                            // CLIMB
-                            if (previousState != MotionState.MOTION_CLIMB && previousState != MotionState.MOTION_CLIMB_JUMP) {
-                                consumption = Consumption.CLIMB_START;
-                            } else {
-                                consumption = Consumption.CLIMBING;
-                            }
-                        }
-                        if (currentState == MotionState.MOTION_CLIMB_JUMP) {
-                            if (previousState != MotionState.MOTION_CLIMB_JUMP) {
-                                consumption = Consumption.CLIMB_JUMP;
-                            }
-                        }
-                        if (currentState == MotionState.MOTION_JUMP) {
-                            if (previousState == MotionState.MOTION_CLIMB) {
-                                consumption = Consumption.CLIMB_JUMP;
-                            }
-                        }
+                        consumption = getClimbConsumption();
                     } else if (MotionStatesCategorized.get("SWIM").contains((currentState))) {
-                        // SWIM
-                        if (currentState == MotionState.MOTION_SWIM_MOVE) {
-                            consumption = Consumption.SWIMMING;
-                        }
-                        if (currentState == MotionState.MOTION_SWIM_DASH) {
-                            if (previousState != MotionState.MOTION_SWIM_DASH) {
-                                consumption = Consumption.SWIM_DASH_START;
-                            } else {
-                                consumption = Consumption.SWIM_DASH;
-                            }
-                        }
+                        consumption = getSwimConsumptions();
                     } else if (MotionStatesCategorized.get("RUN").contains(currentState)) {
-                        // RUN, DASH and WALK
-                        // DASH
-                        if (currentState == MotionState.MOTION_DASH_BEFORE_SHAKE) {
-                            consumption = Consumption.DASH;
-                            if (previousState == MotionState.MOTION_DASH_BEFORE_SHAKE) {
-                                // only charge once
-                                consumption = Consumption.SPRINT;
-                            }
-                        }
-                        if (currentState == MotionState.MOTION_DASH) {
-                            consumption = Consumption.SPRINT;
-                        }
-                        // RUN
-                        if (currentState == MotionState.MOTION_RUN) {
-                            consumption = Consumption.RUN;
-                        }
-                        // WALK
-                        if (currentState == MotionState.MOTION_WALK) {
-                            consumption = Consumption.WALK;
-                        }
+                        consumption = getRunWalkDashConsumption();
                     } else if (MotionStatesCategorized.get("FLY").contains(currentState)) {
-                        // FLY
-                        consumption = Consumption.FLY;
-                        // POWERED_FLY, e.g. wind tunnel
-                        if (currentState == MotionState.MOTION_POWERED_FLY) {
-                            consumption = Consumption.POWERED_FLY;
-                        }
+                        consumption = getFlyConsumption();
                     } else if (MotionStatesCategorized.get("STANDBY").contains(currentState)) {
-                        // STAND
-                        if (currentState == MotionState.MOTION_STANDBY) {
-                            consumption = Consumption.STANDBY;
-                        }
-                        if (currentState == MotionState.MOTION_STANDBY_MOVE) {
-                            consumption = Consumption.STANDBY_MOVE;
-                        }
+                        consumption = getStandConsumption();
                     }
 
-                    // tick triggered
-                    handleDrowning();
-
+                    // delay 2 seconds before start recovering - as official server does.
                     if (cachedSession != null) {
                         if (consumption.amount < 0) {
                             staminaRecoverDelay = 0;
                         }
-                        if (consumption.amount > 0) {
+                        if (consumption.amount > 0 && consumption.consumptionType != ConsumptionType.POWERED_FLY) {
                             if (staminaRecoverDelay < 10) {
                                 staminaRecoverDelay++;
-                                consumption = Consumption.None;
+                                consumption = new Consumption(ConsumptionType.None);
                             }
                         }
-                        int newStamina = updateStamina(cachedSession, consumption.amount);
+                        Grasscutter.getLogger().debug(getCurrentStamina() + "/" + getMaximumStamina() + "\t" + currentState + "\t" + "isMoving: " + isPlayerMoving() + "\t(" + consumption.consumptionType + "," + consumption.amount + ")");
+                        updateStamina(cachedSession, consumption.amount);
                         cachedSession.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
-                        Grasscutter.getLogger().debug(player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA) + "/" + player.getProperty(PlayerProperty.PROP_MAX_STAMINA) + "\t" + currentState + "\t" + "isMoving: " + isPlayerMoving() + "\t" + consumption + "(" + consumption.amount + ")");
                     }
+
+                    // tick triggered
+                    handleDrowning();
                 }
             }
 
@@ -366,4 +322,95 @@ public class MovementManager {
                     currentCoordinates.getY(), currentCoordinates.getZ());;
         }
     }
+
+    private Consumption getClimbConsumption() {
+        Consumption consumption = new Consumption(ConsumptionType.None);
+        if (currentState == MotionState.MOTION_CLIMB) {
+            consumption = new Consumption(ConsumptionType.CLIMBING);
+            if (previousState != MotionState.MOTION_CLIMB && previousState != MotionState.MOTION_CLIMB_JUMP) {
+                consumption = new Consumption(ConsumptionType.CLIMB_START);
+            }
+            if (!isPlayerMoving()) {
+                consumption = new Consumption(ConsumptionType.None);
+            }
+        }
+        if (currentState == MotionState.MOTION_CLIMB_JUMP) {
+            if (previousState != MotionState.MOTION_CLIMB_JUMP) {
+                consumption = new Consumption(ConsumptionType.CLIMB_JUMP);
+            }
+        }
+        return consumption;
+    }
+
+    // TODO: Kamisato Ayaka & Mona
+
+    private Consumption getSwimConsumptions() {
+        Consumption consumption = new Consumption(ConsumptionType.None);
+        if (currentState == MotionState.MOTION_SWIM_MOVE) {
+            consumption = new Consumption(ConsumptionType.SWIMMING);
+        }
+        if (currentState == MotionState.MOTION_SWIM_DASH) {
+            consumption = new Consumption(ConsumptionType.SWIM_DASH_START);
+            if (previousState == MotionState.MOTION_SWIM_DASH) {
+                consumption = new Consumption(ConsumptionType.SWIM_DASH);
+            }
+        }
+        return consumption;
+    }
+
+    private Consumption getRunWalkDashConsumption() {
+        Consumption consumption = new Consumption(ConsumptionType.None);
+        if (currentState == MotionState.MOTION_DASH_BEFORE_SHAKE) {
+            consumption = new Consumption(ConsumptionType.DASH);
+            if (previousState == MotionState.MOTION_DASH_BEFORE_SHAKE) {
+                // only charge once
+                consumption = new Consumption(ConsumptionType.SPRINT);
+            }
+        }
+        if (currentState == MotionState.MOTION_DASH) {
+            consumption = new Consumption(ConsumptionType.SPRINT);
+        }
+        if (currentState == MotionState.MOTION_RUN) {
+            consumption = new Consumption(ConsumptionType.RUN);
+        }
+        if (currentState == MotionState.MOTION_WALK) {
+            consumption = new Consumption(ConsumptionType.WALK);
+        }
+        return consumption;
+    }
+
+    private Consumption getFlyConsumption() {
+        Consumption consumption = new Consumption(ConsumptionType.FLY);
+        HashMap<Integer, Float> glidingCostReduction = new HashMap<>() {{
+            put(212301, 0.8f); // Amber
+            put(222301, 0.8f); // Venti
+        }};
+        float reduction = 1;
+        for (EntityAvatar entity: cachedSession.getPlayer().getTeamManager().getActiveTeam()) {
+            for (int skillId: entity.getAvatar().getProudSkillList()) {
+                if (glidingCostReduction.containsKey(skillId)) {
+                    reduction = glidingCostReduction.get(skillId);
+                }
+            }
+        }
+        consumption.amount *= reduction;
+
+        // POWERED_FLY, e.g. wind tunnel
+        if (currentState == MotionState.MOTION_POWERED_FLY) {
+            consumption = new Consumption(ConsumptionType.POWERED_FLY);
+        }
+        return consumption;
+    }
+
+    private Consumption getStandConsumption() {
+        Consumption consumption = new Consumption(ConsumptionType.None);
+        if (currentState == MotionState.MOTION_STANDBY) {
+            consumption = new Consumption(ConsumptionType.STANDBY);
+        }
+        if (currentState == MotionState.MOTION_STANDBY_MOVE) {
+            consumption = new Consumption(ConsumptionType.STANDBY_MOVE);
+        }
+        return consumption;
+    }
 }
+
