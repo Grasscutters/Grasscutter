@@ -51,7 +51,7 @@ public final class Grasscutter {
 	private static PluginManager pluginManager;
 
 	public static final Reflections reflector = new Reflections("emu.grasscutter");
-
+  
 	static {
 		// Declare logback configuration.
 		System.setProperty("logback.configurationFile", "src/main/resources/logback.xml");
@@ -66,7 +66,7 @@ public final class Grasscutter {
 		Utils.startupCheck();
 	}
 
-    public static void main(String[] args) throws Exception {
+  public static void main(String[] args) throws Exception {
     	Crypto.loadKeys(); // Load keys from buffers.
 
 		// Parse arguments.
@@ -93,7 +93,7 @@ public final class Grasscutter {
 		ResourceLoader.loadAll();
 		ScriptLoader.init();
 
-		// Database
+		// Initialize database.
 		DatabaseManager.initialize();
 
 		// Create server instances.
@@ -127,7 +127,7 @@ public final class Grasscutter {
 
 		// Open console.
 		startConsole();
-    }
+ }
 
 	/**
 	 * Server shutdown event.
