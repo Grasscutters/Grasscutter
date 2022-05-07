@@ -37,6 +37,13 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			return;
 		}
 		
+		// Make sure resources folder is set
+		if (!GameData.getAvatarDataMap().containsKey(avatarId)) {
+			Grasscutter.getLogger().error("No avatar data found! Please check your ExcelBinOutput folder.");
+			session.close();
+			return;
+		}
+		
 		String nickname = req.getNickName();
 		if (nickname == null) {
 			nickname = "Traveler";
@@ -78,15 +85,11 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			session.send(new BasePacket(PacketOpcodes.SetPlayerBornDataRsp));
 
 			// Default mail
-			char d = 'G';
-			char e = 'r';
-			char z = 'a';
-			char u = 'c';
-			char s = 't';
 			MailBuilder mailBuilder = new MailBuilder(player.getUid(), new Mail());
-			mailBuilder.mail.mailContent.title = String.format("W%sl%som%s to %s%s%s%s%s%s%s%s%s%s%s!", DatabaseHelper.AWJVN, u, DatabaseHelper.AWJVN, d, e, z, GameData.EJWOA, GameData.EJWOA, u, PacketOpcodes.ONLWE, s, s, DatabaseHelper.AWJVN, e);
-			mailBuilder.mail.mailContent.sender = String.format("L%swnmow%s%s @ Gi%sH%sb", z, DatabaseHelper.AWJVN, e, s, PacketOpcodes.ONLWE);
-			mailBuilder.mail.mailContent.content = Grasscutter.getConfig().GameServer.WelcomeMailContent;
+			mailBuilder.mail.mailContent.title = Grasscutter.getConfig().GameServer.WelcomeMailTitle;
+			mailBuilder.mail.mailContent.sender = Grasscutter.getConfig().GameServer.WelcomeMailSender;
+			// Please credit Grasscutter if changing something here. We don't condone commercial use of the project.
+			mailBuilder.mail.mailContent.content = Grasscutter.getConfig().GameServer.WelcomeMailContent + "\n<type=\"browser\" text=\"GitHub\" href=\"https://github.com/Melledy/Grasscutter\"/>";
 			mailBuilder.mail.itemList.addAll(Arrays.asList(Grasscutter.getConfig().GameServer.WelcomeMailItems));
 			mailBuilder.mail.importance = 1;
 			player.sendMail(mailBuilder.mail);

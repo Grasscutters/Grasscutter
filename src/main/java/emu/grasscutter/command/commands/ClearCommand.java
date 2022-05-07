@@ -10,6 +10,8 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
+import static emu.grasscutter.utils.Language.translate;
+
 @Command(label = "clear", usage = "clear <all|wp|art|mat>", //Merged /clearartifacts and /clearweapons to /clear <args> [uid]
         description = "Deletes unequipped unlocked items, including yellow rarity ones from your inventory",
         aliases = {"clear"}, permission = "player.clearinv")
@@ -19,11 +21,11 @@ public final class ClearCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
             return;
         }
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_usage);
+            CommandHandler.sendMessage(sender, translate("commands.clear.command_usage"));
             return;
         }
         Inventory playerInventory = targetPlayer.getInventory();
@@ -35,7 +37,7 @@ public final class ClearCommand implements CommandHandler {
                         .filter(item -> item.getItemType() == ItemType.ITEM_WEAPON)
                         .filter(item -> !item.isLocked() && !item.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_weapons.replace("{name}", targetPlayer.getNickname()));
+                CommandHandler.sendMessage(sender, translate("commands.clear.weapons", targetPlayer.getNickname()));
             }
             case "art" -> {
             	toDelete = playerInventory.getItems().values().stream()
@@ -43,7 +45,7 @@ public final class ClearCommand implements CommandHandler {
                         .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                         .filter(item -> !item.isLocked() && !item.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));
+                CommandHandler.sendMessage(sender, translate("commands.clear.artifacts", targetPlayer.getNickname()));
             }
             case "mat" -> {
             	toDelete = playerInventory.getItems().values().stream()
@@ -51,7 +53,7 @@ public final class ClearCommand implements CommandHandler {
                         .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                         .filter(item -> !item.isLocked() && !item.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));
+                CommandHandler.sendMessage(sender, translate("commands.clear.materials", targetPlayer.getNickname()));
             }
             case "all" -> {
             	toDelete = playerInventory.getItems().values().stream()
@@ -59,34 +61,44 @@ public final class ClearCommand implements CommandHandler {
                         .filter(item1 -> item1.getLevel() == 1 && item1.getExp() == 0)
                         .filter(item1 -> !item1.isLocked() && !item1.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));
+                CommandHandler.sendMessage(sender, translate("commands.clear.artifacts", targetPlayer.getNickname()));
+                playerInventory.removeItems(toDelete);
+                
                 toDelete = playerInventory.getItems().values().stream()
                         .filter(item2 -> item2.getItemType() == ItemType.ITEM_MATERIAL)
                         .filter(item2 -> !item2.isLocked() && !item2.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));
+                playerInventory.removeItems(toDelete);
+                CommandHandler.sendMessage(sender, translate("commands.clear.materials", targetPlayer.getNickname()));
+                
                 toDelete = playerInventory.getItems().values().stream()
                         .filter(item3 -> item3.getItemType() == ItemType.ITEM_WEAPON)
                         .filter(item3 -> item3.getLevel() == 1 && item3.getExp() == 0)
                         .filter(item3 -> !item3.isLocked() && !item3.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_artifacts.replace("{name}", targetPlayer.getNickname()));
+                playerInventory.removeItems(toDelete);
+                CommandHandler.sendMessage(sender, translate("commands.clear.weapons", targetPlayer.getNickname()));
+                
                 toDelete = playerInventory.getItems().values().stream()
                         .filter(item4 -> item4.getItemType() == ItemType.ITEM_FURNITURE)
                         .filter(item4 -> !item4.isLocked() && !item4.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_furniture.replace("{name}", targetPlayer.getNickname()));
+                playerInventory.removeItems(toDelete);
+                CommandHandler.sendMessage(sender, translate("commands.clear.furniture", targetPlayer.getNickname()));
+                
                 toDelete = playerInventory.getItems().values().stream()
                         .filter(item5 -> item5.getItemType() == ItemType.ITEM_DISPLAY)
                         .filter(item5 -> !item5.isLocked() && !item5.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_displays.replace("{name}", targetPlayer.getNickname()));
+                playerInventory.removeItems(toDelete);
+                CommandHandler.sendMessage(sender, translate("commands.clear.displays", targetPlayer.getNickname()));
+                
                 toDelete = playerInventory.getItems().values().stream()
                         .filter(item6 -> item6.getItemType() == ItemType.ITEM_VIRTUAL)
                         .filter(item6 -> !item6.isLocked() && !item6.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_virtuals.replace("{name}", targetPlayer.getNickname()));
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Clear_everything.replace("{name}", targetPlayer.getNickname()));
+                CommandHandler.sendMessage(sender, translate("commands.clear.virtuals", targetPlayer.getNickname()));
+                CommandHandler.sendMessage(sender, translate("commands.clear.everything", targetPlayer.getNickname()));
             }
         }
         

@@ -18,6 +18,11 @@ public class TeamInfo {
 		this.avatars = new ArrayList<>(Grasscutter.getConfig().getGameServerOptions().MaxAvatarsInTeam);
 	}
 
+	public TeamInfo(List<Integer> avatars) {
+		this.name = "";
+		this.avatars = avatars;
+	}
+
 	public String getName() {
 		return name;
 	}
