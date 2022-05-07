@@ -102,8 +102,9 @@ public final class Language {
         JsonObject object = this.languageData;
 
         int index = 0;
-        String result = "This value does not exist. Please report this to discord support" + key;
-        Grasscutter.getLogger().info("DEBUG Translations: "+key);
+        String result = "This value does not exist. Please report this to discord support" + key;  
+        
+        boolean found = false;
 
         while (true) {
             if(index == keys.length) break;
@@ -114,11 +115,16 @@ public final class Language {
                 if(element.isJsonObject())
                     object = element.getAsJsonObject();
                 else {
+                    found = true;
                     result = element.getAsString(); break;
                 }
             } else break;
         }
         
+        if(!found){
+          Grasscutter.getLogger().info("DEBUG Translations: "+key);
+        }        
+
         this.cachedTranslations.put(key, result); return result;
     }
 }
