@@ -58,37 +58,6 @@ public final class Tools {
 	}
 
 	public static String getLanguageOption() throws Exception {
-		List<String> availableLangList = getAvailableLanguage();
-	
-		// Use system out for better format
-		if (availableLangList.size() == 1) {
-			return availableLangList.get(0).toUpperCase();
-		}
-		String stagedMessage = "";
-		stagedMessage += "The following languages mappings are available, please select one: [default: EN]\n";
-		String groupedLangList = ">\t";
-		int groupedLangCount = 0;
-		String input = "";
-		for (String availableLanguage: availableLangList){
-			groupedLangCount++;
-			groupedLangList = groupedLangList + "" + availableLanguage + "\t";
-			if (groupedLangCount == 6) {
-				stagedMessage += groupedLangList + "\n";
-				groupedLangCount = 0;
-				groupedLangList = ">\t";
-			}
-		}
-		if (groupedLangCount > 0) {
-			stagedMessage += groupedLangList + "\n";
-		}
-		stagedMessage += "\nYour choice:[EN] ";
-		
-		input = Grasscutter.getConsole().readLine(stagedMessage);
-		if (availableLangList.contains(input.toLowerCase())) {
-			return input.toUpperCase();
-		}
-		Grasscutter.getLogger().info("Invalid option. Will use EN(English) as fallback");
-
 		return "EN";
 	}
 }

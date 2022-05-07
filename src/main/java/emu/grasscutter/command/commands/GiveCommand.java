@@ -100,6 +100,11 @@ public final class GiveCommand implements CommandHandler {
                 return;
         }
 
+        if (amount > Grasscutter.getConfig().getGameServerOptions().CMD_Give) {
+          CommandHandler.sendMessage(sender, "Overmuch :(");
+          return;
+        }
+
         ItemData itemData = GameData.getItemDataMap().get(item);
         if (itemData == null) {
             CommandHandler.sendMessage(sender, translate("commands.generic.invalid.itemId"));
@@ -164,8 +169,14 @@ public final class GiveCommand implements CommandHandler {
                     }
                 }
                 items.add(item);
+                // Stop spam notif
+                if (i == 0) {
+                 player.getInventory().addItems(items, ActionReason.SubfieldDrop);
+                 items = new LinkedList<>();
+                }
             }
-            player.getInventory().addItems(items, ActionReason.SubfieldDrop);
+            
+            player.getInventory().addItems(items, null);
         } else {
             GameItem item = new GameItem(itemData);
             item.setCount(amount);
