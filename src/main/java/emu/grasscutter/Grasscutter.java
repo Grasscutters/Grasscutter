@@ -154,7 +154,7 @@ public final class Grasscutter {
 			Grasscutter.getLogger().error("Illegal locale language, using en-US instead.");
 			language = Language.getLanguage("en-US");
 		} else {
-			languageTag = String.format("%s-%s", locale.getCountry(), locale.getLanguage());
+			languageTag = String.format("%s-%s", locale.getLanguage(), locale.getCountry());
 			language = Language.getLanguage(languageTag);
 		}
 	}
