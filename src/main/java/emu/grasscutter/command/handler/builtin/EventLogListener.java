@@ -10,11 +10,9 @@ public class EventLogListener {
     public void log(HandlerEvent event) {
         Logger logger = Grasscutter.getLogger();
         StringBuilder sb = new StringBuilder();
-        sb.append("collection: %d, method: %d\n".formatted(event.collectionCode(), event.methodCode()));
+        sb.append("collection: %d, method: %d\n".formatted(event.getCollectionCode(), event.getMethodCode()));
         sb.append("Context:\n");
-        event.context().content().forEach((k, v) -> {
-            sb.append("%s: %s".formatted(k, v.toString()));
-        });
+        event.getContext().getContent().forEach((k, v) -> sb.append("%s: %s".formatted(k, v.toString())));
         logger.info(sb.toString());
     }
 }

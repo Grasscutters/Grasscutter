@@ -18,7 +18,7 @@ public class LuaSerializer implements Serializer {
 	public <T> T toObject(Class<T> type, Object obj) {
 		return serialize(type, (LuaTable) obj);
 	}
-	
+
 	public <T> List<T> serializeList(Class<T> type, LuaTable table) {
 		List<T> list = new ArrayList();
 		
@@ -55,7 +55,6 @@ public class LuaSerializer implements Serializer {
 
 		return list;
 	}
-	
 	public <T> T serialize(Class<T> type, LuaTable table) {
 		T object = null;
 		

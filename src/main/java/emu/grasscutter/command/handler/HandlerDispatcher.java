@@ -6,9 +6,12 @@ import emu.grasscutter.command.handler.builtin.ExceptionListener;
 import emu.grasscutter.command.handler.builtin.EventLogListener;
 import lombok.SneakyThrows;
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.reflections.Reflections;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -55,9 +58,16 @@ public final class HandlerDispatcher {
     private void register(Class<? extends BaseHandlerCollection> collectionClass) {
         HandlerCollection annotation = collectionClass.getAnnotation(HandlerCollection.class);
         if (annotation == null) {
-            throw new RuntimeException("@HandlerCollection is missing on this type.");
+            throw new RuntimeException("@HandlerCollection is missing on %s.".formatted(collectionClass.getSimpleName()));
         }
         Object handler = collectionClass.getDeclaredConstructor().newInstance();
+        Reflections handlerRef = new Reflections(handler);
+        Set<Method> handlerMethods = handlerRef.getMethodsAnnotatedWith(Subscribe.class);
+        for (Method method: handlerMethods) {
+            if (method.getAnnotation(Subscribe.class).threadMode() != ThreadMode.BACKGROUND) {
+                throw new RuntimeException("You must use ThreadMode.BACKGROUND on %s.".formatted(method.getName()));
+            }
+        }
         Field codeField = collectionClass.getSuperclass().getDeclaredField("collectionCode");
         Field nameField = collectionClass.getSuperclass().getDeclaredField("collectionName");
         codeField.setAccessible(true);
