@@ -64,25 +64,26 @@ public final class Tools {
 		if (availableLangList.size() == 1) {
 			return availableLangList.get(0).toUpperCase();
 		}
-		System.out.println("The following languages mappings are available, please select one: [default: EN]");
-		String groupedLangList = "> ";
+		String stagedMessage = "";
+		stagedMessage += "The following languages mappings are available, please select one: [default: EN]\n";
+		String groupedLangList = ">\t";
 		int groupedLangCount = 0;
 		String input = "";
 		for (String availableLanguage: availableLangList){
 			groupedLangCount++;
 			groupedLangList = groupedLangList + "" + availableLanguage + "\t";
 			if (groupedLangCount == 6) {
-				System.out.println(groupedLangList);
+				stagedMessage += groupedLangList + "\n";
 				groupedLangCount = 0;
-				groupedLangList = "> ";
+				groupedLangList = ">\t";
 			}
 		}
 		if (groupedLangCount > 0) {
-			System.out.println(groupedLangList);
+			stagedMessage += groupedLangList + "\n";
 		}
-		System.out.print("\nYour choice:[EN] ");
-
-		input = new BufferedReader(new InputStreamReader(System.in)).readLine();
+		stagedMessage += "\nYour choice:[EN] ";
+		
+		input = Grasscutter.getConsole().readLine(stagedMessage);
 		if (availableLangList.contains(input.toLowerCase())) {
 			return input.toUpperCase();
 		}
@@ -249,6 +250,6 @@ final class ToolsWithLanguageOption {
 			writer.println("}\n}");
 		}
 		
-		Grasscutter.getLogger().info("Mappings generated!");
+		Grasscutter.getLogger().info("Mappings generated to " + location + " !");
 	}
 }

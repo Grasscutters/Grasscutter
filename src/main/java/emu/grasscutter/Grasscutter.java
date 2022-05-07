@@ -77,7 +77,7 @@ public final class Grasscutter {
 					Tools.createGmHandbook(); exitEarly = true;
 				}
 				case "-gachamap" -> {
-					Tools.createGachaMapping("./gacha-mapping.js"); exitEarly = true;
+					Tools.createGachaMapping(Grasscutter.getConfig().DATA_FOLDER + "/gacha_mappings.js"); exitEarly = true;
 				}
 			}
 		} 
@@ -149,7 +149,13 @@ public final class Grasscutter {
 
 	public static void loadLanguage() {
 		var locale = config.LocaleLanguage;
-		language = Language.getLanguage(locale.toLanguageTag());
+		String languageTag = locale.toLanguageTag();
+		if (languageTag.equals("und")) {
+			Grasscutter.getLogger().error("Illegal locale language, using en-US instead.");
+			language = Language.getLanguage("en-US");
+		} else {
+			language = Language.getLanguage(languageTag);
+		}
 	}
 
 	public static void saveConfig() {
