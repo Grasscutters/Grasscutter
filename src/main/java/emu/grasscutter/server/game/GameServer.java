@@ -30,6 +30,8 @@ import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
+import static emu.grasscutter.utils.Language.translate;
+
 public final class GameServer extends KcpServer {
 	private final InetSocketAddress address;
 	private final GameServerPacketHandler packetHandler;
@@ -50,6 +52,13 @@ public final class GameServer extends KcpServer {
 
 	private final CombineManger combineManger;
 
+	public GameServer() {
+		this(new InetSocketAddress(
+				Grasscutter.getConfig().getGameServerOptions().Ip, 
+				Grasscutter.getConfig().getGameServerOptions().Port
+		));
+	}
+	
 	public GameServer(InetSocketAddress address) {
 		super(address);
 
@@ -79,7 +88,7 @@ public final class GameServer extends KcpServer {
 				try {
 					onTick();
 				} catch (Exception e) {
-					Grasscutter.getLogger().error(Grasscutter.getLanguage().An_error_occurred_during_game_update, e);
+					Grasscutter.getLogger().error(translate("messages.game.game_update_error"), e);
 				}
 			}
 		}, new Date(), 1000L);
@@ -222,8 +231,8 @@ public final class GameServer extends KcpServer {
 
 	@Override
 	public void onStartFinish() {
-		Grasscutter.getLogger().info(Grasscutter.getLanguage().Grasscutter_is_free);
-		Grasscutter.getLogger().info(Grasscutter.getLanguage().Game_start_port.replace("{port}", Integer.toString(address.getPort())));
+		Grasscutter.getLogger().info(translate("messages.status.free_software"));
+		Grasscutter.getLogger().info(translate("messages.game.port_bind", Integer.toString(address.getPort())));
 		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
 	

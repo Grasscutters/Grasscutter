@@ -2,12 +2,15 @@ package emu.grasscutter.server.dispatch;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Objects;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import express.http.HttpContextHandler;
 import express.http.Request;
 import express.http.Response;
+
+import static emu.grasscutter.utils.Language.translate;
 
 public final class DispatchHttpJsonHandler implements HttpContextHandler {
 	private final String response;
@@ -31,8 +34,8 @@ public final class DispatchHttpJsonHandler implements HttpContextHandler {
 	@Override
 	public void handle(Request req, Response res) throws IOException {
 		// Checking for ALL here isn't required as when ALL is enabled enableDevLogging() gets enabled
-		if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING && Arrays.stream(missingRoutes).anyMatch(x -> x == req.baseUrl())) {
-			Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_request.replace("{ip}", req.ip()).replace("{method}", req.method()).replace("{url}", req.baseUrl()) + (Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING ? "(MISSING)" : ""));
+		if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING && Arrays.stream(missingRoutes).anyMatch(x -> Objects.equals(x, req.baseUrl()))) {
+			Grasscutter.getLogger().info(translate("messages.dispatch.request", req.ip(), req.method(), req.baseUrl()) + (Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING ? "(MISSING)" : ""));
 		}
 		res.send(response);
 	}
