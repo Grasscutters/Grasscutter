@@ -205,7 +205,7 @@ public final class GameServer extends KcpServer {
 	@Override
 	public synchronized void start() {
 		// Schedule game loop.
-		ScheduledExecutorService gameLoop = Executors.newScheduledThreadPool(2);
+		Timer gameLoop = new Timer();
 		gameLoop.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
@@ -215,7 +215,8 @@ public final class GameServer extends KcpServer {
 					Grasscutter.getLogger().error(Grasscutter.getLanguage().An_error_occurred_during_game_update, e);
 				}
 			}
-		}, 0L, 1000L, TimeUnit.MILLISECONDS);
+		}, new Date(), 1000L);
+
 		super.start();
 	}
 
