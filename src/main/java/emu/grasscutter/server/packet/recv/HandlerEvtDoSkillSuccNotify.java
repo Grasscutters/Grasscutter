@@ -14,7 +14,7 @@ public class HandlerEvtDoSkillSuccNotify extends PacketHandler {
         EvtDoSkillSuccNotify notify = EvtDoSkillSuccNotify.parseFrom(payload);
         // TODO: Will be used for deducting stamina for charged skills.
 
-        session.getPlayer().getMovementManager().handleEvtDoSkillSuccNotify(session, notify);
+        session.getPlayer().getStaminaManager().handleEvtDoSkillSuccNotify(session, notify);
     }
 
 }
