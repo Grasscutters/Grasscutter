@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers.MovementManager;
+package emu.grasscutter.game.managers;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.entity.EntityAvatar;
@@ -20,9 +20,11 @@ import emu.grasscutter.utils.Position;
 import java.lang.Math;
 import java.util.*;
 
-public class MovementManager {
+public class StaminaManager {
     private final Player player;
     private HashMap<String, HashSet<MotionState>> MotionStatesCategorized = new HashMap<>();
+
+    public final static int GlobalMaximumStamina = 24000;
     private Position currentCoordinates = new Position(0, 0, 0);
     private Position previousCoordinates = new Position(0, 0, 0);
     private MotionState currentState = MotionState.MOTION_STANDBY;
@@ -84,7 +86,7 @@ public class MovementManager {
         isInSkillMove = b;
     }
 
-    public MovementManager(Player player) {
+    public StaminaManager(Player player) {
         this.player = player;
 
         MotionStatesCategorized.put("SWIM", new HashSet<>(Arrays.asList(
@@ -181,11 +183,14 @@ public class MovementManager {
     }
 
     public void startSustainedStaminaHandler() {
-        if (sustainedStaminaHandlerTimer == null) {
-            sustainedStaminaHandlerTimer = new Timer();
-            sustainedStaminaHandlerTimer.scheduleAtFixedRate(new SustainedStaminaHandler(), 0, 200);
-            Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer started");
+        if (!player.isPaused()) {
+            if (sustainedStaminaHandlerTimer == null) {
+                sustainedStaminaHandlerTimer = new Timer();
+                sustainedStaminaHandlerTimer.scheduleAtFixedRate(new SustainedStaminaHandler(), 0, 200);
+                Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer started");
+            }
         }
+
     }
 
     public void stopSustainedStaminaHandler() {
