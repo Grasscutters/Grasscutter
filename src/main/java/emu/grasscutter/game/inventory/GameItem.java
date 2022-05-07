@@ -79,6 +79,9 @@ public class GameItem {
 	}
 	
 	public GameItem(ItemData data, int count) {
+    if(data == null){
+      return;
+    }
 		this.itemId = data.getId();
 		this.itemData = data;
 		
