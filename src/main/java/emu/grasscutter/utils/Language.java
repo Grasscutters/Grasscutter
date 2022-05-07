@@ -72,12 +72,15 @@ public final class Language {
      */
     private JsonObject loadLanguage(String fileName) {
         @Nullable JsonObject languageData = null;
-        
+        String defaultName = "en-US.json"
         try {
             InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
             languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(file), JsonObject.class);
         } catch (Exception exception) {
             Grasscutter.getLogger().warn("Failed to load language file: " + fileName);
+        }
+        if(languageData==null&&fileName!=defaultName){// if langage file doesn't exist, try default file
+            languageData = loadLanguage(defaultName)
         }
         return languageData;
     }
