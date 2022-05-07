@@ -229,7 +229,7 @@ public final class GameServer extends KcpServer {
 				try {
 					onTick();
 				} catch (Exception e) {
-					Grasscutter.getLogger().error(translate("messages.game.game_update_error"), e);
+					Grasscutter.getLogger().debug(translate("messages.game.game_update_error"), e);
 				}
 			}
 		}, new Date(), 1000L);
