@@ -40,7 +40,7 @@ public final class Language {
         @Nullable JsonObject languageData = null;
         
         try {
-            InputStream file = Grasscutter.class.getResourceAsStream("/lang/" + fileName);
+            InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
             languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(file), JsonObject.class);
         } catch (Exception exception) {
             Grasscutter.getLogger().error("Failed to load language file: " + fileName, exception);
