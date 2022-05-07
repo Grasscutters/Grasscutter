@@ -184,7 +184,7 @@
       "account_error": "The account cannot be found."
     },
     "position": {
-      "success": "Coordinates: %.3f, %.3f, %.3f\nScene id: %d"
+      "success": "Coordinates: %s, %s, %s\nScene id: %s"
     },
     "reload": {
       "reload_start": "Reloading config.",
