@@ -85,6 +85,9 @@ dependencies {
 
     implementation group: 'org.luaj', name: 'luaj-jse', version: '3.0.1'
 
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+
     protobuf files('proto/')
 }
 
