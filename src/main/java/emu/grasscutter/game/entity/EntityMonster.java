@@ -117,6 +117,7 @@ public class EntityMonster extends GameEntity {
 			this.getScene().getDeadSpawnedEntities().add(getSpawnEntry());
 		}
 		if (getScene().getScriptManager().isInit() && this.getGroupId() > 0) {
+			getScene().getScriptManager().onMonsterDie();
 			getScene().getScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_DIE, null);
 		}
 		if (getScene().getChallenge() != null && getScene().getChallenge().getGroup().id == this.getGroupId()) {
