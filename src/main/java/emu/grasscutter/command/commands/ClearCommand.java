@@ -56,12 +56,12 @@ public final class ClearCommand implements CommandHandler {
             Grasscutter.getLanguage().Clear_furniture.replace("{name}", targetPlayer.getNickname()));
       }
       case "all" -> {
-        List<GameItem> tes = playerInventory.getItems().values().stream()
+        List<GameItem> tes = playerInventory.getItems().values().stream().limit(1000)
         .filter(item1 -> !item1.isLocked() && !item1.isEquipped())
         .toList();
-        CommandHandler.sendMessage(sender, "Clear "+tes.size()+" item");
+        CommandHandler.sendMessage(sender, tes.size()+" Items that have been deleted");
         playerInventory.removeItems(tes);
-        CommandHandler.sendMessage(sender, "Done!!!");
+        CommandHandler.sendMessage(sender, "It works, if there are still undeleted items try again (each command is limited to 1000 deletes)");
       }      
     }
 
