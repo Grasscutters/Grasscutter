@@ -1,4 +1,5 @@
 package emu.grasscutter.command.commands;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
@@ -11,11 +12,12 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.game.world.Scene;
+
 import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
-@Command(label = "spawn", usage = "spawn <entityId|entityName> [level] [amount]",
-        description = "Spawns an entity near you", aliases = {
-            "s"}, permission = "server.spawn")
+
+@Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)]",
+        description = "Spawns an entity near you", permission = "server.spawn",aliases = {"s"})
 public final class SpawnCommand implements CommandHandler {
 
     @Override
@@ -31,13 +33,13 @@ public final class SpawnCommand implements CommandHandler {
         switch (args.size()) {
             case 3:
                 try {
-                  amount = Integer.parseInt(args.get(2));
+                    level = Integer.parseInt(args.get(2));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, translate("commands.execution.argument_error"));
                 }  // Fallthrough
             case 2:
                 try {
-                    level = Integer.parseInt(args.get(1));
+                    amount = Integer.parseInt(args.get(1));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, translate("commands.generic.error.amount"));
                 }  // Fallthrough

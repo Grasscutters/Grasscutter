@@ -53,6 +53,12 @@ public final class DropCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, translate("commands.generic.invalid.itemId"));
             return;
         }
+
+        if (amount > Grasscutter.getConfig().getGameServerOptions().CMD_Drop) {
+          CommandHandler.sendMessage(sender, "Overmuch :(");
+          return;
+        }
+
         if (itemData.isEquip()) {
             float range = (5f + (.1f * amount));
             for (int i = 0; i < amount; i++) {
