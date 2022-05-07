@@ -232,7 +232,7 @@
     "setStats": {
       "usage_console": "用法：setstats|stats @<UID> <stat> <value>",
       "usage_ingame": "用法：setstats|stats [@UID] <stat> <value>",
-      "help_message": "\n\可使用的数据类型：hp (生命值)| maxhp (最大生命值) | def(防御力) | atk (攻击力)| em (元素精通) | er (元素充能效率) | crate(暴击率) | cdmg (暴击伤害)| cdr (冷却缩减) | heal(治疗加成)| heali (受治疗加成)| shield (护盾强效)| defi (无视防御)\n\t(cont.) 元素伤害：epyro (火) | ecryo (冰)  | ehydro (水)  | egeo (岩)  | edendro (草) | eelectro (雷) | ephys (物理)(cont.) 元素抗性：respyro (火)  | rescryo (冰)  | reshydro (水)  | resgeo (岩) | resdendro (草) | reselectro (雷)  | resphys (物理)\n",
+      "help_message": "\n\t可使用的数据类型：hp (生命值)| maxhp (最大生命值) | def(防御力) | atk (攻击力)| em (元素精通) | er (元素充能效率) | crate(暴击率) | cdmg (暴击伤害)| cdr (冷却缩减) | heal(治疗加成)| heali (受治疗加成)| shield (护盾强效)| defi (无视防御)\n\t(cont.) 元素伤害：epyro (火) | ecryo (冰)  | ehydro (水)  | egeo (岩)  | edendro (草) | eelectro (雷) | ephys (物理)(cont.) 元素抗性：respyro (火)  | rescryo (冰)  | reshydro (水)  | resgeo (岩) | resdendro (草) | reselectro (雷)  | resphys (物理)\n",
       "value_error": "无效的数据值。",
       "uid_error": "无效的UID。",
       "player_error": "玩家不存在或已离线。",
