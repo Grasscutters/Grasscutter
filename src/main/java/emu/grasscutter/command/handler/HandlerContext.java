@@ -24,7 +24,7 @@ public final class HandlerContext {
     @Nullable
     private Consumer<Object> resultConsumer;
     @Nullable
-    private Consumer<Throwable> errorConsumer;
+    private Consumer<Exception> errorConsumer;
 
     /**
      * Get a required argument from the context.
@@ -75,10 +75,7 @@ public final class HandlerContext {
      * @param result the result of this handler
      */
     public void returnWith(Object result) throws HandlerSuccess {
-        if (resultConsumer != null) {
-            resultConsumer.accept(result);
-        }
-        throw new HandlerSuccess();
+        throw new HandlerSuccess(result);
     }
 
     /**
@@ -86,12 +83,15 @@ public final class HandlerContext {
      * <p>You do <b>NOT</b> need this before an error is thrown. It will be called automatically.</p>
      * @param error the error
      */
-    public void errorAndContinue(Throwable error) {
+    public void errorAndContinue(Exception error) {
         if (errorConsumer != null) {
             errorConsumer.accept(error);
         }
     }
 
+    /**
+     * Send a message to messageConsumer. This may be useful when reporting progresses.
+     */
     public void notify(Object message) {
         if (messageConsumer != null) {
             messageConsumer.accept(message);

@@ -9,5 +9,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SubCommandHandler {
     String literal();
-    String description() default "";
+    String descriptionKey() default "";
 }

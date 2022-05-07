@@ -1,22 +1,17 @@
 package emu.grasscutter.command.handler.collections;
 
 import emu.grasscutter.command.handler.*;
+import emu.grasscutter.command.handler.annotation.Handler;
 import emu.grasscutter.command.handler.annotation.HandlerCollection;
 import lombok.SneakyThrows;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-@HandlerCollection(collectionCode = HandlerCollectionCode.Test, collectionName = "test")
-public class TestHandlerCollectionCollection extends BaseHandlerCollection {
-
-    @Subscribe(threadMode = ThreadMode.BACKGROUND)
+@HandlerCollection
+public class TestHandlerCollectionCollection {
+    @Handler(ECHO)
     @SneakyThrows
-    public void echo(HandlerEvent event) {
-        if (notValid(event, Echo)) {
-            return;
-        }
-        HandlerContext context = event.getContext();
-
+    public void echo(HandlerContext context) {
         // This will take a long time before echo
         for (int i = 0; i < 3; i++) {
             context.notify("tick");
@@ -31,5 +26,5 @@ public class TestHandlerCollectionCollection extends BaseHandlerCollection {
         context.notify("some word.");
     }
 
-    public static final int Echo = 0;
+    public static final String ECHO = "test.echo";
 }

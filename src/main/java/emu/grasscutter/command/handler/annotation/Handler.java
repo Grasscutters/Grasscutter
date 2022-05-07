@@ -1,4 +1,4 @@
-package emu.grasscutter.command.parser.annotation;
+package emu.grasscutter.command.handler.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,5 +7,6 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ParameterParser {
+public @interface Handler {
+    String value();
 }

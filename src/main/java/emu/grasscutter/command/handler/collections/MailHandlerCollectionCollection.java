@@ -1,6 +1,7 @@
 package emu.grasscutter.command.handler.collections;
 
 import emu.grasscutter.command.handler.*;
+import emu.grasscutter.command.handler.annotation.Handler;
 import emu.grasscutter.command.handler.annotation.HandlerCollection;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.mail.Mail;
@@ -10,19 +11,13 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import static emu.grasscutter.command.handler.ContextNaming.*;
-
-@HandlerCollection(collectionCode = HandlerCollectionCode.Mail, collectionName = "mail")
-public class MailHandlerCollectionCollection extends BaseHandlerCollection {
-    @Subscribe(threadMode = ThreadMode.BACKGROUND)
+import static emu.grasscutter.utils.Language.translate;
+@HandlerCollection
+public class MailHandlerCollectionCollection {
+    @Handler(SEND_MAIL)
     @SneakyThrows
-    public void sendMail(HandlerEvent event) {
-        // if you should handle this event
-        if (notValid(event, Send)) {
-            return;
-        }
-
+    public void sendMail(HandlerContext context) {
         // read arguments from the context
-        HandlerContext context = event.getContext();
         Mail mail = context.getRequired("mail", Mail.class);
         int target = context.getOptional(TargetUid, -1); // -1 means to all
 
@@ -32,7 +27,7 @@ public class MailHandlerCollectionCollection extends BaseHandlerCollection {
             if (player != null) {
                 player.sendMail(mail);
             } else {
-                throw new RuntimeException("recipient not found");
+                throw new RuntimeException(translate("commands.execution.player_exist_error"));
             }
         } else {
             DatabaseHelper.getAllPlayers().forEach(player -> player.sendMail(mail));
@@ -40,5 +35,5 @@ public class MailHandlerCollectionCollection extends BaseHandlerCollection {
         context.returnWith(null);
     }
 
-    public static final int Send = 0;
+    public static final String SEND_MAIL = "mail.send";
 }

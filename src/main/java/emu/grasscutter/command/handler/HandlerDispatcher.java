@@ -1,40 +1,34 @@
 package emu.grasscutter.command.handler;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.handler.annotation.Handler;
 import emu.grasscutter.command.handler.annotation.HandlerCollection;
-import emu.grasscutter.command.handler.builtin.ExceptionListener;
-import emu.grasscutter.command.handler.builtin.EventLogListener;
 import lombok.SneakyThrows;
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 import org.reflections.Reflections;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public final class HandlerDispatcher {
-    @SuppressWarnings("unchecked")
     private HandlerDispatcher() {
         Reflections reflections = Grasscutter.reflector;
         Set<Class<?>> handlerCollections = reflections.getTypesAnnotatedWith(HandlerCollection.class);
         handlerCollections.forEach(clazz -> {
             try {
-                    registerCollection((Class<? extends BaseHandlerCollection>) clazz);
+                    registerCollection(clazz);
             } catch (Exception e) {
                 Grasscutter.getLogger().error(
                         "An error occurred when constructing %s.".formatted(clazz.getSimpleName()), e
                 );
             }
         });
-        eventBus.register(new ExceptionListener());
-        if (Grasscutter.getConfig().DebugMode == Grasscutter.ServerDebugMode.ALL) {
-            eventBus.register(new EventLogListener());
-        }
+        eventBus.register(new ThrowListener());
+        eventBus.register(new DispatchListener());
     }
     private static final class SingletonHolder {
         private static final HandlerDispatcher instance = new HandlerDispatcher();
@@ -55,39 +49,48 @@ public final class HandlerDispatcher {
     }
 
     @SneakyThrows
-    private void register(Class<? extends BaseHandlerCollection> collectionClass) {
+    private void register(Class<?> collectionClass) {
         HandlerCollection annotation = collectionClass.getAnnotation(HandlerCollection.class);
         if (annotation == null) {
-            throw new RuntimeException("@HandlerCollection is missing on %s.".formatted(collectionClass.getSimpleName()));
+            throw new RuntimeException(
+                    "%s must be annotated with @HandlerCollection.".formatted(collectionClass.getSimpleName())
+            );
         }
-        Object handler = collectionClass.getDeclaredConstructor().newInstance();
-        Reflections handlerRef = new Reflections(handler);
-        Set<Method> handlerMethods = handlerRef.getMethodsAnnotatedWith(Subscribe.class);
+        Reflections handlerRef = new Reflections(collectionClass);
+        Set<Method> handlerMethods = handlerRef.getMethodsAnnotatedWith(Handler.class);
+        // abort registration if any
         for (Method method: handlerMethods) {
-            if (method.getAnnotation(Subscribe.class).threadMode() != ThreadMode.BACKGROUND) {
-                throw new RuntimeException("You must use ThreadMode.BACKGROUND on %s.".formatted(method.getName()));
+            Class<?>[] parameterTypes = method.getParameterTypes();
+            if (parameterTypes.length != 1) {
+                throw new RuntimeException("%s must have one parameter.".formatted(method.getName()));
+            }
+            if (!parameterTypes[0].equals(HandlerContext.class)) {
+                throw new RuntimeException("%s must receive HandlerContext.".formatted(method.getName()));
+            }
+            if ((method.getModifiers() & Modifier.STATIC) == 0) {
+                throw new RuntimeException("%s must be static.".formatted(method.getName()));
+            }
+            if ((method.getModifiers() & Modifier.PUBLIC) == 0) {
+                throw new RuntimeException("%s must be public.".formatted(method.getName()));
+            }
+            if (DispatchListener.MethodMap.containsKey(method.getAnnotation(Handler.class).value())) {
+                throw new RuntimeException("The key conflicts with other handlers.");
             }
         }
-        Field codeField = collectionClass.getSuperclass().getDeclaredField("collectionCode");
-        Field nameField = collectionClass.getSuperclass().getDeclaredField("collectionName");
-        codeField.setAccessible(true);
-        nameField.setAccessible(true);
-        codeField.setInt(handler, annotation.collectionCode());
-        nameField.set(handler, annotation.collectionName());
-        eventBus.register(handler);
+        for (Method method: handlerMethods) {
+            String key = method.getAnnotation(Handler.class).value();
+            DispatchListener.MethodMap.put(key, method);
+        }
     }
 
     /**
      * Register a new handler collection to intervene how the game runs or to handle exceptions.
      */
-    public static void registerCollection(Class<? extends BaseHandlerCollection> collectionClass) {
+    public static void registerCollection(Class<?> collectionClass) {
         getInstance().register(collectionClass);
     }
 
-    public static void dispatch(HandlerEvent event) {
-        getInstance().eventBus.post(event);
-    }
-    public static void dispatch(int collectionCode, int methodCode, HandlerContext context) {
-        getInstance().eventBus.post(new HandlerEvent(collectionCode, methodCode, context));
+    public static void dispatch(String handlerKey, HandlerContext context) {
+        getInstance().eventBus.post(new HandlerEvent(handlerKey, context));
     }
 }

@@ -1,6 +1,5 @@
 package emu.grasscutter.command.parser.commands;
 
-import emu.grasscutter.command.handler.HandlerCollectionCode;
 import emu.grasscutter.command.handler.HandlerContext;
 import emu.grasscutter.command.handler.HandlerDispatcher;
 import emu.grasscutter.command.handler.collections.MailHandlerCollectionCollection;
@@ -11,18 +10,14 @@ import emu.grasscutter.command.parser.annotation.SubCommandHandler;
 import emu.grasscutter.command.source.BaseCommandSource;
 import emu.grasscutter.game.mail.Mail;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 
 import static emu.grasscutter.command.handler.ContextNaming.TargetUid;
 
 
-@Command(literal = "mail", aliases = {"m", "m2"}, description = "send mail to users")
+@Command(literal = "mail", aliases = {"m", "m2"})
 public class MailCommand {
 
-    @DefaultHandler(description = "send mail to one user")
+    @DefaultHandler(descriptionKey = "commands.mail.description")
     @Permission("mail.send")
     public void sendToSpecificUser(
             BaseCommandSource source,
@@ -31,11 +26,12 @@ public class MailCommand {
         mailInput(source);
     }
 
-    @SubCommandHandler(literal = "all", description = "send mail to all users")
+    @SubCommandHandler(literal = "all", descriptionKey = "commands.mail.all.description")
     @Permission("mail.sendAll")
     public void sendToAll(BaseCommandSource source) {
         source.put("target", -1);
         mailInput(source);
+
     }
 
     public void mailInput(BaseCommandSource source) {
@@ -93,8 +89,7 @@ public class MailCommand {
         source.changePrompt(null);
         source.beforeHandlerDispatch(builder);
         HandlerDispatcher.dispatch(
-                HandlerCollectionCode.Mail,
-                MailHandlerCollectionCollection.Send,
+                MailHandlerCollectionCollection.SEND_MAIL,
                 builder.build()
         );
     }

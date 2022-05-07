@@ -13,6 +13,8 @@ public class ParseUtil {
             Pattern.compile("\"([^\"\\\\]*(?:\\\\.[^\"\\\\]*)*)\"|'([^'\\\\]*(?:\\\\.[^'\\\\]*)*)'|\\S+");
     private static final Pattern SyntaxCheck =
             Pattern.compile("^\"([^\"]|(?<=\\\\)\")+\"$|^'([^']|(?<=\\\\)')+'$|^[^'\"]*$");
+    private static final Pattern StripQuotePattern =
+            Pattern.compile("^\"([^\"]|(?<=\\\\)\")*(?<!\\\\)\"$|^'([^']|(?<=\\\\)')*(?<!\\\\)'$");
     // magic. don't touch.
     @SneakyThrows
     public static Queue<String> spiltCommand(String str) {
@@ -23,21 +25,18 @@ public class ParseUtil {
             if (!SyntaxCheck.matcher(capture).matches()) {
                 throw new ParserException("unescaped quotes not supported");
             }
-            if (capture.startsWith("'") || capture.startsWith("\"")) {
-                capture = capture.substring(1, capture.length() - 1);
-            }
             ret.add(capture);
         }
         return ret;
     }
 
     @SuppressWarnings("unchecked")
-    public static <T> T parseNext(Queue<String> cmdPieces, Class<T> clazz) {
+    public static <T> T peekNext(Queue<String> cmdPieces, Class<T> clazz) {
         Function<String, ?> parse = PermittedClasses.get(clazz);
         if (parse == null) {
             throw new ParserException("Cannot cast to an unsupported type %s.".formatted(clazz.getSimpleName()));
         }
-        String piece = cmdPieces.poll();
+        String piece = cmdPieces.peek();
         if (piece == null) {
             throw new ParserException("Too few arguments.");
         }
@@ -46,6 +45,19 @@ public class ParseUtil {
         } catch (Exception e) {
             throw new ParserException("Casting `%s` to %s failed.".formatted(piece, clazz.getSimpleName()));
         }
+    }
+
+    public static <T> T parseNext(Queue<String> cmdPieces, Class<T> clazz) {
+        T ret = peekNext(cmdPieces, clazz);
+        cmdPieces.poll();
+        return ret;
+    }
+
+    public static String stripQuotes(String string) {
+        if (StripQuotePattern.matcher(string).matches()) {
+            return string.substring(1, string.length() - 1);
+        }
+        return string;
     }
 
     public <T> void addCastForType(Class<T> clazz, Function<String, T> cast) {
