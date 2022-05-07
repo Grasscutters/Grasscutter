@@ -383,7 +383,11 @@ public class TeamManager {
 				.filter(Objects::nonNull)
 				.map(TeamInfo::new)
 				.toList();
-		this.temporaryTeam = team;
+    if(team != null){
+		 this.temporaryTeam = team;
+    }else{
+      Grasscutter.getLogger().debug("setupTemporaryTeam Error",guidList);
+    }
 	}
 
 	public void useTemporaryTeam(int index) {
