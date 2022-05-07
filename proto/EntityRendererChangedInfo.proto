@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message EntityRendererChangedInfo {
+	map<string, uint32> changed_renderers = 1;
+	uint32 visibility_count = 2;
+	bool is_cached = 3;
+}

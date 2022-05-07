@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlayerDieType.proto";
+
+message WorldPlayerDieNotify {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 254;
+	}
+
+	oneof Entity {
+		uint32 monster_id = 3;
+		uint32 gadget_id = 4;
+	}
+	PlayerDieType die_type = 1;
+	uint32 murderer_entity_id = 2;
+}

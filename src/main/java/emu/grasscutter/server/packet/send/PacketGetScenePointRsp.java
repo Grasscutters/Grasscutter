@@ -1,10 +1,11 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GetScenePointRspOuterClass.GetScenePointRsp;
 
-public class PacketGetScenePointRsp extends GenshinPacket {
+public class PacketGetScenePointRsp extends BasePacket {
 	
 	public PacketGetScenePointRsp(int sceneId) {
 		super(PacketOpcodes.GetScenePointRsp);
@@ -12,8 +13,12 @@ public class PacketGetScenePointRsp extends GenshinPacket {
 		GetScenePointRsp.Builder p = GetScenePointRsp.newBuilder()
 				.setSceneId(sceneId);
 		
-		for (int i = 1; i < 1000; i++) {
-			p.addUnlockedPointList(i);
+		if (GameData.getScenePointIdList().size() == 0) {
+			for (int i = 1; i < 1000; i++) {
+				p.addUnlockedPointList(i);
+			}
+		} else {
+			p.addAllUnlockedPointList(GameData.getScenePointIdList());
 		}
 		
 		for (int i = 1; i < 9; i++) {

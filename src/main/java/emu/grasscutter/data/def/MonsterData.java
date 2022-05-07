@@ -2,14 +2,14 @@ package emu.grasscutter.data.def;
 
 import java.util.List;
 
-import emu.grasscutter.data.GenshinData;
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.PropGrowCurve;
 
 @ResourceType(name = "MonsterExcelConfigData.json", loadPriority = LoadPriority.LOW)
-public class MonsterData extends GenshinResource {
+public class MonsterData extends GameResource {
 	private int Id;
 	
 	private String MonsterName;
@@ -168,13 +168,13 @@ public class MonsterData extends GenshinResource {
 
 	@Override
 	public void onLoad() {
-		this.describeData = GenshinData.getMonsterDescribeDataMap().get(this.getDescribeId());
+		this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
 		
 		for (int id : this.Equips) {
 			if (id == 0) {
 				continue;
 			}
-			GadgetData gadget = GenshinData.getGadgetDataMap().get(id);
+			GadgetData gadget = GameData.getGadgetDataMap().get(id);
 			if (gadget == null) {
 				continue;
 			}

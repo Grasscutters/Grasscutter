@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MpSettingType.proto";
+import "ProfilePicture.proto";
+
+message OnlinePlayerInfo {
+	uint32 uid = 1;
+	string nickname = 2;
+	uint32 player_level = 3;
+	uint32 avatar_id = 4;
+	MpSettingType mp_setting_type = 5;
+	uint32 cur_player_num_in_world = 6;
+	uint32 world_level = 7;
+	string online_id = 8;
+	uint32 name_card_id = 9;
+	repeated uint32 blacklist_uid_list = 10;
+	string signature = 11;
+	ProfilePicture profile_picture = 12;
+	string psn_id = 13;
+}

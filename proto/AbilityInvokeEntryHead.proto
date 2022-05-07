@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message AbilityInvokeEntryHead {
+	uint32 instanced_ability_id = 1;
+	uint32 instanced_modifier_id = 2;
+	int32 local_id = 3;
+	int32 modifier_config_local_id = 4;
+	uint32 target_id = 5;
+	bool is_serverbuff_modifier = 6;
+	uint32 server_buff_uid = 7;
+}

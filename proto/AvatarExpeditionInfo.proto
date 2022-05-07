@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+import "AvatarExpeditionState.proto";
+
+message AvatarExpeditionInfo {
+	AvatarExpeditionState state = 1;
+	uint32 exp_id = 2;
+	uint32 hour_time = 3;
+	uint32 start_time = 4;
+	float shorten_ratio = 5;
+}

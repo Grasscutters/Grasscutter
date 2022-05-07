@@ -16,8 +16,8 @@ public class GachaBanner {
 	private int sortId;
 	private int[] rateUpItems1;
 	private int[] rateUpItems2;
-	private int minItemType = 1;
-	private int maxItemType = 2;
+	private int baseYellowWeight = 60; // Max 10000
+	private int basePurpleWeight = 510; // Max 10000
 	private int eventChance = 50; // Chance to win a featured event item
 	private int softPity = 75;
 	private int hardPity = 90;
@@ -63,20 +63,20 @@ public class GachaBanner {
 		return sortId;
 	}
 
+	public int getBaseYellowWeight() {
+		return baseYellowWeight;
+	}
+
+	public int getBasePurpleWeight() {
+		return basePurpleWeight;
+	}
+
 	public int[] getRateUpItems1() {
 		return rateUpItems1;
 	}
 
 	public int[] getRateUpItems2() {
 		return rateUpItems2;
-	}
-
-	public int getMinItemType() {
-		return minItemType;
-	}
-	
-	public int getMaxItemType() {
-		return maxItemType;
 	}
 	
 	public int getSoftPity() {
@@ -91,9 +91,21 @@ public class GachaBanner {
 		return eventChance;
 	}
 
+	@Deprecated
 	public GachaInfo toProto() {
-		String record = "http://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + "/gacha";
-		
+		return toProto("");
+	}
+	public GachaInfo toProto(String sessionKey) {
+		String record = "http" + (Grasscutter.getConfig().getDispatchOptions().FrontHTTPS ? "s" : "") + "://"
+						+ (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? 
+							Grasscutter.getConfig().getDispatchOptions().Ip : 
+							Grasscutter.getConfig().getDispatchOptions().PublicIp)
+						+ ":"
+						+ Integer.toString(Grasscutter.getConfig().getDispatchOptions().PublicPort == 0 ?
+							Grasscutter.getConfig().getDispatchOptions().Port : 
+							Grasscutter.getConfig().getDispatchOptions().PublicPort)
+						+ "/gacha?s=" + sessionKey + "&gachaType=" + gachaType;
+		// Grasscutter.getLogger().info("record = " + record);
 		GachaInfo.Builder info = GachaInfo.newBuilder()
 				.setGachaType(this.getGachaType())
 				.setScheduleId(this.getScheduleId())

@@ -2,7 +2,7 @@ package emu.grasscutter.command.commands;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
@@ -10,7 +10,10 @@ import java.util.List;
 public final class RestartCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+		if (sender == null) {
+			return;
+		}
         sender.getSession().close();
     }
 }
