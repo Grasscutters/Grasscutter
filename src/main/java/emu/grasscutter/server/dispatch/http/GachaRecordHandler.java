@@ -1,4 +1,4 @@
-package emu.grasscutter.server.http.gacha;
+package emu.grasscutter.server.dispatch.http;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,6 +7,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.utils.FileUtils;
+import emu.grasscutter.utils.Utils;
 import express.http.HttpContextHandler;
 import express.http.Request;
 import express.http.Response;
@@ -14,7 +15,7 @@ import express.http.Response;
 public final class GachaRecordHandler implements HttpContextHandler {
 	String render_template;
 	public GachaRecordHandler() {
-		File template = new File(Grasscutter.getConfig().DATA_FOLDER + "gacha_records.html");
+		File template = new File(Utils.toFilePath(Grasscutter.getConfig().DATA_FOLDER + "/gacha_records.html"));
 		if (template.exists()) {
 			// Load from cache
 			render_template = new String(FileUtils.read(template));
@@ -46,7 +47,7 @@ public final class GachaRecordHandler implements HttpContextHandler {
 
 			res.send(response);
 		} else {
-			res.send("404");
+			res.send("No account found.");
 		}
 	}
 }

@@ -15,14 +15,7 @@ public class PacketTakeAchievementRewardReq extends BasePacket {
     public PacketTakeAchievementRewardReq(GameSession session) {
         super(PacketOpcodes.TakeAchievementRewardReq);
 
-        List<AchievementInfo> a_list = new ArrayList<>();
-        a_list.add(AchievementInfo.newBuilder().setId(82044).setStatusValue(2).setCurrent(0).setGoal(1).build());
-        a_list.add(AchievementInfo.newBuilder().setId(81205).setStatusValue(2).setCurrent(0).setGoal(1).build());
-
-
-        TakeAchievementRewardReq proto = TakeAchievementRewardReq.newBuilder()
-                .addAllAList(a_list)
-                .build();
+        TakeAchievementRewardReq proto = TakeAchievementRewardReq.newBuilder().build();
 
         this.setData(proto);
     }

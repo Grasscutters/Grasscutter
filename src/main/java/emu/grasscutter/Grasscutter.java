@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOError;
-import java.net.InetSocketAddress;
 import java.util.Calendar;
-import java.util.Locale;
 
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.plugin.PluginManager;
@@ -28,31 +26,32 @@ import com.google.gson.GsonBuilder;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
-import emu.grasscutter.languages.CNLanguage;
-import emu.grasscutter.languages.Language;
+import emu.grasscutter.utils.Language;
 import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
 
+import static emu.grasscutter.utils.Language.translate;
+
 public final class Grasscutter {
 	private static final Logger log = (Logger) LoggerFactory.getLogger(Grasscutter.class);
-	private static Config config;
 	private static LineReader consoleLineReader = null;
+
+	private static Config config;
 	private static Language language;
-	private static CNLanguage cn_language;
 
 	private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	private static final File configFile = new File("./config.json");
 
-	private static int day; // Current day of week
+	private static int day; // Current day of week.
 
 	private static DispatchServer dispatchServer;
 	private static GameServer gameServer;
 	private static PluginManager pluginManager;
 
 	public static final Reflections reflector = new Reflections("emu.grasscutter");
-
+  
 	static {
 		// Declare logback configuration.
 		System.setProperty("logback.configurationFile", "src/main/resources/logback.xml");
@@ -60,46 +59,50 @@ public final class Grasscutter {
 		// Load server configuration.
 		Grasscutter.loadConfig();
 
-		// Load Language
+		// Load translation files.
 		Grasscutter.loadLanguage();
 
 		// Check server structure.
 		Utils.startupCheck();
 	}
 
-    public static void main(String[] args) throws Exception {
-    	Crypto.loadKeys();
+  public static void main(String[] args) throws Exception {
+    	Crypto.loadKeys(); // Load keys from buffers.
 
+		// Parse arguments.
+		boolean exitEarly = false;
 		for (String arg : args) {
 			switch (arg.toLowerCase()) {
 				case "-handbook" -> {
-					Tools.createGmHandbook(); return;
+					Tools.createGmHandbook(); exitEarly = true;
 				}
 				case "-gachamap" -> {
-					Tools.createGachaMapping(); return;
+					Tools.createGachaMapping("./gacha-mapping.js"); exitEarly = true;
 				}
 			}
-		}
+		} 
+		
+		// Exit early if argument sets it.
+		if(exitEarly) System.exit(0);
 
 		// Initialize server.
-		Grasscutter.getLogger().info(language.Starting_Grasscutter);
+		Grasscutter.getLogger().info(translate("messages.status.starting"));
 
 		// Load all resources.
 		Grasscutter.updateDayOfWeek();
 		ResourceLoader.loadAll();
 		ScriptLoader.init();
 
-		// Database
+		// Initialize database.
 		DatabaseManager.initialize();
-
-		// Create plugin manager instance.
-		pluginManager = new PluginManager();
 
 		// Create server instances.
 		dispatchServer = new DispatchServer();
-		gameServer = new GameServer(new InetSocketAddress(getConfig().getGameServerOptions().Ip, getConfig().getGameServerOptions().Port));
+		gameServer = new GameServer();
 		// Create a server hook instance with both servers.
 		new ServerHook(gameServer, dispatchServer);
+		// Create plugin manager instance.
+		pluginManager = new PluginManager();
 
 		// Start servers.
 		if (getConfig().RunMode == ServerRunMode.HYBRID) {
@@ -110,9 +113,9 @@ public final class Grasscutter {
 		} else if (getConfig().RunMode == ServerRunMode.GAME_ONLY) {
 			gameServer.start();
 		} else {
-			getLogger().error(language.Invalid_server_run_mode + " " + getConfig().RunMode);
-			getLogger().error(language.Server_run_mode);
-			getLogger().error(language.Shutting_down);
+			getLogger().error(translate("messages.status.run_mode_error", getConfig().RunMode));
+			getLogger().error(translate("messages.status.run_mode_help"));
+			getLogger().error(translate("messages.status.shutdown"));
 			System.exit(1);
 		}
 
@@ -124,7 +127,7 @@ public final class Grasscutter {
 
 		// Open console.
 		startConsole();
-    }
+ }
 
 	/**
 	 * Server shutdown event.
@@ -145,41 +148,8 @@ public final class Grasscutter {
 	}
 
 	public static void loadLanguage() {
-		try (FileReader file = new FileReader(String.format("%s%s.json", getConfig().LANGUAGE_FOLDER, Grasscutter.config.LocaleLanguage))) {
-			language = gson.fromJson(file, Language.class);
-		} catch (Exception e) {
-			Grasscutter.language = new Language();
-			Grasscutter.cn_language = new CNLanguage();
-			Grasscutter.config.LocaleLanguage = Locale.getDefault();
-			saveConfig();
-
-			try {
-				File folder = new File("./languages");
-				if (!folder.exists() && !folder.isDirectory()) {
-					//noinspection ResultOfMethodCallIgnored
-					folder.mkdirs();
-				}
-			} catch (Exception ee) {
-				Grasscutter.getLogger().error("Unable to create language folder.");
-			}
-			try (FileWriter file = new FileWriter("./languages/" + Locale.US + ".json")) {
-				file.write(gson.toJson(language));
-			} catch (Exception ee) {
-				Grasscutter.getLogger().error("Unable to create language file.");
-			}
-			try (FileWriter file = new FileWriter("./languages/" + Locale.SIMPLIFIED_CHINESE + ".json")) {
-				file.write(gson.toJson(cn_language));
-			} catch (Exception ee) {
-				Grasscutter.getLogger().error("无法创建简体中文语言文件。");
-			}
-
-			// try again
-			try (FileReader file = new FileReader(String.format("%s%s.json", getConfig().LANGUAGE_FOLDER, Grasscutter.config.LocaleLanguage))) {
-				language = gson.fromJson(file, Language.class);
-			} catch (Exception ee) {
-				Grasscutter.getLogger().error("Unable to load " + Grasscutter.config.LocaleLanguage + ".json");
-			}
-		}
+		var locale = config.LocaleLanguage;
+		language = Language.getLanguage(locale.toLanguageTag());
 	}
 
 	public static void saveConfig() {
@@ -193,11 +163,11 @@ public final class Grasscutter {
 	public static void startConsole() {
 		// Console should not start in dispatch only mode.
 		if (getConfig().RunMode == ServerRunMode.DISPATCH_ONLY) {
-			getLogger().info(language.Dispatch_mode_not_support_command);
+			getLogger().info(translate("messages.dispatch.no_commands_error"));
 			return;
 		}
 
-		getLogger().info(language.Start_done);
+		getLogger().info(translate("messages.status.done"));
 		String input = null;
 		boolean isLastInterrupted = false;
 		while (true) {
@@ -221,9 +191,9 @@ public final class Grasscutter {
 
 			isLastInterrupted = false;
 			try {
-				CommandMap.getInstance().invoke(null, input);
+				CommandMap.getInstance().invoke(null, null, input);
 			} catch (Exception e) {
-				Grasscutter.getLogger().error(language.Command_error, e);
+				Grasscutter.getLogger().error(translate("messages.game.command_error"), e);
 			}
 		}
 	}
