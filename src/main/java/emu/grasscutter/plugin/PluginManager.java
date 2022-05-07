@@ -52,8 +52,8 @@ public final class PluginManager {
         plugins.forEach(plugin -> {
             try {
                 pluginNames[plugins.indexOf(plugin)] = plugin.toURI().toURL();
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
+            } catch (MalformedURLException exception) {
+                Grasscutter.getLogger().warn("Unable to load plugin.", exception);
             }
         });
 
@@ -79,7 +79,7 @@ public final class PluginManager {
                         JarEntry entry = entries.nextElement();
                         if(entry.isDirectory() || !entry.getName().endsWith(".class") || entry.getName().contains("module-info")) continue;
                         String className = entry.getName().replace(".class", "").replace("/", ".");
-                        classLoader.loadClass(className); //For all plugin we use the same class loader.
+                        classLoader.loadClass(className); // Use the same class loader for ALL plugins.
                     }
                     
                     Class<?> pluginClass = classLoader.loadClass(pluginConfig.mainClass);
