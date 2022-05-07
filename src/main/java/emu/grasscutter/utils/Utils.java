@@ -254,7 +254,7 @@ public final class Utils {
 	 */
 	public static String readFromInputStream(InputStream stream) {
 		StringBuilder stringBuilder = new StringBuilder();
-		try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream,"UTF-8"))) {
 			String line; while ((line = reader.readLine()) != null) {
 				stringBuilder.append(line);
 			} stream.close();
