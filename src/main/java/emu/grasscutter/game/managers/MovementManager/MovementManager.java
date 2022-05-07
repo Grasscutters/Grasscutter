@@ -159,7 +159,11 @@ public class MovementManager {
 
     public void resetTimer() {
         Grasscutter.getLogger().debug("MovementManager ticker stopped");
-        movementManagerTickTimer.cancel();
+
+        if(movementManagerTickTimer != null){
+          movementManagerTickTimer.cancel();
+        }         
+
         movementManagerTickTimer = null;
     }
 
