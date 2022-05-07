@@ -85,7 +85,7 @@
     "status": {
       "enabled": "Enabled",
       "disabled": "Disabled",
-      "help": "Help", 
+      "help": "Help",
       "success": "Success"
     },
     "account": {
@@ -115,7 +115,7 @@
       "furniture": "Cleared furniture for %s.",
       "displays": "Cleared displays for %s.",
       "virtuals": "Cleared virtuals for %s.",
-      "everything": "Cleared everything for %s."
+      "done": "Cleared %s item with %s limit"
     },
     "coop": {
       "usage": "Usage: coop <playerId> <target playerId>",
@@ -151,7 +151,7 @@
       "refinement_must_between_1_and_5": "Refinement must be between 1 and 5.",
       "given": "Given %s of %s to %s.",
       "given_with_level_and_refinement": "Given %s with level %s, refinement %s %s times to %s",
-      "given_level": "Given %s with level %s %s times to %s"
+      "given_level": "Given %s with level %s times to %s"
     },
     "godmode": {
       "success": "Godmode is now %s for %s."
@@ -184,7 +184,7 @@
       "account_error": "The account cannot be found."
     },
     "position": {
-      "success": "Coordinates: %.3f, %.3f, %.3f\nScene id: %d"
+      "success": "Coordinates: %s, %s, %s\nScene id: %s"
     },
     "reload": {
       "reload_start": "Reloading config.",
