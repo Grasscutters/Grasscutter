@@ -37,6 +37,7 @@ public class MovementManager {
         SWIM_DASH_START(-200),
         SWIM_DASH(-200),
         SWIMMING(-80),
+        FIGHT(0),
 
         // restore
         STANDBY(500),
@@ -75,8 +76,9 @@ public class MovementManager {
     private Timer movementManagerTickTimer;
     private GameSession cachedSession = null;
     private GameEntity cachedEntity = null;
-
     private int staminaRecoverDelay = 0;
+    private int skillCaster = 0;
+    private int skillCasting = 0;
 
     public MovementManager(Player player) {
         previousCoordinates.add(new Position(0,0,0));
@@ -125,6 +127,12 @@ public class MovementManager {
             MotionState.MOTION_WALK,
             MotionState.MOTION_DANGER_WALK
         )));
+
+        MotionStatesCategorized.put("FIGHT", new HashSet<>(Arrays.asList(
+                MotionState.MOTION_FIGHT
+        )));
+
+
     }
 
     public void handle(GameSession session, EntityMoveInfoOuterClass.EntityMoveInfo moveInfo, GameEntity entity) {
@@ -145,7 +153,7 @@ public class MovementManager {
             currentCoordinates = newPos;
         }
         currentState = motionInfo.getState();
-        Grasscutter.getLogger().debug("" + currentState);
+        Grasscutter.getLogger().debug("" + currentState + "\t" + (moveInfo.getIsReliable() ? "reliable" : ""));
         handleFallOnGround(motionInfo);
     }
 
@@ -179,8 +187,6 @@ public class MovementManager {
         return player.getProperty(PlayerProperty.PROP_MAX_STAMINA);
     }
 
-
-
     // Returns new stamina
     public int updateStamina(GameSession session, int amount) {
         int currentStamina = session.getPlayer().getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
@@ -196,6 +202,7 @@ public class MovementManager {
             newStamina = playerMaxStamina;
         }
         session.getPlayer().setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, newStamina);
+        session.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
         return newStamina;
     }
 
@@ -294,6 +301,8 @@ public class MovementManager {
                         consumption = getFlyConsumption();
                     } else if (MotionStatesCategorized.get("STANDBY").contains(currentState)) {
                         consumption = getStandConsumption();
+                    } else if (MotionStatesCategorized.get("FIGHT").contains(currentState)) {
+                        consumption = getFightConsumption();
                     }
 
                     // delay 2 seconds before start recovering - as official server does.
@@ -307,9 +316,8 @@ public class MovementManager {
                                 consumption = new Consumption(ConsumptionType.None);
                             }
                         }
-                        Grasscutter.getLogger().debug(getCurrentStamina() + "/" + getMaximumStamina() + "\t" + currentState + "\t" + "isMoving: " + isPlayerMoving() + "\t(" + consumption.consumptionType + "," + consumption.amount + ")");
+                        // Grasscutter.getLogger().debug(getCurrentStamina() + "/" + getMaximumStamina() + "\t" + currentState + "\t" + "isMoving: " + isPlayerMoving() + "\t(" + consumption.consumptionType + "," + consumption.amount + ")");
                         updateStamina(cachedSession, consumption.amount);
-                        cachedSession.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
                     }
 
                     // tick triggered
@@ -341,8 +349,6 @@ public class MovementManager {
         }
         return consumption;
     }
-
-    // TODO: Kamisato Ayaka & Mona
 
     private Consumption getSwimConsumptions() {
         Consumption consumption = new Consumption(ConsumptionType.None);
@@ -411,6 +417,26 @@ public class MovementManager {
             consumption = new Consumption(ConsumptionType.STANDBY_MOVE);
         }
         return consumption;
+    }
+
+    private Consumption getFightConsumption() {
+        Consumption consumption = new Consumption(ConsumptionType.None);
+        HashMap<Integer, Integer> fightingCost = new HashMap<>() {{
+            put(10013, -1000); // Kamisato Ayaka
+            put(10413, -1000); // Mona
+        }};
+        if (fightingCost.containsKey(skillCasting)) {
+            consumption = new Consumption(ConsumptionType.FIGHT, fightingCost.get(skillCasting));
+            // only handle once, so reset.
+            skillCasting = 0;
+            skillCaster = 0;
+        }
+        return consumption;
+    }
+
+    public void notifySkill(int caster, int skillId) {
+        skillCaster = caster;
+        skillCasting = skillId;
     }
 }
 
