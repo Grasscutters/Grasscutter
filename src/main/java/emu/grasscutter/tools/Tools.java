@@ -180,6 +180,7 @@ public final class Tools {
 			writer.println(",\"200\": \"Standard\", \"301\": \"Avatar Event\", \"302\": \"Weapon event\"");
 			writer.println("}\n}");
 		}
+		
 		Grasscutter.getLogger().info("Mappings generated!");
 	}
 }

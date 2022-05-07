@@ -67,4 +67,4 @@ mongod.exe
 /*.sh
 language/
 languages/
-gacha_mappings.js
+gacha-mapping.js
