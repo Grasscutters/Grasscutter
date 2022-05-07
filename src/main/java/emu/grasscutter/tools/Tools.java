@@ -80,7 +80,7 @@ public final class Tools {
 		if (groupedLangCount > 0) {
 			System.out.println(groupedLangList);
 		}
-		System.out.print("\nYour choice:[EN]");
+		System.out.print("\nYour choice:[EN] ");
 
 		input = new BufferedReader(new InputStreamReader(System.in)).readLine();
 		if (availableLangList.contains(input.toLowerCase())) {
