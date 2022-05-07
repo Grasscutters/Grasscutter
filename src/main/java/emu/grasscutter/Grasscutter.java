@@ -70,12 +70,20 @@ public final class Grasscutter {
     	Crypto.loadKeys(); // Load keys from buffers.
 
 		// Parse arguments.
+		boolean exitEarly = false;
 		for (String arg : args) {
 			switch (arg.toLowerCase()) {
-				case "-handbook" -> Tools.createGmHandbook();
-				case "-gachamap" -> Tools.createGachaMapping("./gacha-mapping.js");
+				case "-handbook" -> {
+					Tools.createGmHandbook(); exitEarly = true;
+				}
+				case "-gachamap" -> {
+					Tools.createGachaMapping("./gacha-mapping.js"); exitEarly = true;
+				}
 			}
-		}
+		} 
+		
+		// Exit early if argument sets it.
+		if(exitEarly) System.exit(0);
 
 		// Initialize server.
 		Grasscutter.getLogger().info(translate("messages.status.starting"));
@@ -88,14 +96,13 @@ public final class Grasscutter {
 		// Database
 		DatabaseManager.initialize();
 
-		// Create plugin manager instance.
-		pluginManager = new PluginManager();
-
 		// Create server instances.
 		dispatchServer = new DispatchServer();
 		gameServer = new GameServer();
 		// Create a server hook instance with both servers.
 		new ServerHook(gameServer, dispatchServer);
+		// Create plugin manager instance.
+		pluginManager = new PluginManager();
 
 		// Start servers.
 		if (getConfig().RunMode == ServerRunMode.HYBRID) {
