@@ -1222,8 +1222,11 @@ public class Player {
 	}
 
 	public void onLogout() {
+		// stop stamina calculation
+		getMovementManager().resetTimer();
+
 		// force to leave the dungeon
-		if(getScene().getSceneType() == SceneType.SCENE_DUNGEON){
+		if (getScene().getSceneType() == SceneType.SCENE_DUNGEON) {
 			this.getServer().getDungeonManager().exitDungeon(this);
 		}
 		// Leave world
