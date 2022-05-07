@@ -1,6 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
@@ -18,13 +19,13 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
 		
 		FriendBrief serverFriend = FriendBrief.newBuilder()
 				.setUid(GameConstants.SERVER_CONSOLE_UID)
-				.setNickname(GameConstants.SERVER_AVATAR_NAME)
-				.setLevel(1)
-				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(GameConstants.SERVER_AVATAR_ID))
-				.setWorldLevel(0)
-				.setSignature("")
+				.setNickname(Grasscutter.getConfig().getGameServerOptions().ServerNickname)
+				.setLevel(Grasscutter.getConfig().getGameServerOptions().ServerLevel)
+				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(Grasscutter.getConfig().getGameServerOptions().ServerAvatarId))
+				.setWorldLevel(Grasscutter.getConfig().getGameServerOptions().ServerWorldLevel)
+				.setSignature(Grasscutter.getConfig().getGameServerOptions().ServerSignature)
 				.setLastActiveTime((int) (System.currentTimeMillis() / 1000f))
-				.setNameCardId(210001)
+				.setNameCardId(Grasscutter.getConfig().getGameServerOptions().ServerNameCardId)
 				.setOnlineState(FriendOnlineState.FRIEND_ONLINE)
 				.setParam(1)
 				.setIsGameSource(true)

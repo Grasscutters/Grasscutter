@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.google.gson.Gson;
 import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
 
@@ -120,14 +121,15 @@ public class ResourceLoader {
 	
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	protected static void loadFromResource(Class<?> c, String fileName, Int2ObjectMap map) throws Exception {
-		try (FileReader fileReader = new FileReader(Grasscutter.getConfig().RESOURCE_FOLDER + "ExcelBinOutput/" + fileName)) {
-			List list = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, c).getType());
+		FileReader fileReader = new FileReader(Grasscutter.getConfig().RESOURCE_FOLDER + "ExcelBinOutput/" + fileName);
+		Gson gson = Grasscutter.getGsonFactory();
+		List list = gson.fromJson(fileReader, List.class);
 
-			for (Object o : list) {
-				GameResource res = (GameResource) o;
-				res.onLoad();
-				map.put(res.getId(), res);
-			}
+		for (Object o : list) {
+			Map<String, Object> tempMap = Utils.switchPropertiesUpperLowerCase((Map<String, Object>) o, c);
+			GameResource res = gson.fromJson(gson.toJson(tempMap), TypeToken.get(c).getType());
+			res.onLoad();
+			map.put(res.getId(), res);
 		}
 	}
 

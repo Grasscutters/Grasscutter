@@ -166,7 +166,7 @@ public class SceneScriptManager {
 			List<SceneBlock> blocks = ScriptLoader.getSerializer().toList(SceneBlock.class, bindings.get("block_rects"));
 			
 			for (int i = 0; i < blocks.size(); i++) {
-				SceneBlock block = blocks.get(0);
+				SceneBlock block = blocks.get(i);
 				block.id = blockIds.get(i);
 				
 				loadBlockFromScript(block);

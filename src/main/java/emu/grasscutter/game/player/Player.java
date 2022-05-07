@@ -14,6 +14,7 @@ import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.game.friends.FriendsList;
 import emu.grasscutter.game.friends.PlayerProfile;
 import emu.grasscutter.game.gacha.PlayerGachaInfo;
@@ -51,6 +52,7 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.DateHelper;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.MessageHandler;
+import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -102,6 +104,7 @@ public class Player {
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
 	private ArrayList<ShopLimit> shopLimit;
+	private Map<Long, ExpeditionInfo> expeditionInfo;
 
 	private int sceneId;
 	private int regionId;
@@ -141,6 +144,7 @@ public class Player {
 		this.avatars = new AvatarStorage(this);
 		this.friendsList = new FriendsList(this);
 		this.mailHandler = new MailHandler(this);
+		this.towerManager = new TowerManager(this);
 		this.pos = new Position();
 		this.rotation = new Position();
 		this.properties = new HashMap<>();
@@ -171,6 +175,7 @@ public class Player {
 		this.moonCardGetTimes = new HashSet<>();
 
 		this.shopLimit = new ArrayList<>();
+		this.expeditionInfo = new HashMap<>();
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager();
 		this.movementManager = new MovementManager(this);
@@ -186,7 +191,6 @@ public class Player {
 		this.nickname = "Traveler";
 		this.signature = "";
 		this.teamManager = new TeamManager(this);
-		this.towerManager = new TowerManager(this);
 		this.birthday = new PlayerBirthday();
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
@@ -674,6 +678,28 @@ public class Player {
 		session.send(new PacketCardProductRewardNotify(getMoonCardRemainDays()));
 	}
 
+	public Map<Long, ExpeditionInfo> getExpeditionInfo() {
+		return expeditionInfo;
+	}
+
+	public void addExpeditionInfo(long avaterGuid, int expId, int hourTime, int startTime){
+		ExpeditionInfo exp = new ExpeditionInfo();
+		exp.setExpId(expId);
+		exp.setHourTime(hourTime);
+		exp.setState(1);
+		exp.setStartTime(startTime);
+		expeditionInfo.put(avaterGuid, exp);
+	}
+
+	public void removeExpeditionInfo(long avaterGuid){
+		expeditionInfo.remove(avaterGuid);
+	}
+
+	public ExpeditionInfo getExpeditionInfo(long avaterGuid){
+		return expeditionInfo.get(avaterGuid);
+	}
+
+
 	public List<ShopLimit> getShopLimit() {
 		return shopLimit;
 	}
@@ -1030,6 +1056,22 @@ public class Player {
 				this.resetSendPlayerLocTime();
 			}
 		}
+		// Expedition
+		var timeNow = Utils.getCurrentSeconds();
+		var needNotify = false;
+		for (Long key : expeditionInfo.keySet()) {
+			ExpeditionInfo e = expeditionInfo.get(key);
+			if(e.getState() == 1){
+				if(timeNow - e.getStartTime() >= e.getHourTime() * 60 * 60){
+					e.setState(2);
+					needNotify = true;
+				}
+			}
+		}
+		if(needNotify){
+			this.save();
+			this.sendPacket(new PacketAvatarExpeditionDataNotify(this));
+		}
 	}
 
 
@@ -1056,9 +1098,6 @@ public class Player {
 		}
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
-		}
-		if (this.getTowerManager() == null) {
-			this.towerManager = new TowerManager(this);
 		}
 
 		// Check if player object exists in server
