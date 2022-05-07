@@ -127,7 +127,7 @@
       "not_found_error": "此副本不存在。",
       "in_dungeon_error": "你已經在祕境中了。"
     },
-    "giveAll": {
+    "chAll": {
       "usage": "用法：giveall [player] [amount]",
       "started": "正在賦予全部物品...",
       "success": "已賦予全部物品。",
@@ -140,7 +140,7 @@
     },
     "giveChar": {
       "usage": "用法：givechar <player> <itemId|itemName> [amount]",
-      "given": "Given %s with level %s to %s.",
+      "given": "已將 %s 等級 %s 給予 %s。",
       "invalid_avatar_id": "無效的角色ID。",
       "invalid_avatar_level": "無效的角色等級。.",
       "invalid_avatar_or_player_id": "無效的角色ID/玩家ID。"
