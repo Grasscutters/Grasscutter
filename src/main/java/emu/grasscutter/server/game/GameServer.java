@@ -29,6 +29,9 @@ import java.net.InetSocketAddress;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import static emu.grasscutter.utils.Language.translate;
 
@@ -79,19 +82,6 @@ public final class GameServer extends KcpServer {
 		this.dropManager = new DropManager(this);
 		this.expeditionManager = new ExpeditionManager(this);
 		this.combineManger = new CombineManger(this);
-
-		// Schedule game loop.
-		Timer gameLoop = new Timer();
-		gameLoop.scheduleAtFixedRate(new TimerTask() {
-			@Override
-			public void run() {
-				try {
-					onTick();
-				} catch (Exception e) {
-					Grasscutter.getLogger().error(translate("messages.game.game_update_error"), e);
-				}
-			}
-		}, new Date(), 1000L);
 		
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
@@ -227,6 +217,24 @@ public final class GameServer extends KcpServer {
 	public void deregisterWorld(World world) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public synchronized void start() {
+		// Schedule game loop.
+		Timer gameLoop = new Timer();
+		gameLoop.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				try {
+					onTick();
+				} catch (Exception e) {
+					Grasscutter.getLogger().error(translate("messages.game.game_update_error"), e);
+				}
+			}
+		}, new Date(), 1000L);
+
+		super.start();
 	}
 
 	@Override

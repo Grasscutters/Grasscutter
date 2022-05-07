@@ -93,7 +93,6 @@ public final class Tools {
 		}
 		
 		Grasscutter.getLogger().info("GM Handbook generated!");
-		System.exit(0);
 	}
 
 	@SuppressWarnings("deprecation")
@@ -183,6 +182,5 @@ public final class Tools {
 		}
 		
 		Grasscutter.getLogger().info("Mappings generated!");
-		System.exit(0);
 	}
 }
