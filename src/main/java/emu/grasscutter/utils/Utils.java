@@ -1,6 +1,7 @@
 package emu.grasscutter.utils;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.time.*;
@@ -254,7 +255,7 @@ public final class Utils {
 	 */
 	public static String readFromInputStream(InputStream stream) {
 		StringBuilder stringBuilder = new StringBuilder();
-		try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream,"UTF-8"))) {
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
 			String line; while ((line = reader.readLine()) != null) {
 				stringBuilder.append(line);
 			} stream.close();
