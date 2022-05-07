@@ -2,21 +2,27 @@ package emu.grasscutter.command.commands;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.utils.Position;
 
 import java.util.List;
+
+import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "position", usage = "position", aliases = {"pos"},
         description = "Get coordinates.")
 public final class PositionCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
             return;
         }
 
-        sender.dropMessage(String.format("Coord: %.3f, %.3f, %.3f", sender.getPos().getX(), sender.getPos().getY(), sender.getPos().getZ()));
+        Position pos = targetPlayer.getPos();
+        CommandHandler.sendMessage(sender, translate("commands.position.success",
+                Float.toString(pos.getX()), Float.toString(pos.getY()), Float.toString(pos.getZ()),
+                Integer.toString(targetPlayer.getSceneId())));
     }
 }

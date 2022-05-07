@@ -30,6 +30,9 @@ hs_err_pid*
 build/
 out/
 
+# Ignore Gradle properties
+gradle.properties
+
 # Eclipse
 .project
 .classpath
@@ -45,14 +48,24 @@ tmp/
 .loadpath
 .recommenders
 
+# VSCode
+.vscode
+
 # Grasscutter
-resources/*
+resources/
+logs/
+plugins/
 data/AbilityEmbryos.json
 data/OpenConfig.json
-proto/auto/
-proto/protoc.exe
 GM Handbook.txt
 config.json
 mitmdump.exe
-grasscutter.jar
+*.jar
+!lib/*.jar
 mongod.exe
+/src/generated/
+/*.sh
+language/
+languages/
+gacha-mapping.js
+data/gacha_mappings.js

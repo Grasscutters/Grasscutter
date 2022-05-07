@@ -1,16 +1,17 @@
 package emu.grasscutter.data.def;
 
-import emu.grasscutter.data.GenshinData;
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 import emu.grasscutter.game.props.SceneType;
 
 @ResourceType(name = "SceneExcelConfigData.json")
-public class SceneData extends GenshinResource {
+public class SceneData extends GameResource {
 	private int Id;
-	private SceneType SceneType;
+	private SceneType Type;
 	private String ScriptData;
+
 	    
 	@Override
 	public int getId() {
@@ -18,7 +19,7 @@ public class SceneData extends GenshinResource {
 	}
 
 	public SceneType getSceneType() {
-		return SceneType;
+		return Type;
 	}
 
 	public String getScriptData() {
@@ -27,6 +28,6 @@ public class SceneData extends GenshinResource {
 
 	@Override
 	public void onLoad() {
-		
+
 	}
 }

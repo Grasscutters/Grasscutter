@@ -34,7 +34,7 @@ public final class Crypto {
 	public static void extractSecretKeyBuffer(byte[] data) {
 		try {
 			GetPlayerTokenRsp p = GetPlayerTokenRsp.parseFrom(data);
-			FileUtils.write(Grasscutter.getConfig().KEY_FOLDER + "secretKeyBuffer.bin", p.getSecretKeyBuffer().toByteArray());
+			FileUtils.write(Grasscutter.getConfig().KEY_FOLDER + "secretKeyBuffer.bin", p.getSecretKeyBytes().toByteArray());
 			Grasscutter.getLogger().info("Secret Key: " + p.getSecretKey());
 		} catch (Exception e) {
 			Grasscutter.getLogger().error("Crypto error.", e);

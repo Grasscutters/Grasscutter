@@ -1,10 +1,10 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp;
 
-public class PacketTakeoffEquipRsp extends GenshinPacket {
+public class PacketTakeoffEquipRsp extends BasePacket {
 	
 	public PacketTakeoffEquipRsp(long avatarGuid, int slot) {
 		super(PacketOpcodes.TakeoffEquipRsp);

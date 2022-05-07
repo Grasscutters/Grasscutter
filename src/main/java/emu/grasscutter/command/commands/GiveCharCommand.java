@@ -3,84 +3,73 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarData;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.avatar.GenshinAvatar;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "givechar", usage = "givechar <playerId> <avatarId> [level]",
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "givechar", usage = "givechar <avatarId> [level]",
         description = "Gives the player a specified character", aliases = {"givec"}, permission = "player.givechar")
 public final class GiveCharCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
-        int target, avatarId, level = 1, ascension;
-
-        if (sender == null && args.size() < 2) {
-            CommandHandler.sendMessage(null, "Usage: givechar <player> <itemId|itemName> [amount]");
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
             return;
         }
+
+        int avatarId;
+        int level = 1;
 
         switch (args.size()) {
-            default:
-                CommandHandler.sendMessage(sender, "Usage: givechar <player> <avatarId> [level]");
-                return;
             case 2:
                 try {
-                    target = Integer.parseInt(args.get(0));
-                    if (Grasscutter.getGameServer().getPlayerByUid(target) == null && sender != null) {
-                        target = sender.getUid();
-                        level = Integer.parseInt(args.get(1));
-                        avatarId = Integer.parseInt(args.get(0));
-                    } else {
-                        avatarId = Integer.parseInt(args.get(1));
-                    }
+                    level = Integer.parseInt(args.get(1));
                 } catch (NumberFormatException ignored) {
                     // TODO: Parse from avatar name using GM Handbook.
-                    CommandHandler.sendMessage(sender, "Invalid avatar or player ID.");
+                    CommandHandler.sendMessage(sender, translate("commands.execution.invalid.avatarLevel"));
                     return;
-                }
-                break;
-            case 3:
+                }  // Cheeky fall-through to parse first argument too
+            case 1:
                 try {
-                    target = Integer.parseInt(args.get(0));
-                    if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
-                        CommandHandler.sendMessage(sender, "Invalid player ID.");
-                        return;
-                    }
-
-                    avatarId = Integer.parseInt(args.get(1));
-                    level = Integer.parseInt(args.get(2));
+                    avatarId = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
                     // TODO: Parse from avatar name using GM Handbook.
-                    CommandHandler.sendMessage(sender, "Invalid avatar or player ID.");
+                    CommandHandler.sendMessage(sender, translate("commands.execution.invalid.avatarId"));
                     return;
                 }
                 break;
+            default:
+                CommandHandler.sendMessage(sender, translate("commands.giveChar.usage"));
+                return;
         }
 
-        GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
+        AvatarData avatarData = GameData.getAvatarDataMap().get(avatarId);
+        if (avatarData == null) {
+            CommandHandler.sendMessage(sender, translate("commands.execution.invalid.avatarId"));
             return;
         }
 
-        AvatarData avatarData = GenshinData.getAvatarDataMap().get(avatarId);
-        if (avatarData == null) {
-            CommandHandler.sendMessage(sender, "Invalid avatar id.");
+        // Check level.
+        if (level > 90) {
+            CommandHandler.sendMessage(sender, translate("commands.execution.invalid.avatarLevel"));
             return;
         }
 
         // Calculate ascension level.
+        int ascension;
         if (level <= 40) {
             ascension = (int) Math.ceil(level / 20f);
         } else {
             ascension = (int) Math.ceil(level / 10f) - 3;
         }
 
-        GenshinAvatar avatar = new GenshinAvatar(avatarId);
+        Avatar avatar = new Avatar(avatarId);
         avatar.setLevel(level);
         avatar.setPromoteLevel(ascension);
 
@@ -88,6 +77,6 @@ public final class GiveCharCommand implements CommandHandler {
         avatar.recalcStats();
 
         targetPlayer.addAvatar(avatar);
-        CommandHandler.sendMessage(sender, String.format("Given %s to %s.", avatarId, target));
+        CommandHandler.sendMessage(sender, translate("commands.giveChar.given", Integer.toString(avatarId), Integer.toString(level), Integer.toString(targetPlayer.getUid())));
     }
 }

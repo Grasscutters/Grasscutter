@@ -1,13 +1,13 @@
 package emu.grasscutter.data.def;
 
 import java.util.ArrayList;
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.common.ItemParamData;
 
 @ResourceType(name = "AvatarPromoteExcelConfigData.json")
-public class AvatarPromoteData extends GenshinResource {
+public class AvatarPromoteData extends GameResource {
 	
 	private int AvatarPromoteId;
 	private int PromoteLevel;

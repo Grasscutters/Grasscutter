@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.CurveInfo;
 
 @ResourceType(name = "MonsterCurveExcelConfigData.json")
-public class MonsterCurveData extends GenshinResource {
+public class MonsterCurveData extends GameResource {
 	private int Level;
     private CurveInfo[] CurveInfos;
     

@@ -1,19 +1,28 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.def.TowerFloorData;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp;
 import emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord;
 import emu.grasscutter.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord;
 
-public class PacketTowerAllDataRsp extends GenshinPacket {
+import java.util.stream.Collectors;
+
+public class PacketTowerAllDataRsp extends BasePacket {
 	
 	public PacketTowerAllDataRsp() {
 		super(PacketOpcodes.TowerAllDataRsp);
-		
+
+		var list = GameData.getTowerFloorDataMap().values().stream()
+				.map(TowerFloorData::getFloorId)
+				.map(id -> TowerFloorRecord.newBuilder().setFloorId(id).build())
+				.collect(Collectors.toList());
+
 		TowerAllDataRsp proto = TowerAllDataRsp.newBuilder()
 				.setTowerScheduleId(29)
-				.addTowerFloorRecordList(TowerFloorRecord.newBuilder().setFloorId(1001))
+				.addAllTowerFloorRecordList(list)
 				.setCurLevelRecord(TowerCurLevelRecord.newBuilder().setIsEmpty(true))
 				.setNextScheduleChangeTime(Integer.MAX_VALUE)
 				.putFloorOpenTimeMap(1024, 1630486800)

@@ -3,12 +3,12 @@ package emu.grasscutter.game.avatar;
 import java.util.Iterator;
 import java.util.List;
 
-import emu.grasscutter.data.GenshinData;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.GenshinPlayer;
 import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.inventory.GenshinItem;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketAvatarChangeCostumeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarFlycloakChangeNotify;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -16,22 +16,22 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 
-public class AvatarStorage implements Iterable<GenshinAvatar> {
-	private final GenshinPlayer player;
-	private final Int2ObjectMap<GenshinAvatar> avatars;
-	private final Long2ObjectMap<GenshinAvatar> avatarsGuid;
+public class AvatarStorage implements Iterable<Avatar> {
+	private final Player player;
+	private final Int2ObjectMap<Avatar> avatars;
+	private final Long2ObjectMap<Avatar> avatarsGuid;
 	
-	public AvatarStorage(GenshinPlayer player) {
+	public AvatarStorage(Player player) {
 		this.player = player;
 		this.avatars = new Int2ObjectOpenHashMap<>();
 		this.avatarsGuid = new Long2ObjectOpenHashMap<>();
 	}
 	
-	public GenshinPlayer getPlayer() {
+	public Player getPlayer() {
 		return player;
 	}
 
-	public Int2ObjectMap<GenshinAvatar> getAvatars() {
+	public Int2ObjectMap<Avatar> getAvatars() {
 		return avatars;
 	}
 	
@@ -39,11 +39,11 @@ public class AvatarStorage implements Iterable<GenshinAvatar> {
 		return this.avatars.size();
 	}
 	
-	public GenshinAvatar getAvatarById(int id) {
+	public Avatar getAvatarById(int id) {
 		return getAvatars().get(id);
 	}
 	
-	public GenshinAvatar getAvatarByGuid(long id) {
+	public Avatar getAvatarByGuid(long id) {
 		return avatarsGuid.get(id);
 	}
 	
@@ -51,7 +51,7 @@ public class AvatarStorage implements Iterable<GenshinAvatar> {
 		return getAvatars().containsKey(id);
 	}
 	
-	public boolean addAvatar(GenshinAvatar avatar) {
+	public boolean addAvatar(Avatar avatar) {
 		if (avatar.getAvatarData() == null || this.hasAvatar(avatar.getAvatarId())) {
 			return false;
 		}
@@ -68,14 +68,14 @@ public class AvatarStorage implements Iterable<GenshinAvatar> {
 		return true;
 	}
 	
-	public void addStartingWeapon(GenshinAvatar avatar) {
+	public void addStartingWeapon(Avatar avatar) {
 		// Make sure avatar owner is this player
 		if (avatar.getPlayer() != this.getPlayer()) {
 			return;
 		}
 		
 		// Create weapon
-		GenshinItem weapon = new GenshinItem(avatar.getAvatarData().getInitialWeapon());
+		GameItem weapon = new GameItem(avatar.getAvatarData().getInitialWeapon());
 		
 		if (weapon.getItemData() != null) {
 			this.getPlayer().getInventory().addItem(weapon);
@@ -85,7 +85,7 @@ public class AvatarStorage implements Iterable<GenshinAvatar> {
 	}
 	
 	public boolean wearFlycloak(long avatarGuid, int flycloakId) {
-		GenshinAvatar avatar = this.getAvatarByGuid(avatarGuid);
+		Avatar avatar = this.getAvatarByGuid(avatarGuid);
 
 		if (avatar == null || !getPlayer().getFlyCloakList().contains(flycloakId)) {
 			return false;
@@ -101,7 +101,7 @@ public class AvatarStorage implements Iterable<GenshinAvatar> {
 	}
 	
 	public boolean changeCostume(long avatarGuid, int costumeId) {
-		GenshinAvatar avatar = this.getAvatarByGuid(avatarGuid);
+		Avatar avatar = this.getAvatarByGuid(avatarGuid);
 
 		if (avatar == null) {
 			return false;
@@ -130,15 +130,15 @@ public class AvatarStorage implements Iterable<GenshinAvatar> {
 	}
 	
 	public void loadFromDatabase() {
-		List<GenshinAvatar> avatars = DatabaseHelper.getAvatars(getPlayer());
+		List<Avatar> avatars = DatabaseHelper.getAvatars(getPlayer());
 		
-		for (GenshinAvatar avatar : avatars) {
+		for (Avatar avatar : avatars) {
 			// Should never happen
 			if (avatar.getObjectId() == null) {
 				continue;
 			}
 			
-			AvatarData avatarData = GenshinData.getAvatarDataMap().get(avatar.getAvatarId());
+			AvatarData avatarData = GameData.getAvatarDataMap().get(avatar.getAvatarId());
 			if (avatarData == null) {
 				continue;
 			}
@@ -148,7 +148,7 @@ public class AvatarStorage implements Iterable<GenshinAvatar> {
 			avatar.setOwner(getPlayer());
 			
 			// Force recalc of const boosted skills
-			avatar.recalcProudSkillBonusMap();
+			avatar.recalcConstellations();
 			
 			// Add to avatar storage
 			this.avatars.put(avatar.getAvatarId(), avatar);
@@ -157,7 +157,7 @@ public class AvatarStorage implements Iterable<GenshinAvatar> {
 	}
 	
 	public void postLoad() {
-		for (GenshinAvatar avatar : this) {
+		for (Avatar avatar : this) {
 			// Weapon check
 			if (avatar.getWeapon() == null) {
 				this.addStartingWeapon(avatar);
@@ -168,7 +168,7 @@ public class AvatarStorage implements Iterable<GenshinAvatar> {
 	}
 
 	@Override
-	public Iterator<GenshinAvatar> iterator() {
+	public Iterator<Avatar> iterator() {
 		return getAvatars().values().iterator();
 	}
 }

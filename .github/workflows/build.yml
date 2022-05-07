@@ -1,11 +1,22 @@
 name: "Build"
 on:
+  workflow_dispatch: ~
   push:
+    paths:
+      - "**.java"
     branches:
       - "stable"
+      - "development"
+  pull_request:
+    paths:
+      - "**.java"
+    types:
+      - opened
+      - synchronize
+      - reopened
 jobs:
   Build-Server-Jar:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -13,12 +24,11 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: temurin
-          java-version: '8'
+          java-version: '17'
       - name: Run Gradle
-        run: .\gradlew.bat && .\gradlew jar
+        run: ./gradlew && ./gradlew jar
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
           name: Grasscutter
-          path: grasscutter.jar
-      
+          path: grasscutter-*-dev.jar

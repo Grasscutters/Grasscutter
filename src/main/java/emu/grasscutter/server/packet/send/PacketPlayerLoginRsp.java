@@ -2,7 +2,9 @@ package emu.grasscutter.server.packet.send;
 
 import com.google.protobuf.ByteString;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.Grasscutter.ServerDebugMode;
+import emu.grasscutter.Grasscutter.ServerRunMode;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerLoginRspOuterClass.PlayerLoginRsp;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass;
@@ -14,7 +16,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.Base64;
 
-public class PacketPlayerLoginRsp extends GenshinPacket {
+public class PacketPlayerLoginRsp extends BasePacket {
 
 	private static QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp regionCache;
 
@@ -25,7 +27,7 @@ public class PacketPlayerLoginRsp extends GenshinPacket {
 
 		RegionInfo info;
 
-		if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("GAME_ONLY")) {
+		if (Grasscutter.getConfig().RunMode == ServerRunMode.GAME_ONLY) {
 			if (regionCache == null) {
 				try {
 					File file = new File(Grasscutter.getConfig().DATA_FOLDER + "query_cur_region.txt");
@@ -40,8 +42,8 @@ public class PacketPlayerLoginRsp extends GenshinPacket {
 					QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp regionQuery = QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp.parseFrom(decodedCurRegion);
 
 					RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
-							.setIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getGameServerOptions().Ip : Grasscutter.getConfig().getGameServerOptions().PublicIp))
-							.setPort(Grasscutter.getConfig().getGameServerOptions().Port)
+							.setGateserverIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getGameServerOptions().Ip : Grasscutter.getConfig().getGameServerOptions().PublicIp))
+							.setGateserverPort(Grasscutter.getConfig().getGameServerOptions().PublicPort != 0 ? Grasscutter.getConfig().getGameServerOptions().PublicPort : Grasscutter.getConfig().getGameServerOptions().Port)
 							.setSecretKey(ByteString.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
 							.build();
 
@@ -64,7 +66,7 @@ public class PacketPlayerLoginRsp extends GenshinPacket {
 				.setClientSilenceDataVersion(info.getClientSilenceDataVersion())
 				.setClientMd5(info.getClientDataMd5())
 				.setClientSilenceMd5(info.getClientSilenceDataMd5())
-				.setResVersionConfig(info.getConfig())
+				.setResVersionConfig(info.getResVersionConfig())
 				.setClientVersionSuffix(info.getClientVersionSuffix())
 				.setClientSilenceVersionSuffix(info.getClientSilenceVersionSuffix())
 				.setIsScOpen(false)

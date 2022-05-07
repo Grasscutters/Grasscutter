@@ -1,13 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.avatar.GenshinAvatar;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarFightPropNotifyOuterClass.AvatarFightPropNotify;
 
-public class PacketAvatarFightPropNotify extends GenshinPacket {
+public class PacketAvatarFightPropNotify extends BasePacket {
 	
-	public PacketAvatarFightPropNotify(GenshinAvatar avatar) {
+	public PacketAvatarFightPropNotify(Avatar avatar) {
 		super(PacketOpcodes.AvatarFightPropNotify);
 		
 		AvatarFightPropNotify proto = AvatarFightPropNotify.newBuilder()

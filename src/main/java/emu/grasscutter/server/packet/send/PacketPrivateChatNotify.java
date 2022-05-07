@@ -1,11 +1,11 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo;
 import emu.grasscutter.net.proto.PrivateChatNotifyOuterClass.PrivateChatNotify;
 
-public class PacketPrivateChatNotify extends GenshinPacket {
+public class PacketPrivateChatNotify extends BasePacket {
 	public PacketPrivateChatNotify(int senderId, int recvId, String message) {
 		super(PacketOpcodes.PrivateChatNotify);
 		

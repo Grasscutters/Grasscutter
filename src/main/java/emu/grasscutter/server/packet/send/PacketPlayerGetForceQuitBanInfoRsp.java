@@ -1,10 +1,10 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerGetForceQuitBanInfoRspOuterClass.PlayerGetForceQuitBanInfoRsp;
 
-public class PacketPlayerGetForceQuitBanInfoRsp extends GenshinPacket {
+public class PacketPlayerGetForceQuitBanInfoRsp extends BasePacket {
 	
 	public PacketPlayerGetForceQuitBanInfoRsp(int retcode) {
 		super(PacketOpcodes.PlayerGetForceQuitBanInfoRsp);
