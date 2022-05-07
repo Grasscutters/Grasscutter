@@ -5,6 +5,9 @@ import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 
 import javax.annotation.Nullable;
+
+import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -74,8 +77,11 @@ public final class Language {
         @Nullable JsonObject languageData = null;
         
         try {
-            InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
-            languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(file), JsonObject.class);
+            Grasscutter.getLogger().info("load file "+fileName);
+            //InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
+            //Grasscutter.getLogger().info("load file "+file.);
+            FileInputStream fstream = new FileInputStream(Grasscutter.getConfig().LANGUAGE_FOLDER + fileName);
+            languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(fstream), JsonObject.class);
         } catch (Exception exception) {
             Grasscutter.getLogger().warn("Failed to load language file: " + fileName);
         }
@@ -96,7 +102,8 @@ public final class Language {
         JsonObject object = this.languageData;
 
         int index = 0;
-        String result = "This value does not exist. Please report this to the Discord: " + key;
+        String result = "This value does not exist. Please report this to discord support" + key;
+        Grasscutter.getLogger().info("DEBUG Translations: "+key);
 
         while (true) {
             if(index == keys.length) break;
