@@ -29,7 +29,13 @@ public final class Language {
      * @return A translated value with arguments substituted.
      */
     public static String translate(String key, Object... args) {
-        return Grasscutter.getLanguage().get(key).formatted(args);
+        String translated = Grasscutter.getLanguage().get(key);
+        try {
+            return translated.formatted(args);
+        } catch (Exception exception) {
+            Grasscutter.getLogger().error("Failed to format string: " + key, exception);
+            return translated;
+        }
     }
 
     /**

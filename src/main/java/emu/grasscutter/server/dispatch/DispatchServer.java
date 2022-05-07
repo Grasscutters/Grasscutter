@@ -334,7 +334,7 @@ public final class DispatchServer {
 				return;
 			}
 			LoginResultJson responseData = new LoginResultJson();
-			Grasscutter.getLogger().info(translate("messages.dispatch.account.login_token_attempt"));
+			Grasscutter.getLogger().info(translate("messages.dispatch.account.login_token_attempt", req.ip()));
 
 			// Login
 			Account account = DatabaseHelper.getAccountById(requestData.uid);
