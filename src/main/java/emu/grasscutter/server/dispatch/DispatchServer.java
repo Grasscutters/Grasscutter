@@ -35,6 +35,8 @@ import java.io.*;
 import java.net.URLDecoder;
 import java.util.*;
 
+import static emu.grasscutter.utils.Language.translate;
+
 public final class DispatchServer {
 	public static String query_region_list = "";
 	public static String query_cur_region = "";
@@ -213,21 +215,21 @@ public final class DispatchServer {
 							sslContextFactory.setKeyStorePassword(Grasscutter.getConfig().getDispatchOptions().KeystorePassword);
 						} catch (Exception e) {
 							e.printStackTrace();
-							Grasscutter.getLogger().warn(Grasscutter.getLanguage().Not_load_keystore);
+							Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.password_error"));
 
 							try {
 								sslContextFactory.setKeyStorePath(keystoreFile.getPath());
 								sslContextFactory.setKeyStorePassword("123456");
-								Grasscutter.getLogger().warn(Grasscutter.getLanguage().Use_default_keystore);
+								Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.default_password"));
 							} catch (Exception e2) {
-								Grasscutter.getLogger().warn(Grasscutter.getLanguage().Load_keystore_error);
+								Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.general_error"));
 								e2.printStackTrace();
 							}
 						}
 
 						serverConnector = new ServerConnector(server, sslContextFactory);
 					} else {
-						Grasscutter.getLogger().warn(Grasscutter.getLanguage().Not_find_ssl_cert);
+						Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.no_keystore_error"));
 						Grasscutter.getConfig().getDispatchOptions().UseSSL = false;
 
 						serverConnector = new ServerConnector(server);
@@ -245,13 +247,16 @@ public final class DispatchServer {
 			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.ALL) {
 				config.enableDevLogging();
 			}
+			if (Grasscutter.getConfig().getDispatchOptions().CORS){
+				if (Grasscutter.getConfig().getDispatchOptions().CORSAllowedOrigins.length > 0) config.enableCorsForOrigin(Grasscutter.getConfig().getDispatchOptions().CORSAllowedOrigins);
+				else config.enableCorsForAllOrigins();
+			}
 		});
-
-		httpServer.get("/", (req, res) -> res.send(Grasscutter.getLanguage().Welcome));
+		httpServer.get("/", (req, res) -> res.send(translate("messages.status.welcome")));
 
 		httpServer.raw().error(404, ctx -> {
 			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING) {
-				Grasscutter.getLogger().info(Grasscutter.getLanguage().Potential_unhandled_request.replace("{method}", ctx.method()).replace("{url}", ctx.url()));
+				Grasscutter.getLogger().info(translate("messages.dispatch.unhandled_request_error", ctx.method(), ctx.url()));
 			}
 			ctx.contentType("text/html");
 			ctx.result("<!doctype html><html lang=\"en\"><body><img src=\"https://http.cat/404\" /></body></html>"); // I'm like 70% sure this won't break anything.
@@ -309,7 +314,7 @@ public final class DispatchServer {
 			if (requestData == null) {
 				return;
 			}
-			Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_try_login.replace("{ip}", req.ip()));
+			Grasscutter.getLogger().info(translate("messages.dispatch.account.login_attempt", req.ip()));
 
 			res.send(this.getAuthHandler().handleGameLogin(req, requestData));
 		});
@@ -329,7 +334,7 @@ public final class DispatchServer {
 				return;
 			}
 			LoginResultJson responseData = new LoginResultJson();
-			Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_login_token.replace("{ip}", req.ip()));
+			Grasscutter.getLogger().info(translate("messages.dispatch.account.login_token_attempt", req.ip()));
 
 			// Login
 			Account account = DatabaseHelper.getAccountById(requestData.uid);
@@ -337,16 +342,16 @@ public final class DispatchServer {
 			// Test
 			if (account == null || !account.getSessionKey().equals(requestData.token)) {
 				responseData.retcode = -111;
-				responseData.message = Grasscutter.getLanguage().Game_account_cache_error;
+				responseData.message = translate("messages.dispatch.account.account_cache_error");
 
-				Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_token_login_failed.replace("{ip}", req.ip()));
+				Grasscutter.getLogger().info(translate("messages.dispatch.account.login_token_error", req.ip()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.account.uid = requestData.uid;
 				responseData.data.account.token = requestData.token;
 				responseData.data.account.email = account.getEmail();
 
-				Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_login_in_token.replace("{ip}", req.ip()).replace("{uid}", responseData.data.account.uid));
+				Grasscutter.getLogger().info(translate("messages.dispatch.account.login_token_success", req.ip(), requestData.uid));
 			}
 
 			res.send(responseData);
@@ -376,16 +381,16 @@ public final class DispatchServer {
 			// Test
 			if (account == null || !account.getSessionKey().equals(loginData.token)) {
 				responseData.retcode = -201;
-				responseData.message = Grasscutter.getLanguage().Wrong_session_key;
+				responseData.message = translate("messages.dispatch.account.session_key_error");
 
-				Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_failed_exchange_combo_token.replace("{ip}", req.ip()));
+				Grasscutter.getLogger().info(translate("messages.dispatch.account.combo_token_error", req.ip()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.open_id = loginData.uid;
 				responseData.data.combo_id = "157795300";
 				responseData.data.combo_token = account.generateLoginToken();
 
-				Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_exchange_combo_token.replace("{ip}", req.ip()));
+				Grasscutter.getLogger().info(translate("messages.dispatch.account.combo_token_success", req.ip()));
 			}
 
 			res.send(responseData);
@@ -458,7 +463,7 @@ public final class DispatchServer {
 		httpServer.raw().config.precompressStaticFiles = false; // If this isn't set to false, files such as images may appear corrupted when serving static files
 
 		httpServer.listen(Grasscutter.getConfig().getDispatchOptions().Port);
-		Grasscutter.getLogger().info(Grasscutter.getLanguage().Dispatch_start_server_port.replace("{port}", Integer.toString(httpServer.raw().port())));
+		Grasscutter.getLogger().info(translate("messages.dispatch.port_bind", Integer.toString(httpServer.raw().port())));
 	}
 
 	private Map<String, String> parseQueryString(String qs) {

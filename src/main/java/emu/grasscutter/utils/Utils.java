@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.time.*;
 import java.time.temporal.TemporalAdjusters;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import emu.grasscutter.Config;
@@ -14,6 +16,8 @@ import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
 
 import org.slf4j.Logger;
+
+import static emu.grasscutter.utils.Language.translate;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
 public final class Utils {
@@ -176,15 +180,15 @@ public final class Utils {
 
 		// Check for resources folder.
 		if(!fileExists(resourcesFolder)) {
-			logger.info(Grasscutter.getLanguage().Create_resources_folder);
-			logger.info(Grasscutter.getLanguage().Place_copy);
+			logger.info(translate("messages.status.create_resources"));
+			logger.info(translate("messages.status.resources_error"));
 			createFolder(resourcesFolder); exit = true;
 		}
 
-		// Check for BinOutput + ExcelBinOuput.
+		// Check for BinOutput + ExcelBinOutput.
 		if(!fileExists(resourcesFolder + "BinOutput") ||
 				!fileExists(resourcesFolder + "ExcelBinOutput")) {
-			logger.info(Grasscutter.getLanguage().Place_copy);
+			logger.info(translate("messages.status.resources_error"));
 			exit = true;
 		}
 
@@ -195,7 +199,11 @@ public final class Utils {
 		if(exit) System.exit(1);
 	}
 
-	public static int GetNextTimestampOfThisHour(int hour, String timeZone, int param) {
+	/**
+	 * Gets the timestamp of the next hour.
+	 * @return The timestamp in UNIX seconds.
+	 */
+	public static int getNextTimestampOfThisHour(int hour, String timeZone, int param) {
 		ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
 		for (int i = 0; i < param; i ++){
 			if (zonedDateTime.getHour() < hour) {
@@ -204,10 +212,14 @@ public final class Utils {
 				zonedDateTime = zonedDateTime.plusDays(1).withHour(hour).withMinute(0).withSecond(0);
 			}
 		}
-		return (int)zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
+		return (int) zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
 	}
 
-	public static int GetNextTimestampOfThisHourInNextWeek(int hour, String timeZone, int param) {
+	/**
+	 * Gets the timestamp of the next hour in a week.
+	 * @return The timestamp in UNIX seconds.
+	 */
+	public static int getNextTimestampOfThisHourInNextWeek(int hour, String timeZone, int param) {
 		ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
 		for (int i = 0; i < param; i++) {
 			if (zonedDateTime.getDayOfWeek() == DayOfWeek.MONDAY && zonedDateTime.getHour() < hour) {
@@ -216,10 +228,14 @@ public final class Utils {
 				zonedDateTime = zonedDateTime.with(TemporalAdjusters.next(DayOfWeek.MONDAY)).withHour(hour).withMinute(0).withSecond(0);
 			}
 		}
-		return (int)zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
+		return (int) zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
 	}
 
-	public static int GetNextTimestampOfThisHourInNextMonth(int hour, String timeZone, int param) {
+	/**
+	 * Gets the timestamp of the next hour in a month.
+	 * @return The timestamp in UNIX seconds.
+	 */
+	public static int getNextTimestampOfThisHourInNextMonth(int hour, String timeZone, int param) {
 		ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
 		for (int i = 0; i < param; i++) {
 			if (zonedDateTime.getDayOfMonth() == 1 && zonedDateTime.getHour() < hour) {
@@ -228,6 +244,59 @@ public final class Utils {
 				zonedDateTime = zonedDateTime.with(TemporalAdjusters.firstDayOfNextMonth()).withHour(hour).withMinute(0).withSecond(0);
 			}
 		}
-		return (int)zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
+		return (int) zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
+	}
+
+	/**
+	 * Retrieves a string from an input stream.
+	 * @param stream The input stream.
+	 * @return The string.
+	 */
+	public static String readFromInputStream(InputStream stream) {
+		StringBuilder stringBuilder = new StringBuilder();
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream,"UTF-8"))) {
+			String line; while ((line = reader.readLine()) != null) {
+				stringBuilder.append(line);
+			} stream.close();
+		} catch (IOException e) {
+			Grasscutter.getLogger().warn("Failed to read from input stream.");
+		} return stringBuilder.toString();
+	}
+
+	/**
+	 * Switch properties from upper case to lower case?
+	 */
+	public static Map<String, Object> switchPropertiesUpperLowerCase(Map<String, Object> objMap, Class<?> cls) {
+		Map<String, Object> map = new HashMap<>(objMap.size());
+		for (String key : objMap.keySet()) {
+			try {
+				char c = key.charAt(0);
+				if (c >= 'a' && c <= 'z') {
+					try {
+						cls.getDeclaredField(key);
+						map.put(key, objMap.get(key));
+					} catch (NoSuchFieldException e) {
+						String s1 = String.valueOf(c).toUpperCase();
+						String after = key.length() > 1 ? s1 + key.substring(1) : s1;
+						cls.getDeclaredField(after);
+						map.put(after, objMap.get(key));
+					}
+				} else if (c >= 'A' && c <= 'Z') {
+					try {
+						cls.getDeclaredField(key);
+						map.put(key, objMap.get(key));
+					} catch (NoSuchFieldException e) {
+						String s1 = String.valueOf(c).toLowerCase();
+						String after = key.length() > 1 ? s1 + key.substring(1) : s1;
+						cls.getDeclaredField(after);
+						map.put(after, objMap.get(key));
+					}
+				}
+			} catch (NoSuchFieldException e) {
+				map.put(key, objMap.get(key));
+			}
+		}
+
+		return map;
 	}
 }

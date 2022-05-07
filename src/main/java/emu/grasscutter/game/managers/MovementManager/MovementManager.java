@@ -60,6 +60,7 @@ public class MovementManager {
     private final Player player;
 
     private float landSpeed = 0;
+    private long landTimeMillisecond = 0;
     private Timer movementManagerTickTimer;
     private GameSession cachedSession = null;
     private GameEntity cachedEntity = null;
@@ -192,12 +193,20 @@ public class MovementManager {
         // cache land speed
         if (state == MotionState.MOTION_LAND_SPEED) {
             landSpeed = motionInfo.getSpeed().getY();
+            landTimeMillisecond = System.currentTimeMillis();
         }
         if (state == MotionState.MOTION_FALL_ON_GROUND) {
+            // if not received immediately after MOTION_LAND_SPEED, discard this packet.
+            // TODO: Test in high latency.
+            int maxDelay = 200;
+            if ((System.currentTimeMillis() - landTimeMillisecond) > maxDelay) {
+                Grasscutter.getLogger().debug("MOTION_FALL_ON_GROUND received after " + maxDelay + "ms, discard.");
+                return;
+            }
             float currentHP = cachedEntity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
             float maxHP = cachedEntity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
             float damage = 0;
-//            Grasscutter.getLogger().debug("LandSpeed: " + landSpeed);
+            Grasscutter.getLogger().debug("LandSpeed: " + landSpeed);
             if (landSpeed < -23.5) {
                 damage = (float)(maxHP * 0.33);
             }
@@ -214,7 +223,7 @@ public class MovementManager {
             if (newHP < 0) {
                 newHP = 0;
             }
-//            Grasscutter.getLogger().debug("Max: " + maxHP + "\tCurr: " + currentHP + "\tDamage: " + damage + "\tnewHP: " + newHP);
+            Grasscutter.getLogger().debug("Max: " + maxHP + "\tCurr: " + currentHP + "\tDamage: " + damage + "\tnewHP: " + newHP);
             cachedEntity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
             cachedEntity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(cachedEntity, FightProperty.FIGHT_PROP_CUR_HP));
             if (newHP == 0) {
@@ -259,7 +268,7 @@ public class MovementManager {
             if (Grasscutter.getConfig().OpenStamina) {
                 boolean moving = isPlayerMoving();
                 if (moving || (getCurrentStamina() < getMaximumStamina())) {
-                    Grasscutter.getLogger().debug("Player moving: " + moving + ", stamina full: " + (getCurrentStamina() >= getMaximumStamina()) + ", recalculate stamina");
+                    // Grasscutter.getLogger().debug("Player moving: " + moving + ", stamina full: " + (getCurrentStamina() >= getMaximumStamina()) + ", recalculate stamina");
                     Consumption consumption = Consumption.None;
 
                     // TODO: refactor these conditions.
@@ -297,13 +306,15 @@ public class MovementManager {
                     } else if (MotionStatesCategorized.get("RUN").contains(currentState)) {
                         // RUN, DASH and WALK
                         // DASH
-                        if (currentState == MotionState.MOTION_DASH) {
-                            if (previousState == MotionState.MOTION_DASH) {
+                        if (currentState == MotionState.MOTION_DASH_BEFORE_SHAKE) {
+                            consumption = Consumption.DASH;
+                            if (previousState == MotionState.MOTION_DASH_BEFORE_SHAKE) {
+                                // only charge once
                                 consumption = Consumption.SPRINT;
-                            } else {
-                                // cost more to start dashing
-                                consumption = Consumption.DASH;
                             }
+                        }
+                        if (currentState == MotionState.MOTION_DASH) {
+                            consumption = Consumption.SPRINT;
                         }
                         // RUN
                         if (currentState == MotionState.MOTION_RUN) {
@@ -338,14 +349,13 @@ public class MovementManager {
                             staminaRecoverDelay = 0;
                         }
                         if (consumption.amount > 0) {
-                            if (staminaRecoverDelay < 5) {
+                            if (staminaRecoverDelay < 10) {
                                 staminaRecoverDelay++;
                                 consumption = Consumption.None;
                             }
                         }
                         int newStamina = updateStamina(cachedSession, consumption.amount);
                         cachedSession.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
-
                         Grasscutter.getLogger().debug(player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA) + "/" + player.getProperty(PlayerProperty.PROP_MAX_STAMINA) + "\t" + currentState + "\t" + "isMoving: " + isPlayerMoving() + "\t" + consumption + "(" + consumption.amount + ")");
                     }
                 }

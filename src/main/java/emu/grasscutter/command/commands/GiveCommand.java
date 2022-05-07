@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
+import static emu.grasscutter.utils.Language.translate;
+
 @Command(label = "give", usage = "give <itemId|itemName> [amount] [level]", description = "Gives an item to you or the specified player", aliases = {
         "g", "item", "giveitem"}, permission = "player.give")
 public final class GiveCommand implements CommandHandler {
@@ -33,7 +35,7 @@ public final class GiveCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
             return;
         }
         int item;
@@ -67,21 +69,21 @@ public final class GiveCommand implements CommandHandler {
                 try {
                     refinement = Integer.parseInt(args.get(3));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_refinement);
+                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.itemRefinement"));
                     return;
                 }  // Fallthrough
             case 3: // <itemId|itemName> [amount] [level]
                 try {
                     lvl = Integer.parseInt(args.get(2));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_level);
+                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.itemLevel"));
                     return;
                 }  // Fallthrough
             case 2: // <itemId|itemName> [amount]
                 try {
                     amount = Integer.parseInt(args.get(1));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_amount);
+                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.amount"));
                     return;
                 }  // Fallthrough
             case 1: // <itemId|itemName>
@@ -89,30 +91,28 @@ public final class GiveCommand implements CommandHandler {
                     item = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
                     // TODO: Parse from item name using GM Handbook.
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_id);
+                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.itemId"));
                     return;
                 }
                 break;
             default: // *No args*
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_usage);
+                CommandHandler.sendMessage(sender, translate("commands.give.usage"));
                 return;
         }
 
-
-
         ItemData itemData = GameData.getItemDataMap().get(item);
         if (itemData == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_item_id);
+            CommandHandler.sendMessage(sender, translate("commands.generic.invalid.itemId"));
             return;
         }
         if (refinement != 0) {
             if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
                 if (refinement < 1 || refinement > 5) {
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_refinement_must_between_1_and_5);
+                    CommandHandler.sendMessage(sender, translate("commands.give.refinement_must_between_1_and_5"));
                     return;
                 }
             } else {
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_refinement_only_applicable_weapons);
+                CommandHandler.sendMessage(sender, translate("commands.give.refinement_only_applicable_weapons"));
                 return;
             }
         }
@@ -120,11 +120,11 @@ public final class GiveCommand implements CommandHandler {
         this.item(targetPlayer, itemData, amount, lvl, refinement);
 
         if (!itemData.isEquip()) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_given.replace("{amount}", Integer.toString(amount)).replace("{item}", Integer.toString(item)).replace("{target}", Integer.toString(targetPlayer.getUid())));
+            CommandHandler.sendMessage(sender, translate("commands.give.given", Integer.toString(amount), Integer.toString(item), Integer.toString(targetPlayer.getUid())));
         } else if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Give_given_with_level_and_refinement.replace("{item}", Integer.toString(item)).replace("{lvl}", Integer.toString(lvl)).replace("{refinement}", Integer.toString(refinement)).replace("{amount}", Integer.toString(amount)).replace("{target}", Integer.toString(targetPlayer.getUid())));
+            CommandHandler.sendMessage(sender, translate("commands.give.given_with_level_and_refinement", Integer.toString(item), Integer.toString(lvl), Integer.toString(refinement), Integer.toString(amount), Integer.toString(targetPlayer.getUid())));
         } else {
-            CommandHandler.sendMessage(sender,Grasscutter.getLanguage().Give_given_level.replace("{item}", Integer.toString(item)).replace("{lvl}", Integer.toString(lvl)).replace("{amount}", Integer.toString(amount)));
+            CommandHandler.sendMessage(sender, translate("commands.give.given_level", Integer.toString(item), Integer.toString(lvl), Integer.toString(amount)));
         }
     }
 

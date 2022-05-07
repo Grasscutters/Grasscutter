@@ -6,7 +6,6 @@ import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.mail.Mail;
 
 public final class Config {
-
 	public String DatabaseUrl = "mongodb://localhost:27017";
 	public String DatabaseCollection = "grasscutter";
 
@@ -24,6 +23,7 @@ public final class Config {
 	public GameServerOptions GameServer = new GameServerOptions();
 	public DispatchServerOptions DispatchServer = new DispatchServerOptions();
 	public Locale LocaleLanguage = Locale.getDefault();
+	public Locale DefaultLanguage = Locale.US;
 
 	public Boolean OpenStamina = true;
 	public GameServerOptions getGameServerOptions() {
@@ -41,6 +41,8 @@ public final class Config {
 		public String KeystorePassword = "123456";
 		public Boolean UseSSL = true;
 		public Boolean FrontHTTPS = true;
+		public Boolean CORS = false;
+		public String[] CORSAllowedOrigins = new String[] { "*" };
 
 		public boolean AutomaticallyCreateAccounts = false;
 		public String[] defaultPermissions = new String[] { "" };
@@ -80,6 +82,10 @@ public final class Config {
 		public boolean WatchGacha = false;
 		public String ServerNickname = "Server";
 		public int ServerAvatarId = 10000007;
+		public int ServerNameCardId = 210001;
+		public int ServerLevel = 1;
+		public int ServerWorldLevel = 1;
+		public String ServerSignature = "Server Signature";
 		public int[] WelcomeEmotes = {2007, 1002, 4010};
 		public String WelcomeMotd = "Welcome to Grasscutter emu";
 		public String WelcomeMailTitle = "Welcome to Grasscutter!";

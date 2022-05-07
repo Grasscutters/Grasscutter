@@ -2,9 +2,13 @@ package emu.grasscutter.game.managers.SotSManager;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.managers.MovementManager.MovementManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.ChangeHpReasonOuterClass;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
 import emu.grasscutter.server.game.GameSession;
@@ -14,6 +18,8 @@ import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotif
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 // Statue of the Seven Manager
 public class SotSManager {
@@ -21,6 +27,7 @@ public class SotSManager {
     // NOTE: Spring volume balance *1  = fight prop HP *100
 
     private final Player player;
+    private Timer autoRecoverTimer;
 
     public SotSManager(Player player) {
         this.player = player;
@@ -46,26 +53,44 @@ public class SotSManager {
     public void autoRevive(GameSession session) {
         player.getTeamManager().getActiveTeam().forEach(entity -> {
             boolean isAlive = entity.isAlive();
+            float currentHP = entity.getAvatar().getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+            float maxHP = entity.getAvatar().getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+//            Grasscutter.getLogger().debug("" + entity.getAvatar().getAvatarData().getName() + "\t" + currentHP + "/" + maxHP + "\t" + (isAlive ? "ALIVE":"DEAD"));
+            float newHP = (float)(maxHP * 0.3);
+            if (currentHP < newHP) {
+                updateAvatarCurHP(session, entity, newHP);
+            }
             if (!isAlive) {
-                float maxHP = entity.getAvatar().getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-                float newHP = (float)(maxHP * 0.3);
-                entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
                 entity.getWorld().broadcastPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
             }
         });
     }
 
     public void scheduleAutoRecover(GameSession session) {
-        // TODO: play audio effects? possibly client side? - client automatically plays.
-        // delay 2.5 seconds
-        new Thread(() -> {
-            try {
-                Thread.sleep(2500);
-                autoRecover(session);
-            } catch (Exception e) {
-                Grasscutter.getLogger().error(e.getMessage());
-            }
-        }).start();
+        if (autoRecoverTimer == null) {
+            autoRecoverTimer = new Timer();
+            autoRecoverTimer.schedule(new AutoRecoverTimerTick(session), 2500);
+        }
+    }
+
+    public void cancelAutoRecover() {
+        if (autoRecoverTimer != null) {
+            autoRecoverTimer.cancel();
+            autoRecoverTimer = null;
+        }
+    }
+
+    private class AutoRecoverTimerTick extends TimerTask
+    {
+        private GameSession session;
+
+        public AutoRecoverTimerTick(GameSession session) {
+            this.session = session;
+        }
+        public void run() {
+            autoRecover(session);
+            cancelAutoRecover();
+        }
     }
 
     public void refillSpringVolume() {
@@ -124,23 +149,26 @@ public class SotSManager {
 
                     float newHP = currentHP + needSV / 100; // convert SV to HP
 
-                    // TODO: Figure out why client shows current HP instead of added HP.
-                    //    Say an avatar had 12000 and now has 14000, it should show "2000".
-                    //    The client always show "+14000" which is incorrect.
-
-                    entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
-                    session.send(new PacketEntityFightPropChangeReasonNotify(entity, FightProperty.FIGHT_PROP_CUR_HP,
-                            newHP, List.of(3), PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_STATUE_RECOVER,
-                            ChangeHpReasonOuterClass.ChangeHpReason.ChangeHpAddStatue));
-                    session.send(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
-
-                    Avatar avatar = entity.getAvatar();
-                    avatar.setCurrentHp(newHP);
-                    session.send(new PacketAvatarFightPropUpdateNotify(avatar, FightProperty.FIGHT_PROP_CUR_HP));
-                    player.save();
+                    updateAvatarCurHP(session, entity, newHP);
                 }
             });
         }
+    }
+
+    private void updateAvatarCurHP(GameSession session, EntityAvatar entity, float newHP) {
+        // TODO: Figure out why client shows current HP instead of added HP.
+        //    Say an avatar had 12000 and now has 14000, it should show "2000".
+        //    The client always show "+14000" which is incorrect.
+        entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
+        session.send(new PacketEntityFightPropChangeReasonNotify(entity, FightProperty.FIGHT_PROP_CUR_HP,
+                newHP, List.of(3), PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_STATUE_RECOVER,
+                ChangeHpReasonOuterClass.ChangeHpReason.ChangeHpAddStatue));
+        session.send(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
+
+        Avatar avatar = entity.getAvatar();
+        avatar.setCurrentHp(newHP);
+        session.send(new PacketAvatarFightPropUpdateNotify(avatar, FightProperty.FIGHT_PROP_CUR_HP));
+        player.save();
     }
 
 
