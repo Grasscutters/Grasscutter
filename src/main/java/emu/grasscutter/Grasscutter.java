@@ -93,7 +93,7 @@ public final class Grasscutter {
 		ResourceLoader.loadAll();
 		ScriptLoader.init();
 
-		// Database
+		// Initialize database.
 		DatabaseManager.initialize();
 
 		// Create server instances.
