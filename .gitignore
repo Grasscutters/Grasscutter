@@ -64,4 +64,7 @@ mitmdump.exe
 !lib/*.jar
 mongod.exe
 /src/generated/
-gacha_mappings.js
+/*.sh
+language/
+languages/
+gacha-mapping.js

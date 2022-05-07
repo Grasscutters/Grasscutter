@@ -22,7 +22,7 @@ public final class GiveAllCommand implements CommandHandler {
   public void execute(Player sender, Player targetPlayer, List<String> args) {
 
     if (sender == null) {
-      CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Player_not_found);
+      CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
       return;
     }
 
@@ -47,7 +47,7 @@ public final class GiveAllCommand implements CommandHandler {
   }
 
   public void giveAllItems(Player player, int amount) {
-    CommandHandler.sendMessage(player, Grasscutter.getLanguage().GiveAll_item);
+    CommandHandler.sendMessage(player, translate("commands.giveAll.started"));
 
     for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
 

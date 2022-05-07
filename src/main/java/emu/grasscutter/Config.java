@@ -6,7 +6,6 @@ import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.mail.Mail;
 
 public final class Config {
-
 	public String DatabaseUrl = "mongodb://localhost:27017";
 	public String DatabaseCollection = "grasscutter";
 

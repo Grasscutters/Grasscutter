@@ -144,6 +144,7 @@ public class Player {
 		this.avatars = new AvatarStorage(this);
 		this.friendsList = new FriendsList(this);
 		this.mailHandler = new MailHandler(this);
+		this.towerManager = new TowerManager(this);
 		this.pos = new Position();
 		this.rotation = new Position();
 		this.properties = new HashMap<>();
@@ -190,7 +191,6 @@ public class Player {
 		this.nickname = "Traveler";
 		this.signature = "";
 		this.teamManager = new TeamManager(this);
-		this.towerManager = new TowerManager(this);
 		this.birthday = new PlayerBirthday();
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
@@ -1150,9 +1150,6 @@ public class Player {
 
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
-		}
-		if (this.getTowerManager() == null) {
-			this.towerManager = new TowerManager(this);
 		}
 
 		// Check if player object exists in server
