@@ -16,8 +16,6 @@ import emu.grasscutter.net.proto.PlayerDieTypeOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 
-import java.util.HashMap;
-
 @Opcodes(PacketOpcodes.CombatInvocationsNotify)
 public class HandlerCombatInvocationsNotify extends PacketHandler {
 
@@ -49,7 +47,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 						MotionState motionState = motionInfo.getState();
 						entity.setMotionState(motionState);
 
-						session.getPlayer().getMovementManager().handleCombatInvocationsNotify(session, moveInfo, entity);
+						session.getPlayer().getStaminaManager().handleCombatInvocationsNotify(session, moveInfo, entity);
 
 						// TODO: handle MOTION_FIGHT landing
 						//  For plunge attacks, LAND_SPEED is always -30 and is not useful.
@@ -116,7 +114,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 		entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
 		entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
 		if (newHP == 0) {
-			session.getPlayer().getMovementManager().killAvatar(session, entity, PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_FALL);
+			session.getPlayer().getStaminaManager().killAvatar(session, entity, PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_FALL);
 		}
 		cachedLandingSpeed = 0;
 	}
