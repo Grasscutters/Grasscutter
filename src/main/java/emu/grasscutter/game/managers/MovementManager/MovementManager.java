@@ -7,22 +7,31 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.net.proto.EntityMoveInfoOuterClass;
+import emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo;
+import emu.grasscutter.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotify;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
-import emu.grasscutter.net.proto.VectorOuterClass;
+import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
-import org.jetbrains.annotations.NotNull;
 
 import java.lang.Math;
 import java.util.*;
 
 public class MovementManager {
-
-    public HashMap<String, HashSet<MotionState>> MotionStatesCategorized = new HashMap<>();
+    private final Player player;
+    private HashMap<String, HashSet<MotionState>> MotionStatesCategorized = new HashMap<>();
+    private Position currentCoordinates = new Position(0, 0, 0);
+    private Position previousCoordinates = new Position(0, 0, 0);
+    private MotionState currentState = MotionState.MOTION_STANDBY;
+    private MotionState previousState = MotionState.MOTION_STANDBY;
+    private Timer sustainedStaminaHandlerTimer;
+    private GameSession cachedSession = null;
+    private GameEntity cachedEntity = null;
+    private int staminaRecoverDelay = 0;
+    private boolean isInSkillMove = false;
 
     private enum ConsumptionType {
         None(0),
@@ -31,8 +40,8 @@ public class MovementManager {
         CLIMB_START(-500),
         CLIMBING(-150),
         CLIMB_JUMP(-2500),
-        DASH(-1800),
-        SPRINT(-360),
+        SPRINT(-1800),
+        DASH(-360),
         FLY(-60),
         SWIM_DASH_START(-200),
         SWIM_DASH(-200),
@@ -47,6 +56,7 @@ public class MovementManager {
         POWERED_FLY(500);
 
         public final int amount;
+
         ConsumptionType(int amount) {
             this.amount = amount;
         }
@@ -55,33 +65,26 @@ public class MovementManager {
     private class Consumption {
         public ConsumptionType consumptionType;
         public int amount;
+
         public Consumption(ConsumptionType ct, int a) {
             consumptionType = ct;
             amount = a;
         }
+
         public Consumption(ConsumptionType ct) {
             this(ct, ct.amount);
         }
     }
 
-    private MotionState previousState = MotionState.MOTION_STANDBY;
-    private MotionState currentState = MotionState.MOTION_STANDBY;
-    private Position previousCoordinates = new Position(0, 0, 0);
-    private Position currentCoordinates = new Position(0, 0, 0);
+    public boolean getIsInSkillMove() {
+        return isInSkillMove;
+    }
 
-    private final Player player;
-
-    private float landSpeed = 0;
-    private long landTimeMillisecond = 0;
-    private Timer movementManagerTickTimer;
-    private GameSession cachedSession = null;
-    private GameEntity cachedEntity = null;
-    private int staminaRecoverDelay = 0;
-    private int skillCaster = 0;
-    private int skillCasting = 0;
+    public void setIsInSkillMove(boolean b) {
+        isInSkillMove = b;
+    }
 
     public MovementManager(Player player) {
-        previousCoordinates.add(new Position(0,0,0));
         this.player = player;
 
         MotionStatesCategorized.put("SWIM", new HashSet<>(Arrays.asList(
@@ -129,252 +132,225 @@ public class MovementManager {
         )));
 
         MotionStatesCategorized.put("FIGHT", new HashSet<>(Arrays.asList(
-                MotionState.MOTION_FIGHT
+            MotionState.MOTION_FIGHT
         )));
-
-
-    }
-
-    public void handle(GameSession session, EntityMoveInfoOuterClass.EntityMoveInfo moveInfo, GameEntity entity) {
-        if (movementManagerTickTimer == null) {
-            movementManagerTickTimer = new Timer();
-            movementManagerTickTimer.scheduleAtFixedRate(new MotionManagerTick(), 0, 200);
-        }
-        // cache info for later use in tick
-        cachedSession = session;
-        cachedEntity = entity;
-
-        MotionInfo motionInfo = moveInfo.getMotionInfo();
-        moveEntity(entity, moveInfo);
-        VectorOuterClass.Vector posVector = motionInfo.getPos();
-        Position newPos = new Position(posVector.getX(),
-                posVector.getY(), posVector.getZ());;
-        if (newPos.getX() != 0 && newPos.getY() != 0 && newPos.getZ() != 0) {
-            currentCoordinates = newPos;
-        }
-        currentState = motionInfo.getState();
-        Grasscutter.getLogger().debug("" + currentState + "\t" + (moveInfo.getIsReliable() ? "reliable" : ""));
-        handleFallOnGround(motionInfo);
-    }
-
-    public void resetTimer() {
-        Grasscutter.getLogger().debug("MovementManager ticker stopped");
-        movementManagerTickTimer.cancel();
-        movementManagerTickTimer = null;
-    }
-
-    private void moveEntity(GameEntity entity, EntityMoveInfoOuterClass.EntityMoveInfo moveInfo) {
-        entity.getPosition().set(moveInfo.getMotionInfo().getPos());
-        entity.getRotation().set(moveInfo.getMotionInfo().getRot());
-        entity.setLastMoveSceneTimeMs(moveInfo.getSceneTime());
-        entity.setLastMoveReliableSeq(moveInfo.getReliableSeq());
-        entity.setMotionState(moveInfo.getMotionInfo().getState());
     }
 
     private boolean isPlayerMoving() {
         float diffX = currentCoordinates.getX() - previousCoordinates.getX();
         float diffY = currentCoordinates.getY() - previousCoordinates.getY();
         float diffZ = currentCoordinates.getZ() - previousCoordinates.getZ();
-        // Grasscutter.getLogger().debug("isPlayerMoving: " + previousCoordinates + ", " + currentCoordinates + ", " + diffX + ", " + diffY + ", " + diffZ);
-        return Math.abs(diffX) > 0.2  || Math.abs(diffY) > 0.1 || Math.abs(diffZ) > 0.2;
+        Grasscutter.getLogger().debug("isPlayerMoving: " + previousCoordinates + ", " + currentCoordinates +
+                ", " + diffX + ", " + diffY + ", " + diffZ);
+        return Math.abs(diffX) > 0.3 || Math.abs(diffY) > 0.2 || Math.abs(diffZ) > 0.3;
     }
 
-    private int getCurrentStamina() {
-        return player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
-    }
-
-    private int getMaximumStamina() {
-        return player.getProperty(PlayerProperty.PROP_MAX_STAMINA);
-    }
-
-    // Returns new stamina
-    public int updateStamina(GameSession session, int amount) {
-        int currentStamina = session.getPlayer().getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
-        if (amount == 0) {
+    // Returns new stamina and sends PlayerPropNotify
+    public int updateStamina(GameSession session, Consumption consumption) {
+        int currentStamina = player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
+        if (consumption.amount == 0) {
             return currentStamina;
         }
-        int playerMaxStamina = session.getPlayer().getProperty(PlayerProperty.PROP_MAX_STAMINA);
-        int newStamina = currentStamina + amount;
+        int playerMaxStamina = player.getProperty(PlayerProperty.PROP_MAX_STAMINA);
+        Grasscutter.getLogger().debug(currentStamina + "/" + playerMaxStamina + "\t" + currentState + "\t" +
+                (isPlayerMoving() ? "moving" : "      ") + "\t(" + consumption.consumptionType + "," +
+                consumption.amount + ")");
+        int newStamina = currentStamina + consumption.amount;
         if (newStamina < 0) {
             newStamina = 0;
         }
         if (newStamina > playerMaxStamina) {
             newStamina = playerMaxStamina;
         }
-        session.getPlayer().setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, newStamina);
+        player.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, newStamina);
         session.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
         return newStamina;
     }
 
-    private void handleFallOnGround(@NotNull MotionInfo motionInfo) {
-        MotionState state = motionInfo.getState();
-        // land speed and fall on ground event arrive in different packets
-        // cache land speed
-        if (state == MotionState.MOTION_LAND_SPEED) {
-            landSpeed = motionInfo.getSpeed().getY();
-            landTimeMillisecond = System.currentTimeMillis();
+    // Kills avatar, removes entity and sends notification.
+    // TODO: Probably move this to Avatar class? since other components may also need to kill avatar.
+    public void killAvatar(GameSession session, GameEntity entity, PlayerDieType dieType) {
+        session.send(new PacketAvatarLifeStateChangeNotify(player.getTeamManager().getCurrentAvatarEntity().getAvatar(),
+                LifeState.LIFE_DEAD, dieType));
+        session.send(new PacketLifeStateChangeNotify(entity, LifeState.LIFE_DEAD, dieType));
+        entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0);
+        entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
+        entity.getWorld().broadcastPacket(new PacketLifeStateChangeNotify(0, entity, LifeState.LIFE_DEAD));
+        player.getScene().removeEntity(entity);
+        ((EntityAvatar) entity).onDeath(dieType, 0);
+    }
+
+    public void startSustainedStaminaHandler() {
+        if (sustainedStaminaHandlerTimer == null) {
+            sustainedStaminaHandlerTimer = new Timer();
+            sustainedStaminaHandlerTimer.scheduleAtFixedRate(new SustainedStaminaHandler(), 0, 200);
+            Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer started");
         }
-        if (state == MotionState.MOTION_FALL_ON_GROUND) {
-            // if not received immediately after MOTION_LAND_SPEED, discard this packet.
-            // TODO: Test in high latency.
-            int maxDelay = 200;
-            if ((System.currentTimeMillis() - landTimeMillisecond) > maxDelay) {
-                Grasscutter.getLogger().debug("MOTION_FALL_ON_GROUND received after " + maxDelay + "ms, discard.");
-                return;
+    }
+
+    public void stopSustainedStaminaHandler() {
+        Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer stopped");
+        sustainedStaminaHandlerTimer.cancel();
+        sustainedStaminaHandlerTimer = null;
+    }
+
+    // Handlers
+
+    // External trigger handler
+
+    public void handleEvtDoSkillSuccNotify(GameSession session, EvtDoSkillSuccNotify notify) {
+        handleImmediateStamina(session, notify);
+    }
+
+    public void handleCombatInvocationsNotify(GameSession session, EntityMoveInfo moveInfo, GameEntity entity) {
+        // cache info for later use in SustainedStaminaHandler tick
+        cachedSession = session;
+        cachedEntity = entity;
+        MotionInfo motionInfo = moveInfo.getMotionInfo();
+        MotionState motionState = motionInfo.getState();
+        boolean isReliable = moveInfo.getIsReliable();
+        Grasscutter.getLogger().trace("" + motionState + "\t" + (isReliable ? "reliable" : ""));
+        if (isReliable) {
+            currentState = motionState;
+            Vector posVector = motionInfo.getPos();
+            Position newPos = new Position(posVector.getX(), posVector.getY(), posVector.getZ());
+            if (newPos.getX() != 0 && newPos.getY() != 0 && newPos.getZ() != 0) {
+                currentCoordinates = newPos;
             }
-            float currentHP = cachedEntity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
-            float maxHP = cachedEntity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-            float damage = 0;
-            Grasscutter.getLogger().debug("LandSpeed: " + landSpeed);
-            if (landSpeed < -23.5) {
-                damage = (float)(maxHP * 0.33);
+        }
+        startSustainedStaminaHandler();
+        handleImmediateStamina(session, motionInfo, motionState, entity);
+    }
+
+    // Internal handler
+
+    private void handleImmediateStamina(GameSession session, MotionInfo motionInfo, MotionState motionState,
+                                        GameEntity entity) {
+        switch (motionState) {
+            case MOTION_DASH_BEFORE_SHAKE:
+                if (previousState != MotionState.MOTION_DASH_BEFORE_SHAKE) {
+                    updateStamina(session, new Consumption(ConsumptionType.SPRINT));
+                }
+                break;
+            case MOTION_CLIMB_JUMP:
+                if (previousState != MotionState.MOTION_CLIMB_JUMP) {
+                    updateStamina(session, new Consumption(ConsumptionType.CLIMB_JUMP));
+                }
+                break;
+            case MOTION_SWIM_DASH:
+                if (previousState != MotionState.MOTION_SWIM_DASH) {
+                    updateStamina(session, new Consumption(ConsumptionType.SWIM_DASH_START));
+                }
+                break;
+        }
+    }
+
+    private void handleImmediateStamina(GameSession session, EvtDoSkillSuccNotify notify) {
+        Consumption consumption = getFightConsumption(notify.getSkillId());
+        updateStamina(session, consumption);
+    }
+
+    private class SustainedStaminaHandler extends TimerTask {
+        public void run() {
+            if (Grasscutter.getConfig().OpenStamina) {
+                boolean moving = isPlayerMoving();
+                int currentStamina = player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
+                int maxStamina = player.getProperty(PlayerProperty.PROP_MAX_STAMINA);
+                if (moving || (currentStamina < maxStamina)) {
+                    Grasscutter.getLogger().debug("Player moving: " + moving + ", stamina full: " +
+                            (currentStamina >= maxStamina) + ", recalculate stamina");
+                    Consumption consumption = new Consumption(ConsumptionType.None);
+                    if (!isInSkillMove) {
+                        if (MotionStatesCategorized.get("CLIMB").contains(currentState)) {
+                            consumption = getClimbSustainedConsumption();
+                        } else if (MotionStatesCategorized.get("SWIM").contains((currentState))) {
+                            consumption = getSwimSustainedConsumptions();
+                        } else if (MotionStatesCategorized.get("RUN").contains(currentState)) {
+                            consumption = getRunWalkDashSustainedConsumption();
+                        } else if (MotionStatesCategorized.get("FLY").contains(currentState)) {
+                            consumption = getFlySustainedConsumption();
+                        } else if (MotionStatesCategorized.get("STANDBY").contains(currentState)) {
+                            consumption = getStandSustainedConsumption();
+                        }
+                    }
+                    if (cachedSession != null) {
+                        if (consumption.amount < 0) {
+                            staminaRecoverDelay = 0;
+                        }
+                        if (consumption.amount > 0 && consumption.consumptionType != ConsumptionType.POWERED_FLY) {
+                            // For POWERED_FLY recover immediately - things like Amber's gliding exam may require this.
+                            if (staminaRecoverDelay < 10) {
+                                // For others recover after 2 seconds (10 ticks) - as official server does.
+                                staminaRecoverDelay++;
+                                consumption = new Consumption(ConsumptionType.None);
+                            }
+                        }
+                        updateStamina(cachedSession, consumption);
+                    }
+                    handleDrowning();
+                }
             }
-            if (landSpeed < -25) {
-                damage = (float)(maxHP * 0.5);
-            }
-            if (landSpeed < -26.5) {
-                damage = (float)(maxHP * 0.66);
-            }
-            if (landSpeed < -28) {
-                damage = (maxHP * 1);
-            }
-            float newHP = currentHP - damage;
-            if (newHP < 0) {
-                newHP = 0;
-            }
-            Grasscutter.getLogger().debug("Max: " + maxHP + "\tCurr: " + currentHP + "\tDamage: " + damage + "\tnewHP: " + newHP);
-            cachedEntity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
-            cachedEntity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(cachedEntity, FightProperty.FIGHT_PROP_CUR_HP));
-            if (newHP == 0) {
-                killAvatar(cachedSession, cachedEntity, PlayerDieType.PLAYER_DIE_FALL);
-            }
-            landSpeed = 0;
+            previousState = currentState;
+            previousCoordinates = new Position(
+                    currentCoordinates.getX(),
+                    currentCoordinates.getY(),
+                    currentCoordinates.getZ()
+            );
         }
     }
 
     private void handleDrowning() {
-        int stamina = getCurrentStamina();
+        int stamina = player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
         if (stamina < 10) {
             boolean isSwimming = MotionStatesCategorized.get("SWIM").contains(currentState);
-            Grasscutter.getLogger().debug(player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA) + "/" + player.getProperty(PlayerProperty.PROP_MAX_STAMINA) + "\t" + currentState + "\t" + isSwimming);
+            Grasscutter.getLogger().debug(player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA) + "/" +
+                    player.getProperty(PlayerProperty.PROP_MAX_STAMINA) + "\t" + currentState + "\t" + isSwimming);
             if (isSwimming && currentState != MotionState.MOTION_SWIM_IDLE) {
                 killAvatar(cachedSession, cachedEntity, PlayerDieType.PLAYER_DIE_DRAWN);
             }
         }
     }
 
-    public void killAvatar(GameSession session, GameEntity entity, PlayerDieType dieType) {
-        cachedSession.send(new PacketAvatarLifeStateChangeNotify(
-                cachedSession.getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(),
-                LifeState.LIFE_DEAD,
-                dieType
-        ));
-        cachedSession.send(new PacketLifeStateChangeNotify(
-                cachedEntity,
-                LifeState.LIFE_DEAD,
-                dieType
-        ));
-        cachedEntity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0);
-        cachedEntity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(cachedEntity, FightProperty.FIGHT_PROP_CUR_HP));
-        entity.getWorld().broadcastPacket(new PacketLifeStateChangeNotify(0, entity, LifeState.LIFE_DEAD));
-        session.getPlayer().getScene().removeEntity(entity);
-        ((EntityAvatar)entity).onDeath(dieType, 0);
-    }
+    // Consumption Calculators
 
-    private class MotionManagerTick extends TimerTask
-    {
-        public void run() {
-            if (Grasscutter.getConfig().OpenStamina) {
-                boolean moving = isPlayerMoving();
-                if (moving || (getCurrentStamina() < getMaximumStamina())) {
-                    // Grasscutter.getLogger().debug("Player moving: " + moving + ", stamina full: " + (getCurrentStamina() >= getMaximumStamina()) + ", recalculate stamina");
-                    Consumption consumption = new Consumption(ConsumptionType.None);
-
-                    // TODO: refactor these conditions.
-                    if (MotionStatesCategorized.get("CLIMB").contains(currentState)) {
-                        consumption = getClimbConsumption();
-                    } else if (MotionStatesCategorized.get("SWIM").contains((currentState))) {
-                        consumption = getSwimConsumptions();
-                    } else if (MotionStatesCategorized.get("RUN").contains(currentState)) {
-                        consumption = getRunWalkDashConsumption();
-                    } else if (MotionStatesCategorized.get("FLY").contains(currentState)) {
-                        consumption = getFlyConsumption();
-                    } else if (MotionStatesCategorized.get("STANDBY").contains(currentState)) {
-                        consumption = getStandConsumption();
-                    } else if (MotionStatesCategorized.get("FIGHT").contains(currentState)) {
-                        consumption = getFightConsumption();
-                    }
-
-                    // delay 2 seconds before start recovering - as official server does.
-                    if (cachedSession != null) {
-                        if (consumption.amount < 0) {
-                            staminaRecoverDelay = 0;
-                        }
-                        if (consumption.amount > 0 && consumption.consumptionType != ConsumptionType.POWERED_FLY) {
-                            if (staminaRecoverDelay < 10) {
-                                staminaRecoverDelay++;
-                                consumption = new Consumption(ConsumptionType.None);
-                            }
-                        }
-                        // Grasscutter.getLogger().debug(getCurrentStamina() + "/" + getMaximumStamina() + "\t" + currentState + "\t" + "isMoving: " + isPlayerMoving() + "\t(" + consumption.consumptionType + "," + consumption.amount + ")");
-                        updateStamina(cachedSession, consumption.amount);
-                    }
-
-                    // tick triggered
-                    handleDrowning();
-                }
-            }
-
-            previousState = currentState;
-            previousCoordinates = new Position(currentCoordinates.getX(),
-                    currentCoordinates.getY(), currentCoordinates.getZ());;
-        }
-    }
-
-    private Consumption getClimbConsumption() {
+    private Consumption getFightConsumption(int skillCasting) {
         Consumption consumption = new Consumption(ConsumptionType.None);
-        if (currentState == MotionState.MOTION_CLIMB) {
+        HashMap<Integer, Integer> fightingCost = new HashMap<>() {{
+            put(10013, -1000); // Kamisato Ayaka
+            put(10413, -1000); // Mona
+        }};
+        if (fightingCost.containsKey(skillCasting)) {
+            consumption = new Consumption(ConsumptionType.FIGHT, fightingCost.get(skillCasting));
+        }
+        return consumption;
+    }
+
+    private Consumption getClimbSustainedConsumption() {
+        Consumption consumption = new Consumption(ConsumptionType.None);
+        if (currentState == MotionState.MOTION_CLIMB && isPlayerMoving()) {
             consumption = new Consumption(ConsumptionType.CLIMBING);
             if (previousState != MotionState.MOTION_CLIMB && previousState != MotionState.MOTION_CLIMB_JUMP) {
                 consumption = new Consumption(ConsumptionType.CLIMB_START);
-            }
-            if (!isPlayerMoving()) {
-                consumption = new Consumption(ConsumptionType.None);
-            }
-        }
-        if (currentState == MotionState.MOTION_CLIMB_JUMP) {
-            if (previousState != MotionState.MOTION_CLIMB_JUMP) {
-                consumption = new Consumption(ConsumptionType.CLIMB_JUMP);
             }
         }
         return consumption;
     }
 
-    private Consumption getSwimConsumptions() {
+    private Consumption getSwimSustainedConsumptions() {
         Consumption consumption = new Consumption(ConsumptionType.None);
         if (currentState == MotionState.MOTION_SWIM_MOVE) {
             consumption = new Consumption(ConsumptionType.SWIMMING);
         }
         if (currentState == MotionState.MOTION_SWIM_DASH) {
-            consumption = new Consumption(ConsumptionType.SWIM_DASH_START);
-            if (previousState == MotionState.MOTION_SWIM_DASH) {
-                consumption = new Consumption(ConsumptionType.SWIM_DASH);
-            }
+            consumption = new Consumption(ConsumptionType.SWIM_DASH);
         }
         return consumption;
     }
 
-    private Consumption getRunWalkDashConsumption() {
+    private Consumption getRunWalkDashSustainedConsumption() {
         Consumption consumption = new Consumption(ConsumptionType.None);
-        if (currentState == MotionState.MOTION_DASH_BEFORE_SHAKE) {
-            consumption = new Consumption(ConsumptionType.DASH);
-            if (previousState == MotionState.MOTION_DASH_BEFORE_SHAKE) {
-                // only charge once
-                consumption = new Consumption(ConsumptionType.SPRINT);
-            }
-        }
         if (currentState == MotionState.MOTION_DASH) {
-            consumption = new Consumption(ConsumptionType.SPRINT);
+            consumption = new Consumption(ConsumptionType.DASH);
         }
         if (currentState == MotionState.MOTION_RUN) {
             consumption = new Consumption(ConsumptionType.RUN);
@@ -385,22 +361,21 @@ public class MovementManager {
         return consumption;
     }
 
-    private Consumption getFlyConsumption() {
+    private Consumption getFlySustainedConsumption() {
         Consumption consumption = new Consumption(ConsumptionType.FLY);
         HashMap<Integer, Float> glidingCostReduction = new HashMap<>() {{
             put(212301, 0.8f); // Amber
             put(222301, 0.8f); // Venti
         }};
         float reduction = 1;
-        for (EntityAvatar entity: cachedSession.getPlayer().getTeamManager().getActiveTeam()) {
-            for (int skillId: entity.getAvatar().getProudSkillList()) {
+        for (EntityAvatar entity : cachedSession.getPlayer().getTeamManager().getActiveTeam()) {
+            for (int skillId : entity.getAvatar().getProudSkillList()) {
                 if (glidingCostReduction.containsKey(skillId)) {
                     reduction = glidingCostReduction.get(skillId);
                 }
             }
         }
         consumption.amount *= reduction;
-
         // POWERED_FLY, e.g. wind tunnel
         if (currentState == MotionState.MOTION_POWERED_FLY) {
             consumption = new Consumption(ConsumptionType.POWERED_FLY);
@@ -408,7 +383,7 @@ public class MovementManager {
         return consumption;
     }
 
-    private Consumption getStandConsumption() {
+    private Consumption getStandSustainedConsumption() {
         Consumption consumption = new Consumption(ConsumptionType.None);
         if (currentState == MotionState.MOTION_STANDBY) {
             consumption = new Consumption(ConsumptionType.STANDBY);
@@ -418,25 +393,4 @@ public class MovementManager {
         }
         return consumption;
     }
-
-    private Consumption getFightConsumption() {
-        Consumption consumption = new Consumption(ConsumptionType.None);
-        HashMap<Integer, Integer> fightingCost = new HashMap<>() {{
-            put(10013, -1000); // Kamisato Ayaka
-            put(10413, -1000); // Mona
-        }};
-        if (fightingCost.containsKey(skillCasting)) {
-            consumption = new Consumption(ConsumptionType.FIGHT, fightingCost.get(skillCasting));
-            // only handle once, so reset.
-            skillCasting = 0;
-            skillCaster = 0;
-        }
-        return consumption;
-    }
-
-    public void notifySkill(int caster, int skillId) {
-        skillCaster = caster;
-        skillCasting = skillId;
-    }
 }
-
