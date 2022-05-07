@@ -179,8 +179,6 @@ public class MovementManager {
         return player.getProperty(PlayerProperty.PROP_MAX_STAMINA);
     }
 
-
-
     // Returns new stamina
     public int updateStamina(GameSession session, int amount) {
         int currentStamina = session.getPlayer().getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
@@ -196,6 +194,7 @@ public class MovementManager {
             newStamina = playerMaxStamina;
         }
         session.getPlayer().setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, newStamina);
+        session.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
         return newStamina;
     }
 
@@ -309,7 +308,6 @@ public class MovementManager {
                         }
                         Grasscutter.getLogger().debug(getCurrentStamina() + "/" + getMaximumStamina() + "\t" + currentState + "\t" + "isMoving: " + isPlayerMoving() + "\t(" + consumption.consumptionType + "," + consumption.amount + ")");
                         updateStamina(cachedSession, consumption.amount);
-                        cachedSession.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
                     }
 
                     // tick triggered
