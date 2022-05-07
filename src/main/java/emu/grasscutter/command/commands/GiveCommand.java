@@ -180,6 +180,13 @@ public final class GiveCommand implements CommandHandler {
       sender.getInventory().addItem(item_set, ActionReason.SubfieldDrop);
     }
 
+    // DEBUG
+    try {
+      CommandHandler.sendMessage(sender, "Debug: Type "+itemData.getItemTypeString()+" | Material Type "+itemData.getMaterialTypeString());
+    } catch (Exception e) {
+      //TODO: handle exception
+    }    
+
     // Notif
     if (!itemData.isEquip()) {
 
