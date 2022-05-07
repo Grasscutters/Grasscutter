@@ -79,6 +79,12 @@ public final class CommandMap {
         return this;
     }
 
+    public List<Command> getAnnotationsAsList() { return new LinkedList<>(this.annotations.values()); }
+
+    public HashMap<String, Command> getAnnotations() {
+        return new LinkedHashMap<>(this.annotations);
+    }
+
     /**
      * Returns a list of all registered commands.
      *
