@@ -19,4 +19,6 @@
     <appender-ref ref="STDOUT" />
     <appender-ref ref="FILE" />
   </root>
+  <logger name="emu.grasscutter.scripts.ScriptLib" level="DEBUG">
+  </logger>
 </Configuration>
