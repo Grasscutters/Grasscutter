@@ -1,6 +1,6 @@
 package emu.grasscutter.languages;
 
-public final class CNLanguage {
+public final class CNLanguage implements LanguageService {
     public String An_error_occurred_during_game_update = "游戏更新时发生了错误.";
     public String Starting_Grasscutter = "正在开启Grasscutter...";
     public String Invalid_server_run_mode = "无效的服务器运行模式. ";

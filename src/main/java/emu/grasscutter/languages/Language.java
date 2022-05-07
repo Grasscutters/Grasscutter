@@ -1,6 +1,6 @@
 package emu.grasscutter.languages;
 
-public final class Language {
+public final class Language implements LanguageService {
     public String An_error_occurred_during_game_update = "An error occurred during game update.";
     public String Starting_Grasscutter = "Starting Grasscutter...";
     public String Invalid_server_run_mode = "Invalid server run mode.";
