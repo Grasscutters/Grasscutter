@@ -105,7 +105,13 @@ public class Scene {
 	public GameEntity getEntityById(int id) {
 		return this.entities.get(id);
 	}
-	
+
+	public GameEntity getEntityByConfigId(int configId) {
+		return this.entities.values().stream()
+				.filter(x -> x.getConfigId() == configId)
+				.findFirst()
+				.orElse(null);
+	}
 	/**
 	 * @return the autoCloseTime
 	 */
