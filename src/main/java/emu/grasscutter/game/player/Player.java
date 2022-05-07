@@ -1152,7 +1152,7 @@ public class Player {
 
 	public void onLogout() {
 		// stop stamina calculation
-		getMovementManager().resetTimer();
+		getMovementManager().stopSustainedStaminaHandler();
 
 		// force to leave the dungeon
 		if (getScene().getSceneType() == SceneType.SCENE_DUNGEON) {
