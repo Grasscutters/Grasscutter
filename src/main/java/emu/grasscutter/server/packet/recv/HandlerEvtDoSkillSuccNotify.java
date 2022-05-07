@@ -16,11 +16,9 @@ public class HandlerEvtDoSkillSuccNotify extends PacketHandler {
         // TODO: Will be used for deducting stamina for charged skills.
 
         int caster = notify.getCasterId();
-        int skill = notify.getSkillId();
+        int skillId = notify.getSkillId();
 
-        // Grasscutter.getLogger().warn(caster + "\t" + skill);
-
-//        session.getPlayer().getScene().broadcastPacket(new PacketEvtAvatarStandUpNotify(notify));
+        session.getPlayer().getMovementManager().notifySkill(caster, skillId);
     }
 
 }
