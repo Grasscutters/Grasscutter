@@ -39,18 +39,47 @@ public final class Language {
     }
 
     /**
-     * Reads a file and creates a language instance.
+     * creates a language instance.
      * @param fileName The name of the language file.
      */
     private Language(String fileName) {
+        @Nullable JsonObject languageData = null;
+
+        languageData = loadLanguage(fileName);
+
+        if (languageData == null) {
+            Grasscutter.getLogger().info("Now switch to default language");
+            languageData = loadDefaultLanguage();
+        }
+
+        assert languageData != null : "languageData is null";
+        this.languageData = languageData;
+    }
+
+    /**
+     * Load default language file and creates a language instance.
+     * @return language data
+     */
+    private JsonObject loadDefaultLanguage() {
+        var fileName = Grasscutter.getConfig().DefaultLanguage.toLanguageTag() + ".json";
+        return loadLanguage(fileName);
+    }
+
+    /**
+     * Reads a file and creates a language instance.
+     * @param fileName The name of the language file.
+     * @return language data
+     */
+    private JsonObject loadLanguage(String fileName) {
         @Nullable JsonObject languageData = null;
         
         try {
             InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
             languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(file), JsonObject.class);
         } catch (Exception exception) {
-            Grasscutter.getLogger().error("Failed to load language file: " + fileName, exception);
-        } this.languageData = languageData;
+            Grasscutter.getLogger().warn("Failed to load language file: " + fileName);
+        }
+        return languageData;
     }
 
     /**
