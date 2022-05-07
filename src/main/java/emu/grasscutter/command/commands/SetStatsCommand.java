@@ -10,13 +10,15 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.languages.Language;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import emu.grasscutter.utils.Language;
+
+import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "setstats", usage = "setstats|stats <stat> <value>",
         description = "Set fight property for your current active character", aliases = {"stats"}, permission = "player.setstats")
 public final class SetStatsCommand implements CommandHandler {
-    class Stat {
+    static class Stat {
         String name;
         FightProperty prop;
         boolean percent;
@@ -27,44 +29,43 @@ public final class SetStatsCommand implements CommandHandler {
             this.percent = percent;
         }
     }
-    Map<String, Stat> stats;
+    
+    Map<String, Stat> stats = new HashMap<>();
     
     public SetStatsCommand() {
-        Language lang = Grasscutter.getLanguage();
-        stats = new HashMap<String, Stat>();
         // Default stats
-        stats.put("maxhp",      new Stat(lang.Stats_FIGHT_PROP_MAX_HP, FightProperty.FIGHT_PROP_MAX_HP, false));
-        stats.put("hp",         new Stat(lang.Stats_FIGHT_PROP_CUR_HP, FightProperty.FIGHT_PROP_CUR_HP, false));
-        stats.put("atk",        new Stat(lang.Stats_FIGHT_PROP_CUR_ATTACK, FightProperty.FIGHT_PROP_CUR_ATTACK, false));
-        stats.put("atkb",       new Stat(lang.Stats_FIGHT_PROP_BASE_ATTACK, FightProperty.FIGHT_PROP_BASE_ATTACK, false));  // This doesn't seem to get used to recalculate ATK, so it's only useful for stuff like Bennett's buff.
-        stats.put("def",        new Stat(lang.Stats_FIGHT_PROP_DEFENSE, FightProperty.FIGHT_PROP_DEFENSE, false));
-        stats.put("em",         new Stat(lang.Stats_FIGHT_PROP_ELEMENT_MASTERY, FightProperty.FIGHT_PROP_ELEMENT_MASTERY, false));
-        stats.put("er",         new Stat(lang.Stats_FIGHT_PROP_CHARGE_EFFICIENCY, FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, true));
-        stats.put("crate",      new Stat(lang.Stats_FIGHT_PROP_CRITICAL, FightProperty.FIGHT_PROP_CRITICAL, true));
-        stats.put("cdmg",       new Stat(lang.Stats_FIGHT_PROP_CRITICAL_HURT, FightProperty.FIGHT_PROP_CRITICAL_HURT, true));
-        stats.put("dmg",        new Stat(lang.Stats_FIGHT_PROP_ADD_HURT, FightProperty.FIGHT_PROP_ADD_HURT, true));  // This seems to get reset after attacks
-        stats.put("eanemo",     new Stat(lang.Stats_FIGHT_PROP_WIND_ADD_HURT, FightProperty.FIGHT_PROP_WIND_ADD_HURT, true));
-        stats.put("ecryo",      new Stat(lang.Stats_FIGHT_PROP_ICE_ADD_HURT, FightProperty.FIGHT_PROP_ICE_ADD_HURT, true));
-        stats.put("edendro",    new Stat(lang.Stats_FIGHT_PROP_GRASS_ADD_HURT, FightProperty.FIGHT_PROP_GRASS_ADD_HURT, true));
-        stats.put("eelectro",   new Stat(lang.Stats_FIGHT_PROP_ELEC_ADD_HURT, FightProperty.FIGHT_PROP_ELEC_ADD_HURT, true));
-        stats.put("egeo",       new Stat(lang.Stats_FIGHT_PROP_ROCK_ADD_HURT, FightProperty.FIGHT_PROP_ROCK_ADD_HURT, true));
-        stats.put("ehydro",     new Stat(lang.Stats_FIGHT_PROP_WATER_ADD_HURT, FightProperty.FIGHT_PROP_WATER_ADD_HURT, true));
-        stats.put("epyro",      new Stat(lang.Stats_FIGHT_PROP_FIRE_ADD_HURT, FightProperty.FIGHT_PROP_FIRE_ADD_HURT, true));
-        stats.put("ephys",      new Stat(lang.Stats_FIGHT_PROP_PHYSICAL_ADD_HURT, FightProperty.FIGHT_PROP_PHYSICAL_ADD_HURT, true));
-        stats.put("resall",     new Stat(lang.Stats_FIGHT_PROP_SUB_HURT, FightProperty.FIGHT_PROP_SUB_HURT, true));  // This seems to get reset after attacks
-        stats.put("resanemo",   new Stat(lang.Stats_FIGHT_PROP_WIND_SUB_HURT, FightProperty.FIGHT_PROP_WIND_SUB_HURT, true));
-        stats.put("rescryo",    new Stat(lang.Stats_FIGHT_PROP_ICE_SUB_HURT, FightProperty.FIGHT_PROP_ICE_SUB_HURT, true));
-        stats.put("resdendro",  new Stat(lang.Stats_FIGHT_PROP_GRASS_SUB_HURT, FightProperty.FIGHT_PROP_GRASS_SUB_HURT, true));
-        stats.put("reselectro", new Stat(lang.Stats_FIGHT_PROP_ELEC_SUB_HURT, FightProperty.FIGHT_PROP_ELEC_SUB_HURT, true));
-        stats.put("resgeo",     new Stat(lang.Stats_FIGHT_PROP_ROCK_SUB_HURT, FightProperty.FIGHT_PROP_ROCK_SUB_HURT, true));
-        stats.put("reshydro",   new Stat(lang.Stats_FIGHT_PROP_WATER_SUB_HURT, FightProperty.FIGHT_PROP_WATER_SUB_HURT, true));
-        stats.put("respyro",    new Stat(lang.Stats_FIGHT_PROP_FIRE_SUB_HURT, FightProperty.FIGHT_PROP_FIRE_SUB_HURT, true));
-        stats.put("resphys",    new Stat(lang.Stats_FIGHT_PROP_PHYSICAL_SUB_HURT, FightProperty.FIGHT_PROP_PHYSICAL_SUB_HURT, true));
-        stats.put("cdr",        new Stat(lang.Stats_FIGHT_PROP_SKILL_CD_MINUS_RATIO, FightProperty.FIGHT_PROP_SKILL_CD_MINUS_RATIO, true));
-        stats.put("heal",       new Stat(lang.Stats_FIGHT_PROP_HEAL_ADD, FightProperty.FIGHT_PROP_HEAL_ADD, true));
-        stats.put("heali",      new Stat(lang.Stats_FIGHT_PROP_HEALED_ADD, FightProperty.FIGHT_PROP_HEALED_ADD, true));
-        stats.put("shield",     new Stat(lang.Stats_FIGHT_PROP_SHIELD_COST_MINUS_RATIO, FightProperty.FIGHT_PROP_SHIELD_COST_MINUS_RATIO, true));
-        stats.put("defi",       new Stat(lang.Stats_FIGHT_PROP_DEFENCE_IGNORE_RATIO, FightProperty.FIGHT_PROP_DEFENCE_IGNORE_RATIO, true));
+        stats.put("maxhp", new Stat(FightProperty.FIGHT_PROP_MAX_HP.toString(), FightProperty.FIGHT_PROP_MAX_HP, false));
+        stats.put("hp", new Stat(FightProperty.FIGHT_PROP_CUR_HP.toString(), FightProperty.FIGHT_PROP_CUR_HP, false));
+        stats.put("atk", new Stat(FightProperty.FIGHT_PROP_CUR_ATTACK.toString(), FightProperty.FIGHT_PROP_CUR_ATTACK, false));
+        stats.put("atkb", new Stat(FightProperty.FIGHT_PROP_BASE_ATTACK.toString(), FightProperty.FIGHT_PROP_BASE_ATTACK, false));  // This doesn't seem to get used to recalculate ATK, so it's only useful for stuff like Bennett's buff.
+        stats.put("def", new Stat(FightProperty.FIGHT_PROP_DEFENSE.toString(), FightProperty.FIGHT_PROP_DEFENSE, false));
+        stats.put("em", new Stat(FightProperty.FIGHT_PROP_ELEMENT_MASTERY.toString(), FightProperty.FIGHT_PROP_ELEMENT_MASTERY, false));
+        stats.put("er", new Stat(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY.toString(), FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, true));
+        stats.put("crate", new Stat(FightProperty.FIGHT_PROP_CRITICAL.toString(), FightProperty.FIGHT_PROP_CRITICAL, true));
+        stats.put("cdmg", new Stat(FightProperty.FIGHT_PROP_CRITICAL_HURT.toString(), FightProperty.FIGHT_PROP_CRITICAL_HURT, true));
+        stats.put("dmg", new Stat(FightProperty.FIGHT_PROP_ADD_HURT.toString(), FightProperty.FIGHT_PROP_ADD_HURT, true));  // This seems to get reset after attacks
+        stats.put("eanemo", new Stat(FightProperty.FIGHT_PROP_WIND_ADD_HURT.toString(), FightProperty.FIGHT_PROP_WIND_ADD_HURT, true));
+        stats.put("ecryo", new Stat(FightProperty.FIGHT_PROP_ICE_ADD_HURT.toString(), FightProperty.FIGHT_PROP_ICE_ADD_HURT, true));
+        stats.put("edendro", new Stat(FightProperty.FIGHT_PROP_GRASS_ADD_HURT.toString(), FightProperty.FIGHT_PROP_GRASS_ADD_HURT, true));
+        stats.put("eelectro", new Stat(FightProperty.FIGHT_PROP_ELEC_ADD_HURT.toString(), FightProperty.FIGHT_PROP_ELEC_ADD_HURT, true));
+        stats.put("egeo", new Stat(FightProperty.FIGHT_PROP_ROCK_ADD_HURT.toString(), FightProperty.FIGHT_PROP_ROCK_ADD_HURT, true));
+        stats.put("ehydro", new Stat(FightProperty.FIGHT_PROP_WATER_ADD_HURT.toString(), FightProperty.FIGHT_PROP_WATER_ADD_HURT, true));
+        stats.put("epyro", new Stat(FightProperty.FIGHT_PROP_FIRE_ADD_HURT.toString(), FightProperty.FIGHT_PROP_FIRE_ADD_HURT, true));
+        stats.put("ephys", new Stat(FightProperty.FIGHT_PROP_PHYSICAL_ADD_HURT.toString(), FightProperty.FIGHT_PROP_PHYSICAL_ADD_HURT, true));
+        stats.put("resall", new Stat(FightProperty.FIGHT_PROP_SUB_HURT.toString(), FightProperty.FIGHT_PROP_SUB_HURT, true));  // This seems to get reset after attacks
+        stats.put("resanemo", new Stat(FightProperty.FIGHT_PROP_WIND_SUB_HURT.toString(), FightProperty.FIGHT_PROP_WIND_SUB_HURT, true));
+        stats.put("rescryo", new Stat(FightProperty.FIGHT_PROP_ICE_SUB_HURT.toString(), FightProperty.FIGHT_PROP_ICE_SUB_HURT, true));
+        stats.put("resdendro", new Stat(FightProperty.FIGHT_PROP_GRASS_SUB_HURT.toString(), FightProperty.FIGHT_PROP_GRASS_SUB_HURT, true));
+        stats.put("reselectro", new Stat(FightProperty.FIGHT_PROP_ELEC_SUB_HURT.toString(), FightProperty.FIGHT_PROP_ELEC_SUB_HURT, true));
+        stats.put("resgeo", new Stat(FightProperty.FIGHT_PROP_ROCK_SUB_HURT.toString(), FightProperty.FIGHT_PROP_ROCK_SUB_HURT, true));
+        stats.put("reshydro", new Stat(FightProperty.FIGHT_PROP_WATER_SUB_HURT.toString(), FightProperty.FIGHT_PROP_WATER_SUB_HURT, true));
+        stats.put("respyro", new Stat(FightProperty.FIGHT_PROP_FIRE_SUB_HURT.toString(), FightProperty.FIGHT_PROP_FIRE_SUB_HURT, true));
+        stats.put("resphys", new Stat(FightProperty.FIGHT_PROP_PHYSICAL_SUB_HURT.toString(), FightProperty.FIGHT_PROP_PHYSICAL_SUB_HURT, true));
+        stats.put("cdr", new Stat(FightProperty.FIGHT_PROP_SKILL_CD_MINUS_RATIO.toString(), FightProperty.FIGHT_PROP_SKILL_CD_MINUS_RATIO, true));
+        stats.put("heal", new Stat(FightProperty.FIGHT_PROP_HEAL_ADD.toString(), FightProperty.FIGHT_PROP_HEAL_ADD, true));
+        stats.put("heali", new Stat(FightProperty.FIGHT_PROP_HEALED_ADD.toString(), FightProperty.FIGHT_PROP_HEALED_ADD, true));
+        stats.put("shield", new Stat(FightProperty.FIGHT_PROP_SHIELD_COST_MINUS_RATIO.toString(), FightProperty.FIGHT_PROP_SHIELD_COST_MINUS_RATIO, true));
+        stats.put("defi", new Stat(FightProperty.FIGHT_PROP_DEFENCE_IGNORE_RATIO.toString(), FightProperty.FIGHT_PROP_DEFENCE_IGNORE_RATIO, true));
         // Compatibility aliases
         stats.put("mhp", stats.get("maxhp"));
         stats.put("cr", stats.get("crate"));
@@ -175,26 +176,23 @@ public final class SetStatsCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        Language lang = Grasscutter.getLanguage();
-        String syntax = sender == null ? lang.SetStats_usage_console : lang.SetStats_usage_console;
-        String usage = syntax + lang.SetStats_help_message;
+        String syntax = sender == null ? translate("commands.setStats.usage_console") : translate("commands.setStats.ingame");
+        String usage = syntax + translate("commands.setStats.help_message");
         String statStr;
         String valueStr;
 
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, lang.Target_needed);
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
             return;
         }
 
-        switch (args.size()) {
-            default:
-                CommandHandler.sendMessage(sender, usage);
-                return;
-            case 2:
-                statStr = args.get(0).toLowerCase();
-                valueStr = args.get(1);
-                break;
-        };
+        if (args.size() == 2) {
+            statStr = args.get(0).toLowerCase();
+            valueStr = args.get(1);
+        } else {
+            CommandHandler.sendMessage(sender, usage);
+            return;
+        }
 
         EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
 
@@ -206,7 +204,7 @@ public final class SetStatsCommand implements CommandHandler {
                 value = Float.parseFloat(valueStr);
             }
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, lang.SetStats_value_error);
+            CommandHandler.sendMessage(sender, translate("commands.setStats.value_error"));
             return;
         }
 
@@ -220,15 +218,14 @@ public final class SetStatsCommand implements CommandHandler {
                 valueStr = String.format("%.0f", value);
             }
             if (targetPlayer == sender) {
-                CommandHandler.sendMessage(sender, lang.SetStats_set_self.replace("{name}", stat.name).replace("{value}", valueStr));
+                CommandHandler.sendMessage(sender, translate("commands.setStats.set_self", stat.name, valueStr));
             } else {
                 String uidStr = targetPlayer.getAccount().getId();
-                CommandHandler.sendMessage(sender, lang.SetStats_set_for_uid.replace("{name}", stat.name).replace("{uid}", uidStr).replace("{value}", valueStr));
+                CommandHandler.sendMessage(sender, translate("commands.setStats.set_self", stat.name, uidStr, valueStr));
             }
-            return;
         } else {
             CommandHandler.sendMessage(sender, usage);
-            return;
         }
+        return;
     }
 }
