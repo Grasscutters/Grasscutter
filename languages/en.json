@@ -115,7 +115,7 @@
       "furniture": "Cleared furniture for %s.",
       "displays": "Cleared displays for %s.",
       "virtuals": "Cleared virtuals for %s.",
-      "everything": "Cleared everything for %s."
+      "done": "Cleared %s item with %s limit"
     },
     "coop": {
       "usage": "Usage: coop <playerId> <target playerId>",

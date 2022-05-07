@@ -30,6 +30,7 @@ public final class ClearCommand implements CommandHandler {
         }
         Inventory playerInventory = targetPlayer.getInventory();
         List<GameItem> toDelete = null;
+        int limit = 1000;
         
         switch (args.get(0)) {
             case "wp" -> {
@@ -57,9 +58,9 @@ public final class ClearCommand implements CommandHandler {
             }
             case "all" -> {
             	toDelete = playerInventory.getItems().values().stream()
-                        .filter(item1 -> !item1.isLocked() && !item1.isEquipped()).limit(1000)
+                        .filter(item1 -> !item1.isLocked() && !item1.isEquipped()).limit(limit)
                         .toList();
-                CommandHandler.sendMessage(sender, translate("commands.clear.everything", targetPlayer.getNickname()));
+                CommandHandler.sendMessage(sender, translate("commands.clear.done", toDelete.size(),limit));
             }
         }
         
