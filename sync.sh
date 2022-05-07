@@ -1,2 +1,2 @@
 #!/bin/bash
-git pull https://github.com/Grasscutters/Grasscutter.git development
+git pull https://github.com/Akka0/Grasscutter.git tower
