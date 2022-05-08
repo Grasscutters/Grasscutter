@@ -57,14 +57,21 @@ public abstract class KcpChannel extends ChannelInboundHandlerAdapter {
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
 
         String message = "???";
-        if(cause.getMessage() != null && cause.getMessage().isBlank()) { 
+        String metode = "ZERO";
+        
+        if(cause != null && cause.getMessage() != null && cause.getMessage().isBlank()) { 
+          metode = "1";
           message = cause.getMessage();
-        }else{
+        }else if(cause.getCause() != null && cause.getCause().getMessage() != null && cause.getCause().getMessage().isBlank()){
+          metode = "2";
+          message = cause.getCause().getMessage();
+        } else {
+          metode = "3";
           StringWriter sw = new StringWriter();
-          PrintWriter pw = new PrintWriter(sw);
-          cause.printStackTrace(pw);
-          message = pw.toString();
+          cause.printStackTrace(new PrintWriter(sw));
+          message = sw.toString();
         }
+
         if(message.matches("(.*)OutOfMemoryError(.*)")){
           Grasscutter.getLogger().info("Trying to exit program because memory is full");
           Map<Integer, Player> playersMap = Grasscutter.getGameServer().getPlayers();
@@ -76,7 +83,7 @@ public abstract class KcpChannel extends ChannelInboundHandlerAdapter {
           // Bye          
           System.exit(0);
         }else{
-          Grasscutter.getLogger().error("BIG PROBLEM: ",message);
+          Grasscutter.getLogger().error("BIG PROBLEM (C"+metode+"): "+message);
           close();
         }
     }
