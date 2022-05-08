@@ -11,8 +11,7 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "resetconst", usage = "resetconst [all]",
-        description = "Resets the constellation level on your current active character, will need to relog after using the command to see any changes.",
-        aliases = {"resetconstellation"}, permission = "player.resetconstellation")
+        aliases = {"resetconstellation"}, permission = "player.resetconstellation", description = "commands.resetConst.description")
 public final class ResetConstCommand implements CommandHandler {
 
     @Override

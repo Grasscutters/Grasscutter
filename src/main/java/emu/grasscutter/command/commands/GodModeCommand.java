@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -9,8 +8,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "godmode", usage = "godmode [on|off|toggle]",
-        description = "Prevents you from taking damage. Defaults to toggle.", permission = "player.godmode")
+@Command(label = "godmode", usage = "godmode [on|off|toggle]", permission = "player.godmode", description = "commands.godmode.description")
 public final class GodModeCommand implements CommandHandler {
 
     @Override

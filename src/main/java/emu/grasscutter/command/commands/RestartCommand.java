@@ -6,7 +6,9 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "restart", usage = "restart - Restarts the current session")
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "restart", usage = "restart", description = "commands.restart.description")
 public final class RestartCommand implements CommandHandler {
 
     @Override
