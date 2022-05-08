@@ -18,6 +18,8 @@ import io.netty.buffer.Unpooled;
 
 import org.slf4j.Logger;
 
+import javax.annotation.Nullable;
+
 import static emu.grasscutter.utils.Language.translate;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
@@ -253,7 +255,9 @@ public final class Utils {
 	 * @param stream The input stream.
 	 * @return The string.
 	 */
-	public static String readFromInputStream(InputStream stream) {
+	public static String readFromInputStream(@Nullable InputStream stream) {
+		if(stream == null) return "empty";
+		
 		StringBuilder stringBuilder = new StringBuilder();
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
 			String line; while ((line = reader.readLine()) != null) {
@@ -261,6 +265,8 @@ public final class Utils {
 			} stream.close();
 		} catch (IOException e) {
 			Grasscutter.getLogger().warn("Failed to read from input stream.");
+		} catch (NullPointerException ignored) {
+			return "empty";
 		} return stringBuilder.toString();
 	}
 
