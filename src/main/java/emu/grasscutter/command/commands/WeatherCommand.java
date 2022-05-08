@@ -11,9 +11,13 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "weather", usage = "weather <weatherId> [climateId]",
-        description = "Changes the weather.", aliases = {"w"}, permission = "player.weather")
+@Command(label = "weather", usage = "weather <weatherId> [climateId]", aliases = {"w"}, permission = "player.weather")
 public final class WeatherCommand implements CommandHandler {
+
+    @Override
+    public String description() {
+        return translate("commands.weather.description");
+    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

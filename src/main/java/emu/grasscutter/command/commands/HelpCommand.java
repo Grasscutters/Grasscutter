@@ -10,22 +10,26 @@ import java.util.*;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "help", usage = "help [command]",
-        description = "Sends the help message or shows information about a specified command")
+@Command(label = "help", usage = "help [command]")
 public final class HelpCommand implements CommandHandler {
+
+    @Override
+    public String description() {
+        return translate("commands.help.description");
+    }
 
     @Override
     public void execute(Player player, Player targetPlayer, List<String> args) {
         if (args.size() < 1) {
             HashMap<String, CommandHandler> handlers = CommandMap.getInstance().getHandlers();
-            List<Command> annotations = new ArrayList<>();
+            HashMap<Command, CommandHandler> annotations = new HashMap<>();
             for (String key : handlers.keySet()) {
                 Command annotation = handlers.get(key).getClass().getAnnotation(Command.class);
 
                 if (!Arrays.asList(annotation.aliases()).contains(key)) {
                     if (player != null && !Objects.equals(annotation.permission(), "") && !player.getAccount().hasPermission(annotation.permission()))
                         continue;
-                    annotations.add(annotation);
+                    annotations.put(annotation, handlers.get(key));
                 }
             }
 
@@ -39,7 +43,7 @@ public final class HelpCommand implements CommandHandler {
             } else {
                 Command annotation = handler.getClass().getAnnotation(Command.class);
 
-                builder.append("   ").append(annotation.description()).append("\n");
+                builder.append("   ").append(handler.description()).append("\n");
                 builder.append(translate("commands.help.usage")).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
                     builder.append("\n").append(translate("commands.help.aliases"));
@@ -56,12 +60,12 @@ public final class HelpCommand implements CommandHandler {
         }
     }
 
-    void SendAllHelpMessage(Player player, List<Command> annotations) {
+    void SendAllHelpMessage(Player player, HashMap<Command, CommandHandler> annotations) {
         if (player == null) {
             StringBuilder builder = new StringBuilder("\n" + translate("commands.help.available_commands") + "\n");
-            annotations.forEach(annotation -> {
+            annotations.forEach((annotation, handler) -> {
                 builder.append(annotation.label()).append("\n");
-                builder.append("   ").append(annotation.description()).append("\n");
+                builder.append("   ").append(handler.description()).append("\n");
                 builder.append(translate("commands.help.usage")).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
                     builder.append("\n").append(translate("commands.help.aliases"));
@@ -76,9 +80,9 @@ public final class HelpCommand implements CommandHandler {
             CommandHandler.sendMessage(null, builder.toString());
         } else {
             CommandHandler.sendMessage(player, translate("commands.help.available_commands"));
-            annotations.forEach(annotation -> {
+            annotations.forEach((annotation, handler) -> {
                 StringBuilder builder = new StringBuilder(annotation.label()).append("\n");
-                builder.append("   ").append(annotation.description()).append("\n");
+                builder.append("   ").append(handler.description()).append("\n");
                 builder.append(translate("commands.help.usage")).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
                     builder.append("\n").append(translate("commands.help.aliases"));

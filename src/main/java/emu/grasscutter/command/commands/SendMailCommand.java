@@ -13,8 +13,7 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @SuppressWarnings("ConstantConditions")
-@Command(label = "sendmail", usage = "sendmail <userId|all|help> [templateId]",
-        description = "Sends mail to the specified user. The usage of this command changes based on it's composition state.", permission = "server.sendmail")
+@Command(label = "sendmail", usage = "sendmail <userId|all|help> [templateId]", permission = "server.sendmail")
 public final class SendMailCommand implements CommandHandler {
 
     // TODO: You should be able to do /sendmail and then just send subsequent messages until you finish
@@ -23,6 +22,11 @@ public final class SendMailCommand implements CommandHandler {
 
     // Key = User that is constructing the mail.
     private static final HashMap<Integer, MailBuilder> mailBeingConstructed = new HashMap<Integer, MailBuilder>();
+
+    @Override
+    public String description() {
+        return translate("commands.sendMail.description");
+    }
 
     // Yes this is awful and I hate it.
     @Override
@@ -40,7 +44,7 @@ public final class SendMailCommand implements CommandHandler {
                     MailBuilder mailBuilder;
                     switch (args.get(0).toLowerCase()) {
                         case "help" -> {
-                            CommandHandler.sendMessage(sender, this.getClass().getAnnotation(Command.class).description() + "\nUsage: " + this.getClass().getAnnotation(Command.class).usage());
+                            CommandHandler.sendMessage(sender, this.description() + "\nUsage: " + this.getClass().getAnnotation(Command.class).usage());
                             return;
                         }
                         case "all" -> mailBuilder = new MailBuilder(true, new Mail());

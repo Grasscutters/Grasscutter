@@ -12,9 +12,13 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "givechar", usage = "givechar <avatarId> [level]",
-        description = "Gives the player a specified character", aliases = {"givec"}, permission = "player.givechar")
+@Command(label = "givechar", usage = "givechar <avatarId> [level]", aliases = {"givec"}, permission = "player.givechar")
 public final class GiveCharCommand implements CommandHandler {
+
+    @Override
+    public String description() {
+        return translate("commands.giveChar.description");
+    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

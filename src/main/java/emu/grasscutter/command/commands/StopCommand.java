@@ -9,9 +9,13 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "stop", usage = "stop",
-        description = "Stops the server", permission = "server.stop")
+@Command(label = "stop", usage = "stop", permission = "server.stop")
 public final class StopCommand implements CommandHandler {
+
+    @Override
+    public String description() {
+        return translate("commands.stop.description");
+    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

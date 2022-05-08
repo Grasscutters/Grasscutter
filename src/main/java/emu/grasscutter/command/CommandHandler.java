@@ -6,6 +6,9 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 public interface CommandHandler {
+
+    String description();
+
     /**
      * Send a message to the target.
      *
