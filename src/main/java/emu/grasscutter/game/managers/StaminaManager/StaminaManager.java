@@ -29,19 +29,16 @@ public class StaminaManager {
     private Position previousCoordinates = new Position(0, 0, 0);
     private MotionState currentState = MotionState.MOTION_STANDBY;
     private MotionState previousState = MotionState.MOTION_STANDBY;
-    private Timer sustainedStaminaHandlerTimer;
+    private final Timer sustainedStaminaHandlerTimer = new Timer();
+    private final SustainedStaminaHandler handleSustainedStamina = new SustainedStaminaHandler();
+    private boolean timerRunning = false;
     private GameSession cachedSession = null;
     private GameEntity cachedEntity = null;
     private int staminaRecoverDelay = 0;
     private boolean isInSkillMove = false;
-
-
-
-
     public boolean getIsInSkillMove() {
         return isInSkillMove;
     }
-
     public void setIsInSkillMove(boolean b) {
         isInSkillMove = b;
     }
@@ -139,24 +136,23 @@ public class StaminaManager {
         entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
         entity.getWorld().broadcastPacket(new PacketLifeStateChangeNotify(0, entity, LifeState.LIFE_DEAD));
         player.getScene().removeEntity(entity);
-        ((EntityAvatar) entity).onDeath(dieType, 0);
+        ((EntityAvatar)entity).onDeath(dieType, 0);
     }
 
     public void startSustainedStaminaHandler() {
-        if (!player.isPaused()) {
-            if (sustainedStaminaHandlerTimer == null) {
-                sustainedStaminaHandlerTimer = new Timer();
-                sustainedStaminaHandlerTimer.scheduleAtFixedRate(new SustainedStaminaHandler(), 0, 200);
-                Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer started");
-            }
+        if (!player.isPaused() && !timerRunning) {
+            timerRunning = true;
+            sustainedStaminaHandlerTimer.scheduleAtFixedRate(handleSustainedStamina, 0, 200);
+            // Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer started");
         }
-
     }
 
     public void stopSustainedStaminaHandler() {
-        Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer stopped");
-        sustainedStaminaHandlerTimer.cancel();
-        sustainedStaminaHandlerTimer = null;
+        if (timerRunning) {
+            timerRunning = false;
+            sustainedStaminaHandlerTimer.cancel();
+            // Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer stopped");
+        }
     }
 
     // Handlers
