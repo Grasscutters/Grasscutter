@@ -872,11 +872,11 @@ public class Player {
 	}
 
 	public void onPause() {
-		staminaManager.stopSustainedStaminaHandler();
+		getStaminaManager().stopSustainedStaminaHandler();
 	}
 
 	public void onUnpause() {
-		staminaManager.startSustainedStaminaHandler();
+		getStaminaManager().startSustainedStaminaHandler();
 	}
 
 	public void sendPacket(BasePacket packet) {

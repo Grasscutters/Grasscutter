@@ -16,8 +16,7 @@ import emu.grasscutter.game.world.Scene;
 import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)]",
-        description = "Spawns an entity near you", permission = "server.spawn",aliases = {"s"})
+@Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)]", permission = "server.spawn", description = "commands.spawn.description")
 public final class SpawnCommand implements CommandHandler {
 
     @Override

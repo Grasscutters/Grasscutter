@@ -15,8 +15,7 @@ import emu.grasscutter.utils.Language;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "setstats", usage = "setstats|stats <stat> <value>",
-        description = "Set fight property for your current active character", aliases = {"stats"}, permission = "player.setstats")
+@Command(label = "setstats", usage = "setstats|stats <stat> <value>", aliases = {"stats"}, permission = "player.setstats", description = "commands.setStats.description")
 public final class SetStatsCommand implements CommandHandler {
     static class Stat {
         String name;

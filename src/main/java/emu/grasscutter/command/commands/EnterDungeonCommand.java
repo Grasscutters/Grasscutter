@@ -8,9 +8,9 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "enterdungeon", usage = "enterdungeon <dungeon id>",
-        description = "Enter a dungeon", aliases = {"dungeon"}, permission = "player.enterdungeon")
+@Command(label = "enterdungeon", usage = "enterdungeon <dungeon id>", aliases = {"dungeon"}, permission = "player.enterdungeon", description = "commands.enter_dungeon.description")
 public final class EnterDungeonCommand implements CommandHandler {
+
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {

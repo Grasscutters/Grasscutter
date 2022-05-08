@@ -36,12 +36,12 @@
       }
     },
     "status": {
-      "free_software": "Grasscutter 是免费开源软件。如果你是付费购买的，那已经被骗了。Github：https://github.com/Grasscutters/Grasscutter",
+      "free_software": "Grasscutter 是免费开源软件，遵循Apache-2.0 license。如果您是付费购买的，那您已经被骗了。项目地址：Github：https://github.com/Grasscutters/Grasscutter",
       "starting": "正在启动 Grasscutter...",
       "shutdown": "正在关闭...",
-      "done": "加載完成！输入 \"help\" 查看命令列表",
+      "done": "加载完成！输入 \"help\" 查看命令列表",
       "error": "发生了一个错误。",
-      "welcome": "欢迎使用 Grasscutter",
+      "welcome": "欢迎使用 Grasscutter！珍惜这段美妙的旅途吧！",
       "run_mode_error": "无效的服务器运行模式： %s。",
       "run_mode_help": "服务器运行模式必须为 HYBRID、DISPATCH_ONLY 或 GAME_ONLY。Grasscutter 启动失败...",
       "create_resources": "正在创建 resources 目录...",
@@ -52,12 +52,12 @@
     "generic": {
       "not_specified": "没有指定命令。",
       "unknown_command": "未知的命令：%s",
-      "permission_error": "您没有执行此命令的权限。",
-      "console_execute_error": "此命令只能在服务器控制台执行。",
-      "player_execute_error": "此命令只能在游戏内执行。",
-      "command_exist_error": "找不到命令。",
+      "permission_error": "哼哼哼！您没有执行此命令的权限！请联系服务器管理员解决！",
+      "console_execute_error": "此命令只能在服务器控制台执行呐~",
+      "player_execute_error": "此命令只能在游戏内执行哦~",
+      "command_exist_error": "这条命令……好像找不到呢？。",
       "invalid": {
-        "amount": "无效的 数量.",
+        "amount": "无效的数量.",
         "artifactId": "无效的圣遗物ID。",
         "avatarId": "无效的角色ID。",
         "avatarLevel": "无效的角色等級。",
@@ -119,7 +119,7 @@
     },
     "coop": {
       "usage": "用法：coop <playerId> <target playerId>",
-      "success": "已召唤 %s 到 %s的世界"
+      "success": "已强制召唤 %s 到 %s的世界"
     },
     "enter_dungeon": {
       "usage": "用法：enterdungeon <dungeon id>",
@@ -140,21 +140,21 @@
     },
     "giveChar": {
       "usage": "用法：givechar <player> <itemId|itemName> [amount]",
-      "given": "Given %s with level %s to %s.",
+      "given": "给予角色 %s 等级 %s 向UID %s.",
       "invalid_avatar_id": "无效的角色ID。",
       "invalid_avatar_level": "无效的角色等級。.",
       "invalid_avatar_or_player_id": "无效的角色ID/玩家ID。"
     },
     "give": {
       "usage": "用法：give <player> <itemId|itemName> [amount] [level] [refinement]",
-      "refinement_only_applicable_weapons": "精炼等级参数仅在武器上可用",
-      "refinement_must_between_1_and_5": "精炼等级必须在 1 到 5 之间。",
+      "refinement_only_applicable_weapons": "精炼等阶参数仅在给予武器时可用",
+      "refinement_must_between_1_and_5": "精炼等阶必须在 1 到 5 之间。",
       "given": "已将 %s 个 %s 给予 %s。",
       "given_with_level_and_refinement": "已将 %s [等級%s, 精炼%s] %s个给予 %s",
-      "given_level": "已将 %s 等级 %s %s 个给予 %s"
+      "given_level": "已将 %s 等级 %s %s 个给予UID %s"
     },
     "godmode": {
-      "success": "上帝模式被设置为 %s 。 [用户：%s]"
+      "success": "上帝模式已被设置为 %s 。 [用户：%s]"
     },
     "heal": {
       "success": "所有角色已被治疗。"
@@ -173,7 +173,7 @@
       "success": "已杀死 %s 目前使用的角色。"
     },
     "list": {
-      "message": "目前在线人数：%s"
+      "success": "目前在线人数：%s"
     },
     "permission": {
       "usage": "用法：permission <add|remove> <username> <permission>",
@@ -188,7 +188,7 @@
     },
     "reload": {
       "reload_start": "正在重载配置文件和数据。",
-      "reload_done": "重装完毕。"
+      "reload_done": "重载完毕。"
     },
     "resetConst": {
       "reset_all": "重置所有角色的命座。",
@@ -204,7 +204,7 @@
       "templates": "邮件模板尚未实装...",
       "invalid_arguments": "无效的参数。\n指令使用方法 `/sendmail <userId|all|help> [templateId]`",
       "send_cancel": "取消发送邮件",
-      "send_done": "已将邮件给 %s！",
+      "send_done": "已将邮件发送给 %s！",
       "send_all_done": "邮件已发送给所有人！",
       "not_composition_end": "现在邮件发送未到最后阶段。\n请使用 `/sendmail %s` 继续发送邮件，或使用 `/sendmail stop` 来停止发送邮件。",
       "please_use": "请使用 `/sendmail %s`",
@@ -257,21 +257,21 @@
       "usage_1": "设置天赋等级：/talent set <talentID> <value>",
       "usage_2": "另一种设置天赋等级的命令使用方法：/talent <n or e or q> <value>",
       "usage_3": "获取天赋ID指令用法：/talent getid",
-      "lower_16": "无效的天赋等级，天赋等级应低于16。",
+      "lower_16": "无效的天赋等级，天赋等级应小于等于15。",
       "set_id": "将天赋等级设为 %s。",
       "set_atk": "将普通攻击等级设为 %s。",
-      "set_e": "设定天赋E等级为 %s。",
-      "set_q": "设定天赋Q等级为 %s。",
+      "set_e": "设定元素战技等级为 %s。",
+      "set_q": "设定元素爆发等级为 %s。",
       "invalid_skill_id": "无效的技能ID。",
       "set_this": "将天赋等级设为 %s。",
       "invalid_level": "无效的天赋等级。",
       "normal_attack_id": "普通攻击的 ID 为 %s。",
-      "e_skill_id": "E技能ID %s。",
-      "q_skill_id": "Q技能ID %s。"
+      "e_skill_id": "元素战技ID %s。",
+      "q_skill_id": "元素爆发ID %s。"
     },
     "teleportAll": {
       "success": "已将全部玩家传送到你的位置",
-      "error": "命令仅限多人游戏使用。"
+      "error": "命令仅限处于多人游戏状态下使用。"
     },
     "teleport": {
       "usage_server": "用法：/tp @<player id> <x> <y> <z> [scene id]",
@@ -282,12 +282,12 @@
     },
     "weather": {
       "usage": "用法：weather <weatherId> [climateId]",
-      "success": "已将当前天气设定为 %s，气候则为 %s。",
-      "invalid_id": "无效的ID。"
+      "success": "已将当前天气设定为 %s，气候为 %s。",
+      "invalid_id": "无效的天气ID。"
     },
     "drop": {
       "command_usage": "用法：drop <itemId|itemName> [amount]",
-      "success": "已將 %s x %s 丟在附近。"
+      "success": "已将 %s x %s 丟在附近。"
     },
     "help": {
       "usage": "用法：",
