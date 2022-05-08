@@ -19,7 +19,7 @@ public final class Language {
      * @return A language instance.
      */
     public static Language getLanguage(String langCode) {
-        return new Language(langCode + ".json", Grasscutter.getConfig().DefaultLanguage.toLanguageTag());
+        return new Language(langCode + ".json", Grasscutter.getConfig().DefaultLanguage.toLanguageTag() + ".json");
     }
 
     /**
@@ -47,10 +47,14 @@ public final class Language {
         @Nullable JsonObject languageData = null;
 
         InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
-        if(file == null) // Provided fallback language.
+        if (file == null) { // Provided fallback language.
             file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
-        if(file == null) // Fallback the fallback language.
+            Grasscutter.getLogger().warn("Failed to load language file: " + fileName + ", falling back to: " + fallback);
+        }
+        if(file == null) { // Fallback the fallback language.
             file = Grasscutter.class.getResourceAsStream("/languages/en-US.json");
+            Grasscutter.getLogger().warn("Failed to load language file: " + fallback + ", falling back to: en-US.json");
+        }
         if(file == null)
             throw new RuntimeException("Unable to load the primary, fallback, and 'en-US' language files.");
         
