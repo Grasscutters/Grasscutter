@@ -257,6 +257,7 @@
       "usage_1": "Aby ustawić poziom talentu: /talent set <ID talentu> <wartość>",
       "usage_2": "Inny sposób na ustawienie poziomu talentu: /talent <n lub e lub q> <wartość>",
       "usage_3": "Aby uzyskać ID talentu: /talent getid",
+      "usage_4": "Ustaw wszystkie postacie na pełny poziom talentu: /talent all",
       "lower_16": "Błędny poziom talentu. Poziom powinien być mniejszy niż 16",
       "set_id": "Ustawiono talent na %s.",
       "set_atk": "Ustawiono talent Atak Podstawowy na poziom %s.",
@@ -267,7 +268,8 @@
       "invalid_level": "Błędny poziom talentu.",
       "normal_attack_id": "ID podstawowego ataku: %s.",
       "e_skill_id": "ID umiejętności E: %s.",
-      "q_skill_id": "ID umiejętności Q: %s."
+      "q_skill_id": "ID umiejętności Q: %s.",
+      "all_avatar_skills": "Wszystkie postacie zostały ustawione na pełny poziom talentu"
     },
     "teleportAll": {
       "success": "Przyzwano wszystkich graczy do Ciebie.",

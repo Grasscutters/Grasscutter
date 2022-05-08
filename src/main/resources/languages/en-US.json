@@ -286,6 +286,7 @@
       "usage_1": "To set talent level: /talent set <talentID> <value>",
       "usage_2": "Another way to set talent level: /talent <n or e or q> <value>",
       "usage_3": "To get talent ID: /talent getid",
+      "usage_4": "Set all characters to full talent level：/talent all",
       "lower_16": "Invalid talent level. Level should be lower than 16",
       "set_id": "Set talent to %s.",
       "set_atk": "Set talent Normal ATK to %s.",
@@ -297,6 +298,7 @@
       "normal_attack_id": "Normal Attack ID %s.",
       "e_skill_id": "E skill ID %s.",
       "q_skill_id": "Q skill ID %s.",
+      "all_avatar_skills": "All characters have full talent set",
       "description": "Set talent level for your current active character"
     },
     "teleportAll": {

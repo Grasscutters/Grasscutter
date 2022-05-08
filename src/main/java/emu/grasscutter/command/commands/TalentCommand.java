@@ -50,15 +50,21 @@ public final class TalentCommand implements CommandHandler {
             return;
         }
 
-        if (args.size() < 1){
+        if (args.size() == 1 && "all".equals(args.get(0))) {
+            setAllAvatarTalentLevelMax(sender, targetPlayer);
+            return;
+        }
+
+        if (args.size() < 1) {
             CommandHandler.sendMessage(sender, translate("commands.talent.usage_1"));
             CommandHandler.sendMessage(sender, translate("commands.talent.usage_2"));
             CommandHandler.sendMessage(sender, translate("commands.talent.usage_3"));
+            CommandHandler.sendMessage(sender, translate("commands.talent.usage_4"));
             return;
         }
 
         EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
-        Avatar avatar = entity.getAvatar(); 
+        Avatar avatar = entity.getAvatar();
         String cmdSwitch = args.get(0);
         switch (cmdSwitch) {
             default -> {
@@ -111,4 +117,78 @@ public final class TalentCommand implements CommandHandler {
             }
         }
     }
+
+    private void setAllAvatarTalentLevelMax(Player sender, Player player) {
+        int skillMaxLevelNormalAtk = 10;
+        int skillMaxLevelE = 10;
+        int skillMaxLevelQ = 10;
+        int skillMaxLevelSpecial = 1; // Kamisato Art: Senho | Hllusory Torrent
+
+        for (Avatar avatar : player.getAvatars()) {
+            int skillIdNormalAtk = 0;
+            int skillIdE = 0;
+            int skillIdQ = 0;
+            int skillIdSpecial = 0;
+            Integer oldSkillLevelNormalAtk = null;
+            Integer oldSkillLevelE = null;
+            Integer oldSkillLevelQ = null;
+            Integer oldSkillLevelSpecial = null;
+            int skillsSize = avatar.getData().getSkillDepot().getSkills().size();
+            for (int i = 0; i < skillsSize; i++) {
+                int skillId = avatar.getData().getSkillDepot().getSkills().get(i);
+                Integer oldSkillLevel = avatar.getSkillLevelMap().get(skillId);
+
+                switch (i) {
+                    default -> {
+                    }
+                    case 0 -> {
+                        skillIdNormalAtk = skillId;
+                        avatar.getSkillLevelMap().put(skillId, skillMaxLevelNormalAtk);
+                        oldSkillLevelNormalAtk = oldSkillLevel;
+                    }
+                    case 1 -> {
+                        skillIdE = skillId;
+                        avatar.getSkillLevelMap().put(skillId, skillMaxLevelE);
+                        oldSkillLevelE = oldSkillLevel;
+                    }
+                    case 2 -> {
+                        skillIdQ = avatar.getData().getSkillDepot().getEnergySkill();
+                        avatar.getSkillLevelMap().put(skillIdQ, skillMaxLevelQ);
+                        oldSkillLevelQ = oldSkillLevel;
+                    }
+                    case 3 -> {
+                        skillIdSpecial = skillId;
+                        avatar.getSkillLevelMap().put(skillId, skillMaxLevelSpecial);
+                        oldSkillLevelSpecial = oldSkillLevel;
+                    }
+                }
+
+                if (i == skillsSize - 1) {
+                    // Upgrade skill
+                    avatar.save();
+
+                    // Packet
+                    if (oldSkillLevelNormalAtk != null) {
+                        player.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillIdNormalAtk, oldSkillLevelNormalAtk, skillMaxLevelNormalAtk));
+                        player.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillIdNormalAtk, oldSkillLevelNormalAtk, skillMaxLevelNormalAtk));
+                    }
+                    if (oldSkillLevelE != null) {
+                        player.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillIdE, oldSkillLevelE, skillMaxLevelE));
+                        player.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillIdE, oldSkillLevelE, skillMaxLevelE));
+                    }
+                    if (oldSkillLevelSpecial != null) {
+                        player.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillIdSpecial, oldSkillLevelSpecial, skillMaxLevelSpecial));
+                        player.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillIdSpecial, oldSkillLevelSpecial, skillMaxLevelSpecial));
+                    }
+                    if (oldSkillLevelQ != null) {
+                        player.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillIdQ, oldSkillLevelQ, skillMaxLevelQ));
+                        player.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillIdQ, oldSkillLevelQ, skillMaxLevelQ));
+                    }
+                }
+            }
+        }
+
+        CommandHandler.sendMessage(sender, translate("commands.talent.all_avatar_skills"));
+    }
+
 }

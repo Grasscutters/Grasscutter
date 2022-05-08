@@ -285,6 +285,7 @@
       "usage_1": "设置天赋等级：/talent set <talentID> <value>",
       "usage_2": "另一种设置天赋等级的命令使用方法：/talent <n or e or q> <value>",
       "usage_3": "获取天赋ID指令用法：/talent getid",
+      "usage_4": "设置所有角色天赋满级：/talent all",
       "lower_16": "无效的天赋等级，天赋等级应小于等于15。",
       "set_id": "将天赋等级设为 %s。",
       "set_atk": "将普通攻击等级设为 %s。",
@@ -296,6 +297,7 @@
       "normal_attack_id": "普通攻击的 ID 为 %s。",
       "e_skill_id": "元素战技ID %s。",
       "q_skill_id": "元素爆发ID %s。",
+      "all_avatar_skills": "已设置所有角色天赋满级",
       "description": "设置当前角色的天赋等级。"
     },
     "teleportAll": {

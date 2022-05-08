@@ -257,6 +257,7 @@
       "usage_1": "設定天賦等級：/talent set <talentID> <value>",
       "usage_2": "另一種設定天賦等級的指令使用方法：/talent <n or e or q> <value>",
       "usage_3": "獲取天賦ID指令用法：/talent getid",
+      "usage_4": "設置所有角色天賦滿級：/talent all",
       "lower_16": "無效的技能等級，技能等級應低於 16。",
       "set_id": "將天賦等級設為%s。",
       "set_atk": "將普通攻擊等級設為 %s。",
@@ -267,7 +268,8 @@
       "invalid_level": "無效的天賦等級。",
       "normal_attack_id": "普通攻擊的 ID 為 %s。",
       "e_skill_id": "E技能ID %s。",
-      "q_skill_id": "Q技能ID %s。"
+      "q_skill_id": "Q技能ID %s。",
+      "all_avatar_skills": "已設置所有角色天賦滿級"
     },
     "teleportAll": {
       "success": "召喚了所有玩家到你的位置上。",
