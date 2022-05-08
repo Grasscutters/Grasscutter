@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "give", usage = "give <itemId|itemName> [amount] [level]", aliases = {
-        "g", "item", "giveitem"}, permission = "player.give")
+        "g", "item", "giveitem"}, permission = "player.give", description = "commands.give.description")
 public final class GiveCommand implements CommandHandler {
     Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java is a joke of a proglang that doesn't have raw string literals
     Pattern refineRegex = Pattern.compile("r(\\d+)");
@@ -29,11 +29,6 @@ public final class GiveCommand implements CommandHandler {
             return Integer.parseInt(match.group(1));  // This should be exception-safe as only \d+ can be passed to it (i.e. non-empty string of pure digits)
         }
         return -1;
-    }
-
-    @Override
-    public String description() {
-        return translate("commands.give.description");
     }
 
     @Override

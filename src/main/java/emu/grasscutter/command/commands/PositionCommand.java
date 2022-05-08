@@ -9,13 +9,8 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "position", usage = "position", aliases = {"pos"})
+@Command(label = "position", usage = "position", aliases = {"pos"}, description = "commands.position.description")
 public final class PositionCommand implements CommandHandler {
-
-    @Override
-    public String description() {
-        return translate("commands.position.description");
-    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

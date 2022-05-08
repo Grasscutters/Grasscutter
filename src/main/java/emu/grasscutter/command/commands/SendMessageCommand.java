@@ -9,13 +9,8 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "say", usage = "say <message>",
-        aliases = {"sendservmsg", "sendservermessage", "sendmessage"}, permission = "server.sendmessage")
+        aliases = {"sendservmsg", "sendservermessage", "sendmessage"}, permission = "server.sendmessage", description = "commands.sendMessage.description")
 public final class SendMessageCommand implements CommandHandler {
-
-    @Override
-    public String description() {
-        return translate("commands.sendMessage.description");
-    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

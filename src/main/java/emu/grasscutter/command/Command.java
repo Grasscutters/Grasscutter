@@ -9,7 +9,7 @@ public @interface Command {
 
     String usage() default "No usage specified";
 
-    String description() default "No description specified";
+    String description() default "commands.generic.no_description_specified";
 
     String[] aliases() default {};
 

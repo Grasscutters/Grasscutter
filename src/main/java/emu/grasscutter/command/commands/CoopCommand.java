@@ -9,12 +9,8 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "coop", usage = "coop [host UID]", permission = "server.coop")
+@Command(label = "coop", usage = "coop [host UID]", permission = "server.coop", description = "commands.coop.description")
 public final class CoopCommand implements CommandHandler {
-    @Override
-    public String description() {
-        return translate("commands.coop.description");
-    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

@@ -9,13 +9,8 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "reload", usage = "reload", permission = "server.reload")
+@Command(label = "reload", usage = "reload", permission = "server.reload", description = "commands.reload.description")
 public final class ReloadCommand implements CommandHandler {
-
-    @Override
-    public String description() {
-        return translate("commands.reload.description");
-    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
