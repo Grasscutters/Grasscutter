@@ -143,7 +143,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		}
 
 		if (mainPropId == -1) {
-			CommandHandler.sendMessage(sender, translate("commands.generic.execution.argument_error"));
+			CommandHandler.sendMessage(sender, translate("commands.execution.argument_error"));
 			return;
 		}
 
