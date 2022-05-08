@@ -42,7 +42,8 @@ public final class ClearCommand implements CommandHandler {
             case "art" -> {
             	toDelete = playerInventory.getItems().values().stream()
                         .filter(item -> item.getItemType() == ItemType.ITEM_RELIQUARY)
-                        .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
+                        // During the testing phase, there were too many relics to look at
+                        // .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                         .filter(item -> !item.isLocked() && !item.isEquipped())
                         .toList();
                 CommandHandler.sendMessage(sender, translate("commands.clear.artifacts", targetPlayer.getNickname()));

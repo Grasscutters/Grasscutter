@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -49,15 +48,15 @@ public final class GiveAllCommand implements CommandHandler {
     public void giveAllItems(Player player, int amount) {
         CommandHandler.sendMessage(player, translate("commands.giveAll.started"));
 
-        for (AvatarData avatarData: GameData.getAvatarDataMap().values()) {
+        for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
             //Exclude test avatar
             if (isTestAvatar(avatarData.getId())) continue;
 
             Avatar avatar = new Avatar(avatarData);
             avatar.setLevel(90);
             avatar.setPromoteLevel(6);
-            for(int i = 1;i <= 6;++i){
-                avatar.getTalentIdList().add((avatar.getAvatarId()-10000000)*10+i);
+            for (int i = 1; i <= 6; ++i) {
+                avatar.getTalentIdList().add((avatar.getAvatarId() - 10000000) * 10 + i);
             }
             // This will handle stats and talents
             avatar.recalcStats();
@@ -66,7 +65,7 @@ public final class GiveAllCommand implements CommandHandler {
 
         //some test items
         List<GameItem> itemList = new ArrayList<>();
-        for (ItemData itemdata: GameData.getItemDataMap().values()) {
+        for (ItemData itemdata : GameData.getItemDataMap().values()) {
             //Exclude test item
             if (isTestItem(itemdata.getId())) continue;
 
@@ -79,9 +78,10 @@ public final class GiveAllCommand implements CommandHandler {
                         item.setRefinement(4);
                         itemList.add(item);
                     }
+                } else if (itemdata.getItemType() == ItemType.ITEM_RELIQUARY) {
+                    itemList.add(giveAllReliquaryMaxLevelByRankLevel(itemdata));
                 }
-            }
-            else {
+            } else {
                 GameItem item = new GameItem(itemdata);
                 item.setCount(amount);
                 itemList.add(item);
@@ -97,8 +97,7 @@ public final class GiveAllCommand implements CommandHandler {
                 player.getInventory().addItems(itemList.subList(i * number + offset, (i + 1) * number + offset + 1));
                 --remainder;
                 ++offset;
-            }
-            else {
+            } else {
                 player.getInventory().addItems(itemList.subList(i * number + offset, (i + 1) * number + offset));
             }
         }
@@ -109,7 +108,7 @@ public final class GiveAllCommand implements CommandHandler {
     }
 
     public boolean isTestItem(int itemId) {
-        for (Range range: testItemRanges) {
+        for (Range range : testItemRanges) {
             if (range.check(itemId)) {
                 return true;
             }
@@ -122,12 +121,12 @@ public final class GiveAllCommand implements CommandHandler {
         private final int min, max;
 
         public Range(int min, int max) {
-            if(min > max){
+            if (min > max) {
                 min ^= max;
                 max ^= min;
                 min ^= max;
             }
-            
+
             this.min = min;
             this.max = max;
         }
@@ -137,7 +136,7 @@ public final class GiveAllCommand implements CommandHandler {
         }
     }
 
-    private static final Range[] testItemRanges = new Range[] {
+    private static final Range[] testItemRanges = new Range[]{
             new Range(106, 139),
             new Range(1000, 1099),
             new Range(2001, 3022),
@@ -155,15 +154,58 @@ public final class GiveAllCommand implements CommandHandler {
             new Range(141001, 141072),
             new Range(220050, 221016),
     };
-    private static final Integer[] testItemsIds = new Integer[] {
-            210, 211, 314, 315, 317, 1005, 1007, 1105, 1107, 1201, 1202,10366,
+    private static final Integer[] testItemsIds = new Integer[]{
+            210, 211, 314, 315, 317, 1005, 1007, 1105, 1107, 1201, 1202, 10366,
             101212, 11411, 11506, 11507, 11508, 12505, 12506, 12508, 12509, 13503,
             13506, 14411, 14503, 14505, 14508, 15411, 15504, 15505, 15506, 15508,
-            20001, 10002, 10003, 10004, 10005, 10006, 10008,100231,100232,100431,
-            101689,105001,105004, 106000,106001,108000,110000
+            20001, 10002, 10003, 10004, 10005, 10006, 10008, 100231, 100232, 100431,
+            101689, 105001, 105004, 106000, 106001, 108000, 110000
     };
 
     private static final Collection<Integer> testItemsList = Arrays.asList(testItemsIds);
+
+
+    /**
+     * When using the give all command
+     * added the maximum level of relic for the corresponding star
+     * However
+     * there are many values after the secondary attribute upgrade
+     * that do not belong to the normal range
+     */
+    public static GameItem giveAllReliquaryMaxLevelByRankLevel(ItemData itemdata) {
+        GameItem item = new GameItem(itemdata);
+
+        // Star rating of holy relics => [1, 5]
+        int rankLevel = itemdata.getRankLevel();
+        // Maximum number of enhancements for reliquary sub-attributes
+        int brokenNumber = 0;
+        switch (rankLevel) {
+            case 1, 2 -> {
+                item.setLevel(5);
+                brokenNumber = 1;
+            }
+            case 3 -> {
+                item.setLevel(13);
+                brokenNumber = 3;
+            }
+            case 4 -> {
+                item.setLevel(17);
+                brokenNumber = 4;
+            }
+            case 5 -> {
+                item.setLevel(21);
+                brokenNumber = 5;
+            }
+            default -> item.setLevel(itemdata.getMaxLevel());
+        }
+
+        // Upgrade secondary properties
+        for (int number = brokenNumber; number > 0; number--) {
+            item.addAppendProp();
+        }
+
+        return item;
+    }
 
 }
 

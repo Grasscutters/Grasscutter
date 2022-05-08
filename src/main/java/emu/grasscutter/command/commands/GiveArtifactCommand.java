@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -39,7 +38,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 			return;
 		}
 		ItemData itemData = GameData.getItemDataMap().get(itemId);
-		if (itemData.getItemType() != ItemType.ITEM_RELIQUARY) {
+		if (itemData == null || itemData.getItemType() != ItemType.ITEM_RELIQUARY) {
 			CommandHandler.sendMessage(sender, translate("commands.giveArtifact.id_error"));
 			return;
 		}
