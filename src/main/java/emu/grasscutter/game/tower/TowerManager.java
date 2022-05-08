@@ -7,6 +7,7 @@ import emu.grasscutter.data.def.TowerLevelData;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.dungeons.TowerDungeonSettleListener;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.server.packet.send.PacketCanUseSkillNotify;
 import emu.grasscutter.server.packet.send.PacketTowerCurLevelRecordChangeNotify;
 
 import emu.grasscutter.server.packet.send.PacketTowerEnterLevelRsp;
@@ -15,9 +16,7 @@ import java.util.List;
 
 @Entity
 public class TowerManager {
-
-    @Transient private final Player player;
-
+    @Transient private Player player;
 
     public TowerManager(Player player) {
         this.player = player;
@@ -77,7 +76,8 @@ public class TowerManager {
         player.getScene().setPrevScenePoint(enterPointId);
 
         player.getSession().send(new PacketTowerEnterLevelRsp(currentFloorId, currentLevel));
-
+        // stop using skill
+        player.getSession().send(new PacketCanUseSkillNotify(false));
     }
 
     public void notifyCurLevelRecordChange(){

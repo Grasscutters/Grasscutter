@@ -11,8 +11,6 @@ public final class GameConstants {
 	public static final int MAX_TEAMS = 4;
 	public static final int MAIN_CHARACTER_MALE = 10000005;
 	public static final int MAIN_CHARACTER_FEMALE = 10000007;
-	public static final String SERVER_AVATAR_NAME = Grasscutter.getConfig().getGameServerOptions().ServerNickname;
-	public static final int SERVER_AVATAR_ID = Grasscutter.getConfig().getGameServerOptions().ServerAvatarId;
 	public static final Position START_POSITION = new Position(2747, 194, -1719);
 	
 	public static final int MAX_FRIENDS = 45;
