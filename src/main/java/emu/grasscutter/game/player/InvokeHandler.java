@@ -30,7 +30,7 @@ public class InvokeHandler<T> {
 	}
 	
 	public synchronized void update(Player player) {
-		if (player.getWorld() == null) {
+		if (player.getWorld() == null || player.getScene() == null) {
 			this.entryListForwardAll.clear();
 			this.entryListForwardAllExceptCur.clear();
 			this.entryListForwardHost.clear();
