@@ -415,6 +415,8 @@ public final class DispatchServer {
 		httpServer.all("/common/hk4e_global/announcement/api/getAnnList", new AnnouncementHandler());
 		// hk4e-api-os-static.hoyoverse.com
 		httpServer.all("/common/hk4e_global/announcement/api/getAnnContent", new AnnouncementHandler());
+		httpServer.all("/hk4e/announcement/:page", new AnnouncementHandler());
+
 		// hk4e-sdk-os.hoyoverse.com
 		httpServer.all("/hk4e_global/mdk/shopwindow/shopwindow/listPriceTier", new DispatchHttpJsonHandler("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"suggest_currency\":\"USD\",\"tiers\":[]}}"));
 
