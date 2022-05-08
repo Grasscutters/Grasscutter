@@ -70,14 +70,26 @@ public final class GiveArtifactCommand implements CommandHandler {
 
 		// If the argument was not an integer, we try to determine
 		// the append prop ID from the given text + artifact information.
-		// A substat string has the format `substat_tier`.
+		// A substat string has the format `substat_tier`, with the
+		// `_tier` part being optional.
 		String[] substatArgs = substatText.split("_");
-		if (substatArgs.length != 2) {
+		String substatType;
+		int substatTier;
+
+		if (substatArgs.length == 1) {
+			substatType = substatArgs[0];
+			substatTier = 
+				itemData.getRankLevel() == 1 ? 2 
+				: itemData.getRankLevel() == 2 ? 3 
+				: 4;
+		}
+		else if (substatArgs.length == 2) {
+			substatType = substatArgs[0];
+			substatTier = Integer.parseInt(substatArgs[1]);
+		}
+		else {
 			throw new IllegalArgumentException();
 		}
-
-		String substatType = substatArgs[0];
-		int substatTier = Integer.parseInt(substatArgs[1]);
 
 		// Check if the specified tier is legal for the artifact rarity.
 		if (substatTier < 1 || substatTier > 4) {
