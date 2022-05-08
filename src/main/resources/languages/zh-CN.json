@@ -140,7 +140,7 @@
     },
     "giveChar": {
       "usage": "用法：givechar <player> <itemId|itemName> [amount]",
-      "given": "Given %s with level %s to %s.",
+      "given": "给予角色 %s 等级 %s 向UID %s.",
       "invalid_avatar_id": "无效的角色ID。",
       "invalid_avatar_level": "无效的角色等級。.",
       "invalid_avatar_or_player_id": "无效的角色ID/玩家ID。"
@@ -151,7 +151,7 @@
       "refinement_must_between_1_and_5": "精炼等级必须在 1 到 5 之间。",
       "given": "已将 %s 个 %s 给予 %s。",
       "given_with_level_and_refinement": "已将 %s [等級%s, 精炼%s] %s个给予 %s",
-      "given_level": "已将 %s 等级 %s %s 个给予 %s"
+      "given_level": "已将 %s 等级 %s %s 个给予UID %s"
     },
     "godmode": {
       "success": "上帝模式被设置为 %s 。 [用户：%s]"
