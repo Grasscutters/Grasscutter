@@ -46,12 +46,15 @@ public final class Language {
     private Language(String fileName, String fallback) {
         @Nullable JsonObject languageData = null;
 
+        InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
+        if(file == null) // Provided fallback language.
+            file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
+        if(file == null) // Fallback the fallback language.
+            file = Grasscutter.class.getResourceAsStream("/languages/en-US.json");
+        if(file == null)
+            throw new RuntimeException("Unable to load the primary, fallback, and 'en-US' language files.");
+        
         try {
-            InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
-            if(file == null) {
-                file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
-            }
-            
             languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(file), JsonObject.class);
         } catch (Exception exception) {
             Grasscutter.getLogger().warn("Failed to load language file: " + fileName, exception);
