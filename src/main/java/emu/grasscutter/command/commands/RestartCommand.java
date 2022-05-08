@@ -6,8 +6,15 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "restart", usage = "restart - Restarts the current session")
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "restart", usage = "restart")
 public final class RestartCommand implements CommandHandler {
+
+    @Override
+    public String description() {
+        return translate("commands.restart.description");
+    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

@@ -21,6 +21,7 @@ import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
+import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
@@ -112,17 +113,16 @@ final class ToolsWithLanguageOption {
 			writer.println("// Created " + dtf.format(now) + System.lineSeparator() + System.lineSeparator());
 
 			CommandMap cmdMap = new CommandMap(true);
-			List<Command> cmdList = new ArrayList<>(cmdMap.getAnnotationsAsList());
+			HashMap<CommandHandler, Command> cmdList = cmdMap.getHandlersAndAnnotations();
 
 			writer.println("// Commands");
-			for (Command cmd : cmdList) {
-				String cmdName = cmd.label();
+			cmdList.forEach((handler, command) -> {
+				String cmdName = command.label();
 				while (cmdName.length() <= 15) {
 					cmdName = " " + cmdName;
 				}
-				writer.println(cmdName + " : " + cmd.description());
-			}
-
+				writer.println(cmdName + " : " + handler.description());
+			});
 			writer.println();
 
 			list = new ArrayList<>(GameData.getAvatarDataMap().keySet());

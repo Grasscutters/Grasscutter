@@ -13,9 +13,13 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "killcharacter", usage = "killcharacter", aliases = {"suicide", "kill"},
-        description = "Kills the players current character", permission = "player.killcharacter")
+@Command(label = "killcharacter", usage = "killcharacter", aliases = {"suicide", "kill"}, permission = "player.killcharacter")
 public final class KillCharacterCommand implements CommandHandler {
+
+    @Override
+    public String description() {
+        return translate("commands.killCharacter.description");
+    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

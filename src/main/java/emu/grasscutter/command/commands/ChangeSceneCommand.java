@@ -8,9 +8,13 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "changescene", usage = "changescene <scene id>",
-        description = "Changes your scene", aliases = {"scene"}, permission = "player.changescene")
+@Command(label = "changescene", usage = "changescene <scene id>", aliases = {"scene"}, permission = "player.changescene")
 public final class ChangeSceneCommand implements CommandHandler {
+    @Override
+    public String description() {
+        return translate("commands.changescene.description");
+    }
+
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
