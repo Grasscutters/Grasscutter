@@ -1,0 +1,25 @@
+# docker-compose.yml
+version: "3"
+
+services:
+
+  mongo:
+    image: mongo:5
+    restart: always
+
+  grasscutter:
+    build: .
+    container_name: grasscutter
+    restart: always
+    stdin_open: true
+    tty: true
+    depends_on:
+      - mongo
+    ports:
+      - 80:80
+      - 443:443
+      - 8888:8888
+      - 22102:22102/udp
+    volumes:
+      # Hi there! mount resources from host
+      - ./resources:/grasscutter/resources
