@@ -56,9 +56,10 @@ public abstract class KcpChannel extends ChannelInboundHandlerAdapter {
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
 
-        String message = "???";
+        String message = "";
         String metode = "ZERO";
         
+        // Metode get message
         if(cause != null && cause.getMessage() != null && cause.getMessage().isBlank()) { 
           metode = "1";
           message = cause.getMessage();
@@ -72,9 +73,26 @@ public abstract class KcpChannel extends ChannelInboundHandlerAdapter {
           message = sw.toString();
         }
 
+        // fiter messages
+        String[] lines = message.split(System.getProperty("line.separator"));
+        if(lines[0] != null && !lines[0].isEmpty()){
+          message = lines[0];
+        }
         if(message.matches("(.*)OutOfMemoryError(.*)")){
+          // if memory full
+          
           Grasscutter.getLogger().info("Trying to exit program because memory is full");
+          Map<Integer, Player> playersMap = Grasscutter.getGameServer().getPlayers();
+          // Better exit by save data player and kick
+          playersMap.values().forEach(player -> {
+            Grasscutter.getLogger().info("Kick User: "+player.getUid());
+            player.getSession().close();
+          });
+          // Bye          
           System.exit(0);
+
+        }else if(message.matches("(.*)State=-1(.*)")){
+          close();
         }else if(message.matches("(.*)inconsistency(.*)")){
           close();
         }else{
