@@ -31,7 +31,7 @@ public final class ChangeSceneCommand implements CommandHandler {
             }
             
             boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, targetPlayer.getPos());
-            CommandHandler.sendMessage(sender, translate("commands.changescene.result", Integer.toString(sceneId)));
+            CommandHandler.sendMessage(sender, translate("commands.changescene.success", Integer.toString(sceneId)));
             
             if (!result) {
                 CommandHandler.sendMessage(sender, translate("commands.changescene.exists_error"));
