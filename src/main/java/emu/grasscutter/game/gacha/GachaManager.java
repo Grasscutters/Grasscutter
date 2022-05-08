@@ -39,7 +39,7 @@ public class GachaManager {
 	private final Int2ObjectMap<GachaBanner> gachaBanners;
 	private GetGachaInfoRsp cachedProto;
 	WatchService watchService;
-
+	
 	private int[] yellowAvatars = new int[] {1003, 1016, 1042, 1035, 1041};
 	private int[] yellowWeapons = new int[] {11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502};
 	private int[] purpleAvatars = new int[] {1006, 1014, 1015, 1020, 1021, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1053, 1055, 1056, 1064};
@@ -111,17 +111,39 @@ public class GachaManager {
 		// Spend currency
 		if (banner.getCostItem() > 0) {
 			GameItem costItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(banner.getCostItem());
-			if (costItem == null || costItem.getCount() < times) {
+			if (costItem == null) {
 				return;
 			}
-			
-			player.getInventory().removeItem(costItem, times);
+			if (times != 10) {
+				player.getInventory().removeItem(costItem, times);
+			}
+			if (times == 10) {
+				player.getInventory().removeItem(costItem, banner.getTenWishCost());	// Acquire the set ten-wish cost in case of a discounted 10-pull
+			}
 		}
 		
 		// Roll
 		PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(banner);
 		IntList wonItems = new IntArrayList(times);
 		
+		// Check standard wish fields in JSON
+		
+		if (banner.getYellowAvatarList().length > 0) {
+			this.yellowAvatars = banner.getYellowAvatarList();
+		}
+		if (banner.getYellowWeaponList().length > 0) {
+			this.yellowWeapons = banner.getYellowWeaponList();
+		}
+		if (banner.getPurpleAvatarList().length > 0) {
+			this.purpleAvatars = banner.getPurpleAvatarList();
+		}
+		if (banner.getPurpleWeaponList().length > 0) {
+			this.purpleWeapons = banner.getPurpleWeaponList();
+		}
+		if (banner.getBlueWeaponList().length > 0) {
+			this.blueWeapons = banner.getBlueWeaponList();
+		}
+			
 		for (int i = 0; i < times; i++) {
 			int random = this.randomRange(1, 10000);
 			int itemId = 0;
