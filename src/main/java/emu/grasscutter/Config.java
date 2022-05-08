@@ -26,7 +26,7 @@ public final class Config {
 	public Locale LocaleLanguage = Locale.getDefault();
 	public Locale DefaultLanguage = Locale.ENGLISH;
 
-	public Boolean OpenStamina = true;
+	public Boolean OpenStamina = false;
 	public GameServerOptions getGameServerOptions() {
 		return GameServer;
 	}
