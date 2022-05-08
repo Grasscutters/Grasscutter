@@ -36,7 +36,7 @@
       }
     },
     "status": {
-      "free_software": "Grasscutter 是免费开源软件，遵循Apache-2.0 license。如果您是付费购买的，那您已经被骗了。项目地址：Github：https://github.com/Grasscutters/Grasscutter",
+      "free_software": "Grasscutter 是免费开源软件，遵循AGPL-3.0 license。如果您是付费购买的，那您已经被骗了。项目地址：Github：https://github.com/Grasscutters/Grasscutter",
       "starting": "正在启动 Grasscutter...",
       "shutdown": "正在关闭...",
       "done": "加载完成！输入 \"help\" 查看命令列表",
