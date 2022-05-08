@@ -142,15 +142,19 @@ public class StaminaManager {
     public void startSustainedStaminaHandler() {
         if (!player.isPaused() && !timerRunning) {
             timerRunning = true;
-            sustainedStaminaHandlerTimer.scheduleAtFixedRate(handleSustainedStamina, 0, 200);
-            // Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer started");
+            if(sustainedStaminaHandlerTimer != null){
+             sustainedStaminaHandlerTimer.scheduleAtFixedRate(handleSustainedStamina, 0, 200);
+             // Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer started");
+            }
         }
     }
 
     public void stopSustainedStaminaHandler() {
         if (timerRunning) {
             timerRunning = false;
-            sustainedStaminaHandlerTimer.cancel();
+            if(sustainedStaminaHandlerTimer != null){
+             sustainedStaminaHandlerTimer.cancel();
+            }
             // Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer stopped");
         }
     }
