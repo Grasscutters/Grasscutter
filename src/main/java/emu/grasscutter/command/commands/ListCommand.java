@@ -10,8 +10,7 @@ import java.util.Map;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "list", usage = "list [uid]",
-        description = "List online players", aliases = {"players"})
+@Command(label = "list", usage = "list [uid]", aliases = {"players"}, description = "commands.list.description")
 public final class ListCommand implements CommandHandler {
 
     @Override

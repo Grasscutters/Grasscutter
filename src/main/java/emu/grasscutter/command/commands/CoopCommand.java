@@ -9,9 +9,9 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "coop", usage = "coop [host UID]",
-        description = "Forces someone to join the world of others", permission = "server.coop")
+@Command(label = "coop", usage = "coop [host UID]", permission = "server.coop", description = "commands.coop.description")
 public final class CoopCommand implements CommandHandler {
+
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
 		if (targetPlayer == null) {
