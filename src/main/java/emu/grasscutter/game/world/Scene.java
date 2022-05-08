@@ -385,27 +385,7 @@ public class Scene {
 		}
 		
 		// Sanity check
-		if (target.getFightProperties() == null) {
-			return;
-		}
-		
-		// Lose hp
-		target.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -result.getDamage());
-		
-		// Check if dead
-		boolean isDead = false;
-		if (target.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
-			target.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0f);
-			isDead = true;
-		}
-		
-		// Packets
-		this.broadcastPacket(new PacketEntityFightPropUpdateNotify(target, FightProperty.FIGHT_PROP_CUR_HP));
-		
-		// Check if dead
-		if (isDead) {
-			this.killEntity(target, result.getAttackerId());
-		}
+		target.damage(result.getDamage(), result.getAttackerId());
 	}
 	
 	public void killEntity(GameEntity target, int attackerId) {
