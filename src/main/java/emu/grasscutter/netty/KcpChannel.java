@@ -50,8 +50,14 @@ public abstract class KcpChannel extends ChannelInboundHandlerAdapter {
     
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-        Grasscutter.getLogger().error("BIG PROBLEM: ",cause);
-        close();
+        
+        if(cause.getMessage().matches("(.*)OutOfMemoryError(.*)")){
+          Grasscutter.getLogger().info("Trying to exit program because the memory is full");
+          System.exit(0);
+        }else{
+          Grasscutter.getLogger().error("BIG PROBLEM: ",cause.getMessage());
+          close();
+        }
     }
 
     protected void send(byte[] data) {
