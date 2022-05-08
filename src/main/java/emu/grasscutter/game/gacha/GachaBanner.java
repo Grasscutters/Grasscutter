@@ -11,9 +11,15 @@ public class GachaBanner {
 	private String previewPrefabPath;
 	private String titlePath;
 	private int costItem;
+	private int tenWishCost = 10;
 	private int beginTime;
 	private int endTime;
 	private int sortId;
+	private int[] yellowAvatarList;
+	private int[] yellowWeaponList;
+	private int[] purpleAvatarList;
+	private int[] purpleWeaponList;
+	private int[] blueWeaponList;
 	private int[] rateUpItems1;
 	private int[] rateUpItems2;
 	private int baseYellowWeight = 60; // Max 10000
@@ -50,6 +56,10 @@ public class GachaBanner {
 	public int getCostItem() {
 		return costItem;
 	}
+	
+	public int getTenWishCost() {
+		return tenWishCost;
+	}
 
 	public int getBeginTime() {
 		return beginTime;
@@ -69,6 +79,26 @@ public class GachaBanner {
 
 	public int getBasePurpleWeight() {
 		return basePurpleWeight;
+	}
+	
+	public int[] getYellowAvatarList() {
+		return yellowAvatarList;
+	}
+	
+	public int[] getYellowWeaponList() {
+		return yellowWeaponList;
+	}
+	
+	public int[] getPurpleAvatarList() {
+		return purpleAvatarList;
+	}
+	
+	public int[] getPurpleWeaponList() {
+		return purpleWeaponList;
+	}
+	
+	public int[] getBlueWeaponList() {
+		return blueWeaponList;
 	}
 
 	public int[] getRateUpItems1() {
@@ -96,7 +126,7 @@ public class GachaBanner {
 		return toProto("");
 	}
 	public GachaInfo toProto(String sessionKey) {
-		String record = "http" + (Grasscutter.getConfig().getDispatchOptions().FrontHTTPS ? "s" : "") + "://"
+		String record = "https://"
 						+ (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? 
 							Grasscutter.getConfig().getDispatchOptions().Ip : 
 							Grasscutter.getConfig().getDispatchOptions().PublicIp)
@@ -120,13 +150,68 @@ public class GachaBanner {
 	            .setGachaRecordUrl(record)
 	            .setGachaRecordUrlOversea(record)
 	            .setTenCostItemId(this.getCostItem())
-	            .setTenCostItemNum(10)
+	            .setTenCostItemNum(this.getTenWishCost()) // Allows for custom 10-wish costs for discounted banners
 	            .setLeftGachaTimes(Integer.MAX_VALUE)
 	            .setGachaTimesLimit(Integer.MAX_VALUE)
 	            .setGachaSortId(this.getSortId());
 		
 		if (this.getTitlePath() != null) {
 			info.setGachaTitlePath(this.getTitlePath());
+		}
+	
+		if (this.getYellowAvatarList().length > 0) {
+			GachaUpInfo.Builder upInfo = GachaUpInfo.newBuilder().setItemParentType(1);
+			
+			for (int id : getYellowAvatarList()) {
+				upInfo.addItemIdList(id);
+				info.addMainNameId(id);
+			}
+			
+			info.addGachaUpInfoList(upInfo);
+		}
+		
+		if (this.getYellowWeaponList().length > 0) {
+			GachaUpInfo.Builder upInfo = GachaUpInfo.newBuilder().setItemParentType(1);
+			
+			for (int id : getYellowWeaponList()) {
+				upInfo.addItemIdList(id);
+				info.addMainNameId(id);
+			}
+			
+			info.addGachaUpInfoList(upInfo);
+		}
+		
+		if (this.getPurpleAvatarList().length > 0) {
+			GachaUpInfo.Builder upInfo = GachaUpInfo.newBuilder().setItemParentType(1);
+			
+			for (int id : getPurpleAvatarList()) {
+				upInfo.addItemIdList(id);
+				info.addMainNameId(id);
+			}
+			
+			info.addGachaUpInfoList(upInfo);
+		}
+		
+		if (this.getPurpleWeaponList().length > 0) {
+			GachaUpInfo.Builder upInfo = GachaUpInfo.newBuilder().setItemParentType(1);
+			
+			for (int id : getPurpleWeaponList()) {
+				upInfo.addItemIdList(id);
+				info.addMainNameId(id);
+			}
+			
+			info.addGachaUpInfoList(upInfo);
+		}
+		
+		if (this.getBlueWeaponList().length > 0) {
+			GachaUpInfo.Builder upInfo = GachaUpInfo.newBuilder().setItemParentType(1);
+			
+			for (int id : getBlueWeaponList()) {
+				upInfo.addItemIdList(id);
+				info.addMainNameId(id);
+			}
+			
+			info.addGachaUpInfoList(upInfo);
 		}
 		
 		if (this.getRateUpItems1().length > 0) {
