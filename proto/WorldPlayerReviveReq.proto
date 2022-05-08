@@ -1,6 +1,6 @@
 syntax = "proto3";
-option csharp_namespace = "YSFreedom.Common.Protocol";
 
+option java_package = "emu.grasscutter.net.proto";
 
 message WorldPlayerReviveReq {
 	enum CmdId {
