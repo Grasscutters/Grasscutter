@@ -48,11 +48,13 @@ public final class Language {
 
         try {
             InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
-            if(file == null) {
+            String translationContents = Utils.readFromInputStream(file);
+            if(translationContents.equals("empty")) {
                 file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
+                translationContents = Utils.readFromInputStream(file);
             }
             
-            languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(file), JsonObject.class);
+            languageData = Grasscutter.getGsonFactory().fromJson(translationContents, JsonObject.class);
         } catch (Exception exception) {
             Grasscutter.getLogger().warn("Failed to load language file: " + fileName, exception);
         }

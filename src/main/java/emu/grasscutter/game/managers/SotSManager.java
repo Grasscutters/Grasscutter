@@ -1,14 +1,11 @@
-package emu.grasscutter.game.managers.SotSManager;
+package emu.grasscutter.game.managers;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.entity.GameEntity;
-import emu.grasscutter.game.managers.MovementManager.MovementManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.ChangeHpReasonOuterClass;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
 import emu.grasscutter.server.game.GameSession;
@@ -28,6 +25,8 @@ public class SotSManager {
 
     private final Player player;
     private Timer autoRecoverTimer;
+
+    public final static int GlobalMaximumSpringVolume = 8500000;
 
     public SotSManager(Player player) {
         this.player = player;
