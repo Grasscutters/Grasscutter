@@ -25,6 +25,7 @@ import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 import express.Express;
+import express.http.MediaType;
 import io.javalin.http.staticfiles.Location;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
@@ -33,6 +34,9 @@ import org.eclipse.jetty.util.ssl.SslContextFactory;
 
 import java.io.*;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.OpenOption;
 import java.util.*;
 
 import static emu.grasscutter.utils.Language.translate;
@@ -252,14 +256,35 @@ public final class DispatchServer {
 				else config.enableCorsForAllOrigins();
 			}
 		});
-		httpServer.get("/", (req, res) -> res.send(translate("messages.status.welcome")));
+		httpServer.get("/", (req, res) -> {
+			File welcomeFile = new File(Grasscutter.getConfig().getDispatchOptions().WelcomeFile);
+
+			if (welcomeFile.exists()) {
+				res.sendFile(welcomeFile.toPath());
+			} else {
+				res.send(translate("messages.status.welcome"));
+			}
+		});
 
 		httpServer.raw().error(404, ctx -> {
 			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING) {
 				Grasscutter.getLogger().info(translate("messages.dispatch.unhandled_request_error", ctx.method(), ctx.url()));
 			}
 			ctx.contentType("text/html");
-			ctx.result("<!doctype html><html lang=\"en\"><body><img src=\"https://http.cat/404\" /></body></html>"); // I'm like 70% sure this won't break anything.
+			File errorFile = new File(Grasscutter.getConfig().getDispatchOptions().ErrorFile);
+
+			if (errorFile.exists()) {
+				final MediaType fromExtension = MediaType.getByExtension(errorFile.getPath().substring(errorFile.getPath().lastIndexOf(".") + 1));
+				ctx.contentType((fromExtension != null) ? fromExtension.getMIME() : "text/plain");
+				try {
+					ctx.result(Files.newInputStream(errorFile.toPath()));
+				}
+				catch (IOException e) {
+					e.printStackTrace();
+				}
+			} else {
+				ctx.result("<!doctype html><html lang=\"en\"><body><img src=\"https://http.cat/404\" /></body></html>");
+			}
 		});
 
 		// Authentication Handler
@@ -481,15 +506,11 @@ public final class DispatchServer {
 
 			if (next > last) {
 				int eqPos = qs.indexOf('=', last);
-				try {
-					if (eqPos < 0 || eqPos > next) {
-						result.put(URLDecoder.decode(qs.substring(last, next), "utf-8"), "");
-					} else {
-						result.put(URLDecoder.decode(qs.substring(last, eqPos), "utf-8"),
-								URLDecoder.decode(qs.substring(eqPos + 1, next), "utf-8"));
-					}
-				} catch (UnsupportedEncodingException e) {
-					throw new RuntimeException(e); // will never happen, utf-8 support is mandatory for java
+				if (eqPos < 0 || eqPos > next) {
+					result.put(URLDecoder.decode(qs.substring(last, next), StandardCharsets.UTF_8), "");
+				} else {
+					result.put(URLDecoder.decode(qs.substring(last, eqPos), StandardCharsets.UTF_8),
+							URLDecoder.decode(qs.substring(eqPos + 1, next), StandardCharsets.UTF_8));
 				}
 			}
 			last = next + 1;

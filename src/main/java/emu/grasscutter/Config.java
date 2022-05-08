@@ -44,6 +44,9 @@ public final class Config {
 		public Boolean CORS = false;
 		public String[] CORSAllowedOrigins = new String[] { "*" };
 
+		public String WelcomeFile = "./welcome.html";
+		public String ErrorFile = "./404.html";
+
 		public boolean AutomaticallyCreateAccounts = false;
 		public String[] defaultPermissions = new String[] { "" };
 
