@@ -22,8 +22,8 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
-import emu.grasscutter.game.managers.MovementManager.MovementManager;
-import emu.grasscutter.game.managers.SotSManager.SotSManager;
+import emu.grasscutter.game.managers.StaminaManager.StaminaManager;
+import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
@@ -61,9 +61,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 @Entity(value = "players", useDiscriminator = false)
 public class Player {
-
-	@Transient private static int GlobalMaximumSpringVolume = 8500000;
-	@Transient private static int GlobalMaximumStamina = 24000;
 
 	@Id private int id;
 	@Indexed(options = @IndexOptions(unique = true)) private String accountId;
@@ -132,7 +129,7 @@ public class Player {
 	@Transient private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
 
 	private MapMarksManager mapMarksManager;
-	@Transient private MovementManager movementManager;
+	@Transient private StaminaManager staminaManager;
 
 	private long springLastUsed;
 
@@ -178,7 +175,7 @@ public class Player {
 		this.expeditionInfo = new HashMap<>();
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager();
-		this.movementManager = new MovementManager(this);
+		this.staminaManager = new StaminaManager(this);
 		this.sotsManager = new SotSManager(this);
 	}
 
@@ -206,7 +203,7 @@ public class Player {
 		this.getRotation().set(0, 307, 0);
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager();
-		this.movementManager = new MovementManager(this);
+		this.staminaManager = new StaminaManager(this);
 		this.sotsManager = new SotSManager(this);
 	}
 
@@ -875,11 +872,11 @@ public class Player {
 	}
 
 	public void onPause() {
-
+		staminaManager.stopSustainedStaminaHandler();
 	}
 
 	public void onUnpause() {
-
+		staminaManager.startSustainedStaminaHandler();
 	}
 
 	public void sendPacket(BasePacket packet) {
@@ -1024,7 +1021,7 @@ public class Player {
 		return mapMarksManager;
 	}
 
-	public MovementManager getMovementManager() { return movementManager; }
+	public StaminaManager getStaminaManager() { return staminaManager; }
 
 	public SotSManager getSotSManager() { return sotsManager; }
 
@@ -1152,7 +1149,7 @@ public class Player {
 
 	public void onLogout() {
 		// stop stamina calculation
-		getMovementManager().resetTimer();
+		getStaminaManager().stopSustainedStaminaHandler();
 
 		// force to leave the dungeon
 		if (getScene().getSceneType() == SceneType.SCENE_DUNGEON) {
@@ -1214,7 +1211,7 @@ public class Player {
 		} else if (prop == PlayerProperty.PROP_LAST_CHANGE_AVATAR_TIME) { // 10001
 			// TODO: implement sanity check
 		} else if (prop == PlayerProperty.PROP_MAX_SPRING_VOLUME) { // 10002
-			if (!(value >= 0 && value <= GlobalMaximumSpringVolume)) { return false; }
+			if (!(value >= 0 && value <= getSotSManager().GlobalMaximumSpringVolume)) { return false; }
 		} else if (prop == PlayerProperty.PROP_CUR_SPRING_VOLUME) { // 10003
 			int playerMaximumSpringVolume = getProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME);
 			if (!(value >= 0 && value <= playerMaximumSpringVolume)) { return false; }
@@ -1231,7 +1228,7 @@ public class Player {
 		} else if (prop == PlayerProperty.PROP_IS_TRANSFERABLE) { // 10009
 			if (!(0 <= value && value <= 1)) { return false; }
 		} else if (prop == PlayerProperty.PROP_MAX_STAMINA) { // 10010
-			if (!(value >= 0 && value <= GlobalMaximumStamina)) { return false; }
+			if (!(value >= 0 && value <= getStaminaManager().GlobalMaximumStamina)) { return false; }
 		} else if (prop == PlayerProperty.PROP_CUR_PERSIST_STAMINA) { // 10011
 			int playerMaximumStamina = getProperty(PlayerProperty.PROP_MAX_STAMINA);
 			if (!(value >= 0 && value <= playerMaximumStamina)) { return false; }
@@ -1242,7 +1239,7 @@ public class Player {
 		} else if (prop == PlayerProperty.PROP_PLAYER_EXP) { // 10014
 			if (!(0 <= value)) { return false; }
 		} else if (prop == PlayerProperty.PROP_PLAYER_HCOIN) { // 10015
-			// see 10015
+			// see PlayerProperty.PROP_PLAYER_HCOIN comments
 		} else if (prop == PlayerProperty.PROP_PLAYER_SCOIN) { // 10016
 			// See 10015
 		} else if (prop == PlayerProperty.PROP_PLAYER_MP_SETTING_TYPE) { // 10017

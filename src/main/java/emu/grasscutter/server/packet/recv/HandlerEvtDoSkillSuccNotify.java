@@ -1,6 +1,5 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -15,10 +14,7 @@ public class HandlerEvtDoSkillSuccNotify extends PacketHandler {
         EvtDoSkillSuccNotify notify = EvtDoSkillSuccNotify.parseFrom(payload);
         // TODO: Will be used for deducting stamina for charged skills.
 
-        int caster = notify.getCasterId();
-        int skillId = notify.getSkillId();
-
-        session.getPlayer().getMovementManager().notifySkill(caster, skillId);
+        session.getPlayer().getStaminaManager().handleEvtDoSkillSuccNotify(session, notify);
     }
 
 }
