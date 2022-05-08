@@ -1,6 +1,11 @@
 package emu.grasscutter.netty;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.Map;
+
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.player.Player;
 import io.jpower.kcp.netty.UkcpChannel;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
@@ -50,12 +55,28 @@ public abstract class KcpChannel extends ChannelInboundHandlerAdapter {
     
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-        
-        if(cause.getMessage().matches("(.*)OutOfMemoryError(.*)")){
-          Grasscutter.getLogger().info("Trying to exit program because the memory is full");
+
+        String message = "???";
+        if(cause.getMessage() != null && cause.getMessage().isBlank()) { 
+          message = cause.getMessage();
+        }else{
+          StringWriter sw = new StringWriter();
+          PrintWriter pw = new PrintWriter(sw);
+          cause.printStackTrace(pw);
+          message = pw.toString();
+        }
+        if(message.matches("(.*)OutOfMemoryError(.*)")){
+          Grasscutter.getLogger().info("Trying to exit program because memory is full");
+          Map<Integer, Player> playersMap = Grasscutter.getGameServer().getPlayers();
+          // Better exit by save data player and kick
+          playersMap.values().forEach(player -> {
+            Grasscutter.getLogger().info("Kick User: "+player.getUid());
+            player.getSession().close();
+          });
+          // Bye          
           System.exit(0);
         }else{
-          Grasscutter.getLogger().error("BIG PROBLEM: ",cause.getMessage());
+          Grasscutter.getLogger().error("BIG PROBLEM: ",message);
           close();
         }
     }
