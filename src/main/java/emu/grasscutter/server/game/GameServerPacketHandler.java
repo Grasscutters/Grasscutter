@@ -14,6 +14,7 @@ import emu.grasscutter.server.game.GameSession.SessionState;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
+@SuppressWarnings("unchecked")
 public class GameServerPacketHandler {
 	private final Int2ObjectMap<PacketHandler> handlers;
 	

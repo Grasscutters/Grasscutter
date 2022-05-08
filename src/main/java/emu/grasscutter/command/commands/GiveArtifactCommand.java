@@ -14,17 +14,20 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Command(label = "giveart", usage = "giveart <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]", description = "Gives the player a specified artifact", aliases = {"gart"}, permission = "player.giveart")
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "giveart", usage = "giveart <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]", aliases = {"gart"}, permission = "player.giveart", description = "commands.giveArtifact.description")
 public final class GiveArtifactCommand implements CommandHandler {
+
 	@Override
 	public void execute(Player sender, Player targetPlayer, List<String> args) {
 		if (targetPlayer == null) {
-			CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
+			CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
 			return;
 		}
 
 		if (args.size() < 2) {
-			CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveArtifact_usage);
+			CommandHandler.sendMessage(sender, translate("commands.giveArtifact.usage"));
 			return;
 		}
 
@@ -32,12 +35,12 @@ public final class GiveArtifactCommand implements CommandHandler {
 		try {
 			itemId = Integer.parseInt(args.remove(0));
 		} catch (NumberFormatException ignored) {
-			CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_artifact_id);
+			CommandHandler.sendMessage(sender, translate("commands.giveArtifact.id_error"));
 			return;
 		}
 		ItemData itemData = GameData.getItemDataMap().get(itemId);
 		if (itemData.getItemType() != ItemType.ITEM_RELIQUARY) {
-			CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_artifact_id);
+			CommandHandler.sendMessage(sender, translate("commands.giveArtifact.id_error"));
 			return;
 		}
 
@@ -45,7 +48,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		try {
 			mainPropId = Integer.parseInt(args.remove(0));
 		} catch (NumberFormatException ignored) {
-			CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_arguments);
+			CommandHandler.sendMessage(sender, translate("commands.generic.execution.argument_error"));
 			return;
 		}
 
@@ -59,7 +62,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		} catch (NumberFormatException ignored) {  // Could be a stat,times string so no need to panic
 		}
 
-		ArrayList<Integer> appendPropIdList = new ArrayList<>();
+		List<Integer> appendPropIdList = new ArrayList<>();
 		try {
 			args.forEach(it -> {
 				String[] arr;
@@ -74,7 +77,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 				appendPropIdList.addAll(Collections.nCopies(n, Integer.parseInt(it)));
 			});
 		} catch (Exception ignored) {
-			CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_arguments);
+			CommandHandler.sendMessage(sender, translate("commands.execution.argument_error"));
 			return;
 		}
 
@@ -85,7 +88,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		item.getAppendPropIdList().addAll(appendPropIdList);
 		targetPlayer.getInventory().addItem(item, ActionReason.SubfieldDrop);
 
-		CommandHandler.sendMessage(sender, Grasscutter.getLanguage().GiveArtifact_given.replace("{itemId}", Integer.toString(itemId)).replace("target", Integer.toString(targetPlayer.getUid())));
+		CommandHandler.sendMessage(sender, translate("commands.giveArtifact.success", Integer.toString(itemId), Integer.toString(targetPlayer.getUid())));
 	}
 }
 
