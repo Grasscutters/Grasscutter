@@ -8,13 +8,8 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "godmode", usage = "godmode [on|off|toggle]", permission = "player.godmode")
+@Command(label = "godmode", usage = "godmode [on|off|toggle]", permission = "player.godmode", description = "commands.godmode.description")
 public final class GodModeCommand implements CommandHandler {
-
-    @Override
-    public String description() {
-        return translate("commands.godmode.description");
-    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

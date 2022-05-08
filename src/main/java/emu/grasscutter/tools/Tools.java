@@ -31,6 +31,8 @@ import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.utils.Utils;
 
+import static emu.grasscutter.utils.Language.translate;
+
 public final class Tools {
 	public static void createGmHandbook() throws Exception {
 		ToolsWithLanguageOption.createGmHandbook(getLanguageOption());
@@ -113,16 +115,16 @@ final class ToolsWithLanguageOption {
 			writer.println("// Created " + dtf.format(now) + System.lineSeparator() + System.lineSeparator());
 
 			CommandMap cmdMap = new CommandMap(true);
-			HashMap<CommandHandler, Command> cmdList = cmdMap.getHandlersAndAnnotations();
+			List<Command> cmdList = new ArrayList<>(cmdMap.getAnnotationsAsList());
 
 			writer.println("// Commands");
-			cmdList.forEach((handler, command) -> {
-				String cmdName = command.label();
+			for (Command cmd : cmdList) {
+				String cmdName = cmd.label();
 				while (cmdName.length() <= 15) {
 					cmdName = " " + cmdName;
 				}
-				writer.println(cmdName + " : " + (handler.description() == null ? command.description() : handler.description()));
-			});
+				writer.println(cmdName + " : " + translate(cmd.description()));
+			}
 			writer.println();
 
 			list = new ArrayList<>(GameData.getAvatarDataMap().keySet());

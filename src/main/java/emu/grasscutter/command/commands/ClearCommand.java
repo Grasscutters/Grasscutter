@@ -13,14 +13,10 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "clear", usage = "clear <all|wp|art|mat>", //Merged /clearartifacts and /clearweapons to /clear <args> [uid]
+        description = "commands.clear.description",
         aliases = {"clear"}, permission = "player.clearinv")
 
 public final class ClearCommand implements CommandHandler {
-
-    @Override
-    public String description() {
-        return translate("commands.clear.description");
-    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

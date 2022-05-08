@@ -9,12 +9,8 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "resetshop", usage = "resetshop", permission = "server.resetshop")
+@Command(label = "resetshop", usage = "resetshop", permission = "server.resetshop", description = "commands.status.description")
 public final class ResetShopLimitCommand implements CommandHandler {
-    @Override
-    public String description() {
-        return translate("commands.status.description");
-    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

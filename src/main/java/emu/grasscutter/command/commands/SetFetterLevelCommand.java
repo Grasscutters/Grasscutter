@@ -12,13 +12,8 @@ import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "setfetterlevel", usage = "setfetterlevel <level>",
-        aliases = {"setfetterlvl", "setfriendship"}, permission = "player.setfetterlevel")
+        aliases = {"setfetterlvl", "setfriendship"}, permission = "player.setfetterlevel", description = "commands.setFetterLevel.description")
 public final class SetFetterLevelCommand implements CommandHandler {
-
-    @Override
-    public String description() {
-        return translate("commands.setFetterLevel.description");
-    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

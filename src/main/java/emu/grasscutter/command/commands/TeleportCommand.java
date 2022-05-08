@@ -10,7 +10,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "teleport", usage = "teleport <x> <y> <z> [scene id]", aliases = {"tp"}, permission = "player.teleport")
+@Command(label = "teleport", usage = "teleport <x> <y> <z> [scene id]", aliases = {"tp"}, permission = "player.teleport", description = "commands.teleport.description")
 public final class TeleportCommand implements CommandHandler {
 
     private float parseRelative(String input, Float current) {  // TODO: Maybe this will be useful elsewhere later
@@ -22,11 +22,6 @@ public final class TeleportCommand implements CommandHandler {
             current = Float.parseFloat(input);
         }
         return current;
-    }
-
-    @Override
-    public String description() {
-        return translate("commands.teleport.description");
     }
 
     @Override

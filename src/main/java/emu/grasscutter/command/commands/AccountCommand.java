@@ -9,13 +9,8 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "account", usage = "account <create|delete> <username> [uid]")
+@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "commands.account.description")
 public final class AccountCommand implements CommandHandler {
-
-    @Override
-    public String description() {
-        return translate("commands.account.description");
-    }
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
