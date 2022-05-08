@@ -23,7 +23,7 @@ public class HandlerSetEntityClientDataNotify extends PacketHandler {
 		BasePacket packet = new BasePacket(PacketOpcodes.SetEntityClientDataNotify, true);
 		packet.setData(notif);
 		
-		session.getPlayer().getScene().broadcastPacketToOthers(session.getPlayer(), packet);
+		session.getPlayer().getScene().broadcastPacket(packet);
 	}
 
 }
