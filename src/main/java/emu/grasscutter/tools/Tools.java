@@ -21,6 +21,7 @@ import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
+import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
@@ -29,6 +30,8 @@ import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.utils.Utils;
+
+import static emu.grasscutter.utils.Language.translate;
 
 public final class Tools {
 	public static void createGmHandbook() throws Exception {
@@ -120,9 +123,8 @@ final class ToolsWithLanguageOption {
 				while (cmdName.length() <= 15) {
 					cmdName = " " + cmdName;
 				}
-				writer.println(cmdName + " : " + cmd.description());
+				writer.println(cmdName + " : " + translate(cmd.description()));
 			}
-
 			writer.println();
 
 			list = new ArrayList<>(GameData.getAvatarDataMap().keySet());
