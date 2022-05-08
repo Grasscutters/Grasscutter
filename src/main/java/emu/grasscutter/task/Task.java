@@ -1,7 +1,5 @@
 package emu.grasscutter.task;
 
-import org.quartz.JobDataMap;
-
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 

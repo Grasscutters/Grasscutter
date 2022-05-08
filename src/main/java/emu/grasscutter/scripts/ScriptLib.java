@@ -118,7 +118,7 @@ public class ScriptLib {
 				challengeIndex,groupId,ordersConfigId,tideCount,sceneLimit,param6);
 
 		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
-				
+
 		if (group == null || group.monsters == null) {
 			return 1;
 		}
@@ -136,8 +136,7 @@ public class ScriptLib {
 		if (group == null || group.monsters == null) {
 			return 1;
 		}
-		
-		// TODO just spawn all from group for now
+
 		this.getSceneScriptManager().spawnMonstersInGroup(group, suite);
 		
 		return 0;
@@ -159,7 +158,13 @@ public class ScriptLib {
 		if (group == null || group.monsters == null) {
 			return 1;
 		}
-		
+
+		if(getSceneScriptManager().getScene().getChallenge() != null &&
+				getSceneScriptManager().getScene().getChallenge().inProgress())
+		{
+			return 0;
+		}
+
 		DungeonChallenge challenge = new DungeonChallenge(getSceneScriptManager().getScene(), group);
 		challenge.setChallengeId(challengeId);
 		challenge.setChallengeIndex(challengeIndex);
@@ -249,7 +254,7 @@ public class ScriptLib {
 				var1);
 
 		return (int) getSceneScriptManager().getScene().getEntities().values().stream()
-				.filter(e -> e instanceof EntityMonster)
+				.filter(e -> e instanceof EntityMonster && e.getGroupId() == getSceneScriptManager().getCurrentGroup().id)
 				.count();
 	}
 	public int SetMonsterBattleByGroup(int var1, int var2, int var3){
@@ -266,13 +271,11 @@ public class ScriptLib {
 		return 0;
 	}
 	// 8-1
-	public int GetGroupVariableValueByGroup(int var1, String var2, int var3){
-		logger.debug("[LUA] Call GetGroupVariableValueByGroup with {},{},{}",
-				var1,var2,var3);
+	public int GetGroupVariableValueByGroup(String name, int groupId){
+		logger.debug("[LUA] Call GetGroupVariableValueByGroup with {},{}",
+				name,groupId);
 
-		//TODO
-
-		return getSceneScriptManager().getVariables().getOrDefault(var2, 0);
+		return getSceneScriptManager().getVariables().getOrDefault(name, 0);
 	}
 
 	public int SetIsAllowUseSkill(int canUse, int var2){
@@ -296,6 +299,13 @@ public class ScriptLib {
 			return 1;
 		}
 		getSceneScriptManager().getScene().killEntity(entity, 0);
+		return 0;
+	}
+
+	public int SetGroupVariableValueByGroup(String key, int value, int groupId){
+		logger.debug("[LUA] Call SetGroupVariableValueByGroup with {},{},{}",
+				key,value,groupId);
+
 		return 0;
 	}
 

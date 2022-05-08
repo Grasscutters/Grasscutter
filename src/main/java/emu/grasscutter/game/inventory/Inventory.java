@@ -172,6 +172,9 @@ public class Inventory implements Iterable<GameItem> {
 			// Handle
 			this.addVirtualItem(item.getItemId(), item.getCount());
 			return item;
+		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_ADSORBATE) {
+			player.getTeamManager().addEnergyToTeam(item);
+			return null;
 		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_AVATAR) {
 			// Get avatar id
 			int avatarId = (item.getItemId() % 1000) + 10000000;
