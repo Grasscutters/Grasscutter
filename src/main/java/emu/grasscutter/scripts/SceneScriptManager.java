@@ -90,6 +90,10 @@ public class SceneScriptManager {
 		return config;
 	}
 
+	public SceneGroup getCurrentGroup() {
+		return currentGroup;
+	}
+
 	public List<SceneBlock> getBlocks() {
 		return blocks;
 	}
@@ -237,16 +241,16 @@ public class SceneScriptManager {
 			
 			for (SceneSuite suite : group.suites) {
 				suite.sceneMonsters = new ArrayList<>(suite.monsters.size());
-				for (int id : suite.monsters) {
-					try {
-						SceneMonster monster = (SceneMonster) map.get(id);
-						if (monster != null) {
-							suite.sceneMonsters.add(monster);
+				suite.monsters.forEach(id -> {
+					Object objEntry = map.get(id.intValue());
+					if (objEntry instanceof Map.Entry<?,?> monsterEntry) {
+						Object monster = monsterEntry.getValue();
+						if(monster instanceof SceneMonster sceneMonster){
+							suite.sceneMonsters.add(sceneMonster);
 						}
-					} catch (Exception e) {
-						continue;
 					}
-				}
+				});
+
 				suite.sceneGadgets = new ArrayList<>(suite.gadgets.size());
 				for (int id : suite.gadgets) {
 					try {
@@ -320,13 +324,15 @@ public class SceneScriptManager {
 	}
 	
 	public void spawnMonstersInGroup(SceneGroup group, int suiteIndex) {
-		this.currentGroup = group;
-		this.monsterSceneLimit = 0;
 		var suite = group.getSuiteByIndex(suiteIndex);
 		if(suite == null){
 			return;
 		}
-		suite.sceneMonsters.forEach(mob -> spawnMonstersInGroup(group, mob));
+		if(suite.sceneMonsters.size() > 0){
+			this.currentGroup = group;
+			this.monsterSceneLimit = 0;
+			suite.sceneMonsters.forEach(mob -> spawnMonstersInGroup(group, mob));
+		}
 	}
 	
 	public void spawnMonstersInGroup(SceneGroup group) {
@@ -401,6 +407,7 @@ public class SceneScriptManager {
 			spawnMonstersInGroup(this.currentGroup, this.currentGroup.monsters.get(this.monsterOrders.poll()));
 		}else if(this.monsterAlive.get() == 0){
 			// spawn the last turn of monsters
+			//callEvent(EventType.EVENT_MONSTER_TIDE_DIE, new ScriptArgs());
 			while(!this.monsterOrders.isEmpty()){
 				spawnMonstersInGroup(this.currentGroup, this.currentGroup.monsters.get(this.monsterOrders.poll()));
 			}
