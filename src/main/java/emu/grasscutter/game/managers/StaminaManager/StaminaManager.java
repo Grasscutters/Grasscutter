@@ -142,9 +142,10 @@ public class StaminaManager {
     public void startSustainedStaminaHandler() {
         if (!player.isPaused() && !timerRunning) {
             timerRunning = true;
-            if(sustainedStaminaHandlerTimer != null){
-             sustainedStaminaHandlerTimer.scheduleAtFixedRate(handleSustainedStamina, 0, 200);
-             // Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer started");
+            try {
+              sustainedStaminaHandlerTimer.scheduleAtFixedRate(handleSustainedStamina, 0, 200);
+            } catch (Exception e) {
+              //TODO: handle exception
             }
         }
     }
@@ -152,8 +153,10 @@ public class StaminaManager {
     public void stopSustainedStaminaHandler() {
         if (timerRunning) {
             timerRunning = false;
-            if(sustainedStaminaHandlerTimer != null){
-             sustainedStaminaHandlerTimer.cancel();
+            try {
+              sustainedStaminaHandlerTimer.cancel();
+            } catch (Exception e) {
+              //TODO: handle exception
             }
             // Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer stopped");
         }
