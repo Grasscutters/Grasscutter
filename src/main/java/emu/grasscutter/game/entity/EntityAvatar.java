@@ -30,6 +30,7 @@ import emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo;
 import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.utils.Position;
@@ -126,6 +127,22 @@ public class EntityAvatar extends GameEntity {
 		
 		return healed;
 	}
+	
+	public void addEnergy(float amount) {
+		FightProperty curEnergyProp = getAvatar().getSkillDepot().getElementType().getCurEnergyProp();
+		FightProperty maxEnergyProp = getAvatar().getSkillDepot().getElementType().getMaxEnergyProp();
+		
+		float curEnergy = this.getFightProperty(curEnergyProp);
+		float maxEnergy = this.getFightProperty(maxEnergyProp);
+		float newEnergy = Math.min(curEnergy + amount, maxEnergy);
+		
+		if (newEnergy != curEnergy) {
+			setFightProperty(curEnergyProp, newEnergy);
+			
+			getScene().broadcastPacket(new PacketAvatarFightPropUpdateNotify(getAvatar(), curEnergyProp));
+			getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, curEnergyProp, newEnergy, PropChangeReason.PROP_CHANGE_ENERGY_BALL));
+		}
+	} 
 	
 	public SceneAvatarInfo getSceneAvatarInfo() {
 		SceneAvatarInfo.Builder avatarInfo = SceneAvatarInfo.newBuilder()
@@ -258,5 +275,5 @@ public class EntityAvatar extends GameEntity {
 		
 		//
 		return abilityControlBlock.build();
-	} 
+	}
 }
