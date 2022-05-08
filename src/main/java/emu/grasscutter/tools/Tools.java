@@ -121,7 +121,7 @@ final class ToolsWithLanguageOption {
 				while (cmdName.length() <= 15) {
 					cmdName = " " + cmdName;
 				}
-				writer.println(cmdName + " : " + handler.description());
+				writer.println(cmdName + " : " + (handler.description() == null ? command.description() : handler.description()));
 			});
 			writer.println();
 
