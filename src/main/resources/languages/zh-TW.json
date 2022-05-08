@@ -173,7 +173,7 @@
       "success": "已殺死 %s 目前的場上角色。"
     },
     "list": {
-      "message": "目前總線上人數：%s"
+      "success": "目前總線上人數：%s"
     },
     "permission": {
       "usage": "用法：permission <add|remove> <username> <permission>",
