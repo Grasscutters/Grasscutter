@@ -173,7 +173,7 @@
       "success": "已杀死 %s 目前使用的角色。"
     },
     "list": {
-      "message": "目前在线人数：%s"
+      "success": "目前在线人数：%s"
     },
     "permission": {
       "usage": "用法：permission <add|remove> <username> <permission>",
