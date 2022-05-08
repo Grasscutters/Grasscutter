@@ -9,7 +9,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "Modify user accounts")
+@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "commands.account.description")
 public final class AccountCommand implements CommandHandler {
 
     @Override

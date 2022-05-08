@@ -96,7 +96,7 @@ public class GachaBanner {
 		return toProto("");
 	}
 	public GachaInfo toProto(String sessionKey) {
-		String record = "https://"
+		String record = "http" + (Grasscutter.getConfig().getDispatchOptions().FrontHTTPS ? "s" : "") + "://"
 						+ (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? 
 							Grasscutter.getConfig().getDispatchOptions().Ip : 
 							Grasscutter.getConfig().getDispatchOptions().PublicIp)

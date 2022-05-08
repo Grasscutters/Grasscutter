@@ -557,7 +557,7 @@ public class TeamManager {
 		//		     return;
 		//		}
 		//	}
-		player.getMovementManager().resetTimer(); // prevent drowning immediately after respawn
+		player.getStaminaManager().stopSustainedStaminaHandler(); // prevent drowning immediately after respawn
 		
 		// Revive all team members
 		for (EntityAvatar entity : getActiveTeam()) {

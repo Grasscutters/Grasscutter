@@ -10,8 +10,7 @@ import java.util.*;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "help", usage = "help [command]",
-        description = "Sends the help message or shows information about a specified command")
+@Command(label = "help", usage = "help [command]", description = "commands.help.description")
 public final class HelpCommand implements CommandHandler {
 
     @Override
@@ -39,7 +38,7 @@ public final class HelpCommand implements CommandHandler {
             } else {
                 Command annotation = handler.getClass().getAnnotation(Command.class);
 
-                builder.append("   ").append(annotation.description()).append("\n");
+                builder.append("   ").append(translate(annotation.description())).append("\n");
                 builder.append(translate("commands.help.usage")).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
                     builder.append("\n").append(translate("commands.help.aliases"));
@@ -61,7 +60,7 @@ public final class HelpCommand implements CommandHandler {
             StringBuilder builder = new StringBuilder("\n" + translate("commands.help.available_commands") + "\n");
             annotations.forEach(annotation -> {
                 builder.append(annotation.label()).append("\n");
-                builder.append("   ").append(annotation.description()).append("\n");
+                builder.append("   ").append(translate(annotation.description())).append("\n");
                 builder.append(translate("commands.help.usage")).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
                     builder.append("\n").append(translate("commands.help.aliases"));
@@ -78,7 +77,7 @@ public final class HelpCommand implements CommandHandler {
             CommandHandler.sendMessage(player, translate("commands.help.available_commands"));
             annotations.forEach(annotation -> {
                 StringBuilder builder = new StringBuilder(annotation.label()).append("\n");
-                builder.append("   ").append(annotation.description()).append("\n");
+                builder.append("   ").append(translate(annotation.description())).append("\n");
                 builder.append(translate("commands.help.usage")).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
                     builder.append("\n").append(translate("commands.help.aliases"));
