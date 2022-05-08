@@ -1,6 +1,5 @@
 package emu.grasscutter.server.dispatch;
 
-import com.google.protobuf.Value;
 import emu.grasscutter.Grasscutter;
 import express.http.HttpContextHandler;
 import express.http.Request;
