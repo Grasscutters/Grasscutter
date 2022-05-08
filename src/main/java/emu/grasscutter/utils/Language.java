@@ -6,8 +6,6 @@ import emu.grasscutter.Grasscutter;
 
 import javax.annotation.Nullable;
 
-import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +20,7 @@ public final class Language {
      * @return A language instance.
      */
     public static Language getLanguage(String langCode) {
-        return new Language(langCode + ".json", Grasscutter.getConfig().DefaultLanguage.toLanguageTag());
+        return new Language(langCode + ".json", Grasscutter.getConfig().DefaultLanguage.toLanguageTag()+".json");
     }
 
     /**
@@ -47,20 +45,22 @@ public final class Language {
      * @param fileName The name of the language file.
      */
     private Language(String fileName, String fallback) {
-        @Nullable JsonObject languageData = null;
+      @Nullable JsonObject languageData = null;
+        InputStream file =null;
+        Grasscutter.getLogger().info("load file "+fileName);
 
-        try {
-            Grasscutter.getLogger().info("load file "+fileName);
-            InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
-            if(file == null) {
-                file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
-            }
-            
-            languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(file), JsonObject.class);
-        } catch (Exception exception) {
-            Grasscutter.getLogger().warn("Failed to load language file: " + fileName, exception);
+        file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
+        if(file == null) {
+          Grasscutter.getLogger().info("fallback to "+fallback);
+          file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
         }
         
+        try {
+          languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(file), JsonObject.class);
+        } catch (Exception e) {
+          Grasscutter.getLogger().warn("Failed to load language file: " + fallback, e);
+        }   
+
         this.languageData = languageData;
     }
 
