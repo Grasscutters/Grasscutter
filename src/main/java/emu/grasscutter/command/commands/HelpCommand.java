@@ -43,7 +43,7 @@ public final class HelpCommand implements CommandHandler {
             } else {
                 Command annotation = handler.getClass().getAnnotation(Command.class);
 
-                builder.append("   ").append(handler.description()).append("\n");
+                builder.append("   ").append(handler.description() == null ? annotation.description(): handler.description()).append("\n");
                 builder.append(translate("commands.help.usage")).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
                     builder.append("\n").append(translate("commands.help.aliases"));
@@ -65,7 +65,7 @@ public final class HelpCommand implements CommandHandler {
             StringBuilder builder = new StringBuilder("\n" + translate("commands.help.available_commands") + "\n");
             annotations.forEach((annotation, handler) -> {
                 builder.append(annotation.label()).append("\n");
-                builder.append("   ").append(handler.description()).append("\n");
+                builder.append("   ").append(handler.description() == null ? annotation.description() : handler.description()).append("\n");
                 builder.append(translate("commands.help.usage")).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
                     builder.append("\n").append(translate("commands.help.aliases"));
@@ -82,7 +82,7 @@ public final class HelpCommand implements CommandHandler {
             CommandHandler.sendMessage(player, translate("commands.help.available_commands"));
             annotations.forEach((annotation, handler) -> {
                 StringBuilder builder = new StringBuilder(annotation.label()).append("\n");
-                builder.append("   ").append(handler.description()).append("\n");
+                builder.append("   ").append(handler.description() == null ? annotation.description() : handler.description()).append("\n");
                 builder.append(translate("commands.help.usage")).append(annotation.usage());
                 if (annotation.aliases().length >= 1) {
                     builder.append("\n").append(translate("commands.help.aliases"));
