@@ -49,21 +49,22 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 
 						session.getPlayer().getStaminaManager().handleCombatInvocationsNotify(session, moveInfo, entity);
 
-						// TODO: handle MOTION_FIGHT landing
-						//  For plunge attacks, LAND_SPEED is always -30 and is not useful.
-						//  May need the height when starting plunge attack.
+						// TODO: handle MOTION_FIGHT landing which has a different damage factor
+						// 		Also, for plunge attacks, LAND_SPEED is always -30 and is not useful.
+						//  	May need the height when starting plunge attack.
 
+						// MOTION_LAND_SPEED and MOTION_FALL_ON_GROUND arrive in different packets.
+						// Cache land speed for later use.
+						if (motionState == MotionState.MOTION_LAND_SPEED) {
+							cachedLandingSpeed = motionInfo.getSpeed().getY();
+							cachedLandingTimeMillisecond = System.currentTimeMillis();
+							monitorLandingEvent = true;
+						}
 						if (monitorLandingEvent) {
  							if (motionState == MotionState.MOTION_FALL_ON_GROUND) {
 								monitorLandingEvent = false;
 								handleFallOnGround(session, entity, motionState);
 							}
-						}
-						if (motionState == MotionState.MOTION_LAND_SPEED) {
-							// MOTION_LAND_SPEED and MOTION_FALL_ON_GROUND arrive in different packet. Cache land speed for later use.
-							cachedLandingSpeed = motionInfo.getSpeed().getY();
-							cachedLandingTimeMillisecond = System.currentTimeMillis();
-							monitorLandingEvent = true;
 						}
 					}
 					break;
@@ -84,33 +85,42 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 	}
 
 	private void handleFallOnGround(GameSession session, GameEntity entity, MotionState motionState) {
-		// If not received immediately after MOTION_LAND_SPEED, discard this packet.
+		// People have reported that after plunge attack (client sends a FIGHT instead of FALL_ON_GROUND) they will die
+		// 		if they talk to an NPC (this is when the client sends a FALL_ON_GROUND) without jumping again.
+		// A dirty patch: if not received immediately after MOTION_LAND_SPEED, discard this packet.
+		// 200ms seems to be a reasonable delay.
 		int maxDelay = 200;
 		long actualDelay = System.currentTimeMillis() - cachedLandingTimeMillisecond;
-		Grasscutter.getLogger().debug("MOTION_FALL_ON_GROUND received after " + actualDelay + "/" + maxDelay + "ms." + (actualDelay > maxDelay ? " Discard" : ""));
+		Grasscutter.getLogger().trace("MOTION_FALL_ON_GROUND received after " + actualDelay + "/" + maxDelay + "ms." + (actualDelay > maxDelay ? " Discard" : ""));
 		if (actualDelay > maxDelay) {
 			return;
 		}
 		float currentHP = entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
 		float maxHP = entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-		float damage = 0;
+		float damageFactor = 0;
 		if (cachedLandingSpeed < -23.5) {
-			damage = (float) (maxHP * 0.33);
+			damageFactor = 0.33f;
 		}
 		if (cachedLandingSpeed < -25) {
-			damage = (float) (maxHP * 0.5);
+			damageFactor = 0.5f;
 		}
 		if (cachedLandingSpeed < -26.5) {
-			damage = (float) (maxHP * 0.66);
+			damageFactor = 0.66f;
 		}
 		if (cachedLandingSpeed < -28) {
-			damage = (maxHP * 1);
+			damageFactor = 1f;
 		}
+		float damage = maxHP * damageFactor;
 		float newHP = currentHP - damage;
 		if (newHP < 0) {
 			newHP = 0;
 		}
-		Grasscutter.getLogger().debug(currentHP + "/" + maxHP + "\t" + "\tDamage: " + damage + "\tnewHP: " + newHP);
+		if (damageFactor > 0) {
+			Grasscutter.getLogger().debug(currentHP + "/" + maxHP + "\tLandingSpeed: " + cachedLandingSpeed +
+					"\tDamageFactor: " + damageFactor + "\tDamage: " + damage + "\tNewHP: " + newHP);
+		} else {
+			Grasscutter.getLogger().trace(currentHP + "/" + maxHP + "\tLandingSpeed: 0\tNo damage");
+		}
 		entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
 		entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
 		if (newHP == 0) {
