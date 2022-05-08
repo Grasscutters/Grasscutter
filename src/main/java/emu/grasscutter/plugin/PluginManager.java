@@ -4,12 +4,12 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.Event;
 import emu.grasscutter.server.event.EventHandler;
 import emu.grasscutter.server.event.HandlerPriority;
-import emu.grasscutter.utils.EventConsumer;
 import emu.grasscutter.utils.Utils;
 
 import java.io.File;
 import java.io.InputStreamReader;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.*;
@@ -47,12 +47,23 @@ public final class PluginManager {
         List<File> plugins = Arrays.stream(files)
                 .filter(file -> file.getName().endsWith(".jar"))
                 .toList();
-        
+
+        URL[] pluginNames = new URL[plugins.size()];
+        plugins.forEach(plugin -> {
+            try {
+                pluginNames[plugins.indexOf(plugin)] = plugin.toURI().toURL();
+            } catch (MalformedURLException exception) {
+                Grasscutter.getLogger().warn("Unable to load plugin.", exception);
+            }
+        });
+
+        URLClassLoader classLoader = new URLClassLoader(pluginNames);
+
         plugins.forEach(plugin -> {
             try {
                 URL url = plugin.toURI().toURL();
                 try (URLClassLoader loader = new URLClassLoader(new URL[]{url})) {
-                    URL configFile = loader.findResource("plugin.json");
+                    URL configFile = loader.findResource("plugin.json"); // Find the plugin.json file for each plugin.
                     InputStreamReader fileReader = new InputStreamReader(configFile.openStream());
 
                     PluginConfig pluginConfig = Grasscutter.getGsonFactory().fromJson(fileReader, PluginConfig.class);
@@ -68,10 +79,10 @@ public final class PluginManager {
                         JarEntry entry = entries.nextElement();
                         if(entry.isDirectory() || !entry.getName().endsWith(".class") || entry.getName().contains("module-info")) continue;
                         String className = entry.getName().replace(".class", "").replace("/", ".");
-                        loader.loadClass(className);
+                        classLoader.loadClass(className); // Use the same class loader for ALL plugins.
                     }
                     
-                    Class<?> pluginClass = loader.loadClass(pluginConfig.mainClass);
+                    Class<?> pluginClass = classLoader.loadClass(pluginConfig.mainClass);
                     Plugin pluginInstance = (Plugin) pluginClass.getDeclaredConstructor().newInstance();
                     this.loadPlugin(pluginInstance, PluginIdentifier.fromPluginConfig(pluginConfig), loader);
                     
@@ -154,6 +165,10 @@ public final class PluginManager {
                 .filter(handler -> handler.handles().isInstance(event))
                 .filter(handler -> handler.getPriority() == priority)
                 .toList().forEach(handler -> this.invokeHandler(event, handler));
+    }
+
+    public Plugin getPlugin(String name) {
+        return this.plugins.get(name);
     }
 
     /**

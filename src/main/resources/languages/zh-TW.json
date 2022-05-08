@@ -57,7 +57,7 @@
       "player_execute_error": "請在遊戲裡使用這條指令。",
       "command_exist_error": "找不到指令。",
       "invalid": {
-        "amount": "無效的 數量.",
+        "amount": "無效的數量。",
         "artifactId": "無效的聖遺物ID。",
         "avatarId": "無效的角色ID。",
         "avatarLevel": "無效的角色等級。",
@@ -119,7 +119,7 @@
     },
     "coop": {
       "usage": "用法：coop <playerId> <target playerId>",
-      "success": "Summoned %s to %s's world."
+      "success": "召喚了 %s 到 %s 的世界。"
     },
     "enter_dungeon": {
       "usage": "用法：enterdungeon <dungeon id>",
@@ -140,7 +140,7 @@
     },
     "giveChar": {
       "usage": "用法：givechar <player> <itemId|itemName> [amount]",
-      "given": "Given %s with level %s to %s.",
+      "given": "已將 %s 等級 %s 給予 %s。",
       "invalid_avatar_id": "無效的角色ID。",
       "invalid_avatar_level": "無效的角色等級。.",
       "invalid_avatar_or_player_id": "無效的角色ID/玩家ID。"
@@ -270,7 +270,7 @@
       "q_skill_id": "Q技能ID %s。"
     },
     "teleportAll": {
-      "success": "Summoned all players to your location.",
+      "success": "召喚了所有玩家到你的位置上。",
       "error": "此指令僅可在多人遊戲下可用。"
     },
     "teleport": {

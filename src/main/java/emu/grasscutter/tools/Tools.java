@@ -13,16 +13,15 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import com.google.gson.reflect.TypeToken;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.Command;
+import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.def.AvatarData;
@@ -111,7 +110,21 @@ final class ToolsWithLanguageOption {
 			   
 			writer.println("// Grasscutter " + GameConstants.VERSION + " GM Handbook");
 			writer.println("// Created " + dtf.format(now) + System.lineSeparator() + System.lineSeparator());
-			
+
+			CommandMap cmdMap = new CommandMap(true);
+			List<Command> cmdList = new ArrayList<>(cmdMap.getAnnotationsAsList());
+
+			writer.println("// Commands");
+			for (Command cmd : cmdList) {
+				String cmdName = cmd.label();
+				while (cmdName.length() <= 15) {
+					cmdName = " " + cmdName;
+				}
+				writer.println(cmdName + " : " + cmd.description());
+			}
+
+			writer.println();
+
 			list = new ArrayList<>(GameData.getAvatarDataMap().keySet());
 			Collections.sort(list); 
 			 
