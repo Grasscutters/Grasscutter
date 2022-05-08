@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -12,12 +11,12 @@ import emu.grasscutter.game.props.ActionReason;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "give", usage = "give <itemId|itemName> [amount] [level]", description = "Gives an item to you or the specified player", aliases = {
+@Command(label = "give", usage = "give <itemId|itemName> [amount] [level]", aliases = {
         "g", "item", "giveitem"}, permission = "player.give")
 public final class GiveCommand implements CommandHandler {
     Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java is a joke of a proglang that doesn't have raw string literals
@@ -30,6 +29,11 @@ public final class GiveCommand implements CommandHandler {
             return Integer.parseInt(match.group(1));  // This should be exception-safe as only \d+ can be passed to it (i.e. non-empty string of pure digits)
         }
         return -1;
+    }
+
+    @Override
+    public String description() {
+        return translate("commands.give.description");
     }
 
     @Override

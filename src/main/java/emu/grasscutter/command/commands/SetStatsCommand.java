@@ -15,8 +15,7 @@ import emu.grasscutter.utils.Language;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "setstats", usage = "setstats|stats <stat> <value>",
-        description = "Set fight property for your current active character", aliases = {"stats"}, permission = "player.setstats")
+@Command(label = "setstats", usage = "setstats|stats <stat> <value>", aliases = {"stats"}, permission = "player.setstats")
 public final class SetStatsCommand implements CommandHandler {
     static class Stat {
         String name;
@@ -172,6 +171,11 @@ public final class SetStatsCommand implements CommandHandler {
         stats.put("_nonextra_skill_cd_minus_ratio", new Stat("NONEXTRA_SKILL_CD_MINUS_RATIO", FightProperty.FIGHT_PROP_NONEXTRA_SKILL_CD_MINUS_RATIO, true));
         stats.put("_nonextra_shield_cost_minus_ratio", new Stat("NONEXTRA_SHIELD_COST_MINUS_RATIO", FightProperty.FIGHT_PROP_NONEXTRA_SHIELD_COST_MINUS_RATIO, true));
         stats.put("_nonextra_physical_add_hurt", new Stat("NONEXTRA_PHYSICAL_ADD_HURT", FightProperty.FIGHT_PROP_NONEXTRA_PHYSICAL_ADD_HURT, true));
+    }
+
+    @Override
+    public String description() {
+        return translate("commands.setStats.description");
     }
 
     @Override

@@ -85,6 +85,14 @@ public final class CommandMap {
         return new LinkedHashMap<>(this.annotations);
     }
 
+    public HashMap<CommandHandler, Command> getHandlersAndAnnotations() {
+        HashMap<CommandHandler, Command> hashMap = new HashMap<>();
+        this.commands.forEach((key, handler) -> {
+            hashMap.put(handler, this.annotations.get(key));
+        });
+        return hashMap;
+    }
+
     /**
      * Returns a list of all registered commands.
      *
