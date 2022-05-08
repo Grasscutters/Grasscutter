@@ -9,6 +9,8 @@ import java.util.Map;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.data.custom.AbilityEmbryoEntry;
+import emu.grasscutter.data.custom.AbilityModifier;
+import emu.grasscutter.data.custom.AbilityModifierEntry;
 import emu.grasscutter.data.custom.OpenConfigEntry;
 import emu.grasscutter.data.custom.ScenePointEntry;
 import emu.grasscutter.data.def.*;
@@ -22,6 +24,7 @@ public class GameData {
 	// BinOutputs
 	private static final Int2ObjectMap<String> abilityHashes = new Int2ObjectOpenHashMap<>();
 	private static final Map<String, AbilityEmbryoEntry> abilityEmbryos = new HashMap<>();
+	private static final Map<String, AbilityModifierEntry> abilityModifiers = new HashMap<>();
 	private static final Map<String, OpenConfigEntry> openConfigEntries = new HashMap<>();
 	private static final Map<String, ScenePointEntry> scenePointEntries = new HashMap<>();
 	
@@ -99,6 +102,10 @@ public class GameData {
 	
 	public static Map<String, AbilityEmbryoEntry> getAbilityEmbryoInfo() {
 		return abilityEmbryos;
+	}
+
+	public static Map<String, AbilityModifierEntry> getAbilityModifiers() {
+		return abilityModifiers;
 	}
 
 	public static Map<String, OpenConfigEntry> getOpenConfigEntries() {
