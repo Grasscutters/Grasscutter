@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CommandHandler {
 
-    String description();
+    default String description() { return null; };
 
     /**
      * Send a message to the target.
