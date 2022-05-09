@@ -10,7 +10,7 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "setworldlevel", usage = "setworldlevel <level>",
-        aliases = {"setworldlvl"}, permission = "player.setworldlevel", description = "commands.setWorldLevel.description")
+        aliases = {"setworldlvl"}, permission = "player.setworldlevel", permissionTargeted = "player.setworldlevel.others", description = "commands.setWorldLevel.description")
 public final class SetWorldLevelCommand implements CommandHandler {
 
     @Override
