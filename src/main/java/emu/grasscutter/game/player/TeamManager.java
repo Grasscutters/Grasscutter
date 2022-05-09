@@ -384,12 +384,7 @@ public class TeamManager {
 				.filter(Objects::nonNull)
 				.map(TeamInfo::new)
 				.toList();
-
-        try {
-          this.temporaryTeam = team; 
-        } catch (Exception e) {
-          //TODO: handle exception
-        }	
+		this.temporaryTeam = team;
 	}
 
 	public void useTemporaryTeam(int index) {

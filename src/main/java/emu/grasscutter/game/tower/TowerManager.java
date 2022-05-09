@@ -2,7 +2,6 @@ package emu.grasscutter.game.tower;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.TowerLevelData;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
@@ -144,29 +143,11 @@ public class TowerManager {
     }
 
     public boolean canEnterScheduleFloor(){
-        try {
-          if(!recordMap.containsKey(player.getServer().getTowerScheduleManager().getLastEntranceFloor())){
+        if(!recordMap.containsKey(player.getServer().getTowerScheduleManager().getLastEntranceFloor())){
             return false;
-          }
-          return recordMap.get(player.getServer().getTowerScheduleManager().getLastEntranceFloor()).getStarCount() >= 6;
-        } catch (Exception e) {
-
-          try {
-            
-            if(player.getServer() != null){
-              return true;
-            }else{
-              Grasscutter.getLogger().info("DEBUG: canEnterScheduleFloor by user"+player.getUid()+" | No Found getserver");
-              return false;
-            }
-
-          } catch (Exception el) {
-            // skip
-          }
-
-          Grasscutter.getLogger().info("DEBUG: canEnterScheduleFloor by user"+player.getUid());
-          return false;
-        }        
+        }
+        return recordMap.get(player.getServer().getTowerScheduleManager().getLastEntranceFloor())
+                .getStarCount() >= 6;
     }
 
     public void mirrorTeamSetUp(int teamId) {
