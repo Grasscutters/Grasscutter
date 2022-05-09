@@ -190,14 +190,17 @@ public class StaminaManager {
 
     // Returns new stamina and sends PlayerPropNotify
     public int setStamina(GameSession session, String reason, int newStamina) {
-        // set stamina
-        player.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, newStamina);
-        session.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
-        // notify updated
-        for (Map.Entry<String, AfterUpdateStaminaListener> listener : afterUpdateStaminaListeners.entrySet()) {
-            listener.getValue().onAfterUpdateStamina(reason, newStamina);
+        if (Grasscutter.getConfig().OpenStamina) {
+            // set stamina
+            player.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, newStamina);
+            session.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
+            // notify updated
+            for (Map.Entry<String, AfterUpdateStaminaListener> listener : afterUpdateStaminaListeners.entrySet()) {
+                listener.getValue().onAfterUpdateStamina(reason, newStamina);
+            }
+            return newStamina;
         }
-        return newStamina;
+        return player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
     }
 
     // Kills avatar, removes entity and sends notification.
@@ -288,50 +291,48 @@ public class StaminaManager {
 
     private class SustainedStaminaHandler extends TimerTask {
         public void run() {
-            if (Grasscutter.getConfig().OpenStamina) {
-                boolean moving = isPlayerMoving();
-                int currentStamina = player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
-                int maxStamina = player.getProperty(PlayerProperty.PROP_MAX_STAMINA);
-                if (moving || (currentStamina < maxStamina)) {
-                    Grasscutter.getLogger().trace("Player moving: " + moving + ", stamina full: " +
-                            (currentStamina >= maxStamina) + ", recalculate stamina");
+            boolean moving = isPlayerMoving();
+            int currentStamina = player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
+            int maxStamina = player.getProperty(PlayerProperty.PROP_MAX_STAMINA);
+            if (moving || (currentStamina < maxStamina)) {
+                Grasscutter.getLogger().trace("Player moving: " + moving + ", stamina full: " +
+                        (currentStamina >= maxStamina) + ", recalculate stamina");
 
-                    Consumption consumption = new Consumption(ConsumptionType.None);
-                    if (MotionStatesCategorized.get("CLIMB").contains(currentState)) {
-                        consumption = getClimbSustainedConsumption();
-                    } else if (MotionStatesCategorized.get("SWIM").contains((currentState))) {
-                        consumption = getSwimSustainedConsumptions();
-                    } else if (MotionStatesCategorized.get("RUN").contains(currentState)) {
-                        consumption = getRunWalkDashSustainedConsumption();
-                    } else if (MotionStatesCategorized.get("FLY").contains(currentState)) {
-                        consumption = getFlySustainedConsumption();
-                    } else if (MotionStatesCategorized.get("STANDBY").contains(currentState)) {
-                        consumption = getStandSustainedConsumption();
-                    }
+                Consumption consumption = new Consumption(ConsumptionType.None);
+                if (MotionStatesCategorized.get("CLIMB").contains(currentState)) {
+                    consumption = getClimbSustainedConsumption();
+                } else if (MotionStatesCategorized.get("SWIM").contains((currentState))) {
+                    consumption = getSwimSustainedConsumptions();
+                } else if (MotionStatesCategorized.get("RUN").contains(currentState)) {
+                    consumption = getRunWalkDashSustainedConsumption();
+                } else if (MotionStatesCategorized.get("FLY").contains(currentState)) {
+                    consumption = getFlySustainedConsumption();
+                } else if (MotionStatesCategorized.get("STANDBY").contains(currentState)) {
+                    consumption = getStandSustainedConsumption();
+                }
 
-                    /*
-                        TODO: Reductions that apply to all motion types:
-                            Elemental Resonance
-                                Wind: -15%
-                            Skills
-                                Diona E: -10% while shield lasts
-                                Barbara E: -12% while lasts
-                    */
-                    if (cachedSession != null) {
-                        if (consumption.amount < 0) {
-                            staminaRecoverDelay = 0;
-                        }
-                        if (consumption.amount > 0 && consumption.consumptionType != ConsumptionType.POWERED_FLY) {
-                            // For POWERED_FLY recover immediately - things like Amber's gliding exam may require this.
-                            if (staminaRecoverDelay < 10) {
-                                // For others recover after 2 seconds (10 ticks) - as official server does.
-                                staminaRecoverDelay++;
-                                consumption.amount = 0;
-                                Grasscutter.getLogger().trace("[StaminaManager] Delaying recovery: " + staminaRecoverDelay);
-                            }
-                        }
-                        updateStaminaRelative(cachedSession, consumption);
+                /*
+                    TODO: Reductions that apply to all motion types:
+                        Elemental Resonance
+                            Wind: -15%
+                        Skills
+                            Diona E: -10% while shield lasts
+                            Barbara E: -12% while lasts
+                */
+                if (cachedSession != null) {
+                    if (consumption.amount < 0) {
+                        staminaRecoverDelay = 0;
                     }
+                    if (consumption.amount > 0 && consumption.consumptionType != ConsumptionType.POWERED_FLY) {
+                        // For POWERED_FLY recover immediately - things like Amber's gliding exam may require this.
+                        if (staminaRecoverDelay < 10) {
+                            // For others recover after 2 seconds (10 ticks) - as official server does.
+                            staminaRecoverDelay++;
+                            consumption.amount = 0;
+                            Grasscutter.getLogger().trace("[StaminaManager] Delaying recovery: " + staminaRecoverDelay);
+                        }
+                    }
+                    updateStaminaRelative(cachedSession, consumption);
                 }
             }
             previousState = currentState;
