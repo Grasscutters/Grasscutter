@@ -8,31 +8,36 @@ import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneMonster;
 import emu.grasscutter.scripts.data.ScriptArgs;
+import emu.grasscutter.scripts.listener.ScriptMonsterListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class ScriptMonsterSpawnService {
 
     private final SceneScriptManager sceneScriptManager;
-    private final List<Consumer<EntityMonster>> onMonsterCreatedListener = new ArrayList<>();
+    private final List<ScriptMonsterListener> onMonsterCreatedListener = new ArrayList<>();
 
-    private final List<Consumer<EntityMonster>> onMonsterDeadListener = new ArrayList<>();
+    private final List<ScriptMonsterListener> onMonsterDeadListener = new ArrayList<>();
 
     public ScriptMonsterSpawnService(SceneScriptManager sceneScriptManager){
         this.sceneScriptManager = sceneScriptManager;
     }
 
-    public void addMonsterCreatedListener(Consumer<EntityMonster> consumer){
-        onMonsterCreatedListener.add(consumer);
+    public void addMonsterCreatedListener(ScriptMonsterListener scriptMonsterListener){
+        onMonsterCreatedListener.add(scriptMonsterListener);
     }
-    public void addMonsterDeadListener(Consumer<EntityMonster> consumer){
-        onMonsterDeadListener.add(consumer);
+    public void addMonsterDeadListener(ScriptMonsterListener scriptMonsterListener){
+        onMonsterDeadListener.add(scriptMonsterListener);
     }
-
+    public void removeMonsterCreatedListener(ScriptMonsterListener scriptMonsterListener){
+        onMonsterCreatedListener.remove(scriptMonsterListener);
+    }
+    public void removeMonsterDeadListener(ScriptMonsterListener scriptMonsterListener){
+        onMonsterDeadListener.remove(scriptMonsterListener);
+    }
     public void onMonsterDead(EntityMonster entityMonster){
-        onMonsterDeadListener.forEach(l -> l.accept(entityMonster));
+        onMonsterDeadListener.forEach(l -> l.onNotify(entityMonster));
     }
     public void spawnMonster(int groupId, SceneMonster monster) {
         if(monster == null){
@@ -64,7 +69,7 @@ public class ScriptMonsterSpawnService {
         entity.setGroupId(groupId);
         entity.setConfigId(monster.config_id);
 
-        onMonsterCreatedListener.forEach(action -> action.accept(entity));
+        onMonsterCreatedListener.forEach(action -> action.onNotify(entity));
 
         sceneScriptManager.getScene().addEntity(entity);
 
