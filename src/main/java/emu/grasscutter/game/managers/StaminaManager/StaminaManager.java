@@ -243,15 +243,16 @@ public class StaminaManager {
         cachedEntity = entity;
         MotionInfo motionInfo = moveInfo.getMotionInfo();
         MotionState motionState = motionInfo.getState();
-        boolean isReliable = moveInfo.getIsReliable();
-        Grasscutter.getLogger().trace("" + motionState + "\t" + (isReliable ? "reliable" : ""));
-        if (isReliable) {
-            currentState = motionState;
-            Vector posVector = motionInfo.getPos();
-            Position newPos = new Position(posVector.getX(), posVector.getY(), posVector.getZ());
-            if (newPos.getX() != 0 && newPos.getY() != 0 && newPos.getZ() != 0) {
-                currentCoordinates = newPos;
-            }
+        int notifyEntityId = entity.getId();
+        int currentAvatarEntityId = session.getPlayer().getTeamManager().getCurrentAvatarEntity().getId();
+        if (notifyEntityId != currentAvatarEntityId) {
+            return;
+        }
+        currentState = motionState;
+        Vector posVector = motionInfo.getPos();
+        Position newPos = new Position(posVector.getX(), posVector.getY(), posVector.getZ());
+        if (newPos.getX() != 0 && newPos.getY() != 0 && newPos.getZ() != 0) {
+            currentCoordinates = newPos;
         }
         startSustainedStaminaHandler();
         handleImmediateStamina(session, motionInfo, motionState, entity);
