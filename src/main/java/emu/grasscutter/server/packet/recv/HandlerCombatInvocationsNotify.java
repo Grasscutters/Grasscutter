@@ -102,6 +102,10 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 		if (cachedLandingSpeed < -28) {
 			damageFactor = 1f;
 		}
+		// Disable falling damage for players in god mode.
+		if (session.getPlayer() != null && session.getPlayer().inGodmode()) {
+			damageFactor = 0;
+		}
 		float damage = maxHP * damageFactor;
 		float newHP = currentHP - damage;
 		if (newHP < 0) {
