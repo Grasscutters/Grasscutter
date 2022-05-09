@@ -10,7 +10,7 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "unlocktower", usage = "unlocktower", aliases = {"ut"},
-        description = "Unlock all levels of tower", permission = "player.tower")
+        description = "commands.unlocktower.description", permission = "player.tower")
 public class UnlockTowerCommand implements CommandHandler {
 
     @Override
@@ -21,7 +21,7 @@ public class UnlockTowerCommand implements CommandHandler {
         unlockFloor(sender, sender.getServer().getTowerScheduleManager()
                 .getScheduleFloors());
 
-        CommandHandler.sendMessage(sender, translate("commands.tower.unlock_done"));
+        CommandHandler.sendMessage(sender, translate("commands.unlocktower.success"));
     }
 
     public void unlockFloor(Player player, List<Integer> floors){

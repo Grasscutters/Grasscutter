@@ -201,7 +201,7 @@
       "description": "给予或移除指定玩家的权限。"
     },
     "position": {
-      "success": "坐标：%.3f, %.3f, %.3f\n场景ID：%d",
+      "success": "坐标：%s, %s, %s\n场景ID：%s",
       "description": "获取所在位置。"
     },
     "reload": {
@@ -249,7 +249,7 @@
     "setFetterLevel": {
       "usage": "用法：setfetterlevel <level>",
       "range_error": "好感度等级必须在 0 到 10 之间。",
-      "fetter_set_level": "好感度已设置为 %s 级",
+      "success": "好感度已设置为 %s 级",
       "level_error": "无效的好感度等级。",
       "description": "设置当前角色的好感度等级。"
     },
@@ -330,6 +330,13 @@
     },
     "restart": {
       "description": "重新启动服务器。"
+    },
+    "unlocktower": {
+      "success": "解锁完成。",
+      "description": "解锁深境螺旋的所有层"
+    },
+    "resetshop": {
+      "description": "重置商店时间"
     }
   }
 }
