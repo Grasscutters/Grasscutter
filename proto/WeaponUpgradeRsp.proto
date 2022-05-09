@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+message WeaponUpgradeRsp {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 632;
+	}
+
+	int32 retcode = 1;
+	uint64 target_weapon_guid = 2;
+	uint32 old_level = 3;
+	uint32 cur_level = 4;
+	repeated ItemParam item_param_list = 5;
+}

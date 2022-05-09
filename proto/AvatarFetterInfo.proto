@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FetterData.proto";
+
+message AvatarFetterInfo {
+	uint32 exp_number = 1;
+	uint32 exp_level = 2;
+	repeated uint32 open_id_list = 3;
+	repeated uint32 finish_id_list = 4;
+	repeated uint32 rewarded_fetter_level_list = 5;
+	repeated FetterData fetter_list = 6;
+}

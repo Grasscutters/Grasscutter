@@ -1,8 +1,13 @@
 package emu.grasscutter.utils;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.time.*;
+import java.time.temporal.TemporalAdjusters;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import emu.grasscutter.Config;
@@ -10,7 +15,10 @@ import emu.grasscutter.Grasscutter;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
+
 import org.slf4j.Logger;
+
+import static emu.grasscutter.utils.Language.translate;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
 public final class Utils {
@@ -24,6 +32,19 @@ public final class Utils {
 		return random.nextFloat() * (max - min) + min;
 	}
 	
+	public static double getDist(Position pos1, Position pos2) {
+		double xs = pos1.getX() - pos2.getX();
+		xs = xs * xs;
+		
+		double ys = pos1.getY() - pos2.getY();
+		ys = ys * ys;
+
+		double zs = pos1.getZ() - pos2.getZ();
+		zs = zs * zs;
+
+		return Math.sqrt(xs + zs + ys);
+	}
+
 	public static int getCurrentSeconds() {
 		return (int) (System.currentTimeMillis() / 1000.0);
 	}
@@ -51,6 +72,7 @@ public final class Utils {
 	
 	private static final char[] HEX_ARRAY = "0123456789abcdef".toCharArray();
 	public static String bytesToHex(byte[] bytes) {
+		if (bytes == null) return "";
 	    char[] hexChars = new char[bytes.length * 2];
 	    for (int j = 0; j < bytes.length; j++) {
 	        int v = bytes[j] & 0xFF;
@@ -138,6 +160,15 @@ public final class Utils {
 	}
 
 	/**
+	 * Logs an object to the console.
+	 * @param object The object to log.
+	 */
+	public static void logObject(Object object) {
+		String asJson = Grasscutter.getGsonFactory().toJson(object);
+		Grasscutter.getLogger().info(asJson);
+	}
+	
+	/**
 	 * Checks for required files and folders before startup.
 	 */
 	public static void startupCheck() {
@@ -150,15 +181,15 @@ public final class Utils {
 
 		// Check for resources folder.
 		if(!fileExists(resourcesFolder)) {
-			logger.info("Creating resources folder...");
-			logger.info("Place a copy of 'GenshinData' in the resources folder.");
+			logger.info(translate("messages.status.create_resources"));
+			logger.info(translate("messages.status.resources_error"));
 			createFolder(resourcesFolder); exit = true;
 		}
 
-		// Check for GenshinData.
+		// Check for BinOutput + ExcelBinOutput.
 		if(!fileExists(resourcesFolder + "BinOutput") ||
 				!fileExists(resourcesFolder + "ExcelBinOutput")) {
-			logger.info("Place a copy of 'GenshinData' in the resources folder.");
+			logger.info(translate("messages.status.resources_error"));
 			exit = true;
 		}
 
@@ -167,5 +198,106 @@ public final class Utils {
 			createFolder(dataFolder);
 
 		if(exit) System.exit(1);
+	}
+
+	/**
+	 * Gets the timestamp of the next hour.
+	 * @return The timestamp in UNIX seconds.
+	 */
+	public static int getNextTimestampOfThisHour(int hour, String timeZone, int param) {
+		ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
+		for (int i = 0; i < param; i ++){
+			if (zonedDateTime.getHour() < hour) {
+				zonedDateTime = zonedDateTime.withHour(hour).withMinute(0).withSecond(0);
+			} else {
+				zonedDateTime = zonedDateTime.plusDays(1).withHour(hour).withMinute(0).withSecond(0);
+			}
+		}
+		return (int) zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
+	}
+
+	/**
+	 * Gets the timestamp of the next hour in a week.
+	 * @return The timestamp in UNIX seconds.
+	 */
+	public static int getNextTimestampOfThisHourInNextWeek(int hour, String timeZone, int param) {
+		ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
+		for (int i = 0; i < param; i++) {
+			if (zonedDateTime.getDayOfWeek() == DayOfWeek.MONDAY && zonedDateTime.getHour() < hour) {
+				zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone)).withHour(hour).withMinute(0).withSecond(0);
+			} else {
+				zonedDateTime = zonedDateTime.with(TemporalAdjusters.next(DayOfWeek.MONDAY)).withHour(hour).withMinute(0).withSecond(0);
+			}
+		}
+		return (int) zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
+	}
+
+	/**
+	 * Gets the timestamp of the next hour in a month.
+	 * @return The timestamp in UNIX seconds.
+	 */
+	public static int getNextTimestampOfThisHourInNextMonth(int hour, String timeZone, int param) {
+		ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone));
+		for (int i = 0; i < param; i++) {
+			if (zonedDateTime.getDayOfMonth() == 1 && zonedDateTime.getHour() < hour) {
+				zonedDateTime = ZonedDateTime.now(ZoneId.of(timeZone)).withHour(hour).withMinute(0).withSecond(0);
+			} else {
+				zonedDateTime = zonedDateTime.with(TemporalAdjusters.firstDayOfNextMonth()).withHour(hour).withMinute(0).withSecond(0);
+			}
+		}
+		return (int) zonedDateTime.toInstant().atZone(ZoneOffset.UTC).toEpochSecond();
+	}
+
+	/**
+	 * Retrieves a string from an input stream.
+	 * @param stream The input stream.
+	 * @return The string.
+	 */
+	public static String readFromInputStream(InputStream stream) {
+		StringBuilder stringBuilder = new StringBuilder();
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
+			String line; while ((line = reader.readLine()) != null) {
+				stringBuilder.append(line);
+			} stream.close();
+		} catch (IOException e) {
+			Grasscutter.getLogger().warn("Failed to read from input stream.");
+		} return stringBuilder.toString();
+	}
+
+	/**
+	 * Switch properties from upper case to lower case?
+	 */
+	public static Map<String, Object> switchPropertiesUpperLowerCase(Map<String, Object> objMap, Class<?> cls) {
+		Map<String, Object> map = new HashMap<>(objMap.size());
+		for (String key : objMap.keySet()) {
+			try {
+				char c = key.charAt(0);
+				if (c >= 'a' && c <= 'z') {
+					try {
+						cls.getDeclaredField(key);
+						map.put(key, objMap.get(key));
+					} catch (NoSuchFieldException e) {
+						String s1 = String.valueOf(c).toUpperCase();
+						String after = key.length() > 1 ? s1 + key.substring(1) : s1;
+						cls.getDeclaredField(after);
+						map.put(after, objMap.get(key));
+					}
+				} else if (c >= 'A' && c <= 'Z') {
+					try {
+						cls.getDeclaredField(key);
+						map.put(key, objMap.get(key));
+					} catch (NoSuchFieldException e) {
+						String s1 = String.valueOf(c).toLowerCase();
+						String after = key.length() > 1 ? s1 + key.substring(1) : s1;
+						cls.getDeclaredField(after);
+						map.put(after, objMap.get(key));
+					}
+				}
+			} catch (NoSuchFieldException e) {
+				map.put(key, objMap.get(key));
+			}
+		}
+
+		return map;
 	}
 }

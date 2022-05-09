@@ -3,62 +3,52 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.game.GenshinScene;
 import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.world.Scene;
 
 import java.util.List;
 
-@Command(label = "killall", usage = "killall [playerUid] [sceneId]",
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "killall", usage = "killall [sceneId]",
         description = "Kill all entities", permission = "server.killall")
 public final class KillAllCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
-        GenshinScene scene;
-        GenshinPlayer genshinPlayer;
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            return;
+        }
 
+        Scene scene = targetPlayer.getScene();
         try {
             switch (args.size()) {
                 case 0: // *No args*
-                    if (sender == null) {
-                        CommandHandler.sendMessage(null, "Usage: killall [playerUid] [sceneId]");
-                        return;
-                    }
-                    scene = sender.getScene();
                     break;
-                case 1: // [playerUid]
-                    genshinPlayer = Grasscutter.getGameServer().getPlayerByUid(Integer.parseInt(args.get(0)));
-                    if (genshinPlayer == null) {
-                        CommandHandler.sendMessage(sender, "Player not found or offline.");
-                        return;
-                    }
-                    scene = genshinPlayer.getScene();
-                    break;
-                case 2: // [playerUid] [sceneId]
-                    genshinPlayer = Grasscutter.getGameServer().getPlayerByUid(Integer.parseInt(args.get(0)));
-                    if (genshinPlayer == null) {
-                        CommandHandler.sendMessage(sender, "Player not found or offline.");
-                        return;
-                    }
-                    GenshinScene genshinScene = sender.getWorld().getSceneById(Integer.parseInt(args.get(1)));
-                    if (genshinScene == null) {
-                        CommandHandler.sendMessage(sender, "Scene not found in player world");
-                        return;
-                    }
-                    scene = genshinScene;
+                case 1: // [sceneId]
+                    scene = targetPlayer.getWorld().getSceneById(Integer.parseInt(args.get(0)));
                     break;
                 default:
-                    CommandHandler.sendMessage(sender, "Usage: killall [playerUid] [sceneId]");
+                    CommandHandler.sendMessage(sender, translate("commands.kill.usage"));
                     return;
             }
-
-            scene.getEntities().values().stream()
-                    .filter(entity -> entity instanceof EntityMonster)
-                    .forEach(entity -> scene.killEntity(entity, 0));
-            CommandHandler.sendMessage(sender, "Killing all monsters in scene " + scene.getId());
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "Invalid arguments.");
+            CommandHandler.sendMessage(sender, translate("commands.execution.argument_error"));
         }
+        if (scene == null) {
+            CommandHandler.sendMessage(sender, translate("commands.kill.scene_not_found_in_player_world"));
+            return;
+        }
+
+        // Separate into list to avoid concurrency issue
+        final Scene sceneF = scene;
+        List<GameEntity> toKill = sceneF.getEntities().values().stream()
+                .filter(entity -> entity instanceof EntityMonster)
+                .toList();
+        toKill.forEach(entity -> sceneF.killEntity(entity, 0));
+        CommandHandler.sendMessage(sender, translate("commands.kill.kill_monsters_in_scene", Integer.toString(toKill.size()), Integer.toString(scene.getId())));
     }
 }

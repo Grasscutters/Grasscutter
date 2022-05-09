@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message DungeonDataNotify {
+	map<uint32, uint32> dungeon_data_map = 1;
+}

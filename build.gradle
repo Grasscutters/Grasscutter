@@ -6,38 +6,90 @@
  * User Manual available at https://docs.gradle.org/5.6.3/userguide/tutorial_java_projects.html
  */
 
+buildscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.18'
+    }
+}
+
 plugins {
+    // Apply the application plugin to add support for building a CLI application
+    id 'application'
+
     // Apply the java plugin to add support for Java
     id 'java'
 
-    // Apply the application plugin to add support for building a CLI application
-    id 'application'
+    // Apply the protobuf auto generator
+    id 'com.google.protobuf' version "0.8.18"
+
+    // Eclipse Support
+    id 'eclipse'
+
+    // IntelliJ Support
+    id 'idea'
+
+    // Maven
+    id 'maven-publish'
+    id 'signing'
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+group = 'xyz.grasscutters'
+version = '1.1.0'
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
 
-	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
-	implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.6'
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.6'
-    implementation group: 'io.netty', name: 'netty-all', version: '4.1.69.Final'
-    
-	implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.8'
-	implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.18.1'
-	
-	implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.9'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.9'
 
-	implementation group: 'dev.morphia.morphia', name: 'core', version: '1.6.1'
+    implementation group: 'org.jline', name: 'jline', version: '3.21.0'
+    implementation group: 'org.jline', name: 'jline-terminal-jna', version: '3.21.0'
+    implementation group: 'net.java.dev.jna', name: 'jna', version: '5.10.0'
+
+    implementation group: 'io.netty', name: 'netty-all', version: '4.1.71.Final'
+
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.0'
+    implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.18.2'
+
+    implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'
+
+    implementation group: 'dev.morphia.morphia', name: 'morphia-core', version: '2.2.6'
 
     implementation group: 'org.greenrobot', name: 'eventbus-java', version: '3.3.1'
+    implementation group: 'org.danilopianini', name: 'java-quadtree', version: '0.1.9'
+
+    implementation group: 'org.quartz-scheduler', name: 'quartz', version: '2.3.2'
+    implementation group: 'org.quartz-scheduler', name: 'quartz-jobs', version: '2.3.2'
+
+    implementation group: 'org.luaj', name: 'luaj-jse', version: '3.0.1'
+
+    protobuf files('proto/')
+}
+
+configurations.all {
+    exclude group: 'org.slf4j', module: 'slf4j'
 }
 
 application {
@@ -59,9 +111,121 @@ jar {
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
 
     from('src/main/java') {
-		include '*.xml'
-	}
+        include '*.xml'
+    }
 
     destinationDir = file(".")
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'grasscutter'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'Grasscutter'
+                description = 'A server software reimplementation for an anime game.'
+                url = 'https://github.com/Grasscutters/Grasscutter'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'meledy'
+                        name = 'Meledy'
+                        email = 'meledy@xigam.tech' // not a real email kek
+                    }
+                    developer {
+                        id = 'magix'
+                        name = 'Magix'
+                        email = 'magix@xigam.tech'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git@github.com:Grasscutters/Grasscutter.git'
+                    developerConnection = 'scm:git:ssh://github.com:Grasscutters/Grasscutter.git'
+                    url = 'https://github.com/Grasscutters/Grasscutter'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            // change URLs to point to your repos, e.g. http://my.org/repo
+            def releasesRepoUrl = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+            def snapshotsRepoUrl = 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+
+            name = 'sonatype'
+            credentials(PasswordCredentials)
+        }
+    }
+}
+
+clean {
+    delete protobuf.generatedFilesBaseDir
+}
+
+protobuf {
+    protoc {
+        // The artifact spec for the Protobuf Compiler
+        artifact = 'com.google.protobuf:protoc:3.18.1'
+    }
+//    generatedFilesBaseDir = "$projectDir/src/main/java/emu/grasscutter/net/proto/"
+    generatedFilesBaseDir = "$projectDir/src/generated/"
+}
+
+sourceSets {
+    main {
+        proto {
+            // In addition to the default 'src/main/proto'
+            srcDir 'src/generated'
+        }
+        java {
+            srcDir 'src/java'
+        }
+    }
+}
+
+idea {
+    module {
+        // proto files and generated Java files are automatically added as
+        // source dirs.
+        // If you have additional sources, add them here:
+        sourceDirs += file("/proto/");
+    }
+}
+
+eclipse {
+    classpath {
+        file.whenMerged { cp ->
+            cp.entries.add( new org.gradle.plugins.ide.eclipse.model.SourceFolder('src/generated/main/java', null) )
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+javadoc {
+    options.encoding = 'UTF-8'
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
+
+processResources {
+    dependsOn "generateProto"
+}

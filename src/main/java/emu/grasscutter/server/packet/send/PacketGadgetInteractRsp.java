@@ -1,13 +1,14 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.entity.EntityBaseGadget;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
+import emu.grasscutter.net.proto.RetcodeOuterClass;
 
-public class PacketGadgetInteractRsp extends GenshinPacket {
-	public PacketGadgetInteractRsp(EntityGadget gadget, InteractType interact) {
+public class PacketGadgetInteractRsp extends BasePacket {
+	public PacketGadgetInteractRsp(EntityBaseGadget gadget, InteractType interact) {
 		super(PacketOpcodes.GadgetInteractRsp);
 
 		GadgetInteractRsp proto = GadgetInteractRsp.newBuilder()
@@ -23,7 +24,7 @@ public class PacketGadgetInteractRsp extends GenshinPacket {
 		super(PacketOpcodes.GadgetInteractRsp);
 
 		GadgetInteractRsp proto = GadgetInteractRsp.newBuilder()
-				.setRetcode(1)
+				.setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
 				.build();
 		
 		this.setData(proto);

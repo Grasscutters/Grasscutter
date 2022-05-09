@@ -1,30 +1,31 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "kick", usage = "kick <player>",
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "kick", usage = "kick",
         description = "Kicks the specified player from the server (WIP)", permission = "server.kick")
 public final class KickCommand implements CommandHandler {
 
     @Override
-    public void execute(GenshinPlayer sender, List<String> args) {
-        int target = Integer.parseInt(args.get(0));
-
-        GenshinPlayer targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
             return;
         }
 
         if (sender != null) {
-            CommandHandler.sendMessage(sender, String.format("Player [%s:%s] has kicked player [%s:%s]", sender.getAccount().getPlayerUid(), sender.getAccount().getUsername(), target, targetPlayer.getAccount().getUsername()));
+            CommandHandler.sendMessage(sender, translate("commands.kick.player_kick_player", 
+                    Integer.toString(sender.getAccount().getPlayerUid()), sender.getAccount().getUsername(),
+                    Integer.toString(targetPlayer.getUid()), targetPlayer.getAccount().getUsername()));
+        } else {
+            CommandHandler.sendMessage(null, translate("commands.kick.server_kick_player", Integer.toString(targetPlayer.getUid()), targetPlayer.getAccount().getUsername()));
         }
-        CommandHandler.sendMessage(sender, String.format("Kicking player [%s:%s]", target, targetPlayer.getAccount().getUsername()));
 
         targetPlayer.getSession().close();
     }

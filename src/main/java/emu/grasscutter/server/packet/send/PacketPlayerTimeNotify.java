@@ -1,13 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerTimeNotifyOuterClass.PlayerTimeNotify;
 
-public class PacketPlayerTimeNotify extends GenshinPacket {
+public class PacketPlayerTimeNotify extends BasePacket {
 	
-	public PacketPlayerTimeNotify(GenshinPlayer player) {
+	public PacketPlayerTimeNotify(Player player) {
 		super(PacketOpcodes.PlayerTimeNotify);
 
 		PlayerTimeNotify proto = PlayerTimeNotify.newBuilder()

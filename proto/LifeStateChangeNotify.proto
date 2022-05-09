@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlayerDieType.proto";
+import "ServerBuff.proto";
+
+message LifeStateChangeNotify {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 1218;
+	}
+
+	uint32 entity_id = 1;
+	uint32 life_state = 2;
+	uint32 source_entity_id = 3;
+	string attack_tag = 4;
+	PlayerDieType die_type = 5;
+	uint32 move_reliable_seq = 6;
+	repeated ServerBuff server_buff_list = 7;
+}

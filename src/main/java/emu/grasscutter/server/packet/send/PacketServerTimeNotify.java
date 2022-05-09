@@ -1,10 +1,10 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ServerTimeNotifyOuterClass.ServerTimeNotify;
 
-public class PacketServerTimeNotify extends GenshinPacket {
+public class PacketServerTimeNotify extends BasePacket {
 	
 	public PacketServerTimeNotify() {
 		super(PacketOpcodes.ServerTimeNotify);

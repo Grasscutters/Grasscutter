@@ -1,11 +1,11 @@
 package emu.grasscutter.data.def;
 
-import emu.grasscutter.data.GenshinData;
-import emu.grasscutter.data.GenshinResource;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "AvatarCostumeExcelConfigData.json")
-public class AvatarCostumeData extends GenshinResource {
+public class AvatarCostumeData extends GameResource {
 	private int CostumeId;
 	private int ItemId;
     private int AvatarId;
@@ -25,6 +25,6 @@ public class AvatarCostumeData extends GenshinResource {
 	
 	@Override
 	public void onLoad() {
-		GenshinData.getAvatarCostumeDataItemIdMap().put(this.getItemId(), this);
+		GameData.getAvatarCostumeDataItemIdMap().put(this.getItemId(), this);
 	}
 }

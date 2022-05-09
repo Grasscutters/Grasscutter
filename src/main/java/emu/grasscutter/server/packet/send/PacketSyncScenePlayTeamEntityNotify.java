@@ -1,13 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SyncScenePlayTeamEntityNotifyOuterClass.SyncScenePlayTeamEntityNotify;
 
-public class PacketSyncScenePlayTeamEntityNotify extends GenshinPacket {
+public class PacketSyncScenePlayTeamEntityNotify extends BasePacket {
 	
-	public PacketSyncScenePlayTeamEntityNotify(GenshinPlayer player) {
+	public PacketSyncScenePlayTeamEntityNotify(Player player) {
 		super(PacketOpcodes.SyncScenePlayTeamEntityNotify);
 
 		SyncScenePlayTeamEntityNotify proto = SyncScenePlayTeamEntityNotify.newBuilder()

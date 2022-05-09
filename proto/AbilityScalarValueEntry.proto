@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AbilityString.proto";
+import "AbilityScalarType.proto";
+
+message AbilityScalarValueEntry {
+	oneof Value {
+		float float_value = 3;
+		string string_value = 4;
+		int32 int_value = 5;
+		uint32 uint_value = 6;
+	}
+	AbilityString key = 1;
+	AbilityScalarType value_type = 2;
+}

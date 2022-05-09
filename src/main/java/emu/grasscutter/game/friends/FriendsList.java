@@ -3,7 +3,7 @@ package emu.grasscutter.game.friends;
 import java.util.List;
 
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.GenshinPlayer;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.DealAddFriendResultTypeOuterClass.DealAddFriendResultType;
 import emu.grasscutter.server.packet.send.PacketAskAddFriendNotify;
 import emu.grasscutter.server.packet.send.PacketAskAddFriendRsp;
@@ -14,20 +14,20 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class FriendsList {
-	private final GenshinPlayer player;
+	private final Player player;
 	
 	private final Int2ObjectMap<Friendship> friends;
 	private final Int2ObjectMap<Friendship> pendingFriends;
 	
 	private boolean loaded = false;
 	
-	public FriendsList(GenshinPlayer player) {
+	public FriendsList(Player player) {
 		this.player = player;
 		this.friends = new Int2ObjectOpenHashMap<Friendship>();
 		this.pendingFriends = new Int2ObjectOpenHashMap<Friendship>();
 	}
 	
-	public GenshinPlayer getPlayer() {
+	public Player getPlayer() {
 		return player;
 	}
 	
@@ -83,7 +83,7 @@ public class FriendsList {
 			return;
 		}
 
-		GenshinPlayer target = getPlayer().getSession().getServer().getPlayerByUid(targetUid, true);
+		Player target = getPlayer().getSession().getServer().getPlayerByUid(targetUid, true);
 		if (target == null) {
 			return; // Should never happen
 		}
@@ -104,7 +104,7 @@ public class FriendsList {
 		}
 
 		// Handle
-		if (result == DealAddFriendResultType.DealAddFriendAccept) { // Request accepted
+		if (result == DealAddFriendResultType.DEAL_ADD_FRIEND_ACCEPT) { // Request accepted
 			myFriendship.setIsFriend(true);
 			theirFriendship.setIsFriend(true);
 			
@@ -143,7 +143,7 @@ public class FriendsList {
 		myFriendship.delete();
 		
 		Friendship theirFriendship = null;
-		GenshinPlayer friend = myFriendship.getFriendProfile().getPlayer();
+		Player friend = myFriendship.getFriendProfile().getPlayer();
 		if (friend != null) {
 			// Friend online
 			theirFriendship = friend.getFriendsList().getFriendById(this.getPlayer().getUid());
@@ -165,7 +165,7 @@ public class FriendsList {
 	}
 	
 	public synchronized void sendFriendRequest(int targetUid) {
-		GenshinPlayer target = getPlayer().getSession().getServer().getPlayerByUid(targetUid, true);
+		Player target = getPlayer().getSession().getServer().getPlayerByUid(targetUid, true);
 
 		if (target == null || target == this.getPlayer()) {
 			return;
@@ -220,7 +220,7 @@ public class FriendsList {
 		friendship.setOwner(getPlayer());
 
 		// Check if friend is online
-		GenshinPlayer friend = getPlayer().getSession().getServer().getPlayerByUid(friendship.getFriendProfile().getUid());
+		Player friend = getPlayer().getSession().getServer().getPlayerByUid(friendship.getFriendProfile().getUid());
 		if (friend != null) {
 			// Set friend to online mode
 			friendship.setFriendProfile(friend);

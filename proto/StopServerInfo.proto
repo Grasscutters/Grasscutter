@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message StopServerInfo {
+	uint32 stop_begin_time = 1;
+	uint32 stop_end_time = 2;
+	string url = 3;
+	string content_msg = 4;
+}

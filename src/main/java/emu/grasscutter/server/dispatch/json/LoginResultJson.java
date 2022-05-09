@@ -16,7 +16,7 @@ public class LoginResultJson {
 	public static class VerifyAccountData {
 		public String uid;
 		public String name = "";
-		public String email;
+		public String email = "";
 		public String mobile = "";
 		public String is_email_verify = "0";
 		public String realname = "";

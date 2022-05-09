@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+import "AvatarExpeditionInfo.proto";
+
+message AvatarExpeditionStartRsp {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 1646;
+	}
+
+	int32 retcode = 1;
+	map<uint64, AvatarExpeditionInfo> expedition_info_map = 2;
+}

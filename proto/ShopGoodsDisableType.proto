@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum ShopGoodsDisableType {
+	SHOP_GOODS_DISABLE_NONE = 0;
+	SHOP_GOODS_DISABLE_TALENT_FULL = 1;
+	SHOP_GOODS_DISABLE_FURNITURE_FORMULA_UNLOCKED = 2;
+	SHOP_GOODS_DISABLE_COSTUME_UNLOCKED = 3;
+}

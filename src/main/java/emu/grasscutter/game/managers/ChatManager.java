@@ -1,8 +1,8 @@
 package emu.grasscutter.game.managers;
 
 import emu.grasscutter.command.CommandMap;
-import emu.grasscutter.game.GenshinPlayer;
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketPlayerChatNotify;
 import emu.grasscutter.server.packet.send.PacketPrivateChatNotify;
@@ -23,7 +23,48 @@ public class ChatManager {
 		return server;
 	}
 
-	public void sendPrivateMessage(GenshinPlayer player, int targetUid, String message) {
+	public void sendPrivateMessage(Player player, int targetUid, String message) {
+		// Sanity checks
+		if (message == null || message.length() == 0) {
+			return;
+		}
+		
+		// Get target
+		Player target = getServer().getPlayerByUid(targetUid);
+				
+		// Check if command
+		if (PREFIXES.contains(message.charAt(0))) {
+			CommandMap.getInstance().invoke(player, target, message.substring(1));
+			return;
+		}
+		
+		if (target == null) {
+			return;
+		}
+		
+		// Create chat packet
+		BasePacket packet = new PacketPrivateChatNotify(player.getUid(), target.getUid(), message);
+		
+		player.sendPacket(packet);
+		target.sendPacket(packet);
+	}
+	
+	public void sendPrivateMessage(Player player, int targetUid, int emote) {
+		// Get target
+		Player target = getServer().getPlayerByUid(targetUid);
+		
+		if (target == null) {
+			return;
+		}
+		
+		// Create chat packet
+		BasePacket packet = new PacketPrivateChatNotify(player.getUid(), target.getUid(), emote);
+		
+		player.sendPacket(packet);
+		target.sendPacket(packet);
+	}
+	
+	public void sendTeamMessage(Player player, int channel, String message) {
 		// Sanity checks
 		if (message == null || message.length() == 0) {
 			return;
@@ -31,48 +72,7 @@ public class ChatManager {
 				
 		// Check if command
 		if (PREFIXES.contains(message.charAt(0))) {
-			CommandMap.getInstance().invoke(player, message);
-			return;
-		}
-		
-		// Get target
-		GenshinPlayer target = getServer().getPlayerByUid(targetUid);
-		
-		if (target == null) {
-			return;
-		}
-		
-		// Create chat packet
-		GenshinPacket packet = new PacketPrivateChatNotify(player.getUid(), target.getUid(), message);
-		
-		player.sendPacket(packet);
-		target.sendPacket(packet);
-	}
-	
-	public void sendPrivateMessage(GenshinPlayer player, int targetUid, int emote) {
-		// Get target
-		GenshinPlayer target = getServer().getPlayerByUid(targetUid);
-		
-		if (target == null) {
-			return;
-		}
-		
-		// Create chat packet
-		GenshinPacket packet = new PacketPrivateChatNotify(player.getUid(), target.getUid(), emote);
-		
-		player.sendPacket(packet);
-		target.sendPacket(packet);
-	}
-	
-	public void sendTeamMessage(GenshinPlayer player, int channel, String message) {
-		// Sanity checks
-		if (message == null || message.length() == 0) {
-			return;
-		}
-				
-		// Check if command
-		if (PREFIXES.contains(message.charAt(0))) {
-			CommandMap.getInstance().invoke(player, message);
+			CommandMap.getInstance().invoke(player, null, message);
 			return;
 		}
 
@@ -80,7 +80,7 @@ public class ChatManager {
 		player.getWorld().broadcastPacket(new PacketPlayerChatNotify(player, channel, message));
 	}
 
-	public void sendTeamMessage(GenshinPlayer player, int channel, int icon) {
+	public void sendTeamMessage(Player player, int channel, int icon) {
 		// Create and send chat packet
 		player.getWorld().broadcastPacket(new PacketPlayerChatNotify(player, channel, icon));
 	}

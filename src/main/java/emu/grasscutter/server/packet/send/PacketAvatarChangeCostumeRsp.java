@@ -1,10 +1,11 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.GenshinPacket;
+import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarChangeCostumeRspOuterClass.AvatarChangeCostumeRsp;
+import emu.grasscutter.net.proto.RetcodeOuterClass;
 
-public class PacketAvatarChangeCostumeRsp extends GenshinPacket {
+public class PacketAvatarChangeCostumeRsp extends BasePacket {
 	
 	public PacketAvatarChangeCostumeRsp(long avatarGuid, int costumeId) {
 		super(PacketOpcodes.AvatarChangeCostumeRsp);
@@ -21,7 +22,7 @@ public class PacketAvatarChangeCostumeRsp extends GenshinPacket {
 		super(PacketOpcodes.AvatarChangeCostumeRsp);
 
 		AvatarChangeCostumeRsp proto = AvatarChangeCostumeRsp.newBuilder()
-				.setRetcode(1)
+				.setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
 				.build();
 		
 		this.setData(proto);
