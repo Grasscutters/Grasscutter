@@ -18,6 +18,11 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.common.ScenePointConfig;
 import emu.grasscutter.data.custom.AbilityEmbryoEntry;
+import emu.grasscutter.data.custom.AbilityModifier;
+import emu.grasscutter.data.custom.AbilityModifier.AbilityConfigData;
+import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierAction;
+import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierActionType;
+import emu.grasscutter.data.custom.AbilityModifierEntry;
 import emu.grasscutter.data.custom.OpenConfigEntry;
 import emu.grasscutter.data.custom.ScenePointEntry;
 import emu.grasscutter.game.world.SpawnDataEntry;
@@ -47,6 +52,7 @@ public class ResourceLoader {
 		// Load ability lists
 		loadAbilityEmbryos();
 		loadOpenConfig();
+		loadAbilityModifiers();
 		// Load resources
 		loadResources();
 		// Process into depots
@@ -241,6 +247,69 @@ public class ResourceLoader {
 
 		for (AbilityEmbryoEntry entry : embryoList) {
 			GameData.getAbilityEmbryoInfo().put(entry.getName(), entry);
+		}
+	}
+	
+	private static void loadAbilityModifiers() {
+		// Load from BinOutput
+		File folder = new File(Utils.toFilePath(Grasscutter.getConfig().RESOURCE_FOLDER + "BinOutput/Ability/Temp/AvatarAbilities/"));
+		File[] files = folder.listFiles();
+		if (files == null) {
+			Grasscutter.getLogger().error("Error loading ability modifiers: no files found in " + folder.getAbsolutePath());
+			return;
+		}
+
+		for (File file : files) {
+			List<AbilityConfigData> abilityConfigList = null;
+			
+			try (FileReader fileReader = new FileReader(file)) {
+				abilityConfigList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, AbilityConfigData.class).getType());
+			} catch (Exception e) {
+				e.printStackTrace();
+				continue;
+			}
+			
+			for (AbilityConfigData data : abilityConfigList) {
+				if (data.Default.modifiers == null || data.Default.modifiers.size() == 0) {
+					continue;
+				}
+				
+				AbilityModifierEntry modifierEntry = new AbilityModifierEntry(data.Default.abilityName);
+				
+				for (Entry<String, AbilityModifier> entry : data.Default.modifiers.entrySet()) {
+					AbilityModifier modifier = entry.getValue();
+					
+					// Stare.
+					if (modifier.onAdded != null) {
+						for (AbilityModifierAction action : modifier.onAdded) {
+							if (action.$type.contains("HealHP")) {
+								action.type = AbilityModifierActionType.HealHP;
+								modifierEntry.getOnAdded().add(action);
+							}
+						}
+					}
+					
+					if (modifier.onThinkInterval != null) {
+						for (AbilityModifierAction action : modifier.onThinkInterval) {
+							if (action.$type.contains("HealHP")) {
+								action.type = AbilityModifierActionType.HealHP;
+								modifierEntry.getOnThinkInterval().add(action);
+							}
+						}
+					}
+					
+					if (modifier.onRemoved != null) {
+						for (AbilityModifierAction action : modifier.onRemoved) {
+							if (action.$type.contains("HealHP")) {
+								action.type = AbilityModifierActionType.HealHP;
+								modifierEntry.getOnRemoved().add(action);
+							}
+						}
+					}
+				}
+				
+				GameData.getAbilityModifiers().put(modifierEntry.getName(), modifierEntry);
+			}
 		}
 	}
 	

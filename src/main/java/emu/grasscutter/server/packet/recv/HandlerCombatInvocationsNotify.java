@@ -74,14 +74,6 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 
 			session.getPlayer().getCombatInvokeHandler().addEntry(entry.getForwardType(), entry);
 		}
-
-		if (notif.getInvokeListList().size() > 0) {
-			session.getPlayer().getCombatInvokeHandler().update(session.getPlayer());
-		}
-        // Handle attack results last
-		while (!session.getPlayer().getAttackResults().isEmpty()) {
-			session.getPlayer().getScene().handleAttack(session.getPlayer().getAttackResults().poll());
-		}
 	}
 
 	private void handleFallOnGround(GameSession session, GameEntity entity, MotionState motionState) {
