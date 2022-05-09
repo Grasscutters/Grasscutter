@@ -147,6 +147,12 @@ public class ScriptLib {
 			return 1;
 		}
 
+		// avoid spawn wrong monster
+		if(getSceneScriptManager().getScene().getChallenge() != null)
+			if(!getSceneScriptManager().getScene().getChallenge().inProgress() ||
+					getSceneScriptManager().getScene().getChallenge().getGroup().id != groupId){
+			return 0;
+		}
 		this.getSceneScriptManager().spawnMonstersInGroup(group, suite);
 		
 		return 0;
@@ -175,13 +181,13 @@ public class ScriptLib {
 			return 0;
 		}
 
-		DungeonChallenge challenge = new DungeonChallenge(getSceneScriptManager().getScene(), group);
-		challenge.setChallengeId(challengeId);
-		challenge.setChallengeIndex(challengeIndex);
-		challenge.setObjective(objective);
-		
+		DungeonChallenge challenge = new DungeonChallenge(getSceneScriptManager().getScene(),
+				group, challengeId, challengeIndex, objective);
+		// set if tower first stage (6-1)
+		challenge.setStage(getSceneScriptManager().getVariables().getOrDefault("stage", -1) == 0);
+
 		getSceneScriptManager().getScene().setChallenge(challenge);
-		
+
 		challenge.start();
 		return 0;
 	}
@@ -336,9 +342,19 @@ public class ScriptLib {
 		logger.debug("[LUA] Call TowerMirrorTeamSetUp with {},{}",
 				team,var1);
 
+		getSceneScriptManager().unloadCurrentMonsterTide();
 		getSceneScriptManager().getScene().getPlayers().get(0).getTowerManager().mirrorTeamSetUp(team-1);
 
 		return 0;
 	}
 
+	public int CreateGadget(LuaTable table){
+		logger.debug("[LUA] Call CreateGadget with {}",
+				printTable(table));
+		var configId = table.get("config_id").toint();
+
+		//TODO
+
+		return 0;
+	}
 }
