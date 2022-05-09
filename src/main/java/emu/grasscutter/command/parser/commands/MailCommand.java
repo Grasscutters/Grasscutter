@@ -88,7 +88,7 @@ public class MailCommand {
                 source,
                 MailHandlerCollection.MAIL_SEND,
                 HandlerContext.builder()
-                        .content("mail", mail)
+                        .content(MailHandlerCollection.Fields.MAIL, mail)
                         .content(TARGET_UID, source.get(TARGET_UID))
         );
     }
