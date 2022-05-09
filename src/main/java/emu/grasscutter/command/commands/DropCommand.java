@@ -13,7 +13,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "drop", usage = "drop <itemId|itemName> [amount]", aliases = {"d", "dropitem"}, permission = "server.drop", description = "commands.drop.description")
+@Command(label = "drop", usage = "drop <itemId|itemName> [amount]", aliases = {"d", "dropitem"}, permission = "server.drop", permissionTargeted = "server.drop.others", description = "commands.drop.description")
 public final class DropCommand implements CommandHandler {
 
     @Override

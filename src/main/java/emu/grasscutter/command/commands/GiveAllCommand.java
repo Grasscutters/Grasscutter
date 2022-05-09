@@ -14,7 +14,8 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.*;
 import static emu.grasscutter.utils.Language.translate;
-@Command(label = "giveall", usage = "giveall", aliases = {"givea"}, permission = "player.giveall", threading = true,description = "commands.giveAll.description")
+
+@Command(label = "giveall", usage = "giveall", aliases = {"givea"}, permission = "player.giveall", permissionTargeted = "player.giveall.others", threading = true, description = "commands.giveAll.description")
 public final class GiveAllCommand implements CommandHandler {
 
   @Override
