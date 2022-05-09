@@ -150,13 +150,21 @@ public class TowerManager {
           }
           return recordMap.get(player.getServer().getTowerScheduleManager().getLastEntranceFloor()).getStarCount() >= 6;
         } catch (Exception e) {
-          //TODO: handle exception
-          /*
-          if(this.getSession() == null){
-            this.session.close();
-         }
-         */
-          Grasscutter.getLogger().info("Error canEnterScheduleFloor by user "+player.getUid());
+
+          try {
+            
+            if(player.getServer() != null){
+              return true;
+            }else{
+              Grasscutter.getLogger().info("DEBUG: canEnterScheduleFloor by user"+player.getUid()+" | No Found getserver");
+              return false;
+            }
+
+          } catch (Exception el) {
+            // skip
+          }
+
+          Grasscutter.getLogger().info("DEBUG: canEnterScheduleFloor by user"+player.getUid());
           return false;
         }        
     }
