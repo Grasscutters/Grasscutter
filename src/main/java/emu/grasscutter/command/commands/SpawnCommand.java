@@ -46,13 +46,13 @@ public final class SpawnCommand implements CommandHandler {
                 try {
                     amount = Integer.parseInt(args.get(1));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate("commands.generic.error.amount"));
+                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.amount"));
                 }  // Fallthrough
             case 1:
                 try {
                     id = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate("commands.generic.error.entityId"));
+                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.entityId"));
                 }
                 break;
             default:
@@ -64,7 +64,7 @@ public final class SpawnCommand implements CommandHandler {
         GadgetData gadgetData = GameData.getGadgetDataMap().get(id);
         ItemData itemData = GameData.getItemDataMap().get(id);
         if (monsterData == null && gadgetData == null && itemData == null) {
-            CommandHandler.sendMessage(sender, translate("commands.generic.error.entityId"));
+            CommandHandler.sendMessage(sender, translate("commands.generic.invalid.entityId"));
             return;
         }
         Scene scene = targetPlayer.getScene();
