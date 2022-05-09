@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "give", usage = "give <itemId|itemName> [amount] [level]", aliases = {
-        "g", "item", "giveitem"}, permission = "player.give", description = "commands.give.description")
+        "g", "item", "giveitem"}, permission = "player.give", permissionTargeted = "player.give.others", description = "commands.give.description")
 public final class GiveCommand implements CommandHandler {
     Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java is a joke of a proglang that doesn't have raw string literals
     Pattern refineRegex = Pattern.compile("r(\\d+)");
@@ -123,7 +123,7 @@ public final class GiveCommand implements CommandHandler {
         } else if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
             CommandHandler.sendMessage(sender, translate("commands.give.given_with_level_and_refinement", Integer.toString(item), Integer.toString(lvl), Integer.toString(refinement), Integer.toString(amount), Integer.toString(targetPlayer.getUid())));
         } else {
-            CommandHandler.sendMessage(sender, translate("commands.give.given_level", Integer.toString(item), Integer.toString(lvl), Integer.toString(amount)));
+            CommandHandler.sendMessage(sender, translate("commands.give.given_level", Integer.toString(item), Integer.toString(lvl), Integer.toString(amount), Integer.toString(targetPlayer.getUid())));
         }
     }
 

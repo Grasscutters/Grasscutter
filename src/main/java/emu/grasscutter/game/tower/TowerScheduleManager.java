@@ -49,6 +49,7 @@ public class TowerScheduleManager {
 
     public int getNextFloorId(int floorId){
         var entranceFloors = getCurrentTowerScheduleData().getEntranceFloorId();
+        var scheduleFloors = getScheduleFloors();
         var nextId = 0;
         // find in entrance floors first
         for(int i=0;i<entranceFloors.size()-1;i++){
@@ -56,10 +57,12 @@ public class TowerScheduleManager {
                 nextId = entranceFloors.get(i+1);
             }
         }
+        if(floorId == entranceFloors.get(entranceFloors.size()-1)){
+            nextId = scheduleFloors.get(0);
+        }
         if(nextId != 0){
             return nextId;
         }
-        var scheduleFloors = getScheduleFloors();
         // find in schedule floors
         for(int i=0;i<scheduleFloors.size()-1;i++){
             if(floorId == scheduleFloors.get(i)){

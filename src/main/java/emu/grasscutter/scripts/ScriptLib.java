@@ -28,7 +28,17 @@ public class ScriptLib {
 	public SceneScriptManager getSceneScriptManager() {
 		return sceneScriptManager;
 	}
-	
+
+	private String printTable(LuaTable table){
+		StringBuilder sb = new StringBuilder();
+		sb.append("{");
+		for(var meta : table.keys()){
+			sb.append(meta).append(":").append(table.get(meta)).append(",");
+		}
+		sb.append("}");
+		return sb.toString();
+	}
+
 	public int SetGadgetStateByConfigId(int configId, int gadgetState) {
 		logger.debug("[LUA] Call SetGadgetStateByConfigId with {},{}",
 				configId,gadgetState);
@@ -123,7 +133,7 @@ public class ScriptLib {
 			return 1;
 		}
 
-		this.getSceneScriptManager().spawnMonstersInGroup(group, ordersConfigId, tideCount, sceneLimit);
+		this.getSceneScriptManager().startMonsterTideInGroup(group, ordersConfigId, tideCount, sceneLimit);
 		
 		return 0;
 	}
@@ -137,6 +147,12 @@ public class ScriptLib {
 			return 1;
 		}
 
+		// avoid spawn wrong monster
+		if(getSceneScriptManager().getScene().getChallenge() != null)
+			if(!getSceneScriptManager().getScene().getChallenge().inProgress() ||
+					getSceneScriptManager().getScene().getChallenge().getGroup().id != groupId){
+			return 0;
+		}
 		this.getSceneScriptManager().spawnMonstersInGroup(group, suite);
 		
 		return 0;
@@ -165,13 +181,13 @@ public class ScriptLib {
 			return 0;
 		}
 
-		DungeonChallenge challenge = new DungeonChallenge(getSceneScriptManager().getScene(), group);
-		challenge.setChallengeId(challengeId);
-		challenge.setChallengeIndex(challengeIndex);
-		challenge.setObjective(objective);
-		
+		DungeonChallenge challenge = new DungeonChallenge(getSceneScriptManager().getScene(),
+				group, challengeId, challengeIndex, objective);
+		// set if tower first stage (6-1)
+		challenge.setStage(getSceneScriptManager().getVariables().getOrDefault("stage", -1) == 0);
+
 		getSceneScriptManager().getScene().setChallenge(challenge);
-		
+
 		challenge.start();
 		return 0;
 	}
@@ -204,10 +220,13 @@ public class ScriptLib {
 		getSceneScriptManager().getVariables().put(var, getSceneScriptManager().getVariables().get(var) + value);
 		return LuaValue.ZERO;
 	}
-	
+
+	/**
+	 * Set the actions and triggers to designated group
+	 */
 	public int RefreshGroup(LuaTable table) {
 		logger.debug("[LUA] Call RefreshGroup with {}",
-				table);
+				printTable(table));
 		// Kill and Respawn?
 		int groupId = table.get("group_id").toint();
 		int suite = table.get("suite").toint();
@@ -218,8 +237,7 @@ public class ScriptLib {
 			return 1;
 		}
 		
-		this.getSceneScriptManager().spawnMonstersInGroup(group, suite);
-		this.getSceneScriptManager().spawnGadgetsInGroup(group, suite);
+		getSceneScriptManager().refreshGroup(group, suite);
 		
 		return 0;
 	}
@@ -260,7 +278,7 @@ public class ScriptLib {
 	public int SetMonsterBattleByGroup(int var1, int var2, int var3){
 		logger.debug("[LUA] Call SetMonsterBattleByGroup with {},{},{}",
 				var1,var2,var3);
-
+		// TODO
 		return 0;
 	}
 
@@ -270,7 +288,7 @@ public class ScriptLib {
 
 		return 0;
 	}
-	// 8-1
+
 	public int GetGroupVariableValueByGroup(String name, int groupId){
 		logger.debug("[LUA] Call GetGroupVariableValueByGroup with {},{}",
 				name,groupId);
@@ -288,7 +306,7 @@ public class ScriptLib {
 
 	public int KillEntityByConfigId(LuaTable table){
 		logger.debug("[LUA] Call KillEntityByConfigId with {}",
-				table);
+				printTable(table));
 		var configId = table.get("config_id");
 		if(configId == LuaValue.NIL){
 			return 1;
@@ -306,7 +324,37 @@ public class ScriptLib {
 		logger.debug("[LUA] Call SetGroupVariableValueByGroup with {},{},{}",
 				key,value,groupId);
 
+		getSceneScriptManager().getVariables().put(key, value);
 		return 0;
 	}
 
+	public int CreateMonster(LuaTable table){
+		logger.debug("[LUA] Call CreateMonster with {}",
+				printTable(table));
+		var configId = table.get("config_id").toint();
+		var delayTime = table.get("delay_time").toint();
+
+		getSceneScriptManager().spawnMonstersByConfigId(configId, delayTime);
+		return 0;
+	}
+
+	public int TowerMirrorTeamSetUp(int team, int var1) {
+		logger.debug("[LUA] Call TowerMirrorTeamSetUp with {},{}",
+				team,var1);
+
+		getSceneScriptManager().unloadCurrentMonsterTide();
+		getSceneScriptManager().getScene().getPlayers().get(0).getTowerManager().mirrorTeamSetUp(team-1);
+
+		return 0;
+	}
+
+	public int CreateGadget(LuaTable table){
+		logger.debug("[LUA] Call CreateGadget with {}",
+				printTable(table));
+		var configId = table.get("config_id").toint();
+
+		//TODO
+
+		return 0;
+	}
 }

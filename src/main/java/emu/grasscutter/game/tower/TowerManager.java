@@ -7,10 +7,7 @@ import emu.grasscutter.data.def.TowerLevelData;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.dungeons.TowerDungeonSettleListener;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.packet.send.PacketCanUseSkillNotify;
-import emu.grasscutter.server.packet.send.PacketTowerCurLevelRecordChangeNotify;
-import emu.grasscutter.server.packet.send.PacketTowerEnterLevelRsp;
-import emu.grasscutter.server.packet.send.PacketTowerLevelStarCondNotify;
+import emu.grasscutter.server.packet.send.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -125,7 +122,7 @@ public class TowerManager {
 
         if(!hasNextLevel()){
             // set up the next floor
-            recordMap.put(getNextFloorId(), new TowerLevelRecord(getNextFloorId()));
+            recordMap.putIfAbsent(getNextFloorId(), new TowerLevelRecord(getNextFloorId()));
             player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(getNextFloorId(), 1));
         }else{
             player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(currentFloorId, getCurrentLevel()));
@@ -151,5 +148,11 @@ public class TowerManager {
         }
         return recordMap.get(player.getServer().getTowerScheduleManager().getLastEntranceFloor())
                 .getStarCount() >= 6;
+    }
+
+    public void mirrorTeamSetUp(int teamId) {
+        // use team user choose
+        player.getTeamManager().useTemporaryTeam(teamId);
+        player.sendPacket(new PacketTowerMiddleLevelChangeTeamNotify());
     }
 }
