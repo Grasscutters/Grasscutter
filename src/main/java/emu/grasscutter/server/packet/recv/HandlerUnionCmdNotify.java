@@ -15,5 +15,14 @@ public class HandlerUnionCmdNotify extends PacketHandler {
 		for (UnionCmd cmd : req.getCmdListList()) {
 			session.getServer().getPacketHandler().handle(session, cmd.getMessageId(), EMPTY_BYTE_ARRAY, cmd.getBody().toByteArray());
 		}
+		
+		// Update
+		session.getPlayer().getCombatInvokeHandler().update(session.getPlayer());
+		session.getPlayer().getAbilityInvokeHandler().update(session.getPlayer());
+		
+        // Handle attack results last
+		while (!session.getPlayer().getAttackResults().isEmpty()) {
+			session.getPlayer().getScene().handleAttack(session.getPlayer().getAttackResults().poll());
+		}
 	}
 }
