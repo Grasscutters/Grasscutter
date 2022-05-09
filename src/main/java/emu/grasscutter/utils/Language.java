@@ -19,7 +19,7 @@ public final class Language {
      * @return A language instance.
      */
     public static Language getLanguage(String langCode) {
-        return new Language(langCode + ".json", Grasscutter.getConfig().DefaultLanguage.toLanguageTag());
+        return new Language(langCode + ".json", Grasscutter.getConfig().DefaultLanguage.toLanguageTag() + ".json");
     }
 
     /**
@@ -46,15 +46,20 @@ public final class Language {
     private Language(String fileName, String fallback) {
         @Nullable JsonObject languageData = null;
 
+        InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
+        if (file == null) { // Provided fallback language.
+            file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
+            Grasscutter.getLogger().warn("Failed to load language file: " + fileName + ", falling back to: " + fallback);
+        }
+        if(file == null) { // Fallback the fallback language.
+            file = Grasscutter.class.getResourceAsStream("/languages/en-US.json");
+            Grasscutter.getLogger().warn("Failed to load language file: " + fallback + ", falling back to: en-US.json");
+        }
+        if(file == null)
+            throw new RuntimeException("Unable to load the primary, fallback, and 'en-US' language files.");
+        
         try {
-            InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
-            String translationContents = Utils.readFromInputStream(file);
-            if(translationContents.equals("empty")) {
-                file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
-                translationContents = Utils.readFromInputStream(file);
-            }
-            
-            languageData = Grasscutter.getGsonFactory().fromJson(translationContents, JsonObject.class);
+            languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(file), JsonObject.class);
         } catch (Exception exception) {
             Grasscutter.getLogger().warn("Failed to load language file: " + fileName, exception);
         }

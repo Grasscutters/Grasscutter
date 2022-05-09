@@ -6,6 +6,7 @@ import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry
 import emu.grasscutter.net.proto.ClientAbilityInitFinishNotifyOuterClass.ClientAbilityInitFinishNotify;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.utils.Utils;
 
 @Opcodes(PacketOpcodes.ClientAbilityInitFinishNotify)
 public class HandlerClientAbilityInitFinishNotify extends PacketHandler {
@@ -15,6 +16,7 @@ public class HandlerClientAbilityInitFinishNotify extends PacketHandler {
 		ClientAbilityInitFinishNotify notif = ClientAbilityInitFinishNotify.parseFrom(payload);
 		
 		for (AbilityInvokeEntry entry : notif.getInvokesList()) {
+			session.getPlayer().getAbilityManager().onAbilityInvoke(entry);
 			session.getPlayer().getClientAbilityInitFinishHandler().addEntry(entry.getForwardType(), entry);
 		}
 		
