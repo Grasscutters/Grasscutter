@@ -8,7 +8,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "changescene", usage = "changescene <scene id>", aliases = {"scene"}, permission = "player.changescene", description = "commands.changescene.description")
+@Command(label = "changescene", usage = "changescene <scene id>", aliases = {"scene"}, permission = "player.changescene", permissionTargeted = "player.changescene.others", description = "commands.changescene.description")
 public final class ChangeSceneCommand implements CommandHandler {
 
     @Override
@@ -31,11 +31,12 @@ public final class ChangeSceneCommand implements CommandHandler {
             }
             
             boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, targetPlayer.getPos());
-            CommandHandler.sendMessage(sender, translate("commands.changescene.result", Integer.toString(sceneId)));
-            
             if (!result) {
                 CommandHandler.sendMessage(sender, translate("commands.changescene.exists_error"));
+                return;
             }
+
+            CommandHandler.sendMessage(sender, translate("commands.changescene.success", Integer.toString(sceneId)));
         } catch (Exception e) {
             CommandHandler.sendMessage(sender, translate("commands.execution.argument_error"));
         }
