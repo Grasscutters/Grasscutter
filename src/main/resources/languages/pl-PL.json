@@ -184,7 +184,7 @@
       "account_error": "Konto nie może zostać znalezione."
     },
     "position": {
-      "success": "Koordynaty: %.3f, %.3f, %.3f\nID sceny: %d"
+      "success": "Koordynaty: %s, %s, %s\nID sceny: %s"
     },
     "reload": {
       "reload_start": "Ponowne ładowanie konfiguracji.",
@@ -293,6 +293,13 @@
       "usage": "Użycie: ",
       "aliases": "Aliasy: ",
       "available_commands": "Dostępne komendy: "
+    },
+    "unlocktower": {
+      "success": "odblokować gotowe",
+      "description": "Odblokuj głęboką spiralę"
+    },
+    "resetshop": {
+      "description": "zresetuj sklep"
     }
   }
 }
