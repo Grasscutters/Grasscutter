@@ -60,18 +60,18 @@ public class ScriptMonsterTideService {
         return currentGroup.monsters.values().stream().findFirst().orElse(null);
     }
 
-    public class OnMonsterDead implements ScriptMonsterListener{
+    public class OnMonsterDead implements ScriptMonsterListener {
         @Override
         public void onNotify(EntityMonster sceneMonster) {
-            if(monsterSceneLimit <= 0){
+            if (monsterSceneLimit <= 0) {
                 return;
             }
-            if(monsterAlive.decrementAndGet() >= monsterSceneLimit) {
+            if (monsterAlive.decrementAndGet() >= monsterSceneLimit) {
                 // maybe not happen
                 return;
             }
             monsterKillCount.incrementAndGet();
-            if(monsterTideCount.get() > 0){
+            if (monsterTideCount.get() > 0) {
                 // add more
                 sceneScriptManager.getScriptMonsterSpawnService().spawnMonster(currentGroup.id, getNextMonster());
             }
@@ -79,9 +79,7 @@ public class ScriptMonsterTideService {
             // fix the 5-2
             sceneScriptManager.callEvent(EventType.EVENT_MONSTER_TIDE_DIE, new ScriptArgs(monsterKillCount.get()));
         }
-        // spawn the last turn of monsters
-        // fix the 5-2
-        this.sceneScriptManager.callEvent(EventType.EVENT_MONSTER_TIDE_DIE, new ScriptArgs(this.monsterKillCount.get()));
+
     }
 
     public void unload(){
