@@ -15,7 +15,7 @@ import emu.grasscutter.utils.Language;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "setstats", usage = "setstats|stats <stat> <value>", aliases = {"stats"}, permission = "player.setstats", description = "commands.setStats.description")
+@Command(label = "setstats", usage = "setstats|stats <stat> <value>", aliases = {"stats"}, permission = "player.setstats", permissionTargeted = "player.setstats.others", description = "commands.setStats.description")
 public final class SetStatsCommand implements CommandHandler {
     static class Stat {
         String name;
@@ -175,7 +175,7 @@ public final class SetStatsCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        String syntax = sender == null ? translate("commands.setStats.usage_console") : translate("commands.setStats.ingame");
+        String syntax = sender == null ? translate("commands.setStats.usage_console") : translate("commands.setStats.usage_ingame");
         String usage = syntax + translate("commands.setStats.help_message");
         String statStr;
         String valueStr;
