@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class ScriptLib {
 	public static final Logger logger = LoggerFactory.getLogger(ScriptLib.class);
@@ -64,7 +65,7 @@ public class ScriptLib {
 		logger.debug("[LUA] Call SetGroupGadgetStateByConfigId with {},{},{}",
 				groupId,configId,gadgetState);
 		List<GameEntity> list = getSceneScriptManager().getScene().getEntities().values().stream()
-												.filter(e -> e.getGroupId() == groupId).toList();
+												.filter(e -> e.getGroupId() == groupId).collect(Collectors.toList());
 		
 		for (GameEntity entity : list) {
 			if (!(entity instanceof EntityGadget)) {

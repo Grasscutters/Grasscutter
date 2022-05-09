@@ -9,6 +9,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Scene;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static emu.grasscutter.utils.Language.translate;
 
@@ -46,7 +47,7 @@ public final class KillAllCommand implements CommandHandler {
         final Scene sceneF = scene;
         List<GameEntity> toKill = sceneF.getEntities().values().stream()
                 .filter(entity -> entity instanceof EntityMonster)
-                .toList();
+                .collect(Collectors.toList());
         toKill.forEach(entity -> sceneF.killEntity(entity, 0));
         CommandHandler.sendMessage(sender, translate("commands.kill.kill_monsters_in_scene", Integer.toString(toKill.size()), Integer.toString(scene.getId())));
     }

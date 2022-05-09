@@ -15,6 +15,7 @@ import java.net.URLClassLoader;
 import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.stream.Collectors;
 
 /**
  * Manages the server's plugins and the event system.
@@ -46,7 +47,7 @@ public final class PluginManager {
         
         List<File> plugins = Arrays.stream(files)
                 .filter(file -> file.getName().endsWith(".jar"))
-                .toList();
+                .collect(Collectors.toList());
 
         URL[] pluginNames = new URL[plugins.size()];
         plugins.forEach(plugin -> {
@@ -164,7 +165,7 @@ public final class PluginManager {
         this.listeners.stream()
                 .filter(handler -> handler.handles().isInstance(event))
                 .filter(handler -> handler.getPriority() == priority)
-                .toList().forEach(handler -> this.invokeHandler(event, handler));
+                .collect(Collectors.toList()).forEach(handler -> this.invokeHandler(event, handler));
     }
 
     public Plugin getPlugin(String name) {

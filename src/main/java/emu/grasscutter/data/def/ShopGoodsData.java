@@ -36,12 +36,13 @@ public class ShopGoodsData extends GameResource {
        if (this.RefreshType == null)
            this.RefreshTypeEnum = ShopInfo.ShopRefreshType.NONE;
        else {
-           this.RefreshTypeEnum = switch (this.RefreshType) {
-               case "SHOP_REFRESH_DAILY" -> ShopInfo.ShopRefreshType.SHOP_REFRESH_DAILY;
-               case "SHOP_REFRESH_WEEKLY" -> ShopInfo.ShopRefreshType.SHOP_REFRESH_WEEKLY;
-               case "SHOP_REFRESH_MONTHLY" -> ShopInfo.ShopRefreshType.SHOP_REFRESH_MONTHLY;
-               default -> ShopInfo.ShopRefreshType.NONE;
-           };
+//           this.RefreshTypeEnum = null;
+           switch (this.RefreshType) {
+               case "SHOP_REFRESH_DAILY" : this.RefreshTypeEnum = ShopInfo.ShopRefreshType.SHOP_REFRESH_DAILY; break;
+               case "SHOP_REFRESH_WEEKLY" : this.RefreshTypeEnum = ShopInfo.ShopRefreshType.SHOP_REFRESH_WEEKLY; break;
+               case "SHOP_REFRESH_MONTHLY" : this.RefreshTypeEnum = ShopInfo.ShopRefreshType.SHOP_REFRESH_MONTHLY; break;
+               default : this.RefreshTypeEnum = ShopInfo.ShopRefreshType.NONE; break;
+           }
        }
     }
 

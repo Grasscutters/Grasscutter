@@ -10,8 +10,8 @@ public class SceneTrigger {
 
 	@Override
 	public boolean equals(Object obj) {
-		if(obj instanceof SceneTrigger sceneTrigger){
-			return this.name.equals(sceneTrigger.name);
+		if(obj instanceof SceneTrigger){
+			return this.name.equals(((SceneTrigger)obj).name);
 		}
 		return super.equals(obj);
 	}

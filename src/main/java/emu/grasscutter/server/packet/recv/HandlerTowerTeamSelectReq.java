@@ -1,5 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
+import java.util.stream.Collectors;
+
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -17,7 +19,7 @@ public class HandlerTowerTeamSelectReq extends PacketHandler {
 
 		var towerTeams = req.getTowerTeamListList().stream()
 				.map(TowerTeamOuterClass.TowerTeam::getAvatarGuidListList)
-				.toList();
+				.collect(Collectors.toList());
 
 		session.getPlayer().getTowerManager().teamSelect(req.getFloorId(), towerTeams);
 

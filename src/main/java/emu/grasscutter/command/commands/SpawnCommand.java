@@ -81,7 +81,7 @@ public final class SpawnCommand implements CommandHandler {
                 int gadgetId = gadgetData.getId();
                 switch (gadgetId) {
                     // TODO: Not hardcode this. Waverider (skiff)
-                    case 45001001, 45001002 -> {
+                    case 45001001: case 45001002 : {
                         entity.addFightProperty(FightProperty.FIGHT_PROP_BASE_HP, 10000);
                         entity.addFightProperty(FightProperty.FIGHT_PROP_BASE_ATTACK, 100);
                         entity.addFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK, 100);
@@ -90,8 +90,9 @@ public final class SpawnCommand implements CommandHandler {
                         entity.addFightProperty(FightProperty.FIGHT_PROP_CUR_SPEED, 0);
                         entity.addFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, 0);
                         entity.addFightProperty(FightProperty.FIGHT_PROP_MAX_HP, 10000);
+                        break;
                     }
-                    default -> {}
+                    default : {break;}
                 }
             }
             if (monsterData != null) {

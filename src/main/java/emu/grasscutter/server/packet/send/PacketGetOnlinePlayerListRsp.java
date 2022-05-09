@@ -14,12 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class PacketGetOnlinePlayerListRsp extends BasePacket {
     public PacketGetOnlinePlayerListRsp(Player session){
         super(PacketOpcodes.GetOnlinePlayerListRsp);
         
-        List<Player> players = Grasscutter.getGameServer().getPlayers().values().stream().limit(50).toList();
+        List<Player> players = Grasscutter.getGameServer().getPlayers().values().stream().limit(50).collect(Collectors.toList());
         
         GetOnlinePlayerListRsp.Builder proto = GetOnlinePlayerListRsp.newBuilder();
         

@@ -73,11 +73,13 @@ public final class Grasscutter {
 		boolean exitEarly = false;
 		for (String arg : args) {
 			switch (arg.toLowerCase()) {
-				case "-handbook" -> {
+				case "-handbook" : {
 					Tools.createGmHandbook(); exitEarly = true;
+					break;
 				}
-				case "-gachamap" -> {
+				case "-gachamap" : {
 					Tools.createGachaMapping(Grasscutter.getConfig().DATA_FOLDER + "/gacha_mappings.js"); exitEarly = true;
+					break;
 				}
 			}
 		} 

@@ -47,12 +47,12 @@ public class ShopManager {
 	private static final String TIME_ZONE = "Asia/Shanghai"; // GMT+8 Timezone
 
 	public static int getShopNextRefreshTime(ShopInfo shopInfo) {
-		return switch (shopInfo.getShopRefreshType()) {
-			case SHOP_REFRESH_DAILY -> Utils.getNextTimestampOfThisHour(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
-			case SHOP_REFRESH_WEEKLY ->  Utils.getNextTimestampOfThisHourInNextWeek(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
-			case SHOP_REFRESH_MONTHLY -> Utils.getNextTimestampOfThisHourInNextMonth(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
-			default -> 0;
-		};
+		switch (shopInfo.getShopRefreshType()) {
+			case SHOP_REFRESH_DAILY : return Utils.getNextTimestampOfThisHour(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+			case SHOP_REFRESH_WEEKLY : return Utils.getNextTimestampOfThisHourInNextWeek(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+			case SHOP_REFRESH_MONTHLY : return Utils.getNextTimestampOfThisHourInNextMonth(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+			default : return 0;
+		}
 	}
 
 	private void loadShop() {

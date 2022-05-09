@@ -32,7 +32,7 @@ public final class Language {
         String translated = Grasscutter.getLanguage().get(key);
         
         try {
-            return translated.formatted(args);
+            return String.format(translated, args);
         } catch (Exception exception) {
             Grasscutter.getLogger().error("Failed to format string: " + key, exception);
             return translated;

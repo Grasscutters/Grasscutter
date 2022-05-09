@@ -1,6 +1,7 @@
 package emu.grasscutter.database;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.mongodb.client.result.DeleteResult;
 import dev.morphia.query.FindOptions;
@@ -100,7 +101,7 @@ public final class DatabaseHelper {
 	}
 
 	public static List<Player> getAllPlayers() {
-		return DatabaseManager.getDatastore().find(Player.class).stream().toList();
+		return DatabaseManager.getDatastore().find(Player.class).stream().collect(Collectors.toList());
 	}
 
 	public static Player getPlayerById(int id) {
@@ -152,7 +153,7 @@ public final class DatabaseHelper {
 	}
 
 	public static List<Avatar> getAvatars(Player player) {
-		return DatabaseManager.getDatastore().find(Avatar.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
+		return DatabaseManager.getDatastore().find(Avatar.class).filter(Filters.eq("ownerId", player.getUid())).stream().collect(Collectors.toList());
 	}
 
 	public static void saveItem(GameItem item) {
@@ -165,15 +166,15 @@ public final class DatabaseHelper {
 	}
 
 	public static List<GameItem> getInventoryItems(Player player) {
-		return DatabaseManager.getDatastore().find(GameItem.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
+		return DatabaseManager.getDatastore().find(GameItem.class).filter(Filters.eq("ownerId", player.getUid())).stream().collect(Collectors.toList());
 	}
 	
 	public static List<Friendship> getFriends(Player player) {
-		return DatabaseManager.getDatastore().find(Friendship.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
+		return DatabaseManager.getDatastore().find(Friendship.class).filter(Filters.eq("ownerId", player.getUid())).stream().collect(Collectors.toList());
 	}
 
 	public static List<Friendship> getReverseFriends(Player player) {
-		return DatabaseManager.getDatastore().find(Friendship.class).filter(Filters.eq("friendId", player.getUid())).stream().toList();
+		return DatabaseManager.getDatastore().find(Friendship.class).filter(Filters.eq("friendId", player.getUid())).stream().collect(Collectors.toList());
 	}
 
 	public static void saveFriendship(Friendship friendship) {
@@ -223,7 +224,7 @@ public final class DatabaseHelper {
 	}
 	
 	public static List<Mail> getAllMail(Player player) {
-		return DatabaseManager.getDatastore().find(Mail.class).filter(Filters.eq("ownerUid", player.getUid())).stream().toList();
+		return DatabaseManager.getDatastore().find(Mail.class).filter(Filters.eq("ownerUid", player.getUid())).stream().collect(Collectors.toList());
 	}
 	
 	public static void saveMail(Mail mail) {
