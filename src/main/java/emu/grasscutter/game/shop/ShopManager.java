@@ -19,6 +19,8 @@ import java.util.List;
 public class ShopManager {
 	private final GameServer server;
 
+	public static Boolean DEBUG_ULTIMATED_SHOP = Boolean.FALSE;
+
 	public Int2ObjectMap<List<ShopInfo>> getShopData() {
 		return shopData;
 	}

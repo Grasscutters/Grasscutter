@@ -76,10 +76,7 @@ public class LuaSerializer implements Serializer {
 			for (LuaValue k : keys) {
 				try {
 					Field field = object.getClass().getDeclaredField(k.checkjstring());
-					if (field == null) {
-						continue;
-					}
-					
+
 					field.setAccessible(true);
 					LuaValue keyValue = table.get(k);
 

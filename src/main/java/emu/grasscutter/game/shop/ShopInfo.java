@@ -118,6 +118,10 @@ public class ShopInfo {
     }
 
     public int getScoin() {
+        if(ShopManager.DEBUG_ULTIMATED_SHOP)
+        {
+            return 0;
+        }
         return scoin;
     }
 
@@ -142,6 +146,10 @@ public class ShopInfo {
     }
 
     public int getBuyLimit() {
+        if(ShopManager.DEBUG_ULTIMATED_SHOP)
+        {
+            return Integer.MAX_VALUE - 10010;
+        }
         return buyLimit;
     }
 

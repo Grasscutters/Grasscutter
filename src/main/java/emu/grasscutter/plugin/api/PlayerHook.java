@@ -7,6 +7,7 @@ import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
+import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
@@ -28,10 +29,12 @@ public final class PlayerHook {
     
     /**
      * Kicks a player from the server.
-     * TODO: Refactor to kick using a packet.
      */
     public void kick() {
-        this.player.getSession().close();
+        if(this.player.getSession().isActive()) {
+            this.player.getSession().close();
+            this.player.getSession().setState(GameSession.SessionState.INACTIVE);
+        }
     }
 
     /**
