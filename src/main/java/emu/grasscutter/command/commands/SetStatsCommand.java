@@ -175,7 +175,7 @@ public final class SetStatsCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        String syntax = sender == null ? translate("commands.setStats.usage_console") : translate("commands.setStats.ingame");
+        String syntax = sender == null ? translate("commands.setStats.usage_console") : translate("commands.setStats.usage_ingame");
         String usage = syntax + translate("commands.setStats.help_message");
         String statStr;
         String valueStr;
