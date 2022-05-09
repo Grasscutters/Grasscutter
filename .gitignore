@@ -69,3 +69,6 @@ language/
 languages/
 gacha-mapping.js
 data/gacha_mappings.js
+
+# macOS
+.DS_Store
