@@ -6,6 +6,7 @@ import emu.grasscutter.net.proto.AbilityInvocationsNotifyOuterClass.AbilityInvoc
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.utils.Utils;
 
 @Opcodes(PacketOpcodes.AbilityInvocationsNotify)
 public class HandlerAbilityInvocationsNotify extends PacketHandler {
@@ -15,12 +16,8 @@ public class HandlerAbilityInvocationsNotify extends PacketHandler {
 		AbilityInvocationsNotify notif = AbilityInvocationsNotify.parseFrom(payload);
 		
 		for (AbilityInvokeEntry entry : notif.getInvokesList()) {
-			//System.out.println(entry.getArgumentType() + ": " + Utils.bytesToHex(entry.getAbilityData().toByteArray()));
+			session.getPlayer().getAbilityManager().onAbilityInvoke(entry);
 			session.getPlayer().getAbilityInvokeHandler().addEntry(entry.getForwardType(), entry);
-		}
-		
-		if (notif.getInvokesList().size() > 0) {
-			session.getPlayer().getAbilityInvokeHandler().update(session.getPlayer());
 		}
 	}
 

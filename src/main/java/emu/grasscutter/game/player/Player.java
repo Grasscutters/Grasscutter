@@ -8,6 +8,7 @@ import emu.grasscutter.data.def.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
+import emu.grasscutter.game.ability.AbilityManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
@@ -89,7 +90,8 @@ public class Player {
 	@Transient private FriendsList friendsList;
 	@Transient private MailHandler mailHandler;
 	@Transient private MessageHandler messageHandler;
-
+	@Transient private AbilityManager abilityManager;
+	
 	@Transient private SotSManager sotsManager;
 
 	private TeamManager teamManager;
@@ -142,6 +144,7 @@ public class Player {
 		this.friendsList = new FriendsList(this);
 		this.mailHandler = new MailHandler(this);
 		this.towerManager = new TowerManager(this);
+		this.abilityManager = new AbilityManager(this);
 		this.pos = new Position();
 		this.rotation = new Position();
 		this.properties = new HashMap<>();
@@ -1024,6 +1027,10 @@ public class Player {
 	public StaminaManager getStaminaManager() { return staminaManager; }
 
 	public SotSManager getSotSManager() { return sotsManager; }
+
+	public AbilityManager getAbilityManager() {
+		return abilityManager;
+	}
 
 	public synchronized void onTick() {
 		// Check ping

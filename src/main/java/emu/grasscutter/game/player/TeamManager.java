@@ -10,6 +10,7 @@ import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityBaseGadget;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.FightProperty;
@@ -578,6 +579,24 @@ public class TeamManager {
 
 		// Packets
 		getPlayer().sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));
+	}
+	
+	public synchronized void addEnergyToTeam(GameItem energyBall) {
+		// TODO
+		float baseEnergy = 2;
+		
+		for (int i = 0; i < getActiveTeam().size(); i++) {
+			EntityAvatar entity = getActiveTeam().get(i);
+			
+			float energyGain = baseEnergy;
+			
+			// Active character gets full hp
+			if (getCurrentCharacterIndex() != i) {
+				energyGain *= Math.max(1.0 - (getActiveTeam().size() * .1f), .6f);
+			}
+
+			entity.addEnergy(energyGain);
+		}
 	}
 
 	public void saveAvatars() {
