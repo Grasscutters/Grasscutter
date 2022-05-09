@@ -14,11 +14,6 @@ public class HandlerEvtCreateGadgetNotify extends PacketHandler {
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		EvtCreateGadgetNotify notify = EvtCreateGadgetNotify.parseFrom(payload);
 		
-		// Dont handle in singleplayer
-		if (!session.getPlayer().getWorld().isMultiplayer()) {
-			return;
-		}
-		
 		// Sanity check - dont add duplicate entities
 		if (session.getPlayer().getScene().getEntityById(notify.getEntityId()) != null) {
 			return;
