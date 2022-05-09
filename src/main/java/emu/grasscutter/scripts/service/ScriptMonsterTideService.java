@@ -66,9 +66,9 @@ public class ScriptMonsterTideService {
         if(this.monsterTideCount.get() > 0){
             // add more
             this.sceneScriptManager.getScriptMonsterSpawnService().spawnMonster(this.currentGroup.id, getNextMonster());
-        }else if(this.monsterAlive.get() == 0){
-            // spawn the last turn of monsters
-            this.sceneScriptManager.callEvent(EventType.EVENT_MONSTER_TIDE_DIE, new ScriptArgs(this.monsterKillCount.get()));
         }
+        // spawn the last turn of monsters
+        // fix the 5-2
+        this.sceneScriptManager.callEvent(EventType.EVENT_MONSTER_TIDE_DIE, new ScriptArgs(this.monsterKillCount.get()));
     }
 }

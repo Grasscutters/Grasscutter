@@ -28,11 +28,11 @@ public class ScriptMonsterSpawnService {
         onMonsterCreatedListener.add(consumer);
     }
     public void addMonsterDeadListener(Consumer<EntityMonster> consumer){
-        onMonsterCreatedListener.add(consumer);
+        onMonsterDeadListener.add(consumer);
     }
 
     public void onMonsterDead(EntityMonster entityMonster){
-        onMonsterCreatedListener.stream().forEach(l -> l.accept(entityMonster));
+        onMonsterDeadListener.forEach(l -> l.accept(entityMonster));
     }
     public void spawnMonster(int groupId, SceneMonster monster) {
         if(monster == null){
