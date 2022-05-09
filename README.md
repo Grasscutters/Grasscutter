@@ -100,7 +100,7 @@ You can find the output jar in the root of the project folder.
 
 ## Commands
 
-You might want to use this command (`java -jar grasscutter.jar -handbook`) in a cmd that is in the grasscutter folder. It will create a handbook file (GM Handbook.txt) where you can find the item IDs for stuff you want
+You might want to use this command (`java -jar grasscutter.jar -handbook`) in a cmd that is in the grasscutter folder. It will create a handbook file (GM Handbook.txt) where you can find the item IDs for stuff you want.
 
 You may want to use this command (`java -jar grasscutter.jar -gachamap`) to generate a mapping file for the gacha record subsystem. The file will be generated to `GRASSCUTTER_RESOURCE/gcstatic` folder. Otherwise you may only see number IDs in the gacha record page.
 
@@ -144,7 +144,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 ### Bonus
 
 - Teleporting
-  - When you want to teleport to somewhere, use the in-game marking function on Map.
+  - When you want to teleport somewhere, use the in-game marking function on the map.
     - Mark a point on the map using the fish hook marking (the last one.)
     - (Optional) rename the map marker to a number to override the default Y coordinate (height, default 300.)
     - Confirm and close the map.
@@ -153,7 +153,6 @@ There is a dummy user named "Server" in every player's friends list that you can
 # Quick Troubleshooting
 
 * If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)
-* My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*, if using
-  Fiddler make sure it running on another port except 8888
+* My client doesn't connect, doesn't login, 4206, etc... - Your proxy daemon setup is most likely *the issue*, if you are using Fiddler, make sure it running on another port other than 8888
 
 * Startup sequence: Mongodb > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Game
