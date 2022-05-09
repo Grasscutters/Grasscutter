@@ -123,7 +123,7 @@ public final class GiveCommand implements CommandHandler {
         } else if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
             CommandHandler.sendMessage(sender, translate("commands.give.given_with_level_and_refinement", Integer.toString(item), Integer.toString(lvl), Integer.toString(refinement), Integer.toString(amount), Integer.toString(targetPlayer.getUid())));
         } else {
-            CommandHandler.sendMessage(sender, translate("commands.give.given_level", Integer.toString(item), Integer.toString(lvl), Integer.toString(amount)));
+            CommandHandler.sendMessage(sender, translate("commands.give.given_level", Integer.toString(item), Integer.toString(lvl), Integer.toString(amount), Integer.toString(targetPlayer.getUid())));
         }
     }
 
