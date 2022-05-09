@@ -1,7 +1,7 @@
 package emu.grasscutter.command.source.impl;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.command.handler.ContextNaming;
+import emu.grasscutter.command.handler.ContextFields;
 import emu.grasscutter.command.handler.HandlerContext;
 import emu.grasscutter.command.parser.annotation.Origin;
 import emu.grasscutter.command.source.BaseCommandSource;
@@ -9,8 +9,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jline.reader.LineReader;
 
 import java.util.Stack;
-import static emu.grasscutter.utils.Language.translate;
-import static emu.grasscutter.command.parser.commands.TargetCommand.PersistedTargetKey;
+
+import static emu.grasscutter.command.parser.commands.TargetCommand.PERSISTED_TARGET_KEY;
 
 public final class ServerConsoleSource extends BaseCommandSource {
 
@@ -57,23 +57,21 @@ public final class ServerConsoleSource extends BaseCommandSource {
     public HandlerContext buildContext(HandlerContext.HandlerContextBuilder contextBuilder) {
         HandlerContext context = contextBuilder
                 .errorConsumer(e -> Grasscutter.getLogger().error(e.toString(), e))
-                .resultConsumer(r -> info(r != null ? "Handler result: %s.".formatted(r.toString()) : "Handler completed."))
+                .resultConsumer(r -> info(r != null ? "Result: %s.".formatted(r.toString()) : "Completed."))
                 .messageConsumer(m -> info(m.toString()))
                 .build();
         // inject target into context if not implicitly specified
-        if (context.getContent().get(ContextNaming.TargetUid) == null) {
-            Integer targetUid = (Integer) get(PersistedTargetKey);
+        if (context.getContent().get(ContextFields.TARGET_UID) == null) {
+            Integer targetUid = (Integer) get(PERSISTED_TARGET_KEY);
             if (targetUid != null) {
-                context = context.toBuilder().content(ContextNaming.TargetUid, targetUid).build();
+                context = context.toBuilder().content(ContextFields.TARGET_UID, targetUid).build();
             }
         }
         return context;
     }
 
     public String readLine() {
-        if (prompts.isEmpty()) {
-            return lineReader.readLine("> ");
-        }
-        return lineReader.readLine("%s> ".formatted(prompts.peek()));
+        String prompt = prompts.isEmpty() ? "> " : "%s> ".formatted(prompts.peek());
+        return lineReader.readLine(prompt);
     }
 }

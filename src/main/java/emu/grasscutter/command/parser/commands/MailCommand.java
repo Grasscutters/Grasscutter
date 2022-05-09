@@ -1,7 +1,6 @@
 package emu.grasscutter.command.parser.commands;
 
 import emu.grasscutter.command.handler.HandlerContext;
-import emu.grasscutter.command.handler.HandlerDispatcher;
 import emu.grasscutter.command.handler.collection.MailHandlerCollection;
 import emu.grasscutter.command.parser.CommandParser;
 import emu.grasscutter.command.parser.annotation.*;
@@ -9,7 +8,7 @@ import emu.grasscutter.command.source.BaseCommandSource;
 import emu.grasscutter.game.mail.Mail;
 
 
-import static emu.grasscutter.command.handler.ContextNaming.TargetUid;
+import static emu.grasscutter.command.handler.ContextFields.TARGET_UID;
 
 @Command(literal = "mail", aliases = {"m"})
 public class MailCommand {
@@ -19,15 +18,15 @@ public class MailCommand {
     @Permission("mail.send")
     public void sendToSpecificUser(
             BaseCommandSource source,
-            Integer targetUid) {
-        source.put(TargetUid, targetUid);
+            @OptionalArgument Integer targetUid) {
+        source.put(TARGET_UID, targetUid);
         mailInput(source);
     }
 
     @SubCommandHandler("all")
     @Permission("mail.sendAll")
     public void sendToAll(BaseCommandSource source) {
-        source.put(TargetUid, -1);
+        source.put(TARGET_UID, -1);
         mailInput(source);
     }
 
@@ -83,10 +82,14 @@ public class MailCommand {
         mail.mailContent.title = (String) source.get("title");
         mail.mailContent.sender = (String) source.get("sender");
         // todo: add attachments here
-        HandlerContext.HandlerContextBuilder builder = HandlerContext.builder()
-                .content("mail", mail)
-                .content(TargetUid, source.get(TargetUid));
         source.popPrompt();
-        CommandParser.dispatch(source, MailHandlerCollection.SEND_MAIL, builder);
+
+        CommandParser.dispatch(
+                source,
+                MailHandlerCollection.MAIL_SEND,
+                HandlerContext.builder()
+                        .content("mail", mail)
+                        .content(TARGET_UID, source.get(TARGET_UID))
+        );
     }
 }

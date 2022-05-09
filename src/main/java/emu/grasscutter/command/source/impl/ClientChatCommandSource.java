@@ -1,6 +1,6 @@
 package emu.grasscutter.command.source.impl;
 
-import emu.grasscutter.command.handler.ContextNaming;
+import emu.grasscutter.command.handler.ContextFields;
 import emu.grasscutter.command.handler.HandlerContext;
 import emu.grasscutter.command.parser.annotation.Origin;
 import emu.grasscutter.command.source.BaseCommandSource;
@@ -8,7 +8,7 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-import static emu.grasscutter.command.parser.commands.TargetCommand.PersistedTargetKey;
+import static emu.grasscutter.command.parser.commands.TargetCommand.PERSISTED_TARGET_KEY;
 
 public class ClientChatCommandSource extends BaseCommandSource {
     private final Player player;
@@ -48,12 +48,12 @@ public class ClientChatCommandSource extends BaseCommandSource {
                 .resultConsumer(r -> info(r != null ? "Handler result: %s.".formatted(r.toString()) : "Handler completed."))
                 .messageConsumer(m -> info(m.toString()))
                 .build();
-        if (context.getContent().get(ContextNaming.TargetUid) == null) {
-            Integer targetUid = (Integer) get(PersistedTargetKey);
+        if (context.getContent().get(ContextFields.TARGET_UID) == null) {
+            Integer targetUid = (Integer) get(PERSISTED_TARGET_KEY);
             if (targetUid != null) {
                 context = context.toBuilder()
-                        .content(ContextNaming.TargetUid, targetUid)
-                        .content(ContextNaming.SenderUid, player.getUid())
+                        .content(ContextFields.TARGET_UID, targetUid)
+                        .content(ContextFields.SENDER_UID, player.getUid())
                         .build();
             }
         }
