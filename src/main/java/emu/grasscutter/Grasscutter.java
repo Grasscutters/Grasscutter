@@ -7,6 +7,7 @@ import java.io.IOError;
 import java.util.Calendar;
 
 import emu.grasscutter.command.CommandMap;
+import emu.grasscutter.command.source.impl.ServerConsoleSource;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
@@ -173,13 +174,13 @@ public final class Grasscutter {
 			getLogger().info(translate("messages.dispatch.no_commands_error"));
 			return;
 		}
-
+		ServerConsoleSource commandSource = new ServerConsoleSource(consoleLineReader);
 		getLogger().info(translate("messages.status.done"));
 		String input = null;
 		boolean isLastInterrupted = false;
 		while (true) {
 			try {
-				input = consoleLineReader.readLine("> ");
+				input = commandSource.readLine();
 			} catch (UserInterruptException e) {
 				if (!isLastInterrupted) {
 					isLastInterrupted = true;
@@ -198,6 +199,7 @@ public final class Grasscutter {
 
 			isLastInterrupted = false;
 			try {
+				// commandSource.runCommand(input);
 				CommandMap.getInstance().invoke(null, null, input);
 			} catch (Exception e) {
 				Grasscutter.getLogger().error(translate("messages.game.command_error"), e);

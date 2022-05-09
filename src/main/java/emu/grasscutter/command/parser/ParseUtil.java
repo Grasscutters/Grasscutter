@@ -1,5 +1,9 @@
 package emu.grasscutter.command.parser;
 
+import emu.grasscutter.command.parser.exception.InvalidArgumentException;
+import emu.grasscutter.command.parser.exception.ParserException;
+import emu.grasscutter.command.parser.exception.TooFewArgumentsException;
+import emu.grasscutter.command.parser.exception.UnsupportedTypeException;
 import lombok.SneakyThrows;
 
 import java.util.*;
@@ -12,7 +16,7 @@ public class ParseUtil {
     private static final Pattern CommandPattern =
             Pattern.compile("\"([^\"\\\\]*(?:\\\\.[^\"\\\\]*)*)\"|'([^'\\\\]*(?:\\\\.[^'\\\\]*)*)'|\\S+");
     private static final Pattern SyntaxCheck =
-            Pattern.compile("^\"([^\"]|(?<=\\\\)\")+\"$|^'([^']|(?<=\\\\)')+'$|^[^'\"]*$");
+            Pattern.compile("^\"([^\\\\\"]|(\\\\\\\\)|(\\\\\"))*\"$|^'([^\\\\']|(\\\\\\\\)|(\\\\'))*'$|[^'\"\\\\]+");
     private static final Pattern StripQuotePattern =
             Pattern.compile("^\"([^\"]|(?<=\\\\)\")*(?<!\\\\)\"$|^'([^']|(?<=\\\\)')*(?<!\\\\)'$");
     // magic. don't touch.
@@ -34,16 +38,16 @@ public class ParseUtil {
     public static <T> T peekNext(Queue<String> cmdPieces, Class<T> clazz) {
         Function<String, ?> parse = PermittedClasses.get(clazz);
         if (parse == null) {
-            throw new ParserException("Cannot cast to an unsupported type %s.".formatted(clazz.getSimpleName()));
+            throw new UnsupportedTypeException(clazz);
         }
         String piece = cmdPieces.peek();
         if (piece == null) {
-            throw new ParserException("Too few arguments.");
+            throw new TooFewArgumentsException();
         }
         try {
             return (T) parse.apply(piece);
         } catch (Exception e) {
-            throw new ParserException("Casting `%s` to %s failed.".formatted(piece, clazz.getSimpleName()));
+            throw new InvalidArgumentException(piece, clazz);
         }
     }
 
@@ -72,6 +76,11 @@ public class ParseUtil {
         PermittedClasses.put(Integer.class, Integer::valueOf);
         PermittedClasses.put(Float.class, Float::valueOf);
         PermittedClasses.put(Double.class, Double::valueOf);
-        PermittedClasses.put(String.class, s -> s);
+        PermittedClasses.put(String.class, s -> {
+            if (s.startsWith("\"") || s.startsWith("'")) {
+                return s.substring(1, s.length() - 1).translateEscapes();
+            }
+            return s;
+        });
     }
 }

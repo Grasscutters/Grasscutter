@@ -1,7 +1,9 @@
 package emu.grasscutter.command.handler;
 
+import emu.grasscutter.command.handler.exception.NoSuchArgumentException;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.Singular;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -12,8 +14,8 @@ import java.util.NoSuchElementException;
 import java.util.SortedMap;
 import java.util.function.Consumer;
 
-@Builder
 @Getter
+@Builder(toBuilder = true)
 public final class HandlerContext {
 
     @NotNull
@@ -40,7 +42,7 @@ public final class HandlerContext {
         // no such data
         Object result = content.get(name);
         if (result == null) {
-            throw new NoSuchElementException("%s not found in context.".formatted(name));
+            throw new NoSuchArgumentException(name, clazz);
         }
 
         // convert to given type
@@ -48,10 +50,7 @@ public final class HandlerContext {
             return (T) result;
         }
         // cast failed
-        throw new IllegalArgumentException(
-                "Cannot cast from %s to %s."
-                        .formatted(result.getClass().getSimpleName(), clazz.getSimpleName())
-        );
+        throw new NoSuchArgumentException(name, clazz);
     }
 
     /**
@@ -64,7 +63,7 @@ public final class HandlerContext {
     public <T> T getOptional(@NotNull String name, T defaultValue) throws IllegalArgumentException {
         try {
             return (T) getRequired(name, defaultValue.getClass());
-        } catch (NoSuchElementException ignored) {
+        } catch (NoSuchArgumentException ignored) {
             return defaultValue;
         }
     }

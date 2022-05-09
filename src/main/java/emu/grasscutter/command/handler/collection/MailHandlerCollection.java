@@ -1,5 +1,6 @@
-package emu.grasscutter.command.handler.collections;
+package emu.grasscutter.command.handler.collection;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.handler.*;
 import emu.grasscutter.command.handler.annotation.Handler;
 import emu.grasscutter.command.handler.annotation.HandlerCollection;
@@ -7,13 +8,11 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import lombok.SneakyThrows;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import static emu.grasscutter.command.handler.ContextNaming.*;
 import static emu.grasscutter.utils.Language.translate;
 @HandlerCollection
-public class MailHandlerCollectionCollection {
+public class MailHandlerCollection {
     @Handler(SEND_MAIL)
     @SneakyThrows
     public void sendMail(HandlerContext context) {
@@ -30,7 +29,9 @@ public class MailHandlerCollectionCollection {
                 throw new RuntimeException(translate("commands.execution.player_exist_error"));
             }
         } else {
-            DatabaseHelper.getAllPlayers().forEach(player -> player.sendMail(mail));
+            DatabaseHelper.getAllPlayers().forEach(
+                    player -> Grasscutter.getGameServer().getPlayerByUid(player.getUid(), true).sendMail(mail)
+            );
         }
         context.returnWith(null);
     }

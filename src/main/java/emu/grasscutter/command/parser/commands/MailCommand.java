@@ -2,74 +2,74 @@ package emu.grasscutter.command.parser.commands;
 
 import emu.grasscutter.command.handler.HandlerContext;
 import emu.grasscutter.command.handler.HandlerDispatcher;
-import emu.grasscutter.command.handler.collections.MailHandlerCollectionCollection;
-import emu.grasscutter.command.parser.annotation.Command;
-import emu.grasscutter.command.parser.annotation.DefaultHandler;
-import emu.grasscutter.command.parser.annotation.Permission;
-import emu.grasscutter.command.parser.annotation.SubCommandHandler;
+import emu.grasscutter.command.handler.collection.MailHandlerCollection;
+import emu.grasscutter.command.parser.CommandParser;
+import emu.grasscutter.command.parser.annotation.*;
 import emu.grasscutter.command.source.BaseCommandSource;
 import emu.grasscutter.game.mail.Mail;
 
 
 import static emu.grasscutter.command.handler.ContextNaming.TargetUid;
 
-
-@Command(literal = "mail", aliases = {"m", "m2"})
+@Command(literal = "mail", aliases = {"m"})
 public class MailCommand {
 
-    @DefaultHandler(descriptionKey = "commands.mail.description")
+    @DefaultHandler
+    @Description("commands.mail.description")
     @Permission("mail.send")
     public void sendToSpecificUser(
             BaseCommandSource source,
             Integer targetUid) {
-        source.put("target", targetUid);
+        source.put(TargetUid, targetUid);
         mailInput(source);
     }
 
-    @SubCommandHandler(literal = "all", descriptionKey = "commands.mail.all.description")
+    @SubCommandHandler("all")
     @Permission("mail.sendAll")
     public void sendToAll(BaseCommandSource source) {
-        source.put("target", -1);
+        source.put(TargetUid, -1);
         mailInput(source);
-
     }
 
     public void mailInput(BaseCommandSource source) {
         source.info("Please enter the mail title.");
-        source.changePrompt("title");
-        source.setRegisteredCommandConsumer(this::readMailTitle);
+        source.pushPrompt("title");
+        source.registerCommandConsumer(this::readMailTitle);
     }
 
     public void readMailTitle(BaseCommandSource source, String title) {
         source.put("title", title);
         source.info("Enter the mail content.");
         source.info("Press enter if you want a new line.");
-        source.info("type \\\"EOF\\\" to end.");
-        source.changePrompt("content");
+        source.info("type \"EOF\" to end.");
+        source.popPrompt();
+        source.pushPrompt("content");
         source.put("content", new StringBuilder());
-        source.setRegisteredCommandConsumer(this::readMailContent);
+        source.registerCommandConsumer(this::readMailContent);
     }
 
     public void readMailContent(BaseCommandSource source, String contentLine) {
         if (contentLine.equals("EOF")) {
             source.info("Enter sender name:");
-            source.changePrompt("sender");
+            source.popPrompt();
+            source.pushPrompt("sender");
             StringBuilder sb = (StringBuilder) source.get("content");
             source.put("content", sb.toString().stripTrailing());
-            source.setRegisteredCommandConsumer(this::readMailSender);
+            source.registerCommandConsumer(this::readMailSender);
         } else {
             StringBuilder sb = (StringBuilder) source.get("content");
             sb.append(contentLine);
             sb.append("\n");
-            source.setRegisteredCommandConsumer(this::readMailContent);
+            source.registerCommandConsumer(this::readMailContent);
         }
     }
 
     public void readMailSender(BaseCommandSource source, String sender) {
         source.put("sender", sender);
         source.info("Enter attachments. Currently what you typed is ignored.");
-        source.changePrompt("attachments");
-        source.setRegisteredCommandConsumer(this::readAttachments);
+        source.popPrompt();
+        source.pushPrompt("attachments");
+        source.registerCommandConsumer(this::readAttachments);
     }
 
     public void readAttachments(BaseCommandSource source, String attachment) {
@@ -85,12 +85,8 @@ public class MailCommand {
         // todo: add attachments here
         HandlerContext.HandlerContextBuilder builder = HandlerContext.builder()
                 .content("mail", mail)
-                .content(TargetUid, source.get("target"));
-        source.changePrompt(null);
-        source.beforeHandlerDispatch(builder);
-        HandlerDispatcher.dispatch(
-                MailHandlerCollectionCollection.SEND_MAIL,
-                builder.build()
-        );
+                .content(TargetUid, source.get(TargetUid));
+        source.popPrompt();
+        CommandParser.dispatch(source, MailHandlerCollection.SEND_MAIL, builder);
     }
 }

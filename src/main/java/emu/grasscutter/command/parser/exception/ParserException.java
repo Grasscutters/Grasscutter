@@ -1,4 +1,4 @@
-package emu.grasscutter.command.parser;
+package emu.grasscutter.command.parser.exception;
 
 public class  ParserException extends RuntimeException {
     public ParserException(String message) {

@@ -1,6 +1,7 @@
 package emu.grasscutter.game.managers;
 
 import emu.grasscutter.command.CommandMap;
+import emu.grasscutter.command.source.impl.ClientChatCommandSource;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.server.game.GameServer;
@@ -34,7 +35,8 @@ public class ChatManager {
 				
 		// Check if command
 		if (PREFIXES.contains(message.charAt(0))) {
-			CommandMap.getInstance().invoke(player, target, message.substring(1));
+			// CommandMap.getInstance().invoke(player, target, message.substring(1));
+			ClientChatCommandSource.getCommandSourceByPlayer(player).runCommand(message.substring(1));
 			return;
 		}
 		
@@ -72,7 +74,8 @@ public class ChatManager {
 				
 		// Check if command
 		if (PREFIXES.contains(message.charAt(0))) {
-			CommandMap.getInstance().invoke(player, null, message);
+			// CommandMap.getInstance().invoke(player, null, message);
+			ClientChatCommandSource.getCommandSourceByPlayer(player).runCommand(message.substring(1));
 			return;
 		}
 

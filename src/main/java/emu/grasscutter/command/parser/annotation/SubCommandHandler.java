@@ -8,6 +8,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SubCommandHandler {
-    String literal();
-    String descriptionKey() default "";
+    String value();
 }
