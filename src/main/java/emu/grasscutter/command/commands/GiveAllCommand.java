@@ -22,8 +22,7 @@ public final class GiveAllCommand implements CommandHandler {
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
             CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
-//            return;
-            targetPlayer = sender;
+            return;
         }
         int amount = 99999;
 
