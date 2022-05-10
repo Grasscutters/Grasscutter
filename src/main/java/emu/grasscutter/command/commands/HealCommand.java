@@ -17,7 +17,7 @@ public final class HealCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
         
@@ -32,6 +32,6 @@ public final class HealCommand implements CommandHandler {
                 entity.getWorld().broadcastPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
             }
         });
-        CommandHandler.sendMessage(sender, translate("commands.heal.success"));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.heal.success"));
     }
 }

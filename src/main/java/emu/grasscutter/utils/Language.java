@@ -3,6 +3,8 @@ package emu.grasscutter.utils;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.Account;
+import emu.grasscutter.game.player.Player;
 
 import javax.annotation.Nullable;
 import java.io.InputStream;
@@ -11,6 +13,7 @@ import java.util.Map;
 
 public final class Language {
     private final JsonObject languageData;
+    private final String languageCode;
     private final Map<String, String> cachedTranslations = new ConcurrentHashMap<>();
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
 
@@ -24,8 +27,21 @@ public final class Language {
             return cachedLanguages.get(langCode);
         }
 
-        var languageInst = new Language(langCode + ".json", Utils.getLanguageCode(Grasscutter.getConfig().DefaultLanguage) + ".json");
-        cachedLanguages.put(langCode, languageInst);
+        var fallbackLanguageCode = Utils.getLanguageCode(Grasscutter.getConfig().DefaultLanguage);
+        var descripter = getLanguageFileStreamDescripter(langCode, fallbackLanguageCode);
+        var actualLanguageCode = descripter.getLanguageCode();
+
+        Language languageInst = null;
+
+        if (descripter.getLanguageFile() != null) {
+            languageInst = new Language(descripter);
+            cachedLanguages.put(actualLanguageCode, languageInst);
+        }
+        else {
+            languageInst = cachedLanguages.get(actualLanguageCode);
+            cachedLanguages.put(langCode, languageInst);
+        }
+
         return languageInst;
     }
 
@@ -47,32 +63,88 @@ public final class Language {
     }
 
     /**
-     * Reads a file and creates a language instance.
-     * @param fileName The name of the language file.
-     * @param fallback The name of the fallback language file.
+     * Returns the translated value from the key while substituting arguments.
+     * @param player Target player
+     * @param key The key of the translated value to return.
+     * @param args The arguments to substitute.
+     * @return A translated value with arguments substituted.
      */
-    private Language(String fileName, String fallback) {
-        @Nullable JsonObject languageData = null;
+    public static String translate(Player player, String key, Object... args) {
+        if (player == null) {
+            return translate(key, args);
+        }
 
-        InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
-        if (file == null) { // Provided fallback language.
-            file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
-            Grasscutter.getLogger().warn("Failed to load language file: " + fileName + ", falling back to: " + fallback);
-        }
-        if(file == null) { // Fallback the fallback language.
-            file = Grasscutter.class.getResourceAsStream("/languages/en-US.json");
-            Grasscutter.getLogger().warn("Failed to load language file: " + fallback + ", falling back to: en-US.json");
-        }
-        if(file == null)
-            throw new RuntimeException("Unable to load the primary, fallback, and 'en-US' language files.");
+        var langCode = Utils.getLanguageCode(player.getAccount().getLocale());
+        String translated = Grasscutter.getLanguage(langCode).get(key);
         
         try {
-            languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(file), JsonObject.class);
+            return translated.formatted(args);
         } catch (Exception exception) {
-            Grasscutter.getLogger().warn("Failed to load language file: " + fileName, exception);
+            Grasscutter.getLogger().error("Failed to format string: " + key, exception);
+            return translated;
+        }
+    }
+
+    /**
+     * get language code
+     */
+    public String getLanguageCode() {
+        return languageCode;
+    }
+
+    /**
+     * Reads a file and creates a language instance.
+     */
+    private Language(InternalLanguageFileStreamDescripter descripter) {
+        @Nullable JsonObject languageData = null;
+        languageCode = descripter.getLanguageCode();
+        
+        try {
+            languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(descripter.getLanguageFile()), JsonObject.class);
+        } catch (Exception exception) {
+            Grasscutter.getLogger().warn("Failed to load language file: " + descripter.getLanguageCode(), exception);
         }
         
         this.languageData = languageData;
+    }
+
+    /**
+     * create a InternalLanguageFileStreamDescripter
+     * @param languageCode The name of the language code.
+     * @param fallbackLanguageCode The name of the fallback language code.
+     */
+    private static InternalLanguageFileStreamDescripter getLanguageFileStreamDescripter(String languageCode, String fallbackLanguageCode) {
+        var fileName = languageCode + ".json";
+        var fallback = fallbackLanguageCode + ".json";
+
+        String actualLanguageCode = languageCode;
+        if (cachedLanguages.containsKey(actualLanguageCode)) {
+            return new InternalLanguageFileStreamDescripter(actualLanguageCode, null);
+        }
+        InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
+
+        if (file == null) { // Provided fallback language.
+            actualLanguageCode = fallbackLanguageCode;
+            if (cachedLanguages.containsKey(actualLanguageCode)) {
+                return new InternalLanguageFileStreamDescripter(actualLanguageCode, null);
+            }
+            file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
+            Grasscutter.getLogger().warn("Failed to load language file: " + fileName + ", falling back to: " + fallback);
+        }
+
+        if(file == null) { // Fallback the fallback language.
+            actualLanguageCode = "en-US";
+            if (cachedLanguages.containsKey(actualLanguageCode)) {
+                return new InternalLanguageFileStreamDescripter(actualLanguageCode, null);
+            }
+            file = Grasscutter.class.getResourceAsStream("/languages/en-US.json");
+            Grasscutter.getLogger().warn("Failed to load language file: " + fallback + ", falling back to: en-US.json");
+        }
+
+        if(file == null)
+            throw new RuntimeException("Unable to load the primary, fallback, and 'en-US' language files.");
+
+        return new InternalLanguageFileStreamDescripter(actualLanguageCode, file);
     }
 
     /**
@@ -106,5 +178,23 @@ public final class Language {
         }
         
         this.cachedTranslations.put(key, result); return result;
+    }
+
+    private static class InternalLanguageFileStreamDescripter {
+        private String languageCode;
+        private InputStream languageFile;
+
+        public InternalLanguageFileStreamDescripter(String languageCode, InputStream languageFile) {
+            this.languageCode = languageCode;
+            this.languageFile = languageFile;
+        }
+
+        public String getLanguageCode() {
+            return languageCode;
+        }
+
+        public InputStream getLanguageFile() {
+            return languageFile;
+        }
     }
 }
