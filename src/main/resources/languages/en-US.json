@@ -188,6 +188,11 @@
       "success": "Killed %s's current character.",
       "description": "Kills the players current character"
     },
+    "language": {
+      "current_language": "current language is %s",
+      "language_changed": "language changed to %s",
+      "description": "display or change current language"
+    },
     "list": {
       "success": "There are %s player(s) online:",
       "description": "List online players"

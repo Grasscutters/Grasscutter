@@ -21,7 +21,7 @@ public class UnlockTowerCommand implements CommandHandler {
         unlockFloor(sender, sender.getServer().getTowerScheduleManager()
                 .getScheduleFloors());
 
-        CommandHandler.sendMessage(sender, translate("commands.unlocktower.success"));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.unlocktower.success"));
     }
 
     public void unlockFloor(Player player, List<Integer> floors){
