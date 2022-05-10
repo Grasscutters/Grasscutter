@@ -14,9 +14,9 @@ public final class StopCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        CommandHandler.sendMessage(null, translate("commands.stop.success"));
+        CommandHandler.sendMessage(null, translate(sender, "commands.stop.success"));
         for (Player p : Grasscutter.getGameServer().getPlayers().values()) {
-            CommandHandler.sendMessage(p, translate("commands.stop.success"));
+            CommandHandler.sendMessage(p, translate(sender, "commands.stop.success"));
         }
 
         System.exit(1000);

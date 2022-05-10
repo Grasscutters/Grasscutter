@@ -15,16 +15,16 @@ public final class SendMessageCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
         if (args.size() == 0) {
-            CommandHandler.sendMessage(null, translate("commands.sendMessage.usage"));
+            CommandHandler.sendMessage(null, translate(sender, "commands.sendMessage.usage"));
             return;
         }
 
         String message = String.join(" ", args);
         CommandHandler.sendMessage(targetPlayer, message);
-        CommandHandler.sendMessage(sender, translate("commands.sendMessage.success"));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.sendMessage.success"));
     }
 }

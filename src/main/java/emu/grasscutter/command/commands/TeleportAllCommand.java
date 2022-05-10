@@ -16,12 +16,12 @@ public final class TeleportAllCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
         
         if (!targetPlayer.getWorld().isMultiplayer()) {
-            CommandHandler.sendMessage(sender, translate("commands.teleportAll.error"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.teleportAll.error"));
             return;
         }
         
@@ -33,6 +33,6 @@ public final class TeleportAllCommand implements CommandHandler {
             player.getWorld().transferPlayerToScene(player, targetPlayer.getSceneId(), pos);
         }
         
-        CommandHandler.sendMessage(sender, translate("commands.teleportAll.success"));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.teleportAll.success"));
     }
 }

@@ -2,27 +2,22 @@ package emu.grasscutter.game.ability;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.custom.AbilityModifier;
 import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierAction;
-import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierActionType;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.custom.AbilityModifierEntry;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall;
-import emu.grasscutter.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument;
 import emu.grasscutter.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange;
 import emu.grasscutter.net.proto.AbilityMetaReInitOverrideMapOuterClass.AbilityMetaReInitOverrideMap;
-import emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType;
+import emu.grasscutter.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinCostStamina;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import emu.grasscutter.utils.Position;
-import emu.grasscutter.utils.Utils;
 
 public class AbilityManager {
 	private Player player;
@@ -138,13 +133,9 @@ public class AbilityManager {
 		}
 	}
 	
-	private void handleMixinCostStamina(AbilityInvokeEntry invoke) {
-		// Not the right way of doing this
-		if (Grasscutter.getConfig().OpenStamina) {
-			// getPlayer().getStaminaManager().updateStamina(getPlayer().getSession(), -450);
-			// TODO
-			// set flag in stamina/movement manager that specifies the player is currently using an alternate sprint
-		}
+	private void handleMixinCostStamina(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
+		AbilityMixinCostStamina costStamina = AbilityMixinCostStamina.parseFrom((invoke.getAbilityData()));
+		getPlayer().getStaminaManager().handleMixinCostStamina(costStamina.getIsSwim());
 	}
 	
 	private void handleGenerateElemBall(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {

@@ -21,9 +21,8 @@ public final class ClearCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, translate("commands.clear.command_usage"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.clear.command_usage"));
             return;
         }
         
@@ -37,7 +36,7 @@ public final class ClearCommand implements CommandHandler {
                         .filter(item -> item.getItemType() == ItemType.ITEM_WEAPON)
                         .filter(item -> !item.isLocked() && !item.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, translate("commands.clear.weapons", sender.getNickname()));
+                CommandHandler.sendMessage(sender, translate(sender, "commands.clear.weapons", targetPlayer.getNickname()));
             }
             case "art" -> {
             	toDelete = playerInventory.getItems().values().stream()
@@ -45,7 +44,7 @@ public final class ClearCommand implements CommandHandler {
                         .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                         .filter(item -> !item.isLocked() && !item.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, translate("commands.clear.artifacts", sender.getNickname()));
+                CommandHandler.sendMessage(sender, translate(sender, "commands.clear.artifacts", targetPlayer.getNickname()));
             }
             case "mat" -> {
             	toDelete = playerInventory.getItems().values().stream()
@@ -53,7 +52,7 @@ public final class ClearCommand implements CommandHandler {
                         .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                         .filter(item -> !item.isLocked() && !item.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, translate("commands.clear.materials", sender.getNickname()));
+                CommandHandler.sendMessage(sender, translate(sender, "commands.clear.materials", targetPlayer.getNickname()));
             }
             case "all" -> {
             	toDelete = playerInventory.getItems().values().stream()
