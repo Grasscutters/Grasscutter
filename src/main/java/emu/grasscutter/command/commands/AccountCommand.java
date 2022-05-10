@@ -5,6 +5,8 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 
 import java.util.List;
@@ -34,7 +36,23 @@ public final class AccountCommand implements CommandHandler {
             default:
                 CommandHandler.sendMessage(null, translate("commands.account.command_usage"));
                 return;
-            case "clean":
+            case "clean_null_avatar":
+                List<Avatar> Item_ANull = DatabaseHelper.getAvatarsNullPlayer();
+                CommandHandler.sendMessage(null, "Currently found "+Item_ANull.size()+" avatar that any player doesn't use");
+                for (Avatar remove : Item_ANull) {
+                  DatabaseHelper.deleteAvatar(remove);
+                }
+                CommandHandler.sendMessage(null, "done..");
+                return;
+            case "clean_null_item":
+                List<GameItem> Item_Null = DatabaseHelper.getInventoryNullPlayer();
+                CommandHandler.sendMessage(null, "Currently found "+Item_Null.size()+" Items that any player doesn't use");
+                for (GameItem remove : Item_Null) {
+                  DatabaseHelper.deleteItem(remove);
+                }
+                CommandHandler.sendMessage(null, "done..");
+                return;
+            case "clean_player":
 
                  //String aaa = Grasscutter.getConfig().getGameServerOptions().CMD_SuperAdmin;
                  // TODO: add configuration later
@@ -78,7 +96,7 @@ public final class AccountCommand implements CommandHandler {
                   }
 
                   // Finally, we do actual deletion.
-                  CommandHandler.sendMessage(null, "Remove "+remove.getUid()+" Player");
+                  CommandHandler.sendMessage(null, "Remove Uid "+remove.getUid()+" Player");
                   DatabaseHelper.deleteAccount(account);
 
                   // Add delayTime

@@ -181,6 +181,15 @@ public final class DatabaseHelper {
 		return DatabaseManager.getDatastore().find(Avatar.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
 
+  public static List<Avatar> getAvatarsNullPlayer() {
+		return DatabaseManager.getDatastore().find(Avatar.class).stream().filter(g -> DatabaseHelper.getAccountById(Integer.toString(g.getOwnerId())) == null).toList();
+	}
+
+  public static boolean deleteAvatar(Avatar item) {
+		DeleteResult result = DatabaseManager.getDatastore().delete(item);
+		return result.wasAcknowledged();
+	}
+
 	public static void saveItem(GameItem item) {
 		DatabaseManager.getDatastore().save(item);
 	}
@@ -192,6 +201,10 @@ public final class DatabaseHelper {
 
 	public static List<GameItem> getInventoryItems(Player player) {
 		return DatabaseManager.getDatastore().find(GameItem.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
+	}
+
+  public static List<GameItem> getInventoryNullPlayer() {
+		return DatabaseManager.getDatastore().find(GameItem.class).stream().filter(g -> DatabaseHelper.getAccountById(Integer.toString(g.getOwnerId())) == null).toList();
 	}
 	
 	public static List<Friendship> getFriends(Player player) {
