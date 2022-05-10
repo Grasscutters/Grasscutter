@@ -138,7 +138,7 @@ public class GachaManager {
 			gachaInfo.addPity5(1);
 			gachaInfo.addPity4(1);
 			int yellowChance = calculateChance(banner.getBaseYellowWeight(), banner.getSoftPity(), banner.getHardPity(), gachaInfo.getPity5());
-			int purpleChance = calculateChance(banner.getBasePurpleWeight(), banner.getPrupleSoftPity(), banner.getPrupleHardPity(), gachaInfo.getPity4());
+			int purpleChance = calculateChance(banner.getBasePurpleWeight(), banner.getPurpleSoftPity(), banner.getPurpleHardPity(), gachaInfo.getPity4());
 		
 			if (random < yellowChance) {
 				if (banner.getRateUpItems1().length > 0) {
@@ -166,11 +166,11 @@ public class GachaManager {
 			} else if (random < purpleChance) {
 				if (banner.getRateUpItems2().length > 0) {
 					int eventChance = this.randomRange(0, 10000);
-					if (eventChance < banner.getEventChance() || gachaInfo.getfailedFeaturedPrupleItemPulls() > 0) {
+					if (eventChance < banner.getEventChance() || gachaInfo.getfailedFeaturedPurpleItemPulls() > 0) {
 						itemId = getRandom(banner.getRateUpItems2());
-						gachaInfo.setfailedFeaturedPrupleItemPulls(0);
+						gachaInfo.setfailedFeaturedPurpleItemPulls(0);
 					} else {
-						gachaInfo.addfailedFeaturedPrupleItemPulls(1);
+						gachaInfo.addfailedFeaturedPurpleItemPulls(1);
 					}
 				}
 				
@@ -184,7 +184,7 @@ public class GachaManager {
 				}
 				
 				// The pity5 pushes the pity4 back.
-				int pity4 = Math.max(0,gachaInfo.getPity4() - banner.getPrupleHardPity());
+				int pity4 = Math.max(0,gachaInfo.getPity4() - banner.getPurpleHardPity());
 				gachaInfo.setPity4(pity4);
 			} else {
 				itemId = getRandom(this.blueWeapons);
