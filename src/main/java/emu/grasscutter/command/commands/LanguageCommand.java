@@ -35,8 +35,9 @@ public final class LanguageCommand implements CommandHandler {
         if (sender != null) {
             var locale = Locale.forLanguageTag(langCode);
             actualLangCode = Utils.getLanguageCode(locale);
-            sender.getAccount().setLocale(locale);
-            return;
+            var account = sender.getAccount();
+            account.setLocale(locale);
+            account.save();
         }
         else {
             var languageInst = Grasscutter.getLanguage(langCode);
