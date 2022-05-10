@@ -1,8 +1,10 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 
 import java.util.List;
@@ -54,11 +56,24 @@ public final class AccountCommand implements CommandHandler {
                 }
                 return;
             case "delete":
-                if (DatabaseHelper.deleteAccount(username)) {
-                    CommandHandler.sendMessage(null, translate("commands.account.delete"));
-                } else {
+                // Get the account we want to delete.
+                Account toDelete = DatabaseHelper.getAccountByName(username);
+
+                if (toDelete == null) {
                     CommandHandler.sendMessage(null, translate("commands.account.no_account"));
+                    return;
                 }
+
+                // Get the player for the account.
+                // If that player is currently online, we kick them before proceeding with the deletion.
+                Player player = Grasscutter.getGameServer().getPlayerByUid(toDelete.getPlayerUid());
+                if (player != null) {
+                    player.getSession().close();
+                }
+
+                // Finally, we do the actual deletion.
+                DatabaseHelper.deleteAccount(toDelete);
+                CommandHandler.sendMessage(null, translate("commands.account.delete"));
         }
     }
 }

@@ -373,6 +373,12 @@ public class SceneScriptManager {
 				new ScriptMonsterTideService(this, group, tideCount, sceneLimit, ordersConfigId);
 
 	}
+	public void unloadCurrentMonsterTide(){
+		if(this.getScriptMonsterTideService() == null){
+			return;
+		}
+		this.getScriptMonsterTideService().unload();
+	}
 	public void spawnMonstersByConfigId(int configId, int delayTime) {
 		// TODO delay
 		this.scriptMonsterSpawnService.spawnMonster(this.currentGroup.id, this.currentGroup.monsters.get(configId));
@@ -395,12 +401,15 @@ public class SceneScriptManager {
 				if (params != null) {
 					args = CoerceJavaToLua.coerce(params);
 				}
-				
+
+				ScriptLib.logger.trace("Call Condition Trigger {}", trigger);
 				ret = safetyCall(trigger.condition, condition, args);
 			}
 			
 			if (ret.isboolean() && ret.checkboolean()) {
+				ScriptLib.logger.trace("Call Action Trigger {}", trigger);
 				LuaValue action = (LuaValue) this.getBindings().get(trigger.action);
+				// TODO impl the param of SetGroupVariableValueByGroup
 				var arg = new ScriptArgs();
 				arg.param2 = 100;
 				var args = CoerceJavaToLua.coerce(arg);

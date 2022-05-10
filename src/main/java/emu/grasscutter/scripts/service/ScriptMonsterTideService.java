@@ -6,6 +6,7 @@ import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneMonster;
 import emu.grasscutter.scripts.data.ScriptArgs;
+import emu.grasscutter.scripts.listener.ScriptMonsterListener;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -19,6 +20,8 @@ public class ScriptMonsterTideService {
     private final AtomicInteger monsterKillCount;
     private final int monsterSceneLimit;
     private final ConcurrentLinkedQueue<Integer> monsterConfigOrders;
+    private final OnMonsterCreated onMonsterCreated= new OnMonsterCreated();
+    private final OnMonsterDead onMonsterDead= new OnMonsterDead();
 
     public ScriptMonsterTideService(SceneScriptManager sceneScriptManager,
                      SceneGroup group, int tideCount, int monsterSceneLimit, Integer[] ordersConfigId){
@@ -30,18 +33,21 @@ public class ScriptMonsterTideService {
         this.monsterAlive = new AtomicInteger(0);
         this.monsterConfigOrders = new ConcurrentLinkedQueue<>(List.of(ordersConfigId));
 
-        this.sceneScriptManager.getScriptMonsterSpawnService().addMonsterCreatedListener(this::onMonsterCreated);
-        this.sceneScriptManager.getScriptMonsterSpawnService().addMonsterDeadListener(this::onMonsterDead);
+        this.sceneScriptManager.getScriptMonsterSpawnService().addMonsterCreatedListener(onMonsterCreated);
+        this.sceneScriptManager.getScriptMonsterSpawnService().addMonsterDeadListener(onMonsterDead);
         // spawn the first turn
         for (int i = 0; i < this.monsterSceneLimit; i++) {
             this.sceneScriptManager.getScriptMonsterSpawnService().spawnMonster(group.id, getNextMonster());
         }
     }
 
-    public void onMonsterCreated(EntityMonster entityMonster){
-        if(this.monsterSceneLimit > 0){
-            this.monsterTideCount.decrementAndGet();
-            this.monsterAlive.incrementAndGet();
+    public class OnMonsterCreated implements ScriptMonsterListener{
+        @Override
+        public void onNotify(EntityMonster sceneMonster) {
+            if(monsterSceneLimit > 0){
+                monsterAlive.incrementAndGet();
+                monsterTideCount.decrementAndGet();
+            }
         }
     }
 
@@ -54,21 +60,30 @@ public class ScriptMonsterTideService {
         return currentGroup.monsters.values().stream().findFirst().orElse(null);
     }
 
-    public void onMonsterDead(EntityMonster entityMonster){
-        if(this.monsterSceneLimit <= 0){
-            return;
+    public class OnMonsterDead implements ScriptMonsterListener {
+        @Override
+        public void onNotify(EntityMonster sceneMonster) {
+            if (monsterSceneLimit <= 0) {
+                return;
+            }
+            if (monsterAlive.decrementAndGet() >= monsterSceneLimit) {
+                // maybe not happen
+                return;
+            }
+            monsterKillCount.incrementAndGet();
+            if (monsterTideCount.get() > 0) {
+                // add more
+                sceneScriptManager.getScriptMonsterSpawnService().spawnMonster(currentGroup.id, getNextMonster());
+            }
+            // spawn the last turn of monsters
+            // fix the 5-2
+            sceneScriptManager.callEvent(EventType.EVENT_MONSTER_TIDE_DIE, new ScriptArgs(monsterKillCount.get()));
         }
-        if(this.monsterAlive.decrementAndGet() >= this.monsterSceneLimit) {
-            // maybe not happen
-            return;
-        }
-        this.monsterKillCount.incrementAndGet();
-        if(this.monsterTideCount.get() > 0){
-            // add more
-            this.sceneScriptManager.getScriptMonsterSpawnService().spawnMonster(this.currentGroup.id, getNextMonster());
-        }
-        // spawn the last turn of monsters
-        // fix the 5-2
-        this.sceneScriptManager.callEvent(EventType.EVENT_MONSTER_TIDE_DIE, new ScriptArgs(this.monsterKillCount.get()));
+
+    }
+
+    public void unload(){
+        this.sceneScriptManager.getScriptMonsterSpawnService().removeMonsterCreatedListener(onMonsterCreated);
+        this.sceneScriptManager.getScriptMonsterSpawnService().removeMonsterDeadListener(onMonsterDead);
     }
 }
