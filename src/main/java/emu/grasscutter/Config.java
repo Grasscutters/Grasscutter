@@ -76,6 +76,8 @@ public final class Config {
 		public int CMD_Give = 10000000;
 		public int CMD_Drop = 100;
 		public boolean CMD_NoGiveTes = true;
+    public boolean CMD_ListOnline = false;
+    public String CMD_SuperAdmin = "root";
 
 		// Dangerous feature for public server, make your database go crazy!
 		public boolean DropMo = false;

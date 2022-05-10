@@ -24,7 +24,9 @@ public final class ListCommand implements CommandHandler {
 
         CommandHandler.sendMessage(sender, translate("commands.list.success", Integer.toString(playersMap.size())));
 
-        if (playersMap.size() != 0) {
+        if (Grasscutter.getConfig().getGameServerOptions().CMD_ListOnline) {         
+        
+         if (playersMap.size() != 0) {
             StringBuilder playerSet = new StringBuilder();
             boolean finalNeedUID = needUID;
 
@@ -48,6 +50,8 @@ public final class ListCommand implements CommandHandler {
 
             String players = playerSet.toString();
             CommandHandler.sendMessage(sender, players.substring(0, players.length() - 2));
+         }
+         
         }
     }
 }

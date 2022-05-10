@@ -8,6 +8,7 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static emu.grasscutter.utils.Language.translate;
 
@@ -33,6 +34,62 @@ public final class AccountCommand implements CommandHandler {
             default:
                 CommandHandler.sendMessage(null, translate("commands.account.command_usage"));
                 return;
+            case "clean":
+
+                 //String aaa = Grasscutter.getConfig().getGameServerOptions().CMD_SuperAdmin;
+                 // TODO: add configuration later
+                 int daylogin = 3;
+                 int goseep = 1;
+                 int limit = 1000;
+                 int intlimit = 0;
+
+                 // List All Player
+                 List<Player> playerAll = DatabaseHelper.getAllPlayers().stream().toList();
+                 // List Player offline
+                 List<Player> player_offline = playerAll.stream()
+                 .filter(tes -> tes.getProfile().getDaysSinceLogin() >= daylogin)
+                 //.filter(tes -> DatabaseHelper.getAccountById(""+tes.getUid()+"") != null)
+                 .toList();
+
+                 CommandHandler.sendMessage(null, "Current total players "+playerAll.size()+" and "+player_offline.size()+" player who didn't log in for "+daylogin+" day ");
+
+                 for (Player remove : player_offline) {
+
+                  // Limit
+                  if(intlimit >= limit){
+                    CommandHandler.sendMessage(null, "limit..");
+                    return;
+                  }
+                  intlimit++;
+
+                  // Check Account Player (TODO: REMOVE TOO?)
+                  Account account = DatabaseHelper.getAccountById(Integer.toString(remove.getUid()));
+                  if (account == null) {
+                    CommandHandler.sendMessage(null, "Account "+remove.getUid()+" No found?");
+                    continue;
+                  }
+
+                  // Check if player online
+                  Player player_online = Grasscutter.getGameServer().getPlayerByUid(remove.getUid());
+                  if (player_online != null) {
+                    CommandHandler.sendMessage(null, "Player online "+player_online.getUid()+" so skip...");
+                    //remove.getSession().close();
+                    continue;
+                  }
+
+                  // Finally, we do actual deletion.
+                  CommandHandler.sendMessage(null, "Remove "+remove.getUid()+" Player");
+                  DatabaseHelper.deleteAccount(account);
+
+                  // Add delayTime
+                  try {
+                   TimeUnit.SECONDS.sleep(goseep); 
+                  } catch(InterruptedException ex)  {
+                    ex.printStackTrace();
+                  }
+
+                 }
+                 return;
             case "create":
                 int uid = 0;
                 if (args.size() > 2) {

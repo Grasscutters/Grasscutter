@@ -3,6 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
@@ -20,15 +21,13 @@ public final class ClearCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
-            return;
-        }
+
         if (args.size() < 1) {
             CommandHandler.sendMessage(sender, translate("commands.clear.command_usage"));
             return;
         }
-        Inventory playerInventory = targetPlayer.getInventory();
+        
+        Inventory playerInventory = sender.getInventory();
         List<GameItem> toDelete = null;
         int limit = 1000;
         
@@ -38,7 +37,7 @@ public final class ClearCommand implements CommandHandler {
                         .filter(item -> item.getItemType() == ItemType.ITEM_WEAPON)
                         .filter(item -> !item.isLocked() && !item.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, translate("commands.clear.weapons", targetPlayer.getNickname()));
+                CommandHandler.sendMessage(sender, translate("commands.clear.weapons", sender.getNickname()));
             }
             case "art" -> {
             	toDelete = playerInventory.getItems().values().stream()
@@ -46,7 +45,7 @@ public final class ClearCommand implements CommandHandler {
                         .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                         .filter(item -> !item.isLocked() && !item.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, translate("commands.clear.artifacts", targetPlayer.getNickname()));
+                CommandHandler.sendMessage(sender, translate("commands.clear.artifacts", sender.getNickname()));
             }
             case "mat" -> {
             	toDelete = playerInventory.getItems().values().stream()
@@ -54,7 +53,7 @@ public final class ClearCommand implements CommandHandler {
                         .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
                         .filter(item -> !item.isLocked() && !item.isEquipped())
                         .toList();
-                CommandHandler.sendMessage(sender, translate("commands.clear.materials", targetPlayer.getNickname()));
+                CommandHandler.sendMessage(sender, translate("commands.clear.materials", sender.getNickname()));
             }
             case "all" -> {
             	toDelete = playerInventory.getItems().values().stream()
