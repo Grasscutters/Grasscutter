@@ -43,7 +43,7 @@ public final class AccountCommand implements CommandHandler {
 
                  // List Player with null player
                  List<Player> Playerbroken = DatabaseHelper.getAllPlayers().stream()
-                 .filter(g -> DatabaseHelper.getAccountById(Integer.toString(g.getUid())) == null)
+                 .filter(g -> DatabaseHelper.getAccountByPlayerId(g.getUid()) == null)
                  .toList();
                  CommandHandler.sendMessage(null, "There are currently "+Playerbroken.size()+" players without account data that broken.");
                  for (Player remove : Playerbroken) {
