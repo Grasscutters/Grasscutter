@@ -7,7 +7,7 @@ public class PlayerGachaBannerInfo {
 	private int pity5 = 0;
 	private int pity4 = 0;
 	private int failedFeaturedItemPulls = 0;
-	private int failedFeaturedPrupleItemPulls = 0;
+	private int failedFeaturedPurpleItemPulls = 0;
 	
 	public int getPity5() {
 		return pity5;
@@ -37,8 +37,8 @@ public class PlayerGachaBannerInfo {
 		return failedFeaturedItemPulls;
 	}
 
-	public int getfailedFeaturedPrupleItemPulls() {
-		return failedFeaturedPrupleItemPulls;
+	public int getfailedFeaturedPurpleItemPulls() {
+		return failedFeaturedPurpleItemPulls;
 	}
 
 	public void setfailedFeaturedPrupleItemPulls(int failedFeaturedPrupleItemPulls) {
