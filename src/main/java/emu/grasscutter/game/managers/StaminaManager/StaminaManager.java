@@ -190,17 +190,17 @@ public class StaminaManager {
 
     // Returns new stamina and sends PlayerPropNotify
     public int setStamina(GameSession session, String reason, int newStamina) {
-        if (Grasscutter.getConfig().OpenStamina) {
-            // set stamina
-            player.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, newStamina);
-            session.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
-            // notify updated
-            for (Map.Entry<String, AfterUpdateStaminaListener> listener : afterUpdateStaminaListeners.entrySet()) {
-                listener.getValue().onAfterUpdateStamina(reason, newStamina);
-            }
-            return newStamina;
+        if (!Grasscutter.getConfig().OpenStamina) {
+            newStamina = player.getProperty(PlayerProperty.PROP_MAX_STAMINA);
         }
-        return player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
+        // set stamina
+        player.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, newStamina);
+        session.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
+        // notify updated
+        for (Map.Entry<String, AfterUpdateStaminaListener> listener : afterUpdateStaminaListeners.entrySet()) {
+            listener.getValue().onAfterUpdateStamina(reason, newStamina);
+        }
+        return newStamina;
     }
 
     // Kills avatar, removes entity and sends notification.
