@@ -1,5 +1,6 @@
 package emu.grasscutter.game.managers.StaminaManager;
 
+import ch.qos.logback.classic.Logger;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
@@ -55,7 +56,7 @@ public class StaminaManager {
                 MotionState.MOTION_LADDER_TO_STANDBY, // NOT OBSERVED
                 MotionState.MOTION_STANDBY_MOVE, // sustained, recover
                 MotionState.MOTION_STANDBY // sustained, recover
-                )));
+        )));
         put("SWIM", new HashSet<>(List.of(
                 MotionState.MOTION_SWIM_IDLE, // sustained
                 MotionState.MOTION_SWIM_DASH, // immediate and sustained
@@ -104,6 +105,7 @@ public class StaminaManager {
         )));
     }};
 
+    private final Logger logger = Grasscutter.getLogger();
     public final static int GlobalMaximumStamina = 24000;
     private Position currentCoordinates = new Position(0, 0, 0);
     private Position previousCoordinates = new Position(0, 0, 0);
@@ -118,6 +120,73 @@ public class StaminaManager {
     private int lastSkillId = 0;
     private int lastSkillCasterId = 0;
     private boolean lastSkillFirstTick = true;
+    public static final HashSet<Integer> TalentMovements = new HashSet<>(List.of(
+            10013, // Kamisato Ayaka
+            10413 // Mona
+    ));
+
+    // TODO: Get from somewhere else, instead of hard-coded here?
+    public static final HashSet<Integer> ClaymoreSkills = new HashSet<>(List.of(
+            10160, // Diluc, /=2
+            10201, // Razor
+            10241, // Beidou
+            10341, // Noelle
+            10401, // Chongyun
+            10441, // Xinyan
+            10511, // Eula
+            10531, // Sayu
+            10571 // Arataki Itto, = 0
+    ));
+    public static final HashSet<Integer> CatalystSkills = new HashSet<>(List.of(
+            10060, // Lisa
+            10070, // Barbara
+            10271, // Ningguang
+            10291, // Klee
+            10411, // Mona
+            10431, // Sucrose
+            10481, // Yanfei
+            10541, // Sangonomoiya Kokomi
+            10581 // Yae Miko
+    ));
+    public static final HashSet<Integer> PolearmSkills = new HashSet<>(List.of(
+            10231, // Xiangling
+            10261, // Xiao
+            10301, // Zhongli
+            10451, // Rosaria
+            10461, // Hu Tao
+            10501, // Thoma
+            10521, // Raiden Shogun
+            10631, // Shenhe
+            10641 // Yunjin
+    ));
+    public static final HashSet<Integer> SwordSkills = new HashSet<>(List.of(
+            10024, // Kamisato Ayaka
+            10031, // Jean
+            10073, // Kaeya
+            10321, // Bennett
+            10337, // Tartaglia, melee stance (10332 switch to melee, 10336 switch to ranged stance)
+            10351, // Qiqi
+            10381, // Xingqiu
+            10386, // Albedo
+            10421, // Keqing, =-2500
+            10471, // Kaedehara Kazuha
+            10661, // Kamisato Ayato
+            100553, // Lumine
+            100540 // Aether
+    ));
+    public static final HashSet<Integer> BowSkills = new HashSet<>(List.of(
+            10041, 10043, // Amber
+            10221, 10223,// Venti
+            10311, 10315, // Fischl
+            10331, 10335, // Tartaglia, ranged stance
+            10371, // Ganyu
+            10391, 10394, // Diona
+            10491, // Yoimiya
+            10551, 10554, // Gorou
+            10561, 10564, // Kojou Sara
+            10621, // Aloy
+            99998, 99999 // Yelan // TODO: get real values
+    ));
 
 
     public StaminaManager(Player player) {
@@ -168,7 +237,7 @@ public class StaminaManager {
         float diffX = currentCoordinates.getX() - previousCoordinates.getX();
         float diffY = currentCoordinates.getY() - previousCoordinates.getY();
         float diffZ = currentCoordinates.getZ() - previousCoordinates.getZ();
-        Grasscutter.getLogger().trace("isPlayerMoving: " + previousCoordinates + ", " + currentCoordinates +
+        logger.trace("isPlayerMoving: " + previousCoordinates + ", " + currentCoordinates +
                 ", " + diffX + ", " + diffY + ", " + diffZ);
         return Math.abs(diffX) > 0.3 || Math.abs(diffY) > 0.2 || Math.abs(diffZ) > 0.3;
     }
@@ -182,14 +251,14 @@ public class StaminaManager {
         for (Map.Entry<String, BeforeUpdateStaminaListener> listener : beforeUpdateStaminaListeners.entrySet()) {
             Consumption overriddenConsumption = listener.getValue().onBeforeUpdateStamina(consumption.type.toString(), consumption);
             if ((overriddenConsumption.type != consumption.type) && (overriddenConsumption.amount != consumption.amount)) {
-                Grasscutter.getLogger().debug("[StaminaManager] Stamina update relative(" +
+                logger.debug("[StaminaManager] Stamina update relative(" +
                         consumption.type.toString() + ", " + consumption.amount + ") overridden to relative(" +
                         consumption.type.toString() + ", " + consumption.amount + ") by: " + listener.getKey());
                 return currentStamina;
             }
         }
         int playerMaxStamina = player.getProperty(PlayerProperty.PROP_MAX_STAMINA);
-        Grasscutter.getLogger().trace(currentStamina + "/" + playerMaxStamina + "\t" + currentState + "\t" +
+        logger.trace(currentStamina + "/" + playerMaxStamina + "\t" + currentState + "\t" +
                 (isPlayerMoving() ? "moving" : "      ") + "\t(" + consumption.type + "," +
                 consumption.amount + ")");
         int newStamina = currentStamina + consumption.amount;
@@ -207,7 +276,7 @@ public class StaminaManager {
         for (Map.Entry<String, BeforeUpdateStaminaListener> listener : beforeUpdateStaminaListeners.entrySet()) {
             int overriddenNewStamina = listener.getValue().onBeforeUpdateStamina(reason, newStamina);
             if (overriddenNewStamina != newStamina) {
-                Grasscutter.getLogger().debug("[StaminaManager] Stamina update absolute(" +
+                logger.debug("[StaminaManager] Stamina update absolute(" +
                         reason + ", " + newStamina + ") overridden to absolute(" +
                         reason + ", " + newStamina + ") by: " + listener.getKey());
                 return currentStamina;
@@ -254,7 +323,7 @@ public class StaminaManager {
         if (!player.isPaused() && sustainedStaminaHandlerTimer == null) {
             sustainedStaminaHandlerTimer = new Timer();
             sustainedStaminaHandlerTimer.scheduleAtFixedRate(new SustainedStaminaHandler(), 0, 200);
-            Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer started");
+            logger.debug("[MovementManager] SustainedStaminaHandlerTimer started");
         }
     }
 
@@ -262,7 +331,7 @@ public class StaminaManager {
         if (sustainedStaminaHandlerTimer != null) {
             sustainedStaminaHandlerTimer.cancel();
             sustainedStaminaHandlerTimer = null;
-            Grasscutter.getLogger().debug("[MovementManager] SustainedStaminaHandlerTimer stopped");
+            logger.debug("[MovementManager] SustainedStaminaHandlerTimer stopped");
         }
     }
 
@@ -276,12 +345,26 @@ public class StaminaManager {
             return;
         }
         setSkillCast(skillId, casterId);
+        // Handle immediate stamina cost
+        if (ClaymoreSkills.contains(skillId)) {
+            // Exclude claymore as their stamina cost starts when MixinStaminaCost gets in
+            return;
+        }
+        // TODO: Differentiate normal attacks from charged attacks and exclude
+        // TODO: Temporary: Exclude non-claymore attacks for now
+        if (BowSkills.contains(skillId)
+                || SwordSkills.contains(skillId)
+                || PolearmSkills.contains(skillId)
+                || CatalystSkills.contains(skillId)
+        ) {
+            return;
+        }
         handleImmediateStamina(session, skillId);
     }
 
     public void handleMixinCostStamina(boolean isSwim) {
         // Talent moving and claymore avatar charged attack duration
-        // Grasscutter.getLogger().trace("abilityMixinCostStamina: isSwim: " + isSwim);
+        // logger.trace("abilityMixinCostStamina: isSwim: " + isSwim);
         if (lastSkillCasterId == player.getTeamManager().getCurrentAvatarEntity().getId()) {
             handleImmediateStamina(cachedSession, lastSkillId);
         }
@@ -299,7 +382,7 @@ public class StaminaManager {
             return;
         }
         currentState = motionState;
-        // Grasscutter.getLogger().trace("" + currentState);
+        // logger.trace("" + currentState);
         Vector posVector = motionInfo.getPos();
         Position newPos = new Position(posVector.getX(), posVector.getY(), posVector.getZ());
         if (newPos.getX() != 0 && newPos.getY() != 0 && newPos.getZ() != 0) {
@@ -337,8 +420,6 @@ public class StaminaManager {
     }
 
     private void handleImmediateStamina(GameSession session, int skillId) {
-        // Non-claymore avatar attacks
-        // TODO: differentiate charged vs normal attack
         Consumption consumption = getFightConsumption(skillId);
         updateStaminaRelative(session, consumption);
     }
@@ -349,7 +430,7 @@ public class StaminaManager {
             int currentStamina = player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
             int maxStamina = player.getProperty(PlayerProperty.PROP_MAX_STAMINA);
             if (moving || (currentStamina < maxStamina)) {
-                Grasscutter.getLogger().trace("Player moving: " + moving + ", stamina full: " +
+                logger.trace("Player moving: " + moving + ", stamina full: " +
                         (currentStamina >= maxStamina) + ", recalculate stamina");
 
                 Consumption consumption;
@@ -396,7 +477,7 @@ public class StaminaManager {
                             // For others recover after 2 seconds (10 ticks) - as official server does.
                             staminaRecoverDelay++;
                             consumption.amount = 0;
-                            Grasscutter.getLogger().trace("[StaminaManager] Delaying recovery: " + staminaRecoverDelay);
+                            logger.trace("[StaminaManager] Delaying recovery: " + staminaRecoverDelay);
                         }
                     }
                     updateStaminaRelative(cachedSession, consumption);
@@ -414,7 +495,7 @@ public class StaminaManager {
     private void handleDrowning() {
         int stamina = player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
         if (stamina < 10) {
-            Grasscutter.getLogger().trace(player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA) + "/" +
+            logger.trace(player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA) + "/" +
                     player.getProperty(PlayerProperty.PROP_MAX_STAMINA) + "\t" + currentState);
             if (currentState != MotionState.MOTION_SWIM_IDLE) {
                 killAvatar(cachedSession, cachedEntity, PlayerDieType.PLAYER_DIE_DRAWN);
@@ -427,52 +508,32 @@ public class StaminaManager {
     // Stamina Consumption Reduction: https://genshin-impact.fandom.com/wiki/Stamina
 
     private Consumption getFightConsumption(int skillCasting) {
-        /* TODO:
-            Instead of handling here, consider call StaminaManager.updateStamina****() with a Consumption object with
-                type=FIGHT and a modified amount when handling attacks for more accurate attack start/end time and
-                other info. Handling it here could be very complicated.
-            Charged attack
-                Default:
-                    Polearm: (-2500)
-                    Claymore: (-4000 per second, -800 each tick)
-                    Catalyst: (-5000)
-                Talent:
-                    Ningguang: When Ningguang is in possession of Star Jades, her Charged Attack does not consume Stamina. (Catalyst * 0)
-                    Klee: When Jumpy Dumpty and Normal Attacks deal DMG, Klee has a 50% chance to obtain an Explosive Spark.
-                            This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina. (Catalyst * 0)
-                Constellations:
-                    Hu Tao: While in a Paramita Papilio state activated by Guide to Afterlife, Hu Tao's Charge Attacks do not consume Stamina. (Polearm * 0)
-                Character Specific:
-                    Keqing: (-2500)
-                    Diluc: (Claymore * 0.5)
-            Talent Moving: (Those are skills too)
-                Ayaka: (-1000 initial) (-1500 per second) When the Cryo application at the end of Kamisato Art: Senho hits an opponent (+1000)
-                Mona: (-1000 initial) (-1500 per second)
-         */
-
-        // TODO: Currently only handling Ayaka and Mona's talent moving initial costs.
-        Consumption consumption = new Consumption();
-
         // Talent moving
-        HashMap<Integer, List<Consumption>> talentMovementConsumptions = new HashMap<>() {{
-            // List[0] = initial cost, [1] = sustained cost. Sustained costs are divided by 3 per second as MixinStaminaCost is triggered at 3Hz.
-            put(10013, List.of(new Consumption(ConsumptionType.TALENT_DASH_START, -1000), new Consumption(ConsumptionType.TALENT_DASH, -500))); // Kamisato Ayaka
-            put(10413, List.of(new Consumption(ConsumptionType.TALENT_DASH_START, -1000), new Consumption(ConsumptionType.TALENT_DASH, -500))); // Mona
-        }};
-        if (talentMovementConsumptions.containsKey(skillCasting)) {
-            if (lastSkillFirstTick) {
-                consumption = talentMovementConsumptions.get(skillCasting).get(0);
-            } else {
-                lastSkillFirstTick = false;
-                consumption = talentMovementConsumptions.get(skillCasting).get(1);
-            }
+        if (TalentMovements.contains(skillCasting)) {
+            // TODO: recover 1000 if kamisato hits an enemy at the end of dashing
+            return getTalentMovingSustainedCost(skillCasting);
         }
-        // TODO: Claymore avatar charged attack
-        // HashMap<Integer, Integer> fightConsumptions = new HashMap<>();
-
-        // TODO: Non-claymore avatar charged attack
-
-        return consumption;
+        // Bow avatar charged attack
+        if (BowSkills.contains(skillCasting)) {
+            return getBowSustainedCost(skillCasting);
+        }
+        // Claymore avatar charged attack
+        if (ClaymoreSkills.contains(skillCasting)) {
+            return getClaymoreSustainedCost(skillCasting);
+        }
+        // Catalyst avatar charged attack
+        if (CatalystSkills.contains(skillCasting)) {
+            return getCatalystSustainedCost(skillCasting);
+        }
+        // Polearm avatar charged attack
+        if (PolearmSkills.contains(skillCasting)) {
+            return getPolearmSustainedCost(skillCasting);
+        }
+        // Sword avatar charged attack
+        if (SwordSkills.contains(skillCasting)) {
+            return getSwordSustainedCost(skillCasting);
+        }
+        return new Consumption();
     }
 
     private Consumption getClimbConsumption() {
@@ -550,13 +611,17 @@ public class StaminaManager {
         if (currentState == MotionState.MOTION_SKIFF_POWERED_DASH) {
             return new Consumption(ConsumptionType.POWERED_SKIFF);
         }
-        Consumption consumption = new Consumption(ConsumptionType.SKIFF);
         // No known reduction for skiffing.
-        return consumption;
+        return new Consumption(ConsumptionType.SKIFF);
     }
 
     private Consumption getOtherConsumptions() {
-        // TODO: Add logic
+        if (currentState == MotionState.MOTION_NOTIFY) {
+            if (BowSkills.contains(lastSkillId)) {
+                return new Consumption(ConsumptionType.FIGHT, 500);
+            }
+        }
+        // TODO: Add other logic
         return new Consumption();
     }
 
@@ -583,5 +648,67 @@ public class StaminaManager {
         // TODO: Check consumed food (buff?) and return proper factor
         float reduction = 1;
         return reduction;
+    }
+
+    private Consumption getTalentMovingSustainedCost(int skillId) {
+        if (lastSkillFirstTick) {
+            lastSkillFirstTick = false;
+            return new Consumption(ConsumptionType.TALENT_DASH, -1000);
+        } else {
+            return new Consumption(ConsumptionType.TALENT_DASH, -500);
+        }
+    }
+
+    private Consumption getBowSustainedCost(int skillId) {
+        // Note that bow skills actually recovers stamina
+        // Character specific handling
+        // switch (skillId) {
+        //     // No known bow skills cost stamina
+        // }
+        return new Consumption(ConsumptionType.FIGHT, +500);
+    }
+
+    private Consumption getCatalystSustainedCost(int skillId) {
+        Consumption consumption = new Consumption(ConsumptionType.FIGHT, -5000);
+        // Character specific handling
+        switch (skillId) {
+            // TODO: Yanfei
+        }
+        return consumption;
+    }
+
+    private Consumption getClaymoreSustainedCost(int skillId) {
+        Consumption consumption = new Consumption(ConsumptionType.FIGHT, -1333); // 4000 / 3 = 1333
+        // Character specific handling
+        switch (skillId) {
+            case 10571: // Arataki Itto, does not consume stamina at all.
+                consumption.amount = 0;
+                break;
+            case 10160: // Diluc, with talent "Relentless" stamina cost is decreased by 50%
+                // TODO: How to get talent status?
+                consumption.amount /= 2;
+                break;
+        }
+        return consumption;
+    }
+
+    private Consumption getPolearmSustainedCost(int skillId) {
+        Consumption consumption = new Consumption(ConsumptionType.FIGHT, -2500);
+        // Character specific handling
+        switch (skillId) {
+            // TODO:
+        }
+        return consumption;
+    }
+
+    private Consumption getSwordSustainedCost(int skillId) {
+        Consumption consumption = new Consumption(ConsumptionType.FIGHT, -2000);
+        // Character specific handling
+        switch (skillId) {
+            case 10421: // Keqing, -2500
+                consumption.amount = -2500;
+                break;
+        }
+        return consumption;
     }
 }
