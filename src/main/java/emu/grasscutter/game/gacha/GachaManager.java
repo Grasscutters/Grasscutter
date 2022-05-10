@@ -96,8 +96,8 @@ public class GachaManager {
 		if ( t < softPity) {
 			return base;
 		}
-		float a = t - softPity + 1;
-		float b = hardPity - softPity + 1;
+		float a = t - (softPity + 1);
+		float b = hardPity - (softPity + 1);
 		return (int)((10000-base)*a/b) + base;
 	}
 	
