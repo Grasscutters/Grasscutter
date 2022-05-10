@@ -18,9 +18,11 @@ public class GachaBanner {
 	private int[] rateUpItems2;
 	private int baseYellowWeight = 60; // Max 10000
 	private int basePurpleWeight = 510; // Max 10000
-	private int eventChance = 50; // Chance to win a featured event item
-	private int softPity = 75;
+	private int eventChance = 5000; // Chance to win a featured event item
+	private int softPity = 74; // Increase the rate at this
 	private int hardPity = 90;
+	private int prupleSoftPity = 9;
+	private int prupleHardPity = 10;
 	private BannerType bannerType = BannerType.STANDARD;
 	
 	public int getGachaType() {
@@ -80,11 +82,17 @@ public class GachaBanner {
 	}
 	
 	public int getSoftPity() {
-		return softPity - 1;
+		return softPity;
 	}
 
 	public int getHardPity() {
-		return hardPity - 1;
+		return hardPity;
+	}
+	public int getPrupleSoftPity(){
+		return prupleSoftPity;
+	}
+	public int getPrupleHardPity(){
+		return prupleHardPity;
 	}
 
 	public int getEventChance() {

@@ -42,7 +42,7 @@ public class GachaManager {
 
 	private int[] yellowAvatars = new int[] {1003, 1016, 1042, 1035, 1041};
 	private int[] yellowWeapons = new int[] {11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502};
-	private int[] purpleAvatars = new int[] {1006, 1014, 1015, 1020, 1021, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1053, 1055, 1056, 1064};
+	private int[] purpleAvatars = new int[] {1006, 1014, 1015, 1020, 1021, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1050, 1053, 1055, 1056, 1064};
 	private int[] purpleWeapons = new int[] {11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407, 14401, 14402, 14403, 14409, 15401, 15402, 15403, 15405};
 	private int[] blueWeapons = new int[] {11301, 11302, 11306, 12301, 12302, 12305, 13303, 14301, 14302, 14304, 15301, 15302, 15304};
 	
@@ -65,11 +65,12 @@ public class GachaManager {
 	}
 	
 	public int randomRange(int min, int max) {
-		return ThreadLocalRandom.current().nextInt(max - min + 1) + min;
+		// [min, max)
+		return ThreadLocalRandom.current().nextInt(max - min) + min;
 	}
 	
 	public int getRandom(int[] array) {
-		return array[randomRange(0, array.length - 1)];
+		return array[randomRange(0, array.length)];
 	}
 	
 	public synchronized void load() {
@@ -89,6 +90,15 @@ public class GachaManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	private static int calculateChance(int base, int softPity,int hardPity,int t){
+		if ( t < softPity) {
+			return base;
+		}
+		float a = t - softPity + 1;
+		float b = hardPity - softPity + 1;
+		return base + 10000 - (int)(base*a/b);
 	}
 	
 	public synchronized void doPulls(Player player, int gachaType, int times) {
@@ -123,18 +133,18 @@ public class GachaManager {
 		IntList wonItems = new IntArrayList(times);
 		
 		for (int i = 0; i < times; i++) {
-			int random = this.randomRange(1, 10000);
+			int random = this.randomRange(0, 10000);
 			int itemId = 0;
-			
-			int bonusYellowChance = gachaInfo.getPity5() >= banner.getSoftPity() ? 100 * (gachaInfo.getPity5() - banner.getSoftPity() - 1): 0;
-			int yellowChance = banner.getBaseYellowWeight() + (int) Math.floor(100f * (gachaInfo.getPity5() / (banner.getSoftPity() - 1D))) + bonusYellowChance;
-			int purpleChance = 10000 - (banner.getBasePurpleWeight() + (int) Math.floor(790f * (gachaInfo.getPity4() / 8f)));
+			gachaInfo.addPity5(1);
+			gachaInfo.addPity4(1);
+			int yellowChance = calculateChance(banner.getBaseYellowWeight(), banner.getSoftPity(), banner.getHardPity(), gachaInfo.getPity5());
+			int purpleChance = calculateChance(banner.getBasePurpleWeight(), banner.getPrupleSoftPity(), banner.getPrupleHardPity(), gachaInfo.getPity4());
 		
-			if (random <= yellowChance || gachaInfo.getPity5() >= banner.getHardPity()) {
+			if (random < yellowChance) {
 				if (banner.getRateUpItems1().length > 0) {
-					int eventChance = this.randomRange(1, 100);
+					int eventChance = this.randomRange(0, 10000);
 					
-					if (eventChance <= banner.getEventChance() || gachaInfo.getFailedFeaturedItemPulls() >= 1) {
+					if (eventChance < banner.getEventChance() || gachaInfo.getFailedFeaturedItemPulls() > 0) {
 						itemId = getRandom(banner.getRateUpItems1());
 						gachaInfo.setFailedFeaturedItemPulls(0);
 					} else {
@@ -144,44 +154,40 @@ public class GachaManager {
 				}
 				
 				if (itemId == 0) {
-					int typeChance = this.randomRange(banner.getBannerType() == BannerType.WEAPON ? 2 : 1, banner.getBannerType() == BannerType.EVENT ? 1 : 2);
-					if (typeChance == 1) {
+					int typeChance = this.randomRange(banner.getBannerType() == BannerType.WEAPON ? 1 : 0, banner.getBannerType() == BannerType.EVENT ? 1 : 2);
+					if (typeChance == 0) {
 						itemId = getRandom(this.yellowAvatars);
 					} else {
 						itemId = getRandom(this.yellowWeapons);
 					}
 				}
-
 				// Pity
-				gachaInfo.addPity4(1);
 				gachaInfo.setPity5(0);
-			} else if (random >= purpleChance || gachaInfo.getPity4() >= 9) {
+			} else if (random < purpleChance) {
 				if (banner.getRateUpItems2().length > 0) {
-					int eventChance = this.randomRange(1, 100);
-					
-					if (eventChance >= 50) {
+					int eventChance = this.randomRange(0, 10000);
+					if (eventChance < banner.getEventChance() || gachaInfo.getfailedFeaturedPrupleItemPulls() > 0) {
 						itemId = getRandom(banner.getRateUpItems2());
+						gachaInfo.setfailedFeaturedPrupleItemPulls(0);
+					} else {
+						gachaInfo.addfailedFeaturedPrupleItemPulls(1);
 					}
 				}
 				
 				if (itemId == 0) {
-					int typeChance = this.randomRange(banner.getBannerType() == BannerType.WEAPON ? 2 : 1, banner.getBannerType() == BannerType.EVENT ? 1 : 2);
-					if (typeChance == 1) {
+					int typeChance = this.randomRange(0, 2);
+					if (typeChance == 0) {
 						itemId = getRandom(this.purpleAvatars);
 					} else {
 						itemId = getRandom(this.purpleWeapons);
 					}
 				}
 				
-				// Pity
-				gachaInfo.addPity5(1);
-				gachaInfo.setPity4(0);
+				// The pity5 pushes the pity4 back.
+				int pity4 = Math.max(0,gachaInfo.getPity4() - banner.getPrupleHardPity());
+				gachaInfo.setPity4(pity4);
 			} else {
 				itemId = getRandom(this.blueWeapons);
-				
-				// Pity
-				gachaInfo.addPity4(1);
-				gachaInfo.addPity5(1);
 			}
 			
 			// Add winning item

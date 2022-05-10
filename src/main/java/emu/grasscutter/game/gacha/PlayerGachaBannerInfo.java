@@ -7,6 +7,7 @@ public class PlayerGachaBannerInfo {
 	private int pity5 = 0;
 	private int pity4 = 0;
 	private int failedFeaturedItemPulls = 0;
+	private int failedFeaturedPrupleItemPulls = 0;
 	
 	public int getPity5() {
 		return pity5;
@@ -35,6 +36,15 @@ public class PlayerGachaBannerInfo {
 	public int getFailedFeaturedItemPulls() {
 		return failedFeaturedItemPulls;
 	}
+
+	public int getfailedFeaturedPrupleItemPulls() {
+		return failedFeaturedPrupleItemPulls;
+	}
+
+	public void setfailedFeaturedPrupleItemPulls(int failedFeaturedPrupleItemPulls) {
+		this.failedFeaturedPrupleItemPulls = failedFeaturedPrupleItemPulls;
+	}
+	
 	
 	public void setFailedFeaturedItemPulls(int failedEventCharacterPulls) {
 		this.failedFeaturedItemPulls = failedEventCharacterPulls;
@@ -42,5 +52,8 @@ public class PlayerGachaBannerInfo {
 	
 	public void addFailedFeaturedItemPulls(int amount) {
 		failedFeaturedItemPulls += amount;
+	}
+	public void addfailedFeaturedPrupleItemPulls(int amount) {
+		this.failedFeaturedPrupleItemPulls += amount;
 	}
 }
