@@ -11,20 +11,19 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "resetconst", usage = "resetconst [all]",
-        description = "Resets the constellation level on your current active character, will need to relog after using the command to see any changes.",
-        aliases = {"resetconstellation"}, permission = "player.resetconstellation")
+        aliases = {"resetconstellation"}, permission = "player.resetconstellation", permissionTargeted = "player.resetconstellation.others", description = "commands.resetConst.description")
 public final class ResetConstCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
 
         if (args.size() > 0 && args.get(0).equalsIgnoreCase("all")) {
             targetPlayer.getAvatars().forEach(this::resetConstellation);
-            CommandHandler.sendMessage(sender, translate("commands.resetConst.reset_all"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.resetConst.reset_all"));
         } else {
             EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
             if (entity == null) {
@@ -34,7 +33,7 @@ public final class ResetConstCommand implements CommandHandler {
             Avatar avatar = entity.getAvatar();
             this.resetConstellation(avatar);
 
-            CommandHandler.sendMessage(sender, translate("commands.resetConst.success", avatar.getAvatarData().getName()));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.resetConst.success", avatar.getAvatarData().getName()));
         }
     }
 

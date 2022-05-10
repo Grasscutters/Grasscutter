@@ -69,6 +69,7 @@ public class Avatar {
 	
 	@Transient private Player owner;
 	@Transient private AvatarData data;
+	@Transient private AvatarSkillDepotData skillDepot;
 	@Transient private long guid;	// Player unique id
 	private int avatarId;			// Id of avatar
 	
@@ -103,8 +104,8 @@ public class Avatar {
 	private int nameCardRewardId;
 	private int nameCardId;
 	
+	@Deprecated // Do not use. Morhpia only!
 	public Avatar() {
-		// Morhpia only!
 		this.equips = new Int2ObjectOpenHashMap<>();
 		this.fightProp = new Int2FloatOpenHashMap();
 		this.extraAbilityEmbryos = new HashSet<>();
@@ -140,7 +141,7 @@ public class Avatar {
 		}
 		
 		// Skill depot
-		this.setSkillDepot(getAvatarData().getSkillDepot());
+		this.setSkillDepotData(getAvatarData().getSkillDepot());
 		
 		// Set stats
 		this.recalcStats();
@@ -164,7 +165,8 @@ public class Avatar {
 	}
 
 	protected void setAvatarData(AvatarData data) {
-		this.data = data;
+		if (this.data != null) return;
+		this.data = data; // Used while loading this from the database
 	}
 
 	public int getOwnerId() {
@@ -257,9 +259,19 @@ public class Avatar {
 		return skillDepotId;
 	}
 
-	public void setSkillDepot(AvatarSkillDepotData skillDepot) {
-		// Set id
+	public AvatarSkillDepotData getSkillDepot() {
+		return skillDepot;
+	}
+	
+	protected void setSkillDepot(AvatarSkillDepotData skillDepot) {
+		if (this.skillDepot != null) return;
+		this.skillDepot = skillDepot; // Used while loading this from the database
+	}
+
+	public void setSkillDepotData(AvatarSkillDepotData skillDepot) {
+		// Set id and depot
 		this.skillDepotId = skillDepot.getId();
+		this.skillDepot = skillDepot;
 		// Clear, then add skills
 		getSkillLevelMap().clear();
 		if (skillDepot.getEnergySkill() > 0) {
@@ -501,8 +513,8 @@ public class Avatar {
 		// Set energy usage
 		if (data.getSkillDepot() != null && data.getSkillDepot().getEnergySkillData() != null) {
 			ElementType element = data.getSkillDepot().getElementType();
-			this.setFightProperty(element.getEnergyProperty(), data.getSkillDepot().getEnergySkillData().getCostElemVal());
-			this.setFightProperty((element.getEnergyProperty().getId() % 70) + 1000, data.getSkillDepot().getEnergySkillData().getCostElemVal());
+			this.setFightProperty(element.getMaxEnergyProp(), data.getSkillDepot().getEnergySkillData().getCostElemVal());
+			this.setFightProperty((element.getMaxEnergyProp().getId() % 70) + 1000, data.getSkillDepot().getEnergySkillData().getCostElemVal());
 		}
 		
 		// Artifacts

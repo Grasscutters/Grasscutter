@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -9,14 +8,13 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "godmode", usage = "godmode [on|off|toggle]",
-        description = "Prevents you from taking damage. Defaults to toggle.", permission = "player.godmode")
+@Command(label = "godmode", usage = "godmode [on|off|toggle]", permission = "player.godmode", permissionTargeted = "player.godmode.others", description = "commands.godmode.description")
 public final class GodModeCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
 
@@ -37,6 +35,6 @@ public final class GodModeCommand implements CommandHandler {
         }
 
         targetPlayer.setGodmode(enabled);
-        CommandHandler.sendMessage(sender, translate("commands.godmode.success", (enabled ? translate("commands.status.enabled") : translate("commands.status.disabled")), targetPlayer.getNickname()));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.godmode.success", (enabled ? translate(sender, "commands.status.enabled") : translate(sender, "commands.status.disabled")), targetPlayer.getNickname()));
     }
 }

@@ -256,13 +256,14 @@ public final class DispatchServer {
 				else config.enableCorsForAllOrigins();
 			}
 		});
+    
 		httpServer.get("/", (req, res) -> {
 			File welcomeFile = new File(Grasscutter.getConfig().getDispatchOptions().WelcomeFile);
 
 			if (welcomeFile.exists()) {
 				res.sendFile(welcomeFile.toPath());
 			} else {
-				res.send(translate("messages.status.welcome"));
+				res.send("<!doctype html><html><head><meta charset=\"utf8\"></head><body>" + translate("messages.status.welcome") + "</body></html>");
 			}
 		});
 

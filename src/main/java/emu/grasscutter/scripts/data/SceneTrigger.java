@@ -7,4 +7,29 @@ public class SceneTrigger {
 	public String source;
 	public String condition;
 	public String action;
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof SceneTrigger sceneTrigger){
+			return this.name.equals(sceneTrigger.name);
+		}
+		return super.equals(obj);
+	}
+
+	@Override
+	public int hashCode() {
+		return name.hashCode();
+	}
+
+	@Override
+	public String toString() {
+		return "SceneTrigger{" +
+				"name='" + name + '\'' +
+				", config_id=" + config_id +
+				", event=" + event +
+				", source='" + source + '\'' +
+				", condition='" + condition + '\'' +
+				", action='" + action + '\'' +
+				'}';
+	}
 }

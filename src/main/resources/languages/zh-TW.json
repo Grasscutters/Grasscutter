@@ -173,7 +173,7 @@
       "success": "已殺死 %s 目前的場上角色。"
     },
     "list": {
-      "message": "目前總線上人數：%s"
+      "success": "目前總線上人數：%s"
     },
     "permission": {
       "usage": "用法：permission <add|remove> <username> <permission>",
@@ -184,7 +184,7 @@
       "account_error": "The account cannot be found."
     },
     "position": {
-      "success": "坐標：%.3f, %.3f, %.3f\n場景ID：%d"
+      "success": "坐標：%s, %s, %s\n場景ID：%s"
     },
     "reload": {
       "reload_start": "正在重新加載設定檔。",
@@ -226,7 +226,7 @@
     "setFetterLevel": {
       "usage": "用法：setfetterlevel <level>",
       "range_error": "好感度必須在 0 到 10 之間。",
-      "fetter_set_level": "好感等級已設定為 %s",
+      "success": "好感等級已設定為 %s",
       "level_error": "無效的好感度。"
     },
     "setStats": {
@@ -293,6 +293,13 @@
       "usage": "用法：",
       "aliases": "別名：",
       "available_commands": "可用指令："
+    },
+    "unlocktower": {
+      "success": "解鎖完成。",
+      "description": "解鎖所有級別的深境螺旋"
+    },
+    "resetshop": {
+      "description": "重置商店時間"
     }
   }
 }

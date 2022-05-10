@@ -28,14 +28,20 @@ public class DungeonChallenge {
 	private int challengeId;
 	private boolean success;
 	private boolean progress;
-	
+	/**
+	 * has more challenge
+	 */
+	private boolean stage;
 	private int score;
 	private int objective = 0;
 	private IntSet rewardedPlayers;
 
-	public DungeonChallenge(Scene scene, SceneGroup group) {
+	public DungeonChallenge(Scene scene, SceneGroup group, int challengeId, int challengeIndex, int objective) {
 		this.scene = scene;
 		this.group = group;
+		this.challengeId = challengeId;
+		this.challengeIndex = challengeIndex;
+		this.objective = objective;
 		this.setRewardedPlayers(new IntOpenHashSet());
 	}
 
@@ -86,7 +92,15 @@ public class DungeonChallenge {
 	public int getScore() {
 		return score;
 	}
-	
+
+	public boolean isStage() {
+		return stage;
+	}
+
+	public void setStage(boolean stage) {
+		this.stage = stage;
+	}
+
 	public int getTimeLimit() {
 		return 600;
 	}
@@ -112,7 +126,7 @@ public class DungeonChallenge {
 		if (this.isSuccess()) {
 			// Call success script event
 			this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_SUCCESS, null);
-			
+
 			// Settle
 			settle();
 		} else {
@@ -122,8 +136,10 @@ public class DungeonChallenge {
 	
 	private void settle() {
 		getScene().getDungeonSettleObservers().forEach(o -> o.onDungeonSettle(getScene()));
-		
-		getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE, new ScriptArgs(this.isSuccess() ? 1 : 0));
+
+		if(!stage){
+			getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE, new ScriptArgs(this.isSuccess() ? 1 : 0));
+		}
 	}
 
 	public void onMonsterDie(EntityMonster entity) {
