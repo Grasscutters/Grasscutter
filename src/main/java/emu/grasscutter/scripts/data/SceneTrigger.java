@@ -21,4 +21,15 @@ public class SceneTrigger {
 		return name.hashCode();
 	}
 
+	@Override
+	public String toString() {
+		return "SceneTrigger{" +
+				"name='" + name + '\'' +
+				", config_id=" + config_id +
+				", event=" + event +
+				", source='" + source + '\'' +
+				", condition='" + condition + '\'' +
+				", action='" + action + '\'' +
+				'}';
+	}
 }
