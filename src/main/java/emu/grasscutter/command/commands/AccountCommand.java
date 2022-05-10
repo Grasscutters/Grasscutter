@@ -95,7 +95,13 @@ public final class AccountCommand implements CommandHandler {
                     CommandHandler.sendMessage(null, "limit..");
                     return;
                   }
-                  intlimit++; 
+                  intlimit++;
+
+                  Account account = DatabaseHelper.getAccountById(Integer.toString(remove.getUid()));
+                  if (account == null) {
+                    CommandHandler.sendMessage(null, "Account "+remove.getUid()+" No found?");
+                    continue;
+                  }
 
                   // Check if player online
                   Player player_online = Grasscutter.getGameServer().getPlayerByUid(remove.getUid());
@@ -107,7 +113,7 @@ public final class AccountCommand implements CommandHandler {
 
                   // Finally, we do actual deletion.
                   CommandHandler.sendMessage(null, "Remove Uid "+remove.getUid()+" Player");
-                  DatabaseHelper.deleteAccount(remove.getAccount());
+                  DatabaseHelper.deleteAccount(account);
 
                   // Add delayTime
                   try {
