@@ -6,12 +6,13 @@ import emu.grasscutter.Grasscutter;
 
 import javax.annotation.Nullable;
 import java.io.InputStream;
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 
 public final class Language {
     private final JsonObject languageData;
-    private final Map<String, String> cachedTranslations = new HashMap<>();
+    private final Map<String, String> cachedTranslations = new ConcurrentHashMap<>();
+    private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
 
     /**
      * Creates a language instance from a code.
@@ -19,7 +20,13 @@ public final class Language {
      * @return A language instance.
      */
     public static Language getLanguage(String langCode) {
-        return new Language(langCode + ".json", Grasscutter.getConfig().DefaultLanguage.toLanguageTag() + ".json");
+        if (cachedLanguages.containsKey(langCode)) {
+            return cachedLanguages.get(langCode);
+        }
+
+        var languageInst = new Language(langCode + ".json", Utils.getLanguageCode(Grasscutter.getConfig().DefaultLanguage) + ".json");
+        cachedLanguages.put(langCode, languageInst);
+        return languageInst;
     }
 
     /**
@@ -42,6 +49,7 @@ public final class Language {
     /**
      * Reads a file and creates a language instance.
      * @param fileName The name of the language file.
+     * @param fallback The name of the fallback language file.
      */
     private Language(String fileName, String fallback) {
         @Nullable JsonObject languageData = null;
