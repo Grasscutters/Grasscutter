@@ -252,14 +252,14 @@ public final class DispatchServer {
 				else config.enableCorsForAllOrigins();
 			}
 		});
-		httpServer.get("/", (req, res) -> res.send(translate("messages.status.welcome")));
+		httpServer.get("/", (req, res) -> res.send("<!doctype html><html><head><meta charset=\"utf8\"></head><body>" + translate("messages.status.welcome") + "</body></html>"));
 
 		httpServer.raw().error(404, ctx -> {
 			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING) {
 				Grasscutter.getLogger().info(translate("messages.dispatch.unhandled_request_error", ctx.method(), ctx.url()));
 			}
 			ctx.contentType("text/html");
-			ctx.result("<!doctype html><html lang=\"en\"><body><img src=\"https://http.cat/404\" /></body></html>"); // I'm like 70% sure this won't break anything.
+			ctx.result("<!doctype html><html><head><meta charset=\"utf8\"></head><body><img src=\"https://http.cat/404\" /></body></html>"); // I'm like 70% sure this won't break anything.
 		});
 
 		// Authentication Handler

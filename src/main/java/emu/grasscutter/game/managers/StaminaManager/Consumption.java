@@ -1,15 +1,18 @@
 package emu.grasscutter.game.managers.StaminaManager;
 
 public class Consumption {
-    public ConsumptionType consumptionType;
-    public int amount;
+    public ConsumptionType type = ConsumptionType.None;
+    public int amount = 0;
 
-    public Consumption(ConsumptionType ct, int a) {
-        consumptionType = ct;
-        amount = a;
+    public Consumption(ConsumptionType type, int amount) {
+        this.type = type;
+        this.amount = amount;
     }
 
-    public Consumption(ConsumptionType ct) {
-        this(ct, ct.amount);
+    public Consumption(ConsumptionType type) {
+        this(type, type.amount);
+    }
+
+    public Consumption() {
     }
 }
