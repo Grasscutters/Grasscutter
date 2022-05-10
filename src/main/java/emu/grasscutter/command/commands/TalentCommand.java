@@ -24,7 +24,7 @@ public final class TalentCommand implements CommandHandler {
         }
 
         // Upgrade skill
-        avatar.getSkillLevelMap().put(talentLevel, talentLevel);
+        avatar.getSkillLevelMap().put(talentId, talentLevel);
         avatar.save();
 
         // Packet

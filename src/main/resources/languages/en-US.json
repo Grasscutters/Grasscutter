@@ -334,6 +334,13 @@
     },
     "restart": {
       "description": "Restarts the current session"
+    },
+    "unlocktower": {
+      "success": "unlock done",
+      "description": "Unlock all levels of tower"
+    },
+    "resetshop": {
+      "description": "reset shop"
     }
   }
 }

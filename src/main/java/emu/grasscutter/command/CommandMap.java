@@ -150,7 +150,7 @@ public final class CommandMap {
                     int uid = Integer.parseInt(targetUidStr);
                     targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid);
                     if (targetPlayer == null) {
-                        CommandHandler.sendMessage(player, translate("commands.generic.execution.player_exist_offline_error"));
+                        CommandHandler.sendMessage(player, translate("commands.execution.player_exist_offline_error"));
                     } else {
                         targetPlayerIds.put(playerId, uid);
                         CommandHandler.sendMessage(player, translate("commands.execution.set_target", targetUidStr));
@@ -178,7 +178,7 @@ public final class CommandMap {
                     int uid = Integer.parseInt(arg);
                     targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid);
                     if (targetPlayer == null) {
-                        CommandHandler.sendMessage(player, translate("commands.generic.execution.player_exist_offline_error"));
+                        CommandHandler.sendMessage(player, translate("commands.execution.player_exist_offline_error"));
                         return;
                     }
                     break;
@@ -194,7 +194,7 @@ public final class CommandMap {
             if (targetPlayerIds.containsKey(playerId)) {
                 targetPlayer = Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.get(playerId));  // We check every time in case the target goes offline after being targeted
                 if (targetPlayer == null) {
-                    CommandHandler.sendMessage(player, translate("commands.generic.execution.player_exist_offline_error"));
+                    CommandHandler.sendMessage(player, translate("commands.execution.player_exist_offline_error"));
                     return;
                 }
             } else {
