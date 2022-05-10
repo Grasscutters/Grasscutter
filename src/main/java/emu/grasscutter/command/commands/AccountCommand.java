@@ -32,31 +32,48 @@ public final class AccountCommand implements CommandHandler {
         String action = args.get(0);
         String username = args.get(1);
 
+        //String aaa = Grasscutter.getConfig().getGameServerOptions().CMD_SuperAdmin;
+        // TODO: add configuration later
+
         switch (action) {
             default:
                 CommandHandler.sendMessage(null, translate(sender, "commands.account.command_usage"));
                 return;
+            case "clean_player":
+
+                 // List Player with null player
+                 List<Player> Playerbroken = DatabaseHelper.getAllPlayers().stream()
+                 .filter(g -> DatabaseHelper.getAccountById(Integer.toString(g.getUid())) == null)
+                 .toList();
+                 CommandHandler.sendMessage(null, "There are currently "+Playerbroken.size()+" players without account data that broken.");
+                 for (Player remove : Playerbroken) {
+                   DatabaseHelper.deletePlayer(remove);                  
+                 }
+                 
+                 return;
             case "clean_null_avatar":
+
                 List<Avatar> Item_ANull = DatabaseHelper.getAvatarsNullPlayer();
                 CommandHandler.sendMessage(null, "Currently found "+Item_ANull.size()+" avatar that any player doesn't use");
                 for (Avatar remove : Item_ANull) {
                   DatabaseHelper.deleteAvatar(remove);
                 }
                 CommandHandler.sendMessage(null, "done..");
+
                 return;
             case "clean_null_item":
+
                 List<GameItem> Item_Null = DatabaseHelper.getInventoryNullPlayer();
                 CommandHandler.sendMessage(null, "Currently found "+Item_Null.size()+" Items that any player doesn't use");
                 for (GameItem remove : Item_Null) {
                   DatabaseHelper.deleteItem(remove);
                 }
                 CommandHandler.sendMessage(null, "done..");
-                return;
-            case "clean_player":
 
-                 //String aaa = Grasscutter.getConfig().getGameServerOptions().CMD_SuperAdmin;
-                 // TODO: add configuration later
-                 int daylogin = 3;
+                return;
+            case "clean_account":
+
+                 int daylogin = 2;
                  int goseep = 1;
                  int limit = 1000;
                  int intlimit = 0;
@@ -65,8 +82,8 @@ public final class AccountCommand implements CommandHandler {
                  List<Player> playerAll = DatabaseHelper.getAllPlayers().stream().toList();
                  // List Player offline
                  List<Player> player_offline = playerAll.stream()
-                 .filter(tes -> tes.getProfile().getDaysSinceLogin() >= daylogin)
-                 //.filter(tes -> DatabaseHelper.getAccountById(""+tes.getUid()+"") != null)
+                 .filter(g -> g.getProfile().getDaysSinceLogin() >= daylogin)
+                 .filter(g -> DatabaseHelper.getAccountById(Integer.toString(g.getUid())) != null)
                  .toList();
 
                  CommandHandler.sendMessage(null, "Current total players "+playerAll.size()+" and "+player_offline.size()+" player who didn't log in for "+daylogin+" day ");
@@ -78,14 +95,7 @@ public final class AccountCommand implements CommandHandler {
                     CommandHandler.sendMessage(null, "limit..");
                     return;
                   }
-                  intlimit++;
-
-                  // Check Account Player (TODO: REMOVE TOO?)
-                  Account account = DatabaseHelper.getAccountById(Integer.toString(remove.getUid()));
-                  if (account == null) {
-                    CommandHandler.sendMessage(null, "Account "+remove.getUid()+" No found?");
-                    continue;
-                  }
+                  intlimit++; 
 
                   // Check if player online
                   Player player_online = Grasscutter.getGameServer().getPlayerByUid(remove.getUid());
@@ -97,7 +107,7 @@ public final class AccountCommand implements CommandHandler {
 
                   // Finally, we do actual deletion.
                   CommandHandler.sendMessage(null, "Remove Uid "+remove.getUid()+" Player");
-                  DatabaseHelper.deleteAccount(account);
+                  DatabaseHelper.deleteAccount(remove.getAccount());
 
                   // Add delayTime
                   try {
@@ -106,6 +116,19 @@ public final class AccountCommand implements CommandHandler {
                     ex.printStackTrace();
                   }
 
+                 }
+                 return;
+
+            case "clean_final":
+                 // Clear account, by find uid player
+                 List<Account> AllAccount = DatabaseHelper.getAccountAll().stream()
+                 .filter(g -> DatabaseHelper.getPlayerById((g.getPlayerUid())) == null)
+                 .toList();
+                 CommandHandler.sendMessage(null, "Current total account "+AllAccount.size()+" ");
+                 for (Account remove : AllAccount) {
+                   // Finally, we do actual deletion.
+                   CommandHandler.sendMessage(null, "Remove Uid "+remove.getPlayerUid()+" Player");
+                   DatabaseHelper.deleteAccount(remove);
                  }
                  return;
             case "create":

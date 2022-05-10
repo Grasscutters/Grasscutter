@@ -98,6 +98,34 @@ public final class DatabaseHelper {
 		return DatabaseManager.getDatastore().find(Account.class).filter(Filters.eq("playerId", playerId)).first();
 	}
 
+  public static List<Account> getAccountAll() {
+		return DatabaseManager.getDatastore().find(Account.class).stream().toList();
+	}
+
+  public static void deletePlayer(Player target) {
+		// To delete Player, we need to also delete all the other documents in the database that reference the Player (uid).
+		// This should optimally be wrapped inside a transaction, to make sure an error thrown mid-way does not leave the
+		// database in an inconsistent state, but unfortunately Mongo only supports that when we have a replica set ...
+
+		// Delete Mail.class data
+		DatabaseManager.getDatabase().getCollection("mail").deleteMany(eq("ownerUid", target.getUid()));
+		// Delete Avatar.class data
+		DatabaseManager.getDatabase().getCollection("avatars").deleteMany(eq("ownerId", target.getUid()));
+		// Delete GachaRecord.class data
+		DatabaseManager.getDatabase().getCollection("gachas").deleteMany(eq("ownerId", target.getUid()));
+		// Delete GameItem.class data
+		DatabaseManager.getDatabase().getCollection("items").deleteMany(eq("ownerId", target.getUid()));
+
+		// Delete friendships.
+		// Here, we need to make sure to not only delete the deleted account's friendships,
+		// but also all friendship entries for that account's friends.
+		DatabaseManager.getDatabase().getCollection("friendships").deleteMany(eq("ownerId", target.getUid()));
+		DatabaseManager.getDatabase().getCollection("friendships").deleteMany(eq("friendId", target.getUid()));
+
+		// Delete the player.
+		DatabaseManager.getDatastore().find(Player.class).filter(Filters.eq("id", target.getUid())).delete();
+	}
+
 	public static void deleteAccount(Account target) {
 		// To delete an account, we need to also delete all the other documents in the database that reference the account.
 		// This should optimally be wrapped inside a transaction, to make sure an error thrown mid-way does not leave the
