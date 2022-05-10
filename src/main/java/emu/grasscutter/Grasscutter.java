@@ -208,6 +208,14 @@ public final class Grasscutter {
 		return language;
 	}
 
+	public static void setLanguage(Language language) {
+        Grasscutter.language = language;
+	}
+
+	public static Language getLanguage(String langCode) {
+        return Language.getLanguage(langCode);
+	}
+
 	public static Logger getLogger() {
 		return log;
 	}

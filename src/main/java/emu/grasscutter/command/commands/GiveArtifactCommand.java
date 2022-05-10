@@ -115,11 +115,11 @@ public final class GiveArtifactCommand implements CommandHandler {
 	public void execute(Player sender, Player targetPlayer, List<String> args) {
 		// Sanity checks
 		if (targetPlayer == null) {
-			CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+			CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
 			return;
 		}
 		if (args.size() < 2) {
-			CommandHandler.sendMessage(sender, translate("commands.giveArtifact.usage"));
+			CommandHandler.sendMessage(sender, translate(sender, "commands.giveArtifact.usage"));
 			return;
 		}
 
@@ -128,13 +128,13 @@ public final class GiveArtifactCommand implements CommandHandler {
 		try {
 			itemId = Integer.parseInt(args.remove(0));
 		} catch (NumberFormatException ignored) {
-			CommandHandler.sendMessage(sender, translate("commands.giveArtifact.id_error"));
+			CommandHandler.sendMessage(sender, translate(sender, "commands.giveArtifact.id_error"));
 			return;
 		}
 
 		ItemData itemData = GameData.getItemDataMap().get(itemId);
 		if (itemData.getItemType() != ItemType.ITEM_RELIQUARY) {
-			CommandHandler.sendMessage(sender, translate("commands.giveArtifact.id_error"));
+			CommandHandler.sendMessage(sender, translate(sender, "commands.giveArtifact.id_error"));
 			return;
 		}
 
@@ -155,7 +155,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		}
 
 		if (mainPropId == -1) {
-			CommandHandler.sendMessage(sender, translate("commands.execution.argument_error"));
+			CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
 			return;
 		}
 
@@ -194,7 +194,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 				appendPropIdList.addAll(Collections.nCopies(n, appendPropId));
 			});
 		} catch (Exception ignored) {
-			CommandHandler.sendMessage(sender, translate("commands.execution.argument_error"));
+			CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
 			return;
 		}
 
@@ -206,7 +206,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		item.getAppendPropIdList().addAll(appendPropIdList);
 		targetPlayer.getInventory().addItem(item, ActionReason.SubfieldDrop);
 
-		CommandHandler.sendMessage(sender, translate("commands.giveArtifact.success", Integer.toString(itemId), Integer.toString(targetPlayer.getUid())));
+		CommandHandler.sendMessage(sender, translate(sender, "commands.giveArtifact.success", Integer.toString(itemId), Integer.toString(targetPlayer.getUid())));
 	}
 }
 
