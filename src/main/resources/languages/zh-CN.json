@@ -14,7 +14,7 @@
         "general_error": "[Dispatch] 加载 keystore 文件时发生错误！",
         "password_error": "[Dispatch] 加载 keystore 失败。正在尝试使用 keystore 默认密码...",
         "no_keystore_error": "[Dispatch] 未找到 SSL 证书！已降级到 HTTP 模式",
-        "default_password": "[Dispatch] keystore 默认密码加载成功。请考虑将 config.json 的默认密码设置为 123456"
+        "default_password": "[Dispatch] 成功加载 keystore 默认密码。请考虑将 config.json 的默认密码设置为 123456"
       },
       "no_commands_error": "此命令不适用于 Dispatch-only 模式",
       "unhandled_request_error": "[Dispatch] 潜在的未处理请求：%s %s",
@@ -181,21 +181,21 @@
       "usage": "用法：killall [玩家UID] [场景ID]",
       "scene_not_found_in_player_world": "未在玩家世界中找到此场景",
       "kill_monsters_in_scene": "已杀死场景 %s 中的 %s 个怪物。",
-      "description": "杀死所有怪物"
+      "description": "杀死所有怪物。"
     },
     "killCharacter": {
       "usage": "用法：/killcharacter [玩家ID]",
       "success": "已杀死 %s 当前角色。",
-      "description": "杀死当前角色"
+      "description": "杀死当前角色。"
     },
     "language": {
       "current_language": "当前语言是: %s",
       "language_changed": "语言切换至: %s",
-      "description": "显示或切换当前语言"
+      "description": "显示或切换当前语言。"
     },
     "list": {
       "success": "目前在线人数：%s",
-      "description": "查看所有玩家"
+      "description": "查看所有玩家。"
     },
     "permission": {
       "usage": "用法：permission <add|remove> <用户名> <权限>",
@@ -250,7 +250,7 @@
     "sendMessage": {
       "usage": "用法：sendmessage <玩家> <消息>",
       "success": "消息已发送。",
-      "description": "向指定玩家发送消息"
+      "description": "向指定玩家发送消息。"
     },
     "setFetterLevel": {
       "usage": "用法：setfetterlevel <好感度等级>",
@@ -262,7 +262,7 @@
     "setStats": {
       "usage_console": "用法：setstats|stats @<UID> <属性> <数值>",
       "usage_ingame": "用法：setstats|stats [@UID] <属性> <数值>",
-      "help_message": "\n\t可更改的属性列表：hp (生命值)| maxhp (最大生命值) | def(防御力) | atk (攻击力)| em (元素精通) | er (元素充能效率) | crate(暴击率) | cdmg (暴击伤害)| cdr (冷却缩减) | heal(治疗加成)| heali (受治疗加成)| shield (护盾强效)| defi (无视防御)\n\t(续) 元素增伤：epyro (火) | ecryo (冰)  | ehydro (水)  | egeo (岩)  | edendro (草) | eelectro (雷) | ephys (物理)\n\t(续) 元素抗性：respyro (火)  | rescryo (冰)  | reshydro (水)  | resgeo (岩) | resdendro (草) | reselectro (雷)  | resphys (物理)\n",
+      "help_message": "\n可更改的属性列表：hp (生命值)| maxhp (最大生命值) | def(防御力) | atk (攻击力)| em (元素精通) | er (元素充能效率) | crate(暴击率) | cdmg (暴击伤害)| cdr (冷却缩减) | heal(治疗加成)| heali (受治疗加成)| shield (护盾强效)| defi (无视防御)\n(续) 元素增伤：epyro (火) | ecryo (冰)  | ehydro (水)  | egeo (岩)  | edendro (草) | eelectro (雷) | ephys (物理)\n(续) 元素抗性：respyro (火)  | rescryo (冰)  | reshydro (水)  | resgeo (岩) | resdendro (草) | reselectro (雷)  | resphys (物理)\n",
       "value_error": "无效的属性值。",
       "uid_error": "无效的UID。",
       "player_error": "玩家不存在或已离线。",
@@ -285,7 +285,7 @@
     },
     "stop": {
       "success": "正在关闭服务器...",
-      "description": "停止服务器"
+      "description": "停止服务器。"
     },
     "talent": {
       "usage_1": "设置天赋等级：/talent set <天赋ID> <数值>",
@@ -324,7 +324,7 @@
       "usage": "用法：weather <天气ID> [气候ID]",
       "success": "已更改天气为 %s，气候为 %s。",
       "invalid_id": "无效的天气ID。",
-      "description": "更改天气"
+      "description": "更改天气。"
     },
     "drop": {
       "command_usage": "用法：drop <物品ID|物品名称> [数量]",
@@ -342,10 +342,10 @@
     },
     "unlocktower": {
       "success": "解锁完成。",
-      "description": "解锁深境螺旋的所有层"
+      "description": "解锁深境螺旋的所有层。"
     },
     "resetshop": {
-      "description": "重置商店时间"
+      "description": "重置商店刷新时间。"
     }
   }
 }
