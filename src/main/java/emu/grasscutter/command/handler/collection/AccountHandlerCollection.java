@@ -31,7 +31,9 @@ public final class AccountHandlerCollection {
     @SneakyThrows
     public void deleteAccount(HandlerContext context) {
         String username = context.getRequired(Fields.ACCOUNT_USERNAME, String.class);
-        if (DatabaseHelper.deleteAccount(username)) {
+        Account accountToDelete = DatabaseHelper.getAccountByName(username);
+        if (accountToDelete != null) {
+            DatabaseHelper.deleteAccount(accountToDelete);
             context.notify(translate("commands.account.delete"));
         } else {
             context.notify(translate("commands.account.no_account"));

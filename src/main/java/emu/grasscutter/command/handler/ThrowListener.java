@@ -22,9 +22,9 @@ public class ThrowListener {
         }
         // notify the consumer if exists
         if (event.causingEvent instanceof HandlerEvent) {
-            Consumer<Exception> errorConsumer = ((HandlerEvent) event.causingEvent).context().getErrorConsumer();
+            Consumer<Throwable> errorConsumer = ((HandlerEvent) event.causingEvent).context().getErrorConsumer();
             if (errorConsumer != null) {
-                errorConsumer.accept((Exception) event.throwable);
+                errorConsumer.accept(event.throwable);
             }
         }
     }

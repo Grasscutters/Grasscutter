@@ -28,14 +28,14 @@ public class ClientChatCommandSource extends BaseCommandSource {
     }
 
     @Override
-    public synchronized void info(String message) {
+    public synchronized void onMessage(String message) {
         if (!disposed) {
             player.dropMessage(message);
         }
     }
 
     @Override
-    public synchronized void error(String error) {
+    public synchronized void onError(String error) {
         if (!disposed) {
             player.dropMessage("Error: %s".formatted(error));
         }
@@ -44,18 +44,19 @@ public class ClientChatCommandSource extends BaseCommandSource {
     @Override
     public HandlerContext buildContext(HandlerContext.HandlerContextBuilder contextBuilder) {
         HandlerContext context = contextBuilder
-                .errorConsumer(e -> error(e.toString()))
-                .resultConsumer(r -> info(r != null ? "Handler result: %s.".formatted(r.toString()) : "Handler completed."))
-                .messageConsumer(m -> info(m.toString()))
+                .errorConsumer(e -> onError(e.toString()))
+                .resultConsumer(r -> onMessage(r != null ? "Handler result: %s.".formatted(r.toString()) : "Handler completed."))
+                .messageConsumer(m -> onMessage(m.toString()))
                 .build();
-        if (context.getContent().get(ContextFields.TARGET_UID) == null) {
-            Integer targetUid = (Integer) get(PERSISTED_TARGET_KEY);
-            if (targetUid != null) {
-                context = context.toBuilder()
-                        .content(ContextFields.TARGET_UID, targetUid)
-                        .content(ContextFields.SENDER_UID, player.getUid())
-                        .build();
-            }
+        Integer targetUid = context.getOptional(
+                ContextFields.TARGET_UID,
+                getOrNull(PERSISTED_TARGET_KEY, Integer.class)
+        );
+        if (targetUid != null) {
+            context = context.toBuilder()
+                    .content(ContextFields.TARGET_UID, targetUid)
+                    .content(ContextFields.SENDER_UID, player.getUid())
+                    .build();
         }
         return context;
     }

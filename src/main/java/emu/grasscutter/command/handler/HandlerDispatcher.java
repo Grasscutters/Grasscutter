@@ -67,10 +67,9 @@ public final class HandlerDispatcher {
         for (Method method: handlerMethods) {
             Class<?>[] parameterTypes = method.getParameterTypes();
             if (parameterTypes.length != 1
-                    || !parameterTypes[0].equals(HandlerContext.class)
-                    || !method.getReturnType().equals(void.class)) {
+                    || !parameterTypes[0].equals(HandlerContext.class)) {
                 throw new RuntimeException(
-                        "The signature of %s must be \"void (HandlerContext)\".".formatted(method.getName())
+                        "The only allowed parameter of %s is \"HandlerContext\".".formatted(method.getName())
                 );
             }
             if ((method.getModifiers() & (Modifier.STATIC | Modifier.PUBLIC)) != Modifier.PUBLIC) {

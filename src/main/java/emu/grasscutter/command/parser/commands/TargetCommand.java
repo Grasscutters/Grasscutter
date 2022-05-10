@@ -13,16 +13,16 @@ public class TargetCommand {
     @DefaultHandler
     @Description("commands.target.description")
     public void setTarget(BaseCommandSource source, @OptionalArgument Integer targetUid) {
-        if (source.get(PERSISTED_TARGET_KEY) != null) {
+        if (source.getOrNull(PERSISTED_TARGET_KEY, Integer.class) != null) {
             source.popPrompt();
         }
         source.put(PERSISTED_TARGET_KEY, targetUid);
         if (targetUid == null) {
-            source.info(translate("commands.execution.clear_target"));
+            source.onMessage(translate("commands.execution.clear_target"));
             return;
         }
         source.pushPrompt("Target: %d".formatted(targetUid));
-        source.info(translate("commands.execution.set_target", targetUid.toString()));
+        source.onMessage(translate("commands.execution.set_target", targetUid.toString()));
     }
     public static final String PERSISTED_TARGET_KEY = "target.uid";
 }

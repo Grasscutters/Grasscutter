@@ -32,12 +32,12 @@ public final class ServerConsoleSource extends BaseCommandSource {
     }
 
     @Override
-    public synchronized void info(String message) {
+    public synchronized void onMessage(String message) {
         Grasscutter.getLogger().info(message);
     }
 
     @Override
-    public synchronized void error(String error) {
+    public synchronized void onError(String error) {
         Grasscutter.getLogger().error(error);
     }
 
@@ -57,15 +57,13 @@ public final class ServerConsoleSource extends BaseCommandSource {
     public HandlerContext buildContext(HandlerContext.HandlerContextBuilder contextBuilder) {
         HandlerContext context = contextBuilder
                 .errorConsumer(e -> Grasscutter.getLogger().error(e.toString(), e))
-                .resultConsumer(r -> info(r != null ? "Result: %s.".formatted(r.toString()) : "Completed."))
-                .messageConsumer(m -> info(m.toString()))
+                .resultConsumer(r -> onMessage(r != null ? "Result: %s.".formatted(r.toString()) : "Completed."))
+                .messageConsumer(m -> onMessage(m.toString()))
                 .build();
         // inject target into context if not implicitly specified
-        if (context.getContent().get(ContextFields.TARGET_UID) == null) {
-            Integer targetUid = (Integer) get(PERSISTED_TARGET_KEY);
-            if (targetUid != null) {
-                context = context.toBuilder().content(ContextFields.TARGET_UID, targetUid).build();
-            }
+        Integer targetUid = context.getOptional(ContextFields.TARGET_UID, getOrNull(PERSISTED_TARGET_KEY, Integer.class));
+        if (targetUid != null) {
+            context = context.toBuilder().content(ContextFields.TARGET_UID, targetUid).build();
         }
         return context;
     }

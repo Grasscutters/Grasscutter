@@ -1,45 +1,17 @@
 package emu.grasscutter.command.source;
 
+import emu.grasscutter.command.BaseContext;
 import emu.grasscutter.command.handler.HandlerContext;
 import emu.grasscutter.command.parser.CommandParser;
-import emu.grasscutter.command.parser.annotation.Command;
 import emu.grasscutter.command.parser.annotation.Origin;
-import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.BiConsumer;
 
-public abstract class BaseCommandSource {
+public abstract class BaseCommandSource extends BaseContext {
 
-    protected final ConcurrentHashMap<String, Object> persistedContext = new ConcurrentHashMap<>();
     protected BiConsumer<BaseCommandSource, String> registeredCommandConsumer;
-
-    /**
-     * Save <code>value</code> to current session.
-     * @param key key with which the specified value is to be associated
-     * @param value value to be associated with the specified key, or <code>null</code> to remove the value.
-     * @return the previous value associated with key, or null if there was no mapping for key
-     */
-    public Object put(@NotNull String key, Object value) {
-        if (value != null) {
-            return persistedContext.put(key, value);
-        }
-        return persistedContext.remove(key);
-    }
-
-    /**
-     * Get a previously stored value by its key.
-     * @param key the key whose associated value is to be returned
-     * @return the value, or <code>null</code> if the <code>key</code> is not associated with one
-     */
-    public Object get(@NotNull String key) {
-        return persistedContext.get(key);
-    }
-
-    public boolean containsKey(@NotNull String key) {
-        return persistedContext.containsKey(key);
-    }
 
     public abstract String[] getPermissions();
     public abstract Origin getOrigin();
@@ -47,13 +19,13 @@ public abstract class BaseCommandSource {
     /**
      * Display a message to current source.
      */
-    public synchronized void info(String message) {
+    public synchronized void onMessage(String message) {
     }
 
     /**
      * Display an error to current source.
      */
-    public synchronized void error(String error) {
+    public synchronized void onError(String error) {
     }
 
     /**

@@ -1,9 +1,9 @@
 package emu.grasscutter.command.parser;
 
-import emu.grasscutter.command.parser.exception.InvalidArgumentException;
-import emu.grasscutter.command.parser.exception.ParserException;
-import emu.grasscutter.command.parser.exception.TooFewArgumentsException;
-import emu.grasscutter.command.parser.exception.UnsupportedTypeException;
+import emu.grasscutter.command.exception.InvalidArgumentException;
+import emu.grasscutter.command.exception.ParserException;
+import emu.grasscutter.command.exception.TooFewArgumentsException;
+import emu.grasscutter.command.exception.UnsupportedTypeException;
 import lombok.SneakyThrows;
 
 import java.util.*;
@@ -64,7 +64,7 @@ public class ParseUtil {
         return string;
     }
 
-    public <T> void addCastForType(Class<T> clazz, Function<String, T> cast) {
+    public static <T> void addCastForType(Class<?> clazz, Function<String, T> cast) {
         PermittedClasses.put(clazz, cast);
     }
 

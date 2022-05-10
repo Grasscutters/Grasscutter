@@ -35,7 +35,6 @@ public class MailHandlerCollection {
                     ).sendMail(mail)
             );
         }
-        context.returnWith(null);
     }
 
     public static final String MAIL_SEND = "mail.send";

@@ -1,11 +1,10 @@
 package emu.grasscutter.command.parser.tree;
 
-import emu.grasscutter.command.handler.exception.NoSuchHandlerException;
+import emu.grasscutter.command.exception.*;
 import emu.grasscutter.command.parser.ParseUtil;
 import emu.grasscutter.command.parser.PermissionUtil;
 import emu.grasscutter.command.parser.annotation.OptionalArgument;
 import emu.grasscutter.command.parser.annotation.Origin;
-import emu.grasscutter.command.parser.exception.*;
 import emu.grasscutter.command.source.BaseCommandSource;
 import lombok.*;
 import org.jetbrains.annotations.NotNull;
@@ -14,7 +13,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Queue;
 

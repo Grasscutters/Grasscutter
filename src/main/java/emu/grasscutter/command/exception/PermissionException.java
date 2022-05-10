@@ -1,4 +1,4 @@
-package emu.grasscutter.command.parser.exception;
+package emu.grasscutter.command.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

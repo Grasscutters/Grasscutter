@@ -19,6 +19,7 @@ import org.jline.reader.UserInterruptException;
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import org.reflections.Reflections;
+import org.reflections8.scanners.TypeAnnotationsScanner;
 import org.slf4j.LoggerFactory;
 
 import com.google.gson.Gson;
@@ -193,7 +194,6 @@ public final class Grasscutter {
 			isLastInterrupted = false;
 			try {
 				commandSource.runCommand(input);
-				// CommandMap.getInstance().invoke(null, null, input);
 			} catch (Exception e) {
 				Grasscutter.getLogger().error(translate("messages.game.command_error"), e);
 			}

@@ -1,7 +1,6 @@
 package emu.grasscutter.command.handler;
 
-import emu.grasscutter.command.handler.exception.NoSuchArgumentException;
-import emu.grasscutter.command.handler.exception.NoSuchHandlerException;
+import emu.grasscutter.command.exception.NoSuchHandlerException;
 import lombok.SneakyThrows;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -23,17 +22,13 @@ public class DispatchListener {
             throw new NoSuchHandlerException(event.key());
         }
         try {
-            method.invoke(instance, event.context());
-        } catch (InvocationTargetException e) {
-            Throwable target = e.getTargetException();
-            if (target instanceof HandlerSuccess s) { // check if it runs successfully
-                Consumer<Object> resultConsumer = event.context().getResultConsumer();
-                if (resultConsumer != null) {
-                    resultConsumer.accept(s.getResult());
-                }
-            } else { // unwrap and throw so that ThrowListener can handle this as exceptions
-                throw target;
+            Object ret = method.invoke(instance, event.context());
+            Consumer<Object> resultConsumer = event.context().getResultConsumer();
+            if (resultConsumer != null) {
+                resultConsumer.accept(ret);
             }
+        } catch (InvocationTargetException e) {
+            throw e.getTargetException();
         }
     }
 }
