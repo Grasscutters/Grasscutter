@@ -98,7 +98,7 @@ public class GachaManager {
 		}
 		float a = t - softPity + 1;
 		float b = hardPity - softPity + 1;
-		return base + 10000 - (int)(base*a/b);
+		return (int)((10000-base)*a/b) + base;
 	}
 	
 	public synchronized void doPulls(Player player, int gachaType, int times) {
