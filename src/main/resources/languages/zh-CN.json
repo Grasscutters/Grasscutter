@@ -12,9 +12,9 @@
       "request": "[Dispatch] 客户端 %s 请求：%s %s",
       "keystore": {
         "general_error": "[Dispatch] 加载 keystore 文件时发生错误！",
-        "password_error": "[Dispatch] 加载 keystore 失败。正在尝试使用默认密码...",
-        "no_keystore_error": "[Dispatch] 未找到 SSL 证书！已降级到 HTTP 服务器",
-        "default_password": "[Dispatch] 默认的 keystore 密码加载成功。请考虑将 config.json 的默认密码设置为 123456"
+        "password_error": "[Dispatch] 加载 keystore 失败。正在尝试使用 keystore 默认密码...",
+        "no_keystore_error": "[Dispatch] 未找到 SSL 证书！已降级到 HTTP 模式",
+        "default_password": "[Dispatch] keystore 默认密码加载成功。请考虑将 config.json 的默认密码设置为 123456"
       },
       "no_commands_error": "此命令不适用于 Dispatch-only 模式",
       "unhandled_request_error": "[Dispatch] 潜在的未处理请求：%s %s",
@@ -23,10 +23,10 @@
         "login_success": "[Dispatch] 客户端 %s 已登录，UID为 %s",
         "login_token_attempt": "[Dispatch] 客户端 %s 正在尝试使用 token 登录",
         "login_token_error": "[Dispatch] 客户端 %s 使用 token 登录失败",
-        "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID为 %s",
+        "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID 为 %s",
         "combo_token_success": "[Dispatch] 客户端 %s 交换 token 成功",
         "combo_token_error": "[Dispatch] 客户端 %s 交换 token 失败",
-        "account_login_create_success": "[Dispatch] 客户端 %s 登录失败: 已注册UID为 %s 的账号",
+        "account_login_create_success": "[Dispatch] 客户端 %s 登录失败: 已注册 UID 为 %s 的账号",
         "account_login_create_error": "[Dispatch] 客户端 %s 登录失败：账号创建失败。",
         "account_login_exist_error": "[Dispatch] 客户端 %s 登录失败：账号不存在",
         "account_cache_error": "游戏账号缓存信息错误",
@@ -58,7 +58,7 @@
       "command_exist_error": "这条命令……好像找不到呢？。",
       "no_description_specified": "没有指定说明",
       "invalid": {
-        "amount": "无效的数量.",
+        "amount": "无效的数量。",
         "artifactId": "无效的圣遗物ID。",
         "avatarId": "无效的角色ID。",
         "avatarLevel": "无效的角色等级。",
@@ -74,7 +74,7 @@
       "uid_error": "无效的UID。",
       "player_exist_error": "玩家不存在。",
       "player_offline_error": "玩家已离线。",
-      "item_id_error": "无效的物品ID。.",
+      "item_id_error": "无效的物品ID。",
       "item_player_exist_error": "无效的物品/玩家UID。",
       "entity_id_error": "无效的实体ID。",
       "player_exist_offline_error": "玩家不存在或已离线。",
@@ -93,8 +93,8 @@
       "modify": "修改用户账号",
       "invalid": "无效的UID。",
       "exists": "账号已存在。",
-      "create": "已创建账号，UID 为 %s 。",
-      "delete": "账号已刪除。",
+      "create": "已创建账号，UID 为 %s。",
+      "delete": "账号已删除。",
       "no_account": "账号不存在。",
       "command_usage": "用法：account <create|delete> <用户名> [uid]",
       "description": "创建或删除账号。"
@@ -151,7 +151,7 @@
       "usage": "用法：givechar <玩家> <角色ID|角色名> [数量]",
       "given": "已将角色 %s (等级 %s) 给与 %s。",
       "invalid_avatar_id": "无效的角色ID。",
-      "invalid_avatar_level": "无效的角色等级。.",
+      "invalid_avatar_level": "无效的角色等级。",
       "invalid_avatar_or_player_id": "无效的角色ID/玩家ID。",
       "description": "给予指定角色。"
     },
@@ -170,7 +170,7 @@
     },
     "heal": {
       "success": "已经治疗所有角色。",
-      "description": "治疗场上队伍的角色。"
+      "description": "治疗当前队伍的角色。"
     },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已将 [%s:%s] 踢出",
@@ -289,8 +289,8 @@
       "lower_16": "无效的天赋等级，天赋等级应小于等于15。",
       "set_id": "将天赋等级设为 %s。",
       "set_atk": "将普通攻击等级设为 %s。",
-      "set_e": "设置元素战技等级为 %s。",
-      "set_q": "设置元素爆发等级为 %s。",
+      "set_e": "将元素战技等级设为 %s。",
+      "set_q": "将元素爆发等级设为 %s。",
       "invalid_skill_id": "无效的技能ID。",
       "set_this": "将天赋等级设为 %s。",
       "invalid_level": "无效的天赋等级。",
@@ -324,11 +324,11 @@
     "drop": {
       "command_usage": "用法：drop <物品ID|物品名称> [数量]",
       "success": "已丢下 %s 个 %s。",
-      "description": "在你附近丢一个物品。"
+      "description": "在你附近丢下一个物品。"
     },
     "help": {
       "usage": "用法：",
-      "aliases": "別名：",
+      "aliases": "别名：",
       "available_commands": "可用命令：",
       "description": "发送帮助信息或显示指定命令的信息。"
     },
