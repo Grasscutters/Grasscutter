@@ -127,6 +127,7 @@ public class StaminaManager {
     // Accessors
 
     public void setSkillCast(int skillId, int skillCasterId) {
+        lastSkillFirstTick = true;
         lastSkillId = skillId;
         lastSkillCasterId = skillCasterId;
     }
@@ -460,10 +461,10 @@ public class StaminaManager {
         }};
         if (talentMovementConsumptions.containsKey(skillCasting)) {
             if (lastSkillFirstTick) {
-                consumption = talentMovementConsumptions.get(skillCasting).get(1);
+                consumption = talentMovementConsumptions.get(skillCasting).get(0);
             } else {
                 lastSkillFirstTick = false;
-                consumption = talentMovementConsumptions.get(skillCasting).get(0);
+                consumption = talentMovementConsumptions.get(skillCasting).get(1);
             }
         }
         // TODO: Claymore avatar charged attack
