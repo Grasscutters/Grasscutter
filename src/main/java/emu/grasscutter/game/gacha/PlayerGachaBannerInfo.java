@@ -53,7 +53,7 @@ public class PlayerGachaBannerInfo {
 	public void addFailedFeaturedItemPulls(int amount) {
 		failedFeaturedItemPulls += amount;
 	}
-	public void addfailedFeaturedPrupleItemPulls(int amount) {
-		this.failedFeaturedPrupleItemPulls += amount;
+	public void addfailedFeaturedPurpleItemPulls(int amount) {
+		this.failedFeaturedPurpleItemPulls += amount;
 	}
 }
