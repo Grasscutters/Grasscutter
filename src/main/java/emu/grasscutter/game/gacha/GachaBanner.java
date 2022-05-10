@@ -21,8 +21,8 @@ public class GachaBanner {
 	private int eventChance = 5000; // Chance to win a featured event item
 	private int softPity = 74; // Increase the rate at this
 	private int hardPity = 90;
-	private int prupleSoftPity = 9;
-	private int prupleHardPity = 10;
+	private int purpleSoftPity = 9;
+	private int purpleHardPity = 10;
 	private BannerType bannerType = BannerType.STANDARD;
 	
 	public int getGachaType() {
@@ -88,11 +88,11 @@ public class GachaBanner {
 	public int getHardPity() {
 		return hardPity;
 	}
-	public int getPrupleSoftPity(){
-		return prupleSoftPity;
+	public int getPurpleSoftPity(){
+		return purpleSoftPity;
 	}
-	public int getPrupleHardPity(){
-		return prupleHardPity;
+	public int getPurpleHardPity(){
+		return purpleHardPity;
 	}
 
 	public int getEventChance() {
