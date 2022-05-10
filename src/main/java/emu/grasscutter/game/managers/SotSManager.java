@@ -93,9 +93,14 @@ public class SotSManager {
     }
 
     public void refillSpringVolume() {
-        // TODO: max spring volume depends on level of the statues in Mondstadt and Liyue.
+        // Temporary: Max spring volume depends on level of the statues in Mondstadt and Liyue. Override until we have statue level.
+        // TODO: remove
         // https://genshin-impact.fandom.com/wiki/Statue_of_The_Seven#:~:text=region%20of%20Inazuma.-,Statue%20Levels,-Upon%20first%20unlocking
         player.setProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME, 8500000);
+        // Temporary: Auto enable 100% statue recovery until we can adjust statue settings in game
+        // TODO: remove
+        player.setProperty(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 100);
+        player.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
 
         long now = System.currentTimeMillis() / 1000;
         long secondsSinceLastUsed = now - player.getSpringLastUsed();

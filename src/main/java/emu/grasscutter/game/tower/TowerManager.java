@@ -122,7 +122,7 @@ public class TowerManager {
 
         if(!hasNextLevel()){
             // set up the next floor
-            recordMap.put(getNextFloorId(), new TowerLevelRecord(getNextFloorId()));
+            recordMap.putIfAbsent(getNextFloorId(), new TowerLevelRecord(getNextFloorId()));
             player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(getNextFloorId(), 1));
         }else{
             player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(currentFloorId, getCurrentLevel()));
