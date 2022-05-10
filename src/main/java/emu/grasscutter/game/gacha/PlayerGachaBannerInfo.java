@@ -41,8 +41,8 @@ public class PlayerGachaBannerInfo {
 		return failedFeaturedPurpleItemPulls;
 	}
 
-	public void setfailedFeaturedPrupleItemPulls(int failedFeaturedPrupleItemPulls) {
-		this.failedFeaturedPrupleItemPulls = failedFeaturedPrupleItemPulls;
+	public void setfailedFeaturedPurpleItemPulls(int failedFeaturedPurpleItemPulls) {
+		this.failedFeaturedPurpleItemPulls = failedFeaturedPurpleItemPulls;
 	}
 	
 	
