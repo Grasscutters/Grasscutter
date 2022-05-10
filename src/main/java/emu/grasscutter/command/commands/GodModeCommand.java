@@ -14,7 +14,7 @@ public final class GodModeCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
 
@@ -35,6 +35,6 @@ public final class GodModeCommand implements CommandHandler {
         }
 
         targetPlayer.setGodmode(enabled);
-        CommandHandler.sendMessage(sender, translate("commands.godmode.success", (enabled ? translate("commands.status.enabled") : translate("commands.status.disabled")), targetPlayer.getNickname()));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.godmode.success", (enabled ? translate(sender, "commands.status.enabled") : translate(sender, "commands.status.disabled")), targetPlayer.getNickname()));
     }
 }

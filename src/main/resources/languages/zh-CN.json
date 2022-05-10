@@ -188,6 +188,11 @@
       "success": "已杀死 %s 当前角色。",
       "description": "杀死当前角色"
     },
+    "language": {
+      "current_language": "当前语言是: %s",
+      "language_changed": "语言切换至: %s",
+      "description": "显示或切换当前语言"
+    },
     "list": {
       "success": "目前在线人数：%s",
       "description": "查看所有玩家"

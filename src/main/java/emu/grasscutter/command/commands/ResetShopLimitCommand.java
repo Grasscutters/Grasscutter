@@ -15,12 +15,12 @@ public final class ResetShopLimitCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
 
         targetPlayer.getShopLimit().forEach(x -> x.setNextRefreshTime(0));
         targetPlayer.save();
-        CommandHandler.sendMessage(sender, translate("commands.status.success"));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.status.success"));
     }
 }
