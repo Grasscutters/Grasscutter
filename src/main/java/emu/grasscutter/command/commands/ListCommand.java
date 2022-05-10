@@ -22,7 +22,7 @@ public final class ListCommand implements CommandHandler {
             needUID = args.get(0).equals("uid");
         }
 
-        CommandHandler.sendMessage(sender, translate("commands.list.success", Integer.toString(playersMap.size())));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.list.success", Integer.toString(playersMap.size())));
 
         if (playersMap.size() != 0) {
             StringBuilder playerSet = new StringBuilder();

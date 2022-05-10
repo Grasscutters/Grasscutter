@@ -14,31 +14,31 @@ public final class ChangeSceneCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
 
         if (args.size() != 1) {
-            CommandHandler.sendMessage(sender, translate("commands.changescene.usage"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.usage"));
             return;
         }
 
         try {
             int sceneId = Integer.parseInt(args.get(0));
             if (sceneId == targetPlayer.getSceneId()) {
-            	CommandHandler.sendMessage(sender, translate("commands.changescene.already_in_scene"));
+            	CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.already_in_scene"));
             	return;
             }
             
             boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, targetPlayer.getPos());
             if (!result) {
-                CommandHandler.sendMessage(sender, translate("commands.changescene.exists_error"));
+                CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.exists_error"));
                 return;
             }
 
-            CommandHandler.sendMessage(sender, translate("commands.changescene.success", Integer.toString(sceneId)));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.success", Integer.toString(sceneId)));
         } catch (Exception e) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.argument_error"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
         }
     }
 }

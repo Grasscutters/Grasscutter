@@ -4,23 +4,29 @@ public enum ConsumptionType {
     None(0),
 
     // consume
-    CLIMB_START(-500),
     CLIMBING(-150),
+    CLIMB_START(-500),
     CLIMB_JUMP(-2500),
-    SPRINT(-1800),
     DASH(-360),
-    FLY(-60),
-    SWIM_DASH_START(-20),
-    SWIM_DASH(-204),
-    SWIMMING(-80), // TODO: Slow swimming is handled per movement, not per second. Movement frequency depends on gender/age/height.
     FIGHT(0), // See StaminaManager.getFightConsumption()
+    FLY(-60),
+    // Slow swimming is handled per movement, not per second.
+    // Arm movement frequency depends on gender/age/height.
+    // TODO: Instead of cost -80 per tick, find a proper way to calculate cost.
+    SKIFF(-300), // TODO: Get real value
+    SPRINT(-1800),
+    SWIM_DASH_START(-20),
+    SWIM_DASH(-204), // -10.2 per second, 5Hz = -204 each tick
+    SWIMMING(-80),
+    TALENT_DASH(-300), // -1500 per second, 5Hz = -300 each tick
+    TALENT_DASH_START(-1000),
 
     // restore
-    STANDBY(500),
+    POWERED_FLY(500), // TODO: Get real value
+    POWERED_SKIFF(2000), // TODO: Get real value
     RUN(500),
-    WALK(500),
-    STANDBY_MOVE(500),
-    POWERED_FLY(500);
+    STANDBY(500),
+    WALK(500);
 
     public final int amount;
 

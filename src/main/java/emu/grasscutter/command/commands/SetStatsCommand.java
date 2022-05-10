@@ -175,13 +175,13 @@ public final class SetStatsCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        String syntax = sender == null ? translate("commands.setStats.usage_console") : translate("commands.setStats.usage_ingame");
-        String usage = syntax + translate("commands.setStats.help_message");
+        String syntax = sender == null ? translate(sender, "commands.setStats.usage_console") : translate(sender, "commands.setStats.usage_ingame");
+        String usage = syntax + translate(sender, "commands.setStats.help_message");
         String statStr;
         String valueStr;
 
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
 
@@ -203,7 +203,7 @@ public final class SetStatsCommand implements CommandHandler {
                 value = Float.parseFloat(valueStr);
             }
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, translate("commands.setStats.value_error"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.value_error"));
             return;
         }
 
@@ -217,10 +217,10 @@ public final class SetStatsCommand implements CommandHandler {
                 valueStr = String.format("%.0f", value);
             }
             if (targetPlayer == sender) {
-                CommandHandler.sendMessage(sender, translate("commands.setStats.set_self", stat.name, valueStr));
+                CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.set_self", stat.name, valueStr));
             } else {
                 String uidStr = targetPlayer.getAccount().getId();
-                CommandHandler.sendMessage(sender, translate("commands.setStats.set_self", stat.name, uidStr, valueStr));
+                CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.set_self", stat.name, uidStr, valueStr));
             }
         } else {
             CommandHandler.sendMessage(sender, usage);
