@@ -1,6 +1,7 @@
 package emu.grasscutter.game.player;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
@@ -379,11 +380,11 @@ public class TeamManager {
 					// convert to avatar ids
 					return newTeam.stream()
 							.map(Avatar::getAvatarId)
-							.toList();
+							.collect(Collectors.toList());
 				})
 				.filter(Objects::nonNull)
 				.map(TeamInfo::new)
-				.toList();
+				.collect(Collectors.toList());
 		this.temporaryTeam = team;
 	}
 

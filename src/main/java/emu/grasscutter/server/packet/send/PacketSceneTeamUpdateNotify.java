@@ -1,6 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -24,14 +25,19 @@ public class PacketSceneTeamUpdateNotify extends BasePacket {
 						.setSceneId(p.getSceneId())
 						.setEntityId(entityAvatar.getId())
 						.setSceneEntityInfo(entityAvatar.toProto())
-						.setWeaponGuid(entityAvatar.getAvatar().getWeapon().getGuid())
+//						.setWeaponGuid(entityAvatar.getAvatar().getWeapon().getGuid())
 						.setWeaponEntityId(entityAvatar.getWeaponEntityId())
 						.setIsPlayerCurAvatar(p.getTeamManager().getCurrentAvatarEntity() == entityAvatar)
 						.setIsOnScene(p.getTeamManager().getCurrentAvatarEntity() == entityAvatar)
 						.setAvatarAbilityInfo(AbilitySyncStateInfo.newBuilder())
 						.setWeaponAbilityInfo(AbilitySyncStateInfo.newBuilder())
 						.setAbilityControlBlock(entityAvatar.getAbilityControlBlock());
-				
+				GameItem weapon = entityAvatar.getAvatar().getWeapon();
+				if(weapon != null)
+				{
+					avatarProto.setWeaponGuid(weapon.getGuid());
+				}
+				else avatarProto.setWeaponGuid(p.getNextGameGuid());
 				if (player.getWorld().isMultiplayer()) {
 					avatarProto.setAvatarInfo(entityAvatar.getAvatar().toProto());
 					avatarProto.setSceneAvatarInfo(entityAvatar.getSceneAvatarInfo()); // why mihoyo...

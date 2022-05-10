@@ -72,3 +72,4 @@ data/gacha_mappings.js
 
 # macOS
 .DS_Store
+/local.properties

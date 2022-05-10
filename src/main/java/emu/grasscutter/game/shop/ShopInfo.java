@@ -5,6 +5,7 @@ import emu.grasscutter.data.def.ShopGoodsData;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ShopInfo {
     private int goodsId = 0;
@@ -54,7 +55,7 @@ public class ShopInfo {
 
         this.minLevel = sgd.getMinPlayerLevel();
         this.maxLevel = sgd.getMaxPlayerLevel();
-        this.costItemList = sgd.getCostItems().stream().filter(x -> x.getId() != 0).map(x -> new ItemParamData(x.getId(), x.getCount())).toList();
+        this.costItemList = sgd.getCostItems().stream().filter(x -> x.getId() != 0).map(x -> new ItemParamData(x.getId(), x.getCount())).collect(Collectors.toList());
         this.secondarySheetId = sgd.getSubTabId();
         this.shopRefreshType = sgd.getRefreshType();
         this.shopRefreshParam = sgd.getRefreshParam();
@@ -117,6 +118,10 @@ public class ShopInfo {
     }
 
     public int getScoin() {
+        if(ShopManager.DEBUG_ULTIMATED_SHOP)
+        {
+            return 0;
+        }
         return scoin;
     }
 
@@ -141,6 +146,10 @@ public class ShopInfo {
     }
 
     public int getBuyLimit() {
+        if(ShopManager.DEBUG_ULTIMATED_SHOP)
+        {
+            return Integer.MAX_VALUE - 10010;
+        }
         return buyLimit;
     }
 
@@ -183,12 +192,12 @@ public class ShopInfo {
     public ShopRefreshType getShopRefreshType() {
         if (refreshType == null)
             return ShopRefreshType.NONE;
-        return switch (refreshType) {
-            case "SHOP_REFRESH_DAILY" -> ShopInfo.ShopRefreshType.SHOP_REFRESH_DAILY;
-            case "SHOP_REFRESH_WEEKLY" -> ShopInfo.ShopRefreshType.SHOP_REFRESH_WEEKLY;
-            case "SHOP_REFRESH_MONTHLY" -> ShopInfo.ShopRefreshType.SHOP_REFRESH_MONTHLY;
-            default -> ShopInfo.ShopRefreshType.NONE;
-        };
+        switch (refreshType) {
+            case "SHOP_REFRESH_DAILY" : return ShopInfo.ShopRefreshType.SHOP_REFRESH_DAILY;
+            case "SHOP_REFRESH_WEEKLY" : return ShopInfo.ShopRefreshType.SHOP_REFRESH_WEEKLY;
+            case "SHOP_REFRESH_MONTHLY" : return ShopInfo.ShopRefreshType.SHOP_REFRESH_MONTHLY;
+            default : return ShopInfo.ShopRefreshType.NONE;
+        }
     }
 
     public void setShopRefreshType(ShopRefreshType shopRefreshType) {

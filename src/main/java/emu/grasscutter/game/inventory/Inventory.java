@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
@@ -146,7 +147,7 @@ public class Inventory implements Iterable<GameItem> {
 	}
 	
 	public void addItemParams(Collection<ItemParam> items) {
-		addItems(items.stream().map(param -> new GameItem(param.getItemId(), param.getCount())).toList(), null);
+		addItems(items.stream().map(param -> new GameItem(param.getItemId(), param.getCount())).collect(Collectors.toList()), null);
 	}
 	
 	private synchronized GameItem putItem(GameItem item) {

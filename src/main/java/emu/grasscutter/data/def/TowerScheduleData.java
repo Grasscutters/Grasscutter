@@ -4,6 +4,7 @@ import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @ResourceType(name = "TowerScheduleExcelConfigData.json")
 public class TowerScheduleData extends GameResource {
@@ -21,7 +22,7 @@ public class TowerScheduleData extends GameResource {
         super.onLoad();
         this.Schedules = this.Schedules.stream()
                 .filter(item -> item.getFloorList().size() > 0)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     public int getScheduleId() {

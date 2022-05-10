@@ -20,7 +20,7 @@ import static java.util.Map.entry;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "giveart", usage = "giveart <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]", aliases = {"gart"}, permission = "player.giveart", permissionTargeted = "player.giveart.others", description = "commands.giveArtifact.description")
-public final class GiveArtifactCommand implements CommandHandler {
+public class GiveArtifactCommand implements CommandHandler {
 	private static final Map<String, Map<EquipType, Integer>> mainPropMap = Map.ofEntries(
 		entry("hp", Map.ofEntries(entry(EquipType.EQUIP_BRACER, 14001))),
 		entry("hp%", Map.ofEntries(entry(EquipType.EQUIP_SHOES, 10980), entry(EquipType.EQUIP_RING, 50980), entry(EquipType.EQUIP_DRESS, 30980))),

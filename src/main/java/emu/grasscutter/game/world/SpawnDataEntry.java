@@ -1,6 +1,5 @@
 package emu.grasscutter.game.world;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import emu.grasscutter.utils.Position;

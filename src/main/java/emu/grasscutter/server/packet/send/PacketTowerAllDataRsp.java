@@ -28,7 +28,7 @@ public class PacketTowerAllDataRsp extends BasePacket {
 						.addAllPassedLevelRecordList(buildFromPassedLevelMap(rec.getPassedLevelMap()))
 						.build()
 				)
-				.toList();
+				.collect(Collectors.toList());
 
 		var openTimeMap = towerScheduleManager.getScheduleFloors().stream()
 				.collect(Collectors.toMap(x -> x,
@@ -55,9 +55,9 @@ public class PacketTowerAllDataRsp extends BasePacket {
 		return map.entrySet().stream()
 				.map(item -> TowerLevelRecordOuterClass.TowerLevelRecord.newBuilder()
 						.setLevelId(item.getKey())
-						.addAllSatisfiedCondList(IntStream.range(1, item.getValue() + 1).boxed().toList())
+						.addAllSatisfiedCondList(IntStream.range(1, item.getValue() + 1).boxed().collect(Collectors.toList()))
 						.build())
-				.toList();
+				.collect(Collectors.toList());
 
 	}
 

@@ -34,6 +34,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import org.danilopianini.util.SpatialIndex;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Scene {
 	private final World world;
@@ -550,7 +551,7 @@ public class Scene {
 	}
 	
 	public void onUnloadBlock(SceneBlock block) {
-		List<GameEntity> toRemove = this.getEntities().values().stream().filter(e -> e.getBlockId() == block.id).toList();
+		List<GameEntity> toRemove = this.getEntities().values().stream().filter(e -> e.getBlockId() == block.id).collect(Collectors.toList());
 
 		if (toRemove.size() > 0) {
 			toRemove.stream().forEach(this::removeEntityDirectly);

@@ -21,6 +21,7 @@ import emu.grasscutter.utils.Utils;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Opcodes(PacketOpcodes.BuyGoodsReq)
 public class HandlerBuyGoodsReq extends PacketHandler {
@@ -33,7 +34,7 @@ public class HandlerBuyGoodsReq extends PacketHandler {
             return;
 
         // Don't trust your users' input
-        List<Integer> targetShopGoodsId = buyGoodsReq.getGoodsListList().stream().map(ShopGoodsOuterClass.ShopGoods::getGoodsId).toList();
+        List<Integer> targetShopGoodsId = buyGoodsReq.getGoodsListList().stream().map(ShopGoodsOuterClass.ShopGoods::getGoodsId).collect(Collectors.toList());
         for (int goodsId : targetShopGoodsId) {
             Optional<ShopInfo> sg2 = configShop.stream().filter(x -> x.getGoodsId() == goodsId).findFirst();
             if (sg2.isEmpty())

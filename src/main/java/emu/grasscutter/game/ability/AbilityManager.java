@@ -157,7 +157,7 @@ public class AbilityManager {
 	
 	private void invokeAction(AbilityModifierAction action, GameEntity target, GameEntity sourceEntity) {
 		switch (action.type) {
-			case HealHP -> {
+			case HealHP : {
 				if (action.amount == null) {
 					return;
 				}
@@ -171,8 +171,9 @@ public class AbilityManager {
 				if (healAmount > 0) {
 					target.heal(healAmount);
 				}
+				break;
 			}
-			case LoseHP -> {
+			case LoseHP : {
 				if (action.amountByTargetCurrentHPRatio == null) {
 					return;
 				}
@@ -186,6 +187,7 @@ public class AbilityManager {
 				if (damageAmount > 0) {
 					target.damage(damageAmount);
 				}
+				break;
 			}
 		}
 	}

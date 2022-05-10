@@ -8,6 +8,13 @@
 
 buildscript {
     repositories {
+        maven{ url 'https://maven.aliyun.com/nexus/content/repositories/central/'}
+        maven { url 'https://maven.aliyun.com/repository/google'}
+        maven { url 'https://maven.aliyun.com/repository/jcenter'}
+        maven {url 'https://maven.aliyun.com/nexus/content/groups/public/'}
+        mavenCentral()
+        google()
+        maven { url 'https://jitpack.io' }
         maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
@@ -39,14 +46,14 @@ plugins {
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
 
 group = 'xyz.grasscutters'
 version = '1.1.1-dev'
 
-sourceCompatibility = 17
-targetCompatibility = 17
+sourceCompatibility = 11
+targetCompatibility = 11
 
 java {
     withJavadocJar()

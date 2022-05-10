@@ -61,13 +61,13 @@ public final class TalentCommand implements CommandHandler {
         Avatar avatar = entity.getAvatar(); 
         String cmdSwitch = args.get(0);
         switch (cmdSwitch) {
-            default -> {
+            default : {
                 CommandHandler.sendMessage(sender, translate("commands.talent.usage_1"));
                 CommandHandler.sendMessage(sender, translate("commands.talent.usage_2"));
                 CommandHandler.sendMessage(sender, translate("commands.talent.usage_3"));
                 return;
             }
-            case "set" -> {
+            case "set" : {
                 if (args.size() < 3) {
                     CommandHandler.sendMessage(sender, translate("commands.talent.usage_1"));
                     CommandHandler.sendMessage(sender, translate("commands.talent.usage_3"));
@@ -81,17 +81,19 @@ public final class TalentCommand implements CommandHandler {
                     CommandHandler.sendMessage(sender, translate("commands.talent.invalid_skill_id"));
                     return;
                 }
+                return;
             }
-            case "n", "e", "q" -> {
+            case "n": case "e": case "q" : {
                 if (args.size() < 2) {
                     CommandHandler.sendMessage(sender, translate("commands.talent.usage_2"));
                     return;
                 }
                 AvatarSkillDepotData SkillDepot = avatar.getData().getSkillDepot();
-                int skillId = switch (cmdSwitch) {
-                    default -> SkillDepot.getSkills().get(0);
-                    case "e" -> SkillDepot.getSkills().get(1);
-                    case "q" -> SkillDepot.getEnergySkill();
+                int skillId = 0;
+                switch (cmdSwitch) {
+                    default : skillId = SkillDepot.getSkills().get(0); break;
+                    case "e" : skillId = SkillDepot.getSkills().get(1); break;
+                    case "q" : skillId = SkillDepot.getEnergySkill(); break;
                 };
                 try {
                     int newLevel = Integer.parseInt(args.get(1));
@@ -100,14 +102,16 @@ public final class TalentCommand implements CommandHandler {
                     CommandHandler.sendMessage(sender, translate("commands.talent.invalid_level"));
                     return;
                 }
+                return;
             }
-            case "getid" -> {
+            case "getid" : {
                 int skillIdNorAtk = avatar.getData().getSkillDepot().getSkills().get(0);
                 int skillIdE = avatar.getData().getSkillDepot().getSkills().get(1);
                 int skillIdQ = avatar.getData().getSkillDepot().getEnergySkill();
                 CommandHandler.sendMessage(sender, translate("commands.talent.normal_attack_id", Integer.toString(skillIdNorAtk)));
                 CommandHandler.sendMessage(sender, translate("commands.talent.e_skill_id", Integer.toString(skillIdE)));
                 CommandHandler.sendMessage(sender, translate("commands.talent.q_skill_id", Integer.toString(skillIdQ)));
+                return;
             }
         }
     }

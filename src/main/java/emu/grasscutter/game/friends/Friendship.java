@@ -88,7 +88,7 @@ public class Friendship {
 	}
 	
 	public FriendBrief toProto() {
-		FriendBrief proto = FriendBrief.newBuilder()
+		return FriendBrief.newBuilder()
 				.setUid(getFriendProfile().getUid())
 				.setNickname(getFriendProfile().getName())
 				.setLevel(getFriendProfile().getPlayerLevel())
@@ -103,7 +103,5 @@ public class Friendship {
 				.setIsGameSource(true)
 				.setPlatformType(PlatformTypeOuterClass.PlatformType.PC)
 				.build();
-
-		return proto;
 	}
 }

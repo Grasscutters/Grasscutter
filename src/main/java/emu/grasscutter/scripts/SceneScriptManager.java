@@ -266,10 +266,10 @@ public class SceneScriptManager {
 				suite.sceneMonsters = new ArrayList<>(suite.monsters.size());
 				suite.monsters.forEach(id -> {
 					Object objEntry = map.get(id.intValue());
-					if (objEntry instanceof Map.Entry<?,?> monsterEntry) {
-						Object monster = monsterEntry.getValue();
-						if(monster instanceof SceneMonster sceneMonster){
-							suite.sceneMonsters.add(sceneMonster);
+					if (objEntry instanceof Map.Entry<?,?>) {
+						Object monster = ((Map.Entry<?,?>)objEntry).getValue();
+						if(monster instanceof SceneMonster){
+							suite.sceneMonsters.add((SceneMonster) monster);
 						}
 					}
 				});
