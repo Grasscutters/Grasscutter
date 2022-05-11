@@ -191,6 +191,7 @@
     "language": {
       "current_language": "当前语言是: %s",
       "language_changed": "语言切换至: %s",
+      "language_not_found": "目前服务端没有这种语言: %s",
       "description": "显示或切换当前语言。"
     },
     "list": {

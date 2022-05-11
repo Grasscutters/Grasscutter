@@ -116,12 +116,8 @@ public final class Language {
     private static LanguageStreamDescription getLanguageFileDescription(String languageCode, String fallbackLanguageCode) {
         var fileName = languageCode + ".json";
         var fallback = fallbackLanguageCode + ".json";
-
-        String actualLanguageCode = languageCode;
-        if (cachedLanguages.containsKey(actualLanguageCode)) {
-            return new LanguageStreamDescription(actualLanguageCode, null);
-        }
         
+        String actualLanguageCode = languageCode;
         InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
 
         if (file == null) { // Provided fallback language.
