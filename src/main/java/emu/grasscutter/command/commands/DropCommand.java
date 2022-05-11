@@ -53,7 +53,7 @@ public final class DropCommand implements CommandHandler {
             return;
         }
 
-        if (amount > Grasscutter.getConfig().getGameServerOptions().CMD_Drop) {
+        if (amount > Grasscutter.getConfig().server.game.gameOptions.CMD_Drop) {
           CommandHandler.sendMessage(sender, "Overmuch :(");
           return;
         }

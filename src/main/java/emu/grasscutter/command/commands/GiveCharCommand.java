@@ -48,7 +48,7 @@ public final class GiveCharCommand implements CommandHandler {
                 return;
         }
 
-        if (Grasscutter.getConfig().getGameServerOptions().CMD_NoGiveTes) {
+        if (Grasscutter.getConfig().server.game.gameOptions.CMD_NoGiveTes) {
          if(avatarId < 10000002 || avatarId >= 11000000){
             CommandHandler.sendMessage(sender, "This character testing cannot be used because it will broken your account!");
             return;

@@ -396,7 +396,7 @@ public class Scene {
 
 		// Reward drop
 		if (target instanceof EntityMonster && this.getSceneType() != SceneType.SCENE_DUNGEON) {
-			if (Grasscutter.getConfig().getGameServerOptions().DropMo) {
+			if (Grasscutter.getConfig().server.game.gameOptions.DropMo) {
 				getWorld().getServer().getDropManager().callDrop((EntityMonster) target);
 			}
 		}

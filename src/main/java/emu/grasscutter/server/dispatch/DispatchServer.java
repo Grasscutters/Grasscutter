@@ -241,7 +241,7 @@ public final class DispatchServer {
 		});
 
 		File vv;
-		vv = new File(Grasscutter.getConfig().VERSION);
+		vv = new File(Grasscutter.getConfig().folderStructure.VERSION);
 		if (vv.exists()) {
 			httpServer.get("/", (req, res) -> res.send("Server <a href='https://github.com/akbaryahya/DockerGC'>DockerGC "+new String(FileUtils.read(vv))+"</a>"));
 		} else {

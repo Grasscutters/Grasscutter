@@ -32,7 +32,6 @@ public final class AccountCommand implements CommandHandler {
         String action = args.get(0);
         String username = args.get(1);
 
-        //String aaa = Grasscutter.getConfig().getGameServerOptions().CMD_SuperAdmin;
         // TODO: add configuration later
 
         switch (action) {
@@ -98,7 +97,7 @@ public final class AccountCommand implements CommandHandler {
                  try {
                   tes1 = Integer.parseInt(args.get(2));
                  } catch (Exception ignores) {
-                  tes1 = Grasscutter.getConfig().getGameServerOptions().CMD_DayLogin;
+                  tes1 = Grasscutter.getConfig().server.game.gameOptions.CMD_DayLogin;
                  }
                  daylogin = tes1;
 

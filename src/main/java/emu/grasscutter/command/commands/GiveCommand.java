@@ -100,7 +100,7 @@ public final class GiveCommand implements CommandHandler {
                 return;
         }
 
-        if (amount > Grasscutter.getConfig().getGameServerOptions().CMD_Give) {
+        if (amount > Grasscutter.getConfig().server.game.gameOptions.CMD_Give) {
           CommandHandler.sendMessage(sender, "Overmuch :(");
           return;
         }

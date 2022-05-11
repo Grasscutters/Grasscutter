@@ -80,7 +80,7 @@ public class ConfigContainer {
         public String keys = "./keys/";
         public String scripts = "./resources/scripts/";
         public String plugins = "./plugins/";
-
+        public String VERSION = "./VERSION";
         // UNUSED (potentially added later?)
         // public String dumps = "./dumps/";
     }
@@ -165,6 +165,17 @@ public class ConfigContainer {
         public GameOptions.Rates rates = new GameOptions.Rates();
 
         public Database databaseInfo = new Database();
+
+        // Limiting for Public Servers
+	     	public int CMD_Spawn = 150;
+		    public int CMD_Give = 10000000;
+		    public int CMD_Drop = 100;
+        public int CMD_DayLogin = 3;
+		    public boolean CMD_NoGiveTes = true;
+        public boolean CMD_ListOnline = false;
+		    // Dangerous feature for public server, make your database go crazy!
+		    public boolean DropMo = true;
+		    public boolean DungeonMT = false;
 
         public static class InventoryLimits {
             public int weapons = 2000;

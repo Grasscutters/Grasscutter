@@ -24,7 +24,7 @@ public final class ListCommand implements CommandHandler {
 
         CommandHandler.sendMessage(sender, translate(sender, "commands.list.success", Integer.toString(playersMap.size())));
 
-        if (Grasscutter.getConfig().getGameServerOptions().CMD_ListOnline) {         
+        if (Grasscutter.getConfig().server.game.gameOptions.CMD_ListOnline) {         
         
          if (playersMap.size() != 0) {
             StringBuilder playerSet = new StringBuilder();

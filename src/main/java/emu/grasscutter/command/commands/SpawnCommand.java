@@ -54,7 +54,7 @@ public final class SpawnCommand implements CommandHandler {
                 return;
         }
 
-        if (amount > Grasscutter.getConfig().getGameServerOptions().CMD_Spawn) {
+        if (amount > Grasscutter.getConfig().server.game.gameOptions.CMD_Spawn) {
           CommandHandler.sendMessage(sender, "Overmuch :(");
           return;
         }
