@@ -29,6 +29,9 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.SceneType;
+import emu.grasscutter.game.quest.GameMainQuest;
+import emu.grasscutter.game.quest.GameQuest;
+import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.managers.MapMarkManager.*;
 import emu.grasscutter.game.tower.TowerManager;
@@ -91,6 +94,7 @@ public class Player {
 	@Transient private MailHandler mailHandler;
 	@Transient private MessageHandler messageHandler;
 	@Transient private AbilityManager abilityManager;
+	@Transient private QuestManager questManager;
 	
 	@Transient private SotSManager sotsManager;
 
@@ -145,6 +149,7 @@ public class Player {
 		this.mailHandler = new MailHandler(this);
 		this.towerManager = new TowerManager(this);
 		this.abilityManager = new AbilityManager(this);
+		this.setQuestManager(new QuestManager(this));
 		this.pos = new Position();
 		this.rotation = new Position();
 		this.properties = new HashMap<>();
@@ -407,6 +412,14 @@ public class Player {
 
 	public TowerManager getTowerManager() {
 		return towerManager;
+	}
+
+	public QuestManager getQuestManager() {
+		return questManager;
+	}
+
+	public void setQuestManager(QuestManager questManager) {
+		this.questManager = questManager;
 	}
 
 	public PlayerGachaInfo getGachaInfo() {
@@ -883,9 +896,7 @@ public class Player {
 	}
 
 	public void sendPacket(BasePacket packet) {
-		if (this.hasSentAvatarDataNotify) {
-			this.getSession().send(packet);
-		}
+		this.getSession().send(packet);
 	}
 
 	public OnlinePlayerInfo getOnlinePlayerInfo() {
@@ -1118,7 +1129,23 @@ public class Player {
 
 		this.getFriendsList().loadFromDatabase();
 		this.getMailHandler().loadFromDatabase();
+		this.getQuestManager().loadFromDatabase();
+		
+		// Quest - Commented out because a problem is caused if you log out while this quest is active
+		/*
+		if (getQuestManager().getMainQuestById(351) == null) {
+			GameQuest quest = getQuestManager().addQuest(35104);
+			if (quest != null) {
+				quest.finish();
+			}
 
+			getQuestManager().addQuest(35101);
+			
+			this.setSceneId(3);
+			this.getPos().set(GameConstants.START_POSITION);
+		}
+		*/
+		
 		// Create world
 		World world = new World(this);
 		world.addPlayer(this);
@@ -1138,7 +1165,10 @@ public class Player {
 		session.send(new PacketStoreWeightLimitNotify());
 		session.send(new PacketPlayerStoreNotify(this));
 		session.send(new PacketAvatarDataNotify(this));
-
+		session.send(new PacketFinishedParentQuestNotify(this));
+		session.send(new PacketQuestListNotify(this));
+		session.send(new PacketServerCondMeetQuestListUpdateNotify(this));
+		
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
