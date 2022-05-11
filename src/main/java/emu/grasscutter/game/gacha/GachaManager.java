@@ -112,7 +112,7 @@ public class GachaManager {
 		}
 
 		// Spend currency
-		if (banner.getCostItem() > 0 && !player.getInventory().payItems(new ItemParamData[] {new ItemParamData(banner.getCostItem(), times)})) {
+		if (banner.getCostItem() > 0 && !player.getInventory().payItem(banner.getCostItem(), times)) {
 			return;
 		}
 		
