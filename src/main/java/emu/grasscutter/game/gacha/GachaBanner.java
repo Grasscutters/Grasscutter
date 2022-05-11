@@ -102,6 +102,11 @@ public class GachaBanner {
 						+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
 						+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
 						+ "/gacha?s=" + sessionKey + "&gachaType=" + gachaType;
+		String details = "http" + (DISPATCH_INFO.encryption.useInRouting ? "s" : "") + "://"
+						+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
+						+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
+						+ "/gacha/details?s=" + sessionKey + "&gachaType=" + gachaType;
+
 		// Grasscutter.getLogger().info("record = " + record);
 		GachaInfo.Builder info = GachaInfo.newBuilder()
 				.setGachaType(this.getGachaType())
@@ -112,8 +117,8 @@ public class GachaBanner {
 	            .setCostItemNum(1)
 	            .setGachaPrefabPath(this.getPrefabPath())
 	            .setGachaPreviewPrefabPath(this.getPreviewPrefabPath())
-	            .setGachaProbUrl(record)
-	            .setGachaProbUrlOversea(record)
+	            .setGachaProbUrl(details)
+	            .setGachaProbUrlOversea(details)
 	            .setGachaRecordUrl(record)
 	            .setGachaRecordUrlOversea(record)
 	            .setTenCostItemId(this.getCostItem())
