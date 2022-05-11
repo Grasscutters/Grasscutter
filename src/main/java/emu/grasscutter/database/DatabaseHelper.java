@@ -208,7 +208,7 @@ public final class DatabaseHelper {
 	}
 
   public static List<Avatar> getAvatarsNullPlayer() {
-		return DatabaseManager.getDatastore().find(Avatar.class).stream().filter(g -> DatabaseHelper.getAccountById(Integer.toString(g.getOwnerId())) == null).toList();
+		return DatabaseManager.getDatastore().find(Avatar.class).stream().filter(g -> DatabaseHelper.getAccountByPlayerId(g.getOwnerId()) == null).toList();
 	}
 
   public static boolean deleteAvatar(Avatar item) {
