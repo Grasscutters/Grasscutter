@@ -19,6 +19,7 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.gacha.GachaBanner.BannerType;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
@@ -233,7 +234,8 @@ public class GachaManager {
 		if (times != 10 && times != 1) {
 			return;
 		} 
-		if (player.getInventory().getInventoryTab(ItemType.ITEM_WEAPON).getSize() + times > player.getInventory().getInventoryTab(ItemType.ITEM_WEAPON).getMaxCapacity()) {
+		Inventory inventory = player.getInventory();
+		if (inventory.getInventoryTab(ItemType.ITEM_WEAPON).getSize() + times > inventory.getInventoryTab(ItemType.ITEM_WEAPON).getMaxCapacity()) {
 			player.sendPacket(new PacketDoGachaRsp());
 			return;
 		}
@@ -246,7 +248,8 @@ public class GachaManager {
 		}
 
 		// Spend currency
-		if (banner.getCostItem() > 0 && !player.getInventory().payItem(banner.getCostItem(), times)) {
+		ItemParamData cost = banner.getCost(times);
+		if (cost.getCount() > 0 && !inventory.payItem(cost)) {
 			return;
 		}
 		
@@ -304,9 +307,9 @@ public class GachaManager {
 						}
 						addStarglitter = (itemData.getRankLevel()==5)? 10 : 2;
 						int constItemId = itemId + 100;
-						GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId);
+						GameItem constItem = inventory.getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId);
 						gachaItem.addTransferItems(GachaTransferItem.newBuilder().setItem(ItemParam.newBuilder().setItemId(constItemId).setCount(1)).setIsTransferItemNew(constItem == null));
-						player.getInventory().addItem(constItemId, 1);
+						inventory.addItem(constItemId, 1);
 					}
 					isTransferItem = true;
 					break;
@@ -315,7 +318,7 @@ public class GachaManager {
 			// Create item
 			GameItem item = new GameItem(itemData);
 			gachaItem.setGachaItem(item.toItemParam());
-			player.getInventory().addItem(item);
+			inventory.addItem(item);
 			
 			stardust += addStardust;
 			starglitter += addStarglitter;
@@ -336,10 +339,10 @@ public class GachaManager {
 		
 		// Add stardust/starglitter
 		if (stardust > 0) {
-			player.getInventory().addItem(stardustId, stardust);
+			inventory.addItem(stardustId, stardust);
 		}
 		if (starglitter > 0) {
-			player.getInventory().addItem(starglitterId, starglitter);
+			inventory.addItem(starglitterId, starglitter);
 		}
 		
 		// Packets

@@ -6,13 +6,18 @@ import emu.grasscutter.utils.Utils;
 
 import static emu.grasscutter.Configuration.*;
 
+import emu.grasscutter.data.common.ItemParamData;
+
 public class GachaBanner {
 	private int gachaType;
 	private int scheduleId;
 	private String prefabPath;
 	private String previewPrefabPath;
 	private String titlePath;
-	private int costItem;
+	private int costItemId = 0;
+	private int costItemAmount = 1;
+	private int costItemId10 = 0;
+	private int costItemAmount10 = 10;
 	private int beginTime;
 	private int endTime;
 	private int sortId;
@@ -36,11 +41,8 @@ public class GachaBanner {
 	// Kinda wanna deprecate these but they're in people's configs
 	private int[] rateUpItems1 = {};
 	private int[] rateUpItems2 = {};
-	private int softPity = -1;
-	private int hardPity = -1;
 	private int eventChance = -1;
-	private int baseYellowWeight = -1;
-	private int basePurpleWeight = -1;
+	private int costItem = 0;
 	
 	public int getGachaType() {
 		return gachaType;
@@ -66,8 +68,15 @@ public class GachaBanner {
 		return titlePath;
 	}
 
+	public ItemParamData getCost(int numRolls) {
+		return switch (numRolls) {
+			case 10 -> new ItemParamData((costItemId10 > 0) ? costItemId10 : getCostItem(), costItemAmount10);
+			default -> new ItemParamData(getCostItem(), costItemAmount * numRolls);
+		};
+	}
+
 	public int getCostItem() {
-		return costItem;
+		return (costItem > 0) ? costItem : costItemId;
 	}
 
 	public int getBeginTime() {
@@ -80,14 +89,6 @@ public class GachaBanner {
 
 	public int getSortId() {
 		return sortId;
-	}
-
-	public int getBaseYellowWeight() {
-		return baseYellowWeight;
-	}
-
-	public int getBasePurpleWeight() {
-		return basePurpleWeight;
 	}
 
 	public int[] getRateUpItems4() {
