@@ -51,6 +51,8 @@ public final class GachaDetailsHandler implements HttpContextHandler {
 		response = response.replace("{{AVAILABLE_FIVE_STARS}}", translate(player, "gacha.details.available_five_stars"));
 		response = response.replace("{{AVAILABLE_FOUR_STARS}}", translate(player, "gacha.details.available_four_stars"));
 		response = response.replace("{{AVAILABLE_THREE_STARS}}", translate(player, "gacha.details.available_three_stars"));
+
+		response = response.replace("{{LANGUAGE}}", Utils.getLanguageCode(account.getLocale()));
 		
 		// Get the banner info for the banner we want.
 		int gachaType = Integer.parseInt(req.query("gachaType"));

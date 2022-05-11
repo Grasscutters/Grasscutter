@@ -38,7 +38,7 @@
         <div class="content">
             <div class="container">
                 <h2 class="mb-5">{{TITLE}}</h2>
-
+                
                 <h3 class="">{{AVAILABLE_FIVE_STARS}}</h3>
                 <hr />
                 <ul id="5-star-list">
@@ -81,11 +81,11 @@
         </footer>
 
         <script>
-            fiveStarItems = {{FIVE_STARS}};
-            fourStarItems = {{FOUR_STARS}};
-            threeStarItems = {{THREE_STARS}};
+            var fiveStarItems = {{FIVE_STARS}};
+            var fourStarItems = {{FOUR_STARS}};
+            var threeStarItems = {{THREE_STARS}};
+            var lang = "{{LANGUAGE}}";
 
-            var lang = new window.URLSearchParams(window.location.search).get("lang");
             function getNameForId(itemId) {
                 if (mappings[lang] != null && mappings[lang][itemId] != null) {
                     return mappings[lang][itemId][0];
