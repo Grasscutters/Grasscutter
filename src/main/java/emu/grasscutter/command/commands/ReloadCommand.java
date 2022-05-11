@@ -16,7 +16,7 @@ public final class ReloadCommand implements CommandHandler {
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         CommandHandler.sendMessage(sender, translate(sender, "commands.reload.reload_start"));
         
-        Grasscutter.reloadConfig();
+        Grasscutter.loadConfig();
         Grasscutter.loadLanguage();
         Grasscutter.getGameServer().getGachaManager().load();
         Grasscutter.getGameServer().getDropManager().load();

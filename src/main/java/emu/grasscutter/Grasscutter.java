@@ -1,14 +1,13 @@
 package emu.grasscutter;
 
 import java.io.*;
-import java.lang.reflect.Field;
-import java.util.Arrays;
 import java.util.Calendar;
 
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
+import emu.grasscutter.utils.ConfigContainer;
 import emu.grasscutter.utils.Utils;
 import org.jline.reader.EndOfFileException;
 import org.jline.reader.LineReader;
@@ -52,16 +51,16 @@ public final class Grasscutter {
 	private static PluginManager pluginManager;
 
 	public static final Reflections reflector = new Reflections("emu.grasscutter");
-	public static final Configuration config;
+	public static ConfigContainer config;
   
 	static {
 		// Declare logback configuration.
 		System.setProperty("logback.configurationFile", "src/main/resources/logback.xml");
 
 		// Load server configuration.
-		config = Grasscutter.loadConfig();
+		Grasscutter.loadConfig();
 		// Attempt to update configuration.
-		Configuration.updateConfig();
+		ConfigContainer.updateConfig();
 
 		// Load translation files.
 		Grasscutter.loadLanguage();
@@ -144,32 +143,18 @@ public final class Grasscutter {
 
 	/**
 	 * Attempts to load the configuration from a file.
-	 * @return The config from the file, or a new instance.
 	 */
-	public static Configuration loadConfig() {
+	public static void loadConfig() {
 		try (FileReader file = new FileReader(configFile)) {
-			return gson.fromJson(file, Configuration.class);
-		} catch (Exception e) {
+			config = gson.fromJson(file, ConfigContainer.class);
+		} catch (Exception exception) {
 			Grasscutter.saveConfig(null);
-			return new Configuration();
+			config = new ConfigContainer();
+		} catch (Error error) {
+			// Occurred probably from an outdated config file.
+			Grasscutter.saveConfig(null);
+			config = new ConfigContainer();
 		}
-	}
-
-	/**
-	 * Attempts to reload the configuration from the file.
-	 * Uses reflection to **replace** the fields in the config.
-	 */
-	public static void reloadConfig() {
-		Configuration fileConfig = Grasscutter.loadConfig();
-		
-		Field[] fields = Configuration.class.getDeclaredFields();
-		Arrays.stream(fields).forEach(field -> {
-			try {
-				field.set(config, field.get(fileConfig));
-			} catch (Exception exception) {
-				Grasscutter.getLogger().error("Failed to update a configuration field.", exception);
-			}
-		});
 	}
 
 	public static void loadLanguage() {
@@ -181,8 +166,8 @@ public final class Grasscutter {
 	 * Saves the provided server configuration.
 	 * @param config The configuration to save, or null for a new one.
 	 */
-	public static void saveConfig(@Nullable Configuration config) {
-		if(config == null) config = new Configuration();
+	public static void saveConfig(@Nullable ConfigContainer config) {
+		if(config == null) config = new ConfigContainer();
 		
 		try (FileWriter file = new FileWriter(configFile)) {
 			file.write(gson.toJson(config));
@@ -231,7 +216,7 @@ public final class Grasscutter {
 		}
 	}
 
-	public static Configuration getConfig() {
+	public static ConfigContainer getConfig() {
 		return config;
 	}
 
