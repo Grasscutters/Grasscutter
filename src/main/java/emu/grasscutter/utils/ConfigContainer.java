@@ -126,9 +126,9 @@ public class ConfigContainer {
         /* This is the address used in the default region. */
         public String accessAddress = "127.0.0.1";
 
-        public int bindPort = 443;
+        public int bindPort = 22102;
         /* This is the port used in the default region. */
-        public int accessPort = 443;
+        public int accessPort = 22102;
 
         public GameOptions gameOptions = new GameOptions();
         public JoinOptions joinOptions = new JoinOptions();

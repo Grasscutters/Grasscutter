@@ -125,8 +125,8 @@ public final class DispatchServer {
 				servers.add(server);
 
 				RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
-						.setGateserverIp(lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress))
-						.setGateserverPort(lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort))
+						.setGateserverIp(lr(GAME_INFO.accessAddress, GAME_INFO.bindAddress))
+						.setGateserverPort(lr(GAME_INFO.accessPort, GAME_INFO.bindPort))
 						.setSecretKey(ByteString.copyFrom(FileUtils.read(KEYS_FOLDER + "/dispatchSeed.bin")))
 						.build();
 
