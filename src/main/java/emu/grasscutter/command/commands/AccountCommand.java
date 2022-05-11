@@ -72,6 +72,15 @@ public final class AccountCommand implements CommandHandler {
                 CommandHandler.sendMessage(null, "done..");
 
                 return;
+            case "player_time":
+                 List<Player> e1 = DatabaseHelper.getAllPlayers().stream().toList();
+                 List<Player> e2 = e1.stream()
+                 .filter(g -> g.getProfile().getDaysSinceLogin() >= 1)
+                 .toList();
+                 for (Player info : e2) {
+                  CommandHandler.sendMessage(null,"Uid "+info.getUid()+", login "+info.getProfile().getDaysSinceLogin()+" day ago Player");
+                 }
+                return;
             case "clean_account":
 
                  int daylogin;
@@ -95,10 +104,10 @@ public final class AccountCommand implements CommandHandler {
 
                  // List All Player
                  List<Player> playerAll = DatabaseHelper.getAllPlayers().stream().toList();
+                 
                  // List Player offline
                  List<Player> player_offline = playerAll.stream()
                  .filter(g -> g.getProfile().getDaysSinceLogin() >= daylogin)
-                 .filter(g -> DatabaseHelper.getAccountById(Integer.toString(g.getUid())) != null)
                  .toList();
 
                  CommandHandler.sendMessage(null, "Set limit "+limit+" | Current total players "+playerAll.size()+" and "+player_offline.size()+" player who didn't log in for "+daylogin+" day ");
@@ -112,12 +121,6 @@ public final class AccountCommand implements CommandHandler {
                   }
                   intlimit++;
 
-                  Account account = DatabaseHelper.getAccountById(Integer.toString(remove.getUid()));
-                  if (account == null) {
-                    CommandHandler.sendMessage(null, "Account "+remove.getUid()+" No found?");
-                    continue;
-                  }
-
                   // Check if player online
                   Player player_online = Grasscutter.getGameServer().getPlayerByUid(remove.getUid());
                   if (player_online != null) {
@@ -126,9 +129,18 @@ public final class AccountCommand implements CommandHandler {
                     continue;
                   }
 
-                  // Finally, we do actual deletion.
-                  CommandHandler.sendMessage(null, "Go "+intlimit+" | Remove Uid "+remove.getUid()+", login "+remove.getProfile().getDaysSinceLogin()+" day ago Player");
-                  DatabaseHelper.deleteAccount(account);
+                  Account account = DatabaseHelper.getAccountById(Integer.toString(remove.getUid()));
+
+                  CommandHandler.sendMessage(null, intlimit+" | UID "+remove.getUid()+" | "+remove.getProfile().getDaysSinceLogin()+" day ago");
+                  if (account == null) {
+                    // Jika akun null
+                    CommandHandler.sendMessage(null, "-> Account no found, but found a player, remove it");
+                    DatabaseHelper.deletePlayer(remove);
+                  }else{
+                    // jika ada akun
+                    CommandHandler.sendMessage(null, "-> Player & Account found, remove it");     
+                    DatabaseHelper.deleteAccount(account);
+                  }
 
                   // Add delayTime
                   try {

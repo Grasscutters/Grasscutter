@@ -103,10 +103,8 @@ public final class DatabaseHelper {
 	}
 
   public static void deletePlayer(Player target) {
-		// To delete Player, we need to also delete all the other documents in the database that reference the Player (uid).
-		// This should optimally be wrapped inside a transaction, to make sure an error thrown mid-way does not leave the
-		// database in an inconsistent state, but unfortunately Mongo only supports that when we have a replica set ...
-
+		// To delete Player, we need to also delete all other documents in database that reference Player by uid.
+    
 		// Delete Mail.class data
 		DatabaseManager.getDatabase().getCollection("mail").deleteMany(eq("ownerUid", target.getUid()));
 		// Delete Avatar.class data
