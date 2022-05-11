@@ -400,7 +400,7 @@ public class ResourceLoader {
 	}
 	
 	private static void loadQuests() {
-		File folder = new File(Grasscutter.getConfig().RESOURCE_FOLDER + "BinOutput/Quest/");
+		File folder = new File(RESOURCE("BinOutput/Quest/"));
 		
 		if (!folder.exists()) {
 			return;
