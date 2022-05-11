@@ -99,9 +99,6 @@ public final class AccountCommand implements CommandHandler {
                  List<Player> player_offline = playerAll.stream()
                  .filter(g -> g.getProfile().getDaysSinceLogin() >= daylogin)
                  .filter(g -> DatabaseHelper.getAccountById(Integer.toString(g.getUid())) != null)
-                 .sorted((d1, d2) -> {
-                  return d2.getProfile().getDaysSinceLogin() - d1.getProfile().getDaysSinceLogin();
-                 })
                  .toList();
 
                  CommandHandler.sendMessage(null, "Set limit "+limit+" | Current total players "+playerAll.size()+" and "+player_offline.size()+" player who didn't log in for "+daylogin+" day ");
