@@ -11,7 +11,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Locale;
 
-import emu.grasscutter.Config;
 import emu.grasscutter.Configuration;
 import emu.grasscutter.Grasscutter;
 import io.netty.buffer.ByteBuf;
