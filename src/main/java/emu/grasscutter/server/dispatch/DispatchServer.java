@@ -16,6 +16,7 @@ import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.server.dispatch.authentication.AuthenticationHandler;
 import emu.grasscutter.server.dispatch.authentication.DefaultAuthenticationHandler;
+import emu.grasscutter.server.dispatch.http.GachaDetailsHandler;
 import emu.grasscutter.server.dispatch.http.GachaRecordHandler;
 import emu.grasscutter.server.dispatch.json.*;
 import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
@@ -454,6 +455,9 @@ public final class DispatchServer {
 		}
 
 		httpServer.raw().config.addSinglePageRoot("/gacha/mappings", gachaMappingsPath, Location.EXTERNAL);
+
+		// gacha details
+		httpServer.get("/gacha/details", new GachaDetailsHandler());
 
 		// static file support for plugins
 		httpServer.raw().config.precompressStaticFiles = false; // If this isn't set to false, files such as images may appear corrupted when serving static files

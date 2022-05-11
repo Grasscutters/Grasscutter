@@ -65,7 +65,23 @@ public class GachaManager {
 	public Int2ObjectMap<GachaBanner> getGachaBanners() {
 		return gachaBanners;
 	}
-	
+
+	public int[] getYellowAvatars() {
+		return this.yellowAvatars;
+	}
+	public int[] getYellowWeapons() {
+		return this.yellowWeapons;
+	}
+	public int[] getPurpleAvatars() {
+		return this.purpleAvatars;
+	}
+	public int[] getPurpleWeapons() {
+		return this.purpleWeapons;
+	}
+	public int[] getBlueWeapons() {
+		return this.blueWeapons;
+	}
+
 	public int randomRange(int min, int max) {
 		return ThreadLocalRandom.current().nextInt(max - min + 1) + min;
 	}
