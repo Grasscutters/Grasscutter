@@ -20,6 +20,8 @@ import emu.grasscutter.game.gacha.GachaRecord;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.GameMainQuest;
+import emu.grasscutter.game.quest.GameQuest;
 
 public final class DatabaseManager {
 
@@ -30,7 +32,8 @@ public final class DatabaseManager {
 	private static Datastore dispatchDatastore;
 	
 	private static final Class<?>[] mappedClasses = new Class<?>[] {
-		DatabaseCounter.class, Account.class, Player.class, Avatar.class, GameItem.class, Friendship.class, GachaRecord.class, Mail.class
+		DatabaseCounter.class, Account.class, Player.class, Avatar.class, GameItem.class, Friendship.class, 
+		GachaRecord.class, Mail.class, GameMainQuest.class
 	};
     
     public static Datastore getDatastore() {
