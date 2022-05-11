@@ -3,7 +3,6 @@ package emu.grasscutter.utils;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 
 import javax.annotation.Nullable;
@@ -12,10 +11,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 
 public final class Language {
+    private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
+    
     private final JsonObject languageData;
     private final String languageCode;
     private final Map<String, String> cachedTranslations = new ConcurrentHashMap<>();
-    private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
 
     /**
      * Creates a language instance from a code.
@@ -28,16 +28,14 @@ public final class Language {
         }
 
         var fallbackLanguageCode = Utils.getLanguageCode(Grasscutter.getConfig().DefaultLanguage);
-        var descripter = getLanguageFileStreamDescripter(langCode, fallbackLanguageCode);
-        var actualLanguageCode = descripter.getLanguageCode();
+        var description = getLanguageFileStreamDescripter(langCode, fallbackLanguageCode);
+        var actualLanguageCode = description.getLanguageCode();
 
-        Language languageInst = null;
-
-        if (descripter.getLanguageFile() != null) {
-            languageInst = new Language(descripter);
+        Language languageInst;
+        if (description.getLanguageFile() != null) {
+            languageInst = new Language(description);
             cachedLanguages.put(actualLanguageCode, languageInst);
-        }
-        else {
+        } else {
             languageInst = cachedLanguages.get(actualLanguageCode);
             cachedLanguages.put(langCode, languageInst);
         }
@@ -95,39 +93,41 @@ public final class Language {
     /**
      * Reads a file and creates a language instance.
      */
-    private Language(InternalLanguageFileStreamDescripter descripter) {
+    private Language(LanguageStreamDescription description) {
         @Nullable JsonObject languageData = null;
-        languageCode = descripter.getLanguageCode();
+        languageCode = description.getLanguageCode();
         
         try {
-            languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(descripter.getLanguageFile()), JsonObject.class);
+            languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(description.getLanguageFile()), JsonObject.class);
         } catch (Exception exception) {
-            Grasscutter.getLogger().warn("Failed to load language file: " + descripter.getLanguageCode(), exception);
+            Grasscutter.getLogger().warn("Failed to load language file: " + description.getLanguageCode(), exception);
         }
         
         this.languageData = languageData;
     }
 
     /**
-     * create a InternalLanguageFileStreamDescripter
+     * create a LanguageStreamDescription
      * @param languageCode The name of the language code.
      * @param fallbackLanguageCode The name of the fallback language code.
      */
-    private static InternalLanguageFileStreamDescripter getLanguageFileStreamDescripter(String languageCode, String fallbackLanguageCode) {
+    private static LanguageStreamDescription getLanguageFileStreamDescripter(String languageCode, String fallbackLanguageCode) {
         var fileName = languageCode + ".json";
         var fallback = fallbackLanguageCode + ".json";
 
         String actualLanguageCode = languageCode;
         if (cachedLanguages.containsKey(actualLanguageCode)) {
-            return new InternalLanguageFileStreamDescripter(actualLanguageCode, null);
+            return new LanguageStreamDescription(actualLanguageCode, null);
         }
+        
         InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
 
         if (file == null) { // Provided fallback language.
             actualLanguageCode = fallbackLanguageCode;
             if (cachedLanguages.containsKey(actualLanguageCode)) {
-                return new InternalLanguageFileStreamDescripter(actualLanguageCode, null);
+                return new LanguageStreamDescription(actualLanguageCode, null);
             }
+            
             file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
             Grasscutter.getLogger().warn("Failed to load language file: " + fileName + ", falling back to: " + fallback);
         }
@@ -135,8 +135,9 @@ public final class Language {
         if(file == null) { // Fallback the fallback language.
             actualLanguageCode = "en-US";
             if (cachedLanguages.containsKey(actualLanguageCode)) {
-                return new InternalLanguageFileStreamDescripter(actualLanguageCode, null);
+                return new LanguageStreamDescription(actualLanguageCode, null);
             }
+            
             file = Grasscutter.class.getResourceAsStream("/languages/en-US.json");
             Grasscutter.getLogger().warn("Failed to load language file: " + fallback + ", falling back to: en-US.json");
         }
@@ -144,7 +145,7 @@ public final class Language {
         if(file == null)
             throw new RuntimeException("Unable to load the primary, fallback, and 'en-US' language files.");
 
-        return new InternalLanguageFileStreamDescripter(actualLanguageCode, file);
+        return new LanguageStreamDescription(actualLanguageCode, file);
     }
 
     /**
@@ -180,11 +181,11 @@ public final class Language {
         this.cachedTranslations.put(key, result); return result;
     }
 
-    private static class InternalLanguageFileStreamDescripter {
-        private String languageCode;
-        private InputStream languageFile;
+    private static class LanguageStreamDescription {
+        private final String languageCode;
+        private final InputStream languageFile;
 
-        public InternalLanguageFileStreamDescripter(String languageCode, InputStream languageFile) {
+        public LanguageStreamDescription(String languageCode, InputStream languageFile) {
             this.languageCode = languageCode;
             this.languageFile = languageFile;
         }
