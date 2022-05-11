@@ -10,6 +10,8 @@ import java.io.InputStream;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 
+import static emu.grasscutter.Configuration.*;
+
 public final class Language {
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
     
@@ -27,8 +29,8 @@ public final class Language {
             return cachedLanguages.get(langCode);
         }
 
-        var fallbackLanguageCode = Utils.getLanguageCode(Grasscutter.getConfig().DefaultLanguage);
-        var description = getLanguageFileStreamDescripter(langCode, fallbackLanguageCode);
+        var fallbackLanguageCode = Utils.getLanguageCode(FALLBACK_LANGUAGE);
+        var description = getLanguageFileDescription(langCode, fallbackLanguageCode);
         var actualLanguageCode = description.getLanguageCode();
 
         Language languageInst;
@@ -111,7 +113,7 @@ public final class Language {
      * @param languageCode The name of the language code.
      * @param fallbackLanguageCode The name of the fallback language code.
      */
-    private static LanguageStreamDescription getLanguageFileStreamDescripter(String languageCode, String fallbackLanguageCode) {
+    private static LanguageStreamDescription getLanguageFileDescription(String languageCode, String fallbackLanguageCode) {
         var fileName = languageCode + ".json";
         var fallback = fallbackLanguageCode + ".json";
 

@@ -3,16 +3,140 @@ package emu.grasscutter;
 import emu.grasscutter.Grasscutter.*;
 import emu.grasscutter.game.mail.Mail.*;
 
+import java.lang.reflect.Field;
+import java.util.Arrays;
 import java.util.Locale;
+
+import static emu.grasscutter.Grasscutter.config;
 
 /**
  * A data container for the server's configuration.
+ * 
+ * Use `import static emu.grasscutter.Configuration.*;`
+ * to import all configuration constants.
  */
 public final class Configuration {
+    private static int version() {
+        return 1;
+    }
+    
+    /**
+     * Attempts to update the server's existing configuration to the latest configuration.
+     */
+    public static void updateConfig() {
+        var existing = config.version; 
+        var latest = version();
+        
+        if(existing == latest) 
+            return;
+        
+        // Create a new configuration instance.
+        Configuration updated = new Configuration();
+        // Update all configuration fields.
+        Field[] fields = Configuration.class.getDeclaredFields();
+        Arrays.stream(fields).forEach(field -> {
+            try {
+                field.set(updated, field.get(config));
+            } catch (Exception exception) {
+                Grasscutter.getLogger().error("Failed to update a configuration field.", exception);
+            }
+        });
+        
+        try { // Save configuration & reload.
+            Grasscutter.saveConfig(updated);
+            Grasscutter.reloadConfig();
+        } catch (Exception exception) {
+            Grasscutter.getLogger().warn("Failed to inject the updated configuration.", exception);
+        }
+    }
+    
+    /*
+     * Constants
+     */
+    
+    // 'c' is short for 'config' and makes code look 'cleaner'.
+    public static final Configuration c = config;
+    
+    public static final Locale LANGUAGE = config.language.language;
+    public static final Locale FALLBACK_LANGUAGE = config.language.fallback;
+    public static final String DATA_FOLDER = config.folderStructure.data;
+    public static final String RESOURCES_FOLDER = config.folderStructure.resources;
+    public static final String KEYS_FOLDER = config.folderStructure.keys;
+    public static final String PLUGINS_FOLDER = config.folderStructure.plugins;
+    public static final String SCRIPTS_FOLDER = config.folderStructure.scripts;
+    public static final String PACKETS_FOLDER = config.folderStructure.packets;
+    
+    public static final Server SERVER = config.server;
+    public static final Database DATABASE = config.databaseInfo;
+    public static final Account ACCOUNT = config.account;
+    
+    public static final Dispatch DISPATCH_INFO = config.server.dispatch;
+    public static final Game GAME_INFO = config.server.game;
+    
+    public static final Encryption DISPATCH_ENCRYPTION = config.server.dispatch.encryption;
+    public static final Policies DISPATCH_POLICIES = config.server.dispatch.policies;
+    
+    public static final GameOptions GAME_OPTIONS = config.server.game.gameOptions;
+    public static final GameOptions.InventoryLimits INVENTORY_LIMITS = config.server.game.gameOptions.inventoryLimits;
+    
+    /*
+     * Utilities
+     */
+    
+    public static String DATA(String path) {
+        return DATA_FOLDER + "/" + path;
+    }
+    
+    public static String RESOURCE(String path) {
+        return RESOURCES_FOLDER + "/" + path;
+    }
+    
+    public static String SCRIPT(String path) {
+        return SCRIPTS_FOLDER + "/" + path;
+    }
+
+    /**
+     * Fallback method.
+     * @param left Attempt to use.
+     * @param right Use if left is undefined.
+     * @return Left or right.
+     */
+    public static <T> T lr(T left, T right) {
+        return left == null ? right : left;
+    }
+
+    /**
+     * {@link Configuration#lr(Object, Object)} for {@link String}s.
+     * @param left Attempt to use.
+     * @param right Use if left is empty.
+     * @return Left or right.
+     */
+    public static String lr(String left, String right) {
+        return left.isEmpty() ? right : left;
+    }
+
+    /**
+     * {@link Configuration#lr(Object, Object)} for {@link Integer}s.
+     * @param left Attempt to use.
+     * @param right Use if left is 0.
+     * @return Left or right.
+     */
+    public static int lr(int left, int right) {
+        return left == 0 ? right : left;
+    }
+    
+    /*
+     * Configuration data.
+     */
+    
     public Structure folderStructure;
     public Database databaseInfo;
     public Language language;
+    public Account account;
     public Server server;
+    
+    // DO NOT. TOUCH. THE VERSION NUMBER.
+    public int version = version();
     
     /* Option containers. */
     
@@ -45,6 +169,11 @@ public final class Configuration {
         public Locale language = Locale.getDefault();
         public Locale fallback = Locale.US;
     }
+    
+    public static class Account {
+        public boolean autoCreate = false;
+        public String[] defaultPermissions = {};
+    }
 
     /* Server options. */
 
@@ -60,6 +189,8 @@ public final class Configuration {
         public Encryption encryption = new Encryption();
         public Policies policies = new Policies();
         public Region[] regions = {};
+        
+        public String defaultName = "Grasscutter";
     }
     
     public static class Game {
@@ -100,9 +231,12 @@ public final class Configuration {
         public AvatarLimits avatarLimits = new AvatarLimits();
         public int worldEntityLimit = 1000; // Unenforced. TODO: Implement.
         
-        public boolean watchGachaConfiguration = false;
+        public boolean watchGachaConfig = false;
         public boolean enableShopItems = true;
+        public boolean staminaUsage = true;
         public Rates rates = new Rates();
+        
+        public Database databaseInfo = new Database();
         
         public static class InventoryLimits {
             public int weapons = 2000;
@@ -127,6 +261,7 @@ public final class Configuration {
     public static class JoinOptions {
         public int[] welcomeEmotes = {2007, 1002, 4010};
         public String welcomeMessage = "Welcome to a Grasscutter server.";
+        public Mail welcomeMail = new Mail();
         
         public static class Mail {
             public String title = "Welcome to Grasscutter!";
