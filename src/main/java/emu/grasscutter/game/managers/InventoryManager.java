@@ -1,6 +1,7 @@
 package emu.grasscutter.game.managers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -496,25 +497,14 @@ public class InventoryManager {
 			return;
 		}
 		
-		// Make sure player has promote items
-		for (ItemParamData cost : nextPromoteData.getCostItems()) {
-			GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId());
-			if (feedItem == null || feedItem.getCount() < cost.getCount()) {
-				return;
-			}
+		// Pay materials and mora if possible
+		ItemParamData[] costs = nextPromoteData.getCostItems();  // Can this be null?
+		if (nextPromoteData.getCoinCost() > 0) {
+			costs = Arrays.copyOf(costs, costs.length + 1);
+			costs[costs.length-1] = new ItemParamData(202, nextPromoteData.getCoinCost());
 		}
-		
-		// Mora check
-		if (player.getMora() >= nextPromoteData.getCoinCost()) {
-			player.setMora(player.getMora() - nextPromoteData.getCoinCost());
-		} else {
+		if (!player.getInventory().payItems(costs)) {
 			return;
-		}
-		
-		// Consume promote filler items
-		for (ItemParamData cost : nextPromoteData.getCostItems()) {
-			GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId());
-			player.getInventory().removeItem(feedItem, cost.getCount());
 		}
 		
 		int oldPromoteLevel = weapon.getPromoteLevel();
@@ -552,25 +542,14 @@ public class InventoryManager {
 			return;
 		}
 		
-		// Make sure player has cost items
-		for (ItemParamData cost : nextPromoteData.getCostItems()) {
-			GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId());
-			if (feedItem == null || feedItem.getCount() < cost.getCount()) {
-				return;
-			}
+		// Pay materials and mora if possible
+		ItemParamData[] costs = nextPromoteData.getCostItems();  // Can this be null?
+		if (nextPromoteData.getCoinCost() > 0) {
+			costs = Arrays.copyOf(costs, costs.length + 1);
+			costs[costs.length-1] = new ItemParamData(202, nextPromoteData.getCoinCost());
 		}
-		
-		// Mora check
-		if (player.getMora() >= nextPromoteData.getCoinCost()) {
-			player.setMora(player.getMora() - nextPromoteData.getCoinCost());
-		} else {
+		if (!player.getInventory().payItems(costs)) {
 			return;
-		}
-		
-		// Consume promote filler items
-		for (ItemParamData cost : nextPromoteData.getCostItems()) {
-			GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId());
-			player.getInventory().removeItem(feedItem, cost.getCount());
 		}
 		
 		// Update promote level
@@ -764,31 +743,13 @@ public class InventoryManager {
 			return;
 		}
 		
-		// Make sure player has cost items
-		for (ItemParamData cost : proudSkill.getCostItems()) {
-			if (cost.getId() == 0) {
-				continue;
-			}
-			GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId());
-			if (feedItem == null || feedItem.getCount() < cost.getCount()) {
-				return;
-			}
+		// Pay materials and mora if possible
+		List<ItemParamData> costs = proudSkill.getCostItems();  // Can this be null?
+		if (proudSkill.getCoinCost() > 0) {
+			costs.add(new ItemParamData(202, proudSkill.getCoinCost()));
 		}
-		
-		// Mora check
-		if (player.getMora() >= proudSkill.getCoinCost()) {
-			player.setMora(player.getMora() - proudSkill.getCoinCost());
-		} else {
+		if (!player.getInventory().payItems(costs.toArray(new ItemParamData[0]))) {
 			return;
-		}
-		
-		// Consume promote filler items
-		for (ItemParamData cost : proudSkill.getCostItems()) {
-			if (cost.getId() == 0) {
-				continue;
-			}
-			GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId());
-			player.getInventory().removeItem(feedItem, cost.getCount());
 		}
 		
 		// Upgrade skill

@@ -272,14 +272,18 @@ public class Inventory implements Iterable<GameItem> {
 		}
 	}
 
-	public boolean payItems(Collection<ItemParamData> items) {
-		return payItems(items, null);
+	public boolean payItems(ItemParamData[] costItems) {
+		return payItems(costItems, 1, null);
+	}
+
+	public boolean payItems(ItemParamData[] costItems, int quantity) {
+		return payItems(costItems, quantity, null);
 	}
 	
-	public synchronized boolean payItems(Collection<ItemParamData> costItems, ActionReason reason) {
+	public synchronized boolean payItems(ItemParamData[] costItems, int quantity, ActionReason reason) {
 		// Make sure player has requisite items
 		for (ItemParamData cost : costItems) {
-			if (getVirtualItemCount(cost.getId()) < cost.getCount()) {
+			if (getVirtualItemCount(cost.getId()) < (cost.getCount() * quantity)) {
 				return false;
 			}
 		}
@@ -287,13 +291,13 @@ public class Inventory implements Iterable<GameItem> {
 		for (ItemParamData cost : costItems) {
 			switch (cost.getId()) {
 				case 201 ->  // Primogem
-					player.setPrimogems(player.getPrimogems() - cost.getCount());
+					player.setPrimogems(player.getPrimogems() - (cost.getCount() * quantity));
 				case 202 ->  // Mora
-					player.setMora(player.getMora() - cost.getCount());
+					player.setMora(player.getMora() - (cost.getCount() * quantity));
 				case 203 ->  // Genesis Crystals
-					player.setCrystals(player.getCrystals() - cost.getCount());
+					player.setCrystals(player.getCrystals() - (cost.getCount() * quantity));
 				default ->
-					removeItem(getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId()), cost.getCount());
+					removeItem(getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId()), cost.getCount() * quantity);
 			}
 		}
 		
