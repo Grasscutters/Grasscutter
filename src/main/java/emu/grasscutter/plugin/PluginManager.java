@@ -7,6 +7,7 @@ import emu.grasscutter.server.event.HandlerPriority;
 import emu.grasscutter.utils.Utils;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
@@ -90,6 +91,8 @@ public final class PluginManager {
                     fileReader.close(); // Close the file reader.
                 } catch (ClassNotFoundException ignored) {
                     Grasscutter.getLogger().warn("Plugin " + plugin.getName() + " has an invalid main class.");
+                } catch (FileNotFoundException ignored) {
+                    Grasscutter.getLogger().warn("Plugin " + plugin.getName() + " lacks a valid config file.");
                 }
             } catch (Exception exception) {
                 Grasscutter.getLogger().error("Failed to load plugin: " + plugin.getName(), exception);

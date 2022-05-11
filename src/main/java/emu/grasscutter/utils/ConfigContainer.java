@@ -2,6 +2,8 @@ package emu.grasscutter.utils;
 
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerDebugMode;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 
 import java.io.FileReader;
 import java.lang.reflect.Field;
@@ -15,7 +17,7 @@ import static emu.grasscutter.Grasscutter.config;
  */
 public class ConfigContainer {
     private static int version() {
-        return 1;
+        return 2;
     }
 
     /**
@@ -69,8 +71,13 @@ public class ConfigContainer {
     /* Option containers. */
 
     public static class Database {
-        public String connectionUri = "mongodb://localhost:27017";
-        public String collection = "grasscutter";
+        public DataStore server = new DataStore();
+        public DataStore game = new DataStore();
+        
+        public static class DataStore {
+            public String connectionUri = "mongodb://localhost:27017";
+            public String collection = "grasscutter";
+        }
     }
 
     public static class Structure {
@@ -86,8 +93,8 @@ public class ConfigContainer {
     }
 
     public static class Server {
-        public Grasscutter.ServerDebugMode debugLevel = Grasscutter.ServerDebugMode.NONE;
-        public Grasscutter.ServerRunMode runMode = Grasscutter.ServerRunMode.HYBRID;
+        public ServerDebugMode debugLevel = ServerDebugMode.NONE;
+        public ServerRunMode runMode = ServerRunMode.HYBRID;
 
         public Dispatch dispatch = new Dispatch();
         public Game game = new Game();
@@ -112,7 +119,7 @@ public class ConfigContainer {
 
         public int bindPort = 443;
         /* This is the port used in URLs. */
-        public int accessPort = 443;
+        public int accessPort = 0;
 
         public Encryption encryption = new Encryption();
         public Policies policies = new Policies();
@@ -128,7 +135,7 @@ public class ConfigContainer {
 
         public int bindPort = 22102;
         /* This is the port used in the default region. */
-        public int accessPort = 22102;
+        public int accessPort = 0;
 
         public GameOptions gameOptions = new GameOptions();
         public JoinOptions joinOptions = new JoinOptions();
@@ -155,16 +162,14 @@ public class ConfigContainer {
     }
 
     public static class GameOptions {
-        public GameOptions.InventoryLimits inventoryLimits = new GameOptions.InventoryLimits();
-        public GameOptions.AvatarLimits avatarLimits = new GameOptions.AvatarLimits();
+        public InventoryLimits inventoryLimits = new InventoryLimits();
+        public AvatarLimits avatarLimits = new AvatarLimits();
         public int worldEntityLimit = 1000; // Unenforced. TODO: Implement.
 
         public boolean watchGachaConfig = false;
         public boolean enableShopItems = true;
         public boolean staminaUsage = true;
-        public GameOptions.Rates rates = new GameOptions.Rates();
-
-        public Database databaseInfo = new Database();
+        public Rates rates = new Rates();
 
         public static class InventoryLimits {
             public int weapons = 2000;
