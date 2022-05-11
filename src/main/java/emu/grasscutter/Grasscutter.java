@@ -190,6 +190,7 @@ public final class Grasscutter {
 		}
 
 		getLogger().info(translate("messages.status.done"));
+		getLogger().info(translate("messages.status.version", BuildConfig.VERSION, BuildConfig.GIT_HASH));
 		String input = null;
 		boolean isLastInterrupted = false;
 		while (true) {

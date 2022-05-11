@@ -45,7 +45,8 @@
       "run_mode_error": "无效的服务器运行模式：%s。",
       "run_mode_help": "服务器运行模式必须为 HYBRID、DISPATCH_ONLY 或 GAME_ONLY。Grasscutter 启动失败...",
       "create_resources": "正在创建 resources 目录...",
-      "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。"
+      "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。",
+      "version": "Grasscutter版本: %s, Git Hash: %s"
     }
   },
   "commands": {
