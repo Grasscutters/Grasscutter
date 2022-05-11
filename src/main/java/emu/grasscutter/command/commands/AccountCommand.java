@@ -73,7 +73,7 @@ public final class AccountCommand implements CommandHandler {
                 return;
             case "clean_account":
 
-                 int daylogin = 2;
+                 int daylogin = Grasscutter.getConfig().getGameServerOptions().CMD_DayLogin;
                  int goseep = 1;
                  int limit = 1000;
                  int intlimit = 0;
@@ -112,7 +112,7 @@ public final class AccountCommand implements CommandHandler {
                   }
 
                   // Finally, we do actual deletion.
-                  CommandHandler.sendMessage(null, "Remove Uid "+remove.getUid()+" Player");
+                  CommandHandler.sendMessage(null, "Remove Uid "+remove.getUid()+", login "+remove.getProfile().getDaysSinceLogin()+" day ago Player");
                   DatabaseHelper.deleteAccount(account);
 
                   // Add delayTime

@@ -75,6 +75,7 @@ public final class Config {
 		public int CMD_Spawn = 150;
 		public int CMD_Give = 10000000;
 		public int CMD_Drop = 100;
+    public int CMD_DayLogin = 3;
 		public boolean CMD_NoGiveTes = true;
     public boolean CMD_ListOnline = false;
     public String CMD_SuperAdmin = "root";
