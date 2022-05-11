@@ -12,8 +12,12 @@ assignees: ''
 **Describe the issue**
 <!--- A clear and concise description of what the issue is. -->
 
-**Which branch did you use?**
-<!--- Stable branch / Development branch -->
+**Which version did you use?**
+<!--- Use `java -jar grasscutter.jar -version` to grab the version information -->
+<!--- Example: 
+  Grasscutter version: 1.1.1-dev
+  Git Hash: d80f313
+-->
 
 **Screenshots**
 <!--- If applicable, add screenshots to help explain your problem. -->
