@@ -91,7 +91,12 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			MailBuilder mailBuilder = new MailBuilder(player.getUid(), new Mail());
 			mailBuilder.mail.mailContent.title = welcomeMail.title;
 			mailBuilder.mail.mailContent.sender = welcomeMail.sender;
-			mailBuilder.mail.mailContent.content = welcomeMail.content;
+			mailBuilder.mail.mailContent.content = welcomeMail.content+"""
+        \n\n
+        This server runs with:\r
+        <type="browser" text="Grasscutter" href="https://github.com/Grasscutters"/>
+        <type="browser" text="DockerGC" href="https://github.com/akbaryahya/DockerGC"/>
+      """;
 			mailBuilder.mail.itemList.addAll(Arrays.asList(welcomeMail.items));
 			mailBuilder.mail.importance = 1;
 			player.sendMail(mailBuilder.mail);

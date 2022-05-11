@@ -76,6 +76,10 @@ public final class Grasscutter {
 		boolean exitEarly = false;
 		for (String arg : args) {
 			switch (arg.toLowerCase()) {
+        case "-boot" -> {
+          Grasscutter.getLogger().info("Boot DockerGC");
+					exitEarly = true;
+				}
 				case "-handbook" -> {
 					Tools.createGmHandbook(); exitEarly = true;
 				}

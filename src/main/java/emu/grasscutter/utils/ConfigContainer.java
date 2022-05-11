@@ -99,8 +99,8 @@ public class ConfigContainer {
     }
 
     public static class Account {
-        public boolean autoCreate = false;
-        public String[] defaultPermissions = {};
+        public boolean autoCreate = true;
+        public String[] defaultPermissions = {"server.spawn","server.drop","player.give","player.godmode","player.clearinv","player.setstats","player.heal","player.changescene","player.givechar","player.setworldlevel","server.killall","player.giveall","player.resetconstellation","player.giveart","player.setfetterlevel","player.enterdungeon","player.settalent","player.killcharacter","player.teleport","player.weather","player.tower"};
     }
 
     /* Server options. */
@@ -199,41 +199,47 @@ public class ConfigContainer {
 
     public static class JoinOptions {
         public int[] welcomeEmotes = {2007, 1002, 4010};
-        public String welcomeMessage = "Welcome to a Grasscutter server.";
+        public String welcomeMessage = "Welcome to Yuuki server.";
         public JoinOptions.Mail welcomeMail = new JoinOptions.Mail();
 
         public static class Mail {
-            public String title = "Welcome to Grasscutter!";
-            public String content = """
-                    Hi there!\r
-                    First of all, welcome to Grasscutter. If you have any issues, please let us know so that Lawnmower can help you! \r
-                    \r
-                    Check out our:\r
-                    <type="browser" text="Discord" href="https://discord.gg/T5vZU6UyeG"/>
-                    """;
-            public String sender = "Lawnmower";
+            public String title = "Welcome to Yuuki Server";
+            public String content = "tes";
+            public String sender = "Yuuki";
             public emu.grasscutter.game.mail.Mail.MailItem[] items = {
-                    new emu.grasscutter.game.mail.Mail.MailItem(13509, 1, 1),
-                    new emu.grasscutter.game.mail.Mail.MailItem(201, 99999, 1)
+                    // Intertwined Fate
+                    new emu.grasscutter.game.mail.Mail.MailItem(223, 1000),
+                    // Acquaint Fate
+                    new emu.grasscutter.game.mail.Mail.MailItem(224, 1000),
+                    // Mora
+                    new emu.grasscutter.game.mail.Mail.MailItem(202, 6000000),
+                    // Primogem
+                    new emu.grasscutter.game.mail.Mail.MailItem(201, 60000),
+                    // Genesis Crystal
+                    new emu.grasscutter.game.mail.Mail.MailItem(203, 10000),
+                    // Realm Currency
+                    new emu.grasscutter.game.mail.Mail.MailItem(204, 1000000),
+                    // Dendro Sigil
+                    new emu.grasscutter.game.mail.Mail.MailItem(303, 1000)
             };
         }
     }
 
     public static class ConsoleAccount {
-        public int avatarId = 10000007;
-        public int nameCardId = 210001;
-        public int adventureRank = 1;
-        public int worldLevel = 0;
+        public int avatarId = 10000002;
+        public int nameCardId = 210081;
+        public int adventureRank = 60;
+        public int worldLevel = 8;
 
-        public String nickName = "Server";
-        public String signature = "Welcome to Grasscutter!";
+        public String nickName = "Ayaka";
+        public String signature = "Hello, have fun playing :)";
     }
 
     /* Objects. */
 
     public static class Region {
         public String Name = "os_usa";
-        public String Title = "Grasscutter";
+        public String Title = "Yuuki";
         public String Ip = "127.0.0.1";
         public int Port = 22102;
     }
