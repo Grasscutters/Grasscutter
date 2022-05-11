@@ -2,6 +2,7 @@ package emu.grasscutter.game.managers.StaminaManager;
 
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
@@ -18,16 +19,15 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.Math;
 import java.util.*;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.Configuration.GAME_OPTIONS;
 
 public class StaminaManager {
 
     // TODO: Skiff state detection?
     private final Player player;
-    private final HashMap<String, HashSet<MotionState>> MotionStatesCategorized = new HashMap<>() {{
+    private static final HashMap<String, HashSet<MotionState>> MotionStatesCategorized = new HashMap<>() {{
         put("CLIMB", new HashSet<>(List.of(
                 MotionState.MOTION_CLIMB, // sustained, when not moving no cost no recover
                 MotionState.MOTION_STANDBY_TO_CLIMB // NOT OBSERVED, see MOTION_JUMP_UP_WALL_FOR_STANDBY
@@ -122,74 +122,67 @@ public class StaminaManager {
     private int lastSkillId = 0;
     private int lastSkillCasterId = 0;
     private boolean lastSkillFirstTick = true;
-    public static final HashSet<Integer> TalentMovements = new HashSet<>(List.of(
+    private static final HashSet<Integer> TalentMovements = new HashSet<>(List.of(
             10013, // Kamisato Ayaka
             10413 // Mona
     ));
+    private static final HashMap<Integer, Float> ClimbFoodReductionMap = new HashMap<>() {{
+        // TODO: get real food id
+        put(0, 0.8f); // Sample food
+    }};
+    private static final HashMap<Integer, Float> DashFoodReductionMap = new HashMap<>() {{
+        // TODO: get real food id
+        put(0, 0.8f); // Sample food
+    }};
+    private static final HashMap<Integer, Float> FlyFoodReductionMap = new HashMap<>() {{
+        // TODO: get real food id
+        put(0, 0.8f); // Sample food
+    }};
+    private static final HashMap<Integer, Float> SwimFoodReductionMap = new HashMap<>() {{
+        // TODO: get real food id
+        put(0, 0.8f); // Sample food
+    }};
+    private static final HashMap<Integer, Float> ClimbTalentReductionMap = new HashMap<>() {{
+        put(262301, 0.8f); // Xiao
+    }};
+    private static final HashMap<Integer, Float> FlyTalentReductionMap = new HashMap<>() {{
+        put(212301, 0.8f); // Amber
+        put(222301, 0.8f); // Venti
+    }};
+    private static final HashMap<Integer, Float> SwimTalentReductionMap = new HashMap<>() {{
+        put(242301, 0.8f); // Beidou
+        put(542301, 0.8f); // Sangonomiya Kokomi
+    }};
 
-    // TODO: Get from somewhere else, instead of hard-coded here?
-    public static final HashSet<Integer> ClaymoreSkills = new HashSet<>(List.of(
-            10160, // Diluc, /=2
-            10201, // Razor
-            10241, // Beidou
-            10341, // Noelle
-            10401, // Chongyun
-            10441, // Xinyan
-            10511, // Eula
-            10531, // Sayu
-            10571 // Arataki Itto, = 0
-    ));
-    public static final HashSet<Integer> CatalystSkills = new HashSet<>(List.of(
-            10060, // Lisa
-            10070, // Barbara
-            10271, // Ningguang
-            10291, // Klee
-            10411, // Mona
-            10431, // Sucrose
-            10481, // Yanfei
-            10541, // Sangonomoiya Kokomi
-            10581 // Yae Miko
-    ));
-    public static final HashSet<Integer> PolearmSkills = new HashSet<>(List.of(
-            10231, // Xiangling
-            10261, // Xiao
-            10301, // Zhongli
-            10451, // Rosaria
-            10461, // Hu Tao
-            10501, // Thoma
-            10521, // Raiden Shogun
-            10631, // Shenhe
-            10641 // Yunjin
-    ));
-    public static final HashSet<Integer> SwordSkills = new HashSet<>(List.of(
-            10024, // Kamisato Ayaka
-            10031, // Jean
-            10073, // Kaeya
-            10321, // Bennett
-            10337, // Tartaglia, melee stance (10332 switch to melee, 10336 switch to ranged stance)
-            10351, // Qiqi
-            10381, // Xingqiu
-            10386, // Albedo
-            10421, // Keqing, =-2500
-            10471, // Kaedehara Kazuha
-            10661, // Kamisato Ayato
-            100553, // Lumine
-            100540 // Aether
-    ));
-    public static final HashSet<Integer> BowSkills = new HashSet<>(List.of(
-            10041, 10043, // Amber
-            10221, 10223,// Venti
-            10311, 10315, // Fischl
-            10331, 10335, // Tartaglia, ranged stance
-            10371, // Ganyu
-            10391, 10394, // Diona
-            10491, // Yoimiya
-            10551, 10554, // Gorou
-            10561, 10564, // Kojou Sara
-            10621, // Aloy
-            99998, 99999 // Yelan // TODO: get real values
-    ));
+    public static final HashSet<Integer> BowAvatars = new HashSet<>();
+    public static final HashSet<Integer> CatalystAvatars = new HashSet<>();
+    public static final HashSet<Integer> ClaymoreAvatars = new HashSet<>();
+    public static final HashSet<Integer> PolearmAvatars = new HashSet<>();
+    public static final HashSet<Integer> SwordAvatars = new HashSet<>();
 
+    public static void initialize() {
+        // Initialize skill categories
+        GameData.getAvatarDataMap().forEach((avatarId, avatarData) -> {
+            switch(avatarData.getWeaponType()) {
+                case "WEAPON_BOW":
+                    BowAvatars.add(avatarId);
+                    break;
+                case "WEAPON_CLAYMORE":
+                    ClaymoreAvatars.add(avatarId);
+                    break;
+                case "WEAPON_CATALYST":
+                    CatalystAvatars.add(avatarId);
+                    break;
+                case "WEAPON_POLE":
+                    PolearmAvatars.add(avatarId);
+                    break;
+                case "WEAPON_SWORD_ONE_HAND":
+                    SwordAvatars.add(avatarId);
+                    break;
+            }
+            // TODO: Initialize foods etc.
+        });
+    }
 
     public StaminaManager(Player player) {
         this.player = player;
@@ -244,8 +237,8 @@ public class StaminaManager {
         return Math.abs(diffX) > 0.3 || Math.abs(diffY) > 0.2 || Math.abs(diffZ) > 0.3;
     }
 
-    public int updateStaminaRelative(GameSession session, Consumption consumption) {
-        int currentStamina = player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
+    public int updateStaminaRelative(GameSession session, Consumption consumption, PlayerProperty staminaType) {
+        int currentStamina = player.getProperty(staminaType);
         if (consumption.amount == 0) {
             return currentStamina;
         }
@@ -253,7 +246,7 @@ public class StaminaManager {
         for (Map.Entry<String, BeforeUpdateStaminaListener> listener : beforeUpdateStaminaListeners.entrySet()) {
             Consumption overriddenConsumption = listener.getValue().onBeforeUpdateStamina(consumption.type.toString(), consumption);
             if ((overriddenConsumption.type != consumption.type) && (overriddenConsumption.amount != consumption.amount)) {
-                logger.debug("[StaminaManager] Stamina update relative(" +
+                logger.debug("Stamina update relative(" +
                         consumption.type.toString() + ", " + consumption.amount + ") overridden to relative(" +
                         consumption.type.toString() + ", " + consumption.amount + ") by: " + listener.getKey());
                 return currentStamina;
@@ -269,16 +262,16 @@ public class StaminaManager {
         } else if (newStamina > playerMaxStamina) {
             newStamina = playerMaxStamina;
         }
-        return setStamina(session, consumption.type.toString(), newStamina);
+        return setStamina(session, consumption.type.toString(), newStamina, staminaType);
     }
 
-    public int updateStaminaAbsolute(GameSession session, String reason, int newStamina) {
+    public int updateStaminaAbsolute(GameSession session, String reason, int newStamina, PlayerProperty staminaType) {
         int currentStamina = player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
         // notify will update
         for (Map.Entry<String, BeforeUpdateStaminaListener> listener : beforeUpdateStaminaListeners.entrySet()) {
             int overriddenNewStamina = listener.getValue().onBeforeUpdateStamina(reason, newStamina);
             if (overriddenNewStamina != newStamina) {
-                logger.debug("[StaminaManager] Stamina update absolute(" +
+                logger.debug("Stamina update absolute(" +
                         reason + ", " + newStamina + ") overridden to absolute(" +
                         reason + ", " + newStamina + ") by: " + listener.getKey());
                 return currentStamina;
@@ -290,18 +283,22 @@ public class StaminaManager {
         } else if (newStamina > playerMaxStamina) {
             newStamina = playerMaxStamina;
         }
-        return setStamina(session, reason, newStamina);
+        return setStamina(session, reason, newStamina, staminaType);
     }
 
     // Returns new stamina and sends PlayerPropNotify
-    public int setStamina(GameSession session, String reason, int newStamina) {
+    public int setStamina(GameSession session, String reason, int newStamina, PlayerProperty staminaType) {
         if (!GAME_OPTIONS.staminaUsage) {
             newStamina = player.getProperty(PlayerProperty.PROP_MAX_STAMINA);
         }
-        
         // set stamina
-        player.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, newStamina);
-        session.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
+        player.setProperty(staminaType, newStamina);
+        if (staminaType == PlayerProperty.PROP_CUR_TEMPORARY_STAMINA) {
+            // TODO: Implement
+            // session.send(new PacketVehicleStaminaNotify(vehicleEntity, newStamina));
+        } else {
+            session.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
+        }
         // notify updated
         for (Map.Entry<String, AfterUpdateStaminaListener> listener : afterUpdateStaminaListeners.entrySet()) {
             listener.getValue().onAfterUpdateStamina(reason, newStamina);
@@ -343,22 +340,23 @@ public class StaminaManager {
     // External trigger handler
 
     public void handleEvtDoSkillSuccNotify(GameSession session, int skillId, int casterId) {
-        // Ignore if skill not cast by not current active
+        // Ignore if skill not cast by not current active avatar
         if (casterId != player.getTeamManager().getCurrentAvatarEntity().getId()) {
             return;
         }
         setSkillCast(skillId, casterId);
         // Handle immediate stamina cost
-        if (ClaymoreSkills.contains(skillId)) {
+        int currentAvatarId = player.getTeamManager().getCurrentAvatarEntity().getAvatar().getAvatarId();
+        if (ClaymoreAvatars.contains(currentAvatarId)) {
             // Exclude claymore as their stamina cost starts when MixinStaminaCost gets in
             return;
         }
         // TODO: Differentiate normal attacks from charged attacks and exclude
         // TODO: Temporary: Exclude non-claymore attacks for now
-        if (BowSkills.contains(skillId)
-                || SwordSkills.contains(skillId)
-                || PolearmSkills.contains(skillId)
-                || CatalystSkills.contains(skillId)
+        if (BowAvatars.contains(currentAvatarId)
+                || SwordAvatars.contains(currentAvatarId)
+                || PolearmAvatars.contains(currentAvatarId)
+                || CatalystAvatars.contains(currentAvatarId)
         ) {
             return;
         }
@@ -367,7 +365,7 @@ public class StaminaManager {
 
     public void handleMixinCostStamina(boolean isSwim) {
         // Talent moving and claymore avatar charged attack duration
-        // logger.trace("abilityMixinCostStamina: isSwim: " + isSwim);
+        // logger.trace("abilityMixinCostStamina: isSwim: " + isSwim + "\tlastSkill: " + lastSkillId);
         if (lastSkillCasterId == player.getTeamManager().getCurrentAvatarEntity().getId()) {
             handleImmediateStamina(cachedSession, lastSkillId);
         }
@@ -401,22 +399,22 @@ public class StaminaManager {
         switch (motionState) {
             case MOTION_CLIMB:
                 if (currentState != MotionState.MOTION_CLIMB) {
-                    updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_START));
+                    updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_START), PlayerProperty.PROP_CUR_PERSIST_STAMINA);
                 }
                 break;
             case MOTION_DASH_BEFORE_SHAKE:
                 if (previousState != MotionState.MOTION_DASH_BEFORE_SHAKE) {
-                    updateStaminaRelative(session, new Consumption(ConsumptionType.SPRINT));
+                    updateStaminaRelative(session, new Consumption(ConsumptionType.SPRINT), PlayerProperty.PROP_CUR_PERSIST_STAMINA);
                 }
                 break;
             case MOTION_CLIMB_JUMP:
                 if (previousState != MotionState.MOTION_CLIMB_JUMP) {
-                    updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_JUMP));
+                    updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_JUMP), PlayerProperty.PROP_CUR_PERSIST_STAMINA);
                 }
                 break;
             case MOTION_SWIM_DASH:
                 if (previousState != MotionState.MOTION_SWIM_DASH) {
-                    updateStaminaRelative(session, new Consumption(ConsumptionType.SWIM_DASH_START));
+                    updateStaminaRelative(session, new Consumption(ConsumptionType.SWIM_DASH_START), PlayerProperty.PROP_CUR_PERSIST_STAMINA);
                 }
                 break;
         }
@@ -424,7 +422,7 @@ public class StaminaManager {
 
     private void handleImmediateStamina(GameSession session, int skillId) {
         Consumption consumption = getFightConsumption(skillId);
-        updateStaminaRelative(session, consumption);
+        updateStaminaRelative(session, consumption, PlayerProperty.PROP_CUR_PERSIST_STAMINA);
     }
 
     private class SustainedStaminaHandler extends TimerTask {
@@ -449,41 +447,45 @@ public class StaminaManager {
                     consumption = getSkiffConsumption();
                 } else if (MotionStatesCategorized.get("STANDBY").contains(currentState)) {
                     consumption = new Consumption(ConsumptionType.STANDBY);
-                } else if (MotionStatesCategorized.get("SWIM").contains((currentState))) {
+                } else if (MotionStatesCategorized.get("SWIM").contains(currentState)) {
                     consumption = getSwimConsumptions();
-                } else if (MotionStatesCategorized.get("WALK").contains((currentState))) {
+                } else if (MotionStatesCategorized.get("WALK").contains(currentState)) {
                     consumption = new Consumption(ConsumptionType.WALK);
-                } else if (MotionStatesCategorized.get("OTHER").contains((currentState))) {
+                } else if (MotionStatesCategorized.get("NOCOST_NORECOVER").contains(currentState)) {
+                    consumption = new Consumption();
+                } else if (MotionStatesCategorized.get("OTHER").contains(currentState)) {
                     consumption = getOtherConsumptions();
-                } else {
-                    // ignore
+                } else { // ignore
                     return;
                 }
+
                 if (consumption.amount < 0) {
                     /* Do not apply reduction factor when recovering stamina
                     TODO: Reductions that apply to all motion types:
-                        Elemental Resonance
-                            Wind: -15%
                         Skills
                             Diona E: -10% while shield lasts - applies to SP+MP
                             Barbara E: -12% while lasts - applies to SP+MP
                     */
+                    // Elemental Resonance - Winds -15%
+                    if (player.getTeamManager().getTeamResonances().contains(10301)) {
+                         consumption.amount *= 0.85f;
+                    }
                 }
-                // Delay 2 seconds before starts recovering stamina
-                if (cachedSession != null) {
+                // Delay 1 seconds before starts recovering stamina
+                if (consumption.amount != 0 && cachedSession != null) {
                     if (consumption.amount < 0) {
                         staminaRecoverDelay = 0;
                     }
                     if (consumption.amount > 0 && consumption.type != ConsumptionType.POWERED_FLY) {
                         // For POWERED_FLY recover immediately - things like Amber's gliding exam may require this.
-                        if (staminaRecoverDelay < 10) {
-                            // For others recover after 2 seconds (10 ticks) - as official server does.
+                        if (staminaRecoverDelay < 5) {
+                            // For others recover after 1 seconds (5 ticks) - as official server does.
                             staminaRecoverDelay++;
                             consumption.amount = 0;
-                            logger.trace("[StaminaManager] Delaying recovery: " + staminaRecoverDelay);
+                            logger.trace("Delaying recovery: " + staminaRecoverDelay);
                         }
                     }
-                    updateStaminaRelative(cachedSession, consumption);
+                    updateStaminaRelative(cachedSession, consumption, PlayerProperty.PROP_CUR_PERSIST_STAMINA);
                 }
             }
             previousState = currentState;
@@ -496,6 +498,7 @@ public class StaminaManager {
     }
 
     private void handleDrowning() {
+        // TODO: fix drowning waverider entity
         int stamina = player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA);
         if (stamina < 10) {
             logger.trace(player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA) + "/" +
@@ -517,23 +520,24 @@ public class StaminaManager {
             return getTalentMovingSustainedCost(skillCasting);
         }
         // Bow avatar charged attack
-        if (BowSkills.contains(skillCasting)) {
+        int currentAvatarId = player.getTeamManager().getCurrentAvatarEntity().getAvatar().getAvatarId();
+        if (BowAvatars.contains(currentAvatarId)) {
             return getBowSustainedCost(skillCasting);
         }
         // Claymore avatar charged attack
-        if (ClaymoreSkills.contains(skillCasting)) {
+        if (ClaymoreAvatars.contains(currentAvatarId)) {
             return getClaymoreSustainedCost(skillCasting);
         }
         // Catalyst avatar charged attack
-        if (CatalystSkills.contains(skillCasting)) {
+        if (CatalystAvatars.contains(currentAvatarId)) {
             return getCatalystSustainedCost(skillCasting);
         }
         // Polearm avatar charged attack
-        if (PolearmSkills.contains(skillCasting)) {
+        if (PolearmAvatars.contains(currentAvatarId)) {
             return getPolearmSustainedCost(skillCasting);
         }
         // Sword avatar charged attack
-        if (SwordSkills.contains(skillCasting)) {
+        if (SwordAvatars.contains(skillCasting)) {
             return getSwordSustainedCost(skillCasting);
         }
         return new Consumption();
@@ -546,18 +550,8 @@ public class StaminaManager {
             consumption.amount = ConsumptionType.CLIMBING.amount;
         }
         // Climbing specific reductions
-        // TODO: create a food cost reduction map
-        HashMap<Integer, Float> foodReductionMap = new HashMap<>() {{
-            // TODO: get real talent id
-            put(0, 0.8f); // Sample food
-        }};
-        consumption.amount *= getFoodCostReductionFactor(foodReductionMap);
-
-        HashMap<Integer, Float> talentReductionMap = new HashMap<>() {{
-            // TODO: get real talent id
-            put(0, 0.8f); // Xiao
-        }};
-        consumption.amount *= getTalentCostReductionFactor(talentReductionMap);
+        consumption.amount *= getFoodCostReductionFactor(ClimbFoodReductionMap);
+        consumption.amount *= getTalentCostReductionFactor(ClimbTalentReductionMap);
         return consumption;
     }
 
@@ -572,13 +566,9 @@ public class StaminaManager {
             consumption.type = ConsumptionType.SWIM_DASH;
             consumption.amount = ConsumptionType.SWIM_DASH.amount;
         }
-        // Reductions
-        HashMap<Integer, Float> talentReductionMap = new HashMap<>() {{
-            // TODO: get real talent id
-            put(0, 0.8f); // Beidou
-            put(1, 0.8f); // Sangonomiya Kokomi
-        }};
-        consumption.amount *= getTalentCostReductionFactor(talentReductionMap);
+        // Swimming specific reductions
+        consumption.amount *= getFoodCostReductionFactor(SwimFoodReductionMap);
+        consumption.amount *= getTalentCostReductionFactor(SwimTalentReductionMap);
         return consumption;
     }
 
@@ -587,8 +577,8 @@ public class StaminaManager {
         if (currentState == MotionState.MOTION_DASH) {
             consumption.type = ConsumptionType.DASH;
             consumption.amount = ConsumptionType.DASH.amount;
-            // TODO: Dashing specific reductions
-            //     Foods:
+            // Dashing specific reductions
+            consumption.amount *= getFoodCostReductionFactor(DashFoodReductionMap);
         }
         return consumption;
     }
@@ -599,13 +589,9 @@ public class StaminaManager {
             return new Consumption(ConsumptionType.POWERED_FLY);
         }
         Consumption consumption = new Consumption(ConsumptionType.FLY);
-        // Passive Talents
-        HashMap<Integer, Float> talentReductionMap = new HashMap<>() {{
-            put(212301, 0.8f); // Amber
-            put(222301, 0.8f); // Venti
-        }};
-        consumption.amount *= getTalentCostReductionFactor(talentReductionMap);
-        // TODO: Foods
+        // Flying specific reductions
+        consumption.amount *= getFoodCostReductionFactor(FlyFoodReductionMap);
+        consumption.amount *= getTalentCostReductionFactor(FlyTalentReductionMap);
         return consumption;
     }
 
@@ -619,12 +605,17 @@ public class StaminaManager {
     }
 
     private Consumption getOtherConsumptions() {
-        if (currentState == MotionState.MOTION_NOTIFY) {
-            if (BowSkills.contains(lastSkillId)) {
+        switch (currentState) {
+            case MOTION_NOTIFY:
+//                if (BowSkills.contains(lastSkillId)) {
+//                    return new Consumption(ConsumptionType.FIGHT, 500);
+//                }
+                break;
+            case MOTION_FIGHT:
+                // TODO: what if charged attack
                 return new Consumption(ConsumptionType.FIGHT, 500);
-            }
         }
-        // TODO: Add other logic
+
         return new Consumption();
     }
 
@@ -685,11 +676,13 @@ public class StaminaManager {
         // Character specific handling
         switch (skillId) {
             case 10571: // Arataki Itto, does not consume stamina at all.
+            case 10532: // Sayu, windwheel does not consume stamina.
                 consumption.amount = 0;
                 break;
             case 10160: // Diluc, with talent "Relentless" stamina cost is decreased by 50%
-                // TODO: How to get talent status?
-                consumption.amount /= 2;
+                if (player.getTeamManager().getCurrentAvatarEntity().getAvatar().getProudSkillList().contains(162101)) {
+                    consumption.amount /= 2;
+                }
                 break;
         }
         return consumption;
