@@ -3,6 +3,7 @@ package emu.grasscutter.utils;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 
+import java.io.File;
 import java.io.FileReader;
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -22,6 +23,18 @@ public class ConfigContainer {
      * Attempts to update the server's existing configuration to the latest 
      */
     public static void updateConfig() {
+
+        // DockerGC Stuuf
+        try {
+          ConfigContainer config = Grasscutter.getConfig();
+          File vv = new File(config.folderStructure.VERSION);
+		      if (vv.exists()) {
+            version_DockerGC = new String(FileUtils.read(vv));
+		      }
+        } catch (Exception e) {
+          //TODO: handle exception
+        }
+
         try { // Check if the server is using a legacy config.
             JsonObject configObject = Grasscutter.getGsonFactory()
                     .fromJson(new FileReader(Grasscutter.configFile), JsonObject.class);
@@ -38,7 +51,8 @@ public class ConfigContainer {
             return;
 
         // Create a new configuration instance.
-        ConfigContainer updated = new ConfigContainer();
+        ConfigContainer updated = new ConfigContainer();        
+
         // Update all configuration fields.
         Field[] fields = ConfigContainer.class.getDeclaredFields();
         Arrays.stream(fields).forEach(field -> {
@@ -64,7 +78,8 @@ public class ConfigContainer {
     public Server server = new Server();
 
     // DO NOT. TOUCH. THE VERSION NUMBER.
-    public int version = version();
+    public static int version = version();
+    public static String version_DockerGC = "0.0.0";
 
     /* Option containers. */
 

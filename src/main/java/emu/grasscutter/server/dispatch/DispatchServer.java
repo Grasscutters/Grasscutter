@@ -22,6 +22,7 @@ import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
 import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
 import emu.grasscutter.tools.Tools;
+import emu.grasscutter.utils.ConfigContainer;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 import express.Express;
@@ -240,13 +241,7 @@ public final class DispatchServer {
 			}
 		});
 
-		File vv;
-		vv = new File(Grasscutter.getConfig().folderStructure.VERSION);
-		if (vv.exists()) {
-			httpServer.get("/", (req, res) -> res.send("Server <a href='https://github.com/akbaryahya/DockerGC'>DockerGC "+new String(FileUtils.read(vv))+"</a>"));
-		} else {
-			httpServer.get("/", (req, res) -> res.send(translate("messages.status.welcome")));
-		}
+    httpServer.get("/", (req, res) -> res.send("Server running with <a href='https://github.com/akbaryahya/DockerGC'>DockerGC "+ConfigContainer.version_DockerGC+"</a> is a container that run <a href='https://github.com/Grasscutters/Grasscutter'>Grasscutter</a>"));
 
 		httpServer.raw().error(404, ctx -> {
 			if(SERVER.debugLevel == ServerDebugMode.MISSING) {
