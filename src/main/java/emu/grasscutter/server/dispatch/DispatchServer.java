@@ -117,7 +117,7 @@ public final class DispatchServer {
 						.setTitle(DISPATCH_INFO.defaultName)
 						.setType("DEV_PUBLIC")
 						.setDispatchUrl(
-								"http" + (DISPATCH_ENCRYPTION.useEncryption ? "s" : "") + "://"
+								"http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "") + "://"
 										+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
 										+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
 										+ "/query_cur_region/" + defaultServerName)
@@ -150,7 +150,7 @@ public final class DispatchServer {
 						.setTitle(regionInfo.Title)
 						.setType("DEV_PUBLIC")
 						.setDispatchUrl(
-								"http" + (DISPATCH_ENCRYPTION.useEncryption ? "s" : "") + "://"
+								"http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "") + "://"
 										+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":" 
 										+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort) 
 										+ "/query_cur_region/" + regionInfo.Name)
