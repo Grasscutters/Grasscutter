@@ -20,7 +20,7 @@
       "unhandled_request_error": "[Dispatch] 潜在的未处理请求：%s %s",
       "account": {
         "login_attempt": "[Dispatch] 客户端 %s 正在尝试登录",
-        "login_success": "[Dispatch] 客户端 %s 已登录，UID为 %s",
+        "login_success": "[Dispatch] 客户端 %s 已登录，UID 为 %s",
         "login_token_attempt": "[Dispatch] 客户端 %s 正在尝试使用 token 登录",
         "login_token_error": "[Dispatch] 客户端 %s 使用 token 登录失败",
         "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID 为 %s",
@@ -96,7 +96,7 @@
       "create": "已创建账号，UID 为 %s。",
       "delete": "账号已删除。",
       "no_account": "账号不存在。",
-      "command_usage": "用法：account <create|delete> <用户名> [uid]",
+      "command_usage": "用法：account <create|delete> <用户名> [UID]",
       "description": "创建或删除账号"
     },
     "broadcast": {
@@ -290,7 +290,7 @@
     },
     "talent": {
       "usage_1": "设置天赋等级：/talent set <天赋ID> <数值>",
-      "usage_2": "另一种设置天赋等级的方法：/talent <n (普攻) | e (元素战技) | q (元素爆发)> <数值>",
+      "usage_2": "另一种设置天赋等级的方法：/talent <n (普通攻击) | e (元素战技) | q (元素爆发)> <数值>",
       "usage_3": "获取天赋ID：/talent getid",
       "lower_16": "无效的天赋等级，天赋等级应小于等于15。",
       "set_id": "将天赋等级设为 %s。",
