@@ -6,7 +6,9 @@
 		"prefabPath": "GachaShowPanel_A022",
 		"previewPrefabPath": "UI_Tab_GachaShowPanel_A022",
 		"titlePath": "UI_GACHA_SHOW_PANEL_A022_TITLE",
-		"costItem": 224,
+		"costItemId": 224,
+		"costItemAmount": 1,
+		"costItemAmount10": 10,
 		"beginTime": 0,
 		"endTime": 1924992000,
 		"sortId": 1000,
@@ -21,7 +23,7 @@
 		"prefabPath": "GachaShowPanel_A079",
 		"previewPrefabPath": "UI_Tab_GachaShowPanel_A079",
 		"titlePath": "UI_GACHA_SHOW_PANEL_A048_TITLE",
-		"costItem": 223,
+		"costItemId": 223,
 		"beginTime": 0,
 		"endTime": 1924992000,
 		"sortId": 9998,
@@ -37,7 +39,7 @@
 		"prefabPath": "GachaShowPanel_A080",
 		"previewPrefabPath": "UI_Tab_GachaShowPanel_A080",
 		"titlePath": "UI_GACHA_SHOW_PANEL_A021_TITLE",
-		"costItem": 223,
+		"costItemId": 223,
 		"beginTime": 0,
 		"endTime": 1924992000,
 		"sortId": 9997,
@@ -47,6 +49,7 @@
 		"rateUpItems4": [11401, 12402, 13407, 14401, 15401],
 		"rateUpItems5": [11509, 12504],
 		"fallbackItems5Pool1": [],
+		"weights4": [[1,600], [7,600], [8, 6600], [10,12600]],
 		"weights5": [[1,100], [62,100], [73, 7800], [80,10000]]
 	}
 ]
