@@ -272,6 +272,14 @@ public class Inventory implements Iterable<GameItem> {
 		}
 	}
 
+	public boolean payItem(int id, int count) {
+		return payItem(new ItemParamData(id, count));
+	}
+
+	public boolean payItem(ItemParamData costItem) {
+		return payItems(new ItemParamData[] {costItem}, 1, null);
+	}
+
 	public boolean payItems(ItemParamData[] costItems) {
 		return payItems(costItems, 1, null);
 	}
