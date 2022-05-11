@@ -113,6 +113,9 @@ public class ConfigContainer {
         public int bindPort = 443;
         /* This is the port used in URLs. */
         public int accessPort = 443;
+        
+        public String WelcomeFile = "./welcome.html";
+        public String ErrorFile = "./404.html";
 
         public Encryption encryption = new Encryption();
         public Policies policies = new Policies();
