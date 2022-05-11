@@ -45,7 +45,8 @@
       "run_mode_error": "無效的伺服器運行模式： %s。",
       "run_mode_help": "伺服器運行模式必須為 HYBRID 或者 DISPATCH_ONLY 或者 GAME_ONLY。Grasscutter 啟動失敗...",
       "create_resources": "正在建立 resources 資料夾...",
-      "resources_error": "請將 BinOutput 和 ExcelBinOutput 複製到 resources 資料夾。"
+      "resources_error": "請將 BinOutput 和 ExcelBinOutput 複製到 resources 資料夾。",
+      "version": "Grasscutter版本: %s-%s"
     }
   },
   "commands": {
@@ -300,6 +301,15 @@
     },
     "resetshop": {
       "description": "重置商店時間"
+    }
+  },
+  "gacha": {
+    "details": {
+      "title": "Banner Details",
+      "available_five_stars": "Available 5-star Items",
+      "available_four_stars": "Available 4-star Items",
+      "available_three_stars": "Available 3-star Items",
+      "template_missing": "data/gacha_details.html is missing."
     }
   }
 }

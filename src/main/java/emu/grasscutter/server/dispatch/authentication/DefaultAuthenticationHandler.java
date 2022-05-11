@@ -29,6 +29,12 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
     }
 
     @Override
+    public boolean verifyUser(String details) {
+        Grasscutter.getLogger().info(translate("dispatch.authentication.default_unable_to_verify"));
+        return false;
+    }
+
+    @Override
     public LoginResultJson handleGameLogin(Request req, LoginAccountRequestJson requestData) {
         LoginResultJson responseData = new LoginResultJson();
 

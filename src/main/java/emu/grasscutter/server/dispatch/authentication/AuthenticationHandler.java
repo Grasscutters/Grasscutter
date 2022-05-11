@@ -12,5 +12,12 @@ public interface AuthenticationHandler {
     void handleRegister(Request req, Response res);
     void handleChangePassword(Request req, Response res);
 
+    /**
+     * Other plugins may need to verify a user's identity using details from handleLogin()
+     * @param details The user's unique one-time token that needs to be verified
+     * @return If the verification was successful
+     */
+    boolean verifyUser(String details);
+
     LoginResultJson handleGameLogin(Request req, LoginAccountRequestJson requestData);
 }
