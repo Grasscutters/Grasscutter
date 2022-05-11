@@ -21,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
 import java.lang.Math;
 import java.util.*;
 
+import static emu.grasscutter.Configuration.*;
+
 public class StaminaManager {
 
     // TODO: Skiff state detection?
@@ -293,9 +295,10 @@ public class StaminaManager {
 
     // Returns new stamina and sends PlayerPropNotify
     public int setStamina(GameSession session, String reason, int newStamina) {
-        if (!Grasscutter.getConfig().OpenStamina) {
+        if (!GAME_OPTIONS.staminaUsage) {
             newStamina = player.getProperty(PlayerProperty.PROP_MAX_STAMINA);
         }
+        
         // set stamina
         player.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, newStamina);
         session.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));

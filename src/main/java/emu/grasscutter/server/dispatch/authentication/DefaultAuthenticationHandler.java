@@ -9,6 +9,7 @@ import express.http.Request;
 import express.http.Response;
 
 import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.Configuration.*;
 
 public class DefaultAuthenticationHandler implements AuthenticationHandler {
 
@@ -37,11 +38,11 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
         // Check if account exists, else create a new one.
         if (account == null) {
             // Account doesn't exist, so we can either auto create it if the config value is set.
-            if (Grasscutter.getConfig().getDispatchOptions().AutomaticallyCreateAccounts) {
+            if (ACCOUNT.autoCreate) {
                 // This account has been created AUTOMATICALLY. There will be no permissions added.
                 account = DatabaseHelper.createAccountWithId(requestData.account, 0);
 
-                for (String permission : Grasscutter.getConfig().getDispatchOptions().defaultPermissions) {
+                for (String permission : ACCOUNT.defaultPermissions) {
                     account.addPermission(permission);
                 }
 
