@@ -6,6 +6,7 @@ import emu.grasscutter.utils.Utils;
 
 import static emu.grasscutter.Configuration.*;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.common.ItemParamData;
 
 public class GachaBanner {
@@ -145,25 +146,26 @@ public class GachaBanner {
 						+ "/gacha/details?s=" + sessionKey + "&gachaType=" + gachaType;
 
 		// Grasscutter.getLogger().info("record = " + record);
+		ItemParamData costItem1 = this.getCost(1);
+		ItemParamData costItem10 = this.getCost(10);
 		GachaInfo.Builder info = GachaInfo.newBuilder()
 				.setGachaType(this.getGachaType())
 				.setScheduleId(this.getScheduleId())
 				.setBeginTime(this.getBeginTime())
 				.setEndTime(this.getEndTime())
-				.setCostItemId(this.getCostItem())
-	            .setCostItemNum(1)
+				.setCostItemId(costItem1.getId())
+	            .setCostItemNum(costItem1.getCount())
+	            .setTenCostItemId(costItem10.getId())
+	            .setTenCostItemNum(costItem10.getCount())
 	            .setGachaPrefabPath(this.getPrefabPath())
 	            .setGachaPreviewPrefabPath(this.getPreviewPrefabPath())
 	            .setGachaProbUrl(details)
 	            .setGachaProbUrlOversea(details)
 	            .setGachaRecordUrl(record)
 	            .setGachaRecordUrlOversea(record)
-	            .setTenCostItemId(this.getCostItem())
-	            .setTenCostItemNum(10)
 	            .setLeftGachaTimes(Integer.MAX_VALUE)
 	            .setGachaTimesLimit(Integer.MAX_VALUE)
 	            .setGachaSortId(this.getSortId());
-		
 		if (this.getTitlePath() != null) {
 			info.setGachaTitlePath(this.getTitlePath());
 		}
