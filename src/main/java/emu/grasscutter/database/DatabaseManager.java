@@ -23,19 +23,19 @@ import emu.grasscutter.game.player.Player;
 import static emu.grasscutter.Configuration.*;
 
 public final class DatabaseManager {
-	private static Datastore datastore;
+	private static Datastore gameDatastore;
 	private static Datastore dispatchDatastore;
 	
 	private static final Class<?>[] mappedClasses = new Class<?>[] {
 		DatabaseCounter.class, Account.class, Player.class, Avatar.class, GameItem.class, Friendship.class, GachaRecord.class, Mail.class
 	};
     
-    public static Datastore getDatastore() {
-    	return datastore;
+    public static Datastore getGameDatastore() {
+    	return gameDatastore;
     }
     
-    public static MongoDatabase getDatabase() {
-    	return getDatastore().getDatabase();
+    public static MongoDatabase getGameDatabase() {
+    	return getGameDatastore().getDatabase();
     }
 
 	// Yes. I very dislike this method. However, this will be good for now.
@@ -44,42 +44,42 @@ public final class DatabaseManager {
 		if(SERVER.runMode == ServerRunMode.GAME_ONLY) {
 			return dispatchDatastore;
 		} else {
-			return datastore;
+			return gameDatastore;
 		}
 	}
 	
 	public static void initialize() {
 		// Initialize
-		MongoClient mongoClient = MongoClients.create(DATABASE.connectionUri);
+		MongoClient gameMongoClient = MongoClients.create(DATABASE.game.connectionUri);
 		
 		// Set mapper options.
 		MapperOptions mapperOptions = MapperOptions.builder()
 				.storeEmpties(true).storeNulls(false).build();
 		// Create data store.
-		datastore = Morphia.createDatastore(mongoClient, DATABASE.collection, mapperOptions);
+		gameDatastore = Morphia.createDatastore(gameMongoClient, DATABASE.game.collection, mapperOptions);
 		// Map classes.
-		datastore.getMapper().map(mappedClasses);
+		gameDatastore.getMapper().map(mappedClasses);
 		
 		// Ensure indexes
 		try {
-			datastore.ensureIndexes();
+			gameDatastore.ensureIndexes();
 		} catch (MongoCommandException exception) {
 			Grasscutter.getLogger().info("Mongo index error: ", exception);
 			// Duplicate index error
 			if (exception.getCode() == 85) {
 				// Drop all indexes and re add them
-				MongoIterable<String> collections = datastore.getDatabase().listCollectionNames();
+				MongoIterable<String> collections = gameDatastore.getDatabase().listCollectionNames();
 				for (String name : collections) {
-					datastore.getDatabase().getCollection(name).dropIndexes();
+					gameDatastore.getDatabase().getCollection(name).dropIndexes();
 				}
 				// Add back indexes
-				datastore.ensureIndexes();
+				gameDatastore.ensureIndexes();
 			}
 		}
 
 		if(SERVER.runMode == ServerRunMode.GAME_ONLY) {
-			MongoClient dispatchMongoClient = MongoClients.create(GAME_OPTIONS.databaseInfo.connectionUri);
-			dispatchDatastore = Morphia.createDatastore(dispatchMongoClient, GAME_OPTIONS.databaseInfo.collection);
+			MongoClient dispatchMongoClient = MongoClients.create(DATABASE.server.connectionUri);
+			dispatchDatastore = Morphia.createDatastore(dispatchMongoClient, DATABASE.server.collection);
 
 			// Ensure indexes for dispatch server
 			try {
@@ -101,14 +101,14 @@ public final class DatabaseManager {
 	}
 
 	public static synchronized int getNextId(Class<?> c) {
-		DatabaseCounter counter = getDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", c.getSimpleName())).first();
+		DatabaseCounter counter = getGameDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", c.getSimpleName())).first();
 		if (counter == null) {
 			counter = new DatabaseCounter(c.getSimpleName());
 		}
 		try {
 			return counter.getNextId();
 		} finally {
-			getDatastore().save(counter);
+			getGameDatastore().save(counter);
 		}
 	}
 
