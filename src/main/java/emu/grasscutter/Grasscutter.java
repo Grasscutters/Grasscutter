@@ -1,9 +1,8 @@
 package emu.grasscutter;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOError;
+import java.io.*;
+import java.lang.reflect.Field;
+import java.util.Arrays;
 import java.util.Calendar;
 
 import emu.grasscutter.command.CommandMap;
@@ -32,13 +31,15 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
 
+import javax.annotation.Nullable;
+
 import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.Configuration.*;
 
 public final class Grasscutter {
 	private static final Logger log = (Logger) LoggerFactory.getLogger(Grasscutter.class);
 	private static LineReader consoleLineReader = null;
-
-	private static Config config;
+	
 	private static Language language;
 
 	private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -51,13 +52,14 @@ public final class Grasscutter {
 	private static PluginManager pluginManager;
 
 	public static final Reflections reflector = new Reflections("emu.grasscutter");
+	public static final Configuration config;
   
 	static {
 		// Declare logback configuration.
 		System.setProperty("logback.configurationFile", "src/main/resources/logback.xml");
 
 		// Load server configuration.
-		Grasscutter.loadConfig();
+		config = Grasscutter.loadConfig();
 
 		// Load translation files.
 		Grasscutter.loadLanguage();
@@ -66,9 +68,9 @@ public final class Grasscutter {
 		Utils.startupCheck();
 	}
 
-  public static void main(String[] args) throws Exception {
-    	Crypto.loadKeys(); // Load keys from buffers.
-
+  	public static void main(String[] args) throws Exception {
+		Crypto.loadKeys(); // Load keys from buffers.
+	
 		// Parse arguments.
 		boolean exitEarly = false;
 		for (String arg : args) {
@@ -77,25 +79,25 @@ public final class Grasscutter {
 					Tools.createGmHandbook(); exitEarly = true;
 				}
 				case "-gachamap" -> {
-					Tools.createGachaMapping(Grasscutter.getConfig().DATA_FOLDER + "/gacha_mappings.js"); exitEarly = true;
+					Tools.createGachaMapping(DATA("gacha_mappings.js")); exitEarly = true;
 				}
 			}
 		} 
 		
 		// Exit early if argument sets it.
 		if(exitEarly) System.exit(0);
-
+	
 		// Initialize server.
 		Grasscutter.getLogger().info(translate("messages.status.starting"));
-
+	
 		// Load all resources.
 		Grasscutter.updateDayOfWeek();
 		ResourceLoader.loadAll();
 		ScriptLoader.init();
-
+	
 		// Initialize database.
 		DatabaseManager.initialize();
-
+	
 		// Create server instances.
 		dispatchServer = new DispatchServer();
 		gameServer = new GameServer();
@@ -103,31 +105,32 @@ public final class Grasscutter {
 		new ServerHook(gameServer, dispatchServer);
 		// Create plugin manager instance.
 		pluginManager = new PluginManager();
-
+	
 		// Start servers.
-		if (getConfig().RunMode == ServerRunMode.HYBRID) {
+		var runMode = SERVER.runMode;
+		if (runMode == ServerRunMode.HYBRID) {
 			dispatchServer.start();
 			gameServer.start();
-		} else if (getConfig().RunMode == ServerRunMode.DISPATCH_ONLY) {
+		} else if (runMode == ServerRunMode.DISPATCH_ONLY) {
 			dispatchServer.start();
-		} else if (getConfig().RunMode == ServerRunMode.GAME_ONLY) {
+		} else if (runMode == ServerRunMode.GAME_ONLY) {
 			gameServer.start();
 		} else {
-			getLogger().error(translate("messages.status.run_mode_error", getConfig().RunMode));
+			getLogger().error(translate("messages.status.run_mode_error", runMode));
 			getLogger().error(translate("messages.status.run_mode_help"));
 			getLogger().error(translate("messages.status.shutdown"));
 			System.exit(1);
 		}
-
+	
 		// Enable all plugins.
 		pluginManager.enablePlugins();
-
+	
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(Grasscutter::onShutdown));
-
+	
 		// Open console.
 		startConsole();
- }
+ 	}
 
 	/**
 	 * Server shutdown event.
@@ -137,32 +140,60 @@ public final class Grasscutter {
 		pluginManager.disablePlugins();
 	}
 
-	public static void loadConfig() {
+	/**
+	 * Attempts to load the configuration from a file.
+	 * @return The config from the file, or a new instance.
+	 */
+	public static Configuration loadConfig() {
 		try (FileReader file = new FileReader(configFile)) {
-			config = gson.fromJson(file, Config.class);
-			saveConfig();
+			return gson.fromJson(file, Configuration.class);
 		} catch (Exception e) {
-			Grasscutter.config = new Config(); 
-			saveConfig();
+			Grasscutter.saveConfig(null);
+			return new Configuration();
 		}
 	}
 
+	/**
+	 * Attempts to reload the configuration from the file.
+	 * Uses reflection to **replace** the fields in the config.
+	 */
+	public static void reloadConfig() {
+		Configuration fileConfig = Grasscutter.loadConfig();
+		
+		Field[] fields = Configuration.class.getDeclaredFields();
+		Arrays.stream(fields).forEach(field -> {
+			try {
+				field.set(config, field.get(fileConfig));
+			} catch (Exception exception) {
+				Grasscutter.getLogger().error("Failed to update a configuration field.", exception);
+			}
+		});
+	}
+
 	public static void loadLanguage() {
-		var locale = config.LocaleLanguage;
+		var locale = config.language.language;
         language = Language.getLanguage(Utils.getLanguageCode(locale));
 	}
 
-	public static void saveConfig() {
+	/**
+	 * Saves the provided server configuration.
+	 * @param config The configuration to save, or null for a new one.
+	 */
+	public static void saveConfig(@Nullable Configuration config) {
+		if(config == null) config = new Configuration();
+		
 		try (FileWriter file = new FileWriter(configFile)) {
 			file.write(gson.toJson(config));
+		} catch (IOException ignored) {
+			Grasscutter.getLogger().error("Unable to write to config file.");
 		} catch (Exception e) {
-			Grasscutter.getLogger().error("Unable to save config file.");
+			Grasscutter.getLogger().error("Unable to save config file.", e);
 		}
 	}
 
 	public static void startConsole() {
 		// Console should not start in dispatch only mode.
-		if (getConfig().RunMode == ServerRunMode.DISPATCH_ONLY) {
+		if (SERVER.runMode == ServerRunMode.DISPATCH_ONLY) {
 			getLogger().info(translate("messages.dispatch.no_commands_error"));
 			return;
 		}
@@ -198,7 +229,7 @@ public final class Grasscutter {
 		}
 	}
 
-	public static Config getConfig() {
+	public static Configuration getConfig() {
 		return config;
 	}
 

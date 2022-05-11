@@ -31,6 +31,8 @@ import emu.grasscutter.scripts.data.ScriptArgs;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
+import static emu.grasscutter.Configuration.*;
+
 public class SceneScriptManager {
 	private final Scene scene;
 	private final ScriptLib scriptLib;
@@ -164,7 +166,7 @@ public class SceneScriptManager {
 	private void init() {
 		// Get compiled script if cached
 		CompiledScript cs = ScriptLoader.getScriptByPath(
-			Grasscutter.getConfig().SCRIPTS_FOLDER + "Scene/" + getScene().getId() + "/scene" + getScene().getId() + "." + ScriptLoader.getScriptType());
+			SCRIPT("Scene/" + getScene().getId() + "/scene" + getScene().getId() + "." + ScriptLoader.getScriptType()));
 		
 		if (cs == null) {
 			Grasscutter.getLogger().warn("No script found for scene " + getScene().getId());
@@ -211,7 +213,7 @@ public class SceneScriptManager {
 	
 	private void loadBlockFromScript(SceneBlock block) {
 		CompiledScript cs = ScriptLoader.getScriptByPath(
-			Grasscutter.getConfig().SCRIPTS_FOLDER + "Scene/" + getScene().getId() + "/scene" + getScene().getId() + "_block" + block.id + "." + ScriptLoader.getScriptType());
+			SCRIPT("Scene/" + getScene().getId() + "/scene" + getScene().getId() + "_block" + block.id + "." + ScriptLoader.getScriptType()));
 	
 		if (cs == null) {
 			return;
@@ -234,7 +236,7 @@ public class SceneScriptManager {
 		group.setLoaded(true);
 		
 		CompiledScript cs = ScriptLoader.getScriptByPath(
-			Grasscutter.getConfig().SCRIPTS_FOLDER + "Scene/" + getScene().getId() + "/scene" + getScene().getId() + "_group" + group.id + "." + ScriptLoader.getScriptType());
+			SCRIPTS_FOLDER + "Scene/" + getScene().getId() + "/scene" + getScene().getId() + "_group" + group.id + "." + ScriptLoader.getScriptType());
 	
 		if (cs == null) {
 			return;
@@ -281,9 +283,7 @@ public class SceneScriptManager {
 						if (gadget != null) {
 							suite.sceneGadgets.add(gadget);
 						}
-					} catch (Exception e) {
-						continue;
-					}
+					} catch (Exception ignored) { }
 				}
 			}
 			this.sceneGroups.put(group.id, group);
