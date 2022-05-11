@@ -3,7 +3,6 @@ package emu.grasscutter.server.dispatch.http;
 import java.io.File;
 import java.io.IOException;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.utils.FileUtils;
@@ -12,10 +11,12 @@ import express.http.HttpContextHandler;
 import express.http.Request;
 import express.http.Response;
 
+import static emu.grasscutter.Configuration.*;
+
 public final class GachaRecordHandler implements HttpContextHandler {
 	String render_template;
 	public GachaRecordHandler() {
-		File template = new File(Utils.toFilePath(Grasscutter.getConfig().DATA_FOLDER + "/gacha_records.html"));
+		File template = new File(Utils.toFilePath(DATA("/gacha_records.html")));
 		if (template.exists()) {
 			// Load from cache
 			render_template = new String(FileUtils.read(template));
@@ -31,11 +32,11 @@ public final class GachaRecordHandler implements HttpContextHandler {
 		int page = 0;
 		int gachaType = 0;
 		if (req.query("p") != null) {
-			page = Integer.valueOf(req.query("p"));
+			page = Integer.parseInt(req.query("p"));
 		}
 
 		if (req.query("gachaType") != null) {
-			gachaType = Integer.valueOf(req.query("gachaType"));
+			gachaType = Integer.parseInt(req.query("gachaType"));
 		}
 
 		Account account = DatabaseHelper.getAccountBySessionKey(sessionKey);

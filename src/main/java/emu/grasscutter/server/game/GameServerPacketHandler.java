@@ -14,6 +14,8 @@ import emu.grasscutter.server.game.GameSession.SessionState;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
+import static emu.grasscutter.Configuration.*;
+
 @SuppressWarnings("unchecked")
 public class GameServerPacketHandler {
 	private final Int2ObjectMap<PacketHandler> handlers;
@@ -92,7 +94,7 @@ public class GameServerPacketHandler {
 		}
 		
 		// Log unhandled packets
-		if (Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING) {
+		if (SERVER.debugLevel == ServerDebugMode.MISSING) {
 			Grasscutter.getLogger().info("Unhandled packet (" + opcode + "): " + emu.grasscutter.net.packet.PacketOpcodesUtil.getOpcodeName(opcode));
 		}
 	}
