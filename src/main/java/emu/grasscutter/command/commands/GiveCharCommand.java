@@ -63,9 +63,10 @@ public final class GiveCharCommand implements CommandHandler {
         // Calculate ascension level.
         int ascension;
         if (level <= 40) {
-            ascension = (int) Math.ceil(level / 20f);
+            ascension = (int) Math.ceil(level / 20f) - 1;
         } else {
             ascension = (int) Math.ceil(level / 10f) - 3;
+            ascension = Math.min(ascension, 6);
         }
 
         Avatar avatar = new Avatar(avatarId);
