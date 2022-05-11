@@ -45,13 +45,6 @@ targetCompatibility = JavaVersion.VERSION_17
 group = 'xyz.grasscutters'
 version = '1.1.1-dev'
 
-def gitCommitHash = {
-    try {
-        return 'git rev-parse --verify --short HEAD'.execute().text.trim()
-    } catch (e) {
-        return "GIT_NOT_FOUND"
-    }
-}
 
 sourceCompatibility = 17
 targetCompatibility = 17
@@ -122,13 +115,6 @@ jar {
     from('src/main/java') {
         include '*.xml'
     }
-    new File(projectDir, "src/main/java/emu/grasscutter/BuildConfig.java").text = """
-    package emu.grasscutter;
-    public class BuildConfig {
-            public static final String VERSION = \"${version}\";
-            public static final String GIT_HASH = \"${gitCommitHash()}\";
-    }
-    """
 
     destinationDir = file(".")
 }
@@ -242,6 +228,26 @@ javadoc {
     }
 }
 
+task injectGitHash {
+    doLast {
+        def gitCommitHash = {
+            try {
+                return 'git rev-parse --verify --short HEAD'.execute().text.trim()
+            } catch (e) {
+                return "GIT_NOT_FOUND"
+            }
+        }
+        new File(projectDir, "src/main/java/emu/grasscutter/BuildConfig.java").text = """
+            package emu.grasscutter;
+            public class BuildConfig {
+                    public static final String VERSION = \"${version}\";
+                    public static final String GIT_HASH = \"${gitCommitHash()}\";
+            }
+        """
+    }
+}
+
 processResources {
     dependsOn "generateProto"
+    dependsOn "injectGitHash"
 }
