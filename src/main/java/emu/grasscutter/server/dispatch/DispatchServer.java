@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.protobuf.ByteString;
 
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.Grasscutter.ServerRunMode;
@@ -125,8 +126,8 @@ public final class DispatchServer {
 				servers.add(server);
 
 				RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
-						.setGateserverIp(lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress))
-						.setGateserverPort(lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort))
+						.setGateserverIp(lr(GAME_INFO.accessAddress, GAME_INFO.bindAddress))
+						.setGateserverPort(lr(GAME_INFO.accessPort, GAME_INFO.bindPort))
 						.setSecretKey(ByteString.copyFrom(FileUtils.read(KEYS_FOLDER + "/dispatchSeed.bin")))
 						.build();
 
@@ -257,6 +258,15 @@ public final class DispatchServer {
 		httpServer.post("/authentication/login", (req, res) -> this.getAuthHandler().handleLogin(req, res));
 		httpServer.post("/authentication/register", (req, res) -> this.getAuthHandler().handleRegister(req, res));
 		httpServer.post("/authentication/change_password", (req, res) -> this.getAuthHandler().handleChangePassword(req, res));
+
+		// Server Status
+		httpServer.get("/status/server", (req, res) -> {
+
+			int playerCount = Grasscutter.getGameServer().getPlayers().size();
+			String version = GameConstants.VERSION;
+
+			res.send("{\"retcode\":0,\"status\":{\"playerCount\":" + playerCount + ",\"version\":\"" + version + "\"}}");
+		});
 
 		// Dispatch
 		httpServer.get("/query_region_list", (req, res) -> {
