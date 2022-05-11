@@ -44,6 +44,13 @@ public final class LanguageCommand implements CommandHandler {
             actualLangCode = languageInst.getLanguageCode();
             Grasscutter.setLanguage(languageInst);
         }
+
+        if (!langCode.equals(actualLangCode)) {
+            // I think there is no necessary to register this in language files
+            // since this will always be english
+            CommandHandler.sendMessage(sender, "currently, server does not have that language: " + langCode);
+        }
+
         CommandHandler.sendMessage(sender, translate(sender, "commands.language.language_changed", actualLangCode));
 
     }
