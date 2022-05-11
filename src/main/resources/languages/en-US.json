@@ -46,7 +46,7 @@
       "run_mode_help": "Server run mode must be 'HYBRID', 'DISPATCH_ONLY', or 'GAME_ONLY'. Unable to start Grasscutter...",
       "create_resources": "Creating resources folder...",
       "resources_error": "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.",
-      "version": "Grasscutter version: %s, Git Hash: %s"
+      "version": "Grasscutter version: %s-%s"
     }
   },
   "commands": {

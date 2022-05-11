@@ -81,7 +81,7 @@ public final class Grasscutter {
 					Tools.createGachaMapping(Grasscutter.getConfig().DATA_FOLDER + "/gacha_mappings.js"); exitEarly = true;
 				}
 				case "-version" -> {
-					System.out.println("Grasscutter version: " + BuildConfig.VERSION + "\nGit Hash: " + BuildConfig.GIT_HASH); exitEarly = true;
+					System.out.println("Grasscutter version: " + BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH); exitEarly = true;
 				}
 			}
 		} 
