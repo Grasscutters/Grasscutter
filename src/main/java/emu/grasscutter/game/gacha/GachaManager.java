@@ -17,7 +17,6 @@ import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.gacha.GachaBanner.BannerType;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
@@ -78,10 +77,6 @@ public class GachaManager {
 			if(banners.size() > 0) {
 				for (GachaBanner banner : banners) {
 					getGachaBanners().put(banner.getGachaType(), banner);
-					Grasscutter.getLogger().info(String.format("Testing lerp code for banner gachaType %d :", banner.getGachaType()));  // TODO: remove this before merging!
-					for (int i=1; i<91; i++) {
-						Grasscutter.getLogger().info(String.format("Pity %d : Weight %d", i, banner.getWeight(5, i)));
-					}
 				}
 				Grasscutter.getLogger().info("Banners successfully loaded.");
 
