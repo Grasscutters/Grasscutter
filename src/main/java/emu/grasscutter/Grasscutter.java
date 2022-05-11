@@ -31,6 +31,7 @@ import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
+import emu.grasscutter.BuildConfig;
 
 import static emu.grasscutter.utils.Language.translate;
 
@@ -78,6 +79,9 @@ public final class Grasscutter {
 				}
 				case "-gachamap" -> {
 					Tools.createGachaMapping(Grasscutter.getConfig().DATA_FOLDER + "/gacha_mappings.js"); exitEarly = true;
+				}
+				case "-version" -> {
+					System.out.println("Grasscutter version: " + BuildConfig.VERSION + "\nGit Hash: " + BuildConfig.GIT_HASH); exitEarly = true;
 				}
 			}
 		} 
