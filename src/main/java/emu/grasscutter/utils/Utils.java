@@ -11,7 +11,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Locale;
 
-import emu.grasscutter.Config;
 import emu.grasscutter.Grasscutter;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
@@ -175,12 +174,12 @@ public final class Utils {
 	 * Checks for required files and folders before startup.
 	 */
 	public static void startupCheck() {
-		Config config = Grasscutter.getConfig();
+		ConfigContainer config = Grasscutter.getConfig();
 		Logger logger = Grasscutter.getLogger();
 		boolean exit = false;
 
-		String resourcesFolder = config.RESOURCE_FOLDER;
-		String dataFolder = config.DATA_FOLDER;
+		String resourcesFolder = config.folderStructure.resources;
+		String dataFolder = config.folderStructure.data;
 
 		// Check for resources folder.
 		if(!fileExists(resourcesFolder)) {

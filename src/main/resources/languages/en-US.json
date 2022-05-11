@@ -191,6 +191,7 @@
     "language": {
       "current_language": "current language is %s",
       "language_changed": "language changed to %s",
+      "language_not_found": "currently, server does not have that language: %s",
       "description": "display or change current language"
     },
     "list": {
