@@ -19,6 +19,8 @@ import emu.grasscutter.server.game.GameSession.SessionState;
 
 import java.util.Arrays;
 
+import static emu.grasscutter.Configuration.*;
+
 @Opcodes(PacketOpcodes.SetPlayerBornDataReq)
 public class HandlerSetPlayerBornDataReq extends PacketHandler {
 	
@@ -85,11 +87,12 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			session.send(new BasePacket(PacketOpcodes.SetPlayerBornDataRsp));
 
 			// Default mail
+			var welcomeMail = GAME_INFO.joinOptions.welcomeMail;
 			MailBuilder mailBuilder = new MailBuilder(player.getUid(), new Mail());
-			mailBuilder.mail.mailContent.title = Grasscutter.getConfig().GameServer.WelcomeMailTitle;
-			mailBuilder.mail.mailContent.sender = Grasscutter.getConfig().GameServer.WelcomeMailSender;
-			mailBuilder.mail.mailContent.content = Grasscutter.getConfig().GameServer.WelcomeMailContent;
-			mailBuilder.mail.itemList.addAll(Arrays.asList(Grasscutter.getConfig().GameServer.WelcomeMailItems));
+			mailBuilder.mail.mailContent.title = welcomeMail.title;
+			mailBuilder.mail.mailContent.sender = welcomeMail.sender;
+			mailBuilder.mail.mailContent.content = welcomeMail.content;
+			mailBuilder.mail.itemList.addAll(Arrays.asList(welcomeMail.items));
 			mailBuilder.mail.importance = 1;
 			player.sendMail(mailBuilder.mail);
 			

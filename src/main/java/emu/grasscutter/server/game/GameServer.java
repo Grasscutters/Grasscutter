@@ -30,11 +30,9 @@ import java.net.InetSocketAddress;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.Configuration.*;
 
 public final class GameServer extends KcpServer {
 	private final InetSocketAddress address;
@@ -59,8 +57,8 @@ public final class GameServer extends KcpServer {
 
 	public GameServer() {
 		this(new InetSocketAddress(
-				Grasscutter.getConfig().getGameServerOptions().Ip, 
-				Grasscutter.getConfig().getGameServerOptions().Port
+				GAME_INFO.bindAddress,
+				GAME_INFO.bindPort
 		));
 	}
 	
