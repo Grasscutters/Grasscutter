@@ -696,7 +696,7 @@ public class InventoryManager {
 		}
 		
 		// Pay materials and mora if possible
-		List<ItemParamData> costs = proudSkill.getCostItems();  // Can this be null?
+		List<ItemParamData> costs = new ArrayList<ItemParamData>(proudSkill.getCostItems());  // Can this be null?
 		if (proudSkill.getCoinCost() > 0) {
 			costs.add(new ItemParamData(202, proudSkill.getCoinCost()));
 		}
