@@ -1,8 +1,10 @@
 package emu.grasscutter;
 
+import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter.*;
 import emu.grasscutter.game.mail.Mail.*;
 
+import java.io.FileReader;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Locale;
@@ -24,7 +26,16 @@ public final class Configuration {
      * Attempts to update the server's existing configuration to the latest configuration.
      */
     public static void updateConfig() {
-        var existing = config.version; 
+        try { // Check if the server is using a legacy config.
+            JsonObject configObject = Grasscutter.getGsonFactory()
+                    .fromJson(new FileReader(Grasscutter.configFile), JsonObject.class);
+            if(!configObject.has("version")) {
+                Grasscutter.getLogger().info("Updating legacy configuration...");
+                Grasscutter.saveConfig(null);
+            }
+        } catch (Exception ignored) { }
+        
+        var existing = config.version;
         var latest = version();
         
         if(existing == latest) 

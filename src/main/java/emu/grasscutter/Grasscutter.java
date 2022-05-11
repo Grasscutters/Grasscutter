@@ -43,7 +43,7 @@ public final class Grasscutter {
 	private static Language language;
 
 	private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
-	private static final File configFile = new File("./config.json");
+	public static final File configFile = new File("./config.json");
 
 	private static int day; // Current day of week.
 
@@ -60,6 +60,8 @@ public final class Grasscutter {
 
 		// Load server configuration.
 		config = Grasscutter.loadConfig();
+		// Attempt to update configuration.
+		Configuration.updateConfig();
 
 		// Load translation files.
 		Grasscutter.loadLanguage();
