@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.nio.file.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -46,6 +47,8 @@ public class GachaManager {
 	
 	private static final int starglitterId = 221;
 	private static final int stardustId = 222;
+	private int[] fallbackItems4Pool2Default = {11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407, 14401, 14402, 14403, 14409, 15401, 15402, 15403, 15405};
+	private int[] fallbackItems5Pool2Default = {11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502};
 
 	public GachaManager(GameServer server) {
 		this.server = server;
@@ -156,16 +159,16 @@ public class GachaManager {
 		// Simple weighted selection with an upper bound for the roll that cuts off trailing entries
 		// All weights must be >= 0
 		int total = 0;
-		for (int i : weights) {
-			if (i < 0) {
+		for (int weight : weights) {
+			if (weight < 0) {
 				throw new IllegalArgumentException("Weights must be non-negative!");
 			}
-			total += i;
+			total += weight;
 		}
 		int roll = ThreadLocalRandom.current().nextInt((total < cutoff)? total : cutoff);
 		int subTotal = 0;
-		for (int i : weights) {
-			subTotal += i;
+		for (int i=0; i<weights.length; i++) {
+			subTotal += weights[i];
 			if (roll < subTotal) {
 				return i;
 			}
@@ -176,16 +179,22 @@ public class GachaManager {
 
 	private synchronized int doRarePull(int[] featured, int[] fallback1, int[] fallback2, int rarity, GachaBanner banner, PlayerGachaBannerInfo gachaInfo) {
 		int itemId = 0;
-		if (	(featured.length > 0)
-				&& (gachaInfo.getFailedFeaturedItemPulls(rarity) >= 1)
-				|| (this.randomRange(1, 100) <= banner.getEventChance(rarity))) {
+		boolean pullFeatured = (gachaInfo.getFailedFeaturedItemPulls(rarity) >= 1)  // Lost previous coinflip
+							|| (this.randomRange(1, 100) <= banner.getEventChance(rarity));  // Won this coinflip
+		if (pullFeatured && (featured.length > 0)) {
 			itemId = getRandom(featured);
 			gachaInfo.setFailedFeaturedItemPulls(rarity, 0);
 		} else {
 			gachaInfo.addFailedFeaturedItemPulls(rarity, 1);
 			if (fallback1.length < 1) {
-				itemId = getRandom(fallback2);  // Don't ever run an empty fallback2 btw
-			} else {
+				if (fallback2.length < 1) {
+					itemId = getRandom((rarity==5)? fallbackItems5Pool2Default : fallbackItems4Pool2Default);
+				} else {
+					itemId = getRandom(fallback2);
+				}
+			} else if (fallback2.length < 1) {
+				itemId = getRandom(fallback1);
+			} else {  // Both pools are possible, use the pool balancer
 				int pityPool1 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 1));
 				int pityPool2 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 2));
 				int chosenPool = switch ((pityPool1 >= pityPool2)? 1 : 0) {  // Larger weight must come first for the hard cutoff to function correctly
@@ -245,6 +254,7 @@ public class GachaManager {
 		// Spend currency
 		ItemParamData cost = banner.getCost(times);
 		if (cost.getCount() > 0 && !inventory.payItem(cost)) {
+			player.sendPacket(new PacketDoGachaRsp());
 			return;
 		}
 		
