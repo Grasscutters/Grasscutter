@@ -47,6 +47,7 @@ public final class AccountCommand implements CommandHandler {
                  .toList();
                  CommandHandler.sendMessage(null, "There are currently "+Playerbroken.size()+" players without account data that broken.");
                  for (Player remove : Playerbroken) {
+                   CommandHandler.sendMessage(null, "Remove Uid "+remove.getUid()+" Player");
                    DatabaseHelper.deletePlayer(remove);                  
                  }
                  
@@ -150,7 +151,7 @@ public final class AccountCommand implements CommandHandler {
                  CommandHandler.sendMessage(null, "Current total account "+AllAccount.size()+" ");
                  for (Account remove : AllAccount) {
                    // Finally, we do actual deletion.
-                   CommandHandler.sendMessage(null, "Remove Uid "+remove.getPlayerUid()+" Player");
+                   CommandHandler.sendMessage(null, "Remove Uid "+remove.getPlayerUid()+" account");
                    DatabaseHelper.deleteAccount(remove);
                  }
                  return;
