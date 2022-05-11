@@ -73,10 +73,24 @@ public final class AccountCommand implements CommandHandler {
                 return;
             case "clean_account":
 
-                 int daylogin = Grasscutter.getConfig().getGameServerOptions().CMD_DayLogin;
+                 int daylogin;
                  int goseep = 1;
-                 int limit = 1000;
+                 int limit;
                  int intlimit = 0;
+
+                 try {
+                  limit = Integer.parseInt(username);
+                 } catch (Exception ignores) {
+                  limit= 1000;
+                 }
+                 
+                 int tes1;
+                 try {
+                  tes1 = Integer.parseInt(args.get(2));
+                 } catch (Exception ignores) {
+                  tes1 = Grasscutter.getConfig().getGameServerOptions().CMD_DayLogin;
+                 }
+                 daylogin = tes1;
 
                  // List All Player
                  List<Player> playerAll = DatabaseHelper.getAllPlayers().stream().toList();
@@ -84,9 +98,12 @@ public final class AccountCommand implements CommandHandler {
                  List<Player> player_offline = playerAll.stream()
                  .filter(g -> g.getProfile().getDaysSinceLogin() >= daylogin)
                  .filter(g -> DatabaseHelper.getAccountById(Integer.toString(g.getUid())) != null)
+                 .sorted((d1, d2) -> {
+                  return d2.getProfile().getDaysSinceLogin() - d1.getProfile().getDaysSinceLogin();
+                 })
                  .toList();
 
-                 CommandHandler.sendMessage(null, "Current total players "+playerAll.size()+" and "+player_offline.size()+" player who didn't log in for "+daylogin+" day ");
+                 CommandHandler.sendMessage(null, "Set limit "+limit+" | Current total players "+playerAll.size()+" and "+player_offline.size()+" player who didn't log in for "+daylogin+" day ");
 
                  for (Player remove : player_offline) {
 
@@ -112,7 +129,7 @@ public final class AccountCommand implements CommandHandler {
                   }
 
                   // Finally, we do actual deletion.
-                  CommandHandler.sendMessage(null, "Remove Uid "+remove.getUid()+", login "+remove.getProfile().getDaysSinceLogin()+" day ago Player");
+                  CommandHandler.sendMessage(null, "Go "+intlimit+" | Remove Uid "+remove.getUid()+", login "+remove.getProfile().getDaysSinceLogin()+" day ago Player");
                   DatabaseHelper.deleteAccount(account);
 
                   // Add delayTime
