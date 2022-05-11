@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarCostumeData;
 import emu.grasscutter.data.def.AvatarData;
@@ -15,7 +14,6 @@ import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
@@ -28,6 +26,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 
+import static emu.grasscutter.Configuration.*;
+
 public class Inventory implements Iterable<GameItem> {
 	private final Player player;
 	
@@ -39,10 +39,10 @@ public class Inventory implements Iterable<GameItem> {
 		this.store = new Long2ObjectOpenHashMap<>();
 		this.inventoryTypes = new Int2ObjectOpenHashMap<>();
 		
-		this.createInventoryTab(ItemType.ITEM_WEAPON, new EquipInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitWeapon));
-		this.createInventoryTab(ItemType.ITEM_RELIQUARY, new EquipInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitRelic));
-		this.createInventoryTab(ItemType.ITEM_MATERIAL, new MaterialInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitMaterial));
-		this.createInventoryTab(ItemType.ITEM_FURNITURE, new MaterialInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitFurniture));
+		this.createInventoryTab(ItemType.ITEM_WEAPON, new EquipInventoryTab(INVENTORY_LIMITS.weapons));
+		this.createInventoryTab(ItemType.ITEM_RELIQUARY, new EquipInventoryTab(INVENTORY_LIMITS.relics));
+		this.createInventoryTab(ItemType.ITEM_MATERIAL, new MaterialInventoryTab(INVENTORY_LIMITS.materials));
+		this.createInventoryTab(ItemType.ITEM_FURNITURE, new MaterialInventoryTab(INVENTORY_LIMITS.furniture));
 	}
 
 	public Player getPlayer() {
@@ -242,24 +242,18 @@ public class Inventory implements Iterable<GameItem> {
 	
 	private void addVirtualItem(int itemId, int count) {
 		switch (itemId) {
-			case 101: // Character exp
-				getPlayer().getServer().getInventoryManager().upgradeAvatar(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
-				break;
-			case 102: // Adventure exp
-				getPlayer().addExpDirectly(count);
-				break;
-			case 105: // Companionship exp
-				getPlayer().getServer().getInventoryManager().upgradeAvatarFetterLevel(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
-				break;
-			case 201: // Primogem
-				getPlayer().setPrimogems(player.getPrimogems() + count);
-				break;
-			case 202: // Mora
-				getPlayer().setMora(player.getMora() + count);
-				break;
-			case 203: // Genesis Crystals
-				getPlayer().setCrystals(player.getCrystals() + count);
-				break;
+			case 101 -> // Character exp
+					getPlayer().getServer().getInventoryManager().upgradeAvatar(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
+			case 102 -> // Adventure exp
+					getPlayer().addExpDirectly(count);
+			case 105 -> // Companionship exp
+					getPlayer().getServer().getInventoryManager().upgradeAvatarFetterLevel(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
+			case 201 -> // Primogem
+					getPlayer().setPrimogems(player.getPrimogems() + count);
+			case 202 -> // Mora
+					getPlayer().setMora(player.getMora() + count);
+			case 203 -> // Genesis Crystals
+					getPlayer().setCrystals(player.getCrystals() + count);
 		}
 	}
 	

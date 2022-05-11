@@ -12,7 +12,7 @@ import java.util.Locale;
 
 import org.bson.Document;
 
-import com.mongodb.DBObject;
+import static emu.grasscutter.Configuration.*;
 
 @Entity(value = "accounts", useDiscriminator = false)
 public class Account {
@@ -34,7 +34,7 @@ public class Account {
 	@Deprecated
 	public Account() {
 		this.permissions = new ArrayList<>();
-        this.locale = Grasscutter.getConfig().LocaleLanguage;
+        this.locale = LANGUAGE;
 	}
 
 	public String getId() {
@@ -180,7 +180,7 @@ public class Account {
 
         // Set account default language as server default language
         if (!document.containsKey("locale")) {
-            this.locale = Grasscutter.getConfig().LocaleLanguage;
+            this.locale = LANGUAGE;
         }
 	}
 }

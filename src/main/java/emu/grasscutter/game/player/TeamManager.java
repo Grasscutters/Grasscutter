@@ -5,7 +5,6 @@ import java.util.*;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
@@ -39,6 +38,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
+
+import static emu.grasscutter.Configuration.*;
 
 @Entity
 public class TeamManager {
@@ -174,13 +175,14 @@ public class TeamManager {
 	
 	public int getMaxTeamSize() {
 		if (getPlayer().isInMultiplayer()) {
-			int max = Grasscutter.getConfig().getGameServerOptions().MaxAvatarsInTeamMultiplayer;
+			int max = GAME_OPTIONS.avatarLimits.multiplayerTeam;
 			if (getPlayer().getWorld().getHost() == this.getPlayer()) {
 				return Math.max(1, (int) Math.ceil(max / (double) getWorld().getPlayerCount()));
 			}
 			return Math.max(1, (int) Math.floor(max / (double) getWorld().getPlayerCount()));
 		}
-		return Grasscutter.getConfig().getGameServerOptions().MaxAvatarsInTeam;
+		
+		return GAME_OPTIONS.avatarLimits.singlePlayerTeam;
 	}
 	
 	// Methods
@@ -236,7 +238,7 @@ public class TeamManager {
 		// Add back entities into team
 		for (int i = 0; i < this.getCurrentTeamInfo().getAvatars().size(); i++) {
 			int avatarId = this.getCurrentTeamInfo().getAvatars().get(i);
-			EntityAvatar entity = null;
+			EntityAvatar entity;
 			
 			if (existingAvatars.containsKey(avatarId)) {
 				entity = existingAvatars.get(avatarId);
@@ -303,8 +305,8 @@ public class TeamManager {
 		
 		// Set team data
 		LinkedHashSet<Avatar> newTeam = new LinkedHashSet<>();
-		for (int i = 0; i < list.size(); i++) {
-			Avatar avatar = getPlayer().getAvatars().getAvatarByGuid(list.get(i));
+		for (Long aLong : list) {
+			Avatar avatar = getPlayer().getAvatars().getAvatarByGuid(aLong);
 			if (avatar == null || newTeam.contains(avatar)) {
 				// Should never happen
 				return;
@@ -339,8 +341,8 @@ public class TeamManager {
 		
 		// Set team data
 		LinkedHashSet<Avatar> newTeam = new LinkedHashSet<>();
-		for (int i = 0; i < list.size(); i++) {
-			Avatar avatar = getPlayer().getAvatars().getAvatarByGuid(list.get(i));
+		for (Long aLong : list) {
+			Avatar avatar = getPlayer().getAvatars().getAvatarByGuid(aLong);
 			if (avatar == null || newTeam.contains(avatar)) {
 				// Should never happen
 				return;
@@ -359,7 +361,7 @@ public class TeamManager {
 	}
 
 	public void setupTemporaryTeam(List<List<Long>> guidList) {
-		var team = guidList.stream().map(list -> {
+		this.temporaryTeam = guidList.stream().map(list -> {
 					// Sanity checks
 					if (list.size() == 0 || list.size() > getMaxTeamSize()) {
 						return null;
@@ -367,8 +369,8 @@ public class TeamManager {
 
 					// Set team data
 					LinkedHashSet<Avatar> newTeam = new LinkedHashSet<>();
-					for (int i = 0; i < list.size(); i++) {
-						Avatar avatar = getPlayer().getAvatars().getAvatarByGuid(list.get(i));
+					for (Long aLong : list) {
+						Avatar avatar = getPlayer().getAvatars().getAvatarByGuid(aLong);
 						if (avatar == null || newTeam.contains(avatar)) {
 							// Should never happen
 							return null;
@@ -384,7 +386,6 @@ public class TeamManager {
 				.filter(Objects::nonNull)
 				.map(TeamInfo::new)
 				.toList();
-		this.temporaryTeam = team;
 	}
 
 	public void useTemporaryTeam(int index) {
