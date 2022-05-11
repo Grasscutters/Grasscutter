@@ -122,7 +122,7 @@ jar {
     from('src/main/java') {
         include '*.xml'
     }
-    new File(projectDir, "src/generated/main/java/emu/grasscutter/BuildConfig.java").text = """
+    new File(projectDir, "src/main/java/emu/grasscutter/BuildConfig.java").text = """
     package emu.grasscutter;
     public class BuildConfig {
             public static final String VERSION = \"${version}\";
