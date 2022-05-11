@@ -91,7 +91,7 @@ public final class AccountCommand implements CommandHandler {
                  try {
                   limit = Integer.parseInt(username);
                  } catch (Exception ignores) {
-                  limit= 1000;
+                  limit= 1;
                  }
                  
                  int tes1;
@@ -104,7 +104,7 @@ public final class AccountCommand implements CommandHandler {
 
                  // List All Player
                  List<Player> playerAll = DatabaseHelper.getAllPlayers().stream().toList();
-                 
+
                  // List Player offline
                  List<Player> player_offline = playerAll.stream()
                  .filter(g -> g.getProfile().getDaysSinceLogin() >= daylogin)
