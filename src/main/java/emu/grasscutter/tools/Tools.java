@@ -19,6 +19,7 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
+import emu.grasscutter.data.custom.QuestConfig;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.MonsterData;
@@ -88,7 +89,7 @@ public final class Tools {
 final class ToolsWithLanguageOption {
 	@SuppressWarnings("deprecation")
 	public static void createGmHandbook(String language) throws Exception {
-		ResourceLoader.loadResources();
+		ResourceLoader.loadAll();
 		
 		Map<Long, String> map;
 		try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(RESOURCE("TextMap/TextMap"+language+".json"))), StandardCharsets.UTF_8)) {
@@ -146,6 +147,15 @@ final class ToolsWithLanguageOption {
 			for (Integer id : list) {
 				SceneData data = GameData.getSceneDataMap().get(id);
 				writer.println(data.getId() + " : " + data.getScriptData());
+			}
+			
+			writer.println("// Quests");
+			list = new ArrayList<>(GameData.getQuestConfigs().keySet());
+			Collections.sort(list); 
+			
+			for (Integer id : list) {
+				QuestConfig data = GameData.getQuestConfigs().get(id);
+				writer.println(data.getId() + " : " + map.get(data.getMainQuest().getTitleTextMapHash()));
 			}
 			
 			writer.println();
