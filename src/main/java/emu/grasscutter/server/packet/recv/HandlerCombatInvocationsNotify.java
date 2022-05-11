@@ -77,6 +77,9 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 	}
 
 	private void handleFallOnGround(GameSession session, GameEntity entity, MotionState motionState) {
+		if (session.getPlayer().inGodmode()) {
+			return;
+		}
 		// People have reported that after plunge attack (client sends a FIGHT instead of FALL_ON_GROUND) they will die
 		// 		if they talk to an NPC (this is when the client sends a FALL_ON_GROUND) without jumping again.
 		// A dirty patch: if not received immediately after MOTION_LAND_SPEED, discard this packet.
@@ -101,10 +104,6 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 		}
 		if (cachedLandingSpeed < -28) {
 			damageFactor = 1f;
-		}
-		// Disable falling damage for players in god mode.
-		if (session.getPlayer() != null && session.getPlayer().inGodmode()) {
-			damageFactor = 0;
 		}
 		float damage = maxHP * damageFactor;
 		float newHP = currentHP - damage;

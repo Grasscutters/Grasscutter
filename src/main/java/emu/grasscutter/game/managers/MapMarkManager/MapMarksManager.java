@@ -46,7 +46,7 @@ public class MapMarksManager {
 
     public boolean addMapMark(MapMark mapMark) {
         if (mapMarks.size() < mapMarkMaxCount) {
-            if (!mapMarks.containsKey(mapMark.getPosition())) {
+            if (!mapMarks.containsKey(getMapMarkKey(mapMark.getPosition()))) {
                 mapMarks.put(getMapMarkKey(mapMark.getPosition()), mapMark);
                 return true;
             }

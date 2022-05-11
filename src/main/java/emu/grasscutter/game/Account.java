@@ -8,6 +8,7 @@ import emu.grasscutter.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import org.bson.Document;
 
@@ -28,10 +29,12 @@ public class Account {
 	private String token;
 	private String sessionKey; // Session token for dispatch server
 	private List<String> permissions;
+    private Locale locale;
 	
 	@Deprecated
 	public Account() {
 		this.permissions = new ArrayList<>();
+        this.locale = Grasscutter.getConfig().LocaleLanguage;
 	}
 
 	public String getId() {
@@ -95,6 +98,14 @@ public class Account {
 		this.save();
 		return this.sessionKey;
 	}
+
+    public Locale getLocale() {
+        return locale;
+    }
+
+    public void setLocale(Locale locale) {
+        this.locale = locale;
+    }
 
 	/**
 	 * The collection of a player's permissions.
@@ -166,5 +177,10 @@ public class Account {
 		if (!document.containsKey("permissions")) {
 			this.addPermission("*");
 		}
+
+        // Set account default language as server default language
+        if (!document.containsKey("locale")) {
+            this.locale = Grasscutter.getConfig().LocaleLanguage;
+        }
 	}
 }

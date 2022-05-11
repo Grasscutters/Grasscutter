@@ -22,7 +22,7 @@ public final class Config {
 	public GameServerOptions GameServer = new GameServerOptions();
 	public DispatchServerOptions DispatchServer = new DispatchServerOptions();
 	public Locale LocaleLanguage = Locale.getDefault();
-	public Locale DefaultLanguage = Locale.ENGLISH;
+	public Locale DefaultLanguage = Locale.US;
 
 	public Boolean OpenStamina = true;
 	public GameServerOptions getGameServerOptions() {
