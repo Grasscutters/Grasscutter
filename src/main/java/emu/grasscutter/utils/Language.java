@@ -125,23 +125,23 @@ public final class Language {
         InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
 
         if (file == null) { // Provided fallback language.
+            Grasscutter.getLogger().warn("Failed to load language file: " + fileName + ", falling back to: " + fallback);
             actualLanguageCode = fallbackLanguageCode;
             if (cachedLanguages.containsKey(actualLanguageCode)) {
                 return new LanguageStreamDescription(actualLanguageCode, null);
             }
             
             file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
-            Grasscutter.getLogger().warn("Failed to load language file: " + fileName + ", falling back to: " + fallback);
         }
 
         if(file == null) { // Fallback the fallback language.
+            Grasscutter.getLogger().warn("Failed to load language file: " + fallback + ", falling back to: en-US.json");
             actualLanguageCode = "en-US";
             if (cachedLanguages.containsKey(actualLanguageCode)) {
                 return new LanguageStreamDescription(actualLanguageCode, null);
             }
             
             file = Grasscutter.class.getResourceAsStream("/languages/en-US.json");
-            Grasscutter.getLogger().warn("Failed to load language file: " + fallback + ", falling back to: en-US.json");
         }
 
         if(file == null)
