@@ -16,6 +16,9 @@
         "no_keystore_error": "[Dispatch] No SSL cert found! Falling back to HTTP server.",
         "default_password": "[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to 123456 in config.json."
       },
+      "authentication": {
+        "default_unable_to_verify": "[Authentication] Something called the verifyUser method which is unavailable in the default authentication handler"
+      },
       "no_commands_error": "Commands are not supported in dispatch only mode.",
       "unhandled_request_error": "[Dispatch] Potential unhandled %s request: %s",
       "account": {
