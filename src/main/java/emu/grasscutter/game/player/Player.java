@@ -684,12 +684,13 @@ public class Player {
 		return expeditionInfo;
 	}
 
-	public void addExpeditionInfo(long avaterGuid, int expId, int hourTime, int startTime){
+	public void addExpeditionInfo(long avaterGuid, int expId, int hourTime, int startTime, float shortenRatio){
 		ExpeditionInfo exp = new ExpeditionInfo();
 		exp.setExpId(expId);
 		exp.setHourTime(hourTime);
 		exp.setState(1);
 		exp.setStartTime(startTime);
+		exp.setShortenRatio(shortenRatio);
 		expeditionInfo.put(avaterGuid, exp);
 	}
 

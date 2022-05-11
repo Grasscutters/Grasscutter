@@ -37,8 +37,17 @@ public class ExpeditionInfo {
         this.startTime = startTime;
     }
 
+    public float getShortenRatio() {
+        return shortenRatio;
+    }
+
+    public void setShortenRatio(float shortenRatio) {
+        this.shortenRatio = shortenRatio;
+    }
+
     private int state;
     private int expId;
     private int hourTime;
     private int startTime;
+    private float shortenRatio;
 }

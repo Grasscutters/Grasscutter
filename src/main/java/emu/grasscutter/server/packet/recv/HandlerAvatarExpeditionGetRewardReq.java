@@ -43,6 +43,10 @@ public class HandlerAvatarExpeditionGetRewardReq extends PacketHandler {
                             if(RewardData.getMinCount() != RewardData.getMaxCount()){
                                 num = Utils.randomRange(RewardData.getMinCount(), RewardData.getMaxCount());
                             }
+                            //Shenhe's expedition effect
+                            if (session.getPlayer().getAvatars().getAvatarByGuid(req.getAvatarGuid()).getAvatarId() == 10000063 && expInfo.getHourTime() == 20 && (expInfo.getExpId() > 200 && expInfo.getExpId() < 300)) {
+                                num += num * 0.25;
+                            }
                             items.add(new GameItem(RewardData.getItemId(), num));
                         }
                     }

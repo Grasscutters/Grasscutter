@@ -20,12 +20,29 @@ public class PacketAvatarExpeditionAllDataRsp extends BasePacket {
         var expeditionInfo = player.getExpeditionInfo();
         for (Long key : player.getExpeditionInfo().keySet()) {
             ExpeditionInfo e = expeditionInfo.get(key);
-            avatarExpeditionInfoList.put(key, AvatarExpeditionInfo.newBuilder().setStateValue(e.getState()).setExpId(e.getExpId()).setHourTime(e.getHourTime()).setStartTime(e.getStartTime()).build());
+            if (e.getShortenRatio() != 1){
+                avatarExpeditionInfoList.put(key, AvatarExpeditionInfo.newBuilder().setStateValue(e.getState()).setExpId(e.getExpId()).setHourTime(e.getHourTime()).setStartTime(e.getStartTime()).setShortenRatio(e.getShortenRatio()).build());
+            }else {
+                avatarExpeditionInfoList.put(key, AvatarExpeditionInfo.newBuilder().setStateValue(e.getState()).setExpId(e.getExpId()).setHourTime(e.getHourTime()).setStartTime(e.getStartTime()).build());
+            }
         };
+
+        int expeditionCountLimit = 2;
+        if (player.getLevel() >= 30){
+            if (player.getLevel() >= 35){
+                if (player.getLevel() >= 40){
+                    expeditionCountLimit = 5;
+                }else{
+                    expeditionCountLimit = 4;
+                }
+            }else{
+                expeditionCountLimit = 3;
+            }
+        }
 
         AvatarExpeditionAllDataRsp.Builder proto = AvatarExpeditionAllDataRsp.newBuilder()
                 .addAllOpenExpeditionList(openExpeditionList)
-                .setExpeditionCountLimit(5)
+                .setExpeditionCountLimit(expeditionCountLimit)
                 .putAllExpeditionInfoMap(avatarExpeditionInfoList);
 
         this.setData(proto.build());

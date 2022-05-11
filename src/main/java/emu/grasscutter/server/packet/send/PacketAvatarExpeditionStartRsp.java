@@ -15,8 +15,12 @@ public class PacketAvatarExpeditionStartRsp extends BasePacket {
         var expeditionInfo = player.getExpeditionInfo();
         for (Long key : player.getExpeditionInfo().keySet()) {
             ExpeditionInfo e = expeditionInfo.get(key);
-            proto.putExpeditionInfoMap(key, AvatarExpeditionInfo.newBuilder().setStateValue(e.getState()).setExpId(e.getExpId()).setHourTime(e.getHourTime()).setStartTime(e.getStartTime()).build());
-        };
+            if (e.getShortenRatio() != 1){
+                proto.putExpeditionInfoMap(key, AvatarExpeditionInfo.newBuilder().setStateValue(e.getState()).setExpId(e.getExpId()).setHourTime(e.getHourTime()).setStartTime(e.getStartTime()).setShortenRatio(e.getShortenRatio()).build());
+            }else {
+                proto.putExpeditionInfoMap(key, AvatarExpeditionInfo.newBuilder().setStateValue(e.getState()).setExpId(e.getExpId()).setHourTime(e.getHourTime()).setStartTime(e.getStartTime()).build());
+            }
+        }
 
         this.setData(proto.build());
     }
