@@ -16,6 +16,7 @@ import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.server.dispatch.authentication.AuthenticationHandler;
 import emu.grasscutter.server.dispatch.authentication.DefaultAuthenticationHandler;
+import emu.grasscutter.server.dispatch.http.GachaDetailsHandler;
 import emu.grasscutter.server.dispatch.http.GachaRecordHandler;
 import emu.grasscutter.server.dispatch.json.*;
 import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
@@ -117,7 +118,7 @@ public final class DispatchServer {
 						.setTitle(DISPATCH_INFO.defaultName)
 						.setType("DEV_PUBLIC")
 						.setDispatchUrl(
-								"http" + (DISPATCH_ENCRYPTION.useEncryption ? "s" : "") + "://"
+								"http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "") + "://"
 										+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
 										+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
 										+ "/query_cur_region/" + defaultServerName)
@@ -150,7 +151,7 @@ public final class DispatchServer {
 						.setTitle(regionInfo.Title)
 						.setType("DEV_PUBLIC")
 						.setDispatchUrl(
-								"http" + (DISPATCH_ENCRYPTION.useEncryption ? "s" : "") + "://"
+								"http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "") + "://"
 										+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":" 
 										+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort) 
 										+ "/query_cur_region/" + regionInfo.Name)
@@ -454,6 +455,9 @@ public final class DispatchServer {
 		}
 
 		httpServer.raw().config.addSinglePageRoot("/gacha/mappings", gachaMappingsPath, Location.EXTERNAL);
+
+		// gacha details
+		httpServer.get("/gacha/details", new GachaDetailsHandler());
 
 		// static file support for plugins
 		httpServer.raw().config.precompressStaticFiles = false; // If this isn't set to false, files such as images may appear corrupted when serving static files

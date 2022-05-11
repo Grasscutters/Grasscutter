@@ -45,6 +45,7 @@ targetCompatibility = JavaVersion.VERSION_17
 group = 'xyz.grasscutters'
 version = '1.1.1-dev'
 
+
 sourceCompatibility = 17
 targetCompatibility = 17
 
@@ -96,6 +97,7 @@ application {
     // Define the main class for the application
     mainClassName = 'emu.grasscutter.Grasscutter'
 }
+
 
 jar {
     manifest {
@@ -224,6 +226,23 @@ javadoc {
     if(JavaVersion.current().isJava9Compatible()) {
         options.addBooleanOption('html5', true)
     }
+}
+
+task injectGitHash {
+    def gitCommitHash = {
+        try {
+            return 'git rev-parse --verify --short HEAD'.execute().text.trim()
+        } catch (e) {
+            return "GIT_NOT_FOUND"
+        }
+    }
+    new File(projectDir, "src/main/java/emu/grasscutter/BuildConfig.java").text = """
+        package emu.grasscutter;
+        public class BuildConfig {
+                public static final String VERSION = \"${version}\";
+                public static final String GIT_HASH = \"${gitCommitHash()}\";
+        }
+    """
 }
 
 processResources {
