@@ -104,7 +104,7 @@ public final class DatabaseHelper {
 
   public static void deletePlayer(Player target) {
 		// To delete Player, we need to also delete all other documents in database that reference Player by uid.
-    
+
 		// Delete Mail.class data
 		DatabaseManager.getDatabase().getCollection("mail").deleteMany(eq("ownerUid", target.getUid()));
 		// Delete Avatar.class data
@@ -230,7 +230,7 @@ public final class DatabaseHelper {
 	}
 
   public static List<GameItem> getInventoryNullPlayer() {
-		return DatabaseManager.getDatastore().find(GameItem.class).stream().filter(g -> DatabaseHelper.getAccountById(Integer.toString(g.getOwnerId())) == null).toList();
+		return DatabaseManager.getDatastore().find(GameItem.class).stream().filter(g -> DatabaseHelper.getAccountByPlayerId(g.getOwnerId()) == null).toList();
 	}
 	
 	public static List<Friendship> getFriends(Player player) {
