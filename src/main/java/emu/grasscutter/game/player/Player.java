@@ -134,10 +134,11 @@ public class Player {
 	@Transient private final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
 	@Transient private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
 
-	private MapMarksManager mapMarksManager;
+	@Transient private MapMarksManager mapMarksManager;
 	@Transient private StaminaManager staminaManager;
 
 	private long springLastUsed;
+	private HashMap<String, MapMark> mapMarks;
 
 
 	@Deprecated
@@ -181,7 +182,7 @@ public class Player {
 		this.shopLimit = new ArrayList<>();
 		this.expeditionInfo = new HashMap<>();
 		this.messageHandler = null;
-		this.mapMarksManager = new MapMarksManager();
+		this.mapMarksManager = new MapMarksManager(this);
 		this.staminaManager = new StaminaManager(this);
 		this.sotsManager = new SotSManager(this);
 	}
@@ -209,7 +210,7 @@ public class Player {
 		this.getPos().set(GameConstants.START_POSITION);
 		this.getRotation().set(0, 307, 0);
 		this.messageHandler = null;
-		this.mapMarksManager = new MapMarksManager();
+		this.mapMarksManager = new MapMarksManager(this);
 		this.staminaManager = new StaminaManager(this);
 		this.sotsManager = new SotSManager(this);
 	}
@@ -1043,6 +1044,10 @@ public class Player {
 	public AbilityManager getAbilityManager() {
 		return abilityManager;
 	}
+
+	public HashMap<String, MapMark> getMapMarks() { return mapMarks; }
+
+	public void setMapMarks(HashMap<String, MapMark> newMarks) { mapMarks = newMarks; }
 
 	public synchronized void onTick() {
 		// Check ping
