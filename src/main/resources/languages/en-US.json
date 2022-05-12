@@ -16,6 +16,9 @@
         "no_keystore_error": "[Dispatch] No SSL cert found! Falling back to HTTP server.",
         "default_password": "[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to 123456 in config.json."
       },
+      "authentication": {
+        "default_unable_to_verify": "[Authentication] Something called the verifyUser method which is unavailable in the default authentication handler"
+      },
       "no_commands_error": "Commands are not supported in dispatch only mode.",
       "unhandled_request_error": "[Dispatch] Potential unhandled %s request: %s",
       "account": {
@@ -45,7 +48,8 @@
       "run_mode_error": "Invalid server run mode: %s.",
       "run_mode_help": "Server run mode must be 'HYBRID', 'DISPATCH_ONLY', or 'GAME_ONLY'. Unable to start Grasscutter...",
       "create_resources": "Creating resources folder...",
-      "resources_error": "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder."
+      "resources_error": "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.",
+      "version": "Grasscutter version: %s-%s"
     }
   },
   "commands": {
@@ -347,6 +351,15 @@
     },
     "resetshop": {
       "description": "reset shop"
+    }
+  },
+  "gacha": {
+    "details": {
+      "title": "Banner Details",
+      "available_five_stars": "Available 5-star Items",
+      "available_four_stars": "Available 4-star Items",
+      "available_three_stars": "Available 3-star Items",
+      "template_missing": "data/gacha_details.html is missing."
     }
   }
 }
