@@ -18,9 +18,11 @@ public class HandlerTowerEnterLevelReq extends PacketHandler {
     }
 
     if (Grasscutter.getConfig().server.game.gameOptions.AbyssMT) {
-			CommandHandler.sendMessage(session.getPlayer(), "Sorry Abyss has been temporarily turned off");
+			CommandHandler.sendMessage(session.getPlayer(), "Sorry abyse has been temporarily turned off");
       return;
 		}
+
+    Grasscutter.getLogger().info("DEBUG Abyse: Player Start "+session.getPlayer().getNickname()+" ");
 
     TowerEnterLevelReq req = TowerEnterLevelReq.parseFrom(payload);
 		session.getPlayer().getTowerManager().enterLevel(req.getEnterPointId());

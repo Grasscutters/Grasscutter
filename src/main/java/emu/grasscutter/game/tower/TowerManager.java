@@ -2,6 +2,7 @@ package emu.grasscutter.game.tower;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.TowerLevelData;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
@@ -85,6 +86,9 @@ public class TowerManager {
 
 
     public void enterLevel(int enterPointId) {
+
+        Grasscutter.getLogger().info("DEBUG Abyse: enterLevel "+player.getNickname()+" ");
+        
         var levelData = GameData.getTowerLevelDataMap().get(getCurrentLevelId());
 
         var dungeonId = levelData.getDungeonId();
