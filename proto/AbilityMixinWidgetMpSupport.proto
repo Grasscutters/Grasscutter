@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+
+message AbilityMixinWidgetMpSupport {
+	uint32 target_entity_id = 1;
+}
