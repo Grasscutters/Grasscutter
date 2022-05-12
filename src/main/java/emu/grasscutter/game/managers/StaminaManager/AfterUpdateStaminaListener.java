@@ -8,5 +8,5 @@ public interface AfterUpdateStaminaListener {
      * @param reason     Why updating stamina.
      * @param newStamina New Stamina value.
      */
-    void onAfterUpdateStamina(String reason, int newStamina);
+    void onAfterUpdateStamina(String reason, int newStamina, boolean isCharacterStamina);
 }
