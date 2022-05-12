@@ -209,6 +209,7 @@ public final class DatabaseHelper {
 		return DatabaseManager.getGameDatastore().find(Avatar.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
 
+  // find item null by match playerId account
   public static List<Avatar> getAvatarsNullPlayer() {
 		return DatabaseManager.getGameDatastore().find(Avatar.class).stream().filter(g -> DatabaseHelper.getAccountByPlayerId(g.getOwnerId()) == null).toList();
 	}
