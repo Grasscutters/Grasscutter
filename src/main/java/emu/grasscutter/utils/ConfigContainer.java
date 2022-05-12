@@ -126,6 +126,7 @@ public class ConfigContainer {
         public Region[] regions = {};
 
         public String defaultName = "Grasscutter";
+        public boolean blockGameUpdate = false;
     }
 
     public static class Game {

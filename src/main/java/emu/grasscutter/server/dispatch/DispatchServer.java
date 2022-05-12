@@ -32,9 +32,11 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 
+import javax.net.ssl.SSLContext;
 import java.io.*;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 import static emu.grasscutter.utils.Language.translate;
@@ -113,26 +115,33 @@ public final class DispatchServer {
 			List<RegionSimpleInfo> servers = new ArrayList<>();
 			List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts.
 			if (SERVER.runMode == ServerRunMode.HYBRID) { // Automatically add the game server if in hybrid mode.
+				String dispatchScheme = "http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "");
+				String dispatchHost = lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
+						+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort);
 				RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
 						.setName("os_usa")
 						.setTitle(DISPATCH_INFO.defaultName)
 						.setType("DEV_PUBLIC")
-						.setDispatchUrl(
-								"http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "") + "://"
-										+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
-										+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
-										+ "/query_cur_region/" + defaultServerName)
+						.setDispatchUrl(dispatchScheme + "://" + dispatchHost + "/query_cur_region/" + defaultServerName)
 						.build();
 				usedNames.add(defaultServerName);
 				servers.add(server);
 
-				RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
+				RegionInfo.Builder serverRegionBuilder = regionQuery.getRegionInfo().toBuilder()
 						.setGateserverIp(lr(GAME_INFO.accessAddress, GAME_INFO.bindAddress))
 						.setGateserverPort(lr(GAME_INFO.accessPort, GAME_INFO.bindPort))
-						.setSecretKey(ByteString.copyFrom(FileUtils.read(KEYS_FOLDER + "/dispatchSeed.bin")))
-						.build();
+						.setSecretKey(ByteString.copyFrom(FileUtils.read(KEYS_FOLDER + "/dispatchSeed.bin")));
 
-				QueryCurrRegionHttpRsp parsedRegionQuery = regionQuery.toBuilder().setRegionInfo(serverRegion).build();
+				// intercept game update
+				if (DISPATCH_INFO.blockGameUpdate) {
+					// game updater will ignore system proxy setting
+					String urlBak = regionQuery.getRegionInfo().getResourceUrlBak();  // like 2.6_live
+					serverRegionBuilder.setResourceUrl("%s://%s/client_game_res/%s".formatted(dispatchScheme, dispatchHost, urlBak))  // not handled! need help
+							.setDataUrl("%s://%s/client_design_data/%s".formatted(dispatchScheme, dispatchHost, urlBak))
+							.setClientSilenceDataMd5("{\"remoteName\": \"data_versions\", \"md5\": \"d41d8cd98f00b204e9800998ecf8427e\", \"fileSize\": 0}");  // empty string's MD5
+				}
+
+				QueryCurrRegionHttpRsp parsedRegionQuery = regionQuery.toBuilder().setRegionInfo(serverRegionBuilder).build();
 				regions.put(defaultServerName, new RegionData(parsedRegionQuery,
 						Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray())));
 
@@ -210,6 +219,18 @@ public final class DispatchServer {
 								Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.general_error"));
 								e2.printStackTrace();
 							}
+						}
+
+						if (DISPATCH_INFO.blockGameUpdate) {
+							// must enable obsolete TLSv1 protocol. check if enabled
+							try {
+								if (Arrays.stream(SSLContext.getDefault().createSSLEngine().getEnabledProtocols()).noneMatch(i-> i.equals("TLSv1"))) {
+									Grasscutter.getLogger().error(translate("messages.dispatch.block_game_update_tls"));
+								}
+							} catch (NoSuchAlgorithmException e) {
+								Grasscutter.getLogger().warn("TLS check failed: " + e);
+							}
+							sslContextFactory.setExcludeCipherSuites("^SSL_.*$", "^.*_NULL_.*$", "^.*_anon_.*$");  // allow obsolete cipher suite used by game updater
 						}
 
 						serverConnector = new ServerConnector(server, sslContextFactory);
@@ -445,6 +466,20 @@ public final class DispatchServer {
 
 		// webstatic-sea.hoyoverse.com
 		httpServer.get("/admin/mi18n/plat_oversea/m202003048/m202003048-version.json", new DispatchHttpJsonHandler("{\"version\":51}"));
+
+		//// used to block game update
+		// https://autopatchhk.yuanshen.com
+		httpServer.raw().head("/client_design_data/*", (ctx) -> {
+			ctx.header("Content-Length", "0");
+			ctx.header("Content-Type", "application/octet-stream");
+			ctx.header("Accept-Ranges", "bytes");
+		});
+		httpServer.raw().get("/client_design_data/*", (ctx) -> {
+			ctx.header("Content-Length", "0");
+			ctx.contentType("application/octet-stream");
+			ctx.header("Accept-Ranges", "bytes");
+			ctx.result("".getBytes(StandardCharsets.UTF_8));
+		});
 
 		// gacha record.
 		String gachaMappingsPath = Utils.toFilePath(DATA("/gacha_mappings.js"));

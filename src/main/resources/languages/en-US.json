@@ -36,7 +36,8 @@
         "session_key_error": "Wrong session key.",
         "username_error": "Username not found.",
         "username_create_error": "Username not found, create failed."
-      }
+      },
+      "block_game_update_tlsv1": "blockGameUpdate will not work because TLSv1 not enabled in current Java runtime. Change 'jdk.tls.disabledAlgorithms' option in 'conf/security/java.security' file"
     },
     "status": {
       "free_software": "Grasscutter is FREE software. If you have paid for this, you may have been scammed. Homepage: https://github.com/Grasscutters/Grasscutter",
