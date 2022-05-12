@@ -23,6 +23,7 @@ import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
 import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
 import emu.grasscutter.tools.Tools;
+import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 import express.Express;
@@ -41,9 +42,6 @@ import static emu.grasscutter.utils.Language.translate;
 import static emu.grasscutter.Configuration.*;
 
 public final class DispatchServer {
-	public static String query_region_list = "";
-	public static String query_cur_region = "";
-
 	private final Gson gson;
 	private final String defaultServerName = "os_usa";
 
@@ -56,7 +54,6 @@ public final class DispatchServer {
 		this.regions = new HashMap<>();
 		this.gson = new GsonBuilder().create();
 
-		this.loadQueries();
 		this.initRegion();
 	}
 
@@ -84,31 +81,11 @@ public final class DispatchServer {
 		return null;
 	}
 
-	public void loadQueries() {
-		File file;
-
-		file = new File(DATA("query_region_list.txt"));
-		if (file.exists()) {
-			query_region_list = new String(FileUtils.read(file));
-		} else {
-			Grasscutter.getLogger().warn("[Dispatch] query_region_list not found! Using default region list.");
-		}
-
-		file = new File(DATA("query_cur_region.txt"));
-		if (file.exists()) {
-			query_cur_region = new String(FileUtils.read(file));
-		} else {
-			Grasscutter.getLogger().warn("[Dispatch] query_cur_region not found! Using default current region.");
-		}
-	}
-
 	private void initRegion() {
 		try {
-			byte[] decoded = Base64.getDecoder().decode(query_region_list);
-			QueryRegionListHttpRsp rl = QueryRegionListHttpRsp.parseFrom(decoded);
-
-			byte[] decoded2 = Base64.getDecoder().decode(query_cur_region);
-			QueryCurrRegionHttpRsp regionQuery = QueryCurrRegionHttpRsp.parseFrom(decoded2);
+			String dispatchDomain = "http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "") + "://"
+				+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
+				+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort);
 
 			List<RegionSimpleInfo> servers = new ArrayList<>();
 			List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts.
@@ -117,24 +94,26 @@ public final class DispatchServer {
 						.setName("os_usa")
 						.setTitle(DISPATCH_INFO.defaultName)
 						.setType("DEV_PUBLIC")
-						.setDispatchUrl(
-								"http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "") + "://"
-										+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
-										+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
-										+ "/query_cur_region/" + defaultServerName)
+						.setDispatchUrl(dispatchDomain + "/query_cur_region/" + defaultServerName)
 						.build();
 				usedNames.add(defaultServerName);
 				servers.add(server);
 
-				RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
+				// todo: we might want to push custom config to client, see regionList below for clues.
+				RegionInfo serverRegion = RegionInfo.newBuilder()
 						.setGateserverIp(lr(GAME_INFO.accessAddress, GAME_INFO.bindAddress))
 						.setGateserverPort(lr(GAME_INFO.accessPort, GAME_INFO.bindPort))
-						.setSecretKey(ByteString.copyFrom(FileUtils.read(KEYS_FOLDER + "/dispatchSeed.bin")))
+						.setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
 						.build();
 
-				QueryCurrRegionHttpRsp parsedRegionQuery = regionQuery.toBuilder().setRegionInfo(serverRegion).build();
-				regions.put(defaultServerName, new RegionData(parsedRegionQuery,
-						Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray())));
+				QueryCurrRegionHttpRsp parsedRegionQuery = QueryCurrRegionHttpRsp.newBuilder().setRegionInfo(serverRegion).build();
+				regions.put(
+					defaultServerName,
+					new RegionData(
+						parsedRegionQuery,
+						Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray())
+					)
+				);
 
 			} else if (DISPATCH_INFO.regions.length == 0) {
 				Grasscutter.getLogger().error("[Dispatch] There are no game servers available. Exiting due to unplayable state.");
@@ -146,35 +125,40 @@ public final class DispatchServer {
 					Grasscutter.getLogger().error("Region name already in use.");
 					continue;
 				}
+
+				// todo: we might want to push custom config to client, see regionList below for clues.
 				RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
 						.setName(regionInfo.Name)
 						.setTitle(regionInfo.Title)
 						.setType("DEV_PUBLIC")
-						.setDispatchUrl(
-								"http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "") + "://"
-										+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":" 
-										+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort) 
-										+ "/query_cur_region/" + regionInfo.Name)
+						.setDispatchUrl(dispatchDomain + "/query_cur_region/" + regionInfo.Name)
 						.build();
 				usedNames.add(regionInfo.Name);
 				servers.add(server);
 
-				RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
+				RegionInfo serverRegion = RegionInfo.newBuilder()
 						.setGateserverIp(regionInfo.Ip)
 						.setGateserverPort(regionInfo.Port)
-						.setSecretKey(ByteString
-								.copyFrom(FileUtils.read(KEYS_FOLDER + "/dispatchSeed.bin")))
+						.setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
 						.build();
 
-				QueryCurrRegionHttpRsp parsedRegionQuery = regionQuery.toBuilder().setRegionInfo(serverRegion).build();
-				regions.put(regionInfo.Name, new RegionData(parsedRegionQuery,
-						Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray())));
+				QueryCurrRegionHttpRsp parsedRegionQuery = QueryCurrRegionHttpRsp.newBuilder().setRegionInfo(serverRegion).build();
+				regions.put(
+					regionInfo.Name,
+					new RegionData(
+						parsedRegionQuery,
+						Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray())
+					)
+				);
 			}
+
+			byte[] customConfig = "{\"sdkenv\":\"2\",\"checkdevice\":\"false\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}".getBytes();
+			Crypto.xor(customConfig, Crypto.DISPATCH_KEY);
 
 			QueryRegionListHttpRsp regionList = QueryRegionListHttpRsp.newBuilder()
 					.addAllRegionList(servers)
-					.setClientSecretKey(rl.getClientSecretKey())
-					.setClientCustomConfigEncrypted(rl.getClientCustomConfigEncrypted())
+					.setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+					.setClientCustomConfigEncrypted(ByteString.copyFrom(customConfig))
 					.setEnableLoginPc(true)
 					.build();
 
