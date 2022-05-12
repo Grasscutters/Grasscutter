@@ -122,7 +122,7 @@ public class ConfigContainer {
 
     public static class Account {
         public boolean autoCreate = true;
-        public String[] defaultPermissions = {"server.spawn","server.drop","player.give","player.godmode","player.clearinv","player.setstats","player.heal","player.changescene","player.givechar","player.setworldlevel","server.killall","player.giveall","player.resetconstellation","player.giveart","player.setfetterlevel","player.enterdungeon","player.settalent","player.killcharacter","player.teleport","player.weather","player.tower"};
+        public String[] defaultPermissions = {"server.spawn","server.drop","player.give","player.godmode","player.clearinv","player.setstats","player.heal","player.changescene","player.givechar","player.setworldlevel","server.killall","player.giveall","player.resetconstellation","player.giveart","player.setfetterlevel","player.enterdungeon","player.settalent","player.killcharacter","player.teleport","player.weather","player.tower","player.quest"};
     }
 
     /* Server options. */
