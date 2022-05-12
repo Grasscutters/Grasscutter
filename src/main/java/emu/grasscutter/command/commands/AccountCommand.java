@@ -11,7 +11,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "commands.account.description")
+@Command(label = "account", usage = "account <create|delete|password> <username> <password> [uid]", description = "commands.account.description")
 public final class AccountCommand implements CommandHandler {
 
     @Override
@@ -28,16 +28,16 @@ public final class AccountCommand implements CommandHandler {
 
         String action = args.get(0);
         String username = args.get(1);
-
+        String password = args.get(2);
         switch (action) {
             default:
                 CommandHandler.sendMessage(null, translate(sender, "commands.account.command_usage"));
                 return;
             case "create":
                 int uid = 0;
-                if (args.size() > 2) {
+                if (args.size() > 3) {
                     try {
-                        uid = Integer.parseInt(args.get(2));
+                        uid = Integer.parseInt(args.get(3));
                     } catch (NumberFormatException ignored) {
                         CommandHandler.sendMessage(null, translate(sender, "commands.account.invalid"));
                         return;
@@ -49,6 +49,7 @@ public final class AccountCommand implements CommandHandler {
                     CommandHandler.sendMessage(null, translate(sender, "commands.account.exists"));
                     return;
                 } else {
+                    account.setPassword(password);
                     account.addPermission("*");
                     account.save(); // Save account to database.
 
@@ -74,6 +75,25 @@ public final class AccountCommand implements CommandHandler {
                 // Finally, we do the actual deletion.
                 DatabaseHelper.deleteAccount(toDelete);
                 CommandHandler.sendMessage(null, translate(sender, "commands.account.delete"));
+                return;
+            case "password":
+                Account accountData = DatabaseHelper.getAccountByName(username);
+
+                if (accountData == null) {
+                    CommandHandler.sendMessage(null, translate(sender, "commands.account.no_account"));
+                    return;
+                }
+
+                // Get the player for the account.
+                // If that player is currently online, we kick them before proceeding with the deletion.
+                Player player_ = Grasscutter.getGameServer().getPlayerByUid(accountData.getPlayerUid());
+                if (player_ != null) {
+                    player_.getSession().close();
+                }
+                accountData.setPassword(password);
+                accountData.save();
+                CommandHandler.sendMessage(null, translate(sender, "commands.account.change_password"));
+                return;
         }
     }
 }

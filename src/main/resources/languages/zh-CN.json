@@ -99,8 +99,9 @@
       "create": "已创建账号，UID 为 %s。",
       "delete": "账号已删除。",
       "no_account": "账号不存在。",
-      "command_usage": "用法：account <create|delete> <用户名> [UID]",
-      "description": "创建或删除账号"
+      "command_usage": "用法：account <create|delete|password> <用户名> <密码> [UID]",
+      "description": "创建或删除账号",
+      "change_password": "修改用户密码。"
     },
     "broadcast": {
       "command_usage": "用法：broadcast <消息>",

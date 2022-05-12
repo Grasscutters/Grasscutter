@@ -98,7 +98,8 @@
       "create": "已建立帳號，UID 為 %s 。",
       "delete": "帳號已刪除。",
       "no_account": "帳號不存在。",
-      "command_usage": "用法：account <create|delete> <username> [uid]"
+      "command_usage": "用法：account <create|delete|password> <username> <password> [UID]",
+      "change_password": "修改用戶密碼。"
     },
     "broadcast": {
       "command_usage": "用法：broadcast <message>",

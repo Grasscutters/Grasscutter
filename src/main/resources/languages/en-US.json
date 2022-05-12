@@ -102,8 +102,9 @@
       "create": "Account created with UID %s.",
       "delete": "Account deleted.",
       "no_account": "Account not found.",
-      "command_usage": "Usage: account <create|delete> <username> [uid]",
-      "description": "Modify user accounts"
+      "command_usage": "Usage: account <create|delete|password> <username> <password> [uid]",
+      "description": "Modify user accounts",
+      "change_password": "change accounts password."
     },
     "broadcast": {
       "command_usage": "Usage: broadcast <message>",

@@ -98,7 +98,8 @@
       "create": "Stworzono konto z UID %s.",
       "delete": "Konto usunięte.",
       "no_account": "Nie znaleziono konta.",
-      "command_usage": "Użycie: account <create|delete> <nazwa> [uid]"
+      "command_usage": "Użycie: account <create|delete|password> <nazwa> <hasło> [uid]",
+      "change_password": "Modyfikuj hasło użytkownika."
     },
     "broadcast": {
       "command_usage": "Użycie: broadcast <wiadomość>",

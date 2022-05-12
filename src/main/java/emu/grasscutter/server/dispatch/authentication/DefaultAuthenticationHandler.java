@@ -72,7 +72,7 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
                 Grasscutter.getLogger().info(translate("messages.dispatch.account.account_login_exist_error", req.ip()));
             }
         } else {
-            if(requestData.password.equals(account.getPassword())){
+            if (requestData.password.equals(account.getPassword()) && !"".equals(requestData.password)) {
                 // Account was found, log the player in
                 responseData.message = "OK";
                 responseData.data.account.uid = account.getId();
