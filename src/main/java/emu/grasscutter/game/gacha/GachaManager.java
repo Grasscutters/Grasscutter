@@ -13,6 +13,7 @@ import com.google.gson.reflect.TypeToken;
 import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.Avatar;
@@ -127,13 +128,8 @@ public class GachaManager {
 		}
 
 		// Spend currency
-		if (banner.getCostItem() > 0) {
-			GameItem costItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(banner.getCostItem());
-			if (costItem == null || costItem.getCount() < times) {
-				return;
-			}
-			
-			player.getInventory().removeItem(costItem, times);
+		if (banner.getCostItem() > 0 && !player.getInventory().payItem(banner.getCostItem(), times)) {
+			return;
 		}
 		
 		// Roll

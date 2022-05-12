@@ -1,7 +1,7 @@
 package emu.grasscutter.data.custom;
 
 import emu.grasscutter.game.quest.enums.LogicType;
-import emu.grasscutter.game.quest.enums.QuestCondType;
+import emu.grasscutter.game.quest.enums.QuestTriggerType;
 import emu.grasscutter.game.quest.enums.QuestType;
 
 public class QuestConfigData {
@@ -90,10 +90,10 @@ public class QuestConfigData {
 	}
 	
 	public class QuestCondition {
-		private QuestCondType type;
+		private QuestTriggerType type;
 		private int[] param;
 		
-		public QuestCondType getType() {
+		public QuestTriggerType getType() {
 			return type;
 		}
 		

@@ -114,6 +114,8 @@ public final class DatabaseHelper {
 		DatabaseManager.getGameDatabase().getCollection("gachas").deleteMany(eq("ownerId", target.getUid()));
 		// Delete GameItem.class data
 		DatabaseManager.getGameDatabase().getCollection("items").deleteMany(eq("ownerId", target.getUid()));
+    // Delete GameMainQuest.class data
+    DatabaseManager.getGameDatabase().getCollection("quests").deleteMany(eq("ownerUid", target.getUid()));
 
 		// Delete friendships.
 		// Here, we need to make sure to not only delete the deleted account's friendships,
@@ -140,6 +142,7 @@ public final class DatabaseHelper {
 		DatabaseManager.getGameDatabase().getCollection("items").deleteMany(eq("ownerId", target.getPlayerUid()));
     // Delete GameMainQuest.class data
     DatabaseManager.getGameDatabase().getCollection("quests").deleteMany(eq("ownerUid", target.getPlayerUid()));
+
 		// Delete friendships.
 		// Here, we need to make sure to not only delete the deleted account's friendships,
 		// but also all friendship entries for that account's friends.
