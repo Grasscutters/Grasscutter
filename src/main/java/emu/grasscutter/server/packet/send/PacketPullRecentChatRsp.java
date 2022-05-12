@@ -8,10 +8,9 @@ import emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo;
 import emu.grasscutter.net.proto.PullRecentChatRspOuterClass.PullRecentChatRsp;
 import emu.grasscutter.utils.ConfigContainer;
 import emu.grasscutter.utils.Utils;
+import emu.grasscutter.BuildConfig;
 
 import static emu.grasscutter.Configuration.*;
-
-import java.io.File;
 
 public class PacketPullRecentChatRsp extends BasePacket {
 	public PacketPullRecentChatRsp(Player player) {
@@ -36,7 +35,7 @@ public class PacketPullRecentChatRsp extends BasePacket {
 				.setTime((int) (System.currentTimeMillis() / 1000))
 				.setUid(GameConstants.SERVER_CONSOLE_UID)
 				.setToUid(player.getUid())
-				.setText(joinOptions.welcomeMessage+("\n\nServer DockerGC "+ConfigContainer.version_DockerGC+" & Grasscutter v"+ConfigContainer.version))
+				.setText(joinOptions.welcomeMessage+("\n\nServer:\nDockerGC "+ConfigContainer.version_DockerGC+"\nGrasscutter "+ BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH))
 				.build();
 			proto.addChatInfo(welcomeMessage);
 		}
