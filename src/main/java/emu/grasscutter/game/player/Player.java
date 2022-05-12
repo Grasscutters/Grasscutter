@@ -85,6 +85,8 @@ public class Player {
 	private Set<Integer> flyCloakList;
 	private Set<Integer> costumeList;
 
+	private Integer widgetId;
+
 	@Transient private long nextGuid = 0;
 	@Transient private int peerId;
 	@Transient private World world;
@@ -300,6 +302,14 @@ public class Player {
 	public void setSignature(String signature) {
 		this.signature = signature;
 		this.updateProfile();
+	}
+
+	public Integer getWidgetId() {
+		return widgetId;
+	}
+
+	public void setWidgetId(Integer widgetId) {
+		this.widgetId = widgetId;
 	}
 
 	public Position getPos() {
@@ -1170,7 +1180,9 @@ public class Player {
 		session.send(new PacketFinishedParentQuestNotify(this));
 		session.send(new PacketQuestListNotify(this));
 		session.send(new PacketServerCondMeetQuestListUpdateNotify(this));
-		
+		session.send(new PacketAllWidgetDataNotify(this));
+		session.send(new PacketWidgetGadgetAllDataNotify());
+
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
@@ -1267,7 +1279,7 @@ public class Player {
 		} else if (prop == PlayerProperty.PROP_IS_TRANSFERABLE) { // 10009
 			if (!(0 <= value && value <= 1)) { return false; }
 		} else if (prop == PlayerProperty.PROP_MAX_STAMINA) { // 10010
-			if (!(value >= 0 && value <= StaminaManager.GlobalMaximumStamina)) { return false; }
+			if (!(value >= 0 && value <= StaminaManager.GlobalCharacterMaximumStamina)) { return false; }
 		} else if (prop == PlayerProperty.PROP_CUR_PERSIST_STAMINA) { // 10011
 			int playerMaximumStamina = getProperty(PlayerProperty.PROP_MAX_STAMINA);
 			if (!(value >= 0 && value <= playerMaximumStamina)) { return false; }
