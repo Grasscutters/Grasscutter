@@ -35,6 +35,13 @@ public final class AccountCommand implements CommandHandler {
         String action = args.get(0);
         String username = args.get(1);
 
+        int limit;
+        try {
+          limit = Integer.parseInt(username);
+         } catch (Exception ignores) {
+          limit= 1;
+         }
+
         // TODO: add configuration later
 
         switch (action) {
@@ -59,7 +66,7 @@ public final class AccountCommand implements CommandHandler {
                  return;
             case "clean_null_avatar":
 
-                List<Avatar> Item_ANull = DatabaseHelper.getAvatarsNullPlayer().stream().limit(10000).toList();
+                List<Avatar> Item_ANull = DatabaseHelper.getAvatarsNullPlayer(limit);
                 CommandHandler.sendMessage(null, "Currently found "+Item_ANull.size()+" avatar that any player doesn't use");
                 int tmp2=0;
                 for (Avatar remove : Item_ANull) {
@@ -72,7 +79,7 @@ public final class AccountCommand implements CommandHandler {
                 return;
             case "clean_null_item":
 
-                List<GameItem> Item_Null = DatabaseHelper.getInventoryNullPlayer().stream().limit(10000).toList();
+                List<GameItem> Item_Null = DatabaseHelper.getInventoryNullPlayer(limit);
                 CommandHandler.sendMessage(null, "Currently found "+Item_Null.size()+" Items that any player doesn't use");
                 int tmp3=0;
                 for (GameItem remove : Item_Null) {
@@ -95,15 +102,8 @@ public final class AccountCommand implements CommandHandler {
             case "clean_account":
 
                  int daylogin;
-                 int goseep = 1;
-                 int limit;
+                 int goseep = 1;                 
                  int intlimit = 0;
-
-                 try {
-                  limit = Integer.parseInt(username);
-                 } catch (Exception ignores) {
-                  limit= 1;
-                 }
                  
                  int tes1;
                  try {

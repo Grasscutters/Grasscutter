@@ -133,7 +133,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		}
 
 		ItemData itemData = GameData.getItemDataMap().get(itemId);
-		if (itemData.getItemType() != ItemType.ITEM_RELIQUARY) {
+		if (itemData == null || itemData.getItemType() != ItemType.ITEM_RELIQUARY) {
 			CommandHandler.sendMessage(sender, translate(sender, "commands.giveArtifact.id_error"));
 			return;
 		}

@@ -152,17 +152,16 @@ public class ConfigContainer {
         public boolean staminaUsage = false;
         public Rates rates = new Rates();
 
-        // Limiting for Public Servers
+        // DockerGC
 	     	public int CMD_Spawn = 150;
 		    public int CMD_Give = 10000000;
 		    public int CMD_Drop = 100;
-        public int CMD_DayLogin = 3;
+        public int CMD_DayLogin = 6;
 		    public boolean CMD_NoGiveTes = true;
         public boolean CMD_ListOnline = false;
-		    // Dangerous feature for public server, make your database go crazy!
 		    public boolean DropMo = true;
 		    public boolean DungeonMT = false;
-        public boolean AbyssMT = true;
+        public boolean AbyssMT = false;
 
         public static class InventoryLimits {
             public int weapons = 2000;
