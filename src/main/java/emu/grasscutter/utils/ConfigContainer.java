@@ -36,41 +36,7 @@ public class ConfigContainer {
         } catch (Exception e) {
           //TODO: handle exception
         }
-
-        try { // Check if the server is using a legacy config.
-            JsonObject configObject = Grasscutter.getGsonFactory()
-                    .fromJson(new FileReader(Grasscutter.configFile), JsonObject.class);
-            if(!configObject.has("version")) {
-                Grasscutter.getLogger().info("Updating legacy ..");
-                Grasscutter.saveConfig(null);
-            }
-        } catch (Exception ignored) { }
-
-        var existing = config.version;
-        var latest = version();
-
-        if(existing == latest)
-            return;
-
-        // Create a new configuration instance.
-        ConfigContainer updated = new ConfigContainer();        
-
-        // Update all configuration fields.
-        Field[] fields = ConfigContainer.class.getDeclaredFields();
-        Arrays.stream(fields).forEach(field -> {
-            try {
-                field.set(updated, field.get(config));
-            } catch (Exception exception) {
-                Grasscutter.getLogger().error("Failed to update a configuration field.", exception);
-            }
-        }); updated.version = version();
-
-        try { // Save configuration & reload.
-            Grasscutter.saveConfig(updated);
-            Grasscutter.loadConfig();
-        } catch (Exception exception) {
-            Grasscutter.getLogger().warn("Failed to inject the updated ", exception);
-        }
+                
     }
     
     public Structure folderStructure = new Structure();
