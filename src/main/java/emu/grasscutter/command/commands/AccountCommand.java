@@ -8,9 +8,12 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.utils.Utils;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import ch.qos.logback.classic.pattern.Util;
 
 import static emu.grasscutter.utils.Language.translate;
 
@@ -45,9 +48,12 @@ public final class AccountCommand implements CommandHandler {
                  .filter(g -> DatabaseHelper.getAccountByPlayerId(g.getUid()) == null)
                  .toList();
                  CommandHandler.sendMessage(null, "There are currently "+Playerbroken.size()+" players without account data that broken.");
+                 int tmpx=0;
                  for (Player remove : Playerbroken) {
-                   CommandHandler.sendMessage(null, "Remove Uid "+remove.getUid()+" Player");
-                   DatabaseHelper.deletePlayer(remove);                  
+                   Utils.progressPercentage(tmpx,Playerbroken.size());
+                   //CommandHandler.sendMessage(null, "Remove Uid "+remove.getUid()+" Player");
+                   DatabaseHelper.deletePlayer(remove);
+                   tmpx++;
                  }
                  
                  return;
@@ -55,8 +61,11 @@ public final class AccountCommand implements CommandHandler {
 
                 List<Avatar> Item_ANull = DatabaseHelper.getAvatarsNullPlayer();
                 CommandHandler.sendMessage(null, "Currently found "+Item_ANull.size()+" avatar that any player doesn't use");
+                int tmp2=0;
                 for (Avatar remove : Item_ANull) {
+                  Utils.progressPercentage(tmp2,Item_ANull.size());
                   DatabaseHelper.deleteAvatar(remove);
+                  tmp2++;
                 }
                 CommandHandler.sendMessage(null, "done..");
 
@@ -65,8 +74,11 @@ public final class AccountCommand implements CommandHandler {
 
                 List<GameItem> Item_Null = DatabaseHelper.getInventoryNullPlayer();
                 CommandHandler.sendMessage(null, "Currently found "+Item_Null.size()+" Items that any player doesn't use");
+                int tmp3=0;
                 for (GameItem remove : Item_Null) {
+                  Utils.progressPercentage(tmp3,Item_Null.size());
                   DatabaseHelper.deleteItem(remove);
+                  tmp3++;
                 }
                 CommandHandler.sendMessage(null, "done..");
 
@@ -152,7 +164,7 @@ public final class AccountCommand implements CommandHandler {
                  return;
 
             case "clean_final":
-                 // Clear account, by find uid player
+                 // Clear account, Find Account (getPlayerUid aka playerId) same player (getPlayerById aka _id) if player no found in this acc remove it acc
                  List<Account> AllAccount = DatabaseHelper.getAccountAll().stream()
                  .filter(g -> DatabaseHelper.getPlayerById((g.getPlayerUid())) == null)
                  .toList();

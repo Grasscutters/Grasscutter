@@ -5,10 +5,15 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.server.dispatch.json.LoginAccountRequestJson;
 import emu.grasscutter.server.dispatch.json.LoginResultJson;
+import emu.grasscutter.utils.Utils;
 import express.http.Request;
 import express.http.Response;
 
 import static emu.grasscutter.utils.Language.translate;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static emu.grasscutter.Configuration.*;
 
 public class DefaultAuthenticationHandler implements AuthenticationHandler {
@@ -29,9 +34,16 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
     }
 
     @Override
-    public LoginResultJson handleGameLogin(Request req, LoginAccountRequestJson requestData) {        
+    public LoginResultJson handleGameLogin(Request req, LoginAccountRequestJson requestData) {
 
         LoginResultJson responseData = new LoginResultJson();
+
+        // vaild check login
+        if(
+          requestData.account != null &&            
+          requestData.account.matches("[A-Za-z0-9_]+") || 
+          Pattern.compile(Utils.isValidEmail).matcher(requestData.account).matches()
+        ){
 
         // Login
         Account account = DatabaseHelper.getAccountByName(requestData.account);
@@ -74,6 +86,11 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
             responseData.data.account.email = account.getEmail();
 
             Grasscutter.getLogger().info(translate("messages.dispatch.account.login_success", req.ip(), responseData.data.account.uid));
+        }
+
+        }else{
+          responseData.retcode = -201;
+          responseData.message = "Use Username without spaces and special letters or email format";
         }
 
         return responseData;
