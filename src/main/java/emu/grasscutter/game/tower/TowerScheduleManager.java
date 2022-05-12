@@ -39,7 +39,8 @@ public class TowerScheduleManager {
     public TowerScheduleData getCurrentTowerScheduleData(){
         var data = GameData.getTowerScheduleDataMap().get(towerScheduleConfig.getScheduleId());
         if(data == null){
-            Grasscutter.getLogger().error("Could not get current tower schedule data by config:{}", towerScheduleConfig);
+            Grasscutter.getLogger().error("Could not get current tower schedule data by schedule id {}, please check your resource files",
+                    towerScheduleConfig.getScheduleId());
         }
         
         return data;
