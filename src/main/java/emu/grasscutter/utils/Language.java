@@ -161,9 +161,9 @@ public final class Language {
         JsonObject object = this.languageData;
 
         int index = 0;
-        String result = "This value does not exist. Please report this to discord support" + key;  
-        
-        boolean found = false;
+        String valueNotFoundPattern = "This value does not exist. Please report this to the Discord: ";
+        String result = valueNotFoundPattern + key;
+        boolean isValueFound = false;
 
         while (true) {
             if(index == keys.length) break;
@@ -174,15 +174,18 @@ public final class Language {
                 if(element.isJsonObject())
                     object = element.getAsJsonObject();
                 else {
-                    found = true;
+                    isValueFound = true;
                     result = element.getAsString(); break;
                 }
             } else break;
         }
-        
-        if(!found){
-          Grasscutter.getLogger().info("DEBUG Translations: "+key);
-        }        
+
+        if (!isValueFound && !languageCode.equals("en-US")) {
+            var englishValue = Grasscutter.getLanguage("en-US").get(key);
+            if (!englishValue.contains(valueNotFoundPattern)) {
+                result += "\nhere is english version:\n" + englishValue;
+            }
+        }    
 
         this.cachedTranslations.put(key, result); return result;
     }
