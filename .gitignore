@@ -52,7 +52,6 @@ tmp/
 .vscode
 
 # Grasscutter
-resources/
 logs/
 plugins/
 GM Handbook.txt
@@ -63,10 +62,8 @@ mitmdump.exe
 mongod.exe
 /src/generated/
 /*.sh
-language/
-languages/
 gacha-mapping.js
 BuildConfig.java
-gacha_mappings.js
+data/gacha_mappings.js
 # macOS
 .DS_Store

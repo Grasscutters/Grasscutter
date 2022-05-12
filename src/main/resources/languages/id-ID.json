@@ -1,0 +1,380 @@
+{
+    "messages": {
+      "game": {
+        "port_bind": "Server Game dimulai pada port %s",
+        "connect": "Klien terhubung dari %s",
+        "disconnect": "Klien terputus dari %s",
+        "game_update_error": "Terjadi kesalahan selama pembaruan game.",
+        "command_error": "Kesalahan perintah:"
+      },
+      "dispatch": {
+        "port_bind": "[Dispatch] Server pengiriman dimulai pada port %s",
+        "request": "[Dispatch] Klien %s %s meminta: %s",
+        "keystore": {
+          "general_error": "[Dispatch] Kesalahan saat memuat keystore!",
+          "password_error": "[Dispatch] Tidak dapat memuat keystore. Mencoba kata sandi keystore default...",
+          "no_keystore_error": "[Dispatch] Tidak ada sertifikat SSL yang ditemukan! Kembali ke server HTTP.",
+          "default_password": "[Dispatch] Kata sandi keystore default berhasil dimuat. Harap pertimbangkan untuk menyetel kata sandi ke 123456 di config.json."
+        },
+        "authentication": {
+          "default_unable_to_verify": "[Authentication] Sesuatu yang disebut metode verifikasiUser yang tidak tersedia di pengendali otentikasi default"
+        },
+        "no_commands_error": "Perintah tidak didukung dalam mode pengiriman saja.",
+        "unhandled_request_error": "[Dispatch] Potensi tidak tertangani %s meminta: %s",
+        "account": {
+          "login_attempt": "[Dispatch] Klien %s sedang mencoba masuk",
+          "login_success": "[Dispatch] Klien %s logged in as %s",
+          "login_token_attempt": "[Dispatch] Klien %s is trying to log in via token",
+          "login_token_error": "[Dispatch] Klien %s failed to log in via token",
+          "login_token_success": "[Dispatch] Klien %s logged in via token as %s",
+          "combo_token_success": "[Dispatch] Klien %s succeed to exchange combo token",
+          "combo_token_error": "[Dispatch] Klien %s failed to exchange combo token",
+          "account_login_create_success": "[Dispatch] Klien %s failed to log in: Account %s created",
+          "account_login_create_error": "[Dispatch] Klien %s failed to log in: Account create failed",
+          "account_login_exist_error": "[Dispatch] Klien %s failed to log in: Account no found",
+          "account_cache_error": "Kesalahan informasi cache akun game,coba lagi",
+          "session_key_error": "Kunci sesi salah.",
+          "username_error": "Nama pengguna tidak ditemukan.",
+          "username_create_error": "Nama pengguna tidak ditemukan, pembuatan gagal."
+        }
+      },
+      "status": {
+        "free_software": "Grasscutter adalah perangkat lunak GRATIS. Jika Anda telah membayar anda mungkin telah kena scammed. Link: https://github.com/Grasscutters/Grasscutter",
+        "starting": "Memulai Grasscutter...",
+        "shutdown": "Mematikan...",
+        "done": "Selesai! Untuk bantuan, ketik \"help\"",
+        "error": "Terjadi kesalahan.",
+        "welcome": "Selamat datang di Grasscutter",
+        "run_mode_error": "Mode menjalankan server tidak valid: %s.",
+        "run_mode_help": "Mode server harus dengan 'HYBRID', 'DISPATCH_ONLY', atau 'GAME_ONLY'. Tidak dapat memulai Grasscutter...",
+        "create_resources": "Membuat folder sumber daya...",
+        "resources_error": "Tempatkan salinan 'BinOutput' dan 'ExcelBinOutput' di folder sumber daya.",
+        "version": "Grasscutter versi: %s-%s"
+      }
+    },
+    "commands": {
+      "generic": {
+        "not_specified": "Tidak ada perintah yang ditentukan.",
+        "unknown_command": "Perintah tidak diketahui: %s",
+        "permission_error": "Anda tidak memiliki izin untuk menjalankan perintah ini.",
+        "console_execute_error": "Perintah ini hanya dapat dijalankan dari konsol.",
+        "player_execute_error": "Jalankan perintah ini dalam game.",
+        "command_exist_error": "Tidak ada perintah yang ditemukan.",
+        "no_description_specified": "Tidak ada deskripsi yang ditentukan",
+        "invalid": {
+          "amount": "Invalid amount.",
+          "artifactId": "Invalid artifactId.",
+          "avatarId": "Invalid avatarId.",
+          "avatarLevel": "Invalid avatarLevel.",
+          "entityId": "Invalid entityId.",
+          "itemId": "Invalid itemId.",
+          "itemLevel": "Invalid itemLevel.",
+          "itemRefinement": "Invalid itemRefinement.",
+          "playerId": "Invalid playerId.",
+          "uid": "Invalid UID."
+        }
+      },
+      "execution": {
+        "uid_error": "Invalid UID.",
+        "player_exist_error": "Player not found.",
+        "player_offline_error": "Player is not online.",
+        "item_id_error": "Invalid item ID.",
+        "item_player_exist_error": "Invalid item or UID.",
+        "entity_id_error": "Invalid entity ID.",
+        "player_exist_offline_error": "Player not found or is not online.",
+        "argument_error": "Invalid arguments.",
+        "clear_target": "Target cleared.",
+        "set_target": "Subsequent commands will target @%s by default.",
+        "need_target": "This command requires a target UID. Add a <@UID> argument or set a persistent target with /target @UID."
+      },
+      "status": {
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "help": "Help",
+        "success": "Success"
+      },
+      "account": {
+        "modify": "Modify user accounts",
+        "invalid": "Invalid UID.",
+        "exists": "Account already exists.",
+        "create": "Account created with UID %s.",
+        "delete": "Account deleted.",
+        "no_account": "Account not found.",
+        "command_usage": "Penggunaan: account <create|delete> <username> [uid]",
+        "description": "Modify user accounts"
+      },
+      "broadcast": {
+        "command_usage": "Penggunaan: broadcast <message>",
+        "message_sent": "Message sent.",
+        "description": "Sends a message to all the players"
+      },
+      "changescene": {
+        "usage": "Penggunaan: changescene <sceneId>",
+        "already_in_scene": "You are already in that scene.",
+        "success": "Changed to scene %s.",
+        "exists_error": "The specified scene does not exist.",
+        "description": "Changes your scene"
+      },
+      "clear": {
+        "command_usage": "Penggunaan: clear <all|wp|art|mat>",
+        "weapons": "Cleared weapons for %s.",
+        "artifacts": "Cleared artifacts for %s.",
+        "materials": "Cleared materials for %s.",
+        "furniture": "Cleared furniture for %s.",
+        "displays": "Cleared displays for %s.",
+        "virtuals": "Cleared virtuals for %s.",
+        "done": "Cleared %s item with %s limit",
+        "everything": "Cleared everything for %s.",
+        "description": "Deletes unequipped unlocked items, including yellow rarity ones from your inventory"
+      },
+      "coop": {
+        "usage": "Penggunaan: coop <playerId> <target playerId>",
+        "success": "Summoned %s to %s's world.",
+        "description": "Forces someone to join the world of others"
+      },
+      "enter_dungeon": {
+        "usage": "Penggunaan: enterdungeon <dungeon id>",
+        "changed": "Changed to dungeon %s",
+        "not_found_error": "Dungeon does not exist",
+        "in_dungeon_error": "You are already in that dungeon",
+        "description": "Enter a dungeon"
+      },
+      "giveAll": {
+        "usage": "Penggunaan: giveall",
+        "started": "Menerima semua barang...",
+        "success": "Berhasil memberikan semua item ke %s.",
+        "invalid_amount_or_playerId": "Jumlah atau ID pemain tidak valid.",
+        "description": "Memberikan semua item"
+      },
+      "giveArtifact": {
+        "usage": "Penggunaan: giveart|gart [id_pemain] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]",
+        "id_error": "Artefak gagal ditemukan idnya",
+        "success": "Diberikan %s untuk %s.",
+        "description": "Memberi pemain artefak tertentu"
+      },
+      "giveChar": {
+        "usage": "Penggunaan: givechar <id_pemain> <itemId|itemName> [amount]",
+        "given": "Berikan %s dengan level %s untuk %s.",
+        "invalid_avatar_id": "Id Avatar tidak cocok",
+        "invalid_avatar_level": "Level avatar tidak valid.",
+        "invalid_avatar_or_player_id": "Avatar atau ID pemain tidak valid.",
+        "description": "Memberi pemain karakter tertentu"
+      },
+      "give": {
+        "usage": "Penggunaan: give <player> <itemId|itemName> [amount] [level]",
+        "refinement_only_applicable_weapons": "Refinement is only applicable to weapons.",
+        "refinement_must_between_1_and_5": "Refinement must be between 1 and 5.",
+        "given": "Given %s of %s to %s.",
+        "given_with_level_and_refinement": "Given %s with level %s, refinement %s %s times to %s",
+        "given_level": "Given %s with level %s times to %s",
+        "description": "Gives an item to you or the specified player"
+      },
+      "godmode": {
+        "success": "Godmode is now %s for %s.",
+        "description": "Prevents you from taking damage. Defaults to toggle."
+      },
+      "heal": {
+        "success": "All characters have been healed.",
+        "description": "Heal all characters in your current team."
+      },
+      "kick": {
+        "player_kick_player": "Player [%s:%s] has kicked player [%s:%s]",
+        "server_kick_player": "Kicking player [%s:%s]",
+        "description": "Kicks the specified player from the server (WIP)"
+      },
+      "kill": {
+        "usage": "Penggunaan: killall [playerUid] [sceneId]",
+        "scene_not_found_in_player_world": "Scene not found in player world",
+        "kill_monsters_in_scene": "Killing %s monsters in scene %s",
+        "description": "Kill all entities"
+      },
+      "killCharacter": {
+        "usage": "Penggunaan: /killcharacter [playerId]",
+        "success": "Killed %s's current character.",
+        "description": "Kills the players current character"
+      },
+      "language": {
+        "current_language": "current language is %s",
+        "language_changed": "language changed to %s",
+        "language_not_found": "currently, server does not have that language: %s",
+        "description": "display or change current language"
+      },
+      "list": {
+        "success": "There are %s player(s) online:",
+        "description": "List online players"
+      },
+      "permission": {
+        "usage": "Penggunaan: permission <add|remove> <username> <permission>",
+        "add": "Permission added.",
+        "has_error": "They already have this permission!",
+        "remove": "Permission removed.",
+        "not_have_error": "They don't have this permission!",
+        "account_error": "The account cannot be found.",
+        "description": "Grants or removes a permission for a user"
+      },
+      "position": {
+        "success": "Coordinates: %s, %s, %s\nScene id: %s",
+        "description": "Get coordinates."
+      },
+      "quest": {
+        "description": "Add or finish quests",
+        "usage": "quest <add|finish> [quest id]",
+        "added": "Quest %s added",
+        "finished": "Finished quest %s",
+        "not_found": "Quest not found",
+        "invalid_id": "Invalid quest id"
+      },
+      "reload": {
+        "reload_start": "Reloading config.",
+        "reload_done": "Reload complete.",
+        "description": "Reload server config"
+      },
+      "resetConst": {
+        "reset_all": "Reset all avatars' constellations.",
+        "success": "Constellations for %s have been reset. Please relog to see changes.",
+        "description": "Resets the constellation level on your current active character, will need to relog after using the command to see any changes."
+      },
+      "resetShopLimit": {
+        "usage": "Penggunaan: /resetshop <player id>",
+        "description": "Reset target player's shop refresh time."
+      },
+      "sendMail": {
+        "usage": "Penggunaan: give [player] <itemId|itemName> [amount]",
+        "user_not_exist": "The user with an id of '%s' does not exist",
+        "start_composition": "Starting composition of message.\nPlease use `/sendmail <title>` to continue.\nYou can use `/sendmail stop` at any time",
+        "templates": "Mail templates coming soon implemented...",
+        "invalid_arguments": "Invalid arguments.\nUsage `/sendmail <userId|all|help> [templateId]`",
+        "send_cancel": "Message sending cancelled",
+        "send_done": "Message sent to user %s!",
+        "send_all_done": "Message sent to all users!",
+        "not_composition_end": "Message composition not at final stage.\nPlease use `/sendmail %s` or `/sendmail stop` to cancel",
+        "please_use": "Please use `/sendmail %s`",
+        "set_title": "Message title set as '%s'.\nUse '/sendmail <content>' to continue.",
+        "set_contents": "Message contents set as '%s'.\nUse '/sendmail <sender>' to continue.",
+        "set_message_sender": "Message sender set as '%s'.\nUse '/sendmail <itemId|itemName|finish> [amount] [level]' to continue.",
+        "send": "Attached %s of %s (level %s) to the message.\nContinue adding more items or use `/sendmail finish` to send the message.",
+        "invalid_arguments_please_use": "Invalid arguments \n Please use `/sendmail %s`",
+        "title": "<title>",
+        "message": "<message>",
+        "sender": "<sender>",
+        "arguments": "<itemId|itemName|finish> [amount] [level]",
+        "error": "ERROR: invalid construction stage %s. Check console for stacktrace.",
+        "description": "Sends mail to the specified user. The usage of this command changes based on it's composition state."
+      },
+      "sendMessage": {
+        "usage": "Penggunaan: sendmessage <player> <message>",
+        "success": "Message sent.",
+        "description": "Sends a message to a player as the server"
+      },
+      "setFetterLevel": {
+        "usage": "Penggunaan: setfetterlevel <level>",
+        "range_error": "Fetter level must be between 0 and 10.",
+        "success": "Fetter level set to %s",
+        "level_error": "Invalid fetter level.",
+        "description": "Sets your fetter level for your current active character"
+      },
+      "setStats": {
+        "usage_console": "Penggunaan: setstats|stats @<UID> <stat> <value>",
+        "usage_ingame": "Penggunaan: setstats|stats [@UID] <stat> <value>",
+        "help_message": "\n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
+        "value_error": "Invalid stat value.",
+        "uid_error": "Invalid UID.",
+        "player_error": "Player not found or offline.",
+        "set_self": "%s set to %s.",
+        "set_for_uid": "%s for %s set to %s.",
+        "set_max_hp": "MAX HP set to %s.",
+        "description": "Set fight property for your current active character"
+      },
+      "setWorldLevel": {
+        "usage": "Penggunaan: setworldlevel <level>",
+        "value_error": "World level must be between 0-8",
+        "success": "World level set to %s.",
+        "invalid_world_level": "Invalid world level.",
+        "description": "Sets your world level (Relog to see proper effects)"
+      },
+      "spawn": {
+        "usage": "Penggunaan: spawn <entityId> [amount] [level(monster only)]",
+        "success": "Spawned %s of %s.",
+        "description": "Spawns an entity near you"
+      },
+      "stop": {
+        "success": "Server shutting down...",
+        "description": "Stops the server"
+      },
+      "talent": {
+        "usage_1": "To set talent level: /talent set <talentID> <value>",
+        "usage_2": "Another way to set talent level: /talent <n or e or q> <value>",
+        "usage_3": "To get talent ID: /talent getid",
+        "lower_16": "Invalid talent level. Level should be lower than 16",
+        "set_id": "Set talent to %s.",
+        "set_atk": "Set talent Normal ATK to %s.",
+        "set_e": "Set talent E to %s.",
+        "set_q": "Set talent Q to %s.",
+        "invalid_skill_id": "Invalid skill ID.",
+        "set_this": "Set this talent to %s.",
+        "invalid_level": "Invalid talent level.",
+        "normal_attack_id": "Normal Attack ID %s.",
+        "e_skill_id": "E skill ID %s.",
+        "q_skill_id": "Q skill ID %s.",
+        "description": "Set talent level for your current active character"
+      },
+      "teleportAll": {
+        "success": "Summoned all players to your location.",
+        "error": "You only can use this command in MP mode.",
+        "description": "Teleports all players in your world to your position"
+      },
+      "teleport": {
+        "usage_server": "Penggunaan: /tp @<player id> <x> <y> <z> [adegan id]",
+        "usage": "Penggunaan: /tp [@<player id>] <x> <y> <z> [adegan id]",
+        "specify_player_id": "Anda harus menentukan id pemain.",
+        "invalid_position": "Salah posisi",
+        "success": "Teleportasi %s ke %s, %s, %s dalam adegan %s",
+        "description": "Ubah posisi pemain."
+      },
+      "tower": {
+        "unlock_done": "Lantai Abyss Corridor semuanya tidak terkunci sekarang."
+      },
+      "weather": {
+        "usage": "Penggunaan: weather <CuacaId> [SuasanaId]",
+        "success": "Ubah cuaca ke %s dengan suasana %s",
+        "invalid_id": "Id cuaca tidak valid",
+        "description": "Ubah cuaca"
+      },
+      "drop": {
+        "command_usage": "Penggunaan: drop <ItemId|NamaItem> [Jumlah]",
+        "success": "Menjatuhkan %s dari %s.",
+        "description": "Menjatuhkan item di dekat anda"
+      },
+      "help": {
+        "usage": "Penggunaan: ",
+        "aliases": "Alias: ",
+        "available_commands": "Perintah yang tersedia: ",
+        "description": "Mengirim pesan bantuan atau menampilkan informasi tentang perintah tertentu"
+      },
+      "restart": {
+        "description": "Memulai kembali sesi saat ini"
+      },
+      "unlocktower": {
+        "success": "buka kunci selesai",
+        "description": "Buka kunci semua level menara"
+      },
+      "resetshop": {
+        "description": "reset shop"
+      }
+    },
+    "gacha": {
+      "details": {
+        "title": "Detail Banner",
+        "available_five_stars": "Item bintang 5 yang tersedia",
+        "available_four_stars": "Item bintang 4 yang tersedia",
+        "available_three_stars": "Item bintang 3 yang tersedia",
+        "template_missing": "data/gacha_details.html hilang"
+      }
+    },
+    "dockergc": {
+        "account": {
+          "username_vaild": "Gunakan Nama Pengguna tanpa spasi dan huruf khusus atau format email saja"
+        }
+    }
+  }
+  

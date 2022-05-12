@@ -96,7 +96,7 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
 
         }else{
           responseData.retcode = -201;
-          responseData.message = "Use Username without spaces and special letters or email format";
+          responseData.message = translate("dockergc.account.username_vaild");
         }
 
         return responseData;

@@ -143,6 +143,9 @@ public class TowerManager {
     }
 
     public boolean canEnterScheduleFloor(){
+        if(player == null && player.getServer() == null){
+          return false;
+        }
         if(!recordMap.containsKey(player.getServer().getTowerScheduleManager().getLastEntranceFloor())){
             return false;
         }

@@ -370,5 +370,10 @@
       "available_three_stars": "Available 3-star Items",
       "template_missing": "data/gacha_details.html is missing."
     }
+  },
+  "dockergc": {
+      "account": {
+        "username_vaild": "Use Username without spaces and special letters or email format"
+      }
   }
 }

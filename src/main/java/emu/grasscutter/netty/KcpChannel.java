@@ -79,18 +79,16 @@ public abstract class KcpChannel extends ChannelInboundHandlerAdapter {
           message = lines[0];
         }
         if(message.matches("(.*)OutOfMemoryError(.*)")){
-          // if memory full
-          
+          // if memory full          
           Grasscutter.getLogger().info("Trying to exit program because memory is full");
           Map<Integer, Player> playersMap = Grasscutter.getGameServer().getPlayers();
           // Better exit by save data player and kick
           playersMap.values().forEach(player -> {
-            Grasscutter.getLogger().info("Kick User: "+player.getUid());
+            //Grasscutter.getLogger().info("Kick User: "+player.getUid());
             player.getSession().close();
           });
           // Bye          
           System.exit(0);
-
         }else if(message.matches("(.*)State=-1(.*)")){
           close();
         }else if(message.matches("(.*)inconsistency(.*)")){

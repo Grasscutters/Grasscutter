@@ -127,8 +127,7 @@ public class TeamManager {
 	}
 	
 	public TeamInfo getCurrentTeamInfo() {
-		if (useTemporarilyTeamIndex >= 0 &&
-				useTemporarilyTeamIndex < temporaryTeam.size()){
+		if (useTemporarilyTeamIndex >= 0 && temporaryTeam == null && useTemporarilyTeamIndex < temporaryTeam.size()){
 			return temporaryTeam.get(useTemporarilyTeamIndex);
 		}
 		if (this.getPlayer().isInMultiplayer()) {
