@@ -29,10 +29,12 @@
         "account_login_create_success": "[Dispatch] Klient %s nie mógł się zalogować: Konto %s stworzone",
         "account_login_create_error": "[Dispatch] Klient %s nie mógł się zalogować: Tworzenie konta nie powiodło się",
         "account_login_exist_error": "[Dispatch] Klient %s nie mógł się zalogować: Nie znaleziono konta",
+        "account_login_password_error": "[Dispatch] Klient %s nie mógł się zalogować: Błąd hasła logowania do konta",
         "account_cache_error": "Błąd pamięci cache konta gry",
         "session_key_error": "Błędny klucz sesji.",
         "username_error": "Nazwa użytkownika nie znaleziona.",
-        "username_create_error": "Nazwa użytkownika nie znaleziona, tworzenie nie powiodło się."
+        "username_create_error": "Nazwa użytkownika nie znaleziona, tworzenie nie powiodło się.",
+        "password_error": "Błąd hasła do konta."
       }
     },
     "status": {

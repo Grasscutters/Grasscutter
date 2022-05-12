@@ -29,10 +29,12 @@
         "account_login_create_success": "[Dispatch] 客戶端 %s 登入失敗: 已註冊UID為 %s 的帳號",
         "account_login_create_error": "[Dispatch] 客戶端 %s 登入失敗：帳號建立失敗。",
         "account_login_exist_error": "[Dispatch] 客戶端 %s 登入失敗: 帳號不存在",
+        "account_login_password_error": "[Dispatch] 客戶端 %s 登入失敗: 帳號密碼錯誤",
         "account_cache_error": "遊戲帳號緩存資訊錯誤",
         "session_key_error": "對話密鑰不符。",
         "username_error": "未找到此用戶名。",
-        "username_create_error": "未找到用戶名，建立失敗。"
+        "username_create_error": "未找到用戶名，建立失敗。",
+        "password_error": "帳號密碼錯誤。"
       }
     },
     "status": {

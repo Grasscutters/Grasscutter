@@ -29,10 +29,12 @@
         "account_login_create_success": "[Dispatch] 客户端 %s 登录失败: 已注册 UID 为 %s 的账号",
         "account_login_create_error": "[Dispatch] 客户端 %s 登录失败：账号创建失败。",
         "account_login_exist_error": "[Dispatch] 客户端 %s 登录失败：账号不存在",
+        "account_login_password_error": "[Dispatch] 客户端 %s 登录失败：账号密码错误。",
         "account_cache_error": "游戏账号缓存信息错误",
         "session_key_error": "会话密钥错误。",
         "username_error": "未找到此用户名。",
-        "username_create_error": "未找到用户名，建立连接失败。"
+        "username_create_error": "未找到用户名，建立连接失败。",
+        "password_error": "登录密码错误。"
       }
     },
     "status": {

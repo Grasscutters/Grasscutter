@@ -31,11 +31,12 @@
         "combo_token_error": "[Dispatch] Client %s failed to exchange combo token",
         "account_login_create_success": "[Dispatch] Client %s failed to log in: Account %s created",
         "account_login_create_error": "[Dispatch] Client %s failed to log in: Account create failed",
-        "account_login_exist_error": "[Dispatch] Client %s failed to log in: Account no found",
+        "account_login_password_error": "[Dispatch] Client %s failed to log in：login password error.",
         "account_cache_error": "Game account cache information error",
         "session_key_error": "Wrong session key.",
         "username_error": "Username not found.",
-        "username_create_error": "Username not found, create failed."
+        "username_create_error": "Username not found, create failed.",
+        "password_error": "login password is error."
       }
     },
     "status": {
