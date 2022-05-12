@@ -105,6 +105,7 @@ jar {
     }
 
     jar.baseName = 'grasscutter'
+    jar.archiveName = project.hasProperty('jarFilename') ? "${jarFilename}.${extension}" : archiveName
 
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
