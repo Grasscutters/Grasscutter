@@ -262,7 +262,7 @@ public class StaminaManager {
             }
         }
         int maxStamina = isCharacterStamina ? getMaxCharacterStamina() : getMaxVehicleStamina();
-        logger.warn((isCharacterStamina ? "C " : "V ") + currentStamina + "/" + maxStamina + "\t" + currentState + "\t" +
+        logger.trace((isCharacterStamina ? "C " : "V ") + currentStamina + "/" + maxStamina + "\t" + currentState + "\t" +
                 (isPlayerMoving() ? "moving" : "      ") + "\t(" + consumption.type + "," +
                 consumption.amount + ")");
         int newStamina = currentStamina + consumption.amount;
