@@ -55,8 +55,6 @@ tmp/
 resources/
 logs/
 plugins/
-data/AbilityEmbryos.json
-data/OpenConfig.json
 GM Handbook.txt
 config.json
 mitmdump.exe
@@ -68,8 +66,7 @@ mongod.exe
 language/
 languages/
 gacha-mapping.js
-data/gacha_mappings.js
 BuildConfig.java
-
+gacha_mappings.js
 # macOS
 .DS_Store

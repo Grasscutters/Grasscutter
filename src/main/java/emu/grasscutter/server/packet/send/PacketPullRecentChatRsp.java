@@ -35,7 +35,7 @@ public class PacketPullRecentChatRsp extends BasePacket {
 				.setTime((int) (System.currentTimeMillis() / 1000))
 				.setUid(GameConstants.SERVER_CONSOLE_UID)
 				.setToUid(player.getUid())
-				.setText(joinOptions.welcomeMessage+("\n\nServer:\nDockerGC "+ConfigContainer.version_DockerGC+"\nGrasscutter "+ BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH))
+				.setText(joinOptions.welcomeMessage+("\n\nServer:\nDockerGC "+ConfigContainer.version_DockerGC+"\nGrasscutter "+ BuildConfig.VERSION))
 				.build();
 			proto.addChatInfo(welcomeMessage);
 		}
