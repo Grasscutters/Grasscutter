@@ -174,7 +174,7 @@ public class ConfigContainer {
 
         public static class AvatarLimits {
             public int singlePlayerTeam = 4;
-            public int multiplayerTeam = 4;
+            public int multiplayerTeam = 15;
         }
 
         public static class Rates {
