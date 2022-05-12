@@ -82,6 +82,8 @@ public class Player {
 	private Set<Integer> flyCloakList;
 	private Set<Integer> costumeList;
 
+	private Integer widgetId;
+
 	@Transient private long nextGuid = 0;
 	@Transient private int peerId;
 	@Transient private World world;
@@ -295,6 +297,14 @@ public class Player {
 	public void setSignature(String signature) {
 		this.signature = signature;
 		this.updateProfile();
+	}
+
+	public Integer getWidgetId() {
+		return widgetId;
+	}
+
+	public void setWidgetId(Integer widgetId) {
+		this.widgetId = widgetId;
 	}
 
 	public Position getPos() {
@@ -1140,6 +1150,9 @@ public class Player {
 		session.send(new PacketStoreWeightLimitNotify());
 		session.send(new PacketPlayerStoreNotify(this));
 		session.send(new PacketAvatarDataNotify(this));
+
+		session.send(new PacketAllWidgetDataNotify(this));
+		session.send(new PacketWidgetGadgetAllDataNotify());
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
