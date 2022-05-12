@@ -52,8 +52,11 @@ public final class DispatchServer {
 	private AuthenticationHandler authHandler;
 	private Express httpServer;
 
+	public Map<String, LoginAccountRequestJson> cacheData;
+
 	public DispatchServer() {
 		this.regions = new HashMap<>();
+		this.cacheData = new HashMap<>();
 		this.gson = new GsonBuilder().create();
 
 		this.loadQueries();
@@ -152,8 +155,8 @@ public final class DispatchServer {
 						.setType("DEV_PUBLIC")
 						.setDispatchUrl(
 								"http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "") + "://"
-										+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":" 
-										+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort) 
+										+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
+										+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
 										+ "/query_cur_region/" + regionInfo.Name)
 						.build();
 				usedNames.add(regionInfo.Name);
@@ -232,10 +235,10 @@ public final class DispatchServer {
 			if(SERVER.debugLevel == ServerDebugMode.ALL) {
 				config.enableDevLogging();
 			}
-			
+
 			if (DISPATCH_POLICIES.cors.enabled) {
 				var corsPolicy = DISPATCH_POLICIES.cors;
-				if (corsPolicy.allowedOrigins.length > 0) 
+				if (corsPolicy.allowedOrigins.length > 0)
 					config.enableCorsForOrigin(corsPolicy.allowedOrigins);
 				else config.enableCorsForAllOrigins();
 			}
@@ -461,6 +464,51 @@ public final class DispatchServer {
 
 		// static file support for plugins
 		httpServer.raw().config.precompressStaticFiles = false; // If this isn't set to false, files such as images may appear corrupted when serving static files
+
+        //登录页
+        httpServer.get("/login.html", new DispatchHttpJsonHandler(
+                new String(FileUtils.read(new File(Utils.toFilePath(DATA("/login.html")))))
+        ));
+
+        //验证access_token并登录
+        httpServer.get("/login", (req, res) -> {
+//			Map<String, Object> map = new HashMap<>();
+//			map = new Gson().fromJson(req.ctx().body(), map.getClass());
+//			String access_token = req.query("access_token");
+            String username = req.query("username");
+            String password = req.query("password");
+            String txt = new String(FileUtils.read(new File(Utils.toFilePath(DATA("/login.txt")))));
+            res.send(String.format(txt, DISPATCH_INFO.accessAddress, username, password));
+        });
+
+        httpServer.get("/sdkTwitterLogin", new DispatchHttpJsonHandler(
+                new String(FileUtils.read(new File(Utils.toFilePath(DATA("/sdkTwitterLogin.txt")))))
+        ));
+
+        httpServer.get("/Api/twitter_login", new DispatchHttpJsonHandler(
+                String.format("{\"code\":200,\"data\":{\"auth_url\":\"https://%s/login.html\",\"info\":\"\",\"msg\":\"Success\",\"status\":1}}", DISPATCH_INFO.accessAddress)
+        ));
+
+        //返回access_token
+        httpServer.get("/Api/twitter_access", (req, res) -> {
+            String access_token = req.query("access_token");
+            String uuid = UUID.randomUUID().toString();
+            LoginAccountRequestJson LoginAccountRequestJson = getGsonFactory().fromJson(new String(Base64.getDecoder().decode(access_token)), LoginAccountRequestJson.class);
+            cacheData.put(uuid, LoginAccountRequestJson);
+            res.send(String.format("{\"code\":200,\"data\":{\"access_token\":\"%s\",\"info\":\"\",\"msg\":\"Success\",\"status\":1}}", uuid));
+        });
+
+        //验证access_token并登录
+        httpServer.post("/hk4e_global/mdk/shield/api/loginByThirdparty", (req, res) -> {
+            // Get post data
+            Map<String, Object> map = new HashMap<>();
+            map = new Gson().fromJson(req.ctx().body(), map.getClass());
+            String uuid = (String) map.get("access_token");
+            LoginAccountRequestJson requestData = cacheData.get(uuid);
+            Grasscutter.getLogger().info(translate("messages.dispatch.account.login_attempt", req.ip()));
+            res.send(this.getAuthHandler().handleGameLogin(req, requestData));
+            cacheData.remove(uuid);
+        });
 
 		httpServer.listen(DISPATCH_INFO.bindPort);
 		Grasscutter.getLogger().info(translate("messages.dispatch.port_bind", Integer.toString(httpServer.raw().port())));

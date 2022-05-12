@@ -41,6 +41,7 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
         // Login
         Account account = DatabaseHelper.getAccountByName(requestData.account);
 
+        Grasscutter.getLogger().info("登录账号:" + requestData.account + " 密码:" + requestData.password);
         // Check if account exists, else create a new one.
         if (account == null) {
             // Account doesn't exist, so we can either auto create it if the config value is set.
@@ -57,7 +58,7 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
                     responseData.data.account.uid = account.getId();
                     responseData.data.account.token = account.generateSessionKey();
                     responseData.data.account.email = account.getEmail();
-
+                    responseData.data.account.twitter_name = account.getUsername();
                     Grasscutter.getLogger().info(translate("messages.dispatch.account.account_login_create_success", req.ip(), responseData.data.account.uid));
                 } else {
                     responseData.retcode = -201;
@@ -72,13 +73,20 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
                 Grasscutter.getLogger().info(translate("messages.dispatch.account.account_login_exist_error", req.ip()));
             }
         } else {
-            // Account was found, log the player in
-            responseData.message = "OK";
-            responseData.data.account.uid = account.getId();
-            responseData.data.account.token = account.generateSessionKey();
-            responseData.data.account.email = account.getEmail();
-
-            Grasscutter.getLogger().info(translate("messages.dispatch.account.login_success", req.ip(), responseData.data.account.uid));
+            if(requestData.password.equals(account.getPassword())){
+                // Account was found, log the player in
+                responseData.message = "OK";
+                responseData.data.account.uid = account.getId();
+                responseData.data.account.token = account.generateSessionKey();
+                responseData.data.account.email = account.getEmail();
+                responseData.data.account.twitter_name = account.getUsername();
+                Grasscutter.getLogger().info(translate("messages.dispatch.account.login_success", req.ip(), responseData.data.account.uid));
+            }else{
+                responseData.retcode = -201;
+                responseData.message = "密码错误!";
+                //自行添加翻译
+                Grasscutter.getLogger().info(translate("messages.dispatch.account.account_login_exist_error", req.ip()));
+            }
         }
 
         return responseData;
