@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.Calendar;
 
 import emu.grasscutter.command.CommandMap;
+import emu.grasscutter.game.managers.StaminaManager.StaminaManager;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
@@ -110,6 +111,9 @@ public final class Grasscutter {
 		new ServerHook(gameServer, dispatchServer);
 		// Create plugin manager instance.
 		pluginManager = new PluginManager();
+
+		// TODO: find a better place?
+		StaminaManager.initialize();
 	
 		// Start servers.
 		var runMode = SERVER.runMode;
