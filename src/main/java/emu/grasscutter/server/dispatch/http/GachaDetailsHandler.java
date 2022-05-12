@@ -62,28 +62,24 @@ public final class GachaDetailsHandler implements HttpContextHandler {
 		// Add 5-star items.
 		Set<String> fiveStarItems = new LinkedHashSet<>();
 
-		Arrays.stream(banner.getRateUpItems1()).forEach(i -> fiveStarItems.add(Integer.toString(i)));
-		if (banner.getBannerType() == BannerType.STANDARD || banner.getBannerType() == BannerType.EVENT) {
-			Arrays.stream(manager.getYellowAvatars()).forEach(i -> fiveStarItems.add(Integer.toString(i)));
-		}
-		if (banner.getBannerType() == BannerType.STANDARD || banner.getBannerType() == BannerType.WEAPON) {
-			Arrays.stream(manager.getYellowWeapons()).forEach(i -> fiveStarItems.add(Integer.toString(i)));
-		}
+		Arrays.stream(banner.getRateUpItems5()).forEach(i -> fiveStarItems.add(Integer.toString(i)));
+		Arrays.stream(banner.getFallbackItems5Pool1()).forEach(i -> fiveStarItems.add(Integer.toString(i)));
+		Arrays.stream(banner.getFallbackItems5Pool2()).forEach(i -> fiveStarItems.add(Integer.toString(i)));
 
 		response = response.replace("{{FIVE_STARS}}", "[" + String.join(",", fiveStarItems) + "]");
 		
 		// Add 4-star items.
 		Set<String> fourStarItems = new LinkedHashSet<>();
 
-		Arrays.stream(banner.getRateUpItems2()).forEach(i -> fourStarItems.add(Integer.toString(i)));
-		Arrays.stream(manager.getPurpleAvatars()).forEach(i -> fourStarItems.add(Integer.toString(i)));
-		Arrays.stream(manager.getPurpleWeapons()).forEach(i -> fourStarItems.add(Integer.toString(i)));
+		Arrays.stream(banner.getRateUpItems4()).forEach(i -> fourStarItems.add(Integer.toString(i)));
+		Arrays.stream(banner.getFallbackItems4Pool1()).forEach(i -> fourStarItems.add(Integer.toString(i)));
+		Arrays.stream(banner.getFallbackItems4Pool2()).forEach(i -> fourStarItems.add(Integer.toString(i)));
 
 		response = response.replace("{{FOUR_STARS}}", "[" + String.join(",", fourStarItems) + "]");
 
 		// Add 3-star items.
 		Set<String> threeStarItems = new LinkedHashSet<>();
-		Arrays.stream(manager.getBlueWeapons()).forEach(i -> threeStarItems.add(Integer.toString(i)));
+		Arrays.stream(banner.getFallbackItems3()).forEach(i -> threeStarItems.add(Integer.toString(i)));
 		response = response.replace("{{THREE_STARS}}", "[" + String.join(",", threeStarItems) + "]");
 
 		// Done.
