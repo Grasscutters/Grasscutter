@@ -10,6 +10,8 @@ import java.io.FileReader;
 import java.util.Collection;
 import java.util.List;
 
+import static emu.grasscutter.Configuration.*;
+
 public class ExpeditionManager {
     public GameServer getGameServer() {
         return gameServer;
@@ -28,7 +30,7 @@ public class ExpeditionManager {
     }
 
     public synchronized void load() {
-        try (FileReader fileReader = new FileReader(Grasscutter.getConfig().DATA_FOLDER + "ExpeditionReward.json")) {
+        try (FileReader fileReader = new FileReader(DATA("ExpeditionReward.json"))) {
             getExpeditionRewardDataList().clear();
             List<ExpeditionRewardInfo> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ExpeditionRewardInfo.class).getType());
             if(banners.size() > 0) {

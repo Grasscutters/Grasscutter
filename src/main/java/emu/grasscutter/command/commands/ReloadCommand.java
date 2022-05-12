@@ -9,13 +9,12 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "reload", usage = "reload",
-        description = "Reload server config", permission = "server.reload")
+@Command(label = "reload", usage = "reload", permission = "server.reload", description = "commands.reload.description")
 public final class ReloadCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        CommandHandler.sendMessage(sender, translate("commands.reload.reload_start"));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.reload.reload_start"));
         
         Grasscutter.loadConfig();
         Grasscutter.loadLanguage();
@@ -24,6 +23,6 @@ public final class ReloadCommand implements CommandHandler {
         Grasscutter.getGameServer().getShopManager().load();
         Grasscutter.getDispatchServer().loadQueries();
         
-        CommandHandler.sendMessage(sender, translate("commands.reload.reload_done"));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.reload.reload_done"));
     }
 }

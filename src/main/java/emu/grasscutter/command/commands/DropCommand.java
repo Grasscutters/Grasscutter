@@ -13,14 +13,13 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "drop", usage = "drop <itemId|itemName> [amount]",
-        description = "Drops an item near you", aliases = {"d", "dropitem"}, permission = "server.drop")
+@Command(label = "drop", usage = "drop <itemId|itemName> [amount]", aliases = {"d", "dropitem"}, permission = "server.drop", permissionTargeted = "server.drop.others", description = "commands.drop.description")
 public final class DropCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(null, translate("commands.execution.need_target"));
+            CommandHandler.sendMessage(null, translate(sender, "commands.execution.need_target"));
             return;
         }
         
@@ -32,25 +31,25 @@ public final class DropCommand implements CommandHandler {
                 try {
                     amount = Integer.parseInt(args.get(1));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.amount"));
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.amount"));
                     return;
                 }  // Slightly cheeky here: no break, so it falls through to initialize the first argument too
             case 1:
                 try {
                     item = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.itemId"));
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.itemId"));
                     return;
                 }
                 break;
             default:
-                CommandHandler.sendMessage(sender, translate("commands.drop.command_usage"));
+                CommandHandler.sendMessage(sender, translate(sender, "commands.drop.command_usage"));
                 return;
         }
 
         ItemData itemData = GameData.getItemDataMap().get(item);
         if (itemData == null) {
-            CommandHandler.sendMessage(sender, translate("commands.generic.invalid.itemId"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.itemId"));
             return;
         }
         if (itemData.isEquip()) {
@@ -64,6 +63,6 @@ public final class DropCommand implements CommandHandler {
             EntityItem entity = new EntityItem(targetPlayer.getScene(), targetPlayer, itemData, targetPlayer.getPos().clone().addY(3f), amount);
             targetPlayer.getScene().addEntity(entity);
         }
-        CommandHandler.sendMessage(sender, translate("commands.drop.success", Integer.toString(amount), Integer.toString(item)));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.drop.success", Integer.toString(amount), Integer.toString(item)));
     }
 }

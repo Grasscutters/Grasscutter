@@ -8,6 +8,7 @@ import emu.grasscutter.data.def.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
+import emu.grasscutter.game.ability.AbilityManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
@@ -59,6 +60,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 
+import static emu.grasscutter.Configuration.*;
+
 @Entity(value = "players", useDiscriminator = false)
 public class Player {
 
@@ -91,7 +94,8 @@ public class Player {
 	@Transient private FriendsList friendsList;
 	@Transient private MailHandler mailHandler;
 	@Transient private MessageHandler messageHandler;
-
+	@Transient private AbilityManager abilityManager;
+	
 	@Transient private SotSManager sotsManager;
 
 	private TeamManager teamManager;
@@ -144,6 +148,7 @@ public class Player {
 		this.friendsList = new FriendsList(this);
 		this.mailHandler = new MailHandler(this);
 		this.towerManager = new TowerManager(this);
+		this.abilityManager = new AbilityManager(this);
 		this.pos = new Position();
 		this.rotation = new Position();
 		this.properties = new HashMap<>();
@@ -360,7 +365,7 @@ public class Player {
 	}
 
 	private float getExpModifier() {
-		return Grasscutter.getConfig().getGameServerOptions().getGameRates().ADVENTURE_EXP_RATE;
+		return GAME_OPTIONS.rates.adventureExp;
 	}
 
 	// Affected by exp rate
@@ -1035,6 +1040,10 @@ public class Player {
 
 	public SotSManager getSotSManager() { return sotsManager; }
 
+	public AbilityManager getAbilityManager() {
+		return abilityManager;
+	}
+
 	public synchronized void onTick() {
 		// Check ping
 		if (this.getLastPingTime() > System.currentTimeMillis() + 60000) {
@@ -1224,7 +1233,7 @@ public class Player {
 		} else if (prop == PlayerProperty.PROP_LAST_CHANGE_AVATAR_TIME) { // 10001
 			// TODO: implement sanity check
 		} else if (prop == PlayerProperty.PROP_MAX_SPRING_VOLUME) { // 10002
-			if (!(value >= 0 && value <= getSotSManager().GlobalMaximumSpringVolume)) { return false; }
+			if (!(value >= 0 && value <= SotSManager.GlobalMaximumSpringVolume)) { return false; }
 		} else if (prop == PlayerProperty.PROP_CUR_SPRING_VOLUME) { // 10003
 			int playerMaximumSpringVolume = getProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME);
 			if (!(value >= 0 && value <= playerMaximumSpringVolume)) { return false; }
@@ -1241,7 +1250,7 @@ public class Player {
 		} else if (prop == PlayerProperty.PROP_IS_TRANSFERABLE) { // 10009
 			if (!(0 <= value && value <= 1)) { return false; }
 		} else if (prop == PlayerProperty.PROP_MAX_STAMINA) { // 10010
-			if (!(value >= 0 && value <= getStaminaManager().GlobalMaximumStamina)) { return false; }
+			if (!(value >= 0 && value <= StaminaManager.GlobalCharacterMaximumStamina)) { return false; }
 		} else if (prop == PlayerProperty.PROP_CUR_PERSIST_STAMINA) { // 10011
 			int playerMaximumStamina = getProperty(PlayerProperty.PROP_MAX_STAMINA);
 			if (!(value >= 0 && value <= playerMaximumStamina)) { return false; }

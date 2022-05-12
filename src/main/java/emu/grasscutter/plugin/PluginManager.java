@@ -7,6 +7,7 @@ import emu.grasscutter.server.event.HandlerPriority;
 import emu.grasscutter.utils.Utils;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
@@ -15,6 +16,8 @@ import java.net.URLClassLoader;
 import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+
+import static emu.grasscutter.Configuration.*;
 
 /**
  * Manages the server's plugins and the event system.
@@ -31,8 +34,7 @@ public final class PluginManager {
      * Loads plugins from the config-specified directory.
      */
     private void loadPlugins() {
-        String directory = Grasscutter.getConfig().PLUGINS_FOLDER;
-        File pluginsDir = new File(Utils.toFilePath(directory));
+        File pluginsDir = new File(Utils.toFilePath(PLUGINS_FOLDER));
         if(!pluginsDir.exists() && !pluginsDir.mkdirs()) {
             Grasscutter.getLogger().error("Failed to create plugins directory: " + pluginsDir.getAbsolutePath());
             return;
@@ -89,6 +91,8 @@ public final class PluginManager {
                     fileReader.close(); // Close the file reader.
                 } catch (ClassNotFoundException ignored) {
                     Grasscutter.getLogger().warn("Plugin " + plugin.getName() + " has an invalid main class.");
+                } catch (FileNotFoundException ignored) {
+                    Grasscutter.getLogger().warn("Plugin " + plugin.getName() + " lacks a valid config file.");
                 }
             } catch (Exception exception) {
                 Grasscutter.getLogger().error("Failed to load plugin: " + plugin.getName(), exception);

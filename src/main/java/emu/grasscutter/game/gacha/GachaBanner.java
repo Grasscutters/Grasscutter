@@ -1,8 +1,9 @@
 package emu.grasscutter.game.gacha;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.proto.GachaInfoOuterClass.GachaInfo;
 import emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfo;
+
+import static emu.grasscutter.Configuration.*;
 
 public class GachaBanner {
 	private int gachaType;
@@ -95,16 +96,17 @@ public class GachaBanner {
 	public GachaInfo toProto() {
 		return toProto("");
 	}
+	
 	public GachaInfo toProto(String sessionKey) {
-		String record = "http" + (Grasscutter.getConfig().getDispatchOptions().FrontHTTPS ? "s" : "") + "://"
-						+ (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? 
-							Grasscutter.getConfig().getDispatchOptions().Ip : 
-							Grasscutter.getConfig().getDispatchOptions().PublicIp)
-						+ ":"
-						+ Integer.toString(Grasscutter.getConfig().getDispatchOptions().PublicPort == 0 ?
-							Grasscutter.getConfig().getDispatchOptions().Port : 
-							Grasscutter.getConfig().getDispatchOptions().PublicPort)
+		String record = "http" + (DISPATCH_INFO.encryption.useInRouting ? "s" : "") + "://"
+						+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
+						+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
 						+ "/gacha?s=" + sessionKey + "&gachaType=" + gachaType;
+		String details = "http" + (DISPATCH_INFO.encryption.useInRouting ? "s" : "") + "://"
+						+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
+						+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
+						+ "/gacha/details?s=" + sessionKey + "&gachaType=" + gachaType;
+
 		// Grasscutter.getLogger().info("record = " + record);
 		GachaInfo.Builder info = GachaInfo.newBuilder()
 				.setGachaType(this.getGachaType())
@@ -115,8 +117,8 @@ public class GachaBanner {
 	            .setCostItemNum(1)
 	            .setGachaPrefabPath(this.getPrefabPath())
 	            .setGachaPreviewPrefabPath(this.getPreviewPrefabPath())
-	            .setGachaProbUrl(record)
-	            .setGachaProbUrlOversea(record)
+	            .setGachaProbUrl(details)
+	            .setGachaProbUrlOversea(details)
 	            .setGachaRecordUrl(record)
 	            .setGachaRecordUrlOversea(record)
 	            .setTenCostItemId(this.getCostItem())

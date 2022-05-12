@@ -1,23 +1,20 @@
 package emu.grasscutter.scripts;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
 
+import emu.grasscutter.scripts.service.ScriptMonsterSpawnService;
+import emu.grasscutter.scripts.service.ScriptMonsterTideService;
+import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.data.def.WorldLevelData;
 import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneBlock;
@@ -34,33 +31,43 @@ import emu.grasscutter.scripts.data.ScriptArgs;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
+import static emu.grasscutter.Configuration.*;
+
 public class SceneScriptManager {
 	private final Scene scene;
 	private final ScriptLib scriptLib;
 	private final LuaValue scriptLibLua;
 	private final Map<String, Integer> variables;
-	
 	private Bindings bindings;
 	private SceneConfig config;
 	private List<SceneBlock> blocks;
 	private boolean isInit;
-	
-	private final Int2ObjectOpenHashMap<Set<SceneTrigger>> triggers;
+	/**
+	 * SceneTrigger Set
+	 */
+	private final Map<String, SceneTrigger> triggers;
+	/**
+	 * current triggers controlled by RefreshGroup
+	 */
+	private final Int2ObjectOpenHashMap<Set<SceneTrigger>> currentTriggers;
 	private final Int2ObjectOpenHashMap<SceneRegion> regions;
+	private Map<Integer,SceneGroup> sceneGroups;
 	private SceneGroup currentGroup;
-	private AtomicInteger monsterAlive;
-	private AtomicInteger monsterTideCount;
-	private int monsterSceneLimit;
-	private ConcurrentLinkedQueue<Integer> monsterOrders;
+	private ScriptMonsterTideService scriptMonsterTideService;
+	private ScriptMonsterSpawnService scriptMonsterSpawnService;
 
 	public SceneScriptManager(Scene scene) {
 		this.scene = scene;
 		this.scriptLib = new ScriptLib(this);
 		this.scriptLibLua = CoerceJavaToLua.coerce(this.scriptLib);
-		this.triggers = new Int2ObjectOpenHashMap<>();
+		this.triggers = new HashMap<>();
+		this.currentTriggers = new Int2ObjectOpenHashMap<>();
+
 		this.regions = new Int2ObjectOpenHashMap<>();
 		this.variables = new HashMap<>();
-		
+		this.sceneGroups = new HashMap<>();
+		this.scriptMonsterSpawnService = new ScriptMonsterSpawnService(this);
+
 		// TEMPORARY
 		if (this.getScene().getId() < 10) {
 			return;
@@ -90,6 +97,10 @@ public class SceneScriptManager {
 		return config;
 	}
 
+	public SceneGroup getCurrentGroup() {
+		return currentGroup;
+	}
+
 	public List<SceneBlock> getBlocks() {
 		return blocks;
 	}
@@ -99,17 +110,35 @@ public class SceneScriptManager {
 	}
 
 	public Set<SceneTrigger> getTriggersByEvent(int eventId) {
-		return triggers.computeIfAbsent(eventId, e -> new HashSet<>());
+		return currentTriggers.computeIfAbsent(eventId, e -> new HashSet<>());
 	}
-	
 	public void registerTrigger(SceneTrigger trigger) {
+		this.triggers.put(trigger.name, trigger);
 		getTriggersByEvent(trigger.event).add(trigger);
 	}
 	
 	public void deregisterTrigger(SceneTrigger trigger) {
+		this.triggers.remove(trigger.name);
 		getTriggersByEvent(trigger.event).remove(trigger);
 	}
-	
+	public void resetTriggers(List<String> triggerNames) {
+		for(var name : triggerNames){
+			var instance = triggers.get(name);
+			this.currentTriggers.get(instance.event).clear();
+			this.currentTriggers.get(instance.event).add(instance);
+		}
+	}
+	public void refreshGroup(SceneGroup group, int suiteIndex){
+		var suite = group.getSuiteByIndex(suiteIndex);
+		if(suite == null){
+			return;
+		}
+		if(suite.triggers.size() > 0){
+			resetTriggers(suite.triggers);
+		}
+		spawnMonstersInGroup(group, suite);
+		spawnGadgetsInGroup(group, suite);
+	}
 	public SceneRegion getRegionById(int id) {
 		return regions.get(id);
 	}
@@ -137,7 +166,7 @@ public class SceneScriptManager {
 	private void init() {
 		// Get compiled script if cached
 		CompiledScript cs = ScriptLoader.getScriptByPath(
-			Grasscutter.getConfig().SCRIPTS_FOLDER + "Scene/" + getScene().getId() + "/scene" + getScene().getId() + "." + ScriptLoader.getScriptType());
+			SCRIPT("Scene/" + getScene().getId() + "/scene" + getScene().getId() + "." + ScriptLoader.getScriptType()));
 		
 		if (cs == null) {
 			Grasscutter.getLogger().warn("No script found for scene " + getScene().getId());
@@ -184,7 +213,7 @@ public class SceneScriptManager {
 	
 	private void loadBlockFromScript(SceneBlock block) {
 		CompiledScript cs = ScriptLoader.getScriptByPath(
-			Grasscutter.getConfig().SCRIPTS_FOLDER + "Scene/" + getScene().getId() + "/scene" + getScene().getId() + "_block" + block.id + "." + ScriptLoader.getScriptType());
+			SCRIPT("Scene/" + getScene().getId() + "/scene" + getScene().getId() + "_block" + block.id + "." + ScriptLoader.getScriptType()));
 	
 		if (cs == null) {
 			return;
@@ -207,7 +236,7 @@ public class SceneScriptManager {
 		group.setLoaded(true);
 		
 		CompiledScript cs = ScriptLoader.getScriptByPath(
-			Grasscutter.getConfig().SCRIPTS_FOLDER + "Scene/" + getScene().getId() + "/scene" + getScene().getId() + "_group" + group.id + "." + ScriptLoader.getScriptType());
+			SCRIPTS_FOLDER + "Scene/" + getScene().getId() + "/scene" + getScene().getId() + "_group" + group.id + "." + ScriptLoader.getScriptType());
 	
 		if (cs == null) {
 			return;
@@ -237,16 +266,16 @@ public class SceneScriptManager {
 			
 			for (SceneSuite suite : group.suites) {
 				suite.sceneMonsters = new ArrayList<>(suite.monsters.size());
-				for (int id : suite.monsters) {
-					try {
-						SceneMonster monster = (SceneMonster) map.get(id);
-						if (monster != null) {
-							suite.sceneMonsters.add(monster);
+				suite.monsters.forEach(id -> {
+					Object objEntry = map.get(id.intValue());
+					if (objEntry instanceof Map.Entry<?,?> monsterEntry) {
+						Object monster = monsterEntry.getValue();
+						if(monster instanceof SceneMonster sceneMonster){
+							suite.sceneMonsters.add(sceneMonster);
 						}
-					} catch (Exception e) {
-						continue;
 					}
-				}
+				});
+
 				suite.sceneGadgets = new ArrayList<>(suite.gadgets.size());
 				for (int id : suite.gadgets) {
 					try {
@@ -254,11 +283,10 @@ public class SceneScriptManager {
 						if (gadget != null) {
 							suite.sceneGadgets.add(gadget);
 						}
-					} catch (Exception e) {
-						continue;
-					}
+					} catch (Exception ignored) { }
 				}
 			}
+			this.sceneGroups.put(group.id, group);
 		} catch (ScriptException e) {
 			Grasscutter.getLogger().error("Error loading group " + group.id + " in scene " + getScene().getId(), e);
 		}
@@ -318,93 +346,42 @@ public class SceneScriptManager {
 			this.callEvent(EventType.EVENT_GADGET_CREATE, new ScriptArgs(entity.getConfigId()));
 		}
 	}
-	
+
 	public void spawnMonstersInGroup(SceneGroup group, int suiteIndex) {
-		this.currentGroup = group;
-		this.monsterSceneLimit = 0;
 		var suite = group.getSuiteByIndex(suiteIndex);
 		if(suite == null){
 			return;
 		}
-		suite.sceneMonsters.forEach(mob -> spawnMonstersInGroup(group, mob));
+		spawnMonstersInGroup(group, suite);
+	}
+	public void spawnMonstersInGroup(SceneGroup group, SceneSuite suite) {
+		if(suite == null || suite.sceneMonsters.size() <= 0){
+			return;
+		}
+		this.currentGroup = group;
+		suite.sceneMonsters.forEach(mob -> this.scriptMonsterSpawnService.spawnMonster(group.id, mob));
 	}
 	
 	public void spawnMonstersInGroup(SceneGroup group) {
 		this.currentGroup = group;
-		this.monsterSceneLimit = 0;
-		group.monsters.values().forEach(mob -> spawnMonstersInGroup(group, mob));
+		group.monsters.values().forEach(mob -> this.scriptMonsterSpawnService.spawnMonster(group.id, mob));
 	}
-	public void spawnMonstersInGroup(SceneGroup group,Integer[] ordersConfigId, int tideCount, int sceneLimit) {
+
+	public void startMonsterTideInGroup(SceneGroup group, Integer[] ordersConfigId, int tideCount, int sceneLimit) {
 		this.currentGroup = group;
-		this.monsterSceneLimit = sceneLimit;
-		this.monsterTideCount = new AtomicInteger(tideCount);
-		this.monsterAlive = new AtomicInteger(0);
-		this.monsterOrders = new ConcurrentLinkedQueue<>(List.of(ordersConfigId));
+		this.scriptMonsterTideService =
+				new ScriptMonsterTideService(this, group, tideCount, sceneLimit, ordersConfigId);
 
-		// add the last turn
-		group.monsters.keySet().stream()
-				.filter(i -> !this.monsterOrders.contains(i))
-				.forEach(this.monsterOrders::add);
-		for (int i = 0; i < sceneLimit; i++) {
-			spawnMonstersInGroup(group, group.monsters.get(this.monsterOrders.poll()));
-		}
 	}
-	public void spawnMonstersInGroup(SceneGroup group, SceneMonster monster) {
-		if(monster == null){
+	public void unloadCurrentMonsterTide(){
+		if(this.getScriptMonsterTideService() == null){
 			return;
 		}
-		if(this.monsterSceneLimit > 0){
-			this.monsterTideCount.decrementAndGet();
-			this.monsterAlive.incrementAndGet();
-		}
-
-		MonsterData data = GameData.getMonsterDataMap().get(monster.monster_id);
-
-		if (data == null) {
-			return;
-		}
-
-		// Calculate level
-		int level = monster.level;
-
-		if (getScene().getDungeonData() != null) {
-			level = getScene().getDungeonData().getShowLevel();
-		} else if (getScene().getWorld().getWorldLevel() > 0) {
-			WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(getScene().getWorld().getWorldLevel());
-
-			if (worldLevelData != null) {
-				level = worldLevelData.getMonsterLevel();
-			}
-		}
-
-		// Spawn mob
-		EntityMonster entity = new EntityMonster(getScene(), data, monster.pos, level);
-		entity.getRotation().set(monster.rot);
-		entity.setGroupId(group.id);
-		entity.setConfigId(monster.config_id);
-
-		getScene().addEntity(entity);
-
-		callEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs(entity.getConfigId()));
+		this.getScriptMonsterTideService().unload();
 	}
-
-	public void onMonsterDie(){
-		if(this.monsterSceneLimit <= 0){
-			return;
-		}
-		if(this.monsterAlive.decrementAndGet() >= this.monsterSceneLimit) {
-			// maybe not happen
-			return;
-		}
-		if(this.monsterTideCount.get() > 0){
-			// add more
-			spawnMonstersInGroup(this.currentGroup, this.currentGroup.monsters.get(this.monsterOrders.poll()));
-		}else if(this.monsterAlive.get() == 0){
-			// spawn the last turn of monsters
-			while(!this.monsterOrders.isEmpty()){
-				spawnMonstersInGroup(this.currentGroup, this.currentGroup.monsters.get(this.monsterOrders.poll()));
-			}
-		}
+	public void spawnMonstersByConfigId(int configId, int delayTime) {
+		// TODO delay
+		this.scriptMonsterSpawnService.spawnMonster(this.currentGroup.id, this.currentGroup.monsters.get(configId));
 	}
 	// Events
 	
@@ -424,18 +401,39 @@ public class SceneScriptManager {
 				if (params != null) {
 					args = CoerceJavaToLua.coerce(params);
 				}
-				
-				ret = condition.call(this.getScriptLibLua(), args);
+
+				ScriptLib.logger.trace("Call Condition Trigger {}", trigger);
+				ret = safetyCall(trigger.condition, condition, args);
 			}
 			
-			if (ret.checkboolean() == true) {
+			if (ret.isboolean() && ret.checkboolean()) {
+				ScriptLib.logger.trace("Call Action Trigger {}", trigger);
 				LuaValue action = (LuaValue) this.getBindings().get(trigger.action);
-				action.call(this.getScriptLibLua(), LuaValue.NIL);
+				// TODO impl the param of SetGroupVariableValueByGroup
+				var arg = new ScriptArgs();
+				arg.param2 = 100;
+				var args = CoerceJavaToLua.coerce(arg);
+				safetyCall(trigger.action, action, args);
 			}
+			//TODO some ret may not bool
 		}
 	}
 
-//	public LuaValue safetyCall(){
-//
-//	}
+	public LuaValue safetyCall(String name, LuaValue func, LuaValue args){
+		try{
+			return func.call(this.getScriptLibLua(), args);
+		}catch (LuaError error){
+			ScriptLib.logger.error("[LUA] call trigger failed {},{}",name,args,error);
+			return LuaValue.valueOf(-1);
+		}
+	}
+
+	public ScriptMonsterTideService getScriptMonsterTideService() {
+		return scriptMonsterTideService;
+	}
+
+	public ScriptMonsterSpawnService getScriptMonsterSpawnService() {
+		return scriptMonsterSpawnService;
+	}
+
 }

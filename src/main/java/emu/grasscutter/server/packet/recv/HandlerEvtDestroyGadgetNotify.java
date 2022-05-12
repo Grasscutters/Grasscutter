@@ -12,11 +12,6 @@ public class HandlerEvtDestroyGadgetNotify extends PacketHandler {
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		EvtDestroyGadgetNotify notify = EvtDestroyGadgetNotify.parseFrom(payload);
-		
-		// Dont handle in singleplayer
-		if (!session.getPlayer().getWorld().isMultiplayer()) {
-			return;
-		}
 
 		session.getPlayer().getScene().onPlayerDestroyGadget(notify.getEntityId());
 	}

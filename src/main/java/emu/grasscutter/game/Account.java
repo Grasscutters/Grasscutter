@@ -1,16 +1,18 @@
 package emu.grasscutter.game;
 
 import dev.morphia.annotations.*;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import org.bson.Document;
 
-import com.mongodb.DBObject;
+import static emu.grasscutter.Configuration.*;
 
 @Entity(value = "accounts", useDiscriminator = false)
 public class Account {
@@ -27,10 +29,12 @@ public class Account {
 	private String token;
 	private String sessionKey; // Session token for dispatch server
 	private List<String> permissions;
+    private Locale locale;
 	
 	@Deprecated
 	public Account() {
 		this.permissions = new ArrayList<>();
+        this.locale = LANGUAGE;
 	}
 
 	public String getId() {
@@ -95,6 +99,14 @@ public class Account {
 		return this.sessionKey;
 	}
 
+    public Locale getLocale() {
+        return locale;
+    }
+
+    public void setLocale(Locale locale) {
+        this.locale = locale;
+    }
+
 	/**
 	 * The collection of a player's permissions.
 	 */
@@ -107,11 +119,41 @@ public class Account {
 		this.permissions.add(permission); return true;
 	}
 
+	public static boolean permissionMatchesWildcard(String wildcard, String[] permissionParts) {
+		String[] wildcardParts = wildcard.split("\\.");
+		if (permissionParts.length < wildcardParts.length) {  // A longer wildcard can never match a shorter permission
+			return false;
+		}
+		for (int i=0; i<wildcardParts.length; i++) {
+			switch (wildcardParts[i]) {
+				case "**":  // Recursing match
+					return true;
+				case "*":  // Match only one layer
+					if (i >= (permissionParts.length-1)) {
+						return true;
+					}
+					break;
+				default:  // This layer isn't a wildcard, it needs to match exactly
+					if (!wildcardParts[i].equals(permissionParts[i])) {
+						return false;
+					}
+			}
+		}
+		// At this point the wildcard will have matched every layer, but if it is shorter then the permission then this is not a match at this point (no **).
+		return (wildcardParts.length == permissionParts.length);
+	}
+
 	public boolean hasPermission(String permission) {
-		return this.permissions.contains(permission) ||
-                this.permissions.contains("*") ||
-                (this.permissions.contains("player") || this.permissions.contains("player.*")) && permission.startsWith("player.") ||
-                (this.permissions.contains("server") || this.permissions.contains("server.*")) && permission.startsWith("server.");
+		if (this.permissions.contains(permission) || this.permissions.contains("*")) {
+			return true;
+		}
+		String[] permissionParts = permission.split("\\.");
+		for (String p : this.permissions) {
+			if (permissionMatchesWildcard(p, permissionParts)) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public boolean removePermission(String permission) {
@@ -135,5 +177,10 @@ public class Account {
 		if (!document.containsKey("permissions")) {
 			this.addPermission("*");
 		}
+
+        // Set account default language as server default language
+        if (!document.containsKey("locale")) {
+            this.locale = LANGUAGE;
+        }
 	}
 }
