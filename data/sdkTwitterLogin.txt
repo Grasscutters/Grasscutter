@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title></title>
+</head>
+<body>
+  <div id="root">
+    <!--<button id="autoLogin" onclick="login()"></button>-->
+  </div>
+  <script>
+    (function() {
+      var array = window.location.search.split('&');
+      var username = '';
+      var password = '';
+      var oauth_verifier = '';
+      var scheme = '';
+      array.forEach(function(item) {
+        if(item.indexOf('username=') >= 0) {
+          username = item.split('=')[1];
+        }
+        if(item.indexOf('password=') >= 0) {
+          password = item.split('=')[1];
+        }
+        if(item.indexOf('oauth_verifier=') >= 0) {
+          oauth_verifier = item.split('=')[1];
+        }
+        if (item.indexOf('scheme=') >= 0) {
+          scheme = item.split('=')[1];
+        }
+      });
+
+      //创建xhr对象
+      var xhr;
+      if(window.XMLHttpRequest){
+        xhr = new XMLHttpRequest();
+      }else{
+        xhr = new ActiveXObject('Microsoft.XMLHTTP');
+      }
+
+      var url = 'https://webapi-os.account.hoyoverse.com'
+
+      if (window.location.host.indexOf('mihoyo.com') > -1) {
+        url = url.replace('hoyoverse.com', 'mihoyo.com')
+      }
+
+      // 登录回调
+      if (username && password) {
+        var accessToken = btoa(JSON.stringify({
+          account: username,
+          password: password,
+		  is_crypto:false
+        }));
+        //异步接受响应
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState == 4){
+            if(xhr.status == 200){
+              //实际操作
+              var res = JSON.parse(xhr.responseText);
+              if (res.data.status == 1) {
+                if (scheme) {
+                  window.location.href = scheme + '://twitterLoginCallback?accessToken=' + res.data.access_token;
+                } else {
+                  window.location.href='uniwebview://sdkThirdLogin?accessToken=' + res.data.access_token;
+                }
+              }
+            }
+          }
+        };
+        //发送请求
+        xhr.open('get', url + '/Api/twitter_access?access_token=' + accessToken);
+        xhr.withCredentials = true;
+        xhr.send();
+        return;
+      }
+
+      //异步接受响应
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4){
+          if(xhr.status == 200){
+            //实际操作
+            var res = JSON.parse(xhr.responseText);
+            if (res.data.status == 1) {
+              window.location.href = res.data.auth_url;
+            }
+          }
+        }
+      };
+      //发送请求
+      xhr.open('get', url + '/Api/twitter_login?consumer_key=' + consumer_key + '&callback=' + encodeURIComponent(window.location.href));
+      xhr.withCredentials = true;
+      xhr.send();
+    })()
+  </script>
+</body>
+</html>
