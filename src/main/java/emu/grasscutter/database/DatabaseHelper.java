@@ -99,29 +99,29 @@ public final class DatabaseHelper {
 	}
 
   public static List<Account> getAccountAll() {
-		return DatabaseManager.getDatastore().find(Account.class).stream().toList();
+		return DatabaseManager.getGameDatastore().find(Account.class).stream().toList();
 	}
 
   public static void deletePlayer(Player target) {
 		// To delete Player, we need to also delete all other documents in database that reference Player by uid.
 
 		// Delete Mail.class data
-		DatabaseManager.getDatabase().getCollection("mail").deleteMany(eq("ownerUid", target.getUid()));
+		DatabaseManager.getGameDatabase().getCollection("mail").deleteMany(eq("ownerUid", target.getUid()));
 		// Delete Avatar.class data
-		DatabaseManager.getDatabase().getCollection("avatars").deleteMany(eq("ownerId", target.getUid()));
+		DatabaseManager.getGameDatabase().getCollection("avatars").deleteMany(eq("ownerId", target.getUid()));
 		// Delete GachaRecord.class data
-		DatabaseManager.getDatabase().getCollection("gachas").deleteMany(eq("ownerId", target.getUid()));
+		DatabaseManager.getGameDatabase().getCollection("gachas").deleteMany(eq("ownerId", target.getUid()));
 		// Delete GameItem.class data
-		DatabaseManager.getDatabase().getCollection("items").deleteMany(eq("ownerId", target.getUid()));
+		DatabaseManager.getGameDatabase().getCollection("items").deleteMany(eq("ownerId", target.getUid()));
 
 		// Delete friendships.
 		// Here, we need to make sure to not only delete the deleted account's friendships,
 		// but also all friendship entries for that account's friends.
-		DatabaseManager.getDatabase().getCollection("friendships").deleteMany(eq("ownerId", target.getUid()));
-		DatabaseManager.getDatabase().getCollection("friendships").deleteMany(eq("friendId", target.getUid()));
+		DatabaseManager.getGameDatabase().getCollection("friendships").deleteMany(eq("ownerId", target.getUid()));
+		DatabaseManager.getGameDatabase().getCollection("friendships").deleteMany(eq("friendId", target.getUid()));
 
 		// Delete the player.
-		DatabaseManager.getDatastore().find(Player.class).filter(Filters.eq("id", target.getUid())).delete();
+		DatabaseManager.getGameDatastore().find(Player.class).filter(Filters.eq("id", target.getUid())).delete();
 	}
 
 	public static void deleteAccount(Account target) {
@@ -208,11 +208,11 @@ public final class DatabaseHelper {
 	}
 
   public static List<Avatar> getAvatarsNullPlayer() {
-		return DatabaseManager.getDatastore().find(Avatar.class).stream().filter(g -> DatabaseHelper.getAccountByPlayerId(g.getOwnerId()) == null).toList();
+		return DatabaseManager.getGameDatastore().find(Avatar.class).stream().filter(g -> DatabaseHelper.getAccountByPlayerId(g.getOwnerId()) == null).toList();
 	}
 
   public static boolean deleteAvatar(Avatar item) {
-		DeleteResult result = DatabaseManager.getDatastore().delete(item);
+		DeleteResult result = DatabaseManager.getGameDatastore().delete(item);
 		return result.wasAcknowledged();
 	}
 
@@ -230,7 +230,7 @@ public final class DatabaseHelper {
 	}
 
   public static List<GameItem> getInventoryNullPlayer() {
-		return DatabaseManager.getDatastore().find(GameItem.class).stream().filter(g -> DatabaseHelper.getAccountByPlayerId(g.getOwnerId()) == null).toList();
+		return DatabaseManager.getGameDatastore().find(GameItem.class).stream().filter(g -> DatabaseHelper.getAccountByPlayerId(g.getOwnerId()) == null).toList();
 	}
 	
 	public static List<Friendship> getFriends(Player player) {
