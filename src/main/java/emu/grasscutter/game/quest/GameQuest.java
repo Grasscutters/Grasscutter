@@ -3,10 +3,13 @@ package emu.grasscutter.game.quest;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.data.custom.QuestConfig;
+import emu.grasscutter.data.custom.QuestConfigData.QuestCondition;
 import emu.grasscutter.data.custom.QuestConfigData.SubQuestConfigData;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.enums.LogicType;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.net.proto.QuestOuterClass.Quest;
+import emu.grasscutter.server.packet.send.PacketQuestListUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestProgressUpdateNotify;
 import emu.grasscutter.utils.Utils;
 
@@ -137,19 +140,34 @@ public class GameQuest {
 		}
 		
 		this.getOwner().getSession().send(new PacketQuestProgressUpdateNotify(this));
-		
-		// Finish main quest if all child quests are done
-		this.tryFinishMainQuest();
+		this.getOwner().getSession().send(new PacketQuestListUpdateNotify(this));
 		this.save();
+		
+		this.tryAcceptQuestLine();
 	}
 	
-	public boolean tryFinishMainQuest() {
+	public boolean tryAcceptQuestLine() {
 		try {
-			SubQuestConfigData subQuestData = getConfig().getMainQuest().getSubQuests()[getConfig().getMainQuest().getSubQuests().length - 1];
-			
-			if (subQuestData.getSubId() == this.getQuestId()) {
-				getMainQuest().finish();
-				return true;
+			for (SubQuestConfigData questData : getConfig().getMainQuest().getSubQuests()) {
+				GameQuest quest = getMainQuest().getChildQuestById(questData.getSubId());
+				
+				if (quest == null) {
+					int[] accept = new int[questData.getAcceptCond().length];
+							
+					// TODO
+					for (int i = 0; i < questData.getAcceptCond().length; i++) {
+						QuestCondition condition = questData.getAcceptCond()[i];
+						boolean result = getOwner().getServer().getQuestHandler().triggerCondition(this, condition);
+						
+						accept[i] = result ? 1 : 0;
+					}
+					
+					boolean shouldAccept = LogicType.calculate(questData.getAcceptCondComb(), accept);
+					
+					if (shouldAccept) {
+						this.getOwner().getQuestManager().addQuest(questData.getSubId());
+					}
+				}
 			}
 		} catch (Exception e) {
 			

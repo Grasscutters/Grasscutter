@@ -1,5 +1,7 @@
 package emu.grasscutter.game.quest.enums;
 
+import java.util.Arrays;
+
 public enum LogicType {
 	LOGIC_NONE (0),
 	LOGIC_AND (1),
@@ -19,5 +21,23 @@ public enum LogicType {
 
 	public int getValue() {
 		return value;
+	}
+	
+	public static boolean calculate(LogicType logicType, int[] progress) {
+		if (logicType == null) {
+			return progress[0] == 1;
+		}
+		
+		switch (logicType) {
+		case LOGIC_AND -> {
+			return Arrays.stream(progress).allMatch(i -> i == 1);
+		}
+		case LOGIC_OR -> {
+			return Arrays.stream(progress).anyMatch(i -> i == 1);
+		}
+		default	-> {
+			return Arrays.stream(progress).anyMatch(i -> i == 1);
+		}
+	}
 	}
 }
