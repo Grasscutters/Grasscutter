@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ParentQuestRandomInfo.proto";
+import "ChildQuest.proto";
+
+message ParentQuest {
+	uint32 parent_quest_id = 1;
+	repeated ChildQuest child_quest_list = 2;
+	bool is_finished = 3;
+	bool is_random = 4;
+	ParentQuestRandomInfo random_info = 5;
+	repeated int32 quest_var = 6;
+	uint32 parent_quest_state = 7;
+	uint32 quest_var_seq = 8;
+	map<uint32, uint32> time_var_map = 9;
+}
