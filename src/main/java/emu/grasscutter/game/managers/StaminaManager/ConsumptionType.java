@@ -13,18 +13,19 @@ public enum ConsumptionType {
     // Slow swimming is handled per movement, not per second.
     // Arm movement frequency depends on gender/age/height.
     // TODO: Instead of cost -80 per tick, find a proper way to calculate cost.
-    SKIFF(-300), // TODO: Get real value
+    SKIFF_DASH(-204),
     SPRINT(-1800),
-    SWIM_DASH_START(-20),
+    SWIM_DASH_START(-2000),
     SWIM_DASH(-204), // -10.2 per second, 5Hz = -204 each tick
     SWIMMING(-80),
     TALENT_DASH(-300), // -1500 per second, 5Hz = -300 each tick
     TALENT_DASH_START(-1000),
 
     // restore
-    POWERED_FLY(500), // TODO: Get real value
-    POWERED_SKIFF(2000), // TODO: Get real value
+    POWERED_FLY(500),
+    POWERED_SKIFF(500),
     RUN(500),
+    SKIFF(500),
     STANDBY(500),
     WALK(500);
 
