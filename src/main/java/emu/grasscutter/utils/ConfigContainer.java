@@ -100,7 +100,7 @@ public class ConfigContainer {
         public String data = "./data/";
         public String packets = "./packets/";
         public String keys = "./keys/";
-        public String scripts = "./resources/scripts/";
+        public String scripts = "./resources/Scripts/";
         public String plugins = "./plugins/";
         public String VERSION = "./VERSION";
         // UNUSED (potentially added later?)
