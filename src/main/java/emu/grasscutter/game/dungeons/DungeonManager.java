@@ -2,7 +2,6 @@ package emu.grasscutter.game.dungeons;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.custom.ScenePointEntry;
 import emu.grasscutter.data.def.DungeonData;
@@ -40,12 +39,7 @@ public class DungeonManager {
 		player.sendPacket(new PacketDungeonEntryInfoRsp(player, entry.getPointData()));
 	}
 
-	public boolean enterDungeon(Player player, int pointId, int dungeonId) {
-
-		if (Grasscutter.getConfig().server.game.gameOptions.DungeonMT) {
-			CommandHandler.sendMessage(player, "Sorry function dungeon is not stable so it can't be used");
-			return false;
-		}
+	public boolean enterDungeon(Player player, int pointId, int dungeonId) {		
 
 		DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
 		
@@ -76,7 +70,7 @@ public class DungeonManager {
 		if (data == null) {
 			return false;
 		}
-		Grasscutter.getLogger().info(player.getNickname() + " is trying to enter tower dungeon " + dungeonId);
+		Grasscutter.getLogger().info(player.getNickname() + " is trying to enter abyse " + dungeonId);
 
 		if(player.getWorld().transferPlayerToScene(player, data.getSceneId(), data)){
 			dungeonSettleListeners.forEach(player.getScene()::addDungeonSettleObserver);

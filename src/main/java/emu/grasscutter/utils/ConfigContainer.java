@@ -36,7 +36,7 @@ public class ConfigContainer {
         } catch (Exception e) {
           //TODO: handle exception
         }
-                
+
     }
     
     public Structure folderStructure = new Structure();
@@ -162,6 +162,7 @@ public class ConfigContainer {
 		    // Dangerous feature for public server, make your database go crazy!
 		    public boolean DropMo = true;
 		    public boolean DungeonMT = false;
+        public boolean AbyssMT = true;
 
         public static class InventoryLimits {
             public int weapons = 2000;
