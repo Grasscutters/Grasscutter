@@ -45,7 +45,8 @@
       "run_mode_error": "Błędny tryb pracy serwera: %s.",
       "run_mode_help": "Tryb pracy serwera musi być ustawiony na 'HYBRID', 'DISPATCH_ONLY', lub 'GAME_ONLY'. Nie można wystartować Grasscutter...",
       "create_resources": "Tworzenie folderu resources...",
-      "resources_error": "Umieść kopię 'BinOutput' i 'ExcelBinOutput' w folderze resources."
+      "resources_error": "Umieść kopię 'BinOutput' i 'ExcelBinOutput' w folderze resources.",
+      "version": "Grasscutter versión: %s-%s"
     }
   },
   "commands": {
@@ -300,6 +301,15 @@
     },
     "resetshop": {
       "description": "zresetuj sklep"
+    }
+  },
+  "gacha": {
+    "details": {
+      "title": "Banner Details",
+      "available_five_stars": "Available 5-star Items",
+      "available_four_stars": "Available 4-star Items",
+      "available_three_stars": "Available 3-star Items",
+      "template_missing": "data/gacha_details.html is missing."
     }
   }
 }

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum WidgetSlotOp {
+	ATTACH = 0;
+	DETACH = 1;
+}
