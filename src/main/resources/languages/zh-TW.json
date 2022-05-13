@@ -16,6 +16,9 @@
         "no_keystore_error": "[Dispatch] 未找到 SSL 憑證！已後降到 HTTP 伺服器。",
         "default_password": "[Dispatch] 默認的 keystore 密碼加載成功。請考慮將 config.json 的憑證密碼設定成 123456。"
       },
+      "authentication": {
+        "default_unable_to_verify": "[驗證系統] 稱為 verifyUser 方法的東西在默認身份驗證程序中不可用。"
+      },
       "no_commands_error": "此指令不適用於Dispatch-only模式。",
       "unhandled_request_error": "[Dispatch] 潛在的未處理請求  %s 請求：%s",
       "account": {
@@ -46,7 +49,7 @@
       "run_mode_help": "伺服器運行模式必須為 HYBRID 或者 DISPATCH_ONLY 或者 GAME_ONLY。Grasscutter 啟動失敗...",
       "create_resources": "正在建立 resources 資料夾...",
       "resources_error": "請將 BinOutput 和 ExcelBinOutput 複製到 resources 資料夾。",
-      "version": "Grasscutter版本: %s-%s"
+      "version": "Grasscutter版本： %s-%s"
     }
   },
   "commands": {
@@ -57,6 +60,7 @@
       "console_execute_error": "此指令只能在伺服器的命令提示字元執行。",
       "player_execute_error": "請在遊戲裡使用這條指令。",
       "command_exist_error": "找不到指令。",
+      "no_description_specified": "没有指定說明。",
       "invalid": {
         "amount": "無效的數量。",
         "artifactId": "無效的聖遺物ID。",
@@ -96,17 +100,20 @@
       "create": "已建立帳號，UID 為 %s 。",
       "delete": "帳號已刪除。",
       "no_account": "帳號不存在。",
-      "command_usage": "用法：account <create|delete> <username> [uid]"
+      "command_usage": "用法：account <create|delete> <username> [uid]",
+      "description": "建立或刪除帳號。"
     },
     "broadcast": {
       "command_usage": "用法：broadcast <message>",
-      "message_sent": "公告已發送。"
+      "message_sent": "公告已發送。",
+      "description": "向所有玩家發送公告。"
     },
     "changescene": {
       "usage": "用法：changescene <scene id>",
       "already_in_scene": "你已經在這個場景中了。",
       "success": "已切換至場景 %s.",
-      "exists_error": "此場景不存在。"
+      "exists_error": "此場景不存在。",
+      "description": "切換指定場景。"
     },
     "clear": {
       "command_usage": "用法： clear <all|wp|art|mat>",
@@ -116,35 +123,41 @@
       "furniture": "已將 %s 的塵歌壺家具清空。",
       "displays": "已清除 %s 的顯示。",
       "virtuals": "已將 %s 的所有貨幣和經驗值清空。",
-      "everything": "已將 %s 的所有物品清空。"
+      "everything": "已將 %s 的所有物品清空。",
+      "description": "從你的背包中刪除所有未裝備且未上鎖的物品，包括稀有物品。"
     },
     "coop": {
       "usage": "用法：coop <playerId> <target playerId>",
-      "success": "召喚了 %s 到 %s 的世界。"
+      "success": "召喚了 %s 到 %s 的世界。",
+      "description": "強制傳送指定用戶到他人的世界。"
     },
     "enter_dungeon": {
       "usage": "用法：enterdungeon <dungeon id>",
-      "changed": "已進入副本 %s",
-      "not_found_error": "此副本不存在。",
-      "in_dungeon_error": "你已經在祕境中了。"
+      "changed": "已進入祕境 %s",
+      "not_found_error": "此祕境不存在。",
+      "in_dungeon_error": "你已經在祕境中了。",
+      "description": "進入指定祕境。"
     },
     "giveAll": {
       "usage": "用法：giveall [player] [amount]",
       "started": "正在賦予全部物品...",
       "success": "已賦予全部物品。",
-      "invalid_amount_or_playerId": "無效的數量/玩家ID。"
+      "invalid_amount_or_playerId": "無效的數量/玩家ID。",
+      "description": "賦予所有物品。"
     },
     "giveArtifact": {
       "usage": "用法：giveart|gart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]",
       "id_error": "無效的聖遺物ID。",
-      "success": "已把 %s 給予 %s。"
+      "success": "已把 %s 給予 %s。",
+      "description": "給予指定聖遺物。"
     },
     "giveChar": {
       "usage": "用法：givechar <player> <itemId|itemName> [amount]",
       "given": "已將 %s 等級 %s 給予 %s。",
       "invalid_avatar_id": "無效的角色ID。",
       "invalid_avatar_level": "無效的角色等級。.",
-      "invalid_avatar_or_player_id": "無效的角色ID/玩家ID。"
+      "invalid_avatar_or_player_id": "無效的角色ID/玩家ID。",
+      "description": "給予指定角色。"
     },
     "give": {
       "usage": "用法：give <player> <itemId|itemName> [amount] [level]",
@@ -152,29 +165,42 @@
       "refinement_must_between_1_and_5": "精煉度必需在 1 到 5 之間。",
       "given": "已經將 %s 個 %s 給予 %s。",
       "given_with_level_and_refinement": "已將 %s [等級%s, 精煉%s] %s個給予 %s",
-      "given_level": "已將 %s 等級 %s %s 個給予 %s"
+      "given_level": "已將 %s 等級 %s %s 個給予 %s",
+      "description": "給予指定物品。"
     },
     "godmode": {
-      "success": "上帝模式設定為 %s 。 [用戶：%s]"
+      "success": "上帝模式設定為 %s 。 [用戶：%s]",
+      "description": "防止你受到傷害。"
     },
     "heal": {
-      "success": "所有角色已被治療。"
+      "success": "所有角色已被治療。",
+      "description": "治療當前隊伍的角色。"
     },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已把 [%s:%s] 踢出",
-      "server_kick_player": "正在踢出玩家 [%s:%s]"
+      "server_kick_player": "正在踢出玩家 [%s:%s]",
+      "description": "從伺服器內踢出指定玩家。"
     },
     "kill": {
       "usage": "用法：killall [playerUid] [sceneId]",
       "scene_not_found_in_player_world": "未在玩家世界中找到此場景",
-      "kill_monsters_in_scene": "已殺死 %s 個怪物。 [場景ID： %s]"
+      "kill_monsters_in_scene": "已殺死 %s 個怪物。 [場景ID： %s]",
+      "description": "殺死所有怪物。"
     },
     "killCharacter": {
       "usage": "用法：/killcharacter [playerId]",
-      "success": "已殺死 %s 目前的場上角色。"
+      "success": "已殺死 %s 目前的場上角色。",
+      "description": "殺死玩家目前使用的場上角色。"
+    },
+    "language": {
+      "current_language": "當前語言是： %s",
+      "language_changed": "語言切換至： %s",
+      "language_not_found": "目前客戶端沒有這種語言： %s",
+      "description": "顯示或切換當前語言。"
     },
     "list": {
-      "success": "目前總線上人數：%s"
+      "success": "目前總線上人數：%s" ,
+      "description": "查看所有在線玩家"
     },
     "permission": {
       "usage": "用法：permission <add|remove> <username> <permission>",
@@ -182,21 +208,26 @@
       "has_error": "此玩家已擁有權限！",
       "remove": "權限已移除。",
       "not_have_error": "此玩家未擁有權限！",
-      "account_error": "The account cannot be found."
+      "account_error": "帳號不存在。",
+      "description": "指派或移除指定玩家的權限。"
     },
     "position": {
-      "success": "坐標：%s, %s, %s\n場景ID：%s"
+      "success": "座標：%s, %s, %s\n場景ID：%s",
+      "description": "獲取目前所在位置的座標。"
     },
     "reload": {
       "reload_start": "正在重新加載設定檔。",
-      "reload_done": "重新加載已完成。"
+      "reload_done": "重新加載已完成。",
+      "description": "重新加載設定檔和數據。"
     },
     "resetConst": {
       "reset_all": "重設所有角色的命座。",
-      "success": "已重設 %s 的命座，重新登入後將會生效。"
+      "success": "已重設 %s 的命座，重新登入後將會生效。",
+      "description": "重置當前角色的命之座，重新登入後將會生效。"
     },
     "resetShopLimit": {
-      "usage": "用法：/resetshop <player id>"
+      "usage": "用法：/resetshop <player id>",
+      "description": "重置所選玩家的商店刷新時間。"
     },
     "sendMail": {
       "usage": "用法：give [player] <itemId|itemName> [amount]",
@@ -218,17 +249,20 @@
       "message": "<正文>",
       "sender": "<寄件者>",
       "arguments": "<itemId|itemName|finish> [數量] [等級]",
-      "error": "錯誤：無效的編寫階段 %s。需要 stacktrace 請查看伺服器命令提示字元。"
+      "error": "錯誤：無效的編寫階段 %s。需要 stacktrace 請查看伺服器命令提示字元。",
+      "description": "向指定用戶發送郵件。此指令的用法可根據附加的參數而改變。"
     },
     "sendMessage": {
       "usage": "用法：sendmessage <player> <message>",
-      "success": "訊息已發送。"
+      "success": "訊息已發送。",
+      "description": "向指定玩家發送訊息。"
     },
     "setFetterLevel": {
       "usage": "用法：setfetterlevel <level>",
       "range_error": "好感度必須在 0 到 10 之間。",
       "success": "好感等級已設定為 %s",
-      "level_error": "無效的好感度。"
+      "level_error": "無效的好感度。",
+      "description": "設定當前角色的好感度等級。"
     },
     "setStats": {
       "usage_console": "用法：setstats|stats @<UID> <stat> <value>",
@@ -239,77 +273,93 @@
       "player_error": "玩家不存在或已離線。",
       "set_self": "%s 已經設為 %s。",
       "set_for_uid": "%s 的使用者 %s 更改為 %s。",
-      "set_max_hp": "最大生命值更改為 %s。"
+      "set_max_hp": "最大生命值更改為 %s。",
+      "description": "設定當前角色的數據類型。"
     },
     "setWorldLevel": {
       "usage": "用法：setworldlevel <level>",
       "value_error": "世界等級必須設定在0-8之間。",
       "success": "已將世界等級設為%s。",
-      "invalid_world_level": "無效的世界等級。"
+      "invalid_world_level": "無效的世界等級。",
+      "description": "設定世界等級，執行指令後需重新登入後才會生效。"
     },
     "spawn": {
       "usage": "用法：spawn <entityId> [amount] [level(僅限怪物)]",
-      "success": "已生成 %s 個 %s。"
+      "success": "已生成 %s 個 %s。",
+      "description": "在你附近生成一個實體動物。"
     },
     "stop": {
-      "success": "正在關閉伺服器..."
+      "success": "正在關閉伺服器...",
+      "description": "以正常的方式關閉伺服器。"
     },
     "talent": {
       "usage_1": "設定天賦等級：/talent set <talentID> <value>",
       "usage_2": "另一種設定天賦等級的指令使用方法：/talent <n or e or q> <value>",
       "usage_3": "獲取天賦ID指令用法：/talent getid",
-      "lower_16": "無效的技能等級，技能等級應低於 16。",
+      "lower_16": "無效的天賦等級，技能等級應低於 16。",
       "set_id": "將天賦等級設為%s。",
       "set_atk": "將普通攻擊等級設為 %s。",
-      "set_e": "設定天賦E等級至 %s。",
-      "set_q": "設定天賦Q等級至 %s。",
+      "set_e": "設定元素戰技的天賦等級至 %s。",
+      "set_q": "設定元素爆發的天賦等級至 %s。",
       "invalid_skill_id": "無效的技能ID。",
       "set_this": "將天賦等級設為 %s。",
       "invalid_level": "無效的天賦等級。",
       "normal_attack_id": "普通攻擊的 ID 為 %s。",
-      "e_skill_id": "E技能ID %s。",
-      "q_skill_id": "Q技能ID %s。"
+      "e_skill_id": "元素戰技技能ID %s。",
+      "q_skill_id": "元素爆發技能ID %s。",
+      "description": "設定當前角色的天賦等級"
     },
     "teleportAll": {
       "success": "召喚了所有玩家到你的位置上。",
-      "error": "此指令僅可在多人遊戲下可用。"
+      "error": "此指令僅可在多人遊戲下可用。",
+      "description": "將你世界裡的所有玩家傳送到你目前的所在位置。"
     },
     "teleport": {
       "usage_server": "用法：/tp @<player id> <x> <y> <z> [scene id]",
       "usage": "用法：/tp [@<player id>] <x> <y> <z> [scene id]",
       "specify_player_id": "你必須指定一個玩家ID。",
-      "invalid_position": "無效的位置。",
-      "success": "傳送 %s 到坐標 %s,%s,%s ，場景為 %s"
+      "invalid_position": "無效的座標。",
+      "success": "傳送 %s 到座標 %s,%s,%s ，場景為 %s 。",
+      "description": "將玩家的位置傳送到你所指定的座標。"
+    },
+    "tower": {
+      "unlock_done": "解鎖所有級別的深境螺旋已全部解鎖。"
     },
     "weather": {
       "usage": "用法：weather <weatherId> [climateId]",
       "success": "已將當前天氣設定為 %s ，氣候則為 %s 。",
-      "invalid_id": "無效的ID。"
+      "invalid_id": "無效的ID。",
+      "description": "更改目前的天氣。"
     },
     "drop": {
       "command_usage": "用法：drop <itemId|itemName> [amount]",
-      "success": "已將 %s x %s 丟在附近。"
+      "success": "已將 %s x %s 丟在附近。",
+      "description": "在你附近丟下一個物品。"
     },
     "help": {
       "usage": "用法：",
       "aliases": "別名：",
+      "description": "發送幫助信息或顯示特定命令的信息",
       "available_commands": "可用指令："
+    },
+    "restart": {
+      "description": "重新啟動伺服器。"
     },
     "unlocktower": {
       "success": "解鎖完成。",
-      "description": "解鎖所有級別的深境螺旋"
+      "description": "解鎖所有級別的深境螺旋。"
     },
     "resetshop": {
-      "description": "重置商店時間"
+      "description": "重置商店刷新時間。"
     }
   },
   "gacha": {
     "details": {
-      "title": "Banner Details",
-      "available_five_stars": "Available 5-star Items",
-      "available_four_stars": "Available 4-star Items",
-      "available_three_stars": "Available 3-star Items",
-      "template_missing": "data/gacha_details.html is missing."
+      "title": "祈願詳情",
+      "available_five_stars": "可獲得的5星物品",
+      "available_four_stars": "可獲得的4星物品",
+      "available_three_stars": "可獲得的3星物品",
+      "template_missing": "data/gacha_details.html 不存在。"
     }
   }
 }
