@@ -16,7 +16,9 @@ public class HandlerNpcTalkReq extends PacketHandler {
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		NpcTalkReq req = NpcTalkReq.parseFrom(payload);
 		
+		// Why are there 2 quest triggers that do the same thing...
 		session.getPlayer().getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_COMPLETE_TALK, req.getTalkId());
+		session.getPlayer().getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_FINISH_PLOT, req.getTalkId());
 
 		session.send(new PacketNpcTalkRsp(req.getNpcEntityId(), req.getTalkId(), req.getEntityId()));
 	}
