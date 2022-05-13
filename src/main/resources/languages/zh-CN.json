@@ -17,7 +17,7 @@
         "default_password": "[Dispatch] 成功加载 keystore 默认密码。请考虑将 config.json 的默认密码设置为 123456"
       },
       "authentication": {
-        "default_unable_to_verify": "[Authentication] 称为 verifyUser 的 method 在默认验证程序中不可用"
+        "default_unable_to_verify": "[Authentication] 称为 verifyUser 的方法在默认验证程序中不可用"
       },
       "no_commands_error": "此命令不适用于 Dispatch-only 模式",
       "unhandled_request_error": "[Dispatch] 潜在的未处理请求：%s %s",
@@ -215,6 +215,14 @@
       "success": "坐标：%s, %s, %s\n场景ID：%s",
       "description": "获取所在位置"
     },
+    "quest": {
+      "description": "添加或完成任务",
+      "usage": "quest <add|finish> [任务ID]",
+      "added": "已添加任务 %s",
+      "finished": "已完成任务 %s",
+      "not_found": "未找到任务",
+      "invalid_id": "无效的任务ID"
+    },
     "reload": {
       "reload_start": "正在重载配置文件和数据。",
       "reload_done": "重载完成。",
@@ -356,9 +364,9 @@
   "gacha": {
     "details": {
       "title": "祈愿详情",
-      "available_five_stars": "出现的五星物品",
-      "available_four_stars": "出现的四星物品",
-      "available_three_stars": "出现的三星物品",
+      "available_five_stars": "可获得的5星物品",
+      "available_four_stars": "可获得的4星物品",
+      "available_three_stars": "可获得的3星物品",
       "template_missing": "缺失文件：data/gacha_details.html"
     }
   }
