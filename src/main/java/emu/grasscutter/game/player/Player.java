@@ -1184,6 +1184,7 @@ public class Player {
 		session.send(new PacketAvatarDataNotify(this));
 		session.send(new PacketFinishedParentQuestNotify(this));
 		session.send(new PacketQuestListNotify(this));
+		session.send(new PacketCodexDataFullNotify(this));
 		session.send(new PacketServerCondMeetQuestListUpdateNotify(this));
 		session.send(new PacketAllWidgetDataNotify(this));
 		session.send(new PacketWidgetGadgetAllDataNotify());
