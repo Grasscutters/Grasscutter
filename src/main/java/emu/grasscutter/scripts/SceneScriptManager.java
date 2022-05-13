@@ -8,6 +8,7 @@ import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.*;
 import emu.grasscutter.scripts.service.ScriptMonsterSpawnService;
@@ -328,7 +329,7 @@ public class SceneScriptManager {
 				.map(g -> createGadgets(g.groupId, group.block_id, g))
 				.filter(Objects::nonNull)
 				.toList();
-		getScene().addEntities(toCreate);
+		this.addEntities(toCreate);
 	}
 
 	public void spawnMonstersInGroup(SceneGroup group, int suiteIndex) {
@@ -343,14 +344,14 @@ public class SceneScriptManager {
 			return;
 		}
 		this.currentGroup = group;
-		getScene().addEntities(suite.sceneMonsters.stream()
+		this.addEntities(suite.sceneMonsters.stream()
 				.map(mob -> createMonster(group.id, group.block_id, mob)).toList());
 
 	}
 	
 	public void spawnMonstersInGroup(SceneGroup group) {
 		this.currentGroup = group;
-		getScene().addEntities(group.monsters.values().stream()
+		this.addEntities(group.monsters.values().stream()
 				.map(mob -> createMonster(group.id, group.block_id, mob)).toList());
 	}
 
@@ -478,6 +479,19 @@ public class SceneScriptManager {
 				.onMonsterCreatedListener.forEach(action -> action.onNotify(entity));
 
 		return entity;
+	}
+
+	public void addEntity(GameEntity gameEntity){
+		getScene().addEntity(gameEntity);
+		callCreateEvent(gameEntity);
+	}
+	public void meetEntities(List<? extends GameEntity> gameEntity){
+		getScene().addEntities(gameEntity, VisionTypeOuterClass.VisionType.VISION_MEET);
+		gameEntity.forEach(this::callCreateEvent);
+	}
+	public void addEntities(List<? extends GameEntity> gameEntity){
+		getScene().addEntities(gameEntity);
+		gameEntity.forEach(this::callCreateEvent);
 	}
 	public void callCreateEvent(GameEntity gameEntity){
 		if(!isInit){

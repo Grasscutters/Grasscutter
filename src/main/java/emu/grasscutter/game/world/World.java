@@ -202,7 +202,6 @@ public class World implements Iterable<Player> {
 	}
 	
 	public void deregisterScene(Scene scene) {
-		scene.unload();
 		this.getScenes().remove(scene.getId());
 	}
 	
@@ -307,7 +306,9 @@ public class World implements Iterable<Player> {
 	}
 	
 	public void onTick() {
-
+		for (Scene scene : this.getScenes().values()) {
+			scene.onTick();
+		}
 	}
 
 	public void close() {

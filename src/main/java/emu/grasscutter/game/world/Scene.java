@@ -23,10 +23,8 @@ import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.data.SceneBlock;
 import emu.grasscutter.scripts.data.SceneGroup;
-import emu.grasscutter.server.InternalTickEvent;
 import emu.grasscutter.server.packet.send.PacketAvatarSkillInfoNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
@@ -34,11 +32,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import org.danilopianini.util.SpatialIndex;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.*;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.Collectors;
 
 public class Scene {
@@ -63,7 +58,6 @@ public class Scene {
 	private DungeonData dungeonData;
 	private int prevScene; // Id of the previous scene
 	private int prevScenePoint;
-	private ReentrantLock tickLock;
 	public Scene(World world, SceneData sceneData) {
 		this.world = world;
 		this.sceneData = sceneData;
@@ -78,8 +72,6 @@ public class Scene {
 		this.deadSpawnedEntities = new HashSet<>();
 		this.loadedBlocks = new HashSet<>();
 		this.scriptManager = new SceneScriptManager(this);
-		this.tickLock = new ReentrantLock();
-		this.getWorld().getServer().getInternalBus().register(this);
 	}
 	
 	public int getId() {
@@ -326,7 +318,6 @@ public class Scene {
 	public synchronized void addEntity(GameEntity entity) {
 		this.addEntityDirectly(entity);
 		this.broadcastPacket(new PacketSceneEntityAppearNotify(entity));
-		scriptManager.callCreateEvent(entity);
 	}
 
 	public synchronized void addEntityToSingleClient(Player player, GameEntity entity) {
@@ -347,7 +338,6 @@ public class Scene {
 		}
 		
 		this.broadcastPacket(new PacketSceneEntityAppearNotify(entities, visionType));
-		entities.forEach(scriptManager::callCreateEvent);
 	}
 	
 	private GameEntity removeEntityDirectly(GameEntity entity) {
@@ -420,24 +410,15 @@ public class Scene {
 		target.onDeath(attackerId);
 	}
 
-	@Subscribe(threadMode = ThreadMode.ASYNC)
-	public void onTick(InternalTickEvent tickEvent) {
-		try{
-			if(!tickLock.tryLock()){
-				// wait for next turn
-				return;
-			}
-			if (this.getScriptManager().isInit()) {
-				this.checkBlocks();
-			} else {
-				// TEMPORARY
-				this.checkSpawns();
-			}
-
-			this.scriptManager.checkRegions();
-		}finally {
-			tickLock.unlock();
+	public void onTick() {
+		if (this.getScriptManager().isInit()) {
+			this.checkBlocks();
+		} else {
+			// TEMPORARY
+			this.checkSpawns();
 		}
+		// Triggers
+		this.scriptManager.checkRegions();
 	}
 	
 	// TODO - Test
@@ -519,14 +500,6 @@ public class Scene {
 		for (Player player : this.getPlayers()) {
 			var blocks = getPlayerActiveBlocks(player);
 			visible.addAll(blocks);
-
-			for(var block : blocks){
-				if (!this.getLoadedBlocks().contains(block)) {
-					this.onLoadBlock(block);
-					this.getLoadedBlocks().add(block);
-				}
-				playerMeetEntities(player, block);
-			}
 		}
 
 		Iterator<SceneBlock> it = this.getLoadedBlocks().iterator();
@@ -538,6 +511,16 @@ public class Scene {
 
 				onUnloadBlock(block);
 			}
+		}
+
+		for(var block : visible){
+			if (!this.getLoadedBlocks().contains(block)) {
+				this.onLoadBlock(block);
+				this.getLoadedBlocks().add(block);
+			}
+			this.getPlayers().stream()
+					.filter(p -> block.contains(p.getPos()))
+					.forEach(p -> playerMeetEntities(p, block));
 		}
 
 	}
@@ -557,7 +540,7 @@ public class Scene {
 		if(entities.size() == 0){
 			return;
 		}
-		addEntities(entities, VisionType.VISION_MEET);
+		scriptManager.meetEntities(entities);
 
 		Grasscutter.getLogger().info("Scene {} Block {} added {} entity(s)", this.getId(), block.id, entities.size());
 	}
@@ -597,6 +580,7 @@ public class Scene {
 				suite++;
 			} while (suite < group.init_config.end_suite);
 		}
+		Grasscutter.getLogger().info("Scene {} Block {} loaded.", this.getId(), block.id);
 	}
 	
 	public void onUnloadBlock(SceneBlock block) {
@@ -680,8 +664,5 @@ public class Scene {
     		// Send
     		player.getSession().send(packet);
     	}
-	}
-	public void unload(){
-		getWorld().getServer().getInternalBus().unregister(this);
 	}
 }

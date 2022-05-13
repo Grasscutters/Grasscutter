@@ -20,25 +20,16 @@ import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.netty.KcpServer;
-import emu.grasscutter.server.InternalTickEvent;
 import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
 import emu.grasscutter.task.TaskMap;
-import org.apache.commons.lang3.concurrent.BasicThreadFactory;
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Logger;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.net.InetSocketAddress;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 import static emu.grasscutter.utils.Language.translate;
 import static emu.grasscutter.Configuration.*;
@@ -63,7 +54,6 @@ public final class GameServer extends KcpServer {
 
 	private final CombineManger combineManger;
 	private final TowerScheduleManager towerScheduleManager;
-	private final EventBus internalBus;
 	public GameServer() {
 		this(new InetSocketAddress(
 				GAME_INFO.bindAddress,
@@ -94,16 +84,6 @@ public final class GameServer extends KcpServer {
 		this.towerScheduleManager = new TowerScheduleManager(this);
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
-		internalBus = EventBus.builder()
-				.logNoSubscriberMessages(false)
-				.logSubscriberExceptions(true)
-				.logger(new Logger.SystemOutLogger())
-				.executorService(new ThreadPoolExecutor(Grasscutter.getConfig().server.game.eventBusPoolSize,
-						Grasscutter.getConfig().server.game.eventBusPoolSize,60, TimeUnit.SECONDS,
-						new LinkedBlockingQueue<>(100),
-						new BasicThreadFactory.Builder().namingPattern("internal-eventbus-%d").build(),
-						new ThreadPoolExecutor.AbortPolicy()))
-				.build();
 	}
 	
 	public GameServerPacketHandler getPacketHandler() {
@@ -214,10 +194,22 @@ public final class GameServer extends KcpServer {
 		return DatabaseHelper.getAccountByName(username);
 	}
 
-	@Subscribe(threadMode = ThreadMode.ASYNC)
-	public synchronized void onTick(InternalTickEvent tickEvent){
-		this.getWorlds().removeIf(world -> world.getPlayerCount() == 0);
-  
+	public synchronized void onTick(){
+		Iterator<World> it = this.getWorlds().iterator();
+		while (it.hasNext()) {
+			World world = it.next();
+
+			if (world.getPlayerCount() == 0) {
+				it.remove();
+			}
+
+			world.onTick();
+		}
+
+		for (Player player : this.getPlayers().values()) {
+			player.onTick();
+		}
+
 		ServerTickEvent event = new ServerTickEvent(); event.call();
 	}
 	
@@ -238,14 +230,13 @@ public final class GameServer extends KcpServer {
 			@Override
 			public void run() {
 				try {
-					internalBus.post(new InternalTickEvent());
+					onTick();
 				} catch (Exception e) {
 					Grasscutter.getLogger().error(translate("messages.game.game_update_error"), e);
 				}
 			}
 		}, new Date(), 1000L);
 
-		getInternalBus().register(this);
 		super.start();
 	}
 
@@ -257,7 +248,6 @@ public final class GameServer extends KcpServer {
 	}
 	
 	public void onServerShutdown() {
-		getInternalBus().unregister(this);
 		ServerStopEvent event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 
 		// Kick and save all players
@@ -267,8 +257,5 @@ public final class GameServer extends KcpServer {
 		for (Player player : list) {
 			player.getSession().close();
 		}
-	}
-	public EventBus getInternalBus() {
-		return internalBus;
 	}
 }
