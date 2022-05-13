@@ -215,6 +215,14 @@
       "success": "Coordinates: %s, %s, %s\nScene id: %s",
       "description": "Get coordinates."
     },
+    "quest": {
+      "description": "Add or finish quests",
+      "usage": "quest <add|finish> [quest id]",
+      "added": "Quest %s added",
+      "finished": "Finished quest %s",
+      "not_found": "Quest not found",
+      "invalid_id": "Invalid quest id"
+    },
     "reload": {
       "reload_start": "Reloading config.",
       "reload_done": "Reload complete.",

@@ -24,6 +24,7 @@ import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierActionType;
 import emu.grasscutter.data.custom.AbilityModifierEntry;
 import emu.grasscutter.data.custom.OpenConfigEntry;
+import emu.grasscutter.data.custom.MainQuestData;
 import emu.grasscutter.data.custom.ScenePointEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -58,8 +59,9 @@ public class ResourceLoader {
 		loadResources();
 		// Process into depots
 		GameDepot.load();
-		// Load spawn data
+		// Load spawn data and quests
 		loadSpawnData();
+		loadQuests();
 		// Load scene points - must be done AFTER resources are loaded
 		loadScenePoints();
 		// Custom - TODO move this somewhere else
@@ -393,6 +395,29 @@ public class ResourceLoader {
 		for (OpenConfigEntry entry : list) {
 			GameData.getOpenConfigEntries().put(entry.getName(), entry);
 		}
+	}
+	
+	private static void loadQuests() {
+		File folder = new File(RESOURCE("BinOutput/Quest/"));
+		
+		if (!folder.exists()) {
+			return;
+		}
+		
+		for (File file : folder.listFiles()) {
+			MainQuestData mainQuest = null;
+			
+			try (FileReader fileReader = new FileReader(file)) {
+				mainQuest = Grasscutter.getGsonFactory().fromJson(fileReader, MainQuestData.class);
+			} catch (Exception e) {
+				e.printStackTrace();
+				continue;
+			}
+			
+			GameData.getMainQuestDataMap().put(mainQuest.getId(), mainQuest);
+		}
+		
+		Grasscutter.getLogger().info("Loaded " + GameData.getMainQuestDataMap().size() + " MainQuestDatas.");
 	}
 
 	// BinOutput configs

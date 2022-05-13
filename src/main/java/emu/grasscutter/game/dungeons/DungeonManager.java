@@ -7,6 +7,7 @@ import emu.grasscutter.data.custom.ScenePointEntry;
 import emu.grasscutter.data.def.DungeonData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.SceneType;
+import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.server.game.GameServer;
@@ -51,8 +52,9 @@ public class DungeonManager {
 		int sceneId = data.getSceneId();
 		player.getScene().setPrevScene(sceneId);
 		
-		if(player.getWorld().transferPlayerToScene(player, sceneId, data)){
+		if (player.getWorld().transferPlayerToScene(player, sceneId, data)) {
 			player.getScene().addDungeonSettleObserver(basicDungeonSettleObserver);
+			player.getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_ENTER_DUNGEON, data.getId());
 		}
 		
 		player.getScene().setPrevScenePoint(pointId);
