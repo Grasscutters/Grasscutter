@@ -16,6 +16,9 @@
         "no_keystore_error": "[Dispatch] 未找到 SSL 证书！已降级到 HTTP 模式",
         "default_password": "[Dispatch] 成功加载 keystore 默认密码。请考虑将 config.json 的默认密码设置为 123456"
       },
+      "authentication": {
+        "default_unable_to_verify": "[Authentication] 称为 verifyUser 的 method 在默认验证程序中不可用"
+      },
       "no_commands_error": "此命令不适用于 Dispatch-only 模式",
       "unhandled_request_error": "[Dispatch] 潜在的未处理请求：%s %s",
       "account": {
@@ -46,7 +49,7 @@
       "run_mode_help": "服务器运行模式必须为 HYBRID、DISPATCH_ONLY 或 GAME_ONLY。Grasscutter 启动失败...",
       "create_resources": "正在创建 resources 目录...",
       "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。",
-      "version": "Grasscutter版本: %s-%s"
+      "version": "Grasscutter 版本: %s-%s"
     }
   },
   "commands": {
@@ -81,7 +84,7 @@
       "player_exist_offline_error": "玩家不存在或已离线。",
       "argument_error": "无效的参数。",
       "clear_target": "目标已清除。",
-      "set_target": "随后的的命令都会以@%s为预设。",
+      "set_target": "随后的的命令都会以 @%s 为预设。",
       "need_target": "此命令需要一个目标 UID。添加 <@UID> 参数或使用 /target @UID 来指定默认目标。"
     },
     "status": {
@@ -150,7 +153,7 @@
     },
     "giveChar": {
       "usage": "用法：givechar <玩家> <角色ID|角色名> [数量]",
-      "given": "已将角色 %s (等级 %s) 给与 %s。",
+      "given": "已将角色 %s [等级 %s] 给与 %s。",
       "invalid_avatar_id": "无效的角色ID。",
       "invalid_avatar_level": "无效的角色等级。",
       "invalid_avatar_or_player_id": "无效的角色ID/玩家ID。",
@@ -161,16 +164,16 @@
       "refinement_only_applicable_weapons": "只有武器可以设置精炼等级。",
       "refinement_must_between_1_and_5": "精炼等级必须在 1 到 5 之间。",
       "given": "已将 %s 个 %s 给予 %s。",
-      "given_with_level_and_refinement": "已将 %s (等级 %s, 精炼 %s) %s 个给予 %s。",
-      "given_level": "已将 %s (等级 %s) %s 个给予 %s。",
+      "given_with_level_and_refinement": "已将 %s [等级 %s, 精炼 %s] %s 个给予 %s。",
+      "given_level": "已将 %s [等级 %s] %s 个给予 %s。",
       "description": "给予指定物品"
     },
     "godmode": {
-      "success": "%s 的上帝模式已被设置为 %s。",
+      "success": "上帝模式已设为 %s。[用户：%s]",
       "description": "防止你受到伤害"
     },
     "heal": {
-      "success": "已经治疗所有角色。",
+      "success": "已治疗所有角色。",
       "description": "治疗当前队伍的角色"
     },
     "kick": {
@@ -257,7 +260,7 @@
     "setFetterLevel": {
       "usage": "用法：setfetterlevel <好感度等级>",
       "range_error": "好感度等级必须在 0 到 10 之间。",
-      "success": "好感度已设置为 %s 级。",
+      "success": "好感度已设为 %s 级。",
       "level_error": "无效的好感度等级。",
       "description": "设置当前角色的好感度等级"
     },
@@ -269,14 +272,14 @@
       "uid_error": "无效的UID。",
       "player_error": "玩家不存在或已离线。",
       "set_self": "%s 已设为 %s。",
-      "set_for_uid": "将 %s (来自 %s) 设置为 %s。",
+      "set_for_uid": "%s [来自 %s] 已设为 %s。",
       "set_max_hp": "最大生命值已设为 %s。",
       "description": "设置当前角色的属性"
     },
     "setWorldLevel": {
       "usage": "用法：setworldlevel <等级>",
       "value_error": "世界等级必须设置在0-8之间。",
-      "success": "已将世界等级设为 %s。",
+      "success": "世界等级已设为 %s。",
       "invalid_world_level": "无效的世界等级。",
       "description": "设置世界等级，执行命令后需重新登录以生效"
     },
@@ -352,11 +355,11 @@
   },
   "gacha": {
     "details": {
-      "title": "Banner Details",
-      "available_five_stars": "Available 5-star Items",
-      "available_four_stars": "Available 4-star Items",
-      "available_three_stars": "Available 3-star Items",
-      "template_missing": "data/gacha_details.html is missing."
+      "title": "祈愿详情",
+      "available_five_stars": "出现的五星物品",
+      "available_four_stars": "出现的四星物品",
+      "available_three_stars": "出现的三星物品",
+      "template_missing": "缺失文件：data/gacha_details.html"
     }
   }
 }

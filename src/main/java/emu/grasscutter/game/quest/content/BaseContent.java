@@ -1,12 +1,12 @@
 package emu.grasscutter.game.quest.content;
 
-import emu.grasscutter.data.custom.QuestConfigData.QuestCondition;
+import emu.grasscutter.data.def.QuestData.QuestCondition;
 import emu.grasscutter.game.quest.QuestValue;
 import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.enums.QuestTriggerType;
+import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 
-@QuestValue(QuestTriggerType.QUEST_CONTENT_NONE)
+@QuestValue(QuestTrigger.QUEST_CONTENT_NONE)
 public class BaseContent extends QuestBaseHandler {
 
 	@Override

@@ -6,8 +6,8 @@ import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 
-@QuestValue(QuestTrigger.QUEST_CONTENT_COMPLETE_TALK)
-public class ContentCompleteTalk extends QuestBaseHandler {
+@QuestValue(QuestTrigger.QUEST_CONTENT_FINISH_PLOT)
+public class ContentFinishPlot extends QuestBaseHandler {
 
 	@Override
 	public boolean execute(GameQuest quest, QuestCondition condition, int... params) {

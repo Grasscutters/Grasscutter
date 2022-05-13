@@ -3,9 +3,9 @@ package emu.grasscutter.game.quest;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import emu.grasscutter.game.quest.enums.QuestTriggerType;
+import emu.grasscutter.game.quest.enums.QuestTrigger;
 
 @Retention(RetentionPolicy.RUNTIME) 
 public @interface QuestValue {
-	QuestTriggerType value();
+	QuestTrigger value();
 }

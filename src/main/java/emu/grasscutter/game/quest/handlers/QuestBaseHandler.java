@@ -1,6 +1,6 @@
 package emu.grasscutter.game.quest.handlers;
 
-import emu.grasscutter.data.custom.QuestConfigData.QuestCondition;
+import emu.grasscutter.data.def.QuestData.QuestCondition;
 import emu.grasscutter.game.quest.GameQuest;
 
 public abstract class QuestBaseHandler {

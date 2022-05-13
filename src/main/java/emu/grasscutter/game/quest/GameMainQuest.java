@@ -10,7 +10,6 @@ import dev.morphia.annotations.Id;
 import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.custom.QuestConfig;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.ParentQuestState;
@@ -92,6 +91,7 @@ public class GameMainQuest {
 		this.isFinished = true;
 		this.state = ParentQuestState.PARENT_QUEST_STATE_FINISHED;
 		this.getOwner().getSession().send(new PacketFinishedParentQuestUpdateNotify(this));
+		this.save();
 	}
 
 	public void save() {

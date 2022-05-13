@@ -2,9 +2,11 @@ package emu.grasscutter.game.quest;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
-import emu.grasscutter.data.custom.QuestConfig;
-import emu.grasscutter.data.custom.QuestConfigData.QuestCondition;
-import emu.grasscutter.data.custom.QuestConfigData.SubQuestConfigData;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.custom.MainQuestData;
+import emu.grasscutter.data.custom.MainQuestData.SubQuestData;
+import emu.grasscutter.data.def.QuestData;
+import emu.grasscutter.data.def.QuestData.QuestCondition;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.LogicType;
 import emu.grasscutter.game.quest.enums.QuestState;
@@ -16,7 +18,7 @@ import emu.grasscutter.utils.Utils;
 @Entity
 public class GameQuest {
 	@Transient private GameMainQuest mainQuest;
-	@Transient private QuestConfig config;
+	@Transient private QuestData questData;
 	
 	private int questId;
 	private int mainQuestId;
@@ -32,21 +34,21 @@ public class GameQuest {
 	@Deprecated // Morphia only. Do not use.
 	public GameQuest() {}
 	
-	public GameQuest(GameMainQuest mainQuest, QuestConfig config) {
+	public GameQuest(GameMainQuest mainQuest, QuestData questData) {
 		this.mainQuest = mainQuest;
-		this.questId = config.getId();
-		this.mainQuestId = config.getMainQuest().getId();
-		this.config = config;
+		this.questId = questData.getId();
+		this.mainQuestId = questData.getMainId();
+		this.questData = questData;
 		this.acceptTime = Utils.getCurrentSeconds();
 		this.startTime = this.acceptTime;
 		this.state = QuestState.QUEST_STATE_UNFINISHED;
 		
-		if (config.getSubQuest().getFinishCond() != null) {
-			this.finishProgressList = new int[config.getSubQuest().getFinishCond().length];
+		if (questData.getFinishCond()!= null) {
+			this.finishProgressList = new int[questData.getFinishCond().length];
 		}
 		
-		if (config.getSubQuest().getFailCond() != null) {
-			this.failProgressList = new int[config.getSubQuest().getFailCond().length];
+		if (questData.getFailCond() != null) {
+			this.failProgressList = new int[questData.getFailCond().length];
 		}
 		
 		this.mainQuest.getChildQuests().put(this.questId, this);
@@ -72,13 +74,13 @@ public class GameQuest {
 		return mainQuestId;
 	}
 
-	public QuestConfig getConfig() {
-		return config;
+	public QuestData getData() {
+		return questData;
 	}
 
-	public void setConfig(QuestConfig config) {
+	public void setConfig(QuestData config) {
 		if (this.getQuestId() != config.getId()) return;
-		this.config = config;
+		this.questData = config;
 	}
 
 	public QuestState getState() {
@@ -141,23 +143,37 @@ public class GameQuest {
 		
 		this.getOwner().getSession().send(new PacketQuestProgressUpdateNotify(this));
 		this.getOwner().getSession().send(new PacketQuestListUpdateNotify(this));
-		this.save();
 		
-		this.tryAcceptQuestLine();
+		if (this.getData().finishParent()) {
+			// This quest finishes the questline - the main quest will also save the quest to db so we dont have to call save() here
+			this.getMainQuest().finish();
+		} else {
+			// Try and accept other quests if possible
+			this.tryAcceptQuestLine();
+			this.save();
+		}
 	}
 	
 	public boolean tryAcceptQuestLine() {
 		try {
-			for (SubQuestConfigData questData : getConfig().getMainQuest().getSubQuests()) {
-				GameQuest quest = getMainQuest().getChildQuestById(questData.getSubId());
+			MainQuestData questConfig = GameData.getMainQuestDataMap().get(this.getMainQuestId());
+			
+			for (SubQuestData subQuest : questConfig.getSubQuests()) {
+				GameQuest quest = getMainQuest().getChildQuestById(subQuest.getSubId());
 				
 				if (quest == null) {
+					QuestData questData = GameData.getQuestDataMap().get(subQuest.getSubId());
+					
+					if (questData == null || questData.getAcceptCond() == null) {
+						continue;
+					}
+					
 					int[] accept = new int[questData.getAcceptCond().length];
 							
 					// TODO
 					for (int i = 0; i < questData.getAcceptCond().length; i++) {
 						QuestCondition condition = questData.getAcceptCond()[i];
-						boolean result = getOwner().getServer().getQuestHandler().triggerCondition(this, condition);
+						boolean result = getOwner().getServer().getQuestHandler().triggerCondition(this, condition, condition.getParam());
 						
 						accept[i] = result ? 1 : 0;
 					}
@@ -165,7 +181,7 @@ public class GameQuest {
 					boolean shouldAccept = LogicType.calculate(questData.getAcceptCondComb(), accept);
 					
 					if (shouldAccept) {
-						this.getOwner().getQuestManager().addQuest(questData.getSubId());
+						this.getOwner().getQuestManager().addQuest(questData.getId());
 					}
 				}
 			}
