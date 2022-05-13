@@ -252,6 +252,7 @@ public class GameSession extends KcpChannel {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+			data.release();
 			packet.release();
 		}
 	}
