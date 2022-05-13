@@ -7,6 +7,7 @@ import java.util.List;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.def.AvatarCostumeData;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.AvatarFlycloakData;
@@ -255,6 +256,64 @@ public class Inventory implements Iterable<GameItem> {
 			case 203 -> // Genesis Crystals
 					getPlayer().setCrystals(player.getCrystals() + count);
 		}
+	}
+
+	private int getVirtualItemCount(int itemId) {
+		switch (itemId) {
+			case 201:  // Primogem
+				return player.getPrimogems();
+			case 202:  // Mora
+				return player.getMora();
+			case 203:  // Genesis Crystals
+				return player.getCrystals();
+			default:
+				GameItem item = getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId);  // What if we ever want to operate on weapons/relics/furniture? :S
+				return (item == null) ? 0 : item.getCount();
+		}
+	}
+
+	public boolean payItem(int id, int count) {
+		return payItem(new ItemParamData(id, count));
+	}
+
+	public boolean payItem(ItemParamData costItem) {
+		return payItems(new ItemParamData[] {costItem}, 1, null);
+	}
+
+	public boolean payItems(ItemParamData[] costItems) {
+		return payItems(costItems, 1, null);
+	}
+
+	public boolean payItems(ItemParamData[] costItems, int quantity) {
+		return payItems(costItems, quantity, null);
+	}
+	
+	public synchronized boolean payItems(ItemParamData[] costItems, int quantity, ActionReason reason) {
+		// Make sure player has requisite items
+		for (ItemParamData cost : costItems) {
+			if (getVirtualItemCount(cost.getId()) < (cost.getCount() * quantity)) {
+				return false;
+			}
+		}
+		// All costs are satisfied, now remove them all
+		for (ItemParamData cost : costItems) {
+			switch (cost.getId()) {
+				case 201 ->  // Primogem
+					player.setPrimogems(player.getPrimogems() - (cost.getCount() * quantity));
+				case 202 ->  // Mora
+					player.setMora(player.getMora() - (cost.getCount() * quantity));
+				case 203 ->  // Genesis Crystals
+					player.setCrystals(player.getCrystals() - (cost.getCount() * quantity));
+				default ->
+					removeItem(getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId()), cost.getCount() * quantity);
+			}
+		}
+		
+		if (reason != null) {  // Do we need these?
+			// getPlayer().sendPacket(new PacketItemAddHintNotify(changedItems, reason));
+		}
+		// getPlayer().sendPacket(new PacketStoreItemChangeNotify(changedItems));
+		return true;
 	}
 	
 	public void removeItems(List<GameItem> items) {

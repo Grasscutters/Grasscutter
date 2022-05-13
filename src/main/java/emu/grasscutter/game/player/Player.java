@@ -29,6 +29,9 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.SceneType;
+import emu.grasscutter.game.quest.GameMainQuest;
+import emu.grasscutter.game.quest.GameQuest;
+import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.managers.MapMarkManager.*;
 import emu.grasscutter.game.tower.TowerManager;
@@ -82,6 +85,8 @@ public class Player {
 	private Set<Integer> flyCloakList;
 	private Set<Integer> costumeList;
 
+	private Integer widgetId;
+
 	@Transient private long nextGuid = 0;
 	@Transient private int peerId;
 	@Transient private World world;
@@ -93,6 +98,7 @@ public class Player {
 	@Transient private MailHandler mailHandler;
 	@Transient private MessageHandler messageHandler;
 	@Transient private AbilityManager abilityManager;
+	@Transient private QuestManager questManager;
 	
 	@Transient private SotSManager sotsManager;
 
@@ -132,10 +138,11 @@ public class Player {
 	@Transient private final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
 	@Transient private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
 
-	private MapMarksManager mapMarksManager;
+	@Transient private MapMarksManager mapMarksManager;
 	@Transient private StaminaManager staminaManager;
 
 	private long springLastUsed;
+	private HashMap<String, MapMark> mapMarks;
 
 
 	@Deprecated
@@ -147,6 +154,7 @@ public class Player {
 		this.mailHandler = new MailHandler(this);
 		this.towerManager = new TowerManager(this);
 		this.abilityManager = new AbilityManager(this);
+		this.setQuestManager(new QuestManager(this));
 		this.pos = new Position();
 		this.rotation = new Position();
 		this.properties = new HashMap<>();
@@ -179,7 +187,7 @@ public class Player {
 		this.shopLimit = new ArrayList<>();
 		this.expeditionInfo = new HashMap<>();
 		this.messageHandler = null;
-		this.mapMarksManager = new MapMarksManager();
+		this.mapMarksManager = new MapMarksManager(this);
 		this.staminaManager = new StaminaManager(this);
 		this.sotsManager = new SotSManager(this);
 	}
@@ -207,7 +215,7 @@ public class Player {
 		this.getPos().set(GameConstants.START_POSITION);
 		this.getRotation().set(0, 307, 0);
 		this.messageHandler = null;
-		this.mapMarksManager = new MapMarksManager();
+		this.mapMarksManager = new MapMarksManager(this);
 		this.staminaManager = new StaminaManager(this);
 		this.sotsManager = new SotSManager(this);
 	}
@@ -295,6 +303,14 @@ public class Player {
 	public void setSignature(String signature) {
 		this.signature = signature;
 		this.updateProfile();
+	}
+
+	public Integer getWidgetId() {
+		return widgetId;
+	}
+
+	public void setWidgetId(Integer widgetId) {
+		this.widgetId = widgetId;
 	}
 
 	public Position getPos() {
@@ -409,6 +425,14 @@ public class Player {
 
 	public TowerManager getTowerManager() {
 		return towerManager;
+	}
+
+	public QuestManager getQuestManager() {
+		return questManager;
+	}
+
+	public void setQuestManager(QuestManager questManager) {
+		this.questManager = questManager;
 	}
 
 	public PlayerGachaInfo getGachaInfo() {
@@ -886,9 +910,7 @@ public class Player {
 	}
 
 	public void sendPacket(BasePacket packet) {
-		if (this.hasSentAvatarDataNotify) {
-			this.getSession().send(packet);
-		}
+		this.getSession().send(packet);
 	}
 
 	public OnlinePlayerInfo getOnlinePlayerInfo() {
@@ -1035,6 +1057,10 @@ public class Player {
 		return abilityManager;
 	}
 
+	public HashMap<String, MapMark> getMapMarks() { return mapMarks; }
+
+	public void setMapMarks(HashMap<String, MapMark> newMarks) { mapMarks = newMarks; }
+
 	public synchronized void onTick() {
 		// Check ping
 		if (this.getLastPingTime() > System.currentTimeMillis() + 60000) {
@@ -1121,7 +1147,23 @@ public class Player {
 
 		this.getFriendsList().loadFromDatabase();
 		this.getMailHandler().loadFromDatabase();
+		this.getQuestManager().loadFromDatabase();
+		
+		// Quest - Commented out because a problem is caused if you log out while this quest is active
+		/*
+		if (getQuestManager().getMainQuestById(351) == null) {
+			GameQuest quest = getQuestManager().addQuest(35104);
+			if (quest != null) {
+				quest.finish();
+			}
 
+			getQuestManager().addQuest(35101);
+			
+			this.setSceneId(3);
+			this.getPos().set(GameConstants.START_POSITION);
+		}
+		*/
+		
 		// Create world
 		World world = new World(this);
 		world.addPlayer(this);
@@ -1141,6 +1183,11 @@ public class Player {
 		session.send(new PacketStoreWeightLimitNotify());
 		session.send(new PacketPlayerStoreNotify(this));
 		session.send(new PacketAvatarDataNotify(this));
+		session.send(new PacketFinishedParentQuestNotify(this));
+		session.send(new PacketQuestListNotify(this));
+		session.send(new PacketServerCondMeetQuestListUpdateNotify(this));
+		session.send(new PacketAllWidgetDataNotify(this));
+		session.send(new PacketWidgetGadgetAllDataNotify());
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
@@ -1238,7 +1285,7 @@ public class Player {
 		} else if (prop == PlayerProperty.PROP_IS_TRANSFERABLE) { // 10009
 			if (!(0 <= value && value <= 1)) { return false; }
 		} else if (prop == PlayerProperty.PROP_MAX_STAMINA) { // 10010
-			if (!(value >= 0 && value <= StaminaManager.GlobalMaximumStamina)) { return false; }
+			if (!(value >= 0 && value <= StaminaManager.GlobalCharacterMaximumStamina)) { return false; }
 		} else if (prop == PlayerProperty.PROP_CUR_PERSIST_STAMINA) { // 10011
 			int playerMaximumStamina = getProperty(PlayerProperty.PROP_MAX_STAMINA);
 			if (!(value >= 0 && value <= playerMaximumStamina)) { return false; }

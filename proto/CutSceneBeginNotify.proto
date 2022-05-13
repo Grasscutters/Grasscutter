@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message CutSceneBeginNotify {
+	uint32 cutscene_id = 1;
+	bool is_wait_others = 2;
+}

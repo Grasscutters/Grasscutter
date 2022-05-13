@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.Calendar;
 
 import emu.grasscutter.command.CommandMap;
+import emu.grasscutter.game.managers.StaminaManager.StaminaManager;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
@@ -29,6 +30,7 @@ import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
+import emu.grasscutter.BuildConfig;
 
 import javax.annotation.Nullable;
 
@@ -82,6 +84,9 @@ public final class Grasscutter {
 				case "-gachamap" -> {
 					Tools.createGachaMapping(DATA("gacha_mappings.js")); exitEarly = true;
 				}
+				case "-version" -> {
+					System.out.println("Grasscutter version: " + BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH); exitEarly = true;
+				}
 			}
 		} 
 		
@@ -106,6 +111,9 @@ public final class Grasscutter {
 		new ServerHook(gameServer, dispatchServer);
 		// Create plugin manager instance.
 		pluginManager = new PluginManager();
+
+		// TODO: find a better place?
+		StaminaManager.initialize();
 	
 		// Start servers.
 		var runMode = SERVER.runMode;
@@ -145,16 +153,22 @@ public final class Grasscutter {
 	 * Attempts to load the configuration from a file.
 	 */
 	public static void loadConfig() {
+		// Check if config.json exists. If not, we generate a new config.
+		if (!configFile.exists()) {
+			getLogger().info("config.json could not be found. Generating a default configuration ...");
+			config = new ConfigContainer();
+			Grasscutter.saveConfig(config);
+			return;
+		} 
+
+		// If the file already exists, we attempt to load it.
 		try (FileReader file = new FileReader(configFile)) {
 			config = gson.fromJson(file, ConfigContainer.class);
-		} catch (Exception exception) {
-			Grasscutter.saveConfig(null);
-			config = new ConfigContainer();
-		} catch (Error error) {
-			// Occurred probably from an outdated config file.
-			Grasscutter.saveConfig(null);
-			config = new ConfigContainer();
-		}
+		} 
+		catch (Exception exception) {
+			getLogger().error("There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
+			System.exit(1);
+		} 
 	}
 
 	public static void loadLanguage() {
@@ -186,6 +200,7 @@ public final class Grasscutter {
 		}
 
 		getLogger().info(translate("messages.status.done"));
+		getLogger().info(translate("messages.status.version", BuildConfig.VERSION, BuildConfig.GIT_HASH));
 		String input = null;
 		boolean isLastInterrupted = false;
 		while (true) {

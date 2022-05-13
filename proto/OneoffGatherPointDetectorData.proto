@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message OneoffGatherPointDetectorData {
+	uint32 material_id = 1;
+	bool is_all_collected = 2;
+	bool is_hint_valid = 3;
+	Vector hint_center_pos = 4;
+	uint32 hint_radius = 5;
+	uint32 group_id = 6;
+	uint32 config_id = 7;
+}
