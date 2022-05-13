@@ -128,7 +128,7 @@ public class QuestManager {
 			QuestData data = quest.getData();
 			
 			for (int i = 0; i < data.getFinishCond().length; i++) {
-				if (quest.getFinishProgressList()[i] == 1) {
+				if (quest.getFinishProgressList() == null || quest.getFinishProgressList()[i] == 1) {
 					continue;
 				}
 				

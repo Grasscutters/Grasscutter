@@ -91,6 +91,7 @@ public class GameMainQuest {
 		this.isFinished = true;
 		this.state = ParentQuestState.PARENT_QUEST_STATE_FINISHED;
 		this.getOwner().getSession().send(new PacketFinishedParentQuestUpdateNotify(this));
+		this.save();
 	}
 
 	public void save() {
