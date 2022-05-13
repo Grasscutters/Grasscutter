@@ -83,6 +83,7 @@ import emu.grasscutter.server.packet.send.PacketAvatarGainCostumeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarGainFlycloakNotify;
 import emu.grasscutter.server.packet.send.PacketCardProductRewardNotify;
 import emu.grasscutter.server.packet.send.PacketClientAbilityInitFinishNotify;
+import emu.grasscutter.server.packet.send.PacketCodexDataFullNotify;
 import emu.grasscutter.server.packet.send.PacketCombatInvocationsNotify;
 import emu.grasscutter.server.packet.send.PacketFinishedParentQuestNotify;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
@@ -1283,6 +1284,7 @@ public class Player {
 		  session.send(new PacketAvatarDataNotify(this));
       session.send(new PacketFinishedParentQuestNotify(this));
 		  session.send(new PacketQuestListNotify(this));
+      session.send(new PacketCodexDataFullNotify(this));
 		  session.send(new PacketServerCondMeetQuestListUpdateNotify(this));
       session.send(new PacketAllWidgetDataNotify(this));
 		  session.send(new PacketWidgetGadgetAllDataNotify());

@@ -11,6 +11,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.LogicType;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.net.proto.QuestOuterClass.Quest;
+import emu.grasscutter.server.packet.send.PacketCodexDataUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestListUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestProgressUpdateNotify;
 import emu.grasscutter.utils.Utils;
