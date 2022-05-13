@@ -19,12 +19,16 @@ public class TowerManager {
     @Transient private Player player;
 
     public TowerManager(Player player) {
-        this.player = player;
+        if(player != null){
+         this.player = player;         
+        }
         Grasscutter.getLogger().info("DEBUG Abyse: SetTowerManager "+player.getNickname()+" ");
     }
 
     public void setPlayer(Player player) {
-        this.player = player;
+        if(player != null){
+         this.player = player;
+        }
         Grasscutter.getLogger().info("DEBUG Abyse: SetTowerManager_setPlayer "+player.getNickname()+" ");
     }
 
