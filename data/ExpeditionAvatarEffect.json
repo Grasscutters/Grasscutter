@@ -1,0 +1,38 @@
+[
+  {
+    "avatarId": 10000031,
+    "area": "Mondstadt",
+    "shortenRatio": 0.25,
+    "rewardRatio": 0
+  },
+  {
+    "avatarId": 10000032,
+    "area": "Mondstadt",
+    "shortenRatio": 0.25,
+    "rewardRatio": 0
+  },
+  {
+    "avatarId": 10000036,
+    "area": "Liyue",
+    "shortenRatio": 0.25,
+    "rewardRatio": 0
+  },
+  {
+    "avatarId": 10000042,
+    "area": "Liyue",
+    "shortenRatio": 0.25,
+    "rewardRatio": 0
+  },
+  {
+    "avatarId": 10000063,
+    "area": "Liyue",
+    "shortenRatio": 0,
+    "rewardRatio": 0.25
+  },
+  {
+    "avatarId": 10000056,
+    "area": "Inazuma",
+    "shortenRatio": 0.25,
+    "rewardRatio": 0
+  }
+]
