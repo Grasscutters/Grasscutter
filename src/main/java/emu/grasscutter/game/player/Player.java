@@ -87,6 +87,9 @@ public class Player {
 
 	private Integer widgetId;
 
+	private Set<Integer> realmList;
+	private Integer currentRealmId;
+
 	@Transient private long nextGuid = 0;
 	@Transient private int peerId;
 	@Transient private World world;
@@ -311,6 +314,31 @@ public class Player {
 
 	public void setWidgetId(Integer widgetId) {
 		this.widgetId = widgetId;
+	}
+
+	public Set<Integer> getRealmList() {
+		return realmList;
+	}
+
+	public void setRealmList(Set<Integer> realmList) {
+		this.realmList = realmList;
+	}
+
+	public void addRealmList(int realmId) {
+		if (this.realmList == null) {
+			this.realmList = new HashSet<>();
+		} else if (this.realmList.contains(realmId)) {
+			return;
+		}
+		this.realmList.add(realmId);
+	}
+
+	public Integer getCurrentRealmId() {
+		return currentRealmId;
+	}
+
+	public void setCurrentRealmId(Integer currentRealmId) {
+		this.currentRealmId = currentRealmId;
 	}
 
 	public Position getPos() {
@@ -1187,6 +1215,8 @@ public class Player {
 		session.send(new PacketServerCondMeetQuestListUpdateNotify(this));
 		session.send(new PacketAllWidgetDataNotify(this));
 		session.send(new PacketWidgetGadgetAllDataNotify());
+		session.send(new PacketPlayerHomeCompInfoNotify(this));
+		session.send(new PacketHomeComfortInfoNotify(this));
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
