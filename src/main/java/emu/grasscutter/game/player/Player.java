@@ -87,10 +87,12 @@ import emu.grasscutter.server.packet.send.PacketCodexDataFullNotify;
 import emu.grasscutter.server.packet.send.PacketCombatInvocationsNotify;
 import emu.grasscutter.server.packet.send.PacketFinishedParentQuestNotify;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
+import emu.grasscutter.server.packet.send.PacketHomeComfortInfoNotify;
 import emu.grasscutter.server.packet.send.PacketOpenStateUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerApplyEnterMpResultNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerDataNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerHomeCompInfoNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerLevelRewardUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerPropNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerStoreNotify;
@@ -132,6 +134,9 @@ public class Player {
 	private Set<Integer> costumeList;
 
 	private Integer widgetId;
+
+	private Set<Integer> realmList;
+	private Integer currentRealmId;
 
 	@Transient private long nextGuid = 0;
 	@Transient private int peerId;
@@ -357,6 +362,31 @@ public class Player {
 
 	public void setWidgetId(Integer widgetId) {
 		this.widgetId = widgetId;
+	}
+
+	public Set<Integer> getRealmList() {
+		return realmList;
+	}
+
+	public void setRealmList(Set<Integer> realmList) {
+		this.realmList = realmList;
+	}
+
+	public void addRealmList(int realmId) {
+		if (this.realmList == null) {
+			this.realmList = new HashSet<>();
+		} else if (this.realmList.contains(realmId)) {
+			return;
+		}
+		this.realmList.add(realmId);
+	}
+
+	public Integer getCurrentRealmId() {
+		return currentRealmId;
+	}
+
+	public void setCurrentRealmId(Integer currentRealmId) {
+		this.currentRealmId = currentRealmId;
 	}
 
 	public Position getPos() {
@@ -1288,6 +1318,8 @@ public class Player {
 		  session.send(new PacketServerCondMeetQuestListUpdateNotify(this));
       session.send(new PacketAllWidgetDataNotify(this));
 		  session.send(new PacketWidgetGadgetAllDataNotify());
+      session.send(new PacketPlayerHomeCompInfoNotify(this));
+		  session.send(new PacketHomeComfortInfoNotify(this));
     } catch (Exception e) {
       Grasscutter.getLogger().info("TODO: User UID: "+this.getProfile().getUid()+" with username "+this.getAccount().getUsername()+" It seems troublesome (Send Pack)", e);
       this.getSession().close();
