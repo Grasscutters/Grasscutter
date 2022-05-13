@@ -57,5 +57,13 @@
       "mi18n_name": "Activity"
     }
   ],
-  "timezone": -5
+  "timezone": -5,
+  "alert": false,
+  "alert_id": 0,
+  "pic_list": [],
+  "pic_total": 0,
+  "pic_type_list": [],
+  "pic_alert": false,
+  "pic_alert_id": 0,
+  "static_sign": ""
 }
