@@ -20,10 +20,12 @@ public class TowerManager {
 
     public TowerManager(Player player) {
         this.player = player;
+        Grasscutter.getLogger().info("DEBUG Abyse: SetTowerManager "+player.getNickname()+" ");
     }
 
     public void setPlayer(Player player) {
         this.player = player;
+        Grasscutter.getLogger().info("DEBUG Abyse: SetTowerManager_setPlayer "+player.getNickname()+" ");
     }
 
     /**
