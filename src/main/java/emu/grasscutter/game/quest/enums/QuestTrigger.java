@@ -1,6 +1,6 @@
 package emu.grasscutter.game.quest.enums;
 
-public enum QuestTriggerType {
+public enum QuestTrigger {
 	QUEST_COND_NONE (0),
 	QUEST_COND_STATE_EQUAL (1),
 	QUEST_COND_STATE_NOT_EQUAL (2),
@@ -225,7 +225,7 @@ public enum QuestTriggerType {
 	
 	private final int value;
 	
-	QuestTriggerType(int id) {
+	QuestTrigger(int id) {
 		this.value = id;
 	}
 

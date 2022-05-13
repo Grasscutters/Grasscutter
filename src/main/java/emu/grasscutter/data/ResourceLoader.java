@@ -24,9 +24,7 @@ import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierActionType;
 import emu.grasscutter.data.custom.AbilityModifierEntry;
 import emu.grasscutter.data.custom.OpenConfigEntry;
-import emu.grasscutter.data.custom.QuestConfig;
-import emu.grasscutter.data.custom.QuestConfigData;
-import emu.grasscutter.data.custom.QuestConfigData.SubQuestConfigData;
+import emu.grasscutter.data.custom.MainQuestData;
 import emu.grasscutter.data.custom.ScenePointEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -407,24 +405,19 @@ public class ResourceLoader {
 		}
 		
 		for (File file : folder.listFiles()) {
-			QuestConfigData mainQuest = null;
+			MainQuestData mainQuest = null;
 			
 			try (FileReader fileReader = new FileReader(file)) {
-				mainQuest = Grasscutter.getGsonFactory().fromJson(fileReader, QuestConfigData.class);
+				mainQuest = Grasscutter.getGsonFactory().fromJson(fileReader, MainQuestData.class);
 			} catch (Exception e) {
 				e.printStackTrace();
 				continue;
 			}
 			
-			if (mainQuest.getSubQuests() != null) {
-				for (SubQuestConfigData subQuest : mainQuest.getSubQuests()) {
-					QuestConfig quest = new QuestConfig(mainQuest, subQuest);
-					GameData.getQuestConfigs().put(quest.getId(), quest);
-				}
-			}
+			GameData.getMainQuestDataMap().put(mainQuest.getId(), mainQuest);
 		}
 		
-		Grasscutter.getLogger().info("Loaded " + GameData.getQuestConfigs().size() + " Quest Configs");
+		Grasscutter.getLogger().info("Loaded " + GameData.getMainQuestDataMap().size() + " MainQuestDatas.");
 	}
 
 	// BinOutput configs

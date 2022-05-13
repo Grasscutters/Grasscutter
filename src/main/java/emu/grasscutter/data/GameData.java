@@ -12,7 +12,7 @@ import emu.grasscutter.data.custom.AbilityEmbryoEntry;
 import emu.grasscutter.data.custom.AbilityModifier;
 import emu.grasscutter.data.custom.AbilityModifierEntry;
 import emu.grasscutter.data.custom.OpenConfigEntry;
-import emu.grasscutter.data.custom.QuestConfig;
+import emu.grasscutter.data.custom.MainQuestData;
 import emu.grasscutter.data.custom.ScenePointEntry;
 import emu.grasscutter.data.def.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
@@ -28,7 +28,7 @@ public class GameData {
 	private static final Map<String, AbilityModifierEntry> abilityModifiers = new HashMap<>();
 	private static final Map<String, OpenConfigEntry> openConfigEntries = new HashMap<>();
 	private static final Map<String, ScenePointEntry> scenePointEntries = new HashMap<>();
-	private static final Int2ObjectMap<QuestConfig> questConfigs = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<MainQuestData> mainQuestData = new Int2ObjectOpenHashMap<>();
 	
 	// ExcelConfigs
 	private static final Int2ObjectMap<PlayerLevelData> playerLevelDataMap = new Int2ObjectOpenHashMap<>();
@@ -70,6 +70,7 @@ public class GameData {
 	private static final Int2ObjectMap<WorldLevelData> worldLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<DailyDungeonData> dailyDungeonDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<DungeonData> dungeonDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<QuestData> questDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<ShopGoodsData> shopGoodsDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<CombineData> combineDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<RewardPreviewData> rewardPreviewDataMap = new Int2ObjectOpenHashMap<>();
@@ -124,8 +125,8 @@ public class GameData {
 		return getScenePointEntries().get(sceneId + "_" + pointId);
 	}
 
-	public static Int2ObjectMap<QuestConfig> getQuestConfigs() {
-		return questConfigs;
+	public static Int2ObjectMap<MainQuestData> getMainQuestDataMap() {
+		return mainQuestData;
 	}
 
 	public static Int2ObjectMap<AvatarData> getAvatarDataMap() {
@@ -336,5 +337,9 @@ public class GameData {
 	}
 	public static Int2ObjectMap<TowerScheduleData> getTowerScheduleDataMap(){
 		return towerScheduleDataMap;
+	}
+
+	public static Int2ObjectMap<QuestData> getQuestDataMap() {
+		return questDataMap;
 	}
 }

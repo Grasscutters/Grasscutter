@@ -19,10 +19,11 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
-import emu.grasscutter.data.custom.QuestConfig;
+import emu.grasscutter.data.custom.MainQuestData;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.MonsterData;
+import emu.grasscutter.data.def.QuestData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.utils.Utils;
 
@@ -149,13 +150,16 @@ final class ToolsWithLanguageOption {
 				writer.println(data.getId() + " : " + data.getScriptData());
 			}
 			
+			writer.println();
+			
 			writer.println("// Quests");
-			list = new ArrayList<>(GameData.getQuestConfigs().keySet());
+			list = new ArrayList<>(GameData.getQuestDataMap().keySet());
 			Collections.sort(list); 
 			
 			for (Integer id : list) {
-				QuestConfig data = GameData.getQuestConfigs().get(id);
-				writer.println(data.getId() + " : " + map.get(data.getMainQuest().getTitleTextMapHash()));
+				QuestData data = GameData.getQuestDataMap().get(id);
+				MainQuestData mainQuest = GameData.getMainQuestDataMap().get(data.getMainId());
+				writer.println(data.getId() + " : " + map.get(mainQuest.getTitleTextMapHash()) + " - " + map.get(data.getDescTextMapHash()));
 			}
 			
 			writer.println();
