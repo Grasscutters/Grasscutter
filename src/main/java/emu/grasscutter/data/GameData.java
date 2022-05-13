@@ -9,7 +9,6 @@ import java.util.Map;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.data.custom.AbilityEmbryoEntry;
-import emu.grasscutter.data.custom.AbilityModifier;
 import emu.grasscutter.data.custom.AbilityModifierEntry;
 import emu.grasscutter.data.custom.OpenConfigEntry;
 import emu.grasscutter.data.custom.MainQuestData;
@@ -65,6 +64,8 @@ public class GameData {
 	
 	private static final Int2ObjectMap<SceneData> sceneDataMap = new Int2ObjectLinkedOpenHashMap<>();
 	private static final Int2ObjectMap<FetterData> fetterDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CodexQuest> codexQuestMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CodexQuest> codexQuestIdMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<FetterCharacterCardData> fetterCharacterCardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<RewardData> rewardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<WorldLevelData> worldLevelDataMap = new Int2ObjectOpenHashMap<>();
@@ -292,6 +293,10 @@ public class GameData {
 
 		return fetters;
 	}
+
+	public static Int2ObjectMap<CodexQuest> getCodexQuestMap(){return codexQuestMap;}
+
+	public static Int2ObjectMap<CodexQuest> getCodexQuestIdMap(){return codexQuestIdMap;}
 
 	public static Int2ObjectMap<WorldLevelData> getWorldLevelDataMap() {
 		return worldLevelDataMap;
