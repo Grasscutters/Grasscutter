@@ -143,21 +143,28 @@ public class GameQuest {
 		
 		this.getOwner().getSession().send(new PacketQuestProgressUpdateNotify(this));
 		this.getOwner().getSession().send(new PacketQuestListUpdateNotify(this));
-		this.save();
 		
-		this.tryAcceptQuestLine();
+		if (this.getData().finishParent()) {
+			// This quest finishes the questline - the main quest will also save the quest to db so we dont have to call save() here
+			this.getMainQuest().finish();
+		} else {
+			// Try and accept other quests if possible
+			this.tryAcceptQuestLine();
+			this.save();
+		}
 	}
 	
 	public boolean tryAcceptQuestLine() {
 		try {
 			MainQuestData questConfig = GameData.getMainQuestDataMap().get(this.getMainQuestId());
+			
 			for (SubQuestData subQuest : questConfig.getSubQuests()) {
 				GameQuest quest = getMainQuest().getChildQuestById(subQuest.getSubId());
 				
 				if (quest == null) {
 					QuestData questData = GameData.getQuestDataMap().get(subQuest.getSubId());
 					
-					if (questData == null) {
+					if (questData == null || questData.getAcceptCond() == null) {
 						continue;
 					}
 					

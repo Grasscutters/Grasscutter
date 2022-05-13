@@ -15,6 +15,9 @@ public class QuestData extends GameResource {
 	private int Order;
 	private long DescTextMapHash;
 	
+	private boolean FinishParent;
+	private boolean IsRewind;
+	
 	private LogicType AcceptCondComb;
 	private QuestCondition[] acceptConditons;
 	private LogicType FinishCondComb;
@@ -43,6 +46,14 @@ public class QuestData extends GameResource {
 
 	public long getDescTextMapHash() {
 		return DescTextMapHash;
+	}
+
+	public boolean finishParent() {
+		return FinishParent;
+	}
+
+	public boolean isRewind() {
+		return IsRewind;
 	}
 
 	public LogicType getAcceptCondComb() {
