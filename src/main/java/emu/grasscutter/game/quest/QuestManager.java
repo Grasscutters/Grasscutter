@@ -9,12 +9,11 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.custom.QuestConfig;
-import emu.grasscutter.data.custom.QuestConfigData.QuestCondition;
-import emu.grasscutter.data.custom.QuestConfigData.SubQuestConfigData;
+import emu.grasscutter.data.def.QuestData;
+import emu.grasscutter.data.def.QuestData.QuestCondition;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.quest.enums.QuestTriggerType;
+import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.quest.enums.LogicType;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.server.packet.send.PacketFinishedParentQuestUpdateNotify;
@@ -46,12 +45,12 @@ public class QuestManager {
 	}
 	
 	public GameQuest getQuestById(int questId) {
-		QuestConfig questConfig = GameData.getQuestConfigs().get(questId);
+		QuestData questConfig = GameData.getQuestDataMap().get(questId);
 		if (questConfig == null) {
 			return null;
 		}
 		
-		GameMainQuest mainQuest = getQuests().get(questConfig.getMainQuest().getId());
+		GameMainQuest mainQuest = getQuests().get(questConfig.getMainId());
 		
 		if (mainQuest == null) {
 			return null;
@@ -79,8 +78,8 @@ public class QuestManager {
 		}
 	}
 	
-	public GameMainQuest addMainQuest(QuestConfig questConfig) {
-		GameMainQuest mainQuest = new GameMainQuest(getPlayer(), questConfig.getMainQuest().getId());
+	public GameMainQuest addMainQuest(QuestData questConfig) {
+		GameMainQuest mainQuest = new GameMainQuest(getPlayer(), questConfig.getMainId());
 		getQuests().put(mainQuest.getParentQuestId(), mainQuest);
 
 		getPlayer().sendPacket(new PacketFinishedParentQuestUpdateNotify(mainQuest));
@@ -89,13 +88,13 @@ public class QuestManager {
 	}
 	
 	public GameQuest addQuest(int questId) {
-		QuestConfig questConfig = GameData.getQuestConfigs().get(questId);
+		QuestData questConfig = GameData.getQuestDataMap().get(questId);
 		if (questConfig == null) {
 			return null;
 		}
 		
 		// Main quest
-		GameMainQuest mainQuest = this.getMainQuestById(questConfig.getMainQuest().getId());
+		GameMainQuest mainQuest = this.getMainQuestById(questConfig.getMainId());
 		
 		// Create main quest if it doesnt exist
 		if (mainQuest == null) {
@@ -122,11 +121,11 @@ public class QuestManager {
 		return quest;
 	}
 	
-	public void triggerEvent(QuestTriggerType condType, int... params) {
+	public void triggerEvent(QuestTrigger condType, int... params) {
 		Set<GameQuest> changedQuests = new HashSet<>();
 		
 		this.forEachActiveQuest(quest -> {
-			SubQuestConfigData data = quest.getConfig().getSubQuest();
+			QuestData data = quest.getData();
 			
 			for (int i = 0; i < data.getFinishCond().length; i++) {
 				if (quest.getFinishProgressList()[i] == 1) {
@@ -150,7 +149,7 @@ public class QuestManager {
 		});
 		
 		for (GameQuest quest : changedQuests) {
-			LogicType logicType = quest.getConfig().getSubQuest().getFailCondComb();
+			LogicType logicType = quest.getData().getFailCondComb();
 			int[] progress = quest.getFinishProgressList();
 			
 			// Handle logical comb
@@ -174,7 +173,7 @@ public class QuestManager {
 			
 			for (GameQuest quest : mainQuest.getChildQuests().values()) {
 				quest.setMainQuest(mainQuest);
-				quest.setConfig(GameData.getQuestConfigs().get(quest.getQuestId()));
+				quest.setConfig(GameData.getQuestDataMap().get(quest.getQuestId()));
 			}
 			
 			this.getQuests().put(mainQuest.getParentQuestId(), mainQuest);

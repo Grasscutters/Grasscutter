@@ -4,11 +4,9 @@ import java.util.Set;
 
 import org.reflections.Reflections;
 
-import emu.grasscutter.data.custom.QuestConfigData.QuestCondition;
-import emu.grasscutter.game.quest.enums.QuestTriggerType;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.def.QuestData.QuestCondition;
 import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.server.game.GameServer;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -62,7 +60,7 @@ public class ServerQuestHandler {
 	public boolean triggerCondition(GameQuest quest, QuestCondition condition, int... params) {
 		QuestBaseHandler handler = condHandlers.get(condition.getType().getValue());
 
-		if (handler == null || quest.getConfig() == null) {
+		if (handler == null || quest.getData() == null) {
 			return false;
 		}
 		
@@ -72,7 +70,7 @@ public class ServerQuestHandler {
 	public boolean triggerContent(GameQuest quest, QuestCondition condition, int... params) {
 		QuestBaseHandler handler = contHandlers.get(condition.getType().getValue());
 
-		if (handler == null || quest.getConfig() == null) {
+		if (handler == null || quest.getData() == null) {
 			return false;
 		}
 		
@@ -82,7 +80,7 @@ public class ServerQuestHandler {
 	public boolean triggerExec(GameQuest quest, QuestCondition condition, int... params) {
 		QuestBaseHandler handler = execHandlers.get(condition.getType().getValue());
 
-		if (handler == null || quest.getConfig() == null) {
+		if (handler == null || quest.getData() == null) {
 			return false;
 		}
 		
