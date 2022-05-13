@@ -1,25 +1,5 @@
 package emu.grasscutter.scripts;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.script.Compilable;
-import javax.script.CompiledScript;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineFactory;
-import javax.script.ScriptEngineManager;
-
-import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
-import org.luaj.vm2.lib.OneArgFunction;
-import org.luaj.vm2.lib.jse.CoerceJavaToLua;
-import org.luaj.vm2.script.LuajContext;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.scripts.constants.EventType;
@@ -27,6 +7,18 @@ import emu.grasscutter.scripts.constants.ScriptGadgetState;
 import emu.grasscutter.scripts.constants.ScriptRegionShape;
 import emu.grasscutter.scripts.serializer.LuaSerializer;
 import emu.grasscutter.scripts.serializer.Serializer;
+import org.luaj.vm2.LuaTable;
+import org.luaj.vm2.LuaValue;
+import org.luaj.vm2.lib.OneArgFunction;
+import org.luaj.vm2.lib.jse.CoerceJavaToLua;
+import org.luaj.vm2.script.LuajContext;
+
+import javax.script.*;
+import java.io.File;
+import java.io.FileReader;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ScriptLoader {
 	private static ScriptEngineManager sm;
@@ -35,7 +27,7 @@ public class ScriptLoader {
 	private static String fileType;
 	private static Serializer serializer;
 	
-	private static Map<String, CompiledScript> scripts = new HashMap<>();
+	private static Map<String, CompiledScript> scripts = new ConcurrentHashMap<>();
 	
 	public synchronized static void init() throws Exception {
 		if (sm != null) {
@@ -83,21 +75,22 @@ public class ScriptLoader {
 
 	public static CompiledScript getScriptByPath(String path) {
 		CompiledScript sc = scripts.get(path);
-		
-		Grasscutter.getLogger().info("Loaded " + path);
-		
-		if (sc == null) {
-			File file = new File(path);
-			
-			if (!file.exists()) return null;
-			
-			try (FileReader fr = new FileReader(file)) {
-				sc = ((Compilable) getEngine()).compile(fr);
-				scripts.put(path, sc);
-			} catch (Exception e) {
-				//e.printStackTrace();
-				return null;
-			}
+		if (sc != null) {
+			return sc;
+		}
+
+		Grasscutter.getLogger().info("Loaded Script" + path);
+
+		File file = new File(path);
+
+		if (!file.exists()) return null;
+
+		try (FileReader fr = new FileReader(file)) {
+			sc = ((Compilable) getEngine()).compile(fr);
+			scripts.putIfAbsent(path, sc);
+		} catch (Exception e) {
+			Grasscutter.getLogger().error("Loaded Script {} failed!", path, e);
+			return null;
 		}
 		
 		return sc;
