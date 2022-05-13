@@ -20,12 +20,12 @@ public class PacketAvatarExpeditionAllDataRsp extends BasePacket {
         var expeditionInfo = player.getExpeditionInfo();
         for (Long key : player.getExpeditionInfo().keySet()) {
             ExpeditionInfo e = expeditionInfo.get(key);
-            avatarExpeditionInfoList.put(key, AvatarExpeditionInfo.newBuilder().setStateValue(e.getState()).setExpId(e.getExpId()).setHourTime(e.getHourTime()).setStartTime(e.getStartTime()).build());
-        };
+            avatarExpeditionInfoList.put(key, AvatarExpeditionInfo.newBuilder().setStateValue(e.getState()).setExpId(e.getExpId()).setHourTime(e.getHourTime()).setStartTime(e.getStartTime()).setShortenRatio(e.getShortenRatio()).build());
+        }
 
         AvatarExpeditionAllDataRsp.Builder proto = AvatarExpeditionAllDataRsp.newBuilder()
                 .addAllOpenExpeditionList(openExpeditionList)
-                .setExpeditionCountLimit(5)
+                .setExpeditionCountLimit(player.getExpeditionCountLimit())
                 .putAllExpeditionInfoMap(avatarExpeditionInfoList);
 
         this.setData(proto.build());

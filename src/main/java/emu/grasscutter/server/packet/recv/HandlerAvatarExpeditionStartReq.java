@@ -16,7 +16,17 @@ public class HandlerAvatarExpeditionStartReq extends PacketHandler {
         AvatarExpeditionStartReq req = AvatarExpeditionStartReq.parseFrom(payload);
 
         int startTime = Utils.getCurrentSeconds();
-        session.getPlayer().addExpeditionInfo(req.getAvatarGuid(), req.getExpId(), req.getHourTime(), startTime);
+        float shortenRatio = 0;
+        if (session.getServer().getExpeditionManager().getExpeditionAvatarEffectList() != null) {
+            for (var l : session.getServer().getExpeditionManager().getExpeditionAvatarEffectList()){
+                if (session.getPlayer().getAvatars().getAvatarByGuid(req.getAvatarGuid()).getAvatarId() == l.getAvatarId() &&
+                        l.getArea().equals(session.getServer().getExpeditionManager().expId2Area(req.getExpId()))){
+                    shortenRatio = l.getShortenRatio();
+                }
+            }
+        }
+
+        session.getPlayer().addExpeditionInfo(req.getAvatarGuid(), req.getExpId(), req.getHourTime(), startTime, shortenRatio);
         session.getPlayer().save();
         session.send(new PacketAvatarExpeditionStartRsp(session.getPlayer()));
     }

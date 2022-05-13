@@ -106,6 +106,7 @@ public class Player {
 	private Set<Integer> rewardedLevels;
 	private ArrayList<ShopLimit> shopLimit;
 	private Map<Long, ExpeditionInfo> expeditionInfo;
+	private int expeditionCountLimit;
 
 	private int sceneId;
 	private int regionId;
@@ -178,6 +179,7 @@ public class Player {
 
 		this.shopLimit = new ArrayList<>();
 		this.expeditionInfo = new HashMap<>();
+		this.expeditionCountLimit = 2;
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager();
 		this.staminaManager = new StaminaManager(this);
@@ -313,6 +315,10 @@ public class Player {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_EXP);
 	}
 
+	public int getExpeditionCountLimit() {
+		return expeditionCountLimit;
+	}
+
 	public int getWorldLevel() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL);
 	}
@@ -386,6 +392,8 @@ public class Player {
 			this.updateProfile();
 			// Update player with packet
 			this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_LEVEL));
+			// Update player Expedition Count Limit
+			this.expeditionCountLimit = Math.max(Math.min(level/5-3,5),2);
 		}
 
 		// Set exp
@@ -684,12 +692,13 @@ public class Player {
 		return expeditionInfo;
 	}
 
-	public void addExpeditionInfo(long avaterGuid, int expId, int hourTime, int startTime){
+	public void addExpeditionInfo(long avaterGuid, int expId, int hourTime, int startTime, float shortenRatio){
 		ExpeditionInfo exp = new ExpeditionInfo();
 		exp.setExpId(expId);
 		exp.setHourTime(hourTime);
 		exp.setState(1);
 		exp.setStartTime(startTime);
+		exp.setShortenRatio(shortenRatio);
 		expeditionInfo.put(avaterGuid, exp);
 	}
 

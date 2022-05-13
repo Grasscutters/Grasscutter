@@ -43,6 +43,16 @@ public class HandlerAvatarExpeditionGetRewardReq extends PacketHandler {
                             if(RewardData.getMinCount() != RewardData.getMaxCount()){
                                 num = Utils.randomRange(RewardData.getMinCount(), RewardData.getMaxCount());
                             }
+
+                            if (session.getServer().getExpeditionManager().getExpeditionAvatarEffectList() != null) {
+                                for (var l : session.getServer().getExpeditionManager().getExpeditionAvatarEffectList()){
+                                    if (session.getPlayer().getAvatars().getAvatarByGuid(req.getAvatarGuid()).getAvatarId() == l.getAvatarId() &&
+                                            l.getArea().equals(session.getServer().getExpeditionManager().expId2Area(expInfo.getExpId()))){
+                                        num += num * l.getRewardRatio();
+                                    }
+                                }
+                            }
+
                             items.add(new GameItem(RewardData.getItemId(), num));
                         }
                     }
