@@ -75,7 +75,7 @@ public class LuaSerializer implements Serializer {
 			LuaValue[] keys = table.keys();
 			for (LuaValue k : keys) {
 				try {
-					Field field = object.getClass().getDeclaredField(k.checkjstring());
+					Field field = getField(object.getClass(), k.checkjstring());
 					if (field == null) {
 						continue;
 					}
@@ -104,5 +104,18 @@ public class LuaSerializer implements Serializer {
 		}
 		
 		return object;
+	}
+
+	public <T> Field getField(Class<T> clazz, String name){
+		try{
+			return clazz.getField(name);
+		} catch (NoSuchFieldException ex) {
+			try {
+				return clazz.getDeclaredField(name);
+			} catch (NoSuchFieldException e) {
+				// ignore
+				return null;
+			}
+		}
 	}
 }

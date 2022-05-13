@@ -45,6 +45,7 @@ import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
+import emu.grasscutter.server.InternalTickEvent;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
 import emu.grasscutter.server.game.GameServer;
@@ -56,6 +57,8 @@ import emu.grasscutter.utils.MessageHandler;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -1049,7 +1052,8 @@ public class Player {
 
 	public void setMapMarks(HashMap<String, MapMark> newMarks) { mapMarks = newMarks; }
 
-	public synchronized void onTick() {
+	@Subscribe(threadMode = ThreadMode.ASYNC)
+	public synchronized void onTick(InternalTickEvent tickEvent) {
 		// Check ping
 		if (this.getLastPingTime() > System.currentTimeMillis() + 60000) {
 			this.getSession().close();
@@ -1172,9 +1176,11 @@ public class Player {
 		PlayerJoinEvent event = new PlayerJoinEvent(this); event.call();
 		if(event.isCanceled()) // If event is not cancelled, continue.
 			session.close();
+		getServer().getInternalBus().register(this);
 	}
 
 	public void onLogout() {
+		getServer().getInternalBus().unregister(this);
 		// stop stamina calculation
 		getStaminaManager().stopSustainedStaminaHandler();
 
