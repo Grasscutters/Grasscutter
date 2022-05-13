@@ -15,7 +15,6 @@ import emu.grasscutter.scripts.service.ScriptMonsterSpawnService;
 import emu.grasscutter.scripts.service.ScriptMonsterTideService;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import org.apache.commons.lang3.StringUtils;
 import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
@@ -396,7 +395,7 @@ public class SceneScriptManager {
 			}
 			
 			if (ret.isboolean() && ret.checkboolean()) {
-				if(StringUtils.isEmpty(trigger.action)){
+				if(trigger.action == null || trigger.action.isEmpty()){
 					return;
 				}
 				ScriptLib.logger.trace("Call Action Trigger {}", trigger);

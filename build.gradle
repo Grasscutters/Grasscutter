@@ -86,8 +86,7 @@ dependencies {
 
     implementation group: 'org.luaj', name: 'luaj-jse', version: '3.0.1'
 
-    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
-    implementation group:  'org.tinspin', name : 'tinspin-indexes', version: '1.7.1'
+    implementation group:  'ch.ethz.globis.phtree', name : 'phtree', version: '2.5.0'
 
     protobuf files('proto/')
 }
