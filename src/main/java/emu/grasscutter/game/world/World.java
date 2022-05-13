@@ -268,6 +268,11 @@ public class World implements Iterable<Player> {
 		} else if (oldScene == newScene) {
 			enterType = EnterType.ENTER_GOTO;
 		}
+
+		// Home
+		if (2001 <= newScene.getId() && newScene.getId() <= 2004) {
+			enterType = EnterType.ENTER_SELF_HOME;
+		}
 		
 		// Teleport packet
 		player.sendPacket(new PacketPlayerEnterSceneNotify(player, enterType, enterReason, sceneId, pos));

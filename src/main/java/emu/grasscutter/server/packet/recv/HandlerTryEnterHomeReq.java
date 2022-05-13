@@ -1,10 +1,12 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.TryEnterHomeReqOuterClass;
+import emu.grasscutter.scripts.data.SceneConfig;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketTryEnterHomeRsp;
 import emu.grasscutter.utils.Position;
@@ -23,44 +25,16 @@ public class HandlerTryEnterHomeReq extends PacketHandler {
             return;
         }
 
-        // Hardcoded for now
-        switch (session.getPlayer().getCurrentRealmId()) {
-            case 1:
-                session.getPlayer().getWorld().transferPlayerToScene(
-                        session.getPlayer(),
-                        2001,
-                        new Position(839, 319, 137)
-                );
-                break;
+        int realmId = 2000 + session.getPlayer().getCurrentRealmId();
 
-            case 2:
-                session.getPlayer().getWorld().transferPlayerToScene(
-                        session.getPlayer(),
-                        2002,
-                        new Position(605, 444, 554)
-                );
-                break;
+        Scene scene = session.getPlayer().getWorld().getSceneById(realmId);
+        Position pos = scene.getScriptManager().getConfig().born_pos;
 
-            case 3:
-                session.getPlayer().getWorld().transferPlayerToScene(
-                        session.getPlayer(),
-                        2003,
-                        new Position(511, 229, 605)
-                );
-                break;
-
-            case 4:
-                session.getPlayer().getWorld().transferPlayerToScene(
-                        session.getPlayer(),
-                        2004,
-                        new Position(239, 187, 536)
-                );
-                break;
-
-            default:
-                session.send(new PacketTryEnterHomeRsp());
-                return;
-        }
+        session.getPlayer().getWorld().transferPlayerToScene(
+                session.getPlayer(),
+                realmId,
+                pos
+        );
 
 
         session.send(new PacketTryEnterHomeRsp(req.getTargetUid()));
