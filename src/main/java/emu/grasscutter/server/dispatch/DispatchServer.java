@@ -117,7 +117,7 @@ public final class DispatchServer {
 						.setTitle(DISPATCH_INFO.defaultName)
 						.setType("DEV_PUBLIC")
 						.setDispatchUrl(
-								"http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "") + "://"
+								"http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
 										+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
 										+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
 										+ "/query_cur_region/" + defaultServerName)
@@ -150,7 +150,7 @@ public final class DispatchServer {
 						.setTitle(regionInfo.Title)
 						.setType("DEV_PUBLIC")
 						.setDispatchUrl(
-								"http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "") + "://"
+								"http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
 										+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":" 
 										+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort) 
 										+ "/query_cur_region/" + regionInfo.Name)
@@ -189,14 +189,14 @@ public final class DispatchServer {
 				Server server = new Server();
 				ServerConnector serverConnector;
 
-				if(DISPATCH_ENCRYPTION.useEncryption) {
+				if(HTTP_ENCRYPTION.useEncryption) {
 					SslContextFactory.Server sslContextFactory = new SslContextFactory.Server();
-					File keystoreFile = new File(DISPATCH_ENCRYPTION.keystore);
+					File keystoreFile = new File(HTTP_ENCRYPTION.keystore);
 
 					if(keystoreFile.exists()) {
 						try {
 							sslContextFactory.setKeyStorePath(keystoreFile.getPath());
-							sslContextFactory.setKeyStorePassword(DISPATCH_ENCRYPTION.keystorePassword);
+							sslContextFactory.setKeyStorePassword(HTTP_ENCRYPTION.keystorePassword);
 						} catch (Exception e) {
 							e.printStackTrace();
 							Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.password_error"));
@@ -214,7 +214,7 @@ public final class DispatchServer {
 						serverConnector = new ServerConnector(server, sslContextFactory);
 					} else {
 						Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.no_keystore_error"));
-						DISPATCH_ENCRYPTION.useEncryption = false;
+						HTTP_ENCRYPTION.useEncryption = false;
 
 						serverConnector = new ServerConnector(server);
 					}
@@ -227,18 +227,19 @@ public final class DispatchServer {
 				return server;
 			});
 
-			config.enforceSsl = DISPATCH_ENCRYPTION.useEncryption;
+			config.enforceSsl = HTTP_ENCRYPTION.useEncryption;
 			if(SERVER.debugLevel == ServerDebugMode.ALL) {
 				config.enableDevLogging();
 			}
 			
-			if (DISPATCH_POLICIES.cors.enabled) {
-				var corsPolicy = DISPATCH_POLICIES.cors;
+			if (HTTP_POLICIES.cors.enabled) {
+				var corsPolicy = HTTP_POLICIES.cors;
 				if (corsPolicy.allowedOrigins.length > 0) 
 					config.enableCorsForOrigin(corsPolicy.allowedOrigins);
 				else config.enableCorsForAllOrigins();
 			}
 		});
+		
 		httpServer.get("/", (req, res) -> res.send("<!doctype html><html><head><meta charset=\"utf8\"></head><body>" + translate("messages.status.welcome") + "</body></html>"));
 
 		httpServer.raw().error(404, ctx -> {
@@ -279,6 +280,7 @@ public final class DispatchServer {
 			res.send(event.getRegionList());
 		});
 
+		// /server/:id -> 2.6.5x
 		httpServer.get("/query_cur_region/:id", (req, res) -> {
 			String regionName = req.params("id");
 			// Log

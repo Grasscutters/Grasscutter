@@ -33,7 +33,8 @@
         "session_key_error": "Wrong session key.",
         "username_error": "Username not found.",
         "username_create_error": "Username not found, create failed."
-      }
+      },
+      "router_error": "[Dispatch] Unable to attach router."
     },
     "status": {
       "free_software": "Grasscutter is FREE software. If you have paid for this, you may have been scammed. Homepage: https://github.com/Grasscutters/Grasscutter",
