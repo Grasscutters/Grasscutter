@@ -66,6 +66,12 @@ public class QuestManager {
 			}
 		}
 	}
+
+	public void forEachMainQuest(Consumer<GameMainQuest> callback) {
+		for (GameMainQuest mainQuest : getQuests().values()) {
+			callback.accept(mainQuest);
+		}
+	}
 	
 	// TODO
 	public void forEachActiveQuest(Consumer<GameQuest> callback) {

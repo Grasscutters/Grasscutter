@@ -3,6 +3,7 @@ package emu.grasscutter.game.quest;
 import java.util.HashMap;
 import java.util.Map;
 
+import emu.grasscutter.server.packet.send.PacketCodexDataUpdateNotify;
 import org.bson.types.ObjectId;
 
 import dev.morphia.annotations.Entity;
@@ -91,6 +92,7 @@ public class GameMainQuest {
 		this.isFinished = true;
 		this.state = ParentQuestState.PARENT_QUEST_STATE_FINISHED;
 		this.getOwner().getSession().send(new PacketFinishedParentQuestUpdateNotify(this));
+		this.getOwner().getSession().send(new PacketCodexDataUpdateNotify(this));
 		this.save();
 	}
 
