@@ -8,6 +8,7 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -95,6 +96,19 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			mailBuilder.mail.itemList.addAll(Arrays.asList(welcomeMail.items));
 			mailBuilder.mail.importance = 1;
 			player.sendMail(mailBuilder.mail);
+
+      // Quest - Commented out because a problem is caused if you log out while this quest is active
+      /*
+	 	  if (player.getQuestManager().getMainQuestById(351) == null) {
+			 GameQuest quest = player.getQuestManager().addQuest(35104);
+			 if (quest != null) {
+		 		quest.finish();
+		   }
+			player.getQuestManager().addQuest(35101);			
+			//this.setSceneId(3);
+			//this.getPos().set(GameConstants.START_POSITION);
+	  	}
+      */
 			
 		} catch (Exception e) {
 			Grasscutter.getLogger().error("Error creating player object: ", e);
