@@ -1257,6 +1257,15 @@ public class Player {
 
     }
 
+    // Make sure Tower load is there   
+    if (this.getTowerManager() == null) {
+      Grasscutter.getLogger().info("DEBUG OnLoad_Login: Setnew TowerManager "+this.getNickname()+" ");
+      this.towerManager = new TowerManager(this);
+    }else{
+      Grasscutter.getLogger().info("DEBUG OnLoad_Login: Skip check or add ?TowerManager "+this.getNickname()+" ");
+      this.getTowerManager().setPlayer(this);      
+    }
+
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
 		}
@@ -1299,7 +1308,6 @@ public class Player {
 		if (getSession().isActive()) {
 			getServer().registerPlayer(this);
 			getProfile().setPlayer(this); // Set online
-      getTowerManager().setPlayer(this); // Set Tes
 		}
     
 		// Multiplayer setting
