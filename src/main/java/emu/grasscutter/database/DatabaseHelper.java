@@ -213,8 +213,8 @@ public final class DatabaseHelper {
 	}
 
   // find item null by match playerId account
-  public static List<Avatar> getAvatarsNullPlayer(int limit) {
-		return DatabaseManager.getGameDatastore().find(Avatar.class).stream().limit(limit).filter(g -> DatabaseHelper.getAccountByPlayerId(g.getOwnerId()) == null).toList();
+  public static List<Avatar> getAvatarsNullPlayer() {
+		return DatabaseManager.getGameDatastore().find(Avatar.class).stream().filter(g -> DatabaseHelper.getAccountByPlayerId(g.getOwnerId()) == null).toList();
 	}
 
   public static boolean deleteAvatar(Avatar item) {
@@ -235,8 +235,8 @@ public final class DatabaseHelper {
 		return DatabaseManager.getGameDatastore().find(GameItem.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
 
-  public static List<GameItem> getInventoryNullPlayer(int limit) {
-		return DatabaseManager.getGameDatastore().find(GameItem.class).stream().limit(limit).filter(g -> DatabaseHelper.getAccountByPlayerId(g.getOwnerId()) == null).toList();
+  public static List<GameItem> getInventoryNullPlayer() {
+		return DatabaseManager.getGameDatastore().find(GameItem.class).stream().filter(g -> DatabaseHelper.getAccountByPlayerId(g.getOwnerId()) == null).toList();
 	}
 	
 	public static List<Friendship> getFriends(Player player) {

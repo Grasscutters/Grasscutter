@@ -87,6 +87,9 @@ public class TowerManager {
 
     public void enterLevel(int enterPointId) {
 
+        // foce?
+        //setPlayer(tes);
+
         Grasscutter.getLogger().info("DEBUG Abyse: enterLevel "+player.getNickname()+" ");
         
         var levelData = GameData.getTowerLevelDataMap().get(getCurrentLevelId());

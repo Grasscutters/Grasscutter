@@ -167,7 +167,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 				level = last;
 				args.remove(args.size()-1);
 			}
-		} catch (NumberFormatException ignored) {  // Could be a stat,times string so no need to panic
+		} catch (Exception ignored) {  // Could be a stat,times string so no need to panic
 		}
 
 		// Get substats.

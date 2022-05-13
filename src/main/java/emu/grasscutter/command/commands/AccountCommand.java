@@ -66,7 +66,7 @@ public final class AccountCommand implements CommandHandler {
                  return;
             case "clean_null_avatar":
 
-                List<Avatar> Item_ANull = DatabaseHelper.getAvatarsNullPlayer(limit);
+                List<Avatar> Item_ANull = DatabaseHelper.getAvatarsNullPlayer();
                 CommandHandler.sendMessage(null, "Currently found "+Item_ANull.size()+" avatar that any player doesn't use");
                 int tmp2=0;
                 for (Avatar remove : Item_ANull) {
@@ -79,7 +79,7 @@ public final class AccountCommand implements CommandHandler {
                 return;
             case "clean_null_item":
 
-                List<GameItem> Item_Null = DatabaseHelper.getInventoryNullPlayer(limit);
+                List<GameItem> Item_Null = DatabaseHelper.getInventoryNullPlayer();
                 CommandHandler.sendMessage(null, "Currently found "+Item_Null.size()+" Items that any player doesn't use");
                 int tmp3=0;
                 for (GameItem remove : Item_Null) {
