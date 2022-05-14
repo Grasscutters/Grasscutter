@@ -144,24 +144,22 @@ public class Account {
 	}
 
 	public boolean hasPermission(String permission) {
-		if (this.permissions.contains(permission)) {
-			return true;
-		}
-		if(this.permissions.contains("*") && this.permissions.contains("-"+permission)) {
-			return false;
-		}
+
+		if (this.permissions.contains(permission)) return true;
+		if(this.permissions.contains("*") && this.permissions.size() == 1) return true;
 
 		String[] permissionParts = permission.split("\\.");
 		for (String p : this.permissions) {
+
 			if (p.startsWith("-") && permissionMatchesWildcard(p.substring(1), permissionParts)) {
+				Grasscutter.getLogger().info("Permission " + permission + " denied to " + this.username);
 				return false;
 			}
-			if (permissionMatchesWildcard(p, permissionParts)) {
-				Grasscutter.getLogger().info("Permission " + p + " matches " + permission);
-				return true;
-			}
+
+			if (permissionMatchesWildcard(p, permissionParts)) return true;
 		}
-		return false;
+
+		return this.permissions.contains("*");
 	}
 	
 	public boolean removePermission(String permission) {
