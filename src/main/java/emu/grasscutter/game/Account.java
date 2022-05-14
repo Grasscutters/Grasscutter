@@ -144,12 +144,20 @@ public class Account {
 	}
 
 	public boolean hasPermission(String permission) {
-		if (this.permissions.contains(permission) || this.permissions.contains("*")) {
+		if (this.permissions.contains(permission)) {
 			return true;
 		}
+		if(this.permissions.contains("*") && this.permissions.contains("-"+permission)) {
+			return false;
+		}
+
 		String[] permissionParts = permission.split("\\.");
 		for (String p : this.permissions) {
+			if (p.startsWith("-") && permissionMatchesWildcard(p.substring(1), permissionParts)) {
+				return false;
+			}
 			if (permissionMatchesWildcard(p, permissionParts)) {
+				Grasscutter.getLogger().info("Permission " + p + " matches " + permission);
 				return true;
 			}
 		}
