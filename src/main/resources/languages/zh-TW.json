@@ -215,6 +215,14 @@
       "success": "座標：%s, %s, %s\n場景ID：%s",
       "description": "獲取目前所在位置的座標。"
     },
+    "quest": {
+      "description": "添加或完成任務",
+      "usage": "quest <add|finish> [任務ID]",
+      "added": "已添加任務 %s",
+      "finished": "已完成任務 %s",
+      "not_found": "未找到任務",
+      "invalid_id": "無效的任務ID"
+    },
     "reload": {
       "reload_start": "正在重新加載設定檔。",
       "reload_done": "重新加載已完成。",
