@@ -10,8 +10,10 @@ import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 import java.util.ArrayList;
 import java.util.List;
 
-@Command(label = "join", usage = "join <avatar id> <avatar id> <avatar id>...",
-        description = "force join avatar into your team", permission = "player.join")
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "join", usage = "join [AvatarIDs] such as\"join 10000038 10000039\"",
+        description = "commands.join.description", permission = "player.join")
 public class JoinCommand implements CommandHandler {
 
     @Override
@@ -23,7 +25,7 @@ public class JoinCommand implements CommandHandler {
                 avatarIds.add(avatarId);
             } catch (Exception ignored) {
                 ignored.printStackTrace();
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_avatar_id);
+                CommandHandler.sendMessage(sender, translate("commands.generic.invalid.avatarId"));
                 return;
             }
         }
@@ -32,8 +34,7 @@ public class JoinCommand implements CommandHandler {
         for (int i = 0; i < args.size(); i++) {
             Avatar avatar = sender.getAvatars().getAvatarById(avatarIds.get(i));
             if (avatar == null || sender.getTeamManager().getCurrentTeamInfo().contains(avatar)) {
-                // Should never happen
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_avatar_id);
+                CommandHandler.sendMessage(sender, translate("commands.generic.invalid.avatarId"));
                 return;
             }
             sender.getTeamManager().getCurrentTeamInfo().addAvatar(avatar);
