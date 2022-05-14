@@ -176,6 +176,10 @@
       "success": "All characters have been healed.",
       "description": "Heal all characters in your current team."
     },
+    "join": {
+      "usage": "Usage: join [AvatarIDs] such as\"join 10000038 10000039\"",
+      "description": "force join avatar into your team"
+    },
     "kick": {
       "player_kick_player": "Player [%s:%s] has kicked player [%s:%s]",
       "server_kick_player": "Kicking player [%s:%s]",
@@ -227,6 +231,11 @@
       "reload_start": "Reloading config.",
       "reload_done": "Reload complete.",
       "description": "Reload server config"
+    },
+    "remove": {
+      "usage": "Usage: remove [indexOfYourTeams] index start from 1",
+      "invalid_index": "index start from 1",
+      "description": "force remove avatar into your team"
     },
     "resetConst": {
       "reset_all": "Reset all avatars' constellations.",
