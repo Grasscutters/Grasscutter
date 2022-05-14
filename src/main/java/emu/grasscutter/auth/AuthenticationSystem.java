@@ -28,6 +28,13 @@ public interface AuthenticationSystem {
     void resetPassword(String username);
 
     /**
+     * Called by plugins to internally verify a user's identity.
+     * @param details A unique, one-time token to verify the user.
+     * @return True if the user is verified, False otherwise.
+     */
+    boolean verifyUser(String details);
+
+    /**
      * This is the authenticator used for password authentication.
      * @return An authenticator.
      */

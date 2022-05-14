@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message QuestUpdateQuestVarRsp {
+	int32 retcode = 1;
+	uint32 quest_id = 2;
+	uint32 parent_quest_id = 3;
+	uint32 parent_quest_var_seq = 4;
+}

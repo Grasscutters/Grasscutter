@@ -15,6 +15,7 @@ import emu.grasscutter.game.gacha.GachaRecord;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.GameMainQuest;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -111,6 +112,8 @@ public final class DatabaseHelper {
 		DatabaseManager.getGameDatabase().getCollection("gachas").deleteMany(eq("ownerId", target.getPlayerUid()));
 		// Delete GameItem.class data
 		DatabaseManager.getGameDatabase().getCollection("items").deleteMany(eq("ownerId", target.getPlayerUid()));
+		// Delete GameMainQuest.class data
+		DatabaseManager.getGameDatabase().getCollection("quests").deleteMany(eq("ownerUid", target.getPlayerUid()));
 
 		// Delete friendships.
 		// Here, we need to make sure to not only delete the deleted account's friendships,
@@ -259,5 +262,17 @@ public final class DatabaseHelper {
 	public static boolean deleteMail(Mail mail) {
 		DeleteResult result = DatabaseManager.getGameDatastore().delete(mail);
 		return result.wasAcknowledged();
+	}
+	
+	public static List<GameMainQuest> getAllQuests(Player player) {
+		return DatabaseManager.getGameDatastore().find(GameMainQuest.class).filter(Filters.eq("ownerUid", player.getUid())).stream().toList();
+	}
+	
+	public static void saveQuest(GameMainQuest quest) {
+		DatabaseManager.getGameDatastore().save(quest);
+	}
+	
+	public static boolean deleteQuest(GameMainQuest quest) {
+		return DatabaseManager.getGameDatastore().delete(quest).wasAcknowledged();
 	}
 }

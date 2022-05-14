@@ -5,10 +5,13 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.*;
+import emu.grasscutter.net.proto.RegionInfoOuterClass;
+import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
 import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
 import emu.grasscutter.server.http.Router;
+import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 import express.Express;
@@ -30,15 +33,11 @@ import static emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.*;
  * Handles requests related to region queries.
  */
 public final class RegionHandler implements Router {
-    private String regionQuery = "";
-    private String regionList = "";
-    
     private static final Map<String, RegionData> regions = new ConcurrentHashMap<>();
     private static String regionListResponse;
     
     public RegionHandler() {
         try { // Read & initialize region data.
-            this.readRegionData();
             this.initialize();
         } catch (Exception exception) {
             Grasscutter.getLogger().error("Failed to initialize region data.", exception);
@@ -46,29 +45,12 @@ public final class RegionHandler implements Router {
     }
 
     /**
-     * Loads initial region data.
-     */
-    private void readRegionData() {
-        File file;
-
-        file = new File(DATA("query_region_list.txt"));
-        if (file.exists()) 
-            this.regionList = new String(FileUtils.read(file));
-        else Grasscutter.getLogger().error("[Dispatch] 'query_region_list' not found!");
-
-        file = new File(DATA("query_cur_region.txt"));
-        if (file.exists()) 
-            regionQuery = new String(FileUtils.read(file));
-        else Grasscutter.getLogger().warn("[Dispatch] 'query_cur_region' not found!");
-    }
-
-    /**
      * Configures region data according to configuration.
      */
-    private void initialize() throws InvalidProtocolBufferException {
-        // Decode the initial region query.
-        byte[] queryBase64 = Base64.getDecoder().decode(this.regionQuery);
-        QueryCurrRegionHttpRsp regionQuery = QueryCurrRegionHttpRsp.parseFrom(queryBase64);
+    private void initialize() {
+        String dispatchDomain = "http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
+                + lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress) + ":"
+                + lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort);
         
         // Create regions.
         List<RegionSimpleInfo> servers = new ArrayList<>();
@@ -87,37 +69,33 @@ public final class RegionHandler implements Router {
                 Grasscutter.getLogger().error("Region name already in use.");
                 return;
             }
-            
+    
             // Create a region identifier.
             var identifier = RegionSimpleInfo.newBuilder()
-                    .setName(region.Name).setTitle(region.Title)
-                    .setType("DEV_PUBLIC").setDispatchUrl(
-                            "http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
-                                    + lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress) + ":"
-                                    + lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort)
-                                    + "/query_cur_region/" + region.Name)
+                    .setName(region.Name).setTitle(region.Title).setType("DEV_PUBLIC")
+                    .setDispatchUrl(dispatchDomain + "/query_cur_region/" + region.Name)
                     .build();
             usedNames.add(region.Name); servers.add(identifier);
             
             // Create a region info object.
-            var regionInfo = regionQuery.getRegionInfo().toBuilder()
+            var regionInfo = RegionInfo.newBuilder()
                     .setGateserverIp(region.Ip).setGateserverPort(region.Port)
-                    .setSecretKey(ByteString.copyFrom(FileUtils.read(KEYS_FOLDER + "/dispatchSeed.bin")))
+                    .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
                     .build();
             // Create an updated region query.
-            var updatedQuery = regionQuery.toBuilder().setRegionInfo(regionInfo).build();
+            var updatedQuery = QueryCurrRegionHttpRsp.newBuilder().setRegionInfo(regionInfo).build();
             regions.put(region.Name, new RegionData(updatedQuery, Utils.base64Encode(updatedQuery.toByteString().toByteArray())));
         });
         
-        // Decode the initial region list.
-        byte[] listBase64 = Base64.getDecoder().decode(this.regionList);
-        QueryRegionListHttpRsp regionList = QueryRegionListHttpRsp.parseFrom(listBase64);
+        // Create a config object.
+        byte[] customConfig = "{\"sdkenv\":\"2\",\"checkdevice\":\"false\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}".getBytes();
+        Crypto.xor(customConfig, Crypto.DISPATCH_KEY); // XOR the config with the key.
         
         // Create an updated region list.
         QueryRegionListHttpRsp updatedRegionList = QueryRegionListHttpRsp.newBuilder()
                 .addAllRegionList(servers)
-                .setClientSecretKey(regionList.getClientSecretKey())
-                .setClientCustomConfigEncrypted(regionList.getClientCustomConfigEncrypted())
+                .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+                .setClientCustomConfigEncrypted(ByteString.copyFrom(customConfig))
                 .setEnableLoginPc(true).build();
         
         // Set the region list response.
