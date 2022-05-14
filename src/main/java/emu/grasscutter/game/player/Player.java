@@ -754,13 +754,13 @@ public class Player {
 		}
 		this.save();
 	}
-	public boolean getstamina() {
+	public boolean getStamina() {
 		// Get Stamina
 		return stamina;
 	}
-	public void setstamina(boolean set_stamina) {
+	public void setStamina(boolean stamina) {
 		// Set Stamina
-		this.stamina = set_stamina;
+		this.stamina = stamina;
 	}
 	public boolean inGodmode() {
 		return godmode;
