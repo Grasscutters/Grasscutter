@@ -19,6 +19,8 @@ import emu.grasscutter.server.game.GameSession.SessionState;
 
 import java.util.Arrays;
 
+import static emu.grasscutter.Configuration.*;
+
 @Opcodes(PacketOpcodes.SetPlayerBornDataReq)
 public class HandlerSetPlayerBornDataReq extends PacketHandler {
 	
@@ -34,6 +36,13 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 		} else if (avatarId == GameConstants.MAIN_CHARACTER_FEMALE) {
 			startingSkillDepot = 704;
 		} else {
+			return;
+		}
+		
+		// Make sure resources folder is set
+		if (!GameData.getAvatarDataMap().containsKey(avatarId)) {
+			Grasscutter.getLogger().error("No avatar data found! Please check your ExcelBinOutput folder.");
+			session.close();
 			return;
 		}
 		
@@ -55,7 +64,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			// Create avatar
 			if (player.getAvatars().getAvatarCount() == 0) {
 				Avatar mainCharacter = new Avatar(avatarId);
-				mainCharacter.setSkillDepot(GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
+				mainCharacter.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
 				player.addAvatar(mainCharacter);
 				player.setMainCharacterId(avatarId);
 				player.setHeadImage(avatarId);
@@ -78,16 +87,13 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			session.send(new BasePacket(PacketOpcodes.SetPlayerBornDataRsp));
 
 			// Default mail
-			char d = 'G';
-			char e = 'r';
-			char z = 'a';
-			char u = 'c';
-			char s = 't';
+			var welcomeMail = GAME_INFO.joinOptions.welcomeMail;
 			MailBuilder mailBuilder = new MailBuilder(player.getUid(), new Mail());
-			mailBuilder.mail.mailContent.title = String.format("W%sl%som%s to %s%s%s%s%s%s%s%s%s%s%s!", DatabaseHelper.AWJVN, u, DatabaseHelper.AWJVN, d, e, z, GameData.EJWOA, GameData.EJWOA, u, PacketOpcodes.ONLWE, s, s, DatabaseHelper.AWJVN, e);
-			mailBuilder.mail.mailContent.sender = String.format("L%swnmow%s%s @ Gi%sH%sb", z, DatabaseHelper.AWJVN, e, s, PacketOpcodes.ONLWE);
-			mailBuilder.mail.mailContent.content = Grasscutter.getConfig().GameServer.WelcomeMailContent;
-			mailBuilder.mail.itemList.addAll(Arrays.asList(Grasscutter.getConfig().GameServer.WelcomeMailItems));
+			mailBuilder.mail.mailContent.title = welcomeMail.title;
+			mailBuilder.mail.mailContent.sender = welcomeMail.sender;
+			// Please credit Grasscutter if changing something here. We don't condone commercial use of the project.
+			mailBuilder.mail.mailContent.content = welcomeMail.content + "\n<type=\"browser\" text=\"GitHub\" href=\"https://github.com/Melledy/Grasscutter\"/>";
+			mailBuilder.mail.itemList.addAll(Arrays.asList(welcomeMail.items));
 			mailBuilder.mail.importance = 1;
 			player.sendMail(mailBuilder.mail);
 		} catch (Exception e) {

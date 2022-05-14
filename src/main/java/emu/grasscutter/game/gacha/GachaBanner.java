@@ -1,8 +1,13 @@
 package emu.grasscutter.game.gacha;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.proto.GachaInfoOuterClass.GachaInfo;
 import emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfo;
+import emu.grasscutter.utils.Utils;
+
+import static emu.grasscutter.Configuration.*;
+
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.common.ItemParamData;
 
 public class GachaBanner {
 	private int gachaType;
@@ -10,18 +15,35 @@ public class GachaBanner {
 	private String prefabPath;
 	private String previewPrefabPath;
 	private String titlePath;
-	private int costItem;
+	private int costItemId = 0;
+	private int costItemAmount = 1;
+	private int costItemId10 = 0;
+	private int costItemAmount10 = 10;
 	private int beginTime;
 	private int endTime;
 	private int sortId;
-	private int[] rateUpItems1;
-	private int[] rateUpItems2;
-	private int baseYellowWeight = 60; // Max 10000
-	private int basePurpleWeight = 510; // Max 10000
-	private int eventChance = 50; // Chance to win a featured event item
-	private int softPity = 75;
-	private int hardPity = 90;
+	private int[] rateUpItems4 = {};
+	private int[] rateUpItems5 = {};
+	private int[] fallbackItems3 = {11301, 11302, 11306, 12301, 12302, 12305, 13303, 14301, 14302, 14304, 15301, 15302, 15304};
+	private int[] fallbackItems4Pool1 = {1014, 1020, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1053, 1055, 1056, 1064};
+	private int[] fallbackItems4Pool2 = {11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407, 14401, 14402, 14403, 14409, 15401, 15402, 15403, 15405};
+	private int[] fallbackItems5Pool1 = {1003, 1016, 1042, 1035, 1041};
+	private int[] fallbackItems5Pool2 = {11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502};
+	private boolean removeC6FromPool = false;
+	private boolean autoStripRateUpFromFallback = true;
+	private int[][] weights4 = {{1,510}, {8,510}, {10,10000}};
+	private int[][] weights5 = {{1,75}, {73,150}, {90,10000}};
+	private int[][] poolBalanceWeights4 = {{1,255}, {17,255}, {21,10455}};
+	private int[][] poolBalanceWeights5 = {{1,30}, {147,150}, {181,10230}};
+	private int eventChance4 = 50; // Chance to win a featured event item
+	private int eventChance5 = 50; // Chance to win a featured event item
 	private BannerType bannerType = BannerType.STANDARD;
+
+	// Kinda wanna deprecate these but they're in people's configs
+	private int[] rateUpItems1 = {};
+	private int[] rateUpItems2 = {};
+	private int eventChance = -1;
+	private int costItem = 0;
 	
 	public int getGachaType() {
 		return gachaType;
@@ -47,8 +69,15 @@ public class GachaBanner {
 		return titlePath;
 	}
 
+	public ItemParamData getCost(int numRolls) {
+		return switch (numRolls) {
+			case 10 -> new ItemParamData((costItemId10 > 0) ? costItemId10 : getCostItem(), costItemAmount10);
+			default -> new ItemParamData(getCostItem(), costItemAmount * numRolls);
+		};
+	}
+
 	public int getCostItem() {
-		return costItem;
+		return (costItem > 0) ? costItem : costItemId;
 	}
 
 	public int getBeginTime() {
@@ -63,76 +92,88 @@ public class GachaBanner {
 		return sortId;
 	}
 
-	public int getBaseYellowWeight() {
-		return baseYellowWeight;
+	public int[] getRateUpItems4() {
+		return (rateUpItems2.length > 0) ? rateUpItems2 : rateUpItems4;
+	}
+	public int[] getRateUpItems5() {
+		return (rateUpItems1.length > 0) ? rateUpItems1 : rateUpItems5;
 	}
 
-	public int getBasePurpleWeight() {
-		return basePurpleWeight;
+	public int[] getFallbackItems3() {return fallbackItems3;}
+	public int[] getFallbackItems4Pool1() {return fallbackItems4Pool1;}
+	public int[] getFallbackItems4Pool2() {return fallbackItems4Pool2;}
+	public int[] getFallbackItems5Pool1() {return fallbackItems5Pool1;}
+	public int[] getFallbackItems5Pool2() {return fallbackItems5Pool2;}
+
+	public boolean getRemoveC6FromPool() {return removeC6FromPool;}
+	public boolean getAutoStripRateUpFromFallback() {return autoStripRateUpFromFallback;}
+
+
+	public int getWeight(int rarity, int pity) {
+		return switch(rarity) {
+			case 4 -> Utils.lerp(pity, weights4);
+			default -> Utils.lerp(pity, weights5);
+		};
 	}
 
-	public int[] getRateUpItems1() {
-		return rateUpItems1;
+	public int getPoolBalanceWeight(int rarity, int pity) {
+		return switch(rarity) {
+			case 4 -> Utils.lerp(pity, poolBalanceWeights4);
+			default -> Utils.lerp(pity, poolBalanceWeights5);
+		};
 	}
 
-	public int[] getRateUpItems2() {
-		return rateUpItems2;
-	}
-	
-	public int getSoftPity() {
-		return softPity - 1;
-	}
-
-	public int getHardPity() {
-		return hardPity - 1;
-	}
-
-	public int getEventChance() {
-		return eventChance;
+	public int getEventChance(int rarity) {
+		return switch(rarity) {
+			case 4 -> eventChance4;
+			default -> (eventChance > -1) ? eventChance : eventChance5;
+		};
 	}
 
 	@Deprecated
 	public GachaInfo toProto() {
 		return toProto("");
 	}
+	
 	public GachaInfo toProto(String sessionKey) {
-		String record = "https://"
-						+ (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? 
-							Grasscutter.getConfig().getDispatchOptions().Ip : 
-							Grasscutter.getConfig().getDispatchOptions().PublicIp)
-						+ ":"
-						+ Integer.toString(Grasscutter.getConfig().getDispatchOptions().PublicPort == 0 ?
-							Grasscutter.getConfig().getDispatchOptions().Port : 
-							Grasscutter.getConfig().getDispatchOptions().PublicPort)
+		String record = "http" + (DISPATCH_INFO.encryption.useInRouting ? "s" : "") + "://"
+						+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
+						+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
 						+ "/gacha?s=" + sessionKey + "&gachaType=" + gachaType;
+		String details = "http" + (DISPATCH_INFO.encryption.useInRouting ? "s" : "") + "://"
+						+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
+						+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
+						+ "/gacha/details?s=" + sessionKey + "&gachaType=" + gachaType;
+
 		// Grasscutter.getLogger().info("record = " + record);
+		ItemParamData costItem1 = this.getCost(1);
+		ItemParamData costItem10 = this.getCost(10);
 		GachaInfo.Builder info = GachaInfo.newBuilder()
 				.setGachaType(this.getGachaType())
 				.setScheduleId(this.getScheduleId())
 				.setBeginTime(this.getBeginTime())
 				.setEndTime(this.getEndTime())
-				.setCostItemId(this.getCostItem())
-	            .setCostItemNum(1)
+				.setCostItemId(costItem1.getId())
+	            .setCostItemNum(costItem1.getCount())
+	            .setTenCostItemId(costItem10.getId())
+	            .setTenCostItemNum(costItem10.getCount())
 	            .setGachaPrefabPath(this.getPrefabPath())
 	            .setGachaPreviewPrefabPath(this.getPreviewPrefabPath())
-	            .setGachaProbUrl(record)
-	            .setGachaProbUrlOversea(record)
+	            .setGachaProbUrl(details)
+	            .setGachaProbUrlOversea(details)
 	            .setGachaRecordUrl(record)
 	            .setGachaRecordUrlOversea(record)
-	            .setTenCostItemId(this.getCostItem())
-	            .setTenCostItemNum(10)
 	            .setLeftGachaTimes(Integer.MAX_VALUE)
 	            .setGachaTimesLimit(Integer.MAX_VALUE)
 	            .setGachaSortId(this.getSortId());
-		
 		if (this.getTitlePath() != null) {
 			info.setGachaTitlePath(this.getTitlePath());
 		}
 		
-		if (this.getRateUpItems1().length > 0) {
+		if (this.getRateUpItems5().length > 0) {
 			GachaUpInfo.Builder upInfo = GachaUpInfo.newBuilder().setItemParentType(1);
 			
-			for (int id : getRateUpItems1()) {
+			for (int id : getRateUpItems5()) {
 				upInfo.addItemIdList(id);
 				info.addMainNameId(id);
 			}
@@ -140,10 +181,10 @@ public class GachaBanner {
 			info.addGachaUpInfoList(upInfo);
 		}
 		
-		if (this.getRateUpItems2().length > 0) {
+		if (this.getRateUpItems4().length > 0) {
 			GachaUpInfo.Builder upInfo = GachaUpInfo.newBuilder().setItemParentType(2);
 			
-			for (int id : getRateUpItems2()) {
+			for (int id : getRateUpItems4()) {
 				upInfo.addItemIdList(id);
 				if (info.getSubNameIdCount() == 0) {
 					info.addSubNameId(id);

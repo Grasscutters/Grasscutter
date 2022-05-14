@@ -67,3 +67,10 @@ mongod.exe
 /*.sh
 language/
 languages/
+gacha-mapping.js
+data/gacha_mappings.js
+BuildConfig.java
+
+# macOS
+.DS_Store
+data/hk4e/announcement/

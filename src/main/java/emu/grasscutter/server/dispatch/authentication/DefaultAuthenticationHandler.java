@@ -8,6 +8,9 @@ import emu.grasscutter.server.dispatch.json.LoginResultJson;
 import express.http.Request;
 import express.http.Response;
 
+import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.Configuration.*;
+
 public class DefaultAuthenticationHandler implements AuthenticationHandler {
 
     @Override
@@ -26,6 +29,12 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
     }
 
     @Override
+    public boolean verifyUser(String details) {
+        Grasscutter.getLogger().info(translate("dispatch.authentication.default_unable_to_verify"));
+        return false;
+    }
+
+    @Override
     public LoginResultJson handleGameLogin(Request req, LoginAccountRequestJson requestData) {
         LoginResultJson responseData = new LoginResultJson();
 
@@ -34,14 +43,12 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
 
         // Check if account exists, else create a new one.
         if (account == null) {
-            // Account doesnt exist, so we can either auto create it if the config value is
-            // set
-            if (Grasscutter.getConfig().getDispatchOptions().AutomaticallyCreateAccounts) {
-                // This account has been created AUTOMATICALLY. There will be no permissions
-                // added.
+            // Account doesn't exist, so we can either auto create it if the config value is set.
+            if (ACCOUNT.autoCreate) {
+                // This account has been created AUTOMATICALLY. There will be no permissions added.
                 account = DatabaseHelper.createAccountWithId(requestData.account, 0);
 
-                for (String permission : Grasscutter.getConfig().getDispatchOptions().defaultPermissions) {
+                for (String permission : ACCOUNT.defaultPermissions) {
                     account.addPermission(permission);
                 }
 
@@ -51,19 +58,18 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
                     responseData.data.account.token = account.generateSessionKey();
                     responseData.data.account.email = account.getEmail();
 
-                    Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_failed_login_account_create.replace("{ip}", req.ip()).replace("{uid}", responseData.data.account.uid));
+                    Grasscutter.getLogger().info(translate("messages.dispatch.account.account_login_create_success", req.ip(), responseData.data.account.uid));
                 } else {
                     responseData.retcode = -201;
-                    responseData.message = Grasscutter.getLanguage().Username_not_found_create_failed;
+                    responseData.message = translate("messages.dispatch.account.username_create_error");
 
-                    Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_failed_login_account_no_found.replace("{ip}", req.ip()));
+                    Grasscutter.getLogger().info(translate("messages.dispatch.account.account_login_create_error", req.ip()));
                 }
             } else {
                 responseData.retcode = -201;
-                responseData.message = Grasscutter.getLanguage().Username_not_found;
+                responseData.message = translate("messages.dispatch.account.username_error");
 
-                Grasscutter.getLogger().info(String
-                        .format(Grasscutter.getLanguage().Client_failed_login_account_no_found, req.ip()));
+                Grasscutter.getLogger().info(translate("messages.dispatch.account.account_login_exist_error", req.ip()));
             }
         } else {
             // Account was found, log the player in
@@ -72,7 +78,7 @@ public class DefaultAuthenticationHandler implements AuthenticationHandler {
             responseData.data.account.token = account.generateSessionKey();
             responseData.data.account.email = account.getEmail();
 
-            Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_login.replace("{ip}", req.ip()).replace("{uid}", responseData.data.account.uid));
+            Grasscutter.getLogger().info(translate("messages.dispatch.account.login_success", req.ip(), responseData.data.account.uid));
         }
 
         return responseData;

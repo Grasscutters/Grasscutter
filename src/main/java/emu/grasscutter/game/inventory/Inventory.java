@@ -6,8 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.def.AvatarCostumeData;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.AvatarFlycloakData;
@@ -15,7 +15,6 @@ import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
@@ -28,6 +27,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 
+import static emu.grasscutter.Configuration.*;
+
 public class Inventory implements Iterable<GameItem> {
 	private final Player player;
 	
@@ -39,10 +40,10 @@ public class Inventory implements Iterable<GameItem> {
 		this.store = new Long2ObjectOpenHashMap<>();
 		this.inventoryTypes = new Int2ObjectOpenHashMap<>();
 		
-		this.createInventoryTab(ItemType.ITEM_WEAPON, new EquipInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitWeapon));
-		this.createInventoryTab(ItemType.ITEM_RELIQUARY, new EquipInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitRelic));
-		this.createInventoryTab(ItemType.ITEM_MATERIAL, new MaterialInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitMaterial));
-		this.createInventoryTab(ItemType.ITEM_FURNITURE, new MaterialInventoryTab(Grasscutter.getConfig().getGameServerOptions().InventoryLimitFurniture));
+		this.createInventoryTab(ItemType.ITEM_WEAPON, new EquipInventoryTab(INVENTORY_LIMITS.weapons));
+		this.createInventoryTab(ItemType.ITEM_RELIQUARY, new EquipInventoryTab(INVENTORY_LIMITS.relics));
+		this.createInventoryTab(ItemType.ITEM_MATERIAL, new MaterialInventoryTab(INVENTORY_LIMITS.materials));
+		this.createInventoryTab(ItemType.ITEM_FURNITURE, new MaterialInventoryTab(INVENTORY_LIMITS.furniture));
 	}
 
 	public Player getPlayer() {
@@ -172,6 +173,9 @@ public class Inventory implements Iterable<GameItem> {
 			// Handle
 			this.addVirtualItem(item.getItemId(), item.getCount());
 			return item;
+		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_ADSORBATE) {
+			player.getTeamManager().addEnergyToTeam(item);
+			return null;
 		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_AVATAR) {
 			// Get avatar id
 			int avatarId = (item.getItemId() % 1000) + 10000000;
@@ -239,25 +243,77 @@ public class Inventory implements Iterable<GameItem> {
 	
 	private void addVirtualItem(int itemId, int count) {
 		switch (itemId) {
-			case 101: // Character exp
-				getPlayer().getServer().getInventoryManager().upgradeAvatar(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
-				break;
-			case 102: // Adventure exp
-				getPlayer().addExpDirectly(count);
-				break;
-			case 105: // Companionship exp
-				getPlayer().getServer().getInventoryManager().upgradeAvatarFetterLevel(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
-				break;
-			case 201: // Primogem
-				getPlayer().setPrimogems(player.getPrimogems() + count);
-				break;
-			case 202: // Mora
-				getPlayer().setMora(player.getMora() + count);
-				break;
-			case 203: // Genesis Crystals
-				getPlayer().setCrystals(player.getCrystals() + count);
-				break;
+			case 101 -> // Character exp
+					getPlayer().getServer().getInventoryManager().upgradeAvatar(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
+			case 102 -> // Adventure exp
+					getPlayer().addExpDirectly(count);
+			case 105 -> // Companionship exp
+					getPlayer().getServer().getInventoryManager().upgradeAvatarFetterLevel(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
+			case 201 -> // Primogem
+					getPlayer().setPrimogems(player.getPrimogems() + count);
+			case 202 -> // Mora
+					getPlayer().setMora(player.getMora() + count);
+			case 203 -> // Genesis Crystals
+					getPlayer().setCrystals(player.getCrystals() + count);
 		}
+	}
+
+	private int getVirtualItemCount(int itemId) {
+		switch (itemId) {
+			case 201:  // Primogem
+				return player.getPrimogems();
+			case 202:  // Mora
+				return player.getMora();
+			case 203:  // Genesis Crystals
+				return player.getCrystals();
+			default:
+				GameItem item = getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId);  // What if we ever want to operate on weapons/relics/furniture? :S
+				return (item == null) ? 0 : item.getCount();
+		}
+	}
+
+	public boolean payItem(int id, int count) {
+		return payItem(new ItemParamData(id, count));
+	}
+
+	public boolean payItem(ItemParamData costItem) {
+		return payItems(new ItemParamData[] {costItem}, 1, null);
+	}
+
+	public boolean payItems(ItemParamData[] costItems) {
+		return payItems(costItems, 1, null);
+	}
+
+	public boolean payItems(ItemParamData[] costItems, int quantity) {
+		return payItems(costItems, quantity, null);
+	}
+	
+	public synchronized boolean payItems(ItemParamData[] costItems, int quantity, ActionReason reason) {
+		// Make sure player has requisite items
+		for (ItemParamData cost : costItems) {
+			if (getVirtualItemCount(cost.getId()) < (cost.getCount() * quantity)) {
+				return false;
+			}
+		}
+		// All costs are satisfied, now remove them all
+		for (ItemParamData cost : costItems) {
+			switch (cost.getId()) {
+				case 201 ->  // Primogem
+					player.setPrimogems(player.getPrimogems() - (cost.getCount() * quantity));
+				case 202 ->  // Mora
+					player.setMora(player.getMora() - (cost.getCount() * quantity));
+				case 203 ->  // Genesis Crystals
+					player.setCrystals(player.getCrystals() - (cost.getCount() * quantity));
+				default ->
+					removeItem(getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId()), cost.getCount() * quantity);
+			}
+		}
+		
+		if (reason != null) {  // Do we need these?
+			// getPlayer().sendPacket(new PacketItemAddHintNotify(changedItems, reason));
+		}
+		// getPlayer().sendPacket(new PacketStoreItemChangeNotify(changedItems));
+		return true;
 	}
 	
 	public void removeItems(List<GameItem> items) {

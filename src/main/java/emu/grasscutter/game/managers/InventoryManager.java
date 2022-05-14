@@ -1,6 +1,7 @@
 package emu.grasscutter.game.managers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -38,6 +39,8 @@ public class InventoryManager {
 	
 	private final static int RELIC_MATERIAL_1 = 105002; // Sanctifying Unction
 	private final static int RELIC_MATERIAL_2 = 105003; // Sanctifying Essence
+	private final static int RELIC_MATERIAL_EXP_1 = 2500; // Sanctifying Unction
+	private final static int RELIC_MATERIAL_EXP_2 = 10000; // Sanctifying Essence
 	
 	private final static int WEAPON_ORE_1 = 104011; // Enhancement Ore
 	private final static int WEAPON_ORE_2 = 104012; // Fine Enhancement Ore
@@ -85,6 +88,7 @@ public class InventoryManager {
 		int moraCost = 0;
 		int expGain = 0;
 		
+		List<GameItem> foodRelics = new ArrayList<GameItem>();
 		for (long guid : foodRelicList) {
 			// Add to delete queue
 			GameItem food = player.getInventory().getItemByGuid(guid);
@@ -96,23 +100,21 @@ public class InventoryManager {
 			expGain += food.getItemData().getBaseConvExp();
 			// Feeding artifact with exp already
 			if (food.getTotalExp() > 0) {
-				expGain += (int) Math.floor(food.getTotalExp() * .8f);
+				expGain += (food.getTotalExp() * 4) / 5;
 			}
+			foodRelics.add(food);
 		}
+		List<ItemParamData> payList = new ArrayList<ItemParamData>();
 		for (ItemParam itemParam : list) {
-			GameItem food = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemParam.getItemId());
-			if (food == null || food.getItemData().getMaterialType() != MaterialType.MATERIAL_RELIQUARY_MATERIAL) {
-				continue;
-			}
-			int amount = Math.min(food.getCount(), itemParam.getCount());
-			int gain = 0;
-			if (food.getItemId() == RELIC_MATERIAL_2) {
-				gain = 10000 * amount;
-			} else if (food.getItemId() == RELIC_MATERIAL_1) {
-				gain = 2500 * amount;
-			}
+			int amount = itemParam.getCount();  // Previously this capped to inventory amount, but rejecting the payment makes more sense for an invalid order
+			int gain = amount * switch(itemParam.getItemId()) {
+				case RELIC_MATERIAL_1 -> RELIC_MATERIAL_EXP_1;
+				case RELIC_MATERIAL_2 -> RELIC_MATERIAL_EXP_2;
+				default -> 0;
+			};
 			expGain += gain;
 			moraCost += gain;
+			payList.add(new ItemParamData(itemParam.getItemId(), itemParam.getCount()));
 		}
 		
 		// Make sure exp gain is valid
@@ -120,28 +122,14 @@ public class InventoryManager {
 			return;
 		}
 		
-		// Check mora
-		if (player.getMora() < moraCost) {
+		// Confirm payment of materials and mora (assume food relics are payable afterwards)
+		payList.add(new ItemParamData(202, moraCost));
+		if (!player.getInventory().payItems(payList.toArray(new ItemParamData[0]))) {
 			return;
 		}
-		player.setMora(player.getMora() - moraCost);
 		
-		// Consume food items
-		for (long guid : foodRelicList) {
-			GameItem food = player.getInventory().getItemByGuid(guid);
-			if (food == null || !food.isDestroyable()) {
-				continue;
-			}
-			player.getInventory().removeItem(food);
-		}
-		for (ItemParam itemParam : list) {
-			GameItem food = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemParam.getItemId());
-			if (food == null || food.getItemData().getMaterialType() != MaterialType.MATERIAL_RELIQUARY_MATERIAL) {
-				continue;
-			}
-			int amount = Math.min(food.getCount(), itemParam.getCount());
-			player.getInventory().removeItem(food, amount);
-		}
+		// Consume food relics
+		player.getInventory().removeItems(foodRelics);
 		
 		// Implement random rate boost
 		int rate = 1;
@@ -231,22 +219,16 @@ public class InventoryManager {
 			}
 			expGain += food.getItemData().getWeaponBaseExp();
 			if (food.getTotalExp() > 0) {
-				expGain += (int) Math.floor(food.getTotalExp() * .8f);
+				expGain += (food.getTotalExp() * 4) / 5;
 			}
 		}
 		for (ItemParam param : itemParamList) {
-			GameItem food = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(param.getItemId());
-			if (food == null || food.getItemData().getMaterialType() != MaterialType.MATERIAL_WEAPON_EXP_STONE) {
-				continue;
-			}
-			int amount = Math.min(param.getCount(), food.getCount());
-			if (food.getItemId() == WEAPON_ORE_3) {
-				expGain += 10000 * amount;
-			} else if (food.getItemId() == WEAPON_ORE_2) {
-				expGain += 2000 * amount;
-			} else if (food.getItemId() == WEAPON_ORE_1) {
-				expGain += 400 * amount;
-			}
+			expGain += param.getCount() * switch(param.getItemId()) {
+				case WEAPON_ORE_1 -> WEAPON_ORE_EXP_1;
+				case WEAPON_ORE_2 -> WEAPON_ORE_EXP_2;
+				case WEAPON_ORE_3 -> WEAPON_ORE_EXP_3;
+				default -> 0;
+			};
 		}
 		
 		// Try
@@ -288,65 +270,45 @@ public class InventoryManager {
 		}
 		
 		// Get exp gain
-		int expGain = 0, moraCost = 0;
-		
+		int expGain = 0, expGainFree = 0;
+		List<GameItem> foodWeapons = new ArrayList<GameItem>();
 		for (long guid : foodWeaponGuidList) {
 			GameItem food = player.getInventory().getItemByGuid(guid);
 			if (food == null || !food.isDestroyable()) {
 				continue;
 			}
 			expGain += food.getItemData().getWeaponBaseExp();
-			moraCost += (int) Math.floor(food.getItemData().getWeaponBaseExp() * .1f);
 			if (food.getTotalExp() > 0) {
-				expGain += (int) Math.floor(food.getTotalExp() * .8f);
+				expGainFree += (food.getTotalExp() * 4) / 5;  // No tax :D
 			}
+			foodWeapons.add(food);
 		}
+		List<ItemParamData> payList = new ArrayList<ItemParamData>();
 		for (ItemParam param : itemParamList) {
-			GameItem food = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(param.getItemId());
-			if (food == null || food.getItemData().getMaterialType() != MaterialType.MATERIAL_WEAPON_EXP_STONE) {
-				continue;
-			}
-			int amount = Math.min(param.getCount(), food.getCount());
-			int gain = 0;
-			if (food.getItemId() == WEAPON_ORE_3) {
-				gain = 10000 * amount;
-			} else if (food.getItemId() == WEAPON_ORE_2) {
-				gain = 2000 * amount;
-			} else if (food.getItemId() == WEAPON_ORE_1) {
-				gain = 400 * amount;
-			}
+			int amount = param.getCount();  // Previously this capped to inventory amount, but rejecting the payment makes more sense for an invalid order
+			int gain = amount * switch(param.getItemId()) {
+				case WEAPON_ORE_1 -> WEAPON_ORE_EXP_1;
+				case WEAPON_ORE_2 -> WEAPON_ORE_EXP_2;
+				case WEAPON_ORE_3 -> WEAPON_ORE_EXP_3;
+				default -> 0;
+			};
 			expGain += gain;
-			moraCost += (int) Math.floor(gain * .1f);
+			payList.add(new ItemParamData(param.getItemId(), amount));
 		}
 		
 		// Make sure exp gain is valid
+		int moraCost = expGain / 10;
+		expGain += expGainFree;
 		if (expGain <= 0) {
 			return;
 		}
-		
-		// Mora check
-		if (player.getMora() >= moraCost) {
-			player.setMora(player.getMora() - moraCost);
-		} else {
+
+		// Confirm payment of materials and mora (assume food weapons are payable afterwards)
+		payList.add(new ItemParamData(202, moraCost));
+		if (!player.getInventory().payItems(payList.toArray(new ItemParamData[0]))) {
 			return;
 		}
-		
-		// Consume weapon/items used to feed
-		for (long guid : foodWeaponGuidList) {
-			GameItem food = player.getInventory().getItemByGuid(guid);
-			if (food == null || !food.isDestroyable()) {
-				continue;
-			}
-			player.getInventory().removeItem(food);
-		}
-		for (ItemParam param : itemParamList) {
-			GameItem food = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(param.getItemId());
-			if (food == null || food.getItemData().getMaterialType() != MaterialType.MATERIAL_WEAPON_EXP_STONE) {
-				continue;
-			}
-			int amount = Math.min(param.getCount(), food.getCount());
-			player.getInventory().removeItem(food, amount);
-		}
+		player.getInventory().removeItems(foodWeapons);
 		
 		// Level up
 		int maxLevel = promoteData.getUnlockMaxLevel();
@@ -393,7 +355,7 @@ public class InventoryManager {
 		player.sendPacket(new PacketWeaponUpgradeRsp(weapon, oldLevel, leftovers));
 	}
 	
-	private List<ItemParam> getLeftoverOres(float leftover) {
+	private List<ItemParam> getLeftoverOres(int leftover) {
 		List<ItemParam> leftoverOreList = new ArrayList<>(3);
 		
 		if (leftover < WEAPON_ORE_EXP_1) {
@@ -401,11 +363,11 @@ public class InventoryManager {
 		}
 		
 		// Get leftovers
-		int ore3 = (int) Math.floor(leftover / WEAPON_ORE_EXP_3);
+		int ore3 = leftover / WEAPON_ORE_EXP_3;
 		leftover = leftover % WEAPON_ORE_EXP_3;
-		int ore2 = (int) Math.floor(leftover / WEAPON_ORE_EXP_2);
+		int ore2 = leftover / WEAPON_ORE_EXP_2;
 		leftover = leftover % WEAPON_ORE_EXP_2;
-		int ore1 = (int) Math.floor(leftover / WEAPON_ORE_EXP_1);
+		int ore1 = leftover / WEAPON_ORE_EXP_1;
 		
 		if (ore3 > 0) {
 			leftoverOreList.add(ItemParam.newBuilder().setItemId(WEAPON_ORE_3).setCount(ore3).build());
@@ -496,25 +458,14 @@ public class InventoryManager {
 			return;
 		}
 		
-		// Make sure player has promote items
-		for (ItemParamData cost : nextPromoteData.getCostItems()) {
-			GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId());
-			if (feedItem == null || feedItem.getCount() < cost.getCount()) {
-				return;
-			}
+		// Pay materials and mora if possible
+		ItemParamData[] costs = nextPromoteData.getCostItems();  // Can this be null?
+		if (nextPromoteData.getCoinCost() > 0) {
+			costs = Arrays.copyOf(costs, costs.length + 1);
+			costs[costs.length-1] = new ItemParamData(202, nextPromoteData.getCoinCost());
 		}
-		
-		// Mora check
-		if (player.getMora() >= nextPromoteData.getCoinCost()) {
-			player.setMora(player.getMora() - nextPromoteData.getCoinCost());
-		} else {
+		if (!player.getInventory().payItems(costs)) {
 			return;
-		}
-		
-		// Consume promote filler items
-		for (ItemParamData cost : nextPromoteData.getCostItems()) {
-			GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId());
-			player.getInventory().removeItem(feedItem, cost.getCount());
 		}
 		
 		int oldPromoteLevel = weapon.getPromoteLevel();
@@ -552,25 +503,14 @@ public class InventoryManager {
 			return;
 		}
 		
-		// Make sure player has cost items
-		for (ItemParamData cost : nextPromoteData.getCostItems()) {
-			GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId());
-			if (feedItem == null || feedItem.getCount() < cost.getCount()) {
-				return;
-			}
+		// Pay materials and mora if possible
+		ItemParamData[] costs = nextPromoteData.getCostItems();  // Can this be null?
+		if (nextPromoteData.getCoinCost() > 0) {
+			costs = Arrays.copyOf(costs, costs.length + 1);
+			costs[costs.length-1] = new ItemParamData(202, nextPromoteData.getCoinCost());
 		}
-		
-		// Mora check
-		if (player.getMora() >= nextPromoteData.getCoinCost()) {
-			player.setMora(player.getMora() - nextPromoteData.getCoinCost());
-		} else {
+		if (!player.getInventory().payItems(costs)) {
 			return;
-		}
-		
-		// Consume promote filler items
-		for (ItemParamData cost : nextPromoteData.getCostItems()) {
-			GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId());
-			player.getInventory().removeItem(feedItem, cost.getCount());
 		}
 		
 		// Update promote level
@@ -616,34 +556,25 @@ public class InventoryManager {
 			return;
 		}
 		
-		GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId);
-		
-		if (feedItem == null || feedItem.getItemData().getMaterialType() != MaterialType.MATERIAL_EXP_FRUIT || feedItem.getCount() < count) {
-			return;
-		}
-		
 		// Calc exp
-		int expGain = 0, moraCost = 0;
+		int expGain = switch(itemId) {
+			case AVATAR_BOOK_1 -> AVATAR_BOOK_EXP_1 * count;
+			case AVATAR_BOOK_2 -> AVATAR_BOOK_EXP_2 * count;
+			case AVATAR_BOOK_3 -> AVATAR_BOOK_EXP_3 * count;
+			default -> 0;
+		};
 		
-		// TODO clean up
-		if (itemId == AVATAR_BOOK_3) {
-			expGain = AVATAR_BOOK_EXP_3 * count;
-		} else if (itemId == AVATAR_BOOK_2) {
-			expGain = AVATAR_BOOK_EXP_2 * count;
-		} else if (itemId == AVATAR_BOOK_1) {
-			expGain = AVATAR_BOOK_EXP_1 * count;
-		}
-		moraCost = (int) Math.floor(expGain * .2f);
-		
-		// Mora check
-		if (player.getMora() >= moraCost) {
-			player.setMora(player.getMora() - moraCost);
-		} else {
+		// Sanity check
+		if (expGain <= 0) {
 			return;
 		}
-		
-		// Consume items
-		player.getInventory().removeItem(feedItem, count);
+
+		// Payment check
+		int moraCost = expGain / 5;
+		ItemParamData[] costItems = new ItemParamData[] {new ItemParamData(itemId, count), new ItemParamData(202, moraCost)};
+		if (!player.getInventory().payItems(costItems)) {
+			return;
+		}
 		
 		// Level up
 		upgradeAvatar(player, avatar, promoteData, expGain);
@@ -764,31 +695,13 @@ public class InventoryManager {
 			return;
 		}
 		
-		// Make sure player has cost items
-		for (ItemParamData cost : proudSkill.getCostItems()) {
-			if (cost.getId() == 0) {
-				continue;
-			}
-			GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId());
-			if (feedItem == null || feedItem.getCount() < cost.getCount()) {
-				return;
-			}
+		// Pay materials and mora if possible
+		List<ItemParamData> costs = new ArrayList<ItemParamData>(proudSkill.getCostItems());  // Can this be null?
+		if (proudSkill.getCoinCost() > 0) {
+			costs.add(new ItemParamData(202, proudSkill.getCoinCost()));
 		}
-		
-		// Mora check
-		if (player.getMora() >= proudSkill.getCoinCost()) {
-			player.setMora(player.getMora() - proudSkill.getCoinCost());
-		} else {
+		if (!player.getInventory().payItems(costs.toArray(new ItemParamData[0]))) {
 			return;
-		}
-		
-		// Consume promote filler items
-		for (ItemParamData cost : proudSkill.getCostItems()) {
-			if (cost.getId() == 0) {
-				continue;
-			}
-			GameItem feedItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId());
-			player.getInventory().removeItem(feedItem, cost.getCount());
 		}
 		
 		// Upgrade skill
@@ -822,13 +735,10 @@ public class InventoryManager {
 			return;
 		}
 		
-		GameItem costItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(talentData.getMainCostItemId());
-		if (costItem == null || costItem.getCount() < talentData.getMainCostItemCount()) {
+		// Pay constellation item if possible
+		if (!player.getInventory().payItem(talentData.getMainCostItemId(), 1)) {
 			return;
 		}
-		
-		// Consume item
-		player.getInventory().removeItem(costItem, talentData.getMainCostItemCount());
 		
 		// Apply + recalc
 		avatar.getTalentIdList().add(talentData.getId());

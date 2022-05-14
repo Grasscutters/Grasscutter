@@ -9,14 +9,15 @@ import emu.grasscutter.server.packet.send.PacketSceneAreaWeatherNotify;
 
 import java.util.List;
 
-@Command(label = "weather", usage = "weather <weatherId> [climateId]",
-        description = "Changes the weather.", aliases = {"w"}, permission = "player.weather")
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "weather", usage = "weather <weatherId> [climateId]", aliases = {"w"}, permission = "player.weather", permissionTargeted = "player.weather.others", description = "commands.weather.description")
 public final class WeatherCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
 
@@ -27,17 +28,17 @@ public final class WeatherCommand implements CommandHandler {
                 try {
                     climateId = Integer.parseInt(args.get(1));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_invalid_id);
+                        CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_id"));
                 }
             case 1:
                 try {
                     weatherId = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_invalid_id);
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_id"));
                 }
                 break;
             default:
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_usage);
+                CommandHandler.sendMessage(sender, translate(sender, "commands.weather.usage"));
                 return;
         }
 
@@ -46,7 +47,6 @@ public final class WeatherCommand implements CommandHandler {
         targetPlayer.getScene().setWeather(weatherId);
         targetPlayer.getScene().setClimate(climate);
         targetPlayer.getScene().broadcastPacket(new PacketSceneAreaWeatherNotify(targetPlayer));
-        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Weather_message.replace("{weatherId}", Integer.toString(weatherId)).replace("{climateId}", Integer.toString(climateId)));
-
+        CommandHandler.sendMessage(sender, translate(sender, "commands.weather.success", Integer.toString(weatherId), Integer.toString(climateId)));
     }
 }

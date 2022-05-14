@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ParentQuest.proto";
+
+message FinishedParentQuestUpdateNotify {
+	repeated ParentQuest parent_quest_list = 1;
+}

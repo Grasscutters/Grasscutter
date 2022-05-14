@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.protobuf.ByteString;
 
-import emu.grasscutter.Config;
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.Grasscutter.ServerRunMode;
@@ -16,14 +16,19 @@ import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.server.dispatch.authentication.AuthenticationHandler;
 import emu.grasscutter.server.dispatch.authentication.DefaultAuthenticationHandler;
+import emu.grasscutter.server.dispatch.http.AnnouncementIndexHandler;
+import emu.grasscutter.server.dispatch.http.GachaDetailsHandler;
+import emu.grasscutter.server.dispatch.http.GachaRecordHandler;
 import emu.grasscutter.server.dispatch.json.*;
 import emu.grasscutter.server.dispatch.json.ComboTokenReqJson.LoginTokenData;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
 import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
-import emu.grasscutter.server.http.gacha.GachaRecordHandler;
-import emu.grasscutter.server.http.gcstatic.StaticFileHandler;
+import emu.grasscutter.tools.Tools;
+import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.FileUtils;
+import emu.grasscutter.utils.Utils;
 import express.Express;
+import io.javalin.http.staticfiles.Location;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
@@ -31,12 +36,13 @@ import org.eclipse.jetty.util.ssl.SslContextFactory;
 
 import java.io.*;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-public final class DispatchServer {
-	public static String query_region_list = "";
-	public static String query_cur_region = "";
+import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.Configuration.*;
 
+public final class DispatchServer {
 	private final Gson gson;
 	private final String defaultServerName = "os_usa";
 
@@ -49,7 +55,6 @@ public final class DispatchServer {
 		this.regions = new HashMap<>();
 		this.gson = new GsonBuilder().create();
 
-		this.loadQueries();
 		this.initRegion();
 	}
 
@@ -60,7 +65,7 @@ public final class DispatchServer {
 	public void setHttpServer(Express httpServer) {
 		this.httpServer.stop();
 		this.httpServer = httpServer;
-		this.httpServer.listen(Grasscutter.getConfig().getDispatchOptions().Port);
+		this.httpServer.listen(DISPATCH_INFO.bindPort);
 	}
 
 	public Gson getGsonFactory() {
@@ -69,7 +74,7 @@ public final class DispatchServer {
 
 	public QueryCurrRegionHttpRsp getCurrRegion() {
 		// Needs to be fixed by having the game servers connect to the dispatch server.
-		if (Grasscutter.getConfig().RunMode == ServerRunMode.HYBRID) {
+		if (SERVER.runMode == ServerRunMode.HYBRID) {
 			return regions.get(defaultServerName).parsedRegionQuery;
 		}
 
@@ -77,121 +82,90 @@ public final class DispatchServer {
 		return null;
 	}
 
-	public void loadQueries() {
-		File file;
-
-		file = new File(Grasscutter.getConfig().DATA_FOLDER + "query_region_list.txt");
-		if (file.exists()) {
-			query_region_list = new String(FileUtils.read(file));
-		} else {
-			Grasscutter.getLogger().warn("[Dispatch] query_region_list not found! Using default region list.");
-		}
-
-		file = new File(Grasscutter.getConfig().DATA_FOLDER + "query_cur_region.txt");
-		if (file.exists()) {
-			query_cur_region = new String(FileUtils.read(file));
-		} else {
-			Grasscutter.getLogger().warn("[Dispatch] query_cur_region not found! Using default current region.");
-		}
-	}
-
 	private void initRegion() {
 		try {
-			byte[] decoded = Base64.getDecoder().decode(query_region_list);
-			QueryRegionListHttpRsp rl = QueryRegionListHttpRsp.parseFrom(decoded);
-
-			byte[] decoded2 = Base64.getDecoder().decode(query_cur_region);
-			QueryCurrRegionHttpRsp regionQuery = QueryCurrRegionHttpRsp.parseFrom(decoded2);
+			String dispatchDomain = "http" + (DISPATCH_ENCRYPTION.useInRouting ? "s" : "") + "://"
+				+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
+				+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort);
 
 			List<RegionSimpleInfo> servers = new ArrayList<>();
-			List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts
-			if (Grasscutter.getConfig().RunMode == ServerRunMode.HYBRID) { // Automatically add the game server if in
-																				// hybrid mode
+			List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts.
+			if (SERVER.runMode == ServerRunMode.HYBRID) { // Automatically add the game server if in hybrid mode.
 				RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
 						.setName("os_usa")
-						.setTitle(Grasscutter.getConfig().getGameServerOptions().Name)
+						.setTitle(DISPATCH_INFO.defaultName)
 						.setType("DEV_PUBLIC")
-						.setDispatchUrl(
-								"http" + (Grasscutter.getConfig().getDispatchOptions().FrontHTTPS ? "s" : "") + "://"
-										+ (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty()
-												? Grasscutter.getConfig().getDispatchOptions().Ip
-												: Grasscutter.getConfig().getDispatchOptions().PublicIp)
-										+ ":"
-										+ (Grasscutter.getConfig().getDispatchOptions().PublicPort != 0
-												? Grasscutter.getConfig().getDispatchOptions().PublicPort
-												: Grasscutter.getConfig().getDispatchOptions().Port)
-										+ "/query_cur_region/" + defaultServerName)
+						.setDispatchUrl(dispatchDomain + "/query_cur_region/" + defaultServerName)
 						.build();
 				usedNames.add(defaultServerName);
 				servers.add(server);
 
-				RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
-						.setGateserverIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty()
-								? Grasscutter.getConfig().getGameServerOptions().Ip
-								: Grasscutter.getConfig().getGameServerOptions().PublicIp))
-						.setGateserverPort(Grasscutter.getConfig().getGameServerOptions().PublicPort != 0
-								? Grasscutter.getConfig().getGameServerOptions().PublicPort
-								: Grasscutter.getConfig().getGameServerOptions().Port)
-						.setSecretKey(ByteString
-								.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
+				// todo: we might want to push custom config to client, see regionList below for clues.
+				RegionInfo serverRegion = RegionInfo.newBuilder()
+						.setGateserverIp(lr(GAME_INFO.accessAddress, GAME_INFO.bindAddress))
+						.setGateserverPort(lr(GAME_INFO.accessPort, GAME_INFO.bindPort))
+						.setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
 						.build();
 
-				QueryCurrRegionHttpRsp parsedRegionQuery = regionQuery.toBuilder().setRegionInfo(serverRegion).build();
-				regions.put(defaultServerName, new RegionData(parsedRegionQuery,
-						Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray())));
+				QueryCurrRegionHttpRsp parsedRegionQuery = QueryCurrRegionHttpRsp.newBuilder().setRegionInfo(serverRegion).build();
+				regions.put(
+					defaultServerName,
+					new RegionData(
+						parsedRegionQuery,
+						Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray())
+					)
+				);
 
-			} else {
-				if (Grasscutter.getConfig().getDispatchOptions().getGameServers().length == 0) {
-					Grasscutter.getLogger()
-							.error("[Dispatch] There are no game servers available. Exiting due to unplayable state.");
-					System.exit(1);
-				}
+			} else if (DISPATCH_INFO.regions.length == 0) {
+				Grasscutter.getLogger().error("[Dispatch] There are no game servers available. Exiting due to unplayable state.");
+				System.exit(1);
 			}
 
-			for (Config.DispatchServerOptions.RegionInfo regionInfo : Grasscutter.getConfig().getDispatchOptions()
-					.getGameServers()) {
+			for (var regionInfo : DISPATCH_INFO.regions) {
 				if (usedNames.contains(regionInfo.Name)) {
 					Grasscutter.getLogger().error("Region name already in use.");
 					continue;
 				}
+
+				// todo: we might want to push custom config to client, see regionList below for clues.
 				RegionSimpleInfo server = RegionSimpleInfo.newBuilder()
 						.setName(regionInfo.Name)
 						.setTitle(regionInfo.Title)
 						.setType("DEV_PUBLIC")
-						.setDispatchUrl(
-								"http" + (Grasscutter.getConfig().getDispatchOptions().FrontHTTPS ? "s" : "") + "://"
-										+ (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty()
-												? Grasscutter.getConfig().getDispatchOptions().Ip
-												: Grasscutter.getConfig().getDispatchOptions().PublicIp)
-										+ ":" + (Grasscutter.getConfig().getDispatchOptions().PublicPort != 0
-										? Grasscutter.getConfig().getDispatchOptions().PublicPort
-										: Grasscutter.getConfig().getDispatchOptions().Port) + "/query_cur_region/" + regionInfo.Name)
+						.setDispatchUrl(dispatchDomain + "/query_cur_region/" + regionInfo.Name)
 						.build();
 				usedNames.add(regionInfo.Name);
 				servers.add(server);
 
-				RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
+				RegionInfo serverRegion = RegionInfo.newBuilder()
 						.setGateserverIp(regionInfo.Ip)
 						.setGateserverPort(regionInfo.Port)
-						.setSecretKey(ByteString
-								.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
+						.setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
 						.build();
 
-				QueryCurrRegionHttpRsp parsedRegionQuery = regionQuery.toBuilder().setRegionInfo(serverRegion).build();
-				regions.put(regionInfo.Name, new RegionData(parsedRegionQuery,
-						Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray())));
+				QueryCurrRegionHttpRsp parsedRegionQuery = QueryCurrRegionHttpRsp.newBuilder().setRegionInfo(serverRegion).build();
+				regions.put(
+					regionInfo.Name,
+					new RegionData(
+						parsedRegionQuery,
+						Base64.getEncoder().encodeToString(parsedRegionQuery.toByteString().toByteArray())
+					)
+				);
 			}
+
+			byte[] customConfig = "{\"sdkenv\":\"2\",\"checkdevice\":\"false\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}".getBytes();
+			Crypto.xor(customConfig, Crypto.DISPATCH_KEY);
 
 			QueryRegionListHttpRsp regionList = QueryRegionListHttpRsp.newBuilder()
 					.addAllRegionList(servers)
-					.setClientSecretKey(rl.getClientSecretKey())
-					.setClientCustomConfigEncrypted(rl.getClientCustomConfigEncrypted())
+					.setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+					.setClientCustomConfigEncrypted(ByteString.copyFrom(customConfig))
 					.setEnableLoginPc(true)
 					.build();
 
 			this.regionListBase64 = Base64.getEncoder().encodeToString(regionList.toByteString().toByteArray());
-		} catch (Exception e) {
-			Grasscutter.getLogger().error("[Dispatch] Error while initializing region info!", e);
+		} catch (Exception exception) {
+			Grasscutter.getLogger().error("[Dispatch] Error while initializing region info!", exception);
 		}
 	}
 
@@ -201,32 +175,32 @@ public final class DispatchServer {
 				Server server = new Server();
 				ServerConnector serverConnector;
 
-				if(Grasscutter.getConfig().getDispatchOptions().UseSSL) {
+				if(DISPATCH_ENCRYPTION.useEncryption) {
 					SslContextFactory.Server sslContextFactory = new SslContextFactory.Server();
-					File keystoreFile = new File(Grasscutter.getConfig().getDispatchOptions().KeystorePath);
+					File keystoreFile = new File(DISPATCH_ENCRYPTION.keystore);
 
 					if(keystoreFile.exists()) {
 						try {
 							sslContextFactory.setKeyStorePath(keystoreFile.getPath());
-							sslContextFactory.setKeyStorePassword(Grasscutter.getConfig().getDispatchOptions().KeystorePassword);
+							sslContextFactory.setKeyStorePassword(DISPATCH_ENCRYPTION.keystorePassword);
 						} catch (Exception e) {
 							e.printStackTrace();
-							Grasscutter.getLogger().warn(Grasscutter.getLanguage().Not_load_keystore);
+							Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.password_error"));
 
 							try {
 								sslContextFactory.setKeyStorePath(keystoreFile.getPath());
 								sslContextFactory.setKeyStorePassword("123456");
-								Grasscutter.getLogger().warn(Grasscutter.getLanguage().Use_default_keystore);
+								Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.default_password"));
 							} catch (Exception e2) {
-								Grasscutter.getLogger().warn(Grasscutter.getLanguage().Load_keystore_error);
+								Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.general_error"));
 								e2.printStackTrace();
 							}
 						}
 
 						serverConnector = new ServerConnector(server, sslContextFactory);
 					} else {
-						Grasscutter.getLogger().warn(Grasscutter.getLanguage().Not_find_ssl_cert);
-						Grasscutter.getConfig().getDispatchOptions().UseSSL = false;
+						Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.no_keystore_error"));
+						DISPATCH_ENCRYPTION.useEncryption = false;
 
 						serverConnector = new ServerConnector(server);
 					}
@@ -234,25 +208,31 @@ public final class DispatchServer {
 					serverConnector = new ServerConnector(server);
 				}
 
-				serverConnector.setPort(Grasscutter.getConfig().getDispatchOptions().Port);
+				serverConnector.setPort(DISPATCH_INFO.bindPort);
 				server.setConnectors(new Connector[]{serverConnector});
 				return server;
 			});
 
-			config.enforceSsl = Grasscutter.getConfig().getDispatchOptions().UseSSL;
-			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.ALL) {
+			config.enforceSsl = DISPATCH_ENCRYPTION.useEncryption;
+			if(SERVER.debugLevel == ServerDebugMode.ALL) {
 				config.enableDevLogging();
 			}
+			
+			if (DISPATCH_POLICIES.cors.enabled) {
+				var corsPolicy = DISPATCH_POLICIES.cors;
+				if (corsPolicy.allowedOrigins.length > 0) 
+					config.enableCorsForOrigin(corsPolicy.allowedOrigins);
+				else config.enableCorsForAllOrigins();
+			}
 		});
-
-		httpServer.get("/", (req, res) -> res.send(Grasscutter.getLanguage().Welcome));
+		httpServer.get("/", (req, res) -> res.send("<!doctype html><html><head><meta charset=\"utf8\"></head><body>" + translate("messages.status.welcome") + "</body></html>"));
 
 		httpServer.raw().error(404, ctx -> {
-			if(Grasscutter.getConfig().DebugMode == ServerDebugMode.MISSING) {
-				Grasscutter.getLogger().info(Grasscutter.getLanguage().Potential_unhandled_request.replace("{method}", ctx.method()).replace("{url}", ctx.url()));
+			if(SERVER.debugLevel == ServerDebugMode.MISSING) {
+				Grasscutter.getLogger().info(translate("messages.dispatch.unhandled_request_error", ctx.method(), ctx.url()));
 			}
 			ctx.contentType("text/html");
-			ctx.result("<!doctype html><html lang=\"en\"><body><img src=\"https://http.cat/404\" /></body></html>"); // I'm like 70% sure this won't break anything.
+			ctx.result("<!doctype html><html><head><meta charset=\"utf8\"></head><body><img src=\"https://http.cat/404\" /></body></html>"); // I'm like 70% sure this won't break anything.
 		});
 
 		// Authentication Handler
@@ -264,6 +244,15 @@ public final class DispatchServer {
 		httpServer.post("/authentication/login", (req, res) -> this.getAuthHandler().handleLogin(req, res));
 		httpServer.post("/authentication/register", (req, res) -> this.getAuthHandler().handleRegister(req, res));
 		httpServer.post("/authentication/change_password", (req, res) -> this.getAuthHandler().handleChangePassword(req, res));
+
+		// Server Status
+		httpServer.get("/status/server", (req, res) -> {
+
+			int playerCount = Grasscutter.getGameServer().getPlayers().size();
+			String version = GameConstants.VERSION;
+
+			res.send("{\"retcode\":0,\"status\":{\"playerCount\":" + playerCount + ",\"version\":\"" + version + "\"}}");
+		});
 
 		// Dispatch
 		httpServer.get("/query_region_list", (req, res) -> {
@@ -307,7 +296,7 @@ public final class DispatchServer {
 			if (requestData == null) {
 				return;
 			}
-			Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_try_login.replace("{ip}", req.ip()));
+			Grasscutter.getLogger().info(translate("messages.dispatch.account.login_attempt", req.ip()));
 
 			res.send(this.getAuthHandler().handleGameLogin(req, requestData));
 		});
@@ -327,7 +316,7 @@ public final class DispatchServer {
 				return;
 			}
 			LoginResultJson responseData = new LoginResultJson();
-			Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_login_token.replace("{ip}", req.ip()));
+			Grasscutter.getLogger().info(translate("messages.dispatch.account.login_token_attempt", req.ip()));
 
 			// Login
 			Account account = DatabaseHelper.getAccountById(requestData.uid);
@@ -335,16 +324,16 @@ public final class DispatchServer {
 			// Test
 			if (account == null || !account.getSessionKey().equals(requestData.token)) {
 				responseData.retcode = -111;
-				responseData.message = Grasscutter.getLanguage().Game_account_cache_error;
+				responseData.message = translate("messages.dispatch.account.account_cache_error");
 
-				Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_token_login_failed.replace("{ip}", req.ip()));
+				Grasscutter.getLogger().info(translate("messages.dispatch.account.login_token_error", req.ip()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.account.uid = requestData.uid;
 				responseData.data.account.token = requestData.token;
 				responseData.data.account.email = account.getEmail();
 
-				Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_login_in_token.replace("{ip}", req.ip()).replace("{uid}", responseData.data.account.uid));
+				Grasscutter.getLogger().info(translate("messages.dispatch.account.login_token_success", req.ip(), requestData.uid));
 			}
 
 			res.send(responseData);
@@ -374,16 +363,16 @@ public final class DispatchServer {
 			// Test
 			if (account == null || !account.getSessionKey().equals(loginData.token)) {
 				responseData.retcode = -201;
-				responseData.message = Grasscutter.getLanguage().Wrong_session_key;
+				responseData.message = translate("messages.dispatch.account.session_key_error");
 
-				Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_failed_exchange_combo_token.replace("{ip}", req.ip()));
+				Grasscutter.getLogger().info(translate("messages.dispatch.account.combo_token_error", req.ip()));
 			} else {
 				responseData.message = "OK";
 				responseData.data.open_id = loginData.uid;
 				responseData.data.combo_id = "157795300";
 				responseData.data.combo_token = account.generateLoginToken();
 
-				Grasscutter.getLogger().info(Grasscutter.getLanguage().Client_exchange_combo_token.replace("{ip}", req.ip()));
+				Grasscutter.getLogger().info(translate("messages.dispatch.account.combo_token_success", req.ip()));
 			}
 
 			res.send(responseData);
@@ -442,14 +431,29 @@ public final class DispatchServer {
 		// webstatic-sea.hoyoverse.com
 		httpServer.get("/admin/mi18n/plat_oversea/m202003048/m202003048-version.json", new DispatchHttpJsonHandler("{\"version\":51}"));
 
-		// gacha record
+		// gacha record.
+		String gachaMappingsPath = Utils.toFilePath(DATA("/gacha_mappings.js"));
+		// TODO: Only serve the html page and have a subsequent request to fetch the gacha data.
 		httpServer.get("/gacha", new GachaRecordHandler());
+		if(!(new File(gachaMappingsPath).exists())) {
+			Tools.createGachaMapping(gachaMappingsPath);
+		}
 
-		// static file provider
-		httpServer.get("/gcstatic/*", new StaticFileHandler());
+		httpServer.raw().config.addSinglePageRoot("/gacha/mappings", gachaMappingsPath, Location.EXTERNAL);
 
-		httpServer.listen(Grasscutter.getConfig().getDispatchOptions().Port);
-		Grasscutter.getLogger().info(Grasscutter.getLanguage().Dispatch_start_server_port.replace("{port}", Integer.toString(httpServer.raw().port())));
+		// gacha details
+		httpServer.get("/gacha/details", new GachaDetailsHandler());
+
+		// announcement index
+		httpServer.get("/hk4e/announcement/*", new AnnouncementIndexHandler());
+		httpServer.get("/sw.js", new AnnouncementIndexHandler());
+		httpServer.get("/dora/lib/vue/2.6.11/vue.min.js", new AnnouncementIndexHandler());
+
+		// static file support for plugins
+		httpServer.raw().config.precompressStaticFiles = false; // If this isn't set to false, files such as images may appear corrupted when serving static files
+
+		httpServer.listen(DISPATCH_INFO.bindPort);
+		Grasscutter.getLogger().info(translate("messages.dispatch.port_bind", Integer.toString(httpServer.raw().port())));
 	}
 
 	private Map<String, String> parseQueryString(String qs) {
@@ -467,15 +471,11 @@ public final class DispatchServer {
 
 			if (next > last) {
 				int eqPos = qs.indexOf('=', last);
-				try {
-					if (eqPos < 0 || eqPos > next) {
-						result.put(URLDecoder.decode(qs.substring(last, next), "utf-8"), "");
-					} else {
-						result.put(URLDecoder.decode(qs.substring(last, eqPos), "utf-8"),
-								URLDecoder.decode(qs.substring(eqPos + 1, next), "utf-8"));
-					}
-				} catch (UnsupportedEncodingException e) {
-					throw new RuntimeException(e); // will never happen, utf-8 support is mandatory for java
+				if (eqPos < 0 || eqPos > next) {
+					result.put(URLDecoder.decode(qs.substring(last, next), StandardCharsets.UTF_8), "");
+				} else {
+					result.put(URLDecoder.decode(qs.substring(last, eqPos), StandardCharsets.UTF_8),
+							URLDecoder.decode(qs.substring(eqPos + 1, next), StandardCharsets.UTF_8));
 				}
 			}
 			last = next + 1;

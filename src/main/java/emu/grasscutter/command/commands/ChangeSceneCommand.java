@@ -1,43 +1,44 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "changescene", usage = "changescene <scene id>",
-        description = "Changes your scene", aliases = {"scene"}, permission = "player.changescene")
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "changescene", usage = "changescene <scene id>", aliases = {"scene"}, permission = "player.changescene", permissionTargeted = "player.changescene.others", description = "commands.changescene.description")
 public final class ChangeSceneCommand implements CommandHandler {
+
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
 
         if (args.size() != 1) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Change_screen_usage);
+            CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.usage"));
             return;
         }
 
         try {
             int sceneId = Integer.parseInt(args.get(0));
-            
             if (sceneId == targetPlayer.getSceneId()) {
-            	CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Change_screen_you_in_that_screen);
+            	CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.already_in_scene"));
             	return;
             }
             
             boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, targetPlayer.getPos());
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Change_screen + sceneId);
-            
             if (!result) {
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Change_screen_not_exist);
+                CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.exists_error"));
+                return;
             }
+
+            CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.success", Integer.toString(sceneId)));
         } catch (Exception e) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Invalid_arguments);
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
         }
     }
 }

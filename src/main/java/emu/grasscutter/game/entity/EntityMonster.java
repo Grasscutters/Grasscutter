@@ -116,11 +116,18 @@ public class EntityMonster extends GameEntity {
 		if (this.getSpawnEntry() != null) {
 			this.getScene().getDeadSpawnedEntities().add(getSpawnEntry());
 		}
-		if (getScene().getScriptManager().isInit() && this.getGroupId() > 0) {
-			getScene().getScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_DIE, null);
-		}
+		// first set the challenge data
 		if (getScene().getChallenge() != null && getScene().getChallenge().getGroup().id == this.getGroupId()) {
 			getScene().getChallenge().onMonsterDie(this);
+		}
+		if (getScene().getScriptManager().isInit() && this.getGroupId() > 0) {
+			if(getScene().getScriptManager().getScriptMonsterSpawnService() != null){
+				getScene().getScriptManager().getScriptMonsterSpawnService().onMonsterDead(this);
+			}
+			// prevent spawn monster after success
+			if(getScene().getChallenge() != null && getScene().getChallenge().inProgress()){
+				getScene().getScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_DIE, null);
+			}
 		}
 	}
 	

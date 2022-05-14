@@ -1,43 +1,43 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "enterdungeon", usage = "enterdungeon <dungeon id>",
-        description = "Enter a dungeon", aliases = {"dungeon"}, permission = "player.enterdungeon")
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "enterdungeon", usage = "enterdungeon <dungeon id>", aliases = {"dungeon"}, permission = "player.enterdungeon", permissionTargeted = "player.enterdungeon.others", description = "commands.enter_dungeon.description")
 public final class EnterDungeonCommand implements CommandHandler {
+
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(null, Grasscutter.getLanguage().Target_needed);
+            CommandHandler.sendMessage(null, translate(sender, "commands.execution.need_target"));
             return;
         }
 
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().EnterDungeon_usage);
+            CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.usage"));
             return;
         }
 
         try {
             int dungeonId = Integer.parseInt(args.get(0));
-            
             if (dungeonId == targetPlayer.getSceneId()) {
-            	CommandHandler.sendMessage(sender, Grasscutter.getLanguage().EnterDungeon_you_in_that_dungeon);
+            	CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.in_dungeon_error"));
             	return;
             }
             
             boolean result = targetPlayer.getServer().getDungeonManager().enterDungeon(targetPlayer.getSession().getPlayer(), 0, dungeonId);
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().EnterDungeon_changed_to_dungeon + dungeonId);
+            CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.changed", dungeonId));
 
             if (!result) {
-                CommandHandler.sendMessage(sender, Grasscutter.getLanguage().EnterDungeon_dungeon_not_found);
+                CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.not_found_error"));
             }
         } catch (Exception e) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().EnterDungeon_usage);
+            CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.usage"));
         }
     }
 }

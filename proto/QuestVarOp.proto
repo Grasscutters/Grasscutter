@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message QuestVarOp {
+	uint32 index = 1;
+	int32 value = 2;
+	bool is_add = 3;
+}

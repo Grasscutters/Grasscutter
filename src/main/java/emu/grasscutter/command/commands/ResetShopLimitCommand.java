@@ -7,18 +7,20 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "resetshop", usage = "resetshop",
-        description = "Reset target player's shop refresh time.", permission = "server.resetshop")
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "resetshop", usage = "resetshop", permission = "server.resetshop", permissionTargeted = "server.resetshop.others", description = "commands.resetshop.description")
 public final class ResetShopLimitCommand implements CommandHandler {
+
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Target_needed);
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
 
         targetPlayer.getShopLimit().forEach(x -> x.setNextRefreshTime(0));
         targetPlayer.save();
-        CommandHandler.sendMessage(sender, Grasscutter.getLanguage().Success);
+        CommandHandler.sendMessage(sender, translate(sender, "commands.status.success"));
     }
 }

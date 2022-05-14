@@ -1,6 +1,5 @@
 package emu.grasscutter.game.world;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.def.DungeonData;
@@ -8,6 +7,7 @@ import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.data.def.WorldLevelData;
 import emu.grasscutter.game.dungeons.DungeonChallenge;
+import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamInfo;
@@ -20,11 +20,8 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.SceneScriptManager;
-import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneBlock;
-import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
-import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketAvatarSkillInfoNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
@@ -56,6 +53,7 @@ public class Scene {
 	
 	private SceneScriptManager scriptManager;
 	private DungeonChallenge challenge;
+	private List<DungeonSettleListener> dungeonSettleListeners;
 	private DungeonData dungeonData;
 	private int prevScene; // Id of the previous scene
 	private int prevScenePoint;
@@ -107,7 +105,13 @@ public class Scene {
 	public GameEntity getEntityById(int id) {
 		return this.entities.get(id);
 	}
-	
+
+	public GameEntity getEntityByConfigId(int configId) {
+		return this.entities.values().stream()
+				.filter(x -> x.getConfigId() == configId)
+				.findFirst()
+				.orElse(null);
+	}
 	/**
 	 * @return the autoCloseTime
 	 */
@@ -203,6 +207,17 @@ public class Scene {
 
 	public void setChallenge(DungeonChallenge challenge) {
 		this.challenge = challenge;
+	}
+
+	public void addDungeonSettleObserver(DungeonSettleListener dungeonSettleListener){
+		if(dungeonSettleListeners == null){
+			dungeonSettleListeners = new ArrayList<>();
+		}
+		dungeonSettleListeners.add(dungeonSettleListener);
+	}
+
+	public List<DungeonSettleListener> getDungeonSettleObservers() {
+		return dungeonSettleListeners;
 	}
 
 	public boolean isInScene(GameEntity entity) {
@@ -370,27 +385,7 @@ public class Scene {
 		}
 		
 		// Sanity check
-		if (target.getFightProperties() == null) {
-			return;
-		}
-		
-		// Lose hp
-		target.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -result.getDamage());
-		
-		// Check if dead
-		boolean isDead = false;
-		if (target.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
-			target.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0f);
-			isDead = true;
-		}
-		
-		// Packets
-		this.broadcastPacket(new PacketEntityFightPropUpdateNotify(target, FightProperty.FIGHT_PROP_CUR_HP));
-		
-		// Check if dead
-		if (isDead) {
-			this.killEntity(target, result.getAttackerId());
-		}
+		target.damage(result.getDamage(), result.getAttackerId());
 	}
 	
 	public void killEntity(GameEntity target, int attackerId) {

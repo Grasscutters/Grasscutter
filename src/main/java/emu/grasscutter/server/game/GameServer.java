@@ -8,12 +8,16 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.combine.CombineManger;
 import emu.grasscutter.game.drop.DropManager;
 import emu.grasscutter.game.dungeons.DungeonManager;
+import emu.grasscutter.game.expedition.ExpeditionManager;
 import emu.grasscutter.game.gacha.GachaManager;
 import emu.grasscutter.game.managers.ChatManager;
 import emu.grasscutter.game.managers.InventoryManager;
 import emu.grasscutter.game.managers.MultiplayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.ServerQuestHandler;
+import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 import emu.grasscutter.game.shop.ShopManager;
+import emu.grasscutter.game.tower.TowerScheduleManager;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
@@ -29,10 +33,14 @@ import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
+import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.Configuration.*;
+
 public final class GameServer extends KcpServer {
 	private final InetSocketAddress address;
 	private final GameServerPacketHandler packetHandler;
-
+	private final ServerQuestHandler questHandler;
+	
 	private final Map<Integer, Player> players;
 	private final Set<World> worlds;
 	
@@ -42,18 +50,28 @@ public final class GameServer extends KcpServer {
 	private final ShopManager shopManager;
 	private final MultiplayerManager multiplayerManager;
 	private final DungeonManager dungeonManager;
+	private final ExpeditionManager expeditionManager;
 	private final CommandMap commandMap;
 	private final TaskMap taskMap;
 	private final DropManager dropManager;
 
 	private final CombineManger combineManger;
+	private final TowerScheduleManager towerScheduleManager;
 
+	public GameServer() {
+		this(new InetSocketAddress(
+				GAME_INFO.bindAddress,
+				GAME_INFO.bindPort
+		));
+	}
+	
 	public GameServer(InetSocketAddress address) {
 		super(address);
 
 		this.setServerInitializer(new GameServerInitializer(this));
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
+		this.questHandler = new ServerQuestHandler();
 		this.players = new ConcurrentHashMap<>();
 		this.worlds = Collections.synchronizedSet(new HashSet<>());
 		
@@ -66,27 +84,19 @@ public final class GameServer extends KcpServer {
 		this.commandMap = new CommandMap(true);
 		this.taskMap = new TaskMap(true);
 		this.dropManager = new DropManager(this);
+		this.expeditionManager = new ExpeditionManager(this);
 		this.combineManger = new CombineManger(this);
-
-		// Schedule game loop.
-		Timer gameLoop = new Timer();
-		gameLoop.scheduleAtFixedRate(new TimerTask() {
-			@Override
-			public void run() {
-				try {
-					onTick();
-				} catch (Exception e) {
-					Grasscutter.getLogger().error(Grasscutter.getLanguage().An_error_occurred_during_game_update, e);
-				}
-			}
-		}, new Date(), 1000L);
-		
+		this.towerScheduleManager = new TowerScheduleManager(this);
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
 	
 	public GameServerPacketHandler getPacketHandler() {
 		return packetHandler;
+	}
+
+	public ServerQuestHandler getQuestHandler() {
+		return questHandler;
 	}
 
 	public Map<Integer, Player> getPlayers() {
@@ -124,7 +134,11 @@ public final class GameServer extends KcpServer {
 	public DungeonManager getDungeonManager() {
 		return dungeonManager;
 	}
-	
+
+	public ExpeditionManager getExpeditionManager() {
+		return expeditionManager;
+	}
+
 	public CommandMap getCommandMap() {
 		return this.commandMap;
 	}
@@ -132,6 +146,11 @@ public final class GameServer extends KcpServer {
 	public CombineManger getCombineManger(){
 		return this.combineManger;
 	}
+
+	public TowerScheduleManager getTowerScheduleManager() {
+		return towerScheduleManager;
+	}
+
 	public TaskMap getTaskMap() {
 		return this.taskMap;
 	}
@@ -213,9 +232,27 @@ public final class GameServer extends KcpServer {
 	}
 
 	@Override
+	public synchronized void start() {
+		// Schedule game loop.
+		Timer gameLoop = new Timer();
+		gameLoop.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				try {
+					onTick();
+				} catch (Exception e) {
+					Grasscutter.getLogger().error(translate("messages.game.game_update_error"), e);
+				}
+			}
+		}, new Date(), 1000L);
+
+		super.start();
+	}
+
+	@Override
 	public void onStartFinish() {
-		Grasscutter.getLogger().info(Grasscutter.getLanguage().Grasscutter_is_free);
-		Grasscutter.getLogger().info(Grasscutter.getLanguage().Game_start_port.replace("{port}", Integer.toString(address.getPort())));
+		Grasscutter.getLogger().info(translate("messages.status.free_software"));
+		Grasscutter.getLogger().info(translate("messages.game.port_bind", Integer.toString(address.getPort())));
 		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
 	

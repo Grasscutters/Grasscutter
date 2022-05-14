@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AbilityScalarValueEntry.proto";
+
+message AbilityMetaReInitOverrideMap {
+	repeated AbilityScalarValueEntry override_map = 1;
+}
