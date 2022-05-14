@@ -146,7 +146,7 @@
       "description": "给予所有物品"
     },
     "nostamina": {
-      "success": "NoStamina 已经 %s 对于 %s.",
+      "success": "NoStamina %s 对于 %s.",
       "description": "保持你的体力处于最高状态。"
     },
     "giveArtifact": {
