@@ -54,7 +54,6 @@ public interface AuthenticationSystem {
 
     /**
      * A data container that holds relevant data for authenticating a client.
-     * Call {@link AuthenticationRequest#builder()} to create a builder.
      */
     @Builder @AllArgsConstructor @Getter
     class AuthenticationRequest {
