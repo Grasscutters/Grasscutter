@@ -88,6 +88,9 @@ public class SceneScriptManager {
 	}
 
 	public SceneConfig getConfig() {
+		if(!isInit){
+			return null;
+		}
 		return meta.config;
 	}
 
