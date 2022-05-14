@@ -21,7 +21,7 @@ public final class ReloadCommand implements CommandHandler {
         Grasscutter.getGameServer().getGachaManager().load();
         Grasscutter.getGameServer().getDropManager().load();
         Grasscutter.getGameServer().getShopManager().load();
-        Grasscutter.getDispatchServer().loadQueries();
+        // Grasscutter.getHttpServer().loadQueries(); // Is this practical?
         
         CommandHandler.sendMessage(sender, translate(sender, "commands.reload.reload_done"));
     }

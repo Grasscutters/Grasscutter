@@ -9,10 +9,12 @@ import emu.grasscutter.net.proto.PlayerLoginRspOuterClass.PlayerLoginRsp;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass;
 import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.server.http.dispatch.RegionHandler;
 import emu.grasscutter.utils.FileUtils;
 
 import java.io.File;
 import java.util.Base64;
+import java.util.Objects;
 
 import static emu.grasscutter.Configuration.*;
 
@@ -55,7 +57,7 @@ public class PacketPlayerLoginRsp extends BasePacket {
 
 			info = regionCache.getRegionInfo();
 		} else {
-			info = Grasscutter.getDispatchServer().getCurrRegion().getRegionInfo();
+			info = Objects.requireNonNull(RegionHandler.getCurrentRegion()).getRegionInfo();
 		}
 
 		PlayerLoginRsp p = PlayerLoginRsp.newBuilder()

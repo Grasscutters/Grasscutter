@@ -11,9 +11,7 @@ import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.dispatch.DispatchHandler;
-import emu.grasscutter.server.http.handlers.AnnouncementsHandler;
-import emu.grasscutter.server.http.handlers.GenericHandler;
-import emu.grasscutter.server.http.handlers.LogHandler;
+import emu.grasscutter.server.http.handlers.*;
 import emu.grasscutter.server.http.dispatch.RegionHandler;
 import emu.grasscutter.utils.ConfigContainer;
 import emu.grasscutter.utils.Utils;
@@ -33,7 +31,6 @@ import ch.qos.logback.classic.Logger;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.utils.Language;
-import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
@@ -54,7 +51,6 @@ public final class Grasscutter {
 
 	private static int day; // Current day of week.
 
-	private static DispatchServer dispatchServer;
 	private static HttpServer httpServer;
 	private static GameServer gameServer;
 	private static PluginManager pluginManager;
@@ -113,11 +109,10 @@ public final class Grasscutter {
 		authenticationSystem = new DefaultAuthentication();
 	
 		// Create server instances.
-		dispatchServer = new DispatchServer();
 		httpServer = new HttpServer();
 		gameServer = new GameServer();
 		// Create a server hook instance with both servers.
-		new ServerHook(gameServer, dispatchServer);
+		new ServerHook(gameServer, httpServer);
 		
 		// Create plugin manager instance.
 		pluginManager = new PluginManager();
@@ -129,14 +124,15 @@ public final class Grasscutter {
 		httpServer.addRouter(GenericHandler.class);
 		httpServer.addRouter(AnnouncementsHandler.class);
 		httpServer.addRouter(DispatchHandler.class);
+		httpServer.addRouter(LegacyAuthHandler.class);
+		httpServer.addRouter(GachaHandler.class);
 	
 		// Start servers.
 		var runMode = SERVER.runMode;
 		if (runMode == ServerRunMode.HYBRID) {
-			dispatchServer.start();
+			httpServer.start();
 			gameServer.start();
 		} else if (runMode == ServerRunMode.DISPATCH_ONLY) {
-			dispatchServer.start();
 			httpServer.start();
 		} else if (runMode == ServerRunMode.GAME_ONLY) {
 			gameServer.start();
@@ -258,8 +254,8 @@ public final class Grasscutter {
 		return gson;
 	}
 
-	public static DispatchServer getDispatchServer() {
-		return dispatchServer;
+	public static HttpServer getHttpServer() {
+		return httpServer;
 	}
 
 	public static GameServer getGameServer() {

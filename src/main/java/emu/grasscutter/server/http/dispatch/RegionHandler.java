@@ -151,8 +151,10 @@ public final class RegionHandler implements Router {
         
         // Get region data.
         String regionData = "CAESGE5vdCBGb3VuZCB2ZXJzaW9uIGNvbmZpZw==";
-        if (request.query().values().size() > 0)
-            regionData = regions.get(regionName).getBase64();
+        if (request.query().values().size() > 0) {
+            var region = regions.get(regionName);
+            if(region != null) regionData = region.getBase64();
+        }
         
         // Invoke event.
         QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData); event.call();
@@ -182,5 +184,13 @@ public final class RegionHandler implements Router {
         public String getBase64() {
             return this.base64;
         }
+    }
+
+    /**
+     * Gets the current region query.
+     * @return A {@link QueryCurrRegionHttpRsp} object.
+     */
+    public static QueryCurrRegionHttpRsp getCurrentRegion() {
+        return SERVER.runMode == ServerRunMode.HYBRID ? regions.get("os_usa").getRegionQuery() : null;
     }
 }
