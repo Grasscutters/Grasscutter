@@ -62,82 +62,82 @@
         "command_exist_error": "Tidak ada perintah yang ditemukan.",
         "no_description_specified": "Tidak ada deskripsi yang ditentukan",
         "invalid": {
-          "amount": "Invalid amount.",
-          "artifactId": "Invalid artifactId.",
-          "avatarId": "Invalid avatarId.",
-          "avatarLevel": "Invalid avatarLevel.",
-          "entityId": "Invalid entityId.",
-          "itemId": "Invalid itemId.",
-          "itemLevel": "Invalid itemLevel.",
-          "itemRefinement": "Invalid itemRefinement.",
-          "playerId": "Invalid playerId.",
-          "uid": "Invalid UID."
+          "amount": "Jumlah tidak valid.",
+          "artifactId": "tidak valid artifactId.",
+          "avatarId": "tidak valid avatarId.",
+          "avatarLevel": "tidak valid avatarLevel.",
+          "entityId": "tidak valid entityId.",
+          "itemId": "tidak valid itemId.",
+          "itemLevel": "tidak valid itemLevel.",
+          "itemRefinement": "tidak valid itemRefinement.",
+          "playerId": "tidak valid playerId.",
+          "uid": "tidak valid UID."
         }
       },
       "execution": {
-        "uid_error": "Invalid UID.",
-        "player_exist_error": "Player not found.",
-        "player_offline_error": "Player is not online.",
-        "item_id_error": "Invalid item ID.",
-        "item_player_exist_error": "Invalid item or UID.",
-        "entity_id_error": "Invalid entity ID.",
-        "player_exist_offline_error": "Player not found or is not online.",
-        "argument_error": "Invalid arguments.",
-        "clear_target": "Target cleared.",
-        "set_target": "Subsequent commands will target @%s by default.",
-        "need_target": "This command requires a target UID. Add a <@UID> argument or set a persistent target with /target @UID."
+        "uid_error": "tidak valid UID.",
+        "player_exist_error": "Pemain tidak ditemukan.",
+        "player_offline_error": "Pemain tidak online.",
+        "item_id_error": "tidak valid item ID.",
+        "item_player_exist_error": "tidak valid item atau UID.",
+        "entity_id_error": "tidak valid entity ID.",
+        "player_exist_offline_error": "Pemain tidak ditemukan atau tidak online.",
+        "argument_error": "Tidak valid arguments.",
+        "clear_target": "Target dibersihkan.",
+        "set_target": "Perintah berikutnya akan menargetkan @%s secara default.",
+        "need_target": "Perintah ini membutuhkan UID target. Tambahkan argumen <@UID> atau tetapkan target tetap dengan /target @UID."
       },
       "status": {
-        "enabled": "Enabled",
+        "enabled": "Diaktifkan",
         "disabled": "Disabled",
-        "help": "Help",
-        "success": "Success"
+        "help": "Bantuan",
+        "success": "Sukses"
       },
       "account": {
-        "modify": "Modify user accounts",
-        "invalid": "Invalid UID.",
-        "exists": "Account already exists.",
-        "create": "Account created with UID %s.",
-        "delete": "Account deleted.",
-        "no_account": "Account not found.",
+        "modify": "Ubah akun pengguna",
+        "invalid": "tidak valid UID.",
+        "exists": "Akun sudah ada.",
+        "create": "Akun dibuat dengan UID %s.",
+        "delete": "Akun dihapus.",
+        "no_account": "Akun tidak ditemukan.",
         "command_usage": "Penggunaan: account <create|delete> <username> [uid]",
-        "description": "Modify user accounts"
+        "description": "Ubah akun pengguna"
       },
       "broadcast": {
         "command_usage": "Penggunaan: broadcast <message>",
-        "message_sent": "Message sent.",
-        "description": "Sends a message to all the players"
+        "message_sent": "Pesan di kirim",
+        "description": "Kirim pesan ke semua player"
       },
       "changescene": {
         "usage": "Penggunaan: changescene <sceneId>",
-        "already_in_scene": "You are already in that scene.",
-        "success": "Changed to scene %s.",
-        "exists_error": "The specified scene does not exist.",
-        "description": "Changes your scene"
+        "already_in_scene": "Kamu sudah ada di scene ini.",
+        "success": "Ubah scene ke %s.",
+        "exists_error": "Id scene tidak ditemukan",
+        "description": "Ganti scene"
       },
       "clear": {
         "command_usage": "Penggunaan: clear <all|wp|art|mat>",
-        "weapons": "Cleared weapons for %s.",
-        "artifacts": "Cleared artifacts for %s.",
-        "materials": "Cleared materials for %s.",
-        "furniture": "Cleared furniture for %s.",
-        "displays": "Cleared displays for %s.",
-        "virtuals": "Cleared virtuals for %s.",
-        "done": "Cleared %s item with %s limit",
-        "everything": "Cleared everything for %s.",
-        "description": "Deletes unequipped unlocked items, including yellow rarity ones from your inventory"
+        "weapons": "Senjata dibersihkan untuk %s.",
+        "artifacts": "Artefak yang dihapus untuk %s.",
+        "materials": "Bahan yang dibersihkan untuk %s.",
+        "furniture": "Membersihkan furnitur untuk %s.",
+        "displays": "Tampilan yang dihapus untuk %s.",
+        "virtuals": "Menghapus virtual untuk %s.",
+        "done": "Menghapus %s item dengan batas %s",
+        "everything": "Menghapus semuanya untuk %s.",
+        "description": "Menghapus item yang tidak terkunci, termasuk item langka berwarna kuning dari inventaris Anda"
       },
       "coop": {
         "usage": "Penggunaan: coop <playerId> <target playerId>",
         "success": "Summoned %s to %s's world.",
-        "description": "Forces someone to join the world of others"
+        "description": "Memaksa seseorang untuk bergabung dengan dunia orang lain"
       },
       "enter_dungeon": {
         "usage": "Penggunaan: enterdungeon <dungeon id>",
-        "changed": "Changed to dungeon %s",
-        "not_found_error": "Dungeon does not exist",
-        "in_dungeon_error": "You are already in that dungeon",
-        "description": "Enter a dungeon"
+        "changed": "Berpindah ke dungeon %s",
+        "not_found_error": "Tidak ada Dungeon ditemukan",
+        "in_dungeon_error": "Anda sudah berada di Dungeon itu",
+        "description": "Masuk ke dungeon"
       },
       "giveAll": {
         "usage": "Penggunaan: giveall",
@@ -162,46 +162,46 @@
       },
       "give": {
         "usage": "Penggunaan: give <player> <itemId|itemName> [amount] [level]",
-        "refinement_only_applicable_weapons": "Refinement is only applicable to weapons.",
-        "refinement_must_between_1_and_5": "Refinement must be between 1 and 5.",
-        "given": "Given %s of %s to %s.",
-        "given_with_level_and_refinement": "Given %s with level %s, refinement %s %s times to %s",
-        "given_level": "Given %s with level %s times to %s",
-        "description": "Gives an item to you or the specified player"
+        "refinement_only_applicable_weapons": "Penyempurnaan hanya berlaku untuk senjata.",
+        "refinement_must_between_1_and_5": "Penyempurnaan harus antara 1 dan 5.",
+        "given": "Memberikan %s dari %s sampai %s.",
+        "given_with_level_and_refinement": "Memberikan %s dengan level %s, Penyempurnaan %s %s kali menjadi %s",
+        "given_level": "Memberikan %s dengan level %s untuk %s",
+        "description": "Memberikan item kepada kamu atau pemain yang ditentukan"
       },
       "godmode": {
-        "success": "Godmode is now %s for %s.",
-        "description": "Prevents you from taking damage. Defaults to toggle."
+        "success": "Godmode sekarang %s untuk %s.",
+        "description": "Mencegah kamu dari mati karena kerusakan dan lainya."
       },
       "heal": {
-        "success": "All characters have been healed.",
-        "description": "Heal all characters in your current team."
+        "success": "Semua karakter telah disembuhkan.",
+        "description": "Sembuhkan semua karakter di tim Anda saat ini."
       },
       "kick": {
-        "player_kick_player": "Player [%s:%s] has kicked player [%s:%s]",
-        "server_kick_player": "Kicking player [%s:%s]",
-        "description": "Kicks the specified player from the server (WIP)"
+        "player_kick_player": "Pemain [%s:%s] telah menendang pemain [%s:%s]",
+        "server_kick_player": "Menendang pemain [%s:%s]",
+        "description": "Menendang pemain tertentu dari server (WIP)"
       },
       "kill": {
         "usage": "Penggunaan: killall [playerUid] [sceneId]",
-        "scene_not_found_in_player_world": "Scene not found in player world",
-        "kill_monsters_in_scene": "Killing %s monsters in scene %s",
-        "description": "Kill all entities"
+        "scene_not_found_in_player_world": "Adegan tidak ditemukan di dunia pemain",
+        "kill_monsters_in_scene": "Membunuh %s monster di adegan %s",
+        "description": "Bunuh semua monster"
       },
       "killCharacter": {
         "usage": "Penggunaan: /killcharacter [playerId]",
-        "success": "Killed %s's current character.",
-        "description": "Kills the players current character"
+        "success": "Membunuh karakter %s saat ini.",
+        "description": "Membunuh karakter pemain saat ini"
       },
       "language": {
-        "current_language": "current language is %s",
-        "language_changed": "language changed to %s",
-        "language_not_found": "currently, server does not have that language: %s",
-        "description": "display or change current language"
+        "current_language": "bahasa saat ini adalah %s",
+        "language_changed": "bahasa diubah menjadi %s",
+        "language_not_found": "saat ini, server tidak memiliki bahasa itu: %s",
+        "description": "menampilkan atau mengubah bahasa saat ini"
       },
       "list": {
-        "success": "There are %s player(s) online:",
-        "description": "List online players"
+        "success": "Saat ini ada %s pemain yang online",
+        "description": "Daftar pemain online"
       },
       "permission": {
         "usage": "Penggunaan: permission <add|remove> <username> <permission>",
@@ -294,19 +294,19 @@
       },
       "spawn": {
         "usage": "Penggunaan: spawn <entityId> [amount] [level(monster only)]",
-        "success": "Spawned %s of %s.",
-        "description": "Spawns an entity near you"
+        "success": "Muncul %s dari %s.",
+        "description": "Memunculkan entitas di dekat Anda"
       },
       "stop": {
-        "success": "Server shutting down...",
-        "description": "Stops the server"
+        "success": "Server dimatikan...",
+        "description": "Menghentikan server"
       },
       "talent": {
-        "usage_1": "To set talent level: /talent set <talentID> <value>",
-        "usage_2": "Another way to set talent level: /talent <n or e or q> <value>",
-        "usage_3": "To get talent ID: /talent getid",
-        "lower_16": "Invalid talent level. Level should be lower than 16",
-        "set_id": "Set talent to %s.",
+        "usage_1": "Untuk mengatur tingkat bakat: /talent set <talentID> <value>",
+        "usage_2": "Cara lain untuk mengatur tingkat bakat: /talent <n or e or q> <value>",
+        "usage_3": "Untuk mendapatkan ID bakat: /talent getid",
+        "lower_16": "Tingkat bakat tidak valid. Levelnya harus lebih rendah dari 16",
+        "set_id": "Tetapkan bakat untuk %s.",
         "set_atk": "Set talent Normal ATK to %s.",
         "set_e": "Set talent E to %s.",
         "set_q": "Set talent Q to %s.",
@@ -316,12 +316,12 @@
         "normal_attack_id": "Normal Attack ID %s.",
         "e_skill_id": "E skill ID %s.",
         "q_skill_id": "Q skill ID %s.",
-        "description": "Set talent level for your current active character"
+        "description": "Tetapkan level bakat untuk karakter aktif Anda saat ini"
       },
       "teleportAll": {
-        "success": "Summoned all players to your location.",
-        "error": "You only can use this command in MP mode.",
-        "description": "Teleports all players in your world to your position"
+        "success": "Memanggil semua pemain ke lokasi Anda.",
+        "error": "Anda hanya dapat menggunakan perintah ini dalam mode MP.",
+        "description": "Teleport semua pemain di dunia Anda ke posisi Anda"
       },
       "teleport": {
         "usage_server": "Penggunaan: /tp @<player id> <x> <y> <z> [adegan id]",
