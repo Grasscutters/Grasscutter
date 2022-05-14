@@ -1182,9 +1182,6 @@ public class Player {
 		}
 	}
 
-
-
-
 	public void resetSendPlayerLocTime() {
 		this.nextSendPlayerLocTime = System.currentTimeMillis() + 5000;
 	}
@@ -1192,8 +1189,6 @@ public class Player {
 	@PostLoad
 	private void onLoad() {
 		this.getTeamManager().setPlayer(this);
-    Grasscutter.getLogger().info("DEBUG OnLoad_Player: getTowerManager "+this.getNickname()+" ");
-		this.getTowerManager().setPlayer(this);
 	}
 
 	public void save() {
@@ -1257,15 +1252,6 @@ public class Player {
 
     }
 
-    // Make sure Tower load is there   
-    if (this.getTowerManager() == null) {
-      Grasscutter.getLogger().info("DEBUG OnLoad_Login: Setnew TowerManager "+this.getNickname()+" ");
-      this.towerManager = new TowerManager(this);
-    }else{
-      Grasscutter.getLogger().info("DEBUG OnLoad_Login: Skip check or add ?TowerManager "+this.getNickname()+" ");
-      this.getTowerManager().setPlayer(this);      
-    }
-
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
 		}
@@ -1308,6 +1294,8 @@ public class Player {
 		if (getSession().isActive()) {
 			getServer().registerPlayer(this);
 			getProfile().setPlayer(this); // Set online
+      Grasscutter.getLogger().info("Set getTowerManager: "+this.nickname);
+      getTowerManager().setPlayer(this); 
 		}
     
 		// Multiplayer setting
