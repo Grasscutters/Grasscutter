@@ -228,6 +228,11 @@
       "reload_done": "重新加載已完成。",
       "description": "重新加載設定檔和數據。"
     },
+    "remove": {
+      "usage": "用法: remove [indexOfYourTeams] 从1开始",
+      "invalid_index": "下標從1開始",
+      "description": "强制移除對内角色"
+    },
     "resetConst": {
       "reset_all": "重設所有角色的命座。",
       "success": "已重設 %s 的命座，重新登入後將會生效。",

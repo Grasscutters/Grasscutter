@@ -37,7 +37,7 @@ public final class QuestCommand implements CommandHandler {
 		
 		switch (cmd) {
 			case "add" -> {
-				GameQuest quest = sender.getQuestManager().addQuest(questId);
+				GameQuest quest = targetPlayer.getQuestManager().addQuest(questId);
 				
 				if (quest != null) {
 					CommandHandler.sendMessage(sender, translate(sender, "commands.quest.added", questId));
@@ -47,7 +47,7 @@ public final class QuestCommand implements CommandHandler {
 				CommandHandler.sendMessage(sender, translate(sender, "commands.quest.not_found"));
 			}
 			case "finish" -> {
-				GameQuest quest = sender.getQuestManager().getQuestById(questId);
+				GameQuest quest = targetPlayer.getQuestManager().getQuestById(questId);
 				
 				if (quest == null) {
 					CommandHandler.sendMessage(sender, translate(sender, "commands.quest.not_found"));

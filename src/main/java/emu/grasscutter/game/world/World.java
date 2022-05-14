@@ -10,6 +10,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.Player.SceneLoadState;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.EntityIdType;
+import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.DungeonData;
 import emu.grasscutter.data.def.SceneData;
@@ -267,11 +268,9 @@ public class World implements Iterable<Player> {
 			enterReason = EnterReason.DungeonEnter;
 		} else if (oldScene == newScene) {
 			enterType = EnterType.ENTER_GOTO;
-		}
-
-		// Home
-		if (2001 <= newScene.getId() && newScene.getId() <= 2004) {
-			enterType = EnterType.ENTER_SELF_HOME;
+		} else if (newScene.getSceneType() == SceneType.SCENE_HOME_WORLD) {
+			// Home
+			enterType = EnterType.ENTER_SELF_HOME; 
 		}
 		
 		// Teleport packet
