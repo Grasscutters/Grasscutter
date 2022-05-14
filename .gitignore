@@ -67,3 +67,4 @@ BuildConfig.java
 data/gacha_mappings.js
 # macOS
 .DS_Store
+data/hk4e/announcement/
