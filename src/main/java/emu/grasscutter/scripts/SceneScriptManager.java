@@ -154,6 +154,9 @@ public class SceneScriptManager {
 		for (SceneBlock block : this.getScene().getLoadedBlocks()) {
 			for (SceneGroup group : block.groups) {
 				if (group.id == groupId) {
+					if(!group.isLoaded()){
+						loadGroupFromScript(group);
+					}
 					return group;
 				}
 			}
@@ -197,6 +200,13 @@ public class SceneScriptManager {
 
 		group.variables.forEach(var -> this.getVariables().put(var.name, var.value));
 		this.sceneGroups.put(group.id, group);
+
+		if(group.triggers != null){
+			group.triggers.forEach(this::registerTrigger);
+		}
+		if(group.regions != null){
+			group.regions.forEach(this::registerRegion);
+		}
 	}
 	
 	public void checkRegions() {

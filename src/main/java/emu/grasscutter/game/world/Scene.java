@@ -555,13 +555,6 @@ public class Scene {
 		for (SceneGroup group : groups) {
 			// We load the script files for the groups here
 			this.getScriptManager().loadGroupFromScript(group);
-
-			if(group.triggers != null){
-				group.triggers.forEach(getScriptManager()::registerTrigger);
-			}
-			if(group.regions != null){
-				group.regions.forEach(getScriptManager()::registerRegion);
-			}
 		}
 		
 		// Spawn gadgets AFTER triggers are added
