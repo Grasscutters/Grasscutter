@@ -24,6 +24,12 @@ public final class DispatchHandler implements Router {
         express.post("/hk4e_global/mdk/shield/api/verify", DispatchHandler::tokenLogin);
         // Combo token login (from session key).
         express.post("/hk4e_global/combo/granter/login/v2/login", DispatchHandler::sessionKeyLogin);
+        
+        // External login (from other clients).
+        express.get("/authentication/type", (request, response) -> response.send(Grasscutter.getAuthenticationSystem().getClass().getSimpleName()));
+        express.post("/authentication/login", (request, response) -> response.status(500).send("{\"notice\":\"This API is deprecated.\"}"));
+        express.post("/authentication/register", (request, response) -> response.status(500).send("{\"notice\":\"This API is deprecated.\"}"));
+        express.post("/authentication/change_password", (request, response) -> response.status(500).send("{\"notice\":\"This API is deprecated.\"}"));
     }
 
     /**

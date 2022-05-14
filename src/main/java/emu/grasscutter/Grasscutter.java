@@ -35,7 +35,6 @@ import emu.grasscutter.utils.Language;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.BuildConfig;
 
 import javax.annotation.Nullable;
 
@@ -129,7 +128,6 @@ public final class Grasscutter {
 		httpServer.addRouter(GenericHandler.class);
 		httpServer.addRouter(AnnouncementsHandler.class);
 		httpServer.addRouter(DispatchHandler.class);
-		httpServer.addRouter(LegacyAuthHandler.class);
 		httpServer.addRouter(GachaHandler.class);
 		
 		// TODO: find a better place?
