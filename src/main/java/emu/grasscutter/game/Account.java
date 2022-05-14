@@ -150,12 +150,7 @@ public class Account {
 
 		String[] permissionParts = permission.split("\\.");
 		for (String p : this.permissions) {
-
-			if (p.startsWith("-") && permissionMatchesWildcard(p.substring(1), permissionParts)) {
-				Grasscutter.getLogger().info("Permission " + permission + " denied to " + this.username);
-				return false;
-			}
-
+			if (p.startsWith("-") && permissionMatchesWildcard(p.substring(1), permissionParts)) return false;
 			if (permissionMatchesWildcard(p, permissionParts)) return true;
 		}
 
