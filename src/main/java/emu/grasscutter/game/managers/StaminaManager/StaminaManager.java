@@ -298,6 +298,7 @@ public class StaminaManager {
 
     // Returns new stamina and sends PlayerPropNotify or VehicleStaminaNotify
     public int setStamina(GameSession session, String reason, int newStamina, boolean isCharacterStamina) {
+        // Target Player
         if (!GAME_OPTIONS.staminaUsage || session.getPlayer().getstamina()) {
             newStamina = getMaxCharacterStamina();
         }

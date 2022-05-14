@@ -12,6 +12,7 @@ import static emu.grasscutter.utils.Language.translate;
 @Command(label = "nostamina", usage = "nostamina [on|off]", permission = "player.nostamina", permissionTargeted = "player.nostamina.others", description = "commands.nostamina.description")
 public final class NoStaminaCommand implements CommandHandler {
     public static boolean StaminaState = false;
+    //Temp Value
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
@@ -32,7 +33,7 @@ public final class NoStaminaCommand implements CommandHandler {
                     break;
             }
         }
-        targetPlayer.setstamina(StaminaState);
+        targetPlayer.setstamina(StaminaState);//Set
 
         CommandHandler.sendMessage(sender, translate(sender, "commands.nostamina.success", (StaminaState ? translate(sender, "commands.status.enabled") : translate(sender, "commands.status.disabled")), targetPlayer.getNickname()));
     }

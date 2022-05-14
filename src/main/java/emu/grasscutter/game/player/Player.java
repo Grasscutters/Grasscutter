@@ -755,9 +755,11 @@ public class Player {
 		this.save();
 	}
 	public boolean getstamina() {
-			return stamina;
+		// Get Stamina
+		return stamina;
 	}
 	public void setstamina(boolean set_stamina) {
+		// Set Stamina
 		this.stamina = set_stamina;
 	}
 	public boolean inGodmode() {
