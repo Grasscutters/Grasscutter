@@ -162,11 +162,11 @@ public final class HttpServer {
                         <!DOCTYPE html>
                         <html>
                             <head>
-                                <meta charset=\\"utf8\\">
+                                <meta charset="utf8">
                             </head>
                             
                             <body>
-                                <img src=\\"https://http.cat/404\\" />
+                                <img src="https://http.cat/404" />
                             </body>
                         </html>
                         """);

@@ -1,4 +1,4 @@
-package emu.grasscutter.server.dispatch;
+package emu.grasscutter.server.http.objects;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -13,7 +13,7 @@ import express.http.Response;
 import static emu.grasscutter.utils.Language.translate;
 import static emu.grasscutter.Configuration.*;
 
-public final class DispatchHttpJsonHandler implements HttpContextHandler {
+public final class HttpJsonResponse implements HttpContextHandler {
 	private final String response;
 	private final String[] missingRoutes = { // TODO: When http requests for theses routes are found please remove it from this list and update the route request type in the DispatchServer
 			"/common/hk4e_global/announcement/api/getAlertPic",
@@ -28,7 +28,7 @@ public final class DispatchHttpJsonHandler implements HttpContextHandler {
 			"/crash/dataUpload"
 	};
 	
-	public DispatchHttpJsonHandler(String response) {
+	public HttpJsonResponse(String response) {
 		this.response = response;
 	}
 
