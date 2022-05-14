@@ -15,7 +15,7 @@ import static emu.grasscutter.utils.Language.translate;
 public final class DefaultAuthenticators {
     
     /**
-     * Handles the authentication request from the username & password form.
+     * Handles the authentication request from the username and password form.
      */
     public static class PasswordAuthenticator implements Authenticator<LoginResultJson> {
         @Override public LoginResultJson authenticate(AuthenticationRequest request) {
