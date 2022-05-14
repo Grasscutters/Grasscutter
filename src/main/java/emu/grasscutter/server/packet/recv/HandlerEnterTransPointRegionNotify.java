@@ -11,12 +11,6 @@ import emu.grasscutter.server.game.GameSession;
 public class HandlerEnterTransPointRegionNotify extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception{
-        Player player = session.getPlayer();
-        SotSManager sotsManager = player.getSotSManager();
-
-        sotsManager.refillSpringVolume();
-        sotsManager.autoRevive(session);
-        sotsManager.scheduleAutoRecover(session);
-        // TODO: allow interaction with the SotS?
+        session.getPlayer().getSotSManager().handleEnterTransPointRegionNotify();
     }
 }

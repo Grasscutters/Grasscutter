@@ -19,9 +19,11 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
+import emu.grasscutter.data.custom.MainQuestData;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.MonsterData;
+import emu.grasscutter.data.def.QuestData;
 import emu.grasscutter.data.def.SceneData;
 import emu.grasscutter.utils.Utils;
 
@@ -88,7 +90,7 @@ public final class Tools {
 final class ToolsWithLanguageOption {
 	@SuppressWarnings("deprecation")
 	public static void createGmHandbook(String language) throws Exception {
-		ResourceLoader.loadResources();
+		ResourceLoader.loadAll();
 		
 		Map<Long, String> map;
 		try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(RESOURCE("TextMap/TextMap"+language+".json"))), StandardCharsets.UTF_8)) {
@@ -146,6 +148,18 @@ final class ToolsWithLanguageOption {
 			for (Integer id : list) {
 				SceneData data = GameData.getSceneDataMap().get(id);
 				writer.println(data.getId() + " : " + data.getScriptData());
+			}
+			
+			writer.println();
+			
+			writer.println("// Quests");
+			list = new ArrayList<>(GameData.getQuestDataMap().keySet());
+			Collections.sort(list); 
+			
+			for (Integer id : list) {
+				QuestData data = GameData.getQuestDataMap().get(id);
+				MainQuestData mainQuest = GameData.getMainQuestDataMap().get(data.getMainId());
+				writer.println(data.getId() + " : " + map.get(mainQuest.getTitleTextMapHash()) + " - " + map.get(data.getDescTextMapHash()));
 			}
 			
 			writer.println();

@@ -144,16 +144,17 @@ public class Account {
 	}
 
 	public boolean hasPermission(String permission) {
-		if (this.permissions.contains(permission) || this.permissions.contains("*")) {
-			return true;
-		}
+
+		if (this.permissions.contains(permission)) return true;
+		if(this.permissions.contains("*") && this.permissions.size() == 1) return true;
+
 		String[] permissionParts = permission.split("\\.");
 		for (String p : this.permissions) {
-			if (permissionMatchesWildcard(p, permissionParts)) {
-				return true;
-			}
+			if (p.startsWith("-") && permissionMatchesWildcard(p.substring(1), permissionParts)) return false;
+			if (permissionMatchesWildcard(p, permissionParts)) return true;
 		}
-		return false;
+
+		return this.permissions.contains("*");
 	}
 	
 	public boolean removePermission(String permission) {
