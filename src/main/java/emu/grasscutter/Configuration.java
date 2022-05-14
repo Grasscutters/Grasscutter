@@ -1,6 +1,7 @@
 package emu.grasscutter;
 
 import emu.grasscutter.utils.ConfigContainer;
+import emu.grasscutter.utils.ConfigContainer.*;
 
 import java.util.Locale;
 
@@ -40,6 +41,7 @@ public final class Configuration extends ConfigContainer {
     
     public static final Encryption HTTP_ENCRYPTION = config.server.http.encryption;
     public static final Policies HTTP_POLICIES = config.server.http.policies;
+    public static final Files HTTP_STATIC_FILES = config.server.http.files;
     
     public static final GameOptions GAME_OPTIONS = config.server.game.gameOptions;
     public static final GameOptions.InventoryLimits INVENTORY_LIMITS = config.server.game.gameOptions.inventoryLimits;

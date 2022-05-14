@@ -17,7 +17,7 @@ import static emu.grasscutter.Grasscutter.config;
  */
 public class ConfigContainer {
     private static int version() {
-        return 2;
+        return 3;
     }
 
     /**
@@ -125,6 +125,7 @@ public class ConfigContainer {
         
         public Encryption encryption = new Encryption();
         public Policies policies = new Policies();
+        public Files files = new Files();
     }
 
     public static class Game {
@@ -226,6 +227,11 @@ public class ConfigContainer {
 
         public String nickName = "Server";
         public String signature = "Welcome to Grasscutter!";
+    }
+    
+    public static class Files {
+        public String indexFile = "./index.html";
+        public String errorFile = "./404.html";
     }
 
     /* Objects. */
