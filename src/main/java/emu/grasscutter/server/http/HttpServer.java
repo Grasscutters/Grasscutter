@@ -2,13 +2,16 @@ package emu.grasscutter.server.http;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
+import emu.grasscutter.utils.FileUtils;
 import express.Express;
+import express.http.MediaType;
 import io.javalin.Javalin;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 
 import java.io.File;
+import java.io.IOException;
 
 import static emu.grasscutter.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
@@ -62,7 +65,7 @@ public final class HttpServer {
             var sslContextFactory = new SslContextFactory.Server();
             var keystoreFile = new File(HTTP_ENCRYPTION.keystore);
             
-            if(!keystoreFile.exists()) {;
+            if(!keystoreFile.exists()) {
                 HTTP_ENCRYPTION.useEncryption = false;
                 HTTP_ENCRYPTION.useInRouting = false;
                 
@@ -137,15 +140,25 @@ public final class HttpServer {
      */
     public static class DefaultRequestRouter implements Router {
         @Override public void applyRoutes(Express express, Javalin handle) {
-            express.get("/", (req, res) -> res.send("""
-                <!DOCTYPE html>
-                <html>
-                    <head>
-                        <meta charset="utf8">
-                    </head>
-                    <body>%s</body>
-                </html>
-                """.formatted(translate("messages.status.welcome"))));
+            express.get("/", (request, response) -> {
+                File file = new File(HTTP_STATIC_FILES.errorFile);
+                if(!file.exists())
+                    response.send("""
+                            <!DOCTYPE html>
+                            <html>
+                                <head>
+                                    <meta charset="utf8">
+                                </head>
+                                <body>%s</body>
+                            </html>
+                            """.formatted(translate("messages.status.welcome")));
+                else {
+                    final var filePath = file.getPath();
+                    final MediaType fromExtension = MediaType.getByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
+                    response.type((fromExtension != null) ? fromExtension.getMIME() : "text/plain")
+                            .send(FileUtils.read(filePath));
+                }
+            });
         }
     }
 
@@ -158,7 +171,10 @@ public final class HttpServer {
                 if(SERVER.debugLevel == ServerDebugMode.MISSING)
                     Grasscutter.getLogger().info(translate("messages.dispatch.unhandled_request_error", context.method(), context.url()));
                 context.contentType("text/html");
-                context.result("""
+                
+                File file = new File(HTTP_STATIC_FILES.errorFile);
+                if(!file.exists())
+                    context.result("""
                         <!DOCTYPE html>
                         <html>
                             <head>
@@ -170,6 +186,12 @@ public final class HttpServer {
                             </body>
                         </html>
                         """);
+                else {
+                    final var filePath = file.getPath();
+                    final MediaType fromExtension = MediaType.getByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
+                    context.contentType((fromExtension != null) ? fromExtension.getMIME() : "text/plain")
+                            .result(FileUtils.read(filePath));
+                }
             });
         }
     }
