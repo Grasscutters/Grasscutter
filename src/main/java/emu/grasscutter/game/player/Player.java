@@ -203,7 +203,6 @@ public class Player {
 		this.avatars = new AvatarStorage(this);
 		this.friendsList = new FriendsList(this);
 		this.mailHandler = new MailHandler(this);
-		this.towerManager = new TowerManager(this);
 		this.abilityManager = new AbilityManager(this);
 		this.setQuestManager(new QuestManager(this));
 		this.pos = new Position();
