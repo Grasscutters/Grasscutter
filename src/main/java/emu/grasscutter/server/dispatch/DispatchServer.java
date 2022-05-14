@@ -16,6 +16,7 @@ import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.server.dispatch.authentication.AuthenticationHandler;
 import emu.grasscutter.server.dispatch.authentication.DefaultAuthenticationHandler;
+import emu.grasscutter.server.dispatch.http.AnnouncementIndexHandler;
 import emu.grasscutter.server.dispatch.http.GachaDetailsHandler;
 import emu.grasscutter.server.dispatch.http.GachaRecordHandler;
 import emu.grasscutter.server.dispatch.json.*;
@@ -442,6 +443,11 @@ public final class DispatchServer {
 
 		// gacha details
 		httpServer.get("/gacha/details", new GachaDetailsHandler());
+
+		// announcement index
+		httpServer.get("/hk4e/announcement/*", new AnnouncementIndexHandler());
+		httpServer.get("/sw.js", new AnnouncementIndexHandler());
+		httpServer.get("/dora/lib/vue/2.6.11/vue.min.js", new AnnouncementIndexHandler());
 
 		// static file support for plugins
 		httpServer.raw().config.precompressStaticFiles = false; // If this isn't set to false, files such as images may appear corrupted when serving static files
