@@ -2,6 +2,7 @@ package emu.grasscutter.auth;
 
 import emu.grasscutter.server.http.objects.*;
 import express.http.Request;
+import express.http.Response;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -53,11 +54,19 @@ public interface AuthenticationSystem {
     Authenticator<ComboTokenResJson> getSessionKeyAuthenticator();
 
     /**
+     * This is the authenticator used for handling external authentication requests.
+     * @return An authenticator.
+     */
+    ExternalAuthenticator getExternalAuthenticator();
+
+    /**
      * A data container that holds relevant data for authenticating a client.
      */
     @Builder @AllArgsConstructor @Getter
     class AuthenticationRequest {
         private final Request request;
+        @Nullable private final Response response;
+        
         @Nullable private final LoginAccountRequestJson passwordRequest;
         @Nullable private final LoginTokenRequestJson tokenRequest;
         @Nullable private final ComboTokenReqJson sessionKeyRequest;
@@ -103,5 +112,16 @@ public interface AuthenticationSystem {
                 .sessionKeyRequest(jsonData)
                 .sessionKeyData(tokenData)
                 .build();
+    }
+
+    /**
+     * Generates an authentication request from a {@link Response} object.
+     * @param request The Express request.
+     * @param response the Express response.
+     * @return An authentication request.
+     */
+    static AuthenticationRequest fromExternalRequest(Request request, Response response) {
+        return AuthenticationRequest.builder().request(request)
+                .response(response).build();
     }
 }

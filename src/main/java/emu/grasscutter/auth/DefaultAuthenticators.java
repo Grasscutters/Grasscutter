@@ -158,4 +158,24 @@ public final class DefaultAuthenticators {
             return response;
         }
     }
+
+    /**
+     * Handles authentication requests from external sources.
+     */
+    public static class ExternalAuthentication implements ExternalAuthenticator {
+        @Override public void handleLogin(AuthenticationRequest request) {
+            assert request.getResponse() != null;
+            request.getResponse().send("Authentication is not available with the default authentication method.");
+        }
+
+        @Override public void handleAccountCreation(AuthenticationRequest request) {
+            assert request.getResponse() != null;
+            request.getResponse().send("Authentication is not available with the default authentication method.");
+        }
+
+        @Override public void handlePasswordReset(AuthenticationRequest request) {
+            assert request.getResponse() != null;
+            request.getResponse().send("Authentication is not available with the default authentication method.");
+        }
+    }
 }
