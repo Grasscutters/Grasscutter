@@ -145,6 +145,10 @@
       "invalid_amount_or_playerId": "无效的数量/玩家ID。",
       "description": "给予所有物品"
     },
+    "nostamina": {
+      "success": "NoStamina %s 对于 %s.",
+      "description": "保持你的体力处于最高状态。"
+    },
     "giveArtifact": {
       "usage": "用法：giveart|gart [玩家] <圣遗物ID> <主词条ID> [<副词条ID>[,<强化次数>]]... [等级]",
       "id_error": "无效的圣遗物ID。",
