@@ -32,7 +32,7 @@ public final class NoStaminaCommand implements CommandHandler {
                     break;
             }
         }
-
+        targetPlayer.setstamina(StaminaState);
 
         CommandHandler.sendMessage(sender, translate(sender, "commands.nostamina.success", (StaminaState ? translate(sender, "commands.status.enabled") : translate(sender, "commands.status.disabled")), targetPlayer.getNickname()));
     }
