@@ -10,9 +10,12 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "giveall", usage = "giveall", aliases = {"givea"}, permission = "player.giveall", permissionTargeted = "player.giveall.others", threading = true, description = "commands.giveAll.description")
@@ -26,8 +29,6 @@ public final class GiveAllCommand implements CommandHandler {
       return;
     }
 
-    int amount = 1000;
-
     // Check Username
     Account account = Grasscutter.getGameServer().getAccountByName(sender.getAccount().getUsername());
     if (account == null) {
@@ -38,7 +39,7 @@ public final class GiveAllCommand implements CommandHandler {
     // Remove permission
     if (account.removePermission("player.giveall")) {
       account.save();
-      this.giveAllItems(sender, amount);
+      this.giveAllItems(sender);
       CommandHandler.sendMessage(sender, "Giving all items done, Permission removed, can only be used once.");      
     } else{
       CommandHandler.sendMessage(sender, "It looks like you are already using or not having permission.");
@@ -46,14 +47,24 @@ public final class GiveAllCommand implements CommandHandler {
       
   }
 
-  public void giveAllItems(Player player, int amount) {
+  public void giveAllItems(Player player) {
     CommandHandler.sendMessage(player, translate("commands.giveAll.started"));
+
+    // some test items
+    List<GameItem> itemList = new ArrayList<>();
+    boolean debug_mode=true;
+    List<Integer> addto_item = new ArrayList<>();
+    List<Integer> addto_avatar = new ArrayList<>();
 
     for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
 
       // Exclude test avatar
-      if (isTestAvatar(avatarData.getId()))
+      if (isTestAvatar(avatarData.getId())){
+        if(debug_mode){
+          addto_avatar.add(avatarData.getId());
+        }
         continue;
+      }
 
       Avatar avatar = new Avatar(avatarData);
       avatar.setLevel(90);
@@ -66,8 +77,6 @@ public final class GiveAllCommand implements CommandHandler {
       player.addAvatar(avatar);
     }
 
-    // some test items
-    List<GameItem> itemList = new ArrayList<>();
     for (ItemData itemdata : GameData.getItemDataMap().values()) {
       // Exclude test item
       if (isTestItem(itemdata.getId()))
@@ -84,11 +93,51 @@ public final class GiveAllCommand implements CommandHandler {
           }
         }
       } else {
+
+        int tmp=1000;
+
+        // skip item MATERIAL_QUEST=Quest
+        if (itemdata.getMaterialType() == MaterialType.MATERIAL_QUEST){
+          if(debug_mode){
+            addto_item.add(itemdata.getId());
+          }
+          continue;
+        }
+         
+
+        // MATERIAL_FURNITURE_SUITE_FORMULA=Precious
+        if (itemdata.getMaterialType() == MaterialType.MATERIAL_FURNITURE_SUITE_FORMULA || itemdata.getMaterialType() == MaterialType.MATERIAL_FURNITURE_FORMULA){
+          if(debug_mode){
+            addto_item.add(itemdata.getId());
+          }
+          continue;
+        }    
+
+        // CODEX_WIDGET aka Gadget 
+        if(itemdata.getItemType() == ItemType.ITEM_MATERIAL){
+          if(itemdata.getMaterialType() == MaterialType.MATERIAL_WIDGET){
+            tmp=itemdata.getStackLimit();
+          }
+        }else{
+          if(itemdata.getStackLimit() != 0){
+            Grasscutter.getLogger().info("Setme");
+            tmp=itemdata.getStackLimit(); // just max it
+          }
+        }
+
         GameItem item = new GameItem(itemdata);
-        item.setCount(amount);
+        item.setCount(tmp);
         itemList.add(item);
       }
     }
+
+    if(debug_mode){
+      String joined_item = addto_item.stream().map(i -> "" + String.valueOf(i) + "").collect(Collectors.joining(","));
+      Grasscutter.getLogger().info("DEBUG Item: "+joined_item);
+      String joined_avatar = addto_avatar.stream().map(i -> "" + String.valueOf(i) + "").collect(Collectors.joining(","));
+      Grasscutter.getLogger().info("DEBUG Avatar: "+joined_avatar);
+    }
+
     int packetNum = 10;
     int itemLength = itemList.size();
     int number = itemLength / packetNum;
