@@ -20,6 +20,7 @@ import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
+import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.data.SceneBlock;
 import emu.grasscutter.scripts.data.SceneGroup;
@@ -491,7 +492,8 @@ public class Scene {
 		}
 	}
 	public Set<SceneBlock> getPlayerActiveBlocks(Player player){
-		return getScriptManager().getBlocks().stream()
+		// TODO consider the borders of blocks
+		return getScriptManager().getBlocks().values().stream()
 				.filter(block -> block.contains(player.getPos()))
 				.collect(Collectors.toSet());
 	}
@@ -515,42 +517,44 @@ public class Scene {
 
 		for(var block : visible){
 			if (!this.getLoadedBlocks().contains(block)) {
-				this.onLoadBlock(block);
+				this.onLoadBlock(block, this.getPlayers());
 				this.getLoadedBlocks().add(block);
 			}
 			this.getPlayers().stream()
 					.filter(p -> block.contains(p.getPos()))
-					.forEach(p -> playerMeetEntities(p, block));
+					.forEach(p -> playerMeetGroups(p, block));
 		}
 
 	}
-	public void playerMeetEntities(Player player, SceneBlock block){
-		var entities = new ArrayList<GameEntity>();
+	public List<SceneGroup> playerMeetGroups(Player player, SceneBlock block){
 		int RANGE = 100;
 
-		var monster = block.queryNeighbors(block.sceneMonsterIndex, player.getPos(), RANGE);
+		var sceneGroups = SceneIndexManager.queryNeighbors(block.sceneGroupIndex, player.getPos(), RANGE);
 
-		entities.addAll(monster.stream()
-				.filter(mob -> !block.loadedMonsterSet.contains(mob))
-				.map(mob -> {
-					block.loadedMonsterSet.add(mob);
-					return getScriptManager().createMonster(mob.groupId, block.id, mob);
-				}).toList());
+		var groups = new ArrayList<>(sceneGroups.stream()
+				.filter(group -> !scriptManager.getLoadedGroupSetPerBlock().get(block.id).contains(group))
+				.peek(group -> scriptManager.getLoadedGroupSetPerBlock().get(block.id).add(group)).toList());
 
-		if(entities.size() == 0){
-			return;
+		if(groups.size() == 0){
+			return List.of();
 		}
-		scriptManager.meetEntities(entities);
 
-		Grasscutter.getLogger().info("Scene {} Block {} added {} entity(s)", this.getId(), block.id, entities.size());
+		Grasscutter.getLogger().info("Scene {} Block {} loaded {} group(s)", this.getId(), block.id, groups.size());
+		return groups;
 	}
-	// TODO optimize
-	public void onLoadBlock(SceneBlock block) {
-		for (SceneGroup group : block.groups) {
+	public void onLoadBlock(SceneBlock block, List<Player> players) {
+		this.getScriptManager().loadBlockFromScript(block);
+		scriptManager.getLoadedGroupSetPerBlock().put(block.id , new HashSet<>());
+
+		// the groups form here is not added in current scene
+		var groups = players.stream()
+				.map(p -> playerMeetGroups(p, block))
+				.flatMap(Collection::stream)
+				.toList();
+
+		for (SceneGroup group : groups) {
 			// We load the script files for the groups here
-			if (!group.isLoaded()) {
-				this.getScriptManager().loadGroupFromScript(group);
-			}
+			this.getScriptManager().loadGroupFromScript(group);
 
 			if(group.triggers != null){
 				group.triggers.forEach(getScriptManager()::registerTrigger);
@@ -562,7 +566,7 @@ public class Scene {
 		
 		// Spawn gadgets AFTER triggers are added
 		// TODO
-		for (SceneGroup group : block.groups) {
+		for (SceneGroup group : groups) {
 			if (group.init_config == null) {
 				continue;
 			}
@@ -576,7 +580,7 @@ public class Scene {
 			do {
 				var suiteData = group.getSuiteByIndex(suite);
 				getScriptManager().spawnGadgetsInGroup(group,suiteData);
-				block.buildIndex(block.sceneMonsterIndex, suiteData.sceneMonsters);
+				getScriptManager().spawnMonstersInGroup(group, suiteData);
 				suite++;
 			} while (suite < group.init_config.end_suite);
 		}
@@ -600,6 +604,7 @@ public class Scene {
 				group.regions.forEach(getScriptManager()::deregisterRegion);
 			}
 		}
+		scriptManager.getLoadedGroupSetPerBlock().remove(block.id);
 		Grasscutter.getLogger().info("Scene {} Block {} is unloaded.", this.getId(), block.id);
 	}
 	

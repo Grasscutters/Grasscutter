@@ -158,4 +158,7 @@ public class Position implements Serializable {
 	public long[] toLongArray(){
 		return new long[]{(long) x, (long) y, (long) z};
 	}
+	public long[] toXZLongArray(){
+		return new long[]{(long) x, (long) z};
+	}
 }

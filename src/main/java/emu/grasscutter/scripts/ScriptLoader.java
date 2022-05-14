@@ -5,6 +5,7 @@ import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.constants.ScriptGadgetState;
 import emu.grasscutter.scripts.constants.ScriptRegionShape;
+import emu.grasscutter.scripts.data.SceneMeta;
 import emu.grasscutter.scripts.serializer.LuaSerializer;
 import emu.grasscutter.scripts.serializer.Serializer;
 import org.luaj.vm2.LuaTable;
@@ -16,8 +17,10 @@ import org.luaj.vm2.script.LuajContext;
 import javax.script.*;
 import java.io.File;
 import java.io.FileReader;
+import java.lang.ref.SoftReference;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ScriptLoader {
@@ -26,9 +29,15 @@ public class ScriptLoader {
 	private static ScriptEngineFactory factory;
 	private static String fileType;
 	private static Serializer serializer;
-	
-	private static Map<String, CompiledScript> scripts = new ConcurrentHashMap<>();
-	
+	/**
+	 * suggest GC to remove it if the memory is less
+	 */
+	private static Map<String, SoftReference<CompiledScript>> scriptsCache = new ConcurrentHashMap<>();
+	/**
+	 * sceneId - SceneMeta
+	 */
+	private static Map<Integer, SoftReference<SceneMeta>> sceneMetaCache = new ConcurrentHashMap<>();
+
 	public synchronized static void init() throws Exception {
 		if (sm != null) {
 			throw new Exception("Script loader already initialized");
@@ -73,10 +82,17 @@ public class ScriptLoader {
 		return serializer;
 	}
 
+	public static <T> Optional<T> tryGet(SoftReference<T> softReference){
+		try{
+			return Optional.ofNullable(softReference.get());
+		}catch (NullPointerException npe){
+			return Optional.empty();
+		}
+	}
 	public static CompiledScript getScriptByPath(String path) {
-		CompiledScript sc = scripts.get(path);
-		if (sc != null) {
-			return sc;
+		var sc = tryGet(scriptsCache.get(path));
+		if (sc.isPresent()) {
+			return sc.get();
 		}
 
 		Grasscutter.getLogger().info("Loaded Script" + path);
@@ -86,13 +102,22 @@ public class ScriptLoader {
 		if (!file.exists()) return null;
 
 		try (FileReader fr = new FileReader(file)) {
-			sc = ((Compilable) getEngine()).compile(fr);
-			scripts.putIfAbsent(path, sc);
+			var script = ((Compilable) getEngine()).compile(fr);
+			scriptsCache.put(path, new SoftReference<>(script));
+			return script;
 		} catch (Exception e) {
 			Grasscutter.getLogger().error("Loaded Script {} failed!", path, e);
 			return null;
 		}
-		
-		return sc;
+
 	}
+
+	public static SceneMeta getSceneMeta(int sceneId) {
+		return tryGet(sceneMetaCache.get(sceneId)).orElseGet(() -> {
+			var instance = SceneMeta.of(sceneId);
+			sceneMetaCache.put(sceneId, new SoftReference<>(instance));
+			return instance;
+		});
+	}
+
 }
