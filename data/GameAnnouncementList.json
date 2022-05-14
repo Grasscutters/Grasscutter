@@ -8,8 +8,8 @@
 
           "title": "<strong>Welcome to Grasscutter!</strong>",
           "subtitle": "Welcome!",
-          "banner": "https://uploadstatic-sea.mihoyo.com/announcement/2020/09/22/7d85f19b152d218e73224d7c138a0fd0_5818585260283672899.jpg",
-          "tag_icon": "https://uploadstatic-sea.mihoyo.com/announcement/2020/03/05/a2588f1a51faee9fa8dfe9aead649dd6_7237021399135895303.png",
+          "banner": "https://uploadstatic-sea.mihoyo.com/hk4e/announcement/image/banner2.jpg",
+          "tag_icon": "https://uploadstatic-sea.mihoyo.com/hk4e/announcement/image/alert/warning.png",
           "type": 2,
           "type_label": "System",
           "lang": "en-US",
@@ -22,8 +22,8 @@
           "ann_id": 2,
           "title": "<strong>How to use announcements</strong>",
           "subtitle": "How to use announcements",
-          "banner": "https://uploadstatic-sea.mihoyo.com/announcement/2020/09/22/7d85f19b152d218e73224d7c138a0fd0_5818585260283672899.jpg",
-          "tag_icon": "https://uploadstatic-sea.mihoyo.com/announcement/2020/03/05/a2588f1a51faee9fa8dfe9aead649dd6_7237021399135895303.png",
+          "banner": "https://uploadstatic-sea.mihoyo.com/hk4e/announcement/image/banner2.jpg",
+          "tag_icon": "https://uploadstatic-sea.mihoyo.com/hk4e/announcement/image/alert/warning.png",
           "type": 2,
           "type_label": "System",
           "lang": "en-US",
@@ -38,10 +38,24 @@
     },
     {
       "list": [
-        {}
+        {
+          "ann_id": 3,
+
+          "title": "<strong>Welcome to Genshin Impact!</strong>",
+          "subtitle": "Genshin Impact!",
+          "banner": "https://uploadstatic-sea.mihoyo.com/hk4e/announcement/image/banner2.jpg",
+          "tag_icon": "https://uploadstatic-sea.mihoyo.com/hk4e/announcement/image/alert/warning.png",
+          "type": 2,
+          "type_label": "Activity",
+          "lang": "en-US",
+          "start_time": "2020-09-25 04:05:30",
+          "end_time": "2030-10-30 11:00:00",
+          "content": "",
+          "has_content": true
+        }
       ],
       "type_id": 3,
-      "type_label": "Events"
+      "type_label": "Activity"
     }
   ],
   "total": 2,

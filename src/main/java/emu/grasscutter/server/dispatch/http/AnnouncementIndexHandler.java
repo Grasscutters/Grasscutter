@@ -46,6 +46,14 @@ public class AnnouncementIndexHandler implements HttpContextHandler {
                         res.type("text/css");
                         res.send(FileUtils.read(renderFile));
                         break;
+                    case "png":
+                        res.type("image/png");
+                        res.send(FileUtils.read(renderFile));
+                        break;
+                    case "jpg":
+                        res.type("image/jpeg");
+                        res.send(FileUtils.read(renderFile));
+                        break;
                     case "js":
                     default:
                         res.send(FileUtils.read(renderFile));
