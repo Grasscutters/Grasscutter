@@ -154,8 +154,8 @@ public class Player {
 	@Transient private SotSManager sotsManager;
 
 	private TeamManager teamManager;
-
 	private TowerManager towerManager;
+
 	private PlayerGachaInfo gachaInfo;
 	private PlayerProfile playerProfile;
 	private boolean showAvatar;
@@ -250,7 +250,10 @@ public class Player {
 		this.session = session;
 		this.nickname = "Traveler";
 		this.signature = "";
+
 		this.teamManager = new TeamManager(this);
+    this.towerManager = new TowerManager(this);
+
 		this.birthday = new PlayerBirthday();
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
@@ -499,7 +502,7 @@ public class Player {
 	}
 
 	public TowerManager getTowerManager() {
-		return towerManager;
+		return this.towerManager;
 	}
 
 	public QuestManager getQuestManager() {
@@ -1188,6 +1191,7 @@ public class Player {
 	@PostLoad
 	private void onLoad() {
 		this.getTeamManager().setPlayer(this);
+    this.getTowerManager().setPlayer(this);
 	}
 
 	public void save() {
@@ -1196,7 +1200,11 @@ public class Player {
 
 	public void onLogin() { 
 
-		// Make sure team is there    
+		// Make sure team tower is there  
+    if (this.getTowerManager() == null){
+      this.towerManager = new TowerManager(this);
+    }
+
     if (this.getTeamManager() == null) {
       // New player
       this.teamManager = new TeamManager(this);
@@ -1293,8 +1301,6 @@ public class Player {
 		if (getSession().isActive()) {
 			getServer().registerPlayer(this);
 			getProfile().setPlayer(this); // Set online
-      Grasscutter.getLogger().info("Set getTowerManager: "+this.nickname);
-      getTowerManager().setPlayer(this); 
 		}
     
 		// Multiplayer setting
