@@ -6,10 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.time.*;
 import java.time.temporal.TemporalAdjusters;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import java.util.Locale;
+import java.util.*;
 
 import emu.grasscutter.Grasscutter;
 import io.netty.buffer.ByteBuf;
@@ -310,13 +307,6 @@ public final class Utils {
 	}
 
 	/**
-	 * get language code from Locale
-	 */
-    public static String getLanguageCode(Locale locale) {
-        return String.format("%s-%s", locale.getLanguage(), locale.getCountry());
-    }
-
-	/**
 	 * Performs a linear interpolation using a table of fixed points to create an effective piecewise f(x) = y function.
 	 * @param x
 	 * @param xyArray Array of points in [[x0,y0], ... [xN, yN]] format
@@ -379,5 +369,45 @@ public final class Utils {
 			}
 		}
 		return temp.toIntArray();
+	}
+
+	/**
+	 * Gets the language code from a given locale.
+	 * @param locale A locale.
+	 * @return A string in the format of 'XX-XX'.
+	 */
+	public static String getLanguageCode(Locale locale) {
+		return String.format("%s-%s", locale.getLanguage(), locale.getCountry());
+	}
+
+	/**
+	 * Base64 encodes a given byte array.
+	 * @param toEncode An array of bytes.
+	 * @return A base64 encoded string.
+	 */
+	public static String base64Encode(byte[] toEncode) {
+		return Base64.getEncoder().encodeToString(toEncode);
+	}
+
+	/**
+	 * Base64 decodes a given string.
+	 * @param toDecode A base64 encoded string.
+	 * @return An array of bytes.
+	 */
+	public static byte[] base64Decode(String toDecode) {
+		return Base64.getDecoder().decode(toDecode);
+	}
+
+	/**
+	 * Safely JSON decodes a given string.
+	 * @param jsonData The JSON-encoded data.
+	 * @return JSON decoded data, or null if an exception occurred.
+	 */
+	public static <T> T jsonDecode(String jsonData, Class<T> classType) {
+		try {
+			return Grasscutter.getGsonFactory().fromJson(jsonData, classType);
+		} catch (Exception ignored) {
+			return null;
+		}
 	}
 }
