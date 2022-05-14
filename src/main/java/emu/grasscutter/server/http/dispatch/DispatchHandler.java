@@ -27,9 +27,12 @@ public final class DispatchHandler implements Router {
         
         // External login (from other clients).
         express.get("/authentication/type", (request, response) -> response.send(Grasscutter.getAuthenticationSystem().getClass().getSimpleName()));
-        express.post("/authentication/login", (request, response) -> response.status(500).send("{\"notice\":\"This API is deprecated.\"}"));
-        express.post("/authentication/register", (request, response) -> response.status(500).send("{\"notice\":\"This API is deprecated.\"}"));
-        express.post("/authentication/change_password", (request, response) -> response.status(500).send("{\"notice\":\"This API is deprecated.\"}"));
+        express.post("/authentication/login", (request, response) -> Grasscutter.getAuthenticationSystem().getExternalAuthenticator()
+                .handleLogin(AuthenticationSystem.fromExternalRequest(request, response)));
+        express.post("/authentication/register", (request, response) -> Grasscutter.getAuthenticationSystem().getExternalAuthenticator()
+                .handleAccountCreation(AuthenticationSystem.fromExternalRequest(request, response)));
+        express.post("/authentication/change_password", (request, response) -> Grasscutter.getAuthenticationSystem().getExternalAuthenticator()
+                .handlePasswordReset(AuthenticationSystem.fromExternalRequest(request, response)));
     }
 
     /**
