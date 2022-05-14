@@ -14,7 +14,6 @@ import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static emu.grasscutter.utils.Language.translate;
 
@@ -59,12 +58,8 @@ public final class GiveAllCommand implements CommandHandler {
     for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
 
       // Exclude test avatar
-      if (isTestAvatar(avatarData.getId())){
-        if(debug_mode){
-          addto_avatar.add(avatarData.getId());
-        }
-        continue;
-      }
+      if (isTestAvatar(avatarData.getId()))
+       continue;
 
       Avatar avatar = new Avatar(avatarData);
       avatar.setLevel(90);
@@ -75,9 +70,11 @@ public final class GiveAllCommand implements CommandHandler {
       // This will handle stats and talents
       avatar.recalcStats();
       player.addAvatar(avatar);
+
     }
 
     for (ItemData itemdata : GameData.getItemDataMap().values()) {
+
       // Exclude test item
       if (isTestItem(itemdata.getId()))
         continue;
@@ -95,23 +92,12 @@ public final class GiveAllCommand implements CommandHandler {
       } else {
 
         int tmp=1000;
-
-        // skip item MATERIAL_QUEST=Quest
-        if (itemdata.getMaterialType() == MaterialType.MATERIAL_QUEST){
-          if(debug_mode){
-            addto_item.add(itemdata.getId());
-          }
-          continue;
-        }
+        
+        if (itemdata.getMaterialType() == MaterialType.MATERIAL_QUEST)
+         continue;
          
-
-        // MATERIAL_FURNITURE_SUITE_FORMULA=Precious
-        if (itemdata.getMaterialType() == MaterialType.MATERIAL_FURNITURE_SUITE_FORMULA || itemdata.getMaterialType() == MaterialType.MATERIAL_FURNITURE_FORMULA){
-          if(debug_mode){
-            addto_item.add(itemdata.getId());
-          }
-          continue;
-        }    
+        if (itemdata.getMaterialType() == MaterialType.MATERIAL_FURNITURE_SUITE_FORMULA || itemdata.getMaterialType() == MaterialType.MATERIAL_FURNITURE_FORMULA)
+         continue; 
 
         // CODEX_WIDGET aka Gadget 
         if(itemdata.getItemType() == ItemType.ITEM_MATERIAL){
@@ -129,13 +115,6 @@ public final class GiveAllCommand implements CommandHandler {
         item.setCount(tmp);
         itemList.add(item);
       }
-    }
-
-    if(debug_mode){
-      String joined_item = addto_item.stream().map(i -> "" + String.valueOf(i) + "").collect(Collectors.joining(","));
-      Grasscutter.getLogger().info("DEBUG Item: "+joined_item);
-      String joined_avatar = addto_avatar.stream().map(i -> "" + String.valueOf(i) + "").collect(Collectors.joining(","));
-      Grasscutter.getLogger().info("DEBUG Avatar: "+joined_avatar);
     }
 
     int packetNum = 10;

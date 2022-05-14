@@ -3,21 +3,25 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.def.AvatarData;
+import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.Utils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import ch.qos.logback.classic.pattern.Util;
+import java.util.stream.Collectors;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "commands.account.description")
+@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "commands.account.description", aliases = {"acc"})
 public final class AccountCommand implements CommandHandler {
 
     @Override
@@ -48,6 +52,42 @@ public final class AccountCommand implements CommandHandler {
             default:
                 CommandHandler.sendMessage(null, translate(sender, "commands.account.command_usage"));
                 return;
+            case "debug":
+
+             List<Integer> addto_item = new ArrayList<>();
+             List<Integer> addto_avatar = new ArrayList<>();
+
+             // GET AVATAR
+             for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
+               
+               int avatarId = avatarData.getId();
+               if (avatarId < 10000002 || avatarId >= 11000000) {
+                addto_avatar.add(avatarData.getId());
+               }
+
+             }
+
+             // GET ITEM
+             for (ItemData itemdata : GameData.getItemDataMap().values()) {
+
+              // skip item MATERIAL_QUEST=Quest
+              if (itemdata.getMaterialType() == MaterialType.MATERIAL_QUEST){
+               addto_item.add(itemdata.getId());
+              }
+
+              // MATERIAL_FURNITURE_SUITE_FORMULA=Precious
+              if (itemdata.getMaterialType() == MaterialType.MATERIAL_FURNITURE_SUITE_FORMULA || itemdata.getMaterialType() == MaterialType.MATERIAL_FURNITURE_FORMULA){
+               addto_item.add(itemdata.getId());
+              } 
+
+             }
+
+             String joined_item = addto_item.stream().map(i -> "" + String.valueOf(i) + "").collect(Collectors.joining(","));
+             Grasscutter.getLogger().info("DEBUG Item: "+joined_item);
+             String joined_avatar = addto_avatar.stream().map(i -> "" + String.valueOf(i) + "").collect(Collectors.joining(","));
+             Grasscutter.getLogger().info("DEBUG Avatar: "+joined_avatar);
+             
+             return;
             case "clean_player":
 
                  // List Player with null player
