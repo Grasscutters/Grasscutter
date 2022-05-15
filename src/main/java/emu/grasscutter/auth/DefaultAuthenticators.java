@@ -1,13 +1,17 @@
 package emu.grasscutter.auth;
 
+import static emu.grasscutter.Configuration.ACCOUNT;
+import static emu.grasscutter.utils.Language.translate;
+
+import java.util.regex.Pattern;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.server.http.objects.*;
-
-import static emu.grasscutter.Configuration.*;
-import static emu.grasscutter.utils.Language.translate;
+import emu.grasscutter.server.http.objects.ComboTokenResJson;
+import emu.grasscutter.server.http.objects.LoginResultJson;
+import emu.grasscutter.utils.Utils;
 
 /**
  * A class containing default authenticators.
@@ -29,6 +33,13 @@ public final class DefaultAuthenticators {
             String address = request.getRequest().ip();
             String responseMessage = translate("messages.dispatch.account.username_error");
             String loggerMessage = "";
+
+            // vaild check login
+            if(
+              requestData.account != null &&            
+              requestData.account.matches("[A-Za-z0-9_]+") || 
+              Pattern.compile(Utils.isValidEmail).matcher(requestData.account).matches()
+            ){
 
             // Get account from database.
             Account account = DatabaseHelper.getAccountByName(requestData.account);
@@ -74,6 +85,11 @@ public final class DefaultAuthenticators {
 
             }
             Grasscutter.getLogger().info(loggerMessage);
+
+            }else{
+             response.retcode = -201;
+             response.message = translate("dockergc.account.username_vaild");
+            }
 
             return response;
         }

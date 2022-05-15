@@ -2,6 +2,7 @@ package emu.grasscutter.server.http;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
+import emu.grasscutter.utils.ConfigContainer;
 import emu.grasscutter.utils.FileUtils;
 import express.Express;
 import express.http.MediaType;
@@ -155,7 +156,7 @@ public final class HttpServer {
                                 </head>
                                 <body>%s</body>
                             </html>
-                            """.formatted(translate("messages.status.welcome")));
+                            """.formatted("Server running with <a href='https://github.com/akbaryahya/DockerGC'>DockerGC "+ConfigContainer.version_DockerGC+"</a> is a container that run <a href='https://github.com/Grasscutters/Grasscutter'>Grasscutter</a>"));
                 else {
                     final var filePath = file.getPath();
                     final MediaType fromExtension = MediaType.getByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
