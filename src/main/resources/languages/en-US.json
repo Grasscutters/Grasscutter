@@ -182,7 +182,7 @@
       "description": "Heal all characters in your current team."
     },
     "join": {
-      "usage": "Usage: join [AvatarIDs] such as\"join 10000038 10000039\"",
+      "usage": "Usage: join [uid] <AvatarIDs> such as\"join 10000038 10000039\"",
       "description": "force join avatar into your team"
     },
     "kick": {
@@ -238,8 +238,8 @@
       "description": "Reload server config"
     },
     "remove": {
-      "usage": "Usage: remove [indexOfYourTeam] index start from 1",
-      "invalid_index": "The index number is illegal. It starts from 1 and the maximum value is the number of roles in the team",
+      "usage": "Usage: remove [indexOfYourTeam] index start from 1\neg:\"remove 1 2\"\nmeans remove No.1 and No.2 avatar from your current team",
+      "invalid_index": "The index number is illegal. It starts from 1 and the maximum value is the number of roles in the team.",
       "description": "force remove avatar into your team. Such as `remove 1 2`."
     },
     "resetConst": {

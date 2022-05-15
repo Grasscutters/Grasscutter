@@ -90,7 +90,7 @@
     "status": {
       "enabled": "已啟用",
       "disabled": "未啟用",
-      "help": "幫助", 
+      "help": "幫助",
       "success": "成功"
     },
     "account": {
@@ -176,6 +176,10 @@
       "success": "所有角色已被治療。",
       "description": "治療當前隊伍的角色。"
     },
+    "join": {
+      "usage": "用法：join [uid] <角色IDs>\n例如in 10000038 10000039\"空格分開",
+      "description": "强制將角色加入隊伍中"
+    },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已把 [%s:%s] 踢出",
       "server_kick_player": "正在踢出玩家 [%s:%s]",
@@ -199,7 +203,7 @@
       "description": "顯示或切換當前語言。"
     },
     "list": {
-      "success": "目前總線上人數：%s" ,
+      "success": "目前總線上人數：%s",
       "description": "查看所有在線玩家"
     },
     "permission": {
@@ -229,9 +233,9 @@
       "description": "重新加載設定檔和數據。"
     },
     "remove": {
-      "usage": "用法: remove [多個角色在隊伍中的序號] 序號从1开始",
+      "usage": "用法:remove [uid] <多個角色在隊伍中的序號> 序號从1开始\n例如\"remove 1 2\"\n表示將1號和2號角色從隊伍中移除",
       "invalid_index": "序號不合法，從1開始，最大值為隊内角色數量",
-      "description": "强制移除對内角色，例如`remove 1 2`表示將1號和2號角色從隊伍中移除"
+      "description": "强制移除對内角色\n例如`remove 1 2`表示將1號和2號角色從隊伍中移除"
     },
     "resetConst": {
       "reset_all": "重設所有角色的命座。",

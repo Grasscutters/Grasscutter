@@ -181,7 +181,7 @@
       "description": "治疗当前队伍的角色"
     },
     "join": {
-      "usage": "用法：join <角色IDs> 例如\"join 10000038 10000039\"空格分开",
+      "usage": "用法：join [uid] <角色IDs>\n例如\"join 10000038 10000039\"空格分开",
       "description": "强制将角色加入到当前队伍中"
     },
     "kick": {
@@ -237,9 +237,9 @@
       "description": "重载配置文件和数据"
     },
     "remove": {
-      "usage": "用法: remove [多个角色在队伍中的序号] 序号从1开始",
+      "usage": "用法: remove [uid] <多个角色在队伍中的序号>，序号从1开始\n例如\"remove 1 2\"\n表示将1号和2号角色从队伍中移除",
       "invalid_index": "序号不合法，从1开始，最大值为队内角色数量",
-      "description": "强制将某个角色从当前队伍中移除。例如`remove 1 2`表示将1号和2号角色从队伍中移除"
+      "description": "强制将某个角色从当前队伍中移除\n例如`remove 1 2`表示将1号和2号角色从队伍中移除"
     },
     "resetConst": {
       "reset_all": "重置所有角色的命座。",
