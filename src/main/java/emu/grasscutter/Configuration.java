@@ -56,7 +56,7 @@ public final class Configuration extends ConfigContainer {
     }
     
     public static String SCRIPT(String path) {
-        return SCRIPTS_FOLDER + path;
+        return Paths.get(SCRIPTS_FOLDER, path).toString();
     }
 
     /**
