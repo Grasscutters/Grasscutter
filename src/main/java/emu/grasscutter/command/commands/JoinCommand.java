@@ -33,9 +33,12 @@ public class JoinCommand implements CommandHandler {
 
         for (int i = 0; i < args.size(); i++) {
             Avatar avatar = sender.getAvatars().getAvatarById(avatarIds.get(i));
-            if (avatar == null || sender.getTeamManager().getCurrentTeamInfo().contains(avatar)) {
+            if (avatar == null) {
                 CommandHandler.sendMessage(sender, translate("commands.generic.invalid.avatarId"));
                 return;
+            }
+            if (sender.getTeamManager().getCurrentTeamInfo().contains(avatar)){
+                continue;
             }
             sender.getTeamManager().getCurrentTeamInfo().addAvatar(avatar);
         }

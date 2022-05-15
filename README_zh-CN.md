@@ -123,11 +123,13 @@ chmod +x gradlew
 | godmode        | godmode [uid]                                | player.godmode            | 仅客户端 | 保护你不受到任何伤害(依然会被击退)         |                                                 |
 | heal           | heal                                         | player.heal               | 仅客户端 | 治疗队伍中所有角色                         | h                                               |
 | help           | help [命令]                                  |                           | 均可使用 | 显示帮助或展示指定命令的帮助               |                                                 |
+| join | join [多个角色id] | player.join | 仅客户端 | 强制入队角色，跟config.json中的avatarLimits有关（跟队内角色数量上限有关）。用法：`join 10000021 10000022` | |
 | kick           | kick \<uid>                                   | server.kick               | 均可使用 | 从服务器中踢出指定玩家 (WIP)               | k                                               |
 | killall        | killall [uid] [场景ID]                       | server.killall            | 均可使用 | 杀死指定玩家世界中所在或指定场景的全部生物 |                                                 |
 | list           | list                                         |                           | 均可使用 | 列出在线玩家                               |                                                 |
 | permission     | permission <add\|remove> <UID> <权限节点> | *                         | 均可使用 | 添加或移除玩家的权限                       |                                                 |
 | position       | position                                     |                           | 仅客户端 | 获取当前坐标                               | pos                                             |
+| remove | remove [多个角色在队伍中的序号] | player.remove | 仅客户端 | 强制将某个角色从当前队伍中移除。例如`remove 1 2`表示将1号和2号角色移除 |  |
 | reload         | reload                                       | server.reload             | 均可使用 | 重载服务器配置                             |                                                 |
 | resetconst     | resetconst [all]                             | player.resetconstellation | 仅客户端 | 重置当前角色的命座,重新登录即可生效        | resetconstellation                              |
 | restart        | restart                                      |                           | 均可使用 | 重启服务端                                 |                                                 |
