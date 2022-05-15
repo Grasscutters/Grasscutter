@@ -7,6 +7,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
@@ -17,11 +18,18 @@ public class RemoveCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        List<Integer> avatarIds = new ArrayList<>();
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
+            return;
+        }
+        
+        List<Integer> avatarIndexList = new ArrayList<>();
         for (String arg : args) {
             try {
-                int avatarId = Integer.parseInt(arg);
-                avatarIds.add(avatarId);
+                int avatarIndex = Integer.parseInt(arg);
+                if (!avatarIndexList.contains(avatarIndex)) {
+                    avatarIndexList.add(avatarIndex);
+                }
             } catch (Exception ignored) {
                 ignored.printStackTrace();
                 CommandHandler.sendMessage(sender, translate("commands.remove.invalid_index"));
@@ -29,15 +37,17 @@ public class RemoveCommand implements CommandHandler {
             }
         }
 
-        for (int i = 0; i < avatarIds.size(); i++) {
-            if (avatarIds.get(i) > sender.getTeamManager().getCurrentTeamInfo().getAvatars().size() || avatarIds.get(i) <= 0) {
-                CommandHandler.sendMessage(sender, translate("commands.remove.invalid_index"));
+        Collections.sort(avatarIndexList, Collections.reverseOrder());
+
+        for (int i = 0; i < avatarIndexList.size(); i++) {
+            if (avatarIndexList.get(i) > targetPlayer.getTeamManager().getCurrentTeamInfo().getAvatars().size() || avatarIndexList.get(i) <= 0) {
+                CommandHandler.sendMessage(targetPlayer, translate("commands.remove.invalid_index"));
                 return;
             }
-            sender.getTeamManager().getCurrentTeamInfo().removeAvatar(avatarIds.get(i) - 1);
+            targetPlayer.getTeamManager().getCurrentTeamInfo().removeAvatar(avatarIndexList.get(i) - 1);
         }
 
         // Packet
-        sender.getTeamManager().updateTeamEntities(new PacketChangeMpTeamAvatarRsp(sender, sender.getTeamManager().getCurrentTeamInfo()));
+        targetPlayer.getTeamManager().updateTeamEntities(new PacketChangeMpTeamAvatarRsp(targetPlayer, targetPlayer.getTeamManager().getCurrentTeamInfo()));
     }
 }

@@ -58,7 +58,7 @@
         <!-- Otherwise you may onle see number IDs in the gacha record -->
         <script type="text/javascript" src="/gacha/mappings"></script>
         <script>
-            record = {{REPLACE_RECORD}};
+            records = {{REPLACE_RECORDS}};
             maxPage = {{REPLACE_MAXPAGE}};
 
             mappings['default'] = mappings['en-us']; // make en-us as default/fallback option
@@ -111,7 +111,8 @@
         </footer>
 
         <script>
-            var lang = new window.URLSearchParams(window.location.search).get("lang");
+            var lang = "{{LANGUAGE}}".toLowerCase();
+
             function itemMapper(itemID) {
                 if (mappings[lang] != null && mappings[lang][itemID] != null) {
                     var entry = mappings[lang][itemID];
@@ -128,17 +129,19 @@
                 }
                 return "<span class='blue'>" + itemID + "</span>";
             }
+
             (function (){
                 var container = document.getElementById("container");
-                record.forEach(element => {
+                records.forEach(element => {
                     var e = document.createElement("tr");
                     
                     e.innerHTML= "<td>" + (new Date(element.time).toLocaleString(lang)) + "</td><td>" + itemMapper(element.item) + "</td>";
                     container.appendChild(e);
                 });
+
                 // setup pagenation buttons
                 var page = parseInt(new window.URLSearchParams(window.location.search).get("p"));
-                if (!page){
+                if (!page) {
                     page = 0;
                 }
                 document.getElementById("curpage").innerText = page + 1;
@@ -147,7 +150,6 @@
                 document.getElementById("prev").href = href.toString();
                 href.searchParams.set("p", page + 1);
                 document.getElementById("next").href = href.toString();
-
                 if (page <= 0) {
                     document.getElementById("prev").style.display = "none";
                 }
@@ -157,11 +159,10 @@
 
                 // setup gacha type info
                 var gachaType = new window.URLSearchParams(window.location.search).get("gachaType");
-                var gachaString;
                 if (mappings[lang] != null && mappings[lang][gachaType] != null) {
-                    gachaString = mappings[lang][gachaType];
-                }else{
-                    gachaString = mappings['default'][gachaType];
+                    var gachaString = mappings[lang][gachaType];
+                } else {
+                    var gachaString = mappings['default'][gachaType];
                     if (gachaString == null) {
                         gachaString = gachaType;
                     }

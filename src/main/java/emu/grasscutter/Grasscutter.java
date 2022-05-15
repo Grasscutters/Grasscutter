@@ -3,11 +3,17 @@ package emu.grasscutter;
 import java.io.*;
 import java.util.Calendar;
 
+import emu.grasscutter.auth.AuthenticationSystem;
+import emu.grasscutter.auth.DefaultAuthentication;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.game.managers.StaminaManager.StaminaManager;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
+import emu.grasscutter.server.http.HttpServer;
+import emu.grasscutter.server.http.dispatch.DispatchHandler;
+import emu.grasscutter.server.http.handlers.*;
+import emu.grasscutter.server.http.dispatch.RegionHandler;
 import emu.grasscutter.utils.ConfigContainer;
 import emu.grasscutter.utils.Utils;
 import org.jline.reader.EndOfFileException;
@@ -26,11 +32,9 @@ import ch.qos.logback.classic.Logger;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.utils.Language;
-import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.BuildConfig;
 
 import javax.annotation.Nullable;
 
@@ -48,9 +52,10 @@ public final class Grasscutter {
 
 	private static int day; // Current day of week.
 
-	private static DispatchServer dispatchServer;
+	private static HttpServer httpServer;
 	private static GameServer gameServer;
 	private static PluginManager pluginManager;
+	private static AuthenticationSystem authenticationSystem;
 
 	public static final Reflections reflector = new Reflections("emu.grasscutter");
 	public static ConfigContainer config;
@@ -103,25 +108,38 @@ public final class Grasscutter {
 	
 		// Initialize database.
 		DatabaseManager.initialize();
+		
+		// Initialize the default authentication system.
+		authenticationSystem = new DefaultAuthentication();
 	
 		// Create server instances.
-		dispatchServer = new DispatchServer();
+		httpServer = new HttpServer();
 		gameServer = new GameServer();
 		// Create a server hook instance with both servers.
-		new ServerHook(gameServer, dispatchServer);
+		new ServerHook(gameServer, httpServer);
+		
 		// Create plugin manager instance.
 		pluginManager = new PluginManager();
-
+		// Add HTTP routes after loading plugins.
+		httpServer.addRouter(HttpServer.UnhandledRequestRouter.class);
+		httpServer.addRouter(HttpServer.DefaultRequestRouter.class);
+		httpServer.addRouter(RegionHandler.class);
+		httpServer.addRouter(LogHandler.class);
+		httpServer.addRouter(GenericHandler.class);
+		httpServer.addRouter(AnnouncementsHandler.class);
+		httpServer.addRouter(DispatchHandler.class);
+		httpServer.addRouter(GachaHandler.class);
+		
 		// TODO: find a better place?
 		StaminaManager.initialize();
 	
 		// Start servers.
 		var runMode = SERVER.runMode;
 		if (runMode == ServerRunMode.HYBRID) {
-			dispatchServer.start();
+			httpServer.start();
 			gameServer.start();
 		} else if (runMode == ServerRunMode.DISPATCH_ONLY) {
-			dispatchServer.start();
+			httpServer.start();
 		} else if (runMode == ServerRunMode.GAME_ONLY) {
 			gameServer.start();
 		} else {
@@ -149,6 +167,19 @@ public final class Grasscutter {
 		pluginManager.disablePlugins();
 	}
 
+	/*
+	 * Methods for the language system component.
+	 */
+	
+	public static void loadLanguage() {
+		var locale = config.language.language;
+		language = Language.getLanguage(Utils.getLanguageCode(locale));
+	}
+	
+	/*
+	 * Methods for the configuration system component.
+	 */
+
 	/**
 	 * Attempts to load the configuration from a file.
 	 */
@@ -164,16 +195,10 @@ public final class Grasscutter {
 		// If the file already exists, we attempt to load it.
 		try (FileReader file = new FileReader(configFile)) {
 			config = gson.fromJson(file, ConfigContainer.class);
-		} 
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			getLogger().error("There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
 			System.exit(1);
 		} 
-	}
-
-	public static void loadLanguage() {
-		var locale = config.language.language;
-        language = Language.getLanguage(Utils.getLanguageCode(locale));
 	}
 
 	/**
@@ -192,45 +217,10 @@ public final class Grasscutter {
 		}
 	}
 
-	public static void startConsole() {
-		// Console should not start in dispatch only mode.
-		if (SERVER.runMode == ServerRunMode.DISPATCH_ONLY) {
-			getLogger().info(translate("messages.dispatch.no_commands_error"));
-			return;
-		}
-
-		getLogger().info(translate("messages.status.done"));
-		getLogger().info(translate("messages.status.version", BuildConfig.VERSION, BuildConfig.GIT_HASH));
-		String input = null;
-		boolean isLastInterrupted = false;
-		while (true) {
-			try {
-				input = consoleLineReader.readLine("> ");
-			} catch (UserInterruptException e) {
-				if (!isLastInterrupted) {
-					isLastInterrupted = true;
-					Grasscutter.getLogger().info("Press Ctrl-C again to shutdown.");
-					continue;
-				} else {
-					Runtime.getRuntime().exit(0);
-				}
-			} catch (EndOfFileException e) {
-				Grasscutter.getLogger().info("EOF detected.");
-				continue;
-			} catch (IOError e) {
-				Grasscutter.getLogger().error("An IO error occurred.", e);
-				continue;
-			}
-
-			isLastInterrupted = false;
-			try {
-				CommandMap.getInstance().invoke(null, null, input);
-			} catch (Exception e) {
-				Grasscutter.getLogger().error(translate("messages.game.command_error"), e);
-			}
-		}
-	}
-
+	/*
+	 * Getters for the various server components.
+	 */
+	
 	public static ConfigContainer getConfig() {
 		return config;
 	}
@@ -275,8 +265,8 @@ public final class Grasscutter {
 		return gson;
 	}
 
-	public static DispatchServer getDispatchServer() {
-		return dispatchServer;
+	public static HttpServer getHttpServer() {
+		return httpServer;
 	}
 
 	public static GameServer getGameServer() {
@@ -286,16 +276,74 @@ public final class Grasscutter {
 	public static PluginManager getPluginManager() {
 		return pluginManager;
 	}
-
-	public static void updateDayOfWeek() {
-		Calendar calendar = Calendar.getInstance();
-		day = calendar.get(Calendar.DAY_OF_WEEK); 
+	
+	public static AuthenticationSystem getAuthenticationSystem() {
+		return authenticationSystem;
 	}
 
 	public static int getCurrentDayOfWeek() {
 		return day;
 	}
+	
+	/*
+	 * Utility methods.
+	 */
+	
+	public static void updateDayOfWeek() {
+		Calendar calendar = Calendar.getInstance();
+		day = calendar.get(Calendar.DAY_OF_WEEK); 
+	}
 
+	public static void startConsole() {
+		// Console should not start in dispatch only mode.
+		if (SERVER.runMode == ServerRunMode.DISPATCH_ONLY) {
+			getLogger().info(translate("messages.dispatch.no_commands_error"));
+			return;
+		}
+
+		getLogger().info(translate("messages.status.done"));
+		String input = null;
+		boolean isLastInterrupted = false;
+		while (true) {
+			try {
+				input = consoleLineReader.readLine("> ");
+			} catch (UserInterruptException e) {
+				if (!isLastInterrupted) {
+					isLastInterrupted = true;
+					Grasscutter.getLogger().info("Press Ctrl-C again to shutdown.");
+					continue;
+				} else {
+					Runtime.getRuntime().exit(0);
+				}
+			} catch (EndOfFileException e) {
+				Grasscutter.getLogger().info("EOF detected.");
+				continue;
+			} catch (IOError e) {
+				Grasscutter.getLogger().error("An IO error occurred.", e);
+				continue;
+			}
+
+			isLastInterrupted = false;
+			try {
+				CommandMap.getInstance().invoke(null, null, input);
+			} catch (Exception e) {
+				Grasscutter.getLogger().error(translate("messages.game.command_error"), e);
+			}
+		}
+	}
+
+	/**
+	 * Sets the authentication system for the server.
+	 * @param authenticationSystem The authentication system to use.
+	 */
+	public static void setAuthenticationSystem(AuthenticationSystem authenticationSystem) {
+		Grasscutter.authenticationSystem = authenticationSystem;
+	}
+
+	/*
+	 * Enums for the configuration.
+	 */
+	
 	public enum ServerRunMode {
 		HYBRID, DISPATCH_ONLY, GAME_ONLY
 	}

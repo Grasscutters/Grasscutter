@@ -36,7 +36,8 @@
         "session_key_error": "Wrong session key.",
         "username_error": "Username not found.",
         "username_create_error": "Username not found, create failed."
-      }
+      },
+      "router_error": "[Dispatch] Unable to attach router."
     },
     "status": {
       "free_software": "Grasscutter is FREE software. If you have paid for this, you may have been scammed. Homepage: https://github.com/Grasscutters/Grasscutter",
@@ -172,6 +173,10 @@
       "success": "Godmode is now %s for %s.",
       "description": "Prevents you from taking damage. Defaults to toggle."
     },
+    "nostamina": {
+      "success": "NoStamina is now %s for %s.",
+      "description": "Keep your endurance to the maximum."
+    },
     "heal": {
       "success": "All characters have been healed.",
       "description": "Heal all characters in your current team."
@@ -233,9 +238,9 @@
       "description": "Reload server config"
     },
     "remove": {
-      "usage": "Usage: remove [indexOfYourTeams] index start from 1",
-      "invalid_index": "index start from 1",
-      "description": "force remove avatar into your team"
+      "usage": "Usage: remove [indexOfYourTeam] index start from 1",
+      "invalid_index": "The index number is illegal. It starts from 1 and the maximum value is the number of roles in the team",
+      "description": "force remove avatar into your team. Such as `remove 1 2`."
     },
     "resetConst": {
       "reset_all": "Reset all avatars' constellations.",
