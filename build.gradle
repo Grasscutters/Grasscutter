@@ -13,11 +13,19 @@ buildscript {
     dependencies {
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.18'
     }
-    ext.getShortRev = {
+    ext.gitCommitHashVersion = {
+        def version = gitCommitHash()
+        if (version != "") {
+            "-" + version
+        } else {
+            ""
+        }
+    }
+    ext.gitCommitHash = {
         def cmd = "git rev-parse --short HEAD"
         try {
-            return "-" + cmd.execute().text.trim()
-        } catch (Exception e) {
+            return cmd.execute().text.trim()
+        } catch (e) {
             e.printStackTrace()
             return ""
         }
@@ -52,7 +60,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'xyz.grasscutters'
-version = '1.1.2-dev' + getShortRev()
+version = '1.1.2-dev' + gitCommitHashVersion()
 
 
 sourceCompatibility = 17
@@ -242,13 +250,6 @@ javadoc {
 }
 
 task injectGitHash {
-    def gitCommitHash = {
-        try {
-            return 'git rev-parse --verify --short HEAD'.execute().text.trim()
-        } catch (e) {
-            return "GIT_NOT_FOUND"
-        }
-    }
     new File(projectDir, "src/main/java/emu/grasscutter/BuildConfig.java").text = """
         package emu.grasscutter;
         public class BuildConfig {
