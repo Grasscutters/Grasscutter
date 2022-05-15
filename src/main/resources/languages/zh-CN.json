@@ -237,9 +237,9 @@
       "description": "重载配置文件和数据"
     },
     "remove": {
-      "usage": "用法: remove [indexOfYourTeams] 从1开始",
-      "invalid_index": "下标从1开始",
-      "description": "强制移除队内角色"
+      "usage": "用法: remove [多个角色在队伍中的序号] 序号从1开始",
+      "invalid_index": "序号不合法，从1开始，最大值为队内角色数量",
+      "description": "强制将某个角色从当前队伍中移除。例如`remove 1 2`表示将1号和2号角色从队伍中移除"
     },
     "resetConst": {
       "reset_all": "重置所有角色的命座。",

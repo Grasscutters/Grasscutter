@@ -7,6 +7,8 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
@@ -17,11 +19,11 @@ public class RemoveCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        List<Integer> avatarIds = new ArrayList<>();
+        List<Integer> avatarIndexList = new ArrayList<>();
         for (String arg : args) {
             try {
-                int avatarId = Integer.parseInt(arg);
-                avatarIds.add(avatarId);
+                int avatarIndex = Integer.parseInt(arg);
+                avatarIndexList.add(avatarIndex);
             } catch (Exception ignored) {
                 ignored.printStackTrace();
                 CommandHandler.sendMessage(sender, translate("commands.remove.invalid_index"));
@@ -29,12 +31,14 @@ public class RemoveCommand implements CommandHandler {
             }
         }
 
-        for (int i = 0; i < avatarIds.size(); i++) {
-            if (avatarIds.get(i) > sender.getTeamManager().getCurrentTeamInfo().getAvatars().size() || avatarIds.get(i) <= 0) {
+        Collections.reverse(avatarIndexList);
+
+        for (int i = 0; i < avatarIndexList.size(); i++) {
+            if (avatarIndexList.get(i) > sender.getTeamManager().getCurrentTeamInfo().getAvatars().size() || avatarIndexList.get(i) <= 0) {
                 CommandHandler.sendMessage(sender, translate("commands.remove.invalid_index"));
                 return;
             }
-            sender.getTeamManager().getCurrentTeamInfo().removeAvatar(avatarIds.get(i) - 1);
+            sender.getTeamManager().getCurrentTeamInfo().removeAvatar(avatarIndexList.get(i) - 1);
         }
 
         // Packet
