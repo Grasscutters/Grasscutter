@@ -357,4 +357,34 @@ public class ScriptLib {
 
 		return 0;
 	}
+	public int CheckRemainGadgetCountByGroupId(LuaTable table){
+		logger.debug("[LUA] Call CheckRemainGadgetCountByGroupId with {}",
+				printTable(table));
+		var groupId = table.get("group_id").toint();
+
+		var count = getSceneScriptManager().getScene().getEntities().values().stream()
+				.filter(g -> g instanceof EntityGadget entityGadget && entityGadget.getGroupId() == groupId)
+				.count();
+		return (int)count;
+	}
+
+	public int GetGadgetStateByConfigId(int groupId, int configId){
+		logger.debug("[LUA] Call GetGadgetStateByConfigId with {},{}",
+				groupId, configId);
+		var gadget = getSceneScriptManager().getScene().getEntities().values().stream()
+				.filter(g -> g instanceof EntityGadget entityGadget && entityGadget.getGroupId() == groupId)
+				.filter(g -> g.getConfigId() == configId)
+				.findFirst();
+		if(gadget.isEmpty()){
+			return 0;
+		}
+		var stat = ((EntityGadget)gadget.get()).getState();
+		return stat;
+	}
+	public int SetGadgetStateByConfigId(int configId, LuaTable gadgetState){
+		logger.debug("[LUA] Call SetGadgetStateByConfigId with {},{}",
+				configId, printTable(gadgetState));
+
+		return 0;
+	}
 }

@@ -2,7 +2,6 @@ package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;

@@ -57,7 +57,6 @@ public final class GameServer extends KcpServer {
 
 	private final CombineManger combineManger;
 	private final TowerScheduleManager towerScheduleManager;
-
 	public GameServer() {
 		this(new InetSocketAddress(
 				GAME_INFO.bindAddress,
@@ -205,23 +204,23 @@ public final class GameServer extends KcpServer {
 		}
 		return DatabaseHelper.getAccountByName(username);
 	}
-	
-	public void onTick() throws Exception {
+
+	public synchronized void onTick(){
 		Iterator<World> it = this.getWorlds().iterator();
 		while (it.hasNext()) {
 			World world = it.next();
-			
+
 			if (world.getPlayerCount() == 0) {
 				it.remove();
 			}
-			
+
 			world.onTick();
 		}
-		
+
 		for (Player player : this.getPlayers().values()) {
 			player.onTick();
 		}
-  
+
 		ServerTickEvent event = new ServerTickEvent(); event.call();
 	}
 	
