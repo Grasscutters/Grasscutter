@@ -112,7 +112,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 | broadcast      | broadcast \<message>                               | server.broadcast          | Both side    | Sends a message to all the players.                          | b                                               |
 | coop           | coop \<playerId> \<target playerId>                 | server.coop               | Both side    | Forces someone to join the world of others.                  |                                               |
 | changescene    | changescene \<scene id>                            | player.changescene        | Client only  | Switch scenes by scene ID.                                   | scene                                           |
-| clear          | clear <all\|wp\| art\         |mat> [UID]                     | player.clearinv         | Client only  | Deletes all unequipped and unlocked level 0 artifacts(art)/weapons(wp)/material(all) or all, including 5-star rarity ones from your inventory. | clear                                        |
+| clear          | clear <all\|wp\| art\         |mat> [UID]                     | player.clearinv         | Client only  | Deletes all unequipped and unlocked level 0 artifacts(art)/weapons(wp)/material(all) or all, including 5-star rarity ones from your inventory. |
 | drop           | drop <itemID\|itemName> [amount]                  | server.drop  | Client only  | Drops an item around you.                                    | `d` `dropitem`                                  |
 | enterdungeon   | enterdungeon \<dungeon id>                        | player.enterdungeon       | Client only  | Enter a dungeon by dungeon ID                                |                                                 |
 | give           | give [player] <itemId\|itemName> [amount] [level] [finement] | player.give  | Both side    | Gives item(s) to you or the specified player. (finement option only weapon.) | `g` `item` `giveitem`           |
@@ -122,7 +122,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 | godmode        | godmode [uid]                                     | player.godmode            | Client only  | Prevents you from taking damage.                             |                                                 |
 | heal           | heal                                              | player.heal               | Client only  | Heals all characters in your current team.                    | h                                               |
 | help           | help [command]                                    |                           | Both side    | Sends the help message or shows information about a specified command. |                                                 |
-| join | join [avatarIds] | player.join | Client only | Force let avatars to join into your current team. Such as `join 10000020 10000021`. | |
+| join | join <uid> [avatarIds] | server.join | C | Force let avatars to join into your current team. In connection with avatarLimits in config.json Such as `join 10000020 10000021`. | |
 | kick           | kick \<player>                                     | server.kick               | Both side    | Kicks the specified player from the server. (WIP)            | k                                               |
 | killall        | killall [playerUid] [sceneId]                     | server.killall            | Both side    | Kills all entities in the current scene or specified scene of the corresponding player. |                                                 |
 | list           | list                                              |                           | Both side    | Lists online players.                                         |                                                 |
@@ -152,7 +152,7 @@ There is a dummy user named "Server" in every player's friends list that you can
     - (Optional) rename the map marker to a number to override the default Y coordinate (height, default 300.)
     - Confirm and close the map.
     - You will see your character falling from a very high destination, exact location that you marked.
- 
+
 # Quick Troubleshooting
 
 * If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)
