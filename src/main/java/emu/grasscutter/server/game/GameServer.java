@@ -60,7 +60,6 @@ public final class GameServer extends KcpServer {
 
 	public GameServer() {
 		this(new InetSocketAddress(
-				GAME_INFO.bindAddress,
 				GAME_INFO.bindPort
 		));
 	}
