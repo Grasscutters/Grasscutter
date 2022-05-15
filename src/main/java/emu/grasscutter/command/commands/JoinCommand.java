@@ -18,6 +18,11 @@ public class JoinCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
+            return;
+        }
+
         List<Integer> avatarIds = new ArrayList<>();
         for (String arg : args) {
             try {
@@ -32,18 +37,18 @@ public class JoinCommand implements CommandHandler {
 
 
         for (int i = 0; i < args.size(); i++) {
-            Avatar avatar = sender.getAvatars().getAvatarById(avatarIds.get(i));
+            Avatar avatar = targetPlayer.getAvatars().getAvatarById(avatarIds.get(i));
             if (avatar == null) {
                 CommandHandler.sendMessage(sender, translate("commands.generic.invalid.avatarId"));
                 return;
             }
-            if (sender.getTeamManager().getCurrentTeamInfo().contains(avatar)){
+            if (targetPlayer.getTeamManager().getCurrentTeamInfo().contains(avatar)){
                 continue;
             }
-            sender.getTeamManager().getCurrentTeamInfo().addAvatar(avatar);
+            targetPlayer.getTeamManager().getCurrentTeamInfo().addAvatar(avatar);
         }
 
         // Packet
-        sender.getTeamManager().updateTeamEntities(new PacketChangeMpTeamAvatarRsp(sender, sender.getTeamManager().getCurrentTeamInfo()));
+        targetPlayer.getTeamManager().updateTeamEntities(new PacketChangeMpTeamAvatarRsp(targetPlayer, targetPlayer.getTeamManager().getCurrentTeamInfo()));
     }
 }
