@@ -48,7 +48,7 @@ public final class Configuration extends ConfigContainer {
      */
     
     public static String DATA(String path) {
-        return DATA_FOLDER + path;
+        return Paths.get(DATA_FOLDER, path).toString();
     }
     
     public static String RESOURCE(String path) {
