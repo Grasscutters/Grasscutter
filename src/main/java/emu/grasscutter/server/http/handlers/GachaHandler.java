@@ -17,6 +17,7 @@ import io.javalin.Javalin;
 import io.javalin.http.staticfiles.Location;
 
 import java.io.File;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -30,11 +31,8 @@ import static emu.grasscutter.utils.Language.translate;
 public final class GachaHandler implements Router {
     private final String gachaMappings;
     
-    private static String recordsTemplate = "";
-    private static String detailsTemplate = "";
-    
     public GachaHandler() {
-        this.gachaMappings = Utils.toFilePath(DATA("/gacha_mappings.js"));
+        this.gachaMappings = Utils.toFilePath(DATA("/gacha/mappings.js"));
         if(!(new File(this.gachaMappings).exists())) {
             try {
                 Tools.createGachaMapping(this.gachaMappings);
@@ -42,12 +40,6 @@ public final class GachaHandler implements Router {
                 Grasscutter.getLogger().warn("Failed to create gacha mappings.", exception);
             }
         }
-        
-        var templateFile = new File(DATA("/gacha_records.html"));
-        recordsTemplate = templateFile.exists() ? new String(FileUtils.read(templateFile)) : "{{REPLACE_RECORD}}";
-
-        templateFile = new File(Utils.toFilePath(DATA("/gacha_details.html")));
-        detailsTemplate = templateFile.exists() ? new String(FileUtils.read(templateFile)) : null;
     }
     
     @Override public void applyRoutes(Express express, Javalin handle) {
@@ -58,42 +50,62 @@ public final class GachaHandler implements Router {
     }
     
     private static void gachaRecords(Request request, Response response) {
-        var sessionKey = request.query("s");
-        
+        File recordsTemplate = new File(Utils.toFilePath(DATA("gacha/records.html")));
+        if (!recordsTemplate.exists()) {
+            Grasscutter.getLogger().warn("File does not exist: " + recordsTemplate);
+            response.status(500);
+            return;
+        }
+
+        String sessionKey = request.query("s");
+        Account account = DatabaseHelper.getAccountBySessionKey(sessionKey);
+        if(account == null) {
+            response.status(403).send("Requested account was not found");
+            return;
+        }
+        Player player = Grasscutter.getGameServer().getPlayerByUid(account.getPlayerUid());
+        if (player == null) {
+            response.status(403).send("No player associated with requested account");
+            return;
+        }
+
         int page = 0, gachaType = 0;
         if(request.query("p") != null)
             page = Integer.parseInt(request.query("p"));
         if(request.query("gachaType") != null)
             gachaType = Integer.parseInt(request.query("gachaType"));
-        
-        // Get account from session key.
-        var account = DatabaseHelper.getAccountBySessionKey(sessionKey);
-        
-        if(account == null) // Send response.
-            response.status(404).send("Unable to find account.");
-        else {
-            String records = DatabaseHelper.getGachaRecords(account.getPlayerUid(), gachaType, page).toString();
-            long maxPage = DatabaseHelper.getGachaRecordsMaxPage(account.getPlayerUid(), page, gachaType);
-            
-            response.send(recordsTemplate
-                    .replace("{{REPLACE_RECORD}}", records)
-                    .replace("{{REPLACE_MAXPAGE}}", String.valueOf(maxPage)));
-        }
+
+        String records = DatabaseHelper.getGachaRecords(player.getUid(), page, gachaType).toString();
+        long maxPage = DatabaseHelper.getGachaRecordsMaxPage(player.getUid(), page, gachaType);
+
+        String template = new String(FileUtils.read(recordsTemplate), StandardCharsets.UTF_8)
+            .replace("{{REPLACE_RECORDS}}", records)
+            .replace("{{REPLACE_MAXPAGE}}", String.valueOf(maxPage))
+            .replace("{{LANGUAGE}}", Utils.getLanguageCode(account.getLocale()));
+        response.send(template);
     }
     
     private static void gachaDetails(Request request, Response response) {
-        String template = detailsTemplate;
-
-        // Get player info (for langauge).
-        String sessionKey = request.query("s");
-        Account account = DatabaseHelper.getAccountBySessionKey(sessionKey);
-        Player player = Grasscutter.getGameServer().getPlayerByUid(account.getPlayerUid());
-
-        // If the template was not loaded, return an error.
-        if (detailsTemplate == null) {
-            response.send(translate(player, "gacha.details.template_missing"));
+        File detailsTemplate = new File(Utils.toFilePath(DATA("gacha/details.html")));
+        if (!detailsTemplate.exists()) {
+            Grasscutter.getLogger().warn("File does not exist: " + detailsTemplate);
+            response.status(500);
             return;
         }
+
+        String sessionKey = request.query("s");
+        Account account = DatabaseHelper.getAccountBySessionKey(sessionKey);
+        if(account == null) {
+            response.status(403).send("Requested account was not found");
+            return;
+        }
+        Player player = Grasscutter.getGameServer().getPlayerByUid(account.getPlayerUid());
+        if (player == null) {
+            response.status(403).send("No player associated with requested account");
+            return;
+        }
+
+        String template = new String(FileUtils.read(detailsTemplate), StandardCharsets.UTF_8);
 
         // Add translated title etc. to the page.
         template = template.replace("{{TITLE}}", translate(player, "gacha.details.title"))
