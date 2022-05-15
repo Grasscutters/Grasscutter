@@ -20,11 +20,11 @@ public final class Crypto {
 	public static byte[] ENCRYPT_SEED_BUFFER = new byte[0];
 	
 	public static void loadKeys() {
-		DISPATCH_KEY = FileUtils.read(KEY("/dispatchKey.bin"));
-		DISPATCH_SEED = FileUtils.read(KEY("/dispatchSeed.bin"));
+		DISPATCH_KEY = FileUtils.read(KEY("dispatchKey.bin"));
+		DISPATCH_SEED = FileUtils.read(KEY("dispatchSeed.bin"));
 
-		ENCRYPT_KEY = FileUtils.read(KEY("/secretKey.bin"));
-		ENCRYPT_SEED_BUFFER = FileUtils.read(KEY("/secretKeyBuffer.bin"));
+		ENCRYPT_KEY = FileUtils.read(KEY("secretKey.bin"));
+		ENCRYPT_SEED_BUFFER = FileUtils.read(KEY("secretKeyBuffer.bin"));
 	}
 	
 	public static void xor(byte[] packet, byte[] key) {
