@@ -32,7 +32,7 @@ public final class GachaHandler implements Router {
     private final String gachaMappings;
     
     public GachaHandler() {
-        this.gachaMappings = Utils.toFilePath(DATA("/gacha/mappings.js"));
+        this.gachaMappings = Utils.toFilePath(DATA("gacha/mappings.js"));
         if(!(new File(this.gachaMappings).exists())) {
             try {
                 Tools.createGachaMapping(this.gachaMappings);
