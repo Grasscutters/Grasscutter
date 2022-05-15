@@ -52,7 +52,7 @@ public final class Configuration extends ConfigContainer {
     }
     
     public static String RESOURCE(String path) {
-        return RESOURCES_FOLDER + path;
+        return Paths.get(RESOURCES_FOLDER, path).toString();
     }
     
     public static String SCRIPT(String path) {
