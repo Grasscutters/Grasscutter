@@ -122,12 +122,14 @@ There is a dummy user named "Server" in every player's friends list that you can
 | godmode        | godmode [uid]                                     | player.godmode            | Client only  | Prevents you from taking damage.                             |                                                 |
 | heal           | heal                                              | player.heal               | Client only  | Heals all characters in your current team.                    | h                                               |
 | help           | help [command]                                    |                           | Both side    | Sends the help message or shows information about a specified command. |                                                 |
+| join | join [avatarIds] | player.join | Client only | Force let avatars to join into your current team. Such as `join 10000020 10000021`. | |
 | kick           | kick \<player>                                     | server.kick               | Both side    | Kicks the specified player from the server. (WIP)            | k                                               |
 | killall        | killall [playerUid] [sceneId]                     | server.killall            | Both side    | Kills all entities in the current scene or specified scene of the corresponding player. |                                                 |
 | list           | list                                              |                           | Both side    | Lists online players.                                         |                                                 |
 | permission     | permission <add\|remove> \<UID> \<permission>  | *                         | Both side    | Grants or removes a permission for a user.                   |                                                 |
 | position       | position                                          |                           | Client only  | Sends your current coordinates.                                             | pos                                             |
 | reload         | reload                                            | server.reload             | Both side    | Reloads the server config                                         |                                                 |
+| remove | remove [avatarIndexInYourTeams] | player.remove | Client only | Force remove avatar in your current team. Index start from 1.Such as `remove 1 2`. | |
 | resetconst     | resetconst [all]                                  | player.resetconstellation | Client only  | Resets the constellation level on your currently selected character, will need to relog after using the command to see any changes. | resetconstellation                              |
 | restart        |                                                   |                           | Both side    | Restarts the current session                                 |                                                 |
 | say            | say \<player> \<message>                            | server.sendmessage        | Both side    | Sends a message to a player as the server                    | `sendservmsg` `sendservermessage` `sendmessage` |
@@ -150,7 +152,7 @@ There is a dummy user named "Server" in every player's friends list that you can
     - (Optional) rename the map marker to a number to override the default Y coordinate (height, default 300.)
     - Confirm and close the map.
     - You will see your character falling from a very high destination, exact location that you marked.
- 
+
 # Quick Troubleshooting
 
 * If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)
