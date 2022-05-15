@@ -17,7 +17,7 @@ import static emu.grasscutter.Grasscutter.config;
  */
 public class ConfigContainer {
     private static int version() {
-        return 2;
+        return 3;
     }
 
     /**
@@ -96,8 +96,10 @@ public class ConfigContainer {
         public ServerDebugMode debugLevel = ServerDebugMode.NONE;
         public ServerRunMode runMode = ServerRunMode.HYBRID;
 
-        public Dispatch dispatch = new Dispatch();
+        public HTTP http = new HTTP();
         public Game game = new Game();
+        
+        public Dispatch dispatch = new Dispatch();
     }
 
     public static class Language {
@@ -111,8 +113,8 @@ public class ConfigContainer {
     }
 
     /* Server options. */
-
-    public static class Dispatch {
+    
+    public static class HTTP {
         public String bindAddress = "0.0.0.0";
         /* This is the address used in URLs. */
         public String accessAddress = "127.0.0.1";
@@ -120,12 +122,10 @@ public class ConfigContainer {
         public int bindPort = 443;
         /* This is the port used in URLs. */
         public int accessPort = 0;
-
+        
         public Encryption encryption = new Encryption();
         public Policies policies = new Policies();
-        public Region[] regions = {};
-
-        public String defaultName = "Grasscutter";
+        public Files files = new Files();
     }
 
     public static class Game {
@@ -143,6 +143,12 @@ public class ConfigContainer {
     }
 
     /* Data containers. */
+
+    public static class Dispatch {
+        public Region[] regions = {};
+
+        public String defaultName = "Grasscutter";
+    }
 
     public static class Encryption {
         public boolean useEncryption = true;
@@ -222,10 +228,27 @@ public class ConfigContainer {
         public String nickName = "Server";
         public String signature = "Welcome to Grasscutter!";
     }
+    
+    public static class Files {
+        public String indexFile = "./index.html";
+        public String errorFile = "./404.html";
+    }
 
     /* Objects. */
 
     public static class Region {
+        public Region() { }
+        
+        public Region(
+                String name, String title,
+                String address, int port
+        ) {
+            this.Name = name;
+            this.Title = title;
+            this.Ip = address;
+            this.Port  = port;
+        }
+        
         public String Name = "os_usa";
         public String Title = "Grasscutter";
         public String Ip = "127.0.0.1";

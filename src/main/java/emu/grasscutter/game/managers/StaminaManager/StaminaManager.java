@@ -2,6 +2,7 @@ package emu.grasscutter.game.managers.StaminaManager;
 
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.commands.NoStaminaCommand;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
@@ -297,9 +298,11 @@ public class StaminaManager {
 
     // Returns new stamina and sends PlayerPropNotify or VehicleStaminaNotify
     public int setStamina(GameSession session, String reason, int newStamina, boolean isCharacterStamina) {
-        if (!GAME_OPTIONS.staminaUsage) {
+        // Target Player
+        if (!GAME_OPTIONS.staminaUsage || session.getPlayer().getStamina()) {
             newStamina = getMaxCharacterStamina();
         }
+
         // set stamina if is character stamina
         if (isCharacterStamina) {
             player.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, newStamina);

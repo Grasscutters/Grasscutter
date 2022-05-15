@@ -1,6 +1,7 @@
 package emu.grasscutter;
 
 import emu.grasscutter.utils.ConfigContainer;
+import emu.grasscutter.utils.ConfigContainer.*;
 
 import java.util.Locale;
 
@@ -34,11 +35,13 @@ public final class Configuration extends ConfigContainer {
     public static final Database DATABASE = config.databaseInfo;
     public static final Account ACCOUNT = config.account;
     
-    public static final Dispatch DISPATCH_INFO = config.server.dispatch;
+    public static final HTTP HTTP_INFO = config.server.http;
     public static final Game GAME_INFO = config.server.game;
+    public static final Dispatch DISPATCH_INFO = config.server.dispatch;
     
-    public static final Encryption DISPATCH_ENCRYPTION = config.server.dispatch.encryption;
-    public static final Policies DISPATCH_POLICIES = config.server.dispatch.policies;
+    public static final Encryption HTTP_ENCRYPTION = config.server.http.encryption;
+    public static final Policies HTTP_POLICIES = config.server.http.policies;
+    public static final Files HTTP_STATIC_FILES = config.server.http.files;
     
     public static final GameOptions GAME_OPTIONS = config.server.game.gameOptions;
     public static final GameOptions.InventoryLimits INVENTORY_LIMITS = config.server.game.gameOptions.inventoryLimits;

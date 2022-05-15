@@ -1,4 +1,4 @@
-package emu.grasscutter.server.dispatch.json;
+package emu.grasscutter.server.http.objects;
 
 public class LoginResultJson {
 	public String message;

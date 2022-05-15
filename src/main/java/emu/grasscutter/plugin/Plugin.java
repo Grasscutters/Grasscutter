@@ -3,6 +3,8 @@ package emu.grasscutter.plugin;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.server.game.GameServer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.InputStream;
@@ -19,6 +21,7 @@ public abstract class Plugin {
     private PluginIdentifier identifier;
     private URLClassLoader classLoader;
     private File dataFolder;
+    private Logger logger;
 
     /**
      * This method is reflected into.
@@ -35,6 +38,7 @@ public abstract class Plugin {
         this.identifier = identifier;
         this.classLoader = classLoader;
         this.dataFolder = new File(PLUGINS_FOLDER, identifier.name);
+        this.logger = LoggerFactory.getLogger(identifier.name);
         
         if(!this.dataFolder.exists() && !this.dataFolder.mkdirs()) {
             Grasscutter.getLogger().warn("Failed to create plugin data folder for " + this.identifier.name);
@@ -102,6 +106,14 @@ public abstract class Plugin {
      */
     public final ServerHook getHandle() {
         return this.server;
+    }
+
+    /**
+     * Returns the plugin's logger.
+     * @return A SLF4J logger.
+     */
+    public final Logger getLogger() {
+        return this.logger;
     }
     
     /* Called when the plugin is first loaded. */

@@ -136,13 +136,13 @@ public class GachaBanner {
 	}
 	
 	public GachaInfo toProto(String sessionKey) {
-		String record = "http" + (DISPATCH_INFO.encryption.useInRouting ? "s" : "") + "://"
-						+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
-						+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
+		String record = "http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
+						+ lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress) + ":"
+						+ lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort)
 						+ "/gacha?s=" + sessionKey + "&gachaType=" + gachaType;
-		String details = "http" + (DISPATCH_INFO.encryption.useInRouting ? "s" : "") + "://"
-						+ lr(DISPATCH_INFO.accessAddress, DISPATCH_INFO.bindAddress) + ":"
-						+ lr(DISPATCH_INFO.accessPort, DISPATCH_INFO.bindPort)
+		String details = "http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
+						+ lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress) + ":"
+						+ lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort)
 						+ "/gacha/details?s=" + sessionKey + "&gachaType=" + gachaType;
 
 		// Grasscutter.getLogger().info("record = " + record);
