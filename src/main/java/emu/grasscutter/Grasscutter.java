@@ -6,6 +6,7 @@ import java.util.Calendar;
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.auth.DefaultAuthentication;
 import emu.grasscutter.command.CommandMap;
+import emu.grasscutter.data.DataChecker;
 import emu.grasscutter.game.managers.StaminaManager.StaminaManager;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;

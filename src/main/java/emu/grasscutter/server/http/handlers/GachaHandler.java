@@ -29,18 +29,7 @@ import static emu.grasscutter.utils.Language.translate;
  * Handles all gacha-related HTTP requests.
  */
 public final class GachaHandler implements Router {
-    private final String gachaMappings;
-    
-    public GachaHandler() {
-        this.gachaMappings = Utils.toFilePath(DATA("/gacha/mappings.js"));
-        if(!(new File(this.gachaMappings).exists())) {
-            try {
-                Tools.createGachaMapping(this.gachaMappings);
-            } catch (Exception exception) {
-                Grasscutter.getLogger().warn("Failed to create gacha mappings.", exception);
-            }
-        }
-    }
+    public static final String gachaMappings = DATA(Utils.toFilePath("gacha/mappings.js"));
     
     @Override public void applyRoutes(Express express, Javalin handle) {
         express.get("/gacha", GachaHandler::gachaRecords);
