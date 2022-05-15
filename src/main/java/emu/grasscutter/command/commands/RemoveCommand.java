@@ -8,7 +8,6 @@ import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
@@ -28,7 +27,9 @@ public class RemoveCommand implements CommandHandler {
         for (String arg : args) {
             try {
                 int avatarIndex = Integer.parseInt(arg);
-                avatarIndexList.add(avatarIndex);
+                if (!avatarIndexList.contains(avatarIndex)) {
+                    avatarIndexList.add(avatarIndex);
+                }
             } catch (Exception ignored) {
                 ignored.printStackTrace();
                 CommandHandler.sendMessage(sender, translate("commands.remove.invalid_index"));
@@ -36,7 +37,7 @@ public class RemoveCommand implements CommandHandler {
             }
         }
 
-        Collections.reverse(avatarIndexList);
+        Collections.sort(avatarIndexList, Collections.reverseOrder());
 
         for (int i = 0; i < avatarIndexList.size(); i++) {
             if (avatarIndexList.get(i) > targetPlayer.getTeamManager().getCurrentTeamInfo().getAvatars().size() || avatarIndexList.get(i) <= 0) {
