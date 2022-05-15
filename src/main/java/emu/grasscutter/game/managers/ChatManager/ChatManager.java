@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers;
+package emu.grasscutter.game.managers.ChatManager;
 
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.game.player.Player;
@@ -10,7 +10,7 @@ import emu.grasscutter.server.packet.send.PacketPrivateChatNotify;
 import java.util.Arrays;
 import java.util.List;
 
-public class ChatManager {
+public class ChatManager implements ChatManagerHandler {
 	static final List<Character> PREFIXES = Arrays.asList('/', '!');
 	
 	private final GameServer server;
