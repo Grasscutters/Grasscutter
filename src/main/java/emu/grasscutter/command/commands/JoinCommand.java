@@ -13,7 +13,7 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "join", usage = "join [AvatarIDs] such as\"join 10000038 10000039\"",
-        description = "commands.join.description", permission = "player.join")
+        description = "commands.join.description", permission = "server.join")
 public class JoinCommand implements CommandHandler {
 
     @Override
@@ -33,6 +33,11 @@ public class JoinCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, translate("commands.generic.invalid.avatarId"));
                 return;
             }
+        }
+
+        if (avatarIds.isEmpty()){
+            CommandHandler.sendMessage(sender, translate("commands.join.usage"));
+            return;
         }
 
 

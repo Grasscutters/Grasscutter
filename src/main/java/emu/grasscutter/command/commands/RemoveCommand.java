@@ -13,7 +13,7 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "remove", usage = "remove [indexOfYourTeams] index start from 1",
-        description = "commands.remove.description", permission = "player.remove")
+        description = "commands.remove.description", permission = "server.remove")
 public class RemoveCommand implements CommandHandler {
 
     @Override
@@ -22,7 +22,7 @@ public class RemoveCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
-        
+
         List<Integer> avatarIndexList = new ArrayList<>();
         for (String arg : args) {
             try {
@@ -35,6 +35,11 @@ public class RemoveCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, translate("commands.remove.invalid_index"));
                 return;
             }
+        }
+
+        if (avatarIndexList.isEmpty()) {
+            CommandHandler.sendMessage(sender, translate("commands.remove.usage"));
+            return;
         }
 
         Collections.sort(avatarIndexList, Collections.reverseOrder());
