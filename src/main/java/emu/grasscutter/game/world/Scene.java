@@ -519,10 +519,15 @@ public class Scene {
 			if (!this.getLoadedBlocks().contains(block)) {
 				this.onLoadBlock(block, this.getPlayers());
 				this.getLoadedBlocks().add(block);
+			}else{
+				// dynamic load the groups for players in a loaded block
+				var toLoad = this.getPlayers().stream()
+						.filter(p -> block.contains(p.getPos()))
+						.map(p -> playerMeetGroups(p, block))
+						.flatMap(Collection::stream)
+						.toList();
+				onLoadGroup(toLoad);
 			}
-			this.getPlayers().stream()
-					.filter(p -> block.contains(p.getPos()))
-					.forEach(p -> playerMeetGroups(p, block));
 		}
 
 	}
@@ -539,7 +544,6 @@ public class Scene {
 			return List.of();
 		}
 
-		Grasscutter.getLogger().info("Scene {} Block {} loaded {} group(s)", this.getId(), block.id, groups.size());
 		return groups;
 	}
 	public void onLoadBlock(SceneBlock block, List<Player> players) {
@@ -548,36 +552,50 @@ public class Scene {
 
 		// the groups form here is not added in current scene
 		var groups = players.stream()
+				.filter(player -> block.contains(player.getPos()))
 				.map(p -> playerMeetGroups(p, block))
 				.flatMap(Collection::stream)
 				.toList();
 
+		onLoadGroup(groups);
+		Grasscutter.getLogger().info("Scene {} Block {} loaded.", this.getId(), block.id);
+	}
+
+	public void onLoadGroup(List<SceneGroup> groups){
+		if(groups == null || groups.isEmpty()){
+			return;
+		}
 		for (SceneGroup group : groups) {
 			// We load the script files for the groups here
 			this.getScriptManager().loadGroupFromScript(group);
 		}
-		
+
 		// Spawn gadgets AFTER triggers are added
 		// TODO
+		var entities = new ArrayList<GameEntity>();
 		for (SceneGroup group : groups) {
 			if (group.init_config == null) {
 				continue;
 			}
-			
+
 			int suite = group.init_config.suite;
-			
+
 			if (suite == 0) {
 				continue;
 			}
 
 			do {
 				var suiteData = group.getSuiteByIndex(suite);
-				getScriptManager().spawnGadgetsInGroup(group,suiteData);
-				getScriptManager().spawnMonstersInGroup(group, suiteData);
+				entities.addAll(suiteData.sceneGadgets.stream()
+						.map(g -> scriptManager.createGadgets(group.id, group.block_id, g)).toList());
+				entities.addAll(suiteData.sceneMonsters.stream()
+						.map(mob -> scriptManager.createMonster(group.id, group.block_id, mob)).toList());
 				suite++;
 			} while (suite < group.init_config.end_suite);
 		}
-		Grasscutter.getLogger().info("Scene {} Block {} loaded.", this.getId(), block.id);
+
+		scriptManager.meetEntities(entities);
+		Grasscutter.getLogger().info("Scene {} loaded {} group(s)", this.getId(), groups.size());
 	}
 	
 	public void onUnloadBlock(SceneBlock block) {
