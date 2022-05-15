@@ -43,7 +43,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'xyz.grasscutters'
-version = '1.1.1-dev'
+version = '1.1.2-dev'
 
 
 sourceCompatibility = 17
@@ -89,6 +89,9 @@ dependencies {
     implementation group:  'ch.ethz.globis.phtree', name : 'phtree', version: '2.5.0'
 
     protobuf files('proto/')
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 configurations.all {

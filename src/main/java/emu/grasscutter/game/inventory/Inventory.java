@@ -150,6 +150,14 @@ public class Inventory implements Iterable<GameItem> {
 		addItems(items.stream().map(param -> new GameItem(param.getItemId(), param.getCount())).toList(), null);
 	}
 	
+	public void addItemParamDatas(Collection<ItemParamData> items) {
+		addItemParamDatas(items, null);
+	}
+	
+	public void addItemParamDatas(Collection<ItemParamData> items, ActionReason reason) {
+		addItems(items.stream().map(param -> new GameItem(param.getItemId(), param.getCount())).toList(), reason);
+	}
+	
 	private synchronized GameItem putItem(GameItem item) {
 		// Dont add items that dont have a valid item definition.
 		if (item.getItemData() == null) {

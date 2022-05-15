@@ -36,7 +36,8 @@
         "session_key_error": "Wrong session key.",
         "username_error": "Username not found.",
         "username_create_error": "Username not found, create failed."
-      }
+      },
+      "router_error": "[Dispatch] Unable to attach router."
     },
     "status": {
       "free_software": "Grasscutter is FREE software. If you have paid for this, you may have been scammed. Homepage: https://github.com/Grasscutters/Grasscutter",
@@ -172,9 +173,17 @@
       "success": "Godmode is now %s for %s.",
       "description": "Prevents you from taking damage. Defaults to toggle."
     },
+    "nostamina": {
+      "success": "NoStamina is now %s for %s.",
+      "description": "Keep your endurance to the maximum."
+    },
     "heal": {
       "success": "All characters have been healed.",
       "description": "Heal all characters in your current team."
+    },
+    "join": {
+      "usage": "Usage: join [AvatarIDs] such as\"join 10000038 10000039\"",
+      "description": "force join avatar into your team"
     },
     "kick": {
       "player_kick_player": "Player [%s:%s] has kicked player [%s:%s]",
@@ -215,10 +224,23 @@
       "success": "Coordinates: %s, %s, %s\nScene id: %s",
       "description": "Get coordinates."
     },
+    "quest": {
+      "description": "Add or finish quests",
+      "usage": "quest <add|finish> [quest id]",
+      "added": "Quest %s added",
+      "finished": "Finished quest %s",
+      "not_found": "Quest not found",
+      "invalid_id": "Invalid quest id"
+    },
     "reload": {
       "reload_start": "Reloading config.",
       "reload_done": "Reload complete.",
       "description": "Reload server config"
+    },
+    "remove": {
+      "usage": "Usage: remove [indexOfYourTeam] index start from 1",
+      "invalid_index": "The index number is illegal. It starts from 1 and the maximum value is the number of roles in the team",
+      "description": "force remove avatar into your team. Such as `remove 1 2`."
     },
     "resetConst": {
       "reset_all": "Reset all avatars' constellations.",

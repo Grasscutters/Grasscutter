@@ -10,10 +10,12 @@ import emu.grasscutter.game.drop.DropManager;
 import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.expedition.ExpeditionManager;
 import emu.grasscutter.game.gacha.GachaManager;
-import emu.grasscutter.game.managers.ChatManager;
+import emu.grasscutter.game.managers.ChatManager.ChatManager;
+import emu.grasscutter.game.managers.ChatManager.ChatManagerHandler;
 import emu.grasscutter.game.managers.InventoryManager;
 import emu.grasscutter.game.managers.MultiplayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.ServerQuestHandler;
 import emu.grasscutter.game.shop.ShopManager;
 import emu.grasscutter.game.tower.TowerScheduleManager;
 import emu.grasscutter.game.world.World;
@@ -37,11 +39,12 @@ import static emu.grasscutter.Configuration.*;
 public final class GameServer extends KcpServer {
 	private final InetSocketAddress address;
 	private final GameServerPacketHandler packetHandler;
-
+	private final ServerQuestHandler questHandler;
+	
 	private final Map<Integer, Player> players;
 	private final Set<World> worlds;
 	
-	private final ChatManager chatManager;
+	private ChatManagerHandler chatManager;
 	private final InventoryManager inventoryManager;
 	private final GachaManager gachaManager;
 	private final ShopManager shopManager;
@@ -67,6 +70,7 @@ public final class GameServer extends KcpServer {
 		this.setServerInitializer(new GameServerInitializer(this));
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
+		this.questHandler = new ServerQuestHandler();
 		this.players = new ConcurrentHashMap<>();
 		this.worlds = Collections.synchronizedSet(new HashSet<>());
 		
@@ -90,6 +94,10 @@ public final class GameServer extends KcpServer {
 		return packetHandler;
 	}
 
+	public ServerQuestHandler getQuestHandler() {
+		return questHandler;
+	}
+
 	public Map<Integer, Player> getPlayers() {
 		return players;
 	}
@@ -98,8 +106,11 @@ public final class GameServer extends KcpServer {
 		return worlds;
 	}
 
-	public ChatManager getChatManager() {
+	public ChatManagerHandler getChatManager() {
 		return chatManager;
+	}
+	public void setChatManager(ChatManagerHandler chatManager) {
+		this.chatManager = chatManager;
 	}
 
 	public InventoryManager getInventoryManager() {

@@ -70,6 +70,7 @@ public class LuaSerializer implements Serializer {
 		}
 		
 		try {
+			//noinspection ConfusingArgumentToVarargsMethod
 			object = type.getDeclaredConstructor().newInstance(null);
 			
 			LuaValue[] keys = table.keys();
@@ -79,7 +80,7 @@ public class LuaSerializer implements Serializer {
 					if (field == null) {
 						continue;
 					}
-					
+          
 					field.setAccessible(true);
 					LuaValue keyValue = table.get(k);
 
