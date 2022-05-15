@@ -10,12 +10,12 @@ import emu.grasscutter.game.drop.DropManager;
 import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.expedition.ExpeditionManager;
 import emu.grasscutter.game.gacha.GachaManager;
-import emu.grasscutter.game.managers.ChatManager;
+import emu.grasscutter.game.managers.ChatManager.ChatManager;
+import emu.grasscutter.game.managers.ChatManager.ChatManagerHandler;
 import emu.grasscutter.game.managers.InventoryManager;
 import emu.grasscutter.game.managers.MultiplayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.ServerQuestHandler;
-import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 import emu.grasscutter.game.shop.ShopManager;
 import emu.grasscutter.game.tower.TowerScheduleManager;
 import emu.grasscutter.game.world.World;
@@ -44,7 +44,7 @@ public final class GameServer extends KcpServer {
 	private final Map<Integer, Player> players;
 	private final Set<World> worlds;
 	
-	private final ChatManager chatManager;
+	private ChatManagerHandler chatManager;
 	private final InventoryManager inventoryManager;
 	private final GachaManager gachaManager;
 	private final ShopManager shopManager;
@@ -107,8 +107,11 @@ public final class GameServer extends KcpServer {
 		return worlds;
 	}
 
-	public ChatManager getChatManager() {
+	public ChatManagerHandler getChatManager() {
 		return chatManager;
+	}
+	public void setChatManager(ChatManagerHandler chatManager) {
+		this.chatManager = chatManager;
 	}
 
 	public InventoryManager getInventoryManager() {
