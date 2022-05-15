@@ -6,6 +6,8 @@ import java.util.Locale;
 
 import static emu.grasscutter.Grasscutter.config;
 
+import java.nio.file.Paths;
+
 /**
  * A data container for the server's configuration.
  * 
