@@ -386,5 +386,27 @@
       "available_three_stars": "Available 3-star Items",
       "template_missing": "data/gacha_details.html is missing."
     }
+  },
+  "documentation": {
+    "handbook": {
+      "title": "GM Handbook",
+      "title_commands": "Commands",
+      "title_avatars": "Avatars",
+      "title_items": "Items",
+      "title_scenes": "Scenes",
+      "title_monsters": "Monsters",
+      "header_id": "Id",
+      "header_command": "Command",
+      "header_description": "Description",
+      "header_avatar": "Avatar",
+      "header_item": "Item",
+      "header_scene": "Scene",
+      "header_monster": "Monster"
+    },
+    "index": {
+      "title": "Documentation",
+      "handbook": "GM Handbook",
+      "gacha_mapping": "Gacha mapping JSON"
+    }
   }
 }
