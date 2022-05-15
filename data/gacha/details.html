@@ -84,7 +84,7 @@
             var fiveStarItems = {{FIVE_STARS}};
             var fourStarItems = {{FOUR_STARS}};
             var threeStarItems = {{THREE_STARS}};
-            var lang = "{{LANGUAGE}}";
+            var lang = "{{LANGUAGE}}".toLowerCase();
 
             function getNameForId(itemId) {
                 if (mappings[lang] != null && mappings[lang][itemId] != null) {

@@ -371,8 +371,7 @@
       "title": "祈願詳情",
       "available_five_stars": "可獲得的5星物品",
       "available_four_stars": "可獲得的4星物品",
-      "available_three_stars": "可獲得的3星物品",
-      "template_missing": "data/gacha_details.html 不存在。"
+      "available_three_stars": "可獲得的3星物品"
     }
   }
 }
