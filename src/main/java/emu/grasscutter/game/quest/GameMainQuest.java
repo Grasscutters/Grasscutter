@@ -11,8 +11,11 @@ import dev.morphia.annotations.Id;
 import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.custom.MainQuestData;
+import emu.grasscutter.data.def.RewardData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.quest.enums.ParentQuestState;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest;
@@ -91,9 +94,23 @@ public class GameMainQuest {
 	public void finish() {
 		this.isFinished = true;
 		this.state = ParentQuestState.PARENT_QUEST_STATE_FINISHED;
+		
 		this.getOwner().getSession().send(new PacketFinishedParentQuestUpdateNotify(this));
 		this.getOwner().getSession().send(new PacketCodexDataUpdateNotify(this));
+		
 		this.save();
+		
+		// Add rewards
+		MainQuestData mainQuestData = GameData.getMainQuestDataMap().get(this.getParentQuestId());
+		for (int rewardId : mainQuestData.getRewardIdList()) {
+			RewardData rewardData = GameData.getRewardDataMap().get(rewardId);
+			
+			if (rewardData == null) {
+				continue;
+			}
+			
+			getOwner().getInventory().addItemParamDatas(rewardData.getRewardItemList(), ActionReason.QuestReward);
+		}
 	}
 
 	public void save() {

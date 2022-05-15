@@ -6,7 +6,8 @@ import java.util.Set;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.common.RewardItemData;
+import emu.grasscutter.data.common.ItemParamData;
+
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.packet.Opcodes;
@@ -27,17 +28,8 @@ public class HandlerTakePlayerLevelRewardReq extends PacketHandler {
         int rewardId = GameData.getPlayerLevelDataMap().get(level).getRewardId();
 
         if (rewardId != 0) {
-            List<RewardItemData> rewardItems = GameData.getRewardDataMap().get(rewardId).getRewardItemList();
-            List<GameItem> items = new LinkedList<>();
-            for (RewardItemData rewardItem : rewardItems) {
-                if (rewardItem != null) {
-                    if (rewardItem.getItemId() != 0) {
-                        items.add(new GameItem(rewardItem.getItemId(), rewardItem.getItemCount()));
-                    }
-                }
-            }
-            session.getPlayer().getInventory().addItems(items);
-            session.getPlayer().sendPacket(new PacketItemAddHintNotify(items, ActionReason.PlayerUpgradeReward));
+            List<ItemParamData> rewardItems = GameData.getRewardDataMap().get(rewardId).getRewardItemList();
+            session.getPlayer().getInventory().addItemParamDatas(rewardItems, ActionReason.PlayerUpgradeReward);
             Set<Integer> rewardedLevels = session.getPlayer().getRewardedLevels();
             rewardedLevels.add(level);
             session.getPlayer().setRewardedLevels(rewardedLevels);
