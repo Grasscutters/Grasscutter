@@ -1,15 +1,14 @@
 {
-  "t": "System.currentTimeMillis()",
+  "t": "{{SYSTEM_TIME}}",
   "list": [
     {
       "list": [
         {
           "ann_id": 1,
-
           "title": "<strong>Welcome to Grasscutter!</strong>",
           "subtitle": "Welcome!",
-          "banner": "https://uploadstatic-sea.mihoyo.com/announcement/2020/09/22/7d85f19b152d218e73224d7c138a0fd0_5818585260283672899.jpg",
-          "tag_icon": "https://uploadstatic-sea.mihoyo.com/announcement/2020/03/05/a2588f1a51faee9fa8dfe9aead649dd6_7237021399135895303.png",
+          "banner": "{{DISPATCH_PUBLIC}}/hk4e/announcement/assets/banner/1.jpg",
+          "tag_icon": "{{DISPATCH_PUBLIC}}/hk4e/announcement/assets/tag_icon.png",
           "type": 2,
           "type_label": "System",
           "lang": "en-US",
@@ -22,8 +21,8 @@
           "ann_id": 2,
           "title": "<strong>How to use announcements</strong>",
           "subtitle": "How to use announcements",
-          "banner": "https://uploadstatic-sea.mihoyo.com/announcement/2020/09/22/7d85f19b152d218e73224d7c138a0fd0_5818585260283672899.jpg",
-          "tag_icon": "https://uploadstatic-sea.mihoyo.com/announcement/2020/03/05/a2588f1a51faee9fa8dfe9aead649dd6_7237021399135895303.png",
+          "banner": "{{DISPATCH_PUBLIC}}/hk4e/announcement/assets/banner/2.jpg",
+          "tag_icon": "{{DISPATCH_PUBLIC}}/hk4e/announcement/assets/tag_icon.png",
           "type": 2,
           "type_label": "System",
           "lang": "en-US",
@@ -59,11 +58,5 @@
   ],
   "timezone": -5,
   "alert": false,
-  "alert_id": 0,
-  "pic_list": [],
-  "pic_total": 0,
-  "pic_type_list": [],
-  "pic_alert": false,
-  "pic_alert_id": 0,
-  "static_sign": ""
+  "alert_id": 0
 }
