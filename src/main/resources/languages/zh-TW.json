@@ -229,9 +229,9 @@
       "description": "重新加載設定檔和數據。"
     },
     "remove": {
-      "usage": "用法: remove [indexOfYourTeams] 从1开始",
-      "invalid_index": "下標從1開始",
-      "description": "强制移除對内角色"
+      "usage": "用法: remove [多個角色在隊伍中的序號] 序號从1开始",
+      "invalid_index": "序號不合法，從1開始，最大值為隊内角色數量",
+      "description": "强制移除對内角色，例如`remove 1 2`表示將1號和2號角色從隊伍中移除"
     },
     "resetConst": {
       "reset_all": "重設所有角色的命座。",

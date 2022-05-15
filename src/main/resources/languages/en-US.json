@@ -233,9 +233,9 @@
       "description": "Reload server config"
     },
     "remove": {
-      "usage": "Usage: remove [indexOfYourTeams] index start from 1",
-      "invalid_index": "index start from 1",
-      "description": "force remove avatar into your team"
+      "usage": "Usage: remove [indexOfYourTeam] index start from 1",
+      "invalid_index": "The index number is illegal. It starts from 1 and the maximum value is the number of roles in the team",
+      "description": "force remove avatar into your team. Such as `remove 1 2`."
     },
     "resetConst": {
       "reset_all": "Reset all avatars' constellations.",
