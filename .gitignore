@@ -68,8 +68,11 @@ mongod.exe
 language/
 languages/
 gacha-mapping.js
-data/gacha_mappings.js
+mappings.js
 BuildConfig.java
+
+# lombok
+/.apt_generated/
 
 # macOS
 .DS_Store
