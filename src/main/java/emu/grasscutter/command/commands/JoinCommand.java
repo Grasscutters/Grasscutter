@@ -13,7 +13,8 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "join", usage = "join [AvatarIDs] such as\"join 10000038 10000039\"",
-        description = "commands.join.description", permission = "server.join")
+        description = "commands.join.description", permission = "server.join",
+        permissionTargeted = "server.join.others")
 public class JoinCommand implements CommandHandler {
 
     @Override

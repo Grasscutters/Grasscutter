@@ -13,7 +13,8 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "remove", usage = "remove [indexOfYourTeams] index start from 1",
-        description = "commands.remove.description", permission = "server.remove")
+        description = "commands.remove.description", permission = "server.remove",
+        permissionTargeted = "server.remove.others")
 public class RemoveCommand implements CommandHandler {
 
     @Override
