@@ -180,7 +180,6 @@ public final class Utils {
 
 		String resourcesFolder = config.folderStructure.resources;
 		String dataFolder = config.folderStructure.data;
-		String keysFolder = config.folderStructure.keys;
 
 		// Check for resources folder.
 		if(!fileExists(resourcesFolder)) {
@@ -200,10 +199,7 @@ public final class Utils {
 		if(!fileExists(dataFolder))
 			createFolder(dataFolder);
 
-		if(!fileExists(keysFolder))
-			createFolder(keysFolder);
-
-		// Make sure the data folder is populated, if not copy the folders
+		// Make sure the data folder is populated, if there are any missing files copy them from resources
 		DataChecker.CheckAllFiles();
 
 		if(exit) System.exit(1);
