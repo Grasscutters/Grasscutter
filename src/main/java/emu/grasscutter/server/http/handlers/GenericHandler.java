@@ -42,6 +42,8 @@ public final class GenericHandler implements Router {
 
         // webstatic-sea.hoyoverse.com
         express.get("/admin/mi18n/plat_oversea/m202003048/m202003048-version.json", new HttpJsonResponse("{\"version\":51}"));
+        express.get("/admin/mi18n/plat_oversea/m2020030410/m2020030410-version.json", new HttpJsonResponse("{\"version\":51}"));
+        express.get("/admin/mi18n/plat_oversea/m2020030410/m2020030410-zh-cn.json", new HttpJsonResponse("{\"version\":51}"));
         
         express.get("/status/server", GenericHandler::serverStatus);
     }
