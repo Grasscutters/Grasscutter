@@ -6,6 +6,7 @@ import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.server.game.GameServer;
 import io.jpower.kcp.netty.UkcpChannel;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
@@ -78,17 +79,8 @@ public abstract class KcpChannel extends ChannelInboundHandlerAdapter {
         if(lines[0] != null && !lines[0].isEmpty()){
           message = lines[0];
         }
-        if(message.matches("(.*)OutOfMemoryError(.*)")){
-          // if memory full          
-          Grasscutter.getLogger().info("Trying to exit program because memory is full");
-          Map<Integer, Player> playersMap = Grasscutter.getGameServer().getPlayers();
-          // Better exit by save data player and kick
-          playersMap.values().forEach(player -> {
-            //Grasscutter.getLogger().info("Kick User: "+player.getUid());
-            player.getSession().close();
-          });
-          // Bye          
-          System.exit(0);
+        if(message.matches("(.*)OutOfMemoryError(.*)")){         
+          GameServer.doExit(1,"Trying to exit program because memory is full");
         }else if(message.matches("(.*)State=-1(.*)")){
           close();
         }else if(message.matches("(.*)inconsistency(.*)")){

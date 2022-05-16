@@ -101,7 +101,7 @@ public final class Grasscutter {
 		} 
 		
 		// Exit early if argument sets it.
-		if(exitEarly) System.exit(0);
+		if(exitEarly) GameServer.doExit(0,"exitEarly");
 	
 		// Initialize server.
 		Grasscutter.getLogger().info(translate("messages.status.starting"));
@@ -152,7 +152,7 @@ public final class Grasscutter {
 			getLogger().error(translate("messages.status.run_mode_error", runMode));
 			getLogger().error(translate("messages.status.run_mode_help"));
 			getLogger().error(translate("messages.status.shutdown"));
-			System.exit(1);
+			GameServer.doExit(0,"run_mode_error");
 		}
 	
 		// Enable all plugins.
@@ -203,7 +203,7 @@ public final class Grasscutter {
 			config = gson.fromJson(file, ConfigContainer.class);
 		} catch (Exception exception) {
 			getLogger().error("There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
-			System.exit(1);
+			GameServer.doExit(0,"Error config.json");
 		} 
 	}
 
@@ -319,7 +319,7 @@ public final class Grasscutter {
 					Grasscutter.getLogger().info("Press Ctrl-C again to shutdown.");
 					continue;
 				} else {
-					Runtime.getRuntime().exit(0);
+					GameServer.doExit(1,"Exit by user...");
 				}
 			} catch (EndOfFileException e) {
 				Grasscutter.getLogger().info("EOF detected.");

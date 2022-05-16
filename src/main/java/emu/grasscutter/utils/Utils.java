@@ -1,26 +1,39 @@
 package emu.grasscutter.utils;
 
-import java.io.*;
+import static emu.grasscutter.utils.Language.translate;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
-import java.time.*;
+import java.time.DayOfWeek;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.time.temporal.TemporalAdjusters;
-import java.util.*;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Random;
+
+import javax.annotation.Nullable;
+
+import org.slf4j.Logger;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.DataLoader;
+import emu.grasscutter.server.game.GameServer;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
-
-import org.slf4j.Logger;
-
-import javax.annotation.Nullable;
-
-import static emu.grasscutter.utils.Language.translate;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
 public final class Utils {
@@ -210,9 +223,9 @@ public final class Utils {
 			createFolder(dataFolder);
 
 		// Make sure the data folder is populated, if there are any missing files copy them from resources
-		DataLoader.CheckAllFiles();
+		//DataLoader.CheckAllFiles();
 
-		if(exit) System.exit(1);
+		if(exit) GameServer.doExit(0,"BinOutput");
 	}
 
 	/**

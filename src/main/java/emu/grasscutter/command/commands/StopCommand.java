@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.server.game.GameServer;
 
 import java.util.List;
 
@@ -19,6 +20,6 @@ public final class StopCommand implements CommandHandler {
             CommandHandler.sendMessage(p, translate(sender, "commands.stop.success"));
         }
 
-        System.exit(1000);
+        GameServer.doExit(1,"exit by cmd");
     }
 }

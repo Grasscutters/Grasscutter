@@ -1,33 +1,36 @@
 package emu.grasscutter.server.http.dispatch;
 
+import static emu.grasscutter.Configuration.DISPATCH_INFO;
+import static emu.grasscutter.Configuration.GAME_INFO;
+import static emu.grasscutter.Configuration.HTTP_ENCRYPTION;
+import static emu.grasscutter.Configuration.HTTP_INFO;
+import static emu.grasscutter.Configuration.SERVER;
+import static emu.grasscutter.Configuration.lr;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import com.google.protobuf.ByteString;
-import com.google.protobuf.InvalidProtocolBufferException;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
-import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.*;
-import emu.grasscutter.net.proto.RegionInfoOuterClass;
+import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp;
+import emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.QueryRegionListHttpRsp;
 import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
 import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
+import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.Router;
+import emu.grasscutter.utils.ConfigContainer.Region;
 import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 import express.Express;
 import express.http.Request;
 import express.http.Response;
 import io.javalin.Javalin;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
-import static emu.grasscutter.Configuration.*;
-import static emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.*;
 
 /**
  * Handles requests related to region queries.
@@ -58,8 +61,7 @@ public final class RegionHandler implements Router {
         
         var configuredRegions = new ArrayList<>(List.of(DISPATCH_INFO.regions));
         if(SERVER.runMode != ServerRunMode.HYBRID && configuredRegions.size() == 0) {
-            Grasscutter.getLogger().error("[Dispatch] There are no game servers available. Exiting due to unplayable state.");
-            System.exit(1);
+            GameServer.doExit(0,"[Dispatch] There are no game servers available. Exiting due to unplayable state.");
         } else if (configuredRegions.size() == 0) 
             configuredRegions.add(new Region("os_usa", DISPATCH_INFO.defaultName,
                 lr(GAME_INFO.accessAddress, GAME_INFO.bindAddress), 

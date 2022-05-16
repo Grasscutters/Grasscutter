@@ -266,16 +266,34 @@ public final class GameServer extends KcpServer {
 		Grasscutter.getLogger().info(translate("messages.game.port_bind", Integer.toString(address.getPort())));
 		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
+
+	//private volatile Integer exitStatus;
+
+	public static void doExit(int exitStatus,String message) {
+		Grasscutter.getLogger().info("Exit with code "+exitStatus,message);
+		if(exitStatus == 0){
+
+		}else{
+
+			Grasscutter.getLogger().info("-> Stop Event");
+			ServerStopEvent event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); 
+			event.call();
+	
+			// Kick and save all players
+			Map<Integer, Player> playersMap = Grasscutter.getGameServer().getPlayers();
+			Grasscutter.getLogger().info("-> Total Player Kick "+playersMap.size());
+            playersMap.values().forEach(player -> {
+				try {
+                 player.getSession().close();
+				} catch (Exception e) {
+					//TODO: handle exception
+				}             
+            });
+		}
+		System.exit(exitStatus);
+	}
 	
 	public void onServerShutdown() {
-		ServerStopEvent event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
-
-		// Kick and save all players
-		List<Player> list = new ArrayList<>(this.getPlayers().size());
-		list.addAll(this.getPlayers().values());
-		
-		for (Player player : list) {
-			player.getSession().close();
-		}
+		Grasscutter.getLogger().info("Server shutdown detected...");
 	}
 }
