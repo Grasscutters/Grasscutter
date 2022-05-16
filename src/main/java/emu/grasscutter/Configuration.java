@@ -51,15 +51,15 @@ public final class Configuration extends ConfigContainer {
      */
     
     public static String DATA(String path) {
-        return DATA_FOLDER + "/" + path;
+        return DATA_FOLDER + path;
     }
     
     public static String RESOURCE(String path) {
-        return RESOURCES_FOLDER + "/" + path;
+        return RESOURCES_FOLDER + path;
     }
     
     public static String SCRIPT(String path) {
-        return SCRIPTS_FOLDER + "/" + path;
+        return SCRIPTS_FOLDER + path;
     }
 
     /**
