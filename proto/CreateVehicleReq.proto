@@ -4,7 +4,7 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "Vector.proto";
 
-message VehicleSpawnReq {
+message CreateVehicleReq {
 	uint32 vehicleId = 1;
 	uint32 pointId = 2;
   Vector pos = 3;

@@ -10,7 +10,7 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 
 import emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember;
-import emu.grasscutter.net.proto.VehicleSpawnRspOuterClass.VehicleSpawnRsp;
+import emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp;
 
 import emu.grasscutter.utils.Position;
 
@@ -19,11 +19,11 @@ import java.util.List;
 
 import static emu.grasscutter.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.VEHICLE_INTERACT_OUT;
 
-public class PacketVehicleSpawnRsp extends BasePacket {
+public class PacketCreateVehicleRsp extends BasePacket {
 
-	public PacketVehicleSpawnRsp(Player player, int vehicleId, int pointId, Position pos, Position rot) {
-		super(PacketOpcodes.VehicleSpawnRsp);
-		VehicleSpawnRsp.Builder proto = VehicleSpawnRsp.newBuilder();
+	public PacketCreateVehicleRsp(Player player, int vehicleId, int pointId, Position pos, Position rot) {
+		super(PacketOpcodes.CreateVehicleRsp);
+		CreateVehicleRsp.Builder proto = CreateVehicleRsp.newBuilder();
 
 		// Eject vehicle members and Kill previous vehicles if there are any
 		List<GameEntity> previousVehicles = player.getScene().getEntities().values().stream()
