@@ -236,7 +236,7 @@ public class SceneScriptManager {
 		group.setLoaded(true);
 		
 		CompiledScript cs = ScriptLoader.getScriptByPath(
-			SCRIPTS_FOLDER + "Scene/" + getScene().getId() + "/scene" + getScene().getId() + "_group" + group.id + "." + ScriptLoader.getScriptType());
+			SCRIPT("Scene/" + getScene().getId() + "/scene" + getScene().getId() + "_group" + group.id + "." + ScriptLoader.getScriptType()));
 	
 		if (cs == null) {
 			return;
