@@ -60,6 +60,8 @@ repositories {
 
 dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
+//    添加proxyee依赖
+    implementation group:'com.github.monkeywie',name:'proxyee',version: '1.6.4'
 
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
     implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.9'
@@ -113,7 +115,7 @@ jar {
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
-    
+
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
 
     from('src/main/java') {
