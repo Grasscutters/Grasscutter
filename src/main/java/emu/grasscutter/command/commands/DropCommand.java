@@ -54,7 +54,7 @@ public final class DropCommand implements CommandHandler {
         }
 
         if (amount > Grasscutter.getConfig().server.game.gameOptions.CMD_Drop) {
-          CommandHandler.sendMessage(sender, "Overmuch :(");
+          CommandHandler.sendMessage(sender, translate(sender, "dockergc.commands.limit",Grasscutter.getConfig().server.game.gameOptions.CMD_Drop));
           return;
         }
 

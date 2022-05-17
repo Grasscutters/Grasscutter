@@ -101,7 +101,7 @@ public final class GiveCommand implements CommandHandler {
         }
 
         if (amount > Grasscutter.getConfig().server.game.gameOptions.CMD_Give) {
-          CommandHandler.sendMessage(sender, "Overmuch :(");
+          CommandHandler.sendMessage(sender, translate(sender, "dockergc.commands.limit",Grasscutter.getConfig().server.game.gameOptions.CMD_Give));
           return;
         }
 
@@ -110,6 +110,15 @@ public final class GiveCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.itemId"));
             return;
         }
+
+        // limit weapon
+        if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
+            if (amount > Grasscutter.getConfig().server.game.gameOptions.CMD_Give_WP) {
+                CommandHandler.sendMessage(sender, translate(sender, "dockergc.commands.limit",Grasscutter.getConfig().server.game.gameOptions.CMD_Give_WP));
+                return;
+            }
+        }
+
         if (refinement != 0) {
             if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
                 if (refinement < 1 || refinement > 5) {

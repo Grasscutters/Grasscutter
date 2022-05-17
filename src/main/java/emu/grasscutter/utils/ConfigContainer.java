@@ -169,6 +169,7 @@ public class ConfigContainer {
         public Rates rates = new Rates();
 
         // DockerGC
+        public int CMD_Give_WP = 10;
 	    public int CMD_Spawn = 150;
 		public int CMD_Give = 10000000;
 		public int CMD_Drop = 100;

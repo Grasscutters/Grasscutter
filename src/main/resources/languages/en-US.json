@@ -418,7 +418,8 @@
     "commands": {
       "clear": {
         "done": "We have cleared %s items from your account (limited to every %s items)"
-      }
+      },
+      "limit": "This command is limited to only every %s (amount)"
     }
   }
 }

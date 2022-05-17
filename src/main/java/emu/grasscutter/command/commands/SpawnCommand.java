@@ -55,7 +55,7 @@ public final class SpawnCommand implements CommandHandler {
         }
 
         if (amount > Grasscutter.getConfig().server.game.gameOptions.CMD_Spawn) {
-          CommandHandler.sendMessage(sender, "Overmuch :(");
+          CommandHandler.sendMessage(sender, translate(sender, "dockergc.commands.limit",Grasscutter.getConfig().server.game.gameOptions.CMD_Spawn));
           return;
         }
 
