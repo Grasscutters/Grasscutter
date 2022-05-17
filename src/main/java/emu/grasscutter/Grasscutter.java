@@ -304,7 +304,7 @@ public final class Grasscutter {
 		getLogger().info(translate("messages.status.done"));
 		String input = null;
 		boolean isLastInterrupted = false;
-		while (true) {
+		while (config.server.game.enableConsole) {
 			try {
 				input = consoleLineReader.readLine("> ");
 			} catch (UserInterruptException e) {

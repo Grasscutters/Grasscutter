@@ -4,6 +4,6 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "SceneUnlockInfo.proto";
 
-message SceneUnlockInfoNotify {
+message PlayerWorldSceneInfoListNotify {
 	repeated SceneUnlockInfo unlockInfos = 1;
 }

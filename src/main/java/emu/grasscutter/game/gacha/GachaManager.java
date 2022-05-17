@@ -358,7 +358,7 @@ public class GachaManager {
 		if(this.watchService == null) {
 			try {
 				this.watchService = FileSystems.getDefault().newWatchService();
-				Path path = new File(DATA_FOLDER).toPath();
+				Path path = new File(DATA()).toPath();
 				path.register(watchService, new WatchEvent.Kind[]{StandardWatchEventKinds.ENTRY_MODIFY}, SensitivityWatchEventModifier.HIGH);
 			} catch (Exception e) {
 				Grasscutter.getLogger().error("Unable to load the Gacha Manager Watch Service. If ServerOptions.watchGacha is true it will not auto-reload");
