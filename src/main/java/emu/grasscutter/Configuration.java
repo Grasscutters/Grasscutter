@@ -4,8 +4,10 @@ import emu.grasscutter.utils.ConfigContainer;
 import emu.grasscutter.utils.ConfigContainer.*;
 
 import java.util.Locale;
+import java.nio.file.Paths;
 
 import static emu.grasscutter.Grasscutter.config;
+
 
 /**
  * A data container for the server's configuration.
@@ -24,12 +26,12 @@ public final class Configuration extends ConfigContainer {
     
     public static final Locale LANGUAGE = config.language.language;
     public static final Locale FALLBACK_LANGUAGE = config.language.fallback;
-    public static final String DATA_FOLDER = config.folderStructure.data;
-    public static final String RESOURCES_FOLDER = config.folderStructure.resources;
-    public static final String KEYS_FOLDER = config.folderStructure.keys;
-    public static final String PLUGINS_FOLDER = config.folderStructure.plugins;
-    public static final String SCRIPTS_FOLDER = config.folderStructure.scripts;
-    public static final String PACKETS_FOLDER = config.folderStructure.packets;
+    private static final String DATA_FOLDER = config.folderStructure.data;
+    private static final String RESOURCES_FOLDER = config.folderStructure.resources;
+    private static final String KEYS_FOLDER = config.folderStructure.keys;
+    private static final String PLUGINS_FOLDER = config.folderStructure.plugins;
+    private static final String SCRIPTS_FOLDER = config.folderStructure.scripts;
+    private static final String PACKETS_FOLDER = config.folderStructure.packets;
     
     public static final Server SERVER = config.server;
     public static final Database DATABASE = config.databaseInfo;
@@ -49,17 +51,36 @@ public final class Configuration extends ConfigContainer {
     /*
      * Utilities
      */
-    
+    public static String DATA() {
+        return DATA_FOLDER;
+    }
+
     public static String DATA(String path) {
-        return DATA_FOLDER + "/" + path;
+        return Paths.get(DATA_FOLDER, path).toString();
     }
     
     public static String RESOURCE(String path) {
-        return RESOURCES_FOLDER + "/" + path;
+        return Paths.get(RESOURCES_FOLDER, path).toString();
+    }
+
+    public static String KEY(String path) {
+        return Paths.get(KEYS_FOLDER, path).toString();
     }
     
+    public static String PLUGIN() {
+        return PLUGINS_FOLDER;
+    }
+
+    public static String PLUGIN(String path) {
+        return Paths.get(PLUGINS_FOLDER, path).toString();
+    }
+
     public static String SCRIPT(String path) {
-        return SCRIPTS_FOLDER + "/" + path;
+        return Paths.get(SCRIPTS_FOLDER, path).toString();
+    }
+
+    public static String PACKET(String path) {
+        return Paths.get(PACKETS_FOLDER, path).toString();
     }
 
     /**

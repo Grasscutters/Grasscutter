@@ -141,7 +141,7 @@ public final class HttpServer {
     public static class DefaultRequestRouter implements Router {
         @Override public void applyRoutes(Express express, Javalin handle) {
             express.get("/", (request, response) -> {
-                File file = new File(HTTP_STATIC_FILES.errorFile);
+                File file = new File(HTTP_STATIC_FILES.indexFile);
                 if(!file.exists())
                     response.send("""
                             <!DOCTYPE html>
