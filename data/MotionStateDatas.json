@@ -1,0 +1,285 @@
+[
+  {
+    "state": "MOTION_CLIMB",
+    "stateType": "CLIMB",
+    "value": 300,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_STANDBY_TO_CLIMB",
+    "stateType": "CLIMB",
+    "value": 300,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_CLIMB_JUMP",
+    "stateType": "CLIMB",
+    "value": 1800,
+    "persistent": false
+  },
+  {
+    "state": "MOTION_GO_UPSTAIRS",
+    "stateType": "CLIMB",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_JUMP",
+    "stateType": "OVERRIDABLE",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_DANGER_DASH",
+    "stateType": "OVERRIDABLE",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_FALL_ON_GROUND",
+    "stateType": "OVERRIDABLE",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_LAND_SPEED",
+    "stateType": "OVERRIDABLE",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_DASH",
+    "stateType": "DASH",
+    "value": 1800,
+    "persistent": true
+  },
+  {
+    "state": "SKILL_SERIAL_10013",
+    "stateType": "DASH",
+    "value": 1500,
+    "persistent": true
+  }
+  ,
+  {
+    "state": "SKILL_SERIAL_10413",
+    "stateType": "DASH",
+    "value": 1500,
+    "persistent": true
+  },
+  {
+    "state": "PRE_SKILL_10013",
+    "stateType": "DASH",
+    "value": 1000,
+    "persistent": false
+  },
+  {
+    "state": "PRE_SKILL_10413",
+    "stateType": "DASH",
+    "value": 1000,
+    "persistent": false
+  },
+  {
+    "state": "MOTION_DASH_BEFORE_SHAKE",
+    "stateType": "DASH",
+    "value": 1800,
+    "persistent": false
+  },
+  {
+    "state": "MOTION_FLY",
+    "stateType": "FLY",
+    "value": 300,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_FLY_FAST",
+    "stateType": "FLY",
+    "value": 300,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_FLY_SLOW",
+    "stateType": "FLY",
+    "value": 300,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_POWERED_FLY",
+    "stateType": "POWERED_FLY",
+    "value": -300,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_FLY_IDLE",
+    "stateType": "FLY",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_DANGER_RUN",
+    "stateType": "RUN",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_RUN",
+    "stateType": "RUN",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_SKIFF_BOARDING",
+    "stateType": "SKIFF",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_SKIFF_DASH",
+    "stateType": "SKIFF",
+    "value": 1800,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_SKIFF_NORMAL",
+    "stateType": "SKIFF",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_SKIFF_POWERED_DASH",
+    "stateType": "POWERED_SKIFF",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_DANGER_STANDBY_MOVE",
+    "stateType": "STANDBY",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_DANGER_STANDBY",
+    "stateType": "STANDBY",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_LADDER_TO_STANDBY",
+    "stateType": "STANDBY",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_STANDBY_MOVE",
+    "stateType": "STANDBY",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_STANDBY",
+    "stateType": "STANDBY",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_SWIM_IDLE",
+    "stateType": "SWIM",
+    "value": 100,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_SWIM_DASH",
+    "stateType": "SWIM",
+    "value": 1020,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_SWIM_JUMP",
+    "stateType": "SWIM",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_SWIM_MOVE",
+    "stateType": "SWIM",
+    "value": 400,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_DANGER_WALK",
+    "stateType": "WALK",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_WALK",
+    "stateType": "WALK",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_JUMP_UP_WALL_FOR_STANDBY",
+    "stateType": "JUMP",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_FIGHT",
+    "stateType": "FIGHT",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_NOTIFY",
+    "stateType": "NOTIFY",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_SIT_IDLE",
+    "stateType": "OTHER",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_LADDER_SLIP",
+    "stateType": "OTHER",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "MOTION_SLIP",
+    "stateType": "OTHER",
+    "value": -2500,
+    "persistent": true
+  },
+  {
+    "state": "WEAPON_CLAYMORE",
+    "stateType": "BASH",
+    "value": 4000,
+    "persistent": true
+  },
+  {
+    "state": "WEAPON_CATALYST",
+    "stateType": "BASH",
+    "value": 5000,
+    "persistent": false
+  },
+  {
+    "state": "WEAPON_POLE",
+    "stateType": "BASH",
+    "value": 2500,
+    "persistent": false
+  },
+  {
+    "state": "WEAPON_SWORD_ONE_HAND",
+    "stateType": "BASH",
+    "value": 2000,
+    "persistent": false
+  },
+  {
+    "state": "WEAPON_SWORD_ONE_HAND",
+    "stateType": "BASH",
+    "value": 2000,
+    "persistent": false
+  }
+]
