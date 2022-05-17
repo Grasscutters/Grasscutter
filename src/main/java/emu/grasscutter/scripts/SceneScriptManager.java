@@ -241,7 +241,7 @@ public class SceneScriptManager {
 	}
 	
 	public void spawnGadgetsInGroup(SceneGroup group, SceneSuite suite) {
-		List<SceneGadget> gadgets = group.gadgets;
+		var gadgets = group.gadgets.values();
 		
 		if (suite != null) {
 			gadgets = suite.sceneGadgets;

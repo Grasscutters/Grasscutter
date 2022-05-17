@@ -5,6 +5,9 @@ import ch.ethz.globis.phtree.v16.PhTree16;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.scripts.ScriptLoader;
+import lombok.Data;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.script.Bindings;
 import javax.script.CompiledScript;
@@ -15,6 +18,8 @@ import java.util.stream.Collectors;
 
 import static emu.grasscutter.Configuration.SCRIPT;
 
+@ToString
+@Setter
 public class SceneMeta {
 
     public SceneConfig config;

@@ -1,7 +1,11 @@
 package emu.grasscutter.scripts.data;
 
 import emu.grasscutter.utils.Position;
+import lombok.Setter;
+import lombok.ToString;
 
+@ToString
+@Setter
 public class SceneObject {
     public int level;
     public int config_id;
@@ -11,5 +15,5 @@ public class SceneObject {
     /**
      * not set by lua
      */
-    public int groupId;
+    public transient int groupId;
 }
