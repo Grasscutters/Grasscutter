@@ -41,10 +41,6 @@ public final class DefaultAuthenticators {
                     responseMessage = translate("messages.dispatch.account.username_create_error");
                     Grasscutter.getLogger().info(translate("messages.dispatch.account.account_login_create_error", address));
                 } else {
-                    // Add default permissions.
-                    for (var permission : ACCOUNT.defaultPermissions)
-                        account.addPermission(permission);
-
                     // Continue with login.
                     successfulLogin = true;
 
