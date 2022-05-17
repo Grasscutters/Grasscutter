@@ -33,6 +33,8 @@ import static emu.grasscutter.Configuration.*;
 
 public class ResourceLoader {
 
+	private static List<String> loadedResources = new ArrayList<String>();
+
 	public static List<Class<?>> getResourceDefClasses() {
 		Reflections reflections = new Reflections(ResourceLoader.class.getPackage().getName());
 		Set<?> classes = reflections.getSubTypesOf(GameResource.class);
@@ -98,6 +100,10 @@ public class ResourceLoader {
 	}
 
 	public static void loadResources() {
+		loadResources(false);
+	}
+
+	public static void loadResources(boolean doReload) {
 		for (Class<?> resourceDefinition : getResourceDefClasses()) {
 			ResourceType type = resourceDefinition.getAnnotation(ResourceType.class);
 
@@ -113,7 +119,7 @@ public class ResourceLoader {
 			}
 
 			try {
-				loadFromResource(resourceDefinition, type, map);
+				loadFromResource(resourceDefinition, type, map, doReload);
 			} catch (Exception e) {
 				Grasscutter.getLogger().error("Error loading resource file: " + Arrays.toString(type.name()), e);
 			}
@@ -121,13 +127,16 @@ public class ResourceLoader {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	protected static void loadFromResource(Class<?> c, ResourceType type, Int2ObjectMap map) throws Exception {
-		for (String name : type.name()) {
-			loadFromResource(c, name, map);
+	protected static void loadFromResource(Class<?> c, ResourceType type, Int2ObjectMap map, boolean doReload) throws Exception {
+		if(!loadedResources.contains(c.getSimpleName()) || doReload) {
+			for (String name : type.name()) {
+				loadFromResource(c, name, map);
+			}
+			Grasscutter.getLogger().info("Loaded " + map.size() + " " + c.getSimpleName() + "s.");
+			loadedResources.add(c.getSimpleName());
 		}
-		Grasscutter.getLogger().info("Loaded " + map.size() + " " + c.getSimpleName() + "s.");
 	}
-	
+
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	protected static void loadFromResource(Class<?> c, String fileName, Int2ObjectMap map) throws Exception {
 		FileReader fileReader = new FileReader(RESOURCE("ExcelBinOutput/" + fileName));
@@ -138,6 +147,9 @@ public class ResourceLoader {
 			Map<String, Object> tempMap = Utils.switchPropertiesUpperLowerCase((Map<String, Object>) o, c);
 			GameResource res = gson.fromJson(gson.toJson(tempMap), TypeToken.get(c).getType());
 			res.onLoad();
+			if(map.containsKey(res.getId())) {
+				map.remove(res.getId());
+			}
 			map.put(res.getId(), res);
 		}
 	}
