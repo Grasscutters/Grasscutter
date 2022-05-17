@@ -2,6 +2,7 @@ package emu.grasscutter.game.drop;
 
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.game.entity.EntityItem;
@@ -17,11 +18,10 @@ import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.Collection;
 import java.util.List;
-
-import static emu.grasscutter.Configuration.*;
 
 public class DropManager {
     public GameServer getGameServer() {
@@ -43,7 +43,7 @@ public class DropManager {
     }
 
     public synchronized void load() {
-        try (FileReader fileReader = new FileReader(DATA("Drop.json"))) {
+        try (Reader fileReader = new InputStreamReader(DataLoader.load("Drop.json"))) {
             getDropData().clear();
             List<DropInfo> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, DropInfo.class).getType());
             if(banners.size() > 0) {

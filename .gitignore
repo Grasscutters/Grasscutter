@@ -52,21 +52,23 @@ tmp/
 .vscode
 
 # Grasscutter
-resources/
-logs/
-plugins/
-data/AbilityEmbryos.json
-data/OpenConfig.json
+/resources
+/logs
+/plugins
+/data
+/keys
+/language
+/languages
+/src/generated
+
+/*.jar
+/*.sh
+
 GM Handbook.txt
 config.json
 mitmdump.exe
-*.jar
-!lib/*.jar
 mongod.exe
-/src/generated/
-/*.sh
-language/
-languages/
+
 gacha-mapping.js
 mappings.js
 BuildConfig.java
