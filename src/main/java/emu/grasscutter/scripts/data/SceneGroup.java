@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static emu.grasscutter.Configuration.SCRIPTS_FOLDER;
+import static emu.grasscutter.Configuration.*;
 
 @ToString
 @Setter
@@ -68,7 +68,7 @@ public class SceneGroup {
 		setLoaded(true);
 
 		CompiledScript cs = ScriptLoader.getScriptByPath(
-				SCRIPTS_FOLDER + "Scene/" + sceneId + "/scene" + sceneId + "_group" + id + "." + ScriptLoader.getScriptType());
+				SCRIPT("Scene/" + sceneId + "/scene" + sceneId + "_group" + id + "." + ScriptLoader.getScriptType()));
 
 		if (cs == null) {
 			return this;
