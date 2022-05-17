@@ -1,11 +1,14 @@
 package emu.grasscutter.game.tower;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.TowerScheduleData;
 import emu.grasscutter.server.game.GameServer;
 
 import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.List;
 
 import static emu.grasscutter.Configuration.*;
@@ -25,7 +28,7 @@ public class TowerScheduleManager {
     private TowerScheduleConfig towerScheduleConfig;
 
     public synchronized void load(){
-        try (FileReader fileReader = new FileReader(DATA("TowerSchedule.json"))) {
+        try (Reader fileReader = new InputStreamReader(DataLoader.load("TowerSchedule.json"))) {
             towerScheduleConfig = Grasscutter.getGsonFactory().fromJson(fileReader, TowerScheduleConfig.class);
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load tower schedule config.", e);
