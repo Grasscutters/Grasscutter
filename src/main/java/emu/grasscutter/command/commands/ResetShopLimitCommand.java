@@ -19,6 +19,11 @@ public final class ResetShopLimitCommand implements CommandHandler {
             return;
         }
 
+        if (args.isEmpty()) {
+            CommandHandler.sendMessage(sender, translate(sender, "commands.resetShopLimit.usage"));
+            return;
+        }
+
         targetPlayer.getShopLimit().forEach(x -> x.setNextRefreshTime(0));
         targetPlayer.save();
         CommandHandler.sendMessage(sender, translate(sender, "commands.status.success"));
