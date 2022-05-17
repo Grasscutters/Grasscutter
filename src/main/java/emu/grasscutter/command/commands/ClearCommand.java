@@ -1,9 +1,7 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
@@ -58,7 +56,7 @@ public final class ClearCommand implements CommandHandler {
             	toDelete = playerInventory.getItems().values().stream()
                         .filter(item1 -> !item1.isLocked() && !item1.isEquipped()).limit(limit)
                         .toList();
-                CommandHandler.sendMessage(sender, translate("commands.clear.done", toDelete.size(),limit));
+                CommandHandler.sendMessage(sender, translate("dockergc.commands.clear.done", toDelete.size(),limit));
             }
         }
         

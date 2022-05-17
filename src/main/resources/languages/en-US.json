@@ -412,8 +412,13 @@
     }
   },
   "dockergc": {
-      "account": {
-        "username_vaild": "Use Username without spaces and special letters or email format"
+    "account": {
+      "username_vaild": "Use Username without spaces and special letters or email format"
+    },
+    "commands": {
+      "clear": {
+        "done": "We have cleared %s items from your account (limited to every %s items)"
       }
+    }
   }
 }

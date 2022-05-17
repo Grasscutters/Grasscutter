@@ -17,44 +17,36 @@ import java.util.*;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "giveall", usage = "giveall", aliases = {"givea"}, permission = "player.giveall", permissionTargeted = "player.giveall.others", threading = true, description = "commands.giveAll.description")
+@Command(label = "giveall", usage = "giveall", aliases = {"givea"}, permission = "player.giveall", permissionTargeted = "player.giveall.others",threading = true, description = "commands.giveAll.description")
 public final class GiveAllCommand implements CommandHandler {
 
   @Override
   public void execute(Player sender, Player targetPlayer, List<String> args) {
 
-    if (sender == null) {
-      CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+    if (targetPlayer == null) {
+      CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
       return;
     }
 
     // Check Username
-    Account account = Grasscutter.getGameServer().getAccountByName(sender.getAccount().getUsername());
+    Account account = Grasscutter.getGameServer().getAccountByName(targetPlayer.getAccount().getUsername());
     if (account == null) {
-      CommandHandler.sendMessage(sender, "Account not found?");
+      CommandHandler.sendMessage(sender, translate(sender, "commands.permission.account_error"));
       return;
     }
-
-    // Remove permission
-    if (account.removePermission("player.giveall")) {
-      account.save();
-      this.giveAllItems(sender);
-      CommandHandler.sendMessage(sender, "Giving all items done, Permission removed, can only be used once.");      
-    } else{
-      CommandHandler.sendMessage(sender, "It looks like you are already using or not having permission.");
-    }
-      
+    
+    account.addPermission("-player.giveall");
+    this.giveAllItems(targetPlayer);
+    CommandHandler.sendMessage(sender, translate("commands.giveAll.success", targetPlayer.getNickname()));
   }
 
   public void giveAllItems(Player player) {
+
     CommandHandler.sendMessage(player, translate("commands.giveAll.started"));
 
     // some test items
     List<GameItem> itemList = new ArrayList<>();
-    boolean debug_mode=true;
-    List<Integer> addto_item = new ArrayList<>();
-    List<Integer> addto_avatar = new ArrayList<>();
-
+    
     for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
 
       // Exclude test avatar
