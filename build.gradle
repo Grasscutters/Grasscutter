@@ -87,6 +87,7 @@ dependencies {
     implementation group: 'org.luaj', name: 'luaj-jse', version: '3.0.1'
 
     implementation group:  'ch.ethz.globis.phtree', name : 'phtree', version: '2.5.0'
+    implementation group:  'com.esotericsoftware', name : 'reflectasm', version: '1.11.9'
 
     protobuf files('proto/')
 

@@ -2,8 +2,11 @@ package emu.grasscutter.scripts.data;
 
 import java.util.List;
 
-import emu.grasscutter.utils.Position;
+import lombok.Setter;
+import lombok.ToString;
 
+@ToString
+@Setter
 public class SceneSuite {
 	public List<Integer> monsters;
 	public List<Integer> gadgets;

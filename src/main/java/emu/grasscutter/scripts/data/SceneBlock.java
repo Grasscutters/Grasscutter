@@ -6,6 +6,8 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.utils.Position;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.script.Bindings;
 import javax.script.CompiledScript;
@@ -14,6 +16,8 @@ import java.util.List;
 
 import static emu.grasscutter.Configuration.SCRIPT;
 
+@ToString
+@Setter
 public class SceneBlock {
 	public int id;
 	public Position max;
