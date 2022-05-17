@@ -16,18 +16,17 @@ public class DataChecker {
 
     public static void CheckAllFiles() {
 
-        List<Path> filenames = null;
-
         try {
-            filenames = FileUtils.getPathsFromResource("/defaults/data/");
+            List<Path> filenames = FileUtils.getPathsFromResource("/defaults/data/");
+
+            for (Path file : filenames) {
+                String relativePath = String.valueOf(file).split("/defaults/data/")[1];
+
+                CheckAndCopyData(relativePath);
+            }
         } catch (Exception e) {
+            Grasscutter.getLogger().error("An error occurred while trying to check the data folder. \n" + e);
             e.printStackTrace();
-        }
-
-        for (Path file : filenames) {
-            String relativePath = String.valueOf(file).split("/defaults/data/")[1];
-
-            CheckAndCopyData(relativePath);
         }
 
         GenerateGachaMappings();
@@ -60,12 +59,12 @@ public class DataChecker {
     }
 
     private static void GenerateGachaMappings() {
-        if (!(new File(GachaHandler.gachaMappings).exists())) {
+        if (!Utils.fileExists(GachaHandler.gachaMappings)) {
             try {
                 Grasscutter.getLogger().info("Creating default '" + GachaHandler.gachaMappings + "' data");
                 Tools.createGachaMapping(GachaHandler.gachaMappings);
             } catch (Exception exception) {
-                Grasscutter.getLogger().warn("Failed to create gacha mappings.", exception);
+                Grasscutter.getLogger().warn("Failed to create gacha mappings. \n" + exception);
             }
         }
     }

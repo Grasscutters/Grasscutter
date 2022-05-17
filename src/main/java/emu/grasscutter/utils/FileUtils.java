@@ -57,8 +57,7 @@ public final class FileUtils {
 			byte[] resource = FileUtils.readResource(resourcePath);
 			FileUtils.write(destination, resource);
 		} catch (Exception exception) {
-			Grasscutter.getLogger().warn("Failed to copy resource: " + resourcePath);
-			exception.printStackTrace();
+			Grasscutter.getLogger().warn("Failed to copy resource: " + resourcePath + "\n" + exception);
 		}
 	}
 	
