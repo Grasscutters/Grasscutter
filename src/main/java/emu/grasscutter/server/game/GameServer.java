@@ -94,9 +94,8 @@ public final class GameServer extends KcpServer {
 		this.dropManager = new DropManager(this);
 		this.expeditionManager = new ExpeditionManager(this);
 		this.combineManger = new CombineManger(this);
-		this.towerScheduleManager = new TowerScheduleManager(this);
-		// Hook into shutdown event.
-		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
+		this.towerScheduleManager = new TowerScheduleManager(this);	
+
 	}
 	
 	public GameServerPacketHandler getPacketHandler() {
@@ -291,9 +290,5 @@ public final class GameServer extends KcpServer {
             });
 		}
 		System.exit(exitStatus);
-	}
-	
-	public void onServerShutdown() {
-		Grasscutter.getLogger().info("Server shutdown detected...");
 	}
 }

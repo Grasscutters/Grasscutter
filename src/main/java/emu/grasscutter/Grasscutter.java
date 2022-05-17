@@ -78,6 +78,43 @@ public final class Grasscutter {
 	}
 
   	public static void main(String[] args) throws Exception {
+
+		// setup UncaughtExceptionHandler http://www.java2s.com/example/java-api/java/lang/thread/setdefaultuncaughtexceptionhandler-1-18.html
+		Thread.UncaughtExceptionHandler handler = (thread, cause) -> {
+			
+		 String message = "";
+         String metode = "ZERO";
+        
+         // Metode get message
+         if(cause != null && cause.getMessage() != null && cause.getMessage().isBlank()) { 
+          metode = "1";
+          message = cause.getMessage();
+         }else if(cause.getCause() != null && cause.getCause().getMessage() != null && cause.getCause().getMessage().isBlank()){
+          metode = "2";
+          message = cause.getCause().getMessage();
+         } else {
+          metode = "3";
+          StringWriter sw = new StringWriter();
+          cause.printStackTrace(new PrintWriter(sw));
+          message = sw.toString();
+         }
+
+         // fiter messages
+         String[] lines = message.split(System.getProperty("line.separator"));
+         if(lines[0] != null && !lines[0].isEmpty()){
+          message = lines[0];
+         }
+         if(message.matches("(.*)OutOfMemoryError(.*)")){         
+          GameServer.doExit(0,"(2) Trying to exit program because memory is full");
+         }else{
+          Grasscutter.getLogger().error("BIG PROBLEM Thread (C"+metode+"): "+message);
+		  //thread.interrupt();
+         }
+			
+		};
+		Thread.setDefaultUncaughtExceptionHandler(handler);
+		Thread.currentThread().setUncaughtExceptionHandler(handler);
+
 		Crypto.loadKeys(); // Load keys from buffers.
 	
 		// Parse arguments.

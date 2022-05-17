@@ -73,18 +73,16 @@ public class KcpServer extends Thread {
 	}
 	
 	public void onStart() {
-
 	}
 
 	public void onStartFinish() {
-
 	}
 	
 	private void finish() {
 		try {
 			group.shutdownGracefully();
 		} catch (Exception e) {
-			
+			Grasscutter.getLogger().error("Error close...",e);
 		}
 		Grasscutter.getLogger().info("Game Server closed");
 	}
