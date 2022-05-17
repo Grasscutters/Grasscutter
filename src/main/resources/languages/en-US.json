@@ -353,9 +353,6 @@
       "success": "Teleported %s to %s, %s, %s in scene %s",
       "description": "Change the player's position."
     },
-    "tower": {
-      "unlock_done": "Abyss Corridor's Floors are all unlocked now."
-    },
     "weather": {
       "usage": "Usage: weather <weatherId> [climateId]",
       "success": "Changed weather to %s with climate %s",
@@ -379,9 +376,6 @@
     "unlocktower": {
       "success": "unlock done",
       "description": "Unlock all levels of tower"
-    },
-    "resetshop": {
-      "description": "reset shop"
     }
   },
   "gacha": {

@@ -352,9 +352,6 @@
       "success": "传送 %s 到坐标 %s,%s,%s，场景为 %s。",
       "description": "改变指定玩家的位置"
     },
-    "tower": {
-      "unlock_done": "深境回廊的所有层已全部解锁。"
-    },
     "weather": {
       "usage": "用法：weather <天气ID> [气候ID]",
       "success": "已更改天气为 %s，气候为 %s。",
@@ -378,9 +375,6 @@
     "unlocktower": {
       "success": "解锁完成。",
       "description": "解锁深境螺旋的所有层"
-    },
-    "resetshop": {
-      "description": "重置商店刷新时间"
     }
   },
   "gacha": {
