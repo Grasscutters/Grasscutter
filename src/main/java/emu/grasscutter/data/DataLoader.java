@@ -12,7 +12,38 @@ import java.util.List;
 
 import static emu.grasscutter.Configuration.DATA;
 
-public class DataChecker {
+public class DataLoader {
+
+    /**
+     * Load a data file by its name. If the file isn't found within the /data directory then it will fallback to the default within the jar resources
+     * @see #load(String, boolean)
+     * @param resourcePath The path to the data file to be loaded.
+     * @return InputStream of the data file.
+     * @throws FileNotFoundException
+     */
+    public static InputStream load(String resourcePath) throws FileNotFoundException {
+        return load(resourcePath, true);
+    }
+
+    /**
+     * Load a data file by its name.
+     * @param resourcePath The path to the data file to be loaded.
+     * @param useFallback If the file does not exist in the /data directory, should it use the default file in the jar?
+     * @return InputStream of the data file.
+     * @throws FileNotFoundException
+     */
+    public static InputStream load(String resourcePath, boolean useFallback) throws FileNotFoundException {
+        if(Utils.fileExists(DATA(resourcePath))) {
+            // Data is in the resource directory
+            return new FileInputStream(DATA(resourcePath));
+        } else {
+            if(useFallback) {
+                return FileUtils.readResourceAsStream("/defaults/data/" + resourcePath);
+            }
+        }
+
+        return null;
+    }
 
     public static void CheckAllFiles() {
 
@@ -26,7 +57,6 @@ public class DataChecker {
             }
         } catch (Exception e) {
             Grasscutter.getLogger().error("An error occurred while trying to check the data folder. \n" + e);
-            e.printStackTrace();
         }
 
         GenerateGachaMappings();

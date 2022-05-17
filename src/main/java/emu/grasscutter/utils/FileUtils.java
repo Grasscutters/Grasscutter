@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.Collections;
 import java.util.List;
@@ -35,6 +36,10 @@ public final class FileUtils {
 		}
 		
 		return new byte[0];
+	}
+
+	public static InputStream readResourceAsStream(String resourcePath) {
+		return Grasscutter.class.getResourceAsStream(resourcePath);
 	}
 
 	public static byte[] readResource(String resourcePath) {
@@ -89,5 +94,12 @@ public final class FileUtils {
 		}
 
 		return result;
+	}
+
+	@SuppressWarnings("ResultOfMethodCallIgnored")
+	public static String readToString(InputStream file) throws IOException {
+		byte[] content = file.readAllBytes();
+
+		return new String(content, StandardCharsets.UTF_8);
 	}
 }

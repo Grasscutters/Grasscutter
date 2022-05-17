@@ -1,7 +1,6 @@
 package emu.grasscutter.data;
 
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.regex.Matcher;
@@ -203,18 +202,14 @@ public class ResourceLoader {
 	}
 
 	private static void loadAbilityEmbryos() {
-		// Read from cached file if exists
-		File embryoCache = new File(DATA("AbilityEmbryos.json"));
 		List<AbilityEmbryoEntry> embryoList = null;
-		
-		if (embryoCache.exists()) {
-			// Load from cache
-			try (FileReader fileReader = new FileReader(embryoCache)) {
-				embryoList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, AbilityEmbryoEntry.class).getType());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else {
+
+		// Read from cached file if exists
+		try(InputStream embryoCache = DataLoader.load("AbilityEmbryos.json", false)) {
+			embryoList = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(embryoCache), TypeToken.getParameterized(Collection.class, AbilityEmbryoEntry.class).getType());
+		} catch(Exception ignored) {}
+
+		if(embryoList == null) {
 			// Load from BinOutput
 			Pattern pattern = Pattern.compile("(?<=ConfigAvatar_)(.*?)(?=.json)");
 
@@ -328,18 +323,12 @@ public class ResourceLoader {
 	}
 	
 	private static void loadSpawnData() {
-		// Read from cached file if exists
-		File spawnDataEntries = new File(DATA("Spawns.json"));
 		List<SpawnGroupEntry> spawnEntryList = null;
-		
-		if (spawnDataEntries.exists()) {
-			// Load from cache
-			try (FileReader fileReader = new FileReader(spawnDataEntries)) {
-				spawnEntryList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+
+		// Read from cached file if exists
+		try(InputStream spawnDataEntries = DataLoader.load("Spawns.json")) {
+			spawnEntryList = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(spawnDataEntries), TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType());
+		} catch (Exception ignored) {}
 		
 		if (spawnEntryList == null || spawnEntryList.isEmpty()) {
 			Grasscutter.getLogger().error("No spawn data loaded!");
@@ -354,16 +343,13 @@ public class ResourceLoader {
 	
 	private static void loadOpenConfig() {
 		// Read from cached file if exists
-		File openConfigCache = new File(DATA("OpenConfig.json"));
 		List<OpenConfigEntry> list = null;
-		
-		if (openConfigCache.exists()) {
-			try (FileReader fileReader = new FileReader(openConfigCache)) {
-				list = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, OpenConfigEntry.class).getType());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else {
+
+		try(InputStream openConfigCache = DataLoader.load("OpenConfig.json", false)) {
+			list = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(openConfigCache), TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType());
+		} catch (Exception ignored) {}
+
+		if (list == null) {
 			Map<String, OpenConfigEntry> map = new TreeMap<>();
 			java.lang.reflect.Type type = new TypeToken<Map<String, OpenConfigData[]>>() {}.getType();
 			String[] folderNames = {"BinOutput/Talent/EquipTalents/", "BinOutput/Talent/AvatarTalents/"};
