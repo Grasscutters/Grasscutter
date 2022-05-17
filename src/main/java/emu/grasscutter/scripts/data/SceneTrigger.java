@@ -1,5 +1,8 @@
 package emu.grasscutter.scripts.data;
 
+import lombok.Setter;
+
+@Setter
 public class SceneTrigger {
 	public String name;
 	public int config_id;
@@ -8,6 +11,7 @@ public class SceneTrigger {
 	public String condition;
 	public String action;
 
+	public SceneGroup currentGroup;
 	@Override
 	public boolean equals(Object obj) {
 		if(obj instanceof SceneTrigger sceneTrigger){
