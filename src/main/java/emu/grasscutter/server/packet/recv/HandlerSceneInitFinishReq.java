@@ -9,12 +9,12 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketHostPlayerNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneInfoNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerGameTimeNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerWorldSceneInfoListNotify;
 import emu.grasscutter.server.packet.send.PacketSceneAreaWeatherNotify;
 import emu.grasscutter.server.packet.send.PacketSceneInitFinishRsp;
 import emu.grasscutter.server.packet.send.PacketScenePlayerInfoNotify;
 import emu.grasscutter.server.packet.send.PacketSceneTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketSceneTimeNotify;
-import emu.grasscutter.server.packet.send.PacketSceneUnlockInfoNotify;
 import emu.grasscutter.server.packet.send.PacketServerTimeNotify;
 import emu.grasscutter.server.packet.send.PacketSyncScenePlayTeamEntityNotify;
 import emu.grasscutter.server.packet.send.PacketSyncTeamEntityNotify;
@@ -30,7 +30,7 @@ public class HandlerSceneInitFinishReq extends PacketHandler {
 		session.send(new PacketServerTimeNotify());
 		session.send(new PacketWorldPlayerInfoNotify(session.getPlayer().getWorld()));
 		session.send(new PacketWorldDataNotify(session.getPlayer().getWorld()));
-		session.send(new PacketSceneUnlockInfoNotify());
+		session.send(new PacketPlayerWorldSceneInfoListNotify());
 		session.send(new BasePacket(PacketOpcodes.SceneForceUnlockNotify));
 		session.send(new PacketHostPlayerNotify(session.getPlayer().getWorld()));
 		

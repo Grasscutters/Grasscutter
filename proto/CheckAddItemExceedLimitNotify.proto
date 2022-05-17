@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-message ItemExceedLimitNotify {
+message CheckAddItemExceedLimitNotify {
 	bool isMaterialExceedLimit = 1;
 	bool isWeaponExceedLimit = 2;
 	bool isReliquaryExceedLimit = 3;
