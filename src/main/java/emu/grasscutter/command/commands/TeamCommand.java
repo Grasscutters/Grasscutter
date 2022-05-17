@@ -14,8 +14,8 @@ import java.util.HashSet;
 import static emu.grasscutter.utils.Language.translate;
 import static emu.grasscutter.Configuration.*;
 
-@Command(label = "team", usage = "team <add|remove|set> [avatarId,...] [index|first|last|index-index,...]", permission = "player.team",
-		permissionTargeted = "player.team.others", description = "commands.team.description")
+@Command(label = "team", usage = "team <add|remove|set> [avatarId,...] [index|first|last|index-index,...]",
+permission = "player.team", permissionTargeted = "player.team.others", description = "commands.team.description")
 public final class TeamCommand implements CommandHandler {
     private static final int BASE_AVATARID = 10000000;
 
@@ -50,7 +50,8 @@ public final class TeamCommand implements CommandHandler {
                 return;
         }
 
-        targetPlayer.getTeamManager().updateTeamEntities(new PacketChangeMpTeamAvatarRsp(targetPlayer, targetPlayer.getTeamManager().getCurrentTeamInfo()));
+        targetPlayer.getTeamManager().updateTeamEntities(
+                new PacketChangeMpTeamAvatarRsp(targetPlayer, targetPlayer.getTeamManager().getCurrentTeamInfo()));
     }
 
     private boolean addCommand(Player sender, Player targetPlayer, List<String> args) {
