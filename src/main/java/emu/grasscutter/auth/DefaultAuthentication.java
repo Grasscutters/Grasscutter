@@ -2,6 +2,7 @@ package emu.grasscutter.auth;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.DefaultAuthenticators.*;
+import emu.grasscutter.game.Account;
 import emu.grasscutter.server.http.objects.ComboTokenResJson;
 import emu.grasscutter.server.http.objects.LoginResultJson;
 
@@ -26,11 +27,11 @@ public final class DefaultAuthentication implements AuthenticationSystem {
     public void resetPassword(String username) {
         // Unhandled. The default authenticator doesn't store passwords.
     }
-    
+
     @Override
-    public boolean verifyUser(String details) {
+    public Account verifyUser(String details) {
         Grasscutter.getLogger().info(translate("dispatch.authentication.default_unable_to_verify"));
-        return false;
+        return null;
     }
 
     @Override

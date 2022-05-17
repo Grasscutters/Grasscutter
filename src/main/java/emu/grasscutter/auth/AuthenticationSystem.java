@@ -1,5 +1,6 @@
 package emu.grasscutter.auth;
 
+import emu.grasscutter.game.Account;
 import emu.grasscutter.server.http.objects.*;
 import express.http.Request;
 import express.http.Response;
@@ -30,10 +31,10 @@ public interface AuthenticationSystem {
 
     /**
      * Called by plugins to internally verify a user's identity.
-     * @param details A unique, one-time token to verify the user.
-     * @return True if the user is verified, False otherwise.
+     * @param details A unique identifier to identify the user. (For example: a JWT token)
+     * @return The user's account if the verification was successful, null if the user was unable to be verified.
      */
-    boolean verifyUser(String details);
+    Account verifyUser(String details);
 
     /**
      * This is the authenticator used for password authentication.
