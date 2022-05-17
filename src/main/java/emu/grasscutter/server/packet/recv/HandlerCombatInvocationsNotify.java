@@ -47,7 +47,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 						MotionState motionState = motionInfo.getState();
 						entity.setMotionState(motionState);
 
-						session.getPlayer().getStaminaManager().handleCombatInvocationsNotify(session, moveInfo, entity);
+						session.getPlayer().getStaminaManager().handleBaseMotionStateNotify(session, moveInfo, entity);
 
 						// TODO: handle MOTION_FIGHT landing which has a different damage factor
 						// 		Also, for plunge attacks, LAND_SPEED is always -30 and is not useful.

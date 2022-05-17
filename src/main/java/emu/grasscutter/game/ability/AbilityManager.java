@@ -43,7 +43,10 @@ public class AbilityManager {
 				handleModifierChange(invoke);
 				break;
 			case ABILITY_MIXIN_COST_STAMINA:
-				handleMixinCostStamina(invoke);
+				handleSerialSkillStamina(invoke);
+				break;
+			case ABILITY_NONE:
+				handleDiscreteSkillStamina(invoke);
 				break;
 			case ABILITY_ACTION_GENERATE_ELEM_BALL:
 				handleGenerateElemBall(invoke);
@@ -133,9 +136,13 @@ public class AbilityManager {
 		}
 	}
 	
-	private void handleMixinCostStamina(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
-		AbilityMixinCostStamina costStamina = AbilityMixinCostStamina.parseFrom((invoke.getAbilityData()));
-		getPlayer().getStaminaManager().handleMixinCostStamina(costStamina.getIsSwim());
+	private void handleDiscreteSkillStamina(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
+		// AbilityMixinCostStamina costStamina = AbilityMixinCostStamina.parseFrom((invoke.getAbilityData()));
+		getPlayer().getStaminaManager().handleDiscreteSkill(invoke.getEntityId(), invoke.getEventId(), invoke.getHead().getLocalId());
+	}
+	private void handleSerialSkillStamina(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
+		//AbilityMixinCostStamina costStamina = AbilityMixinCostStamina.parseFrom((invoke.getAbilityData()));
+		getPlayer().getStaminaManager().handleSerialSkill(invoke.getEntityId(), invoke.getEventId(), invoke.getHead().getLocalId());
 	}
 	
 	private void handleGenerateElemBall(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
