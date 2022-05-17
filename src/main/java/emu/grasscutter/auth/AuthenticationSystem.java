@@ -60,6 +60,12 @@ public interface AuthenticationSystem {
     ExternalAuthenticator getExternalAuthenticator();
 
     /**
+     * This is the authenticator used for handling OAuth authentication requests.
+     * @return An authenticator.
+     */
+    OAuthAuthenticator getOAuthAuthenticator();
+
+    /**
      * A data container that holds relevant data for authenticating a client.
      */
     @Builder @AllArgsConstructor @Getter
@@ -121,6 +127,18 @@ public interface AuthenticationSystem {
      * @return An authentication request.
      */
     static AuthenticationRequest fromExternalRequest(Request request, Response response) {
+        return AuthenticationRequest.builder().request(request)
+                .response(response).build();
+    }
+
+
+    /**
+     * Generates an authentication request from a {@link Response} object.
+     * @param request The Express request.
+     * @param jsonData The JSON data.
+     * @return An authentication request.
+     */
+    static AuthenticationRequest fromOAuthRequest(Request request, Response response) {
         return AuthenticationRequest.builder().request(request)
                 .response(response).build();
     }

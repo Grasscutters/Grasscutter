@@ -174,4 +174,29 @@ public final class DefaultAuthenticators {
             request.getResponse().send("Authentication is not available with the default authentication method.");
         }
     }
+
+    /**
+     * Handles authentication requests from OAuth sources.
+     */
+    public static class OAuthAuthentication implements OAuthAuthenticator {
+        @Override public void handleLogin(AuthenticationRequest request) {
+            assert request.getResponse() != null;
+            request.getResponse().send("Authentication is not available with the default authentication method.");
+        }
+
+        @Override public void handleDesktopRedirection(AuthenticationRequest request) {
+            assert request.getResponse() != null;
+            request.getResponse().send("Authentication is not available with the default authentication method.");
+        }
+
+        @Override public void handleMobileRedirection(AuthenticationRequest request) {
+            assert request.getResponse() != null;
+            request.getResponse().send("Authentication is not available with the default authentication method.");
+        }
+
+        @Override public void handleTokenProcess(AuthenticationRequest request) {
+            assert request.getResponse() != null;
+            request.getResponse().send("Authentication is not available with the default authentication method.");
+        }
+    }
 }

@@ -16,6 +16,7 @@ public final class DefaultAuthentication implements AuthenticationSystem {
     private final Authenticator<LoginResultJson> tokenAuthenticator = new TokenAuthenticator();
     private final Authenticator<ComboTokenResJson> sessionKeyAuthenticator = new SessionKeyAuthenticator();
     private final ExternalAuthenticator externalAuthenticator = new ExternalAuthentication();
+    private final OAuthAuthenticator oAuthAuthenticator = new OAuthAuthentication();
     
     @Override
     public void createAccount(String username, String password) {
@@ -51,5 +52,10 @@ public final class DefaultAuthentication implements AuthenticationSystem {
     @Override
     public ExternalAuthenticator getExternalAuthenticator() {
         return this.externalAuthenticator;
+    }
+
+    @Override
+    public OAuthAuthenticator getOAuthAuthenticator() {
+        return this.oAuthAuthenticator;
     }
 }

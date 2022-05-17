@@ -33,6 +33,14 @@ public final class DispatchHandler implements Router {
                 .handleAccountCreation(AuthenticationSystem.fromExternalRequest(request, response)));
         express.post("/authentication/change_password", (request, response) -> Grasscutter.getAuthenticationSystem().getExternalAuthenticator()
                 .handlePasswordReset(AuthenticationSystem.fromExternalRequest(request, response)));
+
+        // OAuth login
+        express.post("/hk4e_global/mdk/shield/api/loginByThirdparty", (request, response) -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator().handleLogin(AuthenticationSystem.fromOAuthRequest(request, response)));
+        // OAuth querystring convert redirection
+        express.get("/authentication/openid/redirect", (request, response) -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator().handleTokenProcess(AuthenticationSystem.fromOAuthRequest(request, response)));
+        // OAuth redirection
+        express.get("/Api/twitter_login", (request, response) -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator().handleDesktopRedirection(AuthenticationSystem.fromOAuthRequest(request, response)));
+        express.get("/sdkTwitterLogin.html", (request, response) -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator().handleMobileRedirection(AuthenticationSystem.fromOAuthRequest(request, response)));
     }
 
     /**
