@@ -1,6 +1,7 @@
 package emu.grasscutter.net.packet;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class PacketOpcodes {
@@ -1556,5 +1557,8 @@ public class PacketOpcodes {
     public static final int UNKNOWN_44 = 8983;
     public static final int UNKNOWN_45 = 943;
 
-    public static final List<Integer> BANNED_PACKETS = Arrays.asList(PacketOpcodes.WindSeedClientNotify, PacketOpcodes.PlayerLuaShellNotify);
+    public static final HashSet<Integer> BANNED_PACKETS = new HashSet<Integer>() {{
+        add(PacketOpcodes.WindSeedClientNotify);
+        add(PacketOpcodes.PlayerLuaShellNotify);
+    }};
 }
