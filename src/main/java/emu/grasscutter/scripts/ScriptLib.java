@@ -4,6 +4,7 @@ import emu.grasscutter.game.dungeons.DungeonChallenge;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.entity.gadget.GadgetWorktop;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.packet.send.PacketCanUseSkillNotify;
@@ -83,21 +84,22 @@ public class ScriptLib {
 	public int SetWorktopOptionsByGroupId(int groupId, int configId, int[] options) {
 		logger.debug("[LUA] Call SetWorktopOptionsByGroupId with {},{},{}",
 				groupId,configId,options);
+		
 		Optional<GameEntity> entity = getSceneScriptManager().getScene().getEntities().values().stream()
 				.filter(e -> e.getConfigId() == configId && e.getGroupId() == groupId).findFirst();
 
-		if (entity.isEmpty()) {
-			return 1;
-		}
-		
-		if (!(entity.get() instanceof EntityGadget)) {
-			return 1;
-		}
-		
-		EntityGadget gadget = (EntityGadget) entity.get();
-		gadget.addWorktopOptions(options);
 
+		if (entity.isEmpty() || !(entity.get() instanceof EntityGadget gadget)) {
+			return 1;
+		}
+
+		if (!(gadget.getContent() instanceof GadgetWorktop worktop)) {
+			return 1;
+		}
+		
+		worktop.addWorktopOptions(options);
 		getSceneScriptManager().getScene().broadcastPacket(new PacketWorktopOptionNotify(gadget));
+		
 		return 0;
 	}
 	
@@ -107,18 +109,17 @@ public class ScriptLib {
 		Optional<GameEntity> entity = getSceneScriptManager().getScene().getEntities().values().stream()
 				.filter(e -> e.getConfigId() == configId && e.getGroupId() == groupId).findFirst();
 
-		if (entity.isEmpty()) {
+		if (entity.isEmpty() || !(entity.get() instanceof EntityGadget gadget)) {
+			return 1;
+		}
+
+		if (!(gadget.getContent() instanceof GadgetWorktop worktop)) {
 			return 1;
 		}
 		
-		if (!(entity.get() instanceof EntityGadget)) {
-			return 1;
-		}
-		
-		EntityGadget gadget = (EntityGadget) entity.get();
-		gadget.removeWorktopOption(option);
-		
+		worktop.removeWorktopOption(option);
 		getSceneScriptManager().getScene().broadcastPacket(new PacketWorktopOptionNotify(gadget));
+		
 		return 0;
 	}
 	

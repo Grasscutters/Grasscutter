@@ -95,7 +95,7 @@ public class ScriptLoader {
 			return sc.get();
 		}
 
-		Grasscutter.getLogger().info("Loaded Script" + path);
+		Grasscutter.getLogger().info("Loading script " + path);
 
 		File file = new File(path);
 
@@ -106,7 +106,7 @@ public class ScriptLoader {
 			scriptsCache.put(path, new SoftReference<>(script));
 			return script;
 		} catch (Exception e) {
-			Grasscutter.getLogger().error("Loaded Script {} failed!", path, e);
+			Grasscutter.getLogger().error("Loading script {} failed!", path, e);
 			return null;
 		}
 

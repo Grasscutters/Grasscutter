@@ -362,6 +362,8 @@ public class SceneScriptManager {
 		entity.setGroupId(groupId);
 		entity.getRotation().set(g.rot);
 		entity.setState(g.state);
+		entity.setPointType(g.point_type);
+		entity.buildContent();
 
 		return entity;
 	}

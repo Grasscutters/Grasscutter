@@ -26,21 +26,20 @@ public class SceneGroup {
 	public int refresh_id;
 	public Position pos;
 
-	/**
-	 * ConfigId - Monster
-	 */
-	public Map<Integer,SceneMonster> monsters;
-	/**
-	 * ConfigId - Gadget
-	 */
-	public Map<Integer, SceneGadget> gadgets;
+	public Map<Integer,SceneMonster> monsters; // <ConfigId, Monster>
+	public Map<Integer, SceneGadget> gadgets; // <ConfigId, Gadgets>
+	
 	public List<SceneTrigger> triggers;
 	public List<SceneRegion> regions;
 	public List<SceneSuite> suites;
+	public List<SceneVar> variables;
+	
+	public SceneBusiness business;
+	public SceneGarbage garbages;
 	public SceneInitConfig init_config;
 
-	public List<SceneVar> variables;
 	private transient boolean loaded; // Not an actual variable in the scripts either
+	private transient CompiledScript script;
 
 	public boolean isLoaded() {
 		return loaded;
@@ -49,8 +48,14 @@ public class SceneGroup {
 	public void setLoaded(boolean loaded) {
 		this.loaded = loaded;
 	}
-
-	private transient CompiledScript script; // Not an actual variable in the scripts either
+	
+	public int getBusinessType() {
+		return this.business == null ? 0 : this.business.type;
+	}
+	
+	public List<SceneGadget> getGarbageGadgets() {
+		return this.garbages == null ? null : this.garbages.gadgets;
+	}
 
 	public CompiledScript getScript() {
 		return script;
@@ -75,6 +80,7 @@ public class SceneGroup {
 		}
 
 		this.script = cs;
+		
 		// Eval script
 		try {
 			cs.eval(bindings);
@@ -90,15 +96,16 @@ public class SceneGroup {
 
 			triggers = ScriptLoader.getSerializer().toList(SceneTrigger.class, bindings.get("triggers"));
 			triggers.forEach(t -> t.currentGroup = this);
-
+			
 			suites = ScriptLoader.getSerializer().toList(SceneSuite.class, bindings.get("suites"));
 			regions = ScriptLoader.getSerializer().toList(SceneRegion.class, bindings.get("regions"));
+			garbages = ScriptLoader.getSerializer().toObject(SceneGarbage.class, bindings.get("garbages"));
 			init_config = ScriptLoader.getSerializer().toObject(SceneInitConfig.class, bindings.get("init_config"));
 
 			// Add variables to suite
 			variables = ScriptLoader.getSerializer().toList(SceneVar.class, bindings.get("variables"));
 
-			// Add monsters to suite
+			// Add monsters and gadgets to suite
 			for (SceneSuite suite : suites) {
 				suite.sceneMonsters = new ArrayList<>(
 						suite.monsters.stream()
@@ -118,6 +125,7 @@ public class SceneGroup {
 		} catch (ScriptException e) {
 			Grasscutter.getLogger().error("Error loading group " + id + " in scene " + sceneId, e);
 		}
+		
 		Grasscutter.getLogger().info("group {} in scene {} is loaded successfully.", id, sceneId);
 		return this;
 	}

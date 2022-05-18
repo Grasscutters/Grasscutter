@@ -75,6 +75,7 @@ public class GameData {
 	private static final Int2ObjectMap<ShopGoodsData> shopGoodsDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<CombineData> combineDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<RewardPreviewData> rewardPreviewDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<GatherData> gatherDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerFloorData> towerFloorDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerLevelData> towerLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerScheduleData> towerScheduleDataMap = new Int2ObjectOpenHashMap<>();
@@ -346,5 +347,9 @@ public class GameData {
 
 	public static Int2ObjectMap<QuestData> getQuestDataMap() {
 		return questDataMap;
+	}
+
+	public static Int2ObjectMap<GatherData> getGatherDataMap() {
+		return gatherDataMap;
 	}
 }
