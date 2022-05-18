@@ -20,11 +20,11 @@ public final class Crypto {
 	public static byte[] ENCRYPT_SEED_BUFFER = new byte[0];
 	
 	public static void loadKeys() {
-		DISPATCH_KEY = FileUtils.read(KEY("dispatchKey.bin"));
-		DISPATCH_SEED = FileUtils.read(KEY("dispatchSeed.bin"));
+		DISPATCH_KEY = FileUtils.readResource("/keys/dispatchKey.bin");
+		DISPATCH_SEED = FileUtils.readResource("/keys/dispatchSeed.bin");
 
-		ENCRYPT_KEY = FileUtils.read(KEY("secretKey.bin"));
-		ENCRYPT_SEED_BUFFER = FileUtils.read(KEY("secretKeyBuffer.bin"));
+		ENCRYPT_KEY = FileUtils.readResource("/keys/secretKey.bin");
+		ENCRYPT_SEED_BUFFER = FileUtils.readResource("/keys/secretKeyBuffer.bin");
 	}
 	
 	public static void xor(byte[] packet, byte[] key) {
@@ -32,25 +32,6 @@ public final class Crypto {
 			for (int i = 0; i < packet.length; i++) {
 				packet[i] ^= key[i % key.length];
 			}
-		} catch (Exception e) {
-			Grasscutter.getLogger().error("Crypto error.", e);
-		}
-	}
-	
-	public static void extractSecretKeyBuffer(byte[] data) {
-		try {
-			GetPlayerTokenRsp p = GetPlayerTokenRsp.parseFrom(data);
-			FileUtils.write(KEY("/secretKeyBuffer.bin"), p.getSecretKeyBytes().toByteArray());
-			Grasscutter.getLogger().info("Secret Key: " + p.getSecretKey());
-		} catch (Exception e) {
-			Grasscutter.getLogger().error("Crypto error.", e);
-		}
-	}
-	
-	public static void extractDispatchSeed(String data) {
-		try {
-			QueryCurrRegionHttpRsp p = QueryCurrRegionHttpRsp.parseFrom(Base64.getDecoder().decode(data));
-			FileUtils.write(KEY("/dispatchSeed.bin"), p.getRegionInfo().getSecretKey().toByteArray());
 		} catch (Exception e) {
 			Grasscutter.getLogger().error("Crypto error.", e);
 		}

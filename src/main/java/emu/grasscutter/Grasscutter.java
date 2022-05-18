@@ -14,6 +14,7 @@ import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.dispatch.DispatchHandler;
 import emu.grasscutter.server.http.handlers.*;
 import emu.grasscutter.server.http.dispatch.RegionHandler;
+import emu.grasscutter.server.http.documentation.DocumentationServerHandler;
 import emu.grasscutter.utils.ConfigContainer;
 import emu.grasscutter.utils.Utils;
 import org.jline.reader.EndOfFileException;
@@ -129,6 +130,7 @@ public final class Grasscutter {
 		httpServer.addRouter(AnnouncementsHandler.class);
 		httpServer.addRouter(DispatchHandler.class);
 		httpServer.addRouter(GachaHandler.class);
+		httpServer.addRouter(DocumentationServerHandler.class);
 		
 		// TODO: find a better place?
 		StaminaManager.initialize();

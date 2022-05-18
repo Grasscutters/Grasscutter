@@ -41,10 +41,6 @@ public final class DefaultAuthenticators {
                     responseMessage = translate("messages.dispatch.account.username_create_error");
                     Grasscutter.getLogger().info(translate("messages.dispatch.account.account_login_create_error", address));
                 } else {
-                    // Add default permissions.
-                    for (var permission : ACCOUNT.defaultPermissions)
-                        account.addPermission(permission);
-
                     // Continue with login.
                     successfulLogin = true;
 
@@ -174,6 +170,31 @@ public final class DefaultAuthenticators {
         }
 
         @Override public void handlePasswordReset(AuthenticationRequest request) {
+            assert request.getResponse() != null;
+            request.getResponse().send("Authentication is not available with the default authentication method.");
+        }
+    }
+
+    /**
+     * Handles authentication requests from OAuth sources.
+     */
+    public static class OAuthAuthentication implements OAuthAuthenticator {
+        @Override public void handleLogin(AuthenticationRequest request) {
+            assert request.getResponse() != null;
+            request.getResponse().send("Authentication is not available with the default authentication method.");
+        }
+
+        @Override public void handleDesktopRedirection(AuthenticationRequest request) {
+            assert request.getResponse() != null;
+            request.getResponse().send("Authentication is not available with the default authentication method.");
+        }
+
+        @Override public void handleMobileRedirection(AuthenticationRequest request) {
+            assert request.getResponse() != null;
+            request.getResponse().send("Authentication is not available with the default authentication method.");
+        }
+
+        @Override public void handleTokenProcess(AuthenticationRequest request) {
             assert request.getResponse() != null;
             request.getResponse().send("Authentication is not available with the default authentication method.");
         }

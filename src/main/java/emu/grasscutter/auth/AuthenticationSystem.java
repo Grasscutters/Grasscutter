@@ -1,5 +1,6 @@
 package emu.grasscutter.auth;
 
+import emu.grasscutter.game.Account;
 import emu.grasscutter.server.http.objects.*;
 import express.http.Request;
 import express.http.Response;
@@ -30,10 +31,10 @@ public interface AuthenticationSystem {
 
     /**
      * Called by plugins to internally verify a user's identity.
-     * @param details A unique, one-time token to verify the user.
-     * @return True if the user is verified, False otherwise.
+     * @param details A unique identifier to identify the user. (For example: a JWT token)
+     * @return The user's account if the verification was successful, null if the user was unable to be verified.
      */
-    boolean verifyUser(String details);
+    Account verifyUser(String details);
 
     /**
      * This is the authenticator used for password authentication.
@@ -58,6 +59,12 @@ public interface AuthenticationSystem {
      * @return An authenticator.
      */
     ExternalAuthenticator getExternalAuthenticator();
+
+    /**
+     * This is the authenticator used for handling OAuth authentication requests.
+     * @return An authenticator.
+     */
+    OAuthAuthenticator getOAuthAuthenticator();
 
     /**
      * A data container that holds relevant data for authenticating a client.
@@ -121,6 +128,18 @@ public interface AuthenticationSystem {
      * @return An authentication request.
      */
     static AuthenticationRequest fromExternalRequest(Request request, Response response) {
+        return AuthenticationRequest.builder().request(request)
+                .response(response).build();
+    }
+
+
+    /**
+     * Generates an authentication request from a {@link Response} object.
+     * @param request The Express request.
+     * @param jsonData The JSON data.
+     * @return An authentication request.
+     */
+    static AuthenticationRequest fromOAuthRequest(Request request, Response response) {
         return AuthenticationRequest.builder().request(request)
                 .response(response).build();
     }

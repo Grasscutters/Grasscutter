@@ -2,6 +2,8 @@ package emu.grasscutter.command;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.server.event.game.CommandResponseEvent;
+import emu.grasscutter.server.event.types.ServerEvent;
 
 import java.util.List;
 
@@ -19,6 +21,8 @@ public interface CommandHandler {
         } else {
             player.dropMessage(message);
         }
+        CommandResponseEvent event = new CommandResponseEvent(ServerEvent.Type.GAME,player, message);
+        event.call();
     }
 
     /**

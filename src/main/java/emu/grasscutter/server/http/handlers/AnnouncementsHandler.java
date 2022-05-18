@@ -1,6 +1,7 @@
 package emu.grasscutter.server.http.handlers;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.server.http.objects.HttpJsonResponse;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.utils.FileUtils;
@@ -14,6 +15,7 @@ import io.javalin.Javalin;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
@@ -41,9 +43,21 @@ public final class AnnouncementsHandler implements Router {
     private static void getAnnouncement(Request request, Response response) {
         String data = "";
         if (Objects.equals(request.baseUrl(), "/common/hk4e_global/announcement/api/getAnnContent")) {
-            data = readToString(new File(Utils.toFilePath(DATA("GameAnnouncement.json"))));
+            try {
+                data = FileUtils.readToString(DataLoader.load("GameAnnouncement.json"));
+            } catch (Exception e) {
+                if(e.getClass() == IOException.class) {
+                    Grasscutter.getLogger().info("Unable to read file 'GameAnnouncementList.json'. \n" + e);
+                }
+            }
         } else if (Objects.equals(request.baseUrl(), "/common/hk4e_global/announcement/api/getAnnList")) {
-            data = readToString(new File(Utils.toFilePath(DATA("GameAnnouncementList.json"))));
+            try {
+                data = FileUtils.readToString(DataLoader.load("GameAnnouncementList.json"));
+            } catch (Exception e) {
+                if(e.getClass() == IOException.class) {
+                    Grasscutter.getLogger().info("Unable to read file 'GameAnnouncementList.json'. \n" + e);
+                }
+            }
         } else {
             response.send("{\"retcode\":404,\"message\":\"Unknown request path\"}");
         }
@@ -64,29 +78,15 @@ public final class AnnouncementsHandler implements Router {
     }
     
     private static void getPageResources(Request request, Response response) {
-        String filename = Utils.toFilePath(DATA(request.path()));
-        File file = new File(filename);
-        if (file.exists() && file.isFile()) {
-            MediaType fromExtension = MediaType.getByExtension(filename.substring(filename.lastIndexOf(".") + 1));
+        try(InputStream filestream = DataLoader.load(request.path())) {
+            String possibleFilename = Utils.toFilePath(DATA(request.path()));
+
+            MediaType fromExtension = MediaType.getByExtension(possibleFilename.substring(possibleFilename.lastIndexOf(".") + 1));
             response.type((fromExtension != null) ? fromExtension.getMIME() : "application/octet-stream");
-            response.send(FileUtils.read(file));
-        } else {
-            Grasscutter.getLogger().warn("File does not exist: " + file);
+            response.send(filestream.readAllBytes());
+        } catch (Exception e) {
+            Grasscutter.getLogger().warn("File does not exist: " + request.path());
             response.status(404);
         }
-    }
-
-    @SuppressWarnings("ResultOfMethodCallIgnored")
-    private static String readToString(File file) {
-        byte[] content = new byte[(int) file.length()];
-        
-        try {
-            FileInputStream in = new FileInputStream(file);
-            in.read(content); in.close();
-        } catch (IOException ignored) {
-            Grasscutter.getLogger().warn("File does not exist: " + file);
-        }
-
-        return new String(content, StandardCharsets.UTF_8);
     }
 }

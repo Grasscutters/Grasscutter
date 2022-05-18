@@ -9,6 +9,7 @@ import java.time.temporal.TemporalAdjusters;
 import java.util.*;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
@@ -197,6 +198,9 @@ public final class Utils {
 		// Check for game data.
 		if(!fileExists(dataFolder))
 			createFolder(dataFolder);
+
+		// Make sure the data folder is populated, if there are any missing files copy them from resources
+		DataLoader.CheckAllFiles();
 
 		if(exit) System.exit(1);
 	}
