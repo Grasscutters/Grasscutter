@@ -53,6 +53,7 @@ tmp/
 
 # Grasscutter
 resources/
+!src/main/resources/
 logs/
 plugins/
 data/AbilityEmbryos.json
@@ -70,6 +71,7 @@ languages/
 gacha-mapping.js
 mappings.js
 BuildConfig.java
+avatars/
 
 # lombok
 /.apt_generated/

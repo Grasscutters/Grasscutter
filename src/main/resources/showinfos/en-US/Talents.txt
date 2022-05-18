@@ -1,0 +1,348 @@
+// 10000002 - Ayaka
+10024:skillName
+10018:skillName
+10019:skillName
+10013:skillName
+22101:skillName
+22201:skillName
+22301:skillName
+// 10000003 - Qin
+10031:skillName
+10033:skillName
+10034:skillName
+32101:skillName
+32201:skillName
+32301:skillName
+// 10000005 - PlayerBoy - Normal
+100540:skillName
+// 10000005 - PlayerBoy - Wind
+100543:skillName
+10067:skillName
+10068:skillName
+72101:skillName
+72201:skillName
+// 10000006 - Lisa
+10060:skillName
+10061:skillName
+10062:skillName
+42101:skillName
+42201:skillName
+42301:skillName
+// 10000007 - PlayerGirl = Wind
+100550:skillName
+// 10000007 - PlayerGirl = Wind
+100553:skillName
+10067:skillName
+10068:skillName
+72101:skillName
+72201:skillName
+// 10000014 - Barbara
+10070:skillName
+10071:skillName
+10072:skillName
+142101:skillName
+142201:skillName
+142301:skillName
+// 10000015 - Kaeya
+10073:skillName
+10074:skillName
+10075:skillName
+152101:skillName
+152201:skillName
+152301:skillName
+// 10000016 - Diluc
+10160:skillName
+10161:skillName
+10165:skillName
+162101:skillName
+162201:skillName
+162301:skillName
+// 10000020 - Razor
+10201:skillName
+10202:skillName
+10203:skillName
+202101:skillName
+202201:skillName
+202301:skillName
+// 10000021 - Ambor
+10041:skillName
+10032:skillName
+10017:skillName
+212101:skillName
+212201:skillName
+212301:skillName
+// 10000022 - Venti
+10221:skillName
+10224:skillName
+10225:skillName
+222101:skillName
+222201:skillName
+222301:skillName
+// 10000023 - Xiangling
+10231:skillName
+10232:skillName
+10235:skillName
+232101:skillName
+232201:skillName
+232301:skillName
+// 10000024 - Beidou
+10241:skillName
+10242:skillName
+10245:skillName
+242101:skillName
+242201:skillName
+242301:skillName
+// 10000025 - Xingqiu
+10381:skillName
+10382:skillName
+10385:skillName
+252101:skillName
+252201:skillName
+252301:skillName
+// 10000026 - Xiao
+10261:skillName
+10262:skillName
+10265:skillName
+262101:skillName
+262301:skillName
+262201:skillName
+// 10000027 - Ningguang
+10271:skillName
+10272:skillName
+10274:skillName
+272101:skillName
+272301:skillName
+272201:skillName
+// 10000029 - Klee
+10291:skillName
+10292:skillName
+10295:skillName
+292101:skillName
+292301:skillName
+292201:skillName
+// 10000030 - Zhongli
+10301:skillName
+10302:skillName
+10303:skillName
+302101:skillName
+302301:skillName
+302201:skillName
+// 10000031 - Fischl
+10311:skillName
+10312:skillName
+10313:skillName
+312101:skillName
+312301:skillName
+312201:skillName
+// 10000032 - Bennett
+10321:skillName
+10322:skillName
+10323:skillName
+322101:skillName
+322301:skillName
+322201:skillName
+// 10000033 - Tartaglia
+10331:skillName
+10332:skillName
+10333:skillName
+332101:skillName
+332301:skillName
+332201:skillName
+// 10000034 - Noel
+10341:skillName
+10342:skillName
+10343:skillName
+342101:skillName
+342301:skillName
+342201:skillName
+// 10000035 - Qiqi
+10351:skillName
+10352:skillName
+10353:skillName
+352101:skillName
+352301:skillName
+352201:skillName
+// 10000036 - Chongyun
+10401:skillName
+10402:skillName
+10403:skillName
+362101:skillName
+362301:skillName
+362201:skillName
+// 10000037 - Ganyu
+10371:skillName
+10372:skillName
+10373:skillName
+372101:skillName
+372301:skillName
+372201:skillName
+// 10000038 - Albedo
+10386:skillName
+10387:skillName
+10388:skillName
+382101:skillName
+382301:skillName
+382201:skillName
+// 10000039 - Diona
+10391:skillName
+10392:skillName
+10395:skillName
+392101:skillName
+392301:skillName
+392201:skillName
+// 10000041 - Mona
+10411:skillName
+10412:skillName
+10415:skillName
+412101:skillName
+412301:skillName
+412201:skillName
+// 10000042 - Keqing
+10421:skillName
+10422:skillName
+10425:skillName
+422101:skillName
+422301:skillName
+422201:skillName
+// 10000043 - Sucrose
+10431:skillName
+10432:skillName
+10435:skillName
+432101:skillName
+432301:skillName
+432201:skillName
+// 10000044 - Xinyan
+10441:skillName
+10442:skillName
+10443:skillName
+442101:skillName
+442301:skillName
+442201:skillName
+// 10000045 - Rosaria
+10451:skillName
+10452:skillName
+10453:skillName
+452101:skillName
+452301:skillName
+452201:skillName
+// 10000046 - Hutao
+10461:skillName
+10462:skillName
+10463:skillName
+462101:skillName
+462301:skillName
+462201:skillName
+// 10000047 - Kazuha
+10471:skillName
+10472:skillName
+10475:skillName
+472101:skillName
+472301:skillName
+472201:skillName
+// 10000048 - Feiyan
+10481:skillName
+10482:skillName
+10485:skillName
+482101:skillName
+482301:skillName
+482201:skillName
+// 10000049 - Yoimiya
+10491:skillName
+10492:skillName
+10495:skillName
+492101:skillName
+492301:skillName
+492201:skillName
+// 10000050 - Tohma
+10501:skillName
+10502:skillName
+10505:skillName
+502101:skillName
+502301:skillName
+502201:skillName
+// 10000051 - Eula
+10511:skillName
+10512:skillName
+10515:skillName
+512101:skillName
+512301:skillName
+512201:skillName
+// 10000052 - Shougun
+10521:skillName
+10522:skillName
+10525:skillName
+522101:skillName
+522501:skillName
+522301:skillName
+522201:skillName
+// 10000053 - Sayu
+10531:skillName
+10532:skillName
+10535:skillName
+532201:skillName
+532301:skillName
+532101:skillName
+// 10000054 - Kokomi
+10541:skillName
+10542:skillName
+10545:skillName
+542201:skillName
+542301:skillName
+542101:skillName
+542501:skillName
+// 10000055 - Gorou
+10551:skillName
+10552:skillName
+10555:skillName
+552201:skillName
+552301:skillName
+552101:skillName
+// 10000056 - Sara
+10561:skillName
+10562:skillName
+10565:skillName
+562201:skillName
+562301:skillName
+562101:skillName
+// 10000057 - Itto
+10571:skillName
+10572:skillName
+10575:skillName
+572201:skillName
+572301:skillName
+572101:skillName
+// 10000058 - Yae
+10581:skillName
+10582:skillName
+10585:skillName
+582201:skillName
+582301:skillName
+582101:skillName
+// 10000062 - Aloy
+10621:skillName
+10622:skillName
+10625:skillName
+622201:skillName
+622301:skillName
+622101:skillName
+// 10000063 - Shenhe
+10631:skillName
+10632:skillName
+10635:skillName
+632201:skillName
+632301:skillName
+632101:skillName
+// 10000064 - Yunjin
+10641:skillName
+10642:skillName
+10643:skillName
+642201:skillName
+642301:skillName
+642101:skillName
+// 10000066 - Ayato
+10661:skillName
+10662:skillName
+10665:skillName
+662201:skillName
+662301:skillName
+662101:skillName
