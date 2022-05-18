@@ -221,12 +221,12 @@
       "description": "获取所在位置"
     },
     "quest": {
-      "description": "添加或完成任务",
       "usage": "quest <add|finish> [任务ID]",
       "added": "已添加任务 %s。",
       "finished": "已完成任务 %s。",
       "not_found": "此任务不存在。",
-      "invalid_id": "无效的任务ID。"
+      "invalid_id": "无效的任务ID。",
+      "description": "添加或完成任务"
     },
     "reload": {
       "reload_start": "正在重载配置文件和数据。",
@@ -323,17 +323,17 @@
       "description": "设置当前角色的天赋等级"
     },
     "team": {
-      "usage": "用法: team <add|remove|set> [角色ID,...] [索引|first|last|索引-索引,...]",
+      "usage": "用法：team <add|remove|set> [角色ID,...] [索引|first|last|索引-索引,...]",
       "invalid_usage": "无效用法。",
-      "add_usage": "用法 (add): team add <角色ID,...> [索引]",
+      "add_usage": "用法 (add)：team add <角色ID,...> [索引]",
       "invalid_index": "无效索引。",
       "add_too_much": "服务端仅允许你队伍里至多有 %d 名角色。",
       "failed_to_add_avatar": "无法根据ID %s 添加角色。",
-      "remove_usage": "用法 (remove): team remove <索引|first|last|索引-索引,...>",
-      "failed_parse_index": "无法解析索引：%s",
+      "remove_usage": "用法 (remove)：team remove <索引|first|last|索引-索引,...>",
+      "failed_to_parse_index": "无法解析索引：%s",
       "remove_too_much": "你不能删除那么多角色，你的队伍列表将会变空。",
       "ignore_index": "忽略的索引列表：%s",
-      "set_usage": "用法 (set): team set <索引> <角色ID>",
+      "set_usage": "用法 (set)：team set <索引> <角色ID>",
       "index_out_of_range": "你指定的索引超出了范围。",
       "failed_parse_avatar_id": "无法解析的角色ID：%s",
       "avatar_already_in_team": "角色已经在你的队伍中了。",
