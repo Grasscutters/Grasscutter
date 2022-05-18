@@ -579,7 +579,7 @@ public class Scene {
 			List<SceneGadget> garbageGadgets = group.getGarbageGadgets();
 			
 			if (garbageGadgets != null) {
-				garbageGadgets.forEach(g -> scriptManager.createGadgets(group.id, group.block_id, g));
+				garbageGadgets.forEach(g -> scriptManager.createGadget(group.id, group.block_id, g));
 			}
 
 			// Load suites
@@ -705,10 +705,5 @@ public class Scene {
 			EntityItem entity = new EntityItem(this, null, itemData, bornForm.getPosition().clone().addZ(.9f), amount);
 			addEntity(entity);
 		}
-	}
-
-	public void updateGadgetState(EntityGadget gadget, int state){
-		gadget.setState(state);
-		broadcastPacket(new PacketGadgetStateNotify(gadget, state));
 	}
 }
