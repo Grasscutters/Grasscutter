@@ -296,6 +296,14 @@
       "invalid_world_level": "無效的世界等級。",
       "description": "設定世界等級，執行指令後需重新登入後才會生效。"
     },
+    "show": {
+      "usage": "用法：show <avatars(avt),artifacts(art),talents(tl),weapons(wp)> 頁碼(1,+∞) 頁面大小(10,+∞) [名稱]",
+      "avatars_title": "角色信息：（頁碼：%s，頁面大小：%s，最大頁碼：%s，總數：%s）\n",
+      "artifacts_title": "聖遺物信息：（頁碼：%s，頁面大小：%s，最大頁碼：%s，總數：%s）\n",
+      "talents_title": "天賦信息：（頁碼：%s，頁面大小：%s，最大頁碼：%s，總數：%s）\n",
+      "weapons_title": "武器信息：（頁碼：%s，頁面大小：%s，最大頁碼：%s，總數：%s）\n",
+      "description": "為了方便對照ID信息"
+    },
     "spawn": {
       "usage": "用法：spawn <entityId> [amount] [level(僅限怪物)]",
       "success": "已生成 %s 個 %s。",

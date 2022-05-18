@@ -42,6 +42,8 @@ public final class Language {
             cachedLanguages.put(langCode, languageInst);
         }
 
+        ShowInfosUtil.initShowInfoMap(langCode, fallbackLanguageCode);
+
         return languageInst;
     }
 

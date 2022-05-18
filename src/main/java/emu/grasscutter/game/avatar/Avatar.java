@@ -517,7 +517,7 @@ public class Avatar {
 			this.setFightProperty((element.getMaxEnergyProp().getId() % 70) + 1000, data.getSkillDepot().getEnergySkillData().getCostElemVal());
 		}
 		
-		// Artifacts
+		// Artifacts.txt
 		for (int slotId = 1; slotId <= 5; slotId++) {
 			// Get artifact
 			GameItem equip = this.getEquipBySlot(slotId);

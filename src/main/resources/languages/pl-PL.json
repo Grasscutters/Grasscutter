@@ -247,6 +247,14 @@
       "success": "Ustawiono poziom świata na: %s.",
       "invalid_world_level": "Invalid world level."
     },
+    "show": {
+      "usage": "Użycie: show <avatars(avt),artifacts(art),talents(tl),weapons(wp)> stronaNo(1,+∞) rozmiarStrony(10,+∞) [nazwa]",
+      "avatars_title": "Informacje o awatarach: (stronaNo: %s, rozmiarStrony: %s, maxStronaNo: %s, łączny: %s)\n",
+      "artifacts_title": "Informacje o artefaktach: (stronaNo: %s, rozmiarStrony: %s, maxStronaNo: %s, łączny: %s)\n",
+      "talents_title": "Informacje o talentach: (stronaNo: %s, rozmiarStrony: %s, maxStronaNo: %s, łączny: %s)\n",
+      "weapons_title": "Informacje o broni: (stronaNo: %s, rozmiarStrony: %s, maxStronaNo: %s, łączny: %s)\n",
+      "description": "Ułatwienie porównywania informacji o identyfikatorze"
+    },
     "spawn": {
       "usage": "Użycie: /spawn <id obiektu> [ilość] [poziom(tylko potwory)]",
       "success": "Stworzono %s %s."
