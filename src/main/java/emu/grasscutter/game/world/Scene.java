@@ -23,6 +23,7 @@ import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.data.SceneBlock;
+import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.packet.send.PacketAvatarSkillInfoNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
@@ -577,7 +578,15 @@ public class Scene {
 			if (group.init_config == null) {
 				continue;
 			}
+			
+			// Load garbages
+			List<SceneGadget> garbageGadgets = group.getGarbageGadgets();
+			
+			if (garbageGadgets != null) {
+				garbageGadgets.forEach(g -> scriptManager.createGadgets(group.id, group.block_id, g));
+			}
 
+			// Load suites
 			int suite = group.init_config.suite;
 
 			if (suite == 0) {

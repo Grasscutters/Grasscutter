@@ -12,7 +12,6 @@ public class SceneData extends GameResource {
 	private SceneType Type;
 	private String ScriptData;
 
-	    
 	@Override
 	public int getId() {
 		return this.Id;

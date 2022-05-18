@@ -8,4 +8,5 @@ import lombok.ToString;
 public class SceneGadget extends SceneObject{
 	public int gadget_id;
 	public int state;
+	public int point_type;
 }
