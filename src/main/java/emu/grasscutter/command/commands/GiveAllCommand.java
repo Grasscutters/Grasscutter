@@ -15,14 +15,13 @@ import java.util.*;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "giveall", usage = "giveall [amount]",
-        description = "Gives all items", aliases = {"givea"}, permission = "player.giveall", threading = true)
+@Command(label = "giveall", usage = "giveall [amount]", aliases = {"givea"}, permission = "player.giveall", permissionTargeted = "player.giveall.others", threading = true, description = "commands.giveAll.description")
 public final class GiveAllCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
         int amount = 99999;
@@ -34,21 +33,21 @@ public final class GiveAllCommand implements CommandHandler {
                 try {
                     amount = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.amount"));
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.amount"));
                     return;
                 }
                 break;
             default: // invalid
-                CommandHandler.sendMessage(sender, translate("commands.giveAll.usage"));
+                CommandHandler.sendMessage(sender, translate(sender, "commands.giveAll.usage"));
                 return;
         }
 
         this.giveAllItems(targetPlayer, amount);
-        CommandHandler.sendMessage(sender, translate("commands.giveAll.success", targetPlayer.getNickname()));
+        CommandHandler.sendMessage(sender, translate(targetPlayer, "commands.giveAll.success", targetPlayer.getNickname()));
     }
 
     public void giveAllItems(Player player, int amount) {
-        CommandHandler.sendMessage(player, translate("commands.giveAll.started"));
+        CommandHandler.sendMessage(player, translate(player, "commands.giveAll.started"));
 
         for (AvatarData avatarData: GameData.getAvatarDataMap().values()) {
             //Exclude test avatar

@@ -1,14 +1,23 @@
 package emu.grasscutter.scripts.serializer;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
-
+ import com.esotericsoftware.reflectasm.ConstructorAccess;
+import com.esotericsoftware.reflectasm.MethodAccess;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.experimental.FieldDefaults;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class LuaSerializer implements Serializer {
-	
+
+	private final static Map<Class<?>, MethodAccess> methodAccessCache = new ConcurrentHashMap<>();
+	private final static Map<Class<?>, ConstructorAccess<?>> constructorCache = new ConcurrentHashMap<>();
+	private final static Map<Class<?>, Map<String, FieldMeta>> fieldMetaCache = new ConcurrentHashMap<>();
+
 	@Override
 	public <T> List<T> toList(Class<T> type, Object obj) {
 		return serializeList(type, (LuaTable) obj);
@@ -20,7 +29,7 @@ public class LuaSerializer implements Serializer {
 	}
 	
 	public <T> List<T> serializeList(Class<T> type, LuaTable table) {
-		List<T> list = new ArrayList();
+		List<T> list = new ArrayList<>();
 		
 		try {
 			LuaValue[] keys = table.keys();
@@ -55,7 +64,7 @@ public class LuaSerializer implements Serializer {
 
 		return list;
 	}
-	
+
 	public <T> T serialize(Class<T> type, LuaTable table) {
 		T object = null;
 		
@@ -70,29 +79,34 @@ public class LuaSerializer implements Serializer {
 		}
 		
 		try {
-			object = type.getDeclaredConstructor().newInstance(null);
-			
+			if(!methodAccessCache.containsKey(type)){
+				cacheType(type);
+			}
+			var methodAccess = methodAccessCache.get(type);
+			var fieldMetaMap = fieldMetaCache.get(type);
+
+			object = (T) constructorCache.get(type).newInstance();
+
 			LuaValue[] keys = table.keys();
 			for (LuaValue k : keys) {
 				try {
-					Field field = object.getClass().getDeclaredField(k.checkjstring());
-					if (field == null) {
+					var keyName = k.checkjstring();
+					if(!fieldMetaMap.containsKey(keyName)){
 						continue;
 					}
-					
-					field.setAccessible(true);
+					var fieldMeta = fieldMetaMap.get(keyName);
 					LuaValue keyValue = table.get(k);
 
 					if (keyValue.istable()) {
-				    	field.set(object, serialize(field.getType(), keyValue.checktable()));
-				    } else if (field.getType().equals(float.class)) {
-				    	field.setFloat(object, keyValue.tofloat());
-				    } else if (field.getType().equals(int.class)) {
-				    	field.setInt(object, keyValue.toint());
-				    } else if (field.getType().equals(String.class)) {
-				    	field.set(object, keyValue.tojstring());
+						methodAccess.invoke(object, fieldMeta.index, serialize(fieldMeta.getType(), keyValue.checktable()));
+				    } else if (fieldMeta.getType().equals(float.class)) {
+						methodAccess.invoke(object, fieldMeta.index, keyValue.tofloat());
+				    } else if (fieldMeta.getType().equals(int.class)) {
+						methodAccess.invoke(object, fieldMeta.index, keyValue.toint());
+				    } else if (fieldMeta.getType().equals(String.class)) {
+						methodAccess.invoke(object, fieldMeta.index, keyValue.tojstring());
 				    } else {
-				    	field.set(object, keyValue);
+						methodAccess.invoke(object, fieldMeta.index, keyValue.tojstring());
 				    }
 				} catch (Exception ex) {
 					//ex.printStackTrace();
@@ -104,5 +118,59 @@ public class LuaSerializer implements Serializer {
 		}
 		
 		return object;
+	}
+
+	public <T> Map<String, FieldMeta> cacheType(Class<T> type){
+		if(fieldMetaCache.containsKey(type)) {
+			return fieldMetaCache.get(type);
+		}
+		if(!constructorCache.containsKey(type)){
+			constructorCache.putIfAbsent(type, ConstructorAccess.get(type));
+		}
+		var methodAccess = Optional.ofNullable(methodAccessCache.get(type)).orElse(MethodAccess.get(type));
+		methodAccessCache.putIfAbsent(type, methodAccess);
+
+		var fieldMetaMap = new HashMap<String, FieldMeta>();
+		var methodNameSet = new HashSet<>(Arrays.stream(methodAccess.getMethodNames()).toList());
+
+		Arrays.stream(type.getDeclaredFields())
+				.filter(field -> methodNameSet.contains(getSetterName(field.getName())))
+				.forEach(field -> {
+					var setter = getSetterName(field.getName());
+					var index = methodAccess.getIndex(setter);
+					fieldMetaMap.put(field.getName(), new FieldMeta(field.getName(), setter, index, field.getType()));
+				});
+
+		Arrays.stream(type.getFields())
+				.filter(field -> !fieldMetaMap.containsKey(field.getName()))
+				.filter(field -> methodNameSet.contains(getSetterName(field.getName())))
+				.forEach(field -> {
+					var setter = getSetterName(field.getName());
+					var index = methodAccess.getIndex(setter);
+					fieldMetaMap.put(field.getName(), new FieldMeta(field.getName(), setter, index, field.getType()));
+				});
+
+		fieldMetaCache.put(type, fieldMetaMap);
+		return fieldMetaMap;
+	}
+
+	public String getSetterName(String fieldName){
+		if(fieldName == null || fieldName.length() == 0){
+			return null;
+		}
+		if(fieldName.length() == 1){
+			return "set" + fieldName.toUpperCase();
+		}
+		return "set" + Character.toUpperCase(fieldName.charAt(0)) + fieldName.substring(1);
+	}
+
+	@Data
+	@AllArgsConstructor
+	@FieldDefaults(level = AccessLevel.PRIVATE)
+	static class FieldMeta{
+		String name;
+		String setter;
+		int index;
+		Class<?> type;
 	}
 }

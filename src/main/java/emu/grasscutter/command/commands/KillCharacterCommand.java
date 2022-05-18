@@ -13,14 +13,13 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "killcharacter", usage = "killcharacter", aliases = {"suicide", "kill"},
-        description = "Kills the players current character", permission = "player.killcharacter")
+@Command(label = "killcharacter", usage = "killcharacter", aliases = {"suicide", "kill"}, permission = "player.killcharacter", permissionTargeted = "player.killcharacter.others", description = "commands.killCharacter.description")
 public final class KillCharacterCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
             return;
         }
 
@@ -33,6 +32,6 @@ public final class KillCharacterCommand implements CommandHandler {
         targetPlayer.getScene().removeEntity(entity);
         entity.onDeath(0);
 
-        CommandHandler.sendMessage(sender, translate("commands.killCharacter.success", targetPlayer.getNickname()));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.killCharacter.success", targetPlayer.getNickname()));
     }
 }

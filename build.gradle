@@ -43,7 +43,8 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'xyz.grasscutters'
-version = '1.1.0'
+version = '1.1.2-dev'
+
 
 sourceCompatibility = 17
 targetCompatibility = 17
@@ -85,7 +86,13 @@ dependencies {
 
     implementation group: 'org.luaj', name: 'luaj-jse', version: '3.0.1'
 
+    implementation group:  'ch.ethz.globis.phtree', name : 'phtree', version: '2.5.0'
+    implementation group:  'com.esotericsoftware', name : 'reflectasm', version: '1.11.9'
+
     protobuf files('proto/')
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 configurations.all {
@@ -97,12 +104,14 @@ application {
     mainClassName = 'emu.grasscutter.Grasscutter'
 }
 
+
 jar {
     manifest {
         attributes 'Main-Class': 'emu.grasscutter.Grasscutter'
     }
 
     jar.baseName = 'grasscutter'
+    jar.archiveName = project.hasProperty('jarFilename') ? "${jarFilename}.${extension}" : archiveName
 
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
@@ -224,6 +233,23 @@ javadoc {
     if(JavaVersion.current().isJava9Compatible()) {
         options.addBooleanOption('html5', true)
     }
+}
+
+task injectGitHash {
+    def gitCommitHash = {
+        try {
+            return 'git rev-parse --verify --short HEAD'.execute().text.trim()
+        } catch (e) {
+            return "GIT_NOT_FOUND"
+        }
+    }
+    new File(projectDir, "src/main/java/emu/grasscutter/BuildConfig.java").text = """
+        package emu.grasscutter;
+        public class BuildConfig {
+                public static final String VERSION = \"${version}\";
+                public static final String GIT_HASH = \"${gitCommitHash()}\";
+        }
+    """
 }
 
 processResources {

@@ -1,7 +1,10 @@
 package emu.grasscutter.scripts.data;
 
-import emu.grasscutter.utils.Position;
+import lombok.Setter;
+import lombok.ToString;
 
+@ToString
+@Setter
 public class SceneInitConfig {
 	public int suite;
 	public int end_suite;

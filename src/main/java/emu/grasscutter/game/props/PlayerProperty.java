@@ -30,7 +30,7 @@ public enum PlayerProperty {
     //   his gems and then got a money refund, so negative is allowed.
     PROP_PLAYER_SCOIN						(10016), // Mora [0, +inf)
     PROP_PLAYER_MP_SETTING_TYPE				(10017), // Do you allow other players to join your game? [0=no 1=direct 2=approval]
-    PROP_IS_MP_MODE_AVAILABLE				(10018), // Are you not in a quest or something that disables MP? [0, 1]
+    PROP_IS_MP_MODE_AVAILABLE				(10018), // 0 if in quest or something that disables MP [0, 1]
     PROP_PLAYER_WORLD_LEVEL					(10019), // [0, 8]
     PROP_PLAYER_RESIN						(10020), // Original Resin [0, +inf)
     PROP_PLAYER_WAIT_SUB_HCOIN				(10022),
