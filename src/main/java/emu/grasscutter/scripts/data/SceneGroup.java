@@ -28,8 +28,8 @@ public class SceneGroup {
 
 	public Map<Integer,SceneMonster> monsters; // <ConfigId, Monster>
 	public Map<Integer, SceneGadget> gadgets; // <ConfigId, Gadgets>
-	
-	public List<SceneTrigger> triggers;
+	public Map<String, SceneTrigger> triggers;
+
 	public List<SceneRegion> regions;
 	public List<SceneSuite> suites;
 	public List<SceneVar> variables;
@@ -94,9 +94,10 @@ public class SceneGroup {
 					.collect(Collectors.toMap(x -> x.config_id, y -> y));
 			gadgets.values().forEach(m -> m.groupId = id);
 
-			triggers = ScriptLoader.getSerializer().toList(SceneTrigger.class, bindings.get("triggers"));
-			triggers.forEach(t -> t.currentGroup = this);
-			
+			triggers = ScriptLoader.getSerializer().toList(SceneTrigger.class, bindings.get("triggers")).stream()
+					.collect(Collectors.toMap(x -> x.name, y -> y));
+			triggers.values().forEach(t -> t.currentGroup = this);
+
 			suites = ScriptLoader.getSerializer().toList(SceneSuite.class, bindings.get("suites"));
 			regions = ScriptLoader.getSerializer().toList(SceneRegion.class, bindings.get("regions"));
 			garbages = ScriptLoader.getSerializer().toObject(SceneGarbage.class, bindings.get("garbages"));
@@ -118,6 +119,13 @@ public class SceneGroup {
 						suite.gadgets.stream()
 								.filter(gadgets::containsKey)
 								.map(gadgets::get)
+								.toList()
+				);
+
+				suite.sceneTriggers = new ArrayList<>(
+						suite.triggers.stream()
+								.filter(triggers::containsKey)
+								.map(triggers::get)
 								.toList()
 				);
 			}

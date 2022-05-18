@@ -15,4 +15,5 @@ public class SceneSuite {
 	
 	public transient List<SceneMonster> sceneMonsters;
 	public transient List<SceneGadget> sceneGadgets;
+	public transient List<SceneTrigger> sceneTriggers;
 }
