@@ -4,12 +4,10 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.def.MonsterCurveData;
 import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.game.dungeons.DungeonChallenge;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
@@ -24,6 +22,7 @@ import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo;
 import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo;
 import emu.grasscutter.scripts.constants.EventType;
+import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
@@ -126,7 +125,9 @@ public class EntityMonster extends GameEntity {
 			}
 			// prevent spawn monster after success
 			if(getScene().getChallenge() != null && getScene().getChallenge().inProgress()){
-				getScene().getScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_DIE, null);
+				getScene().getScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_DIE, new ScriptArgs().setParam1(this.getConfigId()));
+			}else if(getScene().getChallenge() == null){
+				getScene().getScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_DIE, new ScriptArgs().setParam1(this.getConfigId()));
 			}
 		}
 	}

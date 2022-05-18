@@ -1,0 +1,135 @@
+[
+  {
+    "objNames" : [
+      "SceneObj_Chest_Default_Lv1",
+      "SceneObj_Chest_Locked_Lv1",
+      "SceneObj_Chest_Bramble_Lv1",
+      "SceneObj_Chest_Frozen_Lv1",
+      "SceneObj_Chest_Rock_Lv1",
+      "SceneObj_EssenceChest_Default_Lv1",
+      "SceneObj_EssenceChest_Locked_Lv1"
+    ],
+    "advExp" : 10,
+    "resin" : 0,
+    "mora" : 257,
+    "sigil" : 1,
+    "content" : [
+      {
+        "itemId" : 104011,
+        "count": 3
+      },
+      {
+        "itemId" : 104001,
+        "count": 1
+      }
+    ],
+    "randomCount": 4,
+    "randomContent": [
+      {
+        "itemId" : 11101,
+        "count": 1
+      },
+      {
+        "itemId" : 11201,
+        "count": 1
+      },
+      {
+        "itemId" : 12101,
+        "count": 1
+      },
+      {
+        "itemId" : 12201,
+        "count": 1
+      },
+      {
+        "itemId" : 13101,
+        "count": 1
+      },
+      {
+        "itemId" : 13201,
+        "count": 1
+      },
+      {
+        "itemId" : 14101,
+        "count": 1
+      },
+      {
+        "itemId" : 14201,
+        "count": 1
+      },
+      {
+        "itemId" : 15101,
+        "count": 1
+      },
+      {
+        "itemId" : 15201,
+        "count": 1
+      }
+    ]
+  },
+  {
+    "objNames" : [
+      "SceneObj_Chest_Default_Lv2",
+      "SceneObj_Chest_Locked_Lv2",
+      "SceneObj_Chest_Bramble_Lv2",
+      "SceneObj_Chest_Frozen_Lv2"
+    ],
+    "advExp" : 20,
+    "resin" : 2,
+    "mora" : 756,
+    "sigil" : 2,
+    "content" : [
+      {
+        "itemId" : 104012,
+        "count": 3
+      },
+      {
+        "itemId" : 104002,
+        "count": 1
+      }
+    ],
+    "randomCount": 4,
+    "randomContent": [
+      {
+        "itemId" : 11201,
+        "count": 1
+      },
+      {
+        "itemId" : 11301,
+        "count": 1
+      },
+      {
+        "itemId" : 12201,
+        "count": 1
+      },
+      {
+        "itemId" : 12301,
+        "count": 1
+      },
+      {
+        "itemId" : 13201,
+        "count": 1
+      },
+      {
+        "itemId" : 13301,
+        "count": 1
+      },
+      {
+        "itemId" : 14201,
+        "count": 1
+      },
+      {
+        "itemId" : 14301,
+        "count": 1
+      },
+      {
+        "itemId" : 15201,
+        "count": 1
+      },
+      {
+        "itemId" : 15301,
+        "count": 1
+      }
+    ]
+  }
+]

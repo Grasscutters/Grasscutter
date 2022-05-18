@@ -42,7 +42,6 @@ public class SceneScriptManager {
 	private final Int2ObjectOpenHashMap<Set<SceneTrigger>> currentTriggers;
 	private final Int2ObjectOpenHashMap<SceneRegion> regions;
 	private Map<Integer,SceneGroup> sceneGroups;
-	private SceneGroup currentGroup;
 	private ScriptMonsterTideService scriptMonsterTideService;
 	private ScriptMonsterSpawnService scriptMonsterSpawnService;
 	/**
@@ -94,10 +93,6 @@ public class SceneScriptManager {
 		return meta.config;
 	}
 
-	public SceneGroup getCurrentGroup() {
-		return currentGroup;
-	}
-
 	public Map<Integer, SceneBlock> getBlocks() {
 		return meta.blocks;
 	}
@@ -118,20 +113,19 @@ public class SceneScriptManager {
 		this.triggers.remove(trigger.name);
 		getTriggersByEvent(trigger.event).remove(trigger);
 	}
-	public void resetTriggers(List<String> triggerNames) {
-		for(var name : triggerNames){
-			var instance = triggers.get(name);
-			this.currentTriggers.get(instance.event).clear();
-			this.currentTriggers.get(instance.event).add(instance);
-		}
+	public void resetTriggers(int eventId) {
+		currentTriggers.put(eventId, new HashSet<>());
 	}
 	public void refreshGroup(SceneGroup group, int suiteIndex){
 		var suite = group.getSuiteByIndex(suiteIndex);
 		if(suite == null){
 			return;
 		}
-		if(suite.triggers.size() > 0){
-			resetTriggers(suite.triggers);
+		if(suite.sceneTriggers.size() > 0){
+			for(var trigger : suite.sceneTriggers){
+				resetTriggers(trigger.event);
+				this.currentTriggers.get(trigger.event).add(trigger);
+			}
 		}
 		spawnMonstersInGroup(group, suite);
 		spawnGadgetsInGroup(group, suite);
@@ -158,7 +152,7 @@ public class SceneScriptManager {
 			for (SceneGroup group : block.groups) {
 				if (group.id == groupId) {
 					if(!group.isLoaded()){
-						loadGroupFromScript(group);
+						getScene().onLoadGroup(List.of(group));
 					}
 					return group;
 				}
@@ -204,9 +198,6 @@ public class SceneScriptManager {
 		group.variables.forEach(var -> this.getVariables().put(var.name, var.value));
 		this.sceneGroups.put(group.id, group);
 
-		if(group.triggers != null){
-			group.triggers.forEach(this::registerTrigger);
-		}
 		if(group.regions != null){
 			group.regions.forEach(this::registerRegion);
 		}
@@ -248,7 +239,7 @@ public class SceneScriptManager {
 		}
 
 		var toCreate = gadgets.stream()
-				.map(g -> createGadgets(g.groupId, group.block_id, g))
+				.map(g -> createGadget(g.groupId, group.block_id, g))
 				.filter(Objects::nonNull)
 				.toList();
 		this.addEntities(toCreate);
@@ -265,20 +256,17 @@ public class SceneScriptManager {
 		if(suite == null || suite.sceneMonsters.size() <= 0){
 			return;
 		}
-		this.currentGroup = group;
 		this.addEntities(suite.sceneMonsters.stream()
 				.map(mob -> createMonster(group.id, group.block_id, mob)).toList());
 
 	}
 	
 	public void spawnMonstersInGroup(SceneGroup group) {
-		this.currentGroup = group;
 		this.addEntities(group.monsters.values().stream()
 				.map(mob -> createMonster(group.id, group.block_id, mob)).toList());
 	}
 
 	public void startMonsterTideInGroup(SceneGroup group, Integer[] ordersConfigId, int tideCount, int sceneLimit) {
-		this.currentGroup = group;
 		this.scriptMonsterTideService =
 				new ScriptMonsterTideService(this, group, tideCount, sceneLimit, ordersConfigId);
 
@@ -289,15 +277,15 @@ public class SceneScriptManager {
 		}
 		this.getScriptMonsterTideService().unload();
 	}
-	public void spawnMonstersByConfigId(int configId, int delayTime) {
+	public void spawnMonstersByConfigId(SceneGroup group, int configId, int delayTime) {
 		// TODO delay
-		getScene().addEntity(
-				createMonster(this.currentGroup.id, this.currentGroup.block_id, this.currentGroup.monsters.get(configId)));
+		getScene().addEntity(createMonster(group.id, group.block_id, group.monsters.get(configId)));
 	}
 	// Events
 	
 	public void callEvent(int eventType, ScriptArgs params) {
 		for (SceneTrigger trigger : this.getTriggersByEvent(eventType)) {
+			scriptLib.setCurrentGroup(trigger.currentGroup);
 			LuaValue condition = null;
 			
 			if (trigger.condition != null && !trigger.condition.isEmpty()) {
@@ -330,6 +318,7 @@ public class SceneScriptManager {
 				safetyCall(trigger.action, action, args);
 			}
 			//TODO some ret may not bool
+			scriptLib.removeCurrentGroup();
 		}
 	}
 
@@ -337,7 +326,7 @@ public class SceneScriptManager {
 		try{
 			return func.call(this.getScriptLibLua(), args);
 		}catch (LuaError error){
-			ScriptLib.logger.error("[LUA] call trigger failed {},{}",name,args,error);
+			ScriptLib.logger.error("[LUA] call trigger failed {},{},{}",name,args,error.getMessage());
 			return LuaValue.valueOf(-1);
 		}
 	}
@@ -350,7 +339,7 @@ public class SceneScriptManager {
 		return scriptMonsterSpawnService;
 	}
 
-	public EntityGadget createGadgets(int groupId, int blockId, SceneGadget g) {
+	public EntityGadget createGadget(int groupId, int blockId, SceneGadget g) {
 		EntityGadget entity = new EntityGadget(getScene(), g.gadget_id, g.pos);
 
 		if (entity.getGadgetData() == null){

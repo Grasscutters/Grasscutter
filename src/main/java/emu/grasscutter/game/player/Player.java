@@ -47,6 +47,7 @@ import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
+import emu.grasscutter.scripts.constants.ScriptGadgetState;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
 import emu.grasscutter.server.game.GameServer;
@@ -926,6 +927,13 @@ public class Player {
 				}
 				
 				this.sendPacket(new PacketGadgetInteractRsp(gadget, InteractType.INTERACT_OPEN_STATUE));
+			}
+			else if (gadget.getGadgetData().getType() == EntityType.Chest) {
+				getScene().updateGadgetState(gadget, ScriptGadgetState.ChestOpened);
+				gadget.openChest(this);
+
+				this.sendPacket(new PacketGadgetInteractRsp(gadget, InteractType.INTERACT_OPEN_CHEST));
+				getScene().killEntity(gadget, 0);
 			}
 		} else {
 			// Delete directly

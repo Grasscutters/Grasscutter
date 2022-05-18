@@ -1,18 +1,16 @@
 package emu.grasscutter.game.entity;
 
-import java.util.Arrays;
-import java.util.List;
-
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.GadgetData;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.game.world.World;
-import emu.grasscutter.net.proto.ClientGadgetInfoOuterClass;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
+import emu.grasscutter.net.proto.BossChestInfoOuterClass;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
 import emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
@@ -27,11 +25,14 @@ import emu.grasscutter.net.proto.WorktopInfoOuterClass.WorktopInfo;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
-import it.unimi.dsi.fastutil.ints.IntList;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
+import lombok.ToString;
 
+import java.util.Arrays;
+import java.util.Random;
+
+@ToString(callSuper = true)
 public class EntityGadget extends EntityBaseGadget {
 	private final GadgetData data;
 	private final Position pos;
@@ -154,4 +155,30 @@ public class EntityGadget extends EntityBaseGadget {
 		
 		return entityInfo.build();
 	}
+
+    public void openChest(Player player) {
+		var chestRewardMap = getScene().getWorld().getServer().getWorldDataManager().getChestRewardMap();
+		var chestReward = chestRewardMap.get(this.getGadgetData().getJsonName());
+		if(chestReward == null){
+			Grasscutter.getLogger().warn("Could not found the config of this type of Chests {}", this.getGadgetData().getJsonName());
+			return;
+		}
+
+		player.earnExp(chestReward.getAdvExp());
+		player.getInventory().addItem(201, chestReward.getResin());
+
+		var mora = chestReward.getMora() * (1 + (player.getWorldLevel() - 1) * 0.5);
+		player.getInventory().addItem(202, (int)mora);
+
+		for(int i=0;i<chestReward.getContent().size();i++){
+			getScene().addItemEntity(chestReward.getContent().get(i).getItemId(), chestReward.getContent().get(i).getCount(), this);
+		}
+
+		var random = new Random(System.currentTimeMillis());
+		for(int i=0;i<chestReward.getRandomCount();i++){
+			var index = random.nextInt(chestReward.getRandomContent().size());
+			var item = chestReward.getRandomContent().get(index);
+			getScene().addItemEntity(item.getItemId(), item.getCount(), this);
+		}
+    }
 }
