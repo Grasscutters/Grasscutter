@@ -51,7 +51,7 @@ EN | [中文](README_zh-CN.md)
     
       Trust CA certificate:
     
-      ​	**Note:**The CA certificate is usually stored in `% USERPROFILE%\ .mitmproxy`, or you can download it from `http://mitm.it`
+      ​	**Note:**The CA certificate is usually stored in `% USERPROFILE%\ .mitmproxy`, or you can download it from `http://mitm.it`.
     
       ​	Double click for [install](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) or ...
     
@@ -67,7 +67,7 @@ EN | [中文](README_zh-CN.md)
     
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
 
-**you can also use `start.cmd` to start servers and proxy daemons automatically**
+**you can also use `start.cmd` to start servers and proxy daemons automatically.**
 
 ### Building
 
@@ -152,7 +152,7 @@ There is a dummy user named "Server" in every player's friends list that you can
  
 # Quick Troubleshooting
 
-* If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)
+* If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable.)
 * My client doesn't connect, doesn't login, 4206, etc... - Your proxy daemon setup is most likely *the issue*, if you are using Fiddler, make sure it running on another port other than 8888
 
 * Startup sequence: Mongodb > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Game
