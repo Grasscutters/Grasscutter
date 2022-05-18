@@ -2,8 +2,11 @@ package emu.grasscutter.game.world;
 
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.server.game.GameServer;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -23,13 +26,13 @@ public class WorldDataManager {
     }
 
     public synchronized void load(){
-        try {
+    	try(InputStream is = DataLoader.load("ChestReward.json", false); InputStreamReader isr = new InputStreamReader(is)) {
             List<ChestReward> chestReward = Grasscutter.getGsonFactory().fromJson(
-                    Files.readString(Path.of(DATA("ChestReward.json"))),
+            		isr,
                     TypeToken.getParameterized(List.class, ChestReward.class).getType());
+            
             chestReward.forEach(reward ->
                     reward.getObjNames().forEach(name -> chestRewardMap.put(name, reward)));
-
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load chest reward config.", e);
         }
