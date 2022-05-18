@@ -928,13 +928,6 @@ public class Player {
 			if (shouldDelete) {
 				entity.getScene().removeEntity(entity);
 			}
-			else if (gadget.getGadgetData().getType() == EntityType.Chest) {
-				getScene().updateGadgetState(gadget, ScriptGadgetState.ChestOpened);
-				gadget.openChest(this);
-
-				this.sendPacket(new PacketGadgetInteractRsp(gadget, InteractType.INTERACT_OPEN_CHEST));
-				getScene().killEntity(gadget, 0);
-			}
 		} else {
 			// Delete directly
 			entity.getScene().removeEntity(entity);

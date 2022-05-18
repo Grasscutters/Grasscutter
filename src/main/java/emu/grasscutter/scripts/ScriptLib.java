@@ -437,8 +437,8 @@ public class ScriptLib {
 			return 1;
 		}
 
-		if(entity instanceof EntityGadget entityGadget){
-			getSceneScriptManager().getScene().updateGadgetState(entityGadget, state);
+		if (entity instanceof EntityGadget entityGadget) {
+			entityGadget.updateState(state);
 		}
 
 		return 0;
