@@ -534,8 +534,9 @@ public class Scene {
 		var sceneGroups = SceneIndexManager.queryNeighbors(block.sceneGroupIndex, player.getPos(), RANGE);
 
 		var groups = new ArrayList<>(sceneGroups.stream()
-				.filter(group -> !scriptManager.getLoadedGroupSetPerBlock().get(block.id).contains(group))
-				.peek(group -> scriptManager.getLoadedGroupSetPerBlock().get(block.id).add(group)).toList());
+				.filter(group -> !scriptManager.getLoadedGroupSetPerBlock().get(block.id).contains(group) && group.getBusinessType() == 0)
+				.peek(group -> scriptManager.getLoadedGroupSetPerBlock().get(block.id).add(group))
+				.toList());
 
 		if(groups.size() == 0){
 			return List.of();
