@@ -15,6 +15,7 @@ EN | [中文](README_zh-CN.md)
 * Teleportation
 * Gacha system
 * Co-op *partially* works
+* Me lon works
 * Spawning monsters via console
 * Inventory features (recieving items/characters, upgrading items/characters, etc)
 
