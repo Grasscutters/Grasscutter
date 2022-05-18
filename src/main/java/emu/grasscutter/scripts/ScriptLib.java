@@ -23,6 +23,7 @@ public class ScriptLib {
 	
 	public ScriptLib(SceneScriptManager sceneScriptManager) {
 		this.sceneScriptManager = sceneScriptManager;
+		this.currentGroup = new ThreadLocal<>();
 	}
 
 	public SceneScriptManager getSceneScriptManager() {
@@ -38,7 +39,17 @@ public class ScriptLib {
 		sb.append("}");
 		return sb.toString();
 	}
-
+	private final ThreadLocal<SceneGroup> currentGroup;
+	public void setCurrentGroup(SceneGroup currentGroup){
+		logger.debug("current {}", currentGroup);
+		this.currentGroup.set(currentGroup);
+	}
+	public Optional<SceneGroup> getCurrentGroup(){
+		return Optional.ofNullable(this.currentGroup.get());
+	}
+	public void removeCurrentGroup(){
+		this.currentGroup.remove();
+	}
 	public int SetGadgetStateByConfigId(int configId, int gadgetState) {
 		logger.debug("[LUA] Call SetGadgetStateByConfigId with {},{}",
 				configId,gadgetState);
@@ -100,7 +111,12 @@ public class ScriptLib {
 		getSceneScriptManager().getScene().broadcastPacket(new PacketWorktopOptionNotify(gadget));
 		return 0;
 	}
-	
+
+	public int SetWorktopOptions(LuaTable table){
+		logger.debug("[LUA] Call SetWorktopOptions with {}", printTable(table));
+		// TODO
+		return 0;
+	}
 	public int DelWorktopOptionByGroupId(int groupId, int configId, int option) {
 		logger.debug("[LUA] Call DelWorktopOptionByGroupId with {},{},{}",groupId,configId,option);
 
@@ -272,7 +288,8 @@ public class ScriptLib {
 				var1);
 
 		return (int) getSceneScriptManager().getScene().getEntities().values().stream()
-				.filter(e -> e instanceof EntityMonster && e.getGroupId() == getSceneScriptManager().getCurrentGroup().id)
+				.filter(e -> e instanceof EntityMonster &&
+						e.getGroupId() == getCurrentGroup().map(sceneGroup -> sceneGroup.id).orElse(-1))
 				.count();
 	}
 	public int SetMonsterBattleByGroup(int var1, int var2, int var3){
@@ -334,7 +351,11 @@ public class ScriptLib {
 		var configId = table.get("config_id").toint();
 		var delayTime = table.get("delay_time").toint();
 
-		getSceneScriptManager().spawnMonstersByConfigId(configId, delayTime);
+		if(getCurrentGroup().isEmpty()){
+			return 1;
+		}
+
+		getSceneScriptManager().spawnMonstersByConfigId(getCurrentGroup().get(), configId, delayTime);
 		return 0;
 	}
 
@@ -353,7 +374,13 @@ public class ScriptLib {
 				printTable(table));
 		var configId = table.get("config_id").toint();
 
-		//TODO
+		var group = getCurrentGroup();
+		if(group.isEmpty()){
+			return 1;
+		}
+		var gadget = group.get().gadgets.get(configId);
+		var entity = getSceneScriptManager().createGadget(group.get().id, group.get().block_id, gadget);
+		getSceneScriptManager().addEntity(entity);
 
 		return 0;
 	}
@@ -376,14 +403,42 @@ public class ScriptLib {
 				.filter(g -> g.getConfigId() == configId)
 				.findFirst();
 		if(gadget.isEmpty()){
-			return 0;
+			return 1;
 		}
-		var stat = ((EntityGadget)gadget.get()).getState();
-		return stat;
+		return ((EntityGadget)gadget.get()).getState();
 	}
-	public int SetGadgetStateByConfigId(int configId, LuaTable gadgetState){
-		logger.debug("[LUA] Call SetGadgetStateByConfigId with {},{}",
-				configId, printTable(gadgetState));
+
+	public int MarkPlayerAction(int var1, int var2, int var3, int var4){
+		logger.debug("[LUA] Call MarkPlayerAction with {},{}",
+				var1, var2);
+
+		return 0;
+	}
+
+	public int AddQuestProgress(String var1){
+		logger.debug("[LUA] Call AddQuestProgress with {}",
+				var1);
+
+		return 0;
+	}
+
+	/**
+	 * change the state of gadget
+	 */
+	public int ChangeGroupGadget(LuaTable table){
+		logger.debug("[LUA] Call ChangeGroupGadget with {}",
+				printTable(table));
+		var configId = table.get("config_id").toint();
+		var state = table.get("state").toint();
+
+		var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId);
+		if(entity == null){
+			return 1;
+		}
+
+		if(entity instanceof EntityGadget entityGadget){
+			getSceneScriptManager().getScene().updateGadgetState(entityGadget, state);
+		}
 
 		return 0;
 	}
