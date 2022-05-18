@@ -64,7 +64,7 @@ public class ShowCommand implements CommandHandler {
                 stringBuilder.append("%s : %s\n".formatted(avatar.getKey(), avatar.getValue()));
                 if (pageSize == 0) break;
             }
-            CommandHandler.sendMessage(sender, stringBuilder.toString());
+            CommandHandler.sendMessage(sender, stringBuilder.substring(0,stringBuilder.length() - 1));
         } else if (existArtifacts(item)) {
             List<Map.Entry<Integer, String>> artifacts = ShowInfosUtil.getShowInfoMap(langCode, ARTIFACTS).entrySet().stream().filter(entry -> {
                 if (name == null) {
@@ -81,7 +81,7 @@ public class ShowCommand implements CommandHandler {
                 stringBuilder.append("%s : %s\n".formatted(artifact.getKey(), artifact.getValue()));
                 if (pageSize == 0) break;
             }
-            CommandHandler.sendMessage(sender, stringBuilder.toString());
+            CommandHandler.sendMessage(sender, stringBuilder.substring(0,stringBuilder.length() - 1));
         } else if (existTalents(item)) {
             List<Map.Entry<Integer, String>> avatarSkillData = ShowInfosUtil.getShowInfoMap(langCode, TALENTS).entrySet().stream().filter(entry -> {
                 if (name == null) {
@@ -98,7 +98,7 @@ public class ShowCommand implements CommandHandler {
                 stringBuilder.append("%s : %s\n".formatted(skillData.getKey(), skillData.getValue()));
                 if (pageSize == 0) break;
             }
-            CommandHandler.sendMessage(sender, stringBuilder.toString());
+            CommandHandler.sendMessage(sender, stringBuilder.substring(0,stringBuilder.length() - 1));
         } else if (existWeapons(item)) {
             List<Map.Entry<Integer, String>> weapons = ShowInfosUtil.getShowInfoMap(langCode, WEAPONS).entrySet().stream().filter(entry -> {
                 if (name == null) {
@@ -115,7 +115,7 @@ public class ShowCommand implements CommandHandler {
                 stringBuilder.append("%s : %s\n".formatted(weapon.getKey(), weapon.getValue()));
                 if (pageSize == 0) break;
             }
-            CommandHandler.sendMessage(sender, stringBuilder.toString());
+            CommandHandler.sendMessage(sender, stringBuilder.substring(0,stringBuilder.length() - 1));
         }
     }
 
@@ -170,25 +170,18 @@ public class ShowCommand implements CommandHandler {
 
 
     private boolean checkArgs(Player sender, List<String> args) {
-        if (args.size() == 0) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.show.usage"));
-            return false;
-        }
         try {
-            if (args.size() == 1) {
-                return isExist(args.get(0));
+            if (args.size() == 0) {
+                throw new NumberFormatException();
+            } else if (args.size() == 1) {
+                if (!isExist(args.get(0))) throw new NumberFormatException();
             } else if (args.size() == 2) {
-                if (!isExist(args.get(0))) {
-                    return false;
-                }
+                if (!isExist(args.get(0))) throw new NumberFormatException();
                 Integer.parseInt(args.get(1));
             } else {
-                if (!isExist(args.get(0))) {
-                    return false;
-                }
+                if (!isExist(args.get(0))) throw new NumberFormatException();
                 Integer.parseInt(args.get(1));
                 Integer.parseInt(args.get(2));
-                return true;
             }
         } catch (NumberFormatException e) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.show.usage"));

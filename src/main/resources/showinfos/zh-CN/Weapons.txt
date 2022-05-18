@@ -1,157 +1,154 @@
-11101:Dull Blade
-11201:Silver Sword
-11301:Cool Steel
-11302:Harbinger of Dawn
-11303:Traveler's Handy Sword
-11304:Dark Iron Sword
-11305:Fillet Blade
-11306:Skyrider Sword
-11401:Favonius Sword
-11402:The Flute
-11403:Sacrificial Sword
-11404:Royal Longsword
-11405:Lion's Roar
-11406:Prototype Rancour
-11407:Iron Sting
-11408:Blackcliff Longsword
-11409:The Black Sword
-11410:The Alley Flash
+11101:无锋剑
+11201:银剑
+11301:冷刃
+11302:黎明神剑
+11303:旅行剑
+11304:暗铁剑
+11305:吃虎鱼刀
+11306:飞天御剑
+11401:西风剑
+11402:笛剑
+11403:祭礼剑
+11404:宗室长剑
+11405:匣里龙吟
+11406:试作斩岩
+11407:铁蜂刺
+11408:黑岩长剑
+11409:黑剑
+11410:暗巷闪光
 11411:
-11412:Sword of Descension
-11413:Festering Desire
-11414:Amenoma Kageuchi
-11415:Cinnabar Spindle
-11501:Aquila Favonia
-11502:Skyward Blade
-11503:Freedom-Sworn
-11504:Summit Shaper
-11505:Primordial Jade Cutter
-11506:Primordial Jade Cutter
-11507:One Side
+11412:降临之剑
+11413:腐殖之剑
+11414:天目影打刀
+11415:辰砂之纺锤
+11501:风鹰剑
+11502:天空之刃
+11503:苍古自由之誓
+11504:斫峰之刃
+11505:磐岩结绿
+11506:磐岩结绿
+11507:One Side (invalid)
 11508:
-11509:Mistsplitter Reforged
-11510:Haran Geppaku Futsu
-12101:Waster Greatsword
-12201:Old Merc's Pal
-12301:Ferrous Shadow
-12302:Bloodtainted Greatsword
-12303:White Iron Greatsword
-12304:Quartz
-12305:Debate Club
-12306:Skyrider Greatsword
-12401:Favonius Greatsword
-12402:The Bell
-12403:Sacrificial Greatsword
-12404:Royal Greatsword
-12405:Rainslasher
-12406:Prototype Archaic
-12407:Whiteblind
-12408:Blackcliff Slasher
-12409:Serpent Spine
-12410:Lithic Blade
-12411:Snow-Tombed Starsilver
-12412:Luxurious Sea-Lord
-12414:Katsuragikiri Nagamasa
-12416:Akuoumaru
-12501:Skyward Pride
-12502:Wolf's Gravestone
-12503:Song of Broken Pines
-12504:The Unforged
-12505:Primordial Jade Greatsword
-12506:The Other Side
+11509:雾切之回光
+11510:波乱月白经津
+12101:训练大剑
+12201:佣兵重剑
+12301:铁影阔剑
+12302:沐浴龙血的剑
+12303:白铁大剑
+12304:Quartz (invalid)
+12305:以理服人
+12306:飞天大御剑
+12401:西风大剑
+12402:钟剑
+12403:祭礼大剑
+12404:宗室大剑
+12405:雨裁
+12406:试作古华
+12407:白影剑
+12408:黑岩斩刀
+12409:螭骨剑
+12410:千岩古剑
+12411:雪葬的星银
+12412:衔珠海皇
+12414:桂木斩长正
+12416:恶王丸
+12501:天空之傲
+12502:狼的末路
+12503:松籁响起之时
+12504:无工之剑
+12505:Primordial Jade Greatsword (invalid)
+12506:The Other Side (invalid)
 12508:
 12509:
-12510:Redhorn Stonethresher
-13101:Beginner's Protector
-13201:Iron Point
-13301:White Tassel
-13302:Halberd
-13303:Black Tassel
-13304:The Flagstaff
-13401:Dragon's Bane
-13402:Prototype Starglitter
-13403:Crescent Pike
-13404:Blackcliff Pole
-13405:Deathmatch
-13406:Lithic Spear
-13407:Favonius Lance
-13408:Royal Spear
-13409:Dragonspine Spear
-13414:Kitain Cross Spear
-13415:"The Catch"
-13416:Wavebreaker's Fin
-13501:Staff of Homa
-13502:Skyward Spine
+12510:赤角石溃杵
+13101:新手长枪
+13201:铁尖枪
+13301:白缨枪
+13302:钺矛
+13303:黑缨枪
+13304:The Flagstaff (invalid)
+13401:匣里灭辰
+13402:试作星镰
+13403:流月针
+13404:黑岩刺枪
+13405:决斗之枪
+13406:千岩长枪
+13407:西风长枪
+13408:宗室猎枪
+13409:龙脊长枪
+13414:喜多院十文字
+13415:「渔获」
+13416:断浪长鳍
+13501:护摩之杖
+13502:天空之脊
 13503:
-13504:Vortex Vanquisher
-13505:Primordial Jade Winged-Spear
-13506:Deicide
-13507:Calamity Queller
-13509:Engulfing Lightning
-14101:Apprentice's Notes
-14201:Pocket Grimoire
-14301:Magic Guide
-14302:Thrilling Tales of Dragon Slayers
-14303:Otherworldly Story
-14304:Emerald Orb
-14305:Twin Nephrite
-14306:Amber Bead
-14401:Favonius Codex
-14402:The Widsith
-14403:Sacrificial Fragments
-14404:Royal Grimoire
-14405:Solar Pearl
-14406:Prototype Amber
-14407:Mappa Mare
-14408:Blackcliff Agate
-14409:Eye of Perception
-14410:Wine and Song
+13504:贯虹之槊
+13505:和璞鸢
+13506:Deicide (invalid)
+13507:息灾
+13509:薙草之稻光
+14101:学徒笔记
+14201:口袋魔导书
+14301:魔导绪论
+14302:讨龙英杰谭
+14303:异世界行记
+14304:翡玉法球
+14305:甲级宝珏
+14306:Amber Bead (invalid)
+14401:西风秘典
+14402:流浪乐章
+14403:祭礼残章
+14404:宗室秘法录
+14405:匣里日月
+14406:试作金珀
+14407:万国诸海图谱
+14408:黑岩绯玉
+14409:昭心
+14410:暗巷的酒与诗
 14411:
-14412:Frostbearer
-14413:Dodoco Tales
-14414:Hakushin Ring
-14415:Oathsworn Eye
-14501:Skyward Atlas
-14502:Lost Prayer to the Sacred Winds
-14503:Lost Ballade
-14504:Memory of Dust
-14505:Primordial Jade Regalia
-14506:Everlasting Moonglow
+14412:忍冬之果
+14413:嘟嘟可故事集
+14414:白辰之环
+14415:证誓之明瞳
+14501:天空之卷
+14502:四风原典
+14503:Lost Ballade (invalid)
+14504:尘世之锁
+14505:Primordial Jade Regalia (invalid)
+14506:不灭月华
 14508:
-14509:Kagura's Verity
-15101:Hunter's Bow
-15201:Seasoned Hunter's Bow
-15301:Raven Bow
-15302:Sharpshooter's Oath
-15303:Recurve Bow
-15304:Slingshot
-15305:Messenger
-15306:Ebony Bow
-15401:Favonius Warbow
-15402:The Stringless
-15403:Sacrificial Bow
-15404:Royal Bow
-15405:Rust
-15406:Prototype Crescent
-15407:Compound Bow
-15408:Blackcliff Warbow
-15409:The Viridescent Hunt
-15410:Alley Hunter
+14509:神乐之真意
+15101:猎弓
+15201:历练的猎弓
+15301:鸦羽弓
+15302:神射手之誓
+15303:反曲弓
+15304:弹弓
+15305:信使
+15306:Ebony Bow (invalid)
+15401:西风猎弓
+15402:绝弦
+15403:祭礼弓
+15404:宗室长弓
+15405:弓藏
+15406:试作澹月
+15407:钢轮弓
+15408:黑岩战弓
+15409:苍翠猎弓
+15410:暗巷猎手
 15411:
-15412:Mitternachts Waltz
-15413:Windblume Ode
-15414:Hamayumi
-15415:Predator
-15416:Mouun's Moon
-15501:Skyward Harp
-15502:Amos' Bow
-15503:Elegy for the End
-15504:Kunwu's Wyrmbane
-15505:Primordial Jade Vista
-15506:Mirror Breaker
-15507:Polar Star
+15412:幽夜华尔兹
+15413:风花之颂
+15414:破魔之弓
+15415:掠食者
+15416:曚云之月
+15501:天空之翼
+15502:阿莫斯之弓
+15503:终末嗟叹之诗
+15504:Kunwu's Wyrmbane (invalid)
+15505:Primordial Jade Vista (invalid)
+15506:Mirror Breaker (invalid)
+15507:冬极白星
 15508:
-15509:Thundering Pulse
-20001:
-20002:Initiate's Feather
-20004:Initiate's Flower
+15509:飞雷之弦振
