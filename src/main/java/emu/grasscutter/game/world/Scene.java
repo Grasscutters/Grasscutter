@@ -531,14 +531,14 @@ public class Scene {
 	public List<SceneGroup> playerMeetGroups(Player player, SceneBlock block){
 		int RANGE = 100;
 
-		var sceneGroups = SceneIndexManager.queryNeighbors(block.sceneGroupIndex, player.getPos(), RANGE);
+		List<SceneGroup> sceneGroups = SceneIndexManager.queryNeighbors(block.sceneGroupIndex, player.getPos(), RANGE);
 
-		var groups = new ArrayList<>(sceneGroups.stream()
-				.filter(group -> !scriptManager.getLoadedGroupSetPerBlock().get(block.id).contains(group) && group.getBusinessType() == 0)
+		List<SceneGroup> groups = sceneGroups.stream()
+				.filter(group -> !scriptManager.getLoadedGroupSetPerBlock().get(block.id).contains(group))
 				.peek(group -> scriptManager.getLoadedGroupSetPerBlock().get(block.id).add(group))
-				.toList());
+				.toList();
 
-		if(groups.size() == 0){
+		if (groups.size() == 0) {
 			return List.of();
 		}
 

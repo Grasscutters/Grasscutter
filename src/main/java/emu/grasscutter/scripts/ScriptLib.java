@@ -376,11 +376,14 @@ public class ScriptLib {
 		var configId = table.get("config_id").toint();
 
 		var group = getCurrentGroup();
-		if(group.isEmpty()){
+		
+		if (group.isEmpty()) {
 			return 1;
 		}
+		
 		var gadget = group.get().gadgets.get(configId);
 		var entity = getSceneScriptManager().createGadget(group.get().id, group.get().block_id, gadget);
+		
 		getSceneScriptManager().addEntity(entity);
 
 		return 0;

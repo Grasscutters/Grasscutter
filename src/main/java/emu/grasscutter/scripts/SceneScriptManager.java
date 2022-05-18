@@ -353,6 +353,9 @@ public class SceneScriptManager {
 		entity.setState(g.state);
 		entity.setPointType(g.point_type);
 		entity.buildContent();
+		
+		// Lua event
+		this.callEvent(EventType.EVENT_GADGET_CREATE, new ScriptArgs(entity.getConfigId()));
 
 		return entity;
 	}
@@ -390,32 +393,23 @@ public class SceneScriptManager {
 
 		this.getScriptMonsterSpawnService()
 				.onMonsterCreatedListener.forEach(action -> action.onNotify(entity));
+		
+		// Lua event
+		callEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs(entity.getConfigId()));
 
 		return entity;
 	}
 
 	public void addEntity(GameEntity gameEntity){
 		getScene().addEntity(gameEntity);
-		callCreateEvent(gameEntity);
 	}
+	
 	public void meetEntities(List<? extends GameEntity> gameEntity){
 		getScene().addEntities(gameEntity, VisionTypeOuterClass.VisionType.VISION_MEET);
-		gameEntity.forEach(this::callCreateEvent);
 	}
+	
 	public void addEntities(List<? extends GameEntity> gameEntity){
 		getScene().addEntities(gameEntity);
-		gameEntity.forEach(this::callCreateEvent);
-	}
-	public void callCreateEvent(GameEntity gameEntity){
-		if(!isInit){
-			return;
-		}
-		if(gameEntity instanceof EntityMonster entityMonster){
-			callEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs(entityMonster.getConfigId()));
-		}
-		if(gameEntity instanceof EntityGadget entityGadget){
-			this.callEvent(EventType.EVENT_GADGET_CREATE, new ScriptArgs(entityGadget.getConfigId()));
-		}
 	}
 
 	public PhTree<SceneBlock> getBlocksIndex() {
