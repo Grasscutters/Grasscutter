@@ -40,7 +40,6 @@ public final class Configuration extends ConfigContainer {
     public static final HTTP HTTP_INFO = config.server.http;
     public static final Game GAME_INFO = config.server.game;
     public static final Dispatch DISPATCH_INFO = config.server.dispatch;
-    public static final Proxy PROXY_INFO=config.server.proxy;
 
     public static final Encryption HTTP_ENCRYPTION = config.server.http.encryption;
     public static final Policies HTTP_POLICIES = config.server.http.policies;
@@ -62,10 +61,6 @@ public final class Configuration extends ConfigContainer {
 
     public static String RESOURCE(String path) {
         return Paths.get(RESOURCES_FOLDER, path).toString();
-    }
-
-    public static String KEY(String path) {
-        return Paths.get(KEYS_FOLDER, path).toString();
     }
 
     public static String PLUGIN() {

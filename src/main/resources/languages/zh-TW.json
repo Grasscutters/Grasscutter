@@ -335,9 +335,6 @@
       "success": "傳送 %s 到座標 %s,%s,%s ，場景為 %s 。",
       "description": "將玩家的位置傳送到你所指定的座標。"
     },
-    "tower": {
-      "unlock_done": "解鎖所有級別的深境螺旋已全部解鎖。"
-    },
     "weather": {
       "usage": "用法：weather <weatherId> [climateId]",
       "success": "已將當前天氣設定為 %s ，氣候則為 %s 。",
@@ -361,9 +358,6 @@
     "unlocktower": {
       "success": "解鎖完成。",
       "description": "解鎖所有級別的深境螺旋。"
-    },
-    "resetshop": {
-      "description": "重置商店刷新時間。"
     }
   },
   "gacha": {

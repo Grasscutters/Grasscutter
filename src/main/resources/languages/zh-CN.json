@@ -180,10 +180,6 @@
       "success": "已治疗所有角色。",
       "description": "治疗当前队伍的角色"
     },
-    "join": {
-      "usage": "用法：join <角色IDs> 例如\"join 10000038 10000039\"空格分开",
-      "description": "强制将角色加入到当前队伍中"
-    },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已将 [%s:%s] 踢出。",
       "server_kick_player": "正在踢出玩家 [%s:%s]...",
@@ -235,11 +231,6 @@
       "reload_start": "正在重载配置文件和数据。",
       "reload_done": "重载完成。",
       "description": "重载配置文件和数据"
-    },
-    "remove": {
-      "usage": "用法: remove [多个角色在队伍中的序号] 序号从1开始",
-      "invalid_index": "序号不合法，从1开始，最大值为队内角色数量",
-      "description": "强制将某个角色从当前队伍中移除。例如`remove 1 2`表示将1号和2号角色从队伍中移除"
     },
     "resetConst": {
       "reset_all": "重置所有角色的命座。",
@@ -330,6 +321,24 @@
       "q_skill_id": "元素爆发ID %s。",
       "description": "设置当前角色的天赋等级"
     },
+    "team": {
+      "usage": "用法: team <add|remove|set> [avatarId,...] [index|first|last|index-index,...]",
+      "invalid_usage": "无效用法",
+      "add_usage": "用法(add): team add <avatarId,...> [index]",
+      "invalid_index": "无效索引",
+      "add_too_much": "服务端仅允许你队伍里至多有%d名角色",
+      "failed_to_add_avatar": "无法根据id %s 添加角色",
+      "remove_usage": "用法(remove): team remove <index|first|last|index-index,...>",
+      "failed_parse_index": "无法解析索引: %s",
+      "remove_too_much": "你不能删除那么多角色，你的队伍列表将会变空",
+      "ignore_index": "忽略的索引列表: %s",
+      "set_usage": "用法(set): team set <index> <avatarId>",
+      "index_out_of_range": "你指定的索引超出了范围",
+      "failed_parse_avatar_id": "无法解析的角色id: %s",
+      "avatar_already_in_team": "角色已经在你的队伍中了",
+      "avatar_not_found": "无法找到该角色: %d",
+      "description": "手动修改你的队伍"
+    },
     "teleportAll": {
       "success": "已将所有玩家传送到你的位置。",
       "error": "你只能在多人游戏状态下执行此命令。",
@@ -342,9 +351,6 @@
       "invalid_position": "无效的位置。",
       "success": "传送 %s 到坐标 %s,%s,%s，场景为 %s。",
       "description": "改变指定玩家的位置"
-    },
-    "tower": {
-      "unlock_done": "深境回廊的所有层已全部解锁。"
     },
     "weather": {
       "usage": "用法：weather <天气ID> [气候ID]",
@@ -369,9 +375,6 @@
     "unlocktower": {
       "success": "解锁完成。",
       "description": "解锁深境螺旋的所有层"
-    },
-    "resetshop": {
-      "description": "重置商店刷新时间"
     }
   },
   "gacha": {
