@@ -37,7 +37,7 @@ valid_ip() {
 
 # Checks for supported installer(s) (only apt-get for now :(, might add pacman in the future)
 if is_command apt-get ; then
-        echo "Supported package manager found"
+        echo -e "Supported package manager found\n"
 else
         echo "No supported package manager found"
         exit
@@ -101,7 +101,7 @@ mv ./repo/data ./data
 mv ./repo/keys ./keys
 
 # Generate handbook/config
-echo "Please enter language when prompted (press enter/return to resume script)"
+echo "Please enter language when *NEXT* prompted (press enter/return to continue to language select)"
 read
 java -jar grasscutter.jar -handbook
 
@@ -186,12 +186,12 @@ cd ../
 mv ./certs/keystore.p12 ./keystore.p12
 echo "Done"
 
-echo "Asking Noelle to clean up..."
+echo -e "Asking Noelle to clean up...\n"
 rm -rf Grasscutter.zip resources.zip ./certs ./Grasscutter_Resources-main ./repo
-echo "All done!"
+echo -e "All done!\n"
 echo -e "You can now uninstall the following packages if you wish:\n$INSTALLER_DEPS"
-echo "-=-=-=-=-=--- !! IMPORTANT !! ---=-=-=-=-=-"
-echo "Please make sure that ports 443 and 22102 are OPEN"
+echo -e "-=-=-=-=-=--- !! IMPORTANT !! ---=-=-=-=-=-\n"
+echo "Please make sure that ports 443 and 22102 are OPEN (both tcp and udp)"
 echo -e "In order to run the server, run the following command:\nsudo java -jar grasscutter.jar"
 echo "You must run it using sudo as port 443 is a privileged port"
 echo "To play, use the IP you provided earlier ($SERVER_IP) via GrassClipper or Fiddler"
