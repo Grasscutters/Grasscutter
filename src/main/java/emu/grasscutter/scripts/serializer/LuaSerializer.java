@@ -87,6 +87,9 @@ public class LuaSerializer implements Serializer {
 
 			object = (T) constructorCache.get(type).newInstance();
 
+			if(table == null){
+				return object;
+			}
 			LuaValue[] keys = table.keys();
 			for (LuaValue k : keys) {
 				try {

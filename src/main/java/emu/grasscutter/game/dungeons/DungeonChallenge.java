@@ -138,7 +138,9 @@ public class DungeonChallenge {
 		getScene().getDungeonSettleObservers().forEach(o -> o.onDungeonSettle(getScene()));
 
 		if(!stage){
-			getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE, new ScriptArgs(this.isSuccess() ? 1 : 0));
+			getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE,
+					// TODO record the time in PARAM2 and used in action
+					new ScriptArgs(this.isSuccess() ? 1 : 0, 100));
 		}
 	}
 
