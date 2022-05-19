@@ -1,5 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
@@ -12,6 +13,8 @@ import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.PacketPlayerLoginRsp;
 import emu.grasscutter.server.packet.send.PacketTakeAchievementRewardReq;
 
+import static emu.grasscutter.Configuration.ACCOUNT;
+
 @Opcodes(PacketOpcodes.PlayerLoginReq) // Sends initial data packets
 public class HandlerPlayerLoginReq extends PacketHandler {
 	
@@ -21,7 +24,12 @@ public class HandlerPlayerLoginReq extends PacketHandler {
 		if (session.getAccount() == null) {
 			return;
 		}
-		
+
+		// Max players limit
+		if (ACCOUNT.maxPlayer > -1 && Grasscutter.getGameServer().getPlayers().size() >= ACCOUNT.maxPlayer) {
+			return;
+		}
+
 		// Parse request
 		PlayerLoginReq req = PlayerLoginReq.parseFrom(payload);
 		

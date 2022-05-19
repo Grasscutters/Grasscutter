@@ -88,49 +88,48 @@ public final class DefaultAuthenticators {
             
             var requestData = request.getTokenRequest();
             assert requestData != null;
-            
+
             boolean successfulLogin;
             String address = request.getRequest().ip();
+            String loggerMessage;
             int playerCount = Grasscutter.getGameServer().getPlayers().size();
 
             // Log the attempt.
             Grasscutter.getLogger().info(translate("messages.dispatch.account.login_token_attempt", address));
-            
-            // Get account from database.
-            Account account = DatabaseHelper.getAccountById(requestData.uid);
-            
-            // Check if account exists/token is valid.
-            successfulLogin = account != null && account.getSessionKey().equals(requestData.token);
-            
-            // Set response data.
-            if(successfulLogin) {
-                String loggerMessage;
 
-                if (ACCOUNT.maxPlayer <= -1 || playerCount < ACCOUNT.maxPlayer) {
+            if (ACCOUNT.maxPlayer <= -1 || playerCount < ACCOUNT.maxPlayer) {
+
+                // Get account from database.
+                Account account = DatabaseHelper.getAccountById(requestData.uid);
+
+                // Check if account exists/token is valid.
+                successfulLogin = account != null && account.getSessionKey().equals(requestData.token);
+
+                // Set response data.
+                if(successfulLogin) {
                     response.message = "OK";
                     response.data.account.uid = account.getId();
                     response.data.account.token = account.getSessionKey();
                     response.data.account.email = account.getEmail();
 
+                    // Log the login.
                     loggerMessage = translate("messages.dispatch.account.login_token_success", address, requestData.uid);
-
                 } else {
                     response.retcode = -201;
-                    response.message = translate("messages.dispatch.account.server_max_player_limit");
+                    response.message = translate("messages.dispatch.account.account_cache_error");
 
-                    loggerMessage = translate("messages.dispatch.account.login_max_player_limit", address);
+                    // Log the failure.
+                    loggerMessage = translate("messages.dispatch.account.login_token_error", address);
                 }
 
-                // Log the login.
-                Grasscutter.getLogger().info(loggerMessage);
             } else {
                 response.retcode = -201;
-                response.message = translate("messages.dispatch.account.account_cache_error");
-                
-                // Log the failure.
-                Grasscutter.getLogger().info(translate("messages.dispatch.account.login_token_error", address));
+                response.message = translate("messages.dispatch.account.server_max_player_limit");
+
+                loggerMessage = translate("messages.dispatch.account.login_max_player_limit", address);
             }
-            
+
+            Grasscutter.getLogger().info(loggerMessage);
             return response;
         }
     }
@@ -148,44 +147,41 @@ public final class DefaultAuthenticators {
             
             boolean successfulLogin;
             String address = request.getRequest().ip();
+            String loggerMessage;
             int playerCount = Grasscutter.getGameServer().getPlayers().size();
 
-            // Get account from database.
-            Account account = DatabaseHelper.getAccountById(loginData.uid);
-            
-            // Check if account exists/token is valid.
-            successfulLogin = account != null && account.getSessionKey().equals(loginData.token);
-            
-            // Set response data.
-            if(successfulLogin) {
-                String loggerMessage;
+            if (ACCOUNT.maxPlayer <= -1 || playerCount < ACCOUNT.maxPlayer) {
+                // Get account from database.
+                Account account = DatabaseHelper.getAccountById(loginData.uid);
 
-                if (ACCOUNT.maxPlayer <= -1 || playerCount < ACCOUNT.maxPlayer) {
+                // Check if account exists/token is valid.
+                successfulLogin = account != null && account.getSessionKey().equals(loginData.token);
+
+                // Set response data.
+                if(successfulLogin) {
                     response.message = "OK";
                     response.data.open_id = account.getId();
                     response.data.combo_id = "157795300";
                     response.data.combo_token = account.generateLoginToken();
 
+                    // Log the login.
                     loggerMessage = translate("messages.dispatch.account.combo_token_success", address);
 
                 } else {
                     response.retcode = -201;
-                    response.message = translate("messages.dispatch.account.server_max_player_limit");
+                    response.message = translate("messages.dispatch.account.session_key_error");
 
-                    loggerMessage = translate("messages.dispatch.account.login_max_player_limit", address);
+                    // Log the failure.
+                    loggerMessage = translate("messages.dispatch.account.combo_token_error", address);
                 }
-
-                // Log the login.
-                Grasscutter.getLogger().info(loggerMessage);
-
             } else {
                 response.retcode = -201;
-                response.message = translate("messages.dispatch.account.session_key_error");
-                
-                // Log the failure.
-                Grasscutter.getLogger().info(translate("messages.dispatch.account.combo_token_error", address));
+                response.message = translate("messages.dispatch.account.server_max_player_limit");
+
+                loggerMessage = translate("messages.dispatch.account.login_max_player_limit", address);
             }
-            
+
+            Grasscutter.getLogger().info(loggerMessage);
             return response;
         }
     }
