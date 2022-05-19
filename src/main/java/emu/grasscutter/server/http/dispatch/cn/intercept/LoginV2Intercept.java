@@ -7,24 +7,24 @@ import emu.grasscutter.server.http.dispatch.cn.util.ProxyUtil;
 import io.netty.channel.Channel;
 
 
-
 /**
- * 日志上传拦截
+ * token登录拦截(session)
+ * 测试例子（post）
+ * https://hk4e-sdk.mihoyo.com/hk4e_cn/combo/granter/login/v2/login?
  *
  * @author litht
- * @date 2022/05/18
- * 测试例子（post）
- * https://log-upload.mihoyo.com/sdk/dataUpload
+ * @date 2022/05/19
  */
-public class LogUploadIntercept extends HttpProxyIntercept {
+public class LoginV2Intercept extends HttpProxyIntercept {
     @Override
     public void beforeConnect(Channel clientChannel, HttpProxyInterceptPipeline pipeline) throws Exception {
-
-        /* 拦截日志上传，重定向到我们自己的服务器 */
-        if (pipeline.getRequestProto().getHost().contains(ProxyConstant.LOG_UPLOAD_HOST)) {
-            ProxyUtil.forwardToGrasscutter(pipeline);
+        if (pipeline.getRequestProto().getHost().contains(ProxyConstant.HK4E_SDK_HOST)) {
+            if (pipeline.getHttpRequest().uri().contains(ProxyConstant.HK4E_CN_COMBO_GRANTER_LOGIN_V2_LOGIN_PATH)) {
+                ProxyUtil.forwardToGrasscutter(pipeline);
+            }
         }
         super.beforeConnect(clientChannel, pipeline);
-
     }
+
+
 }

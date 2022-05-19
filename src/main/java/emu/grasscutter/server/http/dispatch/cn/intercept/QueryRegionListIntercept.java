@@ -5,8 +5,8 @@ import com.github.monkeywie.proxyee.intercept.common.FullResponseIntercept;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.QueryRegionListHttpRsp;
+import emu.grasscutter.server.http.dispatch.cn.ProxyConstant;
 import emu.grasscutter.utils.Crypto;
-import io.netty.channel.Channel;
 import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.HttpResponse;
@@ -14,31 +14,24 @@ import io.netty.handler.codec.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
-import static emu.grasscutter.server.http.dispatch.cn.ProxyConstant.DISPATCH_CN_GLOBAL_HOST;
-import static emu.grasscutter.server.http.dispatch.cn.ProxyConstant.QUERY_REGION_LIST_PATH;
+
 
 /**
  * @author litht
  * 处理query_region_list请求
  * @date 2022/05/18
- * 请求例子
+ * 请求例子(get)
  * https://dispatchcnglobal.yuanshen.com/query_region_list?version=CNRELWin2.6.0&lang=2&platform=3&binary=1&time=302&channel_id=1&sub_channel_id=2
  */
 
 public class QueryRegionListIntercept extends FullResponseIntercept {
     @Override
     public boolean match(HttpRequest httpRequest, HttpResponse httpResponse, HttpProxyInterceptPipeline pipeline) {
-        if (pipeline.getRequestProto().getHost().equals(DISPATCH_CN_GLOBAL_HOST) &&
-                httpRequest.uri().indexOf(QUERY_REGION_LIST_PATH) != -1) {
+        if (pipeline.getRequestProto().getHost().equals(ProxyConstant.DISPATCH_CN_GLOBAL_HOST) &&
+                httpRequest.uri().indexOf(ProxyConstant.QUERY_REGION_LIST_PATH) != -1) {
             return true;
         }
         return false;
-    }
-
-    @Override
-    public void beforeConnect(Channel clientChannel, HttpProxyInterceptPipeline pipeline) throws Exception {
-        System.out.println("3");
-        pipeline.beforeConnect(clientChannel);
     }
 
     @Override

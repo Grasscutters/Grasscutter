@@ -7,24 +7,22 @@ import emu.grasscutter.server.http.dispatch.cn.util.ProxyUtil;
 import io.netty.channel.Channel;
 
 
-
 /**
- * 日志上传拦截
+ * 账户风险api检查拦截(验证码)
  *
  * @author litht
- * @date 2022/05/18
+ * @date 2022/05/19
  * 测试例子（post）
- * https://log-upload.mihoyo.com/sdk/dataUpload
+ * https://gameapi-account.mihoyo.com/account/risky/api/check?
  */
-public class LogUploadIntercept extends HttpProxyIntercept {
+public class AccountRiskyApiCheckIntercept extends HttpProxyIntercept {
     @Override
     public void beforeConnect(Channel clientChannel, HttpProxyInterceptPipeline pipeline) throws Exception {
-
-        /* 拦截日志上传，重定向到我们自己的服务器 */
-        if (pipeline.getRequestProto().getHost().contains(ProxyConstant.LOG_UPLOAD_HOST)) {
-            ProxyUtil.forwardToGrasscutter(pipeline);
+        if (pipeline.getRequestProto().getHost().contains(ProxyConstant.GAMEAPI_ACCOUNT_HOST)) {
+            if (pipeline.getHttpRequest().uri().contains(ProxyConstant.ACCOUNT_RISKY_API_CHECK_PATH)) {
+                ProxyUtil.forwardToGrasscutter(pipeline);
+            }
         }
         super.beforeConnect(clientChannel, pipeline);
-
     }
 }

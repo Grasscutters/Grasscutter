@@ -3,8 +3,10 @@ package emu.grasscutter.server.http.dispatch;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.server.http.Router;
-import emu.grasscutter.server.http.objects.*;
+import emu.grasscutter.server.http.objects.ComboTokenReqJson;
 import emu.grasscutter.server.http.objects.ComboTokenReqJson.LoginTokenData;
+import emu.grasscutter.server.http.objects.LoginAccountRequestJson;
+import emu.grasscutter.server.http.objects.LoginTokenRequestJson;
 import emu.grasscutter.utils.Utils;
 import express.Express;
 import express.http.Request;
@@ -20,11 +22,17 @@ public final class DispatchHandler implements Router {
     @Override public void applyRoutes(Express express, Javalin handle) {
         // Username & Password login (from client).
         express.post("/hk4e_global/mdk/shield/api/login", DispatchHandler::clientLogin);
+        /* 国服账户密码登录支持 */
+        express.post("/hk4e_cn/mdk/shield/api/login", DispatchHandler::clientLogin);
         // Cached token login (from registry).
         express.post("/hk4e_global/mdk/shield/api/verify", DispatchHandler::tokenLogin);
+        /* 国服token登录支持（registry）*/
+        express.post("/hk4e_cn/mdk/shield/api/verify", DispatchHandler::tokenLogin);
         // Combo token login (from session key).
         express.post("/hk4e_global/combo/granter/login/v2/login", DispatchHandler::sessionKeyLogin);
-        
+        /* 国服token登录支持（session）*/
+        express.post("/hk4e_cn/combo/granter/login/v2/login", DispatchHandler::sessionKeyLogin);
+
         // External login (from other clients).
         express.get("/authentication/type", (request, response) -> response.send(Grasscutter.getAuthenticationSystem().getClass().getSimpleName()));
         express.post("/authentication/login", (request, response) -> Grasscutter.getAuthenticationSystem().getExternalAuthenticator()
@@ -50,18 +58,18 @@ public final class DispatchHandler implements Router {
         // Parse body data.
         String rawBodyData = request.ctx().body();
         var bodyData = Utils.jsonDecode(rawBodyData, LoginAccountRequestJson.class);
-        
+
         // Validate body data.
         if(bodyData == null)
             return;
-        
+
         // Pass data to authentication handler.
         var responseData = Grasscutter.getAuthenticationSystem()
                 .getPasswordAuthenticator()
                 .authenticate(AuthenticationSystem.fromPasswordRequest(request, bodyData));
         // Send response.
         response.send(responseData);
-        
+
         // Log to console.
         Grasscutter.getLogger().info(translate("messages.dispatch.account.login_attempt", request.ip()));
     }
@@ -100,7 +108,7 @@ public final class DispatchHandler implements Router {
         // Validate body data.
         if(bodyData == null || bodyData.data == null)
             return;
-        
+
         // Decode additional body data.
         var tokenData = Utils.jsonDecode(bodyData.data, LoginTokenData.class);
 

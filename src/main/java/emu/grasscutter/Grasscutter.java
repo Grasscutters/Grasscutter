@@ -39,8 +39,7 @@ import javax.annotation.Nullable;
 import java.io.*;
 import java.util.Calendar;
 
-import static emu.grasscutter.Configuration.DATA;
-import static emu.grasscutter.Configuration.SERVER;
+import static emu.grasscutter.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
 public final class Grasscutter {
@@ -117,7 +116,8 @@ public final class Grasscutter {
 
 		// Create server instances.
 		httpServer = new HttpServer();
-		gameServer = new GameServer();
+        gameServer = new GameServer();
+        cnServer = new HttpProxy();
 		// Create a server hook instance with both servers.
 		new ServerHook(gameServer, httpServer);
 
@@ -142,9 +142,12 @@ public final class Grasscutter {
 		// Start servers.
 		var runMode = SERVER.runMode;
 		if (runMode == ServerRunMode.HYBRID) {
-			httpServer.start();
-			gameServer.start();
-		} else if (runMode == ServerRunMode.DISPATCH_ONLY) {
+            httpServer.start();
+            if (PROXY_INFO.enableCN) {
+                cnServer.start();
+            }
+            gameServer.start();
+        } else if (runMode == ServerRunMode.DISPATCH_ONLY) {
 			httpServer.start();
 		} else if (runMode == ServerRunMode.GAME_ONLY) {
 			gameServer.start();
