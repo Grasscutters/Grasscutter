@@ -7,8 +7,10 @@ import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 
 import java.io.*;
+import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import static emu.grasscutter.Configuration.DATA;
 
@@ -46,17 +48,18 @@ public class DataLoader {
     }
 
     public static void CheckAllFiles() {
-
+    	String pathSplitter = "defaults" + Pattern.quote(FileSystems.getDefault().getSeparator()) + "data" + Pattern.quote(FileSystems.getDefault().getSeparator());
+    	
         try {
             List<Path> filenames = FileUtils.getPathsFromResource("/defaults/data/");
 
             for (Path file : filenames) {
-                String relativePath = String.valueOf(file).split("/defaults/data/")[1];
+                String relativePath = String.valueOf(file).split(pathSplitter)[1];
 
                 CheckAndCopyData(relativePath);
             }
         } catch (Exception e) {
-            Grasscutter.getLogger().error("An error occurred while trying to check the data folder. \n" + e);
+            Grasscutter.getLogger().error("An error occurred while trying to check the data folder. \n", e);
         }
 
         GenerateGachaMappings();
