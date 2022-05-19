@@ -10,12 +10,11 @@ import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.Configuration.SCRIPT;
 
 @ToString
 @Setter
@@ -40,6 +39,7 @@ public class SceneGroup {
 
 	private transient boolean loaded; // Not an actual variable in the scripts either
 	private transient CompiledScript script;
+	private transient Bindings bindings;
 
 	public boolean isLoaded() {
 		return loaded;
@@ -65,12 +65,18 @@ public class SceneGroup {
 		return suites.get(index - 1);
 	}
 
-	public SceneGroup load(int sceneId, Bindings bindings){
+	public Bindings getBindings() {
+		return bindings;
+	}
+
+	public SceneGroup load(int sceneId){
 		if(loaded){
 			return this;
 		}
 		// Set flag here so if there is no script, we dont call this function over and over again.
 		setLoaded(true);
+
+		this.bindings = ScriptLoader.getEngine().createBindings();
 
 		CompiledScript cs = ScriptLoader.getScriptByPath(
 				SCRIPT("Scene/" + sceneId + "/scene" + sceneId + "_group" + id + "." + ScriptLoader.getScriptType()));

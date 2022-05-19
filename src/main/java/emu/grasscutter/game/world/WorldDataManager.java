@@ -26,7 +26,7 @@ public class WorldDataManager {
     }
 
     public synchronized void load(){
-    	try(InputStream is = DataLoader.load("ChestReward.json", false); InputStreamReader isr = new InputStreamReader(is)) {
+    	try(InputStream is = DataLoader.load("ChestReward.json"); InputStreamReader isr = new InputStreamReader(is)) {
             List<ChestReward> chestReward = Grasscutter.getGsonFactory().fromJson(
             		isr,
                     TypeToken.getParameterized(List.class, ChestReward.class).getType());

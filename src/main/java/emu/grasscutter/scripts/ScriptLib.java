@@ -10,6 +10,7 @@ import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.packet.send.PacketCanUseSkillNotify;
 import emu.grasscutter.server.packet.send.PacketGadgetStateNotify;
 import emu.grasscutter.server.packet.send.PacketWorktopOptionNotify;
+import io.netty.util.concurrent.FastThreadLocal;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.slf4j.Logger;
@@ -20,15 +21,24 @@ import java.util.Optional;
 
 public class ScriptLib {
 	public static final Logger logger = LoggerFactory.getLogger(ScriptLib.class);
-	private final SceneScriptManager sceneScriptManager;
-	
-	public ScriptLib(SceneScriptManager sceneScriptManager) {
-		this.sceneScriptManager = sceneScriptManager;
-		this.currentGroup = new ThreadLocal<>();
+	private final FastThreadLocal<SceneScriptManager> sceneScriptManager;
+	private final FastThreadLocal<SceneGroup> currentGroup;
+	public ScriptLib() {
+		this.sceneScriptManager = new FastThreadLocal<>();
+		this.currentGroup = new FastThreadLocal<>();
+	}
+
+	public void setSceneScriptManager(SceneScriptManager sceneScriptManager){
+		this.sceneScriptManager.set(sceneScriptManager);
+	}
+
+	public void removeSceneScriptManager(){
+		this.sceneScriptManager.remove();
 	}
 
 	public SceneScriptManager getSceneScriptManager() {
-		return sceneScriptManager;
+		// normally not null
+		return Optional.of(sceneScriptManager.get()).get();
 	}
 
 	private String printTable(LuaTable table){
@@ -40,13 +50,11 @@ public class ScriptLib {
 		sb.append("}");
 		return sb.toString();
 	}
-	private final ThreadLocal<SceneGroup> currentGroup;
 	public void setCurrentGroup(SceneGroup currentGroup){
-		logger.debug("current {}", currentGroup);
 		this.currentGroup.set(currentGroup);
 	}
 	public Optional<SceneGroup> getCurrentGroup(){
-		return Optional.ofNullable(this.currentGroup.get());
+		return Optional.of(this.currentGroup.get());
 	}
 	public void removeCurrentGroup(){
 		this.currentGroup.remove();
