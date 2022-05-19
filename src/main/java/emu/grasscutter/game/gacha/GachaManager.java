@@ -82,7 +82,7 @@ public class GachaManager {
 			List<GachaBanner> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, GachaBanner.class).getType());
 			if(banners.size() > 0) {
 				for (GachaBanner banner : banners) {
-					getGachaBanners().put(banner.getGachaType(), banner);
+					getGachaBanners().put(banner.getScheduleId(), banner);
 				}
 				Grasscutter.getLogger().info("Banners successfully loaded.");
 
@@ -236,7 +236,7 @@ public class GachaManager {
 		};
 	}
 	
-	public synchronized void doPulls(Player player, int gachaType, int times) {
+	public synchronized void doPulls(Player player, int scheduleId, int times) {
 		// Sanity check
 		if (times != 10 && times != 1) {
 			return;
@@ -248,7 +248,7 @@ public class GachaManager {
 		}
 		
 		// Get banner
-		GachaBanner banner = this.getGachaBanners().get(gachaType);
+		GachaBanner banner = this.getGachaBanners().get(scheduleId);
 		if (banner == null) {
 			player.sendPacket(new PacketDoGachaRsp());
 			return;
@@ -285,7 +285,7 @@ public class GachaManager {
 			}
 
 			// Write gacha record
-			GachaRecord gachaRecord = new GachaRecord(itemId, player.getUid(), gachaType);
+			GachaRecord gachaRecord = new GachaRecord(itemId, player.getUid(), banner.getGachaType());
 			DatabaseHelper.saveGachaRecord(gachaRecord);
 			
 			// Create gacha item

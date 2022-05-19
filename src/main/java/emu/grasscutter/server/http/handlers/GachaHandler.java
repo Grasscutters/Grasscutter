@@ -104,9 +104,9 @@ public final class GachaHandler implements Router {
                 .replace("{{LANGUAGE}}", Utils.getLanguageCode(account.getLocale()));
 
         // Get the banner info for the banner we want.
-        int gachaType = Integer.parseInt(request.query("gachaType"));
+        int scheduleId = Integer.parseInt(request.query("scheduleId"));
         GachaManager manager = Grasscutter.getGameServer().getGachaManager();
-        GachaBanner banner = manager.getGachaBanners().get(gachaType);
+        GachaBanner banner = manager.getGachaBanners().get(scheduleId);
 
         // Add 5-star items.
         Set<String> fiveStarItems = new LinkedHashSet<>();
