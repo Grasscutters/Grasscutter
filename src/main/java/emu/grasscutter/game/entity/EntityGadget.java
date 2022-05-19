@@ -28,6 +28,8 @@ import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.net.proto.WorktopInfoOuterClass.WorktopInfo;
+import emu.grasscutter.scripts.constants.EventType;
+import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketGadgetStateNotify;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
@@ -137,6 +139,12 @@ public class EntityGadget extends EntityBaseGadget {
 	@Override
 	public Int2FloatOpenHashMap getFightProperties() {
 		return null;
+	}
+	
+	@Override
+	public void onCreate() {
+		// Lua event
+		getScene().getScriptManager().callEvent(EventType.EVENT_GADGET_CREATE, new ScriptArgs(this.getConfigId()));
 	}
 
 	@Override

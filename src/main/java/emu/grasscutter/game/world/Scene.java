@@ -311,6 +311,7 @@ public class Scene {
 	
 	private void addEntityDirectly(GameEntity entity) {
 		getEntities().put(entity.getId(), entity);
+		entity.onCreate(); // Call entity create event
 	}
 	
 	public synchronized void addEntity(GameEntity entity) {

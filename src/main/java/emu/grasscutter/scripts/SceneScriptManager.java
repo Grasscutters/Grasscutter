@@ -371,9 +371,6 @@ public class SceneScriptManager {
 		this.getScriptMonsterSpawnService()
 				.onMonsterCreatedListener.forEach(action -> action.onNotify(entity));
 		
-		// Lua event
-		callEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs(entity.getConfigId()));
-
 		return entity;
 	}
 

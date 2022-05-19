@@ -109,6 +109,12 @@ public class EntityMonster extends GameEntity {
 	public void setPoseId(int poseId) {
 		this.poseId = poseId;
 	}
+	
+	@Override
+	public void onCreate() {
+		// Lua event
+		getScene().getScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs(this.getConfigId()));
+	}
 
 	@Override
 	public void onDeath(int killerId) {
