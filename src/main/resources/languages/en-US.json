@@ -297,7 +297,7 @@
       "description": "Sets your world level (Relog to see proper effects)"
     },
     "show": {
-      "usage": "Usage: show <avatars(avt),artifacts(art),talents(tl),weapons(wp)> pageNo(1,+∞) pageSize(10,+∞) [name]",
+      "usage": "Usage: show <avatars(avt),artifacts(art),talents(tl),weapons(wp)> [pageNo(1,+∞),pageSize(10,+∞),name]",
       "avatars_title": "Avatars Info: (pageNo: %s, pageSize: %s, maxPageNo: %s, total: %s)\n",
       "artifacts_title": "Artifacts Info: (pageNo: %s, pageSize: %s, maxPageNo: %s, total: %s)\n",
       "talents_title": "Talents Info: (pageNo: %s, pageSize: %s, maxPageNo: %s, total: %s)\n",

@@ -248,7 +248,7 @@
       "invalid_world_level": "Invalid world level."
     },
     "show": {
-      "usage": "Użycie: show <avatars(avt),artifacts(art),talents(tl),weapons(wp)> stronaNo(1,+∞) rozmiarStrony(10,+∞) [nazwa]",
+      "usage": "Użycie: show <avatars(avt),artifacts(art),talents(tl),weapons(wp)> [stronaNo(1,+∞),rozmiarStrony(10,+∞),nazwa]",
       "avatars_title": "Informacje o awatarach: (stronaNo: %s, rozmiarStrony: %s, maxStronaNo: %s, łączny: %s)\n",
       "artifacts_title": "Informacje o artefaktach: (stronaNo: %s, rozmiarStrony: %s, maxStronaNo: %s, łączny: %s)\n",
       "talents_title": "Informacje o talentach: (stronaNo: %s, rozmiarStrony: %s, maxStronaNo: %s, łączny: %s)\n",

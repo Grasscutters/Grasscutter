@@ -16,7 +16,7 @@ import java.util.*;
 import static emu.grasscutter.utils.Language.translate;
 import static emu.grasscutter.utils.ShowInfosUtil.InfoCategory.*;
 
-@Command(label = "show", usage = "show <avatars(avt),artifacts(art),talents(tl),weapons(wp)> pageNo(1,+∞) pageSize(10,+∞) [name]",
+@Command(label = "show", usage = "show <avatars(avt),artifacts(art),talents(tl),weapons(wp)> [pageNo(1,+∞),pageSize(10,+∞),name]",
         permission = "player.show", permissionTargeted = "player.show.others", description = "commands.show.description")
 public class ShowCommand implements CommandHandler {
 
@@ -29,13 +29,10 @@ public class ShowCommand implements CommandHandler {
 
         // toTalentsFile(targetPlayer);
 
-
-        if (!checkArgs(sender, args)) {
+        StringBuilder stringBuilder = new StringBuilder();
+        if (!checkArgs(sender, args, stringBuilder)) {
             return;
         }
-
-
-        StringBuilder stringBuilder = new StringBuilder();
 
         PageInfo pageInfo = new PageInfo(args);
         int pageSize = pageInfo.getPageSize();
@@ -44,17 +41,21 @@ public class ShowCommand implements CommandHandler {
 
         Locale locale = targetPlayer.getAccount().getLocale();
 
-        String name = args.size() > 3 ? args.get(3).toLowerCase(locale) : null;
+        if (stringBuilder.isEmpty() && args.size() > 3) {
+            stringBuilder.append(args.get(3).toLowerCase(locale));
+        }
+        final String filterName = stringBuilder.toString();
+        stringBuilder.replace(0, stringBuilder.length(), "");
 
         String langCode = Utils.getLanguageCode(locale);
 
         if (existAvatars(item)) {
             List<Map.Entry<Integer, String>> avatars = ShowInfosUtil.getShowInfoMap(langCode, AVATARS).entrySet().stream().filter(entry -> {
-                if (name == null) {
+                if (filterName.isBlank()) {
                     return true;
                 }
                 if (entry.getValue() != null) {
-                    return entry.getValue().toLowerCase(locale).contains(name);
+                    return entry.getValue().toLowerCase(locale).contains(filterName);
                 }
                 return true;
             }).toList();
@@ -67,11 +68,11 @@ public class ShowCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, stringBuilder.substring(0,stringBuilder.length() - 1));
         } else if (existArtifacts(item)) {
             List<Map.Entry<Integer, String>> artifacts = ShowInfosUtil.getShowInfoMap(langCode, ARTIFACTS).entrySet().stream().filter(entry -> {
-                if (name == null) {
+                if (filterName.isBlank()) {
                     return true;
                 }
                 if (entry.getValue() != null) {
-                    return entry.getValue().toLowerCase(locale).contains(name);
+                    return entry.getValue().toLowerCase(locale).contains(filterName);
                 }
                 return true;
             }).toList();
@@ -84,11 +85,11 @@ public class ShowCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, stringBuilder.substring(0,stringBuilder.length() - 1));
         } else if (existTalents(item)) {
             List<Map.Entry<Integer, String>> avatarSkillData = ShowInfosUtil.getShowInfoMap(langCode, TALENTS).entrySet().stream().filter(entry -> {
-                if (name == null) {
+                if (filterName.isBlank()) {
                     return true;
                 }
                 if (entry.getValue() != null) {
-                    return entry.getValue().toLowerCase(locale).contains(name);
+                    return entry.getValue().toLowerCase(locale).contains(filterName);
                 }
                 return true;
             }).toList();
@@ -101,11 +102,11 @@ public class ShowCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, stringBuilder.substring(0,stringBuilder.length() - 1));
         } else if (existWeapons(item)) {
             List<Map.Entry<Integer, String>> weapons = ShowInfosUtil.getShowInfoMap(langCode, WEAPONS).entrySet().stream().filter(entry -> {
-                if (name == null) {
+                if (filterName.isBlank()) {
                     return true;
                 }
                 if (entry.getValue() != null) {
-                    return entry.getValue().toLowerCase(locale).contains(name);
+                    return entry.getValue().toLowerCase(locale).contains(filterName);
                 }
                 return true;
             }).toList();
@@ -169,21 +170,34 @@ public class ShowCommand implements CommandHandler {
 
 
 
-    private boolean checkArgs(Player sender, List<String> args) {
+    private boolean checkArgs(Player sender, List<String> args, StringBuilder stringBuilder) {
         try {
+            Locale locale = sender.getAccount().getLocale();
             if (args.size() == 0) {
-                throw new NumberFormatException();
+                throw new Throwable();
             } else if (args.size() == 1) {
-                if (!isExist(args.get(0))) throw new NumberFormatException();
+                if (!isExist(args.get(0))) throw new Throwable();
             } else if (args.size() == 2) {
-                if (!isExist(args.get(0))) throw new NumberFormatException();
-                Integer.parseInt(args.get(1));
+                if (!isExist(args.get(0))) throw new Throwable();
+                try {
+                    Integer.parseInt(args.get(1));
+                } catch (NumberFormatException e) {
+                    stringBuilder.append(args.get(1).toLowerCase(locale));
+                }
             } else {
-                if (!isExist(args.get(0))) throw new NumberFormatException();
-                Integer.parseInt(args.get(1));
-                Integer.parseInt(args.get(2));
+                if (!isExist(args.get(0))) throw new Throwable();
+                try {
+                    Integer.parseInt(args.get(1));
+                } catch (NumberFormatException e) {
+                    stringBuilder.append(args.get(1).toLowerCase(locale));
+                }
+                try {
+                    Integer.parseInt(args.get(2));
+                } catch (NumberFormatException e) {
+                    stringBuilder.append(args.get(2).toLowerCase(locale));
+                }
             }
-        } catch (NumberFormatException e) {
+        } catch (Throwable e) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.show.usage"));
             return false;
         }

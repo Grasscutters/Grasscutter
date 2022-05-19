@@ -296,7 +296,7 @@
       "description": "设置世界等级，执行命令后需重新登录以生效"
     },
     "show": {
-      "usage": "用法：show <avatars(avt),artifacts(art),talents(tl),weapons(wp)> 页码(1,+∞) 页面大小(10,+∞) [名称]",
+      "usage": "用法：show <avatars(avt),artifacts(art),talents(tl),weapons(wp)> [页码(1,+∞),页面大小(10,+∞),名称]",
       "avatars_title": "角色信息：（页码：%s，页面大小：%s，最大页码：%s，总数：%s）\n",
       "artifacts_title": "圣遗物信息：（页码：%s，页面大小：%s，最大页码：%s，总数：%s）\n",
       "talents_title": "天赋信息：（页码：%s，页面大小：%s，最大页码：%s，总数：%s）\n",
