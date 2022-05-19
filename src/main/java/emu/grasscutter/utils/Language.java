@@ -116,32 +116,28 @@ public final class Language {
     private static LanguageStreamDescription getLanguageFileDescription(String languageCode, String fallbackLanguageCode) {
         var fileName = languageCode + ".json";
         var fallback = fallbackLanguageCode + ".json";
-
-        String actualLanguageCode = languageCode;
-        if (cachedLanguages.containsKey(actualLanguageCode)) {
-            return new LanguageStreamDescription(actualLanguageCode, null);
-        }
         
+        String actualLanguageCode = languageCode;
         InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
 
         if (file == null) { // Provided fallback language.
+            Grasscutter.getLogger().warn("Failed to load language file: " + fileName + ", falling back to: " + fallback);
             actualLanguageCode = fallbackLanguageCode;
             if (cachedLanguages.containsKey(actualLanguageCode)) {
                 return new LanguageStreamDescription(actualLanguageCode, null);
             }
             
             file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
-            Grasscutter.getLogger().warn("Failed to load language file: " + fileName + ", falling back to: " + fallback);
         }
 
         if(file == null) { // Fallback the fallback language.
+            Grasscutter.getLogger().warn("Failed to load language file: " + fallback + ", falling back to: en-US.json");
             actualLanguageCode = "en-US";
             if (cachedLanguages.containsKey(actualLanguageCode)) {
                 return new LanguageStreamDescription(actualLanguageCode, null);
             }
             
             file = Grasscutter.class.getResourceAsStream("/languages/en-US.json");
-            Grasscutter.getLogger().warn("Failed to load language file: " + fallback + ", falling back to: en-US.json");
         }
 
         if(file == null)
@@ -164,7 +160,9 @@ public final class Language {
         JsonObject object = this.languageData;
 
         int index = 0;
-        String result = "This value does not exist. Please report this to the Discord: " + key;
+        String valueNotFoundPattern = "This value does not exist. Please report this to the Discord: ";
+        String result = valueNotFoundPattern + key;
+        boolean isValueFound = false;
 
         while (true) {
             if(index == keys.length) break;
@@ -175,9 +173,17 @@ public final class Language {
                 if(element.isJsonObject())
                     object = element.getAsJsonObject();
                 else {
+                    isValueFound = true;
                     result = element.getAsString(); break;
                 }
             } else break;
+        }
+
+        if (!isValueFound && !languageCode.equals("en-US")) {
+            var englishValue = Grasscutter.getLanguage("en-US").get(key);
+            if (!englishValue.contains(valueNotFoundPattern)) {
+                result += "\nhere is english version:\n" + englishValue;
+            }
         }
         
         this.cachedTranslations.put(key, result); return result;

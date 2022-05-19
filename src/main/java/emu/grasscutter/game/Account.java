@@ -1,14 +1,12 @@
 package emu.grasscutter.game;
 
 import dev.morphia.annotations.*;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
+import java.util.stream.Stream;
 
 import org.bson.Document;
 
@@ -144,18 +142,24 @@ public class Account {
 	}
 
 	public boolean hasPermission(String permission) {
-		if (this.permissions.contains(permission) || this.permissions.contains("*")) {
-			return true;
-		}
+		if(this.permissions.contains("*") && this.permissions.size() == 1) return true;
+
+		// Add default permissions if it doesn't exist
+		List<String> permissions = Stream.of(this.permissions, Arrays.asList(ACCOUNT.defaultPermissions))
+				.flatMap(Collection::stream)
+				.distinct().toList();
+
+		if (permissions.contains(permission)) return true;
+
 		String[] permissionParts = permission.split("\\.");
-		for (String p : this.permissions) {
-			if (permissionMatchesWildcard(p, permissionParts)) {
-				return true;
-			}
+		for (String p : permissions) {
+			if (p.startsWith("-") && permissionMatchesWildcard(p.substring(1), permissionParts)) return false;
+			if (permissionMatchesWildcard(p, permissionParts)) return true;
 		}
-		return false;
+
+		return permissions.contains("*");
 	}
-	
+
 	public boolean removePermission(String permission) {
 		return this.permissions.remove(permission);
 	}

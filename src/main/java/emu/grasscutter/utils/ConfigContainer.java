@@ -2,6 +2,8 @@ package emu.grasscutter.utils;
 
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerDebugMode;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 
 import java.io.FileReader;
 import java.lang.reflect.Field;
@@ -15,7 +17,7 @@ import static emu.grasscutter.Grasscutter.config;
  */
 public class ConfigContainer {
     private static int version() {
-        return 1;
+        return 3;
     }
 
     /**
@@ -69,15 +71,19 @@ public class ConfigContainer {
     /* Option containers. */
 
     public static class Database {
-        public String connectionUri = "mongodb://localhost:27017";
-        public String collection = "grasscutter";
+        public DataStore server = new DataStore();
+        public DataStore game = new DataStore();
+        
+        public static class DataStore {
+            public String connectionUri = "mongodb://localhost:27017";
+            public String collection = "grasscutter";
+        }
     }
 
     public static class Structure {
         public String resources = "./resources/";
         public String data = "./data/";
         public String packets = "./packets/";
-        public String keys = "./keys/";
         public String scripts = "./resources/scripts/";
         public String plugins = "./plugins/";
 
@@ -86,16 +92,19 @@ public class ConfigContainer {
     }
 
     public static class Server {
-        public Grasscutter.ServerDebugMode debugLevel = Grasscutter.ServerDebugMode.NONE;
-        public Grasscutter.ServerRunMode runMode = Grasscutter.ServerRunMode.HYBRID;
+        public ServerDebugMode debugLevel = ServerDebugMode.NONE;
+        public ServerRunMode runMode = ServerRunMode.HYBRID;
 
-        public Dispatch dispatch = new Dispatch();
+        public HTTP http = new HTTP();
         public Game game = new Game();
+        
+        public Dispatch dispatch = new Dispatch();
     }
 
     public static class Language {
         public Locale language = Locale.getDefault();
         public Locale fallback = Locale.US;
+        public String document = "EN";
     }
 
     public static class Account {
@@ -104,21 +113,19 @@ public class ConfigContainer {
     }
 
     /* Server options. */
-
-    public static class Dispatch {
+    
+    public static class HTTP {
         public String bindAddress = "0.0.0.0";
         /* This is the address used in URLs. */
         public String accessAddress = "127.0.0.1";
 
         public int bindPort = 443;
         /* This is the port used in URLs. */
-        public int accessPort = 443;
-
+        public int accessPort = 0;
+        
         public Encryption encryption = new Encryption();
         public Policies policies = new Policies();
-        public Region[] regions = {};
-
-        public String defaultName = "Grasscutter";
+        public Files files = new Files();
     }
 
     public static class Game {
@@ -126,16 +133,22 @@ public class ConfigContainer {
         /* This is the address used in the default region. */
         public String accessAddress = "127.0.0.1";
 
-        public int bindPort = 443;
+        public int bindPort = 22102;
         /* This is the port used in the default region. */
-        public int accessPort = 443;
-
+        public int accessPort = 0;
+        public boolean enableConsole = true;
         public GameOptions gameOptions = new GameOptions();
         public JoinOptions joinOptions = new JoinOptions();
         public ConsoleAccount serverAccount = new ConsoleAccount();
     }
 
     /* Data containers. */
+
+    public static class Dispatch {
+        public Region[] regions = {};
+
+        public String defaultName = "Grasscutter";
+    }
 
     public static class Encryption {
         public boolean useEncryption = true;
@@ -155,16 +168,14 @@ public class ConfigContainer {
     }
 
     public static class GameOptions {
-        public GameOptions.InventoryLimits inventoryLimits = new GameOptions.InventoryLimits();
-        public GameOptions.AvatarLimits avatarLimits = new GameOptions.AvatarLimits();
+        public InventoryLimits inventoryLimits = new InventoryLimits();
+        public AvatarLimits avatarLimits = new AvatarLimits();
         public int worldEntityLimit = 1000; // Unenforced. TODO: Implement.
 
         public boolean watchGachaConfig = false;
         public boolean enableShopItems = true;
         public boolean staminaUsage = true;
-        public GameOptions.Rates rates = new GameOptions.Rates();
-
-        public Database databaseInfo = new Database();
+        public Rates rates = new Rates();
 
         public static class InventoryLimits {
             public int weapons = 2000;
@@ -217,10 +228,27 @@ public class ConfigContainer {
         public String nickName = "Server";
         public String signature = "Welcome to Grasscutter!";
     }
+    
+    public static class Files {
+        public String indexFile = "./index.html";
+        public String errorFile = "./404.html";
+    }
 
     /* Objects. */
 
     public static class Region {
+        public Region() { }
+        
+        public Region(
+                String name, String title,
+                String address, int port
+        ) {
+            this.Name = name;
+            this.Title = title;
+            this.Ip = address;
+            this.Port  = port;
+        }
+        
         public String Name = "os_usa";
         public String Title = "Grasscutter";
         public String Ip = "127.0.0.1";

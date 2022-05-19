@@ -140,7 +140,7 @@ public class GameSession extends KcpChannel {
     }
     
     public void replayPacket(int opcode, String name) {
-    	String filePath = PACKETS_FOLDER + name;
+    	String filePath = PACKET(name);
 		File p = new File(filePath);
 		
 		if (!p.exists()) return;
@@ -252,6 +252,7 @@ public class GameSession extends KcpChannel {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+			data.release();
 			packet.release();
 		}
 	}
