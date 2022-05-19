@@ -587,10 +587,10 @@ public class Scene {
 			// Load suites
 			int suite = group.init_config.suite;
 
-			if (suite == 0) {
+			if (suite == 0 || group.suites == null || group.suites.size() == 0) {
 				continue;
 			}
-
+			
 			do {
 				var suiteData = group.getSuiteByIndex(suite);
 				suiteData.sceneTriggers.forEach(getScriptManager()::registerTrigger);
