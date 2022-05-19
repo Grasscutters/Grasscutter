@@ -143,7 +143,7 @@ public class GachaBanner {
 		String details = "http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
 						+ lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress) + ":"
 						+ lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort)
-						+ "/gacha/details?s=" + sessionKey + "&gachaType=" + gachaType;
+						+ "/gacha/details?s=" + sessionKey + "&scheduleId=" + scheduleId;
 
 		// Grasscutter.getLogger().info("record = " + record);
 		ItemParamData costItem1 = this.getCost(1);
