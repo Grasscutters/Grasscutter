@@ -61,7 +61,7 @@
       "console_execute_error": "此命令只能在服务器控制台执行呐~",
       "player_execute_error": "此命令只能在游戏内执行哦~",
       "command_exist_error": "这条命令...好像找不到呢？",
-      "no_description_specified": "没有指定说明。",
+      "no_description_specified": "没有指定说明",
       "invalid": {
         "amount": "无效的数量。",
         "artifactId": "无效的圣遗物ID。",
@@ -229,7 +229,7 @@
       "description": "添加或完成任务"
     },
     "reload": {
-      "reload_start": "正在重载配置文件和数据。",
+      "reload_start": "正在重载配置文件和数据...",
       "reload_done": "重载完成。",
       "description": "重载配置文件和数据"
     },
@@ -384,6 +384,28 @@
       "available_five_stars": "可获得的5星物品",
       "available_four_stars": "可获得的4星物品",
       "available_three_stars": "可获得的3星物品"
+    }
+  },
+  "documentation": {
+    "handbook": {
+      "title": "GM Handbook",
+      "title_commands": "命令",
+      "title_avatars": "角色",
+      "title_items": "物品",
+      "title_scenes": "场景",
+      "title_monsters": "怪物",
+      "header_id": "ID",
+      "header_command": "命令",
+      "header_description": "说明",
+      "header_avatar": "角色",
+      "header_item": "物品",
+      "header_scene": "场景",
+      "header_monster": "怪物"
+    },
+    "index": {
+      "title": "文档",
+      "handbook": "GM Handbook",
+      "gacha_mapping": "祈愿映射 JSON"
     }
   }
 }
