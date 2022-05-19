@@ -9,6 +9,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -97,6 +98,11 @@ public final class FileUtils {
 		} catch (Exception e) {
 			// Eclipse puts resources in its bin folder
 			File f = new File(jarPath + "defaults/data/");
+			
+			if (!f.exists() || f.listFiles().length == 0) {
+				return null;
+			}
+			
 			result = Arrays.stream(f.listFiles()).map(File::toPath).toList();
 		}
 		
