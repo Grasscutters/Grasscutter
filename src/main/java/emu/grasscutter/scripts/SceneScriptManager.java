@@ -164,7 +164,10 @@ public class SceneScriptManager {
 	public void loadGroupFromScript(SceneGroup group) {
 		group.load(getScene().getId());
 
-		group.variables.forEach(var -> this.getVariables().put(var.name, var.value));
+		if (group.variables != null) {
+			group.variables.forEach(var -> this.getVariables().put(var.name, var.value));
+		}
+
 		this.sceneGroups.put(group.id, group);
 
 		if(group.regions != null){
