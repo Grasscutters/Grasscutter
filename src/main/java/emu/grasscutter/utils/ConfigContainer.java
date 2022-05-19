@@ -104,6 +104,7 @@ public class ConfigContainer {
     public static class Language {
         public Locale language = Locale.getDefault();
         public Locale fallback = Locale.US;
+        public String document = "EN";
     }
 
     public static class Account {
