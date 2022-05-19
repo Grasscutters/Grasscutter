@@ -1,10 +1,9 @@
 package emu.grasscutter;
 
 import emu.grasscutter.utils.ConfigContainer;
-import emu.grasscutter.utils.ConfigContainer.*;
 
-import java.util.Locale;
 import java.nio.file.Paths;
+import java.util.Locale;
 
 import static emu.grasscutter.Grasscutter.config;
 
@@ -28,7 +27,6 @@ public final class Configuration extends ConfigContainer {
     public static final Locale FALLBACK_LANGUAGE = config.language.fallback;
     private static final String DATA_FOLDER = config.folderStructure.data;
     private static final String RESOURCES_FOLDER = config.folderStructure.resources;
-    private static final String KEYS_FOLDER = config.folderStructure.keys;
     private static final String PLUGINS_FOLDER = config.folderStructure.plugins;
     private static final String SCRIPTS_FOLDER = config.folderStructure.scripts;
     private static final String PACKETS_FOLDER = config.folderStructure.packets;
@@ -40,6 +38,7 @@ public final class Configuration extends ConfigContainer {
     public static final HTTP HTTP_INFO = config.server.http;
     public static final Game GAME_INFO = config.server.game;
     public static final Dispatch DISPATCH_INFO = config.server.dispatch;
+    public static final Proxy PROXY_INFO = config.server.proxy;
 
     public static final Encryption HTTP_ENCRYPTION = config.server.http.encryption;
     public static final Policies HTTP_POLICIES = config.server.http.policies;

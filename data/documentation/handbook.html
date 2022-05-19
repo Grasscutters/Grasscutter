@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+
+        p {
+            font-weight: 300;
+        }
+
+        a, a:hover {
+            text-decoration: none !important;
+            color: #626976;
+        }
+
+        .content {
+            padding: 3rem 0;
+        }
+
+        .container {
+            color: #626976;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 16px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        table thead tr {
+            height: 60px;
+            background: #626976;
+        }
+
+        table thead tr th {
+            font-size: 18px;
+            color: white;
+        }
+
+        table tbody tr {
+            height: 50px;
+            background-color: #f5f5f5;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fdfdfd;
+        }
+
+        table th, table td {
+            text-align: left;
+            padding: 0 8px;
+        }
+    </style>
+    <title>GM Handbook</title>
+</head>
+<body>
+<div class="content">
+    <div class="container">
+        <h2 class="mb-5">{{TITLE}}</h2>
+
+        <h3>{{TITLE_COMMANDS}}</h3>
+        <hr/>
+        <table>
+            <thead>
+            <tr>
+                <th>{{HEADER_COMMAND}}</th>
+                <th>{{HEADER_DESCRIPTION}}</th>
+            </tr>
+            </thead>
+            {{COMMANDS_TABLE}}
+        </table>
+
+        <h3>{{TITLE_AVATARS}}</h3>
+        <hr/>
+        <table>
+            <thead>
+            <tr>
+                <th>{{HEADER_ID}}</th>
+                <th>{{HEADER_AVATAR}}</th>
+            </tr>
+            </thead>
+            {{AVATARS_TABLE}}
+        </table>
+
+        <h3>{{TITLE_ITEMS}}</h3>
+        <hr/>
+        <table>
+            <thead>
+            <tr>
+                <th>{{HEADER_ID}}</th>
+                <th>{{HEADER_ITEM}}</th>
+            </tr>
+            </thead>
+            {{ITEMS_TABLE}}
+        </table>
+
+
+        <h3>{{TITLE_SCENES}}</h3>
+        <hr/>
+        <table>
+            <thead>
+            <tr>
+                <th>{{HEADER_ID}}</th>
+                <th>{{HEADER_SCENE}}</th>
+            </tr>
+            </thead>
+            {{SCENES_TABLE}}
+        </table>
+
+        <h3>{{TITLE_MONSTERS}}</h3>
+        <hr/>
+        <table>
+            <thead>
+            <tr>
+                <th>{{HEADER_ID}}</th>
+                <th>{{HEADER_MONSTER}}</th>
+            </tr>
+            </thead>
+            {{MONSTERS_TABLE}}
+        </table>
+    </div>
+</div>
+<footer>
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <span>Template by BecodReyes. All rights reserved.</span>
+                </div>
+                <div class="col-md-6">
+                    <ul style="float:right">
+                        <li class="list-inline-item">
+                            <a href="https://github.com/Grasscutters/Grasscutter">Github</a>
+                        </li>
+                        <li class="list-inline-item">·</li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/Grasscutters/Grasscutter/blob/stable/LICENSE">License</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

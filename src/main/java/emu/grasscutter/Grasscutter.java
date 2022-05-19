@@ -1,21 +1,30 @@
 package emu.grasscutter;
 
-import java.io.*;
-import java.util.Calendar;
-
+import ch.qos.logback.classic.Logger;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.auth.DefaultAuthentication;
 import emu.grasscutter.command.CommandMap;
+import emu.grasscutter.data.ResourceLoader;
+import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.game.managers.StaminaManager.StaminaManager;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
+import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.dispatch.DispatchHandler;
-import emu.grasscutter.server.http.dispatch.cn.HttpProxy;
-import emu.grasscutter.server.http.handlers.*;
 import emu.grasscutter.server.http.dispatch.RegionHandler;
+import emu.grasscutter.server.http.dispatch.cn.HttpProxy;
+import emu.grasscutter.server.http.handlers.AnnouncementsHandler;
+import emu.grasscutter.server.http.handlers.GachaHandler;
+import emu.grasscutter.server.http.handlers.GenericHandler;
+import emu.grasscutter.server.http.handlers.LogHandler;
+import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.ConfigContainer;
+import emu.grasscutter.utils.Crypto;
+import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Utils;
 import org.jline.reader.EndOfFileException;
 import org.jline.reader.LineReader;
@@ -26,21 +35,13 @@ import org.jline.terminal.TerminalBuilder;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import ch.qos.logback.classic.Logger;
-import emu.grasscutter.data.ResourceLoader;
-import emu.grasscutter.database.DatabaseManager;
-import emu.grasscutter.utils.Language;
-import emu.grasscutter.server.game.GameServer;
-import emu.grasscutter.tools.Tools;
-import emu.grasscutter.utils.Crypto;
-
 import javax.annotation.Nullable;
+import java.io.*;
+import java.util.Calendar;
 
+import static emu.grasscutter.Configuration.DATA;
+import static emu.grasscutter.Configuration.SERVER;
 import static emu.grasscutter.utils.Language.translate;
-import static emu.grasscutter.Configuration.*;
 
 public final class Grasscutter {
 	private static final Logger log = (Logger) LoggerFactory.getLogger(Grasscutter.class);
@@ -117,7 +118,6 @@ public final class Grasscutter {
 		// Create server instances.
 		httpServer = new HttpServer();
 		gameServer = new GameServer();
-		cnServer = new HttpProxy();
 		// Create a server hook instance with both servers.
 		new ServerHook(gameServer, httpServer);
 
@@ -142,9 +142,6 @@ public final class Grasscutter {
 		// Start servers.
 		var runMode = SERVER.runMode;
 		if (runMode == ServerRunMode.HYBRID) {
-			if(PROXY_INFO.enableCN){
-				cnServer.start();
-			}
 			httpServer.start();
 			gameServer.start();
 		} else if (runMode == ServerRunMode.DISPATCH_ONLY) {
@@ -251,19 +248,14 @@ public final class Grasscutter {
 	}
 
 	public static LineReader getConsole() {
-
 		if (consoleLineReader == null) {
 			Terminal terminal = null;
-
 			try {
-
 				terminal = TerminalBuilder.builder().jna(true).build();
 			} catch (Exception e) {
-
 				try {
 					// Fallback to a dumb jline terminal.
 					terminal = TerminalBuilder.builder().dumb(true).build();
-
 				} catch (Exception ignored) {
 					// When dumb is true, build() never throws.
 				}

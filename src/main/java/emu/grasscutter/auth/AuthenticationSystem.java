@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
  * Can be changed by plugins.
  */
 public interface AuthenticationSystem {
-    
+
     /**
      * Called when a user requests to make an account.
      * @param username The provided username.
@@ -73,7 +73,7 @@ public interface AuthenticationSystem {
     class AuthenticationRequest {
         private final Request request;
         @Nullable private final Response response;
-        
+
         @Nullable private final LoginAccountRequestJson passwordRequest;
         @Nullable private final LoginTokenRequestJson tokenRequest;
         @Nullable private final ComboTokenReqJson sessionKeyRequest;
@@ -108,11 +108,12 @@ public interface AuthenticationSystem {
 
     /**
      * Generates an authentication request from a {@link ComboTokenReqJson} object.
-     * @param request The Express request.
+     *
+     * @param request  The Express request.
      * @param jsonData The JSON data.
      * @return An authentication request.
      */
-    static AuthenticationRequest fromComboTokenRequest(Request request, ComboTokenReqJson jsonData, 
+    static AuthenticationRequest fromComboTokenRequest(Request request, ComboTokenReqJson jsonData,
                                                        ComboTokenReqJson.LoginTokenData tokenData) {
         return AuthenticationRequest.builder()
                 .request(request)
@@ -136,7 +137,7 @@ public interface AuthenticationSystem {
     /**
      * Generates an authentication request from a {@link Response} object.
      * @param request The Express request.
-     * @param jsonData The JSON data.
+     * @param response The JSON data.
      * @return An authentication request.
      */
     static AuthenticationRequest fromOAuthRequest(Request request, Response response) {
