@@ -29,6 +29,8 @@ public class ScriptLoader {
 	private static ScriptEngineFactory factory;
 	private static String fileType;
 	private static Serializer serializer;
+	private static ScriptLib scriptLib;
+	private static LuaValue scriptLibLua;
 	/**
 	 * suggest GC to remove it if the memory is less
 	 */
@@ -68,6 +70,10 @@ public class ScriptLoader {
 		ctx.globals.set("EventType", CoerceJavaToLua.coerce(new EventType())); // TODO - make static class to avoid instantiating a new class every scene
 		ctx.globals.set("GadgetState", CoerceJavaToLua.coerce(new ScriptGadgetState()));
 		ctx.globals.set("RegionShape", CoerceJavaToLua.coerce(new ScriptRegionShape()));
+
+		scriptLib = new ScriptLib();
+		scriptLibLua = CoerceJavaToLua.coerce(scriptLib);
+		ctx.globals.set("ScriptLib", scriptLibLua);
 	}
 	
 	public static ScriptEngine getEngine() {
@@ -80,6 +86,14 @@ public class ScriptLoader {
 
 	public static Serializer getSerializer() {
 		return serializer;
+	}
+
+	public static ScriptLib getScriptLib() {
+		return scriptLib;
+	}
+
+	public static LuaValue getScriptLibLua() {
+		return scriptLibLua;
 	}
 
 	public static <T> Optional<T> tryGet(SoftReference<T> softReference){

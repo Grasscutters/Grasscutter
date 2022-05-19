@@ -20,16 +20,11 @@ import org.luaj.vm2.LuaError;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 
-import javax.script.Bindings;
-import javax.script.ScriptException;
 import java.util.*;
 
 public class SceneScriptManager {
 	private final Scene scene;
-	private final ScriptLib scriptLib;
-	private final LuaValue scriptLibLua;
 	private final Map<String, Integer> variables;
-	private Bindings bindings;
 	private SceneMeta meta;
 	private boolean isInit;
 	/**
@@ -50,8 +45,6 @@ public class SceneScriptManager {
 	private Int2ObjectMap<Set<SceneGroup>> loadedGroupSetPerBlock;
 	public SceneScriptManager(Scene scene) {
 		this.scene = scene;
-		this.scriptLib = new ScriptLib(this);
-		this.scriptLibLua = CoerceJavaToLua.coerce(this.scriptLib);
 		this.triggers = new HashMap<>();
 		this.currentTriggers = new Int2ObjectOpenHashMap<>();
 
@@ -72,18 +65,6 @@ public class SceneScriptManager {
 	
 	public Scene getScene() {
 		return scene;
-	}
-
-	public ScriptLib getScriptLib() {
-		return scriptLib;
-	}
-	
-	public LuaValue getScriptLibLua() {
-		return scriptLibLua;
-	}
-
-	public Bindings getBindings() {
-		return bindings;
 	}
 
 	public SceneConfig getConfig() {
@@ -162,11 +143,6 @@ public class SceneScriptManager {
 	}
 
 	private void init() {
-		// Create bindings
-		bindings = ScriptLoader.getEngine().createBindings();
-		// Set variables
-		bindings.put("ScriptLib", getScriptLib());
-
 		var meta = ScriptLoader.getSceneMeta(getScene().getId());
 		if (meta == null){
 			return;
@@ -186,14 +162,7 @@ public class SceneScriptManager {
 	}
 	
 	public void loadGroupFromScript(SceneGroup group) {
-		group.load(getScene().getId(), meta.context);
-
-		try {
-			// build the trigger for this scene
-			group.getScript().eval(getBindings());
-		} catch (ScriptException e) {
-			Grasscutter.getLogger().error("Could not build the trigger for this scene", e);
-		}
+		group.load(getScene().getId());
 
 		group.variables.forEach(var -> this.getVariables().put(var.name, var.value));
 		this.sceneGroups.put(group.id, group);
@@ -284,47 +253,55 @@ public class SceneScriptManager {
 	// Events
 	
 	public void callEvent(int eventType, ScriptArgs params) {
-		for (SceneTrigger trigger : this.getTriggersByEvent(eventType)) {
-			scriptLib.setCurrentGroup(trigger.currentGroup);
-			LuaValue condition = null;
-			
-			if (trigger.condition != null && !trigger.condition.isEmpty()) {
-				condition = (LuaValue) this.getBindings().get(trigger.condition);
-			}
-			
-			LuaValue ret = LuaValue.TRUE;
-			
-			if (condition != null) {
-				LuaValue args = LuaValue.NIL;
-				
-				if (params != null) {
-					args = CoerceJavaToLua.coerce(params);
-				}
+		try{
+			ScriptLoader.getScriptLib().setSceneScriptManager(this);
+			for (SceneTrigger trigger : this.getTriggersByEvent(eventType)) {
+				try{
+					ScriptLoader.getScriptLib().setCurrentGroup(trigger.currentGroup);
 
-				ScriptLib.logger.trace("Call Condition Trigger {}", trigger);
-				ret = safetyCall(trigger.condition, condition, args);
-			}
-			
-			if (ret.isboolean() && ret.checkboolean()) {
-				if(trigger.action == null || trigger.action.isEmpty()){
-					return;
+					LuaValue ret = callScriptFunc(trigger.condition, trigger.currentGroup, params);
+					Grasscutter.getLogger().trace("Call Condition Trigger {}", trigger.condition);
+
+					if (ret.isboolean() && ret.checkboolean()) {
+						// the SetGroupVariableValueByGroup in tower need the param to record the first stage time
+						callScriptFunc(trigger.action, trigger.currentGroup, params);
+						Grasscutter.getLogger().trace("Call Action Trigger {}", trigger.action);
+					}
+					//TODO some ret may not bool
+
+				}finally {
+					ScriptLoader.getScriptLib().removeCurrentGroup();
 				}
-				ScriptLib.logger.trace("Call Action Trigger {}", trigger);
-				LuaValue action = (LuaValue) this.getBindings().get(trigger.action);
-				// TODO impl the param of SetGroupVariableValueByGroup
-				var arg = new ScriptArgs();
-				arg.param2 = 100;
-				var args = CoerceJavaToLua.coerce(arg);
-				safetyCall(trigger.action, action, args);
 			}
-			//TODO some ret may not bool
-			scriptLib.removeCurrentGroup();
+		}finally {
+			// make sure it is removed
+			ScriptLoader.getScriptLib().removeSceneScriptManager();
 		}
+	}
+
+	public LuaValue callScriptFunc(String funcName, SceneGroup group, ScriptArgs params){
+		LuaValue funcLua = null;
+		if (funcName != null && !funcName.isEmpty()) {
+			funcLua = (LuaValue) group.getBindings().get(funcName);
+		}
+
+		LuaValue ret = LuaValue.TRUE;
+
+		if (funcLua != null) {
+			LuaValue args = LuaValue.NIL;
+
+			if (params != null) {
+				args = CoerceJavaToLua.coerce(params);
+			}
+
+			ret = safetyCall(funcName, funcLua, args);
+		}
+		return ret;
 	}
 
 	public LuaValue safetyCall(String name, LuaValue func, LuaValue args){
 		try{
-			return func.call(this.getScriptLibLua(), args);
+			return func.call(ScriptLoader.getScriptLibLua(), args);
 		}catch (LuaError error){
 			ScriptLib.logger.error("[LUA] call trigger failed {},{},{}",name,args,error.getMessage());
 			return LuaValue.valueOf(-1);
