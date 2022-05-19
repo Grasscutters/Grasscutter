@@ -48,13 +48,11 @@ public class DataLoader {
     }
 
     public static void CheckAllFiles() {
-    	String pathSplitter = "defaults" + Pattern.quote(FileSystems.getDefault().getSeparator()) + "data" + Pattern.quote(FileSystems.getDefault().getSeparator());
-    	
         try {
             List<Path> filenames = FileUtils.getPathsFromResource("/defaults/data/");
 
             for (Path file : filenames) {
-                String relativePath = String.valueOf(file).split(pathSplitter)[1];
+                String relativePath = String.valueOf(file).split("defaults[\\\\\\/]data[\\\\\\/]")[1];
 
                 CheckAndCopyData(relativePath);
             }
