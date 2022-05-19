@@ -9,6 +9,10 @@ import lombok.ToString;
 import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
+
+import org.luaj.vm2.LuaTable;
+import org.luaj.vm2.LuaValue;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -106,9 +110,17 @@ public class SceneGroup {
 
 			suites = ScriptLoader.getSerializer().toList(SceneSuite.class, bindings.get("suites"));
 			regions = ScriptLoader.getSerializer().toList(SceneRegion.class, bindings.get("regions"));
-			garbages = ScriptLoader.getSerializer().toObject(SceneGarbage.class, bindings.get("garbages"));
 			init_config = ScriptLoader.getSerializer().toObject(SceneInitConfig.class, bindings.get("init_config"));
-
+			
+			// Garbages TODO fix properly later
+			Object garbagesValue = bindings.get("garbages");
+			if (garbagesValue != null && garbagesValue instanceof LuaValue garbagesTable) {
+				garbages = new SceneGarbage();
+				if (garbagesTable.checktable().get("gadgets") != LuaValue.NIL) {
+					garbages.gadgets = ScriptLoader.getSerializer().toList(SceneGadget.class, garbagesTable.checktable().get("gadgets").checktable());
+				}
+			}
+			
 			// Add variables to suite
 			variables = ScriptLoader.getSerializer().toList(SceneVar.class, bindings.get("variables"));
 

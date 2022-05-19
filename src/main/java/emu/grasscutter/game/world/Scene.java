@@ -599,6 +599,7 @@ public class Scene {
 						.map(g -> scriptManager.createGadget(group.id, group.block_id, g)).toList());
 				entities.addAll(suiteData.sceneMonsters.stream()
 						.map(mob -> scriptManager.createMonster(group.id, group.block_id, mob)).toList());
+				
 				suite++;
 			} while (suite < group.init_config.end_suite);
 		}
