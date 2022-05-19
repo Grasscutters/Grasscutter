@@ -9,6 +9,7 @@ import lombok.ToString;
 public class SceneObject {
     public int level;
     public int config_id;
+    public int area_id;
 
     public Position pos;
     public Position rot;
