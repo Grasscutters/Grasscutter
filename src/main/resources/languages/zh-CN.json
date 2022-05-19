@@ -51,6 +51,11 @@
       "create_resources": "正在创建 resources 目录...",
       "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。",
       "version": "Grasscutter 版本：%s-%s"
+    },
+    "proxy": {
+      "port": "[cnServer]国服dispatch已开启，ip %s，端口 %s",
+      "cert": "[cnServer]请访问%s,下载证书并安装",
+      "proxy": "[cnServer]设置系统代理,ip %s，端口 %s,开启游戏体验grasscutter"
     }
   },
   "commands": {
@@ -91,7 +96,7 @@
     "status": {
       "enabled": "已启用",
       "disabled": "未启用",
-      "help": "帮助", 
+      "help": "帮助",
       "success": "成功"
     },
     "account": {
