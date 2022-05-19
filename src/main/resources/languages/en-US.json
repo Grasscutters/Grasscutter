@@ -24,6 +24,7 @@
       "account": {
         "login_attempt": "[Dispatch] Client %s is trying to log in.",
         "login_success": "[Dispatch] Client %s logged in as %s.",
+        "login_max_player_limit": "[Dispatch] Client %s failed to log in: The number of online players has reached the limit",
         "login_token_attempt": "[Dispatch] Client %s is trying to log in via token.",
         "login_token_error": "[Dispatch] Client %s failed to log in via token.",
         "login_token_success": "[Dispatch] Client %s logged in via token as %s.",
@@ -35,7 +36,8 @@
         "account_cache_error": "Game account cache information error.",
         "session_key_error": "Wrong session key.",
         "username_error": "Username not found.",
-        "username_create_error": "Username not found, create failed."
+        "username_create_error": "Username not found, create failed.",
+        "server_max_player_limit": "The number of online players has reached the limit"
       },
       "router_error": "[Dispatch] Unable to attach router."
     },

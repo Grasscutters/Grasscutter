@@ -52,13 +52,26 @@ public final class DefaultAuthenticators {
             
             // Set response data.
             if(successfulLogin) {
-                response.message = "OK";
-                response.data.account.uid = account.getId();
-                response.data.account.token = account.generateSessionKey();
-                response.data.account.email = account.getEmail();
-                
+                int playerCount = Grasscutter.getGameServer().getPlayers().size();
+                String loggerMessage = "";
+
+                if (ACCOUNT.maxPlayer <= -1 || playerCount < ACCOUNT.maxPlayer) {
+                    response.message = "OK";
+                    response.data.account.uid = account.getId();
+                    response.data.account.token = account.generateSessionKey();
+                    response.data.account.email = account.getEmail();
+
+                    loggerMessage = translate("messages.dispatch.account.login_max_player_limit", address);
+
+                } else {
+                    response.retcode = -201;
+                    response.message = translate("messages.dispatch.account.server_max_player_limit");
+
+                    loggerMessage = translate("messages.dispatch.account.login_success", address, account.getId());
+                }
+
                 // Log the login.
-                Grasscutter.getLogger().info(translate("messages.dispatch.account.login_success", address, account.getId()));
+                Grasscutter.getLogger().info(loggerMessage);
             } else {
                 response.retcode = -201;
                 response.message = responseMessage;
@@ -95,13 +108,26 @@ public final class DefaultAuthenticators {
             
             // Set response data.
             if(successfulLogin) {
-                response.message = "OK";
-                response.data.account.uid = account.getId();
-                response.data.account.token = account.getSessionKey();
-                response.data.account.email = account.getEmail();
-                
+                int playerCount = Grasscutter.getGameServer().getPlayers().size();
+                String loggerMessage = "";
+
+                if (ACCOUNT.maxPlayer <= -1 || playerCount < ACCOUNT.maxPlayer) {
+                    response.message = "OK";
+                    response.data.account.uid = account.getId();
+                    response.data.account.token = account.getSessionKey();
+                    response.data.account.email = account.getEmail();
+
+                    loggerMessage = translate("messages.dispatch.account.login_token_success", address, requestData.uid);
+
+                } else {
+                    response.retcode = -201;
+                    response.message = translate("messages.dispatch.account.server_max_player_limit");
+
+                    loggerMessage = translate("messages.dispatch.account.login_success", address, account.getId());
+                }
+
                 // Log the login.
-                Grasscutter.getLogger().info(translate("messages.dispatch.account.login_token_success", address, requestData.uid));
+                Grasscutter.getLogger().info(loggerMessage);
             } else {
                 response.retcode = -201;
                 response.message = translate("messages.dispatch.account.account_cache_error");
@@ -136,13 +162,27 @@ public final class DefaultAuthenticators {
             
             // Set response data.
             if(successfulLogin) {
-                response.message = "OK";
-                response.data.open_id = account.getId();
-                response.data.combo_id = "157795300";
-                response.data.combo_token = account.generateLoginToken();
-                
+                int playerCount = Grasscutter.getGameServer().getPlayers().size();
+                String loggerMessage = "";
+
+                if (ACCOUNT.maxPlayer <= -1 || playerCount < ACCOUNT.maxPlayer) {
+                    response.message = "OK";
+                    response.data.open_id = account.getId();
+                    response.data.combo_id = "157795300";
+                    response.data.combo_token = account.generateLoginToken();
+
+                    loggerMessage = translate("messages.dispatch.account.combo_token_success", address);
+
+                } else {
+                    response.retcode = -201;
+                    response.message = translate("messages.dispatch.account.server_max_player_limit");
+
+                    loggerMessage = translate("messages.dispatch.account.login_success", address, account.getId());
+                }
+
                 // Log the login.
-                Grasscutter.getLogger().info(translate("messages.dispatch.account.combo_token_success", address));
+                Grasscutter.getLogger().info(loggerMessage);
+
             } else {
                 response.retcode = -201;
                 response.message = translate("messages.dispatch.account.session_key_error");
