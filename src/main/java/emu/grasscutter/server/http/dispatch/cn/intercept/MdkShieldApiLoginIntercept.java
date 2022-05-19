@@ -8,8 +8,7 @@ import io.netty.channel.Channel;
 
 
 /**
- * 用户名密码登录拦截
- * 测试例子（post）
+ * testUrl（post）
  * https://hk4e-sdk.mihoyo.com/hk4e_cn/mdk/shield/api/login?
  *
  * @author litht

@@ -18,8 +18,7 @@ import java.util.Base64;
 import static emu.grasscutter.Configuration.*;
 
 /**
- * 获取当前区域的服务器
- * 测试例子（get）
+ * testUrl（get）
  * https://cngfdispatch.yuanshen.com/query_cur_region?version=CNRELWin2.6.0&lang=2&platform=3&binary=1&time=182&channel_id=1&sub_channel_id=2&account_type=1&dispatchSeed=227fa47da8ce7dca
  *
  * @author litht

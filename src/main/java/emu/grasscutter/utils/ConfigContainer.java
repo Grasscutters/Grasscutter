@@ -127,9 +127,8 @@ public class ConfigContainer {
         public Policies policies = new Policies();
         public Files files = new Files();
     }
-    /* cn服代理 */
+    /* dispatch-cn */
     public static class Proxy{
-        /* 是否开启cn服 */
         public boolean enableCN =true;
         public String bindAddress = "0.0.0.0";
         /* This is the address used in URLs. */

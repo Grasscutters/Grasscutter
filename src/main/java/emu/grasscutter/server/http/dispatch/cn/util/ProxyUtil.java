@@ -7,16 +7,14 @@ import static emu.grasscutter.Configuration.lr;
 
 
 /**
- * 代理工具类
+ * Proxy util
  *
  * @author litht
  * @date 2022/05/19
  */
 public class ProxyUtil {
     /**
-     * 连接重定向到grasscutter的dispatch
-     *
-     * @param pipeline 管道
+     * @param pipeline
      */
     public static void forwardToGrasscutter(HttpProxyInterceptPipeline pipeline) {
         pipeline.getRequestProto().setHost(HTTP_INFO.accessAddress);

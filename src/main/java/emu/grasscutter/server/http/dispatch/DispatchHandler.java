@@ -22,15 +22,15 @@ public final class DispatchHandler implements Router {
     @Override public void applyRoutes(Express express, Javalin handle) {
         // Username & Password login (from client).
         express.post("/hk4e_global/mdk/shield/api/login", DispatchHandler::clientLogin);
-        /* 国服账户密码登录支持 */
+        /* Username & Password login (from client) cn */
         express.post("/hk4e_cn/mdk/shield/api/login", DispatchHandler::clientLogin);
         // Cached token login (from registry).
         express.post("/hk4e_global/mdk/shield/api/verify", DispatchHandler::tokenLogin);
-        /* 国服token登录支持（registry）*/
+        /* Cached token login (from registry) cn*/
         express.post("/hk4e_cn/mdk/shield/api/verify", DispatchHandler::tokenLogin);
         // Combo token login (from session key).
         express.post("/hk4e_global/combo/granter/login/v2/login", DispatchHandler::sessionKeyLogin);
-        /* 国服token登录支持（session）*/
+        /* Combo token login (from session key) cn*/
         express.post("/hk4e_cn/combo/granter/login/v2/login", DispatchHandler::sessionKeyLogin);
 
         // External login (from other clients).

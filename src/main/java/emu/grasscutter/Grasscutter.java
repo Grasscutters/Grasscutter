@@ -51,7 +51,8 @@ public final class Grasscutter {
 	private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	public static final File configFile = new File("./config.json");
 
-	private static int day; // Current day of week.
+	// Current day of week.
+	private static int day;
 
 	private static HttpServer httpServer;
 	private static GameServer gameServer;
@@ -133,7 +134,7 @@ public final class Grasscutter {
 		httpServer.addRouter(DispatchHandler.class);
 		httpServer.addRouter(GachaHandler.class);
 
-		//初始化国服配置
+		//init cn server
 		cnServer.init();
 
 		// TODO: find a better place?

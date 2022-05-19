@@ -8,11 +8,11 @@ import io.netty.channel.Channel;
 
 
 /**
- * 账户风险api检查拦截(验证码)
+ *
  *
  * @author litht
  * @date 2022/05/19
- * 测试例子（post）
+ * testUrl
  * https://gameapi-account.mihoyo.com/account/risky/api/check?
  */
 public class AccountRiskyApiCheckIntercept extends HttpProxyIntercept {

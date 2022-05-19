@@ -22,19 +22,19 @@ public class HttpProxy {
     }
 
     /**
-     * 初始化
+     * init
      */
     public void init() {
         /* https */
         config.setHandleSsl(true);
-        /* 设置serverConfig */
+        /* set serverConfig */
         server.serverConfig(config);
-        /* 设置拦截器 */
+        /* set intercept */
         server.proxyInterceptInitializer(new InterceptInitializer());
     }
 
     /**
-     * 启动
+     * start
      */
     public void start() {
         Thread thread = new Thread(() -> {

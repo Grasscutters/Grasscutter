@@ -9,11 +9,11 @@ import io.netty.channel.Channel;
 
 
 /**
- * 日志上传拦截
+ *
  *
  * @author litht
  * @date 2022/05/18
- * 测试例子（post）
+ * testUrl（post）
  * https://log-upload.mihoyo.com/sdk/dataUpload
  */
 public class LogUploadIntercept extends HttpProxyIntercept {

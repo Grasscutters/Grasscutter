@@ -11,30 +11,30 @@ import java.util.Set;
 
 /**
  * @author litht
- * 拦截器初始化
+ * https://github.com/litht/Grasscutter/tree/dev-cnServer
  */
 public class InterceptInitializer extends HttpProxyInterceptInitializer {
     @Override
     public void init(HttpProxyInterceptPipeline pipeline) {
-        /* 证书下载 */
+        /* cert download */
         pipeline.addLast(new CertDownIntercept());
 
         /* query_region_list */
         pipeline.addLast(new QueryRegionListIntercept());
 
-        /* 日志上传 */
+        /* log */
         pipeline.addLast(new LogUploadIntercept());
 
-        /* 验证码 */
+        /*  captcha */
         pipeline.addLast(new AccountRiskyApiCheckIntercept());
 
-        /* 用户名密码登录 */
+        /* Username & Password login (from client). */
         pipeline.addLast(new MdkShieldApiLoginIntercept());
 
-        /* token登录(session) */
+        /* Combo token login (from session key). */
         pipeline.addLast(new LoginV2Intercept());
 
-        /* token登录(registry) */
+        /* Cached token login (from registry) */
         pipeline.addLast(new MdkShieldApiVerifyIntercept());
 
         /* query_cur_region */
