@@ -59,10 +59,16 @@ public final class GameServer extends KcpServer {
 	private final TowerScheduleManager towerScheduleManager;
 
 	public GameServer() {
-		this(new InetSocketAddress(
-				GAME_INFO.bindAddress,
-				GAME_INFO.bindPort
-		));
+		if(GAME_INFO.bindAddress.equals("")){
+			this(new InetSocketAddress(
+					GAME_INFO.bindPort
+			));
+		}else{
+			this(new InetSocketAddress(
+					GAME_INFO.bindAddress,
+					GAME_INFO.bindPort
+			));
+		}
 	}
 	
 	public GameServer(InetSocketAddress address) {
