@@ -41,15 +41,12 @@ public class QueryRegionListIntercept extends FullResponseIntercept {
 
             byte[] decode = Base64.getDecoder().decode(httpResponse.content().toString(StandardCharsets.UTF_8));
             QueryRegionListHttpRsp rl = QueryRegionListHttpRsp.parseFrom(decode);
-
-
             byte[] customConfig = "{\"sdkenv\":\"2\",\"checkdevice\":\"false\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}".getBytes();
             Crypto.xor(customConfig, Crypto.DISPATCH_KEY);
             QueryRegionListHttpRsp result = rl.toBuilder().setEnableLoginPc(true)
                     .setClientCustomConfigEncrypted(ByteString.copyFrom(customConfig))
                     .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED)).build();
-            httpResponse.content().clear();
-            httpResponse.content().writeBytes(Base64.getEncoder().encode(result.toByteArray()));
+
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
         }
