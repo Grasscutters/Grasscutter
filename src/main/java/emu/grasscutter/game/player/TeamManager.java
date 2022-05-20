@@ -621,6 +621,10 @@ public class TeamManager {
 	}
 
 	public void handleEvtDoSkillSuccNotify(GameSession session, int skillId, int casterId) {
+		if (!GAME_OPTIONS.energyUsage) {
+			return;
+		}
+
 		// Determine the entity that has cast the skill.
 		Optional<EntityAvatar> caster = this.getActiveTeam().stream()
 											.filter(character -> character.getId() == casterId)
