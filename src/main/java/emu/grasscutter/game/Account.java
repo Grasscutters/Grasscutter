@@ -142,12 +142,12 @@ public class Account {
 	}
 
 	public boolean hasPermission(String permission) {
-		if(this.permissions.contains("*") && this.permissions.size() == 1) return true;
-
 		// Add default permissions if it doesn't exist
 		List<String> permissions = Stream.of(this.permissions, Arrays.asList(ACCOUNT.defaultPermissions))
 				.flatMap(Collection::stream)
 				.distinct().toList();
+
+		if(permissions.contains("*") && permissions.size() == 1) return true;
 
 		if (permissions.contains(permission)) return true;
 
