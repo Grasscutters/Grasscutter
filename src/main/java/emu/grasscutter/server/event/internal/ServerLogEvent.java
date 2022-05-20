@@ -6,13 +6,17 @@ import emu.grasscutter.server.event.types.ServerEvent;
 
 public class ServerLogEvent extends ServerEvent {
     ILoggingEvent loggingEvent;
+    String consoleMessage;
 
-    public ServerLogEvent(Type type, ILoggingEvent loggingEvent) {
+    public ServerLogEvent(Type type, ILoggingEvent loggingEvent, String consoleMessage) {
         super(type);
         this.loggingEvent = loggingEvent;
+        this.consoleMessage = consoleMessage;
     }
 
-    public ILoggingEvent getLoggingEvent() {
-        return loggingEvent;
+    public ILoggingEvent getLoggingEvent() { return loggingEvent; }
+
+    public String getConsoleMessage() {
+        return consoleMessage;
     }
 }
