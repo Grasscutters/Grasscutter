@@ -98,11 +98,11 @@ public class SceneGroup {
 			// Set
 			monsters = ScriptLoader.getSerializer().toList(SceneMonster.class, bindings.get("monsters")).stream()
 					.collect(Collectors.toMap(x -> x.config_id, y -> y));
-			monsters.values().forEach(m -> m.groupId = id);
+			monsters.values().forEach(m -> m.group = this);
 
 			gadgets = ScriptLoader.getSerializer().toList(SceneGadget.class, bindings.get("gadgets")).stream()
 					.collect(Collectors.toMap(x -> x.config_id, y -> y));
-			gadgets.values().forEach(m -> m.groupId = id);
+			gadgets.values().forEach(m -> m.group = this);
 
 			triggers = ScriptLoader.getSerializer().toList(SceneTrigger.class, bindings.get("triggers")).stream()
 					.collect(Collectors.toMap(x -> x.name, y -> y));

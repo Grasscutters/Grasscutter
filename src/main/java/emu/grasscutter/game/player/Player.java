@@ -25,11 +25,8 @@ import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.managers.StaminaManager.StaminaManager;
 import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.SceneType;
-import emu.grasscutter.game.quest.GameMainQuest;
-import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.managers.MapMarkManager.*;
@@ -47,7 +44,6 @@ import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.scripts.constants.ScriptGadgetState;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
 import emu.grasscutter.server.game.GameServer;
@@ -890,7 +886,7 @@ public class Player {
 		return this.getMailHandler().replaceMailByIndex(index, message);
 	}
 	
-	public void interactWith(int gadgetEntityId) {
+	public void interactWith(int gadgetEntityId, InterOpTypeOuterClass.InterOpType opType) {
 		GameEntity entity = getScene().getEntityById(gadgetEntityId);
 
 		if (entity == null) {
@@ -923,7 +919,7 @@ public class Player {
 				return;
 			}
 			
-			boolean shouldDelete = gadget.getContent().onInteract(this);
+			boolean shouldDelete = gadget.getContent().onInteract(this, opType);
 			
 			if (shouldDelete) {
 				entity.getScene().removeEntity(entity);

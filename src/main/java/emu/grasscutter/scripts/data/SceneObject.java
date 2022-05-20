@@ -16,5 +16,5 @@ public class SceneObject {
     /**
      * not set by lua
      */
-    public transient int groupId;
+    public transient SceneGroup group;
 }
