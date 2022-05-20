@@ -24,6 +24,7 @@
       "account": {
         "login_attempt": "[Dispatch] 客戶端 %s 正在嘗試登入",
         "login_success": "[Dispatch] 客戶端 %s 已登入，UID為 %s",
+        "login_max_player_limit": "[Dispatch] 客戶端 %s 登入失敗：在綫人數已滿",
         "login_token_attempt": "[Dispatch] 客戶端 %s 正在嘗試用憑證登入",
         "login_token_error": "[Dispatch] 客戶端 %s 使用憑證登入失敗",
         "login_token_success": "[Dispatch] 客戶端 %s 已透過憑證登入，UID為 %s",
@@ -35,7 +36,8 @@
         "account_cache_error": "遊戲帳號緩存資訊錯誤",
         "session_key_error": "對話密鑰不符。",
         "username_error": "未找到此用戶名。",
-        "username_create_error": "未找到用戶名，建立失敗。"
+        "username_create_error": "未找到用戶名，建立失敗。",
+        "server_max_player_limit": "服務器在綫人數已滿"
       }
     },
     "status": {
