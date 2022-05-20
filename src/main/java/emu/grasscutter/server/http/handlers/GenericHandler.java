@@ -4,6 +4,7 @@ import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.http.objects.HttpJsonResponse;
 import emu.grasscutter.server.http.Router;
+import emu.grasscutter.server.http.objects.WebStaticVersionResponse;
 import express.Express;
 import express.http.Request;
 import express.http.Response;
@@ -43,7 +44,7 @@ public final class GenericHandler implements Router {
         express.all("/perf/config/verify", new HttpJsonResponse("{\"code\":0}"));
 
         // webstatic-sea.hoyoverse.com
-        express.get("/admin/mi18n/plat_oversea/*", new HttpJsonResponse("{\"version\":51}"));
+        express.get("/admin/mi18n/plat_oversea/*", new WebStaticVersionResponse());
         
         express.get("/status/server", GenericHandler::serverStatus);
     }
