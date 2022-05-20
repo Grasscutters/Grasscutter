@@ -22,6 +22,10 @@ public class ProxyConstant {
     public static final String CNGFDISPATCH_HOST = "cngfdispatch.yuanshen.com";
     public static final String QUERY_CUR_REGION_PATH = "/query_cur_region";
 
+    public static final String HK4E_API_HOST = "hk4e-api.mihoyo.com";
+    public static final String COMMON_HK4E_CN_ANNOUNCEMENT_API_GETANNLIST_PATH = "/common/hk4e_cn/announcement/api/getAnnList";
 
+    public static final String HK4E_API_STATIC_HOST = "hk4e-api-static.mihoyo.com";
+    public static final String COMMON_HK4E_CN_ANNOUNCEMENT_API_GETANNCONTENT_PATH = "/common/hk4e_cn/announcement/api/getAnnContent";
 }
 

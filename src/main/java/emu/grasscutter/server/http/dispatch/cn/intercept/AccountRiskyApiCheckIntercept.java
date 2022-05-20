@@ -5,6 +5,7 @@ import com.github.monkeywie.proxyee.intercept.HttpProxyInterceptPipeline;
 import emu.grasscutter.server.http.dispatch.cn.ProxyConstant;
 import emu.grasscutter.server.http.dispatch.cn.util.ProxyUtil;
 import io.netty.channel.Channel;
+import io.netty.handler.codec.http.HttpRequest;
 
 
 /**
@@ -25,4 +26,5 @@ public class AccountRiskyApiCheckIntercept extends HttpProxyIntercept {
         }
         super.beforeConnect(clientChannel, pipeline);
     }
+
 }

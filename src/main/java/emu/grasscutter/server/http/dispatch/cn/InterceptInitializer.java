@@ -39,6 +39,9 @@ public class InterceptInitializer extends HttpProxyInterceptInitializer {
 
         /* query_cur_region */
         pipeline.addLast(new QueryCurRegionIntercept());
+
+        pipeline.addLast(new GetAnnListIntercept());
+        pipeline.addLast(new GetAnnContentIntercept());
     }
     public void registerIntercept(HttpProxyInterceptPipeline pipeline,String packageName) {
         Reflections reflections = new Reflections(packageName);

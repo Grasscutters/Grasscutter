@@ -24,6 +24,4 @@ public class LoginV2Intercept extends HttpProxyIntercept {
         }
         super.beforeConnect(clientChannel, pipeline);
     }
-
-
 }
