@@ -19,12 +19,10 @@ public class WebStaticVersionResponse implements HttpContextHandler {
 
     @Override
     public void handle(Request request, Response response) throws IOException {
-        if(request.path().contains("version")) {
-            getPageResources("/webstatic/version.json", response);
-            return;
-        } else { // TODO other versions
-            getPageResources("/webstatic/en.json", response);
-        }
+        String requestFor = request.path().substring(request.path().lastIndexOf("-") + 1);
+
+        getPageResources("/webstatic/" + requestFor, response);
+        return;
     }
 
     private static void getPageResources(String path, Response response) {
@@ -34,7 +32,9 @@ public class WebStaticVersionResponse implements HttpContextHandler {
             response.type((fromExtension != null) ? fromExtension.getMIME() : "application/octet-stream");
             response.send(filestream.readAllBytes());
         } catch (Exception e) {
-            Grasscutter.getLogger().warn("File does not exist: " + path);
+            if(Grasscutter.getConfig().server.debugLevel.equals(Grasscutter.ServerDebugMode.MISSING)) {
+                Grasscutter.getLogger().warn("Webstatic File Missing: " + path);
+            }
             response.status(404);
         }
     }
