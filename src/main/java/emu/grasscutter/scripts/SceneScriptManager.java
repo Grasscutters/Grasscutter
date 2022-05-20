@@ -14,6 +14,7 @@ import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.*;
 import emu.grasscutter.scripts.service.ScriptMonsterSpawnService;
 import emu.grasscutter.scripts.service.ScriptMonsterTideService;
+import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import org.luaj.vm2.LuaError;
@@ -21,6 +22,10 @@ import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class SceneScriptManager {
 	private final Scene scene;
@@ -43,6 +48,12 @@ public class SceneScriptManager {
 	 * blockid - loaded groupSet
 	 */
 	private Int2ObjectMap<Set<SceneGroup>> loadedGroupSetPerBlock;
+	public static final ExecutorService eventExecutor;
+	static {
+		eventExecutor = new ThreadPoolExecutor(4, 4,
+				60, TimeUnit.SECONDS, new LinkedBlockingDeque<>(100),
+				FastThreadLocalThread::new, new ThreadPoolExecutor.AbortPolicy());
+	}
 	public SceneScriptManager(Scene scene) {
 		this.scene = scene;
 		this.triggers = new HashMap<>();
@@ -211,7 +222,7 @@ public class SceneScriptManager {
 		}
 
 		var toCreate = gadgets.stream()
-				.map(g -> createGadget(g.groupId, group.block_id, g))
+				.map(g -> createGadget(g.group.id, group.block_id, g))
 				.filter(Objects::nonNull)
 				.toList();
 		this.addEntities(toCreate);
@@ -254,8 +265,17 @@ public class SceneScriptManager {
 		getScene().addEntity(createMonster(group.id, group.block_id, group.monsters.get(configId)));
 	}
 	// Events
-	
-	public void callEvent(int eventType, ScriptArgs params) {
+	public void callEvent(int eventType, ScriptArgs params){
+		/**
+		 * We use ThreadLocal to trans SceneScriptManager context to ScriptLib, to avoid eval script for every groups' trigger in every scene instances.
+		 * But when callEvent is called in a ScriptLib func, it may cause NPE because the inner call cleans the ThreadLocal so that outer call could not get it.
+		 * e.g. CallEvent -> set -> ScriptLib.xxx -> CallEvent -> set -> remove -> NPE -> (remove)
+		 * So we use thread pool to clean the stack to avoid this new issue.
+		 */
+		eventExecutor.submit(() -> this.realCallEvent(eventType, params));
+	}
+
+	private void realCallEvent(int eventType, ScriptArgs params) {
 		try{
 			ScriptLoader.getScriptLib().setSceneScriptManager(this);
 			for (SceneTrigger trigger : this.getTriggersByEvent(eventType)) {
@@ -282,7 +302,7 @@ public class SceneScriptManager {
 		}
 	}
 
-	public LuaValue callScriptFunc(String funcName, SceneGroup group, ScriptArgs params){
+	private LuaValue callScriptFunc(String funcName, SceneGroup group, ScriptArgs params){
 		LuaValue funcLua = null;
 		if (funcName != null && !funcName.isEmpty()) {
 			funcLua = (LuaValue) group.getBindings().get(funcName);
@@ -332,10 +352,8 @@ public class SceneScriptManager {
 		entity.getRotation().set(g.rot);
 		entity.setState(g.state);
 		entity.setPointType(g.point_type);
+		entity.setMetaGadget(g);
 		entity.buildContent();
-		
-		// Lua event
-		this.callEvent(EventType.EVENT_GADGET_CREATE, new ScriptArgs(entity.getConfigId()));
 
 		return entity;
 	}

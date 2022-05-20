@@ -125,7 +125,9 @@ public class DungeonChallenge {
 		
 		if (this.isSuccess()) {
 			// Call success script event
-			this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_SUCCESS, null);
+			this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_SUCCESS,
+					// TODO record the time in PARAM2 and used in action
+					new ScriptArgs().setParam2(100));
 
 			// Settle
 			settle();
@@ -139,8 +141,7 @@ public class DungeonChallenge {
 
 		if(!stage){
 			getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE,
-					// TODO record the time in PARAM2 and used in action
-					new ScriptArgs(this.isSuccess() ? 1 : 0, 100));
+					new ScriptArgs(this.isSuccess() ? 1 : 0));
 		}
 	}
 
