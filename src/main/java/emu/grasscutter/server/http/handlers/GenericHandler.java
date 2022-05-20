@@ -9,6 +9,8 @@ import express.http.Request;
 import express.http.Response;
 import io.javalin.Javalin;
 
+import static emu.grasscutter.Configuration.ACCOUNT;
+
 /**
  * Handles all generic, hard-coded responses.
  */
@@ -48,8 +50,9 @@ public final class GenericHandler implements Router {
     
     private static void serverStatus(Request request, Response response) {
         int playerCount = Grasscutter.getGameServer().getPlayers().size();
+        int maxPlayer = ACCOUNT.maxPlayer;
         String version = GameConstants.VERSION;
 
-        response.send("{\"retcode\":0,\"status\":{\"playerCount\":" + playerCount + ",\"version\":\"" + version + "\"}}");
+        response.send("{\"retcode\":0,\"status\":{\"playerCount\":" + playerCount + ",\"maxPlayer\":" + maxPlayer + ",\"version\":\"" + version + "\"}}");
     }
 }

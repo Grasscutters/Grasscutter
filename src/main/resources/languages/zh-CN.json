@@ -24,6 +24,7 @@
       "account": {
         "login_attempt": "[Dispatch] 客户端 %s 正在尝试登录",
         "login_success": "[Dispatch] 客户端 %s 已登录，UID 为 %s",
+        "login_max_player_limit": "[Dispatch] 客户端 %s 登录失败：在线人数已满",
         "login_token_attempt": "[Dispatch] 客户端 %s 正在尝试使用 token 登录",
         "login_token_error": "[Dispatch] 客户端 %s 使用 token 登录失败",
         "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID 为 %s",
@@ -35,7 +36,8 @@
         "account_cache_error": "游戏账号缓存信息错误",
         "session_key_error": "会话密钥错误",
         "username_error": "未找到此用户名",
-        "username_create_error": "未找到用户名，建立连接失败"
+        "username_create_error": "未找到用户名，建立连接失败",
+        "server_max_player_limit": "服务器在线人数已满"
       },
       "router_error": "[Dispatch] 无法连接路由"
     },
