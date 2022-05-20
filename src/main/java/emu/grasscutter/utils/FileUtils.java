@@ -97,7 +97,7 @@ public final class FileUtils {
 			}
 		} catch (Exception e) {
 			// Eclipse puts resources in its bin folder
-			File f = new File(jarPath + "defaults/data/");
+			File f = new File(System.getProperty("user.dir") + folder);
 			
 			if (!f.exists() || f.listFiles().length == 0) {
 				return null;
