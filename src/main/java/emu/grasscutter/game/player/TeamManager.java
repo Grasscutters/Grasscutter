@@ -632,8 +632,8 @@ public class TeamManager {
 
 		// If the cast skill was a burst, consume energy.
 		if (skillId == avatar.getSkillDepot().getEnergySkill()) {
-			float consumedEnergy = avatar.getFightProperty(avatar.getSkillDepot().getElementType().getMaxEnergyProp());
-			avatar.getAsEntity().addEnergy(-consumedEnergy);
+			float consumedEnergy = avatar.getFightProperty(avatar.getSkillDepot().getElementType().getCurEnergyProp());
+			avatar.getAsEntity().addEnergy(-consumedEnergy, true);
 		}
 	}
 
