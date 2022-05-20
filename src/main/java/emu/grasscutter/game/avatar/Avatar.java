@@ -493,6 +493,9 @@ public class Avatar {
 		// Get hp percent, set to 100% if none
 		float hpPercent = this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) <= 0 ? 1f : this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) / this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 		
+		// Store current energy value for later
+		float currentEnergy = (data.getSkillDepot() != null) ? this.getFightProperty(data.getSkillDepot().getElementType().getCurEnergyProp()) : 0f;
+
 		// Clear properties
 		this.getFightProperties().clear();
 		
@@ -514,7 +517,8 @@ public class Avatar {
 		if (data.getSkillDepot() != null && data.getSkillDepot().getEnergySkillData() != null) {
 			ElementType element = data.getSkillDepot().getElementType();
 			this.setFightProperty(element.getMaxEnergyProp(), data.getSkillDepot().getEnergySkillData().getCostElemVal());
-			this.setFightProperty((element.getMaxEnergyProp().getId() % 70) + 1000, data.getSkillDepot().getEnergySkillData().getCostElemVal());
+			this.setFightProperty(element.getCurEnergyProp(), currentEnergy);
+			//this.setFightProperty((element.getMaxEnergyProp().getId() % 70) + 1000, data.getSkillDepot().getEnergySkillData().getCostElemVal());
 		}
 		
 		// Artifacts

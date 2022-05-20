@@ -19,5 +19,6 @@ public class HandlerEvtDoSkillSuccNotify extends PacketHandler {
         Vector forwardVector = notify.getForward();
         Position forward = new Position(forwardVector.getX(), forwardVector.getY(), forwardVector.getZ());
         session.getPlayer().getStaminaManager().handleEvtDoSkillSuccNotify(session, skillId, casterId);
+        session.getPlayer().getTeamManager().handleEvtDoSkillSuccNotify(session, skillId, casterId);
     }
 }
