@@ -21,6 +21,7 @@ import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.gacha.GachaBanner.BannerType;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
@@ -411,8 +412,13 @@ public class GachaManager {
 	private synchronized GetGachaInfoRsp createProto(String sessionKey) {
 		GetGachaInfoRsp.Builder proto = GetGachaInfoRsp.newBuilder().setGachaRandom(12345);
 		
+		long currentTime = System.currentTimeMillis() / 1000L;
+
 		for (GachaBanner banner : getGachaBanners().values()) {
-			proto.addGachaInfoList(banner.toProto(sessionKey));
+			if ((banner.getEndTime() >= currentTime && banner.getBeginTime() <= currentTime) || (banner.getBannerType() == BannerType.STANDARD))
+			{
+				proto.addGachaInfoList(banner.toProto(sessionKey));
+			}
 		}
 				
 		return proto.build();
