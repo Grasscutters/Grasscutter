@@ -62,6 +62,8 @@ import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
+import static emu.grasscutter.Configuration.GAME_OPTIONS;
+
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {
 	@Id private ObjectId id;
@@ -517,8 +519,13 @@ public class Avatar {
 		if (data.getSkillDepot() != null && data.getSkillDepot().getEnergySkillData() != null) {
 			ElementType element = data.getSkillDepot().getElementType();
 			this.setFightProperty(element.getMaxEnergyProp(), data.getSkillDepot().getEnergySkillData().getCostElemVal());
-			this.setFightProperty(element.getCurEnergyProp(), currentEnergy);
-			//this.setFightProperty((element.getMaxEnergyProp().getId() % 70) + 1000, data.getSkillDepot().getEnergySkillData().getCostElemVal());
+
+			if (GAME_OPTIONS.energyUsage) {
+				this.setFightProperty(element.getCurEnergyProp(), currentEnergy);
+			}
+			else {
+				this.setFightProperty(element.getCurEnergyProp(), data.getSkillDepot().getEnergySkillData().getCostElemVal());
+			}
 		}
 		
 		// Artifacts
