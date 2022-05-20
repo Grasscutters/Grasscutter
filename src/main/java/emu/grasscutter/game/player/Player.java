@@ -1385,4 +1385,12 @@ public class Player {
 		return false;
 	}
 
+	@Override
+	public String toString() {
+		if(id != 0)
+		{
+			return "[ID:" + id + ", Nick Name:"+nickname+", Account:"+accountId+"]";
+		}
+		return super.toString();
+	}
 }
