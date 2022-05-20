@@ -4,6 +4,7 @@ import com.github.monkeywie.proxyee.intercept.HttpProxyInterceptPipeline;
 import com.github.monkeywie.proxyee.intercept.common.FullRequestIntercept;
 import emu.grasscutter.server.http.dispatch.cn.ProxyConstant;
 import emu.grasscutter.server.http.dispatch.cn.util.ProxyUtil;
+import emu.grasscutter.server.http.dispatch.cn.util.UrlUtils;
 import io.netty.buffer.ByteBuf;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.HttpRequest;
@@ -36,16 +37,7 @@ public class GetAnnListIntercept extends FullRequestIntercept{
     @Override
     public void handleRequest(FullHttpRequest httpRequest, HttpProxyInterceptPipeline pipeline) {
         String uri = httpRequest.uri();
-        String uid = ProxyUtil.getParamByUrl(uri, "uid");
-        if(uid==null)
-        {
-             Map param = new HashMap<>();
-             param.put("uid",12345679);
-             uri= ProxyUtil.appendUrl(uri, param);
-        }
-        else {
-            ProxyUtil.replaceUrlParam(uri,"uid","123456789");
-        }
+        uri=UrlUtils.addParam(uri,"uid","123456789",true);
         httpRequest.setUri(uri);
     }
 }

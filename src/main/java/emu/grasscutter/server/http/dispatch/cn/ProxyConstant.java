@@ -15,6 +15,7 @@ public class ProxyConstant {
     public static final String ACCOUNT_RISKY_API_CHECK_PATH = "/account/risky/api/check";
 
     public static final String HK4E_SDK_HOST = "hk4e-sdk.mihoyo.com";
+//public static final String HK4E_SDK_HOST = "sandbox-sdk.mihoyo.com";
     public static final String HK4E_CN_MDK_SHIELD_API_LOGIN_PATH = "/hk4e_cn/mdk/shield/api/login";
     public static final String HK4E_CN_MDK_SHIELD_API_VERIFY_PATH = "/hk4e_cn/mdk/shield/api/verify";
     public static final String HK4E_CN_COMBO_GRANTER_LOGIN_V2_LOGIN_PATH = "/hk4e_cn/combo/granter/login/v2/login";
