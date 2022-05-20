@@ -29,6 +29,7 @@ import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.net.proto.WorktopInfoOuterClass.WorktopInfo;
 import emu.grasscutter.scripts.constants.EventType;
+import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketGadgetStateNotify;
 import emu.grasscutter.utils.Position;
@@ -51,6 +52,7 @@ public class EntityGadget extends EntityBaseGadget {
 	private int state;
 	private int pointType;
 	private GadgetContent content;
+	private SceneGadget metaGadget;
 
 	public EntityGadget(Scene scene, int gadgetId, Position pos) {
 		super(scene);
@@ -99,6 +101,7 @@ public class EntityGadget extends EntityBaseGadget {
 	public void updateState(int state){
 		this.setState(state);
 		this.getScene().broadcastPacket(new PacketGadgetStateNotify(this, state));
+		getScene().getScriptManager().callEvent(EventType.EVENT_GADGET_STATE_CHANGE, new ScriptArgs(state, this.getConfigId()));
 	}
 
 	public int getPointType() {
@@ -117,7 +120,15 @@ public class EntityGadget extends EntityBaseGadget {
 	public void setContent(GadgetContent content) {
 		this.content = this.content == null ? content : this.content;
 	}
-	
+
+	public SceneGadget getMetaGadget() {
+		return metaGadget;
+	}
+
+	public void setMetaGadget(SceneGadget metaGadget) {
+		this.metaGadget = metaGadget;
+	}
+
 	// TODO refactor
 	public void buildContent() {
 		if (getContent() != null || getGadgetData() == null || getGadgetData().getType() == null) {

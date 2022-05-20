@@ -79,6 +79,7 @@ public class GameData {
 	private static final Int2ObjectMap<TowerFloorData> towerFloorDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerLevelData> towerLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerScheduleData> towerScheduleDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<InvestigationMonsterData> investigationMonsterDataMap = new Int2ObjectOpenHashMap<>();
 
 	// Cache
 	private static Map<Integer, List<Integer>> fetters = new HashMap<>();
@@ -352,4 +353,8 @@ public class GameData {
 	public static Int2ObjectMap<GatherData> getGatherDataMap() {
 		return gatherDataMap;
 	}
+	public static Int2ObjectMap<InvestigationMonsterData> getInvestigationMonsterDataMap() {
+		return investigationMonsterDataMap;
+	}
+
 }

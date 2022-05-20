@@ -8,7 +8,6 @@ import emu.grasscutter.game.entity.gadget.GadgetWorktop;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.packet.send.PacketCanUseSkillNotify;
-import emu.grasscutter.server.packet.send.PacketGadgetStateNotify;
 import emu.grasscutter.server.packet.send.PacketWorktopOptionNotify;
 import io.netty.util.concurrent.FastThreadLocal;
 import org.luaj.vm2.LuaTable;
@@ -16,7 +15,6 @@ import org.luaj.vm2.LuaValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
 import java.util.Optional;
 
 public class ScriptLib {
@@ -68,34 +66,24 @@ public class ScriptLib {
 		if (entity.isEmpty()) {
 			return 1;
 		}
-		
-		if (!(entity.get() instanceof EntityGadget)) {
-			return 1;
+
+		if (entity.get() instanceof EntityGadget entityGadget) {
+			entityGadget.updateState(gadgetState);
+			return 0;
 		}
-		
-		EntityGadget gadget = (EntityGadget) entity.get();
-		gadget.setState(gadgetState);
-		
-		getSceneScriptManager().getScene().broadcastPacket(new PacketGadgetStateNotify(gadget, gadgetState));
-		return 0;
+
+		return 1;
 	}
 
 	public int SetGroupGadgetStateByConfigId(int groupId, int configId, int gadgetState) {
 		logger.debug("[LUA] Call SetGroupGadgetStateByConfigId with {},{},{}",
 				groupId,configId,gadgetState);
-		List<GameEntity> list = getSceneScriptManager().getScene().getEntities().values().stream()
-												.filter(e -> e.getGroupId() == groupId).toList();
-		
-		for (GameEntity entity : list) {
-			if (!(entity instanceof EntityGadget)) {
-				continue;
-			}
-			
-			EntityGadget gadget = (EntityGadget) entity;
-			gadget.setState(gadgetState);
-			
-			getSceneScriptManager().getScene().broadcastPacket(new PacketGadgetStateNotify(gadget, gadgetState));
-		}
+
+		getSceneScriptManager().getScene().getEntities().values().stream()
+				.filter(e -> e.getGroupId() == groupId)
+				.filter(e -> e instanceof EntityGadget)
+				.map(e -> (EntityGadget)e)
+				.forEach(e -> e.updateState(gadgetState));
 		
 		return 0;
 	}
@@ -450,8 +438,9 @@ public class ScriptLib {
 
 		if (entity instanceof EntityGadget entityGadget) {
 			entityGadget.updateState(state);
+			return 0;
 		}
 
-		return 0;
+		return 1;
 	}
 }

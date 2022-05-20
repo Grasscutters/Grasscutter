@@ -2,6 +2,7 @@ package emu.grasscutter.game.entity.gadget;
 
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.proto.InterOpTypeOuterClass;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
@@ -12,7 +13,7 @@ public class GadgetRewardStatue extends GadgetContent {
 		super(gadget);
 	}
 
-	public boolean onInteract(Player player) {
+	public boolean onInteract(Player player, InterOpTypeOuterClass.InterOpType opType) {
 		if (player.getScene().getChallenge() != null) {
 			player.getScene().getChallenge().getStatueDrops(player);
 		}
