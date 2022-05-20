@@ -1,21 +1,21 @@
 package emu.grasscutter.server.http.documentation;
 
+import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.utils.Language.translate;
+
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.SceneData;
-import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 import express.http.Request;
 import express.http.Response;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -25,10 +25,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static emu.grasscutter.Configuration.DATA;
-import static emu.grasscutter.Configuration.RESOURCE;
-import static emu.grasscutter.utils.Language.translate;
-
 final class HandbookRequestHandler implements DocumentationHandler {
 
     private final String template;
@@ -36,7 +32,6 @@ final class HandbookRequestHandler implements DocumentationHandler {
 
 
     public HandbookRequestHandler() {
-        ResourceLoader.loadResources();
         final File templateFile = new File(Utils.toFilePath(DATA("documentation/handbook.html")));
         if (templateFile.exists()) {
             template = new String(FileUtils.read(templateFile), StandardCharsets.UTF_8);
@@ -45,7 +40,7 @@ final class HandbookRequestHandler implements DocumentationHandler {
             template = null;
         }
 
-        final String textMapFile = "TextMap/TextMap" + Tools.getLanguageOption() + ".json";
+        final String textMapFile = "TextMap/TextMap" + DOCUMENT_LANGUAGE + ".json";
         try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(
                 Utils.toFilePath(RESOURCE(textMapFile))), StandardCharsets.UTF_8)) {
             map = Grasscutter.getGsonFactory()

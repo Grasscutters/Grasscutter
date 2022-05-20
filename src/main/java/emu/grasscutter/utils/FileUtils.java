@@ -9,6 +9,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -76,23 +78,34 @@ public final class FileUtils {
 
 	// From https://mkyong.com/java/java-read-a-file-from-resources-folder/
 	public static List<Path> getPathsFromResource(String folder) throws URISyntaxException, IOException {
-		List<Path> result;
-
-		// get path of the current running JAR
+		List<Path> result = null;
+		
+		// Get path of the current running JAR
 		String jarPath = Grasscutter.class.getProtectionDomain()
 				.getCodeSource()
 				.getLocation()
 				.toURI()
 				.getPath();
 
-		// file walks JAR
-		URI uri = URI.create("jar:file:" + jarPath);
-		try (FileSystem fs = FileSystems.newFileSystem(uri, Collections.emptyMap())) {
-			result = Files.walk(fs.getPath(folder))
-					.filter(Files::isRegularFile)
-					.collect(Collectors.toList());
+		try {
+			// file walks JAR
+			URI uri = URI.create("jar:file:" + jarPath);
+			try (FileSystem fs = FileSystems.newFileSystem(uri, Collections.emptyMap())) {
+				result = Files.walk(fs.getPath(folder))
+						.filter(Files::isRegularFile)
+						.collect(Collectors.toList());
+			}
+		} catch (Exception e) {
+			// Eclipse puts resources in its bin folder
+			File f = new File(jarPath + "defaults/data/");
+			
+			if (!f.exists() || f.listFiles().length == 0) {
+				return null;
+			}
+			
+			result = Arrays.stream(f.listFiles()).map(File::toPath).toList();
 		}
-
+		
 		return result;
 	}
 
