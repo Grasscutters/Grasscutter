@@ -16,11 +16,11 @@ public interface CommandHandler {
      * @param message The message to send.
      */
     static void sendMessage(Player player, String message) {
-        if (player == null) {
-            Grasscutter.getLogger().info(message);
-        } else {
+        if(player != null)
+        {
             player.dropMessage(message);
         }
+        Grasscutter.getLogger().info(message + ", player is " + player);
         CommandResponseEvent event = new CommandResponseEvent(ServerEvent.Type.GAME,player, message);
         event.call();
     }
