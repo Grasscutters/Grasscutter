@@ -1,5 +1,6 @@
 package emu.grasscutter.game.entity;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarData;
@@ -129,13 +130,27 @@ public class EntityAvatar extends GameEntity {
 	}
 	
 	public void addEnergy(float amount) {
+		this.addEnergy(amount, false);
+	}
+	public void addEnergy(float amount, boolean isFlat) {
+		// Get current and maximum energy for this avatar.
 		FightProperty curEnergyProp = getAvatar().getSkillDepot().getElementType().getCurEnergyProp();
 		FightProperty maxEnergyProp = getAvatar().getSkillDepot().getElementType().getMaxEnergyProp();
 		
+		// Get energy recharge.
+		float energyRecharge = this.getFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY);
+
+		// Scale amount by energy recharge, if the amount is not flat.
+		if (!isFlat) {
+			amount *= energyRecharge;
+		}
+
+		// Determine the new energy value.
 		float curEnergy = this.getFightProperty(curEnergyProp);
 		float maxEnergy = this.getFightProperty(maxEnergyProp);
 		float newEnergy = Math.min(curEnergy + amount, maxEnergy);
 		
+		// Set energy and notify.
 		if (newEnergy != curEnergy) {
 			setFightProperty(curEnergyProp, newEnergy);
 			
