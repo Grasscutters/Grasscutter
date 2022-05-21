@@ -6,12 +6,10 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.time.*;
 import java.time.temporal.TemporalAdjusters;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import java.util.Locale;
+import java.util.*;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
@@ -211,6 +209,9 @@ public final class Utils {
 		if(!fileExists(dataFolder))
 			createFolder(dataFolder);
 
+		// Make sure the data folder is populated, if there are any missing files copy them from resources
+		DataLoader.CheckAllFiles();
+
 		if(exit) System.exit(1);
 	}
 
@@ -319,13 +320,6 @@ public final class Utils {
 		return map;
 	}
 
-	/**
-	 * get language code from Locale
-	 */
-    public static String getLanguageCode(Locale locale) {
-        return String.format("%s-%s", locale.getLanguage(), locale.getCountry());
-    }
-
     /**
 	  * get progressPercentage
 	  */
@@ -415,5 +409,45 @@ public final class Utils {
 			}
 		}
 		return temp.toIntArray();
+	}
+
+	/**
+	 * Gets the language code from a given locale.
+	 * @param locale A locale.
+	 * @return A string in the format of 'XX-XX'.
+	 */
+	public static String getLanguageCode(Locale locale) {
+		return String.format("%s-%s", locale.getLanguage(), locale.getCountry());
+	}
+
+	/**
+	 * Base64 encodes a given byte array.
+	 * @param toEncode An array of bytes.
+	 * @return A base64 encoded string.
+	 */
+	public static String base64Encode(byte[] toEncode) {
+		return Base64.getEncoder().encodeToString(toEncode);
+	}
+
+	/**
+	 * Base64 decodes a given string.
+	 * @param toDecode A base64 encoded string.
+	 * @return An array of bytes.
+	 */
+	public static byte[] base64Decode(String toDecode) {
+		return Base64.getDecoder().decode(toDecode);
+	}
+
+	/**
+	 * Safely JSON decodes a given string.
+	 * @param jsonData The JSON-encoded data.
+	 * @return JSON decoded data, or null if an exception occurred.
+	 */
+	public static <T> T jsonDecode(String jsonData, Class<T> classType) {
+		try {
+			return Grasscutter.getGsonFactory().fromJson(jsonData, classType);
+		} catch (Exception ignored) {
+			return null;
+		}
 	}
 }

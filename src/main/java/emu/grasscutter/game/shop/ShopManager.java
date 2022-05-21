@@ -2,6 +2,7 @@ package emu.grasscutter.game.shop;
 
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.def.ShopGoodsData;
@@ -11,6 +12,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -58,7 +61,7 @@ public class ShopManager {
 	}
 
 	private void loadShop() {
-		try (FileReader fileReader = new FileReader(DATA("Shop.json"))) {
+		try (Reader fileReader = new InputStreamReader(DataLoader.load("Shop.json"))) {
 			getShopData().clear();
 			List<ShopTable> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopTable.class).getType());
 			if(banners.size() > 0) {
@@ -102,7 +105,7 @@ public class ShopManager {
 	}
 
 	private void loadShopChest() {
-		try (FileReader fileReader = new FileReader(DATA("ShopChest.json"))) {
+		try (Reader fileReader = new InputStreamReader(DataLoader.load("ShopChest.json"))) {
 			getShopChestData().clear();
 			List<ShopChestTable> shopChestTableList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopChestTable.class).getType());
 			if (shopChestTableList.size() > 0) {
@@ -117,7 +120,7 @@ public class ShopManager {
 	}
 
 	private void loadShopChestBatchUse() {
-		try (FileReader fileReader = new FileReader(DATA("ShopChestBatchUse.json"))) {
+		try (Reader fileReader = new InputStreamReader(DataLoader.load("ShopChestBatchUse.json"))) {
 			getShopChestBatchUseData().clear();
 			List<ShopChestBatchUseTable> shopChestBatchUseTableList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopChestBatchUseTable.class).getType());
 			if (shopChestBatchUseTableList.size() > 0) {

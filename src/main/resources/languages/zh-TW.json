@@ -24,6 +24,7 @@
       "account": {
         "login_attempt": "[Dispatch] 客戶端 %s 正在嘗試登入",
         "login_success": "[Dispatch] 客戶端 %s 已登入，UID為 %s",
+        "login_max_player_limit": "[Dispatch] 客戶端 %s 登入失敗：在綫人數已滿",
         "login_token_attempt": "[Dispatch] 客戶端 %s 正在嘗試用憑證登入",
         "login_token_error": "[Dispatch] 客戶端 %s 使用憑證登入失敗",
         "login_token_success": "[Dispatch] 客戶端 %s 已透過憑證登入，UID為 %s",
@@ -35,7 +36,8 @@
         "account_cache_error": "遊戲帳號緩存資訊錯誤",
         "session_key_error": "對話密鑰不符。",
         "username_error": "未找到此用戶名。",
-        "username_create_error": "未找到用戶名，建立失敗。"
+        "username_create_error": "未找到用戶名，建立失敗。",
+        "server_max_player_limit": "服務器在綫人數已滿"
       }
     },
     "status": {
@@ -229,9 +231,9 @@
       "description": "重新加載設定檔和數據。"
     },
     "remove": {
-      "usage": "用法: remove [indexOfYourTeams] 从1开始",
-      "invalid_index": "下標從1開始",
-      "description": "强制移除對内角色"
+      "usage": "用法: remove [多個角色在隊伍中的序號] 序號从1开始",
+      "invalid_index": "序號不合法，從1開始，最大值為隊内角色數量",
+      "description": "强制移除對内角色，例如`remove 1 2`表示將1號和2號角色從隊伍中移除"
     },
     "resetConst": {
       "reset_all": "重設所有角色的命座。",
@@ -335,9 +337,6 @@
       "success": "傳送 %s 到座標 %s,%s,%s ，場景為 %s 。",
       "description": "將玩家的位置傳送到你所指定的座標。"
     },
-    "tower": {
-      "unlock_done": "解鎖所有級別的深境螺旋已全部解鎖。"
-    },
     "weather": {
       "usage": "用法：weather <weatherId> [climateId]",
       "success": "已將當前天氣設定為 %s ，氣候則為 %s 。",
@@ -361,9 +360,6 @@
     "unlocktower": {
       "success": "解鎖完成。",
       "description": "解鎖所有級別的深境螺旋。"
-    },
-    "resetshop": {
-      "description": "重置商店刷新時間。"
     }
   },
   "gacha": {
@@ -371,8 +367,7 @@
       "title": "祈願詳情",
       "available_five_stars": "可獲得的5星物品",
       "available_four_stars": "可獲得的4星物品",
-      "available_three_stars": "可獲得的3星物品",
-      "template_missing": "data/gacha_details.html 不存在。"
+      "available_three_stars": "可獲得的3星物品"
     }
   }
 }

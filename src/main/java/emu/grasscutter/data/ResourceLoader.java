@@ -1,7 +1,6 @@
 package emu.grasscutter.data;
 
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.regex.Matcher;
@@ -32,6 +31,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import static emu.grasscutter.Configuration.*;
 
 public class ResourceLoader {
+
+	private static List<String> loadedResources = new ArrayList<String>();
 
 	public static List<Class<?>> getResourceDefClasses() {
 		Reflections reflections = new Reflections(ResourceLoader.class.getPackage().getName());
@@ -98,6 +99,10 @@ public class ResourceLoader {
 	}
 
 	public static void loadResources() {
+		loadResources(false);
+	}
+
+	public static void loadResources(boolean doReload) {
 		for (Class<?> resourceDefinition : getResourceDefClasses()) {
 			ResourceType type = resourceDefinition.getAnnotation(ResourceType.class);
 
@@ -113,7 +118,7 @@ public class ResourceLoader {
 			}
 
 			try {
-				loadFromResource(resourceDefinition, type, map);
+				loadFromResource(resourceDefinition, type, map, doReload);
 			} catch (Exception e) {
 				Grasscutter.getLogger().error("Error loading resource file: " + Arrays.toString(type.name()), e);
 			}
@@ -121,13 +126,16 @@ public class ResourceLoader {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	protected static void loadFromResource(Class<?> c, ResourceType type, Int2ObjectMap map) throws Exception {
-		for (String name : type.name()) {
-			loadFromResource(c, name, map);
+	protected static void loadFromResource(Class<?> c, ResourceType type, Int2ObjectMap map, boolean doReload) throws Exception {
+		if(!loadedResources.contains(c.getSimpleName()) || doReload) {
+			for (String name : type.name()) {
+				loadFromResource(c, name, map);
+			}
+			Grasscutter.getLogger().info("Loaded " + map.size() + " " + c.getSimpleName() + "s.");
+			loadedResources.add(c.getSimpleName());
 		}
-		Grasscutter.getLogger().info("Loaded " + map.size() + " " + c.getSimpleName() + "s.");
 	}
-	
+
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	protected static void loadFromResource(Class<?> c, String fileName, Int2ObjectMap map) throws Exception {
 		FileReader fileReader = new FileReader(RESOURCE("ExcelBinOutput/" + fileName));
@@ -138,6 +146,9 @@ public class ResourceLoader {
 			Map<String, Object> tempMap = Utils.switchPropertiesUpperLowerCase((Map<String, Object>) o, c);
 			GameResource res = gson.fromJson(gson.toJson(tempMap), TypeToken.get(c).getType());
 			res.onLoad();
+			if(map.containsKey(res.getId())) {
+				map.remove(res.getId());
+			}
 			map.put(res.getId(), res);
 		}
 	}
@@ -191,18 +202,14 @@ public class ResourceLoader {
 	}
 
 	private static void loadAbilityEmbryos() {
-		// Read from cached file if exists
-		File embryoCache = new File(DATA("AbilityEmbryos.json"));
 		List<AbilityEmbryoEntry> embryoList = null;
-		
-		if (embryoCache.exists()) {
-			// Load from cache
-			try (FileReader fileReader = new FileReader(embryoCache)) {
-				embryoList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, AbilityEmbryoEntry.class).getType());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else {
+
+		// Read from cached file if exists
+		try(InputStream embryoCache = DataLoader.load("AbilityEmbryos.json", false)) {
+			embryoList = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(embryoCache), TypeToken.getParameterized(Collection.class, AbilityEmbryoEntry.class).getType());
+		} catch(Exception ignored) {}
+
+		if(embryoList == null) {
 			// Load from BinOutput
 			Pattern pattern = Pattern.compile("(?<=ConfigAvatar_)(.*?)(?=.json)");
 
@@ -316,18 +323,12 @@ public class ResourceLoader {
 	}
 	
 	private static void loadSpawnData() {
-		// Read from cached file if exists
-		File spawnDataEntries = new File(DATA("Spawns.json"));
 		List<SpawnGroupEntry> spawnEntryList = null;
-		
-		if (spawnDataEntries.exists()) {
-			// Load from cache
-			try (FileReader fileReader = new FileReader(spawnDataEntries)) {
-				spawnEntryList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+
+		// Read from cached file if exists
+		try(InputStream spawnDataEntries = DataLoader.load("Spawns.json")) {
+			spawnEntryList = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(spawnDataEntries), TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType());
+		} catch (Exception ignored) {}
 		
 		if (spawnEntryList == null || spawnEntryList.isEmpty()) {
 			Grasscutter.getLogger().error("No spawn data loaded!");
@@ -342,16 +343,13 @@ public class ResourceLoader {
 	
 	private static void loadOpenConfig() {
 		// Read from cached file if exists
-		File openConfigCache = new File(DATA("OpenConfig.json"));
 		List<OpenConfigEntry> list = null;
-		
-		if (openConfigCache.exists()) {
-			try (FileReader fileReader = new FileReader(openConfigCache)) {
-				list = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, OpenConfigEntry.class).getType());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else {
+
+		try(InputStream openConfigCache = DataLoader.load("OpenConfig.json", false)) {
+			list = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(openConfigCache), TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType());
+		} catch (Exception ignored) {}
+
+		if (list == null) {
 			Map<String, OpenConfigEntry> map = new TreeMap<>();
 			java.lang.reflect.Type type = new TypeToken<Map<String, OpenConfigData[]>>() {}.getType();
 			String[] folderNames = {"BinOutput/Talent/EquipTalents/", "BinOutput/Talent/AvatarTalents/"};

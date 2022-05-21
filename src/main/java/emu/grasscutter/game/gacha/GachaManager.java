@@ -2,6 +2,8 @@ package emu.grasscutter.game.gacha;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,11 +15,13 @@ import com.google.gson.reflect.TypeToken;
 
 import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.gacha.GachaBanner.BannerType;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
@@ -74,12 +78,12 @@ public class GachaManager {
 	}
 	
 	public synchronized void load() {
-		try (FileReader fileReader = new FileReader(DATA("Banners.json"))) {
+		try (Reader fileReader = new InputStreamReader(DataLoader.load("Banners.json"))) {
 			getGachaBanners().clear();
 			List<GachaBanner> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, GachaBanner.class).getType());
 			if(banners.size() > 0) {
 				for (GachaBanner banner : banners) {
-					getGachaBanners().put(banner.getGachaType(), banner);
+					getGachaBanners().put(banner.getScheduleId(), banner);
 				}
 				Grasscutter.getLogger().info("Banners successfully loaded.");
 
@@ -233,7 +237,7 @@ public class GachaManager {
 		};
 	}
 	
-	public synchronized void doPulls(Player player, int gachaType, int times) {
+	public synchronized void doPulls(Player player, int scheduleId, int times) {
 		// Sanity check
 		if (times != 10 && times != 1) {
 			return;
@@ -245,7 +249,7 @@ public class GachaManager {
 		}
 		
 		// Get banner
-		GachaBanner banner = this.getGachaBanners().get(gachaType);
+		GachaBanner banner = this.getGachaBanners().get(scheduleId);
 		if (banner == null) {
 			player.sendPacket(new PacketDoGachaRsp());
 			return;
@@ -282,7 +286,7 @@ public class GachaManager {
 			}
 
 			// Write gacha record
-			GachaRecord gachaRecord = new GachaRecord(itemId, player.getUid(), gachaType);
+			GachaRecord gachaRecord = new GachaRecord(itemId, player.getUid(), banner.getGachaType());
 			DatabaseHelper.saveGachaRecord(gachaRecord);
 			
 			// Create gacha item
@@ -358,7 +362,7 @@ public class GachaManager {
 		if(this.watchService == null) {
 			try {
 				this.watchService = FileSystems.getDefault().newWatchService();
-				Path path = new File(DATA_FOLDER).toPath();
+				Path path = new File(DATA()).toPath();
 				path.register(watchService, new WatchEvent.Kind[]{StandardWatchEventKinds.ENTRY_MODIFY}, SensitivityWatchEventModifier.HIGH);
 			} catch (Exception e) {
 				Grasscutter.getLogger().error("Unable to load the Gacha Manager Watch Service. If ServerOptions.watchGacha is true it will not auto-reload");
@@ -408,8 +412,13 @@ public class GachaManager {
 	private synchronized GetGachaInfoRsp createProto(String sessionKey) {
 		GetGachaInfoRsp.Builder proto = GetGachaInfoRsp.newBuilder().setGachaRandom(12345);
 		
+		long currentTime = System.currentTimeMillis() / 1000L;
+
 		for (GachaBanner banner : getGachaBanners().values()) {
-			proto.addGachaInfoList(banner.toProto(sessionKey));
+			if ((banner.getEndTime() >= currentTime && banner.getBeginTime() <= currentTime) || (banner.getBannerType() == BannerType.STANDARD))
+			{
+				proto.addGachaInfoList(banner.toProto(sessionKey));
+			}
 		}
 				
 		return proto.build();

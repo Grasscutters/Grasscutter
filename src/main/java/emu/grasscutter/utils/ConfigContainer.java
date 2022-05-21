@@ -1,24 +1,18 @@
 package emu.grasscutter.utils;
 
-import com.google.gson.JsonObject;
+import java.io.File;
+import java.util.Locale;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.Grasscutter.ServerRunMode;
-
-import java.io.File;
-import java.io.FileReader;
-import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.Locale;
-
-import static emu.grasscutter.Grasscutter.config;
 
 /**
  * *when your JVM fails*
  */
 public class ConfigContainer {
     private static int version() {
-        return 2;
+        return 3;
     }
 
     /**
@@ -77,23 +71,41 @@ public class ConfigContainer {
         public ServerDebugMode debugLevel = ServerDebugMode.NONE;
         public ServerRunMode runMode = ServerRunMode.HYBRID;
 
-        public Dispatch dispatch = new Dispatch();
+        public HTTP http = new HTTP();
         public Game game = new Game();
+        
+        public Dispatch dispatch = new Dispatch();
     }
 
     public static class Language {
         public Locale language = Locale.getDefault();
         public Locale fallback = Locale.US;
+        public String document = "EN";
     }
 
     public static class Account {
         public boolean autoCreate = true;
-        public String[] defaultPermissions = {"server.spawn","server.drop","player.give","player.godmode","player.clearinv","player.setstats","player.heal","player.changescene","player.givechar","player.setworldlevel","server.killall","player.giveall","player.resetconstellation","player.giveart","player.setfetterlevel","player.enterdungeon","player.settalent","player.killcharacter","player.teleport","player.weather","player.tower","player.quest"};
+        public String[] defaultPermissions = {
+            "-server.stop",
+            "-server.permission",
+            "-server.account",
+            "-server.broadcast",
+            "-server.coop",
+            "-server.kick",
+            "-server.reload",
+            "-server.resetshop",
+            "-server.sendmail",
+            "-player.tpall",
+            "-player.*.others",
+            "-server.*.others",
+            "*"
+        };
+        public int maxPlayer = 1000;
     }
 
     /* Server options. */
-
-    public static class Dispatch {
+    
+    public static class HTTP {
         public String bindAddress = "0.0.0.0";
         /* This is the address used in URLs. */
         public String accessAddress = "127.0.0.1";
@@ -101,12 +113,10 @@ public class ConfigContainer {
         public int bindPort = 443;
         /* This is the port used in URLs. */
         public int accessPort = 0;
-
+        
         public Encryption encryption = new Encryption();
         public Policies policies = new Policies();
-        public Region[] regions = {};
-
-        public String defaultName = "Grasscutter";
+        public Files files = new Files();
     }
 
     public static class Game {
@@ -117,13 +127,19 @@ public class ConfigContainer {
         public int bindPort = 22102;
         /* This is the port used in the default region. */
         public int accessPort = 0;
-
+        public boolean enableConsole = true;
         public GameOptions gameOptions = new GameOptions();
         public JoinOptions joinOptions = new JoinOptions();
         public ConsoleAccount serverAccount = new ConsoleAccount();
     }
 
     /* Data containers. */
+
+    public static class Dispatch {
+        public Region[] regions = {};
+
+        public String defaultName = "Grasscutter";
+    }
 
     public static class Encryption {
         public boolean useEncryption = true;
@@ -220,10 +236,27 @@ public class ConfigContainer {
         public String nickName = "Ayaka";
         public String signature = "Hello, have fun playing :)";
     }
+    
+    public static class Files {
+        public String indexFile = "./index.html";
+        public String errorFile = "./404.html";
+    }
 
     /* Objects. */
 
     public static class Region {
+        public Region() { }
+        
+        public Region(
+                String name, String title,
+                String address, int port
+        ) {
+            this.Name = name;
+            this.Title = title;
+            this.Ip = address;
+            this.Port  = port;
+        }
+        
         public String Name = "os_usa";
         public String Title = "Yuuki";
         public String Ip = "127.0.0.1";

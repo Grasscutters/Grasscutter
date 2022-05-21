@@ -169,6 +169,7 @@ public class Player {
 	private int mainCharacterId;
 	private boolean godmode;
 
+	private boolean stamina;
 	private boolean moonCard;
 	private Date moonCardStartTime;
 	private int moonCardDuration;
@@ -831,7 +832,14 @@ public class Player {
 		}
 		this.save();
 	}
-
+	public boolean getStamina() {
+		// Get Stamina
+		return stamina;
+	}
+	public void setStamina(boolean stamina) {
+		// Set Stamina
+		this.stamina = stamina;
+	}
 	public boolean inGodmode() {
 		return godmode;
 	}

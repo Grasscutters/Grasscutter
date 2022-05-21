@@ -24,19 +24,22 @@
       "account": {
         "login_attempt": "[Dispatch] 客户端 %s 正在尝试登录",
         "login_success": "[Dispatch] 客户端 %s 已登录，UID 为 %s",
+        "login_max_player_limit": "[Dispatch] 客户端 %s 登录失败：在线人数已满",
         "login_token_attempt": "[Dispatch] 客户端 %s 正在尝试使用 token 登录",
         "login_token_error": "[Dispatch] 客户端 %s 使用 token 登录失败",
         "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID 为 %s",
         "combo_token_success": "[Dispatch] 客户端 %s 交换 token 成功",
         "combo_token_error": "[Dispatch] 客户端 %s 交换 token 失败",
-        "account_login_create_success": "[Dispatch] 客户端 %s 登录失败: 已注册 UID 为 %s 的账号",
-        "account_login_create_error": "[Dispatch] 客户端 %s 登录失败：账号创建失败。",
+        "account_login_create_success": "[Dispatch] 客户端 %s 登录失败：已注册 UID 为 %s 的账号",
+        "account_login_create_error": "[Dispatch] 客户端 %s 登录失败：账号创建失败",
         "account_login_exist_error": "[Dispatch] 客户端 %s 登录失败：账号不存在",
         "account_cache_error": "游戏账号缓存信息错误",
-        "session_key_error": "会话密钥错误。",
-        "username_error": "未找到此用户名。",
-        "username_create_error": "未找到用户名，建立连接失败。"
-      }
+        "session_key_error": "会话密钥错误",
+        "username_error": "未找到此用户名",
+        "username_create_error": "未找到用户名，建立连接失败",
+        "server_max_player_limit": "服务器在线人数已满"
+      },
+      "router_error": "[Dispatch] 无法连接路由"
     },
     "status": {
       "free_software": "Grasscutter 是免费开源软件，遵循 AGPL-3.0 license。如果你是付费购买的，那你已经被骗了。项目地址：https://github.com/Grasscutters/Grasscutter",
@@ -49,7 +52,7 @@
       "run_mode_help": "服务器运行模式必须为 HYBRID、DISPATCH_ONLY 或 GAME_ONLY。Grasscutter 启动失败...",
       "create_resources": "正在创建 resources 目录...",
       "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。",
-      "version": "Grasscutter 版本: %s-%s"
+      "version": "Grasscutter 版本：%s-%s"
     }
   },
   "commands": {
@@ -145,6 +148,10 @@
       "invalid_amount_or_playerId": "无效的数量/玩家ID。",
       "description": "给予所有物品"
     },
+    "nostamina": {
+      "success": "NoStamina 已设为 %s。[用户：%s]",
+      "description": "保持你的体力处于最高状态"
+    },
     "giveArtifact": {
       "usage": "用法：giveart|gart [玩家] <圣遗物ID> <主词条ID> [<副词条ID>[,<强化次数>]]... [等级]",
       "id_error": "无效的圣遗物ID。",
@@ -162,7 +169,7 @@
     "give": {
       "usage": "用法：give <玩家> <物品ID|物品名> [数量] [等级] [精炼等级]",
       "refinement_only_applicable_weapons": "只有武器可以设置精炼等级。",
-      "refinement_must_between_1_and_5": "精炼等级必须在 1 到 5 之间。",
+      "refinement_must_between_1_and_5": "精炼等级必须在 1-5 之间。",
       "given": "已将 %s 个 %s 给予 %s。",
       "given_with_level_and_refinement": "已将 %s [等级 %s, 精炼 %s] %s 个给予 %s。",
       "given_level": "已将 %s [等级 %s] %s 个给予 %s。",
@@ -176,10 +183,6 @@
       "success": "已治疗所有角色。",
       "description": "治疗当前队伍的角色"
     },
-    "join": {
-      "usage": "用法：join <角色IDs> 例如\"join 10000038 10000039\"空格分开",
-      "description": "强制将角色加入到当前队伍中"
-    },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已将 [%s:%s] 踢出。",
       "server_kick_player": "正在踢出玩家 [%s:%s]...",
@@ -192,14 +195,14 @@
       "description": "杀死所有怪物"
     },
     "killCharacter": {
-      "usage": "用法：/killcharacter [玩家ID]",
+      "usage": "用法：killcharacter [玩家ID]",
       "success": "已杀死 %s 当前角色。",
       "description": "杀死当前角色"
     },
     "language": {
-      "current_language": "当前语言是: %s",
-      "language_changed": "语言切换至: %s",
-      "language_not_found": "目前服务端没有这种语言: %s",
+      "current_language": "当前语言是：%s",
+      "language_changed": "语言切换至：%s",
+      "language_not_found": "目前服务端没有这种语言：%s",
       "description": "显示或切换当前语言"
     },
     "list": {
@@ -220,22 +223,17 @@
       "description": "获取所在位置"
     },
     "quest": {
-      "description": "添加或完成任务",
       "usage": "quest <add|finish> [任务ID]",
-      "added": "已添加任务 %s",
-      "finished": "已完成任务 %s",
-      "not_found": "未找到任务",
-      "invalid_id": "无效的任务ID"
+      "added": "已添加任务 %s。",
+      "finished": "已完成任务 %s。",
+      "not_found": "此任务不存在。",
+      "invalid_id": "无效的任务ID。",
+      "description": "添加或完成任务"
     },
     "reload": {
-      "reload_start": "正在重载配置文件和数据。",
+      "reload_start": "正在重载配置文件和数据...",
       "reload_done": "重载完成。",
       "description": "重载配置文件和数据"
-    },
-    "remove": {
-      "usage": "用法: remove [indexOfYourTeams] 从1开始",
-      "invalid_index": "下标从1开始",
-      "description": "强制移除队内角色"
     },
     "resetConst": {
       "reset_all": "重置所有角色的命座。",
@@ -243,7 +241,7 @@
       "description": "重置当前角色的命之座，执行命令后需重新登录以生效"
     },
     "resetShopLimit": {
-      "usage": "用法：/resetshop <玩家ID>",
+      "usage": "用法：resetshop <玩家ID>",
       "description": "重置所选玩家的商店刷新时间"
     },
     "sendMail": {
@@ -260,7 +258,7 @@
       "set_title": "成功将邮件标题设置为 '%s'。\n使用 '/sendmail <正文>' 来设置邮件内容。",
       "set_contents": "成功将邮件内容设置为 '%s'。\n使用 '/sendmail <发件人>' 来设置发件人。",
       "set_message_sender": "发件人已设置为 '%s'。\n使用 '/sendmail <物品ID|物品名称|finish> [数量] [等级]' 来添加附件。",
-      "send": "已添加 %s 个 %s (等级 %s) 邮件附件。\n如果没有要继续添加的附件请使用 `/sendmail finish` 来发送邮件。",
+      "send": "已添加 %s 个 %s [等级 %s] 邮件附件。\n如果没有要继续添加的附件请使用 `/sendmail finish` 来发送邮件。",
       "invalid_arguments_please_use": "错误的参数 \n请使用 `/sendmail %s`",
       "title": "<标题>",
       "message": "<正文>",
@@ -276,7 +274,7 @@
     },
     "setFetterLevel": {
       "usage": "用法：setfetterlevel <好感度等级>",
-      "range_error": "好感度等级必须在 0 到 10 之间。",
+      "range_error": "好感度等级必须在 0-10 之间。",
       "success": "好感度已设为 %s 级。",
       "level_error": "无效的好感度等级。",
       "description": "设置当前角色的好感度等级"
@@ -284,7 +282,7 @@
     "setStats": {
       "usage_console": "用法：setstats|stats @<UID> <属性> <数值>",
       "usage_ingame": "用法：setstats|stats [@UID] <属性> <数值>",
-      "help_message": "\n可更改的属性列表：hp (生命值)| maxhp (最大生命值) | def(防御力) | atk (攻击力)| em (元素精通) | er (元素充能效率) | crate(暴击率) | cdmg (暴击伤害)| cdr (冷却缩减) | heal(治疗加成)| heali (受治疗加成)| shield (护盾强效)| defi (无视防御)\n(续) 元素增伤：epyro (火) | ecryo (冰)  | ehydro (水)  | egeo (岩)  | edendro (草) | eelectro (雷) | ephys (物理)\n(续) 元素抗性：respyro (火)  | rescryo (冰)  | reshydro (水)  | resgeo (岩) | resdendro (草) | reselectro (雷)  | resphys (物理)\n",
+      "help_message": "\n可更改的属性列表：hp (生命值)| maxhp (最大生命值) | def (防御力) | atk (攻击力)| em (元素精通) | er (元素充能效率) | crate (暴击率) | cdmg (暴击伤害)| cdr (冷却缩减) | heal (治疗加成)| heali (受治疗加成)| shield (护盾强效)| defi (无视防御)\n(续) 元素增伤：epyro (火) | ecryo (冰)  | ehydro (水)  | egeo (岩)  | edendro (草) | eelectro (雷) | ephys (物理)\n(续) 元素抗性：respyro (火)  | rescryo (冰)  | reshydro (水)  | resgeo (岩) | resdendro (草) | reselectro (雷)  | resphys (物理)\n",
       "value_error": "无效的属性值。",
       "uid_error": "无效的UID。",
       "player_error": "玩家不存在或已离线。",
@@ -295,7 +293,7 @@
     },
     "setWorldLevel": {
       "usage": "用法：setworldlevel <等级>",
-      "value_error": "世界等级必须设置在0-8之间。",
+      "value_error": "世界等级必须在 0-8 之间。",
       "success": "世界等级已设为 %s。",
       "invalid_world_level": "无效的世界等级。",
       "description": "设置世界等级，执行命令后需重新登录以生效"
@@ -311,7 +309,7 @@
     },
     "talent": {
       "usage_1": "设置天赋等级：/talent set <天赋ID> <数值>",
-      "usage_2": "另一种设置天赋等级的方法：/talent <n (普通攻击) | e (元素战技) | q (元素爆发)> <数值>",
+      "usage_2": "另一种设置天赋等级的方法：/talent <n|e|q> <数值>\nn: 普通攻击, e: 元素战技, q: 元素爆发",
       "usage_3": "获取天赋ID：/talent getid",
       "lower_16": "无效的天赋等级，天赋等级应小于等于15。",
       "set_id": "将天赋等级设为 %s。",
@@ -326,21 +324,36 @@
       "q_skill_id": "元素爆发ID %s。",
       "description": "设置当前角色的天赋等级"
     },
+    "team": {
+      "usage": "用法：team <add|remove|set> [角色ID,...] [索引|first|last|索引-索引,...]",
+      "invalid_usage": "无效用法。",
+      "add_usage": "用法 (add)：team add <角色ID,...> [索引]",
+      "invalid_index": "无效索引。",
+      "add_too_much": "服务端仅允许你队伍里至多有 %d 名角色。",
+      "failed_to_add_avatar": "无法根据ID %s 添加角色。",
+      "remove_usage": "用法 (remove)：team remove <索引|first|last|索引-索引,...>",
+      "failed_to_parse_index": "无法解析索引：%s",
+      "remove_too_much": "你不能删除那么多角色，你的队伍列表将会变空。",
+      "ignore_index": "忽略的索引列表：%s",
+      "set_usage": "用法 (set)：team set <索引> <角色ID>",
+      "index_out_of_range": "你指定的索引超出了范围。",
+      "failed_parse_avatar_id": "无法解析的角色ID：%s",
+      "avatar_already_in_team": "角色已经在你的队伍中了。",
+      "avatar_not_found": "无法找到该角色：%d",
+      "description": "手动修改你的队伍"
+    },
     "teleportAll": {
       "success": "已将所有玩家传送到你的位置。",
       "error": "你只能在多人游戏状态下执行此命令。",
       "description": "将你世界中的所有玩家传送到你所在的位置"
     },
     "teleport": {
-      "usage_server": "用法：/tp @<玩家ID> <x> <y> <z> [场景ID]",
-      "usage": "用法：/tp [@<玩家ID>] <x> <y> <z> [场景ID]",
+      "usage_server": "用法：tp @<玩家ID> <x> <y> <z> [场景ID]",
+      "usage": "用法：tp [@<玩家ID>] <x> <y> <z> [场景ID]",
       "specify_player_id": "你必须指定一个玩家ID。",
       "invalid_position": "无效的位置。",
-      "success": "传送 %s 到坐标 %s,%s,%s，场景为 %s。",
+      "success": "传送 %s 到坐标 %s, %s, %s，场景为 %s。",
       "description": "改变指定玩家的位置"
-    },
-    "tower": {
-      "unlock_done": "深境回廊的所有层已全部解锁。"
     },
     "weather": {
       "usage": "用法：weather <天气ID> [气候ID]",
@@ -365,9 +378,6 @@
     "unlocktower": {
       "success": "解锁完成。",
       "description": "解锁深境螺旋的所有层"
-    },
-    "resetshop": {
-      "description": "重置商店刷新时间"
     }
   },
   "gacha": {
@@ -375,8 +385,29 @@
       "title": "祈愿详情",
       "available_five_stars": "可获得的5星物品",
       "available_four_stars": "可获得的4星物品",
-      "available_three_stars": "可获得的3星物品",
-      "template_missing": "缺失文件：data/gacha_details.html"
+      "available_three_stars": "可获得的3星物品"
+    }
+  },
+  "documentation": {
+    "handbook": {
+      "title": "GM Handbook",
+      "title_commands": "命令",
+      "title_avatars": "角色",
+      "title_items": "物品",
+      "title_scenes": "场景",
+      "title_monsters": "怪物",
+      "header_id": "ID",
+      "header_command": "命令",
+      "header_description": "说明",
+      "header_avatar": "角色",
+      "header_item": "物品",
+      "header_scene": "场景",
+      "header_monster": "怪物"
+    },
+    "index": {
+      "title": "文档",
+      "handbook": "GM Handbook",
+      "gacha_mapping": "祈愿映射 JSON"
     }
   }
 }
