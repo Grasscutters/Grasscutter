@@ -115,12 +115,12 @@ public class GameSession extends KcpChannel {
 	
 	@Override
 	protected void onConnect() {
-		Grasscutter.getLogger().info(translate("messages.game.connect", this.getAddress().getHostString().toLowerCase()));
+		Grasscutter.getLogger().debug(translate("messages.game.connect", this.getAddress().getHostString().toLowerCase()));
 	}
 
 	@Override
 	protected synchronized void onDisconnect() { // Synchronize so we don't add character at the same time.
-		Grasscutter.getLogger().info(translate("messages.game.disconnect", this.getAddress().getHostString().toLowerCase()));
+		Grasscutter.getLogger().debug(translate("messages.game.disconnect", this.getAddress().getHostString().toLowerCase()));
 
 		// Set state so no more packets can be handled
 		this.setState(SessionState.INACTIVE);
