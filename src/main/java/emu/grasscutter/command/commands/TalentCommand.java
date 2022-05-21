@@ -77,7 +77,7 @@ public final class TalentCommand implements CommandHandler {
                     int skillId = Integer.parseInt(args.get(1));
                     int newLevel = Integer.parseInt(args.get(2));
                     setTalentLevel(sender, targetPlayer, avatar, skillId, newLevel);
-                } catch (Exception ignored) {
+                } catch (NumberFormatException | IndexOutOfBoundsException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.talent.invalid_skill_id"));
                     return;
                 }
@@ -96,7 +96,7 @@ public final class TalentCommand implements CommandHandler {
                 try {
                     int newLevel = Integer.parseInt(args.get(1));
                     setTalentLevel(sender, targetPlayer, avatar, skillId, newLevel);
-                } catch (Exception ignored) {
+                } catch (NumberFormatException | IndexOutOfBoundsException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.talent.invalid_level"));
                     return;
                 }

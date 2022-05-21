@@ -30,7 +30,7 @@ public final class QuestCommand implements CommandHandler {
 		
 		try {
 			questId = Integer.parseInt(args.get(1));
-		} catch (Exception e) {
+		} catch (NumberFormatException | IndexOutOfBoundsException e) {
 			CommandHandler.sendMessage(sender, translate(sender, "commands.quest.invalid_id"));
             return;
 		}

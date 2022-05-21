@@ -37,7 +37,7 @@ public final class ChangeSceneCommand implements CommandHandler {
             }
 
             CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.success", Integer.toString(sceneId)));
-        } catch (Exception e) {
+        } catch (NumberFormatException | IndexOutOfBoundsException e) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
         }
     }

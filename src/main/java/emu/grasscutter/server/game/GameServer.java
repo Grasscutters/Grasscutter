@@ -269,7 +269,7 @@ public final class GameServer extends KcpServer {
 	//private volatile Integer exitStatus;
 
 	public static void doExit(int exitStatus,String message) {
-		Grasscutter.getLogger().info("Exit with code "+exitStatus,message);
+		Grasscutter.getLogger().info("Exit with code "+exitStatus+" | "+message);
 		if(exitStatus == 0){
 
 		}else{

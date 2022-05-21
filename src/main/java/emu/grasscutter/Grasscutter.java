@@ -239,8 +239,7 @@ public final class Grasscutter {
 		try (FileReader file = new FileReader(configFile)) {
 			config = gson.fromJson(file, ConfigContainer.class);
 		} catch (Exception exception) {
-			getLogger().error("There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
-			GameServer.doExit(0,"Error config.json");
+			GameServer.doExit(0,"There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
 		} 
 	}
 

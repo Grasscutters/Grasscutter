@@ -167,7 +167,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 				level = last;
 				args.remove(args.size()-1);
 			}
-		} catch (Exception ignored) {  // Could be a stat,times string so no need to panic
+		} catch (NumberFormatException | IndexOutOfBoundsException ignored) {  // Could be a stat,times string so no need to panic
 		}
 
 		// Get substats.
@@ -193,7 +193,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 				// Add the current substat.
 				appendPropIdList.addAll(Collections.nCopies(n, appendPropId));
 			});
-		} catch (Exception ignored) {
+		} catch (NumberFormatException | IndexOutOfBoundsException ignored) {
 			CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
 			return;
 		}

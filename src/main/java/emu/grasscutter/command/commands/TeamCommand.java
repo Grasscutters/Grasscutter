@@ -66,7 +66,7 @@ public final class TeamCommand implements CommandHandler {
             try {
                 index = Integer.parseInt(args.get(2)) - 1;
 				if (index < 0) index = 0;
-            } catch (Exception e) {
+            } catch (NumberFormatException | IndexOutOfBoundsException e) {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.team.invalid_index"));
                 return false;
             }
@@ -86,7 +86,7 @@ public final class TeamCommand implements CommandHandler {
 				var ret = addAvatar(sender, targetPlayer, id, index);
 				if (index > 0) ++index;
                 if (!ret) continue;
-            } catch (Exception e) {
+            } catch (NumberFormatException | IndexOutOfBoundsException e) {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.team.failed_to_add_avatar", avatarId));
                 continue;
             }
@@ -119,7 +119,7 @@ public final class TeamCommand implements CommandHandler {
             for (var avatarIndex: subIndexes) {
                 try {
                     indexes.add(currentTeamAvatars.get(avatarIndex - 1));
-                } catch (Exception e) {
+                } catch (NumberFormatException | IndexOutOfBoundsException e) {
                     ignoreList.add(avatarIndex);
                     continue;
                 }
@@ -155,7 +155,7 @@ public final class TeamCommand implements CommandHandler {
         try {
             index = Integer.parseInt(args.get(1)) - 1;
             if (index < 0) index = 0;
-        } catch(Exception e) {
+        } catch(NumberFormatException | IndexOutOfBoundsException e) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.team.failed_to_parse_index", args.get(1)));
             return false;
         }
@@ -168,7 +168,7 @@ public final class TeamCommand implements CommandHandler {
         int avatarId;
         try {
             avatarId = Integer.parseInt(args.get(2));
-        } catch(Exception e) {
+        } catch(NumberFormatException | IndexOutOfBoundsException e) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.team.failed_parse_avatar_id", args.get(2)));
             return false;
         }
@@ -239,7 +239,7 @@ public final class TeamCommand implements CommandHandler {
                     case "last" -> listLength;
                     default -> Integer.parseInt(range[1]);
                 };
-            } catch (Exception e) {
+            } catch (NumberFormatException | IndexOutOfBoundsException e) {
                 return null;
             }
 
@@ -260,7 +260,7 @@ public final class TeamCommand implements CommandHandler {
         try {
             int index = Integer.parseInt(metaIndexes);
             return List.of(index);
-        } catch (Exception e) {
+        } catch (NumberFormatException | IndexOutOfBoundsException e) {
             return null;
         }
     }
