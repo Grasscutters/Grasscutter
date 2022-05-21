@@ -22,7 +22,7 @@ public class HandlerTowerEnterLevelReq extends PacketHandler {
       return;
 		}
 
-    Grasscutter.getLogger().info("DEBUG Abyse: Player Start "+session.getPlayer().getNickname()+" ");
+    Grasscutter.getLogger().debug("DEBUG Abyse: Player Start "+session.getPlayer().getNickname()+" ");
 
     TowerEnterLevelReq req = TowerEnterLevelReq.parseFrom(payload);
 		session.getPlayer().getTowerManager().enterLevel(req.getEnterPointId());
