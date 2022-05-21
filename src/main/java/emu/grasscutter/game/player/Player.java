@@ -204,6 +204,7 @@ public class Player {
 		this.avatars = new AvatarStorage(this);
 		this.friendsList = new FriendsList(this);
 		this.mailHandler = new MailHandler(this);
+		this.towerManager = new TowerManager(this);
 		this.abilityManager = new AbilityManager(this);
 		this.setQuestManager(new QuestManager(this));
 		this.pos = new Position();
@@ -252,8 +253,7 @@ public class Player {
 		this.nickname = "Traveler";
 		this.signature = "";
 
-		this.teamManager = new TeamManager(this);
-    this.towerManager = new TowerManager(this);
+		this.teamManager = new TeamManager(this);        
 
 		this.birthday = new PlayerBirthday();
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
@@ -1198,8 +1198,11 @@ public class Player {
 
 	@PostLoad
 	private void onLoad() {
-		this.getTeamManager().setPlayer(this);
-    this.getTowerManager().setPlayer(this);
+		if(this.getTeamManager() != null)
+		 this.getTeamManager().setPlayer(this);
+
+		if(getTowerManager() != null)
+         this.getTowerManager().setPlayer(this);
 	}
 
 	public void save() {
@@ -1207,12 +1210,7 @@ public class Player {
 	}
 
 	public void onLogin() { 
-
-		// Make sure team tower is there  
-    if (this.getTowerManager() == null){
-      this.towerManager = new TowerManager(this);
-    }
-
+		
     if (this.getTeamManager() == null) {
       // New player
       this.teamManager = new TeamManager(this);
