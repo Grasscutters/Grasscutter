@@ -182,7 +182,7 @@ public class Inventory implements Iterable<GameItem> {
 			this.addVirtualItem(item.getItemId(), item.getCount());
 			return item;
 		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_ADSORBATE) {
-			player.getTeamManager().addEnergyToTeam(item);
+			this.player.getEnergyManager().handlePickupElemBall(item);
 			return null;
 		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_AVATAR) {
 			// Get avatar id

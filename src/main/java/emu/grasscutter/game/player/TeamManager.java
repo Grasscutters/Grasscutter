@@ -4,13 +4,11 @@ import java.util.*;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityBaseGadget;
-import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.FightProperty;
@@ -20,7 +18,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
-import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketAvatarDieAnimationEndRsp;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
@@ -582,63 +579,6 @@ public class TeamManager {
 
 		// Packets
 		getPlayer().sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));
-	}
-	
-	public synchronized void addEnergyToTeam(GameItem energyBall) {
-		// Check if the item is indeed an energy particle/orb.
-		if (energyBall.getItemId() < 2001 ||energyBall.getItemId() > 2024) {
-			return;
-		}
-
-		// Determine the base amount of energy given by the particle/orb.
-		// Particles have a base amount of 1.0, and orbs a base amount of 3.0.
-		float baseEnergy = (energyBall.getItemId() <= 2008) ? 3.0f : 1.0f;
-
-		// Add energy to every team member.		
-		for (int i = 0; i < this.getActiveTeam().size(); i++) {
-			EntityAvatar entity = this.getActiveTeam().get(i);
-
-			// On-field vs off-field multiplier.
-			float offFieldPenalty = (this.getCurrentCharacterIndex() == i) ? 1.0f : 1.0f - this.getActiveTeam().size() * 0.1f;
-
-			// Same element/neutral bonus.
-			ElementType avatarElement = entity.getAvatar().getSkillDepot().getElementType();
-			ElementType ballElement = switch (energyBall.getItemId()) {
-				case 2001, 2017 -> ElementType.Fire;
-				case 2002, 2018 -> ElementType.Water;
-				case 2003, 2019 -> ElementType.Grass;
-				case 2004, 2020 -> ElementType.Electric;
-				case 2005, 2021 -> ElementType.Wind;
-				case 2006, 2022 -> ElementType.Ice;
-				case 2007, 2023 -> ElementType.Rock;
-				default -> null;
-			};
-			float elementBonus = (ballElement == null) ? 2.0f : (avatarElement == ballElement) ? 3.0f : 1.0f;
-			
-			// Add the energy.
-			entity.addEnergy(baseEnergy * elementBonus * offFieldPenalty);
-		}
-	}
-
-	public void handleEvtDoSkillSuccNotify(GameSession session, int skillId, int casterId) {
-		if (!GAME_OPTIONS.energyUsage) {
-			return;
-		}
-
-		// Determine the entity that has cast the skill.
-		Optional<EntityAvatar> caster = this.getActiveTeam().stream()
-											.filter(character -> character.getId() == casterId)
-											.findFirst();
-		if (caster.isEmpty()) {
-			return;
-		}
-		Avatar avatar = caster.get().getAvatar();
-
-		// If the cast skill was a burst, consume energy.
-		if (skillId == avatar.getSkillDepot().getEnergySkill()) {
-			float consumedEnergy = avatar.getFightProperty(avatar.getSkillDepot().getElementType().getCurEnergyProp());
-			avatar.getAsEntity().addEnergy(-consumedEnergy, true);
-		}
 	}
 
 	public void saveAvatars() {
