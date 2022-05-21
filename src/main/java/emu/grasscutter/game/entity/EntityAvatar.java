@@ -1,6 +1,5 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarData;
@@ -13,7 +12,6 @@ import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock;
 import emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
@@ -33,7 +31,6 @@ import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import emu.grasscutter.utils.Utils;
@@ -160,7 +157,6 @@ public class EntityAvatar extends GameEntity {
 		float newEnergy = Math.min(curEnergy + amount, maxEnergy);
 		
 		// Set energy and notify.
-		Grasscutter.getLogger().info("Giving {} energy to {} with {} maximum energy, resulting in {} total enery. Energy fight prop: {}", amount, this.getAvatar(), maxEnergy, newEnergy, maxEnergyProp);
 		if (newEnergy != curEnergy) {
 			this.setFightProperty(curEnergyProp, newEnergy);
 			
