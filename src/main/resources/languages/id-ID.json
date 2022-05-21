@@ -173,6 +173,10 @@
         "success": "Godmode sekarang %s untuk %s.",
         "description": "Mencegah kamu dari mati karena kerusakan dan lainya."
       },
+      "nostamina": {
+        "success": "NoStamina sekarang %s untuk %s.",
+        "description": "Jaga daya tahan Anda secara maksimal."
+      },
       "heal": {
         "success": "Semua karakter telah disembuhkan.",
         "description": "Sembuhkan semua karakter di tim Anda saat ini."
