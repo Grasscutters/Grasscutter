@@ -1,6 +1,5 @@
 package emu.grasscutter.game.managers;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.data.def.ItemData;
@@ -47,9 +46,10 @@ public class EnergyManager {
 
 		// Try to get the invoking entity from the scene.
 		GameEntity entity = player.getScene().getEntityById(invokeEntityId);
-		
+
 		// If this entity is null, or not an `EntityClientGadget`, we assume that we are directly 
-		// looking at the casting avatar.
+		// looking at the casting avatar (the null case will happen if the avatar was switched out 
+		// between casting the skill and the particle being generated).
 		if (!(entity instanceof EntityClientGadget)) {
 			res = invokeEntityId;
 		}
@@ -66,6 +66,10 @@ public class EnergyManager {
 	}
     
     public void handleGenerateElemBall(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
+		// ToDo: 
+		// This is also called when a weapon like Favonius Warbow etc. creates energy through its passive.
+		// We are not handling this correctly at the moment.
+
 		// Get action info.
 		AbilityActionGenerateElemBall action = AbilityActionGenerateElemBall.parseFrom(invoke.getAbilityData());
 		if (action == null) {
@@ -122,7 +126,7 @@ public class EnergyManager {
 		// Generate entity.
 		EntityItem energyBall = new EntityItem(getPlayer().getScene(), getPlayer(), itemData, new Position(action.getPos()), 1);
 		energyBall.getRotation().set(action.getRot());
-		
+
 		this.getPlayer().getScene().addEntity(energyBall);
 	}
 
@@ -144,9 +148,20 @@ public class EnergyManager {
 			EntityAvatar entity = this.player.getTeamManager().getActiveTeam().get(i);
 
 			// On-field vs off-field multiplier.
+			// The on-field character gets no penalty.
+			// Off-field characters get a penalty depending on the team size, as follows:
+			//	  - 4 character team: 0.6
+			//	  - 3 character team: 0.7
+			//    - 2 character team: 0.8
 			float offFieldPenalty = (this.player.getTeamManager().getCurrentCharacterIndex() == i) ? 1.0f : 1.0f - this.player.getTeamManager().getActiveTeam().size() * 0.1f;
 
 			// Same element/neutral bonus.
+			// Same-element characters get a bonus of *3, while different-element characters get no bonus at all.
+			// For neutral particles/orbs, the multiplier is always *2.
+			if (entity.getAvatar().getSkillDepot() == null) {
+				continue;
+			}
+
 			ElementType avatarElement = entity.getAvatar().getSkillDepot().getElementType();
 			ElementType ballElement = switch (elemBall.getItemId()) {
 				case 2001, 2017 -> ElementType.Fire;
@@ -158,6 +173,7 @@ public class EnergyManager {
 				case 2007, 2023 -> ElementType.Rock;
 				default -> null;
 			};
+
 			float elementBonus = (ballElement == null) ? 2.0f : (avatarElement == ballElement) ? 3.0f : 1.0f;
 			
 			// Add the energy.
@@ -176,8 +192,8 @@ public class EnergyManager {
 		}
 
         // If the cast skill was a burst, consume energy.
-		if (skillId == avatar.getSkillDepot().getEnergySkill()) {
-            avatar.getAsEntity().clearEnergy(PropChangeReason.PROP_CHANGE_ABILITY);
+		if (avatar.getSkillDepot() != null && skillId == avatar.getSkillDepot().getEnergySkill()) {
+			avatar.getAsEntity().clearEnergy(PropChangeReason.PROP_CHANGE_ABILITY);
 		}
     }
 
