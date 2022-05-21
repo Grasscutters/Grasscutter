@@ -45,11 +45,6 @@ public final class TalentCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
         if (args.size() < 1){
             CommandHandler.sendMessage(sender, translate(sender, "commands.talent.usage_1"));
             CommandHandler.sendMessage(sender, translate(sender, "commands.talent.usage_2"));

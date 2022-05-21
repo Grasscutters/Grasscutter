@@ -15,12 +15,6 @@ public final class NoStaminaCommand implements CommandHandler {
     //Temp Value
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
-
         if (args.size() == 1) {
             switch (args.get(0).toLowerCase()) {
                 case "on":

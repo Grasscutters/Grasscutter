@@ -14,16 +14,12 @@ import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "clear", usage = "clear <all|wp|art|mat>", //Merged /clearartifacts and /clearweapons to /clear <args> [uid]
         description = "commands.clear.description",
-        aliases = {"clear"}, permission = "player.clearinv", permissionTargeted = "player.clearinv.others")
+        aliases = {"clear"}, permission = "player.clearinv", permissionTargeted = "player.clearinv.others", targetRequirement = Command.TargetRequirement.PLAYER)
 
 public final class ClearCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
         if (args.size() < 1) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.clear.command_usage"));
             return;

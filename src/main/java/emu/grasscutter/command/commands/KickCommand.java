@@ -13,11 +13,6 @@ public final class KickCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
         if (sender != null) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.kick.player_kick_player", 
                     Integer.toString(sender.getAccount().getPlayerUid()), sender.getAccount().getUsername(),
