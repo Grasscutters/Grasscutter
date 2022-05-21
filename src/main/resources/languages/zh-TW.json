@@ -174,6 +174,10 @@
       "success": "上帝模式設定為 %s 。 [用戶：%s]",
       "description": "防止你受到傷害。"
     },
+    "nostamina": {
+      "success": "無限體力狀態： %s。[使用者：%s]",
+      "description": "開啟後所有動作都不再消耗體力。"
+    },
     "heal": {
       "success": "所有角色已被治療。",
       "description": "治療當前隊伍的角色。"
@@ -323,6 +327,24 @@
       "e_skill_id": "元素戰技技能ID %s。",
       "q_skill_id": "元素爆發技能ID %s。",
       "description": "設定當前角色的天賦等級"
+    },
+    "team": {
+      "usage": "用法：team <add|remove|set> [角色ID,...] [索引|first|last|索引-索引,...]",
+      "invalid_usage": "無效的用法。",
+      "add_usage": "新增的用法：team add <角色ID,...> [索引]",
+      "invalid_index": "無效索引。",
+      "add_too_much": "服務端只允許您的隊伍裡最多 %d 名角色。",
+      "failed_to_add_avatar": "無法根據ID %s 添加角色。",
+      "remove_usage": "移除的用法：team remove <索引|first|last|索引-索引,...>",
+      "failed_to_parse_index": "無法解析的索引：%s",
+      "remove_too_much": "您不能删除那麼多的角色，因為您的隊伍列表角色會全部被刪除。",
+      "ignore_index": "無視的索引列表：%s",
+      "set_usage": "設定的用法：team set <索引> <角色ID>",
+      "index_out_of_range": "您指定的索引超出了範圍。",
+      "failed_parse_avatar_id": "無法解析的角色ID：%s",
+      "avatar_already_in_team": "該角色已經在您的隊伍當中了。",
+      "avatar_not_found": "無法找到該角色：%d",
+      "description": "手動修改您的隊伍配置。"
     },
     "teleportAll": {
       "success": "召喚了所有玩家到你的位置上。",
