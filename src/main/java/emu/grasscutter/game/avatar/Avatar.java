@@ -497,7 +497,7 @@ public class Avatar {
 		float hpPercent = this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) <= 0 ? 1f : this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) / this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 		
 		// Store current energy value for later
-		float currentEnergy = (data.getSkillDepot() != null) ? this.getFightProperty(data.getSkillDepot().getElementType().getCurEnergyProp()) : 0f;
+		float currentEnergy = (this.getSkillDepot() != null) ? this.getFightProperty(this.getSkillDepot().getElementType().getCurEnergyProp()) : 0f;
 
 		// Clear properties
 		this.getFightProperties().clear();
@@ -517,15 +517,15 @@ public class Avatar {
 		}
 		
 		// Set energy usage
-		if (data.getSkillDepot() != null && data.getSkillDepot().getEnergySkillData() != null) {
-			ElementType element = data.getSkillDepot().getElementType();
-			this.setFightProperty(element.getMaxEnergyProp(), data.getSkillDepot().getEnergySkillData().getCostElemVal());
+		if (this.getSkillDepot() != null && this.getSkillDepot().getEnergySkillData() != null) {
+			ElementType element = this.getSkillDepot().getElementType();
+			this.setFightProperty(element.getMaxEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
 			
 			if (GAME_OPTIONS.energyUsage) {
 				this.setFightProperty(element.getCurEnergyProp(), currentEnergy);
 			}
 			else {
-				this.setFightProperty(element.getCurEnergyProp(), data.getSkillDepot().getEnergySkillData().getCostElemVal());
+				this.setFightProperty(element.getCurEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
 			}
 		}
 		
