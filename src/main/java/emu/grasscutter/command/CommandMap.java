@@ -222,17 +222,17 @@ public final class CommandMap {
         }
 
         // Check if command has unfulfilled constraints on targetPlayer
-        TargetRequirement targetRequirement = this.annotations.get(label).targetRequirement();
-        if (targetRequirement != TargetRequirement.NONE) {
+        Command.TargetRequirement targetRequirement = this.annotations.get(label).targetRequirement();
+        if (targetRequirement != Command.TargetRequirement.NONE) {
             if (targetPlayer == null) {
                 CommandHandler.sendMessage(player, translate(player, "commands.execution.need_target"));
                 return;
             }
-            if ((targetRequirement == TargetRequirement.ONLINE) && !targetPlayer.isOnline()) {
+            if ((targetRequirement == Command.TargetRequirement.ONLINE) && !targetPlayer.isOnline()) {
                 CommandHandler.sendMessage(player, translate(player, "commands.execution.need_target_online"));
                 return;
             }
-            if ((targetRequirement == TargetRequirement.OFFLINE) && targetPlayer.isOnline()) {
+            if ((targetRequirement == Command.TargetRequirement.OFFLINE) && targetPlayer.isOnline()) {
                 CommandHandler.sendMessage(player, translate(player, "commands.execution.need_target_offline"));
                 return;
             }
