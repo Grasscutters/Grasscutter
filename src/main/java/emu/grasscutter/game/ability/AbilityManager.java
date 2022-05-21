@@ -147,93 +147,9 @@ public class AbilityManager {
 		AbilityMixinCostStamina costStamina = AbilityMixinCostStamina.parseFrom((invoke.getAbilityData()));
 		getPlayer().getStaminaManager().handleMixinCostStamina(costStamina.getIsSwim());
 	}
-	
-	private int getCastingAvatarIdForElemBall(int invokeEntityId) {
-		// To determine the avatar that has cast the skill that caused the energy particle to be generated,
-		// we have to look at the entity that has invoked the ability. This can either be that avatar directly, 
-		// or it can be an `EntityClientGadget`, owned (some way up the owner hierarchy) by the avatar 
-		// that cast the skill.
-		int res = 0;
-
-		// Try to get the invoking entity from the scene.
-		GameEntity entity = player.getScene().getEntityById(invokeEntityId);
-		
-		// If this entity is null, or not an `EntityClientGadget`, we assume that we are directly 
-		// looking at the casting avatar.
-		if (!(entity instanceof EntityClientGadget)) {
-			res = invokeEntityId;
-		}
-		// If the entity is a `EntityClientGadget`, we need to "walk up" the owner hierarchy,
-		// until the owner is no longer a gadget. This should then be the ID of the casting avatar.
-		else {	
-			while (entity instanceof EntityClientGadget gadget) {
-				res = gadget.getOwnerEntityId();
-				entity = player.getScene().getEntityById(gadget.getOwnerEntityId());
-			}
-		}
-		
-		return res;
-	}
 
 	private void handleGenerateElemBall(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
-		// Get action info.
-		AbilityActionGenerateElemBall action = AbilityActionGenerateElemBall.parseFrom(invoke.getAbilityData());
-		if (action == null) {
-			return;
-		}
-		
-		// Determine the element of the energy particle that we have to generate.
-		// In case we can't, we default to an elementless particle.
-		// The element is the element of the avatar that has cast the ability.
-		// We can get that from the avatar's skill depot.
-		int itemId = 2024;
-		
-		// Try to fetch the avatar from the player's party and determine their element.
-		// ToDo: Does this work in co-op?
-		int avatarId = getCastingAvatarIdForElemBall(invoke.getEntityId());	
-		Optional<EntityAvatar> avatarEntity = player.getTeamManager().getActiveTeam()
-													.stream()
-													.filter(character -> character.getId() == avatarId)
-													.findFirst();
-
-		if (avatarEntity.isPresent()) {
-			Avatar avatar = avatarEntity.get().getAvatar();
-
-			if (avatar != null) {
-				AvatarSkillDepotData skillDepotData = avatar.getSkillDepot();
-
-				if (skillDepotData != null) {
-					ElementType element = skillDepotData.getElementType();
-
-					// If we found the element, we use it to deterine the ID of the
-					// energy particle that we have to generate.
-		 			if (element != null) {
-		 				itemId = switch (element) {
-							case Fire -> 2017;
-							case Water -> 2018; 
-							case Grass -> 2019;
-							case Electric -> 2020;
-							case Wind -> 2021;
-							case Ice -> 2022;
-							case Rock -> 2023;
-							default -> 2024;
-						};
-		 			}
-		 		}
-		 	}
-		}
-
-		// Get the item data for an energy particle of the correct element.
-		ItemData itemData = GameData.getItemDataMap().get(itemId);
-		if (itemData == null) {
-			return; // Should never happen
-		}
-		
-		// Generate entity.
-		EntityItem energyBall = new EntityItem(getPlayer().getScene(), getPlayer(), itemData, new Position(action.getPos()), 1);
-		energyBall.getRotation().set(action.getRot());
-		
-		getPlayer().getScene().addEntity(energyBall);
+		this.player.getEnergyManager().handleGenerateElemBall(invoke);
 	}
 	
 	private void invokeAction(AbilityModifierAction action, GameEntity target, GameEntity sourceEntity) {
