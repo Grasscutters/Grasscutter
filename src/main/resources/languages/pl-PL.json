@@ -21,6 +21,7 @@
       "account": {
         "login_attempt": "[Dispatch] Klient %s próbuje się zalogować",
         "login_success": "[Dispatch] Klient %s zalogował się jako %s",
+        "login_max_player_limit": "[Dispatch] Klient %s nie powiodło się: Liczba graczy online osiągnęła limit",
         "login_token_attempt": "[Dispatch] Klient %s próbuje się zalogować poprzez token",
         "login_token_error": "[Dispatch] Klient %s nie mógł się zalogować poprzez token",
         "login_token_success": "[Dispatch] Klient %s zalogował się poprzez token jako %s",
@@ -32,7 +33,8 @@
         "account_cache_error": "Błąd pamięci cache konta gry",
         "session_key_error": "Błędny klucz sesji.",
         "username_error": "Nazwa użytkownika nie znaleziona.",
-        "username_create_error": "Nazwa użytkownika nie znaleziona, tworzenie nie powiodło się."
+        "username_create_error": "Nazwa użytkownika nie znaleziona, tworzenie nie powiodło się.",
+        "server_max_player_limit": "Liczba graczy online osiągnęła limit"
       }
     },
     "status": {

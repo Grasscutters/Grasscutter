@@ -7,8 +7,10 @@ import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 
 import java.io.*;
+import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import static emu.grasscutter.Configuration.DATA;
 
@@ -46,17 +48,20 @@ public class DataLoader {
     }
 
     public static void CheckAllFiles() {
-
         try {
             List<Path> filenames = FileUtils.getPathsFromResource("/defaults/data/");
+            
+            if (filenames == null) {
+            	Grasscutter.getLogger().error("We were unable to locate your default data files.");
+            }
 
             for (Path file : filenames) {
-                String relativePath = String.valueOf(file).split("/defaults/data/")[1];
+                String relativePath = String.valueOf(file).split("defaults[\\\\\\/]data[\\\\\\/]")[1];
 
                 CheckAndCopyData(relativePath);
             }
         } catch (Exception e) {
-            Grasscutter.getLogger().error("An error occurred while trying to check the data folder. \n" + e);
+            Grasscutter.getLogger().error("An error occurred while trying to check the data folder.", e);
         }
 
         GenerateGachaMappings();

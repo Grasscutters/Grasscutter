@@ -5,11 +5,10 @@ import static emu.grasscutter.Configuration.RESOURCE;
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Utils;
+import static emu.grasscutter.Configuration.DOCUMENT_LANGUAGE;
 import express.http.Request;
 import express.http.Response;
 import java.io.FileInputStream;
@@ -27,8 +26,7 @@ final class GachaMappingRequestHandler implements DocumentationHandler {
     private Map<Long, String> map;
 
     GachaMappingRequestHandler() {
-        ResourceLoader.loadResources();
-        final String textMapFile = "TextMap/TextMap" + Tools.getLanguageOption() + ".json";
+        final String textMapFile = "TextMap/TextMap" + DOCUMENT_LANGUAGE + ".json";
         try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(
                 Utils.toFilePath(RESOURCE(textMapFile))), StandardCharsets.UTF_8)) {
             map = Grasscutter.getGsonFactory().fromJson(fileReader,

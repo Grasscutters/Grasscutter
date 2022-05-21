@@ -104,11 +104,13 @@ public class ConfigContainer {
     public static class Language {
         public Locale language = Locale.getDefault();
         public Locale fallback = Locale.US;
+        public String document = "EN";
     }
 
     public static class Account {
         public boolean autoCreate = false;
         public String[] defaultPermissions = {};
+        public int maxPlayer = -1;
     }
 
     /* Server options. */

@@ -26,6 +26,7 @@ public final class Configuration extends ConfigContainer {
     
     public static final Locale LANGUAGE = config.language.language;
     public static final Locale FALLBACK_LANGUAGE = config.language.fallback;
+    public static final String DOCUMENT_LANGUAGE = config.language.document;
     private static final String DATA_FOLDER = config.folderStructure.data;
     private static final String RESOURCES_FOLDER = config.folderStructure.resources;
     private static final String PLUGINS_FOLDER = config.folderStructure.plugins;
