@@ -9,6 +9,7 @@ data/
 logs/
 plugins/
 src/generated/
+#src/main/resources/defaults/
 GM Handbook.txt
 config.json
 BuildConfig.java
