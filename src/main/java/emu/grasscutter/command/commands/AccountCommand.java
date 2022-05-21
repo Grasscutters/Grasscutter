@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "commands.account.description", aliases = {"acc"})
+@Command(label = "account", usage = "account <create|delete> <username> [uid]", permission = "server.account",description = "commands.account.description", aliases = {"acc"})
 public final class AccountCommand implements CommandHandler {
 
     @Override

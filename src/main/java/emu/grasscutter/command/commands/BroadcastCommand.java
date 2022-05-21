@@ -22,7 +22,9 @@ public final class BroadcastCommand implements CommandHandler {
         String message = String.join(" ", args.subList(0, args.size()));
 
         for (Player p : Grasscutter.getGameServer().getPlayers().values()) {
-            CommandHandler.sendMessage(p, message);
+            String tes = sender.getUid()+": "+message;
+            CommandHandler.sendMessage(p, tes);
+            Grasscutter.getLogger().info(tes);
         }
 
         CommandHandler.sendMessage(sender, translate(sender, "commands.broadcast.message_sent"));
