@@ -16,6 +16,7 @@ import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.PostLoad;
 import dev.morphia.annotations.PrePersist;
 import dev.morphia.annotations.Transient;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.custom.OpenConfigEntry;
@@ -519,7 +520,7 @@ public class Avatar {
 		if (data.getSkillDepot() != null && data.getSkillDepot().getEnergySkillData() != null) {
 			ElementType element = data.getSkillDepot().getElementType();
 			this.setFightProperty(element.getMaxEnergyProp(), data.getSkillDepot().getEnergySkillData().getCostElemVal());
-
+			
 			if (GAME_OPTIONS.energyUsage) {
 				this.setFightProperty(element.getCurEnergyProp(), currentEnergy);
 			}
