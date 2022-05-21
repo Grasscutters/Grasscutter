@@ -21,6 +21,10 @@ public class LuaSerializer implements Serializer {
 	
 	public <T> List<T> serializeList(Class<T> type, LuaTable table) {
 		List<T> list = new ArrayList();
+
+		if (table == null) {
+			return list;
+		}
 		
 		try {
 			LuaValue[] keys = table.keys();
@@ -72,6 +76,10 @@ public class LuaSerializer implements Serializer {
 		try {
 			//noinspection ConfusingArgumentToVarargsMethod
 			object = type.getDeclaredConstructor().newInstance(null);
+
+			if (table == null) {
+				return object;
+			}
 			
 			LuaValue[] keys = table.keys();
 			for (LuaValue k : keys) {
