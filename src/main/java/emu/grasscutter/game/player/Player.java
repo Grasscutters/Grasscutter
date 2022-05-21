@@ -79,6 +79,7 @@ public class Player {
 	private Position pos;
 	private Position rotation;
 	private PlayerBirthday birthday;
+	private PlayerCodex codex;
 
 	private Map<Integer, Integer> properties;
 	private Set<Integer> nameCardList;
@@ -187,6 +188,7 @@ public class Player {
 		this.birthday = new PlayerBirthday();
 		this.rewardedLevels = new HashSet<>();
 		this.moonCardGetTimes = new HashSet<>();
+		this.codex = new PlayerCodex();
 
 		this.shopLimit = new ArrayList<>();
 		this.expeditionInfo = new HashMap<>();
@@ -206,6 +208,7 @@ public class Player {
 		this.signature = "";
 		this.teamManager = new TeamManager(this);
 		this.birthday = new PlayerBirthday();
+		this.codex = new PlayerCodex();
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
 		this.setProperty(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50);
@@ -754,7 +757,6 @@ public class Player {
 		return expeditionInfo.get(avaterGuid);
 	}
 
-
 	public List<ShopLimit> getShopLimit() {
 		return shopLimit;
 	}
@@ -980,6 +982,8 @@ public class Player {
 		return this.birthday.getDay() > 0;
 	}
 
+	public PlayerCodex getCodex(){ return this.codex; }
+
 	public Set<Integer> getRewardedLevels() {
 		return rewardedLevels;
 	}
@@ -1151,6 +1155,7 @@ public class Player {
 
 	@PostLoad
 	private void onLoad() {
+		this.getCodex().setPlayer(this);
 		this.getTeamManager().setPlayer(this);
 		this.getTowerManager().setPlayer(this);
 	}
@@ -1221,7 +1226,6 @@ public class Player {
 		session.send(new PacketFinishedParentQuestNotify(this));
 		session.send(new PacketQuestListNotify(this));
 		session.send(new PacketCodexDataFullNotify(this));
-		session.send(new PacketServerCondMeetQuestListUpdateNotify(this));
 		session.send(new PacketAllWidgetDataNotify(this));
 		session.send(new PacketWidgetGadgetAllDataNotify());
 		session.send(new PacketPlayerHomeCompInfoNotify(this));

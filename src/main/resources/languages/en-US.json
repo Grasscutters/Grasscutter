@@ -155,7 +155,7 @@
       "description": "Gives the player a specified artifact"
     },
     "giveChar": {
-      "usage": "Usage: givechar <player> <itemID|itemName> [amount]",
+      "usage": "Usage: givechar <player> <itemID|itemName> [level]",
       "given": "Given %s with level %s to %s.",
       "invalid_avatar_id": "Invalid avatar ID.",
       "invalid_avatar_level": "Invalid avatar level.",

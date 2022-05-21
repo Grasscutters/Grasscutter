@@ -5,7 +5,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
-@ResourceType(name = {"QuestCodexExcelConfigData.json"}, loadPriority = ResourceType.LoadPriority.HIGH)
+@ResourceType(name = {"QuestCodexExcelConfigData.json"})
 public class CodexQuest extends GameResource {
     private int Id;
     private int ParentQuestId;

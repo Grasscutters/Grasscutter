@@ -19,7 +19,6 @@ import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.server.packet.send.PacketFinishedParentQuestUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestListUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestProgressUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketServerCondMeetQuestListUpdateNotify;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -121,7 +120,6 @@ public class QuestManager {
 		mainQuest.save();
 
 		// Send packet
-		getPlayer().sendPacket(new PacketServerCondMeetQuestListUpdateNotify(quest));
 		getPlayer().sendPacket(new PacketQuestListUpdateNotify(quest));
 
 		return quest;

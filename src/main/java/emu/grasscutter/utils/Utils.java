@@ -8,6 +8,7 @@ import java.time.*;
 import java.time.temporal.TemporalAdjusters;
 import java.util.*;
 
+import com.sun.tools.javac.Main;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import io.netty.buffer.ByteBuf;
@@ -200,8 +201,10 @@ public final class Utils {
 			createFolder(dataFolder);
 
 		// Make sure the data folder is populated, if there are any missing files copy them from resources
-		DataLoader.CheckAllFiles();
-
+		if(Grasscutter.class.getResource("").getProtocol() == "jar"){
+			logger.info("Running in jar");
+			DataLoader.CheckAllFiles();
+		}
 		if(exit) System.exit(1);
 	}
 
