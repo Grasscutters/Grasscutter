@@ -169,14 +169,14 @@ public class ConfigContainer {
         public Rates rates = new Rates();
 
         // DockerGC
-	     	public int CMD_Spawn = 150;
-		    public int CMD_Give = 10000000;
-		    public int CMD_Drop = 100;
-        public int CMD_DayLogin = 6;
-		    public boolean CMD_NoGiveTes = true;
+	    public int CMD_Spawn = 150;
+		public int CMD_Give = 10000000;
+		public int CMD_Drop = 100;
+        public int CMD_DayLogin = 8;
+		public boolean CMD_NoGiveTes = true;
         public boolean CMD_ListOnline = false;
-		    public boolean DropMo = true;
-		    public boolean DungeonMT = false;
+		public boolean DropMo = true;
+		public boolean DungeonMT = false;
         public boolean AbyssMT = false;
 
         public static class InventoryLimits {
@@ -184,12 +184,12 @@ public class ConfigContainer {
             public int relics = 2000;
             public int materials = 2000;
             public int furniture = 2000;
-            public int all = 30000;
+            public int all = 8000;
         }
 
         public static class AvatarLimits {
             public int singlePlayerTeam = 4;
-            public int multiplayerTeam = 15;
+            public int multiplayerTeam = 4;
         }
 
         public static class Rates {
@@ -206,7 +206,7 @@ public class ConfigContainer {
 
         public static class Mail {
             public String title = "Welcome to Yuuki Server";
-            public String content = "tes";
+            public String content = "Hi";
             public String sender = "Yuuki";
             public emu.grasscutter.game.mail.Mail.MailItem[] items = {
                     // Intertwined Fate
