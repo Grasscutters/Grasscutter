@@ -110,10 +110,10 @@
       },
       "changescene": {
         "usage": "Penggunaan: changescene <sceneId>",
-        "already_in_scene": "Kamu sudah ada di scene ini.",
-        "success": "Ubah scene ke %s.",
-        "exists_error": "Id scene tidak ditemukan",
-        "description": "Ganti scene"
+        "already_in_scene": "Kamu sudah ada di adegan ini.",
+        "success": "Ubah adegan ke %s.",
+        "exists_error": "Id adegan tidak ditemukan",
+        "description": "Ganti adegan atau cut scene"
       },
       "clear": {
         "command_usage": "Penggunaan: clear <all|wp|art|mat>",
@@ -129,7 +129,7 @@
       },
       "coop": {
         "usage": "Penggunaan: coop <playerId> <target playerId>",
-        "success": "Summoned %s to %s's world.",
+        "success": "Dipanggil %s ke %s dunianya.",
         "description": "Memaksa seseorang untuk bergabung dengan dunia orang lain"
       },
       "enter_dungeon": {
@@ -205,44 +205,44 @@
       },
       "permission": {
         "usage": "Penggunaan: permission <add|remove> <username> <permission>",
-        "add": "Permission added.",
-        "has_error": "They already have this permission!",
-        "remove": "Permission removed.",
-        "not_have_error": "They don't have this permission!",
-        "account_error": "The account cannot be found.",
-        "description": "Grants or removes a permission for a user"
+        "add": "Izin ditambahkan.",
+        "has_error": "Mereka sudah memiliki izin ini!",
+        "remove": "Izin dihapus.",
+        "not_have_error": "Mereka tidak memiliki izin ini!",
+        "account_error": "Akun tidak dapat ditemukan.",
+        "description": "Memberikan atau menghapus izin untuk pengguna"
       },
       "position": {
-        "success": "Coordinates: %s, %s, %s\nScene id: %s",
-        "description": "Get coordinates."
+        "success": "Koordinat: %s, %s, %s\nAdegan ID: %s",
+        "description": "Dapatkan koordinat."
       },
       "quest": {
-        "description": "Add or finish quests",
+        "description": "Tambahkan atau selesaikan misi",
         "usage": "quest <add|finish> [quest id]",
-        "added": "Quest %s added",
-        "finished": "Finished quest %s",
-        "not_found": "Quest not found",
-        "invalid_id": "Invalid quest id"
+        "added": "Misi %s telah ditambahkan",
+        "finished": "Misi selesai %s",
+        "not_found": "ID Misi tidak ditemukan",
+        "invalid_id": "Tidak sah Misi ID nya"
       },
       "reload": {
-        "reload_start": "Reloading config.",
-        "reload_done": "Reload complete.",
-        "description": "Reload server config"
+        "reload_start": "Memuat ulang konfigurasi",
+        "reload_done": "Memuat ulang selesai.",
+        "description": "Muat ulang konfigurasi server"
       },
       "resetConst": {
-        "reset_all": "Reset all avatars' constellations.",
-        "success": "Constellations for %s have been reset. Please relog to see changes.",
-        "description": "Resets the constellation level on your current active character, will need to relog after using the command to see any changes."
+        "reset_all": "Setel ulang konstelasi semua avatar.",
+        "success": "Konstelasi untuk %s telah disetel ulang. Harap login kembali untuk melihat perubahan.",
+        "description": "Mengatur ulang tingkat konstelasi pada karakter aktif Anda saat ini, perlu melakukan relog setelah menggunakan perintah untuk melihat perubahan apa pun."
       },
       "resetShopLimit": {
         "usage": "Penggunaan: /resetshop <player id>",
-        "description": "Reset target player's shop refresh time."
+        "description": "Setel ulang waktu penyegaran toko pemain."
       },
       "sendMail": {
         "usage": "Penggunaan: give [player] <itemId|itemName> [amount]",
-        "user_not_exist": "The user with an id of '%s' does not exist",
-        "start_composition": "Starting composition of message.\nPlease use `/sendmail <title>` to continue.\nYou can use `/sendmail stop` at any time",
-        "templates": "Mail templates coming soon implemented...",
+        "user_not_exist": "Pengguna dengan id dari '%s' tidak ada",
+        "start_composition": "Memulai komposisi pesan.\nSilakan gunakan `/sendmail <title>` untuk melanjutkan.\nAnda dapat menggunakan `/sendmail stop` kapan saja",
+        "templates": "Template email segera hadir diimplementasikan.",
         "invalid_arguments": "Invalid arguments.\nUsage `/sendmail <userId|all|help> [templateId]`",
         "send_cancel": "Message sending cancelled",
         "send_done": "Message sent to user %s!",
@@ -263,39 +263,39 @@
       },
       "sendMessage": {
         "usage": "Penggunaan: sendmessage <player> <message>",
-        "success": "Message sent.",
-        "description": "Sends a message to a player as the server"
+        "success": "Pesan terkirim.",
+        "description": "Mengirim pesan ke pemain sebagai server"
       },
       "setFetterLevel": {
         "usage": "Penggunaan: setfetterlevel <level>",
-        "range_error": "Fetter level must be between 0 and 10.",
-        "success": "Fetter level set to %s",
-        "level_error": "Invalid fetter level.",
-        "description": "Sets your fetter level for your current active character"
+        "range_error": "Level teman harus antara 0 dan 10.",
+        "success": "Teman level telah di atur ke %s",
+        "level_error": "Level teman tidak vaild",
+        "description": "Tetapkan level teman mu untuk karakter aktif anda saat ini"
       },
       "setStats": {
         "usage_console": "Penggunaan: setstats|stats @<UID> <stat> <value>",
         "usage_ingame": "Penggunaan: setstats|stats [@UID] <stat> <value>",
         "help_message": "\n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-        "value_error": "Invalid stat value.",
-        "uid_error": "Invalid UID.",
-        "player_error": "Player not found or offline.",
-        "set_self": "%s set to %s.",
-        "set_for_uid": "%s for %s set to %s.",
-        "set_max_hp": "MAX HP set to %s.",
-        "description": "Set fight property for your current active character"
+        "value_error": "Nilai status tidak valid.",
+        "uid_error": "UID tidak valid.",
+        "player_error": "Pemain tidak ditemukan atau offline.",
+        "set_self": "%s atur ke %s.",
+        "set_for_uid": "%s untuk %s telah di atur ke %s.",
+        "set_max_hp": "MAX HP telah di atur ke %s.",
+        "description": "Tetapkan properti pertarungan untuk karakter aktif anda saat ini"
       },
       "setWorldLevel": {
         "usage": "Penggunaan: setworldlevel <level>",
-        "value_error": "World level must be between 0-8",
-        "success": "World level set to %s.",
-        "invalid_world_level": "Invalid world level.",
-        "description": "Sets your world level (Relog to see proper effects)"
+        "value_error": "Tingkat dunia harus antara 0-8",
+        "success": "Tingkat dunia diatur ke %s.",
+        "invalid_world_level": "Tingkat dunia tidak salah.",
+        "description": "Mengatur tingkat dunia (Relog untuk melihat efek nya)"
       },
       "spawn": {
         "usage": "Penggunaan: spawn <entityId> [amount] [level(monster only)]",
         "success": "Muncul %s dari %s.",
-        "description": "Memunculkan entitas di dekat Anda"
+        "description": "Memunculkan entitas di dekat mu"
       },
       "stop": {
         "success": "Server dimatikan...",
@@ -307,16 +307,34 @@
         "usage_3": "Untuk mendapatkan ID bakat: /talent getid",
         "lower_16": "Tingkat bakat tidak valid. Levelnya harus lebih rendah dari 16",
         "set_id": "Tetapkan bakat untuk %s.",
-        "set_atk": "Set talent Normal ATK to %s.",
-        "set_e": "Set talent E to %s.",
-        "set_q": "Set talent Q to %s.",
-        "invalid_skill_id": "Invalid skill ID.",
-        "set_this": "Set this talent to %s.",
-        "invalid_level": "Invalid talent level.",
+        "set_atk": "atur talent Normal ATK ke %s.",
+        "set_e": "Atur talent E ke %s.",
+        "set_q": "Atur talent Q ke %s.",
+        "invalid_skill_id": "ID keterampilan tidak valid.",
+        "set_this": "Tetapkan bakat ini ke %s.",
+        "invalid_level": "Itingkat bakat yang tidak valid.",
         "normal_attack_id": "Normal Attack ID %s.",
         "e_skill_id": "E skill ID %s.",
         "q_skill_id": "Q skill ID %s.",
         "description": "Tetapkan level bakat untuk karakter aktif Anda saat ini"
+      },
+      "team": {
+        "usage": "Gunakan: team <add|remove|set> [avatarID,...] [index|first|last|index-index,...]",
+        "invalid_usage": "Penggunaan tidak valid.",
+        "add_usage": "Gunakan (add): team add <avatarID,...> [index]",
+        "invalid_index": "Index tidak sah",
+        "add_too_much": "Server hanya mengizinkan kamu untuk memiliki paling banyak %d avatar di tim mu.",
+        "failed_to_add_avatar": "Gagal menambahkan avatar ID %s.",
+        "remove_usage": "Gunakan (remove): team remove <index|first|last|index-index,...>",
+        "failed_to_parse_index": "Gagal mem-parsing index: %s",
+        "remove_too_much": "Kamu tidak dapat menghapus semua avatar mu.",
+        "ignore_index": "Abaikan index(es): %s",
+        "set_usage": "Gunakan (set): team set <index> <avatarID>",
+        "index_out_of_range": "Indeks yang Anda tentukan berada di luar jangkauan.",
+        "failed_parse_avatar_id": "Gagal mem-parsing ID avatar: %s",
+        "avatar_already_in_team": "Avatar ini sudah ada di tim mu.",
+        "avatar_not_found": "Avatar %d tidak ditemukan.",
+        "description": "Ubah tim Anda secara manual."
       },
       "teleportAll": {
         "success": "Memanggil semua pemain ke lokasi Anda.",
@@ -332,7 +350,7 @@
         "description": "Ubah posisi pemain."
       },
       "tower": {
-        "unlock_done": "Lantai Abyss Corridor semuanya tidak terkunci sekarang."
+        "unlock_done": "Lantai Abyss semuanya sudah terbuka sekarang."
       },
       "weather": {
         "usage": "Penggunaan: weather <CuacaId> [SuasanaId]",
