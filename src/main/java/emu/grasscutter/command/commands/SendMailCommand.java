@@ -118,28 +118,28 @@ public final class SendMailCommand implements CommandHandler {
                                     case 4: // <itemId|itemName> [amount] [level] [refinement] // TODO: this requires Mail support but there's no harm leaving it here for now
                                         try {
                                             refinement = Integer.parseInt(args.get(3));
-                                        } catch (NumberFormatException ignored) {
+                                        } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                                             CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.itemRefinement"));
                                             return;
                                         }  // Fallthrough
                                     case 3: // <itemId|itemName> [amount] [level]
                                         try {
                                             lvl = Integer.parseInt(args.get(2));
-                                        } catch (NumberFormatException ignored) {
+                                        } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                                             CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.itemLevel"));
                                             return;
                                         }  // Fallthrough
                                     case 2: // <itemId|itemName> [amount]
                                         try {
                                             amount = Integer.parseInt(args.get(1));
-                                        } catch (NumberFormatException ignored) {
+                                        } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                                             CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.amount"));
                                             return;
                                         }  // Fallthrough
                                     case 1: // <itemId|itemName>
                                         try {
                                             item = Integer.parseInt(args.get(0));
-                                        } catch (NumberFormatException ignored) {
+                                        } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                                             // TODO: Parse from item name using GM Handbook.
                                             CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.itemId"));
                                             return;

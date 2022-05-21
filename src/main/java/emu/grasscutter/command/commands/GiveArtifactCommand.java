@@ -63,7 +63,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 			res = Integer.parseInt(substatText);
 			return res;
 		}
-		catch (NumberFormatException ignores) {
+		catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignores) {
 			// No need to handle this here. We just continue with the
 			// possibility of the argument being a substat string.
 		}
@@ -127,7 +127,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 		int itemId;
 		try {
 			itemId = Integer.parseInt(args.remove(0));
-		} catch (NumberFormatException ignored) {
+		} catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
 			CommandHandler.sendMessage(sender, translate(sender, "commands.giveArtifact.id_error"));
 			return;
 		}
@@ -146,7 +146,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 
 		try {
 			mainPropId = Integer.parseInt(mainPropIdString);
-		} catch (NumberFormatException ignored) {
+		} catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
 			mainPropId = -1;
 		}
 
@@ -167,7 +167,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 				level = last;
 				args.remove(args.size()-1);
 			}
-		} catch (NumberFormatException | IndexOutOfBoundsException ignored) {  // Could be a stat,times string so no need to panic
+		} catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {  // Could be a stat,times string so no need to panic
 		}
 
 		// Get substats.
@@ -193,7 +193,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 				// Add the current substat.
 				appendPropIdList.addAll(Collections.nCopies(n, appendPropId));
 			});
-		} catch (NumberFormatException | IndexOutOfBoundsException ignored) {
+		} catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
 			CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
 			return;
 		}

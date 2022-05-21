@@ -42,7 +42,7 @@ public final class AccountCommand implements CommandHandler {
         int limit;
         try {
           limit = Integer.parseInt(username);
-         } catch (NumberFormatException | IndexOutOfBoundsException ignores) {
+         } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignores) {
           limit= 1;
          }
 
@@ -148,7 +148,7 @@ public final class AccountCommand implements CommandHandler {
                  int tes1;
                  try {
                   tes1 = Integer.parseInt(args.get(2));
-                 } catch (NumberFormatException | IndexOutOfBoundsException ignores) {
+                 } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignores) {
                   tes1 = Grasscutter.getConfig().server.game.gameOptions.CMD_DayLogin;
                  }
                  daylogin = tes1;
@@ -220,7 +220,7 @@ public final class AccountCommand implements CommandHandler {
                 if (args.size() > 2) {
                     try {
                         uid = Integer.parseInt(args.get(2));
-                    } catch (NumberFormatException ignored) {
+                    } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                         CommandHandler.sendMessage(null, translate(sender, "commands.account.invalid"));
                         return;
                     }

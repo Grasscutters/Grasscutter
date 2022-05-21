@@ -43,7 +43,7 @@ public final class SetFetterLevelCommand implements CommandHandler {
 		
 		    targetPlayer.sendPacket(new PacketAvatarFetterDataNotify(avatar));
             CommandHandler.sendMessage(sender, translate(sender, "commands.setFetterLevel.success", fetterLevel));
-        } catch (NumberFormatException | IndexOutOfBoundsException ignored) {
+        } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.setFetterLevel.level_error"));
         }
     }

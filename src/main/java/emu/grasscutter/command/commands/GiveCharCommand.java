@@ -29,7 +29,7 @@ public final class GiveCharCommand implements CommandHandler {
             case 2:
                 try {
                     level = Integer.parseInt(args.get(1));
-                } catch (NumberFormatException ignored) {
+                } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                     // TODO: Parse from avatar name using GM Handbook.
                     CommandHandler.sendMessage(sender, translate(sender, "commands.execution.invalid.avatarLevel"));
                     return;
@@ -37,7 +37,7 @@ public final class GiveCharCommand implements CommandHandler {
             case 1:
                 try {
                     avatarId = Integer.parseInt(args.get(0));
-                } catch (NumberFormatException ignored) {
+                } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                     // TODO: Parse from avatar name using GM Handbook.
                     CommandHandler.sendMessage(sender, translate(sender, "commands.execution.invalid.avatarId"));
                     return;

@@ -30,14 +30,14 @@ public final class DropCommand implements CommandHandler {
             case 2:
                 try {
                     amount = Integer.parseInt(args.get(1));
-                } catch (NumberFormatException ignored) {
+                } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.amount"));
                     return;
                 }  // Slightly cheeky here: no break, so it falls through to initialize the first argument too
             case 1:
                 try {
                     item = Integer.parseInt(args.get(0));
-                } catch (NumberFormatException ignored) {
+                } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.itemId"));
                     return;
                 }

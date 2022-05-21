@@ -202,7 +202,7 @@ public final class SetStatsCommand implements CommandHandler {
             } else {
                 value = Float.parseFloat(valueStr);
             }
-        } catch (NumberFormatException ignored) {
+        } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.value_error"));
             return;
         }

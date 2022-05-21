@@ -33,19 +33,19 @@ public final class SpawnCommand implements CommandHandler {
             case 3:
                 try {
                     level = Integer.parseInt(args.get(2));
-                } catch (NumberFormatException ignored) {
+                } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
                 }  // Fallthrough
             case 2:
                 try {
                     amount = Integer.parseInt(args.get(1));
-                } catch (NumberFormatException ignored) {
+                } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.amount"));
                 }  // Fallthrough
             case 1:
                 try {
                     id = Integer.parseInt(args.get(0));
-                } catch (NumberFormatException ignored) {
+                } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.entityId"));
                 }
                 break;

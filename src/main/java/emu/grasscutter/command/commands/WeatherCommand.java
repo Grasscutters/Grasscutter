@@ -27,13 +27,13 @@ public final class WeatherCommand implements CommandHandler {
             case 2:
                 try {
                     climateId = Integer.parseInt(args.get(1));
-                } catch (NumberFormatException ignored) {
+                } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                         CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_id"));
                 }
             case 1:
                 try {
                     weatherId = Integer.parseInt(args.get(0));
-                } catch (NumberFormatException ignored) {
+                } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_id"));
                 }
                 break;

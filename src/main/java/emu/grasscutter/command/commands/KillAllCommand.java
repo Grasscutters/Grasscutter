@@ -34,7 +34,7 @@ public final class KillAllCommand implements CommandHandler {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.kill.usage"));
                     return;
             }
-        } catch (NumberFormatException ignored) {
+        } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
         }
         if (scene == null) {

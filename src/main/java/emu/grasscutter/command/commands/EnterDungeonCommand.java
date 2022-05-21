@@ -36,7 +36,7 @@ public final class EnterDungeonCommand implements CommandHandler {
             if (!result) {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.not_found_error"));
             }
-        } catch (NumberFormatException | IndexOutOfBoundsException e) {
+        } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException e) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.usage"));
         }
     }

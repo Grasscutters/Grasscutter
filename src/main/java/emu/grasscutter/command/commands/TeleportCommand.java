@@ -41,7 +41,7 @@ public final class TeleportCommand implements CommandHandler {
             case 4:
                 try {
                     sceneId = Integer.parseInt(args.get(3));
-                }catch (NumberFormatException ignored) {
+                }catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
                 }  // Fallthrough
             case 3:
@@ -49,7 +49,7 @@ public final class TeleportCommand implements CommandHandler {
                     x = parseRelative(args.get(0), x);
                     y = parseRelative(args.get(1), y);
                     z = parseRelative(args.get(2), z);
-                } catch (NumberFormatException ignored) {
+                } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.invalid_position"));
                 }
                 break;

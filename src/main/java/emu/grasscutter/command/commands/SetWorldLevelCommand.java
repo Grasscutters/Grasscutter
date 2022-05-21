@@ -37,7 +37,7 @@ public final class SetWorldLevelCommand implements CommandHandler {
             targetPlayer.setWorldLevel(level);
 
             CommandHandler.sendMessage(sender, translate(sender, "commands.setWorldLevel.success", Integer.toString(level)));
-        } catch (NumberFormatException ignored) {
+        } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
             CommandHandler.sendMessage(null, translate(sender, "commands.setWorldLevel.invalid_world_level"));
         }
     }

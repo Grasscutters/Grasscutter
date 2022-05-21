@@ -98,7 +98,7 @@ public final class GiveAllCommand implements CommandHandler {
           }
         }else{
           if(itemdata.getStackLimit() != 0){
-            Grasscutter.getLogger().info("Setme");
+            //Grasscutter.getLogger().info("Setme");
             tmp=itemdata.getStackLimit(); // just max it
           }
         }
