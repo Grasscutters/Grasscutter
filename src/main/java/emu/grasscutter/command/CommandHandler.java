@@ -20,7 +20,7 @@ public interface CommandHandler {
         {
             player.dropMessage(message);
         }
-        Grasscutter.getLogger().info(message + ", player is " + player);
+        Grasscutter.getLogger().info(message + ", player is " + (player != null ? player : "[SERVER]"));
         CommandResponseEvent event = new CommandResponseEvent(ServerEvent.Type.GAME,player, message);
         event.call();
     }
