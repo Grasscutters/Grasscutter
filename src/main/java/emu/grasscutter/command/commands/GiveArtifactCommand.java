@@ -193,7 +193,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 				// Add the current substat.
 				appendPropIdList.addAll(Collections.nCopies(n, appendPropId));
 			});
-		} catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
+		} catch (IndexOutOfBoundsException | NullPointerException | IllegalArgumentException ignored) {
 			CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
 			return;
 		}
