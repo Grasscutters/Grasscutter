@@ -15,11 +15,6 @@ public final class TeleportAllCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-        
         if (!targetPlayer.getWorld().isMultiplayer()) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.teleportAll.error"));
             return;

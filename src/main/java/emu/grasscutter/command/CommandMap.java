@@ -8,8 +8,6 @@ import org.reflections.Reflections;
 
 import java.util.*;
 
-import static emu.grasscutter.utils.Language.translate;
-
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class CommandMap {
     private final Map<String, CommandHandler> commands = new HashMap<>();
@@ -117,7 +115,7 @@ public final class CommandMap {
     public void invoke(Player player, Player targetPlayer, String rawMessage) {
         rawMessage = rawMessage.trim();
         if (rawMessage.length() == 0) {
-            CommandHandler.sendMessage(player, translate("commands.generic.not_specified"));
+            CommandHandler.sendTranslatedMessage(player, "commands.generic.not_specified");
             return;
         }
 
@@ -144,19 +142,20 @@ public final class CommandMap {
         if (targetUidStr != null) {
             if (targetUidStr.equals("")) { // Clears the default targetPlayer.
                 targetPlayerIds.remove(playerId);
-                CommandHandler.sendMessage(player, translate("commands.execution.clear_target"));
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
             } else { // Sets default targetPlayer to the UID provided.
                 try {
                     int uid = Integer.parseInt(targetUidStr);
-                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid);
+                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
                     if (targetPlayer == null) {
-                        CommandHandler.sendMessage(player, translate("commands.execution.player_exist_offline_error"));
+                        CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
                     } else {
                         targetPlayerIds.put(playerId, uid);
-                        CommandHandler.sendMessage(player, translate("commands.execution.set_target", targetUidStr));
+                        CommandHandler.sendTranslatedMessage(player, "commands.execution.set_target", targetUidStr);
+                        CommandHandler.sendTranslatedMessage(player, targetPlayer.isOnline()? "commands.execution.set_target_online" : "commands.execution.set_target_offline", targetUidStr);
                     }
                 } catch (NumberFormatException e) {
-                    CommandHandler.sendMessage(player, translate("commands.execution.uid_error"));
+                    CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
                 }
             }
             return;
@@ -165,7 +164,7 @@ public final class CommandMap {
         // Get command handler.
         CommandHandler handler = this.commands.get(label);
         if (handler == null) {
-            CommandHandler.sendMessage(player, translate("commands.generic.unknown_command", label));
+            CommandHandler.sendTranslatedMessage(player, "commands.generic.unknown_command", label);
             return;
         }
 
@@ -176,14 +175,14 @@ public final class CommandMap {
                 arg = args.remove(i).substring(1);
                 try {
                     int uid = Integer.parseInt(arg);
-                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid);
+                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
                     if (targetPlayer == null) {
-                        CommandHandler.sendMessage(player, translate("commands.execution.player_exist_offline_error"));
+                        CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
                         return;
                     }
                     break;
                 } catch (NumberFormatException e) {
-                    CommandHandler.sendMessage(player, translate("commands.execution.uid_error"));
+                    CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
                     return;
                 }
             }
@@ -192,9 +191,9 @@ public final class CommandMap {
         // If there's still no targetPlayer at this point, use previously-set target
         if (targetPlayer == null) {
             if (targetPlayerIds.containsKey(playerId)) {
-                targetPlayer = Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.get(playerId));  // We check every time in case the target goes offline after being targeted
+                targetPlayer = Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.get(playerId), true);  // We check every time in case the target is deleted after being targeted
                 if (targetPlayer == null) {
-                    CommandHandler.sendMessage(player, translate("commands.execution.player_exist_offline_error"));
+                    CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
                     return;
                 }
             } else {
@@ -210,12 +209,29 @@ public final class CommandMap {
             Account account = player.getAccount();
             if (player != targetPlayer) {  // Additional permission required for targeting another player
                 if (!permissionNodeTargeted.isEmpty() && !account.hasPermission(permissionNodeTargeted)) {
-                    CommandHandler.sendMessage(player, translate("commands.generic.permission_error"));
+                    CommandHandler.sendTranslatedMessage(player, "commands.generic.permission_error");
                     return;
                 }
             }
             if (!permissionNode.isEmpty() && !account.hasPermission(permissionNode)) {
-                CommandHandler.sendMessage(player, translate("commands.generic.permission_error"));
+                CommandHandler.sendTranslatedMessage(player, "commands.generic.permission_error");
+                return;
+            }
+        }
+
+        // Check if command has unfulfilled constraints on targetPlayer
+        Command.TargetRequirement targetRequirement = this.annotations.get(label).targetRequirement();
+        if (targetRequirement != Command.TargetRequirement.NONE) {
+            if (targetPlayer == null) {
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target");
+                return;
+            }
+            if ((targetRequirement == Command.TargetRequirement.ONLINE) && !targetPlayer.isOnline()) {
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_online");
+                return;
+            }
+            if ((targetRequirement == Command.TargetRequirement.OFFLINE) && targetPlayer.isOnline()) {
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_offline");
                 return;
             }
         }

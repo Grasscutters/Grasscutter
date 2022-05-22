@@ -88,7 +88,11 @@
       "argument_error": "无效的参数。",
       "clear_target": "目标已清除。",
       "set_target": "随后的的命令都会以 @%s 为预设。",
-      "need_target": "此命令需要一个目标 UID。添加 <@UID> 参数或使用 /target @UID 来指定默认目标。"
+      "set_target_online": "@%s 在线。 某些命令可能需要离线目标。",
+      "set_target_offline": "@%s 离线。 某些命令可能需要在线目标。",
+      "need_target": "此命令需要一个目标 UID。添加 <@UID> 参数或使用 /target @UID 来指定默认目标。",
+      "need_target_online": "此命令需要在线目标 UID，但当前目标离线。 添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。",
+      "need_target_offline": "此命令需要离线目标 UID，但当前目标在线。 添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。"
     },
     "status": {
       "enabled": "已启用",

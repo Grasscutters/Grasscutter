@@ -15,10 +15,10 @@ public class UnlockTowerCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        unlockFloor(sender, sender.getServer().getTowerScheduleManager()
+        unlockFloor(targetPlayer, targetPlayer.getServer().getTowerScheduleManager()
                 .getCurrentTowerScheduleData().getEntranceFloorId());
 
-        unlockFloor(sender, sender.getServer().getTowerScheduleManager()
+        unlockFloor(targetPlayer, targetPlayer.getServer().getTowerScheduleManager()
                 .getScheduleFloors());
 
         CommandHandler.sendMessage(sender, translate(sender, "commands.unlocktower.success"));

@@ -18,11 +18,6 @@ public final class DropCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(null, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-        
         int item = 0;
         int amount = 1;
 

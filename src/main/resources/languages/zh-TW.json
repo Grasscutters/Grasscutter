@@ -87,7 +87,11 @@
       "argument_error": "無效的參數。",
       "clear_target": "目標已清除.",
       "set_target": "隨後的指令都會以@%s為預設。",
-      "need_target": "此指令需要一個目標 UID。添加 <@UID> 引數或者使用 /target @UID 來設定持久目標。"
+      "set_target_online": "@%s 在線。 某些命令可能需要離線目標。",
+      "set_target_offline": "@%s 離線。 某些命令可能需要在線目標。",
+      "need_target": "此指令需要一個目標 UID。添加 <@UID> 引數或者使用 /target @UID 來設定持久目標。",
+      "need_target_online": "此命令需要在線目標 UID，但當前目標離線。 添加不同的 <@UID> 參數或使用 /target @UID 設置持久目標。",
+      "need_target_offline": "此命令需要離線目標 UID，但當前目標在線。 添加不同的 <@UID> 參數或使用 /target @UID 設置持久目標。"
     },
     "status": {
       "enabled": "已啟用",
@@ -173,6 +177,10 @@
     "godmode": {
       "success": "上帝模式設定為 %s 。 [用戶：%s]",
       "description": "防止你受到傷害。"
+    },
+    "nostamina": {
+      "success": "無限體力狀態： %s。[使用者：%s]",
+      "description": "開啟後所有動作都不再消耗體力。"
     },
     "heal": {
       "success": "所有角色已被治療。",
@@ -323,6 +331,24 @@
       "e_skill_id": "元素戰技技能ID %s。",
       "q_skill_id": "元素爆發技能ID %s。",
       "description": "設定當前角色的天賦等級"
+    },
+    "team": {
+      "usage": "用法：team <add|remove|set> [角色ID,...] [索引|first|last|索引-索引,...]",
+      "invalid_usage": "無效的用法。",
+      "add_usage": "新增的用法：team add <角色ID,...> [索引]",
+      "invalid_index": "無效索引。",
+      "add_too_much": "服務端只允許您的隊伍裡最多 %d 名角色。",
+      "failed_to_add_avatar": "無法根據ID %s 添加角色。",
+      "remove_usage": "移除的用法：team remove <索引|first|last|索引-索引,...>",
+      "failed_to_parse_index": "無法解析的索引：%s",
+      "remove_too_much": "您不能删除那麼多的角色，因為您的隊伍列表角色會全部被刪除。",
+      "ignore_index": "無視的索引列表：%s",
+      "set_usage": "設定的用法：team set <索引> <角色ID>",
+      "index_out_of_range": "您指定的索引超出了範圍。",
+      "failed_parse_avatar_id": "無法解析的角色ID：%s",
+      "avatar_already_in_team": "該角色已經在您的隊伍當中了。",
+      "avatar_not_found": "無法找到該角色：%d",
+      "description": "手動修改您的隊伍配置。"
     },
     "teleportAll": {
       "success": "召喚了所有玩家到你的位置上。",
