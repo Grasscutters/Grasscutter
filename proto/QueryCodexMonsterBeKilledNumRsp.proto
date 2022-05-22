@@ -14,4 +14,5 @@ message QueryCodexMonsterBeKilledNumRsp {
 	int32 retcode = 1;
 	repeated uint32 codex_id_list = 2;
 	repeated uint32 be_killed_num_list = 3;
+	repeated uint32 be_killed_num_empty_list = 4;
 }
