@@ -63,27 +63,51 @@ public final class GiveAllCommand implements CommandHandler {
       avatar.recalcStats();
       player.addAvatar(avatar);
 
-    }
-
+    }    
+    
     for (ItemData itemdata : GameData.getItemDataMap().values()) {
+
+      int limitwp=3;
+      int limitaft=1;
+      int tmp=1000;
 
       // Exclude test item
       if (isTestItem(itemdata.getId()))
         continue;
 
       if (itemdata.isEquip()) {
+
         if (itemdata.getItemType() == ItemType.ITEM_WEAPON) {
-          for (int i = 0; i < 1; ++i) {
+          for (int i = 0; i < limitwp; ++i) {
             GameItem item = new GameItem(itemdata);
             item.setLevel(90);
             item.setPromoteLevel(6);
             item.setRefinement(4);
             itemList.add(item);
           }
+        } else {
+          GameItem item = new GameItem(itemdata);
+          // Artifact
+          if(itemdata.getItemType() == ItemType.ITEM_RELIQUARY){
+            if(itemdata.getRankLevel() == 5){
+              item.setLevel(itemdata.getMaxLevel());
+              //item.setLocked(true);
+              //item.setTotalExp(totalExp);
+            }else{
+              continue;
+            }
+            tmp=limitaft;
+          }else{
+           // Set Mx
+           if(itemdata.getStackLimit() != 0){
+            tmp=itemdata.getStackLimit();
+           }
+          }
+          item.setCount(tmp);
+          itemList.add(item);
         }
-      } else {
 
-        int tmp=1000;
+      } else {        
         
         if (itemdata.getMaterialType() == MaterialType.MATERIAL_QUEST)
          continue;
@@ -95,11 +119,6 @@ public final class GiveAllCommand implements CommandHandler {
         if(itemdata.getItemType() == ItemType.ITEM_MATERIAL){
           if(itemdata.getMaterialType() == MaterialType.MATERIAL_WIDGET){
             tmp=itemdata.getStackLimit();
-          }
-        }else{
-          if(itemdata.getStackLimit() != 0){
-            //Grasscutter.getLogger().info("Setme");
-            tmp=itemdata.getStackLimit(); // just max it
           }
         }
 
