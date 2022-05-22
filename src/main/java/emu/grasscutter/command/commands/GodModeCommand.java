@@ -13,11 +13,6 @@ public final class GodModeCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
         boolean enabled = !targetPlayer.inGodmode();
         if (args.size() == 1) {
             switch (args.get(0).toLowerCase()) {

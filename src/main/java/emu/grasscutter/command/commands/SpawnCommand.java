@@ -27,11 +27,6 @@ public final class SpawnCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
         int id = 0;  // This is just to shut up the linter, it's not a real default
         int amount = 1;
         int level = 1;
