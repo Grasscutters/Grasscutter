@@ -150,10 +150,16 @@ public class EnergyManager {
 			// On-field vs off-field multiplier.
 			// The on-field character gets no penalty.
 			// Off-field characters get a penalty depending on the team size, as follows:
-			//	  - 4 character team: 0.6
-			//	  - 3 character team: 0.7
 			//    - 2 character team: 0.8
-			float offFieldPenalty = (this.player.getTeamManager().getCurrentCharacterIndex() == i) ? 1.0f : 1.0f - this.player.getTeamManager().getActiveTeam().size() * 0.1f;
+			//	  - 3 character team: 0.7
+			//	  - 4 character team: 0.6
+			//	  - etc.
+			// We set a lower bound of 0.1 here, to avoid gaining no or negative energy.
+			float offFieldPenalty =
+				(this.player.getTeamManager().getCurrentCharacterIndex() == i)
+				? 1.0f
+				: 1.0f - this.player.getTeamManager().getActiveTeam().size() * 0.1f;
+			offFieldPenalty = Math.max(offFieldPenalty, 0.1f);
 
 			// Same element/neutral bonus.
 			// Same-element characters get a bonus of *3, while different-element characters get no bonus at all.
