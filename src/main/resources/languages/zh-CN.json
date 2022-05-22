@@ -19,7 +19,7 @@
       "authentication": {
         "default_unable_to_verify": "[Authentication] 称为 verifyUser 的方法在默认验证程序中不可用"
       },
-      "no_commands_error": "此命令不适用于 Dispatch-only 模式",
+      "no_commands_error": "仅 Dispatch 模式不支持使用命令",
       "unhandled_request_error": "[Dispatch] 潜在的未处理请求：%s %s",
       "account": {
         "login_attempt": "[Dispatch] 客户端 %s 正在尝试登录",
@@ -49,7 +49,7 @@
       "error": "发生了一个错误。",
       "welcome": "欢迎使用 Grasscutter！珍惜这段美妙的旅途吧！",
       "run_mode_error": "无效的服务器运行模式：%s。",
-      "run_mode_help": "服务器运行模式必须为 HYBRID、DISPATCH_ONLY 或 GAME_ONLY。Grasscutter 启动失败...",
+      "run_mode_help": "服务器运行模式必须为 'HYBRID'(混合)、'DISPATCH_ONLY'(仅 Dispatch) 或 'GAME_ONLY'(仅游戏)。Grasscutter 启动失败...",
       "create_resources": "正在创建 resources 目录...",
       "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。",
       "version": "Grasscutter 版本：%s-%s"
@@ -88,7 +88,11 @@
       "argument_error": "无效的参数。",
       "clear_target": "目标已清除。",
       "set_target": "随后的的命令都会以 @%s 为预设。",
-      "need_target": "此命令需要一个目标 UID。添加 <@UID> 参数或使用 /target @UID 来指定默认目标。"
+      "set_target_online": "@%s 在线。 某些命令可能需要离线目标。",
+      "set_target_offline": "@%s 离线。 某些命令可能需要在线目标。",
+      "need_target": "此命令需要一个目标 UID。添加 <@UID> 参数或使用 /target @UID 来指定默认目标。",
+      "need_target_online": "此命令需要在线目标 UID，但当前目标离线。 添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。",
+      "need_target_offline": "此命令需要离线目标 UID，但当前目标在线。 添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。"
     },
     "status": {
       "enabled": "已启用",
@@ -188,7 +192,7 @@
       "server_kick_player": "正在踢出玩家 [%s:%s]...",
       "description": "从服务器内踢出指定玩家"
     },
-    "kill": {
+    "killall": {
       "usage": "用法：killall [玩家UID] [场景ID]",
       "scene_not_found_in_player_world": "未在玩家世界中找到此场景。",
       "kill_monsters_in_scene": "已杀死场景 %s 中的 %s 个怪物。",
@@ -197,7 +201,7 @@
     "killCharacter": {
       "usage": "用法：killcharacter [玩家ID]",
       "success": "已杀死 %s 当前角色。",
-      "description": "杀死当前角色"
+      "description": "杀死玩家当前角色"
     },
     "language": {
       "current_language": "当前语言是：%s",
@@ -242,6 +246,7 @@
     },
     "resetShopLimit": {
       "usage": "用法：resetshop <玩家ID>",
+      "success": "重置完成。",
       "description": "重置所选玩家的商店刷新时间"
     },
     "sendMail": {
@@ -407,7 +412,7 @@
     "index": {
       "title": "文档",
       "handbook": "GM Handbook",
-      "gacha_mapping": "祈愿映射 JSON"
+      "gacha_mapping": "祈愿物品映射JSON"
     }
   }
 }

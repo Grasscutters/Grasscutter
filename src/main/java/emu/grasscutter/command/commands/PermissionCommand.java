@@ -15,11 +15,6 @@ public final class PermissionCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-        
         if (args.size() != 2) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.permission.usage"));
             return;

@@ -16,11 +16,6 @@ public final class WeatherCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
         int weatherId = 0;
         int climateId = 1;
         switch (args.size()) {

@@ -26,11 +26,6 @@ public final class TeleportCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
         Position pos = targetPlayer.getPos();
         float x = pos.getX();
         float y = pos.getY();

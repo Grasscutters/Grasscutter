@@ -88,7 +88,11 @@
       "argument_error": "Invalid arguments.",
       "clear_target": "Target cleared.",
       "set_target": "Subsequent commands will target @%s by default.",
-      "need_target": "This command requires a target UID. Add a <@UID> argument or set a persistent target with /target @UID."
+      "set_target_online": "@%s is online. Some commands may require an offline target.",
+      "set_target_offline": "@%s is offline. Some commands may require an online target.",
+      "need_target": "This command requires a target UID. Add a <@UID> argument or set a persistent target with /target @UID.",
+      "need_target_online": "This command requires an online target UID, but current target is offline. Add a different <@UID> argument or set a persistent target with /target @UID.",
+      "need_target_offline": "This command requires an offline target UID, but current target is online. Add a different <@UID> argument or set a persistent target with /target @UID."
     },
     "status": {
       "enabled": "Enabled",
@@ -189,7 +193,7 @@
       "server_kick_player": "Kicking player [%s:%s]...",
       "description": "Kicks the specified player from the server (WIP)"
     },
-    "kill": {
+    "killall": {
       "usage": "Usage: killall [playerUID] [sceneID]",
       "scene_not_found_in_player_world": "Scene not found in player world.",
       "kill_monsters_in_scene": "Killing %s monsters in scene %s.",
@@ -243,6 +247,7 @@
     },
     "resetShopLimit": {
       "usage": "Usage: /resetshop <player ID>",
+      "success": "Reset complete.",
       "description": "Reset target player's shop refresh time"
     },
     "sendMail": {

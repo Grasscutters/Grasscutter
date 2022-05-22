@@ -12,7 +12,6 @@ import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock;
 import emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
@@ -32,7 +31,6 @@ import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import emu.grasscutter.utils.Utils;
@@ -128,19 +126,42 @@ public class EntityAvatar extends GameEntity {
 		return healed;
 	}
 	
-	public void addEnergy(float amount) {
-		FightProperty curEnergyProp = getAvatar().getSkillDepot().getElementType().getCurEnergyProp();
-		FightProperty maxEnergyProp = getAvatar().getSkillDepot().getElementType().getMaxEnergyProp();
-		
+	public void clearEnergy(PropChangeReason reason) {
+		FightProperty curEnergyProp = this.getAvatar().getSkillDepot().getElementType().getCurEnergyProp();
+		this.setFightProperty(curEnergyProp, 0);
+			
+		this.getScene().broadcastPacket(new PacketAvatarFightPropUpdateNotify(this.getAvatar(), curEnergyProp));
+		this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, curEnergyProp, 0f, reason));
+	}
+
+	public void addEnergy(float amount, PropChangeReason reason) {
+		this.addEnergy(amount, reason, false);
+	}
+	public void addEnergy(float amount, PropChangeReason reason, boolean isFlat) {
+		// Get current and maximum energy for this avatar.
+		FightProperty curEnergyProp = this.getAvatar().getSkillDepot().getElementType().getCurEnergyProp();
+		FightProperty maxEnergyProp = this.getAvatar().getSkillDepot().getElementType().getMaxEnergyProp();
+
 		float curEnergy = this.getFightProperty(curEnergyProp);
 		float maxEnergy = this.getFightProperty(maxEnergyProp);
+		
+		// Get energy recharge.
+		float energyRecharge = this.getFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY);
+
+		// Scale amount by energy recharge, if the amount is not flat.
+		if (!isFlat) {
+			amount *= energyRecharge;
+		}
+
+		// Determine the new energy value.
 		float newEnergy = Math.min(curEnergy + amount, maxEnergy);
 		
+		// Set energy and notify.
 		if (newEnergy != curEnergy) {
-			setFightProperty(curEnergyProp, newEnergy);
+			this.setFightProperty(curEnergyProp, newEnergy);
 			
-			getScene().broadcastPacket(new PacketAvatarFightPropUpdateNotify(getAvatar(), curEnergyProp));
-			getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, curEnergyProp, newEnergy, PropChangeReason.PROP_CHANGE_ENERGY_BALL));
+			this.getScene().broadcastPacket(new PacketAvatarFightPropUpdateNotify(this.getAvatar(), curEnergyProp));
+			this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, curEnergyProp, newEnergy, reason));
 		}
 	} 
 	

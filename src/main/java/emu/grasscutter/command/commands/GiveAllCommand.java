@@ -17,16 +17,11 @@ import java.util.*;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "giveall", usage = "giveall", aliases = {"givea"}, permission = "player.giveall", permissionTargeted = "player.giveall.others",threading = true, description = "commands.giveAll.description")
+@Command(label = "giveall", usage = "giveall", aliases = {"all"}, permission = "player.giveall", permissionTargeted = "player.giveall.others",threading = true, description = "commands.giveAll.description")
 public final class GiveAllCommand implements CommandHandler {
 
-  @Override
-  public void execute(Player sender, Player targetPlayer, List<String> args) {
-
-    if (targetPlayer == null) {
-      CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-      return;
-    }
+    @Override
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
 
     // Check Username
     Account account = Grasscutter.getGameServer().getAccountByName(targetPlayer.getAccount().getUsername());

@@ -1,14 +1,23 @@
 package emu.grasscutter.game.ability;
 
+import java.util.Optional;
+
 import com.google.protobuf.InvalidProtocolBufferException;
+
+import emu.grasscutter.Grasscutter;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierAction;
+import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.custom.AbilityModifierEntry;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall;
 import emu.grasscutter.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
@@ -18,6 +27,7 @@ import emu.grasscutter.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinC
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import emu.grasscutter.utils.Position;
+import emu.grasscutter.utils.Utils;
 
 public class AbilityManager {
 	private Player player;
@@ -31,7 +41,7 @@ public class AbilityManager {
 	}
 
 	public void onAbilityInvoke(AbilityInvokeEntry invoke) throws Exception {
-		//System.out.println(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + Utils.bytesToHex(invoke.toByteArray()));
+		// Grasscutter.getLogger().info(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + Utils.bytesToHex(invoke.toByteArray()));
 		switch (invoke.getArgumentType()) {
 			case ABILITY_META_OVERRIDE_PARAM:
 				handleOverrideParam(invoke);
@@ -137,22 +147,9 @@ public class AbilityManager {
 		AbilityMixinCostStamina costStamina = AbilityMixinCostStamina.parseFrom((invoke.getAbilityData()));
 		getPlayer().getStaminaManager().handleMixinCostStamina(costStamina.getIsSwim());
 	}
-	
+
 	private void handleGenerateElemBall(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
-		AbilityActionGenerateElemBall action = AbilityActionGenerateElemBall.parseFrom(invoke.getAbilityData());
-		if (action == null) {
-			return;
-		}
-		
-		ItemData itemData = GameData.getItemDataMap().get(2024);
-		if (itemData == null) {
-			return; // Should never happen
-		}
-		
-		EntityItem energyBall = new EntityItem(getPlayer().getScene(), getPlayer(), itemData, new Position(action.getPos()), 1);
-		energyBall.getRotation().set(action.getRot());
-		
-		getPlayer().getScene().addEntity(energyBall);
+		this.player.getEnergyManager().handleGenerateElemBall(invoke);
 	}
 	
 	private void invokeAction(AbilityModifierAction action, GameEntity target, GameEntity sourceEntity) {

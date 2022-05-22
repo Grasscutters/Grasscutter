@@ -113,11 +113,7 @@ public final class GiveArtifactCommand implements CommandHandler {
 
 	@Override
 	public void execute(Player sender, Player targetPlayer, List<String> args) {
-		// Sanity checks
-		if (targetPlayer == null) {
-			CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-			return;
-		}
+		// Sanity check
 		if (args.size() < 2) {
 			CommandHandler.sendMessage(sender, translate(sender, "commands.giveArtifact.usage"));
 			return;

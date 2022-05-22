@@ -43,6 +43,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
+import emu.grasscutter.game.managers.EnergyManager;
 import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.managers.MapMarkManager.MapMark;
 import emu.grasscutter.game.managers.MapMarkManager.MapMarksManager;
@@ -192,6 +193,7 @@ public class Player {
 
 	@Transient private MapMarksManager mapMarksManager;
 	@Transient private StaminaManager staminaManager;
+	@Transient private EnergyManager energyManager;
 
 	private long springLastUsed;
 	private HashMap<String, MapMark> mapMarks;
@@ -242,6 +244,7 @@ public class Player {
 		this.mapMarksManager = new MapMarksManager(this);
 		this.staminaManager = new StaminaManager(this);
 		this.sotsManager = new SotSManager(this);
+		this.energyManager = new EnergyManager(this);
 	}
 
 	// On player creation
@@ -272,6 +275,7 @@ public class Player {
 		this.mapMarksManager = new MapMarksManager(this);
 		this.staminaManager = new StaminaManager(this);
 		this.sotsManager = new SotSManager(this);
+		this.energyManager = new EnergyManager(this);
 	}
 
 	public int getUid() {
@@ -1137,6 +1141,10 @@ public class Player {
 	public StaminaManager getStaminaManager() { return staminaManager; }
 
 	public SotSManager getSotSManager() { return sotsManager; }
+
+	public EnergyManager getEnergyManager() {
+		return this.energyManager;
+	}
 
 	public AbilityManager getAbilityManager() {
 		return abilityManager;

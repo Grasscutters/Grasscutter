@@ -21,11 +21,6 @@ public final class TeamCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
         if (args.isEmpty()) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.team.usage"));
             return;

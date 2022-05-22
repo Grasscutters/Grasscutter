@@ -16,11 +16,6 @@ public final class HealCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-        
         targetPlayer.getTeamManager().getActiveTeam().forEach(entity -> {
             boolean isAlive = entity.isAlive();
             entity.setFightProperty(
