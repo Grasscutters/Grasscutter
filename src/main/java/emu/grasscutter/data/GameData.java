@@ -64,16 +64,18 @@ public class GameData {
 	
 	private static final Int2ObjectMap<SceneData> sceneDataMap = new Int2ObjectLinkedOpenHashMap<>();
 	private static final Int2ObjectMap<FetterData> fetterDataMap = new Int2ObjectOpenHashMap<>();
-	private static final Int2ObjectMap<CodexQuest> codexQuestMap = new Int2ObjectOpenHashMap<>();
-	private static final Int2ObjectMap<CodexQuest> codexQuestIdMap = new Int2ObjectOpenHashMap<>();
-	private static final Int2ObjectMap<CodexAnimal> codexAnimalMap = new Int2ObjectOpenHashMap<>();
-	private static final Int2ObjectMap<CodexWeapon> codexWeaponMap = new Int2ObjectOpenHashMap<>();
-	private static final Int2ObjectMap<CodexWeapon> codexWeaponIdMap = new Int2ObjectOpenHashMap<>();
-	private static final Int2ObjectMap<CodexMaterial> codexMaterialMap = new Int2ObjectOpenHashMap<>();
-	private static final Int2ObjectMap<CodexMaterial> codexMaterialIdMap = new Int2ObjectOpenHashMap<>();
-	private static final Int2ObjectMap<CodexReliquary> codexReliquaryMap = new Int2ObjectOpenHashMap<>();
-	private static final Int2ObjectMap<CodexReliquary> codexReliquaryIdMap = new Int2ObjectOpenHashMap<>();
-	private static final ArrayList<CodexReliquary> codexReliquaryArrayList = new ArrayList<>();
+	private static final Int2ObjectMap<AchievementData> achievementDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<AchievementData> achievementDataIdMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CodexQuestData> codexQuestDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CodexQuestData> codexQuestDataIdMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CodexAnimalData> codexAnimalDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CodexWeaponData> codexWeaponDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CodexWeaponData> codexWeaponDataIdMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CodexMaterialData> codexMaterialDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CodexMaterialData> codexMaterialDataIdMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CodexReliquaryData> codexReliquaryDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CodexReliquaryData> codexReliquaryDataIdMap = new Int2ObjectOpenHashMap<>();
+	private static final ArrayList<CodexReliquaryData> codexReliquaryArrayList = new ArrayList<>();
 	private static final Int2ObjectMap<FetterCharacterCardData> fetterCharacterCardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<RewardData> rewardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<WorldLevelData> worldLevelDataMap = new Int2ObjectOpenHashMap<>();
@@ -302,17 +304,19 @@ public class GameData {
 		return fetters;
 	}
 
-	public static Int2ObjectMap<CodexQuest> getCodexQuestIdMap(){return codexQuestIdMap;}
+	public static Int2ObjectMap<AchievementData> getAchievementDataIdMap(){return achievementDataIdMap;}
 
-	public static Int2ObjectMap<CodexAnimal> getCodexAnimalMap(){return codexAnimalMap;}
+	public static Int2ObjectMap<CodexQuestData> getCodexQuestDataIdMap(){return codexQuestDataIdMap;}
 
-	public static Int2ObjectMap<CodexWeapon> getCodexWeaponIdMap(){return codexWeaponIdMap;}
+	public static Int2ObjectMap<CodexAnimalData> getCodexAnimalDataMap(){return codexAnimalDataMap;}
 
-	public static Int2ObjectMap<CodexMaterial> getCodexMaterialIdMap(){return codexMaterialIdMap;}
+	public static Int2ObjectMap<CodexWeaponData> getCodexWeaponDataIdMap(){return codexWeaponDataIdMap;}
 
-	public static Int2ObjectMap<CodexReliquary> getcodexReliquaryIdMap(){return codexReliquaryIdMap;}
+	public static Int2ObjectMap<CodexMaterialData> getCodexMaterialDataIdMap(){return codexMaterialDataIdMap;}
 
-	public static ArrayList<CodexReliquary> getcodexReliquaryArrayList(){return codexReliquaryArrayList;}
+	public static Int2ObjectMap<CodexReliquaryData> getcodexReliquaryIdMap(){return codexReliquaryDataIdMap;}
+
+	public static ArrayList<CodexReliquaryData> getcodexReliquaryArrayList(){return codexReliquaryArrayList;}
 
 	public static Int2ObjectMap<WorldLevelData> getWorldLevelDataMap() {
 		return worldLevelDataMap;

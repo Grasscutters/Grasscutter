@@ -202,7 +202,6 @@ public final class Utils {
 
 		// Make sure the data folder is populated, if there are any missing files copy them from resources
 		if(Grasscutter.class.getResource("").getProtocol() == "jar"){
-			logger.info("Running in jar");
 			DataLoader.CheckAllFiles();
 		}
 		if(exit) System.exit(1);

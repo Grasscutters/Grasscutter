@@ -15,6 +15,7 @@ import emu.grasscutter.game.gacha.GachaRecord;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.PlayerAchievementInfo;
 import emu.grasscutter.game.quest.GameMainQuest;
 
 import static com.mongodb.client.model.Filters.eq;
@@ -274,5 +275,17 @@ public final class DatabaseHelper {
 	
 	public static boolean deleteQuest(GameMainQuest quest) {
 		return DatabaseManager.getGameDatastore().delete(quest).wasAcknowledged();
+	}
+
+	public static List<PlayerAchievementInfo> getAllAchievements(Player player) {
+		return DatabaseManager.getGameDatastore().find(PlayerAchievementInfo.class).filter(Filters.eq("ownerUid", player.getUid())).stream().toList();
+	}
+
+	public static void saveAchievement(PlayerAchievementInfo playerAchievementInfo){
+		DatabaseManager.getGameDatastore().save(playerAchievementInfo);
+	}
+
+	public static void deleteAchievement(PlayerAchievementInfo playerAchievementInfo) {
+		DatabaseManager.getGameDatastore().delete(playerAchievementInfo);
 	}
 }

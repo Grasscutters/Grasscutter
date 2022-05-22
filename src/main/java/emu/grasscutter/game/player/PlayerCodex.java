@@ -2,10 +2,9 @@ package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.CodexAnimalUnlockCondition;
-import emu.grasscutter.data.def.CodexReliquary;
+import emu.grasscutter.data.def.CodexAnimalData;
+import emu.grasscutter.data.def.CodexReliquaryData;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
@@ -48,7 +47,7 @@ public class PlayerCodex {
         if (type == ItemType.ITEM_WEAPON){
             if(!getUnlockedWeapon().contains(item.getItemId())){
                 getUnlockedWeapon().add(item.getItemId());
-                var codexItem = GameData.getCodexWeaponIdMap().get(item.getItemId());
+                var codexItem = GameData.getCodexWeaponDataIdMap().get(item.getItemId());
                 if(codexItem != null){
                     player.save();
                     this.player.sendPacket(new PacketCodexDataUpdateNotify(2, codexItem.getId()));
@@ -62,7 +61,7 @@ public class PlayerCodex {
                 item.getItemData().getMaterialType() == MaterialType.MATERIAL_AVATAR_MATERIAL||
                 item.getItemData().getMaterialType() == MaterialType.MATERIAL_NOTICE_ADD_HP){
                 if (!getUnlockedMaterial().contains(item.getItemId())) {
-                    var codexMaterial = GameData.getCodexMaterialIdMap().get(item.getItemId());
+                    var codexMaterial = GameData.getCodexMaterialDataIdMap().get(item.getItemId());
                     if (codexMaterial != null) {
                         getUnlockedMaterial().add(item.getItemId());
                         player.save();
@@ -79,10 +78,10 @@ public class PlayerCodex {
         }
     }
 
-    public void checkAnimal(GameEntity target, CodexAnimalUnlockCondition condition){
+    public void checkAnimal(GameEntity target, CodexAnimalData.CodexAnimalUnlockCondition condition){
         if(target.getEntityType() == 2){
             var monsterId = target.getSpawnEntry().getMonsterId();
-            var codexAnimal = GameData.getCodexAnimalMap().get(monsterId);
+            var codexAnimal = GameData.getCodexAnimalDataMap().get(monsterId);
 
             if(!getUnlockedAnimal().containsKey(monsterId)) {
                 if (codexAnimal != null) {
@@ -101,7 +100,7 @@ public class PlayerCodex {
 
     public void checkUnlockedSuits(GameItem item){
         int reliquaryId = item.getItemId();
-        Optional<CodexReliquary> excelReliquarySuitList = GameData.getcodexReliquaryArrayList().stream().filter(
+        Optional<CodexReliquaryData> excelReliquarySuitList = GameData.getcodexReliquaryArrayList().stream().filter(
                 x -> x.getCupId() == reliquaryId
                         || x.getLeatherId() == reliquaryId
                         || x.getCapId() == reliquaryId

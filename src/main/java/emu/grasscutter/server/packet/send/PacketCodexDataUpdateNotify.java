@@ -9,7 +9,7 @@ import emu.grasscutter.net.proto.CodexDataUpdateNotifyOuterClass.CodexDataUpdate
 public class PacketCodexDataUpdateNotify extends BasePacket {
     public PacketCodexDataUpdateNotify(GameMainQuest quest) {
         super(PacketOpcodes.CodexDataUpdateNotify, true);
-        var codexQuest = GameData.getCodexQuestIdMap().get(quest.getParentQuestId());
+        var codexQuest = GameData.getCodexQuestDataIdMap().get(quest.getParentQuestId());
         if(codexQuest != null){
             CodexDataUpdateNotify proto = CodexDataUpdateNotify.newBuilder()
                     .setTypeValue(1)

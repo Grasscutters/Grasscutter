@@ -5,7 +5,7 @@ import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = {"ReliquaryCodexExcelConfigData.json"})
-public class CodexReliquary extends GameResource {
+public class CodexReliquaryData extends GameResource {
     private int Id;
     private int SuitId;
     private int Level;

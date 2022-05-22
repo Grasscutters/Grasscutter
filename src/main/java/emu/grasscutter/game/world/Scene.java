@@ -387,7 +387,7 @@ public class Scene {
 	
 	public void killEntity(GameEntity target, int attackerId) {
 		for (Player player : this.getPlayers()) {
-			player.getCodex().checkAnimal(target, CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+			player.getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
 		}
 		// Packet
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));

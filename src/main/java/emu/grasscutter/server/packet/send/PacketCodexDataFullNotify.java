@@ -1,17 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
 import java.util.Collections;
-import java.util.List;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify;
 import emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData;
-import emu.grasscutter.net.proto.CodexTypeOuterClass;
-import emu.grasscutter.server.game.GameSession;
 
 public class PacketCodexDataFullNotify extends BasePacket {
     public PacketCodexDataFullNotify(Player player) {
@@ -51,7 +47,7 @@ public class PacketCodexDataFullNotify extends BasePacket {
 
         player.getQuestManager().forEachMainQuest(mainQuest -> {
             if(mainQuest.isFinished()){
-                var codexQuest = GameData.getCodexQuestIdMap().get(mainQuest.getParentQuestId());
+                var codexQuest = GameData.getCodexQuestDataIdMap().get(mainQuest.getParentQuestId());
                 if(codexQuest != null){
                     questTypeData.addCodexIdList(codexQuest.getId()).addAllHaveViewedList(Collections.singleton(true));
                 }
@@ -59,21 +55,21 @@ public class PacketCodexDataFullNotify extends BasePacket {
         });
 
         player.getCodex().getUnlockedWeapon().forEach(weapon -> {
-            var codexWeapon = GameData.getCodexWeaponIdMap().get(weapon);
+            var codexWeapon = GameData.getCodexWeaponDataIdMap().get(weapon);
             if(codexWeapon != null){
                 weaponTypeData.addCodexIdList(codexWeapon.getId()).addAllHaveViewedList(Collections.singleton(true));
             }
         });
 
         player.getCodex().getUnlockedAnimal().forEach((animal, amount) -> {
-            var codexAnimal = GameData.getCodexAnimalMap().get(animal);
+            var codexAnimal = GameData.getCodexAnimalDataMap().get(animal);
             if(codexAnimal != null){
                 animalTypeData.addCodexIdList(codexAnimal.getId()).addAllHaveViewedList(Collections.singleton(true));
             }
         });
 
         player.getCodex().getUnlockedMaterial().forEach(material -> {
-            var codexMaterial = GameData.getCodexMaterialIdMap().get(material);
+            var codexMaterial = GameData.getCodexMaterialDataIdMap().get(material);
             if(codexMaterial != null){
                 materialTypeData.addCodexIdList(codexMaterial.getId()).addAllHaveViewedList(Collections.singleton(true));
             }

@@ -2,7 +2,6 @@ package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
@@ -29,12 +28,11 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.SceneType;
-import emu.grasscutter.game.quest.GameMainQuest;
-import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.managers.MapMarkManager.*;
 import emu.grasscutter.game.tower.TowerManager;
+import emu.grasscutter.game.trigger.TriggerManager;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
@@ -103,6 +101,8 @@ public class Player {
 	@Transient private MessageHandler messageHandler;
 	@Transient private AbilityManager abilityManager;
 	@Transient private QuestManager questManager;
+	@Transient private TriggerManager triggerManager;
+	@Transient private PlayerAchievement achievementManager;
 	
 	@Transient private SotSManager sotsManager;
 
@@ -160,6 +160,7 @@ public class Player {
 		this.towerManager = new TowerManager(this);
 		this.abilityManager = new AbilityManager(this);
 		this.setQuestManager(new QuestManager(this));
+		this.setTriggerManager(new TriggerManager(this));
 		this.pos = new Position();
 		this.rotation = new Position();
 		this.properties = new HashMap<>();
@@ -188,6 +189,7 @@ public class Player {
 		this.birthday = new PlayerBirthday();
 		this.rewardedLevels = new HashSet<>();
 		this.moonCardGetTimes = new HashSet<>();
+		this.achievementManager = new PlayerAchievement();
 		this.codex = new PlayerCodex();
 
 		this.shopLimit = new ArrayList<>();
@@ -208,6 +210,7 @@ public class Player {
 		this.signature = "";
 		this.teamManager = new TeamManager(this);
 		this.birthday = new PlayerBirthday();
+		this.achievementManager = new PlayerAchievement();
 		this.codex = new PlayerCodex();
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
@@ -463,8 +466,16 @@ public class Player {
 		return questManager;
 	}
 
+	public TriggerManager getTriggerManager() {
+		return triggerManager;
+	}
+
 	public void setQuestManager(QuestManager questManager) {
 		this.questManager = questManager;
+	}
+
+	public void setTriggerManager(TriggerManager triggerManager) {
+		this.triggerManager = triggerManager;
 	}
 
 	public PlayerGachaInfo getGachaInfo() {
@@ -982,6 +993,8 @@ public class Player {
 		return this.birthday.getDay() > 0;
 	}
 
+	public PlayerAchievement getAchievementManager(){ return this.achievementManager; }
+
 	public PlayerCodex getCodex(){ return this.codex; }
 
 	public Set<Integer> getRewardedLevels() {
@@ -1155,6 +1168,7 @@ public class Player {
 
 	@PostLoad
 	private void onLoad() {
+		this.getAchievementManager().setPlayer(this);
 		this.getCodex().setPlayer(this);
 		this.getTeamManager().setPlayer(this);
 		this.getTowerManager().setPlayer(this);
@@ -1188,6 +1202,7 @@ public class Player {
 		this.getFriendsList().loadFromDatabase();
 		this.getMailHandler().loadFromDatabase();
 		this.getQuestManager().loadFromDatabase();
+		this.getAchievementManager().loadFromDatabase();
 		
 		// Quest - Commented out because a problem is caused if you log out while this quest is active
 		/*
