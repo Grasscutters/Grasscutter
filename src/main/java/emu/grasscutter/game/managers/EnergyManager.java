@@ -24,20 +24,20 @@ import java.util.Optional;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 public class EnergyManager {
-    private final Player player;
-    
-    public EnergyManager(Player player) {
-        this.player = player;
-    }
+	private final Player player;
 
-    public Player getPlayer() {
-        return this.player;
-    }
+	public EnergyManager(Player player) {
+		this.player = player;
+	}
 
-    /**********
-        Particle creation for elemental skills.
-    **********/
-    private int getCastingAvatarIdForElemBall(int invokeEntityId) {
+	public Player getPlayer() {
+		return this.player;
+	}
+
+	/**********
+		Particle creation for elemental skills.
+	**********/
+	private int getCastingAvatarIdForElemBall(int invokeEntityId) {
 		// To determine the avatar that has cast the skill that caused the energy particle to be generated,
 		// we have to look at the entity that has invoked the ability. This can either be that avatar directly, 
 		// or it can be an `EntityClientGadget`, owned (some way up the owner hierarchy) by the avatar 
@@ -61,11 +61,11 @@ public class EnergyManager {
 				entity = player.getScene().getEntityById(gadget.getOwnerEntityId());
 			}
 		}
-		
+
 		return res;
 	}
-    
-    public void handleGenerateElemBall(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
+
+	public void handleGenerateElemBall(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
 		// ToDo: 
 		// This is also called when a weapon like Favonius Warbow etc. creates energy through its passive.
 		// We are not handling this correctly at the moment.
@@ -75,13 +75,13 @@ public class EnergyManager {
 		if (action == null) {
 			return;
 		}
-		
+
 		// Determine the element of the energy particle that we have to generate.
 		// In case we can't, we default to an elementless particle.
 		// The element is the element of the avatar that has cast the ability.
 		// We can get that from the avatar's skill depot.
 		int itemId = 2024;
-		
+
 		// Try to fetch the avatar from the player's party and determine their element.
 		// ToDo: Does this work in co-op?
 		int avatarId = getCastingAvatarIdForElemBall(invoke.getEntityId());	
@@ -122,7 +122,7 @@ public class EnergyManager {
 		if (itemData == null) {
 			return; // Should never happen
 		}
-		
+	
 		// Generate entity.
 		EntityItem energyBall = new EntityItem(getPlayer().getScene(), getPlayer(), itemData, new Position(action.getPos()), 1);
 		energyBall.getRotation().set(action.getRot());
@@ -130,11 +130,11 @@ public class EnergyManager {
 		this.getPlayer().getScene().addEntity(energyBall);
 	}
 
-    /**********
-        Pickup of elemental particles and orbs.
-    **********/
-    public void handlePickupElemBall(GameItem elemBall) {
-        // Check if the item is indeed an energy particle/orb.
+	/**********
+		Pickup of elemental particles and orbs.
+	**********/
+	public void handlePickupElemBall(GameItem elemBall) {
+		// Check if the item is indeed an energy particle/orb.
 		if (elemBall.getItemId() < 2001 ||elemBall.getItemId() > 2024) {
 			return;
 		}
@@ -150,10 +150,10 @@ public class EnergyManager {
 			// On-field vs off-field multiplier.
 			// The on-field character gets no penalty.
 			// Off-field characters get a penalty depending on the team size, as follows:
-			//    - 2 character team: 0.8
-			//	  - 3 character team: 0.7
-			//	  - 4 character team: 0.6
-			//	  - etc.
+			// 		- 2 character team: 0.8
+			// 		- 3 character team: 0.7
+			// 		- 4 character team: 0.6
+			// 		- etc.
 			// We set a lower bound of 0.1 here, to avoid gaining no or negative energy.
 			float offFieldPenalty =
 				(this.player.getTeamManager().getCurrentCharacterIndex() == i)
@@ -181,41 +181,41 @@ public class EnergyManager {
 			};
 
 			float elementBonus = (ballElement == null) ? 2.0f : (avatarElement == ballElement) ? 3.0f : 1.0f;
-			
+
 			// Add the energy.
 			entity.addEnergy(baseEnergy * elementBonus * offFieldPenalty, PropChangeReason.PROP_CHANGE_ENERGY_BALL);
 		}
-    }
+	}
 
 
-    /**********
-        Energy logic related to using skills.
-    **********/
-    private void handleBurstCast(Avatar avatar, int skillId) {
-        // Don't do anything if energy usage is disabled.
-        if (!GAME_OPTIONS.energyUsage) {
+	/**********
+		Energy logic related to using skills.
+	**********/
+	private void handleBurstCast(Avatar avatar, int skillId) {
+		// Don't do anything if energy usage is disabled.
+		if (!GAME_OPTIONS.energyUsage) {
 			return;
 		}
 
-        // If the cast skill was a burst, consume energy.
+		// If the cast skill was a burst, consume energy.
 		if (avatar.getSkillDepot() != null && skillId == avatar.getSkillDepot().getEnergySkill()) {
 			avatar.getAsEntity().clearEnergy(PropChangeReason.PROP_CHANGE_ABILITY);
 		}
-    }
+	}
 
-    public void handleEvtDoSkillSuccNotify(GameSession session, int skillId, int casterId) {
-        // Determine the entity that has cast the skill. Cancel if we can't find that avatar.
+	public void handleEvtDoSkillSuccNotify(GameSession session, int skillId, int casterId) {
+		// Determine the entity that has cast the skill. Cancel if we can't find that avatar.
 		Optional<EntityAvatar> caster = this.player.getTeamManager().getActiveTeam().stream()
-                                        .filter(character -> character.getId() == casterId)
-                                        .findFirst();
-        
-        if (caster.isEmpty()) {
-            return;
-        }
-        
-        Avatar avatar = caster.get().getAvatar();
+										.filter(character -> character.getId() == casterId)
+										.findFirst();
 
-        // Handle elemental burst.
-        this.handleBurstCast(avatar, skillId);
-    }
+		if (caster.isEmpty()) {
+			return;
+		}
+
+		Avatar avatar = caster.get().getAvatar();
+
+		// Handle elemental burst.
+		this.handleBurstCast(avatar, skillId);
+	}
 }
