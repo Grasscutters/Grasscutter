@@ -82,10 +82,14 @@
         "item_player_exist_error": "tidak valid item atau UID.",
         "entity_id_error": "tidak valid entity ID.",
         "player_exist_offline_error": "Pemain tidak ditemukan atau tidak online.",
-        "argument_error": "Tidak valid arguments.",
+        "argument_error": "Tidak valid argumen.",
         "clear_target": "Target dibersihkan.",
-        "set_target": "Perintah berikutnya akan menargetkan @%s secara default.",
-        "need_target": "Perintah ini membutuhkan UID target. Tambahkan argumen <@UID> atau tetapkan target tetap dengan /target @UID."
+        "set_target": "Perintah selanjutnya akan menargetkan @%s secara bawaan.",
+        "set_target_online": "@%s sedang online. Beberapa perintah mungkin memerlukan target offline.",
+        "set_target_offline": "@%s sedang offline. Beberapa perintah mungkin memerlukan target online.",
+        "need_target": "Perintah ini membutuhkan UID target. Tambahkan argumen <@UID> atau tetapkan target tetap dengan /target @UID.",
+        "need_target_online": "Perintah ini memerlukan UID target online, tetapi target saat ini offline. Tambahkan argumen <@UID> yang berbeda atau tetapkan target tetap dengan /target @UID.",
+        "need_target_offline": "Perintah ini memerlukan UID target offline, tetapi target saat ini sedang online. Tambahkan argumen <@UID> yang berbeda atau tetapkan target tetap dengan /target @UID."
       },
       "status": {
         "enabled": "Diaktifkan",
