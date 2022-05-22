@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.game.CommandResponseEvent;
 import emu.grasscutter.server.event.types.ServerEvent;
+import static emu.grasscutter.utils.Language.translate;
 
 import java.util.List;
 
@@ -23,6 +24,10 @@ public interface CommandHandler {
         }
         CommandResponseEvent event = new CommandResponseEvent(ServerEvent.Type.GAME,player, message);
         event.call();
+    }
+    
+    static void sendTranslatedMessage(Player player, String messageKey, Object... args) {
+        sendMessage(player, translate(player, messageKey, args));
     }
 
     /**

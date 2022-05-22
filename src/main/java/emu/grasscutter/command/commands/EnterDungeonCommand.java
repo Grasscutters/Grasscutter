@@ -13,11 +13,6 @@ public final class EnterDungeonCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(null, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
         if (args.size() < 1) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.usage"));
             return;

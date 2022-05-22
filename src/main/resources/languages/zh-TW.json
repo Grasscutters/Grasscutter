@@ -87,7 +87,11 @@
       "argument_error": "無效的參數。",
       "clear_target": "目標已清除.",
       "set_target": "隨後的指令都會以@%s為預設。",
-      "need_target": "此指令需要一個目標 UID。添加 <@UID> 引數或者使用 /target @UID 來設定持久目標。"
+      "set_target_online": "@%s 在線。 某些命令可能需要離線目標。",
+      "set_target_offline": "@%s 離線。 某些命令可能需要在線目標。",
+      "need_target": "此指令需要一個目標 UID。添加 <@UID> 引數或者使用 /target @UID 來設定持久目標。",
+      "need_target_online": "此命令需要在線目標 UID，但當前目標離線。 添加不同的 <@UID> 參數或使用 /target @UID 設置持久目標。",
+      "need_target_offline": "此命令需要離線目標 UID，但當前目標在線。 添加不同的 <@UID> 參數或使用 /target @UID 設置持久目標。"
     },
     "status": {
       "enabled": "已啟用",

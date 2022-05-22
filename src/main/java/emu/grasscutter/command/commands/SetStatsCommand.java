@@ -180,11 +180,6 @@ public final class SetStatsCommand implements CommandHandler {
         String statStr;
         String valueStr;
 
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
         if (args.size() == 2) {
             statStr = args.get(0).toLowerCase();
             valueStr = args.get(1);
