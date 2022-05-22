@@ -17,11 +17,6 @@ public final class KillAllCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
         Scene scene = targetPlayer.getScene();
         try {
             switch (args.size()) {

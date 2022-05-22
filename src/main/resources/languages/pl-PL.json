@@ -83,7 +83,11 @@
       "argument_error": "Błędne argumenty.",
       "clear_target": "Cel wyczyszczony.",
       "set_target": "Następne komendy będą celować w @%s.",
-      "need_target": "Ta komenda wymaga docelowego UID. Dodaj argument <@UID> lub ustaw stały cel poleceniem /target @UID."
+      "set_target_online": "@%s jest online. Niektóre polecenia mogą wymagać celu offline.",
+      "set_target_offline": "@%s jest offline. Niektóre polecenia mogą wymagać celu online.",
+      "need_target": "Ta komenda wymaga docelowego UID. Dodaj argument <@UID> lub ustaw stały cel poleceniem /target @UID.",
+      "need_target_online": "To polecenie wymaga identyfikatora UID celu w trybie online, ale bieżący cel jest w trybie offline. Dodaj inny argument <@UID> lub ustaw trwały cel za pomocą /target @UID.",
+      "need_target_offline": "To polecenie wymaga identyfikatora UID celu offline, ale bieżący cel jest online. Dodaj inny argument <@UID> lub ustaw trwały cel za pomocą /target @UID."
     },
     "status": {
       "enabled": "Włączone",

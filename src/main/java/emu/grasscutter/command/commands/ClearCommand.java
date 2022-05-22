@@ -20,10 +20,6 @@ public final class ClearCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
         if (args.size() < 1) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.clear.command_usage"));
             return;

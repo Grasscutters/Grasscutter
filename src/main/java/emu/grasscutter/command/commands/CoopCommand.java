@@ -14,11 +14,6 @@ public final class CoopCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-		if (targetPlayer == null) {
-			CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-			return;
-		}
-
         Player host = sender;
         switch (args.size()) {
             case 0:  // Summon target to self

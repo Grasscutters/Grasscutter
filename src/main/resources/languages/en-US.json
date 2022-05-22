@@ -88,7 +88,11 @@
       "argument_error": "Invalid arguments.",
       "clear_target": "Target cleared.",
       "set_target": "Subsequent commands will target @%s by default.",
-      "need_target": "This command requires a target UID. Add a <@UID> argument or set a persistent target with /target @UID."
+      "set_target_online": "@%s is online. Some commands may require an offline target.",
+      "set_target_offline": "@%s is offline. Some commands may require an online target.",
+      "need_target": "This command requires a target UID. Add a <@UID> argument or set a persistent target with /target @UID.",
+      "need_target_online": "This command requires an online target UID, but current target is offline. Add a different <@UID> argument or set a persistent target with /target @UID.",
+      "need_target_offline": "This command requires an offline target UID, but current target is online. Add a different <@UID> argument or set a persistent target with /target @UID."
     },
     "status": {
       "enabled": "Enabled",

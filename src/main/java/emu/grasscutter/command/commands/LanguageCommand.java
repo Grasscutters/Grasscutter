@@ -13,7 +13,7 @@ import java.util.Locale;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "language", usage = "language [language code]", description = "commands.language.description", aliases = {"lang"})
+@Command(label = "language", usage = "language [language code]", description = "commands.language.description", aliases = {"lang"}, targetRequirement = Command.TargetRequirement.NONE)
 public final class LanguageCommand implements CommandHandler {
 
     @Override
