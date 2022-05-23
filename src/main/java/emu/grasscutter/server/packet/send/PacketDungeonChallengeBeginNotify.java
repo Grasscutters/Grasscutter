@@ -1,23 +1,22 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.dungeons.DungeonChallenge;
+import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DungeonChallengeBeginNotifyOuterClass.DungeonChallengeBeginNotify;
 
 public class PacketDungeonChallengeBeginNotify extends BasePacket {
 	
-	public PacketDungeonChallengeBeginNotify(DungeonChallenge challenge) {
+	public PacketDungeonChallengeBeginNotify(WorldChallenge challenge) {
 		super(PacketOpcodes.DungeonChallengeBeginNotify, true);
 
 		DungeonChallengeBeginNotify proto = DungeonChallengeBeginNotify.newBuilder()
 				.setChallengeId(challenge.getChallengeId())
 				.setChallengeIndex(challenge.getChallengeIndex())
 				.setGroupId(challenge.getGroup().id)
-				.addParamList(challenge.getObjective())
-				.addParamList(challenge.getTimeLimit())
+				.addAllParamList(challenge.getParamList())
 				.build();
-		
+
 		this.setData(proto);
 	}
 }

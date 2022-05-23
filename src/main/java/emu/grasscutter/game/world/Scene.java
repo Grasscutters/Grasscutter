@@ -4,7 +4,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.def.*;
-import emu.grasscutter.game.dungeons.DungeonChallenge;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
@@ -14,6 +13,7 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
+import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
@@ -32,8 +32,6 @@ import org.danilopianini.util.SpatialIndex;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static emu.grasscutter.utils.Language.translate;
-
 public class Scene {
 	private final World world;
 	private final SceneData sceneData;
@@ -51,7 +49,7 @@ public class Scene {
 	private int weather;
 	
 	private SceneScriptManager scriptManager;
-	private DungeonChallenge challenge;
+	private WorldChallenge challenge;
 	private List<DungeonSettleListener> dungeonSettleListeners;
 	private DungeonData dungeonData;
 	private int prevScene; // Id of the previous scene
@@ -199,11 +197,11 @@ public class Scene {
 		this.dungeonData = dungeonData;
 	}
 
-	public DungeonChallenge getChallenge() {
+	public WorldChallenge getChallenge() {
 		return challenge;
 	}
 
-	public void setChallenge(DungeonChallenge challenge) {
+	public void setChallenge(WorldChallenge challenge) {
 		this.challenge = challenge;
 	}
 
@@ -353,7 +351,14 @@ public class Scene {
 			this.broadcastPacket(new PacketSceneEntityDisappearNotify(removed, visionType));
 		}
 	}
-	
+	public synchronized void removeEntities(List<GameEntity> entity, VisionType visionType) {
+		var toRemove = entity.stream()
+				.map(this::removeEntityDirectly)
+				.toList();
+		if (toRemove.size() > 0) {
+			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, visionType));
+		}
+	}
 	public synchronized void replaceEntity(EntityAvatar oldEntity, EntityAvatar newEntity) {
 		this.removeEntityDirectly(oldEntity);
 		this.addEntityDirectly(newEntity);
@@ -418,6 +423,10 @@ public class Scene {
 		}
 		// Triggers
 		this.scriptManager.checkRegions();
+
+		if(challenge != null){
+			challenge.onCheckTimeOut();
+		}
 	}
 	
 	// TODO - Test
@@ -590,21 +599,21 @@ public class Scene {
 			if (suite == 0 || group.suites == null || group.suites.size() == 0) {
 				continue;
 			}
-			
-			do {
-				var suiteData = group.getSuiteByIndex(suite);
-				suiteData.sceneTriggers.forEach(getScriptManager()::registerTrigger);
 
-				entities.addAll(suiteData.sceneGadgets.stream()
-						.map(g -> scriptManager.createGadget(group.id, group.block_id, g)).toList());
-				entities.addAll(suiteData.sceneMonsters.stream()
-						.map(mob -> scriptManager.createMonster(group.id, group.block_id, mob)).toList());
-				
-				suite++;
-			} while (suite < group.init_config.end_suite);
+			// just load the 'init' suite, avoid spawn the suite added by AddExtraGroupSuite etc.
+			var suiteData = group.getSuiteByIndex(suite);
+			suiteData.sceneTriggers.forEach(getScriptManager()::registerTrigger);
+
+			entities.addAll(suiteData.sceneGadgets.stream()
+					.map(g -> scriptManager.createGadget(group.id, group.block_id, g)).toList());
+			entities.addAll(suiteData.sceneMonsters.stream()
+					.map(mob -> scriptManager.createMonster(group.id, group.block_id, mob)).toList());
+
 		}
 
 		scriptManager.meetEntities(entities);
+		//scriptManager.callEvent(EventType.EVENT_GROUP_LOAD, null);
+		//groups.forEach(g -> scriptManager.callEvent(EventType.EVENT_GROUP_LOAD, null));
 		Grasscutter.getLogger().info("Scene {} loaded {} group(s)", this.getId(), groups.size());
 	}
 	
