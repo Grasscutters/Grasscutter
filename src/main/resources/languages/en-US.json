@@ -383,6 +383,13 @@
     "unlocktower": {
       "success": "Unlock done.",
       "description": "Unlock all levels of tower"
+    },
+    "achievement": {
+      "usage": "achievement <finish> [achievement ID]",
+      "finished": "Finished achievement %s.",
+      "not_found": "Achievement not found.",
+      "invalid_id": "Invalid achievement ID.",
+      "description": "Finish achievements"
     }
   },
   "gacha": {

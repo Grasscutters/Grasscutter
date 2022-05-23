@@ -383,6 +383,13 @@
     "unlocktower": {
       "success": "解锁完成。",
       "description": "解锁深境螺旋的所有层"
+    },
+    "achievement": {
+      "usage": "achievement <finish> [成就ID]",
+      "finished": "已解锁成就 %s。",
+      "not_found": "成就未找到。",
+      "invalid_id": "无效的成就ID。",
+      "description": "解锁成就"
     }
   },
   "gacha": {

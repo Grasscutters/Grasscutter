@@ -102,14 +102,16 @@ public class GameMainQuest {
 		
 		// Add rewards
 		MainQuestData mainQuestData = GameData.getMainQuestDataMap().get(this.getParentQuestId());
-		for (int rewardId : mainQuestData.getRewardIdList()) {
-			RewardData rewardData = GameData.getRewardDataMap().get(rewardId);
-			
-			if (rewardData == null) {
-				continue;
+		if(mainQuestData.getRewardIdList() != null) {
+			for (int rewardId : mainQuestData.getRewardIdList()) {
+				RewardData rewardData = GameData.getRewardDataMap().get(rewardId);
+
+				if (rewardData == null) {
+					continue;
+				}
+
+				getOwner().getInventory().addItemParamDatas(rewardData.getRewardItemList(), ActionReason.QuestReward);
 			}
-			
-			getOwner().getInventory().addItemParamDatas(rewardData.getRewardItemList(), ActionReason.QuestReward);
 		}
 	}
 

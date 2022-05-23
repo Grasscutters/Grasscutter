@@ -10,8 +10,8 @@ import emu.grasscutter.data.def.QuestData.QuestCondition;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.LogicType;
 import emu.grasscutter.game.quest.enums.QuestState;
+import emu.grasscutter.game.trigger.enums.Trigger;
 import emu.grasscutter.net.proto.QuestOuterClass.Quest;
-import emu.grasscutter.server.packet.send.PacketCodexDataUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestListUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestProgressUpdateNotify;
 import emu.grasscutter.utils.Utils;
@@ -141,11 +141,15 @@ public class GameQuest {
 				getFinishProgressList()[i] = 1;
 			}
 		}
-		
+
 		this.getOwner().getSession().send(new PacketQuestProgressUpdateNotify(this));
 		this.getOwner().getSession().send(new PacketQuestListUpdateNotify(this));
-		
+
+		this.getOwner().getTriggerManager().triggerEvent(Trigger.TRIGGER_FINISH_QUEST_AND, this.getQuestId());
+		this.getOwner().getTriggerManager().triggerEvent(Trigger.TRIGGER_FINISH_QUEST_OR, this.getQuestId());
 		if (this.getData().finishParent()) {
+			this.getOwner().getTriggerManager().triggerEvent(Trigger.TRIGGER_FINISH_PARENT_QUEST_AND, this.getMainQuestId());
+			this.getOwner().getTriggerManager().triggerEvent(Trigger.TRIGGER_FINISH_PARENT_QUEST_OR, this.getMainQuestId());
 			// This quest finishes the questline - the main quest will also save the quest to db so we dont have to call save() here
 			this.getMainQuest().finish();
 		} else {
