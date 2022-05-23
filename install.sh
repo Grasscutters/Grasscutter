@@ -38,10 +38,26 @@ valid_ip() {
 # Checks for supported installer(s) (only apt-get for now :(, might add pacman in the future)
 if is_command apt-get ; then
         echo -e "Supported package manager found\n"
+elif is_command pacman
 else
         echo "No supported package manager found"
         exit
 fi
+
+BRANCH="stable" # Stable by default
+# Allows choice between stable and dev branch
+echo "Please select the branch you wish to install"
+echo -e "!!NOTE!!: stable is the recommended brach.\ndevelopment is not guaranteed to work.\nUnless you have a reason to use development, pick stable"
+select branch in "stable" "development" ; do
+	case $branch in
+		stable )
+			BRANCH="stable"
+			break;;
+		development )
+			BRANCH="development"
+			break;;
+	esac
+done
 
 INSTALLER_DEPS="curl wget openssl unzip git"
 GC_DEPS="mongodb openjdk-17-jre"
@@ -74,7 +90,7 @@ echo "Done"
 echo "Getting grasscutter..."
 
 # Download and rename jar
-wget -q --show-progress https://nightly.link/Grasscutters/Grasscutter/workflows/build/stable/Grasscutter.zip
+wget -q --show-progress "https://nightly.link/Grasscutters/Grasscutter/workflows/build/$BRANCH/Grasscutter.zip"
 unzip -qq Grasscutter.zip
 mv $(find -name "grasscutter*.jar" -type f) grasscutter.jar
 
