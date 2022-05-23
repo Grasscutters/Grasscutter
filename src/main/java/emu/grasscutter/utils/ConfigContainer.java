@@ -86,6 +86,7 @@ public class ConfigContainer {
     public static class Account {
         public boolean autoCreate = true;
         public String[] defaultPermissions = {
+            "-server.restart",
             "-server.stop",
             "-server.permission",
             "-server.account",
