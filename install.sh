@@ -38,7 +38,6 @@ valid_ip() {
 # Checks for supported installer(s) (only apt-get for now :(, might add pacman in the future)
 if is_command apt-get ; then
         echo -e "Supported package manager found\n"
-elif is_command pacman
 else
         echo "No supported package manager found"
         exit
