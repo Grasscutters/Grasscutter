@@ -81,21 +81,20 @@ public class PlayerCodex {
 
     public void checkAnimal(GameEntity target, CodexAnimalData.CodexAnimalUnlockCondition condition){
         if(target instanceof EntityMonster){
-            var monsterId = ((EntityMonster)target).getMonsterData().getDescribeId();
+            var monsterId = ((EntityMonster)target).getMonsterData().getId();
             var codexAnimal = GameData.getCodexAnimalDataMap().get(monsterId);
 
             if(!getUnlockedAnimal().containsKey(monsterId)) {
                 if (codexAnimal != null) {
                     if(codexAnimal.getUnlockCondition() == condition || codexAnimal.getUnlockCondition() == null){
                         getUnlockedAnimal().put(monsterId, 1);
-                        player.save();
-                        this.player.sendPacket(new PacketCodexDataUpdateNotify(3, monsterId));
                     }
                 }
             }else{
                 getUnlockedAnimal().put(monsterId, getUnlockedAnimal().get(monsterId) + 1);
-                player.save();
             }
+            player.save();
+            this.player.sendPacket(new PacketCodexDataUpdateNotify(3, monsterId));
         }
     }
 
