@@ -42,7 +42,11 @@ public class PacketSceneEntityAppearNotify extends BasePacket {
 		SceneEntityAppearNotify.Builder proto = SceneEntityAppearNotify.newBuilder()
 				.setAppearType(visionType);
 		
-		entities.forEach(e -> proto.addEntityList(e.toProto()));
+		entities.forEach(e -> {
+			if(e != null){
+				proto.addEntityList(e.toProto());
+			}
+		});
 
 		this.setData(proto.build());
 	}

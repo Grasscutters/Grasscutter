@@ -80,6 +80,7 @@ public class PlayerCodex {
 
     public void checkAnimal(GameEntity target, CodexAnimalData.CodexAnimalUnlockCondition condition){
         if(target.getEntityType() == 2){
+            if(target.getSpawnEntry() == null) return;
             var monsterId = target.getSpawnEntry().getMonsterId();
             var codexAnimal = GameData.getCodexAnimalDataMap().get(monsterId);
 
