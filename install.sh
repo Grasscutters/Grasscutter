@@ -35,9 +35,19 @@ valid_ip() {
         return $stat
 }
 
-# Checks for supported installer(s) (only apt-get for now :(, might add pacman in the future)
+# Checks for supported installer(s) (only apt-get and pacman right now, might add more in the future)
 if is_command apt-get ; then
-        echo -e "Supported package manager found\n"
+        echo -e "Supported package manager found (apt-get)\n"
+
+        GC_DEPS="mongodb openjdk-17-jre"
+        INSTALLER_DEPS="wget openssl unzip git"
+        SYSTEM="deb" # Debian-based (debian, ubuntu)
+elif is_command pacman ; then
+        echo -e "supported package manager found (pacman)\n"
+
+        GC_DEPS="jre17-openjdk"
+        INSTALLER_DEPS="curl wget openssl unzip git base-devel" # curl is still a dependency here in order to successfully build mongodb
+        SYSTEM="arch" # Arch for the elitists :P
 else
         echo "No supported package manager found"
         exit
@@ -46,20 +56,17 @@ fi
 BRANCH="stable" # Stable by default
 # Allows choice between stable and dev branch
 echo "Please select the branch you wish to install"
-echo -e "!!NOTE!!: stable is the recommended brach.\ndevelopment is not guaranteed to work.\nUnless you have a reason to use development, pick stable"
+echo -e "!!NOTE!!: stable is the recommended branch.\nDo *NOT* use development unless you have a reason to and know what you're doing"
 select branch in "stable" "development" ; do
-	case $branch in
-		stable )
-			BRANCH="stable"
-			break;;
-		development )
-			BRANCH="development"
-			break;;
-	esac
+        case $branch in
+                stable )
+                        BRANCH="stable"
+                        break;;
+                development )
+                        BRANCH="development"
+                        break;;
+        esac
 done
-
-INSTALLER_DEPS="curl wget openssl unzip git"
-GC_DEPS="mongodb openjdk-17-jre"
 
 echo "The following packages will have to be installed in order to INSTALL grasscutter:"
 echo -e "$INSTALLER_DEPS \n"
@@ -75,21 +82,95 @@ select yn in "Yes" "No" ; do
 done
 
 echo "Updating package cache..."
-apt-get update -qq > /dev/null
+case $SYSTEM in # More concise than if
+        deb ) apt-get update -qq;;
+        arch ) pacman -Syy;;
+esac
 
 # Starts installing dependencies
 echo "Installing setup dependencies..."
-apt-get -qq install $INSTALLER_DEPS -y > /dev/null
+case $SYSTEM in # These are one-liners anyways
+        deb ) apt-get -qq install $INSTALLER_DEPS -y;;
+        arch ) pacman -Sq --noconfirm --needed $INSTALLER_DEPS > /dev/null;;
+esac
 echo "Done"
 
 echo "Installing grasscutter dependencies..."
-apt-get -qq install $GC_DEPS -y > /dev/null
+case $SYSTEM in
+        deb) apt-get -qq install $GC_DEPS -y > /dev/null;;
+        arch ) pacman -Sq --noconfirm --needed $GC_DEPS > /dev/null;;
+esac
+# *sighs* here we go...
+INST_ARCH_MONGO="no"
+if [ $SYSTEM = "arch" ]; then
+        echo -e "-=-=-=-=-=--- !! IMPORTANT !! ---=-=-=-=-=-\n"
+        echo -e "    Due to licensing issues with mongodb,\n    it is no longer available on the official arch repositiries."
+        echo -e "    In order to install mongodb,\n    it needs to be fetched from the Arch User Repository.\n"
+        echo -e "    As this script is running as root,\n    a temporary user will need to be created to run makepkg."
+        echo -e "    The temporary user will be deleted once\n    makepkg has finished.\n"
+        echo -e "    This will be handled automatically.\n"
+        echo -e "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n"
+        echo -e "!!NOTE!!: Only select \"Skip\" if mongodb is already installed on this system"
+        echo "Do you want to continue?"
+        select yn in "Yes" "Skip" "No" ; do
+                case $yn in
+                        Yes )
+                                INST_ARCH_MONGO="yes"
+                                break;;
+                        No ) exit;;
+                        Skip )
+                                INST_ARCH_MONGO="no"
+                                break;;
+                esac
+        done
+fi
+
+if [ $INST_ARCH_MONGO = "yes" ]; then
+        DIR=$(pwd)
+        # Make temp user
+        echo "Creating temporary user..."
+        TEMPUSER="gctempuser"
+        TEMPHOME="/home/$TEMPUSER"
+        useradd -m $TEMPUSER
+        cd $TEMPHOME
+
+        # Do the actual makepkg shenanigans
+        echo "Building mongodb... (this will take a moment)"
+        su $TEMPUSER<<EOF
+                mkdir temp
+                cd temp
+                git clone https://aur.archlinux.org/mongodb-bin.git -q
+                cd mongodb-bin
+                makepkg -s > /dev/null
+                exit
+EOF
+        mv "$(find -name "mongodb-bin*.pkg.tar.zst" -type f)" ./mongodb-bin.pkg.tar.zst
+        cd $DIR
+
+        # Snatch the file to current working directory
+        mv "$TEMPHOME/mongodb-bin.pkg.tar.zst" ./mongodb-bin.pkg.tar.zst
+        chown root ./mongodb-bin.pkg.tar.zst
+        chgrp root ./mongodb-bin.pkg.tar.zst
+        chmod 775 ./mongodb-bin.pkg.tar.zst
+
+        echo "Installing mongodb..."
+        pacman -U mongodb-bin.pkg.tar.zst --noconfirm > /dev/null
+        rm mongodb-bin.pkg.tar.zst
+
+        echo "Starting mongodb..."
+        systemctl enable mongodb
+        systemctl start mongodb
+
+        echo "Removing temporary account..."
+        userdel -r $TEMPUSER
+fi
 echo "Done"
 
 echo "Getting grasscutter..."
 
 # Download and rename jar
 wget -q --show-progress "https://nightly.link/Grasscutters/Grasscutter/workflows/build/$BRANCH/Grasscutter.zip"
+echo "unzipping"
 unzip -qq Grasscutter.zip
 mv $(find -name "grasscutter*.jar" -type f) grasscutter.jar
 
