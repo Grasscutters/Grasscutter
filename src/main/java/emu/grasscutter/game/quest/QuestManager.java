@@ -121,7 +121,6 @@ public class QuestManager {
 		mainQuest.save();
 
 		// Send packet
-		getPlayer().sendPacket(new PacketServerCondMeetQuestListUpdateNotify(quest));
 		getPlayer().sendPacket(new PacketQuestListUpdateNotify(quest));
 
 		return quest;

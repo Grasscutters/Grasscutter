@@ -128,6 +128,7 @@ public class Player {
 	private Position pos;
 	private Position rotation;
 	private PlayerBirthday birthday;
+	private PlayerCodex codex;
 
 	private Map<Integer, Integer> properties;
 	private Set<Integer> nameCardList;
@@ -237,6 +238,7 @@ public class Player {
 		this.birthday = new PlayerBirthday();
 		this.rewardedLevels = new HashSet<>();
 		this.moonCardGetTimes = new HashSet<>();
+		this.codex = new PlayerCodex();
 
 		this.shopLimit = new ArrayList<>();
 		this.expeditionInfo = new HashMap<>();
@@ -259,6 +261,7 @@ public class Player {
 		this.teamManager = new TeamManager(this);        
 
 		this.birthday = new PlayerBirthday();
+		this.codex = new PlayerCodex();
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
 		this.setProperty(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50);
@@ -808,7 +811,6 @@ public class Player {
 		return expeditionInfo.get(avaterGuid);
 	}
 
-
 	public List<ShopLimit> getShopLimit() {
 		return shopLimit;
 	}
@@ -1034,6 +1036,8 @@ public class Player {
 		return this.birthday.getDay() > 0;
 	}
 
+	public PlayerCodex getCodex(){ return this.codex; }
+
 	public Set<Integer> getRewardedLevels() {
 		return rewardedLevels;
 	}
@@ -1206,11 +1210,9 @@ public class Player {
 
 	@PostLoad
 	private void onLoad() {
-		if(this.getTeamManager() != null)
-		 this.getTeamManager().setPlayer(this);
-
-		if(getTowerManager() != null)
-         this.getTowerManager().setPlayer(this);
+		this.getCodex().setPlayer(this);
+		this.getTeamManager().setPlayer(this);
+        this.getTowerManager().setPlayer(this);	
 	}
 
 	public void save() {
@@ -1284,16 +1286,16 @@ public class Player {
 			exists.getSession().close();
 		}
 
-		// Load from db
+	// Load from db
     try {
       this.getAvatars().loadFromDatabase();
-		  this.getInventory().loadFromDatabase();
-		  this.getAvatars().postLoad();
-		  this.getFriendsList().loadFromDatabase();
-		  this.getMailHandler().loadFromDatabase();
+	  this.getInventory().loadFromDatabase();
+	  this.getAvatars().postLoad();
+	  this.getFriendsList().loadFromDatabase();
+	  this.getMailHandler().loadFromDatabase();
       this.getQuestManager().loadFromDatabase();
     } catch (Exception e) {
-      Grasscutter.getLogger().info("TODO: User UID: "+this.getProfile().getUid()+" with username "+this.getAccount().getUsername()+" It seems troublesome (Datebase)", e);
+      Grasscutter.getLogger().error("TODO: User UID: "+this.getProfile().getUid()+" with username "+this.getAccount().getUsername()+" It seems troublesome (Datebase)", e);
       this.getSession().close();
     }
 
@@ -1322,23 +1324,22 @@ public class Player {
 		this.setProperty(PlayerProperty.PROP_IS_MP_MODE_AVAILABLE, 1);
 
 		// Packets
-    try {
-      session.send(new PacketPlayerDataNotify(this));
-		  session.send(new PacketStoreWeightLimitNotify());
-		  session.send(new PacketPlayerStoreNotify(this));
-		  session.send(new PacketAvatarDataNotify(this));
-      session.send(new PacketFinishedParentQuestNotify(this));
-		  session.send(new PacketQuestListNotify(this));
-      session.send(new PacketCodexDataFullNotify(this));
-		  session.send(new PacketServerCondMeetQuestListUpdateNotify(this));
-      session.send(new PacketAllWidgetDataNotify(this));
-		  session.send(new PacketWidgetGadgetAllDataNotify());
-      session.send(new PacketPlayerHomeCompInfoNotify(this));
-		  session.send(new PacketHomeComfortInfoNotify(this));
-    } catch (Exception e) {
-      Grasscutter.getLogger().info("TODO: User UID: "+this.getProfile().getUid()+" with username "+this.getAccount().getUsername()+" It seems troublesome (Send Pack)", e);
-      this.getSession().close();
-    }		
+        try {
+			session.send(new PacketPlayerDataNotify(this)); // Player data
+		    session.send(new PacketStoreWeightLimitNotify());
+		    session.send(new PacketPlayerStoreNotify(this));
+		    session.send(new PacketAvatarDataNotify(this));
+		    session.send(new PacketFinishedParentQuestNotify(this));
+		    session.send(new PacketQuestListNotify(this));
+		    session.send(new PacketCodexDataFullNotify(this));
+		    session.send(new PacketAllWidgetDataNotify(this));
+		    session.send(new PacketWidgetGadgetAllDataNotify());
+		    session.send(new PacketPlayerHomeCompInfoNotify(this));
+		    session.send(new PacketHomeComfortInfoNotify(this));      
+        } catch (Exception e) {
+         Grasscutter.getLogger().error("TODO: User UID: "+this.getProfile().getUid()+" with username "+this.getAccount().getUsername()+" It seems troublesome (Send Pack)", e);
+         this.getSession().close();
+        }
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 

@@ -1,17 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
 import java.util.Collections;
-import java.util.List;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify;
 import emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData;
-import emu.grasscutter.net.proto.CodexTypeOuterClass;
-import emu.grasscutter.server.game.GameSession;
 
 public class PacketCodexDataFullNotify extends BasePacket {
     public PacketCodexDataFullNotify(Player player) {
@@ -21,6 +17,22 @@ public class PacketCodexDataFullNotify extends BasePacket {
         CodexTypeData.Builder questTypeData = CodexTypeData.newBuilder()
                 .setTypeValue(1);
 
+        //Weapons
+        CodexTypeData.Builder weaponTypeData = CodexTypeData.newBuilder()
+                .setTypeValue(2);
+
+        //Animals
+        CodexTypeData.Builder animalTypeData = CodexTypeData.newBuilder()
+                .setTypeValue(3);
+
+        //Materials
+        CodexTypeData.Builder materialTypeData = CodexTypeData.newBuilder()
+                .setTypeValue(4);
+
+        //Books
+        CodexTypeData.Builder bookTypeData = CodexTypeData.newBuilder()
+                .setTypeValue(5);
+
         //Tips
         CodexTypeData.Builder pushTipsTypeData = CodexTypeData.newBuilder()
                 .setTypeValue(6);
@@ -29,25 +41,53 @@ public class PacketCodexDataFullNotify extends BasePacket {
         CodexTypeData.Builder viewTypeData = CodexTypeData.newBuilder()
                 .setTypeValue(7);
 
-        //Weapons
-        CodexTypeData.Builder weaponTypeData = CodexTypeData.newBuilder()
-                .setTypeValue(2);
-
+        //Reliquary
+        CodexTypeData.Builder reliquaryData = CodexTypeData.newBuilder()
+                .setTypeValue(8);
 
         player.getQuestManager().forEachMainQuest(mainQuest -> {
             if(mainQuest.isFinished()){
-                var codexQuest = GameData.getCodexQuestIdMap().get(mainQuest.getParentQuestId());
+                var codexQuest = GameData.getCodexQuestDataIdMap().get(mainQuest.getParentQuestId());
                 if(codexQuest != null){
                     questTypeData.addCodexIdList(codexQuest.getId()).addAllHaveViewedList(Collections.singleton(true));
                 }
             }
         });
 
+        player.getCodex().getUnlockedWeapon().forEach(weapon -> {
+            var codexWeapon = GameData.getCodexWeaponDataIdMap().get(weapon);
+            if(codexWeapon != null){
+                weaponTypeData.addCodexIdList(codexWeapon.getId()).addAllHaveViewedList(Collections.singleton(true));
+            }
+        });
+
+        player.getCodex().getUnlockedAnimal().forEach((animal, amount) -> {
+            var codexAnimal = GameData.getCodexAnimalDataMap().get(animal);
+            if(codexAnimal != null){
+                animalTypeData.addCodexIdList(codexAnimal.getId()).addAllHaveViewedList(Collections.singleton(true));
+            }
+        });
+
+        player.getCodex().getUnlockedMaterial().forEach(material -> {
+            var codexMaterial = GameData.getCodexMaterialDataIdMap().get(material);
+            if(codexMaterial != null){
+                materialTypeData.addCodexIdList(codexMaterial.getId()).addAllHaveViewedList(Collections.singleton(true));
+            }
+        });
+
+        player.getCodex().getUnlockedReliquarySuitCodex().forEach(reliquarySuit -> {
+            reliquaryData.addCodexIdList(reliquarySuit).addAllHaveViewedList(Collections.singleton(true));
+        });
+
         CodexDataFullNotify.Builder proto = CodexDataFullNotify.newBuilder()
                 .addTypeDataList(questTypeData.build())
+                .addTypeDataList(weaponTypeData)
+                .addTypeDataList(animalTypeData)
+                .addTypeDataList(materialTypeData)
+                .addTypeDataList(bookTypeData)
                 .addTypeDataList(pushTipsTypeData.build())
                 .addTypeDataList(viewTypeData.build())
-                .addTypeDataList(weaponTypeData);
+                .addTypeDataList(reliquaryData);
 
         this.setData(proto);
     }
