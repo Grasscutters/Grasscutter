@@ -38,6 +38,8 @@ public class GadgetChest extends GadgetContent {
 
 			getGadget().updateState(ScriptGadgetState.ChestOpened);
 			player.sendPacket(new PacketGadgetInteractRsp(this.getGadget(), InteractTypeOuterClass.InteractType.INTERACT_OPEN_CHEST));
+			// let the chest disappear
+			getGadget().die();
 			return true;
 		}
 	}

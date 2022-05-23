@@ -73,7 +73,7 @@ public class SceneGroup {
 		return bindings;
 	}
 
-	public SceneGroup load(int sceneId){
+	public synchronized SceneGroup load(int sceneId){
 		if(loaded){
 			return this;
 		}
@@ -118,6 +118,7 @@ public class SceneGroup {
 				garbages = new SceneGarbage();
 				if (garbagesTable.checktable().get("gadgets") != LuaValue.NIL) {
 					garbages.gadgets = ScriptLoader.getSerializer().toList(SceneGadget.class, garbagesTable.checktable().get("gadgets").checktable());
+					garbages.gadgets.forEach(m -> m.group = this);
 				}
 			}
 			

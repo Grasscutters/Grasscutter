@@ -1,5 +1,6 @@
 package emu.grasscutter.game.entity.gadget.chest;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.entity.gadget.GadgetChest;
 import emu.grasscutter.game.inventory.GameItem;
@@ -22,6 +23,10 @@ public class BossChestInteractHandler implements ChestInteractHandler{
         var monster = chest.getGadget().getMetaGadget().group.monsters.get(chest.getGadget().getMetaGadget().boss_chest.monster_config_id);
         var reward = worldDataManager.getRewardByBossId(monster.monster_id);
 
+        if(reward == null){
+            Grasscutter.getLogger().warn("Could not found the reward of boss monster {}", monster.monster_id);
+            return false;
+        }
         List<GameItem> rewards = new ArrayList<>();
         for (ItemParamData param : reward.getPreviewItems()) {
             rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));

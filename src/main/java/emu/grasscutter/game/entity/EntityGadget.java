@@ -1,18 +1,10 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.GadgetData;
-import emu.grasscutter.game.entity.gadget.GadgetChest;
-import emu.grasscutter.game.entity.gadget.GadgetContent;
-import emu.grasscutter.game.entity.gadget.GadgetGatherPoint;
-import emu.grasscutter.game.entity.gadget.GadgetRewardStatue;
-import emu.grasscutter.game.entity.gadget.GadgetWorktop;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.EntityIdType;
-import emu.grasscutter.game.props.EntityType;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.data.def.GadgetPropData;
+import emu.grasscutter.game.entity.gadget.*;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
@@ -32,6 +24,7 @@ import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketGadgetStateNotify;
+import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
@@ -160,7 +153,10 @@ public class EntityGadget extends EntityBaseGadget {
 
 	@Override
 	public void onDeath(int killerId) {
-		
+		if(getScene().getChallenge() != null){
+			getScene().getChallenge().onGadgetDeath(this);
+		}
+		getScene().getScriptManager().callEvent(EventType.EVENT_ANY_GADGET_DIE, new ScriptArgs(this.getConfigId()));
 	}
 	
 	@Override
@@ -202,5 +198,9 @@ public class EntityGadget extends EntityBaseGadget {
 		entityInfo.setGadget(gadgetInfo);
 		
 		return entityInfo.build();
+	}
+	public void die() {
+		getScene().broadcastPacket(new PacketLifeStateChangeNotify(this, LifeState.LIFE_DEAD));
+		this.onDeath(0);
 	}
 }

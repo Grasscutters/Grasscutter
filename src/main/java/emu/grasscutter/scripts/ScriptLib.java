@@ -1,10 +1,11 @@
 package emu.grasscutter.scripts;
 
-import emu.grasscutter.game.dungeons.DungeonChallenge;
+import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.entity.gadget.GadgetWorktop;
+import emu.grasscutter.game.dungeons.challenge.factory.ChallengeFactory;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.packet.send.PacketCanUseSkillNotify;
@@ -159,48 +160,102 @@ public class ScriptLib {
 		if (group == null || group.monsters == null) {
 			return 1;
 		}
-
+		var suiteData = group.getSuiteByIndex(suite);
+		if(suiteData == null){
+			return 1;
+		}
 		// avoid spawn wrong monster
 		if(getSceneScriptManager().getScene().getChallenge() != null)
 			if(!getSceneScriptManager().getScene().getChallenge().inProgress() ||
 					getSceneScriptManager().getScene().getChallenge().getGroup().id != groupId){
 			return 0;
 		}
-		this.getSceneScriptManager().spawnMonstersInGroup(group, suite);
-		
+		this.getSceneScriptManager().addGroupSuite(group, suiteData);
+
 		return 0;
 	}
-	
+	public int GoToGroupSuite(int groupId, int suite) {
+		logger.debug("[LUA] Call GoToGroupSuite with {},{}",
+				groupId,suite);
+		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
+		if (group == null || group.monsters == null) {
+			return 1;
+		}
+		var suiteData = group.getSuiteByIndex(suite);
+		if(suiteData == null){
+			return 1;
+		}
+
+		for(var suiteItem : group.suites){
+			if(suiteData == suiteItem){
+				continue;
+			}
+			this.getSceneScriptManager().removeGroupSuite(group, suiteItem);
+		}
+		this.getSceneScriptManager().addGroupSuite(group, suiteData);
+
+		return 0;
+	}
+	public int RemoveExtraGroupSuite(int groupId, int suite) {
+		logger.debug("[LUA] Call RemoveExtraGroupSuite with {},{}",
+				groupId,suite);
+
+		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
+		if (group == null || group.monsters == null) {
+			return 1;
+		}
+		var suiteData = group.getSuiteByIndex(suite);
+		if(suiteData == null){
+			return 1;
+		}
+
+		this.getSceneScriptManager().removeGroupSuite(group, suiteData);
+
+		return 0;
+	}
+	public int KillExtraGroupSuite(int groupId, int suite) {
+		logger.debug("[LUA] Call KillExtraGroupSuite with {},{}",
+				groupId,suite);
+
+		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
+		if (group == null || group.monsters == null) {
+			return 1;
+		}
+		var suiteData = group.getSuiteByIndex(suite);
+		if(suiteData == null){
+			return 1;
+		}
+
+		this.getSceneScriptManager().removeGroupSuite(group, suiteData);
+
+		return 0;
+	}
 	// param3 (probably time limit for timed dungeons)
 	public int ActiveChallenge(int challengeId, int challengeIndex, int timeLimitOrGroupId, int groupId, int objectiveKills, int param5) {
 		logger.debug("[LUA] Call ActiveChallenge with {},{},{},{},{},{}",
 				challengeId,challengeIndex,timeLimitOrGroupId,groupId,objectiveKills,param5);
 
-		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
-		var objective = objectiveKills;
+		var challenge = ChallengeFactory.getChallenge(
+				challengeId,
+				challengeIndex,
+				timeLimitOrGroupId,
+				groupId,
+				objectiveKills,
+				param5,
+				getSceneScriptManager().getScene(),
+				getCurrentGroup().get()
+				);
 
-		if(group == null){
-			group = getSceneScriptManager().getGroupById(timeLimitOrGroupId);
-			objective = groupId;
-		}
-		
-		if (group == null || group.monsters == null) {
+		if(challenge == null){
 			return 1;
 		}
 
-		if(getSceneScriptManager().getScene().getChallenge() != null &&
-				getSceneScriptManager().getScene().getChallenge().inProgress())
-		{
-			return 0;
+		if(challenge instanceof DungeonChallenge dungeonChallenge){
+			// set if tower first stage (6-1)
+			dungeonChallenge.setStage(getSceneScriptManager().getVariables().getOrDefault("stage", -1) == 0);
 		}
 
-		DungeonChallenge challenge = new DungeonChallenge(getSceneScriptManager().getScene(),
-				group, challengeId, challengeIndex, objective);
-		// set if tower first stage (6-1)
-		challenge.setStage(getSceneScriptManager().getVariables().getOrDefault("stage", -1) == 0);
-
 		getSceneScriptManager().getScene().setChallenge(challenge);
-
 		challenge.start();
 		return 0;
 	}
@@ -257,7 +312,7 @@ public class ScriptLib {
 	
 	public int GetRegionEntityCount(LuaTable table) {
 		logger.debug("[LUA] Call GetRegionEntityCount with {}",
-				table);
+				printTable(table));
 		int regionId = table.get("region_eid").toint();
 		int entityType = table.get("entity_type").toint();
 
@@ -280,9 +335,8 @@ public class ScriptLib {
 		// TODO record time
 		return 0;
 	}
-	public int GetGroupMonsterCount(int var1){
-		logger.debug("[LUA] Call GetGroupMonsterCount with {}",
-				var1);
+	public int GetGroupMonsterCount(){
+		logger.debug("[LUA] Call GetGroupMonsterCount ");
 
 		return (int) getSceneScriptManager().getScene().getEntities().values().stream()
 				.filter(e -> e instanceof EntityMonster &&
@@ -328,7 +382,7 @@ public class ScriptLib {
 
 		var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId.toint());
 		if(entity == null){
-			return 1;
+			return 0;
 		}
 		getSceneScriptManager().getScene().killEntity(entity, 0);
 		return 0;
@@ -398,8 +452,13 @@ public class ScriptLib {
 	public int GetGadgetStateByConfigId(int groupId, int configId){
 		logger.debug("[LUA] Call GetGadgetStateByConfigId with {},{}",
 				groupId, configId);
+
+		if(groupId == 0){
+			groupId = getCurrentGroup().get().id;
+		}
+		final int realGroupId = groupId;
 		var gadget = getSceneScriptManager().getScene().getEntities().values().stream()
-				.filter(g -> g instanceof EntityGadget entityGadget && entityGadget.getGroupId() == groupId)
+				.filter(g -> g instanceof EntityGadget entityGadget && entityGadget.getGroupId() == realGroupId)
 				.filter(g -> g.getConfigId() == configId)
 				.findFirst();
 		if(gadget.isEmpty()){
@@ -409,8 +468,8 @@ public class ScriptLib {
 	}
 
 	public int MarkPlayerAction(int var1, int var2, int var3, int var4){
-		logger.debug("[LUA] Call MarkPlayerAction with {},{}",
-				var1, var2);
+		logger.debug("[LUA] Call MarkPlayerAction with {},{},{},{}",
+				var1, var2,var3,var4);
 
 		return 0;
 	}
