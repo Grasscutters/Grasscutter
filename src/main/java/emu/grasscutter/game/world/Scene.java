@@ -29,6 +29,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import org.danilopianini.util.SpatialIndex;
+import org.quartz.Trigger;
 
 import java.util.*;
 
@@ -386,9 +387,19 @@ public class Scene {
 	}
 	
 	public void killEntity(GameEntity target, int attackerId) {
-		for (Player player : this.getPlayers()) {
-			player.getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+		GameEntity attacker = getEntityById(attackerId);
+
+		//Check codex
+		if (attacker instanceof EntityClientGadget) {
+			var clientGadgetOwner = getEntityById(((EntityClientGadget) attacker).getOwnerEntityId());
+			if(clientGadgetOwner instanceof EntityAvatar) {
+				((EntityClientGadget) attacker).getOwner().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+			}
 		}
+		else if (attacker instanceof EntityAvatar) {
+			((EntityAvatar) attacker).getPlayer().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+		}
+
 		// Packet
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
 

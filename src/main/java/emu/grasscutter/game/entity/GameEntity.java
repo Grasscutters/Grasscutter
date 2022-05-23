@@ -216,7 +216,7 @@ public abstract class GameEntity {
 		
 		// Check if dead
 		if (isDead) {
-			getScene().killEntity(this, 0);
+			getScene().killEntity(this, killerId);
 		}
 	}
 }
