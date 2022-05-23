@@ -159,7 +159,7 @@
       "description": "給予指定聖遺物。"
     },
     "giveChar": {
-      "usage": "用法：givechar <player> <itemId|itemName> [amount]",
+      "usage": "用法：givechar <player> <itemId|itemName> [level]",
       "given": "已將 %s 等級 %s 給予 %s。",
       "invalid_avatar_id": "無效的角色ID。",
       "invalid_avatar_level": "無效的角色等級。.",

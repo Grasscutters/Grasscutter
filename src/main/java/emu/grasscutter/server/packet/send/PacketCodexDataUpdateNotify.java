@@ -1,21 +1,15 @@
 package emu.grasscutter.server.packet.send;
 
-import java.util.Collections;
-import java.util.List;
-
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
-import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.CodexDataUpdateNotifyOuterClass.CodexDataUpdateNotify;
-import emu.grasscutter.server.game.GameSession;
 
 public class PacketCodexDataUpdateNotify extends BasePacket {
     public PacketCodexDataUpdateNotify(GameMainQuest quest) {
         super(PacketOpcodes.CodexDataUpdateNotify, true);
-        var codexQuest = GameData.getCodexQuestIdMap().get(quest.getParentQuestId());
+        var codexQuest = GameData.getCodexQuestDataIdMap().get(quest.getParentQuestId());
         if(codexQuest != null){
             CodexDataUpdateNotify proto = CodexDataUpdateNotify.newBuilder()
                     .setTypeValue(1)
@@ -23,5 +17,14 @@ public class PacketCodexDataUpdateNotify extends BasePacket {
                     .build();
             this.setData(proto);
         }
+    }
+
+    public PacketCodexDataUpdateNotify(int typeValue, int codexId){
+        super(PacketOpcodes.CodexDataUpdateNotify, true);
+        CodexDataUpdateNotify proto = CodexDataUpdateNotify.newBuilder()
+                .setTypeValue(typeValue)
+                .setId(codexId)
+                .build();
+        this.setData(proto);
     }
 }

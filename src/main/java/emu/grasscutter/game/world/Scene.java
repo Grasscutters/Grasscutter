@@ -2,10 +2,7 @@ package emu.grasscutter.game.world;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
-import emu.grasscutter.data.def.DungeonData;
-import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.data.def.SceneData;
-import emu.grasscutter.data.def.WorldLevelData;
+import emu.grasscutter.data.def.*;
 import emu.grasscutter.game.dungeons.DungeonChallenge;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.entity.*;
@@ -389,6 +386,9 @@ public class Scene {
 	}
 	
 	public void killEntity(GameEntity target, int attackerId) {
+		for (Player player : this.getPlayers()) {
+			player.getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+		}
 		// Packet
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
 
