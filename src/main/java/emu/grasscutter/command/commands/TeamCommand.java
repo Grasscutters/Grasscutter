@@ -1,9 +1,7 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 
@@ -76,15 +74,9 @@ public final class TeamCommand implements CommandHandler {
         }
 
         for (var avatarId: avatarIds) {
-            try {
-                int id = Integer.parseInt(avatarId);
-				var ret = addAvatar(sender, targetPlayer, id, index);
-				if (index > 0) ++index;
-                if (!ret) continue;
-            } catch (Exception e) {
-                CommandHandler.sendMessage(sender, translate(sender, "commands.team.failed_to_add_avatar", avatarId));
-                continue;
-            }
+            int id = Integer.parseInt(avatarId);
+            var success = addAvatar(sender, targetPlayer, id, index);
+            if (index > 0) ++index;
         }
         return true;
     }
@@ -194,7 +186,7 @@ public final class TeamCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, translate(sender, "commands.team.avatar_already_in_team", avatarId));
             return false;
 		}
-        if (!sender.getAvatars().hasAvatar(avatarId)) {
+        if (!targetPlayer.getAvatars().hasAvatar(avatarId)) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.team.avatar_not_found", avatarId));
             return false;
         }
