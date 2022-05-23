@@ -1,17 +1,23 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
-import emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff;
-
-import java.util.ArrayList;
 
 public class PacketLifeStateChangeNotify extends BasePacket {
+	public PacketLifeStateChangeNotify(GameEntity target, LifeState lifeState) {
+		super(PacketOpcodes.LifeStateChangeNotify);
+
+		LifeStateChangeNotify proto = LifeStateChangeNotify.newBuilder()
+				.setEntityId(target.getId())
+				.setLifeState(lifeState.getValue())
+				.build();
+
+		this.setData(proto);
+	}
 	public PacketLifeStateChangeNotify(GameEntity attacker, GameEntity target, LifeState lifeState) {
 		super(PacketOpcodes.LifeStateChangeNotify);
 

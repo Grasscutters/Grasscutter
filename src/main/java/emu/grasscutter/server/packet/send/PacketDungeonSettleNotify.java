@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.dungeons.DungeonChallenge;
+import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify;
@@ -9,7 +9,7 @@ import emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNoti
 
 public class PacketDungeonSettleNotify extends BasePacket {
 	
-	public PacketDungeonSettleNotify(DungeonChallenge challenge) {
+	public PacketDungeonSettleNotify(WorldChallenge challenge) {
 		super(PacketOpcodes.DungeonSettleNotify);
 
 		DungeonSettleNotify proto = DungeonSettleNotify.newBuilder()
@@ -22,10 +22,10 @@ public class PacketDungeonSettleNotify extends BasePacket {
 		this.setData(proto);
 	}
 
-	public PacketDungeonSettleNotify(DungeonChallenge challenge,
-									 boolean canJump,
-									 boolean hasNextLevel,
-									 int nextFloorId
+	public PacketDungeonSettleNotify(WorldChallenge challenge,
+                                     boolean canJump,
+                                     boolean hasNextLevel,
+                                     int nextFloorId
 	) {
 		super(PacketOpcodes.DungeonSettleNotify);
 

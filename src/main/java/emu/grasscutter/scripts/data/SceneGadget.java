@@ -10,4 +10,5 @@ public class SceneGadget extends SceneObject{
 	public int state;
 	public int point_type;
 	public SceneBossChest boss_chest;
+	public int interact_id;
 }
