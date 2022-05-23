@@ -190,7 +190,7 @@
         "server_kick_player": "Menendang pemain [%s:%s]",
         "description": "Menendang pemain tertentu dari server (WIP)"
       },
-      "kill": {
+      "killall": {
         "usage": "Penggunaan: killall [playerUid] [sceneId]",
         "scene_not_found_in_player_world": "Adegan tidak ditemukan di dunia pemain",
         "kill_monsters_in_scene": "Membunuh %s monster di adegan %s",
@@ -398,9 +398,15 @@
       }
     },
     "dockergc": {
-        "account": {
-          "username_vaild": "Gunakan Nama Pengguna tanpa spasi dan huruf khusus atau format email saja"
-        }
+      "account": {
+        "username_vaild": "Gunakan Nama Pengguna tanpa spasi dan huruf khusus atau format email saja"
+      },
+      "commands": {
+        "clear": {
+          "done": "Kami telah menghapus %s item dari akun mu (limit setiap %s item)"
+        },
+        "limit": "Perintah ini terbatas hanya untuk setiap %s (total jumlahnnya)"
+      }
     }
   }
   
