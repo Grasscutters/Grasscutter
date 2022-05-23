@@ -240,6 +240,7 @@ public class Inventory implements Iterable<GameItem> {
 	}
 	
 	private synchronized void putItem(GameItem item, InventoryTab tab) {
+		getPlayer().getCodex().checkAddedItem(item);
 		// Set owner and guid FIRST!
 		item.setOwner(getPlayer());
 		// Put in item store

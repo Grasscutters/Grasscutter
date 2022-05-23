@@ -163,7 +163,7 @@
       "description": "给予指定圣遗物"
     },
     "giveChar": {
-      "usage": "用法：givechar <玩家> <角色ID|角色名> [数量]",
+      "usage": "用法：givechar <玩家> <角色ID|角色名> [等级]",
       "given": "已将角色 %s [等级 %s] 给与 %s。",
       "invalid_avatar_id": "无效的角色ID。",
       "invalid_avatar_level": "无效的角色等级。",
