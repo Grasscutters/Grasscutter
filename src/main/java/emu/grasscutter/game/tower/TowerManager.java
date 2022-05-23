@@ -48,7 +48,7 @@ public class TowerManager {
   public void setPlayer(Player player) {    
     this.player = player;
     if (player != null) {
-      Grasscutter.getLogger().info("DEBUG Abyse: TowerManager setPlayer " + player.getNickname() + " ");
+      Grasscutter.getLogger().debug("DEBUG Abyse: TowerManager setPlayer " + player.getNickname() + " ");
     }
   }
 
