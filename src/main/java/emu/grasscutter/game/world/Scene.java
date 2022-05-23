@@ -382,10 +382,12 @@ public class Scene {
 			}
 		}
 
-		//trigger TRIGGER_MAX_CRITICAL_DAMAGE
 		if (result.getIsCrit()) {
 			if (attacker instanceof EntityClientGadget) {
-				((EntityClientGadget) attacker).getOwner().getTriggerManager().triggerEvent(Trigger.TRIGGER_MAX_CRITICAL_DAMAGE, result.getDamage());
+				var clientGadgetOwner = getEntityById(((EntityClientGadget) attacker).getOwnerEntityId());
+				if(clientGadgetOwner instanceof EntityAvatar) {
+					((EntityClientGadget) attacker).getOwner().getTriggerManager().triggerEvent(Trigger.TRIGGER_MAX_CRITICAL_DAMAGE, result.getDamage());
+				}
 			} else if (attacker instanceof EntityAvatar) {
 				((EntityAvatar) attacker).getPlayer().getTriggerManager().triggerEvent(Trigger.TRIGGER_MAX_CRITICAL_DAMAGE, result.getDamage());
 			}
@@ -397,9 +399,30 @@ public class Scene {
 	
 	public void killEntity(GameEntity target, int attackerId) {
 		GameEntity attacker = getEntityById(attackerId);
-		if (attacker instanceof EntityAvatar) {
+
+		//Check codex
+		if (attacker instanceof EntityClientGadget) {
+			var clientGadgetOwner = getEntityById(((EntityClientGadget) attacker).getOwnerEntityId());
+			if(clientGadgetOwner instanceof EntityAvatar) {
+				((EntityClientGadget) attacker).getOwner().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+			}
+		}
+		else if (attacker instanceof EntityAvatar) {
 			((EntityAvatar) attacker).getPlayer().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
 		}
+
+		//Trigger TRIGGER_KILLED_BY_CERTAIN_MONSTER
+		if(target instanceof EntityAvatar){
+			if(attacker instanceof EntityClientGadget){
+				var monster = getEntityById(((EntityClientGadget) attacker).getOwnerEntityId());
+				if(monster instanceof EntityMonster){
+					((EntityAvatar) target).getPlayer().getTriggerManager().triggerEvent(Trigger.TRIGGER_KILLED_BY_CERTAIN_MONSTER, ((EntityMonster)monster).getMonsterData().getDescribeId());
+				}
+			}else if(attacker instanceof EntityMonster){
+				((EntityAvatar) target).getPlayer().getTriggerManager().triggerEvent(Trigger.TRIGGER_KILLED_BY_CERTAIN_MONSTER, ((EntityMonster)attacker).getMonsterData().getDescribeId());
+			}
+		}
+
 		// Packet
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
 

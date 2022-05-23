@@ -32,15 +32,16 @@ public class AchievementTriggerEvent implements ITriggerListener {
             Grasscutter.getLogger().debug("Achievement trigger: " + triggerType + " _ " + achievementId);
             switch (triggerType){
                 case TRIGGER_FINISH_QUEST_AND:
-                    if(IsQuestIdInParam(event.getId(), paramList[0])) {
+                    if(IsInputIdInParam(event.getId(), paramList[0])) {
                         achievementInfo.getParamList()[0] = checkAndAddParam(achievementInfo.getParamList()[0], event.getId());
                         if (checkAllQuestFinished(paramList[0], achievementInfo.getParamList()[0])) {
                             return checkAchievementStatus(achievementInfo, 1);
                         }
                     }
                     break;
+                case TRIGGER_KILLED_BY_CERTAIN_MONSTER:
                 case TRIGGER_FINISH_QUEST_OR:
-                    if(IsQuestIdInParam(event.getId(), paramList[0])){
+                    if(IsInputIdInParam(event.getId(), paramList[0])){
                         achievementInfo.getParamList()[0] = checkAndAddParam(achievementInfo.getParamList()[0], event.getId());
                         return checkAchievementStatus(achievementInfo, 1);
                     }
@@ -60,7 +61,7 @@ public class AchievementTriggerEvent implements ITriggerListener {
         return false;
     }
 
-    public boolean IsQuestIdInParam(int id, String paramList){
+    public boolean IsInputIdInParam(int id, String paramList){
         var stringId = String.valueOf(id);
         var paramSplited = Arrays.asList(paramList.split(","));
         if(paramSplited.contains(stringId)){

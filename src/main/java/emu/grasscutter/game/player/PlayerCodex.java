@@ -5,6 +5,7 @@ import dev.morphia.annotations.Transient;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.CodexAnimalData;
 import emu.grasscutter.data.def.CodexReliquaryData;
+import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
@@ -79,13 +80,13 @@ public class PlayerCodex {
     }
 
     public void checkAnimal(GameEntity target, CodexAnimalData.CodexAnimalUnlockCondition condition){
-        if(target.getEntityType() == 2){
-            var monsterId = target.getSpawnEntry().getMonsterId();
+        if(target instanceof EntityMonster){
+            var monsterId = ((EntityMonster)target).getMonsterData().getDescribeId();
             var codexAnimal = GameData.getCodexAnimalDataMap().get(monsterId);
 
             if(!getUnlockedAnimal().containsKey(monsterId)) {
                 if (codexAnimal != null) {
-                    if(codexAnimal.getUnlockCondition() == condition){
+                    if(codexAnimal.getUnlockCondition() == condition || codexAnimal.getUnlockCondition() == null){
                         getUnlockedAnimal().put(monsterId, 1);
                         player.save();
                         this.player.sendPacket(new PacketCodexDataUpdateNotify(3, monsterId));
