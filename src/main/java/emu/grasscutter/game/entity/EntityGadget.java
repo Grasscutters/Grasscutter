@@ -2,13 +2,14 @@ package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.GadgetData;
-import emu.grasscutter.data.def.GadgetPropData;
 import emu.grasscutter.game.entity.gadget.*;
-import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.props.EntityIdType;
+import emu.grasscutter.game.props.EntityType;
+import emu.grasscutter.game.props.LifeState;
+import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
-import emu.grasscutter.net.proto.BossChestInfoOuterClass;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
 import emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
@@ -19,7 +20,6 @@ import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
-import emu.grasscutter.net.proto.WorktopInfoOuterClass.WorktopInfo;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.ScriptArgs;
@@ -28,12 +28,7 @@ import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
-import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import it.unimi.dsi.fastutil.ints.IntSet;
 import lombok.ToString;
-
-import java.util.Arrays;
-import java.util.Random;
 
 @ToString(callSuper = true)
 public class EntityGadget extends EntityBaseGadget {
