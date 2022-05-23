@@ -13,6 +13,8 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.game.world.Scene;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
@@ -21,7 +23,7 @@ public final class SpawnCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        int id = 0;  // This is just to shut up the linter, it's not a real default
+        int id = 1;  // This is just to shut up the linter, it's not a real default
         int amount = 1;
         int level = 1;
         switch (args.size()) {
@@ -52,6 +54,35 @@ public final class SpawnCommand implements CommandHandler {
         if (amount > Grasscutter.getConfig().server.game.gameOptions.CMD_Spawn) {
           CommandHandler.sendMessage(sender, translate(sender, "dockergc.commands.limit",Grasscutter.getConfig().server.game.gameOptions.CMD_Spawn));
           return;
+        }
+
+        if(id == 1){
+
+            var list = new ArrayList<>(GameData.getMonsterDataMap().keySet());
+            double maxRadius = Math.sqrt(amount * 0.2 / Math.PI);
+            Scene scene = targetPlayer.getScene();
+            var random = new java.util.Random();
+
+            for (int i = 0; i < amount; i++) {
+                
+                var getme = random.nextInt(list.size());
+                var getrreal = list.get(getme).intValue();
+                
+                MonsterData monsterData = GameData.getMonsterDataMap().get(getrreal);
+                if (monsterData != null) {
+
+                    if(monsterData.getType() == "MONSTER_ENV_ANIMAL"){
+                        i--;
+                        continue;
+                    }
+                    
+                    Position pos = GetRandomPositionInCircle(targetPlayer.getPos(), maxRadius).addY(3);
+                    CommandHandler.sendMessage(sender, "Spawn "+monsterData.getId()+" | "+monsterData.getMonsterName()+" | Index "+getme+" | Type "+monsterData.getType());
+                    scene.addEntity(new EntityMonster(scene, monsterData, pos, level));
+                }
+
+            }            
+            return;
         }
 
         MonsterData monsterData = GameData.getMonsterDataMap().get(id);
