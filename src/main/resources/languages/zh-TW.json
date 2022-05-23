@@ -37,8 +37,9 @@
         "session_key_error": "對話密鑰不符。",
         "username_error": "未找到此用戶名。",
         "username_create_error": "未找到用戶名，建立失敗。",
-        "server_max_player_limit": "服務器在綫人數已滿"
-      }
+        "server_max_player_limit": "服務器在線人數已滿"
+      },
+      "router_error": "[Dispatch] 無法附加到路由上。"
     },
     "status": {
       "free_software": "Grasscutter 是免費開源軟體。如果你已經付錢了，那你可能被騙了。主頁：https://github.com/Grasscutters/Grasscutter",
@@ -395,6 +396,28 @@
       "available_five_stars": "可獲得的5星物品",
       "available_four_stars": "可獲得的4星物品",
       "available_three_stars": "可獲得的3星物品"
+    }
+  },
+  "documentation": {
+    "handbook": {
+      "title": "GM手冊",
+      "title_commands": "指令",
+      "title_avatars": "角色",
+      "title_items": "道具",
+      "title_scenes": "場景",
+      "title_monsters": "怪物",
+      "header_id": "ID",
+      "header_command": "指令",
+      "header_description": "描述",
+      "header_avatar": "角色",
+      "header_item": "物品",
+      "header_scene": "場景",
+      "header_monster": "怪物"
+    },
+    "index": {
+      "title": "文件",
+      "handbook": "GM手冊",
+      "gacha_mapping": "祈願物品映射到JSON上"
     }
   }
 }
