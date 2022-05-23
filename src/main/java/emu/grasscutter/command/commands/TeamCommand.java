@@ -1,9 +1,7 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 
@@ -11,7 +9,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-import static emu.grasscutter.utils.Language.translate;
 import static emu.grasscutter.Configuration.*;
 
 @Command(label = "team", usage = "team <add|remove|set> [avatarId,...] [index|first|last|index-index,...]",
@@ -22,7 +19,7 @@ public final class TeamCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.isEmpty()) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.usage"));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.usage");
             return;
         }
 
@@ -40,8 +37,8 @@ public final class TeamCommand implements CommandHandler {
                 break;
 
             default:
-                CommandHandler.sendMessage(sender, translate(sender, "commands.team.invalid_usage"));
-                CommandHandler.sendMessage(sender, translate(sender, "commands.team.usage"));
+                CommandHandler.sendTranslatedMessage(sender, "commands.team.invalid_usage");
+                CommandHandler.sendTranslatedMessage(sender, "commands.team.usage");
                 return;
         }
 
@@ -51,8 +48,8 @@ public final class TeamCommand implements CommandHandler {
 
     private boolean addCommand(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 2) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.invalid_usage"));
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.add_usage"));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.invalid_usage");
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.add_usage");
             return false;
         }
 
@@ -62,7 +59,7 @@ public final class TeamCommand implements CommandHandler {
                 index = Integer.parseInt(args.get(2)) - 1;
 				if (index < 0) index = 0;
             } catch (Exception e) {
-                CommandHandler.sendMessage(sender, translate(sender, "commands.team.invalid_index"));
+                CommandHandler.sendTranslatedMessage(sender, "commands.team.invalid_index");
                 return false;
             }
         }
@@ -71,28 +68,22 @@ public final class TeamCommand implements CommandHandler {
         var currentTeamAvatars = targetPlayer.getTeamManager().getCurrentTeamInfo().getAvatars();
 
         if (currentTeamAvatars.size() + avatarIds.length > GAME_OPTIONS.avatarLimits.singlePlayerTeam) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.add_too_much", GAME_OPTIONS.avatarLimits.singlePlayerTeam));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.add_too_much", GAME_OPTIONS.avatarLimits.singlePlayerTeam);
             return false;
         }
 
         for (var avatarId: avatarIds) {
-            try {
-                int id = Integer.parseInt(avatarId);
-				var ret = addAvatar(sender, targetPlayer, id, index);
-				if (index > 0) ++index;
-                if (!ret) continue;
-            } catch (Exception e) {
-                CommandHandler.sendMessage(sender, translate(sender, "commands.team.failed_to_add_avatar", avatarId));
-                continue;
-            }
+            int id = Integer.parseInt(avatarId);
+            var success = addAvatar(sender, targetPlayer, id, index);
+            if (index > 0) ++index;
         }
         return true;
     }
 
     private boolean removeCommand(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 2) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.invalid_usage"));
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.remove_usage"));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.invalid_usage");
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.remove_usage");
             return false;
         }
 
@@ -106,7 +97,7 @@ public final class TeamCommand implements CommandHandler {
             // step 1: parse metaIndex to indexes
             var subIndexes = transformToIndexes(metaIndex, avatarCount);
             if (subIndexes == null) {
-                CommandHandler.sendMessage(sender, translate(sender, "commands.team.failed_to_parse_index", metaIndex));
+                CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_to_parse_index", metaIndex);
                 continue;
             }
 
@@ -123,13 +114,13 @@ public final class TeamCommand implements CommandHandler {
 
         // step 3: check if user remove all of the avatar
         if (indexes.size() >= avatarCount) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.remove_too_much"));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.remove_too_much");
             return false;
         }
 
         // step 4: hint user for ignore index
         if (!ignoreList.isEmpty()) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.ignore_index", ignoreList));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.ignore_index", ignoreList);
         }
 
         // step 5: remove
@@ -139,8 +130,8 @@ public final class TeamCommand implements CommandHandler {
 
     private boolean setCommand(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 3) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.invalid_usage"));
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.set_usage"));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.invalid_usage");
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.set_usage");
             return false;
         }
 
@@ -151,12 +142,12 @@ public final class TeamCommand implements CommandHandler {
             index = Integer.parseInt(args.get(1)) - 1;
             if (index < 0) index = 0;
         } catch(Exception e) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.failed_to_parse_index", args.get(1)));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_to_parse_index", args.get(1));
             return false;
         }
 
         if (index + 1 > currentTeamAvatars.size()) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.index_out_of_range"));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.index_out_of_range");
             return false;
         }
 
@@ -164,7 +155,7 @@ public final class TeamCommand implements CommandHandler {
         try {
             avatarId = Integer.parseInt(args.get(2));
         } catch(Exception e) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.failed_parse_avatar_id", args.get(2)));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_parse_avatar_id", args.get(2));
             return false;
         }
         if (avatarId < BASE_AVATARID) {
@@ -172,12 +163,12 @@ public final class TeamCommand implements CommandHandler {
         }
 
 		if (currentTeamAvatars.contains(avatarId)) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.avatar_already_in_team", avatarId));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_already_in_team", avatarId);
             return false;
 		}
 
         if (!targetPlayer.getAvatars().hasAvatar(avatarId)) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.avatar_not_found", avatarId));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_not_found", avatarId);
             return false;
         }
 
@@ -191,11 +182,11 @@ public final class TeamCommand implements CommandHandler {
         }
         var currentTeamAvatars = targetPlayer.getTeamManager().getCurrentTeamInfo().getAvatars();
 		if (currentTeamAvatars.contains(avatarId)) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.avatar_already_in_team", avatarId));
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_already_in_team", avatarId);
             return false;
 		}
-        if (!sender.getAvatars().hasAvatar(avatarId)) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.team.avatar_not_found", avatarId));
+        if (!targetPlayer.getAvatars().hasAvatar(avatarId)) {
+            CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_not_found", avatarId);
             return false;
         }
         if (index < 0) {
