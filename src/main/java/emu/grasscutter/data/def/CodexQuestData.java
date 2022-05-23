@@ -1,12 +1,11 @@
 package emu.grasscutter.data.def;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
-@ResourceType(name = {"QuestCodexExcelConfigData.json"}, loadPriority = ResourceType.LoadPriority.HIGH)
-public class CodexQuest extends GameResource {
+@ResourceType(name = {"QuestCodexExcelConfigData.json"})
+public class CodexQuestData extends GameResource {
     private int Id;
     private int ParentQuestId;
     private int ChapterId;
@@ -36,7 +35,7 @@ public class CodexQuest extends GameResource {
     @Override
     public void onLoad() {
         if(!this.getIsDisuse()) {
-            GameData.getCodexQuestIdMap().put(this.getParentQuestId(), this);
+            GameData.getCodexQuestDataIdMap().put(this.getParentQuestId(), this);
         }
     }
 }

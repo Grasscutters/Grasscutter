@@ -12,13 +12,15 @@ public class PacketServerCondMeetQuestListUpdateNotify extends BasePacket {
 		super(PacketOpcodes.ServerCondMeetQuestListUpdateNotify);
 
 		ServerCondMeetQuestListUpdateNotify.Builder proto = ServerCondMeetQuestListUpdateNotify.newBuilder();
-		
+
+		/*
 		player.getQuestManager().forEachQuest(quest -> {
 			if (quest.getState().getValue() <= 2) {
 				proto.addAddQuestIdList(quest.getQuestId());
 			}
 		});
-		
+		*/
+
 		this.setData(proto);
 	}
 	
@@ -26,9 +28,9 @@ public class PacketServerCondMeetQuestListUpdateNotify extends BasePacket {
 		super(PacketOpcodes.ServerCondMeetQuestListUpdateNotify);
 
 		ServerCondMeetQuestListUpdateNotify proto = ServerCondMeetQuestListUpdateNotify.newBuilder()
-				.addAddQuestIdList(quest.getQuestId())
+				//.addAddQuestIdList(quest.getQuestId())
 				.build();
-		
+
 		this.setData(proto);
 	}
 }
