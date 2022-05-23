@@ -48,7 +48,7 @@ public class DungeonManager {
 			return false;
 		}
 		
-		Grasscutter.getLogger().info(player.getNickname() + " is trying to enter dungeon " + dungeonId);
+		Grasscutter.getLogger().info(player.getNickname() + " is trying to enterDungeon " + dungeonId);
 		
 		int sceneId = data.getSceneId();
 		player.getScene().setPrevScene(sceneId);
@@ -72,7 +72,7 @@ public class DungeonManager {
 		if (data == null) {
 			return false;
 		}
-		Grasscutter.getLogger().info(player.getNickname() + " is trying to enter dungeon " + dungeonId);
+		Grasscutter.getLogger().info(player.getNickname() + " is trying to enter handoffDungeon " + dungeonId);
 
 		if(player.getWorld().transferPlayerToScene(player, data.getSceneId(), data)){
 			dungeonSettleListeners.forEach(player.getScene()::addDungeonSettleObserver);

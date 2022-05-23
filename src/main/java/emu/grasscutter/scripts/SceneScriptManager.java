@@ -165,6 +165,12 @@ public class SceneScriptManager {
 
 	private void init() {
 		// Get compiled script if cached
+
+		if(getScene().getId() == 2001){
+			Grasscutter.getLogger().warn("Blok");
+			return;
+		}
+		
 		CompiledScript cs = ScriptLoader.getScriptByPath(
 			SCRIPT("Scene/" + getScene().getId() + "/scene" + getScene().getId() + "." + ScriptLoader.getScriptType()));
 		
