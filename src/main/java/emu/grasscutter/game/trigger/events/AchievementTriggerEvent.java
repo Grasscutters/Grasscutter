@@ -45,6 +45,8 @@ public class AchievementTriggerEvent implements ITriggerListener {
                         return checkAchievementStatus(achievementInfo, 1);
                     }
                     break;
+                case TRIGGER_MAX_CRITICAL_DAMAGE:
+                    return checkAchievementStatus(achievementInfo, event.getAmount());
             }
         }
         return false;

@@ -31,6 +31,11 @@ public class TriggerManager {
         notifyListeners(event);
     }
 
+    public void triggerEvent(Trigger trigger, float amount){
+        TriggerEvent event = new TriggerEvent(this, trigger, amount);
+        notifyListeners(event);
+    }
+
     private void notifyListeners(TriggerEvent event) {
         Iterator<ITriggerListener> iter = listeners.iterator();
         while (iter.hasNext()) {
