@@ -39,6 +39,11 @@ public class PlayerCodex {
         this.unlockedReliquarySuitCodex = new HashSet<>();
     }
 
+    public PlayerCodex(Player player){
+        this();
+        this.player = player;
+    }
+
     public void setPlayer(Player player) {
         this.player = player;
     }
