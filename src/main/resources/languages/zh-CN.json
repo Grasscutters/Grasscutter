@@ -35,7 +35,7 @@
         "account_login_exist_error": "[Dispatch] 客户端 %s 登录失败：账号不存在",
         "account_cache_error": "游戏账号缓存信息错误",
         "session_key_error": "会话密钥错误",
-        "username_error": "未找到此用户名",
+        "username_error": "未找到用户名",
         "username_create_error": "未找到用户名，建立连接失败",
         "server_max_player_limit": "服务器在线人数已满"
       },
@@ -63,7 +63,7 @@
       "console_execute_error": "此命令只能在控制台执行。",
       "player_execute_error": "此命令只能在游戏内执行。",
       "command_exist_error": "未找到命令。",
-      "no_description_specified": "没有指定说明。",
+      "no_description_specified": "未指定说明。",
       "invalid": {
         "amount": "无效的数量。",
         "artifactId": "无效的圣遗物ID。",
