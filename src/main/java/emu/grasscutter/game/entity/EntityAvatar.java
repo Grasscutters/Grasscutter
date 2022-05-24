@@ -108,11 +108,13 @@ public class EntityAvatar extends GameEntity {
 	public void onDeath(int killerId) {
 		this.killedType = PlayerDieType.PLAYER_DIE_KILL_BY_MONSTER;
 		this.killedBy = killerId;
+		clearEnergy(PropChangeReason.PROP_CHANGE_STATUE_RECOVER);
 	}
 
 	public void onDeath(PlayerDieType dieType, int killerId) {
 		this.killedType = dieType;
 		this.killedBy = killerId;
+		clearEnergy(PropChangeReason.PROP_CHANGE_STATUE_RECOVER);
 	}
 	
 	@Override
