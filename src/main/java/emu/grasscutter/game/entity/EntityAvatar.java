@@ -46,6 +46,7 @@ public class EntityAvatar extends GameEntity {
 	public EntityAvatar(Scene scene, Avatar avatar) {
 		super(scene);
 		this.avatar = avatar;
+		this.avatar.setCurrentEnergy();
 		this.id = getScene().getWorld().getNextEntityId(EntityIdType.AVATAR);
 		
 		GameItem weapon = this.getAvatar().getWeapon();
@@ -57,6 +58,7 @@ public class EntityAvatar extends GameEntity {
 	public EntityAvatar(Avatar avatar) {
 		super(null);
 		this.avatar = avatar;
+		this.avatar.setCurrentEnergy();
 	}
 
 	public Player getPlayer() {
@@ -128,7 +130,7 @@ public class EntityAvatar extends GameEntity {
 	
 	public void clearEnergy(PropChangeReason reason) {
 		FightProperty curEnergyProp = this.getAvatar().getSkillDepot().getElementType().getCurEnergyProp();
-		this.setFightProperty(curEnergyProp, 0);
+		this.avatar.setCurrentEnergy(curEnergyProp, 0);
 			
 		this.getScene().broadcastPacket(new PacketAvatarFightPropUpdateNotify(this.getAvatar(), curEnergyProp));
 		this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, curEnergyProp, 0f, reason));
@@ -158,7 +160,7 @@ public class EntityAvatar extends GameEntity {
 		
 		// Set energy and notify.
 		if (newEnergy != curEnergy) {
-			this.setFightProperty(curEnergyProp, newEnergy);
+			this.avatar.setCurrentEnergy(curEnergyProp, newEnergy);
 			
 			this.getScene().broadcastPacket(new PacketAvatarFightPropUpdateNotify(this.getAvatar(), curEnergyProp));
 			this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, curEnergyProp, newEnergy, reason));
