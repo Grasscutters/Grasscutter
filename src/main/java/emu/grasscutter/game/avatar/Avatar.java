@@ -360,7 +360,9 @@ public class Avatar {
 	}
 
 	public void setCurrentEnergy() {
-		this.setCurrentEnergy(this.currentEnergy);
+		if (GAME_OPTIONS.energyUsage) {
+			this.setCurrentEnergy(this.currentEnergy);
+		}
 	}
 	
 	public void setCurrentEnergy(float currentEnergy) {
@@ -378,9 +380,11 @@ public class Avatar {
 	}
 
 	public void setCurrentEnergy(FightProperty curEnergyProp, float currentEnergy) {
-		this.setFightProperty(curEnergyProp, currentEnergy);
-		this.currentEnergy = currentEnergy;
-		this.save();
+		if (GAME_OPTIONS.energyUsage) {
+			this.setFightProperty(curEnergyProp, currentEnergy);
+			this.currentEnergy = currentEnergy;
+			this.save();
+		}
 	}
 
 	public Int2FloatOpenHashMap getFightProperties() {
