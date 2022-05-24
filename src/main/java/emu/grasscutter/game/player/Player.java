@@ -192,7 +192,7 @@ public class Player {
 		this.rewardedLevels = new HashSet<>();
 		this.moonCardGetTimes = new HashSet<>();
 		this.achievementManager = new PlayerAchievement();
-		this.codex = new PlayerCodex();
+		this.codex = new PlayerCodex(this);
 
 		this.shopLimit = new ArrayList<>();
 		this.expeditionInfo = new HashMap<>();
@@ -214,7 +214,7 @@ public class Player {
 		this.teamManager = new TeamManager(this);
 		this.birthday = new PlayerBirthday();
 		this.achievementManager = new PlayerAchievement();
-		this.codex = new PlayerCodex();
+		this.codex = new PlayerCodex(this);
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
 		this.setProperty(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50);
@@ -1190,6 +1190,9 @@ public class Player {
 		// Make sure these exist
 		if (this.getTeamManager() == null) {
 			this.teamManager = new TeamManager(this);
+		}
+		if (this.getCodex() == null) {
+			this.codex = new PlayerCodex(this);
 		}
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
