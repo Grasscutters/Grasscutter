@@ -1,5 +1,7 @@
-package emu.grasscutter.game.managers;
+package emu.grasscutter.game.managers.EnergyManager;
 
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.data.def.ItemData;
@@ -7,24 +9,34 @@ import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.game.entity.EntityItem;
+import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.utils.Position;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 import static emu.grasscutter.Configuration.GAME_OPTIONS;
 
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
+import com.google.gson.reflect.TypeToken;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 public class EnergyManager {
 	private final Player player;
+    private final static Int2ObjectMap<List<EnergyDropInfo>> energyDropData = new Int2ObjectOpenHashMap<>();
 
 	public EnergyManager(Player player) {
 		this.player = player;
@@ -32,6 +44,22 @@ public class EnergyManager {
 
 	public Player getPlayer() {
 		return this.player;
+	}
+
+	public static void initialize() {
+		// Read the data we need for monster energy drops.
+		try (Reader fileReader = new InputStreamReader(DataLoader.load("EnergyDrop.json"))) {
+            List<EnergyDropEntry> energyDropList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, EnergyDropEntry.class).getType());
+
+			for (EnergyDropEntry entry : energyDropList) {
+				energyDropData.put(entry.getMonsterId(), entry.getEnergyDrops());
+			}
+
+			Grasscutter.getLogger().info("Energy drop data successfully loaded.");
+		}
+		catch (Exception ex) {
+            Grasscutter.getLogger().error("Unable to load energy drop data.", ex);
+		}
 	}
 
 	/**********
@@ -183,10 +211,9 @@ public class EnergyManager {
 			float elementBonus = (ballElement == null) ? 2.0f : (avatarElement == ballElement) ? 3.0f : 1.0f;
 
 			// Add the energy.
-			entity.addEnergy(baseEnergy * elementBonus * offFieldPenalty, PropChangeReason.PROP_CHANGE_ENERGY_BALL);
+			entity.addEnergy(baseEnergy * elementBonus * offFieldPenalty * elemBall.getCount(), PropChangeReason.PROP_CHANGE_ENERGY_BALL);
 		}
 	}
-
 
 	/**********
 		Energy logic related to using skills.
@@ -217,5 +244,36 @@ public class EnergyManager {
 
 		// Handle elemental burst.
 		this.handleBurstCast(avatar, skillId);
+	}
+
+	/**********
+		Monster energy drops.
+	**********/
+	public void handleMonsterEnergyDrop(EntityMonster monster, float hpBeforeDamage, float hpAfterDamage) {
+		// Get the energy drop data for this monster. Stop if we don't have data for this monster.
+		if (!energyDropData.containsKey(monster.getMonsterData().getId())) {
+			return;
+		}
+		List<EnergyDropInfo> dropInfo = energyDropData.get(monster.getMonsterData().getId());
+
+		// Calculate the HP tresholds for before and after the damage was taken.
+		float maxHp = monster.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+		float thresholdBefore = hpBeforeDamage / maxHp;
+		float thresholdAfter = hpAfterDamage / maxHp;
+		
+		// Determine the thresholds the monster has passed, and generate drops based on that.
+		for (EnergyDropInfo info : dropInfo) {
+			if (info.getThreshold() < thresholdBefore && info.getThreshold() >= thresholdAfter) {
+				Grasscutter.getLogger().info("Generating {} for monster {}", info.getBallId(), monster.getMonsterData().getId());
+
+				ItemData itemData = GameData.getItemDataMap().get(info.getBallId());
+				if (itemData == null) {
+					continue;
+				}
+
+				EntityItem energyBall = new EntityItem(this.getPlayer().getScene(), this.getPlayer(), itemData, monster.getPosition(), info.getCount());
+				this.getPlayer().getScene().addEntity(energyBall);
+			}
+		}
 	}
 }

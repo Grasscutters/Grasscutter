@@ -1,0 +1,198 @@
+[
+	{
+		"monsterId": 20010301,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2021, "count": 1},
+			{ "threshold": 0.0, "ballId": 2021, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20010801,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2022, "count": 1},
+			{ "threshold": 0.0, "ballId": 2022, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20010101,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2019, "count": 1},
+			{ "threshold": 0.0, "ballId": 2019, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20010501,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2020, "count": 1},
+			{ "threshold": 0.0, "ballId": 2020, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20011401,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2023, "count": 1},
+			{ "threshold": 0.0, "ballId": 2023, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20011001,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2018, "count": 1},
+			{ "threshold": 0.0, "ballId": 2018, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20011201,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2017, "count": 1},
+			{ "threshold": 0.0, "ballId": 2017, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20011301,
+		"energyDrops": [
+			{ "threshold": 0.66, "ballId": 2017, "count": 1},
+			{ "threshold": 0.33, "ballId": 2017, "count": 1},
+			{ "threshold": 0.0, "ballId": 2001, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20011101,
+		"energyDrops": [
+			{ "threshold": 0.66, "ballId": 2018, "count": 1},
+			{ "threshold": 0.33, "ballId": 2018, "count": 1},
+			{ "threshold": 0.0, "ballId": 2002, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20010201,
+		"energyDrops": [
+			{ "threshold": 0.66, "ballId": 2019, "count": 1},
+			{ "threshold": 0.33, "ballId": 2019, "count": 1},
+			{ "threshold": 0.0, "ballId": 2003, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20010601,
+		"energyDrops": [
+			{ "threshold": 0.66, "ballId": 2020, "count": 1},
+			{ "threshold": 0.33, "ballId": 2020, "count": 1},
+			{ "threshold": 0.0, "ballId": 2004, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20010401,
+		"energyDrops": [
+			{ "threshold": 0.66, "ballId": 2021, "count": 1},
+			{ "threshold": 0.33, "ballId": 2021, "count": 1},
+			{ "threshold": 0.0, "ballId": 2005, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20010901,
+		"energyDrops": [
+			{ "threshold": 0.66, "ballId": 2022, "count": 1},
+			{ "threshold": 0.33, "ballId": 2022, "count": 1},
+			{ "threshold": 0.0, "ballId": 2006, "count": 1}
+		]
+	},
+	{
+		"monsterId": 20011501,
+		"energyDrops": [
+			{ "threshold": 0.66, "ballId": 2023, "count": 1},
+			{ "threshold": 0.33, "ballId": 2023, "count": 1},
+			{ "threshold": 0.0, "ballId": 2007, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21010101,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21010201,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21010701,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21010601,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21011301,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21010401,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21010501,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21011001,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21010901,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21010301,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21011401,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21011201,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	},
+	{
+		"monsterId": 21011501,
+		"energyDrops": [
+			{ "threshold": 0.6, "ballId": 2024, "count": 1},
+			{ "threshold": 0.0, "ballId": 2024, "count": 1}
+		]
+	}
+]
