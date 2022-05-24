@@ -39,7 +39,7 @@ public final class SendMailCommand implements CommandHandler {
                     MailBuilder mailBuilder;
                     switch (args.get(0).toLowerCase()) {
                         case "help" -> {
-                            CommandHandler.sendMessage(sender, translate(sender, this.getClass().getAnnotation(Command.class).description()) + "\nUsage: " + this.getClass().getAnnotation(Command.class).usage());
+                            CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.usage"));
                             return;
                         }
                         case "all" -> mailBuilder = new MailBuilder(true, new Mail());
