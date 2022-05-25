@@ -191,7 +191,7 @@ public class Player {
 		this.birthday = new PlayerBirthday();
 		this.rewardedLevels = new HashSet<>();
 		this.moonCardGetTimes = new HashSet<>();
-		this.achievementManager = new PlayerAchievement();
+		this.achievementManager = new PlayerAchievement(this);
 		this.codex = new PlayerCodex(this);
 
 		this.shopLimit = new ArrayList<>();
@@ -213,7 +213,7 @@ public class Player {
 		this.signature = "";
 		this.teamManager = new TeamManager(this);
 		this.birthday = new PlayerBirthday();
-		this.achievementManager = new PlayerAchievement();
+		this.achievementManager = new PlayerAchievement(this);
 		this.codex = new PlayerCodex(this);
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);

@@ -27,6 +27,11 @@ public class PlayerAchievement {
         achievementInfoProperties = new HashMap<>();
     }
 
+    public PlayerAchievement(Player player){
+        this();
+        this.player = player;
+    }
+
     public void setPlayer(Player player) {
         this.player = player;
     }
@@ -74,7 +79,9 @@ public class PlayerAchievement {
                 playerAchievementInfo.setFinished(true);
                 playerAchievementInfo.setFinishedDate((int) (System.currentTimeMillis() / 1000));
             }
-            player.sendPacket(new PacketAchievementUpdateNotify(player, playerAchievementInfo));
+            if(progressAddition > 0 || playerAchievementInfo.getFinished()) {
+                player.sendPacket(new PacketAchievementUpdateNotify(player, playerAchievementInfo));
+            }
             if (needSave) {
                 playerAchievementInfo.save();
             }
