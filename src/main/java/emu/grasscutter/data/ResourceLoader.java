@@ -8,10 +8,9 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ch.ethz.globis.phtree.PhTree;
-import ch.ethz.globis.phtree.v16.PhTree16;
 import com.google.gson.Gson;
 import emu.grasscutter.data.custom.*;
+import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.utils.Utils;
 import lombok.SneakyThrows;
 import org.reflections.Reflections;
@@ -428,15 +427,12 @@ public class ResourceLoader {
 				continue;
 			}
 
-			PhTree<SceneNpcBornEntry> index = new PhTree16<>(3);
-
 			var data = Grasscutter.getGsonFactory().fromJson(Files.readString(file), SceneNpcBornData.class);
 			if(data.getBornPosList() == null || data.getBornPosList().size() == 0){
 				continue;
 			}
-			data.getBornPosList().forEach(item -> index.put(item.getPos().toLongArray(), item));
 
-			data.setIndex(index);
+			data.setIndex(SceneIndexManager.buildIndex(3, data.getBornPosList(), item -> item.getPos().toPoint()));
 			GameData.getSceneNpcBornData().put(data.getSceneId(), data);
 		}
 

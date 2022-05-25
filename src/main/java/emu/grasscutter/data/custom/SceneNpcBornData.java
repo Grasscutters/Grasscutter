@@ -1,6 +1,7 @@
 package emu.grasscutter.data.custom;
 
-import ch.ethz.globis.phtree.PhTree;
+import com.github.davidmoten.rtreemulti.RTree;
+import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.scripts.data.SceneGroup;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -19,7 +20,7 @@ public class SceneNpcBornData {
     /**
      * Spatial Index For NPC
      */
-    transient PhTree<SceneNpcBornEntry> index;
+    transient RTree<SceneNpcBornEntry, Geometry> index;
 
     /**
      * npc groups
