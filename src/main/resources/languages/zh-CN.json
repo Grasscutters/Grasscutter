@@ -35,7 +35,7 @@
         "account_login_exist_error": "[Dispatch] 客户端 %s 登录失败：账号不存在",
         "account_cache_error": "游戏账号缓存信息错误",
         "session_key_error": "会话密钥错误",
-        "username_error": "未找到此用户名",
+        "username_error": "未找到用户名",
         "username_create_error": "未找到用户名，建立连接失败",
         "server_max_player_limit": "服务器在线人数已满"
       },
@@ -57,13 +57,13 @@
   },
   "commands": {
     "generic": {
-      "not_specified": "没有指定命令。",
-      "unknown_command": "未知的命令：%s",
-      "permission_error": "哼哼哼！你没有执行此命令的权限！请联系服务器管理员解决！",
-      "console_execute_error": "此命令只能在服务器控制台执行呐~",
-      "player_execute_error": "此命令只能在游戏内执行哦~",
-      "command_exist_error": "这条命令...好像找不到呢？",
-      "no_description_specified": "没有指定说明",
+      "not_specified": "未指定命令。",
+      "unknown_command": "未知命令：%s",
+      "permission_error": "你没有权限执行此命令。",
+      "console_execute_error": "此命令只能在控制台执行。",
+      "player_execute_error": "此命令只能在游戏内执行。",
+      "command_exist_error": "未找到命令。",
+      "no_description_specified": "未指定说明。",
       "invalid": {
         "amount": "无效的数量。",
         "artifactId": "无效的圣遗物ID。",
@@ -136,7 +136,7 @@
     "coop": {
       "usage": "用法：coop <玩家ID> <目标玩家ID>",
       "success": "已强制传送 %s 到 %s 的世界。",
-      "description": "强制传送指定用户到他人的世界"
+      "description": "强制传送指定玩家到他人的世界"
     },
     "enter_dungeon": {
       "usage": "用法：enterdungeon <秘境ID>",
@@ -230,7 +230,7 @@
       "usage": "quest <add|finish> [任务ID]",
       "added": "已添加任务 %s。",
       "finished": "已完成任务 %s。",
-      "not_found": "此任务不存在。",
+      "not_found": "任务不存在。",
       "invalid_id": "无效的任务ID。",
       "description": "添加或完成任务"
     },
@@ -247,30 +247,30 @@
     "resetShopLimit": {
       "usage": "用法：resetshop <玩家ID>",
       "success": "重置完成。",
-      "description": "重置所选玩家的商店刷新时间"
+      "description": "重置指定玩家的商店刷新时间"
     },
     "sendMail": {
-      "usage": "用法：give [玩家] <物品ID|物品名称> [数量]",
-      "user_not_exist": "ID '%s' 的用户不存在。",
-      "start_composition": "发送邮件流程。\n请使用`/sendmail <标题>`前进到下一步。\n你可以在任何时间使用`/sendmail stop`来停止发送。",
+      "usage": "用法：sendmail <用户ID|all|help> [模板ID]",
+      "user_not_exist": "用户 %s 不存在。",
+      "start_composition": "开始撰写邮件。\n请使用 '/sendmail <标题>' 继续。\n你可以随时使用 '/sendmail stop' 停止。",
       "templates": "邮件模板尚未实装...",
-      "invalid_arguments": "无效的参数。\n指令使用方法 `/sendmail <用户ID|all|help> [模板ID]`",
+      "invalid_arguments": "无效的参数。",
       "send_cancel": "取消发送邮件",
       "send_done": "已将邮件发送给 %s！",
       "send_all_done": "邮件已发送给所有人！",
-      "not_composition_end": "现在邮件发送未到最后阶段。\n请使用 `/sendmail %s` 继续发送邮件，或使用 `/sendmail stop` 来停止发送邮件。",
-      "please_use": "请使用 `/sendmail %s`",
-      "set_title": "成功将邮件标题设置为 '%s'。\n使用 '/sendmail <正文>' 来设置邮件内容。",
-      "set_contents": "成功将邮件内容设置为 '%s'。\n使用 '/sendmail <发件人>' 来设置发件人。",
-      "set_message_sender": "发件人已设置为 '%s'。\n使用 '/sendmail <物品ID|物品名称|finish> [数量] [等级]' 来添加附件。",
-      "send": "已添加 %s 个 %s [等级 %s] 邮件附件。\n如果没有要继续添加的附件请使用 `/sendmail finish` 来发送邮件。",
-      "invalid_arguments_please_use": "错误的参数 \n请使用 `/sendmail %s`",
+      "not_composition_end": "邮件撰写未到最后阶段。\n请使用 '/sendmail %s' 继续，或使用 '/sendmail stop' 停止。",
+      "please_use": "请使用 '/sendmail %s'",
+      "set_title": "成功将邮件标题设为 '%s'。\n使用 '/sendmail <正文>' 来设置邮件内容。",
+      "set_contents": "成功将邮件内容设为 '%s'。\n使用 '/sendmail <发件人>' 来设置发件人。",
+      "set_message_sender": "发件人已设为 '%s'。\n使用 '/sendmail <物品ID|物品名称|finish> [数量] [等级]' 来添加附件。",
+      "send": "已添加 %s 个 %s [等级 %s] 附件。\n如果没有要继续添加的附件请使用 `/sendmail finish` 来发送邮件。",
+      "invalid_arguments_please_use": "无效的参数。\n请使用 '/sendmail %s'",
       "title": "<标题>",
       "message": "<正文>",
       "sender": "<发件人>",
       "arguments": "<物品ID|物品名称|finish> [数量] [等级]",
-      "error": "错误：无效的编写阶段 %s。需要 StackTrace 请查看服务器控制台。",
-      "description": "向指定用户发送邮件。此命令的用法可根据附加的参数而变化"
+      "error": "错误：无效的撰写阶段 %s。需要 StackTrace 请查看控制台。",
+      "description": "向指定用户发送邮件。此命令的用法会根据撰写阶段而改变"
     },
     "sendMessage": {
       "usage": "用法：sendmessage <玩家> <消息>",
@@ -287,7 +287,7 @@
     "setStats": {
       "usage_console": "用法：setstats|stats @<UID> <属性> <数值>",
       "usage_ingame": "用法：setstats|stats [@UID] <属性> <数值>",
-      "help_message": "\n可更改的属性列表：hp (生命值)| maxhp (最大生命值) | def (防御力) | atk (攻击力)| em (元素精通) | er (元素充能效率) | crate (暴击率) | cdmg (暴击伤害)| cdr (冷却缩减) | heal (治疗加成)| heali (受治疗加成)| shield (护盾强效)| defi (无视防御)\n(续) 元素增伤：epyro (火) | ecryo (冰)  | ehydro (水)  | egeo (岩)  | edendro (草) | eelectro (雷) | ephys (物理)\n(续) 元素抗性：respyro (火)  | rescryo (冰)  | reshydro (水)  | resgeo (岩) | resdendro (草) | reselectro (雷)  | resphys (物理)\n",
+      "help_message": "\n可更改的属性列表：hp(生命值)|maxhp(最大生命值)|def(防御力)|atk(攻击力)|em(元素精通)|er(元素充能效率)|crate(暴击率)|cdmg(暴击伤害)|cdr(冷却缩减)|heal(治疗加成)|heali(受治疗加成)|shield(护盾强效)|defi(无视防御)\n元素增伤：epyro(火)|ecryo(冰)|ehydro(水)|egeo(岩)|edendro(草)|eelectro(雷)|ephys(物理)\n元素抗性：respyro(火)|rescryo(冰)|reshydro(水)|resgeo(岩)|resdendro(草)|reselectro(雷)|resphys(物理)\n",
       "value_error": "无效的属性值。",
       "uid_error": "无效的UID。",
       "player_error": "玩家不存在或已离线。",
@@ -332,15 +332,15 @@
     "team": {
       "usage": "用法：team <add|remove|set> [角色ID,...] [索引|first|last|索引-索引,...]",
       "invalid_usage": "无效用法。",
-      "add_usage": "用法 (add)：team add <角色ID,...> [索引]",
+      "add_usage": "用法(add)：team add <角色ID,...> [索引]",
       "invalid_index": "无效索引。",
       "add_too_much": "服务端仅允许你队伍里至多有 %d 名角色。",
       "failed_to_add_avatar": "无法根据ID %s 添加角色。",
-      "remove_usage": "用法 (remove)：team remove <索引|first|last|索引-索引,...>",
+      "remove_usage": "用法(remove)：team remove <索引|first|last|索引-索引,...>",
       "failed_to_parse_index": "无法解析索引：%s",
       "remove_too_much": "你不能删除那么多角色，你的队伍列表将会变空。",
       "ignore_index": "忽略的索引列表：%s",
-      "set_usage": "用法 (set)：team set <索引> <角色ID>",
+      "set_usage": "用法(set)：team set <索引> <角色ID>",
       "index_out_of_range": "你指定的索引超出了范围。",
       "failed_parse_avatar_id": "无法解析的角色ID：%s",
       "avatar_already_in_team": "角色已经在你的队伍中了。",
