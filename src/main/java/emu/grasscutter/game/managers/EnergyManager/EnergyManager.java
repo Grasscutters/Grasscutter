@@ -31,6 +31,7 @@ import java.io.Reader;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.ThreadLocalRandom;
 
 import com.google.gson.reflect.TypeToken;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -38,6 +39,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 public class EnergyManager {
 	private final Player player;
     private final static Int2ObjectMap<List<EnergyDropInfo>> energyDropData = new Int2ObjectOpenHashMap<>();
+	private final static Int2ObjectMap<List<SkillParticleGenerationInfo>> skillParticleGenerationData = new Int2ObjectOpenHashMap<>();
 
 	public EnergyManager(Player player) {
 		this.player = player;
@@ -61,12 +63,26 @@ public class EnergyManager {
 		catch (Exception ex) {
             Grasscutter.getLogger().error("Unable to load energy drop data.", ex);
 		}
+
+		// Read the data for particle generation from skills
+		try (Reader fileReader = new InputStreamReader(DataLoader.load("SkillParticleGeneration.json"))) {
+            List<SkillParticleGenerationEntry> skillParticleGenerationList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, SkillParticleGenerationEntry.class).getType());
+
+			for (SkillParticleGenerationEntry entry : skillParticleGenerationList) {
+				skillParticleGenerationData.put(entry.getAvatarId(), entry.getAmountList());
+			}
+
+			Grasscutter.getLogger().info("Skill particle generation data successfully loaded.");
+		}
+		catch (Exception ex) {
+            Grasscutter.getLogger().error("Unable to load skill particle generation data data.", ex);
+		}
 	}
 
 	/**********
 		Particle creation for elemental skills.
 	**********/
-	private int getCastingAvatarIdForElemBall(int invokeEntityId) {
+	private int getCastingAvatarEntityIdForElemBall(int invokeEntityId) {
 		// To determine the avatar that has cast the skill that caused the energy particle to be generated,
 		// we have to look at the entity that has invoked the ability. This can either be that avatar directly, 
 		// or it can be an `EntityClientGadget`, owned (some way up the owner hierarchy) by the avatar 
@@ -111,19 +127,41 @@ public class EnergyManager {
 		// We can get that from the avatar's skill depot.
 		int itemId = 2024;
 
+		// Generate 2 particles by default
+		int amount = 2;
+
 		// Try to fetch the avatar from the player's party and determine their element.
 		// ToDo: Does this work in co-op?
-		int avatarId = getCastingAvatarIdForElemBall(invoke.getEntityId());	
+		int avatarEntityId = getCastingAvatarEntityIdForElemBall(invoke.getEntityId());	
 		Optional<EntityAvatar> avatarEntity = player.getTeamManager().getActiveTeam()
 													.stream()
-													.filter(character -> character.getId() == avatarId)
+													.filter(character -> character.getId() == avatarEntityId)
 													.findFirst();
 
+		// Bug: invokes twice sometimes, Ayato, Keqing
+		// Amber not getting element properly
+		// ToDo: deal with press, hold difference. deal with charge(Beidou, Yunjin)
 		if (avatarEntity.isPresent()) {
 			Avatar avatar = avatarEntity.get().getAvatar();
 
-			if (avatar != null) {
+			if (avatar != null) {				
+				int avatarId = avatar.getAvatarId();
 				AvatarSkillDepotData skillDepotData = avatar.getSkillDepot();
+				if (!skillParticleGenerationData.containsKey(avatarId)) {
+					Grasscutter.getLogger().warn("No particle generation data for avatarId {} found.", avatarId);
+				}
+				else {
+					int roll = ThreadLocalRandom.current().nextInt(0, 100);
+					int percentageStack = 0;
+					for (SkillParticleGenerationInfo info : skillParticleGenerationData.get(avatarId)) {
+						int chance = info.getChance();
+						percentageStack += chance;
+						if (roll < percentageStack) {
+							amount = info.getValue();
+							break;
+						}
+					}
+				}
 
 				if (skillDepotData != null) {
 					ElementType element = skillDepotData.getElementType();
@@ -147,7 +185,8 @@ public class EnergyManager {
 		}
 
 		// Generate the particle/orb.
-		generateElemBall(itemId, new Position(action.getPos()), 1);
+		for (int i = 0; i < amount; i++)
+			generateElemBall(itemId, new Position(action.getPos()), 1);
 	}
 
 	/**********
