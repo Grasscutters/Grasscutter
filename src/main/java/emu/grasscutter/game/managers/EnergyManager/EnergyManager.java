@@ -148,18 +148,6 @@ public class EnergyManager {
 
 		// Generate the particle/orb.
 		generateElemBall(itemId, new Position(action.getPos()), 1);
-
-		// Get the item data for an energy particle of the correct element.
-		/*ItemData itemData = GameData.getItemDataMap().get(itemId);
-		if (itemData == null) {
-			return; // Should never happen
-		}
-	
-		// Generate entity.
-		EntityItem energyBall = new EntityItem(getPlayer().getScene(), getPlayer(), itemData, new Position(action.getPos()), 1);
-		energyBall.getRotation().set(action.getRot());
-
-		this.getPlayer().getScene().addEntity(energyBall);*/
 	}
 
 	/**********
