@@ -498,11 +498,11 @@ public class Scene {
 			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_REMOVE));
 		}
 	}
-	public Set<SceneBlock> getPlayerActiveBlocks(Player player){
-		// TODO consider the borders of blocks
-		return getScriptManager().getBlocks().values().stream()
-				.filter(block -> block.contains(player.getPos()))
-				.collect(Collectors.toSet());
+
+	public List<SceneBlock> getPlayerActiveBlocks(Player player){
+		// consider the borders' entities of blocks, so we check if contains by index
+		return SceneIndexManager.queryNeighbors(getScriptManager().getBlocksIndex(),
+				player.getPos().toXZDoubleArray(), Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);
 	}
 	public void checkBlocks() {
 		Set<SceneBlock> visible = new HashSet<>();
@@ -542,9 +542,8 @@ public class Scene {
 
 	}
 	public List<SceneGroup> playerMeetGroups(Player player, SceneBlock block){
-		int RANGE = 100;
-
-		List<SceneGroup> sceneGroups = SceneIndexManager.queryNeighbors(block.sceneGroupIndex, player.getPos(), RANGE);
+		List<SceneGroup> sceneGroups = SceneIndexManager.queryNeighbors(block.sceneGroupIndex, player.getPos().toDoubleArray(),
+				Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);
 
 		List<SceneGroup> groups = sceneGroups.stream()
 				.filter(group -> !scriptManager.getLoadedGroupSetPerBlock().get(block.id).contains(group))
@@ -732,14 +731,14 @@ public class Scene {
 			return List.of();
 		}
 
-		int RANGE = 100;
 		var pos = player.getPos();
 		var data = GameData.getSceneNpcBornData().get(getId());
 		if(data == null){
 			return List.of();
 		}
 
-		var npcs = SceneIndexManager.queryNeighbors(data.getIndex(), pos.toLongArray(), RANGE);
+		var npcs = SceneIndexManager.queryNeighbors(data.getIndex(), pos.toDoubleArray(),
+				Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);
 		var entityNPCS = npcs.stream().map(item -> {
 					var group = data.getGroups().get(item.getGroupId());
 					if(group == null){

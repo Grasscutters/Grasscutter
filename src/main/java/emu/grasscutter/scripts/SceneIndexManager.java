@@ -1,7 +1,9 @@
 package emu.grasscutter.scripts;
 
-import ch.ethz.globis.phtree.PhTree;
-import emu.grasscutter.utils.Position;
+import com.github.davidmoten.rtreemulti.Entry;
+import com.github.davidmoten.rtreemulti.RTree;
+import com.github.davidmoten.rtreemulti.geometry.Geometry;
+import com.github.davidmoten.rtreemulti.geometry.Rectangle;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,31 +12,20 @@ import java.util.function.Function;
 
 public class SceneIndexManager {
 
-    public static <T> void buildIndex(PhTree<T> tree, Collection<T> elements, Function<T, long[]> extractor){
-        elements.forEach(e -> tree.put(extractor.apply(e), e));
+    public static <T> RTree<T, Geometry> buildIndex(int dimensions, Collection<T> elements, Function<T, Geometry> extractor){
+        RTree<T, Geometry> rtree = RTree.dimensions(dimensions).create();
+        return rtree.add(elements.stream().map(e -> Entry.entry(e, extractor.apply(e))).toList());
     }
-    public static <T> List<T> queryNeighbors(PhTree<T> tree, Position position, int range){
+    public static <T> List<T> queryNeighbors(RTree<T, Geometry> tree, double[] position, int range){
         var result = new ArrayList<T>();
-        var arrPos = position.toLongArray();
-        var query = tree.query(calRange(arrPos, -range), calRange(arrPos, range));
-        while(query.hasNext()){
-            var element = query.next();
-            result.add(element);
-        }
+        Rectangle rectangle = Rectangle.create(calRange(position, -range), calRange(position, range));
+        var queryResult = tree.search(rectangle);
+        queryResult.forEach(q -> result.add(q.value()));
         return result;
     }
-    public static <T> List<T> queryNeighbors(PhTree<T> tree, long[] position, int range){
-        var result = new ArrayList<T>();
-        var query = tree.query(calRange(position, -range), calRange(position, range));
-        while(query.hasNext()){
-            var element = query.next();
-            result.add(element);
-        }
-        return result;
-    }
-    private static long[] calRange(long[] position, int range){
+    private static double[] calRange(double[] position, int range){
         var newPos = position.clone();
-        for(int i=0;i<position.length;i++){
+        for(int i=0;i<newPos.length;i++){
             newPos[i] += range;
         }
         return newPos;
