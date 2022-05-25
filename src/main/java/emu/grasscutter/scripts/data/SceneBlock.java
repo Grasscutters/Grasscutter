@@ -13,6 +13,8 @@ import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import static emu.grasscutter.Configuration.SCRIPT;
 
@@ -24,7 +26,7 @@ public class SceneBlock {
 	public Position min;
 
 	public int sceneId;
-	public List<SceneGroup> groups;
+	public Map<Integer,SceneGroup> groups;
 	public PhTree<SceneGroup> sceneGroupIndex = new PhTree16<>(3);
 
 	private transient boolean loaded; // Not an actual variable in the scripts either
@@ -61,9 +63,11 @@ public class SceneBlock {
 			cs.eval(bindings);
 
 			// Set groups
-			groups = ScriptLoader.getSerializer().toList(SceneGroup.class, bindings.get("groups"));
-			groups.forEach(g -> g.block_id = id);
-			SceneIndexManager.buildIndex(this.sceneGroupIndex, groups, g -> g.pos.toLongArray());
+			groups = ScriptLoader.getSerializer().toList(SceneGroup.class, bindings.get("groups")).stream()
+					.collect(Collectors.toMap(x -> x.id, y -> y));
+
+			groups.values().forEach(g -> g.block_id = id);
+			SceneIndexManager.buildIndex(this.sceneGroupIndex, groups.values(), g -> g.pos.toLongArray());
 		} catch (ScriptException e) {
 			Grasscutter.getLogger().error("Error loading block " + id + " in scene " + sceneId, e);
 		}

@@ -4,12 +4,13 @@ import ch.ethz.globis.phtree.PhTree;
 import emu.grasscutter.utils.Position;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
 
 public class SceneIndexManager {
 
-    public static <T> void buildIndex(PhTree<T> tree, List<T> elements, Function<T, long[]> extractor){
+    public static <T> void buildIndex(PhTree<T> tree, Collection<T> elements, Function<T, long[]> extractor){
         elements.forEach(e -> tree.put(extractor.apply(e), e));
     }
     public static <T> List<T> queryNeighbors(PhTree<T> tree, Position position, int range){
