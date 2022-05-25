@@ -32,7 +32,7 @@ public class SceneGroup {
 	public Map<Integer,SceneMonster> monsters; // <ConfigId, Monster>
 	public Map<Integer, SceneGadget> gadgets; // <ConfigId, Gadgets>
 	public Map<String, SceneTrigger> triggers;
-
+	public Map<Integer, SceneNPC> npc; // <NpcId, NPC>
 	public List<SceneRegion> regions;
 	public List<SceneSuite> suites;
 	public List<SceneVar> variables;
@@ -44,6 +44,11 @@ public class SceneGroup {
 	private transient boolean loaded; // Not an actual variable in the scripts either
 	private transient CompiledScript script;
 	private transient Bindings bindings;
+	public static SceneGroup of(int groupId) {
+		var group = new SceneGroup();
+		group.id = groupId;
+		return group;
+	}
 
 	public boolean isLoaded() {
 		return loaded;
@@ -124,6 +129,10 @@ public class SceneGroup {
 			
 			// Add variables to suite
 			variables = ScriptLoader.getSerializer().toList(SceneVar.class, bindings.get("variables"));
+			// NPC in groups
+			npc = ScriptLoader.getSerializer().toList(SceneNPC.class, bindings.get("npcs")).stream()
+					.collect(Collectors.toMap(x -> x.npc_id, y -> y));
+			npc.values().forEach(n -> n.group = this);
 
 			// Add monsters and gadgets to suite
 			for (SceneSuite suite : suites) {

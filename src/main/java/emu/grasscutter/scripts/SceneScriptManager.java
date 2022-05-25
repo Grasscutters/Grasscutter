@@ -7,6 +7,7 @@ import emu.grasscutter.data.def.MonsterData;
 import emu.grasscutter.data.def.WorldLevelData;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.entity.EntityNPC;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
@@ -140,14 +141,15 @@ public class SceneScriptManager {
 	// TODO optimize
 	public SceneGroup getGroupById(int groupId) {
 		for (SceneBlock block : this.getScene().getLoadedBlocks()) {
-			for (SceneGroup group : block.groups) {
-				if (group.id == groupId) {
-					if(!group.isLoaded()){
-						getScene().onLoadGroup(List.of(group));
-					}
-					return group;
-				}
+			var group = block.groups.get(groupId);
+			if(group == null){
+				continue;
 			}
+
+			if(!group.isLoaded()){
+				getScene().onLoadGroup(List.of(group));
+			}
+			return group;
 		}
 		return null;
 	}
@@ -365,7 +367,9 @@ public class SceneScriptManager {
 
 		return entity;
 	}
-
+	public EntityNPC createNPC(SceneNPC npc, int blockId, int suiteId) {
+		return new EntityNPC(getScene(), npc, blockId, suiteId);
+	}
 	public EntityMonster createMonster(int groupId, int blockId, SceneMonster monster) {
 		if(monster == null){
 			return null;

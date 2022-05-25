@@ -7,12 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.custom.*;
 import emu.grasscutter.utils.Utils;
-import emu.grasscutter.data.custom.AbilityEmbryoEntry;
-import emu.grasscutter.data.custom.AbilityModifierEntry;
-import emu.grasscutter.data.custom.OpenConfigEntry;
-import emu.grasscutter.data.custom.MainQuestData;
-import emu.grasscutter.data.custom.ScenePointEntry;
 import emu.grasscutter.data.def.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -28,7 +24,8 @@ public class GameData {
 	private static final Map<String, OpenConfigEntry> openConfigEntries = new HashMap<>();
 	private static final Map<String, ScenePointEntry> scenePointEntries = new HashMap<>();
 	private static final Int2ObjectMap<MainQuestData> mainQuestData = new Int2ObjectOpenHashMap<>();
-	
+	private static final Int2ObjectMap<SceneNpcBornData> npcBornData = new Int2ObjectOpenHashMap<>();
+
 	// ExcelConfigs
 	private static final Int2ObjectMap<PlayerLevelData> playerLevelDataMap = new Int2ObjectOpenHashMap<>();
 	
@@ -131,7 +128,9 @@ public class GameData {
 	public static Int2ObjectMap<MainQuestData> getMainQuestDataMap() {
 		return mainQuestData;
 	}
-
+	public static Int2ObjectMap<SceneNpcBornData> getSceneNpcBornData() {
+		return npcBornData;
+	}
 	public static Int2ObjectMap<AvatarData> getAvatarDataMap() {
 		return avatarDataMap;
 	}

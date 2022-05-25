@@ -376,7 +376,7 @@ public class Scene {
 			}
 			entities.add(entity);
 		}
-		
+
 		player.sendPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VISION_MEET));
 	}
 	
@@ -535,6 +535,9 @@ public class Scene {
 						.toList();
 				onLoadGroup(toLoad);
 			}
+			for (Player player : this.getPlayers()) {
+				getScriptManager().meetEntities(loadNpcForPlayer(player, block));
+			}
 		}
 
 	}
@@ -590,7 +593,9 @@ public class Scene {
 			List<SceneGadget> garbageGadgets = group.getGarbageGadgets();
 			
 			if (garbageGadgets != null) {
-				garbageGadgets.forEach(g -> scriptManager.createGadget(group.id, group.block_id, g));
+				entities.addAll(garbageGadgets.stream().map(g -> scriptManager.createGadget(group.id, group.block_id, g))
+						.filter(Objects::nonNull)
+						.toList());
 			}
 
 			// Load suites
@@ -605,9 +610,13 @@ public class Scene {
 			suiteData.sceneTriggers.forEach(getScriptManager()::registerTrigger);
 
 			entities.addAll(suiteData.sceneGadgets.stream()
-					.map(g -> scriptManager.createGadget(group.id, group.block_id, g)).toList());
+					.map(g -> scriptManager.createGadget(group.id, group.block_id, g))
+					.filter(Objects::nonNull)
+					.toList());
 			entities.addAll(suiteData.sceneMonsters.stream()
-					.map(mob -> scriptManager.createMonster(group.id, group.block_id, mob)).toList());
+					.map(mob -> scriptManager.createMonster(group.id, group.block_id, mob))
+					.filter(Objects::nonNull)
+					.toList());
 
 		}
 
@@ -626,7 +635,7 @@ public class Scene {
 			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_REMOVE));
 		}
 		
-		for (SceneGroup group : block.groups) {
+		for (SceneGroup group : block.groups.values()) {
 			if(group.triggers != null){
 				group.triggers.values().forEach(getScriptManager()::deregisterTrigger);
 			}
@@ -717,5 +726,48 @@ public class Scene {
 			EntityItem entity = new EntityItem(this, null, itemData, bornForm.getPosition().clone().addZ(.9f), amount);
 			addEntity(entity);
 		}
+	}
+	public List<EntityNPC> loadNpcForPlayer(Player player, SceneBlock block){
+		if(!block.contains(player.getPos())){
+			return List.of();
+		}
+
+		int RANGE = 100;
+		var pos = player.getPos();
+		var data = GameData.getSceneNpcBornData().get(getId());
+		if(data == null){
+			return List.of();
+		}
+
+		var npcs = SceneIndexManager.queryNeighbors(data.getIndex(), pos.toLongArray(), RANGE);
+		var entityNPCS = npcs.stream().map(item -> {
+					var group = data.getGroups().get(item.getGroupId());
+					if(group == null){
+						group = SceneGroup.of(item.getGroupId());
+						data.getGroups().putIfAbsent(item.getGroupId(), group);
+						group.load(getId());
+					}
+
+					if(group.npc == null){
+						return null;
+					}
+					var npc = group.npc.get(item.getConfigId());
+					if(npc == null){
+						return null;
+					}
+
+					return getScriptManager().createNPC(npc, block.id, item.getSuiteIdList().get(0));
+				})
+				.filter(Objects::nonNull)
+				.filter(item -> getEntities().values().stream()
+						.filter(e -> e instanceof EntityNPC)
+						.noneMatch(e -> e.getConfigId() == item.getConfigId()))
+				.toList();
+
+		if(entityNPCS.size() > 0){
+			broadcastPacket(new PacketGroupSuiteNotify(entityNPCS));
+		}
+
+		return entityNPCS;
 	}
 }

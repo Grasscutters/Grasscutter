@@ -1,13 +1,19 @@
 package emu.grasscutter.data;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import ch.ethz.globis.phtree.PhTree;
+import ch.ethz.globis.phtree.v16.PhTree16;
 import com.google.gson.Gson;
+import emu.grasscutter.data.custom.*;
 import emu.grasscutter.utils.Utils;
+import lombok.SneakyThrows;
 import org.reflections.Reflections;
 
 import com.google.gson.JsonElement;
@@ -16,15 +22,9 @@ import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.common.ScenePointConfig;
-import emu.grasscutter.data.custom.AbilityEmbryoEntry;
-import emu.grasscutter.data.custom.AbilityModifier;
 import emu.grasscutter.data.custom.AbilityModifier.AbilityConfigData;
 import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierActionType;
-import emu.grasscutter.data.custom.AbilityModifierEntry;
-import emu.grasscutter.data.custom.OpenConfigEntry;
-import emu.grasscutter.data.custom.MainQuestData;
-import emu.grasscutter.data.custom.ScenePointEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
@@ -65,6 +65,7 @@ public class ResourceLoader {
 		loadQuests();
 		// Load scene points - must be done AFTER resources are loaded
 		loadScenePoints();
+		loadNpcBornData();
 		// Custom - TODO move this somewhere else
 		try {
 			GameData.getAvatarSkillDepotDataMap().get(504).setAbilities(
@@ -418,6 +419,29 @@ public class ResourceLoader {
 		Grasscutter.getLogger().info("Loaded " + GameData.getMainQuestDataMap().size() + " MainQuestDatas.");
 	}
 
+	@SneakyThrows
+	private static void loadNpcBornData(){
+		var folder = Files.list(Path.of(RESOURCE("BinOutput/Scene/SceneNpcBorn"))).toList();
+
+		for(var file : folder){
+			if(file.toFile().isDirectory()){
+				continue;
+			}
+
+			PhTree<SceneNpcBornEntry> index = new PhTree16<>(3);
+
+			var data = Grasscutter.getGsonFactory().fromJson(Files.readString(file), SceneNpcBornData.class);
+			if(data.getBornPosList() == null || data.getBornPosList().size() == 0){
+				continue;
+			}
+			data.getBornPosList().forEach(item -> index.put(item.getPos().toLongArray(), item));
+
+			data.setIndex(index);
+			GameData.getSceneNpcBornData().put(data.getSceneId(), data);
+		}
+
+		Grasscutter.getLogger().info("Loaded " + GameData.getSceneNpcBornData().size() + " SceneNpcBornDatas.");
+	}
 	// BinOutput configs
 	
 	private static class AvatarConfig {
