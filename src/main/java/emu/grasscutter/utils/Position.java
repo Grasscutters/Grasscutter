@@ -2,6 +2,7 @@ package emu.grasscutter.utils;
 
 import java.io.Serializable;
 
+import com.github.davidmoten.rtreemulti.geometry.Point;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 
@@ -155,10 +156,20 @@ public class Position implements Serializable {
 			.setZ(this.getZ())
 			.build();
 	}
-	public long[] toLongArray(){
-		return new long[]{(long) x, (long) y, (long) z};
+	public Point toPoint(){
+		return Point.create(x,y,z);
 	}
-	public long[] toXZLongArray(){
-		return new long[]{(long) x, (long) z};
+
+	/**
+	 * To XYZ array for Spatial Index
+	 */
+	public double[] toDoubleArray(){
+		return new double[]{ x, y, z};
+	}
+	/**
+	 * To XZ array for Spatial Index (Blocks)
+	 */
+	public double[] toXZDoubleArray(){
+		return new double[]{x, z};
 	}
 }

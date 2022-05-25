@@ -1,11 +1,10 @@
 package emu.grasscutter.scripts.data;
 
-import ch.ethz.globis.phtree.PhTree;
-import ch.ethz.globis.phtree.v16.PhTree16;
+import com.github.davidmoten.rtreemulti.RTree;
+import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.scripts.ScriptLoader;
-import lombok.Data;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -27,7 +26,7 @@ public class SceneMeta {
 
     public Bindings context;
 
-    public PhTree<SceneBlock> sceneBlockIndex = new PhTree16<>(2);
+    public RTree<SceneBlock, Geometry> sceneBlockIndex;
 
     public static SceneMeta of(int sceneId) {
         return new SceneMeta().load(sceneId);
@@ -64,8 +63,8 @@ public class SceneMeta {
             }
 
             this.blocks = blocks.stream().collect(Collectors.toMap(b -> b.id, b -> b));
-            SceneIndexManager.buildIndex(this.sceneBlockIndex, blocks, g -> g.min.toXZLongArray());
-            SceneIndexManager.buildIndex(this.sceneBlockIndex, blocks, g -> g.max.toXZLongArray());
+            this.sceneBlockIndex = SceneIndexManager.buildIndex(2, blocks, SceneBlock::toRectangle);
+
         } catch (ScriptException e) {
             Grasscutter.getLogger().error("Error running script", e);
             return null;

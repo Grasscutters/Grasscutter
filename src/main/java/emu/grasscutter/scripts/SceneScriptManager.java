@@ -1,6 +1,7 @@
 package emu.grasscutter.scripts;
 
-import ch.ethz.globis.phtree.PhTree;
+import com.github.davidmoten.rtreemulti.RTree;
+import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.MonsterData;
@@ -420,7 +421,7 @@ public class SceneScriptManager {
 		getScene().addEntities(gameEntity);
 	}
 
-	public PhTree<SceneBlock> getBlocksIndex() {
+	public RTree<SceneBlock, Geometry> getBlocksIndex() {
 		return meta.sceneBlockIndex;
 	}
 	public void removeMonstersInGroup(SceneGroup group, SceneSuite suite) {

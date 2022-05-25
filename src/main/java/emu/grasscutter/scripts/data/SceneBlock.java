@@ -1,7 +1,8 @@
 package emu.grasscutter.scripts.data;
 
-import ch.ethz.globis.phtree.PhTree;
-import ch.ethz.globis.phtree.v16.PhTree16;
+import com.github.davidmoten.rtreemulti.RTree;
+import com.github.davidmoten.rtreemulti.geometry.Geometry;
+import com.github.davidmoten.rtreemulti.geometry.Rectangle;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.scripts.ScriptLoader;
@@ -12,7 +13,6 @@ import lombok.ToString;
 import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
-import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -27,7 +27,7 @@ public class SceneBlock {
 
 	public int sceneId;
 	public Map<Integer,SceneGroup> groups;
-	public PhTree<SceneGroup> sceneGroupIndex = new PhTree16<>(3);
+	public RTree<SceneGroup, Geometry> sceneGroupIndex;
 
 	private transient boolean loaded; // Not an actual variable in the scripts either
 
@@ -67,11 +67,15 @@ public class SceneBlock {
 					.collect(Collectors.toMap(x -> x.id, y -> y));
 
 			groups.values().forEach(g -> g.block_id = id);
-			SceneIndexManager.buildIndex(this.sceneGroupIndex, groups.values(), g -> g.pos.toLongArray());
+			this.sceneGroupIndex = SceneIndexManager.buildIndex(3, groups.values(), g -> g.pos.toPoint());
 		} catch (ScriptException e) {
 			Grasscutter.getLogger().error("Error loading block " + id + " in scene " + sceneId, e);
 		}
 		Grasscutter.getLogger().info("scene {} block {} is loaded successfully.", sceneId, id);
 		return this;
+	}
+
+	public Rectangle toRectangle() {
+		return Rectangle.create(min.toXZDoubleArray(), max.toXZDoubleArray());
 	}
 }
