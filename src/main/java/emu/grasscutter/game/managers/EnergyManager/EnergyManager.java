@@ -5,6 +5,7 @@ import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.data.def.ItemData;
+import emu.grasscutter.data.def.MonsterData.HpDrops;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
@@ -52,7 +53,7 @@ public class EnergyManager {
             List<EnergyDropEntry> energyDropList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, EnergyDropEntry.class).getType());
 
 			for (EnergyDropEntry entry : energyDropList) {
-				energyDropData.put(entry.getMonsterId(), entry.getEnergyDrops());
+				energyDropData.put(entry.getDropId(), entry.getDropList());
 			}
 
 			Grasscutter.getLogger().info("Energy drop data successfully loaded.");
@@ -145,8 +146,11 @@ public class EnergyManager {
 		 	}
 		}
 
+		// Generate the particle/orb.
+		generateElemBall(itemId, new Position(action.getPos()), 1);
+
 		// Get the item data for an energy particle of the correct element.
-		ItemData itemData = GameData.getItemDataMap().get(itemId);
+		/*ItemData itemData = GameData.getItemDataMap().get(itemId);
 		if (itemData == null) {
 			return; // Should never happen
 		}
@@ -155,7 +159,7 @@ public class EnergyManager {
 		EntityItem energyBall = new EntityItem(getPlayer().getScene(), getPlayer(), itemData, new Position(action.getPos()), 1);
 		energyBall.getRotation().set(action.getRot());
 
-		this.getPlayer().getScene().addEntity(energyBall);
+		this.getPlayer().getScene().addEntity(energyBall);*/
 	}
 
 	/**********
@@ -249,31 +253,52 @@ public class EnergyManager {
 	/**********
 		Monster energy drops.
 	**********/
-	public void handleMonsterEnergyDrop(EntityMonster monster, float hpBeforeDamage, float hpAfterDamage) {
-		// Get the energy drop data for this monster. Stop if we don't have data for this monster.
-		if (!energyDropData.containsKey(monster.getMonsterData().getId())) {
+	private void generateElemBallDrops(EntityMonster monster, int dropId) {
+		// Generate all drops specified for the given drop id.
+		if (!energyDropData.containsKey(dropId)) {
+			Grasscutter.getLogger().warn("No drop data for dropId {} found.", dropId);
 			return;
 		}
-		List<EnergyDropInfo> dropInfo = energyDropData.get(monster.getMonsterData().getId());
 
+		for (EnergyDropInfo info : energyDropData.get(dropId)) {
+			this.generateElemBall(info.getBallId(), monster.getPosition(), info.getCount());
+		}
+	}
+	public void handleMonsterEnergyDrop(EntityMonster monster, float hpBeforeDamage, float hpAfterDamage) {
 		// Calculate the HP tresholds for before and after the damage was taken.
 		float maxHp = monster.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 		float thresholdBefore = hpBeforeDamage / maxHp;
 		float thresholdAfter = hpAfterDamage / maxHp;
 		
 		// Determine the thresholds the monster has passed, and generate drops based on that.
-		for (EnergyDropInfo info : dropInfo) {
-			if (info.getThreshold() < thresholdBefore && info.getThreshold() >= thresholdAfter) {
-				Grasscutter.getLogger().info("Generating {} for monster {}", info.getBallId(), monster.getMonsterData().getId());
+		for (HpDrops drop : monster.getMonsterData().getHpDrops()) {
+			if (drop.getDropId() == 0) {
+				continue;
+			}
 
-				ItemData itemData = GameData.getItemDataMap().get(info.getBallId());
-				if (itemData == null) {
-					continue;
-				}
-
-				EntityItem energyBall = new EntityItem(this.getPlayer().getScene(), this.getPlayer(), itemData, monster.getPosition(), info.getCount());
-				this.getPlayer().getScene().addEntity(energyBall);
+			float threshold = drop.getHpPercent() / 100.0f;
+			if (threshold < thresholdBefore && threshold >= thresholdAfter) {
+				generateElemBallDrops(monster, drop.getDropId());
 			}
 		}
+
+		// Handle kill drops.
+		if (hpAfterDamage <= 0 && monster.getMonsterData().getKillDropId() != 0) {
+			generateElemBallDrops(monster, monster.getMonsterData().getKillDropId());
+		}
+	}
+
+	/**********
+		Utility.
+	**********/
+	private void generateElemBall(int ballId, Position position, int count) {
+		// Generate a particle/orb with the specified parameters.
+		ItemData itemData = GameData.getItemDataMap().get(ballId);
+		if (itemData == null) {
+			return;
+		}
+
+		EntityItem energyBall = new EntityItem(this.getPlayer().getScene(), this.getPlayer(), itemData, position, count);
+		this.getPlayer().getScene().addEntity(energyBall);
 	}
 }

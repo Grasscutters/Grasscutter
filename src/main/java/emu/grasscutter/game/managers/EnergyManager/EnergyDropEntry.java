@@ -3,14 +3,14 @@ package emu.grasscutter.game.managers.EnergyManager;
 import java.util.List;
 
 public class EnergyDropEntry {
-    private int monsterId;
-    private List<EnergyDropInfo> energyDrops;
+    private int dropId;
+    private List<EnergyDropInfo> dropList;
 
-    public int getMonsterId() {
-        return this.monsterId;
+    public int getDropId() {
+        return this.dropId;
     }
 
-    public List<EnergyDropInfo> getEnergyDrops() {
-        return this.energyDrops;
+    public List<EnergyDropInfo> getDropList() {
+        return this.dropList;
     }
 }
