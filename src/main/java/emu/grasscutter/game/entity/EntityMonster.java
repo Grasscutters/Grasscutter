@@ -123,7 +123,6 @@ public class EntityMonster extends GameEntity {
 		// Get HP after damage.
 		float hpAfterDamage = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
 
-
 		// Invoke energy drop logic.
 		for (Player player : this.getScene().getPlayers()) {
 			player.getEnergyManager().handleMonsterEnergyDrop(this, hpBeforeDamage, hpAfterDamage);
