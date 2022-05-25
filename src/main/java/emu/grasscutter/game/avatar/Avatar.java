@@ -81,6 +81,7 @@ public class Avatar {
 	private int satiation; // ?
 	private int satiationPenalty; // ?
 	private float currentHp;
+	private float currentEnergy;
 	
 	@Transient private final Int2ObjectMap<GameItem> equips;
 	@Transient private final Int2FloatOpenHashMap fightProp;
@@ -149,7 +150,7 @@ public class Avatar {
 		this.recalcStats();
 		this.currentHp = getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 		setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, this.currentHp);
-		
+		this.currentEnergy = 0f;
 		// Load handler
 		this.onLoad();
 	}
@@ -358,6 +359,34 @@ public class Avatar {
 		this.currentHp = currentHp;
 	}
 
+	public void setCurrentEnergy() {
+		if (GAME_OPTIONS.energyUsage) {
+			this.setCurrentEnergy(this.currentEnergy);
+		}
+	}
+	
+	public void setCurrentEnergy(float currentEnergy) {
+		if (this.getSkillDepot() != null && this.getSkillDepot().getEnergySkillData() != null) {
+			ElementType element = this.getSkillDepot().getElementType();
+			this.setFightProperty(element.getMaxEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
+			
+			if (GAME_OPTIONS.energyUsage) {
+				this.setFightProperty(element.getCurEnergyProp(), currentEnergy);
+			}
+			else {
+				this.setFightProperty(element.getCurEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
+			}
+		}		
+	}
+
+	public void setCurrentEnergy(FightProperty curEnergyProp, float currentEnergy) {
+		if (GAME_OPTIONS.energyUsage) {
+			this.setFightProperty(curEnergyProp, currentEnergy);
+			this.currentEnergy = currentEnergy;
+			this.save();
+		}
+	}
+
 	public Int2FloatOpenHashMap getFightProperties() {
 		return fightProp;
 	}
@@ -516,17 +545,7 @@ public class Avatar {
 		}
 		
 		// Set energy usage
-		if (this.getSkillDepot() != null && this.getSkillDepot().getEnergySkillData() != null) {
-			ElementType element = this.getSkillDepot().getElementType();
-			this.setFightProperty(element.getMaxEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
-			
-			if (GAME_OPTIONS.energyUsage) {
-				this.setFightProperty(element.getCurEnergyProp(), currentEnergy);
-			}
-			else {
-				this.setFightProperty(element.getCurEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
-			}
-		}
+		setCurrentEnergy(currentEnergy);
 		
 		// Artifacts
 		for (int slotId = 1; slotId <= 5; slotId++) {

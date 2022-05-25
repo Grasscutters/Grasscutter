@@ -255,7 +255,7 @@
       "description": "重置所選玩家的商店刷新時間。"
     },
     "sendMail": {
-      "usage": "用法：give [player] <itemId|itemName> [amount]",
+      "usage": "用法：sendmail <userId|all|help> [templateId]",
       "user_not_exist": "ID '%s' 的使用者不存在。",
       "start_composition": "發送郵件流程。\n請使用`/send <郵件標題>`來進到下一步。\n你可以在任何時間使用`/sendmail stop`來停止發送。",
       "templates": "郵件模板尚未實裝...",
