@@ -38,7 +38,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 
 public class EnergyManager {
 	private final Player player;
-    private final static Int2ObjectMap<List<EnergyDropInfo>> energyDropData = new Int2ObjectOpenHashMap<>();
+	private final static Int2ObjectMap<List<EnergyDropInfo>> energyDropData = new Int2ObjectOpenHashMap<>();
 	private final static Int2ObjectMap<List<SkillParticleGenerationInfo>> skillParticleGenerationData = new Int2ObjectOpenHashMap<>();
 
 	public EnergyManager(Player player) {
@@ -61,7 +61,7 @@ public class EnergyManager {
 			Grasscutter.getLogger().info("Energy drop data successfully loaded.");
 		}
 		catch (Exception ex) {
-            Grasscutter.getLogger().error("Unable to load energy drop data.", ex);
+			Grasscutter.getLogger().error("Unable to load energy drop data.", ex);
 		}
 
 		// Read the data for particle generation from skills
@@ -75,36 +75,82 @@ public class EnergyManager {
 			Grasscutter.getLogger().info("Skill particle generation data successfully loaded.");
 		}
 		catch (Exception ex) {
-            Grasscutter.getLogger().error("Unable to load skill particle generation data data.", ex);
+			Grasscutter.getLogger().error("Unable to load skill particle generation data data.", ex);
 		}
 	}
 
 	/**********
 		Particle creation for elemental skills.
 	**********/
-	private int getCastingAvatarEntityIdForElemBall(int invokeEntityId) {
+	private Optional<EntityAvatar> getCastingAvatarEntityForElemBall(int invokeEntityId) {
 		// To determine the avatar that has cast the skill that caused the energy particle to be generated,
-		// we have to look at the entity that has invoked the ability. This can either be that avatar directly, 
-		// or it can be an `EntityClientGadget`, owned (some way up the owner hierarchy) by the avatar 
+		// we have to look at the entity that has invoked the ability. This can either be that avatar directly,
+		// or it can be an `EntityClientGadget`, owned (some way up the owner hierarchy) by the avatar
 		// that cast the skill.
-		int res = 0;
 		
 		// Try to get the invoking entity from the scene.
 		GameEntity entity = player.getScene().getEntityById(invokeEntityId);
 
-		// If this entity is null, or not an `EntityClientGadget`, we assume that we are directly 
-		// looking at the casting avatar (the null case will happen if the avatar was switched out 
-		// between casting the skill and the particle being generated).
-		if (!(entity instanceof EntityClientGadget)) {
-			res = invokeEntityId;
+		// Determine the ID of the entity that originally cast this skill. If the scene entity is null,
+		// or not an `EntityClientGadget`, we assume that we are directly looking at the casting avatar
+		// (the null case will happen if the avatar was switched out between casting the skill and the
+		// particle being generated). If the scene entity is an `EntityClientGadget`, we need to find the
+		// ID of the original owner of that gadget.
+		int avatarEntityId =
+			(!(entity instanceof EntityClientGadget))
+			? invokeEntityId
+			: ((EntityClientGadget)entity).getOriginalOwnerEntityId();
+
+		// Finally, find the avatar entity in the player's team.
+		return player.getTeamManager().getActiveTeam()
+						.stream()
+						.filter(character -> character.getId() == avatarEntityId)
+						.findFirst();
+	}
+
+	private int getBallCountForAvatar(int avatarId) {
+		// We default to two particles.
+		int count = 2;
+
+		// If we don't have any data for this avatar, stop.
+		if (!skillParticleGenerationData.containsKey(avatarId)) {
+			Grasscutter.getLogger().warn("No particle generation data for avatarId {} found.", avatarId);
 		}
-		// If the entity is a `EntityClientGadget`, we need to find the ID of the original
-		// owner of that gadget.
-		else {	
-			res = ((EntityClientGadget)entity).getOriginalOwnerEntityId();
+		// If we do have data, roll for how many particles we should generate.
+		else {
+			int roll = ThreadLocalRandom.current().nextInt(0, 100);
+			int percentageStack = 0;
+			for (SkillParticleGenerationInfo info : skillParticleGenerationData.get(avatarId)) {
+				int chance = info.getChance();
+				percentageStack += chance;
+				if (roll < percentageStack) {
+					count = info.getValue();
+					break;
+				}
+			}
 		}
 
-		return res;
+		// Done.
+		return count;
+	}
+
+	private int getBallIdForElement(ElementType element) {
+		// If we have no element, we default to an elementless particle.
+		if (element == null) {
+			return 2024;
+		}
+
+		// Otherwise, we determin the particle's ID based on the element.
+		return switch (element) {
+			case Fire -> 2017;
+			case Water -> 2018;
+			case Grass -> 2019;
+			case Electric -> 2020;
+			case Wind -> 2021;
+			case Ice -> 2022;
+			case Rock -> 2023;
+			default -> 2024;
+		};
 	}
 
 	public void handleGenerateElemBall(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
@@ -118,72 +164,40 @@ public class EnergyManager {
 			return;
 		}
 
-		// Determine the element of the energy particle that we have to generate.
-		// In case we can't, we default to an elementless particle.
-		// The element is the element of the avatar that has cast the ability.
-		// We can get that from the avatar's skill depot.
+		// Default to an elementless particle.
 		int itemId = 2024;
 
-		// Generate 2 particles by default
+		// Generate 2 particles by default.
 		int amount = 2;
 
-		// Try to fetch the avatar from the player's party and determine their element.
-		// ToDo: Does this work in co-op?
-		int avatarEntityId = getCastingAvatarEntityIdForElemBall(invoke.getEntityId());	
-		Optional<EntityAvatar> avatarEntity = player.getTeamManager().getActiveTeam()
-													.stream()
-													.filter(character -> character.getId() == avatarEntityId)
-													.findFirst();
+		// Try to get the casting avatar from the player's party.
+		Optional<EntityAvatar> avatarEntity = getCastingAvatarEntityForElemBall(invoke.getEntityId());
 
 		// Bug: invokes twice sometimes, Ayato, Keqing
 		// ToDo: deal with press, hold difference. deal with charge(Beidou, Yunjin)
 		if (avatarEntity.isPresent()) {
-			Grasscutter.getLogger().info("Found entity: {}", avatarEntity.get());
 			Avatar avatar = avatarEntity.get().getAvatar();
 
-			if (avatar != null) {				
+			if (avatar != null) {
 				int avatarId = avatar.getAvatarId();
 				AvatarSkillDepotData skillDepotData = avatar.getSkillDepot();
-				if (!skillParticleGenerationData.containsKey(avatarId)) {
-					Grasscutter.getLogger().warn("No particle generation data for avatarId {} found.", avatarId);
-				}
-				else {
-					int roll = ThreadLocalRandom.current().nextInt(0, 100);
-					int percentageStack = 0;
-					for (SkillParticleGenerationInfo info : skillParticleGenerationData.get(avatarId)) {
-						int chance = info.getChance();
-						percentageStack += chance;
-						if (roll < percentageStack) {
-							amount = info.getValue();
-							break;
-						}
-					}
-				}
 
+				// Determine how many particles we need to create for this avatar.
+				amount = this.getBallCountForAvatar(avatarId);
+
+				// Determine the avatar's element, and based on that the ID of the
+				// particles we have to generate.
 				if (skillDepotData != null) {
 					ElementType element = skillDepotData.getElementType();
-
-					// If we found the element, we use it to deterine the ID of the
-					// energy particle that we have to generate.
-		 			if (element != null) {
-		 				itemId = switch (element) {
-							case Fire -> 2017;
-							case Water -> 2018; 
-							case Grass -> 2019;
-							case Electric -> 2020;
-							case Wind -> 2021;
-							case Ice -> 2022;
-							case Rock -> 2023;
-							default -> 2024;
-						};
-		 			}
+					itemId = getBallIdForElement(element);
 		 		}
 		 	}
 		}
 
-		// Generate the particle/orb.
-		for (int i = 0; i < amount; i++)
+		// Generate the particles.
+		for (int i = 0; i < amount; i++) {
 			generateElemBall(itemId, new Position(action.getPos()), 1);
+		}
 	}
 
 	/**********
