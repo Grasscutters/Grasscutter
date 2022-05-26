@@ -154,7 +154,7 @@ public class ConfigContainer {
         public Policies.CORS cors = new Policies.CORS();
 
         public static class CORS {
-            public boolean enabled = false;
+            public boolean enabled = true;
             public String[] allowedOrigins = new String[]{"*"};
         }
     }

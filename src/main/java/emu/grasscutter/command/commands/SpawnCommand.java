@@ -1,5 +1,10 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.Language.translate;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
@@ -7,16 +12,14 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.GadgetData;
 import emu.grasscutter.data.def.ItemData;
 import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.game.entity.*;
+import emu.grasscutter.game.entity.EntityItem;
+import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.entity.EntityVehicle;
+import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.utils.Position;
 import emu.grasscutter.game.world.Scene;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import static emu.grasscutter.utils.Language.translate;
+import emu.grasscutter.utils.Position;
 
 @Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)]", permission = "server.spawn", permissionTargeted = "server.spawn.others", description = "commands.spawn.description", aliases = {"s"})
 public final class SpawnCommand implements CommandHandler {
