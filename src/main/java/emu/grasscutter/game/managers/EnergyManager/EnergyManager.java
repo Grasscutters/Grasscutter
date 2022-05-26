@@ -1,30 +1,45 @@
-package emu.grasscutter.game.managers;
+package emu.grasscutter.game.managers.EnergyManager;
 
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.data.def.ItemData;
+import emu.grasscutter.data.def.MonsterData.HpDrops;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.game.entity.EntityItem;
+import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.utils.Position;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 import static emu.grasscutter.Configuration.GAME_OPTIONS;
 
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.ThreadLocalRandom;
 
+import com.google.gson.reflect.TypeToken;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 public class EnergyManager {
 	private final Player player;
+    private final static Int2ObjectMap<List<EnergyDropInfo>> energyDropData = new Int2ObjectOpenHashMap<>();
+	private final static Int2ObjectMap<List<SkillParticleGenerationInfo>> skillParticleGenerationData = new Int2ObjectOpenHashMap<>();
 
 	public EnergyManager(Player player) {
 		this.player = player;
@@ -34,10 +49,40 @@ public class EnergyManager {
 		return this.player;
 	}
 
+	public static void initialize() {
+		// Read the data we need for monster energy drops.
+		try (Reader fileReader = new InputStreamReader(DataLoader.load("EnergyDrop.json"))) {
+			List<EnergyDropEntry> energyDropList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, EnergyDropEntry.class).getType());
+
+			for (EnergyDropEntry entry : energyDropList) {
+				energyDropData.put(entry.getDropId(), entry.getDropList());
+			}
+
+			Grasscutter.getLogger().info("Energy drop data successfully loaded.");
+		}
+		catch (Exception ex) {
+            Grasscutter.getLogger().error("Unable to load energy drop data.", ex);
+		}
+
+		// Read the data for particle generation from skills
+		try (Reader fileReader = new InputStreamReader(DataLoader.load("SkillParticleGeneration.json"))) {
+			List<SkillParticleGenerationEntry> skillParticleGenerationList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, SkillParticleGenerationEntry.class).getType());
+
+			for (SkillParticleGenerationEntry entry : skillParticleGenerationList) {
+				skillParticleGenerationData.put(entry.getAvatarId(), entry.getAmountList());
+			}
+
+			Grasscutter.getLogger().info("Skill particle generation data successfully loaded.");
+		}
+		catch (Exception ex) {
+            Grasscutter.getLogger().error("Unable to load skill particle generation data data.", ex);
+		}
+	}
+
 	/**********
 		Particle creation for elemental skills.
 	**********/
-	private int getCastingAvatarIdForElemBall(int invokeEntityId) {
+	private int getCastingAvatarEntityIdForElemBall(int invokeEntityId) {
 		// To determine the avatar that has cast the skill that caused the energy particle to be generated,
 		// we have to look at the entity that has invoked the ability. This can either be that avatar directly, 
 		// or it can be an `EntityClientGadget`, owned (some way up the owner hierarchy) by the avatar 
@@ -82,19 +127,41 @@ public class EnergyManager {
 		// We can get that from the avatar's skill depot.
 		int itemId = 2024;
 
+		// Generate 2 particles by default
+		int amount = 2;
+
 		// Try to fetch the avatar from the player's party and determine their element.
 		// ToDo: Does this work in co-op?
-		int avatarId = getCastingAvatarIdForElemBall(invoke.getEntityId());	
+		int avatarEntityId = getCastingAvatarEntityIdForElemBall(invoke.getEntityId());	
 		Optional<EntityAvatar> avatarEntity = player.getTeamManager().getActiveTeam()
 													.stream()
-													.filter(character -> character.getId() == avatarId)
+													.filter(character -> character.getId() == avatarEntityId)
 													.findFirst();
 
+		// Bug: invokes twice sometimes, Ayato, Keqing
+		// Amber not getting element properly
+		// ToDo: deal with press, hold difference. deal with charge(Beidou, Yunjin)
 		if (avatarEntity.isPresent()) {
 			Avatar avatar = avatarEntity.get().getAvatar();
 
-			if (avatar != null) {
+			if (avatar != null) {				
+				int avatarId = avatar.getAvatarId();
 				AvatarSkillDepotData skillDepotData = avatar.getSkillDepot();
+				if (!skillParticleGenerationData.containsKey(avatarId)) {
+					Grasscutter.getLogger().warn("No particle generation data for avatarId {} found.", avatarId);
+				}
+				else {
+					int roll = ThreadLocalRandom.current().nextInt(0, 100);
+					int percentageStack = 0;
+					for (SkillParticleGenerationInfo info : skillParticleGenerationData.get(avatarId)) {
+						int chance = info.getChance();
+						percentageStack += chance;
+						if (roll < percentageStack) {
+							amount = info.getValue();
+							break;
+						}
+					}
+				}
 
 				if (skillDepotData != null) {
 					ElementType element = skillDepotData.getElementType();
@@ -117,17 +184,9 @@ public class EnergyManager {
 		 	}
 		}
 
-		// Get the item data for an energy particle of the correct element.
-		ItemData itemData = GameData.getItemDataMap().get(itemId);
-		if (itemData == null) {
-			return; // Should never happen
-		}
-	
-		// Generate entity.
-		EntityItem energyBall = new EntityItem(getPlayer().getScene(), getPlayer(), itemData, new Position(action.getPos()), 1);
-		energyBall.getRotation().set(action.getRot());
-
-		this.getPlayer().getScene().addEntity(energyBall);
+		// Generate the particle/orb.
+		for (int i = 0; i < amount; i++)
+			generateElemBall(itemId, new Position(action.getPos()), 1);
 	}
 
 	/**********
@@ -183,10 +242,9 @@ public class EnergyManager {
 			float elementBonus = (ballElement == null) ? 2.0f : (avatarElement == ballElement) ? 3.0f : 1.0f;
 
 			// Add the energy.
-			entity.addEnergy(baseEnergy * elementBonus * offFieldPenalty, PropChangeReason.PROP_CHANGE_ENERGY_BALL);
+			entity.addEnergy(baseEnergy * elementBonus * offFieldPenalty * elemBall.getCount(), PropChangeReason.PROP_CHANGE_ENERGY_BALL);
 		}
 	}
-
 
 	/**********
 		Energy logic related to using skills.
@@ -217,5 +275,57 @@ public class EnergyManager {
 
 		// Handle elemental burst.
 		this.handleBurstCast(avatar, skillId);
+	}
+
+	/**********
+		Monster energy drops.
+	**********/
+	private void generateElemBallDrops(EntityMonster monster, int dropId) {
+		// Generate all drops specified for the given drop id.
+		if (!energyDropData.containsKey(dropId)) {
+			Grasscutter.getLogger().warn("No drop data for dropId {} found.", dropId);
+			return;
+		}
+
+		for (EnergyDropInfo info : energyDropData.get(dropId)) {
+			this.generateElemBall(info.getBallId(), monster.getPosition(), info.getCount());
+		}
+	}
+	public void handleMonsterEnergyDrop(EntityMonster monster, float hpBeforeDamage, float hpAfterDamage) {
+		// Calculate the HP tresholds for before and after the damage was taken.
+		float maxHp = monster.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+		float thresholdBefore = hpBeforeDamage / maxHp;
+		float thresholdAfter = hpAfterDamage / maxHp;
+		
+		// Determine the thresholds the monster has passed, and generate drops based on that.
+		for (HpDrops drop : monster.getMonsterData().getHpDrops()) {
+			if (drop.getDropId() == 0) {
+				continue;
+			}
+
+			float threshold = drop.getHpPercent() / 100.0f;
+			if (threshold < thresholdBefore && threshold >= thresholdAfter) {
+				generateElemBallDrops(monster, drop.getDropId());
+			}
+		}
+
+		// Handle kill drops.
+		if (hpAfterDamage <= 0 && monster.getMonsterData().getKillDropId() != 0) {
+			generateElemBallDrops(monster, monster.getMonsterData().getKillDropId());
+		}
+	}
+
+	/**********
+		Utility.
+	**********/
+	private void generateElemBall(int ballId, Position position, int count) {
+		// Generate a particle/orb with the specified parameters.
+		ItemData itemData = GameData.getItemDataMap().get(ballId);
+		if (itemData == null) {
+			return;
+		}
+
+		EntityItem energyBall = new EntityItem(this.getPlayer().getScene(), this.getPlayer(), itemData, position, count);
+		this.getPlayer().getScene().addEntity(energyBall);
 	}
 }
