@@ -52,7 +52,7 @@ public class EnergyManager {
 	public static void initialize() {
 		// Read the data we need for monster energy drops.
 		try (Reader fileReader = new InputStreamReader(DataLoader.load("EnergyDrop.json"))) {
-            List<EnergyDropEntry> energyDropList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, EnergyDropEntry.class).getType());
+			List<EnergyDropEntry> energyDropList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, EnergyDropEntry.class).getType());
 
 			for (EnergyDropEntry entry : energyDropList) {
 				energyDropData.put(entry.getDropId(), entry.getDropList());
@@ -66,7 +66,7 @@ public class EnergyManager {
 
 		// Read the data for particle generation from skills
 		try (Reader fileReader = new InputStreamReader(DataLoader.load("SkillParticleGeneration.json"))) {
-            List<SkillParticleGenerationEntry> skillParticleGenerationList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, SkillParticleGenerationEntry.class).getType());
+			List<SkillParticleGenerationEntry> skillParticleGenerationList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, SkillParticleGenerationEntry.class).getType());
 
 			for (SkillParticleGenerationEntry entry : skillParticleGenerationList) {
 				skillParticleGenerationData.put(entry.getAvatarId(), entry.getAmountList());
