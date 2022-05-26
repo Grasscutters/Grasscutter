@@ -19,8 +19,6 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall;
-import emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier;
-import emu.grasscutter.net.proto.AbilityInvocationsNotifyOuterClass.AbilityInvocationsNotify;
 import emu.grasscutter.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange;
@@ -44,7 +42,6 @@ public class AbilityManager {
 
 	public void onAbilityInvoke(AbilityInvokeEntry invoke) throws Exception {
 		// Grasscutter.getLogger().info(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + Utils.bytesToHex(invoke.toByteArray()));
-
 		switch (invoke.getArgumentType()) {
 			case ABILITY_META_OVERRIDE_PARAM:
 				handleOverrideParam(invoke);
