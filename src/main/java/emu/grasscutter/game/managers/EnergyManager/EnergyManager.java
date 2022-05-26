@@ -88,7 +88,7 @@ public class EnergyManager {
 		// or it can be an `EntityClientGadget`, owned (some way up the owner hierarchy) by the avatar 
 		// that cast the skill.
 		int res = 0;
-
+		
 		// Try to get the invoking entity from the scene.
 		GameEntity entity = player.getScene().getEntityById(invokeEntityId);
 
@@ -98,13 +98,10 @@ public class EnergyManager {
 		if (!(entity instanceof EntityClientGadget)) {
 			res = invokeEntityId;
 		}
-		// If the entity is a `EntityClientGadget`, we need to "walk up" the owner hierarchy,
-		// until the owner is no longer a gadget. This should then be the ID of the casting avatar.
+		// If the entity is a `EntityClientGadget`, we need to find the ID of the original
+		// owner of that gadget.
 		else {	
-			while (entity instanceof EntityClientGadget gadget) {
-				res = gadget.getOwnerEntityId();
-				entity = player.getScene().getEntityById(gadget.getOwnerEntityId());
-			}
+			res = ((EntityClientGadget)entity).getOriginalOwnerEntityId();
 		}
 
 		return res;
@@ -139,9 +136,9 @@ public class EnergyManager {
 													.findFirst();
 
 		// Bug: invokes twice sometimes, Ayato, Keqing
-		// Amber not getting element properly
 		// ToDo: deal with press, hold difference. deal with charge(Beidou, Yunjin)
 		if (avatarEntity.isPresent()) {
+			Grasscutter.getLogger().info("Found entity: {}", avatarEntity.get());
 			Avatar avatar = avatarEntity.get().getAvatar();
 
 			if (avatar != null) {				
