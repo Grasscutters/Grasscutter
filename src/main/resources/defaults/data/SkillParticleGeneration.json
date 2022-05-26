@@ -202,12 +202,8 @@
 		"name": "Zhongli",
 		"amountList": [
 			{
-				"value": 0,
-				"chance": 50
-			},
-			{
 				"value": 1,
-				"chance": 50
+				"chance": 100
 			}
 		]
 	},
@@ -216,12 +212,8 @@
 		"name": "Fischl",
 		"amountList": [
 			{
-				"value": 0,
-				"chance": 33
-			},
-			{
 				"value": 1,
-				"chance": 67
+				"chance": 100
 			}
 		]
 	},
@@ -294,12 +286,8 @@
 		"name": "Albedo",
 		"amountList": [
 			{
-				"value": 0,
-				"chance": 33
-			},
-			{
 				"value": 1,
-				"chance": 67
+				"chance": 100
 			}
 		]
 	},
@@ -308,12 +296,8 @@
 		"name": "Diona",
 		"amountList": [
 			{
-				"value": 0,
-				"chance": 20
-			},
-			{
 				"value": 1,
-				"chance": 80
+				"chance": 100
 			}
 		]
 	},
@@ -456,12 +440,8 @@
 		"name": "Raiden Shogun",
 		"amountList": [
 			{
-				"value": 0,
-				"chance": 50
-			},
-			{
 				"value": 1,
-				"chance": 50
+				"chance": 100
 			}
 		]
 	},
@@ -480,12 +460,8 @@
 		"name": "Sangonomiya Kokomi",
 		"amountList": [
 			{
-				"value": 0,
-				"chance": 33
-			},
-			{
 				"value": 1,
-				"chance": 67
+				"chance": 100
 			}
 		]
 	},
