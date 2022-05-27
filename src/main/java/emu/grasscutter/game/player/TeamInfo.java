@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dev.morphia.annotations.Entity;
-import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.avatar.Avatar;
+
+import static emu.grasscutter.Configuration.*;
 
 @Entity
 public class TeamInfo {
@@ -15,7 +15,12 @@ public class TeamInfo {
 	
 	public TeamInfo() {
 		this.name = "";
-		this.avatars = new ArrayList<>(Grasscutter.getConfig().getGameServerOptions().MaxAvatarsInTeam);
+		this.avatars = new ArrayList<>(GAME_OPTIONS.avatarLimits.singlePlayerTeam);
+	}
+
+	public TeamInfo(List<Integer> avatars) {
+		this.name = "";
+		this.avatars = avatars;
 	}
 
 	public String getName() {
@@ -39,7 +44,7 @@ public class TeamInfo {
 	}
 
 	public boolean addAvatar(Avatar avatar) {
-		if (size() >= Grasscutter.getConfig().getGameServerOptions().MaxAvatarsInTeam || contains(avatar)) {
+		if (contains(avatar)) {
 			return false;
 		}
 		
@@ -59,7 +64,7 @@ public class TeamInfo {
 	}
 	
 	public void copyFrom(TeamInfo team) {
-		copyFrom(team, Grasscutter.getConfig().getGameServerOptions().MaxAvatarsInTeam);
+		copyFrom(team, GAME_OPTIONS.avatarLimits.singlePlayerTeam);
 	}
 	
 	public void copyFrom(TeamInfo team, int maxTeamSize) {

@@ -17,10 +17,12 @@ public class PacketOpcodesUtil {
 		Field[] fields = PacketOpcodes.class.getFields();
 
 		for (Field f : fields) {
-			try {
-				opcodeMap.put(f.getInt(null), f.getName());
-			} catch (Exception e) {
-				e.printStackTrace();
+			if(f.getType().equals(int.class)) {
+				try {
+					opcodeMap.put(f.getInt(null), f.getName());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}

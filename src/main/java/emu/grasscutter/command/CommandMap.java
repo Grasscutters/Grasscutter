@@ -12,6 +12,8 @@ import java.util.*;
 public final class CommandMap {
     private final Map<String, CommandHandler> commands = new HashMap<>();
     private final Map<String, Command> annotations = new HashMap<>();
+    private final Map<String, Integer> targetPlayerIds = new HashMap<>();
+    private static final String consoleId = "console";
     public CommandMap() {
         this(false);
     }
@@ -75,6 +77,12 @@ public final class CommandMap {
         return this;
     }
 
+    public List<Command> getAnnotationsAsList() { return new LinkedList<>(this.annotations.values()); }
+
+    public HashMap<String, Command> getAnnotations() {
+        return new LinkedHashMap<>(this.annotations);
+    }
+
     /**
      * Returns a list of all registered commands.
      *
@@ -104,46 +112,137 @@ public final class CommandMap {
      * @param player     The player invoking the command or null for the server console.
      * @param rawMessage The messaged used to invoke the command.
      */
-    public void invoke(Player player, String rawMessage) {
+    public void invoke(Player player, Player targetPlayer, String rawMessage) {
         rawMessage = rawMessage.trim();
         if (rawMessage.length() == 0) {
-            CommandHandler.sendMessage(player, "No command specified.");
+            CommandHandler.sendTranslatedMessage(player, "commands.generic.not_specified");
             return;
         }
-
-        // Remove prefix if present.
-        if (!Character.isLetter(rawMessage.charAt(0)))
-            rawMessage = rawMessage.substring(1);
 
         // Parse message.
         String[] split = rawMessage.split(" ");
         List<String> args = new LinkedList<>(Arrays.asList(split));
         String label = args.remove(0);
+        String playerId = (player == null) ? consoleId : player.getAccount().getId();
+        
+        // Check for special cases - currently only target command.
+        String targetUidStr = null;
+        if (label.startsWith("@")) { // @[UID]
+            targetUidStr = label.substring(1);
+        } else if (label.equalsIgnoreCase("target")) { // target [[@]UID]
+            if (args.size() > 0) {
+                targetUidStr = args.get(0);
+                if (targetUidStr.startsWith("@")) {
+                    targetUidStr = targetUidStr.substring(1);
+                }
+            } else {
+                targetUidStr = "";
+            }
+        }
+        if (targetUidStr != null) {
+            if (targetUidStr.equals("")) { // Clears the default targetPlayer.
+                targetPlayerIds.remove(playerId);
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
+            } else { // Sets default targetPlayer to the UID provided.
+                try {
+                    int uid = Integer.parseInt(targetUidStr);
+                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
+                    if (targetPlayer == null) {
+                        CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
+                    } else {
+                        targetPlayerIds.put(playerId, uid);
+                        CommandHandler.sendTranslatedMessage(player, "commands.execution.set_target", targetUidStr);
+                        CommandHandler.sendTranslatedMessage(player, targetPlayer.isOnline()? "commands.execution.set_target_online" : "commands.execution.set_target_offline", targetUidStr);
+                    }
+                } catch (NumberFormatException e) {
+                    CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
+                }
+            }
+            return;
+        }
+
         // Get command handler.
         CommandHandler handler = this.commands.get(label);
         if (handler == null) {
-            CommandHandler.sendMessage(player, "Unknown command: " + label);
+            CommandHandler.sendTranslatedMessage(player, "commands.generic.unknown_command", label);
             return;
+        }
+
+        // If any @UID argument is present, override targetPlayer with it.
+        for (int i = 0; i < args.size(); i++) {
+            String arg = args.get(i);
+            if (arg.startsWith("@")) {
+                arg = args.remove(i).substring(1);
+                try {
+                    int uid = Integer.parseInt(arg);
+                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
+                    if (targetPlayer == null) {
+                        CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
+                        return;
+                    }
+                    break;
+                } catch (NumberFormatException e) {
+                    CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
+                    return;
+                }
+            }
+        }
+        
+        // If there's still no targetPlayer at this point, use previously-set target
+        if (targetPlayer == null) {
+            if (targetPlayerIds.containsKey(playerId)) {
+                targetPlayer = Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.get(playerId), true);  // We check every time in case the target is deleted after being targeted
+                if (targetPlayer == null) {
+                    CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
+                    return;
+                }
+            } else {
+                // If there's still no targetPlayer at this point, use executor.
+                targetPlayer = player;
+            }
         }
 
         // Check for permission.
         if (player != null) {
             String permissionNode = this.annotations.get(label).permission();
+            String permissionNodeTargeted = this.annotations.get(label).permissionTargeted();
             Account account = player.getAccount();
+            if (player != targetPlayer) {  // Additional permission required for targeting another player
+                if (!permissionNodeTargeted.isEmpty() && !account.hasPermission(permissionNodeTargeted)) {
+                    CommandHandler.sendTranslatedMessage(player, "commands.generic.permission_error");
+                    return;
+                }
+            }
             if (!permissionNode.isEmpty() && !account.hasPermission(permissionNode)) {
-                CommandHandler.sendMessage(player, "You do not have permission to run this command.");
+                CommandHandler.sendTranslatedMessage(player, "commands.generic.permission_error");
+                return;
+            }
+        }
+
+        // Check if command has unfulfilled constraints on targetPlayer
+        Command.TargetRequirement targetRequirement = this.annotations.get(label).targetRequirement();
+        if (targetRequirement != Command.TargetRequirement.NONE) {
+            if (targetPlayer == null) {
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target");
+                return;
+            }
+            if ((targetRequirement == Command.TargetRequirement.ONLINE) && !targetPlayer.isOnline()) {
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_online");
+                return;
+            }
+            if ((targetRequirement == Command.TargetRequirement.OFFLINE) && targetPlayer.isOnline()) {
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_offline");
                 return;
             }
         }
 
         // Invoke execute method for handler.
         boolean threading  = this.annotations.get(label).threading();
-        Runnable runnable = () -> handler.execute(player, args);
+        final Player targetPlayerF = targetPlayer;  // Is there a better way to do this?
+        Runnable runnable = () -> handler.execute(player, targetPlayerF, args);
         if(threading) {
-            Thread command = new Thread(runnable);
-            command.start();
-        }
-        else {
+            new Thread(runnable).start();
+        } else {
             runnable.run();
         }
     }

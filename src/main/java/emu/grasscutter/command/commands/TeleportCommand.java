@@ -8,84 +8,61 @@ import emu.grasscutter.utils.Position;
 
 import java.util.List;
 
-@Command(label = "teleport", usage = "teleport [@player id] <x> <y> <z> [scene id]", aliases = {"tp"},
-        description = "Change the player's position.", permission = "player.teleport")
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "teleport", usage = "teleport <x> <y> <z> [scene id]", aliases = {"tp"}, permission = "player.teleport", permissionTargeted = "player.teleport.others", description = "commands.teleport.description")
 public final class TeleportCommand implements CommandHandler {
 
+    private float parseRelative(String input, Float current) {  // TODO: Maybe this will be useful elsewhere later
+        if (input.contains("~")) {  // Relative
+            if (!input.equals("~")) {  // Relative with offset
+                current += Float.parseFloat(input.replace("~", ""));
+            }  // Else no offset, no modification
+        } else {  // Absolute
+            current = Float.parseFloat(input);
+        }
+        return current;
+    }
+
     @Override
-    public void execute(Player sender, List<String> args) {
-        int target;
-        if (args.size() < (sender == null ? 4 : 3)) {
-            CommandHandler.sendMessage(sender, sender == null ? "Usage: /tp @<player id> <x> <y> <z> [scene id]" :
-                    "Usage: /tp [@<player id>] <x> <y> <z> [scene id]");
-            return;
-        }
-        if (args.get(0).startsWith("@")) {
-            try {
-                target = Integer.parseInt(args.get(0).substring(1));
-            } catch (NumberFormatException e) {
-                CommandHandler.sendMessage(sender, "Invalid player id.");
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        Position pos = targetPlayer.getPos();
+        float x = pos.getX();
+        float y = pos.getY();
+        float z = pos.getZ();
+        int sceneId = targetPlayer.getSceneId();
+
+        switch (args.size()) {
+            case 4:
+                try {
+                    sceneId = Integer.parseInt(args.get(3));
+                }catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
+                }  // Fallthrough
+            case 3:
+                try {
+                    x = parseRelative(args.get(0), x);
+                    y = parseRelative(args.get(1), y);
+                    z = parseRelative(args.get(2), z);
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.invalid_position"));
+                }
+                break;
+            default:
+                CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.usage"));
                 return;
-            }
+        }
+
+        Position target_pos = new Position(x, y, z);
+        boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, target_pos);
+        if (!result) {
+            CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.invalid_position"));
         } else {
-            if (sender == null) {
-                CommandHandler.sendMessage(null, "You must specify a player id.");
-                return;
-            }
-            target = sender.getUid();
+            CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.success", 
+                    targetPlayer.getNickname(), Float.toString(x), Float.toString(y), 
+                    Float.toString(z), Integer.toString(sceneId))
+            );
         }
 
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found or offline.");
-            return;
-        }
-        args = args.subList(args.get(0).startsWith("@") ? 1 : 0, args.size());
-
-        try {
-            float x = 0f;
-            float y = 0f;
-            float z = 0f;
-            if (args.get(0).contains("~")) {
-                if (args.get(0).equals("~")) {
-                    x = targetPlayer.getPos().getX();
-                } else {
-                    x = Float.parseFloat(args.get(0).replace("~", "")) + targetPlayer.getPos().getX();
-                }
-            } else {
-                x = Float.parseFloat(args.get(0));
-            }
-            if (args.get(1).contains("~")) {
-                if (args.get(1).equals("~")) {
-                    y = targetPlayer.getPos().getY();
-                } else {
-                    y = Float.parseFloat(args.get(1).replace("~", "")) + targetPlayer.getPos().getY();
-                }
-            } else {
-                y = Float.parseFloat(args.get(1));
-            }
-            if (args.get(2).contains("~")) {
-                if (args.get(2).equals("~")) {
-                    z = targetPlayer.getPos().getZ();
-                } else {
-                    z = Float.parseFloat(args.get(2).replace("~", "")) + targetPlayer.getPos().getZ();
-                }
-            } else {
-                z = Float.parseFloat(args.get(2));
-            }
-            int sceneId = targetPlayer.getSceneId();
-            if (args.size() == 4){
-                sceneId = Integer.parseInt(args.get(3));
-            }
-            Position target_pos = new Position(x, y, z);
-            boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, target_pos);
-            if (!result) {
-                CommandHandler.sendMessage(sender, "Invalid position.");
-            } else {
-                CommandHandler.sendMessage(sender, "Teleported " + targetPlayer.getNickname() + " to " + x + "," + y + "," + z + " in scene " + sceneId);
-            }
-        } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "Invalid position.");
-        }
     }
 }

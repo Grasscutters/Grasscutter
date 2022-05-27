@@ -5,14 +5,19 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.combine.CombineManger;
 import emu.grasscutter.game.drop.DropManager;
 import emu.grasscutter.game.dungeons.DungeonManager;
+import emu.grasscutter.game.expedition.ExpeditionManager;
 import emu.grasscutter.game.gacha.GachaManager;
-import emu.grasscutter.game.managers.ChatManager;
+import emu.grasscutter.game.managers.ChatManager.ChatManager;
+import emu.grasscutter.game.managers.ChatManager.ChatManagerHandler;
 import emu.grasscutter.game.managers.InventoryManager;
 import emu.grasscutter.game.managers.MultiplayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.ServerQuestHandler;
 import emu.grasscutter.game.shop.ShopManager;
+import emu.grasscutter.game.tower.TowerScheduleManager;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
@@ -28,29 +33,53 @@ import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
+import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.Configuration.*;
+
 public final class GameServer extends KcpServer {
 	private final InetSocketAddress address;
 	private final GameServerPacketHandler packetHandler;
-
+	private final ServerQuestHandler questHandler;
+	
 	private final Map<Integer, Player> players;
 	private final Set<World> worlds;
 	
-	private final ChatManager chatManager;
+	private ChatManagerHandler chatManager;
 	private final InventoryManager inventoryManager;
 	private final GachaManager gachaManager;
 	private final ShopManager shopManager;
 	private final MultiplayerManager multiplayerManager;
 	private final DungeonManager dungeonManager;
+	private final ExpeditionManager expeditionManager;
 	private final CommandMap commandMap;
 	private final TaskMap taskMap;
 	private final DropManager dropManager;
-	
+
+	private final CombineManger combineManger;
+	private final TowerScheduleManager towerScheduleManager;
+
+	private static InetSocketAddress getAdapterInetSocketAddress(){
+		InetSocketAddress inetSocketAddress = null;
+		if(GAME_INFO.bindAddress.equals("")){
+			inetSocketAddress=new InetSocketAddress(GAME_INFO.bindPort);
+		}else{
+			inetSocketAddress=new InetSocketAddress(
+					GAME_INFO.bindAddress,
+					GAME_INFO.bindPort
+			);
+		}
+		return inetSocketAddress;
+	}
+	public GameServer() {
+		this(getAdapterInetSocketAddress());
+	}
 	public GameServer(InetSocketAddress address) {
 		super(address);
 
 		this.setServerInitializer(new GameServerInitializer(this));
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
+		this.questHandler = new ServerQuestHandler();
 		this.players = new ConcurrentHashMap<>();
 		this.worlds = Collections.synchronizedSet(new HashSet<>());
 		
@@ -63,26 +92,19 @@ public final class GameServer extends KcpServer {
 		this.commandMap = new CommandMap(true);
 		this.taskMap = new TaskMap(true);
 		this.dropManager = new DropManager(this);
-		
-		// Schedule game loop.
-		Timer gameLoop = new Timer();
-		gameLoop.scheduleAtFixedRate(new TimerTask() {
-			@Override
-			public void run() {
-				try {
-					onTick();
-				} catch (Exception e) {
-					Grasscutter.getLogger().error("An error occurred during game update.", e);
-				}
-			}
-		}, new Date(), 1000L);
-		
+		this.expeditionManager = new ExpeditionManager(this);
+		this.combineManger = new CombineManger(this);
+		this.towerScheduleManager = new TowerScheduleManager(this);
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
 	
 	public GameServerPacketHandler getPacketHandler() {
 		return packetHandler;
+	}
+
+	public ServerQuestHandler getQuestHandler() {
+		return questHandler;
 	}
 
 	public Map<Integer, Player> getPlayers() {
@@ -93,8 +115,12 @@ public final class GameServer extends KcpServer {
 		return worlds;
 	}
 
-	public ChatManager getChatManager() {
+	public ChatManagerHandler getChatManager() {
 		return chatManager;
+	}
+	
+	public void setChatManager(ChatManagerHandler chatManager) {
+		this.chatManager = chatManager;
 	}
 
 	public InventoryManager getInventoryManager() {
@@ -120,9 +146,21 @@ public final class GameServer extends KcpServer {
 	public DungeonManager getDungeonManager() {
 		return dungeonManager;
 	}
-	
+
+	public ExpeditionManager getExpeditionManager() {
+		return expeditionManager;
+	}
+
 	public CommandMap getCommandMap() {
 		return this.commandMap;
+	}
+
+	public CombineManger getCombineManger(){
+		return this.combineManger;
+	}
+
+	public TowerScheduleManager getTowerScheduleManager() {
+		return towerScheduleManager;
 	}
 
 	public TaskMap getTaskMap() {
@@ -152,10 +190,15 @@ public final class GameServer extends KcpServer {
 		
 		// Check database if character isnt here
 		if (player == null) {
-			player = DatabaseHelper.getPlayerById(id);
+			player = DatabaseHelper.getPlayerByUid(id);
 		}
 		
 		return player;
+	}
+	
+	public Player getPlayerByAccountId(String accountId) {
+		Optional<Player> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getId().equals(accountId)).findFirst();
+		return playerOpt.orElse(null);
 	}
 	
 	public SocialDetail.Builder getSocialDetailByUid(int id) {
@@ -206,9 +249,27 @@ public final class GameServer extends KcpServer {
 	}
 
 	@Override
+	public synchronized void start() {
+		// Schedule game loop.
+		Timer gameLoop = new Timer();
+		gameLoop.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				try {
+					onTick();
+				} catch (Exception e) {
+					Grasscutter.getLogger().error(translate("messages.game.game_update_error"), e);
+				}
+			}
+		}, new Date(), 1000L);
+
+		super.start();
+	}
+
+	@Override
 	public void onStartFinish() {
-		Grasscutter.getLogger().info("Grasscutter is FREE software. If you have paid for this, you may have been scammed. Homepage: https://github.com/Grasscutters/Grasscutter");
-		Grasscutter.getLogger().info("Game Server started on port " + address.getPort());
+		Grasscutter.getLogger().info(translate("messages.status.free_software"));
+		Grasscutter.getLogger().info(translate("messages.game.port_bind", Integer.toString(address.getPort())));
 		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
 	

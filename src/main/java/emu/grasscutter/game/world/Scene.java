@@ -1,13 +1,10 @@
 package emu.grasscutter.game.world;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
-import emu.grasscutter.data.def.DungeonData;
-import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.data.def.SceneData;
-import emu.grasscutter.data.def.WorldLevelData;
+import emu.grasscutter.data.def.*;
 import emu.grasscutter.game.dungeons.DungeonChallenge;
+import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamInfo;
@@ -20,11 +17,9 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.SceneScriptManager;
-import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneBlock;
-import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
-import emu.grasscutter.scripts.data.ScriptArgs;
+import emu.grasscutter.server.packet.send.PacketAvatarSkillInfoNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
@@ -48,12 +43,14 @@ public class Scene {
 	private final Set<SceneBlock> loadedBlocks;
 	private boolean dontDestroyWhenEmpty;
 	
+	private int autoCloseTime;
 	private int time;
 	private ClimateType climate;
 	private int weather;
 	
 	private SceneScriptManager scriptManager;
 	private DungeonChallenge challenge;
+	private List<DungeonSettleListener> dungeonSettleListeners;
 	private DungeonData dungeonData;
 	private int prevScene; // Id of the previous scene
 	private int prevScenePoint;
@@ -105,7 +102,27 @@ public class Scene {
 	public GameEntity getEntityById(int id) {
 		return this.entities.get(id);
 	}
-	
+
+	public GameEntity getEntityByConfigId(int configId) {
+		return this.entities.values().stream()
+				.filter(x -> x.getConfigId() == configId)
+				.findFirst()
+				.orElse(null);
+	}
+	/**
+	 * @return the autoCloseTime
+	 */
+	public int getAutoCloseTime() {
+		return autoCloseTime;
+	}
+
+	/**
+	 * @param autoCloseTime the autoCloseTime to set
+	 */
+	public void setAutoCloseTime(int autoCloseTime) {
+		this.autoCloseTime = autoCloseTime;
+	}
+
 	public int getTime() {
 		return time;
 	}
@@ -175,7 +192,7 @@ public class Scene {
 	}
 
 	public void setDungeonData(DungeonData dungeonData) {
-		if (this.dungeonData != null || this.getSceneType() != SceneType.SCENE_DUNGEON || dungeonData.getSceneId() != this.getId()) {
+		if (dungeonData == null || this.dungeonData != null || this.getSceneType() != SceneType.SCENE_DUNGEON || dungeonData.getSceneId() != this.getId()) {
 			return;
 		}
 		this.dungeonData = dungeonData;
@@ -187,6 +204,17 @@ public class Scene {
 
 	public void setChallenge(DungeonChallenge challenge) {
 		this.challenge = challenge;
+	}
+
+	public void addDungeonSettleObserver(DungeonSettleListener dungeonSettleListener){
+		if(dungeonSettleListeners == null){
+			dungeonSettleListeners = new ArrayList<>();
+		}
+		dungeonSettleListeners.add(dungeonSettleListener);
+	}
+
+	public List<DungeonSettleListener> getDungeonSettleObservers() {
+		return dungeonSettleListeners;
 	}
 
 	public boolean isInScene(GameEntity entity) {
@@ -271,6 +299,13 @@ public class Scene {
 		}
 		
 		this.addEntity(player.getTeamManager().getCurrentAvatarEntity());
+		
+		// Notify the client of any extra skill charges
+		for (EntityAvatar entity : player.getTeamManager().getActiveTeam()) {
+			if (entity.getAvatar().getSkillExtraChargeMap().size() > 0) {
+				player.sendPacket(new PacketAvatarSkillInfoNotify(entity.getAvatar()));
+			}
+		}
 	}
 	
 	private void addEntityDirectly(GameEntity entity) {
@@ -347,30 +382,23 @@ public class Scene {
 		}
 		
 		// Sanity check
-		if (target.getFightProperties() == null) {
-			return;
-		}
-		
-		// Lose hp
-		target.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -result.getDamage());
-		
-		// Check if dead
-		boolean isDead = false;
-		if (target.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
-			target.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0f);
-			isDead = true;
-		}
-		
-		// Packets
-		this.broadcastPacket(new PacketEntityFightPropUpdateNotify(target, FightProperty.FIGHT_PROP_CUR_HP));
-		
-		// Check if dead
-		if (isDead) {
-			this.killEntity(target, result.getAttackerId());
-		}
+		target.damage(result.getDamage(), result.getAttackerId());
 	}
 	
 	public void killEntity(GameEntity target, int attackerId) {
+		GameEntity attacker = getEntityById(attackerId);
+
+		//Check codex
+		if (attacker instanceof EntityClientGadget) {
+			var clientGadgetOwner = getEntityById(((EntityClientGadget) attacker).getOwnerEntityId());
+			if(clientGadgetOwner instanceof EntityAvatar) {
+				((EntityClientGadget) attacker).getOwner().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+			}
+		}
+		else if (attacker instanceof EntityAvatar) {
+			((EntityAvatar) attacker).getPlayer().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+		}
+
 		// Packet
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
 
@@ -512,8 +540,22 @@ public class Scene {
 		}
 		
 		// Spawn gadgets AFTER triggers are added
+		// TODO
 		for (SceneGroup group : block.groups) {
-			this.getScriptManager().spawnGadgetsInGroup(group);
+			if (group.init_config == null) {
+				continue;
+			}
+			
+			int suite = group.init_config.suite;
+			
+			if (suite == 0) {
+				continue;
+			}
+			
+			do {
+				this.getScriptManager().spawnGadgetsInGroup(group, suite);
+				suite++;
+			} while (suite < group.init_config.end_suite);
 		}
 	}
 	

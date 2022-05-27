@@ -4,7 +4,6 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.shop.ShopInfo;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.shop.ShopManager;
@@ -20,7 +19,6 @@ import emu.grasscutter.server.packet.send.PacketStoreItemChangeNotify;
 import emu.grasscutter.utils.Utils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,39 +52,16 @@ public class HandlerBuyGoodsReq extends PacketHandler {
                 session.getPlayer().save();
             }
 
-            if (bought + buyGoodsReq.getBoughtNum() > sg.getBuyLimit()) {
+            if ((bought + buyGoodsReq.getBoughtNum() > sg.getBuyLimit()) && sg.getBuyLimit() != 0) {
                 return;
             }
 
-            if (sg.getScoin() > 0 && session.getPlayer().getMora() < buyGoodsReq.getBoughtNum() * sg.getScoin()) {
+            List<ItemParamData> costs = new ArrayList<ItemParamData>(sg.getCostItemList());  // Can this even be null?
+            costs.add(new ItemParamData(202, sg.getScoin()));
+            costs.add(new ItemParamData(201, sg.getHcoin()));
+            costs.add(new ItemParamData(203, sg.getMcoin()));
+            if (!session.getPlayer().getInventory().payItems(costs.toArray(new ItemParamData[0]), buyGoodsReq.getBoughtNum())) {
                 return;
-            }
-            if (sg.getHcoin() > 0 && session.getPlayer().getPrimogems() < buyGoodsReq.getBoughtNum() * sg.getHcoin()) {
-                return;
-            }
-            if (sg.getMcoin() > 0 && session.getPlayer().getCrystals() < buyGoodsReq.getBoughtNum() * sg.getMcoin()) {
-                return;
-            }
-
-            HashMap<GameItem, Integer> itemsCache = new HashMap<>();
-            if (sg.getCostItemList() != null) {
-                for (ItemParamData p : sg.getCostItemList()) {
-                    Optional<GameItem> invItem = session.getPlayer().getInventory().getItems().values().stream().filter(x -> x.getItemId() == p.getId()).findFirst();
-                    if (invItem.isEmpty() || invItem.get().getCount() < p.getCount())
-                        return;
-                    itemsCache.put(invItem.get(), p.getCount() * buyGoodsReq.getBoughtNum());
-                }
-            }
-
-            session.getPlayer().setMora(session.getPlayer().getMora() - buyGoodsReq.getBoughtNum() * sg.getScoin());
-            session.getPlayer().setPrimogems(session.getPlayer().getPrimogems() - buyGoodsReq.getBoughtNum() * sg.getHcoin());
-            session.getPlayer().setCrystals(session.getPlayer().getCrystals() - buyGoodsReq.getBoughtNum() * sg.getMcoin());
-
-            if (!itemsCache.isEmpty()) {
-                for (GameItem gi : itemsCache.keySet()) {
-                    session.getPlayer().getInventory().removeItem(gi, itemsCache.get(gi));
-                }
-                itemsCache.clear();
             }
 
             session.getPlayer().addShopLimit(sg.getGoodsId(), buyGoodsReq.getBoughtNum(), ShopManager.getShopNextRefreshTime(sg));

@@ -7,17 +7,18 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "stop", usage = "stop",
-        description = "Stops the server", permission = "server.stop")
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "stop", usage = "stop", permission = "server.stop", description = "commands.stop.description", targetRequirement = Command.TargetRequirement.NONE)
 public final class StopCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        CommandHandler.sendMessage(null, "Server shutting down...");
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        CommandHandler.sendMessage(null, translate("commands.stop.success"));
         for (Player p : Grasscutter.getGameServer().getPlayers().values()) {
-            CommandHandler.sendMessage(p, "Server shutting down...");
+            CommandHandler.sendMessage(p, translate(p, "commands.stop.success"));
         }
 
-        System.exit(1);
+        System.exit(1000);
     }
 }

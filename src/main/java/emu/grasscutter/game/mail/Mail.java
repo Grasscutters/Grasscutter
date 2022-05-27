@@ -1,15 +1,22 @@
 package emu.grasscutter.game.mail;
 
 import dev.morphia.annotations.Entity;
+import dev.morphia.annotations.Id;
+import dev.morphia.annotations.Indexed;
+import dev.morphia.annotations.Transient;
+import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-public class Mail {
+import org.bson.types.ObjectId;
 
+@Entity(value = "mail", useDiscriminator = false)
+public class Mail {
+	@Id private ObjectId id;
+	@Indexed private int ownerUid;
     public MailContent mailContent;
     public List<MailItem> itemList;
     public long sendTime;
@@ -18,6 +25,7 @@ public class Mail {
     public boolean isRead;
     public boolean isAttachmentGot;
     public int stateValue;
+    @Transient private boolean shouldDelete;
 
     public Mail() {
         this(new MailContent(), new ArrayList<MailItem>(), (int) Instant.now().getEpochSecond() + 604800); // TODO: add expire time to send mail command
@@ -42,7 +50,19 @@ public class Mail {
         this.stateValue = state; // Different mailboxes, 1 = Default, 3 = Gift-box.
     }
 
-    @Entity
+    public ObjectId getId() {
+		return id;
+	}
+
+	public int getOwnerUid() {
+		return ownerUid;
+	}
+
+	public void setOwnerUid(int ownerUid) {
+		this.ownerUid = ownerUid;
+	}
+
+	@Entity
     public static class MailContent {
         public String title;
         public String content;
@@ -93,4 +113,12 @@ public class Mail {
             this.itemLevel = itemLevel;
         }
     }
+
+	public void save() {
+		if (this.expireTime * 1000 < System.currentTimeMillis()) {
+			DatabaseHelper.deleteMail(this);
+		} else {
+			DatabaseHelper.saveMail(this);
+		}
+	}
 }

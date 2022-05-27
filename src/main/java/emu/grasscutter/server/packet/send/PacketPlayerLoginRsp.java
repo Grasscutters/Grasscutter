@@ -2,17 +2,22 @@ package emu.grasscutter.server.packet.send;
 
 import com.google.protobuf.ByteString;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerLoginRspOuterClass.PlayerLoginRsp;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass;
 import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.server.http.dispatch.RegionHandler;
+import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.FileUtils;
 
 import java.io.File;
-import java.net.URL;
 import java.util.Base64;
+import java.util.Objects;
+
+import static emu.grasscutter.Configuration.*;
 
 public class PacketPlayerLoginRsp extends BasePacket {
 
@@ -25,27 +30,17 @@ public class PacketPlayerLoginRsp extends BasePacket {
 
 		RegionInfo info;
 
-		if(Grasscutter.getConfig().RunMode.equalsIgnoreCase("GAME_ONLY")) {
+		if (SERVER.runMode == ServerRunMode.GAME_ONLY) {
 			if (regionCache == null) {
 				try {
-					File file = new File(Grasscutter.getConfig().DATA_FOLDER + "query_cur_region.txt");
-					String query_cur_region = "";
-					if (file.exists()) {
-						query_cur_region = new String(FileUtils.read(file));
-					} else {
-						Grasscutter.getLogger().warn("query_cur_region not found! Using default current region.");
-					}
-
-					byte[] decodedCurRegion = Base64.getDecoder().decode(query_cur_region);
-					QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp regionQuery = QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp.parseFrom(decodedCurRegion);
-
-					RegionInfo serverRegion = regionQuery.getRegionInfo().toBuilder()
-							.setGateserverIp((Grasscutter.getConfig().getGameServerOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getGameServerOptions().Ip : Grasscutter.getConfig().getGameServerOptions().PublicIp))
-							.setGateserverPort(Grasscutter.getConfig().getGameServerOptions().PublicPort != 0 ? Grasscutter.getConfig().getGameServerOptions().PublicPort : Grasscutter.getConfig().getGameServerOptions().Port)
-							.setSecretKey(ByteString.copyFrom(FileUtils.read(Grasscutter.getConfig().KEY_FOLDER + "dispatchSeed.bin")))
+					// todo: we might want to push custom config to client
+					RegionInfo serverRegion = RegionInfo.newBuilder()
+							.setGateserverIp(lr(GAME_INFO.accessAddress, GAME_INFO.bindAddress))
+							.setGateserverPort(lr(GAME_INFO.accessPort, GAME_INFO.bindPort))
+							.setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
 							.build();
 
-					regionCache = regionQuery.toBuilder().setRegionInfo(serverRegion).build();
+					regionCache = QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp.newBuilder().setRegionInfo(serverRegion).build();
 				} catch (Exception e) {
 					Grasscutter.getLogger().error("Error while initializing region cache!", e);
 				}
@@ -53,7 +48,7 @@ public class PacketPlayerLoginRsp extends BasePacket {
 
 			info = regionCache.getRegionInfo();
 		} else {
-			info = Grasscutter.getDispatchServer().getCurrRegion().getRegionInfo();
+			info = Objects.requireNonNull(RegionHandler.getCurrentRegion()).getRegionInfo();
 		}
 
 		PlayerLoginRsp p = PlayerLoginRsp.newBuilder()

@@ -1,37 +1,50 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "coop", usage = "coop",
-        description = "Forces someone to join the world of others", permission = "server.coop")
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "coop", usage = "coop [host UID]", permission = "server.coop", permissionTargeted = "server.coop.others", description = "commands.coop.description")
 public final class CoopCommand implements CommandHandler {
+
     @Override
-    public void execute(Player sender, List<String> args) {
-        if (args.size() < 2) {
-            CommandHandler.sendMessage(sender, "Usage: coop <playerId> <target playerId>");
-            return;
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        Player host = sender;
+        switch (args.size()) {
+            case 0:  // Summon target to self
+                CommandHandler.sendMessage(sender, translate(sender, "commands.coop.usage"));
+                if (sender == null) // Console doesn't have a self to summon to
+                    return;
+                break;
+            case 1:  // Summon target to argument
+                try {
+                    int hostId = Integer.parseInt(args.get(0));
+                    host = Grasscutter.getGameServer().getPlayerByUid(hostId);
+                    if (host == null) {
+                        CommandHandler.sendMessage(sender, translate(sender, "commands.execution.player_offline_error"));
+                        return;
+                    }
+                    break;
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.execution.uid_error"));
+                    return;
+                }
+            default:
+                CommandHandler.sendMessage(sender, translate(sender, "commands.coop.usage"));
+                return;
         }
         
-        try {
-            int tid = Integer.parseInt(args.get(0));
-            int hostId = Integer.parseInt(args.get(1));
-            Player host = sender.getServer().getPlayerByUid(hostId);
-            Player want = sender.getServer().getPlayerByUid(tid);
-            if (host == null || want == null) {
-                CommandHandler.sendMessage(sender, "Player is offline.");
-                return;
-            }
-            if (want.isInMultiplayer()) {
-                sender.getServer().getMultiplayerManager().leaveCoop(want);
-            }
-            sender.getServer().getMultiplayerManager().applyEnterMp(want, hostId);
-            sender.getServer().getMultiplayerManager().applyEnterMpReply(host, tid, true);
-        } catch (Exception e) {
-            CommandHandler.sendMessage(sender, "Player id is not valid.");
+        // There's no target==host check but this just places them in multiplayer in their own world which seems fine.
+        if (targetPlayer.isInMultiplayer()) {
+            targetPlayer.getServer().getMultiplayerManager().leaveCoop(targetPlayer);
         }
+        host.getServer().getMultiplayerManager().applyEnterMp(targetPlayer, host.getUid());
+        targetPlayer.getServer().getMultiplayerManager().applyEnterMpReply(host, targetPlayer.getUid(), true);
+        CommandHandler.sendMessage(sender, translate(sender, "commands.coop.success", targetPlayer.getNickname(), host.getNickname()));
     }
 }

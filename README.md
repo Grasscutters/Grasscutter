@@ -67,7 +67,7 @@ EN | [中文](README_zh-CN.md)
     
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
 
-**you can also use `start.cmd` to start servers and proxy daemons automatically**
+**you can also use `start.cmd` to start servers and proxy daemons automatically, but you have to set up JAVA_HOME enviroment**
 
 ### Building
 
@@ -98,58 +98,11 @@ chmod +x gradlew
 
 You can find the output jar in the root of the project folder.
 
-## Commands
-
-You might want to use this command (`java -jar grasscutter.jar -handbook`) in a cmd that is in the grasscutter folder. It will create a handbook file (GM Handbook.txt) where you can find the item IDs for stuff you want
-
-There is a dummy user named "Server" in every player's friends list that you can message to use commands. Commands also work in other chat rooms, such as private/team chats. to run commands ingame, you need to add prefix `/` or `!` such as `/pos`
-
-| Commands       | Usage                                             | Permission node           | Availability | description                                                  | Alias                                           |
-| -------------- | ------------------------------------------------- | ------------------------- | ------------ | ------------------------------------------------------------ | ----------------------------------------------- |
-| account        | account <create\|delete> \<username> [UID]         |                           | Server only  | Creates an account with the specified username and the in-game UID for that account. The UID will be auto generated if not set. |                                                 |
-| broadcast      | broadcast \<message>                               | server.broadcast          | Both side    | Sends a message to all the players.                          | b                                               |
-| coop           | coop \<playerId> \<target playerId>                 | server.coop               | Both side    | Forces someone to join the world of others.                  |                                                 |                                           
-| changescene    | changescene \<scene id>                            | player.changescene        | Client only  | Switch scenes by scene ID.                                   | scene                                           |
-| clearartifacts | clearartifacts                                    | player.clearartifacts     | Client only  | Deletes all unequipped and unlocked level 0 artifacts, including 5-star rarity ones from your inventory. | clearart                                        |
-| clearweapons   | clearweapons                                      | player.clearweapons       | Client only  | Deletes all unequipped and unlocked weapons, including 5-star rarity ones from your inventory. | clearwpns                                       |
-| drop           | drop <itemID\|itemName> [amount]                  | server.drop               | Client only  | Drops an item around you.                                    | `d` `dropitem`                                  |
-| give           | give [player] <itemId\|itemName> [amount] [level] [finement] | player.give               | Both side    | Gives item(s) to you or the specified player. (finement option only weapon.)               | `g` `item` `giveitem`                           |
-| givechar       | givechar \<uid> \<avatarId>                 | player.givechar           | Both side    | Gives the player a specified character.                      | givec                                           |
-| giveart        | giveart [player] \<artifactId> \<mainPropId> [\<appendPropId>[,\<times>]]... [level] | player.giveart            | Both side    | Gives the player a specified artifact.                      | gart                                           |
-| giveall       | giveall [uid] [amount]             | player.giveall      | Both side    | Gives all items.      | givea                                         |
-| godmode        | godmode [uid]                                     | player.godmode            | Client only  | Prevents you from taking damage.                             |                                                 |
-| heal           | heal                                              | player.heal               | Client only  | Heals all characters in your current team.                    | h                                               |
-| help           | help [command]                                    |                           | Both side    | Sends the help message or shows information about a specified command. |                                                 |
-| kick           | kick \<player>                                     | server.kick               | Both side    | Kicks the specified player from the server. (WIP)            | k                                               |
-| killall        | killall [playerUid] [sceneId]                     | server.killall            | Both side    | Kills all entities in the current scene or specified scene of the corresponding player. |                                                 |
-| list           | list                                              |                           | Both side    | Lists online players.                                         |                                                 |
-| permission     | permission <add\|remove> \<username> \<permission>  | *                         | Both side    | Grants or removes a permission for a user.                   |                                                 |
-| position       | position                                          |                           | Client only  | Sends your current coordinates.                                             | pos                                             |
-| reload         | reload                                            | server.reload             | Both side    | Reloads the server config                                         |                                                 |
-| resetconst     | resetconst [all]                                  | player.resetconstellation | Client only  | Resets the constellation level on your currently selected character, will need to relog after using the command to see any changes. | resetconstellation                              |
-| restart        |                                                   |                           | Both side    | Restarts the current session                                 |                                                 |
-| say            | say \<player> \<message>                            | server.sendmessage        | Both side    | Sends a message to a player as the server                    | `sendservmsg` `sendservermessage` `sendmessage` |
-| setfetterlevel | setfetterlevel \<level>                            | player.setfetterlevel     | Client only  | Sets the friendship level for your currently selected character     | setfetterlvl                                    |
-| setstats       | setstats \<stat> \<value>                           | player.setstats           | Client only  | Sets a stat for your currently selected character         | stats                                           |
-| setworldlevel  | setworldlevel \<level>                             | player.setworldlevel      | Client only  | Sets your world level (Relog to see proper effects)          | setworldlvl                                     |
-| spawn          | spanw <entityID\|entityName> [level] [amount]     | server.spawn              | Client only  | Spawns an entity near you                                    |                                                 |
-| stop           | stop                                              | server.stop               | Both side    | Stops the server                                             |                                                 |
-| talent         | talent \<talentID> \<value>                         | player.settalent          | Client only  | Sets talent level for your currently selected character           |                                                 |
-| teleport       | teleport [@playerUid] \<x> \<y> \<z> [sceneId]                             | player.teleport           | Both side  | Change the player's position.                                | tp                                              |
-| tpall          |                                                   | player.tpall              | Client only  | Teleports all players in your world to your position         |                                                 |
-| weather        | weather \<weatherID> \<climateID>                   | player.weather            | Client only  | Changes the weather                                          | w                                               |
-
-### Bonus
-
-When you want to teleport to somewhere, use the ingame marking function on Map, click Confirm. You will see your
-character falling from a very high destination, exact location that you marked.
-
-You can also specify a set Y coordinate by renaming the map marker.
-
+### Commands have moved to the [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands)!
+ 
 # Quick Troubleshooting
 
 * If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)
 * My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*, if using
   Fiddler make sure it running on another port except 8888
-
-* Startup sequence: Mongodb > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Game
+* Startup sequence: MongoDB > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Game

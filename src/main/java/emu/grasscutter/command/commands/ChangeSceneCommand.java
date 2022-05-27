@@ -6,37 +6,34 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "changescene", usage = "changescene <scene id>",
-        description = "Changes your scene", aliases = {"scene"}, permission = "player.changescene")
-public final class ChangeSceneCommand implements CommandHandler {
-    @Override
-    public void execute(Player sender, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
-            return;
-        }
+import static emu.grasscutter.utils.Language.translate;
 
-        if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, "Usage: changescene <scene id>");
+@Command(label = "changescene", usage = "changescene <scene id>", aliases = {"scene"}, permission = "player.changescene", permissionTargeted = "player.changescene.others", description = "commands.changescene.description")
+public final class ChangeSceneCommand implements CommandHandler {
+
+    @Override
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (args.size() != 1) {
+            CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.usage"));
             return;
         }
 
         try {
             int sceneId = Integer.parseInt(args.get(0));
-            
-            if (sceneId == sender.getSceneId()) {
-            	CommandHandler.sendMessage(sender, "You are already in that scene");
+            if (sceneId == targetPlayer.getSceneId()) {
+            	CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.already_in_scene"));
             	return;
             }
             
-            boolean result = sender.getWorld().transferPlayerToScene(sender, sceneId, sender.getPos());
-            CommandHandler.sendMessage(sender, "Changed to scene " + sceneId);
-            
+            boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, targetPlayer.getPos());
             if (!result) {
-                CommandHandler.sendMessage(sender, "Scene does not exist");
+                CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.exists_error"));
+                return;
             }
+
+            CommandHandler.sendMessage(sender, translate(sender, "commands.changescene.success", Integer.toString(sceneId)));
         } catch (Exception e) {
-            CommandHandler.sendMessage(sender, "Usage: changescene <scene id>");
+            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
         }
     }
 }

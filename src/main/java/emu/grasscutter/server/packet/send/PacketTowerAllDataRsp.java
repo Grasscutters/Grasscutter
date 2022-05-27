@@ -1,28 +1,64 @@
 package emu.grasscutter.server.packet.send;
 
+import emu.grasscutter.game.tower.TowerManager;
+import emu.grasscutter.game.tower.TowerScheduleManager;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp;
 import emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord;
 import emu.grasscutter.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord;
+import emu.grasscutter.net.proto.TowerLevelRecordOuterClass;
+import emu.grasscutter.utils.DateHelper;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class PacketTowerAllDataRsp extends BasePacket {
 	
-	public PacketTowerAllDataRsp() {
+	public PacketTowerAllDataRsp(TowerScheduleManager towerScheduleManager, TowerManager towerManager) {
 		super(PacketOpcodes.TowerAllDataRsp);
-		
+
+		var recordList = towerManager.getRecordMap().values().stream()
+				.map(rec -> TowerFloorRecord.newBuilder()
+						.setFloorId(rec.getFloorId())
+						.setFloorStarRewardProgress(rec.getFloorStarRewardProgress())
+						.putAllPassedLevelMap(rec.getPassedLevelMap())
+						.addAllPassedLevelRecordList(buildFromPassedLevelMap(rec.getPassedLevelMap()))
+						.build()
+				)
+				.toList();
+
+		var openTimeMap = towerScheduleManager.getScheduleFloors().stream()
+				.collect(Collectors.toMap(x -> x,
+						y -> DateHelper.getUnixTime(towerScheduleManager.getTowerScheduleConfig()
+						.getScheduleStartTime()))
+				);
+
 		TowerAllDataRsp proto = TowerAllDataRsp.newBuilder()
-				.setTowerScheduleId(29)
-				.addTowerFloorRecordList(TowerFloorRecord.newBuilder().setFloorId(1001))
+				.setTowerScheduleId(towerScheduleManager.getCurrentTowerScheduleData().getScheduleId())
+				.addAllTowerFloorRecordList(recordList)
 				.setCurLevelRecord(TowerCurLevelRecord.newBuilder().setIsEmpty(true))
-				.setNextScheduleChangeTime(Integer.MAX_VALUE)
-				.putFloorOpenTimeMap(1024, 1630486800)
-				.putFloorOpenTimeMap(1025, 1630486800)
-				.putFloorOpenTimeMap(1026, 1630486800)
-				.putFloorOpenTimeMap(1027, 1630486800)
-				.setScheduleStartTime(1630486800)
+				.setScheduleStartTime(DateHelper.getUnixTime(towerScheduleManager.getTowerScheduleConfig()
+						.getScheduleStartTime()))
+				.setNextScheduleChangeTime(DateHelper.getUnixTime(towerScheduleManager.getTowerScheduleConfig()
+						.getNextScheduleChangeTime()))
+				.putAllFloorOpenTimeMap(openTimeMap)
+				.setIsFinishedEntranceFloor(towerManager.canEnterScheduleFloor())
 				.build();
 		
 		this.setData(proto);
 	}
+
+	private List<TowerLevelRecordOuterClass.TowerLevelRecord> buildFromPassedLevelMap(Map<Integer, Integer> map){
+		return map.entrySet().stream()
+				.map(item -> TowerLevelRecordOuterClass.TowerLevelRecord.newBuilder()
+						.setLevelId(item.getKey())
+						.addAllSatisfiedCondList(IntStream.range(1, item.getValue() + 1).boxed().toList())
+						.build())
+				.toList();
+
+	}
+
 }

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message AvatarSkillMaxChargeCountNotify {
+	uint64 avatar_guid = 1;
+	uint32 skill_id = 2;
+	uint32 max_charge_count = 3;
+}

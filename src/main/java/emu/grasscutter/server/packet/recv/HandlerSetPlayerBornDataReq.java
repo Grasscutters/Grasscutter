@@ -19,6 +19,8 @@ import emu.grasscutter.server.game.GameSession.SessionState;
 
 import java.util.Arrays;
 
+import static emu.grasscutter.Configuration.*;
+
 @Opcodes(PacketOpcodes.SetPlayerBornDataReq)
 public class HandlerSetPlayerBornDataReq extends PacketHandler {
 	
@@ -37,62 +39,45 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			return;
 		}
 		
-		String nickname = req.getNickName();
-		if (nickname == null) {
-			nickname = "Traveler";
-		}
-		
-		// Call creation event.
-		PlayerCreationEvent event = new PlayerCreationEvent(session, Player.class); event.call();
-		// Create player instance from event.
-		Player player = event.getPlayerClass().getDeclaredConstructor(GameSession.class).newInstance(session);
-		player.setNickname(nickname);
-		
-		try {
-			// Save to db
-			DatabaseHelper.createPlayer(player, session.getAccount().getPlayerUid());
-			
-			// Create avatar
-			if (player.getAvatars().getAvatarCount() == 0) {
-				Avatar mainCharacter = new Avatar(avatarId);
-				mainCharacter.setSkillDepot(GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
-				player.addAvatar(mainCharacter);
-				player.setMainCharacterId(avatarId);
-				player.setHeadImage(avatarId);
-				player.getTeamManager().getCurrentSinglePlayerTeamInfo().getAvatars().add(mainCharacter.getAvatarId());
-				player.save(); // TODO save player team in different object
-			}
-			
-			// Save account
-			session.getAccount().setPlayerId(player.getUid());
-			session.getAccount().save();
-			
-			// Set character
-			session.setPlayer(player);
-			
-			// Login done
-			session.getPlayer().onLogin();
-			session.setState(SessionState.ACTIVE);
-			
-			// Born resp packet
-			session.send(new BasePacket(PacketOpcodes.SetPlayerBornDataRsp));
-
-			// Default mail
-			char d = 'G';
-			char e = 'r';
-			char z = 'a';
-			char u = 'c';
-			char s = 't';
-			MailBuilder mailBuilder = new MailBuilder(player.getUid(), new Mail());
-			mailBuilder.mail.mailContent.title = String.format("W%sl%som%s to %s%s%s%s%s%s%s%s%s%s%s!", DatabaseHelper.AWJVN, u, DatabaseHelper.AWJVN, d, e, z, GameData.EJWOA, GameData.EJWOA, u, PacketOpcodes.ONLWE, s, s, DatabaseHelper.AWJVN, e);
-			mailBuilder.mail.mailContent.sender = String.format("L%swnmow%s%s @ Gi%sH%sb", z, DatabaseHelper.AWJVN, e, s, PacketOpcodes.ONLWE);
-			mailBuilder.mail.mailContent.content = Grasscutter.getConfig().GameServer.WelcomeMailContent;
-			mailBuilder.mail.itemList.addAll(Arrays.asList(Grasscutter.getConfig().GameServer.WelcomeMailItems));
-			mailBuilder.mail.importance = 1;
-			player.sendMail(mailBuilder.mail);
-		} catch (Exception e) {
-			Grasscutter.getLogger().error("Error creating player object: ", e);
+		// Make sure resources folder is set
+		if (!GameData.getAvatarDataMap().containsKey(avatarId)) {
+			Grasscutter.getLogger().error("No avatar data found! Please check your ExcelBinOutput folder.");
 			session.close();
+			return;
 		}
+		
+		// Get player object
+		Player player = session.getPlayer();		
+
+		// Create avatar
+		if (player.getAvatars().getAvatarCount() == 0) {
+			Avatar mainCharacter = new Avatar(avatarId);
+			mainCharacter.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
+			// Manually handle adding to team
+			player.addAvatar(mainCharacter, false);
+			player.setMainCharacterId(avatarId);
+			player.setHeadImage(avatarId);
+			player.getTeamManager().getCurrentSinglePlayerTeamInfo().getAvatars().add(mainCharacter.getAvatarId());
+			player.save(); // TODO save player team in different object
+		} else {
+			return;
+		}
+		
+		// Login done
+		session.getPlayer().onLogin();
+		
+		// Born resp packet
+		session.send(new BasePacket(PacketOpcodes.SetPlayerBornDataRsp));
+
+		// Default mail
+		var welcomeMail = GAME_INFO.joinOptions.welcomeMail;
+		MailBuilder mailBuilder = new MailBuilder(player.getUid(), new Mail());
+		mailBuilder.mail.mailContent.title = welcomeMail.title;
+		mailBuilder.mail.mailContent.sender = welcomeMail.sender;
+		// Please credit Grasscutter if changing something here. We don't condone commercial use of the project.
+		mailBuilder.mail.mailContent.content = welcomeMail.content + "\n<type=\"browser\" text=\"GitHub\" href=\"https://github.com/Melledy/Grasscutter\"/>";
+		mailBuilder.mail.itemList.addAll(Arrays.asList(welcomeMail.items));
+		mailBuilder.mail.importance = 1;
+		player.sendMail(mailBuilder.mail);
 	}
 }

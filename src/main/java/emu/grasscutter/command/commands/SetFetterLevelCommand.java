@@ -9,30 +9,26 @@ import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
 
+import static emu.grasscutter.utils.Language.translate;
+
 @Command(label = "setfetterlevel", usage = "setfetterlevel <level>",
-        description = "Sets your fetter level for your current active character",
-        aliases = {"setfetterlvl", "setfriendship"}, permission = "player.setfetterlevel")
+        aliases = {"setfetterlvl", "setfriendship"}, permission = "player.setfetterlevel", permissionTargeted = "player.setfetterlevel.others", description = "commands.setFetterLevel.description")
 public final class SetFetterLevelCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
-            return;
-        }
-
-        if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, "Usage: setfetterlevel <level>");
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (args.size() != 1) {
+            CommandHandler.sendMessage(sender, translate(sender, "commands.setFetterLevel.usage"));
             return;
         }
 
         try {
             int fetterLevel = Integer.parseInt(args.get(0));
             if (fetterLevel < 0 || fetterLevel > 10) {
-                CommandHandler.sendMessage(sender, "Fetter level must be between 0 and 10.");
+                CommandHandler.sendMessage(sender, translate(sender, "commands.setFetterLevel.range_error"));
                 return;
             }
-            Avatar avatar = sender.getTeamManager().getCurrentAvatarEntity().getAvatar();
+            Avatar avatar = targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar();
 
             avatar.setFetterLevel(fetterLevel);
             if (fetterLevel != 10) {
@@ -40,10 +36,10 @@ public final class SetFetterLevelCommand implements CommandHandler {
             }
 		    avatar.save();
 		
-		    sender.sendPacket(new PacketAvatarFetterDataNotify(avatar));
-            CommandHandler.sendMessage(sender, "Fetter level set to " + fetterLevel);
+		    targetPlayer.sendPacket(new PacketAvatarFetterDataNotify(avatar));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.setFetterLevel.success", fetterLevel));
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "Invalid fetter level.");
+            CommandHandler.sendMessage(sender, translate(sender, "commands.setFetterLevel.level_error"));
         }
     }
     

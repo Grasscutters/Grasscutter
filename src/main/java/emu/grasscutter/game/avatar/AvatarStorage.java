@@ -5,6 +5,7 @@ import java.util.List;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.AvatarData;
+import emu.grasscutter.data.def.AvatarSkillDepotData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.GameItem;
@@ -139,16 +140,18 @@ public class AvatarStorage implements Iterable<Avatar> {
 			}
 			
 			AvatarData avatarData = GameData.getAvatarDataMap().get(avatar.getAvatarId());
-			if (avatarData == null) {
+			AvatarSkillDepotData skillDepot = GameData.getAvatarSkillDepotDataMap().get(avatar.getSkillDepotId());
+			if (avatarData == null || skillDepot == null) {
 				continue;
 			}
 			
 			// Set ownerships
 			avatar.setAvatarData(avatarData);
+			avatar.setSkillDepot(skillDepot);
 			avatar.setOwner(getPlayer());
 			
 			// Force recalc of const boosted skills
-			avatar.recalcProudSkillBonusMap();
+			avatar.recalcConstellations();
 			
 			// Add to avatar storage
 			this.avatars.put(avatar.getAvatarId(), avatar);

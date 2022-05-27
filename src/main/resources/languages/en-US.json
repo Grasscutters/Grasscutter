@@ -1,0 +1,418 @@
+{
+  "messages": {
+    "game": {
+      "port_bind": "Game Server started on port %s",
+      "connect": "Client connected from %s",
+      "disconnect": "Client disconnected from %s",
+      "game_update_error": "An error occurred during game update.",
+      "command_error": "Command error:"
+    },
+    "dispatch": {
+      "port_bind": "[Dispatch] Dispatch server started on port %s",
+      "request": "[Dispatch] Client %s %s request: %s",
+      "keystore": {
+        "general_error": "[Dispatch] Error while loading keystore!",
+        "password_error": "[Dispatch] Unable to load keystore. Trying default keystore password...",
+        "no_keystore_error": "[Dispatch] No SSL cert found! Falling back to HTTP server.",
+        "default_password": "[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to 123456 in config.json."
+      },
+      "authentication": {
+        "default_unable_to_verify": "[Authentication] Something called the verifyUser method which is unavailable in the default authentication handler."
+      },
+      "no_commands_error": "Commands are not supported in dispatch only mode.",
+      "unhandled_request_error": "[Dispatch] Potential unhandled %s request: %s.",
+      "account": {
+        "login_attempt": "[Dispatch] Client %s is trying to log in.",
+        "login_success": "[Dispatch] Client %s logged in as %s.",
+        "login_max_player_limit": "[Dispatch] Client %s failed to log in: The number of online players has reached the limit",
+        "login_token_attempt": "[Dispatch] Client %s is trying to log in via token.",
+        "login_token_error": "[Dispatch] Client %s failed to log in via token.",
+        "login_token_success": "[Dispatch] Client %s logged in via token as %s.",
+        "combo_token_success": "[Dispatch] Client %s succeed to exchange combo token.",
+        "combo_token_error": "[Dispatch] Client %s failed to exchange combo token.",
+        "account_login_create_success": "[Dispatch] Client %s failed to log in: Account %s created.",
+        "account_login_create_error": "[Dispatch] Client %s failed to log in: Account create failed.",
+        "account_login_exist_error": "[Dispatch] Client %s failed to log in: Account not found.",
+        "account_cache_error": "Game account cache information error.",
+        "session_key_error": "Wrong session key.",
+        "username_error": "Username not found.",
+        "username_create_error": "Username not found, create failed.",
+        "server_max_player_limit": "The number of online players has reached the limit"
+      },
+      "router_error": "[Dispatch] Unable to attach router."
+    },
+    "status": {
+      "free_software": "Grasscutter is FREE software. If you have paid for this, you may have been scammed. Homepage: https://github.com/Grasscutters/Grasscutter",
+      "starting": "Starting Grasscutter...",
+      "shutdown": "Shutting down...",
+      "done": "Done! For help, type \"help\"",
+      "error": "An error occurred.",
+      "welcome": "Welcome to Grasscutter!",
+      "run_mode_error": "Invalid server run mode: %s.",
+      "run_mode_help": "Server run mode must be 'HYBRID', 'DISPATCH_ONLY', or 'GAME_ONLY'. Unable to start Grasscutter...",
+      "create_resources": "Creating resources folder...",
+      "resources_error": "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.",
+      "version": "Grasscutter version: %s-%s"
+    }
+  },
+  "commands": {
+    "generic": {
+      "not_specified": "No command specified.",
+      "unknown_command": "Unknown command: %s",
+      "permission_error": "You do not have permission to run this command.",
+      "console_execute_error": "This command can only be run from the console.",
+      "player_execute_error": "Run this command in-game.",
+      "command_exist_error": "No command found.",
+      "no_description_specified": "No description specified.",
+      "invalid": {
+        "amount": "Invalid amount.",
+        "artifactId": "Invalid artifact ID.",
+        "avatarId": "Invalid avatar ID.",
+        "avatarLevel": "Invalid avatarLevel.",
+        "entityId": "Invalid entity ID.",
+        "itemId": "Invalid item ID.",
+        "itemLevel": "Invalid itemLevel.",
+        "itemRefinement": "Invalid itemRefinement.",
+        "playerId": "Invalid player ID.",
+        "uid": "Invalid UID."
+      }
+    },
+    "execution": {
+      "uid_error": "Invalid UID.",
+      "player_exist_error": "Player not found.",
+      "player_offline_error": "Player is not online.",
+      "item_id_error": "Invalid item ID.",
+      "item_player_exist_error": "Invalid item or UID.",
+      "entity_id_error": "Invalid entity ID.",
+      "player_exist_offline_error": "Player not found or is not online.",
+      "argument_error": "Invalid arguments.",
+      "clear_target": "Target cleared.",
+      "set_target": "Subsequent commands will target @%s by default.",
+      "set_target_online": "@%s is online. Some commands may require an offline target.",
+      "set_target_offline": "@%s is offline. Some commands may require an online target.",
+      "need_target": "This command requires a target UID. Add a <@UID> argument or set a persistent target with /target @UID.",
+      "need_target_online": "This command requires an online target UID, but current target is offline. Add a different <@UID> argument or set a persistent target with /target @UID.",
+      "need_target_offline": "This command requires an offline target UID, but current target is online. Add a different <@UID> argument or set a persistent target with /target @UID."
+    },
+    "status": {
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "help": "Help", 
+      "success": "Success"
+    },
+    "account": {
+      "modify": "Modify user accounts",
+      "invalid": "Invalid UID.",
+      "exists": "Account already exists.",
+      "create": "Account created with UID %s.",
+      "delete": "Account deleted.",
+      "no_account": "Account not found.",
+      "command_usage": "Usage: account <create|delete> <username> [UID]",
+      "description": "Modify user accounts"
+    },
+    "broadcast": {
+      "command_usage": "Usage: broadcast <message>",
+      "message_sent": "Message sent.",
+      "description": "Sends a message to all the players"
+    },
+    "changescene": {
+      "usage": "Usage: changescene <sceneID>",
+      "already_in_scene": "You are already in that scene.",
+      "success": "Changed to scene %s.",
+      "exists_error": "The specified scene does not exist.",
+      "description": "Changes your scene"
+    },
+    "clear": {
+      "command_usage": "Usage: clear <all|wp|art|mat>",
+      "weapons": "Cleared weapons for %s.",
+      "artifacts": "Cleared artifacts for %s.",
+      "materials": "Cleared materials for %s.",
+      "furniture": "Cleared furniture for %s.",
+      "displays": "Cleared displays for %s.",
+      "virtuals": "Cleared virtuals for %s.",
+      "everything": "Cleared everything for %s.",
+      "description": "Deletes unequipped unlocked items, including yellow rarity ones from your inventory"
+    },
+    "coop": {
+      "usage": "Usage: coop <playerID> <target playerID>",
+      "success": "Summoned %s to %s's world.",
+      "description": "Forces someone to join the world of others"
+    },
+    "enter_dungeon": {
+      "usage": "Usage: enterdungeon <dungeon ID>",
+      "changed": "Changed to dungeon %s.",
+      "not_found_error": "Dungeon does not exist.",
+      "in_dungeon_error": "You are already in that dungeon.",
+      "description": "Enter a dungeon"
+    },
+    "giveAll": {
+      "usage": "Usage: giveall [player] [amount]",
+      "started": "Receiving all items...",
+      "success": "Successfully gave all items to %s.",
+      "invalid_amount_or_playerId": "Invalid amount or player ID.",
+      "description": "Gives all items"
+    },
+    "giveArtifact": {
+      "usage": "Usage: giveart|gart [player] <artifactID> <mainPropID> [<appendPropID>[,<times>]]... [level]",
+      "id_error": "Invalid artifact ID.",
+      "success": "Given %s to %s.",
+      "description": "Gives the player a specified artifact"
+    },
+    "giveChar": {
+      "usage": "Usage: givechar <player> <itemID|itemName> [level]",
+      "given": "Given %s with level %s to %s.",
+      "invalid_avatar_id": "Invalid avatar ID.",
+      "invalid_avatar_level": "Invalid avatar level.",
+      "invalid_avatar_or_player_id": "Invalid avatar or player ID.",
+      "description": "Gives the player a specified character"
+    },
+    "give": {
+      "usage": "Usage: give <player> <itemID|itemName> [amount] [level]",
+      "refinement_only_applicable_weapons": "Refinement is only applicable to weapons.",
+      "refinement_must_between_1_and_5": "Refinement must be between 1 and 5.",
+      "given": "Given %s of %s to %s.",
+      "given_with_level_and_refinement": "Given %s with level %s, refinement %s %s times to %s.",
+      "given_level": "Given %s with level %s %s times to %s.",
+      "description": "Gives an item to you or the specified player"
+    },
+    "godmode": {
+      "success": "Godmode is now %s for %s.",
+      "description": "Prevents you from taking damage. Defaults to toggle."
+    },
+    "nostamina": {
+      "success": "NoStamina is now %s for %s.",
+      "description": "Keep your endurance to the maximum."
+    },
+    "heal": {
+      "success": "All characters have been healed.",
+      "description": "Heal all characters in your current team."
+    },
+    "kick": {
+      "player_kick_player": "Player [%s:%s] has kicked player [%s:%s]",
+      "server_kick_player": "Kicking player [%s:%s]...",
+      "description": "Kicks the specified player from the server (WIP)"
+    },
+    "killall": {
+      "usage": "Usage: killall [playerUID] [sceneID]",
+      "scene_not_found_in_player_world": "Scene not found in player world.",
+      "kill_monsters_in_scene": "Killing %s monsters in scene %s.",
+      "description": "Kill all entities"
+    },
+    "killCharacter": {
+      "usage": "Usage: /killcharacter [playerID]",
+      "success": "Killed %s's current character.",
+      "description": "Kills the players current character"
+    },
+    "language": {
+      "current_language": "Current language is %s.",
+      "language_changed": "Language changed to %s.",
+      "language_not_found": "Currently, the server does not have that language.",
+      "description": "Display or change current language"
+    },
+    "list": {
+      "success": "There are %s player(s) online:",
+      "description": "List online players"
+    },
+    "permission": {
+      "usage": "Usage: permission <add|remove> <username> <permission>",
+      "add": "Permission added.",
+      "has_error": "They already have this permission!",
+      "remove": "Permission removed.",
+      "not_have_error": "They don't have this permission!",
+      "account_error": "The account cannot be found.",
+      "description": "Grants or removes a permission for a user"
+    },
+    "position": {
+      "success": "Coordinates: %s, %s, %s\nScene ID: %s",
+      "description": "Get coordinates"
+    },
+    "quest": {
+      "usage": "quest <add|finish> [quest ID]",
+      "added": "Quest %s added.",
+      "finished": "Finished quest %s.",
+      "not_found": "Quest not found.",
+      "invalid_id": "Invalid quest ID.",
+      "description": "Add or finish quests"
+    },
+    "reload": {
+      "reload_start": "Reloading config.",
+      "reload_done": "Reload complete.",
+      "description": "Reload server config"
+    },
+    "resetConst": {
+      "reset_all": "Reset all avatars' constellations.",
+      "success": "Constellations for %s have been reset. Please relog to see changes.",
+      "description": "Resets the constellation level on your current active character, you will need to relog after using the command to see any changes"
+    },
+    "resetShopLimit": {
+      "usage": "Usage: /resetshop <player ID>",
+      "success": "Reset complete.",
+      "description": "Reset target player's shop refresh time"
+    },
+    "sendMail": {
+      "usage": "Usage: sendmail <userId|all|help> [templateId]",
+      "user_not_exist": "The user with an ID of '%s' does not exist.",
+      "start_composition": "Starting composition of message.\nPlease use '/sendmail <title>' to continue.\nYou can use '/sendmail stop' at any time.",
+      "templates": "Mail templates coming soon implemented...",
+      "invalid_arguments": "Invalid arguments.",
+      "send_cancel": "Message sending cancelled.",
+      "send_done": "Message sent to user %s!",
+      "send_all_done": "Message sent to all users!",
+      "not_composition_end": "Message composition not at final stage.\nPlease use '/sendmail %s' or '/sendmail stop' to cancel",
+      "please_use": "Please use '/sendmail %s'",
+      "set_title": "Message title set as '%s'.\nUse '/sendmail <content>' to continue.",
+      "set_contents": "Message contents set as '%s'.\nUse '/sendmail <sender>' to continue.",
+      "set_message_sender": "Message sender set as '%s'.\nUse '/sendmail <itemID|itemName|finish> [amount] [level]' to continue.",
+      "send": "Attached %s of %s (level %s) to the message.\nContinue adding more items or use '/sendmail finish' to send the message.",
+      "invalid_arguments_please_use": "Invalid arguments.\n Please use '/sendmail %s'",
+      "title": "<title>",
+      "message": "<message>",
+      "sender": "<sender>",
+      "arguments": "<itemID|itemName|finish> [amount] [level]",
+      "error": "ERROR: Invalid construction stage %s. Check console for stacktrace.",
+      "description": "Sends mail to the specified user. The usage of this command changes based on its composition state"
+    },
+    "sendMessage": {
+      "usage": "Usage: sendmessage <player> <message>",
+      "success": "Message sent.",
+      "description": "Sends a message to a player as the server"
+    },
+    "setFetterLevel": {
+      "usage": "Usage: setfetterlevel <level>",
+      "range_error": "Fetter level must be between 0 and 10.",
+      "success": "Fetter level set to %s.",
+      "level_error": "Invalid fetter level.",
+      "description": "Sets your fetter level for your current active character"
+    },
+    "setStats": {
+      "usage_console": "Usage: setstats|stats @<UID> <stat> <value>",
+      "usage_ingame": "Usage: setstats|stats [@UID] <stat> <value>",
+      "help_message": "\n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
+      "value_error": "Invalid stat value.",
+      "uid_error": "Invalid UID.",
+      "player_error": "Player not found or offline.",
+      "set_self": "%s set to %s.",
+      "set_for_uid": "%s for %s set to %s.",
+      "set_max_hp": "MAX HP set to %s.",
+      "description": "Sets fight property for your current active character"
+    },
+    "setWorldLevel": {
+      "usage": "Usage: setworldlevel <level>",
+      "value_error": "World level must be between 0-8.",
+      "success": "World level set to %s.",
+      "invalid_world_level": "Invalid world level.",
+      "description": "Sets your world level (Relog to see proper effects)"
+    },
+    "spawn": {
+      "usage": "Usage: spawn <entityID> [amount] [level(monster only)]",
+      "success": "Spawned %s of %s.",
+      "description": "Spawns an entity near you"
+    },
+    "stop": {
+      "success": "Server shutting down...",
+      "description": "Stops the server"
+    },
+    "talent": {
+      "usage_1": "To set talent level: /talent set <talentID> <value>",
+      "usage_2": "Another way to set talent level: /talent <n or e or q> <value>",
+      "usage_3": "To get talent ID: /talent getid",
+      "lower_16": "Invalid talent level. Level should be lower than 16.",
+      "set_id": "Set talent to %s.",
+      "set_atk": "Set talent Normal ATK to %s.",
+      "set_e": "Set talent E to %s.",
+      "set_q": "Set talent Q to %s.",
+      "invalid_skill_id": "Invalid skill ID.",
+      "set_this": "Set this talent to %s.",
+      "invalid_level": "Invalid talent level.",
+      "normal_attack_id": "Normal Attack ID %s.",
+      "e_skill_id": "E skill ID %s.",
+      "q_skill_id": "Q skill ID %s.",
+      "description": "Set talent level for your current active character"
+    },
+    "team": {
+      "usage": "Usage: team <add|remove|set> [avatarID,...] [index|first|last|index-index,...]",
+      "invalid_usage": "Invalid usage.",
+      "add_usage": "Usage (add): team add <avatarID,...> [index]",
+      "invalid_index": "Index is invalid.",
+      "add_too_much": "The server only allows you to have at most %d avatar(s) in your team.",
+      "failed_to_add_avatar": "Failed to add avatar ID %s.",
+      "remove_usage": "Usage (remove): team remove <index|first|last|index-index,...>",
+      "failed_to_parse_index": "Failed to parse index: %s",
+      "remove_too_much": "You can't remove all your avatars.",
+      "ignore_index": "Ignored index(es): %s",
+      "set_usage": "Usage (set): team set <index> <avatarID>",
+      "index_out_of_range": "The index you specified is out of range.",
+      "failed_parse_avatar_id": "Failed to parse avatar ID: %s",
+      "avatar_already_in_team": "Avatar is already in team.",
+      "avatar_not_found": "Avatar %d not found.",
+      "description": "Modify your team manually."
+    },
+    "teleportAll": {
+      "success": "Summoned all players to your location.",
+      "error": "You can only use this command in MP mode.",
+      "description": "Teleports all players in your world to your position"
+    },
+    "teleport": {
+      "usage_server": "Usage: /tp @<player ID> <x> <y> <z> [scene ID]",
+      "usage": "Usage: /tp [@<player ID>] <x> <y> <z> [scene ID]",
+      "specify_player_id": "You must specify a player ID.",
+      "invalid_position": "Invalid position.",
+      "success": "Teleported %s to %s, %s, %s in scene %s.",
+      "description": "Change the player's position"
+    },
+    "weather": {
+      "usage": "Usage: weather <weatherID> [climateID]",
+      "success": "Changed weather to %s with climate %s.",
+      "invalid_id": "Invalid ID.",
+      "description": "Changes the weather"
+    },
+    "drop": {
+      "command_usage": "Usage: drop <itemID|itemName> [amount]",
+      "success": "Dropped %s of %s.",
+      "description": "Drops an item near you"
+    },
+    "help": {
+      "usage": "Usage: ",
+      "aliases": "Aliases: ",
+      "available_commands": "Available commands: ",
+      "description": "Sends the help message or shows information about a specified command"
+    },
+    "restart": {
+      "description": "Restarts the current session"
+    },
+    "unlocktower": {
+      "success": "Unlock done.",
+      "description": "Unlock all levels of tower"
+    }
+  },
+  "gacha": {
+    "details": {
+      "title": "Banner Details",
+      "available_five_stars": "Available 5-star Items",
+      "available_four_stars": "Available 4-star Items",
+      "available_three_stars": "Available 3-star Items"
+    }
+  },
+  "documentation": {
+    "handbook": {
+      "title": "GM Handbook",
+      "title_commands": "Commands",
+      "title_avatars": "Avatars",
+      "title_items": "Items",
+      "title_scenes": "Scenes",
+      "title_monsters": "Monsters",
+      "header_id": "Id",
+      "header_command": "Command",
+      "header_description": "Description",
+      "header_avatar": "Avatar",
+      "header_item": "Item",
+      "header_scene": "Scene",
+      "header_monster": "Monster"
+    },
+    "index": {
+      "title": "Documentation",
+      "handbook": "GM Handbook",
+      "gacha_mapping": "Gacha mapping JSON"
+    }
+  }
+}

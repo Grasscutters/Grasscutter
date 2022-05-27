@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+import "CodexType.proto";
+
+message CodexDataUpdateNotify {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 4205;
+	}
+
+	CodexType type = 1;
+	uint32 id = 2;
+	uint32 weapon_max_promote_level = 3;
+}

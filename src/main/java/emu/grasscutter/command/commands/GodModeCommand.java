@@ -1,45 +1,35 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-@Command(label = "godmode", usage = "godmode [playerId]",
-        description = "Prevents you from taking damage", permission = "player.godmode")
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "godmode", usage = "godmode [on|off|toggle]", permission = "player.godmode", permissionTargeted = "player.godmode.others", description = "commands.godmode.description")
 public final class GodModeCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
-            return; // TODO: toggle player's godmode statue from console or other players
-        }
-
-        int target;
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        boolean enabled = !targetPlayer.inGodmode();
         if (args.size() == 1) {
-            try {
-                target = Integer.parseInt(args.get(0));
-                if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
-                    target = sender.getUid();
-                }
-            } catch (NumberFormatException e) {
-                CommandHandler.sendMessage(sender, "Invalid player id.");
-                return;
+            switch (args.get(0).toLowerCase()) {
+                case "on":
+                    enabled = true;
+                    break;
+                case "off":
+                    enabled = false;
+                    break;
+                case "toggle":
+                    break;  // Already toggled
+                default:
+                    break;
             }
-        } else {
-            target = sender.getUid();
-        }
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
-            return;
         }
 
-        targetPlayer.setGodmode(!targetPlayer.inGodmode());
-        sender.dropMessage("Godmode is now " + (targetPlayer.inGodmode() ? "enabled" : "disabled") +
-                "for " + targetPlayer.getNickname() + " .");
+        targetPlayer.setGodmode(enabled);
+        CommandHandler.sendMessage(sender, translate(sender, "commands.godmode.success", (enabled ? translate(sender, "commands.status.enabled") : translate(sender, "commands.status.disabled")), targetPlayer.getNickname()));
     }
 }

@@ -11,20 +11,23 @@ import emu.grasscutter.net.proto.GetPlayerFriendListRspOuterClass.GetPlayerFrien
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.PlatformTypeOuterClass;
 
+import static emu.grasscutter.Configuration.*;
+
 public class PacketGetPlayerFriendListRsp extends BasePacket {
 	
 	public PacketGetPlayerFriendListRsp(Player player) {
 		super(PacketOpcodes.GetPlayerFriendListRsp);
 		
+		var serverAccount = GAME_INFO.serverAccount;
 		FriendBrief serverFriend = FriendBrief.newBuilder()
 				.setUid(GameConstants.SERVER_CONSOLE_UID)
-				.setNickname(GameConstants.SERVER_AVATAR_NAME)
-				.setLevel(1)
-				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(GameConstants.SERVER_AVATAR_ID))
-				.setWorldLevel(0)
-				.setSignature("")
+				.setNickname(serverAccount.nickName)
+				.setLevel(serverAccount.adventureRank)
+				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(serverAccount.avatarId))
+				.setWorldLevel(serverAccount.worldLevel)
+				.setSignature(serverAccount.signature)
 				.setLastActiveTime((int) (System.currentTimeMillis() / 1000f))
-				.setNameCardId(210001)
+				.setNameCardId(serverAccount.nameCardId)
 				.setOnlineState(FriendOnlineState.FRIEND_ONLINE)
 				.setParam(1)
 				.setIsGameSource(true)
@@ -36,10 +39,12 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
 		for (Friendship friendship : player.getFriendsList().getFriends().values()) {
 			proto.addFriendList(friendship.toProto());
 		}
+		
 		for (Friendship friendship : player.getFriendsList().getPendingFriends().values()) {
 			if (friendship.getAskerId() == player.getUid()) {
 				continue;
 			}
+			
 			proto.addAskFriendList(friendship.toProto());
 		}
 		
