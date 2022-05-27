@@ -13,12 +13,12 @@ public final class MoonCard extends TaskHandler {
 
     @Override
     public void onEnable() {
-        Grasscutter.getLogger().debug("[Task] MoonCard task enabled.");
+        Grasscutter.getLogger().info("[Task] MoonCard task enabled.");
     }
 
     @Override
     public void onDisable() {
-        Grasscutter.getLogger().debug("[Task] MoonCard task disabled.");
+        Grasscutter.getLogger().info("[Task] MoonCard task disabled.");
     }
 
     @Override

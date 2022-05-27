@@ -1,13 +1,13 @@
 package emu.grasscutter.game.gacha;
 
+import static emu.grasscutter.Configuration.HTTP_ENCRYPTION;
+import static emu.grasscutter.Configuration.HTTP_INFO;
+import static emu.grasscutter.Configuration.lr;
+
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.net.proto.GachaInfoOuterClass.GachaInfo;
 import emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfo;
 import emu.grasscutter.utils.Utils;
-
-import static emu.grasscutter.Configuration.*;
-
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.common.ItemParamData;
 
 public class GachaBanner {
 	private int gachaType;
@@ -86,6 +86,10 @@ public class GachaBanner {
 
 	public int getEndTime() {
 		return endTime;
+	}
+
+	public void setEndTime(int endTime) {
+	    this.endTime = endTime;
 	}
 
 	public int getSortId() {
