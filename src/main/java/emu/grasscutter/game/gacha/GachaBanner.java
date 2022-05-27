@@ -61,12 +61,24 @@ public class GachaBanner {
 		return prefabPath;
 	}
 
+	public void setPrefabPath(String prefabPath) {
+		this.prefabPath = prefabPath;
+	}
+
 	public String getPreviewPrefabPath() {
 		return previewPrefabPath;
 	}
 
+	public void setPreviewPrefabPath(String previewPrefabPath) {
+		this.previewPrefabPath = previewPrefabPath;
+	}
+
 	public String getTitlePath() {
 		return titlePath;
+	}
+
+	public void setTitlePath(String titlePath) {
+		this.titlePath = titlePath;
 	}
 
 	public ItemParamData getCost(int numRolls) {

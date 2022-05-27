@@ -14,6 +14,7 @@ import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Random;
@@ -58,12 +59,20 @@ public class GachaManager {
 
 	private static final int starglitterId = 221;
 	private static final int stardustId = 222;
+
+	// java rules https://stackoverflow.com/a/44987694/3095372,
+	// TODO: load file
+	// https://github.com/jie65535/GrasscutterCommandGenerator/blob/main/Source/GrasscutterTools/Resources/en-us/GachaBennerPrefab.txt
+	private String[] GachaBennerPrefab = { "007", "008", "009", "011", "012", "013", "015", "016", "017", "018",
+			"019", "020", "021", "022", "023", "024", "027", "028", "031", "032", "033", "036", "037", "040", "041",
+			"045", "048", "049", "052", "053", "061", "065", "071", "076" };
+
 	private int[] fallbackItems4Pool2Default = { 11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407,
 			14401, 14402, 14403, 14409, 15401, 15402, 15403, 15405 };
 	private int[] fallbackItems5Pool2Default = { 11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502 };
 
-	List<GachaBanner> event_random = new ArrayList<>();
-	int even_id_last = 4;
+	List<GachaBanner> event_random_char = new ArrayList<>();
+	List<GachaBanner> event_random_wp = new ArrayList<>();
 
 	public GachaManager(GameServer server) {
 		this.server = server;
@@ -97,18 +106,40 @@ public class GachaManager {
 							.getType());
 
 			if (bannersnow.size() > 0) {
+
 				Grasscutter.getLogger().info("Banners " + bannersnow.size() + " successfully loaded.");
+				
 				// Get All banner event
-				int idkey = 1;
 				for (GachaBanner banner : bannersnow) {
+
+					var tesbanner = banner.getPrefabPath();
+					// var tesrealid = tesbanner.split("_")[1].replace("A", "");
+					/*
+					 * if (!Arrays.asList(GachaBennerPrefab).contains(tesrealid)) {
+					 * Grasscutter.getLogger().
+					 * error("BAD Banners, Next time try to use it properly, let's try random stuff "
+					 * + banner.getScheduleId() + " | " + tesbanner);
+					 * Random rand = new Random();
+					 * String GachaBennerPrefab_ID =
+					 * GachaBennerPrefab[rand.nextInt(GachaBennerPrefab.length)];
+					 * banner.setPrefabPath("GachaShowPanel_A"+GachaBennerPrefab_ID);
+					 * banner.setPreviewPrefabPath("UI_Tab_GachaShowPanel_A"+GachaBennerPrefab_ID);
+					 * banner.setTitlePath("UI_GACHA_SHOW_PANEL_A"+GachaBennerPrefab_ID+"_TITLE");
+					 * }
+					 */
+
 					if (banner.getBannerType() == BannerType.EVENT) {
-						event_random.add(banner);
+						event_random_char.add(banner);
 						continue;
 					}
-					Grasscutter.getLogger().info("Banners " + idkey + " | " + banner.getTitlePath());
-					even_id_last = banner.getScheduleId();
-					getGachaBanners().put(even_id_last, banner);
-					idkey++;
+					if (banner.getBannerType() == BannerType.WEAPON) {
+						event_random_wp.add(banner);
+						continue;
+					}
+
+					Grasscutter.getLogger().info("Banners " + banner.getScheduleId() + " | " + tesbanner);
+					getGachaBanners().put(banner.getScheduleId(), banner);
+
 				}
 				this.cachedProto = createProto();
 			} else {
@@ -116,32 +147,63 @@ public class GachaManager {
 			}
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
+	int even_id_last_char = 0;
+	int even_id_last_wp = 0;
+
 	public synchronized void update(long unixTimestamp) {
 
-		if (event_random.size() > 0) {
+		if (getGachaBanners().size() > 0) {
 
-			// remove last event
-			getGachaBanners().remove(even_id_last);
+			if (event_random_char.size() > 0) {
 
-			// get random event
-			Random rand = new Random();
-			GachaBanner eventnow = event_random.get(rand.nextInt(event_random.size()));
+				if (event_random_wp.size() > 0) {
 
-			// set event time
-			Grasscutter.getLogger().info("Banners Event Now " + eventnow.getTitlePath() + " successfully loaded. Next " + unixTimestamp);
-			eventnow.setEndTime(Math.toIntExact(unixTimestamp));
+					// remove last event
+					if (even_id_last_char != 0) {
+						getGachaBanners().remove(even_id_last_char);
+					}
+					if (even_id_last_wp != 0) {
+						getGachaBanners().remove(even_id_last_wp);
+					}
 
-			// add event to last
-			even_id_last = eventnow.getScheduleId();
-			getGachaBanners().put(even_id_last, eventnow);
+					// get random event
+					Random rand = new Random();
+					GachaBanner eventnow_char = event_random_char.get(rand.nextInt(event_random_char.size()));
+					GachaBanner eventnow_wp = event_random_wp.get(rand.nextInt(event_random_wp.size()));
 
-			// update Proto;
-			this.cachedProto = createProto();
+					// set event time
+					eventnow_char.setEndTime(Math.toIntExact(unixTimestamp));
+					eventnow_wp.setEndTime(Math.toIntExact(unixTimestamp));
+
+					even_id_last_char = eventnow_char.getScheduleId();
+					even_id_last_wp = eventnow_wp.getScheduleId();
+
+					// TODO: SEND INFO
+					Grasscutter.getLogger()
+							.info("Banners Event Now (" + even_id_last_char + ") " + eventnow_char.getTitlePath()
+									+ " successfully loaded. Next " + unixTimestamp);
+					Grasscutter.getLogger()
+							.info("Banners Weapons Now (" + even_id_last_wp + " ) " + eventnow_wp.getTitlePath()
+									+ " successfully loaded. Next " + unixTimestamp);
+
+					// add event to last
+					getGachaBanners().put(even_id_last_char, eventnow_char);
+					getGachaBanners().put(even_id_last_wp, eventnow_wp);
+
+					// update Proto;
+					this.cachedProto = createProto();
+				}else{
+					Grasscutter.getLogger().error("Weapon Event Not available");
+				}
+			}else{
+				Grasscutter.getLogger().error("Character Event Not available");
+			}
+		}else{
+			Grasscutter.getLogger().error("No banners available");
 		}
 	}
 
