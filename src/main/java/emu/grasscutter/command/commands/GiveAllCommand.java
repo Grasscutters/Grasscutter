@@ -84,14 +84,7 @@ public final class GiveAllCommand implements CommandHandler {
           GameItem item = new GameItem(itemdata);
           // Artifact
           if(itemdata.getItemType() == ItemType.ITEM_RELIQUARY){
-            if(itemdata.getRankLevel() == 5){
-              item.setLevel(itemdata.getMaxLevel());
-              //item.setLocked(true);
-              //item.setTotalExp(totalExp);
-            }else{
-              continue;
-            }
-            tmp=limitaft;
+            continue;
           }else{
            // Set Mx
            if(itemdata.getStackLimit() != 0){

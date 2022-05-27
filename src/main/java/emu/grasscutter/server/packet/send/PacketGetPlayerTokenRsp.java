@@ -10,16 +10,16 @@ import emu.grasscutter.utils.Crypto;
 
 public class PacketGetPlayerTokenRsp extends BasePacket {
 
-	public PacketGetPlayerTokenRsp(GameSession session, boolean doesPlayerExist) {
+	public PacketGetPlayerTokenRsp(GameSession session) {
 		super(PacketOpcodes.GetPlayerTokenRsp, true);
 		
 		this.setUseDispatchKey(true);
 		
 		GetPlayerTokenRsp p = GetPlayerTokenRsp.newBuilder()
-				.setUid(session.getAccount().getPlayerUid())
+				.setUid(session.getPlayer().getUid())
 				.setToken(session.getAccount().getToken())
 				.setAccountType(1)
-				.setIsProficientPlayer(doesPlayerExist) // Not sure where this goes
+				.setIsProficientPlayer(session.getPlayer().getAvatars().getAvatarCount() > 0) // Not sure where this goes
 				.setSecretKeySeed(Crypto.ENCRYPT_SEED)
 				.setSecurityCmdBuffer(ByteString.copyFrom(Crypto.ENCRYPT_SEED_BUFFER))
 				.setPlatformType(3)
