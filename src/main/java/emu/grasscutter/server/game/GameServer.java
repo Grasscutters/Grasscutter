@@ -118,6 +118,7 @@ public final class GameServer extends KcpServer {
 	public ChatManagerHandler getChatManager() {
 		return chatManager;
 	}
+	
 	public void setChatManager(ChatManagerHandler chatManager) {
 		this.chatManager = chatManager;
 	}
@@ -189,10 +190,15 @@ public final class GameServer extends KcpServer {
 		
 		// Check database if character isnt here
 		if (player == null) {
-			player = DatabaseHelper.getPlayerById(id);
+			player = DatabaseHelper.getPlayerByUid(id);
 		}
 		
 		return player;
+	}
+	
+	public Player getPlayerByAccountId(String accountId) {
+		Optional<Player> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getId().equals(accountId)).findFirst();
+		return playerOpt.orElse(null);
 	}
 	
 	public SocialDetail.Builder getSocialDetailByUid(int id) {
