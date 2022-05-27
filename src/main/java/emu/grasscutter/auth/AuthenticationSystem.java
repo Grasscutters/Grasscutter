@@ -131,16 +131,4 @@ public interface AuthenticationSystem {
         return AuthenticationRequest.builder().request(request)
                 .response(response).build();
     }
-
-
-    /**
-     * Generates an authentication request from a {@link Response} object.
-     * @param request The Express request.
-     * @param jsonData The JSON data.
-     * @return An authentication request.
-     */
-    static AuthenticationRequest fromOAuthRequest(Request request, Response response) {
-        return AuthenticationRequest.builder().request(request)
-                .response(response).build();
-    }
 }
