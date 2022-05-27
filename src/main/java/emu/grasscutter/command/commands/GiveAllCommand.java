@@ -13,68 +13,42 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.*;
 
-@Command(label = "giveall", usage = "giveall [player] [amount]",
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "giveall", usage = "giveall [amount]",
         description = "Gives all items", aliases = {"givea"}, permission = "player.giveall", threading = true)
 public final class GiveAllCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        int target, amount = 99999;
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            return;
+        }
+        int amount = 99999;
 
         switch (args.size()) {
-            case 0: // *no args*
-                if (sender == null) {
-                    CommandHandler.sendMessage(null, "This usage can only be run in-game");
-                    return;
-                }
-                target = sender.getUid();
+            case 0:
                 break;
-
-            case 1: // [player]
+            case 1: // [amount]
                 try {
-                    target = Integer.parseInt(args.get(0));
-                    if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
-                        CommandHandler.sendMessage(sender, "Invalid player ID.");
-                        return;
-                    }
-                }catch (NumberFormatException ignored){
-                    CommandHandler.sendMessage(sender, "Invalid player ID.");
-                    return;
-                }
-                break;
-
-            case 2: // [player] [amount]
-                try {
-                    target = Integer.parseInt(args.get(0));
-                    if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
-                        target = sender.getUid();
-                        amount = Integer.parseInt(args.get(0));
-                    } else {
-                        amount = Integer.parseInt(args.get(1));
-                    }
+                    amount = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid amount or player ID.");
+                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.amount"));
                     return;
                 }
                 break;
-
             default: // invalid
-                CommandHandler.sendMessage(null, "Usage: giveall [player] [amount]");
+                CommandHandler.sendMessage(sender, translate("commands.giveAll.usage"));
                 return;
         }
 
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
-            return;
-        }
-
         this.giveAllItems(targetPlayer, amount);
-        CommandHandler.sendMessage(sender, "Giving all items done");
+        CommandHandler.sendMessage(sender, translate("commands.giveAll.success", targetPlayer.getNickname()));
     }
 
     public void giveAllItems(Player player, int amount) {
-        CommandHandler.sendMessage(player, "Giving all items...");
+        CommandHandler.sendMessage(player, translate("commands.giveAll.started"));
 
         for (AvatarData avatarData: GameData.getAvatarDataMap().values()) {
             //Exclude test avatar

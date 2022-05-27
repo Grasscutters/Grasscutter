@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
@@ -20,6 +21,8 @@ import emu.grasscutter.utils.Utils;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
+
+import static emu.grasscutter.utils.Language.translate;
 
 public class GameSession extends KcpChannel {
 	private GameServer server;
@@ -112,21 +115,21 @@ public class GameSession extends KcpChannel {
 	
 	@Override
 	protected void onConnect() {
-		Grasscutter.getLogger().info("Client connected from " + getAddress().getHostString().toLowerCase());
+		Grasscutter.getLogger().info(translate("messages.game.connect", this.getAddress().getHostString().toLowerCase()));
 	}
 
 	@Override
-	protected synchronized void onDisconnect() { // Synchronize so we dont add character at the same time
-		Grasscutter.getLogger().info("Client disconnected from " + getAddress().getHostString().toLowerCase());
+	protected synchronized void onDisconnect() { // Synchronize so we don't add character at the same time.
+		Grasscutter.getLogger().info(translate("messages.game.disconnect", this.getAddress().getHostString().toLowerCase()));
 
 		// Set state so no more packets can be handled
 		this.setState(SessionState.INACTIVE);
 		
 		// Save after disconnecting
 		if (this.isLoggedIn()) {
-			// Save
+			// Call logout event.
 			getPlayer().onLogout();
-			// Remove from gameserver
+			// Remove from server.
 			getServer().getPlayers().remove(getPlayer().getUid());
 		}
 	}
@@ -156,6 +159,12 @@ public class GameSession extends KcpChannel {
     		Grasscutter.getLogger().warn("Tried to send packet with missing cmd id!");
     		return;
     	}
+
+		// DO NOT REMOVE (unless we find a way to validate code before sending to client which I don't think we can)
+		// Stop WindSeedClientNotify from being sent for security purposes.
+		if(PacketOpcodes.BANNED_PACKETS.contains(packet.getOpcode())) {
+			return;
+		}
     	
     	// Header
     	if (packet.shouldBuildHeader()) {
@@ -163,7 +172,7 @@ public class GameSession extends KcpChannel {
     	}
     	
     	// Log
-    	if (Grasscutter.getConfig().DebugMode.equalsIgnoreCase("ALL")) {
+    	if (Grasscutter.getConfig().DebugMode == ServerDebugMode.ALL) {
     		logPacket(packet);
     	}
 		
@@ -230,7 +239,7 @@ public class GameSession extends KcpChannel {
 				}
 				
 				// Log packet
-				if (Grasscutter.getConfig().DebugMode.equalsIgnoreCase("ALL")) {
+				if (Grasscutter.getConfig().DebugMode == ServerDebugMode.ALL) {
 					if (!loopPacket.contains(opcode)) {
 						Grasscutter.getLogger().info("RECV: " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
 						System.out.println(Utils.bytesToHex(payload));

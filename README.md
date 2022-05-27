@@ -100,7 +100,9 @@ You can find the output jar in the root of the project folder.
 
 ## Commands
 
-You might want to use this command (`java -jar grasscutter.jar -handbook`) in a cmd that is in the grasscutter folder. It will create a handbook file (GM Handbook.txt) where you can find the item IDs for stuff you want
+You might want to use this command (`java -jar grasscutter.jar -handbook`) in a cmd that is in the grasscutter folder. It will create a handbook file (GM Handbook.txt) where you can find the item IDs for stuff you want.
+
+You may want to use this command (`java -jar grasscutter.jar -gachamap`) to generate a mapping file for the gacha record subsystem. The file will be generated to `GRASSCUTTER_RESOURCE/gcstatic` folder. Otherwise you may only see number IDs in the gacha record page.
 
 There is a dummy user named "Server" in every player's friends list that you can message to use commands. Commands also work in other chat rooms, such as private/team chats. to run commands ingame, you need to add prefix `/` or `!` such as `/pos`
 
@@ -108,12 +110,12 @@ There is a dummy user named "Server" in every player's friends list that you can
 | -------------- | ------------------------------------------------- | ------------------------- | ------------ | ------------------------------------------------------------ | ----------------------------------------------- |
 | account        | account <create\|delete> \<username> [UID]         |                           | Server only  | Creates an account with the specified username and the in-game UID for that account. The UID will be auto generated if not set. |                                                 |
 | broadcast      | broadcast \<message>                               | server.broadcast          | Both side    | Sends a message to all the players.                          | b                                               |
-| coop           | coop \<playerId> \<target playerId>                 | server.coop               | Both side    | Forces someone to join the world of others.                  |                                                 |                                           
+| coop           | coop \<playerId> \<target playerId>                 | server.coop               | Both side    | Forces someone to join the world of others.                  |                                               |
 | changescene    | changescene \<scene id>                            | player.changescene        | Client only  | Switch scenes by scene ID.                                   | scene                                           |
-| clearartifacts | clearartifacts                                    | player.clearartifacts     | Client only  | Deletes all unequipped and unlocked level 0 artifacts, including 5-star rarity ones from your inventory. | clearart                                        |
-| clearweapons   | clearweapons                                      | player.clearweapons       | Client only  | Deletes all unequipped and unlocked weapons, including 5-star rarity ones from your inventory. | clearwpns                                       |
+| clear          | clear <all\|wp\|art\|mat> [UID]                     | player.clearinv         | Client only  | Deletes all unequipped and unlocked level 0 artifacts(art)/weapons(wp)/material(all) or all, including 5-star rarity ones from your inventory. | clear                                        |
 | drop           | drop <itemID\|itemName> [amount]                  | server.drop               | Client only  | Drops an item around you.                                    | `d` `dropitem`                                  |
-| give           | give [player] <itemId\|itemName> [amount] [level] [finement] | player.give               | Both side    | Gives item(s) to you or the specified player. (finement option only weapon.)               | `g` `item` `giveitem`                           |
+| enterdungeon   | enterdungeon \<dungeon id>                        | player.enterdungeon       | Client only  | Enter a dungeon by dungeon ID                                |                                                 |
+| give           | give [player] <itemId\|itemName> [amount] [level] [finement] | player.give    | Both side    | Gives item(s) to you or the specified player. (finement option only weapon.) | `g` `item` `giveitem`           |
 | givechar       | givechar \<uid> \<avatarId>                 | player.givechar           | Both side    | Gives the player a specified character.                      | givec                                           |
 | giveart        | giveart [player] \<artifactId> \<mainPropId> [\<appendPropId>[,\<times>]]... [level] | player.giveart            | Both side    | Gives the player a specified artifact.                      | gart                                           |
 | giveall       | giveall [uid] [amount]             | player.giveall      | Both side    | Gives all items.      | givea                                         |
@@ -123,7 +125,7 @@ There is a dummy user named "Server" in every player's friends list that you can
 | kick           | kick \<player>                                     | server.kick               | Both side    | Kicks the specified player from the server. (WIP)            | k                                               |
 | killall        | killall [playerUid] [sceneId]                     | server.killall            | Both side    | Kills all entities in the current scene or specified scene of the corresponding player. |                                                 |
 | list           | list                                              |                           | Both side    | Lists online players.                                         |                                                 |
-| permission     | permission <add\|remove> \<username> \<permission>  | *                         | Both side    | Grants or removes a permission for a user.                   |                                                 |
+| permission     | permission <add\|remove> \<UID> \<permission>  | *                         | Both side    | Grants or removes a permission for a user.                   |                                                 |
 | position       | position                                          |                           | Client only  | Sends your current coordinates.                                             | pos                                             |
 | reload         | reload                                            | server.reload             | Both side    | Reloads the server config                                         |                                                 |
 | resetconst     | resetconst [all]                                  | player.resetconstellation | Client only  | Resets the constellation level on your currently selected character, will need to relog after using the command to see any changes. | resetconstellation                              |
@@ -132,7 +134,8 @@ There is a dummy user named "Server" in every player's friends list that you can
 | setfetterlevel | setfetterlevel \<level>                            | player.setfetterlevel     | Client only  | Sets the friendship level for your currently selected character     | setfetterlvl                                    |
 | setstats       | setstats \<stat> \<value>                           | player.setstats           | Client only  | Sets a stat for your currently selected character         | stats                                           |
 | setworldlevel  | setworldlevel \<level>                             | player.setworldlevel      | Client only  | Sets your world level (Relog to see proper effects)          | setworldlvl                                     |
-| spawn          | spanw <entityID\|entityName> [level] [amount]     | server.spawn              | Client only  | Spawns an entity near you                                    |                                                 |
+| sendmail       | sendmail \<userId\|all\|help> \[templateId]       | server.sendmail            | Both side   | Sends mail to the specified user|
+| spawn          | spawn \<entityId> [amount] [level(monster only)]  | server.spawn              | Client only  | Spawns some entities around you                              |                                                 |
 | stop           | stop                                              | server.stop               | Both side    | Stops the server                                             |                                                 |
 | talent         | talent \<talentID> \<value>                         | player.settalent          | Client only  | Sets talent level for your currently selected character           |                                                 |
 | teleport       | teleport [@playerUid] \<x> \<y> \<z> [sceneId]                             | player.teleport           | Both side  | Change the player's position.                                | tp                                              |
@@ -141,15 +144,16 @@ There is a dummy user named "Server" in every player's friends list that you can
 
 ### Bonus
 
-When you want to teleport to somewhere, use the ingame marking function on Map, click Confirm. You will see your
-character falling from a very high destination, exact location that you marked.
-
-You can also specify a set Y coordinate by renaming the map marker.
-
+- Teleporting
+  - When you want to teleport somewhere, use the in-game marking function on the map.
+    - Mark a point on the map using the fish hook marking (the last one.)
+    - (Optional) rename the map marker to a number to override the default Y coordinate (height, default 300.)
+    - Confirm and close the map.
+    - You will see your character falling from a very high destination, exact location that you marked.
+ 
 # Quick Troubleshooting
 
 * If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)
-* My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*, if using
-  Fiddler make sure it running on another port except 8888
+* My client doesn't connect, doesn't login, 4206, etc... - Your proxy daemon setup is most likely *the issue*, if you are using Fiddler, make sure it running on another port other than 8888
 
 * Startup sequence: Mongodb > Grasscutter > Proxy daemon (mitmdump, fiddler, etc.) > Game

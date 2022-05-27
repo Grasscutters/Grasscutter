@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <style>
+            body {
+                background-color: #f0f0f0;
+            }
+            p {
+                font-weight:300;
+            }
+            a,a:hover {
+                text-decoration:none !important;
+                color:#626976;
+            }
+            .content {
+                padding:3rem 0;
+            }
+            .container {
+                color:#626976;
+                position: relative;
+            }
+
+            h2 {
+                font-size:20px;
+            }
+            .custom-table {
+                min-width:900px;
+            }
+            .custom-table thead tr,.custom-table thead th {
+                padding-bottom:30px;
+                color:#000;
+            }
+            .custom-table tbody th,.custom-table tbody td {
+                color:#777;
+                font-weight:400;
+                padding-bottom:20px;
+                padding-top:20px;
+                font-weight:300;
+                border:none;
+            }
+            .yellow {
+                color: rgb(255, 162, 0);
+            }
+            .blue {
+                color: rgb(75, 107, 251);
+            }
+            .purple {
+                color: rgb(242, 40, 242);
+            }
+        </style>
+        <title>Gacha Records</title>
+        <script>
+            // Debug entry
+            // record = [
+            //     {"time": 10000341, "item": 1041}, 
+            //     {"time": 10000342, "item": 1032}, 
+            //     {"time": 10000343, "item": 1035}, 
+            // ];
+            // maxPage = 5;
+
+            // in production environment
+            record = {{REPLACE_RECORD}};
+            maxPage = {{REPLACE_MAXPAGE}};
+
+            // TODO: implement this mapper by yourself
+            // I don't want to put real items' name here to avoid being DMCA'd
+            mappings = {
+                'en-us': {
+                    200: "Standard",
+                    301: "Event Avatar",
+                    302: "Event Weapon",
+                    1041 : ["M0n4", "blue"],
+                    1032 : ["B4nn477", "purple"],
+                    1035 : ["77", "yellow"]
+                },
+                'zh-cn': {
+                        // encoding issues here, maybe we should consider load mappings remotely
+                        // will display as "锟斤铐锟斤铐锟斤铐", lmao
+                    // 200: "常驻", 
+                    // 301: "角色UP-1",
+                    // 302: "武器UP"
+                    200: "Standard",
+                    301: "Event Avatar",
+                    302: "Event Weapon",
+                }
+            };
+        </script>
+        <!-- This file could be generated automatically using `java -jar grasscutter.jar -gachamap` -->
+        <!-- You can also modify the file manually to customize it -->
+        <!-- Otherwise you may onle see number IDs in the gacha record -->
+        <script type="text/javascript" src="/gacha/mappings"></script>
+        <script>
+            mappings['default'] = mappings['en-us']; // make en-us as default/fallback option
+        </script>
+    </head>
+    <body>
+        <div class="content">
+            <div class="container">
+                <h2 class="mb-5">Gacha Records</h2>
+                <table id="container" class="table table-striped custom-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Item</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="navbar">
+                    <a href="" id="prev">&lt;&lt;&lt;</a>
+                    <span id="curpage">1</span>
+                    <a href="" id="next">&gt;&gt;&gt;</a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span>
+                                Template by BecodReyes. All rights reserved.
+                            </span>
+                        </div>
+                        <div class="col-md-6">
+                            <ul style="float:right">
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/Grasscutters/Grasscutter">Github</a>
+                                </li>
+                                <li class="list-inline-item">·</li>
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/Grasscutters/Grasscutter/blob/stable/LICENSE">License</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            var lang = new window.URLSearchParams(window.location.search).get("lang");
+            function itemMapper(itemID) {
+                if (mappings[lang] != null && mappings[lang][itemID] != null) {
+                    var entry = mappings[lang][itemID];
+                    if (entry){
+                        return "<span class='" + entry[1] + "'>" + entry[0] + "</span>";
+                    }
+                } else {
+                    if (mappings['default'][itemID] != null) {
+                        var entry = mappings['default'][itemID];
+                        if (entry){
+                            return "<span class='" + entry[1] + "'>" + entry[0] + "</span>";
+                        }
+                    }
+                }
+                return "<span class='blue'>" + itemID + "</span>";
+            }
+            function dateFormatter(timeStamp) {
+                var date = new Date(timeStamp);
+                if (lang == "en-us" || lang == null) { // MM/DD/YYYY hh:mm:ss.SSS
+                    return  String(date.getMonth()+1).padStart(2, "0") + 
+                        "/"+String(date.getDate()).padStart(2, "0")+
+                        "/"+date.getFullYear()+
+                        " "+String(date.getHours()).padStart(2, "0")+
+                        ":"+String(date.getMinutes()).padStart(2, "0")+
+                        ":"+String(date.getSeconds()).padStart(2, "0")+
+                        "."+String(date.getMilliseconds()).padStart(3, "0");
+                } else if (lang == "zh-cn") { // YYYY/MM/DD hh:mm:ss.SSS
+                    return date.getFullYear()+ 
+                        "/" + String(date.getMonth()+1).padStart(2, "0") + 
+                        "/"+String(date.getDate()).padStart(2, "0")+
+                        " "+String(date.getHours()).padStart(2, "0")+
+                        ":"+String(date.getMinutes()).padStart(2, "0")+
+                        ":"+String(date.getSeconds()).padStart(2, "0")+
+                        "."+String(date.getMilliseconds()).padStart(3, "0");
+                }
+            }
+            (function (){
+                var container = document.getElementById("container");
+                record.forEach(element => {
+                    var e = document.createElement("tr");
+                    
+                    e.innerHTML= "<td>" + dateFormatter(element.time) + "</td><td>" + itemMapper(element.item) + "</td>";
+                    container.appendChild(e);
+                });
+                // setup pagenation buttons
+                var page = parseInt(new window.URLSearchParams(window.location.search).get("p"));
+                if (!page){
+                    page = 0;
+                }
+                document.getElementById("curpage").innerText = page + 1;
+                var href = new URL(window.location);
+                href.searchParams.set("p", page - 1);
+                document.getElementById("prev").href = href.toString();
+                href.searchParams.set("p", page + 1);
+                document.getElementById("next").href = href.toString();
+
+                if (page <= 0) {
+                    document.getElementById("prev").style.display = "none";
+                }
+                if (page >= maxPage - 1) {
+                    document.getElementById("next").style.display = "none";
+                }
+
+                // setup gacha type info
+                var gachaType = new window.URLSearchParams(window.location.search).get("gachaType");
+                var gachaString;
+                if (mappings[lang] != null && mappings[lang][gachaType] != null) {
+                    gachaString = mappings[lang][gachaType];
+                }else{
+                    gachaString = mappings['default'][gachaType];
+                    if (gachaString == null) {
+                        gachaString = gachaType;
+                    }
+                }
+                document.getElementById("gacha-type").innerText = gachaString;
+        })();
+        </script>
+
+    </body>
+</html>

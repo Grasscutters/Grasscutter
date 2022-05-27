@@ -10,58 +10,45 @@ import emu.grasscutter.game.world.Scene;
 
 import java.util.List;
 
-@Command(label = "killall", usage = "killall [playerUid] [sceneId]",
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "killall", usage = "killall [sceneId]",
         description = "Kill all entities", permission = "server.killall")
 public final class KillAllCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        Scene mainScene;
-        Player targetPlayer;
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
+            return;
+        }
 
+        Scene scene = targetPlayer.getScene();
         try {
             switch (args.size()) {
                 case 0: // *No args*
-                    if (sender == null) {
-                        CommandHandler.sendMessage(null, "Usage: killall [playerUid] [sceneId]");
-                        return;
-                    }
-                    mainScene = sender.getScene();
                     break;
-                case 1: // [playerUid]
-                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(Integer.parseInt(args.get(0)));
-                    if (targetPlayer == null) {
-                        CommandHandler.sendMessage(sender, "Player not found or offline.");
-                        return;
-                    }
-                    mainScene = targetPlayer.getScene();
-                    break;
-                case 2: // [playerUid] [sceneId]
-                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(Integer.parseInt(args.get(0)));
-                    if (targetPlayer == null) {
-                        CommandHandler.sendMessage(sender, "Player not found or offline.");
-                        return;
-                    }
-                    Scene scene = sender.getWorld().getSceneById(Integer.parseInt(args.get(1)));
-                    if (scene == null) {
-                        CommandHandler.sendMessage(sender, "Scene not found in player world");
-                        return;
-                    }
-                    mainScene = scene;
+                case 1: // [sceneId]
+                    scene = targetPlayer.getWorld().getSceneById(Integer.parseInt(args.get(0)));
                     break;
                 default:
-                    CommandHandler.sendMessage(sender, "Usage: killall [playerUid] [sceneId]");
+                    CommandHandler.sendMessage(sender, translate("commands.kill.usage"));
                     return;
             }
-
-            // Separate into list to avoid concurrency issue
-            List<GameEntity> toKill = mainScene.getEntities().values().stream()
-                    .filter(entity -> entity instanceof EntityMonster)
-                    .toList();
-            toKill.stream().forEach(entity -> mainScene.killEntity(entity, 0));
-            CommandHandler.sendMessage(sender, "Killing " + toKill.size() + " monsters in scene " + mainScene.getId());
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, "Invalid arguments.");
+            CommandHandler.sendMessage(sender, translate("commands.execution.argument_error"));
         }
+        if (scene == null) {
+            CommandHandler.sendMessage(sender, translate("commands.kill.scene_not_found_in_player_world"));
+            return;
+        }
+
+        // Separate into list to avoid concurrency issue
+        final Scene sceneF = scene;
+        List<GameEntity> toKill = sceneF.getEntities().values().stream()
+                .filter(entity -> entity instanceof EntityMonster)
+                .toList();
+        toKill.forEach(entity -> sceneF.killEntity(entity, 0));
+        CommandHandler.sendMessage(sender, translate("commands.kill.kill_monsters_in_scene", Integer.toString(toKill.size()), Integer.toString(scene.getId())));
     }
 }

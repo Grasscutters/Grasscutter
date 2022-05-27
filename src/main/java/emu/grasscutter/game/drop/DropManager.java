@@ -53,8 +53,7 @@ public class DropManager {
                 Grasscutter.getLogger().error("Unable to load drop data. Drop data size is 0.");
             }
         } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            Grasscutter.getLogger().error("Unable to load drop data.", e);
         }
     }
     private void addDropEntity(DropData dd, Scene dropScene, ItemData itemData, Position pos, int num, Player target) {

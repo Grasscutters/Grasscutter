@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.def.AvatarSkillDepotData;
@@ -11,139 +12,104 @@ import emu.grasscutter.server.packet.send.PacketAvatarSkillUpgradeRsp;
 
 import java.util.List;
 
+import static emu.grasscutter.utils.Language.translate;
+
 @Command(label = "talent", usage = "talent <talentID> <value>",
         description = "Set talent level for your current active character", permission = "player.settalent")
 public final class TalentCommand implements CommandHandler {
+    private void setTalentLevel(Player sender, Player player, Avatar avatar, int talentId, int talentLevel) {
+        int oldLevel = avatar.getSkillLevelMap().get(talentId);
+        if (talentLevel < 0 || talentLevel > 15) {
+            CommandHandler.sendMessage(sender, translate("commands.talent.lower_16"));
+            return;
+        }
+
+        // Upgrade skill
+        avatar.getSkillLevelMap().put(talentLevel, talentLevel);
+        avatar.save();
+
+        // Packet
+        player.sendPacket(new PacketAvatarSkillChangeNotify(avatar, talentId, oldLevel, talentLevel));
+        player.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, talentId, oldLevel, talentLevel));
+
+        String successMessage = "commands.talent.set_id";
+        AvatarSkillDepotData depot = avatar.getData().getSkillDepot();
+        if (talentId == depot.getSkills().get(0)) {
+            successMessage = "commands.talent.set_atk";
+        } else if (talentId == depot.getSkills().get(1)) {
+            successMessage = "commands.talent.set_e";
+        } else if (talentId == depot.getEnergySkill()) {
+            successMessage = "commands.talent.set_q";
+        }
+        CommandHandler.sendMessage(sender, translate(successMessage, talentLevel));
+    }
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        if (sender == null) {
-            CommandHandler.sendMessage(null, "Run this command in-game.");
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
             return;
         }
 
         if (args.size() < 1){
-            CommandHandler.sendMessage(sender, "To set talent level: /talent set <talentID> <value>");
-            CommandHandler.sendMessage(sender, "Another way to set talent level: /talent <n or e or q> <value>");
-            CommandHandler.sendMessage(sender, "To get talent ID: /talent getid");
+            CommandHandler.sendMessage(sender, translate("commands.talent.usage_1"));
+            CommandHandler.sendMessage(sender, translate("commands.talent.usage_2"));
+            CommandHandler.sendMessage(sender, translate("commands.talent.usage_3"));
             return;
         }
 
+        EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
+        Avatar avatar = entity.getAvatar(); 
         String cmdSwitch = args.get(0);
         switch (cmdSwitch) {
-            default:
-                CommandHandler.sendMessage(sender, "To set talent level: /talent set <talentID> <value>");
-                CommandHandler.sendMessage(sender, "Another way to set talent level: /talent <n or e or q> <value>");
-                CommandHandler.sendMessage(sender, "To get talent ID: /talent getid");
-            return;
-            case "set":
-                    try {
-                        int skillId = Integer.parseInt(args.get(1));
-                        int nextLevel = Integer.parseInt(args.get(2));
-                        EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                        Avatar avatar = entity.getAvatar(); 
-                        int skillIdNorAtk = avatar.getData().getSkillDepot().getSkills().get(0);
-                        int skillIdE = avatar.getData().getSkillDepot().getSkills().get(1);
-                        int skillIdQ = avatar.getData().getSkillDepot().getEnergySkill();
-                        int currentLevelNorAtk = avatar.getSkillLevelMap().get(skillIdNorAtk);
-                        int currentLevelE = avatar.getSkillLevelMap().get(skillIdE);
-                        int currentLevelQ = avatar.getSkillLevelMap().get(skillIdQ);
-                        if (args.size() < 2){
-                            CommandHandler.sendMessage(sender, "To set talent level: /talent set <talentID> <value>");
-                            CommandHandler.sendMessage(sender, "To get talent ID: /talent getid");
-                            return;
-                        }
-                        if (nextLevel > 16){ 
-                            CommandHandler.sendMessage(sender, "Invalid talent level. Level should be lower than 16");
-                            return;
-                        }
-                            if (skillId == skillIdNorAtk){ 
-                            // Upgrade skill
-                            avatar.getSkillLevelMap().put(skillIdNorAtk, nextLevel);
-                            avatar.save();
-                
-                            // Packet
-                            sender.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillIdNorAtk, currentLevelNorAtk, nextLevel));
-                            sender.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillIdNorAtk, currentLevelNorAtk, nextLevel));
-                            CommandHandler.sendMessage(sender, "Set talent Normal ATK to " + nextLevel + ".");
-                        }    
-                        if (skillId == skillIdE){ 
-                            // Upgrade skill
-                            avatar.getSkillLevelMap().put(skillIdE, nextLevel);
-                            avatar.save();
-                
-                            // Packet
-                            sender.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillIdE, currentLevelE, nextLevel));
-                            sender.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillIdE, currentLevelE, nextLevel));
-                            CommandHandler.sendMessage(sender, "Set talent E to " + nextLevel + ".");
-                        }
-                        if (skillId == skillIdQ){ 
-                            // Upgrade skill
-                            avatar.getSkillLevelMap().put(skillIdQ, nextLevel);
-                            avatar.save();
-                
-                            // Packet
-                            sender.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillIdQ, currentLevelQ, nextLevel));
-                            sender.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillIdQ, currentLevelQ, nextLevel));
-                            CommandHandler.sendMessage(sender, "Set talent Q to " + nextLevel + ".");
-                        }       
-                                
-                    } catch (NumberFormatException ignored) {
-                        CommandHandler.sendMessage(sender, "Invalid skill ID.");
-                        return;
-                    }
-                
-                break;
-            case "n": case "e": case "q":
-                try {
-                    EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    Avatar avatar = entity.getAvatar();
-                    AvatarSkillDepotData SkillDepot = avatar.getData().getSkillDepot();
-                    int skillId;
-                    switch (cmdSwitch) {
-                        default:
-                            skillId = SkillDepot.getSkills().get(0);
-                            break;
-                        case "e":
-                            skillId = SkillDepot.getSkills().get(1);
-                            break;
-                        case "q":
-                            skillId = SkillDepot.getEnergySkill();
-                            break;
-                    }
-                    int nextLevel = Integer.parseInt(args.get(1));
-                    int currentLevel = avatar.getSkillLevelMap().get(skillId);
-                    if (args.size() < 1){
-                        CommandHandler.sendMessage(sender, "To set talent level: /talent <n or e or q> <value>");
-                        return;
-                    }
-                    if (nextLevel > 16){
-                        CommandHandler.sendMessage(sender, "Invalid talent level. Level should be lower than 16");
-                        return;
-                    }
-                    // Upgrade skill
-                    avatar.getSkillLevelMap().put(skillId, nextLevel);
-                    avatar.save();
-                    // Packet
-                    sender.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillId, currentLevel, nextLevel));
-                    sender.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillId, currentLevel, nextLevel));
-                    CommandHandler.sendMessage(sender, "Set this talent to " + nextLevel + ".");
-                } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, "Invalid talent level.");
+            default -> {
+                CommandHandler.sendMessage(sender, translate("commands.talent.usage_1"));
+                CommandHandler.sendMessage(sender, translate("commands.talent.usage_2"));
+                CommandHandler.sendMessage(sender, translate("commands.talent.usage_3"));
+                return;
+            }
+            case "set" -> {
+                if (args.size() < 3) {
+                    CommandHandler.sendMessage(sender, translate("commands.talent.usage_1"));
+                    CommandHandler.sendMessage(sender, translate("commands.talent.usage_3"));
                     return;
                 }
-                break;
-            case "getid":           
-                    EntityAvatar entity = sender.getTeamManager().getCurrentAvatarEntity();
-                    Avatar avatar = entity.getAvatar(); 
-                    int skillIdNorAtk = avatar.getData().getSkillDepot().getSkills().get(0);
-                    int skillIdE = avatar.getData().getSkillDepot().getSkills().get(1);
-                    int skillIdQ = avatar.getData().getSkillDepot().getEnergySkill();
-                    
-                    CommandHandler.sendMessage(sender, "Normal Attack ID " + skillIdNorAtk + ".");
-                    CommandHandler.sendMessage(sender, "E skill ID " + skillIdE + ".");
-                    CommandHandler.sendMessage(sender, "Q skill ID " + skillIdQ + ".");
-                break;
+                try {
+                    int skillId = Integer.parseInt(args.get(1));
+                    int newLevel = Integer.parseInt(args.get(2));
+                    setTalentLevel(sender, targetPlayer, avatar, skillId, newLevel);
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, translate("commands.talent.invalid_skill_id"));
+                    return;
+                }
+            }
+            case "n", "e", "q" -> {
+                if (args.size() < 2) {
+                    CommandHandler.sendMessage(sender, translate("commands.talent.usage_2"));
+                    return;
+                }
+                AvatarSkillDepotData SkillDepot = avatar.getData().getSkillDepot();
+                int skillId = switch (cmdSwitch) {
+                    default -> SkillDepot.getSkills().get(0);
+                    case "e" -> SkillDepot.getSkills().get(1);
+                    case "q" -> SkillDepot.getEnergySkill();
+                };
+                try {
+                    int newLevel = Integer.parseInt(args.get(1));
+                    setTalentLevel(sender, targetPlayer, avatar, skillId, newLevel);
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, translate("commands.talent.invalid_level"));
+                    return;
+                }
+            }
+            case "getid" -> {
+                int skillIdNorAtk = avatar.getData().getSkillDepot().getSkills().get(0);
+                int skillIdE = avatar.getData().getSkillDepot().getSkills().get(1);
+                int skillIdQ = avatar.getData().getSkillDepot().getEnergySkill();
+                CommandHandler.sendMessage(sender, translate("commands.talent.normal_attack_id", Integer.toString(skillIdNorAtk)));
+                CommandHandler.sendMessage(sender, translate("commands.talent.e_skill_id", Integer.toString(skillIdE)));
+                CommandHandler.sendMessage(sender, translate("commands.talent.q_skill_id", Integer.toString(skillIdQ)));
+            }
         }
     }
 }

@@ -11,48 +11,60 @@ import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
+import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.game.friends.FriendsList;
 import emu.grasscutter.game.friends.PlayerProfile;
 import emu.grasscutter.game.gacha.PlayerGachaInfo;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
+import emu.grasscutter.game.mail.MailHandler;
+import emu.grasscutter.game.managers.MovementManager.MovementManager;
+import emu.grasscutter.game.managers.SotSManager.SotSManager;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.shop.ShopLimit;
+import emu.grasscutter.game.managers.MapMarkManager.*;
+import emu.grasscutter.game.tower.TowerManager;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
+import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
-import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
-import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
-import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
-import emu.grasscutter.server.event.player.PlayerReceiveMailEvent;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.DateHelper;
 import emu.grasscutter.utils.Position;
+import emu.grasscutter.utils.MessageHandler;
+import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import java.time.Instant;
 import java.util.*;
+import java.util.concurrent.LinkedBlockingQueue;
 
 @Entity(value = "players", useDiscriminator = false)
 public class Player {
+
+	@Transient private static int GlobalMaximumSpringVolume = 8500000;
+	@Transient private static int GlobalMaximumStamina = 24000;
+
 	@Id private int id;
 	@Indexed(options = @IndexOptions(unique = true)) private String accountId;
 
@@ -78,15 +90,21 @@ public class Player {
 	@Transient private AvatarStorage avatars;
 	@Transient private Inventory inventory;
 	@Transient private FriendsList friendsList;
+	@Transient private MailHandler mailHandler;
+	@Transient private MessageHandler messageHandler;
+
+	@Transient private SotSManager sotsManager;
 
 	private TeamManager teamManager;
+
+	private TowerManager towerManager;
 	private PlayerGachaInfo gachaInfo;
 	private PlayerProfile playerProfile;
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
-	private ArrayList<Mail> mail;
 	private ArrayList<ShopLimit> shopLimit;
+	private Map<Long, ExpeditionInfo> expeditionInfo;
 
 	private int sceneId;
 	private int regionId;
@@ -108,9 +126,16 @@ public class Player {
 	@Transient private long nextSendPlayerLocTime = 0;
 
 	@Transient private final Int2ObjectMap<CoopRequest> coopRequests;
+	@Transient private final Queue<AttackResult> attackResults;
 	@Transient private final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
 	@Transient private final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
 	@Transient private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
+
+	private MapMarksManager mapMarksManager;
+	@Transient private MovementManager movementManager;
+
+	private long springLastUsed;
+
 
 	@Deprecated
 	@SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
@@ -118,6 +143,8 @@ public class Player {
 		this.inventory = new Inventory(this);
 		this.avatars = new AvatarStorage(this);
 		this.friendsList = new FriendsList(this);
+		this.mailHandler = new MailHandler(this);
+		this.towerManager = new TowerManager(this);
 		this.pos = new Position();
 		this.rotation = new Position();
 		this.properties = new HashMap<>();
@@ -133,12 +160,11 @@ public class Player {
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
 
-		this.mail = new ArrayList<>();
-
 		this.setSceneId(3);
 		this.setRegionId(1);
 		this.sceneState = SceneLoadState.NONE;
 
+		this.attackResults = new LinkedBlockingQueue<>();
 		this.coopRequests = new Int2ObjectOpenHashMap<>();
 		this.combatInvokeHandler = new InvokeHandler(PacketCombatInvocationsNotify.class);
 		this.abilityInvokeHandler = new InvokeHandler(PacketAbilityInvocationsNotify.class);
@@ -149,6 +175,11 @@ public class Player {
 		this.moonCardGetTimes = new HashSet<>();
 
 		this.shopLimit = new ArrayList<>();
+		this.expeditionInfo = new HashMap<>();
+		this.messageHandler = null;
+		this.mapMarksManager = new MapMarksManager();
+		this.movementManager = new MovementManager(this);
+		this.sotsManager = new SotSManager(this);
 	}
 
 	// On player creation
@@ -173,6 +204,10 @@ public class Player {
 		this.getNameCardList().add(210001);
 		this.getPos().set(GameConstants.START_POSITION);
 		this.getRotation().set(0, 307, 0);
+		this.messageHandler = null;
+		this.mapMarksManager = new MapMarksManager();
+		this.movementManager = new MovementManager(this);
+		this.sotsManager = new SotSManager(this);
 	}
 
 	public int getUid() {
@@ -370,6 +405,10 @@ public class Player {
 		return this.teamManager;
 	}
 
+	public TowerManager getTowerManager() {
+		return towerManager;
+	}
+
 	public PlayerGachaInfo getGachaInfo() {
 		return gachaInfo;
 	}
@@ -381,12 +420,14 @@ public class Player {
 		return playerProfile;
 	}
 
+	// TODO: Based on the proto, property value could be int or float.
+	//  Although there's no float value at this moment, our code should be prepared for float values.
 	public Map<Integer, Integer> getProperties() {
 		return properties;
 	}
 
-	public void setProperty(PlayerProperty prop, int value) {
-		getProperties().put(prop.getId(), value);
+	public boolean setProperty(PlayerProperty prop, int value) {
+		return setPropertyWithSanityCheck(prop, value);
 	}
 
 	public int getProperty(PlayerProperty prop) {
@@ -407,6 +448,10 @@ public class Player {
 
 	public MpSettingType getMpSetting() {
 		return MpSettingType.MP_SETTING_ENTER_AFTER_APPLY; // TEMP
+	}
+	
+	public Queue<AttackResult> getAttackResults() {
+		return this.attackResults;
 	}
 
 	public synchronized Int2ObjectMap<CoopRequest> getCoopRequests() {
@@ -435,6 +480,10 @@ public class Player {
 
 	public FriendsList getFriendsList() {
 		return this.friendsList;
+	}
+
+	public MailHandler getMailHandler() {
+		return mailHandler;
 	}
 
 	public int getEnterSceneToken() {
@@ -491,6 +540,14 @@ public class Player {
 		} else if (oldPauseState && !newPauseState) {
 			this.onUnpause();
 		}
+	}
+
+	public long getSpringLastUsed() {
+		return springLastUsed;
+	}
+
+	public void setSpringLastUsed(long val) {
+		springLastUsed = val;
 	}
 
 	public SceneLoadState getSceneLoadState() {
@@ -621,6 +678,28 @@ public class Player {
 		session.send(new PacketCardProductRewardNotify(getMoonCardRemainDays()));
 	}
 
+	public Map<Long, ExpeditionInfo> getExpeditionInfo() {
+		return expeditionInfo;
+	}
+
+	public void addExpeditionInfo(long avaterGuid, int expId, int hourTime, int startTime){
+		ExpeditionInfo exp = new ExpeditionInfo();
+		exp.setExpId(expId);
+		exp.setHourTime(hourTime);
+		exp.setState(1);
+		exp.setStartTime(startTime);
+		expeditionInfo.put(avaterGuid, exp);
+	}
+
+	public void removeExpeditionInfo(long avaterGuid){
+		expeditionInfo.remove(avaterGuid);
+	}
+
+	public ExpeditionInfo getExpeditionInfo(long avaterGuid){
+		return expeditionInfo.get(avaterGuid);
+	}
+
+
 	public List<ShopLimit> getShopLimit() {
 		return shopLimit;
 	}
@@ -710,6 +789,10 @@ public class Player {
 	}
 
 	public void dropMessage(Object message) {
+		if (this.messageHandler != null) {
+			this.messageHandler.append(message.toString());
+			return;
+		}
 		this.sendPacket(new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, getUid(), message.toString()));
 	}
 
@@ -725,47 +808,24 @@ public class Player {
 
 	// ---------------------MAIL------------------------
 
-	public List<Mail> getAllMail() { return this.mail; }
+	public List<Mail> getAllMail() { return this.getMailHandler().getMail(); }
 
 	public void sendMail(Mail message) {
-		// Call mail receive event.
-		PlayerReceiveMailEvent event = new PlayerReceiveMailEvent(this, message); event.call();
-		if(event.isCanceled()) return; message = event.getMessage();
-		
-		this.mail.add(message);
-		this.save();
-		Grasscutter.getLogger().debug("Mail sent to user [" + this.getUid()  + ":" + this.getNickname() + "]!");
-		if(this.isOnline()) {
-			this.sendPacket(new PacketMailChangeNotify(this, message));
-		} // TODO: setup a way for the mail notification to show up when someone receives mail when they were offline
+		this.getMailHandler().sendMail(message);
 	}
 
 	public boolean deleteMail(int mailId) {
-		Mail message = getMail(mailId);
-
-		if(message != null) {
-			int index = getMailId(message);
-			message.expireTime = (int) Instant.now().getEpochSecond(); // Just set the mail as expired for now. I don't want to implement a counter specifically for an account...
-			this.replaceMailByIndex(index, message);
-			return true;
-		}
-
-		return false;
+		return this.getMailHandler().deleteMail(mailId);
 	}
 
-	public Mail getMail(int index) { return this.mail.get(index); }
+	public Mail getMail(int index) { return this.getMailHandler().getMailById(index); }
+	
 	public int getMailId(Mail message) {
-		return this.mail.indexOf(message);
+		return this.getMailHandler().getMailIndex(message);
 	}
 
 	public boolean replaceMailByIndex(int index, Mail message) {
-		if(getMail(index) != null) {
-			this.mail.set(index, message);
-			this.save();
-			return true;
-		} else {
-			return false;
-		}
+		return this.getMailHandler().replaceMailByIndex(index, message);
 	}
 	
 	public void interactWith(int gadgetEntityId) {
@@ -795,6 +855,16 @@ public class Player {
 					this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
 				else
 					this.getScene().broadcastPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_PICK_ITEM));
+			}
+		} else if (entity instanceof EntityGadget) {
+			EntityGadget gadget = (EntityGadget) entity;
+			
+			if (gadget.getGadgetData().getType() == EntityType.RewardStatue) {
+				if (scene.getChallenge() != null) {
+					scene.getChallenge().getStatueDrops(this);
+				}
+				
+				this.sendPacket(new PacketGadgetInteractRsp(gadget, InteractType.INTERACT_OPEN_STATUE));
 			}
 		} else {
 			// Delete directly
@@ -950,6 +1020,14 @@ public class Player {
 				.build();
 	}
 
+	public MapMarksManager getMapMarksManager() {
+		return mapMarksManager;
+	}
+
+	public MovementManager getMovementManager() { return movementManager; }
+
+	public SotSManager getSotSManager() { return sotsManager; }
+
 	public synchronized void onTick() {
 		// Check ping
 		if (this.getLastPingTime() > System.currentTimeMillis() + 60000) {
@@ -978,7 +1056,26 @@ public class Player {
 				this.resetSendPlayerLocTime();
 			}
 		}
+		// Expedition
+		var timeNow = Utils.getCurrentSeconds();
+		var needNotify = false;
+		for (Long key : expeditionInfo.keySet()) {
+			ExpeditionInfo e = expeditionInfo.get(key);
+			if(e.getState() == 1){
+				if(timeNow - e.getStartTime() >= e.getHourTime() * 60 * 60){
+					e.setState(2);
+					needNotify = true;
+				}
+			}
+		}
+		if(needNotify){
+			this.save();
+			this.sendPacket(new PacketAvatarExpeditionDataNotify(this));
+		}
 	}
+
+
+
 
 	public void resetSendPlayerLocTime() {
 		this.nextSendPlayerLocTime = System.currentTimeMillis() + 5000;
@@ -987,6 +1084,7 @@ public class Player {
 	@PostLoad
 	private void onLoad() {
 		this.getTeamManager().setPlayer(this);
+		this.getTowerManager().setPlayer(this);
 	}
 
 	public void save() {
@@ -1015,6 +1113,7 @@ public class Player {
 		this.getAvatars().postLoad();
 
 		this.getFriendsList().loadFromDatabase();
+		this.getMailHandler().loadFromDatabase();
 
 		// Create world
 		World world = new World(this);
@@ -1052,6 +1151,13 @@ public class Player {
 	}
 
 	public void onLogout() {
+		// stop stamina calculation
+		getMovementManager().resetTimer();
+
+		// force to leave the dungeon
+		if (getScene().getSceneType() == SceneType.SCENE_DUNGEON) {
+			this.getServer().getDungeonManager().exitDungeon(this);
+		}
 		// Leave world
 		if (this.getWorld() != null) {
 			this.getWorld().removePlayer(this);
@@ -1085,4 +1191,106 @@ public class Player {
 			return this.value;
 		}
 	}
+
+	public void setMessageHandler(MessageHandler messageHandler) {
+		this.messageHandler = messageHandler;
+	}
+
+	private void saveSanityCheckedProperty(PlayerProperty prop, int value) {
+		getProperties().put(prop.getId(), value);
+	}
+
+	private boolean setPropertyWithSanityCheck(PlayerProperty prop, int value) {
+		if (prop == PlayerProperty.PROP_EXP) { // 1001
+			if (!(value >= 0)) { return false; }
+		} else if (prop == PlayerProperty.PROP_BREAK_LEVEL) { // 1002
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_SATIATION_VAL) { // 1003
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_SATIATION_PENALTY_TIME) { // 1004
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_LEVEL) { // 4001
+			if (!(value >= 0 && value <= 90)) { return false; }
+		} else if (prop == PlayerProperty.PROP_LAST_CHANGE_AVATAR_TIME) { // 10001
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_MAX_SPRING_VOLUME) { // 10002
+			if (!(value >= 0 && value <= GlobalMaximumSpringVolume)) { return false; }
+		} else if (prop == PlayerProperty.PROP_CUR_SPRING_VOLUME) { // 10003
+			int playerMaximumSpringVolume = getProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME);
+			if (!(value >= 0 && value <= playerMaximumSpringVolume)) { return false; }
+		} else if (prop == PlayerProperty.PROP_IS_SPRING_AUTO_USE) { // 10004
+			if (!(value >= 0 && value <= 1)) { return false; }
+		} else if (prop == PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT) { // 10005
+			if (!(value >= 0 && value <= 100)) { return false; }
+		} else if (prop == PlayerProperty.PROP_IS_FLYABLE) { // 10006
+			if (!(0 <= value && value <= 1)) { return false; }
+		} else if (prop == PlayerProperty.PROP_IS_WEATHER_LOCKED) { // 10007
+			if (!(0 <= value && value <= 1)) { return false; }
+		} else if (prop == PlayerProperty.PROP_IS_GAME_TIME_LOCKED) { // 10008
+			if (!(0 <= value && value <= 1)) { return false; }
+		} else if (prop == PlayerProperty.PROP_IS_TRANSFERABLE) { // 10009
+			if (!(0 <= value && value <= 1)) { return false; }
+		} else if (prop == PlayerProperty.PROP_MAX_STAMINA) { // 10010
+			if (!(value >= 0 && value <= GlobalMaximumStamina)) { return false; }
+		} else if (prop == PlayerProperty.PROP_CUR_PERSIST_STAMINA) { // 10011
+			int playerMaximumStamina = getProperty(PlayerProperty.PROP_MAX_STAMINA);
+			if (!(value >= 0 && value <= playerMaximumStamina)) { return false; }
+		} else if (prop == PlayerProperty.PROP_CUR_TEMPORARY_STAMINA) { // 10012
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_PLAYER_LEVEL) { // 10013
+			if (!(0 < value && value <= 90)) { return false; }
+		} else if (prop == PlayerProperty.PROP_PLAYER_EXP) { // 10014
+			if (!(0 <= value)) { return false; }
+		} else if (prop == PlayerProperty.PROP_PLAYER_HCOIN) { // 10015
+			// see 10015
+		} else if (prop == PlayerProperty.PROP_PLAYER_SCOIN) { // 10016
+			// See 10015
+		} else if (prop == PlayerProperty.PROP_PLAYER_MP_SETTING_TYPE) { // 10017
+			if (!(0 <= value && value <= 2)) { return false; }
+		} else if (prop == PlayerProperty.PROP_IS_MP_MODE_AVAILABLE) { // 10018
+			if (!(0 <= value && value <= 1)) { return false; }
+		} else if (prop == PlayerProperty.PROP_PLAYER_WORLD_LEVEL) { // 10019
+			if (!(0 <= value && value <= 8)) { return false; }
+		} else if (prop == PlayerProperty.PROP_PLAYER_RESIN) { // 10020
+			// Do not set 160 as a cap, because player can have more than 160 when they use fragile resin.
+			if (!(0 <= value)) { return false; }
+		} else if (prop == PlayerProperty.PROP_PLAYER_WAIT_SUB_HCOIN) { // 10022
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_PLAYER_WAIT_SUB_SCOIN) { // 10023
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_IS_ONLY_MP_WITH_PS_PLAYER) { // 10024
+			if (!(0 <= value && value <= 1)) { return false; }
+		} else if (prop == PlayerProperty.PROP_PLAYER_MCOIN) { // 10025
+			// see 10015
+		} else if (prop == PlayerProperty.PROP_PLAYER_WAIT_SUB_MCOIN) { // 10026
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_PLAYER_LEGENDARY_KEY) { // 10027
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_IS_HAS_FIRST_SHARE) { // 10028
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_PLAYER_FORGE_POINT) { // 10029
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_CUR_CLIMATE_METER) { // 10035
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_CUR_CLIMATE_TYPE) { // 10036
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_CUR_CLIMATE_AREA_ID) { // 10037
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_CUR_CLIMATE_AREA_CLIMATE_TYPE) { // 10038
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_PLAYER_WORLD_LEVEL_LIMIT) { // 10039
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_PLAYER_WORLD_LEVEL_ADJUST_CD) { // 10040
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_PLAYER_LEGENDARY_DAILY_TASK_NUM) { // 10041
+			// TODO: implement sanity check
+		} else if (prop == PlayerProperty.PROP_PLAYER_HOME_COIN) { // 10042
+			if (!(0 <= value)) { return false; }
+		} else if (prop == PlayerProperty.PROP_PLAYER_WAIT_SUB_HOME_COIN) { // 10043
+			// TODO: implement sanity check
+		}
+		saveSanityCheckedProperty(prop, value);
+		return false;
+	}
+
 }

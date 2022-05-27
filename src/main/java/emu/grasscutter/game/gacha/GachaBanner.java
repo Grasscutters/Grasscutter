@@ -91,9 +91,21 @@ public class GachaBanner {
 		return eventChance;
 	}
 
+	@Deprecated
 	public GachaInfo toProto() {
-		String record = "http://" + (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? Grasscutter.getConfig().getDispatchOptions().Ip : Grasscutter.getConfig().getDispatchOptions().PublicIp) + "/gacha";
-		
+		return toProto("");
+	}
+	public GachaInfo toProto(String sessionKey) {
+		String record = "http" + (Grasscutter.getConfig().getDispatchOptions().FrontHTTPS ? "s" : "") + "://"
+						+ (Grasscutter.getConfig().getDispatchOptions().PublicIp.isEmpty() ? 
+							Grasscutter.getConfig().getDispatchOptions().Ip : 
+							Grasscutter.getConfig().getDispatchOptions().PublicIp)
+						+ ":"
+						+ Integer.toString(Grasscutter.getConfig().getDispatchOptions().PublicPort == 0 ?
+							Grasscutter.getConfig().getDispatchOptions().Port : 
+							Grasscutter.getConfig().getDispatchOptions().PublicPort)
+						+ "/gacha?s=" + sessionKey + "&gachaType=" + gachaType;
+		// Grasscutter.getLogger().info("record = " + record);
 		GachaInfo.Builder info = GachaInfo.newBuilder()
 				.setGachaType(this.getGachaType())
 				.setScheduleId(this.getScheduleId())

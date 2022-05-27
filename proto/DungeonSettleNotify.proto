@@ -4,8 +4,13 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "ParamList.proto";
 import "StrengthenPointData.proto";
+import "TowerLevelEndNotify.proto";
 
 message DungeonSettleNotify {
+	oneof Detail {
+		TowerLevelEndNotify tower_level_end_notify = 101;
+		// it has more!
+	}
 	uint32 dungeon_id = 1;
 	bool is_success = 2;
 	repeated uint32 fail_cond_list = 3;

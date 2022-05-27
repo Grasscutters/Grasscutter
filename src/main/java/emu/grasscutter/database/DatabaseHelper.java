@@ -3,12 +3,16 @@ package emu.grasscutter.database;
 import java.util.List;
 
 import com.mongodb.client.result.DeleteResult;
+import dev.morphia.query.FindOptions;
+import dev.morphia.query.Sort;
 import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.friends.Friendship;
+import emu.grasscutter.game.gacha.GachaRecord;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 
 public final class DatabaseHelper {
@@ -76,6 +80,11 @@ public final class DatabaseHelper {
 	public static Account getAccountByToken(String token) {
 		if(token == null) return null;
 		return DatabaseManager.getDatastore().find(Account.class).filter(Filters.eq("token", token)).first();
+	}
+
+	public static Account getAccountBySessionKey(String sessionKey) {
+		if(sessionKey == null) return null;
+		return DatabaseManager.getDatastore().find(Account.class).filter(Filters.eq("sessionKey", sessionKey)).first();
 	}
 
 	public static Account getAccountById(String uid) {
@@ -158,6 +167,7 @@ public final class DatabaseHelper {
 	public static List<GameItem> getInventoryItems(Player player) {
 		return DatabaseManager.getDatastore().find(GameItem.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
+	
 	public static List<Friendship> getFriends(Player player) {
 		return DatabaseManager.getDatastore().find(Friendship.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
@@ -181,5 +191,47 @@ public final class DatabaseHelper {
 		)).first();
 	}
 
-	public static char AWJVN = 'e';
+	public static List<GachaRecord> getGachaRecords(int ownerId, int page, int gachaType){
+		return getGachaRecords(ownerId, page, gachaType, 10);
+	}
+
+	public static List<GachaRecord> getGachaRecords(int ownerId, int page, int gachaType, int pageSize){
+		return DatabaseManager.getDatastore().find(GachaRecord.class).filter(
+			Filters.eq("ownerId", ownerId),
+			Filters.eq("gachaType", gachaType)
+		).iterator(new FindOptions()
+				.sort(Sort.descending("transactionDate"))
+				.skip(pageSize * page)
+				.limit(pageSize)
+		).toList();
+	}
+
+	public static long getGachaRecordsMaxPage(int ownerId, int page, int gachaType){
+		return getGachaRecordsMaxPage(ownerId, page, gachaType, 10);
+	}
+
+	public static long getGachaRecordsMaxPage(int ownerId, int page, int gachaType, int pageSize){
+		long count = DatabaseManager.getDatastore().find(GachaRecord.class).filter(
+			Filters.eq("ownerId", ownerId),
+			Filters.eq("gachaType", gachaType)
+		).count();
+		return count / 10 + (count % 10 > 0 ? 1 : 0 );
+	}
+
+	public static void saveGachaRecord(GachaRecord gachaRecord){
+		DatabaseManager.getDatastore().save(gachaRecord);
+	}
+	
+	public static List<Mail> getAllMail(Player player) {
+		return DatabaseManager.getDatastore().find(Mail.class).filter(Filters.eq("ownerUid", player.getUid())).stream().toList();
+	}
+	
+	public static void saveMail(Mail mail) {
+		DatabaseManager.getDatastore().save(mail);
+	}
+	
+	public static boolean deleteMail(Mail mail) {
+		DeleteResult result = DatabaseManager.getDatastore().delete(mail);
+		return result.wasAcknowledged();
+	}
 }

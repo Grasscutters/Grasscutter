@@ -14,9 +14,11 @@ import emu.grasscutter.server.packet.send.PacketDungeonEntryInfoRsp;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterDungeonRsp;
 import emu.grasscutter.utils.Position;
 
+import java.util.List;
+
 public class DungeonManager {
 	private final GameServer server;
-	
+	private static final BasicDungeonSettleListener basicDungeonSettleObserver = new BasicDungeonSettleListener();
 	public DungeonManager(GameServer server) {
 		this.server = server;
 	}
@@ -37,11 +39,11 @@ public class DungeonManager {
 		player.sendPacket(new PacketDungeonEntryInfoRsp(player, entry.getPointData()));
 	}
 
-	public void enterDungeon(Player player, int pointId, int dungeonId) {
+	public boolean enterDungeon(Player player, int pointId, int dungeonId) {
 		DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
 		
 		if (data == null) {
-			return;
+			return false;
 		}
 		
 		Grasscutter.getLogger().info(player.getNickname() + " is trying to enter dungeon " + dungeonId);
@@ -49,12 +51,32 @@ public class DungeonManager {
 		int sceneId = data.getSceneId();
 		player.getScene().setPrevScene(sceneId);
 		
-		player.getWorld().transferPlayerToScene(player, sceneId, data);
+		if(player.getWorld().transferPlayerToScene(player, sceneId, data)){
+			player.getScene().addDungeonSettleObserver(basicDungeonSettleObserver);
+		}
 		
 		player.getScene().setPrevScenePoint(pointId);
 		player.sendPacket(new PacketPlayerEnterDungeonRsp(pointId, dungeonId));
+		return true;
 	}
-	
+
+	/**
+	 * used in tower dungeons handoff
+	 */
+	public boolean handoffDungeon(Player player, int dungeonId, List<DungeonSettleListener> dungeonSettleListeners) {
+		DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
+
+		if (data == null) {
+			return false;
+		}
+		Grasscutter.getLogger().info(player.getNickname() + " is trying to enter tower dungeon " + dungeonId);
+
+		if(player.getWorld().transferPlayerToScene(player, data.getSceneId(), data)){
+			dungeonSettleListeners.forEach(player.getScene()::addDungeonSettleObserver);
+		}
+		return true;
+	}
+
 	public void exitDungeon(Player player) {
 		if (player.getScene().getSceneType() != SceneType.SCENE_DUNGEON) {
 			return;
@@ -74,6 +96,9 @@ public class DungeonManager {
 				prevPos.set(entry.getPointData().getTranPos());
 			}
 		}
+		// clean temp team if it has
+		player.getTeamManager().cleanTemporaryTeam();
+		player.getTowerManager().clearEntry();
 
 		// Transfer player back to world
 		player.getWorld().transferPlayerToScene(player, prevScene, prevPos);

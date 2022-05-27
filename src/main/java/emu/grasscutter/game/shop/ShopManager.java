@@ -5,8 +5,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.def.ShopGoodsData;
-import emu.grasscutter.net.proto.ItemParamOuterClass;
-import emu.grasscutter.net.proto.ShopGoodsOuterClass;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -25,11 +23,23 @@ public class ShopManager {
 		return shopData;
 	}
 
+	public List<ShopChestTable> getShopChestData() {
+		return shopChestData;
+	}
+
+	public List<ShopChestBatchUseTable> getShopChestBatchUseData() {
+		return shopChestBatchUseData;
+	}
+
 	private final Int2ObjectMap<List<ShopInfo>> shopData;
+	private final List<ShopChestTable> shopChestData;
+	private final List<ShopChestBatchUseTable> shopChestBatchUseData;
 
 	public ShopManager(GameServer server) {
 		this.server = server;
 		this.shopData = new Int2ObjectOpenHashMap<>();
+		this.shopChestData = new ArrayList<>();
+		this.shopChestBatchUseData = new ArrayList<>();
 		this.load();
 	}
 
@@ -38,14 +48,14 @@ public class ShopManager {
 
 	public static int getShopNextRefreshTime(ShopInfo shopInfo) {
 		return switch (shopInfo.getShopRefreshType()) {
-			case SHOP_REFRESH_DAILY -> Utils.GetNextTimestampOfThisHour(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
-			case SHOP_REFRESH_WEEKLY ->  Utils.GetNextTimestampOfThisHourInNextWeek(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
-			case SHOP_REFRESH_MONTHLY -> Utils.GetNextTimestampOfThisHourInNextMonth(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+			case SHOP_REFRESH_DAILY -> Utils.getNextTimestampOfThisHour(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+			case SHOP_REFRESH_WEEKLY ->  Utils.getNextTimestampOfThisHourInNextWeek(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
+			case SHOP_REFRESH_MONTHLY -> Utils.getNextTimestampOfThisHourInNextMonth(REFRESH_HOUR, TIME_ZONE, shopInfo.getShopRefreshParam());
 			default -> 0;
 		};
 	}
 
-	public synchronized void load() {
+	private void loadShop() {
 		try (FileReader fileReader = new FileReader(Grasscutter.getConfig().DATA_FOLDER + "Shop.json")) {
 			getShopData().clear();
 			List<ShopTable> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopTable.class).getType());
@@ -85,9 +95,44 @@ public class ShopManager {
 				});
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Grasscutter.getLogger().error("Unable to load shop data.", e);
 		}
+	}
+
+	private void loadShopChest() {
+		try (FileReader fileReader = new FileReader(Grasscutter.getConfig().DATA_FOLDER + "ShopChest.json")) {
+			getShopChestData().clear();
+			List<ShopChestTable> shopChestTableList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopChestTable.class).getType());
+			if (shopChestTableList.size() > 0) {
+				getShopChestData().addAll(shopChestTableList);
+				Grasscutter.getLogger().info("ShopChest data successfully loaded.");
+			} else {
+				Grasscutter.getLogger().error("Unable to load ShopChest data. ShopChest data size is 0.");
+			}
+		} catch (Exception e) {
+			Grasscutter.getLogger().error("Unable to load ShopChest data.", e);
+		}
+	}
+
+	private void loadShopChestBatchUse() {
+		try (FileReader fileReader = new FileReader(Grasscutter.getConfig().DATA_FOLDER + "ShopChestBatchUse.json")) {
+			getShopChestBatchUseData().clear();
+			List<ShopChestBatchUseTable> shopChestBatchUseTableList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopChestBatchUseTable.class).getType());
+			if (shopChestBatchUseTableList.size() > 0) {
+				getShopChestBatchUseData().addAll(shopChestBatchUseTableList);
+				Grasscutter.getLogger().info("ShopChestBatchUse data successfully loaded.");
+			} else {
+				Grasscutter.getLogger().error("Unable to load ShopChestBatchUse data. ShopChestBatchUse data size is 0.");
+			}
+		} catch (Exception e) {
+			Grasscutter.getLogger().error("Unable to load ShopChestBatchUse data.", e);
+		}
+	}
+
+	public synchronized void load() {
+		loadShop();
+		loadShopChest();
+		loadShopChestBatchUse();
 	}
 
 	public GameServer getServer() {

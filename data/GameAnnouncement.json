@@ -1,0 +1,29 @@
+{
+"list": [
+  {
+    "ann_id": 1,
+    "title": "<b>Welcome to Grasscutter!</b>",
+    "subtitle": "<b>Welcome</b>",
+    "banner": "https://uploadstatic-sea.mihoyo.com/announcement/2020/09/17/f4aa42d505822805eebf4a55d72a78d8_2755691727027973637.jpg",
+    "content": "Hi there!<br>First of all, welcome to Grasscutter. If you have any issues, please let us know so that Lawnmower can help you! Check out our:<br><div><p style=\"white-space: pre-wrap;\"><strong>〓Discord〓</strong></p><p style=\"white-space: pre-wrap;\"><a href=\"https://discord.gg/T5vZU6UyeG\">https://discord.gg/T5vZU6UyeG</a></p><p style=\"white-space: pre-wrap;\"><strong>〓GitHub〓</strong></p><p style=\"white-space: pre-wrap;\"><a href=\"https://github.com/Grasscutters/Grasscutter\">https://github.com/Grasscutters/Grasscutter</a></p></div>",
+    "lang": "es-es"
+  },
+  {
+    "ann_id": 2,
+    "title": "<b>How to use announcements</b>",
+    "subtitle": "<b>How to use</b>",
+    "banner": "https://uploadstatic-sea.mihoyo.com/announcement/2020/09/17/f4aa42d505822805eebf4a55d72a78d8_2755691727027973637.jpg",
+    "content": "<strong>Tips<br></strong>>How to use announcements<br><br>>Announcement content can use HTML<br><br>>The specific content of the announcement is stored in the program directory<code>data/GameAnnouncement.json</code>, while<code>GameAnnouncementList.json</code> stores the announcement list data<br><br><strong>How to use</strong><br>>In <code>GameAnnouncement</code><table><thead><thead><tr><th>Parameters</th><th>Description</th></thead></thead><thbody><thead><tr><th>ann_Id</th><th>Announcement unique id</th></thead><thead><tr><th>title</th><th>Show at the top of the content</th></thead><thead><tr><th>subtitle</th><th>title shown on the left</th></thead><thead><tr><th>banner</th><th>Display between content and title</th></thead><thead><tr><th>content</th><th>as u see</th></thead><thead><tr><th>lang</th><th>display language</th></thead><thead><tr><th>total</th><th>Announcement quantity</th></thead></thbody></table><br><br>>In <code>GameAnnouncementList</code><br>If you want to add an annouement, please add the list data in the announcement type corresponding to GameAnnouncementList, and finally add the announcement content in GameAnnouncement",
+    "lang": "es-es"
+  },
+  {
+    "ann_id": 3,
+    "title": "<b>这是活动公告--This is the event announcement</b>",
+    "subtitle": "<b>Welcome</b>",
+    "banner":"https://uploadstatic-sea.mihoyo.com/announcement/2020/09/22/7d85f19b152d218e73224d7c138a0fd0_5818585260283672899.jpg",
+    "content": "Welcome",
+    "lang": "es-es"
+  }
+],
+"total": 3
+}

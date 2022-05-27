@@ -8,12 +8,14 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 import java.util.Map;
 
+import static emu.grasscutter.utils.Language.translate;
+
 @Command(label = "list", usage = "list [uid]",
         description = "List online players", aliases = {"players"})
 public final class ListCommand implements CommandHandler {
 
     @Override
-    public void execute(Player sender, List<String> args) {
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
         Map<Integer, Player> playersMap = Grasscutter.getGameServer().getPlayers();
         boolean needUID = false;
 
@@ -21,7 +23,7 @@ public final class ListCommand implements CommandHandler {
             needUID = args.get(0).equals("uid");
         }
 
-        CommandHandler.sendMessage(sender, String.format("There are %s player(s) online:", playersMap.size()));
+        CommandHandler.sendMessage(sender, translate("commands.list.success", Integer.toString(playersMap.size())));
 
         if (playersMap.size() != 0) {
             StringBuilder playerSet = new StringBuilder();

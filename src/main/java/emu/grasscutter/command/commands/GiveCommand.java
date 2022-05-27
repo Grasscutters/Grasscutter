@@ -12,135 +12,107 @@ import emu.grasscutter.game.props.ActionReason;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
-@Command(label = "give", usage = "give [player] <itemId|itemName> [amount] [level]", description = "Gives an item to you or the specified player", aliases = {
+import static emu.grasscutter.utils.Language.translate;
+
+@Command(label = "give", usage = "give <itemId|itemName> [amount] [level]", description = "Gives an item to you or the specified player", aliases = {
         "g", "item", "giveitem"}, permission = "player.give")
 public final class GiveCommand implements CommandHandler {
+    Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java is a joke of a proglang that doesn't have raw string literals
+    Pattern refineRegex = Pattern.compile("r(\\d+)");
+    Pattern amountRegex = Pattern.compile("((?<=x)\\d+|\\d+(?=x)(?!x\\d))");
+
+    private int matchIntOrNeg(Pattern pattern, String arg) {
+        Matcher match = pattern.matcher(arg);
+        if (match.find()) {
+            return Integer.parseInt(match.group(1));  // This should be exception-safe as only \d+ can be passed to it (i.e. non-empty string of pure digits)
+        }
+        return -1;
+    }
 
     @Override
-    public void execute(Player sender, List<String> args) {
-        int target, item, lvl, amount = 1, refinement = 0;
-        if (sender == null && args.size() < 2) {
-            CommandHandler.sendMessage(null, "Usage: give <player> <itemId|itemName> [amount] [level]");
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (targetPlayer == null) {
+            CommandHandler.sendMessage(sender, translate("commands.execution.need_target"));
             return;
+        }
+        int item;
+        int lvl = 1;
+        int amount = 1;
+        int refinement = 0;
+
+        for (int i = args.size()-1; i>=0; i--) {  // Reverse iteration as we are deleting elements
+            String arg = args.get(i).toLowerCase();
+            boolean deleteArg = false;
+            int argNum;
+            if ((argNum = matchIntOrNeg(lvlRegex, arg)) != -1) {
+                lvl = argNum;
+                deleteArg = true;
+            }
+            if ((argNum = matchIntOrNeg(refineRegex, arg)) != -1) {
+                refinement = argNum;
+                deleteArg = true;
+            }
+            if ((argNum = matchIntOrNeg(amountRegex, arg)) != -1) {
+                amount = argNum;
+                deleteArg = true;
+            }
+            if (deleteArg) {
+                args.remove(i);
+            }
         }
 
         switch (args.size()) {
-            default: // *No args*
-                CommandHandler.sendMessage(sender, "Usage: give [player] <itemId|itemName> [amount]");
-                return;
+            case 4: // <itemId|itemName> [amount] [level] [refinement]
+                try {
+                    refinement = Integer.parseInt(args.get(3));
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.itemRefinement"));
+                    return;
+                }  // Fallthrough
+            case 3: // <itemId|itemName> [amount] [level]
+                try {
+                    lvl = Integer.parseInt(args.get(2));
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.itemLevel"));
+                    return;
+                }  // Fallthrough
+            case 2: // <itemId|itemName> [amount]
+                try {
+                    amount = Integer.parseInt(args.get(1));
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.amount"));
+                    return;
+                }  // Fallthrough
             case 1: // <itemId|itemName>
                 try {
                     item = Integer.parseInt(args.get(0));
-                    target = sender.getUid();
-                    lvl = 1;
                 } catch (NumberFormatException ignored) {
                     // TODO: Parse from item name using GM Handbook.
-                    CommandHandler.sendMessage(sender, "Invalid item id.");
+                    CommandHandler.sendMessage(sender, translate("commands.generic.invalid.itemId"));
                     return;
                 }
                 break;
-            case 2: // <itemId|itemName> [amount] | [player] <itemId|itemName>
-                try {
-                    target = Integer.parseInt(args.get(0));
-                    lvl = 1;
-
-                    if (Grasscutter.getGameServer().getPlayerByUid(target) == null && sender != null) {
-                        target = sender.getUid();
-                        item = Integer.parseInt(args.get(0));
-                        amount = Integer.parseInt(args.get(1));
-                    } else {
-                        item = Integer.parseInt(args.get(1));
-                    }
-                } catch (NumberFormatException ignored) {
-                    // TODO: Parse from item name using GM Handbook.
-                    CommandHandler.sendMessage(sender, "Invalid item or player ID.");
-                    return;
-                }
-                break;
-            case 3: // [player] <itemId|itemName> [amount] | <itemId|itemName> [amount] [level]
-                try {
-                    target = Integer.parseInt(args.get(0));
-
-                    if (Grasscutter.getGameServer().getPlayerByUid(target) == null && sender != null) {
-                        target = sender.getUid();
-                        item = Integer.parseInt(args.get(0));
-                        amount = Integer.parseInt(args.get(1));
-                        lvl = Integer.parseInt(args.get(2));
-                    } else {
-                        item = Integer.parseInt(args.get(1));
-                        amount = Integer.parseInt(args.get(2));
-                        lvl = 1;
-                    }
-
-                } catch (NumberFormatException ignored) {
-                    // TODO: Parse from item name using GM Handbook.
-                    CommandHandler.sendMessage(sender, "Invalid item or player ID.");
-                    return;
-                }
-                break;
-            case 4: // [player] <itemId|itemName> [amount] [level] | <itemId|itemName> [amount] [level] [refinement]
-                try {
-                    target = Integer.parseInt(args.get(0));
-
-                    if (Grasscutter.getGameServer().getPlayerByUid(target) == null && sender != null) {
-                        target = sender.getUid();
-                        item = Integer.parseInt(args.get(0));
-                        amount = Integer.parseInt(args.get(1));
-                        lvl = Integer.parseInt(args.get(2));
-                        refinement = Integer.parseInt(args.get(3));
-                    } else {
-                        item = Integer.parseInt(args.get(1));
-                        amount = Integer.parseInt(args.get(2));
-                        lvl = Integer.parseInt(args.get(3));
-                    }
-                } catch (NumberFormatException ignored) {
-                    // TODO: Parse from item name using GM Handbook.
-                    CommandHandler.sendMessage(sender, "Invalid item or player ID.");
-                    return;
-                }
-                break;
-            case 5: // [player] <itemId|itemName> [amount] [level] [refinement]
-                try {
-                    target = Integer.parseInt(args.get(0));
-
-                    if (Grasscutter.getGameServer().getPlayerByUid(target) == null) {
-                        CommandHandler.sendMessage(sender, "Invalid player ID.");
-                        return;
-                    } else {
-                        item = Integer.parseInt(args.get(1));
-                        amount = Integer.parseInt(args.get(2));
-                        lvl = Integer.parseInt(args.get(3));
-                        refinement = Integer.parseInt(args.get(4));
-                    }
-                } catch (NumberFormatException ignored) {
-                    // TODO: Parse from item name using GM Handbook.
-                    CommandHandler.sendMessage(sender, "Invalid item or player ID.");
-                    return;
-                }
-                break;
-        }
-
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(target);
-
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "Player not found.");
-            return;
+            default: // *No args*
+                CommandHandler.sendMessage(sender, translate("commands.give.usage"));
+                return;
         }
 
         ItemData itemData = GameData.getItemDataMap().get(item);
         if (itemData == null) {
-            CommandHandler.sendMessage(sender, "Invalid item id.");
+            CommandHandler.sendMessage(sender, translate("commands.generic.invalid.itemId"));
             return;
         }
         if (refinement != 0) {
             if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
                 if (refinement < 1 || refinement > 5) {
-                    CommandHandler.sendMessage(sender, "Refinement must be between 1 and 5.");
+                    CommandHandler.sendMessage(sender, translate("commands.give.refinement_must_between_1_and_5"));
                     return;
                 }
             } else {
-                CommandHandler.sendMessage(sender, "Refinement is only applicable to weapons.");
+                CommandHandler.sendMessage(sender, translate("commands.give.refinement_only_applicable_weapons"));
                 return;
             }
         }
@@ -148,13 +120,11 @@ public final class GiveCommand implements CommandHandler {
         this.item(targetPlayer, itemData, amount, lvl, refinement);
 
         if (!itemData.isEquip()) {
-            CommandHandler.sendMessage(sender, String.format("Given %s of %s to %s.", amount, item, target));
+            CommandHandler.sendMessage(sender, translate("commands.give.given", Integer.toString(amount), Integer.toString(item), Integer.toString(targetPlayer.getUid())));
         } else if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
-            CommandHandler.sendMessage(sender,
-                    String.format("Given %s with level %s, refinement %s %s times to %s", item, lvl, refinement, amount, target));
+            CommandHandler.sendMessage(sender, translate("commands.give.given_with_level_and_refinement", Integer.toString(item), Integer.toString(lvl), Integer.toString(refinement), Integer.toString(amount), Integer.toString(targetPlayer.getUid())));
         } else {
-            CommandHandler.sendMessage(sender,
-                    String.format("Given %s with level %s %s times to %s", item, lvl, amount, target));
+            CommandHandler.sendMessage(sender, translate("commands.give.given_level", Integer.toString(item), Integer.toString(lvl), Integer.toString(amount)));
         }
     }
 

@@ -1,21 +1,24 @@
 package emu.grasscutter.game.dungeons;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.MonsterData;
+import emu.grasscutter.data.common.ItemParamData;
+import emu.grasscutter.data.def.DungeonData;
 import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGroup;
-import emu.grasscutter.scripts.data.SceneMonster;
+import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketChallengeDataNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeBeginNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
-import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
+import emu.grasscutter.server.packet.send.PacketGadgetAutoPickDropInfoNotify;
+import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
+import it.unimi.dsi.fastutil.ints.IntSet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DungeonChallenge {
 	private final Scene scene;
@@ -28,12 +31,12 @@ public class DungeonChallenge {
 	
 	private int score;
 	private int objective = 0;
-	
+	private IntSet rewardedPlayers;
+
 	public DungeonChallenge(Scene scene, SceneGroup group) {
 		this.scene = scene;
 		this.group = group;
-		
-		objective += group.monsters.size();
+		this.setRewardedPlayers(new IntOpenHashSet());
 	}
 
 	public Scene getScene() {
@@ -60,6 +63,14 @@ public class DungeonChallenge {
 		this.challengeId = challengeId;
 	}
 
+	public int getObjective() {
+		return objective;
+	}
+
+	public void setObjective(int objective) {
+		this.objective = objective;
+	}
+
 	public boolean isSuccess() {
 		return success;
 	}
@@ -75,6 +86,18 @@ public class DungeonChallenge {
 	public int getScore() {
 		return score;
 	}
+	
+	public int getTimeLimit() {
+		return 600;
+	}
+
+	public IntSet getRewardedPlayers() {
+		return rewardedPlayers;
+	}
+
+	public void setRewardedPlayers(IntSet rewardedPlayers) {
+		this.rewardedPlayers = rewardedPlayers;
+	}
 
 	public void start() {
 		this.progress = true;
@@ -83,13 +106,24 @@ public class DungeonChallenge {
 	
 	public void finish() {
 		this.progress = false;
+		
 		getScene().broadcastPacket(new PacketDungeonChallengeFinishNotify(this));
 		
 		if (this.isSuccess()) {
+			// Call success script event
 			this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_SUCCESS, null);
+			
+			// Settle
+			settle();
 		} else {
 			this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_FAIL, null);
 		}
+	}
+	
+	private void settle() {
+		getScene().getDungeonSettleObservers().forEach(o -> o.onDungeonSettle(getScene()));
+		
+		getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE, new ScriptArgs(this.isSuccess() ? 1 : 0));
 	}
 
 	public void onMonsterDie(EntityMonster entity) {
@@ -97,9 +131,31 @@ public class DungeonChallenge {
 		
 		getScene().broadcastPacket(new PacketChallengeDataNotify(this, 1, getScore()));
 		
-		if (getScore() >= objective) {
+		if (getScore() >= getObjective() && this.progress) {
 			this.setSuccess(true);
 			finish();
 		}
+	}
+	
+	public void getStatueDrops(Player player) {
+		DungeonData dungeonData = getScene().getDungeonData();
+		if (!isSuccess() || dungeonData == null || dungeonData.getRewardPreview() == null || dungeonData.getRewardPreview().getPreviewItems().length == 0) {
+			return;
+		}
+		
+		// Already rewarded
+		if (getRewardedPlayers().contains(player.getUid())) {
+			return;
+		}
+		
+		List<GameItem> rewards = new ArrayList<>();
+		for (ItemParamData param : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
+			rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
+		}
+		
+		player.getInventory().addItems(rewards, ActionReason.DungeonStatueDrop);
+		player.sendPacket(new PacketGadgetAutoPickDropInfoNotify(rewards));
+		
+		getRewardedPlayers().add(player.getUid());
 	}
 }
