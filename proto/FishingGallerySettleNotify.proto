@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FishingGallerySettleInfo.proto";
+
+// CmdId: 8896
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FishingGallerySettleNotify {
+	FishingGallerySettleInfo settle_info = 4;
+	uint32 gallery_id = 2;
+	uint32 level_id = 8;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8639
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ChannellerSlabEnterLoopDungeonRsp {
+	int32 retcode = 10;
+	uint32 dungeon_index = 13;
+	uint32 difficulty_id = 1;
+	repeated uint32 condition_id_list = 5;
+	uint32 point_id = 6;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message FallPlayerInfo {
+	uint32 uid = 1;
+	uint32 cur_score = 2;
+	map<uint32, uint32> ball_catch_count_map = 3;
+	bool is_ground = 4;
+	uint32 time_cost = 5;
+}

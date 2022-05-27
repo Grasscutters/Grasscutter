@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message BIEMCDLIFOD {
+	Vector spawn_pos = 1;
+	repeated int32 included_furniture_index_list = 2;
+	uint32 guid = 3;
+}

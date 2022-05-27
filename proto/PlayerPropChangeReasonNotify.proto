@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PropChangeReason.proto";
+
+// CmdId: 1282
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerPropChangeReasonNotify {
+	uint32 prop_type = 13;
+	float old_value = 5;
+	float cur_value = 9;
+	PropChangeReason reason = 3;
+}

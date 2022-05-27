@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "InBattleMechanicusCardInfo.proto";
+
+// CmdId: 5330
+// EnetChannelId: 0
+// EnetIsReliable: true
+message InBattleMechanicusCardResultNotify {
+	uint32 play_index = 10;
+	uint32 group_id = 14;
+	uint64 wait_begin_time_us = 5;
+	uint32 wait_seconds = 6;
+	repeated InBattleMechanicusCardInfo card_list = 9;
+	map<uint32, uint32> player_confirmed_card_map = 2;
+}

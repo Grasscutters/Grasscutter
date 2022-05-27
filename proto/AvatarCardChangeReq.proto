@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 650
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message AvatarCardChangeReq {
+	uint64 avatar_guid = 6;
+	uint32 item_id = 14;
+	uint32 count = 3;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PushTipsData.proto";
+
+// CmdId: 2238
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PushTipsChangeNotify {
+	repeated PushTipsData push_tips_list = 13;
+}

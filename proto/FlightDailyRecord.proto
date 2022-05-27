@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message FlightDailyRecord {
+	bool is_touched = 1;
+	uint32 best_score = 2;
+	uint32 start_time = 3;
+	repeated uint32 watcher_id_list = 4;
+	uint32 group_id = 5;
+}

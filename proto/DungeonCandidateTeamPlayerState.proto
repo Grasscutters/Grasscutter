@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum DungeonCandidateTeamPlayerState {
+	DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_IDLE = 0;
+	DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_CHANGING_AVATAR = 1;
+	DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_READY = 2;
+}

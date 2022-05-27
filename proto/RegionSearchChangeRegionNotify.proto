@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5609
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message RegionSearchChangeRegionNotify {
+	uint32 region_id = 10;
+	RegionEvent event = 5;
+
+	enum RegionEvent {
+		REGION_EVENT_NONE = 0;
+		REGION_EVENT_ENTER = 1;
+		REGION_EVENT_LEAVE = 2;
+	}
+}

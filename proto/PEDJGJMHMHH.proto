@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EOHBLDIKPME.proto";
+
+message PEDJGJMHMHH {
+	uint32 open_time = 1;
+	EOHBLDIKPME NKGOFPDJCFB = 2;
+	EOHBLDIKPME HBOEHHPCIPC = 3;
+	uint32 level_id = 4;
+}

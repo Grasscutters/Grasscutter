@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2115
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message FleurFairMusicGameSettleReq {
+	uint32 music_basic_id = 13;
+	uint32 score = 6;
+	uint32 combo = 12;
+	uint32 correct_hit = 1;
+}

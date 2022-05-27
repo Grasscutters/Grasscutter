@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ForwardType.proto";
+import "Vector.proto";
+
+// CmdId: 306
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EvtAvatarEnterFocusNotify {
+	ForwardType forward_type = 11;
+	uint32 entity_id = 3;
+	bool fast_focus = 15;
+	bool use_focus_sticky = 7;
+	bool use_auto_focus = 1;
+	bool use_gyro = 9;
+	bool can_move = 5;
+	bool show_cross_hair = 6;
+	Vector focus_forward = 8;
+	bool enter_normal_focus_shoot = 13;
+	bool enter_holding_focus_shoot = 14;
+	bool disable_anim = 12;
+	bool MCHFONNNDEN = 4;
+}

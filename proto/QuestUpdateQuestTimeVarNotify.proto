@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 484
+// EnetChannelId: 0
+// EnetIsReliable: true
+message QuestUpdateQuestTimeVarNotify {
+	uint32 parent_quest_id = 3;
+	map<uint32, uint32> time_var_map = 11;
+}

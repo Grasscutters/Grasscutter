@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2109
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ActivitySaleChangeNotify {
+	uint32 sale_id = 6;
+	bool is_close = 13;
+}

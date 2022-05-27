@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 2051
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SeaLampFlyLampNotify {
+	uint32 item_id = 4;
+	uint32 item_num = 2;
+	Vector pos = 13;
+	int32 param = 6;
+}

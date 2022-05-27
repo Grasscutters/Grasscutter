@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 256
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message SetSceneWeatherAreaReq {
+	uint32 weather_gadget_id = 14;
+	map<uint32, string> weather_value_map = 6;
+}

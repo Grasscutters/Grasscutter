@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeLimitedShopGoods.proto";
+
+message HomeLimitedShop {
+	repeated HomeLimitedShopGoods goods_list = 1;
+}

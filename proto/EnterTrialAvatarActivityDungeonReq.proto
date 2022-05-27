@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2057
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EnterTrialAvatarActivityDungeonReq {
+	uint32 activity_id = 2;
+	uint32 trial_avatar_index_id = 12;
+	uint32 enter_point_id = 1;
+}

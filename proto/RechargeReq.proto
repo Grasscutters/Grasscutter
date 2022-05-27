@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlayProduct.proto";
+import "ShopCardProduct.proto";
+import "ShopConcertProduct.proto";
+import "ShopMcoinProduct.proto";
+
+// CmdId: 4118
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message RechargeReq {
+	ShopMcoinProduct mcoin_product = 10;
+	ShopCardProduct card_product = 5;
+	PlayProduct play_product = 6;
+	ShopConcertProduct concert_product = 7;
+}

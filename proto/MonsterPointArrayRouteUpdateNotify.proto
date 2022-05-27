@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MonsterRoute.proto";
+
+// CmdId: 3138
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MonsterPointArrayRouteUpdateNotify {
+	uint32 entity_id = 12;
+	MonsterRoute monster_route = 8;
+}

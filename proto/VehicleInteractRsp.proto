@@ -5,9 +5,12 @@ option java_package = "emu.grasscutter.net.proto";
 import "VehicleInteractType.proto";
 import "VehicleMember.proto";
 
+// CmdId: 806
+// EnetChannelId: 0
+// EnetIsReliable: true
 message VehicleInteractRsp {
-	int32 retcode = 1;
-	uint32 entity_id = 2;
+	int32 retcode = 15;
+	uint32 entity_id = 14;
 	VehicleInteractType interact_type = 3;
-	VehicleMember member = 4;
+	VehicleMember member = 1;
 }

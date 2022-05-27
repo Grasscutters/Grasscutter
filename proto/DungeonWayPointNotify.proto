@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 985
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DungeonWayPointNotify {
+	repeated uint32 active_way_point_list = 7;
+	bool is_add = 5;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8218
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ActivityTakeScoreRewardRsp {
+	int32 retcode = 5;
+	uint32 activity_id = 4;
+	uint32 reward_config_id = 7;
+}

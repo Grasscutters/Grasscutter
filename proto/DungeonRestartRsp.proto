@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 960
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DungeonRestartRsp {
+	int32 retcode = 12;
+	uint32 point_id = 7;
+	uint32 dungeon_id = 15;
+}

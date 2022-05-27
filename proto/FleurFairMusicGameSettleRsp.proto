@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2124
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FleurFairMusicGameSettleRsp {
+	int32 retcode = 11;
+	uint32 music_basic_id = 12;
+	bool is_unlock_next_level = 4;
+	bool is_new_record = 13;
+}

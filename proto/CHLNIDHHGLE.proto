@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MOFABPNGIKP.proto";
+
+message CHLNIDHHGLE {
+	uint32 score = 1;
+	uint32 hit_count = 2;
+	MOFABPNGIKP reason = 3;
+	uint32 owner_uid = 4;
+}

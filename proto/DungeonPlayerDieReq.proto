@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlayerDieType.proto";
+
+// CmdId: 997
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message DungeonPlayerDieReq {
+	uint32 dungeon_id = 3;
+	PlayerDieType die_type = 12;
+}

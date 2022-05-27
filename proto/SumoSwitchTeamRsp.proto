@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SumoDungeonTeam.proto";
+
+// CmdId: 8442
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SumoSwitchTeamRsp {
+	int32 retcode = 8;
+	uint32 activity_id = 4;
+	uint32 stage_id = 9;
+	uint32 cur_team_index = 7;
+	repeated SumoDungeonTeam dungeon_team_list = 6;
+	uint32 next_valid_switch_time = 15;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CityReputationInfo.proto";
+
+// CmdId: 2831
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetCityReputationInfoRsp {
+	int32 retcode = 10;
+	uint32 city_id = 5;
+	CityReputationInfo city_reputation_info = 8;
+}

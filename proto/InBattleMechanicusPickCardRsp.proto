@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5349
+// EnetChannelId: 0
+// EnetIsReliable: true
+message InBattleMechanicusPickCardRsp {
+	int32 retcode = 5;
+	uint32 play_index = 10;
+	uint32 group_id = 9;
+	uint32 card_id = 11;
+}

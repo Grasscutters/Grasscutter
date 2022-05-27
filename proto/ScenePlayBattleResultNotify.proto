@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "OHOKEEGPPBG.proto";
+import "ScenePlayBattleSettlePlayerInfo.proto";
+
+// CmdId: 4357
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ScenePlayBattleResultNotify {
+	uint32 play_id = 14;
+	uint32 play_type = 3;
+	bool is_win = 1;
+	uint32 cost_time = 4;
+	repeated ScenePlayBattleSettlePlayerInfo settle_player_info_list = 6;
+	repeated OHOKEEGPPBG FKFINKKKJOF = 2;
+}

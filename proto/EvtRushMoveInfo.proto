@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message EvtRushMoveInfo {
+	uint32 entity_id = 1;
+	Vector velocity = 2;
+	float time_range = 3;
+	int32 state_name_hash = 4;
+	int32 face_angle_compact = 5;
+	Vector pos = 6;
+	Vector rush_attack_target_pos = 7;
+	Vector rush_to_pos = 8;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message RogueAvatarInfo {
+	uint32 avatar_id = 1;
+	bool is_onstage = 2;
+	bool is_alive = 3;
+}

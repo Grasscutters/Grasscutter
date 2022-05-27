@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PPIBANCGGNI.proto";
+
+// CmdId: 8165
+// EnetChannelId: 0
+// EnetIsReliable: true
+message NGPMINKIOPK {
+	PPIBANCGGNI settle_info = 4;
+	uint32 gallery_id = 9;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message CityReputationRequestInfo {
+	bool is_open = 1;
+	repeated RequestInfo request_info_list = 2;
+
+	message RequestInfo {
+		uint32 request_id = 1;
+		uint32 quest_id = 2;
+		bool is_taken_reward = 3;
+	}
+}

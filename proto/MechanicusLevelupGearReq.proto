@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3949
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message MechanicusLevelupGearReq {
+	uint32 mechanicus_id = 6;
+	uint32 gear_id = 1;
+}

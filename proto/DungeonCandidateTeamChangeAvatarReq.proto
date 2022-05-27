@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 984
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message DungeonCandidateTeamChangeAvatarReq {
+	repeated uint64 avatar_guid_list = 9;
+}

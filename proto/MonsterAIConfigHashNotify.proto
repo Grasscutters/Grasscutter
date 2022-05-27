@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3121
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message MonsterAIConfigHashNotify {
+	uint32 entity_id = 9;
+	int32 hash_value = 2;
+	uint32 job_id = 15;
+}

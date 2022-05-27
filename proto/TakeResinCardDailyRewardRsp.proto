@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+// CmdId: 4116
+// EnetChannelId: 0
+// EnetIsReliable: true
+message TakeResinCardDailyRewardRsp {
+	int32 retcode = 1;
+	uint32 product_config_id = 11;
+	repeated ItemParam item_vec = 4;
+}

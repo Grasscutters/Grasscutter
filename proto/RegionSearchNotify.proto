@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "RegionSearchInfo.proto";
+
+// CmdId: 5618
+// EnetChannelId: 0
+// EnetIsReliable: true
+message RegionSearchNotify {
+	repeated RegionSearchInfo region_search_list = 1;
+	uint32 uid = 11;
+}

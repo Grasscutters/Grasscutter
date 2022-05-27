@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2406
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message TowerGetFloorStarRewardReq {
+	uint32 floor_id = 1;
+}

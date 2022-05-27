@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DigMarkPoint.proto";
+
+// CmdId: 8679
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DigActivityMarkPointChangeNotify {
+	repeated DigMarkPoint dig_mark_point_list = 9;
+}

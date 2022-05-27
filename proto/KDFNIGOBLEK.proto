@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8902
+// EnetChannelId: 0
+// EnetIsReliable: true
+message KDFNIGOBLEK {
+	int32 retcode = 8;
+	uint32 level_id = 12;
+	bool PNLEOBHPKIE = 9;
+	uint32 card_id = 6;
+}

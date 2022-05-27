@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CHLNIDHHGLE.proto";
+
+// CmdId: 4829
+// EnetChannelId: 0
+// EnetIsReliable: true
+message NFGNGFLNOOJ_Notify {
+	uint32 gallery_id = 14;
+	CHLNIDHHGLE settle_info = 12;
+	uint32 GPEGHIFCALH = 1;
+	bool is_new_record = 6;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BGKMAAINPCO.proto";
+
+message IOLMLCCBAKP {
+	uint32 level_id = 1;
+	bool is_open = 2;
+	uint32 best_score = 3;
+	repeated BGKMAAINPCO PPAOPEMNPIC = 4;
+}

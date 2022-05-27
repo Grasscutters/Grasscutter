@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message NAPLFKNOECD {
+	uint32 type = 1;
+	float value = 2;
+	float FPPPNANECHE = 3;
+	float KNGDEINJCOG = 4;
+}

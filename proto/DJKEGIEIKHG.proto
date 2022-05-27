@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MOFABPNGIKP.proto";
+
+message DJKEGIEIKHG {
+	uint32 level_id = 1;
+	uint32 MLDAGAAJMBE = 2;
+	bool BMGMFBPAOAI = 3;
+	uint32 finish_time = 4;
+	MOFABPNGIKP reason = 5;
+}

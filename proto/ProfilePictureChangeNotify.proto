@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ProfilePicture.proto";
+
+// CmdId: 4087
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ProfilePictureChangeNotify {
+	ProfilePicture profile_picture = 14;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4435
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ScenePlayGuestReplyInviteReq {
+	uint32 play_id = 1;
+	bool is_agree = 10;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ReunionWatcherInfo.proto";
+
+message ReunionMissionInfo {
+	uint32 mission_id = 1;
+	repeated ReunionWatcherInfo cur_day_watcher_list = 2;
+	uint32 cur_score = 3;
+	bool is_finished = 4;
+	bool is_taken_reward = 5;
+	uint32 next_refresh_time = 6;
+	repeated bool is_taken_reward_list = 7;
+	repeated ReunionWatcherInfo watcher_list = 8;
+}

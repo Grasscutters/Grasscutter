@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FoundationOpType.proto";
+
+// CmdId: 898
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message FoundationReq {
+	uint32 gadget_entity_id = 15;
+	FoundationOpType op_type = 10;
+	uint32 building_id = 9;
+	uint32 point_config_id = 8;
+}

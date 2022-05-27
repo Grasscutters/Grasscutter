@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 485
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AddQuestContentProgressRsp {
+	int32 retcode = 10;
+	uint32 content_type = 7;
+}

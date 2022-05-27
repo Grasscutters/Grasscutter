@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SeaLampSectionInfo.proto";
+
+message SeaLampActivityInfo {
+	uint32 day_index = 1;
+	uint32 popularity = 2;
+	uint32 sea_lamp_coin = 3;
+	bool is_content_closed = 4;
+	repeated SeaLampSectionInfo section_info_list = 5;
+	uint32 mechanicus_id = 6;
+	bool is_mechanicus_open = 7;
+	uint32 first_day_start_time = 8;
+	bool is_mechanicus_feature_close = 9;
+}

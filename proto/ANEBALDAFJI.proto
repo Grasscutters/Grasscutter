@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+// CmdId: 8376
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ANEBALDAFJI {
+	int32 retcode = 7;
+	repeated ItemParam item_list = 13;
+}

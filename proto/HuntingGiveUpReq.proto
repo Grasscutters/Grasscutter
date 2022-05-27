@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HuntingPair.proto";
+
+// CmdId: 4337
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message HuntingGiveUpReq {
+	HuntingPair hunting_pair = 4;
+}

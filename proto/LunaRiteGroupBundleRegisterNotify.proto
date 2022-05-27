@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8327
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message LunaRiteGroupBundleRegisterNotify {
+	uint32 group_link_bundle_id = 13;
+}

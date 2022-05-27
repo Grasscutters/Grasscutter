@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 211
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SceneForceLockNotify {
+	repeated uint32 force_id_list = 7;
+}

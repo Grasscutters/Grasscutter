@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DIPHADPMNHO.proto";
+import "DNMAAJOODGO.proto";
+import "JIOLGGBMAIM.proto";
+
+// CmdId: 7914
+// EnetChannelId: 0
+// EnetIsReliable: true
+message CMBOFNDNICA {
+	repeated DIPHADPMNHO ECPJEBOFGIH = 1;
+	repeated JIOLGGBMAIM KFOMJEMIBNJ = 2;
+	repeated DNMAAJOODGO OKPNKONJDIM = 3;
+}

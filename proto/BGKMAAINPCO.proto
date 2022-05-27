@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "JPGAAHJBLKB.proto";
+import "PKAPCOBGIJL.proto";
+
+message BGKMAAINPCO {
+	repeated JPGAAHJBLKB avatar_info_list = 1;
+	repeated PKAPCOBGIJL GHHDKLIIAKN = 2;
+}

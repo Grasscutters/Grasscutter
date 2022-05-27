@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8851
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DigActivityChangeGadgetStateRsp {
+	int32 retcode = 4;
+	uint32 entity_id = 13;
+}

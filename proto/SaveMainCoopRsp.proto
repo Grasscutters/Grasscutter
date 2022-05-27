@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1954
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SaveMainCoopRsp {
+	int32 retcode = 12;
+	uint32 id = 14;
+	repeated uint32 save_point_id_list = 2;
+}

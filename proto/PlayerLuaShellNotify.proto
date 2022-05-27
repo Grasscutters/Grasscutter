@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "JOEPIGNPDGH.proto";
+
+// CmdId: 110
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerLuaShellNotify {
+	uint32 id = 6;
+	bytes lua_shell = 12;
+	uint32 use_type = 10;
+	JOEPIGNPDGH HHKAMAJOOLD = 2;
+}

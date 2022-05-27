@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "RogueEffectRecord.proto";
+
+// CmdId: 8606
+// EnetChannelId: 0
+// EnetIsReliable: true
+message RoguelikeEffectDataNotify {
+	repeated RogueEffectRecord card_list = 11;
+	repeated RogueEffectRecord curse_list = 15;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeAvatarRewardEventInfo.proto";
+
+// CmdId: 4789
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeAvatarRewardEventNotify {
+	bool is_event_trigger = 5;
+	HomeAvatarRewardEventInfo reward_event = 1;
+	repeated HomeAvatarRewardEventInfo pending_list = 4;
+}

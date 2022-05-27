@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "OnlinePlayerInfo.proto";
+
+// CmdId: 4554
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeGetOnlineStatusRsp {
+	int32 retcode = 3;
+	repeated OnlinePlayerInfo player_info_list = 9;
+}

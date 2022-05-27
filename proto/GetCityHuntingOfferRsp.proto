@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HuntingOfferData.proto";
+import "HuntingPair.proto";
+
+// CmdId: 4304
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetCityHuntingOfferRsp {
+	int32 retcode = 14;
+	uint32 city_id = 9;
+	repeated HuntingOfferData hunting_offer_list = 4;
+	uint32 cur_week_finished_count = 7;
+	HuntingPair ongoing_hunting_pair = 2;
+	uint32 next_refresh_time = 3;
+}

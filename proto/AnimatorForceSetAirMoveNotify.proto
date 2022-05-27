@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ForwardType.proto";
+
+// CmdId: 346
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message AnimatorForceSetAirMoveNotify {
+	ForwardType forward_type = 13;
+	uint32 entity_id = 15;
+	bool in_air_move = 9;
+}

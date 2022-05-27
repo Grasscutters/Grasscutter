@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8235
+// EnetChannelId: 0
+// EnetIsReliable: true
+message TriggerRoguelikeCurseNotify {
+	bool is_trigger_curse = 15;
+	uint32 curse_group_id = 1;
+	uint32 curse_level = 11;
+	repeated uint32 effect_param_list = 3;
+}

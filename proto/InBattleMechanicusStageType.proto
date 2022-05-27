@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum InBattleMechanicusStageType {
+	IN_BATTLE_MECHANICUS_STAGE_TYPE_NONE = 0;
+	IN_BATTLE_MECHANICUS_STAGE_TYPE_BUILD = 1;
+	IN_BATTLE_MECHANICUS_STAGE_TYPE_CARD_FLIP = 2;
+	IN_BATTLE_MECHANICUS_STAGE_TYPE_KILL = 3;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BonusActivityInfo.proto";
+
+// CmdId: 2598
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetBonusActivityRewardRsp {
+	int32 retcode = 7;
+	BonusActivityInfo bonus_activity_info_list = 12;
+}

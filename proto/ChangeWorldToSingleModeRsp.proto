@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3083
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ChangeWorldToSingleModeRsp {
+	int32 retcode = 5;
+	uint32 quit_mp_valid_time = 15;
+}

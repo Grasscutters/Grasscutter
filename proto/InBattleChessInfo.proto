@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ChessCardInfo.proto";
+import "ChessMysteryInfo.proto";
+import "ChessPlayerInfo.proto";
+
+message InBattleChessInfo {
+	uint32 round = 1;
+	uint32 total_round = 2;
+	map<uint32, ChessPlayerInfo> player_info_map = 3;
+	uint32 left_monsters = 5;
+	uint32 excaped_monsters = 6;
+	uint32 max_escapable_monsters = 7;
+	ChessMysteryInfo mystery_info = 8;
+	repeated ChessCardInfo selected_card_info_list = 9;
+	repeated uint32 ban_card_tag_list = 10;
+}

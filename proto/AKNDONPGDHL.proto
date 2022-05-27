@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 7203
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AKNDONPGDHL {
+	int32 retcode = 1;
+	uint32 AALAKIGGOPD = 2;
+}

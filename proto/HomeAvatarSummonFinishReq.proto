@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4748
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message HomeAvatarSummonFinishReq {
+	uint32 event_id = 3;
+}

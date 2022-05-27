@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ExhibitionDisplayInfo.proto";
+import "ProfilePicture.proto";
+
+message ScenePlayBattleSettlePlayerInfo {
+	uint32 uid = 1;
+	uint32 statistic_id = 2;
+	int64 param = 3;
+	uint32 head_image = 4;
+	string nickname = 5;
+	string online_id = 6;
+	ProfilePicture profile_picture = 7;
+	repeated ExhibitionDisplayInfo card_list = 8;
+}

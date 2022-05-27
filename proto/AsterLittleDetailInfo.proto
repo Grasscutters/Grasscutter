@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AsterLittleStageState.proto";
+
+message AsterLittleDetailInfo {
+	bool is_open = 1;
+	uint32 stage_id = 2;
+	AsterLittleStageState stage_state = 3;
+	uint32 begin_time = 4;
+	uint32 stage_begin_time = 5;
+}

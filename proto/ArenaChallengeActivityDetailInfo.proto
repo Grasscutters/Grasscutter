@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ArenaChallengeMonsterLevel.proto";
+
+message ArenaChallengeActivityDetailInfo {
+	uint32 world_level = 1;
+	repeated ArenaChallengeMonsterLevel level_list = 2;
+	map<uint32, uint32> level_open_time_map = 3;
+}

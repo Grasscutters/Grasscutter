@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4712
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message HomeAvatarTalkReq {
+	uint32 avatar_id = 13;
+	uint32 talk_id = 12;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2067
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GetActivityInfoReq {
+	repeated uint32 activity_id_list = 14;
+}

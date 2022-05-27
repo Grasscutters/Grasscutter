@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DungeonCandidateTeamDismissReason.proto";
+
+// CmdId: 913
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DungeonCandidateTeamDismissNotify {
+	uint32 player_uid = 4;
+	DungeonCandidateTeamDismissReason reason = 10;
+}

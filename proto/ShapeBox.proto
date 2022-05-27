@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message ShapeBox {
+	Vector center = 1;
+	Vector axis_0 = 2;
+	Vector axis_1 = 3;
+	Vector axis_2 = 4;
+	Vector extents = 5;
+}

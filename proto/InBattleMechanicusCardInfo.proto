@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "InBattleMechanicusCardChallengeState.proto";
+
+message InBattleMechanicusCardInfo {
+	uint32 card_id = 1;
+	uint32 cost_points = 2;
+	uint32 rand_effect_id = 3;
+	uint32 begin_round = 4;
+	uint32 end_round = 5;
+	InBattleMechanicusCardChallengeState challenge_state = 6;
+}

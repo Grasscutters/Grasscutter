@@ -5,19 +5,14 @@ option java_package = "emu.grasscutter.net.proto";
 import "WidgetCreateLocationInfo.proto";
 import "WidgetCreatorInfo.proto";
 
+// CmdId: 4284
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message WidgetDoBagReq {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 4269;
+	uint32 material_id = 15;
+	oneof op_info {
+		WidgetCreateLocationInfo location_info = 351;
+		WidgetCreatorInfo widget_creator_info = 46;
 	}
-
-	oneof OpInfo {
-		WidgetCreateLocationInfo location_info = 20;
-		WidgetCreatorInfo widget_creator_info = 21;
-	}
-	uint32 material_id = 1;
 }

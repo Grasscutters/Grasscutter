@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CompoundQueueData.proto";
+
+// CmdId: 176
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetCompoundDataRsp {
+	int32 retcode = 10;
+	repeated uint32 unlock_compound_list = 14;
+	repeated CompoundQueueData compound_que_data_list = 1;
+}

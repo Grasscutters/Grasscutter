@@ -4,17 +4,12 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "DealAddFriendResultType.proto";
 
+// CmdId: 4035
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message DealAddFriendRsp {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 4042;
-	}
-
-	int32 retcode = 1;
+	int32 retcode = 3;
 	uint32 target_uid = 2;
-	DealAddFriendResultType deal_add_friend_result = 3;
+	DealAddFriendResultType deal_add_friend_result = 15;
 }

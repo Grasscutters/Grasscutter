@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 214
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ClientScriptEventNotify {
+	uint32 event_type = 2;
+	uint32 source_entity_id = 5;
+	uint32 target_entity_id = 8;
+	repeated int32 param_list = 15;
+}

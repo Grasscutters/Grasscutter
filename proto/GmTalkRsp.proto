@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 41
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GmTalkRsp {
+	int32 retcode = 5;
+	string msg = 2;
+	string retmsg = 13;
+}

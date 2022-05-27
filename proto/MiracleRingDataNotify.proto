@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5243
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MiracleRingDataNotify {
+	uint32 last_deliver_item_time = 12;
+	uint32 last_take_reward_time = 6;
+	uint32 miracle_ring_cd = 10;
+	bool is_gadget_created = 14;
+	uint32 gadget_entity_id = 3;
+}

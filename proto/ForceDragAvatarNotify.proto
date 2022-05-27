@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MotionInfo.proto";
+
+// CmdId: 3425
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ForceDragAvatarNotify {
+	uint32 entity_id = 15;
+	MotionInfo motion_info = 3;
+	uint32 scene_time = 11;
+	uint64 last_move_time_ms = 9;
+	uint64 delta_time_ms = 2;
+	bool is_first_valid = 10;
+}

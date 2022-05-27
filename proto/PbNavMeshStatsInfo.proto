@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message PbNavMeshStatsInfo {
+	int32 total_authority_ai = 1;
+	int32 total_no_authority_ai = 2;
+	int32 authority_ai_in_combat = 3;
+	int32 no_authority_ai_in_combat = 4;
+}

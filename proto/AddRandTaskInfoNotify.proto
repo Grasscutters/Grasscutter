@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 116
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AddRandTaskInfoNotify {
+	uint32 rand_task_id = 9;
+	Vector pos = 13;
+}

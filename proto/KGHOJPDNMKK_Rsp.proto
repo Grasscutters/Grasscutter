@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "IMMPPANFEPP.proto";
+
+// CmdId: 4778
+// EnetChannelId: 0
+// EnetIsReliable: true
+message KGHOJPDNMKK_Rsp {
+	int32 retcode = 9;
+	IMMPPANFEPP HIJBINMIOGD = 1;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message CCEOEOHLAPK {
+	bool is_hint_valid = 1;
+	Vector hint_center_pos = 2;
+	uint32 group_id = 3;
+	uint32 config_id = 4;
+}

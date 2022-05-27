@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 226
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message AllSeenMonsterNotify {
+	repeated uint32 monster_id_list = 7;
+}

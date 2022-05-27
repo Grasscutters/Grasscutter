@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+// CmdId: 2150
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ActivityTakeWatcherRewardBatchRsp {
+	int32 retcode = 1;
+	uint32 activity_id = 3;
+	repeated uint32 watcher_id_list = 9;
+	repeated ItemParam item_list = 10;
+}

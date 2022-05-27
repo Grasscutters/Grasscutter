@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeLimitedShopInfo.proto";
+
+// CmdId: 4621
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message HomeLimitedShopInfoNotify {
+	HomeLimitedShopInfo shop_info = 8;
+}

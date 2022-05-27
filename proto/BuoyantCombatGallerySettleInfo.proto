@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message BuoyantCombatGallerySettleInfo {
+	uint32 gallery_id = 1;
+	uint32 kill_monster_count = 2;
+	uint32 kill_special_monster_count = 3;
+	uint32 kill_target_count = 4;
+	uint32 final_score = 5;
+	uint32 gallery_level = 6;
+	uint32 gallery_multiple = 7;
+}

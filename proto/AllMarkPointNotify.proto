@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MapMarkPoint.proto";
+
+// CmdId: 3195
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AllMarkPointNotify {
+	repeated MapMarkPoint mark_list = 4;
+}

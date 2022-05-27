@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "KBBDJNLFAKD.proto";
+
+// CmdId: 6218
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message JJCDNAHAPKD_Req {
+	uint32 dungeon_id = 1;
+	uint64 MLBIACEGKGF = 10;
+	KBBDJNLFAKD GCNECKLKAGP = 3;
+}

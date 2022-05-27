@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CMOCCENBOLJ.proto";
+
+message NDKMJLFPCBG {
+	uint32 stage_id = 1;
+	bool FCJCHFHJLCB = 2;
+	CMOCCENBOLJ best_record = 3;
+}

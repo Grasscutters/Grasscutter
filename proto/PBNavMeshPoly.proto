@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message PBNavMeshPoly {
+	repeated int32 vects = 1;
+	repeated EdgeType edge_types = 2;
+	int32 area = 3;
+
+	enum EdgeType {
+		EDGE_TYPE_INNER = 0;
+		EDGE_TYPE_TILE_BOUND = 1;
+		EDGE_TYPE_TILE_BOUND_UNCONNECT = 2;
+		EDGE_TYPE_BFOKBOEBPJF = 3;
+	}
+}

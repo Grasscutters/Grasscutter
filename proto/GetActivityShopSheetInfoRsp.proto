@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ActivityShopSheetInfo.proto";
+
+// CmdId: 735
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetActivityShopSheetInfoRsp {
+	int32 retcode = 13;
+	uint32 shop_type = 6;
+	repeated ActivityShopSheetInfo sheet_info_list = 10;
+}

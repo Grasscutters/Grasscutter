@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FriendBrief.proto";
+
+// CmdId: 4043
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ForceAddPlayerFriendRsp {
+	int32 retcode = 9;
+	uint32 target_uid = 6;
+	FriendBrief target_friend_brief = 11;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BlessingRecvPicRecord.proto";
+
+// CmdId: 2013
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BlessingGetAllRecvPicRecordListRsp {
+	int32 retcode = 10;
+	repeated BlessingRecvPicRecord recv_pic_record_list = 4;
+}

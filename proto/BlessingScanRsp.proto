@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2032
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BlessingScanRsp {
+	int32 retcode = 8;
+	uint32 scan_pic_id = 13;
+	uint32 cur_day_scan_num = 2;
+}

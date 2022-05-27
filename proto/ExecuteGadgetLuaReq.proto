@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 267
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ExecuteGadgetLuaReq {
+	uint32 source_entity_id = 12;
+	int32 param_1 = 4;
+	int32 param_2 = 9;
+	int32 param_3 = 1;
+}

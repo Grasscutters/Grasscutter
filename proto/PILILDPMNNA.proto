@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message PILILDPMNNA {
+	uint32 stage_id = 1;
+	uint32 difficulty = 2;
+	bool ANDNFMFPNAJ = 3;
+	repeated uint32 KPDIFFPFDCP = 4;
+	uint32 HAKPLOFJLGL = 5;
+}

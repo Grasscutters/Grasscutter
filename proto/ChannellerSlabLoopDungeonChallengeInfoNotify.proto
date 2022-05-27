@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8555
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ChannellerSlabLoopDungeonChallengeInfoNotify {
+	uint32 dungeon_index = 3;
+	uint32 difficulty_id = 14;
+	repeated uint32 condition_id_list = 11;
+	uint32 challenge_score = 5;
+	repeated uint32 scheme_buff_id_list = 4;
+}

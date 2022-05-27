@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "OCDMIOKNHHH.proto";
+
+message NOGODJOJDGF {
+	OCDMIOKNHHH player_info = 1;
+	uint32 score = 2;
+}

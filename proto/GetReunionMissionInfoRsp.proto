@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ReunionMissionInfo.proto";
+
+// CmdId: 5051
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetReunionMissionInfoRsp {
+	int32 retcode = 15;
+	ReunionMissionInfo mission_info = 7;
+}

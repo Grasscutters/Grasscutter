@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2031
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DragonSpineCoinChangeNotify {
+	uint32 schedule_id = 2;
+	uint32 shimmering_essence = 14;
+	uint32 warm_essence = 10;
+	uint32 wondrous_essence = 8;
+}

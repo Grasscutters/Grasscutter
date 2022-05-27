@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Achievement.proto";
+
+// CmdId: 2668
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AchievementAllDataNotify {
+	repeated Achievement achievement_list = 5;
+	repeated uint32 reward_taken_goal_id_list = 11;
+}

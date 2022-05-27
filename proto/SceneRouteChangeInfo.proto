@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "RoutePointChangeInfo.proto";
+
+message SceneRouteChangeInfo {
+	uint32 route_id = 1;
+	uint32 type = 2;
+	bool is_forward = 3;
+	repeated RoutePointChangeInfo point_list = 4;
+}

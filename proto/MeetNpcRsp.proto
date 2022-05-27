@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 535
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MeetNpcRsp {
+	int32 retcode = 13;
+	uint32 npc_first_met_id = 7;
+}

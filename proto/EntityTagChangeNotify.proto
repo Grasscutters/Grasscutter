@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3273
+// EnetChannelId: 0
+// EnetIsReliable: true
+message EntityTagChangeNotify {
+	uint32 entity_id = 8;
+	bool is_add = 13;
+	string tag = 1;
+}

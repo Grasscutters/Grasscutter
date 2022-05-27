@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Uint32Pair.proto";
+
+// CmdId: 2120
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ActivityCondStateChangeNotify {
+	uint32 schedule_id = 10;
+	uint32 activity_id = 2;
+	repeated uint32 meet_cond_list = 5;
+	repeated uint32 expire_cond_list = 3;
+	repeated uint32 activated_sale_id_list = 1;
+	repeated Uint32Pair disable_transfer_point_interaction_list = 8;
+}

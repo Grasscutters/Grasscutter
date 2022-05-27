@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ChatEmojiCollectionData.proto";
+
+// CmdId: 4010
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetChatEmojiCollectionRsp {
+	int32 retcode = 13;
+	ChatEmojiCollectionData chat_emoji_collection_data = 10;
+}

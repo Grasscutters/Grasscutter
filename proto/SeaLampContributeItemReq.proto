@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+// CmdId: 2168
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message SeaLampContributeItemReq {
+	uint32 activity_id = 7;
+	repeated ItemParam item_list = 8;
+}

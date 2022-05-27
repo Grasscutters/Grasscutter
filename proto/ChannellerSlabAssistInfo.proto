@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ChannellerSlabAssistInfo {
+	uint32 uid = 1;
+	uint32 avatar_id = 2;
+	uint32 avatar_level = 3;
+}

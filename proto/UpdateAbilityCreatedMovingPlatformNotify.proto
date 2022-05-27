@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 897
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message UpdateAbilityCreatedMovingPlatformNotify {
+	OpType op_type = 15;
+	uint32 entity_id = 3;
+
+	enum OpType {
+		OP_TYPE_NONE = 0;
+		OP_TYPE_ACTIVATE = 1;
+		OP_TYPE_DEACTIVATE = 2;
+	}
+}

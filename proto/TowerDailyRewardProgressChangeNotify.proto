@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2437
+// EnetChannelId: 0
+// EnetIsReliable: true
+message TowerDailyRewardProgressChangeNotify {
+	uint32 daily_floor_id = 13;
+	uint32 daily_level_index = 3;
+}

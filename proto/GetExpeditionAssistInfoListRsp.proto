@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ExpeditionAssistInfo.proto";
+
+// CmdId: 2045
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetExpeditionAssistInfoListRsp {
+	int32 retcode = 5;
+	repeated ExpeditionAssistInfo assist_info_list = 7;
+}

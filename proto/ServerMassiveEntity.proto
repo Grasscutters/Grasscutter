@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MassiveBoxInfo.proto";
+import "MassiveGrassInfo.proto";
+import "MassiveWaterInfo.proto";
+
+message ServerMassiveEntity {
+	uint32 entity_type = 1;
+	uint32 config_id = 2;
+	uint32 runtime_id = 3;
+	uint32 authority_peer_id = 4;
+	int64 obj_id = 5;
+	oneof entity_info {
+		MassiveWaterInfo water_info = 6;
+		MassiveGrassInfo grass_info = 7;
+		MassiveBoxInfo box_info = 8;
+	}
+}

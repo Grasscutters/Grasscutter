@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "TaskVar.proto";
+
+// CmdId: 191
+// EnetChannelId: 0
+// EnetIsReliable: true
+message TaskVarNotify {
+	repeated TaskVar task_var_list = 1;
+}

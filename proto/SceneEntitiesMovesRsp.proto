@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EntityMoveFailInfo.proto";
+
+// CmdId: 275
+// EnetChannelId: 1
+// EnetIsReliable: false
+message SceneEntitiesMovesRsp {
+	repeated EntityMoveFailInfo entity_move_fail_info_list = 8;
+}

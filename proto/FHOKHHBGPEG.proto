@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum FHOKHHBGPEG {
+	FHOKHHBGPEG_NONE = 0;
+	FHOKHHBGPEG_FAIL = 1;
+	FHOKHHBGPEG_SUCC = 2;
+	FHOKHHBGPEG_GGDJFCKGBGE = 3;
+}

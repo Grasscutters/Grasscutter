@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 850
+// EnetChannelId: 0
+// EnetIsReliable: true
+message RequestLiveInfoRsp {
+	int32 retcode = 11;
+	uint32 live_id = 2;
+	string live_url = 3;
+	string spare_live_url = 7;
+}

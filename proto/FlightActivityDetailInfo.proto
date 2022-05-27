@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FlightDailyRecord.proto";
+
+message FlightActivityDetailInfo {
+	repeated FlightDailyRecord daily_record_list = 1;
+	uint32 preview_reward_id = 2;
+	uint32 min_open_player_level = 3;
+}

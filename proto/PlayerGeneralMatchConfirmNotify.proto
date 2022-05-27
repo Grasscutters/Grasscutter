@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4182
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerGeneralMatchConfirmNotify {
+	uint32 match_id = 7;
+	uint32 uid = 8;
+	bool is_agree = 2;
+}

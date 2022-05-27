@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ReunionBriefInfo.proto";
+
+// CmdId: 5065
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ReunionActivateNotify {
+	ReunionBriefInfo reunion_brief_info = 4;
+	bool is_activate = 2;
+}

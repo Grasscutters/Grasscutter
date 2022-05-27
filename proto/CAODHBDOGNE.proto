@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BJJOMPDLNAL.proto";
+
+// CmdId: 8397
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message CAODHBDOGNE {
+	repeated uint32 FIFMKLLIDIL = 7;
+	repeated uint32 JFAIJOJCDOF = 12;
+	uint32 stage_id = 10;
+	uint32 difficulty = 8;
+	uint32 dungeon_id = 2;
+	uint32 HAKPLOFJLGL = 5;
+	uint32 PLDDIEAJMCH = 9;
+	uint32 coin = 13;
+	uint32 time = 15;
+	repeated BJJOMPDLNAL LOAFOLPLHFK = 1;
+}

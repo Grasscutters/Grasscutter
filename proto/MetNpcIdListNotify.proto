@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 517
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MetNpcIdListNotify {
+	repeated uint32 npc_first_met_id_list = 8;
+}

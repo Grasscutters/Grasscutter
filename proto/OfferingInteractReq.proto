@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2908
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message OfferingInteractReq {
+	uint32 offering_id = 3;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "LunaRiteHintPoint.proto";
+import "LunaRiteHintStatusType.proto";
+
+// CmdId: 8481
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message LunaRiteHintPointRsp {
+	int32 retcode = 15;
+	uint32 area_id = 2;
+	repeated LunaRiteHintPoint hint_point = 8;
+	LunaRiteHintStatusType hint_status = 3;
+}

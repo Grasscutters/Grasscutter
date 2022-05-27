@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3982
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MechanicusLevelupGearRsp {
+	int32 retcode = 6;
+	uint32 mechanicus_id = 3;
+	uint32 gear_id = 13;
+	uint32 after_gear_level = 10;
+}

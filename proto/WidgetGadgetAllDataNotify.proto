@@ -4,14 +4,9 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "WidgetGadgetData.proto";
 
+// CmdId: 4285
+// EnetChannelId: 0
+// EnetIsReliable: true
 message WidgetGadgetAllDataNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 4262;
-	}
-
-	repeated WidgetGadgetData widget_gadget_data = 1;
+	repeated WidgetGadgetData widget_gadget_data = 8;
 }

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 148
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AntiAddictNotify {
+	int32 msg_type = 4;
+	string msg = 3;
+	string level = 8;
+}

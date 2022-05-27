@@ -2,7 +2,6 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
 message CityInfo {
 	uint32 city_id = 1;
 	uint32 level = 2;

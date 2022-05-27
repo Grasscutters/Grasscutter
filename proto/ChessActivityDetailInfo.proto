@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ChessActivityDetailInfo {
+	uint32 level = 1;
+	uint32 exp = 2;
+	bool is_teach_dungeon_finished = 3;
+	uint32 obtained_exp = 4;
+	uint32 available_exp = 5;
+	repeated uint32 finished_map_id_list = 6;
+	uint32 punish_over_time = 7;
+	uint32 content_close_time = 8;
+	bool is_content_closed = 9;
+}

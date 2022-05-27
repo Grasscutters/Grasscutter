@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message MainCoop {
+	uint32 id = 1;
+	Status status = 2;
+	repeated uint32 save_point_id_list = 3;
+	uint32 self_confidence = 4;
+	map<uint32, int32> normal_var_map = 5;
+	map<uint32, int32> temp_var_map = 6;
+	map<uint32, uint32> seen_ending_map = 7;
+
+	enum Status {
+		STATUS_INVALID = 0;
+		STATUS_RUNNING = 1;
+		STATUS_FINISHED = 2;
+	}
+}

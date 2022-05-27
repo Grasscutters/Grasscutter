@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DragonSpineChapterInfo.proto";
+
+message DragonSpineActivityDetailInfo {
+	repeated DragonSpineChapterInfo chapter_info_list = 1;
+	uint32 weapon_enhance_level = 2;
+	uint32 shimmering_essence = 3;
+	uint32 warm_essence = 4;
+	uint32 wondrous_essence = 5;
+	bool is_content_closed = 6;
+	uint32 content_finish_time = 7;
+}

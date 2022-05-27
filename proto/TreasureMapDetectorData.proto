@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message TreasureMapDetectorData {
+	uint32 region_id = 1;
+	repeated Vector spot_list = 2;
+	Vector center_pos = 3;
+	uint32 radius = 4;
+	bool is_region_detected = 5;
+}

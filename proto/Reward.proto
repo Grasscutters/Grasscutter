@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+message Reward {
+	uint32 reward_id = 1;
+	repeated ItemParam item_list = 2;
+}

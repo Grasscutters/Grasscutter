@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ResinCardData {
+	uint32 config_id = 1;
+	uint32 remain_reward_days = 2;
+	uint32 last_daily_reward_time = 3;
+	uint32 expire_time = 4;
+}

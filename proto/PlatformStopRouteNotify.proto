@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlatformInfo.proto";
+
+// CmdId: 204
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlatformStopRouteNotify {
+	uint32 entity_id = 4;
+	uint32 scene_time = 11;
+	PlatformInfo platform = 10;
+}

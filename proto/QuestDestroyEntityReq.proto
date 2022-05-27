@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 427
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message QuestDestroyEntityReq {
+	uint32 entity_id = 8;
+	uint32 quest_id = 2;
+	uint32 scene_id = 6;
+}

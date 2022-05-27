@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum ChapterState {
+	CHAPTER_STATE_INVALID = 0;
+	CHAPTER_STATE_UNABLE_TO_BEGIN = 1;
+	CHAPTER_STATE_BEGIN = 2;
+	CHAPTER_STATE_END = 3;
+}

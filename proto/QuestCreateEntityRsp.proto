@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CreateEntityInfo.proto";
+
+// CmdId: 455
+// EnetChannelId: 0
+// EnetIsReliable: true
+message QuestCreateEntityRsp {
+	int32 retcode = 14;
+	uint32 entity_id = 10;
+	CreateEntityInfo entity = 13;
+	uint32 quest_id = 4;
+	bool is_rewind = 15;
+	uint32 parent_quest_id = 11;
+}

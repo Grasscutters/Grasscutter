@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message FCDOPNILOOK {
+	repeated uint32 IONBKLJFGCE = 1;
+	repeated uint32 OIBNIGLDKPB = 2;
+}

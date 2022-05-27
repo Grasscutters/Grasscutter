@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BounceConjuringGallerySettleInfo.proto";
+
+// CmdId: 8313
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BounceConjuringSettleNotify {
+	map<uint32, BounceConjuringGallerySettleInfo> settle_info_map = 13;
+	bool is_new_record = 10;
+	uint32 total_score = 7;
+	uint32 chapter_id = 15;
+}

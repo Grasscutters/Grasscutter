@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "IGJLOMCPLLE.proto";
+
+// CmdId: 6204
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DCKKCAJCNKP_Rsp {
+	int32 retcode = 5;
+	uint32 room_id = 12;
+	repeated IGJLOMCPLLE GNIPGBLCMAG = 13;
+}

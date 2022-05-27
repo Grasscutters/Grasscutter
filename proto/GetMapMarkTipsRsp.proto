@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MapMarkTipsInfo.proto";
+
+// CmdId: 3118
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetMapMarkTipsRsp {
+	int32 retcode = 10;
+	repeated MapMarkTipsInfo mark_tips_list = 7;
+}

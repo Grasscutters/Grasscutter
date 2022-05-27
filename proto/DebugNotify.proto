@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 101
+// EnetChannelId: 2
+// EnetIsReliable: true
+message DebugNotify {
+	uint32 id = 1;
+	string name = 2;
+	Retcode retcode = 3;
+
+	enum Retcode {
+		RETCODE_SUCC = 0;
+		RETCODE_FAIL = 1;
+	}
+}

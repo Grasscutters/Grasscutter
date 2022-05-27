@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1241
+// EnetChannelId: 0
+// EnetIsReliable: true
+message EntityFightPropNotify {
+	uint32 entity_id = 5;
+	map<uint32, float> fight_prop_map = 12;
+}

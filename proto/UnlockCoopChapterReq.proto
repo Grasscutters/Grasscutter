@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1952
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message UnlockCoopChapterReq {
+	uint32 chapter_id = 8;
+}

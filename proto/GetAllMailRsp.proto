@@ -4,9 +4,12 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "MailData.proto";
 
+// CmdId: 1427
+// EnetChannelId: 0
+// EnetIsReliable: true
 message GetAllMailRsp {
-  int32 retcode = 1;
-  repeated MailData mail_list = 2;
-  bool is_truncated = 3;
-  bool isGiftMail = 4;
+	int32 retcode = 6;
+	repeated MailData mail_list = 9;
+	bool is_truncated = 5;
+	bool ANKKGPJCINB = 7;
 }

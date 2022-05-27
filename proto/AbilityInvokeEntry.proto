@@ -2,8 +2,8 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "AbilityInvokeEntryHead.proto";
 import "AbilityInvokeArgument.proto";
+import "AbilityInvokeEntryHead.proto";
 import "ForwardType.proto";
 
 message AbilityInvokeEntry {

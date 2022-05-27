@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MotionInfo.proto";
+
+// CmdId: 246
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EntityForceSyncReq {
+	uint32 entity_id = 11;
+	MotionInfo motion_info = 3;
+	uint32 scene_time = 5;
+	uint32 room_id = 10;
+}

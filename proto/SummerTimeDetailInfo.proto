@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SummerTimeSprintBoatInfo.proto";
+import "SummerTimeStageInfo.proto";
+
+message SummerTimeDetailInfo {
+	map<uint32, SummerTimeStageInfo> stage_map = 1;
+	bool is_content_closed = 2;
+	uint32 content_close_time = 3;
+	SummerTimeSprintBoatInfo sprint_boat_info = 4;
+}

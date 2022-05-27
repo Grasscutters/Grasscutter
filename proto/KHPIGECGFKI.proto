@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message KHPIGECGFKI {
+	uint32 level_id = 1;
+	uint32 difficulty_id = 2;
+	uint32 final_score = 3;
+	bool is_new_record = 4;
+	uint32 kill_normal_mosnter_num = 5;
+	uint32 kill_elite_monster_num = 6;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DIEGJDEIDKO.proto";
+import "ItemParam.proto";
+import "MBIDJDLLBNM.proto";
+
+message DLHPBNNDGFI {
+	bool is_content_closed = 1;
+	DIEGJDEIDKO explore_info = 2;
+	DIEGJDEIDKO battle_info = 3;
+	repeated MBIDJDLLBNM AJCPJEDHDIL = 4;
+	repeated uint32 KFELKLELMGJ = 5;
+	repeated uint32 OAFKGCOJLAK = 6;
+	repeated uint32 NKJCNFMFHAG = 7;
+	repeated ItemParam EGIFMMGAMCN = 8;
+}

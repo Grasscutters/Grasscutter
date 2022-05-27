@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EntityAbilityInvokeEntry.proto";
+
+// CmdId: 1185
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ClientAbilitiesInitFinishCombineNotify {
+	repeated EntityAbilityInvokeEntry entity_invoke_list = 2;
+}

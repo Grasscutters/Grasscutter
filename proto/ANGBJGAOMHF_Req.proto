@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "OPEBMJPOOBL.proto";
+
+// CmdId: 6316
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ANGBJGAOMHF_Req {
+	uint64 KKONDPNGBJD = 8;
+	OPEBMJPOOBL KDDIKDNOLIE = 7;
+}

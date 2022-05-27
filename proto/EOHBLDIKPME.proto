@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "INMNHKOPCFB.proto";
+
+message EOHBLDIKPME {
+	uint32 best_score = 1;
+	repeated uint32 NBBDGJEADHB = 2;
+	uint32 map_id = 3;
+	INMNHKOPCFB CAOGEIHGNNA = 4;
+}

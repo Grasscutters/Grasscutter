@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FishBattleResult.proto";
+
+// CmdId: 5837
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message FishBattleEndReq {
+	FishBattleResult battle_result = 13;
+	bool is_always_bonus = 2;
+	uint32 max_bonus_time = 4;
+}

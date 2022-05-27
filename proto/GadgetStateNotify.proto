@@ -2,8 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 841
+// EnetChannelId: 0
+// EnetIsReliable: true
 message GadgetStateNotify {
-	uint32 gadget_entity_id = 1;
-	uint32 gadget_state = 2;
-	bool is_enable_interact = 3;
+	uint32 gadget_entity_id = 2;
+	uint32 gadget_state = 11;
+	bool is_enable_interact = 10;
 }

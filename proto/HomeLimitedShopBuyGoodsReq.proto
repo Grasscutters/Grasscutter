@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeLimitedShopGoods.proto";
+
+// CmdId: 4638
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message HomeLimitedShopBuyGoodsReq {
+	HomeLimitedShopGoods goods = 13;
+	uint32 buy_count = 5;
+}

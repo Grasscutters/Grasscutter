@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MOFABPNGIKP.proto";
+
+message HLHHNGHJLAO {
+	uint32 gallery_id = 1;
+	uint32 kill_monster_count = 2;
+	uint32 kill_special_monster_count = 3;
+	uint32 IGPOLHHMMBK = 4;
+	uint32 final_score = 5;
+	MOFABPNGIKP reason = 6;
+}

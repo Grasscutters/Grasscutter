@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ChannellerSlabAssistInfo.proto";
+
+// CmdId: 8860
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ChannellerSlabSaveAssistInfoReq {
+	repeated ChannellerSlabAssistInfo assist_info_list = 5;
+}

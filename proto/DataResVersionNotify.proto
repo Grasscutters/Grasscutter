@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ResVersionConfig.proto";
+
+// CmdId: 125
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DataResVersionNotify {
+	uint32 client_data_version = 9;
+	uint32 client_silence_data_version = 15;
+	string client_md_5 = 6;
+	string client_silence_md_5 = 2;
+	ResVersionConfig res_version_config = 8;
+	string client_version_suffix = 4;
+	string client_silence_version_suffix = 3;
+	bool is_data_need_relogin = 10;
+	DataResVersionOpType op_type = 7;
+
+	enum DataResVersionOpType {
+		DATA_RES_VERSION_OP_TYPE_NONE = 0;
+		DATA_RES_VERSION_OP_TYPE_RELOGIN = 1;
+		DATA_RES_VERSION_OP_TYPE_MP_RELOGIN = 2;
+	}
+}

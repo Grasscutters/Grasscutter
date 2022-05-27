@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+// CmdId: 8590
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message IAAPADOAMIA {
+	repeated ItemParam item_list = 12;
+	uint32 ONIALJMHINJ = 8;
+	uint32 quest_id = 1;
+	repeated uint32 JMFLEEBGBIA = 9;
+	uint32 DIPJPNCDGEK = 13;
+	uint32 HNCDPHJEPNB = 3;
+	bool MLBLBGKNCOF = 6;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ELMEOJFCOFH.proto";
+import "OHBMICGFIIK.proto";
+import "PHGGAEDHLBN.proto";
+import "SocialDetail.proto";
+
+message GHHCCEHGKLH {
+	uint64 MLBIACEGKGF = 1;
+	uint32 dungeon_id = 2;
+	PHGGAEDHLBN JDBDBJOCLCP = 5;
+	ELMEOJFCOFH DKNEAPAPOEG = 6;
+	OHBMICGFIIK HIHEODHIKMI = 7;
+	SocialDetail EHJFCFALIJD = 8;
+	bool EKDMKINNMLF = 9;
+	bool FCKKGBGDNOF = 10;
+	uint32 HLFJLCHMLNM = 11;
+	repeated uint32 tag_list = 12;
+	bool NJHAMJMHPAA = 13;
+}

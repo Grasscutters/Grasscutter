@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5332
+// EnetChannelId: 0
+// EnetIsReliable: true
+message InBattleMechanicusExcapeMonsterNotify {
+	uint32 excaped_monster_num = 5;
+}

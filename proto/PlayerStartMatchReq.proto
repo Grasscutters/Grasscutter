@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MatchType.proto";
+
+// CmdId: 4168
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message PlayerStartMatchReq {
+	MatchType match_type = 4;
+	uint32 dungeon_id = 14;
+	uint32 mp_play_id = 11;
+	uint32 mechanicus_difficult_level = 2;
+	uint32 match_id = 13;
+	repeated uint32 match_param_list = 12;
+}

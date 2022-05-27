@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3228
+// EnetChannelId: 1
+// EnetIsReliable: true
+// IsAllowClient: true
+message UnlockTransPointReq {
+	uint32 scene_id = 13;
+	uint32 point_id = 4;
+}

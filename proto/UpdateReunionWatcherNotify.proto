@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ReunionWatcherInfo.proto";
+
+// CmdId: 5087
+// EnetChannelId: 0
+// EnetIsReliable: true
+message UpdateReunionWatcherNotify {
+	uint32 mission_id = 5;
+	ReunionWatcherInfo watcher_info = 3;
+}

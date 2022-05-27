@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8062
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message LunaRiteSacrificeReq {
+	uint32 area_id = 8;
+	uint32 index = 5;
+}

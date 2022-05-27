@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8516
+// EnetChannelId: 0
+// EnetIsReliable: true
+message EquipRoguelikeRuneRsp {
+	int32 retcode = 12;
+	repeated uint32 rune_list = 14;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2163
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ExpeditionStartRsp {
+	int32 retcode = 6;
+	uint32 path_id = 10;
+	repeated uint32 avatar_id_list = 12;
+	uint32 assist_uid = 8;
+	uint32 assist_avatar_id = 3;
+}

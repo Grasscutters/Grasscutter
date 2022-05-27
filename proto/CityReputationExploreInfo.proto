@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message CityReputationExploreInfo {
+	bool is_open = 1;
+	repeated uint32 taken_explore_reward_list = 2;
+	uint32 explore_percent = 3;
+}

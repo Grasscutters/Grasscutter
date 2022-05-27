@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ReunionSignInInfo {
+	uint32 config_id = 1;
+	uint32 sign_in_count = 2;
+	uint32 last_sign_in_time = 3;
+	repeated uint32 reward_day_list = 4;
+}

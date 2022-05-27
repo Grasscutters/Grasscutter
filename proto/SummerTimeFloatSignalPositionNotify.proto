@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 8622
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SummerTimeFloatSignalPositionNotify {
+	uint32 float_signal_id = 9;
+	Vector position = 13;
+	bool is_transfer_anchor = 7;
+}

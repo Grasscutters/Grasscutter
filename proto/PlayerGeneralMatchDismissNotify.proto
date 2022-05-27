@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MatchReason.proto";
+
+// CmdId: 4187
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerGeneralMatchDismissNotify {
+	uint32 match_id = 13;
+	MatchReason reason = 11;
+	repeated uint32 uid_list = 14;
+}

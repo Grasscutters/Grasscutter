@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FriendBrief.proto";
+
+// CmdId: 4020
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AddBlacklistRsp {
+	int32 retcode = 3;
+	FriendBrief target_friend_brief = 6;
+}

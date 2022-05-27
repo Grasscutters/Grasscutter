@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum ReportReasonType {
+	REPORT_REASON_TYPE_NONE = 0;
+	REPORT_REASON_TYPE_DECEPTIVE_ADS = 1;
+	REPORT_REASON_TYPE_ABUSING = 2;
+	REPORT_REASON_TYPE_CHEAT = 3;
+	REPORT_REASON_TYPE_POLITICAL = 4;
+	REPORT_REASON_TYPE_OTHER = 5;
+	REPORT_REASON_TYPE_HOME = 6;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4568
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message PlayerApplyEnterHomeResultReq {
+	uint32 apply_uid = 2;
+	bool is_agreed = 5;
+}

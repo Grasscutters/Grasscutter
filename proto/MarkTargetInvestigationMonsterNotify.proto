@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1928
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message MarkTargetInvestigationMonsterNotify {
+	uint32 investigation_monster_id = 15;
+	uint32 scene_id = 14;
+	uint32 group_id = 6;
+	uint32 monster_id = 4;
+}

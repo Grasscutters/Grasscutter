@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5435
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DraftGuestReplyInviteNotify {
+	uint32 draft_id = 7;
+	uint32 guest_uid = 4;
+	bool is_agree = 11;
+}

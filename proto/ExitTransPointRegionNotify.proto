@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 245
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ExitTransPointRegionNotify {
+	uint32 scene_id = 5;
+	uint32 point_id = 8;
+}

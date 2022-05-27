@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 3447
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetScenePerformanceRsp {
+	int32 retcode = 14;
+	Vector pos = 4;
+	uint32 group_num = 9;
+	uint32 entity_num = 2;
+	uint32 dynamic_group_num = 7;
+	uint32 monster_num = 10;
+	uint32 gadget_num = 3;
+	uint32 gather_num = 12;
+	uint32 gather_num_insight = 1;
+}

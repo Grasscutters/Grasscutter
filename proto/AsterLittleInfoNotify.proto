@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AsterLittleDetailInfo.proto";
+
+// CmdId: 2188
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AsterLittleInfoNotify {
+	AsterLittleDetailInfo info = 14;
+}

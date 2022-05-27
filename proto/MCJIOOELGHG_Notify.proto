@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "JDPMOMKAPIF.proto";
+
+// CmdId: 6079
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MCJIOOELGHG_Notify {
+	repeated JDPMOMKAPIF IOJKJNDAGDO = 1;
+}

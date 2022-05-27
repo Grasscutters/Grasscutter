@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4380
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ScenePlayBattleUidOpNotify {
+	uint32 play_id = 14;
+	uint32 play_type = 7;
+	uint32 entity_id = 1;
+	repeated uint32 uid_list = 11;
+	uint32 op = 8;
+	string param_str = 12;
+	repeated uint32 param_list = 2;
+	repeated uint32 param_target_list = 6;
+	uint32 param_index = 4;
+	uint32 param_duration = 10;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GBBDJMDIDEI.proto";
+
+message OLFPCJBEJMK {
+	uint32 equip_type = 1;
+	repeated GBBDJMDIDEI NDEMEBNAGPL = 2;
+}

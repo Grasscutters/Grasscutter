@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8223
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message JEFIMHGLOJF {
+	uint32 stage_id = 10;
+	bool is_success = 2;
+	uint32 DFKBIFPJOPN = 3;
+	repeated uint32 ILNFEMKGLFJ = 7;
+}

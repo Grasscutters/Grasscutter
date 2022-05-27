@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomePlantFieldData.proto";
+
+// CmdId: 4859
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message HomePlantInfoRsp {
+	int32 retcode = 10;
+	repeated HomePlantFieldData field_list = 14;
+}

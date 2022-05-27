@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ServerMassiveEntity.proto";
+
+// CmdId: 325
+// EnetChannelId: 0
+// EnetIsReliable: true
+message CreateMassiveEntityNotify {
+	repeated ServerMassiveEntity massive_entity_list = 4;
+}

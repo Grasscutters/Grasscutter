@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 5828
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message FishCastRodReq {
+	uint32 bait_id = 8;
+	uint32 rod_id = 2;
+	Vector pos = 13;
+	uint32 rod_entity_id = 4;
+}

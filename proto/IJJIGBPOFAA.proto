@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message IJJIGBPOFAA {
+	uint32 skill_depot_id = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+import "PlayerOfferingData.proto";
+
+// CmdId: 2911
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerOfferingRsp {
+	int32 retcode = 10;
+	PlayerOfferingData offering_data = 3;
+	repeated ItemParam item_list = 4;
+}

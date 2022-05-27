@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EvtAnimatorStateChangedInfo.proto";
+import "ForwardType.proto";
+
+// CmdId: 355
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EvtAnimatorStateChangedNotify {
+	ForwardType forward_type = 5;
+	EvtAnimatorStateChangedInfo evt_animator_state_changed_info = 11;
+}

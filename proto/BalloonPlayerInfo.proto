@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message BalloonPlayerInfo {
+	uint32 uid = 1;
+	uint32 combo = 3;
+	uint32 combo_disable_time = 4;
+	uint32 cur_score = 5;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 183
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DailyTaskDataNotify {
+	uint32 score_reward_id = 4;
+	bool is_taken_score_reward = 15;
+	uint32 finished_num = 7;
+}

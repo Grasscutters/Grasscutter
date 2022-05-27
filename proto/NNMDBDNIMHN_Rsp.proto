@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "KPNPJPPHOKA.proto";
+
+// CmdId: 4475
+// EnetChannelId: 0
+// EnetIsReliable: true
+message NNMDBDNIMHN_Rsp {
+	int32 retcode = 5;
+	KPNPJPPHOKA NBAMBJEKPLJ = 2;
+	uint32 GOGKNHMOPBA = 15;
+}

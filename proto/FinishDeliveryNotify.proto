@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2158
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FinishDeliveryNotify {
+	uint32 schedule_id = 15;
+	uint32 day_index = 3;
+	uint32 finished_quest_index = 6;
+}

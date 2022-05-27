@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AMKLCEFNNCC.proto";
+
+// CmdId: 8082
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GKKNFMNJFDP {
+	uint32 stage_id = 2;
+	uint32 level_id = 5;
+	uint32 MJOCHGNKDGI = 13;
+	repeated AMKLCEFNNCC avatar_info_list = 11;
+	repeated uint32 buff_id_list = 4;
+}

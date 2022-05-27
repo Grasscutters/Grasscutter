@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum AsterLittleStageState {
+	ASTER_LITTLE_STAGE_STATE_NONE = 0;
+	ASTER_LITTLE_STAGE_STATE_UNSTARTED = 1;
+	ASTER_LITTLE_STAGE_STATE_STARTED = 2;
+	ASTER_LITTLE_STAGE_STATE_FINISHED = 3;
+}

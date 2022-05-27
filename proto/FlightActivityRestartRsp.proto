@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2002
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FlightActivityRestartRsp {
+	int32 retcode = 13;
+	uint32 schedule_id = 6;
+	uint32 group_id = 15;
+}

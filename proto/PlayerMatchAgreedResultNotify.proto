@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MatchType.proto";
+
+// CmdId: 4152
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerMatchAgreedResultNotify {
+	uint32 target_uid = 14;
+	Reason reason = 7;
+	MatchType match_type = 15;
+
+	enum Reason {
+		REASON_SUCC = 0;
+		REASON_TARGET_SCENE_CANNOT_ENTER = 1;
+		REASON_SELF_MP_UNAVAILABLE = 2;
+		REASON_OTHER_DATA_VERSION_NOT_LATEST = 3;
+		REASON_DATA_VERSION_NOT_LATEST = 4;
+	}
+}

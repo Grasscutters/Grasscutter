@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum OCOKILBJIPJ {
+	OCOKILBJIPJ_MPGOEMPNCEH = 0;
+	OCOKILBJIPJ_PDKBOLMIHMA = 1;
+	OCOKILBJIPJ_MCEBEJONJGH = 2;
+	OCOKILBJIPJ_MCNDLHHBBGJ = 3;
+}

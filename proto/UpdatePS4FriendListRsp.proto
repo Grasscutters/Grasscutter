@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4061
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message UpdatePS4FriendListRsp {
+	int32 retcode = 7;
+	repeated string psn_id_list = 9;
+}

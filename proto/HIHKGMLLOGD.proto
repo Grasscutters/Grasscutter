@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message HIHKGMLLOGD {
+	uint32 AHDGMMCOIBA = 1;
+	uint32 progress = 2;
+	uint32 max_progress = 3;
+	repeated uint32 DCILHNBLLFF = 4;
+	uint32 CGFPNHAGNEA = 5;
+	repeated uint32 BACHEOHDBHH = 6;
+	uint32 CCJLAOBINJI = 7;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MathQuaternion.proto";
+import "Vector.proto";
+import "Vector3Int.proto";
+
+message ObstacleInfo {
+	int32 obstacle_id = 1;
+	ShapeType shape = 2;
+	Vector center = 3;
+	MathQuaternion rotation = 4;
+	Vector3Int extents = 5;
+
+	enum ShapeType {
+		SHAPE_TYPE_OBSTACLE_SHAPE_CAPSULE = 0;
+		SHAPE_TYPE_OBSTACLE_SHAPE_BOX = 1;
+	}
+}

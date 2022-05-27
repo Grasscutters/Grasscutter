@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8770
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message RoguelikeEffectViewRsp {
+	int32 retcode = 7;
+}

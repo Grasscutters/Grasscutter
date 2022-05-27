@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 419
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message BargainOfferPriceReq {
+	uint32 bargain_id = 13;
+	uint32 price = 5;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FBNFELMJBAN.proto";
+import "LOFGGFOGDEL.proto";
+
+message KHKMILANHMG {
+	uint32 EGIEFHDLKDM = 1;
+	map<uint32, FBNFELMJBAN> IBICFDAKJDK = 2;
+	int32 NIFBEIJNOCE = 3;
+	LOFGGFOGDEL reason = 4;
+}

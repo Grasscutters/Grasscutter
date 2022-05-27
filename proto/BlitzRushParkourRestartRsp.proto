@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8943
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BlitzRushParkourRestartRsp {
+	int32 retcode = 9;
+	uint32 schedule_id = 10;
+	uint32 group_id = 13;
+}

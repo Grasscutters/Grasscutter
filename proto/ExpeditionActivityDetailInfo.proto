@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ExpeditionChallengeInfo.proto";
+import "ExpeditionPathInfo.proto";
+
+message ExpeditionActivityDetailInfo {
+	repeated ExpeditionPathInfo path_info_list = 1;
+	uint32 expedition_count = 2;
+	repeated ExpeditionChallengeInfo challenge_info_list = 3;
+	bool is_content_closed = 4;
+	uint32 content_close_time = 5;
+	uint32 cur_challenge_id = 6;
+}

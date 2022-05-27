@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "JLHKOLGFAMI.proto";
+
+message KAFCPKCMCEG {
+	uint32 stage_id = 1;
+	bool is_open = 2;
+	repeated uint32 IGPMMNKLDOH = 3;
+	repeated uint32 NGEHMDIHAOJ = 4;
+	repeated JLHKOLGFAMI level_list = 5;
+}

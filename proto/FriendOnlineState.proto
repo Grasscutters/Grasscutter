@@ -3,6 +3,6 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 enum FriendOnlineState {
-	FREIEND_DISCONNECT = 0;
-	FRIEND_ONLINE = 1;
+	FRIEND_ONLINE_STATE_FREIEND_DISCONNECT = 0;
+	FRIEND_ONLINE_STATE_ONLINE = 1;
 }

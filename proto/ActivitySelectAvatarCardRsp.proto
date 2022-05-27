@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2127
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ActivitySelectAvatarCardRsp {
+	int32 retcode = 6;
+	uint32 activity_id = 14;
+	uint32 reward_id = 11;
+}

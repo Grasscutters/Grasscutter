@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CreateEntityInfo.proto";
+
+// CmdId: 482
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message QuestCreateEntityReq {
+	CreateEntityInfo entity = 10;
+	uint32 quest_id = 3;
+	bool is_rewind = 7;
+	uint32 parent_quest_id = 13;
+}

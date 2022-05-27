@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message InBattleFleurFairInfo {
+	repeated uint32 ability_group_id_list = 1;
+	repeated uint32 gallery_id_list = 2;
+	uint32 preview_stage_index = 3;
+	uint32 preview_display_duration = 4;
+	uint32 gallery_stage_index = 5;
+}

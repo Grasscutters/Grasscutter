@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "LBOAEFMECCP.proto";
+
+message HideAndSeekActivityDetailInfo {
+	repeated uint32 chosen_hunter_skill_list = 1;
+	repeated uint32 chosen_hider_skill_list = 2;
+	repeated uint32 unlock_map_list = 3;
+	repeated LBOAEFMECCP LFHCALALOKJ = 4;
+}

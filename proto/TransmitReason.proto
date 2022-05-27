@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum TransmitReason {
+	TRANSMIT_REASON_NONE = 0;
+	TRANSMIT_REASON_QUEST = 1;
+}

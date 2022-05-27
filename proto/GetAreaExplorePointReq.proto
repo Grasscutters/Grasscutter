@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 228
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GetAreaExplorePointReq {
+	repeated uint32 area_id_list = 3;
+}

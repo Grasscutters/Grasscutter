@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 813
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ProjectorOptionReq {
+	uint32 op_type = 8;
+	uint32 entity_id = 4;
+
+	enum ProjectorOpType {
+		PROJECTOR_OP_TYPE_NONE = 0;
+		PROJECTOR_OP_TYPE_CREATE = 1;
+		PROJECTOR_OP_TYPE_DESTROY = 2;
+	}
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "JCBJHCFEONO.proto";
+import "MOFABPNGIKP.proto";
+
+// CmdId: 4656
+// EnetChannelId: 0
+// EnetIsReliable: true
+message LNBBLNNPNBE_Notify {
+	uint32 gallery_id = 10;
+	MOFABPNGIKP reason = 12;
+	JCBJHCFEONO FNOCAKMLBLE = 7;
+}

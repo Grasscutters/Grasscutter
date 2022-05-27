@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 255
+// EnetChannelId: 1
+// EnetIsReliable: true
+message SceneAvatarStaminaStepRsp {
+	int32 retcode = 11;
+	bool use_client_rot = 1;
+	Vector rot = 7;
+}

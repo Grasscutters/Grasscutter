@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 972
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message DungeonCandidateTeamSetReadyReq {
+	bool is_ready = 11;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GeneralMatchInfo.proto";
+import "MatchType.proto";
+
+// CmdId: 4176
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerMatchSuccNotify {
+	MatchType match_type = 13;
+	uint32 confirm_end_time = 7;
+	uint32 host_uid = 8;
+	uint32 dungeon_id = 1;
+	uint32 mp_play_id = 5;
+	uint32 mechanicus_difficult_level = 10;
+	GeneralMatchInfo general_match_info = 3;
+}

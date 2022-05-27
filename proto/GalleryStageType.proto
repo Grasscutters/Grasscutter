@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum GalleryStageType {
+	GALLERY_STAGE_TYPE_NONE = 0;
+	GALLERY_STAGE_TYPE_PRESTART = 1;
+	GALLERY_STAGE_TYPE_START = 2;
+}

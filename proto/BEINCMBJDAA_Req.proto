@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 310
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message BEINCMBJDAA_Req {
+	float JBMNIJMGCEA = 3;
+	float ECBPOLKJKBF = 15;
+	uint32 source_id = 4;
+	uint32 target_id = 14;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message DIEGJDEIDKO {
+	uint32 id = 1;
+	Vector pos = 2;
+	uint32 open_time = 3;
+	bool is_finished = 4;
+	uint32 cur_progress = 5;
+	uint32 total_progress = 6;
+}

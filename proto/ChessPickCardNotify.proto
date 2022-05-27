@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ChessNormalCardInfo.proto";
+
+// CmdId: 5348
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ChessPickCardNotify {
+	ChessNormalCardInfo normal_card_info = 14;
+	uint32 curse_card_id = 4;
+}

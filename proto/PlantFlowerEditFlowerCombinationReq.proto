@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CustomGadgetTreeInfo.proto";
+
+// CmdId: 8506
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message PlantFlowerEditFlowerCombinationReq {
+	uint32 schedule_id = 13;
+	uint32 entity_id = 3;
+	CustomGadgetTreeInfo flower_combination_info = 11;
+}

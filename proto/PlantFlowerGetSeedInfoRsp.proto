@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8932
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlantFlowerGetSeedInfoRsp {
+	int32 retcode = 8;
+	uint32 schedule_id = 12;
+	uint32 seed_reward_id = 5;
+}

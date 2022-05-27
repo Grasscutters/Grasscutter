@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message ChannelerSlabCamp {
+	uint32 group_id = 1;
+	uint32 reward_id = 2;
+	Vector pos = 3;
+	uint32 buff_num = 4;
+}

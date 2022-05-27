@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DraftInviteFailInfo.proto";
+
+// CmdId: 5437
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message DraftOwnerStartInviteRsp {
+	int32 retcode = 12;
+	uint32 draft_id = 13;
+	uint32 wrong_uid = 15;
+	repeated DraftInviteFailInfo invite_fail_info_list = 11;
+}

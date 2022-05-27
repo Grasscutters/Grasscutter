@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5545
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GallerySumoKillMonsterNotify {
+	uint32 gallery_id = 12;
+	uint32 score = 14;
+	uint32 kill_normal_mosnter_num = 13;
+	uint32 kill_elite_monster_num = 5;
+}

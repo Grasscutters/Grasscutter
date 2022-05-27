@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CCEOEOHLAPK.proto";
+
+message AHCELAJGOLN {
+	int32 retcode = 1;
+	CCEOEOHLAPK KNPDHPEGCHI = 2;
+}

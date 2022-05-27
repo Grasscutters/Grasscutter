@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2137
+// EnetChannelId: 0
+// EnetIsReliable: true
+message TrialAvatarFirstPassDungeonNotify {
+	uint32 trial_avatar_index_id = 2;
+}

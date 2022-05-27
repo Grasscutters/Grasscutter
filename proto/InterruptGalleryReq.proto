@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5507
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message InterruptGalleryReq {
+	uint32 gallery_id = 10;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AsterMidCampInfo.proto";
+
+// CmdId: 2020
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AsterMidCampInfoNotify {
+	repeated AsterMidCampInfo camp_list = 8;
+}

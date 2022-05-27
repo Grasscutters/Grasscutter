@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1733
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SpringUseRsp {
+	int32 retcode = 3;
+	uint64 guid = 15;
+}

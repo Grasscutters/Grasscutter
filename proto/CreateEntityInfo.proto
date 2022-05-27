@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CreateGadgetInfo.proto";
+import "Vector.proto";
+
+message CreateEntityInfo {
+	uint32 level = 5;
+	Vector pos = 6;
+	Vector rot = 7;
+	uint32 scene_id = 10;
+	uint32 room_id = 11;
+	uint32 client_unique_id = 12;
+	oneof entity {
+		uint32 monster_id = 1;
+		uint32 npc_id = 2;
+		uint32 gadget_id = 3;
+		uint32 item_id = 4;
+	}
+	oneof entity_create_info {
+		CreateGadgetInfo gadget = 13;
+	}
+}

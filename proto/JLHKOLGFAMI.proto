@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message JLHKOLGFAMI {
+	uint32 level_id = 1;
+	uint32 IJHPPNHLBCB = 2;
+	uint32 MJOCHGNKDGI = 3;
+	uint32 score = 4;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4985
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message PullRecentChatReq {
+	uint32 begin_sequence = 8;
+	uint32 pull_num = 13;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "RoguelikeDungeonSettleInfo.proto";
+
+// CmdId: 8009
+// EnetChannelId: 0
+// EnetIsReliable: true
+message RoguelikeGiveUpRsp {
+	uint32 stage_id = 3;
+	int32 retcode = 4;
+	oneof info {
+		RoguelikeDungeonSettleInfo settle_info = 7;
+	}
+}

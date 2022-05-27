@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ServerLogLevel.proto";
+import "ServerLogType.proto";
+
+// CmdId: 55
+// EnetChannelId: 1
+// EnetIsReliable: true
+message ServerLogNotify {
+	ServerLogType log_type = 12;
+	ServerLogLevel log_level = 11;
+	string server_log = 4;
+}

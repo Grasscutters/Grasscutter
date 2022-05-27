@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "LockedPersonallineData.proto";
+
+// CmdId: 433
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PersonalLineAllDataRsp {
+	int32 retcode = 1;
+	uint32 cur_finished_daily_task_count = 4;
+	uint32 legendary_key_count = 3;
+	repeated uint32 ongoing_personal_line_list = 13;
+	repeated uint32 can_be_unlocked_personal_line_list = 12;
+	repeated LockedPersonallineData locked_personal_line_list = 14;
+}

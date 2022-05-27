@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum MaterialDeleteReturnType {
+	MATERIAL_DELETE_RETURN_TYPE_BAG = 0;
+	MATERIAL_DELETE_RETURN_TYPE_SEED = 1;
+}

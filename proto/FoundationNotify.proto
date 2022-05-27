@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FoundationInfo.proto";
+
+// CmdId: 890
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FoundationNotify {
+	uint32 gadget_entity_id = 10;
+	FoundationInfo info = 9;
+}

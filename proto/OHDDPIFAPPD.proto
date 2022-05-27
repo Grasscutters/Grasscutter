@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8466
+// EnetChannelId: 0
+// EnetIsReliable: true
+message OHDDPIFAPPD {
+	int32 retcode = 13;
+	uint32 quest_id = 11;
+	uint32 HDJAACCJBEP = 9;
+	repeated uint32 affix_list = 3;
+	uint32 LMNGECACKML = 12;
+	bool is_new = 14;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 193
+// EnetChannelId: 0
+// EnetIsReliable: true
+message RemoveRandTaskInfoNotify {
+	uint32 rand_task_id = 7;
+	bool is_succ = 12;
+	FinishReason reason = 2;
+
+	enum FinishReason {
+		FINISH_REASON_DEFAULT = 0;
+		FINISH_REASON_CLEAR = 1;
+		FINISH_REASON_DISTANCE = 2;
+		FINISH_REASON_FINISH = 3;
+	}
+}

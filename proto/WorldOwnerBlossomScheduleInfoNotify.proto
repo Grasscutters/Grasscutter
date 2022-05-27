@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BlossomScheduleInfo.proto";
+
+// CmdId: 2732
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message WorldOwnerBlossomScheduleInfoNotify {
+	BlossomScheduleInfo schedule_info = 4;
+}

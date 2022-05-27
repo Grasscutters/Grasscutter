@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2094
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ActivityCoinInfoNotify {
+	uint32 schedule_id = 15;
+	map<uint32, uint32> activity_coin_map = 1;
+	uint32 activity_id = 14;
+}

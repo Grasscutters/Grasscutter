@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5054
+// EnetChannelId: 0
+// EnetIsReliable: true
+message TakeReunionFirstGiftRewardRsp {
+	int32 retcode = 2;
+	int32 reward_id = 6;
+}

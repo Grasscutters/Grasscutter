@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4070
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message SetFriendRemarkNameReq {
+	uint32 uid = 12;
+	string remark_name = 11;
+}

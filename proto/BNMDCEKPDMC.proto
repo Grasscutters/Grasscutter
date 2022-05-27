@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BJJOMPDLNAL.proto";
+import "HJLFNKLPFBH.proto";
+
+// CmdId: 8608
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message BNMDCEKPDMC {
+	repeated HJLFNKLPFBH avatar_list = 10;
+	repeated uint32 FGFDOHNBHFJ = 4;
+	repeated uint32 KHGOELIBNKE = 3;
+	repeated HJLFNKLPFBH AOHILIGNPJK = 12;
+	uint32 stage_id = 13;
+	repeated BJJOMPDLNAL LOAFOLPLHFK = 7;
+	repeated HJLFNKLPFBH EFGAJBAEPBL = 6;
+	repeated uint32 PFIHLDBNMFN = 5;
+}

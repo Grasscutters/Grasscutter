@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 946
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DungeonCandidateTeamKickRsp {
+	int32 retcode = 15;
+}

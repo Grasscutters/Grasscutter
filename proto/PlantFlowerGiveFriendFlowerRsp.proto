@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8893
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlantFlowerGiveFriendFlowerRsp {
+	int32 retcode = 6;
+	uint32 schedule_id = 3;
+	repeated uint32 limit_flower_list = 10;
+}

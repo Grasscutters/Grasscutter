@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4809
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message HomeKickPlayerReq {
+	bool is_kick_all = 10;
+	uint32 target_uid = 7;
+}

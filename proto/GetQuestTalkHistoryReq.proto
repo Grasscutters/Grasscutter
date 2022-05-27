@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 435
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GetQuestTalkHistoryReq {
+	uint32 parent_quest_id = 12;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BPJENFOBAIM.proto";
+import "InBattleChessSettleInfo.proto";
+import "InBattleMechanicusSettleInfo.proto";
+
+// CmdId: 5314
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MultistagePlaySettleNotify {
+	uint32 play_index = 12;
+	uint32 group_id = 1;
+	oneof detail {
+		InBattleMechanicusSettleInfo mechanicus_settle_info = 187;
+		InBattleChessSettleInfo chess_settle_info = 411;
+		BPJENFOBAIM irodori_chess_settle_info = 1114;
+	}
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlantFlowerRecvFlowerData.proto";
+
+// CmdId: 8929
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlantFlowerGetRecvFlowerListRsp {
+	int32 retcode = 13;
+	uint32 schedule_id = 4;
+	repeated PlantFlowerRecvFlowerData recv_flower_list = 9;
+}

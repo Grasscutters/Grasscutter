@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HJLFNKLPFBH.proto";
+
+// CmdId: 8809
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PMKNJBJPLBH {
+	int32 retcode = 11;
+	repeated HJLFNKLPFBH AOHILIGNPJK = 1;
+	repeated HJLFNKLPFBH avatar_list = 3;
+	repeated uint32 FGFDOHNBHFJ = 2;
+}

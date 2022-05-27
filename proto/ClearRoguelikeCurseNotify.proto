@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8291
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ClearRoguelikeCurseNotify {
+	bool is_clear_all = 13;
+	map<uint32, uint32> clear_curse_map = 4;
+	uint32 card_id = 9;
+	bool is_curse_all_clear = 10;
+}

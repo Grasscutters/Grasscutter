@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum DungeonEntryBlockReason {
+	DUNGEON_ENTRY_BLOCK_REASON_NONE = 0;
+	DUNGEON_ENTRY_BLOCK_REASON_LEVEL = 1;
+	DUNGEON_ENTRY_BLOCK_REASON_QUEST = 2;
+	DUNGEON_ENTRY_BLOCK_REASON_MULIPLE = 3;
+}

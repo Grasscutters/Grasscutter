@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3488
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ClientLoadingCostumeVerificationNotify {
+	uint32 costume_id = 4;
+	uint64 guid = 2;
+	uint64 prefab_hash = 14;
+}

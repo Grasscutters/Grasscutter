@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum InBattleMechanicusCardChallengeState {
+	IN_BATTLE_MECHANICUS_CARD_CHALLENGE_STATE_NONE = 0;
+	IN_BATTLE_MECHANICUS_CARD_CHALLENGE_STATE_ON_GOING = 1;
+	IN_BATTLE_MECHANICUS_CARD_CHALLENGE_STATE_FAIL = 2;
+	IN_BATTLE_MECHANICUS_CARD_CHALLENGE_STATE_SUCCESS = 3;
+}

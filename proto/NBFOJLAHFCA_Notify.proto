@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "JMPCGMBHJLG.proto";
+
+// CmdId: 5934
+// EnetChannelId: 0
+// EnetIsReliable: true
+message NBFOJLAHFCA_Notify {
+	uint32 EFAEGBLFBBP = 1;
+	repeated JMPCGMBHJLG GBNIPCKFHMO = 9;
+}

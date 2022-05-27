@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GalleryFlowerStartParam.proto";
+
+// CmdId: 5509
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GalleryStartNotify {
+	uint32 gallery_id = 14;
+	uint32 end_time = 11;
+	uint32 player_count = 2;
+	uint32 owner_uid = 13;
+	oneof detail {
+		GalleryFlowerStartParam flower_start_param = 15;
+	}
+}

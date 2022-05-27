@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum SealBattleType {
+	SEAL_BATTLE_TYPE_KEEP_ALIVE = 0;
+	SEAL_BATTLE_TYPE_KILL_MONSTER = 1;
+	SEAL_BATTLE_TYPE_ENERGY_CHARGE = 2;
+}

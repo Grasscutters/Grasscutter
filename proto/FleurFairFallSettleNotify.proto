@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FleurFairFallSettleInfo.proto";
+
+// CmdId: 2097
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FleurFairFallSettleNotify {
+	map<uint32, FleurFairFallSettleInfo> settle_info_map = 12;
+	uint32 minigame_id = 5;
+}

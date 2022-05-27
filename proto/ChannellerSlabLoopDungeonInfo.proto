@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ChannellerSlabLoopDungeonInfo {
+	uint32 dungeon_index = 1;
+	uint32 score = 2;
+	bool is_first_pass_reward_taken = 3;
+	repeated uint32 last_condition_id_list = 4;
+	uint32 open_time = 5;
+	bool is_open = 6;
+}

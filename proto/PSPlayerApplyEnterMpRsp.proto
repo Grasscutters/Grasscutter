@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1832
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PSPlayerApplyEnterMpRsp {
+	int32 retcode = 8;
+	string target_psn_id = 11;
+	uint32 param = 4;
+}

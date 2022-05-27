@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "JCNIPOJMFMH.proto";
+import "LLGDCAKMCKL.proto";
+import "MJGFEHOMKJE.proto";
+
+message JEIAODKGIBD {
+	JCNIPOJMFMH ABGLPAIGDHE = 1;
+	repeated LLGDCAKMCKL CBCHACEDPHD = 2;
+	bool LNJMAOBCFDB = 3;
+	bool AADEBDHFHBB = 4;
+	MJGFEHOMKJE AMIAOBAAMMC = 5;
+	bool is_content_closed = 6;
+}

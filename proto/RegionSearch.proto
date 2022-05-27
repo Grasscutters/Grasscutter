@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "RegionSearchState.proto";
+
+message RegionSearch {
+	uint32 region_search_id = 1;
+	RegionSearchState state = 2;
+	uint32 progress = 3;
+	bool is_entered = 4;
+}

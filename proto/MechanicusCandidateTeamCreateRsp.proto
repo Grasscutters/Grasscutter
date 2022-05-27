@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3998
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MechanicusCandidateTeamCreateRsp {
+	int32 retcode = 11;
+	uint32 difficult_level = 7;
+	uint32 dungeon_id = 6;
+}

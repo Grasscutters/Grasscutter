@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8937
+// EnetChannelId: 0
+// EnetIsReliable: true
+message RogueHealAvatarsRsp {
+	int32 retcode = 15;
+	uint32 cell_id = 1;
+	uint32 dungeon_id = 5;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5598
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GalleryBounceConjuringHitNotify {
+	uint32 gallery_id = 10;
+	uint32 add_score = 6;
+	bool is_perfect = 8;
+}

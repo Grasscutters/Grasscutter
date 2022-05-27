@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ICPNKAALJEP.proto";
+
+// CmdId: 8961
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AAHKMNNAFIH {
+	ICPNKAALJEP settle_info = 13;
+	uint32 gallery_id = 10;
+}

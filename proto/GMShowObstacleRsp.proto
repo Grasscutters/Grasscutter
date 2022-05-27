@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ObstacleInfo.proto";
+
+// CmdId: 2360
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GMShowObstacleRsp {
+	int32 retcode = 2;
+	repeated ObstacleInfo obstacles = 15;
+}

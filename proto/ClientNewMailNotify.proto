@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1482
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ClientNewMailNotify {
+	uint32 not_read_num = 4;
+	uint32 not_got_attachment_num = 15;
+}

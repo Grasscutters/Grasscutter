@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "KHDMDKKDOCD.proto";
+
+// CmdId: 8217
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PIEJMALFKIF {
+	uint32 stage_id = 6;
+	uint32 level_id = 7;
+	uint32 IJHPPNHLBCB = 9;
+	uint32 MJOCHGNKDGI = 3;
+	repeated KHDMDKKDOCD dungeon_avatar_list = 2;
+}

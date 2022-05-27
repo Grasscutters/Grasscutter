@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "OCDMIOKNHHH.proto";
+
+message BEGHDPPNMFM {
+	uint32 JOHEBGKHACP = 1;
+	repeated OCDMIOKNHHH FAHILHKCNFM = 2;
+}

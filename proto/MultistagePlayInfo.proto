@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HideAndSeekStageInfo.proto";
+import "InBattleChessInfo.proto";
+import "InBattleFleurFairInfo.proto";
+import "InBattleMechanicusInfo.proto";
+import "LGJLDOHJACB.proto";
+
+message MultistagePlayInfo {
+	uint32 play_index = 1;
+	uint32 group_id = 2;
+	uint32 stage_index = 3;
+	uint32 stage_type = 4;
+	uint32 begin_time = 5;
+	uint32 duration = 6;
+	uint32 play_type = 7;
+	oneof detail {
+		InBattleMechanicusInfo mechanicus_info = 101;
+		InBattleFleurFairInfo fleur_fair_info = 102;
+		HideAndSeekStageInfo hide_and_seek_info = 103;
+		InBattleChessInfo chess_info = 104;
+		LGJLDOHJACB irodori_chess_info = 105;
+	}
+}

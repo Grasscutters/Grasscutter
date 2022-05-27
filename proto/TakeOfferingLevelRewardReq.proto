@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2903
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message TakeOfferingLevelRewardReq {
+	uint32 offering_id = 9;
+	uint32 level = 15;
+}

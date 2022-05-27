@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5590
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FPOBGEBDAOD_Notify {
+	uint32 gallery_id = 6;
+	uint32 score = 5;
+}

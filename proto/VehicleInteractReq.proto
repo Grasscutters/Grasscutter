@@ -4,8 +4,12 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "VehicleInteractType.proto";
 
+// CmdId: 838
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message VehicleInteractReq {
-	uint32 entity_id = 1;
-	VehicleInteractType interact_type = 2;
-	uint32 pos = 3;
+	uint32 entity_id = 8;
+	VehicleInteractType interact_type = 3;
+	uint32 pos = 10;
 }

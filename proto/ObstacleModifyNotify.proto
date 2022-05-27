@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ObstacleInfo.proto";
+
+// CmdId: 2341
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ObstacleModifyNotify {
+	uint32 scene_id = 4;
+	repeated ObstacleInfo add_obstacles = 13;
+	repeated int32 remove_obstacle_ids = 6;
+}

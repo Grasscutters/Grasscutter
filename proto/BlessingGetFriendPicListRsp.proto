@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BlessingFriendPicData.proto";
+
+// CmdId: 2015
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BlessingGetFriendPicListRsp {
+	int32 retcode = 7;
+	repeated BlessingFriendPicData friend_pic_data_list = 13;
+}

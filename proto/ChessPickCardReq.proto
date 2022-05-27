@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5310
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ChessPickCardReq {
+	uint32 card_id = 4;
+	uint32 card_index = 3;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EKDHFFHMNCD.proto";
+
+// CmdId: 9009
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HBOFACHAGIF_Notify {
+	map<uint32, EKDHFFHMNCD> HIEPCBOBKNH = 5;
+}

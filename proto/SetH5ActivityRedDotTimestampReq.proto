@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5654
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SetH5ActivityRedDotTimestampReq {
+	uint32 client_red_dot_timestamp = 14;
+}

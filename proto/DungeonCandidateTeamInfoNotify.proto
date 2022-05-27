@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DungeonCandidateTeamAvatar.proto";
+import "DungeonCandidateTeamPlayerState.proto";
+
+// CmdId: 912
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DungeonCandidateTeamInfoNotify {
+	uint32 dungeon_id = 6;
+	repeated DungeonCandidateTeamAvatar avatar_list = 11;
+	repeated uint32 ready_player_uid = 4;
+	uint32 match_type = 8;
+	map<uint32, DungeonCandidateTeamPlayerState> player_state_map = 2;
+}

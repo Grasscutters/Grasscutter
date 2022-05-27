@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ChessNormalCardInfo.proto";
+
+message ChessPlayerInfo {
+	uint32 uid = 1;
+	uint32 building_points = 2;
+	uint32 free_refresh_count = 3;
+	uint32 free_refresh_limit = 4;
+	repeated ChessNormalCardInfo candidate_card_info_list = 5;
+	uint32 candidate_index = 6;
+	uint32 refresh_cost = 7;
+}

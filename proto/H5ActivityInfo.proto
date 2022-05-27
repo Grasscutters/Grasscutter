@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message H5ActivityInfo {
+	uint32 h_5_schedule_id = 1;
+	uint32 h_5_activity_id = 2;
+	uint32 begin_time = 3;
+	uint32 end_time = 4;
+	uint32 content_close_time = 5;
+	string prefab_path = 6;
+	string url = 7;
+	bool is_entrance_open = 8;
+}

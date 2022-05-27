@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2084
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FlightActivitySettleNotify {
+	bool is_success = 6;
+	uint32 left_time = 12;
+	uint32 collect_num = 5;
+	uint32 total_num = 4;
+	uint32 score = 10;
+	bool is_new_record = 14;
+	uint32 medal_level = 2;
+	uint32 group_id = 8;
+}

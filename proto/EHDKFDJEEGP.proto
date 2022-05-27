@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "LHOCPFIKMHO.proto";
+
+message EHDKFDJEEGP {
+	repeated LHOCPFIKMHO BACKNNOILON = 1;
+	bool is_content_closed = 2;
+}

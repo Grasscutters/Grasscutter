@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 989
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message DungeonRestartInviteReplyNotify {
+	uint32 player_uid = 11;
+	bool is_accept = 9;
+}

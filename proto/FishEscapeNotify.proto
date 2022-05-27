@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FishEscapeReason.proto";
+import "Vector.proto";
+
+// CmdId: 5847
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FishEscapeNotify {
+	repeated uint32 fish_id_list = 12;
+	Vector pos = 4;
+	uint32 uid = 6;
+	FishEscapeReason reason = 1;
+}

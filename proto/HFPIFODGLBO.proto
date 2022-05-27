@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message HFPIFODGLBO {
+	uint64 KKONDPNGBJD = 1;
+	uint32 DGHHDJNCEHJ = 2;
+	string NDJABFGIPCL = 3;
+	uint32 DMFHGJPPOIF = 4;
+	uint32 max_score = 5;
+	uint32 BJGBGGGENNE = 6;
+	uint32 NNCNPCGGOHI = 7;
+	uint32 EOLMJOBDONB = 8;
+	uint32 DOANBAODBMA = 9;
+	bool LFGIEANOHMI = 10;
+	uint32 version = 11;
+	bool FMIDOHCJJBN = 12;
+	bool OAPKHNELBPH = 13;
+	bool NJHAMJMHPAA = 14;
+	uint64 ADIBIKKNPKK = 15;
+	uint32 MIGHLPINMFE = 21;
+	repeated uint32 GIDFMAJFIFE = 22;
+	repeated uint32 OKBJPAKOLIH = 23;
+	uint32 FAOPBAMDFJB = 24;
+	uint32 FELMANEFAOE = 25;
+}

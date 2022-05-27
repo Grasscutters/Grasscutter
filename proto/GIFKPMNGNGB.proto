@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CustomGadgetTreeInfo.proto";
+
+// CmdId: 8808
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GIFKPMNGNGB {
+	uint32 entity_id = 6;
+	CustomGadgetTreeInfo CELNKAIPELA = 2;
+}

@@ -2,6 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 689
+// EnetChannelId: 0
+// EnetIsReliable: true
 message McoinExchangeHcoinRsp {
-  int32 retcode = 1;
+	int32 retcode = 9;
+	uint32 mcoin_cost = 10;
+	uint32 hcoin = 15;
 }

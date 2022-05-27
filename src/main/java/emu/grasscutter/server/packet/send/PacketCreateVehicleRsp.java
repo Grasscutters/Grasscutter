@@ -1,6 +1,5 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.entity.EntityVehicle;
 import emu.grasscutter.game.props.FightProperty;
@@ -9,15 +8,13 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 
+import emu.grasscutter.net.proto.VehicleInteractTypeOuterClass;
 import emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember;
 import emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp;
 
 import emu.grasscutter.utils.Position;
 
 import java.util.List;
-
-
-import static emu.grasscutter.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.VEHICLE_INTERACT_OUT;
 
 public class PacketCreateVehicleRsp extends BasePacket {
 
@@ -36,7 +33,7 @@ public class PacketCreateVehicleRsp extends BasePacket {
 			List<VehicleMember> vehicleMembers = ((EntityVehicle) entity).getVehicleMembers().stream().toList();
 
 			vehicleMembers.stream().forEach(vehicleMember -> {
-				player.getScene().broadcastPacket(new PacketVehicleInteractRsp(((EntityVehicle) entity), vehicleMember, VEHICLE_INTERACT_OUT));
+				player.getScene().broadcastPacket(new PacketVehicleInteractRsp(((EntityVehicle) entity), vehicleMember, VehicleInteractTypeOuterClass.VehicleInteractType.VEHICLE_INTERACT_TYPE_OUT));
 			});
 
 			player.getScene().killEntity(entity, 0);

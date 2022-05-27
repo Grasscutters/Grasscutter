@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "OpActivityTagBriefInfo.proto";
+
+// CmdId: 2509
+// EnetChannelId: 0
+// EnetIsReliable: true
+message OpActivityStateNotify {
+	repeated OpActivityTagBriefInfo opened_op_activity_info_list = 3;
+	repeated uint32 finished_bonus_activity_id_list = 10;
+}

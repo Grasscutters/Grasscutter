@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "H5ActivityInfo.proto";
+
+// CmdId: 5668
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetAllH5ActivityInfoRsp {
+	int32 retcode = 14;
+	repeated H5ActivityInfo h_5_activity_info_list = 8;
+	uint32 client_red_dot_timestamp = 13;
+}

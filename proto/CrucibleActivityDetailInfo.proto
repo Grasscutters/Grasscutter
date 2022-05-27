@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CrucibleBattleUidInfo.proto";
+import "Vector.proto";
+
+message CrucibleActivityDetailInfo {
+	uint32 cost_time = 1;
+	repeated CrucibleBattleUidInfo uid_info_list = 2;
+	Vector pos = 3;
+	uint32 battle_world_level = 4;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8910
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ChannellerSlabLoopDungeonTakeFirstPassRewardReq {
+	uint32 dungeon_index = 6;
+}

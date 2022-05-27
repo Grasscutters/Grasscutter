@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2616
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GetBattlePassProductReq {
+	uint32 battle_pass_product_play_type = 2;
+}

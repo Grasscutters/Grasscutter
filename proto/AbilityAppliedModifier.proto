@@ -2,8 +2,8 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "AbilityString.proto";
 import "AbilityAttachedModifier.proto";
+import "AbilityString.proto";
 import "ModifierDurability.proto";
 
 message AbilityAppliedModifier {

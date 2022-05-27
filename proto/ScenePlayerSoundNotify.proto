@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 210
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ScenePlayerSoundNotify {
+	string sound_name = 7;
+	Vector play_pos = 13;
+	PlaySoundType play_type = 14;
+
+	enum PlaySoundType {
+		PLAY_SOUND_TYPE_NONE = 0;
+		PLAY_SOUND_TYPE_START = 1;
+		PLAY_SOUND_TYPE_STOP = 2;
+	}
+}

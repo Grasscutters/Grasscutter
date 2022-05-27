@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ArenaChallengeChildChallengeInfo.proto";
+
+// CmdId: 2082
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ArenaChallengeFinishNotify {
+	uint32 arena_challenge_id = 15;
+	uint32 arena_challenge_level = 3;
+	bool is_success = 5;
+	repeated ArenaChallengeChildChallengeInfo child_challenge_list = 8;
+}

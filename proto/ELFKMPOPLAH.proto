@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ELFKMPOPLAH {
+	uint32 score = 1;
+	uint32 kill_monster_count = 2;
+	uint32 kill_special_monster_count = 3;
+	uint32 IGPOLHHMMBK = 4;
+}

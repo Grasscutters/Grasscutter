@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BKHBKHINBIA.proto";
+
+// CmdId: 8480
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BEDCCMDPNCH {
+	BKHBKHINBIA settle_info = 11;
+	uint32 gallery_id = 9;
+}

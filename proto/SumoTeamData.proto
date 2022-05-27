@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SumoAvatarInfo.proto";
+
+message SumoTeamData {
+	repeated SumoAvatarInfo avatar_info_list = 1;
+	repeated uint32 skill_id_list = 2;
+}

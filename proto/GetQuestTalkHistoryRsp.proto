@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 449
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetQuestTalkHistoryRsp {
+	int32 retcode = 5;
+	uint32 parent_quest_id = 4;
+	repeated uint32 talk_id_list = 8;
+}

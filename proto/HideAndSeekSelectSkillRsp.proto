@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8227
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HideAndSeekSelectSkillRsp {
+	int32 retcode = 14;
+	repeated uint32 skill_list = 9;
+}

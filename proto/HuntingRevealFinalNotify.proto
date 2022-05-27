@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HuntingPair.proto";
+import "Vector.proto";
+
+// CmdId: 4316
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HuntingRevealFinalNotify {
+	HuntingPair hunting_pair = 6;
+	uint32 finished_group_id = 10;
+	Vector final_position = 8;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2010
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SelectAsterMidDifficultyRsp {
+	int32 retcode = 2;
+	uint32 schedule_id = 14;
+	uint32 gadget_entity_id = 8;
+	uint32 difficulty_id = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message HGFFGMCODNC {
+	uint32 group_id = 1;
+	Vector pos = 2;
+	uint32 gadget_id = 3;
+}

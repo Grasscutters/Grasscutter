@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+message HomeLimitedShopGoods {
+	uint32 goods_id = 1;
+	ItemParam goods_item = 2;
+	repeated ItemParam cost_item_list = 3;
+	uint32 bought_num = 4;
+	uint32 buy_limit = 5;
+	uint32 disable_type = 6;
+}

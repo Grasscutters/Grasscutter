@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8132
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ChannellerSlabWearBuffReq {
+	uint32 buff_id = 2;
+	uint32 slot_id = 13;
+	bool is_mp = 11;
+}

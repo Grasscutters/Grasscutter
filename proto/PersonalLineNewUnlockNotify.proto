@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 470
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PersonalLineNewUnlockNotify {
+	repeated uint32 personal_line_id_list = 10;
+}

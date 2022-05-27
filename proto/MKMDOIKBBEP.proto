@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HIHKGMLLOGD.proto";
+
+// CmdId: 8485
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MKMDOIKBBEP {
+	int32 retcode = 2;
+	bool MCJJJDJEDLA = 9;
+	HIHKGMLLOGD BBIJJHGKLKB = 15;
+}

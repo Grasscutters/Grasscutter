@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2069
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message SeaLampTakeContributionRewardReq {
+	uint32 activity_id = 15;
+	uint32 config_id = 5;
+}

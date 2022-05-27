@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeFishFarmingInfo.proto";
+
+// CmdId: 4682
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeFishFarmingInfoNotify {
+	repeated HomeFishFarmingInfo fish_farming_info_list = 11;
+}

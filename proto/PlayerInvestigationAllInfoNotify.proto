@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Investigation.proto";
+import "InvestigationTarget.proto";
+
+// CmdId: 1905
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerInvestigationAllInfoNotify {
+	repeated Investigation investigation_list = 10;
+	repeated InvestigationTarget investigation_target_list = 15;
+}

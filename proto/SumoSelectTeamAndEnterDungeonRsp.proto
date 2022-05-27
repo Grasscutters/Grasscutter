@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SumoTeamData.proto";
+
+// CmdId: 8915
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SumoSelectTeamAndEnterDungeonRsp {
+	int32 retcode = 13;
+	uint32 activity_id = 7;
+	uint32 stage_id = 8;
+	uint32 difficulty_id = 15;
+	repeated SumoTeamData team_list = 10;
+}

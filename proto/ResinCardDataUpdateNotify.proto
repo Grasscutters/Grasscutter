@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ResinCardData.proto";
+
+// CmdId: 4101
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ResinCardDataUpdateNotify {
+	repeated ResinCardData card_data_list = 6;
+	uint32 today_start_time = 8;
+}

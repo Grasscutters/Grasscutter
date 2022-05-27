@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 166
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ServerDisconnectClientNotify {
+	uint32 data = 11;
+}

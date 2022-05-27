@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Uint32Pair.proto";
+
+message MechanicusInfo {
+	uint32 mechanicus_id = 1;
+	uint32 coin = 2;
+	repeated Uint32Pair gear_level_pair_list = 3;
+	repeated uint32 open_sequence_id_list = 4;
+	bool is_finish_teach_dungeon = 5;
+	repeated uint32 finish_difficult_level_list = 6;
+	uint32 punish_over_time = 7;
+}

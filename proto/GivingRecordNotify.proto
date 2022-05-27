@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GivingRecord.proto";
+
+// CmdId: 187
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GivingRecordNotify {
+	repeated GivingRecord giving_record_list = 13;
+}

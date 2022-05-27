@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2409
+// EnetChannelId: 0
+// EnetIsReliable: true
+message TowerBriefDataNotify {
+	uint32 tower_schedule_id = 12;
+	uint32 next_schedule_change_time = 15;
+	uint32 total_star_num = 14;
+	uint32 last_floor_index = 9;
+	uint32 last_level_index = 1;
+	bool is_finished_entrance_floor = 6;
+	uint32 schedule_start_time = 13;
+}

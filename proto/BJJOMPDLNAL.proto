@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Uint32Pair.proto";
+
+message BJJOMPDLNAL {
+	uint32 config_id = 1;
+	bool LKJDIAOAJKF = 2;
+	repeated Uint32Pair monster_list = 3;
+}

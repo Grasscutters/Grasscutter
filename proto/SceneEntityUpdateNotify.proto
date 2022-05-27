@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SceneEntityInfo.proto";
+import "VisionType.proto";
+
+// CmdId: 3089
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SceneEntityUpdateNotify {
+	repeated SceneEntityInfo entity_list = 1;
+	VisionType appear_type = 6;
+	uint32 param = 9;
+}

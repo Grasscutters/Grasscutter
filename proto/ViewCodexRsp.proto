@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CodexTypeData.proto";
+
+// CmdId: 4202
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ViewCodexRsp {
+	int32 retcode = 4;
+	repeated CodexTypeData type_data_list = 11;
+	repeated uint32 IGMFFAGOCIA = 2;
+}

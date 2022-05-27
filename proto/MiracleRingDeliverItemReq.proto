@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "InterOpType.proto";
+import "ItemParam.proto";
+
+// CmdId: 5226
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message MiracleRingDeliverItemReq {
+	uint32 gadget_entity_id = 3;
+	InterOpType op_type = 13;
+	uint32 gadget_id = 5;
+	repeated uint64 food_weapon_guid_list = 2;
+	repeated ItemParam item_param_list = 8;
+}

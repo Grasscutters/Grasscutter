@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2154
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message StartArenaChallengeLevelReq {
+	uint32 gadget_entity_id = 14;
+	uint32 arena_challenge_id = 9;
+	uint32 arena_challenge_level = 11;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlayerDieOption.proto";
+
+// CmdId: 927
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message DungeonDieOptionReq {
+	PlayerDieOption die_option = 14;
+	bool is_quit_immediately = 2;
+}

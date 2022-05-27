@@ -5,17 +5,12 @@ option java_package = "emu.grasscutter.net.proto";
 import "ActivityInfo.proto";
 import "Uint32Pair.proto";
 
+// CmdId: 2144
+// EnetChannelId: 0
+// EnetIsReliable: true
 message GetActivityInfoRsp {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 2011;
-	}
-
-	int32 retcode = 1;
-	repeated ActivityInfo activity_info_list = 2;
-	repeated uint32 activated_sale_id_list = 3;
+	int32 retcode = 13;
+	repeated ActivityInfo activity_info_list = 14;
+	repeated uint32 activated_sale_id_list = 2;
 	repeated Uint32Pair disable_transfer_point_interaction_list = 4;
 }

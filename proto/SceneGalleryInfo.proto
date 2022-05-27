@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BNMLJOCDHGD.proto";
+import "ELFKMPOPLAH.proto";
+import "GalleryStageType.proto";
+import "HPBELHHMLBD.proto";
+import "IFNNECBEDCL.proto";
+import "KJHEGNJHKNA.proto";
+import "LCONBEHCEOJ.proto";
+import "NMIGMAHGEGI.proto";
+import "SceneGalleryBalloonInfo.proto";
+import "SceneGalleryBounceConjuringInfo.proto";
+import "SceneGalleryBrokenFloorInfo.proto";
+import "SceneGalleryBulletInfo.proto";
+import "SceneGalleryBuoyantCombatInfo.proto";
+import "SceneGalleryFallInfo.proto";
+import "SceneGalleryFlowerInfo.proto";
+import "SceneGalleryHandballInfo.proto";
+import "SceneGalleryHideAndSeekInfo.proto";
+import "SceneGalleryProgressInfo.proto";
+import "SceneGallerySumoInfo.proto";
+
+message SceneGalleryInfo {
+	uint32 gallery_id = 1;
+	uint32 end_time = 2;
+	GalleryStageType stage = 3;
+	uint32 pre_start_end_time = 4;
+	repeated SceneGalleryProgressInfo progress_info_list = 5;
+	uint32 player_count = 6;
+	uint32 owner_uid = 7;
+	oneof info {
+		SceneGalleryBalloonInfo balloon_info = 10;
+		SceneGalleryFallInfo fall_info = 11;
+		SceneGalleryFlowerInfo flower_info = 12;
+		SceneGalleryBulletInfo bullet_info = 13;
+		SceneGalleryBrokenFloorInfo broken_floor_info = 14;
+		SceneGalleryHideAndSeekInfo hide_and_seek_info = 15;
+		SceneGalleryBuoyantCombatInfo buoyant_combat_info = 16;
+		SceneGalleryBounceConjuringInfo bounce_conjuring_info = 17;
+		SceneGalleryHandballInfo handball_info = 18;
+		SceneGallerySumoInfo sumo_info = 19;
+		BNMLJOCDHGD salvage_prevent_info = 20;
+		HPBELHHMLBD salvage_escort_info = 21;
+		NMIGMAHGEGI home_balloon_info = 22;
+		LCONBEHCEOJ crystal_link_info = 23;
+		IFNNECBEDCL irodori_master_info = 24;
+		ELFKMPOPLAH luminance_stone_challenge_info = 25;
+		KJHEGNJHKNA home_seek_furniture_info = 26;
+	}
+}

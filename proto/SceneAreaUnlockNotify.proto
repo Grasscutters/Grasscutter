@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 219
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SceneAreaUnlockNotify {
+	uint32 scene_id = 4;
+	repeated uint32 area_list = 14;
+}

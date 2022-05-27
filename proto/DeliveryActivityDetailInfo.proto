@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message DeliveryActivityDetailInfo {
+	uint32 day_index = 1;
+	repeated uint32 finished_delivery_quest_index = 2;
+	bool is_taken_reward = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4557
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FurnitureMakeFinishNotify {
+}

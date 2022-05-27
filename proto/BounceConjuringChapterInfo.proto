@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message BounceConjuringChapterInfo {
+	uint32 chapter_id = 1;
+	uint32 best_score = 2;
+	uint32 open_time = 3;
+}

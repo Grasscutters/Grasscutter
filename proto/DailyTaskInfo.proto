@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message DailyTaskInfo {
+	uint32 daily_task_id = 1;
+	uint32 reward_id = 2;
+	uint32 progress = 3;
+	uint32 finish_progress = 4;
+	bool is_finished = 5;
+}

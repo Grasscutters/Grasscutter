@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4614
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message HomePlantSeedReq {
+	repeated uint32 seed_id_list = 10;
+	uint32 field_guid = 15;
+	uint32 index = 8;
+}

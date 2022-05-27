@@ -3,11 +3,11 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 enum AbilityScalarType {
-	UNKNOW = 0;
-	FLOAT = 1;
-	INT = 2;
-	BOOL = 3;
-	TRIGGER = 4;
-	STRING = 5;
-	UINT = 6;
+	ABILITY_SCALAR_TYPE_UNKNOW = 0;
+	ABILITY_SCALAR_TYPE_FLOAT = 1;
+	ABILITY_SCALAR_TYPE_INT = 2;
+	ABILITY_SCALAR_TYPE_BOOL = 3;
+	ABILITY_SCALAR_TYPE_TRIGGER = 4;
+	ABILITY_SCALAR_TYPE_STRING = 5;
+	ABILITY_SCALAR_TYPE_UINT = 6;
 }

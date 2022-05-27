@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FishBattleResult.proto";
+import "ItemParam.proto";
+
+// CmdId: 5832
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FishBattleEndRsp {
+	int32 retcode = 5;
+	FishBattleResult battle_result = 9;
+	bool is_got_reward = 3;
+	FishNoRewardReason no_reward_reason = 13;
+	repeated ItemParam reward_item_list = 7;
+	repeated ItemParam drop_item_list = 1;
+	repeated ItemParam talent_item_list = 12;
+
+	enum FishNoRewardReason {
+		FISH_NO_REWARD_REASON_NONE = 0;
+		FISH_NO_REWARD_REASON_ACTIVITY_LIMIT = 1;
+		FISH_NO_REWARD_REASON_BAG_LIMIT = 2;
+		FISH_NO_REWARD_REASON_POOL_LIMIT = 3;
+	}
+}

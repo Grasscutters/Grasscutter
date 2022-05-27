@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3063
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SceneWeatherForcastRsp {
+	int32 retcode = 4;
+	uint64 next_climate_time = 5;
+	repeated uint32 forcast_climate_list = 11;
+}

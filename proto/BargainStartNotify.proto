@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BargainSnapshot.proto";
+
+// CmdId: 406
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BargainStartNotify {
+	uint32 bargain_id = 14;
+	BargainSnapshot snapshot = 11;
+}

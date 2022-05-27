@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2021
+// EnetChannelId: 0
+// EnetIsReliable: true
+message EnterTrialAvatarActivityDungeonRsp {
+	int32 retcode = 2;
+	uint32 activity_id = 9;
+	uint32 trial_avatar_index_id = 7;
+}

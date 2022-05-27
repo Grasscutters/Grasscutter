@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5804
+// EnetChannelId: 0
+// EnetIsReliable: true
+message StartFishingRsp {
+	int32 retcode = 11;
+	uint32 fish_pool_id = 8;
+}

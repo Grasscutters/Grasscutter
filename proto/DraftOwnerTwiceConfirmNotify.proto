@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5482
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DraftOwnerTwiceConfirmNotify {
+	uint32 draft_id = 5;
+	uint32 twice_confirm_deadline_time = 9;
+}

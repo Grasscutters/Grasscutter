@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BargainResultType.proto";
+
+// CmdId: 412
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BargainOfferPriceRsp {
+	int32 retcode = 2;
+	BargainResultType bargain_result = 3;
+	uint32 result_param = 15;
+	int32 cur_mood = 5;
+}

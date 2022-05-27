@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message DIPHADPMNHO {
+	uint32 skill_id = 1;
+	map<uint32, uint32> EFJBPJEBADK = 2;
+}

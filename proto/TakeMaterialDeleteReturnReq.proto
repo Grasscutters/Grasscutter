@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MaterialDeleteReturnType.proto";
+
+// CmdId: 660
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message TakeMaterialDeleteReturnReq {
+	MaterialDeleteReturnType type = 6;
+}

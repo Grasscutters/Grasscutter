@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message JLMHDDHOGGD {
+	bool is_content_closed = 1;
+	uint32 JALMIOIDLBJ = 2;
+	bool MOHIAPCBAEA = 3;
+	uint32 best_score = 4;
+}

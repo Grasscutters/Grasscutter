@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ServerBuff.proto";
+
+// CmdId: 393
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ServerBuffChangeNotify {
+	ServerBuffChangeType server_buff_change_type = 4;
+	repeated uint64 avatar_guid_list = 15;
+	repeated ServerBuff server_buff_list = 7;
+	bool is_creature_buff = 3;
+	repeated uint32 entity_id_list = 13;
+
+	enum ServerBuffChangeType {
+		SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF = 0;
+		SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF = 1;
+	}
+}

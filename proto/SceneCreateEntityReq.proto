@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CreateEntityInfo.proto";
+import "CreateReason.proto";
+
+// CmdId: 250
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message SceneCreateEntityReq {
+	CreateEntityInfo entity = 2;
+	CreateReason reason = 7;
+	bool is_destroy_when_disconnect = 5;
+}

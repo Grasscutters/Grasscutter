@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 349
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EvtCostStaminaNotify {
+	float cost_stamina = 3;
+	uint32 skill_id = 10;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FBNFELMJBAN.proto";
+import "HGJDPJPKPMN.proto";
+
+message OIHDOBHEMKD {
+	uint32 EGIEFHDLKDM = 1;
+	repeated FBNFELMJBAN AOHJLBKCHAA = 2;
+	uint32 BIAOKBDFICJ = 3;
+	HGJDPJPKPMN KDNJEBOALOP = 4;
+	HGJDPJPKPMN LECKMJFALPG = 5;
+	HGJDPJPKPMN MFAJMGMDIPI = 6;
+	HGJDPJPKPMN MCLLEECPAFM = 7;
+	HGJDPJPKPMN EPAGAANEAML = 8;
+	bool is_passed = 9;
+	uint32 PHNEOGADKLI = 10;
+	uint32 KILHCCMABIC = 11;
+	map<uint32, HGJDPJPKPMN> NMPCJDEJOCD = 12;
+}

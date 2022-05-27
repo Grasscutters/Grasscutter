@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FoundationOpType.proto";
+
+// CmdId: 845
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FoundationRsp {
+	int32 retcode = 13;
+	uint32 gadget_entity_id = 2;
+	FoundationOpType op_type = 15;
+	uint32 building_id = 5;
+	uint32 point_config_id = 4;
+}

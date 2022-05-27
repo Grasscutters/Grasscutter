@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message NpcPositionInfo {
+	uint32 npc_id = 1;
+	Vector pos = 2;
+}

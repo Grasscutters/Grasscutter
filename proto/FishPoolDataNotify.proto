@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5811
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FishPoolDataNotify {
+	uint32 entity_id = 6;
+	uint32 today_fish_num = 9;
+}

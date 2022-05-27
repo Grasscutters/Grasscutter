@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "StoreType.proto";
+import "Vector.proto";
+
+// CmdId: 682
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message DropItemReq {
+	StoreType store_type = 8;
+	uint64 guid = 9;
+	uint32 count = 3;
+	Vector pos = 14;
+}

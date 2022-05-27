@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5375
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MultistagePlayEndNotify {
+	uint32 play_index = 15;
+	uint32 group_id = 2;
+}

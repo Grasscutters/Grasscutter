@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AIGECAPPCKK.proto";
+import "AMJFIJNNGHC.proto";
+import "GCPNGHFNGDP.proto";
+import "JACACCPGMGC.proto";
+
+message JACDNLEIDOO {
+	AMJFIJNNGHC GGOHJMNPHPB = 1;
+	GCPNGHFNGDP DMJLNFHECBC = 2;
+	AIGECAPPCKK MNLBKIIBHHO = 3;
+	repeated JACACCPGMGC NCIANEDJICO = 4;
+}

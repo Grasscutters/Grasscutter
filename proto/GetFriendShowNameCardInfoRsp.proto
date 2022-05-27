@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4060
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetFriendShowNameCardInfoRsp {
+	int32 retcode = 3;
+	uint32 uid = 8;
+	repeated uint32 show_name_card_id_list = 4;
+}

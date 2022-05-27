@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "KLPINMKOEPE.proto";
+import "PHGGAEDHLBN.proto";
+
+message NLFDMMFNMIO {
+	uint64 MLBIACEGKGF = 1;
+	uint32 dungeon_id = 2;
+	repeated KLPINMKOEPE LOAFOLPLHFK = 3;
+	PHGGAEDHLBN JDBDBJOCLCP = 4;
+}

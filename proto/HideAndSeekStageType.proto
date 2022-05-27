@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum HideAndSeekStageType {
+	HIDE_AND_SEEK_STAGE_TYPE_PREPARE = 0;
+	HIDE_AND_SEEK_STAGE_TYPE_PICK = 1;
+	HIDE_AND_SEEK_STAGE_TYPE_GAME = 2;
+	HIDE_AND_SEEK_STAGE_TYPE_HIDE = 3;
+	HIDE_AND_SEEK_STAGE_TYPE_SEEK = 4;
+	HIDE_AND_SEEK_STAGE_TYPE_SETTLE = 5;
+}

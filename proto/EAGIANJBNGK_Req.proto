@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GIPIIBOENGC.proto";
+import "IJJIGBPOFAA.proto";
+
+// CmdId: 164
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EAGIANJBNGK_Req {
+	uint32 avatar_id = 14;
+	oneof NEHAEFLFKJG {
+		IJJIGBPOFAA skill_request = 347;
+		GIPIIBOENGC reliquary_request = 1217;
+	}
+}

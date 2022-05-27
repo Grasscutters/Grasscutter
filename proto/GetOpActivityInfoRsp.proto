@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "OpActivityInfo.proto";
+
+// CmdId: 5131
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetOpActivityInfoRsp {
+	int32 retcode = 5;
+	repeated OpActivityInfo op_activity_info_list = 14;
+}

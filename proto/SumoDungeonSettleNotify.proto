@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8426
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SumoDungeonSettleNotify {
+	uint32 stage_id = 6;
+	uint32 difficulty_id = 4;
+	uint32 final_score = 5;
+	bool is_new_record = 2;
+	uint32 kill_monster_num = 8;
+	uint32 kill_elite_monster_num = 1;
+}

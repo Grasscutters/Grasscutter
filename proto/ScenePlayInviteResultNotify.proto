@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4432
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ScenePlayInviteResultNotify {
+	uint32 play_id = 8;
+	bool is_all_argee = 1;
+}

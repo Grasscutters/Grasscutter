@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HuntingPair.proto";
+import "Vector.proto";
+
+// CmdId: 4326
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HuntingStartNotify {
+	HuntingPair hunting_pair = 1;
+	Vector clue_position = 11;
+	uint32 fail_time = 9;
+	bool is_final = 13;
+}

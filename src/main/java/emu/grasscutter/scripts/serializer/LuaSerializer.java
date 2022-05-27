@@ -71,7 +71,7 @@ public class LuaSerializer implements Serializer {
 		
 		try {
 			//noinspection ConfusingArgumentToVarargsMethod
-			object = type.getDeclaredConstructor().newInstance(null);
+			object = type.getDeclaredConstructor().newInstance();
 			
 			LuaValue[] keys = table.keys();
 			for (LuaValue k : keys) {

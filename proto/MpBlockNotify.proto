@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1808
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MpBlockNotify {
+	uint32 end_time = 2;
+}

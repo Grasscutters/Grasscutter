@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2135
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DragonSpineChapterFinishNotify {
+	uint32 schedule_id = 4;
+	uint32 chapter_id = 1;
+	uint32 weapon_enhance_level = 3;
+}

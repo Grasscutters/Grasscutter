@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "LunaRiteAreaInfo.proto";
+import "LunaRiteHintPoint.proto";
+
+message LunaRiteDetailInfo {
+	repeated LunaRiteAreaInfo area_info_list = 1;
+	repeated LunaRiteHintPoint hint_point = 2;
+}

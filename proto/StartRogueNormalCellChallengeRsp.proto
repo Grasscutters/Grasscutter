@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8156
+// EnetChannelId: 0
+// EnetIsReliable: true
+message StartRogueNormalCellChallengeRsp {
+	int32 retcode = 5;
+	uint32 cell_id = 6;
+	uint32 dungeon_id = 13;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SalesmanStatusType.proto";
+
+message SalesmanActivityDetailInfo {
+	SalesmanStatusType status = 1;
+	uint32 day_index = 2;
+	uint32 last_deliver_time = 3;
+	uint32 deliver_count = 4;
+	map<uint32, uint32> selected_reward_id_map = 5;
+	uint32 day_reward_id = 6;
+	uint32 special_reward_preview_id = 7;
+	uint32 cond_day_count = 8;
+	bool is_has_taken_special_reward = 9;
+	bool is_today_has_delivered = 10;
+}

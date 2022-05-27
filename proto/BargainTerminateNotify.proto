@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 458
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BargainTerminateNotify {
+	uint32 bargain_id = 6;
+}

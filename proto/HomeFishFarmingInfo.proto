@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message HomeFishFarmingInfo {
+	uint32 fishpond_guid = 1;
+	repeated uint32 fish_id_list = 2;
+}

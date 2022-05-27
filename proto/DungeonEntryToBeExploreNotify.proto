@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3414
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DungeonEntryToBeExploreNotify {
+	uint32 dungeon_entry_scene_point_id = 14;
+	uint32 dungeon_entry_config_id = 11;
+	uint32 scene_id = 13;
+}

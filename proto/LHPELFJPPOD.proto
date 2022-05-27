@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message LHPELFJPPOD {
+	uint32 challenge_id = 1;
+	uint32 best_score = 2;
+	bool NCHPKEMIJAH = 3;
+}

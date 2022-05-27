@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1801
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetPlayerMpModeAvailabilityRsp {
+	int32 retcode = 12;
+	int32 mp_ret = 1;
+	repeated uint32 param_list = 15;
+}

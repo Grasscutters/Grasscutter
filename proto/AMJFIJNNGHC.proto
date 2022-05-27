@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PEDJGJMHMHH.proto";
+
+message AMJFIJNNGHC {
+	bool is_open = 1;
+	repeated PEDJGJMHMHH IPOLFLJNIJL = 2;
+}

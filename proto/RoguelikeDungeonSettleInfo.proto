@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "RoguelikeSettleCoinInfo.proto";
+
+message RoguelikeDungeonSettleInfo {
+	uint32 stage_id = 1;
+	uint32 cur_level = 2;
+	map<uint32, RoguelikeSettleCoinInfo> finished_challenge_cell_num_map = 3;
+	bool is_final_level = 4;
+	uint32 total_coin_b_num = 5;
+	uint32 total_coin_c_num = 6;
+	bool is_coin_c_reach_limit = 7;
+}

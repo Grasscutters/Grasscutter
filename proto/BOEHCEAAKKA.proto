@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8086
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message BOEHCEAAKKA {
+	uint32 DEHBBHMJKOA = 9;
+	bool is_succ = 4;
+	uint32 IEEGKPKAKMD = 8;
+}

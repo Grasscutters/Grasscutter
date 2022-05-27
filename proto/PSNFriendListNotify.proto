@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FriendBrief.proto";
+
+// CmdId: 4089
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PSNFriendListNotify {
+	repeated FriendBrief psn_friend_list = 13;
+}

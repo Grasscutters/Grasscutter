@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8205
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message RoguelikeTakeStageFirstPassRewardReq {
+	uint32 stage_id = 2;
+}

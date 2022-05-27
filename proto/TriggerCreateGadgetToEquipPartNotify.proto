@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 322
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message TriggerCreateGadgetToEquipPartNotify {
+	uint32 entity_id = 3;
+	uint32 gadget_entity_id = 10;
+	uint32 gadget_id = 2;
+	string equip_part = 9;
+}

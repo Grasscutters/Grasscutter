@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2153
+// EnetChannelId: 0
+// EnetIsReliable: true
+message EffigyChallengeInfoNotify {
+	uint32 challenge_id = 8;
+	uint32 difficulty_id = 15;
+	repeated uint32 condition_id_list = 13;
+	uint32 challenge_score = 4;
+}

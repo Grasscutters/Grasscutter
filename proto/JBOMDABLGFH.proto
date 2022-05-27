@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message JBOMDABLGFH {
+	uint32 building_id = 1;
+	uint32 point_config_id = 2;
+	uint32 KFMNMAPBEGA = 3;
+	uint32 ILPLBMDJMIB = 5;
+	uint32 owner_uid = 6;
+	uint32 DBPDNMDPGJM = 7;
+	uint32 CMEFMKBJHII = 8;
+}

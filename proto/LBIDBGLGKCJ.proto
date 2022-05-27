@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message LBIDBGLGKCJ {
+	uint32 id = 1;
+	uint32 max_score = 2;
+	bool BMGMFBPAOAI = 3;
+}

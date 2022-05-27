@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message IMMPPANFEPP {
+	uint32 guid = 1;
+	uint32 IEKJLDEFKCC = 2;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AsterLargeDetailInfo.proto";
+import "AsterLittleDetailInfo.proto";
+import "AsterMidDetailInfo.proto";
+import "AsterProgressDetailInfo.proto";
+
+message AsterActivityDetailInfo {
+	AsterLittleDetailInfo aster_little = 1;
+	AsterMidDetailInfo aster_mid = 2;
+	AsterLargeDetailInfo aster_large = 3;
+	AsterProgressDetailInfo aster_progress = 5;
+	uint32 aster_credit = 6;
+	uint32 aster_token = 7;
+	bool is_special_reward_taken = 8;
+	bool is_content_closed = 9;
+	uint32 content_close_time = 10;
+}

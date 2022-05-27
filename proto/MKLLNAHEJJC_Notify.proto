@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CCEOEOHLAPK.proto";
+
+// CmdId: 4296
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MKLLNAHEJJC_Notify {
+	CCEOEOHLAPK KNPDHPEGCHI = 12;
+}

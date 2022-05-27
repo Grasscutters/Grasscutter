@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 863
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GadgetChainLevelUpdateNotify {
+	map<uint32, uint32> gadget_chain_level_map = 14;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2064
+// EnetChannelId: 0
+// EnetIsReliable: true
+message EffigyChallengeResultNotify {
+	uint32 challenge_id = 8;
+	bool is_success = 9;
+	uint32 challenge_score = 1;
+	uint32 challenge_max_score = 4;
+}

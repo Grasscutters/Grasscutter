@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SegmentCRCInfo.proto";
+
+// CmdId: 63
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message CheckSegmentCRCReq {
+	repeated SegmentCRCInfo info_list = 4;
+}

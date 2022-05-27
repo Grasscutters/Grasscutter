@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GCHLPKDADJB.proto";
+import "OCBPDFGJLAI.proto";
+
+message DMPIJLBHEAE {
+	uint32 challenge_type = 1;
+	bool is_unlock = 2;
+	oneof HOGIHOBKKAJ {
+		OCBPDFGJLAI bundle_info = 10;
+		GCHLPKDADJB score_challenge_info = 11;
+		uint32 boss_challenge_id = 12;
+	}
+}

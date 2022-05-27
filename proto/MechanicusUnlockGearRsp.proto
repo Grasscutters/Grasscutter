@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3935
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MechanicusUnlockGearRsp {
+	int32 retcode = 14;
+	uint32 mechanicus_id = 1;
+	uint32 gear_id = 13;
+}

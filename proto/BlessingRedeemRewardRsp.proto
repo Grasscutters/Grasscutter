@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2170
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BlessingRedeemRewardRsp {
+	int32 retcode = 11;
+	map<uint32, uint32> pic_num_map = 3;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8616
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message JCKGJAELBMB {
+	uint32 level_id = 12;
+	uint32 finish_time = 15;
+}

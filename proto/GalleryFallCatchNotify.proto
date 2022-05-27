@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5532
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GalleryFallCatchNotify {
+	uint32 gallery_id = 5;
+	uint32 add_score = 9;
+	uint32 cur_score = 6;
+	map<uint32, uint32> ball_catch_count_map = 7;
+	bool is_ground = 11;
+	uint32 time_cost = 10;
+}

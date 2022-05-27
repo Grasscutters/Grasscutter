@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ExhibitionDisplayInfo.proto";
+import "HideAndSeekSettleInfo.proto";
+
+// CmdId: 5334
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HideAndSeekSettleNotify {
+	uint32 play_index = 1;
+	uint32 stage_type = 14;
+	uint32 cost_time = 2;
+	repeated uint32 winner_list = 5;
+	SettleReason reason = 3;
+	repeated ExhibitionDisplayInfo score_list = 15;
+	repeated HideAndSeekSettleInfo settle_info_list = 12;
+	bool is_record_score = 10;
+
+	enum SettleReason {
+		SETTLE_REASON_TIME_OUT = 0;
+		SETTLE_REASON_PLAY_END = 1;
+		SETTLE_REASON_PLAYER_QUIT = 2;
+	}
+}

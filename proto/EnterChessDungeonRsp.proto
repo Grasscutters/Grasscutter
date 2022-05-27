@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8819
+// EnetChannelId: 0
+// EnetIsReliable: true
+message EnterChessDungeonRsp {
+	int32 retcode = 10;
+	uint32 map_id = 5;
+}

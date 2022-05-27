@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "IMGLPJNBHCH.proto";
+
+// CmdId: 8670
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GEIGCHNDOAA {
+	int32 retcode = 11;
+	uint32 stage_id = 8;
+	uint32 challenge_id = 6;
+	uint32 ENGBLJFPCAL = 15;
+	uint32 KLDLFFMDDFP = 13;
+	uint32 AOCDGPEHHNP = 4;
+	uint32 JOCMAPMGKEG = 7;
+	repeated IMGLPJNBHCH JIHLKAJCEIH = 12;
+	bool AMCEPJDILCK = 5;
+}

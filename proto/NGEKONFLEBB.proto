@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8290
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message NGEKONFLEBB {
+	uint32 gadget_entity_id = 9;
+	uint32 difficulty = 10;
+}

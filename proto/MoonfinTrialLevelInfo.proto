@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message MoonfinTrialLevelInfo {
+	uint32 best_record = 1;
+	uint32 open_time = 2;
+}

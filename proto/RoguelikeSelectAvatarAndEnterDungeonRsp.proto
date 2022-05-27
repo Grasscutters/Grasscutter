@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8471
+// EnetChannelId: 0
+// EnetIsReliable: true
+message RoguelikeSelectAvatarAndEnterDungeonRsp {
+	int32 retcode = 9;
+	uint32 stage_id = 4;
+}

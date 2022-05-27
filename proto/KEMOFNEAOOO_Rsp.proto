@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1145
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message KEMOFNEAOOO_Rsp {
+	repeated uint32 BEFFIDCFFEA = 9;
+}

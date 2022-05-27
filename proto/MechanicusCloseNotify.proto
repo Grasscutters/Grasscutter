@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3917
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MechanicusCloseNotify {
+	uint32 mechanicus_id = 12;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum HomePlantFieldStatus {
+	HOME_PLANT_FIELD_STATUS_STATUE_NONE = 0;
+	HOME_PLANT_FIELD_STATUS_STATUE_SEED = 1;
+	HOME_PLANT_FIELD_STATUS_STATUE_SPROUT = 2;
+	HOME_PLANT_FIELD_STATUS_STATUE_GATHER = 3;
+}

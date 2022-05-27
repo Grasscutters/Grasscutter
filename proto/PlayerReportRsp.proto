@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4084
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerReportRsp {
+	int32 retcode = 14;
+	uint32 target_uid = 3;
+	uint32 cd_time = 11;
+}

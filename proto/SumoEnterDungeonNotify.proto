@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SumoDungeonTeam.proto";
+
+// CmdId: 8727
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SumoEnterDungeonNotify {
+	uint32 activity_id = 4;
+	uint32 stage_id = 9;
+	repeated SumoDungeonTeam dungeon_team_list = 14;
+	uint32 cur_team_index = 11;
+	uint32 next_valid_switch_time = 1;
+	uint32 no_switch_punish_time = 8;
+}

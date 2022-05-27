@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CBGBEIGAHDK.proto";
+import "HGFFGMCODNC.proto";
+import "NAFAIMHFEFG.proto";
+
+message EPDOGGKOCAP {
+	repeated CBGBEIGAHDK stage_list = 1;
+	repeated uint32 GJDBEPJOABF = 2;
+	uint32 MGFBGCPLDFM = 3;
+	repeated NAFAIMHFEFG JKAGKBDLDFM = 4;
+	repeated HGFFGMCODNC ILIHAGHOKOB = 5;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+// CmdId: 2654
+// EnetChannelId: 0
+// EnetIsReliable: true
+message TakeAchievementRewardRsp {
+	int32 retcode = 7;
+	repeated uint32 id_list = 15;
+	repeated ItemParam item_list = 13;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 261
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SealBattleEndNotify {
+	uint32 seal_entity_id = 15;
+	bool is_win = 14;
+}

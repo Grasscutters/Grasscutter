@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8641
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DoRoguelikeDungeonCardGachaRsp {
+	int32 retcode = 9;
+	repeated uint32 card_list = 11;
+	bool is_can_refresh = 7;
+}

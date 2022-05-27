@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message CityReputationHuntInfo {
+	bool is_open = 1;
+	bool has_reward = 2;
+	uint32 cur_week_finish_num = 3;
+}

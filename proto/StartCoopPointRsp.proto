@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MainCoop.proto";
+
+// CmdId: 1964
+// EnetChannelId: 0
+// EnetIsReliable: true
+message StartCoopPointRsp {
+	int32 retcode = 12;
+	uint32 coop_point = 8;
+	bool is_start = 1;
+	MainCoop start_main_coop = 7;
+}

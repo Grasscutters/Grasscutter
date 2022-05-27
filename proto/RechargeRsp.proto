@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4109
+// EnetChannelId: 0
+// EnetIsReliable: true
+message RechargeRsp {
+	int32 retcode = 1;
+	string product_id = 11;
+	bool BDBJMENGGAF = 2;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 2377
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GMShowNavMeshReq {
+	Vector center = 1;
+	Vector extent = 6;
+}

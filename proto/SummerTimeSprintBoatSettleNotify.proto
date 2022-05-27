@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8117
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SummerTimeSprintBoatSettleNotify {
+	bool is_success = 1;
+	uint32 left_time = 7;
+	uint32 collect_num = 13;
+	uint32 total_num = 11;
+	uint32 score = 8;
+	bool is_new_record = 15;
+	uint32 medal_level = 9;
+	uint32 group_id = 14;
+}

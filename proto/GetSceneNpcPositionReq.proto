@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 537
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GetSceneNpcPositionReq {
+	uint32 scene_id = 8;
+	repeated uint32 npc_id_list = 13;
+}

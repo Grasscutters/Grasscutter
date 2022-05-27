@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 195
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message AdjustWorldLevelReq {
+	uint32 cur_world_level = 8;
+	uint32 expect_world_level = 3;
+}

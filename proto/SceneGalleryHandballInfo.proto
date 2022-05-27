@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlaceInfo.proto";
+
+message SceneGalleryHandballInfo {
+	bool is_have_ball = 1;
+	PlaceInfo ball_place_info = 2;
+}

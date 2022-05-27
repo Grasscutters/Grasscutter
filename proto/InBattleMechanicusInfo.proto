@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "InBattleMechanicusCardInfo.proto";
+import "InBattleMechanicusMonsterInfo.proto";
+import "InBattleMechanicusPlayerInfo.proto";
+import "InBattleMechanicusStageType.proto";
+
+message InBattleMechanicusInfo {
+	InBattleMechanicusStageType stage = 1;
+	uint64 begin_time_ms = 2;
+	uint64 duration_ms = 3;
+	uint32 round = 4;
+	uint32 total_round = 5;
+	uint32 left_monster = 6;
+	repeated InBattleMechanicusMonsterInfo monster_list = 7;
+	repeated InBattleMechanicusPlayerInfo player_list = 8;
+	uint32 excaped_monster_num = 9;
+	uint32 max_excape_monster_num = 10;
+	uint32 building_stage_duration = 11;
+	repeated InBattleMechanicusCardInfo pick_card_list = 12;
+	repeated InBattleMechanicusCardInfo history_card_list = 13;
+	uint64 wait_begin_time_us = 14;
+	uint32 wait_seconds = 15;
+	repeated uint32 entrance_list = 16;
+	repeated uint32 exit_list = 17;
+}

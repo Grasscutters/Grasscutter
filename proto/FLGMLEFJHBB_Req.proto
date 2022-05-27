@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 6222
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message FLGMLEFJHBB_Req {
+	uint64 MLBIACEGKGF = 1;
+	bool CCAKJAMMOEC = 5;
+}

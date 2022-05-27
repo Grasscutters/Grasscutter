@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlayerDieType.proto";
+import "StrengthenPointData.proto";
+
+// CmdId: 955
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DungeonPlayerDieNotify {
+	uint32 dungeon_id = 6;
+	PlayerDieType die_type = 3;
+	uint32 revive_count = 11;
+	uint32 wait_time = 5;
+	uint32 murderer_entity_id = 9;
+	map<uint32, StrengthenPointData> strengthen_point_data_map = 1;
+	oneof entity {
+		uint32 monster_id = 2;
+		uint32 gadget_id = 7;
+	}
+}

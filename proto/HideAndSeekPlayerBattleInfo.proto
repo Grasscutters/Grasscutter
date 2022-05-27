@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message HideAndSeekPlayerBattleInfo {
+	uint32 avatar_id = 1;
+	repeated uint32 skill_list = 2;
+	bool is_ready = 3;
+	uint32 costume_id = 4;
+}

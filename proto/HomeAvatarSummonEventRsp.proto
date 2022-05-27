@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4498
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeAvatarSummonEventRsp {
+	int32 retcode = 7;
+	uint32 event_id = 13;
+}

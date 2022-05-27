@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message SceneGalleryBounceConjuringInfo {
+	uint32 total_score = 1;
+	uint32 total_destroyed_machine_count = 2;
+}

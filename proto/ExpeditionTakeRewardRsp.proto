@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2196
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ExpeditionTakeRewardRsp {
+	int32 retcode = 11;
+	uint32 path_id = 6;
+	bool is_bonus = 2;
+	uint32 reward_level = 14;
+}

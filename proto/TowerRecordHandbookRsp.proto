@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "TowerMonthlyDetail.proto";
+
+// CmdId: 2454
+// EnetChannelId: 0
+// EnetIsReliable: true
+message TowerRecordHandbookRsp {
+	int32 retcode = 6;
+	repeated TowerMonthlyDetail monthly_detail_list = 12;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ChatEmojiCollectionData.proto";
+
+// CmdId: 4066
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message SetChatEmojiCollectionReq {
+	ChatEmojiCollectionData chat_emoji_collection_data = 8;
+}

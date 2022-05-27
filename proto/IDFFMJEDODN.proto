@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FDEGJOCDDGH.proto";
+import "OCOKILBJIPJ.proto";
+
+message IDFFMJEDODN {
+	OCOKILBJIPJ NJDMJAFIJNH = 1;
+	uint32 time_cost = 2;
+	uint64 MLBIACEGKGF = 3;
+	bool EKDMKINNMLF = 4;
+	bool NIIDJJOLMLN = 5;
+	uint32 JDGAAGCPMMF = 6;
+	bool PGABKEFIBFB = 7;
+	repeated FDEGJOCDDGH child_challenge_list = 8;
+}

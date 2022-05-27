@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8074
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EchoShellTakeRewardReq {
+	uint32 reward_id = 1;
+}

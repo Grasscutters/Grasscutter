@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4590
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SetFriendEnterHomeOptionRsp {
+	int32 retcode = 7;
+}

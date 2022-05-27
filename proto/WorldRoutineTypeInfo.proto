@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "WorldRoutineInfo.proto";
+
+message WorldRoutineTypeInfo {
+	uint32 routine_type = 1;
+	repeated WorldRoutineInfo world_routine_info_list = 2;
+	uint32 next_refresh_time = 3;
+}

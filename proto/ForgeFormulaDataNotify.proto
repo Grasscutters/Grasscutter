@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 673
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ForgeFormulaDataNotify {
+	uint32 forge_id = 11;
+	bool is_locked = 8;
+}

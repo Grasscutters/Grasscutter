@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MotionInfo.proto";
+
+// CmdId: 233
+// EnetChannelId: 0
+// EnetIsReliable: true
+message EntityForceSyncRsp {
+	int32 retcode = 8;
+	uint32 entity_id = 4;
+	MotionInfo fail_motion = 10;
+	uint32 scene_time = 6;
+}

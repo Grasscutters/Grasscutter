@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FleurFairBossSettleInfo.proto";
+import "FleurFairGallerySettleInfo.proto";
+
+// CmdId: 5384
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FleurFairStageSettleNotify {
+	uint32 stage_type = 1;
+	oneof detail {
+		FleurFairGallerySettleInfo gallery_settle_info = 4;
+		FleurFairBossSettleInfo boss_settle_info = 2;
+	}
+}

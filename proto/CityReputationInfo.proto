@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CityReputationExploreInfo.proto";
+import "CityReputationHuntInfo.proto";
+import "CityReputationQuestInfo.proto";
+import "CityReputationRequestInfo.proto";
+
+message CityReputationInfo {
+	uint32 level = 1;
+	uint32 exp = 2;
+	repeated uint32 taken_level_reward_list = 3;
+	uint32 total_accept_request_num = 4;
+	uint32 next_refresh_time = 5;
+	CityReputationQuestInfo quest_info = 10;
+	CityReputationRequestInfo request_info = 11;
+	CityReputationExploreInfo explore_info = 12;
+	CityReputationHuntInfo hunt_info = 13;
+}

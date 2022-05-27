@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message MistTrialLevelData {
+	uint32 level_id = 1;
+	bool is_open = 2;
+	uint32 open_time = 3;
+}

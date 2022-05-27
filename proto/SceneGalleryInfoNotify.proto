@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SceneGalleryInfo.proto";
+
+// CmdId: 5597
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SceneGalleryInfoNotify {
+	SceneGalleryInfo gallery_info = 13;
+}

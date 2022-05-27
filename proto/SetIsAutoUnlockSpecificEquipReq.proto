@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 639
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message SetIsAutoUnlockSpecificEquipReq {
+	bool is_auto_unlock_specific_equip = 13;
+}

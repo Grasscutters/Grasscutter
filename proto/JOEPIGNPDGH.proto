@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum JOEPIGNPDGH {
+	JOEPIGNPDGH_GIGONJIGKBM = 0;
+	JOEPIGNPDGH_AEKNMJMKIPN = 1;
+	JOEPIGNPDGH_LKCIHNNHIFO = 2;
+	JOEPIGNPDGH_EPAPGLMBAEB = 3;
+}

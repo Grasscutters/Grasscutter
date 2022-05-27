@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2083
+// EnetChannelId: 0
+// EnetIsReliable: true
+message TakeDeliveryDailyRewardRsp {
+	int32 retcode = 7;
+	uint32 schedule_id = 3;
+}

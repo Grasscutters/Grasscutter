@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "RogueAvatarInfo.proto";
+
+message RogueShowAvatarTeamInfo {
+	repeated RogueAvatarInfo avatar_list = 1;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CompoundQueueData.proto";
+
+// CmdId: 154
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerCompoundMaterialRsp {
+	int32 retcode = 9;
+	CompoundQueueData compound_que_data = 13;
+}

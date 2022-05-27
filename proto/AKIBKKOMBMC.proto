@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "IEPIBFMCJNJ.proto";
+
+// CmdId: 8326
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AKIBKKOMBMC {
+	int32 retcode = 12;
+	uint32 schedule_id = 8;
+	repeated IEPIBFMCJNJ DHMBKLNIFAC = 4;
+}

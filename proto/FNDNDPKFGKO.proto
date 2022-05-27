@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EHDAABHEMMI.proto";
+
+// CmdId: 7850
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message FNDNDPKFGKO {
+	EHDAABHEMMI op = 1;
+	uint32 AALAKIGGOPD = 2;
+}

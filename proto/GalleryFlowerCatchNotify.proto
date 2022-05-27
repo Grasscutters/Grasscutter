@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5549
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GalleryFlowerCatchNotify {
+	uint32 gallery_id = 1;
+	uint32 add_score = 7;
+	uint32 cur_score = 4;
+}

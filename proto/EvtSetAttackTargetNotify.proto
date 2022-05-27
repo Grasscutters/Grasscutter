@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EvtSetAttackTargetInfo.proto";
+import "ForwardType.proto";
+
+// CmdId: 382
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EvtSetAttackTargetNotify {
+	ForwardType forward_type = 11;
+	EvtSetAttackTargetInfo evt_set_attack_target_info = 10;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 313
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message MonsterAlertChangeNotify {
+	uint32 avatar_entity_id = 14;
+	uint32 is_alert = 4;
+	repeated uint32 monster_entity_list = 13;
+}

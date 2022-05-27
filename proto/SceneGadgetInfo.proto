@@ -2,31 +2,49 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "Item.proto";
-import "GatherGadgetInfo.proto";
-import "WorktopInfo.proto";
-import "ClientGadgetInfo.proto";
-import "WeatherInfo.proto";
 import "AbilityGadgetInfo.proto";
-import "StatueGadgetInfo.proto";
-import "BossChestInfo.proto";
 import "BlossomChestInfo.proto";
-import "MpPlayRewardInfo.proto";
-import "GadgetGeneralRewardInfo.proto";
-import "OfferingInfo.proto";
-import "FoundationInfo.proto";
-import "VehicleInfo.proto";
-import "EchoShellInfo.proto";
-import "ScreenInfo.proto";
-import "FishPoolInfo.proto";
+import "BossChestInfo.proto";
+import "ClientGadgetInfo.proto";
 import "CustomGadgetTreeInfo.proto";
-import "RoguelikeGadgetInfo.proto";
+import "EchoShellInfo.proto";
+import "FishPoolInfo.proto";
+import "FoundationInfo.proto";
 import "GadgetBornType.proto";
-import "PlatformInfo.proto";
+import "GadgetGeneralRewardInfo.proto";
 import "GadgetPlayInfo.proto";
+import "GatherGadgetInfo.proto";
+import "Item.proto";
+import "MpPlayRewardInfo.proto";
+import "OfferingInfo.proto";
+import "PlatformInfo.proto";
+import "RoguelikeGadgetInfo.proto";
+import "ScreenInfo.proto";
+import "StatueGadgetInfo.proto";
+import "VehicleInfo.proto";
+import "WeatherInfo.proto";
+import "WorktopInfo.proto";
 
 message SceneGadgetInfo {
-	oneof Content {
+	uint32 gadget_id = 1;
+	uint32 group_id = 2;
+	uint32 config_id = 3;
+	uint32 owner_entity_id = 4;
+	GadgetBornType born_type = 5;
+	uint32 gadget_state = 6;
+	uint32 gadget_type = 7;
+	bool is_show_cutscene = 8;
+	uint32 authority_peer_id = 9;
+	bool is_enable_interact = 10;
+	uint32 interact_id = 11;
+	uint32 mark_flag = 21;
+	uint32 prop_owner_entity_id = 22;
+	PlatformInfo platform = 23;
+	repeated uint32 interact_uid_list = 24;
+	uint32 draft_id = 25;
+	uint32 gadget_talk_state = 26;
+	GadgetPlayInfo play_info = 100;
+	oneof content {
 		Item trifle_item = 12;
 		GatherGadgetInfo gather_gadget = 13;
 		WorktopInfo worktop = 14;
@@ -47,22 +65,4 @@ message SceneGadgetInfo {
 		CustomGadgetTreeInfo custom_gadget_tree_info = 60;
 		RoguelikeGadgetInfo roguelike_gadget_info = 61;
 	}
-	uint32 gadget_id = 1;
-	uint32 group_id = 2;
-	uint32 config_id = 3;
-	uint32 owner_entity_id = 4;
-	GadgetBornType born_type = 5;
-	uint32 gadget_state = 6;
-	uint32 gadget_type = 7;
-	bool is_show_cutscene = 8;
-	uint32 authority_peer_id = 9;
-	bool is_enable_interact = 10;
-	uint32 interact_id = 11;
-	uint32 mark_flag = 21;
-	uint32 prop_owner_entity_id = 22;
-	PlatformInfo platform = 23;
-	repeated uint32 interact_uid_list = 24;
-	uint32 draft_id = 25;
-	uint32 gadget_talk_state = 26;
-	GadgetPlayInfo play_info = 100;
 }

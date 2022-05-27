@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message MBIDJDLLBNM {
+	uint32 id = 1;
+	Vector pos = 2;
+	uint32 open_time = 3;
+	uint32 max_score = 4;
+}

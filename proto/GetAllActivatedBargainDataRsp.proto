@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BargainSnapshot.proto";
+
+// CmdId: 442
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetAllActivatedBargainDataRsp {
+	int32 retcode = 4;
+	repeated BargainSnapshot snapshot_list = 8;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DigMarkPoint.proto";
+
+message DigActivityDetailInfo {
+	uint32 stage_id = 1;
+	repeated DigMarkPoint dig_mark_point_list = 2;
+	repeated uint32 stage_id_list = 3;
+}

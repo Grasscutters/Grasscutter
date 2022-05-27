@@ -2,17 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
+// CmdId: 17
+// EnetChannelId: 0
+// EnetIsReliable: true
 message PingRsp {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		CMD_ID = 1;
-		ENET_IS_RELIABLE = 1;
-	}
-
-	int32 retcode = 1;
-	uint32 seq = 2;
-	uint32 client_time = 3;
+	int32 retcode = 9;
+	uint32 seq = 4;
+	uint32 client_time = 8;
 }

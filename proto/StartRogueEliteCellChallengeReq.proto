@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "RogueEliteCellDifficultyType.proto";
+
+// CmdId: 8722
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message StartRogueEliteCellChallengeReq {
+	uint32 cell_id = 3;
+	uint32 dungeon_id = 7;
+	RogueEliteCellDifficultyType difficulty = 15;
+}

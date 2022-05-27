@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message IHDDNDMDGJL {
+	uint32 stage_id = 1;
+	bool is_open = 2;
+	uint32 open_time = 3;
+	bool is_finished = 4;
+}

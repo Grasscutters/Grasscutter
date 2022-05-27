@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8364
+// EnetChannelId: 0
+// EnetIsReliable: true
+message StartBuoyantCombatGalleryRsp {
+	int32 retcode = 7;
+	uint32 gallery_id = 8;
+	uint32 gallery_level = 9;
+}

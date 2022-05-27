@@ -2,8 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "SceneUnlockInfo.proto";
+import "PlayerWorldSceneInfo.proto";
 
+// CmdId: 3172
+// EnetChannelId: 0
+// EnetIsReliable: true
 message PlayerWorldSceneInfoListNotify {
-	repeated SceneUnlockInfo unlockInfos = 1;
+	repeated PlayerWorldSceneInfo info_list = 5;
 }

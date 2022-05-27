@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum DungeonCandidateTeamDismissReason {
+	DUNGEON_CANDIDATE_TEAM_DISMISS_REASON_TPDR_NORMAL = 0;
+	DUNGEON_CANDIDATE_TEAM_DISMISS_REASON_TPDR_DIE = 1;
+	DUNGEON_CANDIDATE_TEAM_DISMISS_REASON_TPDR_DISCONNECT = 2;
+}

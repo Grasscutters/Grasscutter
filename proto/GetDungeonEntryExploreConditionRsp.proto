@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DungeonEntryCond.proto";
+
+// CmdId: 3099
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetDungeonEntryExploreConditionRsp {
+	int32 retcode = 12;
+	DungeonEntryCond dungeon_entry_cond = 2;
+}

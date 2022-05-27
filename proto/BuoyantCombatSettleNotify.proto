@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BuoyantCombatSettleInfo.proto";
+
+// CmdId: 8347
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BuoyantCombatSettleNotify {
+	BuoyantCombatSettleInfo settle_info = 10;
+	uint32 gallery_id = 5;
+}

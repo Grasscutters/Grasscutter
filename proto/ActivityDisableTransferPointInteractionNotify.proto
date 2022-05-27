@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Uint32Pair.proto";
+
+// CmdId: 8686
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ActivityDisableTransferPointInteractionNotify {
+	Uint32Pair scene_point_pair = 4;
+	bool is_disable = 8;
+}

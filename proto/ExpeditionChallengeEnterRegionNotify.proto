@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2050
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ExpeditionChallengeEnterRegionNotify {
+	bool is_puzzle_finished = 5;
+	uint32 id = 13;
+}

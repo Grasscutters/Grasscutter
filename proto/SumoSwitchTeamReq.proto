@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8400
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message SumoSwitchTeamReq {
+	uint32 activity_id = 2;
+	uint32 stage_id = 9;
+}

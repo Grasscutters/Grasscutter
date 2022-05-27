@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "INMNHKOPCFB.proto";
+
+message IBEKDNOGMLA {
+	repeated uint32 AFCABEBELOC = 1;
+	repeated uint32 exit_point_id_list = 2;
+	INMNHKOPCFB CAOGEIHGNNA = 3;
+}

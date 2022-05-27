@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GadgetPlayUidInfo.proto";
+
+// CmdId: 882
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GadgetPlayStopNotify {
+	uint32 play_type = 7;
+	uint32 entity_id = 15;
+	bool is_win = 10;
+	uint32 cost_time = 2;
+	repeated GadgetPlayUidInfo uid_info_list = 9;
+	uint32 score = 13;
+}

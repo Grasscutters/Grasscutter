@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message AIMMLILLOKB {
+	uint32 uid = 1;
+	map<uint32, uint32> MJLBGFFDHAF = 2;
+	map<uint32, uint32> BJNLNPICGGD = 3;
+}

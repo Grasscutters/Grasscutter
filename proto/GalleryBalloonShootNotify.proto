@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5531
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GalleryBalloonShootNotify {
+	uint32 gallery_id = 8;
+	int32 add_score = 9;
+	uint32 combo = 7;
+	uint64 combo_disable_time = 10;
+	uint32 cur_score = 11;
+	uint32 trigger_entity_id = 12;
+}

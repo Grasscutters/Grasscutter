@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FleurFairBalloonSettleInfo.proto";
+
+// CmdId: 2139
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FleurFairBalloonSettleNotify {
+	map<uint32, FleurFairBalloonSettleInfo> settle_info_map = 2;
+	uint32 minigame_id = 9;
+}

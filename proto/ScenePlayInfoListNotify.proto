@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ScenePlayInfo.proto";
+
+// CmdId: 4405
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ScenePlayInfoListNotify {
+	repeated ScenePlayInfo play_info_list = 6;
+}

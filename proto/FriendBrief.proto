@@ -2,10 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "FriendOnlineState.proto";
 import "FriendEnterHomeOption.proto";
-import "ProfilePicture.proto";
+import "FriendOnlineState.proto";
 import "PlatformType.proto";
+import "ProfilePicture.proto";
 import "SocialShowAvatarInfo.proto";
 
 message FriendBrief {

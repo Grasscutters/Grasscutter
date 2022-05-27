@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5307
+// EnetChannelId: 0
+// EnetIsReliable: true
+message InBattleMechanicusConfirmCardNotify {
+	uint32 play_index = 12;
+	uint32 group_id = 13;
+	uint32 player_uid = 2;
+	uint32 card_id = 7;
+}

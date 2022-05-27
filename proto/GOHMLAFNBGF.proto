@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeFurnitureData.proto";
+
+message GOHMLAFNBGF {
+	uint32 FFKBHDLILPE = 1;
+	repeated HomeFurnitureData FABJBKHBKCL = 2;
+}

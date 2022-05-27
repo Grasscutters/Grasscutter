@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ShapeBox.proto";
+import "ShapeSphere.proto";
+
+// CmdId: 377
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message MassiveEntityElementOpBatchNotify {
+	uint32 user_id = 2;
+	uint32 attacker_id = 11;
+	float attack_element_durability = 6;
+	int32 source_element_type = 10;
+	int32 reaction_source_type = 9;
+	int32 entity_type = 15;
+	uint32 op_idx = 14;
+	oneof check_shape {
+		ShapeSphere shape_sphere = 8;
+		ShapeBox shape_box = 4;
+	}
+}

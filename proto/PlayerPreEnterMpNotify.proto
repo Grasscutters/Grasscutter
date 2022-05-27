@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1847
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerPreEnterMpNotify {
+	uint32 uid = 10;
+	State state = 15;
+	string nickname = 2;
+
+	enum State {
+		STATE_INVALID = 0;
+		STATE_START = 1;
+		STATE_TIMEOUT = 2;
+	}
+}

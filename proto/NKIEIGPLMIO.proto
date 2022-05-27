@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8685
+// EnetChannelId: 0
+// EnetIsReliable: true
+message NKIEIGPLMIO {
+	int32 retcode = 6;
+	uint32 stage_id = 12;
+	uint32 challenge_type = 9;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4204
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message KOGOPPONCHB_Req {
+	uint32 NLGGFCNHGME = 10;
+	uint32 type_id = 11;
+}

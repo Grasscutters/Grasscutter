@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AddNoGachaAvatarCardTransferItem.proto";
+
+// CmdId: 1648
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AddNoGachaAvatarCardNotify {
+	uint32 item_id = 7;
+	bool is_transfer_to_item = 8;
+	uint32 avatar_id = 2;
+	uint32 initial_level = 6;
+	uint32 initial_promote_level = 14;
+	repeated AddNoGachaAvatarCardTransferItem transfer_item_list = 11;
+	uint32 reason = 5;
+}

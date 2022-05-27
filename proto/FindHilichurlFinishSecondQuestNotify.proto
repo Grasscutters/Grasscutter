@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8981
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FindHilichurlFinishSecondQuestNotify {
+	uint32 day_index = 6;
+}

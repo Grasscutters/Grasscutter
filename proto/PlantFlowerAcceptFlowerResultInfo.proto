@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message PlantFlowerAcceptFlowerResultInfo {
+	uint32 uid = 1;
+	map<uint32, uint32> accept_flower_num_map = 2;
+	map<uint32, uint32> unaccept_flower_num_map = 3;
+}

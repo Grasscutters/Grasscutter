@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DailyTaskInfo.proto";
+
+// CmdId: 102
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message WorldOwnerDailyTaskNotify {
+	repeated DailyTaskInfo task_list = 8;
+	uint32 filter_city_id = 5;
+}

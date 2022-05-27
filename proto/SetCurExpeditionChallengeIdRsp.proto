@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2093
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SetCurExpeditionChallengeIdRsp {
+	int32 retcode = 2;
+	uint32 id = 11;
+}

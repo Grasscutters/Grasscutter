@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ExhibitionDisplayInfo.proto";
+import "ProfilePicture.proto";
+
+message HideAndSeekSettleInfo {
+	uint32 uid = 1;
+	repeated ExhibitionDisplayInfo card_list = 2;
+	uint32 head_image = 4;
+	string nickname = 5;
+	string online_id = 6;
+	ProfilePicture profile_picture = 7;
+}

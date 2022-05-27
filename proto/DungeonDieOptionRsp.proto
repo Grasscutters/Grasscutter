@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlayerDieOption.proto";
+
+// CmdId: 907
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DungeonDieOptionRsp {
+	int32 retcode = 1;
+	PlayerDieOption die_option = 11;
+	uint32 revive_count = 5;
+}

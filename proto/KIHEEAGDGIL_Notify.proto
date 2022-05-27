@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DPPCDPBBABA.proto";
+
+// CmdId: 126
+// EnetChannelId: 0
+// EnetIsReliable: true
+message KIHEEAGDGIL_Notify {
+	DPPCDPBBABA info = 6;
+}

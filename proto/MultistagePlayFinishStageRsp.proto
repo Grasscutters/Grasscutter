@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5397
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MultistagePlayFinishStageRsp {
+	int32 retcode = 15;
+	uint32 play_index = 12;
+	uint32 group_id = 7;
+}

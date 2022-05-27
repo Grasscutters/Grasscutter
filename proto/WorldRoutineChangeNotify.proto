@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "WorldRoutineInfo.proto";
+
+// CmdId: 3504
+// EnetChannelId: 0
+// EnetIsReliable: true
+message WorldRoutineChangeNotify {
+	uint32 routine_type = 13;
+	WorldRoutineInfo routine_info = 4;
+}

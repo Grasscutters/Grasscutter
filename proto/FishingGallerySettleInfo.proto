@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FishInfo.proto";
+import "FishingScore.proto";
+
+message FishingGallerySettleInfo {
+	map<uint32, FishInfo> fish_map = 1;
+	repeated FishingScore fishing_score_list = 2;
+}

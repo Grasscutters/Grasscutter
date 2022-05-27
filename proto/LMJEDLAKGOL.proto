@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FBNFELMJBAN.proto";
+
+message LMJEDLAKGOL {
+	uint32 EGIEFHDLKDM = 1;
+	repeated uint32 HBGJPGBGPPC = 2;
+	repeated FBNFELMJBAN AOHJLBKCHAA = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message FleurFairFallInfo {
+	uint32 best_score = 1;
+}

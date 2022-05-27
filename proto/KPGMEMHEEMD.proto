@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "GPPKNKGDCHJ.proto";
+
+// CmdId: 8108
+// EnetChannelId: 0
+// EnetIsReliable: true
+message KPGMEMHEEMD {
+	int32 retcode = 5;
+	GPPKNKGDCHJ MHHPHDAEIOL = 3;
+}

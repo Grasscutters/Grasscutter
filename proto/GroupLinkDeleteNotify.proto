@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5793
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GroupLinkDeleteNotify {
+	uint32 bundle_id = 4;
+}

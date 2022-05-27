@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BuoyantCombatDailyInfo.proto";
+
+message BuoyantCombatDetailInfo {
+	repeated BuoyantCombatDailyInfo daily_info_list = 1;
+}

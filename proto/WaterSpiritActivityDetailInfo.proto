@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message WaterSpiritActivityDetailInfo {
+	uint32 region_search_id = 1;
+	uint32 mp_play_id = 2;
+	map<uint32, uint32> search_time_map = 3;
+}

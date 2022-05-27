@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5527
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GalleryBrokenFloorFallNotify {
+	uint32 gallery_id = 9;
+	uint32 fall_count = 4;
+}

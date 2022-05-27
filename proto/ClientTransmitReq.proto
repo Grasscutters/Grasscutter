@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "TransmitReason.proto";
+import "Vector.proto";
+
+// CmdId: 272
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ClientTransmitReq {
+	Vector pos = 4;
+	Vector rot = 1;
+	TransmitReason reason = 15;
+	uint32 scene_id = 6;
+}

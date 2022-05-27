@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4126
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ReportTrackingIOInfoNotify {
+	string appid = 2;
+	string deviceid = 15;
+	string mac = 9;
+	string rydevicetype = 3;
+	string client_tz = 10;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ProfilePicture.proto";
+
+message BlessingRecvPicRecord {
+	uint32 uid = 1;
+	uint32 avatar_id = 2;
+	string nickname = 3;
+	string signature = 4;
+	uint32 pic_id = 5;
+	bool is_recv = 6;
+	uint32 index = 7;
+	string remark_name = 8;
+	ProfilePicture profile_picture = 9;
+}

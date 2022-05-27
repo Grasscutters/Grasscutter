@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2096
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SeaLampCoinNotify {
+	uint32 sea_lamp_coin = 1;
+}

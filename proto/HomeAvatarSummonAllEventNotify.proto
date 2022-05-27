@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeAvatarSummonEventInfo.proto";
+
+// CmdId: 4617
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeAvatarSummonAllEventNotify {
+	repeated HomeAvatarSummonEventInfo summon_event_list = 4;
+}

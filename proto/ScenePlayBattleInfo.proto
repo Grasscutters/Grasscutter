@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ScenePlayBattleInfo {
+	uint32 play_id = 1;
+	uint32 play_type = 2;
+	uint32 state = 3;
+	uint32 prepare_end_time = 4;
+	uint32 start_time = 5;
+	uint32 duration = 6;
+	repeated uint32 progress_stage_list = 7;
+	uint32 progress = 8;
+	uint32 mode = 9;
+	uint32 type = 10;
+}

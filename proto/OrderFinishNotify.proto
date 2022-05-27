@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+// CmdId: 4143
+// EnetChannelId: 0
+// EnetIsReliable: true
+message OrderFinishNotify {
+	string product_id = 5;
+	uint32 add_mcoin = 4;
+	uint32 card_product_remain_days = 2;
+	uint32 order_id = 8;
+	repeated ItemParam item_list = 6;
+}

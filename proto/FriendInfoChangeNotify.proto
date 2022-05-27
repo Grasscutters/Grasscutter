@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4088
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FriendInfoChangeNotify {
+	uint32 uid = 10;
+	string online_id = 9;
+}

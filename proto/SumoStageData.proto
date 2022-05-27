@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SumoTeamData.proto";
+
+message SumoStageData {
+	uint32 stage_id = 1;
+	uint32 max_score = 2;
+	uint32 open_time = 3;
+	bool is_open = 4;
+	repeated SumoTeamData team_list = 5;
+}

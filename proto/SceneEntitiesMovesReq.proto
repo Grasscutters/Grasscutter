@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EntityMoveInfo.proto";
+
+// CmdId: 240
+// EnetChannelId: 1
+// EnetIsReliable: false
+// IsAllowClient: true
+message SceneEntitiesMovesReq {
+	repeated EntityMoveInfo entity_move_info_list = 14;
+}

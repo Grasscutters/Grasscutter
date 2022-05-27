@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MotionInfo.proto";
+
+// CmdId: 249
+// EnetChannelId: 1
+// EnetIsReliable: true
+message SceneEntityMoveRsp {
+	int32 retcode = 5;
+	uint32 entity_id = 4;
+	MotionInfo fail_motion = 12;
+	uint32 scene_time = 14;
+	uint32 reliable_seq = 10;
+}

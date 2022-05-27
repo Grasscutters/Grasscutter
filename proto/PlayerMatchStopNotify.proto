@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MatchReason.proto";
+
+// CmdId: 4153
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerMatchStopNotify {
+	uint32 host_uid = 12;
+	MatchReason reason = 4;
+}

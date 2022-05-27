@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum RegionSearchState {
+	REGION_SEARCH_STATE_NONE = 0;
+	REGION_SEARCH_STATE_UNSTARTED = 1;
+	REGION_SEARCH_STATE_STARTED = 2;
+	REGION_SEARCH_STATE_WAIT_REWARD = 3;
+	REGION_SEARCH_STATE_FINISHED = 4;
+}

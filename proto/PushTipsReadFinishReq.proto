@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2206
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message PushTipsReadFinishReq {
+	uint32 push_tips_id = 15;
+}

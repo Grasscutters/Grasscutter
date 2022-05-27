@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FallPlayerBrief.proto";
+
+// CmdId: 5517
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GalleryFallScoreNotify {
+	uint32 gallery_id = 6;
+	map<uint32, FallPlayerBrief> uid_brief_map = 7;
+}

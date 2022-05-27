@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "RogueCellInfo.proto";
+import "RoguelikeRuneRecord.proto";
+
+// CmdId: 8646
+// EnetChannelId: 0
+// EnetIsReliable: true
+message EnterRoguelikeDungeonNotify {
+	uint32 dungeon_weight_config_id = 6;
+	uint32 dungeon_id = 15;
+	repeated uint64 onstage_avatar_guid_list = 4;
+	repeated uint64 backstage_avatar_guid_list = 11;
+	uint32 cur_cell_id = 12;
+	map<uint32, RogueCellInfo> cell_info_map = 9;
+	uint32 cur_level = 14;
+	uint32 stage_id = 2;
+	repeated RoguelikeRuneRecord rune_record_list = 5;
+	bool is_mist_clear = 1;
+	repeated uint32 explored_cell_list = 10;
+	float bonus_resource_prop = 7;
+	uint32 refresh_cost_item_id = 3;
+	uint32 refresh_cost_item_count = 189;
+	bool is_first_enter = 668;
+	uint32 revise_monster_level = 203;
+}

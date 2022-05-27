@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message FleurFairMusicRecord {
+	uint32 max_score = 1;
+	uint32 max_combo = 2;
+	bool is_unlock = 3;
+}

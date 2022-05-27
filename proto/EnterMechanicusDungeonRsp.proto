@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3927
+// EnetChannelId: 0
+// EnetIsReliable: true
+message EnterMechanicusDungeonRsp {
+	int32 retcode = 12;
+	uint32 difficult_level = 5;
+	uint32 dungeon_id = 2;
+	uint32 wrong_uid = 8;
+}

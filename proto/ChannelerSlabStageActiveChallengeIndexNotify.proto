@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8864
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ChannelerSlabStageActiveChallengeIndexNotify {
+	uint32 stage_id = 9;
+	uint32 challenge_index = 5;
+	uint32 active_camp_index = 8;
+}

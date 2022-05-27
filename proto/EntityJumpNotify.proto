@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 224
+// EnetChannelId: 0
+// EnetIsReliable: true
+message EntityJumpNotify {
+	uint32 entity_id = 8;
+	Type jump_type = 11;
+	Vector pos = 10;
+	Vector rot = 1;
+
+	enum Type {
+		TYPE_NULL = 0;
+		TYPE_ACTIVE = 1;
+		TYPE_PASSIVE = 2;
+	}
+}

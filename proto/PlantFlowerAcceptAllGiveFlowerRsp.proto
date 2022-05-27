@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PlantFlowerAcceptFlowerResultInfo.proto";
+
+// CmdId: 8831
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlantFlowerAcceptAllGiveFlowerRsp {
+	int32 retcode = 1;
+	uint32 schedule_id = 6;
+	repeated PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 2;
+}

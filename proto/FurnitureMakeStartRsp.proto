@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FurnitureMakeSlot.proto";
+
+// CmdId: 4463
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FurnitureMakeStartRsp {
+	int32 retcode = 8;
+	FurnitureMakeSlot furniture_make_slot = 10;
+}

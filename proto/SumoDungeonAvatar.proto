@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message SumoDungeonAvatar {
+	uint64 avatar_guid = 1;
+	bool is_trial = 2;
+	bool is_avlive = 3;
+}

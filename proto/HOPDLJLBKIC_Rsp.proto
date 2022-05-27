@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "NOCLNCCJEGK.proto";
+import "WidgetCoolDownData.proto";
+
+// CmdId: 6059
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HOPDLJLBKIC_Rsp {
+	int32 retcode = 11;
+	uint32 material_id = 9;
+	NOCLNCCJEGK DBPKBGJKIGP = 1;
+	uint32 DACLECBLPOL = 13;
+	WidgetCoolDownData CIMBAKINEME = 12;
+}

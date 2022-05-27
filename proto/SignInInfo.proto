@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HENCIJOPCIF.proto";
+
+message SignInInfo {
+	uint32 schedule_id = 1;
+	uint32 config_id = 2;
+	uint32 begin_time = 3;
+	uint32 end_time = 4;
+	bool is_cond_satisfied = 10;
+	uint32 sign_in_count = 11;
+	uint32 last_sign_in_time = 12;
+	repeated uint32 reward_day_list = 13;
+	repeated HENCIJOPCIF KJMGMCMPFAN = 14;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ProductPriceTier.proto";
+
+// CmdId: 4128
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerRechargeDataNotify {
+	uint32 card_product_remain_days = 14;
+	repeated ProductPriceTier product_price_tier_list = 8;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message MistTrialMissionInfo {
+	uint32 watcher_list_id = 1;
+	uint32 param = 2;
+}

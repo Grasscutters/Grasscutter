@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "NLFEMFOCECH.proto";
+
+message BEPFLAKHNHL {
+	repeated NLFEMFOCECH DLDDLBEGJBC = 1;
+	uint32 MIPACALMNCD = 2;
+	uint32 DBBMLKJMBPJ = 3;
+}

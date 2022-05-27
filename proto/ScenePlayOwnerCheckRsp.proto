@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4391
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ScenePlayOwnerCheckRsp {
+	int32 retcode = 13;
+	uint32 play_id = 14;
+	bool is_skip_match = 9;
+	uint32 wrong_uid = 8;
+	repeated uint32 param_list = 12;
+}

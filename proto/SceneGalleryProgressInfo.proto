@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message SceneGalleryProgressInfo {
+	string key = 1;
+	repeated uint32 progress_stage_list = 2;
+	uint32 progress = 3;
+	uint32 ui_form = 4;
+}

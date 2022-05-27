@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5209
+// EnetChannelId: 0
+// EnetIsReliable: true
+message UseMiracleRingRsp {
+	int32 retcode = 3;
+	uint32 miracle_ring_op_type = 13;
+}

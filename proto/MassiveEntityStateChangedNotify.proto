@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MassiveEntityState.proto";
+
+// CmdId: 303
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message MassiveEntityStateChangedNotify {
+	repeated MassiveEntityState massive_entity_state_list = 11;
+}

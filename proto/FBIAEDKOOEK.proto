@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum FBIAEDKOOEK {
+	FBIAEDKOOEK_AJGGBFFOFCM = 0;
+	FBIAEDKOOEK_LNLDDKNOAKL = 1;
+	FBIAEDKOOEK_NNGMHCEADHE = 2;
+	FBIAEDKOOEK_MKIJPEHKAJI = 3;
+	FBIAEDKOOEK_DJDNENLGIEB = 4;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8456
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message StartRogueNormalCellChallengeReq {
+	uint32 cell_id = 4;
+	uint32 dungeon_id = 2;
+}

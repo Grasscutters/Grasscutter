@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PBNavMeshTile.proto";
+
+// CmdId: 2343
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GMShowNavMeshRsp {
+	int32 retcode = 2;
+	repeated PBNavMeshTile tiles = 13;
+}

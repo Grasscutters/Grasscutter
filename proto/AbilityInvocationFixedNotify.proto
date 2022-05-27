@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AbilityInvokeEntry.proto";
+
+// CmdId: 1109
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message AbilityInvocationFixedNotify {
+	AbilityInvokeEntry invoke_1_st = 12;
+	AbilityInvokeEntry invoke_2_nd = 13;
+	AbilityInvokeEntry invoke_3_rd = 4;
+	AbilityInvokeEntry invoke_4_th = 1;
+	AbilityInvokeEntry invoke_5_th = 9;
+	AbilityInvokeEntry invoke_6_th = 2;
+}

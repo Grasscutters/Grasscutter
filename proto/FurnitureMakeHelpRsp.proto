@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FurnitureMakeHelpData.proto";
+
+// CmdId: 4722
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FurnitureMakeHelpRsp {
+	int32 retcode = 14;
+	repeated FurnitureMakeHelpData help_data_list = 9;
+}

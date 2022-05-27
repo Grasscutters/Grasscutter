@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EGEFGGOKDMA.proto";
+import "KGMCDBKOGDK.proto";
+import "OIHDOBHEMKD.proto";
+
+message MPKDKNLLGEN {
+	repeated OIHDOBHEMKD field_list = 1;
+	EGEFGGOKDMA GEPPOMNHNFA = 2;
+	repeated KGMCDBKOGDK card_list = 3;
+	repeated uint32 GHLFDDDKKLB = 4;
+	uint32 EGIEFHDLKDM = 5;
+}

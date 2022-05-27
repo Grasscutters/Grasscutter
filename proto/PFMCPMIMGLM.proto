@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BIFNFOGBPNM.proto";
+
+message PFMCPMIMGLM {
+	repeated BIFNFOGBPNM OHHFONEHNON = 1;
+	uint32 CMNHKJNAKGN = 2;
+	bool is_content_closed = 3;
+}

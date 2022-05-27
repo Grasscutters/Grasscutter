@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 186
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerPropChangeNotify {
+	uint32 prop_type = 12;
+	uint32 prop_delta = 11;
+}

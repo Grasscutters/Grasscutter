@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2059
+// EnetChannelId: 0
+// EnetIsReliable: true
+message TreasureMapRegionActiveNotify {
+	uint32 active_region_index = 1;
+}

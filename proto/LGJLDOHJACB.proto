@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "IBEKDNOGMLA.proto";
+
+message LGJLDOHJACB {
+	uint32 building_points = 1;
+	uint32 left_monsters = 2;
+	IBEKDNOGMLA mystery_info = 3;
+	repeated uint32 LEPHIENNHKJ = 4;
+	uint32 IFGNHLKAJOP = 5;
+}

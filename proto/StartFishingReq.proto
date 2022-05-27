@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5843
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message StartFishingReq {
+	uint32 fish_pool_id = 6;
+	uint32 rod_entity_id = 14;
+}

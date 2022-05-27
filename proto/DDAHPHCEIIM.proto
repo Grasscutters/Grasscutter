@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CustomGadgetTreeInfo.proto";
+
+// CmdId: 8818
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message DDAHPHCEIIM {
+	uint32 entity_id = 11;
+	CustomGadgetTreeInfo CELNKAIPELA = 12;
+}

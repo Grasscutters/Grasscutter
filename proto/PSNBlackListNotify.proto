@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FriendBrief.proto";
+
+// CmdId: 4078
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PSNBlackListNotify {
+	repeated FriendBrief psn_blacklist = 1;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3985
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message MechanicusUnlockGearReq {
+	uint32 mechanicus_id = 12;
+	uint32 gear_id = 7;
+}

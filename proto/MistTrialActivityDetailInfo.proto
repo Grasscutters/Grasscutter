@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MistTrialLevelData.proto";
+
+message MistTrialActivityDetailInfo {
+	repeated MistTrialLevelData trial_level_data_list = 1;
+}

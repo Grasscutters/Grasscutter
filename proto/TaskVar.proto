@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message TaskVar {
+	uint32 key = 1;
+	repeated int32 value_list = 2;
+}

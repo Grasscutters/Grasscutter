@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AFMIEEBHLPA.proto";
+import "CPCEPJFMPFE.proto";
+import "DCPLCOFHABD.proto";
+import "DGOBEMNHPPE.proto";
+import "EAGJENMOILF.proto";
+import "FDLPCNFEDCH.proto";
+import "FGAKNEPNPHD.proto";
+import "FNOJGHKBDON.proto";
+import "GALOEBHFIEF.proto";
+import "ILGPCJGNDHF.proto";
+import "IPEFCCDHFPG.proto";
+import "JAPIKOHNGNH.proto";
+import "JCBENJLGHHB.proto";
+import "JOGBDIGIIJC.proto";
+import "KDAMCMDFMGI.proto";
+import "KHKMILANHMG.proto";
+import "LKHCNBALNOH.proto";
+import "LMJEDLAKGOL.proto";
+import "MJGOOKDEPFL.proto";
+import "OMPAHPIABJG.proto";
+import "PEDDFOCKJGN.proto";
+import "PMLADLCJPPC.proto";
+
+message NJJJJCLAGHP {
+	oneof EDHMEFOFDLL {
+		LKHCNBALNOH token_change = 1;
+		OMPAHPIABJG phase_change = 2;
+		ILGPCJGNDHF swich_hande = 3;
+		JOGBDIGIIJC add_cards = 4;
+		DGOBEMNHPPE remove_cards = 5;
+		MJGOOKDEPFL select_on_stage = 6;
+		PMLADLCJPPC dice_roll = 7;
+		LMJEDLAKGOL dice_reroll = 8;
+		CPCEPJFMPFE pass = 9;
+		IPEFCCDHFPG char_die = 10;
+		PEDDFOCKJGN skill_result = 11;
+		DCPLCOFHABD cost_dice = 12;
+		KHKMILANHMG add_dice = 13;
+		FGAKNEPNPHD move_card = 14;
+		GALOEBHFIEF use_skill = 15;
+		AFMIEEBHLPA new_card = 16;
+		JCBENJLGHHB update_controller = 17;
+		KDAMCMDFMGI modify_add = 18;
+		EAGJENMOILF modify_remove = 19;
+		JAPIKOHNGNH use_skill_end = 20;
+		FDLPCNFEDCH pve_gen_card_op = 21;
+		FNOJGHKBDON pve_do_op = 22;
+	}
+}

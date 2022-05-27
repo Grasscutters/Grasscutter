@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FEAENJPINFJ.proto";
+import "IMGLPJNBHCH.proto";
+
+// CmdId: 8263
+// EnetChannelId: 0
+// EnetIsReliable: true
+message JHMIHJFFJBO {
+	int32 retcode = 5;
+	uint32 stage_id = 15;
+	uint32 challenge_id = 1;
+	uint32 ENGBLJFPCAL = 7;
+	uint32 KLDLFFMDDFP = 11;
+	uint32 AOCDGPEHHNP = 9;
+	uint32 JOCMAPMGKEG = 4;
+	repeated IMGLPJNBHCH JIHLKAJCEIH = 3;
+	repeated FEAENJPINFJ KPGPOIFOLJK = 13;
+}

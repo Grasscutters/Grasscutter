@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ScenePlayBattleInfo.proto";
+
+// CmdId: 4359
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ScenePlayBattleInfoNotify {
+	ScenePlayBattleInfo battle_info = 13;
+}

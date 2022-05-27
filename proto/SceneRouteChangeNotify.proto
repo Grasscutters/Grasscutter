@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SceneRouteChangeInfo.proto";
+
+// CmdId: 278
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SceneRouteChangeNotify {
+	uint32 scene_id = 10;
+	repeated SceneRouteChangeInfo route_list = 14;
+	uint32 scene_time = 9;
+}

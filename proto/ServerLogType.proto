@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum ServerLogType {
+	SERVER_LOG_TYPE_NONE = 0;
+	SERVER_LOG_TYPE_ABILITY = 1;
+	SERVER_LOG_TYPE_LEVEL = 2;
+	SERVER_LOG_TYPE_ENTITY = 3;
+	SERVER_LOG_TYPE_LUA = 4;
+}

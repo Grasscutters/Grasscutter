@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ForwardType.proto";
+import "Vector.proto";
+
+// CmdId: 312
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EvtAvatarUpdateFocusNotify {
+	ForwardType forward_type = 7;
+	uint32 entity_id = 13;
+	Vector focus_forward = 8;
+}

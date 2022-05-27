@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ForwardType.proto";
+
+// CmdId: 385
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EvtFaceToEntityNotify {
+	ForwardType forward_type = 15;
+	uint32 entity_id = 11;
+	uint32 face_entity_id = 8;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1197
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ClientAIStateNotify {
+	uint32 entity_id = 1;
+	uint32 cur_tactic = 13;
+}

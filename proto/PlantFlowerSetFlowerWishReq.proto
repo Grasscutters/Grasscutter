@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8650
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message PlantFlowerSetFlowerWishReq {
+	uint32 schedule_id = 11;
+	map<uint32, uint32> flower_num_map = 8;
+}

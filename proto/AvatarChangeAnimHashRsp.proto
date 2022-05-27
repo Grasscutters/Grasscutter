@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1622
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AvatarChangeAnimHashRsp {
+	int32 retcode = 9;
+	uint64 avatar_guid = 1;
+	uint32 anim_hash = 15;
+}

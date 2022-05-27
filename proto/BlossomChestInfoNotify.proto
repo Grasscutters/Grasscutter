@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BlossomChestInfo.proto";
+
+// CmdId: 835
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BlossomChestInfoNotify {
+	uint32 entity_id = 11;
+	BlossomChestInfo blossom_chest_info = 2;
+}

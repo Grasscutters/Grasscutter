@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CoopReward.proto";
+
+// CmdId: 1951
+// EnetChannelId: 0
+// EnetIsReliable: true
+message CoopRewardUpdateNotify {
+	repeated CoopReward reward_list = 4;
+}

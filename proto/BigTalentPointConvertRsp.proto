@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1017
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BigTalentPointConvertRsp {
+	int32 retcode = 8;
+	uint64 avatar_guid = 12;
+}

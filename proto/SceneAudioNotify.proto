@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3430
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message SceneAudioNotify {
+	uint32 source_uid = 3;
+	int32 type = 5;
+	repeated uint32 param_1 = 8;
+	repeated float param_2 = 10;
+	repeated string param_3 = 11;
+}

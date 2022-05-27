@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum RogueCellState {
+	ROGUE_CELL_STATE_NONE = 0;
+	ROGUE_CELL_STATE_BATTLE = 1;
+	ROGUE_CELL_STATE_SUCCESS = 2;
+	ROGUE_CELL_STATE_FINISH = 3;
+	ROGUE_CELL_STATE_GPPNCLMHEEA = 4;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1032
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message BigTalentPointConvertReq {
+	uint64 avatar_guid = 15;
+	repeated uint64 item_guid_list = 3;
+}

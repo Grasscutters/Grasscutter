@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message TrialAvatarActivityRewardDetailInfo {
+	uint32 trial_avatar_index_id = 1;
+	bool passed_dungeon = 2;
+	bool received_reward = 3;
+	uint32 reward_id = 4;
+}

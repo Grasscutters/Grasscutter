@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum PIAFGFGHGHM {
+	PIAFGFGHGHM_LKEBMNKGKCP = 0;
+	PIAFGFGHGHM_PJHOMLBMENK = 1;
+	PIAFGFGHGHM_MPGMPAOGMCB = 2;
+}

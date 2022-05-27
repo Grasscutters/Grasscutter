@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FleurFairChapterInfo.proto";
+import "FleurFairDungeonSectionInfo.proto";
+import "FleurFairMinigameInfo.proto";
+
+message FleurFairActivityDetailInfo {
+	repeated FleurFairChapterInfo chapter_info_list = 1;
+	bool is_content_closed = 2;
+	uint32 content_close_time = 3;
+	map<uint32, FleurFairMinigameInfo> minigame_info_map = 4;
+	map<uint32, FleurFairDungeonSectionInfo> dungeon_section_info_map = 5;
+	bool is_dungeon_unlocked = 6;
+	uint32 dungeon_punish_over_time = 7;
+	uint32 obtained_token = 8;
+}

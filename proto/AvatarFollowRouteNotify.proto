@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Route.proto";
+
+// CmdId: 3353
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AvatarFollowRouteNotify {
+	Route route = 6;
+	uint32 start_scene_time_ms = 10;
+	uint32 entity_id = 11;
+	string client_params = 3;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "SignInInfo.proto";
+
+// CmdId: 2517
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetSignInRewardRsp {
+	int32 retcode = 13;
+	SignInInfo sign_in_info = 11;
+}

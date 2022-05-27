@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 885
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BossChestActivateNotify {
+	uint32 entity_id = 9;
+	repeated uint32 qualify_uid_list = 12;
+}

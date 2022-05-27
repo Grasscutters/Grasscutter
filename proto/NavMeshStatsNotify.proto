@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "PbNavMeshStatsInfo.proto";
+
+// CmdId: 2387
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message NavMeshStatsNotify {
+	repeated PbNavMeshStatsInfo infos = 6;
+}

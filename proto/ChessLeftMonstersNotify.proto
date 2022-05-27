@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5391
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ChessLeftMonstersNotify {
+	uint32 left_monsters = 7;
+}

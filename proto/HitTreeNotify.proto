@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 3222
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message HitTreeNotify {
+	uint32 tree_type = 4;
+	Vector tree_pos = 3;
+	Vector drop_pos = 13;
+}

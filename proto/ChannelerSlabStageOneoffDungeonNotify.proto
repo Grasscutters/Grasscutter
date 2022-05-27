@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8522
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ChannelerSlabStageOneoffDungeonNotify {
+	uint32 stage_id = 5;
+	bool is_done = 2;
+}

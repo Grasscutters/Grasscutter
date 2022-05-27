@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message DOGEKCNIIAO {
+	uint32 monster_id = 1;
+	uint32 level = 2;
+	repeated uint32 affix_list = 3;
+	uint32 NAEHFDDNMOE = 4;
+}

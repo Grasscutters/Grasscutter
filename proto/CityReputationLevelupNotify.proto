@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2832
+// EnetChannelId: 0
+// EnetIsReliable: true
+message CityReputationLevelupNotify {
+	uint32 city_id = 13;
+	uint32 level = 2;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ChessPlayerInfo.proto";
+
+// CmdId: 5388
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ChessPlayerInfoNotify {
+	ChessPlayerInfo player_info = 8;
+}

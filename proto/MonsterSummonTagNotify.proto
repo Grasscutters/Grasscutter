@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1309
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MonsterSummonTagNotify {
+	uint32 monster_entity_id = 6;
+	map<uint32, uint32> summon_tag_map = 11;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8318
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message MistTrialSelectAvatarAndEnterDungeonReq {
+	repeated uint32 select_trial_avatar_id_list = 6;
+	uint32 trial_id = 11;
+	uint32 enter_point_id = 7;
+}

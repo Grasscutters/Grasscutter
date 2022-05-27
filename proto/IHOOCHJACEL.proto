@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BGKMAAINPCO.proto";
+
+// CmdId: 8783
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message IHOOCHJACEL {
+	uint32 level_id = 7;
+	uint32 difficulty_id = 15;
+	repeated BGKMAAINPCO PPAOPEMNPIC = 5;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 287
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message LevelupCityReq {
+	uint32 scene_id = 6;
+	uint32 area_id = 8;
+	uint32 item_num = 5;
+}

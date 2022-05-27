@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8716
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ChannellerSlabOneOffDungeonInfoRsp {
+	int32 retcode = 2;
+	repeated uint32 scheme_buff_id_list = 13;
+}

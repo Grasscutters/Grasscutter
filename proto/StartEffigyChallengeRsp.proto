@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2008
+// EnetChannelId: 0
+// EnetIsReliable: true
+message StartEffigyChallengeRsp {
+	int32 retcode = 4;
+	uint32 challenge_id = 15;
+	uint32 difficulty_id = 8;
+	repeated uint32 condition_id_list = 9;
+	uint32 point_id = 6;
+}

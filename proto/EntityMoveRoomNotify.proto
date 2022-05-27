@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3209
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EntityMoveRoomNotify {
+	uint32 entity_id = 3;
+	uint32 dest_room_id = 4;
+}

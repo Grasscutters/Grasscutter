@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ForwardType.proto";
+
+// CmdId: 397
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EvtEntityStartDieEndNotify {
+	ForwardType forward_type = 12;
+	uint32 entity_id = 1;
+	bool immediately = 7;
+	uint32 die_state_flag = 4;
+}

@@ -2,15 +2,12 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "SceneFishInfo.proto";
 import "MonsterBornType.proto";
 import "MonsterRoute.proto";
+import "SceneFishInfo.proto";
 import "SceneWeaponInfo.proto";
 
 message SceneMonsterInfo {
-	oneof Content {
-		SceneFishInfo fish_info = 50;
-	}
 	uint32 monster_id = 1;
 	uint32 group_id = 2;
 	uint32 config_id = 3;
@@ -32,4 +29,7 @@ message SceneMonsterInfo {
 	uint32 ai_config_id = 19;
 	uint32 level_route_id = 20;
 	uint32 init_pose_id = 21;
+	oneof content {
+		SceneFishInfo fish_info = 50;
+	}
 }

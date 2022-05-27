@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1827
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MpPlayOwnerStartInviteRsp {
+	int32 retcode = 13;
+	uint32 mp_play_id = 14;
+	bool is_skip_match = 6;
+}

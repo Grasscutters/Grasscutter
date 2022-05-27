@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MainCoop.proto";
+
+// CmdId: 1968
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AllCoopInfoNotify {
+	repeated MainCoop main_coop_list = 2;
+}

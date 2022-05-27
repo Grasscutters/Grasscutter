@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AuthorityChange.proto";
+
+// CmdId: 358
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EntityAuthorityChangeNotify {
+	repeated AuthorityChange authority_change_list = 2;
+}

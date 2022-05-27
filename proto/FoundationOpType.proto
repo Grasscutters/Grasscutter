@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum FoundationOpType {
+	FOUNDATION_OP_TYPE_NONE = 0;
+	FOUNDATION_OP_TYPE_BUILD = 1;
+	FOUNDATION_OP_TYPE_DEMOLITION = 2;
+	FOUNDATION_OP_TYPE_REBUILD = 3;
+	FOUNDATION_OP_TYPE_ROTATE = 4;
+	FOUNDATION_OP_TYPE_LOCK = 5;
+	FOUNDATION_OP_TYPE_UNLOCK = 6;
+}

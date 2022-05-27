@@ -2,27 +2,21 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+import "AnimatorParameterValueInfoPair.proto";
+import "EntityAuthorityInfo.proto";
+import "EntityClientData.proto";
+import "EntityEnvironmentInfo.proto";
+import "FightPropPair.proto";
+import "MotionInfo.proto";
+import "PropPair.proto";
+import "ProtEntityType.proto";
 import "SceneAvatarInfo.proto";
+import "SceneGadgetInfo.proto";
 import "SceneMonsterInfo.proto";
 import "SceneNpcInfo.proto";
-import "SceneGadgetInfo.proto";
-import "ProtEntityType.proto";
-import "MotionInfo.proto";
-import "EntityClientData.proto";
-import "EntityAuthorityInfo.proto";
-import "PropPair.proto";
-import "FightPropPair.proto";
-import "AnimatorParameterValueInfoPair.proto";
-import "EntityEnvironmentInfo.proto";
 import "ServerBuff.proto";
 
 message SceneEntityInfo {
-	oneof Entity {
-		SceneAvatarInfo avatar = 10;
-		SceneMonsterInfo monster = 11;
-		SceneNpcInfo npc = 12;
-		SceneGadgetInfo gadget = 13;
-	}
 	ProtEntityType entity_type = 1;
 	uint32 entity_id = 2;
 	string name = 3;
@@ -38,4 +32,10 @@ message SceneEntityInfo {
 	EntityAuthorityInfo entity_authority_info = 21;
 	repeated string tag_list = 22;
 	repeated ServerBuff server_buff_list = 23;
+	oneof entity {
+		SceneAvatarInfo avatar = 10;
+		SceneMonsterInfo monster = 11;
+		SceneNpcInfo npc = 12;
+		SceneGadgetInfo gadget = 13;
+	}
 }

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FriendBrief.proto";
+
+// CmdId: 4022
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GetRecentMpPlayerListRsp {
+	int32 retcode = 15;
+	repeated FriendBrief recent_mp_player_brief_list = 3;
+}

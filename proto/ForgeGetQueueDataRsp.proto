@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ForgeQueueData.proto";
+
+// CmdId: 628
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ForgeGetQueueDataRsp {
+	int32 retcode = 15;
+	uint32 max_queue_num = 13;
+	map<uint32, ForgeQueueData> forge_queue_map = 11;
+}

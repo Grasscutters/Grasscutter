@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MistTrialMissionInfo.proto";
+
+// CmdId: 8385
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MistTrialGetChallengeMissionRsp {
+	int32 retcode = 3;
+	uint32 trial_id = 1;
+	repeated MistTrialMissionInfo mission_info_list = 5;
+}

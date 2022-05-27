@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AFOPONDCLKC.proto";
+
+// CmdId: 8922
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FIODAJPNBIK {
+	int32 retcode = 3;
+	repeated AFOPONDCLKC CAOLGNLEEIE = 2;
+}

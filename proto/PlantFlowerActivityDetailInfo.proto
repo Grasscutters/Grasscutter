@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message PlantFlowerActivityDetailInfo {
+	uint32 day_index = 1;
+	uint32 today_seed_reward_id = 2;
+	bool is_today_has_awarded = 3;
+	bool is_content_closed = 4;
+	map<uint32, uint32> wish_flower_num_map = 5;
+	map<uint32, uint32> used_flower_num_map = 6;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message Achievement {
+	uint32 id = 1;
+	Status status = 2;
+	uint32 cur_progress = 3;
+	uint32 total_progress = 4;
+	uint32 finish_timestamp = 5;
+
+	enum Status {
+		STATUS_INVALID = 0;
+		STATUS_UNFINISHED = 1;
+		STATUS_FINISHED = 2;
+		STATUS_REWARD_TAKEN = 3;
+	}
+}

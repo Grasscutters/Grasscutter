@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "NDKMJLFPCBG.proto";
+import "PILILDPMNNA.proto";
+
+message IGBMCJOPGIL {
+	bool is_content_closed = 1;
+	repeated NDKMJLFPCBG stage_list = 2;
+	bool is_have_progress = 3;
+	PILILDPMNNA cur_progress = 4;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message PlayerOfferingData {
+	uint32 offering_id = 1;
+	uint32 level = 2;
+	repeated uint32 taken_level_reward_list = 3;
+	bool is_new_max_level = 4;
+	bool is_first_interact = 5;
+}

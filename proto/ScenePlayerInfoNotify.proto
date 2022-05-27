@@ -4,14 +4,9 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "ScenePlayerInfo.proto";
 
+// CmdId: 225
+// EnetChannelId: 0
+// EnetIsReliable: true
 message ScenePlayerInfoNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 293;
-	}
-
-	repeated ScenePlayerInfo player_info_list = 1;
+	repeated ScenePlayerInfo player_info_list = 11;
 }

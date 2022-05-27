@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ItemParam.proto";
+
+// CmdId: 8157
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message LNMFIHNFKOO {
+	uint32 uid = 7;
+	repeated ItemParam item_list = 4;
+}

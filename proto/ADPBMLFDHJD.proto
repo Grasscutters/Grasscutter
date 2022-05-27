@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "IOLMLCCBAKP.proto";
+
+message ADPBMLFDHJD {
+	repeated IOLMLCCBAKP FBNNIEPDNKP = 1;
+	uint32 difficulty_id = 2;
+}

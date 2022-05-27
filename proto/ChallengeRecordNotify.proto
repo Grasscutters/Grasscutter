@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ChallengeRecord.proto";
+
+// CmdId: 919
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ChallengeRecordNotify {
+	uint32 group_id = 6;
+	repeated ChallengeRecord challenge_record_list = 14;
+}

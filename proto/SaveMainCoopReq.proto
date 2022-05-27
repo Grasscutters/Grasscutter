@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1993
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message SaveMainCoopReq {
+	uint32 id = 2;
+	uint32 save_point_id = 7;
+	uint32 self_confidence = 12;
+	map<uint32, int32> normal_var_map = 6;
+	map<uint32, int32> temp_var_map = 14;
+}

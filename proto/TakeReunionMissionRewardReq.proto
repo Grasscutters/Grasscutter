@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5082
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message TakeReunionMissionRewardReq {
+	uint32 mission_id = 14;
+	uint32 reward_id = 3;
+	uint32 reward_index = 4;
+}

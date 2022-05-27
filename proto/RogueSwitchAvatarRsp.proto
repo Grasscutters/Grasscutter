@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8556
+// EnetChannelId: 0
+// EnetIsReliable: true
+message RogueSwitchAvatarRsp {
+	int32 retcode = 13;
+	uint32 dungeon_id = 15;
+	uint32 cell_id = 14;
+	repeated uint64 onstage_avatar_guid_list = 3;
+	uint64 cur_avatar_guid = 4;
+	repeated uint64 backstage_avatar_guid_list = 6;
+}

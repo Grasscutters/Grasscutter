@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 203
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BeginCameraSceneLookNotify {
+	Vector look_pos = 15;
+	float duration = 5;
+	bool is_force = 8;
+	bool is_recover_keep_current = 3;
+	bool is_allow_input = 2;
+	bool is_set_follow_pos = 10;
+	Vector follow_pos = 1;
+	bool is_force_walk = 6;
+	bool is_change_play_mode = 14;
+	float screen_x = 4;
+	float screen_y = 13;
+	bool is_set_screen_xy = 7;
+	repeated string other_params = 12;
+	LNCHDDOOECD DEJGHDFCDLJ = 9;
+	float MGCGKDPAMNP = 11;
+	uint32 entity_id = 1127;
+
+	enum LNCHDDOOECD {
+		LNCHDDOOECD_ACOENBMDFBP = 0;
+		LNCHDDOOECD_FKBLCDFLCOM = 1;
+	}
+}

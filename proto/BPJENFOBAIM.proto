@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message BPJENFOBAIM {
+	uint32 kill_monster_num = 1;
+	uint32 IFGNHLKAJOP = 2;
+	bool is_new_record = 3;
+	uint64 scene_time_ms = 4;
+	bool LKDIKOFJDOK = 5;
+	bool is_perfect = 6;
+}

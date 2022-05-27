@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message CMOCCENBOLJ {
+	uint32 difficulty = 1;
+	bool BMGMFBPAOAI = 2;
+	uint32 GKBHJBJPLCG = 3;
+	uint32 finish_time = 4;
+}

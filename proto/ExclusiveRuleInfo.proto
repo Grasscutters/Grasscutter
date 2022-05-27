@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ExclusiveRuleInfo {
+	uint32 rule_type = 1;
+	repeated uint32 object_id_list = 2;
+}

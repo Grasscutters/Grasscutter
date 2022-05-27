@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message EvtFaceToDirInfo {
+	uint32 entity_id = 1;
+	Vector face_dir = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message GivingRecord {
+	uint32 giving_id = 1;
+	bool is_finished = 2;
+	uint32 last_group_id = 3;
+}

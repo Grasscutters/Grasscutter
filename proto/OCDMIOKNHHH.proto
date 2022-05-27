@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ProfilePicture.proto";
+
+message OCDMIOKNHHH {
+	uint32 uid = 1;
+	string nickname = 2;
+	uint32 player_level = 3;
+	ProfilePicture profile_picture = 4;
+	string online_id = 5;
+	string psn_id = 6;
+}

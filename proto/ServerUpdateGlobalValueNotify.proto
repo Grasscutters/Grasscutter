@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1107
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ServerUpdateGlobalValueNotify {
+	uint32 entity_id = 14;
+	uint32 key_hash = 2;
+	UpdateType update_type = 10;
+	float delta = 1;
+	float value = 12;
+
+	enum UpdateType {
+		UPDATE_TYPE_INVALUE = 0;
+		UPDATE_TYPE_ADD = 1;
+		UPDATE_TYPE_SET = 2;
+	}
+}

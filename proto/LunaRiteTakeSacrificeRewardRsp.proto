@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8252
+// EnetChannelId: 0
+// EnetIsReliable: true
+message LunaRiteTakeSacrificeRewardRsp {
+	int32 retcode = 14;
+	uint32 area_id = 7;
+	uint32 index = 5;
+	repeated uint32 sacrifice_reward_list = 2;
+	uint32 sacrifice_reward_index = 6;
+}

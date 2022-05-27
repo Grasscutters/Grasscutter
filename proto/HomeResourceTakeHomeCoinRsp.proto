@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeResource.proto";
+
+// CmdId: 4658
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeResourceTakeHomeCoinRsp {
+	int32 retcode = 11;
+	HomeResource home_coin = 1;
+}

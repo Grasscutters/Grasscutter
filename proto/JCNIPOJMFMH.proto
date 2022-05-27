@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EEPNCOAEKBM.proto";
+import "LELADCCDNJH.proto";
+
+message JCNIPOJMFMH {
+	repeated uint32 GMFOLHPPNIP = 1;
+	repeated LELADCCDNJH level_list = 2;
+	repeated EEPNCOAEKBM KKMIJJEINAJ = 3;
+	repeated EEPNCOAEKBM JONLJMHDFOH = 4;
+}

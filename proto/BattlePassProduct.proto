@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message BattlePassProduct {
+	string normal_product_id = 1;
+	string extra_product_id = 2;
+	string upgrade_product_id = 3;
+}

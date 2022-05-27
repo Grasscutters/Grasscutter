@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5586
+// EnetChannelId: 0
+// EnetIsReliable: true
+message NNDKOICOGGH_Notify {
+	uint32 gallery_id = 6;
+	uint32 buff_id = 2;
+	bool DBFLNILCDIM = 4;
+}

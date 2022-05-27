@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DMPIJLBHEAE.proto";
+
+message LLGDCAKMCKL {
+	uint32 stage_id = 1;
+	bool is_open = 2;
+	repeated DMPIJLBHEAE challenge_info_list = 3;
+}

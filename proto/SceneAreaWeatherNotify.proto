@@ -2,19 +2,13 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
+// CmdId: 229
+// EnetChannelId: 0
+// EnetIsReliable: true
 message SceneAreaWeatherNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 251;
-	}
-
-	uint32 weather_gadget_id = 1;
-	map<uint32, string> weather_value_map = 2;
-	uint32 weather_area_id = 3;
-	uint32 climate_type = 4;
-	float trans_duration = 5;
+	uint32 weather_gadget_id = 13;
+	map<uint32, string> weather_value_map = 10;
+	uint32 weather_area_id = 15;
+	uint32 climate_type = 14;
+	float trans_duration = 11;
 }

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2597
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GetBonusActivityRewardReq {
+	uint32 bonus_activity_id = 3;
+}

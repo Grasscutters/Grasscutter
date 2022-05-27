@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 5218
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message UseMiracleRingReq {
+	uint32 miracle_ring_op_type = 2;
+	Vector pos = 8;
+	Vector rot = 7;
+
+	enum MiracleRingOpType {
+		MIRACLE_RING_OP_TYPE_NONE = 0;
+		MIRACLE_RING_OP_TYPE_PLACE = 1;
+		MIRACLE_RING_OP_TYPE_RETRACT = 2;
+	}
+}

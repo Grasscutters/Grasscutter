@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3238
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message CCCKFHICDHD_Notify {
+	repeated uint32 KAPLCLCCCOF = 14;
+}

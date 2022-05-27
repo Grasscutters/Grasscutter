@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CBJMGALCOHO.proto";
+
+message KGMCDBKOGDK {
+	uint32 guid = 1;
+	uint32 id = 2;
+	bool is_show = 3;
+	repeated CBJMGALCOHO IBDEMBAGCJL = 4;
+	repeated uint32 tag_list = 5;
+}

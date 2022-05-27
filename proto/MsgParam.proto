@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message MsgParam {
+	oneof param {
+		uint32 int_param = 1;
+		float flt_param = 2;
+		string str_param = 3;
+	}
+}

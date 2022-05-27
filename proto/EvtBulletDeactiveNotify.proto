@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ForwardType.proto";
+import "Vector.proto";
+
+// CmdId: 330
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EvtBulletDeactiveNotify {
+	ForwardType forward_type = 3;
+	uint32 entity_id = 5;
+	Vector disappear_pos = 13;
+}

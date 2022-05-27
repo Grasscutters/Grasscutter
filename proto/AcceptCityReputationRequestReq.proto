@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2835
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message AcceptCityReputationRequestReq {
+	uint32 city_id = 7;
+	uint32 request_id = 5;
+}

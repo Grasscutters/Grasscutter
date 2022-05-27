@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum EEPNCOAEKBM {
+	EEPNCOAEKBM_EAFEANPNJLO = 0;
+	EEPNCOAEKBM_PAPMIPKGFJK = 1;
+	EEPNCOAEKBM_CONEKODEFHL = 2;
+	EEPNCOAEKBM_KABLOGENHFI = 3;
+}

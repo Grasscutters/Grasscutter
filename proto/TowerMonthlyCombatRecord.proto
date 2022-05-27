@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "TowerFightRecordPair.proto";
+
+message TowerMonthlyCombatRecord {
+	repeated TowerFightRecordPair most_reveal_avatar_list = 1;
+	TowerFightRecordPair most_kill_avatar_pair = 2;
+	TowerFightRecordPair highest_dps_avatr_pair = 3;
+	TowerFightRecordPair most_take_damage_avatar_pair = 4;
+	TowerFightRecordPair most_cast_normal_skill_avatar_pair = 5;
+	TowerFightRecordPair most_cast_energy_skill_avatar_pair = 6;
+}

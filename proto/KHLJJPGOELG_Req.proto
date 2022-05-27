@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "KLPINMKOEPE.proto";
+import "PHGGAEDHLBN.proto";
+
+// CmdId: 6243
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message KHLJJPGOELG_Req {
+	KLPINMKOEPE JFIDCDNOJCD = 9;
+	PHGGAEDHLBN JDBDBJOCLCP = 13;
+	bool OFBGOKFOEKH = 8;
+}

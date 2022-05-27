@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8912
+// EnetChannelId: 0
+// EnetIsReliable: true
+message RoguelikeRefreshCardCostUpdateNotify {
+	uint32 item_id = 1;
+	uint32 item_count = 10;
+}

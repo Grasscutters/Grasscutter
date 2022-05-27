@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message SeaLampActivityDetailInfo {
+	uint32 phase_id = 1;
+	uint32 progress = 2;
+	uint32 days = 3;
+	uint32 contribution = 4;
+	repeated uint32 taken_contribution_reward_list = 5;
+	repeated uint32 taken_phase_reward_list = 6;
+	uint32 factor = 7;
+}

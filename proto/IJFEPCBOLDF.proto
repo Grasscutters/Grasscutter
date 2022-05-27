@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8924
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message IJFEPCBOLDF {
+	uint32 level_id = 7;
+	bool BMGMFBPAOAI = 14;
+	uint32 score = 13;
+	bool is_new_record = 10;
+}

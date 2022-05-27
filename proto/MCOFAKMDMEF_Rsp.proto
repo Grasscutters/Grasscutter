@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "OPEBMJPOOBL.proto";
+
+// CmdId: 6313
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MCOFAKMDMEF_Rsp {
+	int32 retcode = 2;
+	OPEBMJPOOBL KDDIKDNOLIE = 11;
+	repeated uint64 AMNODOLNOIM = 6;
+}

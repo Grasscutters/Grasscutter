@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2219
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PushTipsReadFinishRsp {
+	int32 retcode = 8;
+	uint32 push_tips_id = 13;
+}

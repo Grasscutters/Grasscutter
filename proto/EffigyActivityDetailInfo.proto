@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EffigyDailyInfo.proto";
+
+message EffigyActivityDetailInfo {
+	repeated EffigyDailyInfo daily_info_list = 1;
+	uint32 last_difficulty_id = 2;
+	uint32 cur_score = 3;
+	repeated uint32 taken_reward_index_list = 4;
+}

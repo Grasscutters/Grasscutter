@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HEMFKLPNNOM.proto";
+
+message KJDPNIKDKEJ {
+	HEMFKLPNNOM type = 1;
+	int32 value = 2;
+}

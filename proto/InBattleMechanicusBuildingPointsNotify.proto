@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5385
+// EnetChannelId: 0
+// EnetIsReliable: true
+message InBattleMechanicusBuildingPointsNotify {
+	map<uint32, uint32> player_building_points_map = 14;
+}

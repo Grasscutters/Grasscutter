@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomePlantFieldData.proto";
+
+// CmdId: 4466
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomePlantFieldNotify {
+	HomePlantFieldData field = 2;
+}

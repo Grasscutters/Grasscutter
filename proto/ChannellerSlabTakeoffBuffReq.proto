@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8577
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ChannellerSlabTakeoffBuffReq {
+	uint32 buff_id = 3;
+	uint32 slot_id = 14;
+	bool is_mp = 15;
+}

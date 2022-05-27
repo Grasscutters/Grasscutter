@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AvatarEquipAffixInfo.proto";
+
+// CmdId: 1609
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AvatarEquipAffixStartNotify {
+	uint64 avatar_guid = 10;
+	AvatarEquipAffixInfo equip_affix_info = 13;
+}

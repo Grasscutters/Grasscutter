@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeCustomFurnitureInfo.proto";
+
+// CmdId: 4482
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeCustomFurnitureInfoNotify {
+	repeated HomeCustomFurnitureInfo custom_furniture_info_list = 3;
+	map<uint32, uint32> used_sub_furniture_count_map = 13;
+	repeated uint32 delete_custom_furniture_list = 7;
+}

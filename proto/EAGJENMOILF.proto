@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "LOFGGFOGDEL.proto";
+
+message EAGJENMOILF {
+	uint32 EGIEFHDLKDM = 1;
+	uint32 HHLEPHOGPGI = 2;
+	uint32 NNAPPGMMEKC = 3;
+	LOFGGFOGDEL reason = 4;
+}

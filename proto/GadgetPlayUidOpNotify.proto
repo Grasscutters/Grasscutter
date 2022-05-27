@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 827
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GadgetPlayUidOpNotify {
+	uint32 play_type = 8;
+	uint32 entity_id = 1;
+	repeated uint32 uid_list = 5;
+	uint32 op = 10;
+	string param_str = 13;
+	repeated uint32 param_list = 6;
+}

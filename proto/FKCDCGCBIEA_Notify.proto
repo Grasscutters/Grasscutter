@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "NAPLFKNOECD.proto";
+
+// CmdId: 6268
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FKCDCGCBIEA_Notify {
+	bool NPBLIPLCFEO = 6;
+	string GIMHDDGDNHK = 14;
+	uint32 play_type = 15;
+	repeated NAPLFKNOECD var_list = 10;
+}

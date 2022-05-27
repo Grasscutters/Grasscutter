@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ChessMonsterInfo.proto";
+
+message ChessEntranceInfo {
+	uint32 entrance_index = 1;
+	repeated ChessMonsterInfo monster_info_list = 2;
+	uint32 entrance_point_id = 3;
+}

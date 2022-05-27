@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1652
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message FocusAvatarReq {
+	uint64 avatar_guid = 13;
+	bool is_focus = 8;
+}

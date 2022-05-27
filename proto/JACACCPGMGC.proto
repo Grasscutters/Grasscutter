@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MIMJBGMEMCA.proto";
+
+message JACACCPGMGC {
+	uint32 level_id = 1;
+	repeated MIMJBGMEMCA BLNDIEHFPBJ = 2;
+}

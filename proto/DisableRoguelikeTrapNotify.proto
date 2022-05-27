@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8250
+// EnetChannelId: 0
+// EnetIsReliable: true
+message DisableRoguelikeTrapNotify {
+	uint32 card_id = 9;
+}

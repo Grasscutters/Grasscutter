@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MatchType.proto";
+import "OnlinePlayerInfo.proto";
+
+// CmdId: 4163
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerApplyEnterMpAfterMatchAgreedNotify {
+	MatchType match_type = 14;
+	OnlinePlayerInfo src_player_info = 8;
+	uint32 matchserver_id = 13;
+}

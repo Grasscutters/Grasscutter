@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 616
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message BuyResinRsp {
+	int32 retcode = 14;
+	uint32 cur_value = 12;
+}

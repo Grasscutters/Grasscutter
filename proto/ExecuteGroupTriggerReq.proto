@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 277
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ExecuteGroupTriggerReq {
+	uint32 source_entity_id = 7;
+	string source_name = 5;
+	uint32 target_entity_id = 9;
+	int32 param_1 = 4;
+	int32 param_2 = 14;
+	int32 param_3 = 2;
+}

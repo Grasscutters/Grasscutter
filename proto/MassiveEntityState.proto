@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message MassiveEntityState {
+	uint32 entity_type = 1;
+	int64 obj_id = 2;
+	uint32 element_state = 3;
+}

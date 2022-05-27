@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5366
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ChessPickCardRsp {
+	int32 retcode = 4;
+	uint32 card_id = 14;
+	uint32 card_index = 11;
+}

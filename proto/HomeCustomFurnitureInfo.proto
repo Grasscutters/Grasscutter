@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CustomCommonNodeInfo.proto";
+
+message HomeCustomFurnitureInfo {
+	uint32 guid = 1;
+	repeated CustomCommonNodeInfo sub_furniture_list = 2;
+}

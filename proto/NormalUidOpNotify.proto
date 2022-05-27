@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 5718
+// EnetChannelId: 0
+// EnetIsReliable: true
+message NormalUidOpNotify {
+	uint32 param_index = 7;
+	repeated uint32 param_list = 12;
+	repeated uint32 param_uid_list = 8;
+	uint32 duration = 13;
+}

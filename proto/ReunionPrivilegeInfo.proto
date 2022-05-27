@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ReunionPrivilegeInfo {
+	uint32 privilege_id = 1;
+	uint32 cur_day_count = 2;
+	uint32 total_count = 3;
+}

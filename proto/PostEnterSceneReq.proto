@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 3097
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message PostEnterSceneReq {
+	uint32 enter_scene_token = 11;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CoopPoint.proto";
+
+// CmdId: 1987
+// EnetChannelId: 0
+// EnetIsReliable: true
+message CoopPointUpdateNotify {
+	CoopPoint coop_point = 15;
+}

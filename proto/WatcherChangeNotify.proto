@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2231
+// EnetChannelId: 0
+// EnetIsReliable: true
+message WatcherChangeNotify {
+	repeated uint32 new_watcher_list = 9;
+	repeated uint32 removed_watcher_list = 5;
+}
