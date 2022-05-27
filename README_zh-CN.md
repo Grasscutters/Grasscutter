@@ -135,6 +135,7 @@ chmod +x gradlew
 | setfetterlevel | setfetterlevel <好感等级>                    | player.setfetterlevel     | 仅客户端 | 设置当前角色的好感等级                     | `setfetterlvl` `setfriendship`                  |
 | setstats       | setstats <属性> <数值>                       | player.setstats           | 仅客户端 | 直接修改当前角色的面板                     | stats                                           |
 | setworldlevel  | setworldlevel <世界等级>                     | player.setworldlevel      | 仅客户端 | 设置世界等级(重新登录即可生效)             | setworldlvl                                     |
+| sendmail       | sendmail \<uid\|all\|help> \[模板id]         | server.sendmail           | 均可使用 | 向指定用户发送邮件                        |                                                   |
 | spawn          | spawn <实体ID> [数量] [等级]                  | server.spawn              | 仅客户端 | 在你周围生成实体                           |                                                 |
 | stop           | stop                                         | server.stop               | 均可使用 | 停止服务器                                 |                                                 |
 | talent         | talent <天赋ID> <等级>                       | player.settalent          | 仅客户端 | 设置当前角色的天赋等级                     |                                                 |
