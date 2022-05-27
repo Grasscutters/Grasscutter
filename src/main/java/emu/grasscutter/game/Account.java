@@ -21,7 +21,7 @@ public class Account {
 	private String username;
 	private String password; // Unused for now
 	
-	@AlsoLoad("playerUid") private int playerId;
+	private int reservedPlayerId;
 	private String email;
 	
 	private String token;
@@ -67,12 +67,12 @@ public class Account {
 		this.token = token;
 	}
 
-	public int getPlayerUid() {
-		return this.playerId;
+	public int getReservedPlayerUid() {
+		return this.reservedPlayerId;
 	}
 
-	public void setPlayerId(int playerId) {
-		this.playerId = playerId;
+	public void setReservedPlayerUid(int playerId) {
+		this.reservedPlayerId = playerId;
 	}
 	
 	public String getEmail() {
