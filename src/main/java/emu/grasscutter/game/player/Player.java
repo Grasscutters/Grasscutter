@@ -809,7 +809,7 @@ public class Player {
 		this.hasSentAvatarDataNotify = hasSentAvatarDataNotify;
 	}
 
-	public void addAvatar(Avatar avatar) {
+	public void addAvatar(Avatar avatar, boolean addToCurrentTeam) {
 		boolean result = getAvatars().addAvatar(avatar);
 
 		if (result) {
@@ -820,12 +820,20 @@ public class Player {
 			if (hasSentAvatarDataNotify()) {
 				// Recalc stats
 				avatar.recalcStats();
-				// Packet
-				sendPacket(new PacketAvatarAddNotify(avatar, false));
+				// Packet, show notice on left if the avatar will be added to the team
+				sendPacket(new PacketAvatarAddNotify(avatar, addToCurrentTeam && this.getTeamManager().canAddAvatarToCurrentTeam()));
+				if (addToCurrentTeam) {
+					// If space in team, add
+					this.getTeamManager().addAvatarToCurrentTeam(avatar);
+				}
 			}
 		} else {
 			// Failed adding avatar
 		}
+	}
+
+	public void addAvatar(Avatar avatar) {
+		addAvatar(avatar, true);
 	}
 
 	public void addFlycloak(int flycloakId) {

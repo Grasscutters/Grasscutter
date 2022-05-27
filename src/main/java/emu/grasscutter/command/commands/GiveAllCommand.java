@@ -57,7 +57,8 @@ public final class GiveAllCommand implements CommandHandler {
             }
             // This will handle stats and talents
             avatar.recalcStats();
-            player.addAvatar(avatar);
+            // Don't try to add each avatar to the current team
+            player.addAvatar(avatar, false);
         }
 
         //some test items

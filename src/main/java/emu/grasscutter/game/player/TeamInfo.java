@@ -44,7 +44,7 @@ public class TeamInfo {
 	}
 
 	public boolean addAvatar(Avatar avatar) {
-		if (size() >= GAME_OPTIONS.avatarLimits.singlePlayerTeam || contains(avatar)) {
+		if (contains(avatar)) {
 			return false;
 		}
 		

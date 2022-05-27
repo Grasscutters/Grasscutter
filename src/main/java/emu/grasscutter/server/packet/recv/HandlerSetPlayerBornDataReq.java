@@ -65,7 +65,8 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 			if (player.getAvatars().getAvatarCount() == 0) {
 				Avatar mainCharacter = new Avatar(avatarId);
 				mainCharacter.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
-				player.addAvatar(mainCharacter);
+				// Manually handle adding to team
+				player.addAvatar(mainCharacter, false);
 				player.setMainCharacterId(avatarId);
 				player.setHeadImage(avatarId);
 				player.getTeamManager().getCurrentSinglePlayerTeamInfo().getAvatars().add(mainCharacter.getAvatarId());
