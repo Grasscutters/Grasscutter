@@ -50,6 +50,7 @@ import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.DateHelper;
 import emu.grasscutter.utils.Position;
@@ -247,7 +248,6 @@ public class Player {
 
 	public void setAccount(Account account) {
 		this.account = account;
-		this.account.setPlayerId(getUid());
 	}
 
 	public GameSession getSession() {
@@ -1017,8 +1017,8 @@ public class Player {
 				}
 			}
 		} else {
-			List<Integer> showAvatarList = DatabaseHelper.getPlayerById(id).getShowAvatarList();
-			AvatarStorage avatars = DatabaseHelper.getPlayerById(id).getAvatars();
+			List<Integer> showAvatarList = DatabaseHelper.getPlayerByUid(id).getShowAvatarList();
+			AvatarStorage avatars = DatabaseHelper.getPlayerByUid(id).getAvatars();
 			avatars.loadFromDatabase();
 			if (showAvatarList != null) {
 				for (int avatarId : showAvatarList) {
@@ -1058,7 +1058,7 @@ public class Player {
 			player = this;
 			shouldRecalc = false;
 		} else {
-			player = DatabaseHelper.getPlayerById(id);
+			player = DatabaseHelper.getPlayerByUid(id);
 			player.getAvatars().loadFromDatabase();
 			player.getInventory().loadFromDatabase();
 			shouldRecalc = true;
@@ -1176,8 +1176,9 @@ public class Player {
 	public void save() {
 		DatabaseHelper.savePlayer(this);
 	}
-
-	public void onLogin() {
+	
+	// Called from tokenrsp
+	public void loadFromDatabase() {
 		// Make sure these exist
 		if (this.getTeamManager() == null) {
 			this.teamManager = new TeamManager(this);
@@ -1205,6 +1206,14 @@ public class Player {
 		this.getMailHandler().loadFromDatabase();
 		this.getQuestManager().loadFromDatabase();
 		
+		// Add to gameserver (Always handle last)
+		if (getSession().isActive()) {
+			getServer().registerPlayer(this);
+			getProfile().setPlayer(this); // Set online
+		}
+	}
+
+	public void onLogin() {
 		// Quest - Commented out because a problem is caused if you log out while this quest is active
 		/*
 		if (getQuestManager().getMainQuestById(351) == null) {
@@ -1223,12 +1232,6 @@ public class Player {
 		// Create world
 		World world = new World(this);
 		world.addPlayer(this);
-
-		// Add to gameserver
-		if (getSession().isActive()) {
-			getServer().registerPlayer(this);
-			getProfile().setPlayer(this); // Set online
-		}
 
 		// Multiplayer setting
 		this.setProperty(PlayerProperty.PROP_PLAYER_MP_SETTING_TYPE, this.getMpSetting().getNumber());
@@ -1255,6 +1258,9 @@ public class Player {
 
 		// First notify packets sent
 		this.setHasSentAvatarDataNotify(true);
+		
+		// Set session state
+		session.setState(SessionState.ACTIVE);
 
 		// Call join event.
 		PlayerJoinEvent event = new PlayerJoinEvent(this); event.call();
