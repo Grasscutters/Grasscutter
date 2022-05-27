@@ -17,11 +17,12 @@ import java.util.*;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "giveall", usage = "giveall", aliases = {"all"}, permission = "player.giveall", permissionTargeted = "player.giveall.others",threading = true, description = "commands.giveAll.description")
+@Command(label = "giveall", usage = "giveall", aliases = {
+    "all" }, permission = "player.giveall", permissionTargeted = "player.giveall.others", threading = true, description = "commands.giveAll.description")
 public final class GiveAllCommand implements CommandHandler {
 
-    @Override
-    public void execute(Player sender, Player targetPlayer, List<String> args) {
+  @Override
+  public void execute(Player sender, Player targetPlayer, List<String> args) {
 
     // Check Username
     Account account = Grasscutter.getGameServer().getAccountByName(targetPlayer.getAccount().getUsername());
@@ -29,7 +30,7 @@ public final class GiveAllCommand implements CommandHandler {
       CommandHandler.sendMessage(sender, translate(sender, "commands.permission.account_error"));
       return;
     }
-    
+
     account.addPermission("-player.giveall");
     this.giveAllItems(targetPlayer);
     CommandHandler.sendMessage(sender, translate("commands.giveAll.success", targetPlayer.getNickname()));
@@ -41,12 +42,12 @@ public final class GiveAllCommand implements CommandHandler {
 
     // some test items
     List<GameItem> itemList = new ArrayList<>();
-    
+
     for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
 
       // Exclude test avatar
       if (isTestAvatar(avatarData.getId()))
-       continue;
+        continue;
 
       Avatar avatar = new Avatar(avatarData);
       avatar.setLevel(90);
@@ -58,13 +59,14 @@ public final class GiveAllCommand implements CommandHandler {
       avatar.recalcStats();
       player.addAvatar(avatar);
 
-    }    
-    
+    }
+
     for (ItemData itemdata : GameData.getItemDataMap().values()) {
 
-      int limitwp=3;
-      int limitaft=1;
-      int tmp=1000;
+      int limitwp = 3;
+      int limitaft = 1;
+      int tmp = 1000;
+      boolean atf = false;
 
       // Exclude test item
       if (isTestItem(itemdata.getId()))
@@ -83,30 +85,43 @@ public final class GiveAllCommand implements CommandHandler {
         } else {
           GameItem item = new GameItem(itemdata);
           // Artifact
-          if(itemdata.getItemType() == ItemType.ITEM_RELIQUARY){
-            continue;
-          }else{
-           // Set Mx
-           if(itemdata.getStackLimit() != 0){
-            tmp=itemdata.getStackLimit();
-           }
+          if (itemdata.getItemType() == ItemType.ITEM_RELIQUARY) {            
+            if (atf) {
+              if (itemdata.getRankLevel() == 5) {
+                item.setLevel(itemdata.getMaxLevel());
+                // item.setLocked(true);
+                // item.setTotalExp(totalExp);
+                // TODO: get best only
+              } else {
+                continue;
+              }
+              tmp = limitaft;
+            }else{
+              continue;
+            }
+          } else {
+            // Other
+            if (itemdata.getStackLimit() != 0) {
+              tmp = itemdata.getStackLimit();
+            }
           }
           item.setCount(tmp);
           itemList.add(item);
         }
 
-      } else {        
-        
-        if (itemdata.getMaterialType() == MaterialType.MATERIAL_QUEST)
-         continue;
-         
-        if (itemdata.getMaterialType() == MaterialType.MATERIAL_FURNITURE_SUITE_FORMULA || itemdata.getMaterialType() == MaterialType.MATERIAL_FURNITURE_FORMULA)
-         continue; 
+      } else {
 
-        // CODEX_WIDGET aka Gadget 
-        if(itemdata.getItemType() == ItemType.ITEM_MATERIAL){
-          if(itemdata.getMaterialType() == MaterialType.MATERIAL_WIDGET){
-            tmp=itemdata.getStackLimit();
+        if (itemdata.getMaterialType() == MaterialType.MATERIAL_QUEST)
+          continue;
+
+        if (itemdata.getMaterialType() == MaterialType.MATERIAL_FURNITURE_SUITE_FORMULA
+            || itemdata.getMaterialType() == MaterialType.MATERIAL_FURNITURE_FORMULA)
+          continue;
+
+        // CODEX_WIDGET aka Gadget
+        if (itemdata.getItemType() == ItemType.ITEM_MATERIAL) {
+          if (itemdata.getMaterialType() == MaterialType.MATERIAL_WIDGET) {
+            tmp = itemdata.getStackLimit();
           }
         }
 

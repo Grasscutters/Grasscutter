@@ -206,12 +206,12 @@ public final class AccountCommand implements CommandHandler {
             case "clean_final":
                  // Clear account, Find Account (getPlayerUid aka playerId) same player (getPlayerById aka _id) if player no found in this acc remove it acc
                  List<Account> AllAccount = DatabaseHelper.getAccountAll().stream()
-                 .filter(g -> DatabaseHelper.getPlayerById((g.getPlayerUid())) == null)
+                 .filter(g -> DatabaseHelper.getPlayerByUid((g.getReservedPlayerUid())) == null)
                  .toList();
                  CommandHandler.sendMessage(null, "Current total account "+AllAccount.size()+" ");
                  for (Account remove : AllAccount) {
                    // Finally, we do actual deletion.
-                   CommandHandler.sendMessage(null, "Remove Uid "+remove.getPlayerUid()+" account");
+                   CommandHandler.sendMessage(null, "Remove Uid "+remove.getReservedPlayerUid()+" account");
                    DatabaseHelper.deleteAccount(remove);
                  }
                  return;

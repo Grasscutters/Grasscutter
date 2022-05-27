@@ -32,35 +32,33 @@ public final class ClearCommand implements CommandHandler {
             case "wp" -> {
             	toDelete = playerInventory.getItems().values().stream()
                         .filter(item -> item.getItemType() == ItemType.ITEM_WEAPON)
-                        .filter(item -> !item.isLocked() && !item.isEquipped())
+                        .filter(item -> !item.isLocked() && !item.isEquipped()).limit(limit)
                         .toList();
                 CommandHandler.sendMessage(sender, translate(sender, "commands.clear.weapons", targetPlayer.getNickname()));
             }
             case "art" -> {
             	toDelete = playerInventory.getItems().values().stream()
                         .filter(item -> item.getItemType() == ItemType.ITEM_RELIQUARY)
-                        .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
-                        .filter(item -> !item.isLocked() && !item.isEquipped())
+                        .filter(item -> !item.isLocked() && !item.isEquipped()).limit(limit)
                         .toList();
                 CommandHandler.sendMessage(sender, translate(sender, "commands.clear.artifacts", targetPlayer.getNickname()));
             }
             case "mat" -> {
             	toDelete = playerInventory.getItems().values().stream()
                         .filter(item -> item.getItemType() == ItemType.ITEM_MATERIAL)
-                        .filter(item -> item.getLevel() == 1 && item.getExp() == 0)
-                        .filter(item -> !item.isLocked() && !item.isEquipped())
+                        .filter(item -> !item.isLocked() && !item.isEquipped()).limit(limit)
                         .toList();
                 CommandHandler.sendMessage(sender, translate(sender, "commands.clear.materials", targetPlayer.getNickname()));
             }
             case "all" -> {
             	toDelete = playerInventory.getItems().values().stream()
-                        .filter(item1 -> !item1.isLocked() && !item1.isEquipped()).limit(limit)
-                        .toList();
-                CommandHandler.sendMessage(sender, translate("dockergc.commands.clear.done", toDelete.size(),limit));
+                        .filter(item -> !item.isLocked() && !item.isEquipped()).limit(limit)
+                        .toList();               
             }
         }
         
         if (toDelete != null) {
+            CommandHandler.sendMessage(sender, translate("dockergc.commands.clear.done", toDelete.size(),limit));
         	playerInventory.removeItems(toDelete);
         }
     }
