@@ -14,15 +14,22 @@ public interface OAuthAuthenticator {
     void handleLogin(AuthenticationRequest request);
 
     /**
-     * Called when an client requests to redirect to login page.
+     * Called when a client requests to redirect to login page.
      * @param request The authentication request.
      */
-    void handleDesktopRedirection(AuthenticationRequest request);
-    void handleMobileRedirection(AuthenticationRequest request);
+    void handleRedirection(AuthenticationRequest request, ClientType clientType);
 
     /**
      * Called when an OAuth login requests callback.
      * @param request The authentication request.
      */
     void handleTokenProcess(AuthenticationRequest request);
+
+    /**
+     * The type of the client.
+     * Used for handling redirection.
+     */
+    enum ClientType {
+        DESKTOP, MOBILE
+    }
 }

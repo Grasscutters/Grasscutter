@@ -2,6 +2,8 @@ package emu.grasscutter.server.http.dispatch;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem;
+import emu.grasscutter.auth.OAuthAuthenticator;
+import emu.grasscutter.auth.OAuthAuthenticator.ClientType;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.server.http.objects.*;
 import emu.grasscutter.server.http.objects.ComboTokenReqJson.LoginTokenData;
@@ -34,13 +36,15 @@ public final class DispatchHandler implements Router {
         express.post("/authentication/change_password", (request, response) -> Grasscutter.getAuthenticationSystem().getExternalAuthenticator()
                 .handlePasswordReset(AuthenticationSystem.fromExternalRequest(request, response)));
 
-        // OAuth login
-        express.post("/hk4e_global/mdk/shield/api/loginByThirdparty", (request, response) -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator().handleLogin(AuthenticationSystem.fromOAuthRequest(request, response)));
-        // OAuth querystring convert redirection
-        express.get("/authentication/openid/redirect", (request, response) -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator().handleTokenProcess(AuthenticationSystem.fromOAuthRequest(request, response)));
-        // OAuth redirection
-        express.get("/Api/twitter_login", (request, response) -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator().handleDesktopRedirection(AuthenticationSystem.fromOAuthRequest(request, response)));
-        express.get("/sdkTwitterLogin.html", (request, response) -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator().handleMobileRedirection(AuthenticationSystem.fromOAuthRequest(request, response)));
+        // External login (from OAuth2).
+        express.post("/hk4e_global/mdk/shield/api/loginByThirdparty", (request, response) -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator()
+                .handleLogin(AuthenticationSystem.fromExternalRequest(request, response)));
+        express.get("/authentication/openid/redirect", (request, response) -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator()
+                .handleTokenProcess(AuthenticationSystem.fromExternalRequest(request, response)));
+        express.get("/Api/twitter_login", (request, response) -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator()
+                .handleRedirection(AuthenticationSystem.fromExternalRequest(request, response), ClientType.DESKTOP));
+        express.get("/sdkTwitterLogin.html", (request, response) -> Grasscutter.getAuthenticationSystem().getOAuthAuthenticator()
+                .handleRedirection(AuthenticationSystem.fromExternalRequest(request, response), ClientType.MOBILE));
     }
 
     /**

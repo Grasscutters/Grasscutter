@@ -100,7 +100,7 @@ public final class DatabaseHelper {
 	}
 
 	public static Account getAccountByPlayerId(int playerId) {
-		return DatabaseManager.getGameDatastore().find(Account.class).filter(Filters.eq("playerId", playerId)).first();
+		return DatabaseManager.getGameDatastore().find(Account.class).filter(Filters.eq("reservedPlayerId", playerId)).first();
 	}
 
 	public static List<Account> getAccountAll() {

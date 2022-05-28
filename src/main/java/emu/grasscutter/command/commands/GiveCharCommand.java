@@ -12,7 +12,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "givechar", usage = "givechar <avatarId> [level]", aliases = {"givec"}, permission = "player.givechar", permissionTargeted = "player.givechar.others", description = "commands.giveChar.description")
+@Command(label = "givechar", usage = "givechar <player> <avatarId> [level]", aliases = {"givec"}, permission = "player.givechar", permissionTargeted = "player.givechar.others", description = "commands.giveChar.description")
 public final class GiveCharCommand implements CommandHandler {
 
     @Override
@@ -26,7 +26,7 @@ public final class GiveCharCommand implements CommandHandler {
                     level = Integer.parseInt(args.get(1));
                 } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                     // TODO: Parse from avatar name using GM Handbook.
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.execution.invalid.avatarLevel"));
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.avatarLevel"));
                     return;
                 }  // Cheeky fall-through to parse first argument too
             case 1:
@@ -34,7 +34,7 @@ public final class GiveCharCommand implements CommandHandler {
                     avatarId = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException ignored) {
                     // TODO: Parse from avatar name using GM Handbook.
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.execution.invalid.avatarId"));
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.avatarId"));
                     return;
                 }
                 break;
@@ -52,13 +52,13 @@ public final class GiveCharCommand implements CommandHandler {
 
         AvatarData avatarData = GameData.getAvatarDataMap().get(avatarId);
         if (avatarData == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.invalid.avatarId"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.avatarId"));
             return;
         }
 
         // Check level.
         if (level > 90) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.invalid.avatarLevel"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.avatarLevel"));
             return;
         }
 
