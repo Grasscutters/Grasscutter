@@ -81,24 +81,24 @@ public class QuestData extends GameResource {
 	}
 
 	public void onLoad() {
-		this.acceptConditons = acceptCond.stream().filter(p -> p.Type != null).map(QuestCondition::new).toArray(QuestCondition[]::new);
+		this.acceptConditons = acceptCond.stream().filter(p -> p._type != null).map(QuestCondition::new).toArray(QuestCondition[]::new);
 		acceptCond = null;
-		this.finishConditons = finishCond.stream().filter(p -> p.Type != null).map(QuestCondition::new).toArray(QuestCondition[]::new);
+		this.finishConditons = finishCond.stream().filter(p -> p._type != null).map(QuestCondition::new).toArray(QuestCondition[]::new);
 		finishCond = null;
-		this.failConditons = failCond.stream().filter(p -> p.Type != null).map(QuestCondition::new).toArray(QuestCondition[]::new);
+		this.failConditons = failCond.stream().filter(p -> p._type != null).map(QuestCondition::new).toArray(QuestCondition[]::new);
 		failCond = null;
 	}
 	
 	public class QuestParam {
-		QuestTrigger Type;
-		int[] Param;
-		String count;
+		QuestTrigger _type;
+		int[] _param;
+		String _count;
 	}
 	
 	public class QuestExecParam {
-		QuestTrigger Type;
-		String[] Param;
-		String count;
+		QuestTrigger _type;
+		String[] _param;
+		String _count;
 	}
 	
 	public static class QuestCondition {
@@ -107,8 +107,8 @@ public class QuestData extends GameResource {
 		private String count;
 		
 		public QuestCondition(QuestParam param) {
-			this.type = param.Type;
-			this.param = param.Param;
+			this.type = param._type;
+			this.param = param._param;
 		}
 		
 		public QuestTrigger getType() {
