@@ -4,16 +4,11 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "EntityClientData.proto";
 
+// CmdId: 3375
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message SetEntityClientDataNotify {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 3187;
-	}
-
-	uint32 entity_id = 1;
-	EntityClientData entity_client_data = 2;
+	uint32 entity_id = 13;
+	EntityClientData entity_client_data = 1;
 }

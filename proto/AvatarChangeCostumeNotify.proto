@@ -4,14 +4,9 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "SceneEntityInfo.proto";
 
+// CmdId: 1780
+// EnetChannelId: 0
+// EnetIsReliable: true
 message AvatarChangeCostumeNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 1724;
-	}
-
 	SceneEntityInfo entity_info = 1;
 }

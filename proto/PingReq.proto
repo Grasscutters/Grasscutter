@@ -2,20 +2,14 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
+// CmdId: 32
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message PingReq {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 100;
-	}
-
-	uint32 seq = 1;
-	uint32 client_time = 2;
-	bytes sc_data = 3;
-	float ue_time = 4;
-	double total_tick_time = 5;
+	uint32 seq = 2;
+	uint32 client_time = 14;
+	bytes sc_data = 11;
+	float ue_time = 15;
+	double total_tick_time = 12;
 }

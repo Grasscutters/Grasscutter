@@ -4,16 +4,11 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "Vector.proto";
 
+// CmdId: 308
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message EvtAvatarLockChairReq {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 341;
-	}
-
-	uint64 chair_id = 1;
-	Vector position = 2;
+	uint64 chair_id = 10;
+	Vector position = 3;
 }

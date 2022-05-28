@@ -28,10 +28,10 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
 				.setSignature(serverAccount.signature)
 				.setLastActiveTime((int) (System.currentTimeMillis() / 1000f))
 				.setNameCardId(serverAccount.nameCardId)
-				.setOnlineState(FriendOnlineState.FRIEND_ONLINE)
+				.setOnlineState(FriendOnlineState.FRIEND_ONLINE_STATE_ONLINE)
 				.setParam(1)
 				.setIsGameSource(true)
-				.setPlatformType(PlatformTypeOuterClass.PlatformType.PC)
+				.setPlatformType(PlatformTypeOuterClass.PlatformType.PLATFORM_TYPE_PC)
 				.build();
 		
 		GetPlayerFriendListRsp.Builder proto = GetPlayerFriendListRsp.newBuilder().addFriendList(serverFriend);

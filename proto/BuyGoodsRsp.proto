@@ -4,8 +4,13 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "ShopGoods.proto";
 
+// CmdId: 737
+// EnetChannelId: 0
+// EnetIsReliable: true
 message BuyGoodsRsp {
-  uint32 shopType = 2;
-  uint32 boughtNum = 4;
-  repeated ShopGoods goodsList = 5;
+	int32 retcode = 15;
+	uint32 shop_type = 12;
+	ShopGoods goods = 13;
+	uint32 buy_count = 8;
+	repeated ShopGoods goods_list = 1;
 }

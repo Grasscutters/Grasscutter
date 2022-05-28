@@ -3,10 +3,11 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 import "AbilitySyncStateInfo.proto";
+import "AnimatorParameterValueInfoPair.proto";
 import "EntityRendererChangedInfo.proto";
+//import "HFMDKDHCJCM.proto";
 import "SceneEntityAiInfo.proto";
 import "Vector.proto";
-import "AnimatorParameterValueInfoPair.proto";
 
 message EntityAuthorityInfo {
 	AbilitySyncStateInfo ability_info = 1;
@@ -14,4 +15,5 @@ message EntityAuthorityInfo {
 	SceneEntityAiInfo ai_info = 3;
 	Vector born_pos = 4;
 	repeated AnimatorParameterValueInfoPair pose_para_list = 5;
+	//HFMDKDHCJCM NHJAJEMKIFE = 6;
 }

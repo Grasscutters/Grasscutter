@@ -2,8 +2,8 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "Vector.proto";
 import "ServantInfo.proto";
+import "Vector.proto";
 
 message SceneEntityAiInfo {
 	bool is_ai_open = 1;

@@ -4,15 +4,10 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "MapMarkPoint.proto";
 
+// CmdId: 3421
+// EnetChannelId: 0
+// EnetIsReliable: true
 message MarkMapRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    CMD_ID = 3011;
-  }
-
-  int32 retcode = 1;
-  repeated MapMarkPoint mark_list = 2;
+	int32 retcode = 11;
+	repeated MapMarkPoint mark_list = 7;
 }

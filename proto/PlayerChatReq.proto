@@ -4,16 +4,11 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "ChatInfo.proto";
 
+// CmdId: 3378
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message PlayerChatReq {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 3326;
-	}
-
-	uint32 channel_id = 1;
-	ChatInfo chat_info = 2;
+	uint32 channel_id = 9;
+	ChatInfo chat_info = 1;
 }

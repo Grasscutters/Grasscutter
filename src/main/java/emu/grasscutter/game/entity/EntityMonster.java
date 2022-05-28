@@ -211,7 +211,7 @@ public class EntityMonster extends GameEntity {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.PROT_ENTITY_MONSTER)
+				.setEntityType(ProtEntityType.PROT_ENTITY_TYPE_MONSTER)
 				.setMotionInfo(this.getMotionInfo())
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())
@@ -240,7 +240,7 @@ public class EntityMonster extends GameEntity {
 				.setAuthorityPeerId(getWorld().getHostPeerId())
 				.setPoseId(this.getPoseId())
 				.setBlockId(3001)
-				.setBornType(MonsterBornType.MONSTER_BORN_DEFAULT)
+				.setBornType(MonsterBornType.MONSTER_BORN_TYPE_DEFAULT)
 				.setSpecialNameId(40);
 		
 		if (getMonsterData().getDescribeData() != null) {

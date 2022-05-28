@@ -2,7 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 917
+// EnetChannelId: 0
+// EnetIsReliable: true
 message PlayerQuitDungeonRsp {
-	int32 retcode = 1;
-	uint32 point_id = 2;
+	int32 retcode = 12;
+	uint32 point_id = 6;
 }

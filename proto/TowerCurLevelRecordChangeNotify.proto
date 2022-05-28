@@ -4,14 +4,9 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "TowerCurLevelRecord.proto";
 
+// CmdId: 2441
+// EnetChannelId: 0
+// EnetIsReliable: true
 message TowerCurLevelRecordChangeNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 2489;
-	}
-
-	TowerCurLevelRecord cur_level_record = 1;
+	TowerCurLevelRecord cur_level_record = 10;
 }

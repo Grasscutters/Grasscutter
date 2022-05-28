@@ -4,15 +4,10 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "FriendBrief.proto";
 
+// CmdId: 4038
+// EnetChannelId: 0
+// EnetIsReliable: true
 message AskAddFriendNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 4006;
-	}
-
-	uint32 target_uid = 1;
-	FriendBrief target_friend_brief = 2;
+	uint32 target_uid = 13;
+	FriendBrief target_friend_brief = 10;
 }

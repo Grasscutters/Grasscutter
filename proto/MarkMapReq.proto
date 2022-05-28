@@ -4,24 +4,19 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "MapMarkPoint.proto";
 
+// CmdId: 3208
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message MarkMapReq {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 3216;
-	}
+	Operation op = 15;
+	MapMarkPoint old = 10;
+	MapMarkPoint mark = 4;
 
 	enum Operation {
-		ADD = 0;
-		MOD = 1;
-		DEL = 2;
-		GET = 3;
+		OPERATION_ADD = 0;
+		OPERATION_MOD = 1;
+		OPERATION_DEL = 2;
+		OPERATION_GET = 3;
 	}
-
-	Operation op = 1;
-	MapMarkPoint old = 2;
-	MapMarkPoint mark = 3;
 }

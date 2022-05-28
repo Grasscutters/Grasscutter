@@ -23,7 +23,7 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
 				.setSceneId(player.getSceneId())
 				.setPos(player.getPos().toProto())
 				.setSceneBeginTime(System.currentTimeMillis())
-				.setType(EnterType.ENTER_SELF)
+				.setType(EnterType.ENTER_TYPE_SELF)
 				.setTargetUid(player.getUid())
 				.setEnterSceneToken(player.getEnterSceneToken())
 				.setWorldLevel(player.getWorldLevel())

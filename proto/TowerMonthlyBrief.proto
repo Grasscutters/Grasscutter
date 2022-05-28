@@ -2,7 +2,6 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
 message TowerMonthlyBrief {
 	uint32 tower_schedule_id = 1;
 	uint32 best_floor_index = 2;

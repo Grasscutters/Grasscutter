@@ -2,21 +2,29 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+//import "CDPBNKLFNKP.proto";
 import "ChannellerSlabLoopDungeonResultInfo.proto";
 import "EffigyChallengeDungeonResultInfo.proto";
+//import "FHOKHHBGPEG.proto";
+//import "IDFFMJEDODN.proto";
 import "StrengthenPointData.proto";
 
+// CmdId: 986
+// EnetChannelId: 0
+// EnetIsReliable: true
 message DungeonChallengeFinishNotify {
-	oneof Detail {
-		ChannellerSlabLoopDungeonResultInfo channeller_slab_loop_dungeon_result_info = 101;
-		EffigyChallengeDungeonResultInfo effigy_challenge_dungeon_result_info = 102;
+	uint32 challenge_index = 11;
+	bool is_success = 4;
+	bool is_new_record = 2;
+	uint32 challenge_record_type = 10;
+	uint32 current_value = 12;
+	map<uint32, StrengthenPointData> strengthen_point_data_map = 13;
+	//FHOKHHBGPEG NJDMJAFIJNH = 15;
+	uint32 time_cost = 6;
+	oneof detail {
+		ChannellerSlabLoopDungeonResultInfo channeller_slab_loop_dungeon_result_info = 1758;
+		EffigyChallengeDungeonResultInfo effigy_challenge_dungeon_result_info = 913;
+		//CDPBNKLFNKP potion_dungeon_result_info = 382;
+		//IDFFMJEDODN custom_dungeon_result_info = 1411;
 	}
-	uint32 challenge_index = 1;
-	bool is_success = 2;
-	bool is_new_record = 3;
-	uint32 challenge_record_type = 4;
-	uint32 current_value = 5;
-	map<uint32, StrengthenPointData> strengthen_point_data_map = 6;
-	uint32 unk1 = 7;
-	uint32 unk2 = 8;
 }

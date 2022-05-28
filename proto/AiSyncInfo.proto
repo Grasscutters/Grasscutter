@@ -2,7 +2,6 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
 message AiSyncInfo {
 	uint32 entity_id = 1;
 	bool has_path_to_target = 2;

@@ -2,7 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 932
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message PlayerQuitDungeonReq {
-	uint32 point_id = 1;
-	bool is_quit_immediately = 2;
+	uint32 point_id = 12;
+	bool is_quit_immediately = 4;
 }

@@ -10,4 +10,5 @@ message TowerCurLevelRecord {
 	repeated TowerTeam tower_team_list = 3;
 	repeated uint32 buff_id_list = 4;
 	bool is_empty = 5;
+	bool MPLIGMAKFAM = 6;
 }

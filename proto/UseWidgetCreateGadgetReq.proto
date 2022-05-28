@@ -4,17 +4,12 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "Vector.proto";
 
+// CmdId: 4283
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message UseWidgetCreateGadgetReq {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 4276;
-	}
-
 	uint32 material_id = 1;
-	Vector pos = 2;
-	Vector rot = 3;
+	Vector pos = 10;
+	Vector rot = 4;
 }
