@@ -4,8 +4,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.AvatarData;
-import emu.grasscutter.data.def.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.AvatarData;
+import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.GameItem;

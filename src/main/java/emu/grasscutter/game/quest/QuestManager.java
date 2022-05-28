@@ -9,8 +9,8 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.QuestData;
-import emu.grasscutter.data.def.QuestData.QuestCondition;
+import emu.grasscutter.data.excels.QuestData;
+import emu.grasscutter.data.excels.QuestData.QuestCondition;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.QuestTrigger;

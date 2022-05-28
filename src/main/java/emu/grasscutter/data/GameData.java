@@ -8,12 +8,12 @@ import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.Utils;
-import emu.grasscutter.data.custom.AbilityEmbryoEntry;
-import emu.grasscutter.data.custom.AbilityModifierEntry;
-import emu.grasscutter.data.custom.OpenConfigEntry;
-import emu.grasscutter.data.custom.MainQuestData;
-import emu.grasscutter.data.custom.ScenePointEntry;
-import emu.grasscutter.data.def.*;
+import emu.grasscutter.data.binout.AbilityEmbryoEntry;
+import emu.grasscutter.data.binout.AbilityModifierEntry;
+import emu.grasscutter.data.binout.MainQuestData;
+import emu.grasscutter.data.binout.OpenConfigEntry;
+import emu.grasscutter.data.binout.ScenePointEntry;
+import emu.grasscutter.data.excels.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
