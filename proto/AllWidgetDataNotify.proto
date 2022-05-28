@@ -3,7 +3,7 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 import "AnchorPointData.proto";
-import "CCEOEOHLAPK.proto";
+// import "CCEOEOHLAPK.proto";
 import "ClientCollectorData.proto";
 import "LunchBoxData.proto";
 import "OneoffGatherPointDetectorData.proto";
@@ -22,5 +22,5 @@ message AllWidgetDataNotify {
 	repeated WidgetCoolDownData cool_down_group_data_list = 2;
 	repeated WidgetCoolDownData normal_cool_down_data_list = 4;
 	repeated WidgetSlotData slot_list = 3;
-	CCEOEOHLAPK KNPDHPEGCHI = 12;
+	// CCEOEOHLAPK KNPDHPEGCHI = 12;
 }

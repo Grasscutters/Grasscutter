@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-enum BMBAIACNLDF {
-	BMBAIACNLDF_KOGCCKHAIBJ = 0;
-	BMBAIACNLDF_OHHELAGBFFO = 1;
-	BMBAIACNLDF_BIGKGGIMNCD = 2;
-}

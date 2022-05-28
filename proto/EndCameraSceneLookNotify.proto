@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-// CmdId: 234
-// EnetChannelId: 0
-// EnetIsReliable: true
-message EndCameraSceneLookNotify {
-}

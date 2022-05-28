@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message FOOGDLOMBIL {
-	uint32 NNAPPGMMEKC = 1;
-	repeated uint32 PIGPBOHHNMC = 2;
-}

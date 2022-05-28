@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-enum HGMCNJOPDAA {
-	HGMCNJOPDAA_NONE = 0;
-	HGMCNJOPDAA_COJANCPMOAI = 1;
-}

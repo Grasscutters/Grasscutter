@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-import "KGMCDBKOGDK.proto";
-
-message AFMIEEBHLPA {
-	KGMCDBKOGDK FPEGILCLIDM = 1;
-}

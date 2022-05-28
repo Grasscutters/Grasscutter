@@ -3,10 +3,8 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 import "ActivityWatcherInfo.proto";
-import "ADPBMLFDHJD.proto";
-import "ArenaChallengeActivityDetailInfo.proto";
+/*import "ArenaChallengeActivityDetailInfo.proto";
 import "AsterActivityDetailInfo.proto";
-import "BEPFLAKHNHL.proto";
 import "BlessingActivityDetailInfo.proto";
 import "BlitzRushActivityDetailInfo.proto";
 import "BounceConjuringActivityDetailInfo.proto";
@@ -16,31 +14,18 @@ import "ChessActivityDetailInfo.proto";
 import "CrucibleActivityDetailInfo.proto";
 import "DeliveryActivityDetailInfo.proto";
 import "DigActivityDetailInfo.proto";
-import "DLHPBNNDGFI.proto";
-import "DOCNGBMKEID.proto";
 import "DragonSpineActivityDetailInfo.proto";
-import "EAGKNMCLJDI.proto";
 import "EchoShellDetailInfo.proto";
 import "EffigyActivityDetailInfo.proto";
-import "EHDKFDJEEGP.proto";
-import "EPDOGGKOCAP.proto";
 import "ExpeditionActivityDetailInfo.proto";
 import "FindHilichurlDetailInfo.proto";
 import "FleurFairActivityDetailInfo.proto";
 import "FlightActivityDetailInfo.proto";
 import "HideAndSeekActivityDetailInfo.proto";
-import "IFACCKLEJCC.proto";
-import "IGBMCJOPGIL.proto";
-import "JACDNLEIDOO.proto";
-import "JEIAODKGIBD.proto";
-import "JLMHDDHOGGD.proto";
 import "LunaRiteDetailInfo.proto";
 import "MistTrialActivityDetailInfo.proto";
-import "MMNEJBFMAEA.proto";
 import "MoonfinTrialActivityDetailInfo.proto";
 import "MusicGameActivityDetailInfo.proto";
-import "NHMFHLIGAKL.proto";
-import "PFMCPMIMGLM.proto";
 import "PlantFlowerActivityDetailInfo.proto";
 import "RoguelikeDungeonActivityDetailInfo.proto";
 import "SalesmanActivityDetailInfo.proto";
@@ -50,7 +35,7 @@ import "SummerTimeDetailInfo.proto";
 import "SumoActivityDetailInfo.proto";
 import "TreasureMapActivityDetailInfo.proto";
 import "TrialAvatarActivityDetailInfo.proto";
-import "WaterSpiritActivityDetailInfo.proto";
+import "WaterSpiritActivityDetailInfo.proto";*/
 
 message ActivityInfo {
 	uint32 activity_id = 1;
@@ -71,10 +56,10 @@ message ActivityInfo {
 	repeated uint32 taken_reward_list = 24;
 	bool is_hidden = 26;
 	uint32 first_day_start_time = 27;
-	bool MIFCLBCMKJI = 28;
-	bool BPGCBIEDEDM = 29;
-	map<uint32, uint32> AGKPABKOHDA = 30;
-	oneof detail {
+	//bool MIFCLBCMKJI = 28;
+	//bool BPGCBIEDEDM = 29;
+	//map<uint32, uint32> AGKPABKOHDA = 30;
+	/*oneof detail {
 		SeaLampActivityDetailInfo sam_lamp_info = 11;
 		CrucibleActivityDetailInfo crucible_info = 12;
 		SalesmanActivityDetailInfo salesman_info = 13;
@@ -123,5 +108,5 @@ message ActivityInfo {
 		MMNEJBFMAEA gacha_info = 90;
 		JLMHDDHOGGD luminance_stone_challenge_info = 91;
 		IGBMCJOPGIL rogue_diary_info = 92;
-	}
+	}*/
 }

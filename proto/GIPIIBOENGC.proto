@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message GIPIIBOENGC {
-	uint32 equip_type = 1;
-}

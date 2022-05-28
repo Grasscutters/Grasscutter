@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message FindHilichurlDayContentInfo {
-	uint32 start_time = 1;
-}

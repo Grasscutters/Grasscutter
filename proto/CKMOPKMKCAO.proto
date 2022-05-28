@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-enum CKMOPKMKCAO {
-	CKMOPKMKCAO_BJNNKGGOEIM = 0;
-	CKMOPKMKCAO_MINE = 1;
-	CKMOPKMKCAO_ECDAEGKEKIJ = 2;
-}

@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message DNMAAJOODGO {
-	uint32 NNAPPGMMEKC = 1;
-	map<uint32, uint32> EFJBPJEBADK = 2;
-}

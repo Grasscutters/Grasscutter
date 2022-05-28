@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message VectorPlane {
-	float x = 1;
-	float y = 2;
-}

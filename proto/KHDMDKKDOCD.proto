@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message KHDMDKKDOCD {
-	bool is_trial = 1;
-	uint64 avatar_guid = 2;
-}

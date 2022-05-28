@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-import "ChessEntranceInfo.proto";
-
-message ChessEntranceDetailInfo {
-	repeated ChessEntranceInfo info_list = 1;
-}

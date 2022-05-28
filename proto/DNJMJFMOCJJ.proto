@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message DNJMJFMOCJJ {
-	uint32 skill_depot_id = 1;
-	repeated uint32 skill_id_list = 2;
-}

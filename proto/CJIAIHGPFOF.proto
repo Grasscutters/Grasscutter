@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-import "OJJNGIHDJEH.proto";
-
-message CJIAIHGPFOF {
-	repeated OJJNGIHDJEH record_list = 1;
-}

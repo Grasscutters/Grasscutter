@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-import "BEGHDPPNMFM.proto";
-
-message GOGBPDNIAJC {
-	repeated BEGHDPPNMFM record_list = 1;
-}

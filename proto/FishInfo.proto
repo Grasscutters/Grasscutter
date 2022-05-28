@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message FishInfo {
-	uint32 into_bag_count = 1;
-	uint32 free_count = 2;
-}

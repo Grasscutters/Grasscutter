@@ -2,11 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "CDPBNKLFNKP.proto";
+//import "CDPBNKLFNKP.proto";
 import "ChannellerSlabLoopDungeonResultInfo.proto";
 import "EffigyChallengeDungeonResultInfo.proto";
-import "FHOKHHBGPEG.proto";
-import "IDFFMJEDODN.proto";
+//import "FHOKHHBGPEG.proto";
+//import "IDFFMJEDODN.proto";
 import "StrengthenPointData.proto";
 
 // CmdId: 986
@@ -19,12 +19,12 @@ message DungeonChallengeFinishNotify {
 	uint32 challenge_record_type = 10;
 	uint32 current_value = 12;
 	map<uint32, StrengthenPointData> strengthen_point_data_map = 13;
-	FHOKHHBGPEG NJDMJAFIJNH = 15;
+	//FHOKHHBGPEG NJDMJAFIJNH = 15;
 	uint32 time_cost = 6;
 	oneof detail {
 		ChannellerSlabLoopDungeonResultInfo channeller_slab_loop_dungeon_result_info = 1758;
 		EffigyChallengeDungeonResultInfo effigy_challenge_dungeon_result_info = 913;
-		CDPBNKLFNKP potion_dungeon_result_info = 382;
-		IDFFMJEDODN custom_dungeon_result_info = 1411;
+		//CDPBNKLFNKP potion_dungeon_result_info = 382;
+		//IDFFMJEDODN custom_dungeon_result_info = 1411;
 	}
 }

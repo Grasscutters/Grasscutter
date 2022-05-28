@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-enum OPEBMJPOOBL {
-	OPEBMJPOOBL_NONE = 0;
-	OPEBMJPOOBL_HONBFAOIDKK = 1;
-}

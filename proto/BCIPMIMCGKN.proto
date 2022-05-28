@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-import "ONCHFHBBCBN.proto";
-
-message BCIPMIMCGKN {
-	repeated ONCHFHBBCBN record_list = 1;
-}

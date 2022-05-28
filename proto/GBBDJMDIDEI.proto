@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message GBBDJMDIDEI {
-	uint32 main_prop_id = 1;
-	uint32 DPDNCNOBMBM = 2;
-}

@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message FNOJGHKBDON {
-	uint32 NNAPPGMMEKC = 1;
-	uint32 skill_id = 2;
-}
