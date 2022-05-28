@@ -48,18 +48,14 @@ public class HandlerHitTreeNotify extends PacketHandler {
                     record.time = currentTime;
                 }else{
                     if(record.times>=3){// too many wood they have deforested, no more wood dropped!
-                        //System.out.println("too many wood they have deforested, no more wood dropped!");
                         return;
                     }else{
-                        //System.out.println("adding times");
                         record.times++;
                     }
                 }
             }else{
                 currentRecord.put(positionHash,new HitTreeRecord());
             }
-            //System.out.println("positionHash = " + positionHash);
-            //System.out.println("should give = " + itemId);
             EntityItem entity = new EntityItem(scene,
                     null,
                     GameData.getItemDataMap().get(itemId),
@@ -68,8 +64,6 @@ public class HandlerHitTreeNotify extends PacketHandler {
                     false);
             scene.addEntity(entity);
         }
-        /*else{
-            System.out.println("unknown wood = " + woodType);
-        }*/
+        // unknown wood type
     }
 }
