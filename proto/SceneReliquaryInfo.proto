@@ -2,7 +2,6 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
 message SceneReliquaryInfo {
 	uint32 item_id = 1;
 	uint64 guid = 2;

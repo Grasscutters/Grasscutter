@@ -37,10 +37,10 @@ public class PacketMailChangeNotify extends BasePacket {
 
                 for (Mail.MailItem item : message.itemList) {
                     MailItemOuterClass.MailItem.Builder mailItem = MailItemOuterClass.MailItem.newBuilder();
-                    ItemParamOuterClass.ItemParam.Builder itemParam = ItemParamOuterClass.ItemParam.newBuilder();
+                    EquipParamOuterClass.EquipParam.Builder itemParam = EquipParamOuterClass.EquipParam.newBuilder();
                     itemParam.setItemId(item.itemId);
-                    itemParam.setCount(item.itemCount);
-                    mailItem.setItemParam(itemParam.build());
+                    itemParam.setItemNum(item.itemCount);
+                    mailItem.setEquipParam(itemParam.build());
 
                     mailItems.add(mailItem.build());
                 }
@@ -54,7 +54,7 @@ public class PacketMailChangeNotify extends BasePacket {
                 mailData.setImportance(message.importance);
                 mailData.setIsRead(message.isRead);
                 mailData.setIsAttachmentGot(message.isAttachmentGot);
-                mailData.setStateValue(message.stateValue);
+                mailData.setBHCAHLJIKFFValue(message.stateValue);
 
                 proto.addMailList(mailData.build());
             }

@@ -2,11 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+import "AbilityControlBlock.proto";
+import "AbilitySyncStateInfo.proto";
 import "AvatarInfo.proto";
 import "SceneAvatarInfo.proto";
-import "AbilitySyncStateInfo.proto";
 import "SceneEntityInfo.proto";
-import "AbilityControlBlock.proto";
 import "ServerBuff.proto";
 
 message SceneTeamAvatar {

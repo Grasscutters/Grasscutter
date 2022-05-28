@@ -4,14 +4,9 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "AvatarTeamResonanceInfo.proto";
 
+// CmdId: 1045
+// EnetChannelId: 0
+// EnetIsReliable: true
 message TeamResonanceChangeNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 1014;
-	}
-
-	repeated AvatarTeamResonanceInfo info_list = 1;
+	repeated AvatarTeamResonanceInfo info_list = 15;
 }

@@ -3,5 +3,5 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 enum MapMarkTipsType {
-	MARK_TIPS_DUNGEON_ELEMENT_TRIAL = 0;
+	MAP_MARK_TIPS_TYPE_DUNGEON_ELEMENT_TRIAL = 0;
 }

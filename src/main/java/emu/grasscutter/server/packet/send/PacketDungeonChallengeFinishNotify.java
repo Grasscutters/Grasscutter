@@ -13,7 +13,7 @@ public class PacketDungeonChallengeFinishNotify extends BasePacket {
 		DungeonChallengeFinishNotify proto = DungeonChallengeFinishNotify.newBuilder()
 				.setChallengeIndex(challenge.getChallengeIndex())
 				.setIsSuccess(challenge.isSuccess())
-				.setUnk1(2)
+				.setChallengeRecordType(2)
 				.build();
 		
 		this.setData(proto);

@@ -2,7 +2,6 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
 message ActivityWatcherInfo {
 	uint32 watcher_id = 1;
 	uint32 cur_progress = 2;

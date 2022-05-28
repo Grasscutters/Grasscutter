@@ -27,7 +27,7 @@ public class MultiplayerManager {
 	public void applyEnterMp(Player player, int targetUid) {
 		Player target = getServer().getPlayerByUid(targetUid);
 		if (target == null) {
-			player.sendPacket(new PacketPlayerApplyEnterMpResultNotify(targetUid, "", false, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.PLAYER_CANNOT_ENTER_MP));
+			player.sendPacket(new PacketPlayerApplyEnterMpResultNotify(targetUid, "", false, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.REASON_PLAYER_CANNOT_ENTER_MP));
 			return;
 		}
 		
@@ -72,12 +72,12 @@ public class MultiplayerManager {
 		
 		// Sanity checks - Dont let the requesting player join if they are already in multiplayer
 		if (requester.getWorld().isMultiplayer()) {
-			request.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(hostPlayer, false, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.PLAYER_CANNOT_ENTER_MP));
+			request.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(hostPlayer, false, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.REASON_PLAYER_CANNOT_ENTER_MP));
 			return;
 		}
 		
 		// Response packet
-		request.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(hostPlayer, isAgreed, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.PLAYER_JUDGE));
+		request.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(hostPlayer, isAgreed, PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.REASON_PLAYER_JUDGE));
 		
 		// Declined
 		if (!isAgreed) {
@@ -93,7 +93,7 @@ public class MultiplayerManager {
 			world.addPlayer(hostPlayer);
 			
 			// Rejoin packet
-			hostPlayer.sendPacket(new PacketPlayerEnterSceneNotify(hostPlayer, hostPlayer, EnterType.ENTER_SELF, EnterReason.HostFromSingleToMp, hostPlayer.getScene().getId(), hostPlayer.getPos()));
+			hostPlayer.sendPacket(new PacketPlayerEnterSceneNotify(hostPlayer, hostPlayer, EnterType.ENTER_TYPE_SELF, EnterReason.HostFromSingleToMp, hostPlayer.getScene().getId(), hostPlayer.getPos()));
 		}
 		
 		// Set scene pos and id of requester to the host player's
@@ -105,7 +105,7 @@ public class MultiplayerManager {
 		hostPlayer.getWorld().addPlayer(requester);
 
 		// Packet
-		requester.sendPacket(new PacketPlayerEnterSceneNotify(requester, hostPlayer, EnterType.ENTER_OTHER, EnterReason.TeamJoin, hostPlayer.getScene().getId(), hostPlayer.getPos()));
+		requester.sendPacket(new PacketPlayerEnterSceneNotify(requester, hostPlayer, EnterType.ENTER_TYPE_OTHER, EnterReason.TeamJoin, hostPlayer.getScene().getId(), hostPlayer.getPos()));
 	}
 	
 	public boolean leaveCoop(Player player) {
@@ -126,7 +126,7 @@ public class MultiplayerManager {
 		world.addPlayer(player);
 	
 		// Packet
-		player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.ENTER_SELF, EnterReason.TeamBack, player.getScene().getId(), player.getPos()));
+		player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterType.ENTER_TYPE_SELF, EnterReason.TeamBack, player.getScene().getId(), player.getPos()));
 		
 		return true;
 	}
@@ -153,7 +153,7 @@ public class MultiplayerManager {
 		World world = new World(victim);
 		world.addPlayer(victim);
 		
-		victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.ENTER_SELF, EnterReason.TeamKick, victim.getScene().getId(), victim.getPos()));
+		victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.ENTER_TYPE_SELF, EnterReason.TeamKick, victim.getScene().getId(), victim.getPos()));
 		return true;
 	}
 }

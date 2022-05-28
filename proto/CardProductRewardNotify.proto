@@ -2,16 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 4104
+// EnetChannelId: 0
+// EnetIsReliable: true
 message CardProductRewardNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 4105;
-	}
-
-	string product_id = 1;
-	uint32 hcoin = 2;
-	uint32 remain_days = 3;
+	string product_id = 6;
+	uint32 hcoin = 11;
+	uint32 remain_days = 5;
 }

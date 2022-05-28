@@ -13,7 +13,7 @@ public class PacketStoreWeightLimitNotify extends BasePacket {
 		super(PacketOpcodes.StoreWeightLimitNotify);
 
 		StoreWeightLimitNotify p = StoreWeightLimitNotify.newBuilder()
-				.setStoreType(StoreType.STORE_PACK)
+				.setStoreType(StoreType.STORE_TYPE_PACK)
 				.setWeightLimit(INVENTORY_LIMITS.all)
 				.setWeaponCountLimit(INVENTORY_LIMITS.weapons)
 				.setReliquaryCountLimit(INVENTORY_LIMITS.relics)

@@ -9,4 +9,5 @@ message SceneFishInfo {
 	uint32 fish_pool_entity_id = 2;
 	Vector fish_pool_pos = 3;
 	uint32 fish_pool_gadget_id = 4;
+	uint32 LPNFLHKPHEC = 5;
 }

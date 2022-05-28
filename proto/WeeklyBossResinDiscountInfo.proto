@@ -2,7 +2,6 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
 message WeeklyBossResinDiscountInfo {
 	uint32 discount_num = 1;
 	uint32 discount_num_limit = 2;

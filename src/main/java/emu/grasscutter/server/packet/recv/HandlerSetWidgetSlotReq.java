@@ -21,7 +21,7 @@ public class HandlerSetWidgetSlotReq extends PacketHandler {
         player.setWidgetId(req.getMaterialId());
 
         // WidgetSlotChangeNotify op & slot key
-        session.send(new PacketWidgetSlotChangeNotify(WidgetSlotOpOuterClass.WidgetSlotOp.DETACH));
+        session.send(new PacketWidgetSlotChangeNotify(WidgetSlotOpOuterClass.WidgetSlotOp.WIDGET_SLOT_OP_DETACH));
         // WidgetSlotChangeNotify slot
         session.send(new PacketWidgetSlotChangeNotify(req.getMaterialId()));
 

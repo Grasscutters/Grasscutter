@@ -4,18 +4,13 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "Vector.proto";
 
+// CmdId: 1662
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message ChangeAvatarReq {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 1669;
-	}
-
-	uint64 guid = 1;
-	uint32 skill_id = 2;
-	bool is_move = 3;
-	Vector move_pos = 4;
+	uint64 guid = 5;
+	uint32 skill_id = 11;
+	bool is_move = 7;
+	Vector move_pos = 9;
 }

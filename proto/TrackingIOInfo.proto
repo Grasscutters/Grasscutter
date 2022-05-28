@@ -2,7 +2,6 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
 message TrackingIOInfo {
 	string appid = 1;
 	string deviceid = 2;

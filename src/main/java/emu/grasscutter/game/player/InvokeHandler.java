@@ -21,9 +21,9 @@ public class InvokeHandler<T> {
 
 	public synchronized void addEntry(ForwardType forward, T entry) {
 		switch (forward) {
-			case FORWARD_TO_ALL -> entryListForwardAll.add(entry);
-			case FORWARD_TO_ALL_EXCEPT_CUR, FORWARD_TO_ALL_EXIST_EXCEPT_CUR -> entryListForwardAllExceptCur.add(entry);
-			case FORWARD_TO_HOST -> entryListForwardHost.add(entry);
+			case FORWARD_TYPE_TO_ALL -> entryListForwardAll.add(entry);
+			case FORWARD_TYPE_TO_ALL_EXCEPT_CUR, FORWARD_TYPE_TO_ALL_EXIST_EXCEPT_CUR -> entryListForwardAllExceptCur.add(entry);
+			case FORWARD_TYPE_TO_HOST -> entryListForwardHost.add(entry);
 			default -> {
 			}
 		}

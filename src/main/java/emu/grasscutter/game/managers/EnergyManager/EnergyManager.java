@@ -253,7 +253,7 @@ public class EnergyManager {
 			float elementBonus = (ballElement == null) ? 2.0f : (avatarElement == ballElement) ? 3.0f : 1.0f;
 
 			// Add the energy.
-			entity.addEnergy(baseEnergy * elementBonus * offFieldPenalty * elemBall.getCount(), PropChangeReason.PROP_CHANGE_ENERGY_BALL);
+			entity.addEnergy(baseEnergy * elementBonus * offFieldPenalty * elemBall.getCount(), PropChangeReason.PROP_CHANGE_REASON_ENERGY_BALL);
 		}
 	}
 
@@ -268,7 +268,7 @@ public class EnergyManager {
 
 		// If the cast skill was a burst, consume energy.
 		if (avatar.getSkillDepot() != null && skillId == avatar.getSkillDepot().getEnergySkill()) {
-			avatar.getAsEntity().clearEnergy(PropChangeReason.PROP_CHANGE_ABILITY);
+			avatar.getAsEntity().clearEnergy(PropChangeReason.PROP_CHANGE_REASON_ABILITY);
 		}
 	}
 

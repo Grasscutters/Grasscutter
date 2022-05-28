@@ -1,19 +1,15 @@
 syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
+
 import "AvatarExpeditionInfo.proto";
 
+// CmdId: 1636
+// EnetChannelId: 0
+// EnetIsReliable: true
 message AvatarExpeditionAllDataRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    CMD_ID = 1783;
-  }
-
-  int32 retcode = 1;
-  map<uint64, AvatarExpeditionInfo> expedition_info_map = 2;
-  repeated uint32 open_expedition_list = 3;
-  uint32 expedition_count_limit = 4;
+	int32 retcode = 11;
+	map<uint64, AvatarExpeditionInfo> expedition_info_map = 1;
+	repeated uint32 open_expedition_list = 6;
+	uint32 expedition_count_limit = 7;
 }

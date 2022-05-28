@@ -4,7 +4,10 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "AvatarSkillInfo.proto";
 
+// CmdId: 1035
+// EnetChannelId: 0
+// EnetIsReliable: true
 message AvatarSkillInfoNotify {
-	uint64 guid = 1;
+	uint64 guid = 4;
 	map<uint32, AvatarSkillInfo> skill_map = 2;
 }

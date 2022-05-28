@@ -3,8 +3,8 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 import "Birthday.proto";
-import "FriendOnlineState.proto";
 import "FriendEnterHomeOption.proto";
+import "FriendOnlineState.proto";
 import "ProfilePicture.proto";
 import "SocialShowAvatarInfo.proto";
 

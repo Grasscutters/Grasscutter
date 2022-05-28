@@ -3,7 +3,7 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 enum MapMarkFromType {
-	NOE = 0;
-	MONSTER = 1;
-	QUEST = 2;
+	MAP_MARK_FROM_TYPE_NOE = 0;
+	MAP_MARK_FROM_TYPE_MONSTER = 1;
+	MAP_MARK_FROM_TYPE_QUEST = 2;
 }

@@ -2,15 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 4003
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message GetFriendShowAvatarInfoReq {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 4007;
-	}
-
-	uint32 uid = 1;
+	uint32 uid = 9;
 }

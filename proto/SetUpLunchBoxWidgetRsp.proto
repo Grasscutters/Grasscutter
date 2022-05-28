@@ -4,15 +4,10 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "LunchBoxData.proto";
 
+// CmdId: 4266
+// EnetChannelId: 0
+// EnetIsReliable: true
 message SetUpLunchBoxWidgetRsp {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 4297;
-	}
-
-	int32 retcode = 1;
-	LunchBoxData lunch_box_data = 2;
+	int32 retcode = 9;
+	LunchBoxData lunch_box_data = 3;
 }

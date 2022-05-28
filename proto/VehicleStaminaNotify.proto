@@ -2,7 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 811
+// EnetChannelId: 0
+// EnetIsReliable: true
 message VehicleStaminaNotify {
-	uint32 entity_id = 1;
-	float cur_stamina = 2;
+	uint32 entity_id = 8;
+	float cur_stamina = 4;
 }

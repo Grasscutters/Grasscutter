@@ -554,7 +554,7 @@ public class TeamManager {
 		this.setCurrentCharacterIndex(index);
 		
 		// Old entity motion state
-		oldEntity.setMotionState(MotionState.MOTION_STANDBY);
+		oldEntity.setMotionState(MotionState.MOTION_STATE_STANDBY);
 
 		// Remove and Add
 		getPlayer().getScene().replaceEntity(oldEntity, newEntity);
@@ -571,7 +571,7 @@ public class TeamManager {
 		PlayerDieType dieType = deadAvatar.getKilledType();
 		int killedBy = deadAvatar.getKilledBy();
 
-		if (dieType == PlayerDieType.PLAYER_DIE_DRAWN) {
+		if (dieType == PlayerDieType.PLAYER_DIE_TYPE_DRAWN) {
 			// Died in water. Do not replace
 			// The official server has skipped this notify and will just respawn the team immediately after the animation.
 			// TODO: Perhaps find a way to get vanilla experience?
@@ -669,7 +669,7 @@ public class TeamManager {
 		}
 		
 		// Teleport player
-		getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(getPlayer(), EnterType.ENTER_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
+		getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
 		
 		// Set player position
 		player.setSceneId(3);
