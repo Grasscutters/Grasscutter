@@ -168,7 +168,7 @@
       "description": "Gives the player a specified character"
     },
     "give": {
-      "usage": "Usage: give <player> <itemID|itemName> [amount] [level]",
+      "usage": "Usage: give <player> <itemID|itemName> [amount] [level] [refinement]",
       "refinement_only_applicable_weapons": "Refinement is only applicable to weapons.",
       "refinement_must_between_1_and_5": "Refinement must be between 1 and 5.",
       "given": "Given %s of %s to %s.",

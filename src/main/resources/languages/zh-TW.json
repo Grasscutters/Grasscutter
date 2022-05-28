@@ -167,7 +167,7 @@
       "description": "給予指定角色。"
     },
     "give": {
-      "usage": "用法：give <player> <itemId|itemName> [amount] [level]",
+      "usage": "用法：give <player> <itemId|itemName> [amount] [level] [refinement]",
       "refinement_only_applicable_weapons": "精煉度只能施加在武器上面。",
       "refinement_must_between_1_and_5": "精煉度必需在 1 到 5 之間。",
       "given": "已經將 %s 個 %s 給予 %s。",
