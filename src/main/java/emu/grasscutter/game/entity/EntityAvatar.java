@@ -106,15 +106,15 @@ public class EntityAvatar extends GameEntity {
 
 	@Override
 	public void onDeath(int killerId) {
-		this.killedType = PlayerDieType.PLAYER_DIE_KILL_BY_MONSTER;
+		this.killedType = PlayerDieType.PLAYER_DIE_TYPE_KILL_BY_MONSTER;
 		this.killedBy = killerId;
-		clearEnergy(PropChangeReason.PROP_CHANGE_STATUE_RECOVER);
+		clearEnergy(PropChangeReason.PROP_CHANGE_REASON_STATUE_RECOVER);
 	}
 
 	public void onDeath(PlayerDieType dieType, int killerId) {
 		this.killedType = dieType;
 		this.killedBy = killerId;
-		clearEnergy(PropChangeReason.PROP_CHANGE_STATUE_RECOVER);
+		clearEnergy(PropChangeReason.PROP_CHANGE_REASON_STATUE_RECOVER);
 	}
 	
 	@Override
@@ -123,7 +123,7 @@ public class EntityAvatar extends GameEntity {
 		
 		if (healed > 0f) {
 			getScene().broadcastPacket(
-				new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP, healed, PropChangeReason.PROP_CHANGE_ABILITY, ChangeHpReason.ChangeHpAddAbility)
+				new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP, healed, PropChangeReason.PROP_CHANGE_REASON_ABILITY, ChangeHpReason.CHANGE_HP_REASON_CHANGE_HP_ADD_ABILITY)
 			);
 		}
 		
@@ -209,7 +209,7 @@ public class EntityAvatar extends GameEntity {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.PROT_ENTITY_AVATAR)
+				.setEntityType(ProtEntityType.PROT_ENTITY_TYPE_AVATAR)
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())
 				.setEntityAuthorityInfo(authority)

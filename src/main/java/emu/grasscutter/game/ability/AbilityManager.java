@@ -43,19 +43,19 @@ public class AbilityManager {
 	public void onAbilityInvoke(AbilityInvokeEntry invoke) throws Exception {
 		// Grasscutter.getLogger().info(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + Utils.bytesToHex(invoke.toByteArray()));
 		switch (invoke.getArgumentType()) {
-			case ABILITY_META_OVERRIDE_PARAM:
+			case ABILITY_INVOKE_ARGUMENT_META_OVERRIDE_PARAM:
 				handleOverrideParam(invoke);
 				break;
-			case ABILITY_META_REINIT_OVERRIDEMAP:
+			case ABILITY_INVOKE_ARGUMENT_META_REINIT_OVERRIDEMAP:
 				handleReinitOverrideMap(invoke);
 				break;
-			case ABILITY_META_MODIFIER_CHANGE:
+			case ABILITY_INVOKE_ARGUMENT_META_MODIFIER_CHANGE:
 				handleModifierChange(invoke);
 				break;
-			case ABILITY_MIXIN_COST_STAMINA:
+			case ABILITY_INVOKE_ARGUMENT_MIXIN_COST_STAMINA:
 				handleMixinCostStamina(invoke);
 				break;
-			case ABILITY_ACTION_GENERATE_ELEM_BALL:
+			case ABILITY_INVOKE_ARGUMENT_ACTION_GENERATE_ELEM_BALL:
 				handleGenerateElemBall(invoke);
 				break;
 			default:

@@ -5,6 +5,7 @@ import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.EquipParamOuterClass;
 import emu.grasscutter.net.proto.GetAllMailRspOuterClass.GetAllMailRsp;
 import emu.grasscutter.net.proto.ItemParamOuterClass;
 import emu.grasscutter.net.proto.MailDataOuterClass;
@@ -23,9 +24,9 @@ public class PacketGetAllMailRsp extends BasePacket {
         GetAllMailRsp.Builder proto = GetAllMailRsp.newBuilder();
 
         if (isGiftMail) {
-            proto.setIsGiftMail(true);
+            proto.setANKKGPJCINB(true);
         } else {
-            proto.setIsGiftMail(false);
+            proto.setANKKGPJCINB(false);
 
             if (player.getAllMail().size() != 0) { // Make sure the player has mail
                 List<MailData> mailDataList = new ArrayList<MailData>();
@@ -43,10 +44,10 @@ public class PacketGetAllMailRsp extends BasePacket {
 
                                 for (Mail.MailItem item : message.itemList) {
                                     MailItemOuterClass.MailItem.Builder mailItem = MailItemOuterClass.MailItem.newBuilder();
-                                    ItemParamOuterClass.ItemParam.Builder itemParam = ItemParamOuterClass.ItemParam.newBuilder();
+                                    EquipParamOuterClass.EquipParam.Builder itemParam = EquipParamOuterClass.EquipParam.newBuilder();
                                     itemParam.setItemId(item.itemId);
-                                    itemParam.setCount(item.itemCount);
-                                    mailItem.setItemParam(itemParam.build());
+                                    itemParam.setItemNum(item.itemCount);
+                                    mailItem.setEquipParam(itemParam.build());
 
                                     mailItems.add(mailItem.build());
                                 }
@@ -60,7 +61,7 @@ public class PacketGetAllMailRsp extends BasePacket {
                                 mailData.setImportance(message.importance);
                                 mailData.setIsRead(message.isRead);
                                 mailData.setIsAttachmentGot(message.isAttachmentGot);
-                                mailData.setStateValue(1);
+                                mailData.setBHCAHLJIKFFValue(1);
 
                                 mailDataList.add(mailData.build());
                             }

@@ -37,7 +37,7 @@ public abstract class GameEntity {
 	
 	public GameEntity(Scene scene) {
 		this.scene = scene;
-		this.moveState = MotionState.MOTION_NONE;
+		this.moveState = MotionState.MOTION_STATE_NONE;
 	}
 	
 	public int getId() {

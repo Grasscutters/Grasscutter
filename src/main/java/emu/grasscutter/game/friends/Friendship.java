@@ -95,13 +95,13 @@ public class Friendship {
 				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(getFriendProfile().getAvatarId()))
 				.setWorldLevel(getFriendProfile().getWorldLevel())
 				.setSignature(getFriendProfile().getSignature())
-				.setOnlineState(getFriendProfile().isOnline() ? FriendOnlineState.FRIEND_ONLINE : FriendOnlineState.FREIEND_DISCONNECT)
+				.setOnlineState(getFriendProfile().isOnline() ? FriendOnlineState.FRIEND_ONLINE_STATE_ONLINE : FriendOnlineState.FRIEND_ONLINE_STATE_FREIEND_DISCONNECT)
 				.setIsMpModeAvailable(true)
 				.setLastActiveTime(getFriendProfile().getLastActiveTime())
 				.setNameCardId(getFriendProfile().getNameCard())
 				.setParam(getFriendProfile().getDaysSinceLogin())
 				.setIsGameSource(true)
-				.setPlatformType(PlatformTypeOuterClass.PlatformType.PC)
+				.setPlatformType(PlatformTypeOuterClass.PlatformType.PLATFORM_TYPE_PC)
 				.build();
 
 		return proto;

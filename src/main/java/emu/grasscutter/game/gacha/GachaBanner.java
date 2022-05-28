@@ -167,7 +167,7 @@ public class GachaBanner {
 	            .setGachaTimesLimit(Integer.MAX_VALUE)
 	            .setGachaSortId(this.getSortId());
 		if (this.getTitlePath() != null) {
-			info.setGachaTitlePath(this.getTitlePath());
+			info.setTitleTextmap(this.getTitlePath());
 		}
 		
 		if (this.getRateUpItems5().length > 0) {
@@ -175,7 +175,7 @@ public class GachaBanner {
 			
 			for (int id : getRateUpItems5()) {
 				upInfo.addItemIdList(id);
-				info.addMainNameId(id);
+				info.addDisplayUp5ItemList(id);
 			}
 			
 			info.addGachaUpInfoList(upInfo);
@@ -186,8 +186,8 @@ public class GachaBanner {
 			
 			for (int id : getRateUpItems4()) {
 				upInfo.addItemIdList(id);
-				if (info.getSubNameIdCount() == 0) {
-					info.addSubNameId(id);
+				if (info.getDisplayUp4ItemListCount() == 0) {
+					info.addDisplayUp4ItemList(id);
 				}
 			}
 			

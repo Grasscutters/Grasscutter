@@ -83,7 +83,7 @@ public final class PlayerHook {
     public void teleport(Position position) {
         this.player.getPos().set(position);
         this.player.sendPacket(new PacketPlayerEnterSceneNotify(this.player, 
-                EnterType.ENTER_JUMP, EnterReason.TransPoint,
+                EnterType.ENTER_TYPE_JUMP, EnterReason.TransPoint,
                 this.player.getSceneId(), position
         ));
     }

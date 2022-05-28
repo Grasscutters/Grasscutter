@@ -193,7 +193,7 @@ public class World implements Iterable<Player> {
 				World world = new World(victim);
 				world.addPlayer(victim);
 				
-				victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.ENTER_SELF, EnterReason.TeamKick, victim.getSceneId(), victim.getPos()));
+				victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.ENTER_TYPE_SELF, EnterReason.TeamKick, victim.getSceneId(), victim.getPos()));
 			}
 		}
 	}
@@ -260,17 +260,17 @@ public class World implements Iterable<Player> {
 		}
 
 		// Get enter types
-		EnterType enterType = EnterType.ENTER_JUMP;
+		EnterType enterType = EnterType.ENTER_TYPE_JUMP;
 		EnterReason enterReason = EnterReason.TransPoint;
 		
 		if (dungeonData != null) {
-			enterType = EnterType.ENTER_DUNGEON;
+			enterType = EnterType.ENTER_TYPE_DUNGEON;
 			enterReason = EnterReason.DungeonEnter;
 		} else if (oldScene == newScene) {
-			enterType = EnterType.ENTER_GOTO;
+			enterType = EnterType.ENTER_TYPE_GOTO;
 		} else if (newScene.getSceneType() == SceneType.SCENE_HOME_WORLD) {
 			// Home
-			enterType = EnterType.ENTER_SELF_HOME; 
+			enterType = EnterType.ENTER_TYPE_SELF_HOME;
 		}
 		
 		// Teleport packet
