@@ -3,16 +3,16 @@ package emu.grasscutter.data.common;
 import emu.grasscutter.game.props.FightProperty;
 
 public class FightPropData {
-	private String PropType;
+	private String propType;
 	private FightProperty prop;
-    private float Value;
+    private float value;
     
 	public String getPropType() {
-		return PropType;
+		return propType;
 	}
 	
 	public float getValue() {
-		return Value;
+		return value;
 	}
 
 	public FightProperty getProp() {
@@ -20,6 +20,6 @@ public class FightPropData {
 	}
 
 	public void onLoad() {
-		this.prop = FightProperty.getPropByName(PropType);
+		this.prop = FightProperty.getPropByName(propType);
 	}
 }

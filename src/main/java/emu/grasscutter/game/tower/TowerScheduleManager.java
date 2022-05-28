@@ -3,7 +3,7 @@ package emu.grasscutter.game.tower;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.TowerScheduleData;
+import emu.grasscutter.data.excels.TowerScheduleData;
 import emu.grasscutter.server.game.GameServer;
 
 import java.io.FileReader;

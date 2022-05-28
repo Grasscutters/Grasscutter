@@ -1,7 +1,7 @@
 package emu.grasscutter.game.shop;
 
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.def.ShopGoodsData;
+import emu.grasscutter.data.excels.ShopGoodsData;
 
 import java.util.ArrayList;
 import java.util.List;

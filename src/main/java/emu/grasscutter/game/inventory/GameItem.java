@@ -15,9 +15,9 @@ import dev.morphia.annotations.Transient;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
-import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.data.def.ReliquaryAffixData;
-import emu.grasscutter.data.def.ReliquaryMainPropData;
+import emu.grasscutter.data.excels.ItemData;
+import emu.grasscutter.data.excels.ReliquaryAffixData;
+import emu.grasscutter.data.excels.ReliquaryMainPropData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;

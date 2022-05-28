@@ -7,10 +7,10 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import emu.grasscutter.Grasscutter;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierAction;
-import emu.grasscutter.data.def.AvatarSkillDepotData;
-import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.data.custom.AbilityModifierEntry;
+import emu.grasscutter.data.binout.AbilityModifierEntry;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
+import emu.grasscutter.data.excels.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;

@@ -19,12 +19,12 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
-import emu.grasscutter.data.custom.MainQuestData;
-import emu.grasscutter.data.def.AvatarData;
-import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.data.def.QuestData;
-import emu.grasscutter.data.def.SceneData;
+import emu.grasscutter.data.binout.MainQuestData;
+import emu.grasscutter.data.excels.AvatarData;
+import emu.grasscutter.data.excels.ItemData;
+import emu.grasscutter.data.excels.MonsterData;
+import emu.grasscutter.data.excels.QuestData;
+import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.utils.Utils;
 
 import static emu.grasscutter.utils.Language.translate;

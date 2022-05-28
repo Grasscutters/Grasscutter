@@ -2,7 +2,7 @@ package emu.grasscutter.data.common;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.DailyDungeonData;
+import emu.grasscutter.data.excels.DailyDungeonData;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;

@@ -1,17 +1,17 @@
 package emu.grasscutter.data.common;
 
 public class CurveInfo {
-	private String Type;
-    private String Arith;
-    private float Value;
+	private String type;
+    private String arith;
+    private float value;
     
 	public String getType() {
-		return Type;
+		return type;
 	}
 	public String getArith() {
-		return Arith;
+		return arith;
 	}
 	public float getValue() {
-		return Value;
+		return value;
 	}
 }
