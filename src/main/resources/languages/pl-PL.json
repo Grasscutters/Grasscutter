@@ -146,7 +146,7 @@
       "success": "Dano %s dla %s."
     },
     "giveChar": {
-      "usage": "Użycie: givechar <gracz> <id przedmiotu | nazwa przedmiotu> [ilość]",
+      "usage": "Użycie: givechar <gracz> <avatarId> [ilość]",
       "given": "Dano %s z poziomem %s dla %s.",
       "invalid_avatar_id": "Błędne ID postaci.",
       "invalid_avatar_level": "Błędny poziom postaci.",
