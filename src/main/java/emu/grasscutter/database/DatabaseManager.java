@@ -20,23 +20,23 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
-import emu.grasscutter.game.quest.GameQuest;
+
 
 import static emu.grasscutter.Configuration.*;
 
 public final class DatabaseManager {
 	private static Datastore gameDatastore;
 	private static Datastore dispatchDatastore;
-	
+
 	private static final Class<?>[] mappedClasses = new Class<?>[] {
-		DatabaseCounter.class, Account.class, Player.class, Avatar.class, GameItem.class, Friendship.class, 
+		DatabaseCounter.class, Account.class, Player.class, Avatar.class, GameItem.class, Friendship.class,
 		GachaRecord.class, Mail.class, GameMainQuest.class
 	};
-    
+
     public static Datastore getGameDatastore() {
     	return gameDatastore;
     }
-    
+
     public static MongoDatabase getGameDatabase() {
     	return getGameDatastore().getDatabase();
     }
@@ -50,11 +50,11 @@ public final class DatabaseManager {
 			return gameDatastore;
 		}
 	}
-	
+
 	public static void initialize() {
 		// Initialize
 		MongoClient gameMongoClient = MongoClients.create(DATABASE.game.connectionUri);
-		
+
 		// Set mapper options.
 		MapperOptions mapperOptions = MapperOptions.builder()
 				.storeEmpties(true).storeNulls(false).build();
@@ -62,7 +62,7 @@ public final class DatabaseManager {
 		gameDatastore = Morphia.createDatastore(gameMongoClient, DATABASE.game.collection, mapperOptions);
 		// Map classes.
 		gameDatastore.getMapper().map(mappedClasses);
-		
+
 		// Ensure indexes
 		try {
 			gameDatastore.ensureIndexes();

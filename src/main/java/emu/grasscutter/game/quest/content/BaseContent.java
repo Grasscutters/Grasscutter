@@ -1,5 +1,6 @@
 package emu.grasscutter.game.quest.content;
 
+import emu.grasscutter.data.def.QuestData;
 import emu.grasscutter.data.def.QuestData.QuestCondition;
 import emu.grasscutter.game.quest.QuestValue;
 import emu.grasscutter.game.quest.GameQuest;
@@ -14,5 +15,15 @@ public class BaseContent extends QuestBaseHandler {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
+
+	@Override
+	public boolean execute(GameQuest quest, QuestCondition condition, String... params) {
+		return false;
+	}
+
+	@Override
+	public boolean execute(GameQuest quest, QuestData.QuestExec condition, String... params) {
+		return false;
+	}
+
 }

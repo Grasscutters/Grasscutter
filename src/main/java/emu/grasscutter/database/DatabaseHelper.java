@@ -16,6 +16,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
+import emu.grasscutter.scripts.data.SuiteIndex;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -114,6 +115,8 @@ public final class DatabaseHelper {
 		DatabaseManager.getGameDatabase().getCollection("items").deleteMany(eq("ownerId", target.getPlayerUid()));
 		// Delete GameMainQuest.class data
 		DatabaseManager.getGameDatabase().getCollection("quests").deleteMany(eq("ownerUid", target.getPlayerUid()));
+		// Delete SuiteIndex.class data
+		DatabaseManager.getGameDatabase().getCollection("suites").deleteMany(eq("ownerUid", target.getPlayerUid()));
 
 		// Delete friendships.
 		// Here, we need to make sure to not only delete the deleted account's friendships,
@@ -196,7 +199,7 @@ public final class DatabaseHelper {
 	public static List<GameItem> getInventoryItems(Player player) {
 		return DatabaseManager.getGameDatastore().find(GameItem.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
-	
+
 	public static List<Friendship> getFriends(Player player) {
 		return DatabaseManager.getGameDatastore().find(Friendship.class).filter(Filters.eq("ownerId", player.getUid())).stream().toList();
 	}
@@ -250,29 +253,39 @@ public final class DatabaseHelper {
 	public static void saveGachaRecord(GachaRecord gachaRecord){
 		DatabaseManager.getGameDatastore().save(gachaRecord);
 	}
-	
+
 	public static List<Mail> getAllMail(Player player) {
 		return DatabaseManager.getGameDatastore().find(Mail.class).filter(Filters.eq("ownerUid", player.getUid())).stream().toList();
 	}
-	
+
 	public static void saveMail(Mail mail) {
 		DatabaseManager.getGameDatastore().save(mail);
 	}
-	
+
 	public static boolean deleteMail(Mail mail) {
 		DeleteResult result = DatabaseManager.getGameDatastore().delete(mail);
 		return result.wasAcknowledged();
 	}
-	
+
 	public static List<GameMainQuest> getAllQuests(Player player) {
 		return DatabaseManager.getGameDatastore().find(GameMainQuest.class).filter(Filters.eq("ownerUid", player.getUid())).stream().toList();
 	}
-	
+
 	public static void saveQuest(GameMainQuest quest) {
 		DatabaseManager.getGameDatastore().save(quest);
 	}
-	
+
 	public static boolean deleteQuest(GameMainQuest quest) {
 		return DatabaseManager.getGameDatastore().delete(quest).wasAcknowledged();
 	}
+	public static void saveSuiteIndex(SuiteIndex suiteIndex){
+		DatabaseManager.getGameDatastore().save(suiteIndex);
+	}
+	public static SuiteIndex getSuiteIndex(SuiteIndex suiteIndex){
+		return DatabaseManager.getGameDatastore().find(SuiteIndex.class).
+				filter(Filters.eq("ownerUid",suiteIndex.getOwnerUid())).
+				filter(Filters.eq("groupId",suiteIndex.getGroupId())).
+				filter(Filters.eq("sceneId",suiteIndex.getSceneId())).first();
+	}
 }
+
