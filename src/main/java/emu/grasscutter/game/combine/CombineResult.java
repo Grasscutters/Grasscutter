@@ -1,44 +1,45 @@
 package emu.grasscutter.game.combine;
 
-import emu.grasscutter.data.def.CombineData;
-
 import java.util.List;
 
-public class CombineResult {
-    private List<CombineData.CombineItemPair> material;
-    private List<CombineData.CombineItemPair> result;
-    private List<CombineData.CombineItemPair> extra;
-    private List<CombineData.CombineItemPair> back;
+import emu.grasscutter.data.common.ItemParamData;
+import emu.grasscutter.data.excels.CombineData;
 
-    public List<CombineData.CombineItemPair> getMaterial() {
+public class CombineResult {
+    private List<ItemParamData> material;
+    private List<ItemParamData> result;
+    private List<ItemParamData> extra;
+    private List<ItemParamData> back;
+
+    public List<ItemParamData> getMaterial() {
         return material;
     }
 
-    public void setMaterial(List<CombineData.CombineItemPair> material) {
+    public void setMaterial(List<ItemParamData> material) {
         this.material = material;
     }
 
-    public List<CombineData.CombineItemPair> getResult() {
+    public List<ItemParamData> getResult() {
         return result;
     }
 
-    public void setResult(List<CombineData.CombineItemPair> result) {
+    public void setResult(List<ItemParamData> result) {
         this.result = result;
     }
 
-    public List<CombineData.CombineItemPair> getExtra() {
+    public List<ItemParamData> getExtra() {
         return extra;
     }
 
-    public void setExtra(List<CombineData.CombineItemPair> extra) {
+    public void setExtra(List<ItemParamData> extra) {
         this.extra = extra;
     }
 
-    public List<CombineData.CombineItemPair> getBack() {
+    public List<ItemParamData> getBack() {
         return back;
     }
 
-    public void setBack(List<CombineData.CombineItemPair> back) {
+    public void setBack(List<ItemParamData> back) {
         this.back = back;
     }
 

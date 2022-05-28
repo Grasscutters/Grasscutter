@@ -4,7 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.ItemData;
+import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.Position;

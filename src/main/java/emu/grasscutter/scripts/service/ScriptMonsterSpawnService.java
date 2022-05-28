@@ -1,8 +1,8 @@
 package emu.grasscutter.scripts.service;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.data.def.WorldLevelData;
+import emu.grasscutter.data.excels.MonsterData;
+import emu.grasscutter.data.excels.WorldLevelData;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.constants.EventType;

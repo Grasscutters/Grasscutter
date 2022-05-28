@@ -274,43 +274,6 @@ public final class Utils {
 	}
 
 	/**
-	 * Switch properties from upper case to lower case?
-	 */
-	public static Map<String, Object> switchPropertiesUpperLowerCase(Map<String, Object> objMap, Class<?> cls) {
-		Map<String, Object> map = new HashMap<>(objMap.size());
-		for (String key : objMap.keySet()) {
-			try {
-				char c = key.charAt(0);
-				if (c >= 'a' && c <= 'z') {
-					try {
-						cls.getDeclaredField(key);
-						map.put(key, objMap.get(key));
-					} catch (NoSuchFieldException e) {
-						String s1 = String.valueOf(c).toUpperCase();
-						String after = key.length() > 1 ? s1 + key.substring(1) : s1;
-						cls.getDeclaredField(after);
-						map.put(after, objMap.get(key));
-					}
-				} else if (c >= 'A' && c <= 'Z') {
-					try {
-						cls.getDeclaredField(key);
-						map.put(key, objMap.get(key));
-					} catch (NoSuchFieldException e) {
-						String s1 = String.valueOf(c).toLowerCase();
-						String after = key.length() > 1 ? s1 + key.substring(1) : s1;
-						cls.getDeclaredField(after);
-						map.put(after, objMap.get(key));
-					}
-				}
-			} catch (NoSuchFieldException e) {
-				map.put(key, objMap.get(key));
-			}
-		}
-
-		return map;
-	}
-
-	/**
 	 * Performs a linear interpolation using a table of fixed points to create an effective piecewise f(x) = y function.
 	 * @param x
 	 * @param xyArray Array of points in [[x0,y0], ... [xN, yN]] format

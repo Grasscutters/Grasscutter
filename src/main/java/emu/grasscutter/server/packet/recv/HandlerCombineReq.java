@@ -1,6 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.data.def.CombineData;
+import emu.grasscutter.data.common.ItemParamData;
+import emu.grasscutter.data.excels.CombineData;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -35,7 +36,7 @@ public class HandlerCombineReq extends PacketHandler {
                 toItemParamList(result.getBack())));
     }
 
-    private List<ItemParamOuterClass.ItemParam> toItemParamList(List<CombineData.CombineItemPair> list){
+    private List<ItemParamOuterClass.ItemParam> toItemParamList(List<ItemParamData> list){
         return list.stream()
                 .map(item -> ItemParamOuterClass.ItemParam.newBuilder()
                         .setItemId(item.getId())

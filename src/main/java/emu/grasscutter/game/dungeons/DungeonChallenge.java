@@ -1,7 +1,7 @@
 package emu.grasscutter.game.dungeons;
 
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.def.DungeonData;
+import emu.grasscutter.data.excels.DungeonData;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;

@@ -12,7 +12,7 @@ message AvatarDataNotify {
 	repeated AvatarInfo avatar_list = 15;
 	map<uint32, AvatarTeam> avatar_team_map = 6;
 	uint32 cur_avatar_team_id = 2;
-	uint64 choose_avatar_guid = 11;
+	fixed64 choose_avatar_guid = 11;
 	repeated uint64 temp_avatar_guid_list = 14;
 	repeated uint32 owned_flycloak_list = 8;
 	repeated uint32 owned_costume_list = 7;

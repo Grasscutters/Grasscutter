@@ -5,7 +5,7 @@ import java.util.Set;
 import org.reflections.Reflections;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.def.QuestData.QuestCondition;
+import emu.grasscutter.data.excels.QuestData.QuestCondition;
 import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;

@@ -1,26 +1,26 @@
 package emu.grasscutter.data.common;
 
 public class ItemParamStringData {
-	private int Id;
-    private String Count;
+	private int id;
+    private String count;
 
     public ItemParamStringData() {}
 
 	public int getId() {
-		return Id;
+		return id;
 	}
 
 	public String getCount() {
-		return Count;
+		return count;
 	}
 	
 	public ItemParamData toItemParamData() {
-		if (Count.contains(";")) {
-			String[] split = Count.split(";");
-			Count = Count.split(";")[split.length - 1];
-		} else if (Count.contains(".")) {
-			return new ItemParamData(Id, (int) Math.ceil(Double.parseDouble(Count)));
+		if (count.contains(";")) {
+			String[] split = count.split(";");
+			count = count.split(";")[split.length - 1];
+		} else if (count.contains(".")) {
+			return new ItemParamData(id, (int) Math.ceil(Double.parseDouble(count)));
 		}
-		return new ItemParamData(Id, Integer.parseInt(Count));
+		return new ItemParamData(id, Integer.parseInt(count));
 	}
 }
