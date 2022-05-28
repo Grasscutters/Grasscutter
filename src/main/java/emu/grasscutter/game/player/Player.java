@@ -22,6 +22,7 @@ import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.PostLoad;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
@@ -1247,13 +1248,18 @@ public class Player {
 		}
 
 		// Load from db
-		this.getAvatars().loadFromDatabase();
-		this.getInventory().loadFromDatabase();
-		this.getAvatars().postLoad();
+		try {
+		 this.getAvatars().loadFromDatabase();
+		 this.getInventory().loadFromDatabase();
+		 this.getAvatars().postLoad();
 
-		this.getFriendsList().loadFromDatabase();
-		this.getMailHandler().loadFromDatabase();
-		this.getQuestManager().loadFromDatabase();
+		 this.getFriendsList().loadFromDatabase();
+		 this.getMailHandler().loadFromDatabase();
+		 this.getQuestManager().loadFromDatabase();
+	    } catch (Exception e) {
+		 this.getSession().close();
+		 Grasscutter.getLogger().error("Error: loadFromDatabase",e);		
+	    }
 		
 		// Add to gameserver (Always handle last)
 		if (getSession().isActive()) {
@@ -1287,23 +1293,28 @@ public class Player {
 		this.setProperty(PlayerProperty.PROP_IS_MP_MODE_AVAILABLE, 1);
 
 		// Packets
-		session.send(new PacketPlayerDataNotify(this)); // Player data
-		session.send(new PacketStoreWeightLimitNotify());
-		session.send(new PacketPlayerStoreNotify(this));
-		session.send(new PacketAvatarDataNotify(this));
-		session.send(new PacketFinishedParentQuestNotify(this));
-		session.send(new PacketQuestListNotify(this));
-		session.send(new PacketCodexDataFullNotify(this));
-		session.send(new PacketAllWidgetDataNotify(this));
-		session.send(new PacketWidgetGadgetAllDataNotify());
-		session.send(new PacketPlayerHomeCompInfoNotify(this));
-		session.send(new PacketHomeComfortInfoNotify(this));
+		try {
+		 session.send(new PacketPlayerDataNotify(this)); // Player data
+		 session.send(new PacketStoreWeightLimitNotify());
+		 session.send(new PacketPlayerStoreNotify(this));
+		 session.send(new PacketAvatarDataNotify(this));
+		 session.send(new PacketFinishedParentQuestNotify(this));
+		 session.send(new PacketQuestListNotify(this));
+		 session.send(new PacketCodexDataFullNotify(this));
+		 session.send(new PacketAllWidgetDataNotify(this));
+		 session.send(new PacketWidgetGadgetAllDataNotify());
+		 session.send(new PacketPlayerHomeCompInfoNotify(this));
+		 session.send(new PacketHomeComfortInfoNotify(this));
 
-		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
+		 getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
-		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
-		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
-		session.send(new PacketOpenStateUpdateNotify());
+		 session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
+		 session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
+		 session.send(new PacketOpenStateUpdateNotify());
+	    } catch (Exception e) {
+		 this.getSession().close();
+		 Grasscutter.getLogger().error("Error: Packets",e);		
+	    }
 
 		// First notify packets sent
 		this.setHasSentAvatarDataNotify(true);
