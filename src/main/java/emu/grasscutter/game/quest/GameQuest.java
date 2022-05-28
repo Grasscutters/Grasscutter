@@ -80,7 +80,6 @@ public class GameQuest {
 	}
 
 	public void setConfig(QuestData config) {
-		if(config == null) return;
 		if (this.getQuestId() != config.getId()) return;
 		this.questData = config;
 	}
