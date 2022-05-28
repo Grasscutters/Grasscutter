@@ -14,3 +14,4 @@ GM Handbook.txt
 config.json
 BuildConfig.java
 *.jar
+*.hprof
