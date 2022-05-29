@@ -17,8 +17,8 @@ import emu.grasscutter.utils.Position;
 
 @Opcodes(PacketOpcodes.HitTreeNotify)
 public class HandlerHitTreeNotify extends PacketHandler {
-    private final static int RECORD_EXPIRED_TIME = 1000*60*5;
-    private final AutoRecycleHashMap<Integer,HashMap<Integer,HitTreeRecord>> hitRecord = new AutoRecycleHashMap<>(RECORD_EXPIRED_TIME);
+    private final static int RECORD_EXPIRED_SECONDS = 60*5;
+    private final AutoRecycleHashMap<Integer,HashMap<Integer,HitTreeRecord>> hitRecord = new AutoRecycleHashMap<>(RECORD_EXPIRED_SECONDS);
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         HitCollision hit = HitCollision.parseFrom(payload);
@@ -38,7 +38,7 @@ public class HandlerHitTreeNotify extends PacketHandler {
                 if (currentRecord.containsKey(positionHash)) {
                     long currentTime = System.currentTimeMillis();
                     HitTreeRecord record = currentRecord.get(positionHash);
-                    if (currentTime - record.time > RECORD_EXPIRED_TIME) {// fresh wood after 5 min
+                    if (currentTime - record.time > RECORD_EXPIRED_SECONDS *1000) {// fresh wood after 5 min
                         record.times = 1;
                         record.time = currentTime;
                     } else {
@@ -58,6 +58,8 @@ public class HandlerHitTreeNotify extends PacketHandler {
                         1,
                         false);
                 scene.addEntity(entity);
+                System.out.println("hitRecord length :"+hitRecord.size());
+                System.out.println("hitRecord :"+hitRecord);
             }
         }
         // unknown wood type
