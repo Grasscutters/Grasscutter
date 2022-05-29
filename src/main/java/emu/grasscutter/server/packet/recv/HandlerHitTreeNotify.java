@@ -12,11 +12,13 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.VectorOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision;
+import emu.grasscutter.utils.AutoRecycleHashMap;
 import emu.grasscutter.utils.Position;
 
 @Opcodes(PacketOpcodes.HitTreeNotify)
 public class HandlerHitTreeNotify extends PacketHandler {
-    private final HashMap<Integer,HashMap<Integer,HitTreeRecord>> hitRecord = new HashMap<>();
+    private final static int RECORD_EXPIRED_TIME = 1000*60*5;
+    private final AutoRecycleHashMap<Integer,HashMap<Integer,HitTreeRecord>> hitRecord = new AutoRecycleHashMap<>(RECORD_EXPIRED_TIME);
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         HitCollision hit = HitCollision.parseFrom(payload);
@@ -26,35 +28,37 @@ public class HandlerHitTreeNotify extends PacketHandler {
             Player player = session.getPlayer();
             Scene scene = player.getScene();
             int uid = player.getUid();
-            if(!hitRecord.containsKey(uid)){
-                hitRecord.put(uid, new HashMap<>());
-            }
-            int itemId = 101300 + woodType;
-            int positionHash = hit.getHitPoint().hashCode();
-            HashMap<Integer, HitTreeRecord> currentRecord = hitRecord.get(uid);
-            if(currentRecord.containsKey(positionHash)){
-                long currentTime = System.currentTimeMillis();
-                HitTreeRecord record = currentRecord.get(positionHash);
-                if(currentTime-record.time>1000*60*5){// fresh wood after 5 min
-                    record.times = 1;
-                    record.time = currentTime;
-                }else{
-                    if(record.times>=3){// too many wood they have deforested, no more wood dropped!
-                        return;
-                    }else{
-                        record.times++;
-                    }
+            synchronized (hitRecord) {
+                if (!hitRecord.containsKey(uid)) {
+                    hitRecord.put(uid, new HashMap<>());
                 }
-            }else{
-                currentRecord.put(positionHash,new HitTreeRecord());
+                int itemId = 101300 + woodType;
+                int positionHash = hit.getHitPoint().hashCode();
+                HashMap<Integer, HitTreeRecord> currentRecord = hitRecord.get(uid);
+                if (currentRecord.containsKey(positionHash)) {
+                    long currentTime = System.currentTimeMillis();
+                    HitTreeRecord record = currentRecord.get(positionHash);
+                    if (currentTime - record.time > RECORD_EXPIRED_TIME) {// fresh wood after 5 min
+                        record.times = 1;
+                        record.time = currentTime;
+                    } else {
+                        if (record.times >= 3) {// too many wood they have deforested, no more wood dropped!
+                            return;
+                        } else {
+                            record.times++;
+                        }
+                    }
+                } else {
+                    currentRecord.put(positionHash, new HitTreeRecord());
+                }
+                EntityItem entity = new EntityItem(scene,
+                        null,
+                        GameData.getItemDataMap().get(itemId),
+                        new Position(hitPosition.getX(),hitPosition.getY(),hitPosition.getZ()),
+                        1,
+                        false);
+                scene.addEntity(entity);
             }
-            EntityItem entity = new EntityItem(scene,
-                    null,
-                    GameData.getItemDataMap().get(itemId),
-                    new Position(hitPosition.getX(),hitPosition.getY(),hitPosition.getZ()),
-                    1,
-                    false);
-            scene.addEntity(entity);
         }
         // unknown wood type
     }
