@@ -8,7 +8,7 @@ public class TowerFloorData extends GameResource {
 
     private int floorId;
     private int floorIndex;
-    private int levelId;
+    private int levelGroupId;
     private int overrideMonsterLevel;
     private int teamNum;
     private int floorLevelConfigId;
@@ -31,8 +31,8 @@ public class TowerFloorData extends GameResource {
         return floorIndex;
     }
 
-    public int getLevelId() {
-        return levelId;
+    public int getLevelGroupId() {
+        return levelGroupId;
     }
 
     public int getOverrideMonsterLevel() {
