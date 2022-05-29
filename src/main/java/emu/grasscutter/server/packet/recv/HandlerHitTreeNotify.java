@@ -18,7 +18,7 @@ import emu.grasscutter.utils.Position;
 @Opcodes(PacketOpcodes.HitTreeNotify)
 public class HandlerHitTreeNotify extends PacketHandler {
     private final static int RECORD_EXPIRED_SECONDS = 60*5;
-    private final AutoRecycleHashMap<Integer,HashMap<Integer,HitTreeRecord>> hitRecord = new AutoRecycleHashMap<>(RECORD_EXPIRED_SECONDS);
+    private final static AutoRecycleHashMap<Integer,HashMap<Integer,HitTreeRecord>> hitRecord = new AutoRecycleHashMap<>(RECORD_EXPIRED_SECONDS);
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         HitCollision hit = HitCollision.parseFrom(payload);
