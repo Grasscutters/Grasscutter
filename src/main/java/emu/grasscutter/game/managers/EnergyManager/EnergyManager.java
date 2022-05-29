@@ -17,10 +17,14 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall;
+import emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
+import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
+import emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.utils.Position;
+import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -29,9 +33,12 @@ import static emu.grasscutter.Configuration.GAME_OPTIONS;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
+import static java.util.Map.entry;
 
 import com.google.gson.reflect.TypeToken;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -43,6 +50,7 @@ public class EnergyManager {
 
 	public EnergyManager(Player player) {
 		this.player = player;
+		this.avatarNormalProbabilities = new HashMap<>();
 	}
 
 	public Player getPlayer() {
@@ -82,32 +90,6 @@ public class EnergyManager {
 	/**********
 		Particle creation for elemental skills.
 	**********/
-	private Optional<EntityAvatar> getCastingAvatarEntityForElemBall(int invokeEntityId) {
-		// To determine the avatar that has cast the skill that caused the energy particle to be generated,
-		// we have to look at the entity that has invoked the ability. This can either be that avatar directly,
-		// or it can be an `EntityClientGadget`, owned (some way up the owner hierarchy) by the avatar
-		// that cast the skill.
-		
-		// Try to get the invoking entity from the scene.
-		GameEntity entity = player.getScene().getEntityById(invokeEntityId);
-
-		// Determine the ID of the entity that originally cast this skill. If the scene entity is null,
-		// or not an `EntityClientGadget`, we assume that we are directly looking at the casting avatar
-		// (the null case will happen if the avatar was switched out between casting the skill and the
-		// particle being generated). If the scene entity is an `EntityClientGadget`, we need to find the
-		// ID of the original owner of that gadget.
-		int avatarEntityId =
-			(!(entity instanceof EntityClientGadget))
-			? invokeEntityId
-			: ((EntityClientGadget)entity).getOriginalOwnerEntityId();
-
-		// Finally, find the avatar entity in the player's team.
-		return player.getTeamManager().getActiveTeam()
-						.stream()
-						.filter(character -> character.getId() == avatarEntityId)
-						.findFirst();
-	}
-
 	private int getBallCountForAvatar(int avatarId) {
 		// We default to two particles.
 		int count = 2;
@@ -171,7 +153,7 @@ public class EnergyManager {
 		int amount = 2;
 
 		// Try to get the casting avatar from the player's party.
-		Optional<EntityAvatar> avatarEntity = getCastingAvatarEntityForElemBall(invoke.getEntityId());
+		Optional<EntityAvatar> avatarEntity = getCastingAvatarEntityForEnergy(invoke.getEntityId());
 
 		// Bug: invokes twice sometimes, Ayato, Keqing
 		// ToDo: deal with press, hold difference. deal with charge(Beidou, Yunjin)
@@ -258,6 +240,92 @@ public class EnergyManager {
 	}
 
 	/**********
+		Energy generation for NAs/CAs.
+	**********/
+	private final static Map<String, Integer> initialNormalProbability = Map.ofEntries(
+		entry("WEAPON_SWORD_ONE_HAND", 10),
+		entry("WEAPON_BOW", 0),
+		entry("WEAPON_CLAYMORE", 0),
+		entry("WEAPON_POLE", 0),
+		entry("WEAPON_CATALYST", 0)
+	);
+	private final static Map<String, Integer> increaseNormalProbability = Map.ofEntries(
+		entry("WEAPON_SWORD_ONE_HAND", 5),
+		entry("WEAPON_BOW", 5),
+		entry("WEAPON_CLAYMORE", 10),
+		entry("WEAPON_POLE", 4),
+		entry("WEAPON_CATALYST", 10)
+	);
+
+	private final Map<EntityAvatar, Integer> avatarNormalProbabilities;
+
+	private void generateEnergyForNormalAndCharged(EntityAvatar avatar) {
+		// This logic is based on the descriptions given in
+		//     https://genshin-impact.fandom.com/wiki/Energy#Energy_Generated_by_Normal_Attacks
+		//     https://library.keqingmains.com/combat-mechanics/energy#auto-attacking
+		// Those descriptions are lacking in some information, so this implementation most likely
+		// does not fully replicate the behavior of the official server. Open questions:
+		//    - Does the probability for a character reset after some time?
+		//    - Does the probability for a character reset when switching them out?
+		//    - Does this really count every individual hit separately?
+
+		// Make sure the avatar's weapon type makes sense.
+		String weaponType = avatar.getAvatar().getAvatarData().getWeaponType();
+		if (!initialNormalProbability.containsKey(weaponType)) {
+			return;
+		}
+
+		// Check if we already have probability data for this avatar. If not, insert it.
+		if (!this.avatarNormalProbabilities.containsKey(avatar)) {
+			this.avatarNormalProbabilities.put(avatar, initialNormalProbability.get(weaponType));
+		}
+
+		// Roll for energy.
+		int currentProbability = this.avatarNormalProbabilities.get(avatar);
+		int roll = ThreadLocalRandom.current().nextInt(0, 100);
+
+		// If the player wins the roll, we increase the avatar's energy and reset the probability.
+		if (roll < currentProbability) {
+			avatar.addEnergy(1.0f, PropChangeReason.PROP_CHANGE_REASON_ABILITY, false);
+			this.avatarNormalProbabilities.put(avatar, initialNormalProbability.get(weaponType));
+		}
+		// Otherwise, we increase the probability for the next hit.
+		else {
+			this.avatarNormalProbabilities.put(avatar, currentProbability + increaseNormalProbability.get(weaponType));
+		}
+	}
+
+	public void handleAttackHit(EvtBeingHitInfo hitInfo) {
+		// Get the attack result.
+		AttackResult attackRes = hitInfo.getAttackResult();
+
+		// Make sure the attack was performed by the currently active avatar. If not, we ignore the hit.
+		Optional<EntityAvatar> attackerEntity = this.getCastingAvatarEntityForEnergy(attackRes.getAttackerId());
+		if (attackerEntity.isEmpty() || this.player.getTeamManager().getCurrentAvatarEntity().getId() != attackerEntity.get().getId()) {
+			return;
+		}
+		
+		// Get the ability that caused this hit.
+		AbilityIdentifier ability = attackRes.getAbilityIdentifier();
+
+		// Make sure there is no actual "ability" associated with the hit. For now, this is how we
+		// identify normal and charged attacks. Note that this is not completely accurate: 
+		//    - Many character's charged attacks have an ability associated with them. This means that, 
+		//      for now, we don't identify charged attacks reliably. 
+		//    - There might also be some cases where we incorrectly identify something as a normal or 
+		//      charged attack that is not (Diluc's E?).
+		//    - Catalyst normal attacks have an ability, so we don't handle those for now.
+		// ToDo: Fix all of that.
+		if (ability != AbilityIdentifier.getDefaultInstance()) {
+			return;
+		}
+
+		// Handle the energy generation.
+		this.generateEnergyForNormalAndCharged(attackerEntity.get());
+	}
+
+
+	/**********
 		Energy logic related to using skills.
 	**********/
 	private void handleBurstCast(Avatar avatar, int skillId) {
@@ -338,5 +406,31 @@ public class EnergyManager {
 
 		EntityItem energyBall = new EntityItem(this.getPlayer().getScene(), this.getPlayer(), itemData, position, count);
 		this.getPlayer().getScene().addEntity(energyBall);
+	}
+
+	private Optional<EntityAvatar> getCastingAvatarEntityForEnergy(int invokeEntityId) {
+		// To determine the avatar that has cast the skill that caused the energy particle to be generated,
+		// we have to look at the entity that has invoked the ability. This can either be that avatar directly,
+		// or it can be an `EntityClientGadget`, owned (some way up the owner hierarchy) by the avatar
+		// that cast the skill.
+		
+		// Try to get the invoking entity from the scene.
+		GameEntity entity = player.getScene().getEntityById(invokeEntityId);
+
+		// Determine the ID of the entity that originally cast this skill. If the scene entity is null,
+		// or not an `EntityClientGadget`, we assume that we are directly looking at the casting avatar
+		// (the null case will happen if the avatar was switched out between casting the skill and the
+		// particle being generated). If the scene entity is an `EntityClientGadget`, we need to find the
+		// ID of the original owner of that gadget.
+		int avatarEntityId =
+			(!(entity instanceof EntityClientGadget))
+			? invokeEntityId
+			: ((EntityClientGadget)entity).getOriginalOwnerEntityId();
+
+		// Finally, find the avatar entity in the player's team.
+		return player.getTeamManager().getActiveTeam()
+						.stream()
+						.filter(character -> character.getId() == avatarEntityId)
+						.findFirst();
 	}
 }
