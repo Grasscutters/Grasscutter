@@ -134,7 +134,7 @@
       "description": "Deletes unequipped unlocked items, including yellow rarity ones from your inventory"
     },
     "coop": {
-      "usage": "Usage: coop <playerID> <target playerID>",
+      "usage": "Usage: coop <player ID> [host UID]",
       "success": "Summoned %s to %s's world.",
       "description": "Forces someone to join the world of others"
     },
@@ -353,8 +353,8 @@
       "description": "Teleports all players in your world to your position"
     },
     "teleport": {
-      "usage_server": "Usage: /tp @<player ID> <x> <y> <z> [scene ID]",
-      "usage": "Usage: /tp [@<player ID>] <x> <y> <z> [scene ID]",
+      "usage_server": "Usage: /tp @<player ID> <x> <y> <z> [sceneID]",
+      "usage": "Usage: /tp [@<player ID>] <x> <y> <z> [sceneID]",
       "specify_player_id": "You must specify a player ID.",
       "invalid_position": "Invalid position.",
       "success": "Teleported %s to %s, %s, %s in scene %s.",
