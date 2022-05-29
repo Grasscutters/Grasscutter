@@ -9,6 +9,13 @@ import java.util.List;
 
 public class PacketGroupSuiteNotify extends BasePacket {
 
+	public PacketGroupSuiteNotify(int groupid,int suite) {
+		super(PacketOpcodes.GroupSuiteNotify);
+		var proto = GroupSuiteNotifyOuterClass.GroupSuiteNotify.newBuilder();
+	    proto.putGroupMap(groupid,suite);
+		this.setData(proto);
+	}
+
 	/**
 	 * control which npc suite is loaded
 	 */

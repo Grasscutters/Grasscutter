@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.def.*;
+import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
@@ -22,6 +23,7 @@ import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.data.SceneBlock;
 import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
+import emu.grasscutter.scripts.data.SuiteIndex;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -417,6 +419,7 @@ public class Scene {
 	public void onTick() {
 		if (this.getScriptManager().isInit()) {
 			this.checkBlocks();
+
 		} else {
 			// TEMPORARY
 			this.checkSpawns();
@@ -599,7 +602,11 @@ public class Scene {
 
 			// Load suites
 			int suite = group.init_config.suite;
-
+			SuiteIndex suiteIndex = new SuiteIndex(getSceneData().getId(), group.id, 0, getPlayers().get(0).getUid());
+			SuiteIndex suiteIndex1 = DatabaseHelper.getSuiteIndex(suiteIndex);
+			if (suiteIndex1 != null) {
+				suite=suiteIndex1.getSuiteIndex();
+			}
 			if (suite == 0 || group.suites == null || group.suites.size() == 0) {
 				continue;
 			}

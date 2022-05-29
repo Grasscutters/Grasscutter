@@ -38,6 +38,11 @@ public class GameMainQuest {
 	private Map<Integer, GameQuest> childQuests;
 	
 	private int parentQuestId;
+
+	public void setQuestVars(int[] questVars) {
+		this.questVars = questVars;
+	}
+
 	private int[] questVars;
 	private ParentQuestState state;
 	private boolean isFinished;

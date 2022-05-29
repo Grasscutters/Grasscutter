@@ -1,13 +1,11 @@
 package emu.grasscutter.game.quest;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+import com.google.protobuf.ByteString;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.def.QuestData;
 import emu.grasscutter.data.def.QuestData.QuestCondition;
@@ -16,12 +14,13 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.quest.enums.LogicType;
 import emu.grasscutter.game.quest.enums.QuestState;
-import emu.grasscutter.server.packet.send.PacketFinishedParentQuestUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketQuestListUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketQuestProgressUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketServerCondMeetQuestListUpdateNotify;
+import emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass;
+import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.utils.FileUtils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
+import static emu.grasscutter.Configuration.SCRIPT;
 
 public class QuestManager {
 	private final Player player;
@@ -101,22 +100,24 @@ public class QuestManager {
 		
 		// Main quest
 		GameMainQuest mainQuest = this.getMainQuestById(questConfig.getMainId());
-		
+
 		// Create main quest if it doesnt exist
 		if (mainQuest == null) {
+
 			mainQuest = addMainQuest(questConfig);
 		}
-		
 		// Sub quest
 		GameQuest quest = mainQuest.getChildQuestById(questId);
-		
+
 		if (quest != null) {
 			return null;
 		}
 
 		// Create
 		quest = new GameQuest(mainQuest, questConfig);
-
+		for (QuestData.QuestExec beginExec : questConfig.getBeginExecs()) {
+			getPlayer().getServer().getQuestHandler().triggerExec(quest,beginExec,beginExec.getParam());
+		}
 		// Save main quest
 		mainQuest.save();
 
@@ -129,13 +130,38 @@ public class QuestManager {
 	
 	public void triggerEvent(QuestTrigger condType, int... params) {
 		Set<GameQuest> changedQuests = new HashSet<>();
-		
+
 		this.forEachActiveQuest(quest -> {
 			QuestData data = quest.getData();
-			
+			int index=0;
 			for (int i = 0; i < data.getFinishCond().length; i++) {
-				if (quest.getFinishProgressList() == null || quest.getFinishProgressList()[i] == 1) {
+				int count = data.getFinishCond()[i].getCount();
+				if(count==0){
+					index++;
+					count=1;
+				}else{
+					index+=count;
+				}
+				if (quest.getFinishProgressList() == null) {
 					continue;
+				}
+				if(count==1){
+					if(quest.getFinishProgressList()[index-1]==1){
+						continue;
+					}
+				}
+				else {
+					boolean isContinue=true;
+					for(int t=index-count;t<index;t++){
+						if(quest.getFinishProgressList()[t]==0){
+							isContinue=false;
+							break;
+						}
+					}
+					if(isContinue){
+						continue;
+					}
+
 				}
 				
 				QuestCondition condition = data.getFinishCond()[i];
@@ -147,8 +173,17 @@ public class QuestManager {
 				boolean result = getPlayer().getServer().getQuestHandler().triggerContent(quest, condition, params);
 				
 				if (result) {
-					quest.getFinishProgressList()[i] = 1;
-					
+					if(count==1) {
+						quest.getFinishProgressList()[index-1] = 1;
+					}
+					else{
+						for(int i1=index-count;i<index;i++){
+							if(quest.getFinishProgressList()[i1]==0){
+								quest.getFinishProgressList()[i1] = 1;
+								break;
+							}
+						}
+					}
 					changedQuests.add(quest);
 				}
 			}
@@ -159,7 +194,7 @@ public class QuestManager {
 			int[] progress = quest.getFinishProgressList();
 			
 			// Handle logical comb
-			boolean finish = LogicType.calculate(logicType, progress);
+			boolean finish = LogicType.calculate(logicType, progress,true);
 
 			// Finish
 			if (finish) {
@@ -171,6 +206,84 @@ public class QuestManager {
 		}
 	}
 
+	public void triggerEvent(QuestTrigger condType, String... params) {
+		Set<GameQuest> changedQuests = new HashSet<>();
+
+		this.forEachActiveQuest(quest -> {
+			QuestData data = quest.getData();
+			int index=0;
+			for (int i = 0; i < data.getFinishCond().length; i++) {
+				int count = data.getFinishCond()[i].getCount();
+				if(count==0){
+					index++;
+					count=1;
+				}else{
+					index+=count;
+				}
+				if (quest.getFinishProgressList() == null ) {
+					continue;
+				}
+				if(count==1){
+					if(quest.getFinishProgressList()[index-1]==1){
+						continue;
+					}
+				}
+				else {
+					boolean isContinue=true;
+					for(int t=index-count;t<index;t++){
+						if(quest.getFinishProgressList()[t]==0){
+							isContinue=false;
+							break;
+						}
+					}
+					if(isContinue){
+						continue;
+					}
+
+				}
+
+				QuestCondition condition = data.getFinishCond()[i];
+
+				if (condition.getType() != condType) {
+					continue;
+				}
+
+				boolean result = getPlayer().getServer().getQuestHandler().triggerContent(quest, condition, params);
+
+				if (result) {
+					if(count==1) {
+						quest.getFinishProgressList()[index-1] = 1;
+					}
+					else{
+						for(int i1=index-count;i1<index;i1++){
+							if(quest.getFinishProgressList()[i1]==0){
+								quest.getFinishProgressList()[i1] = 1;
+								break;
+							}
+						}
+					}
+
+					changedQuests.add(quest);
+				}
+			}
+		});
+
+		for (GameQuest quest : changedQuests) {
+			LogicType logicType = quest.getData().getFailCondComb();
+			int[] progress = quest.getFinishProgressList();
+
+			// Handle logical comb
+		    boolean finish = LogicType.calculate(logicType, progress,true);
+
+			// Finish
+			if (finish) {
+				quest.finish();
+			} else {
+				getPlayer().sendPacket(new PacketQuestProgressUpdateNotify(quest));
+				quest.save();
+			}
+		}
+	}
 	public void loadFromDatabase() {
 		List<GameMainQuest> quests = DatabaseHelper.getAllQuests(getPlayer());
 		

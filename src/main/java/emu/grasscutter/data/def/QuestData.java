@@ -26,6 +26,19 @@ public class QuestData extends GameResource {
     private QuestCondition[] failConditons;
     private QuestExec[] beginExecs;
     private QuestExec[] finishExecs;
+
+    public QuestExec[] getBeginExecs() {
+        return beginExecs;
+    }
+
+    public QuestExec[] getFinishExecs() {
+        return finishExecs;
+    }
+
+    public QuestExec[] getFailExecs() {
+        return failExecs;
+    }
+
     private QuestExec[] failExecs;
 
     private List<QuestParam> AcceptCond;

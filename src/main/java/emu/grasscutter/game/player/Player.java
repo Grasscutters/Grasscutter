@@ -1177,6 +1177,7 @@ public class Player {
 		this.getFriendsList().loadFromDatabase();
 		this.getMailHandler().loadFromDatabase();
 		this.getQuestManager().loadFromDatabase();
+
 		
 		// Quest - Commented out because a problem is caused if you log out while this quest is active
 		/*
@@ -1220,6 +1221,7 @@ public class Player {
 		session.send(new PacketWidgetGadgetAllDataNotify());
 		session.send(new PacketPlayerHomeCompInfoNotify(this));
 		session.send(new PacketHomeComfortInfoNotify(this));
+
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 

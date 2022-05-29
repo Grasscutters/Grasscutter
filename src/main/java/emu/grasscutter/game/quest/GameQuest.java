@@ -47,15 +47,26 @@ public class GameQuest {
 		if (questData.getFinishCond()!= null) {
 			int count=0;
 			for (QuestCondition questCondition : questData.getFinishCond()) {
-				count+=questCondition.getCount();
+				if(questCondition.getCount()==0){
+					count+=1;
+				}
+				else{
+					count+=questCondition.getCount();
+				}
 			}
 			this.finishProgressList = new int[count];
 		}
 
 		if (questData.getFailCond() != null) {
-			int count=0;
+			int count=1;
 			for (QuestCondition questCondition : questData.getFailCond()) {
-				count+=questCondition.getCount();
+				if(questCondition.getCount()==0){
+					count+=1;
+				}
+				else{
+					count+=questCondition.getCount();
+				}
+
 			}
 			this.failProgressList = new int[count];
 		}
@@ -149,7 +160,9 @@ public class GameQuest {
 				getFinishProgressList()[i] = 1;
 			}
 		}
-
+		for (QuestData.QuestExec finish : this.getData().getFinishExecs()) {
+			getOwner().getServer().getQuestHandler().triggerExec(this,finish,finish.getParam());
+		}
 		this.getOwner().getSession().send(new PacketQuestProgressUpdateNotify(this));
 		this.getOwner().getSession().send(new PacketQuestListUpdateNotify(this));
 
@@ -187,7 +200,7 @@ public class GameQuest {
 						accept[i] = result ? 1 : 0;
 					}
 
-					boolean shouldAccept = LogicType.calculate(questData.getAcceptCondComb(), accept);
+					boolean shouldAccept = LogicType.calculate(questData.getAcceptCondComb(), accept,false);
 
 					if (shouldAccept) {
 						this.getOwner().getQuestManager().addQuest(questData.getId());

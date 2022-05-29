@@ -4,11 +4,15 @@ import emu.grasscutter.data.def.QuestData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameQuest;
+import emu.grasscutter.game.quest.QuestValue;
+import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.data.SuiteIndex;
+import emu.grasscutter.server.packet.send.PacketGroupSuiteNotify;
 
+@QuestValue(QuestTrigger.QUEST_EXEC_REFRESH_GROUP_SUITE)
 public class ExecRefreshGroupSuite extends QuestBaseHandler {
     @Override
     public boolean execute(GameQuest quest, QuestData.QuestCondition condition, int... params) {
@@ -32,6 +36,7 @@ public class ExecRefreshGroupSuite extends QuestBaseHandler {
             scriptManager.refreshGroup(scriptManager.getGroupById(groupId),suiteIndex);
         }
         SuiteIndex suite = new SuiteIndex(sceneId, groupId, suiteIndex, player.getUid());
+        quest.getOwner().getSession().send(new PacketGroupSuiteNotify(groupId,suiteIndex));
         DatabaseHelper.saveSuiteIndex(suite);
         return false;
     }

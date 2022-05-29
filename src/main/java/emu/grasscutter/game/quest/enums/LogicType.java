@@ -23,9 +23,12 @@ public enum LogicType {
 		return value;
 	}
 	
-	public static boolean calculate(LogicType logicType, int[] progress) {
-		if (logicType == null) {
+	public static boolean calculate(LogicType logicType, int[] progress,boolean isAll) {
+		if (logicType == null && isAll==false) {
 			return progress[0] == 1;
+		}
+		else{
+			logicType=LOGIC_AND;
 		}
 		
 		switch (logicType) {

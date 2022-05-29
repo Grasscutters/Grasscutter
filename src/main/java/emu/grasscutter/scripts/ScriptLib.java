@@ -6,6 +6,8 @@ import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.entity.gadget.GadgetWorktop;
 import emu.grasscutter.game.dungeons.challenge.factory.ChallengeFactory;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.packet.send.PacketCanUseSkillNotify;
@@ -477,7 +479,9 @@ public class ScriptLib {
 	public int AddQuestProgress(String var1){
 		logger.debug("[LUA] Call AddQuestProgress with {}",
 				var1);
-
+		for (Player player : getSceneScriptManager().getScene().getPlayers()) {
+			player.getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_LUA_NOTIFY,var1);
+		}
 		return 0;
 	}
 

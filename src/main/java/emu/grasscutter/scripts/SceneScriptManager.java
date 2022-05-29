@@ -194,6 +194,11 @@ public class SceneScriptManager {
 		}
 		
 		for (SceneRegion region : this.regions.values()) {
+			getScene().getPlayers().forEach(player -> {
+				if (region.contains(player.getPos())) {
+					callEvent(EventType.EVENT_ENTER_REGION, new ScriptArgs(region.config_id,0).setSourceEntityId(region.config_id));
+				}
+			});
 			getScene().getEntities().values()
 				.stream()
 				.filter(e -> e.getEntityType() <= 2 && region.contains(e.getPosition()))
@@ -201,7 +206,7 @@ public class SceneScriptManager {
 
 			if (region.hasNewEntities()) {
 				// This is not how it works, source_eid should be region entity id, but we dont have an entity for regions yet
-				callEvent(EventType.EVENT_ENTER_REGION, new ScriptArgs(region.config_id).setSourceEntityId(region.config_id));
+				callEvent(EventType.EVENT_ENTER_REGION, new ScriptArgs(region.config_id,0).setSourceEntityId(region.config_id));
 				
 				region.resetNewEntities();
 			}

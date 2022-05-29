@@ -2,6 +2,7 @@ package emu.grasscutter.game.quest;
 
 import java.util.Set;
 
+import emu.grasscutter.data.def.QuestData;
 import org.reflections.Reflections;
 
 import emu.grasscutter.Grasscutter;
@@ -76,8 +77,17 @@ public class ServerQuestHandler {
 		
 		return handler.execute(quest, condition, params);
 	}
+	public boolean triggerContent(GameQuest quest, QuestCondition condition, String... params) {
+		QuestBaseHandler handler = contHandlers.get(condition.getType().getValue());
+
+		if (handler == null || quest.getData() == null) {
+			return false;
+		}
+
+		return handler.execute(quest, condition, params);
+	}
 	
-	public boolean triggerExec(GameQuest quest, QuestCondition condition, int... params) {
+	public boolean triggerExec(GameQuest quest, QuestData.QuestExec condition, String... params) {
 		QuestBaseHandler handler = execHandlers.get(condition.getType().getValue());
 
 		if (handler == null || quest.getData() == null) {

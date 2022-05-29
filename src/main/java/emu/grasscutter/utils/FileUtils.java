@@ -3,6 +3,7 @@ package emu.grasscutter.utils;
 import emu.grasscutter.Grasscutter;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
@@ -114,5 +115,19 @@ public final class FileUtils {
 		byte[] content = file.readAllBytes();
 
 		return new String(content, StandardCharsets.UTF_8);
+	}
+	public static byte[] file2byte(String path)
+	{
+		try {
+			FileInputStream in =new FileInputStream(new File(path));
+			//当文件没有结束时，每次读取一个字节显示
+			byte[] data=new byte[in.available()];
+			in.read(data);
+			in.close();
+			return data;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 }

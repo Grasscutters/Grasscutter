@@ -16,6 +16,7 @@ public class SceneRegion {
 	public int shape;
 	public Position pos;
 	public Position size;
+	public int radius;
 	
 	private boolean hasNewEntities;
 	private final IntSet entities; // Ids of entities inside this region
@@ -46,6 +47,12 @@ public class SceneRegion {
 				return (Math.abs(pos.getX() - p.getX()) <= size.getX()) &&
 				       (Math.abs(pos.getZ() - p.getZ()) <= size.getZ());
 			case ScriptRegionShape.SPHERE:
+				double x1 = Math.pow(p.getX() - pos.getX(), 2);
+				double y1 = Math.pow(p.getY() - pos.getY(), 2);
+				double z1 = Math.pow(p.getZ() - pos.getZ(), 2);
+				if((x1+y1+z1)<radius*radius){
+					return true;
+				}
 				return false;
 		}
 		

@@ -48,7 +48,8 @@ public final class Tools {
 	}
 
 	public static String getLanguageOption() {
-		List<String> availableLangList = getAvailableLanguage();
+		return "CHS";
+		/*List<String> availableLangList = getAvailableLanguage();
 	
 		// Use system out for better format
 		if (availableLangList.size() == 1) {
@@ -83,7 +84,7 @@ public final class Tools {
 		}
 		Grasscutter.getLogger().info("Invalid option. Will use EN(English) as fallback");
 
-		return "EN";
+		return "EN";*/
 	}
 }
 

@@ -1,5 +1,8 @@
 package emu.grasscutter.game.quest.enums;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public enum QuestTrigger {
 	QUEST_COND_NONE (0),
 	QUEST_COND_STATE_EQUAL (1),
@@ -232,4 +235,28 @@ public enum QuestTrigger {
 	public int getValue() {
 		return value;
 	}
+	private static final Map intToTypeMap = new HashMap();
+
+	static {
+
+		for (QuestTrigger type : QuestTrigger.values()) {
+
+			intToTypeMap.put(type.value, type);
+
+		}
+
+	}
+
+	public static QuestTrigger fromInt(int i) {
+
+		QuestTrigger type[] = (QuestTrigger[]) intToTypeMap.get(i);
+
+		if (type == null)
+
+			return QuestTrigger.QUEST_CONTENT_NONE;
+
+		return type[1];
+
+	}
+
 }
