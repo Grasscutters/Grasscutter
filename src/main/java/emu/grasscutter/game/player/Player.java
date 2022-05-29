@@ -24,6 +24,7 @@ import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.def.AvatarData;
 import emu.grasscutter.data.def.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
@@ -1231,14 +1232,96 @@ public class Player {
 	public void loadFromDatabase() {
 		// Make sure these exist
 		if (this.getTeamManager() == null) {
+			// New player
 			this.teamManager = new TeamManager(this);
+		} else {
+			// Old player
+
+			int IndexNowAvatars = 0;
+			int IndexGoodAvatars = 0;
+			int LastidAvatars = this.getMainCharacterId();
+
+			List<Integer> dupcheck = new ArrayList<>();
+			List<Integer> tmpav = this.getTeamManager().getCurrentSinglePlayerTeamInfo().getAvatars();
+			boolean soremoveit = false;
+			// check team
+			for (int i = tmpav.size() - 1; i >= 0; i--) {
+
+				Boolean noremove = true;
+				int avatarId = tmpav.get(i);
+
+				// if avatar null
+				AvatarData avatarData = GameData.getAvatarDataMap().get(avatarId);
+                if (avatarData == null) {
+				 Grasscutter.getLogger().info("Remove null Avatar: "+avatarId);
+				 tmpav.remove(i);
+				 noremove = false;
+                }
+
+				// Delete Avatar Testing from Team
+				if (avatarId < 10000002 || avatarId >= 11000000) {
+				 Grasscutter.getLogger().info("Remove testing Avatar: "+avatarId);
+				 tmpav.remove(i);
+				 noremove = false;
+				}
+
+				// Remove Duplicate Avatars
+				if (dupcheck.contains(avatarId)) {
+				 Grasscutter.getLogger().info("Remove Duplicate Avatar: "+avatarId);
+				 tmpav.remove(i);
+				 noremove = false;
+				}
+
+				if(noremove){
+				 // Add Duplicate Check
+				 dupcheck.add(avatarId);
+
+				 LastidAvatars = avatarId;				 
+				}else{
+					soremoveit = true;
+				}
+
+				IndexNowAvatars = i;
+			}
+			
+			if (this.getTeamManager().getCurrentSinglePlayerTeamInfo().getAvatars().size() == 0) {
+				// Add Travele if No Avatar in Team
+				Grasscutter.getLogger().info("No Avatar (getCurrentSinglePlayerTeamInfo)");
+				this.getTeamManager().getCurrentSinglePlayerTeamInfo().getAvatars().add(10000007);
+				this.getTeamManager().setCurrentCharacterIndex(0);
+			}else{
+               // Switch Index if have team
+			   Grasscutter.getLogger().info("LastLast Index "+IndexNowAvatars+" (Good "+IndexGoodAvatars+" index) ");
+               if (soremoveit) {
+	            Grasscutter.getLogger().info("UseLastID: "+LastidAvatars);
+	            this.getTeamManager().setCurrentCharacterIndex(IndexGoodAvatars);
+	            this.setMainCharacterId(LastidAvatars);
+	            this.save(); // maybe need this to save datebase?
+               }
+			   // Check Avatar now not null
+			   AvatarData avatarData = GameData.getAvatarDataMap().get(this.getMainCharacterId());
+			   boolean removenullav = false;
+               if (avatarData == null) {
+				Grasscutter.getLogger().info("Remove "+this.getMainCharacterId()+" Avatar now and use last good avatar "+LastidAvatars+"");
+				removenullav=true;
+               }
+			   if (avatarData.getId() < 10000002 || avatarData.getId() >= 11000000) {
+				Grasscutter.getLogger().info("Remove "+this.getMainCharacterId()+" Avatar Testing");
+				removenullav=true;
+			   }
+			   if(removenullav){				
+				this.setMainCharacterId(LastidAvatars);
+				this.save();
+			   }
+
+			}
 		}
 		if (this.getCodex() == null) {
 			this.codex = new PlayerCodex(this);
 		}
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
-		}
+		}	
 
 		// Check if player object exists in server
 		// TODO - optimize
