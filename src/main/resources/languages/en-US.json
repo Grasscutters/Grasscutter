@@ -134,7 +134,7 @@
       "description": "Deletes unequipped unlocked items, including yellow rarity ones from your inventory"
     },
     "coop": {
-      "usage": "Usage: coop <player ID> [host UID]",
+      "usage": "Usage: coop <playerID> [host UID]",
       "success": "Summoned %s to %s's world.",
       "description": "Forces someone to join the world of others"
     },
@@ -199,7 +199,7 @@
       "description": "Kill all entities"
     },
     "killCharacter": {
-      "usage": "Usage: /killcharacter [playerID]",
+      "usage": "Usage: killcharacter [playerID]",
       "success": "Killed %s's current character.",
       "description": "Kills the players current character"
     },
@@ -245,7 +245,7 @@
       "description": "Resets the constellation level on your current active character, you will need to relog after using the command to see any changes"
     },
     "resetShopLimit": {
-      "usage": "Usage: /resetshop <player ID>",
+      "usage": "Usage: resetshop <playerID>",
       "success": "Reset complete.",
       "description": "Reset target player's shop refresh time"
     },
@@ -353,8 +353,8 @@
       "description": "Teleports all players in your world to your position"
     },
     "teleport": {
-      "usage_server": "Usage: /tp @<player ID> <x> <y> <z> [sceneID]",
-      "usage": "Usage: /tp [@<player ID>] <x> <y> <z> [sceneID]",
+      "usage_server": "Usage: tp @<playerID> <x> <y> <z> [sceneID]",
+      "usage": "Usage: tp [@<playerID>] <x> <y> <z> [sceneID]",
       "specify_player_id": "You must specify a player ID.",
       "invalid_position": "Invalid position.",
       "success": "Teleported %s to %s, %s, %s in scene %s.",
