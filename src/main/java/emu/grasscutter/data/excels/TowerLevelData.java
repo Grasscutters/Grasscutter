@@ -8,6 +8,7 @@ public class TowerLevelData extends GameResource {
 	
     private int levelId;
     private int levelIndex;
+    private int levelGroupId;
     private int dungeonId;
 
     @Override
@@ -17,6 +18,10 @@ public class TowerLevelData extends GameResource {
 
     public int getLevelId() {
         return levelId;
+    }
+
+    public int getLevelGroupId() {
+        return levelGroupId;
     }
 
     public int getLevelIndex() {
