@@ -45,6 +45,8 @@ import com.google.protobuf.InvalidProtocolBufferException;
 
 public class EnergyManager {
 	private final Player player;
+	private final Map<EntityAvatar, Integer> avatarNormalProbabilities;
+	
 	private final static Int2ObjectMap<List<EnergyDropInfo>> energyDropData = new Int2ObjectOpenHashMap<>();
 	private final static Int2ObjectMap<List<SkillParticleGenerationInfo>> skillParticleGenerationData = new Int2ObjectOpenHashMap<>();
 
@@ -257,8 +259,6 @@ public class EnergyManager {
 		entry("WEAPON_CATALYST", 10)
 	);
 
-	private final Map<EntityAvatar, Integer> avatarNormalProbabilities;
-
 	private void generateEnergyForNormalAndCharged(EntityAvatar avatar) {
 		// This logic is based on the descriptions given in
 		//     https://genshin-impact.fandom.com/wiki/Energy#Energy_Generated_by_Normal_Attacks
@@ -302,6 +302,18 @@ public class EnergyManager {
 		// Make sure the attack was performed by the currently active avatar. If not, we ignore the hit.
 		Optional<EntityAvatar> attackerEntity = this.getCastingAvatarEntityForEnergy(attackRes.getAttackerId());
 		if (attackerEntity.isEmpty() || this.player.getTeamManager().getCurrentAvatarEntity().getId() != attackerEntity.get().getId()) {
+			return;
+		}
+
+		// Make sure the target is an actual enemy.
+		GameEntity targetEntity = this.player.getScene().getEntityById(attackRes.getDefenseId());
+		if (!(targetEntity instanceof EntityMonster)) {
+			return;
+		}
+
+		EntityMonster targetMonster = (EntityMonster)targetEntity;
+		String targetType = targetMonster.getMonsterData().getType();
+		if (!targetType.equals("MONSTER_ORDINARY") && !targetType.equals("MONSTER_BOSS")) {
 			return;
 		}
 		
@@ -371,6 +383,13 @@ public class EnergyManager {
 		}
 	}
 	public void handleMonsterEnergyDrop(EntityMonster monster, float hpBeforeDamage, float hpAfterDamage) {
+		// Make sure this is actually a monster.
+		// Note that some wildlife also has that type, like boars or birds.
+		String type = monster.getMonsterData().getType();
+		if (!type.equals("MONSTER_ORDINARY") && !type.equals("MONSTER_BOSS")) {
+			return;
+		}
+
 		// Calculate the HP tresholds for before and after the damage was taken.
 		float maxHp = monster.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 		float thresholdBefore = hpBeforeDamage / maxHp;
