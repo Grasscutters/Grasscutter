@@ -71,7 +71,7 @@ public class TowerManager {
         this.currentFloorId = floorData.getFloorId();
         this.currentLevel = 0;
         this.currentLevelId = GameData.getTowerLevelDataMap().values().stream()
-                .filter(x -> x.getLevelId() == floorData.getLevelId() && x.getLevelIndex() == 1)
+                .filter(x -> x.getLevelGroupId() == floorData.getLevelGroupId() && x.getLevelIndex() == 1)
                 .findFirst()
                 .map(TowerLevelData::getId)
                 .orElse(0);
