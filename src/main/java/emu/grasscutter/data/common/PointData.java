@@ -1,5 +1,7 @@
 package emu.grasscutter.data.common;
 
+import com.google.gson.annotations.SerializedName;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.DailyDungeonData;
@@ -11,7 +13,11 @@ public class PointData {
 	private int id;
 	private String $type;
     private Position tranPos;
+    
+    @SerializedName(value="dungeonIds", alternate={"JHHFPGJNMIN"})
     private int[] dungeonIds;
+    
+    @SerializedName(value="dungeonRandomList", alternate={"OIBKFJNBLHO"})
     private int[] dungeonRandomList;
 
 	private int tranSceneId;
