@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+message HitTreeNotify {
+	uint32 wood_type = 1;
+	uint32 unknown_data = 2; // if you know what it means, welcome to describe
+	Vector hit_postion = 3;
+}
