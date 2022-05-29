@@ -43,7 +43,7 @@ public class DeforestationManager {
     }
     public void onDeforestationInvoke(HitTreeNotifyOuterClass.HitTreeNotify hit){
         synchronized (currentRecord) {
-            Grasscutter.getLogger().info("onDeforestationInvoke! Wood records {}", currentRecord);
+            //Grasscutter.getLogger().info("onDeforestationInvoke! Wood records {}", currentRecord);
 
             currentRecord.removeIf(HitTreeRecord::isInvalidRecord);
 
