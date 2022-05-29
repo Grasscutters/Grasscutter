@@ -14,6 +14,10 @@ import emu.grasscutter.net.proto.VectorOuterClass;
 import emu.grasscutter.utils.Position;
 
 public class DeforestationManager {
+    final static int RECORD_EXPIRED_SECONDS = 60*5; // 5 min
+    final static int RECORD_MAX_TIMES = 3; // max number of wood
+    final static int RECORD_MAX_TIMES_OTHER_HIT_TREE = 10; // if hit 10 times other trees, reset wood
+
     @Transient private final Player player;
     @Transient private final ArrayList<HitTreeRecord> currentRecord;
     @Transient private final static HashMap<Integer, Integer> ColliderTypeToWoodItemID = new HashMap<>();
@@ -44,9 +48,6 @@ public class DeforestationManager {
     public void onDeforestationInvoke(HitTreeNotifyOuterClass.HitTreeNotify hit){
         synchronized (currentRecord) {
             //Grasscutter.getLogger().info("onDeforestationInvoke! Wood records {}", currentRecord);
-
-            currentRecord.removeIf(HitTreeRecord::isInvalidRecord);
-
             VectorOuterClass.Vector hitPosition = hit.getHitPostion();
             int woodType = hit.getWoodType();
             if (ColliderTypeToWoodItemID.containsKey(woodType)) {// is a available wood type
@@ -56,12 +57,12 @@ public class DeforestationManager {
                 HitTreeRecord record = searchRecord(positionHash);
                 if (record == null) {
                     record = new HitTreeRecord(positionHash);
-                    currentRecord.add(record);
+                }else{
+                    currentRecord.remove(record);// move it to last position
                 }
-                for (HitTreeRecord everyRecord : currentRecord) {
-                    if (everyRecord != record) {
-                        everyRecord.recordOtherTree(positionHash);
-                    }
+                currentRecord.add(record);
+                if(currentRecord.size()>RECORD_MAX_TIMES_OTHER_HIT_TREE){
+                    currentRecord.remove(0);
                 }
                 if(record.record()) {
                     EntityItem entity = new EntityItem(scene,
