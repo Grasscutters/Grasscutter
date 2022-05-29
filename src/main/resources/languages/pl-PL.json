@@ -125,7 +125,7 @@
       "everything": "Wyczyszczono wszystko dla %s."
     },
     "coop": {
-      "usage": "Użycie: coop <id gracza> <id gracza docelowego>",
+      "usage": "Użycie: coop <id gracza> [host uid]",
       "success": "Przyzwano %s do świata %s."
     },
     "enter_dungeon": {

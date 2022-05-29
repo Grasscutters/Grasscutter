@@ -134,7 +134,7 @@
       "description": "从你的背包中删除所有未装备且已解锁的物品，包括稀有物品"
     },
     "coop": {
-      "usage": "用法：coop <玩家ID> <目标玩家ID>",
+      "usage": "用法：coop <玩家ID> [目标玩家UID]",
       "success": "已强制传送 %s 到 %s 的世界。",
       "description": "强制传送指定玩家到他人的世界"
     },
