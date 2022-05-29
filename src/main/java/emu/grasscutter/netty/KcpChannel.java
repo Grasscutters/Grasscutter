@@ -56,39 +56,8 @@ public abstract class KcpChannel extends ChannelInboundHandlerAdapter {
     
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-
-        String message = "";
-        String metode = "ZERO";
-        
-        // Metode get message
-        if(cause != null && cause.getMessage() != null && cause.getMessage().isBlank()) { 
-          metode = "1";
-          message = cause.getMessage();
-        }else if(cause.getCause() != null && cause.getCause().getMessage() != null && cause.getCause().getMessage().isBlank()){
-          metode = "2";
-          message = cause.getCause().getMessage();
-        } else {
-          metode = "3";
-          StringWriter sw = new StringWriter();
-          cause.printStackTrace(new PrintWriter(sw));
-          message = sw.toString();
-        }
-
-        // fiter messages
-        String[] lines = message.split(System.getProperty("line.separator"));
-        if(lines[0] != null && !lines[0].isEmpty()){
-          message = lines[0];
-        }
-        if(message.matches("(.*)OutOfMemoryError(.*)")){         
-          GameServer.doExit(1,"Trying to exit program because memory is full");
-        }else if(message.matches("(.*)State=-1(.*)")){
-          close();
-        }else if(message.matches("(.*)inconsistency(.*)")){
-          close();
-        }else{
-          Grasscutter.getLogger().error("BIG PROBLEM (C"+metode+"): "+message);
-          close();
-        }
+      cause.printStackTrace();
+      close();
     }
 
     protected void send(byte[] data) {

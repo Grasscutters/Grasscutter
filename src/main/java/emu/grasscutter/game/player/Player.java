@@ -1285,13 +1285,15 @@ public class Player {
 			}
 			
 			if (this.getTeamManager().getCurrentSinglePlayerTeamInfo().getAvatars().size() == 0) {
-				// Add Travele if No Avatar in Team
-				Grasscutter.getLogger().info("No Avatar (getCurrentSinglePlayerTeamInfo)");
-				this.getTeamManager().getCurrentSinglePlayerTeamInfo().getAvatars().add(10000007);
+				// Add Travele if No Avatar in Team (TODO: check char is male to female)
+				Grasscutter.getLogger().info("No Avatar (getCurrentSinglePlayerTeamInfo) (ID: "+this.accountId+")");
+				this.getTeamManager().getCurrentSinglePlayerTeamInfo().getAvatars().add(GameConstants.MAIN_CHARACTER_FEMALE);
 				this.getTeamManager().setCurrentCharacterIndex(0);
+				this.setMainCharacterId(GameConstants.MAIN_CHARACTER_FEMALE);
+	            this.save(); // maybe need this to save datebase?
 			}else{
                // Switch Index if have team
-			   Grasscutter.getLogger().info("LastLast Index "+IndexNowAvatars+" (Good "+IndexGoodAvatars+" index) ");
+			   //Grasscutter.getLogger().info("LastLast Index "+IndexNowAvatars+" (Good "+IndexGoodAvatars+" index) ");
                if (soremoveit) {
 	            Grasscutter.getLogger().info("UseLastID: "+LastidAvatars);
 	            this.getTeamManager().setCurrentCharacterIndex(IndexGoodAvatars);
