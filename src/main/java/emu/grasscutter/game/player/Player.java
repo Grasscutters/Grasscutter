@@ -197,7 +197,7 @@ public class Player {
 		this.expeditionInfo = new HashMap<>();
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager(this);
-		this.staminaManager = new StaminaManager(this);
+		this.staminaManager = new StaminaManager(this,PlayerProperty.PROP_CUR_PERSIST_STAMINA,PlayerProperty.PROP_MAX_STAMINA);
 		this.sotsManager = new SotSManager(this);
 		this.energyManager = new EnergyManager(this);
 	}
@@ -227,7 +227,7 @@ public class Player {
 		this.getRotation().set(0, 307, 0);
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager(this);
-		this.staminaManager = new StaminaManager(this);
+		this.staminaManager = new StaminaManager(this,PlayerProperty.PROP_CUR_PERSIST_STAMINA,PlayerProperty.PROP_MAX_STAMINA);
 		this.sotsManager = new SotSManager(this);
 		this.energyManager = new EnergyManager(this);
 		this.deforestationManager = new DeforestationManager(this);
@@ -951,11 +951,11 @@ public class Player {
 	}
 
 	public void onPause() {
-		getStaminaManager().stopSustainedStaminaHandler();
+		getStaminaManager().stopStaminaHandler();
 	}
 
 	public void onUnpause() {
-		getStaminaManager().startSustainedStaminaHandler();
+		getStaminaManager().startStaminaHandler();
 	}
 
 	public void sendPacket(BasePacket packet) {
@@ -1277,7 +1277,7 @@ public class Player {
 
 	public void onLogout() {
 		// stop stamina calculation
-		getStaminaManager().stopSustainedStaminaHandler();
+		getStaminaManager().stopStaminaHandler();
 
 		// force to leave the dungeon
 		if (getScene().getSceneType() == SceneType.SCENE_DUNGEON) {
