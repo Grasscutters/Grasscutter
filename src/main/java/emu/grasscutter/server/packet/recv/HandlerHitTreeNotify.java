@@ -58,8 +58,6 @@ public class HandlerHitTreeNotify extends PacketHandler {
                         1,
                         false);
                 scene.addEntity(entity);
-                System.out.println("hitRecord length :"+hitRecord.size());
-                System.out.println("hitRecord :"+hitRecord);
             }
         }
         // unknown wood type
