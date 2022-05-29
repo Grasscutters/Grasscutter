@@ -10,7 +10,6 @@ import emu.grasscutter.server.game.GameSession;
 
 /**
  * Implement Deforestation Function
- * @author 赵怡然(Github zhaodice)
  */
 @Opcodes(PacketOpcodes.HitTreeNotify)
 public class HandlerHitTreeNotify extends PacketHandler {
