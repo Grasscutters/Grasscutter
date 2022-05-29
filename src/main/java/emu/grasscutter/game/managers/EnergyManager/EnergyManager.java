@@ -286,7 +286,7 @@ public class EnergyManager {
 
 		// If the player wins the roll, we increase the avatar's energy and reset the probability.
 		if (roll < currentProbability) {
-			avatar.addEnergy(1.0f, PropChangeReason.PROP_CHANGE_REASON_ABILITY, false);
+			avatar.addEnergy(1.0f, PropChangeReason.PROP_CHANGE_REASON_ABILITY, true);
 			this.avatarNormalProbabilities.put(avatar, initialNormalProbability.get(weaponType));
 		}
 		// Otherwise, we increase the probability for the next hit.
