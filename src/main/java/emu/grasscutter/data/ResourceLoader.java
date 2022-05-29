@@ -11,6 +11,7 @@ import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
 
 import com.google.gson.JsonElement;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 
 import emu.grasscutter.Grasscutter;
@@ -434,8 +435,14 @@ public class ResourceLoader {
 	public static class OpenConfigData {
 		public String $type;
 		public String abilityName;
+		
+		@SerializedName(value="talentIndex", alternate={"OJOFFKLNAHN"})
 		public int talentIndex;
+		
+		@SerializedName(value="skillID", alternate={"overtime"})
 		public int skillID;
+		
+		@SerializedName(value="pointDelta", alternate={"IGEBKIHPOIF"})
 		public int pointDelta;
 	}
 }
