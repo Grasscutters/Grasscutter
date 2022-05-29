@@ -166,8 +166,8 @@ public class ConfigContainer {
 
         public boolean watchGachaConfig = false;
         public boolean enableShopItems = true;
-        public boolean staminaUsage = true;
-        public boolean energyUsage = true;
+        public boolean staminaUsage = false;
+        public boolean energyUsage = false;
         public Rates rates = new Rates();
 
         // DockerGC
