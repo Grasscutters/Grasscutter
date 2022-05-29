@@ -199,7 +199,7 @@
       "description": "殺死所有怪物。"
     },
     "killCharacter": {
-      "usage": "用法：/killcharacter [playerId]",
+      "usage": "用法：killcharacter [playerId]",
       "success": "已殺死 %s 目前的場上角色。",
       "description": "殺死玩家目前使用的場上角色。"
     },
@@ -250,7 +250,7 @@
       "description": "重置當前角色的命之座，重新登入後將會生效。"
     },
     "resetShopLimit": {
-      "usage": "用法：/resetshop <player id>",
+      "usage": "用法：resetshop <playerId>",
       "success": "重置完成。",
       "description": "重置所選玩家的商店刷新時間。"
     },
@@ -358,8 +358,8 @@
       "description": "將你世界裡的所有玩家傳送到你目前的所在位置。"
     },
     "teleport": {
-      "usage_server": "用法：/tp @<player id> <x> <y> <z> [sceneId]",
-      "usage": "用法：/tp [@<player id>] <x> <y> <z> [sceneId]",
+      "usage_server": "用法：tp @<playerId> <x> <y> <z> [sceneId]",
+      "usage": "用法：tp [@<playerId>] <x> <y> <z> [sceneId]",
       "specify_player_id": "你必須指定一個玩家ID。",
       "invalid_position": "無效的座標。",
       "success": "傳送 %s 到座標 %s,%s,%s ，場景為 %s 。",
