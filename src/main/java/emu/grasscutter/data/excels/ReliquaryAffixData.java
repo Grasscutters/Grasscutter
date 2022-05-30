@@ -6,41 +6,41 @@ import emu.grasscutter.game.props.FightProperty;
 
 @ResourceType(name = "ReliquaryAffixExcelConfigData.json")
 public class ReliquaryAffixData extends GameResource {
-	private int Id;
+	private int id;
 	
-	private int DepotId;
-	private int GroupId;
-	private FightProperty PropType;
-	private float PropValue;
-	private int Weight;
-	private int UpgradeWeight;
+	private int depotId;
+	private int groupId;
+	private FightProperty propType;
+	private float propValue;
+	private int weight;
+	private int upgradeWeight;
 	
 	@Override
 	public int getId() {
-		return Id;
+		return id;
 	}
 	
 	public int getDepotId() {
-		return DepotId;
+		return depotId;
 	}
 	
 	public int getGroupId() {
-		return GroupId;
+		return groupId;
 	}
 	
 	public float getPropValue() {
-		return PropValue;
+		return propValue;
 	}
 	
 	public int getWeight() {
-		return Weight;
+		return weight;
 	}
 	
 	public int getUpgradeWeight() {
-		return UpgradeWeight;
+		return upgradeWeight;
 	}
 	
 	public FightProperty getFightProp() {
-		return PropType;
+		return propType;
 	}
 }
