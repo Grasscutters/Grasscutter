@@ -515,7 +515,11 @@
 		"amountList": [
 			{
 				"value": 4,
-				"chance": 100
+				"chance": 570
+			},
+			{
+				"value": 3,
+				"chance": 30
 			}
 		]
 	},
@@ -555,7 +559,7 @@
 		"amountList": [
 			{
 				"value": 1,
-				"chance": 100
+				"chance": 45
 			}
 		]
 	},
