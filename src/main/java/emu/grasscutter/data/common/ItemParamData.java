@@ -3,10 +3,10 @@ package emu.grasscutter.data.common;
 import com.google.gson.annotations.SerializedName;
 
 public class ItemParamData {
-	@SerializedName(value="Id", alternate={"itemId"})
+	@SerializedName(value="id", alternate={"itemId"})
 	private int id;
 	
-	@SerializedName(value="Count", alternate={"itemCount"})
+	@SerializedName(value="count", alternate={"itemCount"})
     private int count;
 
     public ItemParamData() {}
