@@ -4,12 +4,14 @@ import ch.qos.logback.classic.Logger;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.commands.NoStaminaCommand;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.props.WeaponType;
 import emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
@@ -158,24 +160,8 @@ public class StaminaManager {
         put(542301, 0.8f);
     }};
 
-    public static final HashSet<Integer> BowAvatars = new HashSet<>();
-    public static final HashSet<Integer> CatalystAvatars = new HashSet<>();
-    public static final HashSet<Integer> ClaymoreAvatars = new HashSet<>();
-    public static final HashSet<Integer> PolearmAvatars = new HashSet<>();
-    public static final HashSet<Integer> SwordAvatars = new HashSet<>();
-
     public static void initialize() {
-        // Initialize skill categories
-        GameData.getAvatarDataMap().forEach((avatarId, avatarData) -> {
-            switch (avatarData.getWeaponType()) {
-                case "WEAPON_BOW" -> BowAvatars.add(avatarId);
-                case "WEAPON_CLAYMORE" -> ClaymoreAvatars.add(avatarId);
-                case "WEAPON_CATALYST" -> CatalystAvatars.add(avatarId);
-                case "WEAPON_POLE" -> PolearmAvatars.add(avatarId);
-                case "WEAPON_SWORD_ONE_HAND" -> SwordAvatars.add(avatarId);
-            }
-        });
-        // TODO: Initialize foods etc.
+    	// TODO: Initialize foods etc.
     }
 
     public StaminaManager(Player player) {
@@ -358,13 +344,14 @@ public class StaminaManager {
         }
         setSkillCast(skillId, casterId);
         // Handle immediate stamina cost
-        int currentAvatarId = player.getTeamManager().getCurrentAvatarEntity().getAvatar().getAvatarId();
-        if (ClaymoreAvatars.contains(currentAvatarId)) {
+        Avatar currentAvatar = player.getTeamManager().getCurrentAvatarEntity().getAvatar();
+        if (currentAvatar.getAvatarData().getWeaponType() == WeaponType.WEAPON_CLAYMORE) {
             // Exclude claymore as their stamina cost starts when MixinStaminaCost gets in
             return;
         }
         // TODO: Differentiate normal attacks from charged attacks and exclude
         // TODO: Temporary: Exclude non-claymore attacks for now
+        /*
         if (BowAvatars.contains(currentAvatarId)
                 || SwordAvatars.contains(currentAvatarId)
                 || PolearmAvatars.contains(currentAvatarId)
@@ -372,7 +359,8 @@ public class StaminaManager {
         ) {
             return;
         }
-        handleImmediateStamina(session, skillId);
+        */
+        //handleImmediateStamina(session, skillId);
     }
 
     public void handleMixinCostStamina(boolean isSwim) {
@@ -543,26 +531,21 @@ public class StaminaManager {
             return getTalentMovingSustainedCost(skillCasting);
         }
         // Bow avatar charged attack
-        int currentAvatarId = player.getTeamManager().getCurrentAvatarEntity().getAvatar().getAvatarId();
-        if (BowAvatars.contains(currentAvatarId)) {
-            return getBowSustainedCost(skillCasting);
+        Avatar currentAvatar = player.getTeamManager().getCurrentAvatarEntity().getAvatar();
+        
+        switch (currentAvatar.getAvatarData().getWeaponType()) {
+        	case WEAPON_BOW:
+        		return getBowSustainedCost(skillCasting);
+        	case WEAPON_CLAYMORE:
+        		return getClaymoreSustainedCost(skillCasting);
+        	case WEAPON_CATALYST:
+        		return getCatalystCost(skillCasting);
+        	case WEAPON_POLE:
+        		return getPolearmCost(skillCasting);
+        	case WEAPON_SWORD_ONE_HAND:
+        		return getSwordCost(skillCasting);
         }
-        // Claymore avatar charged attack
-        if (ClaymoreAvatars.contains(currentAvatarId)) {
-            return getClaymoreSustainedCost(skillCasting);
-        }
-        // Catalyst avatar charged attack
-        if (CatalystAvatars.contains(currentAvatarId)) {
-            return getCatalystCost(skillCasting);
-        }
-        // Polearm avatar charged attack
-        if (PolearmAvatars.contains(currentAvatarId)) {
-            return getPolearmCost(skillCasting);
-        }
-        // Sword avatar charged attack
-        if (SwordAvatars.contains(skillCasting)) {
-            return getSwordCost(skillCasting);
-        }
+        
         return new Consumption();
     }
 
