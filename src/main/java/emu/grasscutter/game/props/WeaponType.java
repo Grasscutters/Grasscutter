@@ -9,7 +9,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public enum WeaponType {
 	WEAPON_NONE (0),
-	WEAPON_SWORD_ONE_HAND (1),
+	WEAPON_SWORD_ONE_HAND (1, 10, 5),
 	WEAPON_CROSSBOW (2),
 	WEAPON_STAFF (3),
 	WEAPON_DOUBLE_DAGGER (4),
@@ -18,10 +18,10 @@ public enum WeaponType {
 	WEAPON_STICK (7),
 	WEAPON_SPEAR (8),
 	WEAPON_SHIELD_SMALL (9),
-	WEAPON_CATALYST (10),
-	WEAPON_CLAYMORE (11),
-	WEAPON_BOW (12),
-	WEAPON_POLE (13);
+	WEAPON_CATALYST (10, 0, 10),
+	WEAPON_CLAYMORE (11, 0, 10),
+	WEAPON_BOW (12, 0, 5),
+	WEAPON_POLE (13, 0, 4);
 	
 	private final int value;
 	private int energyGainInitialProbability;
