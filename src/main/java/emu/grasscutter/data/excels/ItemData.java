@@ -230,20 +230,20 @@ public class ItemData extends GameResource {
     
     public static class WeaponProperty {
     	private FightProperty fightProp;
-        private String PropType;
-        private float InitValue;
-        private String Type;
+        private String propType;
+        private float initValue;
+        private String type;
 
         public String getPropType(){
-            return this.PropType;
+            return this.propType;
         }
         
         public float getInitValue(){
-            return this.InitValue;
+            return this.initValue;
         }
         
         public String getType(){
-            return this.Type;
+            return this.type;
         }
 
 		public FightProperty getFightProp() {
@@ -251,7 +251,7 @@ public class ItemData extends GameResource {
 		}
 
 		public void onLoad() {
-			this.fightProp = FightProperty.getPropByName(PropType);
+			this.fightProp = FightProperty.getPropByName(propType);
 		}
         
     }
