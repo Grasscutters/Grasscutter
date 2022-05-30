@@ -256,7 +256,7 @@ public class EnergyManager {
 		//    - Does the probability for a character reset when switching them out?
 		//    - Does this really count every individual hit separately?
 
-		// Make sure the avatar's weapon type makes sense.
+		// Get the avatar's weapon type.
 		WeaponType weaponType = avatar.getAvatar().getAvatarData().getWeaponType();
 
 		// Check if we already have probability data for this avatar. If not, insert it.
