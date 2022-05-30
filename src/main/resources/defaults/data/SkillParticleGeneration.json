@@ -510,6 +510,16 @@
 		]
 	},
 	{
+		"avatarId": 10000060,
+		"name": "Yelan",
+		"amountList": [
+			{
+				"value": 4,
+				"chance": 100
+			}
+		]
+	},
+	{
 		"avatarId": 10000062,
 		"name": "Aloy",
 		"amountList": [
@@ -535,6 +545,16 @@
 		"amountList": [
 			{
 				"value": 2,
+				"chance": 100
+			}
+		]
+	},
+	{
+		"avatarId": 10000065,
+		"name": "Kuki Shinobu",
+		"amountList": [
+			{
+				"value": 1,
 				"chance": 100
 			}
 		]
