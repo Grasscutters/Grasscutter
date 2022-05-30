@@ -7,13 +7,14 @@ import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.PropGrowCurve;
+import emu.grasscutter.game.props.MonsterType;
 
 @ResourceType(name = "MonsterExcelConfigData.json", loadPriority = LoadPriority.LOW)
 public class MonsterData extends GameResource {
 	private int id;
 	
 	private String monsterName;
-    private String type;
+    private MonsterType type;
     private String serverScript;
     private List<Integer> affix;
     private String ai;
@@ -55,7 +56,7 @@ public class MonsterData extends GameResource {
 		return monsterName;
 	}
 
-	public String getType() {
+	public MonsterType getType() {
 		return type;
 	}
 
