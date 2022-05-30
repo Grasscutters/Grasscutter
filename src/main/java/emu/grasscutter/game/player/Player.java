@@ -11,6 +11,7 @@ import emu.grasscutter.game.ability.AbilityManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
+import emu.grasscutter.game.managers.DeforestationManager.DeforestationManager;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
@@ -145,10 +146,10 @@ public class Player {
 	@Transient private MapMarksManager mapMarksManager;
 	@Transient private StaminaManager staminaManager;
 	@Transient private EnergyManager energyManager;
+	@Transient private DeforestationManager deforestationManager;
 
 	private long springLastUsed;
 	private HashMap<String, MapMark> mapMarks;
-
 
 	@Deprecated
 	@SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
@@ -159,6 +160,8 @@ public class Player {
 		this.mailHandler = new MailHandler(this);
 		this.towerManager = new TowerManager(this);
 		this.abilityManager = new AbilityManager(this);
+		this.deforestationManager = new DeforestationManager(this);
+
 		this.setQuestManager(new QuestManager(this));
 		this.pos = new Position();
 		this.rotation = new Position();
@@ -227,6 +230,7 @@ public class Player {
 		this.staminaManager = new StaminaManager(this);
 		this.sotsManager = new SotSManager(this);
 		this.energyManager = new EnergyManager(this);
+		this.deforestationManager = new DeforestationManager(this);
 	}
 
 	public int getUid() {
@@ -923,7 +927,6 @@ public class Player {
 			// Add to inventory
 			boolean success = getInventory().addItem(item, ActionReason.SubfieldDrop);
 			if (success) {
-
 				if (!drop.isShare()) // not shared drop
 					this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_TYPE_PICK_ITEM));
 				else
@@ -1107,6 +1110,10 @@ public class Player {
 
 	public AbilityManager getAbilityManager() {
 		return abilityManager;
+	}
+
+	public DeforestationManager getDeforestationManager() {
+		return deforestationManager;
 	}
 
 	public HashMap<String, MapMark> getMapMarks() { return mapMarks; }
@@ -1297,6 +1304,9 @@ public class Player {
 		
 		// Call quit event.
 		PlayerQuitEvent event = new PlayerQuitEvent(this); event.call();
+
+		//reset wood
+		getDeforestationManager().resetWood();
 	}
 
 	public enum SceneLoadState {

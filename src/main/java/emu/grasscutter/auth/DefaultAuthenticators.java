@@ -215,12 +215,7 @@ public final class DefaultAuthenticators {
             request.getResponse().send("Authentication is not available with the default authentication method.");
         }
 
-        @Override public void handleDesktopRedirection(AuthenticationRequest request) {
-            assert request.getResponse() != null;
-            request.getResponse().send("Authentication is not available with the default authentication method.");
-        }
-
-        @Override public void handleMobileRedirection(AuthenticationRequest request) {
+        @Override public void handleRedirection(AuthenticationRequest request, ClientType type) {
             assert request.getResponse() != null;
             request.getResponse().send("Authentication is not available with the default authentication method.");
         }
