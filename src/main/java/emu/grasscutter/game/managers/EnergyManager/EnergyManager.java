@@ -16,6 +16,8 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.MonsterType;
+import emu.grasscutter.game.props.WeaponType;
 import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall;
 import emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
@@ -244,21 +246,6 @@ public class EnergyManager {
 	/**********
 		Energy generation for NAs/CAs.
 	**********/
-	private final static Map<String, Integer> initialNormalProbability = Map.ofEntries(
-		entry("WEAPON_SWORD_ONE_HAND", 10),
-		entry("WEAPON_BOW", 0),
-		entry("WEAPON_CLAYMORE", 0),
-		entry("WEAPON_POLE", 0),
-		entry("WEAPON_CATALYST", 0)
-	);
-	private final static Map<String, Integer> increaseNormalProbability = Map.ofEntries(
-		entry("WEAPON_SWORD_ONE_HAND", 5),
-		entry("WEAPON_BOW", 5),
-		entry("WEAPON_CLAYMORE", 10),
-		entry("WEAPON_POLE", 4),
-		entry("WEAPON_CATALYST", 10)
-	);
-
 	private void generateEnergyForNormalAndCharged(EntityAvatar avatar) {
 		// This logic is based on the descriptions given in
 		//     https://genshin-impact.fandom.com/wiki/Energy#Energy_Generated_by_Normal_Attacks
@@ -270,14 +257,11 @@ public class EnergyManager {
 		//    - Does this really count every individual hit separately?
 
 		// Make sure the avatar's weapon type makes sense.
-		String weaponType = avatar.getAvatar().getAvatarData().getWeaponType();
-		if (!initialNormalProbability.containsKey(weaponType)) {
-			return;
-		}
+		WeaponType weaponType = avatar.getAvatar().getAvatarData().getWeaponType();
 
 		// Check if we already have probability data for this avatar. If not, insert it.
 		if (!this.avatarNormalProbabilities.containsKey(avatar)) {
-			this.avatarNormalProbabilities.put(avatar, initialNormalProbability.get(weaponType));
+			this.avatarNormalProbabilities.put(avatar, weaponType.getEnergyGainInitialProbability());
 		}
 
 		// Roll for energy.
@@ -287,11 +271,11 @@ public class EnergyManager {
 		// If the player wins the roll, we increase the avatar's energy and reset the probability.
 		if (roll < currentProbability) {
 			avatar.addEnergy(1.0f, PropChangeReason.PROP_CHANGE_REASON_ABILITY, true);
-			this.avatarNormalProbabilities.put(avatar, initialNormalProbability.get(weaponType));
+			this.avatarNormalProbabilities.put(avatar, weaponType.getEnergyGainInitialProbability());
 		}
 		// Otherwise, we increase the probability for the next hit.
 		else {
-			this.avatarNormalProbabilities.put(avatar, currentProbability + increaseNormalProbability.get(weaponType));
+			this.avatarNormalProbabilities.put(avatar, currentProbability + weaponType.getEnergyGainIncreaseProbability());
 		}
 	}
 
@@ -312,8 +296,8 @@ public class EnergyManager {
 		}
 
 		EntityMonster targetMonster = (EntityMonster)targetEntity;
-		String targetType = targetMonster.getMonsterData().getType();
-		if (!targetType.equals("MONSTER_ORDINARY") && !targetType.equals("MONSTER_BOSS")) {
+		MonsterType targetType = targetMonster.getMonsterData().getType();
+		if (targetType != MonsterType.MONSTER_ORDINARY && targetType != MonsterType.MONSTER_BOSS) {
 			return;
 		}
 		
@@ -385,8 +369,8 @@ public class EnergyManager {
 	public void handleMonsterEnergyDrop(EntityMonster monster, float hpBeforeDamage, float hpAfterDamage) {
 		// Make sure this is actually a monster.
 		// Note that some wildlife also has that type, like boars or birds.
-		String type = monster.getMonsterData().getType();
-		if (!type.equals("MONSTER_ORDINARY") && !type.equals("MONSTER_BOSS")) {
+		MonsterType type = monster.getMonsterData().getType();
+		if (type != MonsterType.MONSTER_ORDINARY && type != MonsterType.MONSTER_BOSS) {
 			return;
 		}
 
