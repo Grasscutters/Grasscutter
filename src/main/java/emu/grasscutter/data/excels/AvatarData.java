@@ -9,6 +9,7 @@ import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.binout.AbilityEmbryoEntry;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.WeaponType;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
@@ -22,7 +23,7 @@ public class AvatarData extends GameResource {
     private String qualityType;
     private int chargeEfficiency;
     private int initialWeapon;
-    private String weaponType;
+    private WeaponType weaponType;
     private String imageName;
     private int avatarPromoteId;
     private String cutsceneShow;
@@ -83,7 +84,7 @@ public class AvatarData extends GameResource {
         return this.initialWeapon;
     }
 
-    public String getWeaponType(){
+    public WeaponType getWeaponType(){
         return this.weaponType;
     }
 
