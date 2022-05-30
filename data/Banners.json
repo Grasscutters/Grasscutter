@@ -45,7 +45,7 @@
 	},
 	{
 		"gachaType": 302,
-		"scheduleId": 913,
+		"scheduleId": 923,
 		"bannerType": "WEAPON",
 		"prefabPath": "GachaShowPanel_A083",
 		"previewPrefabPath": "UI_Tab_GachaShowPanel_A083",
