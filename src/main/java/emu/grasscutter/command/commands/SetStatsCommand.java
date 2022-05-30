@@ -215,7 +215,7 @@ public final class SetStatsCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.set_self", stat.name, valueStr));
             } else {
                 String uidStr = targetPlayer.getAccount().getId();
-                CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.set_self", stat.name, uidStr, valueStr));
+                CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.set_for_uid", stat.name, uidStr, valueStr));
             }
         } else {
             CommandHandler.sendMessage(sender, usage);

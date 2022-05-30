@@ -303,6 +303,13 @@ public class EnergyManager {
 		}
 	}
 	public void handleMonsterEnergyDrop(EntityMonster monster, float hpBeforeDamage, float hpAfterDamage) {
+		// Make sure this is actually a monster.
+		// Note that some wildlife also has that type, like boars or birds.
+		String type = monster.getMonsterData().getType();
+		if (!type.equals("MONSTER_ORDINARY") && !type.equals("MONSTER_BOSS")) {
+			return;
+		}
+
 		// Calculate the HP tresholds for before and after the damage was taken.
 		float maxHp = monster.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 		float thresholdBefore = hpBeforeDamage / maxHp;

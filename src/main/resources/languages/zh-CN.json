@@ -104,7 +104,7 @@
       "modify": "修改用户账号",
       "invalid": "无效的UID。",
       "exists": "账号已存在。",
-      "create": "已创建账号，UID 为 %s。",
+      "create": "已创建 UID 为 %s 的账号。",
       "delete": "账号已删除。",
       "no_account": "账号不存在。",
       "command_usage": "用法：account <create|delete> <用户名> [UID]",
@@ -134,7 +134,7 @@
       "description": "从你的背包中删除所有未装备且已解锁的物品，包括稀有物品"
     },
     "coop": {
-      "usage": "用法：coop <玩家ID> <目标玩家ID>",
+      "usage": "用法：coop <玩家ID> [目标玩家UID]",
       "success": "已强制传送 %s 到 %s 的世界。",
       "description": "强制传送指定玩家到他人的世界"
     },
@@ -163,7 +163,7 @@
       "description": "给予指定圣遗物"
     },
     "giveChar": {
-      "usage": "用法：givechar <玩家> <角色ID|角色名> [等级]",
+      "usage": "用法：givechar <玩家> <角色ID> [等级]",
       "given": "已将角色 %s [等级 %s] 给与 %s。",
       "invalid_avatar_id": "无效的角色ID。",
       "invalid_avatar_level": "无效的角色等级。",
@@ -251,7 +251,7 @@
     },
     "sendMail": {
       "usage": "用法：sendmail <用户ID|all|help> [模板ID]",
-      "user_not_exist": "用户 %s 不存在。",
+      "user_not_exist": "用户 '%s' 不存在。",
       "start_composition": "开始撰写邮件。\n请使用 '/sendmail <标题>' 继续。\n你可以随时使用 '/sendmail stop' 停止。",
       "templates": "邮件模板尚未实装...",
       "invalid_arguments": "无效的参数。",

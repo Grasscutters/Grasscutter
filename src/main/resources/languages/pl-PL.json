@@ -125,7 +125,7 @@
       "everything": "Wyczyszczono wszystko dla %s."
     },
     "coop": {
-      "usage": "Użycie: coop <id gracza> <id gracza docelowego>",
+      "usage": "Użycie: coop <id gracza> [host uid]",
       "success": "Przyzwano %s do świata %s."
     },
     "enter_dungeon": {
@@ -146,14 +146,14 @@
       "success": "Dano %s dla %s."
     },
     "giveChar": {
-      "usage": "Użycie: givechar <gracz> <id przedmiotu | nazwa przedmiotu> [ilość]",
+      "usage": "Użycie: givechar <gracz> <avatarId> [ilość]",
       "given": "Dano %s z poziomem %s dla %s.",
       "invalid_avatar_id": "Błędne ID postaci.",
       "invalid_avatar_level": "Błędny poziom postaci.",
       "invalid_avatar_or_player_id": "Błędne ID postaci lub gracza."
     },
     "give": {
-      "usage": "Użycie: give <gracz> <id przedmiotu | nazwa przedmiotu> [ilość] [poziom]",
+      "usage": "Użycie: give <gracz> <id przedmiotu | nazwa przedmiotu> [ilość] [poziom] [refinement]",
       "refinement_only_applicable_weapons": "Ulepszenie można zastosować tylko dla broni.",
       "refinement_must_between_1_and_5": "Ulepszenie musi być pomiędzy 1, a 5.",
       "given": "Dano %s %s dla %s.",
