@@ -139,7 +139,7 @@
       "description": "強制傳送指定用戶到他人的世界。"
     },
     "enter_dungeon": {
-      "usage": "用法：enterdungeon <dungeon id>",
+      "usage": "用法：enterdungeon <dungeonId>",
       "changed": "已進入祕境 %s",
       "not_found_error": "此祕境不存在。",
       "in_dungeon_error": "你已經在祕境中了。",
@@ -366,7 +366,7 @@
       "description": "將玩家的位置傳送到你所指定的座標。"
     },
     "weather": {
-      "usage": "用法：weather <weatherId> [climateId]",
+      "usage": "用法：weather <weatherId> <climateId>",
       "success": "已將當前天氣設定為 %s ，氣候則為 %s 。",
       "invalid_id": "無效的ID。",
       "description": "更改目前的天氣。"
