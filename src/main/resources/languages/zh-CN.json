@@ -331,9 +331,9 @@
     },
     "team": {
       "usage": "用法：team <add|remove|set> [角色ID,...] [索引|first|last|索引-索引,...]",
-      "invalid_usage": "无效用法。",
+      "invalid_usage": "无效的用法。",
       "add_usage": "用法(add)：team add <角色ID,...> [索引]",
-      "invalid_index": "无效索引。",
+      "invalid_index": "无效的索引。",
       "add_too_much": "服务端仅允许你队伍里至多有 %d 名角色。",
       "failed_to_add_avatar": "无法根据ID %s 添加角色。",
       "remove_usage": "用法(remove)：team remove <索引|first|last|索引-索引,...>",
@@ -361,7 +361,7 @@
       "description": "改变指定玩家的位置"
     },
     "weather": {
-      "usage": "用法：weather <天气ID> [气候ID]",
+      "usage": "用法：weather <天气ID> <气候ID>",
       "success": "已更改天气为 %s，气候为 %s。",
       "invalid_id": "无效的天气ID。",
       "description": "更改天气"
@@ -369,7 +369,7 @@
     "drop": {
       "command_usage": "用法：drop <物品ID|物品名称> [数量]",
       "success": "已丢下 %s 个 %s。",
-      "description": "在你附近丢下一个物品"
+      "description": "在你的附近丢下物品"
     },
     "help": {
       "usage": "用法：",

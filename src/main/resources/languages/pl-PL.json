@@ -290,7 +290,7 @@
       "success": "Przeteleportowano %s do %s, %s, %s w scenie %s"
     },
     "weather": {
-      "usage": "Użycie: weather <ID pogody> [ID klimatu]",
+      "usage": "Użycie: weather <ID pogody> <ID klimatu>",
       "success": "Zmieniono pogodę na %s z klimatem %s",
       "invalid_id": "Błędne ID."
     },
