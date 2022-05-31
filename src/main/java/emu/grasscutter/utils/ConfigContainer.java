@@ -171,7 +171,7 @@ public class ConfigContainer {
     public static class GameOptions {
         public InventoryLimits inventoryLimits = new InventoryLimits();
         public AvatarLimits avatarLimits = new AvatarLimits();
-        public int worldEntityLimit = 1000; // Unenforced. TODO: Implement.
+        public int sceneEntityLimit = 1000; // Unenforced. TODO: Implement.
 
         public boolean watchGachaConfig = false;
         public boolean enableShopItems = true;
