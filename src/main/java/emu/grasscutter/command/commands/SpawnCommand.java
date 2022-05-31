@@ -20,6 +20,7 @@ import javax.swing.text.html.parser.Entity;
 import java.util.List;
 import java.util.Random;
 
+import static emu.grasscutter.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)]", permission = "server.spawn", permissionTargeted = "server.spawn.others", description = "commands.spawn.description")
@@ -54,7 +55,7 @@ public final class SpawnCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.usage"));
                 return;
         }
-
+        
         MonsterData monsterData = GameData.getMonsterDataMap().get(id);
         GadgetData gadgetData = GameData.getGadgetDataMap().get(id);
         ItemData itemData = GameData.getItemDataMap().get(id);
@@ -62,7 +63,16 @@ public final class SpawnCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.entityId"));
             return;
         }
+       
         Scene scene = targetPlayer.getScene();
+        
+        if (scene.getEntities().size() + amount > GAME_OPTIONS.sceneEntityLimit) {
+        	amount = Math.max(Math.min(GAME_OPTIONS.sceneEntityLimit - scene.getEntities().size(), amount), 0);
+        	CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.limit_reached", amount));
+        	if (amount <= 0) {
+        		return;
+        	}
+        }
 
         double maxRadius = Math.sqrt(amount * 0.2 / Math.PI);
         for (int i = 0; i < amount; i++) {
