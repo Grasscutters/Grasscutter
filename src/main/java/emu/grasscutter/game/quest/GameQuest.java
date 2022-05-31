@@ -2,6 +2,7 @@ package emu.grasscutter.game.quest;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.data.binout.MainQuestData.SubQuestData;
