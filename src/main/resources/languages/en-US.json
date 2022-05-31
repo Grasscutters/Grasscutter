@@ -250,7 +250,7 @@
       "description": "Reset target player's shop refresh time"
     },
     "sendMail": {
-      "usage": "Usage: sendmail <userID|all|help> [templateId]",
+      "usage": "Usage: sendmail <userID|all|help> [templateID]",
       "user_not_exist": "The user with an ID of '%s' does not exist.",
       "start_composition": "Starting composition of message.\nPlease use '/sendmail <title>' to continue.\nYou can use '/sendmail stop' at any time.",
       "templates": "Mail templates coming soon implemented...",
