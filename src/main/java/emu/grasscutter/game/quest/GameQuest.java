@@ -2,6 +2,7 @@ package emu.grasscutter.game.quest;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.data.binout.MainQuestData.SubQuestData;
@@ -44,11 +45,11 @@ public class GameQuest {
 		this.startTime = this.acceptTime;
 		this.state = QuestState.QUEST_STATE_UNFINISHED;
 		
-		if (questData.getFinishCond()!= null) {
+		if (questData.getFinishCond() != null && questData.getAcceptCond().length != 0) {
 			this.finishProgressList = new int[questData.getFinishCond().length];
 		}
-		
-		if (questData.getFailCond() != null) {
+
+		if (questData.getFailCond() != null && questData.getFailCond().length != 0) {
 			this.failProgressList = new int[questData.getFailCond().length];
 		}
 		
@@ -158,36 +159,38 @@ public class GameQuest {
 	public boolean tryAcceptQuestLine() {
 		try {
 			MainQuestData questConfig = GameData.getMainQuestDataMap().get(this.getMainQuestId());
-			
+
 			for (SubQuestData subQuest : questConfig.getSubQuests()) {
 				GameQuest quest = getMainQuest().getChildQuestById(subQuest.getSubId());
-				
+
 				if (quest == null) {
 					QuestData questData = GameData.getQuestDataMap().get(subQuest.getSubId());
-					
-					if (questData == null || questData.getAcceptCond() == null) {
+
+					if (questData == null || questData.getAcceptCond() == null
+							|| questData.getAcceptCond().length == 0) {
 						continue;
 					}
-					
+
 					int[] accept = new int[questData.getAcceptCond().length];
-							
+
 					// TODO
 					for (int i = 0; i < questData.getAcceptCond().length; i++) {
 						QuestCondition condition = questData.getAcceptCond()[i];
-						boolean result = getOwner().getServer().getQuestHandler().triggerCondition(this, condition, condition.getParam());
-						
+						boolean result = getOwner().getServer().getQuestHandler().triggerCondition(this, condition,
+								condition.getParam());
+
 						accept[i] = result ? 1 : 0;
 					}
-					
+
 					boolean shouldAccept = LogicType.calculate(questData.getAcceptCondComb(), accept);
-					
+
 					if (shouldAccept) {
 						this.getOwner().getQuestManager().addQuest(questData.getId());
 					}
 				}
 			}
 		} catch (Exception e) {
-			
+			Grasscutter.getLogger().error("An error occurred while trying to accept quest.", e);
 		}
 
 		return false;

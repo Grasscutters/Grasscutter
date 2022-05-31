@@ -1,12 +1,9 @@
 package emu.grasscutter.game.quest;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.QuestData;
@@ -133,7 +130,9 @@ public class QuestManager {
 			QuestData data = quest.getData();
 			
 			for (int i = 0; i < data.getFinishCond().length; i++) {
-				if (quest.getFinishProgressList() == null || quest.getFinishProgressList()[i] == 1) {
+				if (quest.getFinishProgressList() == null 
+					|| quest.getFinishProgressList().length == 0
+					|| quest.getFinishProgressList()[i] == 1) {
 					continue;
 				}
 				
