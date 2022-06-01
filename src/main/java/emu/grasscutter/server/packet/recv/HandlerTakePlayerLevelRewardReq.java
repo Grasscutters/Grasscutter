@@ -19,8 +19,8 @@ import emu.grasscutter.server.packet.send.PacketTakePlayerLevelRewardRsp;
 public class HandlerTakePlayerLevelRewardReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        synchronized (HandlerTakePlayerLevelRewardReq.class) {
-            Player pl = session.getPlayer();
+        Player pl = session.getPlayer();
+        synchronized (pl) {
             TakePlayerLevelRewardReq req = TakePlayerLevelRewardReq.parseFrom(payload);
             int level = req.getLevel();
             Set<Integer> rewardedLevels = session.getPlayer().getRewardedLevels();
@@ -31,6 +31,7 @@ public class HandlerTakePlayerLevelRewardReq extends PacketHandler {
                     pl.getInventory().addItemParamDatas(rewardItems, ActionReason.PlayerUpgradeReward);
                     rewardedLevels.add(level);
                     pl.setRewardedLevels(rewardedLevels);
+                    pl.save();
                     session.send(new PacketTakePlayerLevelRewardRsp(level, rewardId));
                 }
             }
