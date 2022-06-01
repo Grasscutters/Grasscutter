@@ -38,8 +38,16 @@ public final class DatabaseHelper {
 			if (reservedId == GameConstants.SERVER_CONSOLE_UID) {
 				return null;
 			}
+
+			// Make sure not other accounts has that id as its reservedPlayerId
 			exists = DatabaseHelper.getAccountByPlayerId(reservedId);
 			if (exists != null) {
+				return null;
+			}
+
+			// Make sure no existing player already has this id.
+			Player existsPlayer = DatabaseHelper.getPlayerByUid(reservedId);
+			if (existsPlayer != null) {
 				return null;
 			}
 		}
