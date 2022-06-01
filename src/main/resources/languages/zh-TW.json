@@ -134,7 +134,7 @@
       "description": "從你的背包中刪除所有未裝備且未上鎖的物品，包括稀有物品。"
     },
     "coop": {
-      "usage": "用法：coop <playerId> [host uid]",
+      "usage": "用法：coop [host uid]",
       "success": "召喚了 %s 到 %s 的世界。",
       "description": "強制傳送指定用戶到他人的世界。"
     },
@@ -367,8 +367,8 @@
       "description": "將玩家的位置傳送到你所指定的座標。"
     },
     "weather": {
-      "usage": "用法：weather <weatherId> <climateId>",
-      "success": "已將當前天氣設定為 %s ，氣候則為 %s 。",
+      "usage": "用法：weather <氣候型別(天氣ID)> <天氣型別(氣候ID)>\n天氣型別：'0: 無, 1: 晴天, 2: 多雲, 3: 雨, 4: 雷雨, 5: 雪, 6: 霧'",
+      "success": "已將當前氣候型別設定為 %s，天氣型別為 %s。",
       "invalid_id": "無效的ID。",
       "description": "更改目前的天氣。"
     },
