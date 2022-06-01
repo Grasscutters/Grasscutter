@@ -125,7 +125,7 @@
       "everything": "Wyczyszczono wszystko dla %s."
     },
     "coop": {
-      "usage": "Użycie: coop <id gracza> [host uid]",
+      "usage": "Użycie: coop [host uid]",
       "success": "Przyzwano %s do świata %s."
     },
     "enter_dungeon": {
@@ -290,8 +290,8 @@
       "success": "Przeteleportowano %s do %s, %s, %s w scenie %s"
     },
     "weather": {
-      "usage": "Użycie: weather <ID pogody> <ID klimatu>",
-      "success": "Zmieniono pogodę na %s z klimatem %s",
+      "usage": "Użycie: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types: '0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist'",
+      "success": "Changed climate type to %s with weather type %s.",
       "invalid_id": "Błędne ID."
     },
     "drop": {

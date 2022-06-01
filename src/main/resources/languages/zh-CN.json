@@ -88,11 +88,11 @@
       "argument_error": "无效的参数。",
       "clear_target": "目标已清除。",
       "set_target": "随后的的命令都会以 @%s 为预设。",
-      "set_target_online": "@%s 在线。 某些命令可能需要离线目标。",
-      "set_target_offline": "@%s 离线。 某些命令可能需要在线目标。",
+      "set_target_online": "@%s 在线。某些命令可能需要离线目标。",
+      "set_target_offline": "@%s 离线。某些命令可能需要在线目标。",
       "need_target": "此命令需要一个目标 UID。添加 <@UID> 参数或使用 /target @UID 来指定默认目标。",
-      "need_target_online": "此命令需要在线目标 UID，但当前目标离线。 添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。",
-      "need_target_offline": "此命令需要离线目标 UID，但当前目标在线。 添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。"
+      "need_target_online": "此命令需要在线目标 UID，但当前目标离线。添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。",
+      "need_target_offline": "此命令需要离线目标 UID，但当前目标在线。添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。"
     },
     "status": {
       "enabled": "已启用",
@@ -134,7 +134,7 @@
       "description": "从你的背包中删除所有未装备且已解锁的物品，包括稀有物品"
     },
     "coop": {
-      "usage": "用法：coop <玩家ID> [目标玩家UID]",
+      "usage": "用法：coop [指定玩家UID]",
       "success": "已强制传送 %s 到 %s 的世界。",
       "description": "强制传送指定玩家到他人的世界"
     },
@@ -362,15 +362,15 @@
       "description": "改变指定玩家的位置"
     },
     "weather": {
-      "usage": "用法：weather <天气ID> <气候ID>",
-      "success": "已更改天气为 %s，气候为 %s。",
-      "invalid_id": "无效的天气ID。",
+      "usage": "用法：weather <气候类型(天气ID)> <天气类型(气候ID)>\n天气类型：'0: 无, 1: 晴天, 2: 多云, 3: 雨, 4: 雷雨, 5: 雪, 6: 雾'",
+      "success": "已更改气候类型为 %s，天气类型为 %s。",
+      "invalid_id": "无效的ID。",
       "description": "更改天气"
     },
     "drop": {
       "command_usage": "用法：drop <物品ID|物品名称> [数量]",
       "success": "已丢下 %s 个 %s。",
-      "description": "在你的附近丢下物品"
+      "description": "在你附近丢下物品"
     },
     "help": {
       "usage": "用法：",
