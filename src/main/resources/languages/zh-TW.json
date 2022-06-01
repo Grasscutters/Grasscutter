@@ -311,7 +311,8 @@
     "spawn": {
       "usage": "用法：spawn <entityId> [amount] [level(僅限怪物)]",
       "success": "已生成 %s 個 %s。",
-      "description": "在你附近生成一個實體動物。"
+      "limit_reached": "場景中的生成數量已達上限。已替代為生成 %s 個實體。",
+      "description": "在你附近生成實體。"
     },
     "stop": {
       "success": "正在關閉伺服器...",

@@ -306,7 +306,8 @@
     "spawn": {
       "usage": "用法：spawn <实体ID> [数量] [等级(仅怪物)]",
       "success": "已生成 %s 个 %s。",
-      "description": "在你附近生成一个生物"
+      "limit_reached": "场景中的生成数量已达上限。已替代为生成 %s 个实体。",
+      "description": "在你附近生成实体"
     },
     "stop": {
       "success": "正在关闭服务器...",
