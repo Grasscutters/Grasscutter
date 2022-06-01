@@ -4,6 +4,6 @@ option java_package = "emu.grasscutter.net.proto";
  
 import "Vector.proto";
 message HitTreeNotify {
-        Vector hit_postion = 3;
-        uint32 wood_type = 1;		
+        Vector hit_postion = 1;
+        uint32 wood_type = 2;		
 }
