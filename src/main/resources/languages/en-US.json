@@ -103,7 +103,7 @@
     "account": {
       "modify": "Modify user accounts",
       "invalid": "Invalid UID.",
-      "exists": "Account already exists.",
+      "exists": "An account with this username and/or UID already exists.",
       "create": "Account created with UID %s.",
       "delete": "Account deleted.",
       "no_account": "Account not found.",
