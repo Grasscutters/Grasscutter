@@ -18,52 +18,60 @@ public class PacketGetMailItemRsp  extends BasePacket {
 
     public PacketGetMailItemRsp(Player player, List<Integer> mailList) {
         super(PacketOpcodes.GetMailItemRsp);
-
         List<Mail> claimedMessages = new ArrayList<>();
         List<EquipParamOuterClass.EquipParam> claimedItems = new ArrayList<>();
 
         GetMailItemRsp.Builder proto = GetMailItemRsp.newBuilder();
 
-        for (int mailId : mailList) {
-            Mail message = player.getMail(mailId);
+        synchronized (player) {
+            boolean modified = false;
+            for (int mailId : mailList) {
+                Mail message = player.getMail(mailId);
+                if (!message.isAttachmentGot) {//No duplicated item
+                    for (Mail.MailItem mailItem : message.itemList) {
+                        EquipParamOuterClass.EquipParam.Builder item = EquipParamOuterClass.EquipParam.newBuilder();
+                        int promoteLevel = 0;
 
-            for(Mail.MailItem mailItem : message.itemList) {
-                EquipParamOuterClass.EquipParam.Builder item = EquipParamOuterClass.EquipParam.newBuilder();
-                int promoteLevel = 0;
-                if (mailItem.itemLevel > 20) { // 20/40
-                    promoteLevel = 1;
-                } else if (mailItem.itemLevel > 40) { // 40/50
-                    promoteLevel = 2;
-                } else if (mailItem.itemLevel > 50) { // 50/60
-                    promoteLevel = 3;
-                } else if (mailItem.itemLevel > 60) { // 60/70
-                    promoteLevel = 4;
-                } else if (mailItem.itemLevel > 70) { // 70/80
-                    promoteLevel = 5;
-                } else if (mailItem.itemLevel > 80) { // 80/90
-                    promoteLevel = 6;
+                        if (mailItem.itemLevel > 80) { // 80/90
+                            promoteLevel = 6;
+                        } else if (mailItem.itemLevel > 70) { // 70/80
+                            promoteLevel = 5;
+                        } else if (mailItem.itemLevel > 60) { // 60/70
+                            promoteLevel = 4;
+                        } else if (mailItem.itemLevel > 50) { // 50/60
+                            promoteLevel = 3;
+                        } else if (mailItem.itemLevel > 40) { // 40/50
+                            promoteLevel = 2;
+                        } else if (mailItem.itemLevel > 20) { // 20/40
+                            promoteLevel = 1;
+                        }
+
+                        item.setItemId(mailItem.itemId);
+                        item.setItemNum(mailItem.itemCount);
+                        item.setItemLevel(mailItem.itemLevel);
+                        item.setPromoteLevel(promoteLevel);
+                        claimedItems.add(item.build());
+
+                        GameItem gameItem = new GameItem(GameData.getItemDataMap().get(mailItem.itemId));
+                        gameItem.setCount(mailItem.itemCount);
+                        gameItem.setLevel(mailItem.itemLevel);
+                        gameItem.setPromoteLevel(promoteLevel);
+                        player.getInventory().addItem(gameItem, ActionReason.MailAttachment);
+                    }
+
+                    message.isAttachmentGot = true;
+                    claimedMessages.add(message);
+
+                    player.replaceMailByIndex(mailId, message);
+                    modified = true;
                 }
-
-                item.setItemId(mailItem.itemId);
-                item.setItemNum(mailItem.itemCount);
-                item.setItemLevel(mailItem.itemLevel);
-                item.setPromoteLevel(promoteLevel);
-                claimedItems.add(item.build());
-
-                GameItem gameItem = new GameItem(GameData.getItemDataMap().get(mailItem.itemId));
-                gameItem.setCount(mailItem.itemCount);
-                gameItem.setLevel(mailItem.itemLevel);
-                gameItem.setPromoteLevel(promoteLevel);
-                player.getInventory().addItem(gameItem, ActionReason.MailAttachment);
             }
-
-            message.isAttachmentGot = true;
-            claimedMessages.add(message);
-
-            player.replaceMailByIndex(mailId, message);
+            if(modified) {
+                player.save();
+            }
         }
 
-        proto.addAllMailIdList(claimedMessages.stream().map(message -> player.getMailId(message)).collect(Collectors.toList()));
+        proto.addAllMailIdList(claimedMessages.stream().map(player::getMailId).collect(Collectors.toList()));
         proto.addAllItemList(claimedItems);
 
         this.setData(proto.build());
