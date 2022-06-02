@@ -25,7 +25,9 @@ import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Position;
+import io.javalin.core.util.FileUtil;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -63,7 +65,8 @@ public class EnergyManager {
 
 	public static void initialize() {
 		// Read the data we need for monster energy drops.
-		try (Reader fileReader = new InputStreamReader(DataLoader.load("EnergyDrop.json"))) {
+		// try (Reader fileReader = new InputStreamReader(DataLoader.load("EnergyDrop.json"))) {
+		try (Reader fileReader = new InputStreamReader(FileUtils.readResourceAsStream("/json/EnergyDrop.json"))) {
 			List<EnergyDropEntry> energyDropList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, EnergyDropEntry.class).getType());
 
 			for (EnergyDropEntry entry : energyDropList) {
@@ -77,7 +80,8 @@ public class EnergyManager {
 		}
 
 		// Read the data for particle generation from skills
-		try (Reader fileReader = new InputStreamReader(DataLoader.load("SkillParticleGeneration.json"))) {
+		// try (Reader fileReader = new InputStreamReader(DataLoader.load("SkillParticleGeneration.json"))) {
+		try (Reader fileReader = new InputStreamReader(FileUtils.readResourceAsStream("/json/SkillParticleGeneration.json"))) {
 			List<SkillParticleGenerationEntry> skillParticleGenerationList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, SkillParticleGenerationEntry.class).getType());
 
 			for (SkillParticleGenerationEntry entry : skillParticleGenerationList) {
