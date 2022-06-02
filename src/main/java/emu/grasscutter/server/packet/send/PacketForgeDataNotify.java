@@ -1,13 +1,9 @@
 package emu.grasscutter.server.packet.send;
 
-import java.util.List;
-
-import dev.morphia.AdvancedDatastore;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ForgeDataNotifyOuterClass.ForgeDataNotify;
-import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
 
 public class PacketForgeDataNotify extends BasePacket {
 	
@@ -22,9 +18,12 @@ public class PacketForgeDataNotify extends BasePacket {
 			: 1;
 
 		ForgeDataNotify proto = ForgeDataNotify.newBuilder()
-			.addAllForgeIdList(List.of(14017, 14009, 14008))
+			.addAllForgeIdList(player.getUnlockedForgingBlueprints())
 			.setMaxQueueNum(numQueues)
 			.build();
+
+		// ToDo: Add the information for the actual forging queues
+		// and ongoing forges.
 
 		this.setData(proto);
 	}

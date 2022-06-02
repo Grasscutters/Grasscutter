@@ -89,6 +89,7 @@ public class Player {
 	private Set<Integer> nameCardList;
 	private Set<Integer> flyCloakList;
 	private Set<Integer> costumeList;
+	private Set<Integer> unlockedForgingBlueprints;
 
 	private Integer widgetId;
 
@@ -183,6 +184,7 @@ public class Player {
 		this.nameCardList = new HashSet<>();
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
+		this.unlockedForgingBlueprints = new HashSet<>();
 
 		this.setSceneId(3);
 		this.setRegionId(1);
@@ -513,6 +515,10 @@ public class Player {
 
 	public Set<Integer> getNameCardList() {
 		return this.nameCardList;
+	}
+
+	public Set<Integer> getUnlockedForgingBlueprints() {
+		return unlockedForgingBlueprints;
 	}
 
 	public MpSettingType getMpSetting() {
