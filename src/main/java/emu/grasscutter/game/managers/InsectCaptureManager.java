@@ -14,7 +14,7 @@ import emu.grasscutter.net.proto.VisionTypeOuterClass;
 
 public record InsectCaptureManager(Player player) {
     public void arrestSmallCreature(GameEntity entity) {
-        System.out.println("arrestSmallCreature!");
+        //System.out.println("arrestSmallCreature!");
         EnvAnimalGatherConfigData gather;
         int thingId;
         if (entity instanceof EntityMonster monster) {
