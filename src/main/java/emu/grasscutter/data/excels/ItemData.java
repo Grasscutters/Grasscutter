@@ -1,7 +1,10 @@
 package emu.grasscutter.data.excels;
 
+import java.util.List;
+
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.common.ItemUseData;
 import emu.grasscutter.game.props.FightProperty;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
@@ -21,6 +24,8 @@ public class ItemData extends GameResource {
     
     private int[] destroyReturnMaterial;
     private int[] destroyReturnMaterialCount;
+
+    private List<ItemUseData> itemUse;
     
     // Food
     private String foodQuality;
@@ -112,7 +117,11 @@ public class ItemData extends GameResource {
     public int[] getDestroyReturnMaterialCount(){
         return this.destroyReturnMaterialCount;
     }
-    
+
+    public List<ItemUseData> getItemUse() {
+        return itemUse;
+    }
+
     public long getNameTextMapHash(){
         return this.nameTextMapHash;
     }

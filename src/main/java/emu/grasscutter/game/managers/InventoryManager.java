@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.OpenConfigEntry;
 import emu.grasscutter.data.binout.OpenConfigEntry.SkillPointModifier;
@@ -28,6 +29,7 @@ import emu.grasscutter.game.shop.ShopChestBatchUseTable;
 import emu.grasscutter.game.shop.ShopChestTable;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
+import emu.grasscutter.server.packet.send.PacketForgeFormulaDataNotify;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
@@ -822,6 +824,7 @@ public class InventoryManager {
 		int used = 0;
 		
 		// Use
+		Grasscutter.getLogger().info("Item: {}", useItem.getItemData().getId());
 		switch (useItem.getItemData().getMaterialType()) {
 			case MATERIAL_FOOD:
 				if (useItem.getItemData().getUseTarget().equals("ITEM_USE_TARGET_SPECIFY_DEAD_AVATAR")) {
@@ -840,6 +843,24 @@ public class InventoryManager {
 
 					int[] SatiationParams = useItem.getItemData().getSatiationParams();
 					used = player.getTeamManager().healAvatar(target, SatiationParams[0], SatiationParams[1]) ? 1 : 0;
+				}
+				break;
+			case MATERIAL_CONSUME:
+				// Make sure we have usage data for this material.
+				if (useItem.getItemData().getItemUse() == null) {
+					break;
+				}
+
+				// Handle forging blueprints.
+				if (useItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_FORGE")) {
+					// Determine the forging item we should unlock.
+					int forgeId = Integer.parseInt(useItem.getItemData().getItemUse().get(0).getUseParam().get(0));
+
+					// Tell the client that this blueprint is now unlocked.
+					player.sendPacket(new PacketForgeFormulaDataNotify(forgeId));
+
+					// Use up the blueprint item.
+					used = 1;
 				}
 				break;
 			case MATERIAL_CHEST:
