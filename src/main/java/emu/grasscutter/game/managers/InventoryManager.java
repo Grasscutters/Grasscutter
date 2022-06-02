@@ -824,7 +824,6 @@ public class InventoryManager {
 		int used = 0;
 		
 		// Use
-		Grasscutter.getLogger().info("Item: {}", useItem.getItemData().getId());
 		switch (useItem.getItemData().getMaterialType()) {
 			case MATERIAL_FOOD:
 				if (useItem.getItemData().getUseTarget().equals("ITEM_USE_TARGET_SPECIFY_DEAD_AVATAR")) {
@@ -856,8 +855,9 @@ public class InventoryManager {
 					// Determine the forging item we should unlock.
 					int forgeId = Integer.parseInt(useItem.getItemData().getItemUse().get(0).getUseParam().get(0));
 
-					// Tell the client that this blueprint is now unlocked.
+					// Tell the client that this blueprint is now unlocked and add the unlocked item to the player.
 					player.sendPacket(new PacketForgeFormulaDataNotify(forgeId));
+					player.getUnlockedForgingBlueprints().add(forgeId);
 
 					// Use up the blueprint item.
 					used = 1;
