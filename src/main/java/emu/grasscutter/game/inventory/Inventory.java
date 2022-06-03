@@ -8,10 +8,10 @@ import java.util.List;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.def.AvatarCostumeData;
-import emu.grasscutter.data.def.AvatarData;
-import emu.grasscutter.data.def.AvatarFlycloakData;
-import emu.grasscutter.data.def.ItemData;
+import emu.grasscutter.data.excels.AvatarCostumeData;
+import emu.grasscutter.data.excels.AvatarData;
+import emu.grasscutter.data.excels.AvatarFlycloakData;
+import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.Avatar;
@@ -182,7 +182,7 @@ public class Inventory implements Iterable<GameItem> {
 			this.addVirtualItem(item.getItemId(), item.getCount());
 			return item;
 		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_ADSORBATE) {
-			player.getTeamManager().addEnergyToTeam(item);
+			this.player.getEnergyManager().handlePickupElemBall(item);
 			return null;
 		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_AVATAR) {
 			// Get avatar id
@@ -240,6 +240,7 @@ public class Inventory implements Iterable<GameItem> {
 	}
 	
 	private synchronized void putItem(GameItem item, InventoryTab tab) {
+		getPlayer().getCodex().checkAddedItem(item);
 		// Set owner and guid FIRST!
 		item.setOwner(getPlayer());
 		// Put in item store

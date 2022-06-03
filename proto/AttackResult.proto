@@ -3,9 +3,9 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 import "AbilityIdentifier.proto";
+import "AttackHitEffectResult.proto";
 import "HitCollision.proto";
 import "Vector.proto";
-import "AttackHitEffectResult.proto";
 
 message AttackResult {
 	uint32 attacker_id = 1;
@@ -37,4 +37,5 @@ message AttackResult {
 	float endure_delta = 37;
 	uint32 target_type = 38;
 	float element_durability_attenuation = 39;
+	uint32 EGPFEACDCLP = 40;
 }

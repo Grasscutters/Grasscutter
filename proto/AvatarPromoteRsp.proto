@@ -2,16 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
+// CmdId: 1668
+// EnetChannelId: 0
+// EnetIsReliable: true
 message AvatarPromoteRsp {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 1728;
-	}
-
-	int32 retcode = 1;
-	uint64 guid = 2;
+	int32 retcode = 15;
+	uint64 guid = 7;
 }

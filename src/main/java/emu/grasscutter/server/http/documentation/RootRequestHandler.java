@@ -17,7 +17,6 @@ final class RootRequestHandler implements DocumentationHandler {
     private final String template;
 
     public RootRequestHandler() {
-        ResourceLoader.loadResources();
         final File templateFile = new File(Utils.toFilePath(DATA("documentation/index.html")));
         if (templateFile.exists()) {
             template = new String(FileUtils.read(templateFile), StandardCharsets.UTF_8);

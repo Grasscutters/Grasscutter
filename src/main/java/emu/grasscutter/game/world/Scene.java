@@ -283,7 +283,7 @@ public class Scene {
 	private void removePlayerAvatars(Player player) {
 		Iterator<EntityAvatar> it = player.getTeamManager().getActiveTeam().iterator();
 		while (it.hasNext()) {
-			this.removeEntity(it.next(), VisionType.VISION_REMOVE);
+			this.removeEntity(it.next(), VisionType.VISION_TYPE_REMOVE);
 			it.remove();
 		}
 	}
@@ -342,7 +342,7 @@ public class Scene {
 	}
 	
 	public void removeEntity(GameEntity entity) {
-		this.removeEntity(entity, VisionType.VISION_DIE);
+		this.removeEntity(entity, VisionType.VISION_TYPE_DIE);
 	}
 	
 	public synchronized void removeEntity(GameEntity entity, VisionType visionType) {
@@ -362,8 +362,8 @@ public class Scene {
 	public synchronized void replaceEntity(EntityAvatar oldEntity, EntityAvatar newEntity) {
 		this.removeEntityDirectly(oldEntity);
 		this.addEntityDirectly(newEntity);
-		this.broadcastPacket(new PacketSceneEntityDisappearNotify(oldEntity, VisionType.VISION_REPLACE));
-		this.broadcastPacket(new PacketSceneEntityAppearNotify(newEntity, VisionType.VISION_REPLACE, oldEntity.getId()));
+		this.broadcastPacket(new PacketSceneEntityDisappearNotify(oldEntity, VisionType.VISION_TYPE_REPLACE));
+		this.broadcastPacket(new PacketSceneEntityAppearNotify(newEntity, VisionType.VISION_TYPE_REPLACE, oldEntity.getId()));
 	}
 
 	public void showOtherEntities(Player player) {
@@ -400,6 +400,19 @@ public class Scene {
 	}
 	
 	public void killEntity(GameEntity target, int attackerId) {
+		GameEntity attacker = getEntityById(attackerId);
+
+		//Check codex
+		if (attacker instanceof EntityClientGadget) {
+			var clientGadgetOwner = getEntityById(((EntityClientGadget) attacker).getOwnerEntityId());
+			if(clientGadgetOwner instanceof EntityAvatar) {
+				((EntityClientGadget) attacker).getOwner().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+			}
+		}
+		else if (attacker instanceof EntityAvatar) {
+			((EntityAvatar) attacker).getPlayer().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+		}
+
 		// Packet
 		this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
 
@@ -469,7 +482,11 @@ public class Scene {
 					continue;
 				}
 				
-				EntityMonster entity = new EntityMonster(this, data, entry.getPos(), worldLevelOverride > 0 ? worldLevelOverride : entry.getLevel());
+				int level = worldLevelOverride > 0 ? worldLevelOverride + entry.getLevel() - 22 : entry.getLevel();
+				level = level >= 100 ? 100 : level;
+				level = level <= 0 ? 1 : level;
+				
+				EntityMonster entity = new EntityMonster(this, data, entry.getPos(), level);
 				entity.getRotation().set(entry.getRot());
 				entity.setGroupId(entry.getGroup().getGroupId());
 				entity.setPoseId(entry.getPoseId());
@@ -491,11 +508,11 @@ public class Scene {
 		
 		if (toAdd.size() > 0) {
 			toAdd.stream().forEach(this::addEntityDirectly);
-			this.broadcastPacket(new PacketSceneEntityAppearNotify(toAdd, VisionType.VISION_BORN));
+			this.broadcastPacket(new PacketSceneEntityAppearNotify(toAdd, VisionType.VISION_TYPE_BORN));
 		}
 		if (toRemove.size() > 0) {
 			toRemove.stream().forEach(this::removeEntityDirectly);
-			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_REMOVE));
+			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_TYPE_REMOVE));
 		}
 	}
 
@@ -682,7 +699,7 @@ public class Scene {
 			return;
 		}
 		
-		this.broadcastPacketToOthers(gadget.getOwner(), new PacketSceneEntityDisappearNotify(gadget, VisionType.VISION_DIE));
+		this.broadcastPacketToOthers(gadget.getOwner(), new PacketSceneEntityDisappearNotify(gadget, VisionType.VISION_TYPE_DIE));
 	}
 
 	// Broadcasting

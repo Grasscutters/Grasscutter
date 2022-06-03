@@ -59,13 +59,22 @@ public final class GameServer extends KcpServer {
 	private final CombineManger combineManger;
 	private final TowerScheduleManager towerScheduleManager;
 	private final WorldDataManager worldDataManager;
-	public GameServer() {
-		this(new InetSocketAddress(
-				GAME_INFO.bindAddress,
-				GAME_INFO.bindPort
-		));
+
+	private static InetSocketAddress getAdapterInetSocketAddress(){
+		InetSocketAddress inetSocketAddress = null;
+		if(GAME_INFO.bindAddress.equals("")){
+			inetSocketAddress=new InetSocketAddress(GAME_INFO.bindPort);
+		}else{
+			inetSocketAddress=new InetSocketAddress(
+					GAME_INFO.bindAddress,
+					GAME_INFO.bindPort
+			);
+		}
+		return inetSocketAddress;
 	}
-	
+	public GameServer() {
+		this(getAdapterInetSocketAddress());
+	}
 	public GameServer(InetSocketAddress address) {
 		super(address);
 
@@ -112,6 +121,7 @@ public final class GameServer extends KcpServer {
 	public ChatManagerHandler getChatManager() {
 		return chatManager;
 	}
+	
 	public void setChatManager(ChatManagerHandler chatManager) {
 		this.chatManager = chatManager;
 	}
@@ -187,10 +197,15 @@ public final class GameServer extends KcpServer {
 		
 		// Check database if character isnt here
 		if (player == null) {
-			player = DatabaseHelper.getPlayerById(id);
+			player = DatabaseHelper.getPlayerByUid(id);
 		}
 		
 		return player;
+	}
+	
+	public Player getPlayerByAccountId(String accountId) {
+		Optional<Player> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getId().equals(accountId)).findFirst();
+		return playerOpt.orElse(null);
 	}
 	
 	public SocialDetail.Builder getSocialDetailByUid(int id) {

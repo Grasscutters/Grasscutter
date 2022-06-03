@@ -8,16 +8,12 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "say", usage = "say <message>",
-        aliases = {"sendservmsg", "sendservermessage", "sendmessage"}, permission = "server.sendmessage", permissionTargeted = "server.sendmessage.others", description = "commands.sendMessage.description")
+@Command(label = "sendmessage", usage = "sendmessage <message>",
+        aliases = {"say", "sendservmsg", "sendservermessage"}, permission = "server.sendmessage", permissionTargeted = "server.sendmessage.others", description = "commands.sendMessage.description")
 public final class SendMessageCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
         if (args.size() == 0) {
             CommandHandler.sendMessage(null, translate(sender, "commands.sendMessage.usage"));
             return;

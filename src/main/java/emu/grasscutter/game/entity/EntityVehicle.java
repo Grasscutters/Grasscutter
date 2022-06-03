@@ -106,7 +106,7 @@ public class EntityVehicle extends EntityBaseGadget {
 
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.PROT_ENTITY_GADGET)
+				.setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
 				.setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setGadget(gadgetInfo)

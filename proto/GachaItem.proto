@@ -2,8 +2,8 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "ItemParam.proto";
 import "GachaTransferItem.proto";
+import "ItemParam.proto";
 
 message GachaItem {
 	ItemParam gacha_item_ = 1;

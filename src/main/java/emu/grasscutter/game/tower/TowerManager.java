@@ -3,7 +3,7 @@ package emu.grasscutter.game.tower;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.TowerLevelData;
+import emu.grasscutter.data.excels.TowerLevelData;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.dungeons.TowerDungeonSettleListener;
 import emu.grasscutter.game.player.Player;
@@ -71,9 +71,9 @@ public class TowerManager {
         this.currentFloorId = floorData.getFloorId();
         this.currentLevel = 0;
         this.currentLevelId = GameData.getTowerLevelDataMap().values().stream()
-                .filter(x -> x.getLevelId() == floorData.getLevelId() && x.getLevelIndex() == 1)
+                .filter(x -> x.getLevelGroupId() == floorData.getLevelGroupId() && x.getLevelIndex() == 1)
                 .findFirst()
-                .map(TowerLevelData::getID)
+                .map(TowerLevelData::getId)
                 .orElse(0);
 
         if (entryScene == 0){

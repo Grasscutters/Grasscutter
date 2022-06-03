@@ -6,18 +6,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.OpenConfigEntry;
+import emu.grasscutter.data.binout.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.custom.OpenConfigEntry;
-import emu.grasscutter.data.custom.OpenConfigEntry.SkillPointModifier;
-import emu.grasscutter.data.def.AvatarPromoteData;
-import emu.grasscutter.data.def.AvatarSkillData;
-import emu.grasscutter.data.def.AvatarSkillDepotData;
-import emu.grasscutter.data.def.ItemData;
-import emu.grasscutter.data.def.WeaponPromoteData;
-import emu.grasscutter.data.def.AvatarSkillDepotData.InherentProudSkillOpens;
-import emu.grasscutter.data.def.AvatarTalentData;
-import emu.grasscutter.data.def.ProudSkillData;
+import emu.grasscutter.data.excels.AvatarPromoteData;
+import emu.grasscutter.data.excels.AvatarSkillData;
+import emu.grasscutter.data.excels.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.AvatarTalentData;
+import emu.grasscutter.data.excels.ItemData;
+import emu.grasscutter.data.excels.ProudSkillData;
+import emu.grasscutter.data.excels.WeaponPromoteData;
+import emu.grasscutter.data.excels.AvatarSkillDepotData.InherentProudSkillOpens;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
@@ -28,6 +29,7 @@ import emu.grasscutter.game.shop.ShopChestBatchUseTable;
 import emu.grasscutter.game.shop.ShopChestTable;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
+import emu.grasscutter.server.packet.send.PacketForgeFormulaDataNotify;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
@@ -840,6 +842,25 @@ public class InventoryManager {
 
 					int[] SatiationParams = useItem.getItemData().getSatiationParams();
 					used = player.getTeamManager().healAvatar(target, SatiationParams[0], SatiationParams[1]) ? 1 : 0;
+				}
+				break;
+			case MATERIAL_CONSUME:
+				// Make sure we have usage data for this material.
+				if (useItem.getItemData().getItemUse() == null) {
+					break;
+				}
+
+				// Handle forging blueprints.
+				if (useItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_FORGE")) {
+					// Determine the forging item we should unlock.
+					int forgeId = Integer.parseInt(useItem.getItemData().getItemUse().get(0).getUseParam().get(0));
+
+					// Tell the client that this blueprint is now unlocked and add the unlocked item to the player.
+					player.sendPacket(new PacketForgeFormulaDataNotify(forgeId));
+					player.getUnlockedForgingBlueprints().add(forgeId);
+
+					// Use up the blueprint item.
+					used = 1;
 				}
 				break;
 			case MATERIAL_CHEST:

@@ -2,13 +2,13 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "TrialAvatarInfo.proto";
-import "AvatarFetterInfo.proto";
-import "AvatarExpeditionState.proto";
-import "AvatarExcelInfo.proto";
-import "PropValue.proto";
-import "AvatarSkillInfo.proto";
 import "AvatarEquipAffixInfo.proto";
+import "AvatarExcelInfo.proto";
+import "AvatarExpeditionState.proto";
+import "AvatarFetterInfo.proto";
+import "AvatarSkillInfo.proto";
+import "PropValue.proto";
+import "TrialAvatarInfo.proto";
 
 message AvatarInfo {
 	uint32 avatar_id = 1;

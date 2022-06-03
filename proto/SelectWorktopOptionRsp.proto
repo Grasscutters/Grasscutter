@@ -2,8 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 817
+// EnetChannelId: 0
+// EnetIsReliable: true
 message SelectWorktopOptionRsp {
-	int32 retcode = 1;
-	uint32 gadget_entity_id = 2;
-	uint32 option_id = 3;
+	int32 retcode = 7;
+	uint32 gadget_entity_id = 12;
+	uint32 option_id = 10;
 }

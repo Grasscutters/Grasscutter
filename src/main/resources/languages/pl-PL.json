@@ -21,6 +21,7 @@
       "account": {
         "login_attempt": "[Dispatch] Klient %s próbuje się zalogować",
         "login_success": "[Dispatch] Klient %s zalogował się jako %s",
+        "login_max_player_limit": "[Dispatch] Klient %s nie powiodło się: Liczba graczy online osiągnęła limit",
         "login_token_attempt": "[Dispatch] Klient %s próbuje się zalogować poprzez token",
         "login_token_error": "[Dispatch] Klient %s nie mógł się zalogować poprzez token",
         "login_token_success": "[Dispatch] Klient %s zalogował się poprzez token jako %s",
@@ -32,7 +33,8 @@
         "account_cache_error": "Błąd pamięci cache konta gry",
         "session_key_error": "Błędny klucz sesji.",
         "username_error": "Nazwa użytkownika nie znaleziona.",
-        "username_create_error": "Nazwa użytkownika nie znaleziona, tworzenie nie powiodło się."
+        "username_create_error": "Nazwa użytkownika nie znaleziona, tworzenie nie powiodło się.",
+        "server_max_player_limit": "Liczba graczy online osiągnęła limit"
       }
     },
     "status": {
@@ -81,7 +83,11 @@
       "argument_error": "Błędne argumenty.",
       "clear_target": "Cel wyczyszczony.",
       "set_target": "Następne komendy będą celować w @%s.",
-      "need_target": "Ta komenda wymaga docelowego UID. Dodaj argument <@UID> lub ustaw stały cel poleceniem /target @UID."
+      "set_target_online": "@%s jest online. Niektóre polecenia mogą wymagać celu offline.",
+      "set_target_offline": "@%s jest offline. Niektóre polecenia mogą wymagać celu online.",
+      "need_target": "Ta komenda wymaga docelowego UID. Dodaj argument <@UID> lub ustaw stały cel poleceniem /target @UID.",
+      "need_target_online": "To polecenie wymaga identyfikatora UID celu w trybie online, ale bieżący cel jest w trybie offline. Dodaj inny argument <@UID> lub ustaw trwały cel za pomocą /target @UID.",
+      "need_target_offline": "To polecenie wymaga identyfikatora UID celu offline, ale bieżący cel jest online. Dodaj inny argument <@UID> lub ustaw trwały cel za pomocą /target @UID."
     },
     "status": {
       "enabled": "Włączone",
@@ -119,7 +125,7 @@
       "everything": "Wyczyszczono wszystko dla %s."
     },
     "coop": {
-      "usage": "Użycie: coop <id gracza> <id gracza docelowego>",
+      "usage": "Użycie: coop [host uid]",
       "success": "Przyzwano %s do świata %s."
     },
     "enter_dungeon": {
@@ -140,14 +146,14 @@
       "success": "Dano %s dla %s."
     },
     "giveChar": {
-      "usage": "Użycie: givechar <gracz> <id przedmiotu | nazwa przedmiotu> [ilość]",
+      "usage": "Użycie: givechar <gracz> <avatarId> [ilość]",
       "given": "Dano %s z poziomem %s dla %s.",
       "invalid_avatar_id": "Błędne ID postaci.",
       "invalid_avatar_level": "Błędny poziom postaci.",
       "invalid_avatar_or_player_id": "Błędne ID postaci lub gracza."
     },
     "give": {
-      "usage": "Użycie: give <gracz> <id przedmiotu | nazwa przedmiotu> [ilość] [poziom]",
+      "usage": "Użycie: give <gracz> <id przedmiotu | nazwa przedmiotu> [ilość] [poziom] [refinement]",
       "refinement_only_applicable_weapons": "Ulepszenie można zastosować tylko dla broni.",
       "refinement_must_between_1_and_5": "Ulepszenie musi być pomiędzy 1, a 5.",
       "given": "Dano %s %s dla %s.",
@@ -164,7 +170,7 @@
       "player_kick_player": "Gracz [%s:%s] wyrzucił gracza [%s:%s]",
       "server_kick_player": "Wyrzucono gracza [%s:%s]"
     },
-    "kill": {
+    "killall": {
       "usage": "Użycie: killall [UID gracza] [ID sceny]",
       "scene_not_found_in_player_world": "Scena nie znaleziona w świecie gracza",
       "kill_monsters_in_scene": "Zabito %s potworów w scenie %s"
@@ -196,24 +202,26 @@
       "success": "Konstelacje dla %s zostały zresetowane. Proszę zalogować się ponownie aby zobaczyć zmiany."
     },
     "resetShopLimit": {
-      "usage": "Użycie: /resetshop <ID gracza>"
+      "usage": "Użycie: /resetshop <ID gracza>",
+      "success": "Reset complete.",
+      "description": "Reset target player's shop refresh time"
     },
     "sendMail": {
-      "usage": "Użycie: `/sendmail <ID gracza | all | help> [id szablonu]`",
+      "usage": "Użycie: /sendmail <ID gracza | all | help> [id szablonu]",
       "user_not_exist": "Gracz o ID '%s' nie istnieje",
-      "start_composition": "Komponowanie wiadomości.\nProszę użyj `/sendmail <tytuł>` aby kontynuować.\nMożesz użyć `/sendmail stop` w dowolnym momencie",
+      "start_composition": "Komponowanie wiadomości.\nProszę użyj '/sendmail <tytuł>' aby kontynuować.\nMożesz użyć '/sendmail stop' w dowolnym momencie",
       "templates": "Szablony zostaną zaimplementowane niedługo...",
-      "invalid_arguments": "Błędne argumenty.\nUżycie `/sendmail <ID gracza | all | help> [id szablonu]`",
+      "invalid_arguments": "Błędne argumenty.",
       "send_cancel": "Anulowano wysyłanie wiadomości",
       "send_done": "Wysłano wiadomość do gracza %s!",
       "send_all_done": "Wysłano wiadomośc do wszystkich graczy!",
-      "not_composition_end": "Komponowanie nie jest na ostatnim etapie.\nProszę użyj `/sendmail %s` lub `/sendmail stop` aby anulować",
-      "please_use": "Proszę użyj `/sendmail %s`",
+      "not_composition_end": "Komponowanie nie jest na ostatnim etapie.\nProszę użyj '/sendmail %s' lub '/sendmail stop' aby anulować",
+      "please_use": "Proszę użyj '/sendmail %s'",
       "set_title": "Tytuł wiadomości to teraz: '%s'.\nUżyj '/sendmail <treść>' aby kontynuować.",
       "set_contents": "Treść wiadomości to teraz '%s'.\nUżyj '/sendmail <nadawca>' aby kontynuować.",
       "set_message_sender": "Nadawca wiadomości to teraz '%s'.\nUżyj '/sendmail <id przedmiotu | nazwa przedmiotu | zakończ> [ilość] [poziom]' aby kontynuować.",
-      "send": "Załączono %s %s (poziom %s) do wiadomości.\nDodaj więcej przedmiotów lub użyj `/sendmail finish` aby wysłać wiadomość.",
-      "invalid_arguments_please_use": "Błędne argumenty \nProszę użyj `/sendmail %s`",
+      "send": "Załączono %s %s (poziom %s) do wiadomości.\nDodaj więcej przedmiotów lub użyj '/sendmail finish' aby wysłać wiadomość.",
+      "invalid_arguments_please_use": "Błędne argumenty.\nProszę użyj '/sendmail %s'",
       "title": "<tytuł>",
       "message": "<wiadomość>",
       "sender": "<nadawca>",
@@ -282,8 +290,8 @@
       "success": "Przeteleportowano %s do %s, %s, %s w scenie %s"
     },
     "weather": {
-      "usage": "Użycie: weather <ID pogody> [ID klimatu]",
-      "success": "Zmieniono pogodę na %s z klimatem %s",
+      "usage": "Użycie: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types: '0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist'",
+      "success": "Changed climate type to %s with weather type %s.",
       "invalid_id": "Błędne ID."
     },
     "drop": {

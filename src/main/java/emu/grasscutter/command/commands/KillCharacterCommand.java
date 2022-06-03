@@ -18,8 +18,8 @@ public final class KillCharacterCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
+        if (args.isEmpty()) {
+            CommandHandler.sendMessage(sender, translate(sender, "commands.killCharacter.usage"));
             return;
         }
 

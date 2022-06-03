@@ -2,19 +2,14 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "StoreType.proto";
 import "Item.proto";
+import "StoreType.proto";
 
+// CmdId: 609
+// EnetChannelId: 0
+// EnetIsReliable: true
 message PlayerStoreNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 649;
-	}
-
-	StoreType store_type = 1;
-	repeated Item item_list = 2;
-	uint32 weight_limit = 3;
+	StoreType store_type = 4;
+	repeated Item item_list = 3;
+	uint32 weight_limit = 15;
 }

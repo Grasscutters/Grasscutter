@@ -117,6 +117,23 @@ public class EntityMonster extends GameEntity {
 	}
 
 	@Override
+	public void damage(float amount, int killerId) {
+		// Get HP before damage.
+		float hpBeforeDamage = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+
+		// Apply damage.
+		super.damage(amount, killerId);
+
+		// Get HP after damage.
+		float hpAfterDamage = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+
+		// Invoke energy drop logic.
+		for (Player player : this.getScene().getPlayers()) {
+			player.getEnergyManager().handleMonsterEnergyDrop(this, hpBeforeDamage, hpAfterDamage);
+		}
+	}
+
+	@Override
 	public void onDeath(int killerId) {
 		if (this.getSpawnEntry() != null) {
 			this.getScene().getDeadSpawnedEntities().add(getSpawnEntry());
@@ -200,7 +217,7 @@ public class EntityMonster extends GameEntity {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.PROT_ENTITY_MONSTER)
+				.setEntityType(ProtEntityType.PROT_ENTITY_TYPE_MONSTER)
 				.setMotionInfo(this.getMotionInfo())
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())
@@ -229,7 +246,7 @@ public class EntityMonster extends GameEntity {
 				.setAuthorityPeerId(getWorld().getHostPeerId())
 				.setPoseId(this.getPoseId())
 				.setBlockId(3001)
-				.setBornType(MonsterBornType.MONSTER_BORN_DEFAULT)
+				.setBornType(MonsterBornType.MONSTER_BORN_TYPE_DEFAULT)
 				.setSpecialNameId(40);
 		
 		if (getMonsterData().getDescribeData() != null) {

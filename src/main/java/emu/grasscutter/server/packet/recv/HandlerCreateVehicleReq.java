@@ -16,6 +16,6 @@ public class HandlerCreateVehicleReq extends PacketHandler {
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		CreateVehicleReqOuterClass.CreateVehicleReq req = CreateVehicleReqOuterClass.CreateVehicleReq.parseFrom(payload);
-		session.send(new PacketCreateVehicleRsp(session.getPlayer(), req.getVehicleId(), req.getPointId(), new Position(req.getPos()), new Position(req.getRot())));
+		session.send(new PacketCreateVehicleRsp(session.getPlayer(), req.getVehicleId(), req.getScenePointId(), new Position(req.getPos()), new Position(req.getRot())));
 	}
 }

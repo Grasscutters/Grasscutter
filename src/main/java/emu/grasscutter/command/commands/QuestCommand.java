@@ -10,16 +10,11 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "quest", usage = "quest <add|finish> [quest id]", permission = "player.quest", permissionTargeted = "player.quest.others", description = "commands.quest.description")
+@Command(label = "quest", usage = "quest <add|finish> [questId]", permission = "player.quest", permissionTargeted = "player.quest.others", description = "commands.quest.description")
 public final class QuestCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-		if (targetPlayer == null) {
-			CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-			return;
-		}
-		
 		if (args.size() != 2) {
 			CommandHandler.sendMessage(sender, translate(sender, "commands.quest.usage"));
             return;

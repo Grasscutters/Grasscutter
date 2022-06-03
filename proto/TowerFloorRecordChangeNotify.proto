@@ -4,15 +4,10 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "TowerFloorRecord.proto";
 
+// CmdId: 2431
+// EnetChannelId: 0
+// EnetIsReliable: true
 message TowerFloorRecordChangeNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 2418;
-	}
-
-	repeated TowerFloorRecord tower_floor_record_list = 1;
-	bool is_finished_entrance_floor = 2;
+	repeated TowerFloorRecord tower_floor_record_list = 9;
+	bool is_finished_entrance_floor = 1;
 }

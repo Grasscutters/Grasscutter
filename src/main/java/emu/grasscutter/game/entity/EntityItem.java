@@ -1,6 +1,6 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.data.def.ItemData;
+import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
@@ -111,7 +111,7 @@ public class EntityItem extends EntityBaseGadget {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.PROT_ENTITY_GADGET)
+				.setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
 				.setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())
@@ -127,7 +127,7 @@ public class EntityItem extends EntityBaseGadget {
 		SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
 				.setGadgetId(this.getItemData().getGadgetId())
 				.setTrifleItem(this.getItem().toProto())
-				.setBornType(GadgetBornType.GADGET_BORN_IN_AIR)
+				.setBornType(GadgetBornType.GADGET_BORN_TYPE_IN_AIR)
 				.setAuthorityPeerId(this.getWorld().getHostPeerId())
 				.setIsEnableInteract(true);
 

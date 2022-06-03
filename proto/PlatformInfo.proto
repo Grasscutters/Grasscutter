@@ -2,10 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "Vector.proto";
 import "MathQuaternion.proto";
 import "MovingPlatformType.proto";
 import "Route.proto";
+import "Vector.proto";
 
 message PlatformInfo {
 	uint32 route_id = 1;

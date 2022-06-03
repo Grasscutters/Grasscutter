@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+ 
+import "Vector.proto";
+
+// Command code: 5222
+
+message HitTreeNotify {
+        Vector hit_postion = 3;
+        uint32 wood_type = 4;		
+        Vector hit_postion_duplicated = 13;	//I don't understand the reason why ** makes two same positions data
+}

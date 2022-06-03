@@ -2,17 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
+// CmdId: 286
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message SceneTransToPointReq {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 270;
-	}
-
-	uint32 scene_id = 1;
-	uint32 point_id = 2;
+	uint32 scene_id = 12;
+	uint32 point_id = 4;
 }

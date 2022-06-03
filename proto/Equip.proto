@@ -6,9 +6,9 @@ import "Reliquary.proto";
 import "Weapon.proto";
 
 message Equip {
-	oneof Detail {
+	bool is_locked = 3;
+	oneof detail {
 		Reliquary reliquary = 1;
 		Weapon weapon = 2;
 	}
-	bool is_locked = 3;
 }

@@ -31,10 +31,10 @@ public class PacketVehicleInteractRsp extends BasePacket {
 			proto.setMember(vehicleMember);
 
 			switch(interactType){
-				case VEHICLE_INTERACT_IN -> {
+				case VEHICLE_INTERACT_TYPE_IN -> {
 					((EntityVehicle) vehicle).getVehicleMembers().add(vehicleMember);
 				}
-				case VEHICLE_INTERACT_OUT -> {
+				case VEHICLE_INTERACT_TYPE_OUT -> {
 					((EntityVehicle) vehicle).getVehicleMembers().remove(vehicleMember);
 				}
 				default -> {}
@@ -53,10 +53,10 @@ public class PacketVehicleInteractRsp extends BasePacket {
 			proto.setMember(vehicleMember);
 
 			switch(interactType){
-				case VEHICLE_INTERACT_IN -> {
+				case VEHICLE_INTERACT_TYPE_IN -> {
 					vehicle.getVehicleMembers().add(vehicleMember);
 				}
-				case VEHICLE_INTERACT_OUT -> {
+				case VEHICLE_INTERACT_TYPE_OUT -> {
 					vehicle.getVehicleMembers().remove(vehicleMember);
 				}
 				default -> {}

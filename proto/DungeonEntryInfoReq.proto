@@ -2,16 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
+// CmdId: 909
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message DungeonEntryInfoReq {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 949;
-	}
-
-	uint32 point_id = 1;
+	uint32 point_id = 15;
+	uint32 scene_id = 3;
 }

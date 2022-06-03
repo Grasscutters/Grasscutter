@@ -37,7 +37,7 @@ public abstract class GameEntity {
 	
 	public GameEntity(Scene scene) {
 		this.scene = scene;
-		this.moveState = MotionState.MOTION_NONE;
+		this.moveState = MotionState.MOTION_STATE_NONE;
 	}
 	
 	public int getId() {
@@ -212,7 +212,7 @@ public abstract class GameEntity {
 		
 		// Check if dead
 		if (isDead) {
-			getScene().killEntity(this, 0);
+			getScene().killEntity(this, killerId);
 		}
 	}
 	

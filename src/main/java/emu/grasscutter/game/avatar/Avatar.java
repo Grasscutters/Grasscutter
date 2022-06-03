@@ -17,24 +17,24 @@ import dev.morphia.annotations.PostLoad;
 import dev.morphia.annotations.PrePersist;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.OpenConfigEntry;
+import emu.grasscutter.data.binout.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.common.FightPropData;
-import emu.grasscutter.data.custom.OpenConfigEntry;
-import emu.grasscutter.data.custom.OpenConfigEntry.SkillPointModifier;
-import emu.grasscutter.data.def.AvatarData;
-import emu.grasscutter.data.def.AvatarPromoteData;
-import emu.grasscutter.data.def.AvatarSkillData;
-import emu.grasscutter.data.def.AvatarSkillDepotData;
-import emu.grasscutter.data.def.AvatarSkillDepotData.InherentProudSkillOpens;
-import emu.grasscutter.data.def.AvatarTalentData;
-import emu.grasscutter.data.def.EquipAffixData;
-import emu.grasscutter.data.def.ItemData.WeaponProperty;
-import emu.grasscutter.data.def.ProudSkillData;
-import emu.grasscutter.data.def.ReliquaryAffixData;
-import emu.grasscutter.data.def.ReliquaryLevelData;
-import emu.grasscutter.data.def.ReliquaryMainPropData;
-import emu.grasscutter.data.def.ReliquarySetData;
-import emu.grasscutter.data.def.WeaponCurveData;
-import emu.grasscutter.data.def.WeaponPromoteData;
+import emu.grasscutter.data.excels.AvatarData;
+import emu.grasscutter.data.excels.AvatarPromoteData;
+import emu.grasscutter.data.excels.AvatarSkillData;
+import emu.grasscutter.data.excels.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.AvatarTalentData;
+import emu.grasscutter.data.excels.EquipAffixData;
+import emu.grasscutter.data.excels.ProudSkillData;
+import emu.grasscutter.data.excels.ReliquaryAffixData;
+import emu.grasscutter.data.excels.ReliquaryLevelData;
+import emu.grasscutter.data.excels.ReliquaryMainPropData;
+import emu.grasscutter.data.excels.ReliquarySetData;
+import emu.grasscutter.data.excels.WeaponCurveData;
+import emu.grasscutter.data.excels.WeaponPromoteData;
+import emu.grasscutter.data.excels.AvatarSkillDepotData.InherentProudSkillOpens;
+import emu.grasscutter.data.excels.ItemData.WeaponProperty;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.EquipType;
@@ -62,6 +62,8 @@ import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
+import static emu.grasscutter.Configuration.GAME_OPTIONS;
+
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {
 	@Id private ObjectId id;
@@ -79,6 +81,7 @@ public class Avatar {
 	private int satiation; // ?
 	private int satiationPenalty; // ?
 	private float currentHp;
+	private float currentEnergy;
 	
 	@Transient private final Int2ObjectMap<GameItem> equips;
 	@Transient private final Int2FloatOpenHashMap fightProp;
@@ -147,7 +150,7 @@ public class Avatar {
 		this.recalcStats();
 		this.currentHp = getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 		setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, this.currentHp);
-		
+		this.currentEnergy = 0f;
 		// Load handler
 		this.onLoad();
 	}
@@ -356,6 +359,34 @@ public class Avatar {
 		this.currentHp = currentHp;
 	}
 
+	public void setCurrentEnergy() {
+		if (GAME_OPTIONS.energyUsage) {
+			this.setCurrentEnergy(this.currentEnergy);
+		}
+	}
+	
+	public void setCurrentEnergy(float currentEnergy) {
+		if (this.getSkillDepot() != null && this.getSkillDepot().getEnergySkillData() != null) {
+			ElementType element = this.getSkillDepot().getElementType();
+			this.setFightProperty(element.getMaxEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
+			
+			if (GAME_OPTIONS.energyUsage) {
+				this.setFightProperty(element.getCurEnergyProp(), currentEnergy);
+			}
+			else {
+				this.setFightProperty(element.getCurEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
+			}
+		}		
+	}
+
+	public void setCurrentEnergy(FightProperty curEnergyProp, float currentEnergy) {
+		if (GAME_OPTIONS.energyUsage) {
+			this.setFightProperty(curEnergyProp, currentEnergy);
+			this.currentEnergy = currentEnergy;
+			this.save();
+		}
+	}
+
 	public Int2FloatOpenHashMap getFightProperties() {
 		return fightProp;
 	}
@@ -493,6 +524,9 @@ public class Avatar {
 		// Get hp percent, set to 100% if none
 		float hpPercent = this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) <= 0 ? 1f : this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) / this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 		
+		// Store current energy value for later
+		float currentEnergy = (this.getSkillDepot() != null) ? this.getFightProperty(this.getSkillDepot().getElementType().getCurEnergyProp()) : 0f;
+
 		// Clear properties
 		this.getFightProperties().clear();
 		
@@ -511,11 +545,7 @@ public class Avatar {
 		}
 		
 		// Set energy usage
-		if (data.getSkillDepot() != null && data.getSkillDepot().getEnergySkillData() != null) {
-			ElementType element = data.getSkillDepot().getElementType();
-			this.setFightProperty(element.getMaxEnergyProp(), data.getSkillDepot().getEnergySkillData().getCostElemVal());
-			this.setFightProperty((element.getMaxEnergyProp().getId() % 70) + 1000, data.getSkillDepot().getEnergySkillData().getCostElemVal());
-		}
+		setCurrentEnergy(currentEnergy);
 		
 		// Artifacts
 		for (int slotId = 1; slotId <= 5; slotId++) {

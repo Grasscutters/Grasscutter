@@ -8,16 +8,11 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "enterdungeon", usage = "enterdungeon <dungeon id>", aliases = {"dungeon"}, permission = "player.enterdungeon", permissionTargeted = "player.enterdungeon.others", description = "commands.enter_dungeon.description")
+@Command(label = "enterdungeon", usage = "enterdungeon <dungeonId>", aliases = {"dungeon"}, permission = "player.enterdungeon", permissionTargeted = "player.enterdungeon.others", description = "commands.enter_dungeon.description")
 public final class EnterDungeonCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(null, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
         if (args.size() < 1) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.usage"));
             return;

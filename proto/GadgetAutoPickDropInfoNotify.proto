@@ -4,6 +4,9 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "Item.proto";
 
+// CmdId: 830
+// EnetChannelId: 0
+// EnetIsReliable: true
 message GadgetAutoPickDropInfoNotify {
-	repeated Item item_list = 1;
+	repeated Item item_list = 15;
 }

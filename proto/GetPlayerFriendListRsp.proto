@@ -4,17 +4,12 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "FriendBrief.proto";
 
+// CmdId: 4031
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message GetPlayerFriendListRsp {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 4018;
-	}
-
-	int32 retcode = 1;
-	repeated FriendBrief friend_list = 2;
-	repeated FriendBrief ask_friend_list = 3;
+	int32 retcode = 3;
+	repeated FriendBrief friend_list = 6;
+	repeated FriendBrief ask_friend_list = 5;
 }

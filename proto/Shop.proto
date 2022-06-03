@@ -2,10 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "ShopGoods.proto";
-import "ShopMcoinProduct.proto";
 import "ShopCardProduct.proto";
 import "ShopConcertProduct.proto";
+import "ShopGoods.proto";
+import "ShopMcoinProduct.proto";
 
 message Shop {
 	uint32 shop_type = 1;

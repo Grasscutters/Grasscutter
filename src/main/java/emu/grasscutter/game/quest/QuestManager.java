@@ -1,16 +1,13 @@
 package emu.grasscutter.game.quest;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.QuestData;
-import emu.grasscutter.data.def.QuestData.QuestCondition;
+import emu.grasscutter.data.excels.QuestData;
+import emu.grasscutter.data.excels.QuestData.QuestCondition;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
@@ -121,7 +118,6 @@ public class QuestManager {
 		mainQuest.save();
 
 		// Send packet
-		getPlayer().sendPacket(new PacketServerCondMeetQuestListUpdateNotify(quest));
 		getPlayer().sendPacket(new PacketQuestListUpdateNotify(quest));
 
 		return quest;
@@ -134,7 +130,9 @@ public class QuestManager {
 			QuestData data = quest.getData();
 			
 			for (int i = 0; i < data.getFinishCond().length; i++) {
-				if (quest.getFinishProgressList() == null || quest.getFinishProgressList()[i] == 1) {
+				if (quest.getFinishProgressList() == null 
+					|| quest.getFinishProgressList().length == 0
+					|| quest.getFinishProgressList()[i] == 1) {
 					continue;
 				}
 				

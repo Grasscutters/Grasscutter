@@ -16,9 +16,19 @@ import lombok.SneakyThrows;
 import org.reflections.Reflections;
 
 import com.google.gson.JsonElement;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.binout.AbilityEmbryoEntry;
+import emu.grasscutter.data.binout.AbilityModifier;
+import emu.grasscutter.data.binout.AbilityModifierEntry;
+import emu.grasscutter.data.binout.MainQuestData;
+import emu.grasscutter.data.binout.OpenConfigEntry;
+import emu.grasscutter.data.binout.ScenePointEntry;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityConfigData;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
 import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.common.ScenePointConfig;
 import emu.grasscutter.data.custom.AbilityModifier.AbilityConfigData;
@@ -138,18 +148,14 @@ public class ResourceLoader {
 
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	protected static void loadFromResource(Class<?> c, String fileName, Int2ObjectMap map) throws Exception {
-		FileReader fileReader = new FileReader(RESOURCE("ExcelBinOutput/" + fileName));
-		Gson gson = Grasscutter.getGsonFactory();
-		List list = gson.fromJson(fileReader, List.class);
+		try (FileReader fileReader = new FileReader(RESOURCE("ExcelBinOutput/" + fileName))) {
+			List list = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, c).getType());
 
-		for (Object o : list) {
-			Map<String, Object> tempMap = Utils.switchPropertiesUpperLowerCase((Map<String, Object>) o, c);
-			GameResource res = gson.fromJson(gson.toJson(tempMap), TypeToken.get(c).getType());
-			res.onLoad();
-			if(map.containsKey(res.getId())) {
-				map.remove(res.getId());
+			for (Object o : list) {
+				GameResource res = (GameResource) o;
+				res.onLoad();
+				map.put(res.getId(), res);
 			}
-			map.put(res.getId(), res);
 		}
 	}
 
@@ -458,8 +464,14 @@ public class ResourceLoader {
 	public static class OpenConfigData {
 		public String $type;
 		public String abilityName;
+		
+		@SerializedName(value="talentIndex", alternate={"OJOFFKLNAHN"})
 		public int talentIndex;
+		
+		@SerializedName(value="skillID", alternate={"overtime"})
 		public int skillID;
+		
+		@SerializedName(value="pointDelta", alternate={"IGEBKIHPOIF"})
 		public int pointDelta;
 	}
 }

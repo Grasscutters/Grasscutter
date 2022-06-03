@@ -4,15 +4,10 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "SocialDetail.proto";
 
+// CmdId: 4082
+// EnetChannelId: 0
+// EnetIsReliable: true
 message GetPlayerSocialDetailRsp {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 4079;
-	}
-
-	int32 retcode = 1;
-	SocialDetail detail_data = 2;
+	int32 retcode = 2;
+	SocialDetail detail_data = 15;
 }

@@ -9,4 +9,6 @@ message ClientGadgetInfo {
 	uint32 owner_entity_id = 4;
 	uint32 target_entity_id = 5;
 	bool async_load = 6;
+	bool CEGHBCJMNFJ = 7;
+	repeated uint32 FCFECGFHLAD = 8;
 }

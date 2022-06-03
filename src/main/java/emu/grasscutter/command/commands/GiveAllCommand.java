@@ -4,8 +4,8 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.AvatarData;
-import emu.grasscutter.data.def.ItemData;
+import emu.grasscutter.data.excels.AvatarData;
+import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
@@ -20,10 +20,6 @@ public final class GiveAllCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
         int amount = 99999;
 
         switch (args.size()) {
@@ -61,7 +57,8 @@ public final class GiveAllCommand implements CommandHandler {
             }
             // This will handle stats and talents
             avatar.recalcStats();
-            player.addAvatar(avatar);
+            // Don't try to add each avatar to the current team
+            player.addAvatar(avatar, false);
         }
 
         //some test items
@@ -158,7 +155,7 @@ public final class GiveAllCommand implements CommandHandler {
     private static final Integer[] testItemsIds = new Integer[] {
             210, 211, 314, 315, 317, 1005, 1007, 1105, 1107, 1201, 1202,10366,
             101212, 11411, 11506, 11507, 11508, 12505, 12506, 12508, 12509, 13503,
-            13506, 14411, 14503, 14505, 14508, 15411, 15504, 15505, 15506, 15508,
+            13506, 14411, 14503, 14505, 14508, 15504, 15505, 15506,
             20001, 10002, 10003, 10004, 10005, 10006, 10008,100231,100232,100431,
             101689,105001,105004, 106000,106001,108000,110000
     };

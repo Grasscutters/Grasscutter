@@ -2,6 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 1437
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message GetMailItemReq {
-  repeated uint32 mail_id_list = 1;
+	repeated uint32 mail_id_list = 8;
 }

@@ -2,10 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "ItemParam.proto";
+import "EquipParam.proto";
 import "MaterialDeleteInfo.proto";
 
 message MailItem {
-  ItemParam item_param = 1;
-  MaterialDeleteInfo delete_info = 2;
+	EquipParam equip_param = 1;
+	MaterialDeleteInfo delete_info = 2;
 }

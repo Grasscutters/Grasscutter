@@ -2,7 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 837
+// EnetChannelId: 0
+// EnetIsReliable: true
 message WorktopOptionNotify {
-	uint32 gadget_entity_id = 1;
-	repeated uint32 option_list = 2;
+	uint32 gadget_entity_id = 12;
+	repeated uint32 option_list = 5;
 }

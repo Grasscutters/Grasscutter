@@ -180,11 +180,6 @@ public final class SetStatsCommand implements CommandHandler {
         String statStr;
         String valueStr;
 
-        if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-            return;
-        }
-
         if (args.size() == 2) {
             statStr = args.get(0).toLowerCase();
             valueStr = args.get(1);
@@ -220,7 +215,7 @@ public final class SetStatsCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.set_self", stat.name, valueStr));
             } else {
                 String uidStr = targetPlayer.getAccount().getId();
-                CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.set_self", stat.name, uidStr, valueStr));
+                CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.set_for_uid", stat.name, uidStr, valueStr));
             }
         } else {
             CommandHandler.sendMessage(sender, usage);

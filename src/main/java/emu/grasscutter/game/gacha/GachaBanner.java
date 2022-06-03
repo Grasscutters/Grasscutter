@@ -143,7 +143,7 @@ public class GachaBanner {
 		String details = "http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
 						+ lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress) + ":"
 						+ lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort)
-						+ "/gacha/details?s=" + sessionKey + "&gachaType=" + gachaType;
+						+ "/gacha/details?s=" + sessionKey + "&scheduleId=" + scheduleId;
 
 		// Grasscutter.getLogger().info("record = " + record);
 		ItemParamData costItem1 = this.getCost(1);
@@ -167,7 +167,7 @@ public class GachaBanner {
 	            .setGachaTimesLimit(Integer.MAX_VALUE)
 	            .setGachaSortId(this.getSortId());
 		if (this.getTitlePath() != null) {
-			info.setGachaTitlePath(this.getTitlePath());
+			info.setTitleTextmap(this.getTitlePath());
 		}
 		
 		if (this.getRateUpItems5().length > 0) {
@@ -175,7 +175,7 @@ public class GachaBanner {
 			
 			for (int id : getRateUpItems5()) {
 				upInfo.addItemIdList(id);
-				info.addMainNameId(id);
+				info.addDisplayUp5ItemList(id);
 			}
 			
 			info.addGachaUpInfoList(upInfo);
@@ -186,8 +186,8 @@ public class GachaBanner {
 			
 			for (int id : getRateUpItems4()) {
 				upInfo.addItemIdList(id);
-				if (info.getSubNameIdCount() == 0) {
-					info.addSubNameId(id);
+				if (info.getDisplayUp4ItemListCount() == 0) {
+					info.addDisplayUp4ItemList(id);
 				}
 			}
 			

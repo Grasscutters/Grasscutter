@@ -9,16 +9,11 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "coop", usage = "coop [host UID]", permission = "server.coop", permissionTargeted = "server.coop.others", description = "commands.coop.description")
+@Command(label = "coop", usage = "coop [host uid]", permission = "server.coop", permissionTargeted = "server.coop.others", description = "commands.coop.description")
 public final class CoopCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-		if (targetPlayer == null) {
-			CommandHandler.sendMessage(sender, translate(sender, "commands.execution.need_target"));
-			return;
-		}
-
         Player host = sender;
         switch (args.size()) {
             case 0:  // Summon target to self

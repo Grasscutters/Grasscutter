@@ -129,7 +129,11 @@ public final class HttpServer {
      */
     public void start() {
         // Attempt to start the HTTP server.
-        this.express.listen(HTTP_INFO.bindAddress, HTTP_INFO.bindPort);
+        if(HTTP_INFO.bindAddress.equals("")){
+            this.express.listen(HTTP_INFO.bindPort);
+        }else{
+            this.express.listen(HTTP_INFO.bindAddress, HTTP_INFO.bindPort);
+        }
         
         // Log bind information.
         Grasscutter.getLogger().info(translate("messages.dispatch.port_bind", Integer.toString(this.express.raw().port())));

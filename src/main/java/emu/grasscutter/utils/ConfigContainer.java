@@ -84,7 +84,7 @@ public class ConfigContainer {
         public String resources = "./resources/";
         public String data = "./data/";
         public String packets = "./packets/";
-        public String scripts = "./resources/scripts/";
+        public String scripts = "./resources/Scripts/";
         public String plugins = "./plugins/";
 
         // UNUSED (potentially added later?)
@@ -104,11 +104,13 @@ public class ConfigContainer {
     public static class Language {
         public Locale language = Locale.getDefault();
         public Locale fallback = Locale.US;
+        public String document = "EN";
     }
 
     public static class Account {
         public boolean autoCreate = false;
         public String[] defaultPermissions = {};
+        public int maxPlayer = -1;
     }
 
     /* Server options. */
@@ -172,11 +174,12 @@ public class ConfigContainer {
     public static class GameOptions {
         public InventoryLimits inventoryLimits = new InventoryLimits();
         public AvatarLimits avatarLimits = new AvatarLimits();
-        public int worldEntityLimit = 1000; // Unenforced. TODO: Implement.
+        public int sceneEntityLimit = 1000; // Unenforced. TODO: Implement.
 
         public boolean watchGachaConfig = false;
         public boolean enableShopItems = true;
         public boolean staminaUsage = true;
+        public boolean energyUsage = false;
         public Rates rates = new Rates();
 
         public static class InventoryLimits {

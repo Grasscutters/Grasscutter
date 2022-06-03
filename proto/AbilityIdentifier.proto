@@ -2,7 +2,6 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
 message AbilityIdentifier {
 	uint32 instanced_ability_id = 1;
 	uint32 ability_caster_id = 2;

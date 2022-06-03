@@ -4,21 +4,16 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "PropValue.proto";
 
+// CmdId: 3131
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message WorldDataNotify {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 3219;
-	}
+	map<uint32, PropValue> world_prop_map = 3;
 
 	enum DataType {
-		DATA_NONE = 0;
-		WORLD_LEVEL = 1;
-		IS_IN_MP_MODE = 2;
+		DATA_TYPE_NONE = 0;
+		DATA_TYPE_WORLD_LEVEL = 1;
+		DATA_TYPE_IS_IN_MP_MODE = 2;
 	}
-
-	map<uint32, PropValue> world_prop_map = 1;
 }

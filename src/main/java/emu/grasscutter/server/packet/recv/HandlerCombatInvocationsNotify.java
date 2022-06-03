@@ -28,12 +28,13 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 		CombatInvocationsNotify notif = CombatInvocationsNotify.parseFrom(payload);
 		for (CombatInvokeEntry entry : notif.getInvokeListList()) {
 			switch (entry.getArgumentType()) {
-				case COMBAT_EVT_BEING_HIT:
+				case COMBAT_TYPE_ARGUMENT_EVT_BEING_HIT:
 					// Handle damage
 					EvtBeingHitInfo hitInfo = EvtBeingHitInfo.parseFrom(entry.getCombatData());
 					session.getPlayer().getAttackResults().add(hitInfo.getAttackResult());
+					session.getPlayer().getEnergyManager().handleAttackHit(hitInfo);
 					break;
-				case ENTITY_MOVE:
+				case COMBAT_TYPE_ARGUMENT_ENTITY_MOVE:
 					// Handle movement
 					EntityMoveInfo moveInfo = EntityMoveInfo.parseFrom(entry.getCombatData());
 					GameEntity entity = session.getPlayer().getScene().getEntityById(moveInfo.getEntityId());
@@ -55,13 +56,13 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 
 						// MOTION_LAND_SPEED and MOTION_FALL_ON_GROUND arrive in different packets.
 						// Cache land speed for later use.
-						if (motionState == MotionState.MOTION_LAND_SPEED) {
+						if (motionState == MotionState.MOTION_STATE_LAND_SPEED) {
 							cachedLandingSpeed = motionInfo.getSpeed().getY();
 							cachedLandingTimeMillisecond = System.currentTimeMillis();
 							monitorLandingEvent = true;
 						}
 						if (monitorLandingEvent) {
- 							if (motionState == MotionState.MOTION_FALL_ON_GROUND) {
+ 							if (motionState == MotionState.MOTION_STATE_FALL_ON_GROUND) {
 								monitorLandingEvent = false;
 								handleFallOnGround(session, entity, motionState);
 							}
@@ -119,7 +120,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 		entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
 		entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
 		if (newHP == 0) {
-			session.getPlayer().getStaminaManager().killAvatar(session, entity, PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_FALL);
+			session.getPlayer().getStaminaManager().killAvatar(session, entity, PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_FALL);
 		}
 		cachedLandingSpeed = 0;
 	}

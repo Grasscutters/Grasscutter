@@ -19,11 +19,12 @@
       "authentication": {
         "default_unable_to_verify": "[Authentication] 称为 verifyUser 的方法在默认验证程序中不可用"
       },
-      "no_commands_error": "此命令不适用于 Dispatch-only 模式",
+      "no_commands_error": "仅 Dispatch 模式不支持使用命令",
       "unhandled_request_error": "[Dispatch] 潜在的未处理请求：%s %s",
       "account": {
         "login_attempt": "[Dispatch] 客户端 %s 正在尝试登录",
         "login_success": "[Dispatch] 客户端 %s 已登录，UID 为 %s",
+        "login_max_player_limit": "[Dispatch] 客户端 %s 登录失败：在线人数已满",
         "login_token_attempt": "[Dispatch] 客户端 %s 正在尝试使用 token 登录",
         "login_token_error": "[Dispatch] 客户端 %s 使用 token 登录失败",
         "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID 为 %s",
@@ -34,8 +35,9 @@
         "account_login_exist_error": "[Dispatch] 客户端 %s 登录失败：账号不存在",
         "account_cache_error": "游戏账号缓存信息错误",
         "session_key_error": "会话密钥错误",
-        "username_error": "未找到此用户名",
-        "username_create_error": "未找到用户名，建立连接失败"
+        "username_error": "未找到用户名",
+        "username_create_error": "未找到用户名，建立连接失败",
+        "server_max_player_limit": "服务器在线人数已满"
       },
       "router_error": "[Dispatch] 无法连接路由"
     },
@@ -47,7 +49,7 @@
       "error": "发生了一个错误。",
       "welcome": "欢迎使用 Grasscutter！珍惜这段美妙的旅途吧！",
       "run_mode_error": "无效的服务器运行模式：%s。",
-      "run_mode_help": "服务器运行模式必须为 HYBRID、DISPATCH_ONLY 或 GAME_ONLY。Grasscutter 启动失败...",
+      "run_mode_help": "服务器运行模式必须为 'HYBRID'(混合)、'DISPATCH_ONLY'(仅 Dispatch) 或 'GAME_ONLY'(仅游戏)。Grasscutter 启动失败...",
       "create_resources": "正在创建 resources 目录...",
       "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。",
       "version": "Grasscutter 版本：%s-%s"
@@ -55,13 +57,13 @@
   },
   "commands": {
     "generic": {
-      "not_specified": "没有指定命令。",
-      "unknown_command": "未知的命令：%s",
-      "permission_error": "哼哼哼！你没有执行此命令的权限！请联系服务器管理员解决！",
-      "console_execute_error": "此命令只能在服务器控制台执行呐~",
-      "player_execute_error": "此命令只能在游戏内执行哦~",
-      "command_exist_error": "这条命令...好像找不到呢？",
-      "no_description_specified": "没有指定说明。",
+      "not_specified": "未指定命令。",
+      "unknown_command": "未知命令：%s",
+      "permission_error": "你没有权限执行此命令。",
+      "console_execute_error": "此命令只能在控制台执行。",
+      "player_execute_error": "此命令只能在游戏内执行。",
+      "command_exist_error": "未找到命令。",
+      "no_description_specified": "未指定说明。",
       "invalid": {
         "amount": "无效的数量。",
         "artifactId": "无效的圣遗物ID。",
@@ -86,7 +88,11 @@
       "argument_error": "无效的参数。",
       "clear_target": "目标已清除。",
       "set_target": "随后的的命令都会以 @%s 为预设。",
-      "need_target": "此命令需要一个目标 UID。添加 <@UID> 参数或使用 /target @UID 来指定默认目标。"
+      "set_target_online": "@%s 在线。某些命令可能需要离线目标。",
+      "set_target_offline": "@%s 离线。某些命令可能需要在线目标。",
+      "need_target": "此命令需要一个目标 UID。添加 <@UID> 参数或使用 /target @UID 来指定默认目标。",
+      "need_target_online": "此命令需要在线目标 UID，但当前目标离线。添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。",
+      "need_target_offline": "此命令需要离线目标 UID，但当前目标在线。添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。"
     },
     "status": {
       "enabled": "已启用",
@@ -98,7 +104,7 @@
       "modify": "修改用户账号",
       "invalid": "无效的UID。",
       "exists": "账号已存在。",
-      "create": "已创建账号，UID 为 %s。",
+      "create": "已创建 UID 为 %s 的账号。",
       "delete": "账号已删除。",
       "no_account": "账号不存在。",
       "command_usage": "用法：account <create|delete> <用户名> [UID]",
@@ -128,9 +134,9 @@
       "description": "从你的背包中删除所有未装备且已解锁的物品，包括稀有物品"
     },
     "coop": {
-      "usage": "用法：coop <玩家ID> <目标玩家ID>",
+      "usage": "用法：coop [指定玩家UID]",
       "success": "已强制传送 %s 到 %s 的世界。",
-      "description": "强制传送指定用户到他人的世界"
+      "description": "强制传送指定玩家到他人的世界"
     },
     "enter_dungeon": {
       "usage": "用法：enterdungeon <秘境ID>",
@@ -157,7 +163,7 @@
       "description": "给予指定圣遗物"
     },
     "giveChar": {
-      "usage": "用法：givechar <玩家> <角色ID|角色名> [数量]",
+      "usage": "用法：givechar <玩家> <角色ID> [等级]",
       "given": "已将角色 %s [等级 %s] 给与 %s。",
       "invalid_avatar_id": "无效的角色ID。",
       "invalid_avatar_level": "无效的角色等级。",
@@ -186,7 +192,7 @@
       "server_kick_player": "正在踢出玩家 [%s:%s]...",
       "description": "从服务器内踢出指定玩家"
     },
-    "kill": {
+    "killall": {
       "usage": "用法：killall [玩家UID] [场景ID]",
       "scene_not_found_in_player_world": "未在玩家世界中找到此场景。",
       "kill_monsters_in_scene": "已杀死场景 %s 中的 %s 个怪物。",
@@ -195,7 +201,7 @@
     "killCharacter": {
       "usage": "用法：killcharacter [玩家ID]",
       "success": "已杀死 %s 当前角色。",
-      "description": "杀死当前角色"
+      "description": "杀死玩家当前角色"
     },
     "language": {
       "current_language": "当前语言是：%s",
@@ -224,12 +230,12 @@
       "usage": "quest <add|finish> [任务ID]",
       "added": "已添加任务 %s。",
       "finished": "已完成任务 %s。",
-      "not_found": "此任务不存在。",
+      "not_found": "任务不存在。",
       "invalid_id": "无效的任务ID。",
       "description": "添加或完成任务"
     },
     "reload": {
-      "reload_start": "正在重载配置文件和数据。",
+      "reload_start": "正在重载配置文件和数据...",
       "reload_done": "重载完成。",
       "description": "重载配置文件和数据"
     },
@@ -240,30 +246,31 @@
     },
     "resetShopLimit": {
       "usage": "用法：resetshop <玩家ID>",
-      "description": "重置所选玩家的商店刷新时间"
+      "success": "重置完成。",
+      "description": "重置指定玩家的商店刷新时间"
     },
     "sendMail": {
-      "usage": "用法：give [玩家] <物品ID|物品名称> [数量]",
-      "user_not_exist": "ID '%s' 的用户不存在。",
-      "start_composition": "发送邮件流程。\n请使用`/sendmail <标题>`前进到下一步。\n你可以在任何时间使用`/sendmail stop`来停止发送。",
+      "usage": "用法：sendmail <用户ID|all|help> [模板ID]",
+      "user_not_exist": "用户 '%s' 不存在。",
+      "start_composition": "开始撰写邮件。\n请使用 '/sendmail <标题>' 继续。\n你可以随时使用 '/sendmail stop' 停止。",
       "templates": "邮件模板尚未实装...",
-      "invalid_arguments": "无效的参数。\n指令使用方法 `/sendmail <用户ID|all|help> [模板ID]`",
+      "invalid_arguments": "无效的参数。",
       "send_cancel": "取消发送邮件",
       "send_done": "已将邮件发送给 %s！",
       "send_all_done": "邮件已发送给所有人！",
-      "not_composition_end": "现在邮件发送未到最后阶段。\n请使用 `/sendmail %s` 继续发送邮件，或使用 `/sendmail stop` 来停止发送邮件。",
-      "please_use": "请使用 `/sendmail %s`",
-      "set_title": "成功将邮件标题设置为 '%s'。\n使用 '/sendmail <正文>' 来设置邮件内容。",
-      "set_contents": "成功将邮件内容设置为 '%s'。\n使用 '/sendmail <发件人>' 来设置发件人。",
-      "set_message_sender": "发件人已设置为 '%s'。\n使用 '/sendmail <物品ID|物品名称|finish> [数量] [等级]' 来添加附件。",
-      "send": "已添加 %s 个 %s [等级 %s] 邮件附件。\n如果没有要继续添加的附件请使用 `/sendmail finish` 来发送邮件。",
-      "invalid_arguments_please_use": "错误的参数 \n请使用 `/sendmail %s`",
+      "not_composition_end": "邮件撰写未到最后阶段。\n请使用 '/sendmail %s' 继续，或使用 '/sendmail stop' 停止。",
+      "please_use": "请使用 '/sendmail %s'",
+      "set_title": "成功将邮件标题设为 '%s'。\n使用 '/sendmail <正文>' 来设置邮件内容。",
+      "set_contents": "成功将邮件内容设为 '%s'。\n使用 '/sendmail <发件人>' 来设置发件人。",
+      "set_message_sender": "发件人已设为 '%s'。\n使用 '/sendmail <物品ID|物品名称|finish> [数量] [等级]' 来添加附件。",
+      "send": "已添加 %s 个 %s [等级 %s] 附件。\n如果没有要继续添加的附件请使用 `/sendmail finish` 来发送邮件。",
+      "invalid_arguments_please_use": "无效的参数。\n请使用 '/sendmail %s'",
       "title": "<标题>",
       "message": "<正文>",
       "sender": "<发件人>",
       "arguments": "<物品ID|物品名称|finish> [数量] [等级]",
-      "error": "错误：无效的编写阶段 %s。需要 StackTrace 请查看服务器控制台。",
-      "description": "向指定用户发送邮件。此命令的用法可根据附加的参数而变化"
+      "error": "错误：无效的撰写阶段 %s。需要 StackTrace 请查看控制台。",
+      "description": "向指定用户发送邮件。此命令的用法会根据撰写阶段而改变"
     },
     "sendMessage": {
       "usage": "用法：sendmessage <玩家> <消息>",
@@ -280,7 +287,7 @@
     "setStats": {
       "usage_console": "用法：setstats|stats @<UID> <属性> <数值>",
       "usage_ingame": "用法：setstats|stats [@UID] <属性> <数值>",
-      "help_message": "\n可更改的属性列表：hp (生命值)| maxhp (最大生命值) | def (防御力) | atk (攻击力)| em (元素精通) | er (元素充能效率) | crate (暴击率) | cdmg (暴击伤害)| cdr (冷却缩减) | heal (治疗加成)| heali (受治疗加成)| shield (护盾强效)| defi (无视防御)\n(续) 元素增伤：epyro (火) | ecryo (冰)  | ehydro (水)  | egeo (岩)  | edendro (草) | eelectro (雷) | ephys (物理)\n(续) 元素抗性：respyro (火)  | rescryo (冰)  | reshydro (水)  | resgeo (岩) | resdendro (草) | reselectro (雷)  | resphys (物理)\n",
+      "help_message": "\n可更改的属性列表：hp(生命值)|maxhp(最大生命值)|def(防御力)|atk(攻击力)|em(元素精通)|er(元素充能效率)|crate(暴击率)|cdmg(暴击伤害)|cdr(冷却缩减)|heal(治疗加成)|heali(受治疗加成)|shield(护盾强效)|defi(无视防御)\n元素增伤：epyro(火)|ecryo(冰)|ehydro(水)|egeo(岩)|edendro(草)|eelectro(雷)|ephys(物理)\n元素抗性：respyro(火)|rescryo(冰)|reshydro(水)|resgeo(岩)|resdendro(草)|reselectro(雷)|resphys(物理)\n",
       "value_error": "无效的属性值。",
       "uid_error": "无效的UID。",
       "player_error": "玩家不存在或已离线。",
@@ -299,7 +306,8 @@
     "spawn": {
       "usage": "用法：spawn <实体ID> [数量] [等级(仅怪物)]",
       "success": "已生成 %s 个 %s。",
-      "description": "在你附近生成一个生物"
+      "limit_reached": "场景中的生成数量已达上限。已替代为生成 %s 个实体。",
+      "description": "在你附近生成实体"
     },
     "stop": {
       "success": "正在关闭服务器...",
@@ -324,16 +332,16 @@
     },
     "team": {
       "usage": "用法：team <add|remove|set> [角色ID,...] [索引|first|last|索引-索引,...]",
-      "invalid_usage": "无效用法。",
-      "add_usage": "用法 (add)：team add <角色ID,...> [索引]",
-      "invalid_index": "无效索引。",
+      "invalid_usage": "无效的用法。",
+      "add_usage": "用法(add)：team add <角色ID,...> [索引]",
+      "invalid_index": "无效的索引。",
       "add_too_much": "服务端仅允许你队伍里至多有 %d 名角色。",
       "failed_to_add_avatar": "无法根据ID %s 添加角色。",
-      "remove_usage": "用法 (remove)：team remove <索引|first|last|索引-索引,...>",
+      "remove_usage": "用法(remove)：team remove <索引|first|last|索引-索引,...>",
       "failed_to_parse_index": "无法解析索引：%s",
       "remove_too_much": "你不能删除那么多角色，你的队伍列表将会变空。",
       "ignore_index": "忽略的索引列表：%s",
-      "set_usage": "用法 (set)：team set <索引> <角色ID>",
+      "set_usage": "用法(set)：team set <索引> <角色ID>",
       "index_out_of_range": "你指定的索引超出了范围。",
       "failed_parse_avatar_id": "无法解析的角色ID：%s",
       "avatar_already_in_team": "角色已经在你的队伍中了。",
@@ -354,15 +362,15 @@
       "description": "改变指定玩家的位置"
     },
     "weather": {
-      "usage": "用法：weather <天气ID> [气候ID]",
-      "success": "已更改天气为 %s，气候为 %s。",
-      "invalid_id": "无效的天气ID。",
+      "usage": "用法：weather <气候类型(天气ID)> <天气类型(气候ID)>\n天气类型：'0: 无, 1: 晴天, 2: 多云, 3: 雨, 4: 雷雨, 5: 雪, 6: 雾'",
+      "success": "已更改气候类型为 %s，天气类型为 %s。",
+      "invalid_id": "无效的ID。",
       "description": "更改天气"
     },
     "drop": {
       "command_usage": "用法：drop <物品ID|物品名称> [数量]",
       "success": "已丢下 %s 个 %s。",
-      "description": "在你附近丢下一个物品"
+      "description": "在你附近丢下物品"
     },
     "help": {
       "usage": "用法：",
@@ -384,6 +392,28 @@
       "available_five_stars": "可获得的5星物品",
       "available_four_stars": "可获得的4星物品",
       "available_three_stars": "可获得的3星物品"
+    }
+  },
+  "documentation": {
+    "handbook": {
+      "title": "GM Handbook",
+      "title_commands": "命令",
+      "title_avatars": "角色",
+      "title_items": "物品",
+      "title_scenes": "场景",
+      "title_monsters": "怪物",
+      "header_id": "ID",
+      "header_command": "命令",
+      "header_description": "说明",
+      "header_avatar": "角色",
+      "header_item": "物品",
+      "header_scene": "场景",
+      "header_monster": "怪物"
+    },
+    "index": {
+      "title": "文档",
+      "handbook": "GM Handbook",
+      "gacha_mapping": "祈愿物品映射JSON"
     }
   }
 }

@@ -35,6 +35,8 @@ public class EntityClientGadget extends EntityBaseGadget {
 	private int ownerEntityId;
 	private int targetEntityId;
 	private boolean asyncLoad;
+
+	private int originalOwnerEntityId;
 	
 	public EntityClientGadget(Scene scene, Player player, EvtCreateGadgetNotify notify) {
 		super(scene);
@@ -48,6 +50,14 @@ public class EntityClientGadget extends EntityBaseGadget {
 		this.ownerEntityId = notify.getPropOwnerEntityId();
 		this.targetEntityId = notify.getTargetEntityId();
 		this.asyncLoad = notify.getIsAsyncLoad();
+
+		GameEntity owner = scene.getEntityById(this.ownerEntityId);
+		if (owner instanceof EntityClientGadget ownerGadget) {
+			this.originalOwnerEntityId = ownerGadget.getOriginalOwnerEntityId();
+		}
+		else {
+			this.originalOwnerEntityId = this.ownerEntityId;
+		}
 	}
 	
 	@Override
@@ -77,6 +87,10 @@ public class EntityClientGadget extends EntityBaseGadget {
 
 	public boolean isAsyncLoad() {
 		return this.asyncLoad;
+	}
+
+	public int getOriginalOwnerEntityId() {
+		return this.originalOwnerEntityId;
 	}
 
 	@Override
@@ -113,7 +127,7 @@ public class EntityClientGadget extends EntityBaseGadget {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.PROT_ENTITY_GADGET)
+				.setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
 				.setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())

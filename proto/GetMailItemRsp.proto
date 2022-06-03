@@ -4,8 +4,11 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "EquipParam.proto";
 
+// CmdId: 1432
+// EnetChannelId: 0
+// EnetIsReliable: true
 message GetMailItemRsp {
-  int32 retcode = 1;
-  repeated uint32 mail_id_list = 2;
-  repeated EquipParam item_list = 3;
+	int32 retcode = 13;
+	repeated uint32 mail_id_list = 10;
+	repeated EquipParam item_list = 5;
 }

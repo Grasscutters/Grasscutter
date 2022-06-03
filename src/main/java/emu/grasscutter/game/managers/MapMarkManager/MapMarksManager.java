@@ -24,7 +24,7 @@ public class MapMarksManager {
     public void handleMapMarkReq(MarkMapReq req) {
         Operation op = req.getOp();
         switch (op) {
-            case ADD -> {
+            case OPERATION_ADD -> {
                 MapMark createMark = new MapMark(req.getMark());
                 // keep teleporting functionality on fishhook mark.
                 if (createMark.getMapMarkPointType() == MapMarkPointType.MAP_MARK_POINT_TYPE_FISH_POOL) {
@@ -33,18 +33,18 @@ public class MapMarksManager {
                 }
                 addMapMark(createMark);
             }
-            case MOD -> {
+            case OPERATION_MOD -> {
                 MapMark oldMark = new MapMark(req.getOld());
                 removeMapMark(oldMark.getPosition());
                 MapMark newMark = new MapMark(req.getMark());
                 addMapMark(newMark);
             }
-            case DEL -> {
+            case OPERATION_DEL -> {
                 MapMark deleteMark = new MapMark(req.getMark());
                 removeMapMark(deleteMark.getPosition());
             }
         }
-        if (op != Operation.GET) {
+        if (op != Operation.OPERATION_GET) {
             saveMapMarks();
         }
         player.getSession().send(new PacketMarkMapRsp(getMapMarks()));

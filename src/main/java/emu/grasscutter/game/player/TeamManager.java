@@ -5,11 +5,10 @@ import java.util.*;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
-import emu.grasscutter.data.def.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityBaseGadget;
-import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.FightProperty;
@@ -105,6 +104,20 @@ public class TeamManager {
 		this.mpTeam = mpTeam;
 	}
 
+	/**
+	 * Search through all teams and if the team matches, return that index.
+	 * Otherwise, return -1.
+	 * No match could mean that the team does not currently belong to the player.
+	 */
+	public int getTeamId(TeamInfo team) {
+		for (int i = 1; i <= this.teams.size(); i++) {
+			if (this.teams.get(i).equals(team)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
 	public int getCurrentTeamId() {
 		// Starts from 1
 		return currentTeamIndex;
@@ -186,7 +199,108 @@ public class TeamManager {
 	}
 	
 	// Methods
-	
+
+	/**
+	 * Returns true if there is space to add the number of avatars to the team.
+	 */
+	public boolean canAddAvatarsToTeam(TeamInfo team, int avatars) {
+		return team.size() + avatars <= getMaxTeamSize();
+	}
+
+	/**
+	 * Returns true if there is space to add to the team.
+	 */
+	public boolean canAddAvatarToTeam(TeamInfo team) {
+		return canAddAvatarsToTeam(team, 1);
+	}
+
+	/**
+	 * Returns true if there is space to add the number of avatars to the current team.
+	 * If the current team is temporary, returns false.
+	 */
+	public boolean canAddAvatarsToCurrentTeam(int avatars) {
+		if (this.useTemporarilyTeamIndex != -1){
+			return false;
+		}
+		return canAddAvatarsToTeam(this.getCurrentTeamInfo(), avatars);
+	}
+
+	/**
+	 * Returns true if there is space to add to the current team.
+	 * If the current team is temporary, returns false.
+	 */
+	public boolean canAddAvatarToCurrentTeam() {
+		return canAddAvatarsToCurrentTeam(1);
+	}
+
+	/**
+	 * Try to add the collection of avatars to the team.
+	 * Returns true if all were successfully added.
+	 * If some can not be added, returns false and does not add any.
+	 */
+	public boolean addAvatarsToTeam(TeamInfo team, Collection<Avatar> avatars) {
+		if (!canAddAvatarsToTeam(team, avatars.size())) {
+			return false;
+		}
+
+		// Convert avatars into a collection of avatar IDs, then add
+		team.getAvatars().addAll(avatars.stream().map(a -> a.getAvatarId()).toList());
+
+		// Update team
+		if (this.getPlayer().isInMultiplayer()) {
+			if (team.equals(this.getMpTeam())) {
+				// MP team Packet
+				this.updateTeamEntities(new PacketChangeMpTeamAvatarRsp(getPlayer(), team));
+			}
+		} else {
+			// SP team update packet
+			getPlayer().sendPacket(new PacketAvatarTeamUpdateNotify(getPlayer()));
+
+			int teamId = this.getTeamId(team);
+			if (teamId != -1) {
+				// This is one of the player's teams
+				// Update entites
+				if (teamId == this.getCurrentTeamId()) {
+					this.updateTeamEntities(new PacketSetUpAvatarTeamRsp(getPlayer(), teamId, team));
+				} else {
+					getPlayer().sendPacket(new PacketSetUpAvatarTeamRsp(getPlayer(), teamId, team));
+				}
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Try to add an avatar to a team.
+	 * Returns true if successful.
+	 */
+	public boolean addAvatarToTeam(TeamInfo team, Avatar avatar){
+		return addAvatarsToTeam(team, Collections.singleton(avatar));
+	}
+
+	/**
+	 * Try to add the collection of avatars to the current team.
+	 * Will not modify a temporary team.
+	 * Returns true if all were successfully added.
+	 * If some can not be added, returns false and does not add any.
+	 */
+	public boolean addAvatarsToCurrentTeam(Collection<Avatar> avatars) {
+		if (this.useTemporarilyTeamIndex != -1){
+			return false;
+		}
+		return addAvatarsToTeam(this.getCurrentTeamInfo(), avatars);
+	}
+
+	/**
+	 * Try to add an avatar to the current team.
+	 * Will not modify a temporary team.
+	 * Returns true if successful.
+	 */
+	public boolean addAvatarToCurrentTeam(Avatar avatar) {
+		return addAvatarsToCurrentTeam(Collections.singleton(avatar));
+	}
+
 	private void updateTeamResonances() {
 		Int2IntOpenHashMap map = new Int2IntOpenHashMap();
 		
@@ -316,19 +430,7 @@ public class TeamManager {
 		
 		// Clear current team info and add avatars from our new team
 		teamInfo.getAvatars().clear();
-		for (Avatar avatar : newTeam) {
-			teamInfo.addAvatar(avatar);
-		}
-		
-		// Update packet
-		getPlayer().sendPacket(new PacketAvatarTeamUpdateNotify(getPlayer()));
-		
-		// Update entites
-		if (teamId == this.getCurrentTeamId()) {
-			this.updateTeamEntities(new PacketSetUpAvatarTeamRsp(getPlayer(), teamId, teamInfo));
-		} else {
-			getPlayer().sendPacket(new PacketSetUpAvatarTeamRsp(getPlayer(), teamId, teamInfo));
-		}
+		this.addAvatarsToTeam(teamInfo, newTeam);
 	}
 	
 	public void setupMpTeam(List<Long> list) {
@@ -352,12 +454,7 @@ public class TeamManager {
 		
 		// Clear current team info and add avatars from our new team
 		teamInfo.getAvatars().clear();
-		for (Avatar avatar : newTeam) {
-			teamInfo.addAvatar(avatar);
-		}
-		
-		// Packet
-		this.updateTeamEntities(new PacketChangeMpTeamAvatarRsp(getPlayer(), teamInfo));
+		this.addAvatarsToTeam(teamInfo, newTeam);
 	}
 
 	public void setupTemporaryTeam(List<List<Long>> guidList) {
@@ -457,7 +554,7 @@ public class TeamManager {
 		this.setCurrentCharacterIndex(index);
 		
 		// Old entity motion state
-		oldEntity.setMotionState(MotionState.MOTION_STANDBY);
+		oldEntity.setMotionState(MotionState.MOTION_STATE_STANDBY);
 
 		// Remove and Add
 		getPlayer().getScene().replaceEntity(oldEntity, newEntity);
@@ -474,7 +571,7 @@ public class TeamManager {
 		PlayerDieType dieType = deadAvatar.getKilledType();
 		int killedBy = deadAvatar.getKilledBy();
 
-		if (dieType == PlayerDieType.PLAYER_DIE_DRAWN) {
+		if (dieType == PlayerDieType.PLAYER_DIE_TYPE_DRAWN) {
 			// Died in water. Do not replace
 			// The official server has skipped this notify and will just respawn the team immediately after the animation.
 			// TODO: Perhaps find a way to get vanilla experience?
@@ -572,7 +669,7 @@ public class TeamManager {
 		}
 		
 		// Teleport player
-		getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(getPlayer(), EnterType.ENTER_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
+		getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
 		
 		// Set player position
 		player.setSceneId(3);
@@ -580,24 +677,6 @@ public class TeamManager {
 
 		// Packets
 		getPlayer().sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));
-	}
-	
-	public synchronized void addEnergyToTeam(GameItem energyBall) {
-		// TODO
-		float baseEnergy = 2;
-		
-		for (int i = 0; i < getActiveTeam().size(); i++) {
-			EntityAvatar entity = getActiveTeam().get(i);
-			
-			float energyGain = baseEnergy;
-			
-			// Active character gets full hp
-			if (getCurrentCharacterIndex() != i) {
-				energyGain *= Math.max(1.0 - (getActiveTeam().size() * .1f), .6f);
-			}
-
-			entity.addEnergy(energyGain);
-		}
 	}
 
 	public void saveAvatars() {
