@@ -70,6 +70,7 @@ public final class GameServer extends KcpServer {
 		}
 		return inetSocketAddress;
 	}
+
 	public GameServer() {
 		this(getAdapterInetSocketAddress());
 	}
@@ -268,7 +269,10 @@ public final class GameServer extends KcpServer {
 
 	@Override
 	public void onStartFinish() {
+		String version = GameConstants.VERSION;
 		Grasscutter.getLogger().info(translate("messages.status.free_software"));
+		Grasscutter.getLogger().info(translate("messages.status.game_version"));
+		Grasscutter.getLogger().info(translate("messages.status.version"));
 		Grasscutter.getLogger().info(translate("messages.game.port_bind", Integer.toString(address.getPort())));
 		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
