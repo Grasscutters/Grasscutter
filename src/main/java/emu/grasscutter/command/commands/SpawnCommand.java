@@ -23,7 +23,7 @@ import java.util.Random;
 import static emu.grasscutter.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)]", permission = "server.spawn", permissionTargeted = "server.spawn.others", description = "commands.spawn.description")
+@Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)] <x> <y> <z>(monster only, optional)", permission = "server.spawn", permissionTargeted = "server.spawn.others", description = "commands.spawn.description")
 public final class SpawnCommand implements CommandHandler {
 
     @Override
@@ -31,7 +31,16 @@ public final class SpawnCommand implements CommandHandler {
         int id = 0;  // This is just to shut up the linter, it's not a real default
         int amount = 1;
         int level = 1;
+		float x = 0, y = 0, z = 0;
         switch (args.size()) {
+            case 6:
+                try {
+                    x = Float.parseFloat(args.get(3));
+                    y = Float.parseFloat(args.get(4));
+                    z = Float.parseFloat(args.get(5));
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
+                }  // Fallthrough
             case 3:
                 try {
                     level = Integer.parseInt(args.get(2));
@@ -77,6 +86,9 @@ public final class SpawnCommand implements CommandHandler {
         double maxRadius = Math.sqrt(amount * 0.2 / Math.PI);
         for (int i = 0; i < amount; i++) {
             Position pos = GetRandomPositionInCircle(targetPlayer.getPos(), maxRadius).addY(3);
+            if(x != 0 && y != 0 && z != 0) {
+                pos = GetRandomPositionInCircle(new Position(x, y, z), maxRadius).addY(3);
+            }
             GameEntity entity = null;
             if (itemData != null) {
                 entity = new EntityItem(scene, null, itemData, pos, 1, true);
