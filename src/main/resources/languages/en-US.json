@@ -183,6 +183,10 @@
       "success": "NoStamina is now %s for %s.",
       "description": "Keep your endurance to the maximum."
     },
+    "nostamina": {
+      "success": "NoStamina is now %s for %s.",
+      "description": "Keep your endurance to the maximum."
+    },
     "heal": {
       "success": "All characters have been healed.",
       "description": "Heal all characters in your current team."
