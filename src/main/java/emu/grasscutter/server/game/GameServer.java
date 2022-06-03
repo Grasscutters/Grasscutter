@@ -70,7 +70,6 @@ public final class GameServer extends KcpServer {
 		}
 		return inetSocketAddress;
 	}
-
 	public GameServer() {
 		this(getAdapterInetSocketAddress());
 	}
