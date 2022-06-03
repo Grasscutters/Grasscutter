@@ -5,8 +5,8 @@
       {
         "goodsId": 1004202,
         "goodsItem": {
-          "Id": 202,
-          "Count": 1000000
+          "id": 202,
+          "count": 1000000
         },
         "scoin": 1,
         "buyLimit": 500,
@@ -16,17 +16,18 @@
         "maxLevel": 99,
         "costItemList": [
           {
-            "Id": 223,
-            "Count": 100
+            "id": 223,
+            "count": 100
           }
         ]
       },
       {
         "goodsId": 10048006,
         "goodsItem": {
-          "Id": 108006,
-          "Count": 20
+          "id": 108006,
+          "count": 20
         },
+        "costItemList": [],
         "scoin": 100,
         "hcoin": 100,
         "mcoin": 100,
@@ -39,9 +40,10 @@
       {
         "goodsId": 10048033,
         "goodsItem": {
-          "Id": 108033,
-          "Count": 20
+          "id": 108033,
+          "count": 20
         },
+        "costItemList": [],
         "scoin": 1,
         "buyLimit": 50000,
         "beginTime": 1575129600,
