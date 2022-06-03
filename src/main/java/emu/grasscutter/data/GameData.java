@@ -51,7 +51,8 @@ public class GameData {
 	private static final Int2ObjectMap<WeaponPromoteData> weaponPromoteDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<WeaponCurveData> weaponCurveDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<EquipAffixData> equipAffixDataMap = new Int2ObjectOpenHashMap<>();
-	
+
+	private static final Int2ObjectMap<EnvAnimalGatherConfigData> envAnimalGatherConfigDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<MonsterData> monsterDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<NpcData> npcDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<GadgetData> gadgetDataMap = new Int2ObjectOpenHashMap<>();
@@ -239,6 +240,9 @@ public class GameData {
 
 	public static Int2ObjectMap<MonsterData> getMonsterDataMap() {
 		return monsterDataMap;
+	}
+	public static Int2ObjectMap<EnvAnimalGatherConfigData> getEnvAnimalGatherConfigDataMap() {
+		return envAnimalGatherConfigDataMap;
 	}
 
 	public static Int2ObjectMap<NpcData> getNpcDataMap() {
