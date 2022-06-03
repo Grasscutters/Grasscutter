@@ -27,6 +27,7 @@ import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
 import emu.grasscutter.task.TaskMap;
+import emu.grasscutter.BuildConfig;
 
 import java.net.InetSocketAddress;
 import java.time.OffsetDateTime;
@@ -269,8 +270,8 @@ public final class GameServer extends KcpServer {
 	@Override
 	public void onStartFinish() {
 		Grasscutter.getLogger().info(translate("messages.status.free_software"));
-		Grasscutter.getLogger().info(translate("messages.status.game_version"));
-		Grasscutter.getLogger().info(translate("messages.status.version"));
+		Grasscutter.getLogger().info(translate("messages.status.game_version", GameConstants.VERSION));
+		Grasscutter.getLogger().info(translate("messages.status.version", BuildConfig.VERSION));
 		Grasscutter.getLogger().info(translate("messages.game.port_bind", Integer.toString(address.getPort())));
 		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
