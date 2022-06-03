@@ -304,7 +304,7 @@
       "description": "Sets your world level (Relog to see proper effects)"
     },
     "spawn": {
-      "usage": "Usage: spawn <entityID> [amount] [level(monster only)] <x> <y> <z>(monster only, optional)",
+      "usage": "Usage: spawn <entityID> [amount] [level(monster only)] [<x> <y> <z>(monster only, optional)]",
       "success": "Spawned %s of %s.",
       "limit_reached": "Scene spawn limit reached. Spawning %s entities instead.",
       "description": "Spawns an entity near you"
