@@ -15,6 +15,7 @@ import static emu.grasscutter.utils.Language.translate;
 @SuppressWarnings("ConstantConditions")
 @Command(label = "sendmail", usage = "sendmail <userId|all|help> [templateId]", permission = "server.sendmail", description = "commands.sendMail.description", targetRequirement = Command.TargetRequirement.NONE)
 public final class SendMailCommand implements CommandHandler {
+    private long intermediate;
 
     // TODO: You should be able to do /sendmail and then just send subsequent messages until you finish
     //  However, due to the current nature of the command system, I don't think this is possible without rewriting
@@ -35,6 +36,10 @@ public final class SendMailCommand implements CommandHandler {
 
         if (!mailBeingConstructed.containsKey(senderId)) {
             switch (args.size()) {
+                case 0 -> {
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.usage"));
+                    return;
+                }
                 case 1 -> {
                     MailBuilder mailBuilder;
                     switch (args.get(0).toLowerCase()) {
@@ -65,7 +70,7 @@ public final class SendMailCommand implements CommandHandler {
                 switch (args.get(0).toLowerCase()) {
                     case "stop" -> {
                         mailBeingConstructed.remove(senderId);
-                        CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.sendCancel"));
+                        CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.send_cancel"));
                         return;
                     }
                     case "finish" -> {
@@ -110,6 +115,29 @@ public final class SendMailCommand implements CommandHandler {
                                 mailBuilder.constructionStage++;
                             }
                             case 3 -> {
+                                try {
+                                    switch (args.get(1)) {
+                                    case "s":
+                                        int expireTime = (args.get(0));
+                                    case "m":
+                                        int expireTime = (args.get(0) * 60);
+                                    case "h":
+                                        int expireTime = (args.get(0) * 3600);
+                                    case "d":
+                                        int expireTime = (args.get(0) * 86400);
+                                    default:
+                                        CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.invalid_time"));
+                                    }
+                                } catch (NumberFormatException ignored) {
+                                    CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.invalid_time"));
+                                    return;
+                                }
+                                long expireTime = args.get(0);
+                                mailBuilder.mail.mailContent.expireTime = expireTime;
+                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.set_expire_time", expireTime));
+                                mailBuilder.constructionStage++;
+                            }
+                            case 4 -> {
                                 int item;
                                 int lvl = 1;
                                 int amount = 1;
@@ -166,7 +194,8 @@ public final class SendMailCommand implements CommandHandler {
             case 0 -> translate(sender, "commands.sendMail.title");
             case 1 -> translate(sender, "commands.sendMail.message");
             case 2 -> translate(sender, "commands.sendMail.sender");
-            case 3 -> translate(sender, "commands.sendMail.arguments");
+            case 3 -> translate(sender, "commands.sendMail.expiry_time");
+            case 4 -> translate(sender, "commands.sendMail.arguments");
             default -> translate(sender, "commands.sendMail.error", Integer.toString(stage));
         };
     }
