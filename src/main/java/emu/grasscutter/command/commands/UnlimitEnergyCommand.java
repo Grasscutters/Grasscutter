@@ -13,7 +13,7 @@ public final class UnlimitEnergyCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        Boolean status = targetPlayer.getEnergyManager().getEnergeUsage();
+        Boolean status = targetPlayer.getEnergyManager().getEnergyUsage();
         if (args.size() == 1) {
             switch (args.get(0).toLowerCase()) {
                 case "on":
@@ -28,7 +28,7 @@ public final class UnlimitEnergyCommand implements CommandHandler {
                     break;
             }
         }
-        targetPlayer.getEnergyManager().setEnergeUsage(!status);
+        targetPlayer.getEnergyManager().setEnergyUsage(!status);
 //        targetPlayer.setStamina(StaminaState);//Set
 
         CommandHandler.sendMessage(sender, translate(sender, "commands.unlimitenergy.success", (status ? translate(sender, "commands.status.enabled") : translate(sender, "commands.status.disabled")), targetPlayer.getNickname()));

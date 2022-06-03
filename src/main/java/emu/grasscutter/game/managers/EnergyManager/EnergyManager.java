@@ -1,7 +1,5 @@
 package emu.grasscutter.game.managers.EnergyManager;
 
-import com.google.gson.reflect.TypeToken;
-import com.google.protobuf.InvalidProtocolBufferException;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
@@ -9,7 +7,11 @@ import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.MonsterData.HpDrops;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.entity.*;
+import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.entity.EntityClientGadget;
+import emu.grasscutter.game.entity.EntityItem;
+import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
@@ -24,28 +26,37 @@ import emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.utils.Position;
+import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
+import static emu.grasscutter.Configuration.GAME_OPTIONS;
+
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
+import static java.util.Map.entry;
 
-import static emu.grasscutter.Configuration.GAME_OPTIONS;
+import com.google.gson.reflect.TypeToken;
+import com.google.protobuf.InvalidProtocolBufferException;
 
 public class EnergyManager {
     private final Player player;
     private final Map<EntityAvatar, Integer> avatarNormalProbabilities;
-    //  add energeUsage config for each player
-    private Boolean energeUsage;
+//    energyUsage for each player
+    private Boolean energyUsage;
     private final static Int2ObjectMap<List<EnergyDropInfo>> energyDropData = new Int2ObjectOpenHashMap<>();
     private final static Int2ObjectMap<List<SkillParticleGenerationInfo>> skillParticleGenerationData = new Int2ObjectOpenHashMap<>();
 
     public EnergyManager(Player player) {
         this.player = player;
-        this.energeUsage = GAME_OPTIONS.energyUsage;
         this.avatarNormalProbabilities = new HashMap<>();
+        this.energyUsage=GAME_OPTIONS.energyUsage;
     }
 
     public Player getPlayer() {
@@ -62,7 +73,8 @@ public class EnergyManager {
             }
 
             Grasscutter.getLogger().info("Energy drop data successfully loaded.");
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             Grasscutter.getLogger().error("Unable to load energy drop data.", ex);
         }
 
@@ -75,7 +87,8 @@ public class EnergyManager {
             }
 
             Grasscutter.getLogger().info("Skill particle generation data successfully loaded.");
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             Grasscutter.getLogger().error("Unable to load skill particle generation data data.", ex);
         }
     }
@@ -180,7 +193,7 @@ public class EnergyManager {
      **********/
     public void handlePickupElemBall(GameItem elemBall) {
         // Check if the item is indeed an energy particle/orb.
-        if (elemBall.getItemId() < 2001 || elemBall.getItemId() > 2024) {
+        if (elemBall.getItemId() < 2001 ||elemBall.getItemId() > 2024) {
             return;
         }
 
@@ -284,7 +297,7 @@ public class EnergyManager {
             return;
         }
 
-        EntityMonster targetMonster = (EntityMonster) targetEntity;
+        EntityMonster targetMonster = (EntityMonster)targetEntity;
         MonsterType targetType = targetMonster.getMonsterData().getType();
         if (targetType != MonsterType.MONSTER_ORDINARY && targetType != MonsterType.MONSTER_BOSS) {
             return;
@@ -315,7 +328,7 @@ public class EnergyManager {
      **********/
     private void handleBurstCast(Avatar avatar, int skillId) {
         // Don't do anything if energy usage is disabled.
-        if (!GAME_OPTIONS.energyUsage || !this.energeUsage) {
+        if (!GAME_OPTIONS.energyUsage || !this.energyUsage) {
             return;
         }
 
@@ -355,7 +368,6 @@ public class EnergyManager {
             this.generateElemBall(info.getBallId(), monster.getPosition(), info.getCount());
         }
     }
-
     public void handleMonsterEnergyDrop(EntityMonster monster, float hpBeforeDamage, float hpAfterDamage) {
         // Make sure this is actually a monster.
         // Note that some wildlife also has that type, like boars or birds.
@@ -418,7 +430,7 @@ public class EnergyManager {
         int avatarEntityId =
                 (!(entity instanceof EntityClientGadget))
                         ? invokeEntityId
-                        : ((EntityClientGadget) entity).getOriginalOwnerEntityId();
+                        : ((EntityClientGadget)entity).getOriginalOwnerEntityId();
 
         // Finally, find the avatar entity in the player's team.
         return player.getTeamManager().getActiveTeam()
@@ -427,11 +439,11 @@ public class EnergyManager {
                 .findFirst();
     }
 
-    public Boolean getEnergeUsage() {
-        return energeUsage;
+    public Boolean getEnergyUsage() {
+        return energyUsage;
     }
 
-    public void setEnergeUsage(Boolean energeUsage) {
-        this.energeUsage = energeUsage;
+    public void setEnergyUsage(Boolean energyUsage) {
+        this.energyUsage = energyUsage;
     }
 }
