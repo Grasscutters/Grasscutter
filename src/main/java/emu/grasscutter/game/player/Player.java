@@ -92,7 +92,7 @@ public class Player {
 	private Set<Integer> flyCloakList;
 	private Set<Integer> costumeList;
 	private Set<Integer> unlockedForgingBlueprints;
-	private Map<Integer, ActiveForgeData> activeForges;
+	private List<ActiveForgeData> activeForges;
 
 	private Integer widgetId;
 
@@ -189,7 +189,7 @@ public class Player {
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
 		this.unlockedForgingBlueprints = new HashSet<>();
-		this.activeForges = new HashMap<>();
+		this.activeForges = new ArrayList<>();
 
 		this.setSceneId(3);
 		this.setRegionId(1);
@@ -528,7 +528,7 @@ public class Player {
 		return this.unlockedForgingBlueprints;
 	}
 
-	public Map<Integer, ActiveForgeData> getActiveForges() {
+	public List<ActiveForgeData> getActiveForges() {
 		return this.activeForges;
 	}
 
