@@ -17,9 +17,11 @@ import emu.grasscutter.server.event.game.SendPacketEvent;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
+import io.jpower.kcp.netty.UkcpChannel;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelPipeline;
 
 import static emu.grasscutter.utils.Language.translate;
 import static emu.grasscutter.Configuration.*;
@@ -36,11 +38,21 @@ public class GameSession extends KcpChannel {
 	private int clientTime;
 	private long lastPingTime;
 	private int lastClientSeq = 10;
-	
-	public GameSession(GameServer server) {
+
+	private final ChannelPipeline pipeline;
+	@Override
+	public void close() {
+		//remove this from pipline when game session closed!
+		pipeline.remove(this);
+		pipeline.close();
+		super.close();
+	}
+	public GameSession(GameServer server, ChannelPipeline pipeline) {
 		this.server = server;
 		this.state = SessionState.WAITING_FOR_TOKEN;
 		this.lastPingTime = System.currentTimeMillis();
+		this.pipeline = pipeline;
+		pipeline.addLast(this);
 	}
 	
 	public GameServer getServer() {

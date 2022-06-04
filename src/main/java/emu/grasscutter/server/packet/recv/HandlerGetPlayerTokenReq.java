@@ -40,12 +40,12 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 
 			boolean isSameClient = false;
 			String username = account.getUsername();
-			int reservedPlayerUid = account.getReservedPlayerUid();
+			String accountId = account.getId();
 			// force to make account offline , which logins already.
 			Iterator<Map.Entry<Integer, Player>> it = players.entrySet().iterator();
 			while(it.hasNext()){
 				Player onlinePlayer = it.next().getValue();
-				if(onlinePlayer.getAccount().getReservedPlayerUid() == reservedPlayerUid){
+				if(onlinePlayer.getAccount().getId().equals(accountId)){
 					GameSession playerSession = onlinePlayer.getSession();
 					if(playerSession==session) {
 						isSameClient = true;
@@ -75,7 +75,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 				Player player = DatabaseHelper.getPlayerByAccount(account);
 
 				if (player == null) {
-					int nextPlayerUid = DatabaseHelper.getNextPlayerId(reservedPlayerUid);
+					int nextPlayerUid = DatabaseHelper.getNextPlayerId(account.getReservedPlayerUid());
 
 					// Call creation event.
 					PlayerCreationEvent event = new PlayerCreationEvent(session, Player.class);
