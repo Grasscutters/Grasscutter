@@ -38,54 +38,61 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 				return;
 			}
 
+			boolean isSameClient = false;
 			String username = account.getUsername();
-			String gameId = account.getId();
+			int reservedPlayerUid = account.getReservedPlayerUid();
 			// force to make account offline , which logins already.
 			Iterator<Map.Entry<Integer, Player>> it = players.entrySet().iterator();
 			while(it.hasNext()){
 				Player onlinePlayer = it.next().getValue();
-				if(onlinePlayer.getAccount().getId().equals(gameId)){
-					onlinePlayer.onLogout();
+				if(onlinePlayer.getAccount().getReservedPlayerUid() == reservedPlayerUid){
 					GameSession playerSession = onlinePlayer.getSession();
-					playerSession.send(new BasePacket(PacketOpcodes.ServerDisconnectClientNotify));
-					playerSession.close();
-					it.remove();
-					Grasscutter.getLogger().warn("Player {}({}) was kicked by duplicated login", username, gameId);
+					if(playerSession==session) {
+						isSameClient = true;
+					}else{
+						// must be a different client
+						onlinePlayer.onLogout();
+						playerSession.send(new BasePacket(PacketOpcodes.ServerDisconnectClientNotify));
+						playerSession.close();
+						it.remove();
+						Grasscutter.getLogger().warn("Player {} was kicked by duplicated login", username);
+					}
 					break;
 				}
 			}
-			if (ACCOUNT.maxPlayer > -1 && players.size() >= ACCOUNT.maxPlayer) {// Max players limit ( a user maybe kicked from players )
-				session.close();
-				Grasscutter.getLogger().warn("Player {}({}) was refused to login because of exceeding online players", username, gameId);
-				return;
+			if(!isSameClient) {
+				if (ACCOUNT.maxPlayer > -1 && players.size() >= ACCOUNT.maxPlayer) {// Max players limit ( a user maybe kicked from players )
+					session.close();
+					Grasscutter.getLogger().warn("Player {} was refused to login because of exceeding online players", username);
+					return;
+				}
+
+				// Set account
+				session.setAccount(account);
+	
+				// Get player
+				Player player = DatabaseHelper.getPlayerByAccount(account);
+	
+				if (player == null) {
+					int nextPlayerUid = DatabaseHelper.getNextPlayerId(session.getAccount().getReservedPlayerUid());
+	
+					// Call creation event.
+					PlayerCreationEvent event = new PlayerCreationEvent(session, Player.class);
+					event.call();
+	
+					// Create player instance from event.
+					player = event.getPlayerClass().getDeclaredConstructor(GameSession.class).newInstance(session);
+	
+					// Save to db
+					DatabaseHelper.generatePlayerUid(player, nextPlayerUid);
+				}
+	
+				// Set player object for session
+				session.setPlayer(player);
+	
+				// Load player from database
+				player.loadFromDatabase();
 			}
-
-			// Set account
-			session.setAccount(account);
-
-			// Get player
-			Player player = DatabaseHelper.getPlayerByAccount(account);
-
-			if (player == null) {
-				int nextPlayerUid = DatabaseHelper.getNextPlayerId(session.getAccount().getReservedPlayerUid());
-
-				// Call creation event.
-				PlayerCreationEvent event = new PlayerCreationEvent(session, Player.class);
-				event.call();
-
-				// Create player instance from event.
-				player = event.getPlayerClass().getDeclaredConstructor(GameSession.class).newInstance(session);
-
-				// Save to db
-				DatabaseHelper.generatePlayerUid(player, nextPlayerUid);
-			}
-
-			// Set player object for session
-			session.setPlayer(player);
-
-			// Load player from database
-			player.loadFromDatabase();
-
 			// Set session state
 			session.setUseSecretKey(true);
 			session.setState(SessionState.WAITING_FOR_LOGIN);
