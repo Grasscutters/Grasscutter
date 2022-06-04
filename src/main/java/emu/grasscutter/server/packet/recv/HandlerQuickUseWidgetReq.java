@@ -45,6 +45,7 @@ public class HandlerQuickUseWidgetReq extends PacketHandler {
                 BasePacket rsp = new BasePacket(PacketOpcodes.QuickUseWidgetRsp);
                 rsp.setData(proto);
                 session.send(rsp);
+                Grasscutter.getLogger().warn("HandlerQuickUseWidgetReq class has no effects in the game, feel free to implement it");
                 // but no effects in the game, feel free to implement it!
             }
         }
