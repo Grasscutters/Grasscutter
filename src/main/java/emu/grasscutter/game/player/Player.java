@@ -1219,11 +1219,15 @@ public class Player {
 		GameServer server = this.getServer();
 		synchronized (server) {
 			exists = server.getPlayerByUid(uid);
+
 		}
 		if (exists != null) {
 			exists.save();//must save immediately , or the below will get old data
-			exists.getSession().close();
-			Grasscutter.getLogger().warn("Player (UID {}) was kicked due to duplicated login", uid);
+			GameSession existsSession = exists.getSession();
+			if(existsSession!=getSession()) {// No self-kicking
+				existsSession.close();
+				Grasscutter.getLogger().warn("Player (UID {}) was kicked due to duplicated login", uid);
+			}
 		}
 
 		// Load from db
