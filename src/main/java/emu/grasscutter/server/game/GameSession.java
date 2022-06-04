@@ -3,6 +3,8 @@ package emu.grasscutter.server.game;
 import java.io.File;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 import emu.grasscutter.Grasscutter;
@@ -43,8 +45,15 @@ public class GameSession extends KcpChannel {
 	@Override
 	public void close() {
 		//remove this from pipline when game session closed!
-		pipeline.remove(this);
-		pipeline.close();
+		try {
+			pipeline.remove(this);
+		}catch (Throwable ignore){
+
+		}
+		Map<Integer, Player> players = server.getPlayers();
+		synchronized (players) {
+			players.entrySet().removeIf(integerPlayerEntry -> integerPlayerEntry.getValue() == player);
+		}
 		super.close();
 	}
 	public GameSession(GameServer server, ChannelPipeline pipeline) {

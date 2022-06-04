@@ -26,8 +26,8 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		GameServer server = Grasscutter.getGameServer();
-		synchronized (server) {// in case of login simultaneously
-			Map<Integer, Player> players = server.getPlayers();
+		Map<Integer, Player> players = server.getPlayers();
+		synchronized (players) {// in case of login simultaneously
 
 			GetPlayerTokenReq req = GetPlayerTokenReq.parseFrom(payload);
 
