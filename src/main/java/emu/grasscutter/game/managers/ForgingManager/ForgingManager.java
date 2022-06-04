@@ -3,6 +3,9 @@ package emu.grasscutter.game.managers.ForgingManager;
 import java.util.HashMap;
 import java.util.Map;
 
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.ForgeData;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.ForgeStartReqOuterClass;
@@ -12,6 +15,9 @@ import emu.grasscutter.server.packet.send.PacketForgeDataNotify;
 import emu.grasscutter.server.packet.send.PacketForgeFormulaDataNotify;
 import emu.grasscutter.server.packet.send.PacketForgeGetQueueDataRsp;
 import emu.grasscutter.server.packet.send.PacketForgeStartRsp;
+import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.ConfigContainer.Game;
+import net.bytebuddy.dynamic.TypeResolutionStrategy.Active;
 
 public class ForgingManager {
 	private final Player player;
@@ -53,19 +59,25 @@ public class ForgingManager {
 	}
 
 	private Map<Integer, ForgeQueueData> determineCurrentForgeQueueData() {
-		// Dummy for now.
-		ForgeQueueData data = ForgeQueueData.newBuilder()
-			.setQueueId(1)
-			.setForgeId(11001)
-			.setFinishCount(2)
-			.setUnfinishCount(3)
-			.setNextFinishTimestamp(0)
-			.setNextFinishTimestamp(0)
-			.setAvatarId(0)
-			.build();
-
 		Map<Integer, ForgeQueueData> res = new HashMap<>();
-		res.put(1, data);
+		int currentTime = Utils.getCurrentSeconds();
+
+		// Create queue information for all active forges.
+		for (int i = 0; i < this.player.getActiveForges().size(); i++) {
+			ActiveForgeData activeForge = this.player.getActiveForges().get(i);
+
+			ForgeQueueData data = ForgeQueueData.newBuilder()
+				.setQueueId(i + 1)
+				.setForgeId(activeForge.getForgeId())
+				.setFinishCount(activeForge.getFinishedCount(currentTime))
+				.setUnfinishCount(activeForge.getUnfinishedCount(currentTime))
+				.setTotalFinishTimestamp(activeForge.getTotalFinishTimestamp())
+				.setNextFinishTimestamp(activeForge.getNextFinishTimestamp(currentTime))
+				.setAvatarId(activeForge.getAvatarId())
+				.build();
+
+			res.put(i + 1, data);
+		}
 
 		return res;
 	}
@@ -93,8 +105,39 @@ public class ForgingManager {
 		Initiate forging process.
 	**********/
 	public void startForging(ForgeStartReqOuterClass.ForgeStartReq req) {
-		// Dummy for now.
-		this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_SUCC));
-	}
+		// Refuse if all queues are already full.
+		if (this.player.getActiveForges().size() >= this.determineNumberOfQueues()) {
+			this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_QUEUE_FULL));
+			return;
+		}
 
+		// Get the required forging information for the target item.
+		if (!GameData.getForgeDataMap().containsKey(req.getForgeId())) {
+			this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FAIL)); //ToDo: Probably the wrong return code.
+			Grasscutter.getLogger().error("Missing forgeId");
+			return;
+		}
+
+		ForgeData forgeData = GameData.getForgeDataMap().get(req.getForgeId());
+		
+		// Check if we have enough of each material.
+		// ToDo.
+
+		// Consume material.
+		// ToDo.
+
+		// Create and add active forge.
+		ActiveForgeData activeForge = new ActiveForgeData();
+		activeForge.setForgeId(req.getForgeId());
+		activeForge.setAvatarId(req.getAvatarId());
+		activeForge.setCount(req.getForgeCount());
+		activeForge.setStartTime(Utils.getCurrentSeconds());
+		activeForge.setForgeTime(forgeData.getForgeTime());
+
+		this.player.getActiveForges().add(activeForge);
+
+		// Done.
+		this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_SUCC));
+		this.sendForgeDataNotify();
+	}
 }
