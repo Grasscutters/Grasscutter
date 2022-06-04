@@ -5,8 +5,10 @@ import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ForgeData;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.ForgeStartReqOuterClass;
 import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
@@ -16,8 +18,6 @@ import emu.grasscutter.server.packet.send.PacketForgeFormulaDataNotify;
 import emu.grasscutter.server.packet.send.PacketForgeGetQueueDataRsp;
 import emu.grasscutter.server.packet.send.PacketForgeStartRsp;
 import emu.grasscutter.utils.Utils;
-import emu.grasscutter.utils.ConfigContainer.Game;
-import net.bytebuddy.dynamic.TypeResolutionStrategy.Active;
 
 public class ForgingManager {
 	private final Player player;
@@ -114,17 +114,41 @@ public class ForgingManager {
 		// Get the required forging information for the target item.
 		if (!GameData.getForgeDataMap().containsKey(req.getForgeId())) {
 			this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FAIL)); //ToDo: Probably the wrong return code.
-			Grasscutter.getLogger().error("Missing forgeId");
 			return;
 		}
 
 		ForgeData forgeData = GameData.getForgeDataMap().get(req.getForgeId());
 		
 		// Check if we have enough of each material.
-		// ToDo.
+		for (var material : forgeData.getMaterialItems()) {
+			if (material.getItemId() == 0) {
+				continue;
+			}
 
-		// Consume material.
-		// ToDo.
+			int currentCount = this.player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(material.getItemId()).getCount();
+
+			if (currentCount < material.getCount() * req.getForgeCount()) {
+				this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_POINT_NOT_ENOUGH)); //ToDo: Probably the wrong return code.
+				return;
+			}
+		}
+
+		// Check if we have enough Mora.
+		if (this.player.getMora() < forgeData.getScoinCost() * req.getForgeCount()) {
+			this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_POINT_NOT_ENOUGH)); //ToDo: Probably the wrong return code.
+			return;
+		}
+
+		// Consume material and Mora.
+		for (var material : forgeData.getMaterialItems()) {
+			if (material.getItemId() == 0) {
+				continue;
+			}
+
+			this.player.getInventory().removeItem(material.getItemId(), material.getCount() * req.getForgeCount());
+		}
+
+		this.player.setMora(this.player.getMora() - forgeData.getScoinCost() * req.getForgeCount());
 
 		// Create and add active forge.
 		ActiveForgeData activeForge = new ActiveForgeData();
