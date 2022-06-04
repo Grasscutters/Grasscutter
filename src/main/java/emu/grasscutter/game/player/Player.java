@@ -1212,20 +1212,6 @@ public class Player {
 			this.getProfile().syncWithCharacter(this);
 		}
 
-		// Check if player object exists in server
-		// TODO - optimize
-		int uid = getUid();
-		GameServer server = this.getServer();
-		Player exists = server.getPlayerByUid(uid);
-		if (exists != null) {
-			GameSession existsSession = exists.getSession();
-			if(existsSession!=getSession()) {// No self-kicking
-				exists.onLogout();//must save immediately , or the below will load old data
-				existsSession.close();
-				Grasscutter.getLogger().warn("Player (UID {}) was kicked due to duplicated login", uid);
-			}
-		}
-
 		// Load from db
 		this.getAvatars().loadFromDatabase();
 		this.getInventory().loadFromDatabase();
@@ -1234,12 +1220,13 @@ public class Player {
 		this.getFriendsList().loadFromDatabase();
 		this.getMailHandler().loadFromDatabase();
 		this.getQuestManager().loadFromDatabase();
-		
+
 		// Add to gameserver (Always handle last)
 		if (getSession().isActive()) {
 			getServer().registerPlayer(this);
 			getProfile().setPlayer(this); // Set online
 		}
+
 	}
 
 	public void onLogin() {
@@ -1327,6 +1314,7 @@ public class Player {
 
 			//reset wood
 			getDeforestationManager().resetWood();
+
 		}catch (Throwable e){
 			e.printStackTrace();
 			Grasscutter.getLogger().warn("Player (UID {}) save failure", getUid());
