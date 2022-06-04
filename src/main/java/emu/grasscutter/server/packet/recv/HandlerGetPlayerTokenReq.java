@@ -39,24 +39,24 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 			}
 
 			String username = account.getUsername();
-			int reservedPlayerUid = account.getReservedPlayerUid();
+			String gameId = account.getId();
 			// force to make account offline , which logins already.
 			Iterator<Map.Entry<Integer, Player>> it = players.entrySet().iterator();
 			while(it.hasNext()){
 				Player onlinePlayer = it.next().getValue();
-				if(onlinePlayer.getAccount().getReservedPlayerUid() == reservedPlayerUid){
+				if(onlinePlayer.getAccount().getId().equals(gameId)){
 					onlinePlayer.onLogout();
 					GameSession playerSession = onlinePlayer.getSession();
 					playerSession.send(new BasePacket(PacketOpcodes.ServerDisconnectClientNotify));
 					playerSession.close();
 					it.remove();
-					Grasscutter.getLogger().warn("Player {} was kicked by duplicated login", username);
+					Grasscutter.getLogger().warn("Player {}({}) was kicked by duplicated login", username, gameId);
 					break;
 				}
 			}
 			if (ACCOUNT.maxPlayer > -1 && players.size() >= ACCOUNT.maxPlayer) {// Max players limit ( a user maybe kicked from players )
 				session.close();
-				Grasscutter.getLogger().warn("Player {} was refused to login because of exceeding online players", username);
+				Grasscutter.getLogger().warn("Player {}({}) was refused to login because of exceeding online players", username, gameId);
 				return;
 			}
 
