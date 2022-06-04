@@ -270,8 +270,6 @@ public final class GameServer extends KcpServer {
 	@Override
 	public void onStartFinish() {
 		Grasscutter.getLogger().info(translate("messages.status.free_software"));
-		Grasscutter.getLogger().info(translate("messages.status.game_version", GameConstants.VERSION));
-		Grasscutter.getLogger().info(translate("messages.status.version", BuildConfig.VERSION, BuildConfig.GIT_HASH));
 		Grasscutter.getLogger().info(translate("messages.game.port_bind", Integer.toString(address.getPort())));
 		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 	}
