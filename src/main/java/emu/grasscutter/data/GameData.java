@@ -368,4 +368,8 @@ public class GameData {
 	public static Int2ObjectMap<QuestData> getQuestDataMap() {
 		return questDataMap;
 	}
+
+	public static Int2ObjectMap<ForgeData> getForgeDataMap() {
+		return forgeDataMap;
+	}
 }
