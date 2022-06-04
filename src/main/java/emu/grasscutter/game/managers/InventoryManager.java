@@ -852,15 +852,13 @@ public class InventoryManager {
 
 				// Handle forging blueprints.
 				if (useItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_FORGE")) {
-					// Determine the forging item we should unlock.
-					int forgeId = Integer.parseInt(useItem.getItemData().getItemUse().get(0).getUseParam().get(0));
+					// Unlock.
+					boolean success = player.getForgingManager().unlockForgingBlueprint(useItem);
 
-					// Tell the client that this blueprint is now unlocked and add the unlocked item to the player.
-					player.sendPacket(new PacketForgeFormulaDataNotify(forgeId));
-					player.getUnlockedForgingBlueprints().add(forgeId);
-
-					// Use up the blueprint item.
-					used = 1;
+					// Use up the blueprint item if successful.
+					if (success) {
+						used = 1;
+					}
 				}
 				break;
 			case MATERIAL_CHEST:
