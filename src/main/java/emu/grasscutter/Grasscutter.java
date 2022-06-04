@@ -102,6 +102,8 @@ public final class Grasscutter {
 	
 		// Initialize server.
 		Grasscutter.getLogger().info(translate("messages.status.starting"));
+		Grasscutter.getLogger().info(translate("messages.status.game_version", GameConstants.VERSION));
+		Grasscutter.getLogger().info(translate("messages.status.version", BuildConfig.VERSION, BuildConfig.GIT_HASH));
 	
 		// Load all resources.
 		Grasscutter.updateDayOfWeek();
