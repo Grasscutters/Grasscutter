@@ -4,7 +4,6 @@ import dev.morphia.annotations.Entity;
 
 @Entity
 public class ActiveForgeData {
-    private int queueId;
     private int forgeId;
     private int avatarId;
 
@@ -14,13 +13,6 @@ public class ActiveForgeData {
     // private int unfinishedCount;
     // private int nextFinishTimestamp;
     // private int totalFinishTimestamp;
-
-    public int getQueueId() {
-        return this.queueId;
-    }
-    public void setQueueId(int value) {
-        this.queueId = value;
-    }
 
     public int getForgeId() {
         return this.forgeId;
