@@ -2,6 +2,7 @@ package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
@@ -1213,9 +1214,16 @@ public class Player {
 
 		// Check if player object exists in server
 		// TODO - optimize
-		Player exists = this.getServer().getPlayerByUid(getUid());
+		int uid = getUid();
+		Player exists;
+		GameServer server = this.getServer();
+		synchronized (server) {
+			exists = server.getPlayerByUid(uid);
+		}
 		if (exists != null) {
+			exists.save();//must save immediately , or the below will get old data
 			exists.getSession().close();
+			Grasscutter.getLogger().warn("Player (UID {}) was kicked due to duplicated login", uid);
 		}
 
 		// Load from db

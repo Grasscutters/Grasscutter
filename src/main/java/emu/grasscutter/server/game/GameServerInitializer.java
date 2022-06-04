@@ -13,8 +13,6 @@ public class GameServerInitializer extends KcpServerInitializer {
 	
     @Override
     protected void initChannel(UkcpChannel ch) throws Exception {
-        ChannelPipeline pipeline = ch.pipeline();
-        GameSession session = new GameSession(server);
-        pipeline.addLast(session);
+        new GameSession(server,ch.pipeline());
     }
 }

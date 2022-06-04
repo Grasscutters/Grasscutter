@@ -20,6 +20,8 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 	
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+
+		// TODO: If there are 5 online players, max count of player is 5, a new client want to login by kicking one of them , I think it should be allowed
 		// Max players limit
 		if (ACCOUNT.maxPlayer > -1 && Grasscutter.getGameServer().getPlayers().size() >= ACCOUNT.maxPlayer) {
 			session.close();
@@ -29,13 +31,8 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 		GetPlayerTokenReq req = GetPlayerTokenReq.parseFrom(payload);
 		
 		// Authenticate
-		Account account = DatabaseHelper.getAccountById(req.getAccountUid());
+		Account account = DatabaseHelper.getAccountByToken(req.getAccountToken());
 		if (account == null) {
-			return;
-		}
-		
-		// Check token
-		if (!account.getToken().equals(req.getAccountToken())) {
 			return;
 		}
 		
