@@ -157,7 +157,7 @@
       "description": "保持你的体力处于最高状态"
     },
     "unlimitenergy": {
-      "usege": "用法：giveall [目标玩家] [on | off | toggle ]",
+      "usege": "用法：unlimitenergy [目标玩家] [on | off | toggle ]",
       "success": "unlimitEnerge 已设为 %s。[用户：%s]",
       "description": "使用元素爆发不消耗能量"
     },
