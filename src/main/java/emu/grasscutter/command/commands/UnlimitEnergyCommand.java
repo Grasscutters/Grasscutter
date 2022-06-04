@@ -1,11 +1,20 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.managers.EnergyManager.EnergyManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.TeamManager;
+import emu.grasscutter.game.props.ElementType;
+import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
+import emu.grasscutter.utils.Position;
 
 import java.util.List;
 
+import static emu.grasscutter.Configuration.GAME_OPTIONS;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "unlimitenergy", usage = "unlimitenergy [on|off|toggle]", aliases = {"ule"}, permission = "player.unlimitenergy", permissionTargeted = "player.unlimitenergy.others", description = "commands.unlimitenergy.description")
@@ -24,12 +33,18 @@ public final class UnlimitEnergyCommand implements CommandHandler {
                     break;
                 default:
                     status = !status;
-
                     break;
             }
         }
-        targetPlayer.getEnergyManager().setEnergyUsage(!status);
-//        targetPlayer.setStamina(StaminaState);//Set
+        EnergyManager energyManager=targetPlayer.getEnergyManager();
+        energyManager.setEnergyUsage(!status);
+        // if unlimitEnergy is enable , make currentActiveTeam's Avatar full-energy
+        if (status) {
+            for (EntityAvatar entityAvatar : targetPlayer.getTeamManager().getActiveTeam()) {
+                entityAvatar.addEnergy(1000,
+                        PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_GM,true);
+            }
+        }
 
         CommandHandler.sendMessage(sender, translate(sender, "commands.unlimitenergy.success", (status ? translate(sender, "commands.status.enabled") : translate(sender, "commands.status.disabled")), targetPlayer.getNickname()));
     }
