@@ -44,7 +44,7 @@ public final class AccountCommand implements CommandHandler {
                     }
                 }
 
-                emu.grasscutter.game.Account account = DatabaseHelper.createAccountWithId(username, uid);
+                emu.grasscutter.game.Account account = DatabaseHelper.createAccountWithUid(username, uid);
                 if (account == null) {
                     CommandHandler.sendMessage(null, translate(sender, "commands.account.exists"));
                     return;
