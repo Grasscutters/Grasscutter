@@ -145,10 +145,9 @@ public class GameSession extends KcpChannel {
 		
 		// Save after disconnecting
 		if (this.isLoggedIn()) {
+			Player player = getPlayer();
 			// Call logout event.
-			getPlayer().onLogout();
-			// Remove from server.
-			getServer().getPlayers().remove(getPlayer().getUid());
+			player.onLogout();
 		}
 		try{
 			pipeline.remove(this);

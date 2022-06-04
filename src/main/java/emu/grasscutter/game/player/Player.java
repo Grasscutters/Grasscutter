@@ -1215,16 +1215,12 @@ public class Player {
 		// Check if player object exists in server
 		// TODO - optimize
 		int uid = getUid();
-		Player exists;
 		GameServer server = this.getServer();
-		synchronized (server) {
-			exists = server.getPlayerByUid(uid);
-
-		}
+		Player exists = server.getPlayerByUid(uid);
 		if (exists != null) {
-			exists.save();//must save immediately , or the below will get old data
 			GameSession existsSession = exists.getSession();
 			if(existsSession!=getSession()) {// No self-kicking
+				exists.onLogout();//must save immediately , or the below will load old data
 				existsSession.close();
 				Grasscutter.getLogger().warn("Player (UID {}) was kicked due to duplicated login", uid);
 			}
@@ -1303,34 +1299,47 @@ public class Player {
 	}
 
 	public void onLogout() {
-		// stop stamina calculation
-		getStaminaManager().stopSustainedStaminaHandler();
+		try{
+			// stop stamina calculation
+			getStaminaManager().stopSustainedStaminaHandler();
 
-		// force to leave the dungeon
-		if (getScene().getSceneType() == SceneType.SCENE_DUNGEON) {
+			// force to leave the dungeon (inside has a "if")
 			this.getServer().getDungeonManager().exitDungeon(this);
+
+			// Leave world
+			if (this.getWorld() != null) {
+				this.getWorld().removePlayer(this);
+			}
+
+			// Status stuff
+			this.getProfile().syncWithCharacter(this);
+			this.getProfile().setPlayer(null); // Set offline
+
+			this.getCoopRequests().clear();
+
+			// Save to db
+			this.save();
+			this.getTeamManager().saveAvatars();
+			this.getFriendsList().save();
+
+			// Call quit event.
+			PlayerQuitEvent event = new PlayerQuitEvent(this); event.call();
+
+			//reset wood
+			getDeforestationManager().resetWood();
+		}catch (Throwable e){
+			e.printStackTrace();
+			Grasscutter.getLogger().warn("Player (UID {}) save failure", getUid());
+		}finally {
+			removeFromServer();
 		}
-		// Leave world
-		if (this.getWorld() != null) {
-			this.getWorld().removePlayer(this);
-		}
+	}
 
-		// Status stuff
-		this.getProfile().syncWithCharacter(this);
-		this.getProfile().setPlayer(null); // Set offline
-
-		this.getCoopRequests().clear();
-
-		// Save to db
-		this.save();
-		this.getTeamManager().saveAvatars();
-		this.getFriendsList().save();
-		
-		// Call quit event.
-		PlayerQuitEvent event = new PlayerQuitEvent(this); event.call();
-
-		//reset wood
-		getDeforestationManager().resetWood();
+	public void removeFromServer() {
+		// Remove from server.
+		//Note: DON'T DELETE BY UID,BECAUSE THERE ARE MULTIPLE SAME UID PLAYERS WHEN DUPLICATED LOGIN!
+		//so I decide to delete by object rather than uid
+		getServer().getPlayers().values().removeIf(player1 -> player1 == this);
 	}
 
 	public enum SceneLoadState {
