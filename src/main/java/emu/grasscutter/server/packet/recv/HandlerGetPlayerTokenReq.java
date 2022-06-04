@@ -61,7 +61,8 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 				}
 			}
 			if(!isSameClient) {
-				if (ACCOUNT.maxPlayer > -1 && players.size() >= ACCOUNT.maxPlayer) {// Max players limit ( a user maybe kicked from players )
+				// Max players limit ( a user maybe kicked from players )
+				if (ACCOUNT.maxPlayer > -1 && players.size() >= ACCOUNT.maxPlayer) {
 					session.close();
 					Grasscutter.getLogger().warn("Player {} was refused to login because of exceeding online players", username);
 					return;
@@ -69,27 +70,27 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 
 				// Set account
 				session.setAccount(account);
-	
+
 				// Get player
 				Player player = DatabaseHelper.getPlayerByAccount(account);
-	
+
 				if (player == null) {
-					int nextPlayerUid = DatabaseHelper.getNextPlayerId(session.getAccount().getReservedPlayerUid());
-	
+					int nextPlayerUid = DatabaseHelper.getNextPlayerId(reservedPlayerUid);
+
 					// Call creation event.
 					PlayerCreationEvent event = new PlayerCreationEvent(session, Player.class);
 					event.call();
-	
+
 					// Create player instance from event.
 					player = event.getPlayerClass().getDeclaredConstructor(GameSession.class).newInstance(session);
-	
+
 					// Save to db
 					DatabaseHelper.generatePlayerUid(player, nextPlayerUid);
 				}
-	
+
 				// Set player object for session
 				session.setPlayer(player);
-	
+
 				// Load player from database
 				player.loadFromDatabase();
 			}
