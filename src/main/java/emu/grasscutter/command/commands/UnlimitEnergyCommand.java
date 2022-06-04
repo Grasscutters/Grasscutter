@@ -22,6 +22,10 @@ public final class UnlimitEnergyCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if(!GAME_OPTIONS.energyUsage){
+            CommandHandler.sendMessage(sender, translate(sender, "commands.unlimitenergy.config_error"));
+            return;
+        }
         Boolean status = targetPlayer.getEnergyManager().getEnergyUsage();
         if (args.size() == 1) {
             switch (args.get(0).toLowerCase()) {
