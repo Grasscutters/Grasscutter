@@ -30,6 +30,7 @@ import emu.grasscutter.game.managers.InsectCaptureManager;
 import emu.grasscutter.game.managers.StaminaManager.StaminaManager;
 import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.managers.EnergyManager.EnergyManager;
+import emu.grasscutter.game.managers.ForgingManager.ActiveForgeData;
 import emu.grasscutter.game.managers.ForgingManager.ForgingManager;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityType;
@@ -92,6 +93,7 @@ public class Player {
 	private Set<Integer> flyCloakList;
 	private Set<Integer> costumeList;
 	private Set<Integer> unlockedForgingBlueprints;
+	private Map<Integer, ActiveForgeData> activeForges;
 
 	private Integer widgetId;
 
@@ -188,6 +190,7 @@ public class Player {
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
 		this.unlockedForgingBlueprints = new HashSet<>();
+		this.activeForges = new HashMap<>();
 
 		this.setSceneId(3);
 		this.setRegionId(1);
@@ -523,7 +526,11 @@ public class Player {
 	}
 
 	public Set<Integer> getUnlockedForgingBlueprints() {
-		return unlockedForgingBlueprints;
+		return this.unlockedForgingBlueprints;
+	}
+
+	public Map<Integer, ActiveForgeData> getActiveForges() {
+		return this.activeForges;
 	}
 
 	public MpSettingType getMpSetting() {
