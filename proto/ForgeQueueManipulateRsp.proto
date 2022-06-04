@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ForgeQueueManipulateType.proto";
+import "ItemParam.proto";
+
+// CmdId: 684
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ForgeQueueManipulateRsp {
+	int32 retcode = 13;
+	ForgeQueueManipulateType manipulate_type = 8;
+	repeated ItemParam output_item_list = 6;
+	repeated ItemParam return_item_list = 10;
+	repeated ItemParam extra_output_item_list = 3;
+}
