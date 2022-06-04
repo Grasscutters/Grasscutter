@@ -27,6 +27,7 @@ public final class SendMailCommand implements CommandHandler {
     // Yes this is awful and I hate it.
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
+        long expireTime;
         int senderId;
         if(sender != null) {
             senderId = sender.getUid();
@@ -74,7 +75,7 @@ public final class SendMailCommand implements CommandHandler {
                         return;
                     }
                     case "finish" -> {
-                        if (mailBuilder.constructionStage == 3) {
+                        if (mailBuilder.constructionStage == 4) {
                             if (!mailBuilder.sendToAll) {
                                 Grasscutter.getGameServer().getPlayerByUid(mailBuilder.recipient, true).sendMail(mailBuilder.mail);
                                 CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.send_done", Integer.toString(mailBuilder.recipient)));
@@ -114,27 +115,23 @@ public final class SendMailCommand implements CommandHandler {
                                 CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.set_message_sender", msgSender));
                                 mailBuilder.constructionStage++;
                             }
-                            case 3 -> {
-                                try {
-                                    switch (args.get(1)) {
-                                    case "s":
-                                        int expireTime = (args.get(0));
-                                    case "m":
-                                        int expireTime = (args.get(0) * 60);
-                                    case "h":
-                                        int expireTime = (args.get(0) * 3600);
-                                    case "d":
-                                        int expireTime = (args.get(0) * 86400);
+                            case 3 -> { // TO-DO: make this actually do something
+                                String timeFormat = args.get(1);
+                                switch (args.get(1)) {
+                                    case "seconds":
+                                        expireTime = Integer.parseInt(args.get(0));
+                                    case "minutes":
+                                        expireTime = Integer.parseInt(args.get(0)) * 60;
+                                    case "hours":
+                                        expireTime = Integer.parseInt(args.get(0)) * 3600;
+                                    case "days":
+                                        expireTime = Integer.parseInt(args.get(0)) * 86400;
                                     default:
                                         CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.invalid_time"));
                                     }
-                                } catch (NumberFormatException ignored) {
-                                    CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.invalid_time"));
-                                    return;
-                                }
-                                long expireTime = args.get(0);
+                                expireTime = Integer.parseInt(args.get(0));
                                 mailBuilder.mail.mailContent.expireTime = expireTime;
-                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.set_expire_time", expireTime));
+                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.set_expire_time", expireTime, timeFormat)); // TO-DO: make output not janky with secs/mins/hours/days. should be simple with using another variable as a sort of intermediary.
                                 mailBuilder.constructionStage++;
                             }
                             case 4 -> {

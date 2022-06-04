@@ -263,7 +263,7 @@
       "set_title": "Message title set as '%s'.\nUse '/sendmail <content>' to continue.",
       "set_contents": "Message contents set as '%s'.\nUse '/sendmail <sender>' to continue.",
       "set_message_sender": "Message sender set as '%s'.\nUse '/sendmail [number of...] [seconds, minutes, hours or days]' to continue.",
-      "set_expire_time": "Expiry time set as '%s'.\nUse '/sendmail <itemID|itemName|finish> [amount] [level]' to continue.",
+      "set_expire_time": "Expiry time set as '%s %s'.\nUse '/sendmail <itemID|itemName|finish> [amount] [level]' to continue.",
       "send": "Attached %s of %s (level %s) to the message.\nContinue adding more items or use '/sendmail finish' to send the message.",
       "invalid_arguments_please_use": "Invalid arguments.\n Please use '/sendmail %s'",
       "invalid_time": "Invalid time format. It should look something like:\n/sendmail 365 days",
