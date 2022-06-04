@@ -118,20 +118,28 @@ public final class SendMailCommand implements CommandHandler {
                             case 3 -> { // TO-DO: make this actually do something
                                 String timeFormat = args.get(1);
                                 switch (args.get(1)) {
-                                    case "seconds":
+                                    case "second":
+                                    case "seconds": // Tried to make these also accept "second", "minute", etc. but I don't understand java enough to do OR operators apparently.
                                         expireTime = Integer.parseInt(args.get(0));
+                                        break;
+                                    case "minute":
                                     case "minutes":
                                         expireTime = Integer.parseInt(args.get(0)) * 60;
+                                        break;
+                                    case "hour":
                                     case "hours":
                                         expireTime = Integer.parseInt(args.get(0)) * 3600;
+                                        break;
+                                    case "day":
                                     case "days":
                                         expireTime = Integer.parseInt(args.get(0)) * 86400;
+                                        break;
                                     default:
                                         CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.invalid_time"));
+                                        return;
                                     }
-                                expireTime = Integer.parseInt(args.get(0));
                                 mailBuilder.mail.mailContent.expireTime = expireTime;
-                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.set_expire_time", expireTime, timeFormat)); // TO-DO: make output not janky with secs/mins/hours/days. should be simple with using another variable as a sort of intermediary.
+                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.set_expire_time", args.get(0), timeFormat)); // TO-DO: make output not janky with secs/mins/hours/days. should be simple with using another variable as a sort of intermediary.
                                 mailBuilder.constructionStage++;
                             }
                             case 4 -> {
