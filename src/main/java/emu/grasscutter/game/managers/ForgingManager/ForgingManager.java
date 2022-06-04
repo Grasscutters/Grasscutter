@@ -1,11 +1,17 @@
 package emu.grasscutter.game.managers.ForgingManager;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.proto.ForgeStartReqOuterClass;
+import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketForgeDataNotify;
 import emu.grasscutter.server.packet.send.PacketForgeFormulaDataNotify;
 import emu.grasscutter.server.packet.send.PacketForgeGetQueueDataRsp;
+import emu.grasscutter.server.packet.send.PacketForgeStartRsp;
 
 public class ForgingManager {
 	private final Player player;
@@ -46,20 +52,49 @@ public class ForgingManager {
 			: 1;	
 	}
 
+	private Map<Integer, ForgeQueueData> determineCurrentForgeQueueData() {
+		// Dummy for now.
+		ForgeQueueData data = ForgeQueueData.newBuilder()
+			.setQueueId(1)
+			.setForgeId(11001)
+			.setFinishCount(2)
+			.setUnfinishCount(3)
+			.setNextFinishTimestamp(0)
+			.setNextFinishTimestamp(0)
+			.setAvatarId(0)
+			.build();
+
+		Map<Integer, ForgeQueueData> res = new HashMap<>();
+		res.put(1, data);
+
+		return res;
+	}
+
 	public void sendForgeDataNotify() {
 		// Determine the number of queues and unlocked items.
 		int numQueues = this.determineNumberOfQueues();
 		var unlockedItems = this.player.getUnlockedForgingBlueprints();
+		var queueData = this.determineCurrentForgeQueueData();
 
 		// Send notification.
-		this.player.sendPacket(new PacketForgeDataNotify(unlockedItems, numQueues));
+		this.player.sendPacket(new PacketForgeDataNotify(unlockedItems, numQueues, queueData));
 	}
 	
 	public void handleForgeGetQueueDataReq() {
 		// Determine the number of queues.
 		int numQueues = this.determineNumberOfQueues();
+		var queueData = this.determineCurrentForgeQueueData();
 
 		// Reply.
-		this.player.sendPacket(new PacketForgeGetQueueDataRsp(Retcode.RET_SUCC, numQueues));
+		this.player.sendPacket(new PacketForgeGetQueueDataRsp(Retcode.RET_SUCC, numQueues, queueData));
 	}
+
+	/**********
+		Initiate forging process.
+	**********/
+	public void startForging(ForgeStartReqOuterClass.ForgeStartReq req) {
+		// Dummy for now.
+		this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_SUCC));
+	}
+
 }
