@@ -58,7 +58,9 @@ public class GameSession extends KcpChannel {
 		this.state = SessionState.WAITING_FOR_TOKEN;
 		this.lastPingTime = System.currentTimeMillis();
 		this.pipeline = pipeline;
-		pipeline.addLast(this);
+		if(pipeline!=null) {
+			pipeline.addLast(this);
+		}
 	}
 	
 	public GameServer getServer() {
@@ -142,17 +144,19 @@ public class GameSession extends KcpChannel {
 
 		// Set state so no more packets can be handled
 		this.setState(SessionState.INACTIVE);
-		
+
 		// Save after disconnecting
 		if (this.isLoggedIn()) {
 			Player player = getPlayer();
 			// Call logout event.
 			player.onLogout();
 		}
-		try{
-			pipeline.remove(this);
-		}catch (Throwable ignore){
+		if(pipeline!=null) {
+			try {
+				pipeline.remove(this);
+			} catch (Throwable ignore) {
 
+			}
 		}
 	}
 	
