@@ -102,8 +102,12 @@ public class GameSession extends KcpChannel {
 		return state;
 	}
 
-	public void setState(SessionState state) {
+	public boolean setState(SessionState state) {
+		if(this.state == state){
+			return false;
+		}
 		this.state = state;
+		return true;
 	}
 
 	public boolean isLoggedIn() {
@@ -141,18 +145,18 @@ public class GameSession extends KcpChannel {
 		Grasscutter.getLogger().info(translate("messages.game.disconnect", this.getAddress().getHostString().toLowerCase()));
 
 		// Set state so no more packets can be handled
-		this.setState(SessionState.INACTIVE);
-		
-		// Save after disconnecting
-		if (this.isLoggedIn()) {
-			Player player = getPlayer();
-			// Call logout event.
-			player.onLogout();
-		}
-		try{
-			pipeline.remove(this);
-		}catch (Throwable ignore){
+		if(this.setState(SessionState.INACTIVE)) {
+			// Save after disconnecting
+			if (this.isLoggedIn()) {
+				Player player = getPlayer();
+				// Call logout event.
+				player.onLogout();
+			}
+			try {
+				pipeline.remove(this);
+			} catch (Throwable ignore) {
 
+			}
 		}
 	}
 	
