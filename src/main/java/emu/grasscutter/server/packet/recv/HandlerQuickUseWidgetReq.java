@@ -1,5 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.InventoryTab;
@@ -45,6 +46,7 @@ public class HandlerQuickUseWidgetReq extends PacketHandler {
                 BasePacket rsp = new BasePacket(PacketOpcodes.QuickUseWidgetRsp);
                 rsp.setData(proto);
                 session.send(rsp);
+                Grasscutter.getLogger().warn("class has no effects in the game, feel free to implement it");
                 // but no effects in the game, feel free to implement it!
             }
         }

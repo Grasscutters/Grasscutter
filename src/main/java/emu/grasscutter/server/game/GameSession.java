@@ -3,6 +3,8 @@ package emu.grasscutter.server.game;
 import java.io.File;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 import emu.grasscutter.Grasscutter;
@@ -17,9 +19,11 @@ import emu.grasscutter.server.event.game.SendPacketEvent;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
+import io.jpower.kcp.netty.UkcpChannel;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelPipeline;
 
 import static emu.grasscutter.utils.Language.translate;
 import static emu.grasscutter.Configuration.*;
@@ -36,11 +40,30 @@ public class GameSession extends KcpChannel {
 	private int clientTime;
 	private long lastPingTime;
 	private int lastClientSeq = 10;
-	
+
+	private final ChannelPipeline pipeline;
+	@Override
+	public void close() {
+		setState(SessionState.INACTIVE);
+		//send disconnection pack in case of reconnection
+		try {
+			send(new BasePacket(PacketOpcodes.ServerDisconnectClientNotify));
+		}catch (Throwable ignore){
+
+		}
+		super.close();
+	}
 	public GameSession(GameServer server) {
+		this(server,null);
+	}
+	public GameSession(GameServer server, ChannelPipeline pipeline) {
 		this.server = server;
 		this.state = SessionState.WAITING_FOR_TOKEN;
 		this.lastPingTime = System.currentTimeMillis();
+		this.pipeline = pipeline;
+		if(pipeline!=null) {
+			pipeline.addLast(this);
+		}
 	}
 	
 	public GameServer getServer() {
@@ -124,13 +147,17 @@ public class GameSession extends KcpChannel {
 
 		// Set state so no more packets can be handled
 		this.setState(SessionState.INACTIVE);
-		
+
 		// Save after disconnecting
 		if (this.isLoggedIn()) {
+			Player player = getPlayer();
 			// Call logout event.
-			getPlayer().onLogout();
-			// Remove from server.
-			getServer().getPlayers().remove(getPlayer().getUid());
+			player.onLogout();
+		}
+		try {
+			pipeline.remove(this);
+		} catch (Throwable ignore) {
+
 		}
 	}
 	

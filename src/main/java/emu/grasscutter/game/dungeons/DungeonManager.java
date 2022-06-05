@@ -8,6 +8,7 @@ import emu.grasscutter.data.excels.DungeonData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
+import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.server.game.GameServer;
@@ -80,19 +81,21 @@ public class DungeonManager {
 	}
 
 	public void exitDungeon(Player player) {
-		if (player.getScene().getSceneType() != SceneType.SCENE_DUNGEON) {
+		Scene scene = player.getScene();
+		
+		if (scene==null || scene.getSceneType() != SceneType.SCENE_DUNGEON) {
 			return;
 		}
 		
 		// Get previous scene
-		int prevScene = player.getScene().getPrevScene() > 0 ? player.getScene().getPrevScene() : 3;
+		int prevScene = scene.getPrevScene() > 0 ? scene.getPrevScene() : 3;
 		
 		// Get previous position
-		DungeonData dungeonData = player.getScene().getDungeonData();
+		DungeonData dungeonData = scene.getDungeonData();
 		Position prevPos = new Position(GameConstants.START_POSITION);
 		
 		if (dungeonData != null) {
-			ScenePointEntry entry = GameData.getScenePointEntryById(prevScene, player.getScene().getPrevScenePoint());
+			ScenePointEntry entry = GameData.getScenePointEntryById(prevScene, scene.getPrevScenePoint());
 			
 			if (entry != null) {
 				prevPos.set(entry.getPointData().getTranPos());
