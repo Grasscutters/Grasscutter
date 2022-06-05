@@ -53,6 +53,9 @@ public class GameSession extends KcpChannel {
 		}
 		super.close();
 	}
+	public GameSession(GameServer server) {
+		this(server,null);
+	}
 	public GameSession(GameServer server, ChannelPipeline pipeline) {
 		this.server = server;
 		this.state = SessionState.WAITING_FOR_TOKEN;
