@@ -25,8 +25,8 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 		GetPlayerTokenReq req = GetPlayerTokenReq.parseFrom(payload);
 		
 		// Authenticate
-		Account account = DatabaseHelper.getAccountByToken(req.getAccountToken());
-		if (account == null) {
+		Account account = DatabaseHelper.getAccountById(req.getAccountUid());
+		if (account == null || !account.getToken().equals(req.getAccountToken())) {
 			return;
 		}
 		
