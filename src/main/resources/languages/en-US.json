@@ -184,6 +184,12 @@
       "success": "NoStamina is now %s for %s.",
       "description": "Keep your endurance to the maximum."
     },
+    "unlimitenergy": {
+      "usage": "unlimitenergy [targetUID] [on | off | toggle ]",
+      "success": "unlimitenergy is now %s for %s.",
+      "description": "Use the element does not waste energy in unlimitenergy on",
+      "config_error": "Command is disable,because energyUsage is false in config.json."
+    },
     "heal": {
       "success": "All characters have been healed.",
       "description": "Heal all characters in your current team."
