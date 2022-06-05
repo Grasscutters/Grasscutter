@@ -1,5 +1,6 @@
 package emu.grasscutter.game.managers.ForgingManager;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -221,7 +222,40 @@ public class ForgingManager {
 	}
 
 	private void cancelForge(int queueId) {
+		// Make sure there are no unfinished items.
+		int currentTime = Utils.getCurrentSeconds();
+		ActiveForgeData forge = this.player.getActiveForges().get(queueId - 1);
+
+		if (forge.getFinishedCount(currentTime) > 0) {
+			return;
+		}
 		
+		// Return material items to the player.
+		ForgeData data = GameData.getForgeDataMap().get(forge.getForgeId());
+
+		var returnItems = new ArrayList<GameItem>();
+		for (var material : data.getMaterialItems()) {
+			if (material.getItemId() == 0) {
+				continue;
+			}
+
+			ItemData resultItemData = GameData.getItemDataMap().get(material.getItemId());
+			GameItem returnItem = new GameItem(resultItemData, material.getItemCount() * forge.getCount());
+
+			this.player.getInventory().addItem(returnItem);
+			returnItems.add(returnItem);
+		}
+
+		// Return Mora to the player.
+		this.player.setMora(this.player.getMora() + data.getScoinCost() * forge.getCount());
+
+		ItemData moraItem = GameData.getItemDataMap().get(202);
+		GameItem returnMora = new GameItem(moraItem, data.getScoinCost() * forge.getCount());
+		returnItems.add(returnMora);
+
+		// Send response.
+		this.player.sendPacket(new PacketForgeQueueManipulateRsp(Retcode.RET_SUCC, ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_STOP_FORGE, List.of(), returnItems, List.of()));
+		this.sendForgeDataNotify();
 	}
 
 	public void handleForgeQueueManipulateReq(ForgeQueueManipulateReq req) {
