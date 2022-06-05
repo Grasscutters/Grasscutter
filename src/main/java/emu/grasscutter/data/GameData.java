@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.custom.*;
+import emu.grasscutter.data.binout.*;
+import emu.grasscutter.data.excels.*;
 import emu.grasscutter.utils.Utils;
-import emu.grasscutter.data.def.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;

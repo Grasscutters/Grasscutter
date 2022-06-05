@@ -1,11 +1,7 @@
 package emu.grasscutter.scripts.data;
 
-import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.scripts.constants.ScriptRegionShape;
 import emu.grasscutter.utils.Position;
-import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import it.unimi.dsi.fastutil.ints.IntSet;
-import lombok.Data;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -16,30 +12,13 @@ public class SceneRegion {
 	public int shape;
 	public Position pos;
 	public Position size;
-	
-	private boolean hasNewEntities;
-	private final IntSet entities; // Ids of entities inside this region
+	public SceneGroup group;
 	
 	public SceneRegion() {
-		this.entities = new IntOpenHashSet();
-	}
-	
-	public IntSet getEntities() {
-		return entities;
+
 	}
 
-	public void addEntity(GameEntity entity) {
-		if (this.getEntities().contains(entity.getId())) {
-			return;
-		}
-		this.getEntities().add(entity.getId());
-		this.hasNewEntities = true;
-	}
-	
-	public void removeEntity(GameEntity entity) {
-		this.getEntities().remove(entity.getId());
-	}
-	
+
 	public boolean contains(Position p) {
 		switch (shape) {
 			case ScriptRegionShape.CUBIC:
@@ -52,11 +31,5 @@ public class SceneRegion {
 		return false;
 	}
 
-	public boolean hasNewEntities() {
-		return hasNewEntities;
-	}
-	
-	public void resetNewEntities() {
-		hasNewEntities = false;
-	}
+
 }

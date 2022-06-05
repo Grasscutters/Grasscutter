@@ -33,7 +33,7 @@ public class SceneGroup {
 	public Map<Integer, SceneGadget> gadgets; // <ConfigId, Gadgets>
 	public Map<String, SceneTrigger> triggers;
 	public Map<Integer, SceneNPC> npc; // <NpcId, NPC>
-	public List<SceneRegion> regions;
+	public Map<Integer, SceneRegion> regions;
 	public List<SceneSuite> suites;
 	public List<SceneVar> variables;
 	
@@ -114,7 +114,10 @@ public class SceneGroup {
 			triggers.values().forEach(t -> t.currentGroup = this);
 
 			suites = ScriptLoader.getSerializer().toList(SceneSuite.class, bindings.get("suites"));
-			regions = ScriptLoader.getSerializer().toList(SceneRegion.class, bindings.get("regions"));
+			regions = ScriptLoader.getSerializer().toList(SceneRegion.class, bindings.get("regions")).stream()
+					.collect(Collectors.toMap(x -> x.config_id, y -> y));
+			regions.values().forEach(m -> m.group = this);
+
 			init_config = ScriptLoader.getSerializer().toObject(SceneInitConfig.class, bindings.get("init_config"));
 			
 			// Garbages TODO fix properly later
@@ -154,6 +157,13 @@ public class SceneGroup {
 						suite.triggers.stream()
 								.filter(triggers::containsKey)
 								.map(triggers::get)
+								.toList()
+				);
+
+				suite.sceneRegions = new ArrayList<>(
+						suite.regions.stream()
+								.filter(regions::containsKey)
+								.map(regions::get)
 								.toList()
 				);
 			}

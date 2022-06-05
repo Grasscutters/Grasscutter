@@ -11,5 +11,5 @@ message GroupSuiteNotify {
 		CMD_ID = 3098;
 	}
 
-	map<uint32, uint32> group_map = 1;
+	map<uint32, uint32> group_map = 11;
 }

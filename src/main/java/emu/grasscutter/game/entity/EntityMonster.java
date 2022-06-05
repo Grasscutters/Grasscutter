@@ -2,8 +2,10 @@ package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.PropGrowCurve;
-import emu.grasscutter.data.def.MonsterCurveData;
-import emu.grasscutter.data.def.MonsterData;
+
+import emu.grasscutter.data.excels.MonsterCurveData;
+import emu.grasscutter.data.excels.MonsterData;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;

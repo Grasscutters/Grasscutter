@@ -1,7 +1,7 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.GadgetData;
+import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.game.entity.gadget.*;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.EntityType;

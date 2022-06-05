@@ -19,7 +19,7 @@ public class GadgetRewardStatue extends GadgetContent {
 			dungeonChallenge.getStatueDrops(player);
 		}
 		
-		player.sendPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_OPEN_STATUE));
+		player.sendPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_OPEN_STATUE));
 		
 		return false;
 	}

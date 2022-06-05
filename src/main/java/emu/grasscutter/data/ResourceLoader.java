@@ -1,6 +1,26 @@
 package emu.grasscutter.data;
 
-import java.io.*;
+import com.google.gson.JsonElement;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.binout.*;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityConfigData;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
+import emu.grasscutter.data.common.PointData;
+import emu.grasscutter.data.common.ScenePointConfig;
+import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
+import emu.grasscutter.scripts.SceneIndexManager;
+import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.SneakyThrows;
+import org.reflections.Reflections;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
@@ -8,36 +28,7 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.google.gson.Gson;
-import emu.grasscutter.data.custom.*;
-import emu.grasscutter.scripts.SceneIndexManager;
-import emu.grasscutter.utils.Utils;
-import lombok.SneakyThrows;
-import org.reflections.Reflections;
-
-import com.google.gson.JsonElement;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.binout.AbilityEmbryoEntry;
-import emu.grasscutter.data.binout.AbilityModifier;
-import emu.grasscutter.data.binout.AbilityModifierEntry;
-import emu.grasscutter.data.binout.MainQuestData;
-import emu.grasscutter.data.binout.OpenConfigEntry;
-import emu.grasscutter.data.binout.ScenePointEntry;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityConfigData;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
-import emu.grasscutter.data.common.PointData;
-import emu.grasscutter.data.common.ScenePointConfig;
-import emu.grasscutter.data.custom.AbilityModifier.AbilityConfigData;
-import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierAction;
-import emu.grasscutter.data.custom.AbilityModifier.AbilityModifierActionType;
-import emu.grasscutter.game.world.SpawnDataEntry.*;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.Configuration.RESOURCE;
 
 public class ResourceLoader {
 

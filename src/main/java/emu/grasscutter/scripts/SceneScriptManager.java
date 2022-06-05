@@ -4,12 +4,9 @@ import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.data.def.WorldLevelData;
-import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.entity.EntityNPC;
-import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.data.excels.MonsterData;
+import emu.grasscutter.data.excels.WorldLevelData;
+import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.scripts.constants.EventType;
@@ -39,7 +36,7 @@ public class SceneScriptManager {
 	 * current triggers controlled by RefreshGroup
 	 */
 	private final Int2ObjectOpenHashMap<Set<SceneTrigger>> currentTriggers;
-	private final Int2ObjectOpenHashMap<SceneRegion> regions;
+	private final Int2ObjectOpenHashMap<EntityRegion> regions;
 	private Map<Integer,SceneGroup> sceneGroups;
 	private ScriptMonsterTideService scriptMonsterTideService;
 	private ScriptMonsterSpawnService scriptMonsterSpawnService;
@@ -123,12 +120,12 @@ public class SceneScriptManager {
 		spawnMonstersInGroup(group, suite);
 		spawnGadgetsInGroup(group, suite);
 	}
-	public SceneRegion getRegionById(int id) {
+	public EntityRegion getRegionById(int id) {
 		return regions.get(id);
 	}
 	
-	public void registerRegion(SceneRegion region) {
-		regions.put(region.config_id, region);
+	public void registerRegion(EntityRegion region) {
+		regions.put(region.getId(), region);
 	}
 	
 	public void deregisterRegion(SceneRegion region) {
@@ -184,7 +181,7 @@ public class SceneScriptManager {
 		this.sceneGroups.put(group.id, group);
 
 		if(group.regions != null){
-			group.regions.forEach(this::registerRegion);
+			//group.regions.forEach(this::registerRegion);
 		}
 	}
 	
@@ -192,16 +189,19 @@ public class SceneScriptManager {
 		if (this.regions.size() == 0) {
 			return;
 		}
-		
-		for (SceneRegion region : this.regions.values()) {
-			getScene().getEntities().values()
+
+		var entities = getScene().getEntities().values()
 				.stream()
-				.filter(e -> e.getEntityType() <= 2 && region.contains(e.getPosition()))
-				.forEach(region::addEntity);
+				.filter(e -> e.getEntityType() <= 2)
+				.toList();
+
+		for (var region : this.regions.values()) {
+
+			entities.stream().filter(e -> region.getMetaRegion().contains(e.getPosition()))
+					.forEach(region::addEntity);
 
 			if (region.hasNewEntities()) {
-				// This is not how it works, source_eid should be region entity id, but we dont have an entity for regions yet
-				callEvent(EventType.EVENT_ENTER_REGION, new ScriptArgs(region.config_id).setSourceEntityId(region.config_id));
+				callEvent(EventType.EVENT_ENTER_REGION, new ScriptArgs(region.getConfigId()).setSourceEntityId(region.getId()));
 				
 				region.resetNewEntities();
 			}
@@ -351,6 +351,17 @@ public class SceneScriptManager {
 	}
 
 	public EntityGadget createGadget(int groupId, int blockId, SceneGadget g) {
+		if(g.isOneoff){
+			var hasEntity = getScene().getEntities().values().stream()
+					.filter(e -> e instanceof EntityGadget)
+					.filter(e -> e.getGroupId() == g.group.id)
+					.filter(e -> e.getConfigId() == g.config_id)
+					.findFirst();
+			if(hasEntity.isPresent()){
+				return null;
+			}
+		}
+
 		EntityGadget entity = new EntityGadget(getScene(), g.gadget_id, g.pos);
 
 		if (entity.getGadgetData() == null){
@@ -414,12 +425,13 @@ public class SceneScriptManager {
 	}
 	
 	public void meetEntities(List<? extends GameEntity> gameEntity){
-		getScene().addEntities(gameEntity, VisionTypeOuterClass.VisionType.VISION_MEET);
+		getScene().addEntities(gameEntity, VisionTypeOuterClass.VisionType.VISION_TYPE_MEET);
 	}
 	
 	public void addEntities(List<? extends GameEntity> gameEntity){
 		getScene().addEntities(gameEntity);
 	}
+
 
 	public RTree<SceneBlock, Geometry> getBlocksIndex() {
 		return meta.sceneBlockIndex;
@@ -434,7 +446,7 @@ public class SceneScriptManager {
 				.filter(e -> configSet.contains(e.getConfigId()))
 				.toList();
 
-		getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_MISS);
+		getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_TYPE_MISS);
 	}
 	public void removeGadgetsInGroup(SceneGroup group, SceneSuite suite) {
 		var configSet = suite.sceneGadgets.stream()
@@ -446,6 +458,8 @@ public class SceneScriptManager {
 				.filter(e -> configSet.contains(e.getConfigId()))
 				.toList();
 
-		getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_MISS);
+		getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_TYPE_MISS);
 	}
+
+
 }

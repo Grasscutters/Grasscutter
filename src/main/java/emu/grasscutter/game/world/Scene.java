@@ -3,7 +3,7 @@ package emu.grasscutter.game.world;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
-import emu.grasscutter.data.def.*;
+import emu.grasscutter.data.excels.*;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
@@ -323,7 +323,7 @@ public class Scene {
 
 	}
 	public void addEntities(Collection<? extends GameEntity> entities){
-		addEntities(entities, VisionType.VISION_BORN);
+		addEntities(entities, VisionType.VISION_TYPE_BORN);
 	}
 	
 	public synchronized void addEntities(Collection<? extends GameEntity> entities, VisionType visionType) {
@@ -377,7 +377,11 @@ public class Scene {
 			entities.add(entity);
 		}
 
-		player.sendPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VISION_MEET));
+		var blocks = getPlayerActiveBlocks(player);
+		for(var block : blocks){
+			entities.addAll(loadNpcForPlayer(player, block));
+		}
+		player.sendPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VISION_TYPE_MEET));
 	}
 	
 	public void handleAttack(AttackResult result) {
@@ -633,6 +637,8 @@ public class Scene {
 					.map(mob -> scriptManager.createMonster(group.id, group.block_id, mob))
 					.filter(Objects::nonNull)
 					.toList());
+			suiteData.sceneRegions.stream().map(region -> new EntityRegion(this, region))
+					.forEach(scriptManager::registerRegion);
 
 		}
 
@@ -648,7 +654,7 @@ public class Scene {
 
 		if (toRemove.size() > 0) {
 			toRemove.forEach(this::removeEntityDirectly);
-			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_REMOVE));
+			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_TYPE_REMOVE));
 		}
 		
 		for (SceneGroup group : block.groups.values()) {
@@ -656,7 +662,7 @@ public class Scene {
 				group.triggers.values().forEach(getScriptManager()::deregisterTrigger);
 			}
 			if(group.regions != null){
-				group.regions.forEach(getScriptManager()::deregisterRegion);
+				group.regions.values().forEach(getScriptManager()::deregisterRegion);
 			}
 		}
 		scriptManager.getLoadedGroupSetPerBlock().remove(block.id);
@@ -756,7 +762,11 @@ public class Scene {
 
 		var npcs = SceneIndexManager.queryNeighbors(data.getIndex(), pos.toDoubleArray(),
 				Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);
-		var entityNPCS = npcs.stream().map(item -> {
+		var entityNPCS = npcs.stream()
+				.filter(item -> getEntities().values().stream()
+						.filter(e -> e instanceof EntityNPC)
+						.noneMatch(e -> e.getConfigId() == item.getConfigId()))
+				.map(item -> {
 					var group = data.getGroups().get(item.getGroupId());
 					if(group == null){
 						group = SceneGroup.of(item.getGroupId());
@@ -775,9 +785,6 @@ public class Scene {
 					return getScriptManager().createNPC(npc, block.id, item.getSuiteIdList().get(0));
 				})
 				.filter(Objects::nonNull)
-				.filter(item -> getEntities().values().stream()
-						.filter(e -> e instanceof EntityNPC)
-						.noneMatch(e -> e.getConfigId() == item.getConfigId()))
 				.toList();
 
 		if(entityNPCS.size() > 0){

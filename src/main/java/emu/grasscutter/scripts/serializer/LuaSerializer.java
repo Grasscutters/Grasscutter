@@ -56,6 +56,8 @@ public class LuaSerializer implements Serializer {
 				    	object = (T) (Float) keyValue.tofloat(); // terrible...
 				    } else if (keyValue.isstring()) {
 				    	object = (T) keyValue.tojstring();
+					} else if (keyValue.isboolean()) {
+						object = (T) (Boolean) keyValue.toboolean();
 				    } else {
 				    	object = (T) keyValue;
 				    }
@@ -118,7 +120,10 @@ public class LuaSerializer implements Serializer {
 						methodAccess.invoke(object, fieldMeta.index, keyValue.toint());
 				    } else if (fieldMeta.getType().equals(String.class)) {
 						methodAccess.invoke(object, fieldMeta.index, keyValue.tojstring());
-				    } else {
+				    } else if (fieldMeta.getType().equals(boolean.class)) {
+						methodAccess.invoke(object, fieldMeta.index, keyValue.toboolean());
+					}
+					else {
 						methodAccess.invoke(object, fieldMeta.index, keyValue.tojstring());
 				    }
 				} catch (Exception ex) {
