@@ -16,7 +16,8 @@ public class PacketForgeQueueManipulateRsp extends BasePacket {
         super(PacketOpcodes.ForgeQueueManipulateRsp);
 
         ForgeQueueManipulateRsp.Builder builder = ForgeQueueManipulateRsp.newBuilder()
-                .setRetcode(retcode.getNumber());
+                .setRetcode(retcode.getNumber())
+                .setManipulateType(type);
         
         for (GameItem item : output) {
             ItemParam toAdd = ItemParam.newBuilder()
