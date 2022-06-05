@@ -47,12 +47,13 @@
       "shutdown": "正在关闭...",
       "done": "加载完成！输入 \"help\" 查看命令列表",
       "error": "发生了一个错误。",
-      "welcome": "欢迎使用 Grasscutter！珍惜这段美妙的旅途吧！",
+      "welcome": "欢迎使用 Grasscutter！",
       "run_mode_error": "无效的服务器运行模式：%s。",
       "run_mode_help": "服务器运行模式必须为 'HYBRID'(混合)、'DISPATCH_ONLY'(仅 Dispatch) 或 'GAME_ONLY'(仅游戏)。Grasscutter 启动失败...",
       "create_resources": "正在创建 resources 目录...",
       "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。",
-      "version": "Grasscutter 版本：%s-%s"
+      "version": "Grasscutter 版本：%s-%s",
+      "game_version": "游戏版本: %s"
     }
   },
   "commands": {
@@ -103,7 +104,7 @@
     "account": {
       "modify": "修改用户账号",
       "invalid": "无效的UID。",
-      "exists": "账号已存在。",
+      "exists": "具有此用户名和/或 UID 的账号已存在。",
       "create": "已创建 UID 为 %s 的账号。",
       "delete": "账号已删除。",
       "no_account": "账号不存在。",
@@ -155,6 +156,12 @@
     "nostamina": {
       "success": "NoStamina 已设为 %s。[用户：%s]",
       "description": "保持你的体力处于最高状态"
+    },
+    "unlimitenergy": {
+      "usage": "用法：unlimitenergy [目标玩家] [on | off | toggle ]",
+      "success": "unlimitEnergy 已设为 %s。[用户：%s]",
+      "description": "使用元素爆发不消耗能量",
+      "config_error": "当前命令不可用，需要在config.json中配置 energyUsage : true 才可生效"
     },
     "giveArtifact": {
       "usage": "用法：giveart|gart [玩家] <圣遗物ID> <主词条ID> [<副词条ID>[,<强化次数>]]... [等级]",
@@ -304,7 +311,7 @@
       "description": "设置世界等级，执行命令后需重新登录以生效"
     },
     "spawn": {
-      "usage": "用法：spawn <实体ID> [数量] [等级(仅怪物)]",
+      "usage": "用法：spawn <实体ID> [数量] [等级(仅怪物)] [<x> <y> <z>(仅怪物, 可选)]",
       "success": "已生成 %s 个 %s。",
       "limit_reached": "场景中的生成数量已达上限。已替代为生成 %s 个实体。",
       "description": "在你附近生成实体"

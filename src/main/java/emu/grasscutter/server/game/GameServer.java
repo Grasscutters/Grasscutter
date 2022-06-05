@@ -27,6 +27,7 @@ import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
 import emu.grasscutter.task.TaskMap;
+import emu.grasscutter.BuildConfig;
 
 import java.net.InetSocketAddress;
 import java.time.OffsetDateTime;

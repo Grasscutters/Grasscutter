@@ -52,7 +52,8 @@
       "run_mode_help": "Server run mode must be 'HYBRID', 'DISPATCH_ONLY', or 'GAME_ONLY'. Unable to start Grasscutter...",
       "create_resources": "Creating resources folder...",
       "resources_error": "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.",
-      "version": "Grasscutter version: %s-%s"
+      "version": "Grasscutter version: %s-%s",
+      "game_version": "Game version: %s"
     }
   },
   "commands": {
@@ -183,6 +184,12 @@
       "success": "NoStamina is now %s for %s.",
       "description": "Keep your endurance to the maximum."
     },
+    "unlimitenergy": {
+      "usage": "unlimitenergy [targetUID] [on | off | toggle ]",
+      "success": "unlimitenergy is now %s for %s.",
+      "description": "Use the element does not waste energy in unlimitenergy on",
+      "config_error": "Command is disable,because energyUsage is false in config.json."
+    },
     "heal": {
       "success": "All characters have been healed.",
       "description": "Heal all characters in your current team."
@@ -307,7 +314,7 @@
       "description": "Sets your world level (Relog to see proper effects)"
     },
     "spawn": {
-      "usage": "Usage: spawn <entityID> [amount] [level(monster only)] <x> <y> <z>(monster only, optional)",
+      "usage": "Usage: spawn <entityID> [amount] [level(monster only)] [<x> <y> <z>(monster only, optional)]",
       "success": "Spawned %s of %s.",
       "limit_reached": "Scene spawn limit reached. Spawning %s entities instead.",
       "description": "Spawns an entity near you"

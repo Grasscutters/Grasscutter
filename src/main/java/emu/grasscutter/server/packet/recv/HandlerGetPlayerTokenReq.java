@@ -11,6 +11,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GetPlayerTokenReqOuterClass.GetPlayerTokenReq;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.event.game.PlayerCreationEvent;
+import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.PacketGetPlayerTokenRsp;
@@ -20,28 +21,45 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 	
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		// Max players limit
-		if (ACCOUNT.maxPlayer > -1 && Grasscutter.getGameServer().getPlayers().size() >= ACCOUNT.maxPlayer) {
-			session.close();
-			return;
-		}
-		
+
 		GetPlayerTokenReq req = GetPlayerTokenReq.parseFrom(payload);
 		
 		// Authenticate
 		Account account = DatabaseHelper.getAccountById(req.getAccountUid());
-		if (account == null) {
-			return;
-		}
-		
-		// Check token
-		if (!account.getToken().equals(req.getAccountToken())) {
+		if (account == null || !account.getToken().equals(req.getAccountToken())) {
 			return;
 		}
 		
 		// Set account
 		session.setAccount(account);
-		
+
+
+		// Check if player object exists in server
+		// NOTE: CHECKING MUST SITUATED HERE (BEFORE getPlayerByUid)! because to save firstly ,to load secondly !!!
+		// TODO - optimize
+		boolean kicked = false;
+		Player exists = Grasscutter.getGameServer().getPlayerByAccountId(account.getId());
+		if (exists != null) {
+			GameSession existsSession = exists.getSession();
+			if (existsSession != session) {// No self-kicking
+				exists.onLogout();//must save immediately , or the below will load old data
+				existsSession.close();
+				Grasscutter.getLogger().warn("Player {} was kicked due to duplicated login", account.getUsername());
+				kicked = true;
+			}
+		}
+
+		//NOTE: If there are 5 online players, max count of player is 5,
+		// a new client want to login by kicking one of them ,
+		// I think it should be allowed
+		if(!kicked) {
+			// Max players limit
+			if (ACCOUNT.maxPlayer > -1 && Grasscutter.getGameServer().getPlayers().size() >= ACCOUNT.maxPlayer) {
+				session.close();
+				return;
+			}
+		}
+
 		// Get player
 		Player player = DatabaseHelper.getPlayerByAccount(account);
 
@@ -57,10 +75,10 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 			// Save to db
 			DatabaseHelper.generatePlayerUid(player, nextPlayerUid);
 		}
-		
+
 		// Set player object for session
 		session.setPlayer(player);
-		
+
 		// Load player from database
 		player.loadFromDatabase();
 		
