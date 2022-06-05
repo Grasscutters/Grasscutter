@@ -145,7 +145,8 @@ public class ForgingManager {
 				continue;
 			}
 
-			this.player.getInventory().removeItem(material.getItemId(), material.getCount() * req.getForgeCount());
+			GameItem item = this.player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(material.getItemId());
+			this.player.getInventory().removeItem(item, material.getCount() * req.getForgeCount());
 		}
 
 		this.player.setMora(this.player.getMora() - forgeData.getScoinCost() * req.getForgeCount());
