@@ -1,21 +1,27 @@
 package emu.grasscutter.game.managers.ForgingManager;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ForgeData;
+import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.ForgeStartReqOuterClass;
 import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
+import emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueManipulateReq;
+import emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType;
+import emu.grasscutter.net.proto.ForgeStartReqOuterClass.ForgeStartReq;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketForgeDataNotify;
 import emu.grasscutter.server.packet.send.PacketForgeFormulaDataNotify;
 import emu.grasscutter.server.packet.send.PacketForgeGetQueueDataRsp;
+import emu.grasscutter.server.packet.send.PacketForgeQueueManipulateRsp;
 import emu.grasscutter.server.packet.send.PacketForgeStartRsp;
 import emu.grasscutter.utils.Utils;
 
@@ -104,7 +110,7 @@ public class ForgingManager {
 	/**********
 		Initiate forging process.
 	**********/
-	public void startForging(ForgeStartReqOuterClass.ForgeStartReq req) {
+	public void handleForgeStartReq(ForgeStartReq req) {
 		// Refuse if all queues are already full.
 		if (this.player.getActiveForges().size() >= this.determineNumberOfQueues()) {
 			this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_QUEUE_FULL));
@@ -164,5 +170,75 @@ public class ForgingManager {
 		// Done.
 		this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_SUCC));
 		this.sendForgeDataNotify();
+	}
+
+	/**********
+		Forge queue manipulation (obtaining results and cancelling forges).
+	**********/
+	private void obtainItems(int queueId) {
+		// Determin how many items are finished.
+		int currentTime = Utils.getCurrentSeconds();
+		ActiveForgeData forge = this.player.getActiveForges().get(queueId - 1);
+
+		int finished = forge.getFinishedCount(currentTime);
+		int unfinished = forge.getUnfinishedCount(currentTime);
+
+		// Sanity check: Are any items finished?
+		if (finished <= 0) {
+			return;
+		}
+
+		// Give finished items to the player.
+		ForgeData data = GameData.getForgeDataMap().get(forge.getForgeId());
+		ItemData resultItemData = GameData.getItemDataMap().get(data.getResultItemId());
+
+		GameItem addItem = new GameItem(resultItemData, data.getResultItemCount() * finished);
+		this.player.getInventory().addItem(addItem);
+
+		// Replace active forge with a new one for the unfinished items, if there are any.
+		if (unfinished > 0) {
+			ActiveForgeData remainingForge = new ActiveForgeData();
+
+			remainingForge.setForgeId(forge.getForgeId());
+			remainingForge.setAvatarId(forge.getAvatarId());
+			remainingForge.setCount(unfinished);
+			remainingForge.setForgeTime(forge.getForgeTime());
+
+			// We simple restart the forge. This will increase the time, but is easier for now.
+			// ToDo: Make this more accurate.
+			remainingForge.setStartTime(currentTime);
+
+			this.player.getActiveForges().set(queueId - 1, remainingForge);
+		}
+		// Otherwise, completely remove it.
+		else {
+			this.player.getActiveForges().remove(queueId - 1);
+		}
+
+		// Send response.
+		this.player.sendPacket(new PacketForgeQueueManipulateRsp(Retcode.RET_SUCC, ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_RECEIVE_OUTPUT, List.of(addItem), List.of(), List.of()));
+		this.sendForgeDataNotify();
+	}
+
+	private void cancelForge(int queueId) {
+		
+	}
+
+	public void handleForgeQueueManipulateReq(ForgeQueueManipulateReq req) {
+		// Get info from the request.
+		int queueId = req.getForgeQueueId();
+		var manipulateType = req.getManipulateType();
+		
+		// Handle according to the manipulation type.
+		switch (manipulateType) {
+			case FORGE_QUEUE_MANIPULATE_TYPE_RECEIVE_OUTPUT:
+				this.obtainItems(queueId);
+				break;
+			case FORGE_QUEUE_MANIPULATE_TYPE_STOP_FORGE:
+				this.cancelForge(queueId);
+				break;
+			default:
+				break; //Should never happen.
+		}
 	}
 }
