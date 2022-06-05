@@ -151,12 +151,10 @@ public class GameSession extends KcpChannel {
 			// Call logout event.
 			player.onLogout();
 		}
-		if(pipeline!=null) {
-			try {
-				pipeline.remove(this);
-			} catch (Throwable ignore) {
+		try {
+			pipeline.remove(this);
+		} catch (Throwable ignore) {
 
-			}
 		}
 	}
 	
