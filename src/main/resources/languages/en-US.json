@@ -136,7 +136,7 @@
     "coop": {
       "usage": "Usage: coop [host UID]",
       "success": "Summoned %s to %s's world.",
-      "description": "Forces someone to join the world of others. If no one is targeted, it sends you into co-op mode anyway."
+      "description": "Forces someone to join the world of others."
     },
     "enter_dungeon": {
       "usage": "Usage: enterdungeon <dungeonID>",

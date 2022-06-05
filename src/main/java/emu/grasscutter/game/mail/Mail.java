@@ -20,7 +20,7 @@ public class Mail {
     public MailContent mailContent;
     public List<MailItem> itemList;
     public long sendTime;
-    public static long expireTime;
+    public long expireTime;
     public int importance;
     public boolean isRead;
     public boolean isAttachmentGot;
@@ -28,7 +28,7 @@ public class Mail {
     @Transient private boolean shouldDelete;
 
     public Mail() {
-        this(new MailContent(), new ArrayList<MailItem>(), (int) Instant.now().getEpochSecond() + expireTime); // TODO: add expire time to send mail command
+        this(new MailContent(), new ArrayList<MailItem>(), (int) Instant.now().getEpochSecond() + 604800); // TODO: add expire time to send mail command
     }
 
     public Mail(MailContent mailContent, List<MailItem> itemList, long expireTime) {
@@ -67,7 +67,6 @@ public class Mail {
         public String title;
         public String content;
         public String sender;
-        public long expireTime;
 
         public MailContent() {
             this.title = "";

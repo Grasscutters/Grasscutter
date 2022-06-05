@@ -15,7 +15,6 @@ import static emu.grasscutter.utils.Language.translate;
 @SuppressWarnings("ConstantConditions")
 @Command(label = "sendmail", usage = "sendmail <userId|all|help> [templateId]", permission = "server.sendmail", description = "commands.sendMail.description", targetRequirement = Command.TargetRequirement.NONE)
 public final class SendMailCommand implements CommandHandler {
-    private long intermediate;
 
     // TODO: You should be able to do /sendmail and then just send subsequent messages until you finish
     //  However, due to the current nature of the command system, I don't think this is possible without rewriting
@@ -119,7 +118,7 @@ public final class SendMailCommand implements CommandHandler {
                                 String timeFormat = args.get(1);
                                 switch (args.get(1)) {
                                     case "second":
-                                    case "seconds": // Tried to make these also accept "second", "minute", etc. but I don't understand java enough to do OR operators apparently.
+                                    case "seconds": 
                                         expireTime = Integer.parseInt(args.get(0));
                                         break;
                                     case "minute":
@@ -138,8 +137,7 @@ public final class SendMailCommand implements CommandHandler {
                                         CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.invalid_time"));
                                         return;
                                     }
-                                mailBuilder.mail.mailContent.expireTime = expireTime;
-                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.set_expire_time", args.get(0), timeFormat)); // TO-DO: make output not janky with secs/mins/hours/days. should be simple with using another variable as a sort of intermediary.
+                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.set_expire_time", args.get(0), timeFormat));
                                 mailBuilder.constructionStage++;
                             }
                             case 4 -> {
