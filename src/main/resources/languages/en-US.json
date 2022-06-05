@@ -52,7 +52,8 @@
       "run_mode_help": "Server run mode must be 'HYBRID', 'DISPATCH_ONLY', or 'GAME_ONLY'. Unable to start Grasscutter...",
       "create_resources": "Creating resources folder...",
       "resources_error": "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.",
-      "version": "Grasscutter version: %s-%s"
+      "version": "Grasscutter version: %s-%s",
+      "game_version": "Game version: %s"
     }
   },
   "commands": {
@@ -136,7 +137,7 @@
     "coop": {
       "usage": "Usage: coop [host UID]",
       "success": "Summoned %s to %s's world.",
-      "description": "Forces someone to join the world of others"
+      "description": "Forces someone to join the world of others. If no one is targeted, it sends you into co-op mode anyway."
     },
     "enter_dungeon": {
       "usage": "Usage: enterdungeon <dungeonID>",

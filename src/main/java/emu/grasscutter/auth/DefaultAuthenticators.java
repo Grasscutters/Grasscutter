@@ -36,7 +36,7 @@ public final class DefaultAuthenticators {
                 // Check if account exists.
                 if(account == null && ACCOUNT.autoCreate) {
                     // This account has been created AUTOMATICALLY. There will be no permissions added.
-                    account = DatabaseHelper.createAccountWithId(requestData.account, 0);
+                    account = DatabaseHelper.createAccountWithUid(requestData.account, 0);
 
                     // Check if the account was created successfully.
                     if(account == null) {
