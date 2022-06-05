@@ -13,6 +13,7 @@ public class ForgeData extends GameResource {
     private int id;
     private int playerLevel;
     private int forgeType;
+    private int resultItemId;
     private int resultItemCount;
     private int forgeTime;
     private int queueNum;
@@ -31,6 +32,10 @@ public class ForgeData extends GameResource {
 
     public int getForgeType() {
         return forgeType;
+    }
+
+    public int getResultItemId() {
+        return resultItemId;
     }
 
     public int getResultItemCount() {
