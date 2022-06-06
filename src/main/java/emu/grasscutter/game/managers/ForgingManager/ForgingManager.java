@@ -22,6 +22,7 @@ import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketForgeDataNotify;
 import emu.grasscutter.server.packet.send.PacketForgeFormulaDataNotify;
 import emu.grasscutter.server.packet.send.PacketForgeGetQueueDataRsp;
+import emu.grasscutter.server.packet.send.PacketForgeQueueDataNotify;
 import emu.grasscutter.server.packet.send.PacketForgeQueueManipulateRsp;
 import emu.grasscutter.server.packet.send.PacketForgeStartRsp;
 import emu.grasscutter.utils.Utils;
@@ -111,6 +112,15 @@ public class ForgingManager {
 	/**********
 		Initiate forging process.
 	**********/
+	private void sendForgeQueueDataNotify() {
+		var queueData = this.determineCurrentForgeQueueData();
+		this.player.sendPacket(new PacketForgeQueueDataNotify(queueData, List.of()));
+	}
+	private void sendForgeQueueDataNotify(int removed) {
+		var queueData = this.determineCurrentForgeQueueData();
+		this.player.sendPacket(new PacketForgeQueueDataNotify(queueData, List.of(removed)));
+	}
+
 	public void handleForgeStartReq(ForgeStartReq req) {
 		// Refuse if all queues are already full.
 		if (this.player.getActiveForges().size() >= this.determineNumberOfQueues()) {
@@ -169,8 +179,8 @@ public class ForgingManager {
 		this.player.getActiveForges().add(activeForge);
 
 		// Done.
+		this.sendForgeQueueDataNotify();
 		this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_SUCC));
-		this.sendForgeDataNotify();
 	}
 
 	/**********
@@ -210,15 +220,16 @@ public class ForgingManager {
 			remainingForge.setStartTime(currentTime);
 
 			this.player.getActiveForges().set(queueId - 1, remainingForge);
+			this.sendForgeQueueDataNotify();
 		}
 		// Otherwise, completely remove it.
 		else {
 			this.player.getActiveForges().remove(queueId - 1);
+			this.sendForgeQueueDataNotify(queueId);
 		}
 
 		// Send response.
 		this.player.sendPacket(new PacketForgeQueueManipulateRsp(Retcode.RET_SUCC, ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_RECEIVE_OUTPUT, List.of(addItem), List.of(), List.of()));
-		this.sendForgeDataNotify();
 	}
 
 	private void cancelForge(int queueId) {
@@ -253,9 +264,12 @@ public class ForgingManager {
 		GameItem returnMora = new GameItem(moraItem, data.getScoinCost() * forge.getCount());
 		returnItems.add(returnMora);
 
+		// Remove the forge queue.
+		this.player.getActiveForges().remove(queueId - 1);
+		this.sendForgeQueueDataNotify(queueId);
+
 		// Send response.
 		this.player.sendPacket(new PacketForgeQueueManipulateRsp(Retcode.RET_SUCC, ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_STOP_FORGE, List.of(), returnItems, List.of()));
-		this.sendForgeDataNotify();
 	}
 
 	public void handleForgeQueueManipulateReq(ForgeQueueManipulateReq req) {
