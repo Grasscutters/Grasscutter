@@ -1194,6 +1194,9 @@ public class Player {
 			this.save();
 			this.sendPacket(new PacketAvatarExpeditionDataNotify(this));
 		}
+
+		// Send updated forge queue data, if necessary.
+		this.getForgingManager().sendPlayerForgingUpdate();
 	}
 
 
