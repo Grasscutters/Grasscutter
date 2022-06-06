@@ -269,15 +269,7 @@ public class ResourceLoader {
 			List<AbilityConfigData> abilityConfigList;
 			
 			try (FileReader fileReader = new FileReader(file)) {
-                BufferedReader bufferedReader = new BufferedReader(fileReader);
-                String line = "", lines = "";
-                while((line = bufferedReader.readLine()) != null){
-                    lines += line;
-                }
-                lines = lines.replaceAll("HNEIEGHMLKH", "modifiers");
-                lines = lines.replaceAll("KCICDEJLIJD", "onAdded");
-                lines = lines.replaceAll("PBDDACFFPOE", "onThinkInterval");
-				abilityConfigList = Grasscutter.getGsonFactory().fromJson(lines, TypeToken.getParameterized(Collection.class, AbilityConfigData.class).getType());
+				abilityConfigList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, AbilityConfigData.class).getType());
 			} catch (Exception e) {
 				e.printStackTrace();
 				continue;
