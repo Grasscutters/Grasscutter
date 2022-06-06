@@ -2,6 +2,7 @@ package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PlayerLevelData;
 import emu.grasscutter.database.DatabaseHelper;
@@ -1211,13 +1212,6 @@ public class Player {
 			this.getProfile().syncWithCharacter(this);
 		}
 
-		// Check if player object exists in server
-		// TODO - optimize
-		Player exists = this.getServer().getPlayerByUid(getUid());
-		if (exists != null) {
-			exists.getSession().close();
-		}
-
 		// Load from db
 		this.getAvatars().loadFromDatabase();
 		this.getInventory().loadFromDatabase();
@@ -1226,12 +1220,13 @@ public class Player {
 		this.getFriendsList().loadFromDatabase();
 		this.getMailHandler().loadFromDatabase();
 		this.getQuestManager().loadFromDatabase();
-		
+
 		// Add to gameserver (Always handle last)
 		if (getSession().isActive()) {
 			getServer().registerPlayer(this);
 			getProfile().setPlayer(this); // Set online
 		}
+
 	}
 
 	public void onLogin() {
@@ -1291,34 +1286,48 @@ public class Player {
 	}
 
 	public void onLogout() {
-		// stop stamina calculation
-		getStaminaManager().stopSustainedStaminaHandler();
+		try{
+			// stop stamina calculation
+			getStaminaManager().stopSustainedStaminaHandler();
 
-		// force to leave the dungeon
-		if (getScene().getSceneType() == SceneType.SCENE_DUNGEON) {
+			// force to leave the dungeon (inside has a "if")
 			this.getServer().getDungeonManager().exitDungeon(this);
+
+			// Leave world
+			if (this.getWorld() != null) {
+				this.getWorld().removePlayer(this);
+			}
+
+			// Status stuff
+			this.getProfile().syncWithCharacter(this);
+			this.getProfile().setPlayer(null); // Set offline
+
+			this.getCoopRequests().clear();
+
+			// Save to db
+			this.save();
+			this.getTeamManager().saveAvatars();
+			this.getFriendsList().save();
+
+			// Call quit event.
+			PlayerQuitEvent event = new PlayerQuitEvent(this); event.call();
+
+			//reset wood
+			getDeforestationManager().resetWood();
+
+		}catch (Throwable e){
+			e.printStackTrace();
+			Grasscutter.getLogger().warn("Player (UID {}) save failure", getUid());
+		}finally {
+			removeFromServer();
 		}
-		// Leave world
-		if (this.getWorld() != null) {
-			this.getWorld().removePlayer(this);
-		}
+	}
 
-		// Status stuff
-		this.getProfile().syncWithCharacter(this);
-		this.getProfile().setPlayer(null); // Set offline
-
-		this.getCoopRequests().clear();
-
-		// Save to db
-		this.save();
-		this.getTeamManager().saveAvatars();
-		this.getFriendsList().save();
-		
-		// Call quit event.
-		PlayerQuitEvent event = new PlayerQuitEvent(this); event.call();
-
-		//reset wood
-		getDeforestationManager().resetWood();
+	public void removeFromServer() {
+		// Remove from server.
+		//Note: DON'T DELETE BY UID,BECAUSE THERE ARE MULTIPLE SAME UID PLAYERS WHEN DUPLICATED LOGIN!
+		//so I decide to delete by object rather than uid
+		getServer().getPlayers().values().removeIf(player1 -> player1 == this);
 	}
 
 	public enum SceneLoadState {

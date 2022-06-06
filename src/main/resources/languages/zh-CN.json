@@ -157,6 +157,12 @@
       "success": "NoStamina 已设为 %s。[用户：%s]",
       "description": "保持你的体力处于最高状态"
     },
+    "unlimitenergy": {
+      "usage": "用法：unlimitenergy [目标玩家] [on | off | toggle ]",
+      "success": "unlimitEnergy 已设为 %s。[用户：%s]",
+      "description": "使用元素爆发不消耗能量",
+      "config_error": "当前命令不可用，需要在config.json中配置 energyUsage : true 才可生效"
+    },
     "giveArtifact": {
       "usage": "用法：giveart|gart [玩家] <圣遗物ID> <主词条ID> [<副词条ID>[,<强化次数>]]... [等级]",
       "id_error": "无效的圣遗物ID。",
