@@ -11,11 +11,9 @@ public class ActiveForgeData {
 
 	private int startTime;
 	private int forgeTime;
-	// private int finishedCount;
-	// private int unfinishedCount;
-	// private int nextFinishTimestamp;
-	// private int totalFinishTimestamp;
 
+	private int lastUnfinishedCount;
+	private boolean changed;
 
 	public int getFinishedCount(int currentTime) {
 		int timeDelta = currentTime - this.startTime;
@@ -72,5 +70,23 @@ public class ActiveForgeData {
 	}
 	public void setForgeTime(int value) {
 		this.forgeTime = value;
+	}
+
+	public boolean isChanged() {
+		return this.changed;
+	}
+	public void setChanged(boolean value) {
+		this.changed = value;
+	}
+
+	public boolean updateChanged(int currentTime) {
+		int currentUnfinished = this.getUnfinishedCount(currentTime);
+
+		if (currentUnfinished != this.lastUnfinishedCount) {
+			this.changed = true;
+			this.lastUnfinishedCount = currentUnfinished;
+		}
+
+		return this.changed;
 	}
 }

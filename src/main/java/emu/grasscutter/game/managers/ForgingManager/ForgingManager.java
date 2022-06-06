@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.mongodb.QueryBuilder;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
@@ -288,5 +290,35 @@ public class ForgingManager {
 			default:
 				break; //Should never happen.
 		}
+	}
+
+	/**********
+		Periodic forging updates.
+	**********/
+	public void sendPlayerForgingUpdate() {
+		int currentTime = Utils.getCurrentSeconds();
+
+		// Determine if sending an update is necessary.
+		// We only send an update if there are forges in the forge queue
+		// that have changed since the last notification.
+		if (this.player.getActiveForges().size() <= 0) {
+			return;
+		}
+
+		boolean hasChanges = this.player.getActiveForges().stream()
+									.filter(forge -> forge.updateChanged(currentTime))
+									.findAny()
+									.isPresent();
+
+		if (!hasChanges) {
+			return;
+		}
+
+		// Send notification.
+		this.sendForgeQueueDataNotify();
+
+		// Reset changed flags.
+		this.player.getActiveForges().stream()
+			.forEach(forge -> forge.setChanged(false));
 	}
 }
