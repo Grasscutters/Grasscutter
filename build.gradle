@@ -86,6 +86,9 @@ dependencies {
 
     implementation group: 'org.luaj', name: 'luaj-jse', version: '3.0.1'
 
+    implementation group:  'com.esotericsoftware', name : 'reflectasm', version: '1.11.9'
+    implementation group:  'com.github.davidmoten', name : 'rtree-multi', version: '0.1'
+
     protobuf files('proto/')
 
     compileOnly 'org.projectlombok:lombok:1.18.24'

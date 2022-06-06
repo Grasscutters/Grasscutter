@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+import "WeeklyBossResinDiscountInfo.proto";
+
+message InvestigationMonster {
+	enum LockState {
+		LOCK_NONE = 0;
+		LOCK_QUEST = 1;
+	}
+
+	uint32 id = 1;
+	uint32 city_id = 2;
+	uint32 level = 3;
+	bool is_alive = 4;
+	uint32 next_refresh_time = 5;
+	uint32 refresh_interval = 6;
+	Vector pos = 7;
+	LockState lock_state = 8;
+	uint32 max_boss_chest_num = 9;
+	uint32 boss_chest_num = 10;
+	uint32 resin = 11;
+	bool is_area_locked = 12;
+	uint32 next_boss_chest_refresh_time = 13;
+	WeeklyBossResinDiscountInfo weekly_boss_resin_discount_info = 14;
+	uint32 scene_id = 15;
+	uint32 group_id = 16;
+	uint32 monster_id = 17;
+}

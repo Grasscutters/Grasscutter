@@ -19,6 +19,7 @@ import emu.grasscutter.game.quest.ServerQuestHandler;
 import emu.grasscutter.game.shop.ShopManager;
 import emu.grasscutter.game.tower.TowerScheduleManager;
 import emu.grasscutter.game.world.World;
+import emu.grasscutter.game.world.WorldDataManager;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.netty.KcpServer;
@@ -58,6 +59,7 @@ public final class GameServer extends KcpServer {
 
 	private final CombineManger combineManger;
 	private final TowerScheduleManager towerScheduleManager;
+	private final WorldDataManager worldDataManager;
 
 	private static InetSocketAddress getAdapterInetSocketAddress(){
 		InetSocketAddress inetSocketAddress = null;
@@ -96,6 +98,7 @@ public final class GameServer extends KcpServer {
 		this.expeditionManager = new ExpeditionManager(this);
 		this.combineManger = new CombineManger(this);
 		this.towerScheduleManager = new TowerScheduleManager(this);
+		this.worldDataManager = new WorldDataManager(this);
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
@@ -164,6 +167,10 @@ public final class GameServer extends KcpServer {
 		return towerScheduleManager;
 	}
 
+	public WorldDataManager getWorldDataManager() {
+		return worldDataManager;
+	}
+
 	public TaskMap getTaskMap() {
 		return this.taskMap;
 	}
@@ -220,23 +227,23 @@ public final class GameServer extends KcpServer {
 		}
 		return DatabaseHelper.getAccountByName(username);
 	}
-	
-	public void onTick() throws Exception {
+
+	public synchronized void onTick(){
 		Iterator<World> it = this.getWorlds().iterator();
 		while (it.hasNext()) {
 			World world = it.next();
-			
+
 			if (world.getPlayerCount() == 0) {
 				it.remove();
 			}
-			
+
 			world.onTick();
 		}
-		
+
 		for (Player player : this.getPlayers().values()) {
 			player.onTick();
 		}
-  
+
 		ServerTickEvent event = new ServerTickEvent(); event.call();
 	}
 	

@@ -2,6 +2,7 @@ package emu.grasscutter.utils;
 
 import java.io.Serializable;
 
+import com.github.davidmoten.rtreemulti.geometry.Point;
 import com.google.gson.annotations.SerializedName;
 
 import dev.morphia.annotations.Entity;
@@ -161,5 +162,21 @@ public class Position implements Serializable {
 			.setY(this.getY())
 			.setZ(this.getZ())
 			.build();
+	}
+	public Point toPoint(){
+		return Point.create(x,y,z);
+	}
+
+	/**
+	 * To XYZ array for Spatial Index
+	 */
+	public double[] toDoubleArray(){
+		return new double[]{ x, y, z};
+	}
+	/**
+	 * To XZ array for Spatial Index (Blocks)
+	 */
+	public double[] toXZDoubleArray(){
+		return new double[]{x, z};
 	}
 }
