@@ -39,7 +39,7 @@ public class ForgingManager {
 	/**********
 		Blueprint unlocking.
 	**********/
-	public boolean unlockForgingBlueprint(GameItem blueprintItem) {
+	public synchronized boolean unlockForgingBlueprint(GameItem blueprintItem) {
 		// Make sure this is actually a forging blueprint.
 		if (!blueprintItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_FORGE")) {
 			return false;
@@ -59,7 +59,7 @@ public class ForgingManager {
 	/**********
 		Communicate forging information to the client.
 	**********/
-	private int determineNumberOfQueues() {
+	private synchronized int determineNumberOfQueues() {
 		int adventureRank = player.getLevel();
 		return 
 			(adventureRank >= 15) ? 4 
@@ -68,7 +68,7 @@ public class ForgingManager {
 			: 1;	
 	}
 
-	private Map<Integer, ForgeQueueData> determineCurrentForgeQueueData() {
+	private synchronized Map<Integer, ForgeQueueData> determineCurrentForgeQueueData() {
 		Map<Integer, ForgeQueueData> res = new HashMap<>();
 		int currentTime = Utils.getCurrentSeconds();
 
@@ -92,7 +92,7 @@ public class ForgingManager {
 		return res;
 	}
 
-	public void sendForgeDataNotify() {
+	public synchronized void sendForgeDataNotify() {
 		// Determine the number of queues and unlocked items.
 		int numQueues = this.determineNumberOfQueues();
 		var unlockedItems = this.player.getUnlockedForgingBlueprints();
@@ -102,7 +102,7 @@ public class ForgingManager {
 		this.player.sendPacket(new PacketForgeDataNotify(unlockedItems, numQueues, queueData));
 	}
 	
-	public void handleForgeGetQueueDataReq() {
+	public synchronized void handleForgeGetQueueDataReq() {
 		// Determine the number of queues.
 		int numQueues = this.determineNumberOfQueues();
 		var queueData = this.determineCurrentForgeQueueData();
@@ -114,11 +114,11 @@ public class ForgingManager {
 	/**********
 		Initiate forging process.
 	**********/
-	private void sendForgeQueueDataNotify() {
+	private synchronized void sendForgeQueueDataNotify() {
 		var queueData = this.determineCurrentForgeQueueData();
 		this.player.sendPacket(new PacketForgeQueueDataNotify(queueData, List.of()));
 	}
-	private void sendForgeQueueDataNotify(boolean hasRemoved) {
+	private synchronized void sendForgeQueueDataNotify(boolean hasRemoved) {
 		var queueData = this.determineCurrentForgeQueueData();
 
 		if (hasRemoved) {
@@ -128,7 +128,7 @@ public class ForgingManager {
 		this.player.sendPacket(new PacketForgeQueueDataNotify(queueData, List.of()));
 	}
 
-	public void handleForgeStartReq(ForgeStartReq req) {
+	public synchronized void handleForgeStartReq(ForgeStartReq req) {
 		// Refuse if all queues are already full.
 		if (this.player.getActiveForges().size() >= this.determineNumberOfQueues()) {
 			this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_QUEUE_FULL));
@@ -193,7 +193,7 @@ public class ForgingManager {
 	/**********
 		Forge queue manipulation (obtaining results and cancelling forges).
 	**********/
-	private void obtainItems(int queueId) {
+	private synchronized void obtainItems(int queueId) {
 		// Determin how many items are finished.
 		int currentTime = Utils.getCurrentSeconds();
 		ActiveForgeData forge = this.player.getActiveForges().get(queueId - 1);
@@ -221,10 +221,7 @@ public class ForgingManager {
 			remainingForge.setAvatarId(forge.getAvatarId());
 			remainingForge.setCount(unfinished);
 			remainingForge.setForgeTime(forge.getForgeTime());
-
-			// We simple restart the forge. This will increase the time, but is easier for now.
-			// ToDo: Make this more accurate.
-			remainingForge.setStartTime(currentTime);
+			remainingForge.setStartTime(forge.getStartTime() + finished * forge.getForgeTime());
 
 			this.player.getActiveForges().set(queueId - 1, remainingForge);
 			this.sendForgeQueueDataNotify();
@@ -240,7 +237,7 @@ public class ForgingManager {
 		this.player.sendPacket(new PacketForgeQueueManipulateRsp(Retcode.RET_SUCC, ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_RECEIVE_OUTPUT, List.of(addItem), List.of(), List.of()));
 	}
 
-	private void cancelForge(int queueId) {
+	private synchronized void cancelForge(int queueId) {
 		// Make sure there are no unfinished items.
 		int currentTime = Utils.getCurrentSeconds();
 		ActiveForgeData forge = this.player.getActiveForges().get(queueId - 1);
@@ -280,7 +277,7 @@ public class ForgingManager {
 		this.player.sendPacket(new PacketForgeQueueManipulateRsp(Retcode.RET_SUCC, ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_STOP_FORGE, List.of(), returnItems, List.of()));
 	}
 
-	public void handleForgeQueueManipulateReq(ForgeQueueManipulateReq req) {
+	public synchronized void handleForgeQueueManipulateReq(ForgeQueueManipulateReq req) {
 		// Get info from the request.
 		int queueId = req.getForgeQueueId();
 		var manipulateType = req.getManipulateType();
@@ -301,7 +298,7 @@ public class ForgingManager {
 	/**********
 		Periodic forging updates.
 	**********/
-	public void sendPlayerForgingUpdate() {
+	public synchronized void sendPlayerForgingUpdate() {
 		int currentTime = Utils.getCurrentSeconds();
 
 		// Determine if sending an update is necessary.
