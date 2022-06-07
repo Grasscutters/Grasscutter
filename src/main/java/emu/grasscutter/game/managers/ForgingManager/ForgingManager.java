@@ -118,9 +118,14 @@ public class ForgingManager {
 		var queueData = this.determineCurrentForgeQueueData();
 		this.player.sendPacket(new PacketForgeQueueDataNotify(queueData, List.of()));
 	}
-	private void sendForgeQueueDataNotify(int removed) {
+	private void sendForgeQueueDataNotify(boolean hasRemoved) {
 		var queueData = this.determineCurrentForgeQueueData();
-		this.player.sendPacket(new PacketForgeQueueDataNotify(queueData, List.of(removed)));
+
+		if (hasRemoved) {
+			this.player.sendPacket(new PacketForgeQueueDataNotify(Map.of(), List.of(1, 2, 3, 4)));
+		}
+
+		this.player.sendPacket(new PacketForgeQueueDataNotify(queueData, List.of()));
 	}
 
 	public void handleForgeStartReq(ForgeStartReq req) {
@@ -227,7 +232,8 @@ public class ForgingManager {
 		// Otherwise, completely remove it.
 		else {
 			this.player.getActiveForges().remove(queueId - 1);
-			this.sendForgeQueueDataNotify(queueId);
+			// this.sendForgeQueueDataNotify(queueId);
+			this.sendForgeQueueDataNotify(true);
 		}
 
 		// Send response.
@@ -268,7 +274,7 @@ public class ForgingManager {
 
 		// Remove the forge queue.
 		this.player.getActiveForges().remove(queueId - 1);
-		this.sendForgeQueueDataNotify(queueId);
+		this.sendForgeQueueDataNotify(true);
 
 		// Send response.
 		this.player.sendPacket(new PacketForgeQueueManipulateRsp(Retcode.RET_SUCC, ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_STOP_FORGE, List.of(), returnItems, List.of()));
