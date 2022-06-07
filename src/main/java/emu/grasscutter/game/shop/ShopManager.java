@@ -2,19 +2,24 @@ package emu.grasscutter.game.shop;
 
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.def.ShopGoodsData;
+import emu.grasscutter.data.excels.ShopGoodsData;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+
+import static emu.grasscutter.Configuration.*;
 
 public class ShopManager {
 	private final GameServer server;
@@ -56,7 +61,7 @@ public class ShopManager {
 	}
 
 	private void loadShop() {
-		try (FileReader fileReader = new FileReader(Grasscutter.getConfig().DATA_FOLDER + "Shop.json")) {
+		try (Reader fileReader = new InputStreamReader(DataLoader.load("Shop.json"))) {
 			getShopData().clear();
 			List<ShopTable> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopTable.class).getType());
 			if(banners.size() > 0) {
@@ -84,7 +89,7 @@ public class ShopManager {
 				Grasscutter.getLogger().error("Unable to load shop data. Shop data size is 0.");
 			}
 
-			if (Grasscutter.getConfig().getGameServerOptions().EnableOfficialShop) {
+			if (GAME_OPTIONS.enableShopItems) {
 				GameData.getShopGoodsDataEntries().forEach((k, v) -> {
 					if (!getShopData().containsKey(k.intValue()))
 						getShopData().put(k.intValue(), new ArrayList<>());
@@ -100,7 +105,7 @@ public class ShopManager {
 	}
 
 	private void loadShopChest() {
-		try (FileReader fileReader = new FileReader(Grasscutter.getConfig().DATA_FOLDER + "ShopChest.json")) {
+		try (Reader fileReader = new InputStreamReader(DataLoader.load("ShopChest.json"))) {
 			getShopChestData().clear();
 			List<ShopChestTable> shopChestTableList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopChestTable.class).getType());
 			if (shopChestTableList.size() > 0) {
@@ -115,7 +120,7 @@ public class ShopManager {
 	}
 
 	private void loadShopChestBatchUse() {
-		try (FileReader fileReader = new FileReader(Grasscutter.getConfig().DATA_FOLDER + "ShopChestBatchUse.json")) {
+		try (Reader fileReader = new InputStreamReader(DataLoader.load("ShopChestBatchUse.json"))) {
 			getShopChestBatchUseData().clear();
 			List<ShopChestBatchUseTable> shopChestBatchUseTableList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopChestBatchUseTable.class).getType());
 			if (shopChestBatchUseTableList.size() > 0) {

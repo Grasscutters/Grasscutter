@@ -1,5 +1,8 @@
 package emu.grasscutter.game.entity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.world.Scene;
@@ -9,8 +12,11 @@ import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public abstract class GameEntity {
 	protected int id;
@@ -25,9 +31,13 @@ public abstract class GameEntity {
 	private int lastMoveSceneTimeMs;
 	private int lastMoveReliableSeq;
 	
+	// Abilities
+	private Map<String, Float> metaOverrideMap;
+	private Int2ObjectMap<String> metaModifiers;
+	
 	public GameEntity(Scene scene) {
 		this.scene = scene;
-		this.moveState = MotionState.MOTION_NONE;
+		this.moveState = MotionState.MOTION_STATE_NONE;
 	}
 	
 	public int getId() {
@@ -54,6 +64,20 @@ public abstract class GameEntity {
 		return isAlive() ? LifeState.LIFE_ALIVE : LifeState.LIFE_DEAD;
 	}
 	
+	public Map<String, Float> getMetaOverrideMap() {
+		if (this.metaOverrideMap == null) {
+			this.metaOverrideMap = new HashMap<>();
+		}
+		return this.metaOverrideMap;
+	}
+	
+	public Int2ObjectMap<String> getMetaModifiers() {
+		if (this.metaModifiers == null) {
+			this.metaModifiers = new Int2ObjectOpenHashMap<>();
+		}
+		return this.metaModifiers;
+	}
+
 	public abstract Int2FloatOpenHashMap getFightProperties();
 	
 	public abstract Position getPosition();
@@ -145,5 +169,54 @@ public abstract class GameEntity {
 
 	public void setSpawnEntry(SpawnDataEntry spawnEntry) {
 		this.spawnEntry = spawnEntry;
+	}
+	
+	public float heal(float amount) {
+		if (this.getFightProperties() == null) {
+			return 0f;
+		}
+
+		float curHp = getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+		float maxHp = getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+		
+		if (curHp >= maxHp) {
+			return 0f;
+		}
+		
+		float healed = Math.min(maxHp - curHp, amount);
+		this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, healed);
+		
+		getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP));
+		
+		return healed;
+	}
+	
+	public void damage(float amount) {
+		damage(amount, 0);
+	}
+	
+	public void damage(float amount, int killerId) {
+		// Sanity check
+		if (getFightProperties() == null) {
+			return;
+		}
+		
+		// Lose hp
+		addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -amount);
+		
+		// Check if dead
+		boolean isDead = false;
+		if (getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
+			setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0f);
+			isDead = true;
+		}
+		
+		// Packets
+		this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP));
+		
+		// Check if dead
+		if (isDead) {
+			getScene().killEntity(this, killerId);
+		}
 	}
 }

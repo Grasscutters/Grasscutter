@@ -1,39 +1,25 @@
 package emu.grasscutter.game.world;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.Player.SceneLoadState;
-import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.EntityIdType;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.LifeState;
+import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.DungeonData;
-import emu.grasscutter.data.def.SceneData;
-import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.entity.EntityClientGadget;
-import emu.grasscutter.game.entity.EntityBaseGadget;
+import emu.grasscutter.data.excels.DungeonData;
+import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
-import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.data.SceneConfig;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketDelTeamEntityNotify;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
-import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
-import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
 import emu.grasscutter.server.packet.send.PacketScenePlayerInfoNotify;
 import emu.grasscutter.server.packet.send.PacketSyncScenePlayTeamEntityNotify;
 import emu.grasscutter.server.packet.send.PacketSyncTeamEntityNotify;
@@ -207,7 +193,7 @@ public class World implements Iterable<Player> {
 				World world = new World(victim);
 				world.addPlayer(victim);
 				
-				victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.ENTER_SELF, EnterReason.TeamKick, victim.getSceneId(), victim.getPos()));
+				victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.ENTER_TYPE_SELF, EnterReason.TeamKick, victim.getSceneId(), victim.getPos()));
 			}
 		}
 	}
@@ -274,14 +260,17 @@ public class World implements Iterable<Player> {
 		}
 
 		// Get enter types
-		EnterType enterType = EnterType.ENTER_JUMP;
+		EnterType enterType = EnterType.ENTER_TYPE_JUMP;
 		EnterReason enterReason = EnterReason.TransPoint;
 		
 		if (dungeonData != null) {
-			enterType = EnterType.ENTER_DUNGEON;
+			enterType = EnterType.ENTER_TYPE_DUNGEON;
 			enterReason = EnterReason.DungeonEnter;
 		} else if (oldScene == newScene) {
-			enterType = EnterType.ENTER_GOTO;
+			enterType = EnterType.ENTER_TYPE_GOTO;
+		} else if (newScene.getSceneType() == SceneType.SCENE_HOME_WORLD) {
+			// Home
+			enterType = EnterType.ENTER_TYPE_SELF_HOME;
 		}
 		
 		// Teleport packet

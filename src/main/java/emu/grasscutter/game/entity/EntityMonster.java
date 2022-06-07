@@ -2,9 +2,10 @@ package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.PropGrowCurve;
-import emu.grasscutter.data.def.MonsterCurveData;
-import emu.grasscutter.data.def.MonsterData;
+import emu.grasscutter.data.excels.MonsterCurveData;
+import emu.grasscutter.data.excels.MonsterData;
 import emu.grasscutter.game.dungeons.DungeonChallenge;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
@@ -112,15 +113,39 @@ public class EntityMonster extends GameEntity {
 	}
 
 	@Override
+	public void damage(float amount, int killerId) {
+		// Get HP before damage.
+		float hpBeforeDamage = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+
+		// Apply damage.
+		super.damage(amount, killerId);
+
+		// Get HP after damage.
+		float hpAfterDamage = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+
+		// Invoke energy drop logic.
+		for (Player player : this.getScene().getPlayers()) {
+			player.getEnergyManager().handleMonsterEnergyDrop(this, hpBeforeDamage, hpAfterDamage);
+		}
+	}
+
+	@Override
 	public void onDeath(int killerId) {
 		if (this.getSpawnEntry() != null) {
 			this.getScene().getDeadSpawnedEntities().add(getSpawnEntry());
 		}
-		if (getScene().getScriptManager().isInit() && this.getGroupId() > 0) {
-			getScene().getScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_DIE, null);
-		}
+		// first set the challenge data
 		if (getScene().getChallenge() != null && getScene().getChallenge().getGroup().id == this.getGroupId()) {
 			getScene().getChallenge().onMonsterDie(this);
+		}
+		if (getScene().getScriptManager().isInit() && this.getGroupId() > 0) {
+			if(getScene().getScriptManager().getScriptMonsterSpawnService() != null){
+				getScene().getScriptManager().getScriptMonsterSpawnService().onMonsterDead(this);
+			}
+			// prevent spawn monster after success
+			if(getScene().getChallenge() != null && getScene().getChallenge().inProgress()){
+				getScene().getScriptManager().callEvent(EventType.EVENT_ANY_MONSTER_DIE, null);
+			}
 		}
 	}
 	
@@ -186,7 +211,7 @@ public class EntityMonster extends GameEntity {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.PROT_ENTITY_MONSTER)
+				.setEntityType(ProtEntityType.PROT_ENTITY_TYPE_MONSTER)
 				.setMotionInfo(this.getMotionInfo())
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())
@@ -215,7 +240,7 @@ public class EntityMonster extends GameEntity {
 				.setAuthorityPeerId(getWorld().getHostPeerId())
 				.setPoseId(this.getPoseId())
 				.setBlockId(3001)
-				.setBornType(MonsterBornType.MONSTER_BORN_DEFAULT)
+				.setBornType(MonsterBornType.MONSTER_BORN_TYPE_DEFAULT)
 				.setSpecialNameId(40);
 		
 		if (getMonsterData().getDescribeData() != null) {

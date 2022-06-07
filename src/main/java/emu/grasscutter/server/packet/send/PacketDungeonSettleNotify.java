@@ -29,10 +29,10 @@ public class PacketDungeonSettleNotify extends BasePacket {
 	) {
 		super(PacketOpcodes.DungeonSettleNotify);
 
-		var continueStatus = TowerLevelEndNotify.ContinueStateType.CONTINUE_STATE_CAN_NOT_CONTINUE_VALUE;
+		var continueStatus = TowerLevelEndNotify.ContinueStateType.CONTINUE_STATE_TYPE_CAN_NOT_CONTINUE_VALUE;
 		if(challenge.isSuccess() && canJump){
-			continueStatus = hasNextLevel ? TowerLevelEndNotify.ContinueStateType.CONTINUE_STATE_CAN_ENTER_NEXT_LEVEL_VALUE
-					:  TowerLevelEndNotify.ContinueStateType.CONTINUE_STATE_CAN_ENTER_NEXT_FLOOR_VALUE;
+			continueStatus = hasNextLevel ? TowerLevelEndNotify.ContinueStateType.CONTINUE_STATE_TYPE_CAN_ENTER_NEXT_LEVEL_VALUE
+					:  TowerLevelEndNotify.ContinueStateType.CONTINUE_STATE_TYPE_CAN_ENTER_NEXT_FLOOR_VALUE;
 		}
 
 		var towerLevelEndNotify = TowerLevelEndNotify.newBuilder()
@@ -46,7 +46,7 @@ public class PacketDungeonSettleNotify extends BasePacket {
 						.setCount(1000)
 						.build())
 				;
-		if(nextFloorId > 0){
+		if(nextFloorId > 0 && canJump){
 			towerLevelEndNotify.setNextFloorId(nextFloorId);
 		}
 

@@ -3,22 +3,22 @@ package emu.grasscutter.data.common;
 import java.util.List;
 
 public class OpenCondData {
-    private String CondType;
-    private List<Integer> ParamList;
+    private String condType;
+    private List<Integer> paramList;
 
     public String getCondType() {
-        return CondType;
+        return condType;
     }
 
     public void setCondType(String condType) {
-        CondType = condType;
+        condType = condType;
     }
 
     public List<Integer> getParamList() {
-        return ParamList;
+        return paramList;
     }
 
     public void setParamList(List<Integer> paramList) {
-        ParamList = paramList;
+        paramList = paramList;
     }
 }

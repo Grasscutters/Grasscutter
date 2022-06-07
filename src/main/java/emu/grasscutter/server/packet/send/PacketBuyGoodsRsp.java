@@ -11,7 +11,7 @@ public class PacketBuyGoodsRsp extends BasePacket {
 
         BuyGoodsRspOuterClass.BuyGoodsRsp buyGoodsRsp = BuyGoodsRspOuterClass.BuyGoodsRsp.newBuilder()
                 .setShopType(shopType)
-                .setBoughtNum(boughtNum)
+                .setBuyCount(boughtNum)
                 .addGoodsList(ShopGoodsOuterClass.ShopGoods.newBuilder()
                         .mergeFrom(sg)
                         .setBoughtNum(boughtNum)

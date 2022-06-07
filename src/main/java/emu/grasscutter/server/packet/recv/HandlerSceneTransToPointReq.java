@@ -1,7 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.custom.ScenePointEntry;
+import emu.grasscutter.data.binout.ScenePointEntry;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SceneTransToPointReqOuterClass.SceneTransToPointReq;

@@ -12,7 +12,7 @@ set CUR_PATH=%~dp0
 @rem Executable Path
 @rem Note: Fill DO_NOT_CHECK_PATH if you need to run it from PATH
 @rem without detecting whether the executable file exists
-set JAVA_PATH=C:\Program Files\Java\jdk1.8.0_202\bin\
+set JAVA_PATH=%JAVA_HOME%\bin\
 set MITMDUMP_PATH=%CUR_PATH%
 set MONGODB_PATH=%CUR_PATH%
 
