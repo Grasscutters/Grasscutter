@@ -48,11 +48,15 @@ public class ForgingManager {
 		// Determine the forging item we should unlock.
 		int forgeId = Integer.parseInt(blueprintItem.getItemData().getItemUse().get(0).getUseParam().get(0));
 
-		// Tell the client that this blueprint is now unlocked and add the unlocked item to the player.
-		this.player.sendPacket(new PacketForgeFormulaDataNotify(forgeId));
-		this.player.getUnlockedForgingBlueprints().add(forgeId);
+		// Remove the blueprint from the player's inventory.
+		// We need to do this here, before sending ForgeFormulaDataNotify, or the the forging UI won't correctly
+		// update when unlocking the blueprint.
+		player.getInventory().removeItem(blueprintItem, 1);
 
-		// Done.
+		// Tell the client that this blueprint is now unlocked and add the unlocked item to the player.
+		this.player.getUnlockedForgingBlueprints().add(forgeId);
+		this.player.sendPacket(new PacketForgeFormulaDataNotify(forgeId));
+
 		return true;
 	}
 
