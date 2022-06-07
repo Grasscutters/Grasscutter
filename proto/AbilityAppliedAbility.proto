@@ -2,8 +2,8 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "AbilityString.proto";
 import "AbilityScalarValueEntry.proto";
+import "AbilityString.proto";
 
 message AbilityAppliedAbility {
 	AbilityString ability_name = 1;

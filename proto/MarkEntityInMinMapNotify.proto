@@ -4,16 +4,11 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "Vector.proto";
 
+// CmdId: 202
+// EnetChannelId: 0
+// EnetIsReliable: true
 message MarkEntityInMinMapNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 249;
-	}
-
-	uint32 entity_id = 1;
-	Vector position = 2;
-	uint32 monster_id = 3;
+	uint32 entity_id = 5;
+	Vector position = 13;
+	uint32 monster_id = 6;
 }

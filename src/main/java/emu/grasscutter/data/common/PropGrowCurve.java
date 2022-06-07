@@ -1,13 +1,15 @@
 package emu.grasscutter.data.common;
 
 public class PropGrowCurve {
-    private String Type;
-    private String GrowCurve;
+    private String type;
+    private String growCurve;
 
     public String getType(){
-        return this.Type;
+        return this.type;
     }
+    
     public String getGrowCurve(){
-        return this.GrowCurve;
+        return this.growCurve;
     }
+    
 }

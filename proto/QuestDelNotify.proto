@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 441
+// EnetChannelId: 0
+// EnetIsReliable: true
+message QuestDelNotify {
+	uint32 quest_id = 12;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AnchorPointData.proto";
+
+// CmdId: 4268
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AnchorPointDataNotify {
+	repeated AnchorPointData anchor_point_list = 14;
+	uint32 next_usable_time = 6;
+}

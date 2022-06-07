@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 299
+// EnetChannelId: 0
+// EnetIsReliable: true
+message CutSceneEndNotify {
+	int32 retcode = 8;
+	uint32 cutscene_id = 11;
+}

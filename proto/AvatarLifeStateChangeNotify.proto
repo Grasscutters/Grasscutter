@@ -5,20 +5,15 @@ option java_package = "emu.grasscutter.net.proto";
 import "PlayerDieType.proto";
 import "ServerBuff.proto";
 
+// CmdId: 1235
+// EnetChannelId: 0
+// EnetIsReliable: true
 message AvatarLifeStateChangeNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 1242;
-	}
-
-	uint64 avatar_guid = 1;
-	uint32 life_state = 2;
-	uint32 source_entity_id = 3;
-	string attack_tag = 4;
-	PlayerDieType die_type = 5;
-	uint32 move_reliable_seq = 6;
-	repeated ServerBuff server_buff_list = 7;
+	uint64 avatar_guid = 8;
+	uint32 life_state = 15;
+	uint32 source_entity_id = 1;
+	string attack_tag = 10;
+	PlayerDieType die_type = 11;
+	uint32 move_reliable_seq = 7;
+	repeated ServerBuff server_buff_list = 6;
 }

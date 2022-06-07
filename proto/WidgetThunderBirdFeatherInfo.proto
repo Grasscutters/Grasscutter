@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message WidgetThunderBirdFeatherInfo {
+	repeated uint32 entity_id_list = 1;
+}

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.GadgetData;
+import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
@@ -122,7 +122,7 @@ public class EntityGadget extends EntityBaseGadget {
 		
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
-				.setEntityType(ProtEntityType.PROT_ENTITY_GADGET)
+				.setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
 				.setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
 				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
 				.setEntityClientData(EntityClientData.newBuilder())

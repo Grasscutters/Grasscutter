@@ -1,7 +1,8 @@
 package emu.grasscutter.game.combine;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.CombineData;
+import emu.grasscutter.data.common.ItemParamData;
+import emu.grasscutter.data.excels.CombineData;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
@@ -71,7 +72,7 @@ public class CombineManger {
 
         CombineResult result = new CombineResult();
         result.setMaterial(List.of());
-        result.setResult(List.of(new CombineData.CombineItemPair(combineData.getResultItemId(),
+        result.setResult(List.of(new ItemParamData(combineData.getResultItemId(),
                 combineData.getResultItemCount() * count)));
         // TODO lucky characters
         result.setExtra(List.of());

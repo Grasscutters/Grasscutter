@@ -2,38 +2,35 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
+// CmdId: 131
+// EnetChannelId: 0
+// EnetIsReliable: true
 message GetPlayerTokenRsp {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 118;
-	}
-
-	int32 retcode = 1;
-	string msg = 2;
-	uint32 uid = 3;
-	string token = 4;
-	uint32 black_uid_end_time = 5;
-	uint32 account_type = 6;
-	string account_uid = 7;
-	bool is_proficient_player = 8;
-	string secret_key = 9;
-	uint32 gm_uid = 10;
+	int32 retcode = 7;
+	string msg = 10;
+	uint32 uid = 2;
+	string token = 1;
+	uint32 black_uid_end_time = 15;
+	uint32 account_type = 12;
+	string account_uid = 4;
+	bool is_proficient_player = 5;
+	string secret_key = 13;
+	uint32 gm_uid = 14;
 	uint64 secret_key_seed = 11;
-	bytes security_cmd_buffer = 12;
-	uint32 platform_type = 13;
-	bytes extra_bin_data = 14;
-	bool is_guest = 15;
-	uint32 channel_id = 16;
-	uint32 sub_channel_id = 17;
-	uint32 tag = 18;
-	string country_code = 19;
-	bool is_login_white_list = 20;
-	string psn_id = 21;
-	string client_version_random_key = 22;
-	uint32 reg_platform = 23;
-	string client_ip_str = 24;
+	bytes security_cmd_buffer = 6;
+	uint32 platform_type = 3;
+	bytes extra_bin_data = 8;
+	bool is_guest = 9;
+	uint32 channel_id = 1614;
+	uint32 sub_channel_id = 1911;
+	uint32 tag = 1855;
+	string country_code = 739;
+	bool is_login_white_list = 977;
+	string psn_id = 245;
+	string client_version_random_key = 1387;
+	uint32 reg_platform = 633;
+	string client_ip_str = 1238;
+	string birthday = 1109;
+	uint32 NNCIBOLDIAI = 1728;
+	bool FNECFLEAKKO = 1679;
 }

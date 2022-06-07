@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CodexTypeData.proto";
+
+// CmdId: 4201
+// EnetChannelId: 0
+// EnetIsReliable: true
+message CodexDataFullNotify {
+	repeated CodexTypeData type_data_list = 5;
+	repeated uint32 IGMFFAGOCIA = 11;
+	uint32 BIFMJKDHHLG = 8;
+	uint32 AEHJDIPOLHC = 10;
+}

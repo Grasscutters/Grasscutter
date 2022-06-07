@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum CodexType {
+	CODEX_TYPE_NONE = 0;
+	CODEX_TYPE_QUEST = 1;
+	CODEX_TYPE_WEAPON = 2;
+	CODEX_TYPE_ANIMAL = 3;
+	CODEX_TYPE_MATERIAL = 4;
+	CODEX_TYPE_BOOKS = 5;
+	CODEX_TYPE_PUSHTIPS = 6;
+	CODEX_TYPE_VIEW = 7;
+	CODEX_TYPE_RELIQUARY = 8;
+}

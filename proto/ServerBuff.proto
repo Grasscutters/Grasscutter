@@ -2,7 +2,6 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
 message ServerBuff {
 	uint32 server_buff_uid = 1;
 	uint32 server_buff_id = 2;

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4205
+// EnetChannelId: 0
+// EnetIsReliable: true
+message QueryCodexMonsterBeKilledNumRsp {
+	int32 retcode = 1;
+	repeated uint32 codex_id_list = 4;
+	repeated uint32 be_killed_num_list = 11;
+	repeated uint32 CHPBKCLKPCJ = 2;
+}

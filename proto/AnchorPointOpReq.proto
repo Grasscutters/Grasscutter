@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4254
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message AnchorPointOpReq {
+	uint32 anchor_point_op_type = 6;
+	uint32 anchor_point_id = 1;
+
+	enum AnchorPointOpType {
+		ANCHOR_POINT_OP_TYPE_NONE = 0;
+		ANCHOR_POINT_OP_TYPE_TELEPORT = 1;
+		ANCHOR_POINT_OP_TYPE_REMOVE = 2;
+	}
+}

@@ -2,17 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
+// CmdId: 1031
+// EnetChannelId: 0
+// EnetIsReliable: true
 message UnlockAvatarTalentRsp {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 1018;
-	}
-
-	int32 retcode = 1;
-	uint64 avatar_guid = 2;
-	uint32 talent_id = 3;
+	int32 retcode = 2;
+	uint64 avatar_guid = 14;
+	uint32 talent_id = 12;
 }

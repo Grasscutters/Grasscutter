@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ClientCollectorData.proto";
+
+// CmdId: 4264
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ClientCollectorDataNotify {
+	repeated ClientCollectorData client_collector_data_list = 8;
+}

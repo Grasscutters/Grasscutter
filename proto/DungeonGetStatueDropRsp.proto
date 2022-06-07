@@ -2,6 +2,9 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 906
+// EnetChannelId: 0
+// EnetIsReliable: true
 message DungeonGetStatueDropRsp {
-	int32 retcode = 1;
+	int32 retcode = 13;
 }

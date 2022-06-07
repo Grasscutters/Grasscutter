@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "WidgetGadgetData.proto";
+
+// CmdId: 4285
+// EnetChannelId: 0
+// EnetIsReliable: true
+message WidgetGadgetAllDataNotify {
+	repeated WidgetGadgetData widget_gadget_data = 8;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4278
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AnchorPointOpRsp {
+	int32 retcode = 13;
+	uint32 anchor_point_op_type = 3;
+	uint32 anchor_point_id = 2;
+}

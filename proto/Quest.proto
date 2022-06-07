@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message Quest {
+	uint32 quest_id = 1;
+	uint32 state = 2;
+	uint32 start_time = 4;
+	bool is_random = 5;
+	uint32 parent_quest_id = 6;
+	uint32 quest_config_id = 7;
+	uint32 start_game_time = 8;
+	uint32 accept_time = 9;
+	repeated uint32 lacked_npc_list = 10;
+	repeated uint32 finish_progress_list = 11;
+	repeated uint32 fail_progress_list = 12;
+	map<uint32, uint32> lacked_npc_map = 13;
+	repeated uint32 lacked_place_list = 14;
+	map<uint32, uint32> lacked_place_map = 15;
+}

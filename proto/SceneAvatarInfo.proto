@@ -2,10 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "SceneWeaponInfo.proto";
-import "CurVehicleInfo.proto";
 import "AvatarExcelInfo.proto";
+import "CurVehicleInfo.proto";
 import "SceneReliquaryInfo.proto";
+import "SceneWeaponInfo.proto";
 import "ServerBuff.proto";
 
 message SceneAvatarInfo {

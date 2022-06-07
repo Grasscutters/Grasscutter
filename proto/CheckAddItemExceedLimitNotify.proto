@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 653
+// EnetChannelId: 0
+// EnetIsReliable: true
+message CheckAddItemExceedLimitNotify {
+	bool is_drop = 1;
+	repeated uint32 exceeded_item_list = 8;
+	repeated uint32 exceeded_item_type_list = 3;
+	ItemExceedLimitMsgType msg_type = 14;
+
+	enum ItemExceedLimitMsgType {
+		ITEM_EXCEED_LIMIT_MSG_TYPE_DEFAULT = 0;
+		ITEM_EXCEED_LIMIT_MSG_TYPE_TEXT = 1;
+		ITEM_EXCEED_LIMIT_MSG_TYPE_DIALOG = 2;
+		ITEM_EXCEED_LIMIT_MSG_TYPE_BONLGEEEBBF = 3;
+	}
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+//import "AHCELAJGOLN.proto";
+import "ClientCollectorData.proto";
+import "OneoffGatherPointDetectorData.proto";
+
+// CmdId: 4252
+// EnetChannelId: 0
+// EnetIsReliable: true
+message QuickUseWidgetRsp {
+	int32 retcode = 9;
+	uint32 material_id = 1;
+	oneof ELHGGAPPEBG {
+		OneoffGatherPointDetectorData detector_data = 11;
+		ClientCollectorData client_collector_data = 3;
+		//AHCELAJGOLN sky_crystal_detector_quick_use_result = 32767;
+	}
+}

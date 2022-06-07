@@ -12,7 +12,7 @@ public class PacketEvtAvatarStandUpNotify extends BasePacket {
         EvtAvatarStandUpNotify proto = EvtAvatarStandUpNotify.newBuilder()
                 .setEntityId(notify.getEntityId())
                 .setDirection(notify.getDirection())
-                .setPerformID(notify.getPerformID())
+                .setPerformId(notify.getPerformId())
                 .setChairId(notify.getChairId())
                 .build();
 

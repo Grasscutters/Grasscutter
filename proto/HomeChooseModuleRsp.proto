@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4745
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeChooseModuleRsp {
+	int32 retcode = 5;
+	uint32 module_id = 11;
+}

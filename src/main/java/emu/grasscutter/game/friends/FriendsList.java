@@ -104,7 +104,7 @@ public class FriendsList {
 		}
 
 		// Handle
-		if (result == DealAddFriendResultType.DEAL_ADD_FRIEND_ACCEPT) { // Request accepted
+		if (result == DealAddFriendResultType.DEAL_ADD_FRIEND_RESULT_TYPE_ACCEPT) { // Request accepted
 			myFriendship.setIsFriend(true);
 			theirFriendship.setIsFriend(true);
 			

@@ -2,8 +2,9 @@ package emu.grasscutter.game.drop;
 
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.ItemData;
+import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.inventory.GameItem;
@@ -17,7 +18,8 @@ import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.Collection;
 import java.util.List;
 
@@ -41,7 +43,7 @@ public class DropManager {
     }
 
     public synchronized void load() {
-        try (FileReader fileReader = new FileReader(Grasscutter.getConfig().DATA_FOLDER + "Drop.json")) {
+        try (Reader fileReader = new InputStreamReader(DataLoader.load("Drop.json"))) {
             getDropData().clear();
             List<DropInfo> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, DropInfo.class).getType());
             if(banners.size() > 0) {
@@ -69,9 +71,7 @@ public class DropManager {
             } else {
                 // target is null if items will be added are shared. no one could pick it up because of the combination(give + shared)
                 // so it will be sent to all players' inventories directly.
-                dropScene.getPlayers().forEach(x -> {
-                    x.getInventory().addItem(new GameItem(itemData, num), ActionReason.SubfieldDrop, true);
-                });
+                dropScene.getPlayers().forEach(x -> x.getInventory().addItem(new GameItem(itemData, num), ActionReason.SubfieldDrop, true));
             }
         }
     }

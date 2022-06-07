@@ -70,16 +70,14 @@ public class LuaSerializer implements Serializer {
 		}
 		
 		try {
-			object = type.getDeclaredConstructor().newInstance(null);
+			//noinspection ConfusingArgumentToVarargsMethod
+			object = type.getDeclaredConstructor().newInstance();
 			
 			LuaValue[] keys = table.keys();
 			for (LuaValue k : keys) {
 				try {
 					Field field = object.getClass().getDeclaredField(k.checkjstring());
-					if (field == null) {
-						continue;
-					}
-					
+
 					field.setAccessible(true);
 					LuaValue keyValue = table.get(k);
 

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ParentQuest.proto";
+
+// CmdId: 432
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FinishedParentQuestUpdateNotify {
+	repeated ParentQuest parent_quest_list = 6;
+}

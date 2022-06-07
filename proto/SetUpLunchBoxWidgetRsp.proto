@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "LunchBoxData.proto";
+
+// CmdId: 4266
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SetUpLunchBoxWidgetRsp {
+	int32 retcode = 9;
+	LunchBoxData lunch_box_data = 3;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 819
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message CreateVehicleReq {
+	uint32 vehicle_id = 9;
+	uint32 scene_point_id = 15;
+	Vector pos = 1;
+	Vector rot = 7;
+}

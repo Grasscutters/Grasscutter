@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 4283
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message UseWidgetCreateGadgetReq {
+	uint32 material_id = 1;
+	Vector pos = 10;
+	Vector rot = 4;
+}

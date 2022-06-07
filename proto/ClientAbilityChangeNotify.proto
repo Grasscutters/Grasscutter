@@ -4,16 +4,12 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "AbilityInvokeEntry.proto";
 
+// CmdId: 1127
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message ClientAbilityChangeNotify {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 1126;
-	}
-
-	uint32 entity_id = 1;
-	repeated AbilityInvokeEntry invokes = 2;
+	uint32 entity_id = 6;
+	repeated AbilityInvokeEntry invokes = 8;
+	bool JCJNLMLGHJE = 10;
 }

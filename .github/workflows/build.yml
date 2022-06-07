@@ -25,6 +25,16 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+      - name: Cache gradle files
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ./.gradle/loom-cache
+          key: ${{ runner.os }}-gradle-${{ hashFiles('*.gradle', 'gradle.properties', '**/*.accesswidener') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
       - name: Run Gradle
         run: ./gradlew && ./gradlew jar
       - name: Upload build

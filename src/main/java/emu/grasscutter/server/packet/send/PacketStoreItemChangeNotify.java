@@ -18,7 +18,7 @@ public class PacketStoreItemChangeNotify extends BasePacket {
 		this();
 		
 		StoreItemChangeNotify.Builder proto = StoreItemChangeNotify.newBuilder()
-				.setStoreType(StoreType.STORE_PACK)
+				.setStoreType(StoreType.STORE_TYPE_PACK)
 				.addItemList(item.toProto());
 		
 		this.setData(proto);
@@ -28,7 +28,7 @@ public class PacketStoreItemChangeNotify extends BasePacket {
 		this();
 
 		StoreItemChangeNotify.Builder proto = StoreItemChangeNotify.newBuilder()
-				.setStoreType(StoreType.STORE_PACK);
+				.setStoreType(StoreType.STORE_TYPE_PACK);
 		
 		items.forEach(item -> proto.addItemList(item.toProto()));
 		

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4610
+// EnetChannelId: 0
+// EnetIsReliable: true
+message TryEnterHomeRsp {
+	int32 retcode = 12;
+	uint32 target_uid = 2;
+	repeated uint32 param_list = 11;
+}

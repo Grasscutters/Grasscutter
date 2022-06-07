@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4299
+// EnetChannelId: 0
+// EnetIsReliable: true
+message WidgetUseAttachAbilityGroupChangeNotify {
+	uint32 material_id = 4;
+	bool is_attach = 11;
+}

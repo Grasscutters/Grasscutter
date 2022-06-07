@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "QuestGlobalVar.proto";
+
+// CmdId: 411
+// EnetChannelId: 0
+// EnetIsReliable: true
+message QuestGlobalVarNotify {
+	repeated QuestGlobalVar var_list = 9;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+message AnchorPointData {
+	uint32 anchor_point_id = 1;
+	Vector pos = 2;
+	Vector rot = 3;
+	uint32 end_time = 4;
+	uint32 scene_id = 5;
+}

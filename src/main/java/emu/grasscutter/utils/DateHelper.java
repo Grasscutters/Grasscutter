@@ -1,7 +1,7 @@
 package emu.grasscutter.utils;
 
-import java.util.Date;
 import java.util.Calendar;
+import java.util.Date;
 
 public final class DateHelper {
     public static Date onlyYearMonthDay(Date now) {
@@ -13,4 +13,8 @@ public final class DateHelper {
 		calendar.set(Calendar.MILLISECOND, 0);
 		return calendar.getTime();
     }
+
+	public static int getUnixTime(Date localDateTime){
+		return (int)(localDateTime.getTime() / 1000L);
+	}
 }

@@ -1,0 +1,22 @@
+{
+  "t": "{{SYSTEM_TIME}}",
+  "list": [
+    {
+      "ann_id": 1,
+      "title": "<strong>Welcome to Grasscutter!</strong>",
+      "subtitle": "Welcome!",
+      "banner": "{{DISPATCH_PUBLIC}}/hk4e/announcement/assets/banner/1.jpg",
+      "content": "<p>Hi there!</p><p>First of all, welcome to Grasscutter. If you have any issues, please let us know so that Lawnmower can help you!</p><br><p><strong>〓Discord〓</strong></p><a href=\"https://discord.gg/T5vZU6UyeG\">https://discord.gg/T5vZU6UyeG</a><br><br><p><strong>〓GitHub〓</strong><a href=\"https://github.com/Grasscutters/Grasscutter\">https://github.com/Grasscutters/Grasscutter</a>",
+      "lang": "en-US"
+    },
+    {
+      "ann_id": 2,
+      "title": "<strong>How to use announcements</strong>",
+      "subtitle": "How to use announcements",
+      "banner": "{{DISPATCH_PUBLIC}}/hk4e/announcement/assets/banner/2.jpg",
+      "content": "<p>Announcement content uses HTML. The specific content of the announcement is stored in the program directory <code>GameAnnouncement.json</code>, while <code>GameAnnouncementList.json</code> stores the announcement list data.</p><h2><code>GameAnnouncement</code></h2><table><tr><th>Parameter</th><th>Description</th></tr><tr><td>ann_id</td><td>Unique ID</td></tr><tr><td>title</td><td>Title shown at the top of the content</td></tr><tr><td>subtitle</td><td>Short title shown on the left</td></tr><tr><td>banner</td><td>Image to display between content and title</td></tr><tr><td>content</td><td>Content body in HTML</td></tr><tr><td>lang</td><td>Language code for this entry</td></tr></table><h2><code>GameAnnouncementList</code></h2><p>If you want to add an announcement, please add the list data in the announcement type corresponding to <code>GameAnnouncementList</code>, and finally add the announcement content in <code>GameAnnouncement</code>.</p>",
+      "lang": "en-US"
+    }
+  ],
+  "total": 2
+}

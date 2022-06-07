@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 486
+// EnetChannelId: 0
+// EnetIsReliable: true
+message QuestUpdateQuestVarRsp {
+	int32 retcode = 8;
+	uint32 quest_id = 7;
+	uint32 parent_quest_id = 12;
+	uint32 parent_quest_var_seq = 3;
+}

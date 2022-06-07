@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "WidgetSlotData.proto";
+
+// CmdId: 4300
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetWidgetSlotRsp {
+	int32 retcode = 12;
+	repeated WidgetSlotData slot_list = 8;
+}

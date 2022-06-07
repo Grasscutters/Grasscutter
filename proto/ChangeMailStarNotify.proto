@@ -2,7 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 1407
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message ChangeMailStarNotify {
-  repeated uint32 mail_id_list = 1;
-  bool is_star = 2;
+	repeated uint32 mail_id_list = 5;
+	bool is_star = 9;
 }

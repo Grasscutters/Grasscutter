@@ -2,15 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 688
+// EnetChannelId: 0
+// EnetIsReliable: true
 message CombineFormulaDataNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 682;
-	}
-
-	uint32 combine_id = 1;
-	bool is_locked = 2;
+	uint32 combine_id = 6;
+	bool is_locked = 5;
 }

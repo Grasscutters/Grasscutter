@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4287
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message WidgetReportReq {
+	uint32 material_id = 7;
+	bool is_clear_hint = 13;
+	bool is_client_collect = 9;
+	bool BHCBOJNGOIK = 1;
+}

@@ -4,14 +4,9 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "PropValue.proto";
 
+// CmdId: 127
+// EnetChannelId: 0
+// EnetIsReliable: true
 message PlayerPropNotify {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 126;
-	}
-
-	map<uint32, PropValue> prop_map = 1;
+	map<uint32, PropValue> prop_map = 10;
 }

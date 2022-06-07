@@ -3,10 +3,10 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 enum ResinCostType {
-	NONE = 0;
-	NORMAL = 1;
-	CONDENSE = 2;
-	REUNION_PRIVILEGE = 3;
-	OP_ACTIVITY = 4;
-	MATERIAL = 5;
+	RESIN_COST_TYPE_NONE = 0;
+	RESIN_COST_TYPE_NORMAL = 1;
+	RESIN_COST_TYPE_CONDENSE = 2;
+	RESIN_COST_TYPE_REUNION_PRIVILEGE = 3;
+	RESIN_COST_TYPE_OP_ACTIVITY = 4;
+	RESIN_COST_TYPE_MATERIAL = 5;
 }

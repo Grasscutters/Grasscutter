@@ -2,16 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-
+// CmdId: 3321
+// EnetChannelId: 0
+// EnetIsReliable: true
 message PlayerChatRsp {
-	enum CmdId {
-		option allow_alias = true;
-		NONE = 0;
-		ENET_CHANNEL_ID = 0;
-		ENET_IS_RELIABLE = 1;
-		CMD_ID = 3485;
-	}
-
-	int32 retcode = 1;
-	uint32 chat_forbidden_endtime = 2;
+	int32 retcode = 4;
+	uint32 chat_forbidden_endtime = 15;
 }

@@ -2,6 +2,8 @@ package emu.grasscutter.utils;
 
 import java.io.Serializable;
 
+import com.google.gson.annotations.SerializedName;
+
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 
@@ -9,8 +11,13 @@ import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 public class Position implements Serializable {
 	private static final long serialVersionUID = -2001232313615923575L;
 	
+	@SerializedName(value="x", alternate={"_x", "X"})
 	private float x;
+	
+	@SerializedName(value="y", alternate={"_y", "Y"})
 	private float y;
+	
+	@SerializedName(value="z", alternate={"_z", "Z"})
 	private float z;
 	
 	public Position() {

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "WidgetSlotData.proto";
+import "WidgetSlotOp.proto";
+
+// CmdId: 4274
+// EnetChannelId: 0
+// EnetIsReliable: true
+message WidgetSlotChangeNotify {
+	WidgetSlotOp op = 6;
+	WidgetSlotData slot = 8;
+}
