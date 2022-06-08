@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ForgeQueueData.proto";
+
+// CmdId: 633
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ForgeQueueDataNotify {
+	map<uint32, ForgeQueueData> forge_queue_map = 14;
+	repeated uint32 removed_forge_queue_list = 8;
+}
