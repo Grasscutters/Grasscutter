@@ -73,7 +73,6 @@ public interface AuthenticationSystem {
     class AuthenticationRequest {
         private final Request request;
         @Nullable private final Response response;
-        
         @Nullable private final LoginAccountRequestJson passwordRequest;
         @Nullable private final LoginTokenRequestJson tokenRequest;
         @Nullable private final ComboTokenReqJson sessionKeyRequest;

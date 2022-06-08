@@ -21,13 +21,13 @@ import emu.grasscutter.game.tower.TowerScheduleManager;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.netty.KcpServer;
 import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
 import emu.grasscutter.task.TaskMap;
-import emu.grasscutter.BuildConfig;
+import kcp.ChannelConfig;
+import kcp.KcpServer;
 
 import java.net.InetSocketAddress;
 import java.time.OffsetDateTime;
@@ -75,9 +75,14 @@ public final class GameServer extends KcpServer {
 		this(getAdapterInetSocketAddress());
 	}
 	public GameServer(InetSocketAddress address) {
-		super(address);
+		ChannelConfig channelConfig = new ChannelConfig();
+		channelConfig.nodelay(true,40,2,true);
+		channelConfig.setAckNoDelay(false);
+		channelConfig.setTimeoutMillis(10000);
+		channelConfig.setUseConvChannel(true);
 
-		this.setServerInitializer(new GameServerInitializer(this));
+		this.init(GameSessionManager.getListener(),channelConfig,address.getPort());
+
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
 		this.questHandler = new ServerQuestHandler();
@@ -248,9 +253,20 @@ public final class GameServer extends KcpServer {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public void onServerShutdown() {
+		ServerStopEvent event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 
-	@Override
-	public synchronized void start() {
+		// Kick and save all players
+		List<Player> list = new ArrayList<>(this.getPlayers().size());
+		list.addAll(this.getPlayers().values());
+		
+		for (Player player : list) {
+			player.getSession().close();
+		}
+	}
+
+	public void start() {
 		// Schedule game loop.
 		Timer gameLoop = new Timer();
 		gameLoop.scheduleAtFixedRate(new TimerTask() {
@@ -263,26 +279,9 @@ public final class GameServer extends KcpServer {
 				}
 			}
 		}, new Date(), 1000L);
-
-		super.start();
-	}
-
-	@Override
-	public void onStartFinish() {
 		Grasscutter.getLogger().info(translate("messages.status.free_software"));
 		Grasscutter.getLogger().info(translate("messages.game.port_bind", Integer.toString(address.getPort())));
-		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
-	}
-	
-	public void onServerShutdown() {
-		ServerStopEvent event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
-
-		// Kick and save all players
-		List<Player> list = new ArrayList<>(this.getPlayers().size());
-		list.addAll(this.getPlayers().values());
-		
-		for (Player player : list) {
-			player.getSession().close();
-		}
+		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now());
+		event.call();
 	}
 }

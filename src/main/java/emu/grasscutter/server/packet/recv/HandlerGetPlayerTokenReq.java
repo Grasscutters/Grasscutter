@@ -11,7 +11,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GetPlayerTokenReqOuterClass.GetPlayerTokenReq;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.event.game.PlayerCreationEvent;
-import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.PacketGetPlayerTokenRsp;
@@ -21,7 +20,6 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 	
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-
 		GetPlayerTokenReq req = GetPlayerTokenReq.parseFrom(payload);
 		
 		// Authenticate
@@ -85,7 +83,6 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 		// Set session state
 		session.setUseSecretKey(true);
 		session.setState(SessionState.WAITING_FOR_LOGIN);
-
 		// Send packet
 		session.send(new PacketGetPlayerTokenRsp(session));
 	}
