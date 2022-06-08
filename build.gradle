@@ -85,7 +85,10 @@ dependencies {
     implementation group: 'org.quartz-scheduler', name: 'quartz-jobs', version: '2.3.2'
 
     implementation group: 'org.luaj', name: 'luaj-jse', version: '3.0.1'
-
+	
+    implementation group: 'org.jctools', name: 'jctools-core', version: '3.3.0'
+    implementation group: 'com.lmax', name: 'disruptor', version: '3.4.2'
+	
     protobuf files('proto/')
 
     compileOnly 'org.projectlombok:lombok:1.18.24'
