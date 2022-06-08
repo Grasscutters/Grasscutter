@@ -477,6 +477,7 @@ public class Player {
 	}
 
 	public TowerManager getTowerManager() {
+		towerManager.setPlayer(this);// I don't know why towerManager.player != this, which hasn't GameSession Instance 
 		return towerManager;
 	}
 
