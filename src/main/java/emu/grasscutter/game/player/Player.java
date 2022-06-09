@@ -119,7 +119,8 @@ public class Player {
 
 	private TeamManager teamManager;
 
-	private TowerManager towerManager;
+	@Transient private TowerManager towerManager;
+	private TowerData towerData;
 	private PlayerGachaInfo gachaInfo;
 	private PlayerProfile playerProfile;
 	private boolean showAvatar;
