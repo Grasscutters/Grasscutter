@@ -39,6 +39,7 @@ import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.managers.MapMarkManager.*;
+import emu.grasscutter.game.tower.TowerData;
 import emu.grasscutter.game.tower.TowerManager;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
