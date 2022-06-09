@@ -40,7 +40,7 @@ public class TowerManager {
 
     public Map<Integer, TowerLevelRecord> getRecordMap() {
         Map<Integer, TowerLevelRecord> recordMap = towerData.recordMap;
-        if(recordMap == null){
+        if(recordMap == null || recordMap.size()==0){
             recordMap = new HashMap<>();
             recordMap.put(1001, new TowerLevelRecord(1001));
         }
@@ -91,7 +91,7 @@ public class TowerManager {
         player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(towerData.currentFloorId, getCurrentLevel()));
     }
     public void notifyCurLevelRecordChangeWhenDone(int stars){
-        Map<Integer, TowerLevelRecord> recordMap = towerData.recordMap;
+        Map<Integer, TowerLevelRecord> recordMap = getRecordMap();
         int currentFloorId = towerData.currentFloorId;
         if(!recordMap.containsKey(currentFloorId)){
             recordMap.put(currentFloorId,
@@ -126,7 +126,7 @@ public class TowerManager {
     }
 
     public boolean canEnterScheduleFloor(){
-        Map<Integer, TowerLevelRecord> recordMap = towerData.recordMap;
+        Map<Integer, TowerLevelRecord> recordMap = getRecordMap();
         if(!recordMap.containsKey(player.getServer().getTowerScheduleManager().getLastEntranceFloor())){
             return false;
         }

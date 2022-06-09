@@ -475,11 +475,15 @@ public class Player {
 	public TeamManager getTeamManager() {
 		return this.teamManager;
 	}
-
+	
 	public TowerManager getTowerManager() {
 		return towerManager;
 	}
-
+	
+	public TowerData getTowerData() {
+		return towerData;
+	}
+	
 	public QuestManager getQuestManager() {
 		return questManager;
 	}

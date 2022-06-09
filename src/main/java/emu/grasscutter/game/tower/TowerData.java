@@ -16,7 +16,7 @@ public class TowerData{
     /**
      * floorId - Record
      */
-    Map<Integer, TowerLevelRecord> recordMap = new HashMap<>();
+    Map<Integer, TowerLevelRecord> recordMap;
 
     @Transient
     int entryScene;
