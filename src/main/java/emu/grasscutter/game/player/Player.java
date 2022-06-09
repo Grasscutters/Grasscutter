@@ -1222,7 +1222,7 @@ public class Player {
 	public void loadFromDatabase() {
 		// Make sure these exist
 		if (this.getTowerManager() == null) {
-			this.towerManager = new TowerManager(this);
+			this.towerManager.setPlayer(this);
 		}
 		if (this.getTeamManager() == null) {
 			this.teamManager = new TeamManager(this);
@@ -1233,7 +1233,8 @@ public class Player {
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
 		}
-
+		//Make sure towerManager'player is online player
+		this.towerManager.setPlayer(this);
 		// Load from db
 		this.getAvatars().loadFromDatabase();
 		this.getInventory().loadFromDatabase();
