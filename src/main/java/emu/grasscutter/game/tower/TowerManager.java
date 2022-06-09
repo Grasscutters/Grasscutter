@@ -38,11 +38,12 @@ public class TowerManager {
     }
     private static final List<DungeonSettleListener> towerDungeonSettleListener = List.of(new TowerDungeonSettleListener());
 
-    public Map<Integer, TowerLevelRecord> getRecordMap() {
+	public Map<Integer, TowerLevelRecord> getRecordMap() {
         Map<Integer, TowerLevelRecord> recordMap = towerData.recordMap;
         if(recordMap == null || recordMap.size()==0){
             recordMap = new HashMap<>();
             recordMap.put(1001, new TowerLevelRecord(1001));
+            towerData.recordMap = recordMap;
         }
         return recordMap;
     }
