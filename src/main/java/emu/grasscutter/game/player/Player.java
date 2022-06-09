@@ -169,7 +169,7 @@ public class Player {
 		this.avatars = new AvatarStorage(this);
 		this.friendsList = new FriendsList(this);
 		this.mailHandler = new MailHandler(this);
-		this.towerManager = new TowerManager(this);
+	
 		this.abilityManager = new AbilityManager(this);
 		this.deforestationManager = new DeforestationManager(this);
 		this.insectCaptureManager = new InsectCaptureManager(this);
@@ -225,6 +225,7 @@ public class Player {
 		this.session = session;
 		this.nickname = "Traveler";
 		this.signature = "";
+		this.towerManager = new TowerManager(this);
 		this.teamManager = new TeamManager(this);
 		this.birthday = new PlayerBirthday();
 		this.codex = new PlayerCodex(this);
@@ -477,7 +478,6 @@ public class Player {
 	}
 
 	public TowerManager getTowerManager() {
-		towerManager.setPlayer(this);// I don't know why towerManager.player != this, which hasn't GameSession Instance 
 		return towerManager;
 	}
 
@@ -1221,6 +1221,9 @@ public class Player {
 	// Called from tokenrsp
 	public void loadFromDatabase() {
 		// Make sure these exist
+		if (this.getTowerManager() == null) {
+			this.towerManager = new TowerManager(this);
+		}
 		if (this.getTeamManager() == null) {
 			this.teamManager = new TeamManager(this);
 		}
