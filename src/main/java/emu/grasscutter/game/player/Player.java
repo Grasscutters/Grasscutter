@@ -1222,7 +1222,7 @@ public class Player {
 	public void loadFromDatabase() {
 		// Make sure these exist
 		if (this.getTowerManager() == null) {
-			this.towerManager.setPlayer(this);
+			this.towerManager = new TowerManager(this);
 		}
 		if (this.getTeamManager() == null) {
 			this.teamManager = new TeamManager(this);
