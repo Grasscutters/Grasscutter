@@ -37,8 +37,8 @@ public class TowerManager {
         return towerData.currentLevel + 1;
     }
     private static final List<DungeonSettleListener> towerDungeonSettleListener = List.of(new TowerDungeonSettleListener());
-
-	public Map<Integer, TowerLevelRecord> getRecordMap() {
+	
+    public Map<Integer, TowerLevelRecord> getRecordMap() {
         Map<Integer, TowerLevelRecord> recordMap = towerData.recordMap;
         if(recordMap == null || recordMap.size()==0){
             recordMap = new HashMap<>();
