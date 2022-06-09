@@ -39,6 +39,7 @@ import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.managers.MapMarkManager.*;
+import emu.grasscutter.game.tower.TowerData;
 import emu.grasscutter.game.tower.TowerManager;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
@@ -118,7 +119,8 @@ public class Player {
 
 	private TeamManager teamManager;
 
-	private TowerManager towerManager;
+	@Transient private TowerManager towerManager;
+	private TowerData towerData;
 	private PlayerGachaInfo gachaInfo;
 	private PlayerProfile playerProfile;
 	private boolean showAvatar;
@@ -475,11 +477,15 @@ public class Player {
 	public TeamManager getTeamManager() {
 		return this.teamManager;
 	}
-
+	
 	public TowerManager getTowerManager() {
 		return towerManager;
 	}
-
+	
+	public TowerData getTowerData() {
+		return towerData;
+	}
+	
 	public QuestManager getQuestManager() {
 		return questManager;
 	}
@@ -1220,6 +1226,9 @@ public class Player {
 	// Called from tokenrsp
 	public void loadFromDatabase() {
 		// Make sure these exist
+		if (this.getTowerManager() == null) {
+			this.towerManager = new TowerManager(this);
+		}
 		if (this.getTeamManager() == null) {
 			this.teamManager = new TeamManager(this);
 		}
@@ -1229,7 +1238,8 @@ public class Player {
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
 		}
-
+		//Make sure towerManager's player is online player
+		this.getTowerManager().setPlayer(this);
 		// Load from db
 		this.getAvatars().loadFromDatabase();
 		this.getInventory().loadFromDatabase();
@@ -1238,12 +1248,6 @@ public class Player {
 		this.getFriendsList().loadFromDatabase();
 		this.getMailHandler().loadFromDatabase();
 		this.getQuestManager().loadFromDatabase();
-
-		// Add to gameserver (Always handle last)
-		if (getSession().isActive()) {
-			getServer().registerPlayer(this);
-			getProfile().setPlayer(this); // Set online
-		}
 
 	}
 
@@ -1255,7 +1259,6 @@ public class Player {
 			if (quest != null) {
 				quest.finish();
 			}
-
 			getQuestManager().addQuest(35101);
 			
 			this.setSceneId(3);
@@ -1299,8 +1302,14 @@ public class Player {
 
 		// Call join event.
 		PlayerJoinEvent event = new PlayerJoinEvent(this); event.call();
-		if(event.isCanceled()) // If event is not cancelled, continue.
+		if(event.isCanceled()){ // If event is not cancelled, continue.
 			session.close();
+			return;
+		}
+		
+		// register
+		getServer().registerPlayer(this);
+		getProfile().setPlayer(this); // Set online
 	}
 
 	public void onLogout() {
