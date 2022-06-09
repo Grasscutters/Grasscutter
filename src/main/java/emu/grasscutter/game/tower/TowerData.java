@@ -4,6 +4,7 @@ import java.util.Map;
 
 import dev.morphia.annotations.Transient;
 
+@Entity
 public class TowerData{
     /**
      * the floor players chose
