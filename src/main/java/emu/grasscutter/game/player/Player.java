@@ -1249,12 +1249,6 @@ public class Player {
 		this.getMailHandler().loadFromDatabase();
 		this.getQuestManager().loadFromDatabase();
 
-		// Add to gameserver (Always handle last)
-		if (getSession().isActive()) {
-			getServer().registerPlayer(this);
-			getProfile().setPlayer(this); // Set online
-		}
-
 	}
 
 	public void onLogin() {
@@ -1308,8 +1302,14 @@ public class Player {
 
 		// Call join event.
 		PlayerJoinEvent event = new PlayerJoinEvent(this); event.call();
-		if(event.isCanceled()) // If event is not cancelled, continue.
+		if(event.isCanceled()){ // If event is not cancelled, continue.
 			session.close();
+			return;
+		}
+		
+		// register
+		getServer().registerPlayer(this);
+		getProfile().setPlayer(this); // Set online
 	}
 
 	public void onLogout() {
