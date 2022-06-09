@@ -169,7 +169,7 @@ public class Player {
 		this.avatars = new AvatarStorage(this);
 		this.friendsList = new FriendsList(this);
 		this.mailHandler = new MailHandler(this);
-	
+		this.towerManager = new TowerManager(this);
 		this.abilityManager = new AbilityManager(this);
 		this.deforestationManager = new DeforestationManager(this);
 		this.insectCaptureManager = new InsectCaptureManager(this);
@@ -225,7 +225,6 @@ public class Player {
 		this.session = session;
 		this.nickname = "Traveler";
 		this.signature = "";
-		this.towerManager = new TowerManager(this);
 		this.teamManager = new TeamManager(this);
 		this.birthday = new PlayerBirthday();
 		this.codex = new PlayerCodex(this);
@@ -1233,8 +1232,8 @@ public class Player {
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
 		}
-		//Make sure towerManager'player is online player
-		this.towerManager.setPlayer(this);
+		//Make sure towerManager's player is online player
+		this.getTowerManager().setPlayer(this);
 		// Load from db
 		this.getAvatars().loadFromDatabase();
 		this.getInventory().loadFromDatabase();
@@ -1260,7 +1259,6 @@ public class Player {
 			if (quest != null) {
 				quest.finish();
 			}
-
 			getQuestManager().addQuest(35101);
 			
 			this.setSceneId(3);
