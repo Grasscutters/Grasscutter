@@ -14,7 +14,7 @@
         "general_error": "[Dispatch] 加载 keystore 文件时发生错误！",
         "password_error": "[Dispatch] 加载 keystore 失败。正在尝试使用 keystore 默认密码...",
         "no_keystore_error": "[Dispatch] 未找到 SSL 证书！已降级到 HTTP 模式",
-        "default_password": "[Dispatch] 成功加载 keystore 默认密码。请考虑将 config.json 的默认密码设置为 123456"
+        "default_password": "[Dispatch] 成功加载 keystore 默认密码。请考虑将 config.json 中默认密码设置为 123456"
       },
       "authentication": {
         "default_unable_to_verify": "[Authentication] 称为 verifyUser 的方法在默认验证程序中不可用"
@@ -25,10 +25,10 @@
         "login_attempt": "[Dispatch] 客户端 %s 正在尝试登录",
         "login_success": "[Dispatch] 客户端 %s 已登录，UID 为 %s",
         "login_max_player_limit": "[Dispatch] 客户端 %s 登录失败：在线人数已满",
-        "login_token_attempt": "[Dispatch] 客户端 %s 正在尝试使用 token 登录",
-        "login_token_error": "[Dispatch] 客户端 %s 使用 token 登录失败",
+        "login_token_attempt": "[Dispatch] 客户端 %s 正在尝试通过 token 登录",
+        "login_token_error": "[Dispatch] 客户端 %s 通过 token 登录失败",
         "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID 为 %s",
-        "combo_token_success": "[Dispatch] 客户端 %s 交换 token 成功",
+        "combo_token_success": "[Dispatch] 客户端 %s 成功交换 token",
         "combo_token_error": "[Dispatch] 客户端 %s 交换 token 失败",
         "account_login_create_success": "[Dispatch] 客户端 %s 登录失败：已注册 UID 为 %s 的账号",
         "account_login_create_error": "[Dispatch] 客户端 %s 登录失败：账号创建失败",
@@ -53,7 +53,7 @@
       "create_resources": "正在创建 resources 目录...",
       "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。",
       "version": "Grasscutter 版本：%s-%s",
-      "game_version": "游戏版本: %s"
+      "game_version": "游戏版本：%s"
     }
   },
   "commands": {
@@ -64,7 +64,8 @@
       "console_execute_error": "此命令只能在控制台执行。",
       "player_execute_error": "此命令只能在游戏内执行。",
       "command_exist_error": "未找到命令。",
-      "no_description_specified": "未指定说明。",
+      "no_usage_specified": "未指定用法",
+      "no_description_specified": "未指定说明",
       "invalid": {
         "amount": "无效的数量。",
         "artifactId": "无效的圣遗物ID。",
@@ -137,7 +138,7 @@
     "coop": {
       "usage": "用法：coop [指定玩家UID]",
       "success": "已强制传送 %s 到 %s 的世界。",
-      "description": "强制传送指定玩家到他人的世界"
+      "description": "强制传送指定玩家到他人的世界。如果没有指定玩家，则会使你进入多人游戏状态"
     },
     "enter_dungeon": {
       "usage": "用法：enterdungeon <秘境ID>",
@@ -152,16 +153,6 @@
       "success": "已给予 %s 全部物品。",
       "invalid_amount_or_playerId": "无效的数量/玩家ID。",
       "description": "给予所有物品"
-    },
-    "nostamina": {
-      "success": "NoStamina 已设为 %s。[用户：%s]",
-      "description": "保持你的体力处于最高状态"
-    },
-    "unlimitenergy": {
-      "usage": "用法：unlimitenergy [目标玩家] [on | off | toggle ]",
-      "success": "unlimitEnergy 已设为 %s。[用户：%s]",
-      "description": "使用元素爆发不消耗能量",
-      "config_error": "当前命令不可用，需要在config.json中配置 energyUsage : true 才可生效"
     },
     "giveArtifact": {
       "usage": "用法：giveart|gart [玩家] <圣遗物ID> <主词条ID> [<副词条ID>[,<强化次数>]]... [等级]",
@@ -187,8 +178,17 @@
       "description": "给予指定物品"
     },
     "godmode": {
-      "success": "上帝模式已设为 %s。[用户：%s]",
+      "success": "Godmode 已设为 %s。[用户：%s]",
       "description": "防止你受到伤害"
+    },
+    "nostamina": {
+      "success": "NoStamina 已设为 %s。[用户：%s]",
+      "description": "保持你的体力处于最高状态"
+    },
+    "unlimitenergy": {
+      "success": "UnlimitEnergy 已设为 %s。[用户：%s]",
+      "config_error": "命令不可用。因为 config.json 中 energyUsage 为 false。",
+      "description": "使用元素爆发而不消耗能量"
     },
     "heal": {
       "success": "已治疗所有角色。",
@@ -369,7 +369,7 @@
       "description": "改变指定玩家的位置"
     },
     "weather": {
-      "usage": "用法：weather <气候类型(天气ID)> <天气类型(气候ID)>\n天气类型：'0: 无, 1: 晴天, 2: 多云, 3: 雨, 4: 雷雨, 5: 雪, 6: 雾'",
+      "usage": "用法：weather <气候类型(天气ID)> <天气类型(气候ID)>\n天气类型 0: 无, 1: 晴天, 2: 多云, 3: 雨, 4: 雷雨, 5: 雪, 6: 雾",
       "success": "已更改气候类型为 %s，天气类型为 %s。",
       "invalid_id": "无效的ID。",
       "description": "更改天气"
@@ -390,7 +390,7 @@
     },
     "unlocktower": {
       "success": "解锁完成。",
-      "description": "解锁深境螺旋的所有层"
+      "description": "解锁深境回廊(1-8层)"
     }
   },
   "gacha": {

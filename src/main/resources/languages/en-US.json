@@ -64,7 +64,8 @@
       "console_execute_error": "This command can only be run from the console.",
       "player_execute_error": "Run this command in-game.",
       "command_exist_error": "No command found.",
-      "no_description_specified": "No description specified.",
+      "no_usage_specified": "No usage specified",
+      "no_description_specified": "No description specified",
       "invalid": {
         "amount": "Invalid amount.",
         "artifactId": "Invalid artifact ID.",
@@ -185,10 +186,9 @@
       "description": "Keep your endurance to the maximum."
     },
     "unlimitenergy": {
-      "usage": "unlimitenergy [targetUID] [on | off | toggle ]",
-      "success": "unlimitenergy is now %s for %s.",
-      "description": "Use the element does not waste energy in unlimitenergy on",
-      "config_error": "Command is disable,because energyUsage is false in config.json."
+      "success": "UnlimitEnergy is now %s for %s.",
+      "config_error": "Command is disabled, because energyUsage is false in config.json.",
+      "description": "Use the element does not waste energy"
     },
     "heal": {
       "success": "All characters have been healed.",
@@ -369,7 +369,7 @@
       "description": "Change the player's position"
     },
     "weather": {
-      "usage": "Usage: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types: '0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist'",
+      "usage": "Usage: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types 0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist",
       "success": "Changed climate type to %s with weather type %s.",
       "invalid_id": "Invalid ID.",
       "description": "Changes the weather"
@@ -390,7 +390,7 @@
     },
     "unlocktower": {
       "success": "Unlock done.",
-      "description": "Unlock all levels of tower"
+      "description": "Unlock Abyss Corridor's Floors"
     }
   },
   "gacha": {

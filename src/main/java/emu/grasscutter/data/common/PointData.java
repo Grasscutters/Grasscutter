@@ -12,30 +12,32 @@ import it.unimi.dsi.fastutil.ints.IntList;
 public class PointData {
 	private int id;
 	private String $type;
-    private Position tranPos;
-    
-    @SerializedName(value="dungeonIds", alternate={"JHHFPGJNMIN"})
-    private int[] dungeonIds;
-    
-    @SerializedName(value="dungeonRandomList", alternate={"OIBKFJNBLHO"})
-    private int[] dungeonRandomList;
+	private Position tranPos;
 
+	@SerializedName(value="dungeonIds", alternate={"JHHFPGJNMIN"})
+	private int[] dungeonIds;
+
+	@SerializedName(value="dungeonRandomList", alternate={"OIBKFJNBLHO"})
+	private int[] dungeonRandomList;
+
+	@SerializedName(value="tranSceneId", alternate={"JHBICGBAPIH"})
 	private int tranSceneId;
-    public int getId() {
+
+	public int getId() {
 		return id;
 	}
-    
-    public void setId(int id) {
+
+	public void setId(int id) {
 		this.id = id;
 	}
 
-    public String getType() {
+	public String getType() {
 		return $type;
 	}
 
 	public Position getTranPos() {
-        return tranPos;
-    }
+		return tranPos;
+	}
 
 	public int[] getDungeonIds() {
 		return dungeonIds;
