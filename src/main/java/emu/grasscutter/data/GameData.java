@@ -87,6 +87,7 @@ public class GameData {
 	private static final Int2ObjectMap<TowerFloorData> towerFloorDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerLevelData> towerLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerScheduleData> towerScheduleDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<ForgeData> forgeDataMap = new Int2ObjectOpenHashMap<>();
 
 	// Cache
 	private static Map<Integer, List<Integer>> fetters = new HashMap<>();
@@ -366,5 +367,9 @@ public class GameData {
 
 	public static Int2ObjectMap<QuestData> getQuestDataMap() {
 		return questDataMap;
+	}
+
+	public static Int2ObjectMap<ForgeData> getForgeDataMap() {
+		return forgeDataMap;
 	}
 }
