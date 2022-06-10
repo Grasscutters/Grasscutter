@@ -1,30 +1,33 @@
 package emu.grasscutter.game.inventory;
 
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
 import java.util.HashSet;
 import java.util.Set;
 
 public class EquipInventoryTab implements InventoryTab {
-	private final Set<GameItem> items;
+	private final Int2ObjectMap<GameItem> items;
 	private final int maxCapacity;
 	
 	public EquipInventoryTab(int maxCapacity) {
-		this.items = new HashSet<GameItem>();
+		this.items = new Int2ObjectOpenHashMap<GameItem>();
 		this.maxCapacity = maxCapacity;
 	}
 
 	@Override
 	public GameItem getItemById(int id) {
-		return null;
+		return this.items.get(id);
 	}
 
 	@Override
 	public void onAddItem(GameItem item) {
-		this.items.add(item);
+		this.items.put(item.getItemId(), item);
 	}
 
 	@Override
 	public void onRemoveItem(GameItem item) {
-		this.items.remove(item);
+		this.items.remove(item.getItemId());
 	}
 
 	@Override
