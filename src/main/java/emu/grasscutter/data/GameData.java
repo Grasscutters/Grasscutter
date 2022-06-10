@@ -7,13 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.utils.Utils;
-import emu.grasscutter.data.binout.AbilityEmbryoEntry;
-import emu.grasscutter.data.binout.AbilityModifierEntry;
-import emu.grasscutter.data.binout.MainQuestData;
-import emu.grasscutter.data.binout.OpenConfigEntry;
-import emu.grasscutter.data.binout.ScenePointEntry;
+import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.excels.*;
+import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -28,7 +24,8 @@ public class GameData {
 	private static final Map<String, OpenConfigEntry> openConfigEntries = new HashMap<>();
 	private static final Map<String, ScenePointEntry> scenePointEntries = new HashMap<>();
 	private static final Int2ObjectMap<MainQuestData> mainQuestData = new Int2ObjectOpenHashMap<>();
-	
+	private static final Int2ObjectMap<SceneNpcBornData> npcBornData = new Int2ObjectOpenHashMap<>();
+
 	// ExcelConfigs
 	private static final Int2ObjectMap<PlayerLevelData> playerLevelDataMap = new Int2ObjectOpenHashMap<>();
 	
@@ -84,9 +81,11 @@ public class GameData {
 	private static final Int2ObjectMap<ShopGoodsData> shopGoodsDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<CombineData> combineDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<RewardPreviewData> rewardPreviewDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<GatherData> gatherDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerFloorData> towerFloorDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerLevelData> towerLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerScheduleData> towerScheduleDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<InvestigationMonsterData> investigationMonsterDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<ForgeData> forgeDataMap = new Int2ObjectOpenHashMap<>();
 
 	// Cache
@@ -139,7 +138,9 @@ public class GameData {
 	public static Int2ObjectMap<MainQuestData> getMainQuestDataMap() {
 		return mainQuestData;
 	}
-
+	public static Int2ObjectMap<SceneNpcBornData> getSceneNpcBornData() {
+		return npcBornData;
+	}
 	public static Int2ObjectMap<AvatarData> getAvatarDataMap() {
 		return avatarDataMap;
 	}
@@ -369,6 +370,12 @@ public class GameData {
 		return questDataMap;
 	}
 
+	public static Int2ObjectMap<GatherData> getGatherDataMap() {
+		return gatherDataMap;
+	}
+	public static Int2ObjectMap<InvestigationMonsterData> getInvestigationMonsterDataMap() {
+		return investigationMonsterDataMap;
+	}
 	public static Int2ObjectMap<ForgeData> getForgeDataMap() {
 		return forgeDataMap;
 	}

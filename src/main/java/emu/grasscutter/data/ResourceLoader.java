@@ -1,35 +1,34 @@
 package emu.grasscutter.data;
 
-import java.io.*;
-import java.util.*;
-import java.util.Map.Entry;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import com.google.gson.Gson;
-import emu.grasscutter.utils.Utils;
-import org.reflections.Reflections;
-
 import com.google.gson.JsonElement;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
-
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.binout.AbilityEmbryoEntry;
-import emu.grasscutter.data.binout.AbilityModifier;
-import emu.grasscutter.data.binout.AbilityModifierEntry;
-import emu.grasscutter.data.binout.MainQuestData;
-import emu.grasscutter.data.binout.OpenConfigEntry;
-import emu.grasscutter.data.binout.ScenePointEntry;
+import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityConfigData;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
 import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.common.ScenePointConfig;
-import emu.grasscutter.game.world.SpawnDataEntry.*;
+import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
+import emu.grasscutter.scripts.SceneIndexManager;
+import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.SneakyThrows;
+import org.reflections.Reflections;
 
-import static emu.grasscutter.Configuration.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static emu.grasscutter.Configuration.RESOURCE;
 
 public class ResourceLoader {
 
@@ -66,6 +65,7 @@ public class ResourceLoader {
 		loadQuests();
 		// Load scene points - must be done AFTER resources are loaded
 		loadScenePoints();
+		loadNpcBornData();
 		// Custom - TODO move this somewhere else
 		try {
 			GameData.getAvatarSkillDepotDataMap().get(504).setAbilities(
@@ -415,6 +415,26 @@ public class ResourceLoader {
 		Grasscutter.getLogger().info("Loaded " + GameData.getMainQuestDataMap().size() + " MainQuestDatas.");
 	}
 
+	@SneakyThrows
+	private static void loadNpcBornData(){
+		var folder = Files.list(Path.of(RESOURCE("BinOutput/Scene/SceneNpcBorn"))).toList();
+
+		for(var file : folder){
+			if(file.toFile().isDirectory()){
+				continue;
+			}
+
+			var data = Grasscutter.getGsonFactory().fromJson(Files.readString(file), SceneNpcBornData.class);
+			if(data.getBornPosList() == null || data.getBornPosList().size() == 0){
+				continue;
+			}
+
+			data.setIndex(SceneIndexManager.buildIndex(3, data.getBornPosList(), item -> item.getPos().toPoint()));
+			GameData.getSceneNpcBornData().put(data.getSceneId(), data);
+		}
+
+		Grasscutter.getLogger().info("Loaded " + GameData.getSceneNpcBornData().size() + " SceneNpcBornDatas.");
+	}
 	// BinOutput configs
 	
 	private static class AvatarConfig {

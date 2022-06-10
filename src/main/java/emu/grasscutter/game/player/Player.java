@@ -33,7 +33,6 @@ import emu.grasscutter.game.managers.EnergyManager.EnergyManager;
 import emu.grasscutter.game.managers.ForgingManager.ActiveForgeData;
 import emu.grasscutter.game.managers.ForgingManager.ForgingManager;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.quest.QuestManager;
@@ -935,7 +934,7 @@ public class Player {
 		return this.getMailHandler().replaceMailByIndex(index, message);
 	}
 	
-	public void interactWith(int gadgetEntityId) {
+	public void interactWith(int gadgetEntityId, InterOpTypeOuterClass.InterOpType opType) {
 		GameEntity entity = getScene().getEntityById(gadgetEntityId);
 		if (entity == null) {
 			return;
@@ -963,11 +962,14 @@ public class Player {
 				}
 			}
 		} else if (entity instanceof EntityGadget gadget) {
-			if (gadget.getGadgetData().getType() == EntityType.RewardStatue) {
-				if (scene.getChallenge() != null) {
-					scene.getChallenge().getStatueDrops(this);
-				}
-				this.sendPacket(new PacketGadgetInteractRsp(gadget, InteractType.INTERACT_TYPE_OPEN_STATUE));
+			if (gadget.getContent() == null) {
+				return;
+			}
+			
+			boolean shouldDelete = gadget.getContent().onInteract(this, opType);
+			
+			if (shouldDelete) {
+				entity.getScene().removeEntity(entity);
 			}
 		} else if (entity instanceof EntityMonster monster) {
 			insectCaptureManager.arrestSmallCreature(monster);
