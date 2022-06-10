@@ -3,9 +3,6 @@ package emu.grasscutter.game.inventory;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class EquipInventoryTab implements InventoryTab {
 	private final Int2ObjectMap<GameItem> items;
 	private final int maxCapacity;
