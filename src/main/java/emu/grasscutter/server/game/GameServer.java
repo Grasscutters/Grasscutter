@@ -26,11 +26,15 @@ import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
+import emu.grasscutter.server.game.websocket.GameWebSocketClient;
 import emu.grasscutter.task.TaskMap;
 import kcp.highway.ChannelConfig;
 import kcp.highway.KcpServer;
-
+import emu.grasscutter.BuildConfig;
+import org.java_websocket.client.WebSocketClient;
 import java.net.InetSocketAddress;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -61,6 +65,20 @@ public final class GameServer extends KcpServer {
 	private final CombineManger combineManger;
 	private final TowerScheduleManager towerScheduleManager;
 
+	private GameWebSocketClient gameWebSocketClient;
+
+	private static InetSocketAddress getAdapterInetSocketAddress(){
+		InetSocketAddress inetSocketAddress = null;
+		if(GAME_INFO.bindAddress.equals("")){
+			inetSocketAddress=new InetSocketAddress(GAME_INFO.bindPort);
+		}else{
+			inetSocketAddress=new InetSocketAddress(
+					GAME_INFO.bindAddress,
+					GAME_INFO.bindPort
+			);
+		}
+		return inetSocketAddress;
+	}
 	public GameServer() {
 		this(getAdapterInetSocketAddress());
 	}
@@ -96,9 +114,19 @@ public final class GameServer extends KcpServer {
 		this.combineManger = new CombineManger(this);
 		this.towerScheduleManager = new TowerScheduleManager(this);
 		this.worldDataManager = new WorldDataManager(this);
+		String scheme  = HTTP_INFO.encryption.useEncryption || HTTP_INFO.encryption.useInRouting ? "wss://":"ws://";
+		URI websocketURI = null;
+		try {
+			Grasscutter.getLogger().info("Connecting to : "+ scheme+HTTP_INFO.accessAddress+"/websocket/accounts?key=inikey");
+			websocketURI = new URI(scheme+HTTP_INFO.accessAddress+"/websocket/accounts?key=inikey");
+		} catch (Exception ignored) {}
+		this.gameWebSocketClient = new GameWebSocketClient(websocketURI);
+		this.gameWebSocketClient.connect();
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
+
+	public GameWebSocketClient getGameWebSocketClient(){return  gameWebSocketClient; }
 	
 	public GameServerPacketHandler getPacketHandler() {
 		return packetHandler;
@@ -170,19 +198,6 @@ public final class GameServer extends KcpServer {
 
 	public TaskMap getTaskMap() {
 		return this.taskMap;
-	}
-	
-	private static InetSocketAddress getAdapterInetSocketAddress(){
-		InetSocketAddress inetSocketAddress;
-		if(GAME_INFO.bindAddress.equals("")){
-			inetSocketAddress=new InetSocketAddress(GAME_INFO.bindPort);
-		}else{
-			inetSocketAddress=new InetSocketAddress(
-					GAME_INFO.bindAddress,
-					GAME_INFO.bindPort
-			);
-		}
-		return inetSocketAddress;
 	}
 	
 	public void registerPlayer(Player player) {

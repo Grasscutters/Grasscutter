@@ -15,6 +15,7 @@ import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.dispatch.DispatchHandler;
+import emu.grasscutter.server.http.dispatch.WebSocketHandler;
 import emu.grasscutter.server.http.handlers.*;
 import emu.grasscutter.server.http.dispatch.RegionHandler;
 import emu.grasscutter.server.http.documentation.DocumentationServerHandler;
@@ -97,6 +98,8 @@ public final class Grasscutter {
 				case "-version" -> {
 					System.out.println("Grasscutter version: " + BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH); exitEarly = true;
 				}
+				case "-dispatch" -> config.server.runMode = ServerRunMode.DISPATCH_ONLY;
+				case "-game" -> config.server.runMode = ServerRunMode.GAME_ONLY;
 			}
 		} 
 		
@@ -107,12 +110,6 @@ public final class Grasscutter {
 		Grasscutter.getLogger().info(translate("messages.status.starting"));
 		Grasscutter.getLogger().info(translate("messages.status.game_version", GameConstants.VERSION));
 		Grasscutter.getLogger().info(translate("messages.status.version", BuildConfig.VERSION, BuildConfig.GIT_HASH));
-	
-		// Load all resources.
-		Grasscutter.updateDayOfWeek();
-		ResourceLoader.loadAll();
-		ScriptLoader.init();
-		EnergyManager.initialize();
 	
 		// Initialize database.
 		DatabaseManager.initialize();
@@ -139,12 +136,19 @@ public final class Grasscutter {
 		httpServer.addRouter(DispatchHandler.class);
 		httpServer.addRouter(GachaHandler.class);
 		httpServer.addRouter(DocumentationServerHandler.class);
+		httpServer.addRouter(WebSocketHandler.class);
 		
 		// TODO: find a better place?
-		StaminaManager.initialize();
-	
 		// Start servers.
 		var runMode = SERVER.runMode;
+		if (runMode == ServerRunMode.GAME_ONLY || runMode == ServerRunMode.HYBRID){
+			// Load all resources.
+			Grasscutter.updateDayOfWeek();
+			ResourceLoader.loadAll();
+			ScriptLoader.init();
+			EnergyManager.initialize();
+			StaminaManager.initialize();
+		}
 		if (runMode == ServerRunMode.HYBRID) {
 			httpServer.start();
 			gameServer.start();

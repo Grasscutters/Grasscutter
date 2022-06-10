@@ -21,23 +21,32 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
-import emu.grasscutter.game.quest.GameQuest;
 
 import static emu.grasscutter.Configuration.*;
 
 public final class DatabaseManager {
 	private static Datastore gameDatastore;
 	private static Datastore dispatchDatastore;
-	
-	private static final Class<?>[] mappedClasses = new Class<?>[] {
-		DatabaseCounter.class, Account.class, Player.class, Avatar.class, GameItem.class, Friendship.class, 
-		GachaRecord.class, Mail.class, GameMainQuest.class, GameHome.class
+    private static Datastore hybridDatastore;
+
+	private static final Class<?>[] mappedGameClasses = new Class<?>[] {
+		DatabaseCounter.class, Player.class, Avatar.class, GameItem.class, Friendship.class,
+		GachaRecord.class, Mail.class, GameMainQuest.class
 	};
-    
+
+	private static final Class<?>[] mappedDispatchClasses = new Class<?>[]{
+        DatabaseCounter.class, Account.class
+	};
+
+    private static final Class<?>[] mappedHybridClasses = new Class<?>[] {
+        DatabaseCounter.class, Account.class, Player.class, Avatar.class, GameItem.class, Friendship.class,
+        GachaRecord.class, Mail.class, GameMainQuest.class
+    };
+
     public static Datastore getGameDatastore() {
     	return gameDatastore;
     }
-    
+
     public static MongoDatabase getGameDatabase() {
     	return getGameDatastore().getDatabase();
     }
@@ -45,25 +54,31 @@ public final class DatabaseManager {
 	// Yes. I very dislike this method. However, this will be good for now.
 	// TODO: Add dispatch routes for player account management
 	public static Datastore getAccountDatastore() {
-		if(SERVER.runMode == ServerRunMode.GAME_ONLY) {
-			return dispatchDatastore;
-		} else {
-			return gameDatastore;
-		}
-	}
-	
+        return switch (SERVER.runMode){
+            case GAME_ONLY -> gameDatastore;
+            case DISPATCH_ONLY -> dispatchDatastore;
+            default -> hybridDatastore;
+        };
+    }
+
 	public static void initialize() {
 		// Initialize
 		MongoClient gameMongoClient = MongoClients.create(DATABASE.game.connectionUri);
-		
-		// Set mapper options.
-		MapperOptions mapperOptions = MapperOptions.builder()
-				.storeEmpties(true).storeNulls(false).build();
-		// Create data store.
-		gameDatastore = Morphia.createDatastore(gameMongoClient, DATABASE.game.collection, mapperOptions);
-		// Map classes.
-		gameDatastore.getMapper().map(mappedClasses);
-		
+		MapperOptions mapperOptionsGame = MapperOptions.builder().storeEmpties(true).storeNulls(false).build();
+		gameDatastore = Morphia.createDatastore(gameMongoClient, DATABASE.game.collection, mapperOptionsGame);
+		gameDatastore.getMapper().map(mappedGameClasses);
+
+        MongoClient dispatchMongoClient = MongoClients.create(DATABASE.server.connectionUri);
+        MapperOptions mapperOptionsDispatch = MapperOptions.builder().storeEmpties(true).storeNulls(false).build();
+        dispatchDatastore = Morphia.createDatastore(dispatchMongoClient,DATABASE.server.collection,mapperOptionsDispatch);
+        dispatchDatastore.getMapper().map(mappedDispatchClasses);
+
+        MongoClient hybridMongoClient = MongoClients.create(DATABASE.game.connectionUri);
+        MapperOptions mapperOptionsHybrid = MapperOptions.builder().storeEmpties(true).storeNulls(false).build();
+        hybridDatastore = Morphia.createDatastore(hybridMongoClient,DATABASE.game.collection,mapperOptionsHybrid);
+        hybridDatastore.getMapper().map(mappedHybridClasses);
+
+		/*
 		// Ensure indexes
 		try {
 			gameDatastore.ensureIndexes();
@@ -82,9 +97,6 @@ public final class DatabaseManager {
 		}
 
 		if(SERVER.runMode == ServerRunMode.GAME_ONLY) {
-			MongoClient dispatchMongoClient = MongoClients.create(DATABASE.server.connectionUri);
-			dispatchDatastore = Morphia.createDatastore(dispatchMongoClient, DATABASE.server.collection);
-
 			// Ensure indexes for dispatch server
 			try {
 				dispatchDatastore.ensureIndexes();
@@ -102,6 +114,7 @@ public final class DatabaseManager {
 				}
 			}
 		}
+		 */
 	}
 
 	public static synchronized int getNextId(Class<?> c) {

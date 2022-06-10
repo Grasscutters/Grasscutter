@@ -22,10 +22,11 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		GetPlayerTokenReq req = GetPlayerTokenReq.parseFrom(payload);
-		
+		Grasscutter.getLogger().info(req.toString());//TODO:Delete
 		// Authenticate
 		Account account = DatabaseHelper.getAccountById(req.getAccountUid());
 		if (account == null || !account.getToken().equals(req.getAccountToken())) {
+			Grasscutter.getLogger().info("Account is null");
 			return;
 		}
 		

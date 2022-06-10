@@ -88,6 +88,7 @@ dependencies {
 
     implementation group:  'com.esotericsoftware', name : 'reflectasm', version: '1.11.9'
     implementation group:  'com.github.davidmoten', name : 'rtree-multi', version: '0.1'
+    implementation 'org.java-websocket:Java-WebSocket:1.5.3'
 
     protobuf files('proto/')
 

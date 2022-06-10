@@ -18,6 +18,9 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
+import emu.grasscutter.server.game.GameServer;
+
+import static emu.grasscutter.Configuration.*;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -98,7 +101,11 @@ public final class DatabaseHelper {
 	}
 
 	public static Account getAccountById(String uid) {
-		return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("_id", uid)).first();
+		if (SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY){
+			return Grasscutter.getGameServer().getGameWebSocketClient().getAccountById(uid);
+		}else{
+			return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("_id", uid)).first();
+		}
 	}
 
 	public static Account getAccountByPlayerId(int playerId) {

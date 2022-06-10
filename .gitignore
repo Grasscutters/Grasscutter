@@ -79,3 +79,5 @@ BuildConfig.java
 # macOS
 .DS_Store
 data/hk4e/announcement/
+/config-game.json
+/config-dispatch.json
