@@ -191,6 +191,7 @@ public class Player {
 		this.nameCardList = new HashSet<>();
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
+		this.towerData = new TowerData();
 		this.unlockedForgingBlueprints = new HashSet<>();
 		this.activeForges = new ArrayList<>();
 
@@ -483,6 +484,10 @@ public class Player {
 	}
 	
 	public TowerData getTowerData() {
+		if(towerData==null){
+			// because of mistake, null may be saved as storage at some machine, this if can be removed in future
+			towerData = new TowerData();
+		}
 		return towerData;
 	}
 	
