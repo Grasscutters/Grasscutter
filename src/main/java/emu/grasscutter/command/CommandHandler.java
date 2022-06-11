@@ -2,8 +2,9 @@ package emu.grasscutter.command;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.event.game.CommandResponseEvent;
-import emu.grasscutter.server.event.types.ServerEvent;
+import emu.grasscutter.server.event.game.ReceiveCommandFeedbackEvent;
+import emu.grasscutter.server.event.player.PlayerJoinEvent;
+
 import static emu.grasscutter.utils.Language.translate;
 
 import java.util.List;
@@ -17,13 +18,17 @@ public interface CommandHandler {
      * @param message The message to send.
      */
     static void sendMessage(Player player, String message) {
-        if (player == null) {
-            Grasscutter.getLogger().info(message);
-        } else {
-            player.dropMessage(message);
+        // Call command feedback event.
+        ReceiveCommandFeedbackEvent event = new ReceiveCommandFeedbackEvent(player, message); event.call();
+        if(event.isCanceled()) { // If event is not cancelled, continue.
+            return;
         }
-        CommandResponseEvent event = new CommandResponseEvent(ServerEvent.Type.GAME,player, message);
-        event.call();
+
+        if (player == null) {
+            Grasscutter.getLogger().info(event.getMessage());
+        } else {
+            player.dropMessage(event.getMessage());
+        }
     }
     
     static void sendTranslatedMessage(Player player, String messageKey, Object... args) {
