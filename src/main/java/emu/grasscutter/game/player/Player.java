@@ -484,6 +484,9 @@ public class Player {
 	}
 	
 	public TowerData getTowerData() {
+		if(towerData==null){
+			towerData = new TowerData();
+		}
 		return towerData;
 	}
 	
