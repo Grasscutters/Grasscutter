@@ -34,7 +34,7 @@ public class GameServerPacketHandler {
 				return;
 			}
 
-			PacketHandler packetHandler = (PacketHandler) handlerClass.newInstance();
+			PacketHandler packetHandler = handlerClass.getDeclaredConstructor().newInstance();
 
 			this.handlers.put(opcode.value(), packetHandler);
 		} catch (Exception e) {
