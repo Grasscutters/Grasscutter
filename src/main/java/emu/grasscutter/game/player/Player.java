@@ -1288,28 +1288,26 @@ public class Player {
 		session.send(new PacketHomeComfortInfoNotify(this));
 		this.forgingManager.sendForgeDataNotify();
 
-		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
+		this.getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
 		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
 		session.send(new PacketOpenStateUpdateNotify());
 
-		// First notify packets sent
+		// First notify packets sent.
 		this.setHasSentAvatarDataNotify(true);
 		
-		// Set session state
+		// Set session state.
 		session.setState(SessionState.ACTIVE);
 
 		// Call join event.
 		PlayerJoinEvent event = new PlayerJoinEvent(this); event.call();
-		if(event.isCanceled()){ // If event is not cancelled, continue.
-			session.close();
-			return;
+		if(event.isCanceled()) { // If event is not cancelled, continue.
+			session.close(); return;
 		}
 		
-		// register
-		getServer().registerPlayer(this);
-		getProfile().setPlayer(this); // Set online
+		this.getServer().registerPlayer(this); // Register player into server.
+		this.getProfile().setPlayer(this); // Set the player as online on their account profile.
 	}
 
 	public void onLogout() {
