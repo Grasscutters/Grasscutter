@@ -5,6 +5,7 @@ import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.Router;
@@ -14,6 +15,7 @@ import java.util.List;
 
 /**
  * Hooks into the {@link GameServer} class, adding convenient ways to do certain things.
+ * Accessible via {@link emu.grasscutter.plugin.Plugin#getHandle()} or {@link ServerHook#getInstance()}.
  */
 public final class ServerHook {
     private static ServerHook instance;
@@ -96,5 +98,13 @@ public final class ServerHook {
      */
     public void setAuthSystem(AuthenticationSystem authSystem) {
         Grasscutter.setAuthenticationSystem(authSystem);
+    }
+
+    /**
+     * Registers a {@link PacketHandler} to the server's packet handler.
+     * @param handler The class of the packet handler to register.
+     */
+    public void registerPacket(Class<? extends PacketHandler> handler) {
+        this.gameServer.getPacketHandler().registerPacketHandler(handler);
     }
 }
