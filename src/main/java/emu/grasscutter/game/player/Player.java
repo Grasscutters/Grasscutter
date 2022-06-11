@@ -485,6 +485,7 @@ public class Player {
 	
 	public TowerData getTowerData() {
 		if(towerData==null){
+			// because of mistake, null may be saved as storage at some machine, this if can be removed in future
 			towerData = new TowerData();
 		}
 		return towerData;
