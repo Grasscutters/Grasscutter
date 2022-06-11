@@ -3,7 +3,6 @@ package emu.grasscutter.command;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.game.ReceiveCommandFeedbackEvent;
-import emu.grasscutter.server.event.player.PlayerJoinEvent;
 
 import static emu.grasscutter.utils.Language.translate;
 
