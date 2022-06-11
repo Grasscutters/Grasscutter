@@ -15,10 +15,13 @@ import org.java_websocket.handshake.ServerHandshake;
 import com.google.gson.reflect.TypeToken;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Timer;
 
 public class GameWebSocketClient extends WebSocketClient{
-    private Account account;
+    private boolean gotResponse = false;
+    private Object result;
     public GameWebSocketClient(URI serverUri) {
         super(serverUri);
     }
@@ -30,10 +33,19 @@ public class GameWebSocketClient extends WebSocketClient{
 
     @Override
     public synchronized void onMessage(String message) {
-        RPCResponse.RPCResponseSuccess<?> response = Grasscutter.getGsonFactory().fromJson(message, new TypeToken<RPCResponse.RPCResponseSuccess<Account>>(){}.getType());
-        account = (Account) response.result;
-        Grasscutter.getLogger().info("Account on Message : "+response.result);
-        this.notify();
+        RPCResponse.RPCResponseError<?> responseError = null;
+        RPCResponse.RPCResponseSuccess<?> responseSuccess = null;
+        try{
+            responseError = Grasscutter.getGsonFactory().fromJson(message, new TypeToken<RPCResponse.RPCResponseError<?>>(){}.getType());
+        }catch (Exception ignored){}
+        try{
+            responseSuccess = Grasscutter.getGsonFactory().fromJson(message, new TypeToken<RPCResponse.RPCResponseSuccess<?>>(){}.getType());
+        }catch (Exception ignored){}
+        if (responseSuccess!=null) result = responseSuccess.result;
+        if (responseError != null || responseSuccess!=null){
+            gotResponse = true;
+            notify();
+        }
     }
 
     @Override
@@ -48,17 +60,21 @@ public class GameWebSocketClient extends WebSocketClient{
 
     public synchronized Account getAccountById(String id){
         RPCRequest rpcRequest = new RPCRequest();
-        rpcRequest.method = "get";
-        rpcRequest.params.put("uid",id);
+        rpcRequest.method = "getAccountById";
+        rpcRequest.params.put("id",id);
+        rpcRequest.id = new Date().getTime();
         this.send(Grasscutter.getGsonFactory().toJson(rpcRequest));
         String json = Grasscutter.getGsonFactory().toJson(rpcRequest);
         Grasscutter.getLogger().info(json);
-        while (account==null){
+        while (!gotResponse){
             try {
                 this.wait();
             } catch (Exception ignored) {}
         }
+        String jsonResult = Grasscutter.getGsonFactory().toJson(result);
+        Account account = Grasscutter.getGsonFactory().fromJson(jsonResult, new TypeToken<Account>(){}.getType());
         Grasscutter.getLogger().info("Account on method : "+account);
+        gotResponse = false;
         return account;
     }
 }

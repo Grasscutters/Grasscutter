@@ -101,11 +101,8 @@ public final class DatabaseHelper {
 	}
 
 	public static Account getAccountById(String uid) {
-		if (SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY){
-			return Grasscutter.getGameServer().getGameWebSocketClient().getAccountById(uid);
-		}else{
-			return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("_id", uid)).first();
-		}
+		return SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY ? Grasscutter.getGameServer().getGameWebSocketClient().getAccountById(uid) :
+		DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("_id", uid)).first();
 	}
 
 	public static Account getAccountByPlayerId(int playerId) {

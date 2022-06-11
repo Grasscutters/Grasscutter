@@ -114,14 +114,23 @@ public final class GameServer extends KcpServer {
 		this.combineManger = new CombineManger(this);
 		this.towerScheduleManager = new TowerScheduleManager(this);
 		this.worldDataManager = new WorldDataManager(this);
-		String scheme  = HTTP_INFO.encryption.useEncryption || HTTP_INFO.encryption.useInRouting ? "wss://":"ws://";
-		URI websocketURI = null;
-		try {
-			Grasscutter.getLogger().info("Connecting to : "+ scheme+HTTP_INFO.accessAddress+"/websocket/accounts?key=inikey");
-			websocketURI = new URI(scheme+HTTP_INFO.accessAddress+"/websocket/accounts?key=inikey");
-		} catch (Exception ignored) {}
-		this.gameWebSocketClient = new GameWebSocketClient(websocketURI);
-		this.gameWebSocketClient.connect();
+
+		if(SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY){
+			String scheme  = HTTP_INFO.encryption.useEncryption || HTTP_INFO.encryption.useInRouting ? "wss://":"ws://";
+			URI websocketURI = null;
+			if (SERVER.dispatch.regions.length != 1){
+				Grasscutter.getLogger().error("GAME_ONLY mode require to set exactly 1 region.");
+				System.exit(1);
+			}
+			String key = SERVER.dispatch.regions[0].Key;
+			try {
+				websocketURI = new URI(scheme+HTTP_INFO.accessAddress+"/websocket?key="+key);
+			} catch (Exception ignored) {
+				Grasscutter.getLogger().error("Error connecting to Dispatch Server Websocket! Make sure your dispatch server is already up.");
+			}
+			this.gameWebSocketClient = new GameWebSocketClient(websocketURI);
+			this.gameWebSocketClient.connect();
+		}
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}

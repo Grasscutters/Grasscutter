@@ -7,5 +7,5 @@ public class RPCRequest{
     public String jsonrpc = "2.0";
     public String method;
     public HashMap<String,Object> params = new HashMap<>();
-    public int id;
+    public long id;
 }

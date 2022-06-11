@@ -63,7 +63,7 @@ public final class RegionHandler implements Router {
         } else if (configuredRegions.size() == 0) 
             configuredRegions.add(new Region("os_usa", DISPATCH_INFO.defaultName,
                 lr(GAME_INFO.accessAddress, GAME_INFO.bindAddress), 
-                lr(GAME_INFO.accessPort, GAME_INFO.bindPort)));
+                lr(GAME_INFO.accessPort, GAME_INFO.bindPort),Utils.generateRandomString(32)));
         
         configuredRegions.forEach(region -> {
             if (usedNames.contains(region.Name)) {

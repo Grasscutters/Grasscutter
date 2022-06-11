@@ -2,7 +2,7 @@ package emu.grasscutter.server.http.objects;
 
 public class RPCResponse{
     public String jsonrpc = "2.0";
-    public int id;
+    public long id;
     public static class RPCResponseSuccess<T> extends RPCResponse{
         public RPCResponseSuccess(){}
         public T result;

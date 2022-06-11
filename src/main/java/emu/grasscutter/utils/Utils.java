@@ -4,6 +4,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.security.SecureRandom;
 import java.time.*;
 import java.time.temporal.TemporalAdjusters;
 import java.util.*;
@@ -376,5 +377,14 @@ public final class Utils {
 		} catch (Exception ignored) {
 			return null;
 		}
+	}
+
+	public static String generateRandomString(int len){
+		final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		SecureRandom rnd = new SecureRandom();
+		StringBuilder sb = new StringBuilder(len);
+		for(int i = 0; i < len; i++)
+			sb.append(AB.charAt(rnd.nextInt(AB.length())));
+		return sb.toString();
 	}
 }
