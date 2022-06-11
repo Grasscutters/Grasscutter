@@ -31,14 +31,17 @@ public final class WebSocketHandler implements Router {
             });
             wsHandler.onMessage(wsMessageContext -> {
                 RPCRequest request = wsMessageContext.message(RPCRequest.class);
-                if (request.method.equals("getAccountById")){
-                    Account account = DatabaseHelper.getAccountById((String) request.params.get("id"));
-                    if (account!=null){
-                        RPCResponse.RPCResponseSuccess<Account> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
-                        responseSuccess.result = account;
-                        responseSuccess.id = request.id;
-                        wsMessageContext.send(responseSuccess);
-                    }
+                switch (request.method){
+                    case "getAccountById":
+                        Account account = DatabaseHelper.getAccountById((String) request.params.get("id"));
+                        if (account!=null){
+                            RPCResponse.RPCResponseSuccess<Account> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
+                            responseSuccess.result = account;
+                            responseSuccess.id = request.id;
+                            wsMessageContext.send(responseSuccess);
+                        }
+                        break;
+                    case "":
                 }
             });
         });

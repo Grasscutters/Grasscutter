@@ -124,7 +124,7 @@ public final class GameServer extends KcpServer {
 			}
 			String key = SERVER.dispatch.regions[0].Key;
 			try {
-				websocketURI = new URI(scheme+HTTP_INFO.accessAddress+"/websocket?key="+key);
+				websocketURI = new URI(scheme+HTTP_INFO.accessAddress+":"+HTTP_INFO.accessPort+"/websocket?key="+key);
 			} catch (Exception ignored) {
 				Grasscutter.getLogger().error("Error connecting to Dispatch Server Websocket! Make sure your dispatch server is already up.");
 			}
