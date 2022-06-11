@@ -191,6 +191,7 @@ public class Player {
 		this.nameCardList = new HashSet<>();
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
+		this.towerData = new TowerData();
 		this.unlockedForgingBlueprints = new HashSet<>();
 		this.activeForges = new ArrayList<>();
 
