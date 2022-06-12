@@ -86,6 +86,7 @@ public class GameData {
 	private static final Int2ObjectMap<TowerLevelData> towerLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<TowerScheduleData> towerScheduleDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<InvestigationMonsterData> investigationMonsterDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CityData> cityDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<ForgeData> forgeDataMap = new Int2ObjectOpenHashMap<>();
 
 	// Cache
@@ -379,5 +380,7 @@ public class GameData {
 	public static Int2ObjectMap<InvestigationMonsterData> getInvestigationMonsterDataMap() {
 		return investigationMonsterDataMap;
 	}
-
+	public static Int2ObjectMap<CityData> getCityDataMap() {
+		return cityDataMap;
+	}
 }

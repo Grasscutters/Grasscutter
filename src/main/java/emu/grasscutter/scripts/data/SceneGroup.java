@@ -13,6 +13,7 @@ import javax.script.ScriptException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static emu.grasscutter.Configuration.SCRIPT;
@@ -162,5 +163,12 @@ public class SceneGroup {
 		
 		Grasscutter.getLogger().info("group {} in scene {} is loaded successfully.", id, sceneId);
 		return this;
+	}
+
+	public Optional<SceneBossChest> searchBossChestInGroup() {
+		return gadgets.values().stream()
+				.filter(g -> g.boss_chest != null && g.boss_chest.monster_config_id > 0)
+				.map(g -> g.boss_chest)
+				.findFirst();
 	}
 }
