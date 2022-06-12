@@ -521,6 +521,9 @@ public class Scene {
 	}
 
 	public List<SceneBlock> getPlayerActiveBlocks(Player player){
+		if (getScriptManager().getBlocksIndex() == null){
+			return List.of();
+		}
 		// consider the borders' entities of blocks, so we check if contains by index
 		return SceneIndexManager.queryNeighbors(getScriptManager().getBlocksIndex(),
 				player.getPos().toXZDoubleArray(), Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);

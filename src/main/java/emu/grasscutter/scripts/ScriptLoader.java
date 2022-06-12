@@ -6,31 +6,31 @@ import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.constants.ScriptGadgetState;
 import emu.grasscutter.scripts.constants.ScriptRegionShape;
 import emu.grasscutter.scripts.data.SceneMeta;
+import emu.grasscutter.scripts.engine.CoerceJavaToLua;
+import emu.grasscutter.scripts.engine.LuaScriptContext;
+import emu.grasscutter.scripts.engine.LuaScriptEngine;
 import emu.grasscutter.scripts.serializer.LuaSerializer;
 import emu.grasscutter.scripts.serializer.Serializer;
-import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
-import org.luaj.vm2.lib.OneArgFunction;
-import org.luaj.vm2.lib.jse.CoerceJavaToLua;
-import org.luaj.vm2.script.LuajContext;
+import net.sandius.rembulan.compiler.CompilerChunkLoader;
 
-import javax.script.*;
+import javax.script.CompiledScript;
+import javax.script.ScriptEngineManager;
 import java.io.File;
-import java.io.FileReader;
 import java.lang.ref.SoftReference;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 public class ScriptLoader {
 	private static ScriptEngineManager sm;
-	private static ScriptEngine engine;
-	private static ScriptEngineFactory factory;
+	private static LuaScriptEngine engine;
 	private static String fileType;
 	private static Serializer serializer;
 	private static ScriptLib scriptLib;
-	private static LuaValue scriptLibLua;
 	/**
 	 * suggest GC to remove it if the memory is less
 	 */
@@ -47,36 +47,30 @@ public class ScriptLoader {
 		
 		// Create script engine
 		sm = new ScriptEngineManager();
-        engine = sm.getEngineByName("luaj");
-        factory = getEngine().getFactory();
+        engine = new LuaScriptEngine();
+		engine.setLoader(CompilerChunkLoader.of("emu.grasscutter.scripts.lua"));
         
         // Lua stuff
         fileType = "lua";
         serializer = new LuaSerializer();
         
         // Set engine to replace require as a temporary fix to missing scripts
-        LuajContext ctx = (LuajContext) engine.getContext();
-		ctx.globals.set("require", new OneArgFunction() {
-		    @Override
-		    public LuaValue call(LuaValue arg0) {
-		        return LuaValue.ZERO;
-		    }
-		});
-		
-		LuaTable table = new LuaTable();
-		Arrays.stream(EntityType.values()).forEach(e -> table.set(e.name().toUpperCase(), e.getValue()));
-		ctx.globals.set("EntityType", table);
-		
-		ctx.globals.set("EventType", CoerceJavaToLua.coerce(new EventType())); // TODO - make static class to avoid instantiating a new class every scene
-		ctx.globals.set("GadgetState", CoerceJavaToLua.coerce(new ScriptGadgetState()));
-		ctx.globals.set("RegionShape", CoerceJavaToLua.coerce(new ScriptRegionShape()));
+        LuaScriptContext ctx = (LuaScriptContext) engine.getContext();
+
+		ctx.addGlobalContext("require", new LuaScriptContext.NullFunction());
+
+		ctx.addGlobalContext("EntityType",
+				Arrays.stream(EntityType.values()).collect(Collectors.toMap(e -> e.name().toUpperCase(), EntityType::getValue)));
+
+		ctx.addGlobalContext("EventType", CoerceJavaToLua.coerce(new EventType()));
+		ctx.addGlobalContext("GadgetState", CoerceJavaToLua.coerce(new ScriptGadgetState()));
+		ctx.addGlobalContext("RegionShape", CoerceJavaToLua.coerce(new ScriptRegionShape()));
 
 		scriptLib = new ScriptLib();
-		scriptLibLua = CoerceJavaToLua.coerce(scriptLib);
-		ctx.globals.set("ScriptLib", scriptLibLua);
+		ctx.addGlobalContext("ScriptLib", CoerceJavaToLua.coerce(scriptLib));
 	}
 	
-	public static ScriptEngine getEngine() {
+	public static LuaScriptEngine getEngine() {
 		return engine;
 	}
 	
@@ -88,13 +82,6 @@ public class ScriptLoader {
 		return serializer;
 	}
 
-	public static ScriptLib getScriptLib() {
-		return scriptLib;
-	}
-
-	public static LuaValue getScriptLibLua() {
-		return scriptLibLua;
-	}
 
 	public static <T> Optional<T> tryGet(SoftReference<T> softReference){
 		try{
@@ -115,8 +102,10 @@ public class ScriptLoader {
 
 		if (!file.exists()) return null;
 
-		try (FileReader fr = new FileReader(file)) {
-			var script = ((Compilable) getEngine()).compile(fr);
+		try {
+			var script = getEngine().compile(
+					Files.readString(file.toPath()),
+					Path.of("./").toAbsolutePath().relativize(file.toPath().toAbsolutePath()).toString());
 			scriptsCache.put(path, new SoftReference<>(script));
 			return script;
 		} catch (Exception e) {

@@ -1,19 +1,16 @@
 package emu.grasscutter.scripts.serializer;
 
- import com.esotericsoftware.reflectasm.ConstructorAccess;
+import com.esotericsoftware.reflectasm.ConstructorAccess;
 import com.esotericsoftware.reflectasm.MethodAccess;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.ScriptUtils;
+import emu.grasscutter.scripts.engine.LuaTable;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
-import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
+import net.sandius.rembulan.ByteString;
 
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -41,23 +38,22 @@ public class LuaSerializer implements Serializer {
 		}
 		
 		try {
-			LuaValue[] keys = table.keys();
-			for (LuaValue k : keys) {
+			for (var k : table) {
 				try {
-					LuaValue keyValue = table.get(k);
+					var keyValue = k.getValue();
 					
 					T object = null;
 					
-					if (keyValue.istable()) {
-						object = serialize(type, keyValue.checktable());
-				    } else if (keyValue.isint()) {
-				    	object = (T) (Integer) keyValue.toint();
-				    } else if (keyValue.isnumber()) {
-				    	object = (T) (Float) keyValue.tofloat(); // terrible...
-				    } else if (keyValue.isstring()) {
-				    	object = (T) keyValue.tojstring();
-					} else if (keyValue.isboolean()) {
-						object = (T) (Boolean) keyValue.toboolean();
+					if (keyValue instanceof LuaTable luaTable) {
+						object = serialize(type, luaTable);
+				    } else if (keyValue instanceof Long luaLong) {
+				    	object = (T) ScriptUtils.getInt(luaLong);
+				    } else if (keyValue instanceof Double luaDouble) {
+				    	object = (T) ScriptUtils.getFloat(luaDouble); // terrible...
+				    } else if (keyValue instanceof ByteString luaStr) {
+				    	object = (T) luaStr.toString();
+					} else if (keyValue instanceof Boolean luaBoolean) {
+						object = (T) luaBoolean;
 				    } else {
 				    	object = (T) keyValue;
 				    }
@@ -101,30 +97,29 @@ public class LuaSerializer implements Serializer {
 			if (table == null) {
 				return object;
 			}
-			
-			LuaValue[] keys = table.keys();
-			for (LuaValue k : keys) {
+
+			for (var k : table) {
 				try {
-					var keyName = k.checkjstring();
+					var keyName = k.getKey().toString();
 					if(!fieldMetaMap.containsKey(keyName)){
 						continue;
 					}
 					var fieldMeta = fieldMetaMap.get(keyName);
-					LuaValue keyValue = table.get(k);
+					var keyValue = k.getValue();
 
-					if (keyValue.istable()) {
-						methodAccess.invoke(object, fieldMeta.index, serialize(fieldMeta.getType(), keyValue.checktable()));
+					if (keyValue instanceof LuaTable luaTable) {
+						methodAccess.invoke(object, fieldMeta.index, serialize(fieldMeta.getType(), luaTable));
 				    } else if (fieldMeta.getType().equals(float.class)) {
-						methodAccess.invoke(object, fieldMeta.index, keyValue.tofloat());
+						methodAccess.invoke(object, fieldMeta.index, ScriptUtils.getFloat(keyValue));
 				    } else if (fieldMeta.getType().equals(int.class)) {
-						methodAccess.invoke(object, fieldMeta.index, keyValue.toint());
+						methodAccess.invoke(object, fieldMeta.index, ScriptUtils.getInt(keyValue));
 				    } else if (fieldMeta.getType().equals(String.class)) {
-						methodAccess.invoke(object, fieldMeta.index, keyValue.tojstring());
+						methodAccess.invoke(object, fieldMeta.index, keyValue.toString());
 				    } else if (fieldMeta.getType().equals(boolean.class)) {
-						methodAccess.invoke(object, fieldMeta.index, keyValue.toboolean());
+						methodAccess.invoke(object, fieldMeta.index, keyValue);
 					}
 					else {
-						methodAccess.invoke(object, fieldMeta.index, keyValue.tojstring());
+						methodAccess.invoke(object, fieldMeta.index, keyValue);
 				    }
 				} catch (Exception ex) {
 					//ex.printStackTrace();

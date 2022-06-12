@@ -2,17 +2,14 @@ package emu.grasscutter.scripts.data;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.ScriptLoader;
+import emu.grasscutter.scripts.engine.LuaTable;
 import emu.grasscutter.utils.Position;
 import lombok.Setter;
 import lombok.ToString;
+import net.sandius.rembulan.runtime.LuaFunction;
 
-import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
-
-import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -42,8 +39,7 @@ public class SceneGroup {
 	public SceneInitConfig init_config;
 
 	private transient boolean loaded; // Not an actual variable in the scripts either
-	private transient CompiledScript script;
-	private transient Bindings bindings;
+
 	public static SceneGroup of(int groupId) {
 		var group = new SceneGroup();
 		group.id = groupId;
@@ -66,17 +62,11 @@ public class SceneGroup {
 		return this.garbages == null ? null : this.garbages.gadgets;
 	}
 
-	public CompiledScript getScript() {
-		return script;
-	}
 
 	public SceneSuite getSuiteByIndex(int index) {
 		return suites.get(index - 1);
 	}
 
-	public Bindings getBindings() {
-		return bindings;
-	}
 
 	public synchronized SceneGroup load(int sceneId){
 		if(loaded){
@@ -85,7 +75,7 @@ public class SceneGroup {
 		// Set flag here so if there is no script, we dont call this function over and over again.
 		setLoaded(true);
 
-		this.bindings = ScriptLoader.getEngine().createBindings();
+		var bindings = ScriptLoader.getEngine().createBindings();
 
 		CompiledScript cs = ScriptLoader.getScriptByPath(
 				SCRIPT("Scene/" + sceneId + "/scene" + sceneId + "_group" + id + "." + ScriptLoader.getScriptType()));
@@ -93,8 +83,6 @@ public class SceneGroup {
 		if (cs == null) {
 			return this;
 		}
-
-		this.script = cs;
 		
 		// Eval script
 		try {
@@ -111,7 +99,11 @@ public class SceneGroup {
 
 			triggers = ScriptLoader.getSerializer().toList(SceneTrigger.class, bindings.get("triggers")).stream()
 					.collect(Collectors.toMap(x -> x.name, y -> y));
-			triggers.values().forEach(t -> t.currentGroup = this);
+			triggers.values().forEach(t -> {
+				t.currentGroup = this;
+				t.conditionFunc = (LuaFunction)bindings.get(t.condition);
+				t.actionFunc = (LuaFunction)bindings.get(t.action);
+			});
 
 			suites = ScriptLoader.getSerializer().toList(SceneSuite.class, bindings.get("suites"));
 			regions = ScriptLoader.getSerializer().toList(SceneRegion.class, bindings.get("regions")).stream()
@@ -120,14 +112,10 @@ public class SceneGroup {
 
 			init_config = ScriptLoader.getSerializer().toObject(SceneInitConfig.class, bindings.get("init_config"));
 			
-			// Garbages TODO fix properly later
-			Object garbagesValue = bindings.get("garbages");
-			if (garbagesValue != null && garbagesValue instanceof LuaValue garbagesTable) {
-				garbages = new SceneGarbage();
-				if (garbagesTable.checktable().get("gadgets") != LuaValue.NIL) {
-					garbages.gadgets = ScriptLoader.getSerializer().toList(SceneGadget.class, garbagesTable.checktable().get("gadgets").checktable());
-					garbages.gadgets.forEach(m -> m.group = this);
-				}
+			// Garbage
+			Object garbageValue = bindings.get("garbages");
+			if (garbageValue instanceof LuaTable luaTable) {
+				garbages = new SceneGarbage(luaTable, this);
 			}
 			
 			// Add variables to suite

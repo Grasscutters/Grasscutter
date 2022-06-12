@@ -1,6 +1,7 @@
 package emu.grasscutter.scripts.data;
 
 import lombok.Setter;
+import net.sandius.rembulan.runtime.LuaFunction;
 
 @Setter
 public class SceneTrigger {
@@ -10,7 +11,8 @@ public class SceneTrigger {
 	public String source;
 	public String condition;
 	public String action;
-
+	public transient LuaFunction conditionFunc;
+	public transient LuaFunction actionFunc;
 	public transient SceneGroup currentGroup;
 	@Override
 	public boolean equals(Object obj) {
