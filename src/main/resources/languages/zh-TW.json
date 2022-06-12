@@ -64,7 +64,8 @@
       "console_execute_error": "此指令只能在伺服器的命令提示字元執行。",
       "player_execute_error": "請在遊戲裡使用這條指令。",
       "command_exist_error": "找不到指令。",
-      "no_description_specified": "没有指定說明。",
+      "no_usage_specified": "沒有指定用法",
+      "no_description_specified": "没有指定說明",
       "invalid": {
         "amount": "無效的數量。",
         "artifactId": "無效的聖遺物ID。",
@@ -389,7 +390,7 @@
     },
     "unlocktower": {
       "success": "解鎖完成。",
-      "description": "解鎖所有級別的深境螺旋。"
+      "description": "解鎖深境迴廊。"
     }
   },
   "gacha": {
