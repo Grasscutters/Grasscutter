@@ -64,7 +64,8 @@
       "console_execute_error": "This command can only be run from the console.",
       "player_execute_error": "Run this command in-game.",
       "command_exist_error": "No command found.",
-      "no_description_specified": "No description specified.",
+      "no_usage_specified": "No usage specified",
+      "no_description_specified": "No description specified",
       "invalid": {
         "amount": "Invalid amount.",
         "artifactId": "Invalid artifact ID.",
@@ -389,7 +390,7 @@
     },
     "unlocktower": {
       "success": "Unlock done.",
-      "description": "Unlock all levels of tower"
+      "description": "Unlock Abyss Corridor's Floors"
     }
   },
   "gacha": {
