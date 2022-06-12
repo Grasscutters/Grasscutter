@@ -48,7 +48,8 @@
       "run_mode_help": "Tryb pracy serwera musi być ustawiony na 'HYBRID', 'DISPATCH_ONLY', lub 'GAME_ONLY'. Nie można wystartować Grasscutter...",
       "create_resources": "Tworzenie folderu resources...",
       "resources_error": "Umieść kopię 'BinOutput' i 'ExcelBinOutput' w folderze resources.",
-      "version": "Grasscutter versión: %s-%s"
+      "version": "Grasscutter versión: %s-%s",
+      "game_version": "Game versión: %s"
     }
   },
   "commands": {
@@ -290,7 +291,7 @@
       "success": "Przeteleportowano %s do %s, %s, %s w scenie %s"
     },
     "weather": {
-      "usage": "Użycie: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types: '0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist'",
+      "usage": "Użycie: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types 0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist",
       "success": "Changed climate type to %s with weather type %s.",
       "invalid_id": "Błędne ID."
     },

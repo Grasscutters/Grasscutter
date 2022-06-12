@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 676
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ForgeStartReq {
+	uint32 forge_id = 9;
+	uint32 forge_count = 11;
+	uint32 avatar_id = 13;
+}

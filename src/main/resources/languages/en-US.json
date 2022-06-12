@@ -52,7 +52,8 @@
       "run_mode_help": "Server run mode must be 'HYBRID', 'DISPATCH_ONLY', or 'GAME_ONLY'. Unable to start Grasscutter...",
       "create_resources": "Creating resources folder...",
       "resources_error": "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.",
-      "version": "Grasscutter version: %s-%s"
+      "version": "Grasscutter version: %s-%s",
+      "game_version": "Game version: %s"
     }
   },
   "commands": {
@@ -136,7 +137,7 @@
     "coop": {
       "usage": "Usage: coop [host UID]",
       "success": "Summoned %s to %s's world.",
-      "description": "Forces someone to join the world of others"
+      "description": "Forces someone to join the world of others. If no one is targeted, it sends you into co-op mode anyway."
     },
     "enter_dungeon": {
       "usage": "Usage: enterdungeon <dungeonID>",
@@ -182,6 +183,11 @@
     "nostamina": {
       "success": "NoStamina is now %s for %s.",
       "description": "Keep your endurance to the maximum."
+    },
+    "unlimitenergy": {
+      "success": "UnlimitEnergy is now %s for %s.",
+      "config_error": "Command is disabled, because energyUsage is false in config.json.",
+      "description": "Use the element does not waste energy"
     },
     "heal": {
       "success": "All characters have been healed.",
@@ -304,7 +310,7 @@
       "description": "Sets your world level (Relog to see proper effects)"
     },
     "spawn": {
-      "usage": "Usage: spawn <entityID> [amount] [level(monster only)] <x> <y> <z>(monster only, optional)",
+      "usage": "Usage: spawn <entityID> [amount] [level(monster only)] [<x> <y> <z>(monster only, optional)]",
       "success": "Spawned %s of %s.",
       "limit_reached": "Scene spawn limit reached. Spawning %s entities instead.",
       "description": "Spawns an entity near you"
@@ -362,7 +368,7 @@
       "description": "Change the player's position"
     },
     "weather": {
-      "usage": "Usage: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types: '0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist'",
+      "usage": "Usage: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types 0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist",
       "success": "Changed climate type to %s with weather type %s.",
       "invalid_id": "Invalid ID.",
       "description": "Changes the weather"

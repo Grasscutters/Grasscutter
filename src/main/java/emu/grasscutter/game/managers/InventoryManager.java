@@ -822,6 +822,7 @@ public class InventoryManager {
 		}
 		
 		int used = 0;
+		boolean useSuccess = false;
 		
 		// Use
 		switch (useItem.getItemData().getMaterialType()) {
@@ -852,15 +853,8 @@ public class InventoryManager {
 
 				// Handle forging blueprints.
 				if (useItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_FORGE")) {
-					// Determine the forging item we should unlock.
-					int forgeId = Integer.parseInt(useItem.getItemData().getItemUse().get(0).getUseParam().get(0));
-
-					// Tell the client that this blueprint is now unlocked and add the unlocked item to the player.
-					player.sendPacket(new PacketForgeFormulaDataNotify(forgeId));
-					player.getUnlockedForgingBlueprints().add(forgeId);
-
-					// Use up the blueprint item.
-					used = 1;
+					// Unlock.
+					useSuccess = player.getForgingManager().unlockForgingBlueprint(useItem);
 				}
 				break;
 			case MATERIAL_CHEST:
@@ -927,8 +921,13 @@ public class InventoryManager {
 			used = 1;
 		}
 
+		// If we used at least one item, or one of the methods called here reports using the item successfully,
+		// we return the item to make UseItemRsp a success.
 		if (used > 0) {
 			player.getInventory().removeItem(useItem, used);
+			return useItem;
+		}
+		if (useSuccess) {
 			return useItem;
 		}
 

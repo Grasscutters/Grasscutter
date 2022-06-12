@@ -1,30 +1,27 @@
 package emu.grasscutter.server.packet.send;
 
+import java.util.Map;
+
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ForgeDataNotifyOuterClass.ForgeDataNotify;
+import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
 
 public class PacketForgeDataNotify extends BasePacket {
 	
-	public PacketForgeDataNotify(Player player) {
+	public PacketForgeDataNotify(Iterable<Integer> unlockedItem, int numQueues, Map<Integer, ForgeQueueData> queueData) {
 		super(PacketOpcodes.ForgeDataNotify);
 		
-		int adventureRank = player.getLevel();
-		int numQueues = 
-			(adventureRank >= 15) ? 4 
-			: (adventureRank >= 10) ? 3 
-			: (adventureRank >= 5) ? 2 
-			: 1;
+		ForgeDataNotify.Builder builder = ForgeDataNotify.newBuilder()
+			.addAllForgeIdList(unlockedItem)
+			.setMaxQueueNum(numQueues);
 
-		ForgeDataNotify proto = ForgeDataNotify.newBuilder()
-			.addAllForgeIdList(player.getUnlockedForgingBlueprints())
-			.setMaxQueueNum(numQueues)
-			.build();
+		for (int queueId : queueData.keySet()) {
+			var data = queueData.get(queueId);
+			builder.putForgeQueueMap(queueId, data);
+		}
 
-		// ToDo: Add the information for the actual forging queues
-		// and ongoing forges.
-
-		this.setData(proto);
+		this.setData(builder.build());
 	}
 }
