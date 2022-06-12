@@ -6,6 +6,8 @@ import emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo;
 import emu.grasscutter.net.proto.PrivateChatNotifyOuterClass.PrivateChatNotify;
 
 public class PacketPrivateChatNotify extends BasePacket {
+	private ChatInfo info;
+
 	public PacketPrivateChatNotify(int senderId, int recvId, String message) {
 		super(PacketOpcodes.PrivateChatNotify);
 		
@@ -15,7 +17,8 @@ public class PacketPrivateChatNotify extends BasePacket {
 				.setToUid(recvId)
 				.setText(message)
 				.build();
-		
+		this.info = info;
+
 		PrivateChatNotify proto = PrivateChatNotify.newBuilder()
 				.setChatInfo(info)
 				.build();
@@ -32,11 +35,16 @@ public class PacketPrivateChatNotify extends BasePacket {
 				.setToUid(recvId)
 				.setIcon(emote)
 				.build();
+		this.info = info;
 		
 		PrivateChatNotify proto = PrivateChatNotify.newBuilder()
 				.setChatInfo(info)
 				.build();
 		
 		this.setData(proto);
+	}
+
+	public ChatInfo getChatInfo() {
+		return this.info;
 	}
 }
