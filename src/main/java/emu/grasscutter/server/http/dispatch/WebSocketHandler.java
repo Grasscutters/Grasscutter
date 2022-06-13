@@ -30,8 +30,8 @@ public final class WebSocketHandler implements Router {
                     keys.add(region.Key);
                 }
                 if (!keys.contains(key)){
-                    Grasscutter.getLogger().warn("Game server with ip :"+wsConnectContext.host()+" and key : "+key+" unable to connect.");
-                    wsConnectContext.session.disconnect();
+                    //Grasscutter.getLogger().warn("Game server with ip :"+wsConnectContext.host()+" and key : "+key+" unable to connect.");
+                    //wsConnectContext.session.disconnect();
                 }
             });
             wsHandler.onMessage(wsMessageContext -> {
