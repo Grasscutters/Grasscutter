@@ -49,6 +49,7 @@ import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
@@ -953,7 +954,7 @@ public class Player {
 		return this.getMailHandler().replaceMailByIndex(index, message);
 	}
 	
-	public void interactWith(int gadgetEntityId) {
+	public void interactWith(int gadgetEntityId, GadgetInteractReq request) {
 		GameEntity entity = getScene().getEntityById(gadgetEntityId);
 		if (entity == null) {
 			return;
@@ -983,7 +984,7 @@ public class Player {
 		} else if (entity instanceof EntityGadget gadget) {
 			if (gadget.getGadgetData().getType() == EntityType.RewardStatue) {
 				if (scene.getChallenge() != null) {
-					scene.getChallenge().getStatueDrops(this);
+					scene.getChallenge().getStatueDrops(this, request);
 				}
 				this.sendPacket(new PacketGadgetInteractRsp(gadget, InteractType.INTERACT_TYPE_OPEN_STATUE));
 			}

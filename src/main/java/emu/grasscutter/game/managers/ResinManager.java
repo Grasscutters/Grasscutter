@@ -1,5 +1,7 @@
 package emu.grasscutter.game.managers;
 
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.server.packet.send.PacketPlayerPropNotify;
@@ -7,6 +9,8 @@ import emu.grasscutter.server.packet.send.PacketResinChangeNotify;
 import emu.grasscutter.utils.Utils;
 
 import static emu.grasscutter.Configuration.GAME_OPTIONS;
+
+import emu.grasscutter.Grasscutter;
 
 public class ResinManager {
     private final Player player;
@@ -39,12 +43,12 @@ public class ResinManager {
         // starting the recharging process.
         if (newResin < GAME_OPTIONS.resinOptions.cap) {
 		    int currentTime = Utils.getCurrentSeconds();
-            this.player.setNextResinRefresh(currentTime);
+            this.player.setNextResinRefresh(currentTime + GAME_OPTIONS.resinOptions.rechargeTime);
         }
 
         // Send packets.
-        this.player.sendPacket(new PacketResinChangeNotify(this.player));
         this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
+        this.player.sendPacket(new PacketResinChangeNotify(this.player));
 
         return true;
     }
@@ -100,6 +104,9 @@ public class ResinManager {
      * Player login.
      ********************/
     public synchronized void onPlayerLogin() {
+		GameItem condensedResin = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(220007);
+        Grasscutter.getLogger().info("Condensed resin count: {}", condensedResin.getCount());
+
         // If resin usage is disabled, set resin to cap.
         if (!GAME_OPTIONS.resinOptions.resinUsage) {
             this.player.setProperty(PlayerProperty.PROP_PLAYER_RESIN, GAME_OPTIONS.resinOptions.cap);

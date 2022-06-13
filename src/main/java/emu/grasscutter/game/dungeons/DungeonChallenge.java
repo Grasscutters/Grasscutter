@@ -4,9 +4,11 @@ import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.DungeonData;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.ScriptArgs;
@@ -153,7 +155,17 @@ public class DungeonChallenge {
 		}
 	}
 	
-	public void getStatueDrops(Player player) {
+	private List<GameItem> rollRewards() {
+		List<GameItem> rewards = new ArrayList<>();
+
+		for (ItemParamData param : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
+			rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
+		}
+
+		return rewards;
+	}
+
+	public void getStatueDrops(Player player, GadgetInteractReq request) {
 		DungeonData dungeonData = getScene().getDungeonData();
 		if (!isSuccess() || dungeonData == null || dungeonData.getRewardPreview() == null || dungeonData.getRewardPreview().getPreviewItems().length == 0) {
 			return;
@@ -164,11 +176,36 @@ public class DungeonChallenge {
 			return;
 		}
 		
+		// Get rewards.
 		List<GameItem> rewards = new ArrayList<>();
-		for (ItemParamData param : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
-			rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
+
+		if (request.getIsUseCondenseResin()) {
+			// Make sure the player has condensed resin.
+			GameItem condensedResin = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(220007);
+			if (condensedResin == null || condensedResin.getCount() <= 0) {
+				return;
+			}
+
+			// Deduct.
+			player.getInventory().removeItem(condensedResin, 1);
+
+			// Roll rewards, twice (because condensed).
+			rewards.addAll(this.rollRewards());
+			rewards.addAll(this.rollRewards());
+		}
+		else {
+			// If the player used regular resin, try to deduct.
+			// Stop if insufficient resin.
+			boolean success = player.getResinManager().useResin(20);
+			if (!success) {
+				return;
+			}
+
+			// Roll rewards.
+			rewards.addAll(this.rollRewards());
 		}
 		
+		// Add rewards to player and send notification.
 		player.getInventory().addItems(rewards, ActionReason.DungeonStatueDrop);
 		player.sendPacket(new PacketGadgetAutoPickDropInfoNotify(rewards));
 		
