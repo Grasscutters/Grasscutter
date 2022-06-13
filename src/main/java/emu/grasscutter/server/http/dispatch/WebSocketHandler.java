@@ -24,6 +24,9 @@ public final class WebSocketHandler implements Router {
     private HashMap<String,Region> regionsIp = new HashMap<>();
     @Override
     public void applyRoutes(Express express, Javalin handle) {
+        if (SERVER.runMode == Grasscutter.ServerRunMode.HYBRID){
+            regionsIp.put("server",SERVER.dispatch.regions[0]);
+        }
         express.ws("/websocket",wsHandler -> {
             wsHandler.onConnect(wsConnectContext -> {
                 String key = wsConnectContext.queryParam("key");
@@ -234,10 +237,9 @@ public final class WebSocketHandler implements Router {
                     case "addServerToDispatch" -> {
                         String serverJson = Grasscutter.getGsonFactory().toJson(request.params.get("server"));
                         Region server = Grasscutter.getGsonFactory().fromJson(serverJson, new TypeToken<Region>(){}.getType());
-                        DISPATCH_INFO.regions = Arrays.copyOf(DISPATCH_INFO.regions, DISPATCH_INFO.regions.length + 1);
-                        DISPATCH_INFO.regions[DISPATCH_INFO.regions.length - 1] = server;
                         Grasscutter.getLogger().info("Added server to dispatch : " + Grasscutter.getGsonFactory().toJson(server));
                         regionsIp.put(wsMessageContext.session.getRemoteAddress().getAddress().toString(), server);
+                        reinitialize();
                         try{
                             RegionHandler.initialize();
                             RPCResponse.RPCResponseSuccess<Boolean> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
@@ -262,9 +264,12 @@ public final class WebSocketHandler implements Router {
             wsHandler.onClose(wsCloseContext->{
                 Grasscutter.getLogger().info("Websocket with Game Server : " + wsCloseContext.session.getRemoteAddress().getAddress().toString() + " closed, Removing from game server list.");
                 regionsIp.remove(wsCloseContext.session.getRemoteAddress().getAddress().toString());
-                SERVER.dispatch.regions = Arrays.copyOf(regionsIp.values().toArray(), regionsIp.values().toArray().length, Region[].class);
-                RegionHandler.initialize();
+                reinitialize();
             });
         });
+    }
+    private void reinitialize(){
+        SERVER.dispatch.regions = Arrays.copyOf(regionsIp.values().toArray(), regionsIp.values().toArray().length, Region[].class);
+        RegionHandler.initialize();
     }
 }
