@@ -50,6 +50,11 @@ public class ResinManager {
     }
 
     public synchronized void addResin(int amount) {
+        // Check if resin enabled.
+        if (!GAME_OPTIONS.resinOptions.resinUsage) {
+            return;
+        }
+
         // Add resin.
         int currentResin = this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
         int newResin = currentResin + amount;
