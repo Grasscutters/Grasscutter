@@ -140,6 +140,11 @@
       "success": "已强制传送 %s 到 %s 的世界。",
       "description": "强制传送指定玩家到他人的世界。如果没有指定玩家，则会使你进入多人游戏状态"
     },
+    "drop": {
+      "command_usage": "用法：drop <物品ID|物品名称> [数量]",
+      "success": "已丢下 %s 个 %s。",
+      "description": "在你附近丢下物品"
+    },
     "enter_dungeon": {
       "usage": "用法：enterdungeon <秘境ID>",
       "changed": "已进入秘境 %s。",
@@ -181,18 +186,15 @@
       "success": "Godmode 已设为 %s。[用户：%s]",
       "description": "防止你受到伤害"
     },
-    "nostamina": {
-      "success": "NoStamina 已设为 %s。[用户：%s]",
-      "description": "保持你的体力处于最高状态"
-    },
-    "unlimitenergy": {
-      "success": "UnlimitEnergy 已设为 %s。[用户：%s]",
-      "config_error": "命令不可用。因为 config.json 中 energyUsage 为 false。",
-      "description": "使用元素爆发而不消耗能量"
-    },
     "heal": {
       "success": "已治疗所有角色。",
       "description": "治疗当前队伍的角色"
+    },
+    "help": {
+      "usage": "用法：",
+      "aliases": "别名：",
+      "available_commands": "可用命令：",
+      "description": "发送帮助信息或显示指定命令的信息"
     },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已将 [%s:%s] 踢出。",
@@ -219,6 +221,10 @@
     "list": {
       "success": "目前在线人数：%s",
       "description": "查看所有玩家"
+    },
+    "nostamina": {
+      "success": "NoStamina 已设为 %s。[用户：%s]",
+      "description": "保持你的体力处于最高状态"
     },
     "permission": {
       "usage": "用法：permission <add|remove> <用户名> <权限>",
@@ -255,6 +261,9 @@
       "usage": "用法：resetshop <玩家ID>",
       "success": "重置完成。",
       "description": "重置指定玩家的商店刷新时间"
+    },
+    "restart": {
+      "description": "重新启动服务器"
     },
     "sendMail": {
       "usage": "用法：sendmail <用户ID|all|help> [模板ID]",
@@ -368,29 +377,20 @@
       "success": "传送 %s 到坐标 %s, %s, %s，场景为 %s。",
       "description": "改变指定玩家的位置"
     },
+    "unlimitenergy": {
+      "success": "UnlimitEnergy 已设为 %s。[用户：%s]",
+      "config_error": "命令不可用。因为 config.json 中 energyUsage 为 false。",
+      "description": "使用元素爆发而不消耗能量"
+    },
+    "unlocktower": {
+      "success": "现已解锁深境回廊(1-8层)。",
+      "description": "解锁深境螺旋"
+    },
     "weather": {
       "usage": "用法：weather <气候类型(天气ID)> <天气类型(气候ID)>\n天气类型 0: 无, 1: 晴天, 2: 多云, 3: 雨, 4: 雷雨, 5: 雪, 6: 雾",
       "success": "已更改气候类型为 %s，天气类型为 %s。",
       "invalid_id": "无效的ID。",
       "description": "更改天气"
-    },
-    "drop": {
-      "command_usage": "用法：drop <物品ID|物品名称> [数量]",
-      "success": "已丢下 %s 个 %s。",
-      "description": "在你附近丢下物品"
-    },
-    "help": {
-      "usage": "用法：",
-      "aliases": "别名：",
-      "available_commands": "可用命令：",
-      "description": "发送帮助信息或显示指定命令的信息"
-    },
-    "restart": {
-      "description": "重新启动服务器"
-    },
-    "unlocktower": {
-      "success": "解锁完成。",
-      "description": "解锁深境回廊(1-8层)"
     }
   },
   "gacha": {
