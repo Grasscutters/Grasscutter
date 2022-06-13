@@ -167,6 +167,8 @@ public class DungeonChallenge {
 
 	public void getStatueDrops(Player player, GadgetInteractReq request) {
 		DungeonData dungeonData = getScene().getDungeonData();
+		int resinCost = dungeonData.getStatueCostCount() != 0 ? dungeonData.getStatueCostCount() : 20;
+
 		if (!isSuccess() || dungeonData == null || dungeonData.getRewardPreview() == null || dungeonData.getRewardPreview().getPreviewItems().length == 0) {
 			return;
 		}
@@ -180,6 +182,13 @@ public class DungeonChallenge {
 		List<GameItem> rewards = new ArrayList<>();
 
 		if (request.getIsUseCondenseResin()) {
+			// Check if condensed resin is usable here.
+			// For this, we use the following logic for now:
+			// The normal resin cost of the dungeon has to be 20.
+			if (resinCost != 20) {
+				return;
+			}
+
 			// Make sure the player has condensed resin.
 			GameItem condensedResin = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(220007);
 			if (condensedResin == null || condensedResin.getCount() <= 0) {
@@ -196,7 +205,7 @@ public class DungeonChallenge {
 		else {
 			// If the player used regular resin, try to deduct.
 			// Stop if insufficient resin.
-			boolean success = player.getResinManager().useResin(20);
+			boolean success = player.getResinManager().useResin(resinCost);
 			if (!success) {
 				return;
 			}

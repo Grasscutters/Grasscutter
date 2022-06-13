@@ -37,7 +37,7 @@ public class ResinManager {
 
         // Check if this has taken the player under the recharge cap,
         // starting the recharging process.
-        if (newResin < GAME_OPTIONS.resinOptions.cap) {
+        if (this.player.getNextResinRefresh() == 0 && newResin < GAME_OPTIONS.resinOptions.cap) {
 		    int currentTime = Utils.getCurrentSeconds();
             this.player.setNextResinRefresh(currentTime + GAME_OPTIONS.resinOptions.rechargeTime);
         }
