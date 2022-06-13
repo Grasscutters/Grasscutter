@@ -122,14 +122,14 @@ public final class DatabaseManager {
 			return c.getSimpleName().equals("Player") ? Grasscutter.getGameServer().getGameWebSocketClient().getNextPlayerId() :
 			Grasscutter.getGameServer().getGameWebSocketClient().getNextAccountId();
 		}
-		DatabaseCounter counter = getGameDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", c.getSimpleName())).first();
+		DatabaseCounter counter = getAccountDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", c.getSimpleName())).first();
 		if (counter == null) {
 			counter = new DatabaseCounter(c.getSimpleName());
 		}
 		try {
 			return counter.getNextId();
 		} finally {
-			getGameDatastore().save(counter);
+			getAccountDatastore().save(counter);
 		}
 	}
 
