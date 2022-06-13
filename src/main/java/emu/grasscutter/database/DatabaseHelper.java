@@ -85,21 +85,28 @@ public final class DatabaseHelper {
 	}
 
 	public static void saveAccount(Account account) {
-		DatabaseManager.getAccountDatastore().save(account);
+		if (SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY) {
+			Grasscutter.getGameServer().getGameWebSocketClient().saveAccount(account);
+		} else {
+			DatabaseManager.getAccountDatastore().save(account);
+		}
 	}
 
 	public static Account getAccountByName(String username) {
-		return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("username", username)).first();
+		return SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY ? Grasscutter.getGameServer().getGameWebSocketClient().getAccountByName(username) :
+		DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("username", username)).first();
 	}
 
 	public static Account getAccountByToken(String token) {
 		if(token == null) return null;
-		return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("token", token)).first();
+		return SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY ? Grasscutter.getGameServer().getGameWebSocketClient().getAccountByToken(token) :
+		DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("token", token)).first();
 	}
 
 	public static Account getAccountBySessionKey(String sessionKey) {
 		if(sessionKey == null) return null;
-		return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("sessionKey", sessionKey)).first();
+		return SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY ? Grasscutter.getGameServer().getGameWebSocketClient().getAccountBySessionKey(sessionKey) :
+		DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("sessionKey", sessionKey)).first();
 	}
 
 	public static Account getAccountById(String uid) {
