@@ -206,9 +206,10 @@ public final class WebSocketHandler implements Router {
                         DatabaseCounter counter = DatabaseManager.getAccountDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", "Player")).first();
                         if (counter == null){
                             counter = new DatabaseCounter("Player");
-                            DatabaseManager.getAccountDatastore().save(counter);
                         }
-                        responseSuccess.result = counter.getNextId();
+                        int id = counter.getNextId();
+                        DatabaseManager.getAccountDatastore().save(counter);
+                        responseSuccess.result = id;
                         responseSuccess.id = request.id;
                         wsMessageContext.send(responseSuccess);
                     }
@@ -217,9 +218,10 @@ public final class WebSocketHandler implements Router {
                         DatabaseCounter counter = DatabaseManager.getAccountDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", "Account")).first();
                         if (counter == null){
                             counter = new DatabaseCounter("Account");
-                            DatabaseManager.getAccountDatastore().save(counter);
                         }
-                        responseSuccess.result = counter.getNextId();
+                        int id = counter.getNextId();
+                        DatabaseManager.getAccountDatastore().save(counter);
+                        responseSuccess.result = id;
                         responseSuccess.id = request.id;
                         wsMessageContext.send(responseSuccess);
                     }

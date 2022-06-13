@@ -189,6 +189,7 @@ public final class DatabaseHelper {
 		}
 		// Save to database
 		DatabaseManager.getGameDatastore().save(character);
+
 		return character;
 	}
 
