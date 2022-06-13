@@ -123,7 +123,7 @@ public class ConfigContainer {
         public int bindPort = 443;
         /* This is the port used in URLs. */
         public int accessPort = 0;
-        
+
         public Encryption encryption = new Encryption();
         public Policies policies = new Policies();
         public Files files = new Files();
@@ -151,6 +151,7 @@ public class ConfigContainer {
     public static class Dispatch {
         public Region[] regions = {};
 
+        public String key = Utils.generateRandomString(32); // Used for adding new remote regions.
         public String defaultName = "Grasscutter";
     }
 

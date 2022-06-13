@@ -21,6 +21,13 @@ public class GameWebSocketClient extends WebSocketClient{
     public void onOpen(ServerHandshake handshakedata) {
         Grasscutter.getLogger().info("WebSocket Connected to Dispatch Server!");
         Grasscutter.getGameServer().setIsGameWebSocketClientConnected(true);
+        if (isServerOnDispatch()) {
+            if (addServerToDispatch()) {
+                Grasscutter.getLogger().info("Added to Dispatch Server!.");
+            } else {
+                Grasscutter.getLogger().error("Failed to add to Dispatch Server!.");
+            }
+        }
     }
 
     @Override

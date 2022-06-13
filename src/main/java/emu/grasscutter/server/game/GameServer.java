@@ -125,7 +125,7 @@ public final class GameServer extends KcpServer {
 				System.exit(1);
 			}
 			try {
-				websocketURI = new URI(scheme+HTTP_INFO.accessAddress+":"+HTTP_INFO.accessPort+"/websocket");
+				websocketURI = new URI(scheme+HTTP_INFO.accessAddress+":"+HTTP_INFO.accessPort+"/websocket?key="+SERVER.dispatch.key);
 			} catch (Exception ignored) {
 				Grasscutter.getLogger().error("Error connecting to Dispatch Server Websocket! Make sure your dispatch server is already up.");
 			}
@@ -137,13 +137,6 @@ public final class GameServer extends KcpServer {
 						if (!this.isGameWebSocketClientConnected){
 							this.gameWebSocketClient = new GameWebSocketClient(finalWebsocketURI);
 							this.gameWebSocketClient.connect();
-						}
-						if (this.gameWebSocketClient.isOpen() && !this.gameWebSocketClient.isServerOnDispatch()) {
-							if (this.getGameWebSocketClient().addServerToDispatch()) {
-								Grasscutter.getLogger().info("Added to Dispatch Server!.");
-							} else {
-								Grasscutter.getLogger().error("Failed to add to Dispatch Server!.");
-							}
 						}
 					} catch (InterruptedException e) {
 						e.printStackTrace();

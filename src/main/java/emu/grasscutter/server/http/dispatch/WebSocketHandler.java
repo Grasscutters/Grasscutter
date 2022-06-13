@@ -26,7 +26,11 @@ public final class WebSocketHandler implements Router {
     public void applyRoutes(Express express, Javalin handle) {
         express.ws("/websocket",wsHandler -> {
             wsHandler.onConnect(wsConnectContext -> {
-
+                String key = wsConnectContext.queryParam("key");
+                if(!key.equals(SERVER.dispatch.key)){
+                    Grasscutter.getLogger().error("Invalid key for websocket connection! IP : "+wsConnectContext.session.getRemoteAddress().getAddress().toString());
+                    wsConnectContext.session.close();
+                }
             });
             wsHandler.onMessage(wsMessageContext -> {
                 RPCRequest request = wsMessageContext.message(RPCRequest.class);
