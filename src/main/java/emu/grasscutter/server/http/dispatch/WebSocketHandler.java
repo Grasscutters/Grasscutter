@@ -236,6 +236,7 @@ public final class WebSocketHandler implements Router {
                         Region server = Grasscutter.getGsonFactory().fromJson(serverJson, new TypeToken<Region>(){}.getType());
                         DISPATCH_INFO.regions = Arrays.copyOf(DISPATCH_INFO.regions, DISPATCH_INFO.regions.length + 1);
                         DISPATCH_INFO.regions[DISPATCH_INFO.regions.length - 1] = server;
+                        Grasscutter.getLogger().info("Added server to dispatch : " + server);
                         try{
                             new RegionHandler();
                             RPCResponse.RPCResponseSuccess<Boolean> responseSuccess = new RPCResponse.RPCResponseSuccess<>();

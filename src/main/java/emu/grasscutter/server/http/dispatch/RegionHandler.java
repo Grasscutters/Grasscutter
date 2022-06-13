@@ -38,7 +38,7 @@ public final class RegionHandler implements Router {
     
     public RegionHandler() {
         try { // Read & initialize region data.
-            this.initialize();
+            initialize();
         } catch (Exception exception) {
             Grasscutter.getLogger().error("Failed to initialize region data.", exception);
         }
@@ -47,7 +47,7 @@ public final class RegionHandler implements Router {
     /**
      * Configures region data according to configuration.
      */
-    private void initialize() {
+    public static void initialize() {
         String dispatchDomain = "http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
                 + lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress) + ":"
                 + lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort);
