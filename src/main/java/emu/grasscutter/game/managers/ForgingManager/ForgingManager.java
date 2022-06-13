@@ -15,6 +15,7 @@ import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ForgeStartReqOuterClass;
 import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
 import emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueManipulateReq;
@@ -147,8 +148,18 @@ public class ForgingManager {
 
 		ForgeData forgeData = GameData.getForgeDataMap().get(req.getForgeId());
 		
+		// Check if we have enough of each material and consume.
+		List<ItemParamData> material = new ArrayList<>(forgeData.getMaterialItems());
+		material.add(new ItemParamData(202, forgeData.getScoinCost()));
+
+		boolean success = player.getInventory().payItems(material.toArray(new ItemParamData[0]), req.getForgeCount(), ActionReason.ForgeCost);
+
+		if (!success) {
+			this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_POINT_NOT_ENOUGH)); //ToDo: Probably the wrong return code.
+		}
+		
 		// Check if we have enough of each material.
-		for (var material : forgeData.getMaterialItems()) {
+		/* for (var material : forgeData.getMaterialItems()) {
 			if (material.getItemId() == 0) {
 				continue;
 			}
@@ -178,7 +189,7 @@ public class ForgingManager {
 		}
 
 		this.player.setMora(this.player.getMora() - forgeData.getScoinCost() * req.getForgeCount());
-
+		*/
 		// Create and add active forge.
 		ActiveForgeData activeForge = new ActiveForgeData();
 		activeForge.setForgeId(req.getForgeId());
