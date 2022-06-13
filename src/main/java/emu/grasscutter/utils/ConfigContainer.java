@@ -253,19 +253,17 @@ public class ConfigContainer {
         
         public Region(
                 String name, String title,
-                String address, int port, String key
+                String address, int port
         ) {
             this.Name = name;
             this.Title = title;
             this.Ip = address;
             this.Port  = port;
-            this.Key = key;
         }
         
         public String Name = "os_usa";
         public String Title = "Grasscutter";
         public String Ip = "127.0.0.1";
         public int Port = 22102;
-        public String Key = Utils.generateRandomString(32);
     }
 }

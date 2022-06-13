@@ -24,15 +24,7 @@ public final class WebSocketHandler implements Router {
     public void applyRoutes(Express express, Javalin handle) {
         express.ws("/websocket",wsHandler -> {
             wsHandler.onConnect(wsConnectContext -> {
-                String key = wsConnectContext.queryParam("key");
-                ArrayList<String> keys = new ArrayList<>();
-                for (Region region:SERVER.dispatch.regions){
-                    keys.add(region.Key);
-                }
-                if (!keys.contains(key)){
-                    //Grasscutter.getLogger().warn("Game server with ip :"+wsConnectContext.host()+" and key : "+key+" unable to connect.");
-                    //wsConnectContext.session.disconnect();
-                }
+
             });
             wsHandler.onMessage(wsMessageContext -> {
                 RPCRequest request = wsMessageContext.message(RPCRequest.class);
@@ -232,7 +224,7 @@ public final class WebSocketHandler implements Router {
                         wsMessageContext.send(responseSuccess);
                     }
                     case "addServerToDispatch" -> {
-                        String serverJson = Grasscutter.getGsonFactory().toJson(request.params);
+                        String serverJson = Grasscutter.getGsonFactory().toJson(request.params.get("server"));
                         Region server = Grasscutter.getGsonFactory().fromJson(serverJson, new TypeToken<Region>(){}.getType());
                         DISPATCH_INFO.regions = Arrays.copyOf(DISPATCH_INFO.regions, DISPATCH_INFO.regions.length + 1);
                         DISPATCH_INFO.regions[DISPATCH_INFO.regions.length - 1] = server;

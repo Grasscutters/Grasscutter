@@ -139,6 +139,7 @@ public class GameWebSocketClient extends WebSocketClient{
         rpcRequest.method = "addServerToDispatch";
         rpcRequest.params.put("server",SERVER.dispatch.regions[0]);
         this.send(Grasscutter.getGsonFactory().toJson(rpcRequest));
+        Grasscutter.getLogger().info(Grasscutter.getGsonFactory().toJson(rpcRequest));
         if (!waitForResponse(rpcRequest.id)) return false;
         String jsonResult = Grasscutter.getGsonFactory().toJson(responseSuccess.result);
         return Grasscutter.getGsonFactory().fromJson(jsonResult, new TypeToken<Boolean>(){}.getType());

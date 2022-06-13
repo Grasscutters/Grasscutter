@@ -124,9 +124,8 @@ public final class GameServer extends KcpServer {
 				Grasscutter.getLogger().error("GAME_ONLY mode require to set exactly 1 region.");
 				System.exit(1);
 			}
-			String key = SERVER.dispatch.regions[0].Key;
 			try {
-				websocketURI = new URI(scheme+HTTP_INFO.accessAddress+":"+HTTP_INFO.accessPort+"/websocket?key="+key);
+				websocketURI = new URI(scheme+HTTP_INFO.accessAddress+":"+HTTP_INFO.accessPort+"/websocket");
 			} catch (Exception ignored) {
 				Grasscutter.getLogger().error("Error connecting to Dispatch Server Websocket! Make sure your dispatch server is already up.");
 			}
