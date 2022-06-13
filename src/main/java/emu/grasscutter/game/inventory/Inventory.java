@@ -17,6 +17,7 @@ import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.packet.send.PacketAvatarEquipChangeNotify;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
@@ -277,6 +278,8 @@ public class Inventory implements Iterable<GameItem> {
 				return player.getMora();
 			case 203:  // Genesis Crystals
 				return player.getCrystals();
+			case 106:  // Resin
+				return player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
 			default:
 				GameItem item = getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId);  // What if we ever want to operate on weapons/relics/furniture? :S
 				return (item == null) ? 0 : item.getCount();
@@ -315,6 +318,8 @@ public class Inventory implements Iterable<GameItem> {
 					player.setMora(player.getMora() - (cost.getCount() * quantity));
 				case 203 ->  // Genesis Crystals
 					player.setCrystals(player.getCrystals() - (cost.getCount() * quantity));
+				case 106 ->  // Resin
+					player.getResinManager().useResin(cost.getCount() * quantity);
 				default ->
 					removeItem(getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId()), cost.getCount() * quantity);
 			}
