@@ -118,14 +118,14 @@ public final class DatabaseManager {
 	}
 
 	public static synchronized int getNextId(Class<?> c) {
-		DatabaseCounter counter = getGameDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", c.getSimpleName())).first();
+		DatabaseCounter counter = getAccountDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", c.getSimpleName())).first();
 		if (counter == null) {
 			counter = new DatabaseCounter(c.getSimpleName());
 		}
 		try {
 			return counter.getNextId();
 		} finally {
-			getGameDatastore().save(counter);
+			getAccountDatastore().save(counter);
 		}
 	}
 
