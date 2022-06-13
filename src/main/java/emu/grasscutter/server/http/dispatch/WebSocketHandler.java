@@ -233,7 +233,7 @@ public final class WebSocketHandler implements Router {
                         DISPATCH_INFO.regions = Arrays.copyOf(DISPATCH_INFO.regions, DISPATCH_INFO.regions.length + 1);
                         DISPATCH_INFO.regions[DISPATCH_INFO.regions.length - 1] = server;
                         Grasscutter.getLogger().info("Added server to dispatch : " + Grasscutter.getGsonFactory().toJson(server));
-                        regionsIp.put(wsMessageContext.session.getRemoteAddress().toString(), server);
+                        regionsIp.put(wsMessageContext.session.getRemoteAddress().getAddress().toString(), server);
                         try{
                             RegionHandler.initialize();
                             RPCResponse.RPCResponseSuccess<Boolean> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
@@ -249,14 +249,14 @@ public final class WebSocketHandler implements Router {
                     }
                     case "isServerOnDispatch" -> {
                         RPCResponse.RPCResponseSuccess<Boolean> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
-                        responseSuccess.result = regionsIp.containsKey(wsMessageContext.session.getRemoteAddress().toString());
+                        responseSuccess.result = regionsIp.containsKey(wsMessageContext.session.getRemoteAddress().getAddress().toString());
                         responseSuccess.id = request.id;
                         wsMessageContext.send(responseSuccess);
                     }
                 }
             });
             wsHandler.onClose(wsCloseContext->{
-                Grasscutter.getLogger().info("Websocket with Game Server : " + wsCloseContext.session.getRemoteAddress().toString() + " closed, Removing from game server list.");
+                Grasscutter.getLogger().info("Websocket with Game Server : " + wsCloseContext.session.getRemoteAddress().getAddress().toString() + " closed, Removing from game server list.");
                 regionsIp.remove(wsCloseContext.session.getRemoteAddress().toString());
                 RegionHandler.initialize();
             });
