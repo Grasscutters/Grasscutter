@@ -138,6 +138,13 @@ public final class GameServer extends KcpServer {
 							this.gameWebSocketClient = new GameWebSocketClient(finalWebsocketURI);
 							this.gameWebSocketClient.connect();
 						}
+						if (this.gameWebSocketClient.isOpen() && !this.gameWebSocketClient.isServerOnDispatch()){
+							if (this.gameWebSocketClient.addServerToDispatch()) {
+								Grasscutter.getLogger().info("Added to Dispatch Server!.");
+							} else {
+								Grasscutter.getLogger().error("Failed to add to Dispatch Server!.");
+							}
+						}
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
