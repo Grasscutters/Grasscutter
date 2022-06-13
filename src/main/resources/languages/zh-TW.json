@@ -389,8 +389,8 @@
       "description": "重新啟動伺服器。"
     },
     "unlocktower": {
-      "success": "解鎖完成。",
-      "description": "解鎖深境迴廊。"
+      "success": "現已解鎖深境迴廊。",
+      "description": "解鎖深境螺旋。"
     }
   },
   "gacha": {
