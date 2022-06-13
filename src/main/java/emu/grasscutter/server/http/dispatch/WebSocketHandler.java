@@ -31,17 +31,81 @@ public final class WebSocketHandler implements Router {
             });
             wsHandler.onMessage(wsMessageContext -> {
                 RPCRequest request = wsMessageContext.message(RPCRequest.class);
-                switch (request.method){
-                    case "getAccountById":
+                switch (request.method) {
+                    case "getAccountById" -> {
                         Account account = DatabaseHelper.getAccountById((String) request.params.get("id"));
-                        if (account!=null){
+                        if (account != null) {
                             RPCResponse.RPCResponseSuccess<Account> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
                             responseSuccess.result = account;
                             responseSuccess.id = request.id;
                             wsMessageContext.send(responseSuccess);
                         }
-                        break;
-                    case "":
+                    }
+                    case "createAccountWithUid" -> {
+                        if (request.params.get("username") == null || request.params.get("uid") == null) {
+                            RPCResponse.RPCResponseError<String> responseError = new RPCResponse.RPCResponseError<>();
+                            responseError.error = new RPCResponse.RPCError<>(-32602, "Invalid params", null);
+                            responseError.id = request.id;
+                            break;
+                        }
+                        String username = (String) request.params.get("username");
+                        int reservedUid = (int) request.params.get("uid");
+                        Account accountWithUid = DatabaseHelper.createAccountWithUid(username, reservedUid);
+                        if (accountWithUid != null) {
+                            RPCResponse.RPCResponseSuccess<Account> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
+                            responseSuccess.result = accountWithUid;
+                            responseSuccess.id = request.id;
+                            wsMessageContext.send(responseSuccess);
+                        } else {
+                            RPCResponse.RPCResponseError<String> responseError = new RPCResponse.RPCResponseError<>();
+                            responseError.error = new RPCResponse.RPCError<>(-32000, "Unable to create account with uid : " + reservedUid, null);
+                            responseError.id = request.id;
+                            wsMessageContext.send(responseError);
+                        }
+                    }
+                    case "createAccount" -> {
+                        if (request.params.get("username") == null) {
+                            RPCResponse.RPCResponseError<String> responseError = new RPCResponse.RPCResponseError<>();
+                            responseError.error = new RPCResponse.RPCError<>(-32602, "Invalid params", null);
+                            responseError.id = request.id;
+                            break;
+                        }
+                        String username = (String) request.params.get("username");
+                        Account account = DatabaseHelper.createAccount(username);
+                        if (account != null) {
+                            RPCResponse.RPCResponseSuccess<Account> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
+                            responseSuccess.result = account;
+                            responseSuccess.id = request.id;
+                            wsMessageContext.send(responseSuccess);
+                        } else {
+                            RPCResponse.RPCResponseError<String> responseError = new RPCResponse.RPCResponseError<>();
+                            responseError.error = new RPCResponse.RPCError<>(-32000, "Unable to create account with username : " + username, null);
+                            responseError.id = request.id;
+                            wsMessageContext.send(responseError);
+                        }
+                    }
+                    case "createAccountWithPassword" -> {
+                        if (request.params.get("username") == null || request.params.get("password") == null) {
+                            RPCResponse.RPCResponseError<String> responseError = new RPCResponse.RPCResponseError<>();
+                            responseError.error = new RPCResponse.RPCError<>(-32602, "Invalid params", null);
+                            responseError.id = request.id;
+                            break;
+                        }
+                        String username = (String) request.params.get("username");
+                        String password = (String) request.params.get("password");
+                        Account accountWithPassword = DatabaseHelper.createAccountWithPassword(username, password);
+                        if (accountWithPassword != null) {
+                            RPCResponse.RPCResponseSuccess<Account> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
+                            responseSuccess.result = accountWithPassword;
+                            responseSuccess.id = request.id;
+                            wsMessageContext.send(responseSuccess);
+                        } else {
+                            RPCResponse.RPCResponseError<String> responseError = new RPCResponse.RPCResponseError<>();
+                            responseError.error = new RPCResponse.RPCError<>(-32000, "Unable to create account with username : " + username, null);
+                            responseError.id = request.id;
+                            wsMessageContext.send(responseError);
+                        }
+                    }
                 }
             });
         });

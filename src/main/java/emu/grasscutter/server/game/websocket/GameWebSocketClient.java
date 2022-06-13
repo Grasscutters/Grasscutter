@@ -1,23 +1,12 @@
 package emu.grasscutter.server.game.websocket;
-
-
-import static emu.grasscutter.Configuration.*;
-
-import com.google.gson.internal.LinkedTreeMap;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.server.http.objects.RPCRequest;
 import emu.grasscutter.server.http.objects.RPCResponse;
-import org.eclipse.jetty.util.ajax.JSON;
 import org.java_websocket.client.WebSocketClient;
-import org.java_websocket.drafts.Draft_6455;
 import org.java_websocket.handshake.ServerHandshake;
 import com.google.gson.reflect.TypeToken;
 import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Timer;
 
 public class GameWebSocketClient extends WebSocketClient{
     private RPCResponse.RPCResponseError<?> responseError = null;
@@ -47,6 +36,12 @@ public class GameWebSocketClient extends WebSocketClient{
     @Override
     public void onClose(int code, String reason, boolean remote) {
         Grasscutter.getLogger().error("Websocket Closed. "+code+" "+reason);
+        try {
+            Thread.sleep(1000);
+            Grasscutter.getLogger().info("Trying to reconnect to Dispatch Server...");
+            connect();
+        } catch (Exception ignored) {}
+
     }
 
     @Override
@@ -58,13 +53,31 @@ public class GameWebSocketClient extends WebSocketClient{
         RPCRequest rpcRequest = new RPCRequest();
         rpcRequest.method = "getAccountById";
         rpcRequest.params.put("id",id);
-        rpcRequest.id = new Date().getTime();
         this.send(Grasscutter.getGsonFactory().toJson(rpcRequest));
         if (!waitForResponse(rpcRequest.id)) return null;
         String jsonResult = Grasscutter.getGsonFactory().toJson(responseSuccess.result);
-        Account account = Grasscutter.getGsonFactory().fromJson(jsonResult, new TypeToken<Account>(){}.getType());
-        Grasscutter.getLogger().info("Account on method : "+account);
-        return account;
+        return Grasscutter.getGsonFactory().fromJson(jsonResult, new TypeToken<Account>(){}.getType());
+    }
+
+    public Account createAccountWithUid(String username, int reservedUid){
+        RPCRequest rpcRequest = new RPCRequest();
+        rpcRequest.method = "createAccountWithUid";
+        rpcRequest.params.put("username",username);
+        rpcRequest.params.put("uid",reservedUid);
+        this.send(Grasscutter.getGsonFactory().toJson(rpcRequest));
+        if (!waitForResponse(rpcRequest.id)) return null;
+        String jsonResult = Grasscutter.getGsonFactory().toJson(responseSuccess.result);
+        return Grasscutter.getGsonFactory().fromJson(jsonResult, new TypeToken<Account>(){}.getType());
+    }
+
+    public Account createAccount(String username){
+        RPCRequest rpcRequest = new RPCRequest();
+        rpcRequest.method = "createAccount";
+        rpcRequest.params.put("username",username);
+        this.send(Grasscutter.getGsonFactory().toJson(rpcRequest));
+        if (!waitForResponse(rpcRequest.id)) return null;
+        String jsonResult = Grasscutter.getGsonFactory().toJson(responseSuccess.result);
+        return Grasscutter.getGsonFactory().fromJson(jsonResult, new TypeToken<Account>(){}.getType());
     }
 
     private synchronized boolean waitForResponse(long id){
@@ -76,10 +89,5 @@ public class GameWebSocketClient extends WebSocketClient{
             try{wait();}catch (Exception ignored){}
         }
         return true;
-    }
-
-    private void resetResponse(){
-        responseSuccess = null;
-        responseError = null;
     }
 }

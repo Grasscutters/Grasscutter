@@ -12,6 +12,12 @@ public class RPCResponse{
         public RPCError<T> error;
     }
     public static class RPCError<T>{
+        public RPCError(){}
+        public RPCError(int code, String message, T data){
+            this.code = code;
+            this.message = message;
+            this.data = data;
+        }
         public int code;
         public String message;
         public T data;

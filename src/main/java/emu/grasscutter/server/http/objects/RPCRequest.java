@@ -1,5 +1,6 @@
 package emu.grasscutter.server.http.objects;
 
+import java.util.Date;
 import java.util.HashMap;
 
 public class RPCRequest{
@@ -7,5 +8,5 @@ public class RPCRequest{
     public String jsonrpc = "2.0";
     public String method;
     public HashMap<String,Object> params = new HashMap<>();
-    public long id;
+    public long id = new Date().getTime();
 }

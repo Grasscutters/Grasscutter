@@ -26,10 +26,12 @@ import static com.mongodb.client.model.Filters.eq;
 
 public final class DatabaseHelper {
 	public static Account createAccount(String username) {
-		return createAccountWithUid(username, 0);
+		return SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY ? Grasscutter.getGameServer().getGameWebSocketClient().createAccount(username) :
+		createAccountWithUid(username, 0);
 	}
 
 	public static Account createAccountWithUid(String username, int reservedUid) {
+		if (SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY) return Grasscutter.getGameServer().getGameWebSocketClient().createAccountWithUid(username, reservedUid);
 		// Unique names only
 		if (DatabaseHelper.checkIfAccountExists(username)) {
 			return null;
@@ -41,11 +43,11 @@ public final class DatabaseHelper {
 			if (reservedUid == GameConstants.SERVER_CONSOLE_UID) {
 				return null;
 			}
-			
+
 			if (DatabaseHelper.checkIfAccountExists(reservedUid)) {
 				return null;
 			}
-			
+
 			// Make sure no existing player already has this id.
 			if (DatabaseHelper.checkIfPlayerExists(reservedUid)) {
 				return null;
