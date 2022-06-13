@@ -44,6 +44,7 @@ public class GachaBanner {
 	private int[] rateUpItems2 = {};
 	private int eventChance = -1;
 	private int costItem = 0;
+	private int wishMaxProgress = 2;
 	
 	public int getGachaType() {
 		return gachaType;
@@ -108,6 +109,11 @@ public class GachaBanner {
 	public boolean getRemoveC6FromPool() {return removeC6FromPool;}
 	public boolean getAutoStripRateUpFromFallback() {return autoStripRateUpFromFallback;}
 
+	public int getWishMaxProgress() {return wishMaxProgress;}
+
+	public boolean hasEpitomized() {
+		return bannerType.equals(BannerType.WEAPON);
+	}
 
 	public int getWeight(int rarity, int pity) {
 		return switch(rarity) {

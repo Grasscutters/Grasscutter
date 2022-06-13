@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1532
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GachaWishReq {
+  uint32 gacha_type = 2;
+  uint32 gacha_schedule_id = 4;
+  uint32 item_id = 14;
+}

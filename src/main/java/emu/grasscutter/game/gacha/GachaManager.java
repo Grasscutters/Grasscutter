@@ -34,6 +34,7 @@ import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameServerTickEvent;
 import emu.grasscutter.server.packet.send.PacketDoGachaRsp;
+import emu.grasscutter.server.packet.send.PacketGachaWishRsp;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -183,11 +184,28 @@ public class GachaManager {
 
 	private synchronized int doRarePull(int[] featured, int[] fallback1, int[] fallback2, int rarity, GachaBanner banner, PlayerGachaBannerInfo gachaInfo) {
 		int itemId = 0;
-		boolean pullFeatured = (gachaInfo.getFailedFeaturedItemPulls(rarity) >= 1)  // Lost previous coinflip
+		boolean pullFeatured = (gachaInfo.getFailedFeaturedItemPulls(rarity) >= (banner.hasEpitomized() ? banner.getWishMaxProgress() : 1))  // Lost previous coinflip
 							|| (this.randomRange(1, 100) <= banner.getEventChance(rarity));  // Won this coinflip
 		if (pullFeatured && (featured.length > 0)) {
 			itemId = getRandom(featured);
-			gachaInfo.setFailedFeaturedItemPulls(rarity, 0);
+
+			// Epitomized Banner
+			boolean resetFailed = true;
+			if(rarity == 5) {
+				if(banner.hasEpitomized()) {
+					if(gachaInfo.getFailedFeaturedItemPulls(rarity) >= banner.getWishMaxProgress()) {
+						resetFailed = true;
+						itemId = gachaInfo.getWishItemId();
+					} else {
+						if(itemId != gachaInfo.getWishItemId()) {
+							resetFailed = false;
+						}
+					}
+				}
+			}
+
+			if(resetFailed) gachaInfo.setFailedFeaturedItemPulls(rarity, 0);
+			else gachaInfo.addFailedFeaturedItemPulls(rarity, 1);
 		} else {
 			gachaInfo.addFailedFeaturedItemPulls(rarity, 1);
 			if (fallback1.length < 1) {
@@ -356,6 +374,7 @@ public class GachaManager {
 		
 		// Packets
 		player.sendPacket(new PacketDoGachaRsp(banner, list));
+		if(banner.hasEpitomized()) player.sendPacket(new PacketGachaWishRsp(banner.getGachaType(), banner.getScheduleId(), gachaInfo.getWishItemId(), gachaInfo.getFailedFeaturedItemPulls(5), banner.getWishMaxProgress()));
 	}
 
 	private synchronized void startWatcher(GameServer server) {
