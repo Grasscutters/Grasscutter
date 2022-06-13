@@ -258,6 +258,8 @@ public class Inventory implements Iterable<GameItem> {
 					getPlayer().addExpDirectly(count);
 			case 105 -> // Companionship exp
 					getPlayer().getServer().getInventoryManager().upgradeAvatarFetterLevel(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
+			case 106 -> // Resin
+					getPlayer().getResinManager().addResin(count);
 			case 201 -> // Primogem
 					getPlayer().setPrimogems(player.getPrimogems() + count);
 			case 202 -> // Mora

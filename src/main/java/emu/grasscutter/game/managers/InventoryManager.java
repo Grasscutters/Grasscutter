@@ -857,6 +857,22 @@ public class InventoryManager {
 					useSuccess = player.getForgingManager().unlockForgingBlueprint(useItem);
 				}
 				break;
+			case MATERIAL_CONSUME_BATCH_USE:
+				// Make sure we have usage data for this material.
+				if (useItem.getItemData().getItemUse() == null) {
+					break;
+				}
+
+				// Handle fragile/transient resin.
+				if (useItem.getItemId() == 107009 || useItem.getItemId() == 107012){				
+					// Add resin to the inventory.
+					ItemData resinItemData = GameData.getItemDataMap().get(106);
+					player.getInventory().addItem(new GameItem(resinItemData, 60 * count), ActionReason.PlayerUseItem);
+
+					// Set used amount.
+					used = count;
+				}
+				break;
 			case MATERIAL_CHEST:
 				List<ShopChestTable> shopChestTableList = player.getServer().getShopManager().getShopChestData();
 				List<GameItem> rewardItemList = new ArrayList<>();

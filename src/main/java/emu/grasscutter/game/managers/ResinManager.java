@@ -1,7 +1,5 @@
 package emu.grasscutter.game.managers;
 
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.server.packet.send.PacketPlayerPropNotify;
@@ -9,8 +7,6 @@ import emu.grasscutter.server.packet.send.PacketResinChangeNotify;
 import emu.grasscutter.utils.Utils;
 
 import static emu.grasscutter.Configuration.GAME_OPTIONS;
-
-import emu.grasscutter.Grasscutter;
 
 public class ResinManager {
     private final Player player;
@@ -20,7 +16,7 @@ public class ResinManager {
     }
 
     /********************
-     * Use resin.
+     * Change resin.
      ********************/
     public synchronized boolean useResin(int amount) {
         // Check if resin enabled.
@@ -51,6 +47,22 @@ public class ResinManager {
         this.player.sendPacket(new PacketResinChangeNotify(this.player));
 
         return true;
+    }
+
+    public synchronized void addResin(int amount) {
+        // Add resin.
+        int currentResin = this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
+        int newResin = currentResin + amount;
+        this.player.setProperty(PlayerProperty.PROP_PLAYER_RESIN, newResin);
+
+        // Stop recharging if player is now at or over the cap.
+        if (newResin >= GAME_OPTIONS.resinOptions.cap) {
+            this.player.setNextResinRefresh(0);
+        }
+
+        // Send packets.
+        this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
+        this.player.sendPacket(new PacketResinChangeNotify(this.player));
     }
 
     /********************
@@ -104,10 +116,7 @@ public class ResinManager {
      * Player login.
      ********************/
     public synchronized void onPlayerLogin() {
-		GameItem condensedResin = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(220007);
-        Grasscutter.getLogger().info("Condensed resin count: {}", condensedResin.getCount());
-
-        // If resin usage is disabled, set resin to cap.
+		// If resin usage is disabled, set resin to cap.
         if (!GAME_OPTIONS.resinOptions.resinUsage) {
             this.player.setProperty(PlayerProperty.PROP_PLAYER_RESIN, GAME_OPTIONS.resinOptions.cap);
             this.player.setNextResinRefresh(0);
