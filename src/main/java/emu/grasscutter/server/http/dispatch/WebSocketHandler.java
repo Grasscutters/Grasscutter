@@ -16,10 +16,12 @@ import org.eclipse.jetty.util.ajax.JSON;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 import static emu.grasscutter.Configuration.*;
 
 public final class WebSocketHandler implements Router {
+    private HashMap<String,Region> regionsIp = new HashMap<>();
     @Override
     public void applyRoutes(Express express, Javalin handle) {
         express.ws("/websocket",wsHandler -> {
@@ -231,6 +233,7 @@ public final class WebSocketHandler implements Router {
                         DISPATCH_INFO.regions = Arrays.copyOf(DISPATCH_INFO.regions, DISPATCH_INFO.regions.length + 1);
                         DISPATCH_INFO.regions[DISPATCH_INFO.regions.length - 1] = server;
                         Grasscutter.getLogger().info("Added server to dispatch : " + Grasscutter.getGsonFactory().toJson(server));
+                        regionsIp.put(wsMessageContext.session.getRemoteAddress().toString(), server);
                         try{
                             RegionHandler.initialize();
                             RPCResponse.RPCResponseSuccess<Boolean> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
@@ -244,7 +247,18 @@ public final class WebSocketHandler implements Router {
                             wsMessageContext.send(responseError);
                         }
                     }
+                    case "isServerOnDispatch" -> {
+                        RPCResponse.RPCResponseSuccess<Boolean> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
+                        responseSuccess.result = regionsIp.containsKey(wsMessageContext.session.getRemoteAddress().toString());
+                        responseSuccess.id = request.id;
+                        wsMessageContext.send(responseSuccess);
+                    }
                 }
+            });
+            wsHandler.onClose(wsCloseContext->{
+                Grasscutter.getLogger().info("Websocket with Game Server : " + wsCloseContext.session.getRemoteAddress().toString() + " closed, Removing from game server list.");
+                regionsIp.remove(wsCloseContext.session.getRemoteAddress().toString());
+                RegionHandler.initialize();
             });
         });
     }

@@ -130,7 +130,6 @@ public final class GameServer extends KcpServer {
 				Grasscutter.getLogger().error("Error connecting to Dispatch Server Websocket! Make sure your dispatch server is already up.");
 			}
 			URI finalWebsocketURI = websocketURI;
-			AtomicBoolean addedToDispatchServer = new AtomicBoolean(false);
 			new Thread(() -> {
 				while (true){
 					try {
@@ -139,10 +138,11 @@ public final class GameServer extends KcpServer {
 							this.gameWebSocketClient = new GameWebSocketClient(finalWebsocketURI);
 							this.gameWebSocketClient.connect();
 						}
-						if (this.gameWebSocketClient.isOpen() && !addedToDispatchServer.get()) {
-							if(this.getGameWebSocketClient().addServerToDispatch()){
-								addedToDispatchServer.set(true);
+						if (this.gameWebSocketClient.isOpen() && !this.gameWebSocketClient.isServerOnDispatch()) {
+							if (this.getGameWebSocketClient().addServerToDispatch()) {
 								Grasscutter.getLogger().info("Added to Dispatch Server!.");
+							} else {
+								Grasscutter.getLogger().error("Failed to add to Dispatch Server!.");
 							}
 						}
 					} catch (InterruptedException e) {

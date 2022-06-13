@@ -145,6 +145,15 @@ public class GameWebSocketClient extends WebSocketClient{
         return Grasscutter.getGsonFactory().fromJson(jsonResult, new TypeToken<Boolean>(){}.getType());
     }
 
+    public boolean isServerOnDispatch(){
+        RPCRequest rpcRequest = new RPCRequest();
+        rpcRequest.method = "isServerOnDispatch";
+        this.send(Grasscutter.getGsonFactory().toJson(rpcRequest));
+        if (!waitForResponse(rpcRequest.id)) return false;
+        String jsonResult = Grasscutter.getGsonFactory().toJson(responseSuccess.result);
+        return Grasscutter.getGsonFactory().fromJson(jsonResult, new TypeToken<Boolean>(){}.getType());
+    }
+
     private synchronized boolean waitForResponse(long id){
         while (responseSuccess == null && responseError == null){
             try {this.wait();} catch (Exception ignored) {}
