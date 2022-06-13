@@ -73,9 +73,9 @@ public final class DatabaseManager {
         dispatchDatastore = Morphia.createDatastore(dispatchMongoClient,DATABASE.server.collection,mapperOptionsDispatch);
         dispatchDatastore.getMapper().map(mappedDispatchClasses);
 
-        MongoClient hybridMongoClient = MongoClients.create(DATABASE.game.connectionUri);
+        MongoClient hybridMongoClient = MongoClients.create(DATABASE.server.connectionUri);
         MapperOptions mapperOptionsHybrid = MapperOptions.builder().storeEmpties(true).storeNulls(false).build();
-        hybridDatastore = Morphia.createDatastore(hybridMongoClient,DATABASE.game.collection,mapperOptionsHybrid);
+        hybridDatastore = Morphia.createDatastore(hybridMongoClient,DATABASE.server.collection,mapperOptionsHybrid);
         hybridDatastore.getMapper().map(mappedHybridClasses);
 
 		/*
