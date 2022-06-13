@@ -66,6 +66,7 @@ public final class GameServer extends KcpServer {
 	private final TowerScheduleManager towerScheduleManager;
 
 	private GameWebSocketClient gameWebSocketClient;
+	private boolean isGameWebSocketClientConnected;
 
 	private static InetSocketAddress getAdapterInetSocketAddress(){
 		InetSocketAddress inetSocketAddress = null;
@@ -114,6 +115,7 @@ public final class GameServer extends KcpServer {
 		this.combineManger = new CombineManger(this);
 		this.towerScheduleManager = new TowerScheduleManager(this);
 		this.worldDataManager = new WorldDataManager(this);
+		this.isGameWebSocketClientConnected = false;
 
 		if(SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY){
 			String scheme  = HTTP_INFO.encryption.useEncryption || HTTP_INFO.encryption.useInRouting ? "wss://":"ws://";
@@ -128,14 +130,27 @@ public final class GameServer extends KcpServer {
 			} catch (Exception ignored) {
 				Grasscutter.getLogger().error("Error connecting to Dispatch Server Websocket! Make sure your dispatch server is already up.");
 			}
-			this.gameWebSocketClient = new GameWebSocketClient(websocketURI);
-			this.gameWebSocketClient.connect();
+			URI finalWebsocketURI = websocketURI;
+			new Thread(() -> {
+				while (true){
+					try {
+						Thread.sleep(5000);
+						if (!this.isGameWebSocketClientConnected){
+							this.gameWebSocketClient = new GameWebSocketClient(finalWebsocketURI);
+							this.gameWebSocketClient.connect();
+						}
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}).start();
 		}
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
 
 	public GameWebSocketClient getGameWebSocketClient(){return  gameWebSocketClient; }
+	public void setIsGameWebSocketClientConnected(boolean isGameWebSocketClientConnected){ this.isGameWebSocketClientConnected = isGameWebSocketClientConnected; }
 	
 	public GameServerPacketHandler getPacketHandler() {
 		return packetHandler;

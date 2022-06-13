@@ -30,7 +30,7 @@ public final class DatabaseManager {
     private static Datastore hybridDatastore;
 
 	private static final Class<?>[] mappedGameClasses = new Class<?>[] {
-		DatabaseCounter.class, Player.class, Avatar.class, GameItem.class, Friendship.class,
+		Player.class, Avatar.class, GameItem.class, Friendship.class,
 		GachaRecord.class, Mail.class, GameMainQuest.class
 	};
 
@@ -118,14 +118,18 @@ public final class DatabaseManager {
 	}
 
 	public static synchronized int getNextId(Class<?> c) {
-		DatabaseCounter counter = getAccountDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", c.getSimpleName())).first();
+		if (SERVER.runMode == ServerRunMode.GAME_ONLY) {
+			return c.getSimpleName().equals("Player") ? Grasscutter.getGameServer().getGameWebSocketClient().getNextPlayerId() :
+			Grasscutter.getGameServer().getGameWebSocketClient().getNextAccountId();
+		}
+		DatabaseCounter counter = getGameDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", c.getSimpleName())).first();
 		if (counter == null) {
 			counter = new DatabaseCounter(c.getSimpleName());
 		}
 		try {
 			return counter.getNextId();
 		} finally {
-			getAccountDatastore().save(counter);
+			getGameDatastore().save(counter);
 		}
 	}
 

@@ -1,6 +1,7 @@
 package emu.grasscutter.server.game.websocket;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.objects.RPCRequest;
 import emu.grasscutter.server.http.objects.RPCResponse;
 import org.java_websocket.client.WebSocketClient;
@@ -18,6 +19,7 @@ public class GameWebSocketClient extends WebSocketClient{
     @Override
     public void onOpen(ServerHandshake handshakedata) {
         Grasscutter.getLogger().info("WebSocket Connected to Dispatch Server!");
+        Grasscutter.getGameServer().setIsGameWebSocketClientConnected(true);
     }
 
     @Override
@@ -36,17 +38,13 @@ public class GameWebSocketClient extends WebSocketClient{
     @Override
     public void onClose(int code, String reason, boolean remote) {
         Grasscutter.getLogger().error("Websocket Closed. "+code+" "+reason);
-        try {
-            Thread.sleep(1000);
-            Grasscutter.getLogger().info("Trying to reconnect to Dispatch Server...");
-            connect();
-        } catch (Exception ignored) {}
-
+        Grasscutter.getGameServer().setIsGameWebSocketClientConnected(false);
     }
 
     @Override
     public void onError(Exception ex) {
         Grasscutter.getLogger().error(ex.getMessage());
+        Grasscutter.getGameServer().setIsGameWebSocketClientConnected(false);
     }
 
     public Account getAccountById(String id){
@@ -115,6 +113,24 @@ public class GameWebSocketClient extends WebSocketClient{
         rpcRequest.method = "saveAccount";
         rpcRequest.params.put("account",account);
         this.send(Grasscutter.getGsonFactory().toJson(rpcRequest));
+    }
+
+    public int getNextPlayerId(){
+        RPCRequest rpcRequest = new RPCRequest();
+        rpcRequest.method = "getNextPlayerId";
+        this.send(Grasscutter.getGsonFactory().toJson(rpcRequest));
+        if (!waitForResponse(rpcRequest.id)) return -1;
+        String jsonResult = Grasscutter.getGsonFactory().toJson(responseSuccess.result);
+        return Grasscutter.getGsonFactory().fromJson(jsonResult, new TypeToken<Integer>(){}.getType());
+    }
+
+    public int getNextAccountId(){
+        RPCRequest rpcRequest = new RPCRequest();
+        rpcRequest.method = "getNextAccountId";
+        this.send(Grasscutter.getGsonFactory().toJson(rpcRequest));
+        if (!waitForResponse(rpcRequest.id)) return -1;
+        String jsonResult = Grasscutter.getGsonFactory().toJson(responseSuccess.result);
+        return Grasscutter.getGsonFactory().fromJson(jsonResult, new TypeToken<Integer>(){}.getType());
     }
 
     private synchronized boolean waitForResponse(long id){

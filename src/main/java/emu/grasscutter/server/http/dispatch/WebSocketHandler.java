@@ -1,8 +1,11 @@
 package emu.grasscutter.server.http.dispatch;
 
 import com.google.gson.reflect.TypeToken;
+import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.database.DatabaseCounter;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.server.http.objects.RPCRequest;
@@ -204,6 +207,28 @@ public final class WebSocketHandler implements Router {
                             responseError.id = request.id;
                             wsMessageContext.send(responseError);
                         }
+                    }
+                    case "getNextPlayerId" -> {
+                        RPCResponse.RPCResponseSuccess<Integer> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
+                        DatabaseCounter counter = DatabaseManager.getAccountDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", "Player")).first();
+                        if (counter == null){
+                            counter = new DatabaseCounter("Player");
+                            DatabaseManager.getGameDatastore().save(counter);
+                        }
+                        responseSuccess.result = counter.getNextId();
+                        responseSuccess.id = request.id;
+                        wsMessageContext.send(responseSuccess);
+                    }
+                    case "getNextAccountId" -> {
+                        RPCResponse.RPCResponseSuccess<Integer> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
+                        DatabaseCounter counter = DatabaseManager.getAccountDatastore().find(DatabaseCounter.class).filter(Filters.eq("_id", "Account")).first();
+                        if (counter == null){
+                            counter = new DatabaseCounter("Account");
+                            DatabaseManager.getGameDatastore().save(counter);
+                        }
+                        responseSuccess.result = counter.getNextId();
+                        responseSuccess.id = request.id;
+                        wsMessageContext.send(responseSuccess);
                     }
                 }
             });
