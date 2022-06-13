@@ -856,6 +856,11 @@ public class InventoryManager {
 					// Unlock.
 					useSuccess = player.getForgingManager().unlockForgingBlueprint(useItem);
 				}
+				// Handle combine diagrams.
+				if (useItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_COMBINE")) {
+					// Unlock.
+					useSuccess = player.getServer().getCombineManger().unlockCombineDiagram(player, useItem);
+				}
 				break;
 			case MATERIAL_CONSUME_BATCH_USE:
 				// Make sure we have usage data for this material.

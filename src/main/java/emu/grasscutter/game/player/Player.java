@@ -96,6 +96,7 @@ public class Player {
 	private Set<Integer> flyCloakList;
 	private Set<Integer> costumeList;
 	private Set<Integer> unlockedForgingBlueprints;
+	private Set<Integer> unlockedCombines;
 	private List<ActiveForgeData> activeForges;
 
 	private Integer widgetId;
@@ -197,6 +198,7 @@ public class Player {
 		this.costumeList = new HashSet<>();
 		this.towerData = new TowerData();
 		this.unlockedForgingBlueprints = new HashSet<>();
+		this.unlockedCombines = new HashSet<>();
 		this.activeForges = new ArrayList<>();
 
 		this.setSceneId(3);
@@ -544,6 +546,10 @@ public class Player {
 
 	public Set<Integer> getUnlockedForgingBlueprints() {
 		return this.unlockedForgingBlueprints;
+	}
+
+	public Set<Integer> getUnlockedCombines() {
+		return this.unlockedCombines;
 	}
 
 	public List<ActiveForgeData> getActiveForges() {
@@ -1312,6 +1318,7 @@ public class Player {
 		session.send(new PacketWidgetGadgetAllDataNotify());
 		session.send(new PacketPlayerHomeCompInfoNotify(this));
 		session.send(new PacketHomeComfortInfoNotify(this));
+		session.send(new PacketCombineDataNotify(this.unlockedCombines));
 		this.forgingManager.sendForgeDataNotify();
 		this.resinManager.onPlayerLogin();
 

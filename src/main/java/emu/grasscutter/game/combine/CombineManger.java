@@ -3,10 +3,12 @@ package emu.grasscutter.game.combine;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.CombineData;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.server.game.GameServer;
+import emu.grasscutter.server.packet.send.PacketCombineFormulaDataNotify;
 import emu.grasscutter.server.packet.send.PacketCombineRsp;
 import it.unimi.dsi.fastutil.Pair;
 
@@ -22,6 +24,27 @@ public class CombineManger {
     public CombineManger(GameServer gameServer) {
         this.gameServer = gameServer;
     }
+
+    public boolean unlockCombineDiagram(Player player, GameItem diagramItem) {
+		// Make sure this is actually a diagram.
+		if (!diagramItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_COMBINE")) {
+			return false;
+		}
+
+		// Determine the combine item we should unlock.
+		int combineId = Integer.parseInt(diagramItem.getItemData().getItemUse().get(0).getUseParam().get(0));
+
+		// Remove the diagram from the player's inventory.
+		// We need to do this here, before sending CombineFormulaDataNotify, or the the combine UI won't correctly
+		// update when unlocking the diagram.
+		player.getInventory().removeItem(diagramItem, 1);
+
+		// Tell the client that this diagram is now unlocked and add the unlocked item to the player.
+		player.getUnlockedCombines().add(combineId);
+		player.sendPacket(new PacketCombineFormulaDataNotify(combineId));
+
+		return true;
+	}
 
     public CombineResult combineItem(Player player, int cid, int count){
         // check config exist
