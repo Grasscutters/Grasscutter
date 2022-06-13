@@ -19,6 +19,11 @@ public class ResinManager {
      * Use resin.
      ********************/
     public synchronized boolean useResin(int amount) {
+        // Check if resin enabled.
+        if (!GAME_OPTIONS.resinOptions.resinUsage) {
+            return true;
+        }
+
         int currentResin = this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
         
         // Check if the player has sufficient resin.
@@ -48,19 +53,13 @@ public class ResinManager {
      * Recharge resin.
      ********************/
     public synchronized void rechargeResin() {
-        int currentResin = this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
-        int currentTime = Utils.getCurrentSeconds();
-
-        // In case server administrators change the resin cap while players are capped,
-        // we need to restart recharging here.
-        if (currentResin < GAME_OPTIONS.resinOptions.cap && this.player.getNextResinRefresh() == 0) {
-            this.player.setNextResinRefresh(currentTime + GAME_OPTIONS.resinOptions.rechargeTime);
-
-            this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
-            this.player.sendPacket(new PacketResinChangeNotify(this.player));
-
+        // Check if resin enabled.
+        if (!GAME_OPTIONS.resinOptions.resinUsage) {
             return;
         }
+
+        int currentResin = this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
+        int currentTime = Utils.getCurrentSeconds();
 
         // Make sure we are currently in "recharging mode".
         // This is denoted by Player.nextResinRefresh being greater than 0.
@@ -93,6 +92,30 @@ public class ResinManager {
         }
 
         // Send packets.
+        this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
+        this.player.sendPacket(new PacketResinChangeNotify(this.player));
+    }
+
+    /********************
+     * Player login.
+     ********************/
+    public synchronized void onPlayerLogin() {
+        // If resin usage is disabled, set resin to cap.
+        if (!GAME_OPTIONS.resinOptions.resinUsage) {
+            this.player.setProperty(PlayerProperty.PROP_PLAYER_RESIN, GAME_OPTIONS.resinOptions.cap);
+            this.player.setNextResinRefresh(0);
+        }
+
+        // In case server administrators change the resin cap while players are capped,
+        // we need to restart recharging here.
+        int currentResin = this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
+        int currentTime = Utils.getCurrentSeconds();
+        
+        if (currentResin < GAME_OPTIONS.resinOptions.cap && this.player.getNextResinRefresh() == 0) {
+            this.player.setNextResinRefresh(currentTime + GAME_OPTIONS.resinOptions.rechargeTime);
+        }
+
+        // Send initial notifications on logon.
         this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
         this.player.sendPacket(new PacketResinChangeNotify(this.player));
     }
