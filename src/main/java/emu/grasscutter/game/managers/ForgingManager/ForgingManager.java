@@ -157,39 +157,7 @@ public class ForgingManager {
 		if (!success) {
 			this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_POINT_NOT_ENOUGH)); //ToDo: Probably the wrong return code.
 		}
-		
-		// Check if we have enough of each material.
-		/* for (var material : forgeData.getMaterialItems()) {
-			if (material.getItemId() == 0) {
-				continue;
-			}
 
-			int currentCount = this.player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(material.getItemId()).getCount();
-
-			if (currentCount < material.getCount() * req.getForgeCount()) {
-				this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_POINT_NOT_ENOUGH)); //ToDo: Probably the wrong return code.
-				return;
-			}
-		}
-
-		// Check if we have enough Mora.
-		if (this.player.getMora() < forgeData.getScoinCost() * req.getForgeCount()) {
-			this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_POINT_NOT_ENOUGH)); //ToDo: Probably the wrong return code.
-			return;
-		}
-
-		// Consume material and Mora.
-		for (var material : forgeData.getMaterialItems()) {
-			if (material.getItemId() == 0) {
-				continue;
-			}
-
-			GameItem item = this.player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(material.getItemId());
-			this.player.getInventory().removeItem(item, material.getCount() * req.getForgeCount());
-		}
-
-		this.player.setMora(this.player.getMora() - forgeData.getScoinCost() * req.getForgeCount());
-		*/
 		// Create and add active forge.
 		ActiveForgeData activeForge = new ActiveForgeData();
 		activeForge.setForgeId(req.getForgeId());
