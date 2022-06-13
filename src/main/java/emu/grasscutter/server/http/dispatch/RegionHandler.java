@@ -57,14 +57,14 @@ public final class RegionHandler implements Router {
         List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts.
         
         var configuredRegions = new ArrayList<>(List.of(DISPATCH_INFO.regions));
-        if(SERVER.runMode != ServerRunMode.HYBRID && configuredRegions.size() == 0) {
+        /*if(SERVER.runMode != ServerRunMode.HYBRID && configuredRegions.size() == 0) {
             Grasscutter.getLogger().error("[Dispatch] There are no game servers available. Exiting due to unplayable state.");
             System.exit(1);
         } else if (configuredRegions.size() == 0) 
             configuredRegions.add(new Region("os_usa", DISPATCH_INFO.defaultName,
                 lr(GAME_INFO.accessAddress, GAME_INFO.bindAddress), 
                 lr(GAME_INFO.accessPort, GAME_INFO.bindPort),Utils.generateRandomString(32)));
-        
+        */
         configuredRegions.forEach(region -> {
             if (usedNames.contains(region.Name)) {
                 Grasscutter.getLogger().error("Region name already in use.");

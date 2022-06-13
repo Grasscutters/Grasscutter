@@ -34,10 +34,10 @@ import emu.grasscutter.BuildConfig;
 import org.java_websocket.client.WebSocketClient;
 import java.net.InetSocketAddress;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static emu.grasscutter.utils.Language.translate;
 import static emu.grasscutter.Configuration.*;
@@ -131,6 +131,7 @@ public final class GameServer extends KcpServer {
 				Grasscutter.getLogger().error("Error connecting to Dispatch Server Websocket! Make sure your dispatch server is already up.");
 			}
 			URI finalWebsocketURI = websocketURI;
+			AtomicBoolean addedToDispatchServer = new AtomicBoolean(false);
 			new Thread(() -> {
 				while (true){
 					try {
@@ -138,6 +139,12 @@ public final class GameServer extends KcpServer {
 						if (!this.isGameWebSocketClientConnected){
 							this.gameWebSocketClient = new GameWebSocketClient(finalWebsocketURI);
 							this.gameWebSocketClient.connect();
+						}
+						if (this.gameWebSocketClient.isOpen() && !addedToDispatchServer.get()) {
+							if(this.getGameWebSocketClient().addServerToDispatch()){
+								addedToDispatchServer.set(true);
+								Grasscutter.getLogger().info("Added to Dispatch Server!.");
+							}
 						}
 					} catch (InterruptedException e) {
 						e.printStackTrace();

@@ -15,6 +15,7 @@ import io.javalin.Javalin;
 import org.eclipse.jetty.util.ajax.JSON;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static emu.grasscutter.Configuration.*;
 
@@ -229,6 +230,24 @@ public final class WebSocketHandler implements Router {
                         responseSuccess.result = counter.getNextId();
                         responseSuccess.id = request.id;
                         wsMessageContext.send(responseSuccess);
+                    }
+                    case "addServerToDispatch" -> {
+                        String serverJson = Grasscutter.getGsonFactory().toJson(request.params);
+                        Region server = Grasscutter.getGsonFactory().fromJson(serverJson, new TypeToken<Region>(){}.getType());
+                        DISPATCH_INFO.regions = Arrays.copyOf(DISPATCH_INFO.regions, DISPATCH_INFO.regions.length + 1);
+                        DISPATCH_INFO.regions[DISPATCH_INFO.regions.length - 1] = server;
+                        try{
+                            new RegionHandler();
+                            RPCResponse.RPCResponseSuccess<Boolean> responseSuccess = new RPCResponse.RPCResponseSuccess<>();
+                            responseSuccess.result = true;
+                            responseSuccess.id = request.id;
+                            wsMessageContext.send(responseSuccess);
+                        }catch (Exception e){
+                            RPCResponse.RPCResponseError<Boolean> responseError = new RPCResponse.RPCResponseError<>();
+                            responseError.error = new RPCResponse.RPCError<>(-32000, "Unable to add server to dispatch", null);
+                            responseError.id = request.id;
+                            wsMessageContext.send(responseError);
+                        }
                     }
                 }
             });

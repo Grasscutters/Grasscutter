@@ -8,6 +8,7 @@ import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 import com.google.gson.reflect.TypeToken;
 import java.net.URI;
+import static emu.grasscutter.Configuration.*;
 
 public class GameWebSocketClient extends WebSocketClient{
     private RPCResponse.RPCResponseError<?> responseError = null;
@@ -131,6 +132,16 @@ public class GameWebSocketClient extends WebSocketClient{
         if (!waitForResponse(rpcRequest.id)) return -1;
         String jsonResult = Grasscutter.getGsonFactory().toJson(responseSuccess.result);
         return Grasscutter.getGsonFactory().fromJson(jsonResult, new TypeToken<Integer>(){}.getType());
+    }
+
+    public boolean addServerToDispatch(){
+        RPCRequest rpcRequest = new RPCRequest();
+        rpcRequest.method = "addServerToDispatch";
+        rpcRequest.params.put("server",SERVER.dispatch.regions[0]);
+        this.send(Grasscutter.getGsonFactory().toJson(rpcRequest));
+        if (!waitForResponse(rpcRequest.id)) return false;
+        String jsonResult = Grasscutter.getGsonFactory().toJson(responseSuccess.result);
+        return Grasscutter.getGsonFactory().fromJson(jsonResult, new TypeToken<Boolean>(){}.getType());
     }
 
     private synchronized boolean waitForResponse(long id){
