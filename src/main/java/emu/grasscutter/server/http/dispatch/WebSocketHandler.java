@@ -257,7 +257,7 @@ public final class WebSocketHandler implements Router {
             });
             wsHandler.onClose(wsCloseContext->{
                 Grasscutter.getLogger().info("Websocket with Game Server : " + wsCloseContext.session.getRemoteAddress().getAddress().toString() + " closed, Removing from game server list.");
-                regionsIp.remove(wsCloseContext.session.getRemoteAddress().toString());
+                regionsIp.remove(wsCloseContext.session.getRemoteAddress().getAddress().toString());
                 SERVER.dispatch.regions = Arrays.copyOf(regionsIp.values().toArray(), regionsIp.values().toArray().length, Region[].class);
                 RegionHandler.initialize();
             });
