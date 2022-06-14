@@ -27,6 +27,7 @@ import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.managers.InsectCaptureManager;
+import emu.grasscutter.game.managers.ResinManager;
 import emu.grasscutter.game.managers.StaminaManager.StaminaManager;
 import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.managers.EnergyManager.EnergyManager;
@@ -48,6 +49,7 @@ import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
@@ -94,6 +96,7 @@ public class Player {
 	private Set<Integer> flyCloakList;
 	private Set<Integer> costumeList;
 	private Set<Integer> unlockedForgingBlueprints;
+	private Set<Integer> unlockedCombines;
 	private List<ActiveForgeData> activeForges;
 
 	private Integer widgetId;
@@ -158,11 +161,13 @@ public class Player {
 	@Transient private MapMarksManager mapMarksManager;
 	@Transient private StaminaManager staminaManager;
 	@Transient private EnergyManager energyManager;
+	@Transient private ResinManager resinManager;
 	@Transient private ForgingManager forgingManager;
 	@Transient private DeforestationManager deforestationManager;
 
 	private long springLastUsed;
 	private HashMap<String, MapMark> mapMarks;
+	private int nextResinRefresh;
 
 	@Deprecated
 	@SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
@@ -193,6 +198,7 @@ public class Player {
 		this.costumeList = new HashSet<>();
 		this.towerData = new TowerData();
 		this.unlockedForgingBlueprints = new HashSet<>();
+		this.unlockedCombines = new HashSet<>();
 		this.activeForges = new ArrayList<>();
 
 		this.setSceneId(3);
@@ -217,6 +223,7 @@ public class Player {
 		this.staminaManager = new StaminaManager(this);
 		this.sotsManager = new SotSManager(this);
 		this.energyManager = new EnergyManager(this);
+		this.resinManager = new ResinManager(this);
 		this.forgingManager = new ForgingManager(this);
 	}
 
@@ -248,6 +255,7 @@ public class Player {
 		this.staminaManager = new StaminaManager(this);
 		this.sotsManager = new SotSManager(this);
 		this.energyManager = new EnergyManager(this);
+		this.resinManager = new ResinManager(this);
 		this.deforestationManager = new DeforestationManager(this);
 		this.forgingManager = new ForgingManager(this);
 	}
@@ -540,6 +548,10 @@ public class Player {
 		return this.unlockedForgingBlueprints;
 	}
 
+	public Set<Integer> getUnlockedCombines() {
+		return this.unlockedCombines;
+	}
+
 	public List<ActiveForgeData> getActiveForges() {
 		return this.activeForges;
 	}
@@ -646,6 +658,14 @@ public class Player {
 
 	public void setSpringLastUsed(long val) {
 		springLastUsed = val;
+	}
+
+	public int getNextResinRefresh() {
+		return nextResinRefresh;
+	}
+
+	public void setNextResinRefresh(int value) {
+		this.nextResinRefresh = value;
 	}
 
 	public SceneLoadState getSceneLoadState() {
@@ -940,7 +960,7 @@ public class Player {
 		return this.getMailHandler().replaceMailByIndex(index, message);
 	}
 	
-	public void interactWith(int gadgetEntityId) {
+	public void interactWith(int gadgetEntityId, GadgetInteractReq request) {
 		GameEntity entity = getScene().getEntityById(gadgetEntityId);
 		if (entity == null) {
 			return;
@@ -970,7 +990,7 @@ public class Player {
 		} else if (entity instanceof EntityGadget gadget) {
 			if (gadget.getGadgetData().getType() == EntityType.RewardStatue) {
 				if (scene.getChallenge() != null) {
-					scene.getChallenge().getStatueDrops(this);
+					scene.getChallenge().getStatueDrops(this, request);
 				}
 				this.sendPacket(new PacketGadgetInteractRsp(gadget, InteractType.INTERACT_TYPE_OPEN_STATUE));
 			}
@@ -1142,6 +1162,10 @@ public class Player {
 		return this.energyManager;
 	}
 
+	public ResinManager getResinManager() {
+		return this.resinManager;
+	}
+
 	public ForgingManager getForgingManager() {
 		return this.forgingManager;
 	}
@@ -1208,6 +1232,9 @@ public class Player {
 
 		// Send updated forge queue data, if necessary.
 		this.getForgingManager().sendPlayerForgingUpdate();
+
+		// Recharge resin.
+		this.getResinManager().rechargeResin();
 	}
 
 
@@ -1291,7 +1318,9 @@ public class Player {
 		session.send(new PacketWidgetGadgetAllDataNotify());
 		session.send(new PacketPlayerHomeCompInfoNotify(this));
 		session.send(new PacketHomeComfortInfoNotify(this));
+		session.send(new PacketCombineDataNotify(this.unlockedCombines));
 		this.forgingManager.sendForgeDataNotify();
+		this.resinManager.onPlayerLogin();
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
