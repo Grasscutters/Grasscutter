@@ -393,8 +393,7 @@ public class GachaManager {
 		}
 		
 		// Packets
-		player.sendPacket(new PacketDoGachaRsp(banner, list));
-		if(banner.hasEpitomized()) player.sendPacket(new PacketGachaWishRsp(banner.getGachaType(), banner.getScheduleId(), gachaInfo.getWishItemId(), gachaInfo.getFailedChosenItemPulls(), banner.getWishMaxProgress()));
+		player.sendPacket(new PacketDoGachaRsp(banner, list, gachaInfo));
 	}
 
 	private synchronized void startWatcher(GameServer server) {

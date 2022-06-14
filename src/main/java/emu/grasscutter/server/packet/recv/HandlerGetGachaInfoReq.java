@@ -18,13 +18,6 @@ public class HandlerGetGachaInfoReq extends PacketHandler {
 					// TODO: use other Nonce/key insteadof session key to ensure the overall security for the player
 					session.getPlayer().getAccount().getSessionKey())
 					);
-
-		for(GachaBanner banner : session.getServer().getGachaManager().getGachaBanners().values()) {
-			if(!banner.hasEpitomized()) continue;
-
-			PlayerGachaBannerInfo gachaInfo = session.getPlayer().getGachaInfo().getBannerInfo(banner);
-			session.send(new PacketGachaWishRsp(banner.getGachaType(), banner.getScheduleId(), gachaInfo.getWishItemId(), gachaInfo.getFailedChosenItemPulls(), banner.getWishMaxProgress()));
-		}
 	}
 
 }
