@@ -8,6 +8,7 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DoGachaRspOuterClass.DoGachaRsp;
 import emu.grasscutter.net.proto.GachaItemOuterClass.GachaItem;
+import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 
 public class PacketDoGachaRsp extends BasePacket {
@@ -40,6 +41,16 @@ public class PacketDoGachaRsp extends BasePacket {
 				.setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
 				.build();
 		
+		this.setData(p);
+	}
+
+	public PacketDoGachaRsp(Retcode retcode) {
+		super(PacketOpcodes.DoGachaRsp);
+
+		DoGachaRsp p = DoGachaRsp.newBuilder()
+				.setRetcode(retcode.getNumber())
+				.build();
+
 		this.setData(p);
 	}
 }
