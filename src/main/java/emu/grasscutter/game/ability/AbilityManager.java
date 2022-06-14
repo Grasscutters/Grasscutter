@@ -1,6 +1,8 @@
 package emu.grasscutter.game.ability;
 
+import java.util.*;
 import java.util.Optional;
+import java.util.Map.Entry;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -28,12 +30,15 @@ import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalar
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
+import emu.grasscutter.game.props.FightProperty;
 
 public class AbilityManager {
 	private Player player;
+    HealAbilityManager healAbilityManager;
 	
 	public AbilityManager(Player player) {
 		this.player = player;
+        this.healAbilityManager = new HealAbilityManager(player);
 	}
 	
 	public Player getPlayer() {
@@ -41,7 +46,9 @@ public class AbilityManager {
 	}
 
 	public void onAbilityInvoke(AbilityInvokeEntry invoke) throws Exception {
-		// Grasscutter.getLogger().info(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + Utils.bytesToHex(invoke.toByteArray()));
+        healAbilityManager.healHandler(invoke);
+
+		 //Grasscutter.getLogger().info(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + Utils.bytesToHex(invoke.toByteArray()));
 		switch (invoke.getArgumentType()) {
 			case ABILITY_INVOKE_ARGUMENT_META_OVERRIDE_PARAM:
 				handleOverrideParam(invoke);
@@ -61,6 +68,7 @@ public class AbilityManager {
 			default:
 				break;
 		}
+
 	}
 
 	private void handleOverrideParam(AbilityInvokeEntry invoke) throws Exception {
@@ -109,7 +117,7 @@ public class AbilityManager {
 		if (sourceEntity == null) {
 			return;
 		}
-		
+
 		// This is not how it works but we will keep it for now since healing abilities dont work properly anyways
 		if (data.getAction() == ModifierAction.ADDED && data.getParentAbilityName() != null) {
 			// Handle add modifier here
@@ -155,19 +163,6 @@ public class AbilityManager {
 	private void invokeAction(AbilityModifierAction action, GameEntity target, GameEntity sourceEntity) {
 		switch (action.type) {
 			case HealHP -> {
-				if (action.amount == null) {
-					return;
-				}
-				
-				float healAmount = 0;
-				
-				if (action.amount.isDynamic && action.amount.dynamicKey != null) {
-					healAmount = sourceEntity.getMetaOverrideMap().getOrDefault(action.amount.dynamicKey, 0f);
-				}
-				
-				if (healAmount > 0) {
-					target.heal(healAmount);
-				}
 			}
 			case LoseHP -> {
 				if (action.amountByTargetCurrentHPRatio == null) {
