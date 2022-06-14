@@ -23,7 +23,7 @@ public class HandlerGetGachaInfoReq extends PacketHandler {
 			if(!banner.hasEpitomized()) continue;
 
 			PlayerGachaBannerInfo gachaInfo = session.getPlayer().getGachaInfo().getBannerInfo(banner);
-			session.send(new PacketGachaWishRsp(banner.getGachaType(), banner.getScheduleId(), gachaInfo.getWishItemId(), gachaInfo.getFailedFeaturedItemPulls(5), banner.getWishMaxProgress()));
+			session.send(new PacketGachaWishRsp(banner.getGachaType(), banner.getScheduleId(), gachaInfo.getWishItemId(), gachaInfo.getFailedChosenItemPulls(), banner.getWishMaxProgress()));
 		}
 	}
 

@@ -184,28 +184,48 @@ public class GachaManager {
 
 	private synchronized int doRarePull(int[] featured, int[] fallback1, int[] fallback2, int rarity, GachaBanner banner, PlayerGachaBannerInfo gachaInfo) {
 		int itemId = 0;
-		boolean pullFeatured = (gachaInfo.getFailedFeaturedItemPulls(rarity) >= (banner.hasEpitomized() ? banner.getWishMaxProgress() : 1))  // Lost previous coinflip
-							|| (this.randomRange(1, 100) <= banner.getEventChance(rarity));  // Won this coinflip
-		if (pullFeatured && (featured.length > 0)) {
-			itemId = getRandom(featured);
+		boolean pullFeatured = false;
 
-			// Epitomized Banner
-			boolean resetFailed = true;
-			if(rarity == 5) {
-				if(banner.hasEpitomized()) {
-					if(gachaInfo.getFailedFeaturedItemPulls(rarity) >= banner.getWishMaxProgress()) {
-						resetFailed = true;
-						itemId = gachaInfo.getWishItemId();
-					} else {
-						if(itemId != gachaInfo.getWishItemId()) {
-							resetFailed = false;
+		boolean epitomized = (banner.hasEpitomized()) && (rarity == 5);
+		if(epitomized) {
+			pullFeatured = this.randomRange(1, 100) <= banner.getEventChance(rarity);
+
+			if(gachaInfo.getWishItemId() == 0) { // Not epitomized
+				if(pullFeatured && featured.length > 0) {
+					itemId = getRandom(featured);
+				} else {
+					itemId = getRandom(fallback2);
+				}
+				// No add or reset failed because player is not epitomized this banner
+			} else {
+				if(gachaInfo.getFailedChosenItemPulls() >= banner.getWishMaxProgress()) { // Auto pick item when epitomized points reached
+					itemId = gachaInfo.getWishItemId();
+					gachaInfo.setFailedChosenItemPulls(0);
+				} else { // Epitomized points not reached
+					if(pullFeatured && featured.length > 0) {
+						itemId = getRandom(featured);
+						if(itemId == gachaInfo.getWishItemId()) { // Reset epitomized points when got wished item
+							gachaInfo.setFailedChosenItemPulls(0);
+						} else { // Add epitomized points if not get wished item
+							gachaInfo.addFailedChosenItemPulls(1);
 						}
+					} else {
+						itemId = getRandom(fallback2);
+						gachaInfo.addFailedChosenItemPulls(1);
 					}
 				}
 			}
 
-			if(resetFailed) gachaInfo.setFailedFeaturedItemPulls(rarity, 0);
-			else gachaInfo.addFailedFeaturedItemPulls(rarity, 1);
+			return itemId;
+		}
+
+
+		pullFeatured = (gachaInfo.getFailedFeaturedItemPulls(rarity) >= 1)  // Lost previous coinflip
+				|| (this.randomRange(1, 100) <= banner.getEventChance(rarity));  // Won this coinflip
+
+		if (pullFeatured && (featured.length > 0)) {
+			itemId = getRandom(featured);
+			gachaInfo.setFailedFeaturedItemPulls(rarity, 0);
 		} else {
 			gachaInfo.addFailedFeaturedItemPulls(rarity, 1);
 			if (fallback1.length < 1) {
@@ -374,7 +394,7 @@ public class GachaManager {
 		
 		// Packets
 		player.sendPacket(new PacketDoGachaRsp(banner, list));
-		if(banner.hasEpitomized()) player.sendPacket(new PacketGachaWishRsp(banner.getGachaType(), banner.getScheduleId(), gachaInfo.getWishItemId(), gachaInfo.getFailedFeaturedItemPulls(5), banner.getWishMaxProgress()));
+		if(banner.hasEpitomized()) player.sendPacket(new PacketGachaWishRsp(banner.getGachaType(), banner.getScheduleId(), gachaInfo.getWishItemId(), gachaInfo.getFailedChosenItemPulls(), banner.getWishMaxProgress()));
 	}
 
 	private synchronized void startWatcher(GameServer server) {

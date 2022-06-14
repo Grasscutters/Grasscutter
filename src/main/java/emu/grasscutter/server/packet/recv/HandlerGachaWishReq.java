@@ -19,6 +19,7 @@ public class HandlerGachaWishReq extends PacketHandler {
         GachaBanner banner = session.getServer().getGachaManager().getGachaBanners().get(req.getGachaScheduleId());
         PlayerGachaBannerInfo gachaInfo = session.getPlayer().getGachaInfo().getBannerInfo(banner);
 
+        gachaInfo.setFailedChosenItemPulls(0);
         gachaInfo.setWishItemId(req.getItemId());
 
         session.send(new PacketGachaWishRsp(req.getGachaType(), req.getGachaScheduleId(), req.getItemId(), 0, banner.getWishMaxProgress()));
