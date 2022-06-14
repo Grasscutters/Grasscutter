@@ -25,6 +25,11 @@ public class PacketHomeComfortInfoNotify extends BasePacket {
             comfortInfoList.add(
                     HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo.newBuilder()
                         .setModuleId(moduleId)
+                            .setRoomSceneComfortValue(1050)
+                            .addWorldSceneBlockComfortValueList(750)
+                            .addWorldSceneBlockComfortValueList(0)
+                            .addWorldSceneBlockComfortValueList(0)
+                            .addWorldSceneBlockComfortValueList(0)
                         .build()
             );
         }

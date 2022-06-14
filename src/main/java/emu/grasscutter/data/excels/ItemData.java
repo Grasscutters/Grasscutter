@@ -2,14 +2,20 @@ package emu.grasscutter.data.excels;
 
 import java.util.List;
 
+import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.ItemUseData;
+import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.props.FightProperty;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 
-@ResourceType(name = {"MaterialExcelConfigData.json", "WeaponExcelConfigData.json", "ReliquaryExcelConfigData.json"})
+@ResourceType(name = {"MaterialExcelConfigData.json",
+        "WeaponExcelConfigData.json",
+        "ReliquaryExcelConfigData.json",
+        "HomeWorldFurnitureExcelConfigData.json"
+})
 public class ItemData extends GameResource {
 	
 	private int id;
@@ -63,12 +69,19 @@ public class ItemData extends GameResource {
     private long nameTextMapHash;
     
     // Post load
-    private transient emu.grasscutter.game.inventory.MaterialType materialEnumType;
-    private transient emu.grasscutter.game.inventory.ItemType itemEnumType;
-    private transient emu.grasscutter.game.inventory.EquipType equipEnumType;
+    private transient MaterialType materialEnumType;
+    private transient ItemType itemEnumType;
+    private transient EquipType equipEnumType;
     
     private IntSet addPropLevelSet;
-    
+
+    // Furniture
+    private int comfort;
+    private List<Integer> furnType;
+    private List<Integer> furnitureGadgetID;
+    @SerializedName("JFDLJGDFIGL")
+    private int roomSceneId;
+
     @Override
 	public int getId(){
         return this.id;
@@ -193,41 +206,57 @@ public class ItemData extends GameResource {
 	public int getMaxLevel() {
 		return maxLevel;
 	}
-	
-	public emu.grasscutter.game.inventory.ItemType getItemType() {
+
+    public int getComfort() {
+        return comfort;
+    }
+
+    public List<Integer> getFurnType() {
+        return furnType;
+    }
+
+    public List<Integer> getFurnitureGadgetID() {
+        return furnitureGadgetID;
+    }
+
+    public int getRoomSceneId() {
+        return roomSceneId;
+    }
+
+    public ItemType getItemType() {
     	return this.itemEnumType;
     }
     
-    public emu.grasscutter.game.inventory.MaterialType getMaterialType() {
+    public MaterialType getMaterialType() {
     	return this.materialEnumType;
     }
     
-    public emu.grasscutter.game.inventory.EquipType getEquipType() {
+    public EquipType getEquipType() {
     	return this.equipEnumType;
     }
     
     public boolean canAddRelicProp(int level) {
-    	return this.addPropLevelSet != null & this.addPropLevelSet.contains(level);
+    	return this.addPropLevelSet != null && this.addPropLevelSet.contains(level);
     }
     
 	public boolean isEquip() {
-		return this.itemEnumType == emu.grasscutter.game.inventory.ItemType.ITEM_RELIQUARY || this.itemEnumType == emu.grasscutter.game.inventory.ItemType.ITEM_WEAPON;
+		return this.itemEnumType == ItemType.ITEM_RELIQUARY || this.itemEnumType == ItemType.ITEM_WEAPON;
 	}
     
     @Override
 	public void onLoad() {
-    	this.itemEnumType = emu.grasscutter.game.inventory.ItemType.getTypeByName(getItemTypeString());
-    	this.materialEnumType = emu.grasscutter.game.inventory.MaterialType.getTypeByName(getMaterialTypeString());
+    	this.itemEnumType = ItemType.getTypeByName(getItemTypeString());
+    	this.materialEnumType = MaterialType.getTypeByName(getMaterialTypeString());
 
-		if (this.itemEnumType == emu.grasscutter.game.inventory.ItemType.ITEM_RELIQUARY) {
-			this.equipEnumType = emu.grasscutter.game.inventory.EquipType.getTypeByName(this.equipType);
+		if (this.itemEnumType == ItemType.ITEM_RELIQUARY) {
+			this.equipEnumType = EquipType.getTypeByName(this.equipType);
 			if (this.addPropLevels != null && this.addPropLevels.length > 0) {
 				this.addPropLevelSet = new IntOpenHashSet(this.addPropLevels);
 			}
-		} else if (this.itemEnumType == emu.grasscutter.game.inventory.ItemType.ITEM_WEAPON) {
-			this.equipEnumType = emu.grasscutter.game.inventory.EquipType.EQUIP_WEAPON;
+		} else if (this.itemEnumType == ItemType.ITEM_WEAPON) {
+			this.equipEnumType = EquipType.EQUIP_WEAPON;
 		} else {
-			this.equipEnumType = emu.grasscutter.game.inventory.EquipType.EQUIP_NONE;
+			this.equipEnumType = EquipType.EQUIP_NONE;
 		}
 		
 		if (this.getWeaponProperties() != null) {
@@ -235,6 +264,13 @@ public class ItemData extends GameResource {
 				weaponProperty.onLoad();
 			}
 		}
+
+        if(this.getFurnType() != null){
+            this.furnType = this.furnType.stream().filter(x -> x > 0).toList();
+        }
+        if(this.getFurnitureGadgetID() != null){
+            this.furnitureGadgetID = this.furnitureGadgetID.stream().filter(x -> x > 0).toList();
+        }
     }
     
     public static class WeaponProperty {

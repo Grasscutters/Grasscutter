@@ -267,6 +267,8 @@ public class Inventory implements Iterable<GameItem> {
 					getPlayer().setMora(player.getMora() + count);
 			case 203 -> // Genesis Crystals
 					getPlayer().setCrystals(player.getCrystals() + count);
+			case 204 -> // Home Coin
+					getPlayer().setHomeCoin(player.getHomeCoin() + count);
 		}
 	}
 
@@ -280,6 +282,8 @@ public class Inventory implements Iterable<GameItem> {
 				return player.getCrystals();
 			case 106:  // Resin
 				return player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
+			case 204:  // Home Coin
+				return player.getHomeCoin();
 			default:
 				GameItem item = getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId);  // What if we ever want to operate on weapons/relics/furniture? :S
 				return (item == null) ? 0 : item.getCount();
@@ -320,6 +324,8 @@ public class Inventory implements Iterable<GameItem> {
 					player.setCrystals(player.getCrystals() - (cost.getCount() * quantity));
 				case 106 ->  // Resin
 					player.getResinManager().useResin(cost.getCount() * quantity);
+				case 204 ->  // Home Coin
+						player.setHomeCoin(player.getHomeCoin() - (cost.getCount() * quantity));
 				default ->
 					removeItem(getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId()), cost.getCount() * quantity);
 			}

@@ -14,6 +14,8 @@ import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.EntityVehicle;
+import emu.grasscutter.game.home.GameHome;
+import emu.grasscutter.game.managers.DeforestationManager.DeforestationManager;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
@@ -164,6 +166,7 @@ public class Player {
 	@Transient private ResinManager resinManager;
 	@Transient private ForgingManager forgingManager;
 	@Transient private DeforestationManager deforestationManager;
+	@Transient private GameHome home;
 
 	private long springLastUsed;
 	private HashMap<String, MapMark> mapMarks;
@@ -376,7 +379,9 @@ public class Player {
 	public void setCurrentRealmId(Integer currentRealmId) {
 		this.currentRealmId = currentRealmId;
 	}
-
+	public GameHome getHome(){
+		return home;
+	}
 	public Position getPos() {
 		return pos;
 	}
@@ -429,6 +434,14 @@ public class Player {
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_MCOIN));
 	}
 
+	public int getHomeCoin() {
+		return this.getProperty(PlayerProperty.PROP_PLAYER_HOME_COIN);
+	}
+
+	public void setHomeCoin(int coin) {
+		this.setProperty(PlayerProperty.PROP_PLAYER_HOME_COIN, coin);
+		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_HOME_COIN));
+	}
 	private int getExpRequired(int level) {
 		PlayerLevelData levelData = GameData.getPlayerLevelDataMap().get(level);
 		return levelData != null ? levelData.getExp() : 0;
@@ -1316,13 +1329,15 @@ public class Player {
 		session.send(new PacketCodexDataFullNotify(this));
 		session.send(new PacketAllWidgetDataNotify(this));
 		session.send(new PacketWidgetGadgetAllDataNotify());
-		session.send(new PacketPlayerHomeCompInfoNotify(this));
-		session.send(new PacketHomeComfortInfoNotify(this));
 		session.send(new PacketCombineDataNotify(this.unlockedCombines));
 		this.forgingManager.sendForgeDataNotify();
 		this.resinManager.onPlayerLogin();
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
+
+		// Home
+		home = GameHome.getByUid(getUid());
+		home.onOwnerLogin(this);
 
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
 		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
