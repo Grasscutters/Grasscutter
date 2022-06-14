@@ -182,75 +182,59 @@ public class GachaManager {
 		return 0;  // This should only be reachable if total==0
 	}
 
+	private synchronized int doFallbackRarePull(int[] fallback1, int[] fallback2, int rarity, GachaBanner banner, PlayerGachaBannerInfo gachaInfo) {
+		if (fallback1.length < 1) {
+			if (fallback2.length < 1) {
+				return getRandom((rarity==5)? fallbackItems5Pool2Default : fallbackItems4Pool2Default);
+			} else {
+				return getRandom(fallback2);
+			}
+		} else if (fallback2.length < 1) {
+			return getRandom(fallback1);
+		} else {  // Both pools are possible, use the pool balancer
+			int pityPool1 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 1));
+			int pityPool2 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 2));
+			int chosenPool = switch ((pityPool1 >= pityPool2)? 1 : 0) {  // Larger weight must come first for the hard cutoff to function correctly
+				case 1 -> 1 + drawRoulette(new int[] {pityPool1, pityPool2}, 10000);
+				default -> 2 - drawRoulette(new int[] {pityPool2, pityPool1}, 10000);
+			};
+			return switch (chosenPool) {
+				case 1:
+					gachaInfo.setPityPool(rarity, 1, 0);
+					yield getRandom(fallback1);
+				default:
+					gachaInfo.setPityPool(rarity, 2, 0);
+					yield getRandom(fallback2);
+			};
+		}
+	}
+
 	private synchronized int doRarePull(int[] featured, int[] fallback1, int[] fallback2, int rarity, GachaBanner banner, PlayerGachaBannerInfo gachaInfo) {
 		int itemId = 0;
-		boolean pullFeatured = false;
+		boolean epitomized = (banner.hasEpitomized()) && (rarity == 5) && (gachaInfo.getWishItemId() != 0);
+		boolean pityEpitomized = (gachaInfo.getFailedChosenItemPulls() >= banner.getWishMaxProgress());  // Maximum fate points reached
+		boolean pityFeatured = (gachaInfo.getFailedFeaturedItemPulls(rarity) >= 1);  // Lost previous coinflip
+		boolean rollFeatured = (this.randomRange(1, 100) <= banner.getEventChance(rarity));  // Won this coinflip
+		boolean pullFeatured = pityFeatured || rollFeatured;
 
-		boolean epitomized = (banner.hasEpitomized()) && (rarity == 5);
-		if(epitomized) {
-			pullFeatured = this.randomRange(1, 100) <= banner.getEventChance(rarity);
-
-			if(gachaInfo.getWishItemId() == 0) { // Not epitomized
-				if(pullFeatured && featured.length > 0) {
-					itemId = getRandom(featured);
-				} else {
-					itemId = getRandom(fallback2);
-				}
-				// No add or reset failed because player is not epitomized this banner
+		if (epitomized && pityEpitomized) {  // Auto pick item when epitomized points reached
+			gachaInfo.setFailedFeaturedItemPulls(rarity, 0);  // Epitomized item will always be a featured one
+			itemId = gachaInfo.getWishItemId();
+		} else {
+			if (pullFeatured && (featured.length > 0)) {
+				gachaInfo.setFailedFeaturedItemPulls(rarity, 0);
+				itemId = getRandom(featured);
 			} else {
-				if(gachaInfo.getFailedChosenItemPulls() >= banner.getWishMaxProgress()) { // Auto pick item when epitomized points reached
-					itemId = gachaInfo.getWishItemId();
-					gachaInfo.setFailedChosenItemPulls(0);
-				} else { // Epitomized points not reached
-					if(pullFeatured && featured.length > 0) {
-						itemId = getRandom(featured);
-						if(itemId == gachaInfo.getWishItemId()) { // Reset epitomized points when got wished item
-							gachaInfo.setFailedChosenItemPulls(0);
-						} else { // Add epitomized points if not get wished item
-							gachaInfo.addFailedChosenItemPulls(1);
-						}
-					} else {
-						itemId = getRandom(fallback2);
-						gachaInfo.addFailedChosenItemPulls(1);
-					}
-				}
+				gachaInfo.addFailedFeaturedItemPulls(rarity, 1);  // This could be moved into doFallbackRarePull but having it here makes it clearer
+				itemId = doFallbackRarePull(fallback1, fallback2, rarity, banner, gachaInfo);
 			}
-
-			return itemId;
 		}
 
-
-		pullFeatured = (gachaInfo.getFailedFeaturedItemPulls(rarity) >= 1)  // Lost previous coinflip
-				|| (this.randomRange(1, 100) <= banner.getEventChance(rarity));  // Won this coinflip
-
-		if (pullFeatured && (featured.length > 0)) {
-			itemId = getRandom(featured);
-			gachaInfo.setFailedFeaturedItemPulls(rarity, 0);
-		} else {
-			gachaInfo.addFailedFeaturedItemPulls(rarity, 1);
-			if (fallback1.length < 1) {
-				if (fallback2.length < 1) {
-					itemId = getRandom((rarity==5)? fallbackItems5Pool2Default : fallbackItems4Pool2Default);
-				} else {
-					itemId = getRandom(fallback2);
-				}
-			} else if (fallback2.length < 1) {
-				itemId = getRandom(fallback1);
-			} else {  // Both pools are possible, use the pool balancer
-				int pityPool1 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 1));
-				int pityPool2 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 2));
-				int chosenPool = switch ((pityPool1 >= pityPool2)? 1 : 0) {  // Larger weight must come first for the hard cutoff to function correctly
-					case 1 -> 1 + drawRoulette(new int[] {pityPool1, pityPool2}, 10000);
-					default -> 2 - drawRoulette(new int[] {pityPool2, pityPool1}, 10000);
-				};
-				itemId = switch (chosenPool) {
-					case 1:
-						gachaInfo.setPityPool(rarity, 1, 0);
-						yield getRandom(fallback1);
-					default:
-						gachaInfo.setPityPool(rarity, 2, 0);
-						yield getRandom(fallback2);
-				};
+		if (epitomized) {
+			if(itemId == gachaInfo.getWishItemId()) { // Reset epitomized points when got wished item
+				gachaInfo.setFailedChosenItemPulls(0);
+			} else { // Add epitomized points if not get wished item
+				gachaInfo.addFailedChosenItemPulls(1);
 			}
 		}
 		return itemId;
