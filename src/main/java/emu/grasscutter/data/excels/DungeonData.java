@@ -15,6 +15,9 @@ public class DungeonData extends GameResource {
 	private String involveType; // TODO enum
 	
 	private RewardPreviewData previewData;
+
+	private int statueCostID;
+	private int statueCostCount;
 	    
 	@Override
 	public int getId() {
@@ -31,6 +34,14 @@ public class DungeonData extends GameResource {
 
 	public RewardPreviewData getRewardPreview() {
 		return previewData;
+	}
+
+	public int getStatueCostID() {
+		return statueCostID;
+	}
+
+	public int getStatueCostCount() {
+		return statueCostCount;
 	}
 
 	@Override
