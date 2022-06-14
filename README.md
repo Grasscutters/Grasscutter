@@ -37,7 +37,7 @@ EN | [中文](README_zh-CN.md)
 **Note:** If you updated from an older version, delete `config.json` to regenerate it.
 
 1. Get `grasscutter.jar`
-   - Download from [actions](https://nightly.link/Grasscutters/Grasscutter/workflows/build/stable/Grasscutter.zip)
+   - Download from [actions](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297)
    - [Build by yourself](#Building)
 2. Create a `resources` folder in the directory where grasscutter.jar is located and move your `BinOutput` and `ExcelBinOutput` folders there *(Check the [wiki](https://github.com/Grasscutters/Grasscutter/wiki) for more details how to get those.)*
 3. Run Grasscutter with `java -jar grasscutter.jar`. **Make sure mongodb service is running as well.**

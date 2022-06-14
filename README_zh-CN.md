@@ -37,7 +37,7 @@
 **注:** 如果您从旧版本升级到新版本，最好删除 `config.json` 并启动服务端jar来重新生成它
 
 1. 获取 `grasscutter.jar`
-   - 从 [actions](https://nightly.link/Grasscutters/Grasscutter/workflows/build/stable/Grasscutter.zip) 中下载
+   - 从 [actions](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297) 中下载
    - [自行构建](#构建)
 2. 在**grasscutter.jar** 所在目录中创建 `resources` 文件夹并将 `BinOutput` 和 `ExcelBinOutput` 放入其中 *(查看 [wiki](https://github.com/Grasscutters/Grasscutter/wiki) 了解更多)*
 3. 通过命令 `java -jar grasscutter.jar` 来运行Grasscutter. **在此之前请确认MongoDB服务运行正常**
