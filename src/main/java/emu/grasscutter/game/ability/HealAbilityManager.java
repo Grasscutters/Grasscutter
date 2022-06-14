@@ -106,7 +106,24 @@ public class HealAbilityManager {
 		return this.player;
 	}
 
-    public void healHandle(GameEntity sourceEntity, String modifierString) {
+    public void healHandler(AbilityInvokeEntry invoke) throws Exception {
+		AbilityMetaModifierChange data = AbilityMetaModifierChange.parseFrom(invoke.getAbilityData());
+		
+		if (data == null) {
+			return;
+		}
+		
+		GameEntity sourceEntity = player.getScene().getEntityById(data.getApplyEntityId());
+
+        String modifierString = "";
+        if(data.getParentAbilityName() != null)
+			modifierString = data.getParentAbilityName().getStr();
+
+        if(sourceEntity != null)
+            checkAndHeal(sourceEntity, modifierString);
+    }
+
+    public void checkAndHeal(GameEntity sourceEntity, String modifierString) {
         int fightPropertyType = 0;
         float healAmount = 0;
         float ratio = 0, base = 0;

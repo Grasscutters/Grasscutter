@@ -46,7 +46,7 @@ public class AbilityManager {
 	}
 
 	public void onAbilityInvoke(AbilityInvokeEntry invoke) throws Exception {
-
+        healAbilityManager.healHandler(invoke);
 
 		 //Grasscutter.getLogger().info(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + Utils.bytesToHex(invoke.toByteArray()));
 		switch (invoke.getArgumentType()) {
@@ -69,20 +69,6 @@ public class AbilityManager {
 				break;
 		}
 
-		AbilityMetaModifierChange data = AbilityMetaModifierChange.parseFrom(invoke.getAbilityData());
-		
-		if (data == null) {
-			return;
-		}
-		
-		GameEntity sourceEntity = player.getScene().getEntityById(data.getApplyEntityId());
-
-        String modifierString = "";
-        if(data.getParentAbilityName() != null)
-			modifierString = data.getParentAbilityName().getStr();
-
-        if(sourceEntity != null)
-            healAbilityManager.healHandle(sourceEntity, modifierString);
 	}
 
 	private void handleOverrideParam(AbilityInvokeEntry invoke) throws Exception {
