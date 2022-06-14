@@ -1,6 +1,8 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.home.GameHome;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
@@ -27,13 +29,14 @@ public class HandlerTryEnterHomeReq extends PacketHandler {
 
         int realmId = 2000 + session.getPlayer().getCurrentRealmId();
 
-        Scene scene = session.getPlayer().getWorld().getSceneById(realmId);
-        Position pos = scene.getScriptManager().getConfig().born_pos;
+        var home = session.getPlayer().getHome();
+        var homeScene = home.getHomeSceneItem(realmId);
+        home.save();
 
         session.getPlayer().getWorld().transferPlayerToScene(
                 session.getPlayer(),
                 realmId,
-                pos
+                homeScene.getBornPos()
         );
 
 
