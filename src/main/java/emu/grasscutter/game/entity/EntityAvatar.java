@@ -146,7 +146,7 @@ public class EntityAvatar extends GameEntity {
 		// Send packets.
 		this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, curEnergyProp));
 
-		if (reason != ChangeEnergyReason.CHANGE_ENERGY_REASON_NONE) {
+		if (reason == ChangeEnergyReason.CHANGE_ENERGY_REASON_SKILL_START) {
 			this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, curEnergyProp, -maxEnergy, reason));
 		}
 	}
