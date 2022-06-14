@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4570
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeSceneJumpRsp {
+	int32 retcode = 10;
+	bool is_enter_room_scene = 8;
+}

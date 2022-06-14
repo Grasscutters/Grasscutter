@@ -16,6 +16,7 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.gacha.GachaRecord;
+import emu.grasscutter.game.home.GameHome;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
@@ -30,7 +31,7 @@ public final class DatabaseManager {
 	
 	private static final Class<?>[] mappedClasses = new Class<?>[] {
 		DatabaseCounter.class, Account.class, Player.class, Avatar.class, GameItem.class, Friendship.class, 
-		GachaRecord.class, Mail.class, GameMainQuest.class
+		GachaRecord.class, Mail.class, GameMainQuest.class, GameHome.class
 	};
     
     public static Datastore getGameDatastore() {
