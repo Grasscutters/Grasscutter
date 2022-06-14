@@ -22,6 +22,7 @@ import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.Ability
 import emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
+import emu.grasscutter.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason;
 import emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.game.GameSession;
@@ -334,7 +335,7 @@ public class EnergyManager {
 
         // If the cast skill was a burst, consume energy.
         if (avatar.getSkillDepot() != null && skillId == avatar.getSkillDepot().getEnergySkill()) {
-            avatar.getAsEntity().clearEnergy(PropChangeReason.PROP_CHANGE_REASON_ABILITY);
+            avatar.getAsEntity().clearEnergy(ChangeEnergyReason.CHANGE_ENERGY_REASON_SKILL_START);
         }
     }
 
