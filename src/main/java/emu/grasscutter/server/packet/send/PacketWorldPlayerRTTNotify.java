@@ -18,7 +18,7 @@ public class PacketWorldPlayerRTTNotify extends BasePacket {
 			proto.addPlayerRttList(
 					PlayerRTTInfo.newBuilder()
 							.setUid(player.getUid())
-							.setRtt(10) // TODO - put player ping here
+							.setRtt(player.getSession().getLatency())
 			);
 		}
 		

@@ -11,6 +11,9 @@ public @interface ResourceType {
 	
 	/** Load priority - dictates which order to load this resource, with "highest" being loaded first */
 	LoadPriority loadPriority() default LoadPriority.NORMAL;
+
+	/** use extend config json, which will merge into the current config, the extend json with the name of string append of original config json name and place in the data folder, eg: AvatarSkillExcelConfigData.json AvatarSkillExcelConfigDataEx.json */
+	boolean useExtendConfig() default false;
 	
 	public enum LoadPriority {
 		HIGHEST	(4), 

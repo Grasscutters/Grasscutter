@@ -7,7 +7,7 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.game.props.ElementType;
 
-@ResourceType(name = "AvatarSkillExcelConfigData.json", loadPriority = LoadPriority.HIGHEST)
+@ResourceType(name = "AvatarSkillExcelConfigData.json", loadPriority = LoadPriority.HIGHEST, useExtendConfig = true)
 public class AvatarSkillData extends GameResource {
 	private int id;
     private	float cdTime;
@@ -24,6 +24,8 @@ public class AvatarSkillData extends GameResource {
     private String abilityName;
     private String lockShape;
     private String globalValueKey;
+	
+	private int invincibleTime;
 
     @Override
 	public int getId(){
@@ -81,5 +83,9 @@ public class AvatarSkillData extends GameResource {
 	@Override
 	public void onLoad() {
 		
+	}
+
+	public int getInvincibleTime() {
+		return invincibleTime;
 	}
 }

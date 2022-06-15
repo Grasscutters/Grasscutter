@@ -33,6 +33,11 @@ public class GameSession implements GameSessionManager.KcpChannel {
 	private int clientTime;
 	private long lastPingTime;
 	private int lastClientSeq = 10;
+	
+	/**
+	 * time of latency 
+ 	 */
+	private int latency;
 
 	public GameSession(GameServer server) {
 		this.server = server;
@@ -174,6 +179,8 @@ public class GameSession implements GameSessionManager.KcpChannel {
 
 	@Override
 	public void handleReceive(byte[] bytes) {
+		// update session latency
+		this.latency = this.tunnel.getSrtt() / 2;
 		// Decrypt and turn back into a packet
 		Crypto.xor(bytes, useSecretKey() ? Crypto.ENCRYPT_KEY : Crypto.DISPATCH_KEY);
 		ByteBuf packet = Unpooled.wrappedBuffer(bytes);
@@ -256,6 +263,10 @@ public class GameSession implements GameSessionManager.KcpChannel {
 
 	public boolean isActive() {
 		return getState() == SessionState.ACTIVE;
+	}
+
+	public int getLatency() {
+		return latency;
 	}
 
 	public enum SessionState {

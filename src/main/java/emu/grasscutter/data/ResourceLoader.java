@@ -1,12 +1,15 @@
 package emu.grasscutter.data;
 
 import java.io.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.Type;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
-import com.google.gson.Gson;
 import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
 
@@ -130,7 +133,7 @@ public class ResourceLoader {
 	protected static void loadFromResource(Class<?> c, ResourceType type, Int2ObjectMap map, boolean doReload) throws Exception {
 		if(!loadedResources.contains(c.getSimpleName()) || doReload) {
 			for (String name : type.name()) {
-				loadFromResource(c, name, map);
+				loadFromResource(c, name, map, type.useExtendConfig());
 			}
 			Grasscutter.getLogger().info("Loaded " + map.size() + " " + c.getSimpleName() + "s.");
 			loadedResources.add(c.getSimpleName());
@@ -138,16 +141,61 @@ public class ResourceLoader {
 	}
 
 	@SuppressWarnings({"rawtypes", "unchecked"})
-	protected static void loadFromResource(Class<?> c, String fileName, Int2ObjectMap map) throws Exception {
+	protected static void loadFromResource(Class<?> c, String fileName, Int2ObjectMap map, boolean loadExtendConfig) throws Exception {
 		try (FileReader fileReader = new FileReader(RESOURCE("ExcelBinOutput/" + fileName))) {
 			List list = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, c).getType());
-
+			Map<Object, Map<String, Object>> idObjectMap = loadExtendConfigMap(fileName, loadExtendConfig);
 			for (Object o : list) {
 				GameResource res = (GameResource) o;
 				res.onLoad();
+				if (loadExtendConfig) {
+					mergeIntoExtendConfig(idObjectMap, res);
+				}
 				map.put(res.getId(), res);
 			}
 		}
+	}
+
+	private static void mergeIntoExtendConfig(Map<Object, Map<String, Object>> idObjectMap, GameResource res) throws NoSuchFieldException, IllegalAccessException {
+		final Map<String, Object> objectMap = idObjectMap.get(res.getId());
+		if (objectMap != null) {
+			final Set<Entry<String, Object>> entries = objectMap.entrySet();
+			for (Entry<String, Object> entry : entries) {
+				if("id".equals(entry.getKey())) {
+					continue;
+				}
+				final Field declaredField = res.getClass().getDeclaredField(entry.getKey());
+				declaredField.setAccessible(true);
+				declaredField.set(res, smartConvert(entry.getValue(), declaredField.getType()));
+			}
+		}
+	}
+	
+	private static Map<Object, Map<String, Object>> loadExtendConfigMap(String fileName, boolean loadExtendConfig) throws IOException {
+		Map<Object, Map<String, Object>> idObjectMap = Collections.emptyMap();
+		if (loadExtendConfig) {
+			String[] fileNameAndExt = fileName.split("\\.");
+			try (FileReader exFileReader = new FileReader(DATA("ExcelBinOutput/" + fileNameAndExt[0] + "Ex." + fileNameAndExt[1]))) {
+				Type mapType = new TypeToken<List<Map<String, Object>>>() {
+				}.getType();
+				final List<Map<String, Object>> objectMapList = Grasscutter.getGsonFactory().fromJson(exFileReader, mapType);
+				idObjectMap = objectMapList.stream().collect(Collectors.toMap(v -> ((Double)v.get("id")).intValue(), Function.identity()));
+			} catch (FileNotFoundException fileNotFoundException) {
+				Grasscutter.getLogger().warn("extend config file not found:" + fileName);
+				return idObjectMap;
+			}
+		}
+		return idObjectMap;
+	}
+
+	private static Object smartConvert(Object value, Class<?> type) {
+		final Class<?> jsonValueClass = value.getClass();
+		if (Double.class.equals(jsonValueClass)) {
+			if (int.class.equals(type) || Integer.class.equals(type)) {
+				return ((Double) value).intValue();
+			}
+		}
+		return value;
 	}
 
 	private static void loadScenePoints() {

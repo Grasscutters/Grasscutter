@@ -16,6 +16,8 @@ import emu.grasscutter.net.proto.PlayerDieTypeOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 
+import java.util.concurrent.TimeUnit;
+
 @Opcodes(PacketOpcodes.CombatInvocationsNotify)
 public class HandlerCombatInvocationsNotify extends PacketHandler {
 
@@ -31,7 +33,14 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 				case COMBAT_TYPE_ARGUMENT_EVT_BEING_HIT:
 					// Handle damage
 					EvtBeingHitInfo hitInfo = EvtBeingHitInfo.parseFrom(entry.getCombatData());
-					session.getPlayer().getAttackResults().add(hitInfo.getAttackResult());
+
+					final long playerElementBurstInvincibleEndTime = session.getPlayer().getPlayerElementBurstInvincibleEndTime();
+					final long millis = TimeUnit.NANOSECONDS.toMillis(System.nanoTime());
+					if (playerElementBurstInvincibleEndTime >= millis) {
+						session.getPlayer().getAttackResults().add(hitInfo.getAttackResult().toBuilder().setDamage(0f).build());
+					} else {
+						session.getPlayer().getAttackResults().add(hitInfo.getAttackResult());
+					}
 					session.getPlayer().getEnergyManager().handleAttackHit(hitInfo);
 					break;
 				case COMBAT_TYPE_ARGUMENT_ENTITY_MOVE:
