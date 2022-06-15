@@ -70,6 +70,9 @@ public final class GachaHandler implements Router {
         String template = new String(FileUtils.read(recordsTemplate), StandardCharsets.UTF_8)
             .replace("{{REPLACE_RECORDS}}", records)
             .replace("{{REPLACE_MAXPAGE}}", String.valueOf(maxPage))
+            .replace("{{TITLE}}", translate(player, "gacha.records.title"))
+            .replace("{{DATE}}", translate(player, "gacha.records.date"))
+            .replace("{{ITEM}}", translate(player, "gacha.records.item"))
             .replace("{{LANGUAGE}}", Utils.getLanguageCode(account.getLocale()));
         response.send(template);
     }

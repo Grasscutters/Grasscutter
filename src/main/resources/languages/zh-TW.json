@@ -399,6 +399,11 @@
       "available_five_stars": "可獲得的5星物品",
       "available_four_stars": "可獲得的4星物品",
       "available_three_stars": "可獲得的3星物品"
+    },
+    "records": {
+      "title": "祈願記錄",
+      "date": "日期",
+      "item": "物品"
     }
   },
   "documentation": {
