@@ -28,7 +28,7 @@ EN | [中文](README_zh-CN.md) | [FR](README_fr-FR.md)
 
   **Note:** If you just want to **run it**, then **jre** only is fine.
 
-* MongoDB (recommended 4.0+)
+* [MongoDB](https://www.mongodb.com/try/download/community) (recommended 4.0+)
 
 * Proxy daemon: mitmproxy (mitmdump, recommended), Fiddler Classic, etc.
 

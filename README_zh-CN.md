@@ -28,7 +28,7 @@
 
   **注:** 如果您仅仅想要简单地**运行服务端**, 那么使用 **jre** 便足够了 
 
-* MongoDB (推荐 4.0+)
+* [MongoDB](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-5.0.9-signed.msi) (推荐 4.0+)
 
 * Proxy daemon: mitmproxy (推荐使用mitmdump), Fiddler Classic, 等
 
