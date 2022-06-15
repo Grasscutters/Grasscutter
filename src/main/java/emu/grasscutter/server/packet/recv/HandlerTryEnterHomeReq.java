@@ -30,13 +30,18 @@ public class HandlerTryEnterHomeReq extends PacketHandler {
         int realmId = 2000 + session.getPlayer().getCurrentRealmId();
 
         var home = session.getPlayer().getHome();
+
+        // prepare the default arrangement for first come in
         var homeScene = home.getHomeSceneItem(realmId);
         home.save();
+
+        Scene scene = session.getPlayer().getWorld().getSceneById(realmId);
+        Position pos = scene.getScriptManager().getConfig().born_pos;
 
         session.getPlayer().getWorld().transferPlayerToScene(
                 session.getPlayer(),
                 realmId,
-                homeScene.getBornPos()
+                pos
         );
 
 

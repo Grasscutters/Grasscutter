@@ -65,6 +65,6 @@ public class GameHome {
         player.getSession().send(new PacketPlayerHomeCompInfoNotify(player));
         player.getSession().send(new PacketHomeComfortInfoNotify(player));
         player.getSession().send(new PacketFurnitureCurModuleArrangeCountNotify());
-        player.getSession().send(new PacketUnlockedFurnitureFormulaDataNotify());
+        player.getSession().send(new PacketHomeMarkPointNotify(player, this));
     }
 }
