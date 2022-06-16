@@ -6,6 +6,7 @@ import dev.morphia.annotations.IndexOptions;
 import dev.morphia.annotations.Indexed;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.HomeWorldLevelData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.*;
@@ -14,6 +15,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Entity(value = "homes", useDiscriminator = false)
@@ -28,6 +30,9 @@ public class GameHome {
     @Indexed(options = @IndexOptions(unique = true))
     long ownerUid;
 
+    int level;
+    int exp;
+    List<FurnitureMakeSlotItem> furnitureMakeSlotItemList;
     ConcurrentHashMap<Integer, HomeSceneItem> sceneMap;
 
     public void save(){
@@ -45,6 +50,7 @@ public class GameHome {
     public static GameHome create(Integer uid){
         return GameHome.of()
                 .ownerUid(uid)
+                .level(1)
                 .sceneMap(new ConcurrentHashMap<>())
                 .build();
     }
@@ -65,6 +71,10 @@ public class GameHome {
         player.getSession().send(new PacketPlayerHomeCompInfoNotify(player));
         player.getSession().send(new PacketHomeComfortInfoNotify(player));
         player.getSession().send(new PacketFurnitureCurModuleArrangeCountNotify());
-        player.getSession().send(new PacketHomeMarkPointNotify(player, this));
+        player.getSession().send(new PacketHomeMarkPointNotify(player));
+    }
+
+    public HomeWorldLevelData getLevelData(){
+        return GameData.getHomeWorldLevelDataMap().get(level);
     }
 }

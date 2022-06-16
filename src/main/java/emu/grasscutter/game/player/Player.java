@@ -27,6 +27,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
+import emu.grasscutter.game.managers.FurnitureManager;
 import emu.grasscutter.game.managers.InsectCaptureManager;
 import emu.grasscutter.game.managers.ResinManager;
 import emu.grasscutter.game.managers.deforestation.DeforestationManager;
@@ -99,6 +100,8 @@ public class Player {
 	private Set<Integer> costumeList;
 	private Set<Integer> unlockedForgingBlueprints;
 	private Set<Integer> unlockedCombines;
+	private Set<Integer> unlockedFurniture;
+	private Set<Integer> unlockedFurnitureSuite;
 	private List<ActiveForgeData> activeForges;
 
 	private Integer widgetId;
@@ -167,6 +170,7 @@ public class Player {
 	@Transient private ForgingManager forgingManager;
 	@Transient private DeforestationManager deforestationManager;
 	@Transient private GameHome home;
+	@Transient private FurnitureManager furnitureManager;
 
 	private long springLastUsed;
 	private HashMap<String, MapMark> mapMarks;
@@ -202,6 +206,8 @@ public class Player {
 		this.towerData = new TowerData();
 		this.unlockedForgingBlueprints = new HashSet<>();
 		this.unlockedCombines = new HashSet<>();
+		this.unlockedFurniture = new HashSet<>();
+		this.unlockedFurnitureSuite = new HashSet<>();
 		this.activeForges = new ArrayList<>();
 
 		this.setSceneId(3);
@@ -228,6 +234,7 @@ public class Player {
 		this.energyManager = new EnergyManager(this);
 		this.resinManager = new ResinManager(this);
 		this.forgingManager = new ForgingManager(this);
+		this.furnitureManager = new FurnitureManager(this);
 	}
 
 	// On player creation
@@ -261,6 +268,7 @@ public class Player {
 		this.resinManager = new ResinManager(this);
 		this.deforestationManager = new DeforestationManager(this);
 		this.forgingManager = new ForgingManager(this);
+		this.furnitureManager = new FurnitureManager(this);
 	}
 
 	public int getUid() {
@@ -563,6 +571,14 @@ public class Player {
 
 	public Set<Integer> getUnlockedCombines() {
 		return this.unlockedCombines;
+	}
+
+	public Set<Integer> getUnlockedFurniture() {
+		return unlockedFurniture;
+	}
+
+	public Set<Integer> getUnlockedFurnitureSuite() {
+		return unlockedFurnitureSuite;
 	}
 
 	public List<ActiveForgeData> getActiveForges() {
@@ -1183,6 +1199,10 @@ public class Player {
 		return this.forgingManager;
 	}
 
+	public FurnitureManager getFurnitureManager() {
+		return furnitureManager;
+	}
+
 	public AbilityManager getAbilityManager() {
 		return abilityManager;
 	}
@@ -1335,6 +1355,7 @@ public class Player {
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
+		this.furnitureManager.onLogin();
 		// Home
 		home = GameHome.getByUid(getUid());
 		home.onOwnerLogin(this);

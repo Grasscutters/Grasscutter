@@ -4,7 +4,6 @@ import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
-import emu.grasscutter.net.proto.HomeBasicInfoOuterClass.HomeBasicInfo;
 import emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo;
 import emu.grasscutter.utils.Position;
 import lombok.AccessLevel;

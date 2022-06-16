@@ -12,13 +12,16 @@ import java.util.Collection;
 
 public class PacketHomeMarkPointNotify extends BasePacket {
 
-	public PacketHomeMarkPointNotify(Player player, GameHome home) {
+	public PacketHomeMarkPointNotify(Player player) {
 		super(PacketOpcodes.HomeMarkPointNotify);
 
 		var proto = HomeMarkPointNotifyOuterClass.HomeMarkPointNotify.newBuilder();
 
+		if(player.getRealmList() == null){
+			return;
+		}
 		for(var moduleId : player.getRealmList()){
-			var homeScene = home.getHomeSceneItem(moduleId + 2000);
+			var homeScene = player.getHome().getHomeSceneItem(moduleId + 2000);
 
 			var markPointData = HomeMarkPointSceneDataOuterClass.HomeMarkPointSceneData.newBuilder()
 					.setModuleId(moduleId)
