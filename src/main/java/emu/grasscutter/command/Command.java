@@ -14,8 +14,6 @@ public @interface Command {
     String[] aliases() default {};
 
     String permission() default "";
-
-    int permissionLevel() default 1;
     
     String permissionTargeted() default "";
 

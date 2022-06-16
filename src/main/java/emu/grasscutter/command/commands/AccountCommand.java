@@ -11,7 +11,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "commands.account.description", permissionLevel = 2, targetRequirement = Command.TargetRequirement.NONE)
+@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "commands.account.description", targetRequirement = Command.TargetRequirement.NONE)
 public final class AccountCommand implements CommandHandler {
 
     @Override
@@ -66,7 +66,7 @@ public final class AccountCommand implements CommandHandler {
                 
                 // Get the player for the account.
                 // If that player is currently online, we kick them before proceeding with the deletion.
-                Player player = Grasscutter.getGameServer().getPlayerByUid(toDelete.getReservedPlayerUid());
+                Player player = Grasscutter.getGameServer().getPlayerByAccountId(toDelete.getId());
                 if (player != null) {
                     player.getSession().close();
                 }

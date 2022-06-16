@@ -10,9 +10,8 @@ import java.util.Objects;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "ban", usage = "ban <uid>", aliases = {"sus"}, permission = "server.ban", description = "commands.ban.description", permissionLevel = 2, targetRequirement = Command.TargetRequirement.NONE)
+@Command(label = "ban", usage = "unban <uid> ", description = "commands.ban.description", targetRequirement = Command.TargetRequirement.NONE)
 public class BanCommand implements CommandHandler {
-
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 1) {
@@ -28,7 +27,7 @@ public class BanCommand implements CommandHandler {
                 for (Player p : Grasscutter.getGameServer().getPlayers().values())
                     CommandHandler.sendMessage(p, translate(p, "commands.ban.notify" , entity.getAccount().getUsername()));
 
-                Objects.requireNonNull(entity).getAccount().setBanned();
+                Objects.requireNonNull(entity).getAccount().setBan(true);
                 CommandHandler.sendMessage(sender, translate(sender, "commands.ban.banned"));
             }
 
