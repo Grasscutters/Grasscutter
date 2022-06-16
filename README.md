@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-EN | [中文](README_zh-CN.md) | [FR](README_fr-FR.md)
+EN | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md)
 
 **Attention:** We always welcome contributors to the project. Before adding your contribution, please carefully read our [Code of Conduct](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
@@ -44,14 +44,14 @@ EN | [中文](README_zh-CN.md) | [FR](README_fr-FR.md)
 
 ### Connecting with the client
 
-½. Create an account using [server console command](#Commands).
+½. Create an account using [server console command](https://github.com/Grasscutters/Grasscutter/wiki/Commands#targeting).
 
 1. Redirect traffic: (choose one)
     - mitmdump: `mitmdump -s proxy.py -k`
     
       Trust CA certificate:
     
-      ​	**Note:**The CA certificate is usually stored in `% USERPROFILE%\ .mitmproxy`, or you can download it from `http://mitm.it`
+      ​	**Note:**The CA certificate is usually stored in `%USERPROFILE%\ .mitmproxy`, or you can download it from `http://mitm.it`
     
       ​	Double click for [install](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) or ...
     
@@ -99,7 +99,7 @@ chmod +x gradlew
 You can find the output jar in the root of the project folder.
 
 ### Commands have moved to the [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands)!
- 
+
 # Quick Troubleshooting
 
 * If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)
