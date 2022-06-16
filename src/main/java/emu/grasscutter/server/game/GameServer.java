@@ -26,7 +26,8 @@ import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
-import emu.grasscutter.server.game.websocket.GameWebSocketClient;
+import emu.grasscutter.server.websocket.game.GameWebSocketClient;
+import emu.grasscutter.server.websocket.game.GameWebSocketManager;
 import emu.grasscutter.task.TaskMap;
 import kcp.highway.ChannelConfig;
 import kcp.highway.KcpServer;
@@ -37,7 +38,6 @@ import java.net.URI;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import static emu.grasscutter.utils.Language.translate;
 import static emu.grasscutter.Configuration.*;
@@ -65,8 +65,7 @@ public final class GameServer extends KcpServer {
 	private final CombineManger combineManger;
 	private final TowerScheduleManager towerScheduleManager;
 
-	private GameWebSocketClient gameWebSocketClient;
-	private boolean isGameWebSocketClientConnected;
+	private final GameWebSocketManager gameWebSocketManager;
 
 	private static InetSocketAddress getAdapterInetSocketAddress(){
 		InetSocketAddress inetSocketAddress = null;
@@ -115,49 +114,19 @@ public final class GameServer extends KcpServer {
 		this.combineManger = new CombineManger(this);
 		this.towerScheduleManager = new TowerScheduleManager(this);
 		this.worldDataManager = new WorldDataManager(this);
-		this.isGameWebSocketClientConnected = false;
-
-		if(SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY){
-			String scheme  = HTTP_INFO.encryption.useEncryption || HTTP_INFO.encryption.useInRouting ? "wss://":"ws://";
-			URI websocketURI = null;
-			if (SERVER.dispatch.regions.length != 1){
-				Grasscutter.getLogger().error("GAME_ONLY mode require to set exactly 1 region.");
-				System.exit(1);
-			}
-			try {
-				websocketURI = new URI(scheme+HTTP_INFO.accessAddress+":"+HTTP_INFO.accessPort+"/websocket?key="+SERVER.dispatch.key);
-			} catch (Exception ignored) {
-				Grasscutter.getLogger().error("Error connecting to Dispatch Server Websocket! Make sure your dispatch server is already up.");
-			}
-			URI finalWebsocketURI = websocketURI;
-			new Thread(() -> {
-				while (true){
-					try {
-						Thread.sleep(5000);
-						if (!this.isGameWebSocketClientConnected){
-							this.gameWebSocketClient = new GameWebSocketClient(finalWebsocketURI);
-							this.gameWebSocketClient.connect();
-						}
-						if (this.gameWebSocketClient.isOpen() && !this.gameWebSocketClient.isServerOnDispatch()){
-							if (this.gameWebSocketClient.addServerToDispatch()) {
-								Grasscutter.getLogger().info("Added to Dispatch Server!.");
-							} else {
-								Grasscutter.getLogger().error("Failed to add to Dispatch Server!.");
-							}
-						}
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-			}).start();
-		}
+		this.gameWebSocketManager = SERVER.runMode == Grasscutter.ServerRunMode.GAME_ONLY ? new GameWebSocketManager() : null;
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
 
-	public GameWebSocketClient getGameWebSocketClient(){return  gameWebSocketClient; }
-	public void setIsGameWebSocketClientConnected(boolean isGameWebSocketClientConnected){ this.isGameWebSocketClientConnected = isGameWebSocketClientConnected; }
-	
+	public GameWebSocketManager getGameWebSocketManager() {
+		return gameWebSocketManager;
+	}
+
+	public GameWebSocketClient getGameWebSocketClient() {
+		return gameWebSocketManager.getGameWebSocketClient();
+	}
+
 	public GameServerPacketHandler getPacketHandler() {
 		return packetHandler;
 	}

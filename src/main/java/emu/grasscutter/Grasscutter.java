@@ -15,7 +15,7 @@ import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.dispatch.DispatchHandler;
-import emu.grasscutter.server.http.dispatch.WebSocketHandler;
+import emu.grasscutter.server.websocket.dispatch.WebSocketHandler;
 import emu.grasscutter.server.http.handlers.*;
 import emu.grasscutter.server.http.dispatch.RegionHandler;
 import emu.grasscutter.server.http.documentation.DocumentationServerHandler;

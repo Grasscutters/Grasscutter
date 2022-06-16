@@ -1,4 +1,4 @@
-package emu.grasscutter.server.game.websocket;
+package emu.grasscutter.server.websocket.game;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.server.game.GameServer;
@@ -20,7 +20,7 @@ public class GameWebSocketClient extends WebSocketClient{
     @Override
     public void onOpen(ServerHandshake handshakedata) {
         Grasscutter.getLogger().info("WebSocket Connected to Dispatch Server!");
-        Grasscutter.getGameServer().setIsGameWebSocketClientConnected(true);
+        Grasscutter.getGameServer().getGameWebSocketManager().setIsGameWebSocketClientConnected(true);
     }
 
     @Override
@@ -39,13 +39,13 @@ public class GameWebSocketClient extends WebSocketClient{
     @Override
     public void onClose(int code, String reason, boolean remote) {
         Grasscutter.getLogger().error("Websocket Closed. "+code+" "+reason);
-        Grasscutter.getGameServer().setIsGameWebSocketClientConnected(false);
+        Grasscutter.getGameServer().getGameWebSocketManager().setIsGameWebSocketClientConnected(false);
     }
 
     @Override
     public void onError(Exception ex) {
         Grasscutter.getLogger().error(ex.getMessage());
-        Grasscutter.getGameServer().setIsGameWebSocketClientConnected(false);
+        Grasscutter.getGameServer().getGameWebSocketManager().setIsGameWebSocketClientConnected(false);
     }
 
     public Account getAccountById(String id){
