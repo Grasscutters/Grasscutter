@@ -1,5 +1,7 @@
 package emu.grasscutter.game.dungeons;
 
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.DungeonData;
 import emu.grasscutter.game.entity.EntityMonster;
@@ -16,11 +18,23 @@ import emu.grasscutter.server.packet.send.PacketChallengeDataNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeBeginNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
 import emu.grasscutter.server.packet.send.PacketGadgetAutoPickDropInfoNotify;
+import emu.grasscutter.utils.Utils;
+import io.netty.util.internal.ThreadLocalRandom;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import com.google.gson.reflect.TypeToken;
 
 public class DungeonChallenge {
 	private final Scene scene;
@@ -37,6 +51,24 @@ public class DungeonChallenge {
 	private int score;
 	private int objective = 0;
 	private IntSet rewardedPlayers;
+
+	private final static Int2ObjectMap<List<DungeonDropEntry>> dungeonDropData = new Int2ObjectOpenHashMap<>();
+
+	public static void initialize() {
+		// Read the data we need for dungeon rewards drops.
+		try (Reader fileReader = new InputStreamReader(DataLoader.load("DungeonDrop.json"))) {
+			List<DungeonDrop> dungeonDropList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, DungeonDrop.class).getType());
+
+			for (DungeonDrop entry : dungeonDropList) {
+				dungeonDropData.put(entry.getDungeonId(), entry.getDrops());
+			}
+
+			Grasscutter.getLogger().info("Dungeon drop data successfully loaded.");
+		}
+		catch (Exception ex) {
+			Grasscutter.getLogger().error("Unable to load dungeon drop data.", ex);
+		}
+	}
 
 	public DungeonChallenge(Scene scene, SceneGroup group, int challengeId, int challengeIndex, int objective) {
 		this.scene = scene;
@@ -155,12 +187,52 @@ public class DungeonChallenge {
 		}
 	}
 	
-	private List<GameItem> rollRewards() {
+	private List<GameItem> rollRewards(boolean useCondensed) {
 		List<GameItem> rewards = new ArrayList<>();
+		int dungeonId = this.getScene().getDungeonData().getId();
+		Grasscutter.getLogger().info("Rolling rewards for scene {}, dungeon {}.", this.getScene().getId(), this.getScene().getDungeonData().getId());
 
-		for (ItemParamData param : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
-			rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
+		// If we have specific drop data for this dungeon, we use it.
+		if (dungeonDropData.containsKey(dungeonId)) {
+			List<DungeonDropEntry> dropEntries = dungeonDropData.get(dungeonId);
+
+			// Roll for each drop group.
+			for (var entry : dropEntries) {
+				// Determine the number of drops we get for this entry.
+				int start = entry.getCounts().get(0);
+				int end = entry.getCounts().get(entry.getCounts().size() - 1);
+				var candidateAmounts = IntStream.range(start, end + 1).boxed().collect(Collectors.toList());
+
+				int amount = Utils.drawRandomListElement(candidateAmounts, entry.getProbabilities());
+
+				if (useCondensed) {
+					amount += Utils.drawRandomListElement(candidateAmounts, entry.getProbabilities());
+				}
+
+				// Roll items for this group.
+				// Here, we have to handle stacking, or the client will not display results correctly.
+				// For now, we use the following logic: If the possible drop item are a list of multiple items,
+				// we roll them separately. If not, we stack them. This should work out in practice, at least
+				// for the currently existing set of dungeons.
+				if (entry.getItems().size() == 1) {
+					rewards.add(new GameItem(entry.getItems().get(0), amount));
+				}
+				else {
+					for (int i = 0; i < amount; i++) {
+						int itemIndex = ThreadLocalRandom.current().nextInt(0, entry.getItems().size());
+						int itemId = entry.getItems().get(itemIndex);
+
+						rewards.add(new GameItem(itemId, 1));
+					}
+				}
+			}
 		}
+		// Otherwise, we fall back to the preview data.
+		else {
+			for (ItemParamData param : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
+				rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
+			}
+		}	
 
 		return rewards;
 	}
@@ -198,9 +270,8 @@ public class DungeonChallenge {
 			// Deduct.
 			player.getInventory().removeItem(condensedResin, 1);
 
-			// Roll rewards, twice (because condensed).
-			rewards.addAll(this.rollRewards());
-			rewards.addAll(this.rollRewards());
+			// Roll rewards.
+			rewards.addAll(this.rollRewards(true));
 		}
 		else {
 			// If the player used regular resin, try to deduct.
@@ -211,7 +282,7 @@ public class DungeonChallenge {
 			}
 
 			// Roll rewards.
-			rewards.addAll(this.rollRewards());
+			rewards.addAll(this.rollRewards(false));
 		}
 		
 		// Add rewards to player and send notification.

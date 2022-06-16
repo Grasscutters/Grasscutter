@@ -1,0 +1,808 @@
+[
+    {
+        "dungeonId": 5100,
+        "comment": "Domain of Guyun 1",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1525],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Artifacts",
+                "counts": [5],
+                "items": [61240, 61241, 61220, 61221, 61250, 61251, 61210, 61211, 61230, 61231]
+            },
+            { 
+                "comment": "3-star Artifacts",
+                "counts": [2, 3],
+                "probabilities": [85, 15],
+                "items": [61341, 61342, 61321, 61322, 61351, 61352, 61311, 61312, 61331, 61332, 52341, 52342, 52321, 52322, 52351, 52352, 52311, 52312, 52331, 52332]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4210,
+        "comment": "Forsaken Rift 1: Monday/Thursday",
+        "drops": [
+            { 
+                "comment": "AR exp", 
+                "counts": [100], 
+                "items": [102] 
+            },
+            { 
+                "comment": "Mora", 
+                "counts": [1575], 
+                "items": [202] 
+            },
+            { 
+                "comment": "Friendship exp", 
+                "counts": [15], 
+                "items": [105] 
+            },
+            { 
+                "comment": "2-star Books", 
+                "counts": [3, 4], 
+                "items": [104301] 
+            }
+        ]
+    },
+    {
+        "dungeonId": 4211,
+        "comment": "Forsaken Rift 2: Monday/Thursday",
+        "drops": [
+            { 
+                "comment": "AR exp", 
+                "counts": [100], 
+                "items": [102] 
+            },
+            { 
+                "comment": "Mora", 
+                "counts": [1800], 
+                "items": [202] 
+            },
+            { 
+                "comment": "Friendship exp", 
+                "counts": [15], 
+                "items": [105] 
+            },
+            { 
+                "comment": "2-star Books", 
+                "counts": [2, 3], 
+                "items": [104301] 
+            },
+            { 
+                "comment": "3-star Books",
+                "counts": [1],
+                "items": [104302]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4212,
+        "comment": "Forsaken Rift 3: Monday/Thursday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [2050],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Books",
+                "counts": [1, 2],
+                "items": [104301]
+            },
+            { 
+                "comment": "3-star Books",
+                "counts": [2],
+                "items": [104302]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4213,
+        "comment": "Forsaken Rift 4: Monday/Thursday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [2375],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "items": [104301]
+            },
+            { 
+                "comment": "3-star Books",
+                "counts": [0, 3],
+                "items": [104302]
+            },
+            { 
+                "comment": "4-star Books",
+                "counts": [0, 3],
+                "items": [104303]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4220,
+        "comment": "Forsaken Rift 1: Tuesday/Friday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1575],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Books",
+                "counts": [3, 4],
+                "items": [104304]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4221,
+        "comment": "Forsaken Rift 2: Tuesday/Friday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1800],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "items": [104304]
+            },
+            { 
+                "comment": "3-star Books",
+                "counts": [1],
+                "items": [104305]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4222,
+        "comment": "Forsaken Rift 3: Tuesday/Friday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [2050],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Books",
+                "counts": [1, 2],
+                "items": [104304]
+            },
+            { 
+                "comment": "3-star Books",
+                "counts": [2],
+                "items": [104305]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4223,
+        "comment": "Forsaken Rift 4: Tuesday/Friday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [2375],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "items": [104304]
+            },
+            { 
+                "comment": "3-star Books",
+                "counts": [0, 3],
+                "items": [104305]
+            },
+            { 
+                "comment": "4-star Books",
+                "counts": [0, 3],
+                "items": [104306]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4230,
+        "comment": "Forsaken Rift 1: Wednesday/Saturday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1575],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Books",
+                "counts": [3, 4],
+                "items": [104307]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4231,
+        "comment": "Forsaken Rift 2: Wednesday/Saturday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1800],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "items": [104307]
+            },
+            { 
+                "comment": "3-star Books",
+                "counts": [1],
+                "items": [104308]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4232,
+        "comment": "Forsaken Rift 3: Wednesday/Saturday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [2050],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Books",
+                "counts": [1, 2],
+                "items": [104307]
+            },
+            { 
+                "comment": "3-star Books",
+                "counts": [2],
+                "items": [104308]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4233,
+        "comment": "Forsaken Rift 4: Wednesday/Saturday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [2375],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "items": [104307]
+            },
+            { 
+                "comment": "3-star Books",
+                "counts": [0, 3],
+                "items": [104308]
+            },
+            { 
+                "comment": "4-star Books",
+                "counts": [0, 3],
+                "items": [104309]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4310,
+        "comment": "Cecilia Garden 1: Monday/Thursday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1125],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [10],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Weapon Material",
+                "counts": [4, 6],
+                "items": [114001]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4311,
+        "comment": "Cecilia Garden 2: Monday/Thursday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1550],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "items": [114001]
+            },
+            { 
+                "comment": "3-star Weapon Material",
+                "counts": [2],
+                "items": [114002]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4312,
+        "comment": "Cecilia Garden 3: Monday/Thursday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1850],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "items": [114001]
+            },
+            { 
+                "comment": "3-star Weapon Material",
+                "counts": [2, 3],
+                "items": [114002]
+            },
+            { 
+                "comment": "4-star Weapon Material",
+                "counts": [0, 2],
+                "items": [114003]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4313,
+        "comment": "Cecilia Garden 4: Monday/Thursday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [2200],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "items": [114001]
+            },
+            { 
+                "comment": "3-star Weapon Material",
+                "counts": [0, 4],
+                "items": [114002]
+            },
+            { 
+                "comment": "4-star Weapon Material",
+                "counts": [0, 4],
+                "items": [114003]
+            },
+            { 
+                "comment": "5-star Weapon Material",
+                "counts": [0, 2],
+                "items": [114004]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4320,
+        "comment": "Cecilia Garden 1: Tuesday/Friday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1125],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [10],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Weapon Material",
+                "counts": [4, 6],
+                "items": [114005]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4321,
+        "comment": "Cecilia Garden 2: Tuesday/Friday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1550],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "items": [114005]
+            },
+            { 
+                "comment": "3-star Weapon Material",
+                "counts": [2],
+                "items": [114006]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4322,
+        "comment": "Cecilia Garden 3: Tuesday/Friday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1850],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "items": [114005]
+            },
+            { 
+                "comment": "3-star Weapon Material",
+                "counts": [2, 3],
+                "items": [114006]
+            },
+            { 
+                "comment": "4-star Weapon Material",
+                "counts": [0, 2],
+                "items": [114007]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4323,
+        "comment": "Cecilia Garden 4: Tuesday/Friday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [2200],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "items": [114005]
+            },
+            { 
+                "comment": "3-star Weapon Material",
+                "counts": [0, 4],
+                "items": [114006]
+            },
+            { 
+                "comment": "4-star Weapon Material",
+                "counts": [0, 4],
+                "items": [114007]
+            },
+            { 
+                "comment": "5-star Weapon Material",
+                "counts": [0, 2],
+                "items": [114008]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4330,
+        "comment": "Cecilia Garden 1: Wednesday/Saturday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1125],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [10],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Weapon Material",
+                "counts": [4, 6],
+                "items": [114009]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4331,
+        "comment": "Cecilia Garden 2: Wednesday/Saturday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1550],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "items": [114009]
+            },
+            { 
+                "comment": "3-star Weapon Material",
+                "counts": [2],
+                "items": [114010]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4332,
+        "comment": "Cecilia Garden 3: Wednesday/Saturday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [1850],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "items": [114009]
+            },
+            { 
+                "comment": "3-star Weapon Material",
+                "counts": [2, 3],
+                "items": [114010]
+            },
+            { 
+                "comment": "4-star Weapon Material",
+                "counts": [0, 2],
+                "items": [114011]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4333,
+        "comment": "Cecilia Garden 4: Wednesday/Saturday",
+        "drops": [
+            { 
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            { 
+                "comment": "Mora",
+                "counts": [2200],
+                "items": [202]
+            },
+            { 
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105]
+            },
+            { 
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "items": [114009]
+            },
+            { 
+                "comment": "3-star Weapon Material",
+                "counts": [0, 4],
+                "items": [114010]
+            },
+            { 
+                "comment": "4-star Weapon Material",
+                "counts": [0, 4],
+                "items": [114011]
+            },
+            { 
+                "comment": "5-star Weapon Material",
+                "counts": [0, 2],
+                "items": [114012]
+            }
+        ]
+    }
+]
