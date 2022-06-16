@@ -7,6 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.google.gson.Gson;
+import emu.grasscutter.game.managers.DropManager.RewardEntry;
 import emu.grasscutter.utils.Utils;
 import org.reflections.Reflections;
 
@@ -67,6 +68,8 @@ public class ResourceLoader {
 		// Load scene points - must be done AFTER resources are loaded
 		loadScenePoints();
 		// Custom - TODO move this somewhere else
+		loadCustomReward();
+
 		try {
 			GameData.getAvatarSkillDepotDataMap().get(504).setAbilities(
 				new AbilityEmbryoEntry(
@@ -97,6 +100,27 @@ public class ResourceLoader {
 		} catch (Exception e) {
 			Grasscutter.getLogger().error("Error loading abilities", e);
 		}
+	}
+
+	private static void loadCustomReward() {
+		//file in customreward.json and use dataloader to load it into a map
+		List<RewardEntry> rewardEntryList = null;
+
+		// Read from cached file if exists
+		try(InputStream rewardDataEntries = DataLoader.load("CustomReward.json")) {
+			rewardEntryList = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(rewardDataEntries),
+					TypeToken.getParameterized(Collection.class, RewardEntry.class).getType());
+		} catch (Exception ignored) {}
+
+		if (rewardEntryList == null || rewardEntryList.isEmpty()) {
+			Grasscutter.getLogger().error("No custom reward data loaded!");
+			return;
+		}
+
+		for (RewardEntry entry : rewardEntryList) {
+			GameData.getCustomRewardMap().put(entry.getId(), entry.getPreviewItems());
+		}
+
 	}
 
 	public static void loadResources() {

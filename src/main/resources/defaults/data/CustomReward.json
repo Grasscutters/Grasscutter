@@ -1,0 +1,44 @@
+[
+  {
+    "sceneID": 10000,
+    "rewardItemList": [
+      {
+        "itemId": 100001,
+        "itemCount": 1
+      },
+      {
+        "itemId": 100002,
+        "itemCount": 1
+      },
+      {
+
+      },
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "sceneID": 10001,
+    "rewardItemList": [
+      {
+        "itemId": 100001,
+        "itemCount": 1
+      },
+      {
+        "itemId": 100002,
+        "itemCount": 1
+      },
+      {
+      },
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  }
+]

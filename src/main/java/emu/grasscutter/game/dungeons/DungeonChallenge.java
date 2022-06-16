@@ -1,5 +1,7 @@
 package emu.grasscutter.game.dungeons;
 
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.DungeonData;
 import emu.grasscutter.game.entity.EntityMonster;
@@ -158,8 +160,21 @@ public class DungeonChallenge {
 	private List<GameItem> rollRewards() {
 		List<GameItem> rewards = new ArrayList<>();
 
-		for (ItemParamData param : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
-			rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
+		if (Grasscutter.getConfig().server.game.gameOptions.customReward){
+			try {
+				for (ItemParamData item : GameData.getCustomRewardMap().get(getScene().getDungeonData().getSceneId())) {
+					rewards.add(new GameItem(item.getItemId(), item.getItemCount()));
+				}
+			} catch (Exception e) {
+				Grasscutter.getLogger().error("Error while getting custom reward for scene {}", getScene().getDungeonData().getSceneId());
+				for (ItemParamData item : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
+					rewards.add(new GameItem(item.getItemId(), item.getItemCount()));
+				}
+			}
+		} else {
+			for (ItemParamData item : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
+				rewards.add(new GameItem(item.getItemId(), item.getItemCount()));
+			}
 		}
 
 		return rewards;
@@ -169,7 +184,8 @@ public class DungeonChallenge {
 		DungeonData dungeonData = getScene().getDungeonData();
 		int resinCost = dungeonData.getStatueCostCount() != 0 ? dungeonData.getStatueCostCount() : 20;
 
-		if (!isSuccess() || dungeonData == null || dungeonData.getRewardPreview() == null || dungeonData.getRewardPreview().getPreviewItems().length == 0) {
+		if (!isSuccess() || dungeonData.getRewardPreview() == null
+				|| dungeonData.getRewardPreview().getPreviewItems().length == 0) {
 			return;
 		}
 		
@@ -199,8 +215,7 @@ public class DungeonChallenge {
 			player.getInventory().removeItem(condensedResin, 1);
 
 			// Roll rewards, twice (because condensed).
-			rewards.addAll(this.rollRewards());
-			rewards.addAll(this.rollRewards());
+			for (int i = 0; i < 2; i++) rewards.addAll(rollRewards());
 		}
 		else {
 			// If the player used regular resin, try to deduct.
