@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers.ForgingManager;
+package emu.grasscutter.game.managers.forging;
 
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.utils.Utils;

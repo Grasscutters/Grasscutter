@@ -1,12 +1,16 @@
 package emu.grasscutter.data;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.danilopianini.util.FlexibleQuadTree;
 import org.danilopianini.util.SpatialIndex;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.ResourceLoader.AvatarConfig;
+import emu.grasscutter.data.ResourceLoader.AvatarConfigAbility;
 import emu.grasscutter.data.excels.ReliquaryAffixData;
 import emu.grasscutter.data.excels.ReliquaryMainPropData;
 import emu.grasscutter.game.world.SpawnDataEntry;
@@ -19,6 +23,7 @@ public class GameDepot {
 	private static Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicMainPropDepot = new Int2ObjectOpenHashMap<>();
 	private static Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot = new Int2ObjectOpenHashMap<>();
 	
+	private static Map<String, AvatarConfig> playerAbilities = new HashMap<>();
 	private static Int2ObjectMap<SpatialIndex<SpawnGroupEntry>> spawnLists = new Int2ObjectOpenHashMap<>();
 	
 	public static void load() {
@@ -60,5 +65,13 @@ public class GameDepot {
 	
 	public static SpatialIndex<SpawnGroupEntry> getSpawnListById(int sceneId) {
 		return getSpawnLists().computeIfAbsent(sceneId, id -> new FlexibleQuadTree<>());
+	}
+
+	public static Map<String, AvatarConfig> getPlayerAbilities() {
+		return playerAbilities;
+	}
+
+	public static void setPlayerAbilities(Map<String, AvatarConfig> playerAbilities) {
+		GameDepot.playerAbilities = playerAbilities;
 	}
 }

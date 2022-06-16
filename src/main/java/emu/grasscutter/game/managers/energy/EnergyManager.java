@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers.EnergyManager;
+package emu.grasscutter.game.managers.energy;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;

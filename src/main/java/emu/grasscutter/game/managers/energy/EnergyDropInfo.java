@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers.EnergyManager;
+package emu.grasscutter.game.managers.energy;
 
 public class EnergyDropInfo {
     private int ballId;
