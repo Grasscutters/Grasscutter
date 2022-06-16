@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
@@ -52,9 +53,26 @@ public final class GiveAllCommand implements CommandHandler {
             Avatar avatar = new Avatar(avatarData);
             avatar.setLevel(90);
             avatar.setPromoteLevel(6);
+
+            // Add constellations.
+            int talentBase = switch (avatar.getAvatarId()) {
+                case 10000005   -> 70;
+                case 10000006   -> 40;
+                default         -> (avatar.getAvatarId()-10000000)*10;
+            };
+
             for(int i = 1;i <= 6;++i){
-                avatar.getTalentIdList().add((avatar.getAvatarId()-10000000)*10+i);
+                avatar.getTalentIdList().add(talentBase + i);
             }
+
+            // Handle skill depot for traveller.
+            if (avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_MALE) {
+                avatar.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(504));
+            }
+            else if(avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
+                avatar.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(704));
+            }
+
             // This will handle stats and talents
             avatar.recalcStats();
             // Don't try to add each avatar to the current team

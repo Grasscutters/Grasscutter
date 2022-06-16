@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](README.md) | 中文
+[EN](README.md) | 中文 | [FR](README_fr-FR.md)
 
 **注意:** 我们一直欢迎您成为该项目的贡献者。在添加您的代码之前，请仔细阅读我们的 [代码规范](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
@@ -28,7 +28,7 @@
 
   **注:** 如果您仅仅想要简单地**运行服务端**, 那么使用 **jre** 便足够了 
 
-* MongoDB (推荐 4.0+)
+* [MongoDB](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-5.0.9-signed.msi) (推荐 4.0+)
 
 * Proxy daemon: mitmproxy (推荐使用mitmdump), Fiddler Classic, 等
 
@@ -37,7 +37,7 @@
 **注:** 如果您从旧版本升级到新版本，最好删除 `config.json` 并启动服务端jar来重新生成它
 
 1. 获取 `grasscutter.jar`
-   - 从 [actions](https://nightly.link/Grasscutters/Grasscutter/workflows/build/stable/Grasscutter.zip) 中下载
+   - 从 [actions](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297) 中下载
    - [自行构建](#构建)
 2. 在**grasscutter.jar** 所在目录中创建 `resources` 文件夹并将 `BinOutput` 和 `ExcelBinOutput` 放入其中 *(查看 [wiki](https://github.com/Grasscutters/Grasscutter/wiki) 了解更多)*
 3. 通过命令 `java -jar grasscutter.jar` 来运行Grasscutter. **在此之前请确认MongoDB服务运行正常**

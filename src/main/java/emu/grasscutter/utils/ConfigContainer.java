@@ -177,6 +177,7 @@ public class ConfigContainer {
         public boolean enableShopItems = true;
         public boolean staminaUsage = true;
         public boolean energyUsage = false;
+        public ResinOptions resinOptions = new ResinOptions();
         public Rates rates = new Rates();
 
         public static class InventoryLimits {
@@ -196,6 +197,12 @@ public class ConfigContainer {
             public float adventureExp = 1.0f;
             public float mora = 1.0f;
             public float leyLines = 1.0f;
+        }
+
+        public static class ResinOptions {
+            public boolean resinUsage = false;
+            public int cap = 160;
+            public int rechargeTime = 480;
         }
     }
 

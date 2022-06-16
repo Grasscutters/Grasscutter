@@ -389,8 +389,8 @@
       "description": "重新啟動伺服器。"
     },
     "unlocktower": {
-      "success": "解鎖完成。",
-      "description": "解鎖深境迴廊。"
+      "success": "現已解鎖深境迴廊。",
+      "description": "解鎖深境螺旋。"
     }
   },
   "gacha": {
@@ -399,6 +399,11 @@
       "available_five_stars": "可獲得的5星物品",
       "available_four_stars": "可獲得的4星物品",
       "available_three_stars": "可獲得的3星物品"
+    },
+    "records": {
+      "title": "祈願記錄",
+      "date": "日期",
+      "item": "物品"
     }
   },
   "documentation": {

@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-EN | [中文](README_zh-CN.md)
+EN | [中文](README_zh-CN.md) | [FR](README_fr-FR.md)
 
 **Attention:** We always welcome contributors to the project. Before adding your contribution, please carefully read our [Code of Conduct](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
@@ -28,7 +28,7 @@ EN | [中文](README_zh-CN.md)
 
   **Note:** If you just want to **run it**, then **jre** only is fine.
 
-* MongoDB (recommended 4.0+)
+* [MongoDB](https://www.mongodb.com/try/download/community) (recommended 4.0+)
 
 * Proxy daemon: mitmproxy (mitmdump, recommended), Fiddler Classic, etc.
 
@@ -37,7 +37,7 @@ EN | [中文](README_zh-CN.md)
 **Note:** If you updated from an older version, delete `config.json` to regenerate it.
 
 1. Get `grasscutter.jar`
-   - Download from [actions](https://nightly.link/Grasscutters/Grasscutter/workflows/build/stable/Grasscutter.zip)
+   - Download from [actions](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297)
    - [Build by yourself](#Building)
 2. Create a `resources` folder in the directory where grasscutter.jar is located and move your `BinOutput` and `ExcelBinOutput` folders there *(Check the [wiki](https://github.com/Grasscutters/Grasscutter/wiki) for more details how to get those.)*
 3. Run Grasscutter with `java -jar grasscutter.jar`. **Make sure mongodb service is running as well.**
