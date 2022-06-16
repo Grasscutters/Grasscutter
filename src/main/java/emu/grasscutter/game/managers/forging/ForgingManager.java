@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers.ForgingManager;
+package emu.grasscutter.game.managers.forging;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers.ChatManager;
+package emu.grasscutter.game.managers.chat;
 
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.game.player.Player;
