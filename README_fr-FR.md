@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](README.md) | [中文](README_zh-CN.md) | FR
+[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | FR
 
 **Attention:** De nouveaux contributeurs sont toujours les bienvenus. Avant d'ajouter votre contribution, veuillez lire le [code de conduite](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
@@ -44,14 +44,14 @@
 
 ### Connection avec le client
 
-½. Créez un compte avec la [console de commande du serveur](#Commands).
+½. Créez un compte avec la [console de commande du serveur](https://github.com/Grasscutters/Grasscutter/wiki/Commands#targeting).
 
 1. Redirection du traffic: (Choisissez-en un)
     - mitmdump: `mitmdump -s proxy.py -k`
     
       Approuvez le certificat CA:
     
-      ​	**Note:**Le certificat CA est généralement stocké sous `% USERPROFILE%\ .mitmproxy`, ou vous pouvez le télécharger depuis `http://mitm.it`
+      ​	**Note:**Le certificat CA est généralement stocké sous `%USERPROFILE%\ .mitmproxy`, ou vous pouvez le télécharger depuis `http://mitm.it`
     
       ​	Double-cliquez pour [installer](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) oo ...
     
