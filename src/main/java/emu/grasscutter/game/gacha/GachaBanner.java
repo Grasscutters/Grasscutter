@@ -138,13 +138,11 @@ public class GachaBanner {
 			default -> (eventChance > -1) ? eventChance : eventChance5;
 		};
 	}
-
-	@Deprecated
-	public GachaInfo toProto() {
-		return toProto("");
-	}
 	
-	public GachaInfo toProto(String sessionKey) {
+	public GachaInfo toProto(Player player) {
+		// TODO: use other Nonce/key insteadof session key to ensure the overall security for the player
+		String sessionKey = player.getAccount().getSessionKey();
+		
 		String record = "http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
 						+ lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress) + ":"
 						+ lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort)
@@ -176,9 +174,7 @@ public class GachaBanner {
 	            .setGachaTimesLimit(Integer.MAX_VALUE)
 	            .setGachaSortId(this.getSortId());
 
-		if(hasEpitomized() && !sessionKey.isEmpty()) {
-			Account account = DatabaseHelper.getAccountBySessionKey(sessionKey);
-			Player player = Grasscutter.getGameServer().getPlayerByAccountId(account.getId());
+		if(hasEpitomized()) {
 			PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(this);
 
 			info.setWishItemId(gachaInfo.getWishItemId())
