@@ -17,6 +17,15 @@ public @interface Command {
     
     String permissionTargeted() default "";
 
+    public enum Category {
+        SCENE,     // Scene commands
+        ITEMS,   // Item commands
+        PLAYER,    // Player commands
+        MISC,     // Misc commands
+        PERMISSIONS, // Permission commands
+    }
+    Category category() default Category.MISC;
+
     public enum TargetRequirement {
         NONE,       // targetPlayer is not required
         OFFLINE,    // targetPlayer must be offline
