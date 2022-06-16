@@ -69,7 +69,14 @@ public class GameSessionManager {
                 try {
                     GameSession conversation = sessions.get(kcp);
                     if(conversation!=null) {
-                        conversation.handleReceive(byteData);
+                        if (conversation.tunnelIsEstablished()) {
+                            //hard - code
+                            if (conversation.getAccount() != null &&
+                                    conversation.getAccount().isBanned())
+                                return;
+
+                            conversation.handleReceive(byteData);
+                        }
                     }
                 }catch (Exception e){
                     e.printStackTrace();

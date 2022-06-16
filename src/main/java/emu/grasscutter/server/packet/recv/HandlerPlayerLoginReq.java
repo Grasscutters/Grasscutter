@@ -37,7 +37,13 @@ public class HandlerPlayerLoginReq extends PacketHandler {
 		
 		// Load character from db
 		Player player = session.getPlayer();
-		
+
+		if (player.getAccount().isBanned()) {
+			Grasscutter.getLogger().info("Player: " + player.getNickname() + " is banned from server");
+			session.close();
+			return;
+		}
+
 		// Show opening cutscene if player has no avatars
 		if (player.getAvatars().getAvatarCount() == 0) {
 			// Pick character

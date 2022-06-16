@@ -52,6 +52,11 @@ public class GameSession implements GameSessionManager.KcpChannel {
 		}
 	}
 
+	public boolean tunnelIsEstablished() {
+		return tunnel != null;
+	}
+
+
 	public boolean useSecretKey() {
 		return useSecretKey;
 	}
@@ -174,6 +179,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
 
 	@Override
 	public void handleReceive(byte[] bytes) {
+
 		// Decrypt and turn back into a packet
 		Crypto.xor(bytes, useSecretKey() ? Crypto.ENCRYPT_KEY : Crypto.DISPATCH_KEY);
 		ByteBuf packet = Unpooled.wrappedBuffer(bytes);
@@ -241,6 +247,9 @@ public class GameSession implements GameSessionManager.KcpChannel {
 			Player player = getPlayer();
 			// Call logout event.
 			player.onLogout();
+			if (player.getAccount().isBanned()) {
+				Grasscutter.getLogger().info("Player " + player.getNickname() + " is banned, waiting for token...");
+			}
 		}
 		try {
 			send(new BasePacket(PacketOpcodes.ServerDisconnectClientNotify));
