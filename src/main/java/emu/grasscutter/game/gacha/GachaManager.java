@@ -48,8 +48,7 @@ import static emu.grasscutter.Configuration.*;
 public class GachaManager {
 	private final GameServer server;
 	private final Int2ObjectMap<GachaBanner> gachaBanners;
-	private GetGachaInfoRsp cachedProto;
-	WatchService watchService;
+	private WatchService watchService;
 	
 	private static final int starglitterId = 221;
 	private static final int stardustId = 222;
@@ -88,9 +87,6 @@ public class GachaManager {
 					getGachaBanners().put(banner.getScheduleId(), banner);
 				}
 				Grasscutter.getLogger().info("Banners successfully loaded.");
-
-
-				this.cachedProto = createProto();
 			} else {
 				Grasscutter.getLogger().error("Unable to load banners. Banners size is 0.");
 			}
@@ -421,18 +417,7 @@ public class GachaManager {
 		}
 	}
 	
-	@Deprecated
-	private synchronized GetGachaInfoRsp createProto() {
-		GetGachaInfoRsp.Builder proto = GetGachaInfoRsp.newBuilder().setGachaRandom(12345);
-		
-		for (GachaBanner banner : getGachaBanners().values()) {
-			proto.addGachaInfoList(banner.toProto());
-		}
-				
-		return proto.build();
-	}
-
-	private synchronized GetGachaInfoRsp createProto(String sessionKey) {
+	private synchronized GetGachaInfoRsp createProto(Player player) {
 		GetGachaInfoRsp.Builder proto = GetGachaInfoRsp.newBuilder().setGachaRandom(12345);
 		
 		long currentTime = System.currentTimeMillis() / 1000L;
@@ -440,22 +425,14 @@ public class GachaManager {
 		for (GachaBanner banner : getGachaBanners().values()) {
 			if ((banner.getEndTime() >= currentTime && banner.getBeginTime() <= currentTime) || (banner.getBannerType() == BannerType.STANDARD))
 			{
-				proto.addGachaInfoList(banner.toProto(sessionKey));
+				proto.addGachaInfoList(banner.toProto(player));
 			}
 		}
 				
 		return proto.build();
 	}
-	
-	@Deprecated
-	public GetGachaInfoRsp toProto() {
-		if (this.cachedProto == null) {
-			this.cachedProto = createProto();
-		}
-		return this.cachedProto;
-	}
 
-	public GetGachaInfoRsp toProto(String sessionKey) {
-		return createProto(sessionKey);
+	public GetGachaInfoRsp toProto(Player player) {
+		return createProto(player);
 	}
 }
