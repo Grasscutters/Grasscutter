@@ -2,8 +2,6 @@ package emu.grasscutter.game.managers.StaminaManager;
 
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.command.commands.NoStaminaCommand;
-import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
