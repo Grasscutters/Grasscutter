@@ -12,6 +12,9 @@ public class PlayerGachaBannerInfo {
 	private int pity5Pool2 = 0;
 	private int pity4Pool1 = 0;
 	private int pity4Pool2 = 0;
+
+	private int failedChosenItemPulls = 0;
+	private int wishItemId = 0;
 	
 	public int getPity5() {
 		return pity5;
@@ -35,6 +38,26 @@ public class PlayerGachaBannerInfo {
 	
 	public void addPity4(int amount) {
 		this.pity4 += amount;
+	}
+
+	public int getWishItemId() {
+		return wishItemId;
+	}
+
+	public void setWishItemId(int wishItemId) {
+		this.wishItemId = wishItemId;
+	}
+
+	public int getFailedChosenItemPulls() {
+		return failedChosenItemPulls;
+	}
+
+	public void setFailedChosenItemPulls(int amount) {
+		failedChosenItemPulls = amount;
+	}
+
+	public void addFailedChosenItemPulls(int amount) {
+		failedChosenItemPulls += amount;
 	}
 	
 	public int getFailedFeaturedItemPulls(int rarity) {

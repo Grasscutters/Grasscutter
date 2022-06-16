@@ -1,5 +1,8 @@
 package emu.grasscutter.game.gacha;
 
+import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.Account;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.GachaInfoOuterClass.GachaInfo;
 import emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfo;
 import emu.grasscutter.utils.Utils;
@@ -44,6 +47,7 @@ public class GachaBanner {
 	private int[] rateUpItems2 = {};
 	private int eventChance = -1;
 	private int costItem = 0;
+	private int wishMaxProgress = 2;
 	
 	public int getGachaType() {
 		return gachaType;
@@ -108,6 +112,11 @@ public class GachaBanner {
 	public boolean getRemoveC6FromPool() {return removeC6FromPool;}
 	public boolean getAutoStripRateUpFromFallback() {return autoStripRateUpFromFallback;}
 
+	public int getWishMaxProgress() {return wishMaxProgress;}
+
+	public boolean hasEpitomized() {
+		return bannerType.equals(BannerType.WEAPON);
+	}
 
 	public int getWeight(int rarity, int pity) {
 		return switch(rarity) {
@@ -166,6 +175,17 @@ public class GachaBanner {
 	            .setLeftGachaTimes(Integer.MAX_VALUE)
 	            .setGachaTimesLimit(Integer.MAX_VALUE)
 	            .setGachaSortId(this.getSortId());
+
+		if(hasEpitomized() && !sessionKey.isEmpty()) {
+			Account account = DatabaseHelper.getAccountBySessionKey(sessionKey);
+			Player player = Grasscutter.getGameServer().getPlayerByAccountId(account.getId());
+			PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(this);
+
+			info.setWishItemId(gachaInfo.getWishItemId())
+				.setWishProgress(gachaInfo.getFailedChosenItemPulls())
+				.setWishMaxProgress(this.getWishMaxProgress());
+		}
+
 		if (this.getTitlePath() != null) {
 			info.setTitleTextmap(this.getTitlePath());
 		}
