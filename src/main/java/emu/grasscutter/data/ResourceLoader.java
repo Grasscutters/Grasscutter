@@ -66,37 +66,6 @@ public class ResourceLoader {
 		loadQuests();
 		// Load scene points - must be done AFTER resources are loaded
 		loadScenePoints();
-		// Custom - TODO move this somewhere else
-		try {
-			GameData.getAvatarSkillDepotDataMap().get(504).setAbilities(
-				new AbilityEmbryoEntry(
-					"", 
-					new String[] {
-						"Avatar_PlayerBoy_ExtraAttack_Wind",
-						"Avatar_Player_UziExplode_Mix",
-						"Avatar_Player_UziExplode",
-						"Avatar_Player_UziExplode_Strike_01",
-						"Avatar_Player_UziExplode_Strike_02",
-						"Avatar_Player_WindBreathe",
-						"Avatar_Player_WindBreathe_CameraController"
-					}
-			));
-			GameData.getAvatarSkillDepotDataMap().get(704).setAbilities(
-				new AbilityEmbryoEntry(
-					"", 
-					new String[] {
-						"Avatar_PlayerGirl_ExtraAttack_Wind",
-						"Avatar_Player_UziExplode_Mix",
-						"Avatar_Player_UziExplode",
-						"Avatar_Player_UziExplode_Strike_01",
-						"Avatar_Player_UziExplode_Strike_02",
-						"Avatar_Player_WindBreathe",
-						"Avatar_Player_WindBreathe_CameraController"
-					}
-			));
-		} catch (Exception e) {
-			Grasscutter.getLogger().error("Error loading abilities", e);
-		}
 	}
 
 	public static void loadResources() {
@@ -243,6 +212,16 @@ public class ResourceLoader {
 				int s = config.abilities.size();
 				AbilityEmbryoEntry al = new AbilityEmbryoEntry(avatarName, config.abilities.stream().map(Object::toString).toArray(size -> new String[s]));
 				embryoList.add(al);
+			}
+			
+			File playerElementsFile = new File(Utils.toFilePath(RESOURCE("BinOutput/AbilityGroup/AbilityGroup_Other_PlayerElementAbility.json")));
+			
+			if (playerElementsFile.exists()) {
+				try (FileReader fileReader = new FileReader(playerElementsFile)) {
+					GameDepot.setPlayerAbilities(Grasscutter.getGsonFactory().fromJson(fileReader, new TypeToken<Map<String, AvatarConfig>>(){}.getType()));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		
@@ -417,14 +396,15 @@ public class ResourceLoader {
 
 	// BinOutput configs
 	
-	private static class AvatarConfig {
+	public static class AvatarConfig {
+		@SerializedName(value="abilities", alternate={"targetAbilities"})
 		public ArrayList<AvatarConfigAbility> abilities;
-		
-		private static class AvatarConfigAbility {
-			public String abilityName;
-			public String toString() {
-				return abilityName;
-			}
+	}
+	
+	public static class AvatarConfigAbility {
+		public String abilityName;
+		public String toString() {
+			return abilityName;
 		}
 	}
 	
