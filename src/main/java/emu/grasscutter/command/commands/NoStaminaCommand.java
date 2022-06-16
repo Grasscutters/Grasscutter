@@ -9,7 +9,7 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 
-@Command(label = "nostamina", usage = "nostamina [on|off|toggle]", aliases = {"ns"}, permission = "player.nostamina", permissionTargeted = "player.nostamina.others", description = "commands.nostamina.description")
+@Command(label = "nostamina", usage = "nostamina [on|off|toggle]", aliases = {"ns"}, permission = "player.nostamina" , permissionLevel = 2, permissionTargeted = "player.nostamina.others", description = "commands.nostamina.description")
 public final class NoStaminaCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {

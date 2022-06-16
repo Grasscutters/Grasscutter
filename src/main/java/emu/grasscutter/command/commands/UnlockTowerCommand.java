@@ -9,7 +9,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "unlocktower", usage = "unlocktower", aliases = {"ut"}, permission = "player.unlocktower", permissionTargeted = "player.unlocktower.others",
+@Command(label = "unlocktower", usage = "unlocktower", aliases = {"ut"}, permissionLevel = 2, permission = "player.unlocktower", permissionTargeted = "player.unlocktower.others",
 description = "commands.unlocktower.description")
 public class UnlockTowerCommand implements CommandHandler {
 

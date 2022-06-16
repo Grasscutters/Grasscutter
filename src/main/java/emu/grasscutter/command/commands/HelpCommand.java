@@ -10,11 +10,13 @@ import java.util.*;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "help", usage = "help [command]", description = "commands.help.description", targetRequirement = Command.TargetRequirement.NONE)
+@Command(label = "help", usage = "help [command]", description = "commands.help.description" , permissionLevel = 0, targetRequirement = Command.TargetRequirement.NONE)
 public final class HelpCommand implements CommandHandler {
 
     @Override
     public void execute(Player player, Player targetPlayer, List<String> args) {
+        boolean newPermManager = Grasscutter.getConfig().account.newPermissionManager;
+
         if (args.size() < 1) {
             HashMap<String, CommandHandler> handlers = CommandMap.getInstance().getHandlers();
             List<Command> annotations = new ArrayList<>();
@@ -22,7 +24,7 @@ public final class HelpCommand implements CommandHandler {
                 Command annotation = handlers.get(key).getClass().getAnnotation(Command.class);
 
                 if (!Arrays.asList(annotation.aliases()).contains(key)) {
-                    if (player != null && !Objects.equals(annotation.permission(), "") && !player.getAccount().hasPermission(annotation.permission()))
+                    if (player != null && !Objects.equals(annotation.permission(), "") && !player.getAccount().hasPermission(annotation))
                         continue;
                     annotations.add(annotation);
                 }
@@ -46,7 +48,7 @@ public final class HelpCommand implements CommandHandler {
                         builder.append(alias).append(" ");
                     }
                 }
-                if (player != null && !Objects.equals(annotation.permission(), "") && !player.getAccount().hasPermission(annotation.permission())) {
+                if (player != null && !Objects.equals(annotation.permission(), "") && !player.getAccount().hasPermission(annotation)) {
                     builder.append("\n Warning: You do not have permission to run this command.");
                 }
             }

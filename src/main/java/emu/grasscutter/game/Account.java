@@ -1,6 +1,8 @@
 package emu.grasscutter.game;
 
 import dev.morphia.annotations.*;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.Command;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
@@ -28,7 +30,8 @@ public class Account {
 	private String sessionKey; // Session token for dispatch server
 	private List<String> permissions;
     private Locale locale;
-	
+	private int permission;
+
 	@Deprecated
 	public Account() {
 		this.permissions = new ArrayList<>();
@@ -141,7 +144,15 @@ public class Account {
 		return (wildcardParts.length == permissionParts.length);
 	}
 
+	public boolean hasPermission(Command permission) {
+		if (Grasscutter.getConfig().account.newPermissionManager){
+			return permission.permissionLevel() <= this.permission;
+		}
+		return this.hasPermission(permission.permission());
+	}
+
 	public boolean hasPermission(String permission) {
+
 		if(this.permissions.contains("*") && this.permissions.size() == 1) return true;
 
 		// Add default permissions if it doesn't exist
@@ -158,6 +169,22 @@ public class Account {
 		}
 
 		return permissions.contains("*");
+	}
+
+	public int getPermission(){
+		return permission;
+	}
+
+	public void setPermission(int permission){
+		this.permission = permission;
+	}
+
+	public void setBanned(){
+		this.permission = -1;
+	}
+
+	public boolean isBanned(){
+		return this.permission == -1;
 	}
 
 	public boolean removePermission(String permission) {

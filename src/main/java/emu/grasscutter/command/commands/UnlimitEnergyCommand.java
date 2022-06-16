@@ -17,7 +17,7 @@ import java.util.List;
 import static emu.grasscutter.Configuration.GAME_OPTIONS;
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "unlimitenergy", usage = "unlimitenergy [on|off|toggle]", aliases = {"ule"}, permission = "player.unlimitenergy", permissionTargeted = "player.unlimitenergy.others", description = "commands.unlimitenergy.description")
+@Command(label = "unlimitenergy", usage = "unlimitenergy [on|off|toggle]", aliases = {"ule"}, permissionLevel = 2, permission = "player.unlimitenergy", permissionTargeted = "player.unlimitenergy.others", description = "commands.unlimitenergy.description")
 public final class UnlimitEnergyCommand implements CommandHandler {
 
     @Override

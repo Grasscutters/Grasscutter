@@ -9,7 +9,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "broadcast", usage = "broadcast <message>", aliases = {"b"}, permission = "server.broadcast", description = "commands.broadcast.description", targetRequirement = Command.TargetRequirement.NONE)
+@Command(label = "broadcast", usage = "broadcast <message>", aliases = {"b"}, permission = "server.broadcast", description = "commands.broadcast.description" , permissionLevel = 3 , targetRequirement = Command.TargetRequirement.NONE)
 public final class BroadcastCommand implements CommandHandler {
 
     @Override

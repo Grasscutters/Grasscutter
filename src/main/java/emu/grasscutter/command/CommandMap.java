@@ -204,18 +204,28 @@ public final class CommandMap {
 
         // Check for permission.
         if (player != null) {
-            String permissionNode = this.annotations.get(label).permission();
-            String permissionNodeTargeted = this.annotations.get(label).permissionTargeted();
-            Account account = player.getAccount();
-            if (player != targetPlayer) {  // Additional permission required for targeting another player
-                if (!permissionNodeTargeted.isEmpty() && !account.hasPermission(permissionNodeTargeted)) {
+            int permission = this.annotations.get(label).permissionLevel();
+
+            if (Grasscutter.getConfig().account.newPermissionManager){
+                Account account = player.getAccount();
+                if (account.getPermission() < permission) {
                     CommandHandler.sendTranslatedMessage(player, "commands.generic.permission_error");
                     return;
                 }
-            }
-            if (!permissionNode.isEmpty() && !account.hasPermission(permissionNode)) {
-                CommandHandler.sendTranslatedMessage(player, "commands.generic.permission_error");
-                return;
+            } else {
+                String permissionNode = this.annotations.get(label).permission();
+                String permissionNodeTargeted = this.annotations.get(label).permissionTargeted();
+                Account account = player.getAccount();
+                if (player != targetPlayer) {  // Additional permission required for targeting another player
+                    if (!permissionNodeTargeted.isEmpty() && !account.hasPermission(permissionNodeTargeted)) {
+                        CommandHandler.sendTranslatedMessage(player, "commands.generic.permission_error");
+                        return;
+                    }
+                }
+                if (!permissionNode.isEmpty() && !account.hasPermission(permissionNode)) {
+                    CommandHandler.sendTranslatedMessage(player, "commands.generic.permission_error");
+                    return;
+                }
             }
         }
 
