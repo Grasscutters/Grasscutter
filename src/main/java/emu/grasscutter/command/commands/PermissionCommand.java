@@ -20,6 +20,11 @@ public final class PermissionCommand implements CommandHandler {
             return;
         }
 
+        if(!Grasscutter.getPermissionHandler().EnablePermissionCommand()) {
+            CommandHandler.sendTranslatedMessage(sender, "commands.generic.permission_error");
+            return;
+        }
+
         String action = args.get(0);
         String permission = args.get(1);
 

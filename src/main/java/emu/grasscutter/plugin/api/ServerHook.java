@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.PermissionHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
@@ -96,5 +97,13 @@ public final class ServerHook {
      */
     public void setAuthSystem(AuthenticationSystem authSystem) {
         Grasscutter.setAuthenticationSystem(authSystem);
+    }
+
+    /**
+     * Sets the server's permission handler.
+     * @param permHandler An instance of the permission handler.
+     */
+    public void setPermissionHandler(PermissionHandler permHandler) {
+        Grasscutter.setPermissionHandler(permHandler);
     }
 }
