@@ -7,6 +7,7 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
@@ -53,8 +54,7 @@ public class SwitchElementCommand implements CommandHandler {
                         = sender.getAvatars().getAvatarById(i);
                 if (avatar != null) {
                     avatar.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(elementId));
-                    avatar.getAsEntity().addEnergy(1000,
-                            PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_GM, true);
+                    avatar.setCurrentEnergy(1000);
                     avatar.save();
                 }
             }
@@ -66,8 +66,6 @@ public class SwitchElementCommand implements CommandHandler {
         } catch (Exception ignored) {
             ignored.printStackTrace();
         }
-
-
 
 
     }
