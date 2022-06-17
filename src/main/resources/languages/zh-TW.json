@@ -320,6 +320,13 @@
       "success": "正在關閉伺服器...",
       "description": "以正常的方式關閉伺服器。"
     },
+    "switchElement": {
+      "usage": "Usage: switchelement <element [White/Anemo/Geo/Electro]>",
+      "success": "Switched to %s element." ,
+      "invalidElement": "Invalid element." ,
+      "not_console": "Cannot use this command in the console." ,
+      "description": "Switch to a different element"
+    },
     "talent": {
       "usage_1": "設定天賦等級：/talent set <talentID> <value>",
       "usage_2": "另一種設定天賦等級的指令使用方法：/talent <n or e or q> <value>",
