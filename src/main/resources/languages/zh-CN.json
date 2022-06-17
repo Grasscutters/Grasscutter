@@ -378,8 +378,9 @@
       "description": "改变指定玩家的位置"
     },
     "unlimitenergy": {
+      "usage": "用法：ule [on|off|toggle](开/关/切换状态)，也可以不带参数来切换unlimitenergy的状态",
       "success": "UnlimitEnergy 已设为 %s。[用户：%s]",
-      "config_error": "命令不可用。因为 config.json 中 energyUsage 为 false。",
+      "toggle_info": "你可以使用!ule来切换状态(不带参数)",
       "description": "使用元素爆发而不消耗能量"
     },
     "unlocktower": {

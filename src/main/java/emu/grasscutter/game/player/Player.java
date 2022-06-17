@@ -138,6 +138,8 @@ public class Player {
 	private boolean godmode;
 
 	private boolean stamina;
+
+	private Boolean energyUsage;
 	private boolean moonCard;
 	private Date moonCardStartTime;
 	private int moonCardDuration;
@@ -1181,6 +1183,17 @@ public class Player {
 	public HashMap<String, MapMark> getMapMarks() { return mapMarks; }
 
 	public void setMapMarks(HashMap<String, MapMark> newMarks) { mapMarks = newMarks; }
+
+	public Boolean getEnergyUsage() {
+		if(energyUsage==null){
+			energyUsage=true;
+		}
+		return energyUsage;
+	}
+
+	public void setEnergyUsage(Boolean energyUsage) {
+		this.energyUsage = energyUsage;
+	}
 
 	public synchronized void onTick() {
 		// Check ping

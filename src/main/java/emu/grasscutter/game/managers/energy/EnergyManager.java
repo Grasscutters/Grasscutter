@@ -49,19 +49,54 @@ import com.google.protobuf.InvalidProtocolBufferException;
 public class EnergyManager {
     private final Player player;
     private final Map<EntityAvatar, Integer> avatarNormalProbabilities;
-//    energyUsage for each player
-    private Boolean energyUsage;
+
+    private final Integer elementTypeDefault=2024;
+
+
+    private final Integer particlesDefault=2;
+
     private final static Int2ObjectMap<List<EnergyDropInfo>> energyDropData = new Int2ObjectOpenHashMap<>();
     private final static Int2ObjectMap<List<SkillParticleGenerationInfo>> skillParticleGenerationData = new Int2ObjectOpenHashMap<>();
 
     public EnergyManager(Player player) {
         this.player = player;
         this.avatarNormalProbabilities = new HashMap<>();
-        this.energyUsage=GAME_OPTIONS.energyUsage;
     }
 
     public Player getPlayer() {
         return this.player;
+    }
+
+
+    private static Integer getIdByElementType(ElementType element){
+        if (element == null) {
+            return 2024;
+        }
+
+        // Otherwise, we determin the particle's ID based on the element.
+        return switch (element) {
+            case Fire -> 2017;
+            case Water -> 2018;
+            case Grass -> 2019;
+            case Electric -> 2020;
+            case Wind -> 2021;
+            case Ice -> 2022;
+            case Rock -> 2023;
+            default -> 2024;
+        };
+    }
+
+    private static ElementType getElementTypeById(Integer id){
+        return switch (id) {
+            case 2001, 2017 -> ElementType.Fire;
+            case 2002, 2018 -> ElementType.Water;
+            case 2003, 2019 -> ElementType.Grass;
+            case 2004, 2020 -> ElementType.Electric;
+            case 2005, 2021 -> ElementType.Wind;
+            case 2006, 2022 -> ElementType.Ice;
+            case 2007, 2023 -> ElementType.Rock;
+            default -> null;
+        };
     }
 
     public static void initialize() {
@@ -99,7 +134,7 @@ public class EnergyManager {
      **********/
     private int getBallCountForAvatar(int avatarId) {
         // We default to two particles.
-        int count = 2;
+        int count = particlesDefault;
 
         // If we don't have any data for this avatar, stop.
         if (!skillParticleGenerationData.containsKey(avatarId)) {
@@ -152,12 +187,19 @@ public class EnergyManager {
         if (action == null) {
             return;
         }
-
         // Default to an elementless particle.
-        int itemId = 2024;
+        int itemId = elementTypeDefault;
 
         // Generate 2 particles by default.
-        int amount = 2;
+        int amount = particlesDefault;
+        if(invoke.getHead().getLocalId()==98307){
+            amount = 3;
+            for (int i = 0; i < amount; i++) {
+                generateElemBall(itemId, new Position(action.getPos()), 1);
+            }
+            return;
+        }
+
 
         // Try to get the casting avatar from the player's party.
         Optional<EntityAvatar> avatarEntity = getCastingAvatarEntityForEnergy(invoke.getEntityId());
@@ -178,7 +220,7 @@ public class EnergyManager {
                 // particles we have to generate.
                 if (skillDepotData != null) {
                     ElementType element = skillDepotData.getElementType();
-                    itemId = getBallIdForElement(element);
+                    itemId = getIdByElementType(element);
                 }
             }
         }
@@ -228,16 +270,7 @@ public class EnergyManager {
             }
 
             ElementType avatarElement = entity.getAvatar().getSkillDepot().getElementType();
-            ElementType ballElement = switch (elemBall.getItemId()) {
-                case 2001, 2017 -> ElementType.Fire;
-                case 2002, 2018 -> ElementType.Water;
-                case 2003, 2019 -> ElementType.Grass;
-                case 2004, 2020 -> ElementType.Electric;
-                case 2005, 2021 -> ElementType.Wind;
-                case 2006, 2022 -> ElementType.Ice;
-                case 2007, 2023 -> ElementType.Rock;
-                default -> null;
-            };
+            ElementType ballElement = getElementTypeById(elemBall.getItemId());
 
             float elementBonus = (ballElement == null) ? 2.0f : (avatarElement == ballElement) ? 3.0f : 1.0f;
 
@@ -329,7 +362,7 @@ public class EnergyManager {
      **********/
     private void handleBurstCast(Avatar avatar, int skillId) {
         // Don't do anything if energy usage is disabled.
-        if (!GAME_OPTIONS.energyUsage || !this.energyUsage) {
+        if (!this.player.getEnergyUsage()) {
             return;
         }
 
@@ -440,11 +473,5 @@ public class EnergyManager {
                 .findFirst();
     }
 
-    public Boolean getEnergyUsage() {
-        return energyUsage;
-    }
 
-    public void setEnergyUsage(Boolean energyUsage) {
-        this.energyUsage = energyUsage;
-    }
 }

@@ -368,6 +368,12 @@
       "success": "傳送 %s 到座標 %s,%s,%s ，場景為 %s 。",
       "description": "將玩家的位置傳送到你所指定的座標。"
     },
+    "unlimitenergy": {
+      "usage": "用法：ule [on|off|toggle](開/關/切換狀態)，也可以不帶參數來切換unlimitenergy的狀態",
+      "success": "UnlimitEnergy 已設爲 %s。[用戶：%s]",
+      "toggle_info": "你可以使用!ule來切換狀態(不帶參數)",
+      "description": "使用元素爆髮而不消耗能量"
+    },
     "weather": {
       "usage": "用法：weather <氣候型別(天氣ID)> <天氣型別(氣候ID)>\n天氣型別 0: 無, 1: 晴天, 2: 多雲, 3: 雨, 4: 雷雨, 5: 雪, 6: 霧",
       "success": "已將當前氣候型別設定為 %s，天氣型別則為 %s。",

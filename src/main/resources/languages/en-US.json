@@ -378,8 +378,9 @@
       "description": "Change the player's position"
     },
     "unlimitenergy": {
+      "usage": "usage：ule [on|off|toggle]，you can use !ule to switch the status(no parameter)",
       "success": "UnlimitEnergy is now %s for %s.",
-      "config_error": "Command is disabled, because energyUsage is false in config.json.",
+      "toggle_info": "you can use !ule to switch the status(no parameter)",
       "description": "Use the element does not waste energy"
     },
     "unlocktower": {

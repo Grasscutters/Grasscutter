@@ -81,6 +81,7 @@ public class Avatar {
 	private int satiation; // ?
 	private int satiationPenalty; // ?
 	private float currentHp;
+
 	private float currentEnergy;
 	
 	@Transient private final Int2ObjectMap<GameItem> equips;
@@ -359,30 +360,34 @@ public class Avatar {
 		this.currentHp = currentHp;
 	}
 
-	public void setCurrentEnergy() {
-		if (GAME_OPTIONS.energyUsage) {
-			this.setCurrentEnergy(this.currentEnergy);
-		}
+	public float getCurrentEnergy() {
+		return currentEnergy;
 	}
+
+//	public void setCurrentEnergy() {
+//		if (this.getPlayer().getEnergyUsage()) {
+//			this.setCurrentEnergy(this.currentEnergy);
+//		}
+//	}
 	
 	public void setCurrentEnergy(float currentEnergy) {
 		if (this.getSkillDepot() != null && this.getSkillDepot().getEnergySkillData() != null) {
 			ElementType element = this.getSkillDepot().getElementType();
 			this.setFightProperty(element.getMaxEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
-			
-			if (GAME_OPTIONS.energyUsage) {
+
+			if (this.getPlayer().getEnergyUsage()) {
 				this.setFightProperty(element.getCurEnergyProp(), currentEnergy);
-			}
-			else {
+			} else {
 				this.setFightProperty(element.getCurEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
 			}
+
 		}		
 	}
 
 	public void setCurrentEnergy(FightProperty curEnergyProp, float currentEnergy) {
-		if (GAME_OPTIONS.energyUsage) {
-			this.setFightProperty(curEnergyProp, currentEnergy);
-			this.currentEnergy = currentEnergy;
+		this.setFightProperty(curEnergyProp, currentEnergy);
+		this.currentEnergy = currentEnergy;
+		if (this.getPlayer().getEnergyUsage()) {
 			this.save();
 		}
 	}
