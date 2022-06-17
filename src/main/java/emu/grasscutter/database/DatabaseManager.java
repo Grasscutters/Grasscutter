@@ -77,25 +77,24 @@ public final class DatabaseManager {
 			}
 		}
 
-		if(SERVER.runMode == ServerRunMode.GAME_ONLY) {
-			MongoClient dispatchMongoClient = MongoClients.create(DATABASE.server.connectionUri);
-			dispatchDatastore = Morphia.createDatastore(dispatchMongoClient, DATABASE.server.collection);
+		MongoClient dispatchMongoClient = MongoClients.create(DATABASE.server.connectionUri);
+		dispatchDatastore = Morphia.createDatastore(dispatchMongoClient, DATABASE.server.collection, mapperOptions);
+		dispatchDatastore.getMapper().map(mappedClasses);
 
-			// Ensure indexes for dispatch server
-			try {
-				dispatchDatastore.ensureIndexes();
-			} catch (MongoCommandException e) {
-				Grasscutter.getLogger().info("Mongo index error: ", e);
-				// Duplicate index error
-				if (e.getCode() == 85) {
-					// Drop all indexes and re add them
-					MongoIterable<String> collections = dispatchDatastore.getDatabase().listCollectionNames();
-					for (String name : collections) {
-						dispatchDatastore.getDatabase().getCollection(name).dropIndexes();
-					}
-					// Add back indexes
-					dispatchDatastore.ensureIndexes();
+		// Ensure indexes for dispatch server
+		try {
+			dispatchDatastore.ensureIndexes();
+		} catch (MongoCommandException exception) {
+			Grasscutter.getLogger().info("Mongo index error: ", e);
+			// Duplicate index error
+			if (exception.getCode() == 85) {
+				// Drop all indexes and re add them
+				MongoIterable<String> collections = dispatchDatastore.getDatabase().listCollectionNames();
+				for (String name : collections) {
+					dispatchDatastore.getDatabase().getCollection(name).dropIndexes();
 				}
+				// Add back indexes
+				dispatchDatastore.ensureIndexes();
 			}
 		}
 	}
