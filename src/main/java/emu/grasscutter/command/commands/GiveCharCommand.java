@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
@@ -67,6 +68,14 @@ public final class GiveCharCommand implements CommandHandler {
         Avatar avatar = new Avatar(avatarId);
         avatar.setLevel(level);
         avatar.setPromoteLevel(ascension);
+
+        // Handle skill depot for traveller.
+        if (avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_MALE) {
+            avatar.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(504));
+        }
+        else if(avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
+            avatar.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(704));
+        }
 
         // This will handle stats and talents
         avatar.recalcStats();

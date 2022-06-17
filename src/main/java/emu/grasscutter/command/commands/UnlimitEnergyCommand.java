@@ -5,7 +5,7 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.managers.EnergyManager.EnergyManager;
+import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamManager;
 import emu.grasscutter.game.props.ElementType;

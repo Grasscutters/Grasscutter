@@ -31,9 +31,11 @@ import emu.grasscutter.net.proto.GachaItemOuterClass.GachaItem;
 import emu.grasscutter.net.proto.GachaTransferItemOuterClass.GachaTransferItem;
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
+import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameServerTickEvent;
 import emu.grasscutter.server.packet.send.PacketDoGachaRsp;
+import emu.grasscutter.server.packet.send.PacketGachaWishRsp;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -46,8 +48,7 @@ import static emu.grasscutter.Configuration.*;
 public class GachaManager {
 	private final GameServer server;
 	private final Int2ObjectMap<GachaBanner> gachaBanners;
-	private GetGachaInfoRsp cachedProto;
-	WatchService watchService;
+	private WatchService watchService;
 	
 	private static final int starglitterId = 221;
 	private static final int stardustId = 222;
@@ -86,9 +87,6 @@ public class GachaManager {
 					getGachaBanners().put(banner.getScheduleId(), banner);
 				}
 				Grasscutter.getLogger().info("Banners successfully loaded.");
-
-
-				this.cachedProto = createProto();
 			} else {
 				Grasscutter.getLogger().error("Unable to load banners. Banners size is 0.");
 			}
@@ -181,38 +179,59 @@ public class GachaManager {
 		return 0;  // This should only be reachable if total==0
 	}
 
+	private synchronized int doFallbackRarePull(int[] fallback1, int[] fallback2, int rarity, GachaBanner banner, PlayerGachaBannerInfo gachaInfo) {
+		if (fallback1.length < 1) {
+			if (fallback2.length < 1) {
+				return getRandom((rarity==5)? fallbackItems5Pool2Default : fallbackItems4Pool2Default);
+			} else {
+				return getRandom(fallback2);
+			}
+		} else if (fallback2.length < 1) {
+			return getRandom(fallback1);
+		} else {  // Both pools are possible, use the pool balancer
+			int pityPool1 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 1));
+			int pityPool2 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 2));
+			int chosenPool = switch ((pityPool1 >= pityPool2)? 1 : 0) {  // Larger weight must come first for the hard cutoff to function correctly
+				case 1 -> 1 + drawRoulette(new int[] {pityPool1, pityPool2}, 10000);
+				default -> 2 - drawRoulette(new int[] {pityPool2, pityPool1}, 10000);
+			};
+			return switch (chosenPool) {
+				case 1:
+					gachaInfo.setPityPool(rarity, 1, 0);
+					yield getRandom(fallback1);
+				default:
+					gachaInfo.setPityPool(rarity, 2, 0);
+					yield getRandom(fallback2);
+			};
+		}
+	}
+
 	private synchronized int doRarePull(int[] featured, int[] fallback1, int[] fallback2, int rarity, GachaBanner banner, PlayerGachaBannerInfo gachaInfo) {
 		int itemId = 0;
-		boolean pullFeatured = (gachaInfo.getFailedFeaturedItemPulls(rarity) >= 1)  // Lost previous coinflip
-							|| (this.randomRange(1, 100) <= banner.getEventChance(rarity));  // Won this coinflip
-		if (pullFeatured && (featured.length > 0)) {
-			itemId = getRandom(featured);
-			gachaInfo.setFailedFeaturedItemPulls(rarity, 0);
+		boolean epitomized = (banner.hasEpitomized()) && (rarity == 5) && (gachaInfo.getWishItemId() != 0);
+		boolean pityEpitomized = (gachaInfo.getFailedChosenItemPulls() >= banner.getWishMaxProgress());  // Maximum fate points reached
+		boolean pityFeatured = (gachaInfo.getFailedFeaturedItemPulls(rarity) >= 1);  // Lost previous coinflip
+		boolean rollFeatured = (this.randomRange(1, 100) <= banner.getEventChance(rarity));  // Won this coinflip
+		boolean pullFeatured = pityFeatured || rollFeatured;
+
+		if (epitomized && pityEpitomized) {  // Auto pick item when epitomized points reached
+			gachaInfo.setFailedFeaturedItemPulls(rarity, 0);  // Epitomized item will always be a featured one
+			itemId = gachaInfo.getWishItemId();
 		} else {
-			gachaInfo.addFailedFeaturedItemPulls(rarity, 1);
-			if (fallback1.length < 1) {
-				if (fallback2.length < 1) {
-					itemId = getRandom((rarity==5)? fallbackItems5Pool2Default : fallbackItems4Pool2Default);
-				} else {
-					itemId = getRandom(fallback2);
-				}
-			} else if (fallback2.length < 1) {
-				itemId = getRandom(fallback1);
-			} else {  // Both pools are possible, use the pool balancer
-				int pityPool1 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 1));
-				int pityPool2 = banner.getPoolBalanceWeight(rarity, gachaInfo.getPityPool(rarity, 2));
-				int chosenPool = switch ((pityPool1 >= pityPool2)? 1 : 0) {  // Larger weight must come first for the hard cutoff to function correctly
-					case 1 -> 1 + drawRoulette(new int[] {pityPool1, pityPool2}, 10000);
-					default -> 2 - drawRoulette(new int[] {pityPool2, pityPool1}, 10000);
-				};
-				itemId = switch (chosenPool) {
-					case 1:
-						gachaInfo.setPityPool(rarity, 1, 0);
-						yield getRandom(fallback1);
-					default:
-						gachaInfo.setPityPool(rarity, 2, 0);
-						yield getRandom(fallback2);
-				};
+			if (pullFeatured && (featured.length > 0)) {
+				gachaInfo.setFailedFeaturedItemPulls(rarity, 0);
+				itemId = getRandom(featured);
+			} else {
+				gachaInfo.addFailedFeaturedItemPulls(rarity, 1);  // This could be moved into doFallbackRarePull but having it here makes it clearer
+				itemId = doFallbackRarePull(fallback1, fallback2, rarity, banner, gachaInfo);
+			}
+		}
+
+		if (epitomized) {
+			if(itemId == gachaInfo.getWishItemId()) { // Reset epitomized points when got wished item
+				gachaInfo.setFailedChosenItemPulls(0);
+			} else { // Add epitomized points if not get wished item
+				gachaInfo.addFailedChosenItemPulls(1);
 			}
 		}
 		return itemId;
@@ -244,7 +263,7 @@ public class GachaManager {
 		} 
 		Inventory inventory = player.getInventory();
 		if (inventory.getInventoryTab(ItemType.ITEM_WEAPON).getSize() + times > inventory.getInventoryTab(ItemType.ITEM_WEAPON).getMaxCapacity()) {
-			player.sendPacket(new PacketDoGachaRsp());
+			player.sendPacket(new PacketDoGachaRsp(Retcode.RET_ITEM_EXCEED_LIMIT));
 			return;
 		}
 		
@@ -355,7 +374,7 @@ public class GachaManager {
 		}
 		
 		// Packets
-		player.sendPacket(new PacketDoGachaRsp(banner, list));
+		player.sendPacket(new PacketDoGachaRsp(banner, list, gachaInfo));
 	}
 
 	private synchronized void startWatcher(GameServer server) {
@@ -398,18 +417,7 @@ public class GachaManager {
 		}
 	}
 	
-	@Deprecated
-	private synchronized GetGachaInfoRsp createProto() {
-		GetGachaInfoRsp.Builder proto = GetGachaInfoRsp.newBuilder().setGachaRandom(12345);
-		
-		for (GachaBanner banner : getGachaBanners().values()) {
-			proto.addGachaInfoList(banner.toProto());
-		}
-				
-		return proto.build();
-	}
-
-	private synchronized GetGachaInfoRsp createProto(String sessionKey) {
+	private synchronized GetGachaInfoRsp createProto(Player player) {
 		GetGachaInfoRsp.Builder proto = GetGachaInfoRsp.newBuilder().setGachaRandom(12345);
 		
 		long currentTime = System.currentTimeMillis() / 1000L;
@@ -417,22 +425,14 @@ public class GachaManager {
 		for (GachaBanner banner : getGachaBanners().values()) {
 			if ((banner.getEndTime() >= currentTime && banner.getBeginTime() <= currentTime) || (banner.getBannerType() == BannerType.STANDARD))
 			{
-				proto.addGachaInfoList(banner.toProto(sessionKey));
+				proto.addGachaInfoList(banner.toProto(player));
 			}
 		}
 				
 		return proto.build();
 	}
-	
-	@Deprecated
-	public GetGachaInfoRsp toProto() {
-		if (this.cachedProto == null) {
-			this.cachedProto = createProto();
-		}
-		return this.cachedProto;
-	}
 
-	public GetGachaInfoRsp toProto(String sessionKey) {
-		return createProto(sessionKey);
+	public GetGachaInfoRsp toProto(Player player) {
+		return createProto(player);
 	}
 }
