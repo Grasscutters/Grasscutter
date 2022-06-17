@@ -18,14 +18,10 @@ public class PacketGetDailyDungeonEntryInfoRsp extends BasePacket {
 
         var resp= GetDailyDungeonEntryInfoRspOuterClass.GetDailyDungeonEntryInfoRsp.newBuilder();
 
-        for (var info :  GameData.getDungeonEntryDatatMap().values().parallelStream().filter(d -> d.getSceneId() == sceneID).map(this::getDungonEntryInfo).toList()) {
-            Grasscutter.getLogger().info("PacketGetDailyDungeonEntryInfoRsp: : " +
-                    info.getDungeonEntryId() + " " + info.getDungeonEntryConfigId() + " " + info.getRecommendDungeonId());
+        for (var info :  GameData.getDungeonEntryDatatMap().values().parallelStream().filter(d -> d.getSceneId() == sceneID).map(this::getDungonEntryInfo).toList())
             resp.addDailyDungeonInfoList(info);
-        }
 
         this.setData(resp.build());
-        Grasscutter.getLogger().info("Sent");
     }
 
     private DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo getDungonEntryInfo(DungeonEntryData data) {
