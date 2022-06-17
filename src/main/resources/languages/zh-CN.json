@@ -391,6 +391,21 @@
       "success": "已更改气候类型为 %s，天气类型为 %s。",
       "invalid_id": "无效的ID。",
       "description": "更改天气"
+    },
+    "ban": {
+      "description": "封禁玩家",
+      "success": "封禁玩家成功。",
+      "failure": "封禁玩家失败，因为无法获取到其账户。",
+      "invalid_time": "无法解析时间戳。",
+      "invalid_player_id": "无法解析玩家 ID。",
+      "command_usage": "用法：ban <玩家ID> [时间] [原因]"
+    },
+    "unban": {
+      "description": "取消玩家的封禁",
+      "success": "取消玩家的封禁成功。",
+      "failure": "取消玩家的封禁失败，因为无法获取到其账户。",
+      "invalid_player_id": "无法解析玩家 ID。",
+      "command_usage": "用法：unban <玩家ID>"
     }
   },
   "gacha": {
