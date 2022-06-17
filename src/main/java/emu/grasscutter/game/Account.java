@@ -28,6 +28,11 @@ public class Account {
 	private String sessionKey; // Session token for dispatch server
 	private List<String> permissions;
     private Locale locale;
+
+	private String banReason;
+	private int banEndTime;
+	private int banStartTime;
+	private boolean isBanned;
 	
 	@Deprecated
 	public Account() {
@@ -104,6 +109,46 @@ public class Account {
     public void setLocale(Locale locale) {
         this.locale = locale;
     }
+
+	public String getBanReason() {
+		return banReason;
+	}
+
+	public void setBanReason(String banReason) {
+		this.banReason = banReason;
+	}
+
+	public int getBanEndTime() {
+		return banEndTime;
+	}
+
+	public void setBanEndTime(int banEndTime) {
+		this.banEndTime = banEndTime;
+	}
+
+	public int getBanStartTime() {
+		return banStartTime;
+	}
+
+	public void setBanStartTime(int banStartTime) {
+		this.banStartTime = banStartTime;
+	}
+
+	public boolean isBanned() {
+		if (banEndTime > 0 && banEndTime < System.currentTimeMillis() / 1000) {
+			this.isBanned = false;
+			this.banEndTime = 0;
+			this.banStartTime = 0;
+			this.banReason = null;
+			save();
+		}
+
+		return isBanned;
+	}
+
+	public void setBanned(boolean isBanned) {
+		this.isBanned = isBanned;
+	}
 
 	/**
 	 * The collection of a player's permissions.

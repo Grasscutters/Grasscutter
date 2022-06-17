@@ -391,6 +391,21 @@
       "success": "Changed climate type to %s with weather type %s.",
       "invalid_id": "Invalid ID.",
       "description": "Changes the weather"
+    },
+    "ban": {
+      "description": "Ban a player",
+      "success": "Successful.",
+      "failure": "Failed, player not found.",
+      "invalid_time": "Unable to parse timestamp.",
+      "invalid_player_id": "Unable to parse player ID.",
+      "command_usage": "Usage: ban <playerId> [timestamp] [reason]"
+    },
+    "unban": {
+      "description": "Unban a player",
+      "success": "Successful.",
+      "failure": "Failed, player not found.",
+      "invalid_player_id": "Unable to parse player ID.",
+      "command_usage": "Usage: unban <playerId>"
     }
   },
   "gacha": {
