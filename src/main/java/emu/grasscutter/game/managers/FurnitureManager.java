@@ -124,10 +124,10 @@ public class FurnitureManager {
         }
 
         // check if player can take
-        if(slotItem.get().getBeginTime() + slotItem.get().getDurTime() >= Utils.getCurrentSeconds() && !isFastFinish){
-            player.getSession().send(new PacketTakeFurnitureMakeRsp(Retcode.RET_FURNITURE_MAKE_UNFINISH_VALUE, makeId, null, null));
-            return;
-        }
+//        if(slotItem.get().getBeginTime() + slotItem.get().getDurTime() >= Utils.getCurrentSeconds() && !isFastFinish){
+//            player.getSession().send(new PacketTakeFurnitureMakeRsp(Retcode.RET_FURNITURE_MAKE_UNFINISH_VALUE, makeId, null, null));
+//            return;
+//        }
 
         player.getInventory().addItem(makeData.getFurnitureItemID(), makeData.getCount());
         player.getHome().getFurnitureMakeSlotItemList().remove(slotItem.get());

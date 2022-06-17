@@ -26,7 +26,7 @@ public class HomeSceneItem {
     Position bornRot;
     Position djinnPos;
     HomeFurnitureItem mainHouse;
-
+    int tmpVersion;
     public static HomeSceneItem parseFrom(HomeworldDefaultSaveData defaultItem, int sceneId) {
         return HomeSceneItem.of()
                 .sceneId(sceneId)
@@ -56,6 +56,7 @@ public class HomeSceneItem {
         this.bornRot = new Position(arrangementInfo.getBornRot());
         this.djinnPos = new Position(arrangementInfo.getDjinnPos());
         this.mainHouse = HomeFurnitureItem.parseFrom(arrangementInfo.getMainHouse());
+        this.tmpVersion = arrangementInfo.getTmpVersion();
     }
 
     public int getRoomSceneId(){
@@ -81,7 +82,7 @@ public class HomeSceneItem {
                 .setDjinnPos(djinnPos.toProto())
                 .setIsSetBornPos(true)
                 .setSceneId(sceneId)
-                .setTmpVersion(1);
+                .setTmpVersion(tmpVersion);
 
         if(mainHouse != null){
             proto.setMainHouse(mainHouse.toProto());

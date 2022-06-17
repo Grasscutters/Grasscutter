@@ -4,6 +4,7 @@ import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo;
+import emu.grasscutter.utils.Position;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class HomeBlockItem {
     int blockId;
     boolean unlocked;
     List<HomeFurnitureItem> deployFurnitureList;
+    List<HomeFurnitureItem> persistentFurnitureList;
     List<HomeAnimalItem> deployAnimalList;
     List<HomeNPCItem> deployNPCList;
 
@@ -27,6 +29,10 @@ public class HomeBlockItem {
         this.blockId = homeBlockArrangementInfo.getBlockId();
 
         this.deployFurnitureList = homeBlockArrangementInfo.getDeployFurniureListList().stream()
+                .map(HomeFurnitureItem::parseFrom)
+                .toList();
+
+        this.persistentFurnitureList = homeBlockArrangementInfo.getPersistentFurnitureListList().stream()
                 .map(HomeFurnitureItem::parseFrom)
                 .toList();
 
@@ -52,6 +58,7 @@ public class HomeBlockItem {
                 .setComfortValue(calComfort());
 
         this.deployFurnitureList.forEach(f -> proto.addDeployFurniureList(f.toProto()));
+        this.persistentFurnitureList.forEach(f -> proto.addDeployFurniureList(f.toProto()));
         this.deployAnimalList.forEach(f -> proto.addDeployAnimalList(f.toProto()));
         this.deployNPCList.forEach(f -> proto.addDeployNpcList(f.toProto()));
 
@@ -59,7 +66,7 @@ public class HomeBlockItem {
     }
 
     public static HomeBlockItem parseFrom(HomeworldDefaultSaveData.HomeBlock homeBlock) {
-
+        // create from default setting
         return HomeBlockItem.of()
                 .blockId(homeBlock.getBlockId())
                 .unlocked(homeBlock.getFurnitures() != null)
@@ -70,6 +77,7 @@ public class HomeBlockItem {
                                         .toList())
                 .deployAnimalList(List.of())
                 .deployNPCList(List.of())
+                .persistentFurnitureList(List.of())
                 .build();
     }
 }
