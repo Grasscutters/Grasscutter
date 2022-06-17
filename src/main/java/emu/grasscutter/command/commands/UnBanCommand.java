@@ -30,6 +30,9 @@ public final class UnBanCommand implements CommandHandler {
 
         if (account == null) {
             account = DatabaseHelper.getAccountByPlayerId(uid);
+            if (account == null) {
+                return false;
+            }
         }
 
         account.setBanReason(null);

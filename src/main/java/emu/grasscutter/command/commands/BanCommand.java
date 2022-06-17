@@ -29,6 +29,9 @@ public final class BanCommand implements CommandHandler {
         Account account = player.getAccount();
         if (account == null) {
             account = DatabaseHelper.getAccountByPlayerId(uid);
+            if (account == null) {
+                return false;
+            }
         }
 
         account.setBanReason(reason);
