@@ -44,8 +44,11 @@ public final class DatabaseManager {
 	// Yes. I very dislike this method. However, this will be good for now.
 	// TODO: Add dispatch routes for player account management
 	public static Datastore getAccountDatastore() {
-		// Account datastore should be managed by config.json, not a hardcode
-		return dispatchDatastore;
+		if(SERVER.runMode == ServerRunMode.GAME_ONLY) {
+			return dispatchDatastore;
+		} else {
+			return gameDatastore;
+		}
 	}
 	
 	public static void initialize() {
