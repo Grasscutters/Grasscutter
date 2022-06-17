@@ -27,22 +27,9 @@ public class PacketHomeBasicInfoNotify extends BasePacket {
 				.setCurRoomSceneId(homeScene.getRoomSceneId())
 				.setIsInEditMode(editMode)
 				.setHomeOwnerUid(player.getUid())
-				.setLevel(1)
+				.setLevel(player.getHome().getLevel())
 				.setOwnerNickName(player.getNickname())
-				.setLimitedShopInfo(HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.newBuilder()
-						.setDjinnPos(VectorOuterClass.Vector.newBuilder()
-								.setZ(192)
-								.setX(792)
-								.setY(316.7f)
-								.build())
-						.setDjinnRot(VectorOuterClass.Vector.newBuilder()
-								.setY(176)
-								.build())
-						.setNextCloseTime(Integer.MAX_VALUE)
-						.setNextGuestOpenTime(0)
-						.setNextOpenTime(0)
-						.setUid(player.getUid())
-						.build())
+				// TODO limit shop
 				.build());
 
 		this.setData(proto);
