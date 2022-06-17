@@ -11,6 +11,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Command(label = "switchelement", usage = "switchelement [White/Anemo/Geo/Electro]", aliases = {"se"}, permission = "player.switchElement", threading = true, description = "commands.switchElement.description")
@@ -41,36 +42,33 @@ public class SwitchElementCommand implements CommandHandler {
             return;
         }
 
-        for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
-            //Exclude test avatar
-            // Handle skill depot for traveller.
-            try {
-                Avatar avatar = sender.getAvatars().getAvatarById(avatarData.getId());
-                if (avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_MALE) {
-                    sender.getAvatars().getAvatarById
-                            (avatarData.getId()).setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(elementId));
-                    sender.getAvatars().getAvatarById
-                            (avatarData.getId()).getAsEntity().addEnergy(1000,
-                            PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_GM,true);
-                    sender.getAvatars().getAvatarById
-                            (avatarData.getId()).save();
-                    CommandHandler.sendTranslatedMessage(sender, "commands.switchElement.success" , element);
-                } else if (avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
-                    sender.getAvatars().getAvatarById
-                            (avatarData.getId()).setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(elementId + 200));
-                    sender.getAvatars().getAvatarById
-                            (avatarData.getId()).getAsEntity().addEnergy(1000,
-                            PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_GM,true);
-                    sender.getAvatars().getAvatarById
-                            (avatarData.getId()).save();
-                    CommandHandler.sendTranslatedMessage(sender, "commands.switchElement.success" , element);
+        List<Integer> id = new ArrayList<>();
+        id.add(GameConstants.MAIN_CHARACTER_MALE);
+        id.add(GameConstants.MAIN_CHARACTER_FEMALE);
+
+
+        try {
+            for (int i : id) {
+                Avatar avatar
+                        = sender.getAvatars().getAvatarById(i);
+                if (avatar != null) {
+                    avatar.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(elementId));
+                    avatar.getAsEntity().addEnergy(1000,
+                            PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_GM, true);
+                    avatar.save();
                 }
-            } catch (Exception ignored) {}
+            }
+            CommandHandler.sendTranslatedMessage(sender, "commands.switchElement.success", element);
+            int scene = sender.getSceneId();
+            sender.getWorld().transferPlayerToScene(sender, 1, sender.getPos());
+            sender.getWorld().transferPlayerToScene(sender, scene, sender.getPos());
+            sender.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(sender));
+        } catch (Exception ignored) {
+            ignored.printStackTrace();
         }
 
-        int scene = sender.getSceneId();
-        sender.getWorld().transferPlayerToScene(sender, 1, sender.getPos());
-        sender.getWorld().transferPlayerToScene(sender, scene, sender.getPos());
-        sender.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(sender));
+
+
+
     }
 }
