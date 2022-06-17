@@ -8,6 +8,8 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
+import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 
 import java.util.List;
 
@@ -26,11 +28,11 @@ public class SwitchElementCommand implements CommandHandler {
 
         String element = args.get(0);
 
-        Integer elementId = switch (element) {
-            case "White" -> 501;
-            case "Anemo" -> 504;
-            case "Geo" -> 506;
-            case "Electro" -> 507;
+        Integer elementId = switch (element.toLowerCase()) {
+            case "white" -> 501;
+            case "anemo" -> 504;
+            case "geo" -> 506;
+            case "electro" -> 507;
             default -> null;
         };
 
@@ -48,16 +50,27 @@ public class SwitchElementCommand implements CommandHandler {
                     sender.getAvatars().getAvatarById
                             (avatarData.getId()).setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(elementId));
                     sender.getAvatars().getAvatarById
+                            (avatarData.getId()).getAsEntity().addEnergy(1000,
+                            PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_GM,true);
+                    sender.getAvatars().getAvatarById
                             (avatarData.getId()).save();
+                    CommandHandler.sendTranslatedMessage(sender, "commands.switchElement.success" , element);
                 } else if (avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
                     sender.getAvatars().getAvatarById
                             (avatarData.getId()).setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(elementId + 200));
                     sender.getAvatars().getAvatarById
+                            (avatarData.getId()).getAsEntity().addEnergy(1000,
+                            PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_GM,true);
+                    sender.getAvatars().getAvatarById
                             (avatarData.getId()).save();
+                    CommandHandler.sendTranslatedMessage(sender, "commands.switchElement.success" , element);
                 }
-                CommandHandler.sendTranslatedMessage(sender, "commands.switchElement.success" , element);
-                sender.getSession().close();
             } catch (Exception ignored) {}
         }
+
+        int scene = sender.getSceneId();
+        sender.getWorld().transferPlayerToScene(sender, 1, sender.getPos());
+        sender.getWorld().transferPlayerToScene(sender, scene, sender.getPos());
+        sender.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(sender));
     }
 }
