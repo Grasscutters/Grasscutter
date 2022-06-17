@@ -330,7 +330,7 @@
       "description": "停止服务器"
     },
     "switchElement": {
-      "usage": "用法：switchelement <元素>",
+      "usage": "用法：switchelement <元素 [White/Anemo/Geo/Electro]>",
       "success": "已切换到 %s 元素。",
       "invalidElement": "无效的元素。",
       "not_console": "不能在控制台中使用此命令。",
