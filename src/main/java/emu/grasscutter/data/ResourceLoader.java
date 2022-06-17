@@ -67,37 +67,7 @@ public class ResourceLoader {
 
 		// Load default home layout
 		loadHomeworldDefaultSaveData();
-		// Custom - TODO move this somewhere else
-		try {
-			GameData.getAvatarSkillDepotDataMap().get(504).setAbilities(
-				new AbilityEmbryoEntry(
-					"", 
-					new String[] {
-						"Avatar_PlayerBoy_ExtraAttack_Wind",
-						"Avatar_Player_UziExplode_Mix",
-						"Avatar_Player_UziExplode",
-						"Avatar_Player_UziExplode_Strike_01",
-						"Avatar_Player_UziExplode_Strike_02",
-						"Avatar_Player_WindBreathe",
-						"Avatar_Player_WindBreathe_CameraController"
-					}
-			));
-			GameData.getAvatarSkillDepotDataMap().get(704).setAbilities(
-				new AbilityEmbryoEntry(
-					"", 
-					new String[] {
-						"Avatar_PlayerGirl_ExtraAttack_Wind",
-						"Avatar_Player_UziExplode_Mix",
-						"Avatar_Player_UziExplode",
-						"Avatar_Player_UziExplode_Strike_01",
-						"Avatar_Player_UziExplode_Strike_02",
-						"Avatar_Player_WindBreathe",
-						"Avatar_Player_WindBreathe_CameraController"
-					}
-			));
-		} catch (Exception e) {
-			Grasscutter.getLogger().error("Error loading abilities", e);
-		}
+
 	}
 
 	public static void loadResources() {

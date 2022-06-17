@@ -15,7 +15,6 @@ import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.EntityVehicle;
 import emu.grasscutter.game.home.GameHome;
-import emu.grasscutter.game.managers.DeforestationManager.DeforestationManager;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
