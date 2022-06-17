@@ -44,11 +44,8 @@ public final class DatabaseManager {
 	// Yes. I very dislike this method. However, this will be good for now.
 	// TODO: Add dispatch routes for player account management
 	public static Datastore getAccountDatastore() {
-		if(SERVER.runMode == ServerRunMode.GAME_ONLY) {
-			return dispatchDatastore;
-		} else {
-			return gameDatastore;
-		}
+		// Account datastore should be managed by config.json, not a hardcode
+		return dispatchDatastore;
 	}
 	
 	public static void initialize() {
@@ -88,7 +85,7 @@ public final class DatabaseManager {
 		try {
 			dispatchDatastore.ensureIndexes();
 		} catch (MongoCommandException exception) {
-			Grasscutter.getLogger().info("Mongo index error: ", e);
+			Grasscutter.getLogger().info("Mongo index error: ", exception);
 			// Duplicate index error
 			if (exception.getCode() == 85) {
 				// Drop all indexes and re add them
