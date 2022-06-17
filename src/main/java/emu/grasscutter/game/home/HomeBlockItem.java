@@ -58,7 +58,7 @@ public class HomeBlockItem {
                 .setComfortValue(calComfort());
 
         this.deployFurnitureList.forEach(f -> proto.addDeployFurniureList(f.toProto()));
-        this.persistentFurnitureList.forEach(f -> proto.addDeployFurniureList(f.toProto()));
+        this.persistentFurnitureList.forEach(f -> proto.addPersistentFurnitureList(f.toProto()));
         this.deployAnimalList.forEach(f -> proto.addDeployAnimalList(f.toProto()));
         this.deployNPCList.forEach(f -> proto.addDeployNpcList(f.toProto()));
 
