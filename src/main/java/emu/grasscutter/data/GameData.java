@@ -80,6 +80,8 @@ public class GameData {
 	private static final Int2ObjectMap<WorldAreaData> worldAreaDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<WorldLevelData> worldLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<DailyDungeonData> dailyDungeonDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<DungeonEntryData> dungeonEntryDataMap = new Int2ObjectOpenHashMap<>();
+
 	private static final Int2ObjectMap<DungeonData> dungeonDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<QuestData> questDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<ShopGoodsData> shopGoodsDataMap = new Int2ObjectOpenHashMap<>();
@@ -334,6 +336,10 @@ public class GameData {
 	  
 	public static Int2ObjectMap<DailyDungeonData> getDailyDungeonDataMap() {
 		return dailyDungeonDataMap;
+	}
+
+	public static Int2ObjectMap<DungeonEntryData> getDungeonEntryDatatMap(){
+		return dungeonEntryDataMap;
 	}
 
 	public static Map<Integer, List<ShopGoodsData>> getShopGoodsDataEntries() {
