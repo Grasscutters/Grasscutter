@@ -6,6 +6,7 @@ import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.net.proto.HomeFurnitureDataOuterClass;
 import emu.grasscutter.net.proto.HomeMarkPointFurnitureDataOuterClass;
+import emu.grasscutter.net.proto.VectorOuterClass;
 import emu.grasscutter.utils.Position;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -22,7 +23,7 @@ public class HomeFurnitureItem {
     int parentFurnitureIndex;
     Position spawnPos;
     Position spawnRot;
-
+    int version;
     public HomeFurnitureDataOuterClass.HomeFurnitureData toProto(){
         return HomeFurnitureDataOuterClass.HomeFurnitureData.newBuilder()
                 .setFurnitureId(furnitureId)
@@ -30,6 +31,7 @@ public class HomeFurnitureItem {
                 .setParentFurnitureIndex(parentFurnitureIndex)
                 .setSpawnPos(spawnPos.toProto())
                 .setSpawnRot(spawnRot.toProto())
+                .setVersion(version)
                 .build();
     }
 
@@ -50,6 +52,7 @@ public class HomeFurnitureItem {
                 .parentFurnitureIndex(homeFurnitureData.getParentFurnitureIndex())
                 .spawnPos(new Position(homeFurnitureData.getSpawnPos()))
                 .spawnRot(new Position(homeFurnitureData.getSpawnRot()))
+                .version(homeFurnitureData.getVersion())
                 .build();
     }
 
