@@ -329,6 +329,13 @@
       "success": "Server shutting down...",
       "description": "Stops the server"
     },
+    "switchElement": {
+      "usage": "Usage: switchelement <element [White/Anemo/Geo/Electro]>",
+      "success": "Switched to %s element." ,
+      "invalidElement": "Invalid element." ,
+      "not_console": "Cannot use this command in the console." ,
+      "description": "Switch to a different element"
+    },
     "talent": {
       "usage_1": "To set talent level: /talent set <talentID> <value>",
       "usage_2": "Another way to set talent level: /talent <n or e or q> <value>",
