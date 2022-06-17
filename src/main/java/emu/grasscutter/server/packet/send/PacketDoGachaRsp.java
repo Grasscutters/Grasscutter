@@ -4,6 +4,7 @@ import java.util.List;
 
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.gacha.GachaBanner;
+import emu.grasscutter.game.gacha.PlayerGachaBannerInfo;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DoGachaRspOuterClass.DoGachaRsp;
@@ -13,12 +14,12 @@ import emu.grasscutter.net.proto.RetcodeOuterClass;
 
 public class PacketDoGachaRsp extends BasePacket {
 	
-	public PacketDoGachaRsp(GachaBanner banner, List<GachaItem> list) {
+	public PacketDoGachaRsp(GachaBanner banner, List<GachaItem> list, PlayerGachaBannerInfo gachaInfo) {
 		super(PacketOpcodes.DoGachaRsp);
 
 		ItemParamData costItem = banner.getCost(1);
 		ItemParamData costItem10 = banner.getCost(10);
-		DoGachaRsp p = DoGachaRsp.newBuilder()
+		DoGachaRsp.Builder rsp = DoGachaRsp.newBuilder()
 				.setGachaType(banner.getGachaType())
 				.setGachaScheduleId(banner.getScheduleId())
 				.setGachaTimes(list.size())
@@ -28,10 +29,15 @@ public class PacketDoGachaRsp extends BasePacket {
 	            .setCostItemNum(costItem.getCount())
 	            .setTenCostItemId(costItem10.getId())
 	            .setTenCostItemNum(costItem10.getCount())
-	            .addAllGachaItemList(list)
-				.build();
+	            .addAllGachaItemList(list);
+
+		if(banner.hasEpitomized()) {
+			rsp.setWishItemId(gachaInfo.getWishItemId())
+				.setWishProgress(gachaInfo.getFailedChosenItemPulls())
+				.setWishMaxProgress(banner.getWishMaxProgress());
+		}
 		
-		this.setData(p);
+		this.setData(rsp.build());
 	}
 
 	public PacketDoGachaRsp() {

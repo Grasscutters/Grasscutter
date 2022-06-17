@@ -399,6 +399,11 @@
         "available_five_stars": "Objets 5 étoiles disponibles",
         "available_four_stars": "Objets 4 étoiles disponibles",
         "available_three_stars": "Objets 3 étoiles disponibles"
+      },
+      "records": {
+        "title": "Gacha Records",
+        "date": "Date",
+        "item": "Objet"
       }
     },
     "documentation": {

@@ -61,13 +61,14 @@ public class HealAbilityManager {
     }
 
     private class HealDataAvatar {
-        public static int MAX_NUM_HEAL_ABILITY = 4;
-        public String avatar = "";
+        public int avatarId = 0;
+        public String avatarName = "";
         public int fightPropertyType= 0; //0: maxHP, 1: curAttack, 2: curDefense
         public ArrayList<HealData> healDataList;
 
-        public HealDataAvatar(String _avatar, int _fightPropertyType) {
-            avatar = _avatar;
+        public HealDataAvatar(int _avatarId, String _avatarName, int _fightPropertyType) {
+            avatarId = _avatarId;
+            avatarName = _avatarName;
             fightPropertyType = _fightPropertyType;
             healDataList = new ArrayList();
         }
@@ -91,15 +92,15 @@ public class HealAbilityManager {
     public HealAbilityManager (Player player) {
 		this.player = player;
         healDataAvatarList = new ArrayList();
-        healDataAvatarList.add(new HealDataAvatar("Kokomi", 0).addHealData("E", "ElementalArt_Heal_MaxHP_Base_Percentage", "ElementalArt_Heal_Base_Amount", false));
-        healDataAvatarList.add(new HealDataAvatar("Qin", 1).addHealData("Q", "Heal", "BurstHealConst", true)); 
-        healDataAvatarList.add(new HealDataAvatar("Noel", 2).addHealData("E", "OnAttack_HealthRate", 0.452f, 282f, true));
-        healDataAvatarList.add(new HealDataAvatar("Bennett", 0).addHealData("Q", "HealMaxHpRatio", "HealConst", false));
-        healDataAvatarList.add(new HealDataAvatar("Diona", 0).addHealData("Q", "HealHPRatio", "HealHP_Const", false));
-        healDataAvatarList.add(new HealDataAvatar("Sayu", 1).addHealData("Q", "Constellation_6_Damage", "Heal_BaseAmount", true).addHealData("Q", "Heal_AttackRatio", "Constellation_6_Heal", true));
-        healDataAvatarList.add(new HealDataAvatar("Barbara", 0).addHealData("E", "HealHPOnAdded", "HealHPOnAdded_Const", true).addHealData("E", "HealHP_OnHittingOthers", "HealHP_Const_OnHittingOthers", true));
-        healDataAvatarList.add(new HealDataAvatar("Shinobu", 0).addHealData("E", "ElementalArt_Heal_MaxHP_Percentage", 0.064f, 795f, false));
-        healDataAvatarList.add(new HealDataAvatar("Qiqi", 1).addHealData("E", "HealHP_OnHittingOthers", "HealHP_Const_OnHittingOthers", true).addHealData("E", "ElementalArt_HealHp_Ratio", "ElementalArt_HealHp_Const", true));
+        healDataAvatarList.add(new HealDataAvatar(10000054, "Kokomi", 0).addHealData("E", "ElementalArt_Heal_MaxHP_Base_Percentage", "ElementalArt_Heal_Base_Amount", false));
+        healDataAvatarList.add(new HealDataAvatar(10000003, "Qin", 1).addHealData("Q", "Heal", "BurstHealConst", true)); 
+        healDataAvatarList.add(new HealDataAvatar(10000034, "Noel", 2).addHealData("E", "OnAttack_HealthRate", 0.452f, 282f, true));
+        healDataAvatarList.add(new HealDataAvatar(10000032, "Bennett", 0).addHealData("Q", "HealMaxHpRatio", "HealConst", false));
+        healDataAvatarList.add(new HealDataAvatar(10000039, "Diona", 0).addHealData("Q", "HealHPRatio", "HealHP_Const", false));
+        healDataAvatarList.add(new HealDataAvatar(10000053, "Sayu", 1).addHealData("Q", "Constellation_6_Damage", "Heal_BaseAmount", true).addHealData("Q", "Heal_AttackRatio", "Constellation_6_Heal", true));
+        healDataAvatarList.add(new HealDataAvatar(10000014, "Barbara", 0).addHealData("E", "HealHPOnAdded", "HealHPOnAdded_Const", true).addHealData("E", "HealHP_OnHittingOthers", "HealHP_Const_OnHittingOthers", true));
+        healDataAvatarList.add(new HealDataAvatar(10000065, "Shinobu", 0).addHealData("E", "ElementalArt_Heal_MaxHP_Percentage", 0.064f, 795f, false));
+        healDataAvatarList.add(new HealDataAvatar(10000035, "Qiqi", 1).addHealData("E", "HealHP_OnHittingOthers", "HealHP_Const_OnHittingOthers", true).addHealData("E", "ElementalArt_HealHp_Ratio", "ElementalArt_HealHp_Const", true));
     }
 
 	public Player getPlayer() {
@@ -129,9 +130,10 @@ public class HealAbilityManager {
         float ratio = 0, base = 0;
         float maxHP, curAttack, curDefense;
         Map<String, Float> map = sourceEntity.getMetaOverrideMap();
+
         for(int i = 0 ; i < healDataAvatarList.size() ; i ++) {
             HealDataAvatar healDataAvatar = healDataAvatarList.get(i);
-            if(modifierString.contains(healDataAvatar.avatar)) {
+            if(modifierString.contains(healDataAvatar.avatarName)) {
                 fightPropertyType = healDataAvatar.fightPropertyType;
                 ArrayList<HealData> healDataList = healDataAvatar.healDataList;
 
@@ -159,20 +161,33 @@ public class HealAbilityManager {
                         needHealAvatars.add(currentAvatar);
                     }
 
-                    maxHP = currentAvatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-                    curAttack = currentAvatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK);
-                    curDefense = currentAvatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE);
-                    switch(fightPropertyType) {
-                        case 0:
-                            healAmount = ratio * maxHP + base;
+                    EntityAvatar healActionAvatar = null;
+                    for(int k = 0 ; k < activeTeam.size() ; k ++) {
+                        EntityAvatar avatar = activeTeam.get(k);
+                        int avatarId = avatar.getAvatar().getAvatarId();
+                        if(avatarId == healDataAvatar.avatarId) {
+                            healActionAvatar = avatar;
                             break;
-                        case 1:
-                            healAmount = ratio * curAttack + base;
-                            break;
-                        case 2:
-                            healAmount = ratio * curDefense + base;
-                            break;
+                        }
                     }
+
+                    if(healActionAvatar != null) {
+                        maxHP = healActionAvatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+                        curAttack = healActionAvatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK);
+                        curDefense = healActionAvatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE);
+                        switch(fightPropertyType) {
+                            case 0:
+                                healAmount = ratio * maxHP + base;
+                                break;
+                            case 1:
+                                healAmount = ratio * curAttack + base;
+                                break;
+                            case 2:
+                                healAmount = ratio * curDefense + base;
+                                break;
+                        }
+                    }
+
                     for(int k = 0 ; k < needHealAvatars.size() ; k ++) {
                         EntityAvatar avatar = needHealAvatars.get(k);
                         avatar.heal(healAmount);

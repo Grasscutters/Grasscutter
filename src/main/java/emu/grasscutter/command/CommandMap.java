@@ -14,6 +14,7 @@ public final class CommandMap {
     private final Map<String, Command> annotations = new HashMap<>();
     private final Map<String, Integer> targetPlayerIds = new HashMap<>();
     private static final String consoleId = "console";
+
     public CommandMap() {
         this(false);
     }
@@ -202,21 +203,9 @@ public final class CommandMap {
             }
         }
 
-        // Check for permission.
-        if (player != null) {
-            String permissionNode = this.annotations.get(label).permission();
-            String permissionNodeTargeted = this.annotations.get(label).permissionTargeted();
-            Account account = player.getAccount();
-            if (player != targetPlayer) {  // Additional permission required for targeting another player
-                if (!permissionNodeTargeted.isEmpty() && !account.hasPermission(permissionNodeTargeted)) {
-                    CommandHandler.sendTranslatedMessage(player, "commands.generic.permission_error");
-                    return;
-                }
-            }
-            if (!permissionNode.isEmpty() && !account.hasPermission(permissionNode)) {
-                CommandHandler.sendTranslatedMessage(player, "commands.generic.permission_error");
-                return;
-            }
+        // Check for permissions.
+        if (!Grasscutter.getPermissionHandler().checkPermission(player, targetPlayer, this.annotations.get(label).permission(), this.annotations.get(label).permissionTargeted())) {
+            return;
         }
 
         // Check if command has unfulfilled constraints on targetPlayer

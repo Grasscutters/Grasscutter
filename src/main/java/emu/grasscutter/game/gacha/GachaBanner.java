@@ -1,5 +1,8 @@
 package emu.grasscutter.game.gacha;
 
+import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.Account;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.GachaInfoOuterClass.GachaInfo;
 import emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfo;
 import emu.grasscutter.utils.Utils;
@@ -44,6 +47,7 @@ public class GachaBanner {
 	private int[] rateUpItems2 = {};
 	private int eventChance = -1;
 	private int costItem = 0;
+	private int wishMaxProgress = 2;
 	
 	public int getGachaType() {
 		return gachaType;
@@ -108,6 +112,11 @@ public class GachaBanner {
 	public boolean getRemoveC6FromPool() {return removeC6FromPool;}
 	public boolean getAutoStripRateUpFromFallback() {return autoStripRateUpFromFallback;}
 
+	public int getWishMaxProgress() {return wishMaxProgress;}
+
+	public boolean hasEpitomized() {
+		return bannerType.equals(BannerType.WEAPON);
+	}
 
 	public int getWeight(int rarity, int pity) {
 		return switch(rarity) {
@@ -129,13 +138,11 @@ public class GachaBanner {
 			default -> (eventChance > -1) ? eventChance : eventChance5;
 		};
 	}
-
-	@Deprecated
-	public GachaInfo toProto() {
-		return toProto("");
-	}
 	
-	public GachaInfo toProto(String sessionKey) {
+	public GachaInfo toProto(Player player) {
+		// TODO: use other Nonce/key insteadof session key to ensure the overall security for the player
+		String sessionKey = player.getAccount().getSessionKey();
+		
 		String record = "http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
 						+ lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress) + ":"
 						+ lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort)
@@ -166,6 +173,15 @@ public class GachaBanner {
 	            .setLeftGachaTimes(Integer.MAX_VALUE)
 	            .setGachaTimesLimit(Integer.MAX_VALUE)
 	            .setGachaSortId(this.getSortId());
+
+		if(hasEpitomized()) {
+			PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(this);
+
+			info.setWishItemId(gachaInfo.getWishItemId())
+				.setWishProgress(gachaInfo.getFailedChosenItemPulls())
+				.setWishMaxProgress(this.getWishMaxProgress());
+		}
+
 		if (this.getTitlePath() != null) {
 			info.setTitleTextmap(this.getTitlePath());
 		}
