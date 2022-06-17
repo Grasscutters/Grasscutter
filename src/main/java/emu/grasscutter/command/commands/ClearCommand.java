@@ -12,7 +12,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "clear", usage = "clear <all|wp|art|mat>", //Merged /clearartifacts and /clearweapons to /clear <args> [uid]
+@Command(label = "clear", usage = "clear <all|wp|art|mat|unlocked>", //Merged /clearartifacts and /clearweapons to /clear <args> [uid]
         description = "commands.clear.description",
         aliases = {"clear"}, permission = "player.clearinv", permissionTargeted = "player.clearinv.others")
 
@@ -50,6 +50,21 @@ public final class ClearCommand implements CommandHandler {
                         .filter(item -> !item.isLocked() && !item.isEquipped())
                         .toList();
                 CommandHandler.sendMessage(sender, translate(sender, "commands.clear.materials", targetPlayer.getNickname()));
+            }
+            case "unlocked" -> {
+                 toDelete = playerInventory.getItems().values().stream()
+                        .filter(item1 -> item1.getItemType() == ItemType.ITEM_WEAPON)
+                        .filter(item1 -> !item1.isLocked() && !item1.isEquipped())
+                        .toList();
+                playerInventory.removeItems(toDelete);
+
+                toDelete = playerInventory.getItems().values().stream()
+                        .filter(item2 -> item2.getItemType() == ItemType.ITEM_RELIQUARY)
+                        .filter(item2 -> item2.getLevel() >= 1 && item2.getExp() >= 0)
+                        .filter(item2 -> !item2.isLocked() && !item2.isEquipped())
+                        .toList();
+                playerInventory.removeItems(toDelete);
+                CommandHandler.sendMessage(sender, translate(sender, "commands.clear.unlocked", targetPlayer.getNickname()));
             }
             case "all" -> {
             	toDelete = playerInventory.getItems().values().stream()

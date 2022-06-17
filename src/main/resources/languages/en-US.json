@@ -125,13 +125,14 @@
       "description": "Changes your scene"
     },
     "clear": {
-      "command_usage": "Usage: clear <all|wp|art|mat>",
+      "command_usage": "Usage: clear <all|wp|art|mat|unlocked>",
       "weapons": "Cleared weapons for %s.",
       "artifacts": "Cleared artifacts for %s.",
       "materials": "Cleared materials for %s.",
       "furniture": "Cleared furniture for %s.",
       "displays": "Cleared displays for %s.",
       "virtuals": "Cleared virtuals for %s.",
+      "unlocked": "Cleared unlocked weapons and artifacts for %s.",
       "everything": "Cleared everything for %s.",
       "description": "Deletes unequipped unlocked items, including yellow rarity ones from your inventory"
     },
