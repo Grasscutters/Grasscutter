@@ -63,7 +63,7 @@ public class DungeonChallenge {
 				dungeonDropData.put(entry.getDungeonId(), entry.getDrops());
 			}
 
-			Grasscutter.getLogger().info("Dungeon drop data successfully loaded.");
+			Grasscutter.getLogger().info("Loaded {} dungeon drop data entries.", dungeonDropData.size());
 		}
 		catch (Exception ex) {
 			Grasscutter.getLogger().error("Unable to load dungeon drop data.", ex);
@@ -194,6 +194,7 @@ public class DungeonChallenge {
 
 		// If we have specific drop data for this dungeon, we use it.
 		if (dungeonDropData.containsKey(dungeonId)) {
+			Grasscutter.getLogger().info("Drop data found, using it ...");
 			List<DungeonDropEntry> dropEntries = dungeonDropData.get(dungeonId);
 
 			// Roll for each drop group.
@@ -209,6 +210,11 @@ public class DungeonChallenge {
 					amount += Utils.drawRandomListElement(candidateAmounts, entry.getProbabilities());
 				}
 
+				// Double rewards in multiplay mode, if specified.
+				if (entry.isMpDouble() && this.getScene().getPlayerCount() > 1) {
+					amount *= 2;
+				}
+
 				// Roll items for this group.
 				// Here, we have to handle stacking, or the client will not display results correctly.
 				// For now, we use the following logic: If the possible drop item are a list of multiple items,
@@ -219,9 +225,9 @@ public class DungeonChallenge {
 				}
 				else {
 					for (int i = 0; i < amount; i++) {
-						int itemIndex = ThreadLocalRandom.current().nextInt(0, entry.getItems().size());
-						int itemId = entry.getItems().get(itemIndex);
-
+						// int itemIndex = ThreadLocalRandom.current().nextInt(0, entry.getItems().size());
+						// int itemId = entry.getItems().get(itemIndex);
+						int itemId = Utils.drawRandomListElement(entry.getItems(), entry.getItemProbabilities());
 						rewards.add(new GameItem(itemId, 1));
 					}
 				}
@@ -229,6 +235,7 @@ public class DungeonChallenge {
 		}
 		// Otherwise, we fall back to the preview data.
 		else {
+			Grasscutter.getLogger().info("No drop data found, falling back to preview ...");
 			for (ItemParamData param : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
 				rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
 			}

@@ -6,6 +6,8 @@ public class DungeonDropEntry {
 	private List<Integer> counts;
 	private List<Integer> items;
 	private List<Integer> probabilities;
+	private List<Integer> itemProbabilities;
+	private boolean mpDouble;
 
 	public List<Integer> getCounts() {
 		return counts;
@@ -26,5 +28,19 @@ public class DungeonDropEntry {
 	}
 	public void setProbabilities(List<Integer> probabilities) {
 		this.probabilities = probabilities;
+	}
+
+	public List<Integer> getItemProbabilities() {
+		return itemProbabilities;
+	}
+	public void setItemProbabilities(List<Integer> itemProbabilities) {
+		this.itemProbabilities = itemProbabilities;
+	}
+
+	public boolean isMpDouble() {
+		return mpDouble;
+	}
+	public void setMpDouble(boolean mpDouble) {
+		this.mpDouble = mpDouble;
 	}
 }

@@ -3,27 +3,28 @@
         "dungeonId": 5100,
         "comment": "Domain of Guyun 1",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1525],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [15],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Artifacts",
                 "counts": [5],
                 "items": [61240, 61241, 61220, 61221, 61250, 61251, 61210, 61211, 61230, 61231]
             },
-            { 
+            {
                 "comment": "3-star Artifacts",
                 "counts": [2, 3],
                 "probabilities": [85, 15],
@@ -32,28 +33,248 @@
         ]
     },
     {
+        "dungeonId": 5101,
+        "comment": "Domain of Guyun 2",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1700],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Artifacts",
+                "counts": [2, 3],
+                "items": [61240, 61241, 61220, 61221, 61250, 61251, 61210, 61211, 61230, 61231]
+            },
+            {
+                "comment": "3-star Artifacts",
+                "counts": [4, 5],
+                "probabilities": [20, 80],
+                "items": [
+                    61341, 61342, 61321, 61322, 61351, 61352, 61311, 61312, 61331, 61332,
+                    52341, 52342, 52321, 52322, 52351, 52352, 52311, 52312, 52331, 52332
+                ]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5102,
+        "comment": "Domain of Guyun 3",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1850],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "3-star Artifacts",
+                "counts": [6, 7],
+                "probabilities": [60, 40],
+                "items": [
+                    61341, 61342, 61321, 61322, 61351, 61352, 61311, 61312, 61331, 61332,
+                    52341, 52342, 52321, 52322, 52351, 52352, 52311, 52312, 52331, 52332
+                ]
+            },
+            {
+                "comment": "4-star Artifacts",
+                "counts": [0, 2],
+                "probabilities": [20, 70, 10],
+                "items": [
+                    52442, 52443, 52422, 52423, 52452, 52453, 52412, 52413, 52432, 52433,
+                    88442, 88443, 88422, 88423, 88452, 88453, 88412, 88413, 88432, 88433,
+                    89442, 89443, 89422, 89423, 89452, 89453, 89412, 89413, 89432, 89433
+                ]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5103,
+        "comment": "Domain of Guyun 4",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2025],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "3-star Artifacts",
+                "counts": [5, 6],
+                "probabilities": [20, 80],
+                "items": [
+                    61341, 61342, 61321, 61322, 61351, 61352, 61311, 61312, 61331, 61332,
+                    52341, 52342, 52321, 52322, 52351, 52352, 52311, 52312, 52331, 52332
+                ]
+            },
+            {
+                "comment": "4-star Artifacts",
+                "counts": [1, 2],
+                "probabilities": [60, 40],
+                "items": [
+                    52442, 52443, 52422, 52423, 52452, 52453, 52412, 52413, 52432, 52433,
+                    88442, 88443, 88422, 88423, 88452, 88453, 88412, 88413, 88432, 88433,
+                    89442, 89443, 89422, 89423, 89452, 89453, 89412, 89413, 89432, 89433
+                ]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5104,
+        "comment": "Domain of Guyun 5",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2200],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "3-star Artifacts",
+                "counts": [4, 5],
+                "probabilities": [2, 98],
+                "items": [
+                    61341, 61342, 61321, 61322, 61351, 61352, 61311, 61312, 61331, 61332,
+                    52341, 52342, 52321, 52322, 52351, 52352, 52311, 52312, 52331, 52332
+                ]
+            },
+            {
+                "comment": "4-star Artifacts",
+                "counts": [1, 2],
+                "probabilities": [20, 80],
+                "items": [
+                    52442, 52443, 52422, 52423, 52452, 52453, 52412, 52413, 52432, 52433,
+                    88442, 88443, 88422, 88423, 88452, 88453, 88412, 88413, 88432, 88433,
+                    89442, 89443, 89422, 89423, 89452, 89453, 89412, 89413, 89432, 89433
+                ]
+            },
+            {
+                "comment": "5-star Artifacts",
+                "counts": [0, 1],
+                "probabilities": [60, 40],
+                "items": [
+                    88543, 88544, 88523, 88524, 88553, 88554, 88513, 88514, 88533, 88534,
+                    89543, 89544, 89523, 89524, 89553, 89554, 89513, 89514, 89533, 89534
+                ]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5105,
+        "comment": "Domain of Guyun 6",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2525],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "3-star Artifacts",
+                "counts": [3, 4],
+                "probabilities": [50, 50],
+                "items": [
+                    61341, 61342, 61321, 61322, 61351, 61352, 61311, 61312, 61331, 61332,
+                    52341, 52342, 52321, 52322, 52351, 52352, 52311, 52312, 52331, 52332
+                ]
+            },
+            {
+                "comment": "4-star Artifacts",
+                "counts": [2, 3],
+                "probabilities": [50, 50],
+                "items": [
+                    52442, 52443, 52422, 52423, 52452, 52453, 52412, 52413, 52432, 52433,
+                    88442, 88443, 88422, 88423, 88452, 88453, 88412, 88413, 88432, 88433,
+                    89442, 89443, 89422, 89423, 89452, 89453, 89412, 89413, 89432, 89433
+                ]
+            },
+            {
+                "comment": "5-star Artifacts",
+                "counts": [1, 2],
+                "probabilities": [90, 10],
+                "items": [
+                    88543, 88544, 88523, 88524, 88553, 88554, 88513, 88514, 88533, 88534,
+                    89543, 89544, 89523, 89524, 89553, 89554, 89513, 89514, 89533, 89534
+                ]
+            }
+        ]
+    },
+    {
         "dungeonId": 4210,
         "comment": "Forsaken Rift 1: Monday/Thursday",
         "drops": [
-            { 
-                "comment": "AR exp", 
-                "counts": [100], 
-                "items": [102] 
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
             },
-            { 
-                "comment": "Mora", 
-                "counts": [1575], 
-                "items": [202] 
+            {
+                "comment": "Mora",
+                "counts": [1575],
+                "items": [202]
             },
-            { 
-                "comment": "Friendship exp", 
-                "counts": [15], 
-                "items": [105] 
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
             },
-            { 
-                "comment": "2-star Books", 
-                "counts": [3, 4], 
-                "items": [104301] 
+            {
+                "comment": "2-star Books",
+                "counts": [3, 4],
+                "probabilities": [80, 20],
+                "items": [104301]
             }
         ]
     },
@@ -61,27 +282,29 @@
         "dungeonId": 4211,
         "comment": "Forsaken Rift 2: Monday/Thursday",
         "drops": [
-            { 
-                "comment": "AR exp", 
-                "counts": [100], 
-                "items": [102] 
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
             },
-            { 
-                "comment": "Mora", 
-                "counts": [1800], 
-                "items": [202] 
+            {
+                "comment": "Mora",
+                "counts": [1800],
+                "items": [202]
             },
-            { 
-                "comment": "Friendship exp", 
-                "counts": [15], 
-                "items": [105] 
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
             },
-            { 
-                "comment": "2-star Books", 
-                "counts": [2, 3], 
-                "items": [104301] 
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [50, 50],
+                "items": [104301]
             },
-            { 
+            {
                 "comment": "3-star Books",
                 "counts": [1],
                 "items": [104302]
@@ -92,27 +315,29 @@
         "dungeonId": 4212,
         "comment": "Forsaken Rift 3: Monday/Thursday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [2050],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [20],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Books",
                 "counts": [1, 2],
+                "probabilities": [20, 80],
                 "items": [104301]
             },
-            { 
+            {
                 "comment": "3-star Books",
                 "counts": [2],
                 "items": [104302]
@@ -123,34 +348,38 @@
         "dungeonId": 4213,
         "comment": "Forsaken Rift 4: Monday/Thursday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [2375],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [20],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Books",
                 "counts": [2, 3],
+                "probabilities": [80, 20],
                 "items": [104301]
             },
-            { 
+            {
                 "comment": "3-star Books",
                 "counts": [0, 3],
+                "probabilities": [1, 14, 80, 5],
                 "items": [104302]
             },
-            { 
+            {
                 "comment": "4-star Books",
                 "counts": [0, 3],
+                "probabilities": [80, 15, 4, 1],
                 "items": [104303]
             }
         ]
@@ -159,24 +388,26 @@
         "dungeonId": 4220,
         "comment": "Forsaken Rift 1: Tuesday/Friday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1575],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [15],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Books",
                 "counts": [3, 4],
+                "probabilities": [80, 20],
                 "items": [104304]
             }
         ]
@@ -185,27 +416,29 @@
         "dungeonId": 4221,
         "comment": "Forsaken Rift 2: Tuesday/Friday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1800],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [15],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Books",
                 "counts": [2, 3],
+                "probabilities": [50, 50],
                 "items": [104304]
             },
-            { 
+            {
                 "comment": "3-star Books",
                 "counts": [1],
                 "items": [104305]
@@ -216,27 +449,29 @@
         "dungeonId": 4222,
         "comment": "Forsaken Rift 3: Tuesday/Friday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [2050],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [20],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Books",
                 "counts": [1, 2],
+                "probabilities": [20, 80],
                 "items": [104304]
             },
-            { 
+            {
                 "comment": "3-star Books",
                 "counts": [2],
                 "items": [104305]
@@ -247,34 +482,38 @@
         "dungeonId": 4223,
         "comment": "Forsaken Rift 4: Tuesday/Friday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [2375],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [20],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Books",
                 "counts": [2, 3],
+                "probabilities": [80, 20],
                 "items": [104304]
             },
-            { 
+            {
                 "comment": "3-star Books",
                 "counts": [0, 3],
+                "probabilities": [1, 14, 80, 5],
                 "items": [104305]
             },
-            { 
+            {
                 "comment": "4-star Books",
                 "counts": [0, 3],
+                "probabilities": [80, 15, 4, 1],
                 "items": [104306]
             }
         ]
@@ -283,24 +522,26 @@
         "dungeonId": 4230,
         "comment": "Forsaken Rift 1: Wednesday/Saturday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1575],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [15],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Books",
                 "counts": [3, 4],
+                "probabilities": [80, 20],
                 "items": [104307]
             }
         ]
@@ -309,27 +550,29 @@
         "dungeonId": 4231,
         "comment": "Forsaken Rift 2: Wednesday/Saturday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1800],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [15],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Books",
                 "counts": [2, 3],
+                "probabilities": [50, 50],
                 "items": [104307]
             },
-            { 
+            {
                 "comment": "3-star Books",
                 "counts": [1],
                 "items": [104308]
@@ -340,27 +583,29 @@
         "dungeonId": 4232,
         "comment": "Forsaken Rift 3: Wednesday/Saturday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [2050],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [20],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Books",
                 "counts": [1, 2],
+                "probabilities": [20, 80],
                 "items": [104307]
             },
-            { 
+            {
                 "comment": "3-star Books",
                 "counts": [2],
                 "items": [104308]
@@ -371,35 +616,843 @@
         "dungeonId": 4233,
         "comment": "Forsaken Rift 4: Wednesday/Saturday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [2375],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [20],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Books",
                 "counts": [2, 3],
+                "probabilities": [80, 20],
                 "items": [104307]
             },
-            { 
+            {
                 "comment": "3-star Books",
                 "counts": [0, 3],
+                "probabilities": [1, 14, 80, 5],
                 "items": [104308]
             },
-            { 
+            {
                 "comment": "4-star Books",
                 "counts": [0, 3],
+                "probabilities": [80, 15, 4, 1],
                 "items": [104309]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4400,
+        "comment": "Violet Court 1: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1575],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [3, 4],
+                "probabilities": [80, 20],
+                "items": [104320]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4401,
+        "comment": "Violet Court 2: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1800],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [50, 50],
+                "items": [104320]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [1],
+                "items": [104321]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4402,
+        "comment": "Violet Court 3: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2050],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [1, 2],
+                "probabilities": [20, 80],
+                "items": [104320]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [2],
+                "items": [104321]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4403,
+        "comment": "Violet Court 4: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2375],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [104320]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [0, 3],
+                "probabilities": [1, 14, 80, 5],
+                "items": [104321]
+            },
+            {
+                "comment": "4-star Books",
+                "counts": [0, 3],
+                "probabilities": [80, 15, 4, 1],
+                "items": [104322]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4410,
+        "comment": "Violet Court 1: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1575],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [3, 4],
+                "probabilities": [80, 20],
+                "items": [104323]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4411,
+        "comment": "Violet Court 2: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1800],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [50, 50],
+                "items": [104323]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [1],
+                "items": [104324]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4412,
+        "comment": "Violet Court 3: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2050],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [1, 2],
+                "probabilities": [20, 80],
+                "items": [104323]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [2],
+                "items": [104324]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4413,
+        "comment": "Violet Court 4: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2375],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [104323]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [0, 3],
+                "probabilities": [1, 14, 80, 5],
+                "items": [104324]
+            },
+            {
+                "comment": "4-star Books",
+                "counts": [0, 3],
+                "probabilities": [80, 15, 4, 1],
+                "items": [104325]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4420,
+        "comment": "Violet Court 1: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1575],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [3, 4],
+                "probabilities": [80, 20],
+                "items": [104326]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4421,
+        "comment": "Violet Court 2: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1800],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [50, 50],
+                "items": [104326]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [1],
+                "items": [104327]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4422,
+        "comment": "Violet Court 3: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2050],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [1, 2],
+                "probabilities": [20, 80],
+                "items": [104326]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [2],
+                "items": [104327]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4423,
+        "comment": "Violet Court 4: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2375],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [104326]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [0, 3],
+                "probabilities": [1, 14, 80, 5],
+                "items": [104327]
+            },
+            {
+                "comment": "4-star Books",
+                "counts": [0, 3],
+                "probabilities": [80, 15, 4, 1],
+                "items": [104328]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5254,
+        "comment": "Taishan Mansion 1: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1575],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [3, 4],
+                "probabilities": [80, 20],
+                "items": [104310]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5255,
+        "comment": "Taishan Mansion 2: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1800],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [50, 50],
+                "items": [104310]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [1],
+                "items": [104311]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5256,
+        "comment": "Taishan Mansion 3: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2050],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [1, 2],
+                "probabilities": [20, 80],
+                "items": [104310]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [2],
+                "items": [104311]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5257,
+        "comment": "Taishan Mansion 4: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2375],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [104310]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [0, 3],
+                "probabilities": [1, 14, 80, 5],
+                "items": [104311]
+            },
+            {
+                "comment": "4-star Books",
+                "counts": [0, 3],
+                "probabilities": [80, 15, 4, 1],
+                "items": [104312]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5258,
+        "comment": "Taishan Mansion 1: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1575],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [3, 4],
+                "probabilities": [80, 20],
+                "items": [104313]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5259,
+        "comment": "Taishan Mansion 2: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1800],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [50, 50],
+                "items": [104313]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [1],
+                "items": [104314]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5260,
+        "comment": "Taishan Mansion 3: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2050],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [1, 2],
+                "probabilities": [20, 80],
+                "items": [104313]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [2],
+                "items": [104314]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5261,
+        "comment": "Taishan Mansion 4: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2375],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [104313]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [0, 3],
+                "probabilities": [1, 14, 80, 5],
+                "items": [104314]
+            },
+            {
+                "comment": "4-star Books",
+                "counts": [0, 3],
+                "probabilities": [80, 15, 4, 1],
+                "items": [104315]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5262,
+        "comment": "Taishan Mansion 1: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1575],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [3, 4],
+                "probabilities": [80, 20],
+                "items": [104316]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5263,
+        "comment": "Taishan Mansion 2: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1800],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [50, 50],
+                "items": [104316]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [1],
+                "items": [104317]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5264,
+        "comment": "Taishan Mansion 3: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2050],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [1, 2],
+                "probabilities": [20, 80],
+                "items": [104316]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [2],
+                "items": [104317]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5265,
+        "comment": "Taishan Mansion 4: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2375],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Books",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [104316]
+            },
+            {
+                "comment": "3-star Books",
+                "counts": [0, 3],
+                "probabilities": [1, 14, 80, 5],
+                "items": [104317]
+            },
+            {
+                "comment": "4-star Books",
+                "counts": [0, 3],
+                "probabilities": [80, 15, 4, 1],
+                "items": [104318]
             }
         ]
     },
@@ -407,24 +1460,26 @@
         "dungeonId": 4310,
         "comment": "Cecilia Garden 1: Monday/Thursday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1125],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [10],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Weapon Material",
                 "counts": [4, 6],
+                "probabilities": [20, 60, 30],
                 "items": [114001]
             }
         ]
@@ -433,27 +1488,29 @@
         "dungeonId": 4311,
         "comment": "Cecilia Garden 2: Monday/Thursday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1550],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [15],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Weapon Material",
                 "counts": [2, 3],
+                "probabilities": [20, 80],
                 "items": [114001]
             },
-            { 
+            {
                 "comment": "3-star Weapon Material",
                 "counts": [2],
                 "items": [114002]
@@ -464,34 +1521,38 @@
         "dungeonId": 4312,
         "comment": "Cecilia Garden 3: Monday/Thursday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1850],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [15],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Weapon Material",
                 "counts": [2, 3],
+                "probabilities": [80, 20],
                 "items": [114001]
             },
-            { 
+            {
                 "comment": "3-star Weapon Material",
                 "counts": [2, 3],
+                "probabilities": [20, 80],
                 "items": [114002]
             },
-            { 
+            {
                 "comment": "4-star Weapon Material",
                 "counts": [0, 2],
+                "probabilities": [80, 15, 5],
                 "items": [114003]
             }
         ]
@@ -500,39 +1561,44 @@
         "dungeonId": 4313,
         "comment": "Cecilia Garden 4: Monday/Thursday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [2200],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [20],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Weapon Material",
                 "counts": [2, 3],
+                "probabilities": [80, 20],
                 "items": [114001]
             },
-            { 
+            {
                 "comment": "3-star Weapon Material",
                 "counts": [0, 4],
+                "probabilities": [5, 45, 40, 5, 5],
                 "items": [114002]
             },
-            { 
+            {
                 "comment": "4-star Weapon Material",
                 "counts": [0, 4],
+                "probabilities": [40, 40, 15, 4, 1],
                 "items": [114003]
             },
-            { 
+            {
                 "comment": "5-star Weapon Material",
                 "counts": [0, 2],
+                "probabilities": [80, 15, 5],
                 "items": [114004]
             }
         ]
@@ -541,24 +1607,26 @@
         "dungeonId": 4320,
         "comment": "Cecilia Garden 1: Tuesday/Friday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1125],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [10],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Weapon Material",
                 "counts": [4, 6],
+                "probabilities": [20, 60, 30],
                 "items": [114005]
             }
         ]
@@ -567,27 +1635,29 @@
         "dungeonId": 4321,
         "comment": "Cecilia Garden 2: Tuesday/Friday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1550],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [15],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Weapon Material",
                 "counts": [2, 3],
+                "probabilities": [20, 80],
                 "items": [114005]
             },
-            { 
+            {
                 "comment": "3-star Weapon Material",
                 "counts": [2],
                 "items": [114006]
@@ -598,34 +1668,38 @@
         "dungeonId": 4322,
         "comment": "Cecilia Garden 3: Tuesday/Friday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1850],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [15],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Weapon Material",
                 "counts": [2, 3],
+                "probabilities": [80, 20],
                 "items": [114005]
             },
-            { 
+            {
                 "comment": "3-star Weapon Material",
                 "counts": [2, 3],
+                "probabilities": [20, 80],
                 "items": [114006]
             },
-            { 
+            {
                 "comment": "4-star Weapon Material",
                 "counts": [0, 2],
+                "probabilities": [80, 15, 5],
                 "items": [114007]
             }
         ]
@@ -634,39 +1708,44 @@
         "dungeonId": 4323,
         "comment": "Cecilia Garden 4: Tuesday/Friday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [2200],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [20],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Weapon Material",
                 "counts": [2, 3],
+                "probabilities": [80, 20],
                 "items": [114005]
             },
-            { 
+            {
                 "comment": "3-star Weapon Material",
                 "counts": [0, 4],
+                "probabilities": [5, 45, 40, 5, 5],
                 "items": [114006]
             },
-            { 
+            {
                 "comment": "4-star Weapon Material",
                 "counts": [0, 4],
+                "probabilities": [40, 40, 15, 4, 1],
                 "items": [114007]
             },
-            { 
+            {
                 "comment": "5-star Weapon Material",
                 "counts": [0, 2],
+                "probabilities": [80, 15, 5],
                 "items": [114008]
             }
         ]
@@ -675,24 +1754,26 @@
         "dungeonId": 4330,
         "comment": "Cecilia Garden 1: Wednesday/Saturday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1125],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [10],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Weapon Material",
                 "counts": [4, 6],
+                "probabilities": [20, 60, 30],
                 "items": [114009]
             }
         ]
@@ -701,27 +1782,29 @@
         "dungeonId": 4331,
         "comment": "Cecilia Garden 2: Wednesday/Saturday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1550],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [15],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Weapon Material",
                 "counts": [2, 3],
+                "probabilities": [20, 80],
                 "items": [114009]
             },
-            { 
+            {
                 "comment": "3-star Weapon Material",
                 "counts": [2],
                 "items": [114010]
@@ -732,34 +1815,38 @@
         "dungeonId": 4332,
         "comment": "Cecilia Garden 3: Wednesday/Saturday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [1850],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [15],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Weapon Material",
                 "counts": [2, 3],
+                "probabilities": [80, 20],
                 "items": [114009]
             },
-            { 
+            {
                 "comment": "3-star Weapon Material",
                 "counts": [2, 3],
+                "probabilities": [20, 80],
                 "items": [114010]
             },
-            { 
+            {
                 "comment": "4-star Weapon Material",
                 "counts": [0, 2],
+                "probabilities": [80, 15, 5],
                 "items": [114011]
             }
         ]
@@ -768,40 +1855,927 @@
         "dungeonId": 4333,
         "comment": "Cecilia Garden 4: Wednesday/Saturday",
         "drops": [
-            { 
+            {
                 "comment": "AR exp",
                 "counts": [100],
                 "items": [102]
             },
-            { 
+            {
                 "comment": "Mora",
                 "counts": [2200],
                 "items": [202]
             },
-            { 
+            {
                 "comment": "Friendship exp",
                 "counts": [20],
-                "items": [105]
+                "items": [105],
+                "mpDouble": true
             },
-            { 
+            {
                 "comment": "2-star Weapon Material",
                 "counts": [2, 3],
+                "probabilities": [80, 20],
                 "items": [114009]
             },
-            { 
+            {
                 "comment": "3-star Weapon Material",
                 "counts": [0, 4],
+                "probabilities": [5, 45, 40, 5, 5],
                 "items": [114010]
             },
-            { 
+            {
                 "comment": "4-star Weapon Material",
                 "counts": [0, 4],
+                "probabilities": [40, 40, 15, 4, 1],
                 "items": [114011]
             },
-            { 
+            {
                 "comment": "5-star Weapon Material",
                 "counts": [0, 2],
+                "probabilities": [80, 15, 5],
                 "items": [114012]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4340,
+        "comment": "Court of Flowing Sands 1: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1125],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [10],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [4, 6],
+                "probabilities": [20, 60, 30],
+                "items": [114025]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4341,
+        "comment": "Court of Flowing Sands 2: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1550],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [20, 80],
+                "items": [114025]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [2],
+                "items": [114026]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4342,
+        "comment": "Court of Flowing Sands 3: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1850],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [114025]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [20, 80],
+                "items": [114026]
+            },
+            {
+                "comment": "4-star Weapon Material",
+                "counts": [0, 2],
+                "probabilities": [80, 15, 5],
+                "items": [114027]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4343,
+        "comment": "Court of Flowing Sands 4: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2200],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [114025]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [0, 4],
+                "probabilities": [5, 45, 40, 5, 5],
+                "items": [114026]
+            },
+            {
+                "comment": "4-star Weapon Material",
+                "counts": [0, 4],
+                "probabilities": [40, 40, 15, 4, 1],
+                "items": [114027]
+            },
+            {
+                "comment": "5-star Weapon Material",
+                "counts": [0, 2],
+                "probabilities": [80, 15, 5],
+                "items": [114028]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4350,
+        "comment": "Court of Flowing Sands 1: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1125],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [10],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [4, 6],
+                "probabilities": [20, 60, 30],
+                "items": [114029]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4351,
+        "comment": "Court of Flowing Sands 2: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1550],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [20, 80],
+                "items": [114029]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [2],
+                "items": [114030]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4352,
+        "comment": "Court of Flowing Sands 3: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1850],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [114029]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [20, 80],
+                "items": [114030]
+            },
+            {
+                "comment": "4-star Weapon Material",
+                "counts": [0, 2],
+                "probabilities": [80, 15, 5],
+                "items": [114031]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4353,
+        "comment": "Court of Flowing Sands 4: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2200],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [114029]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [0, 4],
+                "probabilities": [5, 45, 40, 5, 5],
+                "items": [114030]
+            },
+            {
+                "comment": "4-star Weapon Material",
+                "counts": [0, 4],
+                "probabilities": [40, 40, 15, 4, 1],
+                "items": [114031]
+            },
+            {
+                "comment": "5-star Weapon Material",
+                "counts": [0, 2],
+                "probabilities": [80, 15, 5],
+                "items": [114032]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4360,
+        "comment": "Court of Flowing Sands 1: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1125],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [10],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [4, 6],
+                "probabilities": [20, 60, 30],
+                "items": [114033]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4361,
+        "comment": "Court of Flowing Sands 2: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1550],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [20, 80],
+                "items": [114033]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [2],
+                "items": [114034]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4362,
+        "comment": "Court of Flowing Sands 3: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1850],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [114033]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [20, 80],
+                "items": [114034]
+            },
+            {
+                "comment": "4-star Weapon Material",
+                "counts": [0, 2],
+                "probabilities": [80, 15, 5],
+                "items": [114035]
+            }
+        ]
+    },
+    {
+        "dungeonId": 4363,
+        "comment": "Court of Flowing Sands 4: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2200],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [114033]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [0, 4],
+                "probabilities": [5, 45, 40, 5, 5],
+                "items": [114034]
+            },
+            {
+                "comment": "4-star Weapon Material",
+                "counts": [0, 4],
+                "probabilities": [40, 40, 15, 4, 1],
+                "items": [114035]
+            },
+            {
+                "comment": "5-star Weapon Material",
+                "counts": [0, 2],
+                "probabilities": [80, 15, 5],
+                "items": [114036]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5214,
+        "comment": "Hidden Palace of Lianshan Formula 1: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1125],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [10],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [4, 6],
+                "probabilities": [20, 60, 30],
+                "items": [114013]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5215,
+        "comment": "Hidden Palace of Lianshan Formula 2: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1550],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [20, 80],
+                "items": [114013]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [2],
+                "items": [114014]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5216,
+        "comment": "Hidden Palace of Lianshan Formula 3: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1850],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [114013]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [20, 80],
+                "items": [114014]
+            },
+            {
+                "comment": "4-star Weapon Material",
+                "counts": [0, 2],
+                "probabilities": [80, 15, 5],
+                "items": [114015]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5217,
+        "comment": "Hidden Palace of Lianshan Formula 4: Monday/Thursday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2200],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [114013]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [0, 4],
+                "probabilities": [5, 45, 40, 5, 5],
+                "items": [114014]
+            },
+            {
+                "comment": "4-star Weapon Material",
+                "counts": [0, 4],
+                "probabilities": [40, 40, 15, 4, 1],
+                "items": [114015]
+            },
+            {
+                "comment": "5-star Weapon Material",
+                "counts": [0, 2],
+                "probabilities": [80, 15, 5],
+                "items": [114016]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5218,
+        "comment": "Hidden Palace of Lianshan Formula 1: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1125],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [10],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [4, 6],
+                "probabilities": [20, 60, 30],
+                "items": [114017]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5219,
+        "comment": "Hidden Palace of Lianshan Formula 2: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1550],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [20, 80],
+                "items": [114017]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [2],
+                "items": [114018]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5220,
+        "comment": "Hidden Palace of Lianshan Formula 3: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1850],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [114017]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [20, 80],
+                "items": [114018]
+            },
+            {
+                "comment": "4-star Weapon Material",
+                "counts": [0, 2],
+                "probabilities": [80, 15, 5],
+                "items": [114019]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5221,
+        "comment": "Hidden Palace of Lianshan Formula 4: Tuesday/Friday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2200],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [114017]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [0, 4],
+                "probabilities": [5, 45, 40, 5, 5],
+                "items": [114018]
+            },
+            {
+                "comment": "4-star Weapon Material",
+                "counts": [0, 4],
+                "probabilities": [40, 40, 15, 4, 1],
+                "items": [114019]
+            },
+            {
+                "comment": "5-star Weapon Material",
+                "counts": [0, 2],
+                "probabilities": [80, 15, 5],
+                "items": [114020]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5222,
+        "comment": "Hidden Palace of Lianshan Formula 1: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1125],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [10],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [4, 6],
+                "probabilities": [20, 60, 30],
+                "items": [114021]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5223,
+        "comment": "Hidden Palace of Lianshan Formula 2: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1550],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [20, 80],
+                "items": [114021]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [2],
+                "items": [114022]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5224,
+        "comment": "Hidden Palace of Lianshan Formula 3: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [1850],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [15],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [114021]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [20, 80],
+                "items": [114022]
+            },
+            {
+                "comment": "4-star Weapon Material",
+                "counts": [0, 2],
+                "probabilities": [80, 15, 5],
+                "items": [114023]
+            }
+        ]
+    },
+    {
+        "dungeonId": 5225,
+        "comment": "Hidden Palace of Lianshan Formula 4: Wednesday/Saturday",
+        "drops": [
+            {
+                "comment": "AR exp",
+                "counts": [100],
+                "items": [102]
+            },
+            {
+                "comment": "Mora",
+                "counts": [2200],
+                "items": [202]
+            },
+            {
+                "comment": "Friendship exp",
+                "counts": [20],
+                "items": [105],
+                "mpDouble": true
+            },
+            {
+                "comment": "2-star Weapon Material",
+                "counts": [2, 3],
+                "probabilities": [80, 20],
+                "items": [114021]
+            },
+            {
+                "comment": "3-star Weapon Material",
+                "counts": [0, 4],
+                "probabilities": [5, 45, 40, 5, 5],
+                "items": [114022]
+            },
+            {
+                "comment": "4-star Weapon Material",
+                "counts": [0, 4],
+                "probabilities": [40, 40, 15, 4, 1],
+                "items": [114023]
+            },
+            {
+                "comment": "5-star Weapon Material",
+                "counts": [0, 2],
+                "probabilities": [80, 15, 5],
+                "items": [114024]
             }
         ]
     }
