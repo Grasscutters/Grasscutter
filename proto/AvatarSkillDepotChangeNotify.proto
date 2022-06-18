@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1037
+// EnetChannelId: 0
+// EnetIsReliable: true
+message AvatarSkillDepotChangeNotify {
+	uint64 avatar_guid = 2;
+	uint32 entity_id = 8;
+	uint32 skill_depot_id = 9;
+	repeated uint32 talent_id_list = 1;
+	repeated uint32 proud_skill_list = 5;
+	uint32 core_proud_skill_level = 4;
+	map<uint32, uint32> skill_level_map = 10;
+	map<uint32, uint32> proud_skill_extra_level_map = 11;
+}

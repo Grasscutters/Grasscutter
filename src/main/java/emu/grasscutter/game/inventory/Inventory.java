@@ -17,6 +17,7 @@ import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.packet.send.PacketAvatarEquipChangeNotify;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
@@ -258,12 +259,16 @@ public class Inventory implements Iterable<GameItem> {
 					getPlayer().addExpDirectly(count);
 			case 105 -> // Companionship exp
 					getPlayer().getServer().getInventoryManager().upgradeAvatarFetterLevel(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
+			case 106 -> // Resin
+					getPlayer().getResinManager().addResin(count);
 			case 201 -> // Primogem
 					getPlayer().setPrimogems(player.getPrimogems() + count);
 			case 202 -> // Mora
 					getPlayer().setMora(player.getMora() + count);
 			case 203 -> // Genesis Crystals
 					getPlayer().setCrystals(player.getCrystals() + count);
+			case 204 -> // Home Coin
+					getPlayer().setHomeCoin(player.getHomeCoin() + count);
 		}
 	}
 
@@ -275,6 +280,10 @@ public class Inventory implements Iterable<GameItem> {
 				return player.getMora();
 			case 203:  // Genesis Crystals
 				return player.getCrystals();
+			case 106:  // Resin
+				return player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
+			case 204:  // Home Coin
+				return player.getHomeCoin();
 			default:
 				GameItem item = getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId);  // What if we ever want to operate on weapons/relics/furniture? :S
 				return (item == null) ? 0 : item.getCount();
@@ -313,6 +322,10 @@ public class Inventory implements Iterable<GameItem> {
 					player.setMora(player.getMora() - (cost.getCount() * quantity));
 				case 203 ->  // Genesis Crystals
 					player.setCrystals(player.getCrystals() - (cost.getCount() * quantity));
+				case 106 ->  // Resin
+					player.getResinManager().useResin(cost.getCount() * quantity);
+				case 204 ->  // Home Coin
+						player.setHomeCoin(player.getHomeCoin() - (cost.getCount() * quantity));
 				default ->
 					removeItem(getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId()), cost.getCount() * quantity);
 			}

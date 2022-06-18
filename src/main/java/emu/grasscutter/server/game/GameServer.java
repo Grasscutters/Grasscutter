@@ -10,10 +10,10 @@ import emu.grasscutter.game.drop.DropManager;
 import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.expedition.ExpeditionManager;
 import emu.grasscutter.game.gacha.GachaManager;
-import emu.grasscutter.game.managers.ChatManager.ChatManager;
-import emu.grasscutter.game.managers.ChatManager.ChatManagerHandler;
 import emu.grasscutter.game.managers.InventoryManager;
 import emu.grasscutter.game.managers.MultiplayerManager;
+import emu.grasscutter.game.managers.chat.ChatManager;
+import emu.grasscutter.game.managers.chat.ChatManagerHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.ServerQuestHandler;
 import emu.grasscutter.game.shop.ShopManager;
@@ -21,7 +21,6 @@ import emu.grasscutter.game.tower.TowerScheduleManager;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.netty.KcpServer;
 import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
@@ -29,6 +28,8 @@ import emu.grasscutter.server.event.internal.ServerStopEvent;
 import emu.grasscutter.task.TaskMap;
 import lombok.Getter;
 import lombok.Setter;
+import kcp.highway.ChannelConfig;
+import kcp.highway.KcpServer;
 
 import java.net.InetSocketAddress;
 import java.time.OffsetDateTime;
@@ -42,7 +43,7 @@ public final class GameServer extends KcpServer {
 	private final InetSocketAddress address;
 	@Getter private final GameServerPacketHandler packetHandler;
 	@Getter private final ServerQuestHandler questHandler;
-	
+
 	private final Map<Integer, Player> players;
 	private final Set<World> worlds;
 
@@ -60,28 +61,41 @@ public final class GameServer extends KcpServer {
 	@Getter private final CombineManger combineManger;
 	@Getter private final TowerScheduleManager towerScheduleManager;
 
-	private static InetSocketAddress getAdapterInetSocketAddress() {
-		return GAME_INFO.bindAddress.equals("") ? 
-				new InetSocketAddress(GAME_INFO.bindPort) : 
-				new InetSocketAddress(
+	private static InetSocketAddress getAdapterInetSocketAddress(){
+		InetSocketAddress inetSocketAddress;
+		if(GAME_INFO.bindAddress.equals("")){
+			inetSocketAddress=new InetSocketAddress(GAME_INFO.bindPort);
+		} else {
+			inetSocketAddress=new InetSocketAddress(
 					GAME_INFO.bindAddress,
-					GAME_INFO.bindPort);
+					GAME_INFO.bindPort
+			);
+		}
+		return inetSocketAddress;
 	}
-	
+
 	public GameServer() {
 		this(getAdapterInetSocketAddress());
 	}
-	
-	public GameServer(InetSocketAddress address) {
-		super(address);
 
-		this.setServerInitializer(new GameServerInitializer(this));
+	public GameServer(InetSocketAddress address) {
+		ChannelConfig channelConfig = new ChannelConfig();
+		channelConfig.nodelay(true,40,2,true);
+		channelConfig.setMtu(1400);
+		channelConfig.setSndwnd(256);
+		channelConfig.setRcvwnd(256);
+		channelConfig.setTimeoutMillis(30*1000);//30s
+		channelConfig.setUseConvChannel(true);
+		channelConfig.setAckNoDelay(false);
+
+		this.init(GameSessionManager.getListener(),channelConfig,address);
+
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
 		this.questHandler = new ServerQuestHandler();
 		this.players = new ConcurrentHashMap<>();
 		this.worlds = Collections.synchronizedSet(new HashSet<>());
-		
+
 		// Initialize managers.
 		this.chatManager = new ChatManager(this);
 		this.inventoryManager = new InventoryManager(this);
@@ -95,7 +109,7 @@ public final class GameServer extends KcpServer {
 		this.expeditionManager = new ExpeditionManager(this);
 		this.combineManger = new CombineManger(this);
 		this.towerScheduleManager = new TowerScheduleManager(this);
-		
+
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
@@ -107,7 +121,7 @@ public final class GameServer extends KcpServer {
 	public Set<World> getWorlds() {
 		return worlds;
 	}
-	
+
 	public void registerPlayer(Player player) {
 		getPlayers().put(player.getUid(), player);
 	}
@@ -115,44 +129,44 @@ public final class GameServer extends KcpServer {
 	public Player getPlayerByUid(int id) {
 		return this.getPlayerByUid(id, false);
 	}
-	
+
 	public Player getPlayerByUid(int id, boolean allowOfflinePlayers) {
 		// Console check
 		if (id == GameConstants.SERVER_CONSOLE_UID) {
 			return null;
 		}
-		
+
 		// Get from online players
 		Player player = this.getPlayers().get(id);
-		
+
 		if (!allowOfflinePlayers) {
 			return player;
 		}
-		
+
 		// Check database if character isnt here
 		if (player == null) {
 			player = DatabaseHelper.getPlayerByUid(id);
 		}
-		
+
 		return player;
 	}
-	
+
 	public Player getPlayerByAccountId(String accountId) {
 		Optional<Player> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getId().equals(accountId)).findFirst();
 		return playerOpt.orElse(null);
 	}
-	
+
 	public SocialDetail.Builder getSocialDetailByUid(int id) {
 		// Get from online players
 		Player player = this.getPlayerByUid(id, true);
-	
+
 		if (player == null) {
 			return null;
 		}
-		
+
 		return player.getSocialDetail();
 	}
-	
+
 	public Account getAccountByName(String username) {
 		Optional<Player> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getUsername().equals(username)).findFirst();
 		if (playerOpt.isPresent()) {
@@ -160,37 +174,36 @@ public final class GameServer extends KcpServer {
 		}
 		return DatabaseHelper.getAccountByName(username);
 	}
-	
-	public void onTick() {
+
+	public synchronized void onTick(){
 		Iterator<World> it = this.getWorlds().iterator();
 		while (it.hasNext()) {
 			World world = it.next();
-			
+
 			if (world.getPlayerCount() == 0) {
 				it.remove();
 			}
-			
+
 			world.onTick();
 		}
-		
+
 		for (Player player : this.getPlayers().values()) {
 			player.onTick();
 		}
-  
+
 		ServerTickEvent event = new ServerTickEvent(); event.call();
 	}
-	
+
 	public void registerWorld(World world) {
 		this.getWorlds().add(world);
 	}
-	
+
 	public void deregisterWorld(World world) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	@Override
-	public synchronized void start() {
+	public void start() {
 		// Schedule game loop.
 		Timer gameLoop = new Timer();
 		gameLoop.scheduleAtFixedRate(new TimerTask() {
@@ -203,24 +216,19 @@ public final class GameServer extends KcpServer {
 				}
 			}
 		}, new Date(), 1000L);
-
-		super.start();
-	}
-
-	@Override
-	public void onStartFinish() {
 		Grasscutter.getLogger().info(translate("messages.status.free_software"));
 		Grasscutter.getLogger().info(translate("messages.game.port_bind", Integer.toString(address.getPort())));
-		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
+		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now());
+		event.call();
 	}
-	
+
 	public void onServerShutdown() {
 		ServerStopEvent event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now()); event.call();
 
 		// Kick and save all players
 		List<Player> list = new ArrayList<>(this.getPlayers().size());
 		list.addAll(this.getPlayers().values());
-		
+
 		for (Player player : list) {
 			player.getSession().close();
 		}

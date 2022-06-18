@@ -414,6 +414,10 @@ public class Scene {
 	}
 	
 	public void onTick() {
+		// disable script for home
+		if (this.getSceneType() == SceneType.SCENE_HOME_WORLD || this.getSceneType() == SceneType.SCENE_HOME_ROOM){
+			return;
+		}
 		if (this.getScriptManager().isInit()) {
 			this.checkBlocks();
 		} else {

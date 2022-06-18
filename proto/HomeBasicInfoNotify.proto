@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeBasicInfo.proto";
+
+// CmdId: 4872
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeBasicInfoNotify {
+	HomeBasicInfo basic_info = 9;
+}
