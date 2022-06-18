@@ -211,7 +211,7 @@
       "description": "殺死所有怪物。"
     },
     "killCharacter": {
-      "usage": "用法：/killcharacter [playerId]",
+      "usage": "用法：killcharacter [playerId]",
       "success": "已殺死 %s 目前的場上角色。",
       "description": "殺死玩家目前使用的場上角色。"
     },
