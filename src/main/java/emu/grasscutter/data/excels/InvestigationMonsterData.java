@@ -1,4 +1,4 @@
-package emu.grasscutter.data.def;
+package emu.grasscutter.data.excels;
 
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
@@ -9,17 +9,17 @@ import java.util.List;
 @ResourceType(name = "InvestigationMonsterConfigData.json")
 @Data
 public class InvestigationMonsterData extends GameResource {
-    private int Id;
-    private int CityId;
-    private List<Integer> MonsterIdList;
-    private List<Integer> GroupIdList;
-    private int RewardPreviewId;
-    private String MapMarkCreateType;
-    private String MonsterCategory;
+    private int id;
+    private int cityId;
+    private List<Integer> monsterIdList;
+    private List<Integer> groupIdList;
+    private int rewardPreviewId;
+    private String mapMarkCreateType;
+    private String monsterCategory;
 
     @Override
     public int getId() {
-        return this.Id;
+        return this.id;
     }
 
     @Override

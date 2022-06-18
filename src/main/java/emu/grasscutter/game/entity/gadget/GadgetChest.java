@@ -5,13 +5,12 @@ import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.BossChestInfoOuterClass.BossChestInfo;
 import emu.grasscutter.net.proto.InterOpTypeOuterClass;
+import emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType;
 import emu.grasscutter.net.proto.InteractTypeOuterClass;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.scripts.constants.ScriptGadgetState;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
-
-import static emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.INTER_OP_START;
 
 public class GadgetChest extends GadgetContent {
 	
@@ -19,7 +18,7 @@ public class GadgetChest extends GadgetContent {
 		super(gadget);
 	}
 
-	public boolean onInteract(Player player, InterOpTypeOuterClass.InterOpType opType) {
+	public boolean onInteract(Player player, InterOpType opType) {
 		var chestInteractHandlerMap = getGadget().getScene().getWorld().getServer().getWorldDataManager().getChestInteractHandlerMap();
 		var handler = chestInteractHandlerMap.get(getGadget().getGadgetData().getJsonName());
 		if(handler == null){
@@ -27,8 +26,8 @@ public class GadgetChest extends GadgetContent {
 			return false;
 		}
 
-		if(opType == INTER_OP_START && handler.isTwoStep()){
-			player.sendPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_OPEN_CHEST, INTER_OP_START));
+		if(opType == InterOpType.INTER_OP_TYPE_START && handler.isTwoStep()){
+			player.sendPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_OPEN_CHEST, InterOpType.INTER_OP_TYPE_START));
 			return false;
 		}else{
 			var success = handler.onInteract(this, player);
@@ -37,7 +36,7 @@ public class GadgetChest extends GadgetContent {
 			}
 
 			getGadget().updateState(ScriptGadgetState.ChestOpened);
-			player.sendPacket(new PacketGadgetInteractRsp(this.getGadget(), InteractTypeOuterClass.InteractType.INTERACT_OPEN_CHEST));
+			player.sendPacket(new PacketGadgetInteractRsp(this.getGadget(), InteractTypeOuterClass.InteractType.INTERACT_TYPE_OPEN_CHEST));
 			// let the chest disappear
 			getGadget().die();
 			return true;

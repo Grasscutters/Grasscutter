@@ -1,4 +1,4 @@
-package emu.grasscutter.data.custom;
+package emu.grasscutter.data.binout;
 
 import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
