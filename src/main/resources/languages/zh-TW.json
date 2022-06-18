@@ -262,7 +262,7 @@
       "description": "重置當前角色的命之座，重新登入後將會生效。"
     },
     "resetShopLimit": {
-      "usage": "用法：/resetshop <playerId>",
+      "usage": "用法：resetshop <playerId>",
       "success": "重置完成。",
       "description": "重置所選玩家的商店刷新時間。"
     },
@@ -333,9 +333,9 @@
       "description": "以正常的方式關閉伺服器。"
     },
     "talent": {
-      "usage_1": "設定天賦等級：/talent set <talentID> <value>",
-      "usage_2": "另一種設定天賦等級的指令使用方法：/talent <n or e or q> <value>",
-      "usage_3": "獲取天賦ID指令用法：/talent getid",
+      "usage_1": "設定天賦等級：talent set <talentID> <value>",
+      "usage_2": "另一種設定天賦等級的指令使用方法：talent <n or e or q> <value>",
+      "usage_3": "獲取天賦ID指令用法：talent getid",
       "lower_16": "無效的天賦等級，技能等級應低於 16。",
       "set_id": "將天賦等級設為%s。",
       "set_atk": "將普通攻擊等級設為 %s。",
