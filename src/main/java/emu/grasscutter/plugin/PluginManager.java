@@ -6,6 +6,7 @@ import emu.grasscutter.server.event.EventHandler;
 import emu.grasscutter.server.event.HandlerPriority;
 import emu.grasscutter.utils.Utils;
 
+import javax.annotation.Nullable;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
@@ -171,7 +172,12 @@ public final class PluginManager {
                 .toList().forEach(handler -> this.invokeHandler(event, handler));
     }
 
-    public Plugin getPlugin(String name) {
+    /**
+     * Gets a plugin's instance by its name.
+     * @param name The name of the plugin.
+     * @return Either null, or the plugin's instance.
+     */
+    @Nullable public Plugin getPlugin(String name) {
         return this.plugins.get(name);
     }
 
