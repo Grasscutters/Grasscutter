@@ -11,7 +11,7 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "resetconst", usage = "resetconst [all]",
-        aliases = {"resetconstellation"}, permission = "player.resetconstellation", permissionTargeted = "player.resetconstellation.others", description = "commands.resetConst.description")
+    aliases = {"resetconstellation"}, permission = "player.resetconstellation", permissionTargeted = "player.resetconstellation.others", description = "commands.resetConst.description")
 public final class ResetConstCommand implements CommandHandler {
 
     @Override

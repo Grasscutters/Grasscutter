@@ -1,16 +1,11 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.player.TeamManager;
-import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
-import emu.grasscutter.utils.Position;
 
 import java.util.List;
 
@@ -22,7 +17,7 @@ public final class UnlimitEnergyCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if(!GAME_OPTIONS.energyUsage){
+        if (!GAME_OPTIONS.energyUsage) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.unlimitenergy.config_error"));
             return;
         }
@@ -40,13 +35,13 @@ public final class UnlimitEnergyCommand implements CommandHandler {
                     break;
             }
         }
-        EnergyManager energyManager=targetPlayer.getEnergyManager();
+        EnergyManager energyManager = targetPlayer.getEnergyManager();
         energyManager.setEnergyUsage(!status);
         // if unlimitEnergy is enable , make currentActiveTeam's Avatar full-energy
         if (status) {
             for (EntityAvatar entityAvatar : targetPlayer.getTeamManager().getActiveTeam()) {
                 entityAvatar.addEnergy(1000,
-                        PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_GM,true);
+                    PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_GM, true);
             }
         }
 

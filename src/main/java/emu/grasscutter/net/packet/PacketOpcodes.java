@@ -1519,7 +1519,7 @@ public class PacketOpcodes {
     // Unknown
 
     public static final HashSet<Integer> BANNED_PACKETS = new HashSet<>() {{
-        add(PacketOpcodes.WindSeedClientNotify);
-        add(PacketOpcodes.PlayerLuaShellNotify);
+        this.add(PacketOpcodes.WindSeedClientNotify);
+        this.add(PacketOpcodes.PlayerLuaShellNotify);
     }};
 }

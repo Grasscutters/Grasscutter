@@ -27,7 +27,7 @@ public final class SendMailCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         int senderId;
-        if(sender != null) {
+        if (sender != null) {
             senderId = sender.getUid();
         } else {
             senderId = -1;
@@ -81,12 +81,12 @@ public final class SendMailCommand implements CommandHandler {
                             }
                             mailBeingConstructed.remove(senderId);
                         } else {
-                            CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.not_composition_end", getConstructionArgs(mailBuilder.constructionStage, sender)));
+                            CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.not_composition_end", this.getConstructionArgs(mailBuilder.constructionStage, sender)));
                         }
                         return;
                     }
                     case "help" -> {
-                        CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.please_use", getConstructionArgs(mailBuilder.constructionStage, sender)));
+                        CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.please_use", this.getConstructionArgs(mailBuilder.constructionStage, sender)));
                         return;
                     }
                     default -> {
@@ -156,13 +156,13 @@ public final class SendMailCommand implements CommandHandler {
                     }
                 }
             } else {
-                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.invalid_arguments_please_use", getConstructionArgs(mailBuilder.constructionStage, sender)));
+                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.invalid_arguments_please_use", this.getConstructionArgs(mailBuilder.constructionStage, sender)));
             }
         }
     }
 
     private String getConstructionArgs(int stage, Player sender) {
-        return switch(stage) {
+        return switch (stage) {
             case 0 -> translate(sender, "commands.sendMail.title");
             case 1 -> translate(sender, "commands.sendMail.message");
             case 2 -> translate(sender, "commands.sendMail.sender");

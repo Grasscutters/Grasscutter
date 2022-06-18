@@ -27,7 +27,7 @@ public class HomeWorldLevelData extends GameResource {
 
     @Override
     public int getId() {
-        return level;
+        return this.level;
     }
 
     @Override

@@ -25,6 +25,7 @@ public final class ServerHook {
 
     /**
      * Gets the server hook instance.
+     *
      * @return A {@link ServerHook} singleton.
      */
     public static ServerHook getInstance() {
@@ -33,6 +34,7 @@ public final class ServerHook {
 
     /**
      * Hooks into a server.
+     *
      * @param gameServer The game server to hook into.
      * @param httpServer The HTTP server to hook into.
      */
@@ -59,6 +61,7 @@ public final class ServerHook {
 
     /**
      * Gets all online players.
+     *
      * @return Players connected to the server.
      */
     public List<Player> getOnlinePlayers() {
@@ -67,11 +70,12 @@ public final class ServerHook {
 
     /**
      * Registers a command to the {@link emu.grasscutter.command.CommandMap}.
+     *
      * @param handler The command handler.
      */
     public void registerCommand(CommandHandler handler) {
         Class<? extends CommandHandler> clazz = handler.getClass();
-        if(!clazz.isAnnotationPresent(Command.class))
+        if (!clazz.isAnnotationPresent(Command.class))
             throw new IllegalArgumentException("Command handler must be annotated with @Command.");
         Command commandData = clazz.getAnnotation(Command.class);
         this.gameServer.getCommandMap().registerCommand(commandData.label(), handler);
@@ -79,6 +83,7 @@ public final class ServerHook {
 
     /**
      * Adds a router using an instance of a class.
+     *
      * @param router A router instance.
      */
     public void addRouter(Router router) {
@@ -87,6 +92,7 @@ public final class ServerHook {
 
     /**
      * Adds a router using a class.
+     *
      * @param router The class of the router.
      */
     public void addRouter(Class<? extends Router> router) {
@@ -95,6 +101,7 @@ public final class ServerHook {
 
     /**
      * Sets the server's authentication system.
+     *
      * @param authSystem An instance of the authentication system.
      */
     public void setAuthSystem(AuthenticationSystem authSystem) {
@@ -103,6 +110,7 @@ public final class ServerHook {
 
     /**
      * Registers a {@link PacketHandler} to the server's packet handler.
+     *
      * @param handler The class of the packet handler to register.
      */
     public void registerPacket(Class<? extends PacketHandler> handler) {
@@ -111,6 +119,7 @@ public final class ServerHook {
 
     /**
      * Sets the server's permission handler.
+     *
      * @param permHandler An instance of the permission handler.
      */
     public void setPermissionHandler(PermissionHandler permHandler) {

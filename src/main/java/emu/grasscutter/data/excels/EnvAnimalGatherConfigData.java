@@ -1,9 +1,9 @@
 package emu.grasscutter.data.excels;
 
-import java.util.List;
-
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
+
+import java.util.List;
 
 @ResourceType(name = "EnvAnimalGatherExcelConfigData.json", loadPriority = ResourceType.LoadPriority.LOW)
 public class EnvAnimalGatherConfigData extends GameResource {
@@ -14,27 +14,34 @@ public class EnvAnimalGatherConfigData extends GameResource {
     private int aliveTime;
     private int escapeTime;
     private int escapeRadius;
+
     @Override
     public int getId() {
-        return animalId;
+        return this.animalId;
     }
-    public int getAnimalId(){
-        return animalId;
+
+    public int getAnimalId() {
+        return this.animalId;
     }
-    public String getEntityType(){
-        return entityType;
+
+    public String getEntityType() {
+        return this.entityType;
     }
-    public GatherItem gatherItem(){
-        return gatherItemId.get(0);
+
+    public GatherItem gatherItem() {
+        return this.gatherItemId.get(0);
     }
-    public static class GatherItem{
+
+    public static class GatherItem {
         private int id;
         private int count;
-        public int getId(){
-            return id;
+
+        public int getId() {
+            return this.id;
         }
-        public int getCount(){
-            return count;
+
+        public int getCount() {
+            return this.count;
         }
     }
 }

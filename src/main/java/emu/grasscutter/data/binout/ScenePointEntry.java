@@ -3,19 +3,19 @@ package emu.grasscutter.data.binout;
 import emu.grasscutter.data.common.PointData;
 
 public class ScenePointEntry {
-	private String name;
-	private PointData pointData;
-	
-	public ScenePointEntry(String name, PointData pointData) {
-		this.name = name;
-		this.pointData = pointData;
-	}
+    private final String name;
+    private final PointData pointData;
 
-	public String getName() {
-		return name;
-	}
+    public ScenePointEntry(String name, PointData pointData) {
+        this.name = name;
+        this.pointData = pointData;
+    }
 
-	public PointData getPointData() {
-        return pointData;
+    public String getName() {
+        return this.name;
+    }
+
+    public PointData getPointData() {
+        return this.pointData;
     }
 }

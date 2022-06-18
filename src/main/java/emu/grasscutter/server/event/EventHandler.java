@@ -8,13 +8,14 @@ public final class EventHandler<T extends Event> {
     private EventConsumer<T> listener;
     private HandlerPriority priority;
     private boolean handleCanceled;
-    
+
     public EventHandler(Class<T> eventClass) {
         this.eventClass = eventClass;
     }
 
     /**
      * Gets which event this handler is handling.
+     *
      * @return An event class.
      */
     public Class<T> handles() {
@@ -23,6 +24,7 @@ public final class EventHandler<T extends Event> {
 
     /**
      * Returns the callback for the handler.
+     *
      * @return A consumer callback.
      */
     public EventConsumer<T> getCallback() {
@@ -31,6 +33,7 @@ public final class EventHandler<T extends Event> {
 
     /**
      * Returns the handler's priority.
+     *
      * @return The priority of the handler.
      */
     public HandlerPriority getPriority() {
@@ -39,6 +42,7 @@ public final class EventHandler<T extends Event> {
 
     /**
      * Returns if the handler will ignore cancelled events.
+     *
      * @return The ignore cancelled state.
      */
     public boolean ignoresCanceled() {
@@ -47,29 +51,35 @@ public final class EventHandler<T extends Event> {
 
     /**
      * Sets the callback method for when the event is invoked.
+     *
      * @param listener An event handler method.
      * @return Method chaining.
      */
     public EventHandler<T> listener(EventConsumer<T> listener) {
-        this.listener = listener; return this;
+        this.listener = listener;
+        return this;
     }
 
     /**
      * Changes the handler's priority in handling events.
+     *
      * @param priority The priority of the handler.
      * @return Method chaining.
      */
     public EventHandler<T> priority(HandlerPriority priority) {
-        this.priority = priority; return this;
+        this.priority = priority;
+        return this;
     }
 
     /**
      * Sets if the handler will ignore cancelled events.
+     *
      * @param ignore If the handler should ignore cancelled events.
      * @return Method chaining.
      */
     public EventHandler<T> ignore(boolean ignore) {
-        this.handleCanceled = ignore; return this;
+        this.handleCanceled = ignore;
+        return this;
     }
 
     /**

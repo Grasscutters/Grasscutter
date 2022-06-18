@@ -20,27 +20,32 @@ public class ScriptMonsterSpawnService {
 
     private final List<ScriptMonsterListener> onMonsterDeadListener = new ArrayList<>();
 
-    public ScriptMonsterSpawnService(SceneScriptManager sceneScriptManager){
+    public ScriptMonsterSpawnService(SceneScriptManager sceneScriptManager) {
         this.sceneScriptManager = sceneScriptManager;
     }
 
-    public void addMonsterCreatedListener(ScriptMonsterListener scriptMonsterListener){
-        onMonsterCreatedListener.add(scriptMonsterListener);
+    public void addMonsterCreatedListener(ScriptMonsterListener scriptMonsterListener) {
+        this.onMonsterCreatedListener.add(scriptMonsterListener);
     }
-    public void addMonsterDeadListener(ScriptMonsterListener scriptMonsterListener){
-        onMonsterDeadListener.add(scriptMonsterListener);
+
+    public void addMonsterDeadListener(ScriptMonsterListener scriptMonsterListener) {
+        this.onMonsterDeadListener.add(scriptMonsterListener);
     }
-    public void removeMonsterCreatedListener(ScriptMonsterListener scriptMonsterListener){
-        onMonsterCreatedListener.remove(scriptMonsterListener);
+
+    public void removeMonsterCreatedListener(ScriptMonsterListener scriptMonsterListener) {
+        this.onMonsterCreatedListener.remove(scriptMonsterListener);
     }
-    public void removeMonsterDeadListener(ScriptMonsterListener scriptMonsterListener){
-        onMonsterDeadListener.remove(scriptMonsterListener);
+
+    public void removeMonsterDeadListener(ScriptMonsterListener scriptMonsterListener) {
+        this.onMonsterDeadListener.remove(scriptMonsterListener);
     }
-    public void onMonsterDead(EntityMonster entityMonster){
-        onMonsterDeadListener.forEach(l -> l.onNotify(entityMonster));
+
+    public void onMonsterDead(EntityMonster entityMonster) {
+        this.onMonsterDeadListener.forEach(l -> l.onNotify(entityMonster));
     }
+
     public void spawnMonster(int groupId, SceneMonster monster) {
-        if(monster == null){
+        if (monster == null) {
             return;
         }
 
@@ -53,10 +58,10 @@ public class ScriptMonsterSpawnService {
         // Calculate level
         int level = monster.level;
 
-        if (sceneScriptManager.getScene().getDungeonData() != null) {
-            level = sceneScriptManager.getScene().getDungeonData().getShowLevel();
-        } else if (sceneScriptManager.getScene().getWorld().getWorldLevel() > 0) {
-            WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(sceneScriptManager.getScene().getWorld().getWorldLevel());
+        if (this.sceneScriptManager.getScene().getDungeonData() != null) {
+            level = this.sceneScriptManager.getScene().getDungeonData().getShowLevel();
+        } else if (this.sceneScriptManager.getScene().getWorld().getWorldLevel() > 0) {
+            WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(this.sceneScriptManager.getScene().getWorld().getWorldLevel());
 
             if (worldLevelData != null) {
                 level = worldLevelData.getMonsterLevel();
@@ -64,15 +69,15 @@ public class ScriptMonsterSpawnService {
         }
 
         // Spawn mob
-        EntityMonster entity = new EntityMonster(sceneScriptManager.getScene(), data, monster.pos, level);
+        EntityMonster entity = new EntityMonster(this.sceneScriptManager.getScene(), data, monster.pos, level);
         entity.getRotation().set(monster.rot);
         entity.setGroupId(groupId);
         entity.setConfigId(monster.config_id);
 
-        onMonsterCreatedListener.forEach(action -> action.onNotify(entity));
+        this.onMonsterCreatedListener.forEach(action -> action.onNotify(entity));
 
-        sceneScriptManager.getScene().addEntity(entity);
+        this.sceneScriptManager.getScene().addEntity(entity);
 
-        sceneScriptManager.callEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs(entity.getConfigId()));
+        this.sceneScriptManager.callEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs(entity.getConfigId()));
     }
 }

@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.excels.AvatarSkillDepotData;
@@ -45,7 +44,7 @@ public final class TalentCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() < 1){
+        if (args.size() < 1) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.talent.usage_1"));
             CommandHandler.sendMessage(sender, translate(sender, "commands.talent.usage_2"));
             CommandHandler.sendMessage(sender, translate(sender, "commands.talent.usage_3"));
@@ -53,7 +52,7 @@ public final class TalentCommand implements CommandHandler {
         }
 
         EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
-        Avatar avatar = entity.getAvatar(); 
+        Avatar avatar = entity.getAvatar();
         String cmdSwitch = args.get(0);
         switch (cmdSwitch) {
             default -> {
@@ -71,7 +70,7 @@ public final class TalentCommand implements CommandHandler {
                 try {
                     int skillId = Integer.parseInt(args.get(1));
                     int newLevel = Integer.parseInt(args.get(2));
-                    setTalentLevel(sender, targetPlayer, avatar, skillId, newLevel);
+                    this.setTalentLevel(sender, targetPlayer, avatar, skillId, newLevel);
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.talent.invalid_skill_id"));
                     return;
@@ -90,7 +89,7 @@ public final class TalentCommand implements CommandHandler {
                 };
                 try {
                     int newLevel = Integer.parseInt(args.get(1));
-                    setTalentLevel(sender, targetPlayer, avatar, skillId, newLevel);
+                    this.setTalentLevel(sender, targetPlayer, avatar, skillId, newLevel);
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.talent.invalid_level"));
                     return;

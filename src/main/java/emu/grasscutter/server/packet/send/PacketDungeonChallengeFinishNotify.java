@@ -6,16 +6,16 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DungeonChallengeFinishNotifyOuterClass.DungeonChallengeFinishNotify;
 
 public class PacketDungeonChallengeFinishNotify extends BasePacket {
-	
-	public PacketDungeonChallengeFinishNotify(DungeonChallenge challenge) {
-		super(PacketOpcodes.DungeonChallengeFinishNotify, true);
 
-		DungeonChallengeFinishNotify proto = DungeonChallengeFinishNotify.newBuilder()
-				.setChallengeIndex(challenge.getChallengeIndex())
-				.setIsSuccess(challenge.isSuccess())
-				.setChallengeRecordType(2)
-				.build();
-		
-		this.setData(proto);
-	}
+    public PacketDungeonChallengeFinishNotify(DungeonChallenge challenge) {
+        super(PacketOpcodes.DungeonChallengeFinishNotify, true);
+
+        DungeonChallengeFinishNotify proto = DungeonChallengeFinishNotify.newBuilder()
+            .setChallengeIndex(challenge.getChallengeIndex())
+            .setIsSuccess(challenge.isSuccess())
+            .setChallengeRecordType(2)
+            .build();
+
+        this.setData(proto);
+    }
 }

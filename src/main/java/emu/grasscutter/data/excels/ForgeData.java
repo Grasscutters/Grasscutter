@@ -1,12 +1,11 @@
 package emu.grasscutter.data.excels;
 
-import java.util.List;
-
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.common.OpenCondData;
+
+import java.util.List;
 
 @ResourceType(name = {"ForgeExcelConfigData.json"}, loadPriority = LoadPriority.HIGHEST)
 public class ForgeData extends GameResource {
@@ -22,44 +21,44 @@ public class ForgeData extends GameResource {
     private List<ItemParamData> materialItems;
 
     @Override
-	public int getId() {
-		return this.id;
-	}
+    public int getId() {
+        return this.id;
+    }
 
     public int getPlayerLevel() {
-        return playerLevel;
+        return this.playerLevel;
     }
 
     public int getForgeType() {
-        return forgeType;
+        return this.forgeType;
     }
 
     public int getResultItemId() {
-        return resultItemId;
+        return this.resultItemId;
     }
 
     public int getResultItemCount() {
-        return resultItemCount;
+        return this.resultItemCount;
     }
 
     public int getForgeTime() {
-        return forgeTime;
+        return this.forgeTime;
     }
 
     public int getQueueNum() {
-        return queueNum;
+        return this.queueNum;
     }
 
     public int getScoinCost() {
-        return scoinCost;
+        return this.scoinCost;
     }
 
     public int getPriority() {
-        return priority;
+        return this.priority;
     }
 
     public List<ItemParamData> getMaterialItems() {
-        return materialItems;
+        return this.materialItems;
     }
 
     @Override

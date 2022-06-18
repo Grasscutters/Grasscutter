@@ -1,74 +1,75 @@
 package emu.grasscutter.data.excels;
 
-import java.util.ArrayList;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.common.ItemParamData;
 
+import java.util.ArrayList;
+
 @ResourceType(name = "WeaponPromoteExcelConfigData.json")
 public class WeaponPromoteData extends GameResource {
-	
-	private int weaponPromoteId;
+
+    private int weaponPromoteId;
     private int promoteLevel;
     private ItemParamData[] costItems;
     private int coinCost;
     private FightPropData[] addProps;
     private int unlockMaxLevel;
     private int requiredPlayerLevel;
-	
-	@Override
-	public int getId() {
-		return (weaponPromoteId << 8) + promoteLevel;
-	}
 
-	public int getWeaponPromoteId() {
-		return weaponPromoteId;
-	}
+    @Override
+    public int getId() {
+        return (this.weaponPromoteId << 8) + this.promoteLevel;
+    }
 
-	public int getPromoteLevel() {
-		return promoteLevel;
-	}
+    public int getWeaponPromoteId() {
+        return this.weaponPromoteId;
+    }
 
-	public ItemParamData[] getCostItems() {
-		return costItems;
-	}
+    public int getPromoteLevel() {
+        return this.promoteLevel;
+    }
 
-	public int getCoinCost() {
-		return coinCost;
-	}
+    public ItemParamData[] getCostItems() {
+        return this.costItems;
+    }
 
-	public FightPropData[] getAddProps() {
-		return addProps;
-	}
+    public int getCoinCost() {
+        return this.coinCost;
+    }
 
-	public int getUnlockMaxLevel() {
-		return unlockMaxLevel;
-	}
+    public FightPropData[] getAddProps() {
+        return this.addProps;
+    }
 
-	public int getRequiredPlayerLevel() {
-		return requiredPlayerLevel;
-	}
+    public int getUnlockMaxLevel() {
+        return this.unlockMaxLevel;
+    }
 
-	@Override
-	public void onLoad() {
-		// Trim item params
-		ArrayList<ItemParamData> trim = new ArrayList<>(getAddProps().length);
-		for (ItemParamData itemParam : getCostItems()) {
-			if (itemParam.getId() == 0) {
-				continue;
-			}
-			trim.add(itemParam);
-		}
-		this.costItems = trim.toArray(new ItemParamData[trim.size()]);
-		// Trim fight prop data
-		ArrayList<FightPropData> parsed = new ArrayList<>(getAddProps().length);
-		for (FightPropData prop : getAddProps()) {
-			if (prop.getPropType() != null && prop.getValue() != 0f) {
-				prop.onLoad();
-				parsed.add(prop);
-			}
-		}
-		this.addProps = parsed.toArray(new FightPropData[parsed.size()]);
-	}
+    public int getRequiredPlayerLevel() {
+        return this.requiredPlayerLevel;
+    }
+
+    @Override
+    public void onLoad() {
+        // Trim item params
+        ArrayList<ItemParamData> trim = new ArrayList<>(this.getAddProps().length);
+        for (ItemParamData itemParam : this.getCostItems()) {
+            if (itemParam.getId() == 0) {
+                continue;
+            }
+            trim.add(itemParam);
+        }
+        this.costItems = trim.toArray(new ItemParamData[trim.size()]);
+        // Trim fight prop data
+        ArrayList<FightPropData> parsed = new ArrayList<>(this.getAddProps().length);
+        for (FightPropData prop : this.getAddProps()) {
+            if (prop.getPropType() != null && prop.getValue() != 0f) {
+                prop.onLoad();
+                parsed.add(prop);
+            }
+        }
+        this.addProps = parsed.toArray(new FightPropData[parsed.size()]);
+    }
 }

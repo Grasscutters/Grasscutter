@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.Account;
@@ -17,11 +16,6 @@ public final class PermissionCommand implements CommandHandler {
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() != 2) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.permission.usage"));
-            return;
-        }
-
-        if(!Grasscutter.getPermissionHandler().EnablePermissionCommand()) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.generic.permission_error");
             return;
         }
 

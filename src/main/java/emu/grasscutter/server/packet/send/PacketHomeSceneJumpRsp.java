@@ -6,13 +6,13 @@ import emu.grasscutter.net.proto.HomeSceneJumpRspOuterClass;
 
 public class PacketHomeSceneJumpRsp extends BasePacket {
 
-	public PacketHomeSceneJumpRsp(boolean enterRoomScene) {
-		super(PacketOpcodes.HomeSceneJumpRsp);
+    public PacketHomeSceneJumpRsp(boolean enterRoomScene) {
+        super(PacketOpcodes.HomeSceneJumpRsp);
 
-		var proto = HomeSceneJumpRspOuterClass.HomeSceneJumpRsp.newBuilder();
+        var proto = HomeSceneJumpRspOuterClass.HomeSceneJumpRsp.newBuilder();
 
-		proto.setIsEnterRoomScene(enterRoomScene);
+        proto.setIsEnterRoomScene(enterRoomScene);
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

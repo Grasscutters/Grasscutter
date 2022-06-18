@@ -5,20 +5,20 @@ import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "WorldLevelExcelConfigData.json")
 public class WorldLevelData extends GameResource {
-	private int level;
-	private int monsterLevel;
-	    
-	@Override
-	public int getId() {
-		return this.level;
-	}
+    private int level;
+    private int monsterLevel;
 
-	public int getMonsterLevel() {
-		return monsterLevel;
-	}
+    @Override
+    public int getId() {
+        return this.level;
+    }
 
-	@Override
-	public void onLoad() {
-		
-	}
+    public int getMonsterLevel() {
+        return this.monsterLevel;
+    }
+
+    @Override
+    public void onLoad() {
+
+    }
 }

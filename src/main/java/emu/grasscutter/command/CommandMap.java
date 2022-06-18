@@ -3,7 +3,6 @@ package emu.grasscutter.command;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
-
 import org.reflections.Reflections;
 
 import java.util.*;
@@ -78,7 +77,9 @@ public final class CommandMap {
         return this;
     }
 
-    public List<Command> getAnnotationsAsList() { return new LinkedList<>(this.annotations.values()); }
+    public List<Command> getAnnotationsAsList() {
+        return new LinkedList<>(this.annotations.values());
+    }
 
     public HashMap<String, Command> getAnnotations() {
         return new LinkedHashMap<>(this.annotations);
@@ -125,7 +126,7 @@ public final class CommandMap {
         List<String> args = new LinkedList<>(Arrays.asList(split));
         String label = args.remove(0);
         String playerId = (player == null) ? consoleId : player.getAccount().getId();
-        
+
         // Check for special cases - currently only target command.
         String targetUidStr = null;
         if (label.startsWith("@")) { // @[UID]
@@ -142,7 +143,7 @@ public final class CommandMap {
         }
         if (targetUidStr != null) {
             if (targetUidStr.equals("")) { // Clears the default targetPlayer.
-                targetPlayerIds.remove(playerId);
+                this.targetPlayerIds.remove(playerId);
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
             } else { // Sets default targetPlayer to the UID provided.
                 try {
@@ -151,9 +152,9 @@ public final class CommandMap {
                     if (targetPlayer == null) {
                         CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
                     } else {
-                        targetPlayerIds.put(playerId, uid);
+                        this.targetPlayerIds.put(playerId, uid);
                         CommandHandler.sendTranslatedMessage(player, "commands.execution.set_target", targetUidStr);
-                        CommandHandler.sendTranslatedMessage(player, targetPlayer.isOnline()? "commands.execution.set_target_online" : "commands.execution.set_target_offline", targetUidStr);
+                        CommandHandler.sendTranslatedMessage(player, targetPlayer.isOnline() ? "commands.execution.set_target_online" : "commands.execution.set_target_offline", targetUidStr);
                     }
                 } catch (NumberFormatException e) {
                     CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
@@ -188,11 +189,11 @@ public final class CommandMap {
                 }
             }
         }
-        
+
         // If there's still no targetPlayer at this point, use previously-set target
         if (targetPlayer == null) {
-            if (targetPlayerIds.containsKey(playerId)) {
-                targetPlayer = Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.get(playerId), true);  // We check every time in case the target is deleted after being targeted
+            if (this.targetPlayerIds.containsKey(playerId)) {
+                targetPlayer = Grasscutter.getGameServer().getPlayerByUid(this.targetPlayerIds.get(playerId), true);  // We check every time in case the target is deleted after being targeted
                 if (targetPlayer == null) {
                     CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
                     return;
@@ -203,9 +204,21 @@ public final class CommandMap {
             }
         }
 
-        // Check for permissions.
-        if (!Grasscutter.getPermissionHandler().checkPermission(player, targetPlayer, this.annotations.get(label).permission(), this.annotations.get(label).permissionTargeted())) {
-            return;
+        // Check for permission.
+        if (player != null) {
+            String permissionNode = this.annotations.get(label).permission();
+            String permissionNodeTargeted = this.annotations.get(label).permissionTargeted();
+            Account account = player.getAccount();
+            if (player != targetPlayer) {  // Additional permission required for targeting another player
+                if (!permissionNodeTargeted.isEmpty() && !account.hasPermission(permissionNodeTargeted)) {
+                    CommandHandler.sendTranslatedMessage(player, "commands.generic.permission_error");
+                    return;
+                }
+            }
+            if (!permissionNode.isEmpty() && !account.hasPermission(permissionNode)) {
+                CommandHandler.sendTranslatedMessage(player, "commands.generic.permission_error");
+                return;
+            }
         }
 
         // Check if command has unfulfilled constraints on targetPlayer
@@ -226,10 +239,10 @@ public final class CommandMap {
         }
 
         // Invoke execute method for handler.
-        boolean threading  = this.annotations.get(label).threading();
+        boolean threading = this.annotations.get(label).threading();
         final Player targetPlayerF = targetPlayer;  // Is there a better way to do this?
         Runnable runnable = () -> handler.execute(player, targetPlayerF, args);
-        if(threading) {
+        if (threading) {
             new Thread(runnable).start();
         } else {
             runnable.run();

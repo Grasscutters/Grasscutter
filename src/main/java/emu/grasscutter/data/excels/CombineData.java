@@ -31,52 +31,52 @@ public class CombineData extends GameResource {
     public void onLoad() {
         super.onLoad();
         // clean data
-        randomItems = randomItems.stream().filter(item -> item.getId() > 0).collect(Collectors.toList());
-        materialItems = materialItems.stream().filter(item -> item.getId() > 0).collect(Collectors.toList());
+        this.randomItems = this.randomItems.stream().filter(item -> item.getId() > 0).collect(Collectors.toList());
+        this.materialItems = this.materialItems.stream().filter(item -> item.getId() > 0).collect(Collectors.toList());
     }
 
     public int getCombineId() {
-        return combineId;
+        return this.combineId;
     }
 
     public int getPlayerLevel() {
-        return playerLevel;
+        return this.playerLevel;
     }
 
     public boolean isDefaultShow() {
-        return isDefaultShow;
+        return this.isDefaultShow;
     }
 
     public int getCombineType() {
-        return combineType;
+        return this.combineType;
     }
 
     public int getSubCombineType() {
-        return subCombineType;
+        return this.subCombineType;
     }
-    
+
     public int getResultItemId() {
-        return resultItemId;
+        return this.resultItemId;
     }
 
     public int getResultItemCount() {
-        return resultItemCount;
+        return this.resultItemCount;
     }
 
     public int getScoinCost() {
-        return scoinCost;
+        return this.scoinCost;
     }
 
     public List<ItemParamData> getRandomItems() {
-        return randomItems;
+        return this.randomItems;
     }
 
     public List<ItemParamData> getMaterialItems() {
-        return materialItems;
+        return this.materialItems;
     }
 
     public String getRecipeType() {
-        return recipeType;
+        return this.recipeType;
     }
 
 }
