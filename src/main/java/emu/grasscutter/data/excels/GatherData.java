@@ -1,45 +1,45 @@
-package emu.grasscutter.data.def;
+package emu.grasscutter.data.excels;
 
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "GatherExcelConfigData.json")
 public class GatherData extends GameResource {
-	private int PointType;
-	private int Id;
-	private int GadgetId;
-	private int ItemId;
-	private int Cd; // Probably hours
-	private boolean IsForbidGuest;
-	private boolean InitDisableInteract;
+	private int pointType;
+	private int id;
+	private int gadgetId;
+	private int itemId;
+	private int cd; // Probably hours
+	private boolean isForbidGuest;
+	private boolean initDisableInteract;
 	    
 	@Override
 	public int getId() {
-		return this.PointType;
+		return this.pointType;
 	}
 
 	public int getGatherId() {
-		return Id;
+		return id;
 	}
 
 	public int getGadgetId() {
-		return GadgetId;
+		return gadgetId;
 	}
 
 	public int getItemId() {
-		return ItemId;
+		return itemId;
 	}
 
 	public int getCd() {
-		return Cd;
+		return cd;
 	}
 
 	public boolean isForbidGuest() {
-		return IsForbidGuest;
+		return isForbidGuest;
 	}
 
 	public boolean initDisableInteract() {
-		return InitDisableInteract;
+		return initDisableInteract;
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 package emu.grasscutter.game.dungeons.challenge;
 
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.def.DungeonData;
+import emu.grasscutter.data.excels.DungeonData;
 import emu.grasscutter.game.dungeons.challenge.trigger.ChallengeTrigger;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;

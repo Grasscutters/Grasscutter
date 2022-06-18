@@ -60,7 +60,7 @@ public class EntityNPC extends GameEntity{
 
         SceneEntityInfoOuterClass.SceneEntityInfo.Builder entityInfo = SceneEntityInfoOuterClass.SceneEntityInfo.newBuilder()
                 .setEntityId(getId())
-                .setEntityType(ProtEntityTypeOuterClass.ProtEntityType.PROT_ENTITY_NPC)
+                .setEntityType(ProtEntityTypeOuterClass.ProtEntityType.PROT_ENTITY_TYPE_NPC)
                 .setMotionInfo(MotionInfoOuterClass.MotionInfo.newBuilder()
                         .setPos(getPosition().toProto())
                         .setRot(getRotation().toProto())

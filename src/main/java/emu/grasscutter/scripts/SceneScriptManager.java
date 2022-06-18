@@ -4,8 +4,8 @@ import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.def.MonsterData;
-import emu.grasscutter.data.def.WorldLevelData;
+import emu.grasscutter.data.excels.MonsterData;
+import emu.grasscutter.data.excels.WorldLevelData;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.EntityNPC;
@@ -414,7 +414,7 @@ public class SceneScriptManager {
 	}
 	
 	public void meetEntities(List<? extends GameEntity> gameEntity){
-		getScene().addEntities(gameEntity, VisionTypeOuterClass.VisionType.VISION_MEET);
+		getScene().addEntities(gameEntity, VisionTypeOuterClass.VisionType.VISION_TYPE_MEET);
 	}
 	
 	public void addEntities(List<? extends GameEntity> gameEntity){
@@ -434,7 +434,7 @@ public class SceneScriptManager {
 				.filter(e -> configSet.contains(e.getConfigId()))
 				.toList();
 
-		getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_MISS);
+		getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_TYPE_MISS);
 	}
 	public void removeGadgetsInGroup(SceneGroup group, SceneSuite suite) {
 		var configSet = suite.sceneGadgets.stream()
@@ -446,6 +446,6 @@ public class SceneScriptManager {
 				.filter(e -> configSet.contains(e.getConfigId()))
 				.toList();
 
-		getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_MISS);
+		getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_TYPE_MISS);
 	}
 }
