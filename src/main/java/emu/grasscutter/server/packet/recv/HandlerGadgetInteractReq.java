@@ -13,7 +13,7 @@ public class HandlerGadgetInteractReq extends PacketHandler {
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		GadgetInteractReq req = GadgetInteractReq.parseFrom(payload);
 		
-		session.getPlayer().interactWith(req.getGadgetEntityId(), req);
+		session.getPlayer().interactWith(req.getGadgetEntityId(), req.getOpType());
 	}
 
 }

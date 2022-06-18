@@ -1,11 +1,12 @@
 package emu.grasscutter.scripts.data;
 
-import emu.grasscutter.utils.Position;
+import lombok.Setter;
+import lombok.ToString;
 
-public class SceneMonster {
-	public int level;
-	public int config_id;
+@ToString
+@Setter
+public class SceneMonster extends SceneObject{
 	public int monster_id;
-	public Position pos;
-	public Position rot;
+	public int pose_id;
+	public int drop_id;
 }

@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
 
 import com.google.gson.Gson;
 import emu.grasscutter.data.binout.*;
+import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.utils.Utils;
 import lombok.SneakyThrows;
 import org.reflections.Reflections;
@@ -64,10 +65,9 @@ public class ResourceLoader {
 		loadQuests();
 		// Load scene points - must be done AFTER resources are loaded
 		loadScenePoints();
-
 		// Load default home layout
 		loadHomeworldDefaultSaveData();
-
+		loadNpcBornData();
 	}
 
 	public static void loadResources() {
@@ -414,6 +414,27 @@ public class ResourceLoader {
 		}
 
 		Grasscutter.getLogger().info("Loaded " + GameData.getHomeworldDefaultSaveData().size() + " HomeworldDefaultSaveDatas.");
+	}
+
+	@SneakyThrows
+	private static void loadNpcBornData(){
+		var folder = Files.list(Path.of(RESOURCE("BinOutput/Scene/SceneNpcBorn"))).toList();
+
+		for(var file : folder){
+			if(file.toFile().isDirectory()){
+				continue;
+			}
+
+			var data = Grasscutter.getGsonFactory().fromJson(Files.readString(file), SceneNpcBornData.class);
+			if(data.getBornPosList() == null || data.getBornPosList().size() == 0){
+				continue;
+			}
+
+			data.setIndex(SceneIndexManager.buildIndex(3, data.getBornPosList(), item -> item.getPos().toPoint()));
+			GameData.getSceneNpcBornData().put(data.getSceneId(), data);
+		}
+
+		Grasscutter.getLogger().info("Loaded " + GameData.getSceneNpcBornData().size() + " SceneNpcBornDatas.");
 	}
 
 	// BinOutput configs
