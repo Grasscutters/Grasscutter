@@ -2,15 +2,11 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 1902
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message GetInvestigationMonsterReq {
-	enum CmdId {
-		option allow_alias = true;
-		ENET_CHANNEL_ID = 0;
-		NONE = 0;
-		ENET_IS_RELIABLE = 1;
-		IS_ALLOW_CLIENT = 1;
-		CMD_ID = 1916;
-	}
-
-	repeated uint32 city_id_list = 1;
+	repeated uint32 city_id_list = 13;
+	bool ABFECCDJENJ = 11;
 }
