@@ -31,6 +31,7 @@ import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.utils.Position;
@@ -48,9 +49,7 @@ public class EntityAvatar extends GameEntity {
 	public EntityAvatar(Scene scene, Avatar avatar) {
 		super(scene);
 		this.avatar = avatar;
-		this.setCurrentEnergy();
 		this.id = getScene().getWorld().getNextEntityId(EntityIdType.AVATAR);
-		
 		GameItem weapon = this.getAvatar().getWeapon();
 		if (weapon != null) {
 			weapon.setWeaponEntityId(getScene().getWorld().getNextEntityId(EntityIdType.WEAPON));
@@ -60,7 +59,6 @@ public class EntityAvatar extends GameEntity {
 	public EntityAvatar(Avatar avatar) {
 		super(null);
 		this.avatar = avatar;
-		this.setCurrentEnergy();
 	}
 
 	public Player getPlayer() {
@@ -133,16 +131,20 @@ public class EntityAvatar extends GameEntity {
 	}
 
 	public void clearEnergy(ChangeEnergyReason reason) {
+//		Don't do anything if energy usage is disabled.
+		if(!this.getPlayer().getEnergyUsage()){
+			return;
+		}
 		// Fight props.
 		FightProperty curEnergyProp = this.getAvatar().getSkillDepot().getElementType().getCurEnergyProp();
 		FightProperty maxEnergyProp = this.getAvatar().getSkillDepot().getElementType().getMaxEnergyProp();
 
 		// Get max energy.
-		float maxEnergy = this.avatar.getFightProperty(maxEnergyProp);
+		float maxEnergy = this.getFightProperty(maxEnergyProp);
 
 		// Set energy to zero.
-		this.avatar.setCurrentEnergy(curEnergyProp, 0);
-
+		this.avatar.setCurrentEnergy(0);
+		this.setFightProperty(curEnergyProp, 0);
 		// Send packets.
 		this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, curEnergyProp));
 
@@ -155,13 +157,18 @@ public class EntityAvatar extends GameEntity {
 		this.addEnergy(amount, reason, false);
 	}
 	public void addEnergy(float amount, PropChangeReason reason, boolean isFlat) {
+		//		Don't do anything if energy usage is disabled.
+		if(!this.getPlayer().getEnergyUsage()){
+			return;
+		}
 		// Get current and maximum energy for this avatar.
 		FightProperty curEnergyProp = this.getAvatar().getSkillDepot().getElementType().getCurEnergyProp();
 		FightProperty maxEnergyProp = this.getAvatar().getSkillDepot().getElementType().getMaxEnergyProp();
 
 		float curEnergy = this.getFightProperty(curEnergyProp);
 		float maxEnergy = this.getFightProperty(maxEnergyProp);
-		
+
+
 		// Get energy recharge.
 		float energyRecharge = this.getFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY);
 
@@ -175,27 +182,12 @@ public class EntityAvatar extends GameEntity {
 		
 		// Set energy and notify.
 		if (newEnergy != curEnergy) {
-			this.setCurrentEnergy(curEnergyProp,newEnergy,reason);
+			this.avatar.setCurrentEnergy(newEnergy);
+			this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, curEnergyProp));
+			this.getScene().broadcastPacket(
+					new PacketEntityFightPropChangeReasonNotify(
+							this, curEnergyProp, newEnergy, reason));
 		}
-	}
-
-	private void setCurrentEnergy() {
-		float curEnergy;
-		FightProperty curEnergyProp = this.getAvatar().getSkillDepot().getElementType().getCurEnergyProp();
-		FightProperty maxEnergyProp = this.getAvatar().getSkillDepot().getElementType().getMaxEnergyProp();
-		PropChangeReason reason=PropChangeReason.PROP_CHANGE_REASON_ABILITY;
-		if(this.getPlayer().getEnergyUsage()){
-			curEnergy=this.avatar.getCurrentEnergy();
-		}else{
-			curEnergy= this.getFightProperty(maxEnergyProp);
-		}
-		setCurrentEnergy(curEnergyProp,curEnergy,reason);
-	}
-
-	private void setCurrentEnergy(FightProperty curEnergyProp,float newEnergy,PropChangeReason reason) {
-		this.avatar.setCurrentEnergy(curEnergyProp, newEnergy);
-		this.getScene().broadcastPacket(new PacketAvatarFightPropUpdateNotify(this.getAvatar(), curEnergyProp));
-		this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, curEnergyProp, newEnergy, reason));
 	}
 	
 	public SceneAvatarInfo getSceneAvatarInfo() {

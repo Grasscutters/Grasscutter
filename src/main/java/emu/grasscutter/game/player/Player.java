@@ -162,7 +162,7 @@ public class Player {
 
 	@Transient private MapMarksManager mapMarksManager;
 	@Transient private StaminaManager staminaManager;
-	@Transient private EnergyManager energyManager;
+	@Transient  private EnergyManager energyManager;
 	@Transient private ResinManager resinManager;
 	@Transient private ForgingManager forgingManager;
 	@Transient private DeforestationManager deforestationManager;
@@ -1186,7 +1186,7 @@ public class Player {
 
 	public Boolean getEnergyUsage() {
 		if(energyUsage==null){
-			energyUsage=true;
+			energyUsage=GAME_OPTIONS.energyUsage;
 		}
 		return energyUsage;
 	}

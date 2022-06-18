@@ -192,6 +192,8 @@ public class EnergyManager {
 
         // Generate 2 particles by default.
         int amount = particlesDefault;
+
+        // if called by Favonius ,generate while ball
         if(invoke.getHead().getLocalId()==98307){
             amount = 3;
             for (int i = 0; i < amount; i++) {
@@ -361,10 +363,7 @@ public class EnergyManager {
      Energy logic related to using skills.
      **********/
     private void handleBurstCast(Avatar avatar, int skillId) {
-        // Don't do anything if energy usage is disabled.
-        if (!this.player.getEnergyUsage()) {
-            return;
-        }
+        // Don't do anything if energy usage is disabled. ->remove to clearEnergy()
 
         // If the cast skill was a burst, consume energy.
         if (avatar.getSkillDepot() != null && skillId == avatar.getSkillDepot().getEnergySkill()) {

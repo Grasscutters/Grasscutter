@@ -146,12 +146,12 @@ public class Avatar {
 		
 		// Skill depot
 		this.setSkillDepotData(getAvatarData().getSkillDepot());
-		
+		this.setMaxEnergy();
 		// Set stats
 		this.recalcStats();
 		this.currentHp = getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 		setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, this.currentHp);
-		this.currentEnergy = 0f;
+//		this.currentEnergy = 0f;
 		// Load handler
 		this.onLoad();
 	}
@@ -363,34 +363,26 @@ public class Avatar {
 	public float getCurrentEnergy() {
 		return currentEnergy;
 	}
-
-//	public void setCurrentEnergy() {
-//		if (this.getPlayer().getEnergyUsage()) {
-//			this.setCurrentEnergy(this.currentEnergy);
-//		}
-//	}
 	
 	public void setCurrentEnergy(float currentEnergy) {
+		if(this.getSkillDepot() != null){
+			FightProperty curEnergyProp = this.getSkillDepot().getElementType().getCurEnergyProp();
+			this.setFightProperty(curEnergyProp, currentEnergy);
+		}
+		this.currentEnergy=currentEnergy;
+		this.save();
+	}
+
+	public void setMaxEnergy(){
 		if (this.getSkillDepot() != null && this.getSkillDepot().getEnergySkillData() != null) {
 			ElementType element = this.getSkillDepot().getElementType();
-			this.setFightProperty(element.getMaxEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
-
-			if (this.getPlayer().getEnergyUsage()) {
-				this.setFightProperty(element.getCurEnergyProp(), currentEnergy);
-			} else {
-				this.setFightProperty(element.getCurEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
+			if(this.getFightProperty(element.getMaxEnergyProp())==0f){
+				this.setFightProperty(element.getMaxEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
 			}
-
-		}		
-	}
-
-	public void setCurrentEnergy(FightProperty curEnergyProp, float currentEnergy) {
-		this.setFightProperty(curEnergyProp, currentEnergy);
-		this.currentEnergy = currentEnergy;
-		if (this.getPlayer().getEnergyUsage()) {
-			this.save();
 		}
 	}
+
+
 
 	public Int2FloatOpenHashMap getFightProperties() {
 		return fightProp;
@@ -516,7 +508,7 @@ public class Avatar {
 		AvatarData data = this.getAvatarData();
 		AvatarPromoteData promoteData = GameData.getAvatarPromoteData(data.getAvatarPromoteId(), this.getPromoteLevel());
 		Int2IntOpenHashMap setMap = new Int2IntOpenHashMap();
-		
+
 		// Extra ability embryos
 		Set<String> prevExtraAbilityEmbryos = this.getExtraAbilityEmbryos();
 		this.extraAbilityEmbryos = new HashSet<>();
@@ -529,12 +521,9 @@ public class Avatar {
 		// Get hp percent, set to 100% if none
 		float hpPercent = this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) <= 0 ? 1f : this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) / this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 		
-		// Store current energy value for later
-		float currentEnergy = (this.getSkillDepot() != null) ? this.getFightProperty(this.getSkillDepot().getElementType().getCurEnergyProp()) : 0f;
-
 		// Clear properties
 		this.getFightProperties().clear();
-		
+
 		// Base stats
 		this.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, data.getBaseHp(this.getLevel()));
 		this.setFightProperty(FightProperty.FIGHT_PROP_BASE_ATTACK, data.getBaseAttack(this.getLevel()));
@@ -542,16 +531,13 @@ public class Avatar {
 		this.setFightProperty(FightProperty.FIGHT_PROP_CRITICAL, data.getBaseCritical());
 		this.setFightProperty(FightProperty.FIGHT_PROP_CRITICAL_HURT, data.getBaseCriticalHurt());
 		this.setFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, 1f);
-		
+		this.setMaxEnergy();
+		this.setFightProperty(this.getSkillDepot().getElementType().getCurEnergyProp(), currentEnergy);
 		if (promoteData != null) {
 			for (FightPropData fightPropData : promoteData.getAddProps()) {
 				this.addFightProperty(fightPropData.getProp(), fightPropData.getValue());
 			}
 		}
-		
-		// Set energy usage
-		setCurrentEnergy(currentEnergy);
-		
 		// Artifacts
 		for (int slotId = 1; slotId <= 5; slotId++) {
 			// Get artifact
