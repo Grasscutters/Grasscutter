@@ -35,6 +35,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.net.InetSocketAddress;
+import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -195,6 +196,9 @@ public final class GameServer extends KcpServer {
     }
 
     public synchronized void onTick() {
+        var tickStart = Instant.now();
+
+        // Tick worlds.
         Iterator<World> it = this.getWorlds().iterator();
         while (it.hasNext()) {
             World world = it.next();
@@ -206,11 +210,12 @@ public final class GameServer extends KcpServer {
             world.onTick();
         }
 
+        // Tick players.
         for (Player player : this.getPlayers().values()) {
             player.onTick();
         }
 
-        ServerTickEvent event = new ServerTickEvent();
+        ServerTickEvent event = new ServerTickEvent(tickStart, Instant.now());
         event.call();
     }
 
