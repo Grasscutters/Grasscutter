@@ -183,7 +183,7 @@ public class EntityAvatar extends GameEntity {
 		// Set energy and notify.
 		if (newEnergy != curEnergy) {
 			this.avatar.setCurrentEnergy(newEnergy);
-			this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, curEnergyProp));
+			this.getScene().broadcastPacket(new PacketAvatarFightPropUpdateNotify(this.getAvatar(), curEnergyProp));
 			this.getScene().broadcastPacket(
 					new PacketEntityFightPropChangeReasonNotify(
 							this, curEnergyProp, newEnergy, reason));
