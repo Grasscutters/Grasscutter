@@ -14,6 +14,8 @@ import emu.grasscutter.game.managers.InventoryManager;
 import emu.grasscutter.game.managers.MultiplayerManager;
 import emu.grasscutter.game.managers.chat.ChatManager;
 import emu.grasscutter.game.managers.chat.ChatManagerHandler;
+import emu.grasscutter.game.managers.energy.EnergyManager;
+import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.ServerQuestHandler;
 import emu.grasscutter.game.shop.ShopManager;
@@ -117,6 +119,11 @@ public final class GameServer extends KcpServer {
         this.combineManger = new CombineManger(this);
         this.towerScheduleManager = new TowerScheduleManager(this);
         this.worldDataManager = new WorldDataManager(this);
+
+        // Initialize singleton managers.
+        StaminaManager.initialize();
+        EnergyManager.initialize();
+
         // Hook into shutdown event.
         Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
     }
