@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BattlePassSchedule.proto";
+
+// CmdId: 2604
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BattlePassCurScheduleUpdateNotify {
+	bool have_cur_schedule = 9;
+	BattlePassSchedule cur_schedule = 15;
+}

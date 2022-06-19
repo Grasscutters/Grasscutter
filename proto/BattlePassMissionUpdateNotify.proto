@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BattlePassMission.proto";
+
+// CmdId: 2609
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BattlePassMissionUpdateNotify {
+	repeated BattlePassMission mission_list = 6;
+}
