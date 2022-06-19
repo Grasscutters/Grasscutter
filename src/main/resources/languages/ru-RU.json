@@ -1,26 +1,26 @@
 {
     "messages": {
         "game": {
-            "port_bind": "Сервер запущен на порте %s",
+            "port_bind": "Игровой сервер запущен на порте %s",
             "connect": "Клиент подключился с %s",
             "disconnect": "Клиент подключился с %s",
             "game_update_error": "Произошла ошибка при обновлении игры.",
             "command_error": "Командная ошибка:"
         },
         "dispatch": {
-            "port_bind": "[Dispatch] Dispatch server started on port %s",
+            "port_bind": "[Dispatch] Распределительный сервер запущен на порте %s",
             "request": "[Dispatch] Client %s %s request: %s",
             "keystore": {
-                "general_error": "[Dispatch] Error while loading keystore!",
-                "password_error": "[Dispatch] Unable to load keystore. Trying default keystore password...",
+                "general_error": "[Dispatch] Возникла ошибка при загрузке keystore!",
+                "password_error": "[Dispatch] Не удалось загрузить keystore. Пытаемся использовать пароль для keystore по умолчанию...",
                 "no_keystore_error": "[Dispatch] Сертификат SSL не найден! Возвращаемся к режиму сервера HTTP.",
-                "default_password": "[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to 123456 in config.json."
+                "default_password": "[Dispatch] Пароль keystore по умолчанию был успешно загружен. Установите пароль 123456 в config.json."
             },
             "authentication": {
                 "default_unable_to_verify": "[Авторизация] Произошел вызов метода verifyUser, который недоступен в стандартном обработчике авторизации."
             },
-            "no_commands_error": "Commands are not supported in dispatch only mode.",
-            "unhandled_request_error": "[Dispatch] Potential unhandled %s request: %s.",
+            "no_commands_error": "Команды не доступны в режиме \"dispatch only\".",
+            "unhandled_request_error": "[Dispatch] Возможный необработанный запрос %s: %s.",
             "account": {
                 "login_attempt": "[Dispatch] Клиент %s пытается войти.",
                 "login_success": "[Dispatch] Клиент %s вошел как %s.",
@@ -274,11 +274,11 @@
             "send_cancel": "Отправление сообщения было отменено.",
             "send_done": "Сообщение было отправлено пользователю %s!",
             "send_all_done": "Сообщение было отправлено всем пользователям!",
-            "not_composition_end": "Message composition not at final stage.\nPlease use '/sendmail %s' or '/sendmail stop' to cancel",
+            "not_composition_end": "Составление письма еще не было завершено.\nВведите '/sendmail %s' для продолжения или '/sendmail stop' для отмены",
             "please_use": "Пожалуйста, введите '/sendmail %s'",
             "set_title": "Был задан следующий заголовок: '%s'.\nВведите '/sendmail <содержание>' для того, чтобы продолжить.",
-            "set_contents": "Было задано следующее содержание письма: '%s'.\Введите '/sendmail <отправитель>' для того, чтобы продолжить.",
-            "set_message_sender": "Был задан следующий отправитель письма: '%s'.\Введите '/sendmail <ID_предмета|название_предмета|finish> [кол-во] [уровень]' для того, чтобы продолжить.",
+            "set_contents": "Было задано следующее содержание письма: '%s'.\nВведите '/sendmail <отправитель>' для того, чтобы продолжить.",
+            "set_message_sender": "Был задан следующий отправитель письма: '%s'.\nВведите '/sendmail <ID_предмета|название_предмета|finish> [кол-во] [уровень]' для того, чтобы продолжить.",
             "send": "Было задано следующее вложение: %s %s (%s уровня).\nВы можете продолжить добавлять предметы или ввести '/sendmail finish' для того, чтобы отправить письмо.",
             "invalid_arguments_please_use": "Некорректные аргументы.\n Пожалуйста, введите '/sendmail %s'",
             "title": "<заголовок>",
