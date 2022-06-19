@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "InvestigationMonster.proto";
+
+// CmdId: 1911
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GetInvestigationMonsterRsp {
+	int32 retcode = 9;
+	repeated InvestigationMonster monster_list = 7;
+	bool ABFECCDJENJ = 10;
+}

@@ -13,6 +13,7 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.gacha.GachaRecord;
+import emu.grasscutter.game.home.GameHome;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
@@ -294,5 +295,11 @@ public final class DatabaseHelper {
 	
 	public static boolean deleteQuest(GameMainQuest quest) {
 		return DatabaseManager.getGameDatastore().delete(quest).wasAcknowledged();
+	}
+	public static GameHome getHomeByUid(int id) {
+		return DatabaseManager.getGameDatastore().find(GameHome.class).filter(Filters.eq("ownerUid", id)).first();
+	}
+	public static void saveHome(GameHome gameHome) {
+		DatabaseManager.getGameDatastore().save(gameHome);
 	}
 }

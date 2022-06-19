@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeSceneArrangementInfo.proto";
+
+// CmdId: 4456
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeGetArrangementInfoRsp {
+	int32 retcode = 1;
+	repeated HomeSceneArrangementInfo scene_arrangement_info_list = 12;
+}

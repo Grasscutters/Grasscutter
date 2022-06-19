@@ -5,7 +5,12 @@ import emu.grasscutter.scripts.constants.ScriptRegionShape;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
+import lombok.Data;
+import lombok.Setter;
+import lombok.ToString;
 
+@ToString
+@Setter
 public class SceneRegion {
 	public int config_id;
 	public int shape;

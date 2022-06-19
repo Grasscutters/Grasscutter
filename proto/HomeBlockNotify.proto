@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4542
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeBlockNotify {
+	uint32 end_time = 7;
+}

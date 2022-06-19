@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4848
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message HomeGetArrangementInfoReq {
+	repeated uint32 scene_id_list = 6;
+}
