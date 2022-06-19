@@ -6,7 +6,7 @@
 
 ##
 #
-#   Genshin Impact script for mitmproxy
+#   Animation Company script for mitmproxy
 #
 #   https://github.com/MlgmXyysd/
 #
@@ -30,7 +30,7 @@ from proxy_config import USE_SSL
 from proxy_config import REMOTE_HOST
 from proxy_config import REMOTE_PORT
 
-class MlgmXyysd_Genshin_Impact_Proxy:
+class MlgmXyysd_Animation_Company_Proxy:
 
     LIST_DOMAINS = [
         "api-os-takumi.mihoyo.com",
@@ -150,6 +150,6 @@ class MaybeTls:
         self.strategy.record_failure(server_address)
         
 addons = [
-	MlgmXyysd_Genshin_Impact_Proxy(),
+	MlgmXyysd_Animation_Company_Proxy(),
     MaybeTls()
 ]
