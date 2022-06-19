@@ -13,23 +13,23 @@ public class CodexAnimalData extends GameResource {
 
     @Override
     public int getId() {
-        return Id;
+        return this.Id;
     }
 
     public String getType() {
-        return type;
+        return this.type;
     }
 
     public int getDescribeId() {
-        return describeId;
+        return this.describeId;
     }
 
     public int getSortOrder() {
-        return sortOrder;
+        return this.sortOrder;
     }
 
     public CodexAnimalUnlockCondition getUnlockCondition() {
-        return OCCLHPBCDGL;
+        return this.OCCLHPBCDGL;
     }
 
     public enum CodexAnimalUnlockCondition {

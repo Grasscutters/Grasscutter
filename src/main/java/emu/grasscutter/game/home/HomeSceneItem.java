@@ -27,24 +27,25 @@ public class HomeSceneItem {
     Position djinnPos;
     HomeFurnitureItem mainHouse;
     int tmpVersion;
+
     public static HomeSceneItem parseFrom(HomeworldDefaultSaveData defaultItem, int sceneId) {
         return HomeSceneItem.of()
-                .sceneId(sceneId)
-                .blockItems(defaultItem.getHomeBlockLists().stream()
-                        .map(HomeBlockItem::parseFrom)
-                        .collect(Collectors.toMap(HomeBlockItem::getBlockId, y -> y)))
-                .bornPos(defaultItem.getBornPos())
-                .bornRot(defaultItem.getBornRot() == null ? new Position() : defaultItem.getBornRot())
-                .djinnPos(defaultItem.getDjinPos() == null ? new Position() : defaultItem.getDjinPos())
-                .mainHouse(defaultItem.getMainhouse() == null ? null :
-                        HomeFurnitureItem.parseFrom(defaultItem.getMainhouse()))
-                .build();
+            .sceneId(sceneId)
+            .blockItems(defaultItem.getHomeBlockLists().stream()
+                .map(HomeBlockItem::parseFrom)
+                .collect(Collectors.toMap(HomeBlockItem::getBlockId, y -> y)))
+            .bornPos(defaultItem.getBornPos())
+            .bornRot(defaultItem.getBornRot() == null ? new Position() : defaultItem.getBornRot())
+            .djinnPos(defaultItem.getDjinPos() == null ? new Position() : defaultItem.getDjinPos())
+            .mainHouse(defaultItem.getMainhouse() == null ? null :
+                HomeFurnitureItem.parseFrom(defaultItem.getMainhouse()))
+            .build();
     }
 
-    public void update(HomeSceneArrangementInfo arrangementInfo){
-        for(var blockItem : arrangementInfo.getBlockArrangementInfoListList()){
+    public void update(HomeSceneArrangementInfo arrangementInfo) {
+        for (var blockItem : arrangementInfo.getBlockArrangementInfoListList()) {
             var block = this.blockItems.get(blockItem.getBlockId());
-            if(block == null){
+            if (block == null) {
                 Grasscutter.getLogger().warn("Could not found the Home Block {}", blockItem.getBlockId());
                 continue;
             }
@@ -59,33 +60,33 @@ public class HomeSceneItem {
         this.tmpVersion = arrangementInfo.getTmpVersion();
     }
 
-    public int getRoomSceneId(){
-        if(mainHouse == null || mainHouse.getAsItem() == null){
+    public int getRoomSceneId() {
+        if (this.mainHouse == null || this.mainHouse.getAsItem() == null) {
             return 0;
         }
-        return mainHouse.getAsItem().getRoomSceneId();
+        return this.mainHouse.getAsItem().getRoomSceneId();
     }
 
-    public int calComfort(){
+    public int calComfort() {
         return this.blockItems.values().stream()
-                .mapToInt(HomeBlockItem::calComfort)
-                .sum();
+            .mapToInt(HomeBlockItem::calComfort)
+            .sum();
     }
 
-    public HomeSceneArrangementInfo toProto(){
+    public HomeSceneArrangementInfo toProto() {
         var proto = HomeSceneArrangementInfo.newBuilder();
-        blockItems.values().forEach(b -> proto.addBlockArrangementInfoList(b.toProto()));
+        this.blockItems.values().forEach(b -> proto.addBlockArrangementInfoList(b.toProto()));
 
-        proto.setComfortValue(calComfort())
-                .setBornPos(bornPos.toProto())
-                .setBornRot(bornRot.toProto())
-                .setDjinnPos(djinnPos.toProto())
-                .setIsSetBornPos(true)
-                .setSceneId(sceneId)
-                .setTmpVersion(tmpVersion);
+        proto.setComfortValue(this.calComfort())
+            .setBornPos(this.bornPos.toProto())
+            .setBornRot(this.bornRot.toProto())
+            .setDjinnPos(this.djinnPos.toProto())
+            .setIsSetBornPos(true)
+            .setSceneId(this.sceneId)
+            .setTmpVersion(this.tmpVersion);
 
-        if(mainHouse != null){
-            proto.setMainHouse(mainHouse.toProto());
+        if (this.mainHouse != null) {
+            proto.setMainHouse(this.mainHouse.toProto());
         }
         return proto.build();
     }

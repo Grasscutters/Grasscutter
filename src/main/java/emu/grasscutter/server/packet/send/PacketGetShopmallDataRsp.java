@@ -7,16 +7,16 @@ import emu.grasscutter.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp
 import java.util.List;
 
 public class PacketGetShopmallDataRsp extends BasePacket {
-	
-	public PacketGetShopmallDataRsp() {
-		super(PacketOpcodes.GetShopmallDataRsp);
 
-		List<Integer> shop_malls = List.of(900, 1052, 902, 1001, 903);
+    public PacketGetShopmallDataRsp() {
+        super(PacketOpcodes.GetShopmallDataRsp);
 
-		GetShopmallDataRsp proto = GetShopmallDataRsp.newBuilder()
-				.addAllShopTypeList(shop_malls)
-				.build();
+        List<Integer> shop_malls = List.of(900, 1052, 902, 1001, 903);
 
-		this.setData(proto);
-	}
+        GetShopmallDataRsp proto = GetShopmallDataRsp.newBuilder()
+            .addAllShopTypeList(shop_malls)
+            .build();
+
+        this.setData(proto);
+    }
 }

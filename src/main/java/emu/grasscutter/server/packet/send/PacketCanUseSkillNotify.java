@@ -10,8 +10,8 @@ public class PacketCanUseSkillNotify extends BasePacket {
         super(PacketOpcodes.CanUseSkillNotify);
 
         CanUseSkillNotifyOuterClass.CanUseSkillNotify proto = CanUseSkillNotifyOuterClass.CanUseSkillNotify.newBuilder()
-                .setIsCanUseSkill(canUseSkill)
-                .build();
+            .setIsCanUseSkill(canUseSkill)
+            .build();
 
         this.setData(proto);
     }

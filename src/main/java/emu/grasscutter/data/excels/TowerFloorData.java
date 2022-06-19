@@ -24,26 +24,26 @@ public class TowerFloorData extends GameResource {
     }
 
     public int getFloorId() {
-        return floorId;
+        return this.floorId;
     }
 
     public int getFloorIndex() {
-        return floorIndex;
+        return this.floorIndex;
     }
 
     public int getLevelGroupId() {
-        return levelGroupId;
+        return this.levelGroupId;
     }
 
     public int getOverrideMonsterLevel() {
-        return overrideMonsterLevel;
+        return this.overrideMonsterLevel;
     }
 
     public int getTeamNum() {
-        return teamNum;
+        return this.teamNum;
     }
 
     public int getFloorLevelConfigId() {
-        return floorLevelConfigId;
+        return this.floorLevelConfigId;
     }
 }

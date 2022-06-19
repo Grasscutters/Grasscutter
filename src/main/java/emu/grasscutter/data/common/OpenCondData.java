@@ -7,7 +7,7 @@ public class OpenCondData {
     private List<Integer> paramList;
 
     public String getCondType() {
-        return condType;
+        return this.condType;
     }
 
     public void setCondType(String condType) {
@@ -15,7 +15,7 @@ public class OpenCondData {
     }
 
     public List<Integer> getParamList() {
-        return paramList;
+        return this.paramList;
     }
 
     public void setParamList(List<Integer> paramList) {

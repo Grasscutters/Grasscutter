@@ -25,7 +25,7 @@ public class ResinManager {
         }
 
         int currentResin = this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
-        
+
         // Check if the player has sufficient resin.
         if (currentResin < amount) {
             return false;
@@ -38,7 +38,7 @@ public class ResinManager {
         // Check if this has taken the player under the recharge cap,
         // starting the recharging process.
         if (this.player.getNextResinRefresh() == 0 && newResin < GAME_OPTIONS.resinOptions.cap) {
-		    int currentTime = Utils.getCurrentSeconds();
+            int currentTime = Utils.getCurrentSeconds();
             this.player.setNextResinRefresh(currentTime + GAME_OPTIONS.resinOptions.rechargeTime);
         }
 
@@ -96,7 +96,7 @@ public class ResinManager {
         // Calculate how much resin we need to refill and update player.
         // Note that this can be more than one in case the player
         // logged off with uncapped resin and is now logging in again.
-        int recharge = 1 + (int)((currentTime - this.player.getNextResinRefresh()) / GAME_OPTIONS.resinOptions.rechargeTime);
+        int recharge = 1 + ((currentTime - this.player.getNextResinRefresh()) / GAME_OPTIONS.resinOptions.rechargeTime);
         int newResin = Math.min(GAME_OPTIONS.resinOptions.cap, currentResin + recharge);
         int resinChange = newResin - currentResin;
 
@@ -106,8 +106,7 @@ public class ResinManager {
         // Set to zero to disable recharge (because on/over cap.)
         if (newResin >= GAME_OPTIONS.resinOptions.cap) {
             this.player.setNextResinRefresh(0);
-        }
-        else {
+        } else {
             int nextRecharge = this.player.getNextResinRefresh() + resinChange * GAME_OPTIONS.resinOptions.rechargeTime;
             this.player.setNextResinRefresh(nextRecharge);
         }
@@ -121,7 +120,7 @@ public class ResinManager {
      * Player login.
      ********************/
     public synchronized void onPlayerLogin() {
-		// If resin usage is disabled, set resin to cap.
+        // If resin usage is disabled, set resin to cap.
         if (!GAME_OPTIONS.resinOptions.resinUsage) {
             this.player.setProperty(PlayerProperty.PROP_PLAYER_RESIN, GAME_OPTIONS.resinOptions.cap);
             this.player.setNextResinRefresh(0);
@@ -131,7 +130,7 @@ public class ResinManager {
         // we need to restart recharging here.
         int currentResin = this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
         int currentTime = Utils.getCurrentSeconds();
-        
+
         if (currentResin < GAME_OPTIONS.resinOptions.cap && this.player.getNextResinRefresh() == 0) {
             this.player.setNextResinRefresh(currentTime + GAME_OPTIONS.resinOptions.rechargeTime);
         }

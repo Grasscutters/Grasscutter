@@ -4,7 +4,6 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import lombok.AccessLevel;
-import lombok.Data;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
@@ -23,6 +22,7 @@ public class InvestigationMonsterData extends GameResource {
     String monsterCategory;
 
     CityData cityData;
+
     @Override
     public int getId() {
         return this.id;
@@ -30,6 +30,6 @@ public class InvestigationMonsterData extends GameResource {
 
     @Override
     public void onLoad() {
-        this.cityData = GameData.getCityDataMap().get(cityId);
+        this.cityData = GameData.getCityDataMap().get(this.cityId);
     }
 }

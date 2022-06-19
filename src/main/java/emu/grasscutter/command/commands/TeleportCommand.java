@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -36,14 +35,14 @@ public final class TeleportCommand implements CommandHandler {
             case 4:
                 try {
                     sceneId = Integer.parseInt(args.get(3));
-                }catch (NumberFormatException ignored) {
+                } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
                 }  // Fallthrough
             case 3:
                 try {
-                    x = parseRelative(args.get(0), x);
-                    y = parseRelative(args.get(1), y);
-                    z = parseRelative(args.get(2), z);
+                    x = this.parseRelative(args.get(0), x);
+                    y = this.parseRelative(args.get(1), y);
+                    z = this.parseRelative(args.get(2), z);
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.invalid_position"));
                 }
@@ -58,9 +57,9 @@ public final class TeleportCommand implements CommandHandler {
         if (!result) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.invalid_position"));
         } else {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.success", 
-                    targetPlayer.getNickname(), Float.toString(x), Float.toString(y), 
-                    Float.toString(z), Integer.toString(sceneId))
+            CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.success",
+                targetPlayer.getNickname(), Float.toString(x), Float.toString(y),
+                Float.toString(z), Integer.toString(sceneId))
             );
         }
 

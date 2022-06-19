@@ -4,23 +4,23 @@ import dev.morphia.annotations.Entity;
 
 @Entity
 public class AvatarProfileData {
-	private int avatarId;
-	private int level;
-	
-	public AvatarProfileData(Avatar avatar) {
-		this.update(avatar);
-	}
+    private int avatarId;
+    private int level;
 
-	public int getAvatarId() {
-		return avatarId;
-	}
+    public AvatarProfileData(Avatar avatar) {
+        this.update(avatar);
+    }
 
-	public int getLevel() {
-		return level;
-	}
+    public int getAvatarId() {
+        return this.avatarId;
+    }
 
-	public void update(Avatar avatar) {
-		this.avatarId = avatar.getAvatarId();
-		this.level = avatar.getLevel();
-	}
+    public int getLevel() {
+        return this.level;
+    }
+
+    public void update(Avatar avatar) {
+        this.avatarId = avatar.getAvatarId();
+        this.level = avatar.getLevel();
+    }
 }

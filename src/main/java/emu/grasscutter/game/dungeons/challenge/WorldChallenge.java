@@ -36,7 +36,7 @@ public class WorldChallenge {
     public WorldChallenge(Scene scene, SceneGroup group,
                           int challengeId, int challengeIndex, List<Integer> paramList,
                           int timeLimit, int goal,
-                          List<ChallengeTrigger> challengeTriggers){
+                          List<ChallengeTrigger> challengeTriggers) {
         this.scene = scene;
         this.group = group;
         this.challengeId = challengeId;
@@ -47,84 +47,89 @@ public class WorldChallenge {
         this.goal = goal;
         this.score = new AtomicInteger(0);
     }
-    public boolean inProgress(){
+
+    public boolean inProgress() {
         return this.progress;
     }
-    public void onCheckTimeOut(){
-        if(!inProgress()){
+
+    public void onCheckTimeOut() {
+        if (!this.inProgress()) {
             return;
         }
-        if(timeLimit <= 0){
+        if (this.timeLimit <= 0) {
             return;
         }
-        challengeTriggers.forEach(t -> t.onCheckTimeout(this));
+        this.challengeTriggers.forEach(t -> t.onCheckTimeout(this));
     }
-    public void start(){
-        if(inProgress()){
+
+    public void start() {
+        if (this.inProgress()) {
             Grasscutter.getLogger().info("Could not start a in progress challenge.");
             return;
         }
         this.progress = true;
         this.startedAt = System.currentTimeMillis();
-        getScene().broadcastPacket(new PacketDungeonChallengeBeginNotify(this));
-        challengeTriggers.forEach(t -> t.onBegin(this));
+        this.getScene().broadcastPacket(new PacketDungeonChallengeBeginNotify(this));
+        this.challengeTriggers.forEach(t -> t.onBegin(this));
     }
 
-    public void done(){
-        if(!inProgress()){
+    public void done() {
+        if (!this.inProgress()) {
             return;
         }
-        finish(true);
+        this.finish(true);
         this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_SUCCESS,
-                // TODO record the time in PARAM2 and used in action
-                new ScriptArgs().setParam2(finishedTime));
+            // TODO record the time in PARAM2 and used in action
+            new ScriptArgs().setParam2(this.finishedTime));
 
-        challengeTriggers.forEach(t -> t.onFinish(this));
+        this.challengeTriggers.forEach(t -> t.onFinish(this));
     }
 
-    public void fail(){
-        if(!inProgress()){
+    public void fail() {
+        if (!this.inProgress()) {
             return;
         }
-        finish(false);
+        this.finish(false);
         this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_FAIL, null);
-        challengeTriggers.forEach(t -> t.onFinish(this));
+        this.challengeTriggers.forEach(t -> t.onFinish(this));
     }
 
-    private void finish(boolean success){
+    private void finish(boolean success) {
         this.progress = false;
         this.success = success;
-        this.finishedTime = (int)((System.currentTimeMillis() - this.startedAt) / 1000L);
-        getScene().broadcastPacket(new PacketDungeonChallengeFinishNotify(this));
+        this.finishedTime = (int) ((System.currentTimeMillis() - this.startedAt) / 1000L);
+        this.getScene().broadcastPacket(new PacketDungeonChallengeFinishNotify(this));
     }
 
-    public int increaseScore(){
-        return score.incrementAndGet();
+    public int increaseScore() {
+        return this.score.incrementAndGet();
     }
-    public void onMonsterDeath(EntityMonster monster){
-        if(!inProgress()){
+
+    public void onMonsterDeath(EntityMonster monster) {
+        if (!this.inProgress()) {
             return;
         }
-        if(monster.getGroupId() != getGroup().id){
+        if (monster.getGroupId() != this.getGroup().id) {
             return;
         }
         this.challengeTriggers.forEach(t -> t.onMonsterDeath(this, monster));
     }
-    public void onGadgetDeath(EntityGadget gadget){
-        if(!inProgress()){
+
+    public void onGadgetDeath(EntityGadget gadget) {
+        if (!this.inProgress()) {
             return;
         }
-        if(gadget.getGroupId() != getGroup().id){
+        if (gadget.getGroupId() != this.getGroup().id) {
             return;
         }
         this.challengeTriggers.forEach(t -> t.onGadgetDeath(this, gadget));
     }
 
-    public void onGadgetDamage(EntityGadget gadget){
-        if(!inProgress()){
+    public void onGadgetDamage(EntityGadget gadget) {
+        if (!this.inProgress()) {
             return;
         }
-        if(gadget.getGroupId() != getGroup().id){
+        if (gadget.getGroupId() != this.getGroup().id) {
             return;
         }
         this.challengeTriggers.forEach(t -> t.onGadgetDamage(this, gadget));

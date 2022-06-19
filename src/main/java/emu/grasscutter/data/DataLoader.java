@@ -6,11 +6,11 @@ import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 
-import java.io.*;
-import java.nio.file.FileSystems;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.nio.file.Path;
 import java.util.List;
-import java.util.regex.Pattern;
 
 import static emu.grasscutter.Configuration.DATA;
 
@@ -18,10 +18,11 @@ public class DataLoader {
 
     /**
      * Load a data file by its name. If the file isn't found within the /data directory then it will fallback to the default within the jar resources
-     * @see #load(String, boolean)
+     *
      * @param resourcePath The path to the data file to be loaded.
      * @return InputStream of the data file.
      * @throws FileNotFoundException
+     * @see #load(String, boolean)
      */
     public static InputStream load(String resourcePath) throws FileNotFoundException {
         return load(resourcePath, true);
@@ -29,17 +30,18 @@ public class DataLoader {
 
     /**
      * Load a data file by its name.
+     *
      * @param resourcePath The path to the data file to be loaded.
-     * @param useFallback If the file does not exist in the /data directory, should it use the default file in the jar?
+     * @param useFallback  If the file does not exist in the /data directory, should it use the default file in the jar?
      * @return InputStream of the data file.
      * @throws FileNotFoundException
      */
     public static InputStream load(String resourcePath, boolean useFallback) throws FileNotFoundException {
-        if(Utils.fileExists(DATA(resourcePath))) {
+        if (Utils.fileExists(DATA(resourcePath))) {
             // Data is in the resource directory
             return new FileInputStream(DATA(resourcePath));
         } else {
-            if(useFallback) {
+            if (useFallback) {
                 return FileUtils.readResourceAsStream("/defaults/data/" + resourcePath);
             }
         }
@@ -50,9 +52,9 @@ public class DataLoader {
     public static void CheckAllFiles() {
         try {
             List<Path> filenames = FileUtils.getPathsFromResource("/defaults/data/");
-            
+
             if (filenames == null) {
-            	Grasscutter.getLogger().error("We were unable to locate your default data files.");
+                Grasscutter.getLogger().error("We were unable to locate your default data files.");
             }
 
             for (Path file : filenames) {
@@ -76,12 +78,12 @@ public class DataLoader {
                 String[] path = name.split("/");
 
                 String folder = "";
-                for(int i = 0; i < (path.length - 1); i++) {
+                for (int i = 0; i < (path.length - 1); i++) {
                     folder += path[i] + "/";
 
                     // Make sure the current folder exists
                     String folderToCreate = Utils.toFilePath(DATA(folder));
-                    if(!Utils.fileExists(folderToCreate)) {
+                    if (!Utils.fileExists(folderToCreate)) {
                         Grasscutter.getLogger().info("Creating data folder '" + folder + "'");
                         Utils.createFolder(folderToCreate);
                     }

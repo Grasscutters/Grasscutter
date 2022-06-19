@@ -1,6 +1,5 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.DungeonEntryData;
 import emu.grasscutter.net.packet.BasePacket;
@@ -9,16 +8,14 @@ import emu.grasscutter.net.proto.DailyDungeonEntryInfoOuterClass;
 import emu.grasscutter.net.proto.DungeonEntryInfoOuterClass;
 import emu.grasscutter.net.proto.GetDailyDungeonEntryInfoRspOuterClass;
 
-import java.util.List;
-
 public class PacketGetDailyDungeonEntryInfoRsp extends BasePacket {
 
     public PacketGetDailyDungeonEntryInfoRsp(Integer sceneID) {
         super(PacketOpcodes.GetDailyDungeonEntryInfoRsp);
 
-        var resp= GetDailyDungeonEntryInfoRspOuterClass.GetDailyDungeonEntryInfoRsp.newBuilder();
+        var resp = GetDailyDungeonEntryInfoRspOuterClass.GetDailyDungeonEntryInfoRsp.newBuilder();
 
-        for (var info :  GameData.getDungeonEntryDatatMap().values().parallelStream().filter(d -> d.getSceneId() == sceneID).map(this::getDungonEntryInfo).toList())
+        for (var info : GameData.getDungeonEntryDatatMap().values().parallelStream().filter(d -> d.getSceneId() == sceneID).map(this::getDungonEntryInfo).toList())
             resp.addDailyDungeonInfoList(info);
 
         this.setData(resp.build());
@@ -30,7 +27,7 @@ public class PacketGetDailyDungeonEntryInfoRsp extends BasePacket {
 
         //TODO: 来个爹把这块整活了吧 咚咚咚
         DungeonEntryInfoOuterClass.DungeonEntryInfo dungeonEntryInfo
-                = DungeonEntryInfoOuterClass.DungeonEntryInfo.newBuilder().setDungeonId(130).build();
+            = DungeonEntryInfoOuterClass.DungeonEntryInfo.newBuilder().setDungeonId(130).build();
 
         var builder = DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo.newBuilder();
 

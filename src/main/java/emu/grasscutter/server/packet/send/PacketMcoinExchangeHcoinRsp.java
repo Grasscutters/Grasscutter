@@ -10,8 +10,8 @@ public class PacketMcoinExchangeHcoinRsp extends BasePacket {
         super(PacketOpcodes.McoinExchangeHcoinRsp);
 
         McoinExchangeHcoinRspOuterClass.McoinExchangeHcoinRsp proto = McoinExchangeHcoinRspOuterClass.McoinExchangeHcoinRsp.newBuilder()
-                .setRetcode(retCode)
-                .build();
+            .setRetcode(retCode)
+            .build();
 
         this.setData(proto);
     }

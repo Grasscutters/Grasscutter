@@ -11,7 +11,7 @@ public class DefaultPermissionHandler implements PermissionHandler {
 
     @Override
     public boolean checkPermission(Player player, Player targetPlayer, String permissionNode, String permissionNodeTargeted) {
-        if(player == null) {
+        if (player == null) {
             return true;
         }
 

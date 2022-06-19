@@ -9,22 +9,22 @@ import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
 
 public class GadgetRewardStatue extends GadgetContent {
-	
-	public GadgetRewardStatue(EntityGadget gadget) {
-		super(gadget);
-	}
 
-	public boolean onInteract(Player player, InterOpTypeOuterClass.InterOpType opType) {
-		if (player.getScene().getChallenge() != null && player.getScene().getChallenge() instanceof DungeonChallenge dungeonChallenge) {
-			dungeonChallenge.getStatueDrops(player);
-		}
-		
-		player.sendPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_OPEN_STATUE));
-		
-		return false;
-	}
+    public GadgetRewardStatue(EntityGadget gadget) {
+        super(gadget);
+    }
 
-	public void onBuildProto(SceneGadgetInfo.Builder gadgetInfo) {
-		
-	}
+    public boolean onInteract(Player player, InterOpTypeOuterClass.InterOpType opType) {
+        if (player.getScene().getChallenge() != null && player.getScene().getChallenge() instanceof DungeonChallenge dungeonChallenge) {
+            dungeonChallenge.getStatueDrops(player);
+        }
+
+        player.sendPacket(new PacketGadgetInteractRsp(this.getGadget(), InteractType.INTERACT_TYPE_OPEN_STATUE));
+
+        return false;
+    }
+
+    public void onBuildProto(SceneGadgetInfo.Builder gadgetInfo) {
+
+    }
 }

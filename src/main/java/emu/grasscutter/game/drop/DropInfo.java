@@ -4,11 +4,11 @@ import java.util.List;
 
 public class DropInfo {
     public int getMonsterId() {
-        return monsterId;
+        return this.monsterId;
     }
 
     public List<DropData> getDropDataList() {
-        return dropDataList;
+        return this.dropDataList;
     }
 
     private int monsterId;

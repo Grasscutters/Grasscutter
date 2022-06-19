@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -23,7 +22,7 @@ public final class WeatherCommand implements CommandHandler {
                 try {
                     climateId = Integer.parseInt(args.get(1));
                 } catch (NumberFormatException ignored) {
-                        CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_id"));
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_id"));
                 }
             case 1:
                 try {
