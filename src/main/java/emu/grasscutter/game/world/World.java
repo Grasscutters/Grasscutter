@@ -270,7 +270,9 @@ public class World implements Iterable<Player> {
 			enterType = EnterType.ENTER_TYPE_GOTO;
 		} else if (newScene.getSceneType() == SceneType.SCENE_HOME_WORLD) {
 			// Home
+			enterReason = EnterReason.EnterHome;
 			enterType = EnterType.ENTER_TYPE_SELF_HOME;
+
 		}
 		
 		// Teleport packet

@@ -1,10 +1,12 @@
-package emu.grasscutter.game.dungeons;
+package emu.grasscutter.game.dungeons.challenge;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.DungeonData;
-import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.dungeons.DungeonDrop;
+import emu.grasscutter.game.dungeons.DungeonDropEntry;
+import emu.grasscutter.game.dungeons.challenge.trigger.ChallengeTrigger;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
@@ -14,12 +16,8 @@ import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.ScriptArgs;
-import emu.grasscutter.server.packet.send.PacketChallengeDataNotify;
-import emu.grasscutter.server.packet.send.PacketDungeonChallengeBeginNotify;
-import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
 import emu.grasscutter.server.packet.send.PacketGadgetAutoPickDropInfoNotify;
 import emu.grasscutter.utils.Utils;
-import io.netty.util.internal.ThreadLocalRandom;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
@@ -30,26 +28,17 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import com.google.gson.reflect.TypeToken;
 
-public class DungeonChallenge {
-	private final Scene scene;
-	private final SceneGroup group;
-	
-	private int challengeIndex;
-	private int challengeId;
-	private boolean success;
-	private boolean progress;
+public class DungeonChallenge extends WorldChallenge {
+
 	/**
 	 * has more challenge
 	 */
 	private boolean stage;
-	private int score;
-	private int objective = 0;
 	private IntSet rewardedPlayers;
 
 	private final static Int2ObjectMap<List<DungeonDropEntry>> dungeonDropData = new Int2ObjectOpenHashMap<>();
@@ -70,61 +59,13 @@ public class DungeonChallenge {
 		}
 	}
 
-	public DungeonChallenge(Scene scene, SceneGroup group, int challengeId, int challengeIndex, int objective) {
-		this.scene = scene;
-		this.group = group;
-		this.challengeId = challengeId;
-		this.challengeIndex = challengeIndex;
-		this.objective = objective;
+	public DungeonChallenge(Scene scene, SceneGroup group,
+							int challengeId, int challengeIndex,
+							List<Integer> paramList,
+							int timeLimit, int goal,
+							List<ChallengeTrigger> challengeTriggers) {
+		super(scene, group, challengeId, challengeIndex, paramList, timeLimit, goal, challengeTriggers);
 		this.setRewardedPlayers(new IntOpenHashSet());
-	}
-
-	public Scene getScene() {
-		return scene;
-	}
-
-	public SceneGroup getGroup() {
-		return group;
-	}
-	
-	public int getChallengeIndex() {
-		return challengeIndex;
-	}
-
-	public void setChallengeIndex(int challengeIndex) {
-		this.challengeIndex = challengeIndex;
-	}
-
-	public int getChallengeId() {
-		return challengeId;
-	}
-
-	public void setChallengeId(int challengeId) {
-		this.challengeId = challengeId;
-	}
-
-	public int getObjective() {
-		return objective;
-	}
-
-	public void setObjective(int objective) {
-		this.objective = objective;
-	}
-
-	public boolean isSuccess() {
-		return success;
-	}
-
-	public void setSuccess(boolean isSuccess) {
-		this.success = isSuccess;
-	}
-	
-	public boolean inProgress() {
-		return progress;
-	}
-
-	public int getScore() {
-		return score;
 	}
 
 	public boolean isStage() {
@@ -135,10 +76,6 @@ public class DungeonChallenge {
 		this.stage = stage;
 	}
 
-	public int getTimeLimit() {
-		return 600;
-	}
-
 	public IntSet getRewardedPlayers() {
 		return rewardedPlayers;
 	}
@@ -147,54 +84,28 @@ public class DungeonChallenge {
 		this.rewardedPlayers = rewardedPlayers;
 	}
 
-	public void start() {
-		this.progress = true;
-		getScene().broadcastPacket(new PacketDungeonChallengeBeginNotify(this));
-	}
-	
-	public void finish() {
-		this.progress = false;
-		
-		getScene().broadcastPacket(new PacketDungeonChallengeFinishNotify(this));
-		
+	@Override
+	public void done() {
+		super.done();
 		if (this.isSuccess()) {
-			// Call success script event
-			this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_SUCCESS, null);
-
 			// Settle
 			settle();
-		} else {
-			this.getScene().getScriptManager().callEvent(EventType.EVENT_CHALLENGE_FAIL, null);
 		}
 	}
 	
 	private void settle() {
-		getScene().getDungeonSettleObservers().forEach(o -> o.onDungeonSettle(getScene()));
-
 		if(!stage){
-			getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE, new ScriptArgs(this.isSuccess() ? 1 : 0));
-		}
-	}
-
-	public void onMonsterDie(EntityMonster entity) {
-		score = getScore() + 1;
-		
-		getScene().broadcastPacket(new PacketChallengeDataNotify(this, 1, getScore()));
-		
-		if (getScore() >= getObjective() && this.progress) {
-			this.setSuccess(true);
-			finish();
+			getScene().getDungeonSettleObservers().forEach(o -> o.onDungeonSettle(getScene()));
+			getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE,
+					new ScriptArgs(this.isSuccess() ? 1 : 0));
 		}
 	}
 	
 	private List<GameItem> rollRewards(boolean useCondensed) {
 		List<GameItem> rewards = new ArrayList<>();
 		int dungeonId = this.getScene().getDungeonData().getId();
-		Grasscutter.getLogger().info("Rolling rewards for scene {}, dungeon {}.", this.getScene().getId(), this.getScene().getDungeonData().getId());
-
 		// If we have specific drop data for this dungeon, we use it.
 		if (dungeonDropData.containsKey(dungeonId)) {
-			Grasscutter.getLogger().info("Drop data found, using it ...");
 			List<DungeonDropEntry> dropEntries = dungeonDropData.get(dungeonId);
 
 			// Roll for each drop group.
@@ -235,7 +146,7 @@ public class DungeonChallenge {
 		}
 		// Otherwise, we fall back to the preview data.
 		else {
-			Grasscutter.getLogger().info("No drop data found, falling back to preview ...");
+			Grasscutter.getLogger().info("No drop data found or dungeon {}, falling back to preview data ...", dungeonId);
 			for (ItemParamData param : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
 				rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
 			}

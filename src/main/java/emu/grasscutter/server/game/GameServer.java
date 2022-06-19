@@ -19,6 +19,7 @@ import emu.grasscutter.game.quest.ServerQuestHandler;
 import emu.grasscutter.game.shop.ShopManager;
 import emu.grasscutter.game.tower.TowerScheduleManager;
 import emu.grasscutter.game.world.World;
+import emu.grasscutter.game.world.WorldDataManager;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.server.event.types.ServerEvent;
@@ -55,25 +56,15 @@ public final class GameServer extends KcpServer {
 	private final CommandMap commandMap;
 	private final TaskMap taskMap;
 	private final DropManager dropManager;
-
+	private final WorldDataManager worldDataManager;
+	
 	private final CombineManger combineManger;
 	private final TowerScheduleManager towerScheduleManager;
 
-	private static InetSocketAddress getAdapterInetSocketAddress(){
-		InetSocketAddress inetSocketAddress;
-		if(GAME_INFO.bindAddress.equals("")){
-			inetSocketAddress=new InetSocketAddress(GAME_INFO.bindPort);
-		}else{
-			inetSocketAddress=new InetSocketAddress(
-					GAME_INFO.bindAddress,
-					GAME_INFO.bindPort
-			);
-		}
-		return inetSocketAddress;
-	}
 	public GameServer() {
 		this(getAdapterInetSocketAddress());
 	}
+	
 	public GameServer(InetSocketAddress address) {
 		ChannelConfig channelConfig = new ChannelConfig();
 		channelConfig.nodelay(true,40,2,true);
@@ -104,7 +95,7 @@ public final class GameServer extends KcpServer {
 		this.expeditionManager = new ExpeditionManager(this);
 		this.combineManger = new CombineManger(this);
 		this.towerScheduleManager = new TowerScheduleManager(this);
-
+		this.worldDataManager = new WorldDataManager(this);
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
@@ -173,9 +164,25 @@ public final class GameServer extends KcpServer {
 		return towerScheduleManager;
 	}
 
+	public WorldDataManager getWorldDataManager() {
+		return worldDataManager;
+	}
 
 	public TaskMap getTaskMap() {
 		return this.taskMap;
+	}
+	
+	private static InetSocketAddress getAdapterInetSocketAddress(){
+		InetSocketAddress inetSocketAddress;
+		if(GAME_INFO.bindAddress.equals("")){
+			inetSocketAddress=new InetSocketAddress(GAME_INFO.bindPort);
+		}else{
+			inetSocketAddress=new InetSocketAddress(
+					GAME_INFO.bindAddress,
+					GAME_INFO.bindPort
+			);
+		}
+		return inetSocketAddress;
 	}
 	
 	public void registerPlayer(Player player) {

@@ -39,15 +39,7 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
 		for (Friendship friendship : player.getFriendsList().getFriends().values()) {
 			proto.addFriendList(friendship.toProto());
 		}
-		
-		for (Friendship friendship : player.getFriendsList().getPendingFriends().values()) {
-			if (friendship.getAskerId() == player.getUid()) {
-				continue;
-			}
-			
-			proto.addAskFriendList(friendship.toProto());
-		}
-		
+
 		this.setData(proto);
 	}
 }

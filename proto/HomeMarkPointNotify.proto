@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeMarkPointSceneData.proto";
+
+// CmdId: 4746
+// EnetChannelId: 0
+// EnetIsReliable: true
+message HomeMarkPointNotify {
+	repeated HomeMarkPointSceneData mark_point_data_list = 13;
+}
