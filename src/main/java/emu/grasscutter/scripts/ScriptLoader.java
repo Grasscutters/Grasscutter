@@ -10,10 +10,13 @@ import emu.grasscutter.scripts.serializer.LuaSerializer;
 import emu.grasscutter.scripts.serializer.Serializer;
 import org.terasology.jnlua.JavaFunction;
 import org.terasology.jnlua.LuaState;
+import org.terasology.jnlua.script.CompiledLuaScript;
+import org.terasology.jnlua.script.LuaBindings;
 import org.terasology.jnlua.script.LuaScriptEngine;
 
 
 import javax.script.*;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileReader;
 import java.lang.ref.SoftReference;
@@ -100,13 +103,24 @@ public class ScriptLoader {
         if (sc.isPresent()) {
             return sc.get();
         }
+
         Grasscutter.getLogger().info("Loading script " + path);
         File file = new File(path);
         if (!file.exists()) return null;
 
         try {
-            var script = ((Compilable)getEngine()).compile("package.path = 'resources/scripts/?.lua;' " + Files.readString(file.toPath()));
-            script.getEngine().getContext().setAttribute("javax.script.filename", file.getName(), ScriptContext.ENGINE_SCOPE);
+            var binding = new LuaBindings((LuaScriptEngine) getEngine());
+            var L = binding.getLuaState();
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            synchronized(L) {
+                L.load((String)Files.readString(file.toPath()), file.getName());
+                try {
+                    L.dump(out, false);
+                } finally {
+                    L.pop(1);
+                }
+            }
+            var script = new CompiledLuaScript((LuaScriptEngine) getEngine(), out.toByteArray());
             scriptsCache.put(path, new SoftReference<>(script));
             return script;
         } catch (Exception e) {

@@ -328,7 +328,7 @@ public class SceneScriptManager {
             try {
                 ret = ((Invocable) ScriptLoader.getEngine()).invokeFunction(funcName, new ScriptLibContext(this, group), params);
             } catch (Exception e) {
-                Grasscutter.getLogger().error("Unable to execute function: " + funcName + " in file: " + ScriptLoader.getEngine().getContext().getAttribute("javax.script.filename") + ". exception: " + e);
+                Grasscutter.getLogger().error("Unable to execute script function: " + funcName + ". Detailed exception: " + e);
             }
         }
         return ret;
