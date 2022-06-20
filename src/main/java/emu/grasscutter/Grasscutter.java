@@ -144,11 +144,6 @@ public final class Grasscutter {
         httpServer.addRouter(GachaHandler.class);
         httpServer.addRouter(DocumentationServerHandler.class);
 
-        // TODO: find a better place?
-        StaminaManager.initialize();
-        EnergyManager.initialize();
-        DungeonChallenge.initialize();
-
         // Start servers.
         var runMode = SERVER.runMode;
         if (runMode == ServerRunMode.HYBRID) {
