@@ -8,6 +8,7 @@ import emu.grasscutter.auth.DefaultAuthentication;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.command.DefaultPermissionHandler;
 import emu.grasscutter.command.PermissionHandler;
+import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
@@ -142,6 +143,11 @@ public final class Grasscutter {
         httpServer.addRouter(DispatchHandler.class);
         httpServer.addRouter(GachaHandler.class);
         httpServer.addRouter(DocumentationServerHandler.class);
+
+        // TODO: find a better place?
+        StaminaManager.initialize();
+        EnergyManager.initialize();
+        DungeonChallenge.initialize();
 
         // Start servers.
         var runMode = SERVER.runMode;

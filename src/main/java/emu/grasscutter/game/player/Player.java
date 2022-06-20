@@ -45,6 +45,7 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
@@ -1026,7 +1027,7 @@ public class Player {
     }
 
 
-    public void interactWith(int gadgetEntityId, InterOpTypeOuterClass.InterOpType opType) {
+    public void interactWith(int gadgetEntityId, GadgetInteractReq req) {
         GameEntity entity = this.getScene().getEntityById(gadgetEntityId);
         if (entity == null) {
             return;
@@ -1059,7 +1060,7 @@ public class Player {
                 return;
             }
 
-            boolean shouldDelete = gadget.getContent().onInteract(this, opType);
+            boolean shouldDelete = gadget.getContent().onInteract(this, req);
 
             if (shouldDelete) {
                 entity.getScene().removeEntity(entity);

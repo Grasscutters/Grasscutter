@@ -104,51 +104,47 @@ public final class GameServer extends KcpServer {
 
         this.init(GameSessionManager.getListener(), channelConfig, address);
 
-        this.address = address;
-        this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
-        this.questHandler = new ServerQuestHandler();
+		this.address = address;
+		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
+		this.questHandler = new ServerQuestHandler();
         this.scheduler = new ServerTaskScheduler();
-        this.players = new ConcurrentHashMap<>();
-        this.worlds = Collections.synchronizedSet(new HashSet<>());
+		this.players = new ConcurrentHashMap<>();
+		this.worlds = Collections.synchronizedSet(new HashSet<>());
 
-        this.chatManager = new ChatManager(this);
-        this.inventoryManager = new InventoryManager(this);
-        this.gachaManager = new GachaManager(this);
-        this.shopManager = new ShopManager(this);
-        this.multiplayerManager = new MultiplayerManager(this);
-        this.dungeonManager = new DungeonManager(this);
-        this.commandMap = new CommandMap(true);
-        this.taskMap = new TaskMap(true);
-        this.dropManager = new DropManager(this);
-        this.expeditionManager = new ExpeditionManager(this);
-        this.combineManger = new CombineManger(this);
-        this.towerScheduleManager = new TowerScheduleManager(this);
-        this.worldDataManager = new WorldDataManager(this);
+		this.chatManager = new ChatManager(this);
+		this.inventoryManager = new InventoryManager(this);
+		this.gachaManager = new GachaManager(this);
+		this.shopManager = new ShopManager(this);
+		this.multiplayerManager = new MultiplayerManager(this);
+		this.dungeonManager = new DungeonManager(this);
+		this.commandMap = new CommandMap(true);
+		this.taskMap = new TaskMap(true);
+		this.dropManager = new DropManager(this);
+		this.expeditionManager = new ExpeditionManager(this);
+		this.combineManger = new CombineManger(this);
+		this.towerScheduleManager = new TowerScheduleManager(this);
+		this.worldDataManager = new WorldDataManager(this);
 
-        // Initialize singleton managers.
-        StaminaManager.initialize();
-        EnergyManager.initialize();
+		// Hook into shutdown event.
+		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
+	}
 
-        // Hook into shutdown event.
-        Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
-    }
+	private static InetSocketAddress getAdapterInetSocketAddress(){
+		InetSocketAddress inetSocketAddress;
+		if(GAME_INFO.bindAddress.equals("")){
+			inetSocketAddress = new InetSocketAddress(GAME_INFO.bindPort);
+		} else {
+			inetSocketAddress = new InetSocketAddress(
+					GAME_INFO.bindAddress,
+					GAME_INFO.bindPort
+			);
+		}
+		return inetSocketAddress;
+	}
 
-    private static InetSocketAddress getAdapterInetSocketAddress() {
-        InetSocketAddress inetSocketAddress;
-        if (GAME_INFO.bindAddress.equals("")) {
-            inetSocketAddress = new InetSocketAddress(GAME_INFO.bindPort);
-        } else {
-            inetSocketAddress = new InetSocketAddress(
-                GAME_INFO.bindAddress,
-                GAME_INFO.bindPort
-            );
-        }
-        return inetSocketAddress;
-    }
-
-    public void registerPlayer(Player player) {
-        this.getPlayers().put(player.getUid(), player);
-    }
+	public void registerPlayer(Player player) {
+		getPlayers().put(player.getUid(), player);
+	}
 
     public Player getPlayerByUid(int id) {
         return this.getPlayerByUid(id, false);
@@ -236,24 +232,24 @@ public final class GameServer extends KcpServer {
 
     }
 
-    public void start() {
-        // Schedule game loop.
-        Timer gameLoop = new Timer();
-        gameLoop.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                try {
+	public void start() {
+		// Schedule game loop.
+		Timer gameLoop = new Timer();
+		gameLoop.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				try {
                     GameServer.this.onTick();
-                } catch (Exception e) {
-                    Grasscutter.getLogger().error(translate("messages.game.game_update_error"), e);
-                }
-            }
-        }, new Date(), 1000L);
-        Grasscutter.getLogger().info(translate("messages.status.free_software"));
-        Grasscutter.getLogger().info(translate("messages.game.port_bind", Integer.toString(this.address.getPort())));
-        ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now());
-        event.call();
-    }
+				} catch (Exception e) {
+					Grasscutter.getLogger().error(translate("messages.game.game_update_error"), e);
+				}
+			}
+		}, new Date(), 1000L);
+		Grasscutter.getLogger().info(translate("messages.status.free_software"));
+		Grasscutter.getLogger().info(translate("messages.game.port_bind", Integer.toString(address.getPort())));
+		ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now());
+		event.call();
+	}
 
     public void onServerShutdown() {
         ServerStopEvent event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now());

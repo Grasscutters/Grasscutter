@@ -8,12 +8,10 @@ import emu.grasscutter.server.game.GameSession;
 
 @Opcodes(PacketOpcodes.GadgetInteractReq)
 public class HandlerGadgetInteractReq extends PacketHandler {
-
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         GadgetInteractReq req = GadgetInteractReq.parseFrom(payload);
-
-        session.getPlayer().interactWith(req.getGadgetEntityId(), req.getOpType());
+        
+        session.getPlayer().interactWith(req.getGadgetEntityId(), req);
     }
-
 }

@@ -5,6 +5,7 @@ import emu.grasscutter.data.DataLoader;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
+import io.netty.util.internal.ThreadLocalRandom;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Base64;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
@@ -401,5 +403,36 @@ public final class Utils {
         } catch (Exception ignored) {
             return null;
         }
+    }
+
+        /***
+     * Draws a random element from the given list, following the given probability distribution, if given.
+     * @param list The list from which to draw the element.
+     * @param probabilities The probability distribution. This is given as a list of probabilities of the same length it `list`.
+     * @return A randomly drawn element from the given list.
+     */
+    public static <T> T drawRandomListElement(List<T> list, List<Integer> probabilities) {
+        // If we don't have a probability distribution, or the size of the distribution does not match
+        // the size of the list, we assume uniform distribution.
+        if (probabilities == null || probabilities.size() <= 1 || probabilities.size() != list.size()) {
+            int index = ThreadLocalRandom.current().nextInt(0, list.size());
+            return list.get(index);
+        }
+
+        // Otherwise, we roll with the given distribution.
+        int totalProbabilityMass = probabilities.stream().reduce(Integer::sum).get();
+        int roll = ThreadLocalRandom.current().nextInt(1, totalProbabilityMass + 1);
+
+        int currentTotalChance = 0;
+        for (int i = 0; i < list.size(); i++) {
+            currentTotalChance += probabilities.get(i);
+
+            if (roll <= currentTotalChance) {
+                return list.get(i);
+            }
+        }
+
+        // Should never happen.
+        return list.get(0);
     }
 }
