@@ -1,12 +1,12 @@
 package emu.grasscutter.game.tower;
 
-import java.util.Map;
-
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 
+import java.util.Map;
+
 @Entity
-public class TowerData{
+public class TowerData {
     /**
      * the floor players chose
      */

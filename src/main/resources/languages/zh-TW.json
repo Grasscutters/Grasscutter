@@ -98,7 +98,7 @@
     "status": {
       "enabled": "已啟用",
       "disabled": "未啟用",
-      "help": "幫助", 
+      "help": "幫助",
       "success": "成功"
     },
     "account": {
@@ -389,7 +389,6 @@
     "unlocktower": {
       "success": "解鎖完成。",
       "description": "解鎖所有級別的深境螺旋。"
-
     },
     "weather": {
       "usage": "用法：weather <氣候型別(weatherId)> <天氣型別(climateId)>\n天氣類型： '0：無、 1：晴天、 2：多雲、 3：雨、 4:：雷雨、 5：雪、 6：霧'",

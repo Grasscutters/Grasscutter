@@ -11,7 +11,7 @@ import emu.grasscutter.server.packet.send.PacketGadgetAutoPickDropInfoNotify;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BossChestInteractHandler implements ChestInteractHandler{
+public class BossChestInteractHandler implements ChestInteractHandler {
     @Override
     public boolean isTwoStep() {
         return true;
@@ -23,7 +23,7 @@ public class BossChestInteractHandler implements ChestInteractHandler{
         var monster = chest.getGadget().getMetaGadget().group.monsters.get(chest.getGadget().getMetaGadget().boss_chest.monster_config_id);
         var reward = worldDataManager.getRewardByBossId(monster.monster_id);
 
-        if(reward == null){
+        if (reward == null) {
             Grasscutter.getLogger().warn("Could not found the reward of boss monster {}", monster.monster_id);
             return false;
         }

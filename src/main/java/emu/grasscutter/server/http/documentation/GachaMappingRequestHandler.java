@@ -1,25 +1,22 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.Configuration.RESOURCE;
-
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.utils.Utils;
-import static emu.grasscutter.Configuration.DOCUMENT_LANGUAGE;
 import express.http.Request;
 import express.http.Response;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
+import static emu.grasscutter.Configuration.DOCUMENT_LANGUAGE;
+import static emu.grasscutter.Configuration.RESOURCE;
 
 final class GachaMappingRequestHandler implements DocumentationHandler {
 
@@ -28,24 +25,24 @@ final class GachaMappingRequestHandler implements DocumentationHandler {
     GachaMappingRequestHandler() {
         final String textMapFile = "TextMap/TextMap" + DOCUMENT_LANGUAGE + ".json";
         try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(
-                Utils.toFilePath(RESOURCE(textMapFile))), StandardCharsets.UTF_8)) {
-            map = Grasscutter.getGsonFactory().fromJson(fileReader,
-                    new TypeToken<Map<Long, String>>() {
-                    }.getType());
+            Utils.toFilePath(RESOURCE(textMapFile))), StandardCharsets.UTF_8)) {
+            this.map = Grasscutter.getGsonFactory().fromJson(fileReader,
+                new TypeToken<Map<Long, String>>() {
+                }.getType());
         } catch (IOException e) {
             Grasscutter.getLogger().warn("Resource does not exist: " + textMapFile);
-            map = new HashMap<>();
+            this.map = new HashMap<>();
         }
     }
 
     @Override
     public void handle(Request request, Response response) {
-        if (map.isEmpty()) {
+        if (this.map.isEmpty()) {
             response.status(500);
         } else {
             response.set("Content-Type", "application/json")
-                    .ctx()
-                    .result(createGachaMappingJson());
+                .ctx()
+                .result(this.createGachaMappingJson());
         }
     }
 
@@ -90,15 +87,15 @@ final class GachaMappingRequestHandler implements DocumentationHandler {
             }
             // Got the magic number 4233146695 from manually search in the json file
             sb.append("\"")
-                    .append(avatarID % 1000 + 1000)
-                    .append("\" : [\"")
-                    .append(map.get(data.getNameTextMapHash()))
-                    .append("(")
-                    .append(map.get(4233146695L))
-                    .append(")\", \"")
-                    .append(color)
-                    .append("\"]")
-                    .append(newLine);
+                .append(avatarID % 1000 + 1000)
+                .append("\" : [\"")
+                .append(this.map.get(data.getNameTextMapHash()))
+                .append("(")
+                .append(this.map.get(4233146695L))
+                .append(")\", \"")
+                .append(color)
+                .append("\"]")
+                .append(newLine);
         }
 
         list = new ArrayList<>(GameData.getItemDataMap().keySet());
@@ -129,25 +126,25 @@ final class GachaMappingRequestHandler implements DocumentationHandler {
             // Got the magic number 4231343903 from manually search in the json file
 
             sb.append(",\"")
-                    .append(data.getId())
-                    .append("\" : [\"")
-                    .append(map.get(data.getNameTextMapHash()).replaceAll("\"", ""))
-                    .append("(")
-                    .append(map.get(4231343903L))
-                    .append(")\",\"")
-                    .append(color)
-                    .append("\"]")
-                    .append(newLine);
+                .append(data.getId())
+                .append("\" : [\"")
+                .append(this.map.get(data.getNameTextMapHash()).replaceAll("\"", ""))
+                .append("(")
+                .append(this.map.get(4231343903L))
+                .append(")\",\"")
+                .append(color)
+                .append("\"]")
+                .append(newLine);
         }
         sb.append(",\"200\": \"")
-                .append(map.get(332935371L))
-                .append("\", \"301\": \"")
-                .append(map.get(2272170627L))
-                .append("\", \"302\": \"")
-                .append(map.get(2864268523L))
-                .append("\"")
-                .append("}\n}")
-                .append(newLine);
+            .append(this.map.get(332935371L))
+            .append("\", \"301\": \"")
+            .append(this.map.get(2272170627L))
+            .append("\", \"302\": \"")
+            .append(this.map.get(2864268523L))
+            .append("\"")
+            .append("}\n}")
+            .append(newLine);
         return sb.toString();
     }
 }

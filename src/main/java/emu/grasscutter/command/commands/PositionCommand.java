@@ -16,7 +16,7 @@ public final class PositionCommand implements CommandHandler {
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         Position pos = targetPlayer.getPos();
         CommandHandler.sendMessage(sender, translate(sender, "commands.position.success",
-                Float.toString(pos.getX()), Float.toString(pos.getY()), Float.toString(pos.getZ()),
-                Integer.toString(targetPlayer.getSceneId())));
+            Float.toString(pos.getX()), Float.toString(pos.getY()), Float.toString(pos.getZ()),
+            Integer.toString(targetPlayer.getSceneId())));
     }
 }

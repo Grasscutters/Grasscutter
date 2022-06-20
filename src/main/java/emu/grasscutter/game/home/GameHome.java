@@ -35,11 +35,11 @@ public class GameHome {
     List<FurnitureMakeSlotItem> furnitureMakeSlotItemList;
     ConcurrentHashMap<Integer, HomeSceneItem> sceneMap;
 
-    public void save(){
+    public void save() {
         DatabaseHelper.saveHome(this);
     }
 
-    public static GameHome getByUid(Integer uid){
+    public static GameHome getByUid(Integer uid) {
         var home = DatabaseHelper.getHomeByUid(uid);
         if (home == null) {
             home = GameHome.create(uid);
@@ -47,19 +47,19 @@ public class GameHome {
         return home;
     }
 
-    public static GameHome create(Integer uid){
+    public static GameHome create(Integer uid) {
         return GameHome.of()
-                .ownerUid(uid)
-                .level(1)
-                .sceneMap(new ConcurrentHashMap<>())
-                .build();
+            .ownerUid(uid)
+            .level(1)
+            .sceneMap(new ConcurrentHashMap<>())
+            .build();
     }
 
     public HomeSceneItem getHomeSceneItem(int sceneId) {
-        return sceneMap.computeIfAbsent(sceneId, e -> {
+        return this.sceneMap.computeIfAbsent(sceneId, e -> {
             var defaultItem = GameData.getHomeworldDefaultSaveData().get(sceneId);
-            if (defaultItem != null){
-                Grasscutter.getLogger().info("Set player {} home {} to initial setting", ownerUid, sceneId);
+            if (defaultItem != null) {
+                Grasscutter.getLogger().info("Set player {} home {} to initial setting", this.ownerUid, sceneId);
                 return HomeSceneItem.parseFrom(defaultItem, sceneId);
             }
             return null;
@@ -74,7 +74,7 @@ public class GameHome {
         player.getSession().send(new PacketHomeMarkPointNotify(player));
     }
 
-    public HomeWorldLevelData getLevelData(){
-        return GameData.getHomeWorldLevelDataMap().get(level);
+    public HomeWorldLevelData getLevelData() {
+        return GameData.getHomeWorldLevelDataMap().get(this.level);
     }
 }

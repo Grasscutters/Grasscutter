@@ -99,7 +99,7 @@
     "status": {
       "enabled": "Enabled",
       "disabled": "Disabled",
-      "help": "Help", 
+      "help": "Help",
       "success": "Success"
     },
     "account": {

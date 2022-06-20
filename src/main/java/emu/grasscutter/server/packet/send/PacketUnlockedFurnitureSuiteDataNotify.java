@@ -8,14 +8,14 @@ import java.util.Set;
 
 public class PacketUnlockedFurnitureSuiteDataNotify extends BasePacket {
 
-	public PacketUnlockedFurnitureSuiteDataNotify(Set<Integer> unlockList) {
-		super(PacketOpcodes.UnlockedFurnitureSuiteDataNotify);
+    public PacketUnlockedFurnitureSuiteDataNotify(Set<Integer> unlockList) {
+        super(PacketOpcodes.UnlockedFurnitureSuiteDataNotify);
 
-		var proto = UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify.newBuilder();
+        var proto = UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify.newBuilder();
 
-		proto.addAllFurnitureSuiteIdList(unlockList);
-		proto.setIsAll(true);
+        proto.addAllFurnitureSuiteIdList(unlockList);
+        proto.setIsAll(true);
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

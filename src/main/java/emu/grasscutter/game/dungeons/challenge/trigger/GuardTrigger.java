@@ -2,11 +2,10 @@ package emu.grasscutter.game.dungeons.challenge.trigger;
 
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketChallengeDataNotify;
 
-public class GuardTrigger extends KillMonsterTrigger{
+public class GuardTrigger extends KillMonsterTrigger {
     @Override
     public void onBegin(WorldChallenge challenge) {
         super.onBegin(challenge);
@@ -20,7 +19,7 @@ public class GuardTrigger extends KillMonsterTrigger{
         int percent = (int) (curHp / maxHp);
         challenge.getScene().broadcastPacket(new PacketChallengeDataNotify(challenge, 2, percent));
 
-        if(percent <= 0){
+        if (percent <= 0) {
             challenge.fail();
         }
     }

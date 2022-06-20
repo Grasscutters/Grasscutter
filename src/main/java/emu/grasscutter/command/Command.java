@@ -14,15 +14,16 @@ public @interface Command {
     String[] aliases() default {};
 
     String permission() default "";
-    
+
     String permissionTargeted() default "";
 
-    public enum TargetRequirement {
+    enum TargetRequirement {
         NONE,       // targetPlayer is not required
         OFFLINE,    // targetPlayer must be offline
         PLAYER,     // targetPlayer can be online or offline
         ONLINE      // targetPlayer must be online
     }
+
     TargetRequirement targetRequirement() default TargetRequirement.ONLINE;
 
     boolean threading() default false;

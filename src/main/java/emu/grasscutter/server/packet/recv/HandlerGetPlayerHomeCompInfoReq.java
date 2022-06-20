@@ -8,10 +8,10 @@ import emu.grasscutter.server.packet.send.PacketPlayerHomeCompInfoNotify;
 
 @Opcodes(PacketOpcodes.GetPlayerHomeCompInfoReq)
 public class HandlerGetPlayerHomeCompInfoReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		session.send(new PacketPlayerHomeCompInfoNotify(session.getPlayer()));
-	}
+
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        session.send(new PacketPlayerHomeCompInfoNotify(session.getPlayer()));
+    }
 
 }

@@ -12,10 +12,10 @@ public class PacketUpdatePlayerShowAvatarListRsp extends BasePacket {
         super(PacketOpcodes.UpdatePlayerShowAvatarListRsp);
 
         UpdatePlayerShowAvatarListRsp proto = UpdatePlayerShowAvatarListRsp.newBuilder()
-                .setIsShowAvatar(isShowAvatar)
-                .addAllShowAvatarIdList(avatarIds)
-                .setRetcode(0)
-                .build();
+            .setIsShowAvatar(isShowAvatar)
+            .addAllShowAvatarIdList(avatarIds)
+            .setRetcode(0)
+            .build();
 
         this.setData(proto);
     }

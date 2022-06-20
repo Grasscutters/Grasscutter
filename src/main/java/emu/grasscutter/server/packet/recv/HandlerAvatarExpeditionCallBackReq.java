@@ -6,8 +6,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarExpeditionCallBackReqOuterClass.AvatarExpeditionCallBackReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketAvatarExpeditionCallBackRsp;
-import emu.grasscutter.server.packet.send.PacketAvatarExpeditionStartRsp;
-import emu.grasscutter.utils.Utils;
 
 @Opcodes(PacketOpcodes.AvatarExpeditionCallBackReq)
 public class HandlerAvatarExpeditionCallBackReq extends PacketHandler {

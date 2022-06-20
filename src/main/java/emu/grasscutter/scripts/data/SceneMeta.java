@@ -32,10 +32,10 @@ public class SceneMeta {
         return new SceneMeta().load(sceneId);
     }
 
-    public SceneMeta load(int sceneId){
+    public SceneMeta load(int sceneId) {
         // Get compiled script if cached
         CompiledScript cs = ScriptLoader.getScriptByPath(
-                SCRIPT("Scene/" + sceneId + "/scene" + sceneId + "." + ScriptLoader.getScriptType()));
+            SCRIPT("Scene/" + sceneId + "/scene" + sceneId + "." + ScriptLoader.getScriptType()));
 
         if (cs == null) {
             Grasscutter.getLogger().warn("No script found for scene " + sceneId);
@@ -43,18 +43,18 @@ public class SceneMeta {
         }
 
         // Create bindings
-        context = ScriptLoader.getEngine().createBindings();
+        this.context = ScriptLoader.getEngine().createBindings();
 
         // Eval script
         try {
-            cs.eval(context);
+            cs.eval(this.context);
 
-            this.config = ScriptLoader.getSerializer().toObject(SceneConfig.class, context.get("scene_config"));
+            this.config = ScriptLoader.getSerializer().toObject(SceneConfig.class, this.context.get("scene_config"));
 
             // TODO optimize later
             // Create blocks
-            List<Integer> blockIds = ScriptLoader.getSerializer().toList(Integer.class, context.get("blocks"));
-            List<SceneBlock> blocks = ScriptLoader.getSerializer().toList(SceneBlock.class, context.get("block_rects"));
+            List<Integer> blockIds = ScriptLoader.getSerializer().toList(Integer.class, this.context.get("blocks"));
+            List<SceneBlock> blocks = ScriptLoader.getSerializer().toList(SceneBlock.class, this.context.get("block_rects"));
 
             for (int i = 0; i < blocks.size(); i++) {
                 SceneBlock block = blocks.get(i);

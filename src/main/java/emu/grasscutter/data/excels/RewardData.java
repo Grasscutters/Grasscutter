@@ -1,10 +1,10 @@
 package emu.grasscutter.data.excels;
 
-import java.util.List;
-
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.ItemParamData;
+
+import java.util.List;
 
 @ResourceType(name = "RewardExcelConfigData.json")
 public class RewardData extends GameResource {
@@ -12,16 +12,16 @@ public class RewardData extends GameResource {
     public List<ItemParamData> rewardItemList;
 
     @Override
-	public int getId() {
-		return rewardId;
-	}
+    public int getId() {
+        return this.rewardId;
+    }
 
     public List<ItemParamData> getRewardItemList() {
-        return rewardItemList;
+        return this.rewardItemList;
     }
 
     @Override
     public void onLoad() {
-    	rewardItemList = rewardItemList.stream().filter(i -> i.getId() > 0).toList();
+        this.rewardItemList = this.rewardItemList.stream().filter(i -> i.getId() > 0).toList();
     }
 }

@@ -12,16 +12,12 @@ import emu.grasscutter.game.ability.AbilityManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
-import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.entity.EntityVehicle;
-import emu.grasscutter.game.home.GameHome;
-import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.game.entity.EntityItem;
-import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.game.friends.FriendsList;
 import emu.grasscutter.game.friends.PlayerProfile;
 import emu.grasscutter.game.gacha.PlayerGachaInfo;
+import emu.grasscutter.game.home.GameHome;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
@@ -29,16 +25,16 @@ import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.managers.FurnitureManager;
 import emu.grasscutter.game.managers.InsectCaptureManager;
 import emu.grasscutter.game.managers.ResinManager;
+import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.managers.deforestation.DeforestationManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.managers.forging.ActiveForgeData;
 import emu.grasscutter.game.managers.forging.ForgingManager;
-import emu.grasscutter.game.managers.mapmark.*;
+import emu.grasscutter.game.managers.mapmark.MapMark;
+import emu.grasscutter.game.managers.mapmark.MapMarksManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
-import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.tower.TowerData;
@@ -46,18 +42,17 @@ import emu.grasscutter.game.tower.TowerManager;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
 import emu.grasscutter.server.game.GameServer;
@@ -65,8 +60,8 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.DateHelper;
-import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.MessageHandler;
+import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -74,66 +69,84 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.Configuration.GAME_OPTIONS;
 
 @Entity(value = "players", useDiscriminator = false)
 public class Player {
 
-	@Id private int id;
-	@Indexed(options = @IndexOptions(unique = true)) private String accountId;
+	@Id
+	private int id;
+	@Indexed(options = @IndexOptions(unique = true))
+	private String accountId;
 
-	@Transient private Account account;
+	@Transient
+	private Account account;
 	private String nickname;
 	private String signature;
 	private int headImage;
 	private int nameCardId = 210001;
-	private Position pos;
-	private Position rotation;
+	private final Position pos;
+	private final Position rotation;
 	private PlayerBirthday birthday;
 	private PlayerCodex codex;
 
-	private Map<Integer, Integer> properties;
-	private Set<Integer> nameCardList;
-	private Set<Integer> flyCloakList;
-	private Set<Integer> costumeList;
-	private Set<Integer> unlockedForgingBlueprints;
-	private Set<Integer> unlockedCombines;
-	private Set<Integer> unlockedFurniture;
-	private Set<Integer> unlockedFurnitureSuite;
-	private List<ActiveForgeData> activeForges;
+	private final Map<Integer, Integer> properties;
+	private final Set<Integer> nameCardList;
+	private final Set<Integer> flyCloakList;
+	private final Set<Integer> costumeList;
+	private final Set<Integer> unlockedForgingBlueprints;
+	private final Set<Integer> unlockedCombines;
+	private final Set<Integer> unlockedFurniture;
+	private final Set<Integer> unlockedFurnitureSuite;
+	private final List<ActiveForgeData> activeForges;
 
 	private Integer widgetId;
 
 	private Set<Integer> realmList;
 	private Integer currentRealmId;
 
-	@Transient private long nextGuid = 0;
-	@Transient private int peerId;
-	@Transient private World world;
-	@Transient private Scene scene;
-	@Transient private GameSession session;
-	@Transient private AvatarStorage avatars;
-	@Transient private Inventory inventory;
-	@Transient private FriendsList friendsList;
-	@Transient private MailHandler mailHandler;
-	@Transient private MessageHandler messageHandler;
-	@Transient private AbilityManager abilityManager;
-	@Transient private QuestManager questManager;
-	
-	@Transient private SotSManager sotsManager;
-	@Transient private InsectCaptureManager insectCaptureManager;
+	@Transient
+	private long nextGuid = 0;
+	@Transient
+	private int peerId;
+	@Transient
+	private World world;
+	@Transient
+	private Scene scene;
+	@Transient
+	private GameSession session;
+	@Transient
+	private final AvatarStorage avatars;
+	@Transient
+	private final Inventory inventory;
+	@Transient
+	private final FriendsList friendsList;
+	@Transient
+	private final MailHandler mailHandler;
+	@Transient
+	private MessageHandler messageHandler;
+	@Transient
+	private final AbilityManager abilityManager;
+	@Transient
+	private QuestManager questManager;
+
+	@Transient
+	private SotSManager sotsManager;
+	@Transient
+	private final InsectCaptureManager insectCaptureManager;
 
 	private TeamManager teamManager;
 
-	@Transient private TowerManager towerManager;
+	@Transient
+	private TowerManager towerManager;
 	private TowerData towerData;
-	private PlayerGachaInfo gachaInfo;
+	private final PlayerGachaInfo gachaInfo;
 	private PlayerProfile playerProfile;
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
 	private Set<Integer> rewardedLevels;
-	private ArrayList<ShopLimit> shopLimit;
-	private Map<Long, ExpeditionInfo> expeditionInfo;
+	private final ArrayList<ShopLimit> shopLimit;
+	private final Map<Long, ExpeditionInfo> expeditionInfo;
 
 	private int sceneId;
 	private int regionId;
@@ -141,7 +154,6 @@ public class Player {
 	private boolean godmode;
 
 	private boolean stamina;
-
 	private Boolean energyUsage;
 	private boolean moonCard;
 	private Date moonCardStartTime;
@@ -151,26 +163,44 @@ public class Player {
 	private List<Integer> showAvatarList;
 	private boolean showAvatars;
 
-	@Transient private boolean paused;
-	@Transient private int enterSceneToken;
-	@Transient private SceneLoadState sceneState;
-	@Transient private boolean hasSentAvatarDataNotify;
-	@Transient private long nextSendPlayerLocTime = 0;
+	@Transient
+	private boolean paused;
+	@Transient
+	private int enterSceneToken;
+	@Transient
+	private SceneLoadState sceneState;
+	@Transient
+	private boolean hasSentAvatarDataNotify;
+	@Transient
+	private long nextSendPlayerLocTime = 0;
 
-	@Transient private final Int2ObjectMap<CoopRequest> coopRequests;
-	@Transient private final Queue<AttackResult> attackResults;
-	@Transient private final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
-	@Transient private final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
-	@Transient private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
+	@Transient
+	private final Int2ObjectMap<CoopRequest> coopRequests;
+	@Transient
+	private final Queue<AttackResult> attackResults;
+	@Transient
+	private final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
+	@Transient
+	private final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
+	@Transient
+	private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
 
-	@Transient private MapMarksManager mapMarksManager;
-	@Transient private StaminaManager staminaManager;
-	@Transient  private EnergyManager energyManager;
-	@Transient private ResinManager resinManager;
-	@Transient private ForgingManager forgingManager;
-	@Transient private DeforestationManager deforestationManager;
-	@Transient private GameHome home;
-	@Transient private FurnitureManager furnitureManager;
+	@Transient
+	private MapMarksManager mapMarksManager;
+	@Transient
+	private StaminaManager staminaManager;
+	@Transient
+	private EnergyManager energyManager;
+	@Transient
+	private ResinManager resinManager;
+	@Transient
+	private ForgingManager forgingManager;
+	@Transient
+	private DeforestationManager deforestationManager;
+	@Transient
+	private GameHome home;
+	@Transient
+	private FurnitureManager furnitureManager;
 
 	private long springLastUsed;
 	private HashMap<String, MapMark> mapMarks;
@@ -272,7 +302,7 @@ public class Player {
 	}
 
 	public int getUid() {
-		return id;
+		return this.id;
 	}
 
 	public void setUid(int id) {
@@ -285,7 +315,7 @@ public class Player {
 	}
 
 	public Account getAccount() {
-		return account;
+		return this.account;
 	}
 
 	public void setAccount(Account account) {
@@ -293,7 +323,7 @@ public class Player {
 	}
 
 	public GameSession getSession() {
-		return session;
+		return this.session;
 	}
 
 	public void setSession(GameSession session) {
@@ -317,7 +347,7 @@ public class Player {
 	}
 
 	public synchronized Scene getScene() {
-		return scene;
+		return this.scene;
 	}
 
 	public synchronized void setScene(Scene scene) {
@@ -329,7 +359,7 @@ public class Player {
 	}
 
 	public String getNickname() {
-		return nickname;
+		return this.nickname;
 	}
 
 	public void setNickname(String nickName) {
@@ -338,7 +368,7 @@ public class Player {
 	}
 
 	public int getHeadImage() {
-		return headImage;
+		return this.headImage;
 	}
 
 	public void setHeadImage(int picture) {
@@ -347,7 +377,7 @@ public class Player {
 	}
 
 	public String getSignature() {
-		return signature;
+		return this.signature;
 	}
 
 	public void setSignature(String signature) {
@@ -356,7 +386,7 @@ public class Player {
 	}
 
 	public Integer getWidgetId() {
-		return widgetId;
+		return this.widgetId;
 	}
 
 	public void setWidgetId(Integer widgetId) {
@@ -364,7 +394,7 @@ public class Player {
 	}
 
 	public Set<Integer> getRealmList() {
-		return realmList;
+		return this.realmList;
 	}
 
 	public void setRealmList(Set<Integer> realmList) {
@@ -381,21 +411,23 @@ public class Player {
 	}
 
 	public Integer getCurrentRealmId() {
-		return currentRealmId;
+		return this.currentRealmId;
 	}
 
 	public void setCurrentRealmId(Integer currentRealmId) {
 		this.currentRealmId = currentRealmId;
 	}
-	public GameHome getHome(){
-		return home;
+
+	public GameHome getHome() {
+		return this.home;
 	}
+
 	public Position getPos() {
-		return pos;
+		return this.pos;
 	}
 
 	public Position getRotation() {
-		return rotation;
+		return this.rotation;
 	}
 
 	public int getLevel() {
@@ -409,7 +441,7 @@ public class Player {
 	public int getWorldLevel() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL);
 	}
-	
+
 	public void setWorldLevel(int level) {
 		this.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level);
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_WORLD_LEVEL));
@@ -432,7 +464,7 @@ public class Player {
 		this.setProperty(PlayerProperty.PROP_PLAYER_SCOIN, mora);
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_SCOIN));
 	}
-	
+
 	public int getCrystals() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_MCOIN);
 	}
@@ -450,6 +482,7 @@ public class Player {
 		this.setProperty(PlayerProperty.PROP_PLAYER_HOME_COIN, coin);
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_HOME_COIN));
 	}
+
 	private int getExpRequired(int level) {
 		PlayerLevelData levelData = GameData.getPlayerLevelDataMap().get(level);
 		return levelData != null ? levelData.getExp() : 0;
@@ -461,22 +494,22 @@ public class Player {
 
 	// Affected by exp rate
 	public void earnExp(int exp) {
-		addExpDirectly((int) (exp * getExpModifier()));
+		this.addExpDirectly((int) (exp * this.getExpModifier()));
 	}
 
 	// Directly give player exp
 	public void addExpDirectly(int gain) {
 		boolean hasLeveledUp = false;
-		int level = getLevel();
-		int exp = getExp();
-		int reqExp = getExpRequired(level);
+		int level = this.getLevel();
+		int exp = this.getExp();
+		int reqExp = this.getExpRequired(level);
 
 		exp += gain;
 
 		while (exp >= reqExp && reqExp > 0) {
 			exp -= reqExp;
 			level += 1;
-			reqExp = getExpRequired(level);
+			reqExp = this.getExpRequired(level);
 			hasLeveledUp = true;
 		}
 
@@ -497,7 +530,7 @@ public class Player {
 	}
 
 	private void updateProfile() {
-		getProfile().syncWithCharacter(this);
+		this.getProfile().syncWithCharacter(this);
 	}
 
 	public boolean isFirstLoginEnterScene() {
@@ -507,21 +540,21 @@ public class Player {
 	public TeamManager getTeamManager() {
 		return this.teamManager;
 	}
-	
+
 	public TowerManager getTowerManager() {
-		return towerManager;
+		return this.towerManager;
 	}
-	
+
 	public TowerData getTowerData() {
-		if(towerData==null){
+		if (this.towerData == null) {
 			// because of mistake, null may be saved as storage at some machine, this if can be removed in future
-			towerData = new TowerData();
+			this.towerData = new TowerData();
 		}
-		return towerData;
+		return this.towerData;
 	}
-	
+
 	public QuestManager getQuestManager() {
-		return questManager;
+		return this.questManager;
 	}
 
 	public void setQuestManager(QuestManager questManager) {
@@ -529,36 +562,36 @@ public class Player {
 	}
 
 	public PlayerGachaInfo getGachaInfo() {
-		return gachaInfo;
+		return this.gachaInfo;
 	}
 
 	public PlayerProfile getProfile() {
 		if (this.playerProfile == null) {
 			this.playerProfile = new PlayerProfile(this);
 		}
-		return playerProfile;
+		return this.playerProfile;
 	}
 
 	// TODO: Based on the proto, property value could be int or float.
 	//  Although there's no float value at this moment, our code should be prepared for float values.
 	public Map<Integer, Integer> getProperties() {
-		return properties;
+		return this.properties;
 	}
 
 	public boolean setProperty(PlayerProperty prop, int value) {
-		return setPropertyWithSanityCheck(prop, value);
+		return this.setPropertyWithSanityCheck(prop, value);
 	}
 
 	public int getProperty(PlayerProperty prop) {
-		return getProperties().get(prop.getId());
+		return this.getProperties().get(prop.getId());
 	}
 
 	public Set<Integer> getFlyCloakList() {
-		return flyCloakList;
+		return this.flyCloakList;
 	}
 
 	public Set<Integer> getCostumeList() {
-		return costumeList;
+		return this.costumeList;
 	}
 
 	public Set<Integer> getNameCardList() {
@@ -574,11 +607,11 @@ public class Player {
 	}
 
 	public Set<Integer> getUnlockedFurniture() {
-		return unlockedFurniture;
+		return this.unlockedFurniture;
 	}
 
 	public Set<Integer> getUnlockedFurnitureSuite() {
-		return unlockedFurnitureSuite;
+		return this.unlockedFurnitureSuite;
 	}
 
 	public List<ActiveForgeData> getActiveForges() {
@@ -588,13 +621,13 @@ public class Player {
 	public MpSettingType getMpSetting() {
 		return MpSettingType.MP_SETTING_TYPE_ENTER_AFTER_APPLY; // TEMP
 	}
-	
+
 	public Queue<AttackResult> getAttackResults() {
 		return this.attackResults;
 	}
 
 	public synchronized Int2ObjectMap<CoopRequest> getCoopRequests() {
-		return coopRequests;
+		return this.coopRequests;
 	}
 
 	public InvokeHandler<CombatInvokeEntry> getCombatInvokeHandler() {
@@ -606,15 +639,15 @@ public class Player {
 	}
 
 	public InvokeHandler<AbilityInvokeEntry> getClientAbilityInitFinishHandler() {
-		return clientAbilityInitFinishHandler;
+		return this.clientAbilityInitFinishHandler;
 	}
 
 	public AvatarStorage getAvatars() {
-		return avatars;
+		return this.avatars;
 	}
 
 	public Inventory getInventory() {
-		return inventory;
+		return this.inventory;
 	}
 
 	public FriendsList getFriendsList() {
@@ -622,11 +655,11 @@ public class Player {
 	}
 
 	public MailHandler getMailHandler() {
-		return mailHandler;
+		return this.mailHandler;
 	}
 
 	public int getEnterSceneToken() {
-		return enterSceneToken;
+		return this.enterSceneToken;
 	}
 
 	public void setEnterSceneToken(int enterSceneToken) {
@@ -634,7 +667,7 @@ public class Player {
 	}
 
 	public int getNameCardId() {
-		return nameCardId;
+		return this.nameCardId;
 	}
 
 	public void setNameCardId(int nameCardId) {
@@ -643,7 +676,7 @@ public class Player {
 	}
 
 	public int getMainCharacterId() {
-		return mainCharacterId;
+		return this.mainCharacterId;
 	}
 
 	public void setMainCharacterId(int mainCharacterId) {
@@ -651,7 +684,7 @@ public class Player {
 	}
 
 	public int getPeerId() {
-		return peerId;
+		return this.peerId;
 	}
 
 	public void setPeerId(int peerId) {
@@ -659,15 +692,15 @@ public class Player {
 	}
 
 	public int getClientTime() {
-		return session.getClientTime();
+		return this.session.getClientTime();
 	}
 
 	public long getLastPingTime() {
-		return session.getLastPingTime();
+		return this.session.getLastPingTime();
 	}
 
 	public boolean isPaused() {
-		return paused;
+		return this.paused;
 	}
 
 	public void setPaused(boolean newPauseState) {
@@ -682,15 +715,15 @@ public class Player {
 	}
 
 	public long getSpringLastUsed() {
-		return springLastUsed;
+		return this.springLastUsed;
 	}
 
 	public void setSpringLastUsed(long val) {
-		springLastUsed = val;
+		this.springLastUsed = val;
 	}
 
 	public int getNextResinRefresh() {
-		return nextResinRefresh;
+		return this.nextResinRefresh;
 	}
 
 	public void setNextResinRefresh(int value) {
@@ -698,7 +731,7 @@ public class Player {
 	}
 
 	public SceneLoadState getSceneLoadState() {
-		return sceneState;
+		return this.sceneState;
 	}
 
 	public void setSceneLoadState(SceneLoadState sceneState) {
@@ -710,7 +743,7 @@ public class Player {
 	}
 
 	public int getSceneId() {
-		return sceneId;
+		return this.sceneId;
 	}
 
 	public void setSceneId(int sceneId) {
@@ -718,7 +751,7 @@ public class Player {
 	}
 
 	public int getRegionId() {
-		return regionId;
+		return this.regionId;
 	}
 
 	public void setRegionId(int regionId) {
@@ -730,7 +763,7 @@ public class Player {
 	}
 
 	public boolean isShowAvatars() {
-		return showAvatars;
+		return this.showAvatars;
 	}
 
 	public void setShowAvatarList(List<Integer> showAvatarList) {
@@ -738,11 +771,11 @@ public class Player {
 	}
 
 	public List<Integer> getShowAvatarList() {
-		return showAvatarList;
+		return this.showAvatarList;
 	}
 
 	public boolean inMoonCard() {
-		return moonCard;
+		return this.moonCard;
 	}
 
 	public void setMoonCard(boolean moonCard) {
@@ -754,7 +787,7 @@ public class Player {
 	}
 
 	public int getMoonCardDuration() {
-		return moonCardDuration;
+		return this.moonCardDuration;
 	}
 
 	public void setMoonCardDuration(int moonCardDuration) {
@@ -762,7 +795,7 @@ public class Player {
 	}
 
 	public Date getMoonCardStartTime() {
-		return moonCardStartTime;
+		return this.moonCardStartTime;
 	}
 
 	public void setMoonCardStartTime(Date moonCardStartTime) {
@@ -770,7 +803,7 @@ public class Player {
 	}
 
 	public Set<Date> getMoonCardGetTimes() {
-		return moonCardGetTimes;
+		return this.moonCardGetTimes;
 	}
 
 	public void setMoonCardGetTimes(Set<Date> moonCardGetTimes) {
@@ -779,75 +812,73 @@ public class Player {
 
 	public int getMoonCardRemainDays() {
 		Calendar remainCalendar = Calendar.getInstance();
-		remainCalendar.setTime(moonCardStartTime);
-		remainCalendar.add(Calendar.DATE, moonCardDuration);
+		remainCalendar.setTime(this.moonCardStartTime);
+		remainCalendar.add(Calendar.DATE, this.moonCardDuration);
 		Date theLastDay = remainCalendar.getTime();
 		Date now = DateHelper.onlyYearMonthDay(new Date());
-		return (int) ((theLastDay.getTime() - now.getTime()) / (24 * 60 * 60 * 1000)); // By copilot 
+		return (int) ((theLastDay.getTime() - now.getTime()) / (24 * 60 * 60 * 1000)); // By copilot
 	}
 
 	public void rechargeMoonCard() {
-		inventory.addItem(new GameItem(203, 300));
-		if (!moonCard) {
-			moonCard = true;
+		this.inventory.addItem(new GameItem(203, 300));
+		if (!this.moonCard) {
+			this.moonCard = true;
 			Date now = new Date();
-			moonCardStartTime = DateHelper.onlyYearMonthDay(now);
-			moonCardDuration = 30;
+			this.moonCardStartTime = DateHelper.onlyYearMonthDay(now);
+			this.moonCardDuration = 30;
 		} else {
-			moonCardDuration += 30;
+			this.moonCardDuration += 30;
 		}
-		if (!moonCardGetTimes.contains(moonCardStartTime)) {
-			moonCardGetTimes.add(moonCardStartTime);
-		}
+		this.moonCardGetTimes.add(this.moonCardStartTime);
 	}
 
 	public void getTodayMoonCard() {
-		if (!moonCard) {
+		if (!this.moonCard) {
 			return;
 		}
 		Date now = DateHelper.onlyYearMonthDay(new Date());
-		if (moonCardGetTimes.contains(now)) {
+		if (this.moonCardGetTimes.contains(now)) {
 			return;
 		}
 		Date stopTime = new Date();
 		Calendar stopCalendar = Calendar.getInstance();
 		stopCalendar.setTime(stopTime);
-		stopCalendar.add(Calendar.DATE, moonCardDuration);
+		stopCalendar.add(Calendar.DATE, this.moonCardDuration);
 		stopTime = stopCalendar.getTime();
 		if (now.after(stopTime)) {
-			moonCard = false;
+			this.moonCard = false;
 			return;
 		}
-		moonCardGetTimes.add(now);
-		addMoonCardDays(1);
+		this.moonCardGetTimes.add(now);
+		this.addMoonCardDays(1);
 		GameItem item = new GameItem(201, 90);
-		getInventory().addItem(item, ActionReason.BlessingRedeemReward);
-		session.send(new PacketCardProductRewardNotify(getMoonCardRemainDays()));
+		this.getInventory().addItem(item, ActionReason.BlessingRedeemReward);
+		this.session.send(new PacketCardProductRewardNotify(this.getMoonCardRemainDays()));
 	}
 
 	public Map<Long, ExpeditionInfo> getExpeditionInfo() {
-		return expeditionInfo;
+		return this.expeditionInfo;
 	}
 
-	public void addExpeditionInfo(long avaterGuid, int expId, int hourTime, int startTime){
+	public void addExpeditionInfo(long avaterGuid, int expId, int hourTime, int startTime) {
 		ExpeditionInfo exp = new ExpeditionInfo();
 		exp.setExpId(expId);
 		exp.setHourTime(hourTime);
 		exp.setState(1);
 		exp.setStartTime(startTime);
-		expeditionInfo.put(avaterGuid, exp);
+		this.expeditionInfo.put(avaterGuid, exp);
 	}
 
-	public void removeExpeditionInfo(long avaterGuid){
-		expeditionInfo.remove(avaterGuid);
+	public void removeExpeditionInfo(long avaterGuid) {
+		this.expeditionInfo.remove(avaterGuid);
 	}
 
-	public ExpeditionInfo getExpeditionInfo(long avaterGuid){
-		return expeditionInfo.get(avaterGuid);
+	public ExpeditionInfo getExpeditionInfo(long avaterGuid) {
+		return this.expeditionInfo.get(avaterGuid);
 	}
 
 	public List<ShopLimit> getShopLimit() {
-		return shopLimit;
+		return this.shopLimit;
 	}
 
 	public ShopLimit getGoodsLimit(int goodsId) {
@@ -858,7 +889,7 @@ public class Player {
 	}
 
 	public void addShopLimit(int goodsId, int boughtCount, int nextRefreshTime) {
-		ShopLimit target = getGoodsLimit(goodsId);
+		ShopLimit target = this.getGoodsLimit(goodsId);
 		if (target != null) {
 			target.setHasBought(target.getHasBought() + boughtCount);
 			target.setHasBoughtInPeriod(target.getHasBoughtInPeriod() + boughtCount);
@@ -869,20 +900,23 @@ public class Player {
 			sl.setHasBought(boughtCount);
 			sl.setHasBoughtInPeriod(boughtCount);
 			sl.setNextRefreshTime(nextRefreshTime);
-			getShopLimit().add(sl);
+			this.getShopLimit().add(sl);
 		}
 		this.save();
 	}
+
 	public boolean getStamina() {
 		// Get Stamina
-		return stamina;
+		return this.stamina;
 	}
+
 	public void setStamina(boolean stamina) {
 		// Set Stamina
 		this.stamina = stamina;
 	}
+
 	public boolean inGodmode() {
-		return godmode;
+		return this.godmode;
 	}
 
 	public void setGodmode(boolean godmode) {
@@ -890,7 +924,7 @@ public class Player {
 	}
 
 	public boolean hasSentAvatarDataNotify() {
-		return hasSentAvatarDataNotify;
+		return this.hasSentAvatarDataNotify;
 	}
 
 	public void setHasSentAvatarDataNotify(boolean hasSentAvatarDataNotify) {
@@ -898,18 +932,18 @@ public class Player {
 	}
 
 	public void addAvatar(Avatar avatar, boolean addToCurrentTeam) {
-		boolean result = getAvatars().addAvatar(avatar);
+		boolean result = this.getAvatars().addAvatar(avatar);
 
 		if (result) {
 			// Add starting weapon
-			getAvatars().addStartingWeapon(avatar);
+			this.getAvatars().addStartingWeapon(avatar);
 
 			// Done
-			if (hasSentAvatarDataNotify()) {
+			if (this.hasSentAvatarDataNotify()) {
 				// Recalc stats
 				avatar.recalcStats();
 				// Packet, show notice on left if the avatar will be added to the team
-				sendPacket(new PacketAvatarAddNotify(avatar, addToCurrentTeam && this.getTeamManager().canAddAvatarToCurrentTeam()));
+				this.sendPacket(new PacketAvatarAddNotify(avatar, addToCurrentTeam && this.getTeamManager().canAddAvatarToCurrentTeam()));
 				if (addToCurrentTeam) {
 					// If space in team, add
 					this.getTeamManager().addAvatarToCurrentTeam(avatar);
@@ -921,7 +955,7 @@ public class Player {
 	}
 
 	public void addAvatar(Avatar avatar) {
-		addAvatar(avatar, true);
+		this.addAvatar(avatar, true);
 	}
 
 	public void addFlycloak(int flycloakId) {
@@ -954,7 +988,7 @@ public class Player {
 			this.messageHandler.append(message.toString());
 			return;
 		}
-		this.sendPacket(new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, getUid(), message.toString()));
+		this.sendPacket(new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, this.getUid(), message.toString()));
 	}
 
 	/**
@@ -969,7 +1003,9 @@ public class Player {
 
 	// ---------------------MAIL------------------------
 
-	public List<Mail> getAllMail() { return this.getMailHandler().getMail(); }
+	public List<Mail> getAllMail() {
+		return this.getMailHandler().getMail();
+	}
 
 	public void sendMail(Mail message) {
 		this.getMailHandler().sendMail(message);
@@ -979,8 +1015,10 @@ public class Player {
 		return this.getMailHandler().deleteMail(mailId);
 	}
 
-	public Mail getMail(int index) { return this.getMailHandler().getMailById(index); }
-	
+	public Mail getMail(int index) {
+		return this.getMailHandler().getMailById(index);
+	}
+
 	public int getMailId(Mail message) {
 		return this.getMailHandler().getMailIndex(message);
 	}
@@ -988,10 +1026,10 @@ public class Player {
 	public boolean replaceMailByIndex(int index, Mail message) {
 		return this.getMailHandler().replaceMailByIndex(index, message);
 	}
-	
 
-	public void interactWith(int gadgetEntityId, InterOpTypeOuterClass.InterOpType opType) {
-		GameEntity entity = getScene().getEntityById(gadgetEntityId);
+
+	public void interactWith(int gadgetEntityId, GadgetInteractReq req) {
+		GameEntity entity = this.getScene().getEntityById(gadgetEntityId);
 		if (entity == null) {
 			return;
 		}
@@ -1001,37 +1039,37 @@ public class Player {
 			// Pick item
 			if (!drop.isShare()) // check drop owner to avoid someone picked up item in others' world
 			{
-				int dropOwner = (int)(drop.getGuid() >> 32);
-				if (dropOwner != getUid()) {
+				int dropOwner = (int) (drop.getGuid() >> 32);
+				if (dropOwner != this.getUid()) {
 					return;
 				}
 			}
 			entity.getScene().removeEntity(entity);
 			GameItem item = new GameItem(drop.getItemData(), drop.getCount());
 			// Add to inventory
-			boolean success = getInventory().addItem(item, ActionReason.SubfieldDrop);
+			boolean success = this.getInventory().addItem(item, ActionReason.SubfieldDrop);
 			if (success) {
 				if (!drop.isShare()) { // not shared drop
 					this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_TYPE_PICK_ITEM));
-				}else{
+				} else {
 					this.getScene().broadcastPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_TYPE_PICK_ITEM));
 				}
 			}
 		} else if (entity instanceof EntityGadget gadget) {
-			
+
 			if (gadget.getContent() == null) {
 				return;
 			}
-			
-			boolean shouldDelete = gadget.getContent().onInteract(this, opType);
-			
+
+			boolean shouldDelete = gadget.getContent().onInteract(this, req);
+
 			if (shouldDelete) {
 				entity.getScene().removeEntity(entity);
 			}
 		} else if (entity instanceof EntityMonster monster) {
-			insectCaptureManager.arrestSmallCreature(monster);
+			this.insectCaptureManager.arrestSmallCreature(monster);
 		} else if (entity instanceof EntityVehicle vehicle) {// try to arrest it, example: glowworm
-			insectCaptureManager.arrestSmallCreature(vehicle);
+			this.insectCaptureManager.arrestSmallCreature(vehicle);
 		} else {
 			// Delete directly
 			entity.getScene().removeEntity(entity);
@@ -1039,11 +1077,11 @@ public class Player {
 	}
 
 	public void onPause() {
-		getStaminaManager().stopSustainedStaminaHandler();
+		this.getStaminaManager().stopSustainedStaminaHandler();
 	}
 
 	public void onUnpause() {
-		getStaminaManager().startSustainedStaminaHandler();
+		this.getStaminaManager().startSustainedStaminaHandler();
 	}
 
 	public void sendPacket(BasePacket packet) {
@@ -1061,7 +1099,7 @@ public class Player {
 				.setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()));
 
 		if (this.getWorld() != null) {
-			onlineInfo.setCurPlayerNumInWorld(getWorld().getPlayerCount());
+			onlineInfo.setCurPlayerNumInWorld(this.getWorld().getPlayerCount());
 		} else {
 			onlineInfo.setCurPlayerNumInWorld(1);
 		}
@@ -1082,10 +1120,12 @@ public class Player {
 		return this.birthday.getDay() > 0;
 	}
 
-	public PlayerCodex getCodex(){ return this.codex; }
+	public PlayerCodex getCodex() {
+		return this.codex;
+	}
 
 	public Set<Integer> getRewardedLevels() {
-		return rewardedLevels;
+		return this.rewardedLevels;
 	}
 
 	public void setRewardedLevels(Set<Integer> rewardedLevels) {
@@ -1101,15 +1141,15 @@ public class Player {
 							socialShowAvatarInfoList.size(),
 							SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.newBuilder()
 									.setAvatarId(avatarId)
-									.setLevel(getAvatars().getAvatarById(avatarId).getLevel())
-									.setCostumeId(getAvatars().getAvatarById(avatarId).getCostume())
+									.setLevel(this.getAvatars().getAvatarById(avatarId).getLevel())
+									.setCostumeId(this.getAvatars().getAvatarById(avatarId).getCostume())
 									.build()
 					);
 				}
 			}
 		} else {
-			List<Integer> showAvatarList = DatabaseHelper.getPlayerByUid(id).getShowAvatarList();
-			AvatarStorage avatars = DatabaseHelper.getPlayerByUid(id).getAvatars();
+			List<Integer> showAvatarList = DatabaseHelper.getPlayerByUid(this.id).getShowAvatarList();
+			AvatarStorage avatars = DatabaseHelper.getPlayerByUid(this.id).getAvatars();
 			avatars.loadFromDatabase();
 			if (showAvatarList != null) {
 				for (int avatarId : showAvatarList) {
@@ -1149,7 +1189,7 @@ public class Player {
 			player = this;
 			shouldRecalc = false;
 		} else {
-			player = DatabaseHelper.getPlayerByUid(id);
+			player = DatabaseHelper.getPlayerByUid(this.id);
 			player.getAvatars().loadFromDatabase();
 			player.getInventory().loadFromDatabase();
 			shouldRecalc = true;
@@ -1168,7 +1208,7 @@ public class Player {
 		}
 		return showAvatarInfoList;
 	}
-	
+
 	public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getWorldPlayerLocationInfo() {
 		return PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.newBuilder()
 				.setSceneId(this.getSceneId())
@@ -1185,12 +1225,16 @@ public class Player {
 	}
 
 	public MapMarksManager getMapMarksManager() {
-		return mapMarksManager;
+		return this.mapMarksManager;
 	}
 
-	public StaminaManager getStaminaManager() { return staminaManager; }
+	public StaminaManager getStaminaManager() {
+		return this.staminaManager;
+	}
 
-	public SotSManager getSotSManager() { return sotsManager; }
+	public SotSManager getSotSManager() {
+		return this.sotsManager;
+	}
 
 	public EnergyManager getEnergyManager() {
 		return this.energyManager;
@@ -1205,20 +1249,24 @@ public class Player {
 	}
 
 	public FurnitureManager getFurnitureManager() {
-		return furnitureManager;
+		return this.furnitureManager;
 	}
 
 	public AbilityManager getAbilityManager() {
-		return abilityManager;
+		return this.abilityManager;
 	}
 
 	public DeforestationManager getDeforestationManager() {
-		return deforestationManager;
+		return this.deforestationManager;
 	}
 
-	public HashMap<String, MapMark> getMapMarks() { return mapMarks; }
+	public HashMap<String, MapMark> getMapMarks() {
+		return this.mapMarks;
+	}
 
-	public void setMapMarks(HashMap<String, MapMark> newMarks) { mapMarks = newMarks; }
+	public void setMapMarks(HashMap<String, MapMark> newMarks) {
+		this.mapMarks = newMarks;
+	}
 
 	public Boolean getEnergyUsage() {
 		if(energyUsage==null){
@@ -1256,7 +1304,7 @@ public class Player {
 
 			// Update player locations if in multiplayer every 5 seconds
 			long time = System.currentTimeMillis();
-			if (this.getWorld().isMultiplayer() && this.getScene() != null && time > nextSendPlayerLocTime) {
+			if (this.getWorld().isMultiplayer() && this.getScene() != null && time > this.nextSendPlayerLocTime) {
 				this.sendPacket(new PacketWorldPlayerLocationNotify(this.getWorld()));
 				this.sendPacket(new PacketScenePlayerLocationNotify(this.getScene()));
 				this.resetSendPlayerLocTime();
@@ -1265,16 +1313,16 @@ public class Player {
 		// Expedition
 		var timeNow = Utils.getCurrentSeconds();
 		var needNotify = false;
-		for (Long key : expeditionInfo.keySet()) {
-			ExpeditionInfo e = expeditionInfo.get(key);
-			if(e.getState() == 1){
-				if(timeNow - e.getStartTime() >= e.getHourTime() * 60 * 60){
+		for (Long key : this.expeditionInfo.keySet()) {
+			ExpeditionInfo e = this.expeditionInfo.get(key);
+			if (e.getState() == 1) {
+				if (timeNow - e.getStartTime() >= e.getHourTime() * 60 * 60) {
 					e.setState(2);
 					needNotify = true;
 				}
 			}
 		}
-		if(needNotify){
+		if (needNotify) {
 			this.save();
 			this.sendPacket(new PacketAvatarExpeditionDataNotify(this));
 		}
@@ -1285,8 +1333,6 @@ public class Player {
 		// Recharge resin.
 		this.getResinManager().rechargeResin();
 	}
-
-
 
 
 	public void resetSendPlayerLocTime() {
@@ -1303,7 +1349,7 @@ public class Player {
 	public void save() {
 		DatabaseHelper.savePlayer(this);
 	}
-	
+
 	// Called from tokenrsp
 	public void loadFromDatabase() {
 		// Make sure these exist
@@ -1341,12 +1387,12 @@ public class Player {
 				quest.finish();
 			}
 			getQuestManager().addQuest(35101);
-			
+
 			this.setSceneId(3);
 			this.getPos().set(GameConstants.START_POSITION);
 		}
 		*/
-		
+
 		// Create world
 		World world = new World(this);
 		world.addPlayer(this);
@@ -1356,52 +1402,53 @@ public class Player {
 		this.setProperty(PlayerProperty.PROP_IS_MP_MODE_AVAILABLE, 1);
 
 		// Packets
-		session.send(new PacketPlayerDataNotify(this)); // Player data
-		session.send(new PacketStoreWeightLimitNotify());
-		session.send(new PacketPlayerStoreNotify(this));
-		session.send(new PacketAvatarDataNotify(this));
-		session.send(new PacketFinishedParentQuestNotify(this));
-		session.send(new PacketQuestListNotify(this));
-		session.send(new PacketCodexDataFullNotify(this));
-		session.send(new PacketAllWidgetDataNotify(this));
-		session.send(new PacketWidgetGadgetAllDataNotify());
-		session.send(new PacketCombineDataNotify(this.unlockedCombines));
+		this.session.send(new PacketPlayerDataNotify(this)); // Player data
+		this.session.send(new PacketStoreWeightLimitNotify());
+		this.session.send(new PacketPlayerStoreNotify(this));
+		this.session.send(new PacketAvatarDataNotify(this));
+		this.session.send(new PacketFinishedParentQuestNotify(this));
+		this.session.send(new PacketQuestListNotify(this));
+		this.session.send(new PacketCodexDataFullNotify(this));
+		this.session.send(new PacketAllWidgetDataNotify(this));
+		this.session.send(new PacketWidgetGadgetAllDataNotify());
+		this.session.send(new PacketCombineDataNotify(this.unlockedCombines));
 		this.forgingManager.sendForgeDataNotify();
 		this.resinManager.onPlayerLogin();
 
-		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
+		this.getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
 		this.furnitureManager.onLogin();
 		// Home
-		home = GameHome.getByUid(getUid());
-		home.onOwnerLogin(this);
+		this.home = GameHome.getByUid(this.getUid());
+		this.home.onOwnerLogin(this);
 
-		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
-		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
-		session.send(new PacketOpenStateUpdateNotify());
+		this.session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
+		this.session.send(new PacketPlayerLevelRewardUpdateNotify(this.rewardedLevels));
+		this.session.send(new PacketOpenStateUpdateNotify());
 
 		// First notify packets sent
 		this.setHasSentAvatarDataNotify(true);
-		
+
 		// Set session state
-		session.setState(SessionState.ACTIVE);
+		this.session.setState(SessionState.ACTIVE);
 
 		// Call join event.
-		PlayerJoinEvent event = new PlayerJoinEvent(this); event.call();
-		if(event.isCanceled()){ // If event is not cancelled, continue.
-			session.close();
+		PlayerJoinEvent event = new PlayerJoinEvent(this);
+		event.call();
+		if (event.isCanceled()) { // If event is not cancelled, continue.
+			this.session.close();
 			return;
 		}
-		
+
 		// register
-		getServer().registerPlayer(this);
-		getProfile().setPlayer(this); // Set online
+		this.getServer().registerPlayer(this);
+		this.getProfile().setPlayer(this); // Set online
 	}
 
 	public void onLogout() {
-		try{
+		try {
 			// stop stamina calculation
-			getStaminaManager().stopSustainedStaminaHandler();
+			this.getStaminaManager().stopSustainedStaminaHandler();
 
 			// force to leave the dungeon (inside has a "if")
 			this.getServer().getDungeonManager().exitDungeon(this);
@@ -1423,16 +1470,17 @@ public class Player {
 			this.getFriendsList().save();
 
 			// Call quit event.
-			PlayerQuitEvent event = new PlayerQuitEvent(this); event.call();
+			PlayerQuitEvent event = new PlayerQuitEvent(this);
+			event.call();
 
 			//reset wood
-			getDeforestationManager().resetWood();
+			this.getDeforestationManager().resetWood();
 
-		}catch (Throwable e){
+		} catch (Throwable e) {
 			e.printStackTrace();
-			Grasscutter.getLogger().warn("Player (UID {}) save failure", getUid());
-		}finally {
-			removeFromServer();
+			Grasscutter.getLogger().warn("Player (UID {}) save failure", this.getUid());
+		} finally {
+			this.removeFromServer();
 		}
 	}
 
@@ -1440,7 +1488,7 @@ public class Player {
 		// Remove from server.
 		//Note: DON'T DELETE BY UID,BECAUSE THERE ARE MULTIPLE SAME UID PLAYERS WHEN DUPLICATED LOGIN!
 		//so I decide to delete by object rather than uid
-		getServer().getPlayers().values().removeIf(player1 -> player1 == this);
+		this.getServer().getPlayers().values().removeIf(player1 -> player1 == this);
 	}
 
 	public enum SceneLoadState {
@@ -1448,7 +1496,7 @@ public class Player {
 
 		private final int value;
 
-		private SceneLoadState(int value) {
+		SceneLoadState(int value) {
 			this.value = value;
 		}
 
@@ -1462,12 +1510,14 @@ public class Player {
 	}
 
 	private void saveSanityCheckedProperty(PlayerProperty prop, int value) {
-		getProperties().put(prop.getId(), value);
+		this.getProperties().put(prop.getId(), value);
 	}
 
 	private boolean setPropertyWithSanityCheck(PlayerProperty prop, int value) {
 		if (prop == PlayerProperty.PROP_EXP) { // 1001
-			if (!(value >= 0)) { return false; }
+			if (!(value >= 0)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_BREAK_LEVEL) { // 1002
 			// TODO: implement sanity check
 		} else if (prop == PlayerProperty.PROP_SATIATION_VAL) { // 1003
@@ -1475,56 +1525,92 @@ public class Player {
 		} else if (prop == PlayerProperty.PROP_SATIATION_PENALTY_TIME) { // 1004
 			// TODO: implement sanity check
 		} else if (prop == PlayerProperty.PROP_LEVEL) { // 4001
-			if (!(value >= 0 && value <= 90)) { return false; }
+			if (!(value >= 0 && value <= 90)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_LAST_CHANGE_AVATAR_TIME) { // 10001
 			// TODO: implement sanity check
 		} else if (prop == PlayerProperty.PROP_MAX_SPRING_VOLUME) { // 10002
-			if (!(value >= 0 && value <= SotSManager.GlobalMaximumSpringVolume)) { return false; }
+			if (!(value >= 0 && value <= SotSManager.GlobalMaximumSpringVolume)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_CUR_SPRING_VOLUME) { // 10003
-			int playerMaximumSpringVolume = getProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME);
-			if (!(value >= 0 && value <= playerMaximumSpringVolume)) { return false; }
+			int playerMaximumSpringVolume = this.getProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME);
+			if (!(value >= 0 && value <= playerMaximumSpringVolume)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_IS_SPRING_AUTO_USE) { // 10004
-			if (!(value >= 0 && value <= 1)) { return false; }
+			if (!(value >= 0 && value <= 1)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT) { // 10005
-			if (!(value >= 0 && value <= 100)) { return false; }
+			if (!(value >= 0 && value <= 100)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_IS_FLYABLE) { // 10006
-			if (!(0 <= value && value <= 1)) { return false; }
+			if (!(0 <= value && value <= 1)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_IS_WEATHER_LOCKED) { // 10007
-			if (!(0 <= value && value <= 1)) { return false; }
+			if (!(0 <= value && value <= 1)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_IS_GAME_TIME_LOCKED) { // 10008
-			if (!(0 <= value && value <= 1)) { return false; }
+			if (!(0 <= value && value <= 1)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_IS_TRANSFERABLE) { // 10009
-			if (!(0 <= value && value <= 1)) { return false; }
+			if (!(0 <= value && value <= 1)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_MAX_STAMINA) { // 10010
-			if (!(value >= 0 && value <= StaminaManager.GlobalCharacterMaximumStamina)) { return false; }
+			if (!(value >= 0 && value <= StaminaManager.GlobalCharacterMaximumStamina)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_CUR_PERSIST_STAMINA) { // 10011
-			int playerMaximumStamina = getProperty(PlayerProperty.PROP_MAX_STAMINA);
-			if (!(value >= 0 && value <= playerMaximumStamina)) { return false; }
+			int playerMaximumStamina = this.getProperty(PlayerProperty.PROP_MAX_STAMINA);
+			if (!(value >= 0 && value <= playerMaximumStamina)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_CUR_TEMPORARY_STAMINA) { // 10012
 			// TODO: implement sanity check
 		} else if (prop == PlayerProperty.PROP_PLAYER_LEVEL) { // 10013
-			if (!(0 < value && value <= 90)) { return false; }
+			if (!(0 < value && value <= 90)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_PLAYER_EXP) { // 10014
-			if (!(0 <= value)) { return false; }
+			if (!(0 <= value)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_PLAYER_HCOIN) { // 10015
 			// see PlayerProperty.PROP_PLAYER_HCOIN comments
 		} else if (prop == PlayerProperty.PROP_PLAYER_SCOIN) { // 10016
 			// See 10015
 		} else if (prop == PlayerProperty.PROP_PLAYER_MP_SETTING_TYPE) { // 10017
-			if (!(0 <= value && value <= 2)) { return false; }
+			if (!(0 <= value && value <= 2)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_IS_MP_MODE_AVAILABLE) { // 10018
-			if (!(0 <= value && value <= 1)) { return false; }
+			if (!(0 <= value && value <= 1)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_PLAYER_WORLD_LEVEL) { // 10019
-			if (!(0 <= value && value <= 8)) { return false; }
+			if (!(0 <= value && value <= 8)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_PLAYER_RESIN) { // 10020
 			// Do not set 160 as a cap, because player can have more than 160 when they use fragile resin.
-			if (!(0 <= value)) { return false; }
+			if (!(0 <= value)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_PLAYER_WAIT_SUB_HCOIN) { // 10022
 			// TODO: implement sanity check
 		} else if (prop == PlayerProperty.PROP_PLAYER_WAIT_SUB_SCOIN) { // 10023
 			// TODO: implement sanity check
 		} else if (prop == PlayerProperty.PROP_IS_ONLY_MP_WITH_PS_PLAYER) { // 10024
-			if (!(0 <= value && value <= 1)) { return false; }
+			if (!(0 <= value && value <= 1)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_PLAYER_MCOIN) { // 10025
 			// see 10015
 		} else if (prop == PlayerProperty.PROP_PLAYER_WAIT_SUB_MCOIN) { // 10026
@@ -1550,11 +1636,13 @@ public class Player {
 		} else if (prop == PlayerProperty.PROP_PLAYER_LEGENDARY_DAILY_TASK_NUM) { // 10041
 			// TODO: implement sanity check
 		} else if (prop == PlayerProperty.PROP_PLAYER_HOME_COIN) { // 10042
-			if (!(0 <= value)) { return false; }
+			if (!(0 <= value)) {
+				return false;
+			}
 		} else if (prop == PlayerProperty.PROP_PLAYER_WAIT_SUB_HOME_COIN) { // 10043
 			// TODO: implement sanity check
 		}
-		saveSanityCheckedProperty(prop, value);
+		this.saveSanityCheckedProperty(prop, value);
 		return false;
 	}
 

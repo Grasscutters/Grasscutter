@@ -1,5 +1,7 @@
 package emu.grasscutter.game.managers.energy;
 
+import com.google.gson.reflect.TypeToken;
+import com.google.protobuf.InvalidProtocolBufferException;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
@@ -7,11 +9,7 @@ import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.MonsterData.HpDrops;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.entity.EntityClientGadget;
-import emu.grasscutter.game.entity.EntityItem;
-import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
@@ -27,34 +25,19 @@ import emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.utils.Position;
-import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import static emu.grasscutter.Configuration.GAME_OPTIONS;
-
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-import static java.util.Map.entry;
-
-import com.google.gson.reflect.TypeToken;
-import com.google.protobuf.InvalidProtocolBufferException;
 
 public class EnergyManager {
     private final Player player;
     private final Map<EntityAvatar, Integer> avatarNormalProbabilities;
-
-    private final Integer elementTypeDefault=2024;
-
-
-    private final Integer particlesDefault=2;
-
+    private final static Integer elementTypeDefault=2024;
+    private final static Integer particlesDefault=2;
     private final static Int2ObjectMap<List<EnergyDropInfo>> energyDropData = new Int2ObjectOpenHashMap<>();
     private final static Int2ObjectMap<List<SkillParticleGenerationInfo>> skillParticleGenerationData = new Int2ObjectOpenHashMap<>();
 
@@ -66,7 +49,6 @@ public class EnergyManager {
     public Player getPlayer() {
         return this.player;
     }
-
 
     private static Integer getIdByElementType(ElementType element){
         if (element == null) {
@@ -109,8 +91,7 @@ public class EnergyManager {
             }
 
             Grasscutter.getLogger().info("Energy drop data successfully loaded.");
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             Grasscutter.getLogger().error("Unable to load energy drop data.", ex);
         }
 
@@ -123,8 +104,7 @@ public class EnergyManager {
             }
 
             Grasscutter.getLogger().info("Skill particle generation data successfully loaded.");
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             Grasscutter.getLogger().error("Unable to load skill particle generation data data.", ex);
         }
     }
@@ -158,25 +138,6 @@ public class EnergyManager {
         return count;
     }
 
-    private int getBallIdForElement(ElementType element) {
-        // If we have no element, we default to an elementless particle.
-        if (element == null) {
-            return 2024;
-        }
-
-        // Otherwise, we determin the particle's ID based on the element.
-        return switch (element) {
-            case Fire -> 2017;
-            case Water -> 2018;
-            case Grass -> 2019;
-            case Electric -> 2020;
-            case Wind -> 2021;
-            case Ice -> 2022;
-            case Rock -> 2023;
-            default -> 2024;
-        };
-    }
-
     public void handleGenerateElemBall(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
         // ToDo:
         // This is also called when a weapon like Favonius Warbow etc. creates energy through its passive.
@@ -187,6 +148,7 @@ public class EnergyManager {
         if (action == null) {
             return;
         }
+
         // Default to an elementless particle.
         int itemId = elementTypeDefault;
 
@@ -201,10 +163,9 @@ public class EnergyManager {
             }
             return;
         }
-
-
+        
         // Try to get the casting avatar from the player's party.
-        Optional<EntityAvatar> avatarEntity = getCastingAvatarEntityForEnergy(invoke.getEntityId());
+        Optional<EntityAvatar> avatarEntity = this.getCastingAvatarEntityForEnergy(invoke.getEntityId());
 
         // Bug: invokes twice sometimes, Ayato, Keqing
         // ToDo: deal with press, hold difference. deal with charge(Beidou, Yunjin)
@@ -229,7 +190,7 @@ public class EnergyManager {
 
         // Generate the particles.
         for (int i = 0; i < amount; i++) {
-            generateElemBall(itemId, new Position(action.getPos()), 1);
+            this.generateElemBall(itemId, new Position(action.getPos()), 1);
         }
     }
 
@@ -238,7 +199,7 @@ public class EnergyManager {
      **********/
     public void handlePickupElemBall(GameItem elemBall) {
         // Check if the item is indeed an energy particle/orb.
-        if (elemBall.getItemId() < 2001 ||elemBall.getItemId() > 2024) {
+        if (elemBall.getItemId() < 2001 || elemBall.getItemId() > 2024) {
             return;
         }
 
@@ -333,7 +294,7 @@ public class EnergyManager {
             return;
         }
 
-        EntityMonster targetMonster = (EntityMonster)targetEntity;
+        EntityMonster targetMonster = (EntityMonster) targetEntity;
         MonsterType targetType = targetMonster.getMonsterData().getType();
         if (targetType != MonsterType.MONSTER_ORDINARY && targetType != MonsterType.MONSTER_BOSS) {
             return;
@@ -401,6 +362,7 @@ public class EnergyManager {
             this.generateElemBall(info.getBallId(), monster.getPosition(), info.getCount());
         }
     }
+
     public void handleMonsterEnergyDrop(EntityMonster monster, float hpBeforeDamage, float hpAfterDamage) {
         // Make sure this is actually a monster.
         // Note that some wildlife also has that type, like boars or birds.
@@ -422,13 +384,13 @@ public class EnergyManager {
 
             float threshold = drop.getHpPercent() / 100.0f;
             if (threshold < thresholdBefore && threshold >= thresholdAfter) {
-                generateElemBallDrops(monster, drop.getDropId());
+                this.generateElemBallDrops(monster, drop.getDropId());
             }
         }
 
         // Handle kill drops.
         if (hpAfterDamage <= 0 && monster.getMonsterData().getKillDropId() != 0) {
-            generateElemBallDrops(monster, monster.getMonsterData().getKillDropId());
+            this.generateElemBallDrops(monster, monster.getMonsterData().getKillDropId());
         }
     }
 
@@ -453,7 +415,7 @@ public class EnergyManager {
         // that cast the skill.
 
         // Try to get the invoking entity from the scene.
-        GameEntity entity = player.getScene().getEntityById(invokeEntityId);
+        GameEntity entity = this.player.getScene().getEntityById(invokeEntityId);
 
         // Determine the ID of the entity that originally cast this skill. If the scene entity is null,
         // or not an `EntityClientGadget`, we assume that we are directly looking at the casting avatar
@@ -463,14 +425,13 @@ public class EnergyManager {
         int avatarEntityId =
                 (!(entity instanceof EntityClientGadget))
                         ? invokeEntityId
-                        : ((EntityClientGadget)entity).getOriginalOwnerEntityId();
+                        : ((EntityClientGadget) entity).getOriginalOwnerEntityId();
 
         // Finally, find the avatar entity in the player's team.
-        return player.getTeamManager().getActiveTeam()
+        return this.player.getTeamManager().getActiveTeam()
                 .stream()
                 .filter(character -> character.getId() == avatarEntityId)
                 .findFirst();
     }
-
-
+    
 }

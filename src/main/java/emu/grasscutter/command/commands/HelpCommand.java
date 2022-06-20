@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
@@ -28,7 +27,7 @@ public final class HelpCommand implements CommandHandler {
                 }
             }
 
-            SendAllHelpMessage(player, annotations);
+            this.SendAllHelpMessage(player, annotations);
         } else {
             String command = args.get(0);
             CommandHandler handler = CommandMap.getInstance().getHandler(command);

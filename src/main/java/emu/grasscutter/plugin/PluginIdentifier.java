@@ -4,10 +4,10 @@ package emu.grasscutter.plugin;
 public final class PluginIdentifier {
     public final String name, description, version;
     public final String[] authors;
-    
+
     public PluginIdentifier(
-            String name, String description, String version,
-            String[] authors
+        String name, String description, String version,
+        String[] authors
     ) {
         this.name = name;
         this.description = description;
@@ -19,11 +19,11 @@ public final class PluginIdentifier {
      * Converts a {@link PluginConfig} into a {@link PluginIdentifier}.
      */
     public static PluginIdentifier fromPluginConfig(PluginConfig config) {
-        if(!config.validate())
+        if (!config.validate())
             throw new IllegalArgumentException("A valid plugin config is required to convert into a plugin identifier.");
         return new PluginIdentifier(
-                config.name, config.description, config.version,
-                config.authors
+            config.name, config.description, config.version,
+            config.authors
         );
     }
 }
