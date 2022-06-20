@@ -97,7 +97,8 @@ public class ScriptLib {
     }
 
     // Some fields are guessed
-    public int AutoMonsterTide(ScriptLibContext context, int challengeIndex, int groupId, Integer[] ordersConfigId, int tideCount, int sceneLimit, int param6) {
+    public int AutoMonsterTide(ScriptLibContext context, int challengeIndex, int groupId, Object ordersConfigId_, int tideCount, int sceneLimit, int param6) {
+        var ordersConfigId = ScriptUtils.toIntegerArray(ordersConfigId_);
         SceneGroup group = context.getSceneScriptManager().getGroupById(groupId);
 
         if (group == null || group.monsters == null) {

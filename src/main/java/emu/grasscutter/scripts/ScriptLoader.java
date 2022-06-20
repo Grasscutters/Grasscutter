@@ -17,6 +17,7 @@ import javax.script.*;
 import java.io.File;
 import java.io.FileReader;
 import java.lang.ref.SoftReference;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Optional;
@@ -99,22 +100,19 @@ public class ScriptLoader {
         if (sc.isPresent()) {
             return sc.get();
         }
-
         Grasscutter.getLogger().info("Loading script " + path);
-
         File file = new File(path);
-
         if (!file.exists()) return null;
 
-        try (FileReader fr = new FileReader(file)) {
-            var script = ((Compilable) getEngine()).compile(fr);
+        try {
+            var script = ((Compilable)getEngine()).compile("package.path = 'resources/scripts/?.lua;' " + Files.readString(file.toPath()));
+            script.getEngine().getContext().setAttribute("javax.script.filename", file.getName(), ScriptContext.ENGINE_SCOPE);
             scriptsCache.put(path, new SoftReference<>(script));
             return script;
         } catch (Exception e) {
             Grasscutter.getLogger().error("Loading script {} failed!", path, e);
             return null;
         }
-
     }
 
     public static SceneMeta getSceneMeta(int sceneId) {
