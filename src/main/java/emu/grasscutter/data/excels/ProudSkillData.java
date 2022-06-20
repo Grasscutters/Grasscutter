@@ -1,17 +1,17 @@
 package emu.grasscutter.data.excels;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.common.ItemParamData;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @ResourceType(name = "ProudSkillExcelConfigData.json")
 public class ProudSkillData extends GameResource {
-	
-	private int proudSkillId;
+
+    private int proudSkillId;
     private int proudSkillGroupId;
     private int level;
     private int coinCost;
@@ -25,77 +25,77 @@ public class ProudSkillData extends GameResource {
     private float[] paramList;
     private long[] paramDescList;
     private long nameTextMapHash;
-	
-	@Override
-	public int getId() {
-		return proudSkillId;
-	}
 
-	public int getProudSkillGroupId() {
-		return proudSkillGroupId;
-	}
+    @Override
+    public int getId() {
+        return this.proudSkillId;
+    }
 
-	public int getLevel() {
-		return level;
-	}
+    public int getProudSkillGroupId() {
+        return this.proudSkillGroupId;
+    }
 
-	public int getCoinCost() {
-		return coinCost;
-	}
+    public int getLevel() {
+        return this.level;
+    }
 
-	public int getBreakLevel() {
-		return breakLevel;
-	}
+    public int getCoinCost() {
+        return this.coinCost;
+    }
 
-	public int getProudSkillType() {
-		return proudSkillType;
-	}
+    public int getBreakLevel() {
+        return this.breakLevel;
+    }
 
-	public String getOpenConfig() {
-		return openConfig;
-	}
+    public int getProudSkillType() {
+        return this.proudSkillType;
+    }
 
-	public List<ItemParamData> getCostItems() {
-		return costItems;
-	}
+    public String getOpenConfig() {
+        return this.openConfig;
+    }
 
-	public List<String> getFilterConds() {
-		return filterConds;
-	}
+    public List<ItemParamData> getCostItems() {
+        return this.costItems;
+    }
 
-	public List<String> getLifeEffectParams() {
-		return lifeEffectParams;
-	}
+    public List<String> getFilterConds() {
+        return this.filterConds;
+    }
 
-	public FightPropData[] getAddProps() {
-		return addProps;
-	}
+    public List<String> getLifeEffectParams() {
+        return this.lifeEffectParams;
+    }
 
-	public float[] getParamList() {
-		return paramList;
-	}
+    public FightPropData[] getAddProps() {
+        return this.addProps;
+    }
 
-	public long[] getParamDescList() {
-		return paramDescList;
-	}
+    public float[] getParamList() {
+        return this.paramList;
+    }
 
-	public long getNameTextMapHash() {
-		return nameTextMapHash;
-	}
+    public long[] getParamDescList() {
+        return this.paramDescList;
+    }
 
-	@Override
-	public void onLoad() {
-		if (this.getOpenConfig() != null & this.getOpenConfig().length() > 0) {
-			this.openConfig = "Avatar_" + this.getOpenConfig();
-		}
-		// Fight props
-		ArrayList<FightPropData> parsed = new ArrayList<FightPropData>(getAddProps().length);
-		for (FightPropData prop : getAddProps()) {
-			if (prop.getPropType() != null && prop.getValue() != 0f) {
-				prop.onLoad();
-				parsed.add(prop);
-			}
-		}
-		this.addProps = parsed.toArray(new FightPropData[parsed.size()]);
-	}
+    public long getNameTextMapHash() {
+        return this.nameTextMapHash;
+    }
+
+    @Override
+    public void onLoad() {
+        if (this.getOpenConfig() != null & this.getOpenConfig().length() > 0) {
+            this.openConfig = "Avatar_" + this.getOpenConfig();
+        }
+        // Fight props
+        ArrayList<FightPropData> parsed = new ArrayList<FightPropData>(this.getAddProps().length);
+        for (FightPropData prop : this.getAddProps()) {
+            if (prop.getPropType() != null && prop.getValue() != 0f) {
+                prop.onLoad();
+                parsed.add(prop);
+            }
+        }
+        this.addProps = parsed.toArray(new FightPropData[parsed.size()]);
+    }
 }

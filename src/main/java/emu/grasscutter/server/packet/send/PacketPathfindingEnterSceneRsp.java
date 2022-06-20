@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 
 public class PacketPathfindingEnterSceneRsp extends BasePacket {
 
-	public PacketPathfindingEnterSceneRsp(int clientSequence) {
-		super(PacketOpcodes.PathfindingEnterSceneRsp);
-	}
+    public PacketPathfindingEnterSceneRsp(int clientSequence) {
+        super(PacketOpcodes.PathfindingEnterSceneRsp);
+    }
 }

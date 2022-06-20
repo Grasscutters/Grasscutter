@@ -10,9 +10,10 @@ public final class PluginConfig {
 
     /**
      * Attempts to validate this config instance.
+     *
      * @return True if the config is valid, false otherwise.
      */
     public boolean validate() {
-        return name != null && description != null && mainClass != null;
+        return this.name != null && this.description != null && this.mainClass != null;
     }
 }

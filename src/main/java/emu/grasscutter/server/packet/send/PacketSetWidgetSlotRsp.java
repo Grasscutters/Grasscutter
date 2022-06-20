@@ -10,8 +10,8 @@ public class PacketSetWidgetSlotRsp extends BasePacket {
         super(PacketOpcodes.SetWidgetSlotRsp);
 
         SetWidgetSlotRspOuterClass.SetWidgetSlotRsp proto = SetWidgetSlotRspOuterClass.SetWidgetSlotRsp.newBuilder()
-                .setMaterialId(materialId)
-                .build();
+            .setMaterialId(materialId)
+            .build();
 
         this.setData(proto);
     }

@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "give", usage = "give <itemId|itemName> [amount] [level]", aliases = {
-        "g", "item", "giveitem"}, permission = "player.give", permissionTargeted = "player.give.others", description = "commands.give.description")
+    "g", "item", "giveitem"}, permission = "player.give", permissionTargeted = "player.give.others", description = "commands.give.description")
 public final class GiveCommand implements CommandHandler {
     Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java is a joke of a proglang that doesn't have raw string literals
     Pattern refineRegex = Pattern.compile("r(\\d+)");
@@ -38,19 +38,19 @@ public final class GiveCommand implements CommandHandler {
         int amount = 1;
         int refinement = 0;
 
-        for (int i = args.size()-1; i>=0; i--) {  // Reverse iteration as we are deleting elements
+        for (int i = args.size() - 1; i >= 0; i--) {  // Reverse iteration as we are deleting elements
             String arg = args.get(i).toLowerCase();
             boolean deleteArg = false;
             int argNum;
-            if ((argNum = matchIntOrNeg(lvlRegex, arg)) != -1) {
+            if ((argNum = this.matchIntOrNeg(this.lvlRegex, arg)) != -1) {
                 lvl = argNum;
                 deleteArg = true;
             }
-            if ((argNum = matchIntOrNeg(refineRegex, arg)) != -1) {
+            if ((argNum = this.matchIntOrNeg(this.refineRegex, arg)) != -1) {
                 refinement = argNum;
                 deleteArg = true;
             }
-            if ((argNum = matchIntOrNeg(amountRegex, arg)) != -1) {
+            if ((argNum = this.matchIntOrNeg(this.amountRegex, arg)) != -1) {
                 amount = argNum;
                 deleteArg = true;
             }

@@ -9,17 +9,17 @@ import java.util.List;
 
 public class PacketGroupSuiteNotify extends BasePacket {
 
-	/**
-	 * control which npc suite is loaded
-	 */
-	public PacketGroupSuiteNotify(List<EntityNPC> list) {
-		super(PacketOpcodes.GroupSuiteNotify);
+    /**
+     * control which npc suite is loaded
+     */
+    public PacketGroupSuiteNotify(List<EntityNPC> list) {
+        super(PacketOpcodes.GroupSuiteNotify);
 
-		var proto = GroupSuiteNotifyOuterClass.GroupSuiteNotify.newBuilder();
+        var proto = GroupSuiteNotifyOuterClass.GroupSuiteNotify.newBuilder();
 
-		list.forEach(item -> proto.putGroupMap(item.getGroupId(), item.getSuiteId()));
+        list.forEach(item -> proto.putGroupMap(item.getGroupId(), item.getSuiteId()));
 
-		this.setData(proto);
+        this.setData(proto);
 
-	}
+    }
 }

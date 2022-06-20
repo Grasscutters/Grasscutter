@@ -9,13 +9,13 @@ import emu.grasscutter.server.game.GameSession;
 @Opcodes(PacketOpcodes.TowerEnterLevelReq)
 public class HandlerTowerEnterLevelReq extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		TowerEnterLevelReq req = TowerEnterLevelReq.parseFrom(payload);
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        TowerEnterLevelReq req = TowerEnterLevelReq.parseFrom(payload);
 
-		//session.send(new PacketTowerCurLevelRecordChangeNotify());
-		session.getPlayer().getTowerManager().enterLevel(req.getEnterPointId());
+        //session.send(new PacketTowerCurLevelRecordChangeNotify());
+        session.getPlayer().getTowerManager().enterLevel(req.getEnterPointId());
 
-		//session.send(new PacketTowerLevelStarCondNotify());
-	}
+        //session.send(new PacketTowerLevelStarCondNotify());
+    }
 }

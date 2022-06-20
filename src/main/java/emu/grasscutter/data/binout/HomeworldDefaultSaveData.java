@@ -27,9 +27,10 @@ public class HomeworldDefaultSaveData {
     List<HomeFurniture> doorLists;
     @SerializedName("EPGELGEFJFK")
     List<HomeFurniture> stairLists;
+
     @Data
     @FieldDefaults(level = AccessLevel.PRIVATE)
-    public static class HomeBlock{
+    public static class HomeBlock {
 
         @SerializedName(value = "FGIJCELCGFI", alternate = "PGDPDIDJEEL")
         int blockId;
@@ -40,7 +41,7 @@ public class HomeworldDefaultSaveData {
 
     @Data
     @FieldDefaults(level = AccessLevel.PRIVATE)
-    public static class HomeFurniture{
+    public static class HomeFurniture {
 
         @SerializedName(value = "ENHNGKJBJAB", alternate = "KMAAJJHPNBA")
         int id;

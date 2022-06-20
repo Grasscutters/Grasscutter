@@ -1,13 +1,13 @@
 package emu.grasscutter.command.commands;
 
-import java.util.List;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
+
+import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
@@ -60,7 +60,7 @@ public final class UnBanCommand implements CommandHandler {
             return;
         }
 
-        if (unBanAccount(uid)) {
+        if (this.unBanAccount(uid)) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.unban.success"));
         } else {
             CommandHandler.sendMessage(sender, translate(sender, "commands.unban.failure"));

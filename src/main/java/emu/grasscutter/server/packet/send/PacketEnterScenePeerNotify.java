@@ -7,16 +7,16 @@ import emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNo
 
 public class PacketEnterScenePeerNotify extends BasePacket {
 
-	public PacketEnterScenePeerNotify(Player player) {
-		super(PacketOpcodes.EnterScenePeerNotify);
-		
-		EnterScenePeerNotify proto = EnterScenePeerNotify.newBuilder()
-				.setDestSceneId(player.getSceneId())
-				.setPeerId(player.getPeerId())
-				.setHostPeerId(player.getWorld().getHost().getPeerId())
-				.setEnterSceneToken(player.getEnterSceneToken()) 
-				.build();
+    public PacketEnterScenePeerNotify(Player player) {
+        super(PacketOpcodes.EnterScenePeerNotify);
 
-		this.setData(proto);
-	}
+        EnterScenePeerNotify proto = EnterScenePeerNotify.newBuilder()
+            .setDestSceneId(player.getSceneId())
+            .setPeerId(player.getPeerId())
+            .setHostPeerId(player.getWorld().getHost().getPeerId())
+            .setEnterSceneToken(player.getEnterSceneToken())
+            .build();
+
+        this.setData(proto);
+    }
 }

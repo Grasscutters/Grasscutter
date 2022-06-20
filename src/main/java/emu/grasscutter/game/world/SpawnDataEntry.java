@@ -1,80 +1,79 @@
 package emu.grasscutter.game.world;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import emu.grasscutter.utils.Position;
 
+import java.util.List;
+
 public class SpawnDataEntry {
-	private transient SpawnGroupEntry group;
-	private int monsterId;
-	private int configId;
-	private int level;
-	private int poseId;
-	private Position pos;
-	private Position rot;
-	
-	public SpawnGroupEntry getGroup() {
-		return group;
-	}
+    private transient SpawnGroupEntry group;
+    private int monsterId;
+    private int configId;
+    private int level;
+    private int poseId;
+    private Position pos;
+    private Position rot;
 
-	public void setGroup(SpawnGroupEntry group) {
-		this.group = group;
-	}
+    public SpawnGroupEntry getGroup() {
+        return this.group;
+    }
 
-	public int getMonsterId() {
-		return monsterId;
-	}
-	
-	public int getConfigId() {
-		return configId;
-	}
-	
-	public int getLevel() {
-		return level;
-	}
-	
-	public int getPoseId() {
-		return poseId;
-	}
-	
-	public Position getPos() {
-		return pos;
-	}
-	
-	public Position getRot() {
-		return rot;
-	}
-	
-	public static class SpawnGroupEntry {
-		private int sceneId;
-		private int groupId;
-		private int blockId;
-		private Position pos;
-		private List<SpawnDataEntry> spawns;
-		
-		public int getSceneId() {
-			return sceneId;
-		}
+    public void setGroup(SpawnGroupEntry group) {
+        this.group = group;
+    }
 
-		public int getGroupId() {
-			return groupId;
-		}
+    public int getMonsterId() {
+        return this.monsterId;
+    }
 
-		public int getBlockId() {
-			return blockId;
-		}
+    public int getConfigId() {
+        return this.configId;
+    }
 
-		public void setBlockId(int blockId) {
-			this.blockId = blockId;
-		}
+    public int getLevel() {
+        return this.level;
+    }
 
-		public Position getPos() {
-			return pos;
-		}
+    public int getPoseId() {
+        return this.poseId;
+    }
 
-		public List<SpawnDataEntry> getSpawns() {
-			return spawns;
-		}
-	}
+    public Position getPos() {
+        return this.pos;
+    }
+
+    public Position getRot() {
+        return this.rot;
+    }
+
+    public static class SpawnGroupEntry {
+        private int sceneId;
+        private int groupId;
+        private int blockId;
+        private Position pos;
+        private List<SpawnDataEntry> spawns;
+
+        public int getSceneId() {
+            return this.sceneId;
+        }
+
+        public int getGroupId() {
+            return this.groupId;
+        }
+
+        public int getBlockId() {
+            return this.blockId;
+        }
+
+        public void setBlockId(int blockId) {
+            this.blockId = blockId;
+        }
+
+        public Position getPos() {
+            return this.pos;
+        }
+
+        public List<SpawnDataEntry> getSpawns() {
+            return this.spawns;
+        }
+    }
 }

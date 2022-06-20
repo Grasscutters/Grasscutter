@@ -35,11 +35,11 @@ import com.google.gson.reflect.TypeToken;
 
 public class DungeonChallenge extends WorldChallenge {
 
-	/**
-	 * has more challenge
-	 */
-	private boolean stage;
-	private IntSet rewardedPlayers;
+    /**
+     * has more challenge
+     */
+    private boolean stage;
+    private IntSet rewardedPlayers;
 
 	private final static Int2ObjectMap<List<DungeonDropEntry>> dungeonDropData = new Int2ObjectOpenHashMap<>();
 
@@ -68,21 +68,21 @@ public class DungeonChallenge extends WorldChallenge {
 		this.setRewardedPlayers(new IntOpenHashSet());
 	}
 
-	public boolean isStage() {
-		return stage;
-	}
+    public boolean isStage() {
+        return this.stage;
+    }
 
-	public void setStage(boolean stage) {
-		this.stage = stage;
-	}
+    public void setStage(boolean stage) {
+        this.stage = stage;
+    }
 
-	public IntSet getRewardedPlayers() {
-		return rewardedPlayers;
-	}
+    public IntSet getRewardedPlayers() {
+        return this.rewardedPlayers;
+    }
 
-	public void setRewardedPlayers(IntSet rewardedPlayers) {
-		this.rewardedPlayers = rewardedPlayers;
-	}
+    public void setRewardedPlayers(IntSet rewardedPlayers) {
+        this.rewardedPlayers = rewardedPlayers;
+    }
 
 	@Override
 	public void done() {

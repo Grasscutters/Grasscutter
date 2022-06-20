@@ -1,12 +1,12 @@
 package emu.grasscutter.game.managers.deforestation;
 
 
-
 public class HitTreeRecord {
     private final int unique;
     private short count; // hit this tree times
     private long time; // last available hitting time
-    HitTreeRecord(int unique){
+
+    HitTreeRecord(int unique) {
         this.count = 0;
         this.time = 0;
         this.unique = unique;
@@ -15,7 +15,7 @@ public class HitTreeRecord {
     /**
      * reset hit time
      */
-    private void resetTime(){
+    private void resetTime() {
         this.time = System.currentTimeMillis();
     }
 
@@ -23,35 +23,36 @@ public class HitTreeRecord {
     /**
      * commit hit behavior
      */
-    public boolean record(){
+    public boolean record() {
         if (this.count < DeforestationManager.RECORD_MAX_TIMES) {
             this.count++;
-            resetTime();
+            this.resetTime();
             return true;
         }
         // check expired
         boolean isWaiting = System.currentTimeMillis() - this.time < DeforestationManager.RECORD_EXPIRED_SECONDS * 1000L;
-        if(isWaiting){
+        if (isWaiting) {
             return false;
-        }else{
+        } else {
             this.count = 1;
-            resetTime();
+            this.resetTime();
             return true;
         }
     }
+
     /**
      * get unique id
      */
-    public int getUnique(){
-        return unique;
+    public int getUnique() {
+        return this.unique;
     }
 
     @Override
     public String toString() {
         return "HitTreeRecord{" +
-                "unique=" + unique +
-                ", count=" + count +
-                ", time=" + time +
-                '}';
+            "unique=" + this.unique +
+            ", count=" + this.count +
+            ", time=" + this.time +
+            '}';
     }
 }

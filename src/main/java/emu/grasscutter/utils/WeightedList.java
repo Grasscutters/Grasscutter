@@ -9,22 +9,22 @@ public class WeightedList<E> {
     private double total = 0;
 
     public WeightedList() {
-        
+
     }
 
     public WeightedList<E> add(double weight, E result) {
         if (weight <= 0) return this;
-        total += weight;
-        map.put(total, result);
+        this.total += weight;
+        this.map.put(this.total, result);
         return this;
     }
 
     public E next() {
-        double value = ThreadLocalRandom.current().nextDouble() * total;
-        return map.higherEntry(value).getValue();
+        double value = ThreadLocalRandom.current().nextDouble() * this.total;
+        return this.map.higherEntry(value).getValue();
     }
 
-	public int size() {
-		return map.size();
-	}
+    public int size() {
+        return this.map.size();
+    }
 }

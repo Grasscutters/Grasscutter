@@ -16,19 +16,20 @@ import java.util.*;
 
 @Entity
 public class PlayerCodex {
-    @Transient private Player player;
+    @Transient
+    private Player player;
 
     //itemId is not codexId!
-    private Set<Integer> unlockedWeapon;
-    private Map<Integer, Integer> unlockedAnimal;
-    private Set<Integer> unlockedMaterial;
-    private Set<Integer> unlockedBook;
-    private Set<Integer> unlockedTip;
-    private Set<Integer> unlockedView;
-    private Set<Integer> unlockedReliquary;
-    private Set<Integer> unlockedReliquarySuitCodex;
+    private final Set<Integer> unlockedWeapon;
+    private final Map<Integer, Integer> unlockedAnimal;
+    private final Set<Integer> unlockedMaterial;
+    private final Set<Integer> unlockedBook;
+    private final Set<Integer> unlockedTip;
+    private final Set<Integer> unlockedView;
+    private final Set<Integer> unlockedReliquary;
+    private final Set<Integer> unlockedReliquarySuitCodex;
 
-    public PlayerCodex(){
+    public PlayerCodex() {
         this.unlockedWeapon = new HashSet<>();
         this.unlockedAnimal = new HashMap<>();
         this.unlockedMaterial = new HashSet<>();
@@ -39,7 +40,7 @@ public class PlayerCodex {
         this.unlockedReliquarySuitCodex = new HashSet<>();
     }
 
-    public PlayerCodex(Player player){
+    public PlayerCodex(Player player) {
         this();
         this.player = player;
     }
@@ -48,82 +49,80 @@ public class PlayerCodex {
         this.player = player;
     }
 
-    public void checkAddedItem(GameItem item){
+    public void checkAddedItem(GameItem item) {
         ItemType type = item.getItemData().getItemType();
-        if (type == ItemType.ITEM_WEAPON){
-            if(!getUnlockedWeapon().contains(item.getItemId())){
-                getUnlockedWeapon().add(item.getItemId());
+        if (type == ItemType.ITEM_WEAPON) {
+            if (!this.getUnlockedWeapon().contains(item.getItemId())) {
+                this.getUnlockedWeapon().add(item.getItemId());
                 var codexItem = GameData.getCodexWeaponDataIdMap().get(item.getItemId());
-                if(codexItem != null){
-                    player.save();
+                if (codexItem != null) {
+                    this.player.save();
                     this.player.sendPacket(new PacketCodexDataUpdateNotify(2, codexItem.getId()));
                 }
             }
-        }
-        else if(type == ItemType.ITEM_MATERIAL){
-            if( item.getItemData().getMaterialType() == MaterialType.MATERIAL_FOOD ||
-                item.getItemData().getMaterialType() == MaterialType.MATERIAL_WIDGET||
-                item.getItemData().getMaterialType() == MaterialType.MATERIAL_EXCHANGE||
-                item.getItemData().getMaterialType() == MaterialType.MATERIAL_AVATAR_MATERIAL||
-                item.getItemData().getMaterialType() == MaterialType.MATERIAL_NOTICE_ADD_HP){
-                if (!getUnlockedMaterial().contains(item.getItemId())) {
+        } else if (type == ItemType.ITEM_MATERIAL) {
+            if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_FOOD ||
+                item.getItemData().getMaterialType() == MaterialType.MATERIAL_WIDGET ||
+                item.getItemData().getMaterialType() == MaterialType.MATERIAL_EXCHANGE ||
+                item.getItemData().getMaterialType() == MaterialType.MATERIAL_AVATAR_MATERIAL ||
+                item.getItemData().getMaterialType() == MaterialType.MATERIAL_NOTICE_ADD_HP) {
+                if (!this.getUnlockedMaterial().contains(item.getItemId())) {
                     var codexMaterial = GameData.getCodexMaterialDataIdMap().get(item.getItemId());
                     if (codexMaterial != null) {
-                        getUnlockedMaterial().add(item.getItemId());
-                        player.save();
+                        this.getUnlockedMaterial().add(item.getItemId());
+                        this.player.save();
                         this.player.sendPacket(new PacketCodexDataUpdateNotify(4, codexMaterial.getId()));
                     }
                 }
             }
-        }
-        else if(type == ItemType.ITEM_RELIQUARY) {
-            if(!getUnlockedReliquary().contains(item.getItemId())){
-                getUnlockedReliquary().add(item.getItemId());
-                checkUnlockedSuits(item);
+        } else if (type == ItemType.ITEM_RELIQUARY) {
+            if (!this.getUnlockedReliquary().contains(item.getItemId())) {
+                this.getUnlockedReliquary().add(item.getItemId());
+                this.checkUnlockedSuits(item);
             }
         }
     }
 
-    public void checkAnimal(GameEntity target, CodexAnimalData.CodexAnimalUnlockCondition condition){
-        if(target instanceof EntityMonster){
-            var monsterId = ((EntityMonster)target).getMonsterData().getId();
+    public void checkAnimal(GameEntity target, CodexAnimalData.CodexAnimalUnlockCondition condition) {
+        if (target instanceof EntityMonster) {
+            var monsterId = ((EntityMonster) target).getMonsterData().getId();
             var codexAnimal = GameData.getCodexAnimalDataMap().get(monsterId);
 
-            if(!getUnlockedAnimal().containsKey(monsterId)) {
+            if (!this.getUnlockedAnimal().containsKey(monsterId)) {
                 if (codexAnimal != null) {
-                    if(codexAnimal.getUnlockCondition() == condition || codexAnimal.getUnlockCondition() == null){
-                        getUnlockedAnimal().put(monsterId, 1);
+                    if (codexAnimal.getUnlockCondition() == condition || codexAnimal.getUnlockCondition() == null) {
+                        this.getUnlockedAnimal().put(monsterId, 1);
                     }
                 }
-            }else{
-                getUnlockedAnimal().put(monsterId, getUnlockedAnimal().get(monsterId) + 1);
+            } else {
+                this.getUnlockedAnimal().put(monsterId, this.getUnlockedAnimal().get(monsterId) + 1);
             }
-            player.save();
+            this.player.save();
             this.player.sendPacket(new PacketCodexDataUpdateNotify(3, monsterId));
         }
     }
 
-    public void checkUnlockedSuits(GameItem item){
+    public void checkUnlockedSuits(GameItem item) {
         int reliquaryId = item.getItemId();
         Optional<CodexReliquaryData> excelReliquarySuitList = GameData.getcodexReliquaryArrayList().stream().filter(
-                x -> x.getCupId() == reliquaryId
-                        || x.getLeatherId() == reliquaryId
-                        || x.getCapId() == reliquaryId
-                        || x.getFlowerId() == reliquaryId
-                        || x.getSandId() == reliquaryId
+            x -> x.getCupId() == reliquaryId
+                || x.getLeatherId() == reliquaryId
+                || x.getCapId() == reliquaryId
+                || x.getFlowerId() == reliquaryId
+                || x.getSandId() == reliquaryId
         ).findFirst();
-        if(excelReliquarySuitList.isPresent()) {
+        if (excelReliquarySuitList.isPresent()) {
             var excelReliquarySuit = excelReliquarySuitList.get();
-            if(!getUnlockedReliquarySuitCodex().contains(excelReliquarySuit.getId())){
-                if(
-                        getUnlockedReliquary().contains(excelReliquarySuit.getCupId()) &&
-                        getUnlockedReliquary().contains(excelReliquarySuit.getLeatherId()) &&
-                        getUnlockedReliquary().contains(excelReliquarySuit.getCapId()) &&
-                        getUnlockedReliquary().contains(excelReliquarySuit.getFlowerId()) &&
-                        getUnlockedReliquary().contains(excelReliquarySuit.getSandId())
-                ){
-                    getUnlockedReliquarySuitCodex().add(excelReliquarySuit.getId());
-                    player.save();
+            if (!this.getUnlockedReliquarySuitCodex().contains(excelReliquarySuit.getId())) {
+                if (
+                    this.getUnlockedReliquary().contains(excelReliquarySuit.getCupId()) &&
+                        this.getUnlockedReliquary().contains(excelReliquarySuit.getLeatherId()) &&
+                        this.getUnlockedReliquary().contains(excelReliquarySuit.getCapId()) &&
+                        this.getUnlockedReliquary().contains(excelReliquarySuit.getFlowerId()) &&
+                        this.getUnlockedReliquary().contains(excelReliquarySuit.getSandId())
+                ) {
+                    this.getUnlockedReliquarySuitCodex().add(excelReliquarySuit.getId());
+                    this.player.save();
                     this.player.sendPacket(new PacketCodexDataUpdateNotify(8, excelReliquarySuit.getId()));
                 }
             }
@@ -131,35 +130,35 @@ public class PlayerCodex {
     }
 
     public Set<Integer> getUnlockedWeapon() {
-        return unlockedWeapon;
+        return this.unlockedWeapon;
     }
 
     public Map<Integer, Integer> getUnlockedAnimal() {
-        return unlockedAnimal;
+        return this.unlockedAnimal;
     }
 
     public Set<Integer> getUnlockedMaterial() {
-        return unlockedMaterial;
+        return this.unlockedMaterial;
     }
 
     public Set<Integer> getUnlockedBook() {
-        return unlockedBook;
+        return this.unlockedBook;
     }
 
     public Set<Integer> getUnlockedTip() {
-        return unlockedTip;
+        return this.unlockedTip;
     }
 
     public Set<Integer> getUnlockedView() {
-        return unlockedView;
+        return this.unlockedView;
     }
 
     public Set<Integer> getUnlockedReliquary() {
-        return unlockedReliquary;
+        return this.unlockedReliquary;
     }
 
     public Set<Integer> getUnlockedReliquarySuitCodex() {
-        return unlockedReliquarySuitCodex;
+        return this.unlockedReliquarySuitCodex;
     }
 
 }

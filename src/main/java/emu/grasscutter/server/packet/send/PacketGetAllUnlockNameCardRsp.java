@@ -6,14 +6,14 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GetAllUnlockNameCardRspOuterClass.GetAllUnlockNameCardRsp;
 
 public class PacketGetAllUnlockNameCardRsp extends BasePacket {
-	
-	public PacketGetAllUnlockNameCardRsp(Player player) {
-		super(PacketOpcodes.GetAllUnlockNameCardRsp);
-		
-		GetAllUnlockNameCardRsp proto = GetAllUnlockNameCardRsp.newBuilder()
-				.addAllNameCardList(player.getNameCardList())
-				.build();
 
-		this.setData(proto);
-	}
+    public PacketGetAllUnlockNameCardRsp(Player player) {
+        super(PacketOpcodes.GetAllUnlockNameCardRsp);
+
+        GetAllUnlockNameCardRsp proto = GetAllUnlockNameCardRsp.newBuilder()
+            .addAllNameCardList(player.getNameCardList())
+            .build();
+
+        this.setData(proto);
+    }
 }

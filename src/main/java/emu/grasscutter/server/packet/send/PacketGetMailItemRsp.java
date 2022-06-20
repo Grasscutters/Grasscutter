@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class PacketGetMailItemRsp  extends BasePacket {
+public class PacketGetMailItemRsp extends BasePacket {
 
     public PacketGetMailItemRsp(Player player, List<Integer> mailList) {
         super(PacketOpcodes.GetMailItemRsp);
@@ -66,7 +66,7 @@ public class PacketGetMailItemRsp  extends BasePacket {
                     modified = true;
                 }
             }
-            if(modified) {
+            if (modified) {
                 player.save();
             }
         }
