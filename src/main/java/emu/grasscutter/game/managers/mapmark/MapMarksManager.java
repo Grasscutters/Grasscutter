@@ -18,7 +18,9 @@ public class MapMarksManager {
     public MapMarksManager(Player player) {
         this.player = player;
         this.mapMarks = player.getMapMarks();
-        if (this.mapMarks == null) { this.mapMarks = new HashMap<>(); }
+        if (this.mapMarks == null) {
+            this.mapMarks = new HashMap<>();
+        }
     }
 
     public void handleMapMarkReq(MarkMapReq req) {
@@ -28,55 +30,55 @@ public class MapMarksManager {
                 MapMark createMark = new MapMark(req.getMark());
                 // keep teleporting functionality on fishhook mark.
                 if (createMark.getMapMarkPointType() == MapMarkPointType.MAP_MARK_POINT_TYPE_FISH_POOL) {
-                    teleport(player, createMark);
+                    this.teleport(this.player, createMark);
                     return;
                 }
-                addMapMark(createMark);
+                this.addMapMark(createMark);
             }
             case OPERATION_MOD -> {
                 MapMark oldMark = new MapMark(req.getOld());
-                removeMapMark(oldMark.getPosition());
+                this.removeMapMark(oldMark.getPosition());
                 MapMark newMark = new MapMark(req.getMark());
-                addMapMark(newMark);
+                this.addMapMark(newMark);
             }
             case OPERATION_DEL -> {
                 MapMark deleteMark = new MapMark(req.getMark());
-                removeMapMark(deleteMark.getPosition());
+                this.removeMapMark(deleteMark.getPosition());
             }
         }
         if (op != Operation.OPERATION_GET) {
-            saveMapMarks();
+            this.saveMapMarks();
         }
-        player.getSession().send(new PacketMarkMapRsp(getMapMarks()));
+        this.player.getSession().send(new PacketMarkMapRsp(this.getMapMarks()));
     }
 
     public HashMap<String, MapMark> getMapMarks() {
-        return mapMarks;
+        return this.mapMarks;
     }
 
     public String getMapMarkKey(Position position) {
-        return "x" + (int)position.getX()+ "z" + (int)position.getZ();
+        return "x" + (int) position.getX() + "z" + (int) position.getZ();
     }
 
     public void removeMapMark(Position position) {
-        mapMarks.remove(getMapMarkKey(position));
+        this.mapMarks.remove(this.getMapMarkKey(position));
     }
 
     public void addMapMark(MapMark mapMark) {
-        if (mapMarks.size() < mapMarkMaxCount) {
-            mapMarks.put(getMapMarkKey(mapMark.getPosition()), mapMark);
+        if (this.mapMarks.size() < mapMarkMaxCount) {
+            this.mapMarks.put(this.getMapMarkKey(mapMark.getPosition()), mapMark);
         }
     }
 
     private void saveMapMarks() {
-        player.setMapMarks(mapMarks);
-        player.save();
+        this.player.setMapMarks(this.mapMarks);
+        this.player.save();
     }
 
     private void teleport(Player player, MapMark mapMark) {
         float y;
         try {
-            y = (float)Integer.parseInt(mapMark.getName());
+            y = (float) Integer.parseInt(mapMark.getName());
         } catch (Exception e) {
             y = 300;
         }

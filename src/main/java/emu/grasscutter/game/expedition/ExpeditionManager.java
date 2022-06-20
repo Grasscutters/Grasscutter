@@ -7,22 +7,21 @@ import emu.grasscutter.server.game.GameServer;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.Collection;
 import java.util.List;
 
-import static emu.grasscutter.Configuration.*;
-
 public class ExpeditionManager {
     public GameServer getGameServer() {
-        return gameServer;
+        return this.gameServer;
     }
 
     private final GameServer gameServer;
 
-    public Int2ObjectMap<List<ExpeditionRewardDataList>> getExpeditionRewardDataList() { return expeditionRewardData; }
+    public Int2ObjectMap<List<ExpeditionRewardDataList>> getExpeditionRewardDataList() {
+        return this.expeditionRewardData;
+    }
 
     private final Int2ObjectMap<List<ExpeditionRewardDataList>> expeditionRewardData;
 
@@ -34,11 +33,11 @@ public class ExpeditionManager {
 
     public synchronized void load() {
         try (Reader fileReader = new InputStreamReader(DataLoader.load("ExpeditionReward.json"))) {
-            getExpeditionRewardDataList().clear();
+            this.getExpeditionRewardDataList().clear();
             List<ExpeditionRewardInfo> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ExpeditionRewardInfo.class).getType());
-            if(banners.size() > 0) {
+            if (banners.size() > 0) {
                 for (ExpeditionRewardInfo di : banners) {
-                    getExpeditionRewardDataList().put(di.getExpId(), di.getExpeditionRewardDataList());
+                    this.getExpeditionRewardDataList().put(di.getExpId(), di.getExpeditionRewardDataList());
                 }
                 Grasscutter.getLogger().info("Expedition reward successfully loaded.");
             } else {

@@ -7,26 +7,26 @@ import emu.grasscutter.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelSt
 
 public class PacketTowerLevelStarCondNotify extends BasePacket {
 
-	public PacketTowerLevelStarCondNotify(int floorId, int levelIndex) {
-		super(PacketOpcodes.TowerLevelStarCondNotify);
+    public PacketTowerLevelStarCondNotify(int floorId, int levelIndex) {
+        super(PacketOpcodes.TowerLevelStarCondNotify);
 
-		TowerLevelStarCondNotify proto = TowerLevelStarCondNotify.newBuilder()
-				.setFloorId(floorId)
-				.setLevelIndex(levelIndex)
-				.addCondDataList(TowerLevelStarCondData.newBuilder()
-						.setCondValue(1)
-						.build()
-				)
-				.addCondDataList(TowerLevelStarCondData.newBuilder()
-						.setCondValue(2)
-						.build()
-				)
-				.addCondDataList(TowerLevelStarCondData.newBuilder()
-						.setCondValue(3)
-						.build()
-				)
-				.build();
-		
-		this.setData(proto);
-	}
+        TowerLevelStarCondNotify proto = TowerLevelStarCondNotify.newBuilder()
+            .setFloorId(floorId)
+            .setLevelIndex(levelIndex)
+            .addCondDataList(TowerLevelStarCondData.newBuilder()
+                .setCondValue(1)
+                .build()
+            )
+            .addCondDataList(TowerLevelStarCondData.newBuilder()
+                .setCondValue(2)
+                .build()
+            )
+            .addCondDataList(TowerLevelStarCondData.newBuilder()
+                .setCondValue(3)
+                .build()
+            )
+            .build();
+
+        this.setData(proto);
+    }
 }

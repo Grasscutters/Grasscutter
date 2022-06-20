@@ -1,13 +1,13 @@
 package emu.grasscutter.command.commands;
 
-import java.util.List;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
+
+import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
@@ -81,7 +81,7 @@ public final class BanCommand implements CommandHandler {
             reason = args.get(2);
         }
 
-        if (banAccount(uid, time, reason)) {
+        if (this.banAccount(uid, time, reason)) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.ban.success"));
         } else {
             CommandHandler.sendMessage(sender, translate(sender, "commands.ban.failure"));

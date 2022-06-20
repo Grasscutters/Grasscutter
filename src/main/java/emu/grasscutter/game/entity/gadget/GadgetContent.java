@@ -6,17 +6,17 @@ import emu.grasscutter.net.proto.InterOpTypeOuterClass;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 
 public abstract class GadgetContent {
-	private final EntityGadget gadget;
-	
-	public GadgetContent(EntityGadget gadget) {
-		this.gadget = gadget;
-	}
+    private final EntityGadget gadget;
 
-	public EntityGadget getGadget() {
-		return gadget;
-	}
-	
-	public abstract boolean onInteract(Player player, InterOpTypeOuterClass.InterOpType opType);
-	
-	public abstract void onBuildProto(SceneGadgetInfo.Builder gadgetInfo);
+    public GadgetContent(EntityGadget gadget) {
+        this.gadget = gadget;
+    }
+
+    public EntityGadget getGadget() {
+        return this.gadget;
+    }
+
+    public abstract boolean onInteract(Player player, InterOpTypeOuterClass.InterOpType opType);
+
+    public abstract void onBuildProto(SceneGadgetInfo.Builder gadgetInfo);
 }

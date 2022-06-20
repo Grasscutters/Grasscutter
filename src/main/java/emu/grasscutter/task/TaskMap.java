@@ -1,7 +1,6 @@
 package emu.grasscutter.task;
 
 import emu.grasscutter.Grasscutter;
-
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import org.reflections.Reflections;
@@ -14,7 +13,7 @@ public final class TaskMap {
     private final Map<String, Task> annotations = new HashMap<>();
     private final Map<String, TaskHandler> afterReset = new HashMap<>();
     private final SchedulerFactory schedulerFactory = new StdSchedulerFactory();
-    
+
     public TaskMap() {
         this(false);
     }
@@ -30,7 +29,7 @@ public final class TaskMap {
     public void resetNow() {
         // Unregister all tasks
         for (TaskHandler task : this.tasks.values()) {
-            unregisterTask(task);
+            this.unregisterTask(task);
         }
 
         // Run all afterReset tasks
@@ -47,7 +46,7 @@ public final class TaskMap {
 
         // Register all tasks
         for (TaskHandler task : this.tasks.values()) {
-            registerTask(task.getClass().getAnnotation(Task.class).taskName(), task);
+            this.registerTask(task.getClass().getAnnotation(Task.class).taskName(), task);
         }
     }
 
@@ -56,7 +55,7 @@ public final class TaskMap {
         this.annotations.remove(task.getClass().getAnnotation(Task.class).taskName());
 
         try {
-            Scheduler scheduler = schedulerFactory.getScheduler();
+            Scheduler scheduler = this.schedulerFactory.getScheduler();
             scheduler.deleteJob(new JobKey(task.getClass().getAnnotation(Task.class).taskName()));
         } catch (SchedulerException e) {
             e.printStackTrace();
@@ -69,7 +68,7 @@ public final class TaskMap {
 
     public boolean pauseTask(String taskName) {
         try {
-            Scheduler scheduler = schedulerFactory.getScheduler();
+            Scheduler scheduler = this.schedulerFactory.getScheduler();
             scheduler.pauseJob(new JobKey(taskName));
         } catch (SchedulerException e) {
             e.printStackTrace();
@@ -80,7 +79,7 @@ public final class TaskMap {
 
     public boolean resumeTask(String taskName) {
         try {
-            Scheduler scheduler = schedulerFactory.getScheduler();
+            Scheduler scheduler = this.schedulerFactory.getScheduler();
             scheduler.resumeJob(new JobKey(taskName));
         } catch (SchedulerException e) {
             e.printStackTrace();
@@ -108,17 +107,17 @@ public final class TaskMap {
 
         // register task
         try {
-            Scheduler scheduler = schedulerFactory.getScheduler();
+            Scheduler scheduler = this.schedulerFactory.getScheduler();
             JobDetail job = JobBuilder
-                        .newJob(task.getClass())
-                        .withIdentity(taskName)
-                        .build();
-            
+                .newJob(task.getClass())
+                .withIdentity(taskName)
+                .build();
+
             Trigger convTrigger = TriggerBuilder.newTrigger()
-                        .withIdentity(annotation.triggerName())
-                        .withSchedule(CronScheduleBuilder.cronSchedule(annotation.taskCronExpression()))
-                        .build();
-            
+                .withIdentity(annotation.triggerName())
+                .withSchedule(CronScheduleBuilder.cronSchedule(annotation.taskCronExpression()))
+                .build();
+
             scheduler.scheduleJob(job, convTrigger);
 
             if (annotation.executeImmediately()) {
@@ -164,7 +163,7 @@ public final class TaskMap {
             }
         });
         try {
-            Scheduler scheduler = schedulerFactory.getScheduler();
+            Scheduler scheduler = this.schedulerFactory.getScheduler();
             scheduler.start();
         } catch (SchedulerException e) {
             e.printStackTrace();

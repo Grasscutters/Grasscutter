@@ -32,12 +32,13 @@ public class ShopInfo {
         SHOP_REFRESH_MONTHLY(3);
 
         private final int value;
+
         ShopRefreshType(int value) {
             this.value = value;
         }
 
         public int value() {
-            return value;
+            return this.value;
         }
     }
 
@@ -61,7 +62,7 @@ public class ShopInfo {
     }
 
     public int getHcoin() {
-        return hcoin;
+        return this.hcoin;
     }
 
     public void setHcoin(int hcoin) {
@@ -69,7 +70,7 @@ public class ShopInfo {
     }
 
     public List<Integer> getPreGoodsIdList() {
-        return preGoodsIdList;
+        return this.preGoodsIdList;
     }
 
     public void setPreGoodsIdList(List<Integer> preGoodsIdList) {
@@ -77,7 +78,7 @@ public class ShopInfo {
     }
 
     public int getMcoin() {
-        return mcoin;
+        return this.mcoin;
     }
 
     public void setMcoin(int mcoin) {
@@ -85,7 +86,7 @@ public class ShopInfo {
     }
 
     public int getDisableType() {
-        return disableType;
+        return this.disableType;
     }
 
     public void setDisableType(int disableType) {
@@ -93,7 +94,7 @@ public class ShopInfo {
     }
 
     public int getSecondarySheetId() {
-        return secondarySheetId;
+        return this.secondarySheetId;
     }
 
     public void setSecondarySheetId(int secondarySheetId) {
@@ -101,7 +102,7 @@ public class ShopInfo {
     }
 
     public int getGoodsId() {
-        return goodsId;
+        return this.goodsId;
     }
 
     public void setGoodsId(int goodsId) {
@@ -109,7 +110,7 @@ public class ShopInfo {
     }
 
     public ItemParamData getGoodsItem() {
-        return goodsItem;
+        return this.goodsItem;
     }
 
     public void setGoodsItem(ItemParamData goodsItem) {
@@ -117,7 +118,7 @@ public class ShopInfo {
     }
 
     public int getScoin() {
-        return scoin;
+        return this.scoin;
     }
 
     public void setScoin(int scoin) {
@@ -125,7 +126,7 @@ public class ShopInfo {
     }
 
     public List<ItemParamData> getCostItemList() {
-        return costItemList;
+        return this.costItemList;
     }
 
     public void setCostItemList(List<ItemParamData> costItemList) {
@@ -133,7 +134,7 @@ public class ShopInfo {
     }
 
     public int getBoughtNum() {
-        return boughtNum;
+        return this.boughtNum;
     }
 
     public void setBoughtNum(int boughtNum) {
@@ -141,7 +142,7 @@ public class ShopInfo {
     }
 
     public int getBuyLimit() {
-        return buyLimit;
+        return this.buyLimit;
     }
 
     public void setBuyLimit(int buyLimit) {
@@ -149,7 +150,7 @@ public class ShopInfo {
     }
 
     public int getBeginTime() {
-        return beginTime;
+        return this.beginTime;
     }
 
     public void setBeginTime(int beginTime) {
@@ -157,7 +158,7 @@ public class ShopInfo {
     }
 
     public int getEndTime() {
-        return endTime;
+        return this.endTime;
     }
 
     public void setEndTime(int endTime) {
@@ -165,7 +166,7 @@ public class ShopInfo {
     }
 
     public int getMinLevel() {
-        return minLevel;
+        return this.minLevel;
     }
 
     public void setMinLevel(int minLevel) {
@@ -173,7 +174,7 @@ public class ShopInfo {
     }
 
     public int getMaxLevel() {
-        return maxLevel;
+        return this.maxLevel;
     }
 
     public void setMaxLevel(int maxLevel) {
@@ -181,9 +182,9 @@ public class ShopInfo {
     }
 
     public ShopRefreshType getShopRefreshType() {
-        if (refreshType == null)
+        if (this.refreshType == null)
             return ShopRefreshType.NONE;
-        return switch (refreshType) {
+        return switch (this.refreshType) {
             case "SHOP_REFRESH_DAILY" -> ShopInfo.ShopRefreshType.SHOP_REFRESH_DAILY;
             case "SHOP_REFRESH_WEEKLY" -> ShopInfo.ShopRefreshType.SHOP_REFRESH_WEEKLY;
             case "SHOP_REFRESH_MONTHLY" -> ShopInfo.ShopRefreshType.SHOP_REFRESH_MONTHLY;
@@ -196,7 +197,7 @@ public class ShopInfo {
     }
 
     public int getShopRefreshParam() {
-        return shopRefreshParam;
+        return this.shopRefreshParam;
     }
 
     public void setShopRefreshParam(int shopRefreshParam) {

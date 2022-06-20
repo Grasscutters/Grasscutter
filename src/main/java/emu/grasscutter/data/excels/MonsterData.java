@@ -1,7 +1,5 @@
 package emu.grasscutter.data.excels;
 
-import java.util.List;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
@@ -9,11 +7,13 @@ import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.game.props.MonsterType;
 
+import java.util.List;
+
 @ResourceType(name = "MonsterExcelConfigData.json", loadPriority = LoadPriority.LOW)
 public class MonsterData extends GameResource {
-	private int id;
-	
-	private String monsterName;
+    private int id;
+
+    private String monsterName;
     private MonsterType type;
     private String serverScript;
     private List<Integer> affix;
@@ -42,159 +42,160 @@ public class MonsterData extends GameResource {
     private List<PropGrowCurve> propGrowCurves;
     private long nameTextMapHash;
     private int campID;
-    
+
     // Transient
     private int weaponId;
     private MonsterDescribeData describeData;
-    
-	@Override
-	public int getId() {
-		return this.id;
-	}
-	
-	public String getMonsterName() {
-		return monsterName;
-	}
 
-	public MonsterType getType() {
-		return type;
-	}
+    @Override
+    public int getId() {
+        return this.id;
+    }
 
-	public String getServerScript() {
-		return serverScript;
-	}
+    public String getMonsterName() {
+        return this.monsterName;
+    }
 
-	public List<Integer> getAffix() {
-		return affix;
-	}
+    public MonsterType getType() {
+        return this.type;
+    }
 
-	public String getAi() {
-		return ai;
-	}
+    public String getServerScript() {
+        return this.serverScript;
+    }
 
-	public int[] getEquips() {
-		return equips;
-	}
+    public List<Integer> getAffix() {
+        return this.affix;
+    }
 
-	public List<HpDrops> getHpDrops() {
-		return hpDrops;
-	}
+    public String getAi() {
+        return this.ai;
+    }
 
-	public int getKillDropId() {
-		return killDropId;
-	}
+    public int[] getEquips() {
+        return this.equips;
+    }
 
-	public String getExcludeWeathers() {
-		return excludeWeathers;
-	}
+    public List<HpDrops> getHpDrops() {
+        return this.hpDrops;
+    }
 
-	public int getFeatureTagGroupID() {
-		return featureTagGroupID;
-	}
+    public int getKillDropId() {
+        return this.killDropId;
+    }
 
-	public int getMpPropID() {
-		return mpPropID;
-	}
+    public String getExcludeWeathers() {
+        return this.excludeWeathers;
+    }
 
-	public String getSkin() {
-		return skin;
-	}
+    public int getFeatureTagGroupID() {
+        return this.featureTagGroupID;
+    }
 
-	public int getDescribeId() {
-		return describeId;
-	}
+    public int getMpPropID() {
+        return this.mpPropID;
+    }
 
-	public int getCombatBGMLevel() {
-		return combatBGMLevel;
-	}
+    public String getSkin() {
+        return this.skin;
+    }
 
-	public int getEntityBudgetLevel() {
-		return entityBudgetLevel;
-	}
+    public int getDescribeId() {
+        return this.describeId;
+    }
 
-	public float getBaseHp() {
-		return hpBase;
-	}
+    public int getCombatBGMLevel() {
+        return this.combatBGMLevel;
+    }
 
-	public float getBaseAttack() {
-		return attackBase;
-	}
+    public int getEntityBudgetLevel() {
+        return this.entityBudgetLevel;
+    }
 
-	public float getBaseDefense() {
-		return defenseBase;
-	}
+    public float getBaseHp() {
+        return this.hpBase;
+    }
 
-	public float getElecSubHurt() {
-		return elecSubHurt;
-	}
+    public float getBaseAttack() {
+        return this.attackBase;
+    }
 
-	public float getGrassSubHurt() {
-		return grassSubHurt;
-	}
+    public float getBaseDefense() {
+        return this.defenseBase;
+    }
 
-	public float getWaterSubHurt() {
-		return waterSubHurt;
-	}
+    public float getElecSubHurt() {
+        return this.elecSubHurt;
+    }
 
-	public float getWindSubHurt() {
-		return windSubHurt;
-	}
+    public float getGrassSubHurt() {
+        return this.grassSubHurt;
+    }
 
-	public float getIceSubHurt() {
-		return iceSubHurt;
-	}
+    public float getWaterSubHurt() {
+        return this.waterSubHurt;
+    }
 
-	public float getPhysicalSubHurt() {
-		return physicalSubHurt;
-	}
+    public float getWindSubHurt() {
+        return this.windSubHurt;
+    }
 
-	public List<PropGrowCurve> getPropGrowCurves() {
-		return propGrowCurves;
-	}
+    public float getIceSubHurt() {
+        return this.iceSubHurt;
+    }
 
-	public long getNameTextMapHash() {
-		return nameTextMapHash;
-	}
+    public float getPhysicalSubHurt() {
+        return this.physicalSubHurt;
+    }
 
-	public int getCampID() {
-		return campID;
-	}
+    public List<PropGrowCurve> getPropGrowCurves() {
+        return this.propGrowCurves;
+    }
 
-	public MonsterDescribeData getDescribeData() {
-		return describeData;
-	}
+    public long getNameTextMapHash() {
+        return this.nameTextMapHash;
+    }
 
-	public int getWeaponId() {
-		return weaponId;
-	}
+    public int getCampID() {
+        return this.campID;
+    }
 
-	@Override
-	public void onLoad() {
-		this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
-		
-		for (int id : this.equips) {
-			if (id == 0) {
-				continue;
-			}
-			GadgetData gadget = GameData.getGadgetDataMap().get(id);
-			if (gadget == null) {
-				continue;
-			}
-			if (gadget.getItemJsonName().equals("Default_MonsterWeapon")) {
-				this.weaponId = id;
-			}
-		}
-	}
-	
-	public class HpDrops {
-	    private int DropId;
-	    private int HpPercent;
+    public MonsterDescribeData getDescribeData() {
+        return this.describeData;
+    }
 
-	    public int getDropId(){
-	        return this.DropId;
-	    }
-	    public int getHpPercent(){
-	        return this.HpPercent;
-	    }
-	}
+    public int getWeaponId() {
+        return this.weaponId;
+    }
+
+    @Override
+    public void onLoad() {
+        this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
+
+        for (int id : this.equips) {
+            if (id == 0) {
+                continue;
+            }
+            GadgetData gadget = GameData.getGadgetDataMap().get(id);
+            if (gadget == null) {
+                continue;
+            }
+            if (gadget.getItemJsonName().equals("Default_MonsterWeapon")) {
+                this.weaponId = id;
+            }
+        }
+    }
+
+    public class HpDrops {
+        private int DropId;
+        private int HpPercent;
+
+        public int getDropId() {
+            return this.DropId;
+        }
+
+        public int getHpPercent() {
+            return this.HpPercent;
+        }
+    }
 }

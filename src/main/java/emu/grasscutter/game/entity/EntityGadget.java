@@ -32,170 +32,171 @@ import lombok.ToString;
 
 @ToString(callSuper = true)
 public class EntityGadget extends EntityBaseGadget {
-	private final GadgetData data;
-	private final Position pos;
-	private final Position rot;
-	private int gadgetId;
-	
-	private int state;
-	private int pointType;
-	private GadgetContent content;
-	private SceneGadget metaGadget;
+    private final GadgetData data;
+    private final Position pos;
+    private final Position rot;
+    private int gadgetId;
 
-	public EntityGadget(Scene scene, int gadgetId, Position pos) {
-		super(scene);
-		this.data = GameData.getGadgetDataMap().get(gadgetId);
-		this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
-		this.gadgetId = gadgetId;
-		this.pos = pos.clone();
-		this.rot = new Position();
-	}
-	
-	public EntityGadget(Scene scene, int gadgetId, Position pos, GadgetContent content) {
-		this(scene, gadgetId, pos);
-		this.content = content;
-	}
-	
-	public GadgetData getGadgetData() {
-		return data;
-	}
+    private int state;
+    private int pointType;
+    private GadgetContent content;
+    private SceneGadget metaGadget;
 
-	@Override
-	public Position getPosition() {
-		return this.pos;
-	}
+    public EntityGadget(Scene scene, int gadgetId, Position pos) {
+        super(scene);
+        this.data = GameData.getGadgetDataMap().get(gadgetId);
+        this.id = this.getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
+        this.gadgetId = gadgetId;
+        this.pos = pos.clone();
+        this.rot = new Position();
+    }
 
-	@Override
-	public Position getRotation() {
-		return this.rot;
-	}
-	
-	public int getGadgetId() {
-		return gadgetId;
-	}
+    public EntityGadget(Scene scene, int gadgetId, Position pos, GadgetContent content) {
+        this(scene, gadgetId, pos);
+        this.content = content;
+    }
 
-	public void setGadgetId(int gadgetId) {
-		this.gadgetId = gadgetId;
-	}
+    public GadgetData getGadgetData() {
+        return this.data;
+    }
 
-	public int getState() {
-		return state;
-	}
+    @Override
+    public Position getPosition() {
+        return this.pos;
+    }
 
-	public void setState(int state) {
-		this.state = state;
-	}
-	
-	public void updateState(int state){
-		this.setState(state);
-		this.getScene().broadcastPacket(new PacketGadgetStateNotify(this, state));
-		getScene().getScriptManager().callEvent(EventType.EVENT_GADGET_STATE_CHANGE, new ScriptArgs(state, this.getConfigId()));
-	}
+    @Override
+    public Position getRotation() {
+        return this.rot;
+    }
 
-	public int getPointType() {
-		return pointType;
-	}
+    public int getGadgetId() {
+        return this.gadgetId;
+    }
 
-	public void setPointType(int pointType) {
-		this.pointType = pointType;
-	}
+    public void setGadgetId(int gadgetId) {
+        this.gadgetId = gadgetId;
+    }
 
-	public GadgetContent getContent() {
-		return content;
-	}
+    public int getState() {
+        return this.state;
+    }
 
-	@Deprecated // Dont use!
-	public void setContent(GadgetContent content) {
-		this.content = this.content == null ? content : this.content;
-	}
+    public void setState(int state) {
+        this.state = state;
+    }
 
-	public SceneGadget getMetaGadget() {
-		return metaGadget;
-	}
+    public void updateState(int state) {
+        this.setState(state);
+        this.getScene().broadcastPacket(new PacketGadgetStateNotify(this, state));
+        this.getScene().getScriptManager().callEvent(EventType.EVENT_GADGET_STATE_CHANGE, new ScriptArgs(state, this.getConfigId()));
+    }
 
-	public void setMetaGadget(SceneGadget metaGadget) {
-		this.metaGadget = metaGadget;
-	}
+    public int getPointType() {
+        return this.pointType;
+    }
 
-	// TODO refactor
-	public void buildContent() {
-		if (getContent() != null || getGadgetData() == null || getGadgetData().getType() == null) {
-			return;
-		}
-		
-		EntityType type = getGadgetData().getType();
-		GadgetContent content = switch (type) {
-			case GatherPoint -> new GadgetGatherPoint(this);
-			case Worktop -> new GadgetWorktop(this);
-			case RewardStatue -> new GadgetRewardStatue(this);
-			case Chest -> new GadgetChest(this);
-			default -> null;
-		};
-		
-		this.content = content;
-	}
+    public void setPointType(int pointType) {
+        this.pointType = pointType;
+    }
 
-	@Override
-	public Int2FloatOpenHashMap getFightProperties() {
-		return null;
-	}
-	
-	@Override
-	public void onCreate() {
-		// Lua event
-		getScene().getScriptManager().callEvent(EventType.EVENT_GADGET_CREATE, new ScriptArgs(this.getConfigId()));
-	}
+    public GadgetContent getContent() {
+        return this.content;
+    }
 
-	@Override
-	public void onDeath(int killerId) {
-		if(getScene().getChallenge() != null){
-			getScene().getChallenge().onGadgetDeath(this);
-		}
-		getScene().getScriptManager().callEvent(EventType.EVENT_ANY_GADGET_DIE, new ScriptArgs(this.getConfigId()));
-	}
-	
-	@Override
-	public SceneEntityInfo toProto() {
-		EntityAuthorityInfo authority = EntityAuthorityInfo.newBuilder()
-				.setAbilityInfo(AbilitySyncStateInfo.newBuilder())
-				.setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
-				.setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(Vector.newBuilder()))
-				.setBornPos(Vector.newBuilder())
-				.build();
-		
-		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
-				.setEntityId(getId())
-				.setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
-				.setMotionInfo(MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(Vector.newBuilder()))
-				.addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
-				.setEntityClientData(EntityClientData.newBuilder())
-				.setEntityAuthorityInfo(authority)
-				.setLifeState(1);
-		
-		PropPair pair = PropPair.newBuilder()
-				.setType(PlayerProperty.PROP_LEVEL.getId())
-				.setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
-				.build();
-		entityInfo.addPropList(pair);
-		
-		SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
-				.setGadgetId(this.getGadgetId())
-				.setGroupId(this.getGroupId())
-				.setConfigId(this.getConfigId())
-				.setGadgetState(this.getState())
-				.setIsEnableInteract(true)
-				.setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
-		
-		if (this.getContent() != null) {
-			this.getContent().onBuildProto(gadgetInfo);
-		}
+    @Deprecated // Dont use!
+    public void setContent(GadgetContent content) {
+        this.content = this.content == null ? content : this.content;
+    }
 
-		entityInfo.setGadget(gadgetInfo);
-		
-		return entityInfo.build();
-	}
-	public void die() {
-		getScene().broadcastPacket(new PacketLifeStateChangeNotify(this, LifeState.LIFE_DEAD));
-		this.onDeath(0);
-	}
+    public SceneGadget getMetaGadget() {
+        return this.metaGadget;
+    }
+
+    public void setMetaGadget(SceneGadget metaGadget) {
+        this.metaGadget = metaGadget;
+    }
+
+    // TODO refactor
+    public void buildContent() {
+        if (this.getContent() != null || this.getGadgetData() == null || this.getGadgetData().getType() == null) {
+            return;
+        }
+
+        EntityType type = this.getGadgetData().getType();
+        GadgetContent content = switch (type) {
+            case GatherPoint -> new GadgetGatherPoint(this);
+            case Worktop -> new GadgetWorktop(this);
+            case RewardStatue -> new GadgetRewardStatue(this);
+            case Chest -> new GadgetChest(this);
+            default -> null;
+        };
+
+        this.content = content;
+    }
+
+    @Override
+    public Int2FloatOpenHashMap getFightProperties() {
+        return null;
+    }
+
+    @Override
+    public void onCreate() {
+        // Lua event
+        this.getScene().getScriptManager().callEvent(EventType.EVENT_GADGET_CREATE, new ScriptArgs(this.getConfigId()));
+    }
+
+    @Override
+    public void onDeath(int killerId) {
+        if (this.getScene().getChallenge() != null) {
+            this.getScene().getChallenge().onGadgetDeath(this);
+        }
+        this.getScene().getScriptManager().callEvent(EventType.EVENT_ANY_GADGET_DIE, new ScriptArgs(this.getConfigId()));
+    }
+
+    @Override
+    public SceneEntityInfo toProto() {
+        EntityAuthorityInfo authority = EntityAuthorityInfo.newBuilder()
+            .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
+            .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
+            .setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(Vector.newBuilder()))
+            .setBornPos(Vector.newBuilder())
+            .build();
+
+        SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
+            .setEntityId(this.getId())
+            .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
+            .setMotionInfo(MotionInfo.newBuilder().setPos(this.getPosition().toProto()).setRot(this.getRotation().toProto()).setSpeed(Vector.newBuilder()))
+            .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
+            .setEntityClientData(EntityClientData.newBuilder())
+            .setEntityAuthorityInfo(authority)
+            .setLifeState(1);
+
+        PropPair pair = PropPair.newBuilder()
+            .setType(PlayerProperty.PROP_LEVEL.getId())
+            .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
+            .build();
+        entityInfo.addPropList(pair);
+
+        SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
+            .setGadgetId(this.getGadgetId())
+            .setGroupId(this.getGroupId())
+            .setConfigId(this.getConfigId())
+            .setGadgetState(this.getState())
+            .setIsEnableInteract(true)
+            .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
+
+        if (this.getContent() != null) {
+            this.getContent().onBuildProto(gadgetInfo);
+        }
+
+        entityInfo.setGadget(gadgetInfo);
+
+        return entityInfo.build();
+    }
+
+    public void die() {
+        this.getScene().broadcastPacket(new PacketLifeStateChangeNotify(this, LifeState.LIFE_DEAD));
+        this.onDeath(0);
+    }
 }

@@ -19,73 +19,73 @@ import java.util.List;
 
 public class DungeonChallenge extends WorldChallenge {
 
-	/**
-	 * has more challenge
-	 */
-	private boolean stage;
-	private IntSet rewardedPlayers;
+    /**
+     * has more challenge
+     */
+    private boolean stage;
+    private IntSet rewardedPlayers;
 
-	public DungeonChallenge(Scene scene, SceneGroup group,
-							int challengeId, int challengeIndex,
-							List<Integer> paramList,
-							int timeLimit, int goal,
-							List<ChallengeTrigger> challengeTriggers) {
-		super(scene, group, challengeId, challengeIndex, paramList, timeLimit, goal, challengeTriggers);
-		this.setRewardedPlayers(new IntOpenHashSet());
-	}
+    public DungeonChallenge(Scene scene, SceneGroup group,
+                            int challengeId, int challengeIndex,
+                            List<Integer> paramList,
+                            int timeLimit, int goal,
+                            List<ChallengeTrigger> challengeTriggers) {
+        super(scene, group, challengeId, challengeIndex, paramList, timeLimit, goal, challengeTriggers);
+        this.setRewardedPlayers(new IntOpenHashSet());
+    }
 
-	public boolean isStage() {
-		return stage;
-	}
+    public boolean isStage() {
+        return this.stage;
+    }
 
-	public void setStage(boolean stage) {
-		this.stage = stage;
-	}
+    public void setStage(boolean stage) {
+        this.stage = stage;
+    }
 
-	public IntSet getRewardedPlayers() {
-		return rewardedPlayers;
-	}
+    public IntSet getRewardedPlayers() {
+        return this.rewardedPlayers;
+    }
 
-	public void setRewardedPlayers(IntSet rewardedPlayers) {
-		this.rewardedPlayers = rewardedPlayers;
-	}
+    public void setRewardedPlayers(IntSet rewardedPlayers) {
+        this.rewardedPlayers = rewardedPlayers;
+    }
 
-	@Override
-	public void done() {
-		super.done();
-		if (this.isSuccess()) {
-			// Settle
-			settle();
-		}
-	}
-	
-	private void settle() {
-		if(!stage){
-			getScene().getDungeonSettleObservers().forEach(o -> o.onDungeonSettle(getScene()));
-			getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE,
-					new ScriptArgs(this.isSuccess() ? 1 : 0));
-		}
-	}
-	
-	public void getStatueDrops(Player player) {
-		DungeonData dungeonData = getScene().getDungeonData();
-		if (!isSuccess() || dungeonData == null || dungeonData.getRewardPreview() == null || dungeonData.getRewardPreview().getPreviewItems().length == 0) {
-			return;
-		}
-		
-		// Already rewarded
-		if (getRewardedPlayers().contains(player.getUid())) {
-			return;
-		}
-		
-		List<GameItem> rewards = new ArrayList<>();
-		for (ItemParamData param : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
-			rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
-		}
-		
-		player.getInventory().addItems(rewards, ActionReason.DungeonStatueDrop);
-		player.sendPacket(new PacketGadgetAutoPickDropInfoNotify(rewards));
-		
-		getRewardedPlayers().add(player.getUid());
-	}
+    @Override
+    public void done() {
+        super.done();
+        if (this.isSuccess()) {
+            // Settle
+            this.settle();
+        }
+    }
+
+    private void settle() {
+        if (!this.stage) {
+            this.getScene().getDungeonSettleObservers().forEach(o -> o.onDungeonSettle(this.getScene()));
+            this.getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE,
+                new ScriptArgs(this.isSuccess() ? 1 : 0));
+        }
+    }
+
+    public void getStatueDrops(Player player) {
+        DungeonData dungeonData = this.getScene().getDungeonData();
+        if (!this.isSuccess() || dungeonData == null || dungeonData.getRewardPreview() == null || dungeonData.getRewardPreview().getPreviewItems().length == 0) {
+            return;
+        }
+
+        // Already rewarded
+        if (this.getRewardedPlayers().contains(player.getUid())) {
+            return;
+        }
+
+        List<GameItem> rewards = new ArrayList<>();
+        for (ItemParamData param : this.getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
+            rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
+        }
+
+        player.getInventory().addItems(rewards, ActionReason.DungeonStatueDrop);
+        player.sendPacket(new PacketGadgetAutoPickDropInfoNotify(rewards));
+
+        this.getRewardedPlayers().add(player.getUid());
+    }
 }

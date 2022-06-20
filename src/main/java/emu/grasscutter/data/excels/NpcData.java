@@ -5,9 +5,9 @@ import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "NpcExcelConfigData.json")
 public class NpcData extends GameResource {
-	private int id;
-	
-	private String jsonName;
+    private int id;
+
+    private String jsonName;
     private String alias;
     private String scriptDataPath;
     private String luaDataPath;
@@ -19,54 +19,54 @@ public class NpcData extends GameResource {
 
     private long nameTextMapHash;
     private int campID;
-	    
-	@Override
-	public int getId() {
-		return this.id;
-	}
 
-	public String getJsonName() {
-		return jsonName;
-	}
+    @Override
+    public int getId() {
+        return this.id;
+    }
 
-	public String getAlias() {
-		return alias;
-	}
+    public String getJsonName() {
+        return this.jsonName;
+    }
 
-	public String getScriptDataPath() {
-		return scriptDataPath;
-	}
+    public String getAlias() {
+        return this.alias;
+    }
 
-	public String getLuaDataPath() {
-		return luaDataPath;
-	}
+    public String getScriptDataPath() {
+        return this.scriptDataPath;
+    }
 
-	public boolean isIsInteractive() {
-		return isInteractive;
-	}
+    public String getLuaDataPath() {
+        return this.luaDataPath;
+    }
 
-	public boolean isHasMove() {
-		return hasMove;
-	}
+    public boolean isIsInteractive() {
+        return this.isInteractive;
+    }
 
-	public String getDyePart() {
-		return dyePart;
-	}
+    public boolean isHasMove() {
+        return this.hasMove;
+    }
 
-	public String getBillboardIcon() {
-		return billboardIcon;
-	}
+    public String getDyePart() {
+        return this.dyePart;
+    }
 
-	public long getNameTextMapHash() {
-		return nameTextMapHash;
-	}
+    public String getBillboardIcon() {
+        return this.billboardIcon;
+    }
 
-	public int getCampID() {
-		return campID;
-	}
+    public long getNameTextMapHash() {
+        return this.nameTextMapHash;
+    }
 
-	@Override
-	public void onLoad() {
+    public int getCampID() {
+        return this.campID;
+    }
 
-	}
+    @Override
+    public void onLoad() {
+
+    }
 }

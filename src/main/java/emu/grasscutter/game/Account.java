@@ -4,232 +4,234 @@ import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
+import org.bson.Document;
 
 import java.util.*;
 import java.util.stream.Stream;
 
-import org.bson.Document;
-
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.Configuration.ACCOUNT;
+import static emu.grasscutter.Configuration.LANGUAGE;
 
 @Entity(value = "accounts", useDiscriminator = false)
 public class Account {
-	@Id private String id;
-	
-	@Indexed(options = @IndexOptions(unique = true))
-	@Collation(locale = "simple", caseLevel = true)
-	private String username;
-	private String password; // Unused for now
-	
-	private int reservedPlayerId;
-	private String email;
-	
-	private String token;
-	private String sessionKey; // Session token for dispatch server
-	private List<String> permissions;
+    @Id
+    private String id;
+
+    @Indexed(options = @IndexOptions(unique = true))
+    @Collation(locale = "simple", caseLevel = true)
+    private String username;
+    private String password; // Unused for now
+
+    private int reservedPlayerId;
+    private String email;
+
+    private String token;
+    private String sessionKey; // Session token for dispatch server
+    private final List<String> permissions;
     private Locale locale;
 
-	private String banReason;
-	private int banEndTime;
-	private int banStartTime;
-	private boolean isBanned;
-	
-	@Deprecated
-	public Account() {
-		this.permissions = new ArrayList<>();
+    private String banReason;
+    private int banEndTime;
+    private int banStartTime;
+    private boolean isBanned;
+
+    @Deprecated
+    public Account() {
+        this.permissions = new ArrayList<>();
         this.locale = LANGUAGE;
-	}
+    }
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return this.id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    public String getUsername() {
+        return this.username;
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getPassword() {
+        return this.password;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public String getToken() {
-		return token;
-	}
+    public String getToken() {
+        return this.token;
+    }
 
-	public void setToken(String token) {
-		this.token = token;
-	}
+    public void setToken(String token) {
+        this.token = token;
+    }
 
-	public int getReservedPlayerUid() {
-		return this.reservedPlayerId;
-	}
+    public int getReservedPlayerUid() {
+        return this.reservedPlayerId;
+    }
 
-	public void setReservedPlayerUid(int playerId) {
-		this.reservedPlayerId = playerId;
-	}
-	
-	public String getEmail() {
-		if(email != null && !email.isEmpty()) {
-			return email;
-		} else {
-			return "";
-		}
-	}
+    public void setReservedPlayerUid(int playerId) {
+        this.reservedPlayerId = playerId;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        if (this.email != null && !this.email.isEmpty()) {
+            return this.email;
+        } else {
+            return "";
+        }
+    }
 
-	public String getSessionKey() {
-		return this.sessionKey;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String generateSessionKey() {
-		this.sessionKey = Utils.bytesToHex(Crypto.createSessionKey(32));
-		this.save();
-		return this.sessionKey;
-	}
+    public String getSessionKey() {
+        return this.sessionKey;
+    }
+
+    public String generateSessionKey() {
+        this.sessionKey = Utils.bytesToHex(Crypto.createSessionKey(32));
+        this.save();
+        return this.sessionKey;
+    }
 
     public Locale getLocale() {
-        return locale;
+        return this.locale;
     }
 
     public void setLocale(Locale locale) {
         this.locale = locale;
     }
 
-	public String getBanReason() {
-		return banReason;
-	}
+    public String getBanReason() {
+        return this.banReason;
+    }
 
-	public void setBanReason(String banReason) {
-		this.banReason = banReason;
-	}
+    public void setBanReason(String banReason) {
+        this.banReason = banReason;
+    }
 
-	public int getBanEndTime() {
-		return banEndTime;
-	}
+    public int getBanEndTime() {
+        return this.banEndTime;
+    }
 
-	public void setBanEndTime(int banEndTime) {
-		this.banEndTime = banEndTime;
-	}
+    public void setBanEndTime(int banEndTime) {
+        this.banEndTime = banEndTime;
+    }
 
-	public int getBanStartTime() {
-		return banStartTime;
-	}
+    public int getBanStartTime() {
+        return this.banStartTime;
+    }
 
-	public void setBanStartTime(int banStartTime) {
-		this.banStartTime = banStartTime;
-	}
+    public void setBanStartTime(int banStartTime) {
+        this.banStartTime = banStartTime;
+    }
 
-	public boolean isBanned() {
-		if (banEndTime > 0 && banEndTime < System.currentTimeMillis() / 1000) {
-			this.isBanned = false;
-			this.banEndTime = 0;
-			this.banStartTime = 0;
-			this.banReason = null;
-			save();
-		}
+    public boolean isBanned() {
+        if (this.banEndTime > 0 && this.banEndTime < System.currentTimeMillis() / 1000) {
+            this.isBanned = false;
+            this.banEndTime = 0;
+            this.banStartTime = 0;
+            this.banReason = null;
+            this.save();
+        }
 
-		return isBanned;
-	}
+        return this.isBanned;
+    }
 
-	public void setBanned(boolean isBanned) {
-		this.isBanned = isBanned;
-	}
+    public void setBanned(boolean isBanned) {
+        this.isBanned = isBanned;
+    }
 
-	/**
-	 * The collection of a player's permissions.
-	 */
-	public List<String> getPermissions() {
-		return this.permissions;
-	}
-	
-	public boolean addPermission(String permission) {
-		if(this.permissions.contains(permission)) return false;
-		this.permissions.add(permission); return true;
-	}
+    /**
+     * The collection of a player's permissions.
+     */
+    public List<String> getPermissions() {
+        return this.permissions;
+    }
 
-	public static boolean permissionMatchesWildcard(String wildcard, String[] permissionParts) {
-		String[] wildcardParts = wildcard.split("\\.");
-		if (permissionParts.length < wildcardParts.length) {  // A longer wildcard can never match a shorter permission
-			return false;
-		}
-		for (int i=0; i<wildcardParts.length; i++) {
-			switch (wildcardParts[i]) {
-				case "**":  // Recursing match
-					return true;
-				case "*":  // Match only one layer
-					if (i >= (permissionParts.length-1)) {
-						return true;
-					}
-					break;
-				default:  // This layer isn't a wildcard, it needs to match exactly
-					if (!wildcardParts[i].equals(permissionParts[i])) {
-						return false;
-					}
-			}
-		}
-		// At this point the wildcard will have matched every layer, but if it is shorter then the permission then this is not a match at this point (no **).
-		return (wildcardParts.length == permissionParts.length);
-	}
+    public boolean addPermission(String permission) {
+        if (this.permissions.contains(permission)) return false;
+        this.permissions.add(permission);
+        return true;
+    }
 
-	public boolean hasPermission(String permission) {
-		if(this.permissions.contains("*") && this.permissions.size() == 1) return true;
+    public static boolean permissionMatchesWildcard(String wildcard, String[] permissionParts) {
+        String[] wildcardParts = wildcard.split("\\.");
+        if (permissionParts.length < wildcardParts.length) {  // A longer wildcard can never match a shorter permission
+            return false;
+        }
+        for (int i = 0; i < wildcardParts.length; i++) {
+            switch (wildcardParts[i]) {
+                case "**":  // Recursing match
+                    return true;
+                case "*":  // Match only one layer
+                    if (i >= (permissionParts.length - 1)) {
+                        return true;
+                    }
+                    break;
+                default:  // This layer isn't a wildcard, it needs to match exactly
+                    if (!wildcardParts[i].equals(permissionParts[i])) {
+                        return false;
+                    }
+            }
+        }
+        // At this point the wildcard will have matched every layer, but if it is shorter then the permission then this is not a match at this point (no **).
+        return (wildcardParts.length == permissionParts.length);
+    }
 
-		// Add default permissions if it doesn't exist
-		List<String> permissions = Stream.of(this.permissions, Arrays.asList(ACCOUNT.defaultPermissions))
-				.flatMap(Collection::stream)
-				.distinct().toList();
+    public boolean hasPermission(String permission) {
+        if (this.permissions.contains("*") && this.permissions.size() == 1) return true;
 
-		if (permissions.contains(permission)) return true;
+        // Add default permissions if it doesn't exist
+        List<String> permissions = Stream.of(this.permissions, Arrays.asList(ACCOUNT.defaultPermissions))
+            .flatMap(Collection::stream)
+            .distinct().toList();
 
-		String[] permissionParts = permission.split("\\.");
-		for (String p : permissions) {
-			if (p.startsWith("-") && permissionMatchesWildcard(p.substring(1), permissionParts)) return false;
-			if (permissionMatchesWildcard(p, permissionParts)) return true;
-		}
+        if (permissions.contains(permission)) return true;
 
-		return permissions.contains("*");
-	}
+        String[] permissionParts = permission.split("\\.");
+        for (String p : permissions) {
+            if (p.startsWith("-") && permissionMatchesWildcard(p.substring(1), permissionParts)) return false;
+            if (permissionMatchesWildcard(p, permissionParts)) return true;
+        }
 
-	public boolean removePermission(String permission) {
-		return this.permissions.remove(permission);
-	}
-	
-	// TODO make unique
-	public String generateLoginToken() {
-		this.token = Utils.bytesToHex(Crypto.createSessionKey(32));
-		this.save();
-		return this.token;
-	}
-	
-	public void save() {
-		DatabaseHelper.saveAccount(this);
-	}
+        return permissions.contains("*");
+    }
 
-	@PreLoad
-	public void onLoad(Document document) {
-		// Grant the superuser permissions to accounts created before the permissions update
-		if (!document.containsKey("permissions")) {
-			this.addPermission("*");
-		}
+    public boolean removePermission(String permission) {
+        return this.permissions.remove(permission);
+    }
+
+    // TODO make unique
+    public String generateLoginToken() {
+        this.token = Utils.bytesToHex(Crypto.createSessionKey(32));
+        this.save();
+        return this.token;
+    }
+
+    public void save() {
+        DatabaseHelper.saveAccount(this);
+    }
+
+    @PreLoad
+    public void onLoad(Document document) {
+        // Grant the superuser permissions to accounts created before the permissions update
+        if (!document.containsKey("permissions")) {
+            this.addPermission("*");
+        }
 
         // Set account default language as server default language
         if (!document.containsKey("locale")) {
             this.locale = LANGUAGE;
         }
-	}
+    }
 }

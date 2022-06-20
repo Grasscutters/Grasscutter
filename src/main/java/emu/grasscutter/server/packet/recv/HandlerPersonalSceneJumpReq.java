@@ -13,26 +13,26 @@ import emu.grasscutter.utils.Position;
 
 @Opcodes(PacketOpcodes.PersonalSceneJumpReq)
 public class HandlerPersonalSceneJumpReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		PersonalSceneJumpReq req = PersonalSceneJumpReq.parseFrom(payload);
 
-		// get the scene point
-		String code = session.getPlayer().getSceneId() + "_" + req.getPointId();
-		ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(code);
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        PersonalSceneJumpReq req = PersonalSceneJumpReq.parseFrom(payload);
 
-		if (scenePointEntry != null) {
-			float x = scenePointEntry.getPointData().getTranPos().getX();
-			float y = scenePointEntry.getPointData().getTranPos().getY();
-			float z = scenePointEntry.getPointData().getTranPos().getZ();
-			Position pos = new Position(x, y, z);
-			int sceneId = scenePointEntry.getPointData().getTranSceneId();
+        // get the scene point
+        String code = session.getPlayer().getSceneId() + "_" + req.getPointId();
+        ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(code);
 
-			session.getPlayer().getWorld().transferPlayerToScene(session.getPlayer(), sceneId, pos);
-			session.send(new PacketPersonalSceneJumpRsp(sceneId, pos));
-		}
+        if (scenePointEntry != null) {
+            float x = scenePointEntry.getPointData().getTranPos().getX();
+            float y = scenePointEntry.getPointData().getTranPos().getY();
+            float z = scenePointEntry.getPointData().getTranPos().getZ();
+            Position pos = new Position(x, y, z);
+            int sceneId = scenePointEntry.getPointData().getTranSceneId();
 
-	}
+            session.getPlayer().getWorld().transferPlayerToScene(session.getPlayer(), sceneId, pos);
+            session.send(new PacketPersonalSceneJumpRsp(sceneId, pos));
+        }
+
+    }
 
 }

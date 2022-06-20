@@ -1,7 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.excels.CombineData;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -22,27 +21,27 @@ public class HandlerCombineReq extends PacketHandler {
         CombineReqOuterClass.CombineReq req = CombineReqOuterClass.CombineReq.parseFrom(payload);
 
         var result = session.getServer().getCombineManger()
-                .combineItem(session.getPlayer(), req.getCombineId(), req.getCombineCount());
+            .combineItem(session.getPlayer(), req.getCombineId(), req.getCombineCount());
 
-        if(result == null){
+        if (result == null) {
             return;
         }
 
         session.send(new PacketCombineRsp(req,
-                toItemParamList(result.getMaterial()),
-                toItemParamList(result.getResult()),
-                toItemParamList(result.getExtra()),
-                toItemParamList(result.getBack()),
-                toItemParamList(result.getBack())));
+            this.toItemParamList(result.getMaterial()),
+            this.toItemParamList(result.getResult()),
+            this.toItemParamList(result.getExtra()),
+            this.toItemParamList(result.getBack()),
+            this.toItemParamList(result.getBack())));
     }
 
-    private List<ItemParamOuterClass.ItemParam> toItemParamList(List<ItemParamData> list){
+    private List<ItemParamOuterClass.ItemParam> toItemParamList(List<ItemParamData> list) {
         return list.stream()
-                .map(item -> ItemParamOuterClass.ItemParam.newBuilder()
-                        .setItemId(item.getId())
-                        .setCount(item.getCount())
-                        .build())
-                .collect(Collectors.toList());
+            .map(item -> ItemParamOuterClass.ItemParam.newBuilder()
+                .setItemId(item.getId())
+                .setCount(item.getCount())
+                .build())
+            .collect(Collectors.toList());
     }
 }
 

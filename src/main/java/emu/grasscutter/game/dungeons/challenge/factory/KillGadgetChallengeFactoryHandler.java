@@ -1,7 +1,6 @@
 package emu.grasscutter.game.dungeons.challenge.factory;
 
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
-import emu.grasscutter.game.dungeons.challenge.factory.ChallengeFactoryHandler;
 import emu.grasscutter.game.dungeons.challenge.trigger.InTimeTrigger;
 import emu.grasscutter.game.dungeons.challenge.trigger.KillGadgetTrigger;
 import emu.grasscutter.game.world.Scene;
@@ -22,13 +21,13 @@ public class KillGadgetChallengeFactoryHandler implements ChallengeFactoryHandle
     @Override
     public WorldChallenge build(int challengeIndex, int challengeId, int param3, int param4, int param5, int param6, Scene scene, SceneGroup group) {
         return new WorldChallenge(
-                scene, group,
-                challengeId, // Id
-                challengeIndex, // Index
-                List.of(param3, param6, 0),
-                param3, // Limit
-                param6,  // Goal
-                List.of(new InTimeTrigger(), new KillGadgetTrigger())
-                );
+            scene, group,
+            challengeId, // Id
+            challengeIndex, // Index
+            List.of(param3, param6, 0),
+            param3, // Limit
+            param6,  // Goal
+            List.of(new InTimeTrigger(), new KillGadgetTrigger())
+        );
     }
 }

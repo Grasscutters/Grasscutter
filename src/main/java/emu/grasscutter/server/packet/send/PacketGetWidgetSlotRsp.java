@@ -15,22 +15,22 @@ public class PacketGetWidgetSlotRsp extends BasePacket {
         super(PacketOpcodes.GetWidgetSlotRsp);
 
         GetWidgetSlotRspOuterClass.GetWidgetSlotRsp.Builder proto =
-                GetWidgetSlotRspOuterClass.GetWidgetSlotRsp.newBuilder();
+            GetWidgetSlotRspOuterClass.GetWidgetSlotRsp.newBuilder();
 
         if (player.getWidgetId() == null) {
             proto.addAllSlotList(List.of());
         } else {
             proto.addSlotList(
-                    WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
-                            .setIsActive(true)
-                            .setMaterialId(player.getWidgetId())
-                            .build()
+                WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
+                    .setIsActive(true)
+                    .setMaterialId(player.getWidgetId())
+                    .build()
             );
 
             proto.addSlotList(
-                    WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
-                            .setTag(WidgetSlotTagOuterClass.WidgetSlotTag.WIDGET_SLOT_TAG_ATTACH_AVATAR)
-                            .build()
+                WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
+                    .setTag(WidgetSlotTagOuterClass.WidgetSlotTag.WIDGET_SLOT_TAG_ATTACH_AVATAR)
+                    .build()
             );
         }
 

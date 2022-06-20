@@ -3,7 +3,6 @@ package emu.grasscutter.game.home;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import emu.grasscutter.net.proto.FurnitureMakeDataOuterClass;
-import emu.grasscutter.net.proto.FurnitureMakeSlotOuterClass;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -23,11 +22,11 @@ public class FurnitureMakeSlotItem {
 
     public FurnitureMakeDataOuterClass.FurnitureMakeData toProto() {
         return FurnitureMakeDataOuterClass.FurnitureMakeData.newBuilder()
-                .setIndex(index)
-                .setAvatarId(avatarId)
-                .setMakeId(makeId)
-                .setBeginTime(beginTime)
-                .setDurTime(durTime)
-                .build();
+            .setIndex(this.index)
+            .setAvatarId(this.avatarId)
+            .setMakeId(this.makeId)
+            .setBeginTime(this.beginTime)
+            .setDurTime(this.durTime)
+            .build();
     }
 }

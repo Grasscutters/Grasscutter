@@ -10,7 +10,7 @@ public class ShopChestTable {
     private List<ItemParamData> containsItem = new ArrayList<>();
 
     public int getItemId() {
-        return itemId;
+        return this.itemId;
     }
 
     public void setItemId(int itemId) {
@@ -18,7 +18,7 @@ public class ShopChestTable {
     }
 
     public List<ItemParamData> getContainsItem() {
-        return containsItem;
+        return this.containsItem;
     }
 
     public void setContainsItem(List<ItemParamData> containsItem) {

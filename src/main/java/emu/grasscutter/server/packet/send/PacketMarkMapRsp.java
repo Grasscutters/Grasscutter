@@ -1,12 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.managers.mapmark.MapMark;
-import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.*;
+import emu.grasscutter.net.proto.MapMarkPointOuterClass;
+import emu.grasscutter.net.proto.MarkMapRspOuterClass;
+import emu.grasscutter.net.proto.VectorOuterClass;
 
-import java.util.*;
+import java.util.HashMap;
 
 public class PacketMarkMapRsp extends BasePacket {
 
@@ -17,7 +18,7 @@ public class PacketMarkMapRsp extends BasePacket {
         proto.setRetcode(0);
 
         if (mapMarks != null) {
-            for (MapMark mapMark: mapMarks.values()) {
+            for (MapMark mapMark : mapMarks.values()) {
                 MapMarkPointOuterClass.MapMarkPoint.Builder markPoint = MapMarkPointOuterClass.MapMarkPoint.newBuilder();
                 markPoint.setSceneId(mapMark.getSceneId());
                 markPoint.setName(mapMark.getName());

@@ -11,27 +11,27 @@ import emu.grasscutter.utils.Position;
 
 @Opcodes(PacketOpcodes.HomeSceneJumpReq)
 public class HandlerHomeSceneJumpReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		var req = HomeSceneJumpReqOuterClass.HomeSceneJumpReq.parseFrom(payload);
 
-		int realmId = 2000 + session.getPlayer().getCurrentRealmId();
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        var req = HomeSceneJumpReqOuterClass.HomeSceneJumpReq.parseFrom(payload);
 
-		var home = session.getPlayer().getHome();
-		var homeScene = home.getHomeSceneItem(realmId);
-		home.save();
+        int realmId = 2000 + session.getPlayer().getCurrentRealmId();
 
-		Scene scene = session.getPlayer().getWorld().getSceneById(req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId);
-		Position pos = scene.getScriptManager().getConfig().born_pos;
+        var home = session.getPlayer().getHome();
+        var homeScene = home.getHomeSceneItem(realmId);
+        home.save();
 
-		session.getPlayer().getWorld().transferPlayerToScene(
-				session.getPlayer(),
-				req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId,
-				pos
-		);
+        Scene scene = session.getPlayer().getWorld().getSceneById(req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId);
+        Position pos = scene.getScriptManager().getConfig().born_pos;
 
-		session.send(new PacketHomeSceneJumpRsp(req.getIsEnterRoomScene()));
-	}
+        session.getPlayer().getWorld().transferPlayerToScene(
+            session.getPlayer(),
+            req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId,
+            pos
+        );
+
+        session.send(new PacketHomeSceneJumpRsp(req.getIsEnterRoomScene()));
+    }
 
 }

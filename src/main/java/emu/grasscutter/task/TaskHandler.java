@@ -1,11 +1,13 @@
 package emu.grasscutter.task;
 
-import org.quartz.*;
+import org.quartz.Job;
+import org.quartz.JobExecutionException;
+import org.quartz.PersistJobDataAfterExecution;
 
 @PersistJobDataAfterExecution
 public abstract class TaskHandler implements Job {
     public void restartExecute() throws JobExecutionException {
-        execute(null);
+        this.execute(null);
     }
 
     public abstract void onEnable();

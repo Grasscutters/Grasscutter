@@ -10,9 +10,9 @@ public class PacketWidgetDoBagRsp extends BasePacket {
         super(PacketOpcodes.WidgetDoBagRsp);
 
         WidgetDoBagRspOuterClass.WidgetDoBagRsp proto = WidgetDoBagRspOuterClass.WidgetDoBagRsp.newBuilder()
-                .setMaterialId(materialId)
-                .setRetcode(0)
-                .build();
+            .setMaterialId(materialId)
+            .setRetcode(0)
+            .build();
 
         this.setData(proto);
     }
@@ -21,7 +21,7 @@ public class PacketWidgetDoBagRsp extends BasePacket {
         super(PacketOpcodes.WidgetDoBagRsp);
 
         WidgetDoBagRspOuterClass.WidgetDoBagRsp proto = WidgetDoBagRspOuterClass.WidgetDoBagRsp.newBuilder()
-                .build();
+            .build();
 
         this.setData(proto);
     }
