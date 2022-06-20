@@ -8,12 +8,15 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.combine.CombineManger;
 import emu.grasscutter.game.drop.DropManager;
 import emu.grasscutter.game.dungeons.DungeonManager;
+import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
 import emu.grasscutter.game.expedition.ExpeditionManager;
 import emu.grasscutter.game.gacha.GachaManager;
 import emu.grasscutter.game.managers.InventoryManager;
 import emu.grasscutter.game.managers.MultiplayerManager;
 import emu.grasscutter.game.managers.chat.ChatManager;
 import emu.grasscutter.game.managers.chat.ChatManagerHandler;
+import emu.grasscutter.game.managers.energy.EnergyManager;
+import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.ServerQuestHandler;
 import emu.grasscutter.game.shop.ShopManager;
@@ -26,6 +29,7 @@ import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
 import emu.grasscutter.server.event.types.ServerEvent;
+import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
 import kcp.highway.ChannelConfig;
 import kcp.highway.KcpServer;
@@ -33,6 +37,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.net.InetSocketAddress;
+import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -46,6 +51,8 @@ public final class GameServer extends KcpServer {
     private final GameServerPacketHandler packetHandler;
     @Getter
     private final ServerQuestHandler questHandler;
+    @Getter
+    private final ServerTaskScheduler scheduler;
 
     @Getter
     private final Map<Integer, Player> players;
@@ -101,6 +108,7 @@ public final class GameServer extends KcpServer {
         this.address = address;
         this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
         this.questHandler = new ServerQuestHandler();
+        this.scheduler = new ServerTaskScheduler();
         this.players = new ConcurrentHashMap<>();
         this.worlds = Collections.synchronizedSet(new HashSet<>());
 
@@ -117,6 +125,11 @@ public final class GameServer extends KcpServer {
         this.combineManger = new CombineManger(this);
         this.towerScheduleManager = new TowerScheduleManager(this);
         this.worldDataManager = new WorldDataManager(this);
+
+        StaminaManager.initialize();
+        EnergyManager.initialize();
+        DungeonChallenge.initialize();
+
         // Hook into shutdown event.
         Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
     }
@@ -188,6 +201,9 @@ public final class GameServer extends KcpServer {
     }
 
     public synchronized void onTick() {
+        var tickStart = Instant.now();
+
+        // Tick worlds.
         Iterator<World> it = this.getWorlds().iterator();
         while (it.hasNext()) {
             World world = it.next();
@@ -199,11 +215,16 @@ public final class GameServer extends KcpServer {
             world.onTick();
         }
 
+        // Tick players.
         for (Player player : this.getPlayers().values()) {
             player.onTick();
         }
 
-        ServerTickEvent event = new ServerTickEvent();
+        // Tick scheduler.
+        this.getScheduler().runTasks();
+
+        // Call server tick event.
+        ServerTickEvent event = new ServerTickEvent(tickStart, Instant.now());
         event.call();
     }
 

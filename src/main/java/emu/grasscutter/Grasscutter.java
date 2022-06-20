@@ -117,8 +117,6 @@ public final class Grasscutter {
         Grasscutter.updateDayOfWeek();
         ResourceLoader.loadAll();
         ScriptLoader.init();
-        EnergyManager.initialize();
-        DungeonChallenge.initialize();
 
         // Initialize database.
         DatabaseManager.initialize();
@@ -145,9 +143,6 @@ public final class Grasscutter {
         httpServer.addRouter(DispatchHandler.class);
         httpServer.addRouter(GachaHandler.class);
         httpServer.addRouter(DocumentationServerHandler.class);
-
-        // TODO: find a better place?
-        StaminaManager.initialize();
 
         // Start servers.
         var runMode = SERVER.runMode;
