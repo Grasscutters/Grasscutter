@@ -15,29 +15,9 @@ public class SceneRegion {
     public int shape;
     public Position pos;
     public Position size;
+    public SceneGroup group;
 
     private boolean hasNewEntities;
-    private final IntSet entities; // Ids of entities inside this region
-
-    public SceneRegion() {
-        this.entities = new IntOpenHashSet();
-    }
-
-    public IntSet getEntities() {
-        return this.entities;
-    }
-
-    public void addEntity(GameEntity entity) {
-        if (this.getEntities().contains(entity.getId())) {
-            return;
-        }
-        this.getEntities().add(entity.getId());
-        this.hasNewEntities = true;
-    }
-
-    public void removeEntity(GameEntity entity) {
-        this.getEntities().remove(entity.getId());
-    }
 
     public boolean contains(Position p) {
         switch (this.shape) {
@@ -49,13 +29,5 @@ public class SceneRegion {
         }
 
         return false;
-    }
-
-    public boolean hasNewEntities() {
-        return this.hasNewEntities;
-    }
-
-    public void resetNewEntities() {
-        this.hasNewEntities = false;
     }
 }

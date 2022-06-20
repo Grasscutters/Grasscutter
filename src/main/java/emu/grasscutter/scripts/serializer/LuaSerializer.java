@@ -8,11 +8,12 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
-import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
+import org.terasology.jnlua.LuaValueProxy;
+import org.terasology.jnlua.util.AbstractTableMap;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class LuaSerializer implements Serializer {
 
@@ -20,43 +21,43 @@ public class LuaSerializer implements Serializer {
     private final static Map<Class<?>, ConstructorAccess<?>> constructorCache = new ConcurrentHashMap<>();
     private final static Map<Class<?>, Map<String, FieldMeta>> fieldMetaCache = new ConcurrentHashMap<>();
 
+    private final ReentrantLock lock = new ReentrantLock();
+    // ...
     @Override
     public <T> List<T> toList(Class<T> type, Object obj) {
-        return this.serializeList(type, (LuaTable) obj);
+        return serializeList(type, (LuaValueProxy) obj);
     }
 
     @Override
     public <T> T toObject(Class<T> type, Object obj) {
-        return this.serialize(type, (LuaTable) obj);
+        return serialize(type, (LuaValueProxy) obj);
     }
 
-    public <T> List<T> serializeList(Class<T> type, LuaTable table) {
+    public <T> List<T> serializeList(Class<T> type, LuaValueProxy table) {
         List<T> list = new ArrayList<>();
 
         if (table == null) {
             return list;
         }
 
+        var tableObj = (Map<String, Object>) table;
         try {
-            LuaValue[] keys = table.keys();
-            for (LuaValue k : keys) {
+            for (var k : tableObj.entrySet()) {
                 try {
-                    LuaValue keyValue = table.get(k);
+                    var keyValue = k.getValue();
 
                     T object = null;
 
-                    if (keyValue.istable()) {
-                        object = this.serialize(type, keyValue.checktable());
-                    } else if (keyValue.isint()) {
-                        object = (T) (Integer) keyValue.toint();
-                    } else if (keyValue.isnumber()) {
-                        object = (T) (Float) keyValue.tofloat(); // terrible...
-                    } else if (keyValue.isstring()) {
-                        object = (T) keyValue.tojstring();
-                    } else if (keyValue.isboolean()) {
-                        object = (T) (Boolean) keyValue.toboolean();
-                    } else {
+                    if (keyValue instanceof Integer) {
+                        object = (T) ScriptUtils.getInt(keyValue);
+                    } else if (keyValue instanceof Double) {
+                        object = (T) ScriptUtils.getFloat(keyValue);
+                    } else if (keyValue instanceof String) {
                         object = (T) keyValue;
+                    } else if (keyValue instanceof Boolean) {
+                        object = (T) keyValue;
+                    } else {
+                        object = serialize(type, (LuaValueProxy) keyValue);
                     }
 
                     if (object != null) {
@@ -73,13 +74,13 @@ public class LuaSerializer implements Serializer {
         return list;
     }
 
-    public <T> T serialize(Class<T> type, LuaTable table) {
+    public <T> T serialize(Class<T> type, LuaValueProxy table) {
         T object = null;
 
         if (type == List.class) {
             try {
                 Class<T> listType = (Class<T>) type.getTypeParameters()[0].getClass();
-                return (T) this.serializeList(listType, table);
+                return (T) serializeList(listType, table);
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;
@@ -87,9 +88,11 @@ public class LuaSerializer implements Serializer {
         }
 
         try {
+            lock.lock();
             if (!methodAccessCache.containsKey(type)) {
-                this.cacheType(type);
+                cacheType(type);
             }
+            lock.unlock();
             var methodAccess = methodAccessCache.get(type);
             var fieldMetaMap = fieldMetaCache.get(type);
 
@@ -99,36 +102,40 @@ public class LuaSerializer implements Serializer {
                 return object;
             }
 
-            LuaValue[] keys = table.keys();
-            for (LuaValue k : keys) {
+            var tableObj = (AbstractTableMap<String>) table;
+            for (var k : tableObj.entrySet()) {
                 try {
-                    var keyName = k.checkjstring();
+                    var keyName = k.getKey().toString();
                     if (!fieldMetaMap.containsKey(keyName)) {
                         continue;
                     }
-                    var fieldMeta = fieldMetaMap.get(keyName);
-                    LuaValue keyValue = table.get(k);
 
-                    if (keyValue.istable()) {
-                        methodAccess.invoke(object, fieldMeta.index, this.serialize(fieldMeta.getType(), keyValue.checktable()));
-                    } else if (fieldMeta.getType().equals(float.class)) {
-                        methodAccess.invoke(object, fieldMeta.index, keyValue.tofloat());
+                    var fieldMeta = fieldMetaMap.get(keyName);
+                    var keyValue = k.getValue();
+                    if (fieldMeta.getType().equals(float.class)) {
+                        methodAccess.invoke(object, fieldMeta.index, ScriptUtils.getFloat(keyValue));
+                    } else if (fieldMeta.getType().equals(double.class)) {
+                        methodAccess.invoke(object, fieldMeta.index, (keyValue));
                     } else if (fieldMeta.getType().equals(int.class)) {
-                        methodAccess.invoke(object, fieldMeta.index, keyValue.toint());
+                        methodAccess.invoke(object, fieldMeta.index, ScriptUtils.getInt(keyValue));
                     } else if (fieldMeta.getType().equals(String.class)) {
-                        methodAccess.invoke(object, fieldMeta.index, keyValue.tojstring());
+                        methodAccess.invoke(object, fieldMeta.index, keyValue);
                     } else if (fieldMeta.getType().equals(boolean.class)) {
-                        methodAccess.invoke(object, fieldMeta.index, keyValue.toboolean());
+                        methodAccess.invoke(object, fieldMeta.index, keyValue);
+                    } else if(fieldMeta.getType().equals(List.class)) {
+                        List<T> listObj = tableObj.get(k.getKey(), List.class);
+                        methodAccess.invoke(object, fieldMeta.index, listObj);
                     } else {
-                        methodAccess.invoke(object, fieldMeta.index, keyValue.tojstring());
+                        methodAccess.invoke(object, fieldMeta.index, serialize(fieldMeta.getType(), (LuaValueProxy) keyValue));
+                        //methodAccess.invoke(object, fieldMeta.index, keyValue);
                     }
                 } catch (Exception ex) {
-                    //ex.printStackTrace();
+                    ex.printStackTrace();
                     continue;
                 }
             }
         } catch (Exception e) {
-            Grasscutter.getLogger().info(ScriptUtils.toMap(table).toString());
+            //Grasscutter.getLogger().info(ScriptSys.ScriptUtils.toMap(table).toString());
             e.printStackTrace();
         }
 
@@ -149,18 +156,18 @@ public class LuaSerializer implements Serializer {
         var methodNameSet = new HashSet<>(Arrays.stream(methodAccess.getMethodNames()).toList());
 
         Arrays.stream(type.getDeclaredFields())
-            .filter(field -> methodNameSet.contains(this.getSetterName(field.getName())))
+            .filter(field -> methodNameSet.contains(getSetterName(field.getName())))
             .forEach(field -> {
-                var setter = this.getSetterName(field.getName());
+                var setter = getSetterName(field.getName());
                 var index = methodAccess.getIndex(setter);
                 fieldMetaMap.put(field.getName(), new FieldMeta(field.getName(), setter, index, field.getType()));
             });
 
         Arrays.stream(type.getFields())
             .filter(field -> !fieldMetaMap.containsKey(field.getName()))
-            .filter(field -> methodNameSet.contains(this.getSetterName(field.getName())))
+            .filter(field -> methodNameSet.contains(getSetterName(field.getName())))
             .forEach(field -> {
-                var setter = this.getSetterName(field.getName());
+                var setter = getSetterName(field.getName());
                 var index = methodAccess.getIndex(setter);
                 fieldMetaMap.put(field.getName(), new FieldMeta(field.getName(), setter, index, field.getType()));
             });
@@ -180,12 +187,22 @@ public class LuaSerializer implements Serializer {
     }
 
     @Data
-    @AllArgsConstructor
     @FieldDefaults(level = AccessLevel.PRIVATE)
     static class FieldMeta {
         String name;
         String setter;
         int index;
         Class<?> type;
+
+        public FieldMeta(String name, String setter, int index, Class<?> type) {
+            this.name = name;
+            this.setter = setter;
+            this.index = index;
+            this.type = type;
+        }
+
+        Class<?> getType() {
+            return type;
+        }
     }
 }

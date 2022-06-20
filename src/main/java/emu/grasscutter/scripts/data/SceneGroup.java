@@ -5,7 +5,7 @@ import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.utils.Position;
 import lombok.Setter;
 import lombok.ToString;
-import org.luaj.vm2.LuaValue;
+import org.terasology.jnlua.util.AbstractTableMap;
 
 import javax.script.Bindings;
 import javax.script.CompiledScript;
@@ -30,8 +30,8 @@ public class SceneGroup {
     public Map<Integer, SceneMonster> monsters; // <ConfigId, Monster>
     public Map<Integer, SceneGadget> gadgets; // <ConfigId, Gadgets>
     public Map<String, SceneTrigger> triggers;
-    public Map<Integer, SceneNPC> npc; // <NpcId, NPC>
-    public List<SceneRegion> regions;
+    public Map<Integer, SceneNPC> npc; //
+    public Map<Integer, SceneRegion> regions;
     public List<SceneSuite> suites;
     public List<SceneVar> variables;
 
@@ -113,17 +113,16 @@ public class SceneGroup {
             this.triggers.values().forEach(t -> t.currentGroup = this);
 
             this.suites = ScriptLoader.getSerializer().toList(SceneSuite.class, this.bindings.get("suites"));
-            this.regions = ScriptLoader.getSerializer().toList(SceneRegion.class, this.bindings.get("regions"));
+            regions = ScriptLoader.getSerializer().toList(SceneRegion.class, bindings.get("regions")).stream()
+                .collect(Collectors.toMap(x -> x.config_id, y -> y));
+            regions.values().forEach(m -> m.group = this);
+
             this.init_config = ScriptLoader.getSerializer().toObject(SceneInitConfig.class, this.bindings.get("init_config"));
 
-            // Garbages TODO fix properly later
-            Object garbagesValue = this.bindings.get("garbages");
-            if (garbagesValue != null && garbagesValue instanceof LuaValue garbagesTable) {
-                this.garbages = new SceneGarbage();
-                if (garbagesTable.checktable().get("gadgets") != LuaValue.NIL) {
-                    this.garbages.gadgets = ScriptLoader.getSerializer().toList(SceneGadget.class, garbagesTable.checktable().get("gadgets").checktable());
-                    this.garbages.gadgets.forEach(m -> m.group = this);
-                }
+            Object garbageValue = bindings.get("garbages");
+            if (garbageValue instanceof AbstractTableMap luaTable) {
+                garbages = new SceneGarbage(luaTable, this);
+                bindings.remove("garbages");
             }
 
             // Add variables to suite
@@ -153,6 +152,13 @@ public class SceneGroup {
                     suite.triggers.stream()
                         .filter(this.triggers::containsKey)
                         .map(this.triggers::get)
+                        .toList()
+                );
+
+                suite.sceneRegions = new ArrayList<>(
+                    suite.regions.stream()
+                        .filter(regions::containsKey)
+                        .map(regions::get)
                         .toList()
                 );
             }

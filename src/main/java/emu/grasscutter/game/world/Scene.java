@@ -644,6 +644,8 @@ public class Scene {
                 .filter(Objects::nonNull)
                 .toList());
 
+            suiteData.sceneRegions.stream().map(region -> new EntityRegion(this, region))
+                .forEach(scriptManager::registerRegion);
         }
 
         this.scriptManager.meetEntities(entities);
@@ -666,7 +668,7 @@ public class Scene {
                 group.triggers.values().forEach(this.getScriptManager()::deregisterTrigger);
             }
             if (group.regions != null) {
-                group.regions.forEach(this.getScriptManager()::deregisterRegion);
+                group.regions.values().forEach(getScriptManager()::deregisterRegion);
             }
         }
         this.scriptManager.getLoadedGroupSetPerBlock().remove(block.id);
