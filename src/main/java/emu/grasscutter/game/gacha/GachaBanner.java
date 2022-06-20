@@ -14,36 +14,36 @@ public class GachaBanner {
     private String prefabPath;
     private String previewPrefabPath;
     private String titlePath;
-    private final int costItemId = 0;
-    private final int costItemAmount = 1;
-    private final int costItemId10 = 0;
-    private final int costItemAmount10 = 10;
+    private int costItemId = 0;
+    private int costItemAmount = 1;
+    private int costItemId10 = 0;
+    private int costItemAmount10 = 10;
     private int beginTime;
     private int endTime;
     private int sortId;
-    private final int[] rateUpItems4 = {};
-    private final int[] rateUpItems5 = {};
-    private final int[] fallbackItems3 = {11301, 11302, 11306, 12301, 12302, 12305, 13303, 14301, 14302, 14304, 15301, 15302, 15304};
-    private final int[] fallbackItems4Pool1 = {1014, 1020, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1053, 1055, 1056, 1064};
-    private final int[] fallbackItems4Pool2 = {11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407, 14401, 14402, 14403, 14409, 15401, 15402, 15403, 15405};
-    private final int[] fallbackItems5Pool1 = {1003, 1016, 1042, 1035, 1041};
-    private final int[] fallbackItems5Pool2 = {11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502};
-    private final boolean removeC6FromPool = false;
-    private final boolean autoStripRateUpFromFallback = true;
-    private final int[][] weights4 = {{1, 510}, {8, 510}, {10, 10000}};
-    private final int[][] weights5 = {{1, 75}, {73, 150}, {90, 10000}};
-    private final int[][] poolBalanceWeights4 = {{1, 255}, {17, 255}, {21, 10455}};
-    private final int[][] poolBalanceWeights5 = {{1, 30}, {147, 150}, {181, 10230}};
-    private final int eventChance4 = 50; // Chance to win a featured event item
-    private final int eventChance5 = 50; // Chance to win a featured event item
-    private final BannerType bannerType = BannerType.STANDARD;
+    private int[] rateUpItems4 = {};
+    private int[] rateUpItems5 = {};
+    private int[] fallbackItems3 = {11301, 11302, 11306, 12301, 12302, 12305, 13303, 14301, 14302, 14304, 15301, 15302, 15304};
+    private int[] fallbackItems4Pool1 = {1014, 1020, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1053, 1055, 1056, 1064};
+    private int[] fallbackItems4Pool2 = {11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407, 14401, 14402, 14403, 14409, 15401, 15402, 15403, 15405};
+    private int[] fallbackItems5Pool1 = {1003, 1016, 1042, 1035, 1041};
+    private int[] fallbackItems5Pool2 = {11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502};
+    private boolean removeC6FromPool = false;
+    private boolean autoStripRateUpFromFallback = true;
+    private int[][] weights4 = {{1, 510}, {8, 510}, {10, 10000}};
+    private int[][] weights5 = {{1, 75}, {73, 150}, {90, 10000}};
+    private int[][] poolBalanceWeights4 = {{1, 255}, {17, 255}, {21, 10455}};
+    private int[][] poolBalanceWeights5 = {{1, 30}, {147, 150}, {181, 10230}};
+    private int eventChance4 = 50; // Chance to win a featured event item
+    private int eventChance5 = 50; // Chance to win a featured event item
+    private BannerType bannerType = BannerType.STANDARD;
 
     // Kinda wanna deprecate these but they're in people's configs
-    private final int[] rateUpItems1 = {};
-    private final int[] rateUpItems2 = {};
-    private final int eventChance = -1;
-    private final int costItem = 0;
-    private final int wishMaxProgress = 2;
+    private int[] rateUpItems1 = {};
+    private int[] rateUpItems2 = {};
+    private int eventChance = -1;
+    private int costItem = 0;
+    private int wishMaxProgress = 2;
 
     public int getGachaType() {
         return this.gachaType;
@@ -71,8 +71,7 @@ public class GachaBanner {
 
     public ItemParamData getCost(int numRolls) {
         return switch (numRolls) {
-            case 10 ->
-                new ItemParamData((this.costItemId10 > 0) ? this.costItemId10 : this.getCostItem(), this.costItemAmount10);
+            case 10 -> new ItemParamData((this.costItemId10 > 0) ? this.costItemId10 : this.getCostItem(), this.costItemAmount10);
             default -> new ItemParamData(this.getCostItem(), this.costItemAmount * numRolls);
         };
     }
