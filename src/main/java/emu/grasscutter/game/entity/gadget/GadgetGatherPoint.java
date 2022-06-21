@@ -8,31 +8,29 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo;
 import emu.grasscutter.net.proto.InterOpTypeOuterClass;
-import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 
 public class GadgetGatherPoint extends GadgetContent {
-    private final GatherData gatherData;
+    private GatherData gatherData;
 
-    
     public GadgetGatherPoint(EntityGadget gadget) {
         super(gadget);
         this.gatherData = GameData.getGatherDataMap().get(gadget.getPointType());
     }
 
     public GatherData getGatherData() {
-        return this.gatherData;
+        return gatherData;
     }
 
     public int getItemId() {
-        return this.getGatherData().getItemId();
+        return getGatherData().getItemId();
     }
 
-    public boolean onInteract(Player player, GadgetInteractReq req) {
+    public boolean onInteract(Player player, InterOpTypeOuterClass.InterOpType opType) {
         GameItem item = new GameItem(gatherData.getItemId(), 1);
-        
+
         player.getInventory().addItem(item, ActionReason.Gather);
-        
+
         return true;
     }
 

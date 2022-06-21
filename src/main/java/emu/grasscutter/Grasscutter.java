@@ -1,34 +1,24 @@
 package emu.grasscutter;
 
-import ch.qos.logback.classic.Logger;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import java.io.*;
+import java.util.Calendar;
+
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.auth.DefaultAuthentication;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.command.DefaultPermissionHandler;
 import emu.grasscutter.command.PermissionHandler;
-import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
-import emu.grasscutter.data.ResourceLoader;
-import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
-import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.dispatch.DispatchHandler;
+import emu.grasscutter.server.http.handlers.*;
 import emu.grasscutter.server.http.dispatch.RegionHandler;
 import emu.grasscutter.server.http.documentation.DocumentationServerHandler;
-import emu.grasscutter.server.http.handlers.AnnouncementsHandler;
-import emu.grasscutter.server.http.handlers.GachaHandler;
-import emu.grasscutter.server.http.handlers.GenericHandler;
-import emu.grasscutter.server.http.handlers.LogHandler;
-import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.ConfigContainer;
-import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Utils;
 import org.jline.reader.EndOfFileException;
 import org.jline.reader.LineReader;
@@ -39,13 +29,21 @@ import org.jline.terminal.TerminalBuilder;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.Nullable;
-import java.io.*;
-import java.util.Calendar;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
-import static emu.grasscutter.Configuration.DATA;
-import static emu.grasscutter.Configuration.SERVER;
+import ch.qos.logback.classic.Logger;
+import emu.grasscutter.data.ResourceLoader;
+import emu.grasscutter.database.DatabaseManager;
+import emu.grasscutter.utils.Language;
+import emu.grasscutter.server.game.GameServer;
+import emu.grasscutter.tools.Tools;
+import emu.grasscutter.utils.Crypto;
+
+import javax.annotation.Nullable;
+
 import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.Configuration.*;
 
 public final class Grasscutter {
     private static final Logger log = (Logger) LoggerFactory.getLogger(Grasscutter.class);
@@ -91,22 +89,19 @@ public final class Grasscutter {
         for (String arg : args) {
             switch (arg.toLowerCase()) {
                 case "-handbook" -> {
-                    Tools.createGmHandbook();
-                    exitEarly = true;
+                    Tools.createGmHandbook(); exitEarly = true;
                 }
                 case "-gachamap" -> {
-                    Tools.createGachaMapping(DATA("gacha_mappings.js"));
-                    exitEarly = true;
+                    Tools.createGachaMapping(DATA("gacha_mappings.js")); exitEarly = true;
                 }
                 case "-version" -> {
-                    System.out.println("Grasscutter version: " + BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH);
-                    exitEarly = true;
+                    System.out.println("Grasscutter version: " + BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH); exitEarly = true;
                 }
             }
         }
 
         // Exit early if argument sets it.
-        if (exitEarly) System.exit(0);
+        if(exitEarly) System.exit(0);
 
         // Initialize server.
         Grasscutter.getLogger().info(translate("messages.status.starting"));
@@ -118,7 +113,6 @@ public final class Grasscutter {
         ResourceLoader.loadAll();
         ScriptLoader.init();
         EnergyManager.initialize();
-        DungeonChallenge.initialize();
 
         // Initialize database.
         DatabaseManager.initialize();
@@ -219,11 +213,10 @@ public final class Grasscutter {
 
     /**
      * Saves the provided server configuration.
-     *
      * @param config The configuration to save, or null for a new one.
      */
     public static void saveConfig(@Nullable ConfigContainer config) {
-        if (config == null) config = new ConfigContainer();
+        if(config == null) config = new ConfigContainer();
 
         try (FileWriter file = new FileWriter(configFile)) {
             file.write(gson.toJson(config));
@@ -355,7 +348,6 @@ public final class Grasscutter {
 
     /**
      * Sets the authentication system for the server.
-     *
      * @param authenticationSystem The authentication system to use.
      */
     public static void setAuthenticationSystem(AuthenticationSystem authenticationSystem) {
@@ -364,7 +356,6 @@ public final class Grasscutter {
 
     /**
      * Sets the permission handler for the server.
-     *
      * @param permissionHandler The permission handler to use.
      */
     public static void setPermissionHandler(PermissionHandler permissionHandler) {
