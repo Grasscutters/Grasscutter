@@ -29,7 +29,7 @@ public final class WeatherCommand implements CommandHandler {
                 try {
                     climateId = Integer.parseInt(args.get(1));
                 } catch (NumberFormatException ignored) {
-                        CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_climateid"));
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_climateid"));
                 }
                 break;
             default:
