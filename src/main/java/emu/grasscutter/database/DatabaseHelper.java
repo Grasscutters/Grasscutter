@@ -11,6 +11,7 @@ import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.battlepass.BattlePassManager;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.gacha.GachaRecord;
 import emu.grasscutter.game.home.GameHome;
@@ -296,10 +297,27 @@ public final class DatabaseHelper {
 	public static boolean deleteQuest(GameMainQuest quest) {
 		return DatabaseManager.getGameDatastore().delete(quest).wasAcknowledged();
 	}
+	
 	public static GameHome getHomeByUid(int id) {
 		return DatabaseManager.getGameDatastore().find(GameHome.class).filter(Filters.eq("ownerUid", id)).first();
 	}
+	
 	public static void saveHome(GameHome gameHome) {
 		DatabaseManager.getGameDatastore().save(gameHome);
+	}
+	
+	public static BattlePassManager loadBattlePass(Player player) {
+		BattlePassManager manager = DatabaseManager.getGameDatastore().find(BattlePassManager.class).filter(Filters.eq("ownerUid", player.getUid())).first();
+		if (manager == null) {
+			manager = new BattlePassManager(player);
+			manager.save();
+		} else {
+			manager.setPlayer(player);
+		}
+		return manager;
+	}
+	
+	public static void saveBattlePass(BattlePassManager manager) {
+		DatabaseManager.getGameDatastore().save(manager);
 	}
 }

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BattlePassRewardTakeOption.proto";
+
+// CmdId: 2628
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message TakeBattlePassRewardReq {
+	repeated BattlePassRewardTakeOption take_option_list = 4;
+}

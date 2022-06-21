@@ -7,7 +7,7 @@
 
 **Attention:** De nouveaux contributeurs sont toujours les bienvenus. Avant d'ajouter votre contribution, veuillez lire le [code de conduite](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
-## Fonctionalités actuelles : 
+## Fonctionnalités actuelles : 
 
 * Connection
 * Combat
@@ -20,7 +20,7 @@
 
 ## Guide de démarrage rapide
 
-**Note:** Pour obtenir un support, rejoignez notre serveur Discord [Discord](https://discord.gg/T5vZU6UyeG) (en anglais).
+**Note:** Pour obtenir un support, rejoignez notre serveur [Discord](https://discord.gg/T5vZU6UyeG) (en anglais).
 
 ### Logiciels requis
 
@@ -61,7 +61,7 @@
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
         ```
     
-    - Fiddler Classic: Exécutez Fiddler Classic, Activez `Decrypt https traffic` dans les paramàtres et changez le port par défaut ici (Tools -> Options -> Connections) à autre chose que `8888`, et chargez [ce script](https://github.lunatic.moe/fiddlerscript).
+    - Fiddler Classic: Exécutez Fiddler Classic, Activez `Decrypt https traffic` dans les paramètres et changez le port par défaut ici (Tools -> Options -> Connections) à autre chose que `8888`, et chargez [ce script](https://github.lunatic.moe/fiddlerscript).
       
     - [Fichier hosts](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
     
