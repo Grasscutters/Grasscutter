@@ -292,10 +292,6 @@ public class Player {
 		this.account = account;
 	}
 
-	public void setBattlePassManager(Player player){
-		this.battlePassManager = new BattlePassManager(player);
-	}
-
 	public GameSession getSession() {
 		return session;
 	}
@@ -1215,6 +1211,11 @@ public class Player {
 	public BattlePassManager getBattlePassManager(){
 		return battlePassManager;
 	}
+	
+	public void loadBattlePassManager() {
+		if (this.battlePassManager != null) return;
+		this.battlePassManager = DatabaseHelper.loadBattlePass(this);
+	}
 
 	public AbilityManager getAbilityManager() {
 		return abilityManager;
@@ -1318,15 +1319,17 @@ public class Player {
 		}
 		//Make sure towerManager's player is online player
 		this.getTowerManager().setPlayer(this);
+		
 		// Load from db
 		this.getAvatars().loadFromDatabase();
 		this.getInventory().loadFromDatabase();
-		this.getAvatars().postLoad();
+		this.getAvatars().postLoad(); // Needs to be called after inventory is handled
 
 		this.getFriendsList().loadFromDatabase();
 		this.getMailHandler().loadFromDatabase();
 		this.getQuestManager().loadFromDatabase();
-
+		
+		this.loadBattlePassManager();
 	}
 
 	public void onLogin() {

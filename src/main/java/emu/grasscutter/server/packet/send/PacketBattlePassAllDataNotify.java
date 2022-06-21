@@ -21,7 +21,7 @@ public class PacketBattlePassAllDataNotify extends BasePacket {
 
         List<BattlePassRewardTagOuterClass.BattlePassRewardTag> rewardTags = new ArrayList<>();
 
-        for (int id = 1; id <= player.getAccount().getAwardTakenLevel(); id++)
+        for (int id = 1; id <= player.getBattlePassManager().getAwardTakenLevel(); id++)
             rewardTags.add(BattlePassRewardTagOuterClass.BattlePassRewardTag.newBuilder()
                     .setLevel(id)
                     .setUnlockStatus(BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_FREE)

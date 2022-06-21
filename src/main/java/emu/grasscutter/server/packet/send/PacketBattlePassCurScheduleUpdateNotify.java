@@ -18,7 +18,7 @@ public class PacketBattlePassCurScheduleUpdateNotify extends BasePacket {
 
         List<BattlePassRewardTagOuterClass.BattlePassRewardTag> rewardTags = new ArrayList<>();
 
-        for (int id = 1; id <= player.getAccount().getAwardTakenLevel(); id++)
+        for (int id = 1; id <= player.getBattlePassManager().getAwardTakenLevel(); id++)
             rewardTags.add(BattlePassRewardTagOuterClass.BattlePassRewardTag.newBuilder()
                     .setLevel(id)
                     .setUnlockStatus(BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_FREE)
@@ -31,8 +31,7 @@ public class PacketBattlePassCurScheduleUpdateNotify extends BasePacket {
                 .setIsViewed(true).setUnlockStatus(BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_FREE).setCurCyclePoints(0)
                 .setCurCycle(BattlePassCycleOuterClass.BattlePassCycle.newBuilder().setBeginTime(1653940800).setEndTime(2059483200).setCycleIdx(3).build());
 
-        var proto
-                = BattlePassCurScheduleUpdateNotifyOuterClass.BattlePassCurScheduleUpdateNotify.newBuilder();
+        var proto = BattlePassCurScheduleUpdateNotifyOuterClass.BattlePassCurScheduleUpdateNotify.newBuilder();
 
         proto.setHaveCurSchedule(true).setCurSchedule(curSchedule).build();
 
