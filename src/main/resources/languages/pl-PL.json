@@ -291,9 +291,12 @@
       "success": "Przeteleportowano %s do %s, %s, %s w scenie %s"
     },
     "weather": {
-      "usage": "Użycie: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types 0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist",
-      "success": "Changed climate type to %s with weather type %s.",
-      "invalid_id": "Błędne ID."
+      "usage": "Usage: weather <climate> <weather>",
+      "success": "Changed climate to %s, weather to %s.",
+      "help_message": "\nNote: <climate>(weatherId), <weather>(climateId)\nAvailable weather 0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist",
+      "invalid_weatherid": "Invalid climate.",
+      "invalid_climateid": "Invalid weather.",
+      "description": "Change the weather and climate"
     },
     "drop": {
       "command_usage": "Użycie: drop <ID przedmiotu|nazwa przedmiotu> [ilość]",

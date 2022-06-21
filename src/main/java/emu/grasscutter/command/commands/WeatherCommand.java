@@ -11,7 +11,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "weather", usage = "weather <climate type(weatherId)> <weather type(climateId)>", aliases = {"w"}, permission = "player.weather", permissionTargeted = "player.weather.others", description = "commands.weather.description")
+@Command(label = "weather", usage = "weather <climate> <weather>", aliases = {"w"}, permission = "player.weather", permissionTargeted = "player.weather.others", description = "commands.weather.description")
 public final class WeatherCommand implements CommandHandler {
 
     @Override
@@ -19,21 +19,22 @@ public final class WeatherCommand implements CommandHandler {
         int weatherId = 0;
         int climateId = 1;
         switch (args.size()) {
-            case 2:
-                try {
-                    climateId = Integer.parseInt(args.get(1));
-                } catch (NumberFormatException ignored) {
-                        CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_id"));
-                }
-            case 1:
+            case 0:
                 try {
                     weatherId = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_id"));
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_weatherid"));
+                }
+            case 1:
+                try {
+                    climateId = Integer.parseInt(args.get(1));
+                } catch (NumberFormatException ignored) {
+                        CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_climateid"));
                 }
                 break;
             default:
                 CommandHandler.sendMessage(sender, translate(sender, "commands.weather.usage"));
+                CommandHandler.sendMessage(sender, translate(sender, "commands.weather.help_message"));
                 return;
         }
 

@@ -98,11 +98,10 @@
     "status": {
       "enabled": "已啟用",
       "disabled": "未啟用",
-      "help": "幫助", 
+      "help": "幫助",
       "success": "成功"
     },
     "account": {
-      "modify": "修改使用者帳號",
       "invalid": "無效的UID。",
       "exists": "帳號已存在。",
       "create": "已建立帳號，UID 為 %s 。",
@@ -390,10 +389,12 @@
       "description": "解鎖所有級別的深境螺旋。"
     },
     "weather": {
-      "usage": "用法：weather <氣候型別(weatherId)> <天氣型別(climateId)>\n天氣類型： '0：無、 1：晴天、 2：多雲、 3：雨、 4:：雷雨、 5：雪、 6：霧'",
-      "success": "已將當前氣候設定為 %s ，天氣則為 %s 。",
-      "invalid_id": "無效的ID。",
-      "description": "更改目前的天氣。"
+      "usage": "用法：weather <氣候> <天氣>",
+      "success": "已更改氣候為 %s，天氣為 %s。",
+      "help_message": "\n注意：<氣候>(weatherId), <天氣>(climateId)\n可用的天氣 0: 無, 1: 晴天, 2: 多雲, 3: 雨, 4: 雷雨, 5: 雪, 6: 霧",
+      "invalid_weatherid": "无效的氣候。",
+      "invalid_climateid": "無效的天氣。",
+      "description": "更改天氣和氣候"
     },
     "ban": {
       "description": "停權指定玩家。",

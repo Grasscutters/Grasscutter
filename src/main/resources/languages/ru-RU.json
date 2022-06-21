@@ -387,10 +387,12 @@
       "description": "Открывает все уровни башни"
     },
     "weather": {
-      "usage": "Применение: weather <тип_климата(Id погоды)> <тип_погоды(Id климата)>\nТипы погоды 0: Отсутствует, 1: Солнечная, 2: Пасмурная, 3: Дождливая, 4: Грозовая, 5: Снежная, 6: Туманная",
-      "success": "Тип климата был изменен на %s, тип погоды: %s.",
-      "invalid_id": "Некорректный ID.",
-      "description": "Изменяет погоду"
+      "usage": "Usage: weather <climate> <weather>",
+      "success": "Changed climate to %s, weather to %s.",
+      "help_message": "\nNote: <climate>(weatherId), <weather>(climateId)\nAvailable weather 0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist",
+      "invalid_weatherid": "Invalid climate.",
+      "invalid_climateid": "Invalid weather.",
+      "description": "Change the weather and climate"
     },
     "ban": {
       "description": "Банит игрока",
