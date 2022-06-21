@@ -215,7 +215,26 @@ public class Inventory implements Iterable<GameItem> {
 				getPlayer().addNameCard(item.getItemId());
 			}
 			return null;
-		} else if (tab != null) {
+		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_TALENT) {
+            if (tab == null) {
+                return null;
+            }
+            GameItem existingTalent = tab.getItemById(item.getItemId());
+            if (existingTalent == null) {
+                if (tab.getSize() >= tab.getMaxCapacity()) {
+                    return null;
+                }
+                this.putItem(item, tab);
+            } else {
+                if (existingTalent.getCount() <= 5) {
+                    existingTalent.setCount(Math.min(existingTalent.getCount() + item.getCount(), 6));
+                    existingTalent.save();
+                    return existingTalent;
+                } else {
+                    return null;
+                }
+            }
+        } else if (tab != null) {
 			GameItem existingItem = tab.getItemById(item.getItemId());
 			if (existingItem == null) {
 				// Item type didnt exist before, we will add it to main inventory map if there is enough space
