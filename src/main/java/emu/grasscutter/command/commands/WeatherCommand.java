@@ -19,7 +19,7 @@ public final class WeatherCommand implements CommandHandler {
         int weatherId = 0;
         int climateId = 1;
         switch (args.size()) {
-            case 0:
+            case 2:
                 try {
                     weatherId = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
