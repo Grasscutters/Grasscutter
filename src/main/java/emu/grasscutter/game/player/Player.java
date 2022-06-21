@@ -990,7 +990,7 @@ public class Player {
 	}
 	
 
-	public void interactWith(int gadgetEntityId, InterOpTypeOuterClass.InterOpType opType) {
+	public void interactWith(int gadgetEntityId, GadgetInteractReq req) {
 		GameEntity entity = getScene().getEntityById(gadgetEntityId);
 		if (entity == null) {
 			return;
@@ -1023,7 +1023,7 @@ public class Player {
 				return;
 			}
 			
-			boolean shouldDelete = gadget.getContent().onInteract(this, opType);
+			boolean shouldDelete = gadget.getContent().onInteract(this, req);
 			
 			if (shouldDelete) {
 				entity.getScene().removeEntity(entity);
