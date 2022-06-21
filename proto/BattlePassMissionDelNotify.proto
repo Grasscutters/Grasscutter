@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2643
+// EnetChannelId: 0
+// EnetIsReliable: true
+message BattlePassMissionDelNotify {
+	repeated uint32 del_mission_id_list = 4;
+}
