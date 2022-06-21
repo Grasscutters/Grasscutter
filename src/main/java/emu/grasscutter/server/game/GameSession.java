@@ -76,6 +76,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
 		this.player = player;
 		this.player.setSession(this);
 		this.player.setAccount(this.getAccount());
+		this.player.setBattlePassManager(this.player);;
 	}
 
 	public SessionState getState() {
