@@ -19,7 +19,6 @@ set MONGODB_PATH=DO_NOT_CHECK_PATH
 
 set SERVER_JAR_PATH=%CUR_PATH%
 set DATABASE_STORAGE_PATH=%CUR_PATH%resources\Database
-
 set SERVER_JAR_NAME=grasscutter.jar
 set PROXY_SCRIPT_NAME=proxy
 
@@ -41,6 +40,8 @@ if not exist "%SERVER_PATH%%SERVER_JAR_NAME%" (
 	call :LOG [ERROR] Server jar not found.
 	goto :EXIT
 )
+
+set JAVA_PAT="D:\Java17"
 
 @rem mitmproxy not found, server only
 if not "%MITMDUMP_PATH%" == "DO_NOT_CHECK_PATH" (
