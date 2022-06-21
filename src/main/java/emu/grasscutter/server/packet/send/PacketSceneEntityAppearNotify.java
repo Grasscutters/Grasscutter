@@ -36,7 +36,7 @@ public class PacketSceneEntityAppearNotify extends BasePacket {
 		this(player.getTeamManager().getCurrentAvatarEntity());
 	}
 
-	public PacketSceneEntityAppearNotify(Collection<GameEntity> entities, VisionType visionType) {
+	public PacketSceneEntityAppearNotify(Collection<? extends GameEntity> entities, VisionType visionType) {
 		super(PacketOpcodes.SceneEntityAppearNotify, true);
 		
 		SceneEntityAppearNotify.Builder proto = SceneEntityAppearNotify.newBuilder()

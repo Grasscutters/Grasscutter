@@ -37,7 +37,7 @@
         "session_key_error": "對話密鑰不符。",
         "username_error": "未找到此用戶名。",
         "username_create_error": "未找到用戶名，建立失敗。",
-        "server_max_player_limit": "服務器在線人數已滿"
+        "server_max_player_limit": "伺服器在線人數已滿"
       },
       "router_error": "[Dispatch] 無法附加到路由上。"
     },
@@ -52,8 +52,8 @@
       "run_mode_help": "伺服器運行模式必須為 HYBRID 或者 DISPATCH_ONLY 或者 GAME_ONLY。Grasscutter 啟動失敗...",
       "create_resources": "正在建立 resources 資料夾...",
       "resources_error": "請將 BinOutput 和 ExcelBinOutput 複製到 resources 資料夾。",
-      "version": "Grasscutter版本：%s-%s",
-      "game_version": "游戏版本：%s"
+      "version": "Grasscutter版本： %s-%s",
+      "game_version": "遊戲版本：%s"
     }
   },
   "commands": {
@@ -64,8 +64,7 @@
       "console_execute_error": "此指令只能在伺服器的命令提示字元執行。",
       "player_execute_error": "請在遊戲裡使用這條指令。",
       "command_exist_error": "找不到指令。",
-      "no_usage_specified": "沒有指定用法",
-      "no_description_specified": "没有指定說明",
+      "no_description_specified": "没有指定說明。",
       "invalid": {
         "amount": "無效的數量。",
         "artifactId": "無效的聖遺物ID。",
@@ -118,7 +117,7 @@
       "description": "向所有玩家發送公告。"
     },
     "changescene": {
-      "usage": "用法：changescene <sceneId>",
+      "usage": "用法：changescene <scene id>",
       "already_in_scene": "你已經在這個場景中了。",
       "success": "已切換至場景 %s.",
       "exists_error": "此場景不存在。",
@@ -136,12 +135,17 @@
       "description": "從你的背包中刪除所有未裝備且未上鎖的物品，包括稀有物品。"
     },
     "coop": {
-      "usage": "用法：coop [host uid]",
+      "usage": "用法：coop <playerId> <target playerId>",
       "success": "召喚了 %s 到 %s 的世界。",
-      "description": "強制傳送指定用戶到他人的世界。"
+      "description": "強制傳送指定用戶到他人的世界。如果未指定玩家，則會將你設為多人遊戲狀態。"
+    },
+    "drop": {
+      "command_usage": "用法：drop <itemId|itemName> [amount]",
+      "success": "已將 %s x %s 丟在附近。",
+      "description": "在你附近丟下一個物品。"
     },
     "enter_dungeon": {
-      "usage": "用法：enterdungeon <dungeonId>",
+      "usage": "用法：enterdungeon <dungeon id>",
       "changed": "已進入祕境 %s",
       "not_found_error": "此祕境不存在。",
       "in_dungeon_error": "你已經在祕境中了。",
@@ -188,6 +192,12 @@
     "heal": {
       "success": "所有角色已被治療。",
       "description": "治療當前隊伍的角色。"
+    },
+    "help": {
+      "usage": "用法：",
+      "aliases": "別名：",
+      "description": "發送幫助信息或顯示特定命令的信息",
+      "available_commands": "可用指令："
     },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已把 [%s:%s] 踢出",
@@ -256,6 +266,9 @@
       "success": "重置完成。",
       "description": "重置所選玩家的商店刷新時間。"
     },
+    "restart": {
+      "description": "重新啟動伺服器。"
+    },
     "sendMail": {
       "usage": "用法：sendmail <userId|all|help> [templateId]",
       "user_not_exist": "ID '%s' 的使用者不存在。",
@@ -313,17 +326,16 @@
     "spawn": {
       "usage": "用法：spawn <entityId> [amount] [level(僅限怪物)]",
       "success": "已生成 %s 個 %s。",
-      "limit_reached": "場景中的生成數量已達上限。已替代為生成 %s 個實體。",
-      "description": "在你附近生成實體。"
+      "description": "在你附近生成一個實體動物。"
     },
     "stop": {
       "success": "正在關閉伺服器...",
       "description": "以正常的方式關閉伺服器。"
     },
     "talent": {
-      "usage_1": "設定天賦等級：/talent set <talentID> <value>",
-      "usage_2": "另一種設定天賦等級的指令使用方法：/talent <n or e or q> <value>",
-      "usage_3": "獲取天賦ID指令用法：/talent getid",
+      "usage_1": "設定天賦等級：talent set <talentID> <value>",
+      "usage_2": "另一種設定天賦等級的指令使用方法：talent <n or e or q> <value>",
+      "usage_3": "獲取天賦ID指令用法：talent getid",
       "lower_16": "無效的天賦等級，技能等級應低於 16。",
       "set_id": "將天賦等級設為%s。",
       "set_atk": "將普通攻擊等級設為 %s。",
@@ -368,29 +380,35 @@
       "success": "傳送 %s 到座標 %s,%s,%s ，場景為 %s 。",
       "description": "將玩家的位置傳送到你所指定的座標。"
     },
+    "unlimitenergy": {
+      "success": "無限元素能量設定為 %s 。 [用戶：%s]",
+      "config_error": "指令不可用。因為 config.json 中 energyUsage 為 false。",
+      "description": "使用元素爆發而不消耗能量。"
+    },
+    "unlocktower": {
+      "success": "解鎖完成。",
+      "description": "解鎖所有級別的深境螺旋。"
+    },
     "weather": {
-      "usage": "用法：weather <氣候型別(天氣ID)> <天氣型別(氣候ID)>\n天氣型別 0: 無, 1: 晴天, 2: 多雲, 3: 雨, 4: 雷雨, 5: 雪, 6: 霧",
-      "success": "已將當前氣候型別設定為 %s，天氣型別則為 %s。",
+      "usage": "用法：weather <氣候型別(weatherId)> <天氣型別(climateId)>\n天氣類型： '0：無、 1：晴天、 2：多雲、 3：雨、 4:：雷雨、 5：雪、 6：霧'",
+      "success": "已將當前氣候設定為 %s ，天氣則為 %s 。",
       "invalid_id": "無效的ID。",
       "description": "更改目前的天氣。"
     },
-    "drop": {
-      "command_usage": "用法：drop <itemId|itemName> [amount]",
-      "success": "已將 %s x %s 丟在附近。",
-      "description": "在你附近丟下一個物品。"
+    "ban": {
+      "description": "停權指定玩家。",
+      "success": "停權成功。",
+      "failure": "停權失敗，玩家帳號不存在。",
+      "invalid_time": "無效的時間戳。",
+      "invalid_player_id": "無效的玩家ID。",
+      "command_usage": "用法：ban <playerId> [timestamp] [reason]"
     },
-    "help": {
-      "usage": "用法：",
-      "aliases": "別名：",
-      "description": "發送幫助信息或顯示特定命令的信息",
-      "available_commands": "可用指令："
-    },
-    "restart": {
-      "description": "重新啟動伺服器。"
-    },
-    "unlocktower": {
-      "success": "現已解鎖深境迴廊。",
-      "description": "解鎖深境螺旋。"
+    "unban": {
+      "description": "撤銷停權指定玩家。",
+      "success": "撤銷停權成功。",
+      "failure": "撤銷停權失敗，玩家帳號不存在。",
+      "invalid_player_id": "無效的玩家ID。",
+      "command_usage": "用法：unban <playerId>"
     }
   },
   "gacha": {
@@ -408,7 +426,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM手冊",
+      "title": "GM Handbook",
       "title_commands": "指令",
       "title_avatars": "角色",
       "title_items": "道具",
@@ -424,7 +442,7 @@
     },
     "index": {
       "title": "文件",
-      "handbook": "GM手冊",
+      "handbook": "GM Handbook",
       "gacha_mapping": "祈願物品映射到JSON上"
     }
   }

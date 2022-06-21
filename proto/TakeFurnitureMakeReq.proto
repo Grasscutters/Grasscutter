@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4768
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message TakeFurnitureMakeReq {
+	uint32 index = 9;
+	uint32 make_id = 4;
+	bool is_fast_finish = 2;
+}

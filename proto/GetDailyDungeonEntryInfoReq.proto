@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 929
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message GetDailyDungeonEntryInfoReq {
+	uint32 scene_id = 11;
+}

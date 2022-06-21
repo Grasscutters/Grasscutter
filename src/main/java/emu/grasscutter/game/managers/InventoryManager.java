@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.OpenConfigEntry;
 import emu.grasscutter.data.binout.OpenConfigEntry.SkillPointModifier;
@@ -22,14 +21,12 @@ import emu.grasscutter.data.excels.AvatarSkillDepotData.InherentProudSkillOpens;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
-import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.shop.ShopChestBatchUseTable;
 import emu.grasscutter.game.shop.ShopChestTable;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
-import emu.grasscutter.server.packet.send.PacketForgeFormulaDataNotify;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
@@ -861,6 +858,14 @@ public class InventoryManager {
 					// Unlock.
 					useSuccess = player.getServer().getCombineManger().unlockCombineDiagram(player, useItem);
 				}
+				break;
+			case MATERIAL_FURNITURE_FORMULA:
+			case MATERIAL_FURNITURE_SUITE_FORMULA:
+				if (useItem.getItemData().getItemUse() == null) {
+					break;
+				}
+				useSuccess = player.getFurnitureManager().unlockFurnitureOrSuite(useItem);
+
 				break;
 			case MATERIAL_CONSUME_BATCH_USE:
 				// Make sure we have usage data for this material.

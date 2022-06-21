@@ -14,6 +14,7 @@ import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.EntityVehicle;
+import emu.grasscutter.game.home.GameHome;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
@@ -25,6 +26,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
+import emu.grasscutter.game.managers.FurnitureManager;
 import emu.grasscutter.game.managers.InsectCaptureManager;
 import emu.grasscutter.game.managers.ResinManager;
 import emu.grasscutter.game.managers.deforestation.DeforestationManager;
@@ -35,7 +37,6 @@ import emu.grasscutter.game.managers.mapmark.*;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.quest.QuestManager;
@@ -97,6 +98,8 @@ public class Player {
 	private Set<Integer> costumeList;
 	private Set<Integer> unlockedForgingBlueprints;
 	private Set<Integer> unlockedCombines;
+	private Set<Integer> unlockedFurniture;
+	private Set<Integer> unlockedFurnitureSuite;
 	private List<ActiveForgeData> activeForges;
 
 	private Integer widgetId;
@@ -164,6 +167,8 @@ public class Player {
 	@Transient private ResinManager resinManager;
 	@Transient private ForgingManager forgingManager;
 	@Transient private DeforestationManager deforestationManager;
+	@Transient private GameHome home;
+	@Transient private FurnitureManager furnitureManager;
 
 	private long springLastUsed;
 	private HashMap<String, MapMark> mapMarks;
@@ -199,6 +204,8 @@ public class Player {
 		this.towerData = new TowerData();
 		this.unlockedForgingBlueprints = new HashSet<>();
 		this.unlockedCombines = new HashSet<>();
+		this.unlockedFurniture = new HashSet<>();
+		this.unlockedFurnitureSuite = new HashSet<>();
 		this.activeForges = new ArrayList<>();
 
 		this.setSceneId(3);
@@ -225,6 +232,7 @@ public class Player {
 		this.energyManager = new EnergyManager(this);
 		this.resinManager = new ResinManager(this);
 		this.forgingManager = new ForgingManager(this);
+		this.furnitureManager = new FurnitureManager(this);
 	}
 
 	// On player creation
@@ -258,6 +266,7 @@ public class Player {
 		this.resinManager = new ResinManager(this);
 		this.deforestationManager = new DeforestationManager(this);
 		this.forgingManager = new ForgingManager(this);
+		this.furnitureManager = new FurnitureManager(this);
 	}
 
 	public int getUid() {
@@ -376,7 +385,9 @@ public class Player {
 	public void setCurrentRealmId(Integer currentRealmId) {
 		this.currentRealmId = currentRealmId;
 	}
-
+	public GameHome getHome(){
+		return home;
+	}
 	public Position getPos() {
 		return pos;
 	}
@@ -429,6 +440,14 @@ public class Player {
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_MCOIN));
 	}
 
+	public int getHomeCoin() {
+		return this.getProperty(PlayerProperty.PROP_PLAYER_HOME_COIN);
+	}
+
+	public void setHomeCoin(int coin) {
+		this.setProperty(PlayerProperty.PROP_PLAYER_HOME_COIN, coin);
+		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_HOME_COIN));
+	}
 	private int getExpRequired(int level) {
 		PlayerLevelData levelData = GameData.getPlayerLevelDataMap().get(level);
 		return levelData != null ? levelData.getExp() : 0;
@@ -550,6 +569,14 @@ public class Player {
 
 	public Set<Integer> getUnlockedCombines() {
 		return this.unlockedCombines;
+	}
+
+	public Set<Integer> getUnlockedFurniture() {
+		return unlockedFurniture;
+	}
+
+	public Set<Integer> getUnlockedFurnitureSuite() {
+		return unlockedFurnitureSuite;
 	}
 
 	public List<ActiveForgeData> getActiveForges() {
@@ -960,7 +987,8 @@ public class Player {
 		return this.getMailHandler().replaceMailByIndex(index, message);
 	}
 	
-	public void interactWith(int gadgetEntityId, GadgetInteractReq request) {
+
+	public void interactWith(int gadgetEntityId, InterOpTypeOuterClass.InterOpType opType) {
 		GameEntity entity = getScene().getEntityById(gadgetEntityId);
 		if (entity == null) {
 			return;
@@ -988,11 +1016,15 @@ public class Player {
 				}
 			}
 		} else if (entity instanceof EntityGadget gadget) {
-			if (gadget.getGadgetData().getType() == EntityType.RewardStatue) {
-				if (scene.getChallenge() != null) {
-					scene.getChallenge().getStatueDrops(this, request);
-				}
-				this.sendPacket(new PacketGadgetInteractRsp(gadget, InteractType.INTERACT_TYPE_OPEN_STATUE));
+			
+			if (gadget.getContent() == null) {
+				return;
+			}
+			
+			boolean shouldDelete = gadget.getContent().onInteract(this, opType);
+			
+			if (shouldDelete) {
+				entity.getScene().removeEntity(entity);
 			}
 		} else if (entity instanceof EntityMonster monster) {
 			insectCaptureManager.arrestSmallCreature(monster);
@@ -1170,6 +1202,10 @@ public class Player {
 		return this.forgingManager;
 	}
 
+	public FurnitureManager getFurnitureManager() {
+		return furnitureManager;
+	}
+
 	public AbilityManager getAbilityManager() {
 		return abilityManager;
 	}
@@ -1316,13 +1352,16 @@ public class Player {
 		session.send(new PacketCodexDataFullNotify(this));
 		session.send(new PacketAllWidgetDataNotify(this));
 		session.send(new PacketWidgetGadgetAllDataNotify());
-		session.send(new PacketPlayerHomeCompInfoNotify(this));
-		session.send(new PacketHomeComfortInfoNotify(this));
 		session.send(new PacketCombineDataNotify(this.unlockedCombines));
 		this.forgingManager.sendForgeDataNotify();
 		this.resinManager.onPlayerLogin();
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
+
+		this.furnitureManager.onLogin();
+		// Home
+		home = GameHome.getByUid(getUid());
+		home.onOwnerLogin(this);
 
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
 		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
