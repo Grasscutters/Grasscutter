@@ -7,6 +7,7 @@ import java.nio.file.StandardCopyOption;
 import java.time.*;
 import java.time.temporal.TemporalAdjusters;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
@@ -61,7 +62,7 @@ public final class Utils {
 		BufferedInputStream bis = new BufferedInputStream(inputStream);
 		ByteArrayOutputStream buf = new ByteArrayOutputStream();
 		for (int result = bis.read(); result != -1; result = bis.read()) {
-		    buf.write((byte) result);
+			buf.write((byte) result);
 		}
 		return buf.toString();
 	}
@@ -75,17 +76,17 @@ public final class Utils {
 	private static final char[] HEX_ARRAY = "0123456789abcdef".toCharArray();
 	public static String bytesToHex(byte[] bytes) {
 		if (bytes == null) return "";
-	    char[] hexChars = new char[bytes.length * 2];
-	    for (int j = 0; j < bytes.length; j++) {
-	        int v = bytes[j] & 0xFF;
-	        hexChars[j * 2] = HEX_ARRAY[v >>> 4];
-	        hexChars[j * 2 + 1] = HEX_ARRAY[v & 0x0F];
-	    }
-	    return new String(hexChars);
+		char[] hexChars = new char[bytes.length * 2];
+		for (int j = 0; j < bytes.length; j++) {
+			int v = bytes[j] & 0xFF;
+			hexChars[j * 2] = HEX_ARRAY[v >>> 4];
+			hexChars[j * 2 + 1] = HEX_ARRAY[v & 0x0F];
+		}
+		return new String(hexChars);
 	}
 	
 	public static String bytesToHex(ByteBuf buf) {
-	    return bytesToHex(byteBufToArray(buf));
+		return bytesToHex(byteBufToArray(buf));
 	}
 	
 	public static byte[] byteBufToArray(ByteBuf buf) {
@@ -97,10 +98,10 @@ public final class Utils {
 	public static int abilityHash(String str) {
 		int v7 = 0;
 		int v8 = 0;
-	    while (v8 < str.length()) {
-	    	v7 = str.charAt(v8++) + 131 * v7;
-	    }
-	    return v7;
+		while (v8 < str.length()) {
+			v7 = str.charAt(v8++) + 131 * v7;
+		}
+		return v7;
 	}
 
 	/**
@@ -376,5 +377,36 @@ public final class Utils {
 		} catch (Exception ignored) {
 			return null;
 		}
+	}
+
+	/***
+	 * Draws a random element from the given list, following the given probability distribution, if given.
+	 * @param list The list from which to draw the element.
+	 * @param probabilities The probability distribution. This is given as a list of probabilities of the same length it `list`.
+	 * @return A randomly drawn element from the given list.
+	 */
+	public static <T> T drawRandomListElement(List<T> list, List<Integer> probabilities) {
+		// If we don't have a probability distribution, or the size of the distribution does not match
+		// the size of the list, we assume uniform distribution.
+		if (probabilities == null || probabilities.size() <= 1 || probabilities.size() != list.size()) {
+			int index = ThreadLocalRandom.current().nextInt(0, list.size());
+			return list.get(index);
+		}
+
+		// Otherwise, we roll with the given distribution.
+		int totalProbabilityMass = probabilities.stream().reduce(Integer::sum).get();
+		int roll = ThreadLocalRandom.current().nextInt(1, totalProbabilityMass + 1);
+
+		int currentTotalChance = 0;
+		for (int i = 0; i < list.size(); i++) {
+			currentTotalChance += probabilities.get(i);
+
+			if (roll <= currentTotalChance) {
+				return list.get(i);
+			}
+		}
+
+		// Should never happen.
+		return list.get(0);
 	}
 }
