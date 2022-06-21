@@ -29,9 +29,6 @@ public class Account {
 	private List<String> permissions;
     private Locale locale;
 
-	private int point;
-	private int awardTakenLevel;
-
 	private String banReason;
 	private int banEndTime;
 	private int banStartTime;
@@ -210,22 +207,6 @@ public class Account {
 
 	public boolean removePermission(String permission) {
 		return this.permissions.remove(permission);
-	}
-
-	public void setPoint(int point) {
-		this.point = point;
-	}
-
-	public int getPoint() {
-		return point;
-	}
-
-	public void setAwardTakenLevel(int level) {
-		this.awardTakenLevel = level;
-	}
-
-	public int getAwardTakenLevel() {
-		return awardTakenLevel;
 	}
 
 	// TODO make unique
