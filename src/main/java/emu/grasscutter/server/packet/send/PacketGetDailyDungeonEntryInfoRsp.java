@@ -28,7 +28,7 @@ public class PacketGetDailyDungeonEntryInfoRsp extends BasePacket {
         var dungeonEntryId = data.getDungeonEntryId();
         var id = data.getId();
 
-        //TODO: 来个爹把这块整活了吧 咚咚咚
+        // TODO
         DungeonEntryInfoOuterClass.DungeonEntryInfo dungeonEntryInfo
                 = DungeonEntryInfoOuterClass.DungeonEntryInfo.newBuilder().setDungeonId(130).build();
 
