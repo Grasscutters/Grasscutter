@@ -1,19 +1,27 @@
 package emu.grasscutter.data.excels;
 
-import java.util.List;
-
+import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.ItemUseData;
+import emu.grasscutter.game.inventory.EquipType;
+import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.props.FightProperty;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 
-@ResourceType(name = {"MaterialExcelConfigData.json", "WeaponExcelConfigData.json", "ReliquaryExcelConfigData.json"})
+import java.util.List;
+
+@ResourceType(name = {"MaterialExcelConfigData.json",
+    "WeaponExcelConfigData.json",
+    "ReliquaryExcelConfigData.json",
+    "HomeWorldFurnitureExcelConfigData.json"
+})
 public class ItemData extends GameResource {
-	
-	private int id;
-    private int stackLimit = 1;
+
+    private int id;
+    private final int stackLimit = 1;
     private int maxUseCount;
     private int rankLevel;
     private String effectName;
@@ -21,24 +29,24 @@ public class ItemData extends GameResource {
     private int rank;
     private int weight;
     private int gadgetId;
-    
+
     private int[] destroyReturnMaterial;
     private int[] destroyReturnMaterialCount;
 
     private List<ItemUseData> itemUse;
-    
+
     // Food
     private String foodQuality;
     private String useTarget;
     private String[] iseParam;
-    
+
     // String enums
     private String itemType;
     private String materialType;
     private String equipType;
     private String effectType;
     private String destroyRule;
-    
+
     // Relic
     private int mainPropDepotId;
     private int appendPropDepotId;
@@ -47,7 +55,7 @@ public class ItemData extends GameResource {
     private int[] addPropLevels;
     private int baseConvExp;
     private int maxLevel;
-    
+
     // Weapon
     private int weaponPromoteId;
     private int weaponBaseExp;
@@ -57,211 +65,241 @@ public class ItemData extends GameResource {
     private int[] awakenCosts;
     private int[] skillAffix;
     private WeaponProperty[] weaponProp;
-    
+
     // Hash
     private String icon;
     private long nameTextMapHash;
-    
+
     // Post load
-    private transient emu.grasscutter.game.inventory.MaterialType materialEnumType;
-    private transient emu.grasscutter.game.inventory.ItemType itemEnumType;
-    private transient emu.grasscutter.game.inventory.EquipType equipEnumType;
-    
+    private transient MaterialType materialEnumType;
+    private transient ItemType itemEnumType;
+    private transient EquipType equipEnumType;
+
     private IntSet addPropLevelSet;
-    
+
+    // Furniture
+    private int comfort;
+    private List<Integer> furnType;
+    private List<Integer> furnitureGadgetID;
+    @SerializedName("JFDLJGDFIGL")
+    private int roomSceneId;
+
     @Override
-	public int getId(){
+    public int getId() {
         return this.id;
     }
-    
-    public String getMaterialTypeString(){
+
+    public String getMaterialTypeString() {
         return this.materialType;
     }
-    
-    public int getStackLimit(){
+
+    public int getStackLimit() {
         return this.stackLimit;
     }
-    
-    public int getMaxUseCount(){
+
+    public int getMaxUseCount() {
         return this.maxUseCount;
     }
-    
-    public String getUseTarget(){
+
+    public String getUseTarget() {
         return this.useTarget;
     }
-    
-    public String[] getUseParam(){
+
+    public String[] getUseParam() {
         return this.iseParam;
     }
-    
-    public int getRankLevel(){
+
+    public int getRankLevel() {
         return this.rankLevel;
     }
-    
-    public String getFoodQuality(){
+
+    public String getFoodQuality() {
         return this.foodQuality;
     }
-    
-    public String getEffectName(){
+
+    public String getEffectName() {
         return this.effectName;
     }
-    
-    public int[] getSatiationParams(){
+
+    public int[] getSatiationParams() {
         return this.satiationParams;
     }
-    
-    public int[] getDestroyReturnMaterial(){
+
+    public int[] getDestroyReturnMaterial() {
         return this.destroyReturnMaterial;
     }
-    
-    public int[] getDestroyReturnMaterialCount(){
+
+    public int[] getDestroyReturnMaterialCount() {
         return this.destroyReturnMaterialCount;
     }
 
     public List<ItemUseData> getItemUse() {
-        return itemUse;
+        return this.itemUse;
     }
 
-    public long getNameTextMapHash(){
+    public long getNameTextMapHash() {
         return this.nameTextMapHash;
     }
-    
-    public String getIcon(){
+
+    public String getIcon() {
         return this.icon;
     }
-    
-    public String getItemTypeString(){
+
+    public String getItemTypeString() {
         return this.itemType;
     }
-    
-    public int getRank(){
+
+    public int getRank() {
         return this.rank;
     }
-    
-    public int getGadgetId() {
-		return gadgetId;
-    }
-    
-	public int getBaseConvExp() {
-		return baseConvExp;
-	}
-	
-	public int getMainPropDepotId() {
-		return mainPropDepotId;
-	}
-	
-	public int getAppendPropDepotId() {
-		return appendPropDepotId;
-	}
-	
-	public int getAppendPropNum() {
-		return appendPropNum;
-	}
-	
-	public int getSetId() {
-		return setId;
-	}
-	
-	public int getWeaponPromoteId() {
-		return weaponPromoteId;
-	}
-	
-	public int getWeaponBaseExp() {
-		return weaponBaseExp;
-	}
-	
-	public int getAwakenMaterial() {
-        	return awakenMaterial;
-    	}
-	
-	public int[] getAwakenCosts() {
-		return awakenCosts;
-	}
-	
-	public IntSet getAddPropLevelSet() {
-		return addPropLevelSet;
-	}
-	
-	public int[] getSkillAffix() {
-		return skillAffix;
-	}
-	
-	public WeaponProperty[] getWeaponProperties() {
-		return weaponProp;
-	}
-	
-	public int getMaxLevel() {
-		return maxLevel;
-	}
-	
-	public emu.grasscutter.game.inventory.ItemType getItemType() {
-    	return this.itemEnumType;
-    }
-    
-    public emu.grasscutter.game.inventory.MaterialType getMaterialType() {
-    	return this.materialEnumType;
-    }
-    
-    public emu.grasscutter.game.inventory.EquipType getEquipType() {
-    	return this.equipEnumType;
-    }
-    
-    public boolean canAddRelicProp(int level) {
-    	return this.addPropLevelSet != null & this.addPropLevelSet.contains(level);
-    }
-    
-	public boolean isEquip() {
-		return this.itemEnumType == emu.grasscutter.game.inventory.ItemType.ITEM_RELIQUARY || this.itemEnumType == emu.grasscutter.game.inventory.ItemType.ITEM_WEAPON;
-	}
-    
-    @Override
-	public void onLoad() {
-    	this.itemEnumType = emu.grasscutter.game.inventory.ItemType.getTypeByName(getItemTypeString());
-    	this.materialEnumType = emu.grasscutter.game.inventory.MaterialType.getTypeByName(getMaterialTypeString());
 
-		if (this.itemEnumType == emu.grasscutter.game.inventory.ItemType.ITEM_RELIQUARY) {
-			this.equipEnumType = emu.grasscutter.game.inventory.EquipType.getTypeByName(this.equipType);
-			if (this.addPropLevels != null && this.addPropLevels.length > 0) {
-				this.addPropLevelSet = new IntOpenHashSet(this.addPropLevels);
-			}
-		} else if (this.itemEnumType == emu.grasscutter.game.inventory.ItemType.ITEM_WEAPON) {
-			this.equipEnumType = emu.grasscutter.game.inventory.EquipType.EQUIP_WEAPON;
-		} else {
-			this.equipEnumType = emu.grasscutter.game.inventory.EquipType.EQUIP_NONE;
-		}
-		
-		if (this.getWeaponProperties() != null) {
-			for (WeaponProperty weaponProperty : this.getWeaponProperties()) {
-				weaponProperty.onLoad();
-			}
-		}
+    public int getGadgetId() {
+        return this.gadgetId;
     }
-    
+
+    public int getBaseConvExp() {
+        return this.baseConvExp;
+    }
+
+    public int getMainPropDepotId() {
+        return this.mainPropDepotId;
+    }
+
+    public int getAppendPropDepotId() {
+        return this.appendPropDepotId;
+    }
+
+    public int getAppendPropNum() {
+        return this.appendPropNum;
+    }
+
+    public int getSetId() {
+        return this.setId;
+    }
+
+    public int getWeaponPromoteId() {
+        return this.weaponPromoteId;
+    }
+
+    public int getWeaponBaseExp() {
+        return this.weaponBaseExp;
+    }
+
+    public int getAwakenMaterial() {
+        return this.awakenMaterial;
+    }
+
+    public int[] getAwakenCosts() {
+        return this.awakenCosts;
+    }
+
+    public IntSet getAddPropLevelSet() {
+        return this.addPropLevelSet;
+    }
+
+    public int[] getSkillAffix() {
+        return this.skillAffix;
+    }
+
+    public WeaponProperty[] getWeaponProperties() {
+        return this.weaponProp;
+    }
+
+    public int getMaxLevel() {
+        return this.maxLevel;
+    }
+
+    public int getComfort() {
+        return this.comfort;
+    }
+
+    public List<Integer> getFurnType() {
+        return this.furnType;
+    }
+
+    public List<Integer> getFurnitureGadgetID() {
+        return this.furnitureGadgetID;
+    }
+
+    public int getRoomSceneId() {
+        return this.roomSceneId;
+    }
+
+    public ItemType getItemType() {
+        return this.itemEnumType;
+    }
+
+    public MaterialType getMaterialType() {
+        return this.materialEnumType;
+    }
+
+    public EquipType getEquipType() {
+        return this.equipEnumType;
+    }
+
+    public boolean canAddRelicProp(int level) {
+        return this.addPropLevelSet != null && this.addPropLevelSet.contains(level);
+    }
+
+    public boolean isEquip() {
+        return this.itemEnumType == ItemType.ITEM_RELIQUARY || this.itemEnumType == ItemType.ITEM_WEAPON;
+    }
+
+    @Override
+    public void onLoad() {
+        this.itemEnumType = ItemType.getTypeByName(this.getItemTypeString());
+        this.materialEnumType = MaterialType.getTypeByName(this.getMaterialTypeString());
+
+        if (this.itemEnumType == ItemType.ITEM_RELIQUARY) {
+            this.equipEnumType = EquipType.getTypeByName(this.equipType);
+            if (this.addPropLevels != null && this.addPropLevels.length > 0) {
+                this.addPropLevelSet = new IntOpenHashSet(this.addPropLevels);
+            }
+        } else if (this.itemEnumType == ItemType.ITEM_WEAPON) {
+            this.equipEnumType = EquipType.EQUIP_WEAPON;
+        } else {
+            this.equipEnumType = EquipType.EQUIP_NONE;
+        }
+
+        if (this.getWeaponProperties() != null) {
+            for (WeaponProperty weaponProperty : this.getWeaponProperties()) {
+                weaponProperty.onLoad();
+            }
+        }
+
+        if (this.getFurnType() != null) {
+            this.furnType = this.furnType.stream().filter(x -> x > 0).toList();
+        }
+        if (this.getFurnitureGadgetID() != null) {
+            this.furnitureGadgetID = this.furnitureGadgetID.stream().filter(x -> x > 0).toList();
+        }
+    }
+
     public static class WeaponProperty {
-    	private FightProperty fightProp;
+        private FightProperty fightProp;
         private String propType;
         private float initValue;
         private String type;
 
-        public String getPropType(){
+        public String getPropType() {
             return this.propType;
         }
-        
-        public float getInitValue(){
+
+        public float getInitValue() {
             return this.initValue;
         }
-        
-        public String getType(){
+
+        public String getType() {
             return this.type;
         }
 
-		public FightProperty getFightProp() {
-			return fightProp;
-		}
+        public FightProperty getFightProp() {
+            return this.fightProp;
+        }
 
-		public void onLoad() {
-			this.fightProp = FightProperty.getPropByName(propType);
-		}
-        
+        public void onLoad() {
+            this.fightProp = FightProperty.getPropByName(this.propType);
+        }
+
     }
 }

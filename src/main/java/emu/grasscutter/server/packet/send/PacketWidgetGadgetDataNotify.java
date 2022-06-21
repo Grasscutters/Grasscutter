@@ -13,13 +13,13 @@ public class PacketWidgetGadgetDataNotify extends BasePacket {
         super(PacketOpcodes.WidgetGadgetDataNotify);
 
         WidgetGadgetDataNotifyOuterClass.WidgetGadgetDataNotify proto = WidgetGadgetDataNotifyOuterClass.WidgetGadgetDataNotify.newBuilder()
-                .setWidgetGadgetData(
-                        WidgetGadgetDataOuterClass.WidgetGadgetData.newBuilder()
-                                .setGadgetId(gadgetId)
-                                .addAllGadgetEntityIdList(gadgetEntityIdList)
-                                .build()
-                )
-                .build();
+            .setWidgetGadgetData(
+                WidgetGadgetDataOuterClass.WidgetGadgetData.newBuilder()
+                    .setGadgetId(gadgetId)
+                    .addAllGadgetEntityIdList(gadgetEntityIdList)
+                    .build()
+            )
+            .build();
 
         this.setData(proto);
     }

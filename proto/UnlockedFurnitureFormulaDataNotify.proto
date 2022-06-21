@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4680
+// EnetChannelId: 0
+// EnetIsReliable: true
+message UnlockedFurnitureFormulaDataNotify {
+	bool is_all = 14;
+	repeated uint32 furniture_id_list = 7;
+}

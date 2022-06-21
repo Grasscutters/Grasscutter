@@ -5,14 +5,14 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.Configuration.GAME_OPTIONS;
 
 @Command(label = "team", usage = "team <add|remove|set> [avatarId,...] [index|first|last|index-index,...]",
-permission = "player.team", permissionTargeted = "player.team.others", description = "commands.team.description")
+    permission = "player.team", permissionTargeted = "player.team.others", description = "commands.team.description")
 public final class TeamCommand implements CommandHandler {
     private static final int BASE_AVATARID = 10000000;
 
@@ -25,15 +25,15 @@ public final class TeamCommand implements CommandHandler {
 
         switch (args.get(0)) {
             case "add":
-                if (!addCommand(sender, targetPlayer, args)) return;
+                if (!this.addCommand(sender, targetPlayer, args)) return;
                 break;
 
             case "remove":
-                if (!removeCommand(sender, targetPlayer, args)) return;
+                if (!this.removeCommand(sender, targetPlayer, args)) return;
                 break;
 
             case "set":
-                if (!setCommand(sender, targetPlayer, args)) return;
+                if (!this.setCommand(sender, targetPlayer, args)) return;
                 break;
 
             default:
@@ -43,7 +43,7 @@ public final class TeamCommand implements CommandHandler {
         }
 
         targetPlayer.getTeamManager().updateTeamEntities(
-                new PacketChangeMpTeamAvatarRsp(targetPlayer, targetPlayer.getTeamManager().getCurrentTeamInfo()));
+            new PacketChangeMpTeamAvatarRsp(targetPlayer, targetPlayer.getTeamManager().getCurrentTeamInfo()));
     }
 
     private boolean addCommand(Player sender, Player targetPlayer, List<String> args) {
@@ -57,7 +57,7 @@ public final class TeamCommand implements CommandHandler {
         if (args.size() > 2) {
             try {
                 index = Integer.parseInt(args.get(2)) - 1;
-				if (index < 0) index = 0;
+                if (index < 0) index = 0;
             } catch (Exception e) {
                 CommandHandler.sendTranslatedMessage(sender, "commands.team.invalid_index");
                 return false;
@@ -72,9 +72,9 @@ public final class TeamCommand implements CommandHandler {
             return false;
         }
 
-        for (var avatarId: avatarIds) {
+        for (var avatarId : avatarIds) {
             int id = Integer.parseInt(avatarId);
-            var success = addAvatar(sender, targetPlayer, id, index);
+            var success = this.addAvatar(sender, targetPlayer, id, index);
             if (index > 0) ++index;
         }
         return true;
@@ -93,16 +93,16 @@ public final class TeamCommand implements CommandHandler {
         var metaIndexList = args.get(1).split(",");
         var indexes = new HashSet<Integer>();
         var ignoreList = new ArrayList<Integer>();
-        for (var metaIndex: metaIndexList) {
+        for (var metaIndex : metaIndexList) {
             // step 1: parse metaIndex to indexes
-            var subIndexes = transformToIndexes(metaIndex, avatarCount);
+            var subIndexes = this.transformToIndexes(metaIndex, avatarCount);
             if (subIndexes == null) {
                 CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_to_parse_index", metaIndex);
                 continue;
             }
 
             // step 2: get all of the avatar id through indexes
-            for (var avatarIndex: subIndexes) {
+            for (var avatarIndex : subIndexes) {
                 try {
                     indexes.add(currentTeamAvatars.get(avatarIndex - 1));
                 } catch (Exception e) {
@@ -141,7 +141,7 @@ public final class TeamCommand implements CommandHandler {
         try {
             index = Integer.parseInt(args.get(1)) - 1;
             if (index < 0) index = 0;
-        } catch(Exception e) {
+        } catch (Exception e) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_to_parse_index", args.get(1));
             return false;
         }
@@ -154,7 +154,7 @@ public final class TeamCommand implements CommandHandler {
         int avatarId;
         try {
             avatarId = Integer.parseInt(args.get(2));
-        } catch(Exception e) {
+        } catch (Exception e) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_parse_avatar_id", args.get(2));
             return false;
         }
@@ -162,10 +162,10 @@ public final class TeamCommand implements CommandHandler {
             avatarId += BASE_AVATARID;
         }
 
-		if (currentTeamAvatars.contains(avatarId)) {
+        if (currentTeamAvatars.contains(avatarId)) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_already_in_team", avatarId);
             return false;
-		}
+        }
 
         if (!targetPlayer.getAvatars().hasAvatar(avatarId)) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_not_found", avatarId);
@@ -181,10 +181,10 @@ public final class TeamCommand implements CommandHandler {
             avatarId += BASE_AVATARID;
         }
         var currentTeamAvatars = targetPlayer.getTeamManager().getCurrentTeamInfo().getAvatars();
-		if (currentTeamAvatars.contains(avatarId)) {
+        if (currentTeamAvatars.contains(avatarId)) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_already_in_team", avatarId);
             return false;
-		}
+        }
         if (!targetPlayer.getAvatars().hasAvatar(avatarId)) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_not_found", avatarId);
             return false;

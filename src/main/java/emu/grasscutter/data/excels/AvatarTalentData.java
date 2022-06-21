@@ -1,15 +1,16 @@
 package emu.grasscutter.data.excels;
 
-import java.util.ArrayList;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.FightPropData;
 
+import java.util.ArrayList;
+
 @ResourceType(name = "AvatarTalentExcelConfigData.json", loadPriority = LoadPriority.HIGHEST)
 public class AvatarTalentData extends GameResource {
-	private int talentId;
-	private int prevTalent;
+    private int talentId;
+    private int prevTalent;
     private long nameTextMapHash;
     private String icon;
     private int mainCostItemId;
@@ -19,51 +20,51 @@ public class AvatarTalentData extends GameResource {
     private float[] paramList;
 
     @Override
-	public int getId(){
+    public int getId() {
         return this.talentId;
     }
-    
+
     public int PrevTalent() {
-		return prevTalent;
-	}
-	
-	public long getNameTextMapHash() {
-		return nameTextMapHash;
-	}
+        return this.prevTalent;
+    }
 
-	public String getIcon() {
-		return icon;
-	}
+    public long getNameTextMapHash() {
+        return this.nameTextMapHash;
+    }
 
-	public int getMainCostItemId() {
-		return mainCostItemId;
-	}
+    public String getIcon() {
+        return this.icon;
+    }
 
-	public int getMainCostItemCount() {
-		return mainCostItemCount;
-	}
+    public int getMainCostItemId() {
+        return this.mainCostItemId;
+    }
 
-	public String getOpenConfig() {
-		return openConfig;
-	}
+    public int getMainCostItemCount() {
+        return this.mainCostItemCount;
+    }
 
-	public FightPropData[] getAddProps() {
-		return addProps;
-	}
+    public String getOpenConfig() {
+        return this.openConfig;
+    }
 
-	public float[] getParamList() {
-		return paramList;
-	}
+    public FightPropData[] getAddProps() {
+        return this.addProps;
+    }
 
-	@Override
-	public void onLoad() {
-		ArrayList<FightPropData> parsed = new ArrayList<FightPropData>(getAddProps().length);
-		for (FightPropData prop : getAddProps()) {
-			if (prop.getPropType() != null || prop.getValue() == 0f) {
-				prop.onLoad();
-				parsed.add(prop);
-			}
-		}
-		this.addProps = parsed.toArray(new FightPropData[parsed.size()]);
-	}
+    public float[] getParamList() {
+        return this.paramList;
+    }
+
+    @Override
+    public void onLoad() {
+        ArrayList<FightPropData> parsed = new ArrayList<FightPropData>(this.getAddProps().length);
+        for (FightPropData prop : this.getAddProps()) {
+            if (prop.getPropType() != null || prop.getValue() == 0f) {
+                prop.onLoad();
+                parsed.add(prop);
+            }
+        }
+        this.addProps = parsed.toArray(new FightPropData[parsed.size()]);
+    }
 }

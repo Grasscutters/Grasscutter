@@ -1,33 +1,33 @@
 <Configuration>
-  <variable name="LOG_LEVEL" value="${LOG_LEVEL:-INFO}" />
+    <variable name="LOG_LEVEL" value="${LOG_LEVEL:-INFO}"/>
 
-  <appender name="STDOUT" class="emu.grasscutter.utils.JlineLogbackAppender">
-    <encoder>
-      <pattern>%d{HH:mm:ss} &lt;%highlight(%level):%gray(%class{0})&gt; %msg%n</pattern>
-    </encoder>
-  </appender>
-  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>logs/latest.log</file>
-    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>logs/log.%d{yyyy-MM-dd}_%d{HH}.log.gz</fileNamePattern>
-      <maxHistory>24</maxHistory>
-    </rollingPolicy>
-    <encoder>
-      <pattern>%d{yyyy-MM-dd'T'HH:mm:ss'Z'} &lt;%level:%class&gt; %m%n</pattern>
-    </encoder>
-  </appender>
-  <appender name="SERVEREVENT" class="emu.grasscutter.utils.ServerLogEventAppender">
-    <encoder>
-      <pattern>%d{HH:mm:ss} &lt;%highlight(%level):%gray(%class{0})&gt; %msg%n</pattern>
-    </encoder>
-  </appender>
+    <appender name="STDOUT" class="emu.grasscutter.utils.JlineLogbackAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss} &lt;%highlight(%level):%gray(%class{0})&gt; %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/latest.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/log.%d{yyyy-MM-dd}_%d{HH}.log.gz</fileNamePattern>
+            <maxHistory>24</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss'Z'} &lt;%level:%class&gt; %m%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SERVEREVENT" class="emu.grasscutter.utils.ServerLogEventAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss} &lt;%highlight(%level):%gray(%class{0})&gt; %msg%n</pattern>
+        </encoder>
+    </appender>
 
-  <logger name="org.reflections" level="OFF" />
-  <logger name="emu.grasscutter" level="${LOG_LEVEL}" />
+    <logger name="org.reflections" level="OFF"/>
+    <logger name="emu.grasscutter" level="${LOG_LEVEL}"/>
 
-  <root level="INFO">
-    <appender-ref ref="STDOUT" />
-    <appender-ref ref="FILE" />
-    <appender-ref ref="SERVEREVENT" />
-  </root>
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="SERVEREVENT"/>
+    </root>
 </Configuration>

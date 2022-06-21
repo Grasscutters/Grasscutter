@@ -1,7 +1,6 @@
 package emu.grasscutter.server.event.internal;
 
 import ch.qos.logback.classic.spi.ILoggingEvent;
-import ch.qos.logback.core.AppenderBase;
 import emu.grasscutter.server.event.types.ServerEvent;
 
 public class ServerLogEvent extends ServerEvent {
@@ -14,9 +13,11 @@ public class ServerLogEvent extends ServerEvent {
         this.consoleMessage = consoleMessage;
     }
 
-    public ILoggingEvent getLoggingEvent() { return loggingEvent; }
+    public ILoggingEvent getLoggingEvent() {
+        return this.loggingEvent;
+    }
 
     public String getConsoleMessage() {
-        return consoleMessage;
+        return this.consoleMessage;
     }
 }

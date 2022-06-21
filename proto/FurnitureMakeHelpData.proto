@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message FurnitureMakeHelpData {
+	uint32 uid = 1;
+	uint32 times = 2;
+}

@@ -777,6 +777,9 @@ public class PacketOpcodes {
     public static final int HomeSceneJumpRsp = 4570;
     public static final int HomeTransferReq = 4880;
     public static final int HomeTransferRsp = 4767;
+    public static final int HomeUnknown1Notify = 4528;
+    public static final int HomeUnknown2Req = 4857;
+    public static final int HomeUnknown2Rsp = 4670;
     public static final int HomeUpdateArrangementInfoReq = 4472;
     public static final int HomeUpdateArrangementInfoRsp = 4822;
     public static final int HomeUpdateFishFarmingInfoReq = 4604;
@@ -1515,8 +1518,8 @@ public class PacketOpcodes {
 
     // Unknown
 
-    public static final HashSet<Integer> BANNED_PACKETS = new HashSet<Integer>() {{
-        add(PacketOpcodes.WindSeedClientNotify);
-        add(PacketOpcodes.PlayerLuaShellNotify);
+    public static final HashSet<Integer> BANNED_PACKETS = new HashSet<>() {{
+        this.add(PacketOpcodes.WindSeedClientNotify);
+        this.add(PacketOpcodes.PlayerLuaShellNotify);
     }};
 }

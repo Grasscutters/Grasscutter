@@ -10,12 +10,12 @@ public class PacketBuyGoodsRsp extends BasePacket {
         super(PacketOpcodes.BuyGoodsRsp);
 
         BuyGoodsRspOuterClass.BuyGoodsRsp buyGoodsRsp = BuyGoodsRspOuterClass.BuyGoodsRsp.newBuilder()
-                .setShopType(shopType)
-                .setBuyCount(boughtNum)
-                .addGoodsList(ShopGoodsOuterClass.ShopGoods.newBuilder()
-                        .mergeFrom(sg)
-                        .setBoughtNum(boughtNum)
-                ).build();
+            .setShopType(shopType)
+            .setBuyCount(boughtNum)
+            .addGoodsList(ShopGoodsOuterClass.ShopGoods.newBuilder()
+                .mergeFrom(sg)
+                .setBoughtNum(boughtNum)
+            ).build();
 
         this.setData(buyGoodsRsp);
     }

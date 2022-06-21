@@ -9,8 +9,8 @@ public class TowerDungeonSettleListener implements DungeonSettleListener {
 
     @Override
     public void onDungeonSettle(Scene scene) {
-        if(scene.getScriptManager().getVariables().containsKey("stage")
-                && scene.getScriptManager().getVariables().get("stage") == 1){
+        if (scene.getScriptManager().getVariables().containsKey("stage")
+            && scene.getScriptManager().getVariables().get("stage") == 1) {
             return;
         }
         scene.setAutoCloseTime(Utils.getCurrentSeconds() + 1000);
@@ -18,17 +18,17 @@ public class TowerDungeonSettleListener implements DungeonSettleListener {
 
         towerManager.notifyCurLevelRecordChangeWhenDone(3);
         scene.broadcastPacket(new PacketTowerFloorRecordChangeNotify(
-                towerManager.getCurrentFloorId(),
-                3,
-                towerManager.canEnterScheduleFloor()
+            towerManager.getCurrentFloorId(),
+            3,
+            towerManager.canEnterScheduleFloor()
         ));
 
         scene.broadcastPacket(new PacketDungeonSettleNotify(
-                scene.getChallenge(),
-                towerManager.hasNextFloor(),
-                towerManager.hasNextLevel(),
-                towerManager.hasNextLevel() ? 0 : towerManager.getNextFloorId()
-                ));
+            scene.getChallenge(),
+            towerManager.hasNextFloor(),
+            towerManager.hasNextLevel(),
+            towerManager.hasNextLevel() ? 0 : towerManager.getNextFloorId()
+        ));
 
     }
 }

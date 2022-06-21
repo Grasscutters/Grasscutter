@@ -1,7 +1,5 @@
 package emu.grasscutter.server.packet.recv;
 
-import java.math.BigInteger;
-
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;

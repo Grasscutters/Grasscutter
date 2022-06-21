@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "HomeBlockSubFieldData.proto";
+import "Vector.proto";
+
+message HomeBlockFieldData {
+	uint32 guid = 1;
+	uint32 furniture_id = 2;
+	Vector pos = 3;
+	Vector rot = 4;
+	repeated HomeBlockSubFieldData sub_field_list = 5;
+}

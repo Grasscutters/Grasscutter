@@ -7,14 +7,14 @@ import emu.grasscutter.utils.Position;
 
 public class PacketPersonalSceneJumpRsp extends BasePacket {
 
-	public PacketPersonalSceneJumpRsp(int sceneId, Position pos) {
-		super(PacketOpcodes.PersonalSceneJumpRsp);
+    public PacketPersonalSceneJumpRsp(int sceneId, Position pos) {
+        super(PacketOpcodes.PersonalSceneJumpRsp);
 
-		PersonalSceneJumpRsp proto = PersonalSceneJumpRsp.newBuilder()
-				.setDestSceneId(sceneId)
-				.setDestPos(pos.toProto())
-				.build();
-		
-		this.setData(proto);
-	}
+        PersonalSceneJumpRsp proto = PersonalSceneJumpRsp.newBuilder()
+            .setDestSceneId(sceneId)
+            .setDestPos(pos.toProto())
+            .build();
+
+        this.setData(proto);
+    }
 }

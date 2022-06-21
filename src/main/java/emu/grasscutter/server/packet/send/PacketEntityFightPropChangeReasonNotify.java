@@ -12,61 +12,61 @@ import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import java.util.List;
 
 public class PacketEntityFightPropChangeReasonNotify extends BasePacket {
-	
+
     public PacketEntityFightPropChangeReasonNotify(GameEntity entity, FightProperty prop, Float value, List<Integer> param, PropChangeReason reason, ChangeHpReason changeHpReason) {
         super(PacketOpcodes.EntityFightPropChangeReasonNotify);
-        
+
         EntityFightPropChangeReasonNotify.Builder proto = EntityFightPropChangeReasonNotify.newBuilder()
-                .setEntityId(entity.getId())
-                .setPropType(prop.getId())
-                .setPropDelta(value)
-                .setReason(reason)
-                .setChangeHpReason(changeHpReason);
-        
-        for(int p : param){
+            .setEntityId(entity.getId())
+            .setPropType(prop.getId())
+            .setPropDelta(value)
+            .setReason(reason)
+            .setChangeHpReason(changeHpReason);
+
+        for (int p : param) {
             proto.addParamList(p);
         }
-        
+
         this.setData(proto);
     }
-    
+
     public PacketEntityFightPropChangeReasonNotify(GameEntity entity, FightProperty prop, Float value, PropChangeReason reason, ChangeHpReason changeHpReason) {
         super(PacketOpcodes.EntityFightPropChangeReasonNotify);
-        
+
         EntityFightPropChangeReasonNotify proto = EntityFightPropChangeReasonNotify.newBuilder()
-                .setEntityId(entity.getId())
-                .setPropType(prop.getId())
-                .setPropDelta(value)
-                .setReason(reason)
-                .setChangeHpReason(changeHpReason)
-                .build();
-        
+            .setEntityId(entity.getId())
+            .setPropType(prop.getId())
+            .setPropDelta(value)
+            .setReason(reason)
+            .setChangeHpReason(changeHpReason)
+            .build();
+
         this.setData(proto);
     }
-    
+
     public PacketEntityFightPropChangeReasonNotify(GameEntity entity, FightProperty prop, Float value, PropChangeReason reason) {
         super(PacketOpcodes.EntityFightPropChangeReasonNotify);
-        
+
         EntityFightPropChangeReasonNotify proto = EntityFightPropChangeReasonNotify.newBuilder()
-                .setEntityId(entity.getId())
-                .setPropType(prop.getId())
-                .setPropDelta(value)
-                .setReason(reason)
-                .build();
-        
+            .setEntityId(entity.getId())
+            .setPropType(prop.getId())
+            .setPropDelta(value)
+            .setReason(reason)
+            .build();
+
         this.setData(proto);
     }
 
     public PacketEntityFightPropChangeReasonNotify(GameEntity entity, FightProperty prop, Float value, ChangeEnergyReason reason) {
         super(PacketOpcodes.EntityFightPropChangeReasonNotify);
-        
+
         EntityFightPropChangeReasonNotify proto = EntityFightPropChangeReasonNotify.newBuilder()
-                .setEntityId(entity.getId())
-                .setPropType(prop.getId())
-                .setPropDelta(value)
-                .setChangeEnergyReson(reason)
-                .build();
-        
+            .setEntityId(entity.getId())
+            .setPropType(prop.getId())
+            .setPropDelta(value)
+            .setChangeEnergyReson(reason)
+            .build();
+
         this.setData(proto);
     }
 }

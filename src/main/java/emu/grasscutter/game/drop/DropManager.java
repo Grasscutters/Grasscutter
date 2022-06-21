@@ -25,13 +25,13 @@ import java.util.List;
 
 public class DropManager {
     public GameServer getGameServer() {
-        return gameServer;
+        return this.gameServer;
     }
 
     private final GameServer gameServer;
 
     public Int2ObjectMap<List<DropData>> getDropData() {
-        return dropData;
+        return this.dropData;
     }
 
     private final Int2ObjectMap<List<DropData>> dropData;
@@ -44,11 +44,11 @@ public class DropManager {
 
     public synchronized void load() {
         try (Reader fileReader = new InputStreamReader(DataLoader.load("Drop.json"))) {
-            getDropData().clear();
+            this.getDropData().clear();
             List<DropInfo> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, DropInfo.class).getType());
-            if(banners.size() > 0) {
+            if (banners.size() > 0) {
                 for (DropInfo di : banners) {
-                    getDropData().put(di.getMonsterId(), di.getDropDataList());
+                    this.getDropData().put(di.getMonsterId(), di.getDropDataList());
                 }
                 Grasscutter.getLogger().info("Drop data successfully loaded.");
             } else {
@@ -58,6 +58,7 @@ public class DropManager {
             Grasscutter.getLogger().error("Unable to load drop data.", e);
         }
     }
+
     private void addDropEntity(DropData dd, Scene dropScene, ItemData itemData, Position pos, int num, Player target) {
         if (!dd.isGive() && (itemData.getItemType() != ItemType.ITEM_VIRTUAL || itemData.getGadgetId() != 0)) {
             EntityItem entity = new EntityItem(dropScene, target, itemData, pos, num, dd.isShare());
@@ -89,24 +90,24 @@ public class DropManager {
                 for (int i = 0; i < num; i++) {
                     float range = (5f + (.1f * num));
                     Position pos = em.getPosition().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
-                    addDropEntity(dd, em.getScene(), itemData, pos, num, gp);
+                    this.addDropEntity(dd, em.getScene(), itemData, pos, num, gp);
                 }
             } else {
                 Position pos = em.getPosition().clone().addY(3f);
-                addDropEntity(dd, em.getScene(), itemData, pos, num, gp);
+                this.addDropEntity(dd, em.getScene(), itemData, pos, num, gp);
             }
         }
     }
 
     public void callDrop(EntityMonster em) {
         int id = em.getMonsterData().getId();
-        if (getDropData().containsKey(id)) {
-            for (DropData dd : getDropData().get(id)) {
+        if (this.getDropData().containsKey(id)) {
+            for (DropData dd : this.getDropData().get(id)) {
                 if (dd.isShare())
-                    processDrop(dd, em, null);
+                    this.processDrop(dd, em, null);
                 else {
                     for (Player gp : em.getScene().getPlayers()) {
-                        processDrop(dd, em, gp);
+                        this.processDrop(dd, em, gp);
                     }
                 }
             }

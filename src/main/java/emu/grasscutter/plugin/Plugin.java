@@ -10,14 +10,14 @@ import java.io.File;
 import java.io.InputStream;
 import java.net.URLClassLoader;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.Configuration.PLUGIN;
 
 /**
  * The base class for all plugins to extend.
  */
 public abstract class Plugin {
     private final ServerHook server = ServerHook.getInstance();
-    
+
     private PluginIdentifier identifier;
     private URLClassLoader classLoader;
     private File dataFolder;
@@ -25,22 +25,23 @@ public abstract class Plugin {
 
     /**
      * This method is reflected into.
-     * 
+     * <p>
      * Set plugin variables.
+     *
      * @param identifier The plugin's identifier.
      */
     private void initializePlugin(PluginIdentifier identifier, URLClassLoader classLoader) {
-        if(this.identifier != null) {
+        if (this.identifier != null) {
             Grasscutter.getLogger().warn(this.identifier.name + " had a reinitialization attempt.");
             return;
         }
-        
+
         this.identifier = identifier;
         this.classLoader = classLoader;
         this.dataFolder = new File(PLUGIN(), identifier.name);
         this.logger = LoggerFactory.getLogger(identifier.name);
-        
-        if(!this.dataFolder.exists() && !this.dataFolder.mkdirs()) {
+
+        if (!this.dataFolder.exists() && !this.dataFolder.mkdirs()) {
             Grasscutter.getLogger().warn("Failed to create plugin data folder for " + this.identifier.name);
             return;
         }
@@ -48,9 +49,10 @@ public abstract class Plugin {
 
     /**
      * The plugin's identifier instance.
+     *
      * @return An instance of {@link PluginIdentifier}.
      */
-    public final PluginIdentifier getIdentifier(){
+    public final PluginIdentifier getIdentifier() {
         return this.identifier;
     }
 
@@ -77,6 +79,7 @@ public abstract class Plugin {
 
     /**
      * Returns the server that initialized the plugin.
+     *
      * @return A server instance.
      */
     public final GameServer getServer() {
@@ -85,6 +88,7 @@ public abstract class Plugin {
 
     /**
      * Returns an input stream for a resource in the JAR file.
+     *
      * @param resourceName The name of the resource.
      * @return An input stream.
      */
@@ -94,6 +98,7 @@ public abstract class Plugin {
 
     /**
      * Returns a directory where plugins can store data files.
+     *
      * @return A directory on the file system.
      */
     public final File getDataFolder() {
@@ -102,6 +107,7 @@ public abstract class Plugin {
 
     /**
      * Returns the server hook.
+     *
      * @return A server hook singleton.
      */
     public final ServerHook getHandle() {
@@ -110,16 +116,22 @@ public abstract class Plugin {
 
     /**
      * Returns the plugin's logger.
+     *
      * @return A SLF4J logger.
      */
     public final Logger getLogger() {
         return this.logger;
     }
-    
+
     /* Called when the plugin is first loaded. */
-    public void onLoad() { }
+    public void onLoad() {
+    }
+
     /* Called after (most of) the server enables. */
-    public void onEnable() { }
+    public void onEnable() {
+    }
+
     /* Called before the server disables. */
-    public void onDisable() { }
+    public void onDisable() {
+    }
 }

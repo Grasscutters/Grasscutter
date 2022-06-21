@@ -1,16 +1,16 @@
 package emu.grasscutter.data.excels;
 
-import java.util.List;
-
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.game.props.ElementType;
 
+import java.util.List;
+
 @ResourceType(name = "AvatarSkillExcelConfigData.json", loadPriority = LoadPriority.HIGHEST)
 public class AvatarSkillData extends GameResource {
-	private int id;
-    private	float cdTime;
+    private int id;
+    private float cdTime;
     private int costElemVal;
     private int maxChargeNum;
     private int triggerID;
@@ -18,68 +18,68 @@ public class AvatarSkillData extends GameResource {
     private int proudSkillGroupId;
     private ElementType costElemType;
     private List<Float> lockWeightParams;
-    
+
     private long nameTextMapHash;
-    
+
     private String abilityName;
     private String lockShape;
     private String globalValueKey;
 
     @Override
-	public int getId(){
+    public int getId() {
         return this.id;
     }
 
-	public float getCdTime() {
-		return cdTime;
-	}
+    public float getCdTime() {
+        return this.cdTime;
+    }
 
-	public int getCostElemVal() {
-		return costElemVal;
-	}
+    public int getCostElemVal() {
+        return this.costElemVal;
+    }
 
-	public int getMaxChargeNum() {
-		return maxChargeNum;
-	}
+    public int getMaxChargeNum() {
+        return this.maxChargeNum;
+    }
 
-	public int getTriggerID() {
-		return triggerID;
-	}
+    public int getTriggerID() {
+        return this.triggerID;
+    }
 
-	public boolean isIsAttackCameraLock() {
-		return isAttackCameraLock;
-	}
+    public boolean isIsAttackCameraLock() {
+        return this.isAttackCameraLock;
+    }
 
-	public int getProudSkillGroupId() {
-		return proudSkillGroupId;
-	}
+    public int getProudSkillGroupId() {
+        return this.proudSkillGroupId;
+    }
 
-	public ElementType getCostElemType() {
-		return costElemType;
-	}
+    public ElementType getCostElemType() {
+        return this.costElemType;
+    }
 
-	public List<Float> getLockWeightParams() {
-		return lockWeightParams;
-	}
+    public List<Float> getLockWeightParams() {
+        return this.lockWeightParams;
+    }
 
-	public long getNameTextMapHash() {
-		return nameTextMapHash;
-	}
+    public long getNameTextMapHash() {
+        return this.nameTextMapHash;
+    }
 
-	public String getAbilityName() {
-		return abilityName;
-	}
+    public String getAbilityName() {
+        return this.abilityName;
+    }
 
-	public String getLockShape() {
-		return lockShape;
-	}
+    public String getLockShape() {
+        return this.lockShape;
+    }
 
-	public String getGlobalValueKey() {
-		return globalValueKey;
-	}
-	
-	@Override
-	public void onLoad() {
-		
-	}
+    public String getGlobalValueKey() {
+        return this.globalValueKey;
+    }
+
+    @Override
+    public void onLoad() {
+
+    }
 }

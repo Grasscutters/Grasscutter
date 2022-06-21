@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "DailyDungeonEntryInfo.proto";
+
+// CmdId: 925
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetDailyDungeonEntryInfoRsp {
+	int32 retcode = 9;
+	repeated DailyDungeonEntryInfo daily_dungeon_info_list = 4;
+}

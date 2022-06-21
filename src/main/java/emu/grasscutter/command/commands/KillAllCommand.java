@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.entity.EntityMonster;
@@ -40,8 +39,8 @@ public final class KillAllCommand implements CommandHandler {
         // Separate into list to avoid concurrency issue
         final Scene sceneF = scene;
         List<GameEntity> toKill = sceneF.getEntities().values().stream()
-                .filter(entity -> entity instanceof EntityMonster)
-                .toList();
+            .filter(entity -> entity instanceof EntityMonster)
+            .toList();
         toKill.forEach(entity -> sceneF.killEntity(entity, 0));
         CommandHandler.sendMessage(sender, translate(sender, "commands.killall.kill_monsters_in_scene", Integer.toString(toKill.size()), Integer.toString(scene.getId())));
     }
