@@ -21,7 +21,7 @@ import java.util.List;
 public class ItemData extends GameResource {
 
     private int id;
-    private final int stackLimit = 1;
+    private int stackLimit = 1;
     private int maxUseCount;
     private int rankLevel;
     private String effectName;
