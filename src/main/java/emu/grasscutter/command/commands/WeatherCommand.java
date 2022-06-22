@@ -11,37 +11,43 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "weather", usage = "weather <climate type(weatherId)> <weather type(climateId)>", aliases = {"w"}, permission = "player.weather", permissionTargeted = "player.weather.others", description = "commands.weather.description")
+@Command(label = "weather", usage = "weather <weather> <climate>", aliases = {"w"}, permission = "player.weather", permissionTargeted = "player.weather.others", description = "commands.weather.description")
 public final class WeatherCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (args.size() < 1) {
+            CommandHandler.sendMessage(sender, translate(sender, "commands.weather.usage"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.weather.help_message"));
+            return;
+        }
+
+        int climateId = 0;
         int weatherId = 0;
-        int climateId = 1;
-        switch (args.size()) {
-            case 2:
-                try {
-                    climateId = Integer.parseInt(args.get(1));
-                } catch (NumberFormatException ignored) {
-                        CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_id"));
-                }
-            case 1:
-                try {
-                    weatherId = Integer.parseInt(args.get(0));
-                } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid_id"));
-                }
-                break;
-            default:
-                CommandHandler.sendMessage(sender, translate(sender, "commands.weather.usage"));
+
+        if (args.size() >= 1) {
+            try {
+                climateId = Integer.parseInt(args.get(0));
+            } catch (NumberFormatException ignored) {
+                CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid"));
                 return;
+            }
+        }
+
+        if (args.size() >= 2) {
+            try {
+                weatherId = Integer.parseInt(args.get(1));
+            } catch (NumberFormatException ignored) {
+                CommandHandler.sendMessage(sender, translate(sender, "commands.weather.invalid"));
+                return;
+            }
         }
 
         ClimateType climate = ClimateType.getTypeByValue(climateId);
 
-        targetPlayer.getScene().setWeather(weatherId);
         targetPlayer.getScene().setClimate(climate);
+        targetPlayer.getScene().setWeather(weatherId);
         targetPlayer.getScene().broadcastPacket(new PacketSceneAreaWeatherNotify(targetPlayer));
-        CommandHandler.sendMessage(sender, translate(sender, "commands.weather.success", Integer.toString(weatherId), Integer.toString(climateId)));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.weather.success", Integer.toString(climateId), Integer.toString(weatherId)));
     }
 }

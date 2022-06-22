@@ -14,7 +14,7 @@ public final class ResetShopLimitCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.isEmpty()) {
+        if (args.size() < 1) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.resetShopLimit.usage"));
             return;
         }

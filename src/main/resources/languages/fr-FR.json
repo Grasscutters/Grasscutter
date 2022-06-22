@@ -387,10 +387,11 @@
         "description": "Débloque tous les couloirs de l'abysse"
       },
       "weather": {
-        "usage": "Usage: weather <climate type(weatherId)> <weather type(climateId)>\nTypes de météo 0: Aucun, 1: Ensoleillé, 2: Nuageux, 3: Pluvieux, 4: Orageux, 5: Neige, 6: Brouillard",
-        "success": "Le type de climat a été changé à %s avec le type de météo %s.",
-        "invalid_id": "ID invalide.",
-        "description": "Change la météo"
+        "usage": "Usage: weather <weather> <climate>",
+        "success": "Changed weather to %s, climate to %s.",
+        "help_message": "Note: <weather>(climateId), <climate>(weatherId)\nAvailable weather 0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist",
+        "invalid": "Invalid weather or climate.",
+        "description": "Change the weather and climate"
       },
       "ban": {
         "description": "Bannis un joueur",

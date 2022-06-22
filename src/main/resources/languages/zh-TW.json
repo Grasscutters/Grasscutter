@@ -390,10 +390,11 @@
       "description": "解鎖所有級別的深境螺旋。"
     },
     "weather": {
-      "usage": "用法：weather <氣候型別(weatherId)> <天氣型別(climateId)>\n天氣類型： '0：無、 1：晴天、 2：多雲、 3：雨、 4:：雷雨、 5：雪、 6：霧'",
-      "success": "已將當前氣候設定為 %s ，天氣則為 %s 。",
-      "invalid_id": "無效的ID。",
-      "description": "更改目前的天氣。"
+      "usage": "用法：weather <天氣> <氣候>",
+      "success": "已更改天氣為 %s，氣候為 %s。",
+      "help_message": "注意：<天氣>(氣候ID), <氣候>(天氣ID)\n可用的天氣 0: 無, 1: 晴天, 2: 多雲, 3: 雨, 4: 雷雨, 5: 雪, 6: 霧",
+      "invalid": "無效的天氣或氣候。",
+      "description": "更改天氣和氣候"
     },
     "ban": {
       "description": "停權指定玩家。",
