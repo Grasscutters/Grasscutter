@@ -385,7 +385,7 @@
       "description": "Unlock all levels of tower"
     },
     "weather": {
-      "description": "Changes the weather. Climate types sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "description": "Changes weather ID and climate type. Weather IDs can be found in WeatherExcelConfigData.json. Climate types: sunny, cloudy, rain, thunderstorm, snow, mist",
       "usage": "Usage: weather [weatherId] [climateType]\nClimate types sunny, cloudy, rain, thunderstorm, snow, mist.",
       "success": "Set weather ID to %s with climate type %s.",
       "status": "Current weather ID is %s with climate type %s."
