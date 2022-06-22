@@ -385,8 +385,8 @@
       "description": "Открывает все уровни башни"
     },
     "weather": {
-      "description": "Изменяет погоду. Climate types sunny, cloudy, rain, thunderstorm, snow, mist.",
-      "usage": "Usage: weather [weatherId] [climateType]\nClimate types sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "description": "Изменяет погоду.Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
       "success": "Set weather ID to %s with climate type %s.",
       "status": "Current weather ID is %s with climate type %s."
     },
