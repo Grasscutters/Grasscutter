@@ -171,6 +171,11 @@ public final class PluginManager {
                 .toList().forEach(handler -> this.invokeHandler(event, handler));
     }
 
+    /**
+     * Gets a plugin's instance by its name.
+     * @param name The name of the plugin.
+     * @return Either null, or the plugin's instance.
+     */
     public Plugin getPlugin(String name) {
         return this.plugins.get(name);
     }
