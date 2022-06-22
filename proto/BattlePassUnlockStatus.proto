@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum BattlePassUnlockStatus {
+	BATTLE_PASS_UNLOCK_STATUS_INVALID = 0;
+	BATTLE_PASS_UNLOCK_STATUS_FREE = 1;
+	BATTLE_PASS_UNLOCK_STATUS_PAID = 2;
+}

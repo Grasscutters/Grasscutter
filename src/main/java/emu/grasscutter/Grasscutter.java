@@ -8,6 +8,7 @@ import emu.grasscutter.auth.DefaultAuthentication;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.command.DefaultPermissionHandler;
 import emu.grasscutter.command.PermissionHandler;
+import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.plugin.PluginManager;
@@ -49,7 +50,7 @@ import static emu.grasscutter.Configuration.*;
 public final class Grasscutter {
 	private static final Logger log = (Logger) LoggerFactory.getLogger(Grasscutter.class);
 	private static LineReader consoleLineReader = null;
-	
+
 	private static Language language;
 
 	private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -65,7 +66,7 @@ public final class Grasscutter {
 
 	public static final Reflections reflector = new Reflections("emu.grasscutter");
 	public static ConfigContainer config;
-  
+
 	static {
 		// Declare logback configuration.
 		System.setProperty("logback.configurationFile", "src/main/resources/logback.xml");
@@ -84,7 +85,7 @@ public final class Grasscutter {
 
   	public static void main(String[] args) throws Exception {
 		Crypto.loadKeys(); // Load keys from buffers.
-	
+
 		// Parse arguments.
 		boolean exitEarly = false;
 		for (String arg : args) {
@@ -101,29 +102,29 @@ public final class Grasscutter {
 				case "-dispatch" -> config.server.runMode = ServerRunMode.DISPATCH_ONLY;
 				case "-game" -> config.server.runMode = ServerRunMode.GAME_ONLY;
 			}
-		} 
-		
+		}
+
 		// Exit early if argument sets it.
 		if(exitEarly) System.exit(0);
-	
+
 		// Initialize server.
 		Grasscutter.getLogger().info(translate("messages.status.starting"));
 		Grasscutter.getLogger().info(translate("messages.status.game_version", GameConstants.VERSION));
 		Grasscutter.getLogger().info(translate("messages.status.version", BuildConfig.VERSION, BuildConfig.GIT_HASH));
-	
+
 		// Initialize database.
 		DatabaseManager.initialize();
-		
+
 		// Initialize the default systems.
 		authenticationSystem = new DefaultAuthentication();
 		permissionHandler = new DefaultPermissionHandler();
-	
+
 		// Create server instances.
 		httpServer = new HttpServer();
 		gameServer = new GameServer();
 		// Create a server hook instance with both servers.
 		new ServerHook(gameServer, httpServer);
-		
+
 		// Create plugin manager instance.
 		pluginManager = new PluginManager();
 		// Add HTTP routes after loading plugins.
@@ -137,7 +138,7 @@ public final class Grasscutter {
 		httpServer.addRouter(GachaHandler.class);
 		httpServer.addRouter(DocumentationServerHandler.class);
 		httpServer.addRouter(WebSocketHandler.class);
-		
+
 		// TODO: find a better place?
 		// Start servers.
 		var runMode = SERVER.runMode;
@@ -148,7 +149,8 @@ public final class Grasscutter {
 			ScriptLoader.init();
 			EnergyManager.initialize();
 			StaminaManager.initialize();
-		}
+            DungeonChallenge.initialize();
+        }
 		if (runMode == ServerRunMode.HYBRID) {
 			httpServer.start();
 			gameServer.start();
@@ -162,13 +164,13 @@ public final class Grasscutter {
 			getLogger().error(translate("messages.status.shutdown"));
 			System.exit(1);
 		}
-	
+
 		// Enable all plugins.
 		pluginManager.enablePlugins();
-	
+
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(Grasscutter::onShutdown));
-	
+
 		// Open console.
 		startConsole();
  	}
@@ -184,12 +186,12 @@ public final class Grasscutter {
 	/*
 	 * Methods for the language system component.
 	 */
-	
+
 	public static void loadLanguage() {
 		var locale = config.language.language;
 		language = Language.getLanguage(Utils.getLanguageCode(locale));
 	}
-	
+
 	/*
 	 * Methods for the configuration system component.
 	 */
@@ -204,7 +206,7 @@ public final class Grasscutter {
 			config = new ConfigContainer();
 			Grasscutter.saveConfig(config);
 			return;
-		} 
+		}
 
 		// If the file already exists, we attempt to load it.
 		try (FileReader file = new FileReader(configFile)) {
@@ -212,7 +214,7 @@ public final class Grasscutter {
 		} catch (Exception exception) {
 			getLogger().error("There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
 			System.exit(1);
-		} 
+		}
 	}
 
 	/**
@@ -221,7 +223,7 @@ public final class Grasscutter {
 	 */
 	public static void saveConfig(@Nullable ConfigContainer config) {
 		if(config == null) config = new ConfigContainer();
-		
+
 		try (FileWriter file = new FileWriter(configFile)) {
 			file.write(gson.toJson(config));
 		} catch (IOException ignored) {
@@ -234,7 +236,7 @@ public final class Grasscutter {
 	/*
 	 * Getters for the various server components.
 	 */
-	
+
 	public static ConfigContainer getConfig() {
 		return config;
 	}
@@ -290,7 +292,7 @@ public final class Grasscutter {
 	public static PluginManager getPluginManager() {
 		return pluginManager;
 	}
-	
+
 	public static AuthenticationSystem getAuthenticationSystem() {
 		return authenticationSystem;
 	}
@@ -302,14 +304,14 @@ public final class Grasscutter {
 	public static int getCurrentDayOfWeek() {
 		return day;
 	}
-	
+
 	/*
 	 * Utility methods.
 	 */
-	
+
 	public static void updateDayOfWeek() {
 		Calendar calendar = Calendar.getInstance();
-		day = calendar.get(Calendar.DAY_OF_WEEK); 
+		day = calendar.get(Calendar.DAY_OF_WEEK);
 	}
 
 	public static void startConsole() {
@@ -369,7 +371,7 @@ public final class Grasscutter {
 	/*
 	 * Enums for the configuration.
 	 */
-	
+
 	public enum ServerRunMode {
 		HYBRID, DISPATCH_ONLY, GAME_ONLY
 	}

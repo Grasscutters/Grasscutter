@@ -391,6 +391,21 @@
         "success": "Le type de climat a été changé à %s avec le type de météo %s.",
         "invalid_id": "ID invalide.",
         "description": "Change la météo"
+      },
+      "ban": {
+        "description": "Bannis un joueur",
+        "success": "Succès.",
+        "failure": "Échec, joueur introuvable.",
+        "invalid_time": "Impossible d'analyser le timestamp.",
+        "invalid_player_id": "Impossible d'analyser le player ID.",
+        "command_usage": "Usage: ban <playerId> [timestamp] [raison]"
+      },
+      "unban": {
+        "description": "Retire le bannissement d'un joueur",
+        "success": "Succès.",
+        "failure": "Échec, joueur introuvable.",
+        "invalid_player_id": "Imossible d'analyser player ID.",
+        "command_usage": "Usage: unban <playerId>"
       }
     },
     "gacha": {

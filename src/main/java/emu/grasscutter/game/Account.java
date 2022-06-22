@@ -208,7 +208,7 @@ public class Account {
 	public boolean removePermission(String permission) {
 		return this.permissions.remove(permission);
 	}
-	
+
 	// TODO make unique
 	public String generateLoginToken() {
 		this.token = Utils.bytesToHex(Crypto.createSessionKey(32));

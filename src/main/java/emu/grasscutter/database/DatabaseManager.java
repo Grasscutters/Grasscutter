@@ -14,6 +14,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.battlepass.BattlePassManager;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.gacha.GachaRecord;
 import emu.grasscutter.game.home.GameHome;

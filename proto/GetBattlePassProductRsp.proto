@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2601
+// EnetChannelId: 0
+// EnetIsReliable: true
+message GetBattlePassProductRsp {
+	int32 retcode = 13;
+	uint32 battle_pass_product_play_type = 9;
+	uint32 cur_schedule_id = 12;
+	string product_id = 7;
+	string price_tier = 5;
+}
