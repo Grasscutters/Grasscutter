@@ -26,11 +26,14 @@ import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
+import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
 import kcp.highway.ChannelConfig;
 import kcp.highway.KcpServer;
+import lombok.Getter;
 
 import java.net.InetSocketAddress;
+import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -42,10 +45,11 @@ public final class GameServer extends KcpServer {
 	private final InetSocketAddress address;
 	private final GameServerPacketHandler packetHandler;
 	private final ServerQuestHandler questHandler;
-	
+    @Getter private final ServerTaskScheduler scheduler;
+
 	private final Map<Integer, Player> players;
 	private final Set<World> worlds;
-	
+
 	private ChatManagerHandler chatManager;
 	private final InventoryManager inventoryManager;
 	private final GachaManager gachaManager;
@@ -57,14 +61,14 @@ public final class GameServer extends KcpServer {
 	private final TaskMap taskMap;
 	private final DropManager dropManager;
 	private final WorldDataManager worldDataManager;
-	
+
 	private final CombineManger combineManger;
 	private final TowerScheduleManager towerScheduleManager;
 
 	public GameServer() {
 		this(getAdapterInetSocketAddress());
 	}
-	
+
 	public GameServer(InetSocketAddress address) {
 		ChannelConfig channelConfig = new ChannelConfig();
 		channelConfig.nodelay(true,40,2,true);
@@ -80,9 +84,10 @@ public final class GameServer extends KcpServer {
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
 		this.questHandler = new ServerQuestHandler();
+        this.scheduler = new ServerTaskScheduler();
 		this.players = new ConcurrentHashMap<>();
 		this.worlds = Collections.synchronizedSet(new HashSet<>());
-		
+
 		this.chatManager = new ChatManager(this);
 		this.inventoryManager = new InventoryManager(this);
 		this.gachaManager = new GachaManager(this);
@@ -99,7 +104,7 @@ public final class GameServer extends KcpServer {
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
-	
+
 	public GameServerPacketHandler getPacketHandler() {
 		return packetHandler;
 	}
@@ -119,7 +124,7 @@ public final class GameServer extends KcpServer {
 	public ChatManagerHandler getChatManager() {
 		return chatManager;
 	}
-	
+
 	public void setChatManager(ChatManagerHandler chatManager) {
 		this.chatManager = chatManager;
 	}
@@ -131,7 +136,7 @@ public final class GameServer extends KcpServer {
 	public GachaManager getGachaManager() {
 		return gachaManager;
 	}
-	
+
 	public ShopManager getShopManager() {
 		return shopManager;
 	}
@@ -143,7 +148,7 @@ public final class GameServer extends KcpServer {
 	public DropManager getDropManager() {
 		return dropManager;
 	}
-	
+
 	public DungeonManager getDungeonManager() {
 		return dungeonManager;
 	}
@@ -171,7 +176,7 @@ public final class GameServer extends KcpServer {
 	public TaskMap getTaskMap() {
 		return this.taskMap;
 	}
-	
+
 	private static InetSocketAddress getAdapterInetSocketAddress(){
 		InetSocketAddress inetSocketAddress;
 		if(GAME_INFO.bindAddress.equals("")){
@@ -184,7 +189,7 @@ public final class GameServer extends KcpServer {
 		}
 		return inetSocketAddress;
 	}
-	
+
 	public void registerPlayer(Player player) {
 		getPlayers().put(player.getUid(), player);
 	}
@@ -192,44 +197,44 @@ public final class GameServer extends KcpServer {
 	public Player getPlayerByUid(int id) {
 		return this.getPlayerByUid(id, false);
 	}
-	
+
 	public Player getPlayerByUid(int id, boolean allowOfflinePlayers) {
 		// Console check
 		if (id == GameConstants.SERVER_CONSOLE_UID) {
 			return null;
 		}
-		
+
 		// Get from online players
 		Player player = this.getPlayers().get(id);
-		
+
 		if (!allowOfflinePlayers) {
 			return player;
 		}
-		
+
 		// Check database if character isnt here
 		if (player == null) {
 			player = DatabaseHelper.getPlayerByUid(id);
 		}
-		
+
 		return player;
 	}
-	
+
 	public Player getPlayerByAccountId(String accountId) {
 		Optional<Player> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getId().equals(accountId)).findFirst();
 		return playerOpt.orElse(null);
 	}
-	
+
 	public SocialDetail.Builder getSocialDetailByUid(int id) {
 		// Get from online players
 		Player player = this.getPlayerByUid(id, true);
-	
+
 		if (player == null) {
 			return null;
 		}
-		
+
 		return player.getSocialDetail();
 	}
-	
+
 	public Account getAccountByName(String username) {
 		Optional<Player> playerOpt = getPlayers().values().stream().filter(player -> player.getAccount().getUsername().equals(username)).findFirst();
 		if (playerOpt.isPresent()) {
@@ -238,32 +243,41 @@ public final class GameServer extends KcpServer {
 		return DatabaseHelper.getAccountByName(username);
 	}
 
-	public synchronized void onTick(){
-		Iterator<World> it = this.getWorlds().iterator();
-		while (it.hasNext()) {
-			World world = it.next();
+    public synchronized void onTick() {
+        var tickStart = Instant.now();
 
-			if (world.getPlayerCount() == 0) {
-				it.remove();
-			}
+        // Tick worlds.
+        Iterator<World> it = this.getWorlds().iterator();
+        while (it.hasNext()) {
+            World world = it.next();
 
-			world.onTick();
-		}
+            if (world.getPlayerCount() == 0) {
+                it.remove();
+            }
 
-		for (Player player : this.getPlayers().values()) {
-			player.onTick();
-		}
+            world.onTick();
+        }
 
-		ServerTickEvent event = new ServerTickEvent(); event.call();
-	}
-	
+        // Tick players.
+        for (Player player : this.getPlayers().values()) {
+            player.onTick();
+        }
+
+        // Tick scheduler.
+        this.getScheduler().runTasks();
+
+        // Call server tick event.
+        ServerTickEvent event = new ServerTickEvent(tickStart, Instant.now());
+        event.call();
+    }
+
 	public void registerWorld(World world) {
 		this.getWorlds().add(world);
 	}
-	
+
 	public void deregisterWorld(World world) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void start() {
