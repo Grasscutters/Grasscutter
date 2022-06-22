@@ -76,7 +76,8 @@
         "itemLevel": "Invalid itemLevel.",
         "itemRefinement": "Invalid itemRefinement.",
         "playerId": "Invalid player ID.",
-        "uid": "Invalid UID."
+        "uid": "Invalid UID.",
+        "id": "Invalid ID."
       }
     },
     "execution": {
@@ -387,10 +388,10 @@
       "description": "Unlock all levels of tower"
     },
     "weather": {
-      "usage": "Usage: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types 0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist",
-      "success": "Changed climate type to %s with weather type %s.",
-      "invalid_id": "Invalid ID.",
-      "description": "Changes the weather"
+      "description": "Changes the weather. Climate types sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "usage": "Usage: weather [weatherId] [climateType]\nClimate types sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "success": "Set weather ID to %s with climate type %s.",
+      "status": "Current weather ID is %s with climate type %s."
     },
     "ban": {
       "description": "Ban a player",

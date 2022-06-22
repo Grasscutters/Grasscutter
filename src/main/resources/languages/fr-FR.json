@@ -76,7 +76,8 @@
           "itemLevel": "Niveau de l'objet invalide.",
           "itemRefinement": "Raffinement de l'objet invalide.",
           "playerId": "ID du joueur invalide.",
-          "uid": "UID invalide."
+          "uid": "UID invalide.",
+          "id": "ID invalide."
         }
       },
       "execution": {
@@ -387,10 +388,10 @@
         "description": "Débloque tous les couloirs de l'abysse"
       },
       "weather": {
-        "usage": "Usage: weather <climate type(weatherId)> <weather type(climateId)>\nTypes de météo 0: Aucun, 1: Ensoleillé, 2: Nuageux, 3: Pluvieux, 4: Orageux, 5: Neige, 6: Brouillard",
-        "success": "Le type de climat a été changé à %s avec le type de météo %s.",
-        "invalid_id": "ID invalide.",
-        "description": "Change la météo"
+        "description": "Change la météo. Climate types sunny, cloudy, rain, thunderstorm, snow, mist.",
+        "usage": "Utilisation: weather [weatherId] [climateType]\nClimate types sunny, cloudy, rain, thunderstorm, snow, mist.",
+        "success": "Set weather ID to %s with climate type %s.",
+        "status": "Current weather ID is %s with climate type %s."
       },
       "ban": {
         "description": "Bannis un joueur",
