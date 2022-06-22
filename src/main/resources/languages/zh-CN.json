@@ -76,7 +76,8 @@
         "itemLevel": "无效的物品等级。",
         "itemRefinement": "无效的物品精炼等级。",
         "playerId": "无效的玩家ID。",
-        "uid": "无效的UID。"
+        "uid": "无效的UID。",
+        "id": "无效的ID。"
       }
     },
     "execution": {
@@ -387,10 +388,10 @@
       "description": "解锁深境螺旋"
     },
     "weather": {
-      "usage": "用法：weather <气候类型(天气ID)> <天气类型(气候ID)>\n天气类型 0: 无, 1: 晴天, 2: 多云, 3: 雨, 4: 雷雨, 5: 雪, 6: 雾",
-      "success": "已更改气候类型为 %s，天气类型为 %s。",
-      "invalid_id": "无效的ID。",
-      "description": "更改天气"
+      "description": "更改天气. Climate types sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "usage": "用法：weather [weatherId] [climateType]\nClimate types sunny (晴天), cloudy (多云), rain (雨), thunderstorm (雷雨), snow (雪), mist (雾).",
+      "success": "Set weather ID to %s with climate type %s.",
+      "status": "Current weather ID is %s with climate type %s."
     },
     "ban": {
       "description": "封禁玩家",

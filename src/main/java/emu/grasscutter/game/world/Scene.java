@@ -138,12 +138,30 @@ public class Scene {
 		return weather;
 	}
 
-	public void setClimate(ClimateType climate) {
+	synchronized public void setClimate(ClimateType climate) {
 		this.climate = climate;
+		for (Player player : this.players) {
+			this.broadcastPacket(new PacketSceneAreaWeatherNotify(player));
+		}
 	}
 
-	public void setWeather(int weather) {
+	synchronized public void setWeather(int weather) {
+		this.setWeather(weather, ClimateType.CLIMATE_NONE);
+	}
+
+	synchronized public void setWeather(int weather, ClimateType climate) {
+		// Lookup default climate for this weather
+		if (climate == ClimateType.CLIMATE_NONE) {
+			WeatherData w = GameData.getWeatherDataMap().get(weather);
+			if (w != null) {
+				climate = w.getDefaultClimate();
+			}
+		}
 		this.weather = weather;
+		this.climate = climate;
+		for (Player player : this.players) {
+			this.broadcastPacket(new PacketSceneAreaWeatherNotify(player));
+		}
 	}
 
 	public int getPrevScene() {

@@ -94,6 +94,7 @@ public class GameData {
 	private static final Int2ObjectMap<FurnitureMakeConfigData> furnitureMakeConfigDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<InvestigationMonsterData> investigationMonsterDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<CityData> cityDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<WeatherData> weatherDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<BattlePassMissionExcelConfigData> battlePassMissionExcelConfigDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<BattlePassRewardExcelConfigData> battlePassRewardExcelConfigDataMap = new Int2ObjectOpenHashMap<>();
 
@@ -414,8 +415,13 @@ public class GameData {
 	public static Int2ObjectMap<InvestigationMonsterData> getInvestigationMonsterDataMap() {
 		return investigationMonsterDataMap;
 	}
+
 	public static Int2ObjectMap<CityData> getCityDataMap() {
 		return cityDataMap;
+	}
+
+	public static Int2ObjectMap<WeatherData> getWeatherDataMap() {
+		return weatherDataMap;
 	}
 
 	public static Int2ObjectMap<BattlePassMissionExcelConfigData> getBattlePassMissionExcelConfigDataMap() {

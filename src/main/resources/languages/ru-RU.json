@@ -76,7 +76,8 @@
         "itemLevel": "Некорректный уровень предмета (itemLevel).",
         "itemRefinement": "Некорректный уровень пробуждения предмета (itemRefinement).",
         "playerId": "Некорректный ID игрока.",
-        "uid": "Некорректный UID."
+        "uid": "Некорректный UID.",
+        "id": "Некорректный ID."
       }
     },
     "execution": {
@@ -387,10 +388,10 @@
       "description": "Открывает все уровни башни"
     },
     "weather": {
-      "usage": "Применение: weather <тип_климата(Id погоды)> <тип_погоды(Id климата)>\nТипы погоды 0: Отсутствует, 1: Солнечная, 2: Пасмурная, 3: Дождливая, 4: Грозовая, 5: Снежная, 6: Туманная",
-      "success": "Тип климата был изменен на %s, тип погоды: %s.",
-      "invalid_id": "Некорректный ID.",
-      "description": "Изменяет погоду"
+      "description": "Изменяет погоду. Climate types sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "usage": "Usage: weather [weatherId] [climateType]\nClimate types sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "success": "Set weather ID to %s with climate type %s.",
+      "status": "Current weather ID is %s with climate type %s."
     },
     "ban": {
       "description": "Банит игрока",
