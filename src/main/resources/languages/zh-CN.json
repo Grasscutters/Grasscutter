@@ -81,12 +81,9 @@
       }
     },
     "execution": {
-      "uid_error": "无效的UID。",
       "player_exist_error": "玩家不存在。",
       "player_offline_error": "玩家已离线。",
-      "item_id_error": "无效的物品ID。",
       "item_player_exist_error": "无效的物品/玩家UID。",
-      "entity_id_error": "无效的实体ID。",
       "player_exist_offline_error": "玩家不存在或已离线。",
       "argument_error": "无效的参数。",
       "clear_target": "目标已清除。",

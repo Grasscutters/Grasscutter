@@ -80,12 +80,9 @@
       }
     },
     "execution": {
-      "uid_error": "無效的UID。",
       "player_exist_error": "用戶不存在。",
       "player_offline_error": "玩家已離線。",
-      "item_id_error": "無效的物品ID。.",
       "item_player_exist_error": "無效的物品/玩家UID。",
-      "entity_id_error": "無效的實體ID。",
       "player_exist_offline_error": "玩家不存在或已離線。",
       "argument_error": "無效的參數。",
       "clear_target": "目標已清除.",

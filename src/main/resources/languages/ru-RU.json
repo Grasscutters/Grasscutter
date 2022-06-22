@@ -81,12 +81,9 @@
       }
     },
     "execution": {
-      "uid_error": "Некорректный UID.",
       "player_exist_error": "Игрок не найден.",
       "player_offline_error": "Игрок не в сети.",
-      "item_id_error": "Некорректный ID предмета.",
       "item_player_exist_error": "Некорректный предмет или UID.",
-      "entity_id_error": "Некорректный ID сущности.",
       "player_exist_offline_error": "Игрок не был найден или не в сети.",
       "argument_error": "Некорректные аргументы.",
       "clear_target": "Цель была удалена.",

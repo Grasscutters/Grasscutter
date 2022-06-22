@@ -75,12 +75,9 @@
       }
     },
     "execution": {
-      "uid_error": "Błędne UID.",
       "player_exist_error": "Gracz nie znaleziony.",
       "player_offline_error": "Gracz nie jest online.",
-      "item_id_error": "Błędne ID przedmiotu.",
       "item_player_exist_error": "Błędny przedmiot lub UID.",
-      "entity_id_error": "Błędne ID obiektu.",
       "player_exist_offline_error": "Gracz nie znaleziony lub jest offline.",
       "argument_error": "Błędne argumenty.",
       "clear_target": "Cel wyczyszczony.",
