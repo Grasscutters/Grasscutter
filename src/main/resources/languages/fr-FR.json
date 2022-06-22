@@ -81,12 +81,9 @@
         }
       },
       "execution": {
-        "uid_error": "UID invalide.",
         "player_exist_error": "Joueur introuvable.",
         "player_offline_error": "Le joueur n'est pas connecté.",
-        "item_id_error": "ID de l'objet invalide.",
         "item_player_exist_error": "UID ou objet invalide.",
-        "entity_id_error": "ID de l'entité invalide.",
         "player_exist_offline_error": "Le joueur est introuvable ou n'est pas connecté.",
         "argument_error": "Arguments invalides.",
         "clear_target": "Cible réinitialisée.",

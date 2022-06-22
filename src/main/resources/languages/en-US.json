@@ -81,12 +81,9 @@
       }
     },
     "execution": {
-      "uid_error": "Invalid UID.",
       "player_exist_error": "Player not found.",
       "player_offline_error": "Player is not online.",
-      "item_id_error": "Invalid item ID.",
       "item_player_exist_error": "Invalid item or UID.",
-      "entity_id_error": "Invalid entity ID.",
       "player_exist_offline_error": "Player not found or is not online.",
       "argument_error": "Invalid arguments.",
       "clear_target": "Target cleared.",
