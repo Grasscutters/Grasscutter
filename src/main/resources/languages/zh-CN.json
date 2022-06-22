@@ -385,8 +385,8 @@
       "description": "解锁深境螺旋"
     },
     "weather": {
-      "description": "更改天气. Climate types sunny, cloudy, rain, thunderstorm, snow, mist.",
-      "usage": "用法：weather [weatherId] [climateType]\nClimate types sunny (晴天), cloudy (多云), rain (雨), thunderstorm (雷雨), snow (雪), mist (雾).",
+      "description": "更改天气. Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "usage": "用法：weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny (晴天), cloudy (多云), rain (雨), thunderstorm (雷雨), snow (雪), mist (雾).",
       "success": "Set weather ID to %s with climate type %s.",
       "status": "Current weather ID is %s with climate type %s."
     },
