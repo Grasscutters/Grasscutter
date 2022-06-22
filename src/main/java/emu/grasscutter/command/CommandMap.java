@@ -33,7 +33,6 @@ public final class CommandMap {
      * @param command The command handler.
      * @return Instance chaining.
      */
-    @Deprecated(since = "1.2.1-dev")
     public CommandMap registerCommand(String label, CommandHandler command) {
         Grasscutter.getLogger().debug("Registered command: " + label);
 
