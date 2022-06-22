@@ -45,8 +45,6 @@ public class Scene {
 	
 	private int autoCloseTime;
 	private int time;
-	private ClimateType climate;
-	private int weather;
 	
 	private SceneScriptManager scriptManager;
 	private WorldChallenge challenge;
@@ -61,7 +59,6 @@ public class Scene {
 		this.entities = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
 
 		this.time = 8 * 60;
-		this.climate = ClimateType.CLIMATE_SUNNY;
 		this.prevScene = 3;
 		
 		this.spawnedEntities = new HashSet<>();
@@ -128,40 +125,6 @@ public class Scene {
 
 	public void changeTime(int time) {
 		this.time = time % 1440;
-	}
-	
-	public ClimateType getClimate() {
-		return climate;
-	}
-
-	public int getWeather() {
-		return weather;
-	}
-
-	synchronized public void setClimate(ClimateType climate) {
-		this.climate = climate;
-		for (Player player : this.players) {
-			this.broadcastPacket(new PacketSceneAreaWeatherNotify(player));
-		}
-	}
-
-	synchronized public void setWeather(int weather) {
-		this.setWeather(weather, ClimateType.CLIMATE_NONE);
-	}
-
-	synchronized public void setWeather(int weather, ClimateType climate) {
-		// Lookup default climate for this weather
-		if (climate == ClimateType.CLIMATE_NONE) {
-			WeatherData w = GameData.getWeatherDataMap().get(weather);
-			if (w != null) {
-				climate = w.getDefaultClimate();
-			}
-		}
-		this.weather = weather;
-		this.climate = climate;
-		for (Player player : this.players) {
-			this.broadcastPacket(new PacketSceneAreaWeatherNotify(player));
-		}
 	}
 
 	public int getPrevScene() {

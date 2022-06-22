@@ -13,12 +13,11 @@ public final class WeatherCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        Scene scene = targetPlayer.getScene();
-        int weatherId = scene.getWeather();
+        int weatherId = targetPlayer.getWeatherId();
         ClimateType climate = ClimateType.CLIMATE_NONE;  // Sending ClimateType.CLIMATE_NONE to Scene.setWeather will use the default climate for that weather
 
         if (args.isEmpty()) {
-            climate = scene.getClimate();
+            climate = targetPlayer.getClimate();
             CommandHandler.sendTranslatedMessage(sender, "commands.weather.status", Integer.toString(weatherId), climate.getShortName());
             return;
         }
@@ -38,8 +37,8 @@ public final class WeatherCommand implements CommandHandler {
             }
         }
 
-        scene.setWeather(weatherId, climate);
-        climate = scene.getClimate();  // Might be different to what we set
+        targetPlayer.setWeather(weatherId, climate);
+        climate = targetPlayer.getClimate();  // Might be different to what we set
         CommandHandler.sendTranslatedMessage(sender, "commands.weather.success", Integer.toString(weatherId), climate.getShortName());
     }
 }

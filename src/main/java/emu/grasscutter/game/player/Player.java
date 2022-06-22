@@ -5,6 +5,7 @@ import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PlayerLevelData;
+import emu.grasscutter.data.excels.WeatherData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
@@ -38,6 +39,7 @@ import emu.grasscutter.game.managers.mapmark.*;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.quest.QuestManager;
@@ -71,6 +73,7 @@ import emu.grasscutter.utils.MessageHandler;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
 
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -112,6 +115,8 @@ public class Player {
 	@Transient private int peerId;
 	@Transient private World world;
 	@Transient private Scene scene;
+	@Transient @Getter private int weatherId = 0;
+	@Transient @Getter private ClimateType climate = ClimateType.CLIMATE_SUNNY;
 	@Transient private GameSession session;
 	@Transient private AvatarStorage avatars;
 	@Transient private Inventory inventory;
@@ -140,8 +145,8 @@ public class Player {
 	private int regionId;
 	private int mainCharacterId;
 	private boolean godmode;
-
 	private boolean stamina;
+
 	private boolean moonCard;
 	private Date moonCardStartTime;
 	private int moonCardDuration;
@@ -322,6 +327,28 @@ public class Player {
 
 	public synchronized void setScene(Scene scene) {
 		this.scene = scene;
+	}
+
+	synchronized public void setClimate(ClimateType climate) {
+		this.climate = climate;
+		this.session.send(new PacketSceneAreaWeatherNotify(this));
+	}
+
+	synchronized public void setWeather(int weather) {
+		this.setWeather(weather, ClimateType.CLIMATE_NONE);
+	}
+
+	synchronized public void setWeather(int weatherId, ClimateType climate) {
+		// Lookup default climate for this weather
+		if (climate == ClimateType.CLIMATE_NONE) {
+			WeatherData w = GameData.getWeatherDataMap().get(weatherId);
+			if (w != null) {
+				climate = w.getDefaultClimate();
+			}
+		}
+		this.weatherId = weatherId;
+		this.climate = climate;
+		this.session.send(new PacketSceneAreaWeatherNotify(this));
 	}
 
 	public int getGmLevel() {
