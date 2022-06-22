@@ -108,7 +108,7 @@ public final class PluginManager {
                     fileReader.close();
 
                     // Check if the plugin has alternate dependencies.
-                    if(pluginConfig.loadAfter.length > 0) {
+                    if(pluginConfig.loadAfter != null && pluginConfig.loadAfter.length > 0) {
                         // Add the plugin to a "load later" list.
                         dependencies.add(new PluginData(
                             pluginInstance, PluginIdentifier.fromPluginConfig(pluginConfig),
@@ -130,20 +130,30 @@ public final class PluginManager {
 
         // Load plugins with dependencies.
         int depth = 0; final int maxDepth = 30;
-        while(!dependencies.isEmpty() || depth < maxDepth) {
+        while(!dependencies.isEmpty()) {
+            // Check if the depth is too high.
+            if(depth >= maxDepth) {
+                Grasscutter.getLogger().error("Failed to load plugins with dependencies.");
+                break;
+            }
+
             try {
                 // Get the next plugin to load.
                 var pluginData = dependencies.get(0);
+
                 // Check if the plugin's dependencies are loaded.
                 if(!this.plugins.keySet().containsAll(List.of(pluginData.getDependencies()))) {
                     depth++; // Increase depth counter.
                     continue; // Continue to next plugin.
                 }
 
+                // Remove the plugin from the list of dependencies.
+                dependencies.remove(pluginData);
+
                 // Load the plugin.
                 this.loadPlugin(pluginData.getPlugin(), pluginData.getIdentifier(), pluginData.getClassLoader());
             } catch (Exception exception) {
-                Grasscutter.getLogger().error("Failed to load a plugin.", exception);
+                Grasscutter.getLogger().error("Failed to load a plugin.", exception); depth++;
             }
         }
     }
@@ -175,7 +185,7 @@ public final class PluginManager {
         // Call the plugin's onLoad method.
         try {
             plugin.onLoad();
-        } catch (Exception exception) {
+        } catch (Throwable exception) {
             Grasscutter.getLogger().error("Failed to load plugin: " + identifier.name, exception);
         }
     }
@@ -188,7 +198,7 @@ public final class PluginManager {
             Grasscutter.getLogger().info("Enabling plugin: " + name);
             try {
                 plugin.onEnable();
-            } catch (Exception exception) {
+            } catch (Throwable exception) {
                 Grasscutter.getLogger().error("Failed to enable plugin: " + name, exception);
             }
         });
@@ -202,7 +212,7 @@ public final class PluginManager {
             Grasscutter.getLogger().info("Disabling plugin: " + name);
             try {
                 plugin.onDisable();
-            } catch (Exception exception) {
+            } catch (Throwable exception) {
                 Grasscutter.getLogger().error("Failed to disable plugin: " + name, exception);
             }
         });
