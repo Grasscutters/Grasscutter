@@ -1,8 +1,7 @@
 package emu.grasscutter.scripts.serializer;
 
- import com.esotericsoftware.reflectasm.ConstructorAccess;
+import com.esotericsoftware.reflectasm.ConstructorAccess;
 import com.esotericsoftware.reflectasm.MethodAccess;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.ScriptUtils;
 import lombok.AccessLevel;
@@ -12,8 +11,6 @@ import lombok.experimental.FieldDefaults;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -56,10 +53,12 @@ public class LuaSerializer implements Serializer {
 				    	object = (T) (Float) keyValue.tofloat(); // terrible...
 				    } else if (keyValue.isstring()) {
 				    	object = (T) keyValue.tojstring();
-				    } else {
+                    } else if (keyValue.isboolean()) {
+                        object = (T) (Boolean) keyValue.toboolean();
+                    } else {
 				    	object = (T) keyValue;
 				    }
-					
+
 					if (object != null) {
 						list.add(object);
 					}
@@ -118,7 +117,9 @@ public class LuaSerializer implements Serializer {
 						methodAccess.invoke(object, fieldMeta.index, keyValue.toint());
 				    } else if (fieldMeta.getType().equals(String.class)) {
 						methodAccess.invoke(object, fieldMeta.index, keyValue.tojstring());
-				    } else {
+                    } else if (fieldMeta.getType().equals(boolean.class)) {
+                        methodAccess.invoke(object, fieldMeta.index, keyValue.toboolean());
+                    } else {
 						methodAccess.invoke(object, fieldMeta.index, keyValue.tojstring());
 				    }
 				} catch (Exception ex) {
