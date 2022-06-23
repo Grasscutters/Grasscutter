@@ -429,6 +429,14 @@ public class Player {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_LEVEL);
 	}
 
+	public void setLevel(int level) {
+		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, level);
+		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_LEVEL));
+
+		this.updateWorldLevel();
+		this.updateProfile();
+	}
+
 	public int getExp() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_EXP);
 	}
@@ -440,6 +448,8 @@ public class Player {
 	public void setWorldLevel(int level) {
 		this.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level);
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_WORLD_LEVEL));
+
+		this.updateProfile();
 	}
 
 	public int getPrimogems() {
@@ -508,12 +518,7 @@ public class Player {
 		}
 
 		if (hasLeveledUp) {
-			// Set level property
-			this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, level);
-			// Update social status
-			this.updateProfile();
-			// Update player with packet
-			this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_LEVEL));
+			this.setLevel(level);
 		}
 
 		// Set exp
@@ -521,6 +526,27 @@ public class Player {
 
 		// Update player with packet
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_EXP));
+	}
+
+	private void updateWorldLevel() {
+		int currentWorldLevel = this.getWorldLevel();
+		int currentLevel = this.getLevel();
+
+		int newWorldLevel =
+			(currentLevel >= 55) ? 8 :
+			(currentLevel >= 50) ? 7 :
+			(currentLevel >= 45) ? 6 :
+			(currentLevel >= 40) ? 5 :
+			(currentLevel >= 35) ? 4 :
+			(currentLevel >= 30) ? 3 :
+			(currentLevel >= 25) ? 2 :
+			(currentLevel >= 20) ? 1 :
+			0;
+
+		if (newWorldLevel != currentWorldLevel) {
+			this.getWorld().setWorldLevel(newWorldLevel);
+			this.setWorldLevel(newWorldLevel);
+		}
 	}
 
 	private void updateProfile() {
