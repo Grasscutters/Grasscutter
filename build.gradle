@@ -43,7 +43,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'xyz.grasscutters'
-version = '1.2.1-dev'
+version = '1.2.2-dev'
 
 
 sourceCompatibility = 17
@@ -116,7 +116,7 @@ jar {
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
-    
+
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
 
     from('src/main/java') {
@@ -171,13 +171,23 @@ publishing {
     }
     repositories {
         maven {
-            // change URLs to point to your repos, e.g. http://my.org/repo
-            def releasesRepoUrl = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
-            def snapshotsRepoUrl = 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
-            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            if(version.endsWith('-dev')) {
+                println ("Publishing to 4benj-maven")
+                url 'https://repo.4benj.com/releases'
+                name '4benj-maven'
+                credentials {
+                    username System.getenv('benj_maven_username')
+                    password System.getenv('benj_maven_token')
+                }
+            } else {
+                println ("Publishing to sonatype")
+                def releasesRepoUrl = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+                def snapshotsRepoUrl = 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
+                url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 
-            name = 'sonatype'
-            credentials(PasswordCredentials)
+                name = 'sonatype'
+                credentials(PasswordCredentials)
+            }
         }
     }
 }
@@ -225,7 +235,9 @@ eclipse {
 }
 
 signing {
-    sign publishing.publications.mavenJava
+    if(!version.endsWith('-dev')) {
+        sign publishing.publications.mavenJava
+    }
 }
 
 javadoc {

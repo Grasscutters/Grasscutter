@@ -131,5 +131,293 @@
         "count": 1
       }
     ]
+  },
+   {
+    "objNames": [
+      "SceneObj_Chest_Default_Lv3",
+      "SceneObj_Chest_Locked_Lv3",
+      "SceneObj_Chest_Bramble_Lv3",
+      "SceneObj_Chest_Frozen_Lv3"
+    ],
+    "advExp": 200,
+    "resin": 20,
+    "mora": 8888,
+    "sigil": 20,
+    "content": [
+      {
+        "itemId": 104012,
+        "count": 3
+      },
+      {
+        "itemId": 223,
+        "count": 10
+      },
+      {
+        "itemId": 104002,
+        "count": 1
+      }
+    ],
+    "randomCount": 4,
+    "randomContent": [
+      {
+        "itemId": 11509,
+        "count": 1
+      },
+      {
+        "itemId": 13501,
+        "count": 1
+      },
+      {
+        "itemId": 12201,
+        "count": 1
+      },
+      {
+        "itemId": 12301,
+        "count": 1
+      },
+      {
+        "itemId": 13201,
+        "count": 1
+      },
+      {
+        "itemId": 13301,
+        "count": 1
+      },
+      {
+        "itemId": 14201,
+        "count": 1
+      },
+      {
+        "itemId": 14301,
+        "count": 1
+      },
+      {
+        "itemId": 15201,
+        "count": 1
+      },
+      {
+        "itemId": 15301,
+        "count": 1
+      }
+    ]
+  },
+  {
+    "objNames": [
+      "SceneObj_Chest_Default_Lv4",
+      "SceneObj_Chest_Locked_Lv4",
+      "SceneObj_Chest_Bramble_Lv4",
+      "SceneObj_Chest_Frozen_Lv4"
+    ],
+    "advExp": 20000,
+    "resin": 2,
+    "mora": 88888,
+    "sigil": 2,
+    "content": [
+      {
+        "itemId": 104012,
+        "count": 3
+      },
+      {
+        "itemId": 223,
+        "count": 50
+      },
+      {
+        "itemId": 104002,
+        "count": 1
+      }
+    ],
+    "randomCount": 4,
+    "randomContent": [
+      {
+        "itemId": 13501,
+        "count": 1
+      },
+      {
+        "itemId": 11301,
+        "count": 1
+      },
+      {
+        "itemId": 12201,
+        "count": 1
+      },
+      {
+        "itemId": 12301,
+        "count": 1
+      },
+      {
+        "itemId": 13201,
+        "count": 1
+      },
+      {
+        "itemId": 13301,
+        "count": 1
+      },
+      {
+        "itemId": 14201,
+        "count": 1
+      },
+      {
+        "itemId": 14301,
+        "count": 1
+      },
+      {
+        "itemId": 15201,
+        "count": 1
+      },
+      {
+        "itemId": 15301,
+        "count": 1
+      }
+    ]
+  },
+  {
+    "objNames": [
+      "SceneObj_Chest_Default_Lv5",
+      "SceneObj_Chest_Locked_Lv5",
+      "SceneObj_Chest_Bramble_Lv5",
+      "SceneObj_Chest_Frozen_Lv5"
+    ],
+    "advExp": 20000,
+    "resin": 2,
+    "mora": 88888,
+    "sigil": 2,
+    "content": [
+      {
+        "itemId": 104012,
+        "count": 3
+      },
+      {
+        "itemId": 223,
+        "count": 100
+      },
+      {
+        "itemId": 104002,
+        "count": 1
+      }
+    ],
+    "randomCount": 5,
+    "randomContent": [
+      {
+        "itemId": 13501,
+        "count": 1
+      },
+      {
+        "itemId": 11301,
+        "count": 1
+      },
+      {
+        "itemId": 13509,
+        "count": 1
+      },
+      {
+        "itemId": 12301,
+        "count": 1
+      },
+      {
+        "itemId": 14509,
+        "count": 1
+      },
+      {
+        "itemId": 15507,
+        "count": 1
+      },
+      {
+        "itemId": 15509,
+        "count": 1
+      },
+      {
+        "itemId": 11509,
+        "count": 1
+      },
+      {
+        "itemId": 11503,
+        "count": 1
+      },
+      {
+        "itemId": 15301,
+        "count": 1
+      }
+    ]
+  },
+  {
+    "objNames": [
+      "SceneObj_Area_Common_Property_Ani_Prop_MoonlitBox_01"
+    ],
+    "advExp": 20000,
+    "resin": 2,
+    "mora": 88888,
+    "sigil": 2,
+    "content": [
+      {
+        "itemId": 104012,
+        "count": 3
+      },
+      {
+        "itemId": 223,
+        "count": 100
+      },
+      {
+        "itemId": 104002,
+        "count": 1
+      }
+    ],
+    "randomCount": 5,
+    "randomContent": [
+      {
+        "itemId": 13501,
+        "count": 1
+      },
+      {
+        "itemId": 11301,
+        "count": 1
+      },
+      {
+        "itemId": 13509,
+        "count": 1
+      },
+      {
+        "itemId": 12301,
+        "count": 1
+      },
+      {
+        "itemId": 14509,
+        "count": 1
+      },
+      {
+        "itemId": 15507,
+        "count": 1
+      },
+      {
+        "itemId": 15509,
+        "count": 1
+      },
+      {
+        "itemId": 11509,
+        "count": 1
+      },
+      {
+        "itemId": 11503,
+        "count": 1
+      },
+      {
+        "itemId": 15301,
+        "count": 1
+      }
+    ]
+  },
+  {
+    "objNames": [
+      "SceneObj_Area_Dq_Property_Ani_Prop_JunkChest_01",
+      "SceneObj_Area_Common_Property_Ani_Prop_JunkChest_02",
+      "SearchPoint",
+      "SearchPoint_OnWater"
+    ],
+    "mora": 1,
+    "content": [
+      {
+        "itemId": 201,
+        "count": 114
+      }
+    ]
   }
 ]

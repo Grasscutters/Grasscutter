@@ -11,9 +11,12 @@ public class SceneSuite {
 	public List<Integer> monsters;
 	public List<Integer> gadgets;
 	public List<String> triggers;
-	public int rand_weight;
-	
+    public List<Integer> regions;
+    public int rand_weight;
+
 	public transient List<SceneMonster> sceneMonsters;
 	public transient List<SceneGadget> sceneGadgets;
 	public transient List<SceneTrigger> sceneTriggers;
+    public transient List<SceneRegion> sceneRegions;
+
 }
