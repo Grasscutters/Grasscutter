@@ -142,7 +142,7 @@
     },
    {
     "objNames": [
-      "SceneObj_Chest_Default_Lv3",
+      "SceneObj_Chest_Default_Lv3",//珍贵宝箱
       "SceneObj_Chest_Locked_Lv3",
       "SceneObj_Chest_Bramble_Lv3",
       "SceneObj_Chest_Frozen_Lv3"
@@ -211,7 +211,7 @@
   },
   {
     "objNames": [
-      "SceneObj_Chest_Default_Lv4",
+      "SceneObj_Chest_Default_Lv4",//珍贵宝箱
       "SceneObj_Chest_Locked_Lv4",
       "SceneObj_Chest_Bramble_Lv4",
       "SceneObj_Chest_Frozen_Lv4"
@@ -280,7 +280,7 @@
   },
   {
     "objNames": [
-      "SceneObj_Chest_Default_Lv5",
+      "SceneObj_Chest_Default_Lv5",//华丽宝箱
       "SceneObj_Chest_Locked_Lv5",
       "SceneObj_Chest_Bramble_Lv5",
       "SceneObj_Chest_Frozen_Lv5"
@@ -349,10 +349,7 @@
   },
   {
     "objNames": [
-      "SceneObj_Area_Common_Property_Ani_Prop_MoonlitBox_01",
-      "SceneObj_Area_Common_Property_Ani_Prop_MoonlitBox_01",
-      "SceneObj_Area_Common_Property_Ani_Prop_MoonlitBox_01",
-      "SceneObj_Area_Common_Property_Ani_Prop_MoonlitBox_01"
+      "SceneObj_Area_Common_Property_Ani_Prop_MoonlitBox_01"//逐月节宝箱
     ],
     "advExp": 20000,
     "resin": 2,
@@ -418,55 +415,10 @@
   },
   {
     "objNames": [
-      "SearchPoint_OnWater",
-      "SearchPoint_OnWater",
-      "SearchPoint_OnWater",
-      "SearchPoint_OnWater"
-    ],
-    "mora": 114514,
-    "content": [
-      {
-        "itemId": 201,
-        "count": 114
-      }
-    ]
-  },
-  {
-    "objNames": [
-      "SearchPoint",
-      "SearchPoint",
-      "SearchPoint",
-      "SearchPoint"
-    ],
-    "mora": 1,
-    "content": [
-      {
-        "itemId": 201,
-        "count": 114
-      }
-    ]
-  },
-  {
-    "objNames": [
-      "SceneObj_Area_Dq_Property_Ani_Prop_JunkChest_01",
-      "SceneObj_Area_Dq_Property_Ani_Prop_JunkChest_01",
-      "SceneObj_Area_Dq_Property_Ani_Prop_JunkChest_01",
-      "SceneObj_Area_Dq_Property_Ani_Prop_JunkChest_01"
-    ],
-    "mora": 1,
-    "content": [
-      {
-        "itemId": 201,
-        "count": 114
-      }
-    ]
-  },
-  {
-    "objNames": [
-      "SceneObj_Area_Common_Property_Ani_Prop_JunkChest_02",
-      "SceneObj_Area_Common_Property_Ani_Prop_JunkChest_02",
-      "SceneObj_Area_Common_Property_Ani_Prop_JunkChest_02",
-      "SceneObj_Area_Common_Property_Ani_Prop_JunkChest_02"
+      "SceneObj_Area_Dq_Property_Ani_Prop_JunkChest_01",//渊下宫碎石
+      "SceneObj_Area_Common_Property_Ani_Prop_JunkChest_02",//层岩巨渊碎石
+      "SearchPoint",//陆地调查点
+      "SearchPoint_OnWater"//水箱子调查点
     ],
     "mora": 1,
     "content": [
@@ -477,5 +429,3 @@
     ]
   }
 ]
-
-
