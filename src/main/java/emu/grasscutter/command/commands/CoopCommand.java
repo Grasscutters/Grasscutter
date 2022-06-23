@@ -31,7 +31,7 @@ public final class CoopCommand implements CommandHandler {
                     }
                     break;
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.execution.uid_error"));
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.uid"));
                     return;
                 }
             default:
