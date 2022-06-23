@@ -30,24 +30,25 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import org.danilopianini.util.SpatialIndex;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 
 public class Scene {
 	private final World world;
 	private final SceneData sceneData;
 	private final List<Player> players;
-	private final Int2ObjectMap<GameEntity> entities;
-	
+	private final Map<Integer, GameEntity> entities;
 	private final Set<SpawnDataEntry> spawnedEntities;
 	private final Set<SpawnDataEntry> deadSpawnedEntities;
 	private final Set<SceneBlock> loadedBlocks;
 	private boolean dontDestroyWhenEmpty;
-	
+
 	private int autoCloseTime;
 	private int time;
 	private ClimateType climate;
 	private int weather;
-	
+
 	private SceneScriptManager scriptManager;
 	private WorldChallenge challenge;
 	private List<DungeonSettleListener> dungeonSettleListeners;
@@ -57,19 +58,19 @@ public class Scene {
 	public Scene(World world, SceneData sceneData) {
 		this.world = world;
 		this.sceneData = sceneData;
-		this.players = Collections.synchronizedList(new ArrayList<>());
-		this.entities = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
+		this.players = new CopyOnWriteArrayList<>();
+		this.entities = new ConcurrentHashMap<>();
 
 		this.time = 8 * 60;
 		this.climate = ClimateType.CLIMATE_SUNNY;
 		this.prevScene = 3;
-		
-		this.spawnedEntities = new HashSet<>();
-		this.deadSpawnedEntities = new HashSet<>();
-		this.loadedBlocks = new HashSet<>();
+
+		this.spawnedEntities = ConcurrentHashMap.newKeySet();
+		this.deadSpawnedEntities = ConcurrentHashMap.newKeySet();
+		this.loadedBlocks = ConcurrentHashMap.newKeySet();
 		this.scriptManager = new SceneScriptManager(this);
 	}
-	
+
 	public int getId() {
 		return sceneData.getId();
 	}
@@ -89,15 +90,15 @@ public class Scene {
 	public List<Player> getPlayers() {
 		return players;
 	}
-	
+
 	public int getPlayerCount() {
 		return this.getPlayers().size();
 	}
 
-	public Int2ObjectMap<GameEntity> getEntities() {
+	public Map<Integer, GameEntity> getEntities() {
 		return entities;
 	}
-	
+
 	public GameEntity getEntityById(int id) {
 		return this.entities.get(id);
 	}
@@ -629,15 +630,10 @@ public class Scene {
 			var suiteData = group.getSuiteByIndex(suite);
 			suiteData.sceneTriggers.forEach(getScriptManager()::registerTrigger);
 
-			entities.addAll(suiteData.sceneGadgets.stream()
-					.map(g -> scriptManager.createGadget(group.id, group.block_id, g))
-					.filter(Objects::nonNull)
-					.toList());
-			entities.addAll(suiteData.sceneMonsters.stream()
-					.map(mob -> scriptManager.createMonster(group.id, group.block_id, mob))
-					.filter(Objects::nonNull)
-					.toList());
+			entities.addAll(scriptManager.getGadgetsInGroupSuite(group, suiteData));
+			entities.addAll(scriptManager.getMonstersInGroupSuite(group, suiteData));
 
+            scriptManager.registerRegionInGroupSuite(group, suiteData);
 		}
 
 		scriptManager.meetEntities(entities);
@@ -654,19 +650,18 @@ public class Scene {
 			toRemove.forEach(this::removeEntityDirectly);
 			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_TYPE_REMOVE));
 		}
-		
+
 		for (SceneGroup group : block.groups.values()) {
 			if(group.triggers != null){
 				group.triggers.values().forEach(getScriptManager()::deregisterTrigger);
 			}
 			if(group.regions != null){
-				group.regions.forEach(getScriptManager()::deregisterRegion);
+                group.regions.values().forEach(getScriptManager()::deregisterRegion);
 			}
 		}
 		scriptManager.getLoadedGroupSetPerBlock().remove(block.id);
 		Grasscutter.getLogger().info("Scene {} Block {} is unloaded.", this.getId(), block.id);
 	}
-	
 	// Gadgets
 	
 	public void onPlayerCreateGadget(EntityClientGadget gadget) {
