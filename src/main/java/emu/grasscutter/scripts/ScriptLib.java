@@ -309,22 +309,22 @@ public class ScriptLib {
 		
 		return 0;
 	}
-	
+
 	public int GetRegionEntityCount(LuaTable table) {
 		logger.debug("[LUA] Call GetRegionEntityCount with {}",
 				printTable(table));
 		int regionId = table.get("region_eid").toint();
 		int entityType = table.get("entity_type").toint();
 
-		SceneRegion region = this.getSceneScriptManager().getRegionById(regionId);
-		
+		var region = this.getSceneScriptManager().getRegionById(regionId);
+
 		if (region == null) {
 			return 0;
 		}
 
-		return (int) region.getEntities().intStream().filter(e -> e >> 24 == entityType).count();
+		return (int) region.getEntities().stream().filter(e -> e >> 24 == entityType).count();
 	}
-	
+
 	public void PrintContextLog(String msg) {
 		logger.info("[LUA] " + msg);
 	}
