@@ -76,16 +76,14 @@
           "itemLevel": "Niveau de l'objet invalide.",
           "itemRefinement": "Raffinement de l'objet invalide.",
           "playerId": "ID du joueur invalide.",
-          "uid": "UID invalide."
+          "uid": "UID invalide.",
+          "id": "ID invalide."
         }
       },
       "execution": {
-        "uid_error": "UID invalide.",
         "player_exist_error": "Joueur introuvable.",
         "player_offline_error": "Le joueur n'est pas connecté.",
-        "item_id_error": "ID de l'objet invalide.",
         "item_player_exist_error": "UID ou objet invalide.",
-        "entity_id_error": "ID de l'entité invalide.",
         "player_exist_offline_error": "Le joueur est introuvable ou n'est pas connecté.",
         "argument_error": "Arguments invalides.",
         "clear_target": "Cible réinitialisée.",
@@ -387,10 +385,10 @@
         "description": "Débloque tous les couloirs de l'abysse"
       },
       "weather": {
-        "usage": "Usage: weather <climate type(weatherId)> <weather type(climateId)>\nTypes de météo 0: Aucun, 1: Ensoleillé, 2: Nuageux, 3: Pluvieux, 4: Orageux, 5: Neige, 6: Brouillard",
-        "success": "Le type de climat a été changé à %s avec le type de météo %s.",
-        "invalid_id": "ID invalide.",
-        "description": "Change la météo"
+        "description": "Change la météo. Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
+        "usage": "Utilisation: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
+        "success": "Set weather ID to %s with climate type %s.",
+        "status": "Current weather ID is %s with climate type %s."
       },
       "ban": {
         "description": "Bannis un joueur",

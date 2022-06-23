@@ -70,16 +70,14 @@
         "itemLevel": "Błędny poziom przedmiotu.",
         "itemRefinement": "Błędne ulepszenie.",
         "playerId": "Błędne playerId.",
-        "uid": "Błędne UID."
+        "uid": "Błędne UID.",
+        "id": "Błędne ID."
       }
     },
     "execution": {
-      "uid_error": "Błędne UID.",
       "player_exist_error": "Gracz nie znaleziony.",
       "player_offline_error": "Gracz nie jest online.",
-      "item_id_error": "Błędne ID przedmiotu.",
       "item_player_exist_error": "Błędny przedmiot lub UID.",
-      "entity_id_error": "Błędne ID obiektu.",
       "player_exist_offline_error": "Gracz nie znaleziony lub jest offline.",
       "argument_error": "Błędne argumenty.",
       "clear_target": "Cel wyczyszczony.",
@@ -291,9 +289,10 @@
       "success": "Przeteleportowano %s do %s, %s, %s w scenie %s"
     },
     "weather": {
-      "usage": "Użycie: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types 0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist",
-      "success": "Changed climate type to %s with weather type %s.",
-      "invalid_id": "Błędne ID."
+      "description": "Changes the weather.Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "success": "Set weather ID to %s with climate type %s.",
+      "status": "Current weather ID is %s with climate type %s."
     },
     "drop": {
       "command_usage": "Użycie: drop <ID przedmiotu|nazwa przedmiotu> [ilość]",
