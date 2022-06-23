@@ -16,18 +16,18 @@ public interface ExternalAuthenticator {
     /**
      * Called when an external account creation request is made.
      * @param request The authentication request.
-     *                
-     * For developers: Use {@link AuthenticationRequest#getRequest()} to get the request body.
-     *                 Use {@link AuthenticationRequest#getResponse()} to get the response body.
+     *
+     * For developers: Use AuthenticationRequest#getRequest() to get the request body.
+     *                 Use AuthenticationRequest#getResponse() to get the response body.
      */
     void handleAccountCreation(AuthenticationRequest request);
 
     /**
      * Called when an external password reset request is made.
      * @param request The authentication request.
-     *                
-     * For developers: Use {@link AuthenticationRequest#getRequest()} to get the request body.
-     *                 Use {@link AuthenticationRequest#getResponse()} to get the response body.
+     *
+     * For developers: Use AuthenticationRequest#getRequest() to get the request body.
+     *                 Use AuthenticationRequest#getResponse() to get the response body.
      */
     void handlePasswordReset(AuthenticationRequest request);
 }
