@@ -351,6 +351,16 @@ public class SceneScriptManager {
 	}
 
 	public EntityGadget createGadget(int groupId, int blockId, SceneGadget g) {
+        if(g.isOneoff){
+            var hasEntity = getScene().getEntities().values().stream()
+                .filter(e -> e instanceof EntityGadget)
+                .filter(e -> e.getGroupId() == g.group.id)
+                .filter(e -> e.getConfigId() == g.config_id)
+                .findFirst();
+            if(hasEntity.isPresent()){
+                return null;
+            }
+        }
 		EntityGadget entity = new EntityGadget(getScene(), g.gadget_id, g.pos);
 
 		if (entity.getGadgetData() == null){
