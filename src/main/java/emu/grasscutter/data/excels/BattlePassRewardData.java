@@ -9,8 +9,7 @@ import java.util.List;
 
 @ResourceType(name = "BattlePassRewardExcelConfigData.json")
 @Getter
-@Setter
-public class BattlePassRewardExcelConfigData extends GameResource {
+public class BattlePassRewardData extends GameResource {
     private int indexId;
     private int level;
     private List<Integer> freeRewardIdList;
@@ -23,5 +22,6 @@ public class BattlePassRewardExcelConfigData extends GameResource {
 
     @Override
     public void onLoad() {
+    	
     }
 }

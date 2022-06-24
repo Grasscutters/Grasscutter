@@ -17,7 +17,6 @@ public final class SetBPLevelCommand implements CommandHandler {
 
         int level = Integer.parseInt(args.get(0));
 
-        sender.getBattlePassManager().addPoint(level);
-        sender.getBattlePassManager().updateAwardTakenLevel(0);
+        sender.getBattlePassManager().addPoints(level);
     }
 }

@@ -42,6 +42,7 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.SceneType;
+import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.tower.TowerData;
@@ -1268,6 +1269,7 @@ public class Player {
 	public void loadBattlePassManager() {
 		if (this.battlePassManager != null) return;
 		this.battlePassManager = DatabaseHelper.loadBattlePass(this);
+		this.battlePassManager.getMissions().values().removeIf(mission -> mission.getData() == null);
 	}
 
 	public AbilityManager getAbilityManager() {
@@ -1425,6 +1427,9 @@ public class Player {
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
+		// Battle Pass trigger
+		this.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_LOGIN);
+		
 		this.furnitureManager.onLogin();
 		// Home
 		home = GameHome.getByUid(getUid());
