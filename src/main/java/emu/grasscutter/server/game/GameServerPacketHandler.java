@@ -19,10 +19,10 @@ import static emu.grasscutter.Configuration.*;
 @SuppressWarnings("unchecked")
 public class GameServerPacketHandler {
 	private final Int2ObjectMap<PacketHandler> handlers;
-	
+
 	public GameServerPacketHandler(Class<? extends PacketHandler> handlerClass) {
 		this.handlers = new Int2ObjectOpenHashMap<>();
-		
+
 		this.registerHandlers(handlerClass);
 	}
 
@@ -34,7 +34,7 @@ public class GameServerPacketHandler {
 				return;
 			}
 
-			PacketHandler packetHandler = (PacketHandler) handlerClass.newInstance();
+			PacketHandler packetHandler = handlerClass.getDeclaredConstructor().newInstance();
 
 			this.handlers.put(opcode.value(), packetHandler);
 		} catch (Exception e) {
@@ -45,23 +45,23 @@ public class GameServerPacketHandler {
 	public void registerHandlers(Class<? extends PacketHandler> handlerClass) {
 		Reflections reflections = new Reflections("emu.grasscutter.server.packet");
 		Set<?> handlerClasses = reflections.getSubTypesOf(handlerClass);
-		
+
 		for (Object obj : handlerClasses) {
 			this.registerPacketHandler((Class<? extends PacketHandler>) obj);
 		}
-		
+
 		// Debug
 		Grasscutter.getLogger().info("Registered " + this.handlers.size() + " " + handlerClass.getSimpleName() + "s");
 	}
-	
+
 	public void handle(GameSession session, int opcode, byte[] header, byte[] payload) {
 		PacketHandler handler = this.handlers.get(opcode);
-		
+
 		if (handler != null) {
 			try {
 				// Make sure session is ready for packets
 				SessionState state = session.getState();
-				
+
 				if (opcode == PacketOpcodes.PingReq) {
 					// Always continue if packet is ping request
 				} else if (opcode == PacketOpcodes.GetPlayerTokenReq) {
@@ -81,18 +81,18 @@ public class GameServerPacketHandler {
 						return;
 					}
 				}
-				
+
 				// Invoke event.
 				ReceivePacketEvent event = new ReceivePacketEvent(session, opcode, payload); event.call();
 				if(!event.isCanceled()) // If event is not canceled, continue.
-					handler.handle(session, header, event.getPacketData());				
+					handler.handle(session, header, event.getPacketData());
 			} catch (Exception ex) {
 				// TODO Remove this when no more needed
 				ex.printStackTrace();
 			}
 			return; // Packet successfully handled
 		}
-		
+
 		// Log unhandled packets
 		if (SERVER.debugLevel == ServerDebugMode.MISSING) {
 			Grasscutter.getLogger().info("Unhandled packet (" + opcode + "): " + emu.grasscutter.net.packet.PacketOpcodesUtil.getOpcodeName(opcode));
