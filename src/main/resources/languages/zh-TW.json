@@ -75,16 +75,14 @@
         "itemLevel": "無效的物品等級。",
         "itemRefinement": "無效的物品精煉度。",
         "playerId": "無效的玩家ID。",
-        "uid": "無效的UID。"
+        "uid": "無效的UID。",
+        "id": "無效的ID。"
       }
     },
     "execution": {
-      "uid_error": "無效的UID。",
       "player_exist_error": "用戶不存在。",
       "player_offline_error": "玩家已離線。",
-      "item_id_error": "無效的物品ID。.",
       "item_player_exist_error": "無效的物品/玩家UID。",
-      "entity_id_error": "無效的實體ID。",
       "player_exist_offline_error": "玩家不存在或已離線。",
       "argument_error": "無效的參數。",
       "clear_target": "目標已清除.",
@@ -98,11 +96,10 @@
     "status": {
       "enabled": "已啟用",
       "disabled": "未啟用",
-      "help": "幫助", 
+      "help": "幫助",
       "success": "成功"
     },
     "account": {
-      "modify": "修改使用者帳號",
       "invalid": "無效的UID。",
       "exists": "帳號已存在。",
       "create": "已建立帳號，UID 為 %s 。",
@@ -390,10 +387,10 @@
       "description": "解鎖所有級別的深境螺旋。"
     },
     "weather": {
-      "usage": "用法：weather <氣候型別(weatherId)> <天氣型別(climateId)>\n天氣類型： '0：無、 1：晴天、 2：多雲、 3：雨、 4:：雷雨、 5：雪、 6：霧'",
-      "success": "已將當前氣候設定為 %s ，天氣則為 %s 。",
-      "invalid_id": "無效的ID。",
-      "description": "更改目前的天氣。"
+      "usage": "用法：weather [weatherId] [climateType]\n天氣ID可以在 WeatherExcelConfigData.json 中找到。\n氣候型別：sunny(晴天), cloudy(多雲), rain(雨), thunderstorm(雷雨), snow(雪), mist(霧)",
+      "success": "已設定天氣ID 為 %s，氣候型別為 %s。",
+      "status": "當前天氣ID 為 %s，氣候型別為 %s。",
+      "description": "更改天氣ID和氣候型別。天氣ID可以在 WeatherExcelConfigData.json 中找到。\n氣候型別：sunny(晴天), cloudy(多雲), rain(雨), thunderstorm(雷雨), snow(雪), mist(霧)"
     },
     "ban": {
       "description": "停權指定玩家。",

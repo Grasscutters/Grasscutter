@@ -76,16 +76,14 @@
         "itemLevel": "无效的物品等级。",
         "itemRefinement": "无效的物品精炼等级。",
         "playerId": "无效的玩家ID。",
-        "uid": "无效的UID。"
+        "uid": "无效的UID。",
+        "id": "无效的ID。"
       }
     },
     "execution": {
-      "uid_error": "无效的UID。",
       "player_exist_error": "玩家不存在。",
       "player_offline_error": "玩家已离线。",
-      "item_id_error": "无效的物品ID。",
       "item_player_exist_error": "无效的物品/玩家UID。",
-      "entity_id_error": "无效的实体ID。",
       "player_exist_offline_error": "玩家不存在或已离线。",
       "argument_error": "无效的参数。",
       "clear_target": "目标已清除。",
@@ -99,17 +97,16 @@
     "status": {
       "enabled": "已启用",
       "disabled": "未启用",
-      "help": "帮助", 
+      "help": "帮助",
       "success": "成功"
     },
     "account": {
-      "modify": "修改用户账号",
+      "command_usage": "用法：account <create|delete> <用户名> [UID]",
       "invalid": "无效的UID。",
       "exists": "具有此用户名和/或 UID 的账号已存在。",
       "create": "已创建 UID 为 %s 的账号。",
       "delete": "账号已删除。",
       "no_account": "账号不存在。",
-      "command_usage": "用法：account <create|delete> <用户名> [UID]",
       "description": "创建或删除账号"
     },
     "broadcast": {
@@ -121,7 +118,7 @@
       "usage": "用法：changescene <场景ID>",
       "already_in_scene": "你已经在这个场景中了。",
       "success": "已切换至场景 %s。",
-      "exists_error": "此场景不存在。",
+      "exists_error": "场景不存在。",
       "description": "切换指定场景"
     },
     "clear": {
@@ -148,8 +145,8 @@
     "enter_dungeon": {
       "usage": "用法：enterdungeon <秘境ID>",
       "changed": "已进入秘境 %s。",
-      "not_found_error": "此秘境不存在。",
-      "in_dungeon_error": "你已经在秘境中了。",
+      "not_found_error": "秘境不存在。",
+      "in_dungeon_error": "你已经在这个秘境中了。",
       "description": "进入指定秘境"
     },
     "giveAll": {
@@ -387,25 +384,25 @@
       "description": "解锁深境螺旋"
     },
     "weather": {
-      "usage": "用法：weather <气候类型(天气ID)> <天气类型(气候ID)>\n天气类型 0: 无, 1: 晴天, 2: 多云, 3: 雨, 4: 雷雨, 5: 雪, 6: 雾",
-      "success": "已更改气候类型为 %s，天气类型为 %s。",
-      "invalid_id": "无效的ID。",
-      "description": "更改天气"
+      "usage": "用法：weather [天气ID] [气候类型]\n天气ID可以在 WeatherExcelConfigData.json 中找到。\n气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)",
+      "success": "已设置天气ID 为 %s，气候类型为 %s。",
+      "status": "当前天气ID 为 %s，气候类型为 %s。",
+      "description": "更改天气ID和气候类型。天气ID可以在 WeatherExcelConfigData.json 中找到。\n气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
     },
     "ban": {
-      "description": "封禁玩家",
-      "success": "封禁玩家成功。",
-      "failure": "封禁玩家失败，因为无法获取到其账户。",
+      "command_usage": "用法：ban <玩家ID> [时间] [原因]",
+      "success": "成功封禁玩家。",
+      "failure": "封禁玩家失败，因为玩家不存在。",
       "invalid_time": "无法解析时间戳。",
-      "invalid_player_id": "无法解析玩家 ID。",
-      "command_usage": "用法：ban <玩家ID> [时间] [原因]"
+      "invalid_player_id": "无法解析玩家ID。",
+      "description": "封禁玩家"
     },
     "unban": {
-      "description": "取消玩家的封禁",
-      "success": "取消玩家的封禁成功。",
-      "failure": "取消玩家的封禁失败，因为无法获取到其账户。",
-      "invalid_player_id": "无法解析玩家 ID。",
-      "command_usage": "用法：unban <玩家ID>"
+      "command_usage": "用法：unban <玩家ID>",
+      "success": "成功取消玩家的封禁。",
+      "failure": "取消玩家的封禁失败，因为玩家不存在。",
+      "invalid_player_id": "无法解析玩家ID。",
+      "description": "取消玩家的封禁"
     }
   },
   "gacha": {
