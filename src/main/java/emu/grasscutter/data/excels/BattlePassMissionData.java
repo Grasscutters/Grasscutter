@@ -35,6 +35,10 @@ public class BattlePassMissionData extends GameResource {
 		return this.getTriggerConfig().getTriggerType();
 	}
     
+	public boolean isCycleRefresh() {
+		return getRefreshType() == null || getRefreshType() == BattlePassMissionRefreshType.BATTLE_PASS_MISSION_REFRESH_CYCLE_CROSS_SCHEDULE;
+	}
+    
     public boolean isValidRefreshType() {
     	return getRefreshType() == null || 
     		getRefreshType() == BattlePassMissionRefreshType.BATTLE_PASS_MISSION_REFRESH_CYCLE_CROSS_SCHEDULE || 
