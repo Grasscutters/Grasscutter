@@ -13,8 +13,11 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass;
+import emu.grasscutter.server.event.entity.EntityMoveEvent;
+import emu.grasscutter.server.event.game.ReceiveCommandFeedbackEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import emu.grasscutter.utils.Position;
 
 @Opcodes(PacketOpcodes.CombatInvocationsNotify)
 public class HandlerCombatInvocationsNotify extends PacketHandler {
@@ -41,11 +44,18 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 					if (entity != null) {
 						// Move player
 						MotionInfo motionInfo = moveInfo.getMotionInfo();
+                        MotionState motionState = motionInfo.getState();
+
+                        // Call entity move event.
+                        EntityMoveEvent event = new EntityMoveEvent(
+                            entity, new Position(motionInfo.getPos()),
+                            new Position(motionInfo.getRot()), motionState);
+                        event.call();
+
 						entity.getPosition().set(motionInfo.getPos());
 						entity.getRotation().set(motionInfo.getRot());
 						entity.setLastMoveSceneTimeMs(moveInfo.getSceneTime());
 						entity.setLastMoveReliableSeq(moveInfo.getReliableSeq());
-						MotionState motionState = motionInfo.getState();
 						entity.setMotionState(motionState);
 
 						session.getPlayer().getStaminaManager().handleCombatInvocationsNotify(session, moveInfo, entity);
