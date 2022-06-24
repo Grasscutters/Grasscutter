@@ -109,18 +109,6 @@
       "no_account": "Account not found.",
       "description": "Modify user accounts"
     },
-    "broadcast": {
-      "command_usage": "Usage: broadcast <message>",
-      "message_sent": "Message sent.",
-      "description": "Sends a message to all the players"
-    },
-    "changescene": {
-      "usage": "Usage: changescene <sceneID>",
-      "already_in_scene": "You are already in that scene.",
-      "success": "Changed to scene %s.",
-      "exists_error": "The specified scene does not exist.",
-      "description": "Changes your scene"
-    },
     "clear": {
       "command_usage": "Usage: clear <all|wp|art|mat>",
       "weapons": "Cleared weapons for %s.",
@@ -136,11 +124,6 @@
       "usage": "Usage: coop [host UID]",
       "success": "Summoned %s to %s's world.",
       "description": "Forces someone to join the world of others. If no one is targeted, it sends you into co-op mode anyway."
-    },
-    "drop": {
-      "command_usage": "Usage: drop <itemID|itemName> [amount]",
-      "success": "Dropped %s of %s.",
-      "description": "Drops an item near you"
     },
     "enter_dungeon": {
       "usage": "Usage: enterdungeon <dungeonID>",
@@ -259,9 +242,6 @@
       "success": "Reset complete.",
       "description": "Reset target player's shop refresh time"
     },
-    "restart": {
-      "description": "Restarts the current session"
-    },
     "sendMail": {
       "usage": "Usage: sendmail <userID|all|help> [templateID]",
       "user_not_exist": "The user with an ID of '%s' does not exist.",
@@ -371,6 +351,7 @@
       "usage": "Usage: tp [@<playerID>] <x> <y> <z> [sceneID]",
       "specify_player_id": "You must specify a player ID.",
       "invalid_position": "Invalid position.",
+            "exists_error": "The specified scene does not exist.",
       "success": "Teleported %s to %s, %s, %s in scene %s.",
       "description": "Change the player's position"
     },
