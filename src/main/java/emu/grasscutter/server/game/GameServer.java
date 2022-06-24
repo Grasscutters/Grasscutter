@@ -52,20 +52,19 @@ public final class GameServer extends KcpServer {
 	private final Set<World> worlds;
 
 	private ChatManagerHandler chatManager;
-	private final InventoryManager inventoryManager;
-	private final GachaManager gachaManager;
-	private final ShopManager shopManager;
-	private final MultiplayerManager multiplayerManager;
-	private final DungeonManager dungeonManager;
-	private final ExpeditionManager expeditionManager;
-	private final CommandMap commandMap;
-	private final TaskMap taskMap;
-	private final DropManager dropManager;
-	private final WorldDataManager worldDataManager;
-	private final BattlePassMissionManager battlePassMissionManager;
-
-	private final CombineManger combineManger;
-	private final TowerScheduleManager towerScheduleManager;
+	@Getter private final InventoryManager inventoryManager;
+	@Getter private final GachaManager gachaManager;
+	@Getter private final ShopManager shopManager;
+	@Getter private final MultiplayerManager multiplayerManager;
+	@Getter private final DungeonManager dungeonManager;
+	@Getter private final ExpeditionManager expeditionManager;
+	@Getter private final CommandMap commandMap;
+	@Getter private final TaskMap taskMap;
+	@Getter private final DropManager dropManager;
+	@Getter private final WorldDataManager worldDataManager;
+	@Getter private final BattlePassMissionManager battlePassMissionManager;
+	@Getter private final CombineManger combineManger;
+	@Getter private final TowerScheduleManager towerScheduleManager;
 
 	public GameServer() {
 		this(getAdapterInetSocketAddress());
@@ -133,57 +132,6 @@ public final class GameServer extends KcpServer {
 		this.chatManager = chatManager;
 	}
 
-	public InventoryManager getInventoryManager() {
-		return inventoryManager;
-	}
-
-	public GachaManager getGachaManager() {
-		return gachaManager;
-	}
-
-	public ShopManager getShopManager() {
-		return shopManager;
-	}
-
-	public MultiplayerManager getMultiplayerManager() {
-		return multiplayerManager;
-	}
-
-	public DropManager getDropManager() {
-		return dropManager;
-	}
-
-	public DungeonManager getDungeonManager() {
-		return dungeonManager;
-	}
-
-	public ExpeditionManager getExpeditionManager() {
-		return expeditionManager;
-	}
-
-	public CommandMap getCommandMap() {
-		return this.commandMap;
-	}
-
-	public CombineManger getCombineManger(){
-		return this.combineManger;
-	}
-
-	public TowerScheduleManager getTowerScheduleManager() {
-		return towerScheduleManager;
-	}
-
-	public WorldDataManager getWorldDataManager() {
-		return worldDataManager;
-	}
-
-	public BattlePassMissionManager getBattlePassMissionManager() {
-		return battlePassMissionManager;
-	}
-
-	public TaskMap getTaskMap() {
-		return this.taskMap;
-	}
 
 	private static InetSocketAddress getAdapterInetSocketAddress(){
 		InetSocketAddress inetSocketAddress;
