@@ -144,21 +144,14 @@
       "success": "已把 %s 給予 %s。",
       "description": "給予指定聖遺物。"
     },
-    "giveChar": {
-      "usage": "用法：givechar <player> <avatarId> [level]",
-      "given": "已將 %s 等級 %s 給予 %s。",
-      "invalid_avatar_id": "無效的角色ID。",
-      "invalid_avatar_level": "無效的角色等級。.",
-      "invalid_avatar_or_player_id": "無效的角色ID/玩家ID。",
-      "description": "給予指定角色。"
-    },
     "give": {
-      "usage": "用法：give <player> <itemId|itemName> [amount] [level] [refinement]",
+          "usage": "用法：give <player> <itemId|avatarId> [amount] [level] [refinement]",
       "refinement_only_applicable_weapons": "精煉度只能施加在武器上面。",
       "refinement_must_between_1_and_5": "精煉度必需在 1 到 5 之間。",
       "given": "已經將 %s 個 %s 給予 %s。",
       "given_with_level_and_refinement": "已將 %s [等級%s, 精煉%s] %s個給予 %s",
       "given_level": "已將 %s 等級 %s %s 個給予 %s",
+          "given_avatar": "已將 %s 等級 %s 給予 %s。",
       "description": "給予指定物品。"
     },
     "godmode": {

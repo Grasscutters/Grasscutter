@@ -20,8 +20,9 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class GameDepot {
-	private static Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicMainPropDepot = new Int2ObjectOpenHashMap<>();
-	private static Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot = new Int2ObjectOpenHashMap<>();
+    private static Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicRandomMainPropDepot = new Int2ObjectOpenHashMap<>();
+    private static Int2ObjectMap<List<ReliquaryMainPropData>> relicMainPropDepot = new Int2ObjectOpenHashMap<>();
+    private static Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot = new Int2ObjectOpenHashMap<>();
 	
 	private static Map<String, AvatarConfig> playerAbilities = new HashMap<>();
 	private static Int2ObjectMap<SpatialIndex<SpawnGroupEntry>> spawnLists = new Int2ObjectOpenHashMap<>();
@@ -31,8 +32,10 @@ public class GameDepot {
 			if (data.getWeight() <= 0 || data.getPropDepotId() <= 0) {
 				continue;
 			}
-			WeightedList<ReliquaryMainPropData> list = relicMainPropDepot.computeIfAbsent(data.getPropDepotId(), k -> new WeightedList<>());
-			list.add(data.getWeight(), data);
+            List<ReliquaryMainPropData> list = relicMainPropDepot.computeIfAbsent(data.getPropDepotId(), k -> new ArrayList<>());
+            list.add(data);
+            WeightedList<ReliquaryMainPropData> weightedList = relicRandomMainPropDepot.computeIfAbsent(data.getPropDepotId(), k -> new WeightedList<>());
+            weightedList.add(data.getWeight(), data);
 		}
 		for (ReliquaryAffixData data : GameData.getReliquaryAffixDataMap().values()) {
 			if (data.getWeight() <= 0 || data.getDepotId() <= 0) {
@@ -48,14 +51,18 @@ public class GameDepot {
 	}
 	
 	public static ReliquaryMainPropData getRandomRelicMainProp(int depot) {
-		WeightedList<ReliquaryMainPropData> depotList = relicMainPropDepot.get(depot);
+        WeightedList<ReliquaryMainPropData> depotList = relicRandomMainPropDepot.get(depot);
 		if (depotList == null) {
 			return null;
 		}
 		return depotList.next();
 	}
 	
-	public static List<ReliquaryAffixData> getRandomRelicAffixList(int depot) {
+    public static List<ReliquaryMainPropData> getRelicMainPropList(int depot) {
+        return relicMainPropDepot.get(depot);
+    }
+
+    public static List<ReliquaryAffixData> getRelicAffixList(int depot) {
 		return relicAffixDepot.get(depot);
 	}
 	

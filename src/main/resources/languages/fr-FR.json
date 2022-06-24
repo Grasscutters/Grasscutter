@@ -146,21 +146,14 @@
         "success": "%s a été donné à %s.",
         "description": "Donne au joueur l'artéfact spécifié."
       },
-      "giveChar": {
-        "usage": "Usage: givechar <joueur> <avatarID> [niveau]",
-        "given": "%s avec le niveau %s a été donné à %s.",
-        "invalid_avatar_id": "ID de l'avatar invalide.",
-        "invalid_avatar_level": "Niveau de l'avatar invalide.",
-        "invalid_avatar_or_player_id": "ID de l'avatar ou du joueur invalide.",
-        "description": "Donne au joueur le personnage spécifié"
-      },
       "give": {
-        "usage": "Usage: give <joueur> <itemID|itemName> [quantité] [niveau] [raffinement]",
+            "usage": "Usage: give <joueur> <itemID|avatarID> [quantité] [niveau] [raffinement]",
         "refinement_only_applicable_weapons": "Le raffinement est uniquement applicable aux armes.",
         "refinement_must_between_1_and_5": "Le raffinement doit être compris entre 1 et 5.",
         "given": "Given %s of %s to %s.",
         "given_with_level_and_refinement": "%s avec le niveau %s, raffinement %s %s fois à %s.",
         "given_level": "%s avec le niveau %s %s fois à %s.",
+            "given_avatar": "%s avec le niveau %s a été donné à %s.",
         "description": "Donne un objet au joueur spécifié"
       },
       "godmode": {
