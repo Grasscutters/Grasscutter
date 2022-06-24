@@ -145,21 +145,14 @@
       "success": "已将 %s 给予 %s。",
       "description": "给予指定圣遗物"
     },
-    "giveChar": {
-      "usage": "用法：givechar <玩家> <角色ID> [等级]",
-      "given": "已将角色 %s [等级 %s] 给与 %s。",
-      "invalid_avatar_id": "无效的角色ID。",
-      "invalid_avatar_level": "无效的角色等级。",
-      "invalid_avatar_or_player_id": "无效的角色ID/玩家ID。",
-      "description": "给予指定角色"
-    },
     "give": {
-      "usage": "用法：give <玩家> <物品ID|物品名> [数量] [等级] [精炼等级]",
+          "usage": "用法：give <玩家> <物品ID|角色ID> [数量] [等级] [精炼等级]",
       "refinement_only_applicable_weapons": "只有武器可以设置精炼等级。",
       "refinement_must_between_1_and_5": "精炼等级必须在 1-5 之间。",
       "given": "已将 %s 个 %s 给予 %s。",
       "given_with_level_and_refinement": "已将 %s [等级 %s, 精炼 %s] %s 个给予 %s。",
       "given_level": "已将 %s [等级 %s] %s 个给予 %s。",
+          "given_avatar": "已将角色 %s [等级 %s] 给与 %s。",
       "description": "给予指定物品"
     },
     "godmode": {

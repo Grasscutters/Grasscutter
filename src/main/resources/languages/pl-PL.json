@@ -134,20 +134,14 @@
       "id_error": "Błędne ID artefaktu.",
       "success": "Dano %s dla %s."
     },
-    "giveChar": {
-      "usage": "Użycie: givechar <gracz> <avatarId> [ilość]",
-      "given": "Dano %s z poziomem %s dla %s.",
-      "invalid_avatar_id": "Błędne ID postaci.",
-      "invalid_avatar_level": "Błędny poziom postaci.",
-      "invalid_avatar_or_player_id": "Błędne ID postaci lub gracza."
-    },
     "give": {
-      "usage": "Użycie: give <gracz> <id przedmiotu | nazwa przedmiotu> [ilość] [poziom] [refinement]",
+            "usage": "Użycie: give <gracz> <id przedmiotu | avatarID> [ilość] [poziom] [refinement]",
       "refinement_only_applicable_weapons": "Ulepszenie można zastosować tylko dla broni.",
       "refinement_must_between_1_and_5": "Ulepszenie musi być pomiędzy 1, a 5.",
       "given": "Dano %s %s dla %s.",
       "given_with_level_and_refinement": "Dano %s z poziomem %s, ulepszeniem %s %s razy dla %s",
-      "given_level": "Dano %s z poziomem %s %s razy dla %s"
+            "given_level": "Dano %s z poziomem %s %s razy dla %s",
+            "given_avatar": "Dano %s z poziomem %s dla %s."
     },
     "godmode": {
       "success": "Godmode jest teraz %s dla %s."
