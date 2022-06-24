@@ -65,6 +65,8 @@
       "player_execute_error": "請在遊戲裡使用這條指令。",
       "command_exist_error": "找不到指令。",
       "no_description_specified": "没有指定說明。",
+      "set_to": "%s 已經設為 %s。",
+      "set_for_to": "%s 的使用者 %s 更改為 %s。",
       "invalid": {
         "amount": "無效的數量。",
         "artifactId": "無效的聖遺物ID。",
@@ -74,6 +76,8 @@
         "itemId": "無效的物品ID。",
         "itemLevel": "無效的物品等級。",
         "itemRefinement": "無效的物品精煉度。",
+        "statValue": "無效的數據值。",
+        "value_between": "Invalid value: %s must be between %s and %s.",
         "playerId": "無效的玩家ID。",
         "uid": "無效的UID。",
         "id": "無效的ID。"
@@ -274,16 +278,12 @@
       "level_error": "無效的好感度。",
       "description": "設定當前角色的好感度等級。"
     },
+    "setProp": {
+      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyssfloor | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
+      "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
+    },
     "setStats": {
-      "usage_console": "用法：setstats|stats @<UID> <stat> <value>",
-      "usage_ingame": "用法：setstats|stats [@UID] <stat> <value>",
-      "help_message": "\n\t可使用的數據類型：hp (生命值)| maxhp (最大生命值) | def(防禦力) | atk (攻擊力)| em (元素精通) | er (元素充能效率) | crate(暴擊率) | cdmg (暴擊傷害)| cdr (冷卻縮減) | heal(治療加成)| heali (受治療加成)| shield (護盾強效)| defi (無視防禦)\n\t(cont.) 元素增傷類：epyro (火傷) | ecryo (冰傷)  | ehydro (水傷)  | egeo (岩傷)  | edendro (草傷) | eelectro (雷傷) | ephys (物傷)(cont.) 元素減傷類：respyro (火抗)  | rescryo (冰抗)  | reshydro (水抗)  | resgeo (岩抗) | resdendro (草抗) | reselectro (雷抗)  | resphys (物抗)\n",
-      "value_error": "無效的數據值。",
-      "uid_error": "無效的UID。",
-      "player_error": "玩家不存在或已離線。",
-      "set_self": "%s 已經設為 %s。",
-      "set_for_uid": "%s 的使用者 %s 更改為 %s。",
-      "set_max_hp": "最大生命值更改為 %s。",
+      "usage": "用法：setstats|stats <stat> <value>\n\t可使用的數據類型：hp (生命值)| maxhp (最大生命值) | def(防禦力) | atk (攻擊力)| em (元素精通) | er (元素充能效率) | crate(暴擊率) | cdmg (暴擊傷害)| cdr (冷卻縮減) | heal(治療加成)| heali (受治療加成)| shield (護盾強效)| defi (無視防禦)\n\t(cont.) 元素增傷類：epyro (火傷) | ecryo (冰傷)  | ehydro (水傷)  | egeo (岩傷)  | edendro (草傷) | eelectro (雷傷) | ephys (物傷)(cont.) 元素減傷類：respyro (火抗)  | rescryo (冰抗)  | reshydro (水抗)  | resgeo (岩抗) | resdendro (草抗) | reselectro (雷抗)  | resphys (物抗)\n",
       "description": "設定當前角色的數據類型。"
     },
     "setWorldLevel": {

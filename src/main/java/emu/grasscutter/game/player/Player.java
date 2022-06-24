@@ -437,12 +437,13 @@ public class Player {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_LEVEL);
 	}
 
-	public void setLevel(int level) {
-		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, level);
-		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_LEVEL));
-
-		this.updateWorldLevel();
-		this.updateProfile();
+	public boolean setLevel(int level) {
+		if (this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, level)) {
+			this.updateWorldLevel();
+			this.updateProfile();
+			return true;
+		}
+		return false;
 	}
 
 	public int getExp() {
@@ -452,59 +453,59 @@ public class Player {
 	public int getWorldLevel() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL);
 	}
-
-	public void setWorldLevel(int level) {
-		this.getWorld().setWorldLevel(level);
-
-		this.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level);
-		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_WORLD_LEVEL));
-
-		this.updateProfile();
+	
+	public boolean setWorldLevel(int level) {
+		if (this.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level)) {
+			if (this.world.getHost() == this)  // Don't update World's WL if we are in someone else's world
+            	this.world.setWorldLevel(level);
+			this.updateProfile();
+			return true;
+		}
+		return false;
 	}
 
 	public int getForgePoints() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_FORGE_POINT);
 	}
 
-	public void setForgePoints(int value) {
+	public boolean setForgePoints(int value) {
 		if (value == this.getForgePoints()) {
-			return;
+			return true;
 		}
 
-		this.setProperty(PlayerProperty.PROP_PLAYER_FORGE_POINT, value);
-		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_FORGE_POINT));
+		return this.setProperty(PlayerProperty.PROP_PLAYER_FORGE_POINT, value);
 	}
 
 	public int getPrimogems() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_HCOIN);
 	}
 
-	public void setPrimogems(int primogem) {
-		this.setProperty(PlayerProperty.PROP_PLAYER_HCOIN, primogem);
+	public boolean setPrimogems(int primogem) {
+		return this.setProperty(PlayerProperty.PROP_PLAYER_HCOIN, primogem);
 	}
 
 	public int getMora() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_SCOIN);
 	}
 
-	public void setMora(int mora) {
-		this.setProperty(PlayerProperty.PROP_PLAYER_SCOIN, mora);
+	public boolean setMora(int mora) {
+		return this.setProperty(PlayerProperty.PROP_PLAYER_SCOIN, mora);
 	}
 
 	public int getCrystals() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_MCOIN);
 	}
 
-	public void setCrystals(int crystals) {
-		this.setProperty(PlayerProperty.PROP_PLAYER_MCOIN, crystals);
+	public boolean setCrystals(int crystals) {
+		return this.setProperty(PlayerProperty.PROP_PLAYER_MCOIN, crystals);
 	}
 
 	public int getHomeCoin() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_HOME_COIN);
 	}
 
-	public void setHomeCoin(int coin) {
-		this.setProperty(PlayerProperty.PROP_PLAYER_HOME_COIN, coin);
+	public boolean setHomeCoin(int coin) {
+		return this.setProperty(PlayerProperty.PROP_PLAYER_HOME_COIN, coin);
 	}
 	private int getExpRequired(int level) {
 		PlayerLevelData levelData = GameData.getPlayerLevelDataMap().get(level);
@@ -581,7 +582,7 @@ public class Player {
 	}
 
 	public TowerData getTowerData() {
-		if(towerData==null){
+		if (towerData == null) {
 			// because of mistake, null may be saved as storage at some machine, this if can be removed in future
 			towerData = new TowerData();
 		}
@@ -953,12 +954,10 @@ public class Player {
 		}
 		this.save();
 	}
-	public boolean getStamina() {
-		// Get Stamina
+	public boolean getUnlimitedStamina() {
 		return stamina;
 	}
-	public void setStamina(boolean stamina) {
-		// Set Stamina
+	public void setUnlimitedStamina(boolean stamina) {
 		this.stamina = stamina;
 	}
 	public boolean inGodmode() {

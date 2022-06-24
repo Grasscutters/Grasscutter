@@ -66,6 +66,8 @@
         "command_exist_error": "Aucune commande trouvée.",
         "no_usage_specified": "Pas de description de l'utilisation spécifiée.",
         "no_description_specified": "Pas de description spécifiée",
+        "set_to": "%s a été défini a %s.",
+        "set_for_to": "%s de %s a été défini a %s.",
         "invalid": {
           "amount": "Montant invalide.",
           "artifactId": "ID de l'artéfact invalide.",
@@ -75,6 +77,8 @@
           "itemId": "ID de l'objet invalide.",
           "itemLevel": "Niveau de l'objet invalide.",
           "itemRefinement": "Raffinement de l'objet invalide.",
+          "statValue": "Valeur de <stat> invalide.",
+          "value_between": "Invalid value: %s must be between %s and %s.",
           "playerId": "ID du joueur invalide.",
           "uid": "UID invalide.",
           "id": "ID invalide."
@@ -271,16 +275,12 @@
         "level_error": "Niveau d'affinité invalide.",
         "description": "Défini le niveau d'affinité de votre personnage actif"
       },
+      "setProp": {
+        "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyssfloor | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
+        "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
+      },
       "setStats": {
-        "usage_console": "Usage: setstats|stats @<UID> <stat> <valeur>",
-        "usage_ingame": "Usage: setstats|stats [@UID] <stat> <valeur>",
-        "help_message": "\n\tValeurs pour <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de dégât élémentaire: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Résistance élémentaire: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-        "value_error": "Valeur de <stat> invalide.",
-        "uid_error": "UID invalide.",
-        "player_error": "Joueur introuvable ou hors ligne.",
-        "set_self": "%s a été défini a %s.",
-        "set_for_uid": "%s de %s a été défini a %s.",
-        "set_max_hp": "MAX HP a été défini a %s.",
+        "usage": "Usage: setstats|stats <stat> <valeur>\n\tValeurs pour <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de dégât élémentaire: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Résistance élémentaire: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
         "description": "Définit les propriétés de combat de votre personnage actif"
       },
       "setWorldLevel": {
