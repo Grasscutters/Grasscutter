@@ -9,12 +9,15 @@ import emu.grasscutter.game.battlepass.BattlePassMissionManager;
 import emu.grasscutter.game.combine.CombineManger;
 import emu.grasscutter.game.drop.DropManager;
 import emu.grasscutter.game.dungeons.DungeonManager;
+import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
 import emu.grasscutter.game.expedition.ExpeditionManager;
 import emu.grasscutter.game.gacha.GachaManager;
 import emu.grasscutter.game.managers.InventoryManager;
 import emu.grasscutter.game.managers.MultiplayerManager;
 import emu.grasscutter.game.managers.chat.ChatManager;
 import emu.grasscutter.game.managers.chat.ChatManagerHandler;
+import emu.grasscutter.game.managers.energy.EnergyManager;
+import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.ServerQuestHandler;
 import emu.grasscutter.game.shop.ShopManager;
@@ -81,6 +84,10 @@ public final class GameServer extends KcpServer {
 		channelConfig.setAckNoDelay(false);
 
 		this.init(GameSessionManager.getListener(),channelConfig,address);
+
+		DungeonChallenge.initialize();
+		EnergyManager.initialize();
+		StaminaManager.initialize();
 
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
