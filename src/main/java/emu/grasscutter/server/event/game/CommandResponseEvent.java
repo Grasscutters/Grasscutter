@@ -7,7 +7,7 @@ import emu.grasscutter.server.event.types.ServerEvent;
  * @deprecated Will be removed in 1.2.3-dev or 1.3.0.
  */
 @Deprecated(since = "1.2.2-dev", forRemoval = true)
-public class CommandResponseEvent extends ServerEvent {
+public final class CommandResponseEvent extends ServerEvent {
     private String message;
     private Player player;
 
