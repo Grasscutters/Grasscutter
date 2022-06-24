@@ -97,17 +97,16 @@
     "status": {
       "enabled": "Enabled",
       "disabled": "Disabled",
-      "help": "Help", 
+      "help": "Help",
       "success": "Success"
     },
     "account": {
-      "modify": "Modify user accounts",
+      "command_usage": "Usage: account <create|delete> <username> [UID]",
       "invalid": "Invalid UID.",
       "exists": "An account with this username and/or UID already exists.",
       "create": "Account created with UID %s.",
       "delete": "Account deleted.",
       "no_account": "Account not found.",
-      "command_usage": "Usage: account <create|delete> <username> [UID]",
       "description": "Modify user accounts"
     },
     "broadcast": {
@@ -385,25 +384,25 @@
       "description": "Unlock all levels of tower"
     },
     "weather": {
-      "description": "Changes weather ID and climate type. Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist",
-      "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist",
       "success": "Set weather ID to %s with climate type %s.",
-      "status": "Current weather ID is %s with climate type %s."
+      "status": "Current weather ID is %s with climate type %s.",
+      "description": "Changes weather ID and climate type. Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist"
     },
     "ban": {
-      "description": "Ban a player",
+      "command_usage": "Usage: ban <playerId> [timestamp] [reason]",
       "success": "Successful.",
       "failure": "Failed, player not found.",
       "invalid_time": "Unable to parse timestamp.",
       "invalid_player_id": "Unable to parse player ID.",
-      "command_usage": "Usage: ban <playerId> [timestamp] [reason]"
+      "description": "Ban a player"
     },
     "unban": {
-      "description": "Unban a player",
+      "command_usage": "Usage: unban <playerId>",
       "success": "Successful.",
       "failure": "Failed, player not found.",
       "invalid_player_id": "Unable to parse player ID.",
-      "command_usage": "Usage: unban <playerId>"
+      "description": "Unban a player"
     }
   },
   "gacha": {
