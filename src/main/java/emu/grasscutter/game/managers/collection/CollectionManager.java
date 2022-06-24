@@ -122,11 +122,19 @@ public class CollectionManager {
                     }
                 }
             }
-            if(removeEntities.size()>0) {
-                scene.removeEntities(removeEntities,VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
+            try {
+                if (removeEntities.size() > 0) {
+                    scene.removeEntities(removeEntities, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
+                }
+            }catch (Throwable ignored){
+
             }
-            if(addEntities.size()>0) {
-                scene.addEntities(addEntities,VisionTypeOuterClass.VisionType.VISION_TYPE_MEET);
+            try {
+                if(addEntities.size()>0) {
+                    scene.addEntities(addEntities,VisionTypeOuterClass.VisionType.VISION_TYPE_MEET);
+                }
+            }catch (Throwable ignored){
+
             }
         }else{
             Grasscutter.getLogger().warn("Collection Scene {} Resources Data not found.",sceneId);
