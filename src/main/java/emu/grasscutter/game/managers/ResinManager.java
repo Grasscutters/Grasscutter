@@ -44,7 +44,6 @@ public class ResinManager {
         }
 
         // Send packets.
-        this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
         this.player.sendPacket(new PacketResinChangeNotify(this.player));
         
         // Battle Pass trigger
@@ -70,7 +69,6 @@ public class ResinManager {
         }
 
         // Send packets.
-        this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
         this.player.sendPacket(new PacketResinChangeNotify(this.player));
     }
 
@@ -117,7 +115,6 @@ public class ResinManager {
         }
 
         // Send packets.
-        this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
         this.player.sendPacket(new PacketResinChangeNotify(this.player));
     }
 
@@ -141,7 +138,6 @@ public class ResinManager {
         }
 
         // Send initial notifications on logon.
-        this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
         this.player.sendPacket(new PacketResinChangeNotify(this.player));
     }
 }
