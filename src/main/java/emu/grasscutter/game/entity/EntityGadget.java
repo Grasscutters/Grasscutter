@@ -32,6 +32,7 @@ import lombok.ToString;
 
 @ToString(callSuper = true)
 public class EntityGadget extends EntityBaseGadget {
+	private final Int2FloatOpenHashMap fightProp;
 	private final GadgetData data;
 	private final Position pos;
 	private final Position rot;
@@ -43,17 +44,22 @@ public class EntityGadget extends EntityBaseGadget {
 	private SceneGadget metaGadget;
 
 	public EntityGadget(Scene scene, int gadgetId, Position pos) {
+		this(scene, gadgetId, pos, new Position());
+	}
+	public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot) {
 		super(scene);
 		this.data = GameData.getGadgetDataMap().get(gadgetId);
 		this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
 		this.gadgetId = gadgetId;
 		this.pos = pos.clone();
-		this.rot = new Position();
+		this.rot = rot.clone();
+		this.fightProp = new Int2FloatOpenHashMap();
 	}
 	
-	public EntityGadget(Scene scene, int gadgetId, Position pos, GadgetContent content) {
-		this(scene, gadgetId, pos);
+	public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content) {
+		this(scene, gadgetId, pos, rot);
 		this.content = content;
+		this.content.setGadget(this);
 	}
 	
 	public GadgetData getGadgetData() {
@@ -137,7 +143,7 @@ public class EntityGadget extends EntityBaseGadget {
 
 	@Override
 	public Int2FloatOpenHashMap getFightProperties() {
-		return null;
+		return fightProp;
 	}
 	
 	@Override

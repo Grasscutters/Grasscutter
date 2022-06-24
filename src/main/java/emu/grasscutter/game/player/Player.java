@@ -31,6 +31,7 @@ import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.managers.FurnitureManager;
 import emu.grasscutter.game.managers.InsectCaptureManager;
 import emu.grasscutter.game.managers.ResinManager;
+import emu.grasscutter.game.managers.collection.CollectionManager;
 import emu.grasscutter.game.managers.deforestation.DeforestationManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.managers.forging.ActiveForgeData;
@@ -41,7 +42,6 @@ import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.shop.ShopLimit;
@@ -177,6 +177,7 @@ public class Player {
 	@Transient private GameHome home;
 	@Transient private FurnitureManager furnitureManager;
 	@Transient private BattlePassManager battlePassManager;
+	@Transient private CollectionManager collectionManager;
 
 	private long springLastUsed;
 	private HashMap<String, MapMark> mapMarks;
@@ -192,6 +193,7 @@ public class Player {
 		this.towerManager = new TowerManager(this);
 		this.abilityManager = new AbilityManager(this);
 		this.deforestationManager = new DeforestationManager(this);
+		this.collectionManager = new CollectionManager(this);
 		this.insectCaptureManager = new InsectCaptureManager(this);
 
 		this.setQuestManager(new QuestManager(this));
@@ -273,6 +275,7 @@ public class Player {
 		this.energyManager = new EnergyManager(this);
 		this.resinManager = new ResinManager(this);
 		this.deforestationManager = new DeforestationManager(this);
+		this.collectionManager = new CollectionManager(this);
 		this.forgingManager = new ForgingManager(this);
 		this.furnitureManager = new FurnitureManager(this);
 	}
@@ -1280,6 +1283,10 @@ public class Player {
 		return deforestationManager;
 	}
 
+	public CollectionManager getCollectionManager() {
+		return collectionManager;
+	}
+
 	public HashMap<String, MapMark> getMapMarks() { return mapMarks; }
 
 	public void setMapMarks(HashMap<String, MapMark> newMarks) { mapMarks = newMarks; }
@@ -1424,7 +1431,6 @@ public class Player {
 		session.send(new PacketCombineDataNotify(this.unlockedCombines));
 		this.forgingManager.sendForgeDataNotify();
 		this.resinManager.onPlayerLogin();
-
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
 		// Battle Pass trigger

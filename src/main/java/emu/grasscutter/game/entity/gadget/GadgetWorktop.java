@@ -14,7 +14,7 @@ public class GadgetWorktop extends GadgetContent {
 	private IntSet worktopOptions;
 	
 	public GadgetWorktop(EntityGadget gadget) {
-		super(gadget);
+		super.setGadget(gadget);
 	}
 	
 	public IntSet getWorktopOptions() {

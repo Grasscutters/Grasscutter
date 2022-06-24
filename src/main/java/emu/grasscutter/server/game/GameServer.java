@@ -49,7 +49,7 @@ public final class GameServer extends KcpServer {
 	private final InetSocketAddress address;
 	private final GameServerPacketHandler packetHandler;
 	private final ServerQuestHandler questHandler;
-    @Getter private final ServerTaskScheduler scheduler;
+	@Getter private final ServerTaskScheduler scheduler;
 
 	private final Map<Integer, Player> players;
 	private final Set<World> worlds;
@@ -92,7 +92,7 @@ public final class GameServer extends KcpServer {
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
 		this.questHandler = new ServerQuestHandler();
-        this.scheduler = new ServerTaskScheduler();
+		this.scheduler = new ServerTaskScheduler();
 		this.players = new ConcurrentHashMap<>();
 		this.worlds = Collections.synchronizedSet(new HashSet<>());
 
@@ -110,7 +110,7 @@ public final class GameServer extends KcpServer {
 		this.towerScheduleManager = new TowerScheduleManager(this);
 		this.worldDataManager = new WorldDataManager(this);
 		this.battlePassMissionManager = new BattlePassMissionManager(this);
-		
+
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
@@ -206,33 +206,33 @@ public final class GameServer extends KcpServer {
 		return DatabaseHelper.getAccountByName(username);
 	}
 
-    public synchronized void onTick() {
-        var tickStart = Instant.now();
+	public synchronized void onTick() {
+		var tickStart = Instant.now();
 
-        // Tick worlds.
-        Iterator<World> it = this.getWorlds().iterator();
-        while (it.hasNext()) {
-            World world = it.next();
+		// Tick worlds.
+		Iterator<World> it = this.getWorlds().iterator();
+		while (it.hasNext()) {
+			World world = it.next();
 
-            if (world.getPlayerCount() == 0) {
-                it.remove();
-            }
+			if (world.getPlayerCount() == 0) {
+				it.remove();
+			}
 
-            world.onTick();
-        }
+			world.onTick();
+		}
 
-        // Tick players.
-        for (Player player : this.getPlayers().values()) {
-            player.onTick();
-        }
+		// Tick players.
+		for (Player player : this.getPlayers().values()) {
+			player.onTick();
+		}
 
-        // Tick scheduler.
-        this.getScheduler().runTasks();
+		// Tick scheduler.
+		this.getScheduler().runTasks();
 
-        // Call server tick event.
-        ServerTickEvent event = new ServerTickEvent(tickStart, Instant.now());
-        event.call();
-    }
+		// Call server tick event.
+		ServerTickEvent event = new ServerTickEvent(tickStart, Instant.now());
+		event.call();
+	}
 
 	public void registerWorld(World world) {
 		this.getWorlds().add(world);

@@ -217,7 +217,7 @@ public class Scene {
 		getPlayers().add(player);
 		player.setSceneId(this.getId());
 		player.setScene(this);
-		
+
 		this.setupPlayerAvatars(player);
 	}
 	
@@ -425,6 +425,10 @@ public class Scene {
 
 		if(challenge != null){
 			challenge.onCheckTimeOut();
+		}
+		// Collection
+		for (Player player : this.getPlayers()) {
+			player.getCollectionManager().onGadgetEntities(100);
 		}
 	}
 	

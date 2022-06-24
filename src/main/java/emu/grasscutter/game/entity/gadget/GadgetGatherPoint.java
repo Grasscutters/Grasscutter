@@ -14,7 +14,7 @@ public class GadgetGatherPoint extends GadgetContent {
 	private GatherData gatherData;
 	
 	public GadgetGatherPoint(EntityGadget gadget) {
-		super(gadget);
+		super.setGadget(gadget);
 		this.gatherData = GameData.getGatherDataMap().get(gadget.getPointType());
 	}
 	
