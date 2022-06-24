@@ -6,6 +6,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public enum PlayerProperty {
+    PROP_NONE                               (0),
     PROP_EXP								(1001, 0),
     PROP_BREAK_LEVEL						(1002),
     PROP_SATIATION_VAL						(1003),

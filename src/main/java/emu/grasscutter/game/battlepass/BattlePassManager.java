@@ -31,19 +31,20 @@ import emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule
 import emu.grasscutter.server.packet.send.PacketBattlePassCurScheduleUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketBattlePassMissionUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketTakeBattlePassRewardRsp;
+import lombok.Getter;
 
 @Entity(value = "battlepass", useDiscriminator = false)
 public class BattlePassManager {
-	@Id private ObjectId id;
-	@Transient private Player player;
+	@Id @Getter private ObjectId id;
+	@Transient @Getter private Player player;
 	
 	@Indexed private int ownerUid;
-    private int point;
-    private int cyclePoints; // Weekly maximum cap
-    private int level;
+    @Getter private int point;
+    @Getter private int cyclePoints; // Weekly maximum cap
+    @Getter private int level;
     
-    private boolean viewed;
-    private boolean paid;
+    @Getter private boolean viewed;
+    @Getter private boolean paid;
     
     private Map<Integer, BattlePassMission> missions;
     private Map<Integer, BattlePassReward> takenRewards;
@@ -55,52 +56,34 @@ public class BattlePassManager {
         this.setPlayer(player);
     }
     
-    public ObjectId getId() {
-		return id;
-	}
-
-	public Player getPlayer() {
-    	return this.player;
-    }
-    
     public void setPlayer(Player player) {
     	this.player = player;
     	this.ownerUid = player.getUid();
     }
     
-    public int getPoint() {
-        return this.point;
-    }
-    
-    public int getCyclePoints() {
-		return cyclePoints;
-	}
-
-	public int getLevel() {
-        return this.level;
-    }
-
-    public boolean isViewed() {
-		return viewed;
-	}
-    
     public void updateViewed() {
 		this.viewed = true;
     }
 
-	public boolean isPaid() {
-		return paid;
+	public boolean setLevel(int level) {
+		if (level >= 0 && level <= GameConstants.BATTLE_PASS_MAX_LEVEL) {
+			this.level = level;
+			this.point = 0;
+			this.player.sendPacket(new PacketBattlePassCurScheduleUpdateNotify(this.player));
+			return true;
+		}
+		return false;
 	}
 
-	public void addPoints(int point){
-        this.addPointsDirectly(point, false);
+	public void addPoints(int points){
+        this.addPointsDirectly(points, false);
    
-        player.getSession().send(new PacketBattlePassCurScheduleUpdateNotify(player.getSession().getPlayer()));
+        this.player.sendPacket(new PacketBattlePassCurScheduleUpdateNotify(player));
         this.save();
     }
 
-    public void addPointsDirectly(int point, boolean isWeekly) {
-    	int amount = point;
+    public void addPointsDirectly(int points, boolean isWeekly) {
+    	int amount = points;
     	
     	if (isWeekly) {
     		amount = Math.min(amount, GameConstants.BATTLE_PASS_POINT_PER_WEEK - this.cyclePoints);
@@ -114,7 +97,7 @@ public class BattlePassManager {
         this.cyclePoints += amount;
         
         if (this.point >= GameConstants.BATTLE_PASS_POINT_PER_LEVEL && this.getLevel() < GameConstants.BATTLE_PASS_MAX_LEVEL) {
-        	int levelups = (int) Math.floor((float) this.point / GameConstants.BATTLE_PASS_POINT_PER_LEVEL);
+        	int levelups = Math.floorDiv(this.point, GameConstants.BATTLE_PASS_POINT_PER_LEVEL);
         	
         	// Make sure player cant go above max BP level
         	levelups = Math.min(levelups, GameConstants.BATTLE_PASS_MAX_LEVEL - levelups);

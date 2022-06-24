@@ -66,6 +66,8 @@
       "command_exist_error": "No command found.",
       "no_usage_specified": "No usage specified",
       "no_description_specified": "No description specified",
+      "set_to": "%s set to %s.",
+      "set_for_to": "%s for %s set to %s.",
       "invalid": {
         "amount": "Invalid amount.",
         "artifactId": "Invalid artifact ID.",
@@ -75,6 +77,8 @@
         "itemId": "Invalid item ID.",
         "itemLevel": "Invalid itemLevel.",
         "itemRefinement": "Invalid itemRefinement.",
+        "statValue": "Invalid stat value.",
+        "value_between": "Invalid value: %s must be between %s and %s.",
         "playerId": "Invalid player ID.",
         "uid": "Invalid UID.",
         "id": "Invalid ID."
@@ -142,10 +146,6 @@
       "given_avatar": "Given %s with level %s to %s.",
       "giveall_success": "Successfully gave all items.",
       "description": "Gives an item to you or the specified player. Can also give all weapons, avatars and/or materials, and can construct custom artifacts."
-    },
-    "godmode": {
-      "success": "Godmode is now %s for %s.",
-      "description": "Prevents you from taking damage. Defaults to toggle."
     },
     "heal": {
       "success": "All characters have been healed.",
@@ -243,9 +243,9 @@
       "description": "Sends mail to the specified user. The usage of this command changes based on its composition state"
     },
     "sendMessage": {
-      "usage": "Usage: sendmessage <player> <message>",
+      "usage": "Usage: sendmessage <message>",
       "success": "Message sent.",
-      "description": "Sends a message to a player as the server"
+      "description": "Sends a message to a player as the server. If used with no target, sends to all players on the server."
     },
     "setFetterLevel": {
       "usage": "Usage: setfetterlevel <level>",
@@ -254,24 +254,13 @@
       "level_error": "Invalid fetter level.",
       "description": "Sets your fetter level for your current active character"
     },
-    "setStats": {
-      "usage_console": "Usage: setstats|stats @<UID> <stat> <value>",
-      "usage_ingame": "Usage: setstats|stats [@UID] <stat> <value>",
-      "help_message": "\n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-      "value_error": "Invalid stat value.",
-      "uid_error": "Invalid UID.",
-      "player_error": "Player not found or offline.",
-      "set_self": "%s set to %s.",
-      "set_for_uid": "%s for %s set to %s.",
-      "set_max_hp": "MAX HP set to %s.",
-      "description": "Sets fight property for your current active character"
+    "setProp": {
+      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyssfloor | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
+      "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
     },
-    "setWorldLevel": {
-      "usage": "Usage: setworldlevel <level>",
-      "value_error": "World level must be between 0-8.",
-      "success": "World level set to %s.",
-      "invalid_world_level": "Invalid world level.",
-      "description": "Sets your world level (Relog to see proper effects)"
+    "setStats": {
+      "usage": "Usage: setstats|stats <stat> <value>\n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
+      "description": "Sets fight property for your current active character"
     },
     "spawn": {
       "usage": "Usage: spawn <entityID> [amount] [level(monster only)] [<x> <y> <z>(monster only, optional)]",
@@ -331,15 +320,6 @@
             "exists_error": "The specified scene does not exist.",
       "success": "Teleported %s to %s, %s, %s in scene %s.",
       "description": "Change the player's position"
-    },
-    "unlimitenergy": {
-      "success": "UnlimitEnergy is now %s for %s.",
-      "config_error": "Command is disabled, because energyUsage is false in config.json.",
-      "description": "Use the element does not waste energy"
-    },
-    "unlocktower": {
-      "success": "Abyss Corridor's Floors are all unlocked now.",
-      "description": "Unlock all levels of tower"
     },
     "weather": {
       "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist",
