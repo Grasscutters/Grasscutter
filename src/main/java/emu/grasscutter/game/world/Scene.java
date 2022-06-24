@@ -46,8 +46,6 @@ public class Scene {
 
 	private int autoCloseTime;
 	private int time;
-	private ClimateType climate;
-	private int weather;
 
 	private SceneScriptManager scriptManager;
 	private WorldChallenge challenge;
@@ -62,7 +60,6 @@ public class Scene {
 		this.entities = new ConcurrentHashMap<>();
 
 		this.time = 8 * 60;
-		this.climate = ClimateType.CLIMATE_SUNNY;
 		this.prevScene = 3;
 
 		this.spawnedEntities = ConcurrentHashMap.newKeySet();
@@ -129,22 +126,6 @@ public class Scene {
 
 	public void changeTime(int time) {
 		this.time = time % 1440;
-	}
-	
-	public ClimateType getClimate() {
-		return climate;
-	}
-
-	public int getWeather() {
-		return weather;
-	}
-
-	public void setClimate(ClimateType climate) {
-		this.climate = climate;
-	}
-
-	public void setWeather(int weather) {
-		this.weather = weather;
 	}
 
 	public int getPrevScene() {

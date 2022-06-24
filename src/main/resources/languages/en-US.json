@@ -76,16 +76,14 @@
         "itemLevel": "Invalid itemLevel.",
         "itemRefinement": "Invalid itemRefinement.",
         "playerId": "Invalid player ID.",
-        "uid": "Invalid UID."
+        "uid": "Invalid UID.",
+        "id": "Invalid ID."
       }
     },
     "execution": {
-      "uid_error": "Invalid UID.",
       "player_exist_error": "Player not found.",
       "player_offline_error": "Player is not online.",
-      "item_id_error": "Invalid item ID.",
       "item_player_exist_error": "Invalid item or UID.",
-      "entity_id_error": "Invalid entity ID.",
       "player_exist_offline_error": "Player not found or is not online.",
       "argument_error": "Invalid arguments.",
       "clear_target": "Target cleared.",
@@ -99,17 +97,16 @@
     "status": {
       "enabled": "Enabled",
       "disabled": "Disabled",
-      "help": "Help", 
+      "help": "Help",
       "success": "Success"
     },
     "account": {
-      "modify": "Modify user accounts",
+      "command_usage": "Usage: account <create|delete> <username> [UID]",
       "invalid": "Invalid UID.",
       "exists": "An account with this username and/or UID already exists.",
       "create": "Account created with UID %s.",
       "delete": "Account deleted.",
       "no_account": "Account not found.",
-      "command_usage": "Usage: account <create|delete> <username> [UID]",
       "description": "Modify user accounts"
     },
     "broadcast": {
@@ -387,25 +384,25 @@
       "description": "Unlock all levels of tower"
     },
     "weather": {
-      "usage": "Usage: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types 0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist",
-      "success": "Changed climate type to %s with weather type %s.",
-      "invalid_id": "Invalid ID.",
-      "description": "Changes the weather"
+      "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist",
+      "success": "Set weather ID to %s with climate type %s.",
+      "status": "Current weather ID is %s with climate type %s.",
+      "description": "Changes weather ID and climate type. Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist"
     },
     "ban": {
-      "description": "Ban a player",
+      "command_usage": "Usage: ban <playerId> [timestamp] [reason]",
       "success": "Successful.",
       "failure": "Failed, player not found.",
       "invalid_time": "Unable to parse timestamp.",
       "invalid_player_id": "Unable to parse player ID.",
-      "command_usage": "Usage: ban <playerId> [timestamp] [reason]"
+      "description": "Ban a player"
     },
     "unban": {
-      "description": "Unban a player",
+      "command_usage": "Usage: unban <playerId>",
       "success": "Successful.",
       "failure": "Failed, player not found.",
       "invalid_player_id": "Unable to parse player ID.",
-      "command_usage": "Usage: unban <playerId>"
+      "description": "Unban a player"
     }
   },
   "gacha": {

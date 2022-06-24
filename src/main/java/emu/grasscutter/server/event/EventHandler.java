@@ -1,6 +1,7 @@
 package emu.grasscutter.server.event;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.plugin.Plugin;
 import emu.grasscutter.utils.EventConsumer;
 
 public final class EventHandler<T extends Event> {
@@ -75,7 +76,7 @@ public final class EventHandler<T extends Event> {
     /**
      * Registers the handler into the PluginManager.
      */
-    public void register() {
-        Grasscutter.getPluginManager().registerListener(this);
+    public void register(Plugin plugin) {
+        Grasscutter.getPluginManager().registerListener(plugin, this);
     }
 }

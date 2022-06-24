@@ -1,9 +1,7 @@
 package emu.grasscutter.command;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
-
 import org.reflections.Reflections;
 
 import java.util.*;
@@ -11,6 +9,7 @@ import java.util.*;
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class CommandMap {
     private final Map<String, CommandHandler> commands = new HashMap<>();
+    private final Map<String, CommandHandler> aliases = new HashMap<>();
     private final Map<String, Command> annotations = new HashMap<>();
     private final Map<String, Integer> targetPlayerIds = new HashMap<>();
     private static final String consoleId = "console";
@@ -45,7 +44,7 @@ public final class CommandMap {
         // Register aliases.
         if (annotation.aliases().length > 0) {
             for (String alias : annotation.aliases()) {
-                this.commands.put(alias, command);
+                this.aliases.put(alias, command);
                 this.annotations.put(alias, annotation);
             }
         }
@@ -60,6 +59,7 @@ public final class CommandMap {
      */
     public CommandMap unregisterCommand(String label) {
         Grasscutter.getLogger().debug("Unregistered command: " + label);
+
         CommandHandler handler = this.commands.get(label);
         if (handler == null) return this;
 
@@ -70,7 +70,7 @@ public final class CommandMap {
         // Unregister aliases.
         if (annotation.aliases().length > 0) {
             for (String alias : annotation.aliases()) {
-                this.commands.remove(alias);
+                this.aliases.remove(alias);
                 this.annotations.remove(alias);
             }
         }
@@ -78,7 +78,9 @@ public final class CommandMap {
         return this;
     }
 
-    public List<Command> getAnnotationsAsList() { return new LinkedList<>(this.annotations.values()); }
+    public List<Command> getAnnotationsAsList() {
+        return new LinkedList<>(this.annotations.values());
+    }
 
     public HashMap<String, Command> getAnnotations() {
         return new LinkedHashMap<>(this.annotations);
@@ -125,7 +127,7 @@ public final class CommandMap {
         List<String> args = new LinkedList<>(Arrays.asList(split));
         String label = args.remove(0);
         String playerId = (player == null) ? consoleId : player.getAccount().getId();
-        
+
         // Check for special cases - currently only target command.
         String targetUidStr = null;
         if (label.startsWith("@")) { // @[UID]
@@ -142,7 +144,7 @@ public final class CommandMap {
         }
         if (targetUidStr != null) {
             if (targetUidStr.equals("")) { // Clears the default targetPlayer.
-                targetPlayerIds.remove(playerId);
+                this.targetPlayerIds.remove(playerId);
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
             } else { // Sets default targetPlayer to the UID provided.
                 try {
@@ -151,12 +153,12 @@ public final class CommandMap {
                     if (targetPlayer == null) {
                         CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
                     } else {
-                        targetPlayerIds.put(playerId, uid);
+                        this.targetPlayerIds.put(playerId, uid);
                         CommandHandler.sendTranslatedMessage(player, "commands.execution.set_target", targetUidStr);
-                        CommandHandler.sendTranslatedMessage(player, targetPlayer.isOnline()? "commands.execution.set_target_online" : "commands.execution.set_target_offline", targetUidStr);
+                        CommandHandler.sendTranslatedMessage(player, targetPlayer.isOnline() ? "commands.execution.set_target_online" : "commands.execution.set_target_offline", targetUidStr);
                     }
                 } catch (NumberFormatException e) {
-                    CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
+                    CommandHandler.sendTranslatedMessage(player, "commands.generic.invalid.uid");
                 }
             }
             return;
@@ -164,10 +166,18 @@ public final class CommandMap {
 
         // Get command handler.
         CommandHandler handler = this.commands.get(label);
+        if(handler == null)
+            // Try to get the handler by alias.
+            handler = this.aliases.get(label);
+
+        // Check if the handler is still null.
         if (handler == null) {
             CommandHandler.sendTranslatedMessage(player, "commands.generic.unknown_command", label);
             return;
         }
+
+        // Get the command's annotation.
+        Command annotation = this.annotations.get(label);
 
         // If any @UID argument is present, override targetPlayer with it.
         for (int i = 0; i < args.size(); i++) {
@@ -183,16 +193,16 @@ public final class CommandMap {
                     }
                     break;
                 } catch (NumberFormatException e) {
-                    CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
+                    CommandHandler.sendTranslatedMessage(player, "commands.generic.invalid.uid");
                     return;
                 }
             }
         }
-        
+
         // If there's still no targetPlayer at this point, use previously-set target
         if (targetPlayer == null) {
-            if (targetPlayerIds.containsKey(playerId)) {
-                targetPlayer = Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.get(playerId), true);  // We check every time in case the target is deleted after being targeted
+            if (this.targetPlayerIds.containsKey(playerId)) {
+                targetPlayer = Grasscutter.getGameServer().getPlayerByUid(this.targetPlayerIds.get(playerId), true);  // We check every time in case the target is deleted after being targeted
                 if (targetPlayer == null) {
                     CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
                     return;
@@ -204,32 +214,36 @@ public final class CommandMap {
         }
 
         // Check for permissions.
-        if (!Grasscutter.getPermissionHandler().checkPermission(player, targetPlayer, this.annotations.get(label).permission(), this.annotations.get(label).permissionTargeted())) {
+        if (!Grasscutter.getPermissionHandler().checkPermission(player, targetPlayer, annotation.permission(), this.annotations.get(label).permissionTargeted())) {
             return;
         }
 
         // Check if command has unfulfilled constraints on targetPlayer
-        Command.TargetRequirement targetRequirement = this.annotations.get(label).targetRequirement();
+        Command.TargetRequirement targetRequirement = annotation.targetRequirement();
         if (targetRequirement != Command.TargetRequirement.NONE) {
             if (targetPlayer == null) {
-                CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target");
+                CommandHandler.sendTranslatedMessage(null, "commands.execution.need_target");
                 return;
             }
+
             if ((targetRequirement == Command.TargetRequirement.ONLINE) && !targetPlayer.isOnline()) {
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_online");
                 return;
             }
+
             if ((targetRequirement == Command.TargetRequirement.OFFLINE) && targetPlayer.isOnline()) {
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_offline");
                 return;
             }
         }
 
+        // Copy player and handler to final properties.
+        final Player targetPlayerF = targetPlayer; // Is there a better way to do this?
+        final CommandHandler handlerF = handler; // Is there a better way to do this?
+
         // Invoke execute method for handler.
-        boolean threading  = this.annotations.get(label).threading();
-        final Player targetPlayerF = targetPlayer;  // Is there a better way to do this?
-        Runnable runnable = () -> handler.execute(player, targetPlayerF, args);
-        if(threading) {
+        Runnable runnable = () -> handlerF.execute(player, targetPlayerF, args);
+        if (annotation.threading()) {
             new Thread(runnable).start();
         } else {
             runnable.run();
@@ -242,10 +256,11 @@ public final class CommandMap {
     private void scan() {
         Reflections reflector = Grasscutter.reflector;
         Set<Class<?>> classes = reflector.getTypesAnnotatedWith(Command.class);
+
         classes.forEach(annotated -> {
             try {
                 Command cmdData = annotated.getAnnotation(Command.class);
-                Object object = annotated.newInstance();
+                Object object = annotated.getDeclaredConstructor().newInstance();
                 if (object instanceof CommandHandler)
                     this.registerCommand(cmdData.label(), (CommandHandler) object);
                 else Grasscutter.getLogger().error("Class " + annotated.getName() + " is not a CommandHandler!");
