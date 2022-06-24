@@ -16,6 +16,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.ForgeStartReqOuterClass;
 import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
 import emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueManipulateReq;
@@ -195,6 +196,9 @@ public class ForgingManager {
 
 		GameItem addItem = new GameItem(resultItemData, data.getResultItemCount() * finished);
 		this.player.getInventory().addItem(addItem);
+		
+		// Battle pass trigger handler
+		this.player.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_DO_FORGE, 0, finished);
 
 		// Replace active forge with a new one for the unfinished items, if there are any.
 		if (unfinished > 0) {

@@ -11,6 +11,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.scripts.constants.EventType;
@@ -98,6 +99,8 @@ public class DungeonChallenge extends WorldChallenge {
 			getScene().getDungeonSettleObservers().forEach(o -> o.onDungeonSettle(getScene()));
 			getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE,
 					new ScriptArgs(this.isSuccess() ? 1 : 0));
+			// Battle pass trigger
+			this.getScene().getPlayers().forEach(p -> p.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_FINISH_DUNGEON));
 		}
 	}
 	

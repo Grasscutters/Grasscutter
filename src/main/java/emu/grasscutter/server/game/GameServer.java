@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.battlepass.BattlePassMissionManager;
 import emu.grasscutter.game.combine.CombineManger;
 import emu.grasscutter.game.drop.DropManager;
 import emu.grasscutter.game.dungeons.DungeonManager;
@@ -61,6 +62,7 @@ public final class GameServer extends KcpServer {
 	private final TaskMap taskMap;
 	private final DropManager dropManager;
 	private final WorldDataManager worldDataManager;
+	private final BattlePassMissionManager battlePassMissionManager;
 
 	private final CombineManger combineManger;
 	private final TowerScheduleManager towerScheduleManager;
@@ -101,6 +103,8 @@ public final class GameServer extends KcpServer {
 		this.combineManger = new CombineManger(this);
 		this.towerScheduleManager = new TowerScheduleManager(this);
 		this.worldDataManager = new WorldDataManager(this);
+		this.battlePassMissionManager = new BattlePassMissionManager(this);
+		
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
@@ -171,6 +175,10 @@ public final class GameServer extends KcpServer {
 
 	public WorldDataManager getWorldDataManager() {
 		return worldDataManager;
+	}
+
+	public BattlePassMissionManager getBattlePassMissionManager() {
+		return battlePassMissionManager;
 	}
 
 	public TaskMap getTaskMap() {
