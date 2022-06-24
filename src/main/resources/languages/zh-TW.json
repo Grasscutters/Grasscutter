@@ -108,18 +108,6 @@
       "command_usage": "用法：account <create|delete> <username> [uid]",
       "description": "建立或刪除帳號。"
     },
-    "broadcast": {
-      "command_usage": "用法：broadcast <message>",
-      "message_sent": "公告已發送。",
-      "description": "向所有玩家發送公告。"
-    },
-    "changescene": {
-      "usage": "用法：changescene <scene id>",
-      "already_in_scene": "你已經在這個場景中了。",
-      "success": "已切換至場景 %s.",
-      "exists_error": "此場景不存在。",
-      "description": "切換指定場景。"
-    },
     "clear": {
       "command_usage": "用法： clear <all|wp|art|mat>",
       "weapons": "已將 %s 的武器清空。",
@@ -135,11 +123,6 @@
       "usage": "用法：coop <playerId> <target playerId>",
       "success": "召喚了 %s 到 %s 的世界。",
       "description": "強制傳送指定用戶到他人的世界。如果未指定玩家，則會將你設為多人遊戲狀態。"
-    },
-    "drop": {
-      "command_usage": "用法：drop <itemId|itemName> [amount]",
-      "success": "已將 %s x %s 丟在附近。",
-      "description": "在你附近丟下一個物品。"
     },
     "enter_dungeon": {
       "usage": "用法：enterdungeon <dungeon id>",
@@ -263,9 +246,6 @@
       "success": "重置完成。",
       "description": "重置所選玩家的商店刷新時間。"
     },
-    "restart": {
-      "description": "重新啟動伺服器。"
-    },
     "sendMail": {
       "usage": "用法：sendmail <userId|all|help> [templateId]",
       "user_not_exist": "ID '%s' 的使用者不存在。",
@@ -374,6 +354,7 @@
       "usage": "用法：tp [@<playerId>] <x> <y> <z> [sceneId]",
       "specify_player_id": "你必須指定一個玩家ID。",
       "invalid_position": "無效的座標。",
+            "exists_error": "此場景不存在。",
       "success": "傳送 %s 到座標 %s,%s,%s ，場景為 %s 。",
       "description": "將玩家的位置傳送到你所指定的座標。"
     },
