@@ -447,6 +447,8 @@ public class Player {
 	}
 
 	public void setWorldLevel(int level) {
+		this.getWorld().setWorldLevel(newWorldLevel);
+		
 		this.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level);
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_WORLD_LEVEL));
 
@@ -545,7 +547,6 @@ public class Player {
 			0;
 
 		if (newWorldLevel != currentWorldLevel) {
-			this.getWorld().setWorldLevel(newWorldLevel);
 			this.setWorldLevel(newWorldLevel);
 		}
 	}
