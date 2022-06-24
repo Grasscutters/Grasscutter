@@ -10,7 +10,6 @@ import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
-import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "setstats", usage = "setstats|stats <stat> <value>", aliases = {"stats"}, permission = "player.setstats", permissionTargeted = "player.setstats.others", description = "commands.setStats.description")
 public final class SetStatsCommand implements CommandHandler {
@@ -65,8 +64,6 @@ public final class SetStatsCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        String syntax = sender == null ? translate(sender, "commands.setStats.usage_console") : translate(sender, "commands.setStats.usage_ingame");
-        String usage = syntax + translate(sender, "commands.setStats.help_message");
         String statStr;
         String valueStr;
 
@@ -74,7 +71,7 @@ public final class SetStatsCommand implements CommandHandler {
             statStr = args.get(0).toLowerCase();
             valueStr = args.get(1);
         } else {
-            CommandHandler.sendMessage(sender, usage);
+            CommandHandler.sendTranslatedMessage(sender, "commands.setStats.usage");
             return;
         }
 
@@ -88,7 +85,7 @@ public final class SetStatsCommand implements CommandHandler {
                 value = Float.parseFloat(valueStr);
             }
         } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.value_error"));
+            CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.statValue");
             return;
         }
 
@@ -102,13 +99,13 @@ public final class SetStatsCommand implements CommandHandler {
                 valueStr = String.format("%.0f", value);
             }
             if (targetPlayer == sender) {
-                CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.set_self", stat.name, valueStr));
+                CommandHandler.sendTranslatedMessage(sender, "commands.generic.set_to", stat.name, valueStr);
             } else {
                 String uidStr = targetPlayer.getAccount().getId();
-                CommandHandler.sendMessage(sender, translate(sender, "commands.setStats.set_for_uid", stat.name, uidStr, valueStr));
+                CommandHandler.sendTranslatedMessage(sender, "commands.generic.set_for_to", stat.name, uidStr, valueStr);
             }
         } else {
-            CommandHandler.sendMessage(sender, usage);
+            CommandHandler.sendTranslatedMessage(sender, "commands.setStats.usage");
         }
         return;
     }
