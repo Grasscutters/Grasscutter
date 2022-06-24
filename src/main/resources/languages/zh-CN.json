@@ -109,18 +109,6 @@
       "no_account": "账号不存在。",
       "description": "创建或删除账号"
     },
-    "broadcast": {
-      "command_usage": "用法：broadcast <消息>",
-      "message_sent": "公告已发送。",
-      "description": "向所有玩家发送公告"
-    },
-    "changescene": {
-      "usage": "用法：changescene <场景ID>",
-      "already_in_scene": "你已经在这个场景中了。",
-      "success": "已切换至场景 %s。",
-      "exists_error": "场景不存在。",
-      "description": "切换指定场景"
-    },
     "clear": {
       "command_usage": "用法：clear <all|wp|art|mat>\nall: 所有, wp: 武器, art: 圣遗物, mat: 材料",
       "weapons": "已清除 %s 的武器。",
@@ -136,11 +124,6 @@
       "usage": "用法：coop [指定玩家UID]",
       "success": "已强制传送 %s 到 %s 的世界。",
       "description": "强制传送指定玩家到他人的世界。如果没有指定玩家，则会使你进入多人游戏状态"
-    },
-    "drop": {
-      "command_usage": "用法：drop <物品ID|物品名称> [数量]",
-      "success": "已丢下 %s 个 %s。",
-      "description": "在你附近丢下物品"
     },
     "enter_dungeon": {
       "usage": "用法：enterdungeon <秘境ID>",
@@ -259,9 +242,6 @@
       "success": "重置完成。",
       "description": "重置指定玩家的商店刷新时间"
     },
-    "restart": {
-      "description": "重新启动服务器"
-    },
     "sendMail": {
       "usage": "用法：sendmail <用户ID|all|help> [模板ID]",
       "user_not_exist": "用户 '%s' 不存在。",
@@ -371,6 +351,7 @@
       "usage": "用法：tp [@<玩家ID>] <x> <y> <z> [场景ID]",
       "specify_player_id": "你必须指定一个玩家ID。",
       "invalid_position": "无效的位置。",
+            "exists_error": "此场景不存在。",
       "success": "传送 %s 到坐标 %s, %s, %s，场景为 %s。",
       "description": "改变指定玩家的位置"
     },

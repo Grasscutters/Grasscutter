@@ -103,16 +103,6 @@
       "no_account": "Nie znaleziono konta.",
       "command_usage": "Użycie: account <create|delete> <nazwa> [uid]"
     },
-    "broadcast": {
-      "command_usage": "Użycie: broadcast <wiadomość>",
-      "message_sent": "Wiadomość wysłana."
-    },
-    "changescene": {
-      "usage": "Użycie: changescene <id sceny>",
-      "already_in_scene": "Już jesteś na tej scenie.",
-      "success": "Zmieniono scene na %s.",
-      "exists_error": "Ta scena nie istenieje."
-    },
     "clear": {
       "command_usage": "Użycie: clear <all|wp|art|mat>",
       "weapons": "Wyczyszczono bronie dla %s.",
@@ -286,6 +276,7 @@
       "usage": "Użycie: /tp [@<ID gracza>] <x> <y> <z> [ID sceny]",
       "specify_player_id": "Musisz określić ID gracza.",
       "invalid_position": "Błędna pozycja.",
+            "exists_error": "Ta scena nie istenieje.",
       "success": "Przeteleportowano %s do %s, %s, %s w scenie %s"
     },
     "weather": {
@@ -293,10 +284,6 @@
       "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
       "success": "Set weather ID to %s with climate type %s.",
       "status": "Current weather ID is %s with climate type %s."
-    },
-    "drop": {
-      "command_usage": "Użycie: drop <ID przedmiotu|nazwa przedmiotu> [ilość]",
-      "success": "Wyrzucono %s of %s."
     },
     "help": {
       "usage": "Użycie: ",
