@@ -11,10 +11,10 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class ServerTaskScheduler {
     /* A map to contain all running tasks. */
     private final ConcurrentHashMap<Integer, ServerTask> tasks
-            = new ConcurrentHashMap<>();
+        = new ConcurrentHashMap<>();
     /* A map to contain all async tasks. */
     private final ConcurrentHashMap<Integer, AsyncServerTask> asyncTasks
-            = new ConcurrentHashMap<>();
+        = new ConcurrentHashMap<>();
 
     /* The ID assigned to the next runnable. */
     private int nextTaskId = 0;
