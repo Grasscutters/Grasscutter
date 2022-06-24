@@ -19,9 +19,11 @@ import emu.grasscutter.data.excels.RewardData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.BattlePassMissionRefreshType;
 import emu.grasscutter.game.props.BattlePassMissionStatus;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle;
+import emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProduct;
 import emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag;
 import emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus;
 import emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption;
@@ -37,6 +39,7 @@ public class BattlePassManager {
 	
 	@Indexed private int ownerUid;
     private int point;
+    private int cyclePoints; // Weekly maximum cap
     private int level;
     
     private boolean viewed;
@@ -69,7 +72,11 @@ public class BattlePassManager {
         return this.point;
     }
     
-    public int getLevel() {
+    public int getCyclePoints() {
+		return cyclePoints;
+	}
+
+	public int getLevel() {
         return this.level;
     }
 
@@ -86,14 +93,25 @@ public class BattlePassManager {
 	}
 
 	public void addPoints(int point){
-        this.addPointsDirectly(point);
+        this.addPointsDirectly(point, false);
    
         player.getSession().send(new PacketBattlePassCurScheduleUpdateNotify(player.getSession().getPlayer()));
         this.save();
     }
 
-    public void addPointsDirectly(int point) {
-        this.point += point;
+    public void addPointsDirectly(int point, boolean isWeekly) {
+    	int amount = point;
+    	
+    	if (isWeekly) {
+    		amount = Math.min(amount, GameConstants.BATTLE_PASS_POINT_PER_WEEK - this.cyclePoints);
+    	}
+    	
+    	if (amount <= 0) {
+    		return;
+    	}
+    	
+        this.point += amount;
+        this.cyclePoints += amount;
         
         if (this.point >= GameConstants.BATTLE_PASS_POINT_PER_LEVEL && this.getLevel() < GameConstants.BATTLE_PASS_MAX_LEVEL) {
         	int levelups = (int) Math.floor((float) this.point / GameConstants.BATTLE_PASS_POINT_PER_LEVEL);
@@ -159,7 +177,7 @@ public class BattlePassManager {
 			
 			// Take reward
 			if (mission.getStatus() == BattlePassMissionStatus.MISSION_STATUS_FINISHED) {
-				this.addPointsDirectly(mission.getData().getAddPoint());
+				this.addPointsDirectly(mission.getData().getAddPoint(), mission.getData().getRefreshType() == BattlePassMissionRefreshType.BATTLE_PASS_MISSION_REFRESH_CYCLE_CROSS_SCHEDULE);
 				mission.setStatus(BattlePassMissionStatus.MISSION_STATUS_POINT_TAKEN);
 				
 				updatedMissions.add(mission);
@@ -265,7 +283,7 @@ public class BattlePassManager {
                 .setEndTime(2059483200)
                 .setIsViewed(this.isViewed())
                 .setUnlockStatus(this.isPaid() ? BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_PAID : BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_FREE)
-                .setCurCyclePoints(0)
+                .setCurCyclePoints(this.getCyclePoints())
                 .setCurCycle(BattlePassCycle.newBuilder().setBeginTime(0).setEndTime(2059483200).setCycleIdx(3));
 		
 		for (BattlePassReward reward : getTakenRewards().values()) {
