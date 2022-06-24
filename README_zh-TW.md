@@ -30,11 +30,11 @@
 
 * [MongoDB](https://www.mongodb.com/try/download/community) (推薦 4.0+)
 
-* 代理: mitmproxy (推薦 mitmdump), Fiddler Classic 等
+* 代理程式: mitmproxy (推薦 mitmdump), Fiddler Classic 等
 
 ### 執行
 
-**注意:** 從舊版本升級到新版本, 需要刪除 `config.json` 檔案
+**注意:** 從舊版本升級到新版本, 需要刪除 `config.json`
 
 1. 獲取 `grasscutter.jar`
    - 從 [actions](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297) 下載

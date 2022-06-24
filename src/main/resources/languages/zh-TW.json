@@ -96,11 +96,10 @@
     "status": {
       "enabled": "已啟用",
       "disabled": "未啟用",
-      "help": "幫助", 
+      "help": "幫助",
       "success": "成功"
     },
     "account": {
-      "modify": "修改使用者帳號",
       "invalid": "無效的UID。",
       "exists": "帳號已存在。",
       "create": "已建立帳號，UID 為 %s 。",
@@ -388,10 +387,10 @@
       "description": "解鎖所有級別的深境螺旋。"
     },
     "weather": {
-      "description": "更改目前的天氣。Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
-      "usage": "用法：weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny (晴天), cloudy (多雲), rain (雨), thunderstorm (雷雨), snow (雪), mist (霧).",
-      "success": "Set weather ID to %s with climate type %s.",
-      "status": "Current weather ID is %s with climate type %s."
+      "usage": "用法：weather [weatherId] [climateType]\n天氣ID可以在 WeatherExcelConfigData.json 中找到。\n氣候型別：sunny(晴天), cloudy(多雲), rain(雨), thunderstorm(雷雨), snow(雪), mist(霧)",
+      "success": "已設定天氣ID 為 %s，氣候型別為 %s。",
+      "status": "當前天氣ID 為 %s，氣候型別為 %s。",
+      "description": "更改天氣ID和氣候型別。天氣ID可以在 WeatherExcelConfigData.json 中找到。\n氣候型別：sunny(晴天), cloudy(多雲), rain(雨), thunderstorm(雷雨), snow(雪), mist(霧)"
     },
     "ban": {
       "description": "停權指定玩家。",
