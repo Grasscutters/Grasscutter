@@ -177,7 +177,7 @@ public class BattlePassManager {
 			
 			// Take reward
 			if (mission.getStatus() == BattlePassMissionStatus.MISSION_STATUS_FINISHED) {
-				this.addPointsDirectly(mission.getData().getAddPoint(), mission.getData().getRefreshType() == BattlePassMissionRefreshType.BATTLE_PASS_MISSION_REFRESH_CYCLE_CROSS_SCHEDULE);
+				this.addPointsDirectly(mission.getData().getAddPoint(), mission.getData().isCycleRefresh());
 				mission.setStatus(BattlePassMissionStatus.MISSION_STATUS_POINT_TAKEN);
 				
 				updatedMissions.add(mission);

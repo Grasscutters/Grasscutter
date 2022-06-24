@@ -1483,10 +1483,6 @@ public class Player {
 
 			// Call quit event.
 			PlayerQuitEvent event = new PlayerQuitEvent(this); event.call();
-
-			//reset wood
-			getDeforestationManager().resetWood();
-
 		}catch (Throwable e){
 			e.printStackTrace();
 			Grasscutter.getLogger().warn("Player (UID {}) save failure", getUid());
