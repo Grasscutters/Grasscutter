@@ -2,8 +2,6 @@ package emu.grasscutter.game.managers.stamina;
 
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.command.commands.NoStaminaCommand;
-import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
@@ -112,8 +110,8 @@ public class StaminaManager {
     }};
 
     private final Logger logger = Grasscutter.getLogger();
-    public final static int GlobalCharacterMaximumStamina = 24000;
-    public final static int GlobalVehicleMaxStamina = 24000;
+    public final static int GlobalCharacterMaximumStamina = PlayerProperty.PROP_MAX_STAMINA.getMax();
+    public final static int GlobalVehicleMaxStamina = PlayerProperty.PROP_MAX_STAMINA.getMax();
     private Position currentCoordinates = new Position(0, 0, 0);
     private Position previousCoordinates = new Position(0, 0, 0);
     private MotionState currentState = MotionState.MOTION_STATE_STANDBY;
@@ -292,7 +290,6 @@ public class StaminaManager {
         // set stamina if is character stamina
         if (isCharacterStamina) {
             player.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, newStamina);
-            session.send(new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_STAMINA));
         } else {
             vehicleStamina = newStamina;
             session.send(new PacketVehicleStaminaNotify(vehicleId, ((float) newStamina) / 100));
