@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ActivityScheduleInfo.proto";
+
+// CmdId: 2033
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ActivityScheduleInfoNotify {
+	repeated ActivityScheduleInfo activity_schedule_list = 8;
+	uint32 remain_fly_sea_lamp_num = 12;
+}
