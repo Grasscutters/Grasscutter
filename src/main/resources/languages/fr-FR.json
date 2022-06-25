@@ -395,15 +395,13 @@
         "success": "Succès.",
         "failure": "Échec, joueur introuvable.",
         "invalid_time": "Impossible d'analyser le timestamp.",
-        "invalid_player_id": "Impossible d'analyser le player ID.",
-        "command_usage": "Usage: ban <playerId> [timestamp] [raison]"
+        "command_usage": "Usage: ban <@playerId> [timestamp] [raison]"
       },
       "unban": {
         "description": "Retire le bannissement d'un joueur",
         "success": "Succès.",
         "failure": "Échec, joueur introuvable.",
-        "invalid_player_id": "Imossible d'analyser player ID.",
-        "command_usage": "Usage: unban <playerId>"
+        "command_usage": "Usage: unban <@playerId>"
       }
     },
     "gacha": {
