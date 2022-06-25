@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
@@ -16,18 +17,26 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.game.entity.EntityGadget;
+import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.entity.gadget.GadgetContent;
+import emu.grasscutter.game.inventory.EquipType;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.net.proto.AttackResultOuterClass;
+import emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass;
 import emu.grasscutter.net.proto.GatherGadgetInfoOuterClass;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass;
+import emu.grasscutter.net.proto.VectorOuterClass;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
+import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.utils.Position;
+import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 public class CollectionManager {
@@ -59,7 +68,8 @@ public class CollectionManager {
     private double computeDistance(Position a, Position b){
         double detX = a.getX()-b.getX();
         double detY = a.getY()-b.getY();
-        return Math.sqrt(detX*detX+detY*detY);
+        double detZ = a.getZ()-b.getZ();
+        return Math.sqrt(detX*detX+detY*detY+detZ*detZ);
     }
     public CollectionManager(Player player){
         this.player = player;
@@ -87,6 +97,7 @@ public class CollectionManager {
                                             GameItem item = new GameItem(data, 1);
                                             player.getInventory().addItem(item, ActionReason.SubfieldDrop);
                                             scene.removeEntity(gadget, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
+                                            Grasscutter.getLogger().warn("Refresh entity doesn't implement! feel free to implement here!");
                                             break;
                                         }
                                     }
@@ -140,5 +151,39 @@ public class CollectionManager {
             Grasscutter.getLogger().warn("Collection Scene {} Resources Data not found.",sceneId);
         }
     }
-
+    public void handleAttackHit(EvtBeingHitInfoOuterClass.EvtBeingHitInfo hitInfo) {
+        Scene scene = player.getScene();
+        MaterialType equipType = player.getTeamManager().getCurrentAvatarEntity().getAvatar().getWeapon().getItemData().getMaterialType();
+        AttackResultOuterClass.AttackResult attackResult = hitInfo.getAttackResult();
+        if(attackResult.getElementType()==0) {
+            // Make sure the target is an gadget.
+            GameEntity targetEntity = this.player.getScene().getEntityById(attackResult.getDefenseId());
+            if (!(targetEntity instanceof EntityGadget targetGadget)) {
+                return;
+            }
+            for (Map.Entry<CollectionData, EntityGadget> entry : spawnedEntities.entrySet()) {
+                if (entry.getValue() == targetGadget) {
+                    int itemId = entry.getKey().gadget.gatherGadget.itemId;
+                    VectorOuterClass.Vector hitPosition = attackResult.getHitCollision().getHitPoint();
+                    int times = Utils.randomRange(1,2);
+                    for(int i=0;i<times;i++) {
+                        EntityItem entity = new EntityItem(scene,
+                                null,
+                                GameData.getItemDataMap().get(itemId),
+                                    new Position(
+                                            hitPosition.getX()+(float)Utils.randomRange(1,5)/5,
+                                            hitPosition.getY()+2f,
+                                            hitPosition.getZ()+(float)Utils.randomRange(1,5)/5
+                                    ),
+                                1,
+                                false);
+                        scene.addEntity(entity);
+                    }
+                    System.out.println("equipType:"+equipType);
+                    scene.killEntity(targetGadget,attackResult.getAttackerId());
+                    Grasscutter.getLogger().warn("Rocks's endurance doesn't implement! feel free to implement here!");
+                }
+            }
+        }
+    }
 }
