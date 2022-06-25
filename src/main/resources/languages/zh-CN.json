@@ -390,18 +390,16 @@
       "description": "更改天气ID和气候类型。天气ID可以在 WeatherExcelConfigData.json 中找到。\n气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
     },
     "ban": {
-      "command_usage": "用法：ban <玩家ID> [时间] [原因]",
+      "command_usage": "用法：ban <@玩家ID> [时间] [原因]",
       "success": "成功封禁玩家。",
       "failure": "封禁玩家失败，因为玩家不存在。",
       "invalid_time": "无法解析时间戳。",
-      "invalid_player_id": "无法解析玩家ID。",
       "description": "封禁玩家"
     },
     "unban": {
-      "command_usage": "用法：unban <玩家ID>",
+      "command_usage": "用法：unban <@玩家ID>",
       "success": "成功取消玩家的封禁。",
       "failure": "取消玩家的封禁失败，因为玩家不存在。",
-      "invalid_player_id": "无法解析玩家ID。",
       "description": "取消玩家的封禁"
     }
   },
