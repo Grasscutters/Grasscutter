@@ -6,7 +6,6 @@ import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.common.OpenCondData;
 
 @ResourceType(name = {"ForgeExcelConfigData.json"}, loadPriority = LoadPriority.HIGHEST)
 public class ForgeData extends GameResource {
@@ -19,6 +18,7 @@ public class ForgeData extends GameResource {
     private int queueNum;
     private int scoinCost;
     private int priority;
+    private int forgePoint;
     private List<ItemParamData> materialItems;
 
     @Override
@@ -56,6 +56,10 @@ public class ForgeData extends GameResource {
 
     public int getPriority() {
         return priority;
+    }
+
+    public int getForgePoint() {
+        return forgePoint;
     }
 
     public List<ItemParamData> getMaterialItems() {
