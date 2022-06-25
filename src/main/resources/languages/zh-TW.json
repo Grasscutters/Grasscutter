@@ -397,15 +397,13 @@
       "success": "停權成功。",
       "failure": "停權失敗，玩家帳號不存在。",
       "invalid_time": "無效的時間戳。",
-      "invalid_player_id": "無效的玩家ID。",
-      "command_usage": "用法：ban <playerId> [timestamp] [reason]"
+      "command_usage": "用法：ban <@playerId> [timestamp] [reason]"
     },
     "unban": {
       "description": "撤銷停權指定玩家。",
       "success": "撤銷停權成功。",
       "failure": "撤銷停權失敗，玩家帳號不存在。",
-      "invalid_player_id": "無效的玩家ID。",
-      "command_usage": "用法：unban <playerId>"
+      "command_usage": "用法：unban <@playerId>"
     }
   },
   "gacha": {

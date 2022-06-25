@@ -390,18 +390,16 @@
       "description": "Changes weather ID and climate type. Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist"
     },
     "ban": {
-      "command_usage": "Usage: ban <playerId> [timestamp] [reason]",
+      "command_usage": "Usage: ban <@playerId> [timestamp] [reason]",
       "success": "Successful.",
       "failure": "Failed, player not found.",
       "invalid_time": "Unable to parse timestamp.",
-      "invalid_player_id": "Unable to parse player ID.",
       "description": "Ban a player"
     },
     "unban": {
-      "command_usage": "Usage: unban <playerId>",
+      "command_usage": "Usage: unban <@playerId>",
       "success": "Successful.",
       "failure": "Failed, player not found.",
-      "invalid_player_id": "Unable to parse player ID.",
       "description": "Unban a player"
     }
   },
