@@ -11,6 +11,7 @@ import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.ability.AbilityManager;
+import emu.grasscutter.game.activity.ActivityManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
@@ -183,6 +184,7 @@ public class Player {
 	@Transient private GameHome home;
 	@Transient private FurnitureManager furnitureManager;
 	@Transient private BattlePassManager battlePassManager;
+	@Getter @Transient private ActivityManager activityManager;
 
 	@Transient private CollectionManager collectionManager;
 	private CollectionRecordStore collectionRecordStore;
@@ -1508,11 +1510,13 @@ public class Player {
 
 		// Battle Pass trigger
 		this.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_LOGIN);
-		
+
 		this.furnitureManager.onLogin();
 		// Home
 		home = GameHome.getByUid(getUid());
 		home.onOwnerLogin(this);
+        // Activity
+        activityManager = new ActivityManager(this);
 
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
 		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
