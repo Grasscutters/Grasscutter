@@ -7,6 +7,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PlayerLevelData;
 import emu.grasscutter.data.excels.WeatherData;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.ability.AbilityManager;
@@ -295,7 +296,9 @@ public class Player {
 	}
 
 	public Account getAccount() {
-		return account;
+		if (this.account == null)
+			this.account = DatabaseHelper.getAccountById(Integer.toString(this.id));
+		return this.account;
 	}
 
 	public void setAccount(Account account) {
