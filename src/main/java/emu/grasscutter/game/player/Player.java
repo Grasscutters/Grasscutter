@@ -1380,8 +1380,6 @@ public class Player {
 			return;
 		}
 
-		Grasscutter.getLogger().info("Executing daily reset logic ...");
-
 		// We should - now execute all the resetting logic we need.
 		// Reset forge points.
 		this.setForgePoints(300_000);
