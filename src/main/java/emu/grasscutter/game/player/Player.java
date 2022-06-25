@@ -76,6 +76,9 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import lombok.Getter;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -181,6 +184,7 @@ public class Player {
 	private long springLastUsed;
 	private HashMap<String, MapMark> mapMarks;
 	private int nextResinRefresh;
+	private int lastDailyReset;
 
 	@Deprecated
 	@SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
@@ -447,12 +451,25 @@ public class Player {
 	}
 
 	public void setWorldLevel(int level) {
-		this.getWorld().setWorldLevel(newWorldLevel);
-		
+		this.getWorld().setWorldLevel(level);
+
 		this.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level);
 		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_WORLD_LEVEL));
 
 		this.updateProfile();
+	}
+
+	public int getForgePoints() {
+		return this.getProperty(PlayerProperty.PROP_PLAYER_FORGE_POINT);
+	}
+
+	public void setForgePoints(int value) {
+		if (value == this.getForgePoints()) {
+			return;
+		}
+
+		this.setProperty(PlayerProperty.PROP_PLAYER_FORGE_POINT, value);
+		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_FORGE_POINT));
 	}
 
 	public int getPrimogems() {
@@ -794,6 +811,14 @@ public class Player {
 
 	public List<Integer> getShowAvatarList() {
 		return showAvatarList;
+	}
+
+	public int getLastDailyReset() {
+		return this.lastDailyReset;
+	}
+
+	public void setLastDailyReset(int value) {
+		this.lastDailyReset = value;
 	}
 
 	public boolean inMoonCard() {
@@ -1316,6 +1341,10 @@ public class Player {
 				this.resetSendPlayerLocTime();
 			}
 		}
+
+		// Handle daily reset.
+		this.doDailyReset();
+
 		// Expedition
 		var timeNow = Utils.getCurrentSeconds();
 		var needNotify = false;
@@ -1340,8 +1369,26 @@ public class Player {
 		this.getResinManager().rechargeResin();
 	}
 
+	private void doDailyReset() {
+		// Check if we should execute a daily reset on this tick.
+		int currentTime = Utils.getCurrentSeconds();
 
+		var currentDate = LocalDate.ofInstant(Instant.ofEpochSecond(currentTime), ZoneId.systemDefault());
+		var lastResetDate = LocalDate.ofInstant(Instant.ofEpochSecond(this.getLastDailyReset()), ZoneId.systemDefault());
 
+		if (!currentDate.isAfter(lastResetDate)) {
+			return;
+		}
+
+		Grasscutter.getLogger().info("Executing daily reset logic ...");
+
+		// We should - now execute all the resetting logic we need.
+		// Reset forge points.
+		this.setForgePoints(300_000);
+
+		// Done. Update last reset time.
+		this.setLastDailyReset(currentTime);
+	}
 
 	public void resetSendPlayerLocTime() {
 		this.nextSendPlayerLocTime = System.currentTimeMillis() + 5000;

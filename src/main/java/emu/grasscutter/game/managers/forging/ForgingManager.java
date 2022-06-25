@@ -5,19 +5,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.mongodb.QueryBuilder;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ForgeData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.WatcherTriggerType;
-import emu.grasscutter.net.proto.ForgeStartReqOuterClass;
 import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
 import emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueManipulateReq;
 import emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType;
@@ -148,6 +144,13 @@ public class ForgingManager {
 		}
 
 		ForgeData forgeData = GameData.getForgeDataMap().get(req.getForgeId());
+
+		//Check if the player has sufficient forge points.
+		int requiredPoints = forgeData.getForgePoint() * req.getForgeCount();
+		if (requiredPoints > this.player.getForgePoints()) {
+			this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_POINT_NOT_ENOUGH));
+			return;
+		}
 		
 		// Check if we have enough of each material and consume.
 		List<ItemParamData> material = new ArrayList<>(forgeData.getMaterialItems());
@@ -158,6 +161,9 @@ public class ForgingManager {
 		if (!success) {
 			this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_POINT_NOT_ENOUGH)); //ToDo: Probably the wrong return code.
 		}
+
+		// Consume forge points.
+		this.player.setForgePoints(this.player.getForgePoints() - requiredPoints);
 
 		// Create and add active forge.
 		ActiveForgeData activeForge = new ActiveForgeData();
@@ -255,6 +261,12 @@ public class ForgingManager {
 		ItemData moraItem = GameData.getItemDataMap().get(202);
 		GameItem returnMora = new GameItem(moraItem, data.getScoinCost() * forge.getCount());
 		returnItems.add(returnMora);
+
+		// Return forge points to the player.
+		int requiredPoints = data.getForgePoint() * forge.getCount();
+		int newPoints = Math.min(this.player.getForgePoints() + requiredPoints, 300_000);
+
+		this.player.setForgePoints(newPoints);
 
 		// Remove the forge queue.
 		this.player.getActiveForges().remove(queueId - 1);
