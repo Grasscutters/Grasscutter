@@ -16,6 +16,7 @@ import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.SceneData;
+import emu.grasscutter.game.entity.EntityBaseGadget;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
@@ -31,10 +32,13 @@ import emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.*;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass;
 import emu.grasscutter.net.proto.GatherGadgetInfoOuterClass;
 import emu.grasscutter.net.proto.ModifierActionOuterClass;
+import emu.grasscutter.net.proto.SceneEntityInfoOuterClass;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
+import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 public class CollectionManager {
@@ -79,6 +83,7 @@ public class CollectionManager {
                     int sceneId = scene.getId();
                     try (Reader fileReader = new InputStreamReader(DataLoader.load("collectionResources/" + sceneId + ".json"))) {
                         List<CollectionData> collectionDataList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, CollectionData.class).getType());
+                        collectionDataList.removeIf(collectionData -> collectionData.gadget == null);
                         CollectionResourcesData.put(sceneId, collectionDataList);
                     } catch (Exception ignore) {
 
@@ -100,7 +105,7 @@ public class CollectionManager {
         this.player = player;
         this.collectionRecordStore = player.getCollectionRecordStore();
     }
-    public void onGadgetEntities(int range){
+    public synchronized void onGadgetEntities(int range){
         Scene scene = player.getScene();
         int sceneId = scene.getId();
         Position playerPosition = player.getPos();
@@ -181,46 +186,55 @@ public class CollectionManager {
             Grasscutter.getLogger().warn("Collection Scene {} Resources Data not found.",sceneId);
         }
     }
-
-    public void onRockDestroy(AbilityInvokeEntry abilityInvokeEntry) {
+    public CollectionData findCollection(int entityId){
+        for (Map.Entry<CollectionData, EntityGadget> entry : spawnedEntities.entrySet()) {
+            if (entry.getValue().getId() == entityId) {
+                return entry.getKey();
+            }
+        }
+        return null;
+    }
+    public synchronized boolean onRockDestroy(AbilityInvokeEntry abilityInvokeEntry) {
         Scene scene = player.getScene();
+        int entityId = abilityInvokeEntry.getEntityId();
+        CollectionData collectionData = findCollection(entityId);
+        if(collectionData==null){
+            return false;
+        }
+        GameEntity targetEntity = scene.getEntityById(entityId);
+        // Make sure the target is an gadget.
+        if (!(targetEntity instanceof EntityGadget targetGadget)) {
+            return false;
+        }
         if(abilityInvokeEntry.getArgumentType() == AbilityInvokeArgument.ABILITY_INVOKE_ARGUMENT_META_MODIFIER_CHANGE){
             try {
                 AbilityMetaModifierChange data = AbilityMetaModifierChange.parseFrom(abilityInvokeEntry.getAbilityData());
                 if (data.getAction() == ModifierActionOuterClass.ModifierAction.REMOVED) {
-                    GameEntity targetEntity = scene.getEntityById(abilityInvokeEntry.getEntityId());
-                    // Make sure the target is an gadget.
-                    if (!(targetEntity instanceof EntityGadget targetGadget)) {
-                        return;
+                    CollectionData.Gadget gadgetInfo = collectionData.gadget;
+                    int itemId = gadgetInfo.gatherGadget.itemId;
+                    Position hitPosition = targetEntity.getPosition();
+                    int times = Utils.randomRange(1,2);
+                    for(int i=0;i<times;i++) {
+                        EntityItem entity = new EntityItem(scene,
+                                player,
+                                GameData.getItemDataMap().get(itemId),
+                                new Position(
+                                        hitPosition.getX()+(float)Utils.randomRange(1,5)/5,
+                                        hitPosition.getY()+2f,
+                                        hitPosition.getZ()+(float)Utils.randomRange(1,5)/5
+                                ),
+                                1,
+                                false);
+                        scene.addEntity(entity);
                     }
-
-                    for (Map.Entry<CollectionData, EntityGadget> entry : spawnedEntities.entrySet()) {
-                        if (entry.getValue() == targetGadget) {
-                            CollectionData.Gadget gadgetInfo = entry.getKey().gadget;
-                            int itemId = gadgetInfo.gatherGadget.itemId;
-                            Position hitPosition = targetEntity.getPosition();
-                            int times = Utils.randomRange(1,2);
-                            for(int i=0;i<times;i++) {
-                                EntityItem entity = new EntityItem(scene,
-                                        player,
-                                        GameData.getItemDataMap().get(itemId),
-                                        new Position(
-                                                hitPosition.getX()+(float)Utils.randomRange(1,5)/5,
-                                                hitPosition.getY()+2f,
-                                                hitPosition.getZ()+(float)Utils.randomRange(1,5)/5
-                                        ),
-                                        1,
-                                        false);
-                                scene.addEntity(entity);
-                            }
-                            scene.killEntity(targetGadget,player.getTeamManager().getCurrentAvatarEntity().getId());
-                            collectionRecordStore.addRecord(targetGadget.getPosition(),gadgetInfo.gadgetId,scene.getId(),getGadgetRefreshTime(gadgetInfo.gadgetId));
-                        }
-                    }
+                    scene.killEntity(targetGadget,player.getTeamManager().getCurrentAvatarEntity().getId());
+                    collectionRecordStore.addRecord(targetGadget.getPosition(),gadgetInfo.gadgetId,scene.getId(),getGadgetRefreshTime(gadgetInfo.gadgetId));
+                    spawnedEntities.remove(collectionData);
                 }
             } catch (InvalidProtocolBufferException e) {
                 e.printStackTrace();
             }
         }
+        return true;
     }
 }
