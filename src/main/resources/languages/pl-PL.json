@@ -306,6 +306,19 @@
     "unlocktower": {
       "success": "odblokować gotowe",
       "description": "Odblokuj głęboką spiralę"
+    },
+    "ban": {
+      "command_usage": "Usage: ban <@playerId> [timestamp] [reason]",
+      "success": "Successful.",
+      "failure": "Failed, player not found.",
+      "invalid_time": "Unable to parse timestamp.",
+      "description": "Ban a player"
+    },
+    "unban": {
+      "command_usage": "Usage: unban <@playerId>",
+      "success": "Successful.",
+      "failure": "Failed, player not found.",
+      "description": "Unban a player"
     }
   },
   "gacha": {
