@@ -79,6 +79,7 @@ public class CollectionManager {
                     int sceneId = scene.getId();
                     try (Reader fileReader = new InputStreamReader(DataLoader.load("collectionResources/" + sceneId + ".json"))) {
                         List<CollectionData> collectionDataList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, CollectionData.class).getType());
+                        collectionDataList.removeIf(collectionData -> collectionData.gadget == null);
                         CollectionResourcesData.put(sceneId, collectionDataList);
                     } catch (Exception ignore) {
 
