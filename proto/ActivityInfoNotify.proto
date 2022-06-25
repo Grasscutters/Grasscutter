@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "ActivityInfo.proto";
+
+// CmdId: 2125
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ActivityInfoNotify {
+	ActivityInfo activity_info = 11;
+}
