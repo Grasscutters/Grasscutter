@@ -32,6 +32,7 @@ import emu.grasscutter.game.managers.FurnitureManager;
 import emu.grasscutter.game.managers.InsectCaptureManager;
 import emu.grasscutter.game.managers.ResinManager;
 import emu.grasscutter.game.managers.collection.CollectionManager;
+import emu.grasscutter.game.managers.collection.CollectionRecordStore;
 import emu.grasscutter.game.managers.deforestation.DeforestationManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.managers.forging.ActiveForgeData;
@@ -180,7 +181,9 @@ public class Player {
 	@Transient private GameHome home;
 	@Transient private FurnitureManager furnitureManager;
 	@Transient private BattlePassManager battlePassManager;
+
 	@Transient private CollectionManager collectionManager;
+	private CollectionRecordStore collectionRecordStore;
 
 	private long springLastUsed;
 	private HashMap<String, MapMark> mapMarks;
@@ -197,7 +200,6 @@ public class Player {
 		this.towerManager = new TowerManager(this);
 		this.abilityManager = new AbilityManager(this);
 		this.deforestationManager = new DeforestationManager(this);
-		this.collectionManager = new CollectionManager(this);
 		this.insectCaptureManager = new InsectCaptureManager(this);
 
 		this.setQuestManager(new QuestManager(this));
@@ -216,6 +218,7 @@ public class Player {
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
 		this.towerData = new TowerData();
+		this.collectionRecordStore = new CollectionRecordStore();
 		this.unlockedForgingBlueprints = new HashSet<>();
 		this.unlockedCombines = new HashSet<>();
 		this.unlockedFurniture = new HashSet<>();
@@ -279,7 +282,6 @@ public class Player {
 		this.energyManager = new EnergyManager(this);
 		this.resinManager = new ResinManager(this);
 		this.deforestationManager = new DeforestationManager(this);
-		this.collectionManager = new CollectionManager(this);
 		this.forgingManager = new ForgingManager(this);
 		this.furnitureManager = new FurnitureManager(this);
 	}
@@ -1310,7 +1312,17 @@ public class Player {
 	}
 
 	public CollectionManager getCollectionManager() {
-		return collectionManager;
+		if(this.collectionManager==null){
+			this.collectionManager = new CollectionManager();
+		}
+		return this.collectionManager;
+	}
+
+	public CollectionRecordStore getCollectionRecordStore() {
+		if(this.collectionRecordStore==null){
+			this.collectionRecordStore = new CollectionRecordStore();
+		}
+		return collectionRecordStore;
 	}
 
 	public HashMap<String, MapMark> getMapMarks() { return mapMarks; }
@@ -1427,6 +1439,7 @@ public class Player {
 		}
 		//Make sure towerManager's player is online player
 		this.getTowerManager().setPlayer(this);
+		this.getCollectionManager().setPlayer(this);
 
 		// Load from db
 		this.getAvatars().loadFromDatabase();

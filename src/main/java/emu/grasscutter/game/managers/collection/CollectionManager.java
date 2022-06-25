@@ -10,7 +10,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
@@ -39,10 +38,37 @@ import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 public class CollectionManager {
-    //GameData.getSceneDataMap();
+    private static final long HOUR = 1000*60; //1 Hours
+    private static final long DAY = HOUR*24; //1 Day
+    private static final HashMap<Integer,Long> DEFINE_REFRESH_TIME = new HashMap<>();// <GadgetId,Waiting Millisecond>
+    private static final long DEFAULT_REFRESH_TIME = HOUR*6; // default 6 Hours
+
+    static {
+        DEFINE_REFRESH_TIME.put(70520003,3*DAY);//水晶 3 Day
+
+        DEFINE_REFRESH_TIME.put(70510009,2*DAY);//蒲公英 2 Days
+        DEFINE_REFRESH_TIME.put(70540019,2*DAY);//风车菊 2 Days
+        DEFINE_REFRESH_TIME.put(70540022,2*DAY);//落落莓 2 Days
+        DEFINE_REFRESH_TIME.put(70540008,2*DAY);//绝云椒椒 2 Days
+        DEFINE_REFRESH_TIME.put(70540020,2*DAY);//慕风蘑菇 2 Days
+        DEFINE_REFRESH_TIME.put(70510005,2*DAY);//电气水晶 2 Days
+        DEFINE_REFRESH_TIME.put(70520002,2*DAY);//白铁矿 2 Day
+        DEFINE_REFRESH_TIME.put(70510012,2*DAY);//石珀 2 Day
+        DEFINE_REFRESH_TIME.put(70520018,2*DAY);//夜泊石 2 Day
+
+        DEFINE_REFRESH_TIME.put(70540005,DAY);//松果 1 Day
+        DEFINE_REFRESH_TIME.put(70520004,DAY);//蘑菇 1 Day
+        DEFINE_REFRESH_TIME.put(70540003,DAY);//苹果 1 Day
+        DEFINE_REFRESH_TIME.put(70540021,DAY);//日落果 1 Day
+        DEFINE_REFRESH_TIME.put(70520001,DAY);//铁矿 1 Day
+
+        DEFINE_REFRESH_TIME.put(70520005,12*HOUR);//甜甜花 12 Hours
+        DEFINE_REFRESH_TIME.put(70520009,12*HOUR);//薄荷 12 Hours
+
+    }
     private final static HashMap<Integer, List<CollectionData>> CollectionResourcesData = new HashMap<>();
     private final HashMap<CollectionData,EntityGadget> spawnedEntities = new HashMap<>();
-    private final ArrayList<CollectionData> gottenEntities = new ArrayList<>();
+    private CollectionRecordStore collectionRecordStore;
     Player player;
     static {
         try {
@@ -64,14 +90,15 @@ public class CollectionManager {
             e.printStackTrace();
         }
     }
-    private double computeDistance(Position a, Position b){
-        double detX = a.getX()-b.getX();
-        double detY = a.getY()-b.getY();
-        double detZ = a.getZ()-b.getZ();
-        return Math.sqrt(detX*detX+detY*detY+detZ*detZ);
+    private static long getGadgetRefreshTime(int gadgetId){
+        return DEFINE_REFRESH_TIME.getOrDefault(gadgetId,DEFAULT_REFRESH_TIME);
     }
-    public CollectionManager(Player player){
+    public CollectionManager() {
+
+    }
+    public void setPlayer(Player player) {
         this.player = player;
+        this.collectionRecordStore = player.getCollectionRecordStore();
     }
     public void onGadgetEntities(int range){
         Scene scene = player.getScene();
@@ -82,8 +109,11 @@ public class CollectionManager {
             ArrayList<GameEntity> removeEntities = new ArrayList<>();
             List<CollectionData> collectionDataList = CollectionResourcesData.get(sceneId);
             for(CollectionData data:collectionDataList){
-                if(computeDistance(data.motionInfo.pos,playerPosition)<range){
+                if(data.motionInfo.pos.computeDistance(playerPosition)<range){
                     if(!spawnedEntities.containsKey(data)) {
+                        if(collectionRecordStore.findRecord(data.motionInfo.pos,data.gadget.gadgetId,sceneId)){
+                            continue;
+                        }
                         EntityGadget entityGadget = new EntityGadget(scene, data.gadget.gadgetId, data.motionInfo.pos, data.motionInfo.rot, new GadgetContent() {
                             @Override
                             public boolean onInteract(Player player, GadgetInteractReqOuterClass.GadgetInteractReq req) {
@@ -91,12 +121,13 @@ public class CollectionManager {
                                     GameEntity gadget = scene.getEntityById(req.getGadgetEntityId());
                                     for (Map.Entry<CollectionData, EntityGadget> entry : spawnedEntities.entrySet()) {
                                         if (entry.getValue() == gadget) {
-                                            int itemId = entry.getKey().gadget.gatherGadget.itemId;
+                                            CollectionData.Gadget gadgetInfo = entry.getKey().gadget;
+                                            int itemId = gadgetInfo.gatherGadget.itemId;
                                             ItemData data = GameData.getItemDataMap().get(itemId);
                                             GameItem item = new GameItem(data, 1);
                                             player.getInventory().addItem(item, ActionReason.SubfieldDrop);
                                             scene.removeEntity(gadget, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
-                                            Grasscutter.getLogger().warn("Refresh entity doesn't implement! feel free to implement here!");
+                                            collectionRecordStore.addRecord(gadget.getPosition(),gadgetInfo.gadgetId,sceneId,getGadgetRefreshTime(gadgetInfo.gadgetId));
                                             break;
                                         }
                                     }
@@ -165,7 +196,8 @@ public class CollectionManager {
 
                     for (Map.Entry<CollectionData, EntityGadget> entry : spawnedEntities.entrySet()) {
                         if (entry.getValue() == targetGadget) {
-                            int itemId = entry.getKey().gadget.gatherGadget.itemId;
+                            CollectionData.Gadget gadgetInfo = entry.getKey().gadget;
+                            int itemId = gadgetInfo.gatherGadget.itemId;
                             Position hitPosition = targetEntity.getPosition();
                             int times = Utils.randomRange(1,2);
                             for(int i=0;i<times;i++) {
@@ -182,6 +214,7 @@ public class CollectionManager {
                                 scene.addEntity(entity);
                             }
                             scene.killEntity(targetGadget,player.getTeamManager().getCurrentAvatarEntity().getId());
+                            collectionRecordStore.addRecord(targetGadget.getPosition(),gadgetInfo.gadgetId,scene.getId(),getGadgetRefreshTime(gadgetInfo.gadgetId));
                         }
                     }
                 }
