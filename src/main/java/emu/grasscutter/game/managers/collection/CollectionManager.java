@@ -1,6 +1,7 @@
 package emu.grasscutter.game.managers.collection;
 
 import com.google.gson.reflect.TypeToken;
+import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -20,21 +21,19 @@ import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.entity.gadget.GadgetContent;
-import emu.grasscutter.game.inventory.EquipType;
 import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.net.proto.AttackResultOuterClass;
-import emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass;
+import emu.grasscutter.net.proto.AbilityInvokeArgumentOuterClass.*;
+import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.*;
+import emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.*;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass;
 import emu.grasscutter.net.proto.GatherGadgetInfoOuterClass;
+import emu.grasscutter.net.proto.ModifierActionOuterClass;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass;
-import emu.grasscutter.net.proto.VectorOuterClass;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -151,38 +150,43 @@ public class CollectionManager {
             Grasscutter.getLogger().warn("Collection Scene {} Resources Data not found.",sceneId);
         }
     }
-    public void handleAttackHit(EvtBeingHitInfoOuterClass.EvtBeingHitInfo hitInfo) {
+
+    public void onRockDestroy(AbilityInvokeEntry abilityInvokeEntry) {
         Scene scene = player.getScene();
-        MaterialType equipType = player.getTeamManager().getCurrentAvatarEntity().getAvatar().getWeapon().getItemData().getMaterialType();
-        AttackResultOuterClass.AttackResult attackResult = hitInfo.getAttackResult();
-        if(attackResult.getElementType()==0) {
-            // Make sure the target is an gadget.
-            GameEntity targetEntity = this.player.getScene().getEntityById(attackResult.getDefenseId());
-            if (!(targetEntity instanceof EntityGadget targetGadget)) {
-                return;
-            }
-            for (Map.Entry<CollectionData, EntityGadget> entry : spawnedEntities.entrySet()) {
-                if (entry.getValue() == targetGadget) {
-                    int itemId = entry.getKey().gadget.gatherGadget.itemId;
-                    VectorOuterClass.Vector hitPosition = attackResult.getHitCollision().getHitPoint();
-                    int times = Utils.randomRange(1,2);
-                    for(int i=0;i<times;i++) {
-                        EntityItem entity = new EntityItem(scene,
-                                null,
-                                GameData.getItemDataMap().get(itemId),
-                                    new Position(
-                                            hitPosition.getX()+(float)Utils.randomRange(1,5)/5,
-                                            hitPosition.getY()+2f,
-                                            hitPosition.getZ()+(float)Utils.randomRange(1,5)/5
-                                    ),
-                                1,
-                                false);
-                        scene.addEntity(entity);
+        if(abilityInvokeEntry.getArgumentType() == AbilityInvokeArgument.ABILITY_INVOKE_ARGUMENT_META_MODIFIER_CHANGE){
+            try {
+                AbilityMetaModifierChange data = AbilityMetaModifierChange.parseFrom(abilityInvokeEntry.getAbilityData());
+                if (data.getAction() == ModifierActionOuterClass.ModifierAction.REMOVED) {
+                    GameEntity targetEntity = scene.getEntityById(abilityInvokeEntry.getEntityId());
+                    // Make sure the target is an gadget.
+                    if (!(targetEntity instanceof EntityGadget targetGadget)) {
+                        return;
                     }
-                    System.out.println("equipType:"+equipType);
-                    scene.killEntity(targetGadget,attackResult.getAttackerId());
-                    Grasscutter.getLogger().warn("Rocks's endurance doesn't implement! feel free to implement here!");
+
+                    for (Map.Entry<CollectionData, EntityGadget> entry : spawnedEntities.entrySet()) {
+                        if (entry.getValue() == targetGadget) {
+                            int itemId = entry.getKey().gadget.gatherGadget.itemId;
+                            Position hitPosition = targetEntity.getPosition();
+                            int times = Utils.randomRange(1,2);
+                            for(int i=0;i<times;i++) {
+                                EntityItem entity = new EntityItem(scene,
+                                        player,
+                                        GameData.getItemDataMap().get(itemId),
+                                        new Position(
+                                                hitPosition.getX()+(float)Utils.randomRange(1,5)/5,
+                                                hitPosition.getY()+2f,
+                                                hitPosition.getZ()+(float)Utils.randomRange(1,5)/5
+                                        ),
+                                        1,
+                                        false);
+                                scene.addEntity(entity);
+                            }
+                            scene.killEntity(targetGadget,player.getTeamManager().getCurrentAvatarEntity().getId());
+                        }
+                    }
                 }
+            } catch (InvalidProtocolBufferException e) {
+                e.printStackTrace();
             }
         }
     }

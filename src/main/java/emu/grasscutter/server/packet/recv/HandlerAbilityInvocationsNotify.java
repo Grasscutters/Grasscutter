@@ -1,5 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AbilityInvocationsNotifyOuterClass.AbilityInvocationsNotify;
@@ -14,10 +15,12 @@ public class HandlerAbilityInvocationsNotify extends PacketHandler {
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		AbilityInvocationsNotify notif = AbilityInvocationsNotify.parseFrom(payload);
-		
+
+		Player player = session.getPlayer();
 		for (AbilityInvokeEntry entry : notif.getInvokesList()) {
-			session.getPlayer().getAbilityManager().onAbilityInvoke(entry);
-			session.getPlayer().getAbilityInvokeHandler().addEntry(entry.getForwardType(), entry);
+			player.getAbilityManager().onAbilityInvoke(entry);
+			player.getAbilityInvokeHandler().addEntry(entry.getForwardType(), entry);
+			player.getCollectionManager().onRockDestroy(entry);
 		}
 	}
 
