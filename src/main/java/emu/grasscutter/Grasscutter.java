@@ -69,6 +69,10 @@ public final class Grasscutter {
         // Declare logback configuration.
         System.setProperty("logback.configurationFile", "src/main/resources/logback.xml");
 
+        // Disable the MongoDB logger.
+        var mongoLogger = (Logger) LoggerFactory.getLogger("org.mongodb.driver");
+        mongoLogger.setLevel(Level.OFF);
+
         // Load server configuration.
         Grasscutter.loadConfig();
         // Attempt to update configuration.
@@ -101,6 +105,7 @@ public final class Grasscutter {
                     exitEarly = true;
                 }
                 case "-debug" -> {
+                    // Set the logger to debug.
                     log.setLevel(Level.DEBUG);
                     log.debug("The logger is now running in debug mode.");
                 }
