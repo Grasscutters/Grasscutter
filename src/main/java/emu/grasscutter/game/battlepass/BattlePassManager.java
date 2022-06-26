@@ -352,7 +352,10 @@ public class BattlePassManager {
 	
 	//
 	public BattlePassSchedule getScheduleProto() {
-		var nextSundayDate = LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.SUNDAY));
+		var currentDate = LocalDate.now();
+		var nextSundayDate = (currentDate.getDayOfWeek() == DayOfWeek.SUNDAY) 
+			? currentDate 
+			: LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.SUNDAY));
 		var nextSundayTime = LocalDateTime.of(nextSundayDate.getYear(), nextSundayDate.getMonthValue(), nextSundayDate.getDayOfMonth(), 23, 59, 59);
 		
 		BattlePassSchedule.Builder schedule = BattlePassSchedule.newBuilder()
