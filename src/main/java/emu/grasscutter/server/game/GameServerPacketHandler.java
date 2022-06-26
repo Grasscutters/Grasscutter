@@ -51,7 +51,7 @@ public class GameServerPacketHandler {
 		}
 
 		// Debug
-		Grasscutter.getLogger().info("Registered " + this.handlers.size() + " " + handlerClass.getSimpleName() + "s");
+		Grasscutter.getLogger().debug("Registered " + this.handlers.size() + " " + handlerClass.getSimpleName() + "s");
 	}
 
 	public void handle(GameSession session, int opcode, byte[] header, byte[] payload) {
