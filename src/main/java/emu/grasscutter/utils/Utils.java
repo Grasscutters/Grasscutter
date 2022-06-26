@@ -26,19 +26,19 @@ import static emu.grasscutter.utils.Language.translate;
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
 public final class Utils {
 	public static final Random random = new Random();
-	
+
 	public static int randomRange(int min, int max) {
 		return random.nextInt(max - min + 1) + min;
 	}
-	
+
 	public static float randomFloatRange(float min, float max) {
 		return random.nextFloat() * (max - min) + min;
 	}
-	
+
 	public static double getDist(Position pos1, Position pos2) {
 		double xs = pos1.getX() - pos2.getX();
 		xs = xs * xs;
-		
+
 		double ys = pos1.getY() - pos2.getY();
 		ys = ys * ys;
 
@@ -51,13 +51,13 @@ public final class Utils {
 	public static int getCurrentSeconds() {
 		return (int) (System.currentTimeMillis() / 1000.0);
 	}
-	
+
 	public static String lowerCaseFirstChar(String s) {
 		StringBuilder sb = new StringBuilder(s);
 		sb.setCharAt(0, Character.toLowerCase(sb.charAt(0)));
 		return sb.toString();
 	}
-	
+
 	public static String toString(InputStream inputStream) throws IOException {
 		BufferedInputStream bis = new BufferedInputStream(inputStream);
 		ByteArrayOutputStream buf = new ByteArrayOutputStream();
@@ -66,13 +66,13 @@ public final class Utils {
 		}
 		return buf.toString();
 	}
-	
+
 	public static void logByteArray(byte[] array) {
 		ByteBuf b = Unpooled.wrappedBuffer(array);
 		Grasscutter.getLogger().info("\n" + ByteBufUtil.prettyHexDump(b));
 		b.release();
 	}
-	
+
 	private static final char[] HEX_ARRAY = "0123456789abcdef".toCharArray();
 	public static String bytesToHex(byte[] bytes) {
 		if (bytes == null) return "";
@@ -84,17 +84,17 @@ public final class Utils {
 		}
 		return new String(hexChars);
 	}
-	
+
 	public static String bytesToHex(ByteBuf buf) {
 		return bytesToHex(byteBufToArray(buf));
 	}
-	
+
 	public static byte[] byteBufToArray(ByteBuf buf) {
 		byte[] bytes = new byte[buf.capacity()];
 		buf.getBytes(0, bytes);
 		return bytes;
 	}
-	
+
 	public static int abilityHash(String str) {
 		int v7 = 0;
 		int v8 = 0;
@@ -146,20 +146,10 @@ public final class Utils {
 
 			Files.copy(stream, new File(destination).toPath(), StandardCopyOption.REPLACE_EXISTING);
 			return true;
-		} catch (Exception e) {
-			Grasscutter.getLogger().warn("Unable to copy resource " + resource + " to " + destination, e);
+		} catch (Exception exception) {
+			Grasscutter.getLogger().warn("Unable to copy resource " + resource + " to " + destination, exception);
 			return false;
 		}
-	}
-
-	/**
-	 * Get object with null fallback.
-	 * @param nonNull The object to return if not null.
-	 * @param fallback The object to return if null.
-	 * @return One of the two provided objects.
-	 */
-	public static <T> T requireNonNullElseGet(T nonNull, T fallback) {
-		return nonNull != null ? nonNull : fallback;
 	}
 
 	/**
@@ -170,7 +160,7 @@ public final class Utils {
 		String asJson = Grasscutter.getGsonFactory().toJson(object);
 		Grasscutter.getLogger().info(asJson);
 	}
-	
+
 	/**
 	 * Checks for required files and folders before startup.
 	 */
@@ -261,7 +251,7 @@ public final class Utils {
 	 */
 	public static String readFromInputStream(@Nullable InputStream stream) {
 		if(stream == null) return "empty";
-		
+
 		StringBuilder stringBuilder = new StringBuilder();
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
 			String line; while ((line = reader.readLine()) != null) {
@@ -276,7 +266,7 @@ public final class Utils {
 
 	/**
 	 * Performs a linear interpolation using a table of fixed points to create an effective piecewise f(x) = y function.
-	 * @param x
+	 * @param x The x value.
 	 * @param xyArray Array of points in [[x0,y0], ... [xN, yN]] format
 	 * @return f(x) = y
 	 */
@@ -294,7 +284,7 @@ public final class Utils {
 				}
 				if (x < xyArray[i+1][0]) {
 					// We are between [i] and [i+1], interpolation time!
-					// Using floats would be slightly cleaner but we can just as easily use ints if we're careful with order of operations. 
+					// Using floats would be slightly cleaner but we can just as easily use ints if we're careful with order of operations.
 					int position = x - xyArray[i][0];
 					int fullDist = xyArray[i+1][0] - xyArray[i][0];
 					int prevValue = xyArray[i][1];
