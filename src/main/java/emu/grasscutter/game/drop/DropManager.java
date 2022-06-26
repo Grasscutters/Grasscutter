@@ -50,7 +50,7 @@ public class DropManager {
                 for (DropInfo di : banners) {
                     getDropData().put(di.getMonsterId(), di.getDropDataList());
                 }
-                Grasscutter.getLogger().info("Drop data successfully loaded.");
+                Grasscutter.getLogger().debug("Drop data successfully loaded.");
             } else {
                 Grasscutter.getLogger().error("Unable to load drop data. Drop data size is 0.");
             }
