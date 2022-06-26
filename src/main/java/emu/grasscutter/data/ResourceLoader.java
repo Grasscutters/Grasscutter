@@ -29,6 +29,7 @@ import emu.grasscutter.game.world.SpawnDataEntry.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.utils.Language.translate;
 
 public class ResourceLoader {
 
@@ -52,6 +53,8 @@ public class ResourceLoader {
 	}
 
 	public static void loadAll() {
+        Grasscutter.getLogger().info(translate("messages.status.resources.loading"));
+
 		// Load ability lists
 		loadAbilityEmbryos();
 		loadOpenConfig();
@@ -68,6 +71,8 @@ public class ResourceLoader {
 		// Load default home layout
 		loadHomeworldDefaultSaveData();
 		loadNpcBornData();
+
+        Grasscutter.getLogger().info(translate("messages.status.resources.finish"));
 	}
 
 	public static void loadResources() {
