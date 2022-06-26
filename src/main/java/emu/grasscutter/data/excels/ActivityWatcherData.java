@@ -2,6 +2,7 @@ package emu.grasscutter.data.excels;
 
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.game.props.WatcherTriggerType;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -24,6 +25,7 @@ public class ActivityWatcherData extends GameResource {
     @Override
     public void onLoad() {
         triggerConfig.paramList = triggerConfig.paramList.stream().filter(x -> !x.isBlank()).toList();
+        triggerConfig.watcherTriggerType = WatcherTriggerType.getTypeByName(triggerConfig.triggerType);
     }
 
     @Getter
@@ -31,6 +33,8 @@ public class ActivityWatcherData extends GameResource {
     public static class WatcherTrigger{
         String triggerType;
         List<String> paramList;
+
+        transient WatcherTriggerType watcherTriggerType;
     }
 
 }

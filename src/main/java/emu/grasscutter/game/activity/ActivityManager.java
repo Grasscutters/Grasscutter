@@ -6,6 +6,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActivityType;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.ActivityInfoOuterClass;
 import emu.grasscutter.server.packet.send.PacketActivityScheduleInfoNotify;
@@ -25,41 +26,22 @@ public class ActivityManager {
 
     static {
         activityConfigItemMap = new HashMap<>();
-
         loadActivityConfigData();
-    }
-
-    public ActivityManager(Player player){
-        this.player = player;
-
-        playerActivityDataMap = new ConcurrentHashMap<>();
-        // load data for player
-        activityConfigItemMap.values().forEach(item -> {
-            var data = PlayerActivityData.getByPlayer(player, item.getActivityId());
-            if(data == null){
-                data = item.getActivityHandler().initPlayerActivityData(player);
-                data.save();
-            }
-            data.setPlayer(player);
-            playerActivityDataMap.put(item.getActivityId(), data);
-        });
-
-        player.sendPacket(new PacketActivityScheduleInfoNotify(activityConfigItemMap.values()));
     }
 
     private static void loadActivityConfigData() {
         // scan activity type handler & watcher type
-        var activityHandlerTypeMap = new HashMap<String, ConstructorAccess<?>>();
-        var activityWatcherTypeMap = new HashMap<String, ConstructorAccess<?>>();
+        var activityHandlerTypeMap = new HashMap<ActivityType, ConstructorAccess<?>>();
+        var activityWatcherTypeMap = new HashMap<WatcherTriggerType, ConstructorAccess<?>>();
         var reflections = new Reflections(ActivityManager.class.getPackage().getName());
 
         reflections.getSubTypesOf(ActivityHandler.class).forEach(item -> {
-            var typeName = item.getAnnotation(ActivityType.class);
+            var typeName = item.getAnnotation(GameActivity.class);
             activityHandlerTypeMap.put(typeName.value(), ConstructorAccess.get(item));
         });
         reflections.getSubTypesOf(ActivityWatcher.class).forEach(item -> {
-            var typeName = item.getAnnotation(WatcherType.class);
-            activityWatcherTypeMap.put(typeName.value().name(), ConstructorAccess.get(item));
+            var typeName = item.getAnnotation(ActivityWatcherType.class);
+            activityWatcherTypeMap.put(typeName.value(), ConstructorAccess.get(item));
         });
 
         try(InputStream is = DataLoader.load("ActivityConfig.json"); InputStreamReader isr = new InputStreamReader(is)) {
@@ -74,39 +56,49 @@ public class ActivityManager {
                     Grasscutter.getLogger().warn("activity {} not exist.", item.getActivityId());
                     return;
                 }
-                var activityHandlerType = activityHandlerTypeMap.get(activityData.getActivityType());
+                var activityHandlerType = activityHandlerTypeMap.get(ActivityType.getTypeByName(activityData.getActivityType()));
+                ActivityHandler activityHandler;
 
                 if(activityHandlerType != null) {
-                    var activityHandler = (ActivityHandler) activityHandlerType.newInstance();
-                    activityHandler.setActivityConfigItem(item);
-                    activityHandler.initWatchers(activityWatcherTypeMap);
-                    item.setActivityHandler(activityHandler);
+                    activityHandler = (ActivityHandler) activityHandlerType.newInstance();
+                }else{
+                    activityHandler = new DefaultActivityHandler();
                 }
+                activityHandler.setActivityConfigItem(item);
+                activityHandler.initWatchers(activityWatcherTypeMap);
+                item.setActivityHandler(activityHandler);
 
                 activityConfigItemMap.putIfAbsent(item.getActivityId(), item);
             });
 
-            Grasscutter.getLogger().error("Enable {} activities.", activityConfigItemMap.size());
+            Grasscutter.getLogger().info("Enable {} activities.", activityConfigItemMap.size());
         } catch (Exception e) {
-            Grasscutter.getLogger().error("Unable to load chest reward config.", e);
+            Grasscutter.getLogger().error("Unable to load activities config.", e);
         }
 
     }
 
-    public ActivityInfoOuterClass.ActivityInfo getInfoProto(int activityId){
-        var activityHandler = activityConfigItemMap.get(activityId).getActivityHandler();
-        var activityData = playerActivityDataMap.get(activityId);
+    public ActivityManager(Player player){
+        this.player = player;
 
-        var proto = ActivityInfoOuterClass.ActivityInfo.newBuilder();
-        activityHandler.buildProto(activityData, proto);
+        playerActivityDataMap = new ConcurrentHashMap<>();
+        // load data for player
+        activityConfigItemMap.values().forEach(item -> {
+            var data = PlayerActivityData.getByPlayer(player, item.getActivityId());
+            if(data == null){
+                data = item.getActivityHandler().initPlayerActivityData(player);
+                data.save();
+            }
+            data.setPlayer(player);
+            data.setActivityHandler(item.getActivityHandler());
+            playerActivityDataMap.put(item.getActivityId(), data);
+        });
 
-        return proto.build();
+        player.sendPacket(new PacketActivityScheduleInfoNotify(activityConfigItemMap.values()));
     }
 
     /**
      * trigger activity watcher
-     * @param watcherTriggerType
-     * @param params
      */
     public void triggerWatcher(WatcherTriggerType watcherTriggerType, String... params) {
         var watchers = activityConfigItemMap.values().stream()
@@ -122,4 +114,37 @@ public class ActivityManager {
             playerActivityDataMap.get(watcher.getActivityHandler().getActivityConfigItem().getActivityId()),
             params));
     }
+
+    public ActivityInfoOuterClass.ActivityInfo getInfoProtoByActivityId(int activityId){
+        var activityHandler = activityConfigItemMap.get(activityId).getActivityHandler();
+        var activityData = playerActivityDataMap.get(activityId);
+
+        return activityHandler.toProto(activityData);
+    }
+
+    public Optional<ActivityHandler> getActivityHandler(ActivityType type){
+        return activityConfigItemMap.values().stream()
+            .map(ActivityConfigItem::getActivityHandler)
+            .filter(x -> type == x.getClass().getAnnotation(GameActivity.class).value())
+            .findFirst();
+    }
+
+    public <T extends ActivityHandler> Optional<T> getActivityHandlerAs(ActivityType type, Class<T> clazz){
+        return getActivityHandler(type).map(x -> (T)x);
+    }
+
+    public Optional<Integer> getActivityIdByActivityType(ActivityType type){
+        return getActivityHandler(type)
+            .map(ActivityHandler::getActivityConfigItem)
+            .map(ActivityConfigItem::getActivityId);
+    }
+    public Optional<PlayerActivityData> getPlayerActivityDataByActivityType(ActivityType type){
+        return getActivityIdByActivityType(type)
+            .map(playerActivityDataMap::get);
+    }
+    public Optional<ActivityInfoOuterClass.ActivityInfo> getInfoProtoByActivityType(ActivityType type){
+       return getActivityIdByActivityType(type)
+           .map(this::getInfoProtoByActivityId);
+    }
+
 }
