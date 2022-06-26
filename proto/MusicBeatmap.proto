@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MusicBeatmapList.proto";
+
+message MusicBeatmap {
+	uint32 music_id = 1;
+	repeated MusicBeatmapList beatmap_item_list = 2;
+}

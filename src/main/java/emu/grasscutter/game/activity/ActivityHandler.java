@@ -26,12 +26,15 @@ public abstract class ActivityHandler {
     ActivityData activityData;
     Map<WatcherTriggerType, List<ActivityWatcher>> watchersMap = new HashMap<>();
 
-    public void initWatchers(HashMap<String, ConstructorAccess<?>> activityWatcherTypeMap){
+    abstract public void onProtoBuild(PlayerActivityData playerActivityData, ActivityInfoOuterClass.ActivityInfo.Builder activityInfo);
+    abstract public void onInitPlayerActivityData(PlayerActivityData playerActivityData);
+
+    public void initWatchers(Map<WatcherTriggerType, ConstructorAccess<?>> activityWatcherTypeMap){
         activityData = GameData.getActivityDataMap().get(activityConfigItem.getActivityId());
 
         // add watcher to map by id
         activityData.getWatcherDataList().forEach(watcherData -> {
-            var watcherType = activityWatcherTypeMap.get(watcherData.getTriggerConfig().getTriggerType());
+            var watcherType = activityWatcherTypeMap.get(watcherData.getTriggerConfig().getWatcherTriggerType());
             ActivityWatcher watcher;
             if(watcherType != null){
                 watcher = (ActivityWatcher) watcherType.newInstance();
@@ -42,8 +45,8 @@ public abstract class ActivityHandler {
             watcher.setWatcherId(watcherData.getId());
             watcher.setActivityHandler(this);
             watcher.setActivityWatcherData(watcherData);
-            watchersMap.computeIfAbsent(WatcherTriggerType.getTypeByName(watcherData.getTriggerConfig().getTriggerType()), k -> new ArrayList<>());
-            watchersMap.get(WatcherTriggerType.getTypeByName(watcherData.getTriggerConfig().getTriggerType())).add(watcher);
+            watchersMap.computeIfAbsent(watcherData.getTriggerConfig().getWatcherTriggerType(), k -> new ArrayList<>());
+            watchersMap.get(watcherData.getTriggerConfig().getWatcherTriggerType()).add(watcher);
         });
     }
 
@@ -55,16 +58,19 @@ public abstract class ActivityHandler {
     }
 
     public PlayerActivityData initPlayerActivityData(Player player){
-        return PlayerActivityData.of()
+        PlayerActivityData playerActivityData = PlayerActivityData.of()
             .activityId(activityConfigItem.getActivityId())
             .uid(player.getUid())
             .watcherInfoMap(initWatchersDataForPlayer())
             .build();
+
+        onInitPlayerActivityData(playerActivityData);
+        return playerActivityData;
     }
 
-
-    public void buildProto(PlayerActivityData playerActivityData, ActivityInfoOuterClass.ActivityInfo.Builder activityInfo){
-        activityInfo.setActivityId(activityConfigItem.getActivityId())
+    public ActivityInfoOuterClass.ActivityInfo toProto(PlayerActivityData playerActivityData){
+        var proto = ActivityInfoOuterClass.ActivityInfo.newBuilder();
+        proto.setActivityId(activityConfigItem.getActivityId())
             .setActivityType(activityConfigItem.getActivityType())
             .setScheduleId(activityConfigItem.getScheduleId())
             .setBeginTime(DateHelper.getUnixTime(activityConfigItem.getBeginTime()))
@@ -73,9 +79,12 @@ public abstract class ActivityHandler {
             .addAllMeetCondList(activityConfigItem.getMeetCondList());
 
         if (playerActivityData != null){
-            activityInfo.addAllWatcherInfoList(playerActivityData.getAllWatcherInfoList());
+            proto.addAllWatcherInfoList(playerActivityData.getAllWatcherInfoList());
         }
 
+        onProtoBuild(playerActivityData, proto);
+
+        return proto.build();
     }
 
 }

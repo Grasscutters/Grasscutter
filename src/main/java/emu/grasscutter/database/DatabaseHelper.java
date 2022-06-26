@@ -11,6 +11,7 @@ import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.activity.PlayerActivityData;
+import emu.grasscutter.game.activity.musicgame.MusicGameBeatmap;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.battlepass.BattlePassManager;
 import emu.grasscutter.game.friends.Friendship;
@@ -336,5 +337,14 @@ public final class DatabaseHelper {
 
     public static void savePlayerActivityData(PlayerActivityData playerActivityData) {
         DatabaseManager.getGameDatastore().save(playerActivityData);
+    }
+    public static MusicGameBeatmap getMusicGameBeatmap(long musicShareId) {
+        return DatabaseManager.getGameDatastore().find(MusicGameBeatmap.class)
+            .filter(Filters.eq("musicShareId", musicShareId))
+            .first();
+    }
+
+    public static void saveMusicGameBeatmap(MusicGameBeatmap musicGameBeatmap) {
+        DatabaseManager.getGameDatastore().save(musicGameBeatmap);
     }
 }

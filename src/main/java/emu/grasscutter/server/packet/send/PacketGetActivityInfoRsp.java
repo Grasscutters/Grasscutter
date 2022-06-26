@@ -14,7 +14,7 @@ public class PacketGetActivityInfoRsp extends BasePacket {
 		var proto = GetActivityInfoRsp.newBuilder();
 
         activityIdList.stream()
-            .map(activityManager::getInfoProto)
+            .map(activityManager::getInfoProtoByActivityId)
             .forEach(proto::addActivityInfoList);
 
 		this.setData(proto);
