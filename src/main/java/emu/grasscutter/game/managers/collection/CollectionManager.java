@@ -98,10 +98,8 @@ public class CollectionManager {
     private static long getGadgetRefreshTime(int gadgetId){
         return DEFINE_REFRESH_TIME.getOrDefault(gadgetId,DEFAULT_REFRESH_TIME);
     }
-    public CollectionManager() {
-
-    }
-    public void setPlayer(Player player) {
+    
+    public synchronized void setPlayer(Player player) {
         this.player = player;
         this.collectionRecordStore = player.getCollectionRecordStore();
     }
@@ -186,7 +184,7 @@ public class CollectionManager {
             Grasscutter.getLogger().warn("Collection Scene {} Resources Data not found.",sceneId);
         }
     }
-    public CollectionData findCollection(int entityId){
+    public synchronized CollectionData findCollection(int entityId){
         for (Map.Entry<CollectionData, EntityGadget> entry : spawnedEntities.entrySet()) {
             if (entry.getValue().getId() == entityId) {
                 return entry.getKey();
