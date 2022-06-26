@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MusicGameGetBeatmapReqType.proto";
+import "MusicBeatmap.proto";
+import "MusicBriefInfo.proto";
+import "MusicGameUnknown1Enum.proto";
+
+// CmdId: 6309
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MusicGameGetBeatmapRsp {
+	int32 retcode = 13;
+	MusicGameUnknown1Enum unknown_enum1 = 1;
+	uint64 music_share_id = 5;
+	MusicGameGetBeatmapReqType req_type = 2;
+	oneof beatmap {
+        MusicBeatmap music_record = 9;
+	}
+	oneof brief_info {
+		MusicBriefInfo music_brief_info = 953;
+	}
+}

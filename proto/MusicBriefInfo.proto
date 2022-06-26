@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message MusicBriefInfo {
+	uint64 music_share_id = 1;
+	uint32 music_id = 2;
+	string author_nickname = 3;
+	uint32 music_note_count = 4;
+	uint32 max_score = 5;
+	uint32 score = 6;
+	uint32 create_time = 7;
+	uint32 share_time = 8;
+	uint32 DOANBAODBMA = 9;
+	bool settle = 10;
+	uint32 version = 11;
+	bool can_share = 12;
+	bool OAPKHNELBPH = 13;
+	bool NJHAMJMHPAA = 14;
+	uint64 ADIBIKKNPKK = 15;
+	uint32 save_position = 21;
+	repeated uint32 GIDFMAJFIFE = 22;
+	repeated uint32 OKBJPAKOLIH = 23;
+	uint32 FAOPBAMDFJB = 24;
+	uint32 FELMANEFAOE = 25;
+}

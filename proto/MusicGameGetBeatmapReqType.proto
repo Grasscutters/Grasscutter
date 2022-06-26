@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum MusicGameGetBeatmapReqType {
+	MusicGameGetBeatmapReqType_u1 = 0;
+	// edit_beatmap
+	MusicGameGetBeatmapReqType_u2 = 1;
+	// play_others
+	MusicGameGetBeatmapReqType_u3 = 2;
+	// try
+	MusicGameGetBeatmapReqType_u4 = 3;
+	MusicGameGetBeatmapReqType_u5 = 4;
+}

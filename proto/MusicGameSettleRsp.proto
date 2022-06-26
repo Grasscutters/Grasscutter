@@ -10,5 +10,5 @@ message MusicGameSettleRsp {
 	uint32 music_basic_id = 9;
 	bool is_unlock_next_level = 1;
 	bool is_new_record = 3;
-	uint64 KKONDPNGBJD = 11;
+	uint64 music_share_id = 11;
 }

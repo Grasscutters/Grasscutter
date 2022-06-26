@@ -8,5 +8,5 @@ option java_package = "emu.grasscutter.net.proto";
 message MusicGameStartRsp {
 	int32 retcode = 5;
 	uint32 music_basic_id = 14;
-	uint64 KKONDPNGBJD = 12;
+	uint64 music_share_id = 12;
 }
