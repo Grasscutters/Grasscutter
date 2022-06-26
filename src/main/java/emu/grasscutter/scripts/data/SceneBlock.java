@@ -32,7 +32,7 @@ public class SceneBlock {
 	private transient boolean loaded; // Not an actual variable in the scripts either
 
 	public boolean isLoaded() {
-		return loaded;
+		return this.loaded;
 	}
 
 	public void setLoaded(boolean loaded) {
@@ -40,19 +40,19 @@ public class SceneBlock {
 	}
 
 	public boolean contains(Position pos) {
-		return 	pos.getX() <= max.getX() && pos.getX() >= min.getX() &&
-				pos.getZ() <= max.getZ() && pos.getZ() >= min.getZ();
+		return 	pos.getX() <= this.max.getX() && pos.getX() >= this.min.getX() &&
+				pos.getZ() <= this.max.getZ() && pos.getZ() >= this.min.getZ();
 	}
 
 	public SceneBlock load(int sceneId, Bindings bindings){
-		if(loaded){
+		if(this.loaded){
 			return this;
 		}
 		this.sceneId = sceneId;
-		setLoaded(true);
+        this.setLoaded(true);
 
 		CompiledScript cs = ScriptLoader.getScriptByPath(
-				SCRIPT("Scene/" + sceneId + "/scene" + sceneId + "_block" + id + "." + ScriptLoader.getScriptType()));
+				SCRIPT("Scene/" + sceneId + "/scene" + sceneId + "_block" + this.id + "." + ScriptLoader.getScriptType()));
 
 		if (cs == null) {
 			return null;
@@ -63,19 +63,19 @@ public class SceneBlock {
 			cs.eval(bindings);
 
 			// Set groups
-			groups = ScriptLoader.getSerializer().toList(SceneGroup.class, bindings.get("groups")).stream()
+            this.groups = ScriptLoader.getSerializer().toList(SceneGroup.class, bindings.get("groups")).stream()
 					.collect(Collectors.toMap(x -> x.id, y -> y));
 
-			groups.values().forEach(g -> g.block_id = id);
-			this.sceneGroupIndex = SceneIndexManager.buildIndex(3, groups.values(), g -> g.pos.toPoint());
-		} catch (ScriptException e) {
-			Grasscutter.getLogger().error("Error loading block " + id + " in scene " + sceneId, e);
+            this.groups.values().forEach(g -> g.block_id = this.id);
+			this.sceneGroupIndex = SceneIndexManager.buildIndex(3, this.groups.values(), g -> g.pos.toPoint());
+		} catch (ScriptException exception) {
+            Grasscutter.getLogger().error("An error occurred while loading block " + this.id + " in scene " + sceneId, exception);
 		}
-		Grasscutter.getLogger().info("scene {} block {} is loaded successfully.", sceneId, id);
+		Grasscutter.getLogger().debug("Successfully loaded block {} in scene {}.", this.id, sceneId);
 		return this;
 	}
 
 	public Rectangle toRectangle() {
-		return Rectangle.create(min.toXZDoubleArray(), max.toXZDoubleArray());
+		return Rectangle.create(this.min.toXZDoubleArray(), this.max.toXZDoubleArray());
 	}
 }
