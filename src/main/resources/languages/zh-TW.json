@@ -53,7 +53,11 @@
       "create_resources": "正在建立 resources 資料夾...",
       "resources_error": "請將 BinOutput 和 ExcelBinOutput 複製到 resources 資料夾。",
       "version": "Grasscutter版本： %s-%s",
-      "game_version": "遊戲版本：%s"
+      "game_version": "遊戲版本：%s",
+      "resources": {
+        "loading": "Loading resources...",
+        "finish": "Finished loading resources."
+      }
     }
   },
   "commands": {

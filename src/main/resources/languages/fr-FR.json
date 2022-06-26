@@ -53,7 +53,11 @@
         "create_resources": "Création du dossier ressources...",
         "resources_error": "Placez une copie de 'BinOutput' and 'ExcelBinOutput' dans le dossier ressources.",
         "version": "Version de Grasscutter: %s-%s",
-        "game_version": "Version du jeu: %s"
+        "game_version": "Version du jeu: %s",
+        "resources": {
+          "loading": "Loading resources...",
+          "finish": "Finished loading resources."
+        }
       }
     },
     "commands": {
@@ -97,7 +101,7 @@
       "status": {
         "enabled": "Activé",
         "disabled": "Desactivé",
-        "help": "Aide", 
+        "help": "Aide",
         "success": "Succès"
       },
       "account": {
@@ -442,4 +446,3 @@
       }
     }
   }
-  

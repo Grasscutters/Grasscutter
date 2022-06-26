@@ -53,7 +53,11 @@
       "create_resources": "Создаём папку ресурсов...",
       "resources_error": "Поместите копию папок 'BinOutput' и 'ExcelBinOutput' в папку ресурсов.",
       "version": "Версия Grasscutter: %s-%s",
-      "game_version": "Версия игры: %s"
+      "game_version": "Версия игры: %s",
+      "resources": {
+        "loading": "Loading resources...",
+        "finish": "Finished loading resources."
+      }
     }
   },
   "commands": {
@@ -97,7 +101,7 @@
     "status": {
       "enabled": "Включено",
       "disabled": "Выключено",
-      "help": "Помощь", 
+      "help": "Помощь",
       "success": "Успех"
     },
     "account": {
