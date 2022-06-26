@@ -52,7 +52,7 @@ public class DungeonChallenge extends WorldChallenge {
 				dungeonDropData.put(entry.getDungeonId(), entry.getDrops());
 			}
 
-			Grasscutter.getLogger().info("Loaded {} dungeon drop data entries.", dungeonDropData.size());
+			Grasscutter.getLogger().debug("Loaded {} dungeon drop data entries.", dungeonDropData.size());
 		}
 		catch (Exception ex) {
 			Grasscutter.getLogger().error("Unable to load dungeon drop data.", ex);
@@ -92,7 +92,7 @@ public class DungeonChallenge extends WorldChallenge {
 			settle();
 		}
 	}
-	
+
 	private void settle() {
 		if(!stage){
 			getScene().getDungeonSettleObservers().forEach(o -> o.onDungeonSettle(getScene()));
@@ -100,7 +100,7 @@ public class DungeonChallenge extends WorldChallenge {
 					new ScriptArgs(this.isSuccess() ? 1 : 0));
 		}
 	}
-	
+
 	private List<GameItem> rollRewards(boolean useCondensed) {
 		List<GameItem> rewards = new ArrayList<>();
 		int dungeonId = this.getScene().getDungeonData().getId();
@@ -150,7 +150,7 @@ public class DungeonChallenge extends WorldChallenge {
 			for (ItemParamData param : getScene().getDungeonData().getRewardPreview().getPreviewItems()) {
 				rewards.add(new GameItem(param.getId(), Math.max(param.getCount(), 1)));
 			}
-		}	
+		}
 
 		return rewards;
 	}
@@ -162,12 +162,12 @@ public class DungeonChallenge extends WorldChallenge {
 		if (!isSuccess() || dungeonData == null || dungeonData.getRewardPreview() == null || dungeonData.getRewardPreview().getPreviewItems().length == 0) {
 			return;
 		}
-		
+
 		// Already rewarded
 		if (getRewardedPlayers().contains(player.getUid())) {
 			return;
 		}
-		
+
 		// Get rewards.
 		List<GameItem> rewards = new ArrayList<>();
 
@@ -202,11 +202,11 @@ public class DungeonChallenge extends WorldChallenge {
 			// Roll rewards.
 			rewards.addAll(this.rollRewards(false));
 		}
-		
+
 		// Add rewards to player and send notification.
 		player.getInventory().addItems(rewards, ActionReason.DungeonStatueDrop);
 		player.sendPacket(new PacketGadgetAutoPickDropInfoNotify(rewards));
-		
+
 		getRewardedPlayers().add(player.getUid());
 	}
 }
