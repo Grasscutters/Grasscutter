@@ -135,7 +135,6 @@ public class CollectionManager {
                                                 scene.removeEntity(gadget, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
                                                 collectionRecordStore.addRecord(gadget.getPosition(), gadgetInfo.gadgetId, sceneId, getGadgetRefreshTime(gadgetInfo.gadgetId));
                                                 return true;
-                                                break;
                                             }
                                         }
                                     } catch (Throwable e) {
