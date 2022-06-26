@@ -78,4 +78,5 @@ BuildConfig.java
 
 # macOS
 .DS_Store
+.directory
 data/hk4e/announcement/

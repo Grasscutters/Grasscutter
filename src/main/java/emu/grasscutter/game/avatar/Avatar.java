@@ -242,6 +242,23 @@ public class Avatar {
 		this.promoteLevel = promoteLevel;
 	}
 
+	static public int getMinPromoteLevel(int level) {
+		if (level > 80) {
+			return 6;
+		} else if (level > 70) {
+			return 5;
+		} else if (level > 60) {
+			return 4;
+		} else if (level > 50) {
+			return 3;
+		} else if (level > 40) {
+			return 2;
+		} else if (level > 20) {
+			return 1;
+		}
+		return 0;
+	}
+
 	public Int2ObjectMap<GameItem> getEquips() {
 		return equips;
 	}

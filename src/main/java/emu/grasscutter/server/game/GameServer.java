@@ -5,15 +5,19 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.battlepass.BattlePassMissionManager;
 import emu.grasscutter.game.combine.CombineManger;
 import emu.grasscutter.game.drop.DropManager;
 import emu.grasscutter.game.dungeons.DungeonManager;
+import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
 import emu.grasscutter.game.expedition.ExpeditionManager;
 import emu.grasscutter.game.gacha.GachaManager;
 import emu.grasscutter.game.managers.InventoryManager;
 import emu.grasscutter.game.managers.MultiplayerManager;
 import emu.grasscutter.game.managers.chat.ChatManager;
 import emu.grasscutter.game.managers.chat.ChatManagerHandler;
+import emu.grasscutter.game.managers.energy.EnergyManager;
+import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.ServerQuestHandler;
 import emu.grasscutter.game.shop.ShopManager;
@@ -51,19 +55,19 @@ public final class GameServer extends KcpServer {
 	private final Set<World> worlds;
 
 	private ChatManagerHandler chatManager;
-	private final InventoryManager inventoryManager;
-	private final GachaManager gachaManager;
-	private final ShopManager shopManager;
-	private final MultiplayerManager multiplayerManager;
-	private final DungeonManager dungeonManager;
-	private final ExpeditionManager expeditionManager;
-	private final CommandMap commandMap;
-	private final TaskMap taskMap;
-	private final DropManager dropManager;
-	private final WorldDataManager worldDataManager;
-
-	private final CombineManger combineManger;
-	private final TowerScheduleManager towerScheduleManager;
+	@Getter private final InventoryManager inventoryManager;
+	@Getter private final GachaManager gachaManager;
+	@Getter private final ShopManager shopManager;
+	@Getter private final MultiplayerManager multiplayerManager;
+	@Getter private final DungeonManager dungeonManager;
+	@Getter private final ExpeditionManager expeditionManager;
+	@Getter private final CommandMap commandMap;
+	@Getter private final TaskMap taskMap;
+	@Getter private final DropManager dropManager;
+	@Getter private final WorldDataManager worldDataManager;
+	@Getter private final BattlePassMissionManager battlePassMissionManager;
+	@Getter private final CombineManger combineManger;
+	@Getter private final TowerScheduleManager towerScheduleManager;
 
 	public GameServer() {
 		this(getAdapterInetSocketAddress());
@@ -80,6 +84,10 @@ public final class GameServer extends KcpServer {
 		channelConfig.setAckNoDelay(false);
 
 		this.init(GameSessionManager.getListener(),channelConfig,address);
+
+		DungeonChallenge.initialize();
+		EnergyManager.initialize();
+		StaminaManager.initialize();
 
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
@@ -101,6 +109,8 @@ public final class GameServer extends KcpServer {
 		this.combineManger = new CombineManger(this);
 		this.towerScheduleManager = new TowerScheduleManager(this);
 		this.worldDataManager = new WorldDataManager(this);
+		this.battlePassMissionManager = new BattlePassMissionManager(this);
+		
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
@@ -129,53 +139,6 @@ public final class GameServer extends KcpServer {
 		this.chatManager = chatManager;
 	}
 
-	public InventoryManager getInventoryManager() {
-		return inventoryManager;
-	}
-
-	public GachaManager getGachaManager() {
-		return gachaManager;
-	}
-
-	public ShopManager getShopManager() {
-		return shopManager;
-	}
-
-	public MultiplayerManager getMultiplayerManager() {
-		return multiplayerManager;
-	}
-
-	public DropManager getDropManager() {
-		return dropManager;
-	}
-
-	public DungeonManager getDungeonManager() {
-		return dungeonManager;
-	}
-
-	public ExpeditionManager getExpeditionManager() {
-		return expeditionManager;
-	}
-
-	public CommandMap getCommandMap() {
-		return this.commandMap;
-	}
-
-	public CombineManger getCombineManger(){
-		return this.combineManger;
-	}
-
-	public TowerScheduleManager getTowerScheduleManager() {
-		return towerScheduleManager;
-	}
-
-	public WorldDataManager getWorldDataManager() {
-		return worldDataManager;
-	}
-
-	public TaskMap getTaskMap() {
-		return this.taskMap;
-	}
 
 	private static InetSocketAddress getAdapterInetSocketAddress(){
 		InetSocketAddress inetSocketAddress;
