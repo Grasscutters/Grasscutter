@@ -12,6 +12,6 @@ public class HandlerPlayerForceExitReq extends PacketHandler {
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		// Client should auto disconnect right now
 		session.send(new BasePacket(PacketOpcodes.PlayerForceExitRsp));
-		session.getPlayer().onLogout();
+		session.close();
 	}
 }
