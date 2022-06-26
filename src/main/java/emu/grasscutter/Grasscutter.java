@@ -107,7 +107,7 @@ public final class Grasscutter {
             }
         }
 
-        // Exit early if argument sets it.
+        // Exit early if an argument sets it.
         if (exitEarly) System.exit(0);
 
         // Initialize server.
