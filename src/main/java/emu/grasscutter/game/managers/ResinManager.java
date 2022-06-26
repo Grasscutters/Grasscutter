@@ -2,6 +2,7 @@ package emu.grasscutter.game.managers;
 
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.server.packet.send.PacketPlayerPropNotify;
 import emu.grasscutter.server.packet.send.PacketResinChangeNotify;
 import emu.grasscutter.utils.Utils;
@@ -43,9 +44,11 @@ public class ResinManager {
         }
 
         // Send packets.
-        this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
         this.player.sendPacket(new PacketResinChangeNotify(this.player));
-
+        
+        // Battle Pass trigger
+        this.player.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_COST_MATERIAL, 106, amount); // Resin item id = 106
+       
         return true;
     }
 
@@ -66,7 +69,6 @@ public class ResinManager {
         }
 
         // Send packets.
-        this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
         this.player.sendPacket(new PacketResinChangeNotify(this.player));
     }
 
@@ -113,7 +115,6 @@ public class ResinManager {
         }
 
         // Send packets.
-        this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
         this.player.sendPacket(new PacketResinChangeNotify(this.player));
     }
 
@@ -137,7 +138,6 @@ public class ResinManager {
         }
 
         // Send initial notifications on logon.
-        this.player.sendPacket(new PacketPlayerPropNotify(this.player, PlayerProperty.PROP_PLAYER_RESIN));
         this.player.sendPacket(new PacketResinChangeNotify(this.player));
     }
 }

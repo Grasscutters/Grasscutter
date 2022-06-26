@@ -2,37 +2,25 @@ package emu.grasscutter.command.commands;
 
 import java.util.List;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 
-import static emu.grasscutter.utils.Language.translate;
-
 @Command(
     label = "unban",
-    usage = "unban <player>",
+    usage = "unban <@player>",
     description = "commands.unban.description",
-    targetRequirement = Command.TargetRequirement.NONE
+    permission = "server.ban",
+    targetRequirement = Command.TargetRequirement.PLAYER
 )
 public final class UnBanCommand implements CommandHandler {
 
-    private boolean unBanAccount(int uid) {
-        Player player = Grasscutter.getGameServer().getPlayerByUid(uid, true);
-
-        if (player == null) {
-            return false;
-        }
-
-        Account account = player.getAccount();
+    private boolean unBanAccount(Player targetPlayer) {
+        Account account = targetPlayer.getAccount();
 
         if (account == null) {
-            account = DatabaseHelper.getAccountByPlayerId(uid);
-            if (account == null) {
-                return false;
-            }
+            return false;
         }
 
         account.setBanReason(null);
@@ -46,24 +34,10 @@ public final class UnBanCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.unban.command_usage"));
-            return;
-        }
-
-        int uid = 0;
-
-        try {
-            uid = Integer.parseInt(args.get(0));
-        } catch (NumberFormatException ignored) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.unban.invalid_player_id"));
-            return;
-        }
-
-        if (unBanAccount(uid)) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.unban.success"));
+        if (unBanAccount(targetPlayer)) {
+            CommandHandler.sendTranslatedMessage(sender, "commands.unban.success");
         } else {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.unban.failure"));
+            CommandHandler.sendTranslatedMessage(sender, "commands.unban.failure");
         }
     }
 }

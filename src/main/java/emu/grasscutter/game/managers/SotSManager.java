@@ -8,7 +8,6 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
-import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 
@@ -26,7 +25,7 @@ public class SotSManager {
     private Timer autoRecoverTimer;
     private final boolean enablePriorityHealing = false;
 
-    public final static int GlobalMaximumSpringVolume = 8500000;
+    public final static int GlobalMaximumSpringVolume = PlayerProperty.PROP_MAX_SPRING_VOLUME.getMax();
 
     public SotSManager(Player player) {
         this.player = player;

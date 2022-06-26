@@ -10,9 +10,6 @@ import emu.grasscutter.net.proto.SetPlayerPropReqOuterClass.SetPlayerPropReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketSetPlayerPropRsp;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Opcodes(PacketOpcodes.SetPlayerPropReq)
 public class HandlerSetPlayerPropReq extends PacketHandler {
 
@@ -21,11 +18,10 @@ public class HandlerSetPlayerPropReq extends PacketHandler {
         // Auto template
         SetPlayerPropReq req = SetPlayerPropReq.parseFrom(payload);
         Player player = session.getPlayer();
-        List<PropValue> propList = req.getPropListList();
-        for (int i = 0; i < propList.size(); i++) {
-            PlayerProperty prop = PlayerProperty.getPropById(propList.get(i).getType());
+        for (PropValue p : req.getPropListList()) {
+            PlayerProperty prop = PlayerProperty.getPropById(p.getType());
             if (prop == PlayerProperty.PROP_IS_MP_MODE_AVAILABLE) {
-                if (!player.setProperty(prop, (int)propList.get(i).getVal())) {
+                if (!player.setProperty(prop, (int) p.getVal(), false)) {
                     session.send(new PacketSetPlayerPropRsp(1));
                     return;
                 }

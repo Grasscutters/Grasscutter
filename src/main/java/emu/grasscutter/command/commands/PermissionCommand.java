@@ -3,6 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.Command.TargetRequirement;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 
@@ -10,7 +11,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "permission", usage = "permission <add|remove> <permission>", permission = "permission", description = "commands.permission.description")
+@Command(label = "permission", usage = "permission <add|remove> <permission>", permission = "permission", description = "commands.permission.description", targetRequirement = TargetRequirement.PLAYER)
 public final class PermissionCommand implements CommandHandler {
 
     @Override

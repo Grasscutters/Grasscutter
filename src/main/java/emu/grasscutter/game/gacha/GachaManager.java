@@ -27,6 +27,7 @@ import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.GachaItemOuterClass.GachaItem;
 import emu.grasscutter.net.proto.GachaTransferItemOuterClass.GachaTransferItem;
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
@@ -372,9 +373,12 @@ public class GachaManager {
 		if (starglitter > 0) {
 			inventory.addItem(starglitterId, starglitter);
 		}
-		
+
 		// Packets
 		player.sendPacket(new PacketDoGachaRsp(banner, list, gachaInfo));
+		
+		// Battle Pass trigger
+		player.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_GACHA_NUM, 0, times);
 	}
 
 	private synchronized void startWatcher(GameServer server) {

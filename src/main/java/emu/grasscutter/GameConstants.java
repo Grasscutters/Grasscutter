@@ -18,6 +18,11 @@ public final class GameConstants {
 	
 	public static final int SERVER_CONSOLE_UID = 99; // The UID of the server console's "player".
 	
+	public static final int BATTLE_PASS_MAX_LEVEL = 50;
+	public static final int BATTLE_PASS_POINT_PER_LEVEL = 1000;
+	public static final int BATTLE_PASS_POINT_PER_WEEK = 10000;
+	public static final int BATTLE_PASS_LEVEL_PRICE = 150;
+	
 	// Default entity ability hashes.
 	public static final String[] DEFAULT_ABILITY_STRINGS = {
 		"Avatar_DefaultAbility_VisionReplaceDieInvincible", "Avatar_DefaultAbility_AvartarInShaderChange", "Avatar_SprintBS_Invincible", 

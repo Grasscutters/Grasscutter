@@ -18,6 +18,7 @@ import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.packet.send.PacketAvatarEquipChangeNotify;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
@@ -95,6 +96,7 @@ public class Inventory implements Iterable<GameItem> {
 		GameItem result = putItem(item);
 		
 		if (result != null) {
+			getPlayer().getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
 			getPlayer().sendPacket(new PacketStoreItemChangeNotify(result));
 			return true;
 		}
@@ -131,7 +133,9 @@ public class Inventory implements Iterable<GameItem> {
 		
 		for (GameItem item : items) {
 			GameItem result = putItem(item);
+			
 			if (result != null) {
+				getPlayer().getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
 				changedItems.add(result);
 			}
 		}
@@ -170,80 +174,86 @@ public class Inventory implements Iterable<GameItem> {
 		InventoryTab tab = getInventoryTab(type);
 		
 		// Add
-		if (type == ItemType.ITEM_WEAPON || type == ItemType.ITEM_RELIQUARY) {
-			if (tab.getSize() >= tab.getMaxCapacity()) {
-				return null;
-			}
-			// Duplicates cause problems
-			item.setCount(Math.max(item.getCount(), 1));
-			// Adds to inventory
-			putItem(item, tab);
-		} else if (type == ItemType.ITEM_VIRTUAL) {
-			// Handle
-			this.addVirtualItem(item.getItemId(), item.getCount());
-			return item;
-		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_ADSORBATE) {
-			this.player.getEnergyManager().handlePickupElemBall(item);
-			return null;
-		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_AVATAR) {
-			// Get avatar id
-			int avatarId = (item.getItemId() % 1000) + 10000000;
-			// Dont let people give themselves extra main characters
-			if (avatarId == GameConstants.MAIN_CHARACTER_MALE || avatarId == GameConstants.MAIN_CHARACTER_FEMALE) {
-				return null;
-			}
-			// Add avatar
-			AvatarData avatarData = GameData.getAvatarDataMap().get(avatarId);
-			if (avatarData != null && !player.getAvatars().hasAvatar(avatarId)) {
-				this.getPlayer().addAvatar(new Avatar(avatarData));
-			}
-			return null;
-		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_FLYCLOAK) {
-			AvatarFlycloakData flycloakData = GameData.getAvatarFlycloakDataMap().get(item.getItemId());
-			if (flycloakData != null && !player.getFlyCloakList().contains(item.getItemId())) {
-				getPlayer().addFlycloak(item.getItemId());
-			}
-			return null;
-		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_COSTUME) {
-			AvatarCostumeData costumeData = GameData.getAvatarCostumeDataItemIdMap().get(item.getItemId());
-			if (costumeData != null && !player.getCostumeList().contains(costumeData.getId())) {
-				getPlayer().addCostume(costumeData.getId());
-			}
-			return null;
-		} else if (item.getItemData().getMaterialType() == MaterialType.MATERIAL_NAMECARD) {
-			if (!player.getNameCardList().contains(item.getItemId())) {
-				getPlayer().addNameCard(item.getItemId());
-			}
-			return null;
-		} else if (tab != null) {
-			GameItem existingItem = tab.getItemById(item.getItemId());
-			if (existingItem == null) {
-				// Item type didnt exist before, we will add it to main inventory map if there is enough space
+		switch (type) {
+			case ITEM_WEAPON:
+			case ITEM_RELIQUARY:
 				if (tab.getSize() >= tab.getMaxCapacity()) {
 					return null;
 				}
-				putItem(item, tab);
-			} else {
-				// Add count
-				existingItem.setCount(Math.min(existingItem.getCount() + item.getCount(), item.getItemData().getStackLimit()));
-				existingItem.save();
-				return existingItem;
-			}
-		} else {
-			return null;
-		}
-		
-		// Set ownership and save to db
-		if (item.getItemData().getItemType() != ItemType.ITEM_VIRTUAL)
-			item.save();
-		
-		return item;
+				// Duplicates cause problems
+				item.setCount(Math.max(item.getCount(), 1));
+				// Adds to inventory
+                this.putItem(item, tab);
+				// Set ownership and save to db
+				item.save();
+				return item;
+			case ITEM_VIRTUAL:
+				// Handle
+				this.addVirtualItem(item.getItemId(), item.getCount());
+				return item;
+            default:
+                switch (item.getItemData().getMaterialType()) {
+                    case MATERIAL_ADSORBATE:
+						this.player.getEnergyManager().handlePickupElemBall(item);
+						return null;
+					case MATERIAL_AVATAR:
+						// Get avatar id
+						int avatarId = (item.getItemId() % 1000) + 10000000;
+						// Dont let people give themselves extra main characters
+						if (avatarId == GameConstants.MAIN_CHARACTER_MALE || avatarId == GameConstants.MAIN_CHARACTER_FEMALE) {
+							return null;
+						}
+						// Add avatar
+						AvatarData avatarData = GameData.getAvatarDataMap().get(avatarId);
+						if (avatarData != null && !this.player.getAvatars().hasAvatar(avatarId)) {
+							this.player.addAvatar(new Avatar(avatarData));
+						}
+						return null;
+					case MATERIAL_FLYCLOAK:
+						AvatarFlycloakData flycloakData = GameData.getAvatarFlycloakDataMap().get(item.getItemId());
+						if (flycloakData != null && !this.player.getFlyCloakList().contains(item.getItemId())) {
+							this.player.addFlycloak(item.getItemId());
+						}
+						return null;
+					case MATERIAL_COSTUME:
+						AvatarCostumeData costumeData = GameData.getAvatarCostumeDataItemIdMap().get(item.getItemId());
+                        if (costumeData != null && !this.player.getCostumeList().contains(costumeData.getId())) {
+                            this.player.addCostume(costumeData.getId());
+                        }
+                        return null;
+                    case MATERIAL_NAMECARD:
+                        if (!this.player.getNameCardList().contains(item.getItemId())) {
+                            this.player.addNameCard(item.getItemId());
+						}
+						return null;
+                    default:
+                        if (tab == null) {
+                            return null;
+                        }
+						GameItem existingItem = tab.getItemById(item.getItemId());
+						if (existingItem == null) {
+							// Item type didnt exist before, we will add it to main inventory map if there is enough space
+							if (tab.getSize() >= tab.getMaxCapacity()) {
+								return null;
+							}
+							this.putItem(item, tab);
+							// Set ownership and save to db
+							item.save();
+							return item;
+						} else {
+							// Add count
+							existingItem.setCount(Math.min(existingItem.getCount() + item.getCount(), item.getItemData().getStackLimit()));
+							existingItem.save();
+							return existingItem;
+						}
+					}
+        }
 	}
 	
 	private synchronized void putItem(GameItem item, InventoryTab tab) {
-		getPlayer().getCodex().checkAddedItem(item);
-		// Set owner and guid FIRST!
-		item.setOwner(getPlayer());
+        this.player.getCodex().checkAddedItem(item);
+        // Set owner and guid FIRST!
+        item.setOwner(this.player);
 		// Put in item store
 		getItems().put(item.getGuid(), item);
 		if (tab != null) {
@@ -254,36 +264,36 @@ public class Inventory implements Iterable<GameItem> {
 	private void addVirtualItem(int itemId, int count) {
 		switch (itemId) {
 			case 101 -> // Character exp
-					getPlayer().getServer().getInventoryManager().upgradeAvatar(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
-			case 102 -> // Adventure exp
-					getPlayer().addExpDirectly(count);
-			case 105 -> // Companionship exp
-					getPlayer().getServer().getInventoryManager().upgradeAvatarFetterLevel(player, getPlayer().getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
-			case 106 -> // Resin
-					getPlayer().getResinManager().addResin(count);
-			case 201 -> // Primogem
-					getPlayer().setPrimogems(player.getPrimogems() + count);
-			case 202 -> // Mora
-					getPlayer().setMora(player.getMora() + count);
-			case 203 -> // Genesis Crystals
-					getPlayer().setCrystals(player.getCrystals() + count);
-			case 204 -> // Home Coin
-					getPlayer().setHomeCoin(player.getHomeCoin() + count);
+                this.player.getServer().getInventoryManager().upgradeAvatar(this.player, this.player.getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
+            case 102 -> // Adventure exp
+                this.player.addExpDirectly(count);
+            case 105 -> // Companionship exp
+                this.player.getServer().getInventoryManager().upgradeAvatarFetterLevel(this.player, this.player.getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
+            case 106 -> // Resin
+                this.player.getResinManager().addResin(count);
+            case 201 -> // Primogem
+                this.player.setPrimogems(this.player.getPrimogems() + count);
+            case 202 -> // Mora
+                this.player.setMora(this.player.getMora() + count);
+            case 203 -> // Genesis Crystals
+                this.player.setCrystals(this.player.getCrystals() + count);
+            case 204 -> // Home Coin
+                this.player.setHomeCoin(this.player.getHomeCoin() + count);
 		}
 	}
 
 	private int getVirtualItemCount(int itemId) {
 		switch (itemId) {
 			case 201:  // Primogem
-				return player.getPrimogems();
+				return this.player.getPrimogems();
 			case 202:  // Mora
-				return player.getMora();
+				return this.player.getMora();
 			case 203:  // Genesis Crystals
-				return player.getCrystals();
+				return this.player.getCrystals();
 			case 106:  // Resin
-				return player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
+				return this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
 			case 204:  // Home Coin
-				return player.getHomeCoin();
+				return this.player.getHomeCoin();
 			default:
 				GameItem item = getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId);  // What if we ever want to operate on weapons/relics/furniture? :S
 				return (item == null) ? 0 : item.getCount();
@@ -368,7 +378,7 @@ public class Inventory implements Iterable<GameItem> {
 		if (count <= 0 || item == null) {
 			return false;
 		}
-		
+
 		if (item.getItemData().isEquip()) {
 			item.setCount(0);
 		} else {
@@ -388,6 +398,10 @@ public class Inventory implements Iterable<GameItem> {
 		} else {
 			getPlayer().sendPacket(new PacketStoreItemChangeNotify(item));
 		}
+		
+		// Battle pass trigger
+		int removeCount = Math.min(count, item.getCount());
+		getPlayer().getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_COST_MATERIAL, item.getItemId(), removeCount);
 		
 		// Update in db
 		item.save();
