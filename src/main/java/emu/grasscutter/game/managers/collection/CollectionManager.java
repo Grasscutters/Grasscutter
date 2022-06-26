@@ -42,13 +42,15 @@ import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 public class CollectionManager {
-    private static final long HOUR = 1000*60; //1 Hours
+    private static final long SECOND = 1000; //1 Second
+    private static final long MINUTE = SECOND*60; //1 Minute
+    private static final long HOUR = MINUTE*60; //1 Hour
     private static final long DAY = HOUR*24; //1 Day
     private static final HashMap<Integer,Long> DEFINE_REFRESH_TIME = new HashMap<>();// <GadgetId,Waiting Millisecond>
     private static final long DEFAULT_REFRESH_TIME = HOUR*6; // default 6 Hours
 
     static {
-        DEFINE_REFRESH_TIME.put(70520003,3*DAY);//水晶 3 Day
+        DEFINE_REFRESH_TIME.put(70520003,3*DAY);//水晶 3 Days
 
         DEFINE_REFRESH_TIME.put(70510009,2*DAY);//蒲公英 2 Days
         DEFINE_REFRESH_TIME.put(70540019,2*DAY);//风车菊 2 Days
@@ -56,9 +58,9 @@ public class CollectionManager {
         DEFINE_REFRESH_TIME.put(70540008,2*DAY);//绝云椒椒 2 Days
         DEFINE_REFRESH_TIME.put(70540020,2*DAY);//慕风蘑菇 2 Days
         DEFINE_REFRESH_TIME.put(70510005,2*DAY);//电气水晶 2 Days
-        DEFINE_REFRESH_TIME.put(70520002,2*DAY);//白铁矿 2 Day
-        DEFINE_REFRESH_TIME.put(70510012,2*DAY);//石珀 2 Day
-        DEFINE_REFRESH_TIME.put(70520018,2*DAY);//夜泊石 2 Day
+        DEFINE_REFRESH_TIME.put(70520002,2*DAY);//白铁矿 2 Days
+        DEFINE_REFRESH_TIME.put(70510012,2*DAY);//石珀 2 Days
+        DEFINE_REFRESH_TIME.put(70520018,2*DAY);//夜泊石 2 Days
 
         DEFINE_REFRESH_TIME.put(70540005,DAY);//松果 1 Day
         DEFINE_REFRESH_TIME.put(70520004,DAY);//蘑菇 1 Day
