@@ -1,0 +1,49 @@
+{
+    "type": "monster",
+    "comment": "Hilichurl",
+    "pools": [
+        {
+            "entries": [
+                {
+                    "name": "112005",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "type": "uniform",
+                                "min": 0,
+                                "max": 2
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "conditions": [
+                {
+                    "condition": "monster_level",
+                    "gt": 40
+                }
+            ],
+            "entries": [
+                {
+                    "name": "112006"
+                }
+            ]
+        },
+        {
+            "conditions": [
+                {
+                    "condition": "monster_level",
+                    "gt": 40
+                }
+            ],
+            "entries": [
+                {
+                    "name": "112007"
+                }
+            ]
+        }
+    ]
+}
