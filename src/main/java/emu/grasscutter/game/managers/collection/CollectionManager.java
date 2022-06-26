@@ -122,22 +122,25 @@ public class CollectionManager {
                         EntityGadget entityGadget = new EntityGadget(scene, data.gadget.gadgetId, data.motionInfo.pos, data.motionInfo.rot, new GadgetContent() {
                             @Override
                             public boolean onInteract(Player player, GadgetInteractReqOuterClass.GadgetInteractReq req) {
-                                try{
-                                    GameEntity gadget = scene.getEntityById(req.getGadgetEntityId());
-                                    for (Map.Entry<CollectionData, EntityGadget> entry : spawnedEntities.entrySet()) {
-                                        if (entry.getValue() == gadget) {
-                                            CollectionData.Gadget gadgetInfo = entry.getKey().gadget;
-                                            int itemId = gadgetInfo.gatherGadget.itemId;
-                                            ItemData data = GameData.getItemDataMap().get(itemId);
-                                            GameItem item = new GameItem(data, 1);
-                                            player.getInventory().addItem(item, ActionReason.SubfieldDrop);
-                                            scene.removeEntity(gadget, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
-                                            collectionRecordStore.addRecord(gadget.getPosition(),gadgetInfo.gadgetId,sceneId,getGadgetRefreshTime(gadgetInfo.gadgetId));
-                                            break;
+                                synchronized (CollectionManager.this) {
+                                    try {
+                                        GameEntity gadget = scene.getEntityById(req.getGadgetEntityId());
+                                        for (Map.Entry<CollectionData, EntityGadget> entry : spawnedEntities.entrySet()) {
+                                            if (entry.getValue() == gadget) {
+                                                CollectionData.Gadget gadgetInfo = entry.getKey().gadget;
+                                                int itemId = gadgetInfo.gatherGadget.itemId;
+                                                ItemData data = GameData.getItemDataMap().get(itemId);
+                                                GameItem item = new GameItem(data, 1);
+                                                player.getInventory().addItem(item, ActionReason.SubfieldDrop);
+                                                scene.removeEntity(gadget, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
+                                                collectionRecordStore.addRecord(gadget.getPosition(), gadgetInfo.gadgetId, sceneId, getGadgetRefreshTime(gadgetInfo.gadgetId));
+                                                return true;
+                                                break;
+                                            }
                                         }
+                                    } catch (Throwable e) {
+                                        e.printStackTrace();
                                     }
-                                }catch (Throwable e){
-                                    e.printStackTrace();
                                 }
                                 return false;
                             }
