@@ -108,6 +108,18 @@ public final class Grasscutter {
                     // Set the logger to debug.
                     log.setLevel(Level.DEBUG);
                     log.debug("The logger is now running in debug mode.");
+
+                    // Change loggers to debug.
+                    ((Logger) LoggerFactory.getLogger("express"))
+                        .setLevel(Level.DEBUG);
+                    ((Logger) LoggerFactory.getLogger("org.quartz"))
+                        .setLevel(Level.DEBUG);
+                    ((Logger) LoggerFactory.getLogger("org.reflections"))
+                        .setLevel(Level.DEBUG);
+                    ((Logger) LoggerFactory.getLogger("org.eclipse.jetty"))
+                        .setLevel(Level.DEBUG);
+                    ((Logger) LoggerFactory.getLogger("org.mongodb.driver"))
+                        .setLevel(Level.DEBUG);
                 }
             }
         }
