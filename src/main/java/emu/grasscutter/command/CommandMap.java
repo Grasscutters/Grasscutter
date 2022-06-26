@@ -129,7 +129,7 @@ public final class CommandMap {
                     }
                     return targetPlayer;
                 } catch (NumberFormatException e) {
-                    CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
+                    CommandHandler.sendTranslatedMessage(player, "commands.generic.invalid.uid");
                     throw new IllegalArgumentException();
                 }
             }
@@ -177,7 +177,7 @@ public final class CommandMap {
             CommandHandler.sendTranslatedMessage(player, targetPlayer.isOnline()? "commands.execution.set_target_online" : "commands.execution.set_target_offline", targetUid);
             return true;
         } catch (NumberFormatException e) {
-            CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
+            CommandHandler.sendTranslatedMessage(player, "commands.generic.invalid.uid");
             return false;
         }
     }
