@@ -84,7 +84,7 @@ public class ShopManager {
 					}
 					getShopData().put(shopTable.getShopId(), shopTable.getItems());
 				}
-				Grasscutter.getLogger().info("Shop data successfully loaded.");
+				Grasscutter.getLogger().debug("Shop data successfully loaded.");
 			} else {
 				Grasscutter.getLogger().error("Unable to load shop data. Shop data size is 0.");
 			}
@@ -110,7 +110,7 @@ public class ShopManager {
 			List<ShopChestTable> shopChestTableList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopChestTable.class).getType());
 			if (shopChestTableList.size() > 0) {
 				getShopChestData().addAll(shopChestTableList);
-				Grasscutter.getLogger().info("ShopChest data successfully loaded.");
+				Grasscutter.getLogger().debug("ShopChest data successfully loaded.");
 			} else {
 				Grasscutter.getLogger().error("Unable to load ShopChest data. ShopChest data size is 0.");
 			}
@@ -125,7 +125,7 @@ public class ShopManager {
 			List<ShopChestBatchUseTable> shopChestBatchUseTableList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopChestBatchUseTable.class).getType());
 			if (shopChestBatchUseTableList.size() > 0) {
 				getShopChestBatchUseData().addAll(shopChestBatchUseTableList);
-				Grasscutter.getLogger().info("ShopChestBatchUse data successfully loaded.");
+				Grasscutter.getLogger().debug("ShopChestBatchUse data successfully loaded.");
 			} else {
 				Grasscutter.getLogger().error("Unable to load ShopChestBatchUse data. ShopChestBatchUse data size is 0.");
 			}
