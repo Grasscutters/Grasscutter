@@ -147,7 +147,7 @@ public class InventoryManager {
 		int totalExp = relic.getTotalExp();
 		int reqExp = GameData.getRelicExpRequired(relic.getItemData().getRankLevel(), level);
 		int upgrades = 0;
-		List<Integer> oldAppendPropIdList = relic.getAppendPropIdList();
+        List<Integer> oldAppendPropIdList = new ArrayList<>(relic.getAppendPropIdList());
 		
 		while (expGain > 0 && reqExp > 0 && level < relic.getItemData().getMaxLevel()) {
 			// Do calculations
@@ -169,13 +169,7 @@ public class InventoryManager {
 			}
 		}
 		
-		if (upgrades > 0) {
-			oldAppendPropIdList = new ArrayList<>(relic.getAppendPropIdList());
-			while (upgrades > 0) {
-				relic.addAppendProp();
-				upgrades -= 1;
-			}
-		}
+        relic.addAppendProps(upgrades);
 		
 		// Save
 		relic.setLevel(level);

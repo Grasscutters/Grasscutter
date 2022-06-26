@@ -10,6 +10,7 @@ import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.props.FightProperty;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
+import lombok.Getter;
 
 @ResourceType(name = {"MaterialExcelConfigData.json",
         "WeaponExcelConfigData.json",
@@ -19,23 +20,23 @@ import it.unimi.dsi.fastutil.ints.IntSet;
 public class ItemData extends GameResource {
 	
 	private int id;
-    private int stackLimit = 1;
-    private int maxUseCount;
-    private int rankLevel;
-    private String effectName;
-    private int[] satiationParams;
-    private int rank;
-    private int weight;
-    private int gadgetId;
+    @Getter private int stackLimit = 1;
+    @Getter private int maxUseCount;
+    @Getter private int rankLevel;
+    @Getter private String effectName;
+    @Getter private int[] satiationParams;
+    @Getter private int rank;
+    @Getter private int weight;
+    @Getter private int gadgetId;
     
-    private int[] destroyReturnMaterial;
-    private int[] destroyReturnMaterialCount;
+    @Getter private int[] destroyReturnMaterial;
+    @Getter private int[] destroyReturnMaterialCount;
 
-    private List<ItemUseData> itemUse;
+    @Getter private List<ItemUseData> itemUse;
     
     // Food
-    private String foodQuality;
-    private String useTarget;
+    @Getter private String foodQuality;
+    @Getter private String useTarget;
     private String[] iseParam;
     
     // String enums
@@ -45,42 +46,42 @@ public class ItemData extends GameResource {
     private String effectType;
     private String destroyRule;
     
-    // Relic
-    private int mainPropDepotId;
-    private int appendPropDepotId;
-    private int appendPropNum;
-    private int setId;
-    private int[] addPropLevels;
-    private int baseConvExp;
-    private int maxLevel;
-    
-    // Weapon
-    private int weaponPromoteId;
-    private int weaponBaseExp;
-    private int storyId;
-    private int avatarPromoteId;
-    private int awakenMaterial;
-    private int[] awakenCosts;
-    private int[] skillAffix;
-    private WeaponProperty[] weaponProp;
-    
-    // Hash
-    private String icon;
-    private long nameTextMapHash;
-    
-    // Post load
+    // Post load enum forms of above
     private transient MaterialType materialEnumType;
     private transient ItemType itemEnumType;
     private transient EquipType equipEnumType;
     
-    private IntSet addPropLevelSet;
+    // Relic
+    @Getter private int mainPropDepotId;
+    @Getter private int appendPropDepotId;
+    @Getter private int appendPropNum;
+    @Getter private int setId;
+    private int[] addPropLevels;
+    @Getter private int baseConvExp;
+    @Getter private int maxLevel;
+    
+    // Weapon
+    @Getter private int weaponPromoteId;
+    @Getter private int weaponBaseExp;
+    @Getter private int storyId;
+    @Getter private int avatarPromoteId;
+    @Getter private int awakenMaterial;
+    @Getter private int[] awakenCosts;
+    @Getter private int[] skillAffix;
+    private WeaponProperty[] weaponProp;
+    
+    // Hash
+    @Getter private String icon;
+    @Getter private long nameTextMapHash;
+    
+    @Getter private IntSet addPropLevelSet;
 
     // Furniture
-    private int comfort;
-    private List<Integer> furnType;
-    private List<Integer> furnitureGadgetID;
+    @Getter private int comfort;
+    @Getter private List<Integer> furnType;
+    @Getter private List<Integer> furnitureGadgetID;
     @SerializedName("JFDLJGDFIGL")
-    private int roomSceneId;
+    @Getter private int roomSceneId;
 
     @Override
 	public int getId(){
@@ -91,137 +92,17 @@ public class ItemData extends GameResource {
         return this.materialType;
     }
     
-    public int getStackLimit(){
-        return this.stackLimit;
-    }
-    
-    public int getMaxUseCount(){
-        return this.maxUseCount;
-    }
-    
-    public String getUseTarget(){
-        return this.useTarget;
-    }
-    
     public String[] getUseParam(){
         return this.iseParam;
-    }
-    
-    public int getRankLevel(){
-        return this.rankLevel;
-    }
-    
-    public String getFoodQuality(){
-        return this.foodQuality;
-    }
-    
-    public String getEffectName(){
-        return this.effectName;
-    }
-    
-    public int[] getSatiationParams(){
-        return this.satiationParams;
-    }
-    
-    public int[] getDestroyReturnMaterial(){
-        return this.destroyReturnMaterial;
-    }
-    
-    public int[] getDestroyReturnMaterialCount(){
-        return this.destroyReturnMaterialCount;
-    }
-
-    public List<ItemUseData> getItemUse() {
-        return itemUse;
-    }
-
-    public long getNameTextMapHash(){
-        return this.nameTextMapHash;
-    }
-    
-    public String getIcon(){
-        return this.icon;
     }
     
     public String getItemTypeString(){
         return this.itemType;
     }
-    
-    public int getRank(){
-        return this.rank;
-    }
-    
-    public int getGadgetId() {
-		return gadgetId;
-    }
-    
-	public int getBaseConvExp() {
-		return baseConvExp;
-	}
-	
-	public int getMainPropDepotId() {
-		return mainPropDepotId;
-	}
-	
-	public int getAppendPropDepotId() {
-		return appendPropDepotId;
-	}
-	
-	public int getAppendPropNum() {
-		return appendPropNum;
-	}
-	
-	public int getSetId() {
-		return setId;
-	}
-	
-	public int getWeaponPromoteId() {
-		return weaponPromoteId;
-	}
-	
-	public int getWeaponBaseExp() {
-		return weaponBaseExp;
-	}
-	
-	public int getAwakenMaterial() {
-        	return awakenMaterial;
-    	}
-	
-	public int[] getAwakenCosts() {
-		return awakenCosts;
-	}
-	
-	public IntSet getAddPropLevelSet() {
-		return addPropLevelSet;
-	}
-	
-	public int[] getSkillAffix() {
-		return skillAffix;
-	}
 	
 	public WeaponProperty[] getWeaponProperties() {
 		return weaponProp;
 	}
-	
-	public int getMaxLevel() {
-		return maxLevel;
-	}
-
-    public int getComfort() {
-        return comfort;
-    }
-
-    public List<Integer> getFurnType() {
-        return furnType;
-    }
-
-    public List<Integer> getFurnitureGadgetID() {
-        return furnitureGadgetID;
-    }
-
-    public int getRoomSceneId() {
-        return roomSceneId;
-    }
 
     public ItemType getItemType() {
     	return this.itemEnumType;
@@ -274,26 +155,10 @@ public class ItemData extends GameResource {
     }
     
     public static class WeaponProperty {
-    	private FightProperty fightProp;
-        private String propType;
-        private float initValue;
-        private String type;
-
-        public String getPropType(){
-            return this.propType;
-        }
-        
-        public float getInitValue(){
-            return this.initValue;
-        }
-        
-        public String getType(){
-            return this.type;
-        }
-
-		public FightProperty getFightProp() {
-			return fightProp;
-		}
+    	@Getter private FightProperty fightProp;
+        @Getter private String propType;
+        @Getter private float initValue;
+        @Getter private String type;
 
 		public void onLoad() {
 			this.fightProp = FightProperty.getPropByName(propType);

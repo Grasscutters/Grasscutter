@@ -56,7 +56,7 @@ public final class TeleportCommand implements CommandHandler {
         Position target_pos = new Position(x, y, z);
         boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, target_pos);
         if (!result) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.invalid_position"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.exists_error"));
         } else {
             CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.success", 
                     targetPlayer.getNickname(), Float.toString(x), Float.toString(y), 

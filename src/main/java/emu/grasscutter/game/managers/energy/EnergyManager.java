@@ -446,5 +446,10 @@ public class EnergyManager {
 
     public void setEnergyUsage(Boolean energyUsage) {
         this.energyUsage = energyUsage;
+        if (!energyUsage) {  // Refill team energy if usage is disabled
+            for (EntityAvatar entityAvatar : player.getTeamManager().getActiveTeam()) {
+                entityAvatar.addEnergy(1000, PropChangeReason.PROP_CHANGE_REASON_GM,true);
+            }
+        }
     }
 }
