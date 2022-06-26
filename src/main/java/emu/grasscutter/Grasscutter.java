@@ -1,5 +1,6 @@
 package emu.grasscutter;
 
+import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -8,11 +9,8 @@ import emu.grasscutter.auth.DefaultAuthentication;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.command.DefaultPermissionHandler;
 import emu.grasscutter.command.PermissionHandler;
-import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
-import emu.grasscutter.game.managers.energy.EnergyManager;
-import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
@@ -101,6 +99,10 @@ public final class Grasscutter {
                 case "-version" -> {
                     System.out.println("Grasscutter version: " + BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH);
                     exitEarly = true;
+                }
+                case "-debug" -> {
+                    log.setLevel(Level.DEBUG);
+                    log.debug("The logger is now running in debug mode.");
                 }
             }
         }
