@@ -12,21 +12,6 @@ import emu.grasscutter.server.game.GameSession;
 import java.util.List;
 
 public class PacketTakeBattlePassRewardRsp extends BasePacket {
-    /*public PacketTakeBattlePassRewardRsp(List<BattlePassRewardTakeOption> takeOptionList, List<ItemParamData> rewardItems) {
-        super(PacketOpcodes.TakeBattlePassRewardRsp);
-
-        var proto = TakeBattlePassRewardRsp.newBuilder()
-        		.addAllTakeOptionList(takeOptionList);
-        
-        if (rewardItems != null) {
-        	for (ItemParamData param : rewardItems) {
-            	proto.addItemList(ItemParam.newBuilder().setItemId(param.getItemId()).setCount(param.getCount()));
-            }
-        }
-
-        setData(proto);
-    }*/
-
     public PacketTakeBattlePassRewardRsp(List<BattlePassRewardTakeOption> takeOptionList, List<GameItem> rewardItems) {
         super(PacketOpcodes.TakeBattlePassRewardRsp);
 
