@@ -12,6 +12,7 @@ import dev.morphia.annotations.Id;
 import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.BattlePassRewardData;
@@ -44,7 +45,7 @@ public class BattlePassManager {
     @Getter private int level;
     
     @Getter private boolean viewed;
-    @Getter private boolean paid;
+    private boolean paid;
     
     private Map<Integer, BattlePassMission> missions;
     private Map<Integer, BattlePassReward> takenRewards;
@@ -120,6 +121,11 @@ public class BattlePassManager {
 	
 	public boolean hasMission(int id) {
 		return getMissions().containsKey(id);
+	}
+
+	public boolean isPaid() {
+		// ToDo: Change this when we actually support unlocking "paid" BP.
+		return true;
 	}
 
 	public Map<Integer, BattlePassReward> getTakenRewards() {
@@ -266,7 +272,8 @@ public class BattlePassManager {
                 .setEndTime(2059483200)
                 .setIsViewed(this.isViewed())
                 .setUnlockStatus(this.isPaid() ? BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_PAID : BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_FREE)
-                .setCurCyclePoints(this.getCyclePoints())
+                .setJPFMGBEBBBJ(2) // Not bought on Playstation.
+				.setCurCyclePoints(this.getCyclePoints())
                 .setCurCycle(BattlePassCycle.newBuilder().setBeginTime(0).setEndTime(2059483200).setCycleIdx(3));
 		
 		for (BattlePassReward reward : getTakenRewards().values()) {
