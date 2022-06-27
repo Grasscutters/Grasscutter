@@ -77,6 +77,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import lombok.Getter;
 
+import java.time.DayOfWeek;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -1368,7 +1369,7 @@ public class Player {
 		this.getResinManager().rechargeResin();
 	}
 
-	private void doDailyReset() {
+	private synchronized void doDailyReset() {
 		// Check if we should execute a daily reset on this tick.
 		int currentTime = Utils.getCurrentSeconds();
 
@@ -1382,6 +1383,14 @@ public class Player {
 		// We should - now execute all the resetting logic we need.
 		// Reset forge points.
 		this.setForgePoints(300_000);
+
+		// Reset daily BP missions.
+		this.getBattlePassManager().resetDailyMissions();
+
+		// Reset weekly BP missions.
+		if (currentDate.getDayOfWeek() == DayOfWeek.MONDAY) {
+			this.getBattlePassManager().resetWeeklyMissions();
+		}
 
 		// Done. Update last reset time.
 		this.setLastDailyReset(currentTime);
@@ -1454,6 +1463,9 @@ public class Player {
 		// Multiplayer setting
 		this.setProperty(PlayerProperty.PROP_PLAYER_MP_SETTING_TYPE, this.getMpSetting().getNumber(), false);
 		this.setProperty(PlayerProperty.PROP_IS_MP_MODE_AVAILABLE, 1, false);
+
+		// Execute daily reset logic if this is a new day.
+		this.doDailyReset();
 
 		// Packets
 		session.send(new PacketPlayerDataNotify(this)); // Player data

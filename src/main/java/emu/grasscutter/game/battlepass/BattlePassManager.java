@@ -1,5 +1,12 @@
 package emu.grasscutter.game.battlepass;
 
+import java.time.DayOfWeek;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,6 +39,7 @@ import emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule
 import emu.grasscutter.server.packet.send.PacketBattlePassCurScheduleUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketBattlePassMissionUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketTakeBattlePassRewardRsp;
+import emu.grasscutter.utils.Utils;
 import lombok.Getter;
 
 @Entity(value = "battlepass", useDiscriminator = false)
@@ -255,15 +263,42 @@ public class BattlePassManager {
 	}
 	
 	public void resetDailyMissions() {
-		// TODO
+		var resetMissions = new ArrayList<BattlePassMission>();
+
+		for (var mission : this.missions.values()) {
+			if (mission.getData().getRefreshType() == null || mission.getData().getRefreshType() == BattlePassMissionRefreshType.BATTLE_PASS_MISSION_REFRESH_DAILY) {
+				mission.setStatus(BattlePassMissionStatus.MISSION_STATUS_UNFINISHED);
+				mission.setProgress(0);
+
+				resetMissions.add(mission);
+			}
+		}
+
+		this.getPlayer().sendPacket(new PacketBattlePassMissionUpdateNotify(resetMissions));
+		this.getPlayer().sendPacket(new PacketBattlePassCurScheduleUpdateNotify(this.getPlayer()));
 	}
 	
 	public void resetWeeklyMissions() {
-		// TODO
+		var resetMissions = new ArrayList<BattlePassMission>();
+
+		for (var mission : this.missions.values()) {
+			if (mission.getData().getRefreshType() == BattlePassMissionRefreshType.BATTLE_PASS_MISSION_REFRESH_CYCLE_CROSS_SCHEDULE) {
+				mission.setStatus(BattlePassMissionStatus.MISSION_STATUS_UNFINISHED);
+				mission.setProgress(0);
+
+				resetMissions.add(mission);
+			}
+		}
+
+		this.getPlayer().sendPacket(new PacketBattlePassMissionUpdateNotify(resetMissions));
+		this.getPlayer().sendPacket(new PacketBattlePassCurScheduleUpdateNotify(this.getPlayer()));
 	}
 	
 	//
 	public BattlePassSchedule getScheduleProto() {
+		var nextSundayDate = LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.SUNDAY));
+		var nextSundayTime = LocalDateTime.of(nextSundayDate.getYear(), nextSundayDate.getMonthValue(), nextSundayDate.getDayOfMonth(), 23, 59, 59);
+		
 		BattlePassSchedule.Builder schedule = BattlePassSchedule.newBuilder()
                 .setScheduleId(2700)
                 .setLevel(this.getLevel())
@@ -274,7 +309,11 @@ public class BattlePassManager {
                 .setUnlockStatus(this.isPaid() ? BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_PAID : BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_FREE)
                 .setJPFMGBEBBBJ(2) // Not bought on Playstation.
 				.setCurCyclePoints(this.getCyclePoints())
-                .setCurCycle(BattlePassCycle.newBuilder().setBeginTime(0).setEndTime(2059483200).setCycleIdx(3));
+                .setCurCycle(BattlePassCycle.newBuilder()
+					.setBeginTime(0)
+					.setEndTime((int)nextSundayTime.atZone(ZoneId.systemDefault()).toEpochSecond())
+					.setCycleIdx(3)
+				);
 		
 		for (BattlePassReward reward : getTakenRewards().values()) {
 			schedule.addRewardTakenList(reward.toProto());

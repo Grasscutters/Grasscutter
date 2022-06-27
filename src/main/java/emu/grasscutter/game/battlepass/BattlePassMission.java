@@ -37,6 +37,10 @@ public class BattlePassMission {
 		return progress;
 	}
 
+	public void setProgress(int value) {
+		this.progress = value;
+	}
+
 	public void addProgress(int addProgress, int maxProgress) {
 		this.progress = Math.min(addProgress + this.progress, maxProgress);
 	}
