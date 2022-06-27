@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "MusicGameUnknown1Enum.proto";
+
+// CmdId: 6313
+// EnetChannelId: 0
+// EnetIsReliable: true
+message MusicGameStartToPlayOthersBeatmapRsp {
+	int32 retcode = 2;
+	MusicGameUnknown1Enum unknown_enum1 = 11;
+	repeated uint64 AMNODOLNOIM = 6;
+}

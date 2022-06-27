@@ -909,6 +909,8 @@ public class PacketOpcodes {
     public static final int MusicGameSettleRsp = 8288;
     public static final int MusicGameStartReq = 8927;
     public static final int MusicGameStartRsp = 8101;
+    public static final int MusicGameStartToPlayOthersBeatmapReq = 6302;
+    public static final int MusicGameStartToPlayOthersBeatmapRsp = 6313;
     public static final int NavMeshStatsNotify = 2387;
     public static final int NormalUidOpNotify = 5718;
     public static final int NpcTalkReq = 509;

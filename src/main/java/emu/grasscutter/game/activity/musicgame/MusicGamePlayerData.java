@@ -61,7 +61,21 @@ public class MusicGamePlayerData {
         int score;
         boolean settle;
 
-        public MusicBriefInfoOuterClass.MusicBriefInfo.Builder toProto(){
+        public MusicBriefInfoOuterClass.MusicBriefInfo.Builder toPersonalBriefProto(){
+            var musicGameBeatmap = MusicGameBeatmap.getByShareId(musicShareId);
+
+            return MusicBriefInfoOuterClass.MusicBriefInfo.newBuilder()
+                .setCanShare(true)
+                .setCreateTime(musicGameBeatmap.getCreateTime())
+                .setMusicId(musicGameBeatmap.getMusicId())
+                .setMaxScore(musicGameBeatmap.getMaxScore())
+                .setPosition(musicGameBeatmap.getSavePosition())
+                .setMusicNoteCount(musicGameBeatmap.getMusicNoteCount())
+                .setMusicShareId(musicShareId)
+                ;
+        }
+
+        public MusicBriefInfoOuterClass.MusicBriefInfo.Builder toOthersBriefProto(){
             var musicGameBeatmap = MusicGameBeatmap.getByShareId(musicShareId);
 
             return musicGameBeatmap.toBriefProto()

@@ -11,14 +11,14 @@ message MusicBriefInfo {
 	uint32 score = 6;
 	uint32 create_time = 7;
 	uint32 share_time = 8;
-	uint32 DOANBAODBMA = 9;
+	uint32 position = 9;
 	bool settle = 10;
 	uint32 version = 11;
 	bool can_share = 12;
 	bool OAPKHNELBPH = 13;
 	bool NJHAMJMHPAA = 14;
 	uint64 ADIBIKKNPKK = 15;
-	uint32 save_position = 21;
+	uint32 unknown = 21;
 	repeated uint32 GIDFMAJFIFE = 22;
 	repeated uint32 OKBJPAKOLIH = 23;
 	uint32 FAOPBAMDFJB = 24;
