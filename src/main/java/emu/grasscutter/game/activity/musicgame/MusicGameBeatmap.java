@@ -64,12 +64,10 @@ public class MusicGameBeatmap {
         var player = DatabaseHelper.getPlayerByUid(authorUid);
 
         return MusicBriefInfoOuterClass.MusicBriefInfo.newBuilder()
-            .setCanShare(true)
             .setMusicId(musicId)
             .setMusicNoteCount(musicNoteCount)
             .setMusicShareId(musicShareId)
             .setMaxScore(maxScore)
-            .setCreateTime(createTime)
             .setShareTime(createTime)
             .setAuthorNickname(player.getNickname())
             .setVersion(1)
