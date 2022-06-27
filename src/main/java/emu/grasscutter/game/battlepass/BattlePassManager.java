@@ -226,7 +226,6 @@ public class BattlePassManager {
 	
 	public void takeReward(List<BattlePassRewardTakeOption> takeOptionList) {
 		List<BattlePassRewardTakeOption> rewardList = new ArrayList<>();
-		// List<BattlePassRewardTag> rewardList = new ArrayList<>();
 		
 		for (BattlePassRewardTakeOption option : takeOptionList) {
 			// Duplicate check
@@ -250,8 +249,6 @@ public class BattlePassManager {
 			else {
 				Grasscutter.getLogger().info("Not in rewards list: {}", option.getTag().getRewardId());
 			}
-
-			// rewardList.add(new Pair<>(option.getTag(), option.getOptionIdx()));
 		}
 		
 		// Get rewards
