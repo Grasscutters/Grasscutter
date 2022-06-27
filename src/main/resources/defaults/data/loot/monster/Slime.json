@@ -1,0 +1,48 @@
+{
+    "comment": "Slime",
+    "functions": [
+        {
+            "function": "set_count",
+            "count": {
+                "type": "uniform",
+                "min": 0,
+                "max": 2
+            }
+        }
+    ],
+    "pools": [
+        {
+            "entries": [
+                {
+                    "name": "112002"
+                }
+            ]
+        },
+        {
+            "conditions": [
+                {
+                    "condition": "monster_level",
+                    "gt": 40
+                }
+            ],
+            "entries": [
+                {
+                    "name": "112003"
+                }
+            ]
+        },
+        {
+            "conditions": [
+                {
+                    "condition": "monster_level",
+                    "gt": 40
+                }
+            ],
+            "entries": [
+                {
+                    "name": "112004"
+                }
+            ]
+        }
+    ]
+}

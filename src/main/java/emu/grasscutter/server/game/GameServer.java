@@ -26,10 +26,10 @@ import emu.grasscutter.game.world.World;
 import emu.grasscutter.game.world.WorldDataManager;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
+import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
 import kcp.highway.ChannelConfig;
@@ -42,8 +42,8 @@ import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
+import static emu.grasscutter.Configuration.GAME_INFO;
 import static emu.grasscutter.utils.Language.translate;
-import static emu.grasscutter.Configuration.*;
 
 public final class GameServer extends KcpServer {
 	private final InetSocketAddress address;
@@ -110,7 +110,7 @@ public final class GameServer extends KcpServer {
 		this.towerScheduleManager = new TowerScheduleManager(this);
 		this.worldDataManager = new WorldDataManager(this);
 		this.battlePassMissionManager = new BattlePassMissionManager(this);
-		
+
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}

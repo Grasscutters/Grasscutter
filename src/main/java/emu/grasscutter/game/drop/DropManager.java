@@ -1,7 +1,5 @@
 package emu.grasscutter.game.drop;
 
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.inventory.GameItem;
@@ -10,15 +8,10 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.loot.LootContext;
+import emu.grasscutter.loot.LootRegistry;
 import emu.grasscutter.loot.LootTable;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.Position;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.List;
 
 public class DropManager {
     public GameServer getGameServer() {
@@ -27,30 +20,15 @@ public class DropManager {
 
     private final GameServer gameServer;
 
-    private final Int2ObjectMap<LootTable> lootTables;
+    private LootRegistry lootTables;
 
     public DropManager(GameServer gameServer) {
         this.gameServer = gameServer;
-        this.lootTables = new Int2ObjectOpenHashMap<>();
+        this.load();
     }
 
-    private static final LootTable DEFAULT_LOOT = new LootTable() {
-        @Override
-        public List<GameItem> loot(LootContext ctx) {
-            Grasscutter.getLogger().debug(ctx.victim.getId() + " Using fallback LootTable");
-            return List.of(new GameItem(100001));
-        }
-    };
-
-    public LootTable getLootTable(int id) {
-        return lootTables.computeIfAbsent(id, (i) -> {
-            try (Reader fileReader = new InputStreamReader(DataLoader.load("loot/monster/" + id + ".json"))) {
-                return Grasscutter.getGsonFactory().fromJson(fileReader, LootTable.class);
-            } catch (Exception e) {
-                Grasscutter.getLogger().error("Unable to load drop data.", e);
-                return DEFAULT_LOOT;
-            }
-        });
+    public void load() {
+        lootTables = LootRegistry.getLootRegistry("MonsterDrop.json");
     }
 
     private void addDropEntity(GameItem gi, Scene dropScene, Position pos, int num, Player target) {
@@ -93,12 +71,10 @@ public class DropManager {
 
     public void callDrop(EntityMonster em) {
         int id = em.getMonsterData().getId();
-        LootTable lt = getLootTable(id);
+        LootTable lt = lootTables.getLootTable(id);
         LootContext ctx = new LootContext();
         ctx.victim = em;
 
-        lt.loot(ctx).forEach(e -> {
-            processDrop(e, em, null);
-        });
+        lt.loot(ctx).forEach(e -> processDrop(e, em, null));
     }
 }
