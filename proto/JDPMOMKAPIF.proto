@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "KJDPNIKDKEJ.proto";
+
+message JDPMOMKAPIF {
+	uint32 id = 1;
+	repeated KJDPNIKDKEJ OPNBOHLEDGG = 2;
+}
