@@ -49,7 +49,11 @@
       "create_resources": "Tworzenie folderu resources...",
       "resources_error": "Umieść kopię 'BinOutput' i 'ExcelBinOutput' w folderze resources.",
       "version": "Grasscutter versión: %s-%s",
-      "game_version": "Game versión: %s"
+      "game_version": "Game versión: %s",
+      "resources": {
+        "loading": "Loading resources...",
+        "finish": "Finished loading resources."
+      }
     }
   },
   "commands": {
@@ -60,6 +64,8 @@
       "console_execute_error": "Tą komende można wywołać tylko z konsoli.",
       "player_execute_error": "Wywołaj tą komendę w grze.",
       "command_exist_error": "Nie znaleziono komendy.",
+      "set_to": "%s ustawiono na %s.",
+      "set_for_to": "%s dla %s ustawiono na %s.",
       "invalid": {
         "amount": "Błędna ilość.",
         "artifactId": "Błędne ID artefaktu.",
@@ -69,17 +75,16 @@
         "id przedmiotu": "Błędne id przedmiotu.",
         "itemLevel": "Błędny poziom przedmiotu.",
         "itemRefinement": "Błędne ulepszenie.",
+        "value_between": "Invalid value: %s must be between %s and %s.",
         "playerId": "Błędne playerId.",
-        "uid": "Błędne UID."
+        "uid": "Błędne UID.",
+        "id": "Błędne ID."
       }
     },
     "execution": {
-      "uid_error": "Błędne UID.",
       "player_exist_error": "Gracz nie znaleziony.",
       "player_offline_error": "Gracz nie jest online.",
-      "item_id_error": "Błędne ID przedmiotu.",
       "item_player_exist_error": "Błędny przedmiot lub UID.",
-      "entity_id_error": "Błędne ID obiektu.",
       "player_exist_offline_error": "Gracz nie znaleziony lub jest offline.",
       "argument_error": "Błędne argumenty.",
       "clear_target": "Cel wyczyszczony.",
@@ -104,16 +109,6 @@
       "delete": "Konto usunięte.",
       "no_account": "Nie znaleziono konta.",
       "command_usage": "Użycie: account <create|delete> <nazwa> [uid]"
-    },
-    "broadcast": {
-      "command_usage": "Użycie: broadcast <wiadomość>",
-      "message_sent": "Wiadomość wysłana."
-    },
-    "changescene": {
-      "usage": "Użycie: changescene <id sceny>",
-      "already_in_scene": "Już jesteś na tej scenie.",
-      "success": "Zmieniono scene na %s.",
-      "exists_error": "Ta scena nie istenieje."
     },
     "clear": {
       "command_usage": "Użycie: clear <all|wp|art|mat>",
@@ -146,20 +141,14 @@
       "id_error": "Błędne ID artefaktu.",
       "success": "Dano %s dla %s."
     },
-    "giveChar": {
-      "usage": "Użycie: givechar <gracz> <avatarId> [ilość]",
-      "given": "Dano %s z poziomem %s dla %s.",
-      "invalid_avatar_id": "Błędne ID postaci.",
-      "invalid_avatar_level": "Błędny poziom postaci.",
-      "invalid_avatar_or_player_id": "Błędne ID postaci lub gracza."
-    },
     "give": {
-      "usage": "Użycie: give <gracz> <id przedmiotu | nazwa przedmiotu> [ilość] [poziom] [refinement]",
+            "usage": "Użycie: give <gracz> <id przedmiotu | avatarID> [ilość] [poziom] [refinement]",
       "refinement_only_applicable_weapons": "Ulepszenie można zastosować tylko dla broni.",
       "refinement_must_between_1_and_5": "Ulepszenie musi być pomiędzy 1, a 5.",
       "given": "Dano %s %s dla %s.",
       "given_with_level_and_refinement": "Dano %s z poziomem %s, ulepszeniem %s %s razy dla %s",
-      "given_level": "Dano %s z poziomem %s %s razy dla %s"
+            "given_level": "Dano %s z poziomem %s %s razy dla %s",
+            "given_avatar": "Dano %s z poziomem %s dla %s."
     },
     "godmode": {
       "success": "Godmode jest teraz %s dla %s."
@@ -239,16 +228,13 @@
       "success": "Poziom przyjaźni ustawiono na: %s",
       "level_error": "Błędny poziom przyjaźni."
     },
+    "setProp": {
+      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyssfloor | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
+      "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
+    },
     "setStats": {
-      "usage_console": "Użycie: setstats|stats @<UID> <statystyka> <wartość>",
-      "usage_ingame": "Użycie: setstats|stats [@UID] <statystyka> <wartość>",
-      "help_message": "\n\tWartości dla Statystyka: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus DMG żywiołu: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) RES na żywioł: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-      "value_error": "Błędna wartość statystyki.",
-      "uid_error": "Błędne UID.",
-      "player_error": "Gracza nie znaleziono lub jest offline.",
-      "set_self": "%s ustawiono na %s.",
-      "set_for_uid": "%s dla %s ustawiono na %s.",
-      "set_max_hp": "Maksymalne HP ustawione na %s."
+      "usage": "Użycie: setstats|stats <statystyka> <wartość>\n\tWartości dla Statystyka: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus DMG żywiołu: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) RES na żywioł: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
+      "description": "Sets fight property for your current active character"
     },
     "setWorldLevel": {
       "usage": "Użycie: setworldlevel <poziom>",
@@ -288,16 +274,14 @@
       "usage": "Użycie: /tp [@<ID gracza>] <x> <y> <z> [ID sceny]",
       "specify_player_id": "Musisz określić ID gracza.",
       "invalid_position": "Błędna pozycja.",
+            "exists_error": "Ta scena nie istenieje.",
       "success": "Przeteleportowano %s do %s, %s, %s w scenie %s"
     },
     "weather": {
-      "usage": "Użycie: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types 0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist",
-      "success": "Changed climate type to %s with weather type %s.",
-      "invalid_id": "Błędne ID."
-    },
-    "drop": {
-      "command_usage": "Użycie: drop <ID przedmiotu|nazwa przedmiotu> [ilość]",
-      "success": "Wyrzucono %s of %s."
+      "description": "Changes the weather.Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "success": "Set weather ID to %s with climate type %s.",
+      "status": "Current weather ID is %s with climate type %s."
     },
     "help": {
       "usage": "Użycie: ",
@@ -307,6 +291,19 @@
     "unlocktower": {
       "success": "odblokować gotowe",
       "description": "Odblokuj głęboką spiralę"
+    },
+    "ban": {
+      "command_usage": "Usage: ban <@playerId> [timestamp] [reason]",
+      "success": "Successful.",
+      "failure": "Failed, player not found.",
+      "invalid_time": "Unable to parse timestamp.",
+      "description": "Ban a player"
+    },
+    "unban": {
+      "command_usage": "Usage: unban <@playerId>",
+      "success": "Successful.",
+      "failure": "Failed, player not found.",
+      "description": "Unban a player"
     }
   },
   "gacha": {

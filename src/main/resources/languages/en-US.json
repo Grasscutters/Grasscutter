@@ -53,7 +53,11 @@
       "create_resources": "Creating resources folder...",
       "resources_error": "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.",
       "version": "Grasscutter version: %s-%s",
-      "game_version": "Game version: %s"
+      "game_version": "Game version: %s",
+      "resources": {
+        "loading": "Loading resources...",
+        "finish": "Finished loading resources."
+      }
     }
   },
   "commands": {
@@ -66,6 +70,8 @@
       "command_exist_error": "No command found.",
       "no_usage_specified": "No usage specified",
       "no_description_specified": "No description specified",
+      "set_to": "%s set to %s.",
+      "set_for_to": "%s for %s set to %s.",
       "invalid": {
         "amount": "Invalid amount.",
         "artifactId": "Invalid artifact ID.",
@@ -75,17 +81,17 @@
         "itemId": "Invalid item ID.",
         "itemLevel": "Invalid itemLevel.",
         "itemRefinement": "Invalid itemRefinement.",
+        "statValue": "Invalid stat value.",
+        "value_between": "Invalid value: %s must be between %s and %s.",
         "playerId": "Invalid player ID.",
-        "uid": "Invalid UID."
+        "uid": "Invalid UID.",
+        "id": "Invalid ID."
       }
     },
     "execution": {
-      "uid_error": "Invalid UID.",
       "player_exist_error": "Player not found.",
       "player_offline_error": "Player is not online.",
-      "item_id_error": "Invalid item ID.",
       "item_player_exist_error": "Invalid item or UID.",
-      "entity_id_error": "Invalid entity ID.",
       "player_exist_offline_error": "Player not found or is not online.",
       "argument_error": "Invalid arguments.",
       "clear_target": "Target cleared.",
@@ -99,30 +105,17 @@
     "status": {
       "enabled": "Enabled",
       "disabled": "Disabled",
-      "help": "Help", 
+      "help": "Help",
       "success": "Success"
     },
     "account": {
-      "modify": "Modify user accounts",
+      "command_usage": "Usage: account <create|delete> <username> [UID]",
       "invalid": "Invalid UID.",
       "exists": "An account with this username and/or UID already exists.",
       "create": "Account created with UID %s.",
       "delete": "Account deleted.",
       "no_account": "Account not found.",
-      "command_usage": "Usage: account <create|delete> <username> [UID]",
       "description": "Modify user accounts"
-    },
-    "broadcast": {
-      "command_usage": "Usage: broadcast <message>",
-      "message_sent": "Message sent.",
-      "description": "Sends a message to all the players"
-    },
-    "changescene": {
-      "usage": "Usage: changescene <sceneID>",
-      "already_in_scene": "You are already in that scene.",
-      "success": "Changed to scene %s.",
-      "exists_error": "The specified scene does not exist.",
-      "description": "Changes your scene"
     },
     "clear": {
       "command_usage": "Usage: clear <all|wp|art|mat>",
@@ -140,11 +133,6 @@
       "success": "Summoned %s to %s's world.",
       "description": "Forces someone to join the world of others. If no one is targeted, it sends you into co-op mode anyway."
     },
-    "drop": {
-      "command_usage": "Usage: drop <itemID|itemName> [amount]",
-      "success": "Dropped %s of %s.",
-      "description": "Drops an item near you"
-    },
     "enter_dungeon": {
       "usage": "Usage: enterdungeon <dungeonID>",
       "changed": "Changed to dungeon %s.",
@@ -152,39 +140,16 @@
       "in_dungeon_error": "You are already in that dungeon.",
       "description": "Enter a dungeon"
     },
-    "giveAll": {
-      "usage": "Usage: giveall [player] [amount]",
-      "started": "Receiving all items...",
-      "success": "Successfully gave all items to %s.",
-      "invalid_amount_or_playerId": "Invalid amount or player ID.",
-      "description": "Gives all items"
-    },
-    "giveArtifact": {
-      "usage": "Usage: giveart|gart [player] <artifactID> <mainPropID> [<appendPropID>[,<times>]]... [level]",
-      "id_error": "Invalid artifact ID.",
-      "success": "Given %s to %s.",
-      "description": "Gives the player a specified artifact"
-    },
-    "giveChar": {
-      "usage": "Usage: givechar <player> <avatarID> [level]",
-      "given": "Given %s with level %s to %s.",
-      "invalid_avatar_id": "Invalid avatar ID.",
-      "invalid_avatar_level": "Invalid avatar level.",
-      "invalid_avatar_or_player_id": "Invalid avatar or player ID.",
-      "description": "Gives the player a specified character"
-    },
     "give": {
-      "usage": "Usage: give <player> <itemID|itemName> [amount] [level] [refinement]",
-      "refinement_only_applicable_weapons": "Refinement is only applicable to weapons.",
-      "refinement_must_between_1_and_5": "Refinement must be between 1 and 5.",
+      "usage": "Usage: give <itemID|avatarID|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [x<amount>] [lv<level>] [r<refinement>]",
+      "usage_relic": "Usage: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
+      "illegal_relic": "This artifactID belongs to a blacklisted range, it may not be the one you wanted.",
       "given": "Given %s of %s to %s.",
       "given_with_level_and_refinement": "Given %s with level %s, refinement %s %s times to %s.",
       "given_level": "Given %s with level %s %s times to %s.",
-      "description": "Gives an item to you or the specified player"
-    },
-    "godmode": {
-      "success": "Godmode is now %s for %s.",
-      "description": "Prevents you from taking damage. Defaults to toggle."
+      "given_avatar": "Given %s with level %s to %s.",
+      "giveall_success": "Successfully gave all items.",
+      "description": "Gives an item to you or the specified player. Can also give all weapons, avatars and/or materials, and can construct custom artifacts."
     },
     "heal": {
       "success": "All characters have been healed.",
@@ -222,10 +187,6 @@
       "success": "There are %s player(s) online:",
       "description": "List online players"
     },
-    "nostamina": {
-      "success": "NoStamina is now %s for %s.",
-      "description": "Keep your endurance to the maximum."
-    },
     "permission": {
       "usage": "Usage: permission <add|remove> <username> <permission>",
       "add": "Permission added.",
@@ -262,9 +223,6 @@
       "success": "Reset complete.",
       "description": "Reset target player's shop refresh time"
     },
-    "restart": {
-      "description": "Restarts the current session"
-    },
     "sendMail": {
       "usage": "Usage: sendmail <userID|all|help> [templateID]",
       "user_not_exist": "The user with an ID of '%s' does not exist.",
@@ -289,9 +247,9 @@
       "description": "Sends mail to the specified user. The usage of this command changes based on its composition state"
     },
     "sendMessage": {
-      "usage": "Usage: sendmessage <player> <message>",
+      "usage": "Usage: sendmessage <message>",
       "success": "Message sent.",
-      "description": "Sends a message to a player as the server"
+      "description": "Sends a message to a player as the server. If used with no target, sends to all players on the server."
     },
     "setFetterLevel": {
       "usage": "Usage: setfetterlevel <level>",
@@ -300,24 +258,13 @@
       "level_error": "Invalid fetter level.",
       "description": "Sets your fetter level for your current active character"
     },
-    "setStats": {
-      "usage_console": "Usage: setstats|stats @<UID> <stat> <value>",
-      "usage_ingame": "Usage: setstats|stats [@UID] <stat> <value>",
-      "help_message": "\n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-      "value_error": "Invalid stat value.",
-      "uid_error": "Invalid UID.",
-      "player_error": "Player not found or offline.",
-      "set_self": "%s set to %s.",
-      "set_for_uid": "%s for %s set to %s.",
-      "set_max_hp": "MAX HP set to %s.",
-      "description": "Sets fight property for your current active character"
+    "setProp": {
+      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyssfloor | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
+      "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
     },
-    "setWorldLevel": {
-      "usage": "Usage: setworldlevel <level>",
-      "value_error": "World level must be between 0-8.",
-      "success": "World level set to %s.",
-      "invalid_world_level": "Invalid world level.",
-      "description": "Sets your world level (Relog to see proper effects)"
+    "setStats": {
+      "usage": "Usage: setstats|stats <stat> <value>\n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
+      "description": "Sets fight property for your current active character"
     },
     "spawn": {
       "usage": "Usage: spawn <entityID> [amount] [level(monster only)] [<x> <y> <z>(monster only, optional)]",
@@ -374,38 +321,28 @@
       "usage": "Usage: tp [@<playerID>] <x> <y> <z> [sceneID]",
       "specify_player_id": "You must specify a player ID.",
       "invalid_position": "Invalid position.",
+            "exists_error": "The specified scene does not exist.",
       "success": "Teleported %s to %s, %s, %s in scene %s.",
       "description": "Change the player's position"
     },
-    "unlimitenergy": {
-      "success": "UnlimitEnergy is now %s for %s.",
-      "config_error": "Command is disabled, because energyUsage is false in config.json.",
-      "description": "Use the element does not waste energy"
-    },
-    "unlocktower": {
-      "success": "Abyss Corridor's Floors are all unlocked now.",
-      "description": "Unlock all levels of tower"
-    },
     "weather": {
-      "usage": "Usage: weather <climate type(weatherId)> <weather type(climateId)>\nWeather types 0: None, 1: Sunny, 2: Cloudy, 3: Rain, 4: Thunderstorm, 5: Snow, 6: Mist",
-      "success": "Changed climate type to %s with weather type %s.",
-      "invalid_id": "Invalid ID.",
-      "description": "Changes the weather"
+      "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist",
+      "success": "Set weather ID to %s with climate type %s.",
+      "status": "Current weather ID is %s with climate type %s.",
+      "description": "Changes weather ID and climate type. Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist"
     },
     "ban": {
-      "description": "Ban a player",
+      "command_usage": "Usage: ban <@playerId> [timestamp] [reason]",
       "success": "Successful.",
       "failure": "Failed, player not found.",
       "invalid_time": "Unable to parse timestamp.",
-      "invalid_player_id": "Unable to parse player ID.",
-      "command_usage": "Usage: ban <playerId> [timestamp] [reason]"
+      "description": "Ban a player"
     },
     "unban": {
-      "description": "Unban a player",
+      "command_usage": "Usage: unban <@playerId>",
       "success": "Successful.",
       "failure": "Failed, player not found.",
-      "invalid_player_id": "Unable to parse player ID.",
-      "command_usage": "Usage: unban <playerId>"
+      "description": "Unban a player"
     }
   },
   "gacha": {

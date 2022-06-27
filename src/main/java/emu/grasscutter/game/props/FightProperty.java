@@ -1,7 +1,13 @@
 package emu.grasscutter.game.props;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
+import static java.util.Map.entry;
+
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -133,4 +139,65 @@ public enum FightProperty {
 	public static FightProperty getPropByName(String name) {
 		return stringMap.getOrDefault(name, FIGHT_PROP_NONE);
 	}
+
+    public static FightProperty getPropByShortName(String name) {
+        return shortNameMap.getOrDefault(name, FIGHT_PROP_NONE);
+    }
+
+    public static Set<String> getShortNames() {
+        return shortNameMap.keySet();
+    }
+
+    // This was originally for relic properties so some names might not be applicable for e.g. setstats
+    private static final Map<String, FightProperty> shortNameMap = Map.ofEntries(
+        // Normal relic stats
+		entry("hp", FIGHT_PROP_HP),
+		entry("atk", FIGHT_PROP_ATTACK),
+		entry("def", FIGHT_PROP_DEFENSE),
+		entry("hp%", FIGHT_PROP_HP_PERCENT),
+		entry("atk%", FIGHT_PROP_ATTACK_PERCENT),
+		entry("def%", FIGHT_PROP_DEFENSE_PERCENT),
+		entry("em", FIGHT_PROP_ELEMENT_MASTERY),
+		entry("er", FIGHT_PROP_CHARGE_EFFICIENCY),
+		entry("hb", FIGHT_PROP_HEAL_ADD),
+        entry("heal", FIGHT_PROP_HEAL_ADD),
+		entry("cd", FIGHT_PROP_CRITICAL_HURT),
+		entry("cdmg", FIGHT_PROP_CRITICAL_HURT),
+		entry("cr", FIGHT_PROP_CRITICAL),
+		entry("crate", FIGHT_PROP_CRITICAL),
+		entry("phys%", FIGHT_PROP_PHYSICAL_ADD_HURT),
+		entry("dendro%", FIGHT_PROP_GRASS_ADD_HURT),
+		entry("geo%", FIGHT_PROP_ROCK_ADD_HURT),
+		entry("anemo%", FIGHT_PROP_WIND_ADD_HURT),
+		entry("hydro%", FIGHT_PROP_WATER_ADD_HURT),
+		entry("cryo%", FIGHT_PROP_ICE_ADD_HURT),
+		entry("electro%", FIGHT_PROP_ELEC_ADD_HURT),
+		entry("pyro%", FIGHT_PROP_FIRE_ADD_HURT),
+        // Other stats
+        entry("maxhp", FIGHT_PROP_MAX_HP),
+        entry("dmg", FIGHT_PROP_ADD_HURT),  // This seems to get reset after attacks
+        entry("cdr", FIGHT_PROP_SKILL_CD_MINUS_RATIO),
+        entry("heali", FIGHT_PROP_HEALED_ADD),
+        entry("shield", FIGHT_PROP_SHIELD_COST_MINUS_RATIO),
+        entry("defi", FIGHT_PROP_DEFENCE_IGNORE_RATIO),
+        entry("resall", FIGHT_PROP_SUB_HURT),  // This seems to get reset after attacks
+        entry("resanemo", FIGHT_PROP_WIND_SUB_HURT),
+        entry("rescryo", FIGHT_PROP_ICE_SUB_HURT),
+        entry("resdendro", FIGHT_PROP_GRASS_SUB_HURT),
+        entry("reselectro", FIGHT_PROP_ELEC_SUB_HURT),
+        entry("resgeo", FIGHT_PROP_ROCK_SUB_HURT),
+        entry("reshydro", FIGHT_PROP_WATER_SUB_HURT),
+        entry("respyro", FIGHT_PROP_FIRE_SUB_HURT),
+        entry("resphys", FIGHT_PROP_PHYSICAL_SUB_HURT)
+	);
+
+    private static final List<FightProperty> flatProps = Arrays.asList(
+        FIGHT_PROP_BASE_HP, FIGHT_PROP_HP, FIGHT_PROP_BASE_ATTACK, FIGHT_PROP_ATTACK, FIGHT_PROP_BASE_DEFENSE,
+        FIGHT_PROP_DEFENSE, FIGHT_PROP_HEALED_ADD, FIGHT_PROP_CUR_FIRE_ENERGY, FIGHT_PROP_CUR_ELEC_ENERGY,
+        FIGHT_PROP_CUR_WATER_ENERGY, FIGHT_PROP_CUR_GRASS_ENERGY, FIGHT_PROP_CUR_WIND_ENERGY, FIGHT_PROP_CUR_ICE_ENERGY,
+        FIGHT_PROP_CUR_ROCK_ENERGY, FIGHT_PROP_CUR_HP, FIGHT_PROP_MAX_HP, FIGHT_PROP_CUR_ATTACK, FIGHT_PROP_CUR_DEFENSE); 
+    
+    public static boolean isPercentage(FightProperty prop) {
+        return !flatProps.contains(prop);
+    }
 }

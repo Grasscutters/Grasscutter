@@ -53,7 +53,11 @@
       "create_resources": "Создаём папку ресурсов...",
       "resources_error": "Поместите копию папок 'BinOutput' и 'ExcelBinOutput' в папку ресурсов.",
       "version": "Версия Grasscutter: %s-%s",
-      "game_version": "Версия игры: %s"
+      "game_version": "Версия игры: %s",
+      "resources": {
+        "loading": "Loading resources...",
+        "finish": "Finished loading resources."
+      }
     }
   },
   "commands": {
@@ -66,6 +70,8 @@
       "command_exist_error": "Команда не найдена.",
       "no_usage_specified": "Применение команды не указано",
       "no_description_specified": "Описание отсутствует",
+      "set_to": "Характеристика %s стала равной %s.",
+      "set_for_to": "Характеристика %s игрока %s стала равной %s.",
       "invalid": {
         "amount": "Некорректное количество.",
         "artifactId": "Некорректный ID артефакта.",
@@ -75,17 +81,17 @@
         "itemId": "Некорректный ID предмета.",
         "itemLevel": "Некорректный уровень предмета (itemLevel).",
         "itemRefinement": "Некорректный уровень пробуждения предмета (itemRefinement).",
+        "statValue": "Некорректное значение характеристики.",
+        "value_between": "Invalid value: %s must be between %s and %s.",
         "playerId": "Некорректный ID игрока.",
-        "uid": "Некорректный UID."
+        "uid": "Некорректный UID.",
+        "id": "Некорректный ID."
       }
     },
     "execution": {
-      "uid_error": "Некорректный UID.",
       "player_exist_error": "Игрок не найден.",
       "player_offline_error": "Игрок не в сети.",
-      "item_id_error": "Некорректный ID предмета.",
       "item_player_exist_error": "Некорректный предмет или UID.",
-      "entity_id_error": "Некорректный ID сущности.",
       "player_exist_offline_error": "Игрок не был найден или не в сети.",
       "argument_error": "Некорректные аргументы.",
       "clear_target": "Цель была удалена.",
@@ -99,7 +105,7 @@
     "status": {
       "enabled": "Включено",
       "disabled": "Выключено",
-      "help": "Помощь", 
+      "help": "Помощь",
       "success": "Успех"
     },
     "account": {
@@ -300,16 +306,12 @@
       "level_error": "Некорректный уровень дружбы.",
       "description": "Устанавливает уровень дружбы для активного персонажа"
     },
+    "setProp": {
+      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyssfloor | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
+      "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
+    },
     "setStats": {
-      "usage_console": "Применение: setstats|stats @<UID> <хар-ка> <значение>",
-      "usage_ingame": "Применение: setstats|stats [@UID] <хар-ка> <значение>",
-      "help_message": "\n\tВозможные значения для <хар-ка>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(прод.) Бонус элементального урона: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Элементальное сопротивление: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-      "value_error": "Некорректное значение характеристики.",
-      "uid_error": "Некорректный UID.",
-      "player_error": "Игрок не найден или находится не в сети.",
-      "set_self": "Характеристика %s стала равной %s.",
-      "set_for_uid": "Характеристика %s игрока %s стала равной %s.",
-      "set_max_hp": "Максимальное значение здоровья стало равно %s.",
+      "usage": "Применение: setstats|stats <хар-ка> <значение>\n\tВозможные значения для <хар-ка>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(прод.) Бонус элементального урона: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Элементальное сопротивление: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
       "description": "Задаёт боевые характеристики для активного персонажа"
     },
     "setWorldLevel": {
@@ -387,25 +389,23 @@
       "description": "Открывает все уровни башни"
     },
     "weather": {
-      "usage": "Применение: weather <тип_климата(Id погоды)> <тип_погоды(Id климата)>\nТипы погоды 0: Отсутствует, 1: Солнечная, 2: Пасмурная, 3: Дождливая, 4: Грозовая, 5: Снежная, 6: Туманная",
-      "success": "Тип климата был изменен на %s, тип погоды: %s.",
-      "invalid_id": "Некорректный ID.",
-      "description": "Изменяет погоду"
+      "description": "Изменяет погоду.Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
+      "success": "Set weather ID to %s with climate type %s.",
+      "status": "Current weather ID is %s with climate type %s."
     },
     "ban": {
       "description": "Банит игрока",
       "success": "Успех.",
       "failure": "Неудача, игрок не найден.",
       "invalid_time": "Не удалось определить промежуток времени.",
-      "invalid_player_id": "Не удалось определить ID игрока.",
-      "command_usage": "Применение: ban <Id игрока> [промежуток_времени] [причина]"
+      "command_usage": "Применение: ban <@Id игрока> [промежуток_времени] [причина]"
     },
     "unban": {
       "description": "Разбанивает игрока",
       "success": "Успех.",
       "failure": "Неудача, игрок не найден.",
-      "invalid_player_id": "Не удалось определить ID игрока.",
-      "command_usage": "Применение: unban <Id_игрока>"
+      "command_usage": "Применение: unban <@Id_игрока>"
     }
   },
   "gacha": {

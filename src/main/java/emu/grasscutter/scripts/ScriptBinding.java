@@ -41,26 +41,32 @@ public class ScriptBinding {
         } else {
             var methods = getMethodAccessByClazz(o.getClass());
             Arrays.stream(methods.getMethodNames()).forEach(m -> {
-                        class TempFunc implements NamedJavaFunction {
-                            @Override
-                            public String getName() {
-                                return m;
-                            }
+                    class TempFunc implements NamedJavaFunction {
+                        @Override
+                        public String getName() {
+                            return m;
+                        }
 
-                            @Override
-                            public int invoke(LuaState luaState) {
-                                var argSize = luaState.getTop();
-                                List<Object> args = new ArrayList<>();
-                                for(int i = 0; i < argSize; ++i) {
-                                    args.add(luaState.checkJavaObject(i + 1, Object.class));
-                                }
+                        @Override
+                        public int invoke(LuaState luaState) {
+                            var argSize = luaState.getTop();
+                            List<Object> args = new ArrayList<>();
+                            for(int i = 0; i < argSize; ++i) {
+                                args.add(luaState.checkJavaObject(i + 1, Object.class));
+                            }
+                            try {
                                 Object ret = methods.invoke(o, m, args.toArray());
                                 luaState.pushJavaObject(ret);
-                                return 1;
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                System.out.println("Error on invoking binding function. " + e);
+                                throw e;
                             }
+                            return 1;
                         }
-                        bindings.add(new TempFunc());
                     }
+                    bindings.add(new TempFunc());
+                }
             );
 
             var fields = o.getClass().getFields();

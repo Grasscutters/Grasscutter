@@ -12,4 +12,5 @@ import lombok.experimental.FieldDefaults;
 public class ScriptLibContext {
     SceneScriptManager sceneScriptManager;
     SceneGroup currentGroup;
+    public int uid;
 }

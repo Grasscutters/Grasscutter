@@ -1,9 +1,7 @@
 package emu.grasscutter.command;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
-
 import org.reflections.Reflections;
 
 import java.util.*;
@@ -11,6 +9,7 @@ import java.util.*;
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class CommandMap {
     private final Map<String, CommandHandler> commands = new HashMap<>();
+    private final Map<String, CommandHandler> aliases = new HashMap<>();
     private final Map<String, Command> annotations = new HashMap<>();
     private final Map<String, Integer> targetPlayerIds = new HashMap<>();
     private static final String consoleId = "console";
@@ -45,7 +44,7 @@ public final class CommandMap {
         // Register aliases.
         if (annotation.aliases().length > 0) {
             for (String alias : annotation.aliases()) {
-                this.commands.put(alias, command);
+                this.aliases.put(alias, command);
                 this.annotations.put(alias, annotation);
             }
         }
@@ -60,6 +59,7 @@ public final class CommandMap {
      */
     public CommandMap unregisterCommand(String label) {
         Grasscutter.getLogger().debug("Unregistered command: " + label);
+
         CommandHandler handler = this.commands.get(label);
         if (handler == null) return this;
 
@@ -70,7 +70,7 @@ public final class CommandMap {
         // Unregister aliases.
         if (annotation.aliases().length > 0) {
             for (String alias : annotation.aliases()) {
-                this.commands.remove(alias);
+                this.aliases.remove(alias);
                 this.annotations.remove(alias);
             }
         }
@@ -78,7 +78,9 @@ public final class CommandMap {
         return this;
     }
 
-    public List<Command> getAnnotationsAsList() { return new LinkedList<>(this.annotations.values()); }
+    public List<Command> getAnnotationsAsList() {
+        return new LinkedList<>(this.annotations.values());
+    }
 
     public HashMap<String, Command> getAnnotations() {
         return new LinkedHashMap<>(this.annotations);
@@ -107,6 +109,79 @@ public final class CommandMap {
         return this.commands.get(label);
     }
 
+    private Player getTargetPlayer(String playerId, Player player, Player targetPlayer, List<String> args) {
+        // Top priority: If any @UID argument is present, override targetPlayer with it.
+        for (int i = 0; i < args.size(); i++) {
+            String arg = args.get(i);
+            if (arg.startsWith("@")) {
+                arg = args.remove(i).substring(1);
+                if (arg.equals("")) {
+                    // This is a special case to target nothing, distinct from failing to assign a target.
+                    // This is specifically to allow in-game players to run a command without targeting themselves or anyone else.
+                    return null;
+                }
+                try {
+                    int uid = Integer.parseInt(arg);
+                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
+                    if (targetPlayer == null) {
+                        CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
+                        throw new IllegalArgumentException();
+                    }
+                    return targetPlayer;
+                } catch (NumberFormatException e) {
+                    CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
+                    throw new IllegalArgumentException();
+                }
+            }
+        }
+
+        // Next priority: If we invoked with a target, use that.
+        // By default, this only happens when you message another player in-game with a command.
+        if (targetPlayer != null) {
+            return targetPlayer;
+        }
+
+        // Next priority: Use previously-set target. (see /target [[@]UID])
+        if (targetPlayerIds.containsKey(playerId)) {
+            targetPlayer = Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.get(playerId), true);
+            // We check every time in case the target is deleted after being targeted
+            if (targetPlayer == null) {
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
+                throw new IllegalArgumentException();
+            }
+            return targetPlayer;
+        }
+
+        // Lowest priority: Target the player invoking the command. In the case of the console, this will return null.
+        return player;
+    }
+
+    private boolean setPlayerTarget(String playerId, Player player, String targetUid) {
+        if (targetUid.equals("")) { // Clears the default targetPlayer.
+                targetPlayerIds.remove(playerId);
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
+                return true;
+        }
+        
+        // Sets default targetPlayer to the UID provided.
+        try {
+            int uid = Integer.parseInt(targetUid);
+            Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
+            if (targetPlayer == null) {
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
+                return false;
+            }
+
+            targetPlayerIds.put(playerId, uid);
+            CommandHandler.sendTranslatedMessage(player, "commands.execution.set_target", targetUid);
+            CommandHandler.sendTranslatedMessage(player, targetPlayer.isOnline()? "commands.execution.set_target_online" : "commands.execution.set_target_offline", targetUid);
+            return true;
+        } catch (NumberFormatException e) {
+            CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
+            return false;
+        }
+    }
+
     /**
      * Invoke a command handler with the given arguments.
      *
@@ -125,111 +200,78 @@ public final class CommandMap {
         List<String> args = new LinkedList<>(Arrays.asList(split));
         String label = args.remove(0);
         String playerId = (player == null) ? consoleId : player.getAccount().getId();
-        
+
         // Check for special cases - currently only target command.
-        String targetUidStr = null;
         if (label.startsWith("@")) { // @[UID]
-            targetUidStr = label.substring(1);
+            this.setPlayerTarget(playerId, player, label.substring(1));
+            return;
         } else if (label.equalsIgnoreCase("target")) { // target [[@]UID]
             if (args.size() > 0) {
-                targetUidStr = args.get(0);
+                String targetUidStr = args.get(0);
                 if (targetUidStr.startsWith("@")) {
                     targetUidStr = targetUidStr.substring(1);
                 }
-            } else {
-                targetUidStr = "";
-            }
-        }
-        if (targetUidStr != null) {
-            if (targetUidStr.equals("")) { // Clears the default targetPlayer.
-                targetPlayerIds.remove(playerId);
-                CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
-            } else { // Sets default targetPlayer to the UID provided.
-                try {
-                    int uid = Integer.parseInt(targetUidStr);
-                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
-                    if (targetPlayer == null) {
-                        CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
-                    } else {
-                        targetPlayerIds.put(playerId, uid);
-                        CommandHandler.sendTranslatedMessage(player, "commands.execution.set_target", targetUidStr);
-                        CommandHandler.sendTranslatedMessage(player, targetPlayer.isOnline()? "commands.execution.set_target_online" : "commands.execution.set_target_offline", targetUidStr);
-                    }
-                } catch (NumberFormatException e) {
-                    CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
-                }
-            }
+                this.setPlayerTarget(playerId, player, targetUidStr);
             return;
+            } else {
+                this.setPlayerTarget(playerId, player, "");
+                return;
+            }
         }
 
         // Get command handler.
         CommandHandler handler = this.commands.get(label);
+        if(handler == null)
+            // Try to get the handler by alias.
+            handler = this.aliases.get(label);
+
+        // Check if the handler is still null.
         if (handler == null) {
             CommandHandler.sendTranslatedMessage(player, "commands.generic.unknown_command", label);
             return;
         }
 
-        // If any @UID argument is present, override targetPlayer with it.
-        for (int i = 0; i < args.size(); i++) {
-            String arg = args.get(i);
-            if (arg.startsWith("@")) {
-                arg = args.remove(i).substring(1);
-                try {
-                    int uid = Integer.parseInt(arg);
-                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
-                    if (targetPlayer == null) {
-                        CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
-                        return;
-                    }
-                    break;
-                } catch (NumberFormatException e) {
-                    CommandHandler.sendTranslatedMessage(player, "commands.execution.uid_error");
-                    return;
-                }
-            }
-        }
-        
-        // If there's still no targetPlayer at this point, use previously-set target
-        if (targetPlayer == null) {
-            if (targetPlayerIds.containsKey(playerId)) {
-                targetPlayer = Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.get(playerId), true);  // We check every time in case the target is deleted after being targeted
-                if (targetPlayer == null) {
-                    CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
-                    return;
-                }
-            } else {
-                // If there's still no targetPlayer at this point, use executor.
-                targetPlayer = player;
-            }
+        // Get the command's annotation.
+        Command annotation = this.annotations.get(label);
+
+        // Resolve targetPlayer
+        try{
+            targetPlayer = getTargetPlayer(playerId, player, targetPlayer, args);
+        } catch (IllegalArgumentException e) {
+            return;
         }
 
         // Check for permissions.
-        if (!Grasscutter.getPermissionHandler().checkPermission(player, targetPlayer, this.annotations.get(label).permission(), this.annotations.get(label).permissionTargeted())) {
+        if (!Grasscutter.getPermissionHandler().checkPermission(player, targetPlayer, annotation.permission(), this.annotations.get(label).permissionTargeted())) {
             return;
         }
 
         // Check if command has unfulfilled constraints on targetPlayer
-        Command.TargetRequirement targetRequirement = this.annotations.get(label).targetRequirement();
+        Command.TargetRequirement targetRequirement = annotation.targetRequirement();
         if (targetRequirement != Command.TargetRequirement.NONE) {
             if (targetPlayer == null) {
-                CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target");
+                CommandHandler.sendTranslatedMessage(null, "commands.execution.need_target");
                 return;
             }
+
             if ((targetRequirement == Command.TargetRequirement.ONLINE) && !targetPlayer.isOnline()) {
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_online");
                 return;
             }
+
             if ((targetRequirement == Command.TargetRequirement.OFFLINE) && targetPlayer.isOnline()) {
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_offline");
                 return;
             }
         }
 
+        // Copy player and handler to final properties.
+        final Player targetPlayerF = targetPlayer; // Is there a better way to do this?
+        final CommandHandler handlerF = handler; // Is there a better way to do this?
+
         // Invoke execute method for handler.
-        boolean threading  = this.annotations.get(label).threading();
-        final Player targetPlayerF = targetPlayer;  // Is there a better way to do this?
-        Runnable runnable = () -> handler.execute(player, targetPlayerF, args);
-        if(threading) {
+        Runnable runnable = () -> handlerF.execute(player, targetPlayerF, args);
+        if (annotation.threading()) {
             new Thread(runnable).start();
         } else {
             runnable.run();
@@ -242,10 +284,11 @@ public final class CommandMap {
     private void scan() {
         Reflections reflector = Grasscutter.reflector;
         Set<Class<?>> classes = reflector.getTypesAnnotatedWith(Command.class);
+
         classes.forEach(annotated -> {
             try {
                 Command cmdData = annotated.getAnnotation(Command.class);
-                Object object = annotated.newInstance();
+                Object object = annotated.getDeclaredConstructor().newInstance();
                 if (object instanceof CommandHandler)
                     this.registerCommand(cmdData.label(), (CommandHandler) object);
                 else Grasscutter.getLogger().error("Class " + annotated.getName() + " is not a CommandHandler!");

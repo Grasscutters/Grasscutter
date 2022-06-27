@@ -73,7 +73,7 @@ public class EnergyManager {
                 energyDropData.put(entry.getDropId(), entry.getDropList());
             }
 
-            Grasscutter.getLogger().info("Energy drop data successfully loaded.");
+            Grasscutter.getLogger().debug("Energy drop data successfully loaded.");
         }
         catch (Exception ex) {
             Grasscutter.getLogger().error("Unable to load energy drop data.", ex);
@@ -87,7 +87,7 @@ public class EnergyManager {
                 skillParticleGenerationData.put(entry.getAvatarId(), entry.getAmountList());
             }
 
-            Grasscutter.getLogger().info("Skill particle generation data successfully loaded.");
+            Grasscutter.getLogger().debug("Skill particle generation data successfully loaded.");
         }
         catch (Exception ex) {
             Grasscutter.getLogger().error("Unable to load skill particle generation data data.", ex);
@@ -446,5 +446,10 @@ public class EnergyManager {
 
     public void setEnergyUsage(Boolean energyUsage) {
         this.energyUsage = energyUsage;
+        if (!energyUsage) {  // Refill team energy if usage is disabled
+            for (EntityAvatar entityAvatar : player.getTeamManager().getActiveTeam()) {
+                entityAvatar.addEnergy(1000, PropChangeReason.PROP_CHANGE_REASON_GM,true);
+            }
+        }
     }
 }

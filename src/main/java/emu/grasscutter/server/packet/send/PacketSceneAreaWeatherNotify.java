@@ -12,8 +12,8 @@ public class PacketSceneAreaWeatherNotify extends BasePacket {
 		super(PacketOpcodes.SceneAreaWeatherNotify);
 		
 		SceneAreaWeatherNotify proto = SceneAreaWeatherNotify.newBuilder()
-				.setWeatherAreaId(player.getScene().getWeather())
-				.setClimateType(player.getScene().getClimate().getValue())
+				.setWeatherAreaId(player.getWeatherId())
+				.setClimateType(player.getClimate().getValue())
 				.build();
 		
 		this.setData(proto);

@@ -5,7 +5,9 @@ import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PlayerLevelData;
+import emu.grasscutter.data.excels.WeatherData;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.ability.AbilityManager;
@@ -38,8 +40,10 @@ import emu.grasscutter.game.managers.mapmark.*;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.SceneType;
+import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.tower.TowerData;
@@ -71,7 +75,12 @@ import emu.grasscutter.utils.MessageHandler;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
 
+import java.time.DayOfWeek;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -112,6 +121,8 @@ public class Player {
 	@Transient private int peerId;
 	@Transient private World world;
 	@Transient private Scene scene;
+	@Transient @Getter private int weatherId = 0;
+	@Transient @Getter private ClimateType climate = ClimateType.CLIMATE_SUNNY;
 	@Transient private GameSession session;
 	@Transient private AvatarStorage avatars;
 	@Transient private Inventory inventory;
@@ -120,7 +131,7 @@ public class Player {
 	@Transient private MessageHandler messageHandler;
 	@Transient private AbilityManager abilityManager;
 	@Transient private QuestManager questManager;
-	
+
 	@Transient private SotSManager sotsManager;
 	@Transient private InsectCaptureManager insectCaptureManager;
 
@@ -140,8 +151,8 @@ public class Player {
 	private int regionId;
 	private int mainCharacterId;
 	private boolean godmode;
-
 	private boolean stamina;
+
 	private boolean moonCard;
 	private Date moonCardStartTime;
 	private int moonCardDuration;
@@ -175,6 +186,7 @@ public class Player {
 	private long springLastUsed;
 	private HashMap<String, MapMark> mapMarks;
 	private int nextResinRefresh;
+	private int lastDailyReset;
 
 	@Deprecated
 	@SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
@@ -248,14 +260,14 @@ public class Player {
 		this.teamManager = new TeamManager(this);
 		this.birthday = new PlayerBirthday();
 		this.codex = new PlayerCodex(this);
-		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1);
-		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
-		this.setProperty(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50);
-		this.setProperty(PlayerProperty.PROP_IS_FLYABLE, 1);
-		this.setProperty(PlayerProperty.PROP_IS_TRANSFERABLE, 1);
-		this.setProperty(PlayerProperty.PROP_MAX_STAMINA, 24000);
-		this.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, 24000);
-		this.setProperty(PlayerProperty.PROP_PLAYER_RESIN, 160);
+		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1, false);
+		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1, false);
+		this.setProperty(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50, false);
+		this.setProperty(PlayerProperty.PROP_IS_FLYABLE, 1, false);
+		this.setProperty(PlayerProperty.PROP_IS_TRANSFERABLE, 1, false);
+		this.setProperty(PlayerProperty.PROP_MAX_STAMINA, 24000, false);
+		this.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, 24000, false);
+		this.setProperty(PlayerProperty.PROP_PLAYER_RESIN, 160, false);
 		this.getFlyCloakList().add(140001);
 		this.getNameCardList().add(210001);
 		this.getPos().set(GameConstants.START_POSITION);
@@ -285,7 +297,9 @@ public class Player {
 	}
 
 	public Account getAccount() {
-		return account;
+		if (this.account == null)
+			this.account = DatabaseHelper.getAccountById(Integer.toString(this.id));
+		return this.account;
 	}
 
 	public void setAccount(Account account) {
@@ -322,6 +336,28 @@ public class Player {
 
 	public synchronized void setScene(Scene scene) {
 		this.scene = scene;
+	}
+
+	synchronized public void setClimate(ClimateType climate) {
+		this.climate = climate;
+		this.session.send(new PacketSceneAreaWeatherNotify(this));
+	}
+
+	synchronized public void setWeather(int weather) {
+		this.setWeather(weather, ClimateType.CLIMATE_NONE);
+	}
+
+	synchronized public void setWeather(int weatherId, ClimateType climate) {
+		// Lookup default climate for this weather
+		if (climate == ClimateType.CLIMATE_NONE) {
+			WeatherData w = GameData.getWeatherDataMap().get(weatherId);
+			if (w != null) {
+				climate = w.getDefaultClimate();
+			}
+		}
+		this.weatherId = weatherId;
+		this.climate = climate;
+		this.session.send(new PacketSceneAreaWeatherNotify(this));
 	}
 
 	public int getGmLevel() {
@@ -402,6 +438,15 @@ public class Player {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_LEVEL);
 	}
 
+	public boolean setLevel(int level) {
+		if (this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, level)) {
+			this.updateWorldLevel();
+			this.updateProfile();
+			return true;
+		}
+		return false;
+	}
+
 	public int getExp() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_EXP);
 	}
@@ -410,45 +455,58 @@ public class Player {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL);
 	}
 	
-	public void setWorldLevel(int level) {
-		this.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level);
-		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_WORLD_LEVEL));
+	public boolean setWorldLevel(int level) {
+		if (this.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level)) {
+			if (this.world.getHost() == this)  // Don't update World's WL if we are in someone else's world
+            	this.world.setWorldLevel(level);
+			this.updateProfile();
+			return true;
+		}
+		return false;
+	}
+
+	public int getForgePoints() {
+		return this.getProperty(PlayerProperty.PROP_PLAYER_FORGE_POINT);
+	}
+
+	public boolean setForgePoints(int value) {
+		if (value == this.getForgePoints()) {
+			return true;
+		}
+
+		return this.setProperty(PlayerProperty.PROP_PLAYER_FORGE_POINT, value);
 	}
 
 	public int getPrimogems() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_HCOIN);
 	}
 
-	public void setPrimogems(int primogem) {
-		this.setProperty(PlayerProperty.PROP_PLAYER_HCOIN, primogem);
-		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_HCOIN));
+	public boolean setPrimogems(int primogem) {
+		return this.setProperty(PlayerProperty.PROP_PLAYER_HCOIN, primogem);
 	}
 
 	public int getMora() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_SCOIN);
 	}
 
-	public void setMora(int mora) {
-		this.setProperty(PlayerProperty.PROP_PLAYER_SCOIN, mora);
-		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_SCOIN));
+	public boolean setMora(int mora) {
+		return this.setProperty(PlayerProperty.PROP_PLAYER_SCOIN, mora);
 	}
-	
+
 	public int getCrystals() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_MCOIN);
 	}
 
-	public void setCrystals(int crystals) {
-		this.setProperty(PlayerProperty.PROP_PLAYER_MCOIN, crystals);
-		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_MCOIN));
+	public boolean setCrystals(int crystals) {
+		return this.setProperty(PlayerProperty.PROP_PLAYER_MCOIN, crystals);
 	}
 
 	public int getHomeCoin() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_HOME_COIN);
 	}
 
-	public void setHomeCoin(int coin) {
-		this.setProperty(PlayerProperty.PROP_PLAYER_HOME_COIN, coin);
-		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_HOME_COIN));
+	public boolean setHomeCoin(int coin) {
+		return this.setProperty(PlayerProperty.PROP_PLAYER_HOME_COIN, coin);
 	}
 	private int getExpRequired(int level) {
 		PlayerLevelData levelData = GameData.getPlayerLevelDataMap().get(level);
@@ -481,19 +539,31 @@ public class Player {
 		}
 
 		if (hasLeveledUp) {
-			// Set level property
-			this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, level);
-			// Update social status
-			this.updateProfile();
-			// Update player with packet
-			this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_LEVEL));
+			this.setLevel(level);
 		}
 
 		// Set exp
 		this.setProperty(PlayerProperty.PROP_PLAYER_EXP, exp);
+	}
 
-		// Update player with packet
-		this.sendPacket(new PacketPlayerPropNotify(this, PlayerProperty.PROP_PLAYER_EXP));
+	private void updateWorldLevel() {
+		int currentWorldLevel = this.getWorldLevel();
+		int currentLevel = this.getLevel();
+
+		int newWorldLevel =
+			(currentLevel >= 55) ? 8 :
+			(currentLevel >= 50) ? 7 :
+			(currentLevel >= 45) ? 6 :
+			(currentLevel >= 40) ? 5 :
+			(currentLevel >= 35) ? 4 :
+			(currentLevel >= 30) ? 3 :
+			(currentLevel >= 25) ? 2 :
+			(currentLevel >= 20) ? 1 :
+			0;
+
+		if (newWorldLevel != currentWorldLevel) {
+			this.setWorldLevel(newWorldLevel);
+		}
 	}
 
 	private void updateProfile() {
@@ -507,19 +577,19 @@ public class Player {
 	public TeamManager getTeamManager() {
 		return this.teamManager;
 	}
-	
+
 	public TowerManager getTowerManager() {
 		return towerManager;
 	}
-	
+
 	public TowerData getTowerData() {
-		if(towerData==null){
+		if (towerData == null) {
 			// because of mistake, null may be saved as storage at some machine, this if can be removed in future
 			towerData = new TowerData();
 		}
 		return towerData;
 	}
-	
+
 	public QuestManager getQuestManager() {
 		return questManager;
 	}
@@ -546,7 +616,11 @@ public class Player {
 	}
 
 	public boolean setProperty(PlayerProperty prop, int value) {
-		return setPropertyWithSanityCheck(prop, value);
+		return setPropertyWithSanityCheck(prop, value, true);
+	}
+
+	public boolean setProperty(PlayerProperty prop, int value, boolean sendPacket) {
+		return setPropertyWithSanityCheck(prop, value, sendPacket);
 	}
 
 	public int getProperty(PlayerProperty prop) {
@@ -588,7 +662,7 @@ public class Player {
 	public MpSettingType getMpSetting() {
 		return MpSettingType.MP_SETTING_TYPE_ENTER_AFTER_APPLY; // TEMP
 	}
-	
+
 	public Queue<AttackResult> getAttackResults() {
 		return this.attackResults;
 	}
@@ -741,6 +815,14 @@ public class Player {
 		return showAvatarList;
 	}
 
+	public int getLastDailyReset() {
+		return this.lastDailyReset;
+	}
+
+	public void setLastDailyReset(int value) {
+		this.lastDailyReset = value;
+	}
+
 	public boolean inMoonCard() {
 		return moonCard;
 	}
@@ -783,7 +865,7 @@ public class Player {
 		remainCalendar.add(Calendar.DATE, moonCardDuration);
 		Date theLastDay = remainCalendar.getTime();
 		Date now = DateHelper.onlyYearMonthDay(new Date());
-		return (int) ((theLastDay.getTime() - now.getTime()) / (24 * 60 * 60 * 1000)); // By copilot 
+		return (int) ((theLastDay.getTime() - now.getTime()) / (24 * 60 * 60 * 1000)); // By copilot
 	}
 
 	public void rechargeMoonCard() {
@@ -873,12 +955,10 @@ public class Player {
 		}
 		this.save();
 	}
-	public boolean getStamina() {
-		// Get Stamina
+	public boolean getUnlimitedStamina() {
 		return stamina;
 	}
-	public void setStamina(boolean stamina) {
-		// Set Stamina
+	public void setUnlimitedStamina(boolean stamina) {
 		this.stamina = stamina;
 	}
 	public boolean inGodmode() {
@@ -980,7 +1060,7 @@ public class Player {
 	}
 
 	public Mail getMail(int index) { return this.getMailHandler().getMailById(index); }
-	
+
 	public int getMailId(Mail message) {
 		return this.getMailHandler().getMailIndex(message);
 	}
@@ -988,9 +1068,9 @@ public class Player {
 	public boolean replaceMailByIndex(int index, Mail message) {
 		return this.getMailHandler().replaceMailByIndex(index, message);
 	}
-	
 
-	public void interactWith(int gadgetEntityId, GadgetInteractReq req) {
+
+	public void interactWith(int gadgetEntityId, GadgetInteractReq opType) {
 		GameEntity entity = getScene().getEntityById(gadgetEntityId);
 		if (entity == null) {
 			return;
@@ -1018,13 +1098,13 @@ public class Player {
 				}
 			}
 		} else if (entity instanceof EntityGadget gadget) {
-			
+
 			if (gadget.getContent() == null) {
 				return;
 			}
-			
-			boolean shouldDelete = gadget.getContent().onInteract(this, req);
-			
+
+			boolean shouldDelete = gadget.getContent().onInteract(this, opType);
+
 			if (shouldDelete) {
 				entity.getScene().removeEntity(entity);
 			}
@@ -1168,7 +1248,7 @@ public class Player {
 		}
 		return showAvatarInfoList;
 	}
-	
+
 	public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getWorldPlayerLocationInfo() {
 		return PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.newBuilder()
 				.setSceneId(this.getSceneId())
@@ -1211,10 +1291,11 @@ public class Player {
 	public BattlePassManager getBattlePassManager(){
 		return battlePassManager;
 	}
-	
+
 	public void loadBattlePassManager() {
 		if (this.battlePassManager != null) return;
 		this.battlePassManager = DatabaseHelper.loadBattlePass(this);
+		this.battlePassManager.getMissions().values().removeIf(mission -> mission.getData() == null);
 	}
 
 	public AbilityManager getAbilityManager() {
@@ -1260,6 +1341,10 @@ public class Player {
 				this.resetSendPlayerLocTime();
 			}
 		}
+
+		// Handle daily reset.
+		this.doDailyReset();
+
 		// Expedition
 		var timeNow = Utils.getCurrentSeconds();
 		var needNotify = false;
@@ -1284,8 +1369,32 @@ public class Player {
 		this.getResinManager().rechargeResin();
 	}
 
+	private synchronized void doDailyReset() {
+		// Check if we should execute a daily reset on this tick.
+		int currentTime = Utils.getCurrentSeconds();
 
+		var currentDate = LocalDate.ofInstant(Instant.ofEpochSecond(currentTime), ZoneId.systemDefault());
+		var lastResetDate = LocalDate.ofInstant(Instant.ofEpochSecond(this.getLastDailyReset()), ZoneId.systemDefault());
 
+		if (!currentDate.isAfter(lastResetDate)) {
+			return;
+		}
+
+		// We should - now execute all the resetting logic we need.
+		// Reset forge points.
+		this.setForgePoints(300_000);
+
+		// Reset daily BP missions.
+		this.getBattlePassManager().resetDailyMissions();
+
+		// Reset weekly BP missions.
+		if (currentDate.getDayOfWeek() == DayOfWeek.MONDAY) {
+			this.getBattlePassManager().resetWeeklyMissions();
+		}
+
+		// Done. Update last reset time.
+		this.setLastDailyReset(currentTime);
+	}
 
 	public void resetSendPlayerLocTime() {
 		this.nextSendPlayerLocTime = System.currentTimeMillis() + 5000;
@@ -1301,7 +1410,7 @@ public class Player {
 	public void save() {
 		DatabaseHelper.savePlayer(this);
 	}
-	
+
 	// Called from tokenrsp
 	public void loadFromDatabase() {
 		// Make sure these exist
@@ -1319,7 +1428,7 @@ public class Player {
 		}
 		//Make sure towerManager's player is online player
 		this.getTowerManager().setPlayer(this);
-		
+
 		// Load from db
 		this.getAvatars().loadFromDatabase();
 		this.getInventory().loadFromDatabase();
@@ -1328,7 +1437,7 @@ public class Player {
 		this.getFriendsList().loadFromDatabase();
 		this.getMailHandler().loadFromDatabase();
 		this.getQuestManager().loadFromDatabase();
-		
+
 		this.loadBattlePassManager();
 	}
 
@@ -1341,19 +1450,22 @@ public class Player {
 				quest.finish();
 			}
 			getQuestManager().addQuest(35101);
-			
+
 			this.setSceneId(3);
 			this.getPos().set(GameConstants.START_POSITION);
 		}
 		*/
-		
+
 		// Create world
 		World world = new World(this);
 		world.addPlayer(this);
 
 		// Multiplayer setting
-		this.setProperty(PlayerProperty.PROP_PLAYER_MP_SETTING_TYPE, this.getMpSetting().getNumber());
-		this.setProperty(PlayerProperty.PROP_IS_MP_MODE_AVAILABLE, 1);
+		this.setProperty(PlayerProperty.PROP_PLAYER_MP_SETTING_TYPE, this.getMpSetting().getNumber(), false);
+		this.setProperty(PlayerProperty.PROP_IS_MP_MODE_AVAILABLE, 1, false);
+
+		// Execute daily reset logic if this is a new day.
+		this.doDailyReset();
 
 		// Packets
 		session.send(new PacketPlayerDataNotify(this)); // Player data
@@ -1372,6 +1484,9 @@ public class Player {
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
+		// Battle Pass trigger
+		this.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_LOGIN);
+		
 		this.furnitureManager.onLogin();
 		// Home
 		home = GameHome.getByUid(getUid());
@@ -1383,7 +1498,7 @@ public class Player {
 
 		// First notify packets sent
 		this.setHasSentAvatarDataNotify(true);
-		
+
 		// Set session state
 		session.setState(SessionState.ACTIVE);
 
@@ -1393,7 +1508,7 @@ public class Player {
 			session.close();
 			return;
 		}
-		
+
 		// register
 		getServer().registerPlayer(this);
 		getProfile().setPlayer(this); // Set online
@@ -1425,10 +1540,6 @@ public class Player {
 
 			// Call quit event.
 			PlayerQuitEvent event = new PlayerQuitEvent(this); event.call();
-
-			//reset wood
-			getDeforestationManager().resetWood();
-
 		}catch (Throwable e){
 			e.printStackTrace();
 			Grasscutter.getLogger().warn("Player (UID {}) save failure", getUid());
@@ -1462,101 +1573,41 @@ public class Player {
 		this.messageHandler = messageHandler;
 	}
 
-	private void saveSanityCheckedProperty(PlayerProperty prop, int value) {
-		getProperties().put(prop.getId(), value);
+	public int getPropertyMin(PlayerProperty prop) {
+		if (prop.getDynamicRange()) {
+			return switch (prop) {
+				default -> 0;
+			};
+		} else {
+			return prop.getMin();
+		}
 	}
 
-	private boolean setPropertyWithSanityCheck(PlayerProperty prop, int value) {
-		if (prop == PlayerProperty.PROP_EXP) { // 1001
-			if (!(value >= 0)) { return false; }
-		} else if (prop == PlayerProperty.PROP_BREAK_LEVEL) { // 1002
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_SATIATION_VAL) { // 1003
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_SATIATION_PENALTY_TIME) { // 1004
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_LEVEL) { // 4001
-			if (!(value >= 0 && value <= 90)) { return false; }
-		} else if (prop == PlayerProperty.PROP_LAST_CHANGE_AVATAR_TIME) { // 10001
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_MAX_SPRING_VOLUME) { // 10002
-			if (!(value >= 0 && value <= SotSManager.GlobalMaximumSpringVolume)) { return false; }
-		} else if (prop == PlayerProperty.PROP_CUR_SPRING_VOLUME) { // 10003
-			int playerMaximumSpringVolume = getProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME);
-			if (!(value >= 0 && value <= playerMaximumSpringVolume)) { return false; }
-		} else if (prop == PlayerProperty.PROP_IS_SPRING_AUTO_USE) { // 10004
-			if (!(value >= 0 && value <= 1)) { return false; }
-		} else if (prop == PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT) { // 10005
-			if (!(value >= 0 && value <= 100)) { return false; }
-		} else if (prop == PlayerProperty.PROP_IS_FLYABLE) { // 10006
-			if (!(0 <= value && value <= 1)) { return false; }
-		} else if (prop == PlayerProperty.PROP_IS_WEATHER_LOCKED) { // 10007
-			if (!(0 <= value && value <= 1)) { return false; }
-		} else if (prop == PlayerProperty.PROP_IS_GAME_TIME_LOCKED) { // 10008
-			if (!(0 <= value && value <= 1)) { return false; }
-		} else if (prop == PlayerProperty.PROP_IS_TRANSFERABLE) { // 10009
-			if (!(0 <= value && value <= 1)) { return false; }
-		} else if (prop == PlayerProperty.PROP_MAX_STAMINA) { // 10010
-			if (!(value >= 0 && value <= StaminaManager.GlobalCharacterMaximumStamina)) { return false; }
-		} else if (prop == PlayerProperty.PROP_CUR_PERSIST_STAMINA) { // 10011
-			int playerMaximumStamina = getProperty(PlayerProperty.PROP_MAX_STAMINA);
-			if (!(value >= 0 && value <= playerMaximumStamina)) { return false; }
-		} else if (prop == PlayerProperty.PROP_CUR_TEMPORARY_STAMINA) { // 10012
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_PLAYER_LEVEL) { // 10013
-			if (!(0 < value && value <= 90)) { return false; }
-		} else if (prop == PlayerProperty.PROP_PLAYER_EXP) { // 10014
-			if (!(0 <= value)) { return false; }
-		} else if (prop == PlayerProperty.PROP_PLAYER_HCOIN) { // 10015
-			// see PlayerProperty.PROP_PLAYER_HCOIN comments
-		} else if (prop == PlayerProperty.PROP_PLAYER_SCOIN) { // 10016
-			// See 10015
-		} else if (prop == PlayerProperty.PROP_PLAYER_MP_SETTING_TYPE) { // 10017
-			if (!(0 <= value && value <= 2)) { return false; }
-		} else if (prop == PlayerProperty.PROP_IS_MP_MODE_AVAILABLE) { // 10018
-			if (!(0 <= value && value <= 1)) { return false; }
-		} else if (prop == PlayerProperty.PROP_PLAYER_WORLD_LEVEL) { // 10019
-			if (!(0 <= value && value <= 8)) { return false; }
-		} else if (prop == PlayerProperty.PROP_PLAYER_RESIN) { // 10020
-			// Do not set 160 as a cap, because player can have more than 160 when they use fragile resin.
-			if (!(0 <= value)) { return false; }
-		} else if (prop == PlayerProperty.PROP_PLAYER_WAIT_SUB_HCOIN) { // 10022
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_PLAYER_WAIT_SUB_SCOIN) { // 10023
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_IS_ONLY_MP_WITH_PS_PLAYER) { // 10024
-			if (!(0 <= value && value <= 1)) { return false; }
-		} else if (prop == PlayerProperty.PROP_PLAYER_MCOIN) { // 10025
-			// see 10015
-		} else if (prop == PlayerProperty.PROP_PLAYER_WAIT_SUB_MCOIN) { // 10026
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_PLAYER_LEGENDARY_KEY) { // 10027
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_IS_HAS_FIRST_SHARE) { // 10028
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_PLAYER_FORGE_POINT) { // 10029
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_CUR_CLIMATE_METER) { // 10035
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_CUR_CLIMATE_TYPE) { // 10036
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_CUR_CLIMATE_AREA_ID) { // 10037
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_CUR_CLIMATE_AREA_CLIMATE_TYPE) { // 10038
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_PLAYER_WORLD_LEVEL_LIMIT) { // 10039
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_PLAYER_WORLD_LEVEL_ADJUST_CD) { // 10040
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_PLAYER_LEGENDARY_DAILY_TASK_NUM) { // 10041
-			// TODO: implement sanity check
-		} else if (prop == PlayerProperty.PROP_PLAYER_HOME_COIN) { // 10042
-			if (!(0 <= value)) { return false; }
-		} else if (prop == PlayerProperty.PROP_PLAYER_WAIT_SUB_HOME_COIN) { // 10043
-			// TODO: implement sanity check
+	public int getPropertyMax(PlayerProperty prop) {
+		if (prop.getDynamicRange()) {
+			return switch (prop) {
+				case PROP_CUR_SPRING_VOLUME -> getProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME);
+				case PROP_CUR_PERSIST_STAMINA -> getProperty(PlayerProperty.PROP_MAX_STAMINA);
+				default -> 0;
+			};
+		} else {
+			return prop.getMax();
 		}
-		saveSanityCheckedProperty(prop, value);
+	}
+
+	private boolean setPropertyWithSanityCheck(PlayerProperty prop, int value, boolean sendPacket) {
+		int min = this.getPropertyMin(prop);
+		int max = this.getPropertyMax(prop);
+		if (min <= value && value <= max) {
+			this.properties.put(prop.getId(), value);
+			if (sendPacket) {
+				// Update player with packet
+				this.sendPacket(new PacketPlayerPropNotify(this, prop));
+			}
+			return true;
+		} else {
 		return false;
+	}
 	}
 
 }

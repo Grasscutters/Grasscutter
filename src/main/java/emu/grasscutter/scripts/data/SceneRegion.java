@@ -1,33 +1,34 @@
 package emu.grasscutter.scripts.data;
 
-import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.scripts.constants.ScriptRegionShape;
 import emu.grasscutter.utils.Position;
-import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import it.unimi.dsi.fastutil.ints.IntSet;
 import lombok.Setter;
-import lombok.ToString;
 
-@ToString
+
 @Setter
 public class SceneRegion {
-    public int config_id;
-    public int shape;
-    public Position pos;
-    public Position size;
-    public SceneGroup group;
+	public int config_id;
+	public int shape;
+	public Position pos;
+    // for CUBIC
+	public Position size;
+    // for SPHERE
+    public int radius;
 
-    private boolean hasNewEntities;
+    public transient SceneGroup group;
+	public boolean contains(Position position) {
+		switch (shape) {
+			case ScriptRegionShape.CUBIC:
+				return (Math.abs(pos.getX() - position.getX()) <= size.getX()) &&
+				       (Math.abs(pos.getY() - position.getY()) <= size.getY()) &&
+				       (Math.abs(pos.getZ() - position.getZ()) <= size.getZ());
+			case ScriptRegionShape.SPHERE:
+                var x = Math.pow(pos.getX() - position.getX(), 2);
+                var y = Math.pow(pos.getY() - position.getY(), 2);
+                var z = Math.pow(pos.getZ() - position.getZ(), 2);
+				return x + y + z <= (radius ^ 2);
+		}
+		return false;
+	}
 
-    public boolean contains(Position p) {
-        switch (this.shape) {
-            case ScriptRegionShape.CUBIC:
-                return (Math.abs(this.pos.getX() - p.getX()) <= this.size.getX()) &&
-                    (Math.abs(this.pos.getZ() - p.getZ()) <= this.size.getZ());
-            case ScriptRegionShape.SPHERE:
-                return false;
-        }
-
-        return false;
-    }
 }
