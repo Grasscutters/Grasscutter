@@ -8,6 +8,6 @@ import "FireworkSetData.proto";
 // EnetChannelId: 0
 // EnetIsReliable: true
 message FireworkSetNotify {
-	uint32 EFAEGBLFBBP = 1;
-	repeated FireworkSetData GBNIPCKFHMO = 9;
+	uint32 code = 1;
+	repeated FireworkSetData data = 9;
 }

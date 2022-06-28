@@ -13,7 +13,7 @@ public class PacketFireworkSetNotify extends BasePacket {
         var proto
                 = FireworkSetNotifyOuterClass.FireworkSetNotify.newBuilder();
 
-        proto.setEFAEGBLFBBP(1).addGBNIPCKFHMO(notify);
+        proto.setcode(1).adddata(notify);
 
         setData(proto.build());
     }
