@@ -1387,6 +1387,10 @@ public class Player {
 		// Reset daily BP missions.
 		this.getBattlePassManager().resetDailyMissions();
 
+		// Trigger login BP mission, so players who are online during the reset
+		// don't have to relog to clear the mission.
+		this.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_LOGIN);
+
 		// Reset weekly BP missions.
 		if (currentDate.getDayOfWeek() == DayOfWeek.MONDAY) {
 			this.getBattlePassManager().resetWeeklyMissions();
