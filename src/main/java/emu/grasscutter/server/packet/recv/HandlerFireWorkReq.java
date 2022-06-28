@@ -15,7 +15,7 @@ public class HandlerFireWorkReq extends PacketHandler {
 
         var req
                 = FireWorkReqOuterClass.FireWorkReq.parseFrom(payload);
-        session.send(new PacketFireworkNotify(req.getIJFDDIJBPHG()));
+        session.send(new PacketFireworkNotify(req.getfireWorkData()));
         session.send(new PacketFireworkRsp());
     }
 }

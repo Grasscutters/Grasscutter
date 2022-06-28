@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+enum FireWorkType {
+	FireWorkType_ODJKANKMPPJ = 0;
+	FireWorkType_EFGLHEIODFN = 1;
+	FireWorkType_JPBBBCFGHAK = 2;
+	FireWorkType_IDCMGHBHBFH = 3;
+	FireWorkType_ODDBNNDFMBO = 4;
+	FireWorkType_AGIDMOGJOBD = 5;
+}

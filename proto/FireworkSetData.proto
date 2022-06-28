@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FireWorkInstance.proto";
+
+message FireworkSetData {
+	uint32 id = 1;
+	repeated uint32 _unknown_field_ = 2;
+	repeated FireWorkInstance fireWorkInstance = 3;
+}

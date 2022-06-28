@@ -2,9 +2,9 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "EAJCGENDICI.proto";
+import "FireWorkType.proto";
 
-message MLMEFKLMOEF {
-	EAJCGENDICI type = 1;
+message FireWorkInstance {
+	FireWorkType type = 1;
 	int32 value = 2;
 }

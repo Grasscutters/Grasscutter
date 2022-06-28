@@ -17,7 +17,7 @@ public class HandlerFireworkSetReq extends PacketHandler {
                 = FireworkSetReqOuterClass.FireworkSetReq.parseFrom(payload);
 
 
-        session.send(new PacketFireworkSetNotify(req.getDKKEALCLCMM()));
+        session.send(new PacketFireworkSetNotify(req.getData()));
         session.send(new PacketFireworkSetRsp());
     }
 }
