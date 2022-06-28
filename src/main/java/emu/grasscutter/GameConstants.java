@@ -22,6 +22,7 @@ public final class GameConstants {
 	public static final int BATTLE_PASS_POINT_PER_LEVEL = 1000;
 	public static final int BATTLE_PASS_POINT_PER_WEEK = 10000;
 	public static final int BATTLE_PASS_LEVEL_PRICE = 150;
+	public static final int BATTLE_PASS_CURRENT_INDEX = 2;
 	
 	// Default entity ability hashes.
 	public static final String[] DEFAULT_ABILITY_STRINGS = {

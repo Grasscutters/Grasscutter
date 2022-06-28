@@ -49,7 +49,11 @@
       "create_resources": "Tworzenie folderu resources...",
       "resources_error": "Umieść kopię 'BinOutput' i 'ExcelBinOutput' w folderze resources.",
       "version": "Grasscutter versión: %s-%s",
-      "game_version": "Game versión: %s"
+      "game_version": "Game versión: %s",
+      "resources": {
+        "loading": "Loading resources...",
+        "finish": "Finished loading resources."
+      }
     }
   },
   "commands": {

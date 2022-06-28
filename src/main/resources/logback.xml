@@ -6,6 +6,7 @@
       <pattern>%d{HH:mm:ss} &lt;%highlight(%level):%gray(%class{0})&gt; %msg%n</pattern>
     </encoder>
   </appender>
+
   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>logs/latest.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -16,13 +17,18 @@
       <pattern>%d{yyyy-MM-dd'T'HH:mm:ss'Z'} &lt;%level:%class&gt; %m%n</pattern>
     </encoder>
   </appender>
+
   <appender name="SERVEREVENT" class="emu.grasscutter.utils.ServerLogEventAppender">
     <encoder>
       <pattern>%d{HH:mm:ss} &lt;%highlight(%level):%gray(%class{0})&gt; %msg%n</pattern>
     </encoder>
   </appender>
 
+  <logger name="express" level="OFF" />
+  <logger name="org.quartz" level="OFF" />
   <logger name="org.reflections" level="OFF" />
+  <logger name="org.eclipse.jetty" level="OFF" />
+
   <logger name="emu.grasscutter" level="${LOG_LEVEL}" />
 
   <root level="INFO">
