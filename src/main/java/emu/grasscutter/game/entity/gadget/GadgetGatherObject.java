@@ -1,7 +1,7 @@
 package emu.grasscutter.game.entity.gadget;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.GatherData;
+import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.inventory.GameItem;
@@ -9,24 +9,22 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo;
+import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
+import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 
-public class GadgetGatherPoint extends GadgetContent {
+public class GadgetGatherObject extends GadgetContent {
 	private int itemId;
 	private boolean isForbidGuest;
 	
-	public GadgetGatherPoint(EntityGadget gadget) {
+	public GadgetGatherObject(EntityGadget gadget) {
 		super(gadget);
 		
 		if (gadget.getSpawnEntry() != null) {
 			this.itemId = gadget.getSpawnEntry().getGatherItemId();
-		} else {
-			GatherData gatherData = GameData.getGatherDataMap().get(gadget.getPointType());
-			this.itemId = gatherData.getItemId();
-			this.isForbidGuest = gatherData.isForbidGuest();
 		}
 	}
 	
@@ -39,10 +37,17 @@ public class GadgetGatherPoint extends GadgetContent {
 	}
 
 	public boolean onInteract(Player player, GadgetInteractReq req) {
-		GameItem item = new GameItem(getItemId(), 1);
-		
+		// Sanity check
+		ItemData itemData = GameData.getItemDataMap().get(getItemId());
+		if (itemData == null) {
+			return false;
+		}
+
+		GameItem item = new GameItem(itemData, 1);
 		player.getInventory().addItem(item, ActionReason.Gather);
 		
+		getGadget().getScene().broadcastPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_GATHER));
+
 		return true;
 	}
 

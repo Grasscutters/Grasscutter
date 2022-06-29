@@ -135,9 +135,20 @@ public class Position implements Serializable {
 	}
 
 	public boolean equal2d(Position other) {
-		return getX() == other.getX() && getY() == other.getY();
+		// Y is height
+		return getX() == other.getX() && getZ() == other.getZ();
 	}
-	
+
+	public boolean equal3d(Position other) {
+		return getX() == other.getX() && getY() == other.getY() && getZ() == other.getZ();
+	}
+
+	public double computeDistance(Position b){
+		double detX = getX()-b.getX();
+		double detY = getY()-b.getY();
+		double detZ = getZ()-b.getZ();
+		return Math.sqrt(detX*detX+detY*detY+detZ*detZ);
+	}
 	public Position translateWithDegrees(float dist, float angle) {
 		angle = (float) Math.toRadians(angle);
 		this.x += dist * Math.sin(angle);

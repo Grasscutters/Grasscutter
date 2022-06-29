@@ -8,12 +8,14 @@ import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.World;
+import emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.utils.Position;
+import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -122,6 +124,16 @@ public abstract class GameEntity {
 	
 	public float getFightProperty(FightProperty prop) {
 		return getFightProperties().getOrDefault(prop.getId(), 0f);
+	}
+	
+	public void addAllFightPropsToEntityInfo(SceneEntityInfo.Builder entityInfo) {
+		for (Int2FloatMap.Entry entry : getFightProperties().int2FloatEntrySet()) {
+			if (entry.getIntKey() == 0) {
+				continue;
+			}
+			FightPropPair fightProp = FightPropPair.newBuilder().setPropType(entry.getIntKey()).setPropValue(entry.getFloatValue()).build();
+			entityInfo.addFightPropList(fightProp);
+		}
 	}
 	
 	public int getBlockId() {
