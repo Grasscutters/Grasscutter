@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FireWorkData.proto";
+
+// CmdId: 6079
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FireWorkNotify {
+	repeated FireWorkData fireWorkData = 1;
+}

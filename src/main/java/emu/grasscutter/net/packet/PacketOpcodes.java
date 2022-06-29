@@ -471,6 +471,12 @@ public class PacketOpcodes {
     public static final int FinishedParentQuestUpdateNotify = 432;
     public static final int FinishMainCoopReq = 1978;
     public static final int FinishMainCoopRsp = 1953;
+    public static final int FireworkReq = 6068;
+    public static final int FireworkNotify = 6079;
+    public static final int FireworkRsp = 5918;
+    public static final int FireworkSetReq = 6099;
+    public static final int FireworkSetNotify = 5934;
+    public static final int FireworkSetRsp = 5969;
     public static final int FishAttractNotify = 5846;
     public static final int FishBaitGoneNotify = 5827;
     public static final int FishBattleBeginReq = 5802;
@@ -909,6 +915,11 @@ public class PacketOpcodes {
     public static final int MusicGameSettleRsp = 8288;
     public static final int MusicGameStartReq = 8927;
     public static final int MusicGameStartRsp = 8101;
+    public static final int MusicCustomReq = 6318;
+    public static final int MusicCustomRsp = 6309;
+    public static final int MusicGameStoreSubmitReq = 6326;
+    public static final int MusicGameStoreSubmitRsp = 6347;
+    public static final int MusicGameStoreSubmitNotify = 6337;
     public static final int MusicGameStartToPlayOthersBeatmapReq = 6302;
     public static final int MusicGameStartToPlayOthersBeatmapRsp = 6313;
     public static final int NavMeshStatsNotify = 2387;

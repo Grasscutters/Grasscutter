@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "FireworkSetData.proto";
+
+// CmdId: 5934
+// EnetChannelId: 0
+// EnetIsReliable: true
+message FireworkSetNotify {
+	uint32 code = 1;
+	repeated FireworkSetData data = 9;
+}
