@@ -5,10 +5,7 @@ import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.google.gson.annotations.JsonAdapter;
-import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.loot.LootContext;
-import emu.grasscutter.loot.LootEntry;
-import emu.grasscutter.loot.function.LootFunction;
 
 import java.lang.reflect.Type;
 import java.util.Map;

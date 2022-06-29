@@ -1,5 +1,7 @@
 package emu.grasscutter.loot.number;
 
+import emu.grasscutter.loot.LootContext;
+
 public class BinomialNumberProvider implements NumberProvider {
 
     private NumberProvider n;
@@ -16,7 +18,7 @@ public class BinomialNumberProvider implements NumberProvider {
     }
 
     @Override
-    public Number roll() {
+    public Number roll(LootContext ctx) {
         Number n = this.n.roll();
         Number p = this.p.roll();
 

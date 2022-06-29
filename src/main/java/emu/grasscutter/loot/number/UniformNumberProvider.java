@@ -1,5 +1,6 @@
 package emu.grasscutter.loot.number;
 
+import emu.grasscutter.loot.LootContext;
 import emu.grasscutter.utils.Utils;
 
 public class UniformNumberProvider implements NumberProvider {
@@ -18,7 +19,7 @@ public class UniformNumberProvider implements NumberProvider {
     }
 
     @Override
-    public Number roll() {
+    public Number roll(LootContext ctx) {
         return Utils.randomRange(min.roll().intValue(), max.roll().intValue());
     }
 }

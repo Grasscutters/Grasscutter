@@ -18,9 +18,10 @@ public class LootTable {
 
     public List<GameItem> loot(LootContext ctx) {
         ArrayList<GameItem> rst = new ArrayList<>();
+        Arrays.stream(functions).filter(LootFunction::hasSideEffect).forEach(f -> f.run(ctx, null));
         for (var pool : pools) {
             List<GameItem> gi = pool.loot(ctx, this);
-            gi.forEach(e -> Arrays.stream(functions).forEach(f -> f.run(null, e)));
+            gi.forEach(e -> Arrays.stream(functions).filter(LootFunction::isItemModifier).forEach(f -> f.run(ctx, e)));
             rst.addAll(gi);
         }
         return rst;

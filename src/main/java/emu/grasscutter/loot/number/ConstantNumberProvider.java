@@ -1,5 +1,7 @@
 package emu.grasscutter.loot.number;
 
+import emu.grasscutter.loot.LootContext;
+
 public class ConstantNumberProvider implements NumberProvider {
 
     private Number value;
@@ -14,7 +16,7 @@ public class ConstantNumberProvider implements NumberProvider {
     }
 
     @Override
-    public Number roll() {
+    public Number roll(LootContext ctx) {
         return value;
     }
 }

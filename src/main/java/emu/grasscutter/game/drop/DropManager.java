@@ -69,10 +69,11 @@ public class DropManager {
         }
     }
 
+    private final LootContext ctx = new LootContext();
+
     public void callDrop(EntityMonster em) {
         int id = em.getMonsterData().getId();
         LootTable lt = lootTables.getLootTable(id);
-        LootContext ctx = new LootContext();
         ctx.victim = em;
 
         lt.loot(ctx).forEach(e -> processDrop(e, em, null));
