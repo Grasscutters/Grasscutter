@@ -1,16 +1,14 @@
 package emu.grasscutter.game.gacha;
 
-import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.Account;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.loot.LootRegistry;
+import emu.grasscutter.loot.LootTable;
 import emu.grasscutter.net.proto.GachaInfoOuterClass.GachaInfo;
 import emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfo;
 import emu.grasscutter.utils.Utils;
 
 import static emu.grasscutter.Configuration.*;
-
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.common.ItemParamData;
 
 public class GachaBanner {
 	private int gachaType;
@@ -48,8 +46,16 @@ public class GachaBanner {
 	private int eventChance = -1;
 	private int costItem = 0;
 	private int wishMaxProgress = 2;
-	
-	public int getGachaType() {
+
+    private String lootTable;
+    private transient LootTable lootTableObject;
+    public LootTable getLootTable() {
+        if (lootTable == null) return null;
+        if (lootTableObject == null) lootTableObject = LootRegistry.loadTableFromDisk(lootTable);
+        return lootTableObject;
+    }
+
+    public int getGachaType() {
 		return gachaType;
 	}
 
@@ -138,11 +144,11 @@ public class GachaBanner {
 			default -> (eventChance > -1) ? eventChance : eventChance5;
 		};
 	}
-	
+
 	public GachaInfo toProto(Player player) {
 		// TODO: use other Nonce/key insteadof session key to ensure the overall security for the player
 		String sessionKey = player.getAccount().getSessionKey();
-		
+
 		String record = "http" + (HTTP_ENCRYPTION.useInRouting ? "s" : "") + "://"
 						+ lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress) + ":"
 						+ lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort)
@@ -185,34 +191,34 @@ public class GachaBanner {
 		if (this.getTitlePath() != null) {
 			info.setTitleTextmap(this.getTitlePath());
 		}
-		
+
 		if (this.getRateUpItems5().length > 0) {
 			GachaUpInfo.Builder upInfo = GachaUpInfo.newBuilder().setItemParentType(1);
-			
+
 			for (int id : getRateUpItems5()) {
 				upInfo.addItemIdList(id);
 				info.addDisplayUp5ItemList(id);
 			}
-			
+
 			info.addGachaUpInfoList(upInfo);
 		}
-		
+
 		if (this.getRateUpItems4().length > 0) {
 			GachaUpInfo.Builder upInfo = GachaUpInfo.newBuilder().setItemParentType(2);
-			
+
 			for (int id : getRateUpItems4()) {
 				upInfo.addItemIdList(id);
 				if (info.getDisplayUp4ItemListCount() == 0) {
 					info.addDisplayUp4ItemList(id);
 				}
 			}
-			
+
 			info.addGachaUpInfoList(upInfo);
 		}
-		
+
 		return info.build();
 	}
-	
+
 	public enum BannerType {
 		STANDARD, EVENT, WEAPON;
 	}

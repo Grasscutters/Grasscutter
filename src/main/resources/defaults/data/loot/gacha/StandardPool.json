@@ -1,0 +1,84 @@
+{
+    "functions": [
+        {
+            "function": "inc_data",
+            "name": "pity_standard_5star",
+            "value": 1
+        },
+        {
+            "function": "inc_data",
+            "name": "pity_standard_4star",
+            "value": 1
+        },
+        {
+            "function": "inc_data",
+            "name": "pity2_standard_5star_avatar",
+            "value": 1
+        },
+        {
+            "function": "inc_data",
+            "name": "pity2_standard_5star_weapon",
+            "value": 1
+        },
+        {
+            "function": "inc_data",
+            "name": "pity2_standard_4star_avatar",
+            "value": 1
+        },
+        {
+            "function": "inc_data",
+            "name": "pity2_standard_4star_weapon",
+            "value": 1
+        }
+    ],
+    "pools": [
+        {
+            "maxWeight": 10000,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "gacha/Standard_5Star.json",
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "name": "pity_standard_5star",
+                            "value": 0
+                        }
+                    ],
+                    "weight": {
+                        "type": "lerp",
+                        "coords": [[1,75], [73,150], [90,10000]],
+                        "value": {
+                            "type": "get_data",
+                            "name": "pity_standard_5star"
+                        }
+                    }
+                },
+                {
+                    "type": "loot_table",
+                    "name": "gacha/Standard_4Star.json",
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "name": "pity_standard_4star",
+                            "value": 0
+                        }
+                    ],
+                    "weight": {
+                        "type": "lerp",
+                        "coords": [[1,510], [8,510], [10,10000]],
+                        "value": {
+                            "type": "get_data",
+                            "name": "pity_standard_4star"
+                        }
+                    }
+                },
+                {
+                    "type": "loot_table",
+                    "name": "gacha/Standard_3Star.json",
+                    "weight": 9430
+                }
+            ]
+        }
+    ]
+}
