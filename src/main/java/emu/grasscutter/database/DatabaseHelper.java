@@ -10,6 +10,8 @@ import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.activity.PlayerActivityData;
+import emu.grasscutter.game.activity.musicgame.MusicGameBeatmap;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.battlepass.BattlePassManager;
 import emu.grasscutter.game.friends.Friendship;
@@ -326,4 +328,23 @@ public final class DatabaseHelper {
 	public static void saveBattlePass(BattlePassManager manager) {
 		DatabaseManager.getGameDatastore().save(manager);
 	}
+
+    public static PlayerActivityData getPlayerActivityData(int uid, int activityId) {
+        return DatabaseManager.getGameDatastore().find(PlayerActivityData.class)
+            .filter(Filters.and(Filters.eq("uid", uid),Filters.eq("activityId", activityId)))
+            .first();
+    }
+
+    public static void savePlayerActivityData(PlayerActivityData playerActivityData) {
+        DatabaseManager.getGameDatastore().save(playerActivityData);
+    }
+    public static MusicGameBeatmap getMusicGameBeatmap(long musicShareId) {
+        return DatabaseManager.getGameDatastore().find(MusicGameBeatmap.class)
+            .filter(Filters.eq("musicShareId", musicShareId))
+            .first();
+    }
+
+    public static void saveMusicGameBeatmap(MusicGameBeatmap musicGameBeatmap) {
+        DatabaseManager.getGameDatastore().save(musicGameBeatmap);
+    }
 }

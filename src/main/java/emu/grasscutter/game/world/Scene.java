@@ -217,7 +217,7 @@ public class Scene {
 		getPlayers().add(player);
 		player.setSceneId(this.getId());
 		player.setScene(this);
-		
+
 		this.setupPlayerAvatars(player);
 	}
 	
@@ -428,13 +428,22 @@ public class Scene {
 		}
 	}
 	
+	public int getEntityLevel(int baseLevel, int worldLevelOverride) {
+		int level = worldLevelOverride > 0 ? worldLevelOverride + baseLevel - 22 : baseLevel;
+		level = level >= 100 ? 100 : level;
+		level = level <= 0 ? 1 : level;
+		
+		return level;
+	}
+
 	// TODO - Test
-	public void checkSpawns() {
+	public synchronized void checkSpawns() {
 		SpatialIndex<SpawnGroupEntry> list = GameDepot.getSpawnListById(this.getId());
 		Set<SpawnDataEntry> visible = new HashSet<>();
-		
+
 		for (Player player : this.getPlayers()) {
 			int RANGE = 100;
+
 			Collection<SpawnGroupEntry> entries = list.query(
 				new double[] {player.getPos().getX() - RANGE, player.getPos().getZ() - RANGE}, 
 				new double[] {player.getPos().getX() + RANGE, player.getPos().getZ() + RANGE}
@@ -460,29 +469,45 @@ public class Scene {
 		List<GameEntity> toRemove = new LinkedList<>();
 		
 		for (SpawnDataEntry entry : visible) {
+			// If spawn entry is in our view and hasnt been spawned/killed yet, we should spawn it
 			if (!this.getSpawnedEntities().contains(entry) && !this.getDeadSpawnedEntities().contains(entry)) {
-				// Spawn entity
-				MonsterData data = GameData.getMonsterDataMap().get(entry.getMonsterId());
+				// Entity object holder
+				GameEntity entity = null;
 				
-				if (data == null) {
-					continue;
+				// Check if spawn entry is monster or gadget
+				if (entry.getMonsterId() > 0) {
+					MonsterData data = GameData.getMonsterDataMap().get(entry.getMonsterId());
+					if (data == null) continue;
+
+					int level = this.getEntityLevel(entry.getLevel(), worldLevelOverride);
+					
+					EntityMonster monster = new EntityMonster(this, data, entry.getPos(), level);
+					monster.getRotation().set(entry.getRot());
+					monster.setGroupId(entry.getGroup().getGroupId());
+					monster.setPoseId(entry.getPoseId());
+					monster.setConfigId(entry.getConfigId());
+					monster.setSpawnEntry(entry);
+					
+					entity = monster;
+				} else if (entry.getGadgetId() > 0) {
+					EntityGadget gadget = new EntityGadget(this, entry.getGadgetId(), entry.getPos(), entry.getRot());
+					gadget.setGroupId(entry.getGroup().getGroupId());
+					gadget.setConfigId(entry.getConfigId());
+					gadget.setSpawnEntry(entry);
+					gadget.buildContent();
+					
+					gadget.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, 99999);
+					gadget.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 99999);
+					gadget.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, 99999);
+					
+					entity = gadget;
 				}
 				
-				int level = worldLevelOverride > 0 ? worldLevelOverride + entry.getLevel() - 22 : entry.getLevel();
-				level = level >= 100 ? 100 : level;
-				level = level <= 0 ? 1 : level;
+				if (entity == null) continue;
 				
-				EntityMonster entity = new EntityMonster(this, data, entry.getPos(), level);
-				entity.getRotation().set(entry.getRot());
-				entity.setGroupId(entry.getGroup().getGroupId());
-				entity.setPoseId(entry.getPoseId());
-				entity.setConfigId(entry.getConfigId());
-				entity.setSpawnEntry(entry);
-				
+				// Add to scene and spawned list
 				toAdd.add(entity);
-				
-				// Add to spawned list
-				this.getSpawnedEntities().add(entry);
+				getSpawnedEntities().add(entry);
 			}
 		}
 		

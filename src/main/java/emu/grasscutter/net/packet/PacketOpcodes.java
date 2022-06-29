@@ -905,6 +905,12 @@ public class PacketOpcodes {
     public static final int MultistagePlayInfoNotify = 5309;
     public static final int MultistagePlaySettleNotify = 5314;
     public static final int MultistagePlayStageEndNotify = 5340;
+    public static final int MusicGameCreateBeatmapReq = 6326;
+    public static final int MusicGameCreateBeatmapRsp = 6347;
+    public static final int MusicGameGetBeatmapReq = 6318;
+    public static final int MusicGameGetBeatmapRsp = 6309;
+    public static final int MusicGameSearchBeatmapReq = 6343;
+    public static final int MusicGameSearchBeatmapRsp = 6304;
     public static final int MusicGameSettleReq = 8745;
     public static final int MusicGameSettleRsp = 8288;
     public static final int MusicGameStartReq = 8927;
@@ -914,6 +920,8 @@ public class PacketOpcodes {
     public static final int MusicGameStoreSubmitReq = 6326;
     public static final int MusicGameStoreSubmitRsp = 6347;
     public static final int MusicGameStoreSubmitNotify = 6337;
+    public static final int MusicGameStartToPlayOthersBeatmapReq = 6302;
+    public static final int MusicGameStartToPlayOthersBeatmapRsp = 6313;
     public static final int NavMeshStatsNotify = 2387;
     public static final int NormalUidOpNotify = 5718;
     public static final int NpcTalkReq = 509;

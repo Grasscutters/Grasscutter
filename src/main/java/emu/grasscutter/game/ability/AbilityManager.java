@@ -16,8 +16,11 @@ import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
+import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.entity.gadget.GadgetGatherObject;
+import emu.grasscutter.game.entity.gadget.GadgetGatherPoint;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall;
@@ -98,13 +101,9 @@ public class AbilityManager {
 	}
 	
 	private void handleModifierChange(AbilityInvokeEntry invoke) throws Exception {
+		// Sanity checks
 		GameEntity target = player.getScene().getEntityById(invoke.getEntityId());
 		if (target == null) {
-			return;
-		}
-		
-		AbilityInvokeEntryHead head = invoke.getHead();
-		if (head == null) {
 			return;
 		}
 		
@@ -113,11 +112,25 @@ public class AbilityManager {
 			return;
 		}
 		
+		// Destroying rocks
+		if (target instanceof EntityGadget targetGadget && targetGadget.getContent() instanceof GadgetGatherObject gatherObject) {
+			if (data.getAction() == ModifierAction.REMOVED) {
+				gatherObject.dropItems(this.getPlayer());
+				return;
+			}
+        }
+		
+		// Sanity checks
+		AbilityInvokeEntryHead head = invoke.getHead();
+		if (head == null) {
+			return;
+		}
+		
 		GameEntity sourceEntity = player.getScene().getEntityById(data.getApplyEntityId());
 		if (sourceEntity == null) {
 			return;
 		}
-
+		
 		// This is not how it works but we will keep it for now since healing abilities dont work properly anyways
 		if (data.getAction() == ModifierAction.ADDED && data.getParentAbilityName() != null) {
 			// Handle add modifier here
@@ -133,6 +146,7 @@ public class AbilityManager {
 			// Add to meta modifier list
 			target.getMetaModifiers().put(head.getInstancedModifierId(), modifierString);
 		} else if (data.getAction() == ModifierAction.REMOVED) {
+			// Handle remove modifier
 			String modifierString = target.getMetaModifiers().get(head.getInstancedModifierId());
 			
 			if (modifierString != null) {
