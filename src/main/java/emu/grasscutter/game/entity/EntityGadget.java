@@ -8,11 +8,13 @@ import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
 import emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
+import emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.PropPairOuterClass.PropPair;
 import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType;
@@ -27,6 +29,7 @@ import emu.grasscutter.server.packet.send.PacketGadgetStateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
+import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import lombok.ToString;
 
@@ -40,19 +43,24 @@ public class EntityGadget extends EntityBaseGadget {
 	private int state;
 	private int pointType;
 	private GadgetContent content;
+	private Int2FloatOpenHashMap fightProp;
 	private SceneGadget metaGadget;
-
-	public EntityGadget(Scene scene, int gadgetId, Position pos) {
+	
+	public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot) {
 		super(scene);
 		this.data = GameData.getGadgetDataMap().get(gadgetId);
 		this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
 		this.gadgetId = gadgetId;
 		this.pos = pos.clone();
-		this.rot = new Position();
+		this.rot = rot != null ? rot.clone() : new Position();
 	}
-	
-	public EntityGadget(Scene scene, int gadgetId, Position pos, GadgetContent content) {
-		this(scene, gadgetId, pos);
+
+	public EntityGadget(Scene scene, int gadgetId, Position pos) {
+		this(scene, gadgetId, pos, new Position());
+	}
+
+	public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content) {
+		this(scene, gadgetId, pos, rot);
 		this.content = content;
 	}
 	
@@ -126,6 +134,7 @@ public class EntityGadget extends EntityBaseGadget {
 		EntityType type = getGadgetData().getType();
 		GadgetContent content = switch (type) {
 			case GatherPoint -> new GadgetGatherPoint(this);
+			case GatherObject -> new GadgetGatherObject(this);
 			case Worktop -> new GadgetWorktop(this);
 			case RewardStatue -> new GadgetRewardStatue(this);
 			case Chest -> new GadgetChest(this);
@@ -137,7 +146,8 @@ public class EntityGadget extends EntityBaseGadget {
 
 	@Override
 	public Int2FloatOpenHashMap getFightProperties() {
-		return null;
+		if (this.fightProp == null) this.fightProp = new Int2FloatOpenHashMap();
+		return this.fightProp;
 	}
 	
 	@Override
@@ -148,7 +158,10 @@ public class EntityGadget extends EntityBaseGadget {
 
 	@Override
 	public void onDeath(int killerId) {
-		if(getScene().getChallenge() != null){
+		if (this.getSpawnEntry() != null) {
+			this.getScene().getDeadSpawnedEntities().add(getSpawnEntry());
+		}
+		if (getScene().getChallenge() != null) {
 			getScene().getChallenge().onGadgetDeath(this);
 		}
 		getScene().getScriptManager().callEvent(EventType.EVENT_ANY_GADGET_DIE, new ScriptArgs(this.getConfigId()));
@@ -178,6 +191,11 @@ public class EntityGadget extends EntityBaseGadget {
 				.build();
 		entityInfo.addPropList(pair);
 		
+		// We do not use the getter to null check because the getter will create a fight prop map if it is null
+		if (this.fightProp != null) {
+			this.addAllFightPropsToEntityInfo(entityInfo);
+		}
+
 		SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
 				.setGadgetId(this.getGadgetId())
 				.setGroupId(this.getGroupId())
