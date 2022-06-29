@@ -1,6 +1,7 @@
 package emu.grasscutter.data;
 
 import java.io.*;
+import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
@@ -27,6 +28,7 @@ import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.common.ScenePointConfig;
 import emu.grasscutter.game.world.SpawnDataEntry.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 import static emu.grasscutter.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
@@ -306,19 +308,32 @@ public class ResourceLoader {
 	}
 
 	private static void loadSpawnData() {
-		List<SpawnGroupEntry> spawnEntryList = null;
+		String[] spawnDataNames = {"Spawns.json", "GadgetSpawns.json"};
+		Int2ObjectMap<SpawnGroupEntry> spawnEntryMap = new Int2ObjectOpenHashMap<>();
 
-		// Read from cached file if exists
-		try(InputStream spawnDataEntries = DataLoader.load("Spawns.json")) {
-			spawnEntryList = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(spawnDataEntries), TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType());
-		} catch (Exception ignored) {}
-
-		if (spawnEntryList == null || spawnEntryList.isEmpty()) {
+		for (String name : spawnDataNames) {
+			// Load spawn entries from file
+			try (InputStream spawnDataEntries = DataLoader.load(name)) {
+				Type type = TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType();
+				List<SpawnGroupEntry> list = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(spawnDataEntries), type);
+				
+				// Add spawns to group if it already exists in our spawn group map
+				for (SpawnGroupEntry group : list) {
+					if (spawnEntryMap.containsKey(group.getGroupId())) {
+						spawnEntryMap.get(group.getGroupId()).getSpawns().addAll(group.getSpawns());
+					} else {
+						spawnEntryMap.put(group.getGroupId(), group);
+					}
+				}
+			} catch (Exception ignored) {}
+		}
+		
+		if (spawnEntryMap.isEmpty()) {
 			Grasscutter.getLogger().error("No spawn data loaded!");
 			return;
 		}
 
-		for (SpawnGroupEntry entry : spawnEntryList) {
+		for (SpawnGroupEntry entry : spawnEntryMap.values()) {
 			entry.getSpawns().forEach(s -> s.setGroup(entry));
 			GameDepot.getSpawnListById(entry.getSceneId()).insert(entry, entry.getPos().getX(), entry.getPos().getZ());
 		}

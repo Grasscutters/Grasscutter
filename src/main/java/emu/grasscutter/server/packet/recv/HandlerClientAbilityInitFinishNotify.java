@@ -18,7 +18,6 @@ public class HandlerClientAbilityInitFinishNotify extends PacketHandler {
 
 		Player player = session.getPlayer();
 		for (AbilityInvokeEntry entry : notif.getInvokesList()) {
-			if(player.getCollectionManager().onRockDestroy(entry)) continue;
 			player.getAbilityManager().onAbilityInvoke(entry);
 			player.getClientAbilityInitFinishHandler().addEntry(entry.getForwardType(), entry);
 		}

@@ -6,13 +6,10 @@ import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 
 public abstract class GadgetContent {
-	private EntityGadget gadget;
+	private final EntityGadget gadget;
 
-	public GadgetContent() {
-	}
-
-	public void setGadget(EntityGadget gadget) {
-		this.gadget=gadget;
+	public GadgetContent(EntityGadget gadget) {
+		this.gadget = gadget;
 	}
 
 	public EntityGadget getGadget() {

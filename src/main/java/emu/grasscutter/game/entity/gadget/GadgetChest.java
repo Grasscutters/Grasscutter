@@ -15,7 +15,7 @@ import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
 public class GadgetChest extends GadgetContent {
 	
 	public GadgetChest(EntityGadget gadget) {
-		super.setGadget(gadget);
+		super(gadget);
 	}
 
 	public boolean onInteract(Player player, GadgetInteractReq req) {

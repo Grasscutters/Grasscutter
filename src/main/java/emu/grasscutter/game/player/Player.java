@@ -63,7 +63,7 @@ import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-
+import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
 import emu.grasscutter.server.game.GameServer;
@@ -1103,7 +1103,6 @@ public class Player {
 				}
 			}
 		} else if (entity instanceof EntityGadget gadget) {
-
 			if (gadget.getContent() == null) {
 				return;
 			}
@@ -1111,7 +1110,7 @@ public class Player {
 			boolean shouldDelete = gadget.getContent().onInteract(this, opType);
 
 			if (shouldDelete) {
-				entity.getScene().removeEntity(entity);
+				entity.getScene().removeEntity(entity, VisionType.VISION_TYPE_REMOVE);
 			}
 		} else if (entity instanceof EntityMonster monster) {
 			insectCaptureManager.arrestSmallCreature(monster);

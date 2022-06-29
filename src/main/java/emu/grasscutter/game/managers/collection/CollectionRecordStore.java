@@ -1,60 +1,67 @@
 package emu.grasscutter.game.managers.collection;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.HashMap;
+import java.util.Map;
 
 import dev.morphia.annotations.Entity;
-import emu.grasscutter.utils.Position;
 
 @Entity
 public class CollectionRecordStore {
-    @Entity
-    static class Record{
-        Position position;
-        long expiredTime;
-        long gadgetId;
-        long scene;
-        Record(Position position,
-                long expiredTime,
-                long gadgetId,
-                long scene){
-            this.position=position;
-            this.expiredTime = expiredTime;
-            this.gadgetId=gadgetId;
-            this.scene=scene;
-
+    private Map<Integer, CollectionRecord> records;
+    
+    private Map<Integer, CollectionRecord> getRecords() {
+        if (records == null) {
+        	records = new HashMap<>();
         }
+        return records;
     }
-    private ArrayList<Record> gottenRecords;
-    private ArrayList<Record> getRecords(){
-        if(gottenRecords==null){
-            gottenRecords = new ArrayList<>();
-        }
-        return gottenRecords;
-    }
-    public void addRecord(Position position,long gadgetId,long scene,long expiredMillisecond){
-        ArrayList<Record> records;
+    
+    public void addRecord(int configId, long expiredMillisecond){
+    	Map<Integer, CollectionRecord> records;
         synchronized (records = getRecords()) {
-            records.add(new Record(position,expiredMillisecond+System.currentTimeMillis(),gadgetId,scene));
+            records.put(configId, new CollectionRecord(configId, expiredMillisecond + System.currentTimeMillis()));
         }
     }
-    public boolean findRecord(Position position,long gadgetId,long scene){
-        ArrayList<Record> records;
+    
+    public boolean findRecord(int configId) {
+    	Map<Integer, CollectionRecord> records;
         synchronized (records = getRecords()) {
-            long currentTime = System.currentTimeMillis();
-            Iterator<Record> it = records.iterator();
-            while (it.hasNext()) {
-                Record record = it.next();
-                if(record.gadgetId == gadgetId && record.scene == scene && record.position.equal3d(position)){
-                    if (record.expiredTime < currentTime) {
-                        it.remove();
-                        return false;
-                    }else{
-                        return true;
-                    }
-                }
+        	CollectionRecord record = records.get(configId);
+        	
+        	if (record == null) {
+        		return false;
+        	}
+        	
+            boolean expired = record.getExpiredTime() < System.currentTimeMillis();
+            
+            if (expired) {
+            	records.remove(configId);
+            	return false;
             }
-            return false;
+            
+            return true;
         }
+    }
+    
+    @Entity
+    public static class CollectionRecord {
+    	private int configId;
+    	private long expiredTime;
+    	
+    	@Deprecated // Morphia
+    	public CollectionRecord() {}
+        
+        public CollectionRecord(int configId, long expiredTime) {
+            this.configId = configId;
+            this.expiredTime = expiredTime;
+        }
+
+		public int getConfigId() {
+			return configId;
+		}
+
+		public long getExpiredTime() {
+			return expiredTime;
+		}
     }
 }
