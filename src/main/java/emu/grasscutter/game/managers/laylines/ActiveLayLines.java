@@ -12,6 +12,8 @@ import emu.grasscutter.game.dungeons.challenge.trigger.KillMonsterTrigger;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.scripts.data.SceneBossChest;
+import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
@@ -27,6 +29,7 @@ public class ActiveLayLines{
     boolean pass=false;
     ArrayList<EntityMonster> monsters = new ArrayList<>();
     ArrayList<ChallengeTrigger> challengeTriggers = new ArrayList<>();
+    private static final int BLOOMING_GADGET_ID = 70210109;
     public ActiveLayLines(EntityGadget entityGadget,int goal,int timeout) {
         this.tempSceneGroup = new SceneGroup();
         this.tempSceneGroup.id = entityGadget.getId();
@@ -81,7 +84,7 @@ public class ActiveLayLines{
     public void onTick() {
         Scene scene = gadget.getScene();
         Position pos = gadget.getPosition();
-        if(getAliveMonstersCount() == 0){
+        if(getAliveMonstersCount() <= 2){
             if(generatedCount<goal){
                 step++;
                 MonsterData monsterData = GameData.getMonsterDataMap().get(21010101);
@@ -101,10 +104,20 @@ public class ActiveLayLines{
                 }
                 setMonsters(monsters);
             }else{
-                System.out.println("Pass!");
-                pass = true;
-                //Entity
+                if(getAliveMonstersCount() == 0) {
+                    System.out.println("Pass!");
+                    pass = true;
+                }
             }
         }
+    }
+    public EntityGadget getChest(){
+        EntityGadget rewordGadget = new EntityGadget(gadget.getScene(),BLOOMING_GADGET_ID,gadget.getPosition());
+        SceneGadget metaGadget = new SceneGadget();
+        metaGadget.boss_chest = new SceneBossChest();
+        metaGadget.boss_chest.resin=20;
+        rewordGadget.setMetaGadget(metaGadget);
+        rewordGadget.buildContent();
+        return rewordGadget;
     }
 }
