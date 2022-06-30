@@ -21,10 +21,9 @@ public class GadgetWorktop extends GadgetContent {
 		super(gadget);
 	}
 
-    @Override
     public boolean onSelectWorktopOption(Player player, SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq req) {
         this.handler.onSelectWorktopOption(player,this,req.getOptionId());
-	    return super.onSelectWorktopOption(player, req);
+	    return false;
     }
 
     public IntSet getWorktopOptions() {
