@@ -18,6 +18,7 @@ import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.battlepass.BattlePassManager;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.EntityVehicle;
+import emu.grasscutter.game.entity.gadget.GadgetWorktop;
 import emu.grasscutter.game.home.GameHome;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.EntityItem;
@@ -1085,12 +1086,11 @@ public class Player {
         }
         // Handle
         if (entity instanceof EntityGadget gadget) {
-            if (gadget.getContent() == null) {
-                return;
-            }
-            boolean shouldDelete = gadget.getContent().onSelectWorktopOption(this,req);
-            if (shouldDelete) {
-                entity.getScene().removeEntity(entity, VisionType.VISION_TYPE_REMOVE);
+            if (gadget.getContent() instanceof GadgetWorktop worktop) {
+                boolean shouldDelete = worktop.onSelectWorktopOption(this,req);
+                if (shouldDelete) {
+                    entity.getScene().removeEntity(entity, VisionType.VISION_TYPE_REMOVE);
+                }
             }
         }
     }

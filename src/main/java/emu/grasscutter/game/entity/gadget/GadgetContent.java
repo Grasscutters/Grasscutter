@@ -2,27 +2,21 @@ package emu.grasscutter.game.entity.gadget;
 
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.proto.GadgetInteractReqOuterClass;
-import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass;
-import emu.grasscutter.net.proto.SelectWorktopOptionReqOuterClass;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
+import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 
-public class GadgetContent extends GadgetBaseContent {
+public abstract class GadgetContent {
+    private final EntityGadget gadget;
+
     public GadgetContent(EntityGadget gadget) {
-        super(gadget);
+        this.gadget = gadget;
     }
 
-    @Override
-    public boolean onInteract(Player player, GadgetInteractReqOuterClass.GadgetInteractReq req) {
-        return false;
+    public EntityGadget getGadget() {
+        return gadget;
     }
 
-    @Override
-    public boolean onSelectWorktopOption(Player player, SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq req) {
-        return false;
-    }
+    public abstract boolean onInteract(Player player, GadgetInteractReq req);
 
-    @Override
-    public void onBuildProto(SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder gadgetInfo) {
-
-    }
+    public abstract void onBuildProto(SceneGadgetInfo.Builder gadgetInfo);
 }
