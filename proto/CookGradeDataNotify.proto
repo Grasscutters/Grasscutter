@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+
+message CookGradeDataNotify {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 117;
+	}
+
+	uint32 grade = 1;
+}

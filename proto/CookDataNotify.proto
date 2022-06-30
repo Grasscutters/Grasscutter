@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "CookRecipeData.proto";
+
+message CookDataNotify {
+	enum CmdId {
+		option allow_alias = true;
+		NONE = 0;
+		ENET_CHANNEL_ID = 0;
+		ENET_IS_RELIABLE = 1;
+		CMD_ID = 156;
+	}
+
+	uint32 grade = 1;
+	repeated CookRecipeData recipe_data_list = 2;
+}
