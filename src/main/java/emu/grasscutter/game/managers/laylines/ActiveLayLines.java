@@ -26,15 +26,17 @@ public class ActiveLayLines{
     int goal;
     int killCount;
     int generatedCount;
+    int worldLevel;
     boolean pass=false;
     ArrayList<EntityMonster> monsters = new ArrayList<>();
     ArrayList<ChallengeTrigger> challengeTriggers = new ArrayList<>();
     private static final int BLOOMING_GADGET_ID = 70210109;
-    public ActiveLayLines(EntityGadget entityGadget,int goal,int timeout) {
+    public ActiveLayLines(EntityGadget entityGadget,int goal,int timeout,int worldLevel) {
         this.tempSceneGroup = new SceneGroup();
         this.tempSceneGroup.id = entityGadget.getId();
         this.gadget=entityGadget;
         this.step=0;
+        this.worldLevel = worldLevel;
         this.challenge = new WorldChallenge(entityGadget.getScene(),
             tempSceneGroup,
             1,
@@ -88,7 +90,6 @@ public class ActiveLayLines{
             if(generatedCount<goal){
                 step++;
                 MonsterData monsterData = GameData.getMonsterDataMap().get(21010101);
-                int worldLevel = scene.getWorld().getWorldLevel();
                 WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(worldLevel);
                 int monsterLevel = worldLevelData.getMonsterLevel();
                 ArrayList<EntityMonster> monsters = new ArrayList<>();
@@ -105,7 +106,6 @@ public class ActiveLayLines{
                 setMonsters(monsters);
             }else{
                 if(getAliveMonstersCount() == 0) {
-                    System.out.println("Pass!");
                     pass = true;
                 }
             }
