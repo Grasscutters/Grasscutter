@@ -34,6 +34,9 @@ plugins {
     // Maven
     id 'maven-publish'
     id 'signing'
+
+    //Kotlin Support
+    id 'org.jetbrains.kotlin.jvm' version '1.7.0'
 }
 
 compileJava.options.encoding = "UTF-8"
@@ -62,14 +65,14 @@ dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
 
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
-    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.9'
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.9'
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.11'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.11'
 
     implementation group: 'org.jline', name: 'jline', version: '3.21.0'
     implementation group: 'org.jline', name: 'jline-terminal-jna', version: '3.21.0'
-    implementation group: 'net.java.dev.jna', name: 'jna', version: '5.10.0'
+    implementation group: 'net.java.dev.jna', name: 'jna', version: '5.12.1'
 
-    implementation group: 'io.netty', name: 'netty-all', version: '4.1.71.Final'
+    implementation group: 'io.netty', name: 'netty-all', version: '4.1.78.Final'
 
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.0'
     implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.18.2'
