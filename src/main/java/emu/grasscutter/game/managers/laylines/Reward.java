@@ -11,10 +11,10 @@ public class Reward {
         this.minCount = count;
     }
     Reward(int itemId,
-        int maxCount,
-        int minCount){
+        int mimCount,
+        int maxCount){
         this.itemId = itemId;
         this.maxCount = maxCount;
-        this.minCount = minCount;
+        this.minCount = mimCount;
     }
 }
