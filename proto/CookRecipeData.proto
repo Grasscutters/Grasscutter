@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+
+message CookRecipeData {
+	uint32 recipe_id = 1;
+	uint32 proficiency = 2;
+}
