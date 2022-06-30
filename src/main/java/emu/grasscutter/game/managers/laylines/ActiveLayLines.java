@@ -25,7 +25,6 @@ public class ActiveLayLines{
     EntityGadget chest;
     int step;
     int goal;
-    int killCount;
     int generatedCount;
     int worldLevel;
     boolean pass=false;
@@ -46,13 +45,6 @@ public class ActiveLayLines{
             timeout,
             goal,challengeTriggers);
         this.goal=goal;
-        this.challengeTriggers.add(new ChallengeTrigger(){
-            @Override
-            public void onMonsterDeath(WorldChallenge challenge, EntityMonster monster) {
-                killCount++;
-                super.onMonsterDeath(challenge, monster);
-            }
-        });
         this.challengeTriggers.add(new KillMonsterTrigger());
         //this.challengeTriggers.add(new InTimeTrigger());
     }
