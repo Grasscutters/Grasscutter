@@ -4,8 +4,9 @@ import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
+import emu.grasscutter.net.proto.SelectWorktopOptionReqOuterClass;
 
-public abstract class GadgetContent {
+public class GadgetContent {
 	private final EntityGadget gadget;
 
 	public GadgetContent(EntityGadget gadget) {
@@ -15,8 +16,15 @@ public abstract class GadgetContent {
 	public EntityGadget getGadget() {
 		return gadget;
 	}
-	
-	public abstract boolean onInteract(Player player, GadgetInteractReq req);
-	
-	public abstract void onBuildProto(SceneGadgetInfo.Builder gadgetInfo);
+
+	public boolean onInteract(Player player, GadgetInteractReq req) {
+	    return false;
+    }
+
+    public boolean onSelectWorktopOption(Player player, SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq req) {
+        return false;
+    }
+
+	public void onBuildProto(SceneGadgetInfo.Builder gadgetInfo) {
+    }
 }
