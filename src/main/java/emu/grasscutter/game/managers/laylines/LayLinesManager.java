@@ -19,7 +19,7 @@ public class LayLinesManager {
     private static final int LAY_LINES_GOLDEN_GADGET_ID = 70360056;
     Player player;
     ArrayList<ActiveLayLines> activeLayLines = new ArrayList<>();
-    ArrayList<EntityGadget> activeChests = new ArrayList<>();
+    ArrayList<ActiveLayLines> activeChests = new ArrayList<>();
     private static final HashMap<Integer,ArrayList<Reward>> REWARDS_GOLDEN = new HashMap<>();
     private static final HashMap<Integer,ArrayList<Reward>> REWARDS_BLUE = new HashMap<>();
     static{
@@ -128,7 +128,7 @@ public class LayLinesManager {
                 Scene scene = getScene();
                 scene.addEntity(chest);
                 scene.setChallenge(null);
-                activeChests.add(chest);
+                activeChests.add(activeLayLines);
                 it.remove();
             }
         }
@@ -172,21 +172,26 @@ public class LayLinesManager {
         return getScene().getWorld().getWorldLevel();
     }
 
-    public synchronized List<GameItem> onReward(EntityGadget gadget) {
-        if(!activeChests.contains(gadget)){
-            return null;
+    public synchronized List<GameItem> onReward(EntityGadget chest) {
+        var it = activeChests.iterator();
+        while(it.hasNext()){
+            var activeChest = it.next();
+            if(activeChest.getChest()==chest){
+                int worldLevel = getWorldLevel();
+                ArrayList<GameItem> items = new ArrayList<>();
+                ArrayList<Reward> rewards;
+                if(activeChest.gadget.getGadgetId() == LAY_LINES_BLUE_GADGET_ID){
+                    rewards = REWARDS_BLUE.get(worldLevel);
+                }else{
+                    rewards = REWARDS_GOLDEN.get(worldLevel);
+                }
+                for(Reward reward : rewards){
+                    items.add(new GameItem(reward.itemId, Utils.randomRange(reward.minCount,reward.maxCount)));
+                }
+                it.remove();
+                return items;
+            }
         }
-        int worldLevel = getWorldLevel();
-        ArrayList<GameItem> items = new ArrayList<>();
-        ArrayList<Reward> rewards;
-        if(gadget.getGadgetId() == LAY_LINES_BLUE_GADGET_ID){
-            rewards = REWARDS_BLUE.get(worldLevel);
-        }else{
-            rewards = REWARDS_GOLDEN.get(worldLevel);
-        }
-        for(Reward reward : rewards){
-            items.add(new GameItem(reward.itemId, Utils.randomRange(reward.minCount,reward.maxCount)));
-        }
-        return items;
+        return null;
     }
 }

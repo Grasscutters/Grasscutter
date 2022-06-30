@@ -22,6 +22,7 @@ public class ActiveLayLines{
     SceneGroup tempSceneGroup;
     WorldChallenge challenge;
     EntityGadget gadget;
+    EntityGadget chest;
     int step;
     int goal;
     int killCount;
@@ -112,12 +113,15 @@ public class ActiveLayLines{
         }
     }
     public EntityGadget getChest(){
-        EntityGadget rewordGadget = new EntityGadget(gadget.getScene(),BLOOMING_GADGET_ID,gadget.getPosition());
-        SceneGadget metaGadget = new SceneGadget();
-        metaGadget.boss_chest = new SceneBossChest();
-        metaGadget.boss_chest.resin=20;
-        rewordGadget.setMetaGadget(metaGadget);
-        rewordGadget.buildContent();
-        return rewordGadget;
+        if(chest==null) {
+            EntityGadget rewordGadget = new EntityGadget(gadget.getScene(), BLOOMING_GADGET_ID, gadget.getPosition());
+            SceneGadget metaGadget = new SceneGadget();
+            metaGadget.boss_chest = new SceneBossChest();
+            metaGadget.boss_chest.resin = 20;
+            rewordGadget.setMetaGadget(metaGadget);
+            rewordGadget.buildContent();
+            chest = rewordGadget;
+        }
+        return chest;
     }
 }
