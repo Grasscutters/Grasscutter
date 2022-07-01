@@ -438,7 +438,7 @@ public class Scene {
 
 	// TODO - Test
 	public synchronized void checkSpawns() {
-        int RANGE = 500;
+        int RANGE = 200;
 
 		SpatialIndex<SpawnGroupEntry> list = GameDepot.getSpawnListById(this.getId());
 		Set<SpawnDataEntry> visible = new HashSet<>();
@@ -494,7 +494,10 @@ public class Scene {
 					gadget.setGroupId(entry.getGroup().getGroupId());
 					gadget.setConfigId(entry.getConfigId());
 					gadget.setSpawnEntry(entry);
-					gadget.setState(entry.getGadgetState());
+					int state = entry.getGadgetState();
+					if(state>0) {
+                        gadget.setState(state);
+                    }
 					gadget.buildContent();
 
 					gadget.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, 99999);
