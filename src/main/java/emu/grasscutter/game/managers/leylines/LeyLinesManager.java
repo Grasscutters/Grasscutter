@@ -175,19 +175,22 @@ public class LeyLinesManager {
         while(it.hasNext()){
             var activeChest = it.next();
             if(activeChest.getChest()==chest){
-                int worldLevel = getWorldLevel();
-                ArrayList<GameItem> items = new ArrayList<>();
-                ArrayList<Reward> rewards;
-                if(activeChest.gadget.getGadgetId() == LeyLinesType.LAY_LINES_BLUE_GADGET_ID.getGadgetId()){
-                    rewards = REWARDS_BLUE.get(worldLevel);
-                }else{
-                    rewards = REWARDS_GOLDEN.get(worldLevel);
+                if(player.getInventory().payItem(106,20)){
+                    int worldLevel = getWorldLevel();
+                    ArrayList<GameItem> items = new ArrayList<>();
+                    ArrayList<Reward> rewards;
+                    if(activeChest.gadget.getGadgetId() == LeyLinesType.LAY_LINES_BLUE_GADGET_ID.getGadgetId()){
+                        rewards = REWARDS_BLUE.get(worldLevel);
+                    }else{
+                        rewards = REWARDS_GOLDEN.get(worldLevel);
+                    }
+                    for(Reward reward : rewards){
+                        items.add(new GameItem(reward.itemId, Utils.randomRange(reward.minCount,reward.maxCount)));
+                    }
+                    it.remove();
+                    return items;
                 }
-                for(Reward reward : rewards){
-                    items.add(new GameItem(reward.itemId, Utils.randomRange(reward.minCount,reward.maxCount)));
-                }
-                it.remove();
-                return items;
+                return null;
             }
         }
         return null;
