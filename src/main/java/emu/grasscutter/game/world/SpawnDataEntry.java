@@ -12,9 +12,10 @@ public class SpawnDataEntry {
 	private int level;
 	private int poseId;
 	private int gatherItemId;
+    private int gadgetState;
 	private Position pos;
 	private Position rot;
-	
+
 	public SpawnGroupEntry getGroup() {
 		return group;
 	}
@@ -26,23 +27,27 @@ public class SpawnDataEntry {
 	public int getMonsterId() {
 		return monsterId;
 	}
-	
+
 	public int getGadgetId() {
 		return gadgetId;
 	}
 
-	public int getConfigId() {
+    public int getGadgetState() {
+        return gadgetState;
+    }
+
+    public int getConfigId() {
 		return configId;
 	}
-	
+
 	public int getLevel() {
 		return level;
 	}
-	
+
 	public int getPoseId() {
 		return poseId;
 	}
-	
+
 	public int getGatherItemId() {
 		return gatherItemId;
 	}
@@ -50,18 +55,18 @@ public class SpawnDataEntry {
 	public Position getPos() {
 		return pos;
 	}
-	
+
 	public Position getRot() {
 		return rot;
 	}
-	
+
 	public static class SpawnGroupEntry {
 		private int sceneId;
 		private int groupId;
 		private int blockId;
 		private Position pos;
 		private List<SpawnDataEntry> spawns;
-		
+
 		public int getSceneId() {
 			return sceneId;
 		}
