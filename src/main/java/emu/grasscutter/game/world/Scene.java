@@ -75,11 +75,11 @@ public class Scene {
 	public World getWorld() {
 		return world;
 	}
-	
+
 	public SceneData getSceneData() {
 		return this.sceneData;
 	}
-	
+
 	public SceneType getSceneType() {
 		return getSceneData().getSceneType();
 	}
@@ -201,18 +201,18 @@ public class Scene {
 	public boolean isInScene(GameEntity entity) {
 		return this.entities.containsKey(entity.getId());
 	}
-	
+
 	public synchronized void addPlayer(Player player) {
 		// Check if player already in
 		if (getPlayers().contains(player)) {
 			return;
 		}
-		
+
 		// Remove player from prev scene
 		if (player.getScene() != null) {
 			player.getScene().removePlayer(player);
 		}
-			
+
 		// Add
 		getPlayers().add(player);
 		player.setSceneId(this.getId());
@@ -220,31 +220,31 @@ public class Scene {
 
 		this.setupPlayerAvatars(player);
 	}
-	
+
 	public synchronized void removePlayer(Player player) {
 		// Remove from challenge if leaving
 		if (this.getChallenge() != null && this.getChallenge().inProgress()) {
 			player.sendPacket(new PacketDungeonChallengeFinishNotify(this.getChallenge()));
 		}
-		
+
 		// Remove player from scene
 		getPlayers().remove(player);
 		player.setScene(null);
-		
+
 		// Remove player avatars
 		this.removePlayerAvatars(player);
-		
+
 		// Remove player gadgets
 		for (EntityBaseGadget gadget : player.getTeamManager().getGadgets()) {
 			this.removeEntity(gadget);
 		}
-		
+
 		// Deregister scene if not in use
 		if (this.getPlayerCount() <= 0 && !this.dontDestroyWhenEmpty()) {
 			this.getWorld().deregisterScene(this);
 		}
 	}
-	
+
 	private void setupPlayerAvatars(Player player) {
 		// Clear entities from old team
 		player.getTeamManager().getActiveTeam().clear();
@@ -255,13 +255,13 @@ public class Scene {
 			EntityAvatar entity = new EntityAvatar(player.getScene(), player.getAvatars().getAvatarById(avatarId));
 			player.getTeamManager().getActiveTeam().add(entity);
 		}
-		
+
 		// Limit character index in case its out of bounds
 		if (player.getTeamManager().getCurrentCharacterIndex() >= player.getTeamManager().getActiveTeam().size() || player.getTeamManager().getCurrentCharacterIndex() < 0) {
 			player.getTeamManager().setCurrentCharacterIndex(player.getTeamManager().getCurrentCharacterIndex() - 1);
 		}
 	}
-	
+
 	private void removePlayerAvatars(Player player) {
 		Iterator<EntityAvatar> it = player.getTeamManager().getActiveTeam().iterator();
 		while (it.hasNext()) {
@@ -269,18 +269,18 @@ public class Scene {
 			it.remove();
 		}
 	}
-	
+
 	public void spawnPlayer(Player player) {
 		if (this.isInScene(player.getTeamManager().getCurrentAvatarEntity())) {
 			return;
 		}
-		
+
 		if (player.getTeamManager().getCurrentAvatarEntity().getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
 			player.getTeamManager().getCurrentAvatarEntity().setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 1f);
 		}
-		
+
 		this.addEntity(player.getTeamManager().getCurrentAvatarEntity());
-		
+
 		// Notify the client of any extra skill charges
 		for (EntityAvatar entity : player.getTeamManager().getActiveTeam()) {
 			if (entity.getAvatar().getSkillExtraChargeMap().size() > 0) {
@@ -288,12 +288,12 @@ public class Scene {
 			}
 		}
 	}
-	
+
 	private void addEntityDirectly(GameEntity entity) {
 		getEntities().put(entity.getId(), entity);
 		entity.onCreate(); // Call entity create event
 	}
-	
+
 	public synchronized void addEntity(GameEntity entity) {
 		this.addEntityDirectly(entity);
 		this.broadcastPacket(new PacketSceneEntityAppearNotify(entity));
@@ -307,7 +307,7 @@ public class Scene {
 	public void addEntities(Collection<? extends GameEntity> entities){
 		addEntities(entities, VisionType.VISION_TYPE_BORN);
 	}
-	
+
 	public synchronized void addEntities(Collection<? extends GameEntity> entities, VisionType visionType) {
 		if(entities == null || entities.isEmpty()){
 			return;
@@ -315,18 +315,18 @@ public class Scene {
 		for (GameEntity entity : entities) {
 			this.addEntityDirectly(entity);
 		}
-		
+
 		this.broadcastPacket(new PacketSceneEntityAppearNotify(entities, visionType));
 	}
-	
+
 	private GameEntity removeEntityDirectly(GameEntity entity) {
 		return getEntities().remove(entity.getId());
 	}
-	
+
 	public void removeEntity(GameEntity entity) {
 		this.removeEntity(entity, VisionType.VISION_TYPE_DIE);
 	}
-	
+
 	public synchronized void removeEntity(GameEntity entity, VisionType visionType) {
 		GameEntity removed = this.removeEntityDirectly(entity);
 		if (removed != null) {
@@ -351,7 +351,7 @@ public class Scene {
 	public void showOtherEntities(Player player) {
 		List<GameEntity> entities = new LinkedList<>();
 		GameEntity currentEntity = player.getTeamManager().getCurrentAvatarEntity();
-		
+
 		for (GameEntity entity : this.getEntities().values()) {
 			if (entity == currentEntity) {
 				continue;
@@ -361,26 +361,26 @@ public class Scene {
 
 		player.sendPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VISION_TYPE_MEET));
 	}
-	
+
 	public void handleAttack(AttackResult result) {
 		//GameEntity attacker = getEntityById(result.getAttackerId());
 		GameEntity target = getEntityById(result.getDefenseId());
-		
+
 		if (target == null) {
 			return;
 		}
-		
+
 		// Godmode check
 		if (target instanceof EntityAvatar) {
 			if (((EntityAvatar) target).getPlayer().inGodmode()) {
 				return;
 			}
 		}
-		
+
 		// Sanity check
 		target.damage(result.getDamage(), result.getAttackerId());
 	}
-	
+
 	public void killEntity(GameEntity target, int attackerId) {
 		GameEntity attacker = getEntityById(attackerId);
 
@@ -404,7 +404,7 @@ public class Scene {
 		}
 
 		this.removeEntity(target);
-		
+
 		// Death event
 		target.onDeath(attackerId);
 	}
@@ -427,96 +427,99 @@ public class Scene {
 			challenge.onCheckTimeOut();
 		}
 	}
-	
+
 	public int getEntityLevel(int baseLevel, int worldLevelOverride) {
 		int level = worldLevelOverride > 0 ? worldLevelOverride + baseLevel - 22 : baseLevel;
 		level = level >= 100 ? 100 : level;
 		level = level <= 0 ? 1 : level;
-		
+
 		return level;
 	}
 
 	// TODO - Test
 	public synchronized void checkSpawns() {
+        int RANGE = 500;
+
 		SpatialIndex<SpawnGroupEntry> list = GameDepot.getSpawnListById(this.getId());
 		Set<SpawnDataEntry> visible = new HashSet<>();
 
 		for (Player player : this.getPlayers()) {
-			int RANGE = 100;
-
+            Position position = player.getPos();
 			Collection<SpawnGroupEntry> entries = list.query(
-				new double[] {player.getPos().getX() - RANGE, player.getPos().getZ() - RANGE}, 
-				new double[] {player.getPos().getX() + RANGE, player.getPos().getZ() + RANGE}
+				new double[] {position.getX() - RANGE, position.getZ() - RANGE},
+				new double[] {position.getX() + RANGE, position.getZ() + RANGE}
 			);
-			
 			for (SpawnGroupEntry entry : entries) {
 				for (SpawnDataEntry spawnData : entry.getSpawns()) {
 					visible.add(spawnData);
 				}
 			}
 		}
-		
+
 		// World level
 		WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(getWorld().getWorldLevel());
 		int worldLevelOverride = 0;
-		
+
 		if (worldLevelData != null) {
 			worldLevelOverride = worldLevelData.getMonsterLevel();
 		}
-				
+
 		// Todo
 		List<GameEntity> toAdd = new LinkedList<>();
 		List<GameEntity> toRemove = new LinkedList<>();
-		
+        var spawnedEntities = this.getSpawnedEntities();
 		for (SpawnDataEntry entry : visible) {
 			// If spawn entry is in our view and hasnt been spawned/killed yet, we should spawn it
-			if (!this.getSpawnedEntities().contains(entry) && !this.getDeadSpawnedEntities().contains(entry)) {
+			if (!spawnedEntities.contains(entry) && !this.getDeadSpawnedEntities().contains(entry)) {
 				// Entity object holder
 				GameEntity entity = null;
-				
+
 				// Check if spawn entry is monster or gadget
 				if (entry.getMonsterId() > 0) {
 					MonsterData data = GameData.getMonsterDataMap().get(entry.getMonsterId());
 					if (data == null) continue;
 
 					int level = this.getEntityLevel(entry.getLevel(), worldLevelOverride);
-					
+
 					EntityMonster monster = new EntityMonster(this, data, entry.getPos(), level);
 					monster.getRotation().set(entry.getRot());
 					monster.setGroupId(entry.getGroup().getGroupId());
 					monster.setPoseId(entry.getPoseId());
 					monster.setConfigId(entry.getConfigId());
 					monster.setSpawnEntry(entry);
-					
+
 					entity = monster;
 				} else if (entry.getGadgetId() > 0) {
 					EntityGadget gadget = new EntityGadget(this, entry.getGadgetId(), entry.getPos(), entry.getRot());
 					gadget.setGroupId(entry.getGroup().getGroupId());
 					gadget.setConfigId(entry.getConfigId());
 					gadget.setSpawnEntry(entry);
+					gadget.setState(entry.getGadgetState());
 					gadget.buildContent();
-					
+
 					gadget.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, 99999);
 					gadget.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 99999);
 					gadget.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, 99999);
-					
+
 					entity = gadget;
 				}
-				
+
 				if (entity == null) continue;
-				
+
 				// Add to scene and spawned list
 				toAdd.add(entity);
-				getSpawnedEntities().add(entry);
+                spawnedEntities.add(entry);
 			}
 		}
-		
+
 		for (GameEntity entity : this.getEntities().values()) {
-			if (entity.getSpawnEntry() != null && !visible.contains(entity.getSpawnEntry())) {
+		    var spawnEntry = entity.getSpawnEntry();
+			if (spawnEntry != null && !visible.contains(spawnEntry)) {
 				toRemove.add(entity);
+                spawnedEntities.remove(spawnEntry);
 			}
 		}
-		
+
 		if (toAdd.size() > 0) {
 			toAdd.stream().forEach(this::addEntityDirectly);
 			this.broadcastPacket(new PacketSceneEntityAppearNotify(toAdd, VisionType.VISION_TYPE_BORN));
@@ -615,10 +618,10 @@ public class Scene {
 			if (group.init_config == null) {
 				continue;
 			}
-			
+
 			// Load garbages
 			List<SceneGadget> garbageGadgets = group.getGarbageGadgets();
-			
+
 			if (garbageGadgets != null) {
 				entities.addAll(garbageGadgets.stream().map(g -> scriptManager.createGadget(group.id, group.block_id, g))
 						.filter(Objects::nonNull)
@@ -647,7 +650,7 @@ public class Scene {
 		//groups.forEach(g -> scriptManager.callEvent(EventType.EVENT_GROUP_LOAD, null));
 		Grasscutter.getLogger().info("Scene {} loaded {} group(s)", this.getId(), groups.size());
 	}
-	
+
 	public void onUnloadBlock(SceneBlock block) {
 		List<GameEntity> toRemove = this.getEntities().values().stream()
 				.filter(e -> e.getBlockId() == block.id).toList();
@@ -669,53 +672,53 @@ public class Scene {
 		Grasscutter.getLogger().info("Scene {} Block {} is unloaded.", this.getId(), block.id);
 	}
 	// Gadgets
-	
+
 	public void onPlayerCreateGadget(EntityClientGadget gadget) {
 		// Directly add
 		this.addEntityDirectly(gadget);
-		
+
 		// Add to owner's gadget list
 		gadget.getOwner().getTeamManager().getGadgets().add(gadget);
-		
+
 		// Optimization
 		if (this.getPlayerCount() == 1 && this.getPlayers().get(0) == gadget.getOwner()) {
 			return;
 		}
-		
+
 		this.broadcastPacketToOthers(gadget.getOwner(), new PacketSceneEntityAppearNotify(gadget));
 	}
-	
+
 	public void onPlayerDestroyGadget(int entityId) {
 		GameEntity entity = getEntities().get(entityId);
-		
+
 		if (entity == null || !(entity instanceof EntityClientGadget)) {
 			return;
 		}
-		
+
 		// Get and remove entity
 		EntityClientGadget gadget = (EntityClientGadget) entity;
 		this.removeEntityDirectly(gadget);
-		
+
 		// Remove from owner's gadget list
 		gadget.getOwner().getTeamManager().getGadgets().remove(gadget);
-		
+
 		// Optimization
 		if (this.getPlayerCount() == 1 && this.getPlayers().get(0) == gadget.getOwner()) {
 			return;
 		}
-		
+
 		this.broadcastPacketToOthers(gadget.getOwner(), new PacketSceneEntityDisappearNotify(gadget, VisionType.VISION_TYPE_DIE));
 	}
 
 	// Broadcasting
-	
+
 	public void broadcastPacket(BasePacket packet) {
     	// Send to all players - might have to check if player has been sent data packets
     	for (Player player : this.getPlayers()) {
     		player.getSession().send(packet);
     	}
 	}
-	
+
 	public void broadcastPacketToOthers(Player excludedPlayer, BasePacket packet) {
 		// Optimization
 		if (this.getPlayerCount() == 1 && this.getPlayers().get(0) == excludedPlayer) {
