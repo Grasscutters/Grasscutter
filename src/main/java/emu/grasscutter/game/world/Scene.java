@@ -438,7 +438,7 @@ public class Scene {
 
 	// TODO - Test
 	public synchronized void checkSpawns() {
-        int RANGE = 200;
+        int RANGE = 100;
 
 		SpatialIndex<SpawnGroupEntry> list = GameDepot.getSpawnListById(this.getId());
 		Set<SpawnDataEntry> visible = new HashSet<>();
