@@ -281,7 +281,7 @@
       },
       "setProp": {
         "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
-        "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
+        "description": "Définit des propriétes pour votre compte. Des choses comme le godemode peuvent être activés avec cette commande, et le déblocage de l'abysse ainsi que l'avancement du PB."
       },
       "setStats": {
         "usage": "Usage: setstats|stats <stat> <valeur>\n\tValeurs pour <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de dégât élémentaire: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Résistance élémentaire: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
@@ -363,10 +363,10 @@
         "description": "Débloque tous les couloirs de l'abysse"
       },
       "weather": {
-        "description": "Change la météo. Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
-        "usage": "Utilisation: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
-        "success": "Set weather ID to %s with climate type %s.",
-        "status": "Current weather ID is %s with climate type %s."
+        "description": "Change la météo. Les ID de la météo peuvent être trouvés dans WeatherExcelConfigData.json.\nTypes de climatss: sunny, cloudy, rain, thunderstorm, snow, mist.",
+        "usage": "Utilisation: weather [weatherId] [climateType]\nLes ID de la météo peuvent être trouvés dans WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
+        "success": "L'ID de la météo à été défini a %s avec le type de climat %s.",
+        "status": "L'ID de la météo accutel est %s avec le type de climat %s."
       },
       "ban": {
         "description": "Bannis un joueur",
