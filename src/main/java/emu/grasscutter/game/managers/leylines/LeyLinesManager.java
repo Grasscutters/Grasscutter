@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers.laylines;
+package emu.grasscutter.game.managers.leylines;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,12 +14,10 @@ import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 
-public class LayLinesManager {
-    private static final int LAY_LINES_BLUE_GADGET_ID = 70360057;
-    private static final int LAY_LINES_GOLDEN_GADGET_ID = 70360056;
+public class LeyLinesManager {
     Player player;
-    ArrayList<ActiveLayLines> activeLayLines = new ArrayList<>();
-    ArrayList<ActiveLayLines> activeChests = new ArrayList<>();
+    ArrayList<ActiveLeyLines> activeLeyLines = new ArrayList<>();
+    ArrayList<ActiveLeyLines> activeChests = new ArrayList<>();
     private static final HashMap<Integer,ArrayList<Reward>> REWARDS_GOLDEN = new HashMap<>();
     private static final HashMap<Integer,ArrayList<Reward>> REWARDS_BLUE = new HashMap<>();
     static{
@@ -112,48 +110,48 @@ public class LayLinesManager {
         rewards.add(new Reward(104002,6,7));
         rewards.add(new Reward(105,20));
         rewards.add(new Reward(102,100));
-        REWARDS_BLUE.put(5,rewards);
+        REWARDS_BLUE.put(6,rewards);
     }
 
-    public void createLayLineGadgetEntity(){
-        createLayLineGadgetEntity(player.getPos(), player.getRotation());
+    public void createLeyLineGadgetEntity(LeyLinesType leyLinesType){
+        createLeyLineGadgetEntity(player.getPos(), player.getRotation(), leyLinesType);
     }
     public synchronized void onTick(){
-        Iterator<ActiveLayLines> it = activeLayLines.iterator();
+        Iterator<ActiveLeyLines> it = activeLeyLines.iterator();
         while(it.hasNext()) {
-            ActiveLayLines activeLayLines = it.next();
-            activeLayLines.onTick();
-            if(activeLayLines.getPass()){
-                EntityGadget chest = activeLayLines.getChest();
+            ActiveLeyLines activeLeyLines = it.next();
+            activeLeyLines.onTick();
+            if(activeLeyLines.getPass()){
+                EntityGadget chest = activeLeyLines.getChest();
                 Scene scene = getScene();
                 scene.addEntity(chest);
                 scene.setChallenge(null);
-                activeChests.add(activeLayLines);
+                activeChests.add(activeLeyLines);
                 it.remove();
             }
         }
     }
-    public void createLayLineGadgetEntity(Position pos, Position rot){
+    public void createLeyLineGadgetEntity(Position pos, Position rot, LeyLinesType leyLinesType){
         int worldLevel = getWorldLevel();
 
         Scene scene = getScene();
-        EntityGadget entityGadget = new EntityGadget(scene, LAY_LINES_BLUE_GADGET_ID, pos, rot);
+        EntityGadget entityGadget = new EntityGadget(scene, leyLinesType.getGadgetId(), pos, rot);
         entityGadget.buildContent();
         GadgetWorktop gadgetWorktop = ((GadgetWorktop) entityGadget.getContent());
         gadgetWorktop.addWorktopOptions(new int[]{187});
         gadgetWorktop.setOnSelectWorktopOptionEvent((Player player, GadgetWorktop context, int option) -> {
-            synchronized (LayLinesManager.this) {
-                for (ActiveLayLines activeLayLines : activeLayLines) {
-                    if (activeLayLines.gadget == entityGadget) {
+            synchronized (LeyLinesManager.this) {
+                for (ActiveLeyLines activeLeyLines : this.activeLeyLines) {
+                    if (activeLeyLines.gadget == entityGadget) {
                         return false;
                     }
                 }
-                ActiveLayLines activeLayLine = new ActiveLayLines(entityGadget, 6, -1, worldLevel);
+                ActiveLeyLines leyLine = new ActiveLeyLines(entityGadget, 6, -1, worldLevel);
                 entityGadget.updateState(201);
-                scene.setChallenge(activeLayLine.getChallenge());
+                scene.setChallenge(leyLine.getChallenge());
                 scene.removeEntity(entityGadget, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
-                activeLayLines.add(activeLayLine);
-                activeLayLine.start();
+                activeLeyLines.add(leyLine);
+                leyLine.start();
             }
             return true;
         });
@@ -180,7 +178,7 @@ public class LayLinesManager {
                 int worldLevel = getWorldLevel();
                 ArrayList<GameItem> items = new ArrayList<>();
                 ArrayList<Reward> rewards;
-                if(activeChest.gadget.getGadgetId() == LAY_LINES_BLUE_GADGET_ID){
+                if(activeChest.gadget.getGadgetId() == LeyLinesType.LAY_LINES_BLUE_GADGET_ID.getGadgetId()){
                     rewards = REWARDS_BLUE.get(worldLevel);
                 }else{
                     rewards = REWARDS_GOLDEN.get(worldLevel);

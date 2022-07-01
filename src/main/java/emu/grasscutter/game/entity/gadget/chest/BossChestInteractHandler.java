@@ -2,16 +2,13 @@ package emu.grasscutter.game.entity.gadget.chest;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.excels.RewardPreviewData;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.gadget.GadgetChest;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.packet.send.PacketGadgetAutoPickDropInfoNotify;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BossChestInteractHandler implements ChestInteractHandler{
@@ -25,7 +22,7 @@ public class BossChestInteractHandler implements ChestInteractHandler{
         EntityGadget gadget = chest.getGadget();
 
         List<GameItem> rewards;
-        rewards = player.getLayLinesManager().onReward(gadget);
+        rewards = player.getLeyLinesManager().onReward(gadget);
         if(rewards==null) {
             try {
                 var worldDataManager = gadget.getScene().getWorld().getServer().getWorldDataManager();

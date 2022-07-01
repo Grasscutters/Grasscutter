@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers.laylines;
+package emu.grasscutter.game.managers.leylines;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 
-public class ActiveLayLines{
+public class ActiveLeyLines {
     SceneGroup tempSceneGroup;
     WorldChallenge challenge;
     EntityGadget gadget;
@@ -31,7 +31,7 @@ public class ActiveLayLines{
     ArrayList<EntityMonster> monsters = new ArrayList<>();
     ArrayList<ChallengeTrigger> challengeTriggers = new ArrayList<>();
     private static final int BLOOMING_GADGET_ID = 70210109;
-    public ActiveLayLines(EntityGadget entityGadget,int goal,int timeout,int worldLevel) {
+    public ActiveLeyLines(EntityGadget entityGadget, int goal, int timeout, int worldLevel) {
         this.tempSceneGroup = new SceneGroup();
         this.tempSceneGroup.id = entityGadget.getId();
         this.gadget=entityGadget;
@@ -99,7 +99,8 @@ public class ActiveLayLines{
                 setMonsters(monsters);
             }else{
                 if(getAliveMonstersCount() == 0) {
-                    pass = true;
+                    this.pass = true;
+                    this.challenge.done();
                 }
             }
         }

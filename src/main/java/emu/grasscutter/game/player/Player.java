@@ -7,7 +7,6 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PlayerLevelData;
 import emu.grasscutter.data.excels.WeatherData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.ability.AbilityManager;
@@ -40,7 +39,7 @@ import emu.grasscutter.game.managers.deforestation.DeforestationManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.managers.forging.ActiveForgeData;
 import emu.grasscutter.game.managers.forging.ForgingManager;
-import emu.grasscutter.game.managers.laylines.LayLinesManager;
+import emu.grasscutter.game.managers.leylines.LeyLinesManager;
 import emu.grasscutter.game.managers.mapmark.*;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.managers.SotSManager;
@@ -142,7 +141,7 @@ public class Player {
 	private TeamManager teamManager;
 
 	@Transient private TowerManager towerManager;
-    @Transient private LayLinesManager layLinesManager;
+    @Transient private LeyLinesManager leyLinesManager;
 	private TowerData towerData;
 	private PlayerGachaInfo gachaInfo;
 	private PlayerProfile playerProfile;
@@ -1336,11 +1335,11 @@ public class Player {
 		return this.collectionManager;
 	}
 
-    public LayLinesManager getLayLinesManager() {
-        if(this.layLinesManager==null){
-            this.layLinesManager = new LayLinesManager();
+    public LeyLinesManager getLeyLinesManager() {
+        if(this.leyLinesManager ==null){
+            this.leyLinesManager = new LeyLinesManager();
         }
-        return this.layLinesManager;
+        return this.leyLinesManager;
     }
 
 
@@ -1387,8 +1386,8 @@ public class Player {
 			}
 		}
 
-		// Handle LayLines
-        this.getLayLinesManager().onTick();
+		// Handle LeyLines
+        this.getLeyLinesManager().onTick();
 
 		// Handle daily reset.
 		this.doDailyReset();
@@ -1481,7 +1480,7 @@ public class Player {
 		//Make sure towerManager's player is online player
 		this.getTowerManager().setPlayer(this);
 		this.getCollectionManager().setPlayer(this);
-		this.getLayLinesManager().setPlayer(this);
+		this.getLeyLinesManager().setPlayer(this);
 
 		// Load from db
 		this.getAvatars().loadFromDatabase();

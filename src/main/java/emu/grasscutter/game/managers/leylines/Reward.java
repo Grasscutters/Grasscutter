@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers.laylines;
+package emu.grasscutter.game.managers.leylines;
 
 public class Reward {
     int itemId;
