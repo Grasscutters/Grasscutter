@@ -39,13 +39,13 @@ public class EntityGadget extends EntityBaseGadget {
 	private final Position pos;
 	private final Position rot;
 	private int gadgetId;
-	
+
 	private int state;
 	private int pointType;
 	private GadgetContent content;
 	private Int2FloatOpenHashMap fightProp;
 	private SceneGadget metaGadget;
-	
+
 	public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot) {
 		super(scene);
 		this.data = GameData.getGadgetDataMap().get(gadgetId);
@@ -63,7 +63,7 @@ public class EntityGadget extends EntityBaseGadget {
 		this(scene, gadgetId, pos, rot);
 		this.content = content;
 	}
-	
+
 	public GadgetData getGadgetData() {
 		return data;
 	}
@@ -77,7 +77,7 @@ public class EntityGadget extends EntityBaseGadget {
 	public Position getRotation() {
 		return this.rot;
 	}
-	
+
 	public int getGadgetId() {
 		return gadgetId;
 	}
@@ -93,7 +93,7 @@ public class EntityGadget extends EntityBaseGadget {
 	public void setState(int state) {
 		this.state = state;
 	}
-	
+
 	public void updateState(int state){
 		this.setState(state);
 		this.getScene().broadcastPacket(new PacketGadgetStateNotify(this, state));
@@ -130,7 +130,7 @@ public class EntityGadget extends EntityBaseGadget {
 		if (getContent() != null || getGadgetData() == null || getGadgetData().getType() == null) {
 			return;
 		}
-		
+
 		EntityType type = getGadgetData().getType();
 		GadgetContent content = switch (type) {
 			case GatherPoint -> new GadgetGatherPoint(this);
@@ -138,9 +138,10 @@ public class EntityGadget extends EntityBaseGadget {
 			case Worktop -> new GadgetWorktop(this);
 			case RewardStatue -> new GadgetRewardStatue(this);
 			case Chest -> new GadgetChest(this);
+            case Gadget -> new GadgetObject(this);
 			default -> null;
 		};
-		
+
 		this.content = content;
 	}
 
@@ -149,7 +150,7 @@ public class EntityGadget extends EntityBaseGadget {
 		if (this.fightProp == null) this.fightProp = new Int2FloatOpenHashMap();
 		return this.fightProp;
 	}
-	
+
 	@Override
 	public void onCreate() {
 		// Lua event
@@ -166,7 +167,7 @@ public class EntityGadget extends EntityBaseGadget {
 		}
 		getScene().getScriptManager().callEvent(EventType.EVENT_ANY_GADGET_DIE, new ScriptArgs(this.getConfigId()));
 	}
-	
+
 	@Override
 	public SceneEntityInfo toProto() {
 		EntityAuthorityInfo authority = EntityAuthorityInfo.newBuilder()
@@ -175,7 +176,7 @@ public class EntityGadget extends EntityBaseGadget {
 				.setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(Vector.newBuilder()))
 				.setBornPos(Vector.newBuilder())
 				.build();
-		
+
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
 				.setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
@@ -184,13 +185,13 @@ public class EntityGadget extends EntityBaseGadget {
 				.setEntityClientData(EntityClientData.newBuilder())
 				.setEntityAuthorityInfo(authority)
 				.setLifeState(1);
-		
+
 		PropPair pair = PropPair.newBuilder()
 				.setType(PlayerProperty.PROP_LEVEL.getId())
 				.setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
 				.build();
 		entityInfo.addPropList(pair);
-		
+
 		// We do not use the getter to null check because the getter will create a fight prop map if it is null
 		if (this.fightProp != null) {
 			this.addAllFightPropsToEntityInfo(entityInfo);
@@ -203,13 +204,13 @@ public class EntityGadget extends EntityBaseGadget {
 				.setGadgetState(this.getState())
 				.setIsEnableInteract(true)
 				.setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
-		
+
 		if (this.getContent() != null) {
 			this.getContent().onBuildProto(gadgetInfo);
 		}
 
 		entityInfo.setGadget(gadgetInfo);
-		
+
 		return entityInfo.build();
 	}
 	public void die() {
