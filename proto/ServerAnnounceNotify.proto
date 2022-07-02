@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "AnnounceData.proto";
+
+// CmdId: 2029
+// EnetChannelId: 0
+// EnetIsReliable: true
+message ServerAnnounceNotify {
+	repeated AnnounceData announce_data_list = 8;
+}
