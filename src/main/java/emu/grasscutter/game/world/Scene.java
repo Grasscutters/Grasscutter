@@ -466,7 +466,7 @@ public class Scene {
 
 	// TODO - Test
 	public synchronized void checkSpawns() {
-        int RANGE = 150;
+        int RANGE = 100;
 
 		RTree<SpawnGroupEntry, Geometry> list = GameDepot.getSpawnListById(this.getId());
 		Set<SpawnDataEntry> visible = new HashSet<>();
