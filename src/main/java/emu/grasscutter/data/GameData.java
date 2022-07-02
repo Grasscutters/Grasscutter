@@ -98,6 +98,7 @@ public class GameData {
 	private static final Int2ObjectMap<WeatherData> weatherDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<BattlePassMissionData> battlePassMissionDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<BattlePassRewardData> battlePassRewardDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CookRecipeData> cookRecipeDataMap = new Int2ObjectOpenHashMap<>();
 
 	@Getter private static final Int2ObjectMap<ActivityData> activityDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<ActivityWatcherData> activityWatcherDataMap = new Int2ObjectOpenHashMap<>();
@@ -435,5 +436,9 @@ public class GameData {
 
 	public static Int2ObjectMap<BattlePassRewardData> getBattlePassRewardDataMap() {
 		return battlePassRewardDataMap;
+	}
+
+	public static Int2ObjectMap<CookRecipeData> getCookRecipeDataMap() {
+		return cookRecipeDataMap;
 	}
 }
