@@ -83,8 +83,8 @@ Grasscutter usa Gradle para manejar dependencias y construcción.
 ```shell
 git clone https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
-.\gradlew.bat # Setting up environments
-.\gradlew jar # Compile
+.\gradlew.bat # Configuración de entornos
+.\gradlew jar # Compilar
 ```
 
 ##### Linux
