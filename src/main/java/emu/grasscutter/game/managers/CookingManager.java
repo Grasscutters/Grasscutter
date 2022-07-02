@@ -7,11 +7,23 @@ import java.util.List;
 import java.util.Set;
 
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.common.ItemParamData;
+import emu.grasscutter.data.excels.ItemData;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.CookRecipeDataOuterClass;
+import emu.grasscutter.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq;
+import emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReq;
+import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketCookDataNotify;
+import emu.grasscutter.server.packet.send.PacketCookRecipeDataNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerCookArgsRsp;
+import emu.grasscutter.server.packet.send.PacketPlayerCookRsp;
 
 public class CookingManager {
+    private static final int MANUAL_PERFECT_COOK_QUALITY = 3;
+
     private static Set<Integer> defaultUnlockedRecipies;
     private final Player player;
 
@@ -31,9 +43,82 @@ public class CookingManager {
     }
 
     /********************
+     * Unlocking for recipies.
+     ********************/
+    public synchronized boolean unlockRecipe(GameItem recipeItem) {
+		// Make sure this is actually a cooking recipe.
+		if (!recipeItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_COOK_RECIPE")) {
+			return false;
+		}
+
+		// Determine the recipe we should unlock.
+		int recipeId = Integer.parseInt(recipeItem.getItemData().getItemUse().get(0).getUseParam().get(0));
+
+		// Remove the item from the player's inventory.
+		// We need to do this here, before sending CookRecipeDataNotify, or the the UI won't correctly update.
+		player.getInventory().removeItem(recipeItem, 1);
+
+		// Tell the client that this blueprint is now unlocked and add the unlocked item to the player.
+		this.player.getUnlockedRecipies().put(recipeId, 0);
+		this.player.sendPacket(new PacketCookRecipeDataNotify(recipeId));
+
+		return true;
+	}
+
+    /********************
      * Perform cooking.
      ********************/
-    
+    public void handlePlayerCookReq(PlayerCookReq req) {
+        // Get info from the request.
+        int recipeId = req.getRecipeId();
+        int quality = req.getQteQuality();
+        int count = req.getCookCount();
+
+        // Get recipe data.
+        var recipeData = GameData.getCookRecipeDataMap().get(recipeId);
+        if (recipeData == null) {
+            this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
+            return;
+        }
+
+        // Get proficiency for player.
+        int proficiency = this.player.getUnlockedRecipies().getOrDefault(recipeId, 0);
+
+        // Try consuming materials.
+		boolean success = player.getInventory().payItems(recipeData.getInputVec().toArray(new ItemParamData[0]), count, ActionReason.Cook);
+		if (!success) {
+			this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL)); //ToDo: Probably the wrong return code.
+		}
+
+        // Obtain results.
+        int qualityIndex = 
+            quality == 0 
+            ? 2 
+            : quality - 1;
+
+        ItemParamData resultParam = recipeData.getQualityOutputVec().get(qualityIndex);
+        ItemData resultItemData = GameData.getItemDataMap().get(resultParam.getItemId());
+
+		GameItem cookResult = new GameItem(resultItemData, resultParam.getCount() * count);
+		this.player.getInventory().addItem(cookResult);
+
+        // Increase player proficiency, if this was a manual perfect cook.
+        if (quality == MANUAL_PERFECT_COOK_QUALITY) {
+            proficiency = Math.min(proficiency + 1, recipeData.getMaxProficiency());
+            this.player.getUnlockedRecipies().put(recipeId, proficiency);
+        }
+
+        // Send response.
+        this.player.sendPacket(new PacketPlayerCookRsp(cookResult, quality, count, recipeId, proficiency));
+    }
+
+
+    /********************
+     * Cooking arguments.
+     ********************/
+    public void handleCookArgsReq(PlayerCookArgsReq req) {
+        this.player.sendPacket(new PacketPlayerCookArgsRsp());
+    }
 
      /********************
      * Notify unlocked recipies.

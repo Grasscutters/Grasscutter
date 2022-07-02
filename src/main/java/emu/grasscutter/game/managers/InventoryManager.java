@@ -852,6 +852,11 @@ public class InventoryManager {
 					// Unlock.
 					useSuccess = player.getServer().getCombineManger().unlockCombineDiagram(player, useItem);
 				}
+				// Handle cooking recipies.
+				if (useItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_COOK_RECIPE")) {
+					// Unlock.
+					useSuccess = player.getCookingManager().unlockRecipe(useItem);
+				}
 				break;
 			case MATERIAL_FURNITURE_FORMULA:
 			case MATERIAL_FURNITURE_SUITE_FORMULA:
