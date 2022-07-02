@@ -1,5 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
+import java.util.List;
+
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -19,23 +21,25 @@ public class PacketPlayerCookRsp extends BasePacket {
         this.setData(proto);
     }
 
-    public PacketPlayerCookRsp(GameItem output, int quality, int count, int recipeId, int proficiency) {
+    public PacketPlayerCookRsp(List<GameItem> output, int quality, int count, int recipeId, int proficiency) {
         super(PacketOpcodes.PlayerCookRsp);
 
-        PlayerCookRsp proto = PlayerCookRsp.newBuilder()
+        PlayerCookRsp.Builder proto = PlayerCookRsp.newBuilder()
             .setRecipeData(
                 CookRecipeData.newBuilder()
                     .setRecipeId(recipeId)
                     .setProficiency(proficiency)    
             )
             .setQteQuality(quality)
-            .addItemList(
+            .setCookCount(count);
+
+        for (var item : output) {
+            proto.addItemList(
                 ItemParam.newBuilder()
-                    .setItemId(output.getItemId())
-                    .setCount(output.getCount())
-            )
-            .setCookCount(count)
-            .build();
+                    .setItemId(item.getItemId())
+                    .setCount(item.getCount())
+            );
+        }
 
         this.setData(proto);
     }
