@@ -1,10 +1,7 @@
 package emu.grasscutter.game.world;
 
-import com.github.davidmoten.rtreemulti.Entry;
 import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
-import com.github.davidmoten.rtreemulti.geometry.Point;
-import com.github.davidmoten.rtreemulti.geometry.Rectangle;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
@@ -13,9 +10,9 @@ import emu.grasscutter.data.binout.SceneNpcBornEntry;
 import emu.grasscutter.data.excels.*;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.entity.*;
-import emu.grasscutter.game.managers.leylines.LeyLinesType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamInfo;
+import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.props.SceneType;
@@ -31,11 +28,15 @@ import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
-import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import org.danilopianini.util.SpatialIndex;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.stream.Collectors;
 
 public class Scene {
 	private final World world;
@@ -431,7 +432,8 @@ public class Scene {
 		if(challenge != null){
 			challenge.onCheckTimeOut();
 		}
-		checkNpcGroup();
+
+        checkNpcGroup();
 	}
 
 	public int getEntityLevel(int baseLevel, int worldLevelOverride) {
@@ -441,29 +443,29 @@ public class Scene {
 
 		return level;
 	}
-	public void checkNpcGroup(){
-		Set<SceneNpcBornEntry> npcBornEntries = ConcurrentHashMap.newKeySet();
-		for (Player player : this.getPlayers()) {
-			npcBornEntries.addAll(loadNpcForPlayer(player));
-		}
+    public void checkNpcGroup(){
+        Set<SceneNpcBornEntry> npcBornEntries = ConcurrentHashMap.newKeySet();
+        for (Player player : this.getPlayers()) {
+            npcBornEntries.addAll(loadNpcForPlayer(player));
+        }
 
-		// clear the unreachable group for client
-		var toUnload = this.npcBornEntrySet.stream()
-				.filter(i -> !npcBornEntries.contains(i))
-				.map(SceneNpcBornEntry::getGroupId)
-				.toList();
+        // clear the unreachable group for client
+        var toUnload = this.npcBornEntrySet.stream()
+            .filter(i -> !npcBornEntries.contains(i))
+            .map(SceneNpcBornEntry::getGroupId)
+            .toList();
 
-		if(toUnload.size() > 0){
-			broadcastPacket(new PacketGroupUnloadNotify(toUnload));
-			Grasscutter.getLogger().debug("Unload NPC Group {}", toUnload);
-		}
-		// exchange the new npcBornEntry Set
-		this.npcBornEntrySet = npcBornEntries;
-	}
+        if(toUnload.size() > 0){
+            broadcastPacket(new PacketGroupUnloadNotify(toUnload));
+            Grasscutter.getLogger().debug("Unload NPC Group {}", toUnload);
+        }
+        // exchange the new npcBornEntry Set
+        this.npcBornEntrySet = npcBornEntries;
+    }
+
 	// TODO - Test
 	public synchronized void checkSpawns() {
-        int RANGE = 100;// entity range 100
-        int MAX_GROUP_COUNT = 500; // player could find max group count in the range
+        int RANGE = 100;
 
 		RTree<SpawnGroupEntry, Geometry> list = GameDepot.getSpawnListById(this.getId());
 		Set<SpawnDataEntry> visible = new HashSet<>();
@@ -491,7 +493,8 @@ public class Scene {
 			worldLevelOverride = worldLevelData.getMonsterLevel();
 		}
 
-        var leyLinesManager = getWorld().getHost().getLeyLinesManager();
+		var leyLinesManager = getWorld().getHost().getLeyLinesManager();
+
 		// Todo
 		List<GameEntity> toAdd = new LinkedList<>();
 		List<GameEntity> toRemove = new LinkedList<>();
@@ -551,6 +554,7 @@ public class Scene {
                 spawnedEntities.add(entry);
 			}
 		}
+
 		for (GameEntity entity : this.getEntities().values()) {
 		    var spawnEntry = entity.getSpawnEntry();
             if(spawnEntry != null) {
@@ -564,14 +568,14 @@ public class Scene {
             }
 		}
 
-        if (toAdd.size() > 0) {
-            toAdd.stream().forEach(this::addEntityDirectly);
-            this.broadcastPacket(new PacketSceneEntityAppearNotify(toAdd, VisionType.VISION_TYPE_BORN));
-        }
-        if (toRemove.size() > 0) {
-            toRemove.stream().forEach(this::removeEntityDirectly);
-            this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_TYPE_REMOVE));
-        }
+		if (toAdd.size() > 0) {
+			toAdd.stream().forEach(this::addEntityDirectly);
+			this.broadcastPacket(new PacketSceneEntityAppearNotify(toAdd, VisionType.VISION_TYPE_BORN));
+		}
+		if (toRemove.size() > 0) {
+			toRemove.stream().forEach(this::removeEntityDirectly);
+			this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_TYPE_REMOVE));
+		}
 	}
 
 	public List<SceneBlock> getPlayerActiveBlocks(Player player){
@@ -792,9 +796,9 @@ public class Scene {
 			addEntity(entity);
 		}
 	}
-	public void loadNpcForPlayerEnter(Player player){
-		this.npcBornEntrySet.addAll(loadNpcForPlayer(player));
-	}
+    public void loadNpcForPlayerEnter(Player player){
+        this.npcBornEntrySet.addAll(loadNpcForPlayer(player));
+    }
 	private List<SceneNpcBornEntry> loadNpcForPlayer(Player player){
 		var pos = player.getPos();
 		var data = GameData.getSceneNpcBornData().get(getId());
@@ -805,15 +809,14 @@ public class Scene {
 		var npcList = SceneIndexManager.queryNeighbors(data.getIndex(), pos.toDoubleArray(),
 				Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);
 
-
 		var sceneNpcBornEntries = npcList.stream()
-				.filter(i -> !this.npcBornEntrySet.contains(i))
-				.toList();
-		
+            .filter(i -> !this.npcBornEntrySet.contains(i))
+            .toList();
+
 		if(sceneNpcBornEntries.size() > 0){
 			this.broadcastPacket(new PacketGroupSuiteNotify(sceneNpcBornEntries));
-			Grasscutter.getLogger().debug("Loaded Npc Group Suite {}", sceneNpcBornEntries);
+            Grasscutter.getLogger().debug("Loaded Npc Group Suite {}", sceneNpcBornEntries);
 		}
-		return npcList;
+        return npcList;
 	}
 }
