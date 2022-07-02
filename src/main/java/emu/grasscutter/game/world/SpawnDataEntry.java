@@ -32,8 +32,8 @@ public class SpawnDataEntry {
 		return gadgetId;
 	}
 
-    public int getGadgetState() {
-        return gadgetState;
+	public int getGadgetState() {
+		return gadgetState;
     }
 
     public int getConfigId() {
@@ -64,7 +64,6 @@ public class SpawnDataEntry {
 		private int sceneId;
 		private int groupId;
 		private int blockId;
-		private Position pos;
 		private List<SpawnDataEntry> spawns;
 
 		public int getSceneId() {
@@ -81,10 +80,6 @@ public class SpawnDataEntry {
 
 		public void setBlockId(int blockId) {
 			this.blockId = blockId;
-		}
-
-		public Position getPos() {
-			return pos;
 		}
 
 		public List<SpawnDataEntry> getSpawns() {
