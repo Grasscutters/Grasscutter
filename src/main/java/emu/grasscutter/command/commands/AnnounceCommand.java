@@ -24,11 +24,17 @@ public final class AnnounceCommand implements CommandHandler {
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         var manager = Grasscutter.getGameServer().getAnnouncementManager();
         if (args.size() < 1) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.announce.command_usage"));
+            CommandHandler.sendTranslatedMessage(sender, "commands.announce.command_usage");
             return;
         }
+
         switch (args.get(0)){
             case "tpl":
+                if (args.size() < 2) {
+                    CommandHandler.sendTranslatedMessage(sender, "commands.announce.command_usage");
+                    return;
+                }
+
                 var templateId = Integer.parseInt(args.get(1));
                 var tpl = manager.getAnnounceConfigItemMap().get(templateId);
                 if(tpl == null){
@@ -46,6 +52,11 @@ public final class AnnounceCommand implements CommandHandler {
                 break;
 
             case "revoke":
+                if (args.size() < 2) {
+                    CommandHandler.sendTranslatedMessage(sender, "commands.announce.command_usage");
+                    return;
+                }
+
                 var templateId1 = Integer.parseInt(args.get(1));
                 manager.revoke(templateId1);
                 CommandHandler.sendMessage(sender, translate(sender, "commands.announce.revoke_done", templateId1));
