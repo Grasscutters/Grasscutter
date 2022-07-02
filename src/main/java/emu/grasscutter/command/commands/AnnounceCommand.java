@@ -23,7 +23,10 @@ public final class AnnounceCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         var manager = Grasscutter.getGameServer().getAnnouncementManager();
-
+        if (args.size() < 1) {
+            CommandHandler.sendTranslatedMessage(sender, "commands.announce.command_usage"));
+            return;
+        }
         switch (args.get(0)){
             case "tpl":
                 var templateId = Integer.parseInt(args.get(1));
