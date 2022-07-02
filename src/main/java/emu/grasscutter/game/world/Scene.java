@@ -488,24 +488,23 @@ public class Scene {
 
 					entity = monster;
 				} else if (entry.getGadgetId() > 0) {
-				    int gadgetId = entry.getGadgetId();
-				    if(LeyLinesType.valueOf(gadgetId)!=null){
-				        continue;
-                    }
-                    EntityGadget gadget;
-				    if((gadgetId == 70520005 || gadgetId == 70520009) && Utils.randomRange(0,4)==0){// 20% chance replace those gadget with leyline
-                        gadget = getWorld().getHost().getLeyLinesManager().createLeyLineGadgetEntity(entry.getPos(),LeyLinesType.random());
-                    } else {
-                        gadget = new EntityGadget(this, entry.getGadgetId(), entry.getPos(), entry.getRot());
-                        gadget.setGroupId(entry.getGroup().getGroupId());
-                        gadget.setConfigId(entry.getConfigId());
-                        gadget.setSpawnEntry(entry);
-                        int state = entry.getGadgetState();
-                        if (state > 0) {
-                            gadget.setState(state);
-                        }
-                    }
-
+          int gadgetId = entry.getGadgetId();
+          if(LeyLinesType.valueOf(gadgetId)!=null){
+            continue;
+          }
+          EntityGadget gadget;
+          if((gadgetId == 70520005 || gadgetId == 70520009) && Utils.randomRange(0,4)==0){// 20% chance replace those gadget with leyline
+              gadget = getWorld().getHost().getLeyLinesManager().createLeyLineGadgetEntity(entry.getPos(),LeyLinesType.random());
+          } else {
+              gadget = new EntityGadget(this, entry.getGadgetId(), entry.getPos(), entry.getRot());
+              gadget.setGroupId(entry.getGroup().getGroupId());
+              gadget.setConfigId(entry.getConfigId());
+              gadget.setSpawnEntry(entry);
+              int state = entry.getGadgetState();
+              if (state > 0) {
+                  gadget.setState(state);
+              }
+          }
 					gadget.buildContent();
 
 					gadget.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, 99999);
@@ -519,7 +518,7 @@ public class Scene {
 
 				// Add to scene and spawned list
 				toAdd.add(entity);
-                spawnedEntities.add(entry);
+        spawnedEntities.add(entry);
 			}
 		}
 
