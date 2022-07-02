@@ -86,7 +86,7 @@ public class GameDepot {
 	}
 
     public static void addSpawnData(SpawnGroupEntry entry) {
-	    int SINGLE_ENTITY_SIZE = 100;
+	    int SINGLE_ENTITY_SIZE = 150;
 
 	    int sceneId = entry.getSceneId();
         var rtree
