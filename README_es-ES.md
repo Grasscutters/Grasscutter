@@ -38,7 +38,7 @@
 
 1. Consigue `grasscutter.jar`
    - Descarga desde [actions](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297)
-   - [Constrúyelo tu mismo](#Building)
+   - [Constrúyelo tu mismo](#Construcción)
 2. Crea una carpeta `resources` en el directorio donde se encuentra grasscutter.jar y mueve las carpetas `BinOutput` y `ExcelBinOutput` ahí *(Consulta la [wiki](https://github.com/Grasscutters/Grasscutter/wiki) para más detalles de como conseguirlos.)*
 3. Ejecuta Grasscutter con `java -jar grasscutter.jar`. **Asegúrate de que el servicio de mongodb está activo.**
 
@@ -93,7 +93,7 @@ cd Grasscutter
 git clone https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
 chmod +x gradlew
-./gradlew jar # Compile
+./gradlew jar # Compilar
 ```
 
 Podrás encontrar el jar generado en la carpeta raíz del proyecto.
