@@ -98,7 +98,7 @@ chmod +x gradlew
 
 Podrás encontrar el jar generado en la carpeta raíz del proyecto.
 
-### Los comandos han sido movidos a la [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands)!
+### ¡Los comandos han sido movidos a la [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands)!
 
 # Soluciones a errores comunes
 
