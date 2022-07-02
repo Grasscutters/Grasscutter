@@ -11,6 +11,7 @@ import emu.grasscutter.game.entity.gadget.chest.BossChestInteractHandler;
 import emu.grasscutter.game.entity.gadget.chest.ChestInteractHandler;
 import emu.grasscutter.game.entity.gadget.chest.NormalChestInteractHandler;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.loot.LootRegistry;
 import emu.grasscutter.net.proto.InvestigationMonsterOuterClass;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneMonster;
@@ -45,10 +46,11 @@ public class WorldDataManager {
             List<ChestReward> chestReward = Grasscutter.getGsonFactory().fromJson(
             		isr,
                     TypeToken.getParameterized(List.class, ChestReward.class).getType());
-            
+
+            chestReward.forEach(r -> r.setTable(LootRegistry.loadTableFromDisk(r.getLootTable())));
             chestReward.forEach(reward ->
                     reward.getObjNames().forEach(
-                            name -> chestInteractHandlerMap.putIfAbsent(name, new NormalChestInteractHandler(reward))));
+                            name -> chestInteractHandlerMap.putIfAbsent(name, new NormalChestInteractHandler(reward.getTable()))));
 
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load chest reward config.", e);

@@ -20,7 +20,7 @@ public interface NumberProvider {
 
     Number roll(LootContext ctx);
 
-    static NumberProvider of(int count) {
+    static NumberProvider of(Number count) {
         return new ConstantNumberProvider(count);
     }
 

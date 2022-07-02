@@ -1,0 +1,81 @@
+{
+    "functions": [
+        {
+            "function": "player_give_mora",
+            "world_level_ratio": 0.5,
+            "count": 257
+        },
+        {
+            "function": "player_adv_exp",
+            "count": 20
+        },
+        {
+            "function": "player_give",
+            "name": "201",
+            "count": 2
+        }
+    ],
+    "pools": [
+        {
+            "entries": [
+                {
+                    "name" : "104012",
+                    "count": 3
+                }
+            ]
+        },
+        {
+            "entries": [
+                {
+                    "name" : "104002",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "rolls": 4,
+            "entries": [
+                {
+                    "name": "11201",
+                    "count": 1
+                },
+                {
+                    "name": "11301",
+                    "count": 1
+                },
+                {
+                    "name": "12201",
+                    "count": 1
+                },
+                {
+                    "name": "12301",
+                    "count": 1
+                },
+                {
+                    "name": "13201",
+                    "count": 1
+                },
+                {
+                    "name": "13301",
+                    "count": 1
+                },
+                {
+                    "name": "14201",
+                    "count": 1
+                },
+                {
+                    "name": "14301",
+                    "count": 1
+                },
+                {
+                    "name": "15201",
+                    "count": 1
+                },
+                {
+                    "name": "15301",
+                    "count": 1
+                }
+            ]
+        }
+    ]
+}

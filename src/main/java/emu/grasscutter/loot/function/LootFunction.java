@@ -60,6 +60,9 @@ public abstract class LootFunction {
                 case "set_count" -> new SetCountFunction(args);
                 case "set_data" -> new SetDataFunction(args);
                 case "inc_data" -> new IncDataFunction(args);
+                case "player_give" -> new PlayerGiveFunction(args);
+                case "player_give_mora" -> new PlayerGiveMoraFunction(args);
+                case "player_adv_exp" -> new PlayerAdvExpFunction(args);
                 default -> throw new JsonParseException("Loot function " + typeName + " does not exist");
             };
         }
