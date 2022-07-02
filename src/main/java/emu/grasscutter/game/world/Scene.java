@@ -3,6 +3,7 @@ package emu.grasscutter.game.world;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
+import emu.grasscutter.data.binout.SceneNpcBornEntry;
 import emu.grasscutter.data.excels.*;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.entity.*;
@@ -53,6 +54,7 @@ public class Scene {
 	private DungeonData dungeonData;
 	private int prevScene; // Id of the previous scene
 	private int prevScenePoint;
+	private Set<SceneNpcBornEntry> npcBornEntrySet;
 	public Scene(World world, SceneData sceneData) {
 		this.world = world;
 		this.sceneData = sceneData;
@@ -65,6 +67,7 @@ public class Scene {
 		this.spawnedEntities = ConcurrentHashMap.newKeySet();
 		this.deadSpawnedEntities = ConcurrentHashMap.newKeySet();
 		this.loadedBlocks = ConcurrentHashMap.newKeySet();
+		this.npcBornEntrySet = ConcurrentHashMap.newKeySet();
 		this.scriptManager = new SceneScriptManager(this);
 	}
 
@@ -426,6 +429,8 @@ public class Scene {
 		if(challenge != null){
 			challenge.onCheckTimeOut();
 		}
+
+        checkNpcGroup();
 	}
 
 	public int getEntityLevel(int baseLevel, int worldLevelOverride) {
@@ -435,6 +440,25 @@ public class Scene {
 
 		return level;
 	}
+    public void checkNpcGroup(){
+        Set<SceneNpcBornEntry> npcBornEntries = ConcurrentHashMap.newKeySet();
+        for (Player player : this.getPlayers()) {
+            npcBornEntries.addAll(loadNpcForPlayer(player));
+        }
+
+        // clear the unreachable group for client
+        var toUnload = this.npcBornEntrySet.stream()
+            .filter(i -> !npcBornEntries.contains(i))
+            .map(SceneNpcBornEntry::getGroupId)
+            .toList();
+
+        if(toUnload.size() > 0){
+            broadcastPacket(new PacketGroupUnloadNotify(toUnload));
+            Grasscutter.getLogger().debug("Unload NPC Group {}", toUnload);
+        }
+        // exchange the new npcBornEntry Set
+        this.npcBornEntrySet = npcBornEntries;
+    }
 
 	// TODO - Test
 	public synchronized void checkSpawns() {
@@ -568,9 +592,6 @@ public class Scene {
 						.flatMap(Collection::stream)
 						.toList();
 				onLoadGroup(toLoad);
-			}
-			for (Player player : this.getPlayers()) {
-				getScriptManager().meetEntities(loadNpcForPlayer(player, block));
 			}
 		}
 
@@ -754,47 +775,27 @@ public class Scene {
 			addEntity(entity);
 		}
 	}
-	public List<EntityNPC> loadNpcForPlayer(Player player, SceneBlock block){
-		if(!block.contains(player.getPos())){
-			return List.of();
-		}
-
+    public void loadNpcForPlayerEnter(Player player){
+        this.npcBornEntrySet.addAll(loadNpcForPlayer(player));
+    }
+	private List<SceneNpcBornEntry> loadNpcForPlayer(Player player){
 		var pos = player.getPos();
 		var data = GameData.getSceneNpcBornData().get(getId());
 		if(data == null){
 			return List.of();
 		}
 
-		var npcs = SceneIndexManager.queryNeighbors(data.getIndex(), pos.toDoubleArray(),
+		var npcList = SceneIndexManager.queryNeighbors(data.getIndex(), pos.toDoubleArray(),
 				Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);
-		var entityNPCS = npcs.stream().map(item -> {
-					var group = data.getGroups().get(item.getGroupId());
-					if(group == null){
-						group = SceneGroup.of(item.getGroupId());
-						data.getGroups().putIfAbsent(item.getGroupId(), group);
-						group.load(getId());
-					}
 
-					if(group.npc == null){
-						return null;
-					}
-					var npc = group.npc.get(item.getConfigId());
-					if(npc == null){
-						return null;
-					}
+		var sceneNpcBornEntries = npcList.stream()
+            .filter(i -> !this.npcBornEntrySet.contains(i))
+            .toList();
 
-					return getScriptManager().createNPC(npc, block.id, item.getSuiteIdList().get(0));
-				})
-				.filter(Objects::nonNull)
-				.filter(item -> getEntities().values().stream()
-						.filter(e -> e instanceof EntityNPC)
-						.noneMatch(e -> e.getConfigId() == item.getConfigId()))
-				.toList();
-
-		if(entityNPCS.size() > 0){
-			broadcastPacket(new PacketGroupSuiteNotify(entityNPCS));
+		if(sceneNpcBornEntries.size() > 0){
+			this.broadcastPacket(new PacketGroupSuiteNotify(sceneNpcBornEntries));
+            Grasscutter.getLogger().debug("Loaded Npc Group Suite {}", sceneNpcBornEntries);
 		}
-
-		return entityNPCS;
+        return npcList;
 	}
 }
