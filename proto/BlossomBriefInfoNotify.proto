@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "BlossomBriefInfo.proto";
+
+// CmdId: 2741
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message BlossomBriefInfoNotify {
+	repeated BlossomBriefInfo brief_info_list = 3;
+}

@@ -9,6 +9,8 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.github.davidmoten.rtreemulti.geometry.Point;
+import com.github.davidmoten.rtreemulti.geometry.Rectangle;
 import com.google.gson.Gson;
 import emu.grasscutter.data.binout.*;
 import emu.grasscutter.scripts.SceneIndexManager;
@@ -316,7 +318,7 @@ public class ResourceLoader {
 			try (InputStream spawnDataEntries = DataLoader.load(name)) {
 				Type type = TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType();
 				List<SpawnGroupEntry> list = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(spawnDataEntries), type);
-				
+
 				// Add spawns to group if it already exists in our spawn group map
 				for (SpawnGroupEntry group : list) {
 					if (spawnEntryMap.containsKey(group.getGroupId())) {
@@ -327,7 +329,7 @@ public class ResourceLoader {
 				}
 			} catch (Exception ignored) {}
 		}
-		
+
 		if (spawnEntryMap.isEmpty()) {
 			Grasscutter.getLogger().error("No spawn data loaded!");
 			return;
@@ -335,7 +337,7 @@ public class ResourceLoader {
 
 		for (SpawnGroupEntry entry : spawnEntryMap.values()) {
 			entry.getSpawns().forEach(s -> s.setGroup(entry));
-			GameDepot.getSpawnListById(entry.getSceneId()).insert(entry, entry.getPos().getX(), entry.getPos().getZ());
+			GameDepot.addSpawnData(entry);
 		}
 	}
 
