@@ -3,6 +3,8 @@ package emu.grasscutter.game.world;
 import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 
+import emu.grasscutter.utils.Utils;
+import emu.grasscutter.game.managers.leylines.LeyLinesType;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
@@ -31,7 +33,6 @@ import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import org.danilopianini.util.SpatialIndex;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
