@@ -5,15 +5,11 @@ import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.utils.Position;
 import lombok.Setter;
 import lombok.ToString;
+import org.luaj.vm2.LuaValue;
 
 import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
-
-import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -33,7 +29,6 @@ public class SceneGroup {
 	public Map<Integer,SceneMonster> monsters; // <ConfigId, Monster>
 	public Map<Integer, SceneGadget> gadgets; // <ConfigId, Gadgets>
 	public Map<String, SceneTrigger> triggers;
-	public Map<Integer, SceneNPC> npc; // <NpcId, NPC>
     public Map<Integer, SceneRegion> regions;
 	public List<SceneSuite> suites;
 	public List<SceneVar> variables;
@@ -132,42 +127,10 @@ public class SceneGroup {
 			}
 
 			// Add variables to suite
-            this.variables = ScriptLoader.getSerializer().toList(SceneVar.class, this.bindings.get("variables"));
-			// NPC in groups
-            this.npc = ScriptLoader.getSerializer().toList(SceneNPC.class, this.bindings.get("npcs")).stream()
-					.collect(Collectors.toMap(x -> x.npc_id, y -> y));
-            this.npc.values().forEach(n -> n.group = this);
+			this.variables = ScriptLoader.getSerializer().toList(SceneVar.class, this.bindings.get("variables"));
 
 			// Add monsters and gadgets to suite
-			for (SceneSuite suite : this.suites) {
-				suite.sceneMonsters = new ArrayList<>(
-						suite.monsters.stream()
-						.filter(this.monsters::containsKey)
-						.map(this.monsters::get)
-						.toList()
-				);
-
-				suite.sceneGadgets = new ArrayList<>(
-						suite.gadgets.stream()
-								.filter(this.gadgets::containsKey)
-								.map(this.gadgets::get)
-								.toList()
-				);
-
-				suite.sceneTriggers = new ArrayList<>(
-						suite.triggers.stream()
-								.filter(this.triggers::containsKey)
-								.map(this.triggers::get)
-								.toList()
-				);
-
-                suite.sceneRegions = new ArrayList<>(
-                    suite.regions.stream()
-                        .filter(this.regions::containsKey)
-                        .map(this.regions::get)
-                        .toList()
-                );
-			}
+            this.suites.forEach(i -> i.init(this));
 
 		} catch (ScriptException e) {
 			Grasscutter.getLogger().error("An error occurred while loading group " + this.id + " in scene " + sceneId + ".", e);
