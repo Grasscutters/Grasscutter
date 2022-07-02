@@ -12,6 +12,7 @@ import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
 import emu.grasscutter.game.expedition.ExpeditionManager;
 import emu.grasscutter.game.gacha.GachaManager;
+import emu.grasscutter.game.managers.AnnouncementManager;
 import emu.grasscutter.game.managers.CookingManager;
 import emu.grasscutter.game.managers.InventoryManager;
 import emu.grasscutter.game.managers.MultiplayerManager;
@@ -69,6 +70,7 @@ public final class GameServer extends KcpServer {
 	@Getter private final BattlePassMissionManager battlePassMissionManager;
 	@Getter private final CombineManger combineManger;
 	@Getter private final TowerScheduleManager towerScheduleManager;
+	@Getter private final AnnouncementManager announcementManager;
 
 	public GameServer() {
 		this(getAdapterInetSocketAddress());
@@ -112,7 +114,7 @@ public final class GameServer extends KcpServer {
 		this.towerScheduleManager = new TowerScheduleManager(this);
 		this.worldDataManager = new WorldDataManager(this);
 		this.battlePassMissionManager = new BattlePassMissionManager(this);
-		
+		this.announcementManager = new AnnouncementManager(this);
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
