@@ -30,6 +30,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
+import emu.grasscutter.game.managers.CookingManager;
 import emu.grasscutter.game.managers.FurnitureManager;
 import emu.grasscutter.game.managers.InsectCaptureManager;
 import emu.grasscutter.game.managers.ResinManager;
@@ -114,6 +115,7 @@ public class Player {
 	private Set<Integer> unlockedFurniture;
 	private Set<Integer> unlockedFurnitureSuite;
 	private List<ActiveForgeData> activeForges;
+	private Map<Integer, Integer> unlockedRecipies;
 
 	private Integer widgetId;
 
@@ -186,6 +188,8 @@ public class Player {
 	@Transient private GameHome home;
 	@Transient private FurnitureManager furnitureManager;
 	@Transient private BattlePassManager battlePassManager;
+	@Transient private CookingManager cookingManager;
+	// @Transient private 
 	@Getter @Transient private ActivityManager activityManager;
 
 	@Transient private CollectionManager collectionManager;
@@ -230,6 +234,7 @@ public class Player {
 		this.unlockedFurniture = new HashSet<>();
 		this.unlockedFurnitureSuite = new HashSet<>();
 		this.activeForges = new ArrayList<>();
+		this.unlockedRecipies = new HashMap<>();
 
 		this.setSceneId(3);
 		this.setRegionId(1);
@@ -256,6 +261,7 @@ public class Player {
 		this.resinManager = new ResinManager(this);
 		this.forgingManager = new ForgingManager(this);
 		this.furnitureManager = new FurnitureManager(this);
+		this.cookingManager = new CookingManager(this);
 	}
 
 	// On player creation
@@ -290,6 +296,7 @@ public class Player {
 		this.deforestationManager = new DeforestationManager(this);
 		this.forgingManager = new ForgingManager(this);
 		this.furnitureManager = new FurnitureManager(this);
+		this.cookingManager = new CookingManager(this);
 	}
 
 	public int getUid() {
@@ -666,6 +673,10 @@ public class Player {
 
 	public List<ActiveForgeData> getActiveForges() {
 		return this.activeForges;
+	}
+
+	public Map<Integer, Integer> getUnlockedRecipies() {
+		return this.unlockedRecipies;
 	}
 
 	public MpSettingType getMpSetting() {
@@ -1314,6 +1325,10 @@ public class Player {
 		return battlePassManager;
 	}
 
+	public CookingManager getCookingManager() {
+		return cookingManager;
+	}
+
 	public void loadBattlePassManager() {
 		if (this.battlePassManager != null) return;
 		this.battlePassManager = DatabaseHelper.loadBattlePass(this);
@@ -1534,6 +1549,7 @@ public class Player {
 		session.send(new PacketCombineDataNotify(this.unlockedCombines));
 		this.forgingManager.sendForgeDataNotify();
 		this.resinManager.onPlayerLogin();
+		this.cookingManager.sendCookDataNofity();
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
 		// Battle Pass trigger

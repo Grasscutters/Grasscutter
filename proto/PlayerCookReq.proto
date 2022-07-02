@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 158
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message PlayerCookReq {
+	uint32 recipe_id = 6;
+	uint32 qte_quality = 2;
+	uint32 assist_avatar = 11;
+	uint32 cook_count = 7;
+}

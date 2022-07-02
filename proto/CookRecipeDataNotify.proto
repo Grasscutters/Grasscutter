@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CookRecipeData.proto";
+
+// CmdId: 101
+// EnetChannelId: 0
+// EnetIsReliable: true
+message CookRecipeDataNotify {
+	CookRecipeData recipe_data = 1;
+}
