@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message AnnounceData {
+	uint32 config_id = 1;
+	uint32 begin_time = 2;
+	uint32 end_time = 3;
+	string center_system_text = 4;
+	string count_down_text = 5;
+	string dungeon_confirm_text = 6;
+	uint32 center_system_frequency = 7;
+	uint32 count_down_frequency = 8;
+	bool is_center_system_last_5_every_minutes = 9;
+}

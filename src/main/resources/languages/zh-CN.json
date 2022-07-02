@@ -117,6 +117,14 @@
       "no_account": "账号不存在。",
       "description": "创建或删除账号"
     },
+    "announce": {
+      "command_usage": "用法：a <tpl templateId|refresh|revoke templateId|content>",
+      "send_success": "成功地发送了一则公告，你可以通过/a revoke %s来撤销。",
+      "refresh_success": "成功地刷新了公告配置。(共%s个)",
+      "revoke_done": "尝试撤回公告 %s。",
+      "description": "向所有在线玩家发送公告，或者管理服务器的公告。",
+      "not_found": "找不到公告 %s。"
+    },
     "clear": {
       "command_usage": "用法：clear <all|wp|art|mat>\nall: 所有, wp: 武器, art: 圣遗物, mat: 材料",
       "weapons": "已清除 %s 的武器。",
