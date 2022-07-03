@@ -9,8 +9,6 @@ import emu.grasscutter.loot.number.NumberProvider;
 import java.util.Map;
 
 public class PlayerGiveFunction extends LootFunction {
-
-    public final static int MORA_ID = 201;
     public PlayerGiveFunction(Map<String, JsonElement> args) {
         super(args);
     }

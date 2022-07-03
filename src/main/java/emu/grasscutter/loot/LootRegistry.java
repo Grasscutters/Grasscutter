@@ -1,6 +1,6 @@
 package emu.grasscutter.loot;
 
-import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonParser;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.game.inventory.GameItem;
@@ -8,19 +8,16 @@ import it.unimi.dsi.fastutil.ints.IntIntPair;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.function.IntPredicate;
 
 public class LootRegistry {
     public static final LootTable DEFAULT_LOOT = new LootTable() {
         @Override
         public List<GameItem> loot(LootContext ctx) {
-            // TODO Return nothing before release
-            return List.of(new GameItem(100001));
+            return List.of();
         }
     };
 
@@ -71,9 +68,18 @@ public class LootRegistry {
     public static LootRegistry getLootRegistry(String name) {
         try (Reader fileReader = new InputStreamReader(DataLoader.load(name))) {
             HashMap<IntPredicate, LootTable> ret = new HashMap<>();
-            Type type = new TypeToken<Map<String, String>>() {}.getType();
-            Map<String, String> rules = Grasscutter.getGsonFactory().fromJson(fileReader, type);
-            rules.forEach((key, value) -> ret.put(getLootTablePredicate(key), loadTableFromDisk(value)));
+
+            var elem = JsonParser.parseReader(fileReader);
+            var obj = elem.getAsJsonObject();
+            obj.entrySet().forEach(e -> {
+                var value = e.getValue();
+                if (value.isJsonObject()) {
+                    ret.put(getLootTablePredicate(e.getKey()), Grasscutter.getGsonFactory().fromJson(value, LootTable.class));
+                } else {
+                    ret.put(getLootTablePredicate(e.getKey()), loadTableFromDisk(value.getAsString()));
+                }
+            });
+
             return new LootRegistry(name, ret);
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load drop registry", e);

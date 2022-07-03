@@ -40,6 +40,7 @@ public abstract class LootCondition {
             var args = obj.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
             return switch(typeName) {
                 case "monster_level" -> new MonsterLevelCondition(args);
+                case "random_chance" -> new RandomChanceCondition(args);
                 default -> throw new JsonParseException("Loot function " + typeName + " does not exist");
             };
         }
