@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @Task(taskName = "Announcement", taskCronExpression = "0 * * * * ?", triggerName = "AnnouncementTrigger")
 public final class AnnouncementTask extends TaskHandler {
 
-    Map<Integer, Integer> intervalMap = new ConcurrentHashMap<>();
+    static Map<Integer, Integer> intervalMap = new ConcurrentHashMap<>();
     @Override
     public void onEnable() {
         Grasscutter.getLogger().debug("[Task] Announcement task enabled.");
@@ -39,7 +39,7 @@ public final class AnnouncementTask extends TaskHandler {
 
         var toSend = intervalMap.entrySet().stream()
             .filter(i -> announceConfigItems.containsKey(i.getKey()))
-            .filter(i -> announceConfigItems.get(i.getKey()).getInterval() >= i.getValue())
+            .filter(i -> i.getValue() >= announceConfigItems.get(i.getKey()).getInterval())
             .map(i -> announceConfigItems.get(i.getKey()))
             .toList();
 

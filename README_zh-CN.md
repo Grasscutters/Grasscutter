@@ -17,7 +17,7 @@
 * 从控制台生成魔物
 * 多人游戏 *部分* 可用
 * 物品栏相关 (接收物品/角色, 升级角色/武器等)
-
+* 自定义
 ## 快速设置指南
 
 **注意:** 如需帮助请加入 [Discord](https://discord.gg/T5vZU6UyeG)
@@ -48,23 +48,23 @@
 
 1. 重定向流量: (选择其中一个)
     - mitmdump: `mitmdump -s proxy.py -k`
-    
+
       信任 CA 证书:
-    
+
       ​	**注意:** mitmproxy 的 CA 证书通常存放在 `%USERPROFILE%\ .mitmproxy`, 或者在 `http://mitm.it` 下载证书
-    
+
       ​ 双击[安装根证书](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate)或者...
-    
+
       - 使用命令行
-    
+
         ```shell
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
         ```
-    
+
     - Fiddler Classic: 运行 Fiddler Classic, 在设置中开启 `解密 https 通信` 并将端口设为除 `8888` 以外的任意端口 (工具 -> 选项 -> 连接) 并加载[此脚本](https://github.lunatic.moe/fiddlerscript)
-      
+
     - [Hosts 文件](https://github.com/Grasscutters/Grasscutter/wiki/Running#traffic-route-map)
-    
+
 2. 设置代理为 `127.0.0.1:8080` 或你设置的端口
 
 **也可直接运行 `start.cmd` 一键启动服务端并设置代理, 但必须设置 `JAVA_HOME` 环境变量**
