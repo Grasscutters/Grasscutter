@@ -18,8 +18,9 @@ public class PacketGroupSuiteNotify extends BasePacket {
 
 		var proto = GroupSuiteNotifyOuterClass.GroupSuiteNotify.newBuilder();
 
-        npcBornEntries.forEach(x ->
-            x.getSuiteIdList().forEach(y ->
+        npcBornEntries.stream()
+            .filter(x -> x.getGroupId() > 0 && x.getSuiteIdList() != null)
+            .forEach(x -> x.getSuiteIdList().forEach(y ->
                 proto.putGroupMap(x.getGroupId(), y)
             ));
 

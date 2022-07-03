@@ -71,4 +71,8 @@ public class EntityRegion extends GameEntity{
          */
         return null;
     }
+
+    public int getFirstEntityId() {
+        return entities.stream().findFirst().orElse(0);
+    }
 }
