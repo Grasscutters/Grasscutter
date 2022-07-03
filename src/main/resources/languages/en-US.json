@@ -54,6 +54,8 @@
       "resources_error": "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.",
       "version": "Grasscutter version: %s-%s",
       "game_version": "Game version: %s",
+      "httpapi_do_not_use": "HttpApi is not enabled on this server",
+      "httpapi_key_error": "Wrong httpapi key",
       "resources": {
         "loading": "Loading resources...",
         "finish": "Finished loading resources."

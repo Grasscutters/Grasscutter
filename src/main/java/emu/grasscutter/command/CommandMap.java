@@ -3,6 +3,7 @@ package emu.grasscutter.command;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
 import org.reflections.Reflections;
+import static emu.grasscutter.utils.Language.translate;
 
 import java.util.*;
 
@@ -162,7 +163,7 @@ public final class CommandMap {
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
                 return true;
         }
-        
+
         // Sets default targetPlayer to the UID provided.
         try {
             int uid = Integer.parseInt(targetUid);
@@ -188,11 +189,11 @@ public final class CommandMap {
      * @param player     The player invoking the command or null for the server console.
      * @param rawMessage The messaged used to invoke the command.
      */
-    public void invoke(Player player, Player targetPlayer, String rawMessage) {
+    public String invoke(Player player, Player targetPlayer, String rawMessage) {
         rawMessage = rawMessage.trim();
         if (rawMessage.length() == 0) {
             CommandHandler.sendTranslatedMessage(player, "commands.generic.not_specified");
-            return;
+            return translate("commands.generic.not_specified");
         }
 
         // Parse message.
@@ -204,7 +205,7 @@ public final class CommandMap {
         // Check for special cases - currently only target command.
         if (label.startsWith("@")) { // @[UID]
             this.setPlayerTarget(playerId, player, label.substring(1));
-            return;
+            return "error";
         } else if (label.equalsIgnoreCase("target")) { // target [[@]UID]
             if (args.size() > 0) {
                 String targetUidStr = args.get(0);
@@ -212,10 +213,10 @@ public final class CommandMap {
                     targetUidStr = targetUidStr.substring(1);
                 }
                 this.setPlayerTarget(playerId, player, targetUidStr);
-            return;
+            return "error";
             } else {
                 this.setPlayerTarget(playerId, player, "");
-                return;
+                return "error";
             }
         }
 
@@ -228,7 +229,7 @@ public final class CommandMap {
         // Check if the handler is still null.
         if (handler == null) {
             CommandHandler.sendTranslatedMessage(player, "commands.generic.unknown_command", label);
-            return;
+            return translate("commands.generic.unknown_command", label);
         }
 
         // Get the command's annotation.
@@ -238,12 +239,12 @@ public final class CommandMap {
         try{
             targetPlayer = getTargetPlayer(playerId, player, targetPlayer, args);
         } catch (IllegalArgumentException e) {
-            return;
+            return e.toString();
         }
 
         // Check for permissions.
         if (!Grasscutter.getPermissionHandler().checkPermission(player, targetPlayer, annotation.permission(), this.annotations.get(label).permissionTargeted())) {
-            return;
+            return "error";
         }
 
         // Check if command has unfulfilled constraints on targetPlayer
@@ -251,17 +252,17 @@ public final class CommandMap {
         if (targetRequirement != Command.TargetRequirement.NONE) {
             if (targetPlayer == null) {
                 CommandHandler.sendTranslatedMessage(null, "commands.execution.need_target");
-                return;
+                return translate("commands.execution.need_target");
             }
 
             if ((targetRequirement == Command.TargetRequirement.ONLINE) && !targetPlayer.isOnline()) {
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_online");
-                return;
+                return translate("commands.execution.need_target_online");
             }
 
             if ((targetRequirement == Command.TargetRequirement.OFFLINE) && targetPlayer.isOnline()) {
-                CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_offline");
-                return;
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_online");
+                return translate("commands.execution.need_target_online");
             }
         }
 
@@ -276,6 +277,7 @@ public final class CommandMap {
         } else {
             runnable.run();
         }
+        return "OK";
     }
 
     /**

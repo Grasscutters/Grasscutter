@@ -11,19 +11,19 @@ import static emu.grasscutter.Grasscutter.config;
 
 /**
  * A data container for the server's configuration.
- * 
+ *
  * Use `import static emu.grasscutter.Configuration.*;`
  * to import all configuration constants.
  */
 public final class Configuration extends ConfigContainer {
-    
+
     /*
      * Constants
      */
-    
+
     // 'c' is short for 'config' and makes code look 'cleaner'.
     public static final ConfigContainer c = config;
-    
+
     public static final Locale LANGUAGE = config.language.language;
     public static final Locale FALLBACK_LANGUAGE = config.language.fallback;
     public static final String DOCUMENT_LANGUAGE = config.language.document;
@@ -32,22 +32,28 @@ public final class Configuration extends ConfigContainer {
     private static final String PLUGINS_FOLDER = config.folderStructure.plugins;
     private static final String SCRIPTS_FOLDER = config.folderStructure.scripts;
     private static final String PACKETS_FOLDER = config.folderStructure.packets;
-    
+
     public static final Server SERVER = config.server;
     public static final Database DATABASE = config.databaseInfo;
     public static final Account ACCOUNT = config.account;
-    
+
     public static final HTTP HTTP_INFO = config.server.http;
     public static final Game GAME_INFO = config.server.game;
     public static final Dispatch DISPATCH_INFO = config.server.dispatch;
-    
+
     public static final Encryption HTTP_ENCRYPTION = config.server.http.encryption;
     public static final Policies HTTP_POLICIES = config.server.http.policies;
     public static final Files HTTP_STATIC_FILES = config.server.http.files;
-    
+
     public static final GameOptions GAME_OPTIONS = config.server.game.gameOptions;
     public static final GameOptions.InventoryLimits INVENTORY_LIMITS = config.server.game.gameOptions.inventoryLimits;
-    
+
+    public static final String UseApi = config.httpapi.UseApi;
+
+    public static final String UseApiKey = config.httpapi.UseApiKey;
+
+    public static final String ApiKey = config.httpapi.ApiKey;
+
     /*
      * Utilities
      */
@@ -58,11 +64,11 @@ public final class Configuration extends ConfigContainer {
     public static String DATA(String path) {
         return Paths.get(DATA_FOLDER, path).toString();
     }
-    
+
     public static String RESOURCE(String path) {
         return Paths.get(RESOURCES_FOLDER, path).toString();
     }
-    
+
     public static String PLUGIN() {
         return PLUGINS_FOLDER;
     }

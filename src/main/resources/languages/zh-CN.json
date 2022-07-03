@@ -54,6 +54,8 @@
       "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。",
       "version": "Grasscutter 版本：%s-%s",
       "game_version": "游戏版本：%s",
+      "httpapi_do_not_use": "本服务器未启用HttpApi",
+      "httpapi_key_error": "HttpApi Key错误，我劝你善良",
       "resources": {
         "loading": "正在加载 resources...",
         "finish": "已加载 resources。"
