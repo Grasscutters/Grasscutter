@@ -46,6 +46,14 @@ public final class HelpCommand implements CommandHandler {
                         builder.append(alias).append(" ");
                     }
                 }
+
+                builder.append("\n").append(translate(player, "commands.help.permission"));
+                if(annotation.permission().isEmpty() || annotation.permission().isBlank()) {
+                    builder.append(translate(player, "commands.help.no_permission"));
+                }
+                else {
+                    builder.append(annotation.permission());
+                }
                 if (player != null && !Objects.equals(annotation.permission(), "") && !player.getAccount().hasPermission(annotation.permission())) {
                     builder.append("\n Warning: You do not have permission to run this command.");
                 }
