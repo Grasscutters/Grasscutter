@@ -167,7 +167,9 @@
       "usage": "Usage: ",
       "aliases": "Aliases: ",
       "available_commands": "Available commands: ",
-      "description": "Sends the help message or shows information about a specified command"
+      "description": "Sends the help message or shows information about a specified command",
+      "permission": "Permission: ",
+      "no_permission": " None"
     },
     "kick": {
       "player_kick_player": "Player [%s:%s] has kicked player [%s:%s]",
@@ -351,6 +353,14 @@
       "success": "Successful.",
       "failure": "Failed, player not found.",
       "description": "Unban a player"
+    },
+    "cmdperm": {
+      "usage": "Usage: commandpermission <command>",
+      "description": "Show the permission the specified command need.",
+      "no_such_cmd": "Command not found.",
+      "tip_need_permission": "Command \"%s\" need permission \"%s\".",
+      "tip_need_no_permission": "Command \"%s\" need no permission."
+
     }
   },
   "gacha": {

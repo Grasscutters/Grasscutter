@@ -178,7 +178,9 @@
       "usage": "用法：",
       "aliases": "別名：",
       "description": "發送幫助信息或顯示特定命令的信息",
-      "available_commands": "可用指令："
+      "available_commands": "可用指令：",
+      "permission": "需要的權限: ",
+      "no_permission": "無"
     },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已把 [%s:%s] 踢出",
@@ -382,6 +384,13 @@
       "success": "撤銷停權成功。",
       "failure": "撤銷停權失敗，玩家帳號不存在。",
       "command_usage": "用法：unban <@playerId>"
+    },
+    "cmdperm": {
+      "usage": "用法: commandpermission <指令>",
+      "description": "顯示指令需要的權限",
+      "no_such_cmd": "找不到指令",
+      "tip_need_permission": "指令\"%s\"需要的權限是\"%s\"",
+      "tip_need_no_permission": "指令\"%s\"不需要權限"
     }
   },
   "gacha": {

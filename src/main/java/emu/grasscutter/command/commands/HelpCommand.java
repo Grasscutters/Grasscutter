@@ -68,6 +68,13 @@ public final class HelpCommand implements CommandHandler {
                         builder.append(alias).append(" ");
                     }
                 }
+                builder.append("\n").append(translate(player, "commands.help.permission"));
+                if(annotation.permission().isEmpty() || annotation.permission().isBlank()) {
+                    builder.append(translate(player, "commands.help.no_permission"));
+                }
+                else {
+                    builder.append(annotation.permission());
+                }
 
                 builder.append("\n");
             });
@@ -85,6 +92,14 @@ public final class HelpCommand implements CommandHandler {
                         builder.append(alias).append(" ");
                     }
                 }
+                builder.append("\n").append(translate(player, "commands.help.permission"));
+                if(annotation.permission().isEmpty() || annotation.permission().isBlank()) {
+                    builder.append(translate(player, "commands.help.no_permission"));
+                }
+                else {
+                    builder.append(annotation.permission());
+                }
+
 
                 CommandHandler.sendMessage(player, builder.toString());
             });
