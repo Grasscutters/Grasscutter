@@ -384,13 +384,6 @@
       "success": "撤銷停權成功。",
       "failure": "撤銷停權失敗，玩家帳號不存在。",
       "command_usage": "用法：unban <@playerId>"
-    },
-    "cmdperm": {
-      "usage": "用法: commandpermission <指令>",
-      "description": "顯示指令需要的權限",
-      "no_such_cmd": "找不到指令",
-      "tip_need_permission": "指令\"%s\"需要的權限是\"%s\"",
-      "tip_need_no_permission": "指令\"%s\"不需要權限"
     }
   },
   "gacha": {

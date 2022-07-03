@@ -353,13 +353,6 @@
       "success": "成功取消玩家的封禁。",
       "failure": "取消玩家的封禁失败，因为玩家不存在。",
       "description": "取消玩家的封禁"
-    },
-    "cmdperm": {
-      "usage": "用法: commandpermission <命令>",
-      "description": "显示命令所需权限",
-      "no_such_cmd": "找不到命令",
-      "tip_need_permission": "命令\"%s\"需要的权限是\"%s\"",
-      "tip_need_no_permission": "命令\"%s\"不需要权限"
     }
   },
   "gacha": {
