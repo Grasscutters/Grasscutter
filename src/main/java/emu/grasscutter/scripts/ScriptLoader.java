@@ -2,6 +2,7 @@ package emu.grasscutter.scripts;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.props.EntityType;
+import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.constants.ScriptGadgetState;
 import emu.grasscutter.scripts.constants.ScriptRegionShape;
@@ -44,16 +45,16 @@ public class ScriptLoader {
 		if (sm != null) {
 			throw new Exception("Script loader already initialized");
 		}
-		
+
 		// Create script engine
 		sm = new ScriptEngineManager();
         engine = sm.getEngineByName("luaj");
         factory = getEngine().getFactory();
-        
+
         // Lua stuff
         fileType = "lua";
         serializer = new LuaSerializer();
-        
+
         // Set engine to replace require as a temporary fix to missing scripts
         LuajContext ctx = (LuajContext) engine.getContext();
 		ctx.globals.set("require", new OneArgFunction() {
@@ -62,11 +63,15 @@ public class ScriptLoader {
 		        return LuaValue.ZERO;
 		    }
 		});
-		
+
 		LuaTable table = new LuaTable();
 		Arrays.stream(EntityType.values()).forEach(e -> table.set(e.name().toUpperCase(), e.getValue()));
 		ctx.globals.set("EntityType", table);
-		
+
+        LuaTable table1 = new LuaTable();
+        Arrays.stream(QuestState.values()).forEach(e -> table1.set(e.name().toUpperCase(), e.getValue()));
+        ctx.globals.set("QuestState", table1);
+
 		ctx.globals.set("EventType", CoerceJavaToLua.coerce(new EventType())); // TODO - make static class to avoid instantiating a new class every scene
 		ctx.globals.set("GadgetState", CoerceJavaToLua.coerce(new ScriptGadgetState()));
 		ctx.globals.set("RegionShape", CoerceJavaToLua.coerce(new ScriptRegionShape()));
@@ -75,11 +80,11 @@ public class ScriptLoader {
 		scriptLibLua = CoerceJavaToLua.coerce(scriptLib);
 		ctx.globals.set("ScriptLib", scriptLibLua);
 	}
-	
+
 	public static ScriptEngine getEngine() {
 		return engine;
 	}
-	
+
 	public static String getScriptType() {
 		return fileType;
 	}
@@ -109,7 +114,7 @@ public class ScriptLoader {
 			return sc.get();
 		}
 
-		Grasscutter.getLogger().info("Loading script " + path);
+		Grasscutter.getLogger().debug("Loading script " + path);
 
 		File file = new File(path);
 

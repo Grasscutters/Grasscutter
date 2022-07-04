@@ -53,7 +53,11 @@
       "create_resources": "Создаём папку ресурсов...",
       "resources_error": "Поместите копию папок 'BinOutput' и 'ExcelBinOutput' в папку ресурсов.",
       "version": "Версия Grasscutter: %s-%s",
-      "game_version": "Версия игры: %s"
+      "game_version": "Версия игры: %s",
+      "resources": {
+        "loading": "Loading resources...",
+        "finish": "Finished loading resources."
+      }
     }
   },
   "commands": {
@@ -101,7 +105,7 @@
     "status": {
       "enabled": "Включено",
       "disabled": "Выключено",
-      "help": "Помощь", 
+      "help": "Помощь",
       "success": "Успех"
     },
     "account": {
@@ -303,7 +307,7 @@
       "description": "Устанавливает уровень дружбы для активного персонажа"
     },
     "setProp": {
-      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyssfloor | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
+      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
       "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
     },
     "setStats": {

@@ -88,7 +88,7 @@ public class GachaManager {
 				for (GachaBanner banner : banners) {
 					getGachaBanners().put(banner.getScheduleId(), banner);
 				}
-				Grasscutter.getLogger().info("Banners successfully loaded.");
+				Grasscutter.getLogger().debug("Banners successfully loaded.");
 			} else {
 				Grasscutter.getLogger().error("Unable to load banners. Banners size is 0.");
 			}

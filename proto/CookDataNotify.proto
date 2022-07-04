@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CookRecipeData.proto";
+
+// CmdId: 142
+// EnetChannelId: 0
+// EnetIsReliable: true
+message CookDataNotify {
+	uint32 grade = 8;
+	repeated CookRecipeData recipe_data_list = 2;
+}

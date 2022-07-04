@@ -53,7 +53,11 @@
       "create_resources": "Creating resources folder...",
       "resources_error": "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.",
       "version": "Grasscutter version: %s-%s",
-      "game_version": "Game version: %s"
+      "game_version": "Game version: %s",
+      "resources": {
+        "loading": "Loading resources...",
+        "finish": "Finished loading resources."
+      }
     }
   },
   "commands": {
@@ -113,6 +117,14 @@
       "no_account": "Account not found.",
       "description": "Modify user accounts"
     },
+    "announce": {
+      "command_usage": "Usage: a <tpl templateId|refresh|revoke templateId|content>",
+      "send_success": "Send an announcement successfully, you can revoke it by /a revoke %s.",
+      "refresh_success": "Refresh announcement config file successfully. (Total %s)",
+      "revoke_done": "Try to revoke announcement %s.",
+      "description": "Send announcement to all online players, or manage server's announcement.",
+      "not_found": "Could not found announcement %s."
+    },
     "clear": {
       "command_usage": "Usage: clear <all|wp|art|mat>",
       "weapons": "Cleared weapons for %s.",
@@ -155,7 +167,11 @@
       "usage": "Usage: ",
       "aliases": "Aliases: ",
       "available_commands": "Available commands: ",
-      "description": "Sends the help message or shows information about a specified command"
+      "description": "Sends the help message or shows information about a specified command",
+      "tip_need_permission": "Permission: ",
+      "tip_need_no_permission": " None",
+      "tip_permission_targeted": " (Permission %s is also required to use on other players)",
+      "warn_player_has_no_permission": "Notice: You do not have permission to run this command."
     },
     "kick": {
       "player_kick_player": "Player [%s:%s] has kicked player [%s:%s]",
@@ -255,7 +271,7 @@
       "description": "Sets your fetter level for your current active character"
     },
     "setProp": {
-      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyssfloor | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
+      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
       "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
     },
     "setStats": {
@@ -317,7 +333,7 @@
       "usage": "Usage: tp [@<playerID>] <x> <y> <z> [sceneID]",
       "specify_player_id": "You must specify a player ID.",
       "invalid_position": "Invalid position.",
-            "exists_error": "The specified scene does not exist.",
+      "exists_error": "The specified scene does not exist.",
       "success": "Teleported %s to %s, %s, %s in scene %s.",
       "description": "Change the player's position"
     },

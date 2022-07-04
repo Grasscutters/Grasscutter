@@ -5,6 +5,7 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp;
 import emu.grasscutter.net.proto.InterOpTypeOuterClass;
+import emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 
@@ -12,7 +13,8 @@ public class PacketGadgetInteractRsp extends BasePacket {
 	public PacketGadgetInteractRsp(EntityBaseGadget gadget, InteractType interact) {
 		this(gadget, interact, null);
 	}
-	public PacketGadgetInteractRsp(EntityBaseGadget gadget, InteractType interact, InterOpTypeOuterClass.InterOpType opType) {
+	
+	public PacketGadgetInteractRsp(EntityBaseGadget gadget, InteractType interact, InterOpType opType) {
 		super(PacketOpcodes.GadgetInteractRsp);
 
 		var proto = GadgetInteractRsp.newBuilder()
@@ -20,7 +22,7 @@ public class PacketGadgetInteractRsp extends BasePacket {
 				.setInteractType(interact)
 				.setGadgetId(gadget.getGadgetId());
 
-		if(opType != null){
+		if (opType != null) {
 			proto.setOpType(opType);
 		}
 		

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8745
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message MusicGameSettleReq {
+	uint32 music_basic_id = 14;
+	uint32 score = 2;
+	uint32 combo = 10;
+	uint32 correct_hit = 8;
+	uint64 music_share_id = 11;
+	// is_default_beatmap
+	bool KJNDJLBOJLM = 4;
+	uint32 FBELCAFFGIJ = 3;
+	uint32 OOFMAKIDFOL = 15;
+	// beatmap_difficulty_level
+	uint32 HJPDEIMECHB = 1;
+	repeated uint32 MNCMGANHCFI = 13;
+	uint32 max_combo = 9;
+	uint32 JJADNMELLAH = 1975;
+	// detail_score
+	repeated uint32 EIAGEEFABPO = 1171;
+	uint32 CPIFLFBHNJP = 1104;
+	bool success = 998;
+	uint32 GGHBOMGJGFP = 268;
+	bool PFHCIHKCJFJ = 238;
+	float speed = 887;
+}

@@ -1,6 +1,5 @@
 package emu.grasscutter.game.world;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import emu.grasscutter.utils.Position;
@@ -8,12 +7,15 @@ import emu.grasscutter.utils.Position;
 public class SpawnDataEntry {
 	private transient SpawnGroupEntry group;
 	private int monsterId;
+	private int gadgetId;
 	private int configId;
 	private int level;
 	private int poseId;
+	private int gatherItemId;
+    private int gadgetState;
 	private Position pos;
 	private Position rot;
-	
+
 	public SpawnGroupEntry getGroup() {
 		return group;
 	}
@@ -25,34 +27,46 @@ public class SpawnDataEntry {
 	public int getMonsterId() {
 		return monsterId;
 	}
-	
-	public int getConfigId() {
+
+	public int getGadgetId() {
+		return gadgetId;
+	}
+
+    public int getGadgetState() {
+        return gadgetState;
+    }
+
+    public int getConfigId() {
 		return configId;
 	}
-	
+
 	public int getLevel() {
 		return level;
 	}
-	
+
 	public int getPoseId() {
 		return poseId;
 	}
-	
+
+	public int getGatherItemId() {
+		return gatherItemId;
+	}
+
 	public Position getPos() {
 		return pos;
 	}
-	
+
 	public Position getRot() {
 		return rot;
 	}
-	
+
 	public static class SpawnGroupEntry {
 		private int sceneId;
 		private int groupId;
 		private int blockId;
 		private Position pos;
 		private List<SpawnDataEntry> spawns;
-		
+
 		public int getSceneId() {
 			return sceneId;
 		}

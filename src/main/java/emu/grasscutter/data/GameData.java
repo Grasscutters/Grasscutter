@@ -15,6 +15,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import lombok.Getter;
 
 public class GameData {
 	// BinOutputs
@@ -97,6 +98,12 @@ public class GameData {
 	private static final Int2ObjectMap<WeatherData> weatherDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<BattlePassMissionData> battlePassMissionDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<BattlePassRewardData> battlePassRewardDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CookRecipeData> cookRecipeDataMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<CookBonusData> cookBonusDataMap = new Int2ObjectOpenHashMap<>();
+
+	@Getter private static final Int2ObjectMap<ActivityData> activityDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<ActivityWatcherData> activityWatcherDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<MusicGameBasicData> musicGameBasicDataMap = new Int2ObjectOpenHashMap<>();
 
 	// Cache
 	private static Map<Integer, List<Integer>> fetters = new HashMap<>();
@@ -430,5 +437,13 @@ public class GameData {
 
 	public static Int2ObjectMap<BattlePassRewardData> getBattlePassRewardDataMap() {
 		return battlePassRewardDataMap;
+	}
+
+	public static Int2ObjectMap<CookRecipeData> getCookRecipeDataMap() {
+		return cookRecipeDataMap;
+	}
+
+	public static Int2ObjectMap<CookBonusData> getCookBonusDataMap() {
+		return cookBonusDataMap;
 	}
 }

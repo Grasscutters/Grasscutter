@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 8927
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message MusicGameStartReq {
+	uint32 music_basic_id = 10;
+	uint64 music_share_id = 8;
+	bool KJNDJLBOJLM = 5;
+}

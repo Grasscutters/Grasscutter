@@ -7,6 +7,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.MonsterData;
 import emu.grasscutter.data.excels.WorldLevelData;
 import emu.grasscutter.game.entity.*;
+import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.scripts.constants.EventType;
@@ -167,11 +168,11 @@ public class SceneScriptManager {
 	public boolean isInit() {
 		return isInit;
 	}
-	
+
 	public void loadBlockFromScript(SceneBlock block) {
 		block.load(scene.getId(), meta.context);
 	}
-	
+
 	public void loadGroupFromScript(SceneGroup group) {
 		group.load(getScene().getId());
 
@@ -188,13 +189,17 @@ public class SceneScriptManager {
 		}
 
 		for (var region : this.regions.values()) {
+            // currently all condition_ENTER_REGION Events check for avatar, so we have no necessary to add other types of entity
 			getScene().getEntities().values()
 				.stream()
-				.filter(e -> e.getEntityType() <= 2 && region.getMetaRegion().contains(e.getPosition()))
+				.filter(e -> e.getEntityType() == EntityType.Avatar.getValue() && region.getMetaRegion().contains(e.getPosition()))
 				.forEach(region::addEntity);
 
 			if (region.hasNewEntities()) {
-				callEvent(EventType.EVENT_ENTER_REGION, new ScriptArgs(region.getConfigId()).setSourceEntityId(region.getId()));
+				callEvent(EventType.EVENT_ENTER_REGION, new ScriptArgs(region.getConfigId())
+                    .setSourceEntityId(region.getId())
+                    .setTargetEntityId(region.getFirstEntityId())
+                );
 
 				region.resetNewEntities();
 			}
@@ -409,18 +414,18 @@ public class SceneScriptManager {
 
 		this.getScriptMonsterSpawnService()
 				.onMonsterCreatedListener.forEach(action -> action.onNotify(entity));
-		
+
 		return entity;
 	}
 
 	public void addEntity(GameEntity gameEntity){
 		getScene().addEntity(gameEntity);
 	}
-	
+
 	public void meetEntities(List<? extends GameEntity> gameEntity){
 		getScene().addEntities(gameEntity, VisionTypeOuterClass.VisionType.VISION_TYPE_MEET);
 	}
-	
+
 	public void addEntities(List<? extends GameEntity> gameEntity){
 		getScene().addEntities(gameEntity);
 	}

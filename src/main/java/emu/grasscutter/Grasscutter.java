@@ -1,5 +1,6 @@
 package emu.grasscutter;
 
+import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -8,11 +9,8 @@ import emu.grasscutter.auth.DefaultAuthentication;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.command.DefaultPermissionHandler;
 import emu.grasscutter.command.PermissionHandler;
-import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
-import emu.grasscutter.game.managers.energy.EnergyManager;
-import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
@@ -71,6 +69,10 @@ public final class Grasscutter {
         // Declare logback configuration.
         System.setProperty("logback.configurationFile", "src/main/resources/logback.xml");
 
+        // Disable the MongoDB logger.
+        var mongoLogger = (Logger) LoggerFactory.getLogger("org.mongodb.driver");
+        mongoLogger.setLevel(Level.OFF);
+
         // Load server configuration.
         Grasscutter.loadConfig();
         // Attempt to update configuration.
@@ -102,10 +104,44 @@ public final class Grasscutter {
                     System.out.println("Grasscutter version: " + BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH);
                     exitEarly = true;
                 }
+                case "-debug" -> {
+                    // Set the logger to debug.
+                    log.setLevel(Level.DEBUG);
+                    log.debug("The logger is now running in debug mode.");
+
+                    // Change loggers to debug.
+                    ((Logger) LoggerFactory.getLogger("express"))
+                        .setLevel(Level.INFO);
+                    ((Logger) LoggerFactory.getLogger("org.quartz"))
+                        .setLevel(Level.INFO);
+                    ((Logger) LoggerFactory.getLogger("org.reflections"))
+                        .setLevel(Level.INFO);
+                    ((Logger) LoggerFactory.getLogger("org.eclipse.jetty"))
+                        .setLevel(Level.INFO);
+                    ((Logger) LoggerFactory.getLogger("org.mongodb.driver"))
+                        .setLevel(Level.INFO);
+                }
+                case "-debugall" -> {
+                    // Set the logger to debug.
+                    log.setLevel(Level.DEBUG);
+                    log.debug("The logger is now running in debug mode.");
+
+                    // Change loggers to debug.
+                    ((Logger) LoggerFactory.getLogger("express"))
+                        .setLevel(Level.DEBUG);
+                    ((Logger) LoggerFactory.getLogger("org.quartz"))
+                        .setLevel(Level.DEBUG);
+                    ((Logger) LoggerFactory.getLogger("org.reflections"))
+                        .setLevel(Level.DEBUG);
+                    ((Logger) LoggerFactory.getLogger("org.eclipse.jetty"))
+                        .setLevel(Level.DEBUG);
+                    ((Logger) LoggerFactory.getLogger("org.mongodb.driver"))
+                        .setLevel(Level.DEBUG);
+                }
             }
         }
 
-        // Exit early if argument sets it.
+        // Exit early if an argument sets it.
         if (exitEarly) System.exit(0);
 
         // Initialize server.
