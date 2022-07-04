@@ -168,8 +168,10 @@
       "aliases": "Aliases: ",
       "available_commands": "Available commands: ",
       "description": "Sends the help message or shows information about a specified command",
-      "permission": "Permission: ",
-      "no_permission": " None"
+      "tip_need_permission": "Permission: ",
+      "tip_need_no_permission": " None",
+      "tip_permission_targeted": " (Permission %s is also required to use on other players)",
+      "warn_player_has_no_permission": "Notice: You do not have permission to run this command."
     },
     "kick": {
       "player_kick_player": "Player [%s:%s] has kicked player [%s:%s]",

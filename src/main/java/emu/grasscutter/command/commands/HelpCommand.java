@@ -47,15 +47,23 @@ public final class HelpCommand implements CommandHandler {
                     }
                 }
 
-                builder.append("\n").append(translate(player, "commands.help.permission"));
+                builder.append("\n").append(translate(player, "commands.help.tip_need_permission"));
                 if(annotation.permission().isEmpty() || annotation.permission().isBlank()) {
-                    builder.append(translate(player, "commands.help.no_permission"));
+                    builder.append(translate(player, "commands.help.tip_need_no_permission"));
                 }
                 else {
                     builder.append(annotation.permission());
                 }
+                builder.append(" ");
+
+                if(!annotation.permissionTargeted().isEmpty() && !annotation.permissionTargeted().isBlank()) {
+                    String permissionTargeted = annotation.permissionTargeted();
+                    builder.append(translate(player, "commands.help.tip_permission_targeted", permissionTargeted));
+                }
+
                 if (player != null && !Objects.equals(annotation.permission(), "") && !player.getAccount().hasPermission(annotation.permission())) {
-                    builder.append("\n Warning: You do not have permission to run this command.");
+                    builder.append("\n ");
+                    builder.append(translate(player, "commands.help.warn_player_has_no_permission"));
                 }
             }
 
@@ -76,12 +84,19 @@ public final class HelpCommand implements CommandHandler {
                         builder.append(alias).append(" ");
                     }
                 }
-                builder.append("\n").append(translate(player, "commands.help.permission"));
+                builder.append("\n").append(translate(player, "commands.help.tip_need_permission"));
                 if(annotation.permission().isEmpty() || annotation.permission().isBlank()) {
-                    builder.append(translate(player, "commands.help.no_permission"));
+                    builder.append(translate(player, "commands.help.tip_need_no_permission"));
                 }
                 else {
                     builder.append(annotation.permission());
+                }
+
+                builder.append(" ");
+
+                if(!annotation.permissionTargeted().isEmpty() && !annotation.permissionTargeted().isBlank()) {
+                    String permissionTargeted = annotation.permissionTargeted();
+                    builder.append(translate(player, "commands.help.tip_permission_targeted", permissionTargeted));
                 }
 
                 builder.append("\n");
@@ -106,6 +121,13 @@ public final class HelpCommand implements CommandHandler {
                 }
                 else {
                     builder.append(annotation.permission());
+                }
+
+                builder.append(" ");
+
+                if(!annotation.permissionTargeted().isEmpty() && !annotation.permissionTargeted().isBlank()) {
+                    String permissionTargeted = annotation.permissionTargeted();
+                    builder.append(translate(player, "commands.help.tip_permission_targeted", permissionTargeted));
                 }
 
 
