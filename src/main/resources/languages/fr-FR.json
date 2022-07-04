@@ -173,10 +173,10 @@
         "description": "Soigne tous les personnages de votre équipe"
       },
       "help": {
-        "usage": "Usage: ",
+        "usage": "Utilisation: ",
         "aliases": "Alias: ",
         "available_commands": "Commandes disponibles: ",
-        "description": "Envoie le message d'aide ou montre les informations à propos d'une scommande spécifiée",
+        "description": "Envoie le message d'aide ou montre les informations à propos d'une commande spécifiée",
         "tip_need_permission": "Permission: ",
         "tip_need_no_permission": " Aucune",
         "tip_permission_targeted": " (La permission %s est également requise pour utiliser sur d'autres joueurs)",
