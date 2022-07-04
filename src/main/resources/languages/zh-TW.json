@@ -178,7 +178,11 @@
       "usage": "用法：",
       "aliases": "別名：",
       "description": "發送幫助信息或顯示特定命令的信息",
-      "available_commands": "可用指令："
+      "available_commands": "可用指令：",
+      "tip_need_permission": "需要的權限: ",
+      "tip_need_no_permission": "無",
+      "tip_permission_targeted": "(對其他的玩家使用這個指令還需要權限%s)",
+      "warn_player_has_no_permission": "注意：你沒有執行這條指令的權限"
     },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已把 [%s:%s] 踢出",
