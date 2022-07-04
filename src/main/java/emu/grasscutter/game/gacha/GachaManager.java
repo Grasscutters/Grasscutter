@@ -113,7 +113,7 @@ public class GachaManager {
 			fallbackItems5Pool1 = banner.getFallbackItems5Pool1();
 			fallbackItems5Pool2 = banner.getFallbackItems5Pool2();
 
-			if (banner.getAutoStripRateUpFromFallback()) {
+			if (banner.isAutoStripRateUpFromFallback()) {
 				fallbackItems4Pool1 = Utils.setSubtract(fallbackItems4Pool1, rateUpItems4);
 				fallbackItems4Pool2 = Utils.setSubtract(fallbackItems4Pool2, rateUpItems4);
 				fallbackItems5Pool1 = Utils.setSubtract(fallbackItems5Pool1, rateUpItems5);
@@ -260,6 +260,7 @@ public class GachaManager {
 	public synchronized void doPulls(Player player, int scheduleId, int times) {
 		// Sanity check
 		if (times != 10 && times != 1) {
+			player.sendPacket(new PacketDoGachaRsp(Retcode.RET_GACHA_INVALID_TIMES));
 			return;
 		}
 		Inventory inventory = player.getInventory();
@@ -275,20 +276,28 @@ public class GachaManager {
 			return;
 		}
 
+		// Check against total limit
+		PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(banner);
+		int gachaTimesLimit = banner.getGachaTimesLimit();
+		if (gachaTimesLimit != Integer.MAX_VALUE && (gachaInfo.getTotalPulls() + times) > gachaTimesLimit) {
+			player.sendPacket(new PacketDoGachaRsp(Retcode.RET_GACHA_TIMES_LIMIT));
+			return;
+		}
+
 		// Spend currency
 		ItemParamData cost = banner.getCost(times);
 		if (cost.getCount() > 0 && !inventory.payItem(cost)) {
-			player.sendPacket(new PacketDoGachaRsp());
+			player.sendPacket(new PacketDoGachaRsp(Retcode.RET_GACHA_COST_ITEM_NOT_ENOUGH));
 			return;
 		}
 
 		// Add to character
-		PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(banner);
+		gachaInfo.addTotalPulls(times);
 		BannerPools pools = new BannerPools(banner);
 		List<GachaItem> list = new ArrayList<>();
 		int stardust = 0, starglitter = 0;
 
-		if (banner.getRemoveC6FromPool()) {  // The ultimate form of pity (non-vanilla)
+		if (banner.isRemoveC6FromPool()) {  // The ultimate form of pity (non-vanilla)
 			pools.rateUpItems4 = removeC6FromPool(pools.rateUpItems4, player);
 			pools.rateUpItems5 = removeC6FromPool(pools.rateUpItems5, player);
 			pools.fallbackItems4Pool1 = removeC6FromPool(pools.fallbackItems4Pool1, player);
@@ -331,7 +340,7 @@ public class GachaManager {
 					if (constellation >= 6) {  // C6, give consolation starglitter
 						addStarglitter = (itemData.getRankLevel()==5)? 25 : 5;
 					} else {  // C0-C5, give constellation item
-						if (banner.getRemoveC6FromPool() && constellation == 5) {  // New C6, remove it from the pools so we don't get C7 in a 10pull
+						if (banner.isRemoveC6FromPool() && constellation == 5) {  // New C6, remove it from the pools so we don't get C7 in a 10pull
 							pools.removeFromAllPools(new int[] {itemId});
 						}
 						addStarglitter = (itemData.getRankLevel()==5)? 10 : 2;

@@ -114,16 +114,25 @@ public final class GiveCommand implements CommandHandler {
             default:
                 try {
                     param.id = Integer.parseInt(id);
-                    param.data = GameData.getItemDataMap().get(param.id);
-                    if ((param.id > 10_000_000) && (param.id < 12_000_000))
-                        param.avatarData = GameData.getAvatarDataMap().get(param.id);
-                    else if ((param.id > 1000) && (param.id < 1100))
-                        param.avatarData = GameData.getAvatarDataMap().get(param.id - 1000 + 10_000_000);
-                    isRelic = ((param.data != null) && (param.data.getItemType() == ItemType.ITEM_RELIQUARY));
                 } catch (NumberFormatException e) {
                     // TODO: Parse from item name using GM Handbook.
                     CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.itemId");
                     throw e;
+                }
+                param.data = GameData.getItemDataMap().get(param.id);
+                if ((param.id > 10_000_000) && (param.id < 12_000_000))
+                    param.avatarData = GameData.getAvatarDataMap().get(param.id);
+                else if ((param.id > 1000) && (param.id < 1100))
+                    param.avatarData = GameData.getAvatarDataMap().get(param.id - 1000 + 10_000_000);
+                isRelic = ((param.data != null) && (param.data.getItemType() == ItemType.ITEM_RELIQUARY));
+
+                if (!isRelic && !args.isEmpty() && (param.amount == 1)) {  // A concession for the people that truly hate [x<amount>].
+                    try {
+                        param.amount = Integer.parseInt(args.remove(0));
+                    } catch (NumberFormatException e) {
+                        CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.amount");
+                        throw e;
+                    }
                 }
         }
 
@@ -137,19 +146,24 @@ public final class GiveCommand implements CommandHandler {
             param.lvl += 1;
             if (illegalRelicIds.contains(param.id))
                 CommandHandler.sendTranslatedMessage(sender, "commands.give.illegal_relic");
-            } else {
+        } else {
             // Suitable for Avatars and Weapons
             if (param.lvl < 1) param.lvl = 1;
             if (param.lvl > 90) param.lvl = 90;
         }
 
-        if (isRelic && !args.isEmpty()) {
-            try {
-                parseRelicArgs(param, args);
-            } catch (IllegalArgumentException e) {
-                CommandHandler.sendTranslatedMessage(sender, "commands.execution.argument_error");
-                CommandHandler.sendTranslatedMessage(sender, "commands.give.usage_relic");
-                throw e;
+        if (!args.isEmpty()) {
+            if (isRelic) {
+                try {
+                    parseRelicArgs(param, args);
+                } catch (IllegalArgumentException e) {
+                    CommandHandler.sendTranslatedMessage(sender, "commands.execution.argument_error");
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.usage_relic");
+                    throw e;
+                }
+            } else {
+                CommandHandler.sendTranslatedMessage(sender, "commands.give.usage");
+                throw new IllegalArgumentException();
             }
         }
 
@@ -216,8 +230,8 @@ public final class GiveCommand implements CommandHandler {
             }
         } catch (IllegalArgumentException ignored) {
                 return;
-            }
         }
+    }
 
     private static Avatar makeAvatar(GiveItemParameters param) {
         return makeAvatar(param.avatarData, param.lvl, Avatar.getMinPromoteLevel(param.lvl), 0);

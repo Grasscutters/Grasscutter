@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "CookRecipeData.proto";
+import "ItemParam.proto";
+
+// CmdId: 150
+// EnetChannelId: 0
+// EnetIsReliable: true
+message PlayerCookRsp {
+	int32 retcode = 9;
+	CookRecipeData recipe_data = 14;
+	repeated ItemParam item_list = 13;
+	uint32 qte_quality = 11;
+	uint32 cook_count = 15;
+	repeated ItemParam extral_item_list = 3;
+}
