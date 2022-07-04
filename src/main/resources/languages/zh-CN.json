@@ -167,7 +167,12 @@
       "usage": "用法：",
       "aliases": "别名：",
       "available_commands": "可用命令：",
-      "description": "发送帮助信息或显示指定命令的信息"
+      "description": "发送帮助信息或显示指定命令的信息",
+      "tip_need_permission": "所需权限: ",
+      "tip_need_no_permission": " 无",
+      "tip_permission_targeted": "(对其他玩家使用这个命令还需要权限%s)",
+      "warn_player_has_no_permission": "注意：你没有执行这个命令的权限"
+
     },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已将 [%s:%s] 踢出。",
