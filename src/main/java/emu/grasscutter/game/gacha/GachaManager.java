@@ -1,18 +1,6 @@
 package emu.grasscutter.game.gacha;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.nio.file.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
-
 import com.google.gson.reflect.TypeToken;
-
 import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
@@ -28,6 +16,8 @@ import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.loot.LootContext;
+import emu.grasscutter.loot.LootTable;
 import emu.grasscutter.net.proto.GachaItemOuterClass.GachaItem;
 import emu.grasscutter.net.proto.GachaTransferItemOuterClass.GachaTransferItem;
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
@@ -36,7 +26,6 @@ import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameServerTickEvent;
 import emu.grasscutter.server.packet.send.PacketDoGachaRsp;
-import emu.grasscutter.server.packet.send.PacketGachaWishRsp;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -44,7 +33,17 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import org.greenrobot.eventbus.Subscribe;
 
-import static emu.grasscutter.Configuration.*;
+import java.io.File;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
+import static emu.grasscutter.Configuration.DATA;
+import static emu.grasscutter.Configuration.GAME_OPTIONS;
 
 public class GachaManager {
 	private final GameServer server;
@@ -79,6 +78,8 @@ public class GachaManager {
 		return array[randomRange(0, array.length - 1)];
 	}
 
+    public Int2ObjectMap<LootContext> playerRecords;
+
 	public synchronized void load() {
 		try (Reader fileReader = new InputStreamReader(DataLoader.load("Banners.json"))) {
 			getGachaBanners().clear();
@@ -95,6 +96,8 @@ public class GachaManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+        this.playerRecords = new Int2ObjectOpenHashMap<>();
 	}
 
 	private class BannerPools {
@@ -299,9 +302,19 @@ public class GachaManager {
 
 		for (int i = 0; i < times; i++) {
 			// Roll
-			int itemId = doPull(banner, gachaInfo, pools);
-			ItemData itemData = GameData.getItemDataMap().get(itemId);
-			if (itemData == null) {
+            int itemId;
+            ItemData itemData;
+            LootTable table = banner.getLootTable();
+            if (table == null) {
+                itemId = doPull(banner, gachaInfo, pools);
+                itemData = GameData.getItemDataMap().get(itemId);
+            } else {
+                LootContext ctx = playerRecords.computeIfAbsent(player.getUid(), e -> new LootContext());
+			    itemData = table.loot(ctx).get(0).getItemData();
+                itemId = itemData.getId();
+            }
+
+            if (itemData == null) {
 				continue;  // Maybe we should bail out if an item fails instead of rolling the rest?
 			}
 

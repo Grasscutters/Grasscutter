@@ -1,15 +1,17 @@
 package emu.grasscutter.game.entity.gadget.chest;
 
 import emu.grasscutter.game.entity.gadget.GadgetChest;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.world.ChestReward;
+import emu.grasscutter.loot.LootContext;
+import emu.grasscutter.loot.LootTable;
 
-import java.util.Random;
+import java.util.List;
 
 public class NormalChestInteractHandler implements ChestInteractHandler {
-    private final ChestReward chestReward;
+    private final LootTable chestReward;
 
-    public NormalChestInteractHandler(ChestReward rewardData){
+    public NormalChestInteractHandler(LootTable rewardData){
         this.chestReward = rewardData;
     }
 
@@ -20,23 +22,11 @@ public class NormalChestInteractHandler implements ChestInteractHandler {
 
     @Override
     public boolean onInteract(GadgetChest chest, Player player) {
-        player.earnExp(chestReward.getAdvExp());
-        player.getInventory().addItem(201, chestReward.getResin());
+        LootContext ctx = new LootContext();
+        ctx.player = player;
+        List<GameItem> items = chestReward.loot(ctx);
 
-        var mora = chestReward.getMora() * (1 + (player.getWorldLevel() - 1) * 0.5);
-        player.getInventory().addItem(202, (int)mora);
-
-        for(int i=0;i<chestReward.getContent().size();i++){
-            chest.getGadget().getScene().addItemEntity(chestReward.getContent().get(i).getItemId(), chestReward.getContent().get(i).getCount(), chest.getGadget());
-        }
-
-        var random = new Random(System.currentTimeMillis());
-        for(int i=0;i<chestReward.getRandomCount();i++){
-            var index = random.nextInt(chestReward.getRandomContent().size());
-            var item = chestReward.getRandomContent().get(index);
-            chest.getGadget().getScene().addItemEntity(item.getItemId(), item.getCount(), chest.getGadget());
-        }
-
+        items.forEach(e -> chest.getGadget().getScene().addItemEntity(e.getItemId(), e.getCount(), chest.getGadget()));
         return true;
     }
 }

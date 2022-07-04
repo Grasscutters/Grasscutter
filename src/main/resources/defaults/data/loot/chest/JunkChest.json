@@ -1,0 +1,19 @@
+{
+    "functions": [
+        {
+            "function": "player_give_mora",
+            "world_level_ratio": 0.5,
+            "count": 1
+        },
+    ],
+    "pools": [
+        {
+            "entries": [
+                {
+                    "name": "201",
+                    "count": 114
+                }
+            ]
+        }
+    ]
+}

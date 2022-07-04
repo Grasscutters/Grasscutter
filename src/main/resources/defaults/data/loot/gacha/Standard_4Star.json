@@ -1,0 +1,114 @@
+{
+    "pools": [
+        {
+            "entries": [
+                {
+                    "type": "uniform_group",
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "name": "pity2_standard_4star_avatar",
+                            "value": 0
+                        }
+                    ],
+                    "items": [
+                        "1006",
+                        "1014",
+                        "1015",
+                        "1020",
+                        "1021",
+                        "1023",
+                        "1024",
+                        "1025",
+                        "1027",
+                        "1031",
+                        "1032",
+                        "1034",
+                        "1036",
+                        "1039",
+                        "1043",
+                        "1044",
+                        "1045",
+                        "1048",
+                        "1053",
+                        "1055",
+                        "1056",
+                        "1064"
+                    ],
+                    "weight": {
+                        "type": "lerp",
+                        "coords": [
+                            [
+                                1,
+                                255
+                            ],
+                            [
+                                17,
+                                255
+                            ],
+                            [
+                                21,
+                                10455
+                            ]
+                        ],
+                        "value": {
+                            "type": "get_data",
+                            "name": "pity2_standard_4star_avatar"
+                        }
+                    }
+                },
+                {
+                    "type": "uniform_group",
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "name": "pity2_standard_4star_weapon",
+                            "value": 0
+                        }
+                    ],
+                    "items": [
+                        "11401",
+                        "11402",
+                        "11403",
+                        "11405",
+                        "12401",
+                        "12402",
+                        "12403",
+                        "12405",
+                        "13401",
+                        "13407",
+                        "14401",
+                        "14402",
+                        "14403",
+                        "14409",
+                        "15401",
+                        "15402",
+                        "15403",
+                        "15405"
+                    ],
+                    "weight": {
+                        "type": "lerp",
+                        "coords": [
+                            [
+                                1,
+                                255
+                            ],
+                            [
+                                17,
+                                255
+                            ],
+                            [
+                                21,
+                                10455
+                            ]
+                        ],
+                        "value": {
+                            "type": "get_data",
+                            "name": "pity2_standard_4star_weapon"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

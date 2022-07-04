@@ -1,0 +1,89 @@
+{
+    "pools": [
+        {
+            "entries": [
+                {
+                    "type": "uniform_group",
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "name": "pity2_standard_5star_avatar",
+                            "value": 0
+                        }
+                    ],
+                    "items": [
+                        "1003",
+                        "1016",
+                        "1042",
+                        "1035",
+                        "1041"
+                    ],
+                    "weight": {
+                        "type": "lerp",
+                        "coords": [
+                            [
+                                1,
+                                30
+                            ],
+                            [
+                                147,
+                                150
+                            ],
+                            [
+                                181,
+                                10230
+                            ]
+                        ],
+                        "value": {
+                            "type": "get_data",
+                            "name": "pity2_standard_5star_avatar"
+                        }
+                    }
+                },
+                {
+                    "type": "uniform_group",
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "name": "pity2_standard_5star_weapon",
+                            "value": 0
+                        }
+                    ],
+                    "items": [
+                        "11501",
+                        "11502",
+                        "12501",
+                        "12502",
+                        "13502",
+                        "13505",
+                        "14501",
+                        "14502",
+                        "15501",
+                        "15502"
+                    ],
+                    "weight": {
+                        "type": "lerp",
+                        "coords": [
+                            [
+                                1,
+                                30
+                            ],
+                            [
+                                147,
+                                150
+                            ],
+                            [
+                                181,
+                                10230
+                            ]
+                        ],
+                        "value": {
+                            "type": "get_data",
+                            "name": "pity2_standard_5star_weapon"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
