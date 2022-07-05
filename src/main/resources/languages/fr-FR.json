@@ -176,7 +176,11 @@
         "usage": "Utilisation: ",
         "aliases": "Alias: ",
         "available_commands": "Commandes disponibles: ",
-        "description": "Envoie le message d'aide ou montre les informations sur une commande"
+        "description": "Envoie le message d'aide ou montre les informations à propos d'une commande spécifiée",
+        "tip_need_permission": "Permission: ",
+        "tip_need_no_permission": " Aucune",
+        "tip_permission_targeted": " (La permission %s est également requise pour utiliser sur d'autres joueurs)",
+        "warn_player_has_no_permission": "Information: Vous n'avez pas la permission d'utiliser cette commande."
       },
       "kick": {
         "player_kick_player": "Le joueur [%s:%s] a éjecté le joueur [%s:%s]",
