@@ -2,10 +2,12 @@ package emu.grasscutter.game.quest;
 
 import java.util.Set;
 
+import emu.grasscutter.data.excels.QuestData;
+import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 import org.reflections.Reflections;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.excels.QuestData.QuestCondition;
+import emu.grasscutter.data.excels.QuestData.*;
 import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -14,32 +16,32 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 public class ServerQuestHandler {
 	private final Int2ObjectMap<QuestBaseHandler> condHandlers;
 	private final Int2ObjectMap<QuestBaseHandler> contHandlers;
-	private final Int2ObjectMap<QuestBaseHandler> execHandlers;
-	
+	private final Int2ObjectMap<QuestExecHandler> execHandlers;
+
 	public ServerQuestHandler() {
-		this.condHandlers = new Int2ObjectOpenHashMap<>(); 
+		this.condHandlers = new Int2ObjectOpenHashMap<>();
 		this.contHandlers = new Int2ObjectOpenHashMap<>();
 		this.execHandlers = new Int2ObjectOpenHashMap<>();
-		
+
 		this.registerHandlers();
 	}
 
 	public void registerHandlers() {
-		this.registerHandlers(this.condHandlers, "emu.grasscutter.game.quest.conditions");
-		this.registerHandlers(this.contHandlers, "emu.grasscutter.game.quest.content");
-		this.registerHandlers(this.execHandlers, "emu.grasscutter.game.quest.exec");
+		this.registerHandlers(this.condHandlers, "emu.grasscutter.game.quest.conditions", QuestBaseHandler.class);
+		this.registerHandlers(this.contHandlers, "emu.grasscutter.game.quest.content", QuestBaseHandler.class);
+		this.registerHandlers(this.execHandlers, "emu.grasscutter.game.quest.exec", QuestExecHandler.class);
 	}
-	
-	public void registerHandlers(Int2ObjectMap<QuestBaseHandler> map, String packageName) {
+
+	public <T> void registerHandlers(Int2ObjectMap<T> map, String packageName, Class<T> clazz) {
 		Reflections reflections = new Reflections(packageName);
-		Set<?> handlerClasses = reflections.getSubTypesOf(QuestBaseHandler.class);
-		
-		for (Object obj : handlerClasses) {
-			this.registerPacketHandler(map, (Class<? extends QuestBaseHandler>) obj);
+		var handlerClasses = reflections.getSubTypesOf(clazz);
+
+		for (var obj : handlerClasses) {
+			this.registerPacketHandler(map, obj);
 		}
 	}
 
-	public void registerPacketHandler(Int2ObjectMap<QuestBaseHandler> map, Class<? extends QuestBaseHandler> handlerClass) {
+	public <T> void registerPacketHandler(Int2ObjectMap<T> map, Class<? extends T> handlerClass) {
 		try {
 			QuestValue opcode = handlerClass.getAnnotation(QuestValue.class);
 
@@ -47,43 +49,44 @@ public class ServerQuestHandler {
 				return;
 			}
 
-			QuestBaseHandler packetHandler = (QuestBaseHandler) handlerClass.newInstance();
-
-			map.put(opcode.value().getValue(), packetHandler);
+			map.put(opcode.value().getValue(), handlerClass.newInstance());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// TODO make cleaner
-	
-	public boolean triggerCondition(GameQuest quest, QuestCondition condition, int... params) {
+
+	public boolean triggerCondition(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
 		QuestBaseHandler handler = condHandlers.get(condition.getType().getValue());
 
 		if (handler == null || quest.getData() == null) {
+            Grasscutter.getLogger().debug("Could not trigger condition {} at {}", condition.getType().getValue(), quest.getData());
 			return false;
 		}
-		
-		return handler.execute(quest, condition, params);
+
+		return handler.execute(quest, condition, paramStr, params);
 	}
-	
-	public boolean triggerContent(GameQuest quest, QuestCondition condition, int... params) {
+
+	public boolean triggerContent(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
 		QuestBaseHandler handler = contHandlers.get(condition.getType().getValue());
 
 		if (handler == null || quest.getData() == null) {
+            Grasscutter.getLogger().debug("Could not trigger content {} at {}", condition.getType().getValue(), quest.getData());
 			return false;
 		}
-		
-		return handler.execute(quest, condition, params);
+
+		return handler.execute(quest, condition, paramStr, params);
 	}
-	
-	public boolean triggerExec(GameQuest quest, QuestCondition condition, int... params) {
-		QuestBaseHandler handler = execHandlers.get(condition.getType().getValue());
+
+	public boolean triggerExec(GameQuest quest, QuestExecParam execParam, String... params) {
+		QuestExecHandler handler = execHandlers.get(execParam.getType().getValue());
 
 		if (handler == null || quest.getData() == null) {
+            Grasscutter.getLogger().debug("Could not trigger exec {} at {}", execParam.getType().getValue(), quest.getData());
 			return false;
 		}
-		
-		return handler.execute(quest, condition, params);
+
+		return handler.execute(quest, execParam, params);
 	}
 }

@@ -482,6 +482,11 @@ public class ScriptLib {
 		logger.debug("[LUA] Call AddQuestProgress with {}",
 				var1);
 
+        for(var player : getSceneScriptManager().getScene().getPlayers()){
+            player.getQuestManager().triggerEvent(QuestTrigger.QUEST_COND_LUA_NOTIFY, var1);
+            player.getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_LUA_NOTIFY, var1);
+        }
+
 		return 0;
 	}
 
