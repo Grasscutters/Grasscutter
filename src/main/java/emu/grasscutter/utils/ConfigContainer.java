@@ -93,6 +93,8 @@ public class ConfigContainer {
 
     public static class Server {
         public ServerDebugMode debugLevel = ServerDebugMode.NONE;
+        public int[] serverDebugWhitelist = {};
+        public int[] serverDebugBlacklist = {};
         public ServerRunMode runMode = ServerRunMode.HYBRID;
 
         public HTTP http = new HTTP();

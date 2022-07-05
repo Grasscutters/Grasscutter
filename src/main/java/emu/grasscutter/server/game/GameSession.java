@@ -150,6 +150,32 @@ public class GameSession implements GameSessionManager.KcpChannel {
 				System.out.println(Utils.bytesToHex(packet.getData()));
 			}
     	}
+    	
+    	if (SERVER.debugLevel == ServerDebugMode.WHITELIST) {
+    		for (int i=0; i < SERVER.serverDebugWhitelist.length; i++) {
+    			if (packet.getOpcode() == SERVER.serverDebugWhitelist[i]) {
+    				Grasscutter.getLogger().info("SEND: " + PacketOpcodesUtil.getOpcodeName(packet.getOpcode()) + " (" + packet.getOpcode() + ")");
+    				System.out.println(Utils.bytesToHex(packet.getData()));
+    				break;
+    			}
+    		}
+    	}
+    	
+    	if (SERVER.debugLevel == ServerDebugMode.BLACKLIST) {
+    		boolean beBlacklisted = false;
+     		for (int i=0; i < SERVER.serverDebugBlacklist.length; i++) {
+    			if (packet.getOpcode() == SERVER.serverDebugBlacklist[i]) {
+    				beBlacklisted = true;
+    				break;
+    			}
+    			
+     		}
+     		if (!beBlacklisted) {
+				Grasscutter.getLogger().info("SEND: " + PacketOpcodesUtil.getOpcodeName(packet.getOpcode()) + " (" + packet.getOpcode() + ")");
+				System.out.println(Utils.bytesToHex(packet.getData()));
+     		}
+    	}
+    	
 		// Invoke event.
 		SendPacketEvent event = new SendPacketEvent(this, packet); event.call();
     	if(!event.isCanceled()) { // If event is not cancelled, continue.
@@ -220,6 +246,31 @@ public class GameSession implements GameSessionManager.KcpChannel {
 						System.out.println(Utils.bytesToHex(payload));
 					}
 				}
+
+				if (SERVER.debugLevel == ServerDebugMode.WHITELIST) {
+					for (int i=0; i < SERVER.serverDebugWhitelist.length; i++) {
+						if (opcode == SERVER.serverDebugWhitelist[i]) {
+							Grasscutter.getLogger().info("RECV: " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
+							System.out.println(Utils.bytesToHex(payload));
+							break;
+						}
+					}
+				}
+				
+				if (SERVER.debugLevel == ServerDebugMode.BLACKLIST) {
+					boolean beBlacklisted = false;
+					for (int i=0; i < SERVER.serverDebugBlacklist.length; i++) {
+						if (opcode == SERVER.serverDebugBlacklist[i]) {
+		    				beBlacklisted = true;
+		    				break;
+						}		
+					}
+					if (!beBlacklisted) {
+						Grasscutter.getLogger().info("RECV: " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
+						System.out.println(Utils.bytesToHex(payload));
+					}
+				}
+				
 				// Handle
 				getServer().getPacketHandler().handle(this, opcode, header, payload);
 			}
