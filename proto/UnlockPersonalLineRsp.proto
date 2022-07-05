@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 472
+// EnetChannelId: 0
+// EnetIsReliable: true
+message UnlockPersonalLineRsp {
+	int32 retcode = 7;
+	uint32 personal_line_id = 8;
+	oneof param {
+		uint32 level = 1;
+		uint32 chapter_id = 15;
+	}
+}

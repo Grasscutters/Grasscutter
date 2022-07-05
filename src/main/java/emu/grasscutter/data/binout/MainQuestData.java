@@ -1,8 +1,7 @@
 package emu.grasscutter.data.binout;
 
-import emu.grasscutter.game.quest.enums.LogicType;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.quest.enums.QuestType;
+import lombok.Data;
 
 public class MainQuestData {
 	private int id;
@@ -42,12 +41,10 @@ public class MainQuestData {
 	public SubQuestData[] getSubQuests() {
 		return subQuests;
 	}
-	
+
+    @Data
 	public static class SubQuestData {
 		private int subId;
-
-		public int getSubId() {
-			return subId;
-		}
+        private int order;
 	}
 }

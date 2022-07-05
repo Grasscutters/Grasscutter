@@ -4,10 +4,10 @@ import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.PersonalLineData;
 import emu.grasscutter.data.excels.PlayerLevelData;
 import emu.grasscutter.data.excels.WeatherData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.ability.AbilityManager;
@@ -1597,7 +1597,17 @@ public class Player {
 		getServer().getPlayers().values().removeIf(player1 -> player1 == this);
 	}
 
-	public enum SceneLoadState {
+    public int getLegendaryKey() {
+        return this.getProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY);
+    }
+    public synchronized void addLegendaryKey(int count) {
+        this.setProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY, getLegendaryKey() + count);
+    }
+    public synchronized void useLegendaryKey(int count) {
+        this.setProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY, getLegendaryKey() - count);
+    }
+
+    public enum SceneLoadState {
 		NONE(0), LOADING(1), INIT(2), LOADED(3);
 
 		private final int value;

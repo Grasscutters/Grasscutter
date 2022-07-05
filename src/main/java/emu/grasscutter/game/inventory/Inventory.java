@@ -271,6 +271,8 @@ public class Inventory implements Iterable<GameItem> {
                 this.player.getServer().getInventoryManager().upgradeAvatarFetterLevel(this.player, this.player.getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
             case 106 -> // Resin
                 this.player.getResinManager().addResin(count);
+            case 107 ->  // Legendary Key
+                this.player.addLegendaryKey(count);
             case 201 -> // Primogem
                 this.player.setPrimogems(this.player.getPrimogems() + count);
             case 202 -> // Mora
@@ -292,6 +294,8 @@ public class Inventory implements Iterable<GameItem> {
 				return this.player.getCrystals();
 			case 106:  // Resin
 				return this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
+            case 107:  // Legendary Key
+                return this.player.getProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY);
 			case 204:  // Home Coin
 				return this.player.getHomeCoin();
 			default:
@@ -334,13 +338,15 @@ public class Inventory implements Iterable<GameItem> {
 					player.setCrystals(player.getCrystals() - (cost.getCount() * quantity));
 				case 106 ->  // Resin
 					player.getResinManager().useResin(cost.getCount() * quantity);
+                case 107 ->  // LegendaryKey
+                    player.useLegendaryKey(cost.getCount() * quantity);
 				case 204 ->  // Home Coin
 						player.setHomeCoin(player.getHomeCoin() - (cost.getCount() * quantity));
 				default ->
 					removeItem(getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId()), cost.getCount() * quantity);
 			}
 		}
-		
+
 		if (reason != null) {  // Do we need these?
 			// getPlayer().sendPacket(new PacketItemAddHintNotify(changedItems, reason));
 		}
