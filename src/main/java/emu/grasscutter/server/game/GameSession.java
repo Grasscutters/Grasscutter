@@ -125,7 +125,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
 		send(basePacket);
     }
 
-    private void logPacket( String sendOrRecv, int opcode, byte[] payload) {
+    public void logPacket( String sendOrRecv, int opcode, byte[] payload) {
         Grasscutter.getLogger().info(sendOrRecv + ": " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
         System.out.println(Utils.bytesToHex(payload));
     }
