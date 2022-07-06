@@ -4,6 +4,8 @@ import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.auth.DefaultAuthentication;
 import emu.grasscutter.command.CommandMap;
@@ -412,6 +414,6 @@ public final class Grasscutter {
     }
 
     public enum ServerDebugMode {
-        ALL, MISSING, NONE
+        ALL, MISSING, WHITELIST, BLACKLIST, NONE
     }
 }
