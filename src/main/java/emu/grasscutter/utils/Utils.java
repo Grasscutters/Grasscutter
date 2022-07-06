@@ -399,4 +399,13 @@ public final class Utils {
 		// Should never happen.
 		return list.get(0);
 	}
+
+	/***
+	 * Draws a random element from the given list, following a uniform probability distribution.
+	 * @param list The list from which to draw the element.
+	 * @return A randomly drawn element from the given list.
+	 */
+	public static <T> T drawRandomListElement(List<T> list) {
+		return drawRandomListElement(list, null);
+	}
 }
