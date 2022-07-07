@@ -11,8 +11,13 @@ import java.util.HashSet;
 
 import static emu.grasscutter.Configuration.*;
 
-@Command(label = "team", usage = "team <add|remove|set> [avatarId,...] [index|first|last|index-index,...]",
-permission = "player.team", permissionTargeted = "player.team.others", description = "commands.team.description")
+@Command(
+    label = "team",
+    usage = "commands.team.usage",
+    description = "commands.team.description",
+    permission = "player.team",
+    permissionTargeted = "player.team.others"
+)
 public final class TeamCommand implements CommandHandler {
     private static final int BASE_AVATARID = 10000000;
 
