@@ -1,4 +1,3 @@
-   Preview
 {
   "messages": {
     "game": {
@@ -376,7 +375,7 @@
       "header_description": "Descriere",
       "header_avatar": "Avatar",
       "header_item": "Element",
-      "header_scene": "Scenă";
+      "header_scene": "Scenă",
       "header_monster": "Monstru"
     },
     "index": {
