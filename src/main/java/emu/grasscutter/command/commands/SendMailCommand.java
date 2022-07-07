@@ -106,7 +106,7 @@ public final class SendMailCommand implements CommandHandler {
                             case 2 -> {
                                 String msgSender = String.join(" ", args.subList(0, args.size()));
                                 mailBuilder.mail.mailContent.sender = msgSender;
-                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.set_message_sender", msgSender));
+                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.set_message_sender", msgSender, getConstructionArgs(mailBuilder.constructionStage, sender)));
                                 mailBuilder.constructionStage++;
                             }
                             case 3 -> {
