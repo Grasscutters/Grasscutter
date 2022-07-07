@@ -12,12 +12,14 @@ import java.util.Random;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "announce",
+@Command(
+    label = "announce",
     usage = "commands.announce.usage",
-    permission = "server.announce",
-    aliases = {"a"},
     description = "commands.announce.description",
-    targetRequirement = Command.TargetRequirement.NONE)
+    targetRequirement = Command.TargetRequirement.NONE,
+    permission = "server.announce",
+    aliases = {"a"}
+)
 public final class AnnounceCommand implements CommandHandler {
 
     @Override
