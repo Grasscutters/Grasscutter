@@ -8,7 +8,14 @@ import emu.grasscutter.game.world.Scene;
 
 import java.util.List;
 
-@Command(label = "weather", usage = "weather [weatherId] [climateType]", aliases = {"w"}, permission = "player.weather", permissionTargeted = "player.weather.others", description = "commands.weather.description")
+@Command(
+    label = "weather",
+    usage = "commands.weather.usage",
+    description = "commands.weather.description",
+    aliases = {"w"},
+    permission = "player.weather",
+    permissionTargeted = "player.weather.others"
+)
 public final class WeatherCommand implements CommandHandler {
 
     @Override
