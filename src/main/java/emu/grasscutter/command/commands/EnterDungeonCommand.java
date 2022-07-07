@@ -8,7 +8,14 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "enterdungeon", usage = "enterdungeon <dungeonId>", aliases = {"dungeon"}, permission = "player.enterdungeon", permissionTargeted = "player.enterdungeon.others", description = "commands.enter_dungeon.description")
+@Command(
+    label = "enterdungeon",
+    usage = "commands.enter_dungeon.usage",
+    description = "commands.enter_dungeon.description",
+    aliases = {"dungeon"},
+    permission = "player.enterdungeon",
+    permissionTargeted = "player.enterdungeon.others"
+)
 public final class EnterDungeonCommand implements CommandHandler {
 
     @Override
