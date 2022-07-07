@@ -21,7 +21,7 @@ public final class ClearCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.clear.command_usage"));
+            CommandHandler.sendMessage(sender, translate(sender, "commands.clear.usage"));
             return;
         }
         Inventory playerInventory = targetPlayer.getInventory();
