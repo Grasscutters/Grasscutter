@@ -11,7 +11,7 @@ import static emu.grasscutter.utils.Language.translate;
 
 @Command(
     label = "position",
-    usage = "commands.position.description",
+    usage = "commands.position.usage",
     description = "commands.position.description",
     aliases = {"pos"}
 )
