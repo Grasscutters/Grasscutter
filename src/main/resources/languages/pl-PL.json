@@ -171,7 +171,7 @@
       "description": "Wyświetl wszystkie komendy lub informacje na temat danej komendy.",
       "tip_need_permission": "Wymagane uprawnienia: ",
       "tip_need_no_permission": "brak",
-      "tip_permission_targeted": "(Użycie tego polecenia na innych graczach również wymaga uprawnienia %s)",
+      "tip_permission_targeted": " (Użycie tego polecenia na innych graczach również wymaga uprawnienia %s)",
       "warn_player_has_no_permission": "Nie masz wystarczających uprawnień do używania tej komendy."
     },
     "kick": {
