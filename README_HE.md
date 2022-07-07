@@ -79,8 +79,8 @@ certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
 **דרישות:**
 
 
-- Java SE Development Kits - 17
-- Git
+- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Git](https://git-scm.com/downloads)
 
 ##### Windows
 
