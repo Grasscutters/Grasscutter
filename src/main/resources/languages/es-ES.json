@@ -8,13 +8,13 @@
       "command_error": "Comando de error:"
     },
     "dispatch": {
-      "port_bind": "[Dispatch] El servidor de envío se inicio en el puerto %s",
+      "port_bind": "[Dispatch] El servidor de envío se inició en el puerto %s",
       "request": "[Dispatch] Petición %s %s del cliente: %s",
       "keystore": {
         "general_error": "[Dispatch] ¡Error mientras se cargaba el keystore!",
         "password_error": "[Dispatch] No se puede cargar el keystore. Probando contraseña por defecto del keystore...",
         "no_keystore_error": "[Dispatch] ¡No se ha encontrado el certificado SSL! Volviendo al servidor HTTP.",
-        "default_password": "[Dispatch] La contraseña por defecto del keystore se cargó correctamente. Por favor considera establecer la contraseña a 123456 en config.json."
+        "default_password": "[Dispatch] La contraseña por defecto del keystore se cargó correctamente. Por favor, considera establecer la contraseña a 123456 en config.json."
       },
       "authentication": {
         "default_unable_to_verify": "[Authentication] Algo invocó el método verifyUser que no está disponible en el manejador de autentificación por defecto."
@@ -22,7 +22,7 @@
       "no_commands_error": "No se soporta el uso de comandos en modo de solo envío.",
       "unhandled_request_error": "[Dispatch] Petición potencialmente no manejada %s : %s.",
       "account": {
-        "login_attempt": "[Dispatch] El cliente %s esta intentando iniciar sesión.",
+        "login_attempt": "[Dispatch] El cliente %s está intentando iniciar sesión.",
         "login_success": "[Dispatch] El cliente %s inició sesión como %s.",
         "login_max_player_limit": "[Dispatch] El cliente %s falló al iniciar sesión: Se ha alcanzado el límite de jugadores activos",
         "login_token_attempt": "[Dispatch] El cliente %s está intentando iniciar sesión a través de un token.",
@@ -33,7 +33,7 @@
         "account_login_create_success": "[Dispatch] El cliente %s falló al iniciar sesión: Cuenta %s creada.",
         "account_login_create_error": "[Dispatch] El cliente %s falló al iniciar sesión: Fallo al crear la cuenta.",
         "account_login_exist_error": "[Dispatch] El cliente %s falló al iniciar sesión: Cuenta no encontrada.",
-        "account_cache_error": "Error de información de cache de la cuenta del juego.",
+        "account_cache_error": "Error de información de caché de la cuenta del juego.",
         "session_key_error": "Clave de sesión incorrecta.",
         "username_error": "Nombre de usuario no encontrado.",
         "username_create_error": "Nombre de usuario no encontrado, la creación falló.",
@@ -62,7 +62,7 @@
   },
   "commands": {
     "generic": {
-      "not_specified": "Np se ha especificado un comando.",
+      "not_specified": "No se ha especificado un comando.",
       "unknown_command": "Comando desconocido: %s",
       "permission_error": "No tienes permiso para ejecutar este comando.",
       "console_execute_error": "Este comando solo puede ser ejecutado desde la consola.",
@@ -131,7 +131,7 @@
     "coop": {
       "usage": "Uso: coop [UID del host]",
       "success": "Invocado %s al mundo de %s.",
-      "description": "Fuerza a alquien a ser invocado al mundo de otro. Si no se establece un objetivo, te envía a tí al modo cooperativo."
+      "description": "Fuerza a alguien a ser invocado al mundo de otro. Si no se establece un objetivo, te envía a ti al modo cooperativo."
     },
     "enter_dungeon": {
       "usage": "Uso: enterdungeon <dungeonID>",
@@ -149,7 +149,7 @@
       "given_level": "Dado %s con nivel %s %s veces a %s.",
       "given_avatar": "Dado %s con nivel %s a %s.",
       "giveall_success": "Se han dado todos los objetos correctamente.",
-      "description": "Da un objeto a tí o al jugador especificado. También puede dar armas, avatares y/o materiales, y puede construir artefactos personalizados."
+      "description": "Da un objeto a ti o al jugador especificado. También puede dar armas, avatares y/o materiales, y puede construir artefactos personalizados."
     },
     "heal": {
       "success": "Todos los personajes han sido curados.",
@@ -197,8 +197,8 @@
       "description": "Da o quita un permiso a un jugador"
     },
     "position": {
-      "success": "Coordenadas: %s, %s, %s\nID de la escena: %s",
-      "description": "Da las coordenadas"
+      "success": "Coordenadas: %s, %s, %s\nID del escenario: %s",
+      "description": "Da las coordenadas en el escenario actual"
     },
     "quest": {
       "usage": "quest <add|finish> [questID]",
@@ -269,7 +269,7 @@
     "spawn": {
       "usage": "Uso: spawn <entityID> [cantidad] [nivel(solo monstruos)] [<x> <y> <z>(solo monstruos, opcional)]",
       "success": "Generados %s de %s.",
-      "limit_reached": "Se ha alcanzado el límite de generaciones en la escena. Generando %s entidades en su lugar.",
+      "limit_reached": "Se ha alcanzado el límite de generaciones en el escenario. Generando %s entidades en su lugar.",
       "description": "Genera una entidad cerca de tí"
     },
     "stop": {
@@ -319,7 +319,7 @@
     "teleport": {
       "usage_server": "Uso: tp @<playerID> <x> <y> <z> [sceneID]",
       "usage": "Uso: tp [@<playerID>] <x> <y> <z> [sceneID]",
-      "specify_player_id": "Dees especificar un ID de jugador.",
+      "specify_player_id": "Debes especificar un ID de jugador.",
       "invalid_position": "Posición inválida.",
       "exists_error": "El escenario especificado no existe.",
       "success": "Teletransportado %s a %s, %s, %s en el escenario %s.",
@@ -342,7 +342,7 @@
       "command_usage": "Uso: unban <@playerId>",
       "success": "Exitoso.",
       "failure": "Error, jugador no encontrado.",
-      "description": "Elimina el beto a un jugador"
+      "description": "Elimina el veto a un jugador"
     }
   },
   "gacha": {
