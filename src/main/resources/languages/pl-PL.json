@@ -166,7 +166,7 @@
     },
     "help": {
       "usage": "help [nazwa komendy]",
-      "usage_prefix": "Użycie: ",
+      "usage_prefix": "Użycie: /",
       "aliases": "Aliasy: ",
       "available_commands": "Dostępne komendy: ",
       "description": "Wyświetl wszystkie komendy lub informacje na temat danej komendy.",
