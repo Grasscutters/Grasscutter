@@ -214,7 +214,7 @@
     },
     "position": {
       "usage": "position",
-      "success": "Koordynaty: %s, %s, %s.\nID sceny: %s.",
+      "success": "Koordynaty: (%s, %s, %s).\nID sceny: %s.",
       "description": "Pokaż gdzie znajduje się dany gracz."
     },
     "quest": {
