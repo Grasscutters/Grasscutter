@@ -165,7 +165,8 @@
       "description": "Heal all characters in your current team."
     },
     "help": {
-      "usage": "Usage: ",
+      "usage": "help [command]",
+      "usage_prefix": "Usage: ",
       "aliases": "Aliases: ",
       "available_commands": "Available commands: ",
       "description": "Send the help message or show information about a specified command.",
