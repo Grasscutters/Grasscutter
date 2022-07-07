@@ -145,8 +145,8 @@
       "usage": "enterdungeon <ID lochu>",
       "changed": "Pomyślnie zmieniono loch na %s.",
       "not_found_error": "Podane ID lochu jest nieprawidłowe.",
-      "in_dungeon_error": "Już jesteś w tym lochu.",
-      "description": "Zmień loch, w którym jesteś, na podany."
+      "in_dungeon_error": "Wskazany gracz już jest w tym lochu.",
+      "description": "Zmień loch, w którym ma się znajdować wskazany gracz."
     },
     "give": {
       "usage": "give <ID przedmiotu|ID awataru|all|weapons|mats|avatars> [x<ilość>] [lv<poziom>] [r<poziom ulepszenia>]",
