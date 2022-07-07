@@ -10,7 +10,12 @@ import java.util.*;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "help", usage = "commands.help.usage", description = "commands.help.description", targetRequirement = Command.TargetRequirement.NONE)
+@Command(
+    label = "help",
+    usage = "commands.help.usage",
+    description = "commands.help.description",
+    targetRequirement = Command.TargetRequirement.NONE
+)
 public final class HelpCommand implements CommandHandler {
 
     @Override
