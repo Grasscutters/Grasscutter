@@ -369,9 +369,9 @@
   "gacha": {
     "details": {
       "title": "Szczegóły losowania",
-      "available_five_stars": "Dostępne 5-gwiazdkowe postacie",
-      "available_four_stars": "Dostępne 4-gwiazdkowe postacie",
-      "available_three_stars": "Dostępne 3-gwiazdkowe postacie"
+      "available_five_stars": "Dostępne 5-gwiazdkowe przedmioty",
+      "available_four_stars": "Dostępne 4-gwiazdkowe przedmioty",
+      "available_three_stars": "Dostępne 3-gwiazdkowe przedmioty"
     },
     "records": {
       "title": "Rekordy gracza",
