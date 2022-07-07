@@ -8,38 +8,38 @@
       "command_error": "Błąd komendy:"
     },
     "dispatch": {
-      "port_bind": "[Dyspozycja] Serwer dyspozycyjny został uruchomiony na porcie %s.",
-      "request": "[Dyspozycja] Żądanie klienta %s (metoda %s): %s",
+      "port_bind": "[Dispatch] Serwer Dispatch został uruchomiony na porcie %s.",
+      "request": "[Dispatch] Żądanie klienta %s (metoda %s): %s",
       "keystore": {
-        "general_error": "[Magazyn Kluczy] Wystąpił błąd podczas ładowania magazynu kluczy.",
-        "password_error": "[Magazyn Kluczy] Nie można załadować magazynu kluczy. Spróbuję użyć domyślnego hasła...",
-        "no_keystore_error": "[Magazyn Kluczy] Brak certyfikatu SSL. Przejście na serwer HTTP.",
-        "default_password": "[Magazyn Kluczy] Domyślne hasło magazynu kluczy zostało załadowane. Rozważ ustawienie tego hasła jako \"123456\" w pliku config.json."
+        "general_error": "[Keystore] Wystąpił błąd podczas ładowania keystore.",
+        "password_error": "[Keystore] Nie można załadować keystore. Spróbuję użyć domyślnego hasła...",
+        "no_keystore_error": "[Keystore] Brak certyfikatu SSL. Przejście na serwer HTTP.",
+        "default_password": "[Keystore] Domyślne hasło keystore zostało załadowane. Rozważ ustawienie tego hasła jako \"123456\" w pliku config.json."
       },
       "authentication": {
-        "default_unable_to_verify": "[Uwierzytelnianie] Coś wywołało metodę \"verifyUser\", która jest niedostępna w domyślnym kontrolerze uwierzytelniającym."
+        "default_unable_to_verify": "[Authentication] Coś wywołało metodę \"verifyUser\", która jest niedostępna w domyślnym kontrolerze uwierzytelniającym."
       },
       "no_commands_error": "Komendy nie są wspierane w trybie DISPATCH_ONLY.",
-      "unhandled_request_error": "[Dyspozycja] Potencjalnie nierozstrzygnięte żądanie (metoda %s): %s",
+      "unhandled_request_error": "[Dispatch] Potencjalnie nierozstrzygnięte żądanie (metoda %s): %s",
       "account": {
-        "login_attempt": "[Konta] Klient %s próbuje się zalogować.",
-        "login_success": "[Konta] Klient %s zalogował się jako %s.",
-        "login_max_player_limit": "[Konta] Logowanie klienta %s nie powiodło się: liczba graczy online osiągnęła swój limit.",
-        "login_token_attempt": "[Konta] Klient %s próbuje się zalogować poprzez token.",
-        "login_token_error": "[Konta] Logowanie klienta %s poprzez token nie powiodło się.",
-        "login_token_success": "[Konta] Klient %s zalogował się poprzez token jako %s.",
-        "combo_token_success": "[Konta] Klient %s pomyślnie wymienił token combo.",
-        "combo_token_error": "[Konta] Wymienienie tokena combo klienta %s nie powiodło się.",
-        "account_login_create_success": "[Konta] Logowanie klienta %s powiodło się: konto %s zostało stworzone.",
-        "account_login_create_error": "[Konta] Logowanie klienta %s nie powiodło się: tworzenie konta nie powiodło się.",
-        "account_login_exist_error": "[Konta] Logowanie klienta %s nie powiodło się: nie znaleziono konta.",
+        "login_attempt": "[Account] Klient %s próbuje się zalogować.",
+        "login_success": "[Account] Klient %s zalogował się jako %s.",
+        "login_max_player_limit": "[Account] Logowanie klienta %s nie powiodło się: liczba graczy online osiągnęła swój limit.",
+        "login_token_attempt": "[Account] Klient %s próbuje się zalogować poprzez token.",
+        "login_token_error": "[Account] Logowanie klienta %s poprzez token nie powiodło się.",
+        "login_token_success": "[Account] Klient %s zalogował się poprzez token jako %s.",
+        "combo_token_success": "[Account] Klient %s pomyślnie wymienił token combo.",
+        "combo_token_error": "[Account] Wymienienie tokena combo klienta %s nie powiodło się.",
+        "account_login_create_success": "[Account] Logowanie klienta %s powiodło się: konto %s zostało stworzone.",
+        "account_login_create_error": "[Account] Logowanie klienta %s nie powiodło się: tworzenie konta nie powiodło się.",
+        "account_login_exist_error": "[Account] Logowanie klienta %s nie powiodło się: nie znaleziono konta.",
         "account_cache_error": "Błąd pamięci cache konta gry.",
         "session_key_error": "Błędny klucz sesji.",
         "username_error": "Podana nazwa użytkownika nie istnieje.",
         "username_create_error": "Podana nazwa użytkownika nie istnieje. Tworzenie konta nie powiodło się.",
         "server_max_player_limit": "Liczba graczy online osiągnęła swój limit."
       },
-      "router_error": "[Dyspozycja] Wystąpił błąd podczas tworzenia routera: %s."
+      "router_error": "[Dispatch] Wystąpił błąd podczas tworzenia routera: %s."
     },
     "status": {
       "free_software": "Grasscutter to DARMOWE oprogramowanie oparte na licencji AGPL-3.0. Jeżeli za nie zapłaciłeś, zostałeś oszukany. Strona projektu: https://github.com/Grasscutters/Grasscutter",
@@ -68,7 +68,7 @@
       "console_execute_error": "Ta komenda może być użyta tylko w konsoli.",
       "player_execute_error": "Ta komenda może być użyta tylko w grze.",
       "command_exist_error": "Nie znaleziono komendy.",
-      "no_usage_specified": "Brak zastosowania.",
+      "no_usage_specified": "Brak przykładu zastosowania.",
       "no_description_specified": "Brak opisu.",
       "set_to": "%s ustawiono na %s.",
       "set_for_to": "%s (UID %s) ustawiono na %s.",
@@ -91,6 +91,8 @@
     "execution": {
       "player_exist_error": "Gracz nie istnieje.",
       "player_offline_error": "Gracz nie jest online.",
+      "item_player_exist_error": "Błędny przedmiot lub UID.",
+      "player_exist_offline_error": "Gracz nie istnieje lub nie jest online.",
       "argument_error": "Błędny argument lub argumenty.",
       "clear_target": "Następne komendy nie będą dotyczyły nikogo. Będziesz musiał/a sam/a dodać UID gracza docelowego do każdej kolejnej komendy.",
       "set_target": "Następne komendy będą dotyczyły gracza @%s.",
@@ -315,6 +317,7 @@
       "add_usage": "team add <ID awatara, ...> [indeks]",
       "invalid_index": "Błędny indeks.",
       "add_too_much": "Możesz mieć maksymalnie %d postaci w swoim zespole.",
+      "failed_to_add_avatar": "Błąd podczas dodawania awatara o ID %s.",
       "remove_usage": "team remove <indeks|pierwszy|ostatni|pierwszy_indeks-ostatni_indeks, ...>",
       "failed_to_parse_index": "Błąd podczas przetwarzania indeksu %s.",
       "remove_too_much": "Nie możesz usunąć wszystkich swoich awatarów.",
@@ -340,6 +343,12 @@
       "exists_error": "Ta scena nie istenieje.",
       "success": "Gracz %s został przeniesiony do pozycji (%s, %s, %s) w scenie o ID %s.",
       "description": "Przemieść gracza do podanej pozycji w podanej scenie."
+    },
+    "weather": {
+      "usage": "weather [ID pogody] [typ klimatu]\n\tID pogody można znaleźć w pliku \"WeatherExcelConfigData.json\".\n\tMożliwe typy klimatu: sunny (słoneczny), cloudy (pochmurny), rain (deszcz), thunderstorm (burza), snow (śnieg), mist (mgła)",
+      "success": "ID pogody został ustawiony na %s, a typ klimatu na %s.",
+      "status": "Bieżące ID pogody to %s, a typ klimatu to %s.",
+      "description": "Zmień ID pogody i typ klimatu."
     },
     "ban": {
       "usage": "ban @<UID gracza> [na ile czasu] [powód]",
