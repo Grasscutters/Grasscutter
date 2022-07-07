@@ -5,7 +5,7 @@
       "connect": "Klient połączył się z %s.",
       "disconnect": "Klient rozłączył się z %s.",
       "game_update_error": "Wystąpił błąd podczas aktualizacji gry.",
-      "command_error": "Błąd komendy:"
+      "command_error": "Błąd komendy: "
     },
     "dispatch": {
       "port_bind": "[Dispatch] Serwer Dispatch został uruchomiony na porcie %s.",
