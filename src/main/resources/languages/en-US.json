@@ -137,7 +137,7 @@
       "description": "Delete unequipped unlocked items from the target player's inventory."
     },
     "coop": {
-      "usage": "coop [ID]",
+      "usage": "coop @[playerID]",
       "success": "Summoned player %s to player %s's world.",
       "description": "Add a player to your world. If no one is specified, you are placed in a multiplayer version of your world."
     },
@@ -182,13 +182,13 @@
       "description": "Kick the specified player from the server."
     },
     "killall": {
-      "usage": "killall [playerID] [sceneID]",
+      "usage": "killall @[playerID] [sceneID]",
       "scene_not_found_in_player_world": "The given sceneID was not found.",
       "kill_monsters_in_scene": "Killed %s monsters in scene %s.",
       "description": "Kill all entities in the given scene."
     },
     "killCharacter": {
-      "usage": "killcharacter [playerID]",
+      "usage": "killcharacter @[playerID]",
       "success": "Killed %s's current character.",
       "description": "Kill the target player's current character."
     },
@@ -200,7 +200,7 @@
       "description": "Display or change current language."
     },
     "list": {
-      "usage": "list [playerID]",
+      "usage": "list @[playerID]",
       "success": "There are %s player(s) online:",
       "description": "List online players."
     },
@@ -239,12 +239,12 @@
       "description": "Reset the constellation level on your current active character(s)."
     },
     "resetShopLimit": {
-      "usage": "resetshop <playerID>",
+      "usage": "resetshop @<playerID>",
       "success": "Resetted target player's shop refresh time.",
       "description": "Reset target player's shop refresh time."
     },
     "sendMail": {
-      "usage": "sendmail <playerID|all|help> [templateID]",
+      "usage": "sendmail <@<playerID>|all|help> [templateID]",
       "user_not_exist": "A player with given playerID %s does not exist.",
       "start_composition": "Starting composition of the message.\nPlease use \"/sendmail <title>\" to continue.\nYou can use \"/sendmail stop\" at any time to stop creating the mail.",
       "templates": "Mail templates are not implemented yet.",
@@ -267,7 +267,7 @@
       "description": "Send a mail to the specified player."
     },
     "sendMessage": {
-      "usage": "sendmessage <playerID> <message>",
+      "usage": "sendmessage @<playerID> <message>",
       "success": "Message sent.",
       "description": "Send a message to a player as the server. If used with no target, send to all players on the server."
     },
@@ -354,14 +354,14 @@
       "description": "Change weather ID and climate type."
     },
     "ban": {
-      "usage": "ban <@playerId> [for how long] [reason]",
+      "usage": "ban <@playerID> [for how long] [reason]",
       "success": "Successfully banned the player.",
       "failure": "Failed, player not found.",
       "invalid_time": "Unable to parse timestamp.",
       "description": "Ban the target player."
     },
     "unban": {
-      "usage": "unban <@playerId>",
+      "usage": "unban <@playerID>",
       "success": "Successfully unbanned the player.",
       "failure": "Failed, player not found.",
       "description": "Unban the target player."
