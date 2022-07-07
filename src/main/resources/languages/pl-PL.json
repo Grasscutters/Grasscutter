@@ -283,13 +283,13 @@
     },
     "setStats": {
       "usage": "setstats <nazwa statystyki> <wartość>\n\tMożliwe nazwy statystyki: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\tDodatkowe obrażenia od żywiołu: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\tOdporność na żywioł: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-      "description": "Ustaw statystykę walki dla obecnie wybranej postaci."
+      "description": "Ustaw statystykę walki dla obecnie wybranej postaci wybranego gracza."
     },
     "spawn": {
       "usage": "spawn <ID obiektu> [ilość] [poziom (tylko potwory)] [<x> <y> <z> (tylko potwory)]",
       "success": "Stworzono %s obiektów o ID %s.",
       "limit_reached": "Osiągnięto maksymalną ilość obiektów w scenie. Dodane zostaną tylko %s.",
-      "description": "Dodaj wskazane obiekty do twojej sceny."
+      "description": "Dodaj wskazane obiekty do sceny wybranego gracza."
     },
     "stop": {
       "usage": "stop",
@@ -311,31 +311,31 @@
       "normal_attack_id": "ID podstawowego ataku: %s.",
       "e_skill_id": "ID umiejętności E: %s.",
       "q_skill_id": "ID umiejętności Q: %s.",
-      "description": "Ustaw poziomu talentu obecnej postaci."
+      "description": "Ustaw poziomu talentu obecnie wybranej postaci wybranego gracza."
     },
     "team": {
       "usage": "team <add|remove|set> [ID awatara, ...] [indeks|pierwszy|ostatni|pierwszy_indeks-ostatni_indeks, ...]",
       "invalid_usage": "Nieprawidłowe użycie komendy.",
       "add_usage": "team add <ID awatara, ...> [indeks]",
       "invalid_index": "Błędny indeks.",
-      "add_too_much": "Możesz mieć maksymalnie %d postaci w swoim zespole.",
+      "add_too_much": "Można mieć maksymalnie %d postaci w zespole.",
       "failed_to_add_avatar": "Błąd podczas dodawania awatara o ID %s.",
       "remove_usage": "team remove <indeks|pierwszy|ostatni|pierwszy_indeks-ostatni_indeks, ...>",
       "failed_to_parse_index": "Błąd podczas przetwarzania indeksu %s.",
-      "remove_too_much": "Nie możesz usunąć wszystkich swoich awatarów.",
+      "remove_too_much": "Nie możesz usunąć wszystkich awatarów w zespole.",
       "ignore_index": "Ignorowanie indeksu/ów %s.",
       "set_usage": "team set <indeks> <ID awatara>",
       "index_out_of_range": "Podany indeks nie mieści się w swoim zakresie.",
       "failed_parse_avatar_id": "Błędny ID awatara %s.",
-      "avatar_already_in_team": "Podany awatar jest już w twoim zespole.",
+      "avatar_already_in_team": "Podany awatar jest już w zespole wybranego gracza.",
       "avatar_not_found": "Awatar o ID %d nie istnieje.",
-      "description": "Modyfikuj swój zespół."
+      "description": "Modyfikuj zespół wybranego gracza."
     },
     "teleportAll": {
       "usage": "tpall",
-      "success": "Przyzwano wszystkich graczy do ciebie.",
+      "success": "Przyzwano wszystkich graczy do wybranego gracza.",
       "error": "Możesz użyć tej komendy wyłącznie w trybie MP.",
-      "description": "Przyzwij wszystkich graczy do ciebie."
+      "description": "Przyzwij wszystkich graczy do wybranego gracza."
     },
     "teleport": {
       "usage_server": "tp @<ID gracza> <x> <y> <z> [ID sceny]",
@@ -344,7 +344,7 @@
       "invalid_position": "Błędna pozycja xyz.",
       "exists_error": "Ta scena nie istenieje.",
       "success": "Gracz %s został przeniesiony do pozycji (%s, %s, %s) w scenie o ID %s.",
-      "description": "Przemieść gracza do podanej pozycji w podanej scenie."
+      "description": "Przemieść wybranego gracza do podanej pozycji w podanej scenie."
     },
     "weather": {
       "usage": "weather [ID pogody] [typ klimatu]\n\tID pogody można znaleźć w pliku \"WeatherExcelConfigData.json\".\n\tMożliwe typy klimatu: sunny (słoneczny), cloudy (pochmurny), rain (deszcz), thunderstorm (burza), snow (śnieg), mist (mgła)",
