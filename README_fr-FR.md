@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | FR | [ES](README_es-ES.md) | [HE](README_HE.md)
+[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | FR | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md)
 
 **Attention:** De nouveaux contributeurs sont toujours les bienvenus. Avant d'ajouter votre contribution, veuillez lire le [code de conduite](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
@@ -75,8 +75,8 @@ Grasscutter utilise Gradle pour gérer les dépendances et la construction.
 
 **Logiciels requis:**
 
-- Java SE Development Kits - 17
-- Git
+- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Git](https://git-scm.com/downloads)
 
 ##### Windows
 

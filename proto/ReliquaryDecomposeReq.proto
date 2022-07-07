@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 615
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message ReliquaryDecomposeReq {
+	uint32 config_id = 1;
+	uint32 target_count = 4;
+	repeated uint64 guid_list = 15;
+}

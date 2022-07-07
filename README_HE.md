@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-עברית | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [EN](README.md) | [ES](README_es-ES.md)
+עברית | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [EN](README.md) | [ES](README_es-ES.md) | [RU](README_ru-RU.md)
 **תשומת לב בבקשה:** אנחנו מקבלים עזרה בפיתוח התוכנה. לפני שאתם תורמים לפרויקט בבקשה תקראו את [תנאי השימוש](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
 ## אפשרויות זמינות כרגע
@@ -79,8 +79,8 @@ certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
 **דרישות:**
 
 
-- Java SE Development Kits - 17
-- Git
+- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Git](https://git-scm.com/downloads)
 
 ##### Windows
 

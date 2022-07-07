@@ -92,6 +92,7 @@ public final class GameServer extends KcpServer {
 		EnergyManager.initialize();
 		StaminaManager.initialize();
 		CookingManager.initialize();
+		CombineManger.initialize();
 
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
