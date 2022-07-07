@@ -10,7 +10,7 @@ import java.util.*;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "help", usage = "help [command]", description = "commands.help.description", targetRequirement = Command.TargetRequirement.NONE)
+@Command(label = "help", usage = "commands.help.usage", description = "commands.help.description", targetRequirement = Command.TargetRequirement.NONE)
 public final class HelpCommand implements CommandHandler {
 
     @Override
@@ -39,7 +39,7 @@ public final class HelpCommand implements CommandHandler {
                 Command annotation = handler.getClass().getAnnotation(Command.class);
 
                 builder.append("   ").append(translate(player, annotation.description())).append("\n");
-                builder.append(translate(player, "commands.help.usage")).append(annotation.usage());
+                builder.append(translate(player, "commands.help.usage_prefix")).append(translate(player, annotation.usage()));
                 if (annotation.aliases().length >= 1) {
                     builder.append("\n").append(translate(player, "commands.help.aliases"));
                     for (String alias : annotation.aliases()) {
@@ -77,7 +77,7 @@ public final class HelpCommand implements CommandHandler {
             annotations.forEach(annotation -> {
                 builder.append(annotation.label()).append("\n");
                 builder.append("   ").append(translate(player, annotation.description())).append("\n");
-                builder.append(translate(player, "commands.help.usage")).append(annotation.usage());
+                builder.append(translate(player, "commands.help.usage_prefix")).append(translate(player, annotation.usage()));
                 if (annotation.aliases().length >= 1) {
                     builder.append("\n").append(translate(player, "commands.help.aliases"));
                     for (String alias : annotation.aliases()) {
@@ -108,7 +108,7 @@ public final class HelpCommand implements CommandHandler {
             annotations.forEach(annotation -> {
                 StringBuilder builder = new StringBuilder(annotation.label()).append("\n");
                 builder.append("   ").append(translate(player, annotation.description())).append("\n");
-                builder.append(translate(player, "commands.help.usage")).append(annotation.usage());
+                builder.append(translate(player, "commands.help.usage_prefix")).append(translate(player, annotation.usage()));
                 if (annotation.aliases().length >= 1) {
                     builder.append("\n").append(translate(player, "commands.help.aliases"));
                     for (String alias : annotation.aliases()) {
