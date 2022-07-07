@@ -292,6 +292,7 @@
       "description": "Dodaj wskazane obiekty do twojej sceny."
     },
     "stop": {
+      "usage": "stop",
       "success": "Serwer zatrzymuje się...",
       "description": "Zatrzymaj serwer."
     },
