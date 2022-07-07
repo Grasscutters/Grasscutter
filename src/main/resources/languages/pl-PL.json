@@ -36,7 +36,7 @@
         "account_cache_error": "Błąd pamięci cache konta gry.",
         "session_key_error": "Błędny klucz sesji.",
         "username_error": "Podana nazwa użytkownika nie istnieje.",
-        "username_create_error": "Podana nazwa użytkownika nie istnieje. Tworzenie konta nie powiodło się.",
+        "username_create_error": "Podana nazwa użytkownika nie istnieje. Automatyczne tworzenie nowego konta nie powiodło się.",
         "server_max_player_limit": "Liczba graczy online osiągnęła swój limit."
       },
       "router_error": "[Dispatch] Wystąpił błąd podczas tworzenia routera: %s."
