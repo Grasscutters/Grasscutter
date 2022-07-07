@@ -75,8 +75,8 @@ Grasscutter 使用 Gradle 来处理依赖及编译。
 
 **依赖:**
 
-- Java SE Development Kits - 17
-- Git
+- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Git](https://git-scm.com/downloads)
 
 ##### Windows
 
