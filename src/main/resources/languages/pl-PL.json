@@ -118,7 +118,7 @@
       "description": "Twórz lub usuń konta."
     },
     "announce": {
-      "usage": "a <tpl templateId|refresh|revoke templateId|content>",
+      "usage": "a <tpl> <ID szablonu>\na <refresh>\na <wiadomość>\na <revoke> <ID szablonu>",
       "send_success": "Ogłoszenie zostało pomyślnie wysłane. Możesz je odwołać używając \"/a revoke %s\".",
       "refresh_success": "Odświeżono konfigurację ogłoszeń (w sumie jest ich %s).",
       "revoke_done": "Pomyślnie odwołano ogłoszenie %s.",
