@@ -3,6 +3,7 @@ package emu.grasscutter.loot.function;
 import com.google.gson.JsonElement;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.loot.LootContext;
+
 import emu.grasscutter.loot.number.NumberProvider;
 
 import java.util.Map;
@@ -26,8 +27,7 @@ public class IncDataFunction extends LootFunction {
     public void run(LootContext ctx, GameItem item) {
         int value = NumberProvider.parse(args.get("value")).orElse(NumberProvider.of(1)).roll().intValue();
         String name = args.get("name").getAsString();
-        int orig = ctx.data.getInt(name);
-        ctx.data.put(name, orig + value);
-//        Grasscutter.getLogger().debug("+ {} {}", name, orig + value);
+        int orig = ctx.player.getExtData(name);
+        ctx.player.setExtData(name, orig + value);
     }
 }

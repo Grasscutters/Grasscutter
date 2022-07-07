@@ -28,6 +28,6 @@ public class SetDataFunction extends LootFunction {
     public void run(LootContext ctx, GameItem item) {
         var name = this.args.get("name").getAsString();
         var value = Grasscutter.getGsonFactory().fromJson(this.args.get("value"), NumberProvider.class);
-        ctx.data.put(name, value.roll().intValue());
+        ctx.player.setExtData(name, value.roll().intValue());
     }
 }

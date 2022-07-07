@@ -17,6 +17,6 @@ public class DataNumberProvider implements NumberProvider {
 
     @Override
     public Number roll(LootContext ctx) {
-        return ctx.data.getInt(name);
+        return ctx.player.getExtData(name);
     }
 }

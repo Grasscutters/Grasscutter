@@ -144,6 +144,7 @@ public class Player {
 	@Transient private TowerManager towerManager;
 	private TowerData towerData;
 	private PlayerGachaInfo gachaInfo;
+	private Map<String, Integer> extDatas;
 	private PlayerProfile playerProfile;
 	private boolean showAvatar;
 	private ArrayList<AvatarProfileData> shownAvatars;
@@ -222,6 +223,7 @@ public class Player {
 		}
 
 		this.gachaInfo = new PlayerGachaInfo();
+		this.extDatas = new HashMap<>();
 		this.nameCardList = new HashSet<>();
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
@@ -748,6 +750,14 @@ public class Player {
 
 	public void setPeerId(int peerId) {
 		this.peerId = peerId;
+	}
+
+	public int getExtData(String key) {
+		return extDatas.getOrDefault(key, 0);
+	}
+
+	public void setExtData(String key, int value) {
+		extDatas.put(key, value);
 	}
 
 	public int getClientTime() {

@@ -78,8 +78,6 @@ public class GachaManager {
 		return array[randomRange(0, array.length - 1)];
 	}
 
-    public Int2ObjectMap<LootContext> playerRecords;
-
 	public synchronized void load() {
 		try (Reader fileReader = new InputStreamReader(DataLoader.load("Banners.json"))) {
 			getGachaBanners().clear();
@@ -96,8 +94,6 @@ public class GachaManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-        this.playerRecords = new Int2ObjectOpenHashMap<>();
 	}
 
 	private class BannerPools {
@@ -309,7 +305,8 @@ public class GachaManager {
                 itemId = doPull(banner, gachaInfo, pools);
                 itemData = GameData.getItemDataMap().get(itemId);
             } else {
-                LootContext ctx = playerRecords.computeIfAbsent(player.getUid(), e -> new LootContext());
+                LootContext ctx = new LootContext();
+				ctx.player = player;
 			    itemData = table.loot(ctx).get(0).getItemData();
                 itemId = itemData.getId();
             }
