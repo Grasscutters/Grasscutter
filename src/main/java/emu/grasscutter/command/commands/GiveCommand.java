@@ -23,8 +23,14 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Command(label = "give", usage = "give <itemId|avatarId|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [lv<level>] [r<refinement>] [x<amount>] | give <artifactId> [lv<level>] [x<amount>] [mainPropId] [<appendPropId>[,<times>]]...", aliases = {
-        "g", "item", "giveitem"}, permission = "player.give", permissionTargeted = "player.give.others", description = "commands.give.description")
+@Command(
+    label = "give",
+    usage = "commands.give.usage",
+    description = "commands.give.description",
+    aliases = {"g", "item", "giveitem"},
+    permission = "player.give",
+    permissionTargeted = "player.give.others"
+)
 public final class GiveCommand implements CommandHandler {
     private static Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java doesn't have raw string literals :(
     private static Pattern refineRegex = Pattern.compile("r(\\d+)");
