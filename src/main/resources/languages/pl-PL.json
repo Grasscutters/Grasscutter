@@ -91,16 +91,16 @@
     "execution": {
       "player_exist_error": "Gracz nie istnieje.",
       "player_offline_error": "Gracz nie jest online.",
-      "item_player_exist_error": "Błędny przedmiot lub UID.",
+      "item_player_exist_error": "Błędny przedmiot lub ID.",
       "player_exist_offline_error": "Gracz nie istnieje lub nie jest online.",
       "argument_error": "Błędny argument lub argumenty.",
-      "clear_target": "Następne komendy nie będą dotyczyły nikogo. Będziesz musiał/a sam/a dodać UID gracza docelowego do każdej kolejnej komendy.",
+      "clear_target": "Następne komendy nie będą dotyczyły nikogo. Będziesz musiał/a sam/a dodać ID gracza docelowego do każdej kolejnej komendy.",
       "set_target": "Następne komendy będą dotyczyły gracza @%s.",
       "set_target_online": "Gracz @%s jest online. Niektóre polecenia wymagają trybu offline i mogą nie działać.",
       "set_target_offline": "Gracz @%s jest offline. Niektóre polecenia wymagają trybu online i mogą nie działać.",
-      "need_target": "Ta komenda wymaga UID gracza. Dodaj argument <@UID>, lub ustaw UID tego gracza na stałe dla każdej kolejnej komendy poleceniem \"/set_target @UID\".",
-      "need_target_online": "Ta komenda wymaga UID gracza, który jest online, ale bieżący gracz docelowy jest w trybie offline. Dodaj inny argument <@UID> lub ustaw UID gracza na stałe dla każdej kolejnej komendy poleceniem \"/set_target @UID\".",
-      "need_target_offline": "Ta komenda wymaga UID gracza, który jest offline, ale bieżący gracz docelowy jest w trybie online. Dodaj inny argument <@UID> lub ustaw UID gracza na stałe dla każdej kolejnej komendy poleceniem \"/set_target @UID\"."
+      "need_target": "Ta komenda wymaga ID gracza. Dodaj argument <@ID>, lub ustaw ID tego gracza na stałe dla każdej kolejnej komendy poleceniem \"/set_target @ID\".",
+      "need_target_online": "Ta komenda wymaga ID gracza, który jest online, ale bieżący gracz docelowy jest w trybie offline. Dodaj inny argument <@ID> lub ustaw ID gracza na stałe dla każdej kolejnej komendy poleceniem \"/set_target @ID\".",
+      "need_target_offline": "Ta komenda wymaga ID gracza, który jest offline, ale bieżący gracz docelowy jest w trybie online. Dodaj inny argument <@ID> lub ustaw ID gracza na stałe dla każdej kolejnej komendy poleceniem \"/set_target @ID\"."
     },
     "status": {
       "enabled": "Włączone",
@@ -137,7 +137,7 @@
       "description": "Usuń niewyposażone przedmioty wskazanego gracza."
     },
     "coop": {
-      "usage": "coop [UID]",
+      "usage": "coop [ID gracza]",
       "success": "Pomyślnie dodano gracza %s do świata gracza %s.",
       "description": "Dodaj wskazanego gracza do swojego świata."
     },
@@ -152,10 +152,10 @@
       "usage": "give <ID przedmiotu|ID awataru|all|weapons|mats|avatars> [x<ilość>] [lv<poziom>] [r<poziom ulepszenia>]",
       "usage_relic": "give <ID reliktu> [ID pierwszego przedmiotu] [<ID drugiego przedmiotu>[, <ile razy je połączyć>]]... [lv<poziom od 0 do 20>]",
       "illegal_relic": "Ten ID reliktu znajduje się na czarnej liście i może być nie tym, czego szukasz.",
-      "given": "Dodano %s przedmiotów o ID %s graczowi o UID %s.",
-      "given_with_level_and_refinement": "Dodano %s przedmiotów o poziomie %s oraz poziomie ulepszenia %s i ID %s graczowi o UID %s.",
-      "given_level": "Dodano %s artefaktów o poziomie %s oraz ID %s graczowi o UID %s.",
-      "given_avatar": "Dodano awatar o ID %s oraz poziomie %s graczowi o UID %s.",
+      "given": "Dodano %s przedmiotów o ID %s graczowi o ID %s.",
+      "given_with_level_and_refinement": "Dodano %s przedmiotów o poziomie %s oraz poziomie ulepszenia %s i ID %s graczowi o ID %s.",
+      "given_level": "Dodano %s artefaktów o poziomie %s oraz ID %s graczowi o ID %s.",
+      "given_avatar": "Dodano awatar o ID %s oraz poziomie %s graczowi o ID %s.",
       "giveall_success": "Pomyślnie dodano wybrane przedmioty.",
       "description": "Dodaj wybrane przedmioty do ekwipunku wybranego gracza."
     },
@@ -181,13 +181,13 @@
       "description": "Wyrzuć wskazanego gracza z gry."
     },
     "killall": {
-      "usage": "killall [UID gracza] [ID sceny]",
+      "usage": "killall [ID gracza] [ID sceny]",
       "scene_not_found_in_player_world": "Błędny ID sceny.",
       "kill_monsters_in_scene": "Zabito %s potworów w scenie %s.",
       "description": "Zabij wszystkie potwory we wskazanej scenie."
     },
     "killCharacter": {
-      "usage": "killcharacter [UID gracza]",
+      "usage": "killcharacter [ID gracza]",
       "success": "Pomyślnie zabito postać gracza %s.",
       "description": "Zabij postać wskazanego gracza."
     },
@@ -199,8 +199,8 @@
       "description": "Pokaż lub zmień bieżący kod języka."
     },
     "list": {
-      "usage": "list [UID gracza]",
-      "success": "%s graczy online.",
+      "usage": "list [ID gracza]",
+      "success": "%s graczy online:",
       "description": "Pokaż ile jest graczy na serwerze."
     },
     "permission": {
@@ -237,13 +237,13 @@
       "description": "Resetuj konstelacje wszystkich lub wybranej postaci."
     },
     "resetShopLimit": {
-      "usage": "resetshop <UID gracza>",
+      "usage": "resetshop <ID gracza>",
       "success": "Zresetowano czas odświeżania sklepu podanego gracza.",
       "description": "Resetuj czas odświeżania sklepu podanego gracza."
     },
     "sendMail": {
-      "usage": "sendmail <UID gracza|all|help> [ID szablonu]",
-      "user_not_exist": "Gracz o podanym UID %s nie istnieje.",
+      "usage": "sendmail <ID gracza|all|help> [ID szablonu]",
+      "user_not_exist": "Gracz o podanym ID %s nie istnieje.",
       "start_composition": "Tworzenie wiadomości.\nUżyj \"/sendmail <tytuł>\", aby kontynuować.\nMożesz użyć \"/sendmail stop\" w dowolnym momencie, aby przestać.",
       "templates": "Szablony nie są jeszcze gotowe do użycia.",
       "invalid_arguments": "Błędne argumenty.",
@@ -265,7 +265,7 @@
       "description": "Wyślij wiadomość wraz z przedmiotami do wybranego lub wszystkich graczy."
     },
     "sendMessage": {
-      "usage": "sendmessage <UID gracza> <wiadomość>",
+      "usage": "sendmessage <ID gracza> <wiadomość>",
       "success": "Wiadomość wysłana.",
       "description": "Wyślij wiadomość do gracza jako serwer. Jeśli nie określono celu, wysyła do wszystkich graczy na serwerze."
     },
@@ -336,8 +336,8 @@
       "description": "Przyzwij wszystkich graczy do ciebie."
     },
     "teleport": {
-      "usage_server": "tp @<UID gracza> <x> <y> <z> [ID sceny]",
-      "usage": "tp [@<UID gracza>] <x> <y> <z> [ID sceny]",
+      "usage_server": "tp @<ID gracza> <x> <y> <z> [ID sceny]",
+      "usage": "tp [@<ID gracza>] <x> <y> <z> [ID sceny]",
       "specify_player_id": "Musisz podać ID gracza.",
       "invalid_position": "Błędna pozycja xyz.",
       "exists_error": "Ta scena nie istenieje.",
@@ -351,16 +351,16 @@
       "description": "Zmień ID pogody i typ klimatu."
     },
     "ban": {
-      "usage": "ban @<UID gracza> [na ile czasu] [powód]",
+      "usage": "ban @<ID gracza> [na ile czasu] [powód]",
       "success": "Pomyślnie zbanowano podanego gracza.",
-      "failure": "Gracz o podanym UID nie istnieje.",
+      "failure": "Gracz o podanym ID nie istnieje.",
       "invalid_time": "Nieprawidłowy czas bana.",
       "description": "Zbanuj podanego gracza."
     },
     "unban": {
-      "usage": "unban @<UID gracza>",
+      "usage": "unban @<ID gracza>",
       "success": "Pomyślnie odbanowano podanego gracza.",
-      "failure": "Gracz o podanym UID nie istnieje.",
+      "failure": "Gracz o podanym ID nie istnieje.",
       "description": "Odbanuj podanego gracza."
     }
   },
