@@ -150,7 +150,7 @@
     },
     "give": {
       "usage": "give <ID przedmiotu|ID awataru|all|weapons|mats|avatars> [x<ilość>] [lv<poziom>] [r<poziom ulepszenia>]",
-      "usage_relic": "give <ID reliktu> [ID pierwszego przedmiotu] [<ID drugiego przedmiotu>[,<ile razy je połączyć>]]... [lv<poziom od 0 do 20>]",
+      "usage_relic": "give <ID reliktu> [ID pierwszego przedmiotu] [<ID drugiego przedmiotu>[, <ile razy je połączyć>]]... [lv<poziom od 0 do 20>]",
       "illegal_relic": "Ten ID reliktu znajduje się na czarnej liście i może być nie tym, czego szukasz.",
       "given": "Dodano %s przedmiotów o ID %s graczowi o UID %s.",
       "given_with_level_and_refinement": "Dodano %s przedmiotów o poziomie %s oraz poziomie ulepszenia %s i ID %s graczowi o UID %s.",
