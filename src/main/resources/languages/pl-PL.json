@@ -209,7 +209,8 @@
       "has_error": "Ten gracz już ma to uprawnienie.",
       "remove": "Pomyślnie usunięto uprawnienie.",
       "not_have_error": "Ten gracz nie ma tego uprawnienia.",
-      "account_error": "Podana nazwa gracza nie istnieje."
+      "account_error": "Podana nazwa gracza nie istnieje.",
+      "description": "Dodaj lub usuń uprawnienia podanego gracza."
     },
     "position": {
       "usage": "position",
