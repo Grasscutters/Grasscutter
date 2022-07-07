@@ -165,7 +165,7 @@
       "description": "Ulecz wszystkie postacie w swoim zespole."
     },
     "help": {
-      "usage": "help",
+      "usage": "Użycie: ",
       "aliases": "Aliasy: ",
       "available_commands": "Dostępne komendy: ",
       "description": "Wyświetl wszystkie komendy lub informacje na temat danej komendy.",
