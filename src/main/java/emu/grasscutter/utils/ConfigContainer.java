@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 
+import java.util.Set;
 import java.io.FileReader;
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -21,7 +22,7 @@ public class ConfigContainer {
     }
 
     /**
-     * Attempts to update the server's existing configuration to the latest 
+     * Attempts to update the server's existing configuration to the latest
      */
     public static void updateConfig() {
         try { // Check if the server is using a legacy config.
@@ -58,7 +59,7 @@ public class ConfigContainer {
             Grasscutter.getLogger().warn("Failed to inject the updated ", exception);
         }
     }
-    
+
     public Structure folderStructure = new Structure();
     public Database databaseInfo = new Database();
     public Language language = new Language();
@@ -73,7 +74,7 @@ public class ConfigContainer {
     public static class Database {
         public DataStore server = new DataStore();
         public DataStore game = new DataStore();
-        
+
         public static class DataStore {
             public String connectionUri = "mongodb://localhost:27017";
             public String collection = "grasscutter";
@@ -93,11 +94,13 @@ public class ConfigContainer {
 
     public static class Server {
         public ServerDebugMode debugLevel = ServerDebugMode.NONE;
+        public Set<Integer> DebugWhitelist = Set.of();
+        public Set<Integer> DebugBlacklist = Set.of();
         public ServerRunMode runMode = ServerRunMode.HYBRID;
 
         public HTTP http = new HTTP();
         public Game game = new Game();
-        
+
         public Dispatch dispatch = new Dispatch();
     }
 
@@ -114,7 +117,7 @@ public class ConfigContainer {
     }
 
     /* Server options. */
-    
+
     public static class HTTP {
         public String bindAddress = "0.0.0.0";
         /* This is the address used in URLs. */
@@ -123,7 +126,7 @@ public class ConfigContainer {
         public int bindPort = 443;
         /* This is the port used in URLs. */
         public int accessPort = 0;
-        
+
         public Encryption encryption = new Encryption();
         public Policies policies = new Policies();
         public Files files = new Files();
@@ -240,7 +243,7 @@ public class ConfigContainer {
         public String nickName = "Server";
         public String signature = "Welcome to Grasscutter!";
     }
-    
+
     public static class Files {
         public String indexFile = "./index.html";
         public String errorFile = "./404.html";
@@ -250,7 +253,7 @@ public class ConfigContainer {
 
     public static class Region {
         public Region() { }
-        
+
         public Region(
                 String name, String title,
                 String address, int port
@@ -260,7 +263,7 @@ public class ConfigContainer {
             this.Ip = address;
             this.Port  = port;
         }
-        
+
         public String Name = "os_usa";
         public String Title = "Grasscutter";
         public String Ip = "127.0.0.1";
