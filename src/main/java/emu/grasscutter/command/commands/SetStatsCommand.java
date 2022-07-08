@@ -11,7 +11,14 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 
-@Command(label = "setstats", usage = "setstats|stats <stat> <value>", aliases = {"stats"}, permission = "player.setstats", permissionTargeted = "player.setstats.others", description = "commands.setStats.description")
+@Command(
+    label = "setstats",
+    usage = "commands.setStats.usage",
+    description = "commands.setStats.description",
+    aliases = {"stats"},
+    permission = "player.setstats",
+    permissionTargeted = "player.setstats.others"
+)
 public final class SetStatsCommand implements CommandHandler {
     static class Stat {
         String name;

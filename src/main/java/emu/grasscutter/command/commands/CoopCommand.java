@@ -9,7 +9,13 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "coop", usage = "coop [host uid]", permission = "server.coop", permissionTargeted = "server.coop.others", description = "commands.coop.description")
+@Command(
+    label = "coop",
+    usage = "commands.coop.usage",
+    description = "commands.coop.description",
+    permission = "server.coop",
+    permissionTargeted = "server.coop.others"
+)
 public final class CoopCommand implements CommandHandler {
 
     @Override

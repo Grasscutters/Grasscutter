@@ -8,7 +8,13 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "kick", usage = "kick", aliases = {"restart"}, permissionTargeted = "server.kick", description = "commands.kick.description")
+@Command(
+    label = "kick",
+    usage = "commands.kick.usage",
+    description = "commands.kick.description",
+    aliases = {"restart"},
+    permissionTargeted = "server.kick"
+)
 public final class KickCommand implements CommandHandler {
 
     @Override

@@ -1,86 +1,86 @@
 {
   "messages": {
     "game": {
-      "port_bind": "Game Server started on port %s",
-      "connect": "Client connected from %s",
-      "disconnect": "Client disconnected from %s",
-      "game_update_error": "An error occurred during game update.",
-      "command_error": "Command error:"
+      "port_bind": "Game server started on port %s.",
+      "connect": "Client connected from %s.",
+      "disconnect": "Client disconnected from %s.",
+      "game_update_error": "An error occurred while updating the game.",
+      "command_error": "Command error: "
     },
     "dispatch": {
-      "port_bind": "[Dispatch] Dispatch server started on port %s",
-      "request": "[Dispatch] Client %s %s request: %s",
+      "port_bind": "[Dispatch] Dispatch server started on port %s.",
+      "request": "[Dispatch] Client %s requests (method: %s): %s",
       "keystore": {
-        "general_error": "[Dispatch] Error while loading keystore!",
-        "password_error": "[Dispatch] Unable to load keystore. Trying default keystore password...",
-        "no_keystore_error": "[Dispatch] No SSL cert found! Falling back to HTTP server.",
-        "default_password": "[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to 123456 in config.json."
+        "general_error": "[Dispatch] Error while loading keystore.",
+        "password_error": "[Dispatch] Unable to load keystore. Trying the default keystore password...",
+        "no_keystore_error": "[Dispatch] No SSL certificate found. Falling back to a HTTP server.",
+        "default_password": "[Dispatch] The default keystore password was loaded successfully. Please consider setting the password to \"123456\" in config.json."
       },
       "authentication": {
-        "default_unable_to_verify": "[Authentication] Something called the verifyUser method which is unavailable in the default authentication handler."
+        "default_unable_to_verify": "[Authentication] Something called the \"verifyUser\" method, which is unavailable in the default authentication handler."
       },
-      "no_commands_error": "Commands are not supported in dispatch only mode.",
-      "unhandled_request_error": "[Dispatch] Potential unhandled %s request: %s.",
+      "no_commands_error": "Commands are not supported in the DISPATCH_ONLY mode.",
+      "unhandled_request_error": "[Dispatch] Potentially unhandled request (method: %s): %s",
       "account": {
         "login_attempt": "[Dispatch] Client %s is trying to log in.",
         "login_success": "[Dispatch] Client %s logged in as %s.",
-        "login_max_player_limit": "[Dispatch] Client %s failed to log in: The number of online players has reached the limit",
+        "login_max_player_limit": "[Dispatch] Client %s failed to log in: the number of online players has reached the maximum.",
         "login_token_attempt": "[Dispatch] Client %s is trying to log in via token.",
         "login_token_error": "[Dispatch] Client %s failed to log in via token.",
         "login_token_success": "[Dispatch] Client %s logged in via token as %s.",
         "combo_token_success": "[Dispatch] Client %s succeed to exchange combo token.",
         "combo_token_error": "[Dispatch] Client %s failed to exchange combo token.",
-        "account_login_create_success": "[Dispatch] Client %s failed to log in: Account %s created.",
-        "account_login_create_error": "[Dispatch] Client %s failed to log in: Account create failed.",
-        "account_login_exist_error": "[Dispatch] Client %s failed to log in: Account not found.",
+        "account_login_create_success": "[Dispatch] Client %s succeeded logging in: account %s created.",
+        "account_login_create_error": "[Dispatch] Client %s failed to log in: failed creating an account.",
+        "account_login_exist_error": "[Dispatch] Client %s failed to log in: account not found.",
         "account_cache_error": "Game account cache information error.",
-        "session_key_error": "Wrong session key.",
+        "session_key_error": "Invalid session key.",
         "username_error": "Username not found.",
-        "username_create_error": "Username not found, create failed.",
-        "server_max_player_limit": "The number of online players has reached the limit"
+        "username_create_error": "Username not found and failed automatically creating a new account.",
+        "server_max_player_limit": "The number of online players has reached the maximum."
       },
       "router_error": "[Dispatch] Unable to attach router."
     },
     "status": {
-      "free_software": "Grasscutter is FREE software. If you have paid for this, you may have been scammed. Homepage: https://github.com/Grasscutters/Grasscutter",
+      "free_software": "Grasscutter is FREE software, licensed under AGPL-3.0. If you paid for this, you were scammed. Our homepage: https://github.com/Grasscutters/Grasscutter",
       "starting": "Starting Grasscutter...",
-      "shutdown": "Shutting down...",
-      "done": "Done! For help, type \"help\"",
+      "shutdown": "Stopping Grasscutter...",
+      "done": "Done! For help, type \"help\".",
       "error": "An error occurred.",
       "welcome": "Welcome to Grasscutter!",
       "run_mode_error": "Invalid server run mode: %s.",
-      "run_mode_help": "Server run mode must be 'HYBRID', 'DISPATCH_ONLY', or 'GAME_ONLY'. Unable to start Grasscutter...",
-      "create_resources": "Creating resources folder...",
-      "resources_error": "Place a copy of 'BinOutput' and 'ExcelBinOutput' in the resources folder.",
+      "run_mode_help": "Server run mode must be \"HYBRID\", \"DISPATCH_ONLY\", or \"GAME_ONLY\".",
+      "create_resources": "Creating the \"resources\" folder...",
+      "resources_error": "Place a copy of the \"BinOutput\" and \"ExcelBinOutput\" folders in the \"resources\" folder.",
       "version": "Grasscutter version: %s-%s",
       "game_version": "Game version: %s",
       "resources": {
         "loading": "Loading resources...",
-        "finish": "Finished loading resources."
+        "finish": "Loaded resources."
       }
     }
   },
   "commands": {
     "generic": {
       "not_specified": "No command specified.",
-      "unknown_command": "Unknown command: %s",
-      "permission_error": "You do not have permission to run this command.",
+      "unknown_command": "Unknown command: %s.",
+      "permission_error": "You do not have the necessary permissions to run this command.",
       "console_execute_error": "This command can only be run from the console.",
-      "player_execute_error": "Run this command in-game.",
-      "command_exist_error": "No command found.",
-      "no_usage_specified": "No usage specified",
-      "no_description_specified": "No description specified",
-      "set_to": "%s set to %s.",
-      "set_for_to": "%s for %s set to %s.",
+      "player_execute_error": "This command can only ben run from in-game.",
+      "command_exist_error": "Command not found.",
+      "no_usage_specified": "No usage example.",
+      "no_description_specified": "No description.",
+      "set_to": "%s was set to %s.",
+      "set_for_to": "%s (UID %s) was set to %s.",
       "invalid": {
         "amount": "Invalid amount.",
         "artifactId": "Invalid artifact ID.",
         "avatarId": "Invalid avatar ID.",
-        "avatarLevel": "Invalid avatarLevel.",
+        "avatarLevel": "Invalid avatar level.",
         "entityId": "Invalid entity ID.",
         "itemId": "Invalid item ID.",
-        "itemLevel": "Invalid itemLevel.",
-        "itemRefinement": "Invalid itemRefinement.",
+        "itemLevel": "Invalid item level.",
+        "itemRefinement": "Invalid item refinement level.",
         "statValue": "Invalid stat value.",
         "value_between": "Invalid value: %s must be between %s and %s.",
         "playerId": "Invalid player ID.",
@@ -91,16 +91,16 @@
     "execution": {
       "player_exist_error": "Player not found.",
       "player_offline_error": "Player is not online.",
-      "item_player_exist_error": "Invalid item or UID.",
+      "item_player_exist_error": "Invalid item or ID.",
       "player_exist_offline_error": "Player not found or is not online.",
       "argument_error": "Invalid arguments.",
       "clear_target": "Target cleared.",
       "set_target": "Subsequent commands will target @%s by default.",
       "set_target_online": "@%s is online. Some commands may require an offline target.",
       "set_target_offline": "@%s is offline. Some commands may require an online target.",
-      "need_target": "This command requires a target UID. Add a <@UID> argument or set a persistent target with /target @UID.",
-      "need_target_online": "This command requires an online target UID, but current target is offline. Add a different <@UID> argument or set a persistent target with /target @UID.",
-      "need_target_offline": "This command requires an offline target UID, but current target is online. Add a different <@UID> argument or set a persistent target with /target @UID."
+      "need_target": "This command requires a target player's ID. Add a <@ID> argument or set a persistent target with \"target @ID\".",
+      "need_target_online": "This command requires an online target, but current target is offline. Add a different <@ID> argument or set a persistent target with \"target @ID\".",
+      "need_target_offline": "This command requires an offline target, but current target is online. Add a different <@ID> argument or set a persistent target with \"target @ID\"."
     },
     "status": {
       "enabled": "Enabled",
@@ -109,108 +109,114 @@
       "success": "Success"
     },
     "account": {
-      "command_usage": "Usage: account <create|delete> <username> [UID]",
+      "usage": "account <create|delete> <username> [UID]",
       "invalid": "Invalid UID.",
       "exists": "An account with this username and/or UID already exists.",
       "create": "Account created with UID %s.",
       "delete": "Account deleted.",
       "no_account": "Account not found.",
-      "description": "Modify user accounts"
+      "description": "Modify user accounts."
     },
     "announce": {
-      "command_usage": "Usage: a <tpl templateId|refresh|revoke templateId|content>",
-      "send_success": "Send an announcement successfully, you can revoke it by /a revoke %s.",
-      "refresh_success": "Refresh announcement config file successfully. (Total %s)",
-      "revoke_done": "Try to revoke announcement %s.",
-      "description": "Send announcement to all online players, or manage server's announcement.",
-      "not_found": "Could not found announcement %s."
+      "usage": "announce <tpl> <templateID> OR announce <refresh> OR announce <message> OR announce <revoke> <templateID>",
+      "send_success": "Sent the announcement. You can revoke it using \"announce revoke %s\".",
+      "refresh_success": "Refreshed announcements (total %s).",
+      "revoke_done": "Revoked announcement ID %s.",
+      "not_found": "Could not find announcement %s.",
+      "description": "Manage and send game announcements."
     },
     "clear": {
-      "command_usage": "Usage: clear <all|wp|art|mat>",
-      "weapons": "Cleared weapons for %s.",
-      "artifacts": "Cleared artifacts for %s.",
-      "materials": "Cleared materials for %s.",
-      "furniture": "Cleared furniture for %s.",
-      "displays": "Cleared displays for %s.",
-      "virtuals": "Cleared virtuals for %s.",
-      "everything": "Cleared everything for %s.",
-      "description": "Deletes unequipped unlocked items, including yellow rarity ones from your inventory"
+      "usage": "clear <all|wp|art|mat>",
+      "weapons": "Cleared weapons of player %s.",
+      "artifacts": "Cleared artifacts of player %s.",
+      "materials": "Cleared materials of player %s.",
+      "furniture": "Cleared furniture of player %s.",
+      "displays": "Cleared displays of player %s.",
+      "virtuals": "Cleared virtuals of player %s.",
+      "everything": "Cleared everything of player %s.",
+      "description": "Delete unequipped unlocked items from the target player's inventory."
     },
     "coop": {
-      "usage": "Usage: coop [host UID]",
-      "success": "Summoned %s to %s's world.",
-      "description": "Forces someone to join the world of others. If no one is targeted, it sends you into co-op mode anyway."
+      "usage": "coop @[playerID]",
+      "success": "Summoned player %s to player %s's world.",
+      "description": "Add a player to your world. If no one is specified, you are placed in a multiplayer version of your world."
     },
     "enter_dungeon": {
-      "usage": "Usage: enterdungeon <dungeonID>",
-      "changed": "Changed to dungeon %s.",
-      "not_found_error": "Dungeon does not exist.",
-      "in_dungeon_error": "You are already in that dungeon.",
-      "description": "Enter a dungeon"
+      "usage": "enterdungeon <dungeonID>",
+      "changed": "Moved to dungeon %s.",
+      "not_found_error": "Given dungeonID doesn't exist.",
+      "in_dungeon_error": "Target player is already in that dungeonID.",
+      "description": "Changed target player's dungeon to the given one."
     },
     "give": {
-      "usage": "Usage: give <itemID|avatarID|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [x<amount>] [lv<level>] [r<refinement>]",
-      "usage_relic": "Usage: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
+      "usage": "give <itemID|avatarID|all|weapons|mats|avatars> [x<amount>] [lv<level>] [r<refinement>]",
+      "usage_relic": "give <artifactID> [mainPropID] [<appendPropID>[, <times>]]... [lv<level 0-20>]",
       "illegal_relic": "This artifactID belongs to a blacklisted range, it may not be the one you wanted.",
-      "given": "Given %s of %s to %s.",
-      "given_with_level_and_refinement": "Given %s with level %s, refinement %s %s times to %s.",
-      "given_level": "Given %s with level %s %s times to %s.",
-      "given_avatar": "Given %s with level %s to %s.",
+      "given": "Given %s items with ID %s to player ID %s.",
+      "given_with_level_and_refinement": "Given %s items with level %s, refinement %s and ID %s, to player ID %s.",
+      "given_level": "Given %s items with level %s and ID %s to player ID %s.",
+      "given_avatar": "Given an avatar ID %s with level %s to player ID %s.",
       "giveall_success": "Successfully gave all items.",
-      "description": "Gives an item to you or the specified player. Can also give all weapons, avatars and/or materials, and can construct custom artifacts."
+      "description": "Gives chosen items to the specified player. Can also give all weapons, avatars, materials, and can construct custom artifacts."
     },
     "heal": {
+      "usage": "heal",
       "success": "All characters have been healed.",
       "description": "Heal all characters in your current team."
     },
     "help": {
-      "usage": "Usage: ",
+      "usage": "help [command]",
+      "usage_prefix": "Usage: ",
       "aliases": "Aliases: ",
       "available_commands": "Available commands: ",
-      "description": "Sends the help message or shows information about a specified command",
-      "tip_need_permission": "Permission: ",
-      "tip_need_no_permission": " None",
-      "tip_permission_targeted": " (Permission %s is also required to use on other players)",
-      "warn_player_has_no_permission": "Notice: You do not have permission to run this command."
+      "description": "Send the help message or show information about a specified command.",
+      "tip_need_permission": "Required permission: ",
+      "tip_need_no_permission": "none",
+      "tip_permission_targeted": "(to use this command on other players, you also need the %s permission)",
+      "warn_player_has_no_permission": "You do not have permission to run this command."
     },
     "kick": {
-      "player_kick_player": "Player [%s:%s] has kicked player [%s:%s]",
-      "server_kick_player": "Kicking player [%s:%s]...",
-      "description": "Kicks the specified player from the server (WIP)"
+      "usage": "kick",
+      "player_kick_player": "Player [%s:%s] has kicked player [%s:%s].",
+      "server_kick_player": "Kicked player [%s:%s].",
+      "description": "Kick the specified player from the server."
     },
     "killall": {
-      "usage": "Usage: killall [playerUID] [sceneID]",
-      "scene_not_found_in_player_world": "Scene not found in player world.",
-      "kill_monsters_in_scene": "Killing %s monsters in scene %s.",
-      "description": "Kill all entities"
+      "usage": "killall @[playerID] [sceneID]",
+      "scene_not_found_in_player_world": "The given sceneID was not found.",
+      "kill_monsters_in_scene": "Killed %s monsters in scene %s.",
+      "description": "Kill all entities in the given scene."
     },
     "killCharacter": {
-      "usage": "Usage: killcharacter [playerID]",
+      "usage": "killcharacter @[playerID]",
       "success": "Killed %s's current character.",
-      "description": "Kills the players current character"
+      "description": "Kill the target player's current character."
     },
     "language": {
-      "current_language": "Current language is %s.",
-      "language_changed": "Language changed to %s.",
-      "language_not_found": "Currently, the server does not have that language.",
-      "description": "Display or change current language"
+      "usage": "language [languageID]",
+      "current_language": "Current language ID is %s.",
+      "language_changed": "LanguageID changed to %s.",
+      "language_not_found": "Couldn't find a languageID %s.",
+      "description": "Display or change current language."
     },
     "list": {
+      "usage": "list @[playerID]",
       "success": "There are %s player(s) online:",
-      "description": "List online players"
+      "description": "List online players."
     },
     "permission": {
-      "usage": "Usage: permission <add|remove> <username> <permission>",
+      "usage": "permission <add|remove> <username> <permission>",
       "add": "Permission added.",
-      "has_error": "They already have this permission!",
+      "has_error": "The target player already has this permission.",
       "remove": "Permission removed.",
-      "not_have_error": "They don't have this permission!",
-      "account_error": "The account cannot be found.",
-      "description": "Grants or removes a permission for a user"
+      "not_have_error": "The target player doesn't have this permission.",
+      "account_error": "An account with the given username does not exist.",
+      "description": "Add or remove a player's permission."
     },
     "position": {
-      "success": "Coordinates: %s, %s, %s\nScene ID: %s",
-      "description": "Get coordinates"
+      "usage": "position",
+      "success": "Coordinates: (%s, %s, %s).\nScene ID: %s.",
+      "description": "Get coordinates of a player."
     },
     "quest": {
       "usage": "quest <add|finish> [questID]",
@@ -218,143 +224,147 @@
       "finished": "Finished quest %s.",
       "not_found": "Quest not found.",
       "invalid_id": "Invalid quest ID.",
-      "description": "Add or finish quests"
+      "description": "Add or finish quests."
     },
     "reload": {
-      "reload_start": "Reloading config.",
+      "usage": "reload",
+      "reload_start": "Reloading config...",
       "reload_done": "Reload complete.",
-      "description": "Reload server config"
+      "description": "Reload the language, configuration, and other game data."
     },
     "resetConst": {
-      "reset_all": "Reset all avatars' constellations.",
-      "success": "Constellations for %s have been reset. Please relog to see changes.",
-      "description": "Resets the constellation level on your current active character, you will need to relog after using the command to see any changes"
+      "usage": "resetconst [all]",
+      "reset_all": "Resetted all avatars' constellations. To see the changes, login again.",
+      "success": "Constellations for avatar %s have been reset. To see the changes, login again.",
+      "description": "Reset the constellation level on your current active character(s)."
     },
     "resetShopLimit": {
-      "usage": "Usage: resetshop <playerID>",
-      "success": "Reset complete.",
-      "description": "Reset target player's shop refresh time"
+      "usage": "resetshop @<playerID>",
+      "success": "Resetted target player's shop refresh time.",
+      "description": "Reset target player's shop refresh time."
     },
     "sendMail": {
-      "usage": "Usage: sendmail <userID|all|help> [templateID]",
-      "user_not_exist": "The user with an ID of '%s' does not exist.",
-      "start_composition": "Starting composition of message.\nPlease use '/sendmail <title>' to continue.\nYou can use '/sendmail stop' at any time.",
-      "templates": "Mail templates coming soon implemented...",
+      "usage": "sendmail <@<playerID>|all|help> [templateID]",
+      "user_not_exist": "A player with given playerID %s does not exist.",
+      "start_composition": "Starting composition of the message.\nPlease use \"sendmail <title>\" to continue.\nYou can use \"sendmail stop\" at any time to stop creating the mail.",
+      "templates": "Mail templates are not implemented yet.",
       "invalid_arguments": "Invalid arguments.",
       "send_cancel": "Message sending cancelled.",
-      "send_done": "Message sent to user %s!",
-      "send_all_done": "Message sent to all users!",
-      "not_composition_end": "Message composition not at final stage.\nPlease use '/sendmail %s' or '/sendmail stop' to cancel",
-      "please_use": "Please use '/sendmail %s'",
-      "set_title": "Message title set as '%s'.\nUse '/sendmail <content>' to continue.",
-      "set_contents": "Message contents set as '%s'.\nUse '/sendmail <sender>' to continue.",
-      "set_message_sender": "Message sender set as '%s'.\nUse '/sendmail <itemID|itemName|finish> [amount] [level]' to continue.",
-      "send": "Attached %s of %s (level %s) to the message.\nContinue adding more items or use '/sendmail finish' to send the message.",
-      "invalid_arguments_please_use": "Invalid arguments.\n Please use '/sendmail %s'",
+      "send_done": "Message sent to player %s.",
+      "send_all_done": "Message sent to all players.",
+      "not_composition_end": "Message composition not at final stage.\nPlease use 'sendmail %s' or 'sendmail stop' to cancel",
+      "please_use": "Usage: \"sendmail %s\".",
+      "set_title": "Message title set to:\n\n%s\n\nUse \"sendmail <content>\" to continue.",
+      "set_contents": "Message's contents set to:\n\n%s\n\nUse \"sendmail <sender>\" to continue.",
+      "set_message_sender": "Message sender set to:\n\n%s\n\nUse \"sendmail %s\" to continue.",
+      "send": "Attached %s of %s with level %s to the message.\nContinue adding more items or use \"sendmail finish\" to send the message.",
+      "invalid_arguments_please_use": "Invalid arguments.\n Please use 'sendmail %s'",
       "title": "<title>",
       "message": "<message>",
       "sender": "<sender>",
-      "arguments": "<itemID|itemName|finish> [amount] [level]",
-      "error": "ERROR: Invalid construction stage %s. Check console for stacktrace.",
-      "description": "Sends mail to the specified user. The usage of this command changes based on its composition state"
+      "arguments": "<itemID|itemName|finish> [amount] [level] [refinement]",
+      "error": "ERROR: Invalid construction stage %s.",
+      "description": "Send a mail to the specified player."
     },
     "sendMessage": {
-      "usage": "Usage: sendmessage <message>",
+      "usage": "sendmessage @<playerID> <message>",
       "success": "Message sent.",
-      "description": "Sends a message to a player as the server. If used with no target, sends to all players on the server."
+      "description": "Send a message to a player as the server. If used with no target, send to all players on the server."
     },
     "setFetterLevel": {
-      "usage": "Usage: setfetterlevel <level>",
+      "usage": "setfetterlevel <level>",
       "range_error": "Fetter level must be between 0 and 10.",
       "success": "Fetter level set to %s.",
       "level_error": "Invalid fetter level.",
-      "description": "Sets your fetter level for your current active character"
+      "description": "Set the target player's fetter level for their current active character."
     },
     "setProp": {
-      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
-      "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
+      "usage": "setprop <prop> <value>\n\tPossible values for \"prop\": godmode | nostamina | unlimitedenergy | abyss | worldlevel | ...\n\tThis command supports more types of \"prop\". You can see them all in the file \"game/props/PlayerProperty.java\".\n\tIn that file, the \"prop\" names are in the form of \"PROP_XXX_YYY_ZZZ\", but you need to write them as \"xxx_yyy_zzz\" if you want to use them in this command.",
+      "description": "Set accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
     },
     "setStats": {
-      "usage": "Usage: setstats|stats <stat> <value>\n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-      "description": "Sets fight property for your current active character"
+      "usage": "setstats <stat> <value>\n\tValues for \"stat\": hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\tElemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\tElemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
+      "description": "Set a fight property for the target player's current active character."
     },
     "spawn": {
-      "usage": "Usage: spawn <entityID> [amount] [level(monster only)] [<x> <y> <z>(monster only, optional)]",
-      "success": "Spawned %s of %s.",
+      "usage": "spawn <entityID> [amount] [level (monster only)] [<x> <y> <z> (monster only)]",
+      "success": "Spawned %s entities of ID %s.",
       "limit_reached": "Scene spawn limit reached. Spawning %s entities instead.",
-      "description": "Spawns an entity near you"
+      "description": "Spawn an entity near the target player."
     },
     "stop": {
-      "success": "Server shutting down...",
-      "description": "Stops the server"
+      "usage": "stop",
+      "success": "Server is stopping...",
+      "description": "Stop the server."
     },
     "talent": {
-      "usage_1": "To set talent level: /talent set <talentID> <value>",
-      "usage_2": "Another way to set talent level: /talent <n or e or q> <value>",
-      "usage_3": "To get talent ID: /talent getid",
-      "lower_16": "Invalid talent level. Level should be lower than 16.",
-      "set_id": "Set talent to %s.",
-      "set_atk": "Set talent Normal ATK to %s.",
-      "set_e": "Set talent E to %s.",
-      "set_q": "Set talent Q to %s.",
+      "usage_1": "To set talent level, use: \"talent set <talentID> <level>\".",
+      "usage_2": "You can also use: \"talent <n or e or q> <level>\".",
+      "usage_3": "To get a talent ID, use: \"talent getid\"",
+      "lower_16": "Invalid talent level. It should be lower than 16.",
+      "set_id": "Set talent level to %s.",
+      "set_atk": "Set talent Normal ATK's level to %s.",
+      "set_e": "Set talent E's level to %s.",
+      "set_q": "Set talent Q's level to %s.",
       "invalid_skill_id": "Invalid skill ID.",
-      "set_this": "Set this talent to %s.",
+      "set_this": "Set this talent's level to %s.",
       "invalid_level": "Invalid talent level.",
-      "normal_attack_id": "Normal Attack ID %s.",
-      "e_skill_id": "E skill ID %s.",
-      "q_skill_id": "Q skill ID %s.",
-      "description": "Set talent level for your current active character"
+      "normal_attack_id": "Normal Attack ID: %s.",
+      "e_skill_id": "E skill ID: %s.",
+      "q_skill_id": "Q skill ID: %s.",
+      "description": "Set talent level for the target player's current active character."
     },
     "team": {
-      "usage": "Usage: team <add|remove|set> [avatarID,...] [index|first|last|index-index,...]",
+      "usage": "team <add|remove|set> [avatarID, ...] [index|first|last|minIndex-maxIndex, ...]",
       "invalid_usage": "Invalid usage.",
-      "add_usage": "Usage (add): team add <avatarID,...> [index]",
+      "add_usage": "team add <avatarID, ...> [index]",
       "invalid_index": "Index is invalid.",
-      "add_too_much": "The server only allows you to have at most %d avatar(s) in your team.",
-      "failed_to_add_avatar": "Failed to add avatar ID %s.",
-      "remove_usage": "Usage (remove): team remove <index|first|last|index-index,...>",
-      "failed_to_parse_index": "Failed to parse index: %s",
+      "add_too_much": "The server only allows one to have at most %d avatar(s) in their team.",
+      "failed_to_add_avatar": "Failed to add avatar ID \"%s\".",
+      "remove_usage": "team remove <index|first|last|minIndex-maxIndex, ...>",
+      "failed_to_parse_index": "Failed to parse index \"%s\".",
       "remove_too_much": "You can't remove all your avatars.",
       "ignore_index": "Ignored index(es): %s",
-      "set_usage": "Usage (set): team set <index> <avatarID>",
+      "set_usage": "team set <index> <avatarID>",
       "index_out_of_range": "The index you specified is out of range.",
-      "failed_parse_avatar_id": "Failed to parse avatar ID: %s",
-      "avatar_already_in_team": "Avatar is already in team.",
-      "avatar_not_found": "Avatar %d not found.",
-      "description": "Modify your team manually."
+      "failed_parse_avatar_id": "Failed to parse avatar ID \"%s\".",
+      "avatar_already_in_team": "Given avatar ID is already in target player's team.",
+      "avatar_not_found": "Avatar ID %d not found.",
+      "description": "Modify the target player's team."
     },
     "teleportAll": {
-      "success": "Summoned all players to your location.",
+      "usage": "tpall",
+      "success": "Teleported all players to the target player.",
       "error": "You can only use this command in MP mode.",
-      "description": "Teleports all players in your world to your position"
+      "description": "Teleport all players to the target player."
     },
     "teleport": {
-      "usage_server": "Usage: tp @<playerID> <x> <y> <z> [sceneID]",
-      "usage": "Usage: tp [@<playerID>] <x> <y> <z> [sceneID]",
+      "usage_server": "tp @<playerID> <x> <y> <z> [sceneID]",
+      "usage": "tp [@<playerID>] <x> <y> <z> [sceneID]",
       "specify_player_id": "You must specify a player ID.",
-      "invalid_position": "Invalid position.",
+      "invalid_position": "Invalid position xyz.",
       "exists_error": "The specified scene does not exist.",
-      "success": "Teleported %s to %s, %s, %s in scene %s.",
-      "description": "Change the player's position"
+      "success": "Teleported player %s to coordinates (%s, %s, %s) in scene ID %s.",
+      "description": "Change the target player's position."
     },
     "weather": {
-      "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist",
+      "usage": "weather [weatherId] [climateType]\n\tWeather IDs can be found in the \"WeatherExcelConfigData.json\" file.\n\tClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
       "success": "Set weather ID to %s with climate type %s.",
       "status": "Current weather ID is %s with climate type %s.",
-      "description": "Changes weather ID and climate type. Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist"
+      "description": "Change weather ID and climate type."
     },
     "ban": {
-      "command_usage": "Usage: ban <@playerId> [timestamp] [reason]",
-      "success": "Successful.",
+      "usage": "ban <@playerID> [for how long] [reason]",
+      "success": "Successfully banned the player.",
       "failure": "Failed, player not found.",
       "invalid_time": "Unable to parse timestamp.",
-      "description": "Ban a player"
+      "description": "Ban the target player."
     },
     "unban": {
-      "command_usage": "Usage: unban <@playerId>",
-      "success": "Successful.",
+      "usage": "unban <@playerID>",
+      "success": "Successfully unbanned the player.",
       "failure": "Failed, player not found.",
-      "description": "Unban a player"
+      "description": "Unban the target player."
     }
   },
   "gacha": {
@@ -389,7 +399,7 @@
     "index": {
       "title": "Documentation",
       "handbook": "GM Handbook",
-      "gacha_mapping": "Gacha mapping JSON"
+      "gacha_mapping": "JSON gacha mapping"
     }
   }
 }

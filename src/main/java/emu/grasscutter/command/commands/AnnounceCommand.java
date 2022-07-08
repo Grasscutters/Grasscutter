@@ -12,26 +12,28 @@ import java.util.Random;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "announce",
-    usage = "a <tpl templateId|refresh|revoke templateId|content>",
-    permission = "server.announce",
-    aliases = {"a"},
+@Command(
+    label = "announce",
+    usage = "commands.announce.usage",
     description = "commands.announce.description",
-    targetRequirement = Command.TargetRequirement.NONE)
+    targetRequirement = Command.TargetRequirement.NONE,
+    permission = "server.announce",
+    aliases = {"a"}
+)
 public final class AnnounceCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         var manager = Grasscutter.getGameServer().getAnnouncementManager();
         if (args.size() < 1) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.announce.command_usage");
+            CommandHandler.sendTranslatedMessage(sender, "commands.announce.usage");
             return;
         }
 
         switch (args.get(0)){
             case "tpl":
                 if (args.size() < 2) {
-                    CommandHandler.sendTranslatedMessage(sender, "commands.announce.command_usage");
+                    CommandHandler.sendTranslatedMessage(sender, "commands.announce.usage");
                     return;
                 }
 
@@ -53,7 +55,7 @@ public final class AnnounceCommand implements CommandHandler {
 
             case "revoke":
                 if (args.size() < 2) {
-                    CommandHandler.sendTranslatedMessage(sender, "commands.announce.command_usage");
+                    CommandHandler.sendTranslatedMessage(sender, "commands.announce.usage");
                     return;
                 }
 

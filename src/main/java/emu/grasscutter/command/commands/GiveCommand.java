@@ -23,8 +23,14 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Command(label = "give", usage = "give <itemId|avatarId|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [lv<level>] [r<refinement>] [x<amount>] | give <artifactId> [lv<level>] [x<amount>] [mainPropId] [<appendPropId>[,<times>]]...", aliases = {
-        "g", "item", "giveitem"}, permission = "player.give", permissionTargeted = "player.give.others", description = "commands.give.description")
+@Command(
+    label = "give",
+    usage = "commands.give.usage",
+    description = "commands.give.description",
+    aliases = {"g", "item", "giveitem"},
+    permission = "player.give",
+    permissionTargeted = "player.give.others"
+)
 public final class GiveCommand implements CommandHandler {
     private static Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java doesn't have raw string literals :(
     private static Pattern refineRegex = Pattern.compile("r(\\d+)");
@@ -216,11 +222,11 @@ public final class GiveCommand implements CommandHandler {
             switch (param.data.getItemType()) {
                 case ITEM_WEAPON:
                     targetPlayer.getInventory().addItems(makeUnstackableItems(param), ActionReason.SubfieldDrop);
-                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given_with_level_and_refinement", Integer.toString(param.id), Integer.toString(param.lvl), Integer.toString(param.refinement), Integer.toString(param.amount), Integer.toString(targetPlayer.getUid()));
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given_with_level_and_refinement", Integer.toString(param.amount), Integer.toString(param.lvl), Integer.toString(param.refinement), Integer.toString(param.id), Integer.toString(targetPlayer.getUid()));
                     return;
                 case ITEM_RELIQUARY:
                     targetPlayer.getInventory().addItems(makeArtifacts(param), ActionReason.SubfieldDrop);
-                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given_level", Integer.toString(param.id), Integer.toString(param.lvl), Integer.toString(param.amount), Integer.toString(targetPlayer.getUid()));
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given_level", Integer.toString(param.amount), Integer.toString(param.lvl), Integer.toString(param.id), Integer.toString(targetPlayer.getUid()));
                     //CommandHandler.sendTranslatedMessage(sender, "commands.giveArtifact.success", Integer.toString(param.id), Integer.toString(targetPlayer.getUid()));
                     return;
                 default:

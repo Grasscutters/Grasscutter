@@ -12,7 +12,13 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "killall", usage = "killall [sceneId]", permission = "server.killall", permissionTargeted = "server.killall.others", description = "commands.killall.description")
+@Command(
+    label = "killall",
+    usage = "commands.killall.usage",
+    description = "commands.killall.description",
+    permission = "server.killall",
+    permissionTargeted = "server.killall.others"
+)
 public final class KillAllCommand implements CommandHandler {
 
     @Override

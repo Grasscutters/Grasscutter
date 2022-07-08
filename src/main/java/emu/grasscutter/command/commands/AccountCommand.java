@@ -11,7 +11,12 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "account", usage = "account <create|delete> <username> [uid]", description = "commands.account.description", targetRequirement = Command.TargetRequirement.NONE)
+@Command(
+    label = "account",
+    usage = "commands.account.usage",
+    description = "commands.account.description",
+    targetRequirement = Command.TargetRequirement.NONE
+)
 public final class AccountCommand implements CommandHandler {
 
     @Override
@@ -22,7 +27,7 @@ public final class AccountCommand implements CommandHandler {
         }
 
         if (args.size() < 2) {
-            CommandHandler.sendMessage(null, translate(sender, "commands.account.command_usage"));
+            CommandHandler.sendMessage(null, translate(sender, "commands.account.usage"));
             return;
         }
 
@@ -31,7 +36,7 @@ public final class AccountCommand implements CommandHandler {
 
         switch (action) {
             default:
-                CommandHandler.sendMessage(null, translate(sender, "commands.account.command_usage"));
+                CommandHandler.sendMessage(null, translate(sender, "commands.account.usage"));
                 return;
             case "create":
                 int uid = 0;

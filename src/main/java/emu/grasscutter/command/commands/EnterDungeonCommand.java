@@ -8,7 +8,14 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "enterdungeon", usage = "enterdungeon <dungeonId>", aliases = {"dungeon"}, permission = "player.enterdungeon", permissionTargeted = "player.enterdungeon.others", description = "commands.enter_dungeon.description")
+@Command(
+    label = "enterdungeon",
+    usage = "commands.enter_dungeon.usage",
+    description = "commands.enter_dungeon.description",
+    aliases = {"dungeon"},
+    permission = "player.enterdungeon",
+    permissionTargeted = "player.enterdungeon.others"
+)
 public final class EnterDungeonCommand implements CommandHandler {
 
     @Override
@@ -26,10 +33,11 @@ public final class EnterDungeonCommand implements CommandHandler {
             }
             
             boolean result = targetPlayer.getServer().getDungeonManager().enterDungeon(targetPlayer.getSession().getPlayer(), 0, dungeonId);
-            CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.changed", dungeonId));
 
             if (!result) {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.not_found_error"));
+            } else {
+                CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.changed", dungeonId));
             }
         } catch (Exception e) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.usage"));

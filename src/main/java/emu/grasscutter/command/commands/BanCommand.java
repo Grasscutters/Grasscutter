@@ -10,10 +10,10 @@ import emu.grasscutter.server.game.GameSession;
 
 @Command(
     label = "ban",
-    usage = "ban <@player> [time] [reason]",
+    usage = "commands.ban.usage",
     description = "commands.ban.description",
-    permission = "server.ban",
-    targetRequirement = Command.TargetRequirement.PLAYER
+    targetRequirement = Command.TargetRequirement.PLAYER,
+    permission = "server.ban"
 )
 public final class BanCommand implements CommandHandler {
 
