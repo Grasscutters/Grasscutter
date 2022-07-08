@@ -26,10 +26,10 @@ public class GameSession implements GameSessionManager.KcpChannel {
 
 	private Account account;
 	private Player player;
-	
+
 	private boolean useSecretKey;
 	private SessionState state;
-	
+
 	private int clientTime;
 	private long lastPingTime;
 	private int lastClientSeq = 10;
@@ -39,11 +39,11 @@ public class GameSession implements GameSessionManager.KcpChannel {
 		this.state = SessionState.WAITING_FOR_TOKEN;
 		this.lastPingTime = System.currentTimeMillis();
 	}
-	
+
 	public GameServer getServer() {
 		return server;
 	}
-	
+
 	public InetSocketAddress getAddress() {
 		try{
 			return tunnel.getAddress();
@@ -55,7 +55,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
 	public boolean useSecretKey() {
 		return useSecretKey;
 	}
-	
+
 	public Account getAccount() {
 		return account;
 	}
@@ -63,7 +63,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
 	public void setAccount(Account account) {
 		this.account = account;
 	}
-	
+
 	public String getAccountId() {
 		return this.getAccount().getId();
 	}
@@ -93,7 +93,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
 	public void setUseSecretKey(boolean useSecretKey) {
 		this.useSecretKey = useSecretKey;
 	}
-	
+
 	public int getClientTime() {
 		return this.clientTime;
 	}
@@ -101,12 +101,12 @@ public class GameSession implements GameSessionManager.KcpChannel {
 	public long getLastPingTime() {
 		return lastPingTime;
 	}
-	
+
 	public void updateLastPingTime(int clientTime) {
 		this.clientTime = clientTime;
 		this.lastPingTime = System.currentTimeMillis();
 	}
-	
+
 	public int getNextClientSequence() {
 		return ++lastClientSeq;
 	}
@@ -114,17 +114,21 @@ public class GameSession implements GameSessionManager.KcpChannel {
     public void replayPacket(int opcode, String name) {
     	String filePath = PACKET(name);
 		File p = new File(filePath);
-		
+
 		if (!p.exists()) return;
 
 		byte[] packet = FileUtils.read(p);
-		
+
 		BasePacket basePacket = new BasePacket(opcode);
 		basePacket.setData(packet);
-		
+
 		send(basePacket);
     }
-    
+
+    public void logPacket( String sendOrRecv, int opcode, byte[] payload) {
+        Grasscutter.getLogger().info(sendOrRecv + ": " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
+        System.out.println(Utils.bytesToHex(payload));
+    }
     public void send(BasePacket packet) {
     	// Test
     	if (packet.getOpcode() <= 0) {
@@ -137,26 +141,34 @@ public class GameSession implements GameSessionManager.KcpChannel {
 		if(PacketOpcodes.BANNED_PACKETS.contains(packet.getOpcode())) {
 			return;
 		}
-    	
+
     	// Header
     	if (packet.shouldBuildHeader()) {
     		packet.buildHeader(this.getNextClientSequence());
     	}
-    	
+
     	// Log
     	if (SERVER.debugLevel == ServerDebugMode.ALL) {
 			if (!loopPacket.contains(packet.getOpcode())) {
-				Grasscutter.getLogger().info("SEND: " + PacketOpcodesUtil.getOpcodeName(packet.getOpcode()) + " (" + packet.getOpcode() + ")");
-				System.out.println(Utils.bytesToHex(packet.getData()));
+                logPacket("SEND",packet.getOpcode(), packet.getData());
 			}
     	}
+
+    	if (SERVER.debugLevel == ServerDebugMode.WHITELIST && SERVER.DebugWhitelist.contains(packet.getOpcode())) {
+            logPacket("SEND",packet.getOpcode(), packet.getData());
+    	}
+
+    	if (SERVER.debugLevel == ServerDebugMode.BLACKLIST && !(SERVER.DebugBlacklist.contains(packet.getOpcode()))) {
+            logPacket("SEND",packet.getOpcode(), packet.getData());
+    	}
+
 		// Invoke event.
 		SendPacketEvent event = new SendPacketEvent(this, packet); event.call();
     	if(!event.isCanceled()) { // If event is not cancelled, continue.
 			tunnel.writeData(event.getPacket().build());
 		}
     }
-    
+
 	private static final Set<Integer> loopPacket = Set.of(
 			PacketOpcodes.PingReq,
 			PacketOpcodes.PingRsp,
@@ -216,10 +228,18 @@ public class GameSession implements GameSessionManager.KcpChannel {
 				// Log packet
 				if (allDebug) {
 					if (!loopPacket.contains(opcode)) {
-						Grasscutter.getLogger().info("RECV: " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
-						System.out.println(Utils.bytesToHex(payload));
+                        logPacket("RECV",opcode, payload);
 					}
 				}
+
+				if (SERVER.debugLevel == ServerDebugMode.WHITELIST && SERVER.DebugWhitelist.contains(opcode)) {
+                    logPacket("RECV",opcode, payload);
+				}
+
+				if (SERVER.debugLevel == ServerDebugMode.BLACKLIST && !(SERVER.DebugBlacklist.contains(opcode))) {
+                    logPacket("RECV",opcode, payload);
+				}
+
 				// Handle
 				getServer().getPacketHandler().handle(this, opcode, header, payload);
 			}
