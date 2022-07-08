@@ -12,9 +12,9 @@
       "request": "[Dispatch] Clientul %s %s cere: %s",
       "keystore": {
         "general_error": "[Dispatch] Eroare la încărcarea keystore!",
-        "password_error": "[Dispatch] Nu sa putut încărca keystore. Se încearcă parola implicită pentru keystore...",
-        "no_keystore_error": "[Dispatch] Nu s-a găsit niciun certificat SSL! Revenirea la serverul HTTP.",
-        "default_password": "[Dispatch] Parola implicită keystore sa încărcat cu succes. Vă rugăm să luați în considerare stabilirea parolei la 123456 în config.json."
+        "password_error": "[Dispatch] Nu s-a putut încărca keystore. Se încearcă parola implicită pentru keystore...",
+        "no_keystore_error": "[Dispatch] Nu s-a găsit niciun certificat SSL! Se revine la serverul HTTP.",
+        "default_password": "[Dispatch] Parola implicită keystore s-a încărcat cu succes. Vă rugăm să luați în considerare stabilirea parolei la 123456 în config.json."
       },
       "authentication": {
         "default_unable_to_verify": "[Authentication] Ceva numit metoda verifyUser care nu este valabilă în gestionarul de autentificare implicit."
@@ -131,7 +131,7 @@
     "coop": {
       "usage": "Utilizare: coop [host  UID]",
       "success": "Invocat %s în lumea lui %s.",
-      "description": "Forțează pe cineva să se alăture lumii celorlalți. dacă nu este nimeni vizat, te trimite oricum în modul cooperativ."
+      "description": "Forțează pe cineva să se alăture lumii celorlalți. Dacă nu este nimeni vizat, te trimite oricum în modul cooperativ."
     },
     "enter_dungeon": {
       "usage": "Utilizare: enterdungeon <dungeonID>",
@@ -143,7 +143,7 @@
     "give": {
       "usage": "Utilizare: give <itemID|avatarID|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [x<sumă>] [lv<nivel>] [r<rafinament>]",
       "usage_relic": "Utilizare: give <artifactID> [mainPropID] [<appendPropID>[,<t>]]... [lv<nivel 0-20>]",
-      "illegal_relic": "Acest ID de artefact aparține unui interval de pe lista neagră, este posibil să nu fiue cel pe care l-ați dorit.",
+      "illegal_relic": "Acest ID de artefact aparține unui interval de pe lista neagră, este posibil să nu fie cel pe care l-ați dorit.",
       "given": "Am dat %s din %s lui %s.",
       "given_with_level_and_refinement": "Am dat %s cu nivelul %s, rafinamentul %s %s de %s ori.",
       "given_level": "Am dat %s cu nivelul %s %s %s ori la %.",
