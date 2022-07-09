@@ -7,6 +7,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PlayerLevelData;
 import emu.grasscutter.data.excels.WeatherData;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.ability.AbilityManager;
@@ -1514,9 +1515,9 @@ public class Player {
 		session.send(new PacketStoreWeightLimitNotify());
 		session.send(new PacketPlayerStoreNotify(this));
 		session.send(new PacketAvatarDataNotify(this));
-		//session.send(new PacketFinishedParentQuestNotify(this));
+		session.send(new PacketFinishedParentQuestNotify(this));
 		session.send(new PacketBattlePassAllDataNotify(this));
-		//session.send(new PacketQuestListNotify(this));
+		session.send(new PacketQuestListNotify(this));
 		session.send(new PacketCodexDataFullNotify(this));
 		session.send(new PacketAllWidgetDataNotify(this));
 		session.send(new PacketWidgetGadgetAllDataNotify());
@@ -1599,17 +1600,6 @@ public class Player {
 		//so I decide to delete by object rather than uid
 		getServer().getPlayers().values().removeIf(player1 -> player1 == this);
 	}
-
-    public int getLegendaryKey() {
-        return this.getProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY);
-    }
-    public synchronized void addLegendaryKey(int count) {
-        this.setProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY, getLegendaryKey() + count);
-    }
-    public synchronized void useLegendaryKey(int count) {
-        this.setProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY, getLegendaryKey() - count);
-    }
-
     public enum SceneLoadState {
 		NONE(0), LOADING(1), INIT(2), LOADED(3);
 
