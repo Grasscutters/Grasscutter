@@ -284,8 +284,12 @@ class InteractiveRename(cmd.Cmd):
 def main(args: argparse.Namespace):
     # print(args)
     language_manager = LanguageManager()
+    errors = None
     if args.lint_report:
         language_manager.lint_report()
+        missing = language_manager.used_keys - language_manager.key_sets[LANGUAGE_FILENAMES.index(PRIMARY_LANGUAGE)]
+        if len(missing) > 0:
+            errors = f'[ERROR] {len(missing)} keys missing from primary language json!\n{JsonHelpers.pprint_keys(missing)}'
     if prefix := args.save_flattened:
         language_manager.save_flattened_languages(prefix)
     if args.update:
@@ -297,6 +301,9 @@ def main(args: argparse.Namespace):
             InteractiveRename(language_manager).cmdloop()
         except KeyboardInterrupt:
             print('Left rename shell without renaming')
+    if errors:
+        print(errors)
+        exit(1)
 
 
 
