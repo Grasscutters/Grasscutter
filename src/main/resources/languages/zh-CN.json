@@ -56,7 +56,7 @@
       "game_version": "游戏版本：%s",
       "resources": {
         "loading": "正在加载 resources...",
-        "finish": "已加载 resources。"
+        "finish": "完成加载 resources。"
       }
     }
   },
@@ -118,12 +118,12 @@
       "description": "创建或删除账号"
     },
     "announce": {
-      "command_usage": "用法：a <tpl templateId|refresh|revoke templateId|content>",
-      "send_success": "成功地发送了一则公告，你可以通过/a revoke %s来撤销。",
-      "refresh_success": "成功地刷新了公告配置。(共%s个)",
+      "command_usage": "用法：announce|a <\"tpl\"(发送) 模板ID|\"refresh\"(刷新)|\"revoke\"(撤销) 模板ID|内容>",
+      "send_success": "成功发送了一则公告，你可以通过 /a revoke %s 撤销。",
+      "refresh_success": "成功刷新了公告配置。[共 %s 个]",
       "revoke_done": "尝试撤回公告 %s。",
-      "description": "向所有在线玩家发送公告，或者管理服务器的公告。",
-      "not_found": "找不到公告 %s。"
+      "not_found": "找不到公告 %s。",
+      "description": "向所有在线玩家发送公告，或者管理服务器的公告"
     },
     "clear": {
       "command_usage": "用法：clear <all|wp|art|mat>\nall: 所有, wp: 武器, art: 圣遗物, mat: 材料",
@@ -157,7 +157,7 @@
       "given_level": "已将 %s [等级 %s] %s 个给予 %s。",
       "given_avatar": "已将角色 %s [等级 %s] 给与 %s。",
       "giveall_success": "成功给予全部物品。",
-      "description": "给予物品给你或指定的玩家。比如可以给予全部武器，角色和/或材料，也可以给予自定义圣遗物"
+      "description": "向你或指定的玩家给予物品。比如可以给予全部武器，角色和/或材料，也可以给予自定义圣遗物"
     },
     "heal": {
       "success": "已治疗所有角色。",
@@ -167,12 +167,11 @@
       "usage": "用法：",
       "aliases": "别名：",
       "available_commands": "可用命令：",
-      "description": "发送帮助信息或显示指定命令的信息",
-      "tip_need_permission": "所需权限: ",
-      "tip_need_no_permission": " 无",
-      "tip_permission_targeted": "(对其他玩家使用这个命令还需要权限%s)",
-      "warn_player_has_no_permission": "注意：你没有执行这个命令的权限"
-
+      "tip_need_permission": "所需权限：",
+      "tip_need_no_permission": "无",
+      "tip_permission_targeted": " (对其他玩家使用这个命令还需要权限 %s)",
+      "warn_player_has_no_permission": "注意：你没有执行这个命令的权限。",
+      "description": "发送帮助信息或显示指定命令的信息"
     },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已将 [%s:%s] 踢出。",
@@ -191,8 +190,8 @@
       "description": "杀死玩家当前角色"
     },
     "language": {
-      "current_language": "当前语言为：%s",
-      "language_changed": "已切换语言为：%s",
+      "current_language": "当前语言：%s",
+      "language_changed": "语言切换至：%s",
       "language_not_found": "目前服务端没有这种语言：%s",
       "description": "显示或切换当前语言"
     },

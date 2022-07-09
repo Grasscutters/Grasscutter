@@ -13,7 +13,7 @@ import java.util.Random;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "announce",
-    usage = "a <tpl templateId|refresh|revoke templateId|content>",
+    usage = "announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
     permission = "server.announce",
     aliases = {"a"},
     description = "commands.announce.description",
