@@ -1,23 +1,20 @@
-name: "Build"
+name: "Lint and Build"
 on:
   workflow_dispatch: ~
   push:
     paths:
       - "**.java"
     branches:
-      - "stable"
-  pull_request:
-    paths:
-      - "**.java"
-    types:
-      - opened
-      - synchronize
-      - reopened
+      - "development"
 jobs:
   Build-Server-Jar:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout LintRatchet
+        uses: actions/checkout@v2
+        with:
+          ref: LintRatchet
+      - name: Checkout branch
         uses: actions/checkout@v2
       - name: Setup Java
         uses: actions/setup-java@v3
@@ -34,6 +31,8 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('*.gradle', 'gradle.properties', '**/*.accesswidener') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+      - name: Run Spotless
+        run: ./gradlew spotlessApply
       - name: Run Gradle
         run: ./gradlew && ./gradlew jar
       - name: Upload build
@@ -41,3 +40,9 @@ jobs:
         with:
           name: Grasscutter
           path: grasscutter-*.jar
+      - name: Commit any Spotless changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: '-u'
+          default_author: github_actions
+          message: 'Fix whitespace'
