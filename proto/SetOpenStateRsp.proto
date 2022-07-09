@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 106
+// EnetChannelId: 0
+// EnetIsReliable: true
+message SetOpenStateRsp {
+	int32 retcode = 2;
+	uint32 key = 15;
+	uint32 value = 11;
+}

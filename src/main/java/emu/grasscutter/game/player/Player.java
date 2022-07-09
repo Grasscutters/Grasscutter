@@ -7,7 +7,6 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PlayerLevelData;
 import emu.grasscutter.data.excels.WeatherData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.ability.AbilityManager;
@@ -30,10 +29,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
-import emu.grasscutter.game.managers.CookingManager;
-import emu.grasscutter.game.managers.FurnitureManager;
-import emu.grasscutter.game.managers.InsectCaptureManager;
-import emu.grasscutter.game.managers.ResinManager;
+import emu.grasscutter.game.managers.*;
 import emu.grasscutter.game.managers.collection.CollectionManager;
 import emu.grasscutter.game.managers.collection.CollectionRecordStore;
 import emu.grasscutter.game.managers.deforestation.DeforestationManager;
@@ -42,7 +38,6 @@ import emu.grasscutter.game.managers.forging.ActiveForgeData;
 import emu.grasscutter.game.managers.forging.ForgingManager;
 import emu.grasscutter.game.managers.mapmark.*;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
-import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.PlayerProperty;
@@ -104,7 +99,7 @@ public class Player {
 	private Position rotation;
 	private PlayerBirthday birthday;
 	private PlayerCodex codex;
-
+    private PlayerOpenStateManager openStateManager;
 	private Map<Integer, Integer> properties;
 	private Set<Integer> nameCardList;
 	private Set<Integer> flyCloakList;
@@ -138,6 +133,7 @@ public class Player {
 
 	@Transient private SotSManager sotsManager;
 	@Transient private InsectCaptureManager insectCaptureManager;
+
 
 	private TeamManager teamManager;
 
@@ -187,7 +183,7 @@ public class Player {
 	@Transient private FurnitureManager furnitureManager;
 	@Transient private BattlePassManager battlePassManager;
 	@Transient private CookingManager cookingManager;
-	// @Transient private 
+	// @Transient private
 	@Getter @Transient private ActivityManager activityManager;
 
 	@Transient private CollectionManager collectionManager;
@@ -247,6 +243,7 @@ public class Player {
 		this.birthday = new PlayerBirthday();
 		this.rewardedLevels = new HashSet<>();
 		this.moonCardGetTimes = new HashSet<>();
+        this.openStateManager = new PlayerOpenStateManager(this);
 		this.codex = new PlayerCodex(this);
 
 		this.shopLimit = new ArrayList<>();
@@ -272,6 +269,7 @@ public class Player {
 		this.signature = "";
 		this.teamManager = new TeamManager(this);
 		this.birthday = new PlayerBirthday();
+        this.openStateManager = new PlayerOpenStateManager(this);
 		this.codex = new PlayerCodex(this);
 		this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, 1, false);
 		this.setProperty(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1, false);
@@ -468,7 +466,7 @@ public class Player {
 	public int getWorldLevel() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL);
 	}
-	
+
 	public boolean setWorldLevel(int level) {
 		if (this.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level)) {
 			if (this.world.getHost() == this)  // Don't update World's WL if we are in someone else's world
@@ -1178,7 +1176,7 @@ public class Player {
 	public boolean hasBirthday() {
 		return this.birthday.getDay() > 0;
 	}
-
+    public PlayerOpenStateManager getOpenStateManager() { return this.openStateManager;}
 	public PlayerCodex getCodex(){ return this.codex; }
 
 	public Set<Integer> getRewardedLevels() {
@@ -1441,6 +1439,7 @@ public class Player {
 
 	@PostLoad
 	private void onLoad() {
+        this.getOpenStateManager().setPlayer(this);
 		this.getCodex().setPlayer(this);
 		this.getTeamManager().setPlayer(this);
 		this.getTowerManager().setPlayer(this);
@@ -1462,6 +1461,9 @@ public class Player {
 		if (this.getCodex() == null) {
 			this.codex = new PlayerCodex(this);
 		}
+        if (this.getOpenStateManager() == null) {
+            this.openStateManager = new PlayerOpenStateManager(this);
+        }
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
 		}
@@ -1512,9 +1514,9 @@ public class Player {
 		session.send(new PacketStoreWeightLimitNotify());
 		session.send(new PacketPlayerStoreNotify(this));
 		session.send(new PacketAvatarDataNotify(this));
-		session.send(new PacketFinishedParentQuestNotify(this));
+		//session.send(new PacketFinishedParentQuestNotify(this));
 		session.send(new PacketBattlePassAllDataNotify(this));
-		session.send(new PacketQuestListNotify(this));
+		//session.send(new PacketQuestListNotify(this));
 		session.send(new PacketCodexDataFullNotify(this));
 		session.send(new PacketAllWidgetDataNotify(this));
 		session.send(new PacketWidgetGadgetAllDataNotify());
@@ -1522,6 +1524,7 @@ public class Player {
 		this.forgingManager.sendForgeDataNotify();
 		this.resinManager.onPlayerLogin();
 		this.cookingManager.sendCookDataNofity();
+        this.openStateManager.onPlayerLogin();
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
 		// Battle Pass trigger
@@ -1536,7 +1539,7 @@ public class Player {
 
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
 		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
-		session.send(new PacketOpenStateUpdateNotify());
+
 
 		// First notify packets sent
 		this.setHasSentAvatarDataNotify(true);
@@ -1597,7 +1600,17 @@ public class Player {
 		getServer().getPlayers().values().removeIf(player1 -> player1 == this);
 	}
 
-	public enum SceneLoadState {
+    public int getLegendaryKey() {
+        return this.getProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY);
+    }
+    public synchronized void addLegendaryKey(int count) {
+        this.setProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY, getLegendaryKey() + count);
+    }
+    public synchronized void useLegendaryKey(int count) {
+        this.setProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY, getLegendaryKey() - count);
+    }
+
+    public enum SceneLoadState {
 		NONE(0), LOADING(1), INIT(2), LOADED(3);
 
 		private final int value;
