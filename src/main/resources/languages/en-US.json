@@ -118,12 +118,12 @@
       "description": "Modify user accounts"
     },
     "announce": {
-      "command_usage": "Usage: a <tpl templateId|refresh|revoke templateId|content>",
+      "command_usage": "Usage: announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
       "send_success": "Send an announcement successfully, you can revoke it by /a revoke %s.",
-      "refresh_success": "Refresh announcement config file successfully. (Total %s)",
+      "refresh_success": "Refresh announcement config file successfully. [Total %s]",
       "revoke_done": "Try to revoke announcement %s.",
-      "description": "Send announcement to all online players, or manage server's announcement.",
-      "not_found": "Could not found announcement %s."
+      "not_found": "Could not found announcement %s.",
+      "description": "Send announcement to all online players, or manage server's announcement"
     },
     "clear": {
       "command_usage": "Usage: clear <all|wp|art|mat>",
@@ -167,11 +167,11 @@
       "usage": "Usage: ",
       "aliases": "Aliases: ",
       "available_commands": "Available commands: ",
-      "description": "Sends the help message or shows information about a specified command",
       "tip_need_permission": "Permission: ",
       "tip_need_no_permission": " None",
       "tip_permission_targeted": " (Permission %s is also required to use on other players)",
-      "warn_player_has_no_permission": "Notice: You do not have permission to run this command."
+      "warn_player_has_no_permission": "Notice: You do not have permission to run this command.",
+      "description": "Sends the help message or shows information about a specified command"
     },
     "kick": {
       "player_kick_player": "Player [%s:%s] has kicked player [%s:%s]",
