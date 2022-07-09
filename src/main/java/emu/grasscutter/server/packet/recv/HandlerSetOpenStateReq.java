@@ -4,11 +4,8 @@ import emu.grasscutter.game.props.OpenState;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass;
 import emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketEvtEntityRenderersChangedNotify;
-import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSetOpenStateRsp;
 
 @Opcodes(PacketOpcodes.SetOpenStateReq)
