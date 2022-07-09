@@ -120,7 +120,7 @@
     "announce": {
       "command_usage": "用法：announce|a <\"tpl\"(发送) 模板ID|\"refresh\"(刷新)|\"revoke\"(撤销) 模板ID|内容>",
       "send_success": "成功发送了一则公告，你可以通过 /a revoke %s 撤销。",
-      "refresh_success": "成功刷新了公告配置 (共 %s 个)。",
+      "refresh_success": "成功刷新了公告配置。[共 %s 个]",
       "revoke_done": "尝试撤回公告 %s。",
       "not_found": "找不到公告 %s。",
       "description": "向所有在线玩家发送公告，或者管理服务器的公告"

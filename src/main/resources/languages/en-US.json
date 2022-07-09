@@ -120,7 +120,7 @@
     "announce": {
       "command_usage": "Usage: announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
       "send_success": "Send an announcement successfully, you can revoke it by /a revoke %s.",
-      "refresh_success": "Refresh announcement config file successfully (Total %s).",
+      "refresh_success": "Refresh announcement config file successfully. [Total %s]",
       "revoke_done": "Try to revoke announcement %s.",
       "not_found": "Could not found announcement %s.",
       "description": "Send announcement to all online players, or manage server's announcement"
