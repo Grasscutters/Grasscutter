@@ -111,7 +111,7 @@
       "command_usage": "Użycie: account <create|delete> <nazwa> [uid]"
     },
     "clear": {
-      "command_usage": "Użycie: clear <all|wp|art|mat>",
+      "command_usage": "Użycie: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Wyczyszczono bronie dla %s.",
       "artifacts": "Wyczyszczono artefakty dla %s.",
       "materials": "Wyczyszczono materiały dla %s.",
