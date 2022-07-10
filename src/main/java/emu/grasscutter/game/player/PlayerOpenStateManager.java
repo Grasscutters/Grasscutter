@@ -54,6 +54,7 @@ public class PlayerOpenStateManager {
 
     public void onNewPlayerCreate() {
         //newPlayerOpenStates.forEach(os -> this.setOpenState(os, 1));
+        setAllOpenStates();
     }
     public void onPlayerLogin() {
         /*
@@ -62,7 +63,6 @@ public class PlayerOpenStateManager {
             setAllOpenStates();
         }
         */
-        setAllOpenStates();
         player.getSession().send(new PacketOpenStateUpdateNotify(player));
     }
 
