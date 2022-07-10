@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "Vector.proto";
+
+// CmdId: 2331
+// EnetChannelId: 0
+// EnetIsReliable: true
+message QueryPathRsp {
+	int32 retcode = 14;
+	int32 query_id = 2;
+	PathStatusType query_status = 5;
+	repeated Vector corners = 12;
+
+	enum PathStatusType {
+		PATH_STATUS_TYPE_FAIL = 0;
+		PATH_STATUS_TYPE_SUCC = 1;
+		PATH_STATUS_TYPE_PARTIAL = 2;
+	}
+}
