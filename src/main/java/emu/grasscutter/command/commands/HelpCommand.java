@@ -115,9 +115,9 @@ public final class HelpCommand implements CommandHandler {
                         builder.append(alias).append(" ");
                     }
                 }
-                builder.append("\n").append(translate(player, "commands.help.permission"));
+                builder.append("\n").append(translate(player, "commands.help.tip_need_permission"));
                 if(annotation.permission().isEmpty() || annotation.permission().isBlank()) {
-                    builder.append(translate(player, "commands.help.no_permission"));
+                    builder.append(translate(player, "commands.help.tip_need_no_permission"));
                 }
                 else {
                     builder.append(annotation.permission());

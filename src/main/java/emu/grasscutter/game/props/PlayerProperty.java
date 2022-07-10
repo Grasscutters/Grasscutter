@@ -39,7 +39,7 @@ public enum PlayerProperty {
     PROP_IS_ONLY_MP_WITH_PS_PLAYER			(10024, 0, 1), // Is only MP with PlayStation players? [0, 1]
     PROP_PLAYER_MCOIN						(10025), // Genesis Crystal (-inf, +inf) see 10015
     PROP_PLAYER_WAIT_SUB_MCOIN				(10026),
-    PROP_PLAYER_LEGENDARY_KEY				(10027),
+    PROP_PLAYER_LEGENDARY_KEY				(10027,0),
     PROP_IS_HAS_FIRST_SHARE					(10028),
     PROP_PLAYER_FORGE_POINT					(10029, 0, 300_000),
     PROP_CUR_CLIMATE_METER					(10035),

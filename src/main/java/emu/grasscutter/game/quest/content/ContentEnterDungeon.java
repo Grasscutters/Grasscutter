@@ -10,8 +10,8 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ContentEnterDungeon extends QuestBaseHandler {
 
 	@Override
-	public boolean execute(GameQuest quest, QuestCondition condition, int... params) {
+	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
 		return condition.getParam()[0] == params[0];
 	}
-	
+
 }

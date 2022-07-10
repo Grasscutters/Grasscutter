@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 417
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message AddQuestContentProgressReq {
+	uint32 content_type = 9;
+	uint32 param = 13;
+	uint32 add_progress = 11;
+}
