@@ -8,15 +8,6 @@ import emu.grasscutter.net.proto.OpenStateChangeNotifyOuterClass.OpenStateChange
 //Sets openState to value
 public class PacketOpenStateChangeNotify extends BasePacket {
 
-    public PacketOpenStateChangeNotify(OpenState openState, int value) {
-        super(PacketOpcodes.OpenStateChangeNotify);
-
-        OpenStateChangeNotify proto = OpenStateChangeNotify.newBuilder()
-            .putOpenStateMap(openState.getValue(),value).build();
-
-        this.setData(proto);
-    }
-
     public PacketOpenStateChangeNotify(int openState, int value) {
         super(PacketOpcodes.OpenStateChangeNotify);
 
