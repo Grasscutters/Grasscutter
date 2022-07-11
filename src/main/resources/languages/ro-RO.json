@@ -118,7 +118,7 @@
       "description": "Modificați conturile de utilizator"
     },
     "clear": {
-      "command_usage": "Utilizare: clear <all|wp|art|mat>",
+      "command_usage": "Utilizare: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Arme șterse pentru %s.",
       "artifacts": "Artefacte șterse pentru %s.",
       "materials": "Materiale șterse pentru %s.",

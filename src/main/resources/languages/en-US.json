@@ -126,7 +126,7 @@
       "description": "Send announcement to all online players, or manage server's announcement"
     },
     "clear": {
-      "command_usage": "Usage: clear <all|wp|art|mat>",
+      "command_usage": "Usage: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Cleared weapons for %s.",
       "artifacts": "Cleared artifacts for %s.",
       "materials": "Cleared materials for %s.",
@@ -134,7 +134,7 @@
       "displays": "Cleared displays for %s.",
       "virtuals": "Cleared virtuals for %s.",
       "everything": "Cleared everything for %s.",
-      "description": "Deletes unequipped unlocked items, including yellow rarity ones from your inventory"
+      "description": "Deletes unequipped unlocked items from your inventory. Defaults to 4* level 1 refinement 1 or lower, but can be set higher."
     },
     "coop": {
       "usage": "Usage: coop [host UID]",

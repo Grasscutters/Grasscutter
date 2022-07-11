@@ -126,7 +126,7 @@
       "description": "Wysyłaj i zarządzaj ogłoszeniami."
     },
     "clear": {
-      "usage": "clear <all|wp|art|mat>",
+      "usage": "Użycie: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Usunięto bronie gracza %s.",
       "artifacts": "Usunięto artefakty gracza %s.",
       "materials": "Usunięto materiały gracza %s.",
