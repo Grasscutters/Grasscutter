@@ -18,7 +18,7 @@ public final class DefaultAuthentication implements AuthenticationSystem {
     private final Authenticator<ComboTokenResJson> sessionKeyAuthenticator = new SessionKeyAuthenticator();
     private final ExternalAuthenticator externalAuthenticator = new ExternalAuthentication();
     private final OAuthAuthenticator oAuthAuthenticator = new OAuthAuthentication();
-    
+
     @Override
     public void createAccount(String username, String password) {
         // Unhandled. The default authenticator doesn't store passwords.

@@ -23,9 +23,9 @@ public class ForgeData extends GameResource {
     private List<ItemParamData> materialItems;
 
     @Override
-	public int getId() {
-		return this.id;
-	}
+    public int getId() {
+        return this.id;
+    }
 
     public int getPlayerLevel() {
         return playerLevel;
