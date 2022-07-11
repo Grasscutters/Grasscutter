@@ -10,12 +10,10 @@ jobs:
   Build-Server-Jar:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout LintRatchet
-        uses: actions/checkout@v2
-        with:
-          ref: LintRatchet
-      - name: Checkout branch
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Fetch LintRatchet
+        run: git fetch origin LintRatchet:LintRatchet
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
