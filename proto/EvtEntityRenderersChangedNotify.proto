@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "EntityRendererChangedInfo.proto";
+import "ForwardType.proto";
+
+// CmdId: 354
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
+message EvtEntityRenderersChangedNotify {
+	ForwardType forward_type = 2;
+	uint32 entity_id = 7;
+	bool is_server_cache = 15;
+	EntityRendererChangedInfo renderer_changed_info = 3;
+}

@@ -128,6 +128,8 @@ public final class DatabaseHelper {
             player.getSession().close();
 
             // Delete data from collections
+            DatabaseManager.getGameDatabase().getCollection("activities").deleteMany(eq("uid",player.getUid()));
+            DatabaseManager.getGameDatabase().getCollection("homes").deleteMany(eq("ownerUid",player.getUid()));
     		DatabaseManager.getGameDatabase().getCollection("mail").deleteMany(eq("ownerUid", player.getUid()));
     		DatabaseManager.getGameDatabase().getCollection("avatars").deleteMany(eq("ownerId", player.getUid()));
     		DatabaseManager.getGameDatabase().getCollection("gachas").deleteMany(eq("ownerId", player.getUid()));

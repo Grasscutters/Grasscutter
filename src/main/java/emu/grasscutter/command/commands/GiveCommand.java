@@ -221,7 +221,6 @@ public final class GiveCommand implements CommandHandler {
                 case ITEM_RELIQUARY:
                     targetPlayer.getInventory().addItems(makeArtifacts(param), ActionReason.SubfieldDrop);
                     CommandHandler.sendTranslatedMessage(sender, "commands.give.given_level", Integer.toString(param.id), Integer.toString(param.lvl), Integer.toString(param.amount), Integer.toString(targetPlayer.getUid()));
-                    //CommandHandler.sendTranslatedMessage(sender, "commands.giveArtifact.success", Integer.toString(param.id), Integer.toString(targetPlayer.getUid()));
                     return;
                 default:
                     targetPlayer.getInventory().addItem(new GameItem(param.data, param.amount), ActionReason.SubfieldDrop);

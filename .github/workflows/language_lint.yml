@@ -1,0 +1,27 @@
+name: "Language Lint"
+on:
+  workflow_dispatch: ~
+  push:
+    paths:
+      - "**.java"
+      - "**.json"
+    branches:
+      - "stable"
+      - "development"
+  pull_request:
+    paths:
+      - "**.java"
+      - "**.json"
+    types:
+      - opened
+      - synchronize
+      - reopened
+jobs:
+  Lint-Language-Keys:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+      - run: python3 manage_languages.py -l

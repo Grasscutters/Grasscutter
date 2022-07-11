@@ -198,8 +198,9 @@ public class ForgingManager {
 
 		// Give finished items to the player.
 		ForgeData data = GameData.getForgeDataMap().get(forge.getForgeId());
-		ItemData resultItemData = GameData.getItemDataMap().get(data.getResultItemId());
 
+		int resultId = data.getResultItemId() > 0 ? data.getResultItemId() : data.getShowItemId();
+		ItemData resultItemData = GameData.getItemDataMap().get(resultId);
 		GameItem addItem = new GameItem(resultItemData, data.getResultItemCount() * finished);
 		this.player.getInventory().addItem(addItem);
 		

@@ -1,29 +1,28 @@
 package emu.grasscutter.game.quest;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.data.excels.QuestData.QuestCondition;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.enums.ParentQuestState;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.quest.enums.LogicType;
 import emu.grasscutter.game.quest.enums.QuestState;
-import emu.grasscutter.server.packet.send.PacketFinishedParentQuestUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketQuestListUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketQuestProgressUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketServerCondMeetQuestListUpdateNotify;
+import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class QuestManager {
 	private final Player player;
 	private final Int2ObjectMap<GameMainQuest> quests;
-	
+
 	public QuestManager(Player player) {
 		this.player = player;
 		this.quests = new Int2ObjectOpenHashMap<>();
@@ -122,40 +121,56 @@ public class QuestManager {
 
 		return quest;
 	}
-	
-	public void triggerEvent(QuestTrigger condType, int... params) {
+    public void startMainQuest(int mainQuestId){
+        var mainQuestData = GameData.getMainQuestDataMap().get(mainQuestId);
+
+        if (mainQuestData == null){
+            return;
+        }
+
+        Arrays.stream(mainQuestData.getSubQuests())
+            .min(Comparator.comparingInt(MainQuestData.SubQuestData::getOrder))
+            .map(MainQuestData.SubQuestData::getSubId)
+            .ifPresent(this::addQuest);
+    }
+    public void triggerEvent(QuestTrigger condType, int... params) {
+        triggerEvent(condType, "", params);
+    }
+
+	public void triggerEvent(QuestTrigger condType, String paramStr, int... params) {
+        Grasscutter.getLogger().debug("Trigger Event {}, {}, {}", condType, paramStr, params);
 		Set<GameQuest> changedQuests = new HashSet<>();
-		
+
 		this.forEachActiveQuest(quest -> {
 			QuestData data = quest.getData();
-			
-			for (int i = 0; i < data.getFinishCond().length; i++) {
-				if (quest.getFinishProgressList() == null 
+
+			for (int i = 0; i < data.getFinishCond().size(); i++) {
+				if (quest.getFinishProgressList() == null
 					|| quest.getFinishProgressList().length == 0
 					|| quest.getFinishProgressList()[i] == 1) {
 					continue;
 				}
-				
-				QuestCondition condition = data.getFinishCond()[i];
-				
+
+				QuestCondition condition = data.getFinishCond().get(i);
+
 				if (condition.getType() != condType) {
 					continue;
 				}
-				
-				boolean result = getPlayer().getServer().getQuestHandler().triggerContent(quest, condition, params);
-				
+
+				boolean result = getPlayer().getServer().getQuestHandler().triggerContent(quest, condition, paramStr, params);
+
 				if (result) {
 					quest.getFinishProgressList()[i] = 1;
-					
+
 					changedQuests.add(quest);
 				}
 			}
 		});
-		
+
 		for (GameQuest quest : changedQuests) {
 			LogicType logicType = quest.getData().getFailCondComb();
 			int[] progress = quest.getFinishProgressList();
-			
+
 			// Handle logical comb
 			boolean finish = LogicType.calculate(logicType, progress);
 
@@ -169,6 +184,15 @@ public class QuestManager {
 		}
 	}
 
+    public List<QuestGroupSuite> getSceneGroupSuite(int sceneId) {
+        return getQuests().values().stream()
+            .filter(i -> i.getState() != ParentQuestState.PARENT_QUEST_STATE_FINISHED)
+            .map(GameMainQuest::getQuestGroupSuites)
+            .filter(Objects::nonNull)
+            .flatMap(Collection::stream)
+            .filter(i -> i.getScene() == sceneId)
+            .toList();
+    }
 	public void loadFromDatabase() {
 		List<GameMainQuest> quests = DatabaseHelper.getAllQuests(getPlayer());
 		
