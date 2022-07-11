@@ -34,6 +34,9 @@ plugins {
     // Maven
     id 'maven-publish'
     id 'signing'
+
+    // Spotless formatter
+    id "com.diffplug.spotless" version "6.8.0"
 }
 
 compileJava.options.encoding = "UTF-8"
@@ -93,8 +96,8 @@ dependencies {
 
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
-	testCompileOnly 'org.projectlombok:lombok:1.18.24'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 configurations.all {
@@ -103,7 +106,7 @@ configurations.all {
 
 application {
     // Define the main class for the application
-    mainClassName = 'emu.grasscutter.Grasscutter'
+    getMainClass().set('emu.grasscutter.Grasscutter')
 }
 
 
@@ -112,8 +115,10 @@ jar {
         attributes 'Main-Class': 'emu.grasscutter.Grasscutter'
     }
 
-    jar.baseName = 'grasscutter'
-    jar.archiveName = project.hasProperty('jarFilename') ? "${jarFilename}.${extension}" : archiveName
+    archiveBaseName = 'grasscutter'
+    if (project.hasProperty('jarFilename')) {
+        archiveFileName = "${jarFilename}.${extension}"
+    }
 
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
@@ -125,7 +130,7 @@ jar {
         include '*.xml'
     }
 
-    destinationDir = file(".")
+    destinationDirectory = file(".")
 }
 
 publishing {
@@ -234,6 +239,30 @@ eclipse {
             cp.entries.add( new org.gradle.plugins.ide.eclipse.model.SourceFolder('src/generated/main/java', null) )
         }
     }
+}
+
+spotless {
+  // optional: limit format enforcement to just the files changed by this feature branch
+  ratchetFrom 'LintRatchet'
+
+  format 'misc', {
+    // define the files to apply `misc` to
+    target '*.gradle', '*.md', '.gitignore'
+
+    // define the steps to apply to those files
+    trimTrailingWhitespace()
+    indentWithSpaces() // or spaces. Takes an integer argument if you don't like 4
+    endWithNewline()
+  }
+  java {
+    // don't need to set target, it is inferred from java
+    // define the steps to apply to those files
+    trimTrailingWhitespace()
+    indentWithSpaces() // or spaces. Takes an integer argument if you don't like 4
+    endWithNewline()
+    replaceRegex('Force one space between if/etc. and ( or {', '(?<=\\b(?:if|for|while|switch|try|else|catch|finally|synchronized)) *(?=[\\(\\{])', ' ')
+    replaceRegex('Force one space between ) and {', '\\) *\\{(?!\\})', ') {')
+  }
 }
 
 signing {
