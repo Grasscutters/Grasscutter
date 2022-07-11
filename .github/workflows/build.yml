@@ -19,8 +19,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Fetch LintRatchet
-        run: git fetch origin LintRatchet:LintRatchet
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
