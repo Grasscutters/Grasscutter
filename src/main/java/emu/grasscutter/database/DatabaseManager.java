@@ -46,14 +46,8 @@ public final class DatabaseManager {
     	return getGameDatastore().getDatabase();
     }
 
-	// Yes. I very dislike this method. However, this will be good for now.
-	// TODO: Add dispatch routes for player account management
 	public static Datastore getAccountDatastore() {
-		if(SERVER.runMode == ServerRunMode.GAME_ONLY) {
-			return dispatchDatastore;
-		} else {
-			return gameDatastore;
-		}
+        return dispatchDatastore;
 	}
 	
 	public static void initialize() {
