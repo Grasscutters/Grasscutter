@@ -12,8 +12,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Fetch LintRatchet
-        run: git fetch origin LintRatchet:LintRatchet
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Run Linter
+        run: python format_whitespace.py
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
@@ -29,8 +33,6 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('*.gradle', 'gradle.properties', '**/*.accesswidener') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-      - name: Run Spotless
-        run: ./gradlew spotlessApply
       - name: Run Gradle
         run: ./gradlew && ./gradlew jar
       - name: Upload build
@@ -38,7 +40,7 @@ jobs:
         with:
           name: Grasscutter
           path: grasscutter-*.jar
-      - name: Commit any Spotless changes
+      - name: Commit any Linter changes
         uses: EndBug/add-and-commit@v9
         with:
           add: '-u'
