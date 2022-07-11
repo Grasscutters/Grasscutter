@@ -6,15 +6,15 @@ import emu.grasscutter.net.proto.ChangeAvatarRspOuterClass.ChangeAvatarRsp;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 
 public class PacketChangeAvatarRsp extends BasePacket {
-	
+
 	public PacketChangeAvatarRsp(long guid) {
 		super(PacketOpcodes.ChangeAvatarRsp);
 
 		ChangeAvatarRsp p = ChangeAvatarRsp.newBuilder()
-				.setRetcode(RetcodeOuterClass.Retcode.RET_SUCC_VALUE)
+				.setRetcode(RetcodeOuterClass.Retcode.RETCODE_RET_SUCC_VALUE)
 				.setCurGuid(guid)
 				.build();
-		
+
 		this.setData(p);
 	}
 }

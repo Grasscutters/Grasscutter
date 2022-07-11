@@ -99,7 +99,7 @@ public class CombineManger {
 
         // abort if not enough material
         if (!success) {
-            player.sendPacket(new PacketCombineRsp(RetcodeOuterClass.Retcode.RET_ITEM_COMBINE_COUNT_NOT_ENOUGH_VALUE));
+            player.sendPacket(new PacketCombineRsp(RetcodeOuterClass.Retcode.RETCODE_RET_ITEM_COMBINE_COUNT_NOT_ENOUGH_VALUE));
         }
 
         // make the result
@@ -121,20 +121,20 @@ public class CombineManger {
         // Check if the configId is legal.
         List<Integer> possibleDrops = reliquaryDecomposeData.get(configId);
         if (possibleDrops == null) {
-            player.sendPacket(new PacketReliquaryDecomposeRsp(Retcode.RET_RELIQUARY_DECOMPOSE_PARAM_ERROR));
+            player.sendPacket(new PacketReliquaryDecomposeRsp(Retcode.RETCODE_RET_RELIQUARY_DECOMPOSE_PARAM_ERROR));
             return;
         }
-        
+
         // Check if the number of input items matches the output count.
         if (input.size() != count * 3) {
-            player.sendPacket(new PacketReliquaryDecomposeRsp(Retcode.RET_RELIQUARY_DECOMPOSE_PARAM_ERROR));
+            player.sendPacket(new PacketReliquaryDecomposeRsp(Retcode.RETCODE_RET_RELIQUARY_DECOMPOSE_PARAM_ERROR));
             return;
         }
 
         // Check if all the input reliquaries actually are in the player's inventory.
         for (long guid : input) {
             if (player.getInventory().getItemByGuid(guid) == null) {
-                player.sendPacket(new PacketReliquaryDecomposeRsp(Retcode.RET_RELIQUARY_DECOMPOSE_PARAM_ERROR));
+                player.sendPacket(new PacketReliquaryDecomposeRsp(Retcode.RETCODE_RET_RELIQUARY_DECOMPOSE_PARAM_ERROR));
                 return;
             }
         }

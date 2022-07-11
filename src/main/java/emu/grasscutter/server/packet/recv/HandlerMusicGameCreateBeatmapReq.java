@@ -24,9 +24,9 @@ public class HandlerMusicGameCreateBeatmapReq extends PacketHandler {
 		var req = MusicGameCreateBeatmapReqOuterClass.MusicGameCreateBeatmapReq.parseFrom(payload);
 
         var musicGameBeatmap = MusicGameBeatmap.of()
-            .musicId(req.getMusicBriefInfo().getMusicId())
-            .musicNoteCount(req.getMusicBriefInfo().getMusicNoteCount())
-            .savePosition(req.getMusicBriefInfo().getPosition())
+            .musicId(req.getMusicBriefInfo().getUnk2700DFIBAIILJHN())
+            .musicNoteCount(req.getMusicBriefInfo().getUnk2700KLPHBLCIOEC())
+            .savePosition(req.getMusicBriefInfo().getUnk2700PINGIIAANMO())
             .maxScore(req.getMusicBriefInfo().getMaxScore())
             .authorUid(session.getPlayer().getUid())
             .beatmap(MusicGameBeatmap.parse(req.getMusicRecord().getBeatmapItemListList()))
@@ -48,8 +48,8 @@ public class HandlerMusicGameCreateBeatmapReq extends PacketHandler {
             .map(DatabaseHelper::getMusicGameBeatmap)
             .filter(Objects::nonNull)
             .filter(item -> item.getAuthorUid() == session.getPlayer().getUid())
-            .filter(item -> item.getMusicId() == req.getMusicBriefInfo().getMusicId())
-            .filter(item -> item.getSavePosition() == req.getMusicBriefInfo().getPosition())
+            .filter(item -> item.getMusicId() == req.getMusicBriefInfo().getUnk2700DFIBAIILJHN())
+            .filter(item -> item.getSavePosition() == req.getMusicBriefInfo().getUnk2700PINGIIAANMO())
             .findFirst();
 
         // delete old beatmap for player

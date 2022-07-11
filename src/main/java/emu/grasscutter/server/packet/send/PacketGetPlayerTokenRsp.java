@@ -10,9 +10,9 @@ import emu.grasscutter.utils.Crypto;
 
 public class PacketGetPlayerTokenRsp extends BasePacket {
 
-	public PacketGetPlayerTokenRsp(GameSession session) {
+	public PacketGetPlayerTokenRsp(GameSession session, int BPJOBLNCBEI, String base64str) {
 		super(PacketOpcodes.GetPlayerTokenRsp, true);
-		
+
 		this.setUseDispatchKey(true);
 
 		GetPlayerTokenRsp p = GetPlayerTokenRsp.newBuilder()
@@ -28,16 +28,26 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
 			.setClientVersionRandomKey("c25-314dd05b0b5f")
 			.setRegPlatform(3)
 			.setClientIpStr(session.getAddress().getAddress().getHostAddress())
+            .setUnk2800BPJOBLNCBEI(BPJOBLNCBEI)
+            .setUnk2800MHIAOCIECAA(base64str)
+            .setUnk2800LINNNMMIFGE("U29yYXBvaW50YSBpcyB3YXRjaGluZyB5b3UuLi4=")
 			.build();
-		
+
 		this.setData(p.toByteArray());
 	}
-	
-	public PacketGetPlayerTokenRsp(GameSession session, int retcode, String msg, int blackEndTime) {
+
+	public PacketGetPlayerTokenRsp(
+        GameSession session,
+        int retcode,
+        String msg,
+        int blackEndTime,
+        int BPJOBLNCBEI,
+        String base64str
+    ) {
 		super(PacketOpcodes.GetPlayerTokenRsp, true);
-		
+
 		this.setUseDispatchKey(true);
-		
+
 		GetPlayerTokenRsp p = GetPlayerTokenRsp.newBuilder()
 				.setUid(session.getPlayer().getUid())
 				.setIsProficientPlayer(session.getPlayer().getAvatars().getAvatarCount() > 0)
@@ -47,8 +57,11 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
 				.setRegPlatform(3)
 				.setCountryCode("US")
 				.setClientIpStr(session.getAddress().getAddress().getHostAddress())
+                .setUnk2800BPJOBLNCBEI(BPJOBLNCBEI)
+                .setUnk2800LINNNMMIFGE("U29yYXBvaW50YSBpcyB3YXRjaGluZyB5b3UuLi4=")
+                .setUnk2800MHIAOCIECAA(base64str)
 				.build();
-			
+
 		this.setData(p.toByteArray());
 	}
 }

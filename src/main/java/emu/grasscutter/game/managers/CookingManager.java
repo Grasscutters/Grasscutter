@@ -89,7 +89,7 @@ public class CookingManager {
         // Get recipe data.
         var recipeData = GameData.getCookRecipeDataMap().get(recipeId);
         if (recipeData == null) {
-            this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
+            this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RETCODE_RET_FAIL));
             return;
         }
 
@@ -99,13 +99,13 @@ public class CookingManager {
         // Try consuming materials.
         boolean success = player.getInventory().payItems(recipeData.getInputVec().toArray(new ItemParamData[0]), count, ActionReason.Cook);
         if (!success) {
-            this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
+            this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RETCODE_RET_FAIL));
         }
 
         // Get result item information.
-        int qualityIndex = 
-            quality == 0 
-            ? 2 
+        int qualityIndex =
+            quality == 0
+            ? 2
             : quality - 1;
 
         ItemParamData resultParam = recipeData.getQualityOutputVec().get(qualityIndex);

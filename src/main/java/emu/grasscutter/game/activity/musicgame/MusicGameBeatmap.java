@@ -64,12 +64,12 @@ public class MusicGameBeatmap {
         var player = DatabaseHelper.getPlayerByUid(authorUid);
 
         return MusicBriefInfoOuterClass.MusicBriefInfo.newBuilder()
-            .setMusicId(musicId)
-            .setMusicNoteCount(musicNoteCount)
-            .setMusicShareId(musicShareId)
+            .setUnk2700DFIBAIILJHN(musicId)
+            .setUnk2700KLPHBLCIOEC(musicNoteCount)
+            .setUnk2700CEPGMKAHHCD(musicShareId)
             .setMaxScore(maxScore)
-            .setShareTime(createTime)
-            .setAuthorNickname(player.getNickname())
+            .setUnk2700BFMNMPPNBHH(createTime)
+            .setUnk2700MONNIDCNDFI(player.getNickname())
             .setVersion(1)
             ;
     }

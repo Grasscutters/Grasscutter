@@ -1,3 +1,19 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
@@ -13,8 +29,9 @@ message TrialAvatarGrantRecord {
 		GRANT_REASON_BY_DUNGEON_ELEMENT_CHALLENGE = 3;
 		GRANT_REASON_BY_MIST_TRIAL_ACTIVITY = 4;
 		GRANT_REASON_BY_SUMO_ACTIVITY = 5;
-		GRANT_REASON_ELPMDIEIOHP = 6;
-		GRANT_REASON_FALPDBLGHJB = 7;
-		GRANT_REASON_GAMADMGGMBC = 8;
+		GRANT_REASON_Unk2700_ELPMDIEIOHP = 6;
+		GRANT_REASON_Unk2700_FALPDBLGHJB = 7;
+		GRANT_REASON_Unk2700_GAMADMGGMBC = 8;
+		GRANT_REASON_Unk2800_FIIDJHAKMOI = 9;
 	}
 }

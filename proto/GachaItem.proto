@@ -1,14 +1,30 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "GachaTransferItem.proto";
 import "ItemParam.proto";
 
+option java_package = "emu.grasscutter.net.proto";
+
 message GachaItem {
-	ItemParam gacha_item_ = 1;
-	repeated GachaTransferItem transfer_items = 2;
-	bool is_flash_card = 3;
-	bool is_gacha_item_new = 4;
-	repeated ItemParam token_item_list = 5;
+	ItemParam gacha_item_ = 7;
+	bool is_gacha_item_new = 6;
+	bool is_flash_card = 8;
+	repeated ItemParam token_item_list = 9;
+	repeated GachaTransferItem transfer_items = 12;
 }

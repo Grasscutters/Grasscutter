@@ -26,7 +26,7 @@ public class HandlerMusicGameSettleReq extends PacketHandler {
         var handler = (MusicGameActivityHandler) playerData.get().getActivityHandler();
         boolean isNewRecord = false;
         // check if custom beatmap
-        if(req.getMusicShareId() == 0){
+        if(req.getUnk2700CEPGMKAHHCD() == 0){
             session.getPlayer().getActivityManager().triggerWatcher(
                 WatcherTriggerType.TRIGGER_FLEUR_FAIR_MUSIC_GAME_REACH_SCORE,
                 String.valueOf(req.getMusicBasicId()),
@@ -45,14 +45,14 @@ public class HandlerMusicGameSettleReq extends PacketHandler {
         }else{
             handler.setMusicGameCustomBeatmapRecord(playerData.get(),
                 MusicGamePlayerData.CustomBeatmapRecord.of()
-                    .musicShareId(req.getMusicShareId())
+                    .musicShareId(req.getUnk2700CEPGMKAHHCD())
                     .score(req.getMaxCombo())
-                    .settle(req.getSuccess())
+                    .settle(req.getUnk2700LKJNLDJAGGL())
                     .build());
         }
 
 
-		session.send(new PacketMusicGameSettleRsp(req.getMusicBasicId(), req.getMusicShareId(), isNewRecord));
+		session.send(new PacketMusicGameSettleRsp(req.getMusicBasicId(), req.getUnk2700CEPGMKAHHCD(), isNewRecord));
 	}
 
 }

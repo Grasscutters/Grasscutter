@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.AvatarChangeCostumeRspOuterClass.AvatarChangeCo
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 
 public class PacketAvatarChangeCostumeRsp extends BasePacket {
-	
+
 	public PacketAvatarChangeCostumeRsp(long avatarGuid, int costumeId) {
 		super(PacketOpcodes.AvatarChangeCostumeRsp);
 
@@ -14,17 +14,17 @@ public class PacketAvatarChangeCostumeRsp extends BasePacket {
 				.setAvatarGuid(avatarGuid)
 				.setCostumeId(costumeId)
 				.build();
-		
+
 		this.setData(proto);
 	}
-	
+
 	public PacketAvatarChangeCostumeRsp() {
 		super(PacketOpcodes.AvatarChangeCostumeRsp);
 
 		AvatarChangeCostumeRsp proto = AvatarChangeCostumeRsp.newBuilder()
-				.setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
+				.setRetcode(RetcodeOuterClass.Retcode.RETCODE_RET_SVR_ERROR_VALUE)
 				.build();
-		
+
 		this.setData(proto);
 	}
 }

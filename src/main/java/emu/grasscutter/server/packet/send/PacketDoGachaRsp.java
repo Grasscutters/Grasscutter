@@ -13,7 +13,7 @@ import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 
 public class PacketDoGachaRsp extends BasePacket {
-	
+
 	public PacketDoGachaRsp(GachaBanner banner, List<GachaItem> list, PlayerGachaBannerInfo gachaInfo) {
 		super(PacketOpcodes.DoGachaRsp);
 
@@ -42,7 +42,7 @@ public class PacketDoGachaRsp extends BasePacket {
 				.setWishProgress(gachaInfo.getFailedChosenItemPulls())
 				.setWishMaxProgress(banner.getWishMaxProgress());
 		}
-		
+
 		this.setData(rsp.build());
 	}
 
@@ -50,9 +50,9 @@ public class PacketDoGachaRsp extends BasePacket {
 		super(PacketOpcodes.DoGachaRsp);
 
 		DoGachaRsp p = DoGachaRsp.newBuilder()
-				.setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
+				.setRetcode(Retcode.RETCODE_RET_SVR_ERROR_VALUE)
 				.build();
-		
+
 		this.setData(p);
 	}
 

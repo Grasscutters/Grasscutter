@@ -14,6 +14,9 @@ import emu.grasscutter.server.event.game.PlayerCreationEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.PacketGetPlayerTokenRsp;
+import emu.grasscutter.utils.ByteHelper;
+import emu.grasscutter.utils.Crypto;
+import emu.grasscutter.utils.Utils;
 
 @Opcodes(PacketOpcodes.GetPlayerTokenReq)
 public class HandlerGetPlayerTokenReq extends PacketHandler {
@@ -21,6 +24,16 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		GetPlayerTokenReq req = GetPlayerTokenReq.parseFrom(payload);
+
+        // 2.7.50 + Login Logic has been changed.
+
+        byte[] clientBytes = Utils.base64Decode(req.getUnk2800EJFHOBBDKCD());
+        byte[] seed = ByteHelper.longToBytes(Crypto.ENCRYPT_SEED);
+        Crypto.xor(clientBytes, seed);
+
+        String base64str = Utils.base64Encode(clientBytes);
+
+        int BPJOBLNCBEI = req.getUnk2800BPJOBLNCBEI();
 
 		// Authenticate
 		Account account = DatabaseHelper.getAccountById(req.getAccountUid());
@@ -78,7 +91,16 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 
 		// Checks if the player is banned
 		if (session.getAccount().isBanned()) {
-			session.send(new PacketGetPlayerTokenRsp(session, 21, "FORBID_CHEATING_PLUGINS", session.getAccount().getBanEndTime()));
+			session.send(
+                new PacketGetPlayerTokenRsp(
+                    session,
+                    21,
+                    "FORBID_CHEATING_PLUGINS",
+                    session.getAccount().getBanEndTime(),
+                    BPJOBLNCBEI,
+                    base64str
+                )
+            );
 			session.close();
 			return;
 		}
@@ -91,7 +113,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 		session.setState(SessionState.WAITING_FOR_LOGIN);
 
 		// Send packet
-		session.send(new PacketGetPlayerTokenRsp(session));
+		session.send(new PacketGetPlayerTokenRsp(session, BPJOBLNCBEI, base64str));
 	}
 
 }

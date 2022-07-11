@@ -1,0 +1,31 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ChessActivityDetailInfo {
+	uint32 level = 4;
+	bool is_teach_dungeon_finished = 9;
+	uint32 content_close_time = 14;
+	uint32 obtained_exp = 8;
+	bool is_content_closed = 5;
+	uint32 available_exp = 2;
+	uint32 exp = 13;
+	repeated uint32 finished_map_id_list = 1;
+	uint32 punish_over_time = 3;
+}

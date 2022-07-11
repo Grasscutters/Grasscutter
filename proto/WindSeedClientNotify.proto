@@ -1,0 +1,48 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+syntax = "proto3";
+
+import "Vector.proto";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1199
+// EnetChannelId: 0
+// EnetIsReliable: true
+message WindSeedClientNotify {
+	oneof notify {
+		RefreshNotify refresh_notify = 14;
+		AddWindBulletNotify add_wind_bullet_notify = 6;
+		AreaNotify area_notify = 4;
+	}
+
+	message RefreshNotify {
+		uint32 refresh_num = 9;
+	}
+
+	message AddWindBulletNotify {
+		Vector seed_pos = 6;
+		uint32 catch_player_uid = 8;
+		uint32 seed_entity_id = 7;
+	}
+
+	message AreaNotify {
+		bytes area_code = 5;
+		uint32 area_id = 10;
+		uint32 area_type = 7;
+	}
+}

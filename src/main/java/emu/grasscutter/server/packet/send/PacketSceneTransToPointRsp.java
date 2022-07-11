@@ -10,7 +10,7 @@ import emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPoin
 import emu.grasscutter.utils.Position;
 
 public class PacketSceneTransToPointRsp extends BasePacket {
-	
+
 	public PacketSceneTransToPointRsp(Player player, int pointId, int sceneId) {
 		super(PacketOpcodes.SceneTransToPointRsp);
 
@@ -25,9 +25,9 @@ public class PacketSceneTransToPointRsp extends BasePacket {
 
 	public PacketSceneTransToPointRsp() {
 		super(PacketOpcodes.SceneTransToPointRsp);
-		
+
 		SceneTransToPointRsp proto = SceneTransToPointRsp.newBuilder()
-				.setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE) // Internal server error
+				.setRetcode(RetcodeOuterClass.Retcode.RETCODE_RET_SVR_ERROR_VALUE) // Internal server error
 	            .build();
 
 		this.setData(proto);

@@ -38,12 +38,12 @@ import emu.grasscutter.game.props.FightProperty;
 public class AbilityManager {
 	private Player player;
     HealAbilityManager healAbilityManager;
-	
+
 	public AbilityManager(Player player) {
 		this.player = player;
         this.healAbilityManager = new HealAbilityManager(player);
 	}
-	
+
 	public Player getPlayer() {
 		return this.player;
 	}
@@ -76,95 +76,95 @@ public class AbilityManager {
 
 	private void handleOverrideParam(AbilityInvokeEntry invoke) throws Exception {
 		GameEntity entity = player.getScene().getEntityById(invoke.getEntityId());
-		
+
 		if (entity == null) {
 			return;
 		}
-		
+
 		AbilityScalarValueEntry entry = AbilityScalarValueEntry.parseFrom(invoke.getAbilityData());
-		
+
 		entity.getMetaOverrideMap().put(entry.getKey().getStr(), entry.getFloatValue());
 	}
 
 	private void handleReinitOverrideMap(AbilityInvokeEntry invoke) throws Exception {
 		GameEntity entity = player.getScene().getEntityById(invoke.getEntityId());
-		
+
 		if (entity == null) {
 			return;
 		}
-		
+
 		AbilityMetaReInitOverrideMap map = AbilityMetaReInitOverrideMap.parseFrom(invoke.getAbilityData());
-		
+
 		for (AbilityScalarValueEntry entry : map.getOverrideMapList()) {
 			entity.getMetaOverrideMap().put(entry.getKey().getStr(), entry.getFloatValue());
 		}
 	}
-	
+
 	private void handleModifierChange(AbilityInvokeEntry invoke) throws Exception {
 		// Sanity checks
 		GameEntity target = player.getScene().getEntityById(invoke.getEntityId());
 		if (target == null) {
 			return;
 		}
-		
+
 		AbilityMetaModifierChange data = AbilityMetaModifierChange.parseFrom(invoke.getAbilityData());
 		if (data == null) {
 			return;
 		}
-		
+
 		// Destroying rocks
 		if (target instanceof EntityGadget targetGadget && targetGadget.getContent() instanceof GadgetGatherObject gatherObject) {
-			if (data.getAction() == ModifierAction.REMOVED) {
+			if (data.getAction() == ModifierAction.MODIFIER_ACTION_REMOVED) {
 				gatherObject.dropItems(this.getPlayer());
 				return;
 			}
         }
-		
+
 		// Sanity checks
 		AbilityInvokeEntryHead head = invoke.getHead();
 		if (head == null) {
 			return;
 		}
-		
+
 		GameEntity sourceEntity = player.getScene().getEntityById(data.getApplyEntityId());
 		if (sourceEntity == null) {
 			return;
 		}
-		
+
 		// This is not how it works but we will keep it for now since healing abilities dont work properly anyways
-		if (data.getAction() == ModifierAction.ADDED && data.getParentAbilityName() != null) {
+		if (data.getAction() == ModifierAction.MODIFIER_ACTION_ADDED && data.getParentAbilityName() != null) {
 			// Handle add modifier here
 			String modifierString = data.getParentAbilityName().getStr();
 			AbilityModifierEntry modifier = GameData.getAbilityModifiers().get(modifierString);
-			
+
 			if (modifier != null && modifier.getOnAdded().size() > 0) {
 				for (AbilityModifierAction action : modifier.getOnAdded()) {
 					invokeAction(action, target, sourceEntity);
 				}
 			}
-			
+
 			// Add to meta modifier list
 			target.getMetaModifiers().put(head.getInstancedModifierId(), modifierString);
-		} else if (data.getAction() == ModifierAction.REMOVED) {
+		} else if (data.getAction() == ModifierAction.MODIFIER_ACTION_REMOVED) {
 			// Handle remove modifier
 			String modifierString = target.getMetaModifiers().get(head.getInstancedModifierId());
-			
+
 			if (modifierString != null) {
 				// Get modifier and call on remove event
 				AbilityModifierEntry modifier = GameData.getAbilityModifiers().get(modifierString);
-				
+
 				if (modifier != null && modifier.getOnRemoved().size() > 0) {
 					for (AbilityModifierAction action : modifier.getOnRemoved()) {
 						invokeAction(action, target, sourceEntity);
 					}
 				}
-				
+
 				// Remove from meta modifiers
 				target.getMetaModifiers().remove(head.getInstancedModifierId());
 			}
 		}
 	}
-	
+
 	private void handleMixinCostStamina(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
 		AbilityMixinCostStamina costStamina = AbilityMixinCostStamina.parseFrom((invoke.getAbilityData()));
 		getPlayer().getStaminaManager().handleMixinCostStamina(costStamina.getIsSwim());
@@ -173,7 +173,7 @@ public class AbilityManager {
 	private void handleGenerateElemBall(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
 		this.player.getEnergyManager().handleGenerateElemBall(invoke);
 	}
-	
+
 	private void invokeAction(AbilityModifierAction action, GameEntity target, GameEntity sourceEntity) {
 		switch (action.type) {
 			case HealHP -> {
@@ -182,13 +182,13 @@ public class AbilityManager {
 				if (action.amountByTargetCurrentHPRatio == null) {
 					return;
 				}
-				
+
 				float damageAmount = 0;
-				
+
 				if (action.amount.isDynamic && action.amount.dynamicKey != null) {
 					damageAmount = sourceEntity.getMetaOverrideMap().getOrDefault(action.amount.dynamicKey, 0f);
 				}
-				
+
 				if (damageAmount > 0) {
 					target.damage(damageAmount);
 				}

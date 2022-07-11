@@ -260,12 +260,12 @@ public class GachaManager {
 	public synchronized void doPulls(Player player, int scheduleId, int times) {
 		// Sanity check
 		if (times != 10 && times != 1) {
-			player.sendPacket(new PacketDoGachaRsp(Retcode.RET_GACHA_INVALID_TIMES));
+			player.sendPacket(new PacketDoGachaRsp(Retcode.RETCODE_RET_GACHA_INVALID_TIMES));
 			return;
 		}
 		Inventory inventory = player.getInventory();
 		if (inventory.getInventoryTab(ItemType.ITEM_WEAPON).getSize() + times > inventory.getInventoryTab(ItemType.ITEM_WEAPON).getMaxCapacity()) {
-			player.sendPacket(new PacketDoGachaRsp(Retcode.RET_ITEM_EXCEED_LIMIT));
+			player.sendPacket(new PacketDoGachaRsp(Retcode.RETCODE_RET_ITEM_EXCEED_LIMIT));
 			return;
 		}
 
@@ -280,14 +280,14 @@ public class GachaManager {
 		PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(banner);
 		int gachaTimesLimit = banner.getGachaTimesLimit();
 		if (gachaTimesLimit != Integer.MAX_VALUE && (gachaInfo.getTotalPulls() + times) > gachaTimesLimit) {
-			player.sendPacket(new PacketDoGachaRsp(Retcode.RET_GACHA_TIMES_LIMIT));
+			player.sendPacket(new PacketDoGachaRsp(Retcode.RETCODE_RET_GACHA_TIMES_LIMIT));
 			return;
 		}
 
 		// Spend currency
 		ItemParamData cost = banner.getCost(times);
 		if (cost.getCount() > 0 && !inventory.payItem(cost)) {
-			player.sendPacket(new PacketDoGachaRsp(Retcode.RET_GACHA_COST_ITEM_NOT_ENOUGH));
+			player.sendPacket(new PacketDoGachaRsp(Retcode.RETCODE_RET_GACHA_COST_ITEM_NOT_ENOUGH));
 			return;
 		}
 

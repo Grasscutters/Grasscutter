@@ -13,7 +13,7 @@ public class PacketGadgetInteractRsp extends BasePacket {
 	public PacketGadgetInteractRsp(EntityBaseGadget gadget, InteractType interact) {
 		this(gadget, interact, null);
 	}
-	
+
 	public PacketGadgetInteractRsp(EntityBaseGadget gadget, InteractType interact, InterOpType opType) {
 		super(PacketOpcodes.GadgetInteractRsp);
 
@@ -25,17 +25,17 @@ public class PacketGadgetInteractRsp extends BasePacket {
 		if (opType != null) {
 			proto.setOpType(opType);
 		}
-		
+
 		this.setData(proto.build());
 	}
-	
+
 	public PacketGadgetInteractRsp() {
 		super(PacketOpcodes.GadgetInteractRsp);
 
 		GadgetInteractRsp proto = GadgetInteractRsp.newBuilder()
-				.setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
+				.setRetcode(RetcodeOuterClass.Retcode.RETCODE_RET_SVR_ERROR_VALUE)
 				.build();
-		
+
 		this.setData(proto);
 	}
 }

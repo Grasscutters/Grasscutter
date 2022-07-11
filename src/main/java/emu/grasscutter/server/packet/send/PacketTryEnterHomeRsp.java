@@ -11,7 +11,7 @@ public class PacketTryEnterHomeRsp extends BasePacket {
         super(PacketOpcodes.TryEnterHomeRsp);
 
         TryEnterHomeRspOuterClass.TryEnterHomeRsp proto = TryEnterHomeRspOuterClass.TryEnterHomeRsp.newBuilder()
-                .setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
+                .setRetcode(RetcodeOuterClass.Retcode.RETCODE_RET_SVR_ERROR_VALUE)
                 .build();
 
         this.setData(proto);

@@ -1,15 +1,31 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "BattlePassMission.proto";
 import "BattlePassSchedule.proto";
 
-// CmdId: 2618
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2626
 // EnetChannelId: 0
 // EnetIsReliable: true
 message BattlePassAllDataNotify {
-	bool have_cur_schedule = 11;
-	BattlePassSchedule cur_schedule = 10;
-	repeated BattlePassMission mission_list = 1;
+	bool have_cur_schedule = 2;
+	repeated BattlePassMission mission_list = 4;
+	BattlePassSchedule cur_schedule = 1;
 }

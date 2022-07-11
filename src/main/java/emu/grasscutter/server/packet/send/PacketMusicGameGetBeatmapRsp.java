@@ -15,7 +15,7 @@ public class PacketMusicGameGetBeatmapRsp extends BasePacket {
         var proto = MusicGameGetBeatmapRspOuterClass.MusicGameGetBeatmapRsp.newBuilder();
 
         proto.setMusicBriefInfo(briefInfo)
-            .setMusicShareId(briefInfo.getMusicShareId())
+            .setMusicShareId(briefInfo.getUnk2700CEPGMKAHHCD())
             .setMusicRecord(musicRecord)
             .setUnknownEnum1(req.getUnknownEnum1())
             .setReqType(req.getReqType())

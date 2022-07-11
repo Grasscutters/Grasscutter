@@ -1,28 +1,44 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "EnterType.proto";
 import "Vector.proto";
 
-// CmdId: 209
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 272
 // EnetChannelId: 0
 // EnetIsReliable: true
 message PlayerEnterSceneNotify {
-	uint32 scene_id = 14;
-	Vector pos = 15;
-	uint64 scene_begin_time = 12;
-	EnterType type = 2;
+	uint32 prev_scene_id = 6;
+	uint32 dungeon_id = 12;
+	bool is_skip_ui = 1732;
+	uint32 scene_id = 15;
+	EnterType type = 13;
+	uint64 scene_begin_time = 14;
+	uint32 world_level = 11;
+	uint32 world_type = 1490;
 	uint32 target_uid = 4;
-	uint32 prev_scene_id = 7;
-	Vector prev_pos = 6;
-	uint32 dungeon_id = 13;
-	uint32 world_level = 3;
-	uint32 enter_scene_token = 9;
-	bool is_first_login_enter_scene = 11;
-	repeated uint32 scene_tag_id_list = 1;
-	bool is_skip_ui = 1430;
-	uint32 enter_reason = 1982;
-	uint32 world_type = 1067;
-	string scene_transaction = 1081;
+	bool is_first_login_enter_scene = 3;
+	repeated uint32 scene_tag_id_list = 5;
+	string scene_transaction = 1842;
+	Vector prev_pos = 8;
+	uint32 enter_reason = 1828;
+	Vector pos = 7;
+	uint32 enter_scene_token = 2;
 }

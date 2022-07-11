@@ -12,7 +12,7 @@ public class PacketEvtAvatarLockChairRsp extends BasePacket {
         super(PacketOpcodes.EvtAvatarLockChairRsp);
 
         EvtAvatarLockChairRsp p = EvtAvatarLockChairRsp.newBuilder()
-                .setRetcode(RetcodeOuterClass.Retcode.RET_SUCC_VALUE)
+                .setRetcode(RetcodeOuterClass.Retcode.RETCODE_RET_SUCC_VALUE)
                 .setEntityId(entityAvatar.getId())
                 .setPosition(lockChairReq.getPosition())
                 .setChairId(lockChairReq.getChairId())

@@ -65,13 +65,13 @@ public class MusicGamePlayerData {
             var musicGameBeatmap = MusicGameBeatmap.getByShareId(musicShareId);
 
             return MusicBriefInfoOuterClass.MusicBriefInfo.newBuilder()
-                .setCanShare(true)
-                .setCreateTime(musicGameBeatmap.getCreateTime())
-                .setMusicId(musicGameBeatmap.getMusicId())
+                .setUnk2700OJBPHCIDAEB(true)
+                .setUnk2700GGHNLPMAGME(musicGameBeatmap.getCreateTime())
+                .setUnk2700DFIBAIILJHN(musicGameBeatmap.getMusicId())
                 .setMaxScore(musicGameBeatmap.getMaxScore())
-                .setPosition(musicGameBeatmap.getSavePosition())
-                .setMusicNoteCount(musicGameBeatmap.getMusicNoteCount())
-                .setMusicShareId(musicShareId)
+                .setUnk2700PINGIIAANMO(musicGameBeatmap.getSavePosition())
+                .setUnk2700KLPHBLCIOEC(musicGameBeatmap.getMusicNoteCount())
+                .setUnk2700CEPGMKAHHCD(musicShareId)
                 ;
         }
 
@@ -79,8 +79,8 @@ public class MusicGamePlayerData {
             var musicGameBeatmap = MusicGameBeatmap.getByShareId(musicShareId);
 
             return musicGameBeatmap.toBriefProto()
-                .setScore(score)
-                .setSettle(settle)
+                .setUnk2700PMCPLPMJCEC(score)
+                .setUnk2700FGCJEGHOKPG(settle)
                 ;
         }
 

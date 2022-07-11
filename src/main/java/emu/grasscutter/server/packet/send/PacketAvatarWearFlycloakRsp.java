@@ -13,17 +13,17 @@ public class PacketAvatarWearFlycloakRsp extends BasePacket {
 				.setAvatarGuid(avatarGuid)
 				.setFlycloakId(costumeId)
 				.build();
-		
+
 		this.setData(proto);
 	}
-	
+
 	public PacketAvatarWearFlycloakRsp() {
 		super(PacketOpcodes.AvatarWearFlycloakRsp);
 
 		AvatarWearFlycloakRsp proto = AvatarWearFlycloakRsp.newBuilder()
-				.setRetcode(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE)
+				.setRetcode(RetcodeOuterClass.Retcode.RETCODE_RET_SVR_ERROR_VALUE)
 				.build();
-		
+
 		this.setData(proto);
 	}
 }

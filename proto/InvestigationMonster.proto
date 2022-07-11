@@ -1,31 +1,47 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "Vector.proto";
 import "WeeklyBossResinDiscountInfo.proto";
 
-message InvestigationMonster {
-	enum LockState {
-		LOCK_NONE = 0;
-		LOCK_QUEST = 1;
-	}
+option java_package = "emu.grasscutter.net.proto";
 
-	uint32 id = 1;
-	uint32 city_id = 2;
-	uint32 level = 3;
-	bool is_alive = 4;
-	uint32 next_refresh_time = 5;
-	uint32 refresh_interval = 6;
-	Vector pos = 7;
-	LockState lock_state = 8;
-	uint32 max_boss_chest_num = 9;
-	uint32 boss_chest_num = 10;
-	uint32 resin = 11;
-	bool is_area_locked = 12;
-	uint32 next_boss_chest_refresh_time = 13;
-	WeeklyBossResinDiscountInfo weekly_boss_resin_discount_info = 14;
-	uint32 scene_id = 15;
-	uint32 group_id = 16;
-	uint32 monster_id = 17;
+message InvestigationMonster {
+	bool is_alive = 9;
+	uint32 refresh_interval = 3;
+	uint32 id = 13;
+	uint32 level = 5;
+	uint32 boss_chest_num = 1;
+	WeeklyBossResinDiscountInfo weekly_boss_resin_discount_info = 12;
+	uint32 monster_id = 301;
+	Vector pos = 14;
+	uint32 resin = 8;
+	uint32 max_boss_chest_num = 4;
+	uint32 next_refresh_time = 11;
+	uint32 group_id = 285;
+	uint32 scene_id = 10;
+	bool is_area_locked = 15;
+	LockState lock_state = 2;
+	uint32 next_boss_chest_refresh_time = 7;
+	uint32 city_id = 6;
+
+	enum LockState {
+		LOCK_STATE_NONE = 0;
+		LOCK_STATE_QUEST = 1;
+	}
 }
