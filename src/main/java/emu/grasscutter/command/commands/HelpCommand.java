@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
@@ -12,6 +11,28 @@ import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "help", usage = "help [command]", description = "commands.help.description", targetRequirement = Command.TargetRequirement.NONE)
 public final class HelpCommand implements CommandHandler {
+
+    private void createCommand(StringBuilder builder, Player player, Command annotation) {
+        builder.append("\n").append(annotation.label()).append(" - ").append(translate(player, annotation.description()));
+        builder.append("\n\t").append(translate(player, "commands.help.usage"));
+        if (annotation.aliases().length >= 1) {
+            builder.append("\n\t").append(translate(player, "commands.help.aliases"));
+            for (String alias : annotation.aliases()) {
+                builder.append(alias).append(" ");
+            }
+        }
+        builder.append("\n\t").append(translate(player, "commands.help.tip_need_permission"));
+        if(annotation.permission().isEmpty() || annotation.permission().isBlank()) {
+            builder.append(translate(player, "commands.help.tip_need_no_permission"));
+        } else {
+            builder.append(annotation.permission());
+        }
+
+        if(!annotation.permissionTargeted().isEmpty() && !annotation.permissionTargeted().isBlank()) {
+            String permissionTargeted = annotation.permissionTargeted();
+            builder.append(" ").append(translate(player, "commands.help.tip_permission_targeted", permissionTargeted));
+        }
+    }
 
     @Override
     public void execute(Player player, Player targetPlayer, List<String> args) {
@@ -32,38 +53,16 @@ public final class HelpCommand implements CommandHandler {
         } else {
             String command = args.get(0);
             CommandHandler handler = CommandMap.getInstance().getHandler(command);
-            StringBuilder builder = new StringBuilder(player == null ? "\n" + translate(player, "commands.status.help") + " - " : translate(player, "commands.status.help") + " - ").append(command).append(": \n");
+            StringBuilder builder = new StringBuilder("");
             if (handler == null) {
                 builder.append(translate(player, "commands.generic.command_exist_error"));
             } else {
                 Command annotation = handler.getClass().getAnnotation(Command.class);
 
-                builder.append("   ").append(translate(player, annotation.description())).append("\n");
-                builder.append(translate(player, "commands.help.usage")).append(annotation.usage());
-                if (annotation.aliases().length >= 1) {
-                    builder.append("\n").append(translate(player, "commands.help.aliases"));
-                    for (String alias : annotation.aliases()) {
-                        builder.append(alias).append(" ");
-                    }
-                }
-
-                builder.append("\n").append(translate(player, "commands.help.tip_need_permission"));
-                if(annotation.permission().isEmpty() || annotation.permission().isBlank()) {
-                    builder.append(translate(player, "commands.help.tip_need_no_permission"));
-                }
-                else {
-                    builder.append(annotation.permission());
-                }
-                builder.append(" ");
-
-                if(!annotation.permissionTargeted().isEmpty() && !annotation.permissionTargeted().isBlank()) {
-                    String permissionTargeted = annotation.permissionTargeted();
-                    builder.append(translate(player, "commands.help.tip_permission_targeted", permissionTargeted));
-                }
+                this.createCommand(builder, player, annotation);
 
                 if (player != null && !Objects.equals(annotation.permission(), "") && !player.getAccount().hasPermission(annotation.permission())) {
-                    builder.append("\n ");
-                    builder.append(translate(player, "commands.help.warn_player_has_no_permission"));
+                    builder.append("\n\t").append(translate(player, "commands.help.warn_player_has_no_permission"));
                 }
             }
 
@@ -72,67 +71,12 @@ public final class HelpCommand implements CommandHandler {
     }
 
     void SendAllHelpMessage(Player player, List<Command> annotations) {
-        if (player == null) {
-            StringBuilder builder = new StringBuilder("\n" + translate(player, "commands.help.available_commands") + "\n");
-            annotations.forEach(annotation -> {
-                builder.append(annotation.label()).append("\n");
-                builder.append("   ").append(translate(player, annotation.description())).append("\n");
-                builder.append(translate(player, "commands.help.usage")).append(annotation.usage());
-                if (annotation.aliases().length >= 1) {
-                    builder.append("\n").append(translate(player, "commands.help.aliases"));
-                    for (String alias : annotation.aliases()) {
-                        builder.append(alias).append(" ");
-                    }
-                }
-                builder.append("\n").append(translate(player, "commands.help.tip_need_permission"));
-                if(annotation.permission().isEmpty() || annotation.permission().isBlank()) {
-                    builder.append(translate(player, "commands.help.tip_need_no_permission"));
-                }
-                else {
-                    builder.append(annotation.permission());
-                }
+        StringBuilder builder = new StringBuilder(translate(player, "commands.help.available_commands"));
+        annotations.forEach(annotation -> {
+            this.createCommand(builder, player, annotation);
+            builder.append("\n");
+        });
 
-                builder.append(" ");
-
-                if(!annotation.permissionTargeted().isEmpty() && !annotation.permissionTargeted().isBlank()) {
-                    String permissionTargeted = annotation.permissionTargeted();
-                    builder.append(translate(player, "commands.help.tip_permission_targeted", permissionTargeted));
-                }
-
-                builder.append("\n");
-            });
-
-            CommandHandler.sendMessage(null, builder.toString());
-        } else {
-            CommandHandler.sendMessage(player, translate(player, "commands.help.available_commands"));
-            annotations.forEach(annotation -> {
-                StringBuilder builder = new StringBuilder(annotation.label()).append("\n");
-                builder.append("   ").append(translate(player, annotation.description())).append("\n");
-                builder.append(translate(player, "commands.help.usage")).append(annotation.usage());
-                if (annotation.aliases().length >= 1) {
-                    builder.append("\n").append(translate(player, "commands.help.aliases"));
-                    for (String alias : annotation.aliases()) {
-                        builder.append(alias).append(" ");
-                    }
-                }
-                builder.append("\n").append(translate(player, "commands.help.tip_need_permission"));
-                if(annotation.permission().isEmpty() || annotation.permission().isBlank()) {
-                    builder.append(translate(player, "commands.help.tip_need_no_permission"));
-                }
-                else {
-                    builder.append(annotation.permission());
-                }
-
-                builder.append(" ");
-
-                if(!annotation.permissionTargeted().isEmpty() && !annotation.permissionTargeted().isBlank()) {
-                    String permissionTargeted = annotation.permissionTargeted();
-                    builder.append(translate(player, "commands.help.tip_permission_targeted", permissionTargeted));
-                }
-
-
-                CommandHandler.sendMessage(player, builder.toString());
-            });
-        }
+        CommandHandler.sendMessage(player, builder.toString());
     }
 }

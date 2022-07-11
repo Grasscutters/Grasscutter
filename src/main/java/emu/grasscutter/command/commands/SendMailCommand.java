@@ -65,7 +65,7 @@ public final class SendMailCommand implements CommandHandler {
                 switch (args.get(0).toLowerCase()) {
                     case "stop" -> {
                         mailBeingConstructed.remove(senderId);
-                        CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.sendCancel"));
+                        CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.send_cancel"));
                         return;
                     }
                     case "finish" -> {
