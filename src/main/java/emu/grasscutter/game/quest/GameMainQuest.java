@@ -2,7 +2,9 @@ package emu.grasscutter.game.quest;
 
 import java.util.*;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.packet.send.PacketCodexDataUpdateNotify;
+import lombok.Getter;
 import org.bson.types.ObjectId;
 
 import dev.morphia.annotations.Entity;
@@ -31,16 +33,16 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 public class GameMainQuest {
 	@Id private ObjectId id;
 
-	@Indexed private int ownerUid;
-	@Transient private Player owner;
+	@Indexed @Getter private int ownerUid;
+	@Transient @Getter private Player owner;
 
-	private Map<Integer, GameQuest> childQuests;
+	@Getter private Map<Integer, GameQuest> childQuests;
 
-	private int parentQuestId;
-	private int[] questVars;
-	private ParentQuestState state;
-	private boolean isFinished;
-    List<QuestGroupSuite> questGroupSuites;
+	@Getter private int parentQuestId;
+	@Getter private int[] questVars;
+	@Getter private ParentQuestState state;
+	@Getter private boolean isFinished;
+    @Getter List<QuestGroupSuite> questGroupSuites;
 
 	@Deprecated // Morphia only. Do not use.
 	public GameMainQuest() {}
@@ -50,21 +52,10 @@ public class GameMainQuest {
 		this.ownerUid = player.getUid();
 		this.parentQuestId = parentQuestId;
 		this.childQuests = new HashMap<>();
-		this.questVars = new int[5];
+        //official server always has a list of 5 questVars, with default value 0
+		this.questVars = new int[] {0,0,0,0,0};
 		this.state = ParentQuestState.PARENT_QUEST_STATE_NONE;
         this.questGroupSuites = new ArrayList<>();
-	}
-
-	public int getParentQuestId() {
-		return parentQuestId;
-	}
-
-	public int getOwnerUid() {
-		return ownerUid;
-	}
-
-	public Player getOwner() {
-		return owner;
 	}
 
 	public void setOwner(Player player) {
@@ -72,29 +63,27 @@ public class GameMainQuest {
 		this.owner = player;
 	}
 
-	public Map<Integer, GameQuest> getChildQuests() {
-		return childQuests;
-	}
+    public void setQuestVar(int i, int value) {
+        int previousValue = this.questVars[i];
+        this.questVars[i] = value;
+        Grasscutter.getLogger().debug("questVar {} value changed from {} to {}", i, previousValue, value);
+    }
+
+    public void incQuestVar(int i, int inc) {
+        int previousValue = this.questVars[i];
+        this.questVars[i] += inc;
+        Grasscutter.getLogger().debug("questVar {} value incremented from {} to {}", i, previousValue, previousValue + inc);
+    }
+
+    public void decQuestVar(int i, int dec) {
+        int previousValue = this.questVars[i];
+        this.questVars[i] -= dec;
+        Grasscutter.getLogger().debug("questVar {} value decremented from {} to {}", i, previousValue, previousValue - dec);
+    }
 
 	public GameQuest getChildQuestById(int id) {
 		return this.getChildQuests().get(id);
 	}
-
-	public int[] getQuestVars() {
-		return questVars;
-	}
-
-	public ParentQuestState getState() {
-		return state;
-	}
-
-	public boolean isFinished() {
-		return isFinished;
-	}
-
-    public List<QuestGroupSuite> getQuestGroupSuites() {
-        return questGroupSuites;
-    }
 
     public void finish() {
 		this.isFinished = true;
@@ -143,11 +132,9 @@ public class GameMainQuest {
 			proto.addChildQuestList(childQuest);
 		}
 
-		if (getQuestVars() != null) {
-			for (int i : getQuestVars()) {
-				proto.addQuestVar(i);
-			}
-		}
+        for (int i : getQuestVars()) {
+            proto.addQuestVar(i);
+        }
 
 		return proto.build();
 	}

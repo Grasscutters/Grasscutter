@@ -18,43 +18,63 @@ import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
 
 public class QuestManager {
-	private final Player player;
-	private final Int2ObjectMap<GameMainQuest> quests;
+	@Getter private final Player player;
+    @Getter private Map<Integer,Integer> questGlobalVariables;
+	@Getter private final Int2ObjectMap<GameMainQuest> quests;
 
 	public QuestManager(Player player) {
 		this.player = player;
+        //TODO make QuestManagers objects in the database
+        this.questGlobalVariables = player.getQuestGlobalVariables();
 		this.quests = new Int2ObjectOpenHashMap<>();
 	}
+    /*
+        Looking through mainQuests 72201-72208 and 72174, we can infer that a questGlobalVar's default value is 0
+    */
+    public Integer getQuestGlobalVarValue(Integer variable) {
+        return this.questGlobalVariables.getOrDefault(variable,0);
+    }
 
-	public Player getPlayer() {
-		return player;
-	}
+    public void setQuestGlobalVarValue(Integer variable, Integer value) {
+        Integer previousValue = this.questGlobalVariables.put(variable,value);
+        Grasscutter.getLogger().debug("Changed questGlobalVar {} value from {} to {}", variable, previousValue==null ? 0: previousValue, value);
+    }
+    public void incQuestGlobalVarValue(Integer variable, Integer inc) {
+        //
+        Integer previousValue = this.questGlobalVariables.getOrDefault(variable,0);
+        this.questGlobalVariables.put(variable,previousValue + inc);
+        Grasscutter.getLogger().debug("Incremented questGlobalVar {} value from {} to {}", variable, previousValue, previousValue + inc);
+    }
+    //In MainQuest 998, dec is passed as a positive integer
+    public void decQuestGlobalVarValue(Integer variable, Integer dec) {
+        //
+        Integer previousValue = this.questGlobalVariables.getOrDefault(variable,0);
+        this.questGlobalVariables.put(variable,previousValue - dec);
+        Grasscutter.getLogger().debug("Decremented questGlobalVar {} value from {} to {}", variable, previousValue, previousValue - dec);
+    }
 
-	public Int2ObjectMap<GameMainQuest> getQuests() {
-		return quests;
-	}
-	
 	public GameMainQuest getMainQuestById(int mainQuestId) {
 		return getQuests().get(mainQuestId);
 	}
-	
+
 	public GameQuest getQuestById(int questId) {
 		QuestData questConfig = GameData.getQuestDataMap().get(questId);
 		if (questConfig == null) {
 			return null;
 		}
-		
+
 		GameMainQuest mainQuest = getQuests().get(questConfig.getMainId());
-		
+
 		if (mainQuest == null) {
 			return null;
 		}
-		
+
 		return mainQuest.getChildQuests().get(questId);
 	}
-	
+
 	public void forEachQuest(Consumer<GameQuest> callback) {
 		for (GameMainQuest mainQuest : getQuests().values()) {
 			for (GameQuest quest : mainQuest.getChildQuests().values()) {
@@ -68,7 +88,7 @@ public class QuestManager {
 			callback.accept(mainQuest);
 		}
 	}
-	
+
 	// TODO
 	public void forEachActiveQuest(Consumer<GameQuest> callback) {
 		for (GameMainQuest mainQuest : getQuests().values()) {
@@ -79,33 +99,33 @@ public class QuestManager {
 			}
 		}
 	}
-	
+
 	public GameMainQuest addMainQuest(QuestData questConfig) {
 		GameMainQuest mainQuest = new GameMainQuest(getPlayer(), questConfig.getMainId());
 		getQuests().put(mainQuest.getParentQuestId(), mainQuest);
 
 		getPlayer().sendPacket(new PacketFinishedParentQuestUpdateNotify(mainQuest));
-		
+
 		return mainQuest;
 	}
-	
+
 	public GameQuest addQuest(int questId) {
 		QuestData questConfig = GameData.getQuestDataMap().get(questId);
 		if (questConfig == null) {
 			return null;
 		}
-		
+
 		// Main quest
 		GameMainQuest mainQuest = this.getMainQuestById(questConfig.getMainId());
-		
+
 		// Create main quest if it doesnt exist
 		if (mainQuest == null) {
 			mainQuest = addMainQuest(questConfig);
 		}
-		
+
 		// Sub quest
 		GameQuest quest = mainQuest.getChildQuestById(questId);
-		
+
 		if (quest != null) {
 			return null;
 		}
@@ -195,15 +215,15 @@ public class QuestManager {
     }
 	public void loadFromDatabase() {
 		List<GameMainQuest> quests = DatabaseHelper.getAllQuests(getPlayer());
-		
+
 		for (GameMainQuest mainQuest : quests) {
 			mainQuest.setOwner(this.getPlayer());
-			
+
 			for (GameQuest quest : mainQuest.getChildQuests().values()) {
 				quest.setMainQuest(mainQuest);
 				quest.setConfig(GameData.getQuestDataMap().get(quest.getQuestId()));
 			}
-			
+
 			this.getQuests().put(mainQuest.getParentQuestId(), mainQuest);
 		}
 	}
