@@ -119,6 +119,17 @@ final class ToolsWithLanguageOption {
 			}
 			writer.println();
 
+            list = new ArrayList<>(GameData.getGadgetDataMap().keySet());
+            Collections.sort(list);
+
+            writer.println("// Gadget");
+            for (Integer id : list) {
+                GadgetData data = GameData.getGadgetDataMap().get(id);
+                writer.println(data.getId() + " : " + data.getJsonName());
+            }
+
+            writer.println();
+            
 			list = new ArrayList<>(GameData.getAvatarDataMap().keySet());
 			Collections.sort(list); 
 			 
