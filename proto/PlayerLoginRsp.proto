@@ -1,48 +1,64 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "BlockInfo.proto";
 import "FeatureBlockInfo.proto";
 import "ResVersionConfig.proto";
 import "ShortAbilityHashPair.proto";
 
-// CmdId: 137
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 135
 // EnetChannelId: 0
 // EnetIsReliable: true
 message PlayerLoginRsp {
-	int32 retcode = 1;
-	bytes player_data = 6;
-	bool is_new_player = 11;
-	uint32 target_uid = 15;
-	uint64 login_rand = 12;
-	bool is_use_ability_hash = 3;
-	int32 ability_hash_code = 7;
-	map<string, int32> ability_hash_map = 13;
-	uint32 client_data_version = 14;
-	bool is_relogin = 2;
-	uint32 client_silence_data_version = 10;
-	string game_biz = 9;
-	uint32 player_data_version = 8;
-	string client_md_5 = 1706;
-	string client_silence_md_5 = 271;
-	ResVersionConfig res_version_config = 933;
-	map<uint32, BlockInfo> block_info_map = 1156;
-	string client_version_suffix = 1984;
-	string client_silence_version_suffix = 49;
-	repeated ShortAbilityHashPair short_ability_hash_map = 364;
-	bytes sc_info = 2014;
-	bool is_audit = 1545;
-	bool is_sc_open = 1974;
-	string register_cps = 715;
-	repeated FeatureBlockInfo feature_block_info_list = 408;
-	bool is_data_need_relogin = 110;
-	string country_code = 1306;
-	ResVersionConfig next_res_version_config = 749;
-	string next_resource_url = 1744;
-	uint32 target_home_owner_uid = 945;
-	bool is_enable_client_hash_debug = 713;
-	bool is_transfer = 138;
-	double total_tick_time = 1923;
-	string birthday = 1977;
+	map<string, int32> ability_hash_map = 11;
+	bool is_audit = 1685;
+	bool is_new_player = 8;
+	ResVersionConfig res_version_config = 1969;
+	bool is_enable_client_hash_debug = 932;
+	string client_md_5 = 1830;
+	uint32 client_data_version = 1;
+	string country_code = 1900;
+	bool is_relogin = 10;
+	bytes player_data = 13;
+	string game_biz = 5;
+	map<uint32, BlockInfo> block_info_map = 571;
+	string register_cps = 2040;
+	ResVersionConfig next_res_version_config = 1573;
+	bool is_transfer = 2018;
+	uint32 target_home_owner_uid = 553;
+	repeated ShortAbilityHashPair short_ability_hash_map = 250;
+	int32 ability_hash_code = 12;
+	bool is_sc_open = 1429;
+	uint32 client_silence_data_version = 6;
+	string birthday = 624;
+	bool is_use_ability_hash = 2;
+	string client_silence_version_suffix = 1299;
+	uint32 player_data_version = 7;
+	bool is_data_need_relogin = 951;
+	repeated FeatureBlockInfo feature_block_info_list = 1352;
+	string client_silence_md_5 = 1746;
+	uint32 target_uid = 14;
+	double total_tick_time = 125;
+	uint64 login_rand = 4;
+	bytes sc_info = 2024;
+	string client_version_suffix = 1047;
+	string next_resource_url = 621;
+	int32 retcode = 15;
 }

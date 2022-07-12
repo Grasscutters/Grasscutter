@@ -1,32 +1,48 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "ForwardType.proto";
 import "Vector.proto";
 
-// CmdId: 332
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 307
 // EnetChannelId: 0
 // EnetIsReliable: true
 // IsAllowClient: true
 message EvtCreateGadgetNotify {
-	ForwardType forward_type = 8;
-	uint32 entity_id = 14;
-	uint32 config_id = 11;
-	uint32 camp_id = 13;
-	uint32 camp_type = 3;
-	Vector init_pos = 15;
-	Vector init_euler_angles = 5;
-	uint64 guid = 1;
-	uint32 owner_entity_id = 2;
-	uint32 target_entity_id = 7;
-	bool is_async_load = 9;
-	uint32 target_lock_point_index = 4;
-	uint32 room_id = 10;
-	uint32 prop_owner_entity_id = 6;
-	bool sight_group_with_owner = 12;
-	bool CEGHBCJMNFJ = 1011;
-	bool NGANCEBKNKC = 1304;
-	repeated uint32 FCFECGFHLAD = 1525;
-	repeated uint32 GEHIKJLBKAH = 1637;
+	bool is_async_load = 8;
+	uint32 camp_type = 5;
+	bool sight_group_with_owner = 10;
+	repeated uint32 Unk2700_BELOIHEIEAN = 889;
+	ForwardType forward_type = 12;
+	uint32 entity_id = 2;
+	uint32 target_entity_id = 3;
+	uint32 camp_id = 15;
+	uint64 guid = 6;
+	Vector init_euler_angles = 13;
+	uint32 target_lock_point_index = 11;
+	repeated uint32 Unk2700_JDNFLLGJBGA = 1920;
+	Vector init_pos = 4;
+	uint32 owner_entity_id = 9;
+	uint32 room_id = 7;
+	bool Unk2700_JBOPENAGGAF = 25;
+	uint32 prop_owner_entity_id = 1;
+	bool Unk2700_IHIDGKPHFME = 379;
+	uint32 config_id = 14;
 }

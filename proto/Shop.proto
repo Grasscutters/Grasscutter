@@ -1,19 +1,35 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "ShopCardProduct.proto";
 import "ShopConcertProduct.proto";
 import "ShopGoods.proto";
 import "ShopMcoinProduct.proto";
 
+option java_package = "emu.grasscutter.net.proto";
+
 message Shop {
-	uint32 shop_type = 1;
-	repeated ShopGoods goods_list = 2;
-	repeated ShopMcoinProduct mcoin_product_list = 3;
-	repeated ShopCardProduct card_product_list = 4;
-	uint32 next_refresh_time = 6;
-	uint32 city_id = 7;
-	uint32 city_reputation_level = 8;
-	repeated ShopConcertProduct concert_product_list = 9;
+	repeated ShopConcertProduct concert_product_list = 3;
+	repeated ShopGoods goods_list = 15;
+	uint32 city_reputation_level = 2;
+	repeated ShopCardProduct card_product_list = 14;
+	repeated ShopMcoinProduct mcoin_product_list = 7;
+	uint32 next_refresh_time = 11;
+	uint32 city_id = 10;
+	uint32 shop_type = 13;
 }

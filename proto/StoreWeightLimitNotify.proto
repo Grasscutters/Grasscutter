@@ -1,17 +1,33 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "StoreType.proto";
 
-// CmdId: 631
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 698
 // EnetChannelId: 0
 // EnetIsReliable: true
 message StoreWeightLimitNotify {
-	StoreType store_type = 4;
-	uint32 weight_limit = 2;
-	uint32 material_count_limit = 1;
-	uint32 weapon_count_limit = 5;
+	uint32 weapon_count_limit = 2;
+	StoreType store_type = 7;
+	uint32 material_count_limit = 4;
 	uint32 reliquary_count_limit = 6;
-	uint32 furniture_count_limit = 8;
+	uint32 furniture_count_limit = 9;
+	uint32 weight_limit = 15;
 }

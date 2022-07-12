@@ -1,55 +1,71 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "AdjustTrackingInfo.proto";
 import "TrackingIOInfo.proto";
 
-// CmdId: 141
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 112
 // EnetChannelId: 0
 // EnetIsReliable: true
 // IsAllowClient: true
 message PlayerLoginReq {
-	string token = 5;
-	string client_version = 7;
-	string system_version = 12;
-	string device_name = 3;
-	string device_uuid = 14;
-	uint32 target_uid = 15;
-	uint64 login_rand = 11;
-	bool is_editor = 2;
-	uint32 language_type = 13;
-	uint32 account_type = 1;
-	string account_uid = 8;
-	string platform = 6;
-	string device_info = 4;
-	uint32 platform_type = 10;
-	bool is_guest = 9;
-	uint32 cloud_client_ip = 233;
-	uint32 gm_uid = 1423;
-	string checksum = 485;
-	string online_id = 1974;
-	uint32 client_token = 133;
-	bytes security_cmd_reply = 96;
-	bytes extra_bin_data = 814;
-	string cps = 467;
-	uint32 channel_id = 2028;
-	uint32 sub_channel_id = 1571;
-	string checksum_client_version = 1844;
-	uint32 tag = 843;
-	TrackingIOInfo tracking_io_info = 1882;
-	string country_code = 1060;
-	uint32 client_data_version = 1570;
-	bytes environment_error_code = 1303;
-	uint32 target_home_owner_uid = 1054;
-	string psn_id = 921;
-	string client_verison_hash = 1972;
-	bool is_transfer = 1918;
-	uint32 reg_platform = 167;
-	uint32 target_home_param = 1129;
-	AdjustTrackingInfo adjust_tracking_info = 280;
-	string birthday = 174;
-	string MADLMMNJICA = 135;
-	string CCLJBEJHFOP = 745;
-	uint32 LKCFGDBHHIL = 1881;
+	uint32 language_type = 6;
+	uint32 reg_platform = 615;
+	TrackingIOInfo tracking_io_info = 1660;
+	uint32 account_type = 13;
+	string token = 15;
+	bytes extra_bin_data = 1458;
+	uint32 channel_id = 1314;
+	uint32 client_data_version = 688;
+	string account_uid = 2;
+	string client_version = 12;
+	string Unk2700_NGKCNPKKIKB = 772;
+	string country_code = 2000;
+	string psn_id = 1268;
+	uint32 Unk2700_GPPBEMDGEHH = 431;
+	string device_name = 9;
+	string cps = 1163;
+	uint64 login_rand = 3;
+	uint32 target_home_param = 984;
+	AdjustTrackingInfo adjust_tracking_info = 1816;
+	bool is_transfer = 908;
+	uint32 tag = 1787;
+	bool is_guest = 5;
+	bytes environment_error_code = 2026;
+	string online_id = 903;
+	bool is_editor = 8;
+	string checksum_client_version = 861;
+	bytes security_cmd_reply = 1995;
+	string Unk2700_JNDKPBBCACB = 1213;
+	string birthday = 1652;
+	string device_uuid = 4;
+	uint32 client_token = 1546;
+	uint32 sub_channel_id = 23;
+	uint32 target_uid = 11;
+	string device_info = 1;
+	string client_verison_hash = 1707;
+	string checksum = 1532;
+	uint32 platform_type = 14;
+	uint32 target_home_owner_uid = 1864;
+	uint32 cloud_client_ip = 1335;
+	uint32 gm_uid = 612;
+	string system_version = 10;
+	string platform = 7;
 }
