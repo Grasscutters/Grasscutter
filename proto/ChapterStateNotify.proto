@@ -8,18 +8,18 @@ import "ChapterState.proto";
 // EnetChannelId: 0
 // EnetIsReliable: true
 message ChapterStateNotify {
-	uint32 chapter_id = 1;
-	ChapterState chapter_state = 12;
-	NeedPlayerLevel need_player_level = 10;
-	NeedBeginTime need_begin_time = 14;
+    uint32 chapter_id = 1;
+    ChapterState chapter_state = 12;
+    NeedPlayerLevel need_player_level = 10;
+    NeedBeginTime need_begin_time = 14;
 
-	message NeedPlayerLevel {
-		bool is_limit = 1;
-		uint32 config_need_player_level = 2;
-	}
+    message NeedPlayerLevel {
+        bool is_limit = 3;
+        uint32 config_need_player_level = 10;
+    }
 
-	message NeedBeginTime {
-		bool is_limit = 1;
-		uint32 config_need_begin_time = 2;
-	}
+    message NeedBeginTime {
+        bool is_limit = 13;
+        uint32 config_need_begin_time = 6;
+    }
 }

@@ -1,20 +1,36 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 syntax = "proto3";
+
+import "ClientCollectorData.proto";
+import "OneofGatherPointDetectorData.proto";
+import "SkyCrystalDetectorQuickUseResult.proto";
 
 option java_package = "emu.grasscutter.net.proto";
 
-//import "AHCELAJGOLN.proto";
-import "ClientCollectorData.proto";
-import "OneoffGatherPointDetectorData.proto";
-
-// CmdId: 4252
+// CmdId: 4270
 // EnetChannelId: 0
 // EnetIsReliable: true
 message QuickUseWidgetRsp {
-	int32 retcode = 9;
-	uint32 material_id = 1;
-	oneof ELHGGAPPEBG {
-		OneoffGatherPointDetectorData detector_data = 11;
-		ClientCollectorData client_collector_data = 3;
-		//AHCELAJGOLN sky_crystal_detector_quick_use_result = 32767;
+	uint32 material_id = 6;
+	int32 retcode = 5;
+	oneof param {
+		OneofGatherPointDetectorData detector_data = 3;
+		ClientCollectorData client_collector_data = 15;
+		SkyCrystalDetectorQuickUseResult sky_crystal_detector_quick_use_result = 168922;
 	}
 }

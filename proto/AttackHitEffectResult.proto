@@ -1,12 +1,28 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
 message AttackHitEffectResult {
-	uint32 hit_eff_level = 1;
-	float retreat_strength = 2;
-	float air_strength = 3;
-	float hit_halt_time = 4;
-	float hit_halt_time_scale = 5;
-	uint32 original_hit_eff_level = 6;
+	float hit_halt_time_scale = 8;
+	uint32 original_hit_eff_level = 12;
+	float air_strength = 15;
+	uint32 hit_eff_level = 2;
+	float hit_halt_time = 13;
+	float retreat_strength = 7;
 }

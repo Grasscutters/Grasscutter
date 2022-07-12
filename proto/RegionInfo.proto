@@ -1,8 +1,24 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.proto";
-
 import "ResVersionConfig.proto";
+
+option java_package = "emu.grasscutter.net.proto";
 
 message RegionInfo {
 	string gateserver_ip = 1;
@@ -18,8 +34,8 @@ message RegionInfo {
 	uint32 client_data_version = 14;
 	string handbook_url = 16;
 	uint32 client_silence_data_version = 18;
-	string client_data_md5 = 19;
-	string client_silence_data_md5 = 20;
+	string client_data_md_5 = 19;
+	string client_silence_data_md_5 = 20;
 	ResVersionConfig res_version_config = 22;
 	bytes secret_key = 23;
 	string official_community_url = 24;
