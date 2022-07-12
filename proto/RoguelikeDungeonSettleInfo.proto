@@ -1,15 +1,31 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "RoguelikeSettleCoinInfo.proto";
 
+option java_package = "emu.grasscutter.net.proto";
+
 message RoguelikeDungeonSettleInfo {
-	uint32 stage_id = 1;
-	uint32 cur_level = 2;
+	uint32 stage_id = 5;
+	bool is_final_level = 15;
 	map<uint32, RoguelikeSettleCoinInfo> finished_challenge_cell_num_map = 3;
-	bool is_final_level = 4;
-	uint32 total_coin_b_num = 5;
-	uint32 total_coin_c_num = 6;
-	bool is_coin_c_reach_limit = 7;
+	bool is_coin_c_reach_limit = 13;
+	uint32 cur_level = 9;
+	uint32 total_coin_b_num = 6;
+	uint32 total_coin_c_num = 10;
 }
