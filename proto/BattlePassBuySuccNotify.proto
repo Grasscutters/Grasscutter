@@ -8,8 +8,8 @@ import "ItemParam.proto";
 // EnetChannelId: 0
 // EnetIsReliable: true
 message BattlePassBuySuccNotify {
-	uint32 schedule_id = 7;
-	uint32 product_play_type = 9;
-	repeated ItemParam item_list = 6;
-	uint32 add_point = 2;
+	uint32 schedule_id = 4;
+	uint32 product_play_type = 11;
+	repeated ItemParam item_list = 9;
+	uint32 add_point = 12;
 }

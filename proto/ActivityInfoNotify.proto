@@ -9,5 +9,5 @@ import "ActivityInfo.proto";
 // EnetIsReliable: true
 // IsAllowClient: true
 message ActivityInfoNotify {
-	ActivityInfo activity_info = 11;
+	ActivityInfo activity_info = 9;
 }
