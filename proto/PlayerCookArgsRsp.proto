@@ -2,10 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-// CmdId: 105
+// CmdId: 168
 // EnetChannelId: 0
 // EnetIsReliable: true
 message PlayerCookArgsRsp {
-	int32 retcode = 1;
-	float qte_range_ratio = 15;
+	int32 retcode = 4;
+	float qte_range_ratio = 12;
 }
