@@ -29,7 +29,8 @@ jobs:
       # - name: Fetch this repo's LintRatchet branch
       #   run: git fetch origin LintRatchet:LintRatchet
       - run: git checkout LintRatchet
-      - run: git merge development
+      # - run: git merge development
+      - run: git reset --hard development
       - run: git stash pop
       - run: git add -u
       - run: git commit -m 'Fix whitespace [skip actions]'
@@ -37,4 +38,4 @@ jobs:
         run: python manage_languages.py -u
       - run: git add -u
       - run: git commit -m 'Update languages [skip actions]'
-      - run: git push --set-upstream origin LintRatchet
+      - run: git push --set-upstream --force origin LintRatchet
