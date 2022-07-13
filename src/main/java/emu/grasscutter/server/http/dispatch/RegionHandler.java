@@ -11,6 +11,7 @@ import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.server.http.objects.QueryCurRegionRspJson;
 import emu.grasscutter.utils.Crypto;
+import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 import express.Express;
 import express.http.Request;
@@ -19,6 +20,11 @@ import io.javalin.Javalin;
 
 import javax.crypto.Cipher;
 import java.io.ByteArrayOutputStream;
+import java.security.KeyFactory;
+import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.security.Signature;
@@ -139,9 +145,8 @@ public final class RegionHandler implements Router {
             try {
                 QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData); event.call();
 
-                if (GAME_OPTIONS.uaPatchCompatible) {
+                if (request.query("dispatchSeed") == null) {
                     // More love for UA Patch players
-
                     var rsp = new QueryCurRegionRspJson();
 
                     rsp.content = event.getRegionInfo();
