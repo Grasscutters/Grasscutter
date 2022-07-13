@@ -5,8 +5,8 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 
 public class PacketHomeUnknown2Rsp extends BasePacket {
 
-	public PacketHomeUnknown2Rsp() {
-		super(PacketOpcodes.HomeUnknown2Rsp);
+    public PacketHomeUnknown2Rsp() {
+        super(PacketOpcodes.Unk2700_KIIOGMKFNNP_ServerRsp);
 
-	}
+    }
 }

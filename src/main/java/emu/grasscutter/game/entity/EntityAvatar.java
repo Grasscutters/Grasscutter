@@ -125,7 +125,7 @@ public class EntityAvatar extends GameEntity {
 		
 		if (healed > 0f) {
 			getScene().broadcastPacket(
-				new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP, healed, PropChangeReason.PROP_CHANGE_REASON_ABILITY, ChangeHpReason.CHANGE_HP_REASON_CHANGE_HP_ADD_ABILITY)
+				new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP, healed, PropChangeReason.PROP_CHANGE_REASON_ABILITY, ChangeHpReason.CHANGE_HP_REASON_ADD_ABILITY)
 			);
 		}
 		
