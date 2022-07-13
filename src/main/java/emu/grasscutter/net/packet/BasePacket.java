@@ -84,7 +84,7 @@ public class BasePacket {
 		if (this.getHeader() != null && clientSequence == 0) {
 			return this;
 		}
-		setHeader(PacketHead.newBuilder().setClientSequenceId(clientSequence).setTimestamp(System.currentTimeMillis()).build().toByteArray());
+		setHeader(PacketHead.newBuilder().setClientSequenceId(clientSequence).setSentMs(System.currentTimeMillis()).build().toByteArray());
 		return this;
 	}
 	

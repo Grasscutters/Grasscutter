@@ -16,6 +16,6 @@ public class HandlerGetAllMailReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         GetAllMailReqOuterClass.GetAllMailReq req = GetAllMailReqOuterClass.GetAllMailReq.parseFrom(payload);
-        session.send(new PacketGetAllMailRsp(session.getPlayer(), req.getANKKGPJCINB()));
+        session.send(new PacketGetAllMailRsp(session.getPlayer(), req.getUnk2700OPEHLDAGICF()));
     }
 }
