@@ -125,7 +125,7 @@ final class ToolsWithLanguageOption {
             writer.println("// Gadget");
 
             Map<Integer, String> Gadget;
-            try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(DATA("Gadget"+language+".json"))), StandardCharsets.UTF_8)) {
+            try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(DATA("Mapping/Gadget"+language+".json"))), StandardCharsets.UTF_8)) {
                 Gadget = Grasscutter.getGsonFactory().fromJson(fileReader, new TypeToken<Map<Integer, String>>() {}.getType());
             }
 
