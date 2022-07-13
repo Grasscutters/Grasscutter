@@ -11,18 +11,18 @@ import "Vector3Int.proto";
 // EnetIsReliable: true
 // IsAllowClient: true
 message QueryPathReq {
-	OptionType query_type = 9;
-	int32 query_id = 4;
-	uint32 scene_id = 8;
-	Vector source_pos = 14;
-	repeated Vector destination_pos = 11;
-	QueryFilter filter = 5;
-	Vector3Int destination_extend = 7;
-	Vector3Int source_extend = 15;
+    OptionType query_type = 13;
+    int32 query_id = 15;
+    uint32 scene_id = 11;
+    Vector source_pos = 2;
+    repeated Vector destination_pos = 10;
+    QueryFilter filter = 12;
+    Vector3Int destination_extend = 4;
+    Vector3Int source_extend = 6;
 
-	enum OptionType {
-		OPTION_TYPE_NONE = 0;
-		OPTION_TYPE_NORMAL = 1;
-		OPTION_TYPE_FIRST_CAN_GO = 2;
-	}
+    enum OptionType {
+        OPTION_TYPE_NONE = 0;
+        OPTION_TYPE_NORMAL = 1;
+        OPTION_TYPE_FIRST_CAN_GO = 2;
+    }
 }
