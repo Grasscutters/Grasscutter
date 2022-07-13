@@ -101,9 +101,29 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 
         // Only >= 2.7.50 has this
         if (req.getKeyId() > 0) {
-            if (GAME_OPTIONS.uaPatchCompatible) {
-                // More love for ua patch plz 😭
+            try {
+                Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+                cipher.init(Cipher.DECRYPT_MODE, Crypto.CUR_SIGNING_KEY);
 
+                var client_seed_encrypted = Utils.base64Decode(req.getClientSeed());
+                var client_seed = ByteBuffer.wrap(cipher.doFinal(client_seed_encrypted))
+                    .getLong();
+
+                byte[] seed_bytes = ByteBuffer.wrap(new byte[8])
+                    .putLong(Crypto.ENCRYPT_SEED ^ client_seed)
+                    .array();
+
+                //Kind of a hack, but whatever
+                cipher.init(Cipher.ENCRYPT_MODE, req.getKeyId() == 3 ? Crypto.CUR_OS_ENCRYPT_KEY : Crypto.CUR_CN_ENCRYPT_KEY);
+                var seed_encrypted = cipher.doFinal(seed_bytes);
+
+                Signature privateSignature = Signature.getInstance("SHA256withRSA");
+                privateSignature.initSign(Crypto.CUR_SIGNING_KEY);
+                privateSignature.update(seed_bytes);
+
+                session.send(new PacketGetPlayerTokenRsp(session, Utils.base64Encode(seed_encrypted), Utils.base64Encode(privateSignature.sign())));
+            } catch (Exception ignore) {
+                // Only UA Patch users will have exception
                 byte[] clientBytes = Utils.base64Decode(req.getClientSeed());
                 byte[] seed = ByteHelper.longToBytes(Crypto.ENCRYPT_SEED);
                 Crypto.xor(clientBytes, seed);
@@ -111,29 +131,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
                 String base64str = Utils.base64Encode(clientBytes);
 
                 session.send(new PacketGetPlayerTokenRsp(session, base64str, "bm90aGluZyBoZXJl"));
-                return;
             }
-
-            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
-            cipher.init(Cipher.DECRYPT_MODE, Crypto.CUR_SIGNING_KEY);
-
-            var client_seed_encrypted = Utils.base64Decode(req.getClientSeed());
-            var client_seed = ByteBuffer.wrap(cipher.doFinal(client_seed_encrypted))
-                .getLong();
-
-            byte[] seed_bytes = ByteBuffer.wrap(new byte[8])
-                .putLong(Crypto.ENCRYPT_SEED ^ client_seed)
-                .array();
-
-            //Kind of a hack, but whatever
-            cipher.init(Cipher.ENCRYPT_MODE, req.getKeyId() == 3 ? Crypto.CUR_OS_ENCRYPT_KEY : Crypto.CUR_CN_ENCRYPT_KEY);
-            var seed_encrypted = cipher.doFinal(seed_bytes);
-
-            Signature privateSignature = Signature.getInstance("SHA256withRSA");
-            privateSignature.initSign(Crypto.CUR_SIGNING_KEY);
-            privateSignature.update(seed_bytes);
-
-            session.send(new PacketGetPlayerTokenRsp(session, Utils.base64Encode(seed_encrypted), Utils.base64Encode(privateSignature.sign())));
         }
         else {
             // Send packet
