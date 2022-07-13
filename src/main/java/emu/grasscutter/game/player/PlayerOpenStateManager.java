@@ -20,12 +20,13 @@ public class PlayerOpenStateManager {
 
     @Transient private Player player;
     @Getter private Map<Integer,Integer> openStateMap;
+     /*
     //DO NOT MODIFY. Based on conversation of official server and client, game version 2.7
     private static Set<OpenState> newPlayerOpenStates = Set.of(OPEN_STATE_DERIVATIVE_MALL,OPEN_STATE_PHOTOGRAPH,OPEN_STATE_BATTLE_PASS,OPEN_STATE_SHOP_TYPE_GENESISCRYSTAL,OPEN_STATE_SHOP_TYPE_RECOMMANDED,
         OPEN_STATE_SHOP_TYPE_GIFTPACKAGE,OPEN_STATE_GUIDE_RELIC_PROM,OPEN_STATE_GUIDE_TALENT,OPEN_STATE_SHOP_TYPE_BLACKSMITH,OPEN_STATE_SHOP_TYPE_PAIMON,OPEN_STATE_WEAPON_AWAKEN,
         OPEN_STATE_WEAPON_PROMOTE,OPEN_STATE_AVATAR_PROMOTE,OPEN_STATE_AVATAR_TALENT,OPEN_STATE_WEAPON_UPGRADE,OPEN_STATE_RESIN,OPEN_STATE_RELIQUARY_UPGRADE,
         OPEN_STATE_SHOP_TYPE_VIRTUAL_SHOP,OPEN_STATE_RELIQUARY_PROMOTE);
-
+    */
       //For development. Remove entry when properly implemented
     private static Set<OpenState> devOpenStates = Set.of(
         OPEN_STATE_NONE,
