@@ -123,9 +123,19 @@ final class ToolsWithLanguageOption {
             Collections.sort(list);
 
             writer.println("// Gadget");
+
+            Map<Integer, String> Gadget;
+            try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(DATA("Gadget"+language+".json"))), StandardCharsets.UTF_8)) {
+                Gadget = Grasscutter.getGsonFactory().fromJson(fileReader, new TypeToken<Map<Integer, String>>() {}.getType());
+            }
+
             for (Integer id : list) {
                 GadgetData data = GameData.getGadgetDataMap().get(id);
-                writer.println(data.getId() + " : " + data.getJsonName());
+                if(language.equalsIgnoreCase("en")){
+                    writer.println(data.getId() + " : " + (data.getJsonName().equals("") ? "null" : data.getJsonName()));
+                } else {
+                    writer.println(data.getId() + " : " + (Gadget.get(data.getId()) != null ? Gadget.get(data.getId()) : (data.getJsonName().equals("") ? "null" : data.getJsonName())));
+                }
             }
 
             writer.println();
