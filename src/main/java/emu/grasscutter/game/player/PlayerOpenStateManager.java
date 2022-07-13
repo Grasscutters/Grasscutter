@@ -29,7 +29,6 @@ public class PlayerOpenStateManager {
     */
       //For development. Remove entry when properly implemented
     private static Set<OpenState> devOpenStates = Set.of(
-        OPEN_STATE_NONE,
         OPEN_STATE_PAIMON,
         OPEN_STATE_PAIMON_NAVIGATION,
         OPEN_STATE_AVATAR_PROMOTE,
