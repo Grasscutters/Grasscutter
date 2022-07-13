@@ -37,11 +37,11 @@ import emu.grasscutter.game.props.FightProperty;
 
 public class AbilityManager {
 	private Player player;
-    HealAbilityManager healAbilityManager;
+    HSDAbilityManager hSDAbilityManager;
 	
 	public AbilityManager(Player player) {
 		this.player = player;
-        this.healAbilityManager = new HealAbilityManager(player);
+        this.hSDAbilityManager = new HSDAbilityManager(player);
 	}
 	
 	public Player getPlayer() {
@@ -49,8 +49,6 @@ public class AbilityManager {
 	}
 
 	public void onAbilityInvoke(AbilityInvokeEntry invoke) throws Exception {
-        healAbilityManager.healHandler(invoke);
-
 		 //Grasscutter.getLogger().info(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + Utils.bytesToHex(invoke.toByteArray()));
 		switch (invoke.getArgumentType()) {
 			case ABILITY_INVOKE_ARGUMENT_META_OVERRIDE_PARAM:
@@ -101,6 +99,8 @@ public class AbilityManager {
 	}
 	
 	private void handleModifierChange(AbilityInvokeEntry invoke) throws Exception {
+        hSDAbilityManager.healHandler(invoke);
+
 		// Sanity checks
 		GameEntity target = player.getScene().getEntityById(invoke.getEntityId());
 		if (target == null) {

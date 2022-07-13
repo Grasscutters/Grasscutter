@@ -32,7 +32,8 @@ import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.game.props.FightProperty;
 
-public class HealAbilityManager {
+//HSDAbilityManager: Heal and Self-Damage Ability Manager
+public class HSDAbilityManager {
     private class HealData {
         public boolean isString = true;
         public String abilityType = ""; //"E" or "Q"
@@ -88,8 +89,9 @@ public class HealAbilityManager {
 
     ArrayList<HealDataAvatar> healDataAvatarList;
 	private Player player;
+    public static int skillId = 0;
     
-    public HealAbilityManager (Player player) {
+    public HSDAbilityManager (Player player) {
 		this.player = player;
         healDataAvatarList = new ArrayList();
         healDataAvatarList.add(new HealDataAvatar(10000054, "Kokomi", 0).addHealData("E", "ElementalArt_Heal_MaxHP_Base_Percentage", "ElementalArt_Heal_Base_Amount", false).addHealData("Q", "Avatar_Kokomi_ElementalBurst_Heal", 0.0172f, 212f, false));
@@ -122,10 +124,10 @@ public class HealAbilityManager {
 			modifierString = data.getParentAbilityName().getStr();
 
         if(sourceEntity != null)
-            checkAndHeal(sourceEntity, modifierString);
+            checkAndHSD(sourceEntity, modifierString);
     }
 
-    public void checkAndHeal(GameEntity sourceEntity, String modifierString) {
+    public void checkAndHSD(GameEntity sourceEntity, String modifierString) {
         int fightPropertyType = 0;
         float healAmount = 0;
         float ratio = 0, base = 0;
@@ -140,6 +142,7 @@ public class HealAbilityManager {
 
                 for(int j = 0 ; j < healDataList.size(); j++) {
                     HealData healData = healDataList.get(j);
+
                     if(map.containsKey(healData.sRatio) || modifierString.equals(healData.sRatio)) {
                         if(healData.isString) {
                             ratio = map.get(healData.sRatio);
@@ -178,9 +181,16 @@ public class HealAbilityManager {
                         curAttack = healActionAvatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK);
                         curDefense = healActionAvatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE);
 
-                        //Special case for Hu Tao:
+                        //Special case for Q skill of Hu Tao
                         if(healDataAvatar.avatarName.equals("Hutao") && curHP <= maxHP * 0.5 && ratio != 0) {
                             ratio = 0.1555f;
+                        }
+
+                        //Special case for E skill of Hu Tao
+                        if(healDataAvatar.avatarName.equals("Hutao") && skillId == 10462) {
+                            skillId = 0;
+                            float damageAmount = curHP * 0.3f;
+                            currentAvatar.damage(damageAmount);
                         }
 
                         switch(fightPropertyType) {
