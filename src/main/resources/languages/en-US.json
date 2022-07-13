@@ -28,6 +28,8 @@
         "login_token_attempt": "[Dispatch] Client %s is trying to log in via token.",
         "login_token_error": "[Dispatch] Client %s failed to log in via token.",
         "login_token_success": "[Dispatch] Client %s logged in via token as %s.",
+        "login_password_error": "[Dispatch] Client %s failed to log in via password.",
+        "login_password_storage_error": "[Dispatch] Client %s failed to log in via password because there is no password in the database.",
         "combo_token_success": "[Dispatch] Client %s succeed to exchange combo token.",
         "combo_token_error": "[Dispatch] Client %s failed to exchange combo token.",
         "account_login_create_success": "[Dispatch] Client %s failed to log in: Account %s created.",
@@ -37,6 +39,9 @@
         "session_key_error": "Wrong session key.",
         "username_error": "Username not found.",
         "username_create_error": "Username not found, create failed.",
+        "password_error": "Invalid Password",
+        "password_length_error": "Password length must be greater then or equal to 8",
+        "password_storage_error": "You don't have a password for your account. Please contact an administrator.",
         "server_max_player_limit": "The number of online players has reached the limit"
       },
       "router_error": "[Dispatch] Unable to attach router."

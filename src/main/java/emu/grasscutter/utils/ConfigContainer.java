@@ -112,6 +112,7 @@ public class ConfigContainer {
 
     public static class Account {
         public boolean autoCreate = false;
+        public boolean EXPERIMENTAL_RealPassword = false;
         public String[] defaultPermissions = {};
         public int maxPlayer = -1;
     }
@@ -210,6 +211,7 @@ public class ConfigContainer {
             public int cap = 160;
             public int rechargeTime = 480;
         }
+        public boolean uaPatchCompatible = false;
     }
 
     public static class JoinOptions {
