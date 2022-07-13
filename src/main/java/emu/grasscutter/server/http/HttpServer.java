@@ -11,7 +11,7 @@ import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 
 import java.io.File;
-import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 import static emu.grasscutter.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
@@ -126,15 +126,16 @@ public final class HttpServer {
 
     /**
      * Starts listening on the HTTP server.
+     * @throws UnsupportedEncodingException
      */
-    public void start() {
+    public void start() throws UnsupportedEncodingException {
         // Attempt to start the HTTP server.
         if(HTTP_INFO.bindAddress.equals("")){
             this.express.listen(HTTP_INFO.bindPort);
         }else{
             this.express.listen(HTTP_INFO.bindAddress, HTTP_INFO.bindPort);
         }
-        
+
         // Log bind information.
         Grasscutter.getLogger().info(translate("messages.dispatch.port_bind", Integer.toString(this.express.raw().port())));
     }
