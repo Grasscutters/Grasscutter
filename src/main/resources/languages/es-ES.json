@@ -118,7 +118,7 @@
       "description": "Modifica las cuentas de usuario"
     },
     "clear": {
-      "command_usage": "Uso: clear <all|wp|art|mat>",
+      "command_usage": "Uso: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Eliminadas las armas para %s.",
       "artifacts": "Eliminados los artefactos para %s.",
       "materials": "Eliminados los materiales para %s.",

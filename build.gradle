@@ -93,8 +93,8 @@ dependencies {
 
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
-	testCompileOnly 'org.projectlombok:lombok:1.18.24'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 configurations.all {
@@ -103,7 +103,7 @@ configurations.all {
 
 application {
     // Define the main class for the application
-    mainClassName = 'emu.grasscutter.Grasscutter'
+    getMainClass().set('emu.grasscutter.Grasscutter')
 }
 
 
@@ -112,8 +112,10 @@ jar {
         attributes 'Main-Class': 'emu.grasscutter.Grasscutter'
     }
 
-    jar.baseName = 'grasscutter'
-    jar.archiveName = project.hasProperty('jarFilename') ? "${jarFilename}.${extension}" : archiveName
+    archiveBaseName = 'grasscutter'
+    if (project.hasProperty('jarFilename')) {
+        archiveFileName = "${jarFilename}.${extension}"
+    }
 
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
@@ -125,7 +127,7 @@ jar {
         include '*.xml'
     }
 
-    destinationDir = file(".")
+    destinationDirectory = file(".")
 }
 
 publishing {

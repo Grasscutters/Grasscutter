@@ -126,7 +126,7 @@
       "description": "向所有在线玩家发送公告，或者管理服务器的公告"
     },
     "clear": {
-      "command_usage": "用法：clear <all|wp|art|mat>\nall: 所有, wp: 武器, art: 圣遗物, mat: 材料",
+      "command_usage": "用法：clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]\nall: 所有, wp: 武器, art: 圣遗物, mat: 材料",
       "weapons": "已清除 %s 的武器。",
       "artifacts": "已清除 %s 的圣遗物。",
       "materials": "已清除 %s 的材料。",

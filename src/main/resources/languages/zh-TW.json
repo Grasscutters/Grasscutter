@@ -117,7 +117,7 @@
       "description": "建立或刪除帳號。"
     },
     "clear": {
-      "command_usage": "用法： clear <all|wp|art|mat>",
+      "command_usage": "用法： clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "已將 %s 的武器清空。",
       "artifacts": "已將 %s 的聖遺物清空。",
       "materials": "已將 %s 的材料清空。",

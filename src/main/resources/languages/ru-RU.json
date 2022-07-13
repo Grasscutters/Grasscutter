@@ -131,7 +131,7 @@
       "description": "Изменяет текущую сцену"
     },
     "clear": {
-      "command_usage": "Применение: clear <all|wp|art|mat>",
+      "command_usage": "Применение: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Удалены оружия у %s.",
       "artifacts": "Удалены артефакты у %s.",
       "materials": "Удалены материалы у %s.",

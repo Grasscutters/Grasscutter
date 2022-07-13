@@ -12,6 +12,7 @@ public class ForgeData extends GameResource {
     private int id;
     private int playerLevel;
     private int forgeType;
+    private int showItemId;
     private int resultItemId;
     private int resultItemCount;
     private int forgeTime;
@@ -64,6 +65,10 @@ public class ForgeData extends GameResource {
 
     public List<ItemParamData> getMaterialItems() {
         return materialItems;
+    }
+
+    public int getShowItemId() {
+        return showItemId;
     }
 
     @Override

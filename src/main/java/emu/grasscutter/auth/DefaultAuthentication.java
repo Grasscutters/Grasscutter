@@ -31,7 +31,7 @@ public final class DefaultAuthentication implements AuthenticationSystem {
 
     @Override
     public Account verifyUser(String details) {
-        Grasscutter.getLogger().info(translate("dispatch.authentication.default_unable_to_verify"));
+        Grasscutter.getLogger().info(translate("messages.dispatch.authentication.default_unable_to_verify"));
         return null;
     }
 
