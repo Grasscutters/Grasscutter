@@ -37,9 +37,12 @@ public class QuestData extends GameResource {
 	private List<QuestExecParam> finishExec;
 	private List<QuestExecParam> failExec;
 
+    //ResourceLoader not happy if you remove getId() ~~
 	public int getId() {
 		return subId;
 	}
+    //Added getSubId() for clarity
+    public int getSubId() {return subId;}
 
 	public int getMainId() {
 		return mainId;
@@ -62,7 +65,7 @@ public class QuestData extends GameResource {
 	}
 
 	public LogicType getAcceptCondComb() {
-		return acceptCondComb;
+		return acceptCondComb == null ? LogicType.LOGIC_NONE : acceptCondComb;
 	}
 
 	public List<QuestCondition> getAcceptCond() {
@@ -70,7 +73,7 @@ public class QuestData extends GameResource {
 	}
 
 	public LogicType getFinishCondComb() {
-		return finishCondComb;
+		return finishCondComb == null ? LogicType.LOGIC_NONE : finishCondComb;
 	}
 
 	public List<QuestCondition> getFinishCond() {
@@ -78,7 +81,7 @@ public class QuestData extends GameResource {
 	}
 
 	public LogicType getFailCondComb() {
-		return failCondComb;
+		return failCondComb == null ? LogicType.LOGIC_NONE : failCondComb;
 	}
 
 	public List<QuestCondition> getFailCond() {

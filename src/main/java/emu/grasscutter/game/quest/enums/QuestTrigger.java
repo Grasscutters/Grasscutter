@@ -229,7 +229,7 @@ public enum QuestTrigger {
 	QUEST_EXEC_LOCK_PLAYER_WORLD_SCENE (66),
 	QUEST_EXEC_FAIL_MAINCOOP (67),
 	QUEST_EXEC_MODIFY_WEATHER_AREA (68);
-
+    //TODO add TALK_SMTH_SMTH triggers
 	private final int value;
 
 	QuestTrigger(int id) {

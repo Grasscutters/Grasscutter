@@ -1,6 +1,7 @@
 package emu.grasscutter.game.quest.content;
 
 import emu.grasscutter.data.excels.QuestData.QuestCondition;
+import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.QuestValue;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
@@ -10,7 +11,7 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ContentInteractGadget extends QuestBaseHandler {
 
 	@Override
-	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
+	public boolean execute(GameMainQuest mainQuest, QuestCondition condition, String paramStr, int... params) {
 		return params[0] == condition.getParam()[0];
 	}
 

@@ -11,7 +11,12 @@ public class ContentAddQuestProgress extends QuestBaseHandler {
 
 	@Override
 	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
-		return condition.getParam()[0] == params[0];
+        /*
+            //paramStr is a lua group, params[0] may also be a lua group!
+             questid = xxxxxx lua group = xxxxxxyy
+            count seems relevant only for lua group
+        */
+		return condition.getParam()[0] == params[0]; //missing params[1], paramStr, and count
 	}
 
 }

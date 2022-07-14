@@ -1,6 +1,7 @@
 package emu.grasscutter.game.quest.content;
 
 import emu.grasscutter.data.excels.QuestData.QuestCondition;
+import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.QuestValue;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
@@ -10,7 +11,7 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ContentGameTimeTick extends QuestBaseHandler {
 
 	@Override
-	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
+	public boolean execute(GameMainQuest mainQuest, QuestCondition condition, String paramStr, int... params) {
         var range = condition.getParamStr().split(",");
         var min = Math.min(Integer.parseInt(range[0]), Integer.parseInt(range[1]));
         var max = Math.max(Integer.parseInt(range[0]), Integer.parseInt(range[1]));

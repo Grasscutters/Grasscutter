@@ -31,32 +31,32 @@ public class DungeonManager {
 
 	public void getEntryInfo(Player player, int pointId) {
 		ScenePointEntry entry = GameData.getScenePointEntryById(player.getScene().getId(), pointId);
-		
+
 		if (entry == null) {
 			// Error
 			player.sendPacket(new PacketDungeonEntryInfoRsp());
 			return;
 		}
-		
+
 		player.sendPacket(new PacketDungeonEntryInfoRsp(player, entry.getPointData()));
 	}
 
 	public boolean enterDungeon(Player player, int pointId, int dungeonId) {
 		DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
-		
+
 		if (data == null) {
 			return false;
 		}
 		Grasscutter.getLogger().info("{}({}) is trying to enter dungeon {}" ,player.getNickname(),player.getUid(),dungeonId);
-		
+
 		int sceneId = data.getSceneId();
 		player.getScene().setPrevScene(sceneId);
-		
+
 		if (player.getWorld().transferPlayerToScene(player, sceneId, data)) {
 			player.getScene().addDungeonSettleObserver(basicDungeonSettleObserver);
-			player.getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_ENTER_DUNGEON, data.getId());
+			player.getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_ENTER_DUNGEON, data.getId());  //missing params[1]
 		}
-		
+
 		player.getScene().setPrevScenePoint(pointId);
 		player.sendPacket(new PacketPlayerEnterDungeonRsp(pointId, dungeonId));
 		return true;
@@ -81,21 +81,21 @@ public class DungeonManager {
 
 	public void exitDungeon(Player player) {
 		Scene scene = player.getScene();
-		
+
 		if (scene==null || scene.getSceneType() != SceneType.SCENE_DUNGEON) {
 			return;
 		}
-		
+
 		// Get previous scene
 		int prevScene = scene.getPrevScene() > 0 ? scene.getPrevScene() : 3;
-		
+
 		// Get previous position
 		DungeonData dungeonData = scene.getDungeonData();
 		Position prevPos = new Position(GameConstants.START_POSITION);
-		
+
 		if (dungeonData != null) {
 			ScenePointEntry entry = GameData.getScenePointEntryById(prevScene, scene.getPrevScenePoint());
-			
+
 			if (entry != null) {
 				prevPos.set(entry.getPointData().getTranPos());
 			}
@@ -108,7 +108,7 @@ public class DungeonManager {
 		player.getWorld().transferPlayerToScene(player, prevScene, prevPos);
 		player.sendPacket(new BasePacket(PacketOpcodes.PlayerQuitDungeonRsp));
 	}
-	
+
 	public void updateDailyDungeons() {
 		for (ScenePointEntry entry : GameData.getScenePointEntries().values()) {
 			entry.getPointData().updateDailyDungeon();

@@ -2,6 +2,7 @@ package emu.grasscutter.game.quest.conditions;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.excels.QuestData;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.QuestValue;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
@@ -11,8 +12,8 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ConditionQuestGlobalVarGreater extends QuestBaseHandler {
 
     @Override
-    public boolean execute(GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
-        Integer questGlobalVarValue = quest.getOwner().getQuestManager().getQuestGlobalVarValue(Integer.valueOf(params[0]));
+    public boolean execute(Player player, QuestData.QuestCondition condition, String paramStr, int... params) {
+        Integer questGlobalVarValue = player.getQuestManager().getQuestGlobalVarValue(Integer.valueOf(params[0]));
         Grasscutter.getLogger().debug("questGlobarVar {} : {}", params[0],questGlobalVarValue);
         return questGlobalVarValue.intValue() > params[1];
     }

@@ -7,10 +7,6 @@ import emu.grasscutter.game.quest.QuestValue;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 
-/*
-    Note: couldn't find any quest with this trigger, but 998 has TALK_EXEC_DEC_QUEST_GLOBAL_VAR.
-    Perhaps TALK_ extends triggers EXEC_smth_smth?
- */
 @QuestValue(QuestTrigger.QUEST_EXEC_DEC_QUEST_GLOBAL_VAR)
 public class ExecDecQuestGlobalVar extends QuestExecHandler {
     @Override
