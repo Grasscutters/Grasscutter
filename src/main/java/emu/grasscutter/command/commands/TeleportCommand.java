@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.utils.Position;
 
 import java.util.List;
@@ -54,12 +55,16 @@ public final class TeleportCommand implements CommandHandler {
         }
 
         Position target_pos = new Position(x, y, z);
-        boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, target_pos);
+        PlayerTeleportEvent event = new PlayerTeleportEvent(targetPlayer, PlayerTeleportEvent.TeleportType.COMMAND,
+            targetPlayer.getPos(), target_pos);
+        event.call();
+
+        boolean result = !event.isCanceled() || targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, event.getDestination());
         if (!result) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.exists_error"));
         } else {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.success", 
-                    targetPlayer.getNickname(), Float.toString(x), Float.toString(y), 
+            CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.success",
+                    targetPlayer.getNickname(), Float.toString(x), Float.toString(y),
                     Float.toString(z), Integer.toString(sceneId))
             );
         }

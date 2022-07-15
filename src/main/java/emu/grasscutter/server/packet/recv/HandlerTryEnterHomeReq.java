@@ -9,6 +9,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.TryEnterHomeReqOuterClass;
 import emu.grasscutter.scripts.data.SceneConfig;
+import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketTryEnterHomeRsp;
 import emu.grasscutter.utils.Position;
@@ -38,13 +39,17 @@ public class HandlerTryEnterHomeReq extends PacketHandler {
         Scene scene = session.getPlayer().getWorld().getSceneById(realmId);
         Position pos = scene.getScriptManager().getConfig().born_pos;
 
-        session.getPlayer().getWorld().transferPlayerToScene(
+        PlayerTeleportEvent event = new PlayerTeleportEvent(session.getPlayer(), PlayerTeleportEvent.TeleportType.WAYPOINT,
+            session.getPlayer().getPos(), pos);
+        event.call();
+
+        if(!event.isCanceled()) {
+            session.getPlayer().getWorld().transferPlayerToScene(
                 session.getPlayer(),
-                realmId,
-                pos
-        );
+                realmId, event.getDestination()
+            );
 
-
-        session.send(new PacketTryEnterHomeRsp(req.getTargetUid()));
+            session.send(new PacketTryEnterHomeRsp(req.getTargetUid()));
+        }
     }
 }
