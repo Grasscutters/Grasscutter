@@ -1,14 +1,13 @@
 package emu.grasscutter.server.event.player;
 
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.event.Cancellable;
 import emu.grasscutter.server.event.types.PlayerEvent;
 import emu.grasscutter.utils.Position;
 
 /**
  * TODO: Allow plugins to change the position of the player.
  */
-public final class PlayerMoveEvent extends PlayerEvent implements Cancellable {
+public final class PlayerMoveEvent extends PlayerEvent {
     private final MoveType type;
     private final Position from;
     private final Position to;
