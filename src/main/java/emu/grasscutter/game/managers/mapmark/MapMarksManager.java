@@ -4,6 +4,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType;
 import emu.grasscutter.net.proto.MarkMapReqOuterClass.MarkMapReq;
 import emu.grasscutter.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation;
+import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.packet.send.PacketMarkMapRsp;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.utils.Position;
@@ -74,17 +75,21 @@ public class MapMarksManager {
     }
 
     private void teleport(Player player, MapMark mapMark) {
-        float y;
-        try {
+        float y; try {
             y = (float)Integer.parseInt(mapMark.getName());
         } catch (Exception e) {
             y = 300;
         }
+
         Position pos = mapMark.getPosition();
-        player.getPos().set(pos.getX(), y, pos.getZ());
+        PlayerTeleportEvent event = new PlayerTeleportEvent(player, PlayerTeleportEvent.TeleportType.MAP,
+            player.getPos(), new Position(pos.getX(), y, pos.getZ()));
+
+        event.call(); if(event.isCanceled()) return;
+        player.getPos().set(event.getDestination());
+
         if (mapMark.getSceneId() != player.getSceneId()) {
             player.getWorld().transferPlayerToScene(player, mapMark.getSceneId(), player.getPos());
-        }
-        player.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(player));
+        } player.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(player));
     }
 }
