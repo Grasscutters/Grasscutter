@@ -11,7 +11,7 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ContentInteractGadget extends QuestBaseHandler {
 
 	@Override
-	public boolean execute(GameMainQuest mainQuest, QuestCondition condition, String paramStr, int... params) {
+	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
 		return params[0] == condition.getParam()[0];
 	}
 

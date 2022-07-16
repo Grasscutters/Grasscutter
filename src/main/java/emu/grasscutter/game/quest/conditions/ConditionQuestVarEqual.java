@@ -12,8 +12,8 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ConditionQuestVarEqual extends QuestBaseHandler {
 
     @Override
-    public boolean execute(GameMainQuest mainQuest, QuestData.QuestCondition condition, String paramStr, int... params) {
-        int questVarValue = mainQuest.getQuestVars()[params[0]];
+    public boolean execute(GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
+        int questVarValue = quest.getMainQuest().getQuestVars()[params[0]];
         Grasscutter.getLogger().debug("questVar {} : {}", params[0],questVarValue);
         return questVarValue == params[1];
     }

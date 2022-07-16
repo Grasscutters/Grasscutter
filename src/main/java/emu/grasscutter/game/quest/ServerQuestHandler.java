@@ -59,7 +59,7 @@ public class ServerQuestHandler {
 
 	// TODO make cleaner
 
-	public boolean triggerCondition(GameQuest quest, QuestCondition condition, String paramStr, int... params) throws ExecutionControl.NotImplementedException {
+	public boolean triggerCondition(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
 		QuestBaseHandler handler = condHandlers.get(condition.getType().getValue());
 
 		if (handler == null || quest.getQuestData() == null) {
@@ -70,29 +70,7 @@ public class ServerQuestHandler {
 		return handler.execute(quest, condition, paramStr, params);
 	}
 
-    public boolean triggerCondition(Player player, QuestCondition condition, String paramStr, int... params) throws ExecutionControl.NotImplementedException {
-        QuestBaseHandler handler = condHandlers.get(condition.getType().getValue());
-
-        if (handler == null || player == null) {
-            Grasscutter.getLogger().debug("Could not trigger condition {} for player {}", condition.getType().getValue(), player);
-            return false;
-        }
-
-        return handler.execute(player, condition, paramStr, params);
-    }
-
-    public boolean triggerCondition(GameMainQuest mainQuest, QuestCondition condition, String paramStr, int... params) throws ExecutionControl.NotImplementedException {
-        QuestBaseHandler handler = condHandlers.get(condition.getType().getValue());
-
-        if (handler == null || mainQuest == null) {
-            Grasscutter.getLogger().debug("Could not trigger condition {} for player {}", condition.getType().getValue(), mainQuest);
-            return false;
-        }
-
-        return handler.execute(mainQuest, condition, paramStr, params);
-    }
-
-	public boolean triggerContent(GameQuest quest, QuestCondition condition, String paramStr, int... params) throws ExecutionControl.NotImplementedException {
+	public boolean triggerContent(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
 		QuestBaseHandler handler = contHandlers.get(condition.getType().getValue());
 
 		if (handler == null || quest.getQuestData() == null) {
@@ -102,17 +80,6 @@ public class ServerQuestHandler {
 
 		return handler.execute(quest, condition, paramStr, params);
 	}
-
-    public boolean triggerContent(GameMainQuest mainQuest, QuestCondition condition, String paramStr, int... params) throws ExecutionControl.NotImplementedException {
-        QuestBaseHandler handler = contHandlers.get(condition.getType().getValue());
-
-        if (handler == null || mainQuest == null) {
-            Grasscutter.getLogger().debug("Could not trigger content {} at {}", condition.getType().getValue(), mainQuest);
-            return false;
-        }
-
-        return handler.execute(mainQuest, condition, paramStr, params);
-    }
 
 	public boolean triggerExec(GameQuest quest, QuestExecParam execParam, String... params) {
 		QuestExecHandler handler = execHandlers.get(execParam.getType().getValue());

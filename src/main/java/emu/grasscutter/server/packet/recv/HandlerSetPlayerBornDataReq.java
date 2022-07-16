@@ -23,11 +23,11 @@ import static emu.grasscutter.Configuration.*;
 
 @Opcodes(PacketOpcodes.SetPlayerBornDataReq)
 public class HandlerSetPlayerBornDataReq extends PacketHandler {
-	
+
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		SetPlayerBornDataReq req = SetPlayerBornDataReq.parseFrom(payload);
-		
+
 		// Sanity checks
 		int avatarId = req.getAvatarId();
 		int startingSkillDepot;
@@ -38,14 +38,14 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 		} else {
 			return;
 		}
-		
+
 		// Make sure resources folder is set
 		if (!GameData.getAvatarDataMap().containsKey(avatarId)) {
 			Grasscutter.getLogger().error("No avatar data found! Please check your ExcelBinOutput folder.");
 			session.close();
 			return;
 		}
-		
+
 		// Get player object
 		Player player = session.getPlayer();
 		player.setNickname(req.getNickName());
@@ -54,6 +54,8 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 		if (player.getAvatars().getAvatarCount() == 0) {
 			Avatar mainCharacter = new Avatar(avatarId);
 			mainCharacter.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
+            //Add new Player quests
+            player.getQuestManager().onNewPlayerCreate();
 			// Manually handle adding to team
 			player.addAvatar(mainCharacter, false);
 			player.setMainCharacterId(avatarId);
@@ -63,10 +65,10 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
 		} else {
 			return;
 		}
-		
+
 		// Login done
 		session.getPlayer().onLogin();
-		
+
 		// Born resp packet
 		session.send(new BasePacket(PacketOpcodes.SetPlayerBornDataRsp));
 

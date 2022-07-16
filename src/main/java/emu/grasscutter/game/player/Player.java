@@ -104,7 +104,6 @@ public class Player {
 	private Position rotation;
 	private PlayerBirthday birthday;
 	private PlayerCodex codex;
-    //TODO make QuestManager a database object, and move questGlobalVariables to it
     @Getter private Map<Integer,Integer> questGlobalVariables;
 	private Map<Integer, Integer> properties;
 	private Set<Integer> nameCardList;

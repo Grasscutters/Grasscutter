@@ -11,7 +11,7 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ContentGameTimeTick extends QuestBaseHandler {
 
 	@Override
-	public boolean execute(GameMainQuest mainQuest, QuestCondition condition, String paramStr, int... params) {
+	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
         var range = condition.getParamStr().split(",");
         var min = Math.min(Integer.parseInt(range[0]), Integer.parseInt(range[1]));
         var max = Math.max(Integer.parseInt(range[0]), Integer.parseInt(range[1]));

@@ -11,7 +11,9 @@ public class ContentQuestStateEqual extends QuestBaseHandler {
 
 	@Override
 	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
-        return quest.getState().getValue() == params[1];
+        GameQuest checkQuest = quest.getOwner().getQuestManager().getQuestById(condition.getParam()[0]);
+        if (checkQuest == null) {return false;}
+        return checkQuest.getState().getValue() == params[1];
 	}
 
 }

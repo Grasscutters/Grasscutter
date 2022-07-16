@@ -12,11 +12,10 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class ContentFinishPlot extends QuestBaseHandler {
 
 	@Override
-	public boolean execute(GameMainQuest mainQuest, QuestCondition condition, String paramStr, int... params) {
-        MainQuestData.TalkData talkData = mainQuest.getTalks().get(Integer.valueOf(params[0]));
-        GameQuest subQuest = mainQuest.getChildQuestById(params[0]);
-        if(talkData == null && subQuest == null) {return false;}
-        return true;
-	}
+	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
+        MainQuestData.TalkData talkData = quest.getMainQuest().getTalks().get(Integer.valueOf(params[0]));
+        GameQuest subQuest = quest.getMainQuest().getChildQuestById(params[0]);
+        return talkData != null || subQuest != null;
+    }
 
 }
