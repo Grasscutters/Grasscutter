@@ -474,7 +474,10 @@ public class Scene {
                 player.getPos());
 
             for (var adjacent : theAdjacent) {
-                visible.addAll(list.get(adjacent));
+                var spawns = list.get(adjacent);
+                if(spawns!=null) {
+                    visible.addAll(spawns);
+                }
             }
         }
 

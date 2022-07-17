@@ -132,8 +132,8 @@ public class SpawnDataEntry {
             for(int i=x-1; i<x+2; i++){ //  the i-1/j-1 will be -1,0,-1
                 for(int j=z-1; j<z+2; j++){
                     results[t++] = new SpawnDataEntryScaledPoint(sceneId,
-                        x+i,
-                        z+j);
+                        i,
+                        j);
                 }
             }
             return results;
