@@ -1,5 +1,10 @@
 package emu.grasscutter.game.world;
 
+import com.github.davidmoten.rtreemulti.Entry;
+import com.github.davidmoten.rtreemulti.RTree;
+import com.github.davidmoten.rtreemulti.geometry.Geometry;
+import com.github.davidmoten.rtreemulti.geometry.Point;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
@@ -9,12 +14,10 @@ import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamInfo;
-import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.quest.QuestGroupSuite;
-import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
@@ -26,10 +29,6 @@ import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import org.danilopianini.util.SpatialIndex;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -463,23 +462,21 @@ public class Scene {
 
 	// TODO - Test
 	public synchronized void checkSpawns() {
-        int RANGE = 100;
 
-		SpatialIndex<SpawnGroupEntry> list = GameDepot.getSpawnListById(this.getId());
+        RTree<ArrayList<SpawnDataEntry>, Geometry> list = GameDepot.getSpawnListById(this.getId());
 		Set<SpawnDataEntry> visible = new HashSet<>();
 
-		for (Player player : this.getPlayers()) {
+        for (Player player : this.getPlayers()) {
             Position position = player.getPos();
-			Collection<SpawnGroupEntry> entries = list.query(
-				new double[] {position.getX() - RANGE, position.getZ() - RANGE},
-				new double[] {position.getX() + RANGE, position.getZ() + RANGE}
-			);
-			for (SpawnGroupEntry entry : entries) {
-				for (SpawnDataEntry spawnData : entry.getSpawns()) {
-					visible.add(spawnData);
-				}
-			}
-		}
+            double scaledX = position.getX()/GameDepot.BLOCK_SIZE;
+            double scaledZ = position.getZ()/GameDepot.BLOCK_SIZE;
+            Iterable<Entry<ArrayList<SpawnDataEntry>, Geometry>> entries = list.nearest(
+                Point.create(scaledX,scaledZ),2,Integer.MAX_VALUE
+            );
+            for (Entry<ArrayList<SpawnDataEntry>, Geometry> find : entries) {
+                visible.addAll(find.value());
+            }
+        }
 
 		// World level
 		WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(getWorld().getWorldLevel());
