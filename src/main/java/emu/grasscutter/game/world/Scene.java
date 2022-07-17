@@ -463,18 +463,18 @@ public class Scene {
 	// TODO - Test
 	public synchronized void checkSpawns() {
 
-        RTree<ArrayList<SpawnDataEntry>, Geometry> list = GameDepot.getSpawnListById(this.getId());
+        var list
+            = GameDepot.getSpawnLists();
 		Set<SpawnDataEntry> visible = new HashSet<>();
 
         for (Player player : this.getPlayers()) {
-            Position position = player.getPos();
-            double scaledX = position.getX()/GameDepot.BLOCK_SIZE;
-            double scaledZ = position.getZ()/GameDepot.BLOCK_SIZE;
-            Iterable<Entry<ArrayList<SpawnDataEntry>, Geometry>> entries = list.nearest(
-                Point.create(scaledX,scaledZ),2,Integer.MAX_VALUE
-            );
-            for (Entry<ArrayList<SpawnDataEntry>, Geometry> find : entries) {
-                visible.addAll(find.value());
+            var theAdjacent
+                = SpawnDataEntry.SpawnDataEntryScaledPoint.getAdjacentPointsIncludePosition(
+                player.getSceneId(),
+                player.getPos());
+
+            for (var adjacent : theAdjacent) {
+                visible.addAll(list.get(adjacent));
             }
         }
 

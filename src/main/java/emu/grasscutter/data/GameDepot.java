@@ -27,7 +27,7 @@ public class GameDepot {
     private static Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot = new Int2ObjectOpenHashMap<>();
 
 	private static Map<String, AvatarConfig> playerAbilities = new HashMap<>();
-    private static Int2ObjectMap<RTree<ArrayList<SpawnDataEntry>,Geometry>> spawnLists = new Int2ObjectOpenHashMap<>();
+    private static HashMap<SpawnDataEntry.SpawnDataEntryScaledPoint, ArrayList<SpawnDataEntry>> spawnLists = new HashMap<>();
 
     public static void load() {
 		for (ReliquaryMainPropData data : GameData.getReliquaryMainPropDataMap().values()) {
@@ -68,21 +68,14 @@ public class GameDepot {
 		return relicAffixDepot.get(depot);
 	}
 
-	public static Int2ObjectMap<RTree<ArrayList<SpawnDataEntry>,Geometry>> getSpawnLists() {
-		return spawnLists;
-	}
-
-    public static void addSpawnListById(int sceneId, ArrayList<SpawnDataEntry> data, Rectangle rectangle) {
-        setSpawnListById(sceneId,getSpawnListById(sceneId).add(data,rectangle));
-	}
-
-    public static void setSpawnListById(int sceneId,RTree<ArrayList<SpawnDataEntry>,Geometry> data) {
-        getSpawnLists().put(sceneId,data);
-	}
-
-    public static RTree<ArrayList<SpawnDataEntry>, Geometry> getSpawnListById(int sceneId) {
-        return getSpawnLists().computeIfAbsent(sceneId, id -> RTree.create());
+    public static HashMap<SpawnDataEntry.SpawnDataEntryScaledPoint, ArrayList<SpawnDataEntry>> getSpawnLists() {
+        return spawnLists;
     }
+
+    public static void addSpawnListById(HashMap<SpawnDataEntry.SpawnDataEntryScaledPoint, ArrayList<SpawnDataEntry>> data) {
+        spawnLists.putAll(data);
+    }
+
 	public static void setPlayerAbilities(Map<String, AvatarConfig> playerAbilities) {
 		GameDepot.playerAbilities = playerAbilities;
 	}

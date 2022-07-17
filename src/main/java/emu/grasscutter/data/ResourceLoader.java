@@ -330,47 +330,21 @@ public class ResourceLoader {
 			return;
 		}
 
-        HashMap<Integer, HashMap<Integer,HashMap<Integer,ArrayList<SpawnDataEntry>>>> areaSort = new HashMap<>();
-        //key = (sceneId,x,z) , value = ArrayList<SpawnDataEntry>
+        HashMap<SpawnDataEntryScaledPoint, ArrayList<SpawnDataEntry>> areaSort = new HashMap<>();
+        //key = sceneId,x,z , value = ArrayList<SpawnDataEntry>
         for (SpawnGroupEntry entry : spawnEntryMap) {
             entry.getSpawns().forEach(
                 s -> {
-                    Position pos = s.getPos();
-                    int x = (int)(pos.getX()/GameDepot.BLOCK_SIZE);
-                    int z = (int)(pos.getZ()/GameDepot.BLOCK_SIZE);
-                    //
-                    int sceneId = entry.getSceneId();
-                    if(!areaSort.containsKey(sceneId)) {
-                        areaSort.put(sceneId, new HashMap<>());
+                    SpawnDataEntryScaledPoint point = s.getSpawnDataEntryScaledPoint();
+                    if(!areaSort.containsKey(point)) {
+                        areaSort.put(point, new ArrayList<>());
                     }
-                    var t = areaSort.get(sceneId);
-                    //
-                    if(!t.containsKey(x)) {
-                        t.put(x, new HashMap<>());
-                    }
-                    var t2 = t.get(x);
-                    //
-                    if(!t2.containsKey(z)) {
-                        t2.put(z,new ArrayList<>());
-                    }
-                    t2.get(z).add(s);
-                    //
+                    areaSort.get(point).add(s);
                     s.setGroup(entry);
                 }
             );
         }
-        for (var areaSort_sceneId : areaSort.entrySet()) {//sort and merge gadgets into different blocks
-            int sceneId = areaSort_sceneId.getKey();
-            for (var areaSort_x : areaSort_sceneId.getValue().entrySet()) {
-                int x = areaSort_x.getKey();
-                for (var areaSort_z : areaSort_x.getValue().entrySet()) {
-                    var data = areaSort_z.getValue();
-                    var z = areaSort_z.getKey();
-                    //GameDepot.getSpawnListById(sceneId).add(data, Rectangle.createOrdered(new double[]{x,z},new double[]{x+1,z+1}));
-                    GameDepot.addSpawnListById(sceneId,data, Point.create(x+0.5, z+0.5));
-                }
-            }
-        }
+        GameDepot.addSpawnListById(areaSort);
 	}
 
 	private static void loadOpenConfig() {
