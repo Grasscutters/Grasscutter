@@ -335,12 +335,12 @@ public class ResourceLoader {
         for (SpawnGroupEntry entry : spawnEntryMap) {
             entry.getSpawns().forEach(
                 s -> {
+                    s.setGroup(entry);
                     SpawnDataEntryScaledPoint point = s.getSpawnDataEntryScaledPoint();
                     if(!areaSort.containsKey(point)) {
                         areaSort.put(point, new ArrayList<>());
                     }
                     areaSort.get(point).add(s);
-                    s.setGroup(entry);
                 }
             );
         }
