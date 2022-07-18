@@ -62,9 +62,9 @@ public class SpawnDataEntry {
 		return rot;
 	}
 
-    public BlockId getBlockId(){
-        int scale = BlockId.getScale(gadgetId);
-        return new BlockId(group.sceneId,scale,
+    public GridBlockId getBlockId(){
+        int scale = GridBlockId.getScale(gadgetId);
+        return new GridBlockId(group.sceneId,scale,
             (int)(pos.getX() / GameDepot.BLOCK_SIZE[scale]),
             (int)(pos.getZ() / GameDepot.BLOCK_SIZE[scale])
         );
@@ -97,26 +97,26 @@ public class SpawnDataEntry {
 		}
 	}
 
-    public static class BlockId {
+    public static class GridBlockId {
         int sceneId;
+        int scale;
         int x;
         int z;
-        int scale;
 
-        public BlockId(int sceneId, int scale, int x, int z) {
+        public GridBlockId(int sceneId, int scale, int x, int z) {
             this.sceneId = sceneId;
+            this.scale = scale;
             this.x = x;
             this.z = z;
-            this.scale = scale;
         }
 
         @Override
         public String toString() {
             return "SpawnDataEntryScaledPoint{" +
                 "sceneId=" + sceneId +
+                ", scale=" + scale +
                 ", x=" + x +
                 ", z=" + z +
-                ", scale=" + scale +
                 '}';
         }
 
@@ -124,30 +124,30 @@ public class SpawnDataEntry {
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            BlockId that = (BlockId) o;
-            return sceneId == that.sceneId && x == that.x && z == that.z && scale == that.scale;
+            GridBlockId that = (GridBlockId) o;
+            return sceneId == that.sceneId && scale == that.scale && x == that.x && z == that.z;
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(sceneId, x, z,scale);
+            return Objects.hash(sceneId, scale, x, z);
         }
-        public static BlockId[] getBlockIdsIncludeCenter(int sceneId, Position pos){
-            BlockId[] results = new BlockId[9*GameDepot.BLOCK_SIZE.length];
-            for(int s:GameDepot.BLOCK_SIZE){
-                int t=0;
-                int x = ((int)(pos.getX()/ GameDepot.BLOCK_SIZE[s]));
-                int z = ((int)(pos.getZ()/GameDepot.BLOCK_SIZE[s]));
-                for(int i=x-1; i<x+2; i++){ //  the i-1/j-1 will be -1,0,-1
-                    for(int j=z-1; j<z+2; j++){
-                        results[t++] = new BlockId(sceneId,s,
-                            i,
-                            j);
+
+        public static GridBlockId[] getAdjacentGridBlockIds(int sceneId, Position pos){
+            GridBlockId[] results = new GridBlockId[5*5*GameDepot.BLOCK_SIZE.length];
+            int t=0;
+            for (int scale = 0; scale < GameDepot.BLOCK_SIZE.length; scale++) {
+                int x = ((int)(pos.getX()/GameDepot.BLOCK_SIZE[scale]));
+                int z = ((int)(pos.getZ()/GameDepot.BLOCK_SIZE[scale]));
+                for (int i=x-2; i<x+3; i++) {
+                    for (int j=z-2; j<z+3; j++) {
+                        results[t++] = new GridBlockId(sceneId, scale, i, j);
                     }
                 }
             }
             return results;
         }
+
         public static int getScale(int gadgetId){
             return 0;//you should implement here,this is index of GameDepot.BLOCK_SIZE
         }

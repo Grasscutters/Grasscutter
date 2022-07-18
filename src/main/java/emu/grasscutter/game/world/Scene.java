@@ -37,6 +37,7 @@ public class Scene {
 	private final Set<SpawnDataEntry> spawnedEntities;
 	private final Set<SpawnDataEntry> deadSpawnedEntities;
 	private final Set<SceneBlock> loadedBlocks;
+	private Set<SpawnDataEntry.GridBlockId> loadedGridBlocks;
 	private boolean dontDestroyWhenEmpty;
 
 	private int autoCloseTime;
@@ -61,6 +62,7 @@ public class Scene {
 		this.spawnedEntities = ConcurrentHashMap.newKeySet();
 		this.deadSpawnedEntities = ConcurrentHashMap.newKeySet();
 		this.loadedBlocks = ConcurrentHashMap.newKeySet();
+		this.loadedGridBlocks = new HashSet<>();
 		this.npcBornEntrySet = ConcurrentHashMap.newKeySet();
 		this.scriptManager = new SceneScriptManager(this);
 	}
@@ -454,25 +456,23 @@ public class Scene {
         this.npcBornEntrySet = npcBornEntries;
     }
 
-	// TODO - Test
-	public synchronized void checkSpawns() {
-
-        var list
-            = GameDepot.getSpawnLists();
-		Set<SpawnDataEntry> visible = new HashSet<>();
-
+    public synchronized void checkSpawns() {
+        Set<SpawnDataEntry.GridBlockId> loadedGridBlocks = new HashSet<>();
         for (Player player : this.getPlayers()) {
-            var theAdjacent
-                = SpawnDataEntry.BlockId
-                .getBlockIdsIncludeCenter(player.getSceneId(), player.getPos());
-
-            for (var adjacent : theAdjacent) {
-                var spawns = list.get(adjacent);
-                if(spawns!=null) {
-                    visible.addAll(spawns);
-                }
+            for (SpawnDataEntry.GridBlockId block : SpawnDataEntry.GridBlockId.getAdjacentGridBlockIds(player.getSceneId(), player.getPos()))
+                loadedGridBlocks.add(block);
+        }
+        if (this.loadedGridBlocks.containsAll(loadedGridBlocks)) {  // Don't recalculate static spawns if nothing has changed
+            return;
+        }
+        this.loadedGridBlocks = loadedGridBlocks;
+        var spawnLists = GameDepot.getSpawnLists();
+        Set<SpawnDataEntry> visible = new HashSet<>();
+        for (var block : loadedGridBlocks) {
+            var spawns = spawnLists.get(block);
+            if(spawns!=null) {
+                visible.addAll(spawns);
             }
-
         }
 
 		// World level
