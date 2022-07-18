@@ -16,14 +16,14 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class GameDepot {
-    public static final int[] BLOCK_SIZE = new int[]{100,600};//Scales
+    public static final int[] BLOCK_SIZE = new int[]{50,500};//Scales
 
     private static Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicRandomMainPropDepot = new Int2ObjectOpenHashMap<>();
     private static Int2ObjectMap<List<ReliquaryMainPropData>> relicMainPropDepot = new Int2ObjectOpenHashMap<>();
     private static Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot = new Int2ObjectOpenHashMap<>();
 
 	private static Map<String, AvatarConfig> playerAbilities = new HashMap<>();
-    private static HashMap<SpawnDataEntry.BlockId, ArrayList<SpawnDataEntry>> spawnLists = new HashMap<>();
+    private static HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> spawnLists = new HashMap<>();
 
     public static void load() {
 		for (ReliquaryMainPropData data : GameData.getReliquaryMainPropDataMap().values()) {
@@ -64,11 +64,11 @@ public class GameDepot {
 		return relicAffixDepot.get(depot);
 	}
 
-    public static HashMap<SpawnDataEntry.BlockId, ArrayList<SpawnDataEntry>> getSpawnLists() {
+    public static HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> getSpawnLists() {
         return spawnLists;
     }
 
-    public static void addSpawnListById(HashMap<SpawnDataEntry.BlockId, ArrayList<SpawnDataEntry>> data) {
+    public static void addSpawnListById(HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> data) {
         spawnLists.putAll(data);
     }
 
