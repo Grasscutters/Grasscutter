@@ -24,6 +24,7 @@ import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.data.SceneBlock;
 import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
+import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -626,7 +627,12 @@ public class Scene {
 		onLoadGroup(groups);
 		Grasscutter.getLogger().info("Scene {} Block {} loaded.", this.getId(), block.id);
 	}
-
+    public void loadTriggerFromGroup(SceneGroup group, String triggerName) {
+        //Load triggers and regions
+        getScriptManager().registerTrigger(group.triggers.values().stream().filter(p -> p.name.contains(triggerName)).toList());
+        group.regions.values().stream().filter(q -> q.config_id == Integer.parseInt(triggerName.substring(13))).map(region -> new EntityRegion(this, region))
+            .forEach(getScriptManager()::registerRegion);
+    }
 	public void onLoadGroup(List<SceneGroup> groups){
 		if(groups == null || groups.isEmpty()){
 			return;

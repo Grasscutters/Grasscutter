@@ -52,7 +52,7 @@ public class GameMainQuest {
 
     @Getter int[] suggestTrackMainQuestList;
     @Getter private Map<Integer,TalkData> talks;
-    @Getter private List<Integer> triggersFired;
+
 
 	@Deprecated // Morphia only. Do not use.
 	public GameMainQuest() {}
@@ -187,7 +187,7 @@ public class GameMainQuest {
 
                 for (int i = 0; i < subQuestWithCond.getQuestData().getFailCond().size(); i++) {
                     QuestData.QuestCondition condition = failCond.get(i);
-                    boolean result = getServerQuestHandler().triggerCondition(subQuestWithCond, condition, paramStr, params);
+                    boolean result = getServerQuestHandler().triggerContent(subQuestWithCond, condition, paramStr, params);
                     fail[i] = result ? 1 : 0;
                 }
 
@@ -218,7 +218,7 @@ public class GameMainQuest {
 
                 for (int i = 0; i < subQuestWithCond.getQuestData().getFinishCond().size(); i++) {
                     QuestData.QuestCondition condition = finishCond.get(i);
-                    boolean result = getServerQuestHandler().triggerCondition(subQuestWithCond, condition, paramStr, params);
+                    boolean result = getServerQuestHandler().triggerContent(subQuestWithCond, condition, paramStr, params);
                     finish[i] = result ? 1 : 0;
                 }
 

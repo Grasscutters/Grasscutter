@@ -13,6 +13,11 @@ public class ContentTriggerFire extends QuestBaseHandler {
 
     @Override
     public boolean execute(GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
-        return quest.getMainQuest().getTriggersFired().contains(Integer.valueOf(params[0]));
+        if(quest.getTriggers().containsKey(Integer.valueOf(params[0]))) {
+            return quest.getTriggers().getOrDefault(Integer.valueOf(params[0]), false);
+        } else {
+            Grasscutter.getLogger().error("quest {} doesn't have trigger {}", quest.getSubQuestId(), params[0]);
+            return false;
+        }
     }
 }

@@ -8,6 +8,6 @@ import lombok.Getter;
 public class TriggerExcelConfigData extends GameResource {
     @Getter private int id;
     private int sceneId;
-    private long groupId;
+    private int groupId;
     private String triggerName;
 }

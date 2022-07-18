@@ -92,6 +92,7 @@ public class SceneScriptManager {
 	}
 	public void registerTrigger(SceneTrigger trigger) {
 		getTriggersByEvent(trigger.event).add(trigger);
+        Grasscutter.getLogger().debug("Registered trigger {}", trigger.name);
 	}
 	public void deregisterTrigger(List<SceneTrigger> triggers) {
 		triggers.forEach(this::deregisterTrigger);
@@ -122,6 +123,7 @@ public class SceneScriptManager {
 
 	public void registerRegion(EntityRegion region) {
 		regions.put(region.getId(), region);
+        Grasscutter.getLogger().debug("Registered region {}, from group {}", region.getId(), region.getGroupId());
 	}
     public void registerRegionInGroupSuite(SceneGroup group, SceneSuite suite){
         suite.sceneRegions.stream().map(region -> new EntityRegion(this.getScene(), region))

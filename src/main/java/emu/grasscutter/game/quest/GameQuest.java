@@ -3,13 +3,17 @@ package emu.grasscutter.game.quest;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.ChapterData;
 import emu.grasscutter.data.excels.QuestData;
+import emu.grasscutter.data.excels.TriggerExcelConfigData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.net.proto.ChapterStateOuterClass;
 import emu.grasscutter.net.proto.QuestOuterClass.Quest;
+import emu.grasscutter.scripts.SceneScriptManager;
+import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.packet.send.PacketChapterStateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestListUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestProgressUpdateNotify;
@@ -18,6 +22,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Entity
 public class GameQuest {
@@ -35,6 +42,7 @@ public class GameQuest {
 
 	@Getter private int[] finishProgressList;
 	@Getter private int[] failProgressList;
+    @Getter private Map<Integer, Boolean> triggers;
 
 	@Deprecated // Morphia only. Do not use.
 	public GameQuest() {}
@@ -45,12 +53,24 @@ public class GameQuest {
 		this.mainQuestId = questData.getMainId();
 		this.questData = questData;
 		this.state = QuestState.QUEST_STATE_UNSTARTED;
+        this.triggers = new HashMap<>();
 	}
 
     public void start() {
         this.acceptTime = Utils.getCurrentSeconds();
         this.startTime = this.acceptTime;
         this.state = QuestState.QUEST_STATE_UNFINISHED;
+        List<QuestData.QuestCondition> triggerCond = questData.getFinishCond().stream()
+            .filter(p -> p.getType() == QuestTrigger.QUEST_CONTENT_TRIGGER_FIRE).toList();
+        if(triggerCond.size() > 0) {
+            for (QuestData.QuestCondition cond : triggerCond) {
+                triggers.put(cond.getParam()[0],false);
+                TriggerExcelConfigData trigger = GameData.getTriggerExcelConfigDataMap().get(cond.getParam()[0]);
+                //TODO load only required trigger and region
+                SceneGroup group = SceneGroup.of(trigger.getGroupId()).load(trigger.getSceneId());
+                getOwner().getWorld().getSceneById(trigger.getSceneId()).loadTriggerFromGroup(group,trigger.getTriggerName());
+            }
+        }
 
         if (questData.getFinishCond() != null && questData.getFinishCond().size() != 0) {
             this.finishProgressList = new int[questData.getFinishCond().size()];
