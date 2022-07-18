@@ -104,7 +104,7 @@ public class Player {
 	private Position rotation;
 	private PlayerBirthday birthday;
 	private PlayerCodex codex;
-
+    @Getter private PlayerOpenStateManager openStateManager;
 	private Map<Integer, Integer> properties;
 	private Set<Integer> nameCardList;
 	private Set<Integer> flyCloakList;
@@ -187,7 +187,7 @@ public class Player {
 	@Transient private FurnitureManager furnitureManager;
 	@Transient private BattlePassManager battlePassManager;
 	@Transient private CookingManager cookingManager;
-	// @Transient private 
+	// @Transient private
 	@Getter @Transient private ActivityManager activityManager;
 
 	@Transient private CollectionManager collectionManager;
@@ -248,7 +248,7 @@ public class Player {
 		this.rewardedLevels = new HashSet<>();
 		this.moonCardGetTimes = new HashSet<>();
 		this.codex = new PlayerCodex(this);
-
+        this.openStateManager = new PlayerOpenStateManager(this);
 		this.shopLimit = new ArrayList<>();
 		this.expeditionInfo = new HashMap<>();
 		this.messageHandler = null;
@@ -468,7 +468,7 @@ public class Player {
 	public int getWorldLevel() {
 		return this.getProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL);
 	}
-	
+
 	public boolean setWorldLevel(int level) {
 		if (this.setProperty(PlayerProperty.PROP_PLAYER_WORLD_LEVEL, level)) {
 			if (this.world.getHost() == this)  // Don't update World's WL if we are in someone else's world
@@ -1445,6 +1445,7 @@ public class Player {
 	@PostLoad
 	private void onLoad() {
 		this.getCodex().setPlayer(this);
+        this.getOpenStateManager().setPlayer(this);
 		this.getTeamManager().setPlayer(this);
 		this.getTowerManager().setPlayer(this);
 	}
@@ -1465,6 +1466,9 @@ public class Player {
 		if (this.getCodex() == null) {
 			this.codex = new PlayerCodex(this);
 		}
+        if (this.getOpenStateManager() == null) {
+            this.openStateManager = new PlayerOpenStateManager(this);
+        }
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
 		}
@@ -1525,6 +1529,7 @@ public class Player {
 		this.forgingManager.sendForgeDataNotify();
 		this.resinManager.onPlayerLogin();
 		this.cookingManager.sendCookDataNofity();
+        this.openStateManager.onPlayerLogin();
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
 		// Battle Pass trigger
@@ -1539,7 +1544,7 @@ public class Player {
 
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
 		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
-		session.send(new PacketOpenStateUpdateNotify());
+
 
 		// First notify packets sent
 		this.setHasSentAvatarDataNotify(true);
