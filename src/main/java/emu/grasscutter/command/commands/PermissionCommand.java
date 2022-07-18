@@ -11,7 +11,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "permission", usage = "permission <add|remove> <permission>", permission = "permission", description = "commands.permission.description", targetRequirement = TargetRequirement.PLAYER)
+@Command(label = "permission", usage = "(add|remove) <permission>", permission = "permission", targetRequirement = TargetRequirement.PLAYER)
 public final class PermissionCommand implements CommandHandler {
 
     @Override

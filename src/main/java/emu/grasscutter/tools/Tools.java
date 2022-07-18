@@ -16,6 +16,7 @@ import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
+import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
@@ -106,16 +107,15 @@ final class ToolsWithLanguageOption {
             writer.println("// Grasscutter " + GameConstants.VERSION + " GM Handbook");
             writer.println("// Created " + dtf.format(now) + System.lineSeparator() + System.lineSeparator());
 
-            CommandMap cmdMap = new CommandMap(true);
-            List<Command> cmdList = new ArrayList<>(cmdMap.getAnnotationsAsList());
+			List<CommandHandler> cmdList = new CommandMap(true).getHandlersAsList();
 
             writer.println("// Commands");
-            for (Command cmd : cmdList) {
-                StringBuilder cmdName = new StringBuilder(cmd.label());
+			for (CommandHandler cmd : cmdList) {
+				StringBuilder cmdName = new StringBuilder(cmd.getLabel());
                 while (cmdName.length() <= 15) {
                     cmdName.insert(0, " ");
                 }
-                writer.println(cmdName + " : " + translate(cmd.description()));
+				writer.println(cmdName + " : " + translate(cmd.getDescriptionString(null)));
             }
             writer.println();
 

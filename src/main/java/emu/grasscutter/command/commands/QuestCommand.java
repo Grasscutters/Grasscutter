@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
@@ -10,7 +9,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "quest", usage = "quest <add|finish> [questId]", permission = "player.quest", permissionTargeted = "player.quest.others", description = "commands.quest.description")
+@Command(label = "quest", usage = {"(add|finish) [<questId>]"}, permission = "player.quest", permissionTargeted = "player.quest.others")
 public final class QuestCommand implements CommandHandler {
 
     @Override

@@ -9,7 +9,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "resetshop", usage = "resetshop", permission = "server.resetshop", permissionTargeted = "server.resetshop.others", description = "commands.resetShopLimit.description")
+@Command(label = "resetShopLimit", aliases = {"resetshop"}, permission = "server.resetshop", permissionTargeted = "server.resetshop.others")
 public final class ResetShopLimitCommand implements CommandHandler {
 
     @Override
