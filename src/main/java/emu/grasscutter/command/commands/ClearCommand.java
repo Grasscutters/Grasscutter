@@ -12,10 +12,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-@Command(label = "clear", usage = "clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
-        description = "commands.clear.description",
-        aliases = {"clear"}, permission = "player.clearinv", permissionTargeted = "player.clearinv.others")
-
+@Command(
+    label = "clear",
+    usage = {"(all|wp|art|mat) [lv<max level>] [r<max refinement>] [<max rarity>*]"},
+    permission = "player.clearinv",
+    permissionTargeted = "player.clearinv.others")
 public final class ClearCommand implements CommandHandler {
     private static Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java doesn't have raw string literals :(
     private static Pattern refineRegex = Pattern.compile("r(\\d+)");

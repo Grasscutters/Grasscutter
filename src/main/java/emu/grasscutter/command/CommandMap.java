@@ -8,9 +8,9 @@ import java.util.*;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class CommandMap {
-    private final Map<String, CommandHandler> commands = new HashMap<>();
-    private final Map<String, CommandHandler> aliases = new HashMap<>();
-    private final Map<String, Command> annotations = new HashMap<>();
+    private final Map<String, CommandHandler> commands = new LinkedHashMap<>();
+    private final Map<String, CommandHandler> aliases = new LinkedHashMap<>();
+    private final Map<String, Command> annotations = new LinkedHashMap<>();
     private final Map<String, Integer> targetPlayerIds = new HashMap<>();
     private static final String consoleId = "console";
 
