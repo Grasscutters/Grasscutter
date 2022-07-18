@@ -4,6 +4,7 @@ import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.QueryPathReqOuterClass;
+import emu.grasscutter.net.proto.QueryPathReqOuterClass.QueryPathReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketQueryPathRsp;
 
@@ -12,12 +13,15 @@ public class HandlerQueryPathReq extends PacketHandler {
 
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        var req = QueryPathReqOuterClass.QueryPathReq.parseFrom(payload);
+		var req = QueryPathReq.parseFrom(payload);
 
         /**
          * It is not the actual work
          */
-        session.send(new PacketQueryPathRsp(req));
+        
+        if (req.getDestinationPosList().size() > 0) {
+        	session.send(new PacketQueryPathRsp(req));
+        }
 	}
 
 }

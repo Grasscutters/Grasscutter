@@ -61,15 +61,18 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
 
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
-    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.9'
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.9'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.36'
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.11'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.11'
 
     implementation group: 'org.jline', name: 'jline', version: '3.21.0'
     implementation group: 'org.jline', name: 'jline-terminal-jna', version: '3.21.0'
     implementation group: 'net.java.dev.jna', name: 'jna', version: '5.10.0'
 
-    implementation group: 'io.netty', name: 'netty-all', version: '4.1.71.Final'
+    implementation group: 'io.netty', name: 'netty-common', version: '4.1.79.Final'
+    implementation group: 'io.netty', name: 'netty-handler', version: '4.1.79.Final'
+    implementation group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.79.Final'
+    implementation group: 'io.netty', name: 'netty-transport-native-kqueue', version: '4.1.79.Final'
 
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.0'
     implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.18.2'
@@ -79,7 +82,7 @@ dependencies {
     implementation group: 'dev.morphia.morphia', name: 'morphia-core', version: '2.2.7'
 
     implementation group: 'org.greenrobot', name: 'eventbus-java', version: '3.3.1'
-    implementation group: 'org.danilopianini', name: 'java-quadtree', version: '0.1.9'
+    //implementation group: 'org.danilopianini', name: 'java-quadtree', version: '0.1.9'
 
     implementation group: 'org.quartz-scheduler', name: 'quartz', version: '2.3.2'
     implementation group: 'org.quartz-scheduler', name: 'quartz-jobs', version: '2.3.2'

@@ -1,12 +1,28 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "CodexType.proto";
 
+option java_package = "emu.grasscutter.net.proto";
+
 message CodexTypeData {
-	CodexType type = 1;
-	repeated uint32 codex_id_list = 2;
-	repeated bool have_viewed_list = 3;
+	repeated uint32 codex_id_list = 14;
 	map<uint32, uint32> weapon_max_promote_level_map = 4;
+	CodexType type = 13;
+	repeated bool have_viewed_list = 5;
 }

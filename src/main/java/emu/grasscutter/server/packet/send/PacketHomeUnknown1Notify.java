@@ -6,13 +6,13 @@ import emu.grasscutter.net.proto.HomeUnknown1NotifyOuterClass;
 
 public class PacketHomeUnknown1Notify extends BasePacket {
 
-	public PacketHomeUnknown1Notify(boolean isEnterEditMode) {
-		super(PacketOpcodes.HomeUnknown1Notify);
+    public PacketHomeUnknown1Notify(boolean isEnterEditMode) {
+        super(PacketOpcodes.Unk2700_JDMPECKFGIG_ServerNotify);
 
-		var proto = HomeUnknown1NotifyOuterClass.HomeUnknown1Notify.newBuilder();
+        var proto = HomeUnknown1NotifyOuterClass.HomeUnknown1Notify.newBuilder();
 
-		proto.setIsEnterEditMode(isEnterEditMode);
+        proto.setIsEnterEditMode(isEnterEditMode);
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

@@ -1,0 +1,41 @@
+name: "Lint whitespace and languages"
+on:
+  workflow_dispatch: ~
+  push:
+    paths:
+      - "**.java"
+      - "**.json"
+    branches:
+      - "development"
+jobs:
+  Build-Server-Jar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Run Whitespace Linter
+        run: python format_whitespace.py
+      - run: git config --global user.name "github-actions"
+      - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - run: git stash
+      # - name: Remove Whitespace Linter's LintRatchet ref
+      #   run: git branch -D LintRatchet
+      # - name: Fetch this repo's LintRatchet branch
+      #   run: git fetch origin LintRatchet:LintRatchet
+      - run: git checkout LintRatchet
+      # - run: git merge development
+      - run: git reset --hard development
+      - run: git stash pop
+      - run: git add -u
+      - run: git commit -m 'Fix whitespace [skip actions]'
+      - name: Update Languages
+        run: python manage_languages.py -u
+      - run: git add -u
+      - run: git commit -m 'Update languages [skip actions]'
+      - run: git push --set-upstream --force origin LintRatchet

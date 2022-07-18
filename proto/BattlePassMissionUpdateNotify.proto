@@ -8,5 +8,5 @@ import "BattlePassMission.proto";
 // EnetChannelId: 0
 // EnetIsReliable: true
 message BattlePassMissionUpdateNotify {
-	repeated BattlePassMission mission_list = 6;
+	repeated BattlePassMission mission_list = 1;
 }
