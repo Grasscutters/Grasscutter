@@ -9,12 +9,10 @@ import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamInfo;
-import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.quest.QuestGroupSuite;
-import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
@@ -26,15 +24,10 @@ import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import org.danilopianini.util.SpatialIndex;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.stream.Collectors;
 
 public class Scene {
 	private final World world;
@@ -44,6 +37,7 @@ public class Scene {
 	private final Set<SpawnDataEntry> spawnedEntities;
 	private final Set<SpawnDataEntry> deadSpawnedEntities;
 	private final Set<SceneBlock> loadedBlocks;
+	private Set<SpawnDataEntry.GridBlockId> loadedGridBlocks;
 	private boolean dontDestroyWhenEmpty;
 
 	private int autoCloseTime;
@@ -68,6 +62,7 @@ public class Scene {
 		this.spawnedEntities = ConcurrentHashMap.newKeySet();
 		this.deadSpawnedEntities = ConcurrentHashMap.newKeySet();
 		this.loadedBlocks = ConcurrentHashMap.newKeySet();
+		this.loadedGridBlocks = new HashSet<>();
 		this.npcBornEntrySet = ConcurrentHashMap.newKeySet();
 		this.scriptManager = new SceneScriptManager(this);
 	}
@@ -461,25 +456,24 @@ public class Scene {
         this.npcBornEntrySet = npcBornEntries;
     }
 
-	// TODO - Test
-	public synchronized void checkSpawns() {
-        int RANGE = 100;
-
-		SpatialIndex<SpawnGroupEntry> list = GameDepot.getSpawnListById(this.getId());
-		Set<SpawnDataEntry> visible = new HashSet<>();
-
-		for (Player player : this.getPlayers()) {
-            Position position = player.getPos();
-			Collection<SpawnGroupEntry> entries = list.query(
-				new double[] {position.getX() - RANGE, position.getZ() - RANGE},
-				new double[] {position.getX() + RANGE, position.getZ() + RANGE}
-			);
-			for (SpawnGroupEntry entry : entries) {
-				for (SpawnDataEntry spawnData : entry.getSpawns()) {
-					visible.add(spawnData);
-				}
-			}
-		}
+    public synchronized void checkSpawns() {
+        Set<SpawnDataEntry.GridBlockId> loadedGridBlocks = new HashSet<>();
+        for (Player player : this.getPlayers()) {
+            for (SpawnDataEntry.GridBlockId block : SpawnDataEntry.GridBlockId.getAdjacentGridBlockIds(player.getSceneId(), player.getPos()))
+                loadedGridBlocks.add(block);
+        }
+        if (this.loadedGridBlocks.containsAll(loadedGridBlocks)) {  // Don't recalculate static spawns if nothing has changed
+            return;
+        }
+        this.loadedGridBlocks = loadedGridBlocks;
+        var spawnLists = GameDepot.getSpawnLists();
+        Set<SpawnDataEntry> visible = new HashSet<>();
+        for (var block : loadedGridBlocks) {
+            var spawns = spawnLists.get(block);
+            if(spawns!=null) {
+                visible.addAll(spawns);
+            }
+        }
 
 		// World level
 		WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(getWorld().getWorldLevel());
