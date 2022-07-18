@@ -62,10 +62,11 @@ public class SpawnDataEntry {
 		return rot;
 	}
 
-    public SpawnDataEntryScaledPoint getSpawnDataEntryScaledPoint(){
-        return new SpawnDataEntryScaledPoint(group.sceneId,
-            (int)(pos.getX() / GameDepot.BLOCK_SIZE),
-            (int)(pos.getZ() / GameDepot.BLOCK_SIZE)
+    public SpawnDataEntryBlock getSpawnDataEntryScaledPoint(){
+        int scale = SpawnDataEntryBlock.getScale(gadgetId);
+        return new SpawnDataEntryBlock(group.sceneId,scale,
+            (int)(pos.getX() / GameDepot.BLOCK_SIZE[scale]),
+            (int)(pos.getZ() / GameDepot.BLOCK_SIZE[scale])
         );
     }
 
@@ -96,47 +97,59 @@ public class SpawnDataEntry {
 		}
 	}
 
-    public static class SpawnDataEntryScaledPoint{
+    public static class SpawnDataEntryBlock {
         int sceneId;
         int x;
         int z;
-        public SpawnDataEntryScaledPoint(int sceneId, int x, int z) {
+        int scale;
+
+        public SpawnDataEntryBlock(int sceneId, int scale, int x, int z) {
             this.sceneId = sceneId;
             this.x = x;
             this.z = z;
+            this.scale = scale;
         }
+
         @Override
         public String toString() {
             return "SpawnDataEntryScaledPoint{" +
                 "sceneId=" + sceneId +
                 ", x=" + x +
                 ", z=" + z +
+                ", scale=" + scale +
                 '}';
         }
+
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            SpawnDataEntryScaledPoint that = (SpawnDataEntryScaledPoint) o;
-            return sceneId == that.sceneId && x == that.x && z == that.z;
+            SpawnDataEntryBlock that = (SpawnDataEntryBlock) o;
+            return sceneId == that.sceneId && x == that.x && z == that.z && scale == that.scale;
         }
+
         @Override
         public int hashCode() {
-            return Objects.hash(sceneId, x, z);
+            return Objects.hash(sceneId, x, z,scale);
         }
-        public static SpawnDataEntryScaledPoint[] getAdjacentPointsIncludePosition(int sceneId, Position pos){
-            SpawnDataEntryScaledPoint[] results = new SpawnDataEntryScaledPoint[9];
-            int t=0;
-            int x = ((int)(pos.getX()/ GameDepot.BLOCK_SIZE));
-            int z = ((int)(pos.getZ()/GameDepot.BLOCK_SIZE));
-            for(int i=x-1; i<x+2; i++){ //  the i-1/j-1 will be -1,0,-1
-                for(int j=z-1; j<z+2; j++){
-                    results[t++] = new SpawnDataEntryScaledPoint(sceneId,
-                        i,
-                        j);
+        public static SpawnDataEntryBlock[] getAdjacentPointsIncludePosition(int sceneId, Position pos){
+            SpawnDataEntryBlock[] results = new SpawnDataEntryBlock[9*GameDepot.BLOCK_SIZE.length];
+            for(int s:GameDepot.BLOCK_SIZE){
+                int t=0;
+                int x = ((int)(pos.getX()/ GameDepot.BLOCK_SIZE[s]));
+                int z = ((int)(pos.getZ()/GameDepot.BLOCK_SIZE[s]));
+                for(int i=x-1; i<x+2; i++){ //  the i-1/j-1 will be -1,0,-1
+                    for(int j=z-1; j<z+2; j++){
+                        results[t++] = new SpawnDataEntryBlock(sceneId,s,
+                            i,
+                            j);
+                    }
                 }
             }
             return results;
+        }
+        public static int getScale(int gadgetId){
+            return 0;//you should implement here,this is index of GameDepot.BLOCK_SIZE
         }
     }
 }

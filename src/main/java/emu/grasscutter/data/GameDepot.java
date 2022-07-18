@@ -1,9 +1,5 @@
 package emu.grasscutter.data;
 
-import com.github.davidmoten.rtreemulti.RTree;
-import com.github.davidmoten.rtreemulti.geometry.Geometry;
-import com.github.davidmoten.rtreemulti.geometry.Rectangle;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,14 +16,14 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class GameDepot {
-    public static final int BLOCK_SIZE = 100; //100x100
+    public static final int[] BLOCK_SIZE = new int[]{100,1200};//Scales
 
     private static Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicRandomMainPropDepot = new Int2ObjectOpenHashMap<>();
     private static Int2ObjectMap<List<ReliquaryMainPropData>> relicMainPropDepot = new Int2ObjectOpenHashMap<>();
     private static Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot = new Int2ObjectOpenHashMap<>();
 
 	private static Map<String, AvatarConfig> playerAbilities = new HashMap<>();
-    private static HashMap<SpawnDataEntry.SpawnDataEntryScaledPoint, ArrayList<SpawnDataEntry>> spawnLists = new HashMap<>();
+    private static HashMap<SpawnDataEntry.SpawnDataEntryBlock, ArrayList<SpawnDataEntry>> spawnLists = new HashMap<>();
 
     public static void load() {
 		for (ReliquaryMainPropData data : GameData.getReliquaryMainPropDataMap().values()) {
@@ -68,11 +64,11 @@ public class GameDepot {
 		return relicAffixDepot.get(depot);
 	}
 
-    public static HashMap<SpawnDataEntry.SpawnDataEntryScaledPoint, ArrayList<SpawnDataEntry>> getSpawnLists() {
+    public static HashMap<SpawnDataEntry.SpawnDataEntryBlock, ArrayList<SpawnDataEntry>> getSpawnLists() {
         return spawnLists;
     }
 
-    public static void addSpawnListById(HashMap<SpawnDataEntry.SpawnDataEntryScaledPoint, ArrayList<SpawnDataEntry>> data) {
+    public static void addSpawnListById(HashMap<SpawnDataEntry.SpawnDataEntryBlock, ArrayList<SpawnDataEntry>> data) {
         spawnLists.putAll(data);
     }
 

@@ -9,12 +9,9 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.github.davidmoten.rtreemulti.geometry.Point;
-import com.google.gson.Gson;
 import emu.grasscutter.data.binout.*;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.scripts.SceneIndexManager;
-import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 import lombok.SneakyThrows;
 import org.reflections.Reflections;
@@ -31,7 +28,6 @@ import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.common.ScenePointConfig;
 import emu.grasscutter.game.world.SpawnDataEntry.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 import static emu.grasscutter.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
@@ -330,13 +326,13 @@ public class ResourceLoader {
 			return;
 		}
 
-        HashMap<SpawnDataEntryScaledPoint, ArrayList<SpawnDataEntry>> areaSort = new HashMap<>();
+        HashMap<SpawnDataEntryBlock, ArrayList<SpawnDataEntry>> areaSort = new HashMap<>();
         //key = sceneId,x,z , value = ArrayList<SpawnDataEntry>
         for (SpawnGroupEntry entry : spawnEntryMap) {
             entry.getSpawns().forEach(
                 s -> {
                     s.setGroup(entry);
-                    SpawnDataEntryScaledPoint point = s.getSpawnDataEntryScaledPoint();
+                    SpawnDataEntryBlock point = s.getSpawnDataEntryScaledPoint();
                     if(!areaSort.containsKey(point)) {
                         areaSort.put(point, new ArrayList<>());
                     }

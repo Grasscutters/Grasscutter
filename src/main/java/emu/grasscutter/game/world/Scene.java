@@ -1,10 +1,5 @@
 package emu.grasscutter.game.world;
 
-import com.github.davidmoten.rtreemulti.Entry;
-import com.github.davidmoten.rtreemulti.RTree;
-import com.github.davidmoten.rtreemulti.geometry.Geometry;
-import com.github.davidmoten.rtreemulti.geometry.Point;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
@@ -33,7 +28,6 @@ import emu.grasscutter.utils.Position;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.stream.Collectors;
 
 public class Scene {
 	private final World world;
@@ -469,9 +463,8 @@ public class Scene {
 
         for (Player player : this.getPlayers()) {
             var theAdjacent
-                = SpawnDataEntry.SpawnDataEntryScaledPoint.getAdjacentPointsIncludePosition(
-                player.getSceneId(),
-                player.getPos());
+                = SpawnDataEntry.SpawnDataEntryBlock
+                .getAdjacentPointsIncludePosition(player.getSceneId(), player.getPos());
 
             for (var adjacent : theAdjacent) {
                 var spawns = list.get(adjacent);
@@ -479,6 +472,7 @@ public class Scene {
                     visible.addAll(spawns);
                 }
             }
+
         }
 
 		// World level
