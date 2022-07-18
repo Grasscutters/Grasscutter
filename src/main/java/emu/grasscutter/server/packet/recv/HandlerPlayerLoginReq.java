@@ -40,8 +40,6 @@ public class HandlerPlayerLoginReq extends PacketHandler {
 
 		// Show opening cutscene if player has no avatars
 		if (player.getAvatars().getAvatarCount() == 0) {
-            // Set New Player OpenStates
-            player.getOpenStateManager().onNewPlayerCreate();
 			// Pick character
 			session.setState(SessionState.PICKING_CHARACTER);
 			session.send(new BasePacket(PacketOpcodes.DoSetPlayerBornDataNotify));
