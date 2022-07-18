@@ -9,8 +9,6 @@ import emu.grasscutter.game.player.Player;
 
 @Command(
     label = "unban",
-    usage = "unban <@player>",
-    description = "commands.unban.description",
     permission = "server.ban",
     targetRequirement = Command.TargetRequirement.PLAYER
 )

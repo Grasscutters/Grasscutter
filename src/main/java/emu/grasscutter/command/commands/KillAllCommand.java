@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.entity.EntityMonster;
@@ -12,7 +11,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "killall", usage = "killall [sceneId]", permission = "server.killall", permissionTargeted = "server.killall.others", description = "commands.killall.description")
+@Command(label = "killall", usage = {"[<sceneId>]"}, permission = "server.killall", permissionTargeted = "server.killall.others")
 public final class KillAllCommand implements CommandHandler {
 
     @Override

@@ -1,29 +1,28 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.MonsterData;
-import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.game.world.Scene;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.List;
-import java.util.Random;
 
 import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)] [<x> <y> <z>(monster only, optional)]", aliases = {"drop"}, permission = "server.spawn", permissionTargeted = "server.spawn.others", description = "commands.spawn.description")
+@Command(
+    label = "spawn",
+    usage = {"spawn <entityId> [amount] [level(monster only)] [<x> <y> <z>(monster only)]"},
+    aliases = {"drop"},
+    permission = "server.spawn",
+    permissionTargeted = "server.spawn.others")
 public final class SpawnCommand implements CommandHandler {
 
     @Override

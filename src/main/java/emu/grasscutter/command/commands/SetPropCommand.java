@@ -10,7 +10,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.tower.TowerLevelRecord;
 
-@Command(label = "setprop", usage = "setprop|prop <prop> <value>", aliases = {"prop"}, permission = "player.setprop", permissionTargeted = "player.setprop.others", description = "commands.setProp.description")
+@Command(label = "setProp", aliases = {"prop"}, usage = {"<prop> <value>"}, permission = "player.setprop", permissionTargeted = "player.setprop.others")
 public final class SetPropCommand implements CommandHandler {
     static enum PseudoProp {
         NONE,

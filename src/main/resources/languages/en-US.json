@@ -94,6 +94,7 @@
       }
     },
     "execution": {
+      "usage_prefix": "Usage: ",
       "player_exist_error": "Player not found.",
       "player_offline_error": "Player is not online.",
       "item_player_exist_error": "Invalid item or UID.",

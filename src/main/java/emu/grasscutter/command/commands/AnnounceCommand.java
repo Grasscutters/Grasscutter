@@ -13,10 +13,9 @@ import java.util.Random;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "announce",
-    usage = "announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
+    usage = {"<content>", "refresh", "(tpl|revoke) <templateId>"},
     permission = "server.announce",
     aliases = {"a"},
-    description = "commands.announce.description",
     targetRequirement = Command.TargetRequirement.NONE)
 public final class AnnounceCommand implements CommandHandler {
 
