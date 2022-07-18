@@ -17,9 +17,11 @@ import static emu.grasscutter.game.props.OpenState.*;
 
 @Entity
 public class PlayerOpenStateManager {
-
     @Transient private Player player;
-    @Getter private Map<Integer,Integer> openStateMap;
+    
+    // Map of all open states that this player has. Do not put default values here.
+    private Map<Integer, Integer> map;
+    
      /*
     //DO NOT MODIFY. Based on conversation of official server and client, game version 2.7
     private static Set<OpenState> newPlayerOpenStates = Set.of(OPEN_STATE_DERIVATIVE_MALL,OPEN_STATE_PHOTOGRAPH,OPEN_STATE_BATTLE_PASS,OPEN_STATE_SHOP_TYPE_GENESISCRYSTAL,OPEN_STATE_SHOP_TYPE_RECOMMANDED,
@@ -27,8 +29,10 @@ public class PlayerOpenStateManager {
         OPEN_STATE_WEAPON_PROMOTE,OPEN_STATE_AVATAR_PROMOTE,OPEN_STATE_AVATAR_TALENT,OPEN_STATE_WEAPON_UPGRADE,OPEN_STATE_RESIN,OPEN_STATE_RELIQUARY_UPGRADE,
         OPEN_STATE_SHOP_TYPE_VIRTUAL_SHOP,OPEN_STATE_RELIQUARY_PROMOTE);
     */
-      //For development. Remove entry when properly implemented
-    private static Set<OpenState> devOpenStates = Set.of(
+    
+    // For development. Remove entry when properly implemented
+    // TODO - Set as boolean in OpenState
+    public static final Set<OpenState> DEV_OPEN_STATES = Set.of(
         OPEN_STATE_PAIMON,
         OPEN_STATE_PAIMON_NAVIGATION,
         OPEN_STATE_AVATAR_PROMOTE,
@@ -75,7 +79,6 @@ public class PlayerOpenStateManager {
         OPEN_STATE_TOWER_FIRST_ENTER,
         OPEN_STATE_RESIN,
         OPEN_STATE_LIMIT_REGION_FRESHMEAT,
-        OPEN_STATE_LIMIT_REGION_GLOBAL,
         OPEN_STATE_MULTIPLAYER,
         OPEN_STATE_GUIDE_MOUSEPC,
         OPEN_STATE_GUIDE_MULTIPLAYER,
@@ -114,7 +117,7 @@ public class PlayerOpenStateManager {
         OPEN_STATE_GUIDE_RELICRESOLVE,
         OPEN_STATE_GUIDE_GGUIDE,
         OPEN_STATE_GUIDE_GGUIDE_HINT,
-        OPEN_STATE_GUIDE_RIGHT_TEAM, // mobile phone only!
+        OPEN_STATE_GUIDE_QUICK_TEAMMEMBERCHANGE,
         OPEN_STATE_CITY_REPUATION_MENGDE,
         OPEN_STATE_CITY_REPUATION_LIYUE,
         OPEN_STATE_CITY_REPUATION_UI_HINT,
@@ -195,10 +198,9 @@ public class PlayerOpenStateManager {
         OPEN_STATE_MAIL_COLLECT_UNLOCK_RED_POINT,
         OPEN_STATE_LUMEN_STONE,
         OPEN_STATE_GUIDE_CRYSTALLINK_BUFF
-        );
+    );
 
     public PlayerOpenStateManager(Player player) {
-        this.openStateMap = new HashMap<>();
         this.player = player;
     }
 
@@ -206,13 +208,19 @@ public class PlayerOpenStateManager {
         this.player = player;
     }
 
-    public Integer getOpenState(OpenState openState) {
-        return this.openStateMap.getOrDefault(openState.getValue(), 0);
+	public Map<Integer, Integer> getOpenStateMap() {
+		if (this.map == null) this.map = new HashMap<>();
+		return this.map;
+	}
+
+    public int getOpenState(OpenState openState) {
+        return this.map.getOrDefault(openState.getValue(), 0);
     }
+    
     public void setOpenState(OpenState openState, Integer value) {
-        Integer previousValue = this.openStateMap.getOrDefault(openState.getValue(),0);
+        Integer previousValue = this.map.getOrDefault(openState.getValue(),0);
         if(!(value == previousValue)) {
-            this.openStateMap.put(openState.getValue(), value);
+            this.map.put(openState.getValue(), value);
             player.getSession().send(new PacketOpenStateChangeNotify(openState.getValue(),value));
         } else {
             Grasscutter.getLogger().debug("Warning: OpenState {} is already set to {}!", openState, value);
@@ -225,22 +233,7 @@ public class PlayerOpenStateManager {
         }
     }
 
-    public void onNewPlayerCreate() {
-        //newPlayerOpenStates.forEach(os -> this.setOpenState(os, 1));
-        //setAllOpenStates();
-        devOpenStates.forEach(os -> this.setOpenState(os, 1));
-    }
     public void onPlayerLogin() {
-        /*
-        //little hack to give all openStates on second login
-        if(openStateMap.containsKey(OPEN_STATE_FRESHMAN_GUIDE.getValue())) {
-            setAllOpenStates();
-        }
-        */
-        player.getSession().send(new PacketOpenStateUpdateNotify(player));
-    }
-
-    public void setAllOpenStates() {
-        Stream.of(OpenState.values()).forEach(os -> this.setOpenState(os, 1));
+        player.getSession().send(new PacketOpenStateUpdateNotify(this));
     }
 }
