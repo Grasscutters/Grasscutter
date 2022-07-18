@@ -463,8 +463,8 @@ public class Scene {
 
         for (Player player : this.getPlayers()) {
             var theAdjacent
-                = SpawnDataEntry.SpawnDataEntryBlock
-                .getAdjacentPointsIncludePosition(player.getSceneId(), player.getPos());
+                = SpawnDataEntry.BlockId
+                .getBlockIdsIncludeCenter(player.getSceneId(), player.getPos());
 
             for (var adjacent : theAdjacent) {
                 var spawns = list.get(adjacent);

@@ -62,9 +62,9 @@ public class SpawnDataEntry {
 		return rot;
 	}
 
-    public SpawnDataEntryBlock getSpawnDataEntryScaledPoint(){
-        int scale = SpawnDataEntryBlock.getScale(gadgetId);
-        return new SpawnDataEntryBlock(group.sceneId,scale,
+    public BlockId getBlockId(){
+        int scale = BlockId.getScale(gadgetId);
+        return new BlockId(group.sceneId,scale,
             (int)(pos.getX() / GameDepot.BLOCK_SIZE[scale]),
             (int)(pos.getZ() / GameDepot.BLOCK_SIZE[scale])
         );
@@ -97,13 +97,13 @@ public class SpawnDataEntry {
 		}
 	}
 
-    public static class SpawnDataEntryBlock {
+    public static class BlockId {
         int sceneId;
         int x;
         int z;
         int scale;
 
-        public SpawnDataEntryBlock(int sceneId, int scale, int x, int z) {
+        public BlockId(int sceneId, int scale, int x, int z) {
             this.sceneId = sceneId;
             this.x = x;
             this.z = z;
@@ -124,7 +124,7 @@ public class SpawnDataEntry {
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            SpawnDataEntryBlock that = (SpawnDataEntryBlock) o;
+            BlockId that = (BlockId) o;
             return sceneId == that.sceneId && x == that.x && z == that.z && scale == that.scale;
         }
 
@@ -132,15 +132,15 @@ public class SpawnDataEntry {
         public int hashCode() {
             return Objects.hash(sceneId, x, z,scale);
         }
-        public static SpawnDataEntryBlock[] getAdjacentPointsIncludePosition(int sceneId, Position pos){
-            SpawnDataEntryBlock[] results = new SpawnDataEntryBlock[9*GameDepot.BLOCK_SIZE.length];
+        public static BlockId[] getBlockIdsIncludeCenter(int sceneId, Position pos){
+            BlockId[] results = new BlockId[9*GameDepot.BLOCK_SIZE.length];
             for(int s:GameDepot.BLOCK_SIZE){
                 int t=0;
                 int x = ((int)(pos.getX()/ GameDepot.BLOCK_SIZE[s]));
                 int z = ((int)(pos.getZ()/GameDepot.BLOCK_SIZE[s]));
                 for(int i=x-1; i<x+2; i++){ //  the i-1/j-1 will be -1,0,-1
                     for(int j=z-1; j<z+2; j++){
-                        results[t++] = new SpawnDataEntryBlock(sceneId,s,
+                        results[t++] = new BlockId(sceneId,s,
                             i,
                             j);
                     }

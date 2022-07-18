@@ -23,7 +23,7 @@ public class GameDepot {
     private static Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot = new Int2ObjectOpenHashMap<>();
 
 	private static Map<String, AvatarConfig> playerAbilities = new HashMap<>();
-    private static HashMap<SpawnDataEntry.SpawnDataEntryBlock, ArrayList<SpawnDataEntry>> spawnLists = new HashMap<>();
+    private static HashMap<SpawnDataEntry.BlockId, ArrayList<SpawnDataEntry>> spawnLists = new HashMap<>();
 
     public static void load() {
 		for (ReliquaryMainPropData data : GameData.getReliquaryMainPropDataMap().values()) {
@@ -64,11 +64,11 @@ public class GameDepot {
 		return relicAffixDepot.get(depot);
 	}
 
-    public static HashMap<SpawnDataEntry.SpawnDataEntryBlock, ArrayList<SpawnDataEntry>> getSpawnLists() {
+    public static HashMap<SpawnDataEntry.BlockId, ArrayList<SpawnDataEntry>> getSpawnLists() {
         return spawnLists;
     }
 
-    public static void addSpawnListById(HashMap<SpawnDataEntry.SpawnDataEntryBlock, ArrayList<SpawnDataEntry>> data) {
+    public static void addSpawnListById(HashMap<SpawnDataEntry.BlockId, ArrayList<SpawnDataEntry>> data) {
         spawnLists.putAll(data);
     }
 

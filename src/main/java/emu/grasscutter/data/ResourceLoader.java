@@ -326,13 +326,13 @@ public class ResourceLoader {
 			return;
 		}
 
-        HashMap<SpawnDataEntryBlock, ArrayList<SpawnDataEntry>> areaSort = new HashMap<>();
+        HashMap<BlockId, ArrayList<SpawnDataEntry>> areaSort = new HashMap<>();
         //key = sceneId,x,z , value = ArrayList<SpawnDataEntry>
         for (SpawnGroupEntry entry : spawnEntryMap) {
             entry.getSpawns().forEach(
                 s -> {
                     s.setGroup(entry);
-                    SpawnDataEntryBlock point = s.getSpawnDataEntryScaledPoint();
+                    BlockId point = s.getBlockId();
                     if(!areaSort.containsKey(point)) {
                         areaSort.put(point, new ArrayList<>());
                     }
