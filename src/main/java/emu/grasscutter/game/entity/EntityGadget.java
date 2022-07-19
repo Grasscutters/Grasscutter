@@ -3,6 +3,7 @@ package emu.grasscutter.game.entity;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.game.entity.gadget.*;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.LifeState;
@@ -15,6 +16,7 @@ import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityIn
 import emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
 import emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.PropPairOuterClass.PropPair;
 import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType;
@@ -22,6 +24,7 @@ import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.ScriptArgs;
@@ -150,6 +153,19 @@ public class EntityGadget extends EntityBaseGadget {
 		if (this.fightProp == null) this.fightProp = new Int2FloatOpenHashMap();
 		return this.fightProp;
 	}
+	
+	@Override
+    public void onInteract(Player player, GadgetInteractReq interactReq) {
+	    if (this.getContent() == null) {
+            return;
+        }
+
+        boolean shouldDelete = this.getContent().onInteract(player, interactReq);
+
+        if (shouldDelete) {
+            this.getScene().killEntity(this);
+        }
+	}
 
 	@Override
 	public void onCreate() {
@@ -212,9 +228,5 @@ public class EntityGadget extends EntityBaseGadget {
 		entityInfo.setGadget(gadgetInfo);
 
 		return entityInfo.build();
-	}
-	public void die() {
-		getScene().broadcastPacket(new PacketLifeStateChangeNotify(this, LifeState.LIFE_DEAD));
-		this.onDeath(0);
 	}
 }

@@ -10,6 +10,7 @@ import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.Animat
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
 import emu.grasscutter.net.proto.FightPropPairOuterClass.*;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.PropPairOuterClass.PropPair;
 import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType;
@@ -81,6 +82,11 @@ public class EntityVehicle extends EntityBaseGadget {
 	@Override
 	public Position getRotation() {
 		return this.rot;
+	}
+	
+	@Override
+    public void onInteract(Player player, GadgetInteractReq interactReq) {
+	    player.getInsectCaptureManager().arrestSmallCreature(this);
 	}
 
 	@Override

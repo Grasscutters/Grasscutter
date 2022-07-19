@@ -3,6 +3,7 @@ package emu.grasscutter.game.entity;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
@@ -12,6 +13,8 @@ import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityIn
 import emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
 import emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
+import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.PropPairOuterClass.PropPair;
 import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType;
@@ -19,6 +22,7 @@ import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
@@ -99,6 +103,30 @@ public class EntityItem extends EntityBaseGadget {
 	public boolean isShare() {
 		return share;
 	}
+	
+	@Override
+	public void onInteract(Player player, GadgetInteractReq interactReq) {
+	    // check drop owner to avoid someone picked up item in others' world
+        if (!this.isShare()) {
+            int dropOwner = (int) (this.getGuid() >> 32);
+            if (dropOwner != player.getUid()) {
+                return;
+            }
+        }
+        
+        this.getScene().removeEntity(this);
+        GameItem item = new GameItem(this.getItemData(), this.getCount());
+        
+        // Add to inventory
+        boolean success = player.getInventory().addItem(item, ActionReason.SubfieldDrop);
+        if (success) {
+            if (!this.isShare()) { // not shared drop
+                player.sendPacket(new PacketGadgetInteractRsp(this, InteractType.INTERACT_TYPE_PICK_ITEM));
+            } else {
+                this.getScene().broadcastPacket(new PacketGadgetInteractRsp(this, InteractType.INTERACT_TYPE_PICK_ITEM));
+            }
+        }
+    }
 
 	@Override
 	public SceneEntityInfo toProto() {

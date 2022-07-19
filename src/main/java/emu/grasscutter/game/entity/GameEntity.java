@@ -3,12 +3,14 @@ package emu.grasscutter.game.entity;
 import java.util.HashMap;
 import java.util.Map;
 
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
@@ -227,6 +229,15 @@ public abstract class GameEntity {
 			getScene().killEntity(this, killerId);
 		}
 	}
+	
+	/**
+     * Called when a player interacts with this entity
+     * @param player Player that is interacting with this entity
+	 * @param interactReq Interact request protobuf data
+     */
+    public void onInteract(Player player, GadgetInteractReq interactReq) {
+        
+    }
 	
     /**
      * Called when this entity is added to the world
