@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
@@ -25,10 +26,9 @@ import java.util.*;
 
 import static emu.grasscutter.Configuration.GAME_OPTIONS;
 
-public class StaminaManager {
+public class StaminaManager extends BasePlayerManager {
 
     // TODO: Skiff state detection?
-    private final Player player;
     private static final HashMap<String, HashSet<MotionState>> MotionStatesCategorized = new HashMap<>() {{
         put("CLIMB", new HashSet<>(List.of(
                 MotionState.MOTION_STATE_CLIMB, // sustained, when not moving no cost no recover
@@ -163,7 +163,7 @@ public class StaminaManager {
     }
 
     public StaminaManager(Player player) {
-        this.player = player;
+        super(player);
     }
 
     // Accessors

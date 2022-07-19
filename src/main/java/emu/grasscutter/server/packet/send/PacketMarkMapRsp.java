@@ -10,7 +10,7 @@ import java.util.*;
 
 public class PacketMarkMapRsp extends BasePacket {
 
-    public PacketMarkMapRsp(HashMap<String, MapMark> mapMarks) {
+    public PacketMarkMapRsp(Map<String, MapMark> mapMarks) {
         super(PacketOpcodes.MarkMapRsp);
 
         MarkMapRspOuterClass.MarkMapRsp.Builder proto = MarkMapRspOuterClass.MarkMapRsp.newBuilder();

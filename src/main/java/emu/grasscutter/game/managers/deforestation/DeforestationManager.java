@@ -7,20 +7,21 @@ import dev.morphia.annotations.Transient;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.entity.EntityItem;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.HitTreeNotifyOuterClass;
 import emu.grasscutter.net.proto.VectorOuterClass;
 import emu.grasscutter.utils.Position;
 
-public class DeforestationManager {
+public class DeforestationManager extends BasePlayerManager {
     final static int RECORD_EXPIRED_SECONDS = 60*5; // 5 min
     final static int RECORD_MAX_TIMES = 3; // max number of wood
     final static int RECORD_MAX_TIMES_OTHER_HIT_TREE = 10; // if hit 10 times other trees, reset wood
 
-    @Transient private final Player player;
-    @Transient private final ArrayList<HitTreeRecord> currentRecord;
-    @Transient private final static HashMap<Integer, Integer> ColliderTypeToWoodItemID = new HashMap<>();
+    private final ArrayList<HitTreeRecord> currentRecord;
+    private final static HashMap<Integer, Integer> ColliderTypeToWoodItemID = new HashMap<>();
+    
     static {
         /* define wood types which reflected to item id*/
         ColliderTypeToWoodItemID.put(1,101301);
@@ -36,8 +37,9 @@ public class DeforestationManager {
         ColliderTypeToWoodItemID.put(11,101311);
         ColliderTypeToWoodItemID.put(12,101312);
     }
+    
     public DeforestationManager(Player player){
-        this.player = player;
+        super(player);
         this.currentRecord = new ArrayList<>();
     }
     public void resetWood(){
