@@ -199,9 +199,10 @@ public class Player {
 		this.deforestationManager = new DeforestationManager(this);
 		this.insectCaptureManager = new InsectCaptureManager(this);
 		this.questManager = new QuestManager(this);
-		
-		this.position = new Position();
-		this.rotation = new Position();
+		this.position = new Position(GameConstants.START_POSITION);
+		this.rotation = new Position(0, 307, 0);
+		this.sceneId = 3;
+        this.regionId = 1;
 		this.properties = new HashMap<>();
 		for (PlayerProperty prop : PlayerProperty.values()) {
 			if (prop.getId() < 10000) {
@@ -222,9 +223,6 @@ public class Player {
 		this.unlockedFurnitureSuite = new HashSet<>();
 		this.activeForges = new ArrayList<>();
 		this.unlockedRecipies = new HashMap<>();
-
-		this.setSceneId(3);
-		this.setRegionId(1);
 		this.sceneState = SceneLoadState.NONE;
 
 		this.attackResults = new LinkedBlockingQueue<>();
@@ -272,8 +270,6 @@ public class Player {
 		this.setProperty(PlayerProperty.PROP_PLAYER_RESIN, 160, false);
 		this.getFlyCloakList().add(140001);
 		this.getNameCardList().add(210001);
-		this.getPosition().set(GameConstants.START_POSITION);
-		this.getRotation().set(0, 307, 0);
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager(this);
 		this.staminaManager = new StaminaManager(this);
