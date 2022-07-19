@@ -662,7 +662,7 @@ public class TeamManager extends BasePlayerDataManager {
 		
 		// Set player position
 		player.setSceneId(3);
-		player.getPos().set(GameConstants.START_POSITION);
+		player.getPosition().set(GameConstants.START_POSITION);
 
 		// Packets
 		getPlayer().sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));

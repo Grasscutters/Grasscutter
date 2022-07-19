@@ -193,7 +193,7 @@ public class World implements Iterable<Player> {
 				World world = new World(victim);
 				world.addPlayer(victim);
 				
-				victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.ENTER_TYPE_SELF, EnterReason.TeamKick, victim.getSceneId(), victim.getPos()));
+				victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterType.ENTER_TYPE_SELF, EnterReason.TeamKick, victim.getSceneId(), victim.getPosition()));
 			}
 		}
 	}
@@ -249,10 +249,10 @@ public class World implements Iterable<Player> {
 		
 		// Set player position
 		if (pos == null) {
-			pos = player.getPos();
+			pos = player.getPosition();
 		}
 		
-		player.getPos().set(pos);
+		player.getPosition().set(pos);
 
 		if (oldScene != null) {
 			newScene.setPrevScene(oldScene.getId());
