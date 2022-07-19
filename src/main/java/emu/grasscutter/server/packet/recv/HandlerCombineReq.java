@@ -21,7 +21,7 @@ public class HandlerCombineReq extends PacketHandler {
 
         CombineReqOuterClass.CombineReq req = CombineReqOuterClass.CombineReq.parseFrom(payload);
 
-        var result = session.getServer().getCombineManger()
+        var result = session.getServer().getCombineSystem()
                 .combineItem(session.getPlayer(), req.getCombineId(), req.getCombineCount());
 
         if(result == null){

@@ -14,7 +14,7 @@ public class HandlerWeaponUpgradeReq extends PacketHandler {
 		WeaponUpgradeReq req = WeaponUpgradeReq.parseFrom(payload);
 		
 		// Level up weapon
-		session.getServer().getInventoryManager().upgradeWeapon(
+		session.getServer().getInventorySystem().upgradeWeapon(
 				session.getPlayer(), 
 				req.getTargetWeaponGuid(), 
 				req.getFoodWeaponGuidListList(),

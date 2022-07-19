@@ -14,7 +14,7 @@ public class HandlerAvatarUpgradeReq extends PacketHandler {
 		AvatarUpgradeReq req = AvatarUpgradeReq.parseFrom(payload);
 		
 		// Level up avatar
-		session.getServer().getInventoryManager().upgradeAvatar(
+		session.getServer().getInventorySystem().upgradeAvatar(
 				session.getPlayer(), 
 				req.getAvatarGuid(), 
 				req.getItemId(),

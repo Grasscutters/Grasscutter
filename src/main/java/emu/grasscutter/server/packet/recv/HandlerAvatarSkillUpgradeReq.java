@@ -14,7 +14,7 @@ public class HandlerAvatarSkillUpgradeReq extends PacketHandler {
 		AvatarSkillUpgradeReq req = AvatarSkillUpgradeReq.parseFrom(payload);
 		
 		// Level up avatar talent
-		session.getServer().getInventoryManager().upgradeAvatarSkill(session.getPlayer(), req.getAvatarGuid(), req.getAvatarSkillId());
+		session.getServer().getInventorySystem().upgradeAvatarSkill(session.getPlayer(), req.getAvatarGuid(), req.getAvatarSkillId());
 	}
 
 }

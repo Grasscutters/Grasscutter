@@ -14,6 +14,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.InvestigationMonsterOuterClass;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneMonster;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 
 import java.io.InputStream;
@@ -24,13 +25,12 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class WorldDataManager {
-    private final GameServer gameServer;
+public class WorldDataSystem extends BaseGameSystem {
     private final Map<String, ChestInteractHandler> chestInteractHandlerMap; // chestType-Handler
     private final Map<String, SceneGroup> sceneInvestigationGroupMap; // <sceneId_groupId, Group>
 
-    public WorldDataManager(GameServer gameServer){
-        this.gameServer = gameServer;
+    public WorldDataSystem(GameServer server){
+        super(server);
         this.chestInteractHandlerMap = new HashMap<>();
         this.sceneInvestigationGroupMap = new ConcurrentHashMap<>();
 

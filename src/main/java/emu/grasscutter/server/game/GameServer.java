@@ -5,27 +5,27 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.game.battlepass.BattlePassMissionManager;
+import emu.grasscutter.game.battlepass.BattlePassSystem;
 import emu.grasscutter.game.combine.CombineManger;
-import emu.grasscutter.game.drop.DropManager;
-import emu.grasscutter.game.dungeons.DungeonManager;
+import emu.grasscutter.game.drop.DropSystem;
+import emu.grasscutter.game.dungeons.DungeonSystem;
 import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
-import emu.grasscutter.game.expedition.ExpeditionManager;
-import emu.grasscutter.game.gacha.GachaManager;
-import emu.grasscutter.game.managers.AnnouncementManager;
+import emu.grasscutter.game.expedition.ExpeditionSystem;
+import emu.grasscutter.game.gacha.GachaSystem;
+import emu.grasscutter.game.managers.AnnouncementSystem;
 import emu.grasscutter.game.managers.CookingManager;
-import emu.grasscutter.game.managers.InventoryManager;
-import emu.grasscutter.game.managers.MultiplayerManager;
+import emu.grasscutter.game.managers.InventorySystem;
+import emu.grasscutter.game.managers.MultiplayerSystem;
 import emu.grasscutter.game.managers.chat.ChatManager;
 import emu.grasscutter.game.managers.chat.ChatManagerHandler;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.quest.ServerQuestHandler;
-import emu.grasscutter.game.shop.ShopManager;
-import emu.grasscutter.game.tower.TowerScheduleManager;
+import emu.grasscutter.game.quest.QuestSystem;
+import emu.grasscutter.game.shop.ShopSystem;
+import emu.grasscutter.game.tower.TowerSystem;
 import emu.grasscutter.game.world.World;
-import emu.grasscutter.game.world.WorldDataManager;
+import emu.grasscutter.game.world.WorldDataSystem;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.server.event.types.ServerEvent;
@@ -47,30 +47,35 @@ import java.util.concurrent.ConcurrentHashMap;
 import static emu.grasscutter.utils.Language.translate;
 import static emu.grasscutter.Configuration.*;
 
+@Getter
 public final class GameServer extends KcpServer {
-	private final InetSocketAddress address;
+    // Game server base
+    private final InetSocketAddress address;
 	private final GameServerPacketHandler packetHandler;
-	private final ServerQuestHandler questHandler;
-    @Getter private final ServerTaskScheduler scheduler;
+    private final Map<Integer, Player> players;
+    private final Set<World> worlds;
 
-	private final Map<Integer, Player> players;
-	private final Set<World> worlds;
-
+    // Server systems
+	private final InventorySystem inventorySystem;
+	private final GachaSystem gachaSystem;
+	private final ShopSystem shopSystem;
+	private final MultiplayerSystem multiplayerSystem;
+	private final DungeonSystem dungeonSystem;
+	private final ExpeditionSystem expeditionSystem;
+	private final DropSystem dropSystem;
+	private final WorldDataSystem worldDataSystem;
+	private final BattlePassSystem battlePassSystem;
+	private final CombineManger combineSystem;
+	private final TowerSystem towerSystem;
+	private final AnnouncementSystem announcementSystem;
+	private final QuestSystem questSystem;
+	
+	// Extra
+	private final ServerTaskScheduler scheduler;
+    private final CommandMap commandMap;
+    private final TaskMap taskMap;
+	
 	private ChatManagerHandler chatManager;
-	@Getter private final InventoryManager inventoryManager;
-	@Getter private final GachaManager gachaManager;
-	@Getter private final ShopManager shopManager;
-	@Getter private final MultiplayerManager multiplayerManager;
-	@Getter private final DungeonManager dungeonManager;
-	@Getter private final ExpeditionManager expeditionManager;
-	@Getter private final CommandMap commandMap;
-	@Getter private final TaskMap taskMap;
-	@Getter private final DropManager dropManager;
-	@Getter private final WorldDataManager worldDataManager;
-	@Getter private final BattlePassMissionManager battlePassMissionManager;
-	@Getter private final CombineManger combineManger;
-	@Getter private final TowerScheduleManager towerScheduleManager;
-	@Getter private final AnnouncementManager announcementManager;
 
 	public GameServer() {
 		this(getAdapterInetSocketAddress());
@@ -78,11 +83,11 @@ public final class GameServer extends KcpServer {
 
 	public GameServer(InetSocketAddress address) {
 		ChannelConfig channelConfig = new ChannelConfig();
-		channelConfig.nodelay(true,40,2,true);
+		channelConfig.nodelay(true, 40, 2, true);
 		channelConfig.setMtu(1400);
 		channelConfig.setSndwnd(256);
 		channelConfig.setRcvwnd(256);
-		channelConfig.setTimeoutMillis(30*1000);//30s
+		channelConfig.setTimeoutMillis(30 * 1000);//30s
 		channelConfig.setUseConvChannel(true);
 		channelConfig.setAckNoDelay(false);
 
@@ -94,56 +99,56 @@ public final class GameServer extends KcpServer {
 		CookingManager.initialize();
 		CombineManger.initialize();
 
+		// Game Server base
 		this.address = address;
 		this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
-		this.questHandler = new ServerQuestHandler();
-        this.scheduler = new ServerTaskScheduler();
 		this.players = new ConcurrentHashMap<>();
 		this.worlds = Collections.synchronizedSet(new HashSet<>());
-
-		this.chatManager = new ChatManager(this);
-		this.inventoryManager = new InventoryManager(this);
-		this.gachaManager = new GachaManager(this);
-		this.shopManager = new ShopManager(this);
-		this.multiplayerManager = new MultiplayerManager(this);
-		this.dungeonManager = new DungeonManager(this);
+		
+		// Extra
+		this.scheduler = new ServerTaskScheduler();
 		this.commandMap = new CommandMap(true);
-		this.taskMap = new TaskMap(true);
-		this.dropManager = new DropManager(this);
-		this.expeditionManager = new ExpeditionManager(this);
-		this.combineManger = new CombineManger(this);
-		this.towerScheduleManager = new TowerScheduleManager(this);
-		this.worldDataManager = new WorldDataManager(this);
-		this.battlePassMissionManager = new BattlePassMissionManager(this);
-		this.announcementManager = new AnnouncementManager(this);
+        this.taskMap = new TaskMap(true);
+
+		// Create game systems
+		this.inventorySystem = new InventorySystem(this);
+		this.gachaSystem = new GachaSystem(this);
+		this.shopSystem = new ShopSystem(this);
+		this.multiplayerSystem = new MultiplayerSystem(this);
+		this.dungeonSystem = new DungeonSystem(this);
+		this.dropSystem = new DropSystem(this);
+		this.expeditionSystem = new ExpeditionSystem(this);
+		this.combineSystem = new CombineManger(this);
+		this.towerSystem = new TowerSystem(this);
+		this.worldDataSystem = new WorldDataSystem(this);
+		this.battlePassSystem = new BattlePassSystem(this);
+		this.announcementSystem = new AnnouncementSystem(this);
+		this.questSystem = new QuestSystem(this);
+		
+		// Chata manager
+		this.chatManager = new ChatManager(this);
+		
 		// Hook into shutdown event.
 		Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
 	}
+	
+    @Deprecated
+    public ChatManagerHandler getChatManager() {
+        return chatManager;
+    }
+    
+    @Deprecated
+    public void setChatManager(ChatManagerHandler chatManager) {
+        this.chatManager = chatManager;
+    }
+    
+    public ChatManagerHandler getChatSystem() {
+        return chatManager;
+    }
 
-	public GameServerPacketHandler getPacketHandler() {
-		return packetHandler;
-	}
-
-	public ServerQuestHandler getQuestHandler() {
-		return questHandler;
-	}
-
-	public Map<Integer, Player> getPlayers() {
-		return players;
-	}
-
-	public Set<World> getWorlds() {
-		return worlds;
-	}
-
-	public ChatManagerHandler getChatManager() {
-		return chatManager;
-	}
-
-	public void setChatManager(ChatManagerHandler chatManager) {
-		this.chatManager = chatManager;
-	}
-
+    public void setChatSystem(ChatManagerHandler chatManager) {
+        this.chatManager = chatManager;
+    }
 
 	private static InetSocketAddress getAdapterInetSocketAddress(){
 		InetSocketAddress inetSocketAddress;

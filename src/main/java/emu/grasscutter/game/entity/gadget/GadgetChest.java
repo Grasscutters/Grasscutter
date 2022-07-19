@@ -19,7 +19,7 @@ public class GadgetChest extends GadgetContent {
 	}
 
 	public boolean onInteract(Player player, GadgetInteractReq req) {
-		var chestInteractHandlerMap = getGadget().getScene().getWorld().getServer().getWorldDataManager().getChestInteractHandlerMap();
+		var chestInteractHandlerMap = getGadget().getScene().getWorld().getServer().getWorldDataSystem().getChestInteractHandlerMap();
 		var handler = chestInteractHandlerMap.get(getGadget().getGadgetData().getJsonName());
 		if(handler == null){
 			Grasscutter.getLogger().warn("Could not found the handler of this type of Chests {}", getGadget().getGadgetData().getJsonName());

@@ -14,7 +14,7 @@ public class HandlerAvatarPromoteReq extends PacketHandler {
 		AvatarPromoteReq req = AvatarPromoteReq.parseFrom(payload);
 		
 		// Ascend avatar
-		session.getServer().getInventoryManager().promoteAvatar(session.getPlayer(), req.getGuid());
+		session.getServer().getInventorySystem().promoteAvatar(session.getPlayer(), req.getGuid());
 	}
 
 }

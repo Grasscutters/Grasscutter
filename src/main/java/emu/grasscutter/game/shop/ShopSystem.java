@@ -6,6 +6,7 @@ import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ShopGoodsData;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -21,35 +22,33 @@ import java.util.List;
 
 import static emu.grasscutter.Configuration.*;
 
-public class ShopManager {
-	private final GameServer server;
-
-	public Int2ObjectMap<List<ShopInfo>> getShopData() {
-		return shopData;
-	}
-
-	public List<ShopChestTable> getShopChestData() {
-		return shopChestData;
-	}
-
-	public List<ShopChestBatchUseTable> getShopChestBatchUseData() {
-		return shopChestBatchUseData;
-	}
-
+public class ShopSystem extends BaseGameSystem {
 	private final Int2ObjectMap<List<ShopInfo>> shopData;
 	private final List<ShopChestTable> shopChestData;
 	private final List<ShopChestBatchUseTable> shopChestBatchUseData;
+	
+    private static final int REFRESH_HOUR = 4; // In GMT+8 server
+    private static final String TIME_ZONE = "Asia/Shanghai"; // GMT+8 Timezone
 
-	public ShopManager(GameServer server) {
-		this.server = server;
+	public ShopSystem(GameServer server) {
+	    super(server);
 		this.shopData = new Int2ObjectOpenHashMap<>();
 		this.shopChestData = new ArrayList<>();
 		this.shopChestBatchUseData = new ArrayList<>();
 		this.load();
 	}
+	
+	public Int2ObjectMap<List<ShopInfo>> getShopData() {
+        return shopData;
+    }
 
-	private static final int REFRESH_HOUR = 4; // In GMT+8 server
-	private static final String TIME_ZONE = "Asia/Shanghai"; // GMT+8 Timezone
+    public List<ShopChestTable> getShopChestData() {
+        return shopChestData;
+    }
+
+    public List<ShopChestBatchUseTable> getShopChestBatchUseData() {
+        return shopChestBatchUseData;
+    }
 
 	public static int getShopNextRefreshTime(ShopInfo shopInfo) {
 		return switch (shopInfo.getShopRefreshType()) {

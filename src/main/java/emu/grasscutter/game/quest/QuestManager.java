@@ -153,7 +153,7 @@ public class QuestManager extends BasePlayerManager {
 					continue;
 				}
 
-				boolean result = getPlayer().getServer().getQuestHandler().triggerContent(quest, condition, paramStr, params);
+				boolean result = getPlayer().getServer().getQuestSystem().triggerContent(quest, condition, paramStr, params);
 
 				if (result) {
 					quest.getFinishProgressList()[i] = 1;
