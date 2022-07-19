@@ -1,36 +1,56 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-// CmdId: 131
+// CmdId: 198
 // EnetChannelId: 0
 // EnetIsReliable: true
 message GetPlayerTokenRsp {
-	int32 retcode = 7;
-	string msg = 10;
-	uint32 uid = 2;
-	string token = 1;
-	uint32 black_uid_end_time = 15;
-	uint32 account_type = 12;
-	string account_uid = 4;
-	bool is_proficient_player = 5;
-	string secret_key = 13;
-	uint32 gm_uid = 14;
-	uint64 secret_key_seed = 11;
-	bytes security_cmd_buffer = 6;
-	uint32 platform_type = 3;
-	bytes extra_bin_data = 8;
-	bool is_guest = 9;
-	uint32 channel_id = 1614;
-	uint32 sub_channel_id = 1911;
-	uint32 tag = 1855;
-	string country_code = 739;
-	bool is_login_white_list = 977;
-	string psn_id = 245;
-	string client_version_random_key = 1387;
-	uint32 reg_platform = 633;
-	string client_ip_str = 1238;
-	string birthday = 1109;
-	uint32 NNCIBOLDIAI = 1728;
-	bool FNECFLEAKKO = 1679;
+    string birthday = 937;
+    int32 retcode = 2;
+    bytes security_cmd_buffer = 6;
+    uint64 secret_key_seed = 13;
+    string country_code = 2013;
+    bytes extra_bin_data = 3;
+    string secret_key = 15;
+    uint32 Unk2700_NOJPEHIBDJH = 1561;
+    uint32 black_uid_end_time = 14;
+    uint32 tag = 1635;
+    string token = 11;
+    uint32 gm_uid = 10;
+    uint32 channel_id = 896;
+    string psn_id = 1811;
+    string client_ip_str = 860;
+    string msg = 7;
+    uint32 account_type = 5;
+    uint32 sub_channel_id = 1802;
+    bool Unk2700_FLBKPCPGPDH = 2028;
+    string encrypted_seed = 1493;
+    bool is_proficient_player = 9;
+    uint32 Unk2800_BPJOBLNCBEI = 1172;
+    uint32 uid = 1;
+    string account_uid = 12;
+    bool is_guest = 4;
+    string client_version_random_key = 1529;
+    repeated uint32 Unk2800_NNBFCEAOEPB = 1640;
+    uint32 platform_type = 8;
+    uint32 reg_platform = 1112;
+    bool is_login_white_list = 573;
+    string seed_signature = 1140;
 }

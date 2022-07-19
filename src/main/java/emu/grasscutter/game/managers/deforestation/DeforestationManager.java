@@ -48,8 +48,8 @@ public class DeforestationManager {
     public void onDeforestationInvoke(HitTreeNotifyOuterClass.HitTreeNotify hit){
         synchronized (currentRecord) {
             //Grasscutter.getLogger().info("onDeforestationInvoke! Wood records {}", currentRecord);
-            VectorOuterClass.Vector hitPosition = hit.getHitPostion();
-            int woodType = hit.getWoodType();
+            VectorOuterClass.Vector hitPosition = hit.getTreePos();
+            int woodType = hit.getTreeType();
             if (ColliderTypeToWoodItemID.containsKey(woodType)) {// is a available wood type
                 Scene scene = player.getScene();
                 int itemId = ColliderTypeToWoodItemID.get(woodType);

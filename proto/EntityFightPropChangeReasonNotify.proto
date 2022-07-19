@@ -1,20 +1,36 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "ChangeEnergyReason.proto";
 import "ChangeHpReason.proto";
 import "PropChangeReason.proto";
 
-// CmdId: 1285
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1203
 // EnetChannelId: 0
 // EnetIsReliable: true
 message EntityFightPropChangeReasonNotify {
-	uint32 entity_id = 11;
-	uint32 prop_type = 6;
-	float prop_delta = 9;
-	PropChangeReason reason = 5;
 	repeated uint32 param_list = 10;
-	ChangeHpReason change_hp_reason = 12;
-	ChangeEnergyReason change_energy_reson = 4;
+	float prop_delta = 1;
+	ChangeHpReason change_hp_reason = 14;
+	PropChangeReason reason = 6;
+	uint32 entity_id = 5;
+	ChangeEnergyReason change_energy_reson = 15;
+	uint32 prop_type = 13;
 }

@@ -1,36 +1,54 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.proto";
-
-import "ChannellerSlabLoopDungeonResultInfo.proto";
+import "ChannelerSlabLoopDungeonResultInfo.proto";
+import "CrystalLinkSettleInfo.proto";
 import "DungeonSettleExhibitionInfo.proto";
 import "EffigyChallengeDungeonResultInfo.proto";
-//import "KHPIGECGFKI.proto";
 import "ParamList.proto";
 import "RoguelikeDungeonSettleInfo.proto";
 import "StrengthenPointData.proto";
+import "SummerTimeV2DungeonSettleInfo.proto";
 import "TowerLevelEndNotify.proto";
 import "TrialAvatarFirstPassDungeonNotify.proto";
 
-// CmdId: 982
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 999
 // EnetChannelId: 0
 // EnetIsReliable: true
 message DungeonSettleNotify {
-	uint32 dungeon_id = 9;
-	bool is_success = 10;
-	repeated uint32 fail_cond_list = 13;
-	map<uint32, ParamList> settle_show = 11;
-	uint32 close_time = 12;
-	map<uint32, StrengthenPointData> strengthen_point_data_map = 4;
-	uint32 result = 15;
-	repeated DungeonSettleExhibitionInfo exhibition_info_list = 14;
-	//uint32 OMBINLAOGBM = 5;
+	map<uint32, StrengthenPointData> strengthen_point_data_map = 14;
+	bool is_success = 7;
+	uint32 close_time = 4;
+	uint32 Unk2700_OMCCFBBDJMI = 1;
+	map<uint32, ParamList> settle_show = 5;
+	repeated DungeonSettleExhibitionInfo exhibition_info_list = 8;
+	repeated uint32 fail_cond_list = 11;
+	uint32 dungeon_id = 13;
+	uint32 result = 10;
 	oneof detail {
-		TowerLevelEndNotify tower_level_end_notify = 97;
-		TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 796;
-		ChannellerSlabLoopDungeonResultInfo channeller_slab_loop_dungeon_result_info = 1671;
-		EffigyChallengeDungeonResultInfo effigy_challenge_dungeon_result_info = 1638;
-		RoguelikeDungeonSettleInfo roguelike_dungeon_settle_info = 71;
-		//KHPIGECGFKI crystal_link_settle_info = 430;
+		TowerLevelEndNotify tower_level_end_notify = 351;
+		TrialAvatarFirstPassDungeonNotify trial_avatar_first_pass_dungeon_notify = 635;
+		ChannelerSlabLoopDungeonResultInfo channeller_slab_loop_dungeon_result_info = 686;
+		EffigyChallengeDungeonResultInfo effigy_challenge_dungeon_result_info = 328;
+		RoguelikeDungeonSettleInfo roguelike_dungeon_settle_info = 1482;
+		CrystalLinkSettleInfo crystal_link_settle_info = 112;
+		SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;
 	}
 }

@@ -9,6 +9,6 @@ import "ActivityScheduleInfo.proto";
 // EnetIsReliable: true
 // IsAllowClient: true
 message ActivityScheduleInfoNotify {
-	repeated ActivityScheduleInfo activity_schedule_list = 8;
-	uint32 remain_fly_sea_lamp_num = 12;
+	repeated ActivityScheduleInfo activity_schedule_list = 12;
+	uint32 remain_fly_sea_lamp_num = 6;
 }

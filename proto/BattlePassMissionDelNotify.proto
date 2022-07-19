@@ -6,5 +6,5 @@ option java_package = "emu.grasscutter.net.proto";
 // EnetChannelId: 0
 // EnetIsReliable: true
 message BattlePassMissionDelNotify {
-	repeated uint32 del_mission_id_list = 4;
+	repeated uint32 del_mission_id_list = 10;
 }

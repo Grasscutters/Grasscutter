@@ -16,14 +16,16 @@ re_keyword_space = re.compile(r'(?<=\b)(if|for|while|switch|try|else|catch|final
 
 
 def get_changed_filelist():
-    subprocess.run(['git', 'fetch', UPSTREAM, f'{RATCHET}:{RATCHET}'])  # Ensure LintRatchet ref is matched to upstream
-    result = subprocess.run(['git', 'diff', RATCHET, '--name-only'], capture_output=True, text=True)
+    # subprocess.run(['git', 'fetch', UPSTREAM, f'{RATCHET}:{RATCHET}'])  # Ensure LintRatchet ref is matched to upstream
+    # result = subprocess.run(['git', 'diff', RATCHET, '--name-only'], capture_output=True, text=True)
+    # if result.returncode != 0:
+        # print(f'{RATCHET} not found, trying fallback {RATCHET_FALLBACK}')
+    print(f'Attempting to diff against {RATCHET_FALLBACK}')
+    result = subprocess.run(['git', 'diff', RATCHET_FALLBACK, '--name-only'], capture_output=True, text=True)
     if result.returncode != 0:
-        print(f'{RATCHET} not found, trying fallback {RATCHET_FALLBACK}')
-        result = subprocess.run(['git', 'diff', RATCHET_FALLBACK, '--name-only'], capture_output=True, text=True)
-        if result.returncode != 0:
-            print('Fallback is also missing, aborting.')
-            exit(1)
+        # print('Fallback is also missing, aborting.')
+        print(f'Could not find {RATCHET_FALLBACK}, aborting.')
+        exit(1)
     return result.stdout.strip().split('\n')
 
 

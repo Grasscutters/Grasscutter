@@ -1,26 +1,42 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.proto";
-
 import "AnchorPointData.proto";
-// import "CCEOEOHLAPK.proto";
 import "ClientCollectorData.proto";
 import "LunchBoxData.proto";
-import "OneoffGatherPointDetectorData.proto";
+import "OneofGatherPointDetectorData.proto";
+import "Unk2700_CCEOEOHLAPK.proto";
 import "WidgetCoolDownData.proto";
 import "WidgetSlotData.proto";
 
-// CmdId: 4273
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 4271
 // EnetChannelId: 0
 // EnetIsReliable: true
 message AllWidgetDataNotify {
-	repeated AnchorPointData anchor_point_list = 13;
+	Unk2700_CCEOEOHLAPK Unk2700_COIELIGEACL = 12;
+	repeated AnchorPointData anchor_point_list = 3;
+	repeated ClientCollectorData client_collector_data_list = 4;
+	repeated WidgetCoolDownData normal_cool_down_data_list = 9;
 	uint32 next_anchor_point_usable_time = 10;
-	LunchBoxData lunch_box_data = 11;
-	repeated OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 5;
-	repeated ClientCollectorData client_collector_data_list = 6;
-	repeated WidgetCoolDownData cool_down_group_data_list = 2;
-	repeated WidgetCoolDownData normal_cool_down_data_list = 4;
-	repeated WidgetSlotData slot_list = 3;
-	// CCEOEOHLAPK KNPDHPEGCHI = 12;
+	repeated OneofGatherPointDetectorData oneof_gather_point_detector_data_list = 15;
+	LunchBoxData lunch_box_data = 1;
+	repeated WidgetCoolDownData cool_down_group_data_list = 13;
+	repeated WidgetSlotData slot_list = 6;
 }

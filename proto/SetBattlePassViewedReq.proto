@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-// CmdId: 2637
+// CmdId: 2641
 // EnetChannelId: 0
 // EnetIsReliable: true
 // IsAllowClient: true

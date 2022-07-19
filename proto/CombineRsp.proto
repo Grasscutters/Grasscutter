@@ -1,20 +1,36 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "ItemParam.proto";
 
-// CmdId: 646
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 674
 // EnetChannelId: 0
 // EnetIsReliable: true
 message CombineRsp {
-	int32 retcode = 13;
-	uint32 combine_id = 12;
-	uint32 combine_count = 6;
-	uint64 avatar_guid = 15;
-	repeated ItemParam cost_item_list = 10;
-	repeated ItemParam result_item_list = 2;
+	repeated ItemParam cost_item_list = 3;
+	int32 retcode = 7;
+	repeated ItemParam total_extra_item_list = 6;
+	uint32 combine_id = 11;
 	repeated ItemParam total_random_item_list = 9;
-	repeated ItemParam total_return_item_list = 4;
-	repeated ItemParam total_extra_item_list = 8;
+	repeated ItemParam result_item_list = 2;
+	uint32 combine_count = 13;
+	repeated ItemParam total_return_item_list = 12;
+	uint64 avatar_guid = 10;
 }

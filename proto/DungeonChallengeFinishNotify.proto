@@ -1,30 +1,46 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 syntax = "proto3";
+
+import "ChannelerSlabLoopDungeonResultInfo.proto";
+import "CustomDungeonResultInfo.proto";
+import "EffigyChallengeDungeonResultInfo.proto";
+import "PotionDungeonResultInfo.proto";
+import "StrengthenPointData.proto";
+import "Unk2700_FHOKHHBGPEG.proto";
 
 option java_package = "emu.grasscutter.net.proto";
 
-//import "CDPBNKLFNKP.proto";
-import "ChannellerSlabLoopDungeonResultInfo.proto";
-import "EffigyChallengeDungeonResultInfo.proto";
-//import "FHOKHHBGPEG.proto";
-//import "IDFFMJEDODN.proto";
-import "StrengthenPointData.proto";
-
-// CmdId: 986
+// CmdId: 939
 // EnetChannelId: 0
 // EnetIsReliable: true
 message DungeonChallengeFinishNotify {
-	uint32 challenge_index = 11;
-	bool is_success = 4;
-	bool is_new_record = 2;
-	uint32 challenge_record_type = 10;
-	uint32 current_value = 12;
 	map<uint32, StrengthenPointData> strengthen_point_data_map = 13;
-	//FHOKHHBGPEG NJDMJAFIJNH = 15;
-	uint32 time_cost = 6;
+	Unk2700_FHOKHHBGPEG Unk2700_ONCDLPDHFAB = 9;
+	bool is_new_record = 10;
+	uint32 challenge_record_type = 7;
+	uint32 time_cost = 4;
+	uint32 current_value = 15;
+	bool is_success = 3;
+	uint32 challenge_index = 5;
 	oneof detail {
-		ChannellerSlabLoopDungeonResultInfo channeller_slab_loop_dungeon_result_info = 1758;
-		EffigyChallengeDungeonResultInfo effigy_challenge_dungeon_result_info = 913;
-		//CDPBNKLFNKP potion_dungeon_result_info = 382;
-		//IDFFMJEDODN custom_dungeon_result_info = 1411;
+		ChannelerSlabLoopDungeonResultInfo channeller_slab_loop_dungeon_result_info = 1521;
+		EffigyChallengeDungeonResultInfo effigy_challenge_dungeon_result_info = 1627;
+		PotionDungeonResultInfo potion_dungeon_result_info = 1824;
+		CustomDungeonResultInfo custom_dungeon_result_info = 1664;
 	}
 }

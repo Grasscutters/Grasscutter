@@ -10,33 +10,14 @@ import emu.grasscutter.utils.Utils;
 
 import static emu.grasscutter.Configuration.*;
 
+import java.util.List;
+
 public class PacketPullRecentChatRsp extends BasePacket {
-	public PacketPullRecentChatRsp(Player player) {
+	public PacketPullRecentChatRsp(List<ChatInfo> messages) {
 		super(PacketOpcodes.PullRecentChatRsp);
 		
-		var joinOptions = GAME_INFO.joinOptions;
-		PullRecentChatRsp.Builder proto = PullRecentChatRsp.newBuilder();
-		
-		if (joinOptions.welcomeEmotes != null && joinOptions.welcomeEmotes.length > 0) {
-			ChatInfo welcomeEmote = ChatInfo.newBuilder()
-				.setTime((int) (System.currentTimeMillis() / 1000))
-				.setUid(GameConstants.SERVER_CONSOLE_UID)
-				.setToUid(player.getUid())
-				.setIcon(joinOptions.welcomeEmotes[Utils.randomRange(0, joinOptions.welcomeEmotes.length - 1)])
-				.build();
-			
-			proto.addChatInfo(welcomeEmote);
-		}
-		
-		if (joinOptions.welcomeMessage != null && joinOptions.welcomeMessage.length() > 0) {
-			ChatInfo welcomeMessage = ChatInfo.newBuilder()
-				.setTime((int) (System.currentTimeMillis() / 1000))
-				.setUid(GameConstants.SERVER_CONSOLE_UID)
-				.setToUid(player.getUid())
-				.setText(joinOptions.welcomeMessage)
-				.build();
-			proto.addChatInfo(welcomeMessage);
-		}
+		PullRecentChatRsp.Builder proto = PullRecentChatRsp.newBuilder()
+			.addAllChatInfo(messages);
 
 		this.setData(proto);
 	}

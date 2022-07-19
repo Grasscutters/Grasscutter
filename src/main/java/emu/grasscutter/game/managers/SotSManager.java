@@ -158,7 +158,7 @@ public class SotSManager {
                 player.getTeamManager().healAvatar(entity.getAvatar(), 0, needHP);
                 player.getSession().send(new PacketEntityFightPropChangeReasonNotify(entity, FightProperty.FIGHT_PROP_CUR_HP,
                         ((float) needHP / 100), List.of(3), PropChangeReason.PROP_CHANGE_REASON_STATUE_RECOVER,
-                        ChangeHpReason.CHANGE_HP_REASON_CHANGE_HP_ADD_STATUE));
+                        ChangeHpReason.CHANGE_HP_REASON_ADD_STATUE));
                 player.getSession().send(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
 
             }

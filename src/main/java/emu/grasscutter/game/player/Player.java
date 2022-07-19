@@ -106,7 +106,8 @@ public class Player {
 	private Position rotation;
 	private PlayerBirthday birthday;
 	private PlayerCodex codex;
-    @Getter private Map<Integer,Integer> questGlobalVariables;
+  @Getter private Map<Integer,Integer> questGlobalVariables;
+  @Getter private PlayerOpenStateManager openStateManager;
 	private Map<Integer, Integer> properties;
 	private Set<Integer> nameCardList;
 	private Set<Integer> flyCloakList;
@@ -250,7 +251,7 @@ public class Player {
 		this.rewardedLevels = new HashSet<>();
 		this.moonCardGetTimes = new HashSet<>();
 		this.codex = new PlayerCodex(this);
-
+        this.openStateManager = new PlayerOpenStateManager(this);
 		this.shopLimit = new ArrayList<>();
 		this.expeditionInfo = new HashMap<>();
 		this.messageHandler = null;
@@ -455,9 +456,18 @@ public class Player {
 	}
 
 	public boolean setLevel(int level) {
+		if (this.getLevel() == level) {
+			return true;
+		}
+
 		if (this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, level)) {
+			// Update world level and profile.
 			this.updateWorldLevel();
 			this.updateProfile();
+
+			// Handle OpenState unlocks from level-up.
+			this.getOpenStateManager().unlockLevelDependentStates();
+
 			return true;
 		}
 		return false;
@@ -540,7 +550,6 @@ public class Player {
 
 	// Directly give player exp
 	public void addExpDirectly(int gain) {
-		boolean hasLeveledUp = false;
 		int level = getLevel();
 		int exp = getExp();
 		int reqExp = getExpRequired(level);
@@ -551,10 +560,8 @@ public class Player {
 			exp -= reqExp;
 			level += 1;
 			reqExp = getExpRequired(level);
-			hasLeveledUp = true;
-		}
 
-		if (hasLeveledUp) {
+			// Set level each time to allow level-up specific logic to run.
 			this.setLevel(level);
 		}
 
@@ -1080,7 +1087,9 @@ public class Player {
 			this.messageHandler.append(message.toString());
 			return;
 		}
-		this.sendPacket(new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, getUid(), message.toString()));
+
+		this.getServer().getChatManager().sendPrivateMessageFromServer(getUid(), message.toString());
+		// this.sendPacket(new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, getUid(), message.toString()));
 	}
 
 	/**
@@ -1090,7 +1099,8 @@ public class Player {
 	 * @param message The message to send.
 	 */
 	public void sendMessage(Player sender, Object message) {
-		this.sendPacket(new PacketPrivateChatNotify(sender.getUid(), this.getUid(), message.toString()));
+		// this.sendPacket(new PacketPrivateChatNotify(sender.getUid(), this.getUid(), message.toString()));
+		this.getServer().getChatManager().sendPrivateMessage(sender, this.getUid(), message.toString());
 	}
 
 	// ---------------------MAIL------------------------
@@ -1470,6 +1480,7 @@ public class Player {
 	@PostLoad
 	private void onLoad() {
 		this.getCodex().setPlayer(this);
+        this.getOpenStateManager().setPlayer(this);
 		this.getTeamManager().setPlayer(this);
 		this.getTowerManager().setPlayer(this);
 	}
@@ -1490,6 +1501,9 @@ public class Player {
 		if (this.getCodex() == null) {
 			this.codex = new PlayerCodex(this);
 		}
+        if (this.getOpenStateManager() == null) {
+            this.openStateManager = new PlayerOpenStateManager(this);
+        }
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
 		}
@@ -1550,6 +1564,11 @@ public class Player {
 		this.forgingManager.sendForgeDataNotify();
 		this.resinManager.onPlayerLogin();
 		this.cookingManager.sendCookDataNofity();
+
+		// Unlock in case this is an existing user that reached a level before we implemented unlocking.
+		this.openStateManager.unlockLevelDependentStates();
+        this.openStateManager.onPlayerLogin();
+
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
 		// Battle Pass trigger
@@ -1564,11 +1583,14 @@ public class Player {
 
 		session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
 		session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
-		session.send(new PacketOpenStateUpdateNotify());
+
 
 		// First notify packets sent
 		this.setHasSentAvatarDataNotify(true);
 
+		// Send server welcome chat.
+		this.getServer().getChatManager().sendServerWelcomeMessages(this);
+		
 		// Set session state
 		session.setState(SessionState.ACTIVE);
 
@@ -1586,6 +1608,9 @@ public class Player {
 
 	public void onLogout() {
 		try{
+			// Clear chat history.
+			this.getServer().getChatManager().clearHistoryOnLogout(this);
+
 			// stop stamina calculation
 			getStaminaManager().stopSustainedStaminaHandler();
 

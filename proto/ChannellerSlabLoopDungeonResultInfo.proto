@@ -2,6 +2,7 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
+
 message ChannellerSlabLoopDungeonResultInfo {
 	uint32 dungeon_index = 1;
 	bool is_success = 2;

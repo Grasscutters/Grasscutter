@@ -29,13 +29,12 @@ public class MusicGameActivityHandler extends ActivityHandler {
             .putAllMusicGameRecordMap(
                 musicGamePlayerData.getMusicGameRecord().values().stream()
                     .collect(Collectors.toMap(MusicGamePlayerData.MusicGameRecord::getMusicId, MusicGamePlayerData.MusicGameRecord::toProto)))
-
             .addAllPersonCustomBeatmap(musicGamePlayerData.getPersonalCustomBeatmapRecord().values().stream()
                 .map(MusicGamePlayerData.CustomBeatmapRecord::toPersonalBriefProto)
                 .map(MusicBriefInfoOuterClass.MusicBriefInfo.Builder::build)
                 .toList())
 
-            .addAllPersonCustomBeatmap(musicGamePlayerData.getOthersCustomBeatmapRecord().values().stream()
+            .addAllOthersCustomBeatmap(musicGamePlayerData.getOthersCustomBeatmapRecord().values().stream()
                 .map(MusicGamePlayerData.CustomBeatmapRecord::toOthersBriefProto)
                 .map(MusicBriefInfoOuterClass.MusicBriefInfo.Builder::build)
                 .toList())

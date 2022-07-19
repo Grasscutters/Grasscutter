@@ -2,9 +2,9 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-// CmdId: 930
+// CmdId: 997
 // EnetChannelId: 0
 // EnetIsReliable: true
 message DungeonShowReminderNotify {
-	uint32 reminder_id = 10;
+	uint32 reminder_id = 9;
 }

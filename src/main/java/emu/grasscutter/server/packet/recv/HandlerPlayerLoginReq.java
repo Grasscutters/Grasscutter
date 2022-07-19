@@ -17,7 +17,7 @@ import static emu.grasscutter.Configuration.ACCOUNT;
 
 @Opcodes(PacketOpcodes.PlayerLoginReq) // Sends initial data packets
 public class HandlerPlayerLoginReq extends PacketHandler {
-	
+
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		// Check
@@ -28,16 +28,16 @@ public class HandlerPlayerLoginReq extends PacketHandler {
 
 		// Parse request
 		PlayerLoginReq req = PlayerLoginReq.parseFrom(payload);
-		
+
 		// Authenticate session
 		if (!req.getToken().equals(session.getAccount().getToken())) {
 			session.close();
 			return;
 		}
-		
+
 		// Load character from db
 		Player player = session.getPlayer();
-		
+
 		// Show opening cutscene if player has no avatars
 		if (player.getAvatars().getAvatarCount() == 0) {
 			// Pick character

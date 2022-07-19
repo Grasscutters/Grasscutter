@@ -9,8 +9,8 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.google.gson.Gson;
 import emu.grasscutter.data.binout.*;
+import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.utils.Utils;
 import lombok.SneakyThrows;
@@ -28,7 +28,6 @@ import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.common.ScenePointConfig;
 import emu.grasscutter.game.world.SpawnDataEntry.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 import static emu.grasscutter.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
@@ -309,34 +308,39 @@ public class ResourceLoader {
 
 	private static void loadSpawnData() {
 		String[] spawnDataNames = {"Spawns.json", "GadgetSpawns.json"};
-		Int2ObjectMap<SpawnGroupEntry> spawnEntryMap = new Int2ObjectOpenHashMap<>();
+		ArrayList<SpawnGroupEntry> spawnEntryMap = new ArrayList<>();
 
-		for (String name : spawnDataNames) {
-			// Load spawn entries from file
-			try (InputStream spawnDataEntries = DataLoader.load(name)) {
-				Type type = TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType();
-				List<SpawnGroupEntry> list = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(spawnDataEntries), type);
-				
-				// Add spawns to group if it already exists in our spawn group map
-				for (SpawnGroupEntry group : list) {
-					if (spawnEntryMap.containsKey(group.getGroupId())) {
-						spawnEntryMap.get(group.getGroupId()).getSpawns().addAll(group.getSpawns());
-					} else {
-						spawnEntryMap.put(group.getGroupId(), group);
-					}
-				}
-			} catch (Exception ignored) {}
-		}
-		
+        for (String name : spawnDataNames) {
+            // Load spawn entries from file
+            try (InputStream spawnDataEntries = DataLoader.load(name)) {
+                Type type = TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType();
+                List<SpawnGroupEntry> list = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(spawnDataEntries), type);
+
+                // Add spawns to group if it already exists in our spawn group map
+                spawnEntryMap.addAll(list);
+            } catch (Exception ignored) {}
+        }
+
 		if (spawnEntryMap.isEmpty()) {
 			Grasscutter.getLogger().error("No spawn data loaded!");
 			return;
 		}
 
-		for (SpawnGroupEntry entry : spawnEntryMap.values()) {
-			entry.getSpawns().forEach(s -> s.setGroup(entry));
-			GameDepot.getSpawnListById(entry.getSceneId()).insert(entry, entry.getPos().getX(), entry.getPos().getZ());
-		}
+        HashMap<GridBlockId, ArrayList<SpawnDataEntry>> areaSort = new HashMap<>();
+        //key = sceneId,x,z , value = ArrayList<SpawnDataEntry>
+        for (SpawnGroupEntry entry : spawnEntryMap) {
+            entry.getSpawns().forEach(
+                s -> {
+                    s.setGroup(entry);
+                    GridBlockId point = s.getBlockId();
+                    if(!areaSort.containsKey(point)) {
+                        areaSort.put(point, new ArrayList<>());
+                    }
+                    areaSort.get(point).add(s);
+                }
+            );
+        }
+        GameDepot.addSpawnListById(areaSort);
 	}
 
 	private static void loadOpenConfig() {

@@ -13,7 +13,7 @@ public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
 	public PacketPlayerWorldSceneInfoListNotify() {
 		super(PacketOpcodes.PlayerWorldSceneInfoListNotify); // Rename opcode later
 
-		PlayerWorldSceneInfoListNotify proto = PlayerWorldSceneInfoListNotify.newBuilder()
+		PlayerWorldSceneInfoListNotify.Builder proto = PlayerWorldSceneInfoListNotify.newBuilder()
 				.addInfoList(
 						PlayerWorldSceneInfo.newBuilder()
 								.setSceneId(1)
@@ -55,9 +55,18 @@ public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
 								.setSceneId(7)
 								.setIsLocked(false)
 								.build()
-				)
-				.build();
-		
+				);
+
+		var gaa = PlayerWorldSceneInfo.newBuilder()
+				.setSceneId(9)
+				.setIsLocked(false);
+
+		for(int i = 0; i < 3000; i++) {
+			gaa.addSceneTagIdList(i);
+		}
+
+		proto.addInfoList(gaa);
+
 		this.setData(proto);
 	}
 }

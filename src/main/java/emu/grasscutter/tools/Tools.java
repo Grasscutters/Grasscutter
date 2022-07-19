@@ -159,7 +159,9 @@ final class ToolsWithLanguageOption {
 			for (Integer id : list) {
 				QuestData data = GameData.getQuestDataMap().get(id);
 				MainQuestData mainQuest = GameData.getMainQuestDataMap().get(data.getMainId());
-				writer.println(data.getId() + " : " + map.get(mainQuest.getTitleTextMapHash()) + " - " + map.get(data.getDescTextMapHash()));
+				if (mainQuest != null) {
+					writer.println(data.getId() + " : " + map.get(mainQuest.getTitleTextMapHash()) + " - " + map.get(data.getDescTextMapHash()));
+				}
 			}
 			
 			writer.println();
