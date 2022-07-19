@@ -11,6 +11,7 @@ import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketDungeonEntryInfoRsp;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterDungeonRsp;
@@ -18,15 +19,11 @@ import emu.grasscutter.utils.Position;
 
 import java.util.List;
 
-public class DungeonManager {
-	private final GameServer server;
+public class DungeonSystem extends BaseGameSystem {
 	private static final BasicDungeonSettleListener basicDungeonSettleObserver = new BasicDungeonSettleListener();
-	public DungeonManager(GameServer server) {
-		this.server = server;
-	}
-
-	public GameServer getServer() {
-		return server;
+	
+	public DungeonSystem(GameServer server) {
+	    super(server);
 	}
 
 	public void getEntryInfo(Player player, int pointId) {

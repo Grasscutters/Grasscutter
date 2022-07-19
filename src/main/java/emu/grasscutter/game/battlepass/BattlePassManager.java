@@ -140,11 +140,11 @@ public class BattlePassManager extends BasePlayerDataManager {
 	
 	// Mission triggers
 	public void triggerMission(WatcherTriggerType triggerType) {
-		getPlayer().getServer().getBattlePassMissionManager().triggerMission(getPlayer(), triggerType);
+		getPlayer().getServer().getBattlePassSystem().triggerMission(getPlayer(), triggerType);
 	}
 	
 	public void triggerMission(WatcherTriggerType triggerType, int param, int progress) {
-		getPlayer().getServer().getBattlePassMissionManager().triggerMission(getPlayer(), triggerType, param, progress);
+		getPlayer().getServer().getBattlePassSystem().triggerMission(getPlayer(), triggerType, param, progress);
 	}
 	
 	// Handlers

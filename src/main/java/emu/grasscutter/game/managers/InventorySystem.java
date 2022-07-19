@@ -27,15 +27,14 @@ import emu.grasscutter.game.shop.ShopChestBatchUseTable;
 import emu.grasscutter.game.shop.ShopChestTable;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 
-public class InventoryManager {
-	private final GameServer server;
-	
+public class InventorySystem extends BaseGameSystem {
 	private final static int RELIC_MATERIAL_1 = 105002; // Sanctifying Unction
 	private final static int RELIC_MATERIAL_2 = 105003; // Sanctifying Essence
 	private final static int RELIC_MATERIAL_EXP_1 = 2500; // Sanctifying Unction
@@ -55,12 +54,8 @@ public class InventoryManager {
 	private final static int AVATAR_BOOK_EXP_2 = 5000; // Adventurer's Experience
 	private final static int AVATAR_BOOK_EXP_3 = 20000; // Hero's Wit
 	
-	public InventoryManager(GameServer server) {
-		this.server = server;
-	}
-
-	public GameServer getServer() {
-		return server;
+	public InventorySystem(GameServer server) {
+		super(server);
 	}
 	
 	public void lockEquip(Player player, long targetEquipGuid, boolean isLocked) {
@@ -850,7 +845,7 @@ public class InventoryManager {
 				// Handle combine diagrams.
 				if (useItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_COMBINE")) {
 					// Unlock.
-					useSuccess = player.getServer().getCombineManger().unlockCombineDiagram(player, useItem);
+					useSuccess = player.getServer().getCombineSystem().unlockCombineDiagram(player, useItem);
 				}
 				// Handle cooking recipies.
 				if (useItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_COOK_RECIPE")) {
@@ -883,7 +878,7 @@ public class InventoryManager {
 				}
 				break;
 			case MATERIAL_CHEST:
-				List<ShopChestTable> shopChestTableList = player.getServer().getShopManager().getShopChestData();
+				List<ShopChestTable> shopChestTableList = player.getServer().getShopSystem().getShopChestData();
 				List<GameItem> rewardItemList = new ArrayList<>();
 				for (ShopChestTable shopChestTable : shopChestTableList) {
 					if (shopChestTable.getItemId() != useItem.getItemId()) {
@@ -914,7 +909,7 @@ public class InventoryManager {
 				if (optionId < 1) {
 					break;
 				}
-				List<ShopChestBatchUseTable> shopChestBatchUseTableList = player.getServer().getShopManager().getShopChestBatchUseData();
+				List<ShopChestBatchUseTable> shopChestBatchUseTableList = player.getServer().getShopSystem().getShopChestBatchUseData();
 				for (ShopChestBatchUseTable shopChestBatchUseTable : shopChestBatchUseTableList) {
 					if (shopChestBatchUseTable.getItemId() != useItem.getItemId()) {
 						continue;

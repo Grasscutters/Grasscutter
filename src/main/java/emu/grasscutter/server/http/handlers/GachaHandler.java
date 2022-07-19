@@ -4,7 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.gacha.GachaBanner;
-import emu.grasscutter.game.gacha.GachaManager;
+import emu.grasscutter.game.gacha.GachaSystem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.tools.Tools;
@@ -108,7 +108,7 @@ public final class GachaHandler implements Router {
 
         // Get the banner info for the banner we want.
         int scheduleId = Integer.parseInt(request.query("scheduleId"));
-        GachaManager manager = Grasscutter.getGameServer().getGachaManager();
+        GachaSystem manager = Grasscutter.getGameServer().getGachaSystem();
         GachaBanner banner = manager.getGachaBanners().get(scheduleId);
 
         // Add 5-star items.

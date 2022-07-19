@@ -17,7 +17,7 @@ public class HandlerCalcWeaponUpgradeReturnItemsReq extends PacketHandler {
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		CalcWeaponUpgradeReturnItemsReq req = CalcWeaponUpgradeReturnItemsReq.parseFrom(payload);
 		
-		List<ItemParam> returnOres = session.getServer().getInventoryManager().calcWeaponUpgradeReturnItems(
+		List<ItemParam> returnOres = session.getServer().getInventorySystem().calcWeaponUpgradeReturnItems(
 				session.getPlayer(), 
 				req.getTargetWeaponGuid(), 
 				req.getFoodWeaponGuidListList(),

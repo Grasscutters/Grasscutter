@@ -11,16 +11,17 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.BattlePassMissionRefreshType;
 import emu.grasscutter.game.props.BattlePassMissionStatus;
 import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketBattlePassMissionUpdateNotify;
 
-public class BattlePassMissionManager {
-	private final GameServer server;
+public class BattlePassSystem extends BaseGameSystem {
 	private final Map<WatcherTriggerType, List<BattlePassMissionData>> cachedTriggers;
 	
 	// BP Mission manager for the server, contains cached triggers so we dont have to load it for each player
-	public BattlePassMissionManager(GameServer server) {
-		this.server = server;
+	public BattlePassSystem(GameServer server) {
+	    super(server);
+	    
 		this.cachedTriggers = new HashMap<>();
 		
 		for (BattlePassMissionData missionData : GameData.getBattlePassMissionDataMap().values()) {

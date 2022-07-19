@@ -41,10 +41,10 @@ public final class CoopCommand implements CommandHandler {
         
         // There's no target==host check but this just places them in multiplayer in their own world which seems fine.
         if (targetPlayer.isInMultiplayer()) {
-            targetPlayer.getServer().getMultiplayerManager().leaveCoop(targetPlayer);
+            targetPlayer.getServer().getMultiplayerSystem().leaveCoop(targetPlayer);
         }
-        host.getServer().getMultiplayerManager().applyEnterMp(targetPlayer, host.getUid());
-        targetPlayer.getServer().getMultiplayerManager().applyEnterMpReply(host, targetPlayer.getUid(), true);
+        host.getServer().getMultiplayerSystem().applyEnterMp(targetPlayer, host.getUid());
+        targetPlayer.getServer().getMultiplayerSystem().applyEnterMpReply(host, targetPlayer.getUid(), true);
         CommandHandler.sendMessage(sender, translate(sender, "commands.coop.success", targetPlayer.getNickname(), host.getNickname()));
     }
 }

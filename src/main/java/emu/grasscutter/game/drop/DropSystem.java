@@ -12,6 +12,7 @@ import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
@@ -23,23 +24,17 @@ import java.io.Reader;
 import java.util.Collection;
 import java.util.List;
 
-public class DropManager {
-    public GameServer getGameServer() {
-        return gameServer;
-    }
-
-    private final GameServer gameServer;
-
-    public Int2ObjectMap<List<DropData>> getDropData() {
-        return dropData;
-    }
-
+public class DropSystem extends BaseGameSystem {
     private final Int2ObjectMap<List<DropData>> dropData;
 
-    public DropManager(GameServer gameServer) {
-        this.gameServer = gameServer;
+    public DropSystem(GameServer server) {
+        super(server);
         this.dropData = new Int2ObjectOpenHashMap<>();
         this.load();
+    }
+    
+    public Int2ObjectMap<List<DropData>> getDropData() {
+        return dropData;
     }
 
     public synchronized void load() {

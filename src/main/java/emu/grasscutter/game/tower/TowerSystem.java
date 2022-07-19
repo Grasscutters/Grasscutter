@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.TowerScheduleData;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 
 import java.io.FileReader;
@@ -14,15 +15,10 @@ import java.util.List;
 
 import static emu.grasscutter.Configuration.*;
 
-public class TowerScheduleManager {
-    private final GameServer gameServer;
-
-    public GameServer getGameServer() {
-        return gameServer;
-    }
-
-    public TowerScheduleManager(GameServer gameServer) {
-        this.gameServer = gameServer;
+public class TowerSystem extends BaseGameSystem {
+    
+    public TowerSystem(GameServer server) {
+        super(server);
         this.load();
     }
 

@@ -12,6 +12,6 @@ public class HandlerDoGachaReq extends PacketHandler {
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		DoGachaReq req = DoGachaReq.parseFrom(payload);
 		
-		session.getServer().getGachaManager().doPulls(session.getPlayer(), req.getGachaScheduleId(), req.getGachaTimes());
+		session.getServer().getGachaSystem().doPulls(session.getPlayer(), req.getGachaScheduleId(), req.getGachaTimes());
 	}
 }

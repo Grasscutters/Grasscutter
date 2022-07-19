@@ -1,7 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.tower.TowerManager;
-import emu.grasscutter.game.tower.TowerScheduleManager;
+import emu.grasscutter.game.tower.TowerSystem;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.TowerAllDataRspOuterClass.TowerAllDataRsp;
@@ -17,7 +17,7 @@ import java.util.stream.IntStream;
 
 public class PacketTowerAllDataRsp extends BasePacket {
 	
-	public PacketTowerAllDataRsp(TowerScheduleManager towerScheduleManager, TowerManager towerManager) {
+	public PacketTowerAllDataRsp(TowerSystem towerScheduleManager, TowerManager towerManager) {
 		super(PacketOpcodes.TowerAllDataRsp);
 
 		var recordList = towerManager.getRecordMap().values().stream()

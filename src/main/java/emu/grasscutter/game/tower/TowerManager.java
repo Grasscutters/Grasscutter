@@ -74,7 +74,7 @@ public class TowerManager extends BasePlayerManager {
         notifyCurLevelRecordChange();
         // use team user choose
         player.getTeamManager().useTemporaryTeam(0);
-        player.getServer().getDungeonManager().handoffDungeon(player, dungeonId,
+        player.getServer().getDungeonSystem().handoffDungeon(player, dungeonId,
                 towerDungeonSettleListener);
 
         // make sure user can exit dungeon correctly
@@ -116,10 +116,10 @@ public class TowerManager extends BasePlayerManager {
         return getTowerData().currentLevel < 3;
     }
     public int getNextFloorId() {
-        return player.getServer().getTowerScheduleManager().getNextFloorId(getTowerData().currentFloorId);
+        return player.getServer().getTowerSystem().getNextFloorId(getTowerData().currentFloorId);
     }
     public boolean hasNextFloor(){
-        return player.getServer().getTowerScheduleManager().getNextFloorId(getTowerData().currentFloorId) > 0;
+        return player.getServer().getTowerSystem().getNextFloorId(getTowerData().currentFloorId) > 0;
     }
 
     public void clearEntry() {
@@ -128,10 +128,10 @@ public class TowerManager extends BasePlayerManager {
 
     public boolean canEnterScheduleFloor(){
         Map<Integer, TowerLevelRecord> recordMap = getRecordMap();
-        if(!recordMap.containsKey(player.getServer().getTowerScheduleManager().getLastEntranceFloor())){
+        if(!recordMap.containsKey(player.getServer().getTowerSystem().getLastEntranceFloor())){
             return false;
         }
-        return recordMap.get(player.getServer().getTowerScheduleManager().getLastEntranceFloor())
+        return recordMap.get(player.getServer().getTowerSystem().getLastEntranceFloor())
                 .getStarCount() >= 6;
     }
 

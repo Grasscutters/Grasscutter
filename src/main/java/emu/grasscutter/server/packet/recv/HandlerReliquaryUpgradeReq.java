@@ -13,7 +13,7 @@ public class HandlerReliquaryUpgradeReq extends PacketHandler {
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		ReliquaryUpgradeReq req = ReliquaryUpgradeReq.parseFrom(payload);
 		
-		session.getServer().getInventoryManager().upgradeRelic(session.getPlayer(), req.getTargetReliquaryGuid(), req.getFoodReliquaryGuidListList(), req.getItemParamListList());
+		session.getServer().getInventorySystem().upgradeRelic(session.getPlayer(), req.getTargetReliquaryGuid(), req.getFoodReliquaryGuidListList(), req.getItemParamListList());
 	}
 
 }
