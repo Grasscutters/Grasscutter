@@ -459,7 +459,7 @@ public class Scene {
     public synchronized void checkSpawns() {
         Set<SpawnDataEntry.GridBlockId> loadedGridBlocks = new HashSet<>();
         for (Player player : this.getPlayers()) {
-            for (SpawnDataEntry.GridBlockId block : SpawnDataEntry.GridBlockId.getAdjacentGridBlockIds(player.getSceneId(), player.getPos()))
+            for (SpawnDataEntry.GridBlockId block : SpawnDataEntry.GridBlockId.getAdjacentGridBlockIds(player.getSceneId(), player.getPosition()))
                 loadedGridBlocks.add(block);
         }
         if (this.loadedGridBlocks.containsAll(loadedGridBlocks)) {  // Don't recalculate static spawns if nothing has changed
@@ -555,7 +555,7 @@ public class Scene {
 	public List<SceneBlock> getPlayerActiveBlocks(Player player){
 		// consider the borders' entities of blocks, so we check if contains by index
 		return SceneIndexManager.queryNeighbors(getScriptManager().getBlocksIndex(),
-				player.getPos().toXZDoubleArray(), Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);
+				player.getPosition().toXZDoubleArray(), Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);
 	}
 	public void checkBlocks() {
 		Set<SceneBlock> visible = new HashSet<>();
@@ -582,7 +582,7 @@ public class Scene {
 			}else{
 				// dynamic load the groups for players in a loaded block
 				var toLoad = this.getPlayers().stream()
-						.filter(p -> block.contains(p.getPos()))
+						.filter(p -> block.contains(p.getPosition()))
 						.map(p -> playerMeetGroups(p, block))
 						.flatMap(Collection::stream)
 						.toList();
@@ -592,7 +592,7 @@ public class Scene {
 
 	}
 	public List<SceneGroup> playerMeetGroups(Player player, SceneBlock block){
-		List<SceneGroup> sceneGroups = SceneIndexManager.queryNeighbors(block.sceneGroupIndex, player.getPos().toDoubleArray(),
+		List<SceneGroup> sceneGroups = SceneIndexManager.queryNeighbors(block.sceneGroupIndex, player.getPosition().toDoubleArray(),
 				Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);
 
 		List<SceneGroup> groups = sceneGroups.stream()
@@ -612,7 +612,7 @@ public class Scene {
 
 		// the groups form here is not added in current scene
 		var groups = players.stream()
-				.filter(player -> block.contains(player.getPos()))
+				.filter(player -> block.contains(player.getPosition()))
 				.map(p -> playerMeetGroups(p, block))
 				.flatMap(Collection::stream)
 				.toList();
@@ -774,7 +774,7 @@ public class Scene {
         this.npcBornEntrySet.addAll(loadNpcForPlayer(player));
     }
 	private List<SceneNpcBornEntry> loadNpcForPlayer(Player player){
-		var pos = player.getPos();
+		var pos = player.getPosition();
 		var data = GameData.getSceneNpcBornData().get(getId());
 		if(data == null){
 			return List.of();

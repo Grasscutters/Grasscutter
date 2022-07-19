@@ -39,7 +39,7 @@ public final class PlayerHook {
      * @param sceneId The scene to send the player to.
      */
     public void changeScenes(int sceneId) {
-        this.player.getWorld().transferPlayerToScene(this.player, sceneId, this.player.getPos());
+        this.player.getWorld().transferPlayerToScene(this.player, sceneId, this.player.getPosition());
     }
 
     /**
@@ -81,7 +81,7 @@ public final class PlayerHook {
      * @param position The position to teleport the player to.
      */
     public void teleport(Position position) {
-        this.player.getPos().set(position);
+        this.player.getPosition().set(position);
         this.player.sendPacket(new PacketPlayerEnterSceneNotify(this.player, 
                 EnterType.ENTER_TYPE_JUMP, EnterReason.TransPoint,
                 this.player.getSceneId(), position

@@ -69,7 +69,7 @@ public class EntityAvatar extends GameEntity {
 
 	@Override
 	public Position getPosition() {
-		return getPlayer().getPos();
+		return getPlayer().getPosition();
 	}
 	
 	@Override

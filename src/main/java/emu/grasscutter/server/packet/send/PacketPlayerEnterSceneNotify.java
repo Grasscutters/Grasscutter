@@ -21,7 +21,7 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
 
 		PlayerEnterSceneNotify proto = PlayerEnterSceneNotify.newBuilder()
 				.setSceneId(player.getSceneId())
-				.setPos(player.getPos().toProto())
+				.setPos(player.getPosition().toProto())
 				.setSceneBeginTime(System.currentTimeMillis())
 				.setType(EnterType.ENTER_TYPE_SELF)
 				.setTargetUid(player.getUid())
@@ -48,7 +48,7 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
 
 		PlayerEnterSceneNotify.Builder proto = PlayerEnterSceneNotify.newBuilder()
 				.setPrevSceneId(player.getSceneId())
-				.setPrevPos(player.getPos().toProto())
+				.setPrevPos(player.getPosition().toProto())
 				.setSceneId(newScene)
 				.setPos(newPos.toProto())
 				.setSceneBeginTime(System.currentTimeMillis())
