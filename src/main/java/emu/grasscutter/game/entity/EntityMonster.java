@@ -1,15 +1,22 @@
 package emu.grasscutter.game.entity;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.common.PropGrowCurve;
+import emu.grasscutter.data.excels.EnvAnimalGatherConfigData;
+import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.MonsterCurveData;
 import emu.grasscutter.data.excels.MonsterData;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
@@ -115,7 +122,15 @@ public class EntityMonster extends GameEntity {
 	
 	@Override
     public void onInteract(Player player, GadgetInteractReq interactReq) {
-        player.getInsectCaptureManager().arrestSmallCreature(this);
+	    EnvAnimalGatherConfigData gatherData = GameData.getEnvAnimalGatherConfigDataMap().get(this.getMonsterData().getId());
+        
+        if (gatherData == null) {
+            return;
+        }
+
+        player.getInventory().addItem(gatherData.getGatherItem(), ActionReason.SubfieldDrop);
+        
+        this.getScene().killEntity(this);
     }
 	
 	@Override

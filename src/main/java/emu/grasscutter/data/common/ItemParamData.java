@@ -2,6 +2,7 @@ package emu.grasscutter.data.common;
 
 import com.google.gson.annotations.SerializedName;
 
+// Used in excels
 public class ItemParamData {
 	@SerializedName(value="id", alternate={"itemId"})
 	private int id;
@@ -10,6 +11,7 @@ public class ItemParamData {
     private int count;
 
     public ItemParamData() {}
+    
 	public ItemParamData(int id, int count) {
     	this.id = id;
     	this.count = count;
