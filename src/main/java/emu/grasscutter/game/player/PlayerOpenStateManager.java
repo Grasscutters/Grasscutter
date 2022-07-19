@@ -55,11 +55,9 @@ public class PlayerOpenStateManager {
     
     public void setOpenState(OpenState openState, Integer value) {
         Integer previousValue = this.map.getOrDefault(openState.getValue(),0);
-        if(!(value == previousValue)) {
+        if(value != previousValue) {
             this.map.put(openState.getValue(), value);
             player.getSession().send(new PacketOpenStateChangeNotify(openState.getValue(),value));
-        } else {
-            Grasscutter.getLogger().debug("Warning: OpenState {} is already set to {}!", openState, value);
         }
     }
 
@@ -73,9 +71,9 @@ public class PlayerOpenStateManager {
         player.getSession().send(new PacketOpenStateUpdateNotify(this));
     }
 
-    public void onPlayerLevelUp() {
+    public void unlockLevelDependentStates() {
         Stream.of(OpenState.values())
-            .filter(s -> s.getUnlockLevel() == this.player.getLevel())
+            .filter(s -> s.getUnlockLevel() > 1 && s.getUnlockLevel() <= this.player.getLevel())
             .forEach(s -> this.setOpenState(s, 1));
     }
 }

@@ -463,7 +463,7 @@ public class Player {
 			this.updateProfile();
 
 			// Handle OpenState unlocks from level-up.
-			this.getOpenStateManager().onPlayerLevelUp();
+			this.getOpenStateManager().unlockLevelDependentStates();
 
 			return true;
 		}
@@ -1535,7 +1535,11 @@ public class Player {
 		this.forgingManager.sendForgeDataNotify();
 		this.resinManager.onPlayerLogin();
 		this.cookingManager.sendCookDataNofity();
+
+		// Unlock in case this is an existing user that reached a level before we implemented unlocking.
+		this.openStateManager.unlockLevelDependentStates();
         this.openStateManager.onPlayerLogin();
+
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
 		// Battle Pass trigger
