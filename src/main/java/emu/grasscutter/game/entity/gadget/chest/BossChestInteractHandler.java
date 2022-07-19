@@ -19,7 +19,7 @@ public class BossChestInteractHandler implements ChestInteractHandler{
 
     @Override
     public boolean onInteract(GadgetChest chest, Player player) {
-        var worldDataManager = chest.getGadget().getScene().getWorld().getServer().getWorldDataManager();
+        var worldDataManager = chest.getGadget().getScene().getWorld().getServer().getWorldDataSystem();
         var monster = chest.getGadget().getMetaGadget().group.monsters.get(chest.getGadget().getMetaGadget().boss_chest.monster_config_id);
         var reward = worldDataManager.getRewardByBossId(monster.monster_id);
 

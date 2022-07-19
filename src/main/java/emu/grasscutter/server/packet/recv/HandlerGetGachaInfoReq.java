@@ -14,7 +14,7 @@ public class HandlerGetGachaInfoReq extends PacketHandler {
 	
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		session.send(new PacketGetGachaInfoRsp(session.getServer().getGachaManager(), session.getPlayer()));
+		session.send(new PacketGetGachaInfoRsp(session.getServer().getGachaSystem(), session.getPlayer()));
 	}
 
 }

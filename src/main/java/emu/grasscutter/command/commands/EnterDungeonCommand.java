@@ -25,7 +25,7 @@ public final class EnterDungeonCommand implements CommandHandler {
             	return;
             }
             
-            boolean result = targetPlayer.getServer().getDungeonManager().enterDungeon(targetPlayer.getSession().getPlayer(), 0, dungeonId);
+            boolean result = targetPlayer.getServer().getDungeonSystem().enterDungeon(targetPlayer.getSession().getPlayer(), 0, dungeonId);
 
             if (!result) {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.not_found_error"));

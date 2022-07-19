@@ -33,6 +33,7 @@ import emu.grasscutter.net.proto.GachaTransferItemOuterClass.GachaTransferItem;
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameServerTickEvent;
 import emu.grasscutter.server.packet.send.PacketDoGachaRsp;
@@ -46,8 +47,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 import static emu.grasscutter.Configuration.*;
 
-public class GachaManager {
-	private final GameServer server;
+public class GachaSystem extends BaseGameSystem {
 	private final Int2ObjectMap<GachaBanner> gachaBanners;
 	private WatchService watchService;
 
@@ -56,15 +56,11 @@ public class GachaManager {
 	private int[] fallbackItems4Pool2Default = {11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407, 14401, 14402, 14403, 14409, 15401, 15402, 15403, 15405};
 	private int[] fallbackItems5Pool2Default = {11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502};
 
-	public GachaManager(GameServer server) {
-		this.server = server;
+	public GachaSystem(GameServer server) {
+	    super(server);
 		this.gachaBanners = new Int2ObjectOpenHashMap<>();
 		this.load();
 		this.startWatcher(server);
-	}
-
-	public GameServer getServer() {
-		return server;
 	}
 
 	public Int2ObjectMap<GachaBanner> getGachaBanners() {

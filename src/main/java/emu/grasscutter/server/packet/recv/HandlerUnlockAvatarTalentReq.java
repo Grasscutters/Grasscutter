@@ -14,7 +14,7 @@ public class HandlerUnlockAvatarTalentReq extends PacketHandler {
 		UnlockAvatarTalentReq req = UnlockAvatarTalentReq.parseFrom(payload);
 		
 		// Unlock avatar const
-		session.getServer().getInventoryManager().unlockAvatarConstellation(session.getPlayer(), req.getAvatarGuid());
+		session.getServer().getInventorySystem().unlockAvatarConstellation(session.getPlayer(), req.getAvatarGuid());
 	}
 
 }

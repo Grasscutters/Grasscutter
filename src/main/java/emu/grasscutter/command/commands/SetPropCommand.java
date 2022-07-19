@@ -146,7 +146,7 @@ public final class SetPropCommand implements CommandHandler {
     }
 
     private boolean setTowerLevel(Player sender, Player targetPlayer, int topFloor) {
-        List<Integer> floorIds = targetPlayer.getServer().getTowerScheduleManager().getAllFloors();
+        List<Integer> floorIds = targetPlayer.getServer().getTowerSystem().getAllFloors();
         if (topFloor < 0 || topFloor > floorIds.size()) {
             String min = Integer.toString(0);
             String max = Integer.toString(floorIds.size());

@@ -4,7 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.shop.ShopInfo;
 import emu.grasscutter.game.shop.ShopLimit;
-import emu.grasscutter.game.shop.ShopManager;
+import emu.grasscutter.game.shop.ShopSystem;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GetShopRspOuterClass;
@@ -27,7 +27,7 @@ public class PacketGetShopRsp extends BasePacket {
 				.setCityId(1) //mock
 				.setCityReputationLevel(10); //mock
 
-		ShopManager manager = Grasscutter.getGameServer().getShopManager();
+		ShopSystem manager = Grasscutter.getGameServer().getShopSystem();
 		if (manager.getShopData().get(shopType) != null) {
 			List<ShopInfo> list = manager.getShopData().get(shopType);
 			List<ShopGoods> goodsList = new ArrayList<>();
@@ -54,7 +54,7 @@ public class PacketGetShopRsp extends BasePacket {
 
 				int currentTs = Utils.getCurrentSeconds();
 				ShopLimit currentShopLimit = inv.getGoodsLimit(info.getGoodsId());
-				int nextRefreshTime = ShopManager.getShopNextRefreshTime(info);
+				int nextRefreshTime = ShopSystem.getShopNextRefreshTime(info);
 				if (currentShopLimit != null) {
 					if (currentShopLimit.getNextRefreshTime() < currentTs) { // second game day
 						currentShopLimit.setHasBoughtInPeriod(0);

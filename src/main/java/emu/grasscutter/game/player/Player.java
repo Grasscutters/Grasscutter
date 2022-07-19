@@ -1436,7 +1436,7 @@ public class Player {
 			getStaminaManager().stopSustainedStaminaHandler();
 
 			// force to leave the dungeon (inside has a "if")
-			this.getServer().getDungeonManager().exitDungeon(this);
+			this.getServer().getDungeonSystem().exitDungeon(this);
 
 			// Leave world
 			if (this.getWorld() != null) {

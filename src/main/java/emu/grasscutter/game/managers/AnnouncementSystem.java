@@ -6,6 +6,7 @@ import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AnnounceDataOuterClass;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketServerAnnounceNotify;
 import emu.grasscutter.server.packet.send.PacketServerAnnounceRevokeNotify;
@@ -19,24 +20,22 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 @Getter
-public class AnnouncementManager {
-
-    public final GameServer server;
-    public AnnouncementManager(GameServer server){
-        this.server = server;
+public class AnnouncementSystem extends BaseGameSystem {
+    private final Map<Integer, AnnounceConfigItem> announceConfigItemMap;
+    
+    public AnnouncementSystem(GameServer server){
+        super(server);
+        this.announceConfigItemMap = new HashMap<>();
         loadConfig();
     }
-    Map<Integer, AnnounceConfigItem> announceConfigItemMap = new HashMap<>();
 
     private int loadConfig() {
         try (var fileReader = new InputStreamReader(DataLoader.load("Announcement.json"))) {
             List<AnnounceConfigItem> announceConfigItems = Grasscutter.getGsonFactory().fromJson(fileReader,
                 TypeToken.getParameterized(List.class, AnnounceConfigItem.class).getType());
 
-            announceConfigItemMap = new HashMap<>();
+            announceConfigItemMap.clear();
             announceConfigItems.forEach(i -> announceConfigItemMap.put(i.getTemplateId(), i));
-
-
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load server announce config.", e);
         }

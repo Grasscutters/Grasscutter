@@ -3,6 +3,7 @@ package emu.grasscutter.game.expedition;
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -15,21 +16,17 @@ import java.util.List;
 
 import static emu.grasscutter.Configuration.*;
 
-public class ExpeditionManager {
-    public GameServer getGameServer() {
-        return gameServer;
-    }
-
-    private final GameServer gameServer;
-
-    public Int2ObjectMap<List<ExpeditionRewardDataList>> getExpeditionRewardDataList() { return expeditionRewardData; }
-
+public class ExpeditionSystem extends BaseGameSystem {
     private final Int2ObjectMap<List<ExpeditionRewardDataList>> expeditionRewardData;
 
-    public ExpeditionManager(GameServer gameServer) {
-        this.gameServer = gameServer;
+    public ExpeditionSystem(GameServer server) {
+        super(server);
         this.expeditionRewardData = new Int2ObjectOpenHashMap<>();
         this.load();
+    }
+    
+    public Int2ObjectMap<List<ExpeditionRewardDataList>> getExpeditionRewardDataList() { 
+        return expeditionRewardData; 
     }
 
     public synchronized void load() {

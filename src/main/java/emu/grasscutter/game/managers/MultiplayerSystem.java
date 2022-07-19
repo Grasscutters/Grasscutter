@@ -8,20 +8,16 @@ import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyE
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.Player.SceneLoadState;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketPlayerApplyEnterMpNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerApplyEnterMpResultNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
 
-public class MultiplayerManager {
-	private final GameServer server;
-	
-	public MultiplayerManager(GameServer server) {
-		this.server = server;
-	}
+public class MultiplayerSystem extends BaseGameSystem {
 
-	public GameServer getServer() {
-		return server;
+	public MultiplayerSystem(GameServer server) {
+	    super(server);
 	}
 
 	public void applyEnterMp(Player player, int targetUid) {

@@ -12,6 +12,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketCombineFormulaDataNotify;
 import emu.grasscutter.server.packet.send.PacketCombineRsp;
@@ -29,16 +30,11 @@ import java.util.List;
 
 import com.google.gson.reflect.TypeToken;
 
-public class CombineManger {
-    private final GameServer gameServer;
+public class CombineManger extends BaseGameSystem {
 	private final static Int2ObjectMap<List<Integer>> reliquaryDecomposeData = new Int2ObjectOpenHashMap<>();
 
-    public GameServer getGameServer() {
-        return gameServer;
-    }
-
-    public CombineManger(GameServer gameServer) {
-        this.gameServer = gameServer;
+    public CombineManger(GameServer server) {
+        super(server);
     }
 
     public static void initialize() {

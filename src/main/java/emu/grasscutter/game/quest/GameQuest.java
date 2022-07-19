@@ -58,7 +58,7 @@ public class GameQuest {
 
 		this.mainQuest.getChildQuests().put(this.questId, this);
 
-        this.getData().getBeginExec().forEach(e -> getOwner().getServer().getQuestHandler().triggerExec(this, e, e.getParam()));
+        this.getData().getBeginExec().forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
 
         this.getOwner().getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_QUEST_STATE_EQUAL, this.questId, this.state.getValue());
 
@@ -171,7 +171,7 @@ public class GameQuest {
 			this.save();
 		}
 
-        this.getData().getFinishExec().forEach(e -> getOwner().getServer().getQuestHandler().triggerExec(this, e, e.getParam()));
+        this.getData().getFinishExec().forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
 
         this.getOwner().getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_QUEST_STATE_EQUAL, this.questId, this.state.getValue());
 
@@ -205,7 +205,7 @@ public class GameQuest {
 					// TODO
 					for (int i = 0; i < questData.getAcceptCond().size(); i++) {
 						QuestCondition condition = questData.getAcceptCond().get(i);
-						boolean result = getOwner().getServer().getQuestHandler().triggerCondition(this, condition,
+						boolean result = getOwner().getServer().getQuestSystem().triggerCondition(this, condition,
                                 condition.getParamStr(),
 								condition.getParam());
 
