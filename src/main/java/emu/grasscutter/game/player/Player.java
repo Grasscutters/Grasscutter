@@ -453,9 +453,18 @@ public class Player {
 	}
 
 	public boolean setLevel(int level) {
+		if (this.getLevel() == level) {
+			return true;
+		}
+
 		if (this.setProperty(PlayerProperty.PROP_PLAYER_LEVEL, level)) {
+			// Update world level and profile.
 			this.updateWorldLevel();
 			this.updateProfile();
+
+			// Handle OpenState unlocks from level-up.
+			this.getOpenStateManager().onPlayerLevelUp();
+
 			return true;
 		}
 		return false;
@@ -538,7 +547,6 @@ public class Player {
 
 	// Directly give player exp
 	public void addExpDirectly(int gain) {
-		boolean hasLeveledUp = false;
 		int level = getLevel();
 		int exp = getExp();
 		int reqExp = getExpRequired(level);
@@ -549,10 +557,8 @@ public class Player {
 			exp -= reqExp;
 			level += 1;
 			reqExp = getExpRequired(level);
-			hasLeveledUp = true;
-		}
 
-		if (hasLeveledUp) {
+			// Set level each time to allow level-up specific logic to run.
 			this.setLevel(level);
 		}
 
