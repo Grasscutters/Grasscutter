@@ -85,11 +85,6 @@ public class EntityVehicle extends EntityBaseGadget {
 	}
 	
 	@Override
-    public void onInteract(Player player, GadgetInteractReq interactReq) {
-	    player.getInsectCaptureManager().arrestSmallCreature(this);
-	}
-
-	@Override
 	public SceneEntityInfo toProto() {
 
 		VehicleInfo vehicle = VehicleInfo.newBuilder()
