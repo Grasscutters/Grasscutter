@@ -26,7 +26,7 @@ public final class TeleportCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        Position pos = targetPlayer.getPos();
+        Position pos = targetPlayer.getPosition();
         float x = pos.getX();
         float y = pos.getY();
         float z = pos.getZ();

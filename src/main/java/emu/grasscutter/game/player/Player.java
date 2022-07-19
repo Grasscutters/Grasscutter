@@ -97,7 +97,7 @@ public class Player {
 	private String signature;
 	private int headImage;
 	private int nameCardId = 210001;
-	private Position pos;
+	private Position position;
 	private Position rotation;
 	private PlayerBirthday birthday;
 	private PlayerCodex codex;
@@ -200,7 +200,7 @@ public class Player {
 		this.insectCaptureManager = new InsectCaptureManager(this);
 		this.questManager = new QuestManager(this);
 		
-		this.pos = new Position();
+		this.position = new Position();
 		this.rotation = new Position();
 		this.properties = new HashMap<>();
 		for (PlayerProperty prop : PlayerProperty.values()) {
@@ -272,7 +272,7 @@ public class Player {
 		this.setProperty(PlayerProperty.PROP_PLAYER_RESIN, 160, false);
 		this.getFlyCloakList().add(140001);
 		this.getNameCardList().add(210001);
-		this.getPos().set(GameConstants.START_POSITION);
+		this.getPosition().set(GameConstants.START_POSITION);
 		this.getRotation().set(0, 307, 0);
 		this.messageHandler = null;
 		this.mapMarksManager = new MapMarksManager(this);
@@ -419,8 +419,8 @@ public class Player {
 		this.currentRealmId = currentRealmId;
 	}
 	
-	public Position getPos() {
-		return pos;
+	public Position getPosition() {
+		return position;
 	}
 
 	public Position getRotation() {
@@ -1182,7 +1182,7 @@ public class Player {
 	public PlayerLocationInfo getPlayerLocationInfo() {
 		return PlayerLocationInfo.newBuilder()
 				.setUid(this.getUid())
-				.setPos(this.getPos().toProto())
+				.setPos(this.getPosition().toProto())
 				.setRot(this.getRotation().toProto())
 				.build();
 	}

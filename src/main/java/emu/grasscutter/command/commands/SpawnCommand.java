@@ -85,7 +85,7 @@ public final class SpawnCommand implements CommandHandler {
 
         double maxRadius = Math.sqrt(amount * 0.2 / Math.PI);
         for (int i = 0; i < amount; i++) {
-            Position pos = GetRandomPositionInCircle(targetPlayer.getPos(), maxRadius).addY(3);
+            Position pos = GetRandomPositionInCircle(targetPlayer.getPosition(), maxRadius).addY(3);
             if(x != 0 && y != 0 && z != 0) {
                 pos = GetRandomPositionInCircle(new Position(x, y, z), maxRadius).addY(3);
             }
