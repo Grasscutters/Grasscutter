@@ -16,9 +16,7 @@ import java.util.stream.Stream;
 import static emu.grasscutter.game.props.OpenState.*;
 
 @Entity
-public class PlayerOpenStateManager {
-    @Transient private Player player;
-    
+public class PlayerOpenStateManager extends BasePlayerDataManager {
     // Map of all open states that this player has. Do not put default values here.
     private Map<Integer, Integer> map;
     
@@ -37,11 +35,7 @@ public class PlayerOpenStateManager {
         .collect(Collectors.toSet());
 
     public PlayerOpenStateManager(Player player) {
-        this.player = player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
+        super(player);
     }
 
 	public Map<Integer, Integer> getOpenStateMap() {
