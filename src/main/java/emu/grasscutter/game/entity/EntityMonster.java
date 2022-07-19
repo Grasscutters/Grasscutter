@@ -16,6 +16,7 @@ import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityIn
 import emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
 import emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.MonsterBornTypeOuterClass.MonsterBornType;
 import emu.grasscutter.net.proto.PropPairOuterClass.PropPair;
 import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType;
@@ -111,6 +112,11 @@ public class EntityMonster extends GameEntity {
 	public void setPoseId(int poseId) {
 		this.poseId = poseId;
 	}
+	
+	@Override
+    public void onInteract(Player player, GadgetInteractReq interactReq) {
+        player.getInsectCaptureManager().arrestSmallCreature(this);
+    }
 	
 	@Override
 	public void onCreate() {

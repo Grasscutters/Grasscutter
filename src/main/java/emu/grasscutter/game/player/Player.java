@@ -995,52 +995,14 @@ public class Player {
 		return this.getMailHandler().replaceMailByIndex(index, message);
 	}
 
-
-	public void interactWith(int gadgetEntityId, GadgetInteractReq opType) {
-		GameEntity entity = getScene().getEntityById(gadgetEntityId);
-		if (entity == null) {
+	public void interactWith(int gadgetEntityId, GadgetInteractReq interactReq) {
+		GameEntity target = getScene().getEntityById(gadgetEntityId);
+		
+		if (target == null) {
 			return;
 		}
-
-		// Handle
-		if (entity instanceof EntityItem drop) {
-			// Pick item
-			if (!drop.isShare()) // check drop owner to avoid someone picked up item in others' world
-			{
-				int dropOwner = (int)(drop.getGuid() >> 32);
-				if (dropOwner != getUid()) {
-					return;
-				}
-			}
-			entity.getScene().removeEntity(entity);
-			GameItem item = new GameItem(drop.getItemData(), drop.getCount());
-			// Add to inventory
-			boolean success = getInventory().addItem(item, ActionReason.SubfieldDrop);
-			if (success) {
-				if (!drop.isShare()) { // not shared drop
-					this.sendPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_TYPE_PICK_ITEM));
-				}else{
-					this.getScene().broadcastPacket(new PacketGadgetInteractRsp(drop, InteractType.INTERACT_TYPE_PICK_ITEM));
-				}
-			}
-		} else if (entity instanceof EntityGadget gadget) {
-			if (gadget.getContent() == null) {
-				return;
-			}
-
-			boolean shouldDelete = gadget.getContent().onInteract(this, opType);
-
-			if (shouldDelete) {
-				entity.getScene().removeEntity(entity, VisionType.VISION_TYPE_REMOVE);
-			}
-		} else if (entity instanceof EntityMonster monster) {
-			insectCaptureManager.arrestSmallCreature(monster);
-		} else if (entity instanceof EntityVehicle vehicle) {// try to arrest it, example: glowworm
-			insectCaptureManager.arrestSmallCreature(vehicle);
-		} else {
-			// Delete directly
-			entity.getScene().removeEntity(entity);
-		}
+		
+		target.onInteract(this, interactReq);
 	}
 
 	public void onPause() {

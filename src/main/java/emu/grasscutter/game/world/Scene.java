@@ -379,19 +379,28 @@ public class Scene {
 		// Sanity check
 		target.damage(result.getDamage(), result.getAttackerId());
 	}
+	
+	public void killEntity(GameEntity target) {
+	    killEntity(target, 0);
+	}
 
 	public void killEntity(GameEntity target, int attackerId) {
-		GameEntity attacker = getEntityById(attackerId);
-
-		//Check codex
-		if (attacker instanceof EntityClientGadget) {
-			var clientGadgetOwner = getEntityById(((EntityClientGadget) attacker).getOwnerEntityId());
-			if(clientGadgetOwner instanceof EntityAvatar) {
-				((EntityClientGadget) attacker).getOwner().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
-			}
+		GameEntity attacker = null;
+		
+		if (attackerId > 0) {
+		    attacker = getEntityById(attackerId);
 		}
-		else if (attacker instanceof EntityAvatar) {
-			((EntityAvatar) attacker).getPlayer().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+
+		if (attacker != null) {
+		    // Check codex
+		    if (attacker instanceof EntityClientGadget gadgetAttacker) {
+	            var clientGadgetOwner = getEntityById(gadgetAttacker.getOwnerEntityId());
+	            if (clientGadgetOwner instanceof EntityAvatar) {
+	                ((EntityClientGadget) attacker).getOwner().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+	            }
+	        } else if (attacker instanceof EntityAvatar avatarAttacker) {
+	            avatarAttacker.getPlayer().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+	        }
 		}
 
 		// Packet
@@ -402,6 +411,7 @@ public class Scene {
 			getWorld().getServer().getDropSystem().callDrop((EntityMonster) target);
 		}
 
+		// Remove entity from world
 		this.removeEntity(target);
 
 		// Death event
