@@ -77,6 +77,10 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
 	}
 	
 	public boolean addItem(int itemId, int count) {
+        return addItem(itemId, count, null);
+    }
+	
+	public boolean addItem(int itemId, int count, ActionReason reason) {
 		ItemData itemData = GameData.getItemDataMap().get(itemId);
 		
 		if (itemData == null) {
@@ -85,9 +89,9 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
 		
 		GameItem item = new GameItem(itemData, count);
 		
-		return addItem(item);
+		return addItem(item, reason);
 	}
-
+	
 	public boolean addItem(GameItem item) {
 		GameItem result = putItem(item);
 		
@@ -119,6 +123,15 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
 
 		return result;
 	}
+	
+	public boolean addItem(ItemParamData itemParam) {
+        return addItem(itemParam, null);
+    }
+	
+	public boolean addItem(ItemParamData itemParam, ActionReason reason) {
+	    if (itemParam == null) return false;
+        return addItem(itemParam.getId(), itemParam.getCount(), reason);
+    }
 	
 	public void addItems(Collection<GameItem> items) {
 		this.addItems(items, null);

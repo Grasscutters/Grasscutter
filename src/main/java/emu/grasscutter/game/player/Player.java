@@ -30,7 +30,6 @@ import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.managers.CookingManager;
 import emu.grasscutter.game.managers.FurnitureManager;
-import emu.grasscutter.game.managers.InsectCaptureManager;
 import emu.grasscutter.game.managers.ResinManager;
 import emu.grasscutter.game.managers.collection.CollectionRecordStore;
 import emu.grasscutter.game.managers.deforestation.DeforestationManager;
@@ -142,7 +141,6 @@ public class Player {
 	@Getter private transient QuestManager questManager;
 	@Getter private transient TowerManager towerManager;
 	@Getter private transient SotSManager sotsManager;
-	@Getter private transient InsectCaptureManager insectCaptureManager;
     @Getter private transient MapMarksManager mapMarksManager;
     @Getter private transient StaminaManager staminaManager;
     @Getter private transient EnergyManager energyManager;
@@ -197,7 +195,6 @@ public class Player {
 		this.towerManager = new TowerManager(this);
 		this.abilityManager = new AbilityManager(this);
 		this.deforestationManager = new DeforestationManager(this);
-		this.insectCaptureManager = new InsectCaptureManager(this);
 		this.questManager = new QuestManager(this);
 		this.position = new Position(GameConstants.START_POSITION);
 		this.rotation = new Position(0, 307, 0);
