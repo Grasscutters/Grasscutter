@@ -4,6 +4,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.home.FurnitureMakeSlotItem;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.ItemParamOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
@@ -13,11 +14,10 @@ import emu.grasscutter.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FurnitureManager {
-    private final Player player;
-
+public class FurnitureManager extends BasePlayerManager {
+    
     public FurnitureManager(Player player) {
-        this.player = player;
+        super(player);
     }
 
     public void onLogin(){

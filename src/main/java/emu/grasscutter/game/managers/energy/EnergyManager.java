@@ -13,6 +13,7 @@ import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.FightProperty;
@@ -46,8 +47,7 @@ import static java.util.Map.entry;
 import com.google.gson.reflect.TypeToken;
 import com.google.protobuf.InvalidProtocolBufferException;
 
-public class EnergyManager {
-    private final Player player;
+public class EnergyManager extends BasePlayerManager {
     private final Map<EntityAvatar, Integer> avatarNormalProbabilities;
 //    energyUsage for each player
     private Boolean energyUsage;
@@ -55,13 +55,9 @@ public class EnergyManager {
     private final static Int2ObjectMap<List<SkillParticleGenerationInfo>> skillParticleGenerationData = new Int2ObjectOpenHashMap<>();
 
     public EnergyManager(Player player) {
-        this.player = player;
+        super(player);
         this.avatarNormalProbabilities = new HashMap<>();
         this.energyUsage=GAME_OPTIONS.energyUsage;
-    }
-
-    public Player getPlayer() {
-        return this.player;
     }
 
     public static void initialize() {

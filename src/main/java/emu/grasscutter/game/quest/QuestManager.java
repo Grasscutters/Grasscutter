@@ -10,6 +10,7 @@ import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.data.excels.QuestData.QuestCondition;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.ParentQuestState;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
@@ -19,17 +20,12 @@ import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-public class QuestManager {
-	private final Player player;
+public class QuestManager extends BasePlayerManager {
 	private final Int2ObjectMap<GameMainQuest> quests;
 
 	public QuestManager(Player player) {
-		this.player = player;
+		super(player);
 		this.quests = new Int2ObjectOpenHashMap<>();
-	}
-
-	public Player getPlayer() {
-		return player;
 	}
 
 	public Int2ObjectMap<GameMainQuest> getQuests() {

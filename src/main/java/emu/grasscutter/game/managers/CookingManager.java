@@ -10,6 +10,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.CookRecipeDataOuterClass;
@@ -22,14 +23,12 @@ import emu.grasscutter.server.packet.send.PacketPlayerCookArgsRsp;
 import emu.grasscutter.server.packet.send.PacketPlayerCookRsp;
 import io.netty.util.internal.ThreadLocalRandom;
 
-public class CookingManager {
+public class CookingManager extends BasePlayerManager {
     private static final int MANUAL_PERFECT_COOK_QUALITY = 3;
-
     private static Set<Integer> defaultUnlockedRecipies;
-    private final Player player;
 
     public CookingManager(Player player) {
-        this.player = player;
+        super(player);
     }
 
     public static void initialize() {

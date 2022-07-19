@@ -9,6 +9,7 @@ import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketAvatarChangeCostumeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarFlycloakChangeNotify;
@@ -17,19 +18,14 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 
-public class AvatarStorage implements Iterable<Avatar> {
-	private final Player player;
+public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar> {
 	private final Int2ObjectMap<Avatar> avatars;
 	private final Long2ObjectMap<Avatar> avatarsGuid;
 	
 	public AvatarStorage(Player player) {
-		this.player = player;
+		super(player);
 		this.avatars = new Int2ObjectOpenHashMap<>();
 		this.avatarsGuid = new Long2ObjectOpenHashMap<>();
-	}
-	
-	public Player getPlayer() {
-		return player;
 	}
 
 	public Int2ObjectMap<Avatar> getAvatars() {

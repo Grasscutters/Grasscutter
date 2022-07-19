@@ -3,6 +3,7 @@ package emu.grasscutter.game.friends;
 import java.util.List;
 
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.DealAddFriendResultTypeOuterClass.DealAddFriendResultType;
 import emu.grasscutter.server.packet.send.PacketAskAddFriendNotify;
@@ -13,22 +14,16 @@ import emu.grasscutter.server.packet.send.PacketDeleteFriendRsp;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-public class FriendsList {
-	private final Player player;
-	
+public class FriendsList extends BasePlayerManager {
 	private final Int2ObjectMap<Friendship> friends;
 	private final Int2ObjectMap<Friendship> pendingFriends;
 	
 	private boolean loaded = false;
 	
 	public FriendsList(Player player) {
-		this.player = player;
+		super(player);
 		this.friends = new Int2ObjectOpenHashMap<Friendship>();
 		this.pendingFriends = new Int2ObjectOpenHashMap<Friendship>();
-	}
-	
-	public Player getPlayer() {
-		return player;
 	}
 	
 	public boolean hasLoaded() {

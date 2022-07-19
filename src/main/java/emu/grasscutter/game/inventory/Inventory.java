@@ -15,6 +15,7 @@ import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.PlayerProperty;
@@ -31,14 +32,13 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 
 import static emu.grasscutter.Configuration.*;
 
-public class Inventory implements Iterable<GameItem> {
-	private final Player player;
-	
+public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
 	private final Long2ObjectMap<GameItem> store;
 	private final Int2ObjectMap<InventoryTab> inventoryTypes;
 	
 	public Inventory(Player player) {
-		this.player = player;
+		super(player);
+		
 		this.store = new Long2ObjectOpenHashMap<>();
 		this.inventoryTypes = new Int2ObjectOpenHashMap<>();
 		
@@ -48,10 +48,6 @@ public class Inventory implements Iterable<GameItem> {
 		this.createInventoryTab(ItemType.ITEM_FURNITURE, new MaterialInventoryTab(INVENTORY_LIMITS.furniture));
 	}
 
-	public Player getPlayer() {
-		return player;
-	}
-	
 	public AvatarStorage getAvatarStorage() {
 		return this.getPlayer().getAvatars();
 	}

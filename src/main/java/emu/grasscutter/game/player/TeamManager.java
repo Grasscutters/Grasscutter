@@ -41,7 +41,7 @@ import it.unimi.dsi.fastutil.ints.IntSet;
 import static emu.grasscutter.Configuration.*;
 
 @Entity
-public class TeamManager {
+public class TeamManager extends BasePlayerDataManager {
 	@Transient private Player player;
 	
 	private Map<Integer, TeamInfo> teams;
@@ -56,10 +56,7 @@ public class TeamManager {
 	@Transient private final IntSet teamResonancesConfig;
 
 	@Transient private int useTemporarilyTeamIndex = -1;
-	/**
-	 * Temporary Team for tower
-	 */
-	@Transient private List<TeamInfo> temporaryTeam;
+	@Transient private List<TeamInfo> temporaryTeam; // Temporary Team for tower
 
 	public TeamManager() {
 		this.mpTeam = new TeamInfo();
@@ -71,7 +68,7 @@ public class TeamManager {
 	
 	public TeamManager(Player player) {
 		this();
-		this.player = player;
+		this.setPlayer(player);
 		
 		this.teams = new HashMap<>();
 		this.currentTeamIndex = 1;
@@ -80,16 +77,8 @@ public class TeamManager {
 		}
 	}
 	
-	public Player getPlayer() {
-		return player;
-	}
-	
 	public World getWorld() {
 		return player.getWorld();
-	}
-
-	public void setPlayer(Player player) {
-		this.player = player;
 	}
 	
 	public Map<Integer, TeamInfo> getTeams() {

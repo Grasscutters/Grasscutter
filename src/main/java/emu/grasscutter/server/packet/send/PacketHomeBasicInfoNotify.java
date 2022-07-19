@@ -13,7 +13,7 @@ public class PacketHomeBasicInfoNotify extends BasePacket {
 	public PacketHomeBasicInfoNotify(Player player, boolean editMode) {
 		super(PacketOpcodes.HomeBasicInfoNotify);
 
-		if(player.getCurrentRealmId() == null){
+		if (player.getCurrentRealmId() <= 0) {
 			return;
 		}
 

@@ -21,6 +21,7 @@ import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.entity.gadget.GadgetGatherObject;
 import emu.grasscutter.game.entity.gadget.GadgetGatherPoint;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall;
@@ -35,17 +36,13 @@ import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.game.props.FightProperty;
 
-public class AbilityManager {
+public class AbilityManager extends BasePlayerManager {
 	private Player player;
     HealAbilityManager healAbilityManager;
 	
 	public AbilityManager(Player player) {
-		this.player = player;
+		super(player);
         this.healAbilityManager = new HealAbilityManager(player);
-	}
-	
-	public Player getPlayer() {
-		return this.player;
 	}
 
 	public void onAbilityInvoke(AbilityInvokeEntry invoke) throws Exception {

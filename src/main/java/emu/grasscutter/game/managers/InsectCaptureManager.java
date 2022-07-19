@@ -8,11 +8,17 @@ import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.EntityVehicle;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 
-public record InsectCaptureManager(Player player) {
+public class InsectCaptureManager extends BasePlayerManager {
+    
+    public InsectCaptureManager(Player player) {
+        super(player);
+    }
+
     public void arrestSmallCreature(GameEntity entity) {
         //System.out.println("arrestSmallCreature!");
         EnvAnimalGatherConfigData gather;

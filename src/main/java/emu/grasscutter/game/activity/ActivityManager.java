@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActivityType;
 import emu.grasscutter.game.props.WatcherTriggerType;
@@ -19,9 +20,8 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Getter
-public class ActivityManager {
+public class ActivityManager extends BasePlayerManager {
     private static final Map<Integer, ActivityConfigItem> activityConfigItemMap;
-    private final Player player;
     private final Map<Integer, PlayerActivityData> playerActivityDataMap;
 
     static {
@@ -79,7 +79,7 @@ public class ActivityManager {
     }
 
     public ActivityManager(Player player){
-        this.player = player;
+        super(player);
 
         playerActivityDataMap = new ConcurrentHashMap<>();
         // load data for player

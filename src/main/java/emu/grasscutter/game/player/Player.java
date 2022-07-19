@@ -4,7 +4,6 @@ import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.PersonalLineData;
 import emu.grasscutter.data.excels.PlayerLevelData;
 import emu.grasscutter.data.excels.WeatherData;
 import emu.grasscutter.database.DatabaseHelper;
@@ -13,7 +12,6 @@ import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.ability.AbilityManager;
 import emu.grasscutter.game.activity.ActivityManager;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.avatar.AvatarProfileData;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.battlepass.BattlePassManager;
 import emu.grasscutter.game.entity.EntityMonster;
@@ -34,7 +32,6 @@ import emu.grasscutter.game.managers.CookingManager;
 import emu.grasscutter.game.managers.FurnitureManager;
 import emu.grasscutter.game.managers.InsectCaptureManager;
 import emu.grasscutter.game.managers.ResinManager;
-import emu.grasscutter.game.managers.collection.CollectionManager;
 import emu.grasscutter.game.managers.collection.CollectionRecordStore;
 import emu.grasscutter.game.managers.deforestation.DeforestationManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
@@ -91,11 +88,11 @@ import static emu.grasscutter.Configuration.*;
 
 @Entity(value = "players", useDiscriminator = false)
 public class Player {
-
 	@Id private int id;
 	@Indexed(options = @IndexOptions(unique = true)) private String accountId;
-
-	@Transient private Account account;
+	private transient Account account;
+	private transient GameSession session;
+	
 	private String nickname;
 	private String signature;
 	private int headImage;
@@ -104,22 +101,29 @@ public class Player {
 	private Position rotation;
 	private PlayerBirthday birthday;
 	private PlayerCodex codex;
-    @Getter private PlayerOpenStateManager openStateManager;
+	private boolean showAvatars;
+	private List<Integer> showAvatarList;
 	private Map<Integer, Integer> properties;
-	private Set<Integer> nameCardList;
-	private Set<Integer> flyCloakList;
-	private Set<Integer> costumeList;
-	private Set<Integer> unlockedForgingBlueprints;
-	private Set<Integer> unlockedCombines;
-	private Set<Integer> unlockedFurniture;
-	private Set<Integer> unlockedFurnitureSuite;
-	private List<ActiveForgeData> activeForges;
-	private Map<Integer, Integer> unlockedRecipies;
-
-	private Integer widgetId;
-
-	private Set<Integer> realmList;
-	private Integer currentRealmId;
+	private int currentRealmId;
+	private int widgetId;
+	private int sceneId;
+    private int regionId;
+    private int mainCharacterId;
+    private boolean godmode;
+    private boolean stamina;
+    
+    @Getter private Set<Integer> nameCardList;
+    @Getter private Set<Integer> flyCloakList;
+    @Getter private Set<Integer> costumeList;
+    @Getter private Set<Integer> rewardedLevels;
+    @Getter private Set<Integer> realmList;
+    @Getter private Set<Integer> unlockedForgingBlueprints;
+    @Getter private Set<Integer> unlockedCombines;
+    @Getter private Set<Integer> unlockedFurniture;
+    @Getter private Set<Integer> unlockedFurnitureSuite;
+    @Getter private Map<Long, ExpeditionInfo> expeditionInfo;
+    @Getter private Map<Integer, Integer> unlockedRecipies;
+    @Getter private List<ActiveForgeData> activeForges;
 
 	@Transient private long nextGuid = 0;
 	@Transient private int peerId;
@@ -127,43 +131,44 @@ public class Player {
 	@Transient private Scene scene;
 	@Transient @Getter private int weatherId = 0;
 	@Transient @Getter private ClimateType climate = ClimateType.CLIMATE_SUNNY;
-	@Transient private GameSession session;
-	@Transient private AvatarStorage avatars;
-	@Transient private Inventory inventory;
-	@Transient private FriendsList friendsList;
-	@Transient private MailHandler mailHandler;
-	@Transient private MessageHandler messageHandler;
-	@Transient private AbilityManager abilityManager;
-	@Transient private QuestManager questManager;
+	
+	// Player managers go here
+	@Getter private transient AvatarStorage avatars;
+	@Getter private transient Inventory inventory;
+	@Getter private transient FriendsList friendsList;
+	@Getter private transient MailHandler mailHandler;
+	@Getter private transient MessageHandler messageHandler;
+	@Getter private transient AbilityManager abilityManager;
+	@Getter private transient QuestManager questManager;
+	@Getter private transient TowerManager towerManager;
+	@Getter private transient SotSManager sotsManager;
+	@Getter private transient InsectCaptureManager insectCaptureManager;
+    @Getter private transient MapMarksManager mapMarksManager;
+    @Getter private transient StaminaManager staminaManager;
+    @Getter private transient EnergyManager energyManager;
+    @Getter private transient ResinManager resinManager;
+    @Getter private transient ForgingManager forgingManager;
+    @Getter private transient DeforestationManager deforestationManager;
+    @Getter private transient FurnitureManager furnitureManager;
+    @Getter private transient BattlePassManager battlePassManager;
+    @Getter private transient CookingManager cookingManager;
+    @Getter private transient ActivityManager activityManager;
 
-	@Transient private SotSManager sotsManager;
-	@Transient private InsectCaptureManager insectCaptureManager;
-
-	private TeamManager teamManager;
-
-	@Transient private TowerManager towerManager;
+    // Manager data (Save-able to the database)
+    private PlayerProfile playerProfile;
+    private TeamManager teamManager;
 	private TowerData towerData;
 	private PlayerGachaInfo gachaInfo;
-	private PlayerProfile playerProfile;
-	private boolean showAvatar;
-	private ArrayList<AvatarProfileData> shownAvatars;
-	private Set<Integer> rewardedLevels;
+	private PlayerOpenStateManager openStateManager;
+	private CollectionRecordStore collectionRecordStore;
 	private ArrayList<ShopLimit> shopLimit;
-	private Map<Long, ExpeditionInfo> expeditionInfo;
-
-	private int sceneId;
-	private int regionId;
-	private int mainCharacterId;
-	private boolean godmode;
-	private boolean stamina;
+	
+	@Getter private transient GameHome home;
 
 	private boolean moonCard;
 	private Date moonCardStartTime;
 	private int moonCardDuration;
 	private Set<Date> moonCardGetTimes;
-
-	private List<Integer> showAvatarList;
-	private boolean showAvatars;
 
 	@Transient private boolean paused;
 	@Transient private int enterSceneToken;
@@ -171,27 +176,11 @@ public class Player {
 	@Transient private boolean hasSentAvatarDataNotify;
 	@Transient private long nextSendPlayerLocTime = 0;
 
-	@Transient private final Int2ObjectMap<CoopRequest> coopRequests;
-	@Transient private final Queue<AttackResult> attackResults;
-	@Transient private final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
-	@Transient private final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
-	@Transient private final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
-
-	@Transient private MapMarksManager mapMarksManager;
-	@Transient private StaminaManager staminaManager;
-	@Transient private EnergyManager energyManager;
-	@Transient private ResinManager resinManager;
-	@Transient private ForgingManager forgingManager;
-	@Transient private DeforestationManager deforestationManager;
-	@Transient private GameHome home;
-	@Transient private FurnitureManager furnitureManager;
-	@Transient private BattlePassManager battlePassManager;
-	@Transient private CookingManager cookingManager;
-	// @Transient private
-	@Getter @Transient private ActivityManager activityManager;
-
-	@Transient private CollectionManager collectionManager;
-	private CollectionRecordStore collectionRecordStore;
+	private transient final Int2ObjectMap<CoopRequest> coopRequests;
+	private transient final Queue<AttackResult> attackResults;
+	@Getter private transient final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
+	@Getter private transient final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
+	@Getter private transient final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
 
 	private long springLastUsed;
 	private HashMap<String, MapMark> mapMarks;
@@ -209,8 +198,8 @@ public class Player {
 		this.abilityManager = new AbilityManager(this);
 		this.deforestationManager = new DeforestationManager(this);
 		this.insectCaptureManager = new InsectCaptureManager(this);
-
-		this.setQuestManager(new QuestManager(this));
+		this.questManager = new QuestManager(this);
+		
 		this.pos = new Position();
 		this.rotation = new Position();
 		this.properties = new HashMap<>();
@@ -374,10 +363,6 @@ public class Player {
 		this.session.send(new PacketSceneAreaWeatherNotify(this));
 	}
 
-	public int getGmLevel() {
-		return 1;
-	}
-
 	public String getNickname() {
 		return nickname;
 	}
@@ -413,10 +398,6 @@ public class Player {
 		this.widgetId = widgetId;
 	}
 
-	public Set<Integer> getRealmList() {
-		return realmList;
-	}
-
 	public void setRealmList(Set<Integer> realmList) {
 		this.realmList = realmList;
 	}
@@ -430,16 +411,14 @@ public class Player {
 		this.realmList.add(realmId);
 	}
 
-	public Integer getCurrentRealmId() {
+	public int getCurrentRealmId() {
 		return currentRealmId;
 	}
 
-	public void setCurrentRealmId(Integer currentRealmId) {
+	public void setCurrentRealmId(int currentRealmId) {
 		this.currentRealmId = currentRealmId;
 	}
-	public GameHome getHome(){
-		return home;
-	}
+	
 	public Position getPos() {
 		return pos;
 	}
@@ -598,24 +577,12 @@ public class Player {
 		return this.teamManager;
 	}
 
-	public TowerManager getTowerManager() {
-		return towerManager;
-	}
-
 	public TowerData getTowerData() {
 		if (towerData == null) {
 			// because of mistake, null may be saved as storage at some machine, this if can be removed in future
 			towerData = new TowerData();
 		}
 		return towerData;
-	}
-
-	public QuestManager getQuestManager() {
-		return questManager;
-	}
-
-	public void setQuestManager(QuestManager questManager) {
-		this.questManager = questManager;
 	}
 
 	public PlayerGachaInfo getGachaInfo() {
@@ -647,42 +614,6 @@ public class Player {
 		return getProperties().get(prop.getId());
 	}
 
-	public Set<Integer> getFlyCloakList() {
-		return flyCloakList;
-	}
-
-	public Set<Integer> getCostumeList() {
-		return costumeList;
-	}
-
-	public Set<Integer> getNameCardList() {
-		return this.nameCardList;
-	}
-
-	public Set<Integer> getUnlockedForgingBlueprints() {
-		return this.unlockedForgingBlueprints;
-	}
-
-	public Set<Integer> getUnlockedCombines() {
-		return this.unlockedCombines;
-	}
-
-	public Set<Integer> getUnlockedFurniture() {
-		return unlockedFurniture;
-	}
-
-	public Set<Integer> getUnlockedFurnitureSuite() {
-		return unlockedFurnitureSuite;
-	}
-
-	public List<ActiveForgeData> getActiveForges() {
-		return this.activeForges;
-	}
-
-	public Map<Integer, Integer> getUnlockedRecipies() {
-		return this.unlockedRecipies;
-	}
-
 	public MpSettingType getMpSetting() {
 		return MpSettingType.MP_SETTING_TYPE_ENTER_AFTER_APPLY; // TEMP
 	}
@@ -693,34 +624,6 @@ public class Player {
 
 	public synchronized Int2ObjectMap<CoopRequest> getCoopRequests() {
 		return coopRequests;
-	}
-
-	public InvokeHandler<CombatInvokeEntry> getCombatInvokeHandler() {
-		return this.combatInvokeHandler;
-	}
-
-	public InvokeHandler<AbilityInvokeEntry> getAbilityInvokeHandler() {
-		return this.abilityInvokeHandler;
-	}
-
-	public InvokeHandler<AbilityInvokeEntry> getClientAbilityInitFinishHandler() {
-		return clientAbilityInitFinishHandler;
-	}
-
-	public AvatarStorage getAvatars() {
-		return avatars;
-	}
-
-	public Inventory getInventory() {
-		return inventory;
-	}
-
-	public FriendsList getFriendsList() {
-		return this.friendsList;
-	}
-
-	public MailHandler getMailHandler() {
-		return mailHandler;
 	}
 
 	public int getEnterSceneToken() {
@@ -929,10 +832,6 @@ public class Player {
 		GameItem item = new GameItem(201, 90);
 		getInventory().addItem(item, ActionReason.BlessingRedeemReward);
 		session.send(new PacketCardProductRewardNotify(getMoonCardRemainDays()));
-	}
-
-	public Map<Long, ExpeditionInfo> getExpeditionInfo() {
-		return expeditionInfo;
 	}
 
 	public void addExpeditionInfo(long avaterGuid, int expId, int hourTime, int startTime){
@@ -1188,10 +1087,8 @@ public class Player {
 		return this.birthday.getDay() > 0;
 	}
 
-	public PlayerCodex getCodex(){ return this.codex; }
-
-	public Set<Integer> getRewardedLevels() {
-		return rewardedLevels;
+	public PlayerCodex getCodex() { 
+	    return this.codex; 
 	}
 
 	public void setRewardedLevels(Set<Integer> rewardedLevels) {
@@ -1290,57 +1187,10 @@ public class Player {
 				.build();
 	}
 
-	public MapMarksManager getMapMarksManager() {
-		return mapMarksManager;
-	}
-
-	public StaminaManager getStaminaManager() { return staminaManager; }
-
-	public SotSManager getSotSManager() { return sotsManager; }
-
-	public EnergyManager getEnergyManager() {
-		return this.energyManager;
-	}
-
-	public ResinManager getResinManager() {
-		return this.resinManager;
-	}
-
-	public ForgingManager getForgingManager() {
-		return this.forgingManager;
-	}
-
-	public FurnitureManager getFurnitureManager() {
-		return furnitureManager;
-	}
-
-	public BattlePassManager getBattlePassManager(){
-		return battlePassManager;
-	}
-
-	public CookingManager getCookingManager() {
-		return cookingManager;
-	}
-
 	public void loadBattlePassManager() {
 		if (this.battlePassManager != null) return;
 		this.battlePassManager = DatabaseHelper.loadBattlePass(this);
 		this.battlePassManager.getMissions().values().removeIf(mission -> mission.getData() == null);
-	}
-
-	public AbilityManager getAbilityManager() {
-		return abilityManager;
-	}
-
-	public DeforestationManager getDeforestationManager() {
-		return deforestationManager;
-	}
-
-	public CollectionManager getCollectionManager() {
-		if(this.collectionManager==null){
-			this.collectionManager = new CollectionManager();
-		}
-		return this.collectionManager;
 	}
 
 	public CollectionRecordStore getCollectionRecordStore() {
@@ -1350,11 +1200,21 @@ public class Player {
 		return collectionRecordStore;
 	}
 
-	public HashMap<String, MapMark> getMapMarks() { return mapMarks; }
+	public Map<String, MapMark> getMapMarks() {
+	    if (this.mapMarks == null) {
+	        this.mapMarks = new HashMap<String, MapMark>();
+	    }
+	    return mapMarks; 
+	}
 
-	public void setMapMarks(HashMap<String, MapMark> newMarks) { mapMarks = newMarks; }
+	public PlayerOpenStateManager getOpenStateManager() {
+	    if (this.openStateManager == null) {
+            this.openStateManager = new PlayerOpenStateManager(this);
+        }
+        return openStateManager;
+    }
 
-	public synchronized void onTick() {
+    public synchronized void onTick() {
 		// Check ping
 		if (this.getLastPingTime() > System.currentTimeMillis() + 60000) {
 			this.getSession().close();
@@ -1453,7 +1313,6 @@ public class Player {
 		this.getCodex().setPlayer(this);
         this.getOpenStateManager().setPlayer(this);
 		this.getTeamManager().setPlayer(this);
-		this.getTowerManager().setPlayer(this);
 	}
 
 	public void save() {
@@ -1463,24 +1322,15 @@ public class Player {
 	// Called from tokenrsp
 	public void loadFromDatabase() {
 		// Make sure these exist
-		if (this.getTowerManager() == null) {
-			this.towerManager = new TowerManager(this);
-		}
 		if (this.getTeamManager() == null) {
 			this.teamManager = new TeamManager(this);
 		}
 		if (this.getCodex() == null) {
 			this.codex = new PlayerCodex(this);
 		}
-        if (this.getOpenStateManager() == null) {
-            this.openStateManager = new PlayerOpenStateManager(this);
-        }
 		if (this.getProfile().getUid() == 0) {
 			this.getProfile().syncWithCharacter(this);
 		}
-		//Make sure towerManager's player is online player
-		this.getTowerManager().setPlayer(this);
-		this.getCollectionManager().setPlayer(this);
 
 		// Load from db
 		this.getAvatars().loadFromDatabase();
@@ -1537,8 +1387,8 @@ public class Player {
 		this.cookingManager.sendCookDataNofity();
 
 		// Unlock in case this is an existing user that reached a level before we implemented unlocking.
-		this.openStateManager.unlockLevelDependentStates();
-        this.openStateManager.onPlayerLogin();
+		this.getOpenStateManager().unlockLevelDependentStates();
+        this.getOpenStateManager().onPlayerLogin();
 
 		getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 

@@ -11,6 +11,7 @@ import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ForgeData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.WatcherTriggerType;
@@ -27,11 +28,10 @@ import emu.grasscutter.server.packet.send.PacketForgeQueueManipulateRsp;
 import emu.grasscutter.server.packet.send.PacketForgeStartRsp;
 import emu.grasscutter.utils.Utils;
 
-public class ForgingManager {
-	private final Player player;
+public class ForgingManager extends BasePlayerManager {
 
 	public ForgingManager(Player player) {
-		this.player = player;
+		super(player);
 	}
 
 	/**********

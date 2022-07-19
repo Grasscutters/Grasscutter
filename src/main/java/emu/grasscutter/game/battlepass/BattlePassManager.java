@@ -15,7 +15,6 @@ import org.bson.types.ObjectId;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import dev.morphia.annotations.Indexed;
-import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
@@ -26,6 +25,7 @@ import emu.grasscutter.data.excels.RewardData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.MaterialType;
+import emu.grasscutter.game.player.BasePlayerDataManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.BattlePassMissionRefreshType;
 import emu.grasscutter.game.props.BattlePassMissionStatus;
@@ -41,9 +41,8 @@ import emu.grasscutter.server.packet.send.PacketTakeBattlePassRewardRsp;
 import lombok.Getter;
 
 @Entity(value = "battlepass", useDiscriminator = false)
-public class BattlePassManager {
+public class BattlePassManager extends BasePlayerDataManager {
 	@Id @Getter private ObjectId id;
-	@Transient @Getter private Player player;
 	
 	@Indexed private int ownerUid;
     @Getter private int point;
@@ -60,7 +59,7 @@ public class BattlePassManager {
     public BattlePassManager() {}
 
     public BattlePassManager(Player player) {
-        this.setPlayer(player);
+        super(player);
     }
     
     public void setPlayer(Player player) {
