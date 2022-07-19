@@ -15,6 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class EntityRegion extends GameEntity{
     private final Position position;
     private boolean hasNewEntities;
+    private boolean entityLeave;
     private final Set<Integer> entities; // Ids of entities inside this region
     private final SceneRegion metaRegion;
 
@@ -45,6 +46,13 @@ public class EntityRegion extends GameEntity{
         hasNewEntities = false;
     }
 
+    public void removeEntity(int entityId) {
+        this.getEntities().remove(entityId);
+        this.entityLeave = true;
+    }
+
+    public boolean entityLeave() {return entityLeave;}
+    public void resetEntityLeave() {this.entityLeave = false;}
     public void removeEntity(GameEntity entity) {
         this.getEntities().remove(entity.getId());
     }

@@ -26,7 +26,7 @@ public class SceneRegion {
                 var x = Math.pow(pos.getX() - position.getX(), 2);
                 var y = Math.pow(pos.getY() - position.getY(), 2);
                 var z = Math.pow(pos.getZ() - position.getZ(), 2);
-				return x + y + z <= (radius ^ 2);
+				return x + y + z <= (radius * radius); // ^ means XOR in java
 		}
 		return false;
 	}

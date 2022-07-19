@@ -42,7 +42,8 @@ public class GameQuest {
 
 	@Getter private int[] finishProgressList;
 	@Getter private int[] failProgressList;
-    @Getter private Map<Integer, Boolean> triggers;
+    @Transient @Getter private Map<String, TriggerExcelConfigData> triggerData;
+    @Getter private Map<String, Boolean> triggers;
 
 	@Deprecated // Morphia only. Do not use.
 	public GameQuest() {}
@@ -53,6 +54,7 @@ public class GameQuest {
 		this.mainQuestId = questData.getMainId();
 		this.questData = questData;
 		this.state = QuestState.QUEST_STATE_UNSTARTED;
+        this.triggerData = new HashMap<>();
         this.triggers = new HashMap<>();
 	}
 
@@ -64,11 +66,11 @@ public class GameQuest {
             .filter(p -> p.getType() == QuestTrigger.QUEST_CONTENT_TRIGGER_FIRE).toList();
         if(triggerCond.size() > 0) {
             for (QuestData.QuestCondition cond : triggerCond) {
-                triggers.put(cond.getParam()[0],false);
-                TriggerExcelConfigData trigger = GameData.getTriggerExcelConfigDataMap().get(cond.getParam()[0]);
-                //TODO load only required trigger and region
-                SceneGroup group = SceneGroup.of(trigger.getGroupId()).load(trigger.getSceneId());
-                getOwner().getWorld().getSceneById(trigger.getSceneId()).loadTriggerFromGroup(group,trigger.getTriggerName());
+                TriggerExcelConfigData newTrigger = GameData.getTriggerExcelConfigDataMap().get(cond.getParam()[0]);
+                triggerData.put(newTrigger.getTriggerName(),newTrigger);
+                triggers.put(newTrigger.getTriggerName(),false);
+                SceneGroup group = SceneGroup.of(newTrigger.getGroupId()).load(newTrigger.getSceneId());
+                getOwner().getWorld().getSceneById(newTrigger.getSceneId()).loadTriggerFromGroup(group,newTrigger.getTriggerName());
             }
         }
 
@@ -96,7 +98,9 @@ public class GameQuest {
 
         Grasscutter.getLogger().debug("Quest {} is started", subQuestId);
     }
-
+    public String getTriggerNameById(int id) {
+        return GameData.getTriggerExcelConfigDataMap().get(id).getTriggerName();
+    }
 	public Player getOwner() {
 		return this.getMainQuest().getOwner();
 	}
