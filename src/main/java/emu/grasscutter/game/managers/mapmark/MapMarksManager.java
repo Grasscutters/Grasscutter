@@ -66,10 +66,6 @@ public class MapMarksManager extends BasePlayerManager {
         }
     }
 
-    private void save() {
-        player.save();
-    }
-
     private void teleport(Player player, MapMark mapMark) {
         float y;
         try {
