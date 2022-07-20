@@ -1,5 +1,7 @@
 package emu.grasscutter.game.avatar;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -61,8 +63,6 @@ import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
-import static emu.grasscutter.Configuration.GAME_OPTIONS;
 
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {

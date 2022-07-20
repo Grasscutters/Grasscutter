@@ -29,8 +29,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.security.Signature;
 
-
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.QueryRegionListHttpRsp;
 
 /**

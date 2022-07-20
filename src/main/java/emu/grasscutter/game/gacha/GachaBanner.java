@@ -1,13 +1,13 @@
 package emu.grasscutter.game.gacha;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.GachaInfoOuterClass.GachaInfo;
 import emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfo;
 import emu.grasscutter.utils.Utils;
 import lombok.Getter;
-
-import static emu.grasscutter.Configuration.*;
 
 public class GachaBanner {
 	@Getter private int gachaType;

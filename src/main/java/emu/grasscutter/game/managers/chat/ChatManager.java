@@ -12,12 +12,13 @@ import emu.grasscutter.server.packet.send.PacketPullRecentChatRsp;
 import emu.grasscutter.utils.Utils;
 
 import java.util.regex.Pattern;
+
+import static emu.grasscutter.config.Configuration.*;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static emu.grasscutter.Configuration.*;
 
 public class ChatManager implements ChatManagerHandler {
 	static final String PREFIXES = "[/!]";

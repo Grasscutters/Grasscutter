@@ -76,14 +76,14 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import lombok.Getter;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import java.time.DayOfWeek;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
-
-import static emu.grasscutter.Configuration.*;
 
 @Entity(value = "players", useDiscriminator = false)
 public class Player {

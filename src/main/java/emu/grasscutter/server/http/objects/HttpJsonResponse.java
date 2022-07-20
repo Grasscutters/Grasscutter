@@ -10,8 +10,8 @@ import express.http.HttpContextHandler;
 import express.http.Request;
 import express.http.Response;
 
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
-import static emu.grasscutter.Configuration.*;
 
 public final class HttpJsonResponse implements HttpContextHandler {
 	private final String response;

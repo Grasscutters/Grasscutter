@@ -1,4 +1,4 @@
-package emu.grasscutter.utils;
+package emu.grasscutter.config;
 
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;

@@ -8,13 +8,13 @@ import emu.grasscutter.server.game.GameServer;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.Collection;
 import java.util.List;
-
-import static emu.grasscutter.Configuration.*;
 
 public class ExpeditionSystem extends BaseGameSystem {
     private final Int2ObjectMap<List<ExpeditionRewardDataList>> expeditionRewardData;

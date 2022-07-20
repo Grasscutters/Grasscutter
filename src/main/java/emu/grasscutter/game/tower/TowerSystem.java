@@ -7,13 +7,13 @@ import emu.grasscutter.data.excels.TowerScheduleData;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
-
-import static emu.grasscutter.Configuration.*;
 
 public class TowerSystem extends BaseGameSystem {
     

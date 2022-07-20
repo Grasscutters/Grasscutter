@@ -1,5 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
+import static emu.grasscutter.config.Configuration.SERVER;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -8,8 +10,6 @@ import emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
-
-import static emu.grasscutter.Configuration.SERVER;
 
 @Opcodes(PacketOpcodes.UnionCmdNotify)
 public class HandlerUnionCmdNotify extends PacketHandler {
