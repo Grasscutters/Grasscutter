@@ -5,7 +5,6 @@ import ch.qos.logback.classic.Logger;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.auth.DefaultAuthentication;
 import emu.grasscutter.command.CommandMap;
@@ -14,6 +13,7 @@ import emu.grasscutter.command.PermissionHandler;
 import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
+import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
@@ -96,6 +96,10 @@ public final class Grasscutter {
             switch (arg.toLowerCase()) {
                 case "-handbook" -> {
                     Tools.createGmHandbook();
+                    exitEarly = true;
+                }
+                case "-dumppacketids" -> {
+                    PacketOpcodesUtils.dumpPacketIds();
                     exitEarly = true;
                 }
                 case "-gachamap" -> {
