@@ -30,7 +30,7 @@ public class AnnouncementSystem extends BaseGameSystem {
     }
 
     private int loadConfig() {
-        try (var fileReader = new InputStreamReader(DataLoader.load("Announcement.json"))) {
+        try (var fileReader = DataLoader.loadReader("Announcement.json")) {
             List<AnnounceConfigItem> announceConfigItems = Grasscutter.getGsonFactory().fromJson(fileReader,
                 TypeToken.getParameterized(List.class, AnnounceConfigItem.class).getType());
 

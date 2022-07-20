@@ -30,7 +30,7 @@ public class ExpeditionSystem extends BaseGameSystem {
     }
 
     public synchronized void load() {
-        try (Reader fileReader = new InputStreamReader(DataLoader.load("ExpeditionReward.json"))) {
+        try (Reader fileReader = DataLoader.loadReader("ExpeditionReward.json")) {
             getExpeditionRewardDataList().clear();
             List<ExpeditionRewardInfo> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ExpeditionRewardInfo.class).getType());
             if(banners.size() > 0) {

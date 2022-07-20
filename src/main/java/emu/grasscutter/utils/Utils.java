@@ -191,7 +191,7 @@ public final class Utils {
 			createFolder(dataFolder);
 
 		// Make sure the data folder is populated, if there are any missing files copy them from resources
-		DataLoader.CheckAllFiles();
+		DataLoader.checkAllFiles();
 
 		if(exit) System.exit(1);
 	}

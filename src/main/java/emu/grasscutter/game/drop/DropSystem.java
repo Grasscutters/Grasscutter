@@ -38,7 +38,7 @@ public class DropSystem extends BaseGameSystem {
     }
 
     public synchronized void load() {
-        try (Reader fileReader = new InputStreamReader(DataLoader.load("Drop.json"))) {
+        try (Reader fileReader = DataLoader.loadReader("Drop.json")) {
             getDropData().clear();
             List<DropInfo> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, DropInfo.class).getType());
             if(banners.size() > 0) {

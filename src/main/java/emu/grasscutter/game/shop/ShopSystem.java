@@ -60,7 +60,7 @@ public class ShopSystem extends BaseGameSystem {
 	}
 
 	private void loadShop() {
-		try (Reader fileReader = new InputStreamReader(DataLoader.load("Shop.json"))) {
+		try (Reader fileReader = DataLoader.loadReader("Shop.json")) {
 			getShopData().clear();
 			List<ShopTable> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopTable.class).getType());
 			if(banners.size() > 0) {
@@ -104,7 +104,7 @@ public class ShopSystem extends BaseGameSystem {
 	}
 
 	private void loadShopChest() {
-		try (Reader fileReader = new InputStreamReader(DataLoader.load("ShopChest.json"))) {
+		try (Reader fileReader = DataLoader.loadReader("ShopChest.json")) {
 			getShopChestData().clear();
 			List<ShopChestTable> shopChestTableList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopChestTable.class).getType());
 			if (shopChestTableList.size() > 0) {
@@ -119,7 +119,7 @@ public class ShopSystem extends BaseGameSystem {
 	}
 
 	private void loadShopChestBatchUse() {
-		try (Reader fileReader = new InputStreamReader(DataLoader.load("ShopChestBatchUse.json"))) {
+		try (Reader fileReader = DataLoader.loadReader("ShopChestBatchUse.json")) {
 			getShopChestBatchUseData().clear();
 			List<ShopChestBatchUseTable> shopChestBatchUseTableList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopChestBatchUseTable.class).getType());
 			if (shopChestBatchUseTableList.size() > 0) {

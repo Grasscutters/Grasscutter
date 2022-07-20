@@ -25,7 +25,7 @@ public class TowerSystem extends BaseGameSystem {
     private TowerScheduleConfig towerScheduleConfig;
 
     public synchronized void load(){
-        try (Reader fileReader = new InputStreamReader(DataLoader.load("TowerSchedule.json"))) {
+        try (Reader fileReader = DataLoader.loadReader("TowerSchedule.json")) {
             towerScheduleConfig = Grasscutter.getGsonFactory().fromJson(fileReader, TowerScheduleConfig.class);
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load tower schedule config.", e);

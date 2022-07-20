@@ -76,7 +76,7 @@ public class GachaSystem extends BaseGameSystem {
 	}
 
 	public synchronized void load() {
-		try (Reader fileReader = new InputStreamReader(DataLoader.load("Banners.json"))) {
+		try (Reader fileReader = DataLoader.loadReader("Banners.json")) {
 			getGachaBanners().clear();
 			List<GachaBanner> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, GachaBanner.class).getType());
 			if(banners.size() > 0) {
