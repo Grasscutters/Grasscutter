@@ -46,7 +46,7 @@ public class DungeonChallenge extends WorldChallenge {
 
 	public static void initialize() {
 		// Read the data we need for dungeon rewards drops.
-		try (Reader fileReader = new InputStreamReader(DataLoader.load("DungeonDrop.json"))) {
+		try (Reader fileReader = DataLoader.loadReader("DungeonDrop.json")) {
 			List<DungeonDrop> dungeonDropList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, DungeonDrop.class).getType());
 
 			for (DungeonDrop entry : dungeonDropList) {

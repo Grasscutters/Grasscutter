@@ -19,6 +19,7 @@ import emu.grasscutter.server.game.GameServer;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,9 +42,9 @@ public class WorldDataSystem extends BaseGameSystem {
         // set the special chest first
         chestInteractHandlerMap.put("SceneObj_Chest_Flora", new BossChestInteractHandler());
 
-    	try(InputStream is = DataLoader.load("ChestReward.json"); InputStreamReader isr = new InputStreamReader(is)) {
+    	try(Reader reader = DataLoader.loadReader("ChestReward.json")) {
             List<ChestReward> chestReward = Grasscutter.getGsonFactory().fromJson(
-            		isr,
+            		reader,
                     TypeToken.getParameterized(List.class, ChestReward.class).getType());
             
             chestReward.forEach(reward ->
