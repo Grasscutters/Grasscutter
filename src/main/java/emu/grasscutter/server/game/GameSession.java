@@ -148,18 +148,23 @@ public class GameSession implements GameSessionManager.KcpChannel {
     	}
 
     	// Log
-    	if (SERVER.debugLevel == ServerDebugMode.ALL) {
-			if (!loopPacket.contains(packet.getOpcode())) {
-                logPacket("SEND",packet.getOpcode(), packet.getData());
-			}
-    	}
-
-    	if (SERVER.debugLevel == ServerDebugMode.WHITELIST && SERVER.DebugWhitelist.contains(packet.getOpcode())) {
-            logPacket("SEND",packet.getOpcode(), packet.getData());
-    	}
-
-    	if (SERVER.debugLevel == ServerDebugMode.BLACKLIST && !(SERVER.DebugBlacklist.contains(packet.getOpcode()))) {
-            logPacket("SEND",packet.getOpcode(), packet.getData());
+    	switch (GAME_INFO.logPackets) {
+    	    case ALL -> {
+    	        if (!loopPacket.contains(packet.getOpcode())) {
+                    logPacket("SEND", packet.getOpcode(), packet.getData());
+                }
+    	    }
+    	    case WHITELIST-> {
+    	        if (SERVER.debugWhitelist.contains(packet.getOpcode())) {
+    	            logPacket("SEND", packet.getOpcode(), packet.getData());
+    	        }
+    	    }
+    	    case BLACKLIST-> {
+                if (!SERVER.debugBlacklist.contains(packet.getOpcode())) {
+                    logPacket("SEND", packet.getOpcode(), packet.getData());
+                }
+            }
+    	    default -> {}
     	}
 
 		// Invoke event.
@@ -194,7 +199,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
 		//logPacket(packet);
 		// Handle
 		try {
-			boolean allDebug = SERVER.debugLevel == ServerDebugMode.ALL;
+			boolean allDebug = GAME_INFO.logPackets == ServerDebugMode.ALL;
 			while (packet.readableBytes() > 0) {
 				// Length
 				if (packet.readableBytes() < 12) {
@@ -225,20 +230,26 @@ public class GameSession implements GameSessionManager.KcpChannel {
 					}
 					return; // Bad packet
 				}
+				
 				// Log packet
-				if (allDebug) {
-					if (!loopPacket.contains(opcode)) {
-                        logPacket("RECV",opcode, payload);
-					}
-				}
-
-				if (SERVER.debugLevel == ServerDebugMode.WHITELIST && SERVER.DebugWhitelist.contains(opcode)) {
-                    logPacket("RECV",opcode, payload);
-				}
-
-				if (SERVER.debugLevel == ServerDebugMode.BLACKLIST && !(SERVER.DebugBlacklist.contains(opcode))) {
-                    logPacket("RECV",opcode, payload);
-				}
+				switch (GAME_INFO.logPackets) {
+    	            case ALL -> {
+    	                if (!loopPacket.contains(opcode)) {
+                            logPacket("RECV",opcode, payload);
+                        }
+    	            }
+    	            case WHITELIST-> {
+    	                if (SERVER.debugWhitelist.contains(opcode)) {
+    	                    logPacket("RECV",opcode, payload);
+    	                }
+    	            }
+    	            case BLACKLIST-> {
+    	                if (!(SERVER.debugBlacklist.contains(opcode))) {
+    	                    logPacket("RECV",opcode, payload);
+    	                }
+    	            }
+    	            default -> {}
+    	        }
 
 				// Handle
 				getServer().getPacketHandler().handle(this, opcode, header, payload);
