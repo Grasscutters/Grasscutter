@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import static emu.grasscutter.Configuration.DATA;
+import static emu.grasscutter.config.Configuration.DATA;
 import static emu.grasscutter.utils.Language.translate;
 
 /**

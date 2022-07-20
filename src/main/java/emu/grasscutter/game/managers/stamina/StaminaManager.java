@@ -22,9 +22,9 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
-import static emu.grasscutter.Configuration.GAME_OPTIONS;
+import java.util.*;
 
 public class StaminaManager extends BasePlayerManager {
 

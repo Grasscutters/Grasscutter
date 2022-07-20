@@ -1,5 +1,7 @@
 package emu.grasscutter.game.gacha;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.InputStreamReader;
@@ -44,8 +46,6 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import org.greenrobot.eventbus.Subscribe;
-
-import static emu.grasscutter.Configuration.*;
 
 public class GachaSystem extends BaseGameSystem {
 	private final Int2ObjectMap<GachaBanner> gachaBanners;

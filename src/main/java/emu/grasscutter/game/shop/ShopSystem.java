@@ -12,6 +12,8 @@ import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -19,8 +21,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-
-import static emu.grasscutter.Configuration.*;
 
 public class ShopSystem extends BaseGameSystem {
 	private final Int2ObjectMap<List<ShopInfo>> shopData;

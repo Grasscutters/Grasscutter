@@ -1,5 +1,7 @@
 package emu.grasscutter.game.player;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import java.util.*;
 
 import dev.morphia.annotations.Entity;
@@ -37,8 +39,6 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
-
-import static emu.grasscutter.Configuration.*;
 
 @Entity
 public class TeamManager extends BasePlayerDataManager {

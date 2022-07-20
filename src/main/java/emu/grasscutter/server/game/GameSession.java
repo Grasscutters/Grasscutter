@@ -17,8 +17,8 @@ import emu.grasscutter.utils.Utils;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
-import static emu.grasscutter.Configuration.*;
 
 public class GameSession implements GameSessionManager.KcpChannel {
 	private final GameServer server;

@@ -1,5 +1,7 @@
 package emu.grasscutter.server.http.handlers;
 
+import static emu.grasscutter.config.Configuration.ACCOUNT;
+
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.http.objects.HttpJsonResponse;
@@ -9,8 +11,6 @@ import express.Express;
 import express.http.Request;
 import express.http.Response;
 import io.javalin.Javalin;
-
-import static emu.grasscutter.Configuration.ACCOUNT;
 
 /**
  * Handles all generic, hard-coded responses.

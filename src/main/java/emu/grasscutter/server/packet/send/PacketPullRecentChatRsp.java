@@ -8,7 +8,7 @@ import emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo;
 import emu.grasscutter.net.proto.PullRecentChatRspOuterClass.PullRecentChatRsp;
 import emu.grasscutter.utils.Utils;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.config.Configuration.*;
 
 import java.util.List;
 

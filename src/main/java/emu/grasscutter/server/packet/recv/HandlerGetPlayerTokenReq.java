@@ -1,8 +1,5 @@
 package emu.grasscutter.server.packet.recv;
 
-import static emu.grasscutter.Configuration.ACCOUNT;
-import static emu.grasscutter.Configuration.GAME_OPTIONS;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
@@ -20,6 +17,9 @@ import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
 
 import javax.crypto.Cipher;
+
+import static emu.grasscutter.config.Configuration.ACCOUNT;
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 import java.nio.ByteBuffer;
 import java.security.Signature;

@@ -13,11 +13,11 @@ import emu.grasscutter.server.http.dispatch.RegionHandler;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.FileUtils;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import java.io.File;
 import java.util.Base64;
 import java.util.Objects;
-
-import static emu.grasscutter.Configuration.*;
 
 public class PacketPlayerLoginRsp extends BasePacket {
 

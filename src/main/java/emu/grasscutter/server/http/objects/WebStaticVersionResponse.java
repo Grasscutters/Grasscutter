@@ -10,10 +10,10 @@ import express.http.Request;
 import express.http.Response;
 import io.javalin.core.util.FileUtil;
 
+import static emu.grasscutter.config.Configuration.DATA;
+
 import java.io.IOException;
 import java.io.InputStream;
-
-import static emu.grasscutter.Configuration.DATA;
 
 public class WebStaticVersionResponse implements HttpContextHandler {
 

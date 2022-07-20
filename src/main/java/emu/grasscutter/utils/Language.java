@@ -6,11 +6,12 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
 
 import javax.annotation.Nullable;
+
+import static emu.grasscutter.config.Configuration.*;
+
 import java.io.InputStream;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
-
-import static emu.grasscutter.Configuration.*;
 
 public final class Language {
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();

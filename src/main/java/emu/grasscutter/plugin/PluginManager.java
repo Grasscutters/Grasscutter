@@ -6,13 +6,14 @@ import emu.grasscutter.utils.Utils;
 import lombok.*;
 
 import javax.annotation.Nullable;
+
+import static emu.grasscutter.config.Configuration.PLUGIN;
+
 import java.io.*;
 import java.lang.reflect.Method;
 import java.net.*;
 import java.util.*;
 import java.util.jar.*;
-
-import static emu.grasscutter.Configuration.PLUGIN;
 
 /**
  * Manages the server's plugins and the event system.

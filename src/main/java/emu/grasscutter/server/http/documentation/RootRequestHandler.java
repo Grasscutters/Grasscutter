@@ -1,6 +1,6 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.Configuration.DATA;
+import static emu.grasscutter.config.Configuration.DATA;
 import static emu.grasscutter.utils.Language.translate;
 
 import emu.grasscutter.Grasscutter;
