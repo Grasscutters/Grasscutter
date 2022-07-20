@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers;
+package emu.grasscutter.game.systems;
 
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;

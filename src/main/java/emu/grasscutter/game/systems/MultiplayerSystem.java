@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers;
+package emu.grasscutter.game.systems;
 
 import emu.grasscutter.game.CoopRequest;
 import emu.grasscutter.game.props.EnterReason;
