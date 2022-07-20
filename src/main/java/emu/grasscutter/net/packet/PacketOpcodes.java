@@ -1,7 +1,5 @@
 package emu.grasscutter.net.packet;
 
-import java.util.HashSet;
-
 public class PacketOpcodes {
   // Empty
     public static final int  NONE = 0;
@@ -1856,12 +1854,4 @@ public class PacketOpcodes {
     public static final int WorldRoutineTypeCloseNotify = 3502;
     public static final int WorldRoutineTypeRefreshNotify = 3525;
 
-  // Unknown
-
-    public static final HashSet<Integer> BANNED_PACKETS = new HashSet<>() {
-        {
-            this.add(PacketOpcodes.WindSeedClientNotify);
-            this.add(PacketOpcodes.PlayerLuaShellNotify);
-        }
-    };
 }

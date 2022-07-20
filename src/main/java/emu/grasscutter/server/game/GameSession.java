@@ -9,7 +9,7 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.packet.PacketOpcodesUtil;
+import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import emu.grasscutter.server.event.game.SendPacketEvent;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.FileUtils;
@@ -126,7 +126,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
     }
 
     public void logPacket( String sendOrRecv, int opcode, byte[] payload) {
-        Grasscutter.getLogger().info(sendOrRecv + ": " + PacketOpcodesUtil.getOpcodeName(opcode) + " (" + opcode + ")");
+        Grasscutter.getLogger().info(sendOrRecv + ": " + PacketOpcodesUtils.getOpcodeName(opcode) + " (" + opcode + ")");
         System.out.println(Utils.bytesToHex(payload));
     }
     public void send(BasePacket packet) {
@@ -138,7 +138,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
 
 		// DO NOT REMOVE (unless we find a way to validate code before sending to client which I don't think we can)
 		// Stop WindSeedClientNotify from being sent for security purposes.
-		if(PacketOpcodes.BANNED_PACKETS.contains(packet.getOpcode())) {
+		if(PacketOpcodesUtils.BANNED_PACKETS.contains(packet.getOpcode())) {
 			return;
 		}
 
@@ -150,7 +150,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
     	// Log
     	switch (GAME_INFO.logPackets) {
     	    case ALL -> {
-    	        if (!loopPacket.contains(packet.getOpcode())) {
+    	        if (!PacketOpcodesUtils.LOOP_PACKETS.contains(packet.getOpcode())) {
                     logPacket("SEND", packet.getOpcode(), packet.getData());
                 }
     	    }
@@ -173,14 +173,6 @@ public class GameSession implements GameSessionManager.KcpChannel {
 			tunnel.writeData(event.getPacket().build());
 		}
     }
-
-	private static final Set<Integer> loopPacket = Set.of(
-			PacketOpcodes.PingReq,
-			PacketOpcodes.PingRsp,
-			PacketOpcodes.WorldPlayerRTTNotify,
-			PacketOpcodes.UnionCmdNotify,
-			PacketOpcodes.QueryPathReq
-	);
 
 	@Override
 	public void onConnected(GameSessionManager.KcpTunnel tunnel) {
@@ -234,7 +226,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
 				// Log packet
 				switch (GAME_INFO.logPackets) {
     	            case ALL -> {
-    	                if (!loopPacket.contains(opcode)) {
+    	                if (!PacketOpcodesUtils.LOOP_PACKETS.contains(opcode)) {
                             logPacket("RECV",opcode, payload);
                         }
     	            }
