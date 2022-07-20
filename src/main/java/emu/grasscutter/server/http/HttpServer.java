@@ -43,7 +43,7 @@ public final class HttpServer {
             }
             
             // Configure debug logging.
-            if(SERVER.debugLevel == ServerDebugMode.ALL)
+            if(DISPATCH_INFO.logRequests == ServerDebugMode.ALL)
                 config.enableDevLogging();
             
             // Disable compression on static files.
@@ -173,7 +173,7 @@ public final class HttpServer {
     public static class UnhandledRequestRouter implements Router {
         @Override public void applyRoutes(Express express, Javalin handle) {
             handle.error(404, context -> {
-                if(SERVER.debugLevel == ServerDebugMode.MISSING)
+                if(DISPATCH_INFO.logRequests == ServerDebugMode.MISSING)
                     Grasscutter.getLogger().info(translate("messages.dispatch.unhandled_request_error", context.method(), context.url()));
                 context.contentType("text/html");
                 

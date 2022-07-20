@@ -35,8 +35,8 @@ public final class HttpJsonResponse implements HttpContextHandler {
 	@Override
 	public void handle(Request req, Response res) throws IOException {
 		// Checking for ALL here isn't required as when ALL is enabled enableDevLogging() gets enabled
-		if(SERVER.debugLevel == ServerDebugMode.MISSING && Arrays.stream(missingRoutes).anyMatch(x -> Objects.equals(x, req.baseUrl()))) {
-			Grasscutter.getLogger().info(translate("messages.dispatch.request", req.ip(), req.method(), req.baseUrl()) + (SERVER.debugLevel == ServerDebugMode.MISSING ? "(MISSING)" : ""));
+		if(DISPATCH_INFO.logRequests == ServerDebugMode.MISSING && Arrays.stream(missingRoutes).anyMatch(x -> Objects.equals(x, req.baseUrl()))) {
+			Grasscutter.getLogger().info(translate("messages.dispatch.request", req.ip(), req.method(), req.baseUrl()) + (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING ? "(MISSING)" : ""));
 		}
 		res.send(response);
 	}
