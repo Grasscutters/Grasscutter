@@ -31,7 +31,6 @@ import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.managers.CookingManager;
 import emu.grasscutter.game.managers.FurnitureManager;
 import emu.grasscutter.game.managers.ResinManager;
-import emu.grasscutter.game.managers.collection.CollectionRecordStore;
 import emu.grasscutter.game.managers.deforestation.DeforestationManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.managers.forging.ActiveForgeData;
@@ -158,7 +157,7 @@ public class Player {
 	private TowerData towerData;
 	private PlayerGachaInfo gachaInfo;
 	private PlayerOpenStateManager openStateManager;
-	private CollectionRecordStore collectionRecordStore;
+	private PlayerCollectionRecords collectionRecordStore;
 	private ArrayList<ShopLimit> shopLimit;
 	
 	@Getter private transient GameHome home;
@@ -213,7 +212,7 @@ public class Player {
 		this.flyCloakList = new HashSet<>();
 		this.costumeList = new HashSet<>();
 		this.towerData = new TowerData();
-		this.collectionRecordStore = new CollectionRecordStore();
+		this.collectionRecordStore = new PlayerCollectionRecords();
 		this.unlockedForgingBlueprints = new HashSet<>();
 		this.unlockedCombines = new HashSet<>();
 		this.unlockedFurniture = new HashSet<>();
@@ -1148,9 +1147,9 @@ public class Player {
 		this.battlePassManager.getMissions().values().removeIf(mission -> mission.getData() == null);
 	}
 
-	public CollectionRecordStore getCollectionRecordStore() {
+	public PlayerCollectionRecords getCollectionRecordStore() {
 		if(this.collectionRecordStore==null){
-			this.collectionRecordStore = new CollectionRecordStore();
+			this.collectionRecordStore = new PlayerCollectionRecords();
 		}
 		return collectionRecordStore;
 	}
