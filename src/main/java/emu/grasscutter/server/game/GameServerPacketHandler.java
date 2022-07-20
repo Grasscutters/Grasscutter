@@ -1,5 +1,7 @@
 package emu.grasscutter.server.game;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import java.util.Set;
 
 import emu.grasscutter.server.event.game.ReceivePacketEvent;
@@ -13,8 +15,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
-import static emu.grasscutter.Configuration.*;
 
 @SuppressWarnings("unchecked")
 public class GameServerPacketHandler {

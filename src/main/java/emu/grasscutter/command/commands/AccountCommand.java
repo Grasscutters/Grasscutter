@@ -1,10 +1,10 @@
 package emu.grasscutter.command.commands;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import emu.grasscutter.Configuration;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.config.Configuration;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;

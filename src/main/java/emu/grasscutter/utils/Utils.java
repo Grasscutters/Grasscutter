@@ -10,6 +10,7 @@ import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.DataLoader;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;

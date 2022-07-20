@@ -6,10 +6,11 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 
 import java.util.List;
+
+import static emu.grasscutter.config.Configuration.*;
+
 import java.util.ArrayList;
 import java.util.HashSet;
-
-import static emu.grasscutter.Configuration.*;
 
 @Command(label = "team", usage = "team <add|remove|set> [avatarId,...] [index|first|last|index-index,...]",
 permission = "player.team", permissionTargeted = "player.team.others", description = "commands.team.description")

@@ -17,9 +17,9 @@ import emu.grasscutter.server.event.game.PlayerCreationEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 
-import java.util.Arrays;
+import static emu.grasscutter.config.Configuration.*;
 
-import static emu.grasscutter.Configuration.*;
+import java.util.Arrays;
 
 @Opcodes(PacketOpcodes.SetPlayerBornDataReq)
 public class HandlerSetPlayerBornDataReq extends PacketHandler {

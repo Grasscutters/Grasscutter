@@ -12,14 +12,14 @@ import express.http.Request;
 import express.http.Response;
 import io.javalin.Javalin;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
-
-import static emu.grasscutter.Configuration.*;
 
 /**
  * Handles requests related to the announcements page.

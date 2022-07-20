@@ -27,8 +27,8 @@ import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.utils.Utils;
 
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
-import static emu.grasscutter.Configuration.*;
 
 public final class Tools {
 	public static void createGmHandbook() throws Exception {

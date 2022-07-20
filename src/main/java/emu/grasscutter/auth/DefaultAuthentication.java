@@ -6,7 +6,7 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.server.http.objects.ComboTokenResJson;
 import emu.grasscutter.server.http.objects.LoginResultJson;
 
-import static emu.grasscutter.Configuration.ACCOUNT;
+import static emu.grasscutter.config.Configuration.ACCOUNT;
 import static emu.grasscutter.utils.Language.translate;
 
 /**

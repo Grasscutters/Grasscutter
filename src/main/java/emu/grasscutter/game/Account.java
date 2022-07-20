@@ -5,12 +5,12 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import java.util.*;
 import java.util.stream.Stream;
 
 import org.bson.Document;
-
-import static emu.grasscutter.Configuration.*;
 
 @Entity(value = "accounts", useDiscriminator = false)
 public class Account {

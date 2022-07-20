@@ -1,5 +1,7 @@
 package emu.grasscutter.game.managers;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
@@ -7,8 +9,6 @@ import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.server.packet.send.PacketPlayerPropNotify;
 import emu.grasscutter.server.packet.send.PacketResinChangeNotify;
 import emu.grasscutter.utils.Utils;
-
-import static emu.grasscutter.Configuration.GAME_OPTIONS;
 
 public class ResinManager extends BasePlayerManager {
 

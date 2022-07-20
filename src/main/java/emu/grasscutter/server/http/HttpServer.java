@@ -13,7 +13,7 @@ import org.eclipse.jetty.util.ssl.SslContextFactory;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
 /**

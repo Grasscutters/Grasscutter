@@ -20,7 +20,7 @@ import javax.swing.text.html.parser.Entity;
 import java.util.List;
 import java.util.Random;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)] [<x> <y> <z>(monster only, optional)]", aliases = {"drop"}, permission = "server.spawn", permissionTargeted = "server.spawn.others", description = "commands.spawn.description")

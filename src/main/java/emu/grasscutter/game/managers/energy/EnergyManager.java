@@ -32,8 +32,6 @@ import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import static emu.grasscutter.Configuration.GAME_OPTIONS;
-
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.Collection;
@@ -42,6 +40,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 import static java.util.Map.entry;
 
 import com.google.gson.reflect.TypeToken;
