@@ -1,7 +1,7 @@
 package emu.grasscutter.task.tasks;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.managers.AnnouncementSystem;
+import emu.grasscutter.game.systems.AnnouncementSystem;
 import emu.grasscutter.task.Task;
 import emu.grasscutter.task.TaskHandler;
 import org.quartz.JobExecutionContext;

@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers.collection;
+package emu.grasscutter.game.player;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 import dev.morphia.annotations.Entity;
 
 @Entity
-public class CollectionRecordStore {
+public class PlayerCollectionRecords {
     private Map<Integer, CollectionRecord> records;
     
     private Map<Integer, CollectionRecord> getRecords() {
