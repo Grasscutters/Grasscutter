@@ -16,6 +16,7 @@ import org.reflections.Reflections;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -44,9 +45,9 @@ public class ActivityManager extends BasePlayerManager {
             activityWatcherTypeMap.put(typeName.value(), ConstructorAccess.get(item));
         });
 
-        try(InputStream is = DataLoader.load("ActivityConfig.json"); InputStreamReader isr = new InputStreamReader(is)) {
+        try(Reader reader = DataLoader.loadReader("ActivityConfig.json")) {
             List<ActivityConfigItem> activities = Grasscutter.getGsonFactory().fromJson(
-                isr,
+                reader,
                 TypeToken.getParameterized(List.class, ActivityConfigItem.class).getType());
 
 

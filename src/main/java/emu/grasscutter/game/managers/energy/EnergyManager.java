@@ -62,7 +62,7 @@ public class EnergyManager extends BasePlayerManager {
 
     public static void initialize() {
         // Read the data we need for monster energy drops.
-        try (Reader fileReader = new InputStreamReader(DataLoader.load("EnergyDrop.json"))) {
+        try (Reader fileReader = DataLoader.loadReader("EnergyDrop.json")) {
             List<EnergyDropEntry> energyDropList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, EnergyDropEntry.class).getType());
 
             for (EnergyDropEntry entry : energyDropList) {

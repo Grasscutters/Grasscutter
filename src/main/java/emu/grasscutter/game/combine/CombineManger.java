@@ -39,7 +39,7 @@ public class CombineManger extends BaseGameSystem {
 
     public static void initialize() {
 		// Read the data we need for strongbox.
-		try (Reader fileReader = new InputStreamReader(DataLoader.load("ReliquaryDecompose.json"))) {
+		try (Reader fileReader = DataLoader.loadReader("ReliquaryDecompose.json")) {
 			List<ReliquaryDecomposeEntry> decomposeEntries = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ReliquaryDecomposeEntry.class).getType());
 
 			for (ReliquaryDecomposeEntry entry : decomposeEntries) {

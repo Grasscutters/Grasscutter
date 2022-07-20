@@ -312,9 +312,9 @@ public class ResourceLoader {
 
         for (String name : spawnDataNames) {
             // Load spawn entries from file
-            try (InputStream spawnDataEntries = DataLoader.load(name)) {
+            try (InputStreamReader reader = DataLoader.loadReader(name)) {
                 Type type = TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType();
-                List<SpawnGroupEntry> list = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(spawnDataEntries), type);
+                List<SpawnGroupEntry> list = Grasscutter.getGsonFactory().fromJson(reader, type);
 
                 // Add spawns to group if it already exists in our spawn group map
                 spawnEntryMap.addAll(list);
