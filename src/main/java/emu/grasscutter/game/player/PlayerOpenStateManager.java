@@ -38,8 +38,11 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
         super(player);
     }
 
-    public Map<Integer, Integer> getOpenStateMap() {
-        if (this.map == null) this.map = new HashMap<>();
+    public synchronized Map<Integer, Integer> getOpenStateMap() {
+        if (this.map == null) {
+            this.map = new HashMap<>();
+        }
+        
         return this.map;
     }
 
@@ -48,10 +51,10 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
     }
 
     public void setOpenState(OpenState openState, Integer value) {
-        Integer previousValue = getOpenStateMap().getOrDefault(openState.getValue(),0);
+        Integer previousValue = this.getOpenStateMap().getOrDefault(openState.getValue(), 0);
         if (value != previousValue) {
-            this.map.put(openState.getValue(), value);
-            player.getSession().send(new PacketOpenStateChangeNotify(openState.getValue(),value));
+            this.getOpenStateMap().put(openState.getValue(), value);
+            player.getSession().send(new PacketOpenStateChangeNotify(openState.getValue(), value));
         }
     }
 
