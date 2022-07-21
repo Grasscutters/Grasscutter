@@ -28,6 +28,8 @@
         "login_token_attempt": "[Account] Klient %s próbuje się zalogować poprzez token.",
         "login_token_error": "[Account] Logowanie klienta %s poprzez token nie powiodło się.",
         "login_token_success": "[Account] Klient %s zalogował się poprzez token jako %s.",
+        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
+        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
         "combo_token_success": "[Account] Klient %s pomyślnie wymienił token combo.",
         "combo_token_error": "[Account] Wymienienie tokena combo klienta %s nie powiodło się.",
         "account_login_create_success": "[Account] Logowanie klienta %s powiodło się: konto %s zostało stworzone.",
@@ -37,6 +39,9 @@
         "session_key_error": "Błędny klucz sesji.",
         "username_error": "Podana nazwa użytkownika nie istnieje.",
         "username_create_error": "Podana nazwa użytkownika nie istnieje. Automatyczne tworzenie nowego konta nie powiodło się.",
+        "password_error": "🇺🇸Invalid Password",
+        "password_length_error": "🇺🇸Password length must be greater then or equal to 8",
+        "password_storage_error": "🇺🇸You don't have a password for your account. Please contact an administrator.",
         "server_max_player_limit": "Liczba graczy online osiągnęła swój limit."
       },
       "router_error": "[Dispatch] Wystąpił błąd podczas tworzenia routera."
@@ -109,7 +114,7 @@
       "success": "Sukces"
     },
     "account": {
-      "usage": "account <create|delete> <nazwa gracza> [UID]",
+      "command_usage": "🇺🇸Usage: account <create|delete> <username> [UID]",
       "invalid": "Błędne UID gracza.",
       "exists": "Konto o tej nazwie użytkownika i/lub UID już istnieje.",
       "create": "Stworzono konto z UID %s.",
@@ -118,7 +123,7 @@
       "description": "Twórz lub usuń konta."
     },
     "announce": {
-      "usage": "announce <tpl> <ID szablonu> LUB announce <refresh> LUB announce <wiadomość> LUB announce <revoke> <ID szablonu>",
+      "command_usage": "🇺🇸Usage: announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
       "send_success": "Ogłoszenie zostało pomyślnie wysłane. Możesz je odwołać używając \"announce revoke %s\".",
       "refresh_success": "Odświeżono konfigurację ogłoszeń (w sumie jest ich %s).",
       "revoke_done": "Pomyślnie odwołano ogłoszenie %s.",
@@ -126,7 +131,7 @@
       "description": "Wysyłaj i zarządzaj ogłoszeniami."
     },
     "clear": {
-      "usage": "Użycie: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
+      "command_usage": "🇺🇸Usage: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Usunięto bronie gracza %s.",
       "artifacts": "Usunięto artefakty gracza %s.",
       "materials": "Usunięto materiały gracza %s.",
@@ -160,23 +165,20 @@
       "description": "Dodaj wybrane przedmioty do ekwipunku wybranego gracza."
     },
     "heal": {
-      "usage": "heal",
       "success": "Wszystkie postacie zostały uleczone.",
       "description": "Ulecz wszystkie postacie w swoim zespole."
     },
     "help": {
       "usage": "help [nazwa komendy]",
-      "usage_prefix": "Użycie: ",
       "aliases": "Aliasy: ",
       "available_commands": "Dostępne komendy: ",
-      "description": "Wyświetl wszystkie komendy lub informacje na temat danej komendy.",
       "tip_need_permission": "Wymagane uprawnienie: ",
       "tip_need_no_permission": "brak",
       "tip_permission_targeted": "(użycie tego polecenia na innych graczach również wymaga uprawnienia %s)",
-      "warn_player_has_no_permission": "Nie masz wystarczających uprawnień do używania tej komendy."
+      "warn_player_has_no_permission": "Nie masz wystarczających uprawnień do używania tej komendy.",
+      "description": "Wyświetl wszystkie komendy lub informacje na temat danej komendy."
     },
     "kick": {
-      "usage": "kick",
       "player_kick_player": "Gracz [%s:%s] wyrzucił gracza [%s:%s].",
       "server_kick_player": "Wyrzucono gracza [%s:%s].",
       "description": "Wyrzuć wskazanego gracza z gry."
@@ -193,14 +195,12 @@
       "description": "Zabij postać wskazanego gracza."
     },
     "language": {
-      "usage": "language [kod języka]",
       "current_language": "Bieżący kod języka to %s.",
       "language_changed": "Zmieniono język na ten o kodzie %s.",
       "language_not_found": "Nie znaleziono języka o kodzie \"%s\".",
       "description": "Pokaż lub zmień bieżący kod języka."
     },
     "list": {
-      "usage": "list @[ID gracza]",
       "success": "%s graczy online:",
       "description": "Pokaż ile jest graczy na serwerze."
     },
@@ -214,7 +214,6 @@
       "description": "Dodaj lub usuń uprawnienia podanego gracza."
     },
     "position": {
-      "usage": "position",
       "success": "Koordynaty: (%s, %s, %s).\nID sceny: %s.",
       "description": "Pokaż gdzie znajduje się dany gracz."
     },
@@ -227,13 +226,11 @@
       "description": "Dodaj lub wykonaj wskazane zadanie."
     },
     "reload": {
-      "usage": "reload",
       "reload_start": "Ponowne ładowanie konfiguracji...",
       "reload_done": "Ponowne ładowanie konfiguracji zakończone.",
       "description": "Ponownie załaduj język, konfigurację oraz inne dane gry."
     },
     "resetConst": {
-      "usage": "resetconst [all]",
       "reset_all": "Zresetowano konstelacje dla wszystkich postaci. Aby zobaczyć zmiany, zaloguj się ponownie.",
       "success": "Konstelacje awatara %s zostały zresetowane. Aby zobaczyć zmiany, zaloguj się ponownie.",
       "description": "Resetuj konstelacje wszystkich lub wybranej postaci."
@@ -293,7 +290,6 @@
       "description": "Dodaj wskazane obiekty do sceny wybranego gracza."
     },
     "stop": {
-      "usage": "stop",
       "success": "Serwer zatrzymuje się...",
       "description": "Zatrzymaj serwer."
     },
@@ -333,7 +329,6 @@
       "description": "Modyfikuj zespół wybranego gracza."
     },
     "teleportAll": {
-      "usage": "tpall",
       "success": "Przyzwano wszystkich graczy do wybranego gracza.",
       "error": "Możesz użyć tej komendy wyłącznie w trybie MP.",
       "description": "Przyzwij wszystkich graczy do wybranego gracza."
@@ -354,14 +349,14 @@
       "description": "Zmień ID pogody i typ klimatu."
     },
     "ban": {
-      "usage": "ban @<ID gracza> [na ile czasu] [powód]",
+      "command_usage": "🇺🇸Usage: ban <@playerId> [timestamp] [reason]",
       "success": "Pomyślnie zbanowano podanego gracza.",
       "failure": "Gracz o podanym ID nie istnieje.",
       "invalid_time": "Nieprawidłowy czas bana.",
       "description": "Zbanuj podanego gracza."
     },
     "unban": {
-      "usage": "unban @<ID gracza>",
+      "command_usage": "🇺🇸Usage: unban <@playerId>",
       "success": "Pomyślnie odbanowano podanego gracza.",
       "failure": "Gracz o podanym ID nie istnieje.",
       "description": "Odbanuj podanego gracza."
@@ -382,7 +377,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "Komendy",
       "title_avatars": "Awatary",
       "title_items": "Przedmioty",
@@ -398,7 +393,7 @@
     },
     "index": {
       "title": "Dokumentacja",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "Losowanie w formacie JSON"
     }
   }

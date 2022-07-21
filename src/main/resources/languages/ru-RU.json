@@ -9,7 +9,7 @@
     },
     "dispatch": {
       "port_bind": "[Dispatch] Распределительный сервер запущен на порте %s",
-      "request": "[Dispatch] Client %s %s request: %s",
+      "request": "🇺🇸[Dispatch] Client %s %s request: %s",
       "keystore": {
         "general_error": "[Dispatch] Возникла ошибка при загрузке keystore!",
         "password_error": "[Dispatch] Не удалось загрузить keystore. Пытаемся использовать пароль для keystore по умолчанию...",
@@ -28,18 +28,23 @@
         "login_token_attempt": "[Dispatch] Клиент %s пытается войти с помощью токена.",
         "login_token_error": "[Dispatch] Клиент %s не смог войти с помощью токена.",
         "login_token_success": "[Dispatch] Клиент %s вошел с помощью токена как %s.",
-        "combo_token_success": "[Dispatch] Client %s succeed to exchange combo token.",
-        "combo_token_error": "[Dispatch] Client %s failed to exchange combo token.",
+        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
+        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
+        "combo_token_success": "🇺🇸[Dispatch] Client %s succeed to exchange combo token.",
+        "combo_token_error": "🇺🇸[Dispatch] Client %s failed to exchange combo token.",
         "account_login_create_success": "[Dispatch] Клиенту %s не удалось войти по причине: Аккаунт %s был создан.",
         "account_login_create_error": "[Dispatch] Клиенту %s не удалось войти по причне : Не удалось создать аккаунт.",
         "account_login_exist_error": "[Dispatch] Клиенту %s не удалось войти по причине: Аккаунт не найден.",
-        "account_cache_error": "Game account cache information error.",
+        "account_cache_error": "🇺🇸Game account cache information error.",
         "session_key_error": "Некорректный ключ сессии.",
         "username_error": "Имя пользователя не обнаружено.",
         "username_create_error": "Имя пользователя не найденоUsername not found, создание не удалось.",
+        "password_error": "🇺🇸Invalid Password",
+        "password_length_error": "🇺🇸Password length must be greater then or equal to 8",
+        "password_storage_error": "🇺🇸You don't have a password for your account. Please contact an administrator.",
         "server_max_player_limit": "Число игроков в сети достигло предела"
       },
-      "router_error": "[Dispatch] Unable to attach router."
+      "router_error": "🇺🇸[Dispatch] Unable to attach router."
     },
     "status": {
       "free_software": "Grasscutter является БЕСПЛАТНЫМ программным обеспечением. Если вы заплатили за него деньги, то вас обманули. Домашняя страница проекта: https://github.com/Grasscutters/Grasscutter",
@@ -55,8 +60,8 @@
       "version": "Версия Grasscutter: %s-%s",
       "game_version": "Версия игры: %s",
       "resources": {
-        "loading": "Loading resources...",
-        "finish": "Finished loading resources."
+        "loading": "🇺🇸Loading resources...",
+        "finish": "🇺🇸Finished loading resources."
       }
     }
   },
@@ -82,7 +87,7 @@
         "itemLevel": "Некорректный уровень предмета (itemLevel).",
         "itemRefinement": "Некорректный уровень пробуждения предмета (itemRefinement).",
         "statValue": "Некорректное значение характеристики.",
-        "value_between": "Invalid value: %s must be between %s and %s.",
+        "value_between": "🇺🇸Invalid value: %s must be between %s and %s.",
         "playerId": "Некорректный ID игрока.",
         "uid": "Некорректный UID.",
         "id": "Некорректный ID."
@@ -109,26 +114,21 @@
       "success": "Успех"
     },
     "account": {
-      "modify": "Изменить аккаунты пользователя",
+      "command_usage": "Применение: account <create|delete> <имя_пользователя> [UID]",
       "invalid": "Некорректный UID.",
       "exists": "Аккаунт с таким именем пользователя и/или UID уже существует.",
       "create": "Создан аккаунт с UID %s.",
       "delete": "Аккаунт удалён.",
       "no_account": "Аккаунт не найден.",
-      "command_usage": "Применение: account <create|delete> <имя_пользователя> [UID]",
       "description": "Изменяет аккаунт пользователя"
     },
-    "broadcast": {
-      "command_usage": "Применение: broadcast <сообщение>",
-      "message_sent": "Сообщение отправлено.",
-      "description": "Отправляет сообщение всем игрокам"
-    },
-    "changescene": {
-      "usage": "Применение: changescene <ID_сцены>",
-      "already_in_scene": "Вы уже находитесь в этой сцене.",
-      "success": "Переход в сцену %s.",
-      "exists_error": "Указанной сцены не существует.",
-      "description": "Изменяет текущую сцену"
+    "announce": {
+      "command_usage": "🇺🇸Usage: announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
+      "send_success": "🇺🇸Send an announcement successfully, you can revoke it by /a revoke %s.",
+      "refresh_success": "🇺🇸Refresh announcement config file successfully. [Total %s]",
+      "revoke_done": "🇺🇸Try to revoke announcement %s.",
+      "not_found": "🇺🇸Could not found announcement %s.",
+      "description": "🇺🇸Send announcement to all online players, or manage server's announcement"
     },
     "clear": {
       "command_usage": "Применение: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
@@ -136,8 +136,8 @@
       "artifacts": "Удалены артефакты у %s.",
       "materials": "Удалены материалы у %s.",
       "furniture": "Удалена мебель у %s.",
-      "displays": "Cleared displays for %s.",
-      "virtuals": "Cleared virtuals for %s.",
+      "displays": "🇺🇸Cleared displays for %s.",
+      "virtuals": "🇺🇸Cleared virtuals for %s.",
       "everything": "Удалено всё у %s.",
       "description": "Удаляет все неэкипированные на данный момент предметы из инвентаря, включая предметы золотой редкости"
     },
@@ -146,11 +146,6 @@
       "success": "Игрок %s был призван в мир %s.",
       "description": "Принудительно присоединяет кого-то к миру другого человека. Если не выбрана цель, то вы всё равно войдете в совместный режим."
     },
-    "drop": {
-      "command_usage": "Применение: drop <ID_предмета|название_предмета> [кол-во]",
-      "success": "Были уронены %s игрока %s.",
-      "description": "Роняет предмет возле вас"
-    },
     "enter_dungeon": {
       "usage": "Применение: enterdungeon <ID_подземелья>",
       "changed": "Произошёл переход в подземелье %s.",
@@ -158,39 +153,16 @@
       "in_dungeon_error": "Вы уже в этом подземелье.",
       "description": "Позволяет войти в подземелье"
     },
-    "giveAll": {
-      "usage": "Применение: giveall [игрок] [кол-во]",
-      "started": "Получаем все предметы...",
-      "success": "Все предметы были успешно выданы %s.",
-      "invalid_amount_or_playerId": "Некорректное число или ID игрока.",
-      "description": "Выдаёт все предметы"
-    },
-    "giveArtifact": {
-      "usage": "Применение: giveart|gart [игрок] <ID_артефакта> <ID_осн_хар-ки> [<ID_доп_хар-ки>[,<раз>]]... [уровень]",
-      "id_error": "Некорректный ID артефакта.",
-      "success": "Выдан %s игроку %s.",
-      "description": "Выдает игроку заданный артефакт"
-    },
-    "giveChar": {
-      "usage": "Применение: givechar <player> <avatarID> [level]",
-      "given": "Выдан(а) %s с уровнем %s игроку %s.",
-      "invalid_avatar_id": "Некорректный ID аватара.",
-      "invalid_avatar_level": "Некорректный уровень аватара.",
-      "invalid_avatar_or_player_id": "Некорректный ID игрока или аватара.",
-      "description": "Выдает игроку заданного персонажа"
-    },
     "give": {
       "usage": "Применение: give <игрок> <ID_предмета|имя_предмета> [кол-во] [уровень] [пробуждение]",
-      "refinement_only_applicable_weapons": "Пробуждение применимо только к оружию.",
-      "refinement_must_between_1_and_5": "Значение пробуждения должно быть от 1 до 5.",
+      "usage_relic": "🇺🇸Usage: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
+      "illegal_relic": "🇺🇸This artifactID belongs to a blacklisted range, it may not be the one you wanted.",
       "given": "Выдано %s %s игроку %s.",
       "given_with_level_and_refinement": "Выдано %s с уровнем %s, уровнем пробуждения %s %s раз игроку %s.",
       "given_level": "Выдано %s с уровнем %s %s раз игроку %s.",
+      "given_avatar": "🇺🇸Given %s with level %s to %s.",
+      "giveall_success": "🇺🇸Successfully gave all items.",
       "description": "Выдаёт предмет лично вам или заданному игроку"
-    },
-    "godmode": {
-      "success": "Godmode теперь %s для %s.",
-      "description": "Не позволяет получать урон. По умолчанию переключается."
     },
     "heal": {
       "success": "Все персонажи были вылечены.",
@@ -200,6 +172,10 @@
       "usage": "Применение: ",
       "aliases": "Альтернативные названия: ",
       "available_commands": "Доступные команды: ",
+      "tip_need_permission": "🇺🇸Permission: ",
+      "tip_need_no_permission": "🇺🇸 None",
+      "tip_permission_targeted": "🇺🇸 (Permission %s is also required to use on other players)",
+      "warn_player_has_no_permission": "🇺🇸Notice: You do not have permission to run this command.",
       "description": "Отправляет сообщение с помощью или показывает информацию о заданной команде"
     },
     "kick": {
@@ -227,10 +203,6 @@
     "list": {
       "success": "Сейчас в сети %s игрок(ов):",
       "description": "Список игроков в сети"
-    },
-    "nostamina": {
-      "success": "NoStamina теперь %s для %s.",
-      "description": "Поддерживает уровень выносливости на максимуме."
     },
     "permission": {
       "usage": "Применение: permission <add|remove> <имя_пользователя> <разрешение>",
@@ -268,9 +240,6 @@
       "success": "Сброс выполнен успешно.",
       "description": "Сбрасывает таймер обновления магазина у выбранного игрока"
     },
-    "restart": {
-      "description": "Перезапускает текущую сессию"
-    },
     "sendMail": {
       "usage": "Применение: sendmail <ID_пользователя|all|help> [ID_шаблона]",
       "user_not_exist": "Пользователь с ID '%s' не найден.",
@@ -307,19 +276,12 @@
       "description": "Устанавливает уровень дружбы для активного персонажа"
     },
     "setProp": {
-      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
-      "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
+      "usage": "🇺🇸Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
+      "description": "🇺🇸Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
     },
     "setStats": {
       "usage": "Применение: setstats|stats <хар-ка> <значение>\n\tВозможные значения для <хар-ка>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(прод.) Бонус элементального урона: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Элементальное сопротивление: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
       "description": "Задаёт боевые характеристики для активного персонажа"
-    },
-    "setWorldLevel": {
-      "usage": "Применение: setworldlevel <level>",
-      "value_error": "Уровень мира должен находиться в пределах 0-8.",
-      "success": "Уровень мира стал равен %s.",
-      "invalid_world_level": "Некорректный уровень мира.",
-      "description": "Задает уровень мира (Перезайдите в игру для того, чтобы увидеть результат)"
     },
     "spawn": {
       "usage": "Применение: spawn <ID_сущности> [кол-во] [уровень(только для монстров)] [<x> <y> <z>(только для монстров, опционально)]",
@@ -376,36 +338,28 @@
       "usage": "Применение: tp [@<ID_игрока>] <x> <y> <z> [ID_сцены]",
       "specify_player_id": "Нужно указать ID игрока.",
       "invalid_position": "Некорректная позиция.",
+      "exists_error": "🇺🇸The specified scene does not exist.",
       "success": "Игрок %s был телепортирован по координатам %s, %s, %s в сцене %s.",
       "description": "Изменяет позицию игрока"
     },
-    "unlimitenergy": {
-      "success": "UnlimitEnergy теперь %s для игрока %s.",
-      "config_error": "Команда недоступна, поскольку energyUsage равно false в config.json.",
-      "description": "Используйте данный элемент для того, чтобы не тратить энергию"
-    },
-    "unlocktower": {
-      "success": "Теперь открыты все этажи Коридора Бездны.",
-      "description": "Открывает все уровни башни"
-    },
     "weather": {
-      "description": "Изменяет погоду.Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
       "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
-      "success": "Set weather ID to %s with climate type %s.",
-      "status": "Current weather ID is %s with climate type %s."
+      "success": "🇺🇸Set weather ID to %s with climate type %s.",
+      "status": "🇺🇸Current weather ID is %s with climate type %s.",
+      "description": "Изменяет погоду.Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist."
     },
     "ban": {
-      "description": "Банит игрока",
+      "command_usage": "Применение: ban <@Id игрока> [промежуток_времени] [причина]",
       "success": "Успех.",
       "failure": "Неудача, игрок не найден.",
       "invalid_time": "Не удалось определить промежуток времени.",
-      "command_usage": "Применение: ban <@Id игрока> [промежуток_времени] [причина]"
+      "description": "Банит игрока"
     },
     "unban": {
-      "description": "Разбанивает игрока",
+      "command_usage": "Применение: unban <@Id_игрока>",
       "success": "Успех.",
       "failure": "Неудача, игрок не найден.",
-      "command_usage": "Применение: unban <@Id_игрока>"
+      "description": "Разбанивает игрока"
     }
   },
   "gacha": {
