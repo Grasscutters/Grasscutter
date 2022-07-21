@@ -44,6 +44,7 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
 	public PacketPlayerEnterSceneNotify(Player player, Player target, EnterType type, EnterReason reason, int newScene, Position newPos) {
 		super(PacketOpcodes.PlayerEnterSceneNotify);
 		
+		player.setSceneLoadState(SceneLoadState.LOADING);
 		player.setEnterSceneToken(Utils.randomRange(1000, 99999));
 
 		PlayerEnterSceneNotify.Builder proto = PlayerEnterSceneNotify.newBuilder()
