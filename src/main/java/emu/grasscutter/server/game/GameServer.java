@@ -83,7 +83,7 @@ public final class GameServer extends KcpServer {
 
     public GameServer(InetSocketAddress address) {
         ChannelConfig channelConfig = new ChannelConfig();
-        channelConfig.nodelay(true, 40, 2, true);
+        channelConfig.nodelay(true, 20, 2, true);
         channelConfig.setMtu(1400);
         channelConfig.setSndwnd(256);
         channelConfig.setRcvwnd(256);
