@@ -42,8 +42,6 @@ import it.unimi.dsi.fastutil.ints.IntSet;
 
 @Entity
 public class TeamManager extends BasePlayerDataManager {
-    @Transient private Player player;
-
     private Map<Integer, TeamInfo> teams;
     private int currentTeamIndex;
     private int currentCharacterIndex;
@@ -78,7 +76,7 @@ public class TeamManager extends BasePlayerDataManager {
     }
 
     public World getWorld() {
-        return player.getWorld();
+        return getPlayer().getWorld();
     }
 
     public Map<Integer, TeamInfo> getTeams() {
