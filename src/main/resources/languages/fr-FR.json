@@ -94,6 +94,7 @@
       }
     },
     "execution": {
+      "usage_prefix": "🇺🇸Usage: ",
       "player_exist_error": "Joueur introuvable.",
       "player_offline_error": "Le joueur n'est pas connecté.",
       "item_player_exist_error": "UID ou objet invalide.",
@@ -114,7 +115,6 @@
       "success": "Succès"
     },
     "account": {
-      "command_usage": "Utilisation: account <create|delete> <nom_d'utilisateur> [UID]",
       "invalid": "UID invalide.",
       "exists": "Un compte avec ce nom d'utilisateur et/ou UID existe déjà.",
       "create": "Compte créé avec l'UID %s.",
@@ -123,7 +123,6 @@
       "description": "Modifie les comptes utilisateurs"
     },
     "announce": {
-      "command_usage": "🇺🇸Usage: announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
       "send_success": "🇺🇸Send an announcement successfully, you can revoke it by /a revoke %s.",
       "refresh_success": "🇺🇸Refresh announcement config file successfully. [Total %s]",
       "revoke_done": "🇺🇸Try to revoke announcement %s.",
@@ -131,7 +130,6 @@
       "description": "🇺🇸Send announcement to all online players, or manage server's announcement"
     },
     "clear": {
-      "command_usage": "🇺🇸Usage: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Les armes de %s ont été supprimés.",
       "artifacts": "Les artéfacts de %s ont été supprimés.",
       "materials": "Les matériaux de %s ont été supprimés.",
@@ -142,19 +140,16 @@
       "description": "Supprime les objets débloqués et non équipés, y compris ceux de rareté 5* de votre inventaire"
     },
     "coop": {
-      "usage": "Usage: coop [UID de l'hôte]",
       "success": "%s est apparu dans de monde de %s.",
       "description": "Force quelqu'un a rejoindre le monde d'un autre. Si personne n'est ciblé, vous envoie quand même en mode multijoueur."
     },
     "enter_dungeon": {
-      "usage": "🇺🇸Usage: enterdungeon <dungeonID>",
       "changed": "Entré dans le donjon  %s.",
       "not_found_error": "Le donjon n'existe pas.",
       "in_dungeon_error": "Vous êtes déjà dans ce donjon.",
       "description": "Entrer dans un donjon"
     },
     "give": {
-      "usage": "Usage: give <joueur> <itemID|avatarID> [quantité] [niveau] [raffinement]",
       "usage_relic": "🇺🇸Usage: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
       "illegal_relic": "🇺🇸This artifactID belongs to a blacklisted range, it may not be the one you wanted.",
       "given": "🇺🇸Given %s of %s to %s.",
@@ -169,7 +164,6 @@
       "description": "Soigne tous les personnages de votre équipe"
     },
     "help": {
-      "usage": "Utilisation: ",
       "aliases": "Alias: ",
       "available_commands": "Commandes disponibles: ",
       "tip_need_permission": "🇺🇸Permission: ",
@@ -184,13 +178,11 @@
       "description": "Ejecte le joueur spécifié du serveur (WIP)"
     },
     "killall": {
-      "usage": "🇺🇸Usage: killall [playerUID] [sceneID]",
       "scene_not_found_in_player_world": "Scène introuvable dans le monde du joueur.",
       "kill_monsters_in_scene": "Exécution de %s monstres dans la scène %s...",
       "description": "Tue toutes les entités"
     },
     "killCharacter": {
-      "usage": "🇺🇸Usage: killcharacter [playerID]",
       "success": " Le personnage actuel de %s a été tué.",
       "description": "Tue le personnage actuel du joueur spécifié"
     },
@@ -205,7 +197,6 @@
       "description": "Liste tous les joueurs connectés"
     },
     "permission": {
-      "usage": "🇺🇸Usage: permission <add|remove> <username> <permission>",
       "add": "Permission ajoutée.",
       "has_error": "Cet utilisateur possède déjà cette permission!",
       "remove": "Permission retirée.",
@@ -218,7 +209,6 @@
       "description": "Obtenir vos coordonnées"
     },
     "quest": {
-      "usage": "🇺🇸quest <add|finish> [questID]",
       "added": "Quête %s ajoutée.",
       "finished": "Quête terminée : %s.",
       "not_found": "Quête introuvable.",
@@ -236,12 +226,11 @@
       "description": "Réinitialise les constellations d'un avatar. Vous devez vous reconnecter pour voir les modifications."
     },
     "resetShopLimit": {
-      "usage": "🇺🇸Usage: resetshop <playerID>",
       "success": "Réinitialisation terminée.",
       "description": "Réinitialise le temps d'actualisation  de la boutique du joueur spécifié"
     },
     "sendMail": {
-      "usage": "🇺🇸Usage: sendmail <userID|all|help> [templateID]",
+      "give_usage": "Usage: give <joueur> <itemID|avatarID> [quantité] [niveau] [raffinement]",
       "user_not_exist": "L'utilisateur avec l'identifiant '%s' n'existe pas.",
       "start_composition": "Démarrage de la composition du message.\nVeuillez utiliser'/sendmail <titre>' pour continuer.\nVous pouvez utiliser '/sendmail stop' à tout moment.",
       "templates": "Les modèles de lettres ne sont pas encore disponibles.",
@@ -264,27 +253,22 @@
       "description": "Envoie un courrier à l'utilisateur spécifié. L'utilisation de la commande change en fonction du stade de la composition du message."
     },
     "sendMessage": {
-      "usage": "Usage: sendmessage <joueur> <message>",
       "success": "Message envoyé.",
       "description": "Envoie un message au joueur spécifié en tant que Serveur"
     },
     "setFetterLevel": {
-      "usage": "🇺🇸Usage: setfetterlevel <level>",
       "range_error": "Le niveau d'affinité doit être compris entre 0 et 10.",
       "success": "Niveau d'affinité défini à %s.",
       "level_error": "Niveau d'affinité invalide.",
       "description": "Défini le niveau d'affinité de votre personnage actif"
     },
     "setProp": {
-      "usage": "🇺🇸Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
-      "description": "Définit des propriétes pour votre compte. Des choses comme le godemode peuvent être activés avec cette commande, et le déblocage de l'abysse ainsi que l'avancement du PB."
+      "description": "Définit des propriétes pour votre compte. Des choses comme le godemode peuvent être activés avec cette commande, et le déblocage de l'abysse ainsi que l'avancement du PB.\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setStats": {
-      "usage": "Usage: setstats|stats <stat> <valeur>\n\tValeurs pour <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de dégât élémentaire: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Résistance élémentaire: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-      "description": "Définit les propriétés de combat de votre personnage actif"
+      "description": "Définit les propriétés de combat de votre personnage actif\n\tValeurs pour <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de dégât élémentaire: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Résistance élémentaire: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys"
     },
     "spawn": {
-      "usage": "Usage: spawn <entityID> [quantité] [niveau(monstre uniquement)] [<x> <y> <z>(monstre uniquement, optionnel)]",
       "success": " %s %s sont apparu.",
       "limit_reached": "La limite d'apparition de la scène est atteinte. Apparition de %s entités à la place.",
       "description": "Fait apparaitre une entité à proximité"
@@ -294,16 +278,12 @@
       "description": "Arrête le serveur"
     },
     "talent": {
-      "usage_1": "Pour définir le niveau du talent: /talent set <talentID> <value>",
-      "usage_2": "Une autre façon de définir le niveau d'un talent: /talent <n or e or q> <value>",
-      "usage_3": "Pour obtenir l'ID d'un talent: /talent getid",
       "lower_16": "Niveau de talent invalide. Le niveau doit être inférieur a 16.",
       "set_id": "Talent défini à %s.",
       "set_atk": "Le talent ATK normale a été défini à %s.",
       "set_e": "Le talent E a été défini a %s.",
       "set_q": "Le talent A/Q a été défini à %s.",
       "invalid_skill_id": "ID de talent invalide.",
-      "set_this": "Ce talent a été défini a %s.",
       "invalid_level": "Niveau de talent invalide.",
       "normal_attack_id": "ID de l'attaque normale ID %s.",
       "e_skill_id": "ID du E %s.",
@@ -311,17 +291,13 @@
       "description": "Définit le niveau du talent du personnage actif"
     },
     "team": {
-      "usage": "🇺🇸Usage: team <add|remove|set> [avatarID,...] [index|first|last|index-index,...]",
       "invalid_usage": "Utilisation invalide.",
-      "add_usage": "Utilisation (add): team add <avatarID,...> [index]",
       "invalid_index": "Index invalide.",
       "add_too_much": "Ce serveur autorise à avoir au maximum %d avatar(s) dans votre équipe.",
       "failed_to_add_avatar": "Echec de l'ajout de l'avatar a l'ID %s dans votre équipe.",
-      "remove_usage": "Utilisation (remove): team remove <index|first|last|index-index,...>",
       "failed_to_parse_index": "Echec de l'analyse de l'index index: %s",
       "remove_too_much": "Vous ne pouvez pas retirer tous les avatars.",
       "ignore_index": "Index(s) ignorés : %s",
-      "set_usage": "Utilisation : (set): team set <index> <avatarID>",
       "index_out_of_range": "L'index spécifié est en dehors du champ.",
       "failed_parse_avatar_id": "Echec de l'analyse de l'ID de l'avatar: %s",
       "avatar_already_in_team": "L'avatar est déjà dans votre équipe.",
@@ -334,29 +310,23 @@
       "description": "Téléporte tous les joueurs de votre monde sur votre position"
     },
     "teleport": {
-      "usage_server": "Utilisation: tp @<playerID> <x> <y> <z> [sceneID]",
-      "usage": "Utilisation: tp [@<playerID>] <x> <y> <z> [sceneID]",
-      "specify_player_id": "Vous devez spécifier un ID d'utilisateur.",
       "invalid_position": "Position invalide.",
       "exists_error": "La scène spécifié n'existe pas.",
       "success": "%s a été téléporté à %s, %s, %s dans la scène %s.",
       "description": "Change la position du joueur"
     },
     "weather": {
-      "usage": "Utilisation: weather [weatherId] [climateType]\nLes ID de la météo peuvent être trouvés dans WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
       "success": "L'ID de la météo à été défini a %s avec le type de climat %s.",
       "status": "L'ID de la météo accutel est %s avec le type de climat %s.",
       "description": "Change la météo. Les ID de la météo peuvent être trouvés dans WeatherExcelConfigData.json.\nTypes de climatss: sunny, cloudy, rain, thunderstorm, snow, mist."
     },
     "ban": {
-      "command_usage": "Usage: ban <@playerId> [timestamp] [raison]",
       "success": "Succès.",
       "failure": "Échec, joueur introuvable.",
       "invalid_time": "Impossible d'analyser le timestamp.",
       "description": "Bannis un joueur"
     },
     "unban": {
-      "command_usage": "🇺🇸Usage: unban <@playerId>",
       "success": "Succès.",
       "failure": "Échec, joueur introuvable.",
       "description": "Retire le bannissement d'un joueur"

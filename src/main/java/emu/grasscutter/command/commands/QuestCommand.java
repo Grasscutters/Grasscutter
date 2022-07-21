@@ -15,7 +15,7 @@ public final class QuestCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
 		if (args.size() != 2) {
-			CommandHandler.sendMessage(sender, translate(sender, "commands.quest.usage"));
+			sendUsageMessage(sender);
             return;
 		}
 		
@@ -53,7 +53,7 @@ public final class QuestCommand implements CommandHandler {
 				CommandHandler.sendMessage(sender, translate(sender, "commands.quest.finished", questId));
 			}
 			default -> {
-				CommandHandler.sendMessage(sender, translate(sender, "commands.quest.usage"));
+				sendUsageMessage(sender);
 			}
 		}
     }
