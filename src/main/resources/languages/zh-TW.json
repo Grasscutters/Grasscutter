@@ -28,6 +28,8 @@
         "login_token_attempt": "[Dispatch] 客戶端 %s 正在嘗試用憑證登入",
         "login_token_error": "[Dispatch] 客戶端 %s 使用憑證登入失敗",
         "login_token_success": "[Dispatch] 客戶端 %s 已透過憑證登入，UID為 %s",
+        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
+        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
         "combo_token_success": "[Dispatch] 客戶端 %s 交換憑證成功",
         "combo_token_error": "[Dispatch] 客戶端 %s 交換憑證失敗",
         "account_login_create_success": "[Dispatch] 客戶端 %s 登入失敗: 已註冊UID為 %s 的帳號",
@@ -37,6 +39,9 @@
         "session_key_error": "對話密鑰不符。",
         "username_error": "未找到此用戶名。",
         "username_create_error": "未找到用戶名，建立失敗。",
+        "password_error": "🇺🇸Invalid Password",
+        "password_length_error": "🇺🇸Password length must be greater then or equal to 8",
+        "password_storage_error": "🇺🇸You don't have a password for your account. Please contact an administrator.",
         "server_max_player_limit": "伺服器在線人數已滿"
       },
       "router_error": "[Dispatch] 無法附加到路由上。"
@@ -55,8 +60,8 @@
       "version": "Grasscutter版本： %s-%s",
       "game_version": "遊戲版本：%s",
       "resources": {
-        "loading": "Loading resources...",
-        "finish": "Finished loading resources."
+        "loading": "🇺🇸Loading resources...",
+        "finish": "🇺🇸Finished loading resources."
       }
     }
   },
@@ -68,6 +73,7 @@
       "console_execute_error": "此指令只能在伺服器的命令提示字元執行。",
       "player_execute_error": "請在遊戲裡使用這條指令。",
       "command_exist_error": "找不到指令。",
+      "no_usage_specified": "🇺🇸No usage specified",
       "no_description_specified": "没有指定說明。",
       "set_to": "%s 已經設為 %s。",
       "set_for_to": "%s 的使用者 %s 更改為 %s。",
@@ -81,7 +87,7 @@
         "itemLevel": "無效的物品等級。",
         "itemRefinement": "無效的物品精煉度。",
         "statValue": "無效的數據值。",
-        "value_between": "Invalid value: %s must be between %s and %s.",
+        "value_between": "🇺🇸Invalid value: %s must be between %s and %s.",
         "playerId": "無效的玩家ID。",
         "uid": "無效的UID。",
         "id": "無效的ID。"
@@ -108,13 +114,21 @@
       "success": "成功"
     },
     "account": {
+      "command_usage": "用法：account <create|delete> <username> [uid]",
       "invalid": "無效的UID。",
       "exists": "帳號已存在。",
       "create": "已建立帳號，UID 為 %s 。",
       "delete": "帳號已刪除。",
       "no_account": "帳號不存在。",
-      "command_usage": "用法：account <create|delete> <username> [uid]",
       "description": "建立或刪除帳號。"
+    },
+    "announce": {
+      "command_usage": "🇺🇸Usage: announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
+      "send_success": "🇺🇸Send an announcement successfully, you can revoke it by /a revoke %s.",
+      "refresh_success": "🇺🇸Refresh announcement config file successfully. [Total %s]",
+      "revoke_done": "🇺🇸Try to revoke announcement %s.",
+      "not_found": "🇺🇸Could not found announcement %s.",
+      "description": "🇺🇸Send announcement to all online players, or manage server's announcement"
     },
     "clear": {
       "command_usage": "用法： clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
@@ -139,36 +153,16 @@
       "in_dungeon_error": "你已經在祕境中了。",
       "description": "進入指定祕境。"
     },
-    "giveAll": {
-      "usage": "用法：giveall [player] [amount]",
-      "started": "正在賦予全部物品...",
-      "success": "已賦予全部物品。",
-      "invalid_amount_or_playerId": "無效的數量/玩家ID。",
-      "description": "賦予所有物品。"
-    },
-    "giveArtifact": {
-      "usage": "用法：giveart|gart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]",
-      "id_error": "無效的聖遺物ID。",
-      "success": "已把 %s 給予 %s。",
-      "description": "給予指定聖遺物。"
-    },
     "give": {
-          "usage": "用法：give <player> <itemId|avatarId> [amount] [level] [refinement]",
-      "refinement_only_applicable_weapons": "精煉度只能施加在武器上面。",
-      "refinement_must_between_1_and_5": "精煉度必需在 1 到 5 之間。",
+      "usage": "用法：give <player> <itemId|avatarId> [amount] [level] [refinement]",
+      "usage_relic": "🇺🇸Usage: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
+      "illegal_relic": "🇺🇸This artifactID belongs to a blacklisted range, it may not be the one you wanted.",
       "given": "已經將 %s 個 %s 給予 %s。",
       "given_with_level_and_refinement": "已將 %s [等級%s, 精煉%s] %s個給予 %s",
       "given_level": "已將 %s 等級 %s %s 個給予 %s",
-          "given_avatar": "已將 %s 等級 %s 給予 %s。",
+      "given_avatar": "已將 %s 等級 %s 給予 %s。",
+      "giveall_success": "🇺🇸Successfully gave all items.",
       "description": "給予指定物品。"
-    },
-    "godmode": {
-      "success": "上帝模式設定為 %s 。 [用戶：%s]",
-      "description": "防止你受到傷害。"
-    },
-    "nostamina": {
-      "success": "無限體力狀態： %s。[使用者：%s]",
-      "description": "開啟後所有動作都不再消耗體力。"
     },
     "heal": {
       "success": "所有角色已被治療。",
@@ -177,12 +171,12 @@
     "help": {
       "usage": "用法：",
       "aliases": "別名：",
-      "description": "發送幫助信息或顯示特定命令的信息",
       "available_commands": "可用指令：",
       "tip_need_permission": "需要的權限: ",
       "tip_need_no_permission": "無",
       "tip_permission_targeted": "(對其他的玩家使用這個指令還需要權限%s)",
-      "warn_player_has_no_permission": "注意：你沒有執行這條指令的權限"
+      "warn_player_has_no_permission": "注意：你沒有執行這條指令的權限",
+      "description": "發送幫助信息或顯示特定命令的信息"
     },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已把 [%s:%s] 踢出",
@@ -207,7 +201,7 @@
       "description": "顯示或切換當前語言。"
     },
     "list": {
-      "success": "目前總線上人數：%s" ,
+      "success": "目前總線上人數：%s",
       "description": "查看所有在線玩家"
     },
     "permission": {
@@ -224,22 +218,17 @@
       "description": "獲取目前所在位置的座標。"
     },
     "quest": {
-      "description": "添加或完成任務",
       "usage": "quest <add|finish> [任務ID]",
       "added": "已添加任務 %s",
       "finished": "已完成任務 %s",
       "not_found": "未找到任務",
-      "invalid_id": "無效的任務ID"
+      "invalid_id": "無效的任務ID",
+      "description": "添加或完成任務"
     },
     "reload": {
       "reload_start": "正在重新加載設定檔。",
       "reload_done": "重新加載已完成。",
       "description": "重新加載設定檔和數據。"
-    },
-    "remove": {
-      "usage": "用法: remove [多個角色在隊伍中的序號] 序號从1开始",
-      "invalid_index": "序號不合法，從1開始，最大值為隊内角色數量",
-      "description": "强制移除對内角色，例如`remove 1 2`表示將1號和2號角色從隊伍中移除"
     },
     "resetConst": {
       "reset_all": "重設所有角色的命座。",
@@ -287,23 +276,17 @@
       "description": "設定當前角色的好感度等級。"
     },
     "setProp": {
-      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
-      "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
+      "usage": "🇺🇸Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
+      "description": "🇺🇸Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
     },
     "setStats": {
       "usage": "用法：setstats|stats <stat> <value>\n\t可使用的數據類型：hp (生命值)| maxhp (最大生命值) | def(防禦力) | atk (攻擊力)| em (元素精通) | er (元素充能效率) | crate(暴擊率) | cdmg (暴擊傷害)| cdr (冷卻縮減) | heal(治療加成)| heali (受治療加成)| shield (護盾強效)| defi (無視防禦)\n\t(cont.) 元素增傷類：epyro (火傷) | ecryo (冰傷)  | ehydro (水傷)  | egeo (岩傷)  | edendro (草傷) | eelectro (雷傷) | ephys (物傷)(cont.) 元素減傷類：respyro (火抗)  | rescryo (冰抗)  | reshydro (水抗)  | resgeo (岩抗) | resdendro (草抗) | reselectro (雷抗)  | resphys (物抗)\n",
       "description": "設定當前角色的數據類型。"
     },
-    "setWorldLevel": {
-      "usage": "用法：setworldlevel <level>",
-      "value_error": "世界等級必須設定在0-8之間。",
-      "success": "已將世界等級設為%s。",
-      "invalid_world_level": "無效的世界等級。",
-      "description": "設定世界等級，執行指令後需重新登入後才會生效。"
-    },
     "spawn": {
       "usage": "用法：spawn <entityId> [amount] [level(僅限怪物)]",
       "success": "已生成 %s 個 %s。",
+      "limit_reached": "🇺🇸Scene spawn limit reached. Spawning %s entities instead.",
       "description": "在你附近生成一個實體動物。"
     },
     "stop": {
@@ -355,18 +338,9 @@
       "usage": "用法：tp [@<playerId>] <x> <y> <z> [sceneId]",
       "specify_player_id": "你必須指定一個玩家ID。",
       "invalid_position": "無效的座標。",
-            "exists_error": "此場景不存在。",
+      "exists_error": "此場景不存在。",
       "success": "傳送 %s 到座標 %s,%s,%s ，場景為 %s 。",
       "description": "將玩家的位置傳送到你所指定的座標。"
-    },
-    "unlimitenergy": {
-      "success": "無限元素能量設定為 %s 。 [用戶：%s]",
-      "config_error": "指令不可用。因為 config.json 中 energyUsage 為 false。",
-      "description": "使用元素爆發而不消耗能量。"
-    },
-    "unlocktower": {
-      "success": "解鎖完成。",
-      "description": "解鎖所有級別的深境螺旋。"
     },
     "weather": {
       "usage": "用法：weather [weatherId] [climateType]\n天氣ID可以在 WeatherExcelConfigData.json 中找到。\n氣候型別：sunny(晴天), cloudy(多雲), rain(雨), thunderstorm(雷雨), snow(雪), mist(霧)",
@@ -375,17 +349,17 @@
       "description": "更改天氣ID和氣候型別。天氣ID可以在 WeatherExcelConfigData.json 中找到。\n氣候型別：sunny(晴天), cloudy(多雲), rain(雨), thunderstorm(雷雨), snow(雪), mist(霧)"
     },
     "ban": {
-      "description": "停權指定玩家。",
+      "command_usage": "用法：ban <@playerId> [timestamp] [reason]",
       "success": "停權成功。",
       "failure": "停權失敗，玩家帳號不存在。",
       "invalid_time": "無效的時間戳。",
-      "command_usage": "用法：ban <@playerId> [timestamp] [reason]"
+      "description": "停權指定玩家。"
     },
     "unban": {
-      "description": "撤銷停權指定玩家。",
+      "command_usage": "用法：unban <@playerId>",
       "success": "撤銷停權成功。",
       "failure": "撤銷停權失敗，玩家帳號不存在。",
-      "command_usage": "用法：unban <@playerId>"
+      "description": "撤銷停權指定玩家。"
     }
   },
   "gacha": {
@@ -403,7 +377,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "指令",
       "title_avatars": "角色",
       "title_items": "道具",
@@ -419,7 +393,7 @@
     },
     "index": {
       "title": "文件",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "祈願物品映射到JSON上"
     }
   }

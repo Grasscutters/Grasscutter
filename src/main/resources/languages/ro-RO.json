@@ -28,6 +28,8 @@
         "login_token_attempt": "[Dispatch] Clientul %s încearcă să se conecteze prin token.",
         "login_token_error": "[Dispatch] Clientul %s nu a reușit să se conecteze prin token.",
         "login_token_success": "[Dispatch] Clientul %s sa conectat prin token ca %s.",
+        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
+        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
         "combo_token_success": "[Dispatch] Clientul %s a reușit să schimbe token-ul combo.",
         "combo_token_error": "[Dispatch] Clientul %s nu a reușit să schimbe token-ul combo.",
         "account_login_create_success": "[Dispatch] Clientul %s nu a reușit să se conecteze: Cont %s creat.",
@@ -37,6 +39,9 @@
         "session_key_error": "Cheie de sesiune greșită.",
         "username_error": "Numele de utilizator nu a fost găsit.",
         "username_create_error": "Numele de utilizator nu a fost găsit, crearea a eșuat.",
+        "password_error": "🇺🇸Invalid Password",
+        "password_length_error": "🇺🇸Password length must be greater then or equal to 8",
+        "password_storage_error": "🇺🇸You don't have a password for your account. Please contact an administrator.",
         "server_max_player_limit": "Numărul de jucători online a ajuns la limită."
       },
       "router_error": "[Dispatch] Nu se poate atașa routerul."
@@ -117,6 +122,14 @@
       "no_account": "Contul nu a fost găsit.",
       "description": "Modificați conturile de utilizator"
     },
+    "announce": {
+      "command_usage": "🇺🇸Usage: announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
+      "send_success": "🇺🇸Send an announcement successfully, you can revoke it by /a revoke %s.",
+      "refresh_success": "🇺🇸Refresh announcement config file successfully. [Total %s]",
+      "revoke_done": "🇺🇸Try to revoke announcement %s.",
+      "not_found": "🇺🇸Could not found announcement %s.",
+      "description": "🇺🇸Send announcement to all online players, or manage server's announcement"
+    },
     "clear": {
       "command_usage": "Utilizare: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Arme șterse pentru %s.",
@@ -159,11 +172,11 @@
       "usage": "Utilizare: ",
       "aliases": "Aliasuri: ",
       "available_commands": "Comenzi disponibile: ",
-      "description": "Trimite mesajul de ajutor sau afișează informații despre o comandă specificată",
       "tip_need_permission": "Permisiune: ",
       "tip_need_no_permission": " Niciuna",
       "tip_permission_targeted": " (Permisiunea %s este de asemenea necesară pentru a fi folosit pe alți jucători)",
-      "warn_player_has_no_permission": "Notă> Nu aveți permisiunea de a rula această comandă."
+      "warn_player_has_no_permission": "Notă> Nu aveți permisiunea de a rula această comandă.",
+      "description": "Trimite mesajul de ajutor sau afișează informații despre o comandă specificată"
     },
     "kick": {
       "player_kick_player": "Jucătorul [%s:%s] l-a dat afară pe [%s:%s]",
@@ -205,7 +218,7 @@
       "description": "Obțineți coordonatele"
     },
     "quest": {
-      "usage": "quest <add|finish> [questID]",
+      "usage": "🇺🇸quest <add|finish> [questID]",
       "added": "Misiunea %s adăugată.",
       "finished": "Ați terminat misiunea %s.",
       "not_found": "Misiunea nu a fost găsită.",
@@ -292,9 +305,9 @@
       "invalid_skill_id": "Skill ID nevalabil.",
       "set_this": "Setat acest talent ca %s.",
       "invalid_level": "Nivel de talent nevalabil.",
-      "normal_attack_id": "Normal Attack ID %s.",
-      "e_skill_id": "E skill ID %s.",
-      "q_skill_id": "Q skill ID %s.",
+      "normal_attack_id": "🇺🇸Normal Attack ID %s.",
+      "e_skill_id": "🇺🇸E skill ID %s.",
+      "q_skill_id": "🇺🇸Q skill ID %s.",
       "description": "Stabilește nivelul de talent pentru personajul tău activ actual"
     },
     "team": {
@@ -370,10 +383,10 @@
       "title_items": "Elemente",
       "title_scenes": "Scene",
       "title_monsters": "Monștri",
-      "header_id": "Id",
+      "header_id": "🇺🇸Id",
       "header_command": "Comandă",
       "header_description": "Descriere",
-      "header_avatar": "Avatar",
+      "header_avatar": "🇺🇸Avatar",
       "header_item": "Element",
       "header_scene": "Scenă",
       "header_monster": "Monstru"
@@ -381,7 +394,7 @@
     "index": {
       "title": "Documentație",
       "handbook": "Manual GM",
-      "gacha_mapping": "Gacha mapping JSON"
+      "gacha_mapping": "🇺🇸Gacha mapping JSON"
     }
   }
 }

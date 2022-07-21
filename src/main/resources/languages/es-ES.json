@@ -28,6 +28,8 @@
         "login_token_attempt": "[Dispatch] El cliente %s está intentando iniciar sesión a través de un token.",
         "login_token_error": "[Dispatch] El cliente %s falló al iniciar sesión a través de un token.",
         "login_token_success": "[Dispatch] El cliente %s inició sesión a través de un token como %s.",
+        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
+        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
         "combo_token_success": "[Dispatch] El cliente %s intercambió el combo token exitosamente.",
         "combo_token_error": "[Dispatch] El cliente %s falló al intercambiar el combo token.",
         "account_login_create_success": "[Dispatch] El cliente %s falló al iniciar sesión: Cuenta %s creada.",
@@ -37,6 +39,9 @@
         "session_key_error": "Clave de sesión incorrecta.",
         "username_error": "Nombre de usuario no encontrado.",
         "username_create_error": "Nombre de usuario no encontrado, la creación falló.",
+        "password_error": "🇺🇸Invalid Password",
+        "password_length_error": "🇺🇸Password length must be greater then or equal to 8",
+        "password_storage_error": "🇺🇸You don't have a password for your account. Please contact an administrator.",
         "server_max_player_limit": "Se ha alcanzado el límite de jugadores activos"
       },
       "router_error": "[Dispatch] No se ha podido vincular el router."
@@ -117,6 +122,14 @@
       "no_account": "Cuenta no encontrada.",
       "description": "Modifica las cuentas de usuario"
     },
+    "announce": {
+      "command_usage": "🇺🇸Usage: announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
+      "send_success": "🇺🇸Send an announcement successfully, you can revoke it by /a revoke %s.",
+      "refresh_success": "🇺🇸Refresh announcement config file successfully. [Total %s]",
+      "revoke_done": "🇺🇸Try to revoke announcement %s.",
+      "not_found": "🇺🇸Could not found announcement %s.",
+      "description": "🇺🇸Send announcement to all online players, or manage server's announcement"
+    },
     "clear": {
       "command_usage": "Uso: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Eliminadas las armas para %s.",
@@ -157,8 +170,12 @@
     },
     "help": {
       "usage": "Uso: ",
-      "aliases": "Aliases: ",
+      "aliases": "🇺🇸Aliases: ",
       "available_commands": "Comandos disponibles: ",
+      "tip_need_permission": "🇺🇸Permission: ",
+      "tip_need_no_permission": "🇺🇸 None",
+      "tip_permission_targeted": "🇺🇸 (Permission %s is also required to use on other players)",
+      "warn_player_has_no_permission": "🇺🇸Notice: You do not have permission to run this command.",
       "description": "Envía el mensaje de ayuda o muestra información sobre un comando específico"
     },
     "kick": {
@@ -201,7 +218,7 @@
       "description": "Da las coordenadas en el escenario actual"
     },
     "quest": {
-      "usage": "quest <add|finish> [questID]",
+      "usage": "🇺🇸quest <add|finish> [questID]",
       "added": "Misión %s añadida.",
       "finished": "Misión %s finalizada.",
       "not_found": "Misión no encontrada.",
@@ -360,24 +377,24 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "Comandos",
       "title_avatars": "Avatares",
       "title_items": "Objetos",
       "title_scenes": "Escenario",
       "title_monsters": "Monstruos",
-      "header_id": "Id",
+      "header_id": "🇺🇸Id",
       "header_command": "Comando",
       "header_description": "Descripción",
-      "header_avatar": "Avatar",
+      "header_avatar": "🇺🇸Avatar",
       "header_item": "Objeto",
       "header_scene": "Escenario",
       "header_monster": "Monstruo"
     },
     "index": {
       "title": "Documentación",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "JSON de mapeo del Gacha"
     }
   }
-} 
+}
