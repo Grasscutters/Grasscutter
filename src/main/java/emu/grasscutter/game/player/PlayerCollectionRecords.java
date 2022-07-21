@@ -5,7 +5,7 @@ import java.util.Map;
 
 import dev.morphia.annotations.Entity;
 
-@Entity
+@Entity(useDiscriminator = false)
 public class PlayerCollectionRecords {
     private Map<Integer, CollectionRecord> records;
     
