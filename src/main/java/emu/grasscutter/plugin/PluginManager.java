@@ -6,13 +6,14 @@ import emu.grasscutter.utils.Utils;
 import lombok.*;
 
 import javax.annotation.Nullable;
+
+import static emu.grasscutter.config.Configuration.PLUGIN;
+
 import java.io.*;
 import java.lang.reflect.Method;
 import java.net.*;
 import java.util.*;
 import java.util.jar.*;
-
-import static emu.grasscutter.Configuration.PLUGIN;
 
 /**
  * Manages the server's plugins and the event system.
@@ -71,7 +72,7 @@ public final class PluginManager {
         List<PluginData> dependencies = new ArrayList<>();
 
         // Initialize all plugins.
-        for(var plugin : plugins) {
+        for (var plugin : plugins) {
             try {
                 URL url = plugin.toURI().toURL();
                 try (URLClassLoader loader = new URLClassLoader(new URL[]{url})) {
@@ -108,7 +109,7 @@ public final class PluginManager {
                     fileReader.close();
 
                     // Check if the plugin has alternate dependencies.
-                    if(pluginConfig.loadAfter != null && pluginConfig.loadAfter.length > 0) {
+                    if (pluginConfig.loadAfter != null && pluginConfig.loadAfter.length > 0) {
                         // Add the plugin to a "load later" list.
                         dependencies.add(new PluginData(
                             pluginInstance, PluginIdentifier.fromPluginConfig(pluginConfig),
@@ -130,9 +131,9 @@ public final class PluginManager {
 
         // Load plugins with dependencies.
         int depth = 0; final int maxDepth = 30;
-        while(!dependencies.isEmpty()) {
+        while (!dependencies.isEmpty()) {
             // Check if the depth is too high.
-            if(depth >= maxDepth) {
+            if (depth >= maxDepth) {
                 Grasscutter.getLogger().error("Failed to load plugins with dependencies.");
                 break;
             }
@@ -142,7 +143,7 @@ public final class PluginManager {
                 var pluginData = dependencies.get(0);
 
                 // Check if the plugin's dependencies are loaded.
-                if(!this.plugins.keySet().containsAll(List.of(pluginData.getDependencies()))) {
+                if (!this.plugins.keySet().containsAll(List.of(pluginData.getDependencies()))) {
                     depth++; // Increase depth counter.
                     continue; // Continue to next plugin.
                 }

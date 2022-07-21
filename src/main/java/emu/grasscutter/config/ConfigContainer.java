@@ -1,4 +1,4 @@
-package emu.grasscutter.utils;
+package emu.grasscutter.config;
 
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
@@ -28,7 +28,7 @@ public class ConfigContainer {
         try { // Check if the server is using a legacy config.
             JsonObject configObject = Grasscutter.getGsonFactory()
                     .fromJson(new FileReader(Grasscutter.configFile), JsonObject.class);
-            if(!configObject.has("version")) {
+            if (!configObject.has("version")) {
                 Grasscutter.getLogger().info("Updating legacy ..");
                 Grasscutter.saveConfig(null);
             }
@@ -37,7 +37,7 @@ public class ConfigContainer {
         var existing = config.version;
         var latest = version();
 
-        if(existing == latest)
+        if (existing == latest)
             return;
 
         // Create a new configuration instance.
@@ -93,9 +93,8 @@ public class ConfigContainer {
     }
 
     public static class Server {
-        public ServerDebugMode debugLevel = ServerDebugMode.NONE;
-        public Set<Integer> DebugWhitelist = Set.of();
-        public Set<Integer> DebugBlacklist = Set.of();
+        public Set<Integer> debugWhitelist = Set.of();
+        public Set<Integer> debugBlacklist = Set.of();
         public ServerRunMode runMode = ServerRunMode.HYBRID;
 
         public HTTP http = new HTTP();
@@ -135,16 +134,21 @@ public class ConfigContainer {
 
     public static class Game {
         public String bindAddress = "0.0.0.0";
+        public int bindPort = 22102;
+
         /* This is the address used in the default region. */
         public String accessAddress = "127.0.0.1";
-
-        public int bindPort = 22102;
         /* This is the port used in the default region. */
         public int accessPort = 0;
+
         /* Entities within a certain range will be loaded for the player */
         public int loadEntitiesForPlayerRange = 100;
         public boolean enableScriptInBigWorld = false;
         public boolean enableConsole = true;
+
+        /* Controls whether packets should be logged in console or not */
+        public ServerDebugMode logPackets = ServerDebugMode.NONE;
+
         public GameOptions gameOptions = new GameOptions();
         public JoinOptions joinOptions = new JoinOptions();
         public ConsoleAccount serverAccount = new ConsoleAccount();
@@ -156,6 +160,8 @@ public class ConfigContainer {
         public Region[] regions = {};
 
         public String defaultName = "Grasscutter";
+
+        public ServerDebugMode logRequests = ServerDebugMode.NONE;
     }
 
     public static class Encryption {

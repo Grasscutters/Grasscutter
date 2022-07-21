@@ -7,62 +7,62 @@ import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.utils.Position;
 
 public class SpawnDataEntry {
-	private transient SpawnGroupEntry group;
-	private int monsterId;
-	private int gadgetId;
-	private int configId;
-	private int level;
-	private int poseId;
-	private int gatherItemId;
+    private transient SpawnGroupEntry group;
+    private int monsterId;
+    private int gadgetId;
+    private int configId;
+    private int level;
+    private int poseId;
+    private int gatherItemId;
     private int gadgetState;
-	private Position pos;
-	private Position rot;
+    private Position pos;
+    private Position rot;
 
-	public SpawnGroupEntry getGroup() {
-		return group;
-	}
+    public SpawnGroupEntry getGroup() {
+        return group;
+    }
 
-	public void setGroup(SpawnGroupEntry group) {
-		this.group = group;
-	}
+    public void setGroup(SpawnGroupEntry group) {
+        this.group = group;
+    }
 
-	public int getMonsterId() {
-		return monsterId;
-	}
+    public int getMonsterId() {
+        return monsterId;
+    }
 
-	public int getGadgetId() {
-		return gadgetId;
-	}
+    public int getGadgetId() {
+        return gadgetId;
+    }
 
     public int getGadgetState() {
         return gadgetState;
     }
 
     public int getConfigId() {
-		return configId;
-	}
+        return configId;
+    }
 
-	public int getLevel() {
-		return level;
-	}
+    public int getLevel() {
+        return level;
+    }
 
-	public int getPoseId() {
-		return poseId;
-	}
+    public int getPoseId() {
+        return poseId;
+    }
 
-	public int getGatherItemId() {
-		return gatherItemId;
-	}
+    public int getGatherItemId() {
+        return gatherItemId;
+    }
 
-	public Position getPos() {
-		return pos;
-	}
+    public Position getPos() {
+        return pos;
+    }
 
-	public Position getRot() {
-		return rot;
-	}
+    public Position getRot() {
+        return rot;
+    }
 
-    public GridBlockId getBlockId(){
+    public GridBlockId getBlockId() {
         int scale = GridBlockId.getScale(gadgetId);
         return new GridBlockId(group.sceneId,scale,
             (int)(pos.getX() / GameDepot.BLOCK_SIZE[scale]),
@@ -70,32 +70,32 @@ public class SpawnDataEntry {
         );
     }
 
-	public static class SpawnGroupEntry {
-		private int sceneId;
-		private int groupId;
-		private int blockId;
-		private List<SpawnDataEntry> spawns;
+    public static class SpawnGroupEntry {
+        private int sceneId;
+        private int groupId;
+        private int blockId;
+        private List<SpawnDataEntry> spawns;
 
-		public int getSceneId() {
-			return sceneId;
-		}
+        public int getSceneId() {
+            return sceneId;
+        }
 
-		public int getGroupId() {
-			return groupId;
-		}
+        public int getGroupId() {
+            return groupId;
+        }
 
-		public int getBlockId() {
-			return blockId;
-		}
+        public int getBlockId() {
+            return blockId;
+        }
 
-		public void setBlockId(int blockId) {
-			this.blockId = blockId;
-		}
+        public void setBlockId(int blockId) {
+            this.blockId = blockId;
+        }
 
-		public List<SpawnDataEntry> getSpawns() {
-			return spawns;
-		}
-	}
+        public List<SpawnDataEntry> getSpawns() {
+            return spawns;
+        }
+    }
 
     public static class GridBlockId {
         int sceneId;
@@ -133,7 +133,7 @@ public class SpawnDataEntry {
             return Objects.hash(sceneId, scale, x, z);
         }
 
-        public static GridBlockId[] getAdjacentGridBlockIds(int sceneId, Position pos){
+        public static GridBlockId[] getAdjacentGridBlockIds(int sceneId, Position pos) {
             GridBlockId[] results = new GridBlockId[5*5*GameDepot.BLOCK_SIZE.length];
             int t=0;
             for (int scale = 0; scale < GameDepot.BLOCK_SIZE.length; scale++) {
@@ -148,7 +148,7 @@ public class SpawnDataEntry {
             return results;
         }
 
-        public static int getScale(int gadgetId){
+        public static int getScale(int gadgetId) {
             return 0;//you should implement here,this is index of GameDepot.BLOCK_SIZE
         }
     }

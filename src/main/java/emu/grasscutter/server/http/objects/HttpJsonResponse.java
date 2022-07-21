@@ -10,34 +10,34 @@ import express.http.HttpContextHandler;
 import express.http.Request;
 import express.http.Response;
 
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
-import static emu.grasscutter.Configuration.*;
 
 public final class HttpJsonResponse implements HttpContextHandler {
-	private final String response;
-	private final String[] missingRoutes = { // TODO: When http requests for theses routes are found please remove it from this list and update the route request type in the DispatchServer
-			"/common/hk4e_global/announcement/api/getAlertPic",
-			"/common/hk4e_global/announcement/api/getAlertAnn",
-			"/common/hk4e_global/announcement/api/getAnnList",
-			"/common/hk4e_global/announcement/api/getAnnContent",
-			"/hk4e_global/mdk/shopwindow/shopwindow/listPriceTier",
-			"/log/sdk/upload",
-			"/sdk/upload",
-			"/perf/config/verify",
-			"/log",
-			"/crash/dataUpload"
-	};
-	
-	public HttpJsonResponse(String response) {
-		this.response = response;
-	}
+    private final String response;
+    private final String[] missingRoutes = { // TODO: When http requests for theses routes are found please remove it from this list and update the route request type in the DispatchServer
+            "/common/hk4e_global/announcement/api/getAlertPic",
+            "/common/hk4e_global/announcement/api/getAlertAnn",
+            "/common/hk4e_global/announcement/api/getAnnList",
+            "/common/hk4e_global/announcement/api/getAnnContent",
+            "/hk4e_global/mdk/shopwindow/shopwindow/listPriceTier",
+            "/log/sdk/upload",
+            "/sdk/upload",
+            "/perf/config/verify",
+            "/log",
+            "/crash/dataUpload"
+    };
 
-	@Override
-	public void handle(Request req, Response res) throws IOException {
-		// Checking for ALL here isn't required as when ALL is enabled enableDevLogging() gets enabled
-		if(SERVER.debugLevel == ServerDebugMode.MISSING && Arrays.stream(missingRoutes).anyMatch(x -> Objects.equals(x, req.baseUrl()))) {
-			Grasscutter.getLogger().info(translate("messages.dispatch.request", req.ip(), req.method(), req.baseUrl()) + (SERVER.debugLevel == ServerDebugMode.MISSING ? "(MISSING)" : ""));
-		}
-		res.send(response);
-	}
+    public HttpJsonResponse(String response) {
+        this.response = response;
+    }
+
+    @Override
+    public void handle(Request req, Response res) throws IOException {
+        // Checking for ALL here isn't required as when ALL is enabled enableDevLogging() gets enabled
+        if (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING && Arrays.stream(missingRoutes).anyMatch(x -> Objects.equals(x, req.baseUrl()))) {
+            Grasscutter.getLogger().info(translate("messages.dispatch.request", req.ip(), req.method(), req.baseUrl()) + (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING ? "(MISSING)" : ""));
+        }
+        res.send(response);
+    }
 }

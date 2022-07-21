@@ -14,38 +14,39 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.InvestigationMonsterOuterClass;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneMonster;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class WorldDataManager {
-    private final GameServer gameServer;
+public class WorldDataSystem extends BaseGameSystem {
     private final Map<String, ChestInteractHandler> chestInteractHandlerMap; // chestType-Handler
     private final Map<String, SceneGroup> sceneInvestigationGroupMap; // <sceneId_groupId, Group>
 
-    public WorldDataManager(GameServer gameServer){
-        this.gameServer = gameServer;
+    public WorldDataSystem(GameServer server) {
+        super(server);
         this.chestInteractHandlerMap = new HashMap<>();
         this.sceneInvestigationGroupMap = new ConcurrentHashMap<>();
 
         loadChestConfig();
     }
 
-    public synchronized void loadChestConfig(){
+    public synchronized void loadChestConfig() {
         // set the special chest first
         chestInteractHandlerMap.put("SceneObj_Chest_Flora", new BossChestInteractHandler());
 
-    	try(InputStream is = DataLoader.load("ChestReward.json"); InputStreamReader isr = new InputStreamReader(is)) {
+        try (Reader reader = DataLoader.loadReader("ChestReward.json")) {
             List<ChestReward> chestReward = Grasscutter.getGsonFactory().fromJson(
-            		isr,
+                    reader,
                     TypeToken.getParameterized(List.class, ChestReward.class).getType());
-            
+
             chestReward.forEach(reward ->
                     reward.getObjNames().forEach(
                             name -> chestInteractHandlerMap.putIfAbsent(name, new NormalChestInteractHandler(reward))));
@@ -59,21 +60,21 @@ public class WorldDataManager {
         return chestInteractHandlerMap;
     }
 
-    public RewardPreviewData getRewardByBossId(int monsterId){
+    public RewardPreviewData getRewardByBossId(int monsterId) {
         var investigationMonsterData = GameData.getInvestigationMonsterDataMap().values().parallelStream()
                 .filter(imd -> imd.getMonsterIdList() != null && !imd.getMonsterIdList().isEmpty())
                 .filter(imd -> imd.getMonsterIdList().get(0) == monsterId)
                 .findFirst();
 
-        if(investigationMonsterData.isEmpty()){
+        if (investigationMonsterData.isEmpty()) {
             return null;
         }
         return GameData.getRewardPreviewDataMap().get(investigationMonsterData.get().getRewardPreviewId());
     }
 
-    private SceneGroup getInvestigationGroup(int sceneId, int groupId){
+    private SceneGroup getInvestigationGroup(int sceneId, int groupId) {
         var key = sceneId + "_" + groupId;
-        if(!sceneInvestigationGroupMap.containsKey(key)){
+        if (!sceneInvestigationGroupMap.containsKey(key)) {
             var group = SceneGroup.of(groupId).load(sceneId);
             sceneInvestigationGroupMap.putIfAbsent(key, group);
             return group;
@@ -81,7 +82,7 @@ public class WorldDataManager {
         return sceneInvestigationGroupMap.get(key);
     }
 
-    public int getMonsterLevel(SceneMonster monster, World world){
+    public int getMonsterLevel(SceneMonster monster, World world) {
         // Calculate level
         int level = monster.level;
         WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(world.getWorldLevel());
@@ -97,14 +98,14 @@ public class WorldDataManager {
         var sceneId = imd.getCityData().getSceneId();
         var group = getInvestigationGroup(sceneId, groupId);
 
-        if(group == null || group.monsters == null){
+        if (group == null || group.monsters == null) {
             return null;
         }
 
         var monster = group.monsters.values().stream()
                 .filter(x -> x.monster_id == monsterId)
                 .findFirst();
-        if(monster.isEmpty()){
+        if (monster.isEmpty()) {
             return null;
         }
 
@@ -121,9 +122,9 @@ public class WorldDataManager {
                 .setRefreshInterval(Integer.MAX_VALUE)
                 .setPos(monster.get().pos.toProto());
 
-        if("Boss".equals(imd.getMonsterCategory())){
+        if ("Boss".equals(imd.getMonsterCategory())) {
             var bossChest = group.searchBossChestInGroup();
-            if(bossChest.isPresent()){
+            if (bossChest.isPresent()) {
                 builder.setResin(bossChest.get().resin);
                 builder.setBossChestNum(bossChest.get().take_num);
             }
@@ -131,9 +132,9 @@ public class WorldDataManager {
         return builder.build();
     }
 
-    public List<InvestigationMonsterOuterClass.InvestigationMonster> getInvestigationMonstersByCityId(Player player, int cityId){
+    public List<InvestigationMonsterOuterClass.InvestigationMonster> getInvestigationMonstersByCityId(Player player, int cityId) {
         var cityData = GameData.getCityDataMap().get(cityId);
-        if(cityData == null){
+        if (cityData == null) {
             Grasscutter.getLogger().warn("City not exist {}", cityId);
             return List.of();
         }

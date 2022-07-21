@@ -1,6 +1,6 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
 import com.google.gson.reflect.TypeToken;

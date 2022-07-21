@@ -21,11 +21,11 @@ public final class EnterDungeonCommand implements CommandHandler {
         try {
             int dungeonId = Integer.parseInt(args.get(0));
             if (dungeonId == targetPlayer.getSceneId()) {
-            	CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.in_dungeon_error"));
-            	return;
+                CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.in_dungeon_error"));
+                return;
             }
-            
-            boolean result = targetPlayer.getServer().getDungeonManager().enterDungeon(targetPlayer.getSession().getPlayer(), 0, dungeonId);
+
+            boolean result = targetPlayer.getServer().getDungeonSystem().enterDungeon(targetPlayer.getSession().getPlayer(), 0, dungeonId);
 
             if (!result) {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.not_found_error"));

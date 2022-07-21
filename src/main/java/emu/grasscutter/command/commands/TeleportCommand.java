@@ -26,7 +26,7 @@ public final class TeleportCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        Position pos = targetPlayer.getPos();
+        Position pos = targetPlayer.getPosition();
         float x = pos.getX();
         float y = pos.getY();
         float z = pos.getZ();
@@ -58,8 +58,8 @@ public final class TeleportCommand implements CommandHandler {
         if (!result) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.exists_error"));
         } else {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.success", 
-                    targetPlayer.getNickname(), Float.toString(x), Float.toString(y), 
+            CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.success",
+                    targetPlayer.getNickname(), Float.toString(x), Float.toString(y),
                     Float.toString(z), Integer.toString(sceneId))
             );
         }

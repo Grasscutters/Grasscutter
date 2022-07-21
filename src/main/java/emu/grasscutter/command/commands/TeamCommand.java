@@ -6,10 +6,11 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 
 import java.util.List;
+
+import static emu.grasscutter.config.Configuration.*;
+
 import java.util.ArrayList;
 import java.util.HashSet;
-
-import static emu.grasscutter.Configuration.*;
 
 @Command(label = "team", usage = "team <add|remove|set> [avatarId,...] [index|first|last|index-index,...]",
 permission = "player.team", permissionTargeted = "player.team.others", description = "commands.team.description")
@@ -57,7 +58,7 @@ public final class TeamCommand implements CommandHandler {
         if (args.size() > 2) {
             try {
                 index = Integer.parseInt(args.get(2)) - 1;
-				if (index < 0) index = 0;
+                if (index < 0) index = 0;
             } catch (Exception e) {
                 CommandHandler.sendTranslatedMessage(sender, "commands.team.invalid_index");
                 return false;
@@ -141,7 +142,7 @@ public final class TeamCommand implements CommandHandler {
         try {
             index = Integer.parseInt(args.get(1)) - 1;
             if (index < 0) index = 0;
-        } catch(Exception e) {
+        } catch (Exception e) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_to_parse_index", args.get(1));
             return false;
         }
@@ -154,7 +155,7 @@ public final class TeamCommand implements CommandHandler {
         int avatarId;
         try {
             avatarId = Integer.parseInt(args.get(2));
-        } catch(Exception e) {
+        } catch (Exception e) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_parse_avatar_id", args.get(2));
             return false;
         }
@@ -162,10 +163,10 @@ public final class TeamCommand implements CommandHandler {
             avatarId += BASE_AVATARID;
         }
 
-		if (currentTeamAvatars.contains(avatarId)) {
+        if (currentTeamAvatars.contains(avatarId)) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_already_in_team", avatarId);
             return false;
-		}
+        }
 
         if (!targetPlayer.getAvatars().hasAvatar(avatarId)) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_not_found", avatarId);
@@ -181,10 +182,10 @@ public final class TeamCommand implements CommandHandler {
             avatarId += BASE_AVATARID;
         }
         var currentTeamAvatars = targetPlayer.getTeamManager().getCurrentTeamInfo().getAvatars();
-		if (currentTeamAvatars.contains(avatarId)) {
+        if (currentTeamAvatars.contains(avatarId)) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_already_in_team", avatarId);
             return false;
-		}
+        }
         if (!targetPlayer.getAvatars().hasAvatar(avatarId)) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_not_found", avatarId);
             return false;

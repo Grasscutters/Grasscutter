@@ -1,5 +1,6 @@
 package emu.grasscutter.game.managers.mapmark;
 
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType;
 import emu.grasscutter.net.proto.MarkMapReqOuterClass.MarkMapReq;
@@ -9,16 +10,17 @@ import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.utils.Position;
 
 import java.util.HashMap;
+import java.util.Map;
 
-public class MapMarksManager {
+public class MapMarksManager extends BasePlayerManager {
     public static final int mapMarkMaxCount = 150;
-    private HashMap<String, MapMark> mapMarks;
-    private final Player player;
 
     public MapMarksManager(Player player) {
-        this.player = player;
-        this.mapMarks = player.getMapMarks();
-        if (this.mapMarks == null) { this.mapMarks = new HashMap<>(); }
+        super(player);
+    }
+
+    public Map<String, MapMark> getMapMarks() {
+        return getPlayer().getMapMarks();
     }
 
     public void handleMapMarkReq(MarkMapReq req) {
@@ -45,13 +47,9 @@ public class MapMarksManager {
             }
         }
         if (op != Operation.OPERATION_GET) {
-            saveMapMarks();
+            save();
         }
         player.getSession().send(new PacketMarkMapRsp(getMapMarks()));
-    }
-
-    public HashMap<String, MapMark> getMapMarks() {
-        return mapMarks;
     }
 
     public String getMapMarkKey(Position position) {
@@ -59,18 +57,13 @@ public class MapMarksManager {
     }
 
     public void removeMapMark(Position position) {
-        mapMarks.remove(getMapMarkKey(position));
+        getMapMarks().remove(getMapMarkKey(position));
     }
 
     public void addMapMark(MapMark mapMark) {
-        if (mapMarks.size() < mapMarkMaxCount) {
-            mapMarks.put(getMapMarkKey(mapMark.getPosition()), mapMark);
+        if (getMapMarks().size() < mapMarkMaxCount) {
+            getMapMarks().put(getMapMarkKey(mapMark.getPosition()), mapMark);
         }
-    }
-
-    private void saveMapMarks() {
-        player.setMapMarks(mapMarks);
-        player.save();
     }
 
     private void teleport(Player player, MapMark mapMark) {
@@ -81,9 +74,9 @@ public class MapMarksManager {
             y = 300;
         }
         Position pos = mapMark.getPosition();
-        player.getPos().set(pos.getX(), y, pos.getZ());
+        player.getPosition().set(pos.getX(), y, pos.getZ());
         if (mapMark.getSceneId() != player.getSceneId()) {
-            player.getWorld().transferPlayerToScene(player, mapMark.getSceneId(), player.getPos());
+            player.getWorld().transferPlayerToScene(player, mapMark.getSceneId(), player.getPosition());
         }
         player.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(player));
     }
