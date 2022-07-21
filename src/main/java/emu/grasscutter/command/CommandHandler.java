@@ -68,7 +68,6 @@ public interface CommandHandler {
     default String getDescriptionString(Player player) {
         Command annotation = this.getClass().getAnnotation(Command.class);
         String key = "commands.%s.description".formatted(annotation.label());
-        // TODO: fallback to "commands.generic.no_description_specified"
         return translate(player, key);
     }
 

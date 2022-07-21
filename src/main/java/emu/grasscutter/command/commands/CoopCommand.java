@@ -7,8 +7,6 @@ import emu.grasscutter.game.player.Player;
 
 import java.util.List;
 
-import static emu.grasscutter.utils.Language.translate;
-
 @Command(label = "coop", usage = {"[<host UID>]"}, permission = "server.coop", permissionTargeted = "server.coop.others")
 public final class CoopCommand implements CommandHandler {
 
@@ -17,25 +15,26 @@ public final class CoopCommand implements CommandHandler {
         Player host = sender;
         switch (args.size()) {
             case 0:  // Summon target to self
-                CommandHandler.sendMessage(sender, translate(sender, "commands.coop.usage"));
-                if (sender == null) // Console doesn't have a self to summon to
+                if (sender == null) { // Console doesn't have a self to summon to
+                    sendUsageMessage(sender);
                     return;
+                }
                 break;
             case 1:  // Summon target to argument
                 try {
                     int hostId = Integer.parseInt(args.get(0));
                     host = Grasscutter.getGameServer().getPlayerByUid(hostId);
                     if (host == null) {
-                        CommandHandler.sendMessage(sender, translate(sender, "commands.execution.player_offline_error"));
+                        CommandHandler.sendTranslatedMessage(sender, "commands.execution.player_offline_error");
                         return;
                     }
                     break;
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.uid"));
+                    CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.uid");
                     return;
                 }
             default:
-                CommandHandler.sendMessage(sender, translate(sender, "commands.coop.usage"));
+                sendUsageMessage(sender);
                 return;
         }
 
@@ -45,6 +44,6 @@ public final class CoopCommand implements CommandHandler {
         }
         host.getServer().getMultiplayerSystem().applyEnterMp(targetPlayer, host.getUid());
         targetPlayer.getServer().getMultiplayerSystem().applyEnterMpReply(host, targetPlayer.getUid(), true);
-        CommandHandler.sendMessage(sender, translate(sender, "commands.coop.success", targetPlayer.getNickname(), host.getNickname()));
+        CommandHandler.sendTranslatedMessage(sender, "commands.coop.success", targetPlayer.getNickname(), host.getNickname());
     }
 }

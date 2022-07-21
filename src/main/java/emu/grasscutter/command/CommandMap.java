@@ -35,6 +35,7 @@ public final class CommandMap {
      */
     public CommandMap registerCommand(String label, CommandHandler command) {
         Grasscutter.getLogger().debug("Registered command: " + label);
+        label = label.toLowerCase();
 
         // Get command data.
         Command annotation = command.getClass().getAnnotation(Command.class);
@@ -203,7 +204,7 @@ public final class CommandMap {
         // Parse message.
         String[] split = rawMessage.split(" ");
         List<String> args = new LinkedList<>(Arrays.asList(split));
-        String label = args.remove(0);
+        String label = args.remove(0).toLowerCase();
         String playerId = (player == null) ? consoleId : player.getAccount().getId();
 
         // Check for special cases - currently only target command.

@@ -59,8 +59,9 @@ public final class HelpCommand implements CommandHandler {
                     commands_no_permission.add(createCommand(player, command, args));
                 }
             }
+            CommandHandler.sendTranslatedMessage(player, "commands.help.available_commands");
         } else {
-            String command_str = args.remove(0);
+            String command_str = args.remove(0).toLowerCase();
             CommandHandler command = handlers.get(command_str);
             if (command == null) {
                 CommandHandler.sendTranslatedMessage(player, "commands.generic.command_exist_error");

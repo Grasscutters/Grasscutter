@@ -83,7 +83,7 @@ public final class ClearCommand implements CommandHandler {
         }
 
         if (args.size() < 1) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.clear.command_usage");
+            sendUsageMessage(sender);
             return;
         }
 

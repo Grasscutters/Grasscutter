@@ -25,7 +25,7 @@ public final class KillAllCommand implements CommandHandler {
                     scene = targetPlayer.getWorld().getSceneById(Integer.parseInt(args.get(0)));
                     break;
                 default:
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.killall.usage"));
+                    sendUsageMessage(sender);
                     return;
             }
         } catch (NumberFormatException ignored) {

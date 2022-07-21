@@ -14,7 +14,7 @@ public final class EnterDungeonCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 1) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.usage"));
+            sendUsageMessage(sender);
             return;
         }
 
@@ -33,7 +33,7 @@ public final class EnterDungeonCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.changed", dungeonId));
             }
         } catch (Exception e) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.enter_dungeon.usage"));
+            sendUsageMessage(sender);
         }
     }
 }

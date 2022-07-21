@@ -71,7 +71,7 @@ public final class SetStatsCommand implements CommandHandler {
             statStr = args.get(0).toLowerCase();
             valueStr = args.get(1);
         } else {
-            CommandHandler.sendTranslatedMessage(sender, "commands.setStats.usage");
+            sendUsageMessage(sender);
             return;
         }
 
@@ -105,7 +105,7 @@ public final class SetStatsCommand implements CommandHandler {
                 CommandHandler.sendTranslatedMessage(sender, "commands.generic.set_for_to", stat.name, uidStr, valueStr);
             }
         } else {
-            CommandHandler.sendTranslatedMessage(sender, "commands.setStats.usage");
+            sendUsageMessage(sender);
         }
         return;
     }

@@ -17,7 +17,7 @@ public final class PermissionCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() != 2) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.permission.usage"));
+            sendUsageMessage(sender);
             return;
         }
 
@@ -37,7 +37,7 @@ public final class PermissionCommand implements CommandHandler {
 
         switch (action) {
             default:
-                CommandHandler.sendMessage(sender, translate(sender, "commands.permission.usage"));
+                sendUsageMessage(sender);
                 break;
             case "add":
                 if (account.addPermission(permission)) {

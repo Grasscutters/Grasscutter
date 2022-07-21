@@ -163,7 +163,7 @@ public final class DefaultAuthenticators {
                     } else {
                         successfulLogin = false;
                         loggerMessage = translate("messages.dispatch.account.login_password_storage_error", address);
-                        responseMessage = translate("password_storage_error");
+                        responseMessage = translate("messages.dispatch.account.password_storage_error");
                     }
                 } else {
                     loggerMessage = translate("messages.dispatch.account.account_login_exist_error", address);
