@@ -283,7 +283,7 @@ public class World implements Iterable<Player> {
     private void updatePlayerInfos(Player paramPlayer) {
         for (Player player : getPlayers()) {
             // Dont send packets if player is logging in and filter out joining player
-            if (!player.hasSentAvatarDataNotify() || player == paramPlayer) {
+            if (!player.hasSentLoginPackets() || player == paramPlayer) {
                 continue;
             }
 

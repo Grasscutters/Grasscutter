@@ -496,7 +496,7 @@ public class Avatar {
         item.setEquipCharacter(this.getAvatarId());
         item.save();
 
-        if (this.getPlayer().hasSentAvatarDataNotify()) {
+        if (this.getPlayer().hasSentLoginPackets()) {
             this.getPlayer().sendPacket(new PacketAvatarEquipChangeNotify(this, item));
         }
 
@@ -732,7 +732,7 @@ public class Avatar {
         this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * hpPercent);
 
         // Packet
-        if (getPlayer() != null && getPlayer().hasSentAvatarDataNotify()) {
+        if (getPlayer() != null && getPlayer().hasSentLoginPackets()) {
             // Update stats for client
             getPlayer().sendPacket(new PacketAvatarFightPropNotify(this));
             // Update client abilities
