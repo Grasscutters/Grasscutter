@@ -33,7 +33,7 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
     public static final Set<OpenState> DEV_OPEN_STATES = Stream.of(OpenState.values())
         .filter(s -> s != OpenState.OPEN_STATE_NONE && s.getUnlockLevel() <= 1)
         .collect(Collectors.toSet());
-
+    
     public PlayerOpenStateManager(Player player) {
         super(player);
     }
@@ -44,11 +44,11 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
     }
 
     public int getOpenState(OpenState openState) {
-        return this.map.getOrDefault(openState.getValue(), 0);
+        return getOpenStateMap().getOrDefault(openState.getValue(), 0);
     }
 
     public void setOpenState(OpenState openState, Integer value) {
-        Integer previousValue = this.map.getOrDefault(openState.getValue(),0);
+        Integer previousValue = getOpenStateMap().getOrDefault(openState.getValue(),0);
         if (value != previousValue) {
             this.map.put(openState.getValue(), value);
             player.getSession().send(new PacketOpenStateChangeNotify(openState.getValue(),value));
