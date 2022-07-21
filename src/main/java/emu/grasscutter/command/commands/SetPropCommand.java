@@ -95,7 +95,7 @@ public final class SetPropCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() != 2) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.setProp.usage");
+            sendUsageMessage(sender);
             return;
         }
         String propStr = args.get(0).toLowerCase();
@@ -103,7 +103,7 @@ public final class SetPropCommand implements CommandHandler {
         int value;
 
         if (!props.containsKey(propStr)) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.setProp.usage");
+            sendUsageMessage(sender);
             return;
         }
         try {

@@ -30,7 +30,7 @@ public final class AccountCommand implements CommandHandler {
         }
 
         if (args.size() < 2) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.account.command_usage");
+            sendUsageMessage(sender);
             return;
         }
 
@@ -39,7 +39,7 @@ public final class AccountCommand implements CommandHandler {
 
         switch (action) {
             default:
-                CommandHandler.sendTranslatedMessage(sender, "commands.account.command_usage");
+                sendUsageMessage(sender);
                 return;
             case "create":
                 int uid = 0;

@@ -22,7 +22,7 @@ public final class SetFetterLevelCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() != 1) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.setFetterLevel.usage"));
+            sendUsageMessage(sender);
             return;
         }
 

@@ -48,7 +48,7 @@ public final class TeleportCommand implements CommandHandler {
                 }
                 break;
             default:
-                CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.usage"));
+                sendUsageMessage(sender);
                 return;
         }
 

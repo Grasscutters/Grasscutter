@@ -43,7 +43,7 @@ public final class SendMailCommand implements CommandHandler {
                     MailBuilder mailBuilder;
                     switch (args.get(0).toLowerCase()) {
                         case "help" -> {
-                            CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.usage"));
+                            sendUsageMessage(sender);
                             return;
                         }
                         case "all" -> mailBuilder = new MailBuilder(true, new Mail());
@@ -150,7 +150,7 @@ public final class SendMailCommand implements CommandHandler {
                                         }
                                         break;
                                     default: // *No args*
-                                        CommandHandler.sendMessage(sender, translate(sender, "commands.give.usage"));
+                                        CommandHandler.sendTranslatedMessage(sender, "commands.sendMail.give_usage");
                                         return;
                                 }
                                 mailBuilder.mail.itemList.add(new Mail.MailItem(item, amount, lvl));

@@ -67,7 +67,7 @@ public final class GiveCommand implements CommandHandler {
         public GiveAllType giveAllType = GiveAllType.NONE;
     };
 
-    private static GiveItemParameters parseArgs(Player sender, List<String> args) throws IllegalArgumentException {
+    private GiveItemParameters parseArgs(Player sender, List<String> args) throws IllegalArgumentException {
         GiveItemParameters param = new GiveItemParameters();
 
         // Extract any tagged arguments (e.g. "lv90", "x100", "r5")
@@ -99,7 +99,7 @@ public final class GiveCommand implements CommandHandler {
 
         // At this point, first remaining argument MUST be itemId/avatarId
         if (args.size() < 1) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.give.usage");  // Reachable if someone does `/give lv90` or similar
+            sendUsageMessage(sender);  // Reachable if someone does `/give lv90` or similar
             throw new IllegalArgumentException();
         }
         String id = args.remove(0);
@@ -169,7 +169,7 @@ public final class GiveCommand implements CommandHandler {
                     throw e;
                 }
             } else {
-                CommandHandler.sendTranslatedMessage(sender, "commands.give.usage");
+                sendUsageMessage(sender);
                 throw new IllegalArgumentException();
             }
         }
@@ -180,7 +180,7 @@ public final class GiveCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 1) { // *No args*
-            CommandHandler.sendTranslatedMessage(sender, "commands.give.usage");
+            sendUsageMessage(sender);
             return;
         }
         try {

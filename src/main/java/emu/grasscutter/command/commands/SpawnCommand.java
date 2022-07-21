@@ -60,7 +60,7 @@ public final class SpawnCommand implements CommandHandler {
                 }
                 break;
             default:
-                CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.usage"));
+                sendUsageMessage(sender);
                 return;
         }
 
