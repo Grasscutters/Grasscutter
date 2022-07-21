@@ -28,7 +28,7 @@ public class ConfigContainer {
         try { // Check if the server is using a legacy config.
             JsonObject configObject = Grasscutter.getGsonFactory()
                     .fromJson(new FileReader(Grasscutter.configFile), JsonObject.class);
-            if(!configObject.has("version")) {
+            if (!configObject.has("version")) {
                 Grasscutter.getLogger().info("Updating legacy ..");
                 Grasscutter.saveConfig(null);
             }
@@ -37,7 +37,7 @@ public class ConfigContainer {
         var existing = config.version;
         var latest = version();
 
-        if(existing == latest)
+        if (existing == latest)
             return;
 
         // Create a new configuration instance.
@@ -135,20 +135,20 @@ public class ConfigContainer {
     public static class Game {
         public String bindAddress = "0.0.0.0";
         public int bindPort = 22102;
-        
+
         /* This is the address used in the default region. */
         public String accessAddress = "127.0.0.1";
         /* This is the port used in the default region. */
         public int accessPort = 0;
-        
+
         /* Entities within a certain range will be loaded for the player */
         public int loadEntitiesForPlayerRange = 100;
         public boolean enableScriptInBigWorld = false;
         public boolean enableConsole = true;
-        
+
         /* Controls whether packets should be logged in console or not */
         public ServerDebugMode logPackets = ServerDebugMode.NONE;
-        
+
         public GameOptions gameOptions = new GameOptions();
         public JoinOptions joinOptions = new JoinOptions();
         public ConsoleAccount serverAccount = new ConsoleAccount();
@@ -160,7 +160,7 @@ public class ConfigContainer {
         public Region[] regions = {};
 
         public String defaultName = "Grasscutter";
-        
+
         public ServerDebugMode logRequests = ServerDebugMode.NONE;
     }
 

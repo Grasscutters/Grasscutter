@@ -167,7 +167,7 @@ public final class CommandMap {
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
                 return true;
         }
-        
+
         // Sets default targetPlayer to the UID provided.
         try {
             int uid = Integer.parseInt(targetUid);
@@ -237,7 +237,7 @@ public final class CommandMap {
         Command annotation = this.annotations.get(label);
 
         // Resolve targetPlayer
-        try{
+        try {
             targetPlayer = getTargetPlayer(playerId, player, targetPlayer, args);
         } catch (IllegalArgumentException e) {
             return;

@@ -102,9 +102,9 @@ public class CookingManager extends BasePlayerManager {
         }
 
         // Get result item information.
-        int qualityIndex = 
-            quality == 0 
-            ? 2 
+        int qualityIndex =
+            quality == 0
+            ? 2
             : quality - 1;
 
         ItemParamData resultParam = recipeData.getQualityOutputVec().get(qualityIndex);

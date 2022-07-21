@@ -25,7 +25,7 @@ public final class GenericHandler implements Router {
 
         // api-account-os.hoyoverse.com
         express.post("/account/risky/api/check", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"id\":\"none\",\"action\":\"ACTION_NONE\",\"geetest\":null}}"));
-        
+
         // sdk-os-static.hoyoverse.com
         express.get("/combo/box/api/config/sdk/combo", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"vals\":{\"disable_email_bind_skip\":\"false\",\"email_bind_remind_interval\":\"7\",\"email_bind_remind\":\"true\"}}}"));
         // hk4e-sdk-os-static.hoyoverse.com
@@ -35,7 +35,7 @@ public final class GenericHandler implements Router {
         // Test api?
         // abtest-api-data-sg.hoyoverse.com
         express.post("/data_abtest_api/config/experiment/list", new HttpJsonResponse("{\"retcode\":0,\"success\":true,\"message\":\"\",\"data\":[{\"code\":1000,\"type\":2,\"config_id\":\"14\",\"period_id\":\"6036_99\",\"version\":\"1\",\"configs\":{\"cardType\":\"old\"}}]}"));
-        
+
         // log-upload-os.mihoyo.com
         express.all("/log/sdk/upload", new HttpJsonResponse("{\"code\":0}"));
         express.all("/sdk/upload", new HttpJsonResponse("{\"code\":0}"));
@@ -45,10 +45,10 @@ public final class GenericHandler implements Router {
 
         // webstatic-sea.hoyoverse.com
         express.get("/admin/mi18n/plat_oversea/*", new WebStaticVersionResponse());
-        
+
         express.get("/status/server", GenericHandler::serverStatus);
     }
-    
+
     private static void serverStatus(Request request, Response response) {
         int playerCount = Grasscutter.getGameServer().getPlayers().size();
         int maxPlayer = ACCOUNT.maxPlayer;

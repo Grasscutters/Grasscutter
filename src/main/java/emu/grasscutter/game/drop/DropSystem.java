@@ -32,7 +32,7 @@ public class DropSystem extends BaseGameSystem {
         this.dropData = new Int2ObjectOpenHashMap<>();
         this.load();
     }
-    
+
     public Int2ObjectMap<List<DropData>> getDropData() {
         return dropData;
     }
@@ -41,7 +41,7 @@ public class DropSystem extends BaseGameSystem {
         try (Reader fileReader = DataLoader.loadReader("Drop.json")) {
             getDropData().clear();
             List<DropInfo> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, DropInfo.class).getType());
-            if(banners.size() > 0) {
+            if (banners.size() > 0) {
                 for (DropInfo di : banners) {
                     getDropData().put(di.getMonsterId(), di.getDropDataList());
                 }

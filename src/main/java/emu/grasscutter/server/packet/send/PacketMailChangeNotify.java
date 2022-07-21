@@ -14,7 +14,7 @@ import java.util.List;
 public class PacketMailChangeNotify extends BasePacket {
 
     public PacketMailChangeNotify(Player player, Mail message) {
-        this (player, new ArrayList<Mail>(){{add(message);}});
+        this (player, new ArrayList<Mail>() {{add(message);}});
     }
 
     public PacketMailChangeNotify(Player player, List<Mail> mailList) {
@@ -60,7 +60,7 @@ public class PacketMailChangeNotify extends BasePacket {
             }
         }
 
-        if(delMailIdList != null) {
+        if (delMailIdList != null) {
             proto.addAllDelMailIdList(delMailIdList);
         }
 

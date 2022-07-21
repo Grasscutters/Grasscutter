@@ -159,7 +159,7 @@ public class StaminaManager extends BasePlayerManager {
     }};
 
     public static void initialize() {
-    	// TODO: Initialize foods etc.
+        // TODO: Initialize foods etc.
     }
 
     public StaminaManager(Player player) {
@@ -529,20 +529,20 @@ public class StaminaManager extends BasePlayerManager {
         }
         // Bow avatar charged attack
         Avatar currentAvatar = player.getTeamManager().getCurrentAvatarEntity().getAvatar();
-        
+
         switch (currentAvatar.getAvatarData().getWeaponType()) {
-        	case WEAPON_BOW:
-        		return getBowSustainedCost(skillCasting);
-        	case WEAPON_CLAYMORE:
-        		return getClaymoreSustainedCost(skillCasting);
-        	case WEAPON_CATALYST:
-        		return getCatalystCost(skillCasting);
-        	case WEAPON_POLE:
-        		return getPolearmCost(skillCasting);
-        	case WEAPON_SWORD_ONE_HAND:
-        		return getSwordCost(skillCasting);
+            case WEAPON_BOW:
+                return getBowSustainedCost(skillCasting);
+            case WEAPON_CLAYMORE:
+                return getClaymoreSustainedCost(skillCasting);
+            case WEAPON_CATALYST:
+                return getCatalystCost(skillCasting);
+            case WEAPON_POLE:
+                return getPolearmCost(skillCasting);
+            case WEAPON_SWORD_ONE_HAND:
+                return getSwordCost(skillCasting);
         }
-        
+
         return new Consumption();
     }
 

@@ -27,7 +27,7 @@ public final class SendMailCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         int senderId;
-        if(sender != null) {
+        if (sender != null) {
             senderId = sender.getUid();
         } else {
             senderId = -1;
@@ -162,7 +162,7 @@ public final class SendMailCommand implements CommandHandler {
     }
 
     private String getConstructionArgs(int stage, Player sender) {
-        return switch(stage) {
+        return switch (stage) {
             case 0 -> translate(sender, "commands.sendMail.title");
             case 1 -> translate(sender, "commands.sendMail.message");
             case 2 -> translate(sender, "commands.sendMail.sender");

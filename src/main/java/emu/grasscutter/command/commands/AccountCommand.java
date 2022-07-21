@@ -39,8 +39,8 @@ public final class AccountCommand implements CommandHandler {
                 int uid = 0;
                 String password = "";
 
-                if(Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
-                    if(args.size() < 3) {
+                if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
+                    if (args.size() < 3) {
                         CommandHandler.sendMessage(null, "EXPERIMENTAL_RealPassword requires a password argument");
                         CommandHandler.sendMessage(null, "Usage: account create <username> <password> [uid]");
 
@@ -53,7 +53,7 @@ public final class AccountCommand implements CommandHandler {
                             uid = Integer.parseInt(args.get(3));
                         } catch (NumberFormatException ignored) {
                             CommandHandler.sendMessage(null, translate(sender, "commands.account.invalid"));
-                            if(Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
+                            if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
                                 CommandHandler.sendMessage(null, "EXPERIMENTAL_RealPassword requires argument 2 to be a password, not a uid");
                                 CommandHandler.sendMessage(null, "Usage: account create <username> <password> [uid]");
                             }
@@ -76,7 +76,7 @@ public final class AccountCommand implements CommandHandler {
                     CommandHandler.sendMessage(null, translate(sender, "commands.account.exists"));
                     return;
                 } else {
-                    if(Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
+                    if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
                         account.setPassword(BCrypt.withDefaults().hashToString(12, password.toCharArray()));
                     }
                     account.addPermission("*");
@@ -93,7 +93,7 @@ public final class AccountCommand implements CommandHandler {
                     CommandHandler.sendMessage(null, translate(sender, "commands.account.no_account"));
                     return;
                 }
-                
+
                 // Get the player for the account.
                 // If that player is currently online, we kick them before proceeding with the deletion.
                 Player player = Grasscutter.getGameServer().getPlayerByAccountId(toDelete.getId());
@@ -106,12 +106,12 @@ public final class AccountCommand implements CommandHandler {
                 CommandHandler.sendMessage(null, translate(sender, "commands.account.delete"));
                 return;
             case "resetpass":
-                if(Configuration.ACCOUNT.EXPERIMENTAL_RealPassword != true) {
+                if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword != true) {
                     CommandHandler.sendMessage(null, "resetpass requires EXPERIMENTAL_RealPassword to be true.");
                     return;
                 }
 
-                if(args.size() != 3) {
+                if (args.size() != 3) {
                     CommandHandler.sendMessage(null, "Invalid Args");
                     CommandHandler.sendMessage(null, "Usage: account resetpass <username> <password>");
                     return;

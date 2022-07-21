@@ -21,7 +21,7 @@ public final class DefaultAuthentication implements AuthenticationSystem {
     private OAuthAuthenticator oAuthAuthenticator = new OAuthAuthentication();
 
     public DefaultAuthentication() {
-        if(ACCOUNT.EXPERIMENTAL_RealPassword) {
+        if (ACCOUNT.EXPERIMENTAL_RealPassword) {
             passwordAuthenticator = new ExperimentalPasswordAuthenticator();
         } else {
             passwordAuthenticator = new PasswordAuthenticator();

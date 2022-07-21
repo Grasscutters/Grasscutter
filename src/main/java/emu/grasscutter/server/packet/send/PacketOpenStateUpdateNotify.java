@@ -13,20 +13,20 @@ import emu.grasscutter.net.proto.OpenStateUpdateNotifyOuterClass.OpenStateUpdate
 public class PacketOpenStateUpdateNotify extends BasePacket {
 
     public PacketOpenStateUpdateNotify(PlayerOpenStateManager manager) {
-		super(PacketOpcodes.OpenStateUpdateNotify);
+        super(PacketOpcodes.OpenStateUpdateNotify);
 
-		OpenStateUpdateNotify.Builder proto = OpenStateUpdateNotify.newBuilder();
+        OpenStateUpdateNotify.Builder proto = OpenStateUpdateNotify.newBuilder();
 
-		for (OpenState state : OpenState.values()) {
-			// If the player has an open state stored in their map, then it would always override any default value
-			if (manager.getOpenStateMap().containsKey(state.getValue())) {
-				proto.putOpenStateMap(state.getValue(), manager.getOpenState(state));
-			} else if (PlayerOpenStateManager.DEV_OPEN_STATES.contains(state)) {
-				// Add default value here. TODO properly put default values somewhere
-				proto.putOpenStateMap(state.getValue(), 1);
-			}
-		}
+        for (OpenState state : OpenState.values()) {
+            // If the player has an open state stored in their map, then it would always override any default value
+            if (manager.getOpenStateMap().containsKey(state.getValue())) {
+                proto.putOpenStateMap(state.getValue(), manager.getOpenState(state));
+            } else if (PlayerOpenStateManager.DEV_OPEN_STATES.contains(state)) {
+                // Add default value here. TODO properly put default values somewhere
+                proto.putOpenStateMap(state.getValue(), 1);
+            }
+        }
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

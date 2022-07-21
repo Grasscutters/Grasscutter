@@ -49,9 +49,9 @@ public final class SetPropCommand implements CommandHandler {
             this.pseudoProp = pseudoProp;
         }
     }
-    
+
     Map<String, Prop> props;
-    
+
     public SetPropCommand() {
         this.props = new HashMap<>();
         // Full PlayerProperty enum that won't be advertised but can be used by devs
@@ -101,13 +101,13 @@ public final class SetPropCommand implements CommandHandler {
         String propStr = args.get(0).toLowerCase();
         String valueStr = args.get(1).toLowerCase();
         int value;
-        
+
         if (!props.containsKey(propStr)) {
             CommandHandler.sendTranslatedMessage(sender, "commands.setProp.usage");
             return;
         }
         try {
-            value = switch(valueStr.toLowerCase()) {
+            value = switch (valueStr.toLowerCase()) {
                 case "on", "true" -> 1;
                 case "off", "false" -> 0;
                 case "toggle" -> -1;

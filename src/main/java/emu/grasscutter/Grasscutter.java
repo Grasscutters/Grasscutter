@@ -217,7 +217,7 @@ public final class Grasscutter {
      */
     private static void onShutdown() {
         // Disable all plugins.
-        if(pluginManager != null)
+        if (pluginManager != null)
             pluginManager.disablePlugins();
     }
 

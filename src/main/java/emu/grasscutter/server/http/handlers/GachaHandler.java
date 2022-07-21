@@ -30,14 +30,14 @@ import static emu.grasscutter.utils.Language.translate;
  */
 public final class GachaHandler implements Router {
     public static final String gachaMappings = DATA(Utils.toFilePath("gacha/mappings.js"));
-    
+
     @Override public void applyRoutes(Express express, Javalin handle) {
         express.get("/gacha", GachaHandler::gachaRecords);
         express.get("/gacha/details", GachaHandler::gachaDetails);
-        
+
         express.useStaticFallback("/gacha/mappings", gachaMappings, Location.EXTERNAL);
     }
-    
+
     private static void gachaRecords(Request request, Response response) {
         File recordsTemplate = new File(Utils.toFilePath(DATA("gacha/records.html")));
         if (!recordsTemplate.exists()) {
@@ -48,7 +48,7 @@ public final class GachaHandler implements Router {
 
         String sessionKey = request.query("s");
         Account account = DatabaseHelper.getAccountBySessionKey(sessionKey);
-        if(account == null) {
+        if (account == null) {
             response.status(403).send("Requested account was not found");
             return;
         }
@@ -59,9 +59,9 @@ public final class GachaHandler implements Router {
         }
 
         int page = 0, gachaType = 0;
-        if(request.query("p") != null)
+        if (request.query("p") != null)
             page = Integer.parseInt(request.query("p"));
-        if(request.query("gachaType") != null)
+        if (request.query("gachaType") != null)
             gachaType = Integer.parseInt(request.query("gachaType"));
 
         String records = DatabaseHelper.getGachaRecords(player.getUid(), page, gachaType).toString();
@@ -76,7 +76,7 @@ public final class GachaHandler implements Router {
             .replace("{{LANGUAGE}}", Utils.getLanguageCode(account.getLocale()));
         response.send(template);
     }
-    
+
     private static void gachaDetails(Request request, Response response) {
         File detailsTemplate = new File(Utils.toFilePath(DATA("gacha/details.html")));
         if (!detailsTemplate.exists()) {
@@ -87,7 +87,7 @@ public final class GachaHandler implements Router {
 
         String sessionKey = request.query("s");
         Account account = DatabaseHelper.getAccountBySessionKey(sessionKey);
-        if(account == null) {
+        if (account == null) {
             response.status(403).send("Requested account was not found");
             return;
         }
