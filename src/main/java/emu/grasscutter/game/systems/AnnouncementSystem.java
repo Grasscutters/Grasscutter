@@ -22,8 +22,8 @@ import java.util.*;
 @Getter
 public class AnnouncementSystem extends BaseGameSystem {
     private final Map<Integer, AnnounceConfigItem> announceConfigItemMap;
-    
-    public AnnouncementSystem(GameServer server){
+
+    public AnnouncementSystem(GameServer server) {
         super(server);
         this.announceConfigItemMap = new HashMap<>();
         loadConfig();
@@ -51,7 +51,7 @@ public class AnnouncementSystem extends BaseGameSystem {
     }
 
     public void broadcast(List<AnnounceConfigItem> tpl) {
-        if(tpl == null || tpl.size() == 0){
+        if (tpl == null || tpl.size() == 0) {
             return;
         }
 
@@ -83,7 +83,7 @@ public class AnnouncementSystem extends BaseGameSystem {
         boolean tick;
         int interval;
 
-        public AnnounceDataOuterClass.AnnounceData.Builder toProto(){
+        public AnnounceDataOuterClass.AnnounceData.Builder toProto() {
             var proto = AnnounceDataOuterClass.AnnounceData.newBuilder();
 
             proto.setConfigId(templateId)
@@ -91,11 +91,11 @@ public class AnnouncementSystem extends BaseGameSystem {
                 .setBeginTime(Utils.getCurrentSeconds() + 1)
                 .setEndTime(Utils.getCurrentSeconds() + 10);
 
-            if(type == AnnounceType.CENTER){
+            if (type == AnnounceType.CENTER) {
                 proto.setCenterSystemText(content)
                     .setCenterSystemFrequency(frequency)
                 ;
-            }else{
+            }else {
                 proto.setCountDownText(content)
                     .setCountDownFrequency(frequency)
                 ;

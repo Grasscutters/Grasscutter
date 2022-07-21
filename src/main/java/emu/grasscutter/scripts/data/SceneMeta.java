@@ -33,7 +33,7 @@ public class SceneMeta {
         return new SceneMeta().load(sceneId);
     }
 
-    public SceneMeta load(int sceneId){
+    public SceneMeta load(int sceneId) {
         // Get compiled script if cached
         CompiledScript cs = ScriptLoader.getScriptByPath(
                 SCRIPT("Scene/" + sceneId + "/scene" + sceneId + "." + ScriptLoader.getScriptType()));

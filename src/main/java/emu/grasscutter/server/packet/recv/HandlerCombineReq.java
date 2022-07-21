@@ -24,7 +24,7 @@ public class HandlerCombineReq extends PacketHandler {
         var result = session.getServer().getCombineSystem()
                 .combineItem(session.getPlayer(), req.getCombineId(), req.getCombineCount());
 
-        if(result == null){
+        if (result == null) {
             return;
         }
 
@@ -36,7 +36,7 @@ public class HandlerCombineReq extends PacketHandler {
                 toItemParamList(result.getBack())));
     }
 
-    private List<ItemParamOuterClass.ItemParam> toItemParamList(List<ItemParamData> list){
+    private List<ItemParamOuterClass.ItemParam> toItemParamList(List<ItemParamData> list) {
         return list.stream()
                 .map(item -> ItemParamOuterClass.ItemParam.newBuilder()
                         .setItemId(item.getId())

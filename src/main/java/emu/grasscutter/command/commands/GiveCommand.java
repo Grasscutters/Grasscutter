@@ -257,7 +257,7 @@ public final class GiveCommand implements CommandHandler {
         if (avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_MALE) {
             avatar.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(504));
         }
-        else if(avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
+        else if (avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
             avatar.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(704));
         }
 
@@ -352,11 +352,11 @@ public final class GiveCommand implements CommandHandler {
         return affixes;
     }
 
-	private static int getAppendPropId(String substatText, ItemData itemData) throws IllegalArgumentException {
-		// If the given substat text is an integer, we just use that as the append prop ID.
-		try {
-			return Integer.parseInt(substatText);
-		} catch (NumberFormatException ignored) {
+    private static int getAppendPropId(String substatText, ItemData itemData) throws IllegalArgumentException {
+        // If the given substat text is an integer, we just use that as the append prop ID.
+        try {
+            return Integer.parseInt(substatText);
+        } catch (NumberFormatException ignored) {
             // If the argument was not an integer, we try to determine
             // the append prop ID from the given text + artifact information.
             // A substat string has the format `substat_tier`, with the
@@ -378,8 +378,8 @@ public final class GiveCommand implements CommandHandler {
             substatTier -= 1;  // 1-indexed to 0-indexed
             substatTier = Math.min(Math.max(0, substatTier), substats.size() - 1);
             return substats.get(substatTier);
-		}
-	}
+        }
+    }
 
     private static void parseRelicArgs(GiveItemParameters param, List<String> args) throws IllegalArgumentException {
         // Get the main stat from the arguments.
@@ -476,11 +476,11 @@ public final class GiveCommand implements CommandHandler {
         10000-10008, 11411, 11506-11508, 12505, 12506, 12508, 12509,
         13503, 13506, 14411, 14503, 14505, 14508, 15504-15506
         """);
-    
+
     private static final SparseSet illegalRelicIds = new SparseSet("""
         20001, 23300-23340, 23383-23385, 78310-78554, 99310-99554
         """);
-    
+
     private static final SparseSet illegalItemIds = new SparseSet("""
         100086, 100087, 100100-101000, 101106-101110, 101306, 101500-104000,
         105001, 105004, 106000-107000, 107011, 108000, 109000-110000,
