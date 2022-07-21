@@ -170,7 +170,7 @@ public class Player {
     @Transient private boolean paused;
     @Transient private int enterSceneToken;
     @Transient private SceneLoadState sceneState;
-    @Transient private boolean hasSentAvatarDataNotify;
+    @Transient private boolean hasSentLoginPackets;
     @Transient private long nextSendPlayerLocTime = 0;
 
     private transient final Int2ObjectMap<CoopRequest> coopRequests;
@@ -562,7 +562,7 @@ public class Player {
     }
 
     public boolean isFirstLoginEnterScene() {
-        return !this.hasSentAvatarDataNotify;
+        return !this.hasSentLoginPackets;
     }
 
     public TeamManager getTeamManager() {
@@ -884,14 +884,10 @@ public class Player {
         this.godmode = godmode;
     }
 
-    public boolean hasSentAvatarDataNotify() {
-        return hasSentAvatarDataNotify;
+    public boolean hasSentLoginPackets() {
+        return hasSentLoginPackets;
     }
-
-    public void setHasSentAvatarDataNotify(boolean hasSentAvatarDataNotify) {
-        this.hasSentAvatarDataNotify = hasSentAvatarDataNotify;
-    }
-
+    
     public void addAvatar(Avatar avatar, boolean addToCurrentTeam) {
         boolean result = getAvatars().addAvatar(avatar);
 
@@ -900,7 +896,7 @@ public class Player {
             getAvatars().addStartingWeapon(avatar);
 
             // Done
-            if (hasSentAvatarDataNotify()) {
+            if (hasSentLoginPackets()) {
                 // Recalc stats
                 avatar.recalcStats();
                 // Packet, show notice on left if the avatar will be added to the team
@@ -1361,7 +1357,7 @@ public class Player {
 
 
         // First notify packets sent
-        this.setHasSentAvatarDataNotify(true);
+        this.hasSentLoginPackets = true;
 
         // Send server welcome chat.
         this.getServer().getChatManager().sendServerWelcomeMessages(this);
