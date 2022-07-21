@@ -22,13 +22,13 @@ public final class HelpCommand implements CommandHandler {
             }
         }
         builder.append("\n\t").append(translate(player, "commands.help.tip_need_permission"));
-        if(annotation.permission().isEmpty() || annotation.permission().isBlank()) {
+        if (annotation.permission().isEmpty() || annotation.permission().isBlank()) {
             builder.append(translate(player, "commands.help.tip_need_no_permission"));
         } else {
             builder.append(annotation.permission());
         }
 
-        if(!annotation.permissionTargeted().isEmpty() && !annotation.permissionTargeted().isBlank()) {
+        if (!annotation.permissionTargeted().isEmpty() && !annotation.permissionTargeted().isBlank()) {
             String permissionTargeted = annotation.permissionTargeted();
             builder.append(" ").append(translate(player, "commands.help.tip_permission_targeted", permissionTargeted));
         }

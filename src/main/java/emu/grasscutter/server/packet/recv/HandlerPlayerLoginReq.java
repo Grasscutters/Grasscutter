@@ -18,39 +18,39 @@ import emu.grasscutter.server.packet.send.PacketTakeAchievementRewardReq;
 @Opcodes(PacketOpcodes.PlayerLoginReq) // Sends initial data packets
 public class HandlerPlayerLoginReq extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		// Check
-		if (session.getAccount() == null) {
-			session.close();
-			return;
-		}
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        // Check
+        if (session.getAccount() == null) {
+            session.close();
+            return;
+        }
 
-		// Parse request
-		PlayerLoginReq req = PlayerLoginReq.parseFrom(payload);
+        // Parse request
+        PlayerLoginReq req = PlayerLoginReq.parseFrom(payload);
 
-		// Authenticate session
-		if (!req.getToken().equals(session.getAccount().getToken())) {
-			session.close();
-			return;
-		}
+        // Authenticate session
+        if (!req.getToken().equals(session.getAccount().getToken())) {
+            session.close();
+            return;
+        }
 
-		// Load character from db
-		Player player = session.getPlayer();
+        // Load character from db
+        Player player = session.getPlayer();
 
-		// Show opening cutscene if player has no avatars
-		if (player.getAvatars().getAvatarCount() == 0) {
-			// Pick character
-			session.setState(SessionState.PICKING_CHARACTER);
-			session.send(new BasePacket(PacketOpcodes.DoSetPlayerBornDataNotify));
-		} else {
-			// Login done
-			session.getPlayer().onLogin();
-		}
+        // Show opening cutscene if player has no avatars
+        if (player.getAvatars().getAvatarCount() == 0) {
+            // Pick character
+            session.setState(SessionState.PICKING_CHARACTER);
+            session.send(new BasePacket(PacketOpcodes.DoSetPlayerBornDataNotify));
+        } else {
+            // Login done
+            session.getPlayer().onLogin();
+        }
 
-		// Final packet to tell client logging in is done
-		session.send(new PacketPlayerLoginRsp(session));
-		session.send(new PacketTakeAchievementRewardReq(session));
-	}
+        // Final packet to tell client logging in is done
+        session.send(new PacketPlayerLoginRsp(session));
+        session.send(new PacketTakeAchievementRewardReq(session));
+    }
 
 }

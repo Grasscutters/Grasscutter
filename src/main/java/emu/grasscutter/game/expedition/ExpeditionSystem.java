@@ -24,16 +24,16 @@ public class ExpeditionSystem extends BaseGameSystem {
         this.expeditionRewardData = new Int2ObjectOpenHashMap<>();
         this.load();
     }
-    
-    public Int2ObjectMap<List<ExpeditionRewardDataList>> getExpeditionRewardDataList() { 
-        return expeditionRewardData; 
+
+    public Int2ObjectMap<List<ExpeditionRewardDataList>> getExpeditionRewardDataList() {
+        return expeditionRewardData;
     }
 
     public synchronized void load() {
         try (Reader fileReader = DataLoader.loadReader("ExpeditionReward.json")) {
             getExpeditionRewardDataList().clear();
             List<ExpeditionRewardInfo> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ExpeditionRewardInfo.class).getType());
-            if(banners.size() > 0) {
+            if (banners.size() > 0) {
                 for (ExpeditionRewardInfo di : banners) {
                     getExpeditionRewardDataList().put(di.getExpId(), di.getExpeditionRewardDataList());
                 }

@@ -13,11 +13,11 @@ import java.util.List;
 import java.util.Map;
 
 public class TowerManager extends BasePlayerManager {
-    
+
     public TowerManager(Player player) {
         super(player);
     }
-    
+
     public TowerData getTowerData() {
         return getPlayer().getTowerData();
     }
@@ -26,21 +26,21 @@ public class TowerManager extends BasePlayerManager {
         return getTowerData().currentFloorId;
     }
 
-    public int getCurrentLevelId(){
+    public int getCurrentLevelId() {
         return getTowerData().currentLevelId + getTowerData().currentLevel;
     }
 
     /**
      * form 1-3
      */
-    public int getCurrentLevel(){
+    public int getCurrentLevel() {
         return getTowerData().currentLevel + 1;
     }
     private static final List<DungeonSettleListener> towerDungeonSettleListener = List.of(new TowerDungeonSettleListener());
-	
+
     public Map<Integer, TowerLevelRecord> getRecordMap() {
         Map<Integer, TowerLevelRecord> recordMap = getTowerData().recordMap;
-        if(recordMap == null || recordMap.size()==0){
+        if (recordMap == null || recordMap.size()==0) {
             recordMap = new HashMap<>();
             recordMap.put(1001, new TowerLevelRecord(1001));
             getTowerData().recordMap = recordMap;
@@ -58,7 +58,7 @@ public class TowerManager extends BasePlayerManager {
                 .map(TowerLevelData::getId)
                 .orElse(0);
 
-        if (getTowerData().entryScene == 0){
+        if (getTowerData().entryScene == 0) {
             getTowerData().entryScene = player.getSceneId();
         }
 
@@ -88,37 +88,37 @@ public class TowerManager extends BasePlayerManager {
         player.getSession().send(new PacketTowerLevelStarCondNotify(getTowerData().currentFloorId, getCurrentLevel()));
     }
 
-    public void notifyCurLevelRecordChange(){
+    public void notifyCurLevelRecordChange() {
         player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(getTowerData().currentFloorId, getCurrentLevel()));
     }
-    public void notifyCurLevelRecordChangeWhenDone(int stars){
+    public void notifyCurLevelRecordChangeWhenDone(int stars) {
         Map<Integer, TowerLevelRecord> recordMap = getRecordMap();
         int currentFloorId = getTowerData().currentFloorId;
-        if(!recordMap.containsKey(currentFloorId)){
+        if (!recordMap.containsKey(currentFloorId)) {
             recordMap.put(currentFloorId,
                     new TowerLevelRecord(currentFloorId).setLevelStars(getCurrentLevelId(),stars));
-        }else{
+        }else {
             recordMap.put(currentFloorId,
                     recordMap.get(currentFloorId).setLevelStars(getCurrentLevelId(),stars));
         }
 
         getTowerData().currentLevel++;
 
-        if(!hasNextLevel()){
+        if (!hasNextLevel()) {
             // set up the next floor
             recordMap.putIfAbsent(getNextFloorId(), new TowerLevelRecord(getNextFloorId()));
             player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(getNextFloorId(), 1));
-        }else{
+        }else {
             player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(currentFloorId, getCurrentLevel()));
         }
     }
-    public boolean hasNextLevel(){
+    public boolean hasNextLevel() {
         return getTowerData().currentLevel < 3;
     }
     public int getNextFloorId() {
         return player.getServer().getTowerSystem().getNextFloorId(getTowerData().currentFloorId);
     }
-    public boolean hasNextFloor(){
+    public boolean hasNextFloor() {
         return player.getServer().getTowerSystem().getNextFloorId(getTowerData().currentFloorId) > 0;
     }
 
@@ -126,9 +126,9 @@ public class TowerManager extends BasePlayerManager {
         getTowerData().entryScene = 0;
     }
 
-    public boolean canEnterScheduleFloor(){
+    public boolean canEnterScheduleFloor() {
         Map<Integer, TowerLevelRecord> recordMap = getRecordMap();
-        if(!recordMap.containsKey(player.getServer().getTowerSystem().getLastEntranceFloor())){
+        if (!recordMap.containsKey(player.getServer().getTowerSystem().getLastEntranceFloor())) {
             return false;
         }
         return recordMap.get(player.getServer().getTowerSystem().getLastEntranceFloor())

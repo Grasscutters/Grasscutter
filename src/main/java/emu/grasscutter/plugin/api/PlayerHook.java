@@ -19,13 +19,13 @@ public final class PlayerHook {
     private final Player player;
 
     /**
-     * Hooks into the player. 
+     * Hooks into the player.
      * @param player The player to hook into.
      */
     public PlayerHook(Player player) {
         this.player = player;
     }
-    
+
     /**
      * Kicks a player from the server.
      * TODO: Refactor to kick using a packet.
@@ -82,7 +82,7 @@ public final class PlayerHook {
      */
     public void teleport(Position position) {
         this.player.getPosition().set(position);
-        this.player.sendPacket(new PacketPlayerEnterSceneNotify(this.player, 
+        this.player.sendPacket(new PacketPlayerEnterSceneNotify(this.player,
                 EnterType.ENTER_TYPE_JUMP, EnterReason.TransPoint,
                 this.player.getSceneId(), position
         ));

@@ -21,7 +21,7 @@ public class MusicGamePlayerData {
     Map<Long, CustomBeatmapRecord> personalCustomBeatmapRecord;
     Map<Long, CustomBeatmapRecord> othersCustomBeatmapRecord;
 
-    public static MusicGamePlayerData create(){
+    public static MusicGamePlayerData create() {
         return MusicGamePlayerData.of()
             .musicGameRecord(GameData.getMusicGameBasicDataMap().values().stream()
                 .collect(Collectors.toMap(MusicGameBasicData::getId, MusicGamePlayerData.MusicGameRecord::create)))
@@ -38,13 +38,13 @@ public class MusicGamePlayerData {
         int maxCombo;
         int maxScore;
 
-        public static MusicGameRecord create(MusicGameBasicData musicGameBasicData){
+        public static MusicGameRecord create(MusicGameBasicData musicGameBasicData) {
             return MusicGameRecord.of()
                 .musicId(musicGameBasicData.getId())
                 .build();
         }
 
-        public MusicGameRecordOuterClass.MusicGameRecord toProto(){
+        public MusicGameRecordOuterClass.MusicGameRecord toProto() {
             return MusicGameRecordOuterClass.MusicGameRecord.newBuilder()
                 .setIsUnlock(true)
                 .setMaxCombo(maxCombo)
@@ -61,7 +61,7 @@ public class MusicGamePlayerData {
         int score;
         boolean settle;
 
-        public MusicBriefInfoOuterClass.MusicBriefInfo.Builder toPersonalBriefProto(){
+        public MusicBriefInfoOuterClass.MusicBriefInfo.Builder toPersonalBriefProto() {
             var musicGameBeatmap = MusicGameBeatmap.getByShareId(musicShareId);
 
             return MusicBriefInfoOuterClass.MusicBriefInfo.newBuilder()
@@ -74,7 +74,7 @@ public class MusicGamePlayerData {
                 .setMusicShareId(musicShareId);
         }
 
-        public MusicBriefInfoOuterClass.MusicBriefInfo.Builder toOthersBriefProto(){
+        public MusicBriefInfoOuterClass.MusicBriefInfo.Builder toOthersBriefProto() {
             var musicGameBeatmap = MusicGameBeatmap.getByShareId(musicShareId);
 
             return musicGameBeatmap.toBriefProto()

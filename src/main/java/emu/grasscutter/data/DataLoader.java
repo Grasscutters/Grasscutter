@@ -29,7 +29,7 @@ public class DataLoader {
     public static InputStream load(String resourcePath) throws FileNotFoundException {
         return load(resourcePath, true);
     }
-    
+
     /**
      * Creates an input stream reader for a data file. If the file isn't found within the /data directory then it will fallback to the default within the jar resources
      *

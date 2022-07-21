@@ -45,7 +45,7 @@ public class ActivityManager extends BasePlayerManager {
             activityWatcherTypeMap.put(typeName.value(), ConstructorAccess.get(item));
         });
 
-        try(Reader reader = DataLoader.loadReader("ActivityConfig.json")) {
+        try (Reader reader = DataLoader.loadReader("ActivityConfig.json")) {
             List<ActivityConfigItem> activities = Grasscutter.getGsonFactory().fromJson(
                 reader,
                 TypeToken.getParameterized(List.class, ActivityConfigItem.class).getType());
@@ -53,16 +53,16 @@ public class ActivityManager extends BasePlayerManager {
 
             activities.forEach(item -> {
                 var activityData = GameData.getActivityDataMap().get(item.getActivityId());
-                if(activityData == null){
+                if (activityData == null) {
                     Grasscutter.getLogger().warn("activity {} not exist.", item.getActivityId());
                     return;
                 }
                 var activityHandlerType = activityHandlerTypeMap.get(ActivityType.getTypeByName(activityData.getActivityType()));
                 ActivityHandler activityHandler;
 
-                if(activityHandlerType != null) {
+                if (activityHandlerType != null) {
                     activityHandler = (ActivityHandler) activityHandlerType.newInstance();
-                }else{
+                }else {
                     activityHandler = new DefaultActivityHandler();
                 }
                 activityHandler.setActivityConfigItem(item);
@@ -79,14 +79,14 @@ public class ActivityManager extends BasePlayerManager {
 
     }
 
-    public ActivityManager(Player player){
+    public ActivityManager(Player player) {
         super(player);
 
         playerActivityDataMap = new ConcurrentHashMap<>();
         // load data for player
         activityConfigItemMap.values().forEach(item -> {
             var data = PlayerActivityData.getByPlayer(player, item.getActivityId());
-            if(data == null){
+            if (data == null) {
                 data = item.getActivityHandler().initPlayerActivityData(player);
                 data.save();
             }
@@ -116,34 +116,34 @@ public class ActivityManager extends BasePlayerManager {
             params));
     }
 
-    public ActivityInfoOuterClass.ActivityInfo getInfoProtoByActivityId(int activityId){
+    public ActivityInfoOuterClass.ActivityInfo getInfoProtoByActivityId(int activityId) {
         var activityHandler = activityConfigItemMap.get(activityId).getActivityHandler();
         var activityData = playerActivityDataMap.get(activityId);
 
         return activityHandler.toProto(activityData);
     }
 
-    public Optional<ActivityHandler> getActivityHandler(ActivityType type){
+    public Optional<ActivityHandler> getActivityHandler(ActivityType type) {
         return activityConfigItemMap.values().stream()
             .map(ActivityConfigItem::getActivityHandler)
             .filter(x -> type == x.getClass().getAnnotation(GameActivity.class).value())
             .findFirst();
     }
 
-    public <T extends ActivityHandler> Optional<T> getActivityHandlerAs(ActivityType type, Class<T> clazz){
+    public <T extends ActivityHandler> Optional<T> getActivityHandlerAs(ActivityType type, Class<T> clazz) {
         return getActivityHandler(type).map(x -> (T)x);
     }
 
-    public Optional<Integer> getActivityIdByActivityType(ActivityType type){
+    public Optional<Integer> getActivityIdByActivityType(ActivityType type) {
         return getActivityHandler(type)
             .map(ActivityHandler::getActivityConfigItem)
             .map(ActivityConfigItem::getActivityId);
     }
-    public Optional<PlayerActivityData> getPlayerActivityDataByActivityType(ActivityType type){
+    public Optional<PlayerActivityData> getPlayerActivityDataByActivityType(ActivityType type) {
         return getActivityIdByActivityType(type)
             .map(playerActivityDataMap::get);
     }
-    public Optional<ActivityInfoOuterClass.ActivityInfo> getInfoProtoByActivityType(ActivityType type){
+    public Optional<ActivityInfoOuterClass.ActivityInfo> getInfoProtoByActivityType(ActivityType type) {
        return getActivityIdByActivityType(type)
            .map(this::getInfoProtoByActivityId);
     }

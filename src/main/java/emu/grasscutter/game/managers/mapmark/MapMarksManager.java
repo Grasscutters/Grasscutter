@@ -18,7 +18,7 @@ public class MapMarksManager extends BasePlayerManager {
     public MapMarksManager(Player player) {
         super(player);
     }
-    
+
     public Map<String, MapMark> getMapMarks() {
         return getPlayer().getMapMarks();
     }
@@ -51,7 +51,7 @@ public class MapMarksManager extends BasePlayerManager {
         }
         player.getSession().send(new PacketMarkMapRsp(getMapMarks()));
     }
-    
+
     public String getMapMarkKey(Position position) {
         return "x" + (int)position.getX()+ "z" + (int)position.getZ();
     }

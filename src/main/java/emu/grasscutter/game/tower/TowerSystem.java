@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TowerSystem extends BaseGameSystem {
-    
+
     public TowerSystem(GameServer server) {
         super(server);
         this.load();
@@ -24,7 +24,7 @@ public class TowerSystem extends BaseGameSystem {
 
     private TowerScheduleConfig towerScheduleConfig;
 
-    public synchronized void load(){
+    public synchronized void load() {
         try (Reader fileReader = DataLoader.loadReader("TowerSchedule.json")) {
             towerScheduleConfig = Grasscutter.getGsonFactory().fromJson(fileReader, TowerScheduleConfig.class);
         } catch (Exception e) {
@@ -36,13 +36,13 @@ public class TowerSystem extends BaseGameSystem {
         return towerScheduleConfig;
     }
 
-    public TowerScheduleData getCurrentTowerScheduleData(){
+    public TowerScheduleData getCurrentTowerScheduleData() {
         var data = GameData.getTowerScheduleDataMap().get(towerScheduleConfig.getScheduleId());
-        if(data == null){
+        if (data == null) {
             Grasscutter.getLogger().error("Could not get current tower schedule data by schedule id {}, please check your resource files",
                     towerScheduleConfig.getScheduleId());
         }
-        
+
         return data;
     }
 
@@ -56,29 +56,29 @@ public class TowerSystem extends BaseGameSystem {
         return getCurrentTowerScheduleData().getSchedules().get(0).getFloorList();
     }
 
-    public int getNextFloorId(int floorId){
+    public int getNextFloorId(int floorId) {
         var entranceFloors = getCurrentTowerScheduleData().getEntranceFloorId();
         var scheduleFloors = getScheduleFloors();
         var nextId = 0;
-        
+
         // find in entrance floors first
-        for(int i=0;i<entranceFloors.size()-1;i++){
-            if(floorId == entranceFloors.get(i)){
+        for (int i=0;i<entranceFloors.size()-1;i++) {
+            if (floorId == entranceFloors.get(i)) {
                 nextId = entranceFloors.get(i+1);
             }
         }
-        
-        if(floorId == entranceFloors.get(entranceFloors.size()-1)){
+
+        if (floorId == entranceFloors.get(entranceFloors.size()-1)) {
             nextId = scheduleFloors.get(0);
         }
-        
-        if(nextId != 0){
+
+        if (nextId != 0) {
             return nextId;
         }
-        
+
         // find in schedule floors
-        for(int i=0; i < scheduleFloors.size() - 1; i++){
-            if(floorId == scheduleFloors.get(i)){
+        for (int i=0; i < scheduleFloors.size() - 1; i++) {
+            if (floorId == scheduleFloors.get(i)) {
                 nextId = scheduleFloors.get(i + 1);
             }
         }return nextId;

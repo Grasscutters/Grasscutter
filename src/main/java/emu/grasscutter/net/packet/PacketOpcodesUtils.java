@@ -22,7 +22,7 @@ public class PacketOpcodesUtils {
         PacketOpcodes.WindSeedClientNotify,
         PacketOpcodes.PlayerLuaShellNotify
     );
-    
+
     public static final Set<Integer> LOOP_PACKETS = Set.of(
         PacketOpcodes.PingReq,
         PacketOpcodes.PingRsp,
@@ -30,39 +30,39 @@ public class PacketOpcodesUtils {
         PacketOpcodes.UnionCmdNotify,
         PacketOpcodes.QueryPathReq
     );
-	
-	static {
-		opcodeMap = new Int2ObjectOpenHashMap<String>();
 
-		Field[] fields = PacketOpcodes.class.getFields();
+    static {
+        opcodeMap = new Int2ObjectOpenHashMap<String>();
 
-		for (Field f : fields) {
-			if(f.getType().equals(int.class)) {
-				try {
-					opcodeMap.put(f.getInt(null), f.getName());
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		}
-	}
+        Field[] fields = PacketOpcodes.class.getFields();
 
-	public static String getOpcodeName(int opcode) {
-		if (opcode <= 0) return "UNKNOWN";
-		return opcodeMap.getOrDefault(opcode, "UNKNOWN");
-	}
+        for (Field f : fields) {
+            if (f.getType().equals(int.class)) {
+                try {
+                    opcodeMap.put(f.getInt(null), f.getName());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
-	public static void dumpPacketIds() {
-	    try (FileWriter writer = new FileWriter("./PacketIds_" + GameConstants.VERSION + ".json")) {
-	        // Create sorted tree map
-	        Map<Integer, String> packetIds = opcodeMap.int2ObjectEntrySet().stream()
-	                .filter(e -> e.getIntKey() > 0)
-	                .collect(Collectors.toMap(Int2ObjectMap.Entry::getIntKey, Int2ObjectMap.Entry::getValue, (k, v) -> v, TreeMap::new));
-	        // Write to file
-			writer.write(Grasscutter.getGsonFactory().toJson(packetIds));
-			Grasscutter.getLogger().info("Dumped packet ids.");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+    public static String getOpcodeName(int opcode) {
+        if (opcode <= 0) return "UNKNOWN";
+        return opcodeMap.getOrDefault(opcode, "UNKNOWN");
+    }
+
+    public static void dumpPacketIds() {
+        try (FileWriter writer = new FileWriter("./PacketIds_" + GameConstants.VERSION + ".json")) {
+            // Create sorted tree map
+            Map<Integer, String> packetIds = opcodeMap.int2ObjectEntrySet().stream()
+                    .filter(e -> e.getIntKey() > 0)
+                    .collect(Collectors.toMap(Int2ObjectMap.Entry::getIntKey, Int2ObjectMap.Entry::getValue, (k, v) -> v, TreeMap::new));
+            // Write to file
+            writer.write(Grasscutter.getGsonFactory().toJson(packetIds));
+            Grasscutter.getLogger().info("Dumped packet ids.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

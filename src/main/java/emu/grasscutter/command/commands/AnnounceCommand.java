@@ -28,7 +28,7 @@ public final class AnnounceCommand implements CommandHandler {
             return;
         }
 
-        switch (args.get(0)){
+        switch (args.get(0)) {
             case "tpl":
                 if (args.size() < 2) {
                     CommandHandler.sendTranslatedMessage(sender, "commands.announce.command_usage");
@@ -37,7 +37,7 @@ public final class AnnounceCommand implements CommandHandler {
 
                 var templateId = Integer.parseInt(args.get(1));
                 var tpl = manager.getAnnounceConfigItemMap().get(templateId);
-                if(tpl == null){
+                if (tpl == null) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.announce.not_found", templateId));
                     return;
                 }

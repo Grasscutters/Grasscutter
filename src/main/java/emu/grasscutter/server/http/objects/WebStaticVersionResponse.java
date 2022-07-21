@@ -27,13 +27,13 @@ public class WebStaticVersionResponse implements HttpContextHandler {
     }
 
     private static void getPageResources(String path, Response response) {
-        try(InputStream filestream = FileUtils.readResourceAsStream(path)) {
+        try (InputStream filestream = FileUtils.readResourceAsStream(path)) {
 
             MediaType fromExtension = MediaType.getByExtension(path.substring(path.lastIndexOf(".") + 1));
             response.type((fromExtension != null) ? fromExtension.getMIME() : "application/octet-stream");
             response.send(filestream.readAllBytes());
         } catch (Exception e) {
-            if(DISPATCH_INFO.logRequests == Grasscutter.ServerDebugMode.MISSING) {
+            if (DISPATCH_INFO.logRequests == Grasscutter.ServerDebugMode.MISSING) {
                 Grasscutter.getLogger().warn("Webstatic File Missing: " + path);
             }
             response.status(404);

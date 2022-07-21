@@ -13,12 +13,12 @@ import static emu.grasscutter.config.Configuration.*;
 import java.util.List;
 
 public class PacketPullRecentChatRsp extends BasePacket {
-	public PacketPullRecentChatRsp(List<ChatInfo> messages) {
-		super(PacketOpcodes.PullRecentChatRsp);
-		
-		PullRecentChatRsp.Builder proto = PullRecentChatRsp.newBuilder()
-			.addAllChatInfo(messages);
+    public PacketPullRecentChatRsp(List<ChatInfo> messages) {
+        super(PacketOpcodes.PullRecentChatRsp);
 
-		this.setData(proto);
-	}
+        PullRecentChatRsp.Builder proto = PullRecentChatRsp.newBuilder()
+            .addAllChatInfo(messages);
+
+        this.setData(proto);
+    }
 }
