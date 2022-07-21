@@ -3,13 +3,13 @@
     "game": {
       "port_bind": "Игровой сервер запущен на порте %s",
       "connect": "Клиент подключился с %s",
-      "disconnect": "Клиент подключился с %s",
+      "disconnect": "Клиент отсоединился с %s",
       "game_update_error": "Произошла ошибка при обновлении игры.",
       "command_error": "Командная ошибка:"
     },
     "dispatch": {
       "port_bind": "[Dispatch] Распределительный сервер запущен на порте %s",
-      "request": "[Dispatch] Client %s %s request: %s",
+      "request": "[Dispatch] Клиент %s %s, запрос: %s",
       "keystore": {
         "general_error": "[Dispatch] Возникла ошибка при загрузке keystore!",
         "password_error": "[Dispatch] Не удалось загрузить keystore. Пытаемся использовать пароль для keystore по умолчанию...",
@@ -17,7 +17,7 @@
         "default_password": "[Dispatch] Пароль keystore по умолчанию был успешно загружен. Установите пароль 123456 в config.json."
       },
       "authentication": {
-        "default_unable_to_verify": "[Авторизация] Произошел вызов метода verifyUser, который недоступен в стандартном обработчике авторизации."
+        "default_unable_to_verify": "[Authentication] Произошел вызов метода verifyUser, который недоступен в стандартном обработчике авторизации.."
       },
       "no_commands_error": "Команды не доступны в режиме \"dispatch only\".",
       "unhandled_request_error": "[Dispatch] Возможный необработанный запрос %s: %s.",
@@ -28,35 +28,40 @@
         "login_token_attempt": "[Dispatch] Клиент %s пытается войти с помощью токена.",
         "login_token_error": "[Dispatch] Клиент %s не смог войти с помощью токена.",
         "login_token_success": "[Dispatch] Клиент %s вошел с помощью токена как %s.",
-        "combo_token_success": "[Dispatch] Client %s succeed to exchange combo token.",
-        "combo_token_error": "[Dispatch] Client %s failed to exchange combo token.",
+        "login_password_error": "[Dispatch] Клиент %s не смог войти с помощью пароля.",
+        "login_password_storage_error": "[Dispatch] Клиенту %s не удалось войти с помощью пароля по причине отсутствия пароля в базе данных.",
+        "combo_token_success": "[Dispatch] Клиент %s произвёл успешный обмен комбинированного токена.",
+        "combo_token_error": "[Dispatch] Клиенту %s не удалось произвести обмен комбинированного токена.",
         "account_login_create_success": "[Dispatch] Клиенту %s не удалось войти по причине: Аккаунт %s был создан.",
-        "account_login_create_error": "[Dispatch] Клиенту %s не удалось войти по причне : Не удалось создать аккаунт.",
+        "account_login_create_error": "[Dispatch] Клиенту %s не удалось войти по причине: Не удалось создать аккаунт.",
         "account_login_exist_error": "[Dispatch] Клиенту %s не удалось войти по причине: Аккаунт не найден.",
-        "account_cache_error": "Game account cache information error.",
+        "account_cache_error": "Ошибка кэша игрового аккаунта.",
         "session_key_error": "Некорректный ключ сессии.",
         "username_error": "Имя пользователя не обнаружено.",
-        "username_create_error": "Имя пользователя не найденоUsername not found, создание не удалось.",
+        "username_create_error": "Имя пользователя не найдено, создание не удалось.",
+        "password_error": "Некорректный пароль",
+        "password_length_error": "Длина пароля должна быть не менее 8 символов",
+        "password_storage_error": "У вашего аккаунта отсутствует пароль. Свяжитесь с администратором.",
         "server_max_player_limit": "Число игроков в сети достигло предела"
       },
-      "router_error": "[Dispatch] Unable to attach router."
+      "router_error": "[Dispatch] Не удалось присоединить маршрутизатор."
     },
     "status": {
-      "free_software": "Grasscutter является БЕСПЛАТНЫМ программным обеспечением. Если вы заплатили за него деньги, то вас обманули. Домашняя страница проекта: https://github.com/Grasscutters/Grasscutter",
+      "free_software": "Grasscutter является БЕСПЛАТНЫМ программным обеспечением. Если вы заплатили за него деньги, то вы были обмануты продавцом. Домашняя страница проекта: https://github.com/Grasscutters/Grasscutter",
       "starting": "Запускаем Grasscutter...",
       "shutdown": "Отключаемся...",
       "done": "Готово! Для получения помощи, введите \"help\"",
       "error": "Произошла ошибка.",
       "welcome": "Добро пожаловать в Grasscutter!",
-      "run_mode_error": "Некорректный режим запуска сервера: %s.",
-      "run_mode_help": "Сервер должен запускаться в одном из следующих режимов: 'HYBRID', 'DISPATCH_ONLY', или 'GAME_ONLY'. Не удалось запустить Grasscutter...",
+      "run_mode_error": "Некорректный режим работы сервера: %s.",
+      "run_mode_help": "Сервер должен запускаться в одном из следующих режимов: 'HYBRID', 'DISPATCH_ONLY' или 'GAME_ONLY'. Не удалось запустить Grasscutter...",
       "create_resources": "Создаём папку ресурсов...",
-      "resources_error": "Поместите копию папок 'BinOutput' и 'ExcelBinOutput' в папку ресурсов.",
+      "resources_error": "Поместите копии папок 'BinOutput' и 'ExcelBinOutput' в папку ресурсов.",
       "version": "Версия Grasscutter: %s-%s",
       "game_version": "Версия игры: %s",
       "resources": {
-        "loading": "Loading resources...",
-        "finish": "Finished loading resources."
+        "loading": "Загружаем ресурсы...",
+        "finish": "Загрузка ресурсов завершена."
       }
     }
   },
@@ -71,18 +76,18 @@
       "no_usage_specified": "Применение команды не указано",
       "no_description_specified": "Описание отсутствует",
       "set_to": "Характеристика %s стала равной %s.",
-      "set_for_to": "Характеристика %s игрока %s стала равной %s.",
+      "set_for_to": "Характеристика %s у %s стала равной %s.",
       "invalid": {
         "amount": "Некорректное количество.",
         "artifactId": "Некорректный ID артефакта.",
-        "avatarId": "Некорректный ID аватара.",
-        "avatarLevel": "Некорректный уровень аватара (avatarLevel).",
+        "avatarId": "Некорректный ID персонажа.",
+        "avatarLevel": "Некорректный уровень персонажа (avatarLevel).",
         "entityId": "Некорректный ID сущности.",
         "itemId": "Некорректный ID предмета.",
         "itemLevel": "Некорректный уровень предмета (itemLevel).",
-        "itemRefinement": "Некорректный уровень пробуждения предмета (itemRefinement).",
+        "itemRefinement": "Некорректный ранг пробуждения предмета (itemRefinement).",
         "statValue": "Некорректное значение характеристики.",
-        "value_between": "Invalid value: %s must be between %s and %s.",
+        "value_between": "Некорректное значение: %s находится в пределах от %s до %s.",
         "playerId": "Некорректный ID игрока.",
         "uid": "Некорректный UID.",
         "id": "Некорректный ID."
@@ -96,9 +101,9 @@
       "argument_error": "Некорректные аргументы.",
       "clear_target": "Цель была удалена.",
       "set_target": "Все последующие команды будут использовать @%s в качестве цели по умолчанию.",
-      "set_target_online": "@%s сейчас в сети. Для некоторых команд, цель должна быть не в сети.",
-      "set_target_offline": "@%s сейчас не в сети. Для некоторых команд, цель должна быть в сети.",
-      "need_target": "Этой команде требуется UID цели. Добавьте аргумент <@UID> или задайте постоянную цель с помощью /target @UID.",
+      "set_target_online": "@%s сейчас находится в сети. Для некоторых команд, цель должна быть не в сети.",
+      "set_target_offline": "@%s сейчас находится не в сети. Для некоторых команд, цель должна быть в сети.",
+      "need_target": "Для данной команды требуется UID цели. Добавьте аргумент <@UID> или задайте постоянную цель с помощью /target @UID.",
       "need_target_online": "Для данной команды требуется UID цели, находящейся в сети, а выбранная цель сейчас не в сети. Введите другой аргумент <@UID> или добавьте постоянную цель с помощью /target @UID.",
       "need_target_offline": "Для данной команды требуется UID цели, находящейся не в сети, а выбранная цель сейчас в сети. Введите другой аргумент <@UID> или добавьте постоянную цель с помощью /target @UID."
     },
@@ -109,47 +114,37 @@
       "success": "Успех"
     },
     "account": {
-      "modify": "Изменить аккаунты пользователя",
+      "command_usage": "Применение: account <create|delete> <имя_пользователя> [UID]",
       "invalid": "Некорректный UID.",
       "exists": "Аккаунт с таким именем пользователя и/или UID уже существует.",
-      "create": "Создан аккаунт с UID %s.",
+      "create": "Аккаунт с UID %s был создан.",
       "delete": "Аккаунт удалён.",
       "no_account": "Аккаунт не найден.",
-      "command_usage": "Применение: account <create|delete> <имя_пользователя> [UID]",
-      "description": "Изменяет аккаунт пользователя"
+      "description": "Вносит изменения в аккаунты пользователей"
     },
-    "broadcast": {
-      "command_usage": "Применение: broadcast <сообщение>",
-      "message_sent": "Сообщение отправлено.",
-      "description": "Отправляет сообщение всем игрокам"
-    },
-    "changescene": {
-      "usage": "Применение: changescene <ID_сцены>",
-      "already_in_scene": "Вы уже находитесь в этой сцене.",
-      "success": "Переход в сцену %s.",
-      "exists_error": "Указанной сцены не существует.",
-      "description": "Изменяет текущую сцену"
+    "announce": {
+      "command_usage": "Применение: announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
+      "send_success": "Объявление было отправлено успешно, вы можете отзвать его с помощью команды /a revoke %s.",
+      "refresh_success": "Конфигурационный файл объявления был успешно обновлён. [Всего %s]",
+      "revoke_done": "Пытаемся отозвать объявление %s.",
+      "not_found": "Объявление %s не было найдено.",
+      "description": "Показывает объявление всем игрокам в сети и позволяет управлять серверными объявлениями"
     },
     "clear": {
-      "command_usage": "Применение: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
+      "command_usage": "Применение: clear <all|wp|art|mat> [lv<макс_уровень>] [r<макс_пробуждение>] [<макс_редкость>*]",
       "weapons": "Удалены оружия у %s.",
       "artifacts": "Удалены артефакты у %s.",
       "materials": "Удалены материалы у %s.",
       "furniture": "Удалена мебель у %s.",
-      "displays": "Cleared displays for %s.",
-      "virtuals": "Cleared virtuals for %s.",
+      "displays": "Удалены дисплеи у %s.",
+      "virtuals": "Удалены виртуалы у %s.",
       "everything": "Удалено всё у %s.",
-      "description": "Удаляет все неэкипированные на данный момент предметы из инвентаря, включая предметы золотой редкости"
+      "description": "Удаляет все доступные неэкипированные предметы из вашего инвентаря. По умолчанию удаляет 4* предметы 1-го уровня предмета 1-го ранга пробуждения и ниже, однако, возможно задать более высокие параметры."
     },
     "coop": {
-      "usage": "Применение: coop [UID хоста]",
+      "usage": "Применение: coop [UID_хоста]",
       "success": "Игрок %s был призван в мир %s.",
-      "description": "Принудительно присоединяет кого-то к миру другого человека. Если не выбрана цель, то вы всё равно войдете в совместный режим."
-    },
-    "drop": {
-      "command_usage": "Применение: drop <ID_предмета|название_предмета> [кол-во]",
-      "success": "Были уронены %s игрока %s.",
-      "description": "Роняет предмет возле вас"
+      "description": "Принудительно присоединяет к мирам других людей. Если цель не была выбрана, то отправляет в совместный режим."
     },
     "enter_dungeon": {
       "usage": "Применение: enterdungeon <ID_подземелья>",
@@ -158,39 +153,16 @@
       "in_dungeon_error": "Вы уже в этом подземелье.",
       "description": "Позволяет войти в подземелье"
     },
-    "giveAll": {
-      "usage": "Применение: giveall [игрок] [кол-во]",
-      "started": "Получаем все предметы...",
-      "success": "Все предметы были успешно выданы %s.",
-      "invalid_amount_or_playerId": "Некорректное число или ID игрока.",
-      "description": "Выдаёт все предметы"
-    },
-    "giveArtifact": {
-      "usage": "Применение: giveart|gart [игрок] <ID_артефакта> <ID_осн_хар-ки> [<ID_доп_хар-ки>[,<раз>]]... [уровень]",
-      "id_error": "Некорректный ID артефакта.",
-      "success": "Выдан %s игроку %s.",
-      "description": "Выдает игроку заданный артефакт"
-    },
-    "giveChar": {
-      "usage": "Применение: givechar <player> <avatarID> [level]",
-      "given": "Выдан(а) %s с уровнем %s игроку %s.",
-      "invalid_avatar_id": "Некорректный ID аватара.",
-      "invalid_avatar_level": "Некорректный уровень аватара.",
-      "invalid_avatar_or_player_id": "Некорректный ID игрока или аватара.",
-      "description": "Выдает игроку заданного персонажа"
-    },
     "give": {
-      "usage": "Применение: give <игрок> <ID_предмета|имя_предмета> [кол-во] [уровень] [пробуждение]",
-      "refinement_only_applicable_weapons": "Пробуждение применимо только к оружию.",
-      "refinement_must_between_1_and_5": "Значение пробуждения должно быть от 1 до 5.",
+      "usage": "Применение: give <ID_предмета|ID_персонажа|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [x<кол-во>] [lv<уровень>] [r<пробуждение>]",
+      "usage_relic": "Применение: give <ID_артефакта> [ID_глав_хар-ки] [<ID доп_хар-ки>[,<раз>]]... [lv<уровень 0-20>]",
+      "illegal_relic": "Данный ID_артефакта находится в черном списке. Возможно, это не то, что вы хотите получить.",
       "given": "Выдано %s %s игроку %s.",
-      "given_with_level_and_refinement": "Выдано %s с уровнем %s, уровнем пробуждения %s %s раз игроку %s.",
-      "given_level": "Выдано %s с уровнем %s %s раз игроку %s.",
-      "description": "Выдаёт предмет лично вам или заданному игроку"
-    },
-    "godmode": {
-      "success": "Godmode теперь %s для %s.",
-      "description": "Не позволяет получать урон. По умолчанию переключается."
+      "given_with_level_and_refinement": "Выдано %s с уровнем предмета %s, рангом пробуждения %s %s раз игроку %s.",
+      "given_level": "Выдано %s с уровнем предмета %s %s раз игроку %s.",
+      "given_avatar": "Выдано %s с уровнем предмета %s игроку %s.",
+      "giveall_success": "Успешно были выданы все возможные предметы.",
+      "description": "Выдаёт предмет вам или указанному игроку. С помощью данной команды также возможно выдать любое оружие (опция \"weapons\"), персонажа (опция \"avatars\") и/или материал (опция \"mats\"). Также, с помощью этой команды можно вручную создавать артефакты."
     },
     "heal": {
       "success": "Все персонажи были вылечены.",
@@ -200,140 +172,130 @@
       "usage": "Применение: ",
       "aliases": "Альтернативные названия: ",
       "available_commands": "Доступные команды: ",
-      "description": "Отправляет сообщение с помощью или показывает информацию о заданной команде"
+      "tip_need_permission": "Разрешения: ",
+      "tip_need_no_permission": " Не требуются",
+      "tip_permission_targeted": " (Требуется разрешение %s для применения на других игроках)",
+      "warn_player_has_no_permission": "Заметка: У вас нет разрешения на запуск этой команды.",
+      "description": "Отправляет сообщение с помощью или показывает информацию об указанной команде"
     },
     "kick": {
-      "player_kick_player": "Игрок [%s:%s] кикнул игрока [%s:%s]",
-      "server_kick_player": "Кикаем игрока [%s:%s]...",
-      "description": "Кикает указанного игрока с сервера (WIP)"
+      "player_kick_player": "Игрок [%s:%s] выгнал игрока [%s:%s]",
+      "server_kick_player": "Выгоняем игрока [%s:%s]...",
+      "description": "Выгоняет (\"кикает\") указанного игрока с сервера (WIP)"
     },
     "killall": {
-      "usage": "Применение: killall [playerUID] [sceneID]",
+      "usage": "Применение: killall [UID_игрока] [ID_сцены]",
       "scene_not_found_in_player_world": "В мире игрока не была обнаружена эта сцена.",
       "kill_monsters_in_scene": "Убиваем %s монстров в сцене %s.",
-      "description": "Убивает все сущности"
+      "description": "Убивает всех существ в сцене"
     },
     "killCharacter": {
-      "usage": "Применение: killcharacter [playerID]",
-      "success": "Убит текущий персонаж игрока %s.",
+      "usage": "Применение: killcharacter [ID_игрока]",
+      "success": "Текущий персонаж игрока %s был убит.",
       "description": "Убивает текущего персонажа игрока"
     },
     "language": {
       "current_language": "Текущий язык: %s.",
-      "language_changed": "Язык изменен на: %s.",
+      "language_changed": "Язык изменён на %s.",
       "language_not_found": "На текущий момент, на сервере недоступен этот язык.",
       "description": "Отображает или изменяет текущий язык"
     },
     "list": {
       "success": "Сейчас в сети %s игрок(ов):",
-      "description": "Список игроков в сети"
-    },
-    "nostamina": {
-      "success": "NoStamina теперь %s для %s.",
-      "description": "Поддерживает уровень выносливости на максимуме."
+      "description": "Отображает всех игроков, находящихся в сети"
     },
     "permission": {
       "usage": "Применение: permission <add|remove> <имя_пользователя> <разрешение>",
-      "add": "Разрешение добавлено.",
+      "add": "Разрешение было добавлено.",
       "has_error": "У данного пользователя уже имеется это разрешение!",
       "remove": "Разрешение удалено.",
       "not_have_error": "У данного пользователя отсутствует данное разрешение!",
       "account_error": "Аккаунт не найден.",
-      "description": "Добавляет или удаляет разрешения у пользователя"
+      "description": "Добавляет (add) или удаляет (remove) разрешения у пользователя"
     },
     "position": {
       "success": "Координаты: %s, %s, %s\nID сцены: %s",
-      "description": "Показывает координаты"
+      "description": "Позволяет получить координаты"
     },
     "quest": {
-      "usage": "quest <add|finish> [ID_квеста]",
+      "usage": "Применение: quest <add|finish> [ID_квеста]",
       "added": "Квест %s был добавлен.",
       "finished": "Квест %s был завершен.",
       "not_found": "Квест не найден.",
-      "invalid_id": "Неизвестный ID квеста.",
-      "description": "Добавляет или завершает квесты"
+      "invalid_id": "Некорректный ID квеста.",
+      "description": "Добавляет (add) или завершает (finish) квесты"
     },
     "reload": {
       "reload_start": "Перезагружаем файл конфигурации.",
       "reload_done": "Перезагрузка завершена.",
-      "description": "Перезагружает конфигурационный файл сервера"
+      "description": "Перезагружает файл конфигурации сервера"
     },
     "resetConst": {
-      "reset_all": "Сбросить созвездия всех аватаров.",
-      "success": "Созвездия %s были сброшены. Перезайдите в игру для вступления изменений в силу.",
-      "description": "Сбрасывает уровень созвездий активных в данный момент персонажей. Для вступления изменений в силу, после ввода команды необходимо перезайти в игру"
+      "reset_all": "Сбросить созвездия всех персонажей.",
+      "success": "Созвездия %s have been reset. Please relog to see changes.",
+      "description": "Сбрасывает уровень созвездия у активного персонажа. Для вступления изменений в силу, после ввода команды необходимо перезайти в игру"
     },
     "resetShopLimit": {
       "usage": "Применение: resetshop <ID_игрока>",
-      "success": "Сброс выполнен успешно.",
+      "success": "Сброс был выполнен успешно.",
       "description": "Сбрасывает таймер обновления магазина у выбранного игрока"
-    },
-    "restart": {
-      "description": "Перезапускает текущую сессию"
     },
     "sendMail": {
       "usage": "Применение: sendmail <ID_пользователя|all|help> [ID_шаблона]",
       "user_not_exist": "Пользователь с ID '%s' не найден.",
-      "start_composition": "Начинаем создание письма.\nВведите '/sendmail <заголовок>' для того, чтобы продолжить.\nВ любой момент времени, вы можете прекратить писать письмо, введя '/sendmail stop'.",
-      "templates": "Шаблоны писем скоро будут реализованы...",
+      "start_composition": "Начинаем создание письма.\nВведите '/sendmail <заголовок>' для того, чтобы продолжить.\nВ любой момент времени вы можете прекратить писать это письмо путём ввода '/sendmail stop'.",
+      "templates": "Шаблоны писем будут реализованы в будущем...",
       "invalid_arguments": "Некорректные аргументы.",
       "send_cancel": "Отправление сообщения было отменено.",
       "send_done": "Сообщение было отправлено пользователю %s!",
       "send_all_done": "Сообщение было отправлено всем пользователям!",
-      "not_composition_end": "Составление письма еще не было завершено.\nВведите '/sendmail %s' для продолжения или '/sendmail stop' для отмены",
+      "not_composition_end": "Составление письма еще не было завершено.\nВведите '/sendmail %s' для того, чтобы продолжить, либо '/sendmail stop' для отмены",
       "please_use": "Пожалуйста, введите '/sendmail %s'",
       "set_title": "Был задан следующий заголовок: '%s'.\nВведите '/sendmail <содержание>' для того, чтобы продолжить.",
       "set_contents": "Было задано следующее содержание письма: '%s'.\nВведите '/sendmail <отправитель>' для того, чтобы продолжить.",
-      "set_message_sender": "Был задан следующий отправитель письма: '%s'.\nВведите '/sendmail <ID_предмета|название_предмета|finish> [кол-во] [уровень]' для того, чтобы продолжить.",
-      "send": "Было задано следующее вложение: %s %s (%s уровня).\nВы можете продолжить добавлять предметы или ввести '/sendmail finish' для того, чтобы отправить письмо.",
+      "set_message_sender": "Был задан следующий отправитель письма: '%s'.\nВведите '/sendmail <ID_предмета|название_предмета|finish> [кол-во] [уровень]' для того, чтобы продолжить",
+      "send": "Было задано следующее вложение: %s %s (%s уровня)\nВы можете продолжить добавлять предметы или ввести '/sendmail finish' для того, чтобы отправить письмо.",
       "invalid_arguments_please_use": "Некорректные аргументы.\n Пожалуйста, введите '/sendmail %s'",
       "title": "<заголовок>",
       "message": "<содержание>",
       "sender": "<отправитель>",
       "arguments": "<ID_предмета|название_предмета|finish> [кол-во] [уровень]",
       "error": "ОШИБКА: Некорректная стадия создания %s. Проверьте stacktrace в консоли.",
-      "description": "Отправляет сообщение по почте заданному пользователю. Применение данной команды изменяется в зависимости от стадии написания письма."
+      "description": "Отправляет сообщение по почте указанному пользователю. Применение данной команды изменяется в зависимости от стадии написания письма"
     },
     "sendMessage": {
-      "usage": "Применение: sendmessage <игрок> <сообщение>",
-      "success": "Сообщение отправлено.",
-      "description": "Отправляет сообщение выбранному игроку от имени сервера"
+      "usage": "Применение: sendmessage <сообщение>",
+      "success": "Сообщение было отправлено.",
+      "description": "Отправляет сообщение выбранному игроку от имени сервера. При отсутствии конкретной цели, отправляет сообщение всем игрокам на сервере."
     },
     "setFetterLevel": {
-      "usage": "Применение: setfetterlevel <level>",
+      "usage": "Применение: setfetterlevel <уровень>",
       "range_error": "Значение уровня дружбы должно быть между 0 и 10.",
       "success": "Уровень дружбы стал равен %s.",
       "level_error": "Некорректный уровень дружбы.",
-      "description": "Устанавливает уровень дружбы для активного персонажа"
+      "description": "Задаёт уровень дружбы для активного персонажа"
     },
     "setProp": {
-      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
-      "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
+      "usage": "Применение: setprop|prop <св-во> <значение>\n\tВозможные значения <св-во>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(прод.) см. перечисление (enum) PlayerProperty для остальных возможных значений, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
+      "description": "Задаёт свойства аккаунта. С помощью данной команды может быть включен godmode, а также разблокированы этажи Коридора Бездны и изменён прогресс боевого пропуска."
     },
     "setStats": {
-      "usage": "Применение: setstats|stats <хар-ка> <значение>\n\tВозможные значения для <хар-ка>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(прод.) Бонус элементального урона: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Элементальное сопротивление: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
+      "usage": "Применение: setstats|stats <хар-ка> <значение>\n\tВозможные значения <хар-ка>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(прод.) Бонус элементального урона: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(прод.) Элементальное сопротивление: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
       "description": "Задаёт боевые характеристики для активного персонажа"
     },
-    "setWorldLevel": {
-      "usage": "Применение: setworldlevel <level>",
-      "value_error": "Уровень мира должен находиться в пределах 0-8.",
-      "success": "Уровень мира стал равен %s.",
-      "invalid_world_level": "Некорректный уровень мира.",
-      "description": "Задает уровень мира (Перезайдите в игру для того, чтобы увидеть результат)"
-    },
     "spawn": {
-      "usage": "Применение: spawn <ID_сущности> [кол-во] [уровень(только для монстров)] [<x> <y> <z>(только для монстров, опционально)]",
+      "usage": "Применение: spawn <ID_существа> [кол-во] [уровень(только для монстров)] [<x> <y> <z>(только для монстров, опционально)]",
       "success": "Заспавнено %s %s.",
-      "limit_reached": "Лимит существ в сцене был достигнут. Спавним %s сущностей вместо этого.",
-      "description": "Спавнит сущность неподалеку от вас"
+      "limit_reached": "Лимит существ в сцене был достигнут. Спавним %s существ вместо этого.",
+      "description": "Спавнит существо неподалеку от вас"
     },
     "stop": {
       "success": "Сервер завершает свою работу...",
-      "description": "Завершает работу сервера"
+      "description": "Останавливает работу сервера"
     },
     "talent": {
       "usage_1": "Для того, чтобы задать уровень таланта: /talent set <ID_таланта> <значение>",
-      "usage_2": "Еще один способ задать уровень таланта: /talent <n/e/q для стандартной атаки/способности на e/q> <значение>",
+      "usage_2": "Альтернативный способ задать уровень таланта: /talent <n/e/q для стандартной атаки/способности на E/Q> <значение>",
       "usage_3": "Для того, чтобы получить ID таланта: /talent getid",
       "lower_16": "Некорректный уровень таланта. Уровень должен быть ниже 16.",
       "set_id": "Уровень таланта стал равен %s.",
@@ -349,26 +311,26 @@
       "description": "Устанавливает уровень таланта для вашего активного персонажа"
     },
     "team": {
-      "usage": "Применение: team <add|remove|set> [ID_аватара,...] [индекс|first|last|индекс-индекс,...]",
+      "usage": "Применение: team <add|remove|set> [ID_персонажа,...] [индекс|first|last|индекс-индекс,...]",
       "invalid_usage": "Некорректное применение.",
-      "add_usage": "Применение (для добавления): team add <ID_аватара,...> [индекс]",
+      "add_usage": "Применение (для добавления): team add <ID_персонажа,...> [индекс]",
       "invalid_index": "Некорректный индекс.",
-      "add_too_much": "Сервер позволяет вам иметь максимум %d аватар(а) в команде.",
-      "failed_to_add_avatar": "Не удалось добавить ID аватара %s.",
+      "add_too_much": "Сервер позволяет вам иметь максимум %d персонаж(а) в команде.",
+      "failed_to_add_avatar": "Не удалось добавить персонажа с ID %s.",
       "remove_usage": "Применение (для удаления): team remove <индекс|first|last|индекс-индекс,...>",
       "failed_to_parse_index": "Не удалось обработать индекс: %s",
-      "remove_too_much": "Вы не можете удалить всех своих аватаров.",
-      "ignore_index": "Игнорированы индекс(ы): %s",
-      "set_usage": "Применение (для задания): team set <индекс> <avatarID>",
-      "index_out_of_range": "Указанный индекс вне границ.",
-      "failed_parse_avatar_id": "Не удалось распознать ID аватара: %s",
-      "avatar_already_in_team": "Аватар уже находится в команде.",
-      "avatar_not_found": "Аватар %d не найден.",
-      "description": "Вручную настройте свою команду."
+      "remove_too_much": "Вы не можете удалить всех своих персонажей.",
+      "ignore_index": "Были проигнорированы индекс(ы): %s",
+      "set_usage": "Применение (для задания): team set <индекс> <ID_персонажа>",
+      "index_out_of_range": "Указанный индекс находится вне границ.",
+      "failed_parse_avatar_id": "Не удалось распознать ID персонажа: %s",
+      "avatar_already_in_team": "Персонаж уже находится в команде.",
+      "avatar_not_found": "Персонаж %d не был найден.",
+      "description": "Позволяет вручную настроить свою команду."
     },
     "teleportAll": {
       "success": "Все игроки были телепортированы к вам.",
-      "error": "Данную команду возможно использовать только в многопользовательском режиме.",
+      "error": "Данную команду возможно применить только в многопользовательском режиме.",
       "description": "Телепортирует всех игроков в вашем мире к вам"
     },
     "teleport": {
@@ -376,36 +338,28 @@
       "usage": "Применение: tp [@<ID_игрока>] <x> <y> <z> [ID_сцены]",
       "specify_player_id": "Нужно указать ID игрока.",
       "invalid_position": "Некорректная позиция.",
+      "exists_error": "Указанная сцена не существует.",
       "success": "Игрок %s был телепортирован по координатам %s, %s, %s в сцене %s.",
-      "description": "Изменяет позицию игрока"
-    },
-    "unlimitenergy": {
-      "success": "UnlimitEnergy теперь %s для игрока %s.",
-      "config_error": "Команда недоступна, поскольку energyUsage равно false в config.json.",
-      "description": "Используйте данный элемент для того, чтобы не тратить энергию"
-    },
-    "unlocktower": {
-      "success": "Теперь открыты все этажи Коридора Бездны.",
-      "description": "Открывает все уровни башни"
+      "description": "Изменяет местоположение игрока"
     },
     "weather": {
-      "description": "Изменяет погоду.Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
-      "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist.",
-      "success": "Set weather ID to %s with climate type %s.",
-      "status": "Current weather ID is %s with climate type %s."
+      "usage": "Применение: weather [ID_погоды] [тип_климата]\nДоступные ID погоды можно найти в WeatherExcelConfigData.json.\nТипы климата: sunny (солнечно), cloudy (облачно), rain (дождь), thunderstorm (гроза), snow (снег), mist (туман)",
+      "success": "Установлен ID погоды %s, тип климата: %s.",
+      "status": "Текущий ID погоды: %s, тип климата: %s.",
+      "description": "Изменяет ID погоды и тип климата. ID погоды можно найти в WeatherExcelConfigData.json.\nТипы климата: sunny (солнечно), cloudy (облачно), rain (дождь), thunderstorm (гроза), snow (снег), mist (туман)"
     },
     "ban": {
-      "description": "Банит игрока",
+      "command_usage": "Применение: ban <@ID_игрока> [промежуток_времени] [причина]",
       "success": "Успех.",
       "failure": "Неудача, игрок не найден.",
       "invalid_time": "Не удалось определить промежуток времени.",
-      "command_usage": "Применение: ban <@Id игрока> [промежуток_времени] [причина]"
+      "description": "Запрещает игроку присоединяться к серверу (\"банит\")"
     },
     "unban": {
-      "description": "Разбанивает игрока",
+      "command_usage": "Применение: unban <@ID_игрока>",
       "success": "Успех.",
       "failure": "Неудача, игрок не найден.",
-      "command_usage": "Применение: unban <@Id_игрока>"
+      "description": "Разблокировывает доступ к серверу (\"разбанивает\")"
     }
   },
   "gacha": {
@@ -425,14 +379,14 @@
     "handbook": {
       "title": "Справочник гейм-мастера",
       "title_commands": "Команды",
-      "title_avatars": "Аватары",
+      "title_avatars": "Персонажи (аватары)",
       "title_items": "Предметы",
       "title_scenes": "Сцены",
       "title_monsters": "Монстры",
       "header_id": "ID",
       "header_command": "Команда",
       "header_description": "Описание",
-      "header_avatar": "Аватар",
+      "header_avatar": "Персонаж",
       "header_item": "Предмет",
       "header_scene": "Сцена",
       "header_monster": "Монстр"
