@@ -8,13 +8,13 @@ import emu.grasscutter.server.game.GameSession;
 
 @Opcodes(PacketOpcodes.AvatarSkillUpgradeReq)
 public class HandlerAvatarSkillUpgradeReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		AvatarSkillUpgradeReq req = AvatarSkillUpgradeReq.parseFrom(payload);
-		
-		// Level up avatar talent
-		session.getServer().getInventoryManager().upgradeAvatarSkill(session.getPlayer(), req.getAvatarGuid(), req.getAvatarSkillId());
-	}
+
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        AvatarSkillUpgradeReq req = AvatarSkillUpgradeReq.parseFrom(payload);
+
+        // Level up avatar talent
+        session.getServer().getInventorySystem().upgradeAvatarSkill(session.getPlayer(), req.getAvatarGuid(), req.getAvatarSkillId());
+    }
 
 }

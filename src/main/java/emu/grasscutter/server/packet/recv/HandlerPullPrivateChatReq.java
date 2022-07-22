@@ -9,12 +9,14 @@ import emu.grasscutter.server.packet.send.PacketPullPrivateChatRsp;
 
 @Opcodes(PacketOpcodes.PullPrivateChatReq)
 public class HandlerPullPrivateChatReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		PullPrivateChatReq req = PullPrivateChatReq.parseFrom(payload);
-		
-		session.send(new PacketPullPrivateChatRsp());
-	}
+
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        PullPrivateChatReq req = PullPrivateChatReq.parseFrom(payload);
+
+        session.getServer().getChatManager().handlePullPrivateChatReq(session.getPlayer(), req.getTargetUid());
+
+        // session.send(new PacketPullPrivateChatRsp(req.getTargetUid()));
+    }
 
 }

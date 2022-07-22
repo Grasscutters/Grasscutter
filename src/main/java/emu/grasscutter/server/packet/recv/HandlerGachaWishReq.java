@@ -16,7 +16,7 @@ public class HandlerGachaWishReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         GachaWishReq req = GachaWishReq.parseFrom(payload);
 
-        GachaBanner banner = session.getServer().getGachaManager().getGachaBanners().get(req.getGachaScheduleId());
+        GachaBanner banner = session.getServer().getGachaSystem().getGachaBanners().get(req.getGachaScheduleId());
         PlayerGachaBannerInfo gachaInfo = session.getPlayer().getGachaInfo().getBannerInfo(banner);
 
         gachaInfo.setFailedChosenItemPulls(0);

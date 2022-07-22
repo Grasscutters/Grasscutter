@@ -11,11 +11,12 @@ import lombok.ToString;
 import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
+
+import static emu.grasscutter.config.Configuration.SCRIPT;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import static emu.grasscutter.Configuration.SCRIPT;
 
 @ToString
 @Setter
@@ -32,7 +33,7 @@ public class SceneMeta {
         return new SceneMeta().load(sceneId);
     }
 
-    public SceneMeta load(int sceneId){
+    public SceneMeta load(int sceneId) {
         // Get compiled script if cached
         CompiledScript cs = ScriptLoader.getScriptByPath(
                 SCRIPT("Scene/" + sceneId + "/scene" + sceneId + "." + ScriptLoader.getScriptType()));

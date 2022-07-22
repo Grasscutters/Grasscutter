@@ -28,6 +28,8 @@
         "login_token_attempt": "[Dispatch] Client %s is trying to log in via token.",
         "login_token_error": "[Dispatch] Client %s failed to log in via token.",
         "login_token_success": "[Dispatch] Client %s logged in via token as %s.",
+        "login_password_error": "[Dispatch] Client %s failed to log in via password.",
+        "login_password_storage_error": "[Dispatch] Client %s failed to log in via password because there is no password in the database.",
         "combo_token_success": "[Dispatch] Client %s succeed to exchange combo token.",
         "combo_token_error": "[Dispatch] Client %s failed to exchange combo token.",
         "account_login_create_success": "[Dispatch] Client %s failed to log in: Account %s created.",
@@ -37,6 +39,9 @@
         "session_key_error": "Wrong session key.",
         "username_error": "Username not found.",
         "username_create_error": "Username not found, create failed.",
+        "password_error": "Invalid Password",
+        "password_length_error": "Password length must be greater then or equal to 8",
+        "password_storage_error": "You don't have a password for your account. Please contact an administrator.",
         "server_max_player_limit": "The number of online players has reached the limit"
       },
       "router_error": "[Dispatch] Unable to attach router."
@@ -89,6 +94,7 @@
       }
     },
     "execution": {
+      "usage_prefix": "Usage: ",
       "player_exist_error": "Player not found.",
       "player_offline_error": "Player is not online.",
       "item_player_exist_error": "Invalid item or UID.",
@@ -109,7 +115,6 @@
       "success": "Success"
     },
     "account": {
-      "command_usage": "Usage: account <create|delete> <username> [UID]",
       "invalid": "Invalid UID.",
       "exists": "An account with this username and/or UID already exists.",
       "create": "Account created with UID %s.",
@@ -118,7 +123,6 @@
       "description": "Modify user accounts"
     },
     "announce": {
-      "command_usage": "Usage: announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
       "send_success": "Send an announcement successfully, you can revoke it by /a revoke %s.",
       "refresh_success": "Refresh announcement config file successfully. [Total %s]",
       "revoke_done": "Try to revoke announcement %s.",
@@ -126,7 +130,6 @@
       "description": "Send announcement to all online players, or manage server's announcement"
     },
     "clear": {
-      "command_usage": "Usage: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Cleared weapons for %s.",
       "artifacts": "Cleared artifacts for %s.",
       "materials": "Cleared materials for %s.",
@@ -137,19 +140,16 @@
       "description": "Deletes unequipped unlocked items from your inventory. Defaults to 4* level 1 refinement 1 or lower, but can be set higher."
     },
     "coop": {
-      "usage": "Usage: coop [host UID]",
       "success": "Summoned %s to %s's world.",
       "description": "Forces someone to join the world of others. If no one is targeted, it sends you into co-op mode anyway."
     },
     "enter_dungeon": {
-      "usage": "Usage: enterdungeon <dungeonID>",
       "changed": "Changed to dungeon %s.",
       "not_found_error": "Dungeon does not exist.",
       "in_dungeon_error": "You are already in that dungeon.",
       "description": "Enter a dungeon"
     },
     "give": {
-      "usage": "Usage: give <itemID|avatarID|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [x<amount>] [lv<level>] [r<refinement>]",
       "usage_relic": "Usage: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
       "illegal_relic": "This artifactID belongs to a blacklisted range, it may not be the one you wanted.",
       "given": "Given %s of %s to %s.",
@@ -164,7 +164,6 @@
       "description": "Heal all characters in your current team."
     },
     "help": {
-      "usage": "Usage: ",
       "aliases": "Aliases: ",
       "available_commands": "Available commands: ",
       "tip_need_permission": "Permission: ",
@@ -179,13 +178,11 @@
       "description": "Kicks the specified player from the server (WIP)"
     },
     "killall": {
-      "usage": "Usage: killall [playerUID] [sceneID]",
       "scene_not_found_in_player_world": "Scene not found in player world.",
       "kill_monsters_in_scene": "Killing %s monsters in scene %s.",
       "description": "Kill all entities"
     },
     "killCharacter": {
-      "usage": "Usage: killcharacter [playerID]",
       "success": "Killed %s's current character.",
       "description": "Kills the players current character"
     },
@@ -200,7 +197,6 @@
       "description": "List online players"
     },
     "permission": {
-      "usage": "Usage: permission <add|remove> <username> <permission>",
       "add": "Permission added.",
       "has_error": "They already have this permission!",
       "remove": "Permission removed.",
@@ -213,7 +209,6 @@
       "description": "Get coordinates"
     },
     "quest": {
-      "usage": "quest <add|finish> [questID]",
       "added": "Quest %s added.",
       "finished": "Finished quest %s.",
       "not_found": "Quest not found.",
@@ -231,12 +226,11 @@
       "description": "Resets the constellation level on your current active character, you will need to relog after using the command to see any changes"
     },
     "resetShopLimit": {
-      "usage": "Usage: resetshop <playerID>",
       "success": "Reset complete.",
       "description": "Reset target player's shop refresh time"
     },
     "sendMail": {
-      "usage": "Usage: sendmail <userID|all|help> [templateID]",
+      "give_usage": "Usage: give <player> <itemID|itemName> [amount] [level] [refinement]",
       "user_not_exist": "The user with an ID of '%s' does not exist.",
       "start_composition": "Starting composition of message.\nPlease use '/sendmail <title>' to continue.\nYou can use '/sendmail stop' at any time.",
       "templates": "Mail templates coming soon implemented...",
@@ -259,27 +253,22 @@
       "description": "Sends mail to the specified user. The usage of this command changes based on its composition state"
     },
     "sendMessage": {
-      "usage": "Usage: sendmessage <message>",
       "success": "Message sent.",
       "description": "Sends a message to a player as the server. If used with no target, sends to all players on the server."
     },
     "setFetterLevel": {
-      "usage": "Usage: setfetterlevel <level>",
       "range_error": "Fetter level must be between 0 and 10.",
       "success": "Fetter level set to %s.",
       "level_error": "Invalid fetter level.",
       "description": "Sets your fetter level for your current active character"
     },
     "setProp": {
-      "usage": "Usage: setprop|prop <prop> <value>\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
-      "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress."
+      "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress.\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setStats": {
-      "usage": "Usage: setstats|stats <stat> <value>\n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-      "description": "Sets fight property for your current active character"
+      "description": "Sets fight property for your current active character\n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys"
     },
     "spawn": {
-      "usage": "Usage: spawn <entityID> [amount] [level(monster only)] [<x> <y> <z>(monster only, optional)]",
       "success": "Spawned %s of %s.",
       "limit_reached": "Scene spawn limit reached. Spawning %s entities instead.",
       "description": "Spawns an entity near you"
@@ -289,16 +278,12 @@
       "description": "Stops the server"
     },
     "talent": {
-      "usage_1": "To set talent level: /talent set <talentID> <value>",
-      "usage_2": "Another way to set talent level: /talent <n or e or q> <value>",
-      "usage_3": "To get talent ID: /talent getid",
       "lower_16": "Invalid talent level. Level should be lower than 16.",
       "set_id": "Set talent to %s.",
       "set_atk": "Set talent Normal ATK to %s.",
       "set_e": "Set talent E to %s.",
       "set_q": "Set talent Q to %s.",
       "invalid_skill_id": "Invalid skill ID.",
-      "set_this": "Set this talent to %s.",
       "invalid_level": "Invalid talent level.",
       "normal_attack_id": "Normal Attack ID %s.",
       "e_skill_id": "E skill ID %s.",
@@ -306,17 +291,13 @@
       "description": "Set talent level for your current active character"
     },
     "team": {
-      "usage": "Usage: team <add|remove|set> [avatarID,...] [index|first|last|index-index,...]",
       "invalid_usage": "Invalid usage.",
-      "add_usage": "Usage (add): team add <avatarID,...> [index]",
       "invalid_index": "Index is invalid.",
       "add_too_much": "The server only allows you to have at most %d avatar(s) in your team.",
       "failed_to_add_avatar": "Failed to add avatar ID %s.",
-      "remove_usage": "Usage (remove): team remove <index|first|last|index-index,...>",
       "failed_to_parse_index": "Failed to parse index: %s",
       "remove_too_much": "You can't remove all your avatars.",
       "ignore_index": "Ignored index(es): %s",
-      "set_usage": "Usage (set): team set <index> <avatarID>",
       "index_out_of_range": "The index you specified is out of range.",
       "failed_parse_avatar_id": "Failed to parse avatar ID: %s",
       "avatar_already_in_team": "Avatar is already in team.",
@@ -329,29 +310,27 @@
       "description": "Teleports all players in your world to your position"
     },
     "teleport": {
-      "usage_server": "Usage: tp @<playerID> <x> <y> <z> [sceneID]",
-      "usage": "Usage: tp [@<playerID>] <x> <y> <z> [sceneID]",
-      "specify_player_id": "You must specify a player ID.",
       "invalid_position": "Invalid position.",
       "exists_error": "The specified scene does not exist.",
       "success": "Teleported %s to %s, %s, %s in scene %s.",
       "description": "Change the player's position"
     },
     "weather": {
-      "usage": "Usage: weather [weatherId] [climateType]\nWeather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist",
       "success": "Set weather ID to %s with climate type %s.",
       "status": "Current weather ID is %s with climate type %s.",
       "description": "Changes weather ID and climate type. Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist"
     },
     "ban": {
-      "command_usage": "Usage: ban <@playerId> [timestamp] [reason]",
       "success": "Successful.",
       "failure": "Failed, player not found.",
       "invalid_time": "Unable to parse timestamp.",
       "description": "Ban a player"
     },
+    "unlockall": {
+      "success": "Unlocked all open states for %s.",
+      "description": "Unlocks all open states for a player."
+    },
     "unban": {
-      "command_usage": "Usage: unban <@playerId>",
       "success": "Successful.",
       "failure": "Failed, player not found.",
       "description": "Unban a player"

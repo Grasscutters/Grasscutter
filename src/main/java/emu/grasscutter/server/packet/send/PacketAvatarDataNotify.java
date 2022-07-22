@@ -13,11 +13,11 @@ import emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam;
 public class PacketAvatarDataNotify extends BasePacket {
 	
 	public PacketAvatarDataNotify(Player player) {
-		super(PacketOpcodes.AvatarDataNotify, 2);
-
+		super(PacketOpcodes.AvatarDataNotify, true);
+		
 		AvatarDataNotify.Builder proto = AvatarDataNotify.newBuilder()
 				.setCurAvatarTeamId(player.getTeamManager().getCurrentTeamId())
-				.setChooseAvatarGuid(player.getTeamManager().getCurrentCharacterGuid())
+				//.setChooseAvatarGuid(player.getTeamManager().getCurrentCharacterGuid())
 				.addAllOwnedFlycloakList(player.getFlyCloakList())
 				.addAllOwnedCostumeList(player.getCostumeList());
 				
@@ -36,6 +36,12 @@ public class PacketAvatarDataNotify extends BasePacket {
 			}
 			
 			proto.putAvatarTeamMap(entry.getKey(), avatarTeam.build());
+		}
+		
+		// Set main character
+		Avatar mainCharacter = player.getAvatars().getAvatarById(player.getMainCharacterId());
+		if (mainCharacter != null) {
+		    proto.setChooseAvatarGuid(mainCharacter.getGuid());
 		}
 		
 		this.setData(proto.build());

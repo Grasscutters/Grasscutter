@@ -30,7 +30,6 @@ import emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo;
 import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
-import emu.grasscutter.server.event.player.PlayerMoveEvent;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
@@ -64,13 +63,13 @@ public class EntityAvatar extends GameEntity {
 		this.avatar.setCurrentEnergy();
 	}
 
-	public Player getPlayer() {
-		return avatar.getPlayer();
-	}
+    public Player getPlayer() {
+        return avatar.getPlayer();
+    }
 
-	@Override
-	public Position getPosition() {
-		return getPlayer().getPos();
+    @Override
+    public Position getPosition() {
+        return getPlayer().getPosition();
 	}
 
 	@Override
@@ -107,12 +106,12 @@ public class EntityAvatar extends GameEntity {
 		return 0;
 	}
 
-	@Override
-	public void onDeath(int killerId) {
-		this.killedType = PlayerDieType.PLAYER_DIE_TYPE_KILL_BY_MONSTER;
-		this.killedBy = killerId;
-		clearEnergy(ChangeEnergyReason.CHANGE_ENERGY_REASON_NONE);
-	}
+    @Override
+    public void onDeath(int killerId) {
+        this.killedType = PlayerDieType.PLAYER_DIE_TYPE_KILL_BY_MONSTER;
+        this.killedBy = killerId;
+        clearEnergy(ChangeEnergyReason.CHANGE_ENERGY_REASON_NONE);
+    }
 
 	public void onDeath(PlayerDieType dieType, int killerId) {
 		this.killedType = dieType;
@@ -126,7 +125,7 @@ public class EntityAvatar extends GameEntity {
 
 		if (healed > 0f) {
 			getScene().broadcastPacket(
-				new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP, healed, PropChangeReason.PROP_CHANGE_REASON_ABILITY, ChangeHpReason.CHANGE_HP_REASON_CHANGE_HP_ADD_ABILITY)
+                new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP, healed, PropChangeReason.PROP_CHANGE_REASON_ABILITY, ChangeHpReason.CHANGE_HP_REASON_ADD_ABILITY)
 			);
 		}
 
@@ -138,14 +137,14 @@ public class EntityAvatar extends GameEntity {
 		FightProperty curEnergyProp = this.getAvatar().getSkillDepot().getElementType().getCurEnergyProp();
 		FightProperty maxEnergyProp = this.getAvatar().getSkillDepot().getElementType().getMaxEnergyProp();
 
-		// Get max energy.
-		float maxEnergy = this.avatar.getFightProperty(maxEnergyProp);
+        // Get max energy.
+        float maxEnergy = this.avatar.getFightProperty(maxEnergyProp);
 
-		// Set energy to zero.
-		this.avatar.setCurrentEnergy(curEnergyProp, 0);
+        // Set energy to zero.
+        this.avatar.setCurrentEnergy(curEnergyProp, 0);
 
-		// Send packets.
-		this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, curEnergyProp));
+        // Send packets.
+        this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, curEnergyProp));
 
 		if (reason == ChangeEnergyReason.CHANGE_ENERGY_REASON_SKILL_START) {
 			this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, curEnergyProp, -maxEnergy, reason));
@@ -166,10 +165,10 @@ public class EntityAvatar extends GameEntity {
 		// Get energy recharge.
 		float energyRecharge = this.getFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY);
 
-		// Scale amount by energy recharge, if the amount is not flat.
-		if (!isFlat) {
-			amount *= energyRecharge;
-		}
+        // Scale amount by energy recharge, if the amount is not flat.
+        if (!isFlat) {
+            amount *= energyRecharge;
+        }
 
 		// Determine the new energy value.
 		float newEnergy = Math.min(curEnergy + amount, maxEnergy);

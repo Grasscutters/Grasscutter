@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
@@ -21,14 +22,13 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import org.jetbrains.annotations.NotNull;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 import java.util.*;
 
-import static emu.grasscutter.Configuration.GAME_OPTIONS;
-
-public class StaminaManager {
+public class StaminaManager extends BasePlayerManager {
 
     // TODO: Skiff state detection?
-    private final Player player;
     private static final HashMap<String, HashSet<MotionState>> MotionStatesCategorized = new HashMap<>() {{
         put("CLIMB", new HashSet<>(List.of(
                 MotionState.MOTION_STATE_CLIMB, // sustained, when not moving no cost no recover
@@ -159,11 +159,11 @@ public class StaminaManager {
     }};
 
     public static void initialize() {
-    	// TODO: Initialize foods etc.
+        // TODO: Initialize foods etc.
     }
 
     public StaminaManager(Player player) {
-        this.player = player;
+        super(player);
     }
 
     // Accessors
@@ -529,20 +529,20 @@ public class StaminaManager {
         }
         // Bow avatar charged attack
         Avatar currentAvatar = player.getTeamManager().getCurrentAvatarEntity().getAvatar();
-        
+
         switch (currentAvatar.getAvatarData().getWeaponType()) {
-        	case WEAPON_BOW:
-        		return getBowSustainedCost(skillCasting);
-        	case WEAPON_CLAYMORE:
-        		return getClaymoreSustainedCost(skillCasting);
-        	case WEAPON_CATALYST:
-        		return getCatalystCost(skillCasting);
-        	case WEAPON_POLE:
-        		return getPolearmCost(skillCasting);
-        	case WEAPON_SWORD_ONE_HAND:
-        		return getSwordCost(skillCasting);
+            case WEAPON_BOW:
+                return getBowSustainedCost(skillCasting);
+            case WEAPON_CLAYMORE:
+                return getClaymoreSustainedCost(skillCasting);
+            case WEAPON_CATALYST:
+                return getCatalystCost(skillCasting);
+            case WEAPON_POLE:
+                return getPolearmCost(skillCasting);
+            case WEAPON_SWORD_ONE_HAND:
+                return getSwordCost(skillCasting);
         }
-        
+
         return new Consumption();
     }
 

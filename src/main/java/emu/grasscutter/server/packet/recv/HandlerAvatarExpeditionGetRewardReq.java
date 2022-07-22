@@ -34,13 +34,13 @@ public class HandlerAvatarExpeditionGetRewardReq extends PacketHandler {
 
         List<GameItem> items = new LinkedList<>();
 
-        if (session.getServer().getExpeditionManager().getExpeditionRewardDataList().containsKey(expInfo.getExpId())) {
-            for (ExpeditionRewardDataList RewardDataList : session.getServer().getExpeditionManager().getExpeditionRewardDataList().get(expInfo.getExpId())) {
-                if(RewardDataList.getHourTime() == expInfo.getHourTime()){
-                    if(!RewardDataList.getExpeditionRewardData().isEmpty()){
+        if (session.getServer().getExpeditionSystem().getExpeditionRewardDataList().containsKey(expInfo.getExpId())) {
+            for (ExpeditionRewardDataList RewardDataList : session.getServer().getExpeditionSystem().getExpeditionRewardDataList().get(expInfo.getExpId())) {
+                if (RewardDataList.getHourTime() == expInfo.getHourTime()) {
+                    if (!RewardDataList.getExpeditionRewardData().isEmpty()) {
                         for (ExpeditionRewardData RewardData :RewardDataList.getExpeditionRewardData()) {
                             int num = RewardData.getMinCount();
-                            if(RewardData.getMinCount() != RewardData.getMaxCount()){
+                            if (RewardData.getMinCount() != RewardData.getMaxCount()) {
                                 num = Utils.randomRange(RewardData.getMinCount(), RewardData.getMaxCount());
                             }
                             items.add(new GameItem(RewardData.getItemId(), num));
