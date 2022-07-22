@@ -10,6 +10,7 @@ import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.game.BaseGameSystem;
@@ -55,12 +56,12 @@ public class CombineManger extends BaseGameSystem {
 
     public boolean unlockCombineDiagram(Player player, GameItem diagramItem) {
         // Make sure this is actually a diagram.
-        if (!diagramItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_COMBINE")) {
+        if (diagramItem.getItemData().getItemUse().get(0).getUseOp() != ItemUseOp.ITEM_USE_UNLOCK_COMBINE) {
             return false;
         }
 
         // Determine the combine item we should unlock.
-        int combineId = Integer.parseInt(diagramItem.getItemData().getItemUse().get(0).getUseParam().get(0));
+        int combineId = Integer.parseInt(diagramItem.getItemData().getItemUse().get(0).getUseParam()[0]);
 
         // Remove the diagram from the player's inventory.
         // We need to do this here, before sending CombineFormulaDataNotify, or the the combine UI won't correctly

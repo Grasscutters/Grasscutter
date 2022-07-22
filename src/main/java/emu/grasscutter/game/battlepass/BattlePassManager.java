@@ -29,6 +29,7 @@ import emu.grasscutter.game.player.BasePlayerDataManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.BattlePassMissionRefreshType;
 import emu.grasscutter.game.props.BattlePassMissionStatus;
+import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle;
 import emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus;
@@ -195,7 +196,7 @@ public class BattlePassManager extends BasePlayerDataManager {
         }
 
         // Get possible item choices.
-        String[] choices = rewardItemData.getItemUse().get(0).getUseParam().get(0).split(",");
+        String[] choices = rewardItemData.getItemUse().get(0).getUseParam()[0].split(",");
         if (choices.length < index) {
             return;
         }
@@ -205,7 +206,7 @@ public class BattlePassManager extends BasePlayerDataManager {
         int chosenId = Integer.parseInt(choices[index - 1]);
 
         // For ITEM_USE_ADD_SELECT_ITEM chests, we can directly add the item specified in the chest's data.
-        if (rewardItemData.getItemUse().get(0).getUseOp().equals("ITEM_USE_ADD_SELECT_ITEM")) {
+        if (rewardItemData.getItemUse().get(0).getUseOp() == ItemUseOp.ITEM_USE_ADD_SELECT_ITEM) {
             GameItem rewardItem = new GameItem(GameData.getItemDataMap().get(chosenId), entry.getItemCount());
             rewardItems.add(rewardItem);
         }
