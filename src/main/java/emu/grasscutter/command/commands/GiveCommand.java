@@ -23,8 +23,15 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Command(label = "give", usage = "give <itemId|avatarId|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [lv<level>] [r<refinement>] [x<amount>] | give <artifactId> [lv<level>] [x<amount>] [mainPropId] [<appendPropId>[,<times>]]...", aliases = {
-        "g", "item", "giveitem"}, permission = "player.give", permissionTargeted = "player.give.others", description = "commands.give.description")
+@Command(
+    label = "give",
+    aliases = {"g", "item", "giveitem"},
+    usage = {
+        "(<itemId>|<avatarId>|all|weapons|mats|avatars) [lv<level>] [r<refinement>] [x<amount>] [c<constellation>]",
+        "<artifactId> [lv<level>] [x<amount>] [<mainPropId>] [<appendPropId>[,<times>]]..."},
+    permission = "player.give",
+    permissionTargeted = "player.give.others",
+    threading = true)
 public final class GiveCommand implements CommandHandler {
     private static Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java doesn't have raw string literals :(
     private static Pattern refineRegex = Pattern.compile("r(\\d+)");
@@ -60,7 +67,7 @@ public final class GiveCommand implements CommandHandler {
         public GiveAllType giveAllType = GiveAllType.NONE;
     };
 
-    private static GiveItemParameters parseArgs(Player sender, List<String> args) throws IllegalArgumentException {
+    private GiveItemParameters parseArgs(Player sender, List<String> args) throws IllegalArgumentException {
         GiveItemParameters param = new GiveItemParameters();
 
         // Extract any tagged arguments (e.g. "lv90", "x100", "r5")
@@ -92,7 +99,7 @@ public final class GiveCommand implements CommandHandler {
 
         // At this point, first remaining argument MUST be itemId/avatarId
         if (args.size() < 1) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.give.usage");  // Reachable if someone does `/give lv90` or similar
+            sendUsageMessage(sender);  // Reachable if someone does `/give lv90` or similar
             throw new IllegalArgumentException();
         }
         String id = args.remove(0);
@@ -162,7 +169,7 @@ public final class GiveCommand implements CommandHandler {
                     throw e;
                 }
             } else {
-                CommandHandler.sendTranslatedMessage(sender, "commands.give.usage");
+                sendUsageMessage(sender);
                 throw new IllegalArgumentException();
             }
         }
@@ -173,7 +180,7 @@ public final class GiveCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 1) { // *No args*
-            CommandHandler.sendTranslatedMessage(sender, "commands.give.usage");
+            sendUsageMessage(sender);
             return;
         }
         try {
@@ -257,7 +264,7 @@ public final class GiveCommand implements CommandHandler {
         if (avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_MALE) {
             avatar.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(504));
         }
-        else if(avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
+        else if (avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
             avatar.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(704));
         }
 
@@ -352,11 +359,11 @@ public final class GiveCommand implements CommandHandler {
         return affixes;
     }
 
-	private static int getAppendPropId(String substatText, ItemData itemData) throws IllegalArgumentException {
-		// If the given substat text is an integer, we just use that as the append prop ID.
-		try {
-			return Integer.parseInt(substatText);
-		} catch (NumberFormatException ignored) {
+    private static int getAppendPropId(String substatText, ItemData itemData) throws IllegalArgumentException {
+        // If the given substat text is an integer, we just use that as the append prop ID.
+        try {
+            return Integer.parseInt(substatText);
+        } catch (NumberFormatException ignored) {
             // If the argument was not an integer, we try to determine
             // the append prop ID from the given text + artifact information.
             // A substat string has the format `substat_tier`, with the
@@ -378,8 +385,8 @@ public final class GiveCommand implements CommandHandler {
             substatTier -= 1;  // 1-indexed to 0-indexed
             substatTier = Math.min(Math.max(0, substatTier), substats.size() - 1);
             return substats.get(substatTier);
-		}
-	}
+        }
+    }
 
     private static void parseRelicArgs(GiveItemParameters param, List<String> args) throws IllegalArgumentException {
         // Get the main stat from the arguments.
@@ -476,11 +483,11 @@ public final class GiveCommand implements CommandHandler {
         10000-10008, 11411, 11506-11508, 12505, 12506, 12508, 12509,
         13503, 13506, 14411, 14503, 14505, 14508, 15504-15506
         """);
-    
+
     private static final SparseSet illegalRelicIds = new SparseSet("""
         20001, 23300-23340, 23383-23385, 78310-78554, 99310-99554
         """);
-    
+
     private static final SparseSet illegalItemIds = new SparseSet("""
         100086, 100087, 100100-101000, 101106-101110, 101306, 101500-104000,
         105001, 105004, 106000-107000, 107011, 108000, 109000-110000,

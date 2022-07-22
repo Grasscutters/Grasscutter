@@ -10,7 +10,6 @@ public class MonsterDescribeData extends GameResource {
     private long nameTextMapHash;
     private int titleID;
     private int specialNameLabID;
-    private String icon;
 	
 	@Override
 	public int getId() {
@@ -27,10 +26,6 @@ public class MonsterDescribeData extends GameResource {
 
 	public int getSpecialNameLabID() {
 		return specialNameLabID;
-	}
-
-	public String getIcon() {
-		return icon;
 	}
 
 	@Override

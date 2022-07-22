@@ -1,5 +1,8 @@
 package emu.grasscutter.game.managers;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.WatcherTriggerType;
@@ -7,13 +10,10 @@ import emu.grasscutter.server.packet.send.PacketPlayerPropNotify;
 import emu.grasscutter.server.packet.send.PacketResinChangeNotify;
 import emu.grasscutter.utils.Utils;
 
-import static emu.grasscutter.Configuration.GAME_OPTIONS;
-
-public class ResinManager {
-    private final Player player;
+public class ResinManager extends BasePlayerManager {
 
     public ResinManager(Player player) {
-        this.player = player;
+        super(player);
     }
 
     /********************
@@ -26,7 +26,7 @@ public class ResinManager {
         }
 
         int currentResin = this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
-        
+
         // Check if the player has sufficient resin.
         if (currentResin < amount) {
             return false;
@@ -39,16 +39,16 @@ public class ResinManager {
         // Check if this has taken the player under the recharge cap,
         // starting the recharging process.
         if (this.player.getNextResinRefresh() == 0 && newResin < GAME_OPTIONS.resinOptions.cap) {
-		    int currentTime = Utils.getCurrentSeconds();
+            int currentTime = Utils.getCurrentSeconds();
             this.player.setNextResinRefresh(currentTime + GAME_OPTIONS.resinOptions.rechargeTime);
         }
 
         // Send packets.
         this.player.sendPacket(new PacketResinChangeNotify(this.player));
-        
+
         // Battle Pass trigger
         this.player.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_COST_MATERIAL, 106, amount); // Resin item id = 106
-       
+
         return true;
     }
 
@@ -122,7 +122,7 @@ public class ResinManager {
      * Player login.
      ********************/
     public synchronized void onPlayerLogin() {
-		// If resin usage is disabled, set resin to cap.
+        // If resin usage is disabled, set resin to cap.
         if (!GAME_OPTIONS.resinOptions.resinUsage) {
             this.player.setProperty(PlayerProperty.PROP_PLAYER_RESIN, GAME_OPTIONS.resinOptions.cap);
             this.player.setNextResinRefresh(0);
@@ -132,7 +132,7 @@ public class ResinManager {
         // we need to restart recharging here.
         int currentResin = this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
         int currentTime = Utils.getCurrentSeconds();
-        
+
         if (currentResin < GAME_OPTIONS.resinOptions.cap && this.player.getNextResinRefresh() == 0) {
             this.player.setNextResinRefresh(currentTime + GAME_OPTIONS.resinOptions.rechargeTime);
         }

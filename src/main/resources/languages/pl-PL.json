@@ -28,6 +28,8 @@
         "login_token_attempt": "[Account] Klient %s próbuje się zalogować poprzez token.",
         "login_token_error": "[Account] Logowanie klienta %s poprzez token nie powiodło się.",
         "login_token_success": "[Account] Klient %s zalogował się poprzez token jako %s.",
+        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
+        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
         "combo_token_success": "[Account] Klient %s pomyślnie wymienił token combo.",
         "combo_token_error": "[Account] Wymienienie tokena combo klienta %s nie powiodło się.",
         "account_login_create_success": "[Account] Logowanie klienta %s powiodło się: konto %s zostało stworzone.",
@@ -37,6 +39,9 @@
         "session_key_error": "Błędny klucz sesji.",
         "username_error": "Podana nazwa użytkownika nie istnieje.",
         "username_create_error": "Podana nazwa użytkownika nie istnieje. Automatyczne tworzenie nowego konta nie powiodło się.",
+        "password_error": "🇺🇸Invalid Password",
+        "password_length_error": "🇺🇸Password length must be greater then or equal to 8",
+        "password_storage_error": "🇺🇸You don't have a password for your account. Please contact an administrator.",
         "server_max_player_limit": "Liczba graczy online osiągnęła swój limit."
       },
       "router_error": "[Dispatch] Wystąpił błąd podczas tworzenia routera."
@@ -89,6 +94,7 @@
       }
     },
     "execution": {
+      "usage_prefix": "Użycie: ",
       "player_exist_error": "Gracz nie istnieje.",
       "player_offline_error": "Gracz nie jest online.",
       "item_player_exist_error": "Błędny przedmiot lub ID.",
@@ -109,7 +115,6 @@
       "success": "Sukces"
     },
     "account": {
-      "usage": "account <create|delete> <nazwa gracza> [UID]",
       "invalid": "Błędne UID gracza.",
       "exists": "Konto o tej nazwie użytkownika i/lub UID już istnieje.",
       "create": "Stworzono konto z UID %s.",
@@ -118,7 +123,6 @@
       "description": "Twórz lub usuń konta."
     },
     "announce": {
-      "usage": "announce <tpl> <ID szablonu> LUB announce <refresh> LUB announce <wiadomość> LUB announce <revoke> <ID szablonu>",
       "send_success": "Ogłoszenie zostało pomyślnie wysłane. Możesz je odwołać używając \"announce revoke %s\".",
       "refresh_success": "Odświeżono konfigurację ogłoszeń (w sumie jest ich %s).",
       "revoke_done": "Pomyślnie odwołano ogłoszenie %s.",
@@ -126,7 +130,6 @@
       "description": "Wysyłaj i zarządzaj ogłoszeniami."
     },
     "clear": {
-      "usage": "Użycie: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Usunięto bronie gracza %s.",
       "artifacts": "Usunięto artefakty gracza %s.",
       "materials": "Usunięto materiały gracza %s.",
@@ -137,19 +140,16 @@
       "description": "Usuń niewyposażone przedmioty wskazanego gracza."
     },
     "coop": {
-      "usage": "coop @[ID gracza]",
       "success": "Pomyślnie dodano gracza %s do świata gracza %s.",
       "description": "Dodaj wskazanego gracza do swojego świata."
     },
     "enter_dungeon": {
-      "usage": "enterdungeon <ID lochu>",
       "changed": "Pomyślnie zmieniono loch na %s.",
       "not_found_error": "Podane ID lochu jest nieprawidłowe.",
       "in_dungeon_error": "Wskazany gracz już jest w tym lochu.",
       "description": "Zmień loch, w którym ma się znajdować wskazany gracz."
     },
     "give": {
-      "usage": "give <ID przedmiotu|ID awataru|all|weapons|mats|avatars> [x<ilość>] [lv<poziom>] [r<poziom ulepszenia>]",
       "usage_relic": "give <ID reliktu> [ID pierwszego przedmiotu] [<ID drugiego przedmiotu>[, <ile razy je połączyć>]]... [lv<poziom od 0 do 20>]",
       "illegal_relic": "Ten ID reliktu znajduje się na czarnej liście i może być nie tym, czego szukasz.",
       "given": "Dodano %s przedmiotów o ID %s graczowi o ID %s.",
@@ -160,52 +160,43 @@
       "description": "Dodaj wybrane przedmioty do ekwipunku wybranego gracza."
     },
     "heal": {
-      "usage": "heal",
       "success": "Wszystkie postacie zostały uleczone.",
       "description": "Ulecz wszystkie postacie w swoim zespole."
     },
     "help": {
-      "usage": "help [nazwa komendy]",
-      "usage_prefix": "Użycie: ",
       "aliases": "Aliasy: ",
       "available_commands": "Dostępne komendy: ",
-      "description": "Wyświetl wszystkie komendy lub informacje na temat danej komendy.",
       "tip_need_permission": "Wymagane uprawnienie: ",
       "tip_need_no_permission": "brak",
       "tip_permission_targeted": "(użycie tego polecenia na innych graczach również wymaga uprawnienia %s)",
-      "warn_player_has_no_permission": "Nie masz wystarczających uprawnień do używania tej komendy."
+      "warn_player_has_no_permission": "Nie masz wystarczających uprawnień do używania tej komendy.",
+      "description": "Wyświetl wszystkie komendy lub informacje na temat danej komendy."
     },
     "kick": {
-      "usage": "kick",
       "player_kick_player": "Gracz [%s:%s] wyrzucił gracza [%s:%s].",
       "server_kick_player": "Wyrzucono gracza [%s:%s].",
       "description": "Wyrzuć wskazanego gracza z gry."
     },
     "killall": {
-      "usage": "killall @[ID gracza] [ID sceny]",
       "scene_not_found_in_player_world": "Błędny ID sceny.",
       "kill_monsters_in_scene": "Zabito %s potworów w scenie %s.",
       "description": "Zabij wszystkie potwory we wskazanej scenie."
     },
     "killCharacter": {
-      "usage": "killcharacter @[ID gracza]",
       "success": "Pomyślnie zabito postać gracza %s.",
       "description": "Zabij postać wskazanego gracza."
     },
     "language": {
-      "usage": "language [kod języka]",
       "current_language": "Bieżący kod języka to %s.",
       "language_changed": "Zmieniono język na ten o kodzie %s.",
       "language_not_found": "Nie znaleziono języka o kodzie \"%s\".",
       "description": "Pokaż lub zmień bieżący kod języka."
     },
     "list": {
-      "usage": "list @[ID gracza]",
       "success": "%s graczy online:",
       "description": "Pokaż ile jest graczy na serwerze."
     },
     "permission": {
-      "usage": "permission <add|remove> <nazwa gracza> <uprawnienie>",
       "add": "Pomyślnie dodano uprawnienie.",
       "has_error": "Ten gracz już ma to uprawnienie.",
       "remove": "Pomyślnie usunięto uprawnienie.",
@@ -214,12 +205,10 @@
       "description": "Dodaj lub usuń uprawnienia podanego gracza."
     },
     "position": {
-      "usage": "position",
       "success": "Koordynaty: (%s, %s, %s).\nID sceny: %s.",
       "description": "Pokaż gdzie znajduje się dany gracz."
     },
     "quest": {
-      "usage": "quest <add|finish> [ID zadania]",
       "added": "Zadanie %s zostało dodane.",
       "finished": "Zadanie %s zostało zakończone.",
       "not_found": "Nie ma zadania o podanym ID.",
@@ -227,24 +216,21 @@
       "description": "Dodaj lub wykonaj wskazane zadanie."
     },
     "reload": {
-      "usage": "reload",
       "reload_start": "Ponowne ładowanie konfiguracji...",
       "reload_done": "Ponowne ładowanie konfiguracji zakończone.",
       "description": "Ponownie załaduj język, konfigurację oraz inne dane gry."
     },
     "resetConst": {
-      "usage": "resetconst [all]",
       "reset_all": "Zresetowano konstelacje dla wszystkich postaci. Aby zobaczyć zmiany, zaloguj się ponownie.",
       "success": "Konstelacje awatara %s zostały zresetowane. Aby zobaczyć zmiany, zaloguj się ponownie.",
       "description": "Resetuj konstelacje wszystkich lub wybranej postaci."
     },
     "resetShopLimit": {
-      "usage": "resetshop @<ID gracza>",
       "success": "Zresetowano czas odświeżania sklepu podanego gracza.",
       "description": "Resetuj czas odświeżania sklepu podanego gracza."
     },
     "sendMail": {
-      "usage": "sendmail <@<ID gracza>|all|help> [ID szablonu]",
+      "give_usage": "Użycie: give <gracz> <id przedmiotu | avatarID> [ilość] [poziom] [refinement]",
       "user_not_exist": "Gracz o podanym ID %s nie istnieje.",
       "start_composition": "Tworzenie wiadomości.\nUżyj \"sendmail <tytuł>\", aby kontynuować.\nMożesz użyć \"sendmail stop\" w dowolnym momencie, aby przestać.",
       "templates": "Szablony nie są jeszcze gotowe do użycia.",
@@ -267,47 +253,37 @@
       "description": "Wyślij wiadomość wraz z przedmiotami do wybranego lub wszystkich graczy."
     },
     "sendMessage": {
-      "usage": "sendmessage @<ID gracza> <wiadomość>",
       "success": "Wiadomość wysłana.",
       "description": "Wyślij wiadomość do gracza jako serwer. Jeśli nie określono celu, wysyła do wszystkich graczy na serwerze."
     },
     "setFetterLevel": {
-      "usage": "setfetterlevel <poziom przyjaźni>",
       "range_error": "Poziom przyjaźni musi być pomiędzy 0 a 10.",
       "success": "Poziom przyjaźni został pomyślnie ustawiony na %s.",
       "level_error": "Błędny poziom przyjaźni.",
       "description": "Ustaw poziom przyjaźni obecnej postaci."
     },
     "setProp": {
-      "usage": "setprop <nazwa własności> <wartość>\n\tMożliwe nazwy własności: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel | ...\n\tTa komenda ma więcej nazw własności, które może otrzymać. Możesz je wszystkie zobaczyć w pliku \"game/props/PlayerProperty.java\".\n\tW tym pliku, przyjmują one formę \"PROP_XXX_YYY_ZZZ\", ale powinieneś je zapisywać jako \"xxx_yyy_zzz\" jeśli chcesz je użyć w tej komendzie.",
-      "description": "Ustaw pewne własności konta, takie jak tryb nieśmiertelności (godmode) czy też zmiana postępu Battle Pass."
+      "description": "Ustaw pewne własności konta, takie jak tryb nieśmiertelności (godmode) czy też zmiana postępu Battle Pass.\n\tMożliwe nazwy własności: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel | ...\n\tTa komenda ma więcej nazw własności, które może otrzymać. Możesz je wszystkie zobaczyć w pliku \"game/props/PlayerProperty.java\".\n\tW tym pliku, przyjmują one formę \"PROP_XXX_YYY_ZZZ\", ale powinieneś je zapisywać jako \"xxx_yyy_zzz\" jeśli chcesz je użyć w tej komendzie."
     },
     "setStats": {
-      "usage": "setstats <nazwa statystyki> <wartość>\n\tMożliwe nazwy statystyki: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\tDodatkowe obrażenia od żywiołu: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\tOdporność na żywioł: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
-      "description": "Ustaw statystykę walki dla obecnie wybranej postaci wybranego gracza."
+      "description": "Ustaw statystykę walki dla obecnie wybranej postaci wybranego gracza.\n\tMożliwe nazwy statystyki: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\tDodatkowe obrażenia od żywiołu: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\tOdporność na żywioł: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys"
     },
     "spawn": {
-      "usage": "spawn <ID obiektu> [ilość] [poziom (tylko potwory)] [<x> <y> <z> (tylko potwory)]",
       "success": "Stworzono %s obiektów o ID %s.",
       "limit_reached": "Osiągnięto maksymalną ilość obiektów w scenie. Dodane zostaną tylko %s.",
       "description": "Dodaj wskazane obiekty do sceny wybranego gracza."
     },
     "stop": {
-      "usage": "stop",
       "success": "Serwer zatrzymuje się...",
       "description": "Zatrzymaj serwer."
     },
     "talent": {
-      "usage_1": "Aby ustawić poziom talentu, użyj: \"talent set <ID talentu> <wartość>\".",
-      "usage_2": "Możesz też użyć: \"talent <n lub e lub q> <wartość>\"",
-      "usage_3": "Aby uzyskać ID talentu, użyj: \"talent getid\"",
       "lower_16": "Błędny poziom talentu. Poziom ten powinien być mniejszy niż 16.",
       "set_id": "Ustawiono poziom talentu na %s.",
       "set_atk": "Ustawiono poziom talentu Atak Podstawowy na %s.",
       "set_e": "Ustawiono poziom talentu E na %s.",
       "set_q": "Ustawiono poziom talentu Q na %s.",
       "invalid_skill_id": "Błędne ID umiejętności.",
-      "set_this": "Ustawiono obecny talent na poziom %s.",
       "invalid_level": "Błędny poziom talentu.",
       "normal_attack_id": "ID podstawowego ataku: %s.",
       "e_skill_id": "ID umiejętności E: %s.",
@@ -315,17 +291,13 @@
       "description": "Ustaw poziomu talentu obecnie wybranej postaci wybranego gracza."
     },
     "team": {
-      "usage": "team <add|remove|set> [ID awatara, ...] [indeks|pierwszy|ostatni|pierwszy_indeks-ostatni_indeks, ...]",
       "invalid_usage": "Nieprawidłowe użycie komendy.",
-      "add_usage": "team add <ID awatara, ...> [indeks]",
       "invalid_index": "Błędny indeks.",
       "add_too_much": "Można mieć maksymalnie %d postaci w zespole.",
       "failed_to_add_avatar": "Błąd podczas dodawania awatara o ID \"%s\".",
-      "remove_usage": "team remove <indeks|pierwszy|ostatni|pierwszy_indeks-ostatni_indeks, ...>",
       "failed_to_parse_index": "Błąd podczas przetwarzania indeksu \"%s\".",
       "remove_too_much": "Nie możesz usunąć wszystkich awatarów w zespole.",
       "ignore_index": "Ignorowanie indeksu/ów %s.",
-      "set_usage": "team set <indeks> <ID awatara>",
       "index_out_of_range": "Podany indeks nie mieści się w swoim zakresie.",
       "failed_parse_avatar_id": "Błędny ID awatara \"%s\".",
       "avatar_already_in_team": "Podany awatar jest już w zespole wybranego gracza.",
@@ -333,35 +305,28 @@
       "description": "Modyfikuj zespół wybranego gracza."
     },
     "teleportAll": {
-      "usage": "tpall",
       "success": "Przyzwano wszystkich graczy do wybranego gracza.",
       "error": "Możesz użyć tej komendy wyłącznie w trybie MP.",
       "description": "Przyzwij wszystkich graczy do wybranego gracza."
     },
     "teleport": {
-      "usage_server": "tp @<ID gracza> <x> <y> <z> [ID sceny]",
-      "usage": "tp [@<ID gracza>] <x> <y> <z> [ID sceny]",
-      "specify_player_id": "Musisz podać ID gracza.",
       "invalid_position": "Błędna pozycja xyz.",
       "exists_error": "Ta scena nie istenieje.",
       "success": "Gracz %s został przeniesiony do pozycji (%s, %s, %s) w scenie o ID %s.",
       "description": "Przemieść wybranego gracza do podanej pozycji w podanej scenie."
     },
     "weather": {
-      "usage": "weather [ID pogody] [typ klimatu]\n\tID pogody można znaleźć w pliku \"WeatherExcelConfigData.json\".\n\tMożliwe typy klimatu: sunny (słoneczny), cloudy (pochmurny), rain (deszcz), thunderstorm (burza), snow (śnieg), mist (mgła)",
       "success": "ID pogody został ustawiony na %s, a typ klimatu na %s.",
       "status": "Bieżące ID pogody to %s, a typ klimatu to %s.",
       "description": "Zmień ID pogody i typ klimatu."
     },
     "ban": {
-      "usage": "ban @<ID gracza> [na ile czasu] [powód]",
       "success": "Pomyślnie zbanowano podanego gracza.",
       "failure": "Gracz o podanym ID nie istnieje.",
       "invalid_time": "Nieprawidłowy czas bana.",
       "description": "Zbanuj podanego gracza."
     },
     "unban": {
-      "usage": "unban @<ID gracza>",
       "success": "Pomyślnie odbanowano podanego gracza.",
       "failure": "Gracz o podanym ID nie istnieje.",
       "description": "Odbanuj podanego gracza."
@@ -382,7 +347,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "Komendy",
       "title_avatars": "Awatary",
       "title_items": "Przedmioty",
@@ -398,7 +363,7 @@
     },
     "index": {
       "title": "Dokumentacja",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "Losowanie w formacie JSON"
     }
   }

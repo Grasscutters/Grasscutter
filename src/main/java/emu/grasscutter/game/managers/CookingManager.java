@@ -10,8 +10,10 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.net.proto.CookRecipeDataOuterClass;
 import emu.grasscutter.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq;
 import emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReq;
@@ -22,14 +24,12 @@ import emu.grasscutter.server.packet.send.PacketPlayerCookArgsRsp;
 import emu.grasscutter.server.packet.send.PacketPlayerCookRsp;
 import io.netty.util.internal.ThreadLocalRandom;
 
-public class CookingManager {
+public class CookingManager extends BasePlayerManager {
     private static final int MANUAL_PERFECT_COOK_QUALITY = 3;
-
     private static Set<Integer> defaultUnlockedRecipies;
-    private final Player player;
 
     public CookingManager(Player player) {
-        this.player = player;
+        super(player);
     }
 
     public static void initialize() {
@@ -48,12 +48,12 @@ public class CookingManager {
      ********************/
     public synchronized boolean unlockRecipe(GameItem recipeItem) {
         // Make sure this is actually a cooking recipe.
-        if (!recipeItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_COOK_RECIPE")) {
+        if (recipeItem.getItemData().getItemUse().get(0).getUseOp() != ItemUseOp.ITEM_USE_UNLOCK_COOK_RECIPE) {
             return false;
         }
 
         // Determine the recipe we should unlock.
-        int recipeId = Integer.parseInt(recipeItem.getItemData().getItemUse().get(0).getUseParam().get(0));
+        int recipeId = Integer.parseInt(recipeItem.getItemData().getItemUse().get(0).getUseParam()[0]);
 
         // Remove the item from the player's inventory.
         // We need to do this here, before sending CookRecipeDataNotify, or the the UI won't correctly update.
@@ -103,9 +103,9 @@ public class CookingManager {
         }
 
         // Get result item information.
-        int qualityIndex = 
-            quality == 0 
-            ? 2 
+        int qualityIndex =
+            quality == 0
+            ? 2
             : quality - 1;
 
         ItemParamData resultParam = recipeData.getQualityOutputVec().get(qualityIndex);

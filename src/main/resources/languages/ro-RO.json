@@ -28,6 +28,8 @@
         "login_token_attempt": "[Dispatch] Clientul %s încearcă să se conecteze prin token.",
         "login_token_error": "[Dispatch] Clientul %s nu a reușit să se conecteze prin token.",
         "login_token_success": "[Dispatch] Clientul %s sa conectat prin token ca %s.",
+        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
+        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
         "combo_token_success": "[Dispatch] Clientul %s a reușit să schimbe token-ul combo.",
         "combo_token_error": "[Dispatch] Clientul %s nu a reușit să schimbe token-ul combo.",
         "account_login_create_success": "[Dispatch] Clientul %s nu a reușit să se conecteze: Cont %s creat.",
@@ -37,6 +39,9 @@
         "session_key_error": "Cheie de sesiune greșită.",
         "username_error": "Numele de utilizator nu a fost găsit.",
         "username_create_error": "Numele de utilizator nu a fost găsit, crearea a eșuat.",
+        "password_error": "🇺🇸Invalid Password",
+        "password_length_error": "🇺🇸Password length must be greater then or equal to 8",
+        "password_storage_error": "🇺🇸You don't have a password for your account. Please contact an administrator.",
         "server_max_player_limit": "Numărul de jucători online a ajuns la limită."
       },
       "router_error": "[Dispatch] Nu se poate atașa routerul."
@@ -89,6 +94,7 @@
       }
     },
     "execution": {
+      "usage_prefix": "Utilizare: ",
       "player_exist_error": "Jucătorul nu a fost găsit.",
       "player_offline_error": "Jucătorul nu este online.",
       "item_player_exist_error": "Articol sau UID nevalabil.",
@@ -109,7 +115,6 @@
       "success": "Succes"
     },
     "account": {
-      "command_usage": "Utilizare: account <create|delete> <nume de utilizator> [UID]",
       "invalid": "UID invalid.",
       "exists": "Un cont cu acest nume de utilizator și/sau UID există deja.",
       "create": "Cont creat cu UID %s.",
@@ -117,8 +122,14 @@
       "no_account": "Contul nu a fost găsit.",
       "description": "Modificați conturile de utilizator"
     },
+    "announce": {
+      "send_success": "🇺🇸Send an announcement successfully, you can revoke it by /a revoke %s.",
+      "refresh_success": "🇺🇸Refresh announcement config file successfully. [Total %s]",
+      "revoke_done": "🇺🇸Try to revoke announcement %s.",
+      "not_found": "🇺🇸Could not found announcement %s.",
+      "description": "🇺🇸Send announcement to all online players, or manage server's announcement"
+    },
     "clear": {
-      "command_usage": "Utilizare: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Arme șterse pentru %s.",
       "artifacts": "Artefacte șterse pentru %s.",
       "materials": "Materiale șterse pentru %s.",
@@ -129,19 +140,16 @@
       "description": "Șterge obiectele deblocate neechipate, inlusiv cele cu raritate galbenă din inventarul tău."
     },
     "coop": {
-      "usage": "Utilizare: coop [host  UID]",
       "success": "Invocat %s în lumea lui %s.",
       "description": "Forțează pe cineva să se alăture lumii celorlalți. Dacă nu este nimeni vizat, te trimite oricum în modul cooperativ."
     },
     "enter_dungeon": {
-      "usage": "Utilizare: enterdungeon <dungeonID>",
       "changed": "Schimbat în temnița %s.",
       "not_found_error": "Temnița nu există.",
       "in_dungeon_error": "Ești deja în acea temniță.",
       "description": "Intră într-o temniță."
     },
     "give": {
-      "usage": "Utilizare: give <itemID|avatarID|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [x<sumă>] [lv<nivel>] [r<rafinament>]",
       "usage_relic": "Utilizare: give <artifactID> [mainPropID] [<appendPropID>[,<t>]]... [lv<nivel 0-20>]",
       "illegal_relic": "Acest ID de artefact aparține unui interval de pe lista neagră, este posibil să nu fie cel pe care l-ați dorit.",
       "given": "Am dat %s din %s lui %s.",
@@ -156,14 +164,13 @@
       "description": "Vindecă toate personajele din echipa ta."
     },
     "help": {
-      "usage": "Utilizare: ",
       "aliases": "Aliasuri: ",
       "available_commands": "Comenzi disponibile: ",
-      "description": "Trimite mesajul de ajutor sau afișează informații despre o comandă specificată",
       "tip_need_permission": "Permisiune: ",
       "tip_need_no_permission": " Niciuna",
       "tip_permission_targeted": " (Permisiunea %s este de asemenea necesară pentru a fi folosit pe alți jucători)",
-      "warn_player_has_no_permission": "Notă> Nu aveți permisiunea de a rula această comandă."
+      "warn_player_has_no_permission": "Notă> Nu aveți permisiunea de a rula această comandă.",
+      "description": "Trimite mesajul de ajutor sau afișează informații despre o comandă specificată"
     },
     "kick": {
       "player_kick_player": "Jucătorul [%s:%s] l-a dat afară pe [%s:%s]",
@@ -171,13 +178,11 @@
       "description": "Elimină jucătorul specificat de pe server (WIP)"
     },
     "killall": {
-      "usage": "Utilizare: killall [playerUID] [sceneID]",
       "scene_not_found_in_player_world": "Scena nu a fost găsită în lumea jucătorului.",
       "kill_monsters_in_scene": "Se omoară %s monștri în scena %s.",
       "description": "Se omoară toate entitățile."
     },
     "killCharacter": {
-      "usage": "Utilizare: killcharacter [playerID]",
       "success": "Personajul curent al lui %s a fost omorât.",
       "description": "Omoară personajul curent al jucătorului."
     },
@@ -192,7 +197,6 @@
       "description": "Enumeră jucătorii online."
     },
     "permission": {
-      "usage": "Utilizare: permission <add|remove> <username> <permission>",
       "add": "Permisiune adăugată.",
       "has_error": "Ei au deja această permisiune!",
       "remove": "Permisiune revocată.",
@@ -205,7 +209,6 @@
       "description": "Obțineți coordonatele"
     },
     "quest": {
-      "usage": "quest <add|finish> [questID]",
       "added": "Misiunea %s adăugată.",
       "finished": "Ați terminat misiunea %s.",
       "not_found": "Misiunea nu a fost găsită.",
@@ -223,12 +226,11 @@
       "description": "Resetează nivelul de constelație al personajului tău activ curent; va trebui să te reconectezi după ce ai folosit comanda pentru a vedea orice schimbare."
     },
     "resetShopLimit": {
-      "usage": "Utilizare: resetshop <playerID>",
       "success": "Reset complet.",
       "description": "Resetează timpul de reîmprospătare a magazinului jucătorului țintă."
     },
     "sendMail": {
-      "usage": "Utilizare: sendmail <userID|all|help> [templateID]",
+      "give_usage": "🇺🇸Usage: give <player> <itemID|itemName> [amount] [level] [refinement]",
       "user_not_exist": "Utilizatorul cu id-ul '%s' nu există.",
       "start_composition": "Alcătuirea inițială a mesajului.\nFolosește '/sendmail <title>' ca să continui.\nPoți folosi '/sendmail stop' oricând vrei.",
       "templates": "Șabloanele de e-mail vor fi implementate în curând...",
@@ -251,27 +253,22 @@
       "description": "Trimite corespondența către utilizatorul specificat. Utilizarea acestei comenzi se modifică în funcție de starea de compunere a acesteia."
     },
     "sendMessage": {
-      "usage": "Utilizare: sendmessage <mesaj>",
       "success": "Mesaj trimis.",
       "description": "Trimite un mesaj unui jucător în calitate de server. Dacă este utilizat fără țintă, trimite mesajul către toți jucătorii de pe server."
     },
     "setFetterLevel": {
-      "usage": "Utilizare: setfetterlevel <nivel>",
       "range_error": "Nivelul Fetter trebuie să fie între 0 și 10.",
       "success": "Nivelul Fetter setat ca %s.",
       "level_error": "Nivel Fetter nevalabil.",
       "description": "Stabilește nivelul Fetter pentru personajul tău activ curent."
     },
     "setProp": {
-      "usage": "Utilizare: setprop|prop <prop> <value>\n\tValori pentru <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
-      "description": "Stabilește proprietățile la nivel de cont. Lucruri precum godmode pot fi activate în acest fel, precum și schimbarea unor lucuri precum etajul abisului deblocat și progresul battle pass."
+      "description": "Stabilește proprietățile la nivel de cont. Lucruri precum godmode pot fi activate în acest fel, precum și schimbarea unor lucuri precum etajul abisului deblocat și progresul battle pass.\n\tValori pentru <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setStats": {
-      "usage": "Utilizare: setstats|stats <stat> <value>\n\tValori pentru <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-      "description": "Stabilește proprietatea de luptă pentru caracterul activ curent."
+      "description": "Stabilește proprietatea de luptă pentru caracterul activ curent.\n\tValori pentru <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys"
     },
     "spawn": {
-      "usage": "Utilizare: spawn <entityID> [sumă] [nivel(doar monstrul)] [<x> <y> <z>(doar monstrul, opțional)]",
       "success": "A generat %s de %s.",
       "limit_reached": "Limita de reproducere a scenei a fost atinsă. În schimb, se generează %s de entități.",
       "description": "Generează o entitate lângă tine"
@@ -281,34 +278,26 @@
       "description": "Oprește serverul"
     },
     "talent": {
-      "usage_1": "Pentru a seta nivelul de talent: /talent set <talentID> <sumă>",
-      "usage_2": "O altă modalitate de a stabili nivelul de talent: /talent <n or e or q> <valoare>",
-      "usage_3": "Pentru a lua ID-ul talentului: /talent getid",
       "lower_16": "Nivel de talent nevalabil. Nivelul trebuie să fie mai mic ca 16.",
       "set_id": "Setat nivelul ca %s.",
       "set_atk": "Setat talentul Normal Attack ca %s.",
       "set_e": "Setat talentul E ca %s.",
       "set_q": "Setat talentul Q ca %s.",
       "invalid_skill_id": "Skill ID nevalabil.",
-      "set_this": "Setat acest talent ca %s.",
       "invalid_level": "Nivel de talent nevalabil.",
-      "normal_attack_id": "Normal Attack ID %s.",
-      "e_skill_id": "E skill ID %s.",
-      "q_skill_id": "Q skill ID %s.",
+      "normal_attack_id": "🇺🇸Normal Attack ID %s.",
+      "e_skill_id": "🇺🇸E skill ID %s.",
+      "q_skill_id": "🇺🇸Q skill ID %s.",
       "description": "Stabilește nivelul de talent pentru personajul tău activ actual"
     },
     "team": {
-      "usage": "Utilizare: team <add|remove|set> [avatarID,...] [index|first|last|index-index,...]",
       "invalid_usage": "Utilizare invalidă.",
-      "add_usage": "Utilizare (adaugă): team add <avatarID,...> [index]",
       "invalid_index": "Indexul nu e valabil.",
       "add_too_much": "Serverul vă permite doar să aveți cel mult %s avatar(e) în echipa dvs.",
       "failed_to_add_avatar": "Nu s-a reușit adăugarea ID-ului avatarului %s.",
-      "remove_usage": "Utilizare (eliminare): team remove <index|first|last|index-index,...>",
       "failed_to_parse_index": "Nu a reușit să analizeze indexul: %s",
       "remove_too_much": "Nu poți elimina toate avatarele tale.",
       "ignore_index": "Index(e) ignorat(e): %s",
-      "set_usage": "Utilizare (stabilire): team set <index> <avatarID>",
       "index_out_of_range": "Indexul specificat este în afara intervalului.",
       "failed_parse_avatar_id": "Nu a reușit să analizeze id-ul avatarului: %s",
       "avatar_already_in_team": "Avatarul este deja în echipă.",
@@ -321,29 +310,23 @@
       "description": "Teleportează toți jucătorii din lume în locația ta."
     },
     "teleport": {
-      "usage_server": "Utilizare: tp @<playerID> <x> <y> <z> [sceneID]",
-      "usage": "Utilizare: tp [@<playerID>] <x> <y> <z> [sceneID]",
-      "specify_player_id": "Trebuie să specificați un ID de jucător.",
       "invalid_position": "Locație invalidă.",
       "exists_error": "Scena specificată nu există.",
       "success": "Teleportat %s la %s, %s, %s în scena %s.",
       "description": "Schimbă poziția jucătorului."
     },
     "weather": {
-      "usage": "Utilizare: weather [weatherId] [climateType]\nID-urile meteorologice pot fi găsite în WeatherExcelConfigData.json.\nTipuri de climă: sunny, cloudy, rain, thunderstorm, snow, mist",
       "success": "A setat ID-ul meteo la %s cu tipul de climă %s",
       "status": "ID-ul actual al vremii este %s cu tipul de climă %s",
       "description": "Schimbă ID-ul vremii și tipul de climă. ID-urile de vreme pot fi găsite în WeatherExcelConfigData.json.\nTipuri de climă: sunny, cloudy, rain, thunderstorm, snow, mist"
     },
     "ban": {
-      "command_usage": "Utilizare: ban <@playerId> [durată] [motiv]",
       "success": "Succes.",
       "failure": "Eșec. Jucătorul nu a fost găsit.",
       "invalid_time": "Imposibil de analizat durata.",
       "description": "Interziceți un jucător"
     },
     "unban": {
-      "command_usage": "Utilizare: unban <@playerId>",
       "success": "Succes.",
       "failure": "Eșec, jucătorul nu a fost găsit.",
       "description": "Dezbancarea unui jucător"
@@ -370,10 +353,10 @@
       "title_items": "Elemente",
       "title_scenes": "Scene",
       "title_monsters": "Monștri",
-      "header_id": "Id",
+      "header_id": "🇺🇸Id",
       "header_command": "Comandă",
       "header_description": "Descriere",
-      "header_avatar": "Avatar",
+      "header_avatar": "🇺🇸Avatar",
       "header_item": "Element",
       "header_scene": "Scenă",
       "header_monster": "Monstru"
@@ -381,7 +364,7 @@
     "index": {
       "title": "Documentație",
       "handbook": "Manual GM",
-      "gacha_mapping": "Gacha mapping JSON"
+      "gacha_mapping": "🇺🇸Gacha mapping JSON"
     }
   }
 }

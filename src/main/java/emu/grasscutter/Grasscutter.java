@@ -5,14 +5,15 @@ import ch.qos.logback.classic.Logger;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.auth.DefaultAuthentication;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.command.DefaultPermissionHandler;
 import emu.grasscutter.command.PermissionHandler;
+import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
+import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
@@ -26,7 +27,6 @@ import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.server.http.handlers.GenericHandler;
 import emu.grasscutter.server.http.handlers.LogHandler;
 import emu.grasscutter.tools.Tools;
-import emu.grasscutter.utils.ConfigContainer;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Utils;
@@ -43,8 +43,8 @@ import javax.annotation.Nullable;
 import java.io.*;
 import java.util.Calendar;
 
-import static emu.grasscutter.Configuration.DATA;
-import static emu.grasscutter.Configuration.SERVER;
+import static emu.grasscutter.config.Configuration.DATA;
+import static emu.grasscutter.config.Configuration.SERVER;
 import static emu.grasscutter.utils.Language.translate;
 
 public final class Grasscutter {
@@ -96,6 +96,10 @@ public final class Grasscutter {
             switch (arg.toLowerCase()) {
                 case "-handbook" -> {
                     Tools.createGmHandbook();
+                    exitEarly = true;
+                }
+                case "-dumppacketids" -> {
+                    PacketOpcodesUtils.dumpPacketIds();
                     exitEarly = true;
                 }
                 case "-gachamap" -> {
@@ -213,7 +217,7 @@ public final class Grasscutter {
      */
     private static void onShutdown() {
         // Disable all plugins.
-        if(pluginManager != null)
+        if (pluginManager != null)
             pluginManager.disablePlugins();
     }
 

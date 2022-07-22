@@ -13,7 +13,11 @@ import java.util.List;
 import static emu.grasscutter.utils.Language.translate;
 
 @SuppressWarnings("ConstantConditions")
-@Command(label = "sendmail", usage = "sendmail <userId|all|help> [templateId]", permission = "server.sendmail", description = "commands.sendMail.description", targetRequirement = Command.TargetRequirement.NONE)
+@Command(
+    label = "sendMail",
+    usage = {"(<userId>|all) [<templateId>]", "help"},
+    permission = "server.sendmail",
+    targetRequirement = Command.TargetRequirement.NONE)
 public final class SendMailCommand implements CommandHandler {
 
     // TODO: You should be able to do /sendmail and then just send subsequent messages until you finish
@@ -27,7 +31,7 @@ public final class SendMailCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         int senderId;
-        if(sender != null) {
+        if (sender != null) {
             senderId = sender.getUid();
         } else {
             senderId = -1;
@@ -39,7 +43,7 @@ public final class SendMailCommand implements CommandHandler {
                     MailBuilder mailBuilder;
                     switch (args.get(0).toLowerCase()) {
                         case "help" -> {
-                            CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.usage"));
+                            sendUsageMessage(sender);
                             return;
                         }
                         case "all" -> mailBuilder = new MailBuilder(true, new Mail());
@@ -146,7 +150,7 @@ public final class SendMailCommand implements CommandHandler {
                                         }
                                         break;
                                     default: // *No args*
-                                        CommandHandler.sendMessage(sender, translate(sender, "commands.give.usage"));
+                                        CommandHandler.sendTranslatedMessage(sender, "commands.sendMail.give_usage");
                                         return;
                                 }
                                 mailBuilder.mail.itemList.add(new Mail.MailItem(item, amount, lvl));
@@ -162,7 +166,7 @@ public final class SendMailCommand implements CommandHandler {
     }
 
     private String getConstructionArgs(int stage, Player sender) {
-        return switch(stage) {
+        return switch (stage) {
             case 0 -> translate(sender, "commands.sendMail.title");
             case 1 -> translate(sender, "commands.sendMail.message");
             case 2 -> translate(sender, "commands.sendMail.sender");

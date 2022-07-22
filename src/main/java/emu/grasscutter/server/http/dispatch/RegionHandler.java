@@ -29,8 +29,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.security.Signature;
 
-
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.QueryRegionListHttpRsp;
 
 /**
@@ -61,7 +60,7 @@ public final class RegionHandler implements Router {
         List<String> usedNames = new ArrayList<>(); // List to check for potential naming conflicts.
 
         var configuredRegions = new ArrayList<>(List.of(DISPATCH_INFO.regions));
-        if(SERVER.runMode != ServerRunMode.HYBRID && configuredRegions.size() == 0) {
+        if (SERVER.runMode != ServerRunMode.HYBRID && configuredRegions.size() == 0) {
             Grasscutter.getLogger().error("[Dispatch] There are no game servers available. Exiting due to unplayable state.");
             System.exit(1);
         } else if (configuredRegions.size() == 0)
@@ -137,11 +136,11 @@ public final class RegionHandler implements Router {
         // Get region data.
         String regionData = "CAESGE5vdCBGb3VuZCB2ZXJzaW9uIGNvbmZpZw==";
         if (request.query().values().size() > 0) {
-            if(region != null)
+            if (region != null)
                 regionData = region.getBase64();
         }
 
-        if( versionName.contains("2.7.5") || versionName.contains("2.8.")) {
+        if ( versionName.contains("2.7.5") || versionName.contains("2.8.")) {
             try {
                 QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData); event.call();
 

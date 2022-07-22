@@ -9,16 +9,16 @@ import emu.grasscutter.server.packet.send.PacketGetInvestigationMonsterRsp;
 
 @Opcodes(PacketOpcodes.GetInvestigationMonsterReq)
 public class HandlerGetInvestigationMonsterReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		var req = GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq.parseFrom(payload);
 
-		session.send(new PacketGetInvestigationMonsterRsp(
-				session.getPlayer(),
-				session.getServer().getWorldDataManager(),
-				req.getCityIdListList()));
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        var req = GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq.parseFrom(payload);
 
-	}
+        session.send(new PacketGetInvestigationMonsterRsp(
+                session.getPlayer(),
+                session.getServer().getWorldDataSystem(),
+                req.getCityIdListList()));
+
+    }
 
 }
