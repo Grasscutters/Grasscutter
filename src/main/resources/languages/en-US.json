@@ -326,6 +326,10 @@
       "invalid_time": "Unable to parse timestamp.",
       "description": "Ban a player"
     },
+    "unlockall": {
+      "success": "Unlocked all open states for %s.",
+      "description": "Unlocks all open states for a player."
+    },
     "unban": {
       "success": "Successful.",
       "failure": "Failed, player not found.",
