@@ -150,7 +150,8 @@ public class Player {
     @Getter private transient BattlePassManager battlePassManager;
     @Getter private transient CookingManager cookingManager;
     @Getter private transient ActivityManager activityManager;
-
+    @Getter private transient PlayerBuffManager buffManager;
+    
     // Manager data (Save-able to the database)
     private PlayerProfile playerProfile;
     private TeamManager teamManager;
@@ -195,6 +196,7 @@ public class Player {
         this.abilityManager = new AbilityManager(this);
         this.deforestationManager = new DeforestationManager(this);
         this.questManager = new QuestManager(this);
+        this.buffManager = new PlayerBuffManager(this);
         this.position = new Position(GameConstants.START_POSITION);
         this.rotation = new Position(0, 307, 0);
         this.sceneId = 3;
@@ -1182,6 +1184,8 @@ public class Player {
                 it.remove();
             }
         }
+        // Handle buff
+        this.getBuffManager().onTick();
         // Ping
         if (this.getWorld() != null) {
             // RTT notify - very important to send this often
