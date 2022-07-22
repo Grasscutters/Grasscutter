@@ -61,6 +61,7 @@ public class BattlePassManager extends BasePlayerDataManager {
 
     public BattlePassManager(Player player) {
         super(player);
+        this.ownerUid = player.getUid();
     }
 
     public void setPlayer(Player player) {
