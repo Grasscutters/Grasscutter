@@ -11,7 +11,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "heal", usage = "heal|h", aliases = {"h"}, permission = "player.heal", permissionTargeted = "player.heal.others", description = "commands.heal.description")
+@Command(label = "heal", aliases = {"h"}, permission = "player.heal", permissionTargeted = "player.heal.others")
 public final class HealCommand implements CommandHandler {
 
     @Override

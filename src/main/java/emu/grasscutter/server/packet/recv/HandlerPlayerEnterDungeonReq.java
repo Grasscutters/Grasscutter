@@ -8,13 +8,13 @@ import emu.grasscutter.server.game.GameSession;
 
 @Opcodes(PacketOpcodes.PlayerEnterDungeonReq)
 public class HandlerPlayerEnterDungeonReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		// Auto template
-		PlayerEnterDungeonReq req = PlayerEnterDungeonReq.parseFrom(payload);
-		
-		session.getServer().getDungeonManager().enterDungeon(session.getPlayer(), req.getPointId(), req.getDungeonId());
-	}
+
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        // Auto template
+        PlayerEnterDungeonReq req = PlayerEnterDungeonReq.parseFrom(payload);
+
+        session.getServer().getDungeonSystem().enterDungeon(session.getPlayer(), req.getPointId(), req.getDungeonId());
+    }
 
 }

@@ -32,9 +32,9 @@ public class PacketGetAllMailRsp extends BasePacket {
                 List<MailData> mailDataList = new ArrayList<MailData>();
 
                 for (Mail message : player.getAllMail()) {
-                    if(message.stateValue == 1) { // Make sure it isn't a gift
+                    if (message.stateValue == 1) { // Make sure it isn't a gift
                         if (message.expireTime > (int) Instant.now().getEpochSecond()) { // Make sure the message isn't expired (The game won't show expired mail, but I don't want to send unnecessary information).
-                            if(mailDataList.size() <= 1000) { // Make sure that there isn't over 1000 messages in the mailbox. (idk what will happen if there is but the game probably won't like it.)
+                            if (mailDataList.size() <= 1000) { // Make sure that there isn't over 1000 messages in the mailbox. (idk what will happen if there is but the game probably won't like it.)
                                 MailTextContent.Builder mailTextContent = MailTextContent.newBuilder();
                                 mailTextContent.setTitle(message.mailContent.title);
                                 mailTextContent.setContent(message.mailContent.content);

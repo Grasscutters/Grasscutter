@@ -3,6 +3,7 @@ package emu.grasscutter.game.managers;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
@@ -16,11 +17,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 // Statue of the Seven Manager
-public class SotSManager {
+public class SotSManager extends BasePlayerManager {
 
     // NOTE: Spring volume balance *1  = fight prop HP *100
 
-    private final Player player;
     private final Logger logger = Grasscutter.getLogger();
     private Timer autoRecoverTimer;
     private final boolean enablePriorityHealing = false;
@@ -28,7 +28,7 @@ public class SotSManager {
     public final static int GlobalMaximumSpringVolume = PlayerProperty.PROP_MAX_SPRING_VOLUME.getMax();
 
     public SotSManager(Player player) {
-        this.player = player;
+        super(player);
     }
 
     public boolean getIsAutoRecoveryEnabled() {

@@ -3,8 +3,6 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.Utils;
 
@@ -13,7 +11,7 @@ import java.util.Locale;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "language", usage = "language [language code]", description = "commands.language.description", aliases = {"lang"}, targetRequirement = Command.TargetRequirement.NONE)
+@Command(label = "language", usage = {"[<language code>]"}, aliases = {"lang"}, targetRequirement = Command.TargetRequirement.NONE)
 public final class LanguageCommand implements CommandHandler {
 
     @Override

@@ -15,7 +15,7 @@ import java.security.KeyFactory;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
 /**
@@ -163,7 +163,7 @@ public final class DefaultAuthenticators {
                     } else {
                         successfulLogin = false;
                         loggerMessage = translate("messages.dispatch.account.login_password_storage_error", address);
-                        responseMessage = translate("password_storage_error");
+                        responseMessage = translate("messages.dispatch.account.password_storage_error");
                     }
                 } else {
                     loggerMessage = translate("messages.dispatch.account.account_login_exist_error", address);

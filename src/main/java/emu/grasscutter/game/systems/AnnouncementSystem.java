@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers;
+package emu.grasscutter.game.systems;
 
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
@@ -6,6 +6,7 @@ import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AnnounceDataOuterClass;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketServerAnnounceNotify;
 import emu.grasscutter.server.packet.send.PacketServerAnnounceRevokeNotify;
@@ -19,24 +20,22 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 @Getter
-public class AnnouncementManager {
+public class AnnouncementSystem extends BaseGameSystem {
+    private final Map<Integer, AnnounceConfigItem> announceConfigItemMap;
 
-    public final GameServer server;
-    public AnnouncementManager(GameServer server){
-        this.server = server;
+    public AnnouncementSystem(GameServer server) {
+        super(server);
+        this.announceConfigItemMap = new HashMap<>();
         loadConfig();
     }
-    Map<Integer, AnnounceConfigItem> announceConfigItemMap = new HashMap<>();
 
     private int loadConfig() {
-        try (var fileReader = new InputStreamReader(DataLoader.load("Announcement.json"))) {
+        try (var fileReader = DataLoader.loadReader("Announcement.json")) {
             List<AnnounceConfigItem> announceConfigItems = Grasscutter.getGsonFactory().fromJson(fileReader,
                 TypeToken.getParameterized(List.class, AnnounceConfigItem.class).getType());
 
-            announceConfigItemMap = new HashMap<>();
+            announceConfigItemMap.clear();
             announceConfigItems.forEach(i -> announceConfigItemMap.put(i.getTemplateId(), i));
-
-
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load server announce config.", e);
         }
@@ -52,7 +51,7 @@ public class AnnouncementManager {
     }
 
     public void broadcast(List<AnnounceConfigItem> tpl) {
-        if(tpl == null || tpl.size() == 0){
+        if (tpl == null || tpl.size() == 0) {
             return;
         }
 
@@ -84,7 +83,7 @@ public class AnnouncementManager {
         boolean tick;
         int interval;
 
-        public AnnounceDataOuterClass.AnnounceData.Builder toProto(){
+        public AnnounceDataOuterClass.AnnounceData.Builder toProto() {
             var proto = AnnounceDataOuterClass.AnnounceData.newBuilder();
 
             proto.setConfigId(templateId)
@@ -92,11 +91,11 @@ public class AnnouncementManager {
                 .setBeginTime(Utils.getCurrentSeconds() + 1)
                 .setEndTime(Utils.getCurrentSeconds() + 10);
 
-            if(type == AnnounceType.CENTER){
+            if (type == AnnounceType.CENTER) {
                 proto.setCenterSystemText(content)
                     .setCenterSystemFrequency(frequency)
                 ;
-            }else{
+            }else {
                 proto.setCountDownText(content)
                     .setCountDownFrequency(frequency)
                 ;

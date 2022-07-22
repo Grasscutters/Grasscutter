@@ -6,18 +6,18 @@ import emu.grasscutter.server.game.GameServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import java.io.File;
 import java.io.InputStream;
 import java.net.URLClassLoader;
-
-import static emu.grasscutter.Configuration.*;
 
 /**
  * The base class for all plugins to extend.
  */
 public abstract class Plugin {
     private final ServerHook server = ServerHook.getInstance();
-    
+
     private PluginIdentifier identifier;
     private URLClassLoader classLoader;
     private File dataFolder;
@@ -25,22 +25,22 @@ public abstract class Plugin {
 
     /**
      * This method is reflected into.
-     * 
+     *
      * Set plugin variables.
      * @param identifier The plugin's identifier.
      */
     private void initializePlugin(PluginIdentifier identifier, URLClassLoader classLoader) {
-        if(this.identifier != null) {
+        if (this.identifier != null) {
             Grasscutter.getLogger().warn(this.identifier.name + " had a reinitialization attempt.");
             return;
         }
-        
+
         this.identifier = identifier;
         this.classLoader = classLoader;
         this.dataFolder = new File(PLUGIN(), identifier.name);
         this.logger = LoggerFactory.getLogger(identifier.name);
-        
-        if(!this.dataFolder.exists() && !this.dataFolder.mkdirs()) {
+
+        if (!this.dataFolder.exists() && !this.dataFolder.mkdirs()) {
             Grasscutter.getLogger().warn("Failed to create plugin data folder for " + this.identifier.name);
             return;
         }
@@ -50,7 +50,7 @@ public abstract class Plugin {
      * The plugin's identifier instance.
      * @return An instance of {@link PluginIdentifier}.
      */
-    public final PluginIdentifier getIdentifier(){
+    public final PluginIdentifier getIdentifier() {
         return this.identifier;
     }
 
@@ -115,7 +115,7 @@ public abstract class Plugin {
     public final Logger getLogger() {
         return this.logger;
     }
-    
+
     /* Called when the plugin is first loaded. */
     public void onLoad() { }
     /* Called after (most of) the server enables. */

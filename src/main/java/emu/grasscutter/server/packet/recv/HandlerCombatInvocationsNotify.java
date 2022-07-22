@@ -11,6 +11,7 @@ import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo;
+import emu.grasscutter.net.proto.EvtAnimatorParameterInfoOuterClass.EvtAnimatorParameterInfo;
 import emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
@@ -33,6 +34,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		CombatInvocationsNotify notif = CombatInvocationsNotify.parseFrom(payload);
 		for (CombatInvokeEntry entry : notif.getInvokeListList()) {
+		    // Handle combat invoke
 			switch (entry.getArgumentType()) {
 				case COMBAT_TYPE_ARGUMENT_EVT_BEING_HIT:
 					EvtBeingHitInfo hitInfo = EvtBeingHitInfo.parseFrom(entry.getCombatData());
@@ -83,8 +85,21 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 								handleFallOnGround(session, entity, motionState);
 							}
 						}
+						
+						// MOTION_STATE_NOTIFY = Dont send to other players
+						if (motionState == MotionState.MOTION_STATE_NOTIFY) {
+						    continue;
+						}
 					}
 					break;
+				case COMBAT_TYPE_ARGUMENT_ANIMATOR_PARAMETER_CHANGED:
+				    EvtAnimatorParameterInfo paramInfo = EvtAnimatorParameterInfo.parseFrom(entry.getCombatData());
+				    
+				    if (paramInfo.getIsServerCache()) {
+				        paramInfo = paramInfo.toBuilder().setIsServerCache(false).build();
+	                    entry = entry.toBuilder().setCombatData(paramInfo.toByteString()).build();
+				    }
+				    break;
 				default:
 					break;
 			}

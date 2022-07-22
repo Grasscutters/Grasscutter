@@ -12,14 +12,14 @@ import express.http.Request;
 import express.http.Response;
 import io.javalin.Javalin;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
-
-import static emu.grasscutter.Configuration.*;
 
 /**
  * Handles requests related to the announcements page.
@@ -39,14 +39,14 @@ public final class AnnouncementsHandler implements Router {
 
         express.get("/hk4e/announcement/*", AnnouncementsHandler::getPageResources);
     }
-    
+
     private static void getAnnouncement(Request request, Response response) {
         String data = "";
         if (Objects.equals(request.baseUrl(), "/common/hk4e_global/announcement/api/getAnnContent")) {
             try {
                 data = FileUtils.readToString(DataLoader.load("GameAnnouncement.json"));
             } catch (Exception e) {
-                if(e.getClass() == IOException.class) {
+                if (e.getClass() == IOException.class) {
                     Grasscutter.getLogger().info("Unable to read file 'GameAnnouncementList.json'. \n" + e);
                 }
             }
@@ -54,7 +54,7 @@ public final class AnnouncementsHandler implements Router {
             try {
                 data = FileUtils.readToString(DataLoader.load("GameAnnouncementList.json"));
             } catch (Exception e) {
-                if(e.getClass() == IOException.class) {
+                if (e.getClass() == IOException.class) {
                     Grasscutter.getLogger().info("Unable to read file 'GameAnnouncementList.json'. \n" + e);
                 }
             }
@@ -76,9 +76,9 @@ public final class AnnouncementsHandler implements Router {
             .replace("{{SYSTEM_TIME}}", String.valueOf(System.currentTimeMillis()));
         response.send("{\"retcode\":0,\"message\":\"OK\",\"data\": " + data + "}");
     }
-    
+
     private static void getPageResources(Request request, Response response) {
-        try(InputStream filestream = DataLoader.load(request.path())) {
+        try (InputStream filestream = DataLoader.load(request.path())) {
             String possibleFilename = Utils.toFilePath(DATA(request.path()));
 
             MediaType fromExtension = MediaType.getByExtension(possibleFilename.substring(possibleFilename.lastIndexOf(".") + 1));
