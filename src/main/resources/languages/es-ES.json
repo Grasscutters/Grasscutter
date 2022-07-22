@@ -28,8 +28,8 @@
         "login_token_attempt": "[Dispatch] El cliente %s está intentando iniciar sesión a través de un token.",
         "login_token_error": "[Dispatch] El cliente %s falló al iniciar sesión a través de un token.",
         "login_token_success": "[Dispatch] El cliente %s inició sesión a través de un token como %s.",
-        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
-        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
+        "login_password_error": "[Dispatch] El cliente %s falló al iniciar sesión vía contraseña.",
+        "login_password_storage_error": "[Dispatch] El cliente %s falló al iniciar sesión vía contraseña porque no hay contraseña en la base de datos.",
         "combo_token_success": "[Dispatch] El cliente %s intercambió el combo token exitosamente.",
         "combo_token_error": "[Dispatch] El cliente %s falló al intercambiar el combo token.",
         "account_login_create_success": "[Dispatch] El cliente %s falló al iniciar sesión: Cuenta %s creada.",
@@ -39,9 +39,9 @@
         "session_key_error": "Clave de sesión incorrecta.",
         "username_error": "Nombre de usuario no encontrado.",
         "username_create_error": "Nombre de usuario no encontrado, la creación falló.",
-        "password_error": "🇺🇸Invalid Password",
-        "password_length_error": "🇺🇸Password length must be greater then or equal to 8",
-        "password_storage_error": "🇺🇸You don't have a password for your account. Please contact an administrator.",
+        "password_error": "Contraseña no válida",
+        "password_length_error": "La longitud de la contraseña debe ser mayor o igual a 8",
+        "password_storage_error": "No tienes contraseña para tu cuenta. Por favor contacta a un administrador.",
         "server_max_player_limit": "Se ha alcanzado el límite de jugadores activos"
       },
       "router_error": "[Dispatch] No se ha podido vincular el router."
@@ -123,11 +123,11 @@
       "description": "Modifica las cuentas de usuario"
     },
     "announce": {
-      "send_success": "🇺🇸Send an announcement successfully, you can revoke it by /a revoke %s.",
-      "refresh_success": "🇺🇸Refresh announcement config file successfully. [Total %s]",
-      "revoke_done": "🇺🇸Try to revoke announcement %s.",
-      "not_found": "🇺🇸Could not found announcement %s.",
-      "description": "🇺🇸Send announcement to all online players, or manage server's announcement"
+      "send_success": "Se envió el anuncio correctamente, puedes revocarlo con /a revoke %s.",
+      "refresh_success": "Se refrescó el archivo de configuración de anuncio correctamente. [Total %s]",
+      "revoke_done": "Intentando revocar el anuncio %s.",
+      "not_found": "No se pudo encontrar el anuncio %s.",
+      "description": "Envía un anuncio a todos los jugadores activos, o gestiona anuncios del server"
     },
     "clear": {
       "weapons": "Eliminadas las armas para %s.",
@@ -164,12 +164,12 @@
       "description": "Cura a todos los personajes en tu equipo actual."
     },
     "help": {
-      "aliases": "🇺🇸Aliases: ",
+      "aliases": "Alias: ",
       "available_commands": "Comandos disponibles: ",
-      "tip_need_permission": "🇺🇸Permission: ",
-      "tip_need_no_permission": "🇺🇸 None",
-      "tip_permission_targeted": "🇺🇸 (Permission %s is also required to use on other players)",
-      "warn_player_has_no_permission": "🇺🇸Notice: You do not have permission to run this command.",
+      "tip_need_permission": "Permiso: ",
+      "tip_need_no_permission": "Ninguno",
+      "tip_permission_targeted": "(El permiso %s es también requerido para usarlo en otros jugadores)",
+      "warn_player_has_no_permission": "Nota: No tienes permiso para ejecutar este comando.",
       "description": "Envía el mensaje de ayuda o muestra información sobre un comando específico"
     },
     "kick": {
@@ -230,7 +230,7 @@
       "description": "Reinicia el tiempo de refrescado de la tienda del jugador objetivo"
     },
     "sendMail": {
-      "give_usage": "🇺🇸Usage: give <player> <itemID|itemName> [amount] [level] [refinement]",
+      "give_usage": "Uso: give <player> <itemID|itemName> [cantidad] [nivel] [refinamiento]",
       "user_not_exist": "El usuario con ID '%s' No existe.",
       "start_composition": "Empezando la construcción del correo.\nPor favor usa '/sendmail <título>' para continuar.\nPuedes usar '/sendmail stop' en cualquier momento.",
       "templates": "Las plantillas de correos se implementarán pronto...",
@@ -347,23 +347,23 @@
   },
   "documentation": {
     "handbook": {
-      "title": "🇺🇸GM Handbook",
+      "title": "GM Handbook",
       "title_commands": "Comandos",
       "title_avatars": "Avatares",
       "title_items": "Objetos",
       "title_scenes": "Escenario",
       "title_monsters": "Monstruos",
-      "header_id": "🇺🇸Id",
+      "header_id": "Id",
       "header_command": "Comando",
       "header_description": "Descripción",
-      "header_avatar": "🇺🇸Avatar",
+      "header_avatar": "Avatar",
       "header_item": "Objeto",
       "header_scene": "Escenario",
       "header_monster": "Monstruo"
     },
     "index": {
       "title": "Documentación",
-      "handbook": "🇺🇸GM Handbook",
+      "handbook": "GM Handbook",
       "gacha_mapping": "JSON de mapeo del Gacha"
     }
   }
