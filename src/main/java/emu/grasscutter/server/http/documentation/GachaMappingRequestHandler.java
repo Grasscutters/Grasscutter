@@ -1,16 +1,17 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.Configuration.RESOURCE;
-
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.utils.Utils;
-import static emu.grasscutter.Configuration.DOCUMENT_LANGUAGE;
 import express.http.Request;
 import express.http.Response;
+
+import static emu.grasscutter.config.Configuration.DOCUMENT_LANGUAGE;
+import static emu.grasscutter.config.Configuration.RESOURCE;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;

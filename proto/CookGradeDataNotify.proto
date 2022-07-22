@@ -2,9 +2,9 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-// CmdId: 111
+// CmdId: 134
 // EnetChannelId: 0
 // EnetIsReliable: true
 message CookGradeDataNotify {
-	uint32 grade = 6;
+	uint32 grade = 12;
 }

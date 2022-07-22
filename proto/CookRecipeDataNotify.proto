@@ -4,9 +4,9 @@ option java_package = "emu.grasscutter.net.proto";
 
 import "CookRecipeData.proto";
 
-// CmdId: 101
+// CmdId: 106
 // EnetChannelId: 0
 // EnetIsReliable: true
 message CookRecipeDataNotify {
-	CookRecipeData recipe_data = 1;
+	CookRecipeData recipe_data = 4;
 }

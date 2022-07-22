@@ -17,13 +17,8 @@ public class AvatarSkillData extends GameResource {
     private boolean isAttackCameraLock;
     private int proudSkillGroupId;
     private ElementType costElemType;
-    private List<Float> lockWeightParams;
-    
     private long nameTextMapHash;
-    
     private String abilityName;
-    private String lockShape;
-    private String globalValueKey;
 
     @Override
 	public int getId(){
@@ -58,24 +53,12 @@ public class AvatarSkillData extends GameResource {
 		return costElemType;
 	}
 
-	public List<Float> getLockWeightParams() {
-		return lockWeightParams;
-	}
-
 	public long getNameTextMapHash() {
 		return nameTextMapHash;
 	}
 
 	public String getAbilityName() {
 		return abilityName;
-	}
-
-	public String getLockShape() {
-		return lockShape;
-	}
-
-	public String getGlobalValueKey() {
-		return globalValueKey;
 	}
 	
 	@Override

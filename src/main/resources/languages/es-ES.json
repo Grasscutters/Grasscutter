@@ -28,6 +28,8 @@
         "login_token_attempt": "[Dispatch] El cliente %s está intentando iniciar sesión a través de un token.",
         "login_token_error": "[Dispatch] El cliente %s falló al iniciar sesión a través de un token.",
         "login_token_success": "[Dispatch] El cliente %s inició sesión a través de un token como %s.",
+        "login_password_error": "[Dispatch] El cliente %s falló al iniciar sesión vía contraseña.",
+        "login_password_storage_error": "[Dispatch] El cliente %s falló al iniciar sesión vía contraseña porque no hay contraseña en la base de datos.",
         "combo_token_success": "[Dispatch] El cliente %s intercambió el combo token exitosamente.",
         "combo_token_error": "[Dispatch] El cliente %s falló al intercambiar el combo token.",
         "account_login_create_success": "[Dispatch] El cliente %s falló al iniciar sesión: Cuenta %s creada.",
@@ -37,6 +39,9 @@
         "session_key_error": "Clave de sesión incorrecta.",
         "username_error": "Nombre de usuario no encontrado.",
         "username_create_error": "Nombre de usuario no encontrado, la creación falló.",
+        "password_error": "Contraseña no válida",
+        "password_length_error": "La longitud de la contraseña debe ser mayor o igual a 8",
+        "password_storage_error": "No tienes contraseña para tu cuenta. Por favor contacta a un administrador.",
         "server_max_player_limit": "Se ha alcanzado el límite de jugadores activos"
       },
       "router_error": "[Dispatch] No se ha podido vincular el router."
@@ -89,6 +94,7 @@
       }
     },
     "execution": {
+      "usage_prefix": "Uso: ",
       "player_exist_error": "Jugador no encontrado.",
       "player_offline_error": "El jugador no está activo.",
       "item_player_exist_error": "Objeto o UID inválido.",
@@ -109,7 +115,6 @@
       "success": "Exitoso"
     },
     "account": {
-      "command_usage": "Uso: account <create|delete> <nombre de usuario> [UID]",
       "invalid": "UID inválido.",
       "exists": "Una cuenta con este nombre de usuario y/o UID ya existe.",
       "create": "Cuenta creada con UID %s.",
@@ -117,8 +122,14 @@
       "no_account": "Cuenta no encontrada.",
       "description": "Modifica las cuentas de usuario"
     },
+    "announce": {
+      "send_success": "Se envió el anuncio correctamente, puedes revocarlo con /a revoke %s.",
+      "refresh_success": "Se refrescó el archivo de configuración de anuncio correctamente. [Total %s]",
+      "revoke_done": "Intentando revocar el anuncio %s.",
+      "not_found": "No se pudo encontrar el anuncio %s.",
+      "description": "Envía un anuncio a todos los jugadores activos, o gestiona anuncios del server"
+    },
     "clear": {
-      "command_usage": "Uso: clear <all|wp|art|mat> [lv<max level>] [r<max refinement>] [<max rarity>*]",
       "weapons": "Eliminadas las armas para %s.",
       "artifacts": "Eliminados los artefactos para %s.",
       "materials": "Eliminados los materiales para %s.",
@@ -129,19 +140,16 @@
       "description": "Elimina objetos desbloqueados no equipados, incluyendo objetos de rareza dorada, de tu inventario"
     },
     "coop": {
-      "usage": "Uso: coop [UID del host]",
       "success": "Invocado %s al mundo de %s.",
       "description": "Fuerza a alguien a ser invocado al mundo de otro. Si no se establece un objetivo, te envía a ti al modo cooperativo."
     },
     "enter_dungeon": {
-      "usage": "Uso: enterdungeon <dungeonID>",
       "changed": "Cambiado a la mazmorra %s.",
       "not_found_error": "La mazmorra no existe.",
       "in_dungeon_error": "Ya estás en esa mazmorra.",
       "description": "Te introduce en una mazmorra"
     },
     "give": {
-      "usage": "Uso: give <itemID|avatarID|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [x<cantidad>] [lv<nivel>] [r<refinamiento>]",
       "usage_relic": "Uso: give <artifactID> [mainPropID] [<appendPropID>[,<veces>]]... [lv<nivel 0-20>]",
       "illegal_relic": "Este artifactID pertenece a un rango de la lista negra, puede que no sea el que buscas.",
       "given": "Dado %s de %s a %s.",
@@ -156,9 +164,12 @@
       "description": "Cura a todos los personajes en tu equipo actual."
     },
     "help": {
-      "usage": "Uso: ",
-      "aliases": "Aliases: ",
+      "aliases": "Alias: ",
       "available_commands": "Comandos disponibles: ",
+      "tip_need_permission": "Permiso: ",
+      "tip_need_no_permission": "Ninguno",
+      "tip_permission_targeted": "(El permiso %s es también requerido para usarlo en otros jugadores)",
+      "warn_player_has_no_permission": "Nota: No tienes permiso para ejecutar este comando.",
       "description": "Envía el mensaje de ayuda o muestra información sobre un comando específico"
     },
     "kick": {
@@ -167,13 +178,11 @@
       "description": "Echa al jugador específico del servidor (WIP)"
     },
     "killall": {
-      "usage": "Uso: killall [playerUID] [sceneID]",
       "scene_not_found_in_player_world": "Escenario no encontrado en el mundo del jugador.",
       "kill_monsters_in_scene": "Matando %s monstruos en el escenario %s.",
       "description": "Mata todas las entidades"
     },
     "killCharacter": {
-      "usage": "Uso: killcharacter [playerID]",
       "success": "Se ha matado al personaje actual de %s.",
       "description": "Mata al personaje actual del jugador"
     },
@@ -188,7 +197,6 @@
       "description": "Lista los jugadores activos"
     },
     "permission": {
-      "usage": "Uso: permission <add|remove> <nombre de usuario> <permiso>",
       "add": "Permiso añadido.",
       "has_error": "¡Ya tiene este permiso!",
       "remove": "Permiso eliminado.",
@@ -201,7 +209,6 @@
       "description": "Da las coordenadas en el escenario actual"
     },
     "quest": {
-      "usage": "quest <add|finish> [questID]",
       "added": "Misión %s añadida.",
       "finished": "Misión %s finalizada.",
       "not_found": "Misión no encontrada.",
@@ -219,12 +226,11 @@
       "description": "Reinicia el nivel de constelación en tu personaje actual, necesitarás iniciar sesión de nuevo para ver los cambios"
     },
     "resetShopLimit": {
-      "usage": "Uso: resetshop <playerID>",
       "success": "Reinicio completado.",
       "description": "Reinicia el tiempo de refrescado de la tienda del jugador objetivo"
     },
     "sendMail": {
-      "usage": "Uso: sendmail <userID|all|help> [templateID]",
+      "give_usage": "Uso: give <player> <itemID|itemName> [cantidad] [nivel] [refinamiento]",
       "user_not_exist": "El usuario con ID '%s' No existe.",
       "start_composition": "Empezando la construcción del correo.\nPor favor usa '/sendmail <título>' para continuar.\nPuedes usar '/sendmail stop' en cualquier momento.",
       "templates": "Las plantillas de correos se implementarán pronto...",
@@ -247,27 +253,22 @@
       "description": "Envía un mensaje al usuario especificado. El uso de este comando cambia con el estado de la construcción del mensaje"
     },
     "sendMessage": {
-      "usage": "Uso: sendmessage <mensaje>",
       "success": "Mensaje enviado.",
       "description": "Envía un mensaje a un jugador como servidor. Si se usa sin un objetivo fijado, lo envía a todos los jugadores del servidor."
     },
     "setFetterLevel": {
-      "usage": "Uso: setfetterlevel <nivel>",
       "range_error": "El nivel de amistad debe estar entre 0 y 10.",
       "success": "Nivel de amistad establecido a %s.",
       "level_error": "Nivel de amistad inválido.",
       "description": "Establece tu nivel de amistad para tu personaje actual"
     },
     "setProp": {
-      "usage": "Uso: setprop|prop <prop> <valor>\n\tValores para <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) Observa PlayerProperty enum para ver otros posibles valores, de la forma PROP_MAX_SPRING_VOLUME -> max_spring_volume",
-      "description": "Establece propiedades de la cuenta. Cosas como el modo Dios pueden ser establecidos con este comando, además de cambiar cosas como desbloquear pisos del abusmo o progreso del pase de batalla."
+      "description": "Establece propiedades de la cuenta. Cosas como el modo Dios pueden ser establecidos con este comando, además de cambiar cosas como desbloquear pisos del abusmo o progreso del pase de batalla.\n\tValores para <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) Observa PlayerProperty enum para ver otros posibles valores, de la forma PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setStats": {
-      "usage": "Uso: setstats|stats <estado> <valor>\n\tValores para <estado>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de daño elemental: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Resistencia elemental: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-      "description": "Establece propiedades de combate para tu personaje actual"
+      "description": "Establece propiedades de combate para tu personaje actual\n\tValores para <estado>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de daño elemental: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Resistencia elemental: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys"
     },
     "spawn": {
-      "usage": "Uso: spawn <entityID> [cantidad] [nivel(solo monstruos)] [<x> <y> <z>(solo monstruos, opcional)]",
       "success": "Generados %s de %s.",
       "limit_reached": "Se ha alcanzado el límite de generaciones en el escenario. Generando %s entidades en su lugar.",
       "description": "Genera una entidad cerca de tí"
@@ -277,16 +278,12 @@
       "description": "Detiene el servidor"
     },
     "talent": {
-      "usage_1": "Para establecer el nivel de un talento: /talent set <talentID> <valor>",
-      "usage_2": "Otra forma de establecer el nuvel de un talento: /talent <n o e o q> <valor>",
-      "usage_3": "Para obtener el ID de un talento: /talent getid",
       "lower_16": "Nivel de talento inválido. El nivel debe ser menor que 16.",
       "set_id": "Establecido el talento a %s.",
       "set_atk": "Establecido el talento del ataque normal a %s.",
       "set_e": "Establecido el talento E a %s.",
       "set_q": "Establecido el talento Q a %s.",
       "invalid_skill_id": "ID de habilidad inválido.",
-      "set_this": "Establece este talento a %s.",
       "invalid_level": "Nivel de talento inválido.",
       "normal_attack_id": "ID del ataque normal %s.",
       "e_skill_id": "ID de la habilidad E %s.",
@@ -294,17 +291,13 @@
       "description": "Establece el nivel de un talento para tu personaje actual"
     },
     "team": {
-      "usage": "Uso: team <add|remove|set> [avatarID,...] [index|first|last|index-index,...]",
       "invalid_usage": "Uso inválido.",
-      "add_usage": "Uso (añadir): team add <avatarID,...> [index]",
       "invalid_index": "Index inválido.",
       "add_too_much": "El servidor solo permite tener como máximo %d avatar(es) en tu equipo.",
       "failed_to_add_avatar": "Error al añadir el avatar con ID %s.",
-      "remove_usage": "Uso (quitar): team remove <index|first|last|index-index,...>",
       "failed_to_parse_index": "Error al usar el index: %s",
       "remove_too_much": "No puedes quitar todos tus avatares.",
       "ignore_index": "index(es) ignorados: %s",
-      "set_usage": "Uso (estableces): team set <index> <avatarID>",
       "index_out_of_range": "El index especificado está fuera de rango.",
       "failed_parse_avatar_id": "Error al usar el ID del avatar: %s",
       "avatar_already_in_team": "El avatar ya está en el equipo.",
@@ -317,29 +310,23 @@
       "description": "Teletransporta a todos los jugadores en tu mundo a tu localización"
     },
     "teleport": {
-      "usage_server": "Uso: tp @<playerID> <x> <y> <z> [sceneID]",
-      "usage": "Uso: tp [@<playerID>] <x> <y> <z> [sceneID]",
-      "specify_player_id": "Debes especificar un ID de jugador.",
       "invalid_position": "Posición inválida.",
       "exists_error": "El escenario especificado no existe.",
       "success": "Teletransportado %s a %s, %s, %s en el escenario %s.",
       "description": "Cambia la posición del jugador"
     },
     "weather": {
-      "usage": "Uso: weather [weatherId] [tipo de clima]\nLos IDs de climas pueden ser encontrados en WeatherExcelConfigData.json.\nTipos de clima: sunny, cloudy, rain, thunderstorm, snow, mist",
       "success": "Establece el ID del clima %s con el tipo de clima %s.",
       "status": "El ID del clima actual es %s con tipo de clima %s.",
       "description": "Cambia el ID del clima y el tipo de clima. Los IDs de climas pueden ser encontrados en WeatherExcelConfigData.json.\nTipos de clima: sunny, cloudy, rain, thunderstorm, snow, mist"
     },
     "ban": {
-      "command_usage": "Uso: ban <@playerId> [marca de tiempo] [razón]",
       "success": "Exitoso.",
       "failure": "Error, jugador no encontrado.",
       "invalid_time": "No se puede establecer la marca de tiempo.",
       "description": "Beta a un jugador"
     },
     "unban": {
-      "command_usage": "Uso: unban <@playerId>",
       "success": "Exitoso.",
       "failure": "Error, jugador no encontrado.",
       "description": "Elimina el veto a un jugador"
@@ -380,4 +367,4 @@
       "gacha_mapping": "JSON de mapeo del Gacha"
     }
   }
-} 
+}

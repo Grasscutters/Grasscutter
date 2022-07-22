@@ -11,9 +11,9 @@ import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 
 import java.io.File;
-import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
 /**
@@ -30,22 +30,22 @@ public final class HttpServer {
         this.express = new Express(config -> {
             // Set the Express HTTP server.
             config.server(HttpServer::createServer);
-            
+
             // Configure encryption/HTTPS/SSL.
             config.enforceSsl = HTTP_ENCRYPTION.useEncryption;
-            
+
             // Configure HTTP policies.
-            if(HTTP_POLICIES.cors.enabled) {
+            if (HTTP_POLICIES.cors.enabled) {
                 var allowedOrigins = HTTP_POLICIES.cors.allowedOrigins;
                 if (allowedOrigins.length > 0)
                     config.enableCorsForOrigin(allowedOrigins);
                 else config.enableCorsForAllOrigins();
             }
-            
+
             // Configure debug logging.
-            if(SERVER.debugLevel == ServerDebugMode.ALL)
+            if (DISPATCH_INFO.logRequests == ServerDebugMode.ALL)
                 config.enableDevLogging();
-            
+
             // Disable compression on static files.
             config.precompressStaticFiles = false;
         });
@@ -60,26 +60,26 @@ public final class HttpServer {
         Server server = new Server();
         ServerConnector serverConnector
                 = new ServerConnector(server);
-        
-        if(HTTP_ENCRYPTION.useEncryption) {
+
+        if (HTTP_ENCRYPTION.useEncryption) {
             var sslContextFactory = new SslContextFactory.Server();
             var keystoreFile = new File(HTTP_ENCRYPTION.keystore);
-            
-            if(!keystoreFile.exists()) {
+
+            if (!keystoreFile.exists()) {
                 HTTP_ENCRYPTION.useEncryption = false;
                 HTTP_ENCRYPTION.useInRouting = false;
-                
+
                 Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.no_keystore_error"));
             } else try {
                 sslContextFactory.setKeyStorePath(keystoreFile.getPath());
                 sslContextFactory.setKeyStorePassword(HTTP_ENCRYPTION.keystorePassword);
             } catch (Exception ignored) {
                 Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.password_error"));
-                
+
                 try {
                     sslContextFactory.setKeyStorePath(keystoreFile.getPath());
                     sslContextFactory.setKeyStorePassword("123456");
-                    
+
                     Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.default_password"));
                 } catch (Exception exception) {
                     Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.general_error"), exception);
@@ -88,10 +88,10 @@ public final class HttpServer {
                 serverConnector = new ServerConnector(server, sslContextFactory);
             }
         }
-        
+
         serverConnector.setPort(HTTP_INFO.bindPort);
         server.setConnectors(new ServerConnector[]{serverConnector});
-        
+
         return server;
     }
 
@@ -112,9 +112,9 @@ public final class HttpServer {
     public HttpServer addRouter(Class<? extends Router> router, Object... args) {
         // Get all constructor parameters.
         Class<?>[] types = new Class<?>[args.length];
-        for(var argument : args)
+        for (var argument : args)
             types[args.length - 1] = argument.getClass();
-        
+
         try { // Create a router instance & apply routes.
             var constructor = router.getDeclaredConstructor(types); // Get the constructor.
             var routerInstance = constructor.newInstance(args); // Create instance.
@@ -126,15 +126,16 @@ public final class HttpServer {
 
     /**
      * Starts listening on the HTTP server.
+     * @throws UnsupportedEncodingException
      */
-    public void start() {
+    public void start() throws UnsupportedEncodingException {
         // Attempt to start the HTTP server.
-        if(HTTP_INFO.bindAddress.equals("")){
+        if (HTTP_INFO.bindAddress.equals("")) {
             this.express.listen(HTTP_INFO.bindPort);
-        }else{
+        }else {
             this.express.listen(HTTP_INFO.bindAddress, HTTP_INFO.bindPort);
         }
-        
+
         // Log bind information.
         Grasscutter.getLogger().info(translate("messages.dispatch.port_bind", Integer.toString(this.express.raw().port())));
     }
@@ -146,7 +147,7 @@ public final class HttpServer {
         @Override public void applyRoutes(Express express, Javalin handle) {
             express.get("/", (request, response) -> {
                 File file = new File(HTTP_STATIC_FILES.indexFile);
-                if(!file.exists())
+                if (!file.exists())
                     response.send("""
                             <!DOCTYPE html>
                             <html>
@@ -172,19 +173,19 @@ public final class HttpServer {
     public static class UnhandledRequestRouter implements Router {
         @Override public void applyRoutes(Express express, Javalin handle) {
             handle.error(404, context -> {
-                if(SERVER.debugLevel == ServerDebugMode.MISSING)
+                if (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING)
                     Grasscutter.getLogger().info(translate("messages.dispatch.unhandled_request_error", context.method(), context.url()));
                 context.contentType("text/html");
-                
+
                 File file = new File(HTTP_STATIC_FILES.errorFile);
-                if(!file.exists())
+                if (!file.exists())
                     context.result("""
                         <!DOCTYPE html>
                         <html>
                             <head>
                                 <meta charset="utf8">
                             </head>
-                            
+
                             <body>
                                 <img src="https://http.cat/404" />
                             </body>

@@ -1,10 +1,25 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "ActivityWatcherInfo.proto";
 /*import "ArenaChallengeActivityDetailInfo.proto";
 import "AsterActivityDetailInfo.proto";
+import "BartenderActivityDetailInfo.proto";
 import "BlessingActivityDetailInfo.proto";
 import "BlitzRushActivityDetailInfo.proto";
 import "BounceConjuringActivityDetailInfo.proto";
@@ -12,6 +27,7 @@ import "BuoyantCombatDetailInfo.proto";
 import "ChannelerSlabActivityDetailInfo.proto";
 import "ChessActivityDetailInfo.proto";
 import "CrucibleActivityDetailInfo.proto";
+import "CrystalLinkActivityDetailInfo.proto";
 import "DeliveryActivityDetailInfo.proto";
 import "DigActivityDetailInfo.proto";
 import "DragonSpineActivityDetailInfo.proto";
@@ -21,93 +37,115 @@ import "ExpeditionActivityDetailInfo.proto";
 import "FindHilichurlDetailInfo.proto";
 import "FleurFairActivityDetailInfo.proto";
 import "FlightActivityDetailInfo.proto";
+import "GachaActivityDetailInfo.proto";
+import "GearActivityDetailInfo.proto";
+import "HachiActivityDetailInfo.proto";
 import "HideAndSeekActivityDetailInfo.proto";
+import "IrodoriActivityDetailInfo.proto";
+import "IslandPartyActivityDetailInfo.proto";
+import "LanternRiteActivityDetailInfo.proto";
+import "LuminanceStoneChallengeActivityDetailInfo.proto";
 import "LunaRiteDetailInfo.proto";
+import "MichiaeMatsuriActivityDetailInfo.proto";
 import "MistTrialActivityDetailInfo.proto";
 import "MoonfinTrialActivityDetailInfo.proto";
-import "MusicGameActivityDetailInfo.proto";
+import "PhotoActivityDetailInfo.proto";
 import "PlantFlowerActivityDetailInfo.proto";
+import "PotionActivityDetailInfo.proto";
+import "RogueDiaryActivityDetailInfo.proto";
 import "RoguelikeDungeonActivityDetailInfo.proto";
 import "SalesmanActivityDetailInfo.proto";
 import "SeaLampActivityDetailInfo.proto";
 import "SeaLampActivityInfo.proto";
+import "SpiceActivityDetailInfo.proto";
 import "SummerTimeDetailInfo.proto";
+import "SummerTimeV2DetailInfo.proto";
 import "SumoActivityDetailInfo.proto";
+import "TanukiTravelActivityDetailInfo.proto";
 import "TreasureMapActivityDetailInfo.proto";
 import "TrialAvatarActivityDetailInfo.proto";
-import "WaterSpiritActivityDetailInfo.proto";*/
+import "UgcActivityDetailInfo.proto";
+import "WaterSpiritActivityDetailInfo.proto";
+import "WinterCampActivityDetailInfo.proto";*/
 import "MusicGameActivityDetailInfo.proto";
+import "Unk2800_PHPHMILPOLC.proto";
+
+option java_package = "emu.grasscutter.net.proto";
 
 message ActivityInfo {
-	uint32 activity_id = 1;
-	uint32 schedule_id = 2;
-	uint32 begin_time = 3;
-	uint32 end_time = 4;
-	uint32 activity_type = 5;
-	bool is_play_open_anim = 6;
-	bool is_finished = 7;
-	bool is_starting = 8;
-	repeated ActivityWatcherInfo watcher_info_list = 9;
+	bool is_play_open_anim = 13;
+	uint32 schedule_id = 15;
+	uint32 cur_score = 1906;
+	bool is_starting = 9;
+	repeated uint32 taken_reward_list = 329;
+	uint32 selected_avatar_reward_id = 1290;
+	uint32 first_day_start_time = 592;
+	uint32 score_limit = 1958;
+	bool is_finished = 6;
+	bool is_hidden = 919;
+	uint32 begin_time = 8;
+	uint32 end_time = 5;
+	map<uint32, uint32> activity_coin_map = 682;
+	uint32 activity_type = 4;
+	repeated Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;
 	repeated uint32 meet_cond_list = 10;
-	repeated uint32 expire_cond_list = 15;
-	uint32 selected_avatar_reward_id = 17;
-	map<uint32, uint32> activity_coin_map = 18;
-	uint32 score_limit = 19;
-	uint32 cur_score = 20;
-	repeated uint32 taken_reward_list = 24;
-	bool is_hidden = 26;
-	uint32 first_day_start_time = 27;
-	//bool MIFCLBCMKJI = 28;
-	//bool BPGCBIEDEDM = 29;
-	//map<uint32, uint32> AGKPABKOHDA = 30;
+	repeated uint32 expire_cond_list = 3;
+	repeated ActivityWatcherInfo watcher_info_list = 2;
+	uint32 activity_id = 12;
+	//bool Unk2700_NONJFHAIFLA = 102;
+	//bool Unk2700_EDKLLHBEEGE = 1449;
+	//map<uint32, uint32> Unk2700_IFPBCNLCKLG = 1399;
 	oneof detail {
-//		SeaLampActivityDetailInfo sam_lamp_info = 11;
-//		CrucibleActivityDetailInfo crucible_info = 12;
-//		SalesmanActivityDetailInfo salesman_info = 13;
-//		TrialAvatarActivityDetailInfo trial_avatar_info = 14;
-//		DeliveryActivityDetailInfo delivery_info = 16;
-//		AsterActivityDetailInfo aster_info = 21;
-//		FlightActivityDetailInfo flight_info = 25;
-//		DragonSpineActivityDetailInfo dragon_spine_info = 31;
-//		EffigyActivityDetailInfo effigy_info = 32;
-//		TreasureMapActivityDetailInfo treasure_map_info = 35;
-//		BlessingActivityDetailInfo blessing_info = 41;
-//		SeaLampActivityInfo sea_lamp_info = 42;
-//		ExpeditionActivityDetailInfo expedition_info = 43;
-//		ArenaChallengeActivityDetailInfo arena_challenge_info = 44;
-//		FleurFairActivityDetailInfo fleur_fair_info = 51;
-//		WaterSpiritActivityDetailInfo water_spirit_info = 52;
-//		ChannelerSlabActivityDetailInfo challneler_slab_info = 61;
-//		MistTrialActivityDetailInfo mist_trial_activity_info = 62;
-//		HideAndSeekActivityDetailInfo hide_and_seek_info = 63;
-//		FindHilichurlDetailInfo find_hilichurl_info = 64;
-//		SummerTimeDetailInfo summer_time_info = 65;
-//		BuoyantCombatDetailInfo buoyant_combat_info = 66;
-//		EchoShellDetailInfo echo_shell_info = 67;
-//		BounceConjuringActivityDetailInfo bounce_conjuring_info = 68;
-//		BlitzRushActivityDetailInfo blitz_rush_info = 69;
-//		ChessActivityDetailInfo chess_info = 70;
-//		SumoActivityDetailInfo sumo_info = 71;
-//		MoonfinTrialActivityDetailInfo moonfin_trial_info = 72;
-//		LunaRiteDetailInfo luna_rite_info = 73;
-//		PlantFlowerActivityDetailInfo plant_flower_info = 74;
-		MusicGameActivityDetailInfo music_game_info = 75;
-//		RoguelikeDungeonActivityDetailInfo roguelike_dungoen_info = 76;
-//		DigActivityDetailInfo dig_info = 77;
-//		DOCNGBMKEID hachi_info = 78;
-//		DLHPBNNDGFI winter_camp_info = 79;
-//		IFACCKLEJCC potion_info = 80;
-//		PFMCPMIMGLM tanuki_travel_activity_info = 81;
-//		JEIAODKGIBD lantern_rite_activity_info = 82;
-//		EPDOGGKOCAP michiae_matsuri_info = 83;
-//		NHMFHLIGAKL bartender_info = 84;
-//		EAGKNMCLJDI ugc_info = 85;
-//		ADPBMLFDHJD crystal_link_info = 86;
-//		JACDNLEIDOO irodori_info = 87;
-//		EHDKFDJEEGP photo_info = 88;
-//		BEPFLAKHNHL spice_info = 89;
-//		MMNEJBFMAEA gacha_info = 90;
-//		JLMHDDHOGGD luminance_stone_challenge_info = 91;
-//		IGBMCJOPGIL rogue_diary_info = 92;
+		// SeaLampActivityDetailInfo sam_lamp_info = 7;
+		// CrucibleActivityDetailInfo crucible_info = 14;
+		// SalesmanActivityDetailInfo salesman_info = 11;
+		// TrialAvatarActivityDetailInfo trial_avatar_info = 1;
+		// DeliveryActivityDetailInfo delivery_info = 1092;
+		// AsterActivityDetailInfo aster_info = 557;
+		// FlightActivityDetailInfo flight_info = 1365;
+		// DragonSpineActivityDetailInfo dragon_spine_info = 1727;
+		// EffigyActivityDetailInfo effigy_info = 391;
+		// TreasureMapActivityDetailInfo treasure_map_info = 1114;
+		// BlessingActivityDetailInfo blessing_info = 1869;
+		// SeaLampActivityInfo sea_lamp_info = 494;
+		// ExpeditionActivityDetailInfo expedition_info = 202;
+		// ArenaChallengeActivityDetailInfo arena_challenge_info = 859;
+		// FleurFairActivityDetailInfo fleur_fair_info = 857;
+		// WaterSpiritActivityDetailInfo water_spirit_info = 1675;
+		// ChannelerSlabActivityDetailInfo channeler_slab_info = 1015;
+		// MistTrialActivityDetailInfo mist_trial_activity_info = 156;
+		// HideAndSeekActivityDetailInfo hide_and_seek_info = 427;
+		// FindHilichurlDetailInfo find_hilichurl_info = 1411;
+		// SummerTimeDetailInfo summer_time_info = 1372;
+		// BuoyantCombatDetailInfo buoyant_combat_info = 1842;
+		// EchoShellDetailInfo echo_shell_info = 1113;
+		// BounceConjuringActivityDetailInfo bounce_conjuring_info = 767;
+		// BlitzRushActivityDetailInfo blitz_rush_info = 794;
+		// ChessActivityDetailInfo chess_info = 927;
+		// SumoActivityDetailInfo sumo_info = 1261;
+		// MoonfinTrialActivityDetailInfo moonfin_trial_info = 1588;
+		// LunaRiteDetailInfo luna_rite_info = 814;
+		// PlantFlowerActivityDetailInfo plant_flower_info = 54;
+		MusicGameActivityDetailInfo music_game_info = 460;
+		// RoguelikeDungeonActivityDetailInfo roguelike_dungeon_info = 219;
+		// DigActivityDetailInfo dig_info = 403;
+		// HachiActivityDetailInfo hachi_info = 491;
+		// WinterCampActivityDetailInfo winter_camp_info = 1083;
+		// PotionActivityDetailInfo potion_info = 1273;
+		// TanukiTravelActivityDetailInfo tanuki_travel_activity_info = 1796;
+		// LanternRiteActivityDetailInfo lantern_rite_activity_info = 1876;
+		// MichiaeMatsuriActivityDetailInfo michiae_matsuri_info = 194;
+		// BartenderActivityDetailInfo bartender_info = 1725;
+		// UgcActivityDetailInfo ugc_info = 703;
+		// CrystalLinkActivityDetailInfo crystal_link_info = 1226;
+		// IrodoriActivityDetailInfo irodori_info = 750;
+		// PhotoActivityDetailInfo photo_info = 328;
+		// SpiceActivityDetailInfo spice_info = 1891;
+		// GachaActivityDetailInfo gacha_info = 825;
+		// LuminanceStoneChallengeActivityDetailInfo luminance_stone_challenge_info = 1308;
+		// RogueDiaryActivityDetailInfo rogue_diary_info = 812;
+		// SummerTimeV2DetailInfo summer_time_v_2_info = 622;
+		// IslandPartyActivityDetailInfo island_party_info = 1885;
+		// GearActivityDetailInfo gear_info = 722;
 	}
 }

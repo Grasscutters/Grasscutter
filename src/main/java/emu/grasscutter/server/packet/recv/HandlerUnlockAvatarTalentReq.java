@@ -8,13 +8,13 @@ import emu.grasscutter.server.game.GameSession;
 
 @Opcodes(PacketOpcodes.UnlockAvatarTalentReq)
 public class HandlerUnlockAvatarTalentReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		UnlockAvatarTalentReq req = UnlockAvatarTalentReq.parseFrom(payload);
-		
-		// Unlock avatar const
-		session.getServer().getInventoryManager().unlockAvatarConstellation(session.getPlayer(), req.getAvatarGuid());
-	}
+
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        UnlockAvatarTalentReq req = UnlockAvatarTalentReq.parseFrom(payload);
+
+        // Unlock avatar const
+        session.getServer().getInventorySystem().unlockAvatarConstellation(session.getPlayer(), req.getAvatarGuid());
+    }
 
 }

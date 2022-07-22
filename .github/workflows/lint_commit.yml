@@ -32,10 +32,10 @@ jobs:
       # - run: git merge development
       - run: git reset --hard development
       - run: git stash pop
-      - run: git add -u
-      - run: git commit -m 'Fix whitespace [skip actions]'
+      - name: Commit any whitespace changes
+        run: git add -u && git commit -m 'Fix whitespace [skip actions]' || true
       - name: Update Languages
         run: python manage_languages.py -u
-      - run: git add -u
-      - run: git commit -m 'Update languages [skip actions]'
+      - name: Commit any language changes
+        run: git add -u && git commit -m 'Update languages [skip actions]' || true
       - run: git push --set-upstream --force origin LintRatchet

@@ -1,15 +1,31 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-// CmdId: 658
+// CmdId: 694
 // EnetChannelId: 0
 // EnetIsReliable: true
 message ReliquaryPromoteRsp {
-	int32 retcode = 2;
-	uint64 target_reliquary_guid = 4;
-	uint32 old_promote_level = 11;
-	uint32 cur_promote_level = 14;
-	repeated uint32 old_append_prop_list = 3;
-	repeated uint32 cur_append_prop_list = 13;
+	uint32 old_promote_level = 10;
+	uint64 target_reliquary_guid = 6;
+	repeated uint32 cur_append_prop_list = 9;
+	int32 retcode = 12;
+	uint32 cur_promote_level = 2;
+	repeated uint32 old_append_prop_list = 8;
 }

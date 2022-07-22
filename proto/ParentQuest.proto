@@ -1,19 +1,35 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "ChildQuest.proto";
 import "ParentQuestRandomInfo.proto";
 
+option java_package = "emu.grasscutter.net.proto";
+
 message ParentQuest {
-	uint32 parent_quest_id = 1;
-	repeated ChildQuest child_quest_list = 2;
-	bool is_finished = 3;
-	bool is_random = 4;
-	ParentQuestRandomInfo random_info = 5;
-	repeated int32 quest_var = 6;
-	uint32 parent_quest_state = 7;
-	uint32 quest_var_seq = 8;
-	map<uint32, uint32> time_var_map = 9;
-	uint64 GJJJKEIPAPC = 10;
+	ParentQuestRandomInfo random_info = 12;
+	uint32 quest_var_seq = 11;
+	repeated int32 quest_var = 14;
+	uint64 Unk2700_KHDDIJNOICK = 6;
+	bool is_random = 13;
+	uint32 parent_quest_id = 3;
+	bool is_finished = 7;
+	map<uint32, uint32> time_var_map = 8;
+	uint32 parent_quest_state = 1;
+	repeated ChildQuest child_quest_list = 9;
 }

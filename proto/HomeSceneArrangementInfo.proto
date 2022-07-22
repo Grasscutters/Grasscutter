@@ -1,22 +1,38 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "HomeBlockArrangementInfo.proto";
 import "HomeFurnitureData.proto";
 import "Vector.proto";
 
+option java_package = "emu.grasscutter.net.proto";
+
 message HomeSceneArrangementInfo {
-	uint32 scene_id = 1;
-	repeated HomeBlockArrangementInfo block_arrangement_info_list = 2;
-	bool is_set_born_pos = 3;
-	Vector born_pos = 4;
-	Vector born_rot = 5;
-	repeated HomeFurnitureData door_list = 7;
-	repeated HomeFurnitureData stair_list = 8;
-	HomeFurnitureData main_house = 9;
-	uint32 comfort_value = 10;
-	Vector djinn_pos = 11;
-	uint32 tmp_version = 12;
-	uint32 CNLMNOEGKME = 13;
+	Vector born_rot = 4;
+	Vector born_pos = 1;
+	repeated HomeFurnitureData stair_list = 11;
+	repeated HomeFurnitureData door_list = 13;
+	bool is_set_born_pos = 10;
+	repeated HomeBlockArrangementInfo block_arrangement_info_list = 8;
+	uint32 scene_id = 2;
+	uint32 Unk2700_BJHAMKKECEI = 12;
+	Vector djinn_pos = 9;
+	HomeFurnitureData main_house = 14;
+	uint32 comfort_value = 7;
+	uint32 tmp_version = 5;
 }

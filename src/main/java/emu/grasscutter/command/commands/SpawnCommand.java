@@ -1,29 +1,28 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.MonsterData;
-import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.game.world.Scene;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.List;
-import java.util.Random;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "spawn", usage = "spawn <entityId> [amount] [level(monster only)] [<x> <y> <z>(monster only, optional)]", aliases = {"drop"}, permission = "server.spawn", permissionTargeted = "server.spawn.others", description = "commands.spawn.description")
+@Command(
+    label = "spawn",
+    usage = {"spawn <entityId> [amount] [level(monster only)] [<x> <y> <z>(monster only)]"},
+    aliases = {"drop"},
+    permission = "server.spawn",
+    permissionTargeted = "server.spawn.others")
 public final class SpawnCommand implements CommandHandler {
 
     @Override
@@ -31,7 +30,7 @@ public final class SpawnCommand implements CommandHandler {
         int id = 0;  // This is just to shut up the linter, it's not a real default
         int amount = 1;
         int level = 1;
-		float x = 0, y = 0, z = 0;
+        float x = 0, y = 0, z = 0;
         switch (args.size()) {
             case 6:
                 try {
@@ -61,10 +60,10 @@ public final class SpawnCommand implements CommandHandler {
                 }
                 break;
             default:
-                CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.usage"));
+                sendUsageMessage(sender);
                 return;
         }
-        
+
         MonsterData monsterData = GameData.getMonsterDataMap().get(id);
         GadgetData gadgetData = GameData.getGadgetDataMap().get(id);
         ItemData itemData = GameData.getItemDataMap().get(id);
@@ -72,21 +71,21 @@ public final class SpawnCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.entityId"));
             return;
         }
-       
+
         Scene scene = targetPlayer.getScene();
-        
+
         if (scene.getEntities().size() + amount > GAME_OPTIONS.sceneEntityLimit) {
-        	amount = Math.max(Math.min(GAME_OPTIONS.sceneEntityLimit - scene.getEntities().size(), amount), 0);
-        	CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.limit_reached", amount));
-        	if (amount <= 0) {
-        		return;
-        	}
+            amount = Math.max(Math.min(GAME_OPTIONS.sceneEntityLimit - scene.getEntities().size(), amount), 0);
+            CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.limit_reached", amount));
+            if (amount <= 0) {
+                return;
+            }
         }
 
         double maxRadius = Math.sqrt(amount * 0.2 / Math.PI);
         for (int i = 0; i < amount; i++) {
-            Position pos = GetRandomPositionInCircle(targetPlayer.getPos(), maxRadius).addY(3);
-            if(x != 0 && y != 0 && z != 0) {
+            Position pos = GetRandomPositionInCircle(targetPlayer.getPosition(), maxRadius).addY(3);
+            if (x != 0 && y != 0 && z != 0) {
                 pos = GetRandomPositionInCircle(new Position(x, y, z), maxRadius).addY(3);
             }
             GameEntity entity = null;
@@ -120,7 +119,7 @@ public final class SpawnCommand implements CommandHandler {
         CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.success", Integer.toString(amount), Integer.toString(id)));
     }
 
-    private Position GetRandomPositionInCircle(Position origin, double radius){
+    private Position GetRandomPositionInCircle(Position origin, double radius) {
         Position target = origin.clone();
         double angle = Math.random() * 360;
         double r = Math.sqrt(Math.random() * radius * radius);

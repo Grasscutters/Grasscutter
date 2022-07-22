@@ -1,13 +1,31 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.proto";
- 
 import "Vector.proto";
 
-// Command code: 5222
+option java_package = "emu.grasscutter.net.proto";
 
+// CmdId: 3019
+// EnetChannelId: 0
+// EnetIsReliable: true
+// IsAllowClient: true
 message HitTreeNotify {
-        Vector hit_postion = 3;
-        uint32 wood_type = 4;		
-        Vector hit_postion_duplicated = 13;	//I don't understand the reason why ** makes two same positions data
+	uint32 tree_type = 11;
+	Vector tree_pos = 2;
+	Vector drop_pos = 8;
 }

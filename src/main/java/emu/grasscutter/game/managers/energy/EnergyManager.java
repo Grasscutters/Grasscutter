@@ -13,6 +13,7 @@ import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.FightProperty;
@@ -31,8 +32,6 @@ import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import static emu.grasscutter.Configuration.GAME_OPTIONS;
-
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.Collection;
@@ -41,13 +40,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 import static java.util.Map.entry;
 
 import com.google.gson.reflect.TypeToken;
 import com.google.protobuf.InvalidProtocolBufferException;
 
-public class EnergyManager {
-    private final Player player;
+public class EnergyManager extends BasePlayerManager {
     private final Map<EntityAvatar, Integer> avatarNormalProbabilities;
 //    energyUsage for each player
     private Boolean energyUsage;
@@ -55,18 +55,14 @@ public class EnergyManager {
     private final static Int2ObjectMap<List<SkillParticleGenerationInfo>> skillParticleGenerationData = new Int2ObjectOpenHashMap<>();
 
     public EnergyManager(Player player) {
-        this.player = player;
+        super(player);
         this.avatarNormalProbabilities = new HashMap<>();
         this.energyUsage=GAME_OPTIONS.energyUsage;
     }
 
-    public Player getPlayer() {
-        return this.player;
-    }
-
     public static void initialize() {
         // Read the data we need for monster energy drops.
-        try (Reader fileReader = new InputStreamReader(DataLoader.load("EnergyDrop.json"))) {
+        try (Reader fileReader = DataLoader.loadReader("EnergyDrop.json")) {
             List<EnergyDropEntry> energyDropList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, EnergyDropEntry.class).getType());
 
             for (EnergyDropEntry entry : energyDropList) {

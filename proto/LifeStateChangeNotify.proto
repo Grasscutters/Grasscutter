@@ -1,19 +1,35 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "PlayerDieType.proto";
 import "ServerBuff.proto";
 
-// CmdId: 1231
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 1298
 // EnetChannelId: 0
 // EnetIsReliable: true
 message LifeStateChangeNotify {
 	uint32 entity_id = 4;
-	uint32 life_state = 6;
-	uint32 source_entity_id = 5;
-	string attack_tag = 1;
-	PlayerDieType die_type = 13;
-	uint32 move_reliable_seq = 9;
-	repeated ServerBuff server_buff_list = 14;
+	repeated ServerBuff server_buff_list = 6;
+	string attack_tag = 7;
+	uint32 move_reliable_seq = 15;
+	PlayerDieType die_type = 14;
+	uint32 life_state = 5;
+	uint32 source_entity_id = 1;
 }

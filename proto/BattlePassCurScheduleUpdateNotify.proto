@@ -8,6 +8,6 @@ import "BattlePassSchedule.proto";
 // EnetChannelId: 0
 // EnetIsReliable: true
 message BattlePassCurScheduleUpdateNotify {
-	bool have_cur_schedule = 9;
-	BattlePassSchedule cur_schedule = 15;
+	bool have_cur_schedule = 11;
+	BattlePassSchedule cur_schedule = 1;
 }

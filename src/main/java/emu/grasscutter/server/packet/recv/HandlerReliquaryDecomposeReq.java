@@ -8,9 +8,9 @@ import emu.grasscutter.server.game.GameSession;
 
 @Opcodes(PacketOpcodes.ReliquaryDecomposeReq)
 public class HandlerReliquaryDecomposeReq extends PacketHandler {
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		ReliquaryDecomposeReq req = ReliquaryDecomposeReq.parseFrom(payload);
-		session.getServer().getCombineManger().decomposeReliquaries(session.getPlayer(), req.getConfigId(), req.getTargetCount(), req.getGuidListList());
-	}
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        ReliquaryDecomposeReq req = ReliquaryDecomposeReq.parseFrom(payload);
+        session.getServer().getCombineSystem().decomposeReliquaries(session.getPlayer(), req.getConfigId(), req.getTargetCount(), req.getGuidListList());
+    }
 }

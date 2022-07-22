@@ -3,6 +3,6 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 message QueryFilter {
-	int32 type_id = 1;
-	int32 area_mask = 2;
+	int32 type_id = 9;
+	int32 area_mask = 13;
 }

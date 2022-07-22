@@ -1,33 +1,49 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "GachaUpInfo.proto";
 
+option java_package = "emu.grasscutter.net.proto";
+
 message GachaInfo {
-	uint32 gacha_type = 1;
-	uint32 schedule_id = 2;
-	uint32 begin_time = 3;
-	uint32 end_time = 4;
-	uint32 cost_item_id = 5;
-	uint32 cost_item_num = 6;
-	string gacha_prefab_path = 7;
+	string gacha_preview_prefab_path = 4;
+	uint32 cost_item_id = 9;
+	bool is_new_wish = 733;
 	string gacha_prob_url = 8;
-	string gacha_record_url = 9;
-	string gacha_preview_prefab_path = 10;
-	uint32 ten_cost_item_id = 11;
-	uint32 ten_cost_item_num = 12;
-	uint32 left_gacha_times = 13;
-	uint32 gacha_times_limit = 14;
-	uint32 gacha_sort_id = 15;
-	string gacha_prob_url_oversea = 16;
-	string gacha_record_url_oversea = 17;
-	repeated GachaUpInfo gacha_up_info_list = 18;
-	string title_textmap = 19;
-	repeated uint32 display_up_5_item_list = 20;
-	repeated uint32 display_up_4_item_list = 21;
-	uint32 wish_item_id = 22;
-	uint32 wish_progress = 23;
-	uint32 wish_max_progress = 24;
-	bool is_new_wish = 25;
+	string gacha_record_url_oversea = 1854;
+	uint32 cost_item_num = 3;
+	repeated GachaUpInfo gacha_up_info_list = 1233;
+	repeated uint32 display_up_4_item_list = 1875;
+	uint32 wish_progress = 1819;
+	uint32 schedule_id = 10;
+	uint32 gacha_sort_id = 7;
+	uint32 left_gacha_times = 5;
+	string gacha_prefab_path = 15;
+	string title_textmap = 736;
+	uint32 ten_cost_item_num = 6;
+	uint32 gacha_type = 13;
+	uint32 wish_max_progress = 1222;
+	uint32 end_time = 14;
+	uint32 ten_cost_item_id = 2;
+	string gacha_record_url = 12;
+	uint32 wish_item_id = 1637;
+	uint32 begin_time = 1;
+	string gacha_prob_url_oversea = 1481;
+	uint32 gacha_times_limit = 11;
+	repeated uint32 display_up_5_item_list = 2006;
 }

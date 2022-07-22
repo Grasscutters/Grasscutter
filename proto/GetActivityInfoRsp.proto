@@ -1,16 +1,32 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "ActivityInfo.proto";
 import "Uint32Pair.proto";
 
-// CmdId: 2144
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 2041
 // EnetChannelId: 0
 // EnetIsReliable: true
 message GetActivityInfoRsp {
 	int32 retcode = 13;
-	repeated ActivityInfo activity_info_list = 14;
-	repeated uint32 activated_sale_id_list = 2;
-	repeated Uint32Pair disable_transfer_point_interaction_list = 4;
+	repeated ActivityInfo activity_info_list = 5;
+	repeated uint32 activated_sale_id_list = 11;
+	repeated Uint32Pair disable_transfer_point_interaction_list = 10;
 }

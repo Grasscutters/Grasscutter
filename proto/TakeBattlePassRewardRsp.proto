@@ -5,11 +5,11 @@ option java_package = "emu.grasscutter.net.proto";
 import "BattlePassRewardTakeOption.proto";
 import "ItemParam.proto";
 
-// CmdId: 2603
+// CmdId: 2631
 // EnetChannelId: 0
 // EnetIsReliable: true
 message TakeBattlePassRewardRsp {
-	int32 retcode = 2;
-	repeated BattlePassRewardTakeOption take_option_list = 1;
-	repeated ItemParam item_list = 5;
+	int32 retcode = 13;
+	repeated BattlePassRewardTakeOption take_option_list = 9;
+	repeated ItemParam item_list = 7;
 }

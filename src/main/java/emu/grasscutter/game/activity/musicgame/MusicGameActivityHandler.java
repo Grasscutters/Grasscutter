@@ -29,21 +29,20 @@ public class MusicGameActivityHandler extends ActivityHandler {
             .putAllMusicGameRecordMap(
                 musicGamePlayerData.getMusicGameRecord().values().stream()
                     .collect(Collectors.toMap(MusicGamePlayerData.MusicGameRecord::getMusicId, MusicGamePlayerData.MusicGameRecord::toProto)))
-
             .addAllPersonCustomBeatmap(musicGamePlayerData.getPersonalCustomBeatmapRecord().values().stream()
                 .map(MusicGamePlayerData.CustomBeatmapRecord::toPersonalBriefProto)
                 .map(MusicBriefInfoOuterClass.MusicBriefInfo.Builder::build)
                 .toList())
 
-            .addAllPersonCustomBeatmap(musicGamePlayerData.getOthersCustomBeatmapRecord().values().stream()
+            .addAllOthersCustomBeatmap(musicGamePlayerData.getOthersCustomBeatmapRecord().values().stream()
                 .map(MusicGamePlayerData.CustomBeatmapRecord::toOthersBriefProto)
                 .map(MusicBriefInfoOuterClass.MusicBriefInfo.Builder::build)
                 .toList())
             .build());
     }
 
-    public MusicGamePlayerData getMusicGamePlayerData(PlayerActivityData playerActivityData){
-        if(playerActivityData.getDetail() == null || playerActivityData.getDetail().isBlank()){
+    public MusicGamePlayerData getMusicGamePlayerData(PlayerActivityData playerActivityData) {
+        if (playerActivityData.getDetail() == null || playerActivityData.getDetail().isBlank()) {
             onInitPlayerActivityData(playerActivityData);
             playerActivityData.save();
         }
@@ -52,7 +51,7 @@ public class MusicGameActivityHandler extends ActivityHandler {
             MusicGamePlayerData.class);
     }
 
-    public boolean setMusicGameRecord(PlayerActivityData playerActivityData, MusicGamePlayerData.MusicGameRecord newRecord){
+    public boolean setMusicGameRecord(PlayerActivityData playerActivityData, MusicGamePlayerData.MusicGameRecord newRecord) {
         var musicGamePlayerData = getMusicGamePlayerData(playerActivityData);
         var saveRecord = musicGamePlayerData.getMusicGameRecord().get(newRecord.getMusicId());
 
@@ -64,7 +63,7 @@ public class MusicGameActivityHandler extends ActivityHandler {
 
         return newRecord.getMaxScore() > saveRecord.getMaxScore();
     }
-    public void setMusicGameCustomBeatmapRecord(PlayerActivityData playerActivityData, MusicGamePlayerData.CustomBeatmapRecord newRecord){
+    public void setMusicGameCustomBeatmapRecord(PlayerActivityData playerActivityData, MusicGamePlayerData.CustomBeatmapRecord newRecord) {
         var musicGamePlayerData = getMusicGamePlayerData(playerActivityData);
         musicGamePlayerData.getOthersCustomBeatmapRecord().put(newRecord.getMusicShareId(), newRecord);
 

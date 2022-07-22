@@ -2,10 +2,10 @@ syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-// CmdId: 476
+// CmdId: 449
 // EnetChannelId: 0
 // EnetIsReliable: true
 // IsAllowClient: true
 message UnlockPersonalLineReq {
-	uint32 personal_line_id = 8;
+	uint32 personal_line_id = 4;
 }

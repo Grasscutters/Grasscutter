@@ -1,17 +1,33 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 syntax = "proto3";
 
 option java_package = "emu.grasscutter.net.proto";
 
-// CmdId: 1037
+// CmdId: 1035
 // EnetChannelId: 0
 // EnetIsReliable: true
 message AvatarSkillDepotChangeNotify {
-	uint64 avatar_guid = 2;
-	uint32 entity_id = 8;
-	uint32 skill_depot_id = 9;
-	repeated uint32 talent_id_list = 1;
-	repeated uint32 proud_skill_list = 5;
-	uint32 core_proud_skill_level = 4;
-	map<uint32, uint32> skill_level_map = 10;
-	map<uint32, uint32> proud_skill_extra_level_map = 11;
+	uint32 skill_depot_id = 15;
+	map<uint32, uint32> proud_skill_extra_level_map = 14;
+	repeated uint32 talent_id_list = 9;
+	repeated uint32 proud_skill_list = 4;
+	uint32 core_proud_skill_level = 2;
+	uint32 entity_id = 7;
+	uint64 avatar_guid = 12;
+	map<uint32, uint32> skill_level_map = 3;
 }

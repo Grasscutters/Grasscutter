@@ -1,28 +1,44 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "ItemParam.proto";
 
+option java_package = "emu.grasscutter.net.proto";
+
 message ShopGoods {
-	uint32 goods_id = 1;
-	ItemParam goods_item = 2;
-	uint32 scoin = 3;
-	uint32 hcoin = 4;
-	repeated ItemParam cost_item_list = 5;
-	uint32 bought_num = 6;
-	uint32 buy_limit = 7;
-	uint32 begin_time = 8;
-	uint32 end_time = 9;
-	uint32 next_refresh_time = 10;
-	uint32 min_level = 11;
-	uint32 max_level = 12;
-	repeated uint32 pre_goods_id_list = 13;
+	uint32 discount_end_time = 258;
+	uint32 min_level = 8;
+	uint32 end_time = 11;
+	repeated ItemParam cost_item_list = 3;
+	uint32 secondary_sheet_id = 318;
+	uint32 hcoin = 1;
 	uint32 mcoin = 14;
-	uint32 disable_type = 15;
-	uint32 secondary_sheet_id = 16;
-	uint32 discount_id = 17;
-	uint32 discount_begin_time = 18;
-	uint32 discount_end_time = 19;
-	uint32 single_limit = 20;
+	uint32 discount_id = 1998;
+	uint32 single_limit = 247;
+	uint32 goods_id = 13;
+	uint32 next_refresh_time = 7;
+	uint32 max_level = 4;
+	uint32 disable_type = 6;
+	uint32 discount_begin_time = 574;
+	repeated uint32 pre_goods_id_list = 2;
+	uint32 begin_time = 5;
+	uint32 scoin = 15;
+	uint32 bought_num = 10;
+	uint32 buy_limit = 12;
+	ItemParam goods_item = 9;
 }

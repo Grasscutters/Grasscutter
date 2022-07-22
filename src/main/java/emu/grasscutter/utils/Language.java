@@ -6,15 +6,16 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
 
 import javax.annotation.Nullable;
+
+import static emu.grasscutter.config.Configuration.*;
+
 import java.io.InputStream;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 
-import static emu.grasscutter.Configuration.*;
-
 public final class Language {
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
-    
+
     private final JsonObject languageData;
     private final String languageCode;
     private final Map<String, String> cachedTranslations = new ConcurrentHashMap<>();
@@ -53,7 +54,7 @@ public final class Language {
      */
     public static String translate(String key, Object... args) {
         String translated = Grasscutter.getLanguage().get(key);
-        
+
         try {
             return translated.formatted(args);
         } catch (Exception exception) {
@@ -76,7 +77,7 @@ public final class Language {
 
         var langCode = Utils.getLanguageCode(player.getAccount().getLocale());
         String translated = Grasscutter.getLanguage(langCode).get(key);
-        
+
         try {
             return translated.formatted(args);
         } catch (Exception exception) {
@@ -98,13 +99,13 @@ public final class Language {
     private Language(LanguageStreamDescription description) {
         @Nullable JsonObject languageData = null;
         languageCode = description.getLanguageCode();
-        
+
         try {
             languageData = Grasscutter.getGsonFactory().fromJson(Utils.readFromInputStream(description.getLanguageFile()), JsonObject.class);
         } catch (Exception exception) {
             Grasscutter.getLogger().warn("Failed to load language file: " + description.getLanguageCode(), exception);
         }
-        
+
         this.languageData = languageData;
     }
 
@@ -116,7 +117,7 @@ public final class Language {
     private static LanguageStreamDescription getLanguageFileDescription(String languageCode, String fallbackLanguageCode) {
         var fileName = languageCode + ".json";
         var fallback = fallbackLanguageCode + ".json";
-        
+
         String actualLanguageCode = languageCode;
         InputStream file = Grasscutter.class.getResourceAsStream("/languages/" + fileName);
 
@@ -126,21 +127,21 @@ public final class Language {
             if (cachedLanguages.containsKey(actualLanguageCode)) {
                 return new LanguageStreamDescription(actualLanguageCode, null);
             }
-            
+
             file = Grasscutter.class.getResourceAsStream("/languages/" + fallback);
         }
 
-        if(file == null) { // Fallback the fallback language.
+        if (file == null) { // Fallback the fallback language.
             Grasscutter.getLogger().warn("Failed to load language file: " + fallback + ", falling back to: en-US.json");
             actualLanguageCode = "en-US";
             if (cachedLanguages.containsKey(actualLanguageCode)) {
                 return new LanguageStreamDescription(actualLanguageCode, null);
             }
-            
+
             file = Grasscutter.class.getResourceAsStream("/languages/en-US.json");
         }
 
-        if(file == null)
+        if (file == null)
             throw new RuntimeException("Unable to load the primary, fallback, and 'en-US' language files.");
 
         return new LanguageStreamDescription(actualLanguageCode, file);
@@ -152,10 +153,10 @@ public final class Language {
      * @return The value (as a string) from a nested key.
      */
     public String get(String key) {
-        if(this.cachedTranslations.containsKey(key)) {
+        if (this.cachedTranslations.containsKey(key)) {
             return this.cachedTranslations.get(key);
         }
-        
+
         String[] keys = key.split("\\.");
         JsonObject object = this.languageData;
 
@@ -165,12 +166,12 @@ public final class Language {
         boolean isValueFound = false;
 
         while (true) {
-            if(index == keys.length) break;
-            
+            if (index == keys.length) break;
+
             String currentKey = keys[index++];
-            if(object.has(currentKey)) {
+            if (object.has(currentKey)) {
                 JsonElement element = object.get(currentKey);
-                if(element.isJsonObject())
+                if (element.isJsonObject())
                     object = element.getAsJsonObject();
                 else {
                     isValueFound = true;
@@ -185,7 +186,7 @@ public final class Language {
                 result += "\nhere is english version:\n" + englishValue;
             }
         }
-        
+
         this.cachedTranslations.put(key, result); return result;
     }
 

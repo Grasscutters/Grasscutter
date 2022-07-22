@@ -1,21 +1,38 @@
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 syntax = "proto3";
+
+import "AbilityAttachedModifier.proto";
+import "AbilityString.proto";
+import "ModifierAction.proto";
+import "ModifierProperty.proto";
 
 option java_package = "emu.grasscutter.net.proto";
 
-import "ModifierAction.proto";
-import "AbilityString.proto";
-import "AbilityAttachedModifier.proto";
-import "ModifierProperty.proto";
-
 message AbilityMetaModifierChange {
-	ModifierAction action = 1;
-	AbilityString parent_ability_name = 2;
-	AbilityString parent_ability_override = 3;
-	AbilityAttachedModifier attached_instanced_modifier = 4;
-	repeated ModifierProperty properties = 5;
-	int32 modifier_local_id = 6;
-	bool is_mute_remote = 7;
-	uint32 apply_entity_id = 8;
-	bool is_attached_parent_ability = 9;
-	uint32 server_buff_uid = 10;
+	AbilityAttachedModifier attached_instanced_modifier = 7;
+	uint32 server_buff_uid = 4;
+	bool is_attached_parent_ability = 10;
+	ModifierAction action = 13;
+	int32 modifier_local_id = 2;
+	AbilityString parent_ability_name = 1;
+	bool is_mute_remote = 6;
+	uint32 apply_entity_id = 5;
+	repeated ModifierProperty properties = 3;
+	AbilityString parent_ability_override = 11;
+	bool Unk2700_PMJMNCFJPDC = 9;
 }

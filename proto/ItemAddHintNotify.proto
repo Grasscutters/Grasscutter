@@ -1,20 +1,36 @@
-syntax = "proto3";
+// Grasscutter - A server software reimplementation for a certain anime game.
+// Copyright (C) 2022  Grasscutter Team
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-option java_package = "emu.grasscutter.net.proto";
+syntax = "proto3";
 
 import "ItemHint.proto";
 import "Vector.proto";
 
-// CmdId: 632
+option java_package = "emu.grasscutter.net.proto";
+
+// CmdId: 607
 // EnetChannelId: 0
 // EnetIsReliable: true
 message ItemAddHintNotify {
+	bool is_position_valid = 14;
+	uint32 quest_id = 3;
+	uint32 reason = 6;
+	bool is_general_reward_hiden = 15;
 	repeated ItemHint item_list = 10;
-	Vector position = 12;
-	bool is_position_valid = 13;
-	uint32 reason = 5;
-	uint32 quest_id = 14;
-	bool is_transfered_from_avatar_card = 11;
-	repeated ItemHint overflow_transformed_item_list = 3;
-	bool is_general_reward_hiden = 7;
+	bool is_transfered_from_avatar_card = 12;
+	Vector position = 9;
+	repeated ItemHint overflow_transformed_item_list = 8;
 }
