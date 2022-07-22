@@ -14,6 +14,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
 import emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueManipulateReq;
@@ -39,12 +40,12 @@ public class ForgingManager extends BasePlayerManager {
     **********/
     public synchronized boolean unlockForgingBlueprint(GameItem blueprintItem) {
         // Make sure this is actually a forging blueprint.
-        if (!blueprintItem.getItemData().getItemUse().get(0).getUseOp().equals("ITEM_USE_UNLOCK_FORGE")) {
+        if (blueprintItem.getItemData().getItemUse().get(0).getUseOp() != ItemUseOp.ITEM_USE_UNLOCK_FORGE) {
             return false;
         }
 
         // Determine the forging item we should unlock.
-        int forgeId = Integer.parseInt(blueprintItem.getItemData().getItemUse().get(0).getUseParam().get(0));
+        int forgeId = Integer.parseInt(blueprintItem.getItemData().getItemUse().get(0).getUseParam()[0]);
 
         // Remove the blueprint from the player's inventory.
         // We need to do this here, before sending ForgeFormulaDataNotify, or the the forging UI won't correctly

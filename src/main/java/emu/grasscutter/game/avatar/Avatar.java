@@ -632,7 +632,7 @@ public class Avatar {
             WeaponCurveData curveData = GameData.getWeaponCurveDataMap().get(weapon.getLevel());
             if (curveData != null) {
                 for (WeaponProperty weaponProperty : weapon.getItemData().getWeaponProperties()) {
-                    this.addFightProperty(weaponProperty.getFightProp(), weaponProperty.getInitValue() * curveData.getMultByProp(weaponProperty.getType()));
+                    this.addFightProperty(weaponProperty.getPropType(), weaponProperty.getInitValue() * curveData.getMultByProp(weaponProperty.getType()));
                 }
             }
             // Weapon promotion stats
