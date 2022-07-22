@@ -120,10 +120,10 @@ public class ConfigContainer {
 
     public static class HTTP {
         public String bindAddress = "0.0.0.0";
+        public int bindPort = 443;
+        
         /* This is the address used in URLs. */
         public String accessAddress = "127.0.0.1";
-
-        public int bindPort = 443;
         /* This is the port used in URLs. */
         public int accessPort = 0;
 
@@ -145,7 +145,9 @@ public class ConfigContainer {
         public int loadEntitiesForPlayerRange = 100;
         public boolean enableScriptInBigWorld = false;
         public boolean enableConsole = true;
-
+        
+        /* Kcp internal work interval (milliseconds) */
+        public int kcpInterval = 20;
         /* Controls whether packets should be logged in console or not */
         public ServerDebugMode logPackets = ServerDebugMode.NONE;
 
