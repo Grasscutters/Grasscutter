@@ -7,6 +7,9 @@ public class ItemUseData {
 	private String[] useParam;
 
 	public ItemUseOp getUseOp() {
+	    if (useOp == null) {
+	        useOp = ItemUseOp.ITEM_USE_NONE;
+	    }
 		return useOp;
 	}
 

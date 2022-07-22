@@ -10,6 +10,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.OpenConfigEntry;
 import emu.grasscutter.data.binout.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.common.ItemParamData;
+import emu.grasscutter.data.common.ItemUseData;
 import emu.grasscutter.data.excels.AvatarPromoteData;
 import emu.grasscutter.data.excels.AvatarSkillData;
 import emu.grasscutter.data.excels.AvatarSkillDepotData;
@@ -821,6 +822,8 @@ public class InventorySystem extends BaseGameSystem {
                     }
 
                     used = player.getTeamManager().reviveAvatar(target) ? 1 : 0;
+                } else {
+                    used = 1;
                 }
                 break;
             case MATERIAL_NOTICE_ADD_HP:
@@ -940,9 +943,24 @@ public class InventorySystem extends BaseGameSystem {
         // If we used at least one item, or one of the methods called here reports using the item successfully,
         // we return the item to make UseItemRsp a success.
         if (used > 0) {
+            // Handle use params, mainly server buffs
+            for (ItemUseData useData : useItem.getItemData().getItemUse()) {
+                switch (useData.getUseOp()) {
+                    case ITEM_USE_ADD_SERVER_BUFF -> {
+                        int buffId = Integer.parseInt(useData.getUseParam()[0]);
+                        float time = Float.parseFloat(useData.getUseParam()[1]);
+                        
+                        player.getBuffManager().addBuff(buffId, time);
+                    }
+                    default -> {}
+                }
+            }
+            
+            // Remove item from inventory since we used it
             player.getInventory().removeItem(useItem, used);
             return useItem;
         }
+        
         if (useSuccess) {
             return useItem;
         }
