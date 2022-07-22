@@ -642,6 +642,9 @@ public class Player {
     }
 
     public void setMainCharacterId(int mainCharacterId) {
+        if (this.mainCharacterId != 0) {
+            return;
+        }
         this.mainCharacterId = mainCharacterId;
     }
 
