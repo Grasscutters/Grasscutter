@@ -13,6 +13,7 @@ import java.util.Objects;
 @Getter
 public class OpenStateData extends GameResource {
     private int id;
+    private boolean defaultState;
     private boolean allowClientOpen;
     private int systemOpenUiId;
     private List<OpenStateCond> cond;
