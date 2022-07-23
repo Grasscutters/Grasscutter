@@ -2,8 +2,6 @@ package emu.grasscutter.game.quest;
 
 import java.util.*;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData;
@@ -22,6 +20,11 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class QuestManager extends BasePlayerManager {
     private final Int2ObjectMap<GameMainQuest> quests;
+
+    public static long getQuestKey(int mainQuestId){
+        QuestEncryptionKey questEncryptionKey = GameData.getMainQuestEncryptionMap().get(mainQuestId);
+        return questEncryptionKey != null ? questEncryptionKey.getEncryptionKey() : 0L;
+    }
 
     public QuestManager(Player player) {
         super(player);
