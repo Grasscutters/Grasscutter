@@ -132,7 +132,8 @@ public class GameMainQuest {
 		ParentQuest.Builder proto = ParentQuest.newBuilder()
 				.setParentQuestId(getParentQuestId())
 				.setIsFinished(isFinished())
-				.setParentQuestState(getState().getValue());
+				.setParentQuestState(getState().getValue())
+            .setCutsceneEncryptionKey(QuestManager.getQuestKey(parentQuestId));
 
 		for (GameQuest quest : this.getChildQuests().values()) {
 			ChildQuest childQuest = ChildQuest.newBuilder()
