@@ -64,7 +64,7 @@ tmp/
 /*.jar
 /*.sh
 
-GM Handbook.txt
+GM Handbook*.txt
 config.json
 mitmdump.exe
 mongod.exe

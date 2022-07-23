@@ -98,6 +98,10 @@ public final class Grasscutter {
                     Tools.createGmHandbook();
                     exitEarly = true;
                 }
+                case "-handbooks" -> {
+                    Tools.createGmHandbooks();
+                    exitEarly = true;
+                }
                 case "-dumppacketids" -> {
                     PacketOpcodesUtils.dumpPacketIds();
                     exitEarly = true;
