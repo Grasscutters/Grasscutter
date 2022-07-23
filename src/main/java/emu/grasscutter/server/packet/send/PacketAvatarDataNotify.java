@@ -14,7 +14,7 @@ public class PacketAvatarDataNotify extends BasePacket {
 	
 	public PacketAvatarDataNotify(Player player) {
 		super(PacketOpcodes.AvatarDataNotify, 2);
-
+		
 		AvatarDataNotify.Builder proto = AvatarDataNotify.newBuilder()
 				.setCurAvatarTeamId(player.getTeamManager().getCurrentTeamId())
 				.setChooseAvatarGuid(player.getTeamManager().getCurrentCharacterGuid())
