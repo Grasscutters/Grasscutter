@@ -6,7 +6,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.shop.ShopInfo;
 import emu.grasscutter.game.shop.ShopLimit;
-import emu.grasscutter.game.shop.ShopManager;
+import emu.grasscutter.game.shop.ShopSystem;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -29,7 +29,7 @@ public class HandlerBuyGoodsReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         BuyGoodsReqOuterClass.BuyGoodsReq buyGoodsReq = BuyGoodsReqOuterClass.BuyGoodsReq.parseFrom(payload);
-        List<ShopInfo> configShop = session.getServer().getShopManager().getShopData().get(buyGoodsReq.getShopType());
+        List<ShopInfo> configShop = session.getServer().getShopSystem().getShopData().get(buyGoodsReq.getShopType());
         if (configShop == null)
             return;
 
@@ -46,7 +46,7 @@ public class HandlerBuyGoodsReq extends PacketHandler {
             int bought = 0;
             if (shopLimit != null) {
                 if (currentTs > shopLimit.getNextRefreshTime()) {
-                    shopLimit.setNextRefreshTime(ShopManager.getShopNextRefreshTime(sg));
+                    shopLimit.setNextRefreshTime(ShopSystem.getShopNextRefreshTime(sg));
                 } else {
                     bought = shopLimit.getHasBoughtInPeriod();
                 }
@@ -65,7 +65,7 @@ public class HandlerBuyGoodsReq extends PacketHandler {
                 return;
             }
 
-            session.getPlayer().addShopLimit(sg.getGoodsId(), buyGoodsReq.getBuyCount(), ShopManager.getShopNextRefreshTime(sg));
+            session.getPlayer().addShopLimit(sg.getGoodsId(), buyGoodsReq.getBuyCount(), ShopSystem.getShopNextRefreshTime(sg));
             GameItem item = new GameItem(GameData.getItemDataMap().get(sg.getGoodsItem().getId()));
             item.setCount(buyGoodsReq.getBuyCount() * sg.getGoodsItem().getCount());
             session.getPlayer().getInventory().addItem(item, ActionReason.Shop, true); // fix: not notify when got virtual item from shop

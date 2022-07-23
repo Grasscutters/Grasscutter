@@ -7,14 +7,12 @@ import java.lang.annotation.RetentionPolicy;
 public @interface Command {
     String label() default "";
 
-    String usage() default "commands.generic.no_usage_specified";
-
-    String description() default "commands.generic.no_description_specified";
-
     String[] aliases() default {};
 
+    String[] usage() default {""};
+
     String permission() default "";
-    
+
     String permissionTargeted() default "";
 
     public enum TargetRequirement {

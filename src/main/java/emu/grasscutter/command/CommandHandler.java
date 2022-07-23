@@ -2,12 +2,11 @@ package emu.grasscutter.command;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.event.game.CommandResponseEvent;
 import emu.grasscutter.server.event.game.ReceiveCommandFeedbackEvent;
-import emu.grasscutter.server.event.types.ServerEvent;
 import static emu.grasscutter.utils.Language.translate;
 
 import java.util.List;
+import java.util.StringJoiner;
 
 public interface CommandHandler {
 
@@ -35,6 +34,41 @@ public interface CommandHandler {
 
     static void sendTranslatedMessage(Player player, String messageKey, Object... args) {
         sendMessage(player, translate(player, messageKey, args));
+    }
+
+    default String getUsageString(Player player, String... args) {
+        Command annotation = this.getClass().getAnnotation(Command.class);
+        String usage_prefix = translate(player, "commands.execution.usage_prefix");
+        String command = annotation.label();
+        for (String alias : annotation.aliases()) {
+            if (alias.length() < command.length())
+                command = alias;
+        }
+        String target = switch (annotation.targetRequirement()) {
+            case NONE -> "";
+            case OFFLINE -> "@<UID> ";  // TODO: make translation keys for offline and online players
+            case ONLINE -> (player == null) ? "@<UID> " : "[@<UID>] ";  // TODO: make translation keys for offline and online players
+            case PLAYER -> (player == null) ? "@<UID> " : "[@<UID>] ";
+        };
+        String[] usages = annotation.usage();
+        StringJoiner joiner = new StringJoiner("\n\t");
+        for (String usage : usages)
+            joiner.add(usage_prefix + command + " " + target + usage);
+        return joiner.toString();
+    }
+
+    default void sendUsageMessage(Player player, String... args) {
+        sendMessage(player, getUsageString(player, args));
+    }
+
+    default String getLabel() {
+        return this.getClass().getAnnotation(Command.class).label();
+    }
+
+    default String getDescriptionString(Player player) {
+        Command annotation = this.getClass().getAnnotation(Command.class);
+        String key = "commands.%s.description".formatted(annotation.label());
+        return translate(player, key);
     }
 
     /**

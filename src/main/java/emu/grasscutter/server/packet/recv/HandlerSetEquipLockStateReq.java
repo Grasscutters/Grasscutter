@@ -8,12 +8,12 @@ import emu.grasscutter.server.game.GameSession;
 
 @Opcodes(PacketOpcodes.SetEquipLockStateReq)
 public class HandlerSetEquipLockStateReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		SetEquipLockStateReq req = SetEquipLockStateReq.parseFrom(payload);
-		
-		session.getServer().getInventoryManager().lockEquip(session.getPlayer(), req.getTargetEquipGuid(), req.getIsLocked());
-	}
+
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        SetEquipLockStateReq req = SetEquipLockStateReq.parseFrom(payload);
+
+        session.getServer().getInventorySystem().lockEquip(session.getPlayer(), req.getTargetEquipGuid(), req.getIsLocked());
+    }
 
 }

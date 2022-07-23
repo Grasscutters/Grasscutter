@@ -31,5 +31,5 @@ message AvatarDataNotify {
 	repeated uint32 owned_costume_list = 11;
 	repeated uint64 temp_avatar_guid_list = 12;
 	map<uint32, AvatarTeam> avatar_team_map = 7;
-    fixed64 choose_avatar_guid = 8;
+    uint64 choose_avatar_guid = 8;
 }

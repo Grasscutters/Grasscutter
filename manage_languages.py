@@ -90,6 +90,7 @@ class JsonHelpers:
 class LanguageManager:
     TRANSLATION_KEY = re.compile(r'[Tt]ranslate.*"(\w+\.[\w\.]+)"')
     POTENTIAL_KEY = re.compile(r'"(\w+\.[\w\.]+)"')
+    COMMAND_LABEL = re.compile(r'@Command\s*\([\W\w]*?label\s*=\s*"(\w+)"', re.MULTILINE)  # [\W\w] is a cheeky way to match everything including \n
 
     def __init__(self):
         self.load_jsons()
@@ -122,6 +123,8 @@ class LanguageManager:
                             used.add(k)
                         for k in self.POTENTIAL_KEY.findall(data):
                             potential.add(k)
+                        for label in self.COMMAND_LABEL.findall(data):
+                            used.add(f'commands.{label}.description')
         return used | (potential & expected_keys)
 
     def _lint_report_language(self, lang: str, keys: set, flattened: dict, primary_language_flattened: dict) -> None:

@@ -1,6 +1,6 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.Configuration.*;
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
 import com.google.gson.reflect.TypeToken;
@@ -81,10 +81,10 @@ final class HandbookRequestHandler implements DocumentationHandler {
                 .replace("{{HEADER_SCENE}}", translate("documentation.handbook.header_scene"))
                 .replace("{{HEADER_MONSTER}}", translate("documentation.handbook.header_monster"))
                 // Commands table
-                .replace("{{COMMANDS_TABLE}}", cmdMap.getAnnotationsAsList()
+                .replace("{{COMMANDS_TABLE}}", cmdMap.getHandlersAsList()
                         .stream()
-                        .map(cmd -> "<tr><td><code>" + cmd.label() + "</code></td><td>" +
-                                cmd.description() + "</td></tr>")
+                        .map(cmd -> "<tr><td><code>" + cmd.getLabel() + "</code></td><td>" +
+                                cmd.getDescriptionString(null) + "</td></tr>")
                         .collect(Collectors.joining("\n")))
                 // Avatars table
                 .replace("{{AVATARS_TABLE}}", GameData.getAvatarDataMap().keySet()

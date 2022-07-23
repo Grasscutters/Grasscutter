@@ -12,6 +12,7 @@ import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
@@ -23,30 +24,24 @@ import java.io.Reader;
 import java.util.Collection;
 import java.util.List;
 
-public class DropManager {
-    public GameServer getGameServer() {
-        return gameServer;
-    }
+public class DropSystem extends BaseGameSystem {
+    private final Int2ObjectMap<List<DropData>> dropData;
 
-    private final GameServer gameServer;
+    public DropSystem(GameServer server) {
+        super(server);
+        this.dropData = new Int2ObjectOpenHashMap<>();
+        this.load();
+    }
 
     public Int2ObjectMap<List<DropData>> getDropData() {
         return dropData;
     }
 
-    private final Int2ObjectMap<List<DropData>> dropData;
-
-    public DropManager(GameServer gameServer) {
-        this.gameServer = gameServer;
-        this.dropData = new Int2ObjectOpenHashMap<>();
-        this.load();
-    }
-
     public synchronized void load() {
-        try (Reader fileReader = new InputStreamReader(DataLoader.load("Drop.json"))) {
+        try (Reader fileReader = DataLoader.loadReader("Drop.json")) {
             getDropData().clear();
             List<DropInfo> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, DropInfo.class).getType());
-            if(banners.size() > 0) {
+            if (banners.size() > 0) {
                 for (DropInfo di : banners) {
                     getDropData().put(di.getMonsterId(), di.getDropDataList());
                 }
