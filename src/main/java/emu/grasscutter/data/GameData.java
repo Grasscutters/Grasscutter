@@ -30,7 +30,7 @@ public class GameData {
 
 	// ExcelConfigs
 	private static final Int2ObjectMap<PlayerLevelData> playerLevelDataMap = new Int2ObjectOpenHashMap<>();
-	
+
 	private static final Int2ObjectMap<AvatarData> avatarDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarLevelData> avatarLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarSkillDepotData> avatarSkillDepotDataMap = new Int2ObjectOpenHashMap<>();
@@ -40,7 +40,7 @@ public class GameData {
 	private static final Int2ObjectMap<AvatarPromoteData> avatarPromoteDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarTalentData> avatarTalentDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<ProudSkillData> proudSkillDataMap = new Int2ObjectOpenHashMap<>();
-	
+
 	private static final Int2ObjectMap<ItemData> itemDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<ReliquaryLevelData> reliquaryLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<ReliquaryAffixData> reliquaryAffixDataMap = new Int2ObjectOpenHashMap<>();
@@ -57,11 +57,11 @@ public class GameData {
 	private static final Int2ObjectMap<GadgetData> gadgetDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<MonsterCurveData> monsterCurveDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<MonsterDescribeData> monsterDescribeDataMap = new Int2ObjectOpenHashMap<>();
-	
+
 	private static final Int2ObjectMap<AvatarFlycloakData> avatarFlycloakDataMap = new Int2ObjectLinkedOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarCostumeData> avatarCostumeDataMap = new Int2ObjectLinkedOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarCostumeData> avatarCostumeDataItemIdMap = new Int2ObjectLinkedOpenHashMap<>();
-	
+
 	private static final Int2ObjectMap<SceneData> sceneDataMap = new Int2ObjectLinkedOpenHashMap<>();
 	private static final Int2ObjectMap<FetterData> fetterDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<CodexQuestData> codexQuestDataMap = new Int2ObjectOpenHashMap<>();
@@ -76,7 +76,7 @@ public class GameData {
 	private static final ArrayList<CodexReliquaryData> codexReliquaryArrayList = new ArrayList<>();
 	private static final Int2ObjectMap<FetterCharacterCardData> fetterCharacterCardDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<RewardData> rewardDataMap = new Int2ObjectOpenHashMap<>();
-	
+
 	private static final Int2ObjectMap<WorldAreaData> worldAreaDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<WorldLevelData> worldLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<DailyDungeonData> dailyDungeonDataMap = new Int2ObjectOpenHashMap<>();
@@ -108,33 +108,35 @@ public class GameData {
     @Getter private static final Int2ObjectMap<MusicGameBasicData> musicGameBasicDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<PersonalLineData> personalLineDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<ChapterData> chapterDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<TriggerExcelConfigData> triggerExcelConfigDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Map<String,ScriptSceneData> scriptSceneDataMap = new HashMap<>();
 
 	// Cache
 	private static Map<Integer, List<Integer>> fetters = new HashMap<>();
 	private static Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
 	private static final IntList scenePointIdList = new IntArrayList();
-	
+
 	public static Int2ObjectMap<?> getMapByResourceDef(Class<?> resourceDefinition) {
 		Int2ObjectMap<?> map = null;
-		
+
 		try {
 			Field field = GameData.class.getDeclaredField(Utils.lowerCaseFirstChar(resourceDefinition.getSimpleName()) + "Map");
 			field.setAccessible(true);
-			
+
 			map = (Int2ObjectMap<?>) field.get(null);
-			
+
 			field.setAccessible(false);
 		} catch (Exception e) {
 			Grasscutter.getLogger().error("Error fetching resource map for " + resourceDefinition.getSimpleName(), e);
 		}
-		
+
 		return map;
 	}
 
 	public static Int2ObjectMap<String> getAbilityHashes() {
 		return abilityHashes;
 	}
-	
+
 	public static Map<String, AbilityEmbryoEntry> getAbilityEmbryoInfo() {
 		return abilityEmbryos;
 	}
@@ -150,7 +152,7 @@ public class GameData {
 	public static Map<String, ScenePointEntry> getScenePointEntries() {
 		return scenePointEntries;
 	}
-	
+
 	// TODO optimize
 	public static ScenePointEntry getScenePointEntryById(int sceneId, int pointId) {
 		return getScenePointEntries().get(sceneId + "_" + pointId);
@@ -163,15 +165,15 @@ public class GameData {
 	public static Int2ObjectMap<HomeworldDefaultSaveData> getHomeworldDefaultSaveData() {
 		return homeworldDefaultSaveData;
 	}
-	
+
 	public static Int2ObjectMap<SceneNpcBornData> getSceneNpcBornData() {
 		return npcBornData;
 	}
-	
+
 	public static Int2ObjectMap<AvatarData> getAvatarDataMap() {
 		return avatarDataMap;
 	}
-	
+
 	public static Int2ObjectMap<ItemData> getItemDataMap() {
 		return itemDataMap;
 	}
@@ -179,7 +181,7 @@ public class GameData {
 	public static Int2ObjectMap<AvatarSkillDepotData> getAvatarSkillDepotDataMap() {
 		return avatarSkillDepotDataMap;
 	}
-	
+
 	public static Int2ObjectMap<AvatarSkillData> getAvatarSkillDataMap() {
 		return avatarSkillDataMap;
 	}
@@ -203,11 +205,11 @@ public class GameData {
 	public static Int2ObjectMap<WeaponLevelData> getWeaponLevelDataMap() {
 		return weaponLevelDataMap;
 	}
-	
+
 	public static Int2ObjectMap<ReliquaryAffixData> getReliquaryAffixDataMap() {
 		return reliquaryAffixDataMap;
 	}
-	
+
 	public static Int2ObjectMap<ReliquaryMainPropData> getReliquaryMainPropDataMap() {
 		return reliquaryMainPropDataMap;
 	}
@@ -219,7 +221,7 @@ public class GameData {
 	public static Int2ObjectMap<WeaponCurveData> getWeaponCurveDataMap() {
 		return weaponCurveDataMap;
 	}
-	
+
 	public static Int2ObjectMap<AvatarCurveData> getAvatarCurveDataMap() {
 		return avatarCurveDataMap;
 	}
@@ -228,11 +230,11 @@ public class GameData {
 		ReliquaryLevelData levelData = reliquaryLevelDataMap.get((rankLevel << 8) + level);
 		return levelData != null ? levelData.getExp() : 0;
 	}
-	
+
 	public static ReliquaryLevelData getRelicLevelData(int rankLevel, int level) {
 		return reliquaryLevelDataMap.get((rankLevel << 8) + level);
 	}
-	
+
 	public static WeaponPromoteData getWeaponPromoteData(int promoteId, int promoteLevel) {
 		return weaponPromoteDataMap.get((promoteId << 8) + promoteLevel);
 	}
@@ -248,7 +250,7 @@ public class GameData {
 			return 0;
 		}
 	}
-	
+
 	public static AvatarPromoteData getAvatarPromoteData(int promoteId, int promoteLevel) {
 		return avatarPromoteDataMap.get((promoteId << 8) + promoteLevel);
 	}
@@ -262,7 +264,7 @@ public class GameData {
 		AvatarFetterLevelData levelData = avatarFetterLevelDataMap.get(level);
 		return levelData != null ? levelData.getExp() : 0;
 	}
-	
+
 	public static Int2ObjectMap<ProudSkillData> getProudSkillDataMap() {
 		return proudSkillDataMap;
 	}
@@ -309,7 +311,7 @@ public class GameData {
 	public static Int2ObjectMap<AvatarCostumeData> getAvatarCostumeDataMap() {
 		return avatarCostumeDataMap;
 	}
-	
+
 	public static Int2ObjectMap<AvatarCostumeData> getAvatarCostumeDataItemIdMap() {
 		return avatarCostumeDataItemIdMap;
 	}
@@ -350,7 +352,7 @@ public class GameData {
 	public static Int2ObjectMap<WorldAreaData> getWorldAreaDataMap() {
 		return worldAreaDataMap;
 	}
-	
+
 	public static Int2ObjectMap<WorldLevelData> getWorldLevelDataMap() {
 		return worldLevelDataMap;
 	}
@@ -358,7 +360,7 @@ public class GameData {
 	public static Int2ObjectMap<DungeonData> getDungeonDataMap() {
 		return dungeonDataMap;
 	}
-	  
+
 	public static Int2ObjectMap<DailyDungeonData> getDailyDungeonDataMap() {
 		return dailyDungeonDataMap;
 	}
@@ -394,11 +396,11 @@ public class GameData {
 	public static Int2ObjectMap<TowerFloorData> getTowerFloorDataMap(){
 		return towerFloorDataMap;
 	}
-	
+
 	public static Int2ObjectMap<TowerLevelData> getTowerLevelDataMap(){
 		return towerLevelDataMap;
 	}
-	
+
 	public static Int2ObjectMap<TowerScheduleData> getTowerScheduleDataMap(){
 		return towerScheduleDataMap;
 	}
@@ -410,19 +412,19 @@ public class GameData {
 	public static Int2ObjectMap<ForgeData> getForgeDataMap() {
 		return forgeDataMap;
 	}
-	
+
 	public static Int2ObjectMap<HomeWorldLevelData> getHomeWorldLevelDataMap() {
 		return homeWorldLevelDataMap;
 	}
-	
+
 	public static Int2ObjectMap<FurnitureMakeConfigData> getFurnitureMakeConfigDataMap() {
 		return furnitureMakeConfigDataMap;
 	}
-	
+
 	public static Int2ObjectMap<GatherData> getGatherDataMap() {
 		return gatherDataMap;
 	}
-	
+
 	public static Int2ObjectMap<InvestigationMonsterData> getInvestigationMonsterDataMap() {
 		return investigationMonsterDataMap;
 	}
