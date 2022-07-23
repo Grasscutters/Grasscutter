@@ -22,25 +22,13 @@ public class PacketOpenStateUpdateNotify extends BasePacket {
             // If the player has an open state stored in their map, then it would always override any default value
             if (manager.getOpenStateMap().containsKey(state.getId())) {
                 proto.putOpenStateMap(state.getId(), manager.getOpenState(state.getId()));
-                System.out.println("State " + state.getId() + ": " + manager.getOpenState(state.getId()));
             }
             // Otherwise, add the state if it is contained in the set of default open states. 
             else if (PlayerOpenStateManager.DEV_OPEN_STATES.contains(state.getId())) {
                 proto.putOpenStateMap(state.getId(), 1);
-                System.out.println("State " + state.getId() + ": 1");
             }
         }
-
-        /*for (OpenState state : OpenState.values()) {
-            // If the player has an open state stored in their map, then it would always override any default value
-            if (manager.getOpenStateMap().containsKey(state.getValue())) {
-                proto.putOpenStateMap(state.getValue(), manager.getOpenState(state));
-            } else if (PlayerOpenStateManager.DEV_OPEN_STATES.contains(state)) {
-                // Add default value here. TODO properly put default values somewhere
-                proto.putOpenStateMap(state.getValue(), 1);
-            }
-        }*/
-
+        
         this.setData(proto);
     }
 }

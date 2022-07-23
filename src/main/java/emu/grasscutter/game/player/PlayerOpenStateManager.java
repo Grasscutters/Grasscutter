@@ -59,13 +59,19 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
         return getOpenStateMap().getOrDefault(openState, 0);
     }
 
-    private void setOpenState(int openState, int value) {
+    private void setOpenState(int openState, int value, boolean sendNotify) {
         int previousValue = this.getOpenStateMap().getOrDefault(openState, 0);
 
         if (value != previousValue) {
             this.getOpenStateMap().put(openState, value);
-            player.getSession().send(new PacketOpenStateChangeNotify(openState, value));
+
+            if (sendNotify) {
+                player.getSession().send(new PacketOpenStateChangeNotify(openState, value));
+            }
         }
+    }
+    private void setOpenState(int openState, int value) {
+        this.setOpenState(openState, value, true);
     }
 
     /**********
@@ -127,7 +133,7 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
     public void onPlayerLogin() {
         // Try unlocking open states on player login. This handles accounts where unlock conditions were
         // already met before certain open state unlocks were implemented.
-        this.tryUnlockOpenStates();
+        this.tryUnlockOpenStates(false);
 
         // Send notify to the client.
         player.getSession().send(new PacketOpenStateUpdateNotify(this));
@@ -136,7 +142,7 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
     /**********
         Triggered unlocking of open states (unlock states whose conditions have been met.)
     **********/
-    public void tryUnlockOpenStates() {
+    public void tryUnlockOpenStates(boolean sendNotify) {
         // Get list of open states that are not yet unlocked.
         var lockedStates = GameData.getOpenStateList().stream().filter(s -> this.getOpenStateMap().getOrDefault(s, 0) == 0).toList();
 
@@ -146,8 +152,11 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
             // * it can not be a state that is unlocked by the client, and
             // * it has to meet all its unlock conditions.
             if (!state.isAllowClientOpen() && this.areConditionsMet(state)) {
-                this.setOpenState(state.getId(), 1);
+                this.setOpenState(state.getId(), 1, sendNotify);
             }
         }
+    }
+    public void tryUnlockOpenStates() {
+        this.tryUnlockOpenStates(true);
     }
 }
