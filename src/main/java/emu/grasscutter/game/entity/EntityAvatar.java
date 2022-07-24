@@ -30,6 +30,7 @@ import emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo;
 import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.server.event.player.PlayerMoveEvent;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
@@ -108,12 +109,16 @@ public class EntityAvatar extends GameEntity {
 
     @Override
     public void onDeath(int killerId) {
+        super.onDeath(killerId); // Invoke super class's onDeath() method.
+
         this.killedType = PlayerDieType.PLAYER_DIE_TYPE_KILL_BY_MONSTER;
         this.killedBy = killerId;
         clearEnergy(ChangeEnergyReason.CHANGE_ENERGY_REASON_NONE);
     }
 
 	public void onDeath(PlayerDieType dieType, int killerId) {
+        super.onDeath(killerId); // Invoke super class's onDeath() method.
+
 		this.killedType = dieType;
 		this.killedBy = killerId;
 		clearEnergy(ChangeEnergyReason.CHANGE_ENERGY_REASON_NONE);

@@ -15,6 +15,7 @@ import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.server.event.entity.EntityDeathEvent;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
@@ -262,7 +263,9 @@ public abstract class GameEntity {
      * @param killerId Entity id of the entity that killed this entity
      */
     public void onDeath(int killerId) {
-
+        // Invoke entity death event.
+        EntityDeathEvent event = new EntityDeathEvent(this, killerId);
+        event.call();
     }
 
     public abstract SceneEntityInfo toProto();
