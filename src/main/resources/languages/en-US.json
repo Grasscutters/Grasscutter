@@ -256,6 +256,11 @@
       "success": "Message sent.",
       "description": "Sends a message to a player as the server. If used with no target, sends to all players on the server."
     },
+    "setConst": {
+      "range_error": "Constellation level must be between 0 and 6.",
+      "level_error": "Invalid constellation level",
+      "description": "Sets constellation level for your current active character"
+    },
     "setFetterLevel": {
       "range_error": "Fetter level must be between 0 and 10.",
       "success": "Fetter level set to %s.",
