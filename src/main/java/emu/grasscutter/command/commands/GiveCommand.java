@@ -23,8 +23,15 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Command(label = "give", usage = "give <itemId|avatarId|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [lv<level>] [r<refinement>] [x<amount>] | give <artifactId> [lv<level>] [x<amount>] [mainPropId] [<appendPropId>[,<times>]]...", aliases = {
-        "g", "item", "giveitem"}, permission = "player.give", permissionTargeted = "player.give.others", description = "commands.give.description")
+@Command(
+    label = "give",
+    aliases = {"g", "item", "giveitem"},
+    usage = {
+        "(<itemId>|<avatarId>|all|weapons|mats|avatars) [lv<level>] [r<refinement>] [x<amount>] [c<constellation>]",
+        "<artifactId> [lv<level>] [x<amount>] [<mainPropId>] [<appendPropId>[,<times>]]..."},
+    permission = "player.give",
+    permissionTargeted = "player.give.others",
+    threading = true)
 public final class GiveCommand implements CommandHandler {
     private static Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java doesn't have raw string literals :(
     private static Pattern refineRegex = Pattern.compile("r(\\d+)");
@@ -60,7 +67,7 @@ public final class GiveCommand implements CommandHandler {
         public GiveAllType giveAllType = GiveAllType.NONE;
     };
 
-    private static GiveItemParameters parseArgs(Player sender, List<String> args) throws IllegalArgumentException {
+    private GiveItemParameters parseArgs(Player sender, List<String> args) throws IllegalArgumentException {
         GiveItemParameters param = new GiveItemParameters();
 
         // Extract any tagged arguments (e.g. "lv90", "x100", "r5")
@@ -92,7 +99,7 @@ public final class GiveCommand implements CommandHandler {
 
         // At this point, first remaining argument MUST be itemId/avatarId
         if (args.size() < 1) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.give.usage");  // Reachable if someone does `/give lv90` or similar
+            sendUsageMessage(sender);  // Reachable if someone does `/give lv90` or similar
             throw new IllegalArgumentException();
         }
         String id = args.remove(0);
@@ -162,7 +169,7 @@ public final class GiveCommand implements CommandHandler {
                     throw e;
                 }
             } else {
-                CommandHandler.sendTranslatedMessage(sender, "commands.give.usage");
+                sendUsageMessage(sender);
                 throw new IllegalArgumentException();
             }
         }
@@ -173,7 +180,7 @@ public final class GiveCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 1) { // *No args*
-            CommandHandler.sendTranslatedMessage(sender, "commands.give.usage");
+            sendUsageMessage(sender);
             return;
         }
         try {

@@ -148,7 +148,7 @@ public class World implements Iterable<Player> {
         player.setPeerId(this.getNextPeerId());
         player.getTeamManager().setEntityId(getNextEntityId(EntityIdType.TEAM));
 
-        // Copy main team to mp team
+        // Copy main team to multiplayer team
         if (this.isMultiplayer()) {
             player.getTeamManager().getMpTeam().copyFrom(player.getTeamManager().getCurrentSinglePlayerTeamInfo(), player.getTeamManager().getMaxTeamSize());
             player.getTeamManager().setCurrentCharacterIndex(0);
@@ -282,8 +282,8 @@ public class World implements Iterable<Player> {
 
     private void updatePlayerInfos(Player paramPlayer) {
         for (Player player : getPlayers()) {
-            // Dont send packets if player is loading in and filter out joining player
-            if (!player.hasSentAvatarDataNotify() || player.getSceneLoadState().getValue() < SceneLoadState.INIT.getValue() || player == paramPlayer) {
+            // Dont send packets if player is logging in and filter out joining player
+            if (!player.hasSentLoginPackets() || player == paramPlayer) {
                 continue;
             }
 
@@ -292,15 +292,18 @@ public class World implements Iterable<Player> {
                 player.getTeamManager().getMpTeam().copyFrom(player.getTeamManager().getMpTeam(), player.getTeamManager().getMaxTeamSize());
                 player.getTeamManager().updateTeamEntities(null);
             }
+            
+            // Dont send packets if player is loading into the scene
+            if (player.getSceneLoadState().getValue() < SceneLoadState.INIT.getValue() ) {
+                // World player info packets
+                player.getSession().send(new PacketWorldPlayerInfoNotify(this));
+                player.getSession().send(new PacketScenePlayerInfoNotify(this));
+                player.getSession().send(new PacketWorldPlayerRTTNotify(this));
 
-            // World player info packets
-            player.getSession().send(new PacketWorldPlayerInfoNotify(this));
-            player.getSession().send(new PacketScenePlayerInfoNotify(this));
-            player.getSession().send(new PacketWorldPlayerRTTNotify(this));
-
-            // Team packets
-            player.getSession().send(new PacketSyncTeamEntityNotify(player));
-            player.getSession().send(new PacketSyncScenePlayTeamEntityNotify(player));
+                // Team packets
+                player.getSession().send(new PacketSyncTeamEntityNotify(player));
+                player.getSession().send(new PacketSyncScenePlayTeamEntityNotify(player));
+            }
         }
     }
 

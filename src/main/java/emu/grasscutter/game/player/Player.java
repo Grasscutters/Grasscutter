@@ -150,7 +150,8 @@ public class Player {
     @Getter private transient BattlePassManager battlePassManager;
     @Getter private transient CookingManager cookingManager;
     @Getter private transient ActivityManager activityManager;
-
+    @Getter private transient PlayerBuffManager buffManager;
+    
     // Manager data (Save-able to the database)
     private PlayerProfile playerProfile;
     private TeamManager teamManager;
@@ -170,7 +171,7 @@ public class Player {
     @Transient private boolean paused;
     @Transient private int enterSceneToken;
     @Transient private SceneLoadState sceneState;
-    @Transient private boolean hasSentAvatarDataNotify;
+    @Transient private boolean hasSentLoginPackets;
     @Transient private long nextSendPlayerLocTime = 0;
 
     private transient final Int2ObjectMap<CoopRequest> coopRequests;
@@ -195,6 +196,7 @@ public class Player {
         this.abilityManager = new AbilityManager(this);
         this.deforestationManager = new DeforestationManager(this);
         this.questManager = new QuestManager(this);
+        this.buffManager = new PlayerBuffManager(this);
         this.position = new Position(GameConstants.START_POSITION);
         this.rotation = new Position(0, 307, 0);
         this.sceneId = 3;
@@ -562,7 +564,7 @@ public class Player {
     }
 
     public boolean isFirstLoginEnterScene() {
-        return !this.hasSentAvatarDataNotify;
+        return !this.hasSentLoginPackets;
     }
 
     public TeamManager getTeamManager() {
@@ -640,6 +642,9 @@ public class Player {
     }
 
     public void setMainCharacterId(int mainCharacterId) {
+        if (this.mainCharacterId != 0) {
+            return;
+        }
         this.mainCharacterId = mainCharacterId;
     }
 
@@ -884,14 +889,10 @@ public class Player {
         this.godmode = godmode;
     }
 
-    public boolean hasSentAvatarDataNotify() {
-        return hasSentAvatarDataNotify;
+    public boolean hasSentLoginPackets() {
+        return hasSentLoginPackets;
     }
-
-    public void setHasSentAvatarDataNotify(boolean hasSentAvatarDataNotify) {
-        this.hasSentAvatarDataNotify = hasSentAvatarDataNotify;
-    }
-
+    
     public void addAvatar(Avatar avatar, boolean addToCurrentTeam) {
         boolean result = getAvatars().addAvatar(avatar);
 
@@ -900,7 +901,7 @@ public class Player {
             getAvatars().addStartingWeapon(avatar);
 
             // Done
-            if (hasSentAvatarDataNotify()) {
+            if (hasSentLoginPackets()) {
                 // Recalc stats
                 avatar.recalcStats();
                 // Packet, show notice on left if the avatar will be added to the team
@@ -1186,6 +1187,8 @@ public class Player {
                 it.remove();
             }
         }
+        // Handle buff
+        this.getBuffManager().onTick();
         // Ping
         if (this.getWorld() != null) {
             // RTT notify - very important to send this often
@@ -1358,7 +1361,7 @@ public class Player {
 
 
         // First notify packets sent
-        this.setHasSentAvatarDataNotify(true);
+        this.hasSentLoginPackets = true;
 
         // Send server welcome chat.
         this.getServer().getChatManager().sendServerWelcomeMessages(this);

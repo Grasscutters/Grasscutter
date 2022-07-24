@@ -12,15 +12,18 @@ import static emu.grasscutter.config.Configuration.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-@Command(label = "team", usage = "team <add|remove|set> [avatarId,...] [index|first|last|index-index,...]",
-permission = "player.team", permissionTargeted = "player.team.others", description = "commands.team.description")
+@Command(
+    label = "team",
+    usage = {"add <avatarId,...>", "(remove|set) [index|first|last|index-index,...]"},
+    permission = "player.team",
+    permissionTargeted = "player.team.others")
 public final class TeamCommand implements CommandHandler {
     private static final int BASE_AVATARID = 10000000;
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.isEmpty()) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.team.usage");
+            sendUsageMessage(sender);
             return;
         }
 
@@ -39,7 +42,7 @@ public final class TeamCommand implements CommandHandler {
 
             default:
                 CommandHandler.sendTranslatedMessage(sender, "commands.team.invalid_usage");
-                CommandHandler.sendTranslatedMessage(sender, "commands.team.usage");
+                sendUsageMessage(sender);
                 return;
         }
 
@@ -50,7 +53,7 @@ public final class TeamCommand implements CommandHandler {
     private boolean addCommand(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 2) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.invalid_usage");
-            CommandHandler.sendTranslatedMessage(sender, "commands.team.add_usage");
+            sendUsageMessage(sender);
             return false;
         }
 
@@ -75,7 +78,8 @@ public final class TeamCommand implements CommandHandler {
 
         for (var avatarId: avatarIds) {
             int id = Integer.parseInt(avatarId);
-            var success = addAvatar(sender, targetPlayer, id, index);
+            if (!addAvatar(sender, targetPlayer, id, index))
+                CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_to_add_avatar", avatarId);
             if (index > 0) ++index;
         }
         return true;
@@ -84,7 +88,7 @@ public final class TeamCommand implements CommandHandler {
     private boolean removeCommand(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 2) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.invalid_usage");
-            CommandHandler.sendTranslatedMessage(sender, "commands.team.remove_usage");
+            sendUsageMessage(sender);
             return false;
         }
 
@@ -132,7 +136,7 @@ public final class TeamCommand implements CommandHandler {
     private boolean setCommand(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() < 3) {
             CommandHandler.sendTranslatedMessage(sender, "commands.team.invalid_usage");
-            CommandHandler.sendTranslatedMessage(sender, "commands.team.set_usage");
+            sendUsageMessage(sender);
             return false;
         }
 

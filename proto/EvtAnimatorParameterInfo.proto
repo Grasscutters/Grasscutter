@@ -16,20 +16,13 @@
 
 syntax = "proto3";
 
-import "AvatarInfo.proto";
-import "AvatarTeam.proto";
+import "AnimatorParameterValueInfo.proto";
 
 option java_package = "emu.grasscutter.net.proto";
 
-// CmdId: 1633
-// EnetChannelId: 0
-// EnetIsReliable: true
-message AvatarDataNotify {
-	repeated uint32 owned_flycloak_list = 1;
-	uint32 cur_avatar_team_id = 2;
-	repeated AvatarInfo avatar_list = 6;
-	repeated uint32 owned_costume_list = 11;
-	repeated uint64 temp_avatar_guid_list = 12;
-	map<uint32, AvatarTeam> avatar_team_map = 7;
-    uint64 choose_avatar_guid = 8;
+message EvtAnimatorParameterInfo {
+	uint32 entity_id = 4;
+	bool is_server_cache = 5;
+	AnimatorParameterValueInfo value = 7;
+	int32 name_id = 15;
 }

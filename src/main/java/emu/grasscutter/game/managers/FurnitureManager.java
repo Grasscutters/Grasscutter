@@ -6,6 +6,7 @@ import emu.grasscutter.game.home.FurnitureMakeSlotItem;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.net.proto.ItemParamOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.*;
@@ -34,18 +35,19 @@ public class FurnitureManager extends BasePlayerManager {
     }
 
     public synchronized boolean unlockFurnitureOrSuite(GameItem useItem) {
+        ItemUseOp itemUseOp = useItem.getItemData().getItemUse().get(0).getUseOp();
+        
         // Check
-        if (!List.of("ITEM_USE_UNLOCK_FURNITURE_FORMULA", "ITEM_USE_UNLOCK_FURNITURE_SUITE")
-                .contains(useItem.getItemData().getItemUse().get(0).getUseOp())) {
+        if (itemUseOp != ItemUseOp.ITEM_USE_UNLOCK_FURNITURE_SUITE && itemUseOp != ItemUseOp.ITEM_USE_UNLOCK_FURNITURE_FORMULA) {
             return false;
         }
 
-        int furnitureIdOrSuiteId = Integer.parseInt(useItem.getItemData().getItemUse().get(0).getUseParam().get(0));
+        int furnitureIdOrSuiteId = Integer.parseInt(useItem.getItemData().getItemUse().get(0).getUseParam()[0]);
 
         // Remove first
         player.getInventory().removeItem(useItem, 1);
 
-        if ("ITEM_USE_UNLOCK_FURNITURE_FORMULA".equals(useItem.getItemData().getItemUse().get(0).getUseOp())) {
+        if (useItem.getItemData().getItemUse().get(0).getUseOp() == ItemUseOp.ITEM_USE_UNLOCK_FURNITURE_FORMULA) {
             player.getUnlockedFurniture().add(furnitureIdOrSuiteId);
             notifyUnlockFurniture();
         }else {

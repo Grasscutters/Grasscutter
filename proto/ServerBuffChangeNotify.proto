@@ -16,20 +16,22 @@
 
 syntax = "proto3";
 
-import "AvatarInfo.proto";
-import "AvatarTeam.proto";
+import "ServerBuff.proto";
 
 option java_package = "emu.grasscutter.net.proto";
 
-// CmdId: 1633
+// CmdId: 361
 // EnetChannelId: 0
 // EnetIsReliable: true
-message AvatarDataNotify {
-	repeated uint32 owned_flycloak_list = 1;
-	uint32 cur_avatar_team_id = 2;
-	repeated AvatarInfo avatar_list = 6;
-	repeated uint32 owned_costume_list = 11;
-	repeated uint64 temp_avatar_guid_list = 12;
-	map<uint32, AvatarTeam> avatar_team_map = 7;
-    uint64 choose_avatar_guid = 8;
+message ServerBuffChangeNotify {
+	ServerBuffChangeType server_buff_change_type = 7;
+	bool is_creature_buff = 10;
+	repeated uint32 entity_id_list = 1;
+	repeated uint64 avatar_guid_list = 12;
+	repeated ServerBuff server_buff_list = 11;
+
+	enum ServerBuffChangeType {
+		SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF = 0;
+		SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF = 1;
+	}
 }
