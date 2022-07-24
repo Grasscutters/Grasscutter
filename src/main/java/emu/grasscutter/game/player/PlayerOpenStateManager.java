@@ -1,24 +1,15 @@
 package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Transient;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.OpenStateData;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.OpenState;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketOpenStateUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketSetOpenStateRsp;
-import lombok.Getter;
 
-import java.io.DataInput;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static emu.grasscutter.game.props.OpenState.*;
 
 @Entity
 public class PlayerOpenStateManager extends BasePlayerDataManager {
@@ -30,11 +21,11 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
     // Set of open states that are set per default for all accounts. Can be overwritten by an entry in `map`.
     public static final Set<Integer> DEFAULT_OPEN_STATES = GameData.getOpenStateList().stream()
         .filter(s -> 
-            s.isDefaultState()      // Actual default-opened state.
-            || (s.getCond().stream().filter(c -> c.getCondType().equals(OpenStateData.PLAYER_LEVEL_UNLOCK_COND)).count() == 0 && !s.isAllowClientOpen()) // All states whose unlock we don't handle yet.
+            s.isDefaultState()      // Actual default-opened states.
+            || (s.getCond().stream().filter(c -> c.getCondType().equals(OpenStateData.PLAYER_LEVEL_UNLOCK_COND)).count() == 0) // All states whose unlock we don't handle correctly yet.
             || s.getId() == 1 // Always unlock OPEN_STATE_PAIMON, otherwise the player will not have a working chat.
         )
-        .filter(s -> !BLACKLIST_OPEN_STATES.contains(s.getId()))
+        .filter(s -> !BLACKLIST_OPEN_STATES.contains(s.getId()))    // Filter out states in the blacklist.
         .map(s -> s.getId())
         .collect(Collectors.toSet());
 
@@ -80,7 +71,7 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
         Condition checking for setting open states.
     **********/
     private boolean areConditionsMet(OpenStateData openState) {
-        // Check all conditions and check if at least one of them is violated.
+        // Check all conditions and test if at least one of them is violated.
         for (var condition : openState.getCond()) {
             // For level conditions, check if the player has reached the necessary level.
             if (condition.getCondType().equals(OpenStateData.PLAYER_LEVEL_UNLOCK_COND)) {
