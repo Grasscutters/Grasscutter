@@ -328,9 +328,11 @@ public class SceneScriptManager {
                         if (trigger.event == EventType.EVENT_ENTER_REGION) {
                             EntityRegion region = this.regions.values().stream().filter(p -> p.getConfigId() == params.param1).toList().get(0);
                             getScene().getPlayers().forEach(p -> p.onEnterRegion(region.getMetaRegion()));
+                            deregisterRegion(region.getMetaRegion());
                         } else if (trigger.event == EventType.EVENT_LEAVE_REGION) {
                             EntityRegion region = this.regions.values().stream().filter(p -> p.getConfigId() == params.param1).toList().get(0);
                             getScene().getPlayers().forEach(p -> p.onLeaveRegion(region.getMetaRegion()));
+                            deregisterRegion(region.getMetaRegion());
                         }
                         deregisterTrigger(trigger);
                     } else {
