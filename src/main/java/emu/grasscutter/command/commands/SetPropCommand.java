@@ -9,6 +9,7 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.tower.TowerLevelRecord;
+import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 
 @Command(label = "setProp", aliases = {"prop"}, usage = {"<prop> <value>"}, permission = "player.setprop", permissionTargeted = "player.setprop.others")
 public final class SetPropCommand implements CommandHandler {
@@ -19,7 +20,9 @@ public final class SetPropCommand implements CommandHandler {
         BP_LEVEL,
         GOD_MODE,
         NO_STAMINA,
-        UNLIMITED_ENERGY
+        UNLIMITED_ENERGY,
+        SET_OPENSTATE,
+        UNSET_OPENSTATE
     }
 
     static class Prop {
@@ -90,6 +93,14 @@ public final class SetPropCommand implements CommandHandler {
         Prop unlimitedenergy = new Prop("unlimitedenergy", PseudoProp.UNLIMITED_ENERGY);
         this.props.put("unlimitedenergy", unlimitedenergy);
         this.props.put("ue", unlimitedenergy);
+
+        Prop setopenstate = new Prop("setopenstate", PseudoProp.SET_OPENSTATE);
+        this.props.put("setopenstate", setopenstate);
+        this.props.put("so", setopenstate);
+
+        Prop unsetopenstate = new Prop("unsetopenstate", PseudoProp.UNSET_OPENSTATE);
+        this.props.put("unsetopenstate", unsetopenstate);
+        this.props.put("uo", unsetopenstate);
     }
 
     @Override
@@ -126,6 +137,8 @@ public final class SetPropCommand implements CommandHandler {
             case BP_LEVEL -> targetPlayer.getBattlePassManager().setLevel(value);
             case TOWER_LEVEL -> this.setTowerLevel(sender, targetPlayer, value);
             case GOD_MODE, NO_STAMINA, UNLIMITED_ENERGY -> this.setBool(sender, targetPlayer, prop.pseudoProp, value);
+            case SET_OPENSTATE -> this.setOpenState(targetPlayer, value, 1);
+            case UNSET_OPENSTATE -> this.setOpenState(targetPlayer, value, 0);
             default -> targetPlayer.setProperty(prop.prop, value);
         };
 
@@ -200,6 +213,11 @@ public final class SetPropCommand implements CommandHandler {
             default:
                 return false;
         }
+        return true;
+    }
+
+    private boolean setOpenState(Player targetPlayer, int state, int value) {
+        targetPlayer.sendPacket(new PacketOpenStateChangeNotify(state, value));
         return true;
     }
 }
