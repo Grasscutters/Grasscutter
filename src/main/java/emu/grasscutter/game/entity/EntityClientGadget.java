@@ -3,7 +3,6 @@ package emu.grasscutter.game.entity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.ClientGadgetInfoOuterClass;
@@ -11,7 +10,6 @@ import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityIn
 import emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
 import emu.grasscutter.net.proto.EvtCreateGadgetNotifyOuterClass.EvtCreateGadgetNotify;
-import emu.grasscutter.net.proto.GadgetClientParamOuterClass.GadgetClientParam;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.PropPairOuterClass.PropPair;
 import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType;
@@ -25,10 +23,10 @@ import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 
 public class EntityClientGadget extends EntityBaseGadget {
 	private final Player owner;
-	
+
 	private final Position pos;
 	private final Position rot;
-	
+
 	private int configId;
 	private int campId;
 	private int campType;
@@ -37,7 +35,7 @@ public class EntityClientGadget extends EntityBaseGadget {
 	private boolean asyncLoad;
 
 	private int originalOwnerEntityId;
-	
+
 	public EntityClientGadget(Scene scene, Player player, EvtCreateGadgetNotify notify) {
 		super(scene);
 		this.owner = player;
@@ -59,20 +57,20 @@ public class EntityClientGadget extends EntityBaseGadget {
 			this.originalOwnerEntityId = this.ownerEntityId;
 		}
 	}
-	
+
 	@Override
 	public int getGadgetId() {
 		return configId;
 	}
-	
+
 	public Player getOwner() {
 		return owner;
 	}
-	
+
 	public int getCampId() {
 		return campId;
 	}
-	
+
 	public int getCampType() {
 		return campType;
 	}
@@ -80,7 +78,7 @@ public class EntityClientGadget extends EntityBaseGadget {
 	public int getOwnerEntityId() {
 		return ownerEntityId;
 	}
-	
+
 	public int getTargetEntityId() {
 		return targetEntityId;
 	}
@@ -95,7 +93,7 @@ public class EntityClientGadget extends EntityBaseGadget {
 
 	@Override
 	public void onDeath(int killerId) {
-		
+        super.onDeath(killerId); // Invoke super class's onDeath() method.
 	}
 
 	@Override
@@ -124,7 +122,7 @@ public class EntityClientGadget extends EntityBaseGadget {
 				.setAiInfo(SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(Vector.newBuilder()))
 				.setBornPos(Vector.newBuilder())
 				.build();
-		
+
 		SceneEntityInfo.Builder entityInfo = SceneEntityInfo.newBuilder()
 				.setEntityId(getId())
 				.setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
@@ -133,13 +131,13 @@ public class EntityClientGadget extends EntityBaseGadget {
 				.setEntityClientData(EntityClientData.newBuilder())
 				.setEntityAuthorityInfo(authority)
 				.setLifeState(1);
-		
+
 		PropPair pair = PropPair.newBuilder()
 				.setType(PlayerProperty.PROP_LEVEL.getId())
 				.setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 1))
 				.build();
 		entityInfo.addPropList(pair);
-		
+
 		ClientGadgetInfoOuterClass.ClientGadgetInfo clientGadget = ClientGadgetInfoOuterClass.ClientGadgetInfo.newBuilder()
 				.setCampId(this.getCampId())
 				.setCampType(this.getCampType())
@@ -147,7 +145,7 @@ public class EntityClientGadget extends EntityBaseGadget {
 				.setTargetEntityId(this.getTargetEntityId())
 				.setAsyncLoad(this.isAsyncLoad())
 				.build();
-		
+
 		SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()
 				.setGadgetId(this.getGadgetId())
 				.setOwnerEntityId(this.getOwnerEntityId())
@@ -157,7 +155,7 @@ public class EntityClientGadget extends EntityBaseGadget {
 				.setAuthorityPeerId(this.getOwner().getPeerId());
 
 		entityInfo.setGadget(gadgetInfo);
-		
+
 		return entityInfo.build();
 	}
 }
