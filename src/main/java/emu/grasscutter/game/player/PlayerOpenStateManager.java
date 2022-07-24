@@ -22,13 +22,6 @@ import static emu.grasscutter.game.props.OpenState.*;
 
 @Entity
 public class PlayerOpenStateManager extends BasePlayerDataManager {
-    /*
-   //DO NOT MODIFY. Based on conversation of official server and client, game version 2.7
-   private static Set<OpenState> newPlayerOpenStates = Set.of(OPEN_STATE_DERIVATIVE_MALL,OPEN_STATE_PHOTOGRAPH,OPEN_STATE_BATTLE_PASS,OPEN_STATE_SHOP_TYPE_GENESISCRYSTAL,OPEN_STATE_SHOP_TYPE_RECOMMANDED,
-       OPEN_STATE_SHOP_TYPE_GIFTPACKAGE,OPEN_STATE_GUIDE_RELIC_PROM,OPEN_STATE_GUIDE_TALENT,OPEN_STATE_SHOP_TYPE_BLACKSMITH,OPEN_STATE_SHOP_TYPE_PAIMON,OPEN_STATE_WEAPON_AWAKEN,
-       OPEN_STATE_WEAPON_PROMOTE,OPEN_STATE_AVATAR_PROMOTE,OPEN_STATE_AVATAR_TALENT,OPEN_STATE_WEAPON_UPGRADE,OPEN_STATE_RESIN,OPEN_STATE_RELIQUARY_UPGRADE,
-       OPEN_STATE_SHOP_TYPE_VIRTUAL_SHOP,OPEN_STATE_RELIQUARY_PROMOTE);
-   */
     // Set of open states that are never default unlocked, whether they fulfill the conditions or not.
     private static final Set<Integer> BLACKLIST_OPEN_STATES = Set.of(
     48      // blacklist OPEN_STATE_LIMIT_REGION_GLOBAL to make Meledy happy. =D Remove this as soon as quest unlocks are fully implemented.
@@ -38,7 +31,8 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
     public static final Set<Integer> DEFAULT_OPEN_STATES = GameData.getOpenStateList().stream()
         .filter(s -> 
             s.isDefaultState()      // Actual default-opened state.
-            || s.getCond().stream().filter(c -> c.getCondType().equals(OpenStateData.PLAYER_LEVEL_UNLOCK_COND)).count() == 0 // All states that aren't conditioned on level.
+            || (s.getCond().stream().filter(c -> c.getCondType().equals(OpenStateData.PLAYER_LEVEL_UNLOCK_COND)).count() == 0 && !s.isAllowClientOpen()) // All states whose unlock we don't handle yet.
+            || s.getId() == 1 // Always unlock OPEN_STATE_PAIMON, otherwise the player will not have a working chat.
         )
         .filter(s -> !BLACKLIST_OPEN_STATES.contains(s.getId()))
         .map(s -> s.getId())
