@@ -29,16 +29,24 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
        OPEN_STATE_WEAPON_PROMOTE,OPEN_STATE_AVATAR_PROMOTE,OPEN_STATE_AVATAR_TALENT,OPEN_STATE_WEAPON_UPGRADE,OPEN_STATE_RESIN,OPEN_STATE_RELIQUARY_UPGRADE,
        OPEN_STATE_SHOP_TYPE_VIRTUAL_SHOP,OPEN_STATE_RELIQUARY_PROMOTE);
    */
+    // Set of open states that are never default unlocked, whether they fulfill the conditions or not.
+    private static final Set<Integer> BLACKLIST_OPEN_STATES = Set.of(
+    48      // blacklist OPEN_STATE_LIMIT_REGION_GLOBAL to make Meledy happy. =D Remove this as soon as quest unlocks are fully implemented.
+    );
+
+    // Set of open states that are set per default for all accounts. Can be overwritten by an entry in `map`.
+    public static final Set<Integer> DEFAULT_OPEN_STATES = GameData.getOpenStateList().stream()
+        .filter(s -> 
+            s.isDefaultState()      // Actual default-opened state.
+            || s.getCond().stream().filter(c -> c.getCondType().equals(OpenStateData.PLAYER_LEVEL_UNLOCK_COND)).count() == 0 // All states that aren't conditioned on level.
+        )
+        .filter(s -> !BLACKLIST_OPEN_STATES.contains(s.getId()))
+        .map(s -> s.getId())
+        .collect(Collectors.toSet());
 
     // Map of all open states that this player has.
     private Map<Integer, Integer> map;
 
-    // Set of open states that are set per default for all accounts. Can be overwritten by an entry in `map`.
-    public static final Set<Integer> DEV_OPEN_STATES = GameData.getOpenStateList().stream()
-        .filter(s -> s.isDefaultState())
-        .map(s -> s.getId())
-        .collect(Collectors.toSet());
-    
     public PlayerOpenStateManager(Player player) {
         super(player);
     }
@@ -148,10 +156,11 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
 
         // Try unlocking all of them.
         for (var state : lockedStates) {
-            // To auto-unlock a state, it has to meet two conditions:
-            // * it can not be a state that is unlocked by the client, and
-            // * it has to meet all its unlock conditions.
-            if (!state.isAllowClientOpen() && this.areConditionsMet(state)) {
+            // To auto-unlock a state, it has to meet three conditions:
+            // * it can not be a state that is unlocked by the client,
+            // * it has to meet all its unlock conditions, and
+            // * it can not be in the blacklist.
+            if (!state.isAllowClientOpen() && this.areConditionsMet(state) && !BLACKLIST_OPEN_STATES.contains(state.getId())) {
                 this.setOpenState(state.getId(), 1, sendNotify);
             }
         }

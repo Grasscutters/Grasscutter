@@ -19,7 +19,7 @@ public class OpenStateData extends GameResource {
     public static String PARENT_QUEST_UNLOCK_COND = "OPEN_STATE_COND_PARENT_QUEST";
 
     private int id;
-    private boolean defaultState;
+    @Getter private boolean defaultState;
     @Getter private boolean allowClientOpen;
     @Getter private int systemOpenUiId;
     @Getter private List<OpenStateCond> cond;
@@ -49,13 +49,5 @@ public class OpenStateData extends GameResource {
         }
 
         this.cond = cleanedConds;
-    }
-
-    public boolean isDefaultState() {
-        // ToDo: Right now, we default unlock all states that are not level-locked.
-        // This is because the unlock trigges for the other conditions are not yet implemented.
-        // Remove this once they are implemented.
-        return this.defaultState 
-            || this.cond.stream().filter(c -> c.getCondType().equals(PLAYER_LEVEL_UNLOCK_COND)).count() == 0;
     }
 }
