@@ -55,10 +55,15 @@ public final class TeleportCommand implements CommandHandler {
 
         Position target_pos = new Position(x, y, z);
         PlayerTeleportEvent event = new PlayerTeleportEvent(targetPlayer, PlayerTeleportEvent.TeleportType.COMMAND,
-            targetPlayer.getPos(), target_pos);
+            targetPlayer.getPosition(), target_pos);
         event.call();
 
-        boolean result = !event.isCanceled() || targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, event.getDestination());
+        // Return if event was cancelled.
+        if(event.isCanceled()) {
+            return;
+        }
+
+        boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, event.getDestination());
         if (!result) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.exists_error"));
         } else {
