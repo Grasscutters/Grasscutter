@@ -12,12 +12,6 @@ import java.util.Objects;
 
 @ResourceType(name = "OpenStateConfigData.json", loadPriority = ResourceType.LoadPriority.HIGHEST)
 public class OpenStateData extends GameResource {
-    public static String PLAYER_LEVEL_UNLOCK_COND = "OPEN_STATE_COND_PLAYER_LEVEL";
-    public static String QUEST_UNLOCK_COND = "OPEN_STATE_COND_QUEST";
-    public static String OFFERING_LEVEL_UNLOCK_COND = "OPEN_STATE_OFFERING_LEVEL";
-    public static String REPUTATION_LEVEL_UNLOCK_COND = "OPEN_STATE_CITY_REPUTATION_LEVEL";
-    public static String PARENT_QUEST_UNLOCK_COND = "OPEN_STATE_COND_PARENT_QUEST";
-
     private int id;
     @Getter private boolean defaultState;
     @Getter private boolean allowClientOpen;
@@ -25,9 +19,17 @@ public class OpenStateData extends GameResource {
     @Getter private List<OpenStateCond> cond;
 
     public static class OpenStateCond {
-        @Getter private String condType;
+        @Getter private OpenStateCondType condType;
         @Getter private int param;
         @Getter private int param2;
+    }
+
+    public static enum OpenStateCondType {
+        OPEN_STATE_COND_PLAYER_LEVEL,
+        OPEN_STATE_COND_QUEST,
+        OPEN_STATE_OFFERING_LEVEL,
+        OPEN_STATE_CITY_REPUTATION_LEVEL,
+        OPEN_STATE_COND_PARENT_QUEST;
     }
 
     @Override

@@ -3,6 +3,7 @@ package emu.grasscutter.game.player;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.OpenStateData;
+import emu.grasscutter.data.excels.OpenStateData.OpenStateCondType;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketOpenStateUpdateNotify;
@@ -22,7 +23,7 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
     public static final Set<Integer> DEFAULT_OPEN_STATES = GameData.getOpenStateList().stream()
         .filter(s -> 
             s.isDefaultState()      // Actual default-opened states.
-            || (s.getCond().stream().filter(c -> c.getCondType().equals(OpenStateData.PLAYER_LEVEL_UNLOCK_COND)).count() == 0) // All states whose unlock we don't handle correctly yet.
+            || (s.getCond().stream().filter(c -> c.getCondType() == OpenStateCondType.OPEN_STATE_COND_PLAYER_LEVEL).count() == 0) // All states whose unlock we don't handle correctly yet.
             || s.getId() == 1 // Always unlock OPEN_STATE_PAIMON, otherwise the player will not have a working chat.
         )
         .filter(s -> !BLACKLIST_OPEN_STATES.contains(s.getId()))    // Filter out states in the blacklist.
@@ -74,21 +75,21 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
         // Check all conditions and test if at least one of them is violated.
         for (var condition : openState.getCond()) {
             // For level conditions, check if the player has reached the necessary level.
-            if (condition.getCondType().equals(OpenStateData.PLAYER_LEVEL_UNLOCK_COND)) {
+            if (condition.getCondType() == OpenStateCondType.OPEN_STATE_COND_PLAYER_LEVEL) {
                 if (this.player.getLevel() < condition.getParam()) {
                     return false;
                 }
             }
-            else if (condition.getCondType().equals(OpenStateData.QUEST_UNLOCK_COND)) {
+            else if (condition.getCondType() == OpenStateCondType.OPEN_STATE_COND_QUEST) {
                 // ToDo: Implement.
             }
-            else if (condition.getCondType().equals(OpenStateData.PARENT_QUEST_UNLOCK_COND)) {
+            else if (condition.getCondType() == OpenStateCondType.OPEN_STATE_COND_PARENT_QUEST) {
                 // ToDo: Implement.
             }
-            else if (condition.getCondType().equals(OpenStateData.OFFERING_LEVEL_UNLOCK_COND)) {
+            else if (condition.getCondType() == OpenStateCondType.OPEN_STATE_OFFERING_LEVEL) {
                 // ToDo: Implement.
             }
-            else if (condition.getCondType().equals(OpenStateData.REPUTATION_LEVEL_UNLOCK_COND)) {
+            else if (condition.getCondType() == OpenStateCondType.OPEN_STATE_CITY_REPUTATION_LEVEL) {
                 // ToDo: Implement.
             }
         }
