@@ -435,8 +435,8 @@ public class Player {
             this.updateWorldLevel();
             this.updateProfile();
 
-            // Handle OpenState unlocks from level-up.
-            this.getOpenStateManager().unlockLevelDependentStates();
+            // Handle open state unlocks from level-up.
+            this.getOpenStateManager().tryUnlockOpenStates();
 
             return true;
         }
@@ -1357,27 +1357,25 @@ public class Player {
         this.doDailyReset();
 
 
-        // Rewind active quests, and put the player to the first rewind position it finds (if any) of an active quest
+        // Rewind active quests, and put the player to a rewind position it finds (if any) of an active quest
         getQuestManager().onLogin();
 
-		// Packets
-		session.send(new PacketPlayerDataNotify(this)); // Player data
-		session.send(new PacketStoreWeightLimitNotify());
-		session.send(new PacketPlayerStoreNotify(this));
-		session.send(new PacketAvatarDataNotify(this));
-		session.send(new PacketFinishedParentQuestNotify(this));
-		session.send(new PacketBattlePassAllDataNotify(this));
-		session.send(new PacketQuestListNotify(this));
-		session.send(new PacketCodexDataFullNotify(this));
-		session.send(new PacketAllWidgetDataNotify(this));
-		session.send(new PacketWidgetGadgetAllDataNotify());
-		session.send(new PacketCombineDataNotify(this.unlockedCombines));
-		this.forgingManager.sendForgeDataNotify();
-		this.resinManager.onPlayerLogin();
-		this.cookingManager.sendCookDataNofity();
 
-        // Unlock in case this is an existing user that reached a level before we implemented unlocking.
-        this.getOpenStateManager().unlockLevelDependentStates();
+        // Packets
+        session.send(new PacketPlayerDataNotify(this)); // Player data
+        session.send(new PacketStoreWeightLimitNotify());
+        session.send(new PacketPlayerStoreNotify(this));
+        session.send(new PacketAvatarDataNotify(this));
+        session.send(new PacketFinishedParentQuestNotify(this));
+        session.send(new PacketBattlePassAllDataNotify(this));
+        session.send(new PacketQuestListNotify(this));
+        session.send(new PacketCodexDataFullNotify(this));
+        session.send(new PacketAllWidgetDataNotify(this));
+        session.send(new PacketWidgetGadgetAllDataNotify());
+        session.send(new PacketCombineDataNotify(this.unlockedCombines));
+        this.forgingManager.sendForgeDataNotify();
+        this.resinManager.onPlayerLogin();
+        this.cookingManager.sendCookDataNofity();
         this.getOpenStateManager().onPlayerLogin();
 
         getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
