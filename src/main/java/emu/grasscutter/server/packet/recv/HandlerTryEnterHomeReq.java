@@ -40,7 +40,7 @@ public class HandlerTryEnterHomeReq extends PacketHandler {
         Position pos = scene.getScriptManager().getConfig().born_pos;
 
         PlayerTeleportEvent event = new PlayerTeleportEvent(session.getPlayer(), PlayerTeleportEvent.TeleportType.WAYPOINT,
-            session.getPlayer().getPos(), pos);
+            session.getPlayer().getPosition(), pos);
         event.call();
 
         if(!event.isCanceled()) {

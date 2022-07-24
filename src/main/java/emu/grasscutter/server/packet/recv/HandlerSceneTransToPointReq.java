@@ -28,7 +28,7 @@ public class HandlerSceneTransToPointReq extends PacketHandler {
 			float z = scenePointEntry.getPointData().getTranPos().getZ();
 
             PlayerTeleportEvent event = new PlayerTeleportEvent(session.getPlayer(), PlayerTeleportEvent.TeleportType.WAYPOINT,
-                session.getPlayer().getPos(), new Position(x, y, z));
+                session.getPlayer().getPosition(), new Position(x, y, z));
             event.call();
 
 			if(!event.isCanceled()) {
