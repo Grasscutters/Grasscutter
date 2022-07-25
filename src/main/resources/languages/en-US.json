@@ -258,7 +258,7 @@
     },
     "setConst": {
       "range_error": "Constellation level must be between 0 and 6.",
-      "level_error": "Invalid constellation level",
+      "level_error": "Invalid constellation level.",
       "description": "Sets constellation level for your current active character"
     },
     "setFetterLevel": {
