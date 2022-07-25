@@ -256,6 +256,12 @@
       "success": "Mensaje enviado.",
       "description": "Envía un mensaje a un jugador como servidor. Si se usa sin un objetivo fijado, lo envía a todos los jugadores del servidor."
     },
+    "setConst": {
+      "range_error": "Constellation level must be between 0 and 6.",
+      "level_error": "Invalid constellation level.",
+      "success": "Constellations for %s have been set to %s. Please relog to see changes.",
+      "description": "Sets constellation level for your current active character"
+    },
     "setFetterLevel": {
       "range_error": "El nivel de amistad debe estar entre 0 y 10.",
       "success": "Nivel de amistad establecido a %s.",

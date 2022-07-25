@@ -256,6 +256,12 @@
       "success": "消息已发送。",
       "description": "向玩家以服务器的身份发送消息。如果没有指定目标，则向服务器的全部玩家发送"
     },
+    "setConst": {
+      "range_error": "Constellation level must be between 0 and 6.",
+      "level_error": "Invalid constellation level.",
+      "success": "Constellations for %s have been set to %s. Please relog to see changes.",
+      "description": "Sets constellation level for your current active character"
+    },
     "setFetterLevel": {
       "range_error": "好感度等级必须在 0-10 之间。",
       "success": "好感度已设为 %s 级。",

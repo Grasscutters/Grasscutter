@@ -256,6 +256,12 @@
       "success": "Message envoyé.",
       "description": "Envoie un message au joueur spécifié en tant que Serveur"
     },
+    "setConst": {
+      "range_error": "Constellation level must be between 0 and 6.",
+      "level_error": "Invalid constellation level.",
+      "success": "Constellations for %s have been set to %s. Please relog to see changes.",
+      "description": "Sets constellation level for your current active character"
+    },
     "setFetterLevel": {
       "range_error": "Le niveau d'affinité doit être compris entre 0 et 10.",
       "success": "Niveau d'affinité défini à %s.",
