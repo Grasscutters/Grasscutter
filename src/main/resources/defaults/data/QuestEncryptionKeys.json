@@ -1,0 +1,24 @@
+[
+    {
+        "mainQuestId": 1031,
+        "encryptionKey": 3303136414174011
+    },{
+        "mainQuestId": 11026,
+        "encryptionKey": 6382832627668464
+    },{
+        "mainQuestId": 40065,
+        "encryptionKey": 2850973778349534
+    },{
+        "mainQuestId": 40067,
+        "encryptionKey": 5623150388305012
+    },{
+        "mainQuestId": 40070,
+        "encryptionKey": 3865005622692177
+    },{
+        "mainQuestId": 40073,
+        "encryptionKey": 2376853844266094
+    },{
+        "mainQuestId": 40076,
+        "encryptionKey": 2320676109514370
+    }
+]
