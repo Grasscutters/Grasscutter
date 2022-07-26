@@ -28,8 +28,8 @@
         "login_token_attempt": "[Dispatch] 客户端 %s 正在尝试通过 token 登录",
         "login_token_error": "[Dispatch] 客户端 %s 通过 token 登录失败",
         "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID 为 %s",
-        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
-        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
+        "login_password_error": "🇺🇸[Dispatch] 客户端 %s 无法通过密码登录",
+        "login_password_storage_error": "🇺🇸[Dispatch] 客户端 %s 无法登录！ 因为数库中没有密码",
         "combo_token_success": "[Dispatch] 客户端 %s 成功交换 token",
         "combo_token_error": "[Dispatch] 客户端 %s 交换 token 失败",
         "account_login_create_success": "[Dispatch] 客户端 %s 登录失败：已注册 UID 为 %s 的账号",
@@ -39,9 +39,9 @@
         "session_key_error": "会话密钥错误",
         "username_error": "未找到用户名",
         "username_create_error": "未找到用户名，建立连接失败",
-        "password_error": "🇺🇸Invalid Password",
-        "password_length_error": "🇺🇸Password length must be greater then or equal to 8",
-        "password_storage_error": "🇺🇸You don't have a password for your account. Please contact an administrator.",
+        "password_error": "密码无效",
+        "password_length_error": "密码必须大于或等于8位",
+        "password_storage_error": "你没有密码，请联系管理员",
         "server_max_player_limit": "服务器在线人数已满"
       },
       "router_error": "[Dispatch] 无法连接路由"
@@ -257,12 +257,12 @@
       "description": "向玩家以服务器的身份发送消息。如果没有指定目标，则向服务器的全部玩家发送"
     },
     "setConst": {
-      "range_error": "Constellation level must be between 0 and 6.",
-      "level_error": "Invalid constellation level.",
-      "fail": "Failed to set constellation.",
-      "failed_success": "Constellations for %s have been set to %s. Please reload scene to see changes.",
-      "success": "Constellations for %s have been set to %s.",
-      "description": "Sets constellation level for your current active character"
+      "range_error": "命座等级必须是 0~6级",
+      "level_error": "无效的命座等级",
+      "fail": "命座等级设置失败",
+      "failed_success": "命座 %s 已设置为 %s. 请传送到[渊下宫]或重新登录查看效果",
+      "success": "命座 %s 已设置为 %s.",
+      "description": "为当前活跃角色设置命座等级"
     },
     "setFetterLevel": {
       "range_error": "好感度等级必须在 0-10 之间。",
@@ -355,7 +355,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "🇺🇸GM Handbook",
+      "title": "🇺🇸GM 手册",
       "title_commands": "命令",
       "title_avatars": "角色",
       "title_items": "物品",
@@ -371,7 +371,7 @@
     },
     "index": {
       "title": "文档",
-      "handbook": "🇺🇸GM Handbook",
+      "handbook": "🇺🇸GM 手册",
       "gacha_mapping": "祈愿物品映射JSON"
     }
   }
