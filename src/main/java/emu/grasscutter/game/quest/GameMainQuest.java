@@ -344,8 +344,8 @@ public class GameMainQuest {
 				.setIsFinished(isFinished());
 
 
-            proto.setParentQuestState(getState().getValue());
-            .setCutsceneEncryptionKey(QuestManager.getQuestKey(parentQuestId));
+            proto.setParentQuestState(getState().getValue())
+                .setCutsceneEncryptionKey(QuestManager.getQuestKey(parentQuestId));
             for (GameQuest quest : this.getChildQuests().values()) {
                 if (quest.getState() != QuestState.QUEST_STATE_UNSTARTED) {
                     ChildQuest childQuest = ChildQuest.newBuilder()
@@ -356,7 +356,7 @@ public class GameMainQuest {
                     proto.addChildQuestList(childQuest);
                 }
             }
-        
+
         for (int i : getQuestVars()) {
             proto.addQuestVar(i);
         }
