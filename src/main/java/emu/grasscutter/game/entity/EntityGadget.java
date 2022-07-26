@@ -219,6 +219,7 @@ public class EntityGadget extends EntityBaseGadget {
                 .setConfigId(this.getConfigId())
                 .setGadgetState(this.getState())
                 .setIsEnableInteract(true)
+                .setDraftId(this.metaGadget.draft_id)
                 .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
 
         if (this.getContent() != null) {

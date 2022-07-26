@@ -256,6 +256,14 @@
       "success": "Wiadomość wysłana.",
       "description": "Wyślij wiadomość do gracza jako serwer. Jeśli nie określono celu, wysyła do wszystkich graczy na serwerze."
     },
+    "setConst": {
+      "range_error": "Constellation level must be between 0 and 6.",
+      "level_error": "Invalid constellation level.",
+      "fail": "Failed to set constellation.",
+      "failed_success": "Constellations for %s have been set to %s. Please reload scene to see changes.",
+      "success": "Constellations for %s have been set to %s.",
+      "description": "Sets constellation level for your current active character"
+    },
     "setFetterLevel": {
       "range_error": "Poziom przyjaźni musi być pomiędzy 0 a 10.",
       "success": "Poziom przyjaźni został pomyślnie ustawiony na %s.",

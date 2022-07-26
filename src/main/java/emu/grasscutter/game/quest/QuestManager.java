@@ -3,8 +3,6 @@ package emu.grasscutter.game.quest;
 import java.beans.Transient;
 import java.util.*;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData;
@@ -25,6 +23,7 @@ import jdk.jshell.spi.ExecutionControl;
 import lombok.Getter;
 
 public class QuestManager extends BasePlayerManager {
+
 	@Getter private final Player player;
     @Getter private Map<Integer,Integer> questGlobalVariables;
 
@@ -64,7 +63,13 @@ public class QuestManager extends BasePlayerManager {
         );
 
     */
+    
+        public static long getQuestKey(int mainQuestId){
+        QuestEncryptionKey questEncryptionKey = GameData.getMainQuestEncryptionMap().get(mainQuestId);
+        return questEncryptionKey != null ? questEncryptionKey.getEncryptionKey() : 0L;
+    }
 	public QuestManager(Player player) {
+
         super(player);
 		this.player = player;
         this.questGlobalVariables = player.getQuestGlobalVariables();

@@ -12,6 +12,7 @@ public class SceneGadget extends SceneObject{
 	public SceneBossChest boss_chest;
 	public int interact_id;
     public boolean isOneoff;
+    public int draft_id;
 
     public void setIsOneoff(boolean isOneoff){
         this.isOneoff = isOneoff;
