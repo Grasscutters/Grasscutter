@@ -213,7 +213,7 @@ public class SceneScriptManager {
 			}
 
             for(int entityId : region.getEntities()) {
-                if(!region.getMetaRegion().contains(getScene().getEntityById(entityId).getPosition())) {
+                if(getScene().getEntityById(entityId) == null || !region.getMetaRegion().contains(getScene().getEntityById(entityId).getPosition())) {
                     region.removeEntity(entityId);
 
                 }
