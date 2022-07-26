@@ -256,6 +256,14 @@
       "success": "訊息已發送。",
       "description": "向指定玩家發送訊息。"
     },
+    "setConst": {
+      "range_error": "Constellation level must be between 0 and 6.",
+      "level_error": "Invalid constellation level.",
+      "fail": "Failed to set constellation.",
+      "failed_success": "Constellations for %s have been set to %s. Please reload scene to see changes.",
+      "success": "Constellations for %s have been set to %s.",
+      "description": "Sets constellation level for your current active character"
+    },
     "setFetterLevel": {
       "range_error": "好感度必須在 0 到 10 之間。",
       "success": "好感等級已設定為 %s",

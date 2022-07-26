@@ -8,6 +8,7 @@ import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.*;
+import emu.grasscutter.game.quest.QuestEncryptionKey;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.data.excels.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
@@ -25,6 +26,7 @@ public class GameData {
 	private static final Map<String, OpenConfigEntry> openConfigEntries = new HashMap<>();
 	private static final Map<String, ScenePointEntry> scenePointEntries = new HashMap<>();
 	private static final Int2ObjectMap<MainQuestData> mainQuestData = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectMap<QuestEncryptionKey> questsKeys = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<HomeworldDefaultSaveData> homeworldDefaultSaveData = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<SceneNpcBornData> npcBornData = new Int2ObjectOpenHashMap<>();
 
@@ -167,6 +169,10 @@ public class GameData {
 
 	public static Int2ObjectMap<MainQuestData> getMainQuestDataMap() {
 		return mainQuestData;
+	}
+
+	public static Int2ObjectMap<QuestEncryptionKey> getMainQuestEncryptionMap() {
+		return questsKeys;
 	}
 
 	public static Int2ObjectMap<HomeworldDefaultSaveData> getHomeworldDefaultSaveData() {

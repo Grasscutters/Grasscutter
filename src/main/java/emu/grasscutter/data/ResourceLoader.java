@@ -1,5 +1,25 @@
 package emu.grasscutter.data;
 
+import com.google.gson.JsonElement;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.binout.*;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityConfigData;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
+import emu.grasscutter.data.common.PointData;
+import emu.grasscutter.data.common.ScenePointConfig;
+import emu.grasscutter.game.quest.QuestEncryptionKey;
+import emu.grasscutter.game.world.SpawnDataEntry;
+import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
+import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
+import emu.grasscutter.scripts.SceneIndexManager;
+import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.SneakyThrows;
+import org.reflections.Reflections;
+
 import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
@@ -9,27 +29,7 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import emu.grasscutter.data.binout.*;
-import emu.grasscutter.game.world.SpawnDataEntry;
-import emu.grasscutter.scripts.SceneIndexManager;
-import emu.grasscutter.utils.Utils;
-import lombok.SneakyThrows;
-import org.reflections.Reflections;
-
-import com.google.gson.JsonElement;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityConfigData;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
-import emu.grasscutter.data.common.PointData;
-import emu.grasscutter.data.common.ScenePointConfig;
-import emu.grasscutter.game.world.SpawnDataEntry.*;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-
-import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.config.Configuration.RESOURCE;
 import static emu.grasscutter.utils.Language.translate;
 
 public class ResourceLoader {
@@ -416,6 +416,18 @@ public class ResourceLoader {
             }
 
             GameData.getMainQuestDataMap().put(mainQuest.getId(), mainQuest);
+        }
+
+        try (Reader reader = DataLoader.loadReader("QuestEncryptionKeys.json")) {
+            List<QuestEncryptionKey> keys = Grasscutter.getGsonFactory().fromJson(
+                reader,
+                TypeToken.getParameterized(List.class, QuestEncryptionKey.class).getType());
+
+            Int2ObjectMap<QuestEncryptionKey> questEncryptionMap = GameData.getMainQuestEncryptionMap();
+            keys.forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
+            Grasscutter.getLogger().info("loaded {} quest keys.", questEncryptionMap.size());
+        } catch (Exception e) {
+            Grasscutter.getLogger().error("Unable to load quest keys.", e);
         }
 
         Grasscutter.getLogger().debug("Loaded " + GameData.getMainQuestDataMap().size() + " MainQuestDatas.");

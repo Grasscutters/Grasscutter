@@ -342,13 +342,10 @@ public class GameMainQuest {
 		ParentQuest.Builder proto = ParentQuest.newBuilder()
 				.setParentQuestId(getParentQuestId())
 				.setIsFinished(isFinished());
-		/**
-		    if ParentQuestState is NONE, official server does not send ParentQuestState nor childQuestList!!!
-		    might need more sniffing...
-            sending childQuestList without ParentQuestState set causes the game to hang on login
-        */
-        if (getState() != ParentQuestState.PARENT_QUEST_STATE_NONE) {
+
+
             proto.setParentQuestState(getState().getValue());
+            .setCutsceneEncryptionKey(QuestManager.getQuestKey(parentQuestId));
             for (GameQuest quest : this.getChildQuests().values()) {
                 if (quest.getState() != QuestState.QUEST_STATE_UNSTARTED) {
                     ChildQuest childQuest = ChildQuest.newBuilder()
@@ -359,10 +356,11 @@ public class GameMainQuest {
                     proto.addChildQuestList(childQuest);
                 }
             }
-        }
+        
         for (int i : getQuestVars()) {
             proto.addQuestVar(i);
         }
+
 
 		return proto.build();
 	}
