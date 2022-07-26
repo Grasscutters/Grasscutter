@@ -20,7 +20,7 @@ import java.util.Set;
 @Command(
     label = "setConst",
     aliases = {"setconstellation"},
-    usage = "<constellation level>",
+    usage = {"<constellation level>"},
     permission = "player.setconstellation",
     permissionTargeted = "player.setconstellation.others")
 public final class SetConstCommand implements CommandHandler {
