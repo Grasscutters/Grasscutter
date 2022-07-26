@@ -418,7 +418,7 @@ public class ResourceLoader {
             GameData.getMainQuestDataMap().put(mainQuest.getId(), mainQuest);
         }
 
-        try (Reader reader = DataLoader.loadReader("QuestEncryptionKeys.json")) {
+        try (Reader reader = new FileReader(new File(RESOURCE("QuestEncryptionKeys.json")))) {
             List<QuestEncryptionKey> keys = Grasscutter.getGsonFactory().fromJson(
                 reader,
                 TypeToken.getParameterized(List.class, QuestEncryptionKey.class).getType());
