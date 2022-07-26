@@ -6,8 +6,11 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify;
 
+import java.util.List;
+import java.util.Set;
+
 public class PacketServerCondMeetQuestListUpdateNotify extends BasePacket {
-	
+
 	public PacketServerCondMeetQuestListUpdateNotify(Player player) {
 		super(PacketOpcodes.ServerCondMeetQuestListUpdateNotify);
 
@@ -23,13 +26,24 @@ public class PacketServerCondMeetQuestListUpdateNotify extends BasePacket {
 
 		this.setData(proto);
 	}
-	
-	public PacketServerCondMeetQuestListUpdateNotify(GameQuest quest) {
+
+	public PacketServerCondMeetQuestListUpdateNotify(List<GameQuest> quests) {
 		super(PacketOpcodes.ServerCondMeetQuestListUpdateNotify);
 
-		ServerCondMeetQuestListUpdateNotify proto = ServerCondMeetQuestListUpdateNotify.newBuilder()
-				//.addAddQuestIdList(quest.getQuestId())
-				.build();
+		ServerCondMeetQuestListUpdateNotify.Builder proto = ServerCondMeetQuestListUpdateNotify.newBuilder();
+        for (GameQuest quest : quests) {
+            proto.addAddQuestIdList(quest.getSubQuestId());
+        }
+        proto.build();
+
+		this.setData(proto);
+	}
+
+    public PacketServerCondMeetQuestListUpdateNotify() {
+        super(PacketOpcodes.ServerCondMeetQuestListUpdateNotify);
+
+        ServerCondMeetQuestListUpdateNotify.Builder proto = ServerCondMeetQuestListUpdateNotify.newBuilder();
+        proto.build();
 
 		this.setData(proto);
 	}
