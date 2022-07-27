@@ -14,6 +14,8 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -27,7 +29,7 @@ public final class SetConstCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         String action = "set";
-        int constLevel = 0;
+        int constLevel;
 
         EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
         if (entity == null) return;
@@ -64,7 +66,7 @@ public final class SetConstCommand implements CommandHandler {
                     CommandHandler.sendTranslatedMessage(sender, "commands.setConst.range_error", 1);
                     return;
                 }
-//                this.toggleConstellation(targetPlayer, avatar, constLevel);
+                this.toggleConstellation(targetPlayer, avatar, constLevel);
                 CommandHandler.sendTranslatedMessage(sender, "commands.setConst.toggle_success", constLevel, avatarName);
 
             }
@@ -84,9 +86,7 @@ public final class SetConstCommand implements CommandHandler {
         }
 
         // force player to reload scene when necessary
-        if (constLevel < currentConstLevel) {
-            reloadScene(player);
-        }
+        if (constLevel < currentConstLevel) reloadScene(player);
 
         // ensure that all changes are visible to the player
         avatar.recalcConstellations();
@@ -95,7 +95,41 @@ public final class SetConstCommand implements CommandHandler {
     }
 
     private void toggleConstellation(Player player, Avatar avatar, int constLevel) {
-        // TODO - implement constellation toggle
+        Set<Integer> talentIdList = avatar.getTalentIdList();
+
+        IntArrayList talentIds = new IntArrayList(avatar.getSkillDepot().getTalents());
+        int talentId = talentIds.getInt(constLevel-1);
+
+        boolean wasConstellationUnlocked = talentIdList.remove(talentId);
+        if(!wasConstellationUnlocked) unlockConstellation(player, avatar, constLevel-1);
+
+        ArrayList<Integer> sortedTalentIdList = new ArrayList<>(talentIdList);
+        Collections.sort(sortedTalentIdList);
+
+        // calculate the new "constellation level" based on the first constellation not unlocked
+        int newConstLevel = 1;
+        if (sortedTalentIdList.size() == 0)
+            newConstLevel = 0;
+        else if (sortedTalentIdList.get(0) != talentIds.getInt(0))
+            newConstLevel = 0;
+        else
+            for (int i = 1; i < sortedTalentIdList.size(); i++) {
+
+
+                if (sortedTalentIdList.get(i)-1 == sortedTalentIdList.get(i-1))
+                    newConstLevel++;
+                else
+                    break;
+            }
+        avatar.setCoreProudSkillLevel(newConstLevel);
+
+        if (wasConstellationUnlocked) reloadScene(player);
+
+        Grasscutter.getLogger().info("Constellation level was set to " + newConstLevel);
+
+        avatar.recalcConstellations();
+        avatar.recalcStats(true);
+        avatar.save();
     }
 
     private void unlockConstellation(Player player, Avatar avatar, int talent) {
