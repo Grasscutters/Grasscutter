@@ -77,6 +77,7 @@ public final class SetConstCommand implements CommandHandler {
     private void setConstellation(Player player, Avatar avatar, int constLevel) {
         int currentConstLevel = avatar.getCoreProudSkillLevel();
         Set<Integer> talentIdList = avatar.getTalentIdList();
+        int previousConstellationCount = talentIdList.size();
 
         talentIdList.clear();
         avatar.setCoreProudSkillLevel(0);
@@ -86,7 +87,7 @@ public final class SetConstCommand implements CommandHandler {
         }
 
         // force player to reload scene when necessary
-        if (constLevel < currentConstLevel) reloadScene(player);
+        if (constLevel < previousConstellationCount) reloadScene(player);
 
         // ensure that all changes are visible to the player
         avatar.recalcConstellations();
