@@ -15,7 +15,6 @@ import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Set;
 
 @Command(
@@ -48,6 +47,7 @@ public final class SetConstCommand implements CommandHandler {
                 break;
             default:
                 sendUsageMessage(sender);
+                return;
         }
 
         switch (action) {
@@ -74,29 +74,18 @@ public final class SetConstCommand implements CommandHandler {
 
     private void setConstellation(Player player, Avatar avatar, int constLevel) {
         int currentConstLevel = avatar.getCoreProudSkillLevel();
-        IntArrayList talentIds = new IntArrayList(avatar.getSkillDepot().getTalents());
         Set<Integer> talentIdList = avatar.getTalentIdList();
 
         talentIdList.clear();
         avatar.setCoreProudSkillLevel(0);
 
         for(int talent = 0; talent < constLevel; talent++) {
-            AvatarTalentData talentData = GameData.getAvatarTalentDataMap().get(talentIds.getInt(talent));
-            int mainCostItemId = talentData.getMainCostItemId();
-
-            player.getInventory().addItem(mainCostItemId);
-            Grasscutter.getGameServer().getInventorySystem().unlockAvatarConstellation(player, avatar.getGuid());
+            unlockConstellation(player, avatar, talent);
         }
 
         // force player to reload scene when necessary
         if (constLevel < currentConstLevel) {
-            World world = player.getWorld();
-            Scene scene = player.getScene();
-            Position pos = player.getPosition();
-
-            world.transferPlayerToScene(player, 1, pos);
-            world.transferPlayerToScene(player, scene.getId(), pos);
-            scene.broadcastPacket(new PacketSceneEntityAppearNotify(player));
+            reloadScene(player);
         }
 
         // ensure that all changes are visible to the player
@@ -107,5 +96,25 @@ public final class SetConstCommand implements CommandHandler {
 
     private void toggleConstellation(Player player, Avatar avatar, int constLevel) {
         // TODO - implement constellation toggle
+    }
+
+    private void unlockConstellation(Player player, Avatar avatar, int talent) {
+        IntArrayList talentIds = new IntArrayList(avatar.getSkillDepot().getTalents());
+        AvatarTalentData talentData = GameData.getAvatarTalentDataMap().get(talentIds.getInt(talent));
+        int mainCostItemId = talentData.getMainCostItemId();
+
+        avatar.setCoreProudSkillLevel(talent);
+        player.getInventory().addItem(mainCostItemId);
+        Grasscutter.getGameServer().getInventorySystem().unlockAvatarConstellation(player, avatar.getGuid());
+    }
+
+    private void reloadScene(Player player) {
+        World world = player.getWorld();
+        Scene scene = player.getScene();
+        Position pos = player.getPosition();
+
+        world.transferPlayerToScene(player, 1, pos);
+        world.transferPlayerToScene(player, scene.getId(), pos);
+        scene.broadcastPacket(new PacketSceneEntityAppearNotify(player));
     }
 }
