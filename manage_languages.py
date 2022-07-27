@@ -23,7 +23,7 @@ def ppprint(data):
 class JsonHelpers:
     @staticmethod
     def load(filename: str) -> dict:
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding='utf-8') as file:
             return json.load(file)
 
     @staticmethod
@@ -219,7 +219,7 @@ class InteractiveRename(cmd.Cmd):
                         self.mappings[k] = v
             else:
                 print('No translation keys matched!')
-    
+
     def complete_add(self, text: str, line: str, begidx: int, endidx: int) -> list:
         if text == '':
             return [k for k in {key.partition('.')[0] for key in self.flat_keys}]
@@ -257,7 +257,7 @@ class InteractiveRename(cmd.Cmd):
                         self.mappings.pop(key)
             else:
                 print('No pending rename mappings matched!')
-    
+
     def complete_remove(self, text: str, line: str, begidx: int, endidx: int) -> list:
         return [key for key in self.mappings if key.startswith(text)]
 

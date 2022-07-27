@@ -257,11 +257,11 @@
       "description": "Envía un mensaje a un jugador como servidor. Si se usa sin un objetivo fijado, lo envía a todos los jugadores del servidor."
     },
     "setConst": {
-      "range_error": "El nivel de constelación debe estar entre 0 y 6.",
+      "range_error": "El nivel de constelación debe estar entre %s y 6.",
       "level_error": "Nivel de constelación inválido.",
-      "fail": "Error al establecer la constelación.",
-      "failed_success": "Las constelaciones de %s han sido establecidas a %s. Por favor reinicia el escenario para ver los cambios.",
-      "success": "Las constelaciones de %s han sido establecidas a %s.",
+      "action_error": "🇺🇸Invalid action.",
+      "set_success": "🇺🇸Constellations for %s have been set to %s.",
+      "toggle_success": "🇺🇸Constellation %s for %s has been toggled.",
       "description": "Establece el nivel de constelación para tu personaje actual"
     },
     "setFetterLevel": {
@@ -334,6 +334,10 @@
       "invalid_time": "No se puede establecer la marca de tiempo.",
       "description": "Beta a un jugador"
     },
+    "unlockall": {
+      "success": "🇺🇸Unlocked all open states for %s.",
+      "description": "🇺🇸Unlocks all open states for a player."
+    },
     "unban": {
       "success": "Exitoso.",
       "failure": "Error, jugador no encontrado.",
@@ -355,23 +359,23 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "Comandos",
       "title_avatars": "Avatares",
       "title_items": "Objetos",
       "title_scenes": "Escenario",
       "title_monsters": "Monstruos",
-      "header_id": "Id",
+      "header_id": "🇺🇸Id",
       "header_command": "Comando",
       "header_description": "Descripción",
-      "header_avatar": "Avatar",
+      "header_avatar": "🇺🇸Avatar",
       "header_item": "Objeto",
       "header_scene": "Escenario",
       "header_monster": "Monstruo"
     },
     "index": {
       "title": "Documentación",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "JSON de mapeo del Gacha"
     }
   }

@@ -246,7 +246,7 @@
       "send": "%s %s (niveau %s) ont été ajouté au message.\nContinuez d'ajouter plus d'objets ou utilisez '/sendmail finish' pour envoyer le message.",
       "invalid_arguments_please_use": "Arguments invalides.\n Veuillez utiliser '/sendmail %s'",
       "title": "<titre>",
-      "message": "<message>",
+      "message": "🇺🇸<message>",
       "sender": "<expéditeur>",
       "arguments": "<itemID|itemName|finish> [quantité] [niveau]",
       "error": "ERREUR: Stade de construction invalide : %s. Vérifiez la console pour la pile d'appels.",
@@ -257,12 +257,12 @@
       "description": "Envoie un message au joueur spécifié en tant que Serveur"
     },
     "setConst": {
-      "range_error": "Constellation level must be between 0 and 6.",
-      "level_error": "Invalid constellation level.",
-      "fail": "Failed to set constellation.",
-      "failed_success": "Constellations for %s have been set to %s. Please reload scene to see changes.",
-      "success": "Constellations for %s have been set to %s.",
-      "description": "Sets constellation level for your current active character"
+      "range_error": "🇺🇸Constellation level must be between %s and 6.",
+      "level_error": "🇺🇸Invalid constellation level.",
+      "action_error": "🇺🇸Invalid action.",
+      "set_success": "🇺🇸Constellations for %s have been set to %s.",
+      "toggle_success": "🇺🇸Constellation %s for %s has been toggled.",
+      "description": "🇺🇸Sets constellation level for your current active character"
     },
     "setFetterLevel": {
       "range_error": "Le niveau d'affinité doit être compris entre 0 et 10.",
@@ -334,6 +334,10 @@
       "invalid_time": "Impossible d'analyser le timestamp.",
       "description": "Bannis un joueur"
     },
+    "unlockall": {
+      "success": "🇺🇸Unlocked all open states for %s.",
+      "description": "🇺🇸Unlocks all open states for a player."
+    },
     "unban": {
       "success": "Succès.",
       "failure": "Échec, joueur introuvable.",
@@ -349,7 +353,7 @@
     },
     "records": {
       "title": "Historique de voeux",
-      "date": "Date",
+      "date": "🇺🇸Date",
       "item": "Objet"
     }
   },
@@ -357,22 +361,22 @@
     "handbook": {
       "title": "Manuel GM",
       "title_commands": "Commandes",
-      "title_avatars": "Avatars",
+      "title_avatars": "🇺🇸Avatars",
       "title_items": "Objets",
       "title_scenes": "Scènes",
       "title_monsters": "Monstres",
-      "header_id": "Id",
+      "header_id": "🇺🇸Id",
       "header_command": "Commande",
-      "header_description": "Description",
-      "header_avatar": "Avatar",
+      "header_description": "🇺🇸Description",
+      "header_avatar": "🇺🇸Avatar",
       "header_item": "Objet",
       "header_scene": "Scène",
       "header_monster": "Monstre"
     },
     "index": {
-      "title": "Documentation",
+      "title": "🇺🇸Documentation",
       "handbook": "Manuel GM",
-      "gacha_mapping": "Gacha mapping JSON"
+      "gacha_mapping": "🇺🇸Gacha mapping JSON"
     }
   }
 }

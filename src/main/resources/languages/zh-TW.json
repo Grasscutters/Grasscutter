@@ -257,11 +257,11 @@
       "description": "向指定玩家發送訊息。"
     },
     "setConst": {
-      "range_error": "命座必須在0到6之間。",
+      "range_error": "命座必須在%s到6之間。",
       "level_error": "無效的命座等級。",
-      "fail": "設定命座失敗。",
-      "failed_success": "%s的命之座已設定為成%s，重新登入後將會生效。",
-      "success": "%s的命之座已設定為成%s。",
+      "action_error": "🇺🇸Invalid action.",
+      "set_success": "🇺🇸Constellations for %s have been set to %s.",
+      "toggle_success": "🇺🇸Constellation %s for %s has been toggled.",
       "description": "設定當前角色的命之座。"
     },
     "setFetterLevel": {
@@ -334,6 +334,10 @@
       "invalid_time": "無效的時間戳。",
       "description": "停權指定玩家。"
     },
+    "unlockall": {
+      "success": "🇺🇸Unlocked all open states for %s.",
+      "description": "🇺🇸Unlocks all open states for a player."
+    },
     "unban": {
       "success": "撤銷停權成功。",
       "failure": "撤銷停權失敗，玩家帳號不存在。",
@@ -355,7 +359,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "指令",
       "title_avatars": "角色",
       "title_items": "道具",
@@ -371,7 +375,7 @@
     },
     "index": {
       "title": "文件",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "祈願物品映射到JSON上"
     }
   }
