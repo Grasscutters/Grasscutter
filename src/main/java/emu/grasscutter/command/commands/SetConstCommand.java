@@ -21,7 +21,7 @@ import java.util.Set;
 
 @Command(
     label = "setConst",
-    aliases = {"setconstellation"},
+    aliases = {"setconstellation", "setcons", "constellations", "cons"},
     usage = {"<constellation level>", "[(set|toggle)] <constellation level>"},
     permission = "player.setconstellation",
     permissionTargeted = "player.setconstellation.others")
@@ -124,8 +124,6 @@ public final class SetConstCommand implements CommandHandler {
         avatar.setCoreProudSkillLevel(newConstLevel);
 
         if (wasConstellationUnlocked) reloadScene(player);
-
-        Grasscutter.getLogger().info("Constellation level was set to " + newConstLevel);
 
         avatar.recalcConstellations();
         avatar.recalcStats(true);
