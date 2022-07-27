@@ -15,38 +15,60 @@ import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 @Command(
     label = "setConst",
     aliases = {"setconstellation"},
-    usage = {"<constellation level>"},
+    usage = {"<constellation level>", "[(set|toggle)] <constellation level>"},
     permission = "player.setconstellation",
     permissionTargeted = "player.setconstellation.others")
 public final class SetConstCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() < 1) {
-            sendUsageMessage(sender);
-            return;
+        String action = "set";
+        int constLevel = 0;
+
+        EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
+        if (entity == null) return;
+        Avatar avatar = entity.getAvatar();
+        String avatarName = avatar.getAvatarData().getName();
+
+        switch (args.size()) {
+            case 2:
+                action = args.remove(0).toLowerCase(); // fall-through
+            case 1:
+                try {
+                    constLevel = Integer.parseInt(args.get(0));
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendTranslatedMessage(sender, "commands.setConst.level_error");
+                    return;
+                }
+                break;
+            default:
+                sendUsageMessage(sender);
         }
 
-        try {
-            int constLevel = Integer.parseInt(args.get(0));
-            if (constLevel < 0 || constLevel > 6) {
-                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.range_error");
-                return;
+        switch (action) {
+            case "set" -> {
+                if (constLevel < 0 || constLevel > 6) {
+                    CommandHandler.sendTranslatedMessage(sender, "commands.setConst.range_error", 0);
+                    return;
+                }
+                this.setConstellation(targetPlayer, avatar, constLevel);
+                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.set_success", avatarName, constLevel);
             }
+            case "toggle" -> {
+                if (constLevel < 1 || constLevel > 6) {
+                    CommandHandler.sendTranslatedMessage(sender, "commands.setConst.range_error", 1);
+                    return;
+                }
+//                this.toggleConstellation(targetPlayer, avatar, constLevel);
+                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.toggle_success", constLevel, avatarName);
 
-            EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
-            if (entity == null) return;
-            Avatar avatar = entity.getAvatar();
-
-            this.setConstellation(targetPlayer, avatar, constLevel);
-
-            CommandHandler.sendTranslatedMessage(sender, "commands.setConst.success", avatar.getAvatarData().getName(), constLevel);
-        } catch (NumberFormatException ignored) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.setConst.level_error");
+            }
+            default -> CommandHandler.sendTranslatedMessage(sender, "commands.setConst.action_error");
         }
     }
 
@@ -81,5 +103,9 @@ public final class SetConstCommand implements CommandHandler {
         avatar.recalcConstellations();
         avatar.recalcStats(true);
         avatar.save();
+    }
+
+    private void toggleConstellation(Player player, Avatar avatar, int constLevel) {
+        // TODO - implement constellation toggle
     }
 }
