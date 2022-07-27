@@ -28,8 +28,8 @@
         "login_token_attempt": "[Dispatch] 客户端 %s 正在尝试通过 token 登录",
         "login_token_error": "[Dispatch] 客户端 %s 通过 token 登录失败",
         "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID 为 %s",
-        "login_password_error": "🇺🇸[Dispatch] 客户端 %s 无法通过密码登录",
-        "login_password_storage_error": "🇺🇸[Dispatch] 客户端 %s 无法登录！ 因为数库中没有密码",
+        "login_password_error": "[Dispatch] 客户端 %s 无法通过密码登录",
+        "login_password_storage_error": "[Dispatch] 客户端 %s 无法登录！ 因为数据库中没有密码",
         "combo_token_success": "[Dispatch] 客户端 %s 成功交换 token",
         "combo_token_error": "[Dispatch] 客户端 %s 交换 token 失败",
         "account_login_create_success": "[Dispatch] 客户端 %s 登录失败：已注册 UID 为 %s 的账号",
@@ -260,7 +260,7 @@
       "range_error": "命座等级必须是 0~6级",
       "level_error": "无效的命座等级",
       "fail": "命座等级设置失败",
-      "failed_success": "命座 %s 已设置为 %s. 请传送到[渊下宫]或重新登录查看效果",
+      "failed_success": "命座 %s 已设置为 %s. 请传送到重载场景或重新登录查看效果",
       "success": "命座 %s 已设置为 %s.",
       "description": "为当前活跃角色设置命座等级"
     },
@@ -355,7 +355,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "🇺🇸GM 手册",
+      "title": "GM 手册",
       "title_commands": "命令",
       "title_avatars": "角色",
       "title_items": "物品",
@@ -371,7 +371,7 @@
     },
     "index": {
       "title": "文档",
-      "handbook": "🇺🇸GM 手册",
+      "handbook": "GM 手册",
       "gacha_mapping": "祈愿物品映射JSON"
     }
   }
