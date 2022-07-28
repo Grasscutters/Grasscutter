@@ -14,10 +14,7 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Command(
     label = "setConst",
@@ -75,9 +72,15 @@ public final class SetConstCommand implements CommandHandler {
     }
 
     private void setConstellation(Player player, Avatar avatar, int constLevel) {
-        int currentConstLevel = avatar.getCoreProudSkillLevel();
         Set<Integer> talentIdList = avatar.getTalentIdList();
-        int previousConstellationCount = talentIdList.size();
+        IntArrayList talentIds = new IntArrayList(avatar.getSkillDepot().getTalents());
+
+        int previousHighestConstellationUnlocked = 0;
+        for (int talentId: talentIdList) {
+            int constellationNumber = talentIds.indexOf(talentId) + 1;
+            if (constellationNumber > previousHighestConstellationUnlocked)
+                previousHighestConstellationUnlocked = constellationNumber;
+        }
 
         talentIdList.clear();
         avatar.setCoreProudSkillLevel(0);
@@ -87,7 +90,7 @@ public final class SetConstCommand implements CommandHandler {
         }
 
         // force player to reload scene when necessary
-        if (constLevel < previousConstellationCount) reloadScene(player);
+        if (constLevel < previousHighestConstellationUnlocked) reloadScene(player);
 
         // ensure that all changes are visible to the player
         avatar.recalcConstellations();
