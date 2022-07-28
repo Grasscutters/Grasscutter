@@ -426,6 +426,8 @@ public class ResourceLoader {
             Int2ObjectMap<QuestEncryptionKey> questEncryptionMap = GameData.getMainQuestEncryptionMap();
             keys.forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
             Grasscutter.getLogger().debug("Loaded {} quest keys.", questEncryptionMap.size());
+        } catch (FileNotFoundException ignored) {
+            Grasscutter.getLogger().error("Unable to load quest keys - ./resources/QuestEncryptionKeys.json not found.");
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load quest keys.", e);
         }
