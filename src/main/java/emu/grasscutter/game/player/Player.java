@@ -14,12 +14,8 @@ import emu.grasscutter.game.activity.ActivityManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.battlepass.BattlePassManager;
-import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.entity.EntityVehicle;
+import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.home.GameHome;
-import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.game.entity.EntityItem;
-import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.game.friends.FriendsList;
 import emu.grasscutter.game.friends.PlayerProfile;
@@ -43,6 +39,7 @@ import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.quest.QuestManager;
+import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.tower.TowerData;
 import emu.grasscutter.game.tower.TowerManager;
@@ -61,6 +58,7 @@ import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
+import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
 import emu.grasscutter.server.game.GameServer;
@@ -74,6 +72,7 @@ import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import lombok.Getter;
+import lombok.Setter;
 
 import static emu.grasscutter.config.Configuration.*;
 
@@ -122,6 +121,7 @@ public class Player {
     @Getter private Map<Long, ExpeditionInfo> expeditionInfo;
     @Getter private Map<Integer, Integer> unlockedRecipies;
     @Getter private List<ActiveForgeData> activeForges;
+    @Getter private Map<Integer,Integer> questGlobalVariables;
 
     @Transient private long nextGuid = 0;
     @Transient private int peerId;
@@ -151,7 +151,7 @@ public class Player {
     @Getter private transient CookingManager cookingManager;
     @Getter private transient ActivityManager activityManager;
     @Getter private transient PlayerBuffManager buffManager;
-    
+
     // Manager data (Save-able to the database)
     private PlayerProfile playerProfile;
     private TeamManager teamManager;
@@ -579,9 +579,38 @@ public class Player {
         return towerData;
     }
 
-    public PlayerGachaInfo getGachaInfo() {
-        return gachaInfo;
+	public void setQuestManager(QuestManager questManager) {
+		this.questManager = questManager;
+	}
+
+    public void onEnterRegion(SceneRegion region) {
+        getQuestManager().forEachActiveQuest(quest -> {
+            if(quest.getTriggers().containsKey("ENTER_REGION_"+ String.valueOf(region.config_id))) {
+                // If trigger hasn't been fired yet
+                if(!Boolean.TRUE.equals(quest.getTriggers().put("ENTER_REGION_"+ String.valueOf(region.config_id), true))) {
+                    //getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
+                    getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_TRIGGER_FIRE, quest.getTriggerData().get("ENTER_REGION_"+ String.valueOf(region.config_id)).getId(),0);
+                }
+            }
+        });
+
     }
+
+    public void onLeaveRegion(SceneRegion region) {
+        getQuestManager().forEachActiveQuest(quest -> {
+            if(quest.getTriggers().containsKey("LEAVE_REGION_"+ String.valueOf(region.config_id))) {
+                // If trigger hasn't been fired yet
+                if(!Boolean.TRUE.equals(quest.getTriggers().put("LEAVE_REGION_"+ String.valueOf(region.config_id), true))) {
+                    getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
+                    getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_TRIGGER_FIRE, quest.getTriggerData().get("LEAVE_REGION_"+ String.valueOf(region.config_id)).getId(),0);
+                }
+            }
+        });
+
+    }
+	public PlayerGachaInfo getGachaInfo() {
+		return gachaInfo;
+	}
 
     public PlayerProfile getProfile() {
         if (this.playerProfile == null) {
@@ -892,7 +921,7 @@ public class Player {
     public boolean hasSentLoginPackets() {
         return hasSentLoginPackets;
     }
-    
+
     public void addAvatar(Avatar avatar, boolean addToCurrentTeam) {
         boolean result = getAvatars().addAvatar(avatar);
 
@@ -1326,6 +1355,11 @@ public class Player {
 
         // Execute daily reset logic if this is a new day.
         this.doDailyReset();
+
+
+        // Rewind active quests, and put the player to a rewind position it finds (if any) of an active quest
+        getQuestManager().onLogin();
+
 
         // Packets
         session.send(new PacketPlayerDataNotify(this)); // Player data
