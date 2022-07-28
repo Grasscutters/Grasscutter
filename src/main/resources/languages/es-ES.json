@@ -274,7 +274,11 @@
       "description": "Establece propiedades de la cuenta. Cosas como el modo Dios pueden ser establecidos con este comando, además de cambiar cosas como desbloquear pisos del abusmo o progreso del pase de batalla.\n\tValores para <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) Observa PlayerProperty enum para ver otros posibles valores, de la forma PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setStats": {
-      "description": "Establece propiedades de combate para tu personaje actual\n\tValores para <estado>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de daño elemental: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Resistencia elemental: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys"
+      "description": "Establece propiedades de combate para tu personaje actual\n\tValores para <estado>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de daño elemental: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Resistencia elemental: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
+      "locked_to": "🇺🇸%s locked to %s.",
+      "locked_for_to": "🇺🇸%s for %s locked to %s.",
+      "unlocked": "🇺🇸%s unlocked.",
+      "unlocked_for": "🇺🇸%s for %s unlocked."
     },
     "spawn": {
       "success": "Generados %s de %s.",
@@ -334,6 +338,10 @@
       "invalid_time": "No se puede establecer la marca de tiempo.",
       "description": "Beta a un jugador"
     },
+    "unlockall": {
+      "success": "🇺🇸Unlocked all open states for %s.",
+      "description": "🇺🇸Unlocks all open states for a player."
+    },
     "unban": {
       "success": "Exitoso.",
       "failure": "Error, jugador no encontrado.",
@@ -355,23 +363,23 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "Comandos",
       "title_avatars": "Avatares",
       "title_items": "Objetos",
       "title_scenes": "Escenario",
       "title_monsters": "Monstruos",
-      "header_id": "Id",
+      "header_id": "🇺🇸Id",
       "header_command": "Comando",
       "header_description": "Descripción",
-      "header_avatar": "Avatar",
+      "header_avatar": "🇺🇸Avatar",
       "header_item": "Objeto",
       "header_scene": "Escenario",
       "header_monster": "Monstruo"
     },
     "index": {
       "title": "Documentación",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "JSON de mapeo del Gacha"
     }
   }
