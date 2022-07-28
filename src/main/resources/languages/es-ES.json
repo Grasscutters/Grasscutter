@@ -275,10 +275,10 @@
     },
     "setStats": {
       "description": "Establece propiedades de combate para tu personaje actual\n\tValores para <estado>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de daño elemental: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Resistencia elemental: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
-      "locked_to": "🇺🇸%s locked to %s.",
-      "locked_for_to": "🇺🇸%s for %s locked to %s.",
-      "unlocked": "🇺🇸%s unlocked.",
-      "unlocked_for": "🇺🇸%s for %s unlocked."
+      "locked_to": "%s fijado a %s.",
+      "locked_for_to": "%s para %s fijado a %s.",
+      "unlocked": "%s desfijado.",
+      "unlocked_for": "%s para %s desfijado."
     },
     "spawn": {
       "success": "Generados %s de %s.",
@@ -339,8 +339,8 @@
       "description": "Beta a un jugador"
     },
     "unlockall": {
-      "success": "🇺🇸Unlocked all open states for %s.",
-      "description": "🇺🇸Unlocks all open states for a player."
+      "success": "Desfijados todos los estados abiertos para %s.",
+      "description": "Desfija todos los estados abiertos para un jugador."
     },
     "unban": {
       "success": "Exitoso.",
@@ -363,23 +363,23 @@
   },
   "documentation": {
     "handbook": {
-      "title": "🇺🇸GM Handbook",
+      "title": "GM Handbook",
       "title_commands": "Comandos",
       "title_avatars": "Avatares",
       "title_items": "Objetos",
       "title_scenes": "Escenario",
       "title_monsters": "Monstruos",
-      "header_id": "🇺🇸Id",
+      "header_id": "Id",
       "header_command": "Comando",
       "header_description": "Descripción",
-      "header_avatar": "🇺🇸Avatar",
+      "header_avatar": "Avatar",
       "header_item": "Objeto",
       "header_scene": "Escenario",
       "header_monster": "Monstruo"
     },
     "index": {
       "title": "Documentación",
-      "handbook": "🇺🇸GM Handbook",
+      "handbook": "GM Handbook",
       "gacha_mapping": "JSON de mapeo del Gacha"
     }
   }
