@@ -274,7 +274,11 @@
       "description": "設定帳號屬性。 比如可以通過此命令啟用無敵，也可以解鎖深淵或更改紀行等級。\n\t可更改的屬性列表： godmode(無敵)|nostamina(無限體力)|unlimitedenergy(無限元素能量)|abyss(深淵螺旋)|worldlevel(世界等級)|bplevel(紀行等級)\n\t(cont.) `有關其他可能的數值，請參閱 PlayerProperty 列舉。 (範例 PROP_MAX_SPRING_VOLUME -> max_spring_volume)`"
     },
     "setStats": {
-      "description": "設定當前角色的數據類型。\n\t可使用的數據類型：hp (生命值)| maxhp (最大生命值) | def(防禦力) | atk (攻擊力)| em (元素精通) | er (元素充能效率) | crate(暴擊率) | cdmg (暴擊傷害)| cdr (冷卻縮減) | heal(治療加成)| heali (受治療加成)| shield (護盾強效)| defi (無視防禦)\n\t(cont.) 元素增傷類：epyro (火傷) | ecryo (冰傷)  | ehydro (水傷)  | egeo (岩傷)  | edendro (草傷) | eelectro (雷傷) | ephys (物傷)(cont.) 元素減傷類：respyro (火抗)  | rescryo (冰抗)  | reshydro (水抗)  | resgeo (岩抗) | resdendro (草抗) | reselectro (雷抗)  | resphys (物抗)"
+      "description": "設定當前角色的數據類型。\n\t可使用的數據類型：hp (生命值)| maxhp (最大生命值) | def(防禦力) | atk (攻擊力)| em (元素精通) | er (元素充能效率) | crate(暴擊率) | cdmg (暴擊傷害)| cdr (冷卻縮減) | heal(治療加成)| heali (受治療加成)| shield (護盾強效)| defi (無視防禦)\n\t(cont.) 元素增傷類：epyro (火傷) | ecryo (冰傷)  | ehydro (水傷)  | egeo (岩傷)  | edendro (草傷) | eelectro (雷傷) | ephys (物傷)(cont.) 元素減傷類：respyro (火抗)  | rescryo (冰抗)  | reshydro (水抗)  | resgeo (岩抗) | resdendro (草抗) | reselectro (雷抗)  | resphys (物抗)",
+      "locked_to": "🇺🇸%s locked to %s.",
+      "locked_for_to": "🇺🇸%s for %s locked to %s.",
+      "unlocked": "🇺🇸%s unlocked.",
+      "unlocked_for": "🇺🇸%s for %s unlocked."
     },
     "spawn": {
       "success": "已生成 %s 個 %s。",

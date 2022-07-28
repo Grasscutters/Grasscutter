@@ -274,7 +274,11 @@
       "description": "Ustaw pewne własności konta, takie jak tryb nieśmiertelności (godmode) czy też zmiana postępu Battle Pass.\n\tMożliwe nazwy własności: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel | ...\n\tTa komenda ma więcej nazw własności, które może otrzymać. Możesz je wszystkie zobaczyć w pliku \"game/props/PlayerProperty.java\".\n\tW tym pliku, przyjmują one formę \"PROP_XXX_YYY_ZZZ\", ale powinieneś je zapisywać jako \"xxx_yyy_zzz\" jeśli chcesz je użyć w tej komendzie."
     },
     "setStats": {
-      "description": "Ustaw statystykę walki dla obecnie wybranej postaci wybranego gracza.\n\tMożliwe nazwy statystyki: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\tDodatkowe obrażenia od żywiołu: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\tOdporność na żywioł: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys"
+      "description": "Ustaw statystykę walki dla obecnie wybranej postaci wybranego gracza.\n\tMożliwe nazwy statystyki: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\tDodatkowe obrażenia od żywiołu: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\tOdporność na żywioł: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
+      "locked_to": "🇺🇸%s locked to %s.",
+      "locked_for_to": "🇺🇸%s for %s locked to %s.",
+      "unlocked": "🇺🇸%s unlocked.",
+      "unlocked_for": "🇺🇸%s for %s unlocked."
     },
     "spawn": {
       "success": "Stworzono %s obiektów o ID %s.",

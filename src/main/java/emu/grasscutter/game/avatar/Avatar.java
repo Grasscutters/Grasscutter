@@ -63,6 +63,7 @@ import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
 
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {
@@ -85,6 +86,7 @@ public class Avatar {
 
     @Transient private final Int2ObjectMap<GameItem> equips;
     @Transient private final Int2FloatOpenHashMap fightProp;
+    @Transient @Getter private final Int2FloatOpenHashMap fightPropOverrides;
     @Transient private Set<String> extraAbilityEmbryos;
 
     private List<Integer> fetters;
@@ -111,6 +113,7 @@ public class Avatar {
     public Avatar() {
         this.equips = new Int2ObjectOpenHashMap<>();
         this.fightProp = new Int2FloatOpenHashMap();
+        this.fightPropOverrides = new Int2FloatOpenHashMap();
         this.extraAbilityEmbryos = new HashSet<>();
         this.proudSkillBonusMap = new HashMap<>();
         this.fetters = new ArrayList<>(); // TODO Move to avatar
@@ -727,6 +730,9 @@ public class Avatar {
             FightProperty.FIGHT_PROP_CUR_DEFENSE,
             (getFightProperty(FightProperty.FIGHT_PROP_BASE_DEFENSE) * (1f + getFightProperty(FightProperty.FIGHT_PROP_DEFENSE_PERCENT))) + getFightProperty(FightProperty.FIGHT_PROP_DEFENSE)
         );
+
+        // Reapply all overrides
+        this.fightProp.putAll(this.fightPropOverrides);
 
         // Set current hp
         this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * hpPercent);
