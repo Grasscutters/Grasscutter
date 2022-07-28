@@ -28,7 +28,7 @@ public interface CommandHandler {
         if (player == null) {
             Grasscutter.getLogger().info(event.getMessage());
         } else {
-            player.dropMessage(event.getMessage());
+            player.dropMessage(event.getMessage().replace("\n\t", "\n\n"));
         }
     }
 
@@ -43,6 +43,9 @@ public interface CommandHandler {
         for (String alias : annotation.aliases()) {
             if (alias.length() < command.length())
                 command = alias;
+        }
+        if (player != null) {
+            command = "/" + command;
         }
         String target = switch (annotation.targetRequirement()) {
             case NONE -> "";
