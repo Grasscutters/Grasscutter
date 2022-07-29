@@ -2,13 +2,8 @@ package emu.grasscutter.game.avatar;
 
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import org.bson.types.ObjectId;
 
@@ -432,11 +427,13 @@ public class Avatar {
     }
 
     public int getCoreProudSkillLevel() {
-        return coreProudSkillLevel;
-    }
+        Set<Integer> lockedTalents = new HashSet<>(this.getSkillDepot().getTalents());
+        lockedTalents.removeAll(this.getTalentIdList());
 
-    public void setCoreProudSkillLevel(int constLevel) {
-        this.coreProudSkillLevel = constLevel;
+        if (lockedTalents.size() == 0)
+            return 6;
+        else
+            return Collections.min(lockedTalents) % 10 - 1;
     }
 
     public Set<Integer> getProudSkillList() {
