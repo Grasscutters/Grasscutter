@@ -704,31 +704,7 @@ public class InventorySystem extends BaseGameSystem {
         player.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillId, currentLevel, nextLevel));
     }
 
-    public void unlockNextAvatarConstellation(Player player, long guid) {
-        Avatar avatar = player.getAvatars().getAvatarByGuid(guid);
-        if (avatar == null) {
-            return;
-        }
-
-        int currentTalentLevel = avatar.getCoreProudSkillLevel();
-
-        List<Integer> talents = avatar.getSkillDepot().getTalents();
-        int nextTalentId = talents.get(currentTalentLevel);
-
-        AvatarTalentData talentData = GameData.getAvatarTalentDataMap().get(nextTalentId);
-
-        // Pay constellation if possible
-        if (!player.getInventory().payItem(talentData.getMainCostItemId(), 1)) {
-            return;
-        }
-
-        unlockAvatarConstellation(player, guid, currentTalentLevel+1);
-
-        // Packet
-        player.sendPacket(new PacketUnlockAvatarTalentRsp(avatar, nextTalentId));
-    }
-
-    public void unlockAvatarConstellation(Player player, long guid, int constellation) {
+    public void unlockAvatarConstellation(Player player, long guid, int constellation, boolean consumeMaterial) {
         // Sanity checks
         Avatar avatar = player.getAvatars().getAvatarByGuid(guid);
         if (avatar == null) {
@@ -745,11 +721,19 @@ public class InventorySystem extends BaseGameSystem {
             return;
         }
 
+        // Pay constellation if possible
+        if (consumeMaterial && !player.getInventory().payItem(talentData.getMainCostItemId(), 1)) {
+            return;
+        }
+
         // Apply + recalc
         avatar.getTalentIdList().add(talentData.getId());
 
         // Packet
         player.sendPacket(new PacketAvatarUnlockTalentNotify(avatar, nextTalentId));
+        if (consumeMaterial) {
+            player.sendPacket(new PacketUnlockAvatarTalentRsp(avatar, nextTalentId));
+        }
 
         // Proud skill bonus map (Extra skills)
         OpenConfigEntry entry = GameData.getOpenConfigEntries().get(talentData.getOpenConfig());
