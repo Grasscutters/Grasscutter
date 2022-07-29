@@ -18,7 +18,7 @@ import java.util.*;
 
 @Command(
     label = "setConst",
-    aliases = {"setconstellation", "setcons", "constellations", "cons"},
+    aliases = {"setconstellation", "constellations", "setcons", "cons"},
     usage = {"[set] <constellation level>", "toggle <constellation level>"},
     permission = "player.setconstellation",
     permissionTargeted = "player.setconstellation.others")
@@ -65,7 +65,6 @@ public final class SetConstCommand implements CommandHandler {
                 }
                 this.toggleConstellation(targetPlayer, avatar, constLevel);
                 CommandHandler.sendTranslatedMessage(sender, "commands.setConst.toggle_success", constLevel, avatarName);
-
             }
             default -> CommandHandler.sendTranslatedMessage(sender, "commands.setConst.action_error");
         }
@@ -107,7 +106,7 @@ public final class SetConstCommand implements CommandHandler {
     }
 
     private void unlockConstellation(Player player, Avatar avatar, int talent) {
-        Grasscutter.getGameServer().getInventorySystem().unlockAvatarConstellation(player, avatar.getGuid(), talent);
+        Grasscutter.getGameServer().getInventorySystem().unlockAvatarConstellation(player, avatar.getGuid(), talent, false);
     }
 
     private void reloadScene(Player player) {
