@@ -90,7 +90,6 @@ public class Avatar {
     private Map<Integer, Integer> skillExtraChargeMap; // Charges
     private Map<Integer, Integer> proudSkillBonusMap; // Talent bonus levels (from const)
     private int skillDepotId;
-    private int coreProudSkillLevel; // Constellation level
     private Set<Integer> talentIdList; // Constellation id list
     private Set<Integer> proudSkillList; // Character passives
 
