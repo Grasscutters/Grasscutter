@@ -704,7 +704,31 @@ public class InventorySystem extends BaseGameSystem {
         player.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillId, currentLevel, nextLevel));
     }
 
-    public void unlockAvatarConstellation(Player player, long guid) {
+    public void unlockNextAvatarConstellation(Player player, long guid) {
+        Avatar avatar = player.getAvatars().getAvatarByGuid(guid);
+        if (avatar == null) {
+            return;
+        }
+
+        int currentTalentLevel = avatar.getCoreProudSkillLevel();
+
+        List<Integer> talents = avatar.getSkillDepot().getTalents();
+        int nextTalentId = talents.get(currentTalentLevel);
+
+        AvatarTalentData talentData = GameData.getAvatarTalentDataMap().get(nextTalentId);
+
+        // Pay constellation if possible
+        if (!player.getInventory().payItem(talentData.getMainCostItemId(), 1)) {
+            return;
+        }
+
+        unlockAvatarConstellation(player, guid, currentTalentLevel+1);
+
+        // Packet
+        player.sendPacket(new PacketUnlockAvatarTalentRsp(avatar, nextTalentId));
+    }
+
+    public void unlockAvatarConstellation(Player player, long guid, int constellation) {
         // Sanity checks
         Avatar avatar = player.getAvatars().getAvatarByGuid(guid);
         if (avatar == null) {
@@ -712,13 +736,8 @@ public class InventorySystem extends BaseGameSystem {
         }
 
         // Get talent
-        int currentTalentLevel = avatar.getCoreProudSkillLevel();
-        int nextTalentId = ((avatar.getAvatarId() % 10000000) * 10) + currentTalentLevel + 1;
-
-        if (avatar.getAvatarId() == 10000006) {
-            // Lisa is special in that her talentId starts with 4 instead of 6.
-            nextTalentId = 40 + currentTalentLevel + 1;
-        }
+        List<Integer> talents = avatar.getSkillDepot().getTalents();
+        int nextTalentId = talents.get(constellation-1);
 
         AvatarTalentData talentData = GameData.getAvatarTalentDataMap().get(nextTalentId);
 
@@ -726,18 +745,11 @@ public class InventorySystem extends BaseGameSystem {
             return;
         }
 
-        // Pay constellation item if possible
-        if (!player.getInventory().payItem(talentData.getMainCostItemId(), 1)) {
-            return;
-        }
-
         // Apply + recalc
         avatar.getTalentIdList().add(talentData.getId());
-        avatar.setCoreProudSkillLevel(currentTalentLevel + 1);
 
         // Packet
         player.sendPacket(new PacketAvatarUnlockTalentNotify(avatar, nextTalentId));
-        player.sendPacket(new PacketUnlockAvatarTalentRsp(avatar, nextTalentId));
 
         // Proud skill bonus map (Extra skills)
         OpenConfigEntry entry = GameData.getOpenConfigEntries().get(talentData.getOpenConfig());
@@ -841,9 +853,9 @@ public class InventorySystem extends BaseGameSystem {
                 if (useItem.getItemData().getItemUse() == null) {
                     break;
                 }
-                
+
                 ItemUseOp useOp = useItem.getItemData().getItemUse().get(0).getUseOp();
-                
+
                 // Unlock item based on use operation
                 useSuccess = switch (useOp) {
                     case ITEM_USE_UNLOCK_FORGE -> player.getForgingManager().unlockForgingBlueprint(useItem);
@@ -949,18 +961,18 @@ public class InventorySystem extends BaseGameSystem {
                     case ITEM_USE_ADD_SERVER_BUFF -> {
                         int buffId = Integer.parseInt(useData.getUseParam()[0]);
                         float time = Float.parseFloat(useData.getUseParam()[1]);
-                        
+
                         player.getBuffManager().addBuff(buffId, time);
                     }
                     default -> {}
                 }
             }
-            
+
             // Remove item from inventory since we used it
             player.getInventory().removeItem(useItem, used);
             return useItem;
         }
-        
+
         if (useSuccess) {
             return useItem;
         }

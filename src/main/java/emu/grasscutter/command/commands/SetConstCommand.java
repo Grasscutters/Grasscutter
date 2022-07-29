@@ -73,19 +73,12 @@ public final class SetConstCommand implements CommandHandler {
 
     private void setConstellation(Player player, Avatar avatar, int constLevel) {
         Set<Integer> talentIdList = avatar.getTalentIdList();
-        IntArrayList talentIds = new IntArrayList(avatar.getSkillDepot().getTalents());
 
-        int previousHighestConstellationUnlocked = 0;
-        for (int talentId: talentIdList) {
-            int constellationNumber = talentIds.indexOf(talentId) + 1;
-            if (constellationNumber > previousHighestConstellationUnlocked)
-                previousHighestConstellationUnlocked = constellationNumber;
-        }
+        int previousHighestConstellationUnlocked = talentIdList.size() > 0 ? Collections.max(talentIdList) % 10 : 0;
 
         talentIdList.clear();
-        avatar.setCoreProudSkillLevel(0);
 
-        for(int talent = 0; talent < constLevel; talent++) {
+        for(int talent = 1; talent <= constLevel; talent++) {
             unlockConstellation(player, avatar, talent);
         }
 
@@ -101,33 +94,12 @@ public final class SetConstCommand implements CommandHandler {
     private void toggleConstellation(Player player, Avatar avatar, int constLevel) {
         Set<Integer> talentIdList = avatar.getTalentIdList();
 
-        IntArrayList talentIds = new IntArrayList(avatar.getSkillDepot().getTalents());
-        int talentId = talentIds.getInt(constLevel-1);
+        List<Integer> talentIds = avatar.getSkillDepot().getTalents();
+        int talentId = talentIds.get(constLevel-1);
 
         boolean wasConstellationUnlocked = talentIdList.remove(talentId);
-        if(!wasConstellationUnlocked) unlockConstellation(player, avatar, constLevel-1);
-
-        ArrayList<Integer> sortedTalentIdList = new ArrayList<>(talentIdList);
-        Collections.sort(sortedTalentIdList);
-
-        // calculate the new "constellation level" based on the first constellation not unlocked
-        int newConstLevel = 1;
-        if (sortedTalentIdList.size() == 0)
-            newConstLevel = 0;
-        else if (sortedTalentIdList.get(0) != talentIds.getInt(0))
-            newConstLevel = 0;
-        else
-            for (int i = 1; i < sortedTalentIdList.size(); i++) {
-
-
-                if (sortedTalentIdList.get(i)-1 == sortedTalentIdList.get(i-1))
-                    newConstLevel++;
-                else
-                    break;
-            }
-        avatar.setCoreProudSkillLevel(newConstLevel);
-
-        if (wasConstellationUnlocked) reloadScene(player);
+        if(!wasConstellationUnlocked) unlockConstellation(player, avatar, constLevel);
+        else reloadScene(player);
 
         avatar.recalcConstellations();
         avatar.recalcStats(true);
@@ -135,13 +107,7 @@ public final class SetConstCommand implements CommandHandler {
     }
 
     private void unlockConstellation(Player player, Avatar avatar, int talent) {
-        IntArrayList talentIds = new IntArrayList(avatar.getSkillDepot().getTalents());
-        AvatarTalentData talentData = GameData.getAvatarTalentDataMap().get(talentIds.getInt(talent));
-        int mainCostItemId = talentData.getMainCostItemId();
-
-        avatar.setCoreProudSkillLevel(talent);
-        player.getInventory().addItem(mainCostItemId);
-        Grasscutter.getGameServer().getInventorySystem().unlockAvatarConstellation(player, avatar.getGuid());
+        Grasscutter.getGameServer().getInventorySystem().unlockAvatarConstellation(player, avatar.getGuid(), talent);
     }
 
     private void reloadScene(Player player) {
