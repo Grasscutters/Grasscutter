@@ -38,8 +38,8 @@
         "account_cache_error": "游戏账号缓存信息错误",
         "session_key_error": "会话密钥错误",
         "username_error": "未找到用户名",
-        "username_create_error": "未找到用户名，建立连接失败",
-        "password_error": "密码无效",
+        "username_create_error": "用户名不存在，登录失败",
+        "password_error": "登录失败，请确认帐号/密码是否正确",
         "password_length_error": "密码必须大于或等于8位",
         "password_storage_error": "你没有密码，请联系管理员",
         "server_max_player_limit": "服务器在线人数已满"
