@@ -20,25 +20,23 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
-import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.data.excels.MonsterData;
 import emu.grasscutter.data.excels.QuestData;
-import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.utils.Language.TextStrings;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import it.unimi.dsi.fastutil.ints.IntSet;
 
 import static emu.grasscutter.config.Configuration.*;
 
 public final class Tools {
     public static void createGmHandbooks() throws Exception {
+        Language savedLanguage = Grasscutter.getLanguage();
+        Int2ObjectMap<TextStrings> textMaps = Language.getTextMapStrings();
+
         ResourceLoader.loadAll();
         Int2IntMap avatarNames = new Int2IntOpenHashMap(GameData.getAvatarDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getNameTextMapHash())));
         Int2IntMap itemNames = new Int2IntOpenHashMap(GameData.getItemDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getNameTextMapHash())));
@@ -46,105 +44,60 @@ public final class Tools {
         Int2IntMap mainQuestTitles = new Int2IntOpenHashMap(GameData.getMainQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getTitleTextMapHash())));
         // Int2IntMap questDescs = new Int2IntOpenHashMap(GameData.getQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getDescTextMapHash())));
 
-        Int2ObjectMap<TextStrings> textMaps = Language.getTextMapStrings();
-
-        Language savedLanguage = Grasscutter.getLanguage();
-
         // Preamble
-        StringBuilder[] handbookBuilders = new StringBuilder[TextStrings.NUM_LANGUAGES];
+        List<StringBuilder> handbookBuilders = new ArrayList<>(TextStrings.NUM_LANGUAGES);
         String now = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss").format(LocalDateTime.now());
-        for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-            handbookBuilders[i] = new StringBuilder()
+        for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++)
+            handbookBuilders.add(new StringBuilder()
                 .append("// Grasscutter " + GameConstants.VERSION + " GM Handbook\n")
                 .append("// Created " + now + "\n\n")
-                .append("// Commands\n");
-        }
+                .append("// Commands\n"));
         // Commands
         List<CommandHandler> cmdList = new CommandMap(true).getHandlersAsList();
+        final String padCmdLabel = "%" + cmdList.stream().map(CommandHandler::getLabel).map(String::length).max(Integer::compare).get().toString() + "s : ";
         for (CommandHandler cmd : cmdList) {
-            StringBuilder cmdName = new StringBuilder(cmd.getLabel());
-            while (cmdName.length() <= 15) {
-                cmdName.insert(0, " ");
-            }
+            String label = padCmdLabel.formatted(cmd.getLabel());
             for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
                 Grasscutter.setLanguage(Language.getLanguage(TextStrings.ARR_GC_LANGUAGES[i]));  // A bit hacky but eh whatever
-                handbookBuilders[i]
-                    .append(cmdName + " : ")
-                    .append(cmd.getDescriptionString(null).replace("\n", "\n\t\t\t\t").replace("\t", "    "))
-                    .append("\n");
+                String desc = cmd.getDescriptionString(null).replace("\n", "\n\t\t\t\t").replace("\t", "    ");
+                handbookBuilders.get(i).append(label + desc + "\n");
             }
         }
-        // Avatars
-        for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-            handbookBuilders[i].append("\n\n// Avatars\n");
+        // Avatars, Items, Monsters
+        String[] handbookSections = {"Avatars", "Items", "Monsters"};
+        Int2IntMap[] handbookNames = {avatarNames, itemNames, monsterNames};
+        for (int section = 0; section < handbookSections.length; section++) {
+            final Int2IntMap h = handbookNames[section];
+            final String s = "\n\n// " + handbookSections[section] + "\n";
+            handbookBuilders.forEach(b -> b.append(s));
+            final String padId = "%" + Integer.toString(Integer.toString(h.keySet().intStream().max().getAsInt()).length()) + "s : ";
+            h.keySet().intStream().sorted().forEach(id -> {
+                String sId = padId.formatted(id);
+                TextStrings t = textMaps.get(h.get(id));
+                for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++)
+                    handbookBuilders.get(i).append(sId + t.strings[i] + "\n");
+            });
         }
-        avatarNames.keySet().intStream().sorted().forEach(id -> {
-            TextStrings t = textMaps.get(avatarNames.get(id));
-            for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-                handbookBuilders[i]
-                    .append("%d : ".formatted(id))
-                    .append(t.strings[i])
-                    .append("\n");
-            }
-        });
-        // Items
-        for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-            handbookBuilders[i].append("\n\n// Items\n");
-        }
-        itemNames.keySet().intStream().sorted().forEach(id -> {
-            TextStrings t = textMaps.get(itemNames.get(id));
-            for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-                handbookBuilders[i]
-                    .append("%d : ".formatted(id))
-                    .append(t.strings[i])
-                    .append("\n");
-            }
-        });
-        // Monsters
-        for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-            handbookBuilders[i].append("\n\n// Monsters\n");
-        }
-        monsterNames.keySet().intStream().sorted().forEach(id -> {
-            TextStrings t = textMaps.get(monsterNames.get(id));
-            for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-                handbookBuilders[i]
-                    .append("%d : ".formatted(id))
-                    .append(t.strings[i])
-                    .append("\n");
-            }
-        });
         // Scenes - no translations
-        for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-            handbookBuilders[i].append("\n\n// Scenes\n");
-        }
+        handbookBuilders.forEach(b -> b.append("\n\n// Scenes\n"));
         var sceneDataMap = GameData.getSceneDataMap();
+        final String padSceneId = "%" + Integer.toString(Integer.toString(sceneDataMap.keySet().intStream().max().getAsInt()).length()) + "d : ";
         sceneDataMap.keySet().intStream().sorted().forEach(id -> {
+            String sId = padSceneId.formatted(id);
             String data = sceneDataMap.get(id).getScriptData();
-            for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-                handbookBuilders[i]
-                    .append("%d : ".formatted(id))
-                    .append(data)
-                    .append("\n");
-            }
+            handbookBuilders.forEach(b -> b.append(sId + data + "\n"));
         });
         // Quests
-        for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-            handbookBuilders[i].append("\n\n// Quests\n");
-        }
+        handbookBuilders.forEach(b -> b.append("\n\n// Quests\n"));
         var questDataMap = GameData.getQuestDataMap();
+        final String padQuestId = "%" + Integer.toString(Integer.toString(questDataMap.keySet().intStream().max().getAsInt()).length()) + "d : ";
         questDataMap.keySet().intStream().sorted().forEach(id -> {
+            String sId = padQuestId.formatted(id);
             QuestData data = questDataMap.get(id);
             TextStrings title = textMaps.get((int) mainQuestTitles.get(data.getMainId()));
             TextStrings desc = textMaps.get((int) data.getDescTextMapHash());
-            for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-                handbookBuilders[i]
-                    .append(id)
-                    .append(" : ")
-                    .append(title.strings[i])
-                    .append(" - ")
-                    .append(desc.strings[i])
-                    .append("\n");
-            }
+            for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++)
+                handbookBuilders.get(i).append(sId + title.strings[i] + " - " + desc.strings[i] + "\n");
         });
         Grasscutter.setLanguage(savedLanguage);
 
@@ -152,14 +105,10 @@ public final class Tools {
         for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
             String fileName = "./GM Handbook - %s.txt".formatted(TextStrings.ARR_LANGUAGES[i]);
             try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8), false)) {
-                writer.write(handbookBuilders[i].toString());
+                writer.write(handbookBuilders.get(i).toString());
             }
         }
         Grasscutter.getLogger().info("GM Handbooks generated!");
-    }
-
-    public static void createGmHandbook() throws Exception {
-        ToolsWithLanguageOption.createGmHandbook(getLanguageOption());
     }
 
     public static void createGachaMapping(String location) throws Exception {
@@ -215,96 +164,6 @@ public final class Tools {
 }
 
 final class ToolsWithLanguageOption {
-    @SuppressWarnings("deprecation")
-    public static void createGmHandbook(String language) throws Exception {
-        ResourceLoader.loadAll();
-
-        Map<Long, String> map;
-        try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(RESOURCE("TextMap/TextMap"+language+".json"))), StandardCharsets.UTF_8)) {
-            map = Grasscutter.getGsonFactory().fromJson(fileReader, new TypeToken<Map<Long, String>>() {}.getType());
-        }
-
-        List<Integer> list;
-        String fileName = "./GM Handbook.txt";
-        try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8), false)) {
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-            LocalDateTime now = LocalDateTime.now();
-
-            writer.println("// Grasscutter " + GameConstants.VERSION + " GM Handbook");
-            writer.println("// Created " + dtf.format(now) + System.lineSeparator() + System.lineSeparator());
-
-			List<CommandHandler> cmdList = new CommandMap(true).getHandlersAsList();
-
-            writer.println("// Commands");
-			for (CommandHandler cmd : cmdList) {
-				StringBuilder cmdName = new StringBuilder(cmd.getLabel());
-                while (cmdName.length() <= 15) {
-                    cmdName.insert(0, " ");
-                }
-				writer.println(cmdName + " : " + cmd.getDescriptionString(null));
-            }
-            writer.println();
-
-            list = new ArrayList<>(GameData.getAvatarDataMap().keySet());
-            Collections.sort(list);
-
-            writer.println("// Avatars");
-            for (Integer id : list) {
-                AvatarData data = GameData.getAvatarDataMap().get(id);
-                writer.println(data.getId() + " : " + map.get(data.getNameTextMapHash()));
-            }
-
-            writer.println();
-
-            list = new ArrayList<>(GameData.getItemDataMap().keySet());
-            Collections.sort(list);
-
-            writer.println("// Items");
-            for (Integer id : list) {
-                ItemData data = GameData.getItemDataMap().get(id);
-                writer.println(data.getId() + " : " + map.get(data.getNameTextMapHash()));
-            }
-
-            writer.println();
-
-            writer.println("// Scenes");
-            list = new ArrayList<>(GameData.getSceneDataMap().keySet());
-            Collections.sort(list);
-
-            for (Integer id : list) {
-                SceneData data = GameData.getSceneDataMap().get(id);
-                writer.println(data.getId() + " : " + data.getScriptData());
-            }
-
-            writer.println();
-
-            writer.println("// Quests");
-            list = new ArrayList<>(GameData.getQuestDataMap().keySet());
-            Collections.sort(list);
-
-            for (Integer id : list) {
-                QuestData data = GameData.getQuestDataMap().get(id);
-                MainQuestData mainQuest = GameData.getMainQuestDataMap().get(data.getMainId());
-                if (mainQuest != null) {
-                    writer.println(data.getId() + " : " + map.get(mainQuest.getTitleTextMapHash()) + " - " + map.get(data.getDescTextMapHash()));
-                }
-            }
-
-            writer.println();
-
-            writer.println("// Monsters");
-            list = new ArrayList<>(GameData.getMonsterDataMap().keySet());
-            Collections.sort(list);
-
-            for (Integer id : list) {
-                MonsterData data = GameData.getMonsterDataMap().get(id);
-                writer.println(data.getId() + " : " + map.get(data.getNameTextMapHash()));
-            }
-        }
-
-        Grasscutter.getLogger().info("GM Handbook generated!");
-    }
-
     @SuppressWarnings("deprecation")
     public static void createGachaMapping(String location, String language) throws Exception {
         ResourceLoader.loadResources();
