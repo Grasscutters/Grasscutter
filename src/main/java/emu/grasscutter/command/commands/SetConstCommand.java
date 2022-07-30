@@ -3,17 +3,15 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AvatarTalentData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.TeamManager;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
 
 import java.util.*;
 
@@ -90,12 +88,12 @@ public final class SetConstCommand implements CommandHandler {
                     return;
                 }
                 toggleConstellation(targetPlayer, avatar, constLevel);
-                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.set_success", constLevel, avatarName);
+                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.toggle_success", constLevel, avatarName);
             }
         }
     }
 
-    private boolean setConstellation(Player player, Avatar avatar, int constLevel, boolean reload) {
+    private void setConstellation(Player player, Avatar avatar, int constLevel, boolean reload) {
         Set<Integer> talentIdList = avatar.getTalentIdList();
 
         int previousHighestConstellationUnlocked = talentIdList.size() > 0 ? Collections.max(talentIdList) % 10 : 0;
@@ -103,7 +101,7 @@ public final class SetConstCommand implements CommandHandler {
 
         talentIdList.clear();
 
-        for(int talent = 1; talent <= constLevel; talent++) {
+        for (int talent = 1; talent <= constLevel; talent++) {
             unlockConstellation(player, avatar, talent);
         }
 
@@ -114,8 +112,6 @@ public final class SetConstCommand implements CommandHandler {
         avatar.recalcConstellations();
         avatar.recalcStats(true);
         avatar.save();
-
-        return reload_required;
     }
 
     private void toggleConstellation(Player player, Avatar avatar, int constLevel) {
@@ -125,7 +121,7 @@ public final class SetConstCommand implements CommandHandler {
         int talentId = talentIds.get(constLevel-1);
 
         boolean wasConstellationUnlocked = talentIdList.remove(talentId);
-        if(!wasConstellationUnlocked) unlockConstellation(player, avatar, constLevel);
+        if (!wasConstellationUnlocked) unlockConstellation(player, avatar, constLevel);
         else reloadScene(player);
 
         avatar.recalcConstellations();
@@ -134,17 +130,34 @@ public final class SetConstCommand implements CommandHandler {
     }
 
     private boolean resetConstellation(Player player, Avatar avatar, boolean reload) {
-        return setConstellation(player, avatar, 0, reload);
+        boolean shouldReload = avatar.getCoreProudSkillLevel() > 0;
+        setConstellation(player, avatar, 0, reload);
+        return shouldReload;
     }
 
     private void resetAllConstellation(Player player) {
         boolean reload_required = false;
+
         AvatarStorage avatars = player.getAvatars();
+        TeamManager teamManager = player.getTeamManager();
+        int previousCharacterIndex = teamManager.getCurrentCharacterIndex();
+        List<Integer> previousTeam = new ArrayList<>(teamManager.getCurrentTeamInfo().getAvatars());
 
         for (Avatar avatar: avatars) {
-            reload_required |= resetConstellation(player, avatar, false);
+            boolean avatarNeedsReload = resetConstellation(player, avatar, false);
+
+            // force avatar to be the active character to update constellations
+            if (avatarNeedsReload) {
+                setTeam(player, teamManager, Collections.singletonList(avatar.getAvatarId()));
+            }
+            reload_required |= avatarNeedsReload;
         }
-        if (reload_required) reloadScene(player);
+
+        if (reload_required) {
+            reloadScene(player);
+            setTeam(player, teamManager, previousTeam);
+            teamManager.setCurrentCharacterIndex(previousCharacterIndex);
+        }
     }
 
     private void unlockConstellation(Player player, Avatar avatar, int talent) {
@@ -159,5 +172,18 @@ public final class SetConstCommand implements CommandHandler {
         world.transferPlayerToScene(player, 1, pos);
         world.transferPlayerToScene(player, scene.getId(), pos);
         scene.broadcastPacket(new PacketSceneEntityAppearNotify(player));
+    }
+
+    private void setTeam(Player player, TeamManager teamManager, List<Integer> avatarIds) {
+        List<Long> guids = avatarIds.stream().map(
+            avatarId -> player.getAvatars().getAvatarById(avatarId).getGuid()
+        ).toList();
+
+        if (player.isInMultiplayer()) {
+            teamManager.setupMpTeam(guids);
+        } else {
+            int currentTeamId = teamManager.getCurrentTeamId();
+            teamManager.setupAvatarTeam(currentTeamId, guids);
+        }
     }
 }
