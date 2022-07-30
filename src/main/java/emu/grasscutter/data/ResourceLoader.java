@@ -53,7 +53,9 @@ public class ResourceLoader {
         return classList;
     }
 
+    private static boolean loadedAll = false;
     public static void loadAll() {
+        if (loadedAll) return;
         Grasscutter.getLogger().info(translate("messages.status.resources.loading"));
 
 		// Load ability lists
@@ -75,6 +77,7 @@ public class ResourceLoader {
 		loadNpcBornData();
 
         Grasscutter.getLogger().info(translate("messages.status.resources.finish"));
+        loadedAll = true;
     }
 
     public static void loadResources() {
