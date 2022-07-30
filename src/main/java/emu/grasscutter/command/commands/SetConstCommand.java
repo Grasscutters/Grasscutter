@@ -6,6 +6,7 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.AvatarTalentData;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Scene;
@@ -19,34 +20,59 @@ import java.util.*;
 @Command(
     label = "setConst",
     aliases = {"setconstellation", "constellations", "setcons", "cons"},
-    usage = {"[set] <constellation level>", "toggle <constellation level>"},
+    usage = {"[set] <constellation level>", "reset [all]", "toggle <constellation level>"},
     permission = "player.setconstellation",
     permissionTargeted = "player.setconstellation.others")
 public final class SetConstCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         String action = "set";
-        int constLevel;
+        Integer constLevel = null;
 
         EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
         if (entity == null) return;
         Avatar avatar = entity.getAvatar();
         String avatarName = avatar.getAvatarData().getName();
 
-        switch (args.size()) {
-            case 2:
-                action = args.remove(0).toLowerCase(); // fall-through
-            case 1:
+        if (args.size() == 0 || args.size() > 2) {
+            sendUsageMessage(sender);
+            return;
+        } else {
+            try {
+                constLevel = Integer.parseInt(args.get(0));
+            } catch (NumberFormatException ignored) {
+                action = args.remove(0);
+            }
+        }
+
+        switch (action) {
+            case "set", "toggle" -> {
                 try {
-                    constLevel = Integer.parseInt(args.get(0));
+                    if (constLevel == null) constLevel = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendTranslatedMessage(sender, "commands.setConst.level_error");
                     return;
                 }
-                break;
-            default:
-                sendUsageMessage(sender);
+            }
+            case "reset" -> {
+                try {
+                    if (args.get(0).equalsIgnoreCase("all")) {
+                        resetAllConstellation(targetPlayer);
+                        CommandHandler.sendTranslatedMessage(sender, "commands.setConst.reset_all_success");
+                    } else {
+                        sendUsageMessage(sender);
+                    }
+                    return;
+                } catch (IndexOutOfBoundsException ignored) {
+                    resetConstellation(targetPlayer, avatar, true);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.setConst.reset_success", avatarName);
+                    return;
+                }
+            }
+            default -> {
+                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.action_error");
                 return;
+            }
         }
 
         switch (action) {
@@ -55,7 +81,7 @@ public final class SetConstCommand implements CommandHandler {
                     CommandHandler.sendTranslatedMessage(sender, "commands.setConst.range_error", 0);
                     return;
                 }
-                this.setConstellation(targetPlayer, avatar, constLevel);
+                setConstellation(targetPlayer, avatar, constLevel, true);
                 CommandHandler.sendTranslatedMessage(sender, "commands.setConst.set_success", avatarName, constLevel);
             }
             case "toggle" -> {
@@ -63,17 +89,17 @@ public final class SetConstCommand implements CommandHandler {
                     CommandHandler.sendTranslatedMessage(sender, "commands.setConst.range_error", 1);
                     return;
                 }
-                this.toggleConstellation(targetPlayer, avatar, constLevel);
-                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.toggle_success", constLevel, avatarName);
+                toggleConstellation(targetPlayer, avatar, constLevel);
+                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.set_success", constLevel, avatarName);
             }
-            default -> CommandHandler.sendTranslatedMessage(sender, "commands.setConst.action_error");
         }
     }
 
-    private void setConstellation(Player player, Avatar avatar, int constLevel) {
+    private boolean setConstellation(Player player, Avatar avatar, int constLevel, boolean reload) {
         Set<Integer> talentIdList = avatar.getTalentIdList();
 
         int previousHighestConstellationUnlocked = talentIdList.size() > 0 ? Collections.max(talentIdList) % 10 : 0;
+        boolean reload_required = reload && constLevel < previousHighestConstellationUnlocked;
 
         talentIdList.clear();
 
@@ -82,12 +108,14 @@ public final class SetConstCommand implements CommandHandler {
         }
 
         // force player to reload scene when necessary
-        if (constLevel < previousHighestConstellationUnlocked) reloadScene(player);
+        if (reload_required) reloadScene(player);
 
         // ensure that all changes are visible to the player
         avatar.recalcConstellations();
         avatar.recalcStats(true);
         avatar.save();
+
+        return reload_required;
     }
 
     private void toggleConstellation(Player player, Avatar avatar, int constLevel) {
@@ -103,6 +131,20 @@ public final class SetConstCommand implements CommandHandler {
         avatar.recalcConstellations();
         avatar.recalcStats(true);
         avatar.save();
+    }
+
+    private boolean resetConstellation(Player player, Avatar avatar, boolean reload) {
+        return setConstellation(player, avatar, 0, reload);
+    }
+
+    private void resetAllConstellation(Player player) {
+        boolean reload_required = false;
+        AvatarStorage avatars = player.getAvatars();
+
+        for (Avatar avatar: avatars) {
+            reload_required |= resetConstellation(player, avatar, false);
+        }
+        if (reload_required) reloadScene(player);
     }
 
     private void unlockConstellation(Player player, Avatar avatar, int talent) {
