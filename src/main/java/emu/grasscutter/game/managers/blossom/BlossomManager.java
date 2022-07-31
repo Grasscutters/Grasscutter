@@ -331,8 +331,8 @@ public class BlossomManager {
         //registerMonster(25100302,0); // 落武者·咒雷
         registerMonster(26010101,1); // 冰霜骗骗花
         registerMonster(26010102,1); // 冰霜骗骗花
-        registerMonster(26010103,1); // 冰霜骗骗花
-        registerMonster(26010104,1); // 冰霜骗骗花
+        //registerMonster(26010103,1); // 冰霜骗骗花
+        //registerMonster(26010104,1); // 冰霜骗骗花
         registerMonster(26010201,1); // 炽热骗骗花
         registerMonster(26010301,1); // 电气骗骗花
         //registerMonster(26030101,1); // 幼岩龙蜥
