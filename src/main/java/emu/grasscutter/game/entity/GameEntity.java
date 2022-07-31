@@ -3,6 +3,7 @@ package emu.grasscutter.game.entity;
 import java.util.HashMap;
 import java.util.Map;
 
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
@@ -211,8 +212,12 @@ public abstract class GameEntity {
             return;
         }
 
-        // Lose hp
-        addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -amount);
+        //support infinite hp
+        if(getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) != GameConstants.INFINITE_HP){
+            // Lose hp
+            addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -amount);
+        }
+
 
         // Check if dead
         boolean isDead = false;

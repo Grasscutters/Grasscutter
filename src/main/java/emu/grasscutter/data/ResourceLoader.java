@@ -10,6 +10,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import emu.grasscutter.data.binout.*;
+import emu.grasscutter.game.managers.blossom.Reward;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.utils.Utils;
@@ -52,7 +53,24 @@ public class ResourceLoader {
 
         return classList;
     }
+    private static void loadBlossomConfig() {
+        List<AbilityEmbryoEntry> embryoList = null;
 
+        try (InputStream data = DataLoader.load("BlossomBlueRewords.json", false)) {
+            GameDepot.BLOSSOM_REWARDS_BLUE.putAll(Grasscutter.getGsonFactory().fromJson(new InputStreamReader(data),
+                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class,Reward.class).getType()).getType()));
+        } catch (Exception ignored) {}
+
+        try (InputStream data = DataLoader.load("BlossomGoldenRewords.json", false)) {
+            GameDepot.BLOSSOM_REWARDS_GOLDEN.putAll(Grasscutter.getGsonFactory().fromJson(new InputStreamReader(data),
+                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class,Reward.class).getType()).getType()));
+        } catch (Exception ignored) {}
+
+        try (InputStream data = DataLoader.load("BlossomMonsters.json", false)) {
+            GameDepot.BLOSSOM_MONSTERS_DIFFICULTY.putAll(Grasscutter.getGsonFactory().fromJson(new InputStreamReader(data),
+                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class,Integer.class).getType()).getType()));
+        } catch (Exception ignored) {}
+    }
     public static void loadAll() {
         Grasscutter.getLogger().info(translate("messages.status.resources.loading"));
 
@@ -72,7 +90,7 @@ public class ResourceLoader {
         // Load default home layout
         loadHomeworldDefaultSaveData();
         loadNpcBornData();
-
+        loadBlossomConfig();
         Grasscutter.getLogger().info(translate("messages.status.resources.finish"));
     }
 

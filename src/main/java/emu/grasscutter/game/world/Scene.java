@@ -1,5 +1,6 @@
 package emu.grasscutter.game.world;
 
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
@@ -7,6 +8,8 @@ import emu.grasscutter.data.binout.SceneNpcBornEntry;
 import emu.grasscutter.data.excels.*;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.entity.*;
+import emu.grasscutter.game.entity.gadget.GadgetWorktop;
+import emu.grasscutter.game.managers.blossom.BlossomManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamInfo;
 import emu.grasscutter.game.props.FightProperty;
@@ -16,6 +19,7 @@ import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
+import emu.grasscutter.net.proto.SelectWorktopOptionReqOuterClass;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.scripts.SceneScriptManager;
@@ -37,6 +41,7 @@ public class Scene {
     private final Set<SpawnDataEntry> spawnedEntities;
     private final Set<SpawnDataEntry> deadSpawnedEntities;
     private final Set<SceneBlock> loadedBlocks;
+    private final BlossomManager blossomManager;
     private Set<SpawnDataEntry.GridBlockId> loadedGridBlocks;
     private boolean dontDestroyWhenEmpty;
 
@@ -65,6 +70,7 @@ public class Scene {
         this.loadedGridBlocks = new HashSet<>();
         this.npcBornEntrySet = ConcurrentHashMap.newKeySet();
         this.scriptManager = new SceneScriptManager(this);
+        this.blossomManager = new BlossomManager(this);
     }
 
     public int getId() {
@@ -436,6 +442,8 @@ public class Scene {
             challenge.onCheckTimeOut();
         }
 
+        blossomManager.onTick();
+
         checkNpcGroup();
     }
 
@@ -529,11 +537,12 @@ public class Scene {
                     }
                     gadget.buildContent();
 
-                    gadget.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, 99999);
-                    gadget.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 99999);
-                    gadget.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, 99999);
+                    gadget.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, GameConstants.INFINITE_HP);
+                    gadget.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, GameConstants.INFINITE_HP);
+                    gadget.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, GameConstants.INFINITE_HP);
 
                     entity = gadget;
+                    blossomManager.initBlossom(gadget);
                 }
 
                 if (entity == null) continue;
@@ -559,6 +568,7 @@ public class Scene {
         if (toRemove.size() > 0) {
             toRemove.stream().forEach(this::removeEntityDirectly);
             this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_TYPE_REMOVE));
+            blossomManager.recycleLeyLineGadgetEntity(toRemove);
         }
     }
 
@@ -820,5 +830,25 @@ public class Scene {
             }
             scriptManager.addGroupSuite(group, suite);
         });
+    }
+
+    public void selectWorktopOptionWith(SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq req) {
+        GameEntity entity = getEntityById(req.getGadgetEntityId());
+        if (entity == null) {
+            return;
+        }
+        // Handle
+        if (entity instanceof EntityGadget gadget) {
+            if (gadget.getContent() instanceof GadgetWorktop worktop) {
+                boolean shouldDelete = worktop.onSelectWorktopOption(req);
+                if (shouldDelete) {
+                    entity.getScene().removeEntity(entity, VisionType.VISION_TYPE_REMOVE);
+                }
+            }
+        }
+    }
+
+    public BlossomManager getBlossomManager() {
+        return blossomManager;
     }
 }
