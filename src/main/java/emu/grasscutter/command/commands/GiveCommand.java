@@ -240,7 +240,7 @@ public final class GiveCommand implements CommandHandler {
     }
 
     private static Avatar makeAvatar(GiveItemParameters param) {
-        return makeAvatar(param.avatarData, param.lvl, Avatar.getMinPromoteLevel(param.lvl), 0);
+        return makeAvatar(param.avatarData, param.lvl, Avatar.getMinPromoteLevel(param.lvl), param.constellation);
     }
 
     private static Avatar makeAvatar(AvatarData avatarData, int level, int promoteLevel, int constellation) {

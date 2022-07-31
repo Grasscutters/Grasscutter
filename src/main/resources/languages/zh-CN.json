@@ -28,8 +28,8 @@
         "login_token_attempt": "[Dispatch] 客户端 %s 正在尝试通过 token 登录",
         "login_token_error": "[Dispatch] 客户端 %s 通过 token 登录失败",
         "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID 为 %s",
-        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
-        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
+        "login_password_error": "[Dispatch] 客户端 %s 无法通过密码登录",
+        "login_password_storage_error": "[Dispatch] 客户端 %s 无法登录！ 因为数据库中没有密码",
         "combo_token_success": "[Dispatch] 客户端 %s 成功交换 token",
         "combo_token_error": "[Dispatch] 客户端 %s 交换 token 失败",
         "account_login_create_success": "[Dispatch] 客户端 %s 登录失败：已注册 UID 为 %s 的账号",
@@ -38,10 +38,10 @@
         "account_cache_error": "游戏账号缓存信息错误",
         "session_key_error": "会话密钥错误",
         "username_error": "未找到用户名",
-        "username_create_error": "未找到用户名，建立连接失败",
-        "password_error": "🇺🇸Invalid Password",
-        "password_length_error": "🇺🇸Password length must be greater then or equal to 8",
-        "password_storage_error": "🇺🇸You don't have a password for your account. Please contact an administrator.",
+        "username_create_error": "用户名不存在，登录失败",
+        "password_error": "登录失败，请确认帐号/密码是否正确",
+        "password_length_error": "密码必须大于或等于8位",
+        "password_storage_error": "你没有密码，请联系管理员",
         "server_max_player_limit": "服务器在线人数已满"
       },
       "router_error": "[Dispatch] 无法连接路由"
@@ -256,6 +256,14 @@
       "success": "消息已发送。",
       "description": "向玩家以服务器的身份发送消息。如果没有指定目标，则向服务器的全部玩家发送"
     },
+    "setConst": {
+      "range_error": "命座等级必须是 0~6级",
+      "level_error": "无效的命座等级",
+      "fail": "命座等级设置失败",
+      "failed_success": "命座 %s 已设置为 %s. 请传送到重载场景或重新登录查看效果",
+      "success": "命座 %s 已设置为 %s.",
+      "description": "为当前活跃角色设置命座等级"
+    },
     "setFetterLevel": {
       "range_error": "好感度等级必须在 0-10 之间。",
       "success": "好感度已设为 %s 级。",
@@ -266,7 +274,11 @@
       "description": "设置账号的状态。比如可以通过此命令启用 godmode，也可以解锁深渊或更改纪行等级\n\t可更改的状态列表：godmode(上帝模式)|nostamina(无限体力)|unlimitedenergy(无限能量)|abyss(深渊)|worldlevel(世界等级)|bplevel(纪行等级)\n查看 PlayerProperty enum 以获得其他数值，格式为 PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setStats": {
-      "description": "设置当前角色的属性\n\t可更改的属性列表：hp(生命值)|maxhp(最大生命值)|def(防御力)|atk(攻击力)|em(元素精通)|er(元素充能效率)|crate(暴击率)|cdmg(暴击伤害)|cdr(冷却缩减)|heal(治疗加成)|heali(受治疗加成)|shield(护盾强效)|defi(无视防御)\n元素增伤：epyro(火)|ecryo(冰)|ehydro(水)|egeo(岩)|edendro(草)|eelectro(雷)|ephys(物理)\n元素抗性：respyro(火)|rescryo(冰)|reshydro(水)|resgeo(岩)|resdendro(草)|reselectro(雷)|resphys(物理)"
+      "description": "设置当前角色的属性\n\t可更改的属性列表：hp(生命值)|maxhp(最大生命值)|def(防御力)|atk(攻击力)|em(元素精通)|er(元素充能效率)|crate(暴击率)|cdmg(暴击伤害)|cdr(冷却缩减)|heal(治疗加成)|heali(受治疗加成)|shield(护盾强效)|defi(无视防御)\n元素增伤：epyro(火)|ecryo(冰)|ehydro(水)|egeo(岩)|edendro(草)|eelectro(雷)|ephys(物理)\n元素抗性：respyro(火)|rescryo(冰)|reshydro(水)|resgeo(岩)|resdendro(草)|reselectro(雷)|resphys(物理)",
+      "locked_to": "🇺🇸%s locked to %s.",
+      "locked_for_to": "🇺🇸%s for %s locked to %s.",
+      "unlocked": "🇺🇸%s unlocked.",
+      "unlocked_for": "🇺🇸%s for %s unlocked."
     },
     "spawn": {
       "success": "已生成 %s 个 %s。",
@@ -326,6 +338,10 @@
       "invalid_time": "无法解析时间戳。",
       "description": "封禁玩家"
     },
+    "unlockall": {
+      "success": "🇺🇸Unlocked all open states for %s.",
+      "description": "🇺🇸Unlocks all open states for a player."
+    },
     "unban": {
       "success": "成功取消玩家的封禁。",
       "failure": "取消玩家的封禁失败，因为玩家不存在。",
@@ -347,7 +363,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "🇺🇸GM Handbook",
+      "title": "GM 手册",
       "title_commands": "命令",
       "title_avatars": "角色",
       "title_items": "物品",
@@ -363,7 +379,7 @@
     },
     "index": {
       "title": "文档",
-      "handbook": "🇺🇸GM Handbook",
+      "handbook": "GM 手册",
       "gacha_mapping": "祈愿物品映射JSON"
     }
   }

@@ -1,5 +1,26 @@
 package emu.grasscutter.data;
 
+import com.google.gson.JsonElement;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.binout.*;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityConfigData;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
+import emu.grasscutter.data.common.PointData;
+import emu.grasscutter.data.common.ScenePointConfig;
+import emu.grasscutter.game.managers.blossom.Reward;
+import emu.grasscutter.game.quest.QuestEncryptionKey;
+import emu.grasscutter.game.world.SpawnDataEntry;
+import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
+import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
+import emu.grasscutter.scripts.SceneIndexManager;
+import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.SneakyThrows;
+import org.reflections.Reflections;
+
 import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
@@ -9,28 +30,7 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import emu.grasscutter.data.binout.*;
-import emu.grasscutter.game.managers.blossom.Reward;
-import emu.grasscutter.game.world.SpawnDataEntry;
-import emu.grasscutter.scripts.SceneIndexManager;
-import emu.grasscutter.utils.Utils;
-import lombok.SneakyThrows;
-import org.reflections.Reflections;
-
-import com.google.gson.JsonElement;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityConfigData;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
-import emu.grasscutter.data.common.PointData;
-import emu.grasscutter.data.common.ScenePointConfig;
-import emu.grasscutter.game.world.SpawnDataEntry.*;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-
-import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.config.Configuration.RESOURCE;
 import static emu.grasscutter.utils.Language.translate;
 
 public class ResourceLoader {
@@ -63,7 +63,7 @@ public class ResourceLoader {
 
         try (InputStream data = DataLoader.load("BlossomGoldenRewords.json", false)) {
             GameDepot.BLOSSOM_REWARDS_GOLDEN.putAll(Grasscutter.getGsonFactory().fromJson(new InputStreamReader(data),
-                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class,Reward.class).getType()).getType()));
+                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class, Reward.class).getType()).getType()));
         } catch (Exception ignored) {}
 
         try (InputStream data = DataLoader.load("BlossomMonsters.json", false)) {
@@ -85,12 +85,14 @@ public class ResourceLoader {
         // Load spawn data and quests
         loadSpawnData();
         loadQuests();
+        loadScriptSceneData();
         // Load scene points - must be done AFTER resources are loaded
         loadScenePoints();
         // Load default home layout
         loadHomeworldDefaultSaveData();
         loadNpcBornData();
         loadBlossomConfig();
+
         Grasscutter.getLogger().info(translate("messages.status.resources.finish"));
     }
 
@@ -435,13 +437,49 @@ public class ResourceLoader {
             GameData.getMainQuestDataMap().put(mainQuest.getId(), mainQuest);
         }
 
+        try (Reader reader = new FileReader(new File(RESOURCE("QuestEncryptionKeys.json")))) {
+            List<QuestEncryptionKey> keys = Grasscutter.getGsonFactory().fromJson(
+                reader,
+                TypeToken.getParameterized(List.class, QuestEncryptionKey.class).getType());
+
+            Int2ObjectMap<QuestEncryptionKey> questEncryptionMap = GameData.getMainQuestEncryptionMap();
+            keys.forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
+            Grasscutter.getLogger().debug("Loaded {} quest keys.", questEncryptionMap.size());
+        } catch (FileNotFoundException ignored) {
+            Grasscutter.getLogger().error("Unable to load quest keys - ./resources/QuestEncryptionKeys.json not found.");
+        } catch (Exception e) {
+            Grasscutter.getLogger().error("Unable to load quest keys.", e);
+        }
+
         Grasscutter.getLogger().debug("Loaded " + GameData.getMainQuestDataMap().size() + " MainQuestDatas.");
     }
 
-    @SneakyThrows
-    private static void loadHomeworldDefaultSaveData() {
-        var folder = Files.list(Path.of(RESOURCE("BinOutput/HomeworldDefaultSave"))).toList();
-        var pattern = Pattern.compile("scene(.*)_home_config.json");
+    public static void loadScriptSceneData() {
+        File folder = new File(RESOURCE("ScriptSceneData/"));
+
+        if (!folder.exists()) {
+            return;
+        }
+
+        for (File file : folder.listFiles()) {
+            ScriptSceneData sceneData;
+            try (FileReader fileReader = new FileReader(file)) {
+                sceneData = Grasscutter.getGsonFactory().fromJson(fileReader, ScriptSceneData.class);
+            } catch (Exception e) {
+                e.printStackTrace();
+                continue;
+            }
+
+            GameData.getScriptSceneDataMap().put(file.getName(), sceneData);
+        }
+
+        Grasscutter.getLogger().debug("Loaded " + GameData.getScriptSceneDataMap().size() + " ScriptSceneDatas.");
+    }
+
+	@SneakyThrows
+	private static void loadHomeworldDefaultSaveData(){
+		var folder = Files.list(Path.of(RESOURCE("BinOutput/HomeworldDefaultSave"))).toList();
+		var pattern = Pattern.compile("scene(.*)_home_config.json");
 
         for (var file : folder) {
             var matcher = pattern.matcher(file.getFileName().toString());
