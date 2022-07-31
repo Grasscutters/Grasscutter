@@ -10,6 +10,7 @@ import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType;
 import emu.grasscutter.net.proto.InteractTypeOuterClass;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
+import emu.grasscutter.net.proto.ResinCostTypeOuterClass;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.scripts.constants.ScriptGadgetState;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
@@ -35,7 +36,8 @@ public class GadgetChest extends GadgetContent {
         }else {
             boolean success;
             if(handler instanceof BossChestInteractHandler bossChestInteractHandler){
-                success = bossChestInteractHandler.onInteract(this, player,req.getIsUseCondenseResin());
+                success = bossChestInteractHandler.onInteract(this, player,
+                    req.getResinCostType()== ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_CONDENSE);
             }else{
                 success = handler.onInteract(this, player);
             }

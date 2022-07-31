@@ -14,6 +14,7 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
+import emu.grasscutter.net.proto.ResinCostTypeOuterClass;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.ScriptArgs;
@@ -174,7 +175,7 @@ public class DungeonChallenge extends WorldChallenge {
         // Get rewards.
         List<GameItem> rewards = new ArrayList<>();
 
-        if (request.getIsUseCondenseResin()) {
+        if (request.getResinCostType() == ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_CONDENSE) {
             // Check if condensed resin is usable here.
             // For this, we use the following logic for now:
             // The normal resin cost of the dungeon has to be 20.
