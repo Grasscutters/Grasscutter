@@ -18,7 +18,7 @@ public class PacketGetScenePointRsp extends BasePacket {
 				p.addUnlockedPointList(i);
 			}
 		} else {
-			p.addAllUnlockedPointList(GameData.getScenePointIdList());
+			//p.addAllUnlockedPointList(GameData.getScenePointIdList());
 		}
 		
 		for (int i = 1; i < 9; i++) {
