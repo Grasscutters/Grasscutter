@@ -577,11 +577,9 @@ public class BlossomManager {
                             return null;
                         }
                         for (BlossomReward blossomReward : blossomRewards) {
-                            int rewardCount;
+                            int rewardCount = blossomReward.random();
                             if(useCondensedResin){
-                                rewardCount = Utils.randomRange(blossomReward.minCount*2, blossomReward.maxCount*2);//Double!
-                            }else{
-                                rewardCount = Utils.randomRange(blossomReward.minCount, blossomReward.maxCount);
+                                rewardCount += blossomReward.random();//Double!
                             }
                             items.add(new GameItem(blossomReward.itemId,rewardCount));
                         }
