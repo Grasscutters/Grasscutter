@@ -516,7 +516,7 @@ public class BlossomManager {
                         return false;
                     }
                 }
-                ArrayList<Integer> monsters;
+                List<Integer> monsters;
                 monsters = getRandomMonstersID(0,4);
                 monsters.addAll(getRandomMonstersID(1,2));
                 monsters.addAll(getRandomMonstersID(2,1));
@@ -559,8 +559,8 @@ public class BlossomManager {
                 if (activeChest.getChest() == chest) {
                     if (who.getInventory().payItem(106, 20)) {
                         int worldLevel = getWorldLevel();
-                        ArrayList<GameItem> items = new ArrayList<>();
-                        ArrayList<BlossomReward> blossomRewards;
+                        List<GameItem> items = new ArrayList<>();
+                        List<BlossomReward> blossomRewards;
                         if (activeChest.getGadget().getGadgetId() == BlossomType.BLUE_GADGET_ID.getGadgetId()) {
                             blossomRewards = GameDepot.BLOSSOM_REWARDS_BLUE.get(worldLevel);
                         } else {
@@ -585,9 +585,9 @@ public class BlossomManager {
         return null;
     }
 
-    public static ArrayList<Integer> getRandomMonstersID(int difficulty,int count){
-        ArrayList<Integer> result = new ArrayList<>();
-        ArrayList<Integer> monsters = GameDepot.BLOSSOM_MONSTERS_DIFFICULTY.get(difficulty);
+    public static List<Integer> getRandomMonstersID(int difficulty,int count){
+        List<Integer> result = new ArrayList<>();
+        List<Integer> monsters = GameDepot.BLOSSOM_MONSTERS_DIFFICULTY.get(difficulty);
         for(int i=0;i<count;i++){
             result.add(monsters.get(Utils.randomRange(0,monsters.size()-1)));
         }
