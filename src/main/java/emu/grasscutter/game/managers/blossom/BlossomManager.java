@@ -560,18 +560,18 @@ public class BlossomManager {
                     if (who.getInventory().payItem(106, 20)) {
                         int worldLevel = getWorldLevel();
                         ArrayList<GameItem> items = new ArrayList<>();
-                        ArrayList<Reward> rewards;
+                        ArrayList<BlossomReward> blossomRewards;
                         if (activeChest.getGadget().getGadgetId() == BlossomType.BLUE_GADGET_ID.getGadgetId()) {
-                            rewards = GameDepot.BLOSSOM_REWARDS_BLUE.get(worldLevel);
+                            blossomRewards = GameDepot.BLOSSOM_REWARDS_BLUE.get(worldLevel);
                         } else {
-                            rewards = GameDepot.BLOSSOM_REWARDS_GOLDEN.get(worldLevel);
+                            blossomRewards = GameDepot.BLOSSOM_REWARDS_GOLDEN.get(worldLevel);
                         }
-                        if(rewards==null){
+                        if(blossomRewards ==null){
                             Grasscutter.getLogger().error("Blossom could not support world level : "+worldLevel);
                             return null;
                         }
-                        for (Reward reward : rewards) {
-                            items.add(new GameItem(reward.itemId, Utils.randomRange(reward.minCount, reward.maxCount)));
+                        for (BlossomReward blossomReward : blossomRewards) {
+                            items.add(new GameItem(blossomReward.itemId, Utils.randomRange(blossomReward.minCount, blossomReward.maxCount)));
                         }
                         it.remove();
                         recycleLeyLineGadgetEntity(List.of(activeChest.getGadget()));

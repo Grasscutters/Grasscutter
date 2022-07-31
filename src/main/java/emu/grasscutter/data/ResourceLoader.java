@@ -10,7 +10,7 @@ import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
 import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.common.ScenePointConfig;
-import emu.grasscutter.game.managers.blossom.Reward;
+import emu.grasscutter.game.managers.blossom.BlossomReward;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
@@ -53,17 +53,16 @@ public class ResourceLoader {
 
         return classList;
     }
-    private static void loadBlossomConfig() {
-        List<AbilityEmbryoEntry> embryoList = null;
+    private static void loadBlossomResources() {
 
         try (InputStream data = DataLoader.load("BlossomBlueRewords.json", false)) {
             GameDepot.BLOSSOM_REWARDS_BLUE.putAll(Grasscutter.getGsonFactory().fromJson(new InputStreamReader(data),
-                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class,Reward.class).getType()).getType()));
+                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class, BlossomReward.class).getType()).getType()));
         } catch (Exception ignored) {}
 
         try (InputStream data = DataLoader.load("BlossomGoldenRewords.json", false)) {
             GameDepot.BLOSSOM_REWARDS_GOLDEN.putAll(Grasscutter.getGsonFactory().fromJson(new InputStreamReader(data),
-                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class, Reward.class).getType()).getType()));
+                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class, BlossomReward.class).getType()).getType()));
         } catch (Exception ignored) {}
 
         try (InputStream data = DataLoader.load("BlossomMonsters.json", false)) {
@@ -71,27 +70,28 @@ public class ResourceLoader {
                 TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class,Integer.class).getType()).getType()));
         } catch (Exception ignored) {}
     }
+
     public static void loadAll() {
         Grasscutter.getLogger().info(translate("messages.status.resources.loading"));
 
-        // Load ability lists
-        loadAbilityEmbryos();
-        loadOpenConfig();
-        loadAbilityModifiers();
-        // Load resources
-        loadResources();
-        // Process into depots
-        GameDepot.load();
-        // Load spawn data and quests
-        loadSpawnData();
-        loadQuests();
+		// Load ability lists
+		loadAbilityEmbryos();
+		loadOpenConfig();
+		loadAbilityModifiers();
+		// Load resources
+		loadResources();
+		// Process into depots
+		GameDepot.load();
+		// Load spawn data and quests
+		loadSpawnData();
+		loadQuests();
         loadScriptSceneData();
-        // Load scene points - must be done AFTER resources are loaded
-        loadScenePoints();
-        // Load default home layout
-        loadHomeworldDefaultSaveData();
-        loadNpcBornData();
-        loadBlossomConfig();
+		// Load scene points - must be done AFTER resources are loaded
+		loadScenePoints();
+		// Load default home layout
+		loadHomeworldDefaultSaveData();
+		loadNpcBornData();
+        loadBlossomResources();
 
         Grasscutter.getLogger().info(translate("messages.status.resources.finish"));
     }
