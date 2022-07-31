@@ -13,7 +13,6 @@ import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 
 import javax.annotation.Nullable;
 
@@ -22,17 +21,12 @@ import static emu.grasscutter.config.Configuration.*;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.ByteBuffer;
-import java.nio.IntBuffer;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
@@ -44,11 +38,9 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 
 public final class Language {
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
@@ -245,8 +237,8 @@ public final class Language {
         }
     }
 
-    private static final int TEXTMAP_CACHE_VERSION = 0x9CCACE01;
-    @EqualsAndHashCode public static class TextStrings {
+    private static final int TEXTMAP_CACHE_VERSION = 0x9CCACE02;
+    @EqualsAndHashCode public static class TextStrings implements Serializable {
         public static final String[] ARR_LANGUAGES = {"EN", "CHS", "CHT", "JP", "KR", "DE", "ES", "FR", "ID", "PT", "RU", "TH", "VI"};
         public static final String[] ARR_GC_LANGUAGES = {"en-US", "zh-CN", "zh-TW", "JP", "KR", "DE", "es-ES", "fr-FR", "ID", "PT", "ru-RU", "TH", "VI"};
         public static final int NUM_LANGUAGES = ARR_LANGUAGES.length;
@@ -282,33 +274,6 @@ public final class Language {
                 else
                     this.strings[i] = nullReplacement;
             }
-        }
-
-        /*
-         * Deserialize null-terminated UTF-8 strings.
-         */
-        public TextStrings(byte[] init) {
-            int i = 0;
-            int j;
-            for (int lang = 0; lang < NUM_LANGUAGES; lang++) {
-                for (j = i + 1; init[j] != '\0'; j++);  // Scan j to next null byte
-                this.strings[lang] = new String(init, i, j-i, StandardCharsets.UTF_8);
-                i = j + 1;
-            }
-        }
-
-        /*
-         * Serialize to null-terminated UTF-8 strings.
-         */
-        public byte[] serialize() {
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            try {
-                for (int lang = 0; lang < NUM_LANGUAGES; lang++) {
-                    outputStream.write(this.strings[lang].getBytes(StandardCharsets.UTF_8));
-                    outputStream.write(0);
-                }
-            } catch (IOException ignored) {};
-            return outputStream.toByteArray();
         }
 
         public String get(String languageCode) {
@@ -370,71 +335,21 @@ public final class Language {
     }
 
     private static Int2ObjectMap<TextStrings> loadTextMapsCache() throws Exception {
-        Int2ObjectMap<TextStrings> output = new Int2ObjectOpenHashMap<>();
-        try (DataInputStream file = new DataInputStream(new BufferedInputStream(Files.newInputStream(TEXTMAP_CACHE_PATH), 0x100000))) {
-            // [int version] [int numHashes]
-            // [[int hash] [int textStringIndex]] ...
-            // [int numTextStrings]
-            // [[int numBytes] [utf8 strings for each language]] ...
+        try (ObjectInputStream file = new ObjectInputStream(new BufferedInputStream(Files.newInputStream(TEXTMAP_CACHE_PATH), 0x100000))) {
             final int fileVersion = file.readInt();
             if (fileVersion != TEXTMAP_CACHE_VERSION)
                 throw new Exception("Invalid cache version");
-            final int numHashes = file.readInt();
-
-            byte[] mapPairsBytes = new byte[numHashes*8];
-            file.read(mapPairsBytes, 0, numHashes*8);
-
-            final int numTextStrings = file.readInt();
-            Grasscutter.getLogger().debug("Loading %d keys and %d TextStrings".formatted(numHashes, numTextStrings));
-            TextStrings[] textStrings = new TextStrings[numTextStrings];
-            for (int i = 0; i < numTextStrings; i++) {
-                int byteLength = file.readInt();
-                byte[] textStringBytes = new byte[byteLength];
-                file.read(textStringBytes, 0, byteLength);
-                textStrings[i] = new TextStrings(textStringBytes);
-            }
-
-            ByteBuffer mapPairsByteBuffer = ByteBuffer.wrap(mapPairsBytes);
-            IntBuffer mapPairsIntBuffer = mapPairsByteBuffer.asIntBuffer();
-            for (int i = 0; i < numHashes; i++) {
-                output.put(mapPairsIntBuffer.get(i*2), textStrings[mapPairsIntBuffer.get(i*2+1)]);
-            }
+            return (Int2ObjectMap<TextStrings>) file.readObject();
         }
-        return output;
     }
 
     private static void saveTextMapsCache(Int2ObjectMap<TextStrings> input) throws IOException {
-        final int numHashes = input.size();
-        final Object2IntMap<TextStrings> canonicalTextStrings = new Object2IntOpenHashMap<>();
-        final Int2ObjectMap<TextStrings> canonicalTextStringsInv = new Int2ObjectOpenHashMap<>();
-        for (TextStrings t : input.values()) {
-            int index = canonicalTextStrings.computeIfAbsent(t, x -> canonicalTextStrings.size());
-            canonicalTextStringsInv.putIfAbsent(index, t);
-        }
-        final int numTextStrings = canonicalTextStrings.size();
-        Grasscutter.getLogger().debug("Saving %d keys and %d TextStrings".formatted(numHashes, numTextStrings));
-
         try {
             Files.createDirectory(Path.of("cache"));
         } catch (FileAlreadyExistsException ignored) {};
-        try (DataOutputStream file = new DataOutputStream(new BufferedOutputStream(Files.newOutputStream(TEXTMAP_CACHE_PATH, StandardOpenOption.CREATE), 0x100000))) {
+        try (ObjectOutputStream file = new ObjectOutputStream(new BufferedOutputStream(Files.newOutputStream(TEXTMAP_CACHE_PATH, StandardOpenOption.CREATE), 0x100000))) {
             file.writeInt(TEXTMAP_CACHE_VERSION);
-            file.writeInt(numHashes);
-            input.forEach((hash, value) -> {
-                try {
-                    file.writeInt(hash);
-                    file.writeInt(canonicalTextStrings.getInt(value));
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            });
-            file.writeInt(numTextStrings);
-            for (int i = 0; i < numTextStrings; i++) {
-                byte[] textStringsBytes = canonicalTextStringsInv.get(i).serialize();
-                file.writeInt(textStringsBytes.length);
-                file.write(textStringsBytes);
-            }
+            file.writeObject(input);
         }
     }
 
