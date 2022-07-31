@@ -123,6 +123,8 @@ public class Player {
     @Getter private List<ActiveForgeData> activeForges;
     @Getter private Map<Integer,Integer> questGlobalVariables;
     @Getter private Map<Integer, Integer> openStates;
+    @Getter private Map<Integer, List<Integer>> unlockedSceneAreas;
+    @Getter private Map<Integer, List<Integer>> unlockedScenePoints;
 
     @Transient private long nextGuid = 0;
     @Transient private int peerId;
@@ -223,6 +225,8 @@ public class Player {
         this.activeForges = new ArrayList<>();
         this.unlockedRecipies = new HashMap<>();
         this.openStates = new HashMap<>();
+        this.unlockedSceneAreas = new HashMap<>();
+        this.unlockedScenePoints = new HashMap<>();
         this.sceneState = SceneLoadState.NONE;
 
         this.attackResults = new LinkedBlockingQueue<>();
