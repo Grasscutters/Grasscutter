@@ -18,6 +18,10 @@ public class BossChestInteractHandler implements ChestInteractHandler{
     }
 
     @Override
+    public boolean onInteract(GadgetChest chest, Player player) {
+        return this.onInteract(chest,player,false);
+    }
+
     public boolean onInteract(GadgetChest chest, Player player,boolean useCondensedResin) {
         var blossomRewards = player.getScene().getBlossomManager().onReward(player,chest.getGadget(),useCondensedResin);
         if(blossomRewards!=null) {
