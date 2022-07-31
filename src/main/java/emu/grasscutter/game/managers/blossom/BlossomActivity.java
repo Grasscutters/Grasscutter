@@ -58,7 +58,7 @@ public class BlossomActivity {
     public WorldChallenge getChallenge(){
         return this.challenge;
     }
-    public void setMonsters(ArrayList<EntityMonster> monsters) {
+    public void setMonsters(List<EntityMonster> monsters) {
         this.activeMonsters.clear();
         this.activeMonsters.addAll(monsters);
         for(EntityMonster monster : monsters){
@@ -93,7 +93,7 @@ public class BlossomActivity {
                 }else {
                     monsterLevel = worldLevelData.getMonsterLevel();
                 }
-                ArrayList<EntityMonster> newMonsters = new ArrayList<>();
+                List<EntityMonster> newMonsters = new ArrayList<>();
                 int willSpawn = Utils.randomRange(3,5);
                 if(generatedCount+willSpawn>goal){
                     willSpawn = goal - generatedCount;
