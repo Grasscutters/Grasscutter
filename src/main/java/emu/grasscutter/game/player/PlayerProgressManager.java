@@ -12,8 +12,8 @@ import emu.grasscutter.server.packet.send.PacketSetOpenStateRsp;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@Entity
-public class PlayerOpenStateManager extends BasePlayerDataManager {
+// @Entity
+public class PlayerProgressManager extends BasePlayerDataManager {
     // Set of open states that are never unlocked, whether they fulfill the conditions or not.
     public static final Set<Integer> BLACKLIST_OPEN_STATES = Set.of(
     48      // blacklist OPEN_STATE_LIMIT_REGION_GLOBAL to make Meledy happy. =D Remove this as soon as quest unlocks are fully implemented.
@@ -30,34 +30,31 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
         .map(s -> s.getId())
         .collect(Collectors.toSet());
 
-    // Map of all open states that this player has.
-    private Map<Integer, Integer> map;
-
-    public PlayerOpenStateManager(Player player) {
+    public PlayerProgressManager(Player player) {
         super(player);
     }
 
-    public synchronized Map<Integer, Integer> getOpenStateMap() {
+    /*public synchronized Map<Integer, Integer> getOpenStateMap() {
         // If no map currently exists, we create one.
         if (this.map == null) {
             this.map = new HashMap<>();
         }
         
         return this.map;
-    }
+    }*/
 
     /**********
         Direct getters and setters for open states.
     **********/
     public int getOpenState(int openState) {
-        return getOpenStateMap().getOrDefault(openState, 0);
+        return this.player.getOpenStates().getOrDefault(openState, 0);
     }
 
     private void setOpenState(int openState, int value, boolean sendNotify) {
-        int previousValue = this.getOpenStateMap().getOrDefault(openState, 0);
+        int previousValue = this.player.getOpenStates().getOrDefault(openState, 0);
 
         if (value != previousValue) {
-            this.getOpenStateMap().put(openState, value);
+            this.player.getOpenStates().put(openState, value);
 
             if (sendNotify) {
                 player.getSession().send(new PacketOpenStateChangeNotify(openState, value));
@@ -130,7 +127,7 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
         this.tryUnlockOpenStates(false);
 
         // Send notify to the client.
-        player.getSession().send(new PacketOpenStateUpdateNotify(this));
+        player.getSession().send(new PacketOpenStateUpdateNotify(this.player));
     }
 
     /**********
@@ -138,7 +135,7 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
     **********/
     public void tryUnlockOpenStates(boolean sendNotify) {
         // Get list of open states that are not yet unlocked.
-        var lockedStates = GameData.getOpenStateList().stream().filter(s -> this.getOpenStateMap().getOrDefault(s, 0) == 0).toList();
+        var lockedStates = GameData.getOpenStateList().stream().filter(s -> this.player.getOpenStates().getOrDefault(s, 0) == 0).toList();
 
         // Try unlocking all of them.
         for (var state : lockedStates) {

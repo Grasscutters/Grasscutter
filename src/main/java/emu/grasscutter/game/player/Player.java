@@ -122,6 +122,7 @@ public class Player {
     @Getter private Map<Integer, Integer> unlockedRecipies;
     @Getter private List<ActiveForgeData> activeForges;
     @Getter private Map<Integer,Integer> questGlobalVariables;
+    @Getter private Map<Integer, Integer> openStates;
 
     @Transient private long nextGuid = 0;
     @Transient private int peerId;
@@ -151,13 +152,13 @@ public class Player {
     @Getter private transient CookingManager cookingManager;
     @Getter private transient ActivityManager activityManager;
     @Getter private transient PlayerBuffManager buffManager;
+    @Getter private transient PlayerProgressManager progressManager;
 
     // Manager data (Save-able to the database)
     private PlayerProfile playerProfile;
     private TeamManager teamManager;
     private TowerData towerData;
     private PlayerGachaInfo gachaInfo;
-    private PlayerOpenStateManager openStateManager;
     private PlayerCollectionRecords collectionRecordStore;
     private ArrayList<ShopLimit> shopLimit;
 
@@ -221,6 +222,7 @@ public class Player {
         this.unlockedFurnitureSuite = new HashSet<>();
         this.activeForges = new ArrayList<>();
         this.unlockedRecipies = new HashMap<>();
+        this.openStates = new HashMap<>();
         this.sceneState = SceneLoadState.NONE;
 
         this.attackResults = new LinkedBlockingQueue<>();
@@ -233,7 +235,7 @@ public class Player {
         this.rewardedLevels = new HashSet<>();
         this.moonCardGetTimes = new HashSet<>();
         this.codex = new PlayerCodex(this);
-        this.openStateManager = new PlayerOpenStateManager(this);
+        this.progressManager = new PlayerProgressManager(this);
         this.shopLimit = new ArrayList<>();
         this.expeditionInfo = new HashMap<>();
         this.messageHandler = null;
@@ -243,6 +245,7 @@ public class Player {
         this.energyManager = new EnergyManager(this);
         this.resinManager = new ResinManager(this);
         this.forgingManager = new ForgingManager(this);
+        this.progressManager = new PlayerProgressManager(this);
         this.furnitureManager = new FurnitureManager(this);
         this.cookingManager = new CookingManager(this);
     }
@@ -276,6 +279,7 @@ public class Player {
         this.resinManager = new ResinManager(this);
         this.deforestationManager = new DeforestationManager(this);
         this.forgingManager = new ForgingManager(this);
+        this.progressManager = new PlayerProgressManager(this);
         this.furnitureManager = new FurnitureManager(this);
         this.cookingManager = new CookingManager(this);
     }
@@ -436,7 +440,7 @@ public class Player {
             this.updateProfile();
 
             // Handle open state unlocks from level-up.
-            this.getOpenStateManager().tryUnlockOpenStates();
+            this.getProgressManager().tryUnlockOpenStates();
 
             return true;
         }
@@ -1191,13 +1195,6 @@ public class Player {
         return mapMarks;
     }
 
-    public PlayerOpenStateManager getOpenStateManager() {
-        if (this.openStateManager == null) {
-            this.openStateManager = new PlayerOpenStateManager(this);
-        }
-        return openStateManager;
-    }
-
     public synchronized void onTick() {
         // Check ping
         if (this.getLastPingTime() > System.currentTimeMillis() + 60000) {
@@ -1297,7 +1294,7 @@ public class Player {
     @PostLoad
     private void onLoad() {
         this.getCodex().setPlayer(this);
-        this.getOpenStateManager().setPlayer(this);
+        this.getProgressManager().setPlayer(this);
         this.getTeamManager().setPlayer(this);
     }
 
@@ -1376,7 +1373,7 @@ public class Player {
         this.forgingManager.sendForgeDataNotify();
         this.resinManager.onPlayerLogin();
         this.cookingManager.sendCookDataNofity();
-        this.getOpenStateManager().onPlayerLogin();
+        this.getProgressManager().onPlayerLogin();
 
         getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
