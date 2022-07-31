@@ -551,13 +551,19 @@ public class BlossomManager {
         return scene.getWorld().getWorldLevel();
     }
 
-    public List<GameItem> onReward(Player who,EntityGadget chest) {
+    public List<GameItem> onReward(Player who,EntityGadget chest,boolean useCondensedResin) {
         synchronized (activeChests) {
             var it = activeChests.iterator();
             while (it.hasNext()) {
                 var activeChest = it.next();
                 if (activeChest.getChest() == chest) {
-                    if (who.getInventory().payItem(106, 20)) {
+                    boolean pay;
+                    if(useCondensedResin){
+                        pay = who.getInventory().payItem(220007, 1);
+                    }else{
+                        pay = who.getInventory().payItem(106, 20);
+                    }
+                    if (pay) {
                         int worldLevel = getWorldLevel();
                         List<GameItem> items = new ArrayList<>();
                         List<BlossomReward> blossomRewards;
@@ -571,7 +577,11 @@ public class BlossomManager {
                             return null;
                         }
                         for (BlossomReward blossomReward : blossomRewards) {
-                            items.add(new GameItem(blossomReward.itemId, Utils.randomRange(blossomReward.minCount, blossomReward.maxCount)));
+                            int rewardCount = Utils.randomRange(blossomReward.minCount, blossomReward.maxCount);
+                            if(useCondensedResin){
+                                rewardCount *=2;//Double!
+                            }
+                            items.add(new GameItem(blossomReward.itemId,rewardCount));
                         }
                         it.remove();
                         recycleLeyLineGadgetEntity(List.of(activeChest.getGadget()));

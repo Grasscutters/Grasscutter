@@ -32,7 +32,7 @@ public class GadgetChest extends GadgetContent {
             player.sendPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_OPEN_CHEST, InterOpType.INTER_OP_TYPE_START));
             return false;
         }else {
-            var success = handler.onInteract(this, player);
+            var success = handler.onInteract(this, player,req.getIsUseCondenseResin());
             if (!success) {
                 return false;
             }

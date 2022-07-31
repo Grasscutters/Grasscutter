@@ -7,5 +7,5 @@ public interface ChestInteractHandler {
 
     boolean isTwoStep();
 
-    boolean onInteract(GadgetChest chest, Player player);
+    boolean onInteract(GadgetChest chest, Player player,boolean useCondensedResin);
 }
