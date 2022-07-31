@@ -35,7 +35,7 @@ public class GadgetChest extends GadgetContent {
         }else {
             boolean success;
             if(handler instanceof BossChestInteractHandler bossChestInteractHandler){
-                success = bossChestInteractHandler.onInteract(this, player);
+                success = bossChestInteractHandler.onInteract(this, player,req.getIsUseCondenseResin());
             }else{
                 success = handler.onInteract(this, player);
             }
