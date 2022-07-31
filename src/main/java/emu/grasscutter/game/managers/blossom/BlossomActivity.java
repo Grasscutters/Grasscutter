@@ -33,10 +33,10 @@ public class BlossomActivity {
     private int generatedCount;
     private final int worldLevel;
     private boolean pass=false;
-    private final ArrayList<EntityMonster> activeMonsters = new ArrayList<>();
+    private final List<EntityMonster> activeMonsters = new ArrayList<>();
     private final Queue<Integer> candidateMonsters = new ArrayDeque<>();
     private static final int BLOOMING_GADGET_ID = 70210109;
-    public BlossomActivity(EntityGadget entityGadget, ArrayList<Integer> monsters, int timeout, int worldLevel) {
+    public BlossomActivity(EntityGadget entityGadget, List<Integer> monsters, int timeout, int worldLevel) {
         this.tempSceneGroup = new SceneGroup();
         this.tempSceneGroup.id = entityGadget.getId();
         this.gadget=entityGadget;
