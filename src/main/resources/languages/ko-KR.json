@@ -1,0 +1,405 @@
+{
+  "messages": {
+    "game": {
+      "port_bind": "게임 서버가 포트 %s에서 열렸습니다.",
+      "connect": "클라이언트가 %s에서 연결됐습니다.",
+      "disconnect": "클라이언트가 %s에서 연결이 끊겼습니다.",
+      "game_update_error": "게임 업데이트 도중 오류가 발생했습니다.",
+      "command_error": "명령어 오류:"
+    },
+    "dispatch": {
+      "port_bind": "[Dispatch] 디스패치 서버가 포트 %s에서 열렸습니다.",
+      "request": "[Dispatch] Client %s %s request: %s",
+      "keystore": {
+        "general_error": "[Dispatch] 키스토어 로딩중 오류가 발생했습니다!",
+        "password_error": "[Dispatch] 키스토어를 로딩할 수 없습니다. 기본 키스토어 암호로 시도 중...",
+        "no_keystore_error": "[Dispatch] SSL인증서를 찾을 수 없습니다! HTTP서버로 되돌리는 중.",
+        "default_password": "[Dispatch] 기본 키스토어 암호가 성공적으로 로딩됐습니다. config.json에서 암호를 123456으로 설정해 보십시오."
+      },
+      "authentication": {
+        "default_unable_to_verify": "[Authentication] Something called the verifyUser method which is unavailable in the default authentication handler."
+      },
+      "no_commands_error": "디스패치 전용 모드에서는 명령어가 지원되지 않습니다.",
+      "unhandled_request_error": "[Dispatch] Potential unhandled %s request: %s.",
+      "account": {
+        "login_attempt": "[Dispatch] %s 클라이언트에서 로그인을 시도하고 있습니다.",
+        "login_success": "[Dispatch] %s 클라이언트가 %s로 로그인 했습니다.",
+        "login_max_player_limit": "[Dispatch] %s 클라이언트 로그인 실패: 온라인 플레이어 수가 최대에 도달했습니다.",
+        "login_token_attempt": "[Dispatch] %s 클라이언트가 토큰을 통해 로그인을 시도하고 있습니다.",
+        "login_token_error": "[Dispatch] %s 클라이언트가 토큰을 통한 로그인에 실패했습니다",
+        "login_token_success": "[Dispatch] %s 클라이언트가 토큰을 통해 %s로 로그인 했습니다.",
+        "login_password_error": "[Dispatch] %s 클라이언트가 암호를 통한 로그인에 실패했습니다.",
+        "login_password_storage_error": "[Dispatch] %s 클라이언트의 암호가 데이터베이스에 없기 때문에 로그인에 실패했습니다.",
+        "combo_token_success": "[Dispatch] %s 클라이언트가 콤보 토큰을 교환했습니다.",
+        "combo_token_error": "[Dispatch] %s 클라이언트가 콤보 토큰 교환에 실패했습니다.",
+        "account_login_create_success": "[Dispatch] %s 클라이언트 로그인 실패: %s 계정 생성됨.",
+        "account_login_create_error": "[Dispatch] %s 클라이언트 로그인 실패: 계정 생성 실패.",
+        "account_login_exist_error": "[Dispatch] %s 클라이언트 로그인 실패: 계정을 찾을 수 없음.",
+        "account_cache_error": "계정 캐시데이터 오류.",
+        "session_key_error": "잘못된 세션 키.",
+        "username_error": "아이디를 찾을 수 없습니다.",
+        "username_create_error": "아이디를 찾을 수 없음, 생성 실패.",
+        "password_error": "암호가 올바르지 않습니다",
+        "password_length_error": "암호의 길이는 8자리보다 크거나 같아야합니다.",
+        "password_storage_error": "계정에 암호가 없습니다. 관리자에게 문의하십시오.",
+        "server_max_player_limit": "온라인 플레이어 수가 최대에 도달했습니다."
+      },
+      "router_error": "[Dispatch] 라우터에 연결할 수 없습니다."
+    },
+    "status": {
+      "free_software": "Grasscutter는 무료 소프트웨어입니다. 만약 당신이 이것을 구매했다면, 사기일 가능성이 높습니다. 홈페이지: https://github.com/Grasscutters/Grasscutter",
+      "starting": "Grasscutter 시작중...",
+      "shutdown": "종료중...",
+      "done": "실행 완료! 도움이 필요하면, \"help\"를 입력하세요",
+      "error": "오류가 발생했습니다.",
+      "welcome": "Grasscutter에 오신것을 환영합니다!",
+      "run_mode_error": "잘못된 서버 실행 모드: %s.",
+      "run_mode_help": "서버 실행 모드는 'HYBRID', 'DISPATCH_ONLY' 또는 'GAME_ONLY'여야 합니다. Grasscutter를 실행할 수 없습니다...",
+      "create_resources": "resources폴더 생성 중...",
+      "resources_error": "'BinOutput'과 'ExcelBinOutput'을 resources폴더에 복사해주십시오.",
+      "version": "Grasscutter 버전: %s-%s",
+      "game_version": "게임 버전: %s",
+      "resources": {
+        "loading": "리소스 로딩중...",
+        "finish": "리소스 로딩완료."
+      }
+    }
+  },
+  "commands": {
+    "generic": {
+      "not_specified": "지정된 명령어가 없습니다.",
+      "unknown_command": "알 수 없는 명령어: %s",
+      "permission_error": "이 명령어를 실행할 권한이 없습니다.",
+      "console_execute_error": "이 명령어는 콘솔에서만 실행할 수 있습니다.",
+      "player_execute_error": "이 명령어는 인게임에서만 실행할 수 있습니다.",
+      "command_exist_error": "명령어를 찾을 수 없습니다.",
+      "no_usage_specified": "용도가 지정되지 않았습니다",
+      "no_description_specified": "지정된 설명이 없습니다.",
+      "set_to": "%s가 %s로 설정되었습니다.",
+      "set_for_to": "%s의 %s가 %s으로 설정되었습니다.",
+      "invalid": {
+        "amount": "개수가 잘못되었습니다.",
+        "artifactId": "성유물ID가 잘못되었습니다.",
+        "avatarId": "캐릭터ID가 잘못되었습니다.",
+        "avatarLevel": "캐릭터 레벨이 잘못되었습니다.",
+        "entityId": "엔티티ID가 잘못되었습니다.",
+        "itemId": "아이템ID가 잘못되었습니다.",
+        "itemLevel": "아이템 레벨이 잘못되었습니다.",
+        "itemRefinement": "아이템 제련 레벨이 잘못되었습니다.",
+        "statValue": "스탯값이 잘못되었습니다.",
+        "value_between": "잘못된 값: %s는 %s과 %s사이의 값이여야 합니다.",
+        "playerId": "플레이어ID가 잘못되었습니다.",
+        "uid": "UID가 잘못되었습니다.",
+        "id": "ID가 잘못되었습니다."
+      }
+    },
+    "execution": {
+      "usage_prefix": "사용법: ",
+      "player_exist_error": "플레이어를 찾을 수 없습니다.",
+      "player_offline_error": "플레이어가 온라인 상태가 아닙니다.",
+      "item_player_exist_error": "아이템 또는 UID가 잘못되었습니다.",
+      "player_exist_offline_error": "플레이어가 없거나 온라인 상태가 아닙니다.",
+      "argument_error": "인수가 잘못되었습니다.",
+      "clear_target": "타겟 정리됨.",
+      "set_target": "이후 명령은 기본적으로 @%s를 대상으로 실행됩니다.",
+      "set_target_online": "@%s가 온라인입니다. 일부 명령어에는 오프라인 대상이 필요할 수 있습니다.",
+      "set_target_offline": "@%s가 오프라인입니다. 일부 명령어에는 온라인 대상이 필요할 수 있습니다.",
+      "need_target": "이 명령어는 실행 대상의 UID가 필요합니다. <@UID>인수를 추가하거나 /target @UID로 영구적인 대상을 설정합니다.",
+      "need_target_online": "이 명령어는 온라인 상태인 실행 대상의 UID가 필요하지만, 설정된 대상은 오프라인 상태입니다. 다른 <@UID>인수를 추가하거나 /target @UID로 영구적인 대상을 설정합니다.",
+      "need_target_offline": "이 명령어는 오프라인 상태인 실행 대상의 UID가 필요하지만, 설정된 대상은 온라인 상태입니다. 다른 <@UID>인수를 추가하거나 /target @UID로 영구적인 대상을 설정합니다."
+    },
+    "status": {
+      "enabled": "활성화됨",
+      "disabled": "비활성화됨",
+      "help": "Help",
+      "success": "성공"
+    },
+    "account": {
+      "command_usage": "사용법: account <create|delete> <아이디> [UID]",
+      "invalid": "잘못된 UID.",
+      "exists": "이 아이디 또는 UID를 가진 계정이 이미 존재합니다.",
+      "create": "UID %s로 계정이 생성되었습니다.",
+      "delete": "계정이 삭제되었습니다.",
+      "no_account": "계정을 찾을 수 없습니다.",
+      "description": "사용자 계정을 수정합니다"
+    },
+    "announce": {
+      "command_usage": "사용법: announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
+      "send_success": "공지 발송에 성공했습니다, 취소하고 싶으면 /a revoke %s를 입력하세요.",
+      "refresh_success": "공지 구성파일을 새로 고쳤습니다. [Total %s]",
+      "revoke_done": "%s공지 취소 시도중.",
+      "not_found": "%s공지를 찾을 수 없습니다.",
+      "description": "모든 온라인 플레이어로부터 공지사항 발표하거나, 서버 공지사항을 관리합니다."
+    },
+    "clear": {
+      "command_usage": "사용법: clear <all|wp|art|mat> [lv<최고레벨>] [r<최고 제련레벨>] [<최고 희귀도>*]",
+      "weapons": "%s의 무기를 초기화했습니다.",
+      "artifacts": "%s의 성유물을 초기화했습니다.",
+      "materials": "%s의 재료를 초기화했습니다.",
+      "furniture": "%s의 가구를 초기화했습니다.",
+      "displays": "Cleared displays for %s.",
+      "virtuals": "Cleared virtuals for %s.",
+      "everything": "%s의 모든 아이템을 초기화했습니다.",
+      "description": "인벤토레에서 잠금된 물건을 제외한 항목을 삭제합니다. 기본적으로 4성, 1레벨, 1재련보다 낮은것만을 기준으로 하지만, 더 높게 설정할 수 있습니다."
+    },
+    "coop": {
+      "usage": "사용법: coop [호스트 UID]",
+      "success": "%s가 %s의 월드에 소환되었습니다.",
+      "description": "누군가를 다른 사람의 월드에 참여하도록 합니다. 목표가 지정되지 않으면 당신을 다인 모드로 진입시킵니다."
+    },
+    "enter_dungeon": {
+      "usage": "사용법: enterdungeon <던전ID>",
+      "changed": "%s던전으로 전환되었습니다.",
+      "not_found_error": "던전이 존재하지 않습니다.",
+      "in_dungeon_error": "이미 당신은 그 던전에 있습니다.",
+      "description": "던전에 진입합니다."
+    },
+    "give": {
+      "usage": "사용법: give <아이템ID|캐릭터ID|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [x<개수>] [lv<레벨>] [r<제련레벨>]",
+      "usage_relic": "사용법: give <성유물ID> [mainPropID] [<appendPropID>[,<times>]]... [lv<레벨 0-20>]",
+      "illegal_relic": "이 성유물ID는 블랙리스트 범위에 있습니다. 원하는 ID가 아닐 수 있습니다.",
+      "given": "%s개의 %s를 %s에게 지급했습니다.",
+      "given_with_level_and_refinement": "Give %s with level %s, refinement %s %s times to %s.",
+      "given_level": "Given %s with level %s %s times to %s.",
+      "given_avatar": "Given %s with level %s to %s.",
+      "giveall_success": "모든 아이템이 성공적으로 지급되었습니다.",
+      "description": "지정된 플레이어가 아이템을 획득합니다. 모든 무기, 캐릭터, 재료를 제공할 수 있으며, 맞춤 성유물을 제공할 수도 있습니다."
+    },
+    "heal": {
+      "success": "모든 캐릭터가 치유되었습니다.",
+      "description": "파티 내 모든 캐릭터를 치유합니다."
+    },
+    "help": {
+      "usage": "사용법: ",
+      "aliases": "별칭: ",
+      "available_commands": "사용 가능한 명령어: ",
+      "tip_need_permission": "권한: ",
+      "tip_need_no_permission": " 없음",
+      "tip_permission_targeted": " (다른 플레이어에게 사용하려면 %s권한이 필요합니다)",
+      "warn_player_has_no_permission": "알림: 당신은 이 명령어를 사용할 권한이 없습ㄴ디ㅏ.",
+      "description": "help를 입력하거나, 지정된 명령어에 대한 정보를 표시합니다"
+    },
+    "kick": {
+      "player_kick_player": "플레이어 [%s:%s]가 [%s:%s]에 의해 강제퇴장 당했습니다",
+      "server_kick_player": "플레이어 [%s:%s]를 강제퇴장 하는중...",
+      "description": "지정된 플레이어를 서버에서 강제퇴장합니다 (WIP)"
+    },
+    "killall": {
+      "usage": "사용법: killall [플레이어UID] [sceneID]",
+      "scene_not_found_in_player_world": "해당 scene에 플레이어가 없습니다.",
+      "kill_monsters_in_scene": "%s마리의 몬스터가 scene %s에서 모두 죽었습니다.",
+      "description": "모든 엔티티를 죽입니다."
+    },
+    "killCharacter": {
+      "usage": "사용법: killcharacter [플레이어ID]",
+      "success": "%s의 캐릭터를 죽였습니다.",
+      "description": "플레이어의 현재 캐릭터를 죽입니다"
+    },
+    "language": {
+      "current_language": "현재 언어는 %s 입니다.",
+      "language_changed": "%s로 언어를 바꿨습니다.",
+      "language_not_found": "현재 서버에 해당 언어가 없습니다.",
+      "description": "현재 언어를 표시하거나 변경합니다"
+    },
+    "list": {
+      "success": "%s명의 플레이어가 온라인입니다:",
+      "description": "온라인 상태의 플레이어를 표시합니다."
+    },
+    "permission": {
+      "usage": "사용법: permission <add|remove> <아이디> <permission>",
+      "add": "권한이 추가되었습니다.",
+      "has_error": "이미 해당 권한이 있습니다!",
+      "remove": "권한이 삭제되었습니다.",
+      "not_have_error": "그들은 이 권한이 없습니다!",
+      "account_error": "계정을 찾을 수 없습니다.",
+      "description": "사용자에게 권한을 부여하거나 제거합니다."
+    },
+    "position": {
+      "success": "좌표: %s, %s, %s\nScene ID: %s",
+      "description": "좌표를 출력합니다"
+    },
+    "quest": {
+      "usage": "사용법: quest <add|finish> [questID]",
+      "added": "%s 퀘스트가 추가되었습니다.",
+      "finished": "%s 퀘스트를 마쳤습니다.",
+      "not_found": "퀘스트를 찾을 수 없습니다.",
+      "invalid_id": "퀘스트ID를 찾을 수 없습니다.",
+      "description": "퀘스트를 추가하거나 완료합니다."
+    },
+    "reload": {
+      "reload_start": "구성 설정을 다시 불러오는중...",
+      "reload_done": "리로드 완료.",
+      "description": "서버 구성 설정을 다시 불러옵니다."
+    },
+    "resetConst": {
+      "reset_all": "모든 캐릭터의 별자리를 초기화합니다",
+      "success": "%s의 별자리가 초기화되었습니다. 변경 사항을 적용하려면 다시 로그인하십시오.",
+      "description": "현재 캐릭터의 별자리를 초기화합니다, 변경 사항을 보려면 명령을 사용한 후 다시 로그인 해야합니다."
+    },
+    "resetShopLimit": {
+      "usage": "사용법: resetshop <playerID>",
+      "success": "리셋 완료됨.",
+      "description": "대상 플레이어의 상점의 새로고침 시간을 초기화합니다"
+    },
+    "sendMail": {
+      "usage": "사용법: sendmail <userID|all|help> [templateID]",
+      "user_not_exist": "아이디가 '%s'인 사용자가 없습니다.",
+      "start_composition": "메세지 작성 시작중.\n계속하려면 '/sendmail <title>'을 입력하십시오.\n'/sendmail stop'도 언제든지 사용할 수 있습니다.",
+      "templates": "Mail templates coming soon implemented...",
+      "invalid_arguments": "잘못된 인수입니다.",
+      "send_cancel": "메세지 전송이 취소되었습니다",
+      "send_done": "%s에게 메세지가 전송되었습니다!",
+      "send_all_done": "모든 유저에게 메세지가 전송되었습니다!",
+      "not_composition_end": "메세지 작성이 완료되지 않았습니다.\n'/sendmail %s' 또는 '/sendmail stop'을 사용해 취소할 수 있습니다",
+      "please_use": "'/sendmail %s'을 사용하십시오.",
+      "set_title": "'%s'가 메세지 제목으로 설정되었습니다.\n'계속하려면 /sendmail <content>'을 사용하십시오.",
+      "set_contents": "메세지 내용이 '%s'으로 설정되었습니다.\n'계속하려면 /sendmail <sender>'을 사용하십시오.",
+      "set_message_sender": "메세지 발송자가 '%s'으로 설정되었습니다.\n계속하려면 '/sendmail <itemID|itemName|finish> [amount] [level]'을 사용하십시오.",
+      "send": "%s 의 %s을 (레벨 %s)을 메세지에 첨부했습니다.\n계속 항목을 추가하거나, '/sendmail finish'을 사용해 메세지를 보낼 수 있습니다..",
+      "invalid_arguments_please_use": "잘못된 인수입니다.\n '/sendmail %s'을 사용하십시오",
+      "title": "<title>",
+      "message": "<message>",
+      "sender": "<sender>",
+      "arguments": "<itemID|itemName|finish> [amount] [level]",
+      "error": "오류: Invalid construction stage %s. Check console for stacktrace.",
+      "description": "지정된 사용자에게 메세지를 보냅니다. 이 명령어의 사용법은 세부 내용에 따라 달라집니다."
+    },
+    "sendMessage": {
+      "usage": "사용법: sendmessage <메세지>",
+      "success": "메세지 전송 성공.",
+      "description": "서버가 플레이어에게 메세지를 전송합니다. 목표를 지정하지 않고 명령어를 사용하는 경우, 서버의 모든 인원에게 메세지가 발송됩니다."
+    },
+    "setFetterLevel": {
+      "usage": "사용법: setfetterlevel <레벨>",
+      "range_error": "호감도 지수는 0 과 10 사이에 위치해야합니다.",
+      "success": "호감도 지수가 %s로 설정되었습니다.",
+      "level_error": "잘못된 호감도 지수",
+      "description": "파티 내 자신의 캐릭터의 호감도를 설정합니다."
+    },
+    "setProp": {
+      "usage": "사용법: setprop|prop <prop> <값>\n\t사용할 수 있는 <prop> 종류: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
+      "description": "계정의 속성을 변경합니다. godmode등이 이를 통해 활성화 될 수 있으며, 나선비경을 잠금해제하거나, 기행의 레벨을 조정하는 등의 명령또한 이를 통해 가능합니다."
+    },
+    "setStats": {
+      "usage": "사용법: setstats|stats <stat> <값>\n\t사용할 수 있는 <stat> 종류: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
+      "description": "당신의 현재 캐릭터의 스텟들을 조절합니다."
+    },
+    "spawn": {
+      "usage": "사용법: spawn <엔티티ID> [개체 수] [level(몬스터만)] [<x> <y> <z>(몬스터만 가능, 선택형)]",
+      "success": " %s 개의 %s 를 소환하는데 성공했습니다.",
+      "limit_reached": "scene당 소환 엔티티 한계입니다. 대신 %s 개의 엔티티를 소환합니다.",
+      "description": "엔티티를 당신 근처에 소환합니다"
+    },
+    "stop": {
+      "success": "서버 닫는중...",
+      "description": "서버를 중지합니다"
+    },
+    "talent": {
+      "usage_1": "특성 레벨을 저잘하기위한 방법으로는: /talent set <특성ID> <값>",
+      "usage_2": "특성 레벨을 조절하는 다른 방법으로는: /talent <n 또는 e 또는 q> <값>",
+      "usage_3": "특성 ID를 가지기 위해서는: /talent getid",
+      "lower_16": "불분명한 특성 레벨. 특성의 레벨은 16 미만이여야합니다.",
+      "set_id": "틀성을 %s 로 조정합니다.",
+      "set_atk": "일반 공격 특성을 %s 로 조정합니다.",
+      "set_e": "특성 E를 %s 로 조정합니다.",
+      "set_q": "특성 Q를 %s 로 조정합니다.",
+      "invalid_skill_id": "잘못된 스킬ID.",
+      "set_this": "이 스킬의 레벨을 %s로 조정합니다.",
+      "invalid_level": "불분명한 스킬 레벨.",
+      "normal_attack_id": "기본공격 ID %s.",
+      "e_skill_id": "E 스킬 ID %s.",
+      "q_skill_id": "Q 스킬 ID %s.",
+      "description": "현재 캐릭터의 특성 레벨을 조정합니다"
+    },
+    "team": {
+      "usage": "사용법: team <add|remove|set> [캐릭터ID,...] [index|first|last|index-index,...]",
+      "invalid_usage": "잘못된 사용.",
+      "add_usage": "Usage (add): team add <캐릭터ID,...> [index]",
+      "invalid_index": "잘못된 목차.",
+      "add_too_much": "팀에 넣을 수 있는 캐릭터 수의 최대는 %d 명 입니다.",
+      "failed_to_add_avatar": "추가하는데 실패했습니다 캐릭터 ID %s.",
+      "remove_usage": "Usage (remove): team remove <index|first|last|index-index,...>",
+      "failed_to_parse_index": "분석에 실패함 index: %s",
+      "remove_too_much": "팀에는 최소 1명의 캐릭터가 편성 되어야 합니다.",
+      "ignore_index": "Ignored index(es): %s",
+      "set_usage": "Usage (set): team set <index> <캐릭터ID>",
+      "index_out_of_range": "지정된 목차는 범위 밖에 있습니다.",
+      "failed_parse_avatar_id": "분석에 실패한 캐릭터 ID: %s",
+      "avatar_already_in_team": "해당 캐릭터는 이미 팀에 포함되어 있습니다.",
+      "avatar_not_found": "캐릭터 %d 발견되지 않음.",
+      "description": "당신의 팀을 수정으로 수정합니다."
+    },
+    "teleportAll": {
+      "success": "모든 플레이어를 당신의 위치로 이동합니다.",
+      "error": "MP 모드.",
+      "description": "당신의 월드에 있는 모든 플레이어들을 당신의 위치로 이동시킵니다."
+    },
+    "teleport": {
+      "usage_server": "사용법: tp @<플레이어ID> <x> <y> <z> [sceneID]",
+      "usage": "사용법: tp [@<플레이어ID>] <x> <y> <z> [sceneID]",
+      "specify_player_id": "플레이어 ID를 측정하십시오.",
+      "invalid_position": "위치가 잘못되었습니다.",
+      "exists_error": "scene가 존재하지 않습니다..",
+      "success": " %s 을(를) %s, %s, %s 로 이동시켰습니다. scene %s.",
+      "description": "플레이어의 위치를 이동시킵니다."
+    },
+    "weather": {
+      "usage": "사용법: weather [날씨ID] [climateType]\n날씨 ID들은 WeatherExcelConfigData.json에서 찾을 수 있습니다.\n날씨 타입: sunny, cloudy, rain, thunderstorm, snow, mist",
+      "success": "설정 날씨 ID %s 를 %s 로.",
+      "status": "현재 날씨 ID 는 %s 기후는 %s입니다.",
+      "description": "날씨 ID와 기후를 변경합니다. 날씨 ID들은 WeatherExcelConfigData.json에서 찾을 수 있습니다.\n날씨 타입: sunny, cloudy, rain, thunderstorm, snow, mist"
+    },
+    "ban": {
+      "command_usage": "사용법: ban <@플레이어ID> [timestamp] [reason]",
+      "success": "성공.",
+      "failure": "실패, 플레이어가 발견되지 않았습니다.",
+      "invalid_time": "timestamp를 분석할 수 없습니다.",
+      "description": "플레이어를 밴합니다."
+    },
+    "unlockall": {
+      "success": "%s의 모든 오픈 스탯을 잠금 해제합니다.",
+      "description": "플레이어의 모든 오픈 스탯을 잠금 해제합니다."
+    },
+    "unban": {
+      "command_usage": "사용법: unban <@플레이어ID>",
+      "success": "성공.",
+      "failure": "실패, 플레이어를 찾을 수 없습니다.",
+      "description": "플레이어에 대한 밴을 해제합니다"
+    }
+  },
+  "gacha": {
+    "details": {
+      "title": "배너 상세",
+      "available_five_stars": "획득 가능한 5성 아이템",
+      "available_four_stars": "획득 가능한 4성 아이템",
+      "available_three_stars": "획득 가능한 3성 아이템"
+    },
+    "records": {
+      "title": "가챠 기록",
+      "date": "날짜",
+      "item": "아이템"
+    }
+  },
+  "documentation": {
+    "handbook": {
+      "title": "GM 핸드북",
+      "title_commands": "명령어",
+      "title_avatars": "캐릭터",
+      "title_items": "아이템",
+      "title_scenes": "장면",
+      "title_monsters": "몬스터",
+      "header_id": "Id",
+      "header_command": "명령러",
+      "header_description": "설명",
+      "header_avatar": "캐릭터",
+      "header_item": "아이템",
+      "header_scene": "장면",
+      "header_monster": "몬스터"
+    },
+    "index": {
+      "title": "Documentation",
+      "handbook": "GM Handbook",
+      "gacha_mapping": "Gacha mapping JSON"
+    }
+  }
+}
