@@ -3,7 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.event.player.PlayerTeleportEvent;
+import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.utils.Position;
 
 import java.util.List;
@@ -41,29 +41,21 @@ public final class TeleportCommand implements CommandHandler {
                 }  // Fallthrough
             case 3:
                 try {
-                    x = parseRelative(args.get(0), x);
-                    y = parseRelative(args.get(1), y);
-                    z = parseRelative(args.get(2), z);
+                    x = this.parseRelative(args.get(0), x);
+                    y = this.parseRelative(args.get(1), y);
+                    z = this.parseRelative(args.get(2), z);
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.invalid_position"));
                 }
                 break;
             default:
-                sendUsageMessage(sender);
+                this.sendUsageMessage(sender);
                 return;
         }
 
         Position target_pos = new Position(x, y, z);
-        PlayerTeleportEvent event = new PlayerTeleportEvent(targetPlayer, PlayerTeleportEvent.TeleportType.COMMAND,
-            targetPlayer.getPosition(), target_pos);
-        event.call();
+        boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, TeleportType.COMMAND, target_pos);
 
-        // Return if event was cancelled.
-        if(event.isCanceled()) {
-            return;
-        }
-
-        boolean result = targetPlayer.getWorld().transferPlayerToScene(targetPlayer, sceneId, event.getDestination());
         if (!result) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.exists_error"));
         } else {
