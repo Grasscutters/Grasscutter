@@ -94,8 +94,8 @@ public final class Grasscutter {
         boolean exitEarly = false;
         for (String arg : args) {
             switch (arg.toLowerCase()) {
-                case "-handbook" -> {
-                    Tools.createGmHandbook();
+                case "-handbook", "-handbooks" -> {
+                    Tools.createGmHandbooks();
                     exitEarly = true;
                 }
                 case "-dumppacketids" -> {
