@@ -1,0 +1,119 @@
+{
+  "0": [{
+    "itemId": 202,
+    "maxCount": 12000,
+    "minCount": 12000
+  }, {
+    "itemId": 105,
+    "maxCount": 20,
+    "minCount": 20
+  }, {
+    "itemId": 102,
+    "maxCount": 100,
+    "minCount": 100
+  }],
+  "1": [{
+    "itemId": 202,
+    "maxCount": 20000,
+    "minCount": 20000
+  }, {
+    "itemId": 105,
+    "maxCount": 20,
+    "minCount": 20
+  }, {
+    "itemId": 102,
+    "maxCount": 100,
+    "minCount": 100
+  }],
+  "2": [{
+    "itemId": 202,
+    "maxCount": 28000,
+    "minCount": 28000
+  }, {
+    "itemId": 105,
+    "maxCount": 20,
+    "minCount": 20
+  }, {
+    "itemId": 102,
+    "maxCount": 100,
+    "minCount": 100
+  }],
+  "3": [{
+    "itemId": 202,
+    "maxCount": 36000,
+    "minCount": 36000
+  }, {
+    "itemId": 105,
+    "maxCount": 20,
+    "minCount": 20
+  }, {
+    "itemId": 102,
+    "maxCount": 100,
+    "minCount": 100
+  }],
+  "4": [{
+    "itemId": 202,
+    "maxCount": 44000,
+    "minCount": 44000
+  }, {
+    "itemId": 105,
+    "maxCount": 20,
+    "minCount": 20
+  }, {
+    "itemId": 102,
+    "maxCount": 100,
+    "minCount": 100
+  }],
+  "5": [{
+    "itemId": 202,
+    "maxCount": 52000,
+    "minCount": 52000
+  }, {
+    "itemId": 105,
+    "maxCount": 20,
+    "minCount": 20
+  }, {
+    "itemId": 102,
+    "maxCount": 100,
+    "minCount": 100
+  }],
+  "6": [{
+    "itemId": 202,
+    "maxCount": 60000,
+    "minCount": 60000
+  }, {
+    "itemId": 105,
+    "maxCount": 20,
+    "minCount": 20
+  }, {
+    "itemId": 102,
+    "maxCount": 100,
+    "minCount": 100
+  }],
+  "7": [{
+    "itemId": 202,
+    "maxCount": 60000,
+    "minCount": 60000
+  }, {
+    "itemId": 105,
+    "maxCount": 20,
+    "minCount": 20
+  }, {
+    "itemId": 102,
+    "maxCount": 100,
+    "minCount": 100
+  }],
+  "8": [{
+    "itemId": 202,
+    "maxCount": 60000,
+    "minCount": 60000
+  }, {
+    "itemId": 105,
+    "maxCount": 20,
+    "minCount": 20
+  }, {
+    "itemId": 102,
+    "maxCount": 100,
+    "minCount": 100
+  }]
+}

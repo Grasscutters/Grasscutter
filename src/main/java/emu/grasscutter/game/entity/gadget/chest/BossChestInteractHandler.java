@@ -19,6 +19,17 @@ public class BossChestInteractHandler implements ChestInteractHandler{
 
     @Override
     public boolean onInteract(GadgetChest chest, Player player) {
+        return this.onInteract(chest,player,false);
+    }
+
+    public boolean onInteract(GadgetChest chest, Player player,boolean useCondensedResin) {
+        var blossomRewards = player.getScene().getBlossomManager().onReward(player,chest.getGadget(),useCondensedResin);
+        if(blossomRewards!=null) {
+            player.getInventory().addItems(blossomRewards, ActionReason.OpenWorldBossChest);
+            player.sendPacket(new PacketGadgetAutoPickDropInfoNotify(blossomRewards));
+            return true;
+        }
+
         var worldDataManager = chest.getGadget().getScene().getWorld().getServer().getWorldDataSystem();
         var monster = chest.getGadget().getMetaGadget().group.monsters.get(chest.getGadget().getMetaGadget().boss_chest.monster_config_id);
         var reward = worldDataManager.getRewardByBossId(monster.monster_id);

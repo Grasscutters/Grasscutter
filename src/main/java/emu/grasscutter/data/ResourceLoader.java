@@ -10,6 +10,7 @@ import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
 import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.common.ScenePointConfig;
+import emu.grasscutter.game.managers.blossom.BlossomReward;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
@@ -52,6 +53,23 @@ public class ResourceLoader {
 
         return classList;
     }
+    private static void loadBlossomResources() {
+
+        try (InputStream data = DataLoader.load("BlossomBlueRewords.json", false)) {
+            GameDepot.BLOSSOM_REWARDS_BLUE.putAll(Grasscutter.getGsonFactory().fromJson(new InputStreamReader(data),
+                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class, BlossomReward.class).getType()).getType()));
+        } catch (Exception ignored) {}
+
+        try (InputStream data = DataLoader.load("BlossomGoldenRewords.json", false)) {
+            GameDepot.BLOSSOM_REWARDS_GOLDEN.putAll(Grasscutter.getGsonFactory().fromJson(new InputStreamReader(data),
+                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class, BlossomReward.class).getType()).getType()));
+        } catch (Exception ignored) {}
+
+        try (InputStream data = DataLoader.load("BlossomMonsters.json", false)) {
+            GameDepot.BLOSSOM_MONSTERS_DIFFICULTY.putAll(Grasscutter.getGsonFactory().fromJson(new InputStreamReader(data),
+                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class,Integer.class).getType()).getType()));
+        } catch (Exception ignored) {}
+    }
 
     public static void loadAll() {
         Grasscutter.getLogger().info(translate("messages.status.resources.loading"));
@@ -73,6 +91,7 @@ public class ResourceLoader {
 		// Load default home layout
 		loadHomeworldDefaultSaveData();
 		loadNpcBornData();
+        loadBlossomResources();
 
         Grasscutter.getLogger().info(translate("messages.status.resources.finish"));
     }

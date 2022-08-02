@@ -13,20 +13,20 @@ import emu.grasscutter.server.packet.send.PacketSelectWorktopOptionRsp;
 
 @Opcodes(PacketOpcodes.SelectWorktopOptionReq)
 public class HandlerSelectWorktopOptionReq extends PacketHandler {
-	
+
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		SelectWorktopOptionReq req = SelectWorktopOptionReq.parseFrom(payload);
-		
+
 		try {
 			GameEntity entity = session.getPlayer().getScene().getEntityById(req.getGadgetEntityId());
-			
-			if (entity == null || !(entity instanceof EntityGadget)) {
+
+			if (!(entity instanceof EntityGadget)) {
 				return;
 			}
-
+            session.getPlayer().getScene().selectWorktopOptionWith(req);
 			session.getPlayer().getScene().getScriptManager().callEvent(
-					EventType.EVENT_SELECT_OPTION, 
+					EventType.EVENT_SELECT_OPTION,
 					new ScriptArgs(entity.getConfigId(), req.getOptionId())
 			);
 		} finally {
