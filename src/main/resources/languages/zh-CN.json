@@ -257,11 +257,11 @@
       "description": "向玩家以服务器的身份发送消息。如果没有指定目标，则向服务器的全部玩家发送"
     },
     "setConst": {
-      "range_error": "命座等级必须是 0~6级",
+      "range_error": "命座等级必须是 %s~6级",
       "level_error": "无效的命座等级",
-      "fail": "命座等级设置失败",
-      "failed_success": "命座 %s 已设置为 %s. 请传送到重载场景或重新登录查看效果",
-      "success": "命座 %s 已设置为 %s.",
+      "action_error": "🇺🇸Invalid action.",
+      "set_success": "命座 %s 已设置为 %s.",
+      "toggle_success": "🇺🇸Constellation %s for %s has been toggled.",
       "description": "为当前活跃角色设置命座等级"
     },
     "setFetterLevel": {

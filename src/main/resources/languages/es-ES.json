@@ -257,11 +257,11 @@
       "description": "Envía un mensaje a un jugador como servidor. Si se usa sin un objetivo fijado, lo envía a todos los jugadores del servidor."
     },
     "setConst": {
-      "range_error": "El nivel de constelación debe estar entre 0 y 6.",
+      "range_error": "El nivel de constelación debe estar entre %s y 6.",
       "level_error": "Nivel de constelación inválido.",
-      "fail": "Error al establecer la constelación.",
-      "failed_success": "Las constelaciones de %s han sido establecidas a %s. Por favor reinicia el escenario para ver los cambios.",
-      "success": "Las constelaciones de %s han sido establecidas a %s.",
+      "action_error": "🇺🇸Invalid action.",
+      "set_success": "Las constelaciones de %s han sido establecidas a %s.",
+      "toggle_success": "🇺🇸Constellation %s for %s has been toggled.",
       "description": "Establece el nivel de constelación para tu personaje actual"
     },
     "setFetterLevel": {

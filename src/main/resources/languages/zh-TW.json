@@ -257,11 +257,11 @@
       "description": "向指定玩家發送訊息。"
     },
     "setConst": {
-      "range_error": "命座必須在0到6之間。",
+      "range_error": "命座必須在%s到6之間。",
       "level_error": "無效的命座等級。",
-      "fail": "設定命座失敗。",
-      "failed_success": "%s的命之座已設定為成%s，重新登入後將會生效。",
-      "success": "%s的命之座已設定為成%s。",
+      "action_error": "🇺🇸Invalid action.",
+      "set_success": "🇺🇸Constellations for %s have been set to %s.",
+      "toggle_success": "🇺🇸Constellation %s for %s has been toggled.",
       "description": "設定當前角色的命之座。"
     },
     "setFetterLevel": {
