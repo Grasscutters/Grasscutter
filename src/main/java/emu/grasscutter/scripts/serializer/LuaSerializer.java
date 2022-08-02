@@ -29,22 +29,70 @@ public class LuaSerializer implements Serializer {
 	public <T> T toObject(Class<T> type, Object obj) {
 		return serialize(type, (LuaTable) obj);
 	}
-	
-	public <T> List<T> serializeList(Class<T> type, LuaTable table) {
+
+    @Override
+    public <T> Map<String, T> toMap(Class<T> type, Object obj) {
+        return serializeMap(type, (LuaTable) obj);
+    }
+
+    private <T> Map<String,T> serializeMap(Class<T> type, LuaTable table) {
+        Map<String,T> map = new HashMap<>();
+
+        if (table == null) {
+            return map;
+        }
+
+        try {
+            LuaValue[] keys = table.keys();
+            for (LuaValue k : keys) {
+                try {
+                    LuaValue keyValue = table.get(k);
+
+                    T object = null;
+
+                    if (keyValue.istable()) {
+                        object = serialize(type, keyValue.checktable());
+                    } else if (keyValue.isint()) {
+                        object = (T) (Integer) keyValue.toint();
+                    } else if (keyValue.isnumber()) {
+                        object = (T) (Float) keyValue.tofloat(); // terrible...
+                    } else if (keyValue.isstring()) {
+                        object = (T) keyValue.tojstring();
+                    } else if (keyValue.isboolean()) {
+                        object = (T) (Boolean) keyValue.toboolean();
+                    } else {
+                        object = (T) keyValue;
+                    }
+
+                    if (object != null) {
+                        map.put(String.valueOf(k),object);
+                    }
+                } catch (Exception ex) {
+
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return map;
+    }
+
+    public <T> List<T> serializeList(Class<T> type, LuaTable table) {
 		List<T> list = new ArrayList<>();
-		
+
 		if (table == null) {
 			return list;
 		}
-		
+
 		try {
 			LuaValue[] keys = table.keys();
 			for (LuaValue k : keys) {
 				try {
 					LuaValue keyValue = table.get(k);
-					
+
 					T object = null;
-					
+
 					if (keyValue.istable()) {
 						object = serialize(type, keyValue.checktable());
 				    } else if (keyValue.isint()) {
@@ -75,7 +123,7 @@ public class LuaSerializer implements Serializer {
 
 	public <T> T serialize(Class<T> type, LuaTable table) {
 		T object = null;
-		
+
 		if (type == List.class) {
 			try {
 				Class<T> listType = (Class<T>) type.getTypeParameters()[0].getClass();
@@ -85,7 +133,7 @@ public class LuaSerializer implements Serializer {
 				return null;
 			}
 		}
-		
+
 		try {
 			if (!methodAccessCache.containsKey(type)) {
 				cacheType(type);
@@ -98,7 +146,7 @@ public class LuaSerializer implements Serializer {
 			if (table == null) {
 				return object;
 			}
-			
+
 			LuaValue[] keys = table.keys();
 			for (LuaValue k : keys) {
 				try {
@@ -131,7 +179,7 @@ public class LuaSerializer implements Serializer {
 			Grasscutter.getLogger().info(ScriptUtils.toMap(table).toString());
 			e.printStackTrace();
 		}
-		
+
 		return object;
 	}
 

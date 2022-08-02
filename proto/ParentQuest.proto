@@ -25,7 +25,7 @@ message ParentQuest {
 	ParentQuestRandomInfo random_info = 12;
 	uint32 quest_var_seq = 11;
 	repeated int32 quest_var = 14;
-	uint64 Unk2700_KHDDIJNOICK = 6;
+	uint64 cutscene_encryption_key = 6;
 	bool is_random = 13;
 	uint32 parent_quest_id = 3;
 	bool is_finished = 7;

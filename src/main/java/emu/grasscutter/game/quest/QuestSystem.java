@@ -65,8 +65,8 @@ public class QuestSystem extends BaseGameSystem {
     public boolean triggerCondition(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
         QuestBaseHandler handler = condHandlers.get(condition.getType().getValue());
 
-        if (handler == null || quest.getData() == null) {
-            Grasscutter.getLogger().debug("Could not trigger condition {} at {}", condition.getType().getValue(), quest.getData());
+        if (handler == null || quest.getQuestData() == null) {
+            Grasscutter.getLogger().debug("Could not trigger condition {} at {}", condition.getType().getValue(), quest.getQuestData());
             return false;
         }
 
@@ -76,8 +76,8 @@ public class QuestSystem extends BaseGameSystem {
     public boolean triggerContent(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
         QuestBaseHandler handler = contHandlers.get(condition.getType().getValue());
 
-        if (handler == null || quest.getData() == null) {
-            Grasscutter.getLogger().debug("Could not trigger content {} at {}", condition.getType().getValue(), quest.getData());
+        if (handler == null || quest.getQuestData() == null) {
+            Grasscutter.getLogger().debug("Could not trigger content {} at {}", condition.getType().getValue(), quest.getQuestData());
             return false;
         }
 
@@ -87,8 +87,8 @@ public class QuestSystem extends BaseGameSystem {
     public boolean triggerExec(GameQuest quest, QuestExecParam execParam, String... params) {
         QuestExecHandler handler = execHandlers.get(execParam.getType().getValue());
 
-        if (handler == null || quest.getData() == null) {
-            Grasscutter.getLogger().debug("Could not trigger exec {} at {}", execParam.getType().getValue(), quest.getData());
+        if (handler == null || quest.getQuestData() == null) {
+            Grasscutter.getLogger().debug("Could not trigger exec {} at {}", execParam.getType().getValue(), quest.getQuestData());
             return false;
         }
 

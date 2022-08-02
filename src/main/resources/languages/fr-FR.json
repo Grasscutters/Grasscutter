@@ -28,8 +28,8 @@
         "login_token_attempt": "[Dispatch] Le client %s essaye de se connecter via un jeton.",
         "login_token_error": "[Dispatch] Le client %s n'a pas réussi à se connecter via un jeton.",
         "login_token_success": "[Dispatch] Le client %s est connecté via un jeton en tant que %s.",
-        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
-        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
+        "login_password_error": "[Dispatch] Le client %s n'a pas réussi a se connecter avec un mot de passe",
+        "login_password_storage_error": "[Dispatch] Le client %s n'a pas réussi a se conencter avec un mot de passe car il n'y a pass de mot de passe dans la base de données",
         "combo_token_success": "[Dispatch] Le client %s a réussi à échanger le jeton combiné.",
         "combo_token_error": "[Dispatch] Le client %s n'a pas réussi à échanger le jeton combiné.",
         "account_login_create_success": "[Dispatch] Le client %s n'a pas réussi à se connecter : Le compte %s a été créé.",
@@ -39,9 +39,9 @@
         "session_key_error": "Mauvaise clé de session.",
         "username_error": "Nom d'utilisateur introuvable.",
         "username_create_error": "Nom d'utilisateur introuvable, création échouée.",
-        "password_error": "🇺🇸Invalid Password",
-        "password_length_error": "🇺🇸Password length must be greater then or equal to 8",
-        "password_storage_error": "🇺🇸You don't have a password for your account. Please contact an administrator.",
+        "password_error": "Mot de passe invalide",
+        "password_length_error": "La longueur du mot de passe doit être supérieure a 8",
+        "password_storage_error": "Vous n'avez pas de mot de passe pour votre compte. Veuillez contacter un administrateur.",
         "server_max_player_limit": "Le nombre de joueurs maximum est atteint."
       },
       "router_error": "[Dispatch] Impossible d'attacher le routeur."
@@ -60,8 +60,8 @@
       "version": "Version de Grasscutter: %s-%s",
       "game_version": "Version du jeu: %s",
       "resources": {
-        "loading": "🇺🇸Loading resources...",
-        "finish": "🇺🇸Finished loading resources."
+        "loading": "Chargement des ressources...",
+        "finish": "Chargement des ressources terminé."
       }
     }
   },
@@ -87,14 +87,14 @@
         "itemLevel": "Niveau de l'objet invalide.",
         "itemRefinement": "Raffinement de l'objet invalide.",
         "statValue": "Valeur de <stat> invalide.",
-        "value_between": "🇺🇸Invalid value: %s must be between %s and %s.",
+        "value_between": "Valeur invalide: %s doit être compris entre %s et %s.",
         "playerId": "ID du joueur invalide.",
         "uid": "UID invalide.",
         "id": "ID invalide."
       }
     },
     "execution": {
-      "usage_prefix": "🇺🇸Usage: ",
+      "usage_prefix": "Utilisation: ",
       "player_exist_error": "Joueur introuvable.",
       "player_offline_error": "Le joueur n'est pas connecté.",
       "item_player_exist_error": "UID ou objet invalide.",
@@ -123,11 +123,11 @@
       "description": "Modifie les comptes utilisateurs"
     },
     "announce": {
-      "send_success": "🇺🇸Send an announcement successfully, you can revoke it by /a revoke %s.",
-      "refresh_success": "🇺🇸Refresh announcement config file successfully. [Total %s]",
-      "revoke_done": "🇺🇸Try to revoke announcement %s.",
-      "not_found": "🇺🇸Could not found announcement %s.",
-      "description": "🇺🇸Send announcement to all online players, or manage server's announcement"
+      "send_success": "L'annonce à bien été envoyée, vous pouvez la révoquer en utilisant /a revoke %s.",
+      "refresh_success": "Le fichier de configuration des annonces à bien été actualisée. [Total : %s]",
+      "revoke_done": "Tentative de révoquation de l'annonce %s.",
+      "not_found": "Impossible de trouver l'annonce %s.",
+      "description": "Envoie une annonce à tous les joueurs en ligne, ou configure les annonces du serveur"
     },
     "clear": {
       "weapons": "Les armes de %s ont été supprimés.",
@@ -150,13 +150,13 @@
       "description": "Entrer dans un donjon"
     },
     "give": {
-      "usage_relic": "🇺🇸Usage: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
-      "illegal_relic": "🇺🇸This artifactID belongs to a blacklisted range, it may not be the one you wanted.",
-      "given": "🇺🇸Given %s of %s to %s.",
+      "usage_relic": "Utilisation: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
+      "illegal_relic": "L'ID de cet artéfact appartient a une liste blacklistée, ce n'est peut-être pas celui que vous désirez.",
+      "given": "L'objet %s à été donné %s fois à %s",
       "given_with_level_and_refinement": "%s avec le niveau %s, raffinement %s %s fois à %s.",
       "given_level": "%s avec le niveau %s %s fois à %s.",
       "given_avatar": "%s avec le niveau %s a été donné à %s.",
-      "giveall_success": "🇺🇸Successfully gave all items.",
+      "giveall_success": "Tous les objet ont été donnés avec succès.",
       "description": "Donne un objet au joueur spécifié"
     },
     "heal": {
@@ -166,7 +166,7 @@
     "help": {
       "aliases": "Alias: ",
       "available_commands": "Commandes disponibles: ",
-      "tip_need_permission": "🇺🇸Permission: ",
+      "tip_need_permission": "Permissions requises: ",
       "tip_need_no_permission": " Aucune",
       "tip_permission_targeted": " (La permission %s est également requise pour utiliser sur d'autres joueurs)",
       "warn_player_has_no_permission": "Information: Vous n'avez pas la permission d'utiliser cette commande.",
@@ -256,6 +256,14 @@
       "success": "Message envoyé.",
       "description": "Envoie un message au joueur spécifié en tant que Serveur"
     },
+    "setConst": {
+      "range_error": "🇺🇸Constellation level must be between 0 and 6.",
+      "level_error": "🇺🇸Invalid constellation level.",
+      "fail": "🇺🇸Failed to set constellation.",
+      "failed_success": "🇺🇸Constellations for %s have been set to %s. Please reload scene to see changes.",
+      "success": "🇺🇸Constellations for %s have been set to %s.",
+      "description": "🇺🇸Sets constellation level for your current active character"
+    },
     "setFetterLevel": {
       "range_error": "Le niveau d'affinité doit être compris entre 0 et 10.",
       "success": "Niveau d'affinité défini à %s.",
@@ -266,7 +274,11 @@
       "description": "Définit des propriétes pour votre compte. Des choses comme le godemode peuvent être activés avec cette commande, et le déblocage de l'abysse ainsi que l'avancement du PB.\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setStats": {
-      "description": "Définit les propriétés de combat de votre personnage actif\n\tValeurs pour <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de dégât élémentaire: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Résistance élémentaire: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys"
+      "description": "Définit les propriétés de combat de votre personnage actif\n\tValeurs pour <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de dégât élémentaire: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Résistance élémentaire: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
+      "locked_to": "🇺🇸%s locked to %s.",
+      "locked_for_to": "🇺🇸%s for %s locked to %s.",
+      "unlocked": "🇺🇸%s unlocked.",
+      "unlocked_for": "🇺🇸%s for %s unlocked."
     },
     "spawn": {
       "success": " %s %s sont apparu.",
@@ -326,6 +338,10 @@
       "invalid_time": "Impossible d'analyser le timestamp.",
       "description": "Bannis un joueur"
     },
+    "unlockall": {
+      "success": "🇺🇸Unlocked all open states for %s.",
+      "description": "🇺🇸Unlocks all open states for a player."
+    },
     "unban": {
       "success": "Succès.",
       "failure": "Échec, joueur introuvable.",
@@ -340,7 +356,7 @@
       "available_three_stars": "Objets 3 étoiles disponibles"
     },
     "records": {
-      "title": "🇺🇸Gacha Records",
+      "title": "Historique de voeux",
       "date": "🇺🇸Date",
       "item": "Objet"
     }

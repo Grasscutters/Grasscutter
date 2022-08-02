@@ -256,6 +256,14 @@
       "success": "Mesaj trimis.",
       "description": "Trimite un mesaj unui jucător în calitate de server. Dacă este utilizat fără țintă, trimite mesajul către toți jucătorii de pe server."
     },
+    "setConst": {
+      "range_error": "🇺🇸Constellation level must be between 0 and 6.",
+      "level_error": "🇺🇸Invalid constellation level.",
+      "fail": "🇺🇸Failed to set constellation.",
+      "failed_success": "🇺🇸Constellations for %s have been set to %s. Please reload scene to see changes.",
+      "success": "🇺🇸Constellations for %s have been set to %s.",
+      "description": "🇺🇸Sets constellation level for your current active character"
+    },
     "setFetterLevel": {
       "range_error": "Nivelul Fetter trebuie să fie între 0 și 10.",
       "success": "Nivelul Fetter setat ca %s.",
@@ -266,7 +274,11 @@
       "description": "Stabilește proprietățile la nivel de cont. Lucruri precum godmode pot fi activate în acest fel, precum și schimbarea unor lucuri precum etajul abisului deblocat și progresul battle pass.\n\tValori pentru <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setStats": {
-      "description": "Stabilește proprietatea de luptă pentru caracterul activ curent.\n\tValori pentru <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys"
+      "description": "Stabilește proprietatea de luptă pentru caracterul activ curent.\n\tValori pentru <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
+      "locked_to": "🇺🇸%s locked to %s.",
+      "locked_for_to": "🇺🇸%s for %s locked to %s.",
+      "unlocked": "🇺🇸%s unlocked.",
+      "unlocked_for": "🇺🇸%s for %s unlocked."
     },
     "spawn": {
       "success": "A generat %s de %s.",
@@ -325,6 +337,10 @@
       "failure": "Eșec. Jucătorul nu a fost găsit.",
       "invalid_time": "Imposibil de analizat durata.",
       "description": "Interziceți un jucător"
+    },
+    "unlockall": {
+      "success": "🇺🇸Unlocked all open states for %s.",
+      "description": "🇺🇸Unlocks all open states for a player."
     },
     "unban": {
       "success": "Succes.",

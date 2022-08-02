@@ -256,6 +256,14 @@
       "success": "Message sent.",
       "description": "Sends a message to a player as the server. If used with no target, sends to all players on the server."
     },
+    "setConst": {
+      "range_error": "Constellation level must be between 0 and 6.",
+      "level_error": "Invalid constellation level.",
+      "fail": "Failed to set constellation.",
+      "failed_success": "Constellations for %s have been set to %s. Please reload scene to see changes.",
+      "success": "Constellations for %s have been set to %s.",
+      "description": "Sets constellation level for your current active character"
+    },
     "setFetterLevel": {
       "range_error": "Fetter level must be between 0 and 10.",
       "success": "Fetter level set to %s.",
@@ -266,7 +274,11 @@
       "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress.\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setStats": {
-      "description": "Sets fight property for your current active character\n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys"
+      "description": "Sets fight property for your current active character\n\tValues for <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
+      "locked_to": "%s locked to %s.",
+      "locked_for_to": "%s for %s locked to %s.",
+      "unlocked": "%s unlocked.",
+      "unlocked_for": "%s for %s unlocked."
     },
     "spawn": {
       "success": "Spawned %s of %s.",

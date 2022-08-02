@@ -7,5 +7,5 @@ option java_package = "emu.grasscutter.net.proto";
 // EnetIsReliable: true
 // IsAllowClient: true
 message GetActivityInfoReq {
-	repeated uint32 activity_id_list = 14;
+	repeated uint32 activity_id_list = 4;
 }
