@@ -5,9 +5,8 @@ import emu.grasscutter.data.binout.ScenePointEntry;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SceneTransToPointReqOuterClass.SceneTransToPointReq;
-import emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPointRsp;
 import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.server.event.player.PlayerTeleportEvent;
+import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketSceneTransToPointRsp;
 import emu.grasscutter.utils.Position;
@@ -27,14 +26,8 @@ public class HandlerSceneTransToPointReq extends PacketHandler {
 			float y = scenePointEntry.getPointData().getTranPos().getY();
 			float z = scenePointEntry.getPointData().getTranPos().getZ();
 
-            PlayerTeleportEvent event = new PlayerTeleportEvent(session.getPlayer(), PlayerTeleportEvent.TeleportType.WAYPOINT,
-                session.getPlayer().getPosition(), new Position(x, y, z));
-            event.call();
-
-			if(!event.isCanceled()) {
-                session.getPlayer().getWorld().transferPlayerToScene(session.getPlayer(), req.getSceneId(), new Position(x, y, z));
-                session.send(new PacketSceneTransToPointRsp(session.getPlayer(), req.getPointId(), req.getSceneId()));
-            }
+            boolean result = session.getPlayer().getWorld().transferPlayerToScene(session.getPlayer(), req.getSceneId(), TeleportType.WAYPOINT, new Position(x, y, z));
+            if(result) session.send(new PacketSceneTransToPointRsp(session.getPlayer(), req.getPointId(), req.getSceneId()));
 		} else {
 			session.send(new PacketSceneTransToPointRsp());
 		}

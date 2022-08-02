@@ -1,15 +1,11 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.home.GameHome;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.TryEnterHomeReqOuterClass;
-import emu.grasscutter.scripts.data.SceneConfig;
-import emu.grasscutter.server.event.player.PlayerTeleportEvent;
+import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketTryEnterHomeRsp;
 import emu.grasscutter.utils.Position;
@@ -39,17 +35,9 @@ public class HandlerTryEnterHomeReq extends PacketHandler {
         Scene scene = session.getPlayer().getWorld().getSceneById(realmId);
         Position pos = scene.getScriptManager().getConfig().born_pos;
 
-        PlayerTeleportEvent event = new PlayerTeleportEvent(session.getPlayer(), PlayerTeleportEvent.TeleportType.WAYPOINT,
-            session.getPlayer().getPosition(), pos);
-        event.call();
-
-        if(!event.isCanceled()) {
-            session.getPlayer().getWorld().transferPlayerToScene(
-                session.getPlayer(),
-                realmId, event.getDestination()
-            );
-
-            session.send(new PacketTryEnterHomeRsp(req.getTargetUid()));
-        }
+        boolean result = session.getPlayer().getWorld().transferPlayerToScene(
+            session.getPlayer(), realmId,
+            TeleportType.WAYPOINT, pos
+        ); if (result) session.send(new PacketTryEnterHomeRsp(req.getTargetUid()));
     }
 }
