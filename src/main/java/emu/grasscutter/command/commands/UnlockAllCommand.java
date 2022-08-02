@@ -4,7 +4,7 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.player.PlayerOpenStateManager;
+import emu.grasscutter.game.player.PlayerProgressManager;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 
 import java.util.HashMap;
@@ -22,12 +22,12 @@ public final class UnlockAllCommand implements CommandHandler {
 
         for (var state : GameData.getOpenStateList()) {
             // Don't unlock blacklisted open states.
-            if (PlayerOpenStateManager.BLACKLIST_OPEN_STATES.contains(state.getId())) {
+            if (PlayerProgressManager.BLACKLIST_OPEN_STATES.contains(state.getId())) {
                 continue;
             }
 
-            if (targetPlayer.getOpenStateManager().getOpenState(state.getId()) == 0) {
-                targetPlayer.getOpenStateManager().getOpenStateMap().put(state.getId(), 1); 
+            if (targetPlayer.getProgressManager().getOpenState(state.getId()) == 0) {
+                targetPlayer.getOpenStates().put(state.getId(), 1); 
                 changed.put(state.getId(), 1);
             }
         }

@@ -2,18 +2,45 @@ package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.ScenePointEntry;
 import emu.grasscutter.data.excels.OpenStateData;
 import emu.grasscutter.data.excels.OpenStateData.OpenStateCondType;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketOpenStateUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify;
 import emu.grasscutter.server.packet.send.PacketSetOpenStateRsp;
+import emu.grasscutter.server.packet.send.PacketUnlockTransPointRsp;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-@Entity
-public class PlayerOpenStateManager extends BasePlayerDataManager {
+// @Entity
+public class PlayerProgressManager extends BasePlayerDataManager {
+    public PlayerProgressManager(Player player) {
+        super(player);
+    }
+
+    /**********
+        Handler for player login.
+    **********/
+    public void onPlayerLogin() {
+        // Try unlocking open states on player login. This handles accounts where unlock conditions were
+        // already met before certain open state unlocks were implemented.
+        this.tryUnlockOpenStates(false);
+
+        // Send notify to the client.
+        player.getSession().send(new PacketOpenStateUpdateNotify(this.player));
+    }
+
+    /******************************************************************************************************************
+     ******************************************************************************************************************
+     * OPEN STATES
+     ******************************************************************************************************************
+     *****************************************************************************************************************/
+
     // Set of open states that are never unlocked, whether they fulfill the conditions or not.
     public static final Set<Integer> BLACKLIST_OPEN_STATES = Set.of(
     48      // blacklist OPEN_STATE_LIMIT_REGION_GLOBAL to make Meledy happy. =D Remove this as soon as quest unlocks are fully implemented.
@@ -23,41 +50,27 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
     public static final Set<Integer> DEFAULT_OPEN_STATES = GameData.getOpenStateList().stream()
         .filter(s -> 
             s.isDefaultState()      // Actual default-opened states.
-            || (s.getCond().stream().filter(c -> c.getCondType() == OpenStateCondType.OPEN_STATE_COND_PLAYER_LEVEL).count() == 0) // All states whose unlock we don't handle correctly yet.
-            || s.getId() == 1 // Always unlock OPEN_STATE_PAIMON, otherwise the player will not have a working chat.
+            // All states whose unlock we don't handle correctly yet.
+            || (s.getCond().stream().filter(c -> c.getCondType() == OpenStateCondType.OPEN_STATE_COND_PLAYER_LEVEL).count() == 0)
+            // Always unlock OPEN_STATE_PAIMON, otherwise the player will not have a working chat.
+            || s.getId() == 1 
         )
         .filter(s -> !BLACKLIST_OPEN_STATES.contains(s.getId()))    // Filter out states in the blacklist.
         .map(s -> s.getId())
         .collect(Collectors.toSet());
 
-    // Map of all open states that this player has.
-    private Map<Integer, Integer> map;
-
-    public PlayerOpenStateManager(Player player) {
-        super(player);
-    }
-
-    public synchronized Map<Integer, Integer> getOpenStateMap() {
-        // If no map currently exists, we create one.
-        if (this.map == null) {
-            this.map = new HashMap<>();
-        }
-        
-        return this.map;
-    }
-
     /**********
         Direct getters and setters for open states.
     **********/
     public int getOpenState(int openState) {
-        return getOpenStateMap().getOrDefault(openState, 0);
+        return this.player.getOpenStates().getOrDefault(openState, 0);
     }
 
     private void setOpenState(int openState, int value, boolean sendNotify) {
-        int previousValue = this.getOpenStateMap().getOrDefault(openState, 0);
+        int previousValue = this.player.getOpenStates().getOrDefault(openState, 0);
 
         if (value != previousValue) {
-            this.getOpenStateMap().put(openState, value);
+            this.player.getOpenStates().put(openState, value);
 
             if (sendNotify) {
                 player.getSession().send(new PacketOpenStateChangeNotify(openState, value));
@@ -122,23 +135,11 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
     }
 
     /**********
-        Handler for player login.
-    **********/
-    public void onPlayerLogin() {
-        // Try unlocking open states on player login. This handles accounts where unlock conditions were
-        // already met before certain open state unlocks were implemented.
-        this.tryUnlockOpenStates(false);
-
-        // Send notify to the client.
-        player.getSession().send(new PacketOpenStateUpdateNotify(this));
-    }
-
-    /**********
         Triggered unlocking of open states (unlock states whose conditions have been met.)
     **********/
     public void tryUnlockOpenStates(boolean sendNotify) {
         // Get list of open states that are not yet unlocked.
-        var lockedStates = GameData.getOpenStateList().stream().filter(s -> this.getOpenStateMap().getOrDefault(s, 0) == 0).toList();
+        var lockedStates = GameData.getOpenStateList().stream().filter(s -> this.player.getOpenStates().getOrDefault(s, 0) == 0).toList();
 
         // Try unlocking all of them.
         for (var state : lockedStates) {
@@ -153,5 +154,35 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
     }
     public void tryUnlockOpenStates() {
         this.tryUnlockOpenStates(true);
+    }
+
+    /******************************************************************************************************************
+     ******************************************************************************************************************
+     * MAP AREAS AND POINTS
+     ******************************************************************************************************************
+     *****************************************************************************************************************/
+    public void unlockTransPoint(int sceneId, int pointId) {
+        // Check whether the unlocked point exists and whether it is still locked.
+        String key = sceneId + "_" + pointId;
+		ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(key);
+		
+		if (scenePointEntry == null || this.player.getUnlockedScenePoints().getOrDefault(sceneId, List.of()).contains(pointId)) {
+            this.player.sendPacket(new PacketUnlockTransPointRsp(Retcode.RET_FAIL));
+            return;
+        }
+
+        // Add the point to the lit of unlocked points for its scene.
+        if (!this.player.getUnlockedScenePoints().containsKey(sceneId)) {
+            this.player.getUnlockedScenePoints().put(sceneId, new ArrayList<>());
+        }
+        this.player.getUnlockedScenePoints().get(sceneId).add(pointId);
+
+        // Give primogems for unlocking.
+        var primos = new GameItem(GameData.getItemDataMap().get(201), 5);
+        this.player.getInventory().addItem(primos, ActionReason.UnlockPointReward);
+
+        // Send packet.
+        this.player.sendPacket(new PacketScenePointUnlockNotify(sceneId, pointId));
+        this.player.sendPacket(new PacketUnlockTransPointRsp(Retcode.RET_SUCC));
     }
 }
