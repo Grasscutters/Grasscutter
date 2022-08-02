@@ -363,23 +363,23 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "Comandos",
       "title_avatars": "Avatares",
       "title_items": "Objetos",
       "title_scenes": "Escenario",
       "title_monsters": "Monstruos",
-      "header_id": "Id",
+      "header_id": "🇺🇸Id",
       "header_command": "Comando",
       "header_description": "Descripción",
-      "header_avatar": "Avatar",
+      "header_avatar": "🇺🇸Avatar",
       "header_item": "Objeto",
       "header_scene": "Escenario",
       "header_monster": "Monstruo"
     },
     "index": {
       "title": "Documentación",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "JSON de mapeo del Gacha"
     }
   }
