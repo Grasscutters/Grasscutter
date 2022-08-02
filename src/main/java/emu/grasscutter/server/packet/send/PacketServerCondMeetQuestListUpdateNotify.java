@@ -11,33 +11,33 @@ import java.util.Set;
 
 public class PacketServerCondMeetQuestListUpdateNotify extends BasePacket {
 
-	public PacketServerCondMeetQuestListUpdateNotify(Player player) {
-		super(PacketOpcodes.ServerCondMeetQuestListUpdateNotify);
+    public PacketServerCondMeetQuestListUpdateNotify(Player player) {
+        super(PacketOpcodes.ServerCondMeetQuestListUpdateNotify);
 
-		ServerCondMeetQuestListUpdateNotify.Builder proto = ServerCondMeetQuestListUpdateNotify.newBuilder();
+        ServerCondMeetQuestListUpdateNotify.Builder proto = ServerCondMeetQuestListUpdateNotify.newBuilder();
 
-		/*
-		player.getQuestManager().forEachQuest(quest -> {
-			if (quest.getState().getValue() <= 2) {
-				proto.addAddQuestIdList(quest.getQuestId());
-			}
-		});
-		*/
+        /*
+        player.getQuestManager().forEachQuest(quest -> {
+            if (quest.getState().getValue() <= 2) {
+                proto.addAddQuestIdList(quest.getQuestId());
+            }
+        });
+        */
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 
-	public PacketServerCondMeetQuestListUpdateNotify(List<GameQuest> quests) {
-		super(PacketOpcodes.ServerCondMeetQuestListUpdateNotify);
+    public PacketServerCondMeetQuestListUpdateNotify(List<GameQuest> quests) {
+        super(PacketOpcodes.ServerCondMeetQuestListUpdateNotify);
 
-		ServerCondMeetQuestListUpdateNotify.Builder proto = ServerCondMeetQuestListUpdateNotify.newBuilder();
+        ServerCondMeetQuestListUpdateNotify.Builder proto = ServerCondMeetQuestListUpdateNotify.newBuilder();
         for (GameQuest quest : quests) {
             proto.addAddQuestIdList(quest.getSubQuestId());
         }
         proto.build();
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 
     public PacketServerCondMeetQuestListUpdateNotify() {
         super(PacketOpcodes.ServerCondMeetQuestListUpdateNotify);
@@ -45,6 +45,6 @@ public class PacketServerCondMeetQuestListUpdateNotify extends BasePacket {
         ServerCondMeetQuestListUpdateNotify.Builder proto = ServerCondMeetQuestListUpdateNotify.newBuilder();
         proto.build();
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

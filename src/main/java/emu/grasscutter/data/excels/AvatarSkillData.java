@@ -9,7 +9,7 @@ import emu.grasscutter.game.props.ElementType;
 
 @ResourceType(name = "AvatarSkillExcelConfigData.json", loadPriority = LoadPriority.HIGHEST)
 public class AvatarSkillData extends GameResource {
-	private int id;
+    private int id;
     private	float cdTime;
     private int costElemVal;
     private int maxChargeNum;
@@ -21,48 +21,48 @@ public class AvatarSkillData extends GameResource {
     private String abilityName;
 
     @Override
-	public int getId(){
+    public int getId() {
         return this.id;
     }
 
-	public float getCdTime() {
-		return cdTime;
-	}
+    public float getCdTime() {
+        return cdTime;
+    }
 
-	public int getCostElemVal() {
-		return costElemVal;
-	}
+    public int getCostElemVal() {
+        return costElemVal;
+    }
 
-	public int getMaxChargeNum() {
-		return maxChargeNum;
-	}
+    public int getMaxChargeNum() {
+        return maxChargeNum;
+    }
 
-	public int getTriggerID() {
-		return triggerID;
-	}
+    public int getTriggerID() {
+        return triggerID;
+    }
 
-	public boolean isIsAttackCameraLock() {
-		return isAttackCameraLock;
-	}
+    public boolean isIsAttackCameraLock() {
+        return isAttackCameraLock;
+    }
 
-	public int getProudSkillGroupId() {
-		return proudSkillGroupId;
-	}
+    public int getProudSkillGroupId() {
+        return proudSkillGroupId;
+    }
 
-	public ElementType getCostElemType() {
-		return costElemType;
-	}
+    public ElementType getCostElemType() {
+        return costElemType;
+    }
 
-	public long getNameTextMapHash() {
-		return nameTextMapHash;
-	}
+    public long getNameTextMapHash() {
+        return nameTextMapHash;
+    }
 
-	public String getAbilityName() {
-		return abilityName;
-	}
-	
-	@Override
-	public void onLoad() {
-		
-	}
+    public String getAbilityName() {
+        return abilityName;
+    }
+
+    @Override
+    public void onLoad() {
+
+    }
 }

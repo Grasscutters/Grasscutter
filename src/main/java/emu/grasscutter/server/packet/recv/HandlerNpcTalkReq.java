@@ -16,17 +16,17 @@ import emu.grasscutter.server.packet.send.PacketNpcTalkRsp;
 @Opcodes(PacketOpcodes.NpcTalkReq)
 public class HandlerNpcTalkReq extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		NpcTalkReq req = NpcTalkReq.parseFrom(payload);
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        NpcTalkReq req = NpcTalkReq.parseFrom(payload);
         //Check if mainQuest exists
         int talkId = req.getTalkId();
         //remove last 2 digits to get a mainQuestId
         int mainQuestId = talkId/100;
         MainQuestData mainQuestData = GameData.getMainQuestDataMap().get(mainQuestId);
-        if(mainQuestData != null) {
+        if (mainQuestData != null) {
             MainQuestData.TalkData talk = mainQuestData.getTalks().stream().filter(p -> p.getId() == talkId).toList().get(0);
-            if(talk != null) {
+            if (talk != null) {
                 //talk is finished
                 session.getPlayer().getQuestManager().getMainQuestById(mainQuestId).getTalks().put(Integer.valueOf(talkId),talk);
                 session.getPlayer().getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_COMPLETE_ANY_TALK,String.valueOf(req.getTalkId()), 0, 0);
@@ -36,7 +36,7 @@ public class HandlerNpcTalkReq extends PacketHandler {
                 }
             }
 
-		session.send(new PacketNpcTalkRsp(req.getNpcEntityId(), req.getTalkId(), req.getEntityId()));
-	}
+        session.send(new PacketNpcTalkRsp(req.getNpcEntityId(), req.getTalkId(), req.getEntityId()));
+    }
 
 }

@@ -9,22 +9,22 @@ import java.util.List;
 
 public class PacketFinishedParentQuestUpdateNotify extends BasePacket {
 
-	public PacketFinishedParentQuestUpdateNotify(GameMainQuest quest) {
-		super(PacketOpcodes.FinishedParentQuestUpdateNotify);
+    public PacketFinishedParentQuestUpdateNotify(GameMainQuest quest) {
+        super(PacketOpcodes.FinishedParentQuestUpdateNotify);
 
-		FinishedParentQuestUpdateNotify proto = FinishedParentQuestUpdateNotify.newBuilder()
-				.addParentQuestList(quest.toProto())
-				.build();
+        FinishedParentQuestUpdateNotify proto = FinishedParentQuestUpdateNotify.newBuilder()
+                .addParentQuestList(quest.toProto())
+                .build();
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 
     public PacketFinishedParentQuestUpdateNotify(List<GameMainQuest> quests) {
         super(PacketOpcodes.FinishedParentQuestUpdateNotify);
 
         var proto = FinishedParentQuestUpdateNotify.newBuilder();
 
-        for(GameMainQuest mainQuest : quests) {
+        for (GameMainQuest mainQuest : quests) {
             proto.addParentQuestList(mainQuest.toProto());
         }
         proto.build();

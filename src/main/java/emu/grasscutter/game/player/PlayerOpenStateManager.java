@@ -21,7 +21,7 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
 
     // Set of open states that are set per default for all accounts. Can be overwritten by an entry in `map`.
     public static final Set<Integer> DEFAULT_OPEN_STATES = GameData.getOpenStateList().stream()
-        .filter(s -> 
+        .filter(s ->
             s.isDefaultState()      // Actual default-opened states.
             || (s.getCond().stream().filter(c -> c.getCondType() == OpenStateCondType.OPEN_STATE_COND_PLAYER_LEVEL).count() == 0) // All states whose unlock we don't handle correctly yet.
             || s.getId() == 1 // Always unlock OPEN_STATE_PAIMON, otherwise the player will not have a working chat.
@@ -42,7 +42,7 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
         if (this.map == null) {
             this.map = new HashMap<>();
         }
-        
+
         return this.map;
     }
 
@@ -93,7 +93,7 @@ public class PlayerOpenStateManager extends BasePlayerDataManager {
                 // ToDo: Implement.
             }
         }
-        
+
         // Done. If we didn't find any violations, all conditions are met.
         return true;
     }

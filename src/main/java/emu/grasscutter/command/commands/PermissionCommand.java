@@ -21,7 +21,7 @@ public final class PermissionCommand implements CommandHandler {
             return;
         }
 
-        if(!Grasscutter.getPermissionHandler().EnablePermissionCommand()) {
+        if (!Grasscutter.getPermissionHandler().EnablePermissionCommand()) {
             CommandHandler.sendTranslatedMessage(sender, "commands.generic.permission_error");
             return;
         }

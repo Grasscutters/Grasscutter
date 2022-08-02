@@ -9,17 +9,17 @@ import lombok.Getter;
 @Getter
 public class BuffData extends GameResource {
     private int groupId;
-	private int serverBuffId;
-	private float time;
-	private boolean isPersistent;
-	private ServerBuffType serverBuffType;
-	
-	@Override
-	public int getId() {
-		return this.serverBuffId;
-	}
-	
-	public void onLoad() {
-	    this.serverBuffType = this.serverBuffType != null ? this.serverBuffType : ServerBuffType.SERVER_BUFF_NONE;
-	}
+    private int serverBuffId;
+    private float time;
+    private boolean isPersistent;
+    private ServerBuffType serverBuffType;
+
+    @Override
+    public int getId() {
+        return this.serverBuffId;
+    }
+
+    public void onLoad() {
+        this.serverBuffType = this.serverBuffType != null ? this.serverBuffType : ServerBuffType.SERVER_BUFF_NONE;
+    }
 }

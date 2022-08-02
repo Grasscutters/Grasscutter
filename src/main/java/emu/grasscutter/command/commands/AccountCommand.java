@@ -45,8 +45,8 @@ public final class AccountCommand implements CommandHandler {
                 int uid = 0;
                 String password = "";
 
-                if(Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
-                    if(args.size() < 3) {
+                if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
+                    if (args.size() < 3) {
                         CommandHandler.sendMessage(sender, "EXPERIMENTAL_RealPassword requires a password argument");
                         CommandHandler.sendMessage(sender, "Usage: account create <username> <password> [uid]");
                         return;
@@ -58,7 +58,7 @@ public final class AccountCommand implements CommandHandler {
                             uid = Integer.parseInt(args.get(3));
                         } catch (NumberFormatException ignored) {
                             CommandHandler.sendMessage(sender, translate(sender, "commands.account.invalid"));
-                            if(Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
+                            if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword == true) {
                                 CommandHandler.sendMessage(sender, "EXPERIMENTAL_RealPassword requires argument 2 to be a password, not a uid");
                                 CommandHandler.sendMessage(sender, "Usage: account create <username> <password> [uid]");
                             }
@@ -107,12 +107,12 @@ public final class AccountCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.account.delete"));
                 return;
             case "resetpass":
-                if(Configuration.ACCOUNT.EXPERIMENTAL_RealPassword != true) {
+                if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword != true) {
                     CommandHandler.sendMessage(sender, "resetpass requires EXPERIMENTAL_RealPassword to be true.");
                     return;
                 }
 
-                if(args.size() != 3) {
+                if (args.size() != 3) {
                     CommandHandler.sendMessage(sender, "Invalid Args");
                     CommandHandler.sendMessage(sender, "Usage: account resetpass <username> <password>");
                     return;

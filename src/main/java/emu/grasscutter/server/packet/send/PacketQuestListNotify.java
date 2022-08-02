@@ -10,17 +10,17 @@ import emu.grasscutter.net.proto.QuestListNotifyOuterClass.QuestListNotify;
 
 public class PacketQuestListNotify extends BasePacket {
 
-	public PacketQuestListNotify(Player player) {
-		super(PacketOpcodes.QuestListNotify, true);
+    public PacketQuestListNotify(Player player) {
+        super(PacketOpcodes.QuestListNotify, true);
 
-		QuestListNotify.Builder proto = QuestListNotify.newBuilder();
+        QuestListNotify.Builder proto = QuestListNotify.newBuilder();
 
-		player.getQuestManager().forEachQuest(quest -> {
-            if(quest.getState() != QuestState.QUEST_STATE_UNSTARTED) {
+        player.getQuestManager().forEachQuest(quest -> {
+            if (quest.getState() != QuestState.QUEST_STATE_UNSTARTED) {
                 proto.addQuestList(quest.toProto());
             }
-		});
+        });
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

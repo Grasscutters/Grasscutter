@@ -48,13 +48,13 @@ public final class TalentCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() < 1){
+        if (args.size() < 1) {
             sendUsageMessage(sender);
             return;
         }
 
         EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
-        Avatar avatar = entity.getAvatar(); 
+        Avatar avatar = entity.getAvatar();
         String cmdSwitch = args.get(0);
         switch (cmdSwitch) {
             default -> {

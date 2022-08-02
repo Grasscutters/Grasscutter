@@ -47,31 +47,31 @@ public enum MaterialType {
     MATERIAL_ACTIVITY_ROBOT (38),
     MATERIAL_ACTIVITY_GEAR (39),
     MATERIAL_ACTIVITY_JIGSAW (40);
-	
-	private final int value;
-	private static final Int2ObjectMap<MaterialType> map = new Int2ObjectOpenHashMap<>();
-	private static final Map<String, MaterialType> stringMap = new HashMap<>();
-	
-	static {
-		Stream.of(values()).forEach(e -> {
-			map.put(e.getValue(), e);
-			stringMap.put(e.name(), e);
-		});
-	}
-	
-	private MaterialType(int value) {
-		this.value = value;
-	}
 
-	public int getValue() {
-		return value;
-	}
-	
-	public static MaterialType getTypeByValue(int value) {
-		return map.getOrDefault(value, MATERIAL_NONE);
-	}
-	
-	public static MaterialType getTypeByName(String name) {
-		return stringMap.getOrDefault(name, MATERIAL_NONE);
-	}
+    private final int value;
+    private static final Int2ObjectMap<MaterialType> map = new Int2ObjectOpenHashMap<>();
+    private static final Map<String, MaterialType> stringMap = new HashMap<>();
+
+    static {
+        Stream.of(values()).forEach(e -> {
+            map.put(e.getValue(), e);
+            stringMap.put(e.name(), e);
+        });
+    }
+
+    private MaterialType(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public static MaterialType getTypeByValue(int value) {
+        return map.getOrDefault(value, MATERIAL_NONE);
+    }
+
+    public static MaterialType getTypeByName(String name) {
+        return stringMap.getOrDefault(name, MATERIAL_NONE);
+    }
 }

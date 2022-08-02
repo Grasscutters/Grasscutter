@@ -627,9 +627,9 @@ public class Scene {
                 .flatMap(Collection::stream)
                 .toList();
 
-		onLoadGroup(groups);
-		Grasscutter.getLogger().info("Scene {} Block {} loaded.", this.getId(), block.id);
-	}
+        onLoadGroup(groups);
+        Grasscutter.getLogger().info("Scene {} Block {} loaded.", this.getId(), block.id);
+    }
     public void loadTriggerFromGroup(SceneGroup group, String triggerName) {
         //Load triggers and regions
         getScriptManager().registerTrigger(group.triggers.values().stream().filter(p -> p.name.contains(triggerName)).toList());

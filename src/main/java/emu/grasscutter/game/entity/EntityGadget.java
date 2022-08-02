@@ -221,7 +221,7 @@ public class EntityGadget extends EntityBaseGadget {
                 .setIsEnableInteract(true)
                 .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
 
-        if(this.metaGadget != null) {
+        if (this.metaGadget != null) {
             gadgetInfo.setDraftId(this.metaGadget.draft_id);
         }
 

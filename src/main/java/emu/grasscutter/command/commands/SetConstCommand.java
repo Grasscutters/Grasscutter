@@ -58,7 +58,7 @@ public final class SetConstCommand implements CommandHandler {
         talentIdList.clear();
         avatar.setCoreProudSkillLevel(0);
 
-        for(int talent = 0; talent < constLevel; talent++) {
+        for (int talent = 0; talent < constLevel; talent++) {
             AvatarTalentData talentData = GameData.getAvatarTalentDataMap().get(talentIds.getInt(talent));
             int mainCostItemId = talentData.getMainCostItemId();
 

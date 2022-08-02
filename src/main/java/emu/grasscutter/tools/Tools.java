@@ -107,15 +107,15 @@ final class ToolsWithLanguageOption {
             writer.println("// Grasscutter " + GameConstants.VERSION + " GM Handbook");
             writer.println("// Created " + dtf.format(now) + System.lineSeparator() + System.lineSeparator());
 
-			List<CommandHandler> cmdList = new CommandMap(true).getHandlersAsList();
+            List<CommandHandler> cmdList = new CommandMap(true).getHandlersAsList();
 
             writer.println("// Commands");
-			for (CommandHandler cmd : cmdList) {
-				StringBuilder cmdName = new StringBuilder(cmd.getLabel());
+            for (CommandHandler cmd : cmdList) {
+                StringBuilder cmdName = new StringBuilder(cmd.getLabel());
                 while (cmdName.length() <= 15) {
                     cmdName.insert(0, " ");
                 }
-				writer.println(cmdName + " : " + translate(cmd.getDescriptionString(null)));
+                writer.println(cmdName + " : " + translate(cmd.getDescriptionString(null)));
             }
             writer.println();
 

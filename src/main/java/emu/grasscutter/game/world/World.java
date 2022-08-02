@@ -292,7 +292,7 @@ public class World implements Iterable<Player> {
                 player.getTeamManager().getMpTeam().copyFrom(player.getTeamManager().getMpTeam(), player.getTeamManager().getMaxTeamSize());
                 player.getTeamManager().updateTeamEntities(null);
             }
-            
+
             // Dont send packets if player is loading into the scene
             if (player.getSceneLoadState().getValue() < SceneLoadState.INIT.getValue() ) {
                 // World player info packets

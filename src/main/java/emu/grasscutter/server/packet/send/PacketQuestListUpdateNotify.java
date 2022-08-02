@@ -10,20 +10,20 @@ import java.util.List;
 
 public class PacketQuestListUpdateNotify extends BasePacket {
 
-	public PacketQuestListUpdateNotify(GameQuest quest) {
-		super(PacketOpcodes.QuestListUpdateNotify);
+    public PacketQuestListUpdateNotify(GameQuest quest) {
+        super(PacketOpcodes.QuestListUpdateNotify);
 
-		QuestListUpdateNotify proto = QuestListUpdateNotify.newBuilder()
-				.addQuestList(quest.toProto())
-				.build();
+        QuestListUpdateNotify proto = QuestListUpdateNotify.newBuilder()
+                .addQuestList(quest.toProto())
+                .build();
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 
     public PacketQuestListUpdateNotify(List<GameQuest> quests) {
         super(PacketOpcodes.QuestListUpdateNotify);
         var proto = QuestListUpdateNotify.newBuilder();
-        for(GameQuest quest : quests) {
+        for (GameQuest quest : quests) {
             proto.addQuestList(quest.toProto());
         }
         proto.build();

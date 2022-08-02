@@ -41,17 +41,17 @@ import static emu.grasscutter.config.Configuration.SCRIPT;
 
 @Entity(value = "quests", useDiscriminator = false)
 public class GameMainQuest {
-	@Id private ObjectId id;
-	@Indexed @Getter private int ownerUid;
-	@Transient @Getter private Player owner;
+    @Id private ObjectId id;
+    @Indexed @Getter private int ownerUid;
+    @Transient @Getter private Player owner;
     @Transient @Getter private QuestManager questManager;
-	@Getter private Map<Integer, GameQuest> childQuests;
-	@Getter private int parentQuestId;
-	@Getter private int[] questVars;
+    @Getter private Map<Integer, GameQuest> childQuests;
+    @Getter private int parentQuestId;
+    @Getter private int[] questVars;
     //QuestUpdateQuestVarReq is sent in two stages...
     @Getter private List<Integer> questVarsUpdate;
-	@Getter private ParentQuestState state;
-	@Getter private boolean isFinished;
+    @Getter private ParentQuestState state;
+    @Getter private boolean isFinished;
     @Getter List<QuestGroupSuite> questGroupSuites;
 
     @Getter int[] suggestTrackMainQuestList;
@@ -60,25 +60,25 @@ public class GameMainQuest {
     private Map<Integer,Position> rewindPositions;
     private Map<Integer,Position> rewindRotations;
 
-	@Deprecated // Morphia only. Do not use.
-	public GameMainQuest() {}
+    @Deprecated // Morphia only. Do not use.
+    public GameMainQuest() {}
 
-	public GameMainQuest(Player player, int parentQuestId) {
-		this.owner = player;
-		this.ownerUid = player.getUid();
+    public GameMainQuest(Player player, int parentQuestId) {
+        this.owner = player;
+        this.ownerUid = player.getUid();
         this.questManager = player.getQuestManager();
-		this.parentQuestId = parentQuestId;
-		this.childQuests = new HashMap<>();
+        this.parentQuestId = parentQuestId;
+        this.childQuests = new HashMap<>();
         this.talks = new HashMap<>();
         //official server always has a list of 5 questVars, with default value 0
-		this.questVars = new int[] {0,0,0,0,0};
-		this.state = ParentQuestState.PARENT_QUEST_STATE_NONE;
+        this.questVars = new int[] {0,0,0,0,0};
+        this.state = ParentQuestState.PARENT_QUEST_STATE_NONE;
         this.questGroupSuites = new ArrayList<>();
         this.rewindPositions = new HashMap<>();
         this.rewindRotations = new HashMap<>();
         addAllChildQuests();
         addRewindPoints();
-	}
+    }
 
     private void addAllChildQuests() {
         List<Integer> subQuestIds = Arrays.stream(GameData.getMainQuestDataMap().get(this.parentQuestId).getSubQuests()).map(SubQuestData::getSubId).toList();
@@ -88,10 +88,10 @@ public class GameMainQuest {
         }
     }
 
-	public void setOwner(Player player) {
-		if (player.getUid() != this.getOwnerUid()) return;
-		this.owner = player;
-	}
+    public void setOwner(Player player) {
+        if (player.getUid() != this.getOwnerUid()) return;
+        this.owner = player;
+    }
 
     public int getQuestVar(int i) {
         return questVars[i];
@@ -115,71 +115,71 @@ public class GameMainQuest {
     }
 
 
-	public GameQuest getChildQuestById(int id) {
-		return this.getChildQuests().get(id);
-	}
+    public GameQuest getChildQuestById(int id) {
+        return this.getChildQuests().get(id);
+    }
     public GameQuest getChildQuestByOrder(int order) {
         return this.getChildQuests().values().stream().filter(p -> p.getQuestData().getOrder() == order).toList().get(0);
     }
 
     public void finish() {
-		this.isFinished = true;
-		this.state = ParentQuestState.PARENT_QUEST_STATE_FINISHED;
+        this.isFinished = true;
+        this.state = ParentQuestState.PARENT_QUEST_STATE_FINISHED;
 
-		this.getOwner().getSession().send(new PacketFinishedParentQuestUpdateNotify(this));
-		this.getOwner().getSession().send(new PacketCodexDataUpdateNotify(this));
+        this.getOwner().getSession().send(new PacketFinishedParentQuestUpdateNotify(this));
+        this.getOwner().getSession().send(new PacketCodexDataUpdateNotify(this));
 
-		this.save();
+        this.save();
 
-		// Add rewards
-		MainQuestData mainQuestData = GameData.getMainQuestDataMap().get(this.getParentQuestId());
-		for (int rewardId : mainQuestData.getRewardIdList()) {
-			RewardData rewardData = GameData.getRewardDataMap().get(rewardId);
+        // Add rewards
+        MainQuestData mainQuestData = GameData.getMainQuestDataMap().get(this.getParentQuestId());
+        for (int rewardId : mainQuestData.getRewardIdList()) {
+            RewardData rewardData = GameData.getRewardDataMap().get(rewardId);
 
-			if (rewardData == null) {
-				continue;
-			}
+            if (rewardData == null) {
+                continue;
+            }
 
-			getOwner().getInventory().addItemParamDatas(rewardData.getRewardItemList(), ActionReason.QuestReward);
-		}
+            getOwner().getInventory().addItemParamDatas(rewardData.getRewardItemList(), ActionReason.QuestReward);
+        }
 
         // handoff main quest
-        if(mainQuestData.getSuggestTrackMainQuestList() != null){
+        if (mainQuestData.getSuggestTrackMainQuestList() != null) {
             Arrays.stream(mainQuestData.getSuggestTrackMainQuestList())
                 .forEach(getQuestManager()::startMainQuest);
         }
-	}
+    }
     //TODO
     public void fail() {}
     public void cancel() {}
 
     // Rewinds to the last finished/unfinished rewind quest, and returns the avatar rewind position (if it exists)
     public List<Position> rewind() {
-        if(this.questManager == null) {
+        if (this.questManager == null) {
             this.questManager = getOwner().getQuestManager();
         }
         List<GameQuest> sortedByOrder = new ArrayList<>(getChildQuests().values().stream().filter(q -> q.getQuestData().isRewind()).toList());
         sortedByOrder.sort((a,b) -> {
-            if( a == b){
+            if ( a == b) {
                 return 0;
             }
             return a.getQuestData().getOrder() > b.getQuestData().getOrder() ? 1 : -1;});
         boolean didRewind = false;
         for (GameQuest quest : sortedByOrder) {
             int i = sortedByOrder.indexOf(quest);
-            if( i == sortedByOrder.size()) {
+            if ( i == sortedByOrder.size()) {
                 didRewind = quest.rewind(null);
             } else {
                 didRewind = quest.rewind(sortedByOrder.get(i+1));
             }
-            if(didRewind) {
+            if (didRewind) {
                 break;
             }
         }
         List<GameQuest> rewindQuests = getChildQuests().values().stream()
             .filter(p -> (p.getState() == QuestState.QUEST_STATE_UNFINISHED || p.getState() == QuestState.QUEST_STATE_FINISHED) && p.getQuestData().isRewind()).toList();
         for (GameQuest quest : rewindQuests) {
-            if(rewindPositions.containsKey(quest.getSubQuestId())) {
+            if (rewindPositions.containsKey(quest.getSubQuestId())) {
                 List<Position> posAndRot = new ArrayList<>();
                 posAndRot.add(0,rewindPositions.get(quest.getSubQuestId()));
                 posAndRot.add(1,rewindRotations.get(quest.getSubQuestId()));
@@ -205,17 +205,17 @@ public class GameMainQuest {
             cs.eval(bindings);
 
             var rewindDataMap = ScriptLoader.getSerializer().toMap(RewindData.class, bindings.get("rewind_data"));
-            for(String subId : rewindDataMap.keySet()) {
+            for (String subId : rewindDataMap.keySet()) {
                 RewindData questRewind = rewindDataMap.get(subId);
-                if(questRewind != null) {
+                if (questRewind != null) {
                     RewindData.AvatarData avatarData = questRewind.getAvatar();
-                    if(avatarData != null) {
+                    if (avatarData != null) {
                         String avatarPos = avatarData.getPos();
                         QuestData.Guide guide = GameData.getQuestDataMap().get(Integer.valueOf(subId)).getGuide();
                         if (guide != null) {
                             int sceneId = guide.getGuideScene();
                             ScriptSceneData fullGlobals = GameData.getScriptSceneDataMap().get("flat.luas.scenes.full_globals.lua.json");
-                            if(fullGlobals != null) {
+                            if (fullGlobals != null) {
                                 ScriptSceneData.ScriptObject dummyPointScript = fullGlobals.getScriptObjectList().get(sceneId + "/scene" + sceneId + "_dummy_points.lua");
                                 if (dummyPointScript != null) {
                                     Map<String, List<Float>> dummyPointMap = dummyPointScript.getDummyPoints();
@@ -334,14 +334,14 @@ public class GameMainQuest {
         }
     }
 
-	public void save() {
-		DatabaseHelper.saveQuest(this);
-	}
+    public void save() {
+        DatabaseHelper.saveQuest(this);
+    }
 
-	public ParentQuest toProto() {
-		ParentQuest.Builder proto = ParentQuest.newBuilder()
-				.setParentQuestId(getParentQuestId())
-				.setIsFinished(isFinished());
+    public ParentQuest toProto() {
+        ParentQuest.Builder proto = ParentQuest.newBuilder()
+                .setParentQuestId(getParentQuestId())
+                .setIsFinished(isFinished());
 
 
             proto.setParentQuestState(getState().getValue())
@@ -362,7 +362,7 @@ public class GameMainQuest {
         }
 
 
-		return proto.build();
-	}
+        return proto.build();
+    }
 
 }

@@ -841,9 +841,9 @@ public class InventorySystem extends BaseGameSystem {
                 if (useItem.getItemData().getItemUse() == null) {
                     break;
                 }
-                
+
                 ItemUseOp useOp = useItem.getItemData().getItemUse().get(0).getUseOp();
-                
+
                 // Unlock item based on use operation
                 useSuccess = switch (useOp) {
                     case ITEM_USE_UNLOCK_FORGE -> player.getForgingManager().unlockForgingBlueprint(useItem);
@@ -949,18 +949,18 @@ public class InventorySystem extends BaseGameSystem {
                     case ITEM_USE_ADD_SERVER_BUFF -> {
                         int buffId = Integer.parseInt(useData.getUseParam()[0]);
                         float time = Float.parseFloat(useData.getUseParam()[1]);
-                        
+
                         player.getBuffManager().addBuff(buffId, time);
                     }
                     default -> {}
                 }
             }
-            
+
             // Remove item from inventory since we used it
             player.getInventory().removeItem(useItem, used);
             return useItem;
         }
-        
+
         if (useSuccess) {
             return useItem;
         }

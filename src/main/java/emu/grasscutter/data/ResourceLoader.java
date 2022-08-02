@@ -56,23 +56,23 @@ public class ResourceLoader {
     public static void loadAll() {
         Grasscutter.getLogger().info(translate("messages.status.resources.loading"));
 
-		// Load ability lists
-		loadAbilityEmbryos();
-		loadOpenConfig();
-		loadAbilityModifiers();
-		// Load resources
-		loadResources();
-		// Process into depots
-		GameDepot.load();
-		// Load spawn data and quests
-		loadSpawnData();
-		loadQuests();
+        // Load ability lists
+        loadAbilityEmbryos();
+        loadOpenConfig();
+        loadAbilityModifiers();
+        // Load resources
+        loadResources();
+        // Process into depots
+        GameDepot.load();
+        // Load spawn data and quests
+        loadSpawnData();
+        loadQuests();
         loadScriptSceneData();
-		// Load scene points - must be done AFTER resources are loaded
-		loadScenePoints();
-		// Load default home layout
-		loadHomeworldDefaultSaveData();
-		loadNpcBornData();
+        // Load scene points - must be done AFTER resources are loaded
+        loadScenePoints();
+        // Load default home layout
+        loadHomeworldDefaultSaveData();
+        loadNpcBornData();
 
         Grasscutter.getLogger().info(translate("messages.status.resources.finish"));
     }
@@ -457,10 +457,10 @@ public class ResourceLoader {
         Grasscutter.getLogger().debug("Loaded " + GameData.getScriptSceneDataMap().size() + " ScriptSceneDatas.");
     }
 
-	@SneakyThrows
-	private static void loadHomeworldDefaultSaveData(){
-		var folder = Files.list(Path.of(RESOURCE("BinOutput/HomeworldDefaultSave"))).toList();
-		var pattern = Pattern.compile("scene(.*)_home_config.json");
+    @SneakyThrows
+    private static void loadHomeworldDefaultSaveData() {
+        var folder = Files.list(Path.of(RESOURCE("BinOutput/HomeworldDefaultSave"))).toList();
+        var pattern = Pattern.compile("scene(.*)_home_config.json");
 
         for (var file : folder) {
             var matcher = pattern.matcher(file.getFileName().toString());
