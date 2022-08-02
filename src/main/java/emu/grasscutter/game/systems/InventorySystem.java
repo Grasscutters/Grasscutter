@@ -30,6 +30,7 @@ import emu.grasscutter.game.shop.ShopChestBatchUseTable;
 import emu.grasscutter.game.shop.ShopChestTable;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
+import emu.grasscutter.server.event.player.PlayerUseFoodEvent;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
@@ -812,38 +813,49 @@ public class InventorySystem extends BaseGameSystem {
 
         int used = 0;
         boolean useSuccess = false;
+        ItemData itemData = useItem.getItemData();
 
         // Use
-        switch (useItem.getItemData().getMaterialType()) {
+        switch (itemData.getMaterialType()) {
             case MATERIAL_FOOD:
-                if (useItem.getItemData().getUseTarget() == ItemUseTarget.ITEM_USE_TARGET_SPECIFY_DEAD_AVATAR) {
+                if (itemData.getUseTarget() == ItemUseTarget.ITEM_USE_TARGET_SPECIFY_DEAD_AVATAR) {
                     if (target == null) {
                         break;
                     }
 
-                    used = player.getTeamManager().reviveAvatar(target) ? 1 : 0;
+                    // Invoke player use food event.
+                    PlayerUseFoodEvent event = new PlayerUseFoodEvent(player, itemData, target.getAsEntity());
+                    // Call the event.
+                    event.call(); if(!event.isCanceled()) {
+                        used = player.getTeamManager().reviveAvatar(target) ? 1 : 0;
+                    }
                 } else {
                     used = 1;
                 }
                 break;
             case MATERIAL_NOTICE_ADD_HP:
-                if (useItem.getItemData().getUseTarget() == ItemUseTarget.ITEM_USE_TARGET_SPECIFY_ALIVE_AVATAR) {
+                if (itemData.getUseTarget() == ItemUseTarget.ITEM_USE_TARGET_SPECIFY_ALIVE_AVATAR) {
                     if (target == null) {
                         break;
                     }
 
-                    int[] SatiationParams = useItem.getItemData().getSatiationParams();
-                    used = player.getTeamManager().healAvatar(target, SatiationParams[0], SatiationParams[1]) ? 1 : 0;
+                    // Invoke player use food event.
+                    PlayerUseFoodEvent event = new PlayerUseFoodEvent(player, itemData, target.getAsEntity());
+                    // Call the event.
+                    event.call(); if(!event.isCanceled()) {
+                        int[] SatiationParams = itemData.getSatiationParams();
+                        used = player.getTeamManager().healAvatar(target, SatiationParams[0], SatiationParams[1]) ? 1 : 0;
+                    }
                 }
                 break;
             case MATERIAL_CONSUME:
                 // Make sure we have usage data for this material.
-                if (useItem.getItemData().getItemUse() == null) {
+                if (itemData.getItemUse() == null) {
                     break;
                 }
-                
-                ItemUseOp useOp = useItem.getItemData().getItemUse().get(0).getUseOp();
-                
+
+                ItemUseOp useOp = itemData.getItemUse().get(0).getUseOp();
+
                 // Unlock item based on use operation
                 useSuccess = switch (useOp) {
                     case ITEM_USE_UNLOCK_FORGE -> player.getForgingManager().unlockForgingBlueprint(useItem);
@@ -854,7 +866,7 @@ public class InventorySystem extends BaseGameSystem {
                 break;
             case MATERIAL_FURNITURE_FORMULA:
             case MATERIAL_FURNITURE_SUITE_FORMULA:
-                if (useItem.getItemData().getItemUse() == null) {
+                if (itemData.getItemUse() == null) {
                     break;
                 }
                 useSuccess = player.getFurnitureManager().unlockFurnitureOrSuite(useItem);
@@ -862,7 +874,7 @@ public class InventorySystem extends BaseGameSystem {
                 break;
             case MATERIAL_CONSUME_BATCH_USE:
                 // Make sure we have usage data for this material.
-                if (useItem.getItemData().getItemUse() == null) {
+                if (itemData.getItemUse() == null) {
                     break;
                 }
 
@@ -889,11 +901,11 @@ public class InventorySystem extends BaseGameSystem {
                     }
 
                     for (ItemParamData itemParamData : shopChestTable.getContainsItem()) {
-                        ItemData itemData = GameData.getItemDataMap().get(itemParamData.getId());
-                        if (itemData == null) {
+                        ItemData containedItem = GameData.getItemDataMap().get(itemParamData.getId());
+                        if (containedItem == null) {
                             continue;
                         }
-                        rewardItemList.add(new GameItem(itemData, itemParamData.getCount()));
+                        rewardItemList.add(new GameItem(containedItem, itemParamData.getCount()));
                     }
 
                     if (!rewardItemList.isEmpty()) {
@@ -919,12 +931,12 @@ public class InventorySystem extends BaseGameSystem {
                     }
 
                     int optionItemId = shopChestBatchUseTable.getOptionItem().get(optionId - 1);
-                    ItemData itemData = GameData.getItemDataMap().get(optionItemId);
-                    if (itemData == null) {
+                    ItemData optionItem = GameData.getItemDataMap().get(optionItemId);
+                    if (optionItem == null) {
                         break;
                     }
 
-                    player.getInventory().addItem(new GameItem(itemData, count), ActionReason.Shop);
+                    player.getInventory().addItem(new GameItem(optionItem, count), ActionReason.Shop);
 
                     used = count;
                     break;
@@ -944,23 +956,23 @@ public class InventorySystem extends BaseGameSystem {
         // we return the item to make UseItemRsp a success.
         if (used > 0) {
             // Handle use params, mainly server buffs
-            for (ItemUseData useData : useItem.getItemData().getItemUse()) {
+            for (ItemUseData useData : itemData.getItemUse()) {
                 switch (useData.getUseOp()) {
                     case ITEM_USE_ADD_SERVER_BUFF -> {
                         int buffId = Integer.parseInt(useData.getUseParam()[0]);
                         float time = Float.parseFloat(useData.getUseParam()[1]);
-                        
+
                         player.getBuffManager().addBuff(buffId, time);
                     }
                     default -> {}
                 }
             }
-            
+
             // Remove item from inventory since we used it
             player.getInventory().removeItem(useItem, used);
             return useItem;
         }
-        
+
         if (useSuccess) {
             return useItem;
         }
