@@ -60,8 +60,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                             new Position(motionInfo.getRot()), motionState);
                         event.call();
 
-						entity.getPosition().set(motionInfo.getPos());
-						entity.getRotation().set(motionInfo.getRot());
+						entity.move(event.getPosition(), event.getRotation());
 						entity.setLastMoveSceneTimeMs(moveInfo.getSceneTime());
 						entity.setLastMoveReliableSeq(moveInfo.getReliableSeq());
 						entity.setMotionState(motionState);

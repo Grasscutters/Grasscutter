@@ -17,6 +17,8 @@ import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.scripts.data.SceneConfig;
+import emu.grasscutter.server.event.player.PlayerTeleportEvent;
+import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketDelTeamEntityNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
@@ -53,7 +55,7 @@ public class World implements Iterable<Player> {
         this.players = Collections.synchronizedList(new ArrayList<>());
         this.scenes = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
 
-        this.levelEntityId = getNextEntityId(EntityIdType.MPLEVEL);
+        this.levelEntityId = this.getNextEntityId(EntityIdType.MPLEVEL);
         this.worldLevel = player.getWorldLevel();
         this.isMultiplayer = isMultiplayer;
 
@@ -101,7 +103,7 @@ public class World implements Iterable<Player> {
 
     public Scene getSceneById(int sceneId) {
         // Get scene normally
-        Scene scene = getScenes().get(sceneId);
+        Scene scene = this.getScenes().get(sceneId);
         if (scene != null) {
             return scene;
         }
@@ -118,7 +120,7 @@ public class World implements Iterable<Player> {
     }
 
     public int getPlayerCount() {
-        return getPlayers().size();
+        return this.getPlayers().size();
     }
 
     public boolean isMultiplayer() {
@@ -131,7 +133,7 @@ public class World implements Iterable<Player> {
 
     public synchronized void addPlayer(Player player) {
         // Check if player already in
-        if (getPlayers().contains(player)) {
+        if (this.getPlayers().contains(player)) {
             return;
         }
 
@@ -142,11 +144,11 @@ public class World implements Iterable<Player> {
 
         // Register
         player.setWorld(this);
-        getPlayers().add(player);
+        this.getPlayers().add(player);
 
         // Set player variables
         player.setPeerId(this.getNextPeerId());
-        player.getTeamManager().setEntityId(getNextEntityId(EntityIdType.TEAM));
+        player.getTeamManager().setEntityId(this.getNextEntityId(EntityIdType.TEAM));
 
         // Copy main team to multiplayer team
         if (this.isMultiplayer()) {
@@ -169,12 +171,12 @@ public class World implements Iterable<Player> {
         player.sendPacket(
                 new PacketDelTeamEntityNotify(
                         player.getSceneId(),
-                        getPlayers().stream().map(p -> p.getTeamManager().getEntityId()).collect(Collectors.toList())
+                    this.getPlayers().stream().map(p -> p.getTeamManager().getEntityId()).collect(Collectors.toList())
                 )
         );
 
         // Deregister
-        getPlayers().remove(player);
+        this.getPlayers().remove(player);
         player.setWorld(null);
 
         // Remove from scene
@@ -187,7 +189,7 @@ public class World implements Iterable<Player> {
         }
 
         // Disband world if host leaves
-        if (getHost() == player) {
+        if (this.getHost() == player) {
             List<Player> kicked = new ArrayList<>(this.getPlayers());
             for (Player victim : kicked) {
                 World world = new World(victim);
@@ -207,14 +209,28 @@ public class World implements Iterable<Player> {
     }
 
     public boolean transferPlayerToScene(Player player, int sceneId, Position pos) {
-        return transferPlayerToScene(player, sceneId, null, pos);
+        return this.transferPlayerToScene(player, sceneId, TeleportType.INTERNAL, null, pos);
+    }
+
+    public boolean transferPlayerToScene(Player player, int sceneId, TeleportType teleportType, Position pos) {
+        return this.transferPlayerToScene(player, sceneId, teleportType, null, pos);
     }
 
     public boolean transferPlayerToScene(Player player, int sceneId, DungeonData data) {
-        return transferPlayerToScene(player, sceneId, data, null);
+        return this.transferPlayerToScene(player, sceneId, TeleportType.DUNGEON, data, null);
     }
 
-    public boolean transferPlayerToScene(Player player, int sceneId, DungeonData dungeonData, Position pos) {
+    public boolean transferPlayerToScene(Player player, int sceneId, TeleportType teleportType, DungeonData dungeonData, Position teleportTo) {
+        // Call player teleport event.
+        PlayerTeleportEvent event = new PlayerTeleportEvent(player, teleportType, player.getPosition(), teleportTo);
+        // Call event & check if it was canceled.
+        event.call(); if (event.isCanceled()) {
+            return false; // Teleport was canceled.
+        }
+
+        // Set the destination.
+        teleportTo = event.getDestination();
+
         if (GameData.getSceneDataMap().get(sceneId) == null) {
             return false;
         }
@@ -224,7 +240,7 @@ public class World implements Iterable<Player> {
         if (player.getScene() != null) {
             oldScene = player.getScene();
 
-            // Dont deregister scenes if the player is going to tp back into them
+            // Don't deregister scenes if the player is going to tp back into them
             if (oldScene.getId() == sceneId) {
                 oldScene.setDontDestroyWhenEmpty(true);
             }
@@ -238,9 +254,9 @@ public class World implements Iterable<Player> {
 
         // Dungeon
         SceneConfig config = newScene.getScriptManager().getConfig();
-        if (pos == null && config != null) {
+        if (teleportTo == null && config != null) {
             if (config.born_pos != null) {
-                pos = newScene.getScriptManager().getConfig().born_pos;
+                teleportTo = newScene.getScriptManager().getConfig().born_pos;
             }
             if (config.born_rot != null) {
                 player.getRotation().set(config.born_rot);
@@ -248,11 +264,11 @@ public class World implements Iterable<Player> {
         }
 
         // Set player position
-        if (pos == null) {
-            pos = player.getPosition();
+        if (teleportTo == null) {
+            teleportTo = player.getPosition();
         }
 
-        player.getPosition().set(pos);
+        player.getPosition().set(teleportTo);
 
         if (oldScene != null) {
             newScene.setPrevScene(oldScene.getId());
@@ -276,12 +292,12 @@ public class World implements Iterable<Player> {
         }
 
         // Teleport packet
-        player.sendPacket(new PacketPlayerEnterSceneNotify(player, enterType, enterReason, sceneId, pos));
+        player.sendPacket(new PacketPlayerEnterSceneNotify(player, enterType, enterReason, sceneId, teleportTo));
         return true;
     }
 
     private void updatePlayerInfos(Player paramPlayer) {
-        for (Player player : getPlayers()) {
+        for (Player player : this.getPlayers()) {
             // Dont send packets if player is logging in and filter out joining player
             if (!player.hasSentLoginPackets() || player == paramPlayer) {
                 continue;
@@ -292,7 +308,7 @@ public class World implements Iterable<Player> {
                 player.getTeamManager().getMpTeam().copyFrom(player.getTeamManager().getMpTeam(), player.getTeamManager().getMaxTeamSize());
                 player.getTeamManager().updateTeamEntities(null);
             }
-            
+
             // Dont send packets if player is loading into the scene
             if (player.getSceneLoadState().getValue() < SceneLoadState.INIT.getValue() ) {
                 // World player info packets
@@ -326,6 +342,6 @@ public class World implements Iterable<Player> {
 
     @Override
     public Iterator<Player> iterator() {
-        return getPlayers().iterator();
+        return this.getPlayers().iterator();
     }
 }

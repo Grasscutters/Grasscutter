@@ -8,11 +8,11 @@ public abstract class EntityBaseGadget extends GameEntity {
 	public EntityBaseGadget(Scene scene) {
 		super(scene);
 	}
-	
+
 	public abstract int getGadgetId();
-	
+
 	@Override
 	public void onDeath(int killerId) {
-		
+        super.onDeath(killerId); // Invoke super class's onDeath() method.
 	}
 }

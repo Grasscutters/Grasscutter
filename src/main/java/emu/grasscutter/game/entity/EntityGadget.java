@@ -175,6 +175,8 @@ public class EntityGadget extends EntityBaseGadget {
 
     @Override
     public void onDeath(int killerId) {
+        super.onDeath(killerId); // Invoke super class's onDeath() method.
+
         if (this.getSpawnEntry() != null) {
             this.getScene().getDeadSpawnedEntities().add(getSpawnEntry());
         }
