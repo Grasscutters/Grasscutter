@@ -5,6 +5,8 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.ScenePointEntry;
 import emu.grasscutter.data.excels.OpenStateData;
 import emu.grasscutter.data.excels.OpenStateData.OpenStateCondType;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketOpenStateUpdateNotify;
@@ -160,11 +162,11 @@ public class PlayerProgressManager extends BasePlayerDataManager {
      ******************************************************************************************************************
      *****************************************************************************************************************/
     public void unlockTransPoint(int sceneId, int pointId) {
-        // Check whether the unlocked point exists.
+        // Check whether the unlocked point exists and whether it is still locked.
         String key = sceneId + "_" + pointId;
 		ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(key);
 		
-		if (scenePointEntry == null) {
+		if (scenePointEntry == null || this.player.getUnlockedScenePoints().getOrDefault(sceneId, List.of()).contains(pointId)) {
             this.player.sendPacket(new PacketUnlockTransPointRsp(Retcode.RET_FAIL));
             return;
         }
@@ -174,6 +176,10 @@ public class PlayerProgressManager extends BasePlayerDataManager {
             this.player.getUnlockedScenePoints().put(sceneId, new ArrayList<>());
         }
         this.player.getUnlockedScenePoints().get(sceneId).add(pointId);
+
+        // Give primogems for unlocking.
+        var primos = new GameItem(GameData.getItemDataMap().get(201), 5);
+        this.player.getInventory().addItem(primos, ActionReason.UnlockPointReward);
 
         // Send packet.
         this.player.sendPacket(new PacketScenePointUnlockNotify(sceneId, pointId));
