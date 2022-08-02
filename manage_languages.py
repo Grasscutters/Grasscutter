@@ -23,7 +23,7 @@ def ppprint(data):
 class JsonHelpers:
     @staticmethod
     def load(filename: str) -> dict:
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding='utf-8') as file:
             return json.load(file)
 
     @staticmethod
@@ -117,7 +117,7 @@ class LanguageManager:
             for file in files:
                 if file.rpartition('.')[-1] in SOURCE_EXTENSIONS:
                     filename = os.path.join(root, file)
-                    with open(filename, 'r') as f:
+                    with open(filename, 'r', encoding='utf-8') as f:
                         data = f.read()  # Loads in entire file at once
                         for k in self.TRANSLATION_KEY.findall(data):
                             used.add(k)

@@ -23,7 +23,7 @@ public class PacketPersonalLineAllDataRsp extends BasePacket {
             .map(GameMainQuest::getChildQuests)
             .map(Map::values)
             .flatMap(Collection::stream)
-            .map(GameQuest::getQuestId)
+            .map(GameQuest::getSubQuestId)
             .collect(Collectors.toSet());
 
         GameData.getPersonalLineDataMap().values().stream()

@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Set;
 import java.io.FileReader;
 import java.lang.reflect.Field;
@@ -27,7 +28,7 @@ public class ConfigContainer {
     public static void updateConfig() {
         try { // Check if the server is using a legacy config.
             JsonObject configObject = Grasscutter.getGsonFactory()
-                    .fromJson(new FileReader(Grasscutter.configFile), JsonObject.class);
+                    .fromJson(new FileReader(Grasscutter.configFile, StandardCharsets.UTF_8), JsonObject.class);
             if (!configObject.has("version")) {
                 Grasscutter.getLogger().info("Updating legacy ..");
                 Grasscutter.saveConfig(null);
@@ -121,7 +122,7 @@ public class ConfigContainer {
     public static class HTTP {
         public String bindAddress = "0.0.0.0";
         public int bindPort = 443;
-        
+
         /* This is the address used in URLs. */
         public String accessAddress = "127.0.0.1";
         /* This is the port used in URLs. */
@@ -145,7 +146,7 @@ public class ConfigContainer {
         public int loadEntitiesForPlayerRange = 100;
         public boolean enableScriptInBigWorld = false;
         public boolean enableConsole = true;
-        
+
         /* Kcp internal work interval (milliseconds) */
         public int kcpInterval = 20;
         /* Controls whether packets should be logged in console or not */

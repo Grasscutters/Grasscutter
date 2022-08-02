@@ -6,14 +6,23 @@ import java.util.Map;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 
-@Command(label = "setStats", aliases = {"stats", "stat"}, usage = {"<stat> <value>"}, permission = "player.setstats", permissionTargeted = "player.setstats.others")
+@Command(
+    label = "setStats",
+    aliases = {"stats", "stat"},
+    usage = {
+        "[set] <stat> <value>",
+        "(lock|freeze) <stat> [<value>]",  // Can lock to current value
+        "(unlock|unfreeze) <stat>"},
+    permission = "player.setstats",
+    permissionTargeted = "player.setstats.others")
 public final class SetStatsCommand implements CommandHandler {
-    static class Stat {
+    private static class Stat {
         String name;
         FightProperty prop;
 
@@ -27,9 +36,21 @@ public final class SetStatsCommand implements CommandHandler {
             this.prop = prop;
         }
     }
-    
-    Map<String, Stat> stats;
-    
+
+    private static enum Action {
+        ACTION_SET("commands.generic.set_to", "commands.generic.set_for_to"),
+        ACTION_LOCK("commands.setStats.locked_to", "commands.setStats.locked_for_to"),
+        ACTION_UNLOCK("commands.setStats.unlocked", "commands.setStats.unlocked_for");
+        public final String messageKeySelf;
+        public final String messageKeyOther;
+        private Action(String messageKeySelf, String messageKeyOther) {
+            this.messageKeySelf = messageKeySelf;
+            this.messageKeyOther = messageKeyOther;
+        }
+    }
+
+    private Map<String, Stat> stats;
+
     public SetStatsCommand() {
         this.stats = new HashMap<>();
         for (String key : FightProperty.getShortNames()) {
@@ -62,50 +83,97 @@ public final class SetStatsCommand implements CommandHandler {
         this.stats.put("ephys", this.stats.get("phys%"));
     }
 
+    public static float parsePercent(String input) throws NumberFormatException {
+        if (input.endsWith("%")) {
+            return Float.parseFloat(input.substring(0, input.length()-1))/100f;
+        } else {
+            return Float.parseFloat(input);
+        }
+    }
+
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        String statStr;
+        String statStr = null;
         String valueStr;
+        float value = 0f;
 
-        if (args.size() == 2) {
-            statStr = args.get(0).toLowerCase();
-            valueStr = args.get(1);
-        } else {
+        if (args.size() < 2) {
             sendUsageMessage(sender);
             return;
         }
 
+        // Get the action and stat
+        String arg0 = args.remove(0).toLowerCase();
+        Action action = switch (arg0) {
+            default -> {statStr = arg0; yield Action.ACTION_SET;}  // Implicit set command
+            case "set" -> Action.ACTION_SET;  // Explicit set command
+            case "lock", "freeze" -> Action.ACTION_LOCK;
+            case "unlock", "unfreeze" -> Action.ACTION_UNLOCK;
+        };
+        if (statStr == null) {
+            statStr = args.remove(0).toLowerCase();
+        }
+        if (!stats.containsKey(statStr)) {
+            sendUsageMessage(sender);  // Invalid stat or action
+            return;
+        }
+        Stat stat = stats.get(statStr);
         EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
+        Avatar avatar = entity.getAvatar();
 
-        float value;
+        // Get the value if the action requires it
         try {
-            if (valueStr.endsWith("%")) {
-                value = Float.parseFloat(valueStr.substring(0, valueStr.length()-1))/100f;
-            } else {
-                value = Float.parseFloat(valueStr);
+            switch (action) {
+                case ACTION_LOCK:
+                    if (args.isEmpty()) {  // Lock to current value
+                        value = avatar.getFightProperty(stat.prop);
+                        break;
+                    }  // Else fall-through and lock to supplied value
+                case ACTION_SET:
+                    value = parsePercent(args.remove(0));
+                    break;
+                case ACTION_UNLOCK:
+                    break;
             }
         } catch (NumberFormatException ignored) {
             CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.statValue");
             return;
+        } catch (IndexOutOfBoundsException ignored) {
+            sendUsageMessage(sender);
+            return;
         }
 
-        if (stats.containsKey(statStr)) {
-            Stat stat = stats.get(statStr);
-            entity.setFightProperty(stat.prop, value);
-            entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, stat.prop));
-            if (FightProperty.isPercentage(stat.prop)) {
-                valueStr = String.format("%.1f%%", value * 100f);
-            } else {
-                valueStr = String.format("%.0f", value);
-            }
-            if (targetPlayer == sender) {
-                CommandHandler.sendTranslatedMessage(sender, "commands.generic.set_to", stat.name, valueStr);
-            } else {
-                String uidStr = targetPlayer.getAccount().getId();
-                CommandHandler.sendTranslatedMessage(sender, "commands.generic.set_for_to", stat.name, uidStr, valueStr);
-            }
-        } else {
+        if (!args.isEmpty()) {  // Leftover arguments!
             sendUsageMessage(sender);
+            return;
+        }
+
+        switch (action) {
+            case ACTION_SET:
+                entity.setFightProperty(stat.prop, value);
+                entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, stat.prop));
+                break;
+            case ACTION_LOCK:
+                avatar.getFightPropOverrides().put(stat.prop.getId(), value);
+                avatar.recalcStats();
+                break;
+            case ACTION_UNLOCK:
+                avatar.getFightPropOverrides().remove(stat.prop.getId());
+                avatar.recalcStats();
+                break;
+        }
+
+        // Report action
+        if (FightProperty.isPercentage(stat.prop)) {
+            valueStr = String.format("%.1f%%", value * 100f);
+        } else {
+            valueStr = String.format("%.0f", value);
+        }
+        if (targetPlayer == sender) {
+            CommandHandler.sendTranslatedMessage(sender, action.messageKeySelf, stat.name, valueStr);
+        } else {
+            String uidStr = targetPlayer.getAccount().getId();
+            CommandHandler.sendTranslatedMessage(sender, action.messageKeyOther, stat.name, uidStr, valueStr);
         }
         return;
     }

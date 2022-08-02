@@ -1,6 +1,8 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player.SceneLoadState;
+import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.packet.PacketHandler;
@@ -16,7 +18,7 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
 		session.getPlayer().setSceneLoadState(SceneLoadState.LOADED);
 
 		// Done
-		session.send(new PacketEnterSceneDoneRsp(session.getPlayer()));
+
 		session.send(new PacketPlayerTimeNotify(session.getPlayer())); // Probably not the right place
 
 		// Spawn player in world
@@ -35,11 +37,15 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
 
         // notify client to load the npc for quest
         var questGroupSuites = session.getPlayer().getQuestManager().getSceneGroupSuite(session.getPlayer().getSceneId());
+
         session.getPlayer().getScene().loadGroupForQuest(questGroupSuites);
+        Grasscutter.getLogger().debug("Loaded Scene {} Quest(s) Groupsuite(s): {}", session.getPlayer().getSceneId(), questGroupSuites);
         session.send(new PacketGroupSuiteNotify(questGroupSuites));
 
 		// Reset timer for sending player locations
 		session.getPlayer().resetSendPlayerLocTime();
+        //Rsp
+        session.send(new PacketEnterSceneDoneRsp(session.getPlayer()));
 	}
 
 }

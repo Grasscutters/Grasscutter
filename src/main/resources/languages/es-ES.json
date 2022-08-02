@@ -256,6 +256,14 @@
       "success": "Mensaje enviado.",
       "description": "Envía un mensaje a un jugador como servidor. Si se usa sin un objetivo fijado, lo envía a todos los jugadores del servidor."
     },
+    "setConst": {
+      "range_error": "El nivel de constelación debe estar entre 0 y 6.",
+      "level_error": "Nivel de constelación inválido.",
+      "fail": "Error al establecer la constelación.",
+      "failed_success": "Las constelaciones de %s han sido establecidas a %s. Por favor reinicia el escenario para ver los cambios.",
+      "success": "Las constelaciones de %s han sido establecidas a %s.",
+      "description": "Establece el nivel de constelación para tu personaje actual"
+    },
     "setFetterLevel": {
       "range_error": "El nivel de amistad debe estar entre 0 y 10.",
       "success": "Nivel de amistad establecido a %s.",
@@ -266,7 +274,11 @@
       "description": "Establece propiedades de la cuenta. Cosas como el modo Dios pueden ser establecidos con este comando, además de cambiar cosas como desbloquear pisos del abusmo o progreso del pase de batalla.\n\tValores para <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) Observa PlayerProperty enum para ver otros posibles valores, de la forma PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setStats": {
-      "description": "Establece propiedades de combate para tu personaje actual\n\tValores para <estado>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de daño elemental: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Resistencia elemental: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys"
+      "description": "Establece propiedades de combate para tu personaje actual\n\tValores para <estado>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de daño elemental: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Resistencia elemental: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
+      "locked_to": "%s fijado a %s.",
+      "locked_for_to": "%s para %s fijado a %s.",
+      "unlocked": "%s desfijado.",
+      "unlocked_for": "%s para %s desfijado."
     },
     "spawn": {
       "success": "Generados %s de %s.",
@@ -325,6 +337,10 @@
       "failure": "Error, jugador no encontrado.",
       "invalid_time": "No se puede establecer la marca de tiempo.",
       "description": "Beta a un jugador"
+    },
+    "unlockall": {
+      "success": "Desfijados todos los estados abiertos para %s.",
+      "description": "Desfija todos los estados abiertos para un jugador."
     },
     "unban": {
       "success": "Exitoso.",

@@ -24,24 +24,24 @@
       "account": {
         "login_attempt": "[Dispatch] 客戶端 %s 正在嘗試登入",
         "login_success": "[Dispatch] 客戶端 %s 已登入，UID為 %s",
-        "login_max_player_limit": "[Dispatch] 客戶端 %s 登入失敗：在綫人數已滿",
+        "login_max_player_limit": "[Dispatch] 客戶端 %s 登入失敗：在線人數已滿",
         "login_token_attempt": "[Dispatch] 客戶端 %s 正在嘗試用憑證登入",
         "login_token_error": "[Dispatch] 客戶端 %s 使用憑證登入失敗",
         "login_token_success": "[Dispatch] 客戶端 %s 已透過憑證登入，UID為 %s",
-        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
-        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
+        "login_password_error": "[Dispatch] 客戶端 %s 使用密碼登入失敗",
+        "login_password_storage_error": "[Dispatch] 客戶端 %s 使用密碼登入失敗，因為該帳號在資料庫裡面沒有設定密碼。",
         "combo_token_success": "[Dispatch] 客戶端 %s 交換憑證成功",
         "combo_token_error": "[Dispatch] 客戶端 %s 交換憑證失敗",
-        "account_login_create_success": "[Dispatch] 客戶端 %s 登入失敗: 已註冊UID為 %s 的帳號",
+        "account_login_create_success": "[Dispatch] 客戶端 %s 登入失敗: 已註冊UID為 %s 的帳號。",
         "account_login_create_error": "[Dispatch] 客戶端 %s 登入失敗：帳號建立失敗。",
-        "account_login_exist_error": "[Dispatch] 客戶端 %s 登入失敗: 帳號不存在",
+        "account_login_exist_error": "[Dispatch] 客戶端 %s 登入失敗: 帳號不存在。",
         "account_cache_error": "遊戲帳號緩存資訊錯誤",
         "session_key_error": "對話密鑰不符。",
         "username_error": "未找到此用戶名。",
         "username_create_error": "未找到用戶名，建立失敗。",
-        "password_error": "🇺🇸Invalid Password",
-        "password_length_error": "🇺🇸Password length must be greater then or equal to 8",
-        "password_storage_error": "🇺🇸You don't have a password for your account. Please contact an administrator.",
+        "password_error": "無效的密碼",
+        "password_length_error": "密碼長度必須大於或等於 8。",
+        "password_storage_error": "此帳號沒有設定密碼，請聯繫伺服器管理員。",
         "server_max_player_limit": "伺服器在線人數已滿"
       },
       "router_error": "[Dispatch] 無法附加到路由上。"
@@ -54,14 +54,14 @@
       "error": "發生了一個錯誤。",
       "welcome": "歡迎使用 Grasscutter",
       "run_mode_error": "無效的伺服器運行模式： %s。",
-      "run_mode_help": "伺服器運行模式必須為 HYBRID 或者 DISPATCH_ONLY 或者 GAME_ONLY。Grasscutter 啟動失敗...",
+      "run_mode_help": "伺服器運行模式必須為 HYBRID 或者 DISPATCH_ONLY 或者 GAME_ONLY。 Grasscutter 啟動失敗...",
       "create_resources": "正在建立 resources 資料夾...",
       "resources_error": "請將 BinOutput 和 ExcelBinOutput 複製到 resources 資料夾。",
       "version": "Grasscutter版本： %s-%s",
       "game_version": "遊戲版本：%s",
       "resources": {
-        "loading": "🇺🇸Loading resources...",
-        "finish": "🇺🇸Finished loading resources."
+        "loading": "加載資源中...",
+        "finish": "資源加載完成.。"
       }
     }
   },
@@ -73,7 +73,7 @@
       "console_execute_error": "此指令只能在伺服器的命令提示字元執行。",
       "player_execute_error": "請在遊戲裡使用這條指令。",
       "command_exist_error": "找不到指令。",
-      "no_usage_specified": "🇺🇸No usage specified",
+      "no_usage_specified": "沒有指定用法。",
       "no_description_specified": "没有指定說明。",
       "set_to": "%s 已經設為 %s。",
       "set_for_to": "%s 的使用者 %s 更改為 %s。",
@@ -87,7 +87,7 @@
         "itemLevel": "無效的物品等級。",
         "itemRefinement": "無效的物品精煉度。",
         "statValue": "無效的數據值。",
-        "value_between": "🇺🇸Invalid value: %s must be between %s and %s.",
+        "value_between": "無效的屬性值：%s 必須在 %s 到 %s 之間。",
         "playerId": "無效的玩家ID。",
         "uid": "無效的UID。",
         "id": "無效的ID。"
@@ -123,11 +123,11 @@
       "description": "建立或刪除帳號。"
     },
     "announce": {
-      "send_success": "🇺🇸Send an announcement successfully, you can revoke it by /a revoke %s.",
-      "refresh_success": "🇺🇸Refresh announcement config file successfully. [Total %s]",
-      "revoke_done": "🇺🇸Try to revoke announcement %s.",
-      "not_found": "🇺🇸Could not found announcement %s.",
-      "description": "🇺🇸Send announcement to all online players, or manage server's announcement"
+      "send_success": "成功發送了一則公告，你可以通過 /a revoke %s 撤銷。",
+      "refresh_success": "已重新整理了%s個公告。",
+      "revoke_done": "嘗試撤回公告 %s。",
+      "not_found": "找不到公告 %s。",
+      "description": "發送公告給所有在線玩家，或者是更改伺服器的公告。"
     },
     "clear": {
       "weapons": "已將 %s 的武器清空。",
@@ -150,13 +150,13 @@
       "description": "進入指定祕境。"
     },
     "give": {
-      "usage_relic": "🇺🇸Usage: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
-      "illegal_relic": "🇺🇸This artifactID belongs to a blacklisted range, it may not be the one you wanted.",
+      "usage_relic": "用法： give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
+      "illegal_relic": "你不可以取得這個聖遺物，因為該聖遺物ID在黑名單列表內。",
       "given": "已經將 %s 個 %s 給予 %s。",
       "given_with_level_and_refinement": "已將 %s [等級%s, 精煉%s] %s個給予 %s",
       "given_level": "已將 %s 等級 %s %s 個給予 %s",
       "given_avatar": "已將 %s 等級 %s 給予 %s。",
-      "giveall_success": "🇺🇸Successfully gave all items.",
+      "giveall_success": "成功給予所有物品。",
       "description": "給予指定物品。"
     },
     "heal": {
@@ -230,7 +230,7 @@
       "description": "重置所選玩家的商店刷新時間。"
     },
     "sendMail": {
-      "give_usage": "🇺🇸Usage: give <player> <itemID|itemName> [amount] [level] [refinement]",
+      "give_usage": "用法： give <player> <itemID|itemName> [amount] [level] [refinement]",
       "user_not_exist": "ID '%s' 的使用者不存在。",
       "start_composition": "發送郵件流程。\n請使用`/send <郵件標題>`來進到下一步。\n你可以在任何時間使用`/sendmail stop`來停止發送。",
       "templates": "郵件模板尚未實裝...",
@@ -244,7 +244,7 @@
       "set_contents": "成功將'%s'為郵件內容。\n接下來請打出 '/sendmail <寄件者名稱>' 來設定郵件寄件者名稱。",
       "set_message_sender": "郵件寄件者已設為 '%s'。\n使用 '/sendmail <itemId|itemName|finish> [amount] [level]' 以繼續操作。",
       "send": "已添加 %s 個 %s (等級為 %s) 到郵件附件。\n如果沒有要繼續添加道具請使用 `/sendmail finish` 來完成郵件發送。",
-      "invalid_arguments_please_use": "Invalid arguments \n Please use `/sendmail %s`",
+      "invalid_arguments_please_use": "無效的參數 \n 請改用 `/sendmail %s`",
       "title": "<標題>",
       "message": "<正文>",
       "sender": "<寄件者>",
@@ -256,6 +256,14 @@
       "success": "訊息已發送。",
       "description": "向指定玩家發送訊息。"
     },
+    "setConst": {
+      "range_error": "命座必須在0到6之間。",
+      "level_error": "無效的命座等級。",
+      "fail": "設定命座失敗。",
+      "failed_success": "%s的命之座已設定為成%s，重新登入後將會生效。",
+      "success": "%s的命之座已設定為成%s。",
+      "description": "設定當前角色的命之座。"
+    },
     "setFetterLevel": {
       "range_error": "好感度必須在 0 到 10 之間。",
       "success": "好感等級已設定為 %s",
@@ -263,14 +271,18 @@
       "description": "設定當前角色的好感度等級。"
     },
     "setProp": {
-      "description": "🇺🇸Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress.\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
+      "description": "設定帳號屬性。 比如可以通過此命令啟用無敵，也可以解鎖深淵或更改紀行等級。\n\t可更改的屬性列表： godmode(無敵)|nostamina(無限體力)|unlimitedenergy(無限元素能量)|abyss(深淵螺旋)|worldlevel(世界等級)|bplevel(紀行等級)\n\t(cont.) `有關其他可能的數值，請參閱 PlayerProperty 列舉。 (範例 PROP_MAX_SPRING_VOLUME -> max_spring_volume)`"
     },
     "setStats": {
-      "description": "設定當前角色的數據類型。\n\t可使用的數據類型：hp (生命值)| maxhp (最大生命值) | def(防禦力) | atk (攻擊力)| em (元素精通) | er (元素充能效率) | crate(暴擊率) | cdmg (暴擊傷害)| cdr (冷卻縮減) | heal(治療加成)| heali (受治療加成)| shield (護盾強效)| defi (無視防禦)\n\t(cont.) 元素增傷類：epyro (火傷) | ecryo (冰傷)  | ehydro (水傷)  | egeo (岩傷)  | edendro (草傷) | eelectro (雷傷) | ephys (物傷)(cont.) 元素減傷類：respyro (火抗)  | rescryo (冰抗)  | reshydro (水抗)  | resgeo (岩抗) | resdendro (草抗) | reselectro (雷抗)  | resphys (物抗)"
+      "description": "設定當前角色的數據類型。\n\t可使用的數據類型：hp (生命值)| maxhp (最大生命值) | def(防禦力) | atk (攻擊力)| em (元素精通) | er (元素充能效率) | crate(暴擊率) | cdmg (暴擊傷害)| cdr (冷卻縮減) | heal(治療加成)| heali (受治療加成)| shield (護盾強效)| defi (無視防禦)\n\t(cont.) 元素增傷類：epyro (火傷) | ecryo (冰傷)  | ehydro (水傷)  | egeo (岩傷)  | edendro (草傷) | eelectro (雷傷) | ephys (物傷)(cont.) 元素減傷類：respyro (火抗)  | rescryo (冰抗)  | reshydro (水抗)  | resgeo (岩抗) | resdendro (草抗) | reselectro (雷抗)  | resphys (物抗)",
+      "locked_to": "🇺🇸%s locked to %s.",
+      "locked_for_to": "🇺🇸%s for %s locked to %s.",
+      "unlocked": "🇺🇸%s unlocked.",
+      "unlocked_for": "🇺🇸%s for %s unlocked."
     },
     "spawn": {
       "success": "已生成 %s 個 %s。",
-      "limit_reached": "🇺🇸Scene spawn limit reached. Spawning %s entities instead.",
+      "limit_reached": "已達到場景生成上限，已改為%s個實體。",
       "description": "在你附近生成一個實體動物。"
     },
     "stop": {
@@ -325,6 +337,10 @@
       "failure": "停權失敗，玩家帳號不存在。",
       "invalid_time": "無效的時間戳。",
       "description": "停權指定玩家。"
+    },
+    "unlockall": {
+      "success": "🇺🇸Unlocked all open states for %s.",
+      "description": "🇺🇸Unlocks all open states for a player."
     },
     "unban": {
       "success": "撤銷停權成功。",
