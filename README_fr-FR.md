@@ -3,11 +3,11 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | FR | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md)
+[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | FR | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md)
 
 **Attention:** De nouveaux contributeurs sont toujours les bienvenus. Avant d'ajouter votre contribution, veuillez lire le [code de conduite](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
-## Fonctionnalités actuelles : 
+## Fonctionnalités actuelles :
 
 * Connection
 * Combat
@@ -48,23 +48,23 @@
 
 1. Redirection du traffic: (Choisissez-en un)
     - mitmdump: `mitmdump -s proxy.py -k`
-    
+
       Approuvez le certificat CA:
-    
+
       ​	**Note:**Le certificat CA est généralement stocké sous `%USERPROFILE%\ .mitmproxy`, ou vous pouvez le télécharger depuis `http://mitm.it`
-    
+
       ​	Double-cliquez pour [installer](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) oo ...
-    
+
       - Via la ligne de commande
-    
+
         ```shell
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
         ```
-    
+
     - Fiddler Classic: Exécutez Fiddler Classic, Activez `Decrypt https traffic` dans les paramètres et changez le port par défaut ici (Tools -> Options -> Connections) à autre chose que `8888`, et chargez [ce script](https://github.lunatic.moe/fiddlerscript).
-      
+
     - [Fichier hosts](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
-    
+
 2. Définissez le proxy du réseau comme `127.0.0.1:8080` ou le port du proxy que vous avez spécifié.
 
 **Vous pouvez aussi utiliser `start.cmd` to démarrer les serveurs et le proxy automatiquement, mais vous devez mettre en place la variable d'environnement JAVA_HOME**
@@ -99,9 +99,9 @@ chmod +x gradlew
 Vous trouverez le fichier jar compilé à la racine du dossier du projet.
 
 ### Les commandes ont été déplacé vers le [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands)! (en anglais)
- 
+
 # Dépannage rapide
 
 * Si la compilation a échoué, veuillez vérifier votre installation de votre JDK (JDK 17 et le bon dossier bin du JDK dans la variable PATH)
-* Mon client ne se connecte pas au serveur, impossible de se connecter a mon compte, 4206, etc... - La plupart du temps, *le problème* vient de la configuration de votre proxy. Si vous utilisez Fiddler, vérifiez s'il est exécuté sur un port autre que 8888 
+* Mon client ne se connecte pas au serveur, impossible de se connecter a mon compte, 4206, etc... - La plupart du temps, *le problème* vient de la configuration de votre proxy. Si vous utilisez Fiddler, vérifiez s'il est exécuté sur un port autre que 8888
 * Séquence de démarrage : MongoDB > Grasscutter > Proxy (mitmdump, fiddler, etc...) > Jeu
