@@ -537,9 +537,9 @@ public class Scene {
                     }
                     gadget.buildContent();
 
-                    gadget.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, GameConstants.INFINITE_HP);
-                    gadget.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, GameConstants.INFINITE_HP);
-                    gadget.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, GameConstants.INFINITE_HP);
+                    gadget.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, Float.POSITIVE_INFINITY);
+                    gadget.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, Float.POSITIVE_INFINITY);
+                    gadget.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, Float.POSITIVE_INFINITY);
 
                     entity = gadget;
                     blossomManager.initBlossom(gadget);

@@ -213,7 +213,7 @@ public abstract class GameEntity {
         }
 
         //support infinite hp
-        if(getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) != GameConstants.INFINITE_HP){
+        if(getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) != Float.POSITIVE_INFINITY){
             // Lose hp
             addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -amount);
         }

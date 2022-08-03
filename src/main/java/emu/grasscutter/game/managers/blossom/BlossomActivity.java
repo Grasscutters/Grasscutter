@@ -123,9 +123,9 @@ public class BlossomActivity {
             SceneGadget metaGadget = new SceneGadget();
             metaGadget.boss_chest = new SceneBossChest();
             metaGadget.boss_chest.resin = 20;
-            rewordGadget.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, GameConstants.INFINITE_HP);
-            rewordGadget.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, GameConstants.INFINITE_HP);
-            rewordGadget.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, GameConstants.INFINITE_HP);
+            rewordGadget.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, Float.POSITIVE_INFINITY);
+            rewordGadget.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, Float.POSITIVE_INFINITY);
+            rewordGadget.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, Float.POSITIVE_INFINITY);
             rewordGadget.setMetaGadget(metaGadget);
             rewordGadget.buildContent();
             chest = rewordGadget;
