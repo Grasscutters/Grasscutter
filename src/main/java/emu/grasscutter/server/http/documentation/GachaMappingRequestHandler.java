@@ -1,154 +1,117 @@
 package emu.grasscutter.server.http.documentation;
 
-import com.google.gson.reflect.TypeToken;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.Language;
 import express.http.Request;
 import express.http.Response;
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+import it.unimi.dsi.fastutil.ints.IntList;
 
 import static emu.grasscutter.config.Configuration.DOCUMENT_LANGUAGE;
-import static emu.grasscutter.config.Configuration.RESOURCE;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 final class GachaMappingRequestHandler implements DocumentationHandler {
-
-    private Map<Long, String> map;
+    private List<String> gachaJsons;
 
     GachaMappingRequestHandler() {
-        final String textMapFile = "TextMap/TextMap" + DOCUMENT_LANGUAGE + ".json";
-        try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(
-                Utils.toFilePath(RESOURCE(textMapFile))), StandardCharsets.UTF_8)) {
-            map = Grasscutter.getGsonFactory().fromJson(fileReader,
-                    new TypeToken<Map<Long, String>>() {
-                    }.getType());
-        } catch (IOException e) {
-            Grasscutter.getLogger().warn("Resource does not exist: " + textMapFile);
-            map = new HashMap<>();
-        }
+        this.gachaJsons = createGachaMappingJsons();
     }
 
     @Override
     public void handle(Request request, Response response) {
-        if (map.isEmpty()) {
-            response.status(500);
-        } else {
-            response.set("Content-Type", "application/json")
-                    .ctx()
-                    .result(createGachaMappingJson());
-        }
+        final int langIdx = Language.TextStrings.MAP_LANGUAGES.getOrDefault(DOCUMENT_LANGUAGE, 0);  // TODO: This should really be based off the client language somehow
+        response.set("Content-Type", "application/json")
+                .ctx()
+                .result(gachaJsons.get(langIdx));
     }
 
-    private String createGachaMappingJson() {
-        List<Integer> list;
-
-        final StringBuilder sb = new StringBuilder();
-        list = new ArrayList<>(GameData.getAvatarDataMap().keySet());
-        Collections.sort(list);
-
-        final String newLine = System.lineSeparator();
-
-        // if the user made choices for language, I assume it's okay to assign his/her selected language to "en-us"
-        // since it's the fallback language and there will be no difference in the gacha record page.
-        // The enduser can still modify the `gacha_mappings.js` directly to enable multilingual for the gacha record system.
-        sb.append("{").append(newLine);
+    private List<String> createGachaMappingJsons() {
+        final int NUM_LANGUAGES = Language.TextStrings.NUM_LANGUAGES;
+        final Language.TextStrings CHARACTER = Language.getTextMapKey(4233146695L);  // "Character" in EN
+        final Language.TextStrings WEAPON = Language.getTextMapKey(4231343903L);  // "Weapon" in EN
+        final Language.TextStrings STANDARD_WISH = Language.getTextMapKey(332935371L);  // "Standard Wish" in EN
+        final Language.TextStrings CHARACTER_EVENT_WISH = Language.getTextMapKey(2272170627L);  // "Character Event Wish" in EN
+        final Language.TextStrings CHARACTER_EVENT_WISH_2 = Language.getTextMapKey(3352513147L);  // "Character Event Wish-2" in EN
+        final Language.TextStrings WEAPON_EVENT_WISH = Language.getTextMapKey(2864268523L);  // "Weapon Event Wish" in EN
+        final List<StringBuilder> sbs = new ArrayList<>(NUM_LANGUAGES);
+        for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++)
+            sbs.add(new StringBuilder("{\n"));  // Web requests should never need Windows line endings
 
         // Avatars
-        boolean first = true;
-        for (Integer id : list) {
+        IntList list = new IntArrayList(GameData.getAvatarDataMap().keySet().intStream().sorted().toArray());
+        for (int id : list) {
             AvatarData data = GameData.getAvatarDataMap().get(id);
             int avatarID = data.getId();
             if (avatarID >= 11000000) { // skip test avatar
                 continue;
             }
-            if (first) { // skip adding comma for the first element
-                first = false;
-            } else {
-                sb.append(",");
-            }
-            String color;
-            switch (data.getQualityType()) {
-                case "QUALITY_PURPLE":
-                    color = "purple";
-                    break;
-                case "QUALITY_ORANGE":
-                    color = "yellow";
-                    break;
-                case "QUALITY_BLUE":
-                default:
-                    color = "blue";
-            }
-            // Got the magic number 4233146695 from manually search in the json file
-            sb.append("\"")
+            String color = switch (data.getQualityType()) {
+                case "QUALITY_PURPLE" -> "purple";
+                case "QUALITY_ORANGE" -> "yellow";
+                case "QUALITY_BLUE" -> "blue";
+                default -> "";
+            };
+            Language.TextStrings avatarName = Language.getTextMapKey(data.getNameTextMapHash());
+            for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++) {
+                sbs.get(langIdx)
+                    .append("\"")
                     .append(avatarID % 1000 + 1000)
                     .append("\" : [\"")
-                    .append(map.get(data.getNameTextMapHash()))
+                    .append(avatarName.get(langIdx))
                     .append("(")
-                    .append(map.get(4233146695L))
+                    .append(CHARACTER.get(langIdx))
                     .append(")\", \"")
                     .append(color)
-                    .append("\"]")
-                    .append(newLine);
+                    .append("\"],\n");
+            }
         }
 
-        list = new ArrayList<>(GameData.getItemDataMap().keySet());
-        Collections.sort(list);
+        list = new IntArrayList(GameData.getItemDataMap().keySet().intStream().sorted().toArray());
 
         // Weapons
-        for (Integer id : list) {
+        for (int id : list) {
             ItemData data = GameData.getItemDataMap().get(id);
             if (data.getId() <= 11101 || data.getId() >= 20000) {
                 continue; //skip non weapon items
             }
-            String color;
-
-            switch (data.getRankLevel()) {
-                case 3:
-                    color = "blue";
-                    break;
-                case 4:
-                    color = "purple";
-                    break;
-                case 5:
-                    color = "yellow";
-                    break;
-                default:
-                    continue; // skip unnecessary entries
-            }
-
-            // Got the magic number 4231343903 from manually search in the json file
-
-            sb.append(",\"")
+            String color = switch (data.getRankLevel()) {
+                case 3 -> "blue";
+                case 4 -> "purple";
+                case 5 -> "yellow";
+                default -> null;
+            };
+            if (color == null) continue;  // skip unnecessary entries
+            Language.TextStrings weaponName = Language.getTextMapKey(data.getNameTextMapHash());
+            for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++) {
+                sbs.get(langIdx)
+                    .append("\"")
                     .append(data.getId())
                     .append("\" : [\"")
-                    .append(map.get(data.getNameTextMapHash()).replaceAll("\"", ""))
+                    .append(weaponName.get(langIdx).replaceAll("\"", "\\\\\""))
                     .append("(")
-                    .append(map.get(4231343903L))
+                    .append(WEAPON.get(langIdx))
                     .append(")\",\"")
                     .append(color)
-                    .append("\"]")
-                    .append(newLine);
+                    .append("\"],\n");
+            }
         }
-        sb.append(",\"200\": \"")
-                .append(map.get(332935371L))
+
+        for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++) {
+            sbs.get(langIdx)
+                .append("\"200\": \"")
+                .append(STANDARD_WISH.get(langIdx))
                 .append("\", \"301\": \"")
-                .append(map.get(2272170627L))
+                .append(CHARACTER_EVENT_WISH.get(langIdx))
+                .append("\", \"400\": \"")
+                .append(CHARACTER_EVENT_WISH_2.get(langIdx))
                 .append("\", \"302\": \"")
-                .append(map.get(2864268523L))
-                .append("\"")
-                .append("}\n}")
-                .append(newLine);
-        return sb.toString();
+                .append(WEAPON_EVENT_WISH.get(langIdx))
+                .append("\"\n}\n");
+        }
+        return sbs.stream().map(StringBuilder::toString).toList();
     }
 }

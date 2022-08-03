@@ -89,13 +89,13 @@ public final class Grasscutter {
 
     public static void main(String[] args) throws Exception {
         Crypto.loadKeys(); // Load keys from buffers.
+        Tools.createGmHandbooks();
 
         // Parse arguments.
         boolean exitEarly = false;
         for (String arg : args) {
             switch (arg.toLowerCase()) {
                 case "-handbook", "-handbooks" -> {
-                    Tools.createGmHandbooks();
                     exitEarly = true;
                 }
                 case "-dumppacketids" -> {
