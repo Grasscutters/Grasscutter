@@ -28,6 +28,7 @@ public class HandlerSceneTransToPointReq extends PacketHandler {
 
             if (session.getPlayer().getWorld().transferPlayerToScene(session.getPlayer(), req.getSceneId(), TeleportType.WAYPOINT, new Position(x, y, z))) {
                 session.send(new PacketSceneTransToPointRsp(session.getPlayer(), req.getPointId(), req.getSceneId()));
+            }
 		} else {
 			session.send(new PacketSceneTransToPointRsp());
 		}
