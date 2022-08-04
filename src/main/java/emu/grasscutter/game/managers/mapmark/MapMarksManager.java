@@ -67,8 +67,9 @@ public class MapMarksManager extends BasePlayerManager {
     }
 
     private void teleport(Player player, MapMark mapMark) {
-        float y; try {
-            y = (float)Integer.parseInt(mapMark.getName());
+        float y;
+        try {
+            y = Float.parseFloat(mapMark.getName());
         } catch (Exception e) {
             y = 300;
         }
