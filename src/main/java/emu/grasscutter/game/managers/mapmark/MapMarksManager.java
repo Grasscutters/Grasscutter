@@ -5,11 +5,11 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType;
 import emu.grasscutter.net.proto.MarkMapReqOuterClass.MarkMapReq;
 import emu.grasscutter.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation;
+import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.packet.send.PacketMarkMapRsp;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.utils.Position;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class MapMarksManager extends BasePlayerManager {
@@ -20,7 +20,7 @@ public class MapMarksManager extends BasePlayerManager {
     }
 
     public Map<String, MapMark> getMapMarks() {
-        return getPlayer().getMapMarks();
+        return this.getPlayer().getMapMarks();
     }
 
     public void handleMapMarkReq(MarkMapReq req) {
@@ -30,26 +30,26 @@ public class MapMarksManager extends BasePlayerManager {
                 MapMark createMark = new MapMark(req.getMark());
                 // keep teleporting functionality on fishhook mark.
                 if (createMark.getMapMarkPointType() == MapMarkPointType.MAP_MARK_POINT_TYPE_FISH_POOL) {
-                    teleport(player, createMark);
+                    this.teleport(player, createMark);
                     return;
                 }
-                addMapMark(createMark);
+                this.addMapMark(createMark);
             }
             case OPERATION_MOD -> {
                 MapMark oldMark = new MapMark(req.getOld());
-                removeMapMark(oldMark.getPosition());
+                this.removeMapMark(oldMark.getPosition());
                 MapMark newMark = new MapMark(req.getMark());
-                addMapMark(newMark);
+                this.addMapMark(newMark);
             }
             case OPERATION_DEL -> {
                 MapMark deleteMark = new MapMark(req.getMark());
-                removeMapMark(deleteMark.getPosition());
+                this.removeMapMark(deleteMark.getPosition());
             }
         }
         if (op != Operation.OPERATION_GET) {
-            save();
+            this.save();
         }
-        player.getSession().send(new PacketMarkMapRsp(getMapMarks()));
+        player.getSession().send(new PacketMarkMapRsp(this.getMapMarks()));
     }
 
     public String getMapMarkKey(Position position) {
@@ -57,27 +57,25 @@ public class MapMarksManager extends BasePlayerManager {
     }
 
     public void removeMapMark(Position position) {
-        getMapMarks().remove(getMapMarkKey(position));
+        this.getMapMarks().remove(this.getMapMarkKey(position));
     }
 
     public void addMapMark(MapMark mapMark) {
-        if (getMapMarks().size() < mapMarkMaxCount) {
-            getMapMarks().put(getMapMarkKey(mapMark.getPosition()), mapMark);
+        if (this.getMapMarks().size() < mapMarkMaxCount) {
+            this.getMapMarks().put(this.getMapMarkKey(mapMark.getPosition()), mapMark);
         }
     }
 
     private void teleport(Player player, MapMark mapMark) {
         float y;
         try {
-            y = (float)Integer.parseInt(mapMark.getName());
+            y = Float.parseFloat(mapMark.getName());
         } catch (Exception e) {
             y = 300;
         }
+
         Position pos = mapMark.getPosition();
-        player.getPosition().set(pos.getX(), y, pos.getZ());
-        if (mapMark.getSceneId() != player.getSceneId()) {
-            player.getWorld().transferPlayerToScene(player, mapMark.getSceneId(), player.getPosition());
-        }
+        player.getWorld().transferPlayerToScene(player, mapMark.getSceneId(), TeleportType.MAP, new Position(pos.getX(), y, pos.getZ()));
         player.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(player));
     }
 }
