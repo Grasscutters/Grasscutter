@@ -15,6 +15,7 @@ import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.server.event.entity.EntityDeathEvent;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
@@ -23,64 +24,64 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public abstract class GameEntity {
-    protected int id;
-    private final Scene scene;
-    private SpawnDataEntry spawnEntry;
+	protected int id;
+	private final Scene scene;
+	private SpawnDataEntry spawnEntry;
 
-    private int blockId;
-    private int configId;
-    private int groupId;
+	private int blockId;
+	private int configId;
+	private int groupId;
 
-    private MotionState moveState;
-    private int lastMoveSceneTimeMs;
-    private int lastMoveReliableSeq;
+	private MotionState moveState;
+	private int lastMoveSceneTimeMs;
+	private int lastMoveReliableSeq;
 
-    // Abilities
-    private Map<String, Float> metaOverrideMap;
-    private Int2ObjectMap<String> metaModifiers;
+	// Abilities
+	private Map<String, Float> metaOverrideMap;
+	private Int2ObjectMap<String> metaModifiers;
 
-    public GameEntity(Scene scene) {
-        this.scene = scene;
-        this.moveState = MotionState.MOTION_STATE_NONE;
-    }
+	public GameEntity(Scene scene) {
+		this.scene = scene;
+		this.moveState = MotionState.MOTION_STATE_NONE;
+	}
 
-    public int getId() {
-        return this.id;
-    }
+	public int getId() {
+		return this.id;
+	}
 
-    public int getEntityType() {
-        return getId() >> 24;
-    }
+	public int getEntityType() {
+		return getId() >> 24;
+	}
 
-    public World getWorld() {
-        return this.getScene().getWorld();
-    }
+	public World getWorld() {
+		return this.getScene().getWorld();
+	}
 
-    public Scene getScene() {
-        return this.scene;
-    }
+	public Scene getScene() {
+		return this.scene;
+	}
 
-    public boolean isAlive() {
-        return true;
-    }
+	public boolean isAlive() {
+		return true;
+	}
 
-    public LifeState getLifeState() {
-        return isAlive() ? LifeState.LIFE_ALIVE : LifeState.LIFE_DEAD;
-    }
+	public LifeState getLifeState() {
+		return isAlive() ? LifeState.LIFE_ALIVE : LifeState.LIFE_DEAD;
+	}
 
-    public Map<String, Float> getMetaOverrideMap() {
-        if (this.metaOverrideMap == null) {
-            this.metaOverrideMap = new HashMap<>();
-        }
-        return this.metaOverrideMap;
-    }
+	public Map<String, Float> getMetaOverrideMap() {
+		if (this.metaOverrideMap == null) {
+			this.metaOverrideMap = new HashMap<>();
+		}
+		return this.metaOverrideMap;
+	}
 
-    public Int2ObjectMap<String> getMetaModifiers() {
-        if (this.metaModifiers == null) {
-            this.metaModifiers = new Int2ObjectOpenHashMap<>();
-        }
-        return this.metaModifiers;
-    }
+	public Int2ObjectMap<String> getMetaModifiers() {
+		if (this.metaModifiers == null) {
+			this.metaModifiers = new Int2ObjectOpenHashMap<>();
+		}
+		return this.metaModifiers;
+	}
 
     public abstract Int2FloatOpenHashMap getFightProperties();
 
@@ -231,6 +232,17 @@ public abstract class GameEntity {
     }
 
     /**
+     * Move this entity to a new position.
+     * @param position The new position.
+     * @param rotation The new rotation.
+     */
+    public void move(Position position, Position rotation) {
+        // Set the position and rotation.
+        this.getPosition().set(position);
+        this.getRotation().set(rotation);
+    }
+
+    /**
      * Called when a player interacts with this entity
      * @param player Player that is interacting with this entity
      * @param interactReq Interact request protobuf data
@@ -251,7 +263,9 @@ public abstract class GameEntity {
      * @param killerId Entity id of the entity that killed this entity
      */
     public void onDeath(int killerId) {
-
+        // Invoke entity death event.
+        EntityDeathEvent event = new EntityDeathEvent(this, killerId);
+        event.call();
     }
 
     public abstract SceneEntityInfo toProto();
