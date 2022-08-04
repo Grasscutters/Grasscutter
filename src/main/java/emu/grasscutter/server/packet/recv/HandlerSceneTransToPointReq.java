@@ -26,8 +26,8 @@ public class HandlerSceneTransToPointReq extends PacketHandler {
 			float y = scenePointEntry.getPointData().getTranPos().getY();
 			float z = scenePointEntry.getPointData().getTranPos().getZ();
 
-            boolean result = session.getPlayer().getWorld().transferPlayerToScene(session.getPlayer(), req.getSceneId(), TeleportType.WAYPOINT, new Position(x, y, z));
-            if(result) session.send(new PacketSceneTransToPointRsp(session.getPlayer(), req.getPointId(), req.getSceneId()));
+            if (session.getPlayer().getWorld().transferPlayerToScene(session.getPlayer(), req.getSceneId(), TeleportType.WAYPOINT, new Position(x, y, z))) {
+                session.send(new PacketSceneTransToPointRsp(session.getPlayer(), req.getPointId(), req.getSceneId()));
 		} else {
 			session.send(new PacketSceneTransToPointRsp());
 		}
