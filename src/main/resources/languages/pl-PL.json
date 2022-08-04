@@ -28,8 +28,8 @@
         "login_token_attempt": "[Account] Klient %s próbuje się zalogować poprzez token.",
         "login_token_error": "[Account] Logowanie klienta %s poprzez token nie powiodło się.",
         "login_token_success": "[Account] Klient %s zalogował się poprzez token jako %s.",
-        "login_password_error": "🇺🇸[Dispatch] Client %s failed to log in via password.",
-        "login_password_storage_error": "🇺🇸[Dispatch] Client %s failed to log in via password because there is no password in the database.",
+        "login_password_error": "[Dispatch] Klientowi %s nie udało zalogować się za pomocą hasła.",
+        "login_password_storage_error": "[Dispatch] Klientowi %s nie udało zalogować się za pomocą hasła, ponieważ nie ma hasła w bazie danych.",
         "combo_token_success": "[Account] Klient %s pomyślnie wymienił token combo.",
         "combo_token_error": "[Account] Wymienienie tokena combo klienta %s nie powiodło się.",
         "account_login_create_success": "[Account] Logowanie klienta %s powiodło się: konto %s zostało stworzone.",
@@ -39,9 +39,9 @@
         "session_key_error": "Błędny klucz sesji.",
         "username_error": "Podana nazwa użytkownika nie istnieje.",
         "username_create_error": "Podana nazwa użytkownika nie istnieje. Automatyczne tworzenie nowego konta nie powiodło się.",
-        "password_error": "🇺🇸Nieprawidłowe hasło",
-        "password_length_error": "🇺🇸Długość hasła musi być większa niż równa 8 znaków",
-        "password_storage_error": "🇺🇸Nie posiadasz hasła do tego konta. Proszę skontaktować się z Administratorem.",
+        "password_error": "Nieprawidłowe hasło",
+        "password_length_error": "Długość hasła musi być większa niż równa 8 znaków",
+        "password_storage_error": "Nie posiadasz hasła do tego konta. Proszę skontaktować się z Administratorem.",
         "server_max_player_limit": "Liczba graczy online osiągnęła swój limit."
       },
       "router_error": "[Dispatch] Wystąpił błąd podczas tworzenia routera."
@@ -257,12 +257,12 @@
       "description": "Wyślij wiadomość do gracza jako serwer. Jeśli nie określono celu, wysyła do wszystkich graczy na serwerze."
     },
     "setConst": {
-      "range_error": "🇺🇸Poziom konstelacji musi wynosić pomiędzy 0 a 6.",
-      "level_error": "🇺🇸Nieprawidłowy poziom konstelacji.",
-      "fail": "🇺🇸Nie udało się ustawić konstelacji.",
-      "failed_success": "🇺🇸Konstelacje dla %s zostały ustawione na %s. Proszę przeładować scenę aby zobaczyć zmiany.",
-      "success": "🇺🇸Konstelacje dla %s zostały ustawione na %s.",
-      "description": "🇺🇸Ustawia poziom konstelacji dla aktywnej postaci"
+      "range_error": "Poziom konstelacji musi wynosić pomiędzy 0 a 6.",
+      "level_error": "Nieprawidłowy poziom konstelacji.",
+      "fail": "Nie udało się ustawić konstelacji.",
+      "failed_success": "Konstelacje dla %s zostały ustawione na %s. Proszę przeładować scenę aby zobaczyć zmiany.",
+      "success": "Konstelacje dla %s zostały ustawione na %s.",
+      "description": "Ustawia poziom konstelacji dla aktywnej postaci"
     },
     "setFetterLevel": {
       "range_error": "Poziom przyjaźni musi być pomiędzy 0 a 10.",
@@ -275,10 +275,10 @@
     },
     "setStats": {
       "description": "Ustaw statystykę walki dla obecnie wybranej postaci wybranego gracza.\n\tMożliwe nazwy statystyki: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\tDodatkowe obrażenia od żywiołu: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\tOdporność na żywioł: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
-      "locked_to": "🇺🇸%s zablokowano dla %s.",
-      "locked_for_to": "🇺🇸%s zablokowano na %s dla %s.",
-      "unlocked": "🇺🇸%s oblokowana.",
-      "unlocked_for": "🇺🇸%s odblokowano dla %s."
+      "locked_to": "%s zablokowano dla %s.",
+      "locked_for_to": "%s zablokowano na %s dla %s.",
+      "unlocked": "%s oblokowana.",
+      "unlocked_for": "%s odblokowano dla %s."
     },
     "spawn": {
       "success": "Stworzono %s obiektów o ID %s.",
@@ -339,8 +339,8 @@
       "description": "Zbanuj podanego gracza."
     },
     "unlockall": {
-      "success": "🇺🇸Odblokowano wszystkie stany dla %s.",
-      "description": "🇺🇸Odblokowuje wszystkie stany."
+      "success": "Odblokowano wszystkie stany dla %s.",
+      "description": "Odblokowuje wszystkie stany."
     },
     "unban": {
       "success": "Pomyślnie odbanowano podanego gracza.",
@@ -363,7 +363,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "🇺🇸GM Handbook",
+      "title": "GM Handbook",
       "title_commands": "Komendy",
       "title_avatars": "Awatary",
       "title_items": "Przedmioty",
@@ -379,7 +379,7 @@
     },
     "index": {
       "title": "Dokumentacja",
-      "handbook": "🇺🇸GM Handbook",
+      "handbook": "GM Handbook",
       "gacha_mapping": "Losowanie w formacie JSON"
     }
   }
