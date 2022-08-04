@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](README.md) | [简中](README_zh-CN.md) | 繁中 | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md)
+[EN](README.md) | [简中](README_zh-CN.md) | 繁中 | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md)  | [PL](README_pl-PL.md)
 
 **請注意:** 歡迎成為本專案的貢獻者。在提交 PR 之前, 請仔細閱讀[程式碼規範](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md)。
 
@@ -48,23 +48,23 @@
 
 1. 重定向流量: (選擇其中一個)
     - mitmdump: `mitmdump -s proxy.py -k`
-    
+
       信任 CA 證書:
-    
+
       ​	**注意:** mitmproxy 的 CA 證書通常存放在 `%USERPROFILE%\ .mitmproxy`, 或者在 `http://mitm.it` 下載證書
-    
+
       ​ 雙擊[安裝根證書](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate)或者...
-    
+
       - 使用命令列
-    
+
         ```shell
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
         ```
-    
+
     - Fiddler Classic: 執行 Fiddler Classic, 在設定中開啟 `解密 https 通訊` 並將通訊埠設為除 `8888` 以外的任意通訊埠 (工具 -> 選項 -> 連線) 並載入[此指令碼](https://github.lunatic.moe/fiddlerscript)
-      
+
     - [Hosts 檔案](https://github.com/Grasscutters/Grasscutter/wiki/Running#traffic-route-map)
-    
+
 2. 設定代理為 `127.0.0.1:8080` 或你設定的通訊埠
 
 **也可直接執行 `start.cmd` 一鍵啟動服務端並設定代理, 但必須設定 `JAVA_HOME` 環境變數**

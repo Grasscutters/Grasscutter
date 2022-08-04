@@ -4,7 +4,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [HE](README_HE.md) | RU
+[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [HE](README_HE.md) | RU  | [PL](README_pl-PL.md)
 
 **Внимание:** Мы всегда рады новому вкладу в проекте. Однако, перед тем, как сделать свой вклад, пожалуйста, прочтите наш [кодекс делового поведения](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
@@ -49,23 +49,23 @@
 
 1. Перенаправьте трафик: (выберите один из методов)
     - mitmdump: `mitmdump -s proxy.py -k`
-    
+
       Доверьтесь сертификату CA:
-    
+
       ​	**Заметка:**Обычно, сертификат CA хранится в папке `%USERPROFILE%\ .mitmproxy`. Также, вы можете скачать его с `http://mitm.it`
-    
+
       ​	Два раза нажмите для [установки](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate), либо ...
-    
+
       - Через командную строку
-    
+
         ```shell
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
         ```
-    
+
     - Fiddler Classic: Запустите Fiddler Classic, включите настройку `Decrypt https traffic` в опциях и измените порт по умолчанию (Tools -> Options -> Connections) на что-то не равное `8888`, после чего запустите [этот скрипт](https://github.lunatic.moe/fiddlerscript).
-      
+
     - [Файл hosts](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
-    
+
 2. Установите прокси сети в `127.0.0.1:8080`, либо в тот порт прокси, который вы задали.
 
 **Также, вы можете использовать `start.cmd` для автоматического запуска прокси-демонов и серверов, но для этого необходимо задать переменную среды JAVA_HOME**
