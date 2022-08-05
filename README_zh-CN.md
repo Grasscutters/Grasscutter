@@ -102,8 +102,8 @@ chmod +x gradlew
 ./gradlew jar # 编译
 ```
 
-* 编译后的 JAR 文件存放在根目录
-* Windows如创建为.bat文件请删除注释
+编译后的 JAR 文件存放在根目录*
+Windows如创建为.bat文件请删除注释*
 
 ### 命令列表请到 [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands) 查看
 
