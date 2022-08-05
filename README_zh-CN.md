@@ -78,15 +78,21 @@ Grasscutter 使用 Gradle 来处理依赖及编译。
 - [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - [Git](https://git-scm.com/downloads)
 
-##### Windows
+##### Windows（在线克隆代码）
 
 ```shell
 git clone https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
-.\gradlew.bat # 建立开发环境
-.\gradlew jar # 编译
+.\gradlew.bat # 建立开发环境（如创建为.bat文件请删除注释！）
+.\gradlew jar # 编译（如创建为.bat文件请删除注释！）
 ```
+##### Windows（本地编译）
 
+```shell
+cd /Grasscutter（本地地址）
+.\gradlew.bat # 建立开发环境（如创建为.bat文件请删除注释！）
+.\gradlew jar # 编译（如创建为.bat文件请删除注释！）
+```
 ##### Linux
 
 ```bash
