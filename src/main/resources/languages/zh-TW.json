@@ -330,7 +330,7 @@
     "weather": {
       "success": "已設定天氣ID 為 %s，氣候型別為 %s。",
       "status": "當前天氣ID 為 %s，氣候型別為 %s。",
-      "description": "更改天氣ID和氣候型別。天氣ID可以在 WeatherExcelConfigData.json 中找到。\n氣候型別：sunny(晴天), cloudy(多雲), rain(雨), thunderstorm(雷雨), snow(雪), mist(霧)"
+      "description": "更改天氣ID和氣候型別。天氣ID可以在 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json 中找到。\n氣候型別：sunny(晴天), cloudy(多雲), rain(雨), thunderstorm(雷雨), snow(雪), mist(霧)"
     },
     "ban": {
       "success": "停權成功。",

@@ -330,7 +330,7 @@
     "weather": {
       "success": "Set weather ID to %s with climate type %s.",
       "status": "Current weather ID is %s with climate type %s.",
-      "description": "Changes weather ID and climate type. Weather IDs can be found in WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist"
+      "description": "Changes weather ID and climate type. Weather IDs can be found in ./Resources/ExcelBinOutput/WeatherExcelConfigData.json.\nClimate types: sunny, cloudy, rain, thunderstorm, snow, mist"
     },
     "ban": {
       "success": "Successful.",

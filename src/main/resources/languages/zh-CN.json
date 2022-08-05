@@ -308,7 +308,7 @@
       "add_too_much": "服务端仅允许你队伍里至多有 %d 名角色。",
       "failed_to_add_avatar": "无法根据ID %s 添加角色。",
       "failed_to_parse_index": "无法解析索引：%s",
-      "remove_too_much": "你不能删除那么多角色，你的队伍列表将会变空。",
+      "remove_too_much": "你不能删除那么多角色，你的队伍列表将为空。",
       "ignore_index": "忽略的索引列表：%s",
       "index_out_of_range": "你指定的索引超出了范围。",
       "failed_parse_avatar_id": "无法解析的角色ID：%s",
@@ -330,7 +330,7 @@
     "weather": {
       "success": "已设置天气ID 为 %s，气候类型为 %s。",
       "status": "当前天气ID 为 %s，气候类型为 %s。",
-      "description": "更改天气ID和气候类型。天气ID可以在 WeatherExcelConfigData.json 中找到。\n气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
+      "description": "更改天气ID和气候类型。天气ID可以在 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json 中找到。\n气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
     },
     "ban": {
       "success": "成功封禁玩家。",
