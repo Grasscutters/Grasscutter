@@ -23,7 +23,7 @@
 
 ### דרישות להפעלה
 
-* Java SE - 17 ([קישור](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html ))
+* Java SE - 17 ([קישור](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
 
   **הערה:** אם אתם רוצים רק **להריץ את זה כבר מוכן** אז **jre** בלבד זה בסדר
 
