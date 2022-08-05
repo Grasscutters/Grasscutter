@@ -330,7 +330,7 @@
     "weather": {
       "success": "ID pogody został ustawiony na %s, a typ klimatu na %s.",
       "status": "Bieżące ID pogody to %s, a typ klimatu to %s.",
-      "description": "Zmień ID pogody i typ klimatu."
+      "description": "Zmień identyfikator pogody i typ klimatu. I dentyfikator pogody można znaleźć w folderze ./Resources/ExcelBinOutput/WeatherExcelConfigData.json.\nRodzaje klimatu: słoneczny, pochmurny, deszcz, burze, śnieg, mgła "
     },
     "ban": {
       "success": "Pomyślnie zbanowano podanego gracza.",

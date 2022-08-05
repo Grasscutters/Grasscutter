@@ -330,7 +330,7 @@
     "weather": {
       "success": "Установлен ID погоды %s, тип климата: %s.",
       "status": "Текущий ID погоды: %s, тип климата: %s.",
-      "description": "Изменяет ID погоды и тип климата. ID погоды можно найти в WeatherExcelConfigData.json.\nТипы климата: sunny (солнечно), cloudy (облачно), rain (дождь), thunderstorm (гроза), snow (снег), mist (туман)"
+      "description": "Изменяет ID погоды и тип климата. ID погоды можно найти в ./Resources/ExcelBinOutput/WeatherExcelConfigData.json.\nТипы климата: sunny (солнечно), cloudy (облачно), rain (дождь), thunderstorm (гроза), snow (снег), mist (туман)"
     },
     "ban": {
       "success": "Успех.",

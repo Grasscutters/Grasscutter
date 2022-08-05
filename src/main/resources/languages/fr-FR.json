@@ -330,7 +330,7 @@
     "weather": {
       "success": "L'ID de la météo à été défini a %s avec le type de climat %s.",
       "status": "L'ID de la météo accutel est %s avec le type de climat %s.",
-      "description": "Change la météo. Les ID de la météo peuvent être trouvés dans WeatherExcelConfigData.json.\nTypes de climatss: sunny, cloudy, rain, thunderstorm, snow, mist."
+      "description": "Change la météo. Les ID de la météo peuvent être trouvés dans ./Resources/ExcelBinOutput/WeatherExcelConfigData.json.\nTypes de climatss: sunny, cloudy, rain, thunderstorm, snow, mist."
     },
     "ban": {
       "success": "Succès.",
