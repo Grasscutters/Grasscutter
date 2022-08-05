@@ -81,17 +81,17 @@ Grasscutter 使用 Gradle 来处理依赖及编译。
 ##### Windows（在线克隆代码）
 
 ```shell
-git clone https://github.com/Grasscutters/Grasscutter.git
+git clone https://github.com/Grasscutters/Grasscutter.git （或使用自己的fork地址）
 cd Grasscutter
-.\gradlew.bat # 建立开发环境（如创建为.bat文件请删除注释！）
-.\gradlew jar # 编译（如创建为.bat文件请删除注释！）
+.\gradlew.bat # 建立开发环境
+.\gradlew jar # 编译
 ```
 ##### Windows（本地编译）
 
 ```shell
-cd /Grasscutter（本地地址）
-.\gradlew.bat # 建立开发环境（如创建为.bat文件请删除注释！）
-.\gradlew jar # 编译（如创建为.bat文件请删除注释！）
+cd <本地地址>/Grasscutter
+.\gradlew.bat # 建立开发环境
+.\gradlew jar # 编译
 ```
 ##### Linux
 
@@ -103,6 +103,7 @@ chmod +x gradlew
 ```
 
 编译后的 JAR 文件存放在根目录
+Windows如创建为.bat文件请删除注释
 
 ### 命令列表请到 [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands) 查看
 
