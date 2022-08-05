@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [HE](README_HE.md) | ES  | [RU](README_ru-RU.md)
+[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [HE](README_HE.md) | ES  | [RU](README_ru-RU.md) | [PL](README_pl-PL.md)
 
 **Atención:** Siempre damos la bienvenida a contribuidores del proyecto. Antes de añadir tu contribución, por favor lee cuidadosamente nuestro [Código de conducta](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
@@ -48,23 +48,23 @@
 
 1. Redirecciona el tráfico: (elegir uno)
     - mitmdump: `mitmdump -s proxy.py -k`
-    
+
       Autoriza el certificado CA:
-    
+
       ​	**Nota:**El certificado CA normalmente se encuentra en `%USERPROFILE%\ .mitmproxy`, o puedes descargarlo de `http://mitm.it`
-    
+
       ​	Doble clic para [instalar](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) o ...
-    
+
       - Con línea de comandos
-    
+
         ```shell
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
         ```
-    
+
     - Fiddler Classic: Ejecuta Fiddler Classic, activa `Decrypt https traffic` en las opciones y cambia el puerto por defecto ahí (Herramientas -> Opciones -> Conexiones) a alguno que no sea `8888`, y carga [este script](https://github.lunatic.moe/fiddlerscript).
-      
+
     - [Archivo Hosts](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
-    
+
 2. Establece el proxy de red a `127.0.0.1:8080` o el puerto de proxy que pusiste.
 
 **también puedes usar `start.cmd` para iniciar el servidor y el servicio de proxy automáticamente, pero tienes que configurar el entorno JAVA_HOME**
@@ -106,4 +106,4 @@ Podrás encontrar el jar generado en la carpeta raíz del proyecto.
 * Mi cliente no conecta, no inicia sesión, 4206, etc... - Probablemente, tu configuración del proxy es *el problema*, si usas
   Fiddler asegúrate de que está usando un puerto distinto al 8888
 * Secuencia de inicio: MongoDB > Grasscutter > Servicio de proxy (mitmdump, fiddler, etc.) > Juego
- 
+

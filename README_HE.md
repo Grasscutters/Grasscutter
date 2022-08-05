@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-עברית | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [EN](README.md) | [ES](README_es-ES.md) | [RU](README_ru-RU.md)
+עברית | [PL](README_pl-PL.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [EN](README.md) | [ES](README_es-ES.md) | [RU](README_ru-RU.md)
 **תשומת לב בבקשה:** אנחנו מקבלים עזרה בפיתוח התוכנה. לפני שאתם תורמים לפרויקט בבקשה תקראו את [תנאי השימוש](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
 ## אפשרויות זמינות כרגע
@@ -15,7 +15,7 @@
 * מערכת הווישים להשגת דמויות
 * קו-אופ (אפשרות לשחק עם חברים) *חלקית* עובדת
 * זימון אויבים באמצעות פקודות
-* אפשרויות של מלאי ציוד במשחק (קבלת נשקים/דמויות, שדרוג נשקים/דמויות וכו' 
+* אפשרויות של מלאי ציוד במשחק (קבלת נשקים/דמויות, שדרוג נשקים/דמויות וכו'
 
 ## הוראות הפעלה בסיסיות
 
@@ -38,11 +38,11 @@
 1. להשיג `grasscutter.jar`
    - להוריד אחד מוכן מתוך [מוכנים](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297)
    - [לבנות אחד בעצמך](#בנייה)
- 
+
 2. תצרו תיקייה בשם `resources` בתוך התיקייה איפה שהקובץ grasscutter.jar נמצא ותעבירו את התיקיות `BinOutput` ו- `ExcelBinOutput` לשם *(תקראו את [המדריך המלא](https://github.com/Grasscutters/Grasscutter/wiki) בשביל לקבל יותר מידע לגבי אלה.)*
 
 3. תריצו את השרת בעזרת פקודה `java -jar grasscutter.jar`. **תדאגו שהשירות mongodb פועל באותו הזמן ברקע**
-   
+
 
 ### התחברות עם המשחק
 
@@ -52,21 +52,21 @@
     - שימוש בmitmdump: פקודת `mitmdump -s proxy.py -k` בשורת פקודה
 
     אישור שימוש החוזה שלהם:
-    
-   ​ **הערה חשובה:** החוזה בדרך כלל נמצא בתוך התיקייה `%USERPROFILE%\ .mitmproxy`, או שאתם יכולים להוריד את זה מהאתר `http://mitm.it` 
-   
+
+   ​ **הערה חשובה:** החוזה בדרך כלל נמצא בתוך התיקייה `%USERPROFILE%\ .mitmproxy`, או שאתם יכולים להוריד את זה מהאתר `http://mitm.it`
+
    ​ תלחצו פעמיים בשביל [הורדה](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) או...
-   
+
 - על ידי שימוש בשורת הפקודה
 ```shell
 certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
 ```
   - שימוש בFiddler Classic: תריצו Fiddler Classic, תפעילו את ההגדרה `Decrypt https traffic` בהגדרות ותשנו את הפורט ברירת מחדל לכל מספר שהוא לא `8888`, ותפעילו את [הסקריפט הזה](https://github.lunatic.moe/fiddlerscript).
 
-   
+
 
    -עריכת [קובץ הHosts](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
-    
+
 2. תשנו את שרת בproxy שלכם ל`127.0.0.1:8080`
 
 **אתם יכולים גם להשתמש בקובץ `start.cmd` בשביל להפעיל את כל השרתים באופן אוטומטי אבל תצטרכו להגדיר JAVA_HOME בסביבות המחדל במערכת באופן ידני**

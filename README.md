@@ -3,7 +3,7 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-EN | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md)
+EN | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md)
 
 **Attention:** We always welcome contributors to the project. Before adding your contribution, please carefully read our [Code of Conduct](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
@@ -48,23 +48,23 @@ EN | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.m
 
 1. Redirect traffic: (choose one)
     - mitmdump: `mitmdump -s proxy.py -k`
-    
+
       Trust CA certificate:
-    
+
       ​	**Note:**The CA certificate is usually stored in `%USERPROFILE%\ .mitmproxy`, or you can download it from `http://mitm.it`
-    
+
       ​	Double click for [install](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) or ...
-    
+
       - Via command line
-    
+
         ```shell
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
         ```
-    
+
     - Fiddler Classic: Run Fiddler Classic, turn on `Decrypt https traffic` in setting and change the default port there (Tools -> Options -> Connections) to anything other than `8888`, and load [this script](https://github.lunatic.moe/fiddlerscript).
-      
+
     - [Hosts file](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
-    
+
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
 
 **you can also use `start.cmd` to start servers and proxy daemons automatically, but you have to set up JAVA_HOME enviroment**
