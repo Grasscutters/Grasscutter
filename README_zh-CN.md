@@ -5,7 +5,7 @@
 
 [EN](README.md) | 简中 | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md)  | [PL](README_pl-PL.md)
 
-**请注意:** 欢迎成为本项目的贡献者。在提交 PR 之前, 请仔细阅读[代码规范](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md)。
+**请注意:** 欢迎成为本项目的贡献者。在提交 PR 之前, 请仔细阅读[代码规范](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md )。
 
 ## 当前功能
 
@@ -24,7 +24,7 @@
 
 ### 环境需求
 
-* Java SE - 17 ([链接](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
+* Java SE - 17 ([链接](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html ))
 
   **注意:** 如果仅想**运行服务端**, 使用 **jre** 即可
 

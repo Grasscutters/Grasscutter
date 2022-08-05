@@ -25,7 +25,7 @@
 
 ### Требуется
 
-* Java SE - 17 ([link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
+* Java SE - 17 ([link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html ))
 
   **Заметка:** Для того, чтобы просто **запустить сервер**, достаточно только **jre**.
 

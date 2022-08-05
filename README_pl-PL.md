@@ -24,7 +24,7 @@
 
 ### Wymagania
 
-* Java SE - 17 ([link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
+* Java SE - 17 ([link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html ))
 
   **Uwaga:** Jeśli chcesz tylko **uruchomić** serwer, samo **jre** powinno wystarczyć.
 

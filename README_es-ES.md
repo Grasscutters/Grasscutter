@@ -24,7 +24,7 @@
 
 ### Requerimientos
 
-* Java SE - 17 ([link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
+* Java SE - 17 ([link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html ))
 
   **Nota:** Si solo quieres **ejecutarlo**, entonces **jre** es suficiente.
 
