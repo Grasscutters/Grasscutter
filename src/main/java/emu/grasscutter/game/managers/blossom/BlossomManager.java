@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
@@ -519,11 +520,24 @@ public class BlossomManager {
                         return false;
                     }
                 }
-                List<Integer> monsters;
-                monsters = getRandomMonstersID(0,4);
-                monsters.addAll(getRandomMonstersID(1,2));
-                monsters.addAll(getRandomMonstersID(2,1));
-                System.out.println("Blossom Monsters:"+monsters);
+
+                int volume=0;
+                List<Integer> monsters = new ArrayList<>();
+                while(volume< GameConstants.BLOSSOM_MONSTER_FIGHTING_VOLUME){
+                    var rand = Utils.randomRange(1,100);
+                    if(rand>85 && volume<50){//15% ,generate strong monster
+                        monsters.addAll(getRandomMonstersID(2,1));
+                        volume+=50;
+                    }else if(rand>50 && volume<40) {//35% ,generate normal monster
+                        monsters.addAll(getRandomMonstersID(1,1));
+                        volume+=40;
+                    }else{//50% ,generate weak monster
+                        monsters.addAll(getRandomMonstersID(0,1));
+                        volume+=10;
+                    }
+                }
+
+                Grasscutter.getLogger().info("Blossom Monsters:"+monsters);
 
                 activity = new BlossomActivity(entityGadget, monsters, -1, worldLevel);
                 blossomActivities.add(activity);
