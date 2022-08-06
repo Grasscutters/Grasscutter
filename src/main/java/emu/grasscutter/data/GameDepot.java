@@ -10,7 +10,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.ResourceLoader.AvatarConfig;
 import emu.grasscutter.data.excels.ReliquaryAffixData;
 import emu.grasscutter.data.excels.ReliquaryMainPropData;
-import emu.grasscutter.game.managers.blossom.BlossomReward;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.utils.WeightedList;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
