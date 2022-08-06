@@ -526,10 +526,10 @@ public class BlossomManager {
                 while(volume< GameConstants.BLOSSOM_MONSTER_FIGHTING_VOLUME){
                     var rand = Utils.randomRange(1,100);
                     var remain = GameConstants.BLOSSOM_MONSTER_FIGHTING_VOLUME-volume;
-                    if(rand>85 && remain<=50){//15% ,generate strong monster
+                    if(rand>85 && remain>=50){//15% ,generate strong monster
                         monsters.addAll(getRandomMonstersID(2,1));
                         volume+=50;
-                    }else if(rand>50 && remain<=20) {//35% ,generate normal monster
+                    }else if(rand>50 && remain>=20) {//35% ,generate normal monster
                         monsters.addAll(getRandomMonstersID(1,1));
                         volume+=20;
                     }else{//50% ,generate weak monster
