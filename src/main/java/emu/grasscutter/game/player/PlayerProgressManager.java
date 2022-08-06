@@ -7,6 +7,7 @@ import emu.grasscutter.data.excels.OpenStateData;
 import emu.grasscutter.data.excels.OpenStateData.OpenStateCondType;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketOpenStateUpdateNotify;
@@ -34,6 +35,25 @@ public class PlayerProgressManager extends BasePlayerDataManager {
 
         // Send notify to the client.
         player.getSession().send(new PacketOpenStateUpdateNotify(this.player));
+
+        // Add statue quests if necessary.
+        this.addStatueQuestsOnLogin();
+
+        // Auto-unlock the first statue and map area, until we figure out how to make
+        // that particular statue interactable.
+        if (!this.player.getUnlockedScenePoints().containsKey(3)) {
+            this.player.getUnlockedScenePoints().put(3, new ArrayList<>());
+        }
+        if (!this.player.getUnlockedScenePoints().get(3).contains(7)) {
+            this.player.getUnlockedScenePoints().get(3).add(7);
+        }
+
+        if (!this.player.getUnlockedSceneAreas().containsKey(3)) {
+            this.player.getUnlockedSceneAreas().put(3, new ArrayList<>());
+        }
+        if (!this.player.getUnlockedSceneAreas().get(3).contains(1)) {
+            this.player.getUnlockedSceneAreas().get(3).add(1);
+        }
     }
 
     /******************************************************************************************************************
@@ -162,6 +182,27 @@ public class PlayerProgressManager extends BasePlayerDataManager {
      * MAP AREAS AND POINTS
      ******************************************************************************************************************
      *****************************************************************************************************************/
+    private void addStatueQuestsOnLogin() {
+        // Get all currently existing subquests for the "unlock all statues" main quest.
+        var statueMainQuest = GameData.getMainQuestDataMap().get(303);
+        var statueSubQuests = statueMainQuest.getSubQuests();
+
+        // Add the main statue quest if it isn't active yet.
+        var statueGameMainQuest = this.player.getQuestManager().getMainQuestById(303);
+        if (statueGameMainQuest == null) {
+            this.player.getQuestManager().addQuest(30302);
+            statueGameMainQuest = this.player.getQuestManager().getMainQuestById(303);
+        }
+
+        // Set all subquests to active if they aren't already finished.
+        for (var subData : statueSubQuests) {
+            var subGameQuest = statueGameMainQuest.getChildQuestById(subData.getSubId());
+            if (subGameQuest != null && subGameQuest.getState() == QuestState.QUEST_STATE_UNSTARTED) {
+                this.player.getQuestManager().addQuest(subData.getSubId());
+            }
+        }
+    }
+
     public void unlockTransPoint(int sceneId, int pointId) {
         // Check whether the unlocked point exists and whether it is still locked.
         String key = sceneId + "_" + pointId;

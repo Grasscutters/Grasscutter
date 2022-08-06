@@ -1357,16 +1357,17 @@ public class Player {
         // Execute daily reset logic if this is a new day.
         this.doDailyReset();
 
-
         // Rewind active quests, and put the player to a rewind position it finds (if any) of an active quest
         getQuestManager().onLogin();
-
 
         // Packets
         session.send(new PacketPlayerDataNotify(this)); // Player data
         session.send(new PacketStoreWeightLimitNotify());
         session.send(new PacketPlayerStoreNotify(this));
         session.send(new PacketAvatarDataNotify(this));
+
+        this.getProgressManager().onPlayerLogin();
+
         session.send(new PacketFinishedParentQuestNotify(this));
         session.send(new PacketBattlePassAllDataNotify(this));
         session.send(new PacketQuestListNotify(this));
@@ -1377,7 +1378,6 @@ public class Player {
         this.forgingManager.sendForgeDataNotify();
         this.resinManager.onPlayerLogin();
         this.cookingManager.sendCookDataNofity();
-        this.getProgressManager().onPlayerLogin();
 
         getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
