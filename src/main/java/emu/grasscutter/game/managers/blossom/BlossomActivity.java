@@ -86,13 +86,13 @@ public class BlossomActivity {
         if(getAliveMonstersCount() <= 2){
             if(generatedCount<goal){
                 step++;
+
                 WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(worldLevel);
-                int monsterLevel;
-                if(worldLevelData==null){
-                    monsterLevel = 1;
-                }else {
-                    monsterLevel = worldLevelData.getMonsterLevel();
+                int worldLevelOverride = 0;
+                if (worldLevelData != null) {
+                    worldLevelOverride = worldLevelData.getMonsterLevel();
                 }
+
                 List<EntityMonster> newMonsters = new ArrayList<>();
                 int willSpawn = Utils.randomRange(3,5);
                 if(generatedCount+willSpawn>goal){
@@ -101,7 +101,8 @@ public class BlossomActivity {
                 generatedCount+=willSpawn;
                 for (int i = 0; i < willSpawn; i++) {
                     MonsterData monsterData = GameData.getMonsterDataMap().get(candidateMonsters.poll());
-                    EntityMonster entity = new EntityMonster(scene, monsterData, pos.nearby2d(40), monsterLevel);
+                    int level = scene.getEntityLevel(1, worldLevelOverride);
+                    EntityMonster entity = new EntityMonster(scene, monsterData, pos.nearby2d(40), level);
                     scene.addEntity(entity);
                     newMonsters.add(entity);
                 }
