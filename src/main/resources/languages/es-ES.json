@@ -330,7 +330,7 @@
     "weather": {
       "success": "Establece el ID del clima %s con el tipo de clima %s.",
       "status": "El ID del clima actual es %s con tipo de clima %s.",
-      "description": "Cambia el ID del clima y el tipo de clima. Los IDs de climas pueden ser encontrados en WeatherExcelConfigData.json.\nTipos de clima: sunny, cloudy, rain, thunderstorm, snow, mist"
+      "description": "Cambia el ID del clima y el tipo de clima. Los IDs de climas pueden ser encontrados en ./Resources/ExcelBinOutput/WeatherExcelConfigData.json.\nTipos de clima: sunny, cloudy, rain, thunderstorm, snow, mist"
     },
     "ban": {
       "success": "Exitoso.",

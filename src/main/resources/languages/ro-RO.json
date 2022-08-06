@@ -330,7 +330,7 @@
     "weather": {
       "success": "A setat ID-ul meteo la %s cu tipul de climă %s",
       "status": "ID-ul actual al vremii este %s cu tipul de climă %s",
-      "description": "Schimbă ID-ul vremii și tipul de climă. ID-urile de vreme pot fi găsite în WeatherExcelConfigData.json.\nTipuri de climă: sunny, cloudy, rain, thunderstorm, snow, mist"
+      "description": "Schimbă ID-ul vremii și tipul de climă. ID-urile de vreme pot fi găsite în ./Resources/ExcelBinOutput/WeatherExcelConfigData.json.\nTipuri de climă: sunny, cloudy, rain, thunderstorm, snow, mist"
     },
     "ban": {
       "success": "Succes.",
