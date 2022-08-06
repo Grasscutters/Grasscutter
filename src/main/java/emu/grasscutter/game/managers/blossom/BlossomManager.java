@@ -528,7 +528,7 @@ public class BlossomManager {
                     if(rand>85 && volume<50){//15% ,generate strong monster
                         monsters.addAll(getRandomMonstersID(2,1));
                         volume+=50;
-                    }else if(rand>50 && volume<40) {//35% ,generate normal monster
+                    }else if(rand>50 && volume<20) {//35% ,generate normal monster
                         monsters.addAll(getRandomMonstersID(1,1));
                         volume+=20;
                     }else{//50% ,generate weak monster
