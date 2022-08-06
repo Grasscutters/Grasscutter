@@ -66,5 +66,11 @@ public class MainQuestData {
     public static class TalkData {
         private int id;
         private String heroTalk;
+
+		public TalkData() {}
+		public TalkData(int id, String heroTalk) {
+			this.id = id;
+			this.heroTalk = heroTalk;
+		}
     }
 }

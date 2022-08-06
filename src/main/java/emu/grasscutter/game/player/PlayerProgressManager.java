@@ -10,6 +10,7 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketOpenStateUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketSceneAreaUnlockNotify;
 import emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify;
 import emu.grasscutter.server.packet.send.PacketSetOpenStateRsp;
 import emu.grasscutter.server.packet.send.PacketUnlockTransPointRsp;
@@ -171,7 +172,7 @@ public class PlayerProgressManager extends BasePlayerDataManager {
             return;
         }
 
-        // Add the point to the lit of unlocked points for its scene.
+        // Add the point to the list of unlocked points for its scene.
         if (!this.player.getUnlockedScenePoints().containsKey(sceneId)) {
             this.player.getUnlockedScenePoints().put(sceneId, new ArrayList<>());
         }
@@ -184,5 +185,21 @@ public class PlayerProgressManager extends BasePlayerDataManager {
         // Send packet.
         this.player.sendPacket(new PacketScenePointUnlockNotify(sceneId, pointId));
         this.player.sendPacket(new PacketUnlockTransPointRsp(Retcode.RET_SUCC));
+    }
+
+    public void unlockSceneArea(int sceneId, int areaId) {
+        // Check whether this area is already unlocked.
+        if (this.player.getUnlockedSceneAreas().getOrDefault(sceneId, List.of()).contains(areaId)) {
+            return;
+        }
+
+        // Add the area to the list of unlocked areas in its scene.
+        if (!this.player.getUnlockedSceneAreas().containsKey(sceneId)) {
+            this.player.getUnlockedSceneAreas().put(sceneId, new ArrayList<>());
+        }
+        this.player.getUnlockedSceneAreas().get(sceneId).add(areaId);
+
+        // Send packet.
+        this.player.sendPacket(new PacketSceneAreaUnlockNotify(sceneId, areaId));
     }
 }
