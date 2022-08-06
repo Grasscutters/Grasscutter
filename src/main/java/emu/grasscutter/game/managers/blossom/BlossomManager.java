@@ -530,7 +530,7 @@ public class BlossomManager {
                         volume+=50;
                     }else if(rand>50 && volume<40) {//35% ,generate normal monster
                         monsters.addAll(getRandomMonstersID(1,1));
-                        volume+=40;
+                        volume+=20;
                     }else{//50% ,generate weak monster
                         monsters.addAll(getRandomMonstersID(0,1));
                         volume+=10;
