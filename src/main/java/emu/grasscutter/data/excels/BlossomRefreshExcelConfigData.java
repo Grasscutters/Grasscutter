@@ -1,9 +1,10 @@
 package emu.grasscutter.data.excels;
 
+import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "BlossomRefreshExcelConfigData.json")
-public class BlossomRefreshExcelConfigData {
+public class BlossomRefreshExcelConfigData extends GameResource {
     private int id; //freshId
     private int cityId;
 
@@ -15,6 +16,7 @@ public class BlossomRefreshExcelConfigData {
         return refreshType;
     }
 
+    @Override
     public int getId() {
         return id;
     }
