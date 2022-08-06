@@ -523,9 +523,12 @@ public class BlossomManager {
 
                 int volume=0;
                 List<Integer> monsters = new ArrayList<>();
-                while(volume< GameConstants.BLOSSOM_MONSTER_FIGHTING_VOLUME){
-                    var rand = Utils.randomRange(1,100);
+                while(true){
                     var remain = GameConstants.BLOSSOM_MONSTER_FIGHTING_VOLUME-volume;
+                    if(remain<=0){
+                        break;
+                    }
+                    var rand = Utils.randomRange(1,100);
                     if(rand>85 && remain>=50){//15% ,generate strong monster
                         monsters.addAll(getRandomMonstersID(2,1));
                         volume+=50;
