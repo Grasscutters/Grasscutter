@@ -5,7 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
+import emu.grasscutter.data.common.ItemParamData;
+import emu.grasscutter.data.excels.RewardPreviewData;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.entity.gadget.GadgetWorktop;
@@ -521,6 +524,7 @@ public class BlossomManager {
                 monsters.addAll(getRandomMonstersID(1,2));
                 monsters.addAll(getRandomMonstersID(2,1));
                 System.out.println("Blossom Monsters:"+monsters);
+
                 activity = new BlossomActivity(entityGadget, monsters, -1, worldLevel);
                 blossomActivities.add(activity);
             }
@@ -550,7 +554,30 @@ public class BlossomManager {
     public int getWorldLevel(){
         return scene.getWorld().getWorldLevel();
     }
-
+    private RewardPreviewData getRewardList(BlossomType type , int worldLevel){
+        String freshType;
+        if(type == BlossomType.GOLDEN_GADGET_ID){
+            freshType = "BLOSSOM_REFRESH_SCOIN";
+        }else if(type == BlossomType.BLUE_GADGET_ID){
+            freshType = "BLOSSOM_REFRESH_EXP";
+        }else{
+            Grasscutter.getLogger().error("Illegal blossom type {}",type);
+            return null;
+        }
+        var dataList = GameData.getBlossomRefreshExcelConfigDataMap();
+        for(var data : dataList.values()){
+            if(freshType.equals(data.getRefreshType())){
+                var dropVecList = data.getDropVec();
+                if((worldLevel+1)>dropVecList.length){
+                    Grasscutter.getLogger().error("Illegal world level {}",worldLevel);
+                    return null;
+                }
+                return GameData.getRewardPreviewDataMap().get(dropVecList[worldLevel].getPreviewReward());
+            }
+        }
+        Grasscutter.getLogger().error("Cannot find blossom type {}",type);
+        return null;
+    }
     public List<GameItem> onReward(Player who,EntityGadget chest,boolean useCondensedResin) {
         synchronized (activeChests) {
             var it = activeChests.iterator();
@@ -566,22 +593,19 @@ public class BlossomManager {
                     if (pay) {
                         int worldLevel = getWorldLevel();
                         List<GameItem> items = new ArrayList<>();
-                        List<BlossomReward> blossomRewards;
-                        if (activeChest.getGadget().getGadgetId() == BlossomType.BLUE_GADGET_ID.getGadgetId()) {
-                            blossomRewards = GameDepot.BLOSSOM_REWARDS_BLUE.get(worldLevel);
-                        } else {
-                            blossomRewards = GameDepot.BLOSSOM_REWARDS_GOLDEN.get(worldLevel);
-                        }
+                        var type = BlossomType.valueOf(activeChest.getGadget().getGadgetId());
+                        RewardPreviewData blossomRewards = getRewardList(type,worldLevel);
                         if(blossomRewards ==null){
                             Grasscutter.getLogger().error("Blossom could not support world level : "+worldLevel);
                             return null;
                         }
-                        for (BlossomReward blossomReward : blossomRewards) {
-                            int rewardCount = blossomReward.random();
+                        var rewards = blossomRewards.getPreviewItems();
+                        for (ItemParamData blossomReward : rewards) {
+                            int rewardCount = blossomReward.getCount();
                             if(useCondensedResin){
-                                rewardCount += blossomReward.random();//Double!
+                                rewardCount += blossomReward.getCount();//Double!
                             }
-                            items.add(new GameItem(blossomReward.itemId,rewardCount));
+                            items.add(new GameItem(blossomReward.getItemId(),rewardCount));
                         }
                         it.remove();
                         recycleLeyLineGadgetEntity(List.of(activeChest.getGadget()));

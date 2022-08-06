@@ -18,9 +18,6 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class GameDepot {
     public static final int[] BLOCK_SIZE = new int[]{50,500};//Scales
-
-    public static final Map<Integer,List<BlossomReward>> BLOSSOM_REWARDS_GOLDEN = new HashMap<>();
-    public static final Map<Integer,List<BlossomReward>> BLOSSOM_REWARDS_BLUE = new HashMap<>();
     public static final Map<Integer,List<Integer>> BLOSSOM_MONSTERS_DIFFICULTY = new HashMap<>();
 
     private static Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicRandomMainPropDepot = new Int2ObjectOpenHashMap<>();
