@@ -17,9 +17,12 @@ import emu.grasscutter.net.proto.AbilityMetaReInitOverrideMapOuterClass.AbilityM
 import emu.grasscutter.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinCostStamina;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
+import lombok.Getter;
 
-public class AbilityManager extends BasePlayerManager {
+public final class AbilityManager extends BasePlayerManager {
     HealAbilityManager healAbilityManager;
+
+    @Getter private boolean abilityInvulnerable = false;
 
     public AbilityManager(Player player) {
         super(player);
@@ -27,33 +30,71 @@ public class AbilityManager extends BasePlayerManager {
     }
 
     public void onAbilityInvoke(AbilityInvokeEntry invoke) throws Exception {
-        healAbilityManager.healHandler(invoke);
+        this.healAbilityManager.healHandler(invoke);
 
          //Grasscutter.getLogger().info(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + Utils.bytesToHex(invoke.toByteArray()));
         switch (invoke.getArgumentType()) {
-            case ABILITY_INVOKE_ARGUMENT_META_OVERRIDE_PARAM:
-                handleOverrideParam(invoke);
-                break;
-            case ABILITY_INVOKE_ARGUMENT_META_REINIT_OVERRIDEMAP:
-                handleReinitOverrideMap(invoke);
-                break;
-            case ABILITY_INVOKE_ARGUMENT_META_MODIFIER_CHANGE:
-                handleModifierChange(invoke);
-                break;
-            case ABILITY_INVOKE_ARGUMENT_MIXIN_COST_STAMINA:
-                handleMixinCostStamina(invoke);
-                break;
-            case ABILITY_INVOKE_ARGUMENT_ACTION_GENERATE_ELEM_BALL:
-                handleGenerateElemBall(invoke);
-                break;
-            default:
-                break;
+            case ABILITY_INVOKE_ARGUMENT_META_OVERRIDE_PARAM -> this.handleOverrideParam(invoke);
+            case ABILITY_INVOKE_ARGUMENT_META_REINIT_OVERRIDEMAP -> this.handleReinitOverrideMap(invoke);
+            case ABILITY_INVOKE_ARGUMENT_META_MODIFIER_CHANGE -> this.handleModifierChange(invoke);
+            case ABILITY_INVOKE_ARGUMENT_MIXIN_COST_STAMINA -> this.handleMixinCostStamina(invoke);
+            case ABILITY_INVOKE_ARGUMENT_ACTION_GENERATE_ELEM_BALL -> this.handleGenerateElemBall(invoke);
+            default -> {}
+        }
+    }
+
+    /**
+     * Invoked when a player starts a skill.
+     * @param player The player who started the skill.
+     * @param skillId The skill ID.
+     * @param casterId The caster ID.
+     */
+    public void onSkillStart(Player player, int skillId, int casterId) {
+        // Check if the player matches this player.
+        if (player.getUid() != this.player.getUid()) {
+            return;
         }
 
+        // Check if the caster matches the player.
+        if(player.getTeamManager().getCurrentAvatarEntity().getId() != casterId) {
+            return;
+        }
+
+        var skillData = GameData.getAvatarSkillDataMap().get(skillId);
+        if (skillData == null) {
+            return;
+        }
+
+        // Check if the skill is an elemental burst.
+        if(skillData.getCostElemVal() <= 0) {
+            return;
+        }
+
+        // Set the player as invulnerable.
+        this.abilityInvulnerable = true;
+    }
+
+    /**
+     * Invoked when a player ends a skill.
+     * @param player The player who started the skill.
+     */
+    public void onSkillEnd(Player player) {
+        // Check if the player matches this player.
+        if (player.getUid() != this.player.getUid()) {
+            return;
+        }
+
+        // Check if the player is invulnerable.
+        if(!this.abilityInvulnerable) {
+            return;
+        }
+
+        // Set the player as not invulnerable.
+        this.abilityInvulnerable = false;
     }
 
     private void handleOverrideParam(AbilityInvokeEntry invoke) throws Exception {
-        GameEntity entity = player.getScene().getEntityById(invoke.getEntityId());
+        GameEntity entity = this.player.getScene().getEntityById(invoke.getEntityId());
 
         if (entity == null) {
             return;
@@ -65,7 +106,7 @@ public class AbilityManager extends BasePlayerManager {
     }
 
     private void handleReinitOverrideMap(AbilityInvokeEntry invoke) throws Exception {
-        GameEntity entity = player.getScene().getEntityById(invoke.getEntityId());
+        GameEntity entity = this.player.getScene().getEntityById(invoke.getEntityId());
 
         if (entity == null) {
             return;
@@ -80,7 +121,7 @@ public class AbilityManager extends BasePlayerManager {
 
     private void handleModifierChange(AbilityInvokeEntry invoke) throws Exception {
         // Sanity checks
-        GameEntity target = player.getScene().getEntityById(invoke.getEntityId());
+        GameEntity target = this.player.getScene().getEntityById(invoke.getEntityId());
         if (target == null) {
             return;
         }
@@ -104,7 +145,7 @@ public class AbilityManager extends BasePlayerManager {
             return;
         }
 
-        GameEntity sourceEntity = player.getScene().getEntityById(data.getApplyEntityId());
+        GameEntity sourceEntity = this.player.getScene().getEntityById(data.getApplyEntityId());
         if (sourceEntity == null) {
             return;
         }
@@ -117,7 +158,7 @@ public class AbilityManager extends BasePlayerManager {
 
             if (modifier != null && modifier.getOnAdded().size() > 0) {
                 for (AbilityModifierAction action : modifier.getOnAdded()) {
-                    invokeAction(action, target, sourceEntity);
+                    this.invokeAction(action, target, sourceEntity);
                 }
             }
 
@@ -133,7 +174,7 @@ public class AbilityManager extends BasePlayerManager {
 
                 if (modifier != null && modifier.getOnRemoved().size() > 0) {
                     for (AbilityModifierAction action : modifier.getOnRemoved()) {
-                        invokeAction(action, target, sourceEntity);
+                        this.invokeAction(action, target, sourceEntity);
                     }
                 }
 
@@ -145,7 +186,7 @@ public class AbilityManager extends BasePlayerManager {
 
     private void handleMixinCostStamina(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
         AbilityMixinCostStamina costStamina = AbilityMixinCostStamina.parseFrom((invoke.getAbilityData()));
-        getPlayer().getStaminaManager().handleMixinCostStamina(costStamina.getIsSwim());
+        this.getPlayer().getStaminaManager().handleMixinCostStamina(costStamina.getIsSwim());
     }
 
     private void handleGenerateElemBall(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {

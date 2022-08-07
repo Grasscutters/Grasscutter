@@ -6,7 +6,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.AttackResultOuterClass;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvocationsNotifyOuterClass.CombatInvocationsNotify;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
@@ -18,7 +17,6 @@ import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass;
 import emu.grasscutter.server.event.entity.EntityMoveEvent;
-import emu.grasscutter.server.event.game.ReceiveCommandFeedbackEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.utils.Position;
@@ -35,23 +33,29 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
 		CombatInvocationsNotify notif = CombatInvocationsNotify.parseFrom(payload);
 		for (CombatInvokeEntry entry : notif.getInvokeListList()) {
 		    // Handle combat invoke
-			switch (entry.getArgumentType()) {
-				case COMBAT_TYPE_ARGUMENT_EVT_BEING_HIT:
-					EvtBeingHitInfo hitInfo = EvtBeingHitInfo.parseFrom(entry.getCombatData());
-					AttackResult attackResult = hitInfo.getAttackResult();
-					Player player = session.getPlayer();
+            switch (entry.getArgumentType()) {
+                case COMBAT_TYPE_ARGUMENT_EVT_BEING_HIT -> {
+                    EvtBeingHitInfo hitInfo = EvtBeingHitInfo.parseFrom(entry.getCombatData());
+                    AttackResult attackResult = hitInfo.getAttackResult();
+                    Player player = session.getPlayer();
 
-					// Handle damage
-					player.getAttackResults().add(attackResult);
-					player.getEnergyManager().handleAttackHit(hitInfo);
-					break;
-				case COMBAT_TYPE_ARGUMENT_ENTITY_MOVE:
-					// Handle movement
-					EntityMoveInfo moveInfo = EntityMoveInfo.parseFrom(entry.getCombatData());
-					GameEntity entity = session.getPlayer().getScene().getEntityById(moveInfo.getEntityId());
-					if (entity != null) {
-						// Move player
-						MotionInfo motionInfo = moveInfo.getMotionInfo();
+                    // Check if the player is invulnerable.
+                    if (
+                        attackResult.getAttackerId() != player.getTeamManager().getCurrentAvatarEntity().getId() &&
+                            player.getAbilityManager().isAbilityInvulnerable()
+                    ) break;
+
+                    // Handle damage
+                    player.getAttackResults().add(attackResult);
+                    player.getEnergyManager().handleAttackHit(hitInfo);
+                }
+                case COMBAT_TYPE_ARGUMENT_ENTITY_MOVE -> {
+                    // Handle movement
+                    EntityMoveInfo moveInfo = EntityMoveInfo.parseFrom(entry.getCombatData());
+                    GameEntity entity = session.getPlayer().getScene().getEntityById(moveInfo.getEntityId());
+                    if (entity != null) {
+                        // Move player
+                        MotionInfo motionInfo = moveInfo.getMotionInfo();
                         MotionState motionState = motionInfo.getState();
 
                         // Call entity move event.
@@ -60,48 +64,47 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                             new Position(motionInfo.getRot()), motionState);
                         event.call();
 
-						entity.move(event.getPosition(), event.getRotation());
-						entity.setLastMoveSceneTimeMs(moveInfo.getSceneTime());
-						entity.setLastMoveReliableSeq(moveInfo.getReliableSeq());
-						entity.setMotionState(motionState);
+                        entity.move(event.getPosition(), event.getRotation());
+                        entity.setLastMoveSceneTimeMs(moveInfo.getSceneTime());
+                        entity.setLastMoveReliableSeq(moveInfo.getReliableSeq());
+                        entity.setMotionState(motionState);
 
-						session.getPlayer().getStaminaManager().handleCombatInvocationsNotify(session, moveInfo, entity);
+                        session.getPlayer().getStaminaManager().handleCombatInvocationsNotify(session, moveInfo, entity);
 
-						// TODO: handle MOTION_FIGHT landing which has a different damage factor
-						// 		Also, for plunge attacks, LAND_SPEED is always -30 and is not useful.
-						//  	May need the height when starting plunge attack.
+                        // TODO: handle MOTION_FIGHT landing which has a different damage factor
+                        // 		Also, for plunge attacks, LAND_SPEED is always -30 and is not useful.
+                        //  	May need the height when starting plunge attack.
 
-						// MOTION_LAND_SPEED and MOTION_FALL_ON_GROUND arrive in different packets.
-						// Cache land speed for later use.
-						if (motionState == MotionState.MOTION_STATE_LAND_SPEED) {
-							cachedLandingSpeed = motionInfo.getSpeed().getY();
-							cachedLandingTimeMillisecond = System.currentTimeMillis();
-							monitorLandingEvent = true;
-						}
-						if (monitorLandingEvent) {
- 							if (motionState == MotionState.MOTION_STATE_FALL_ON_GROUND) {
-								monitorLandingEvent = false;
-								handleFallOnGround(session, entity, motionState);
-							}
-						}
-						
-						// MOTION_STATE_NOTIFY = Dont send to other players
-						if (motionState == MotionState.MOTION_STATE_NOTIFY) {
-						    continue;
-						}
-					}
-					break;
-				case COMBAT_TYPE_ARGUMENT_ANIMATOR_PARAMETER_CHANGED:
-				    EvtAnimatorParameterInfo paramInfo = EvtAnimatorParameterInfo.parseFrom(entry.getCombatData());
-				    
-				    if (paramInfo.getIsServerCache()) {
-				        paramInfo = paramInfo.toBuilder().setIsServerCache(false).build();
-	                    entry = entry.toBuilder().setCombatData(paramInfo.toByteString()).build();
-				    }
-				    break;
-				default:
-					break;
-			}
+                        // MOTION_LAND_SPEED and MOTION_FALL_ON_GROUND arrive in different packets.
+                        // Cache land speed for later use.
+                        if (motionState == MotionState.MOTION_STATE_LAND_SPEED) {
+                            cachedLandingSpeed = motionInfo.getSpeed().getY();
+                            cachedLandingTimeMillisecond = System.currentTimeMillis();
+                            monitorLandingEvent = true;
+                        }
+                        if (monitorLandingEvent) {
+                            if (motionState == MotionState.MOTION_STATE_FALL_ON_GROUND) {
+                                monitorLandingEvent = false;
+                                handleFallOnGround(session, entity, motionState);
+                            }
+                        }
+
+                        // MOTION_STATE_NOTIFY = Dont send to other players
+                        if (motionState == MotionState.MOTION_STATE_NOTIFY) {
+                            continue;
+                        }
+                    }
+                }
+                case COMBAT_TYPE_ARGUMENT_ANIMATOR_PARAMETER_CHANGED -> {
+                    EvtAnimatorParameterInfo paramInfo = EvtAnimatorParameterInfo.parseFrom(entry.getCombatData());
+                    if (paramInfo.getIsServerCache()) {
+                        paramInfo = paramInfo.toBuilder().setIsServerCache(false).build();
+                        entry = entry.toBuilder().setCombatData(paramInfo.toByteString()).build();
+                    }
+                }
+                default -> {
+                }
+            }
 
 			session.getPlayer().getCombatInvokeHandler().addEntry(entry.getForwardType(), entry);
 		}
