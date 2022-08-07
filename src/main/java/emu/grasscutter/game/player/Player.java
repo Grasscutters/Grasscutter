@@ -123,8 +123,8 @@ public class Player {
     @Getter private List<ActiveForgeData> activeForges;
     @Getter private Map<Integer,Integer> questGlobalVariables;
     @Getter private Map<Integer, Integer> openStates;
-    @Getter private Map<Integer, List<Integer>> unlockedSceneAreas;
-    @Getter private Map<Integer, List<Integer>> unlockedScenePoints;
+    @Getter @Setter private Map<Integer, List<Integer>> unlockedSceneAreas;
+    @Getter @Setter private Map<Integer, List<Integer>> unlockedScenePoints;
 
     @Transient private long nextGuid = 0;
     @Transient private int peerId;
