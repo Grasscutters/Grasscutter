@@ -85,7 +85,6 @@ public final class PluginManager {
                     PluginConfig pluginConfig = Grasscutter.getGsonFactory().fromJson(fileReader, PluginConfig.class);
                     // Check if the plugin config is valid.
                     if (!pluginConfig.validate()) {
-                        Utils.logObject(pluginConfig);
                         Grasscutter.getLogger().warn("Plugin " + plugin.getName() + " has an invalid config file.");
                         return;
                     }
@@ -211,11 +210,7 @@ public final class PluginManager {
     public void disablePlugins() {
         this.plugins.forEach((name, plugin) -> {
             Grasscutter.getLogger().info("Disabling plugin: " + name);
-            try {
-                plugin.onDisable();
-            } catch (Throwable exception) {
-                Grasscutter.getLogger().error("Failed to disable plugin: " + name, exception);
-            }
+            this.disablePlugin(plugin);
         });
     }
 

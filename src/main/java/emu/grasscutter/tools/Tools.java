@@ -15,7 +15,6 @@ import com.google.gson.reflect.TypeToken;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
@@ -33,11 +32,17 @@ import static emu.grasscutter.utils.Language.translate;
 
 public final class Tools {
     public static void createGmHandbook() throws Exception {
-        ToolsWithLanguageOption.createGmHandbook(getLanguageOption());
+        var language = Grasscutter.getPreferredLanguage();
+        if(language == null) language = getLanguageOption();
+
+        ToolsWithLanguageOption.createGmHandbook(language.toUpperCase());
     }
 
     public static void createGachaMapping(String location) throws Exception {
-        ToolsWithLanguageOption.createGachaMapping(location, getLanguageOption());
+        var language = Grasscutter.getPreferredLanguage();
+        if(language == null) language = getLanguageOption();
+
+        ToolsWithLanguageOption.createGachaMapping(location, language.toUpperCase());
     }
 
     public static List<String> getAvailableLanguage() {
@@ -76,15 +81,14 @@ public final class Tools {
             stagedMessage.append(groupedLangList).append("\n");
         }
 
-        stagedMessage.append("\nYour choice:[EN] ");
+        stagedMessage.append("\nYour choice: [EN] ");
 
         input = Grasscutter.getConsole().readLine(stagedMessage.toString());
         if (availableLangList.contains(input.toLowerCase())) {
             return input.toUpperCase();
         }
-        Grasscutter.getLogger().info("Invalid option. Will use EN(English) as fallback");
 
-        return "EN";
+        Grasscutter.getLogger().info("Invalid option. Will use EN (English) as fallback."); return "EN";
     }
 }
 
