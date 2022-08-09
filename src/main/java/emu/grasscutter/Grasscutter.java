@@ -93,12 +93,13 @@ public final class Grasscutter {
 
     public static void main(String[] args) throws Exception {
         Crypto.loadKeys(); // Load keys from buffers.
-        Tools.createGmHandbooks();
 
         // Parse start-up arguments.
         if(StartupArguments.parse(args)) {
             System.exit(0); // Exit early.
         }
+
+        Tools.createGmHandbooks();
 
         // Initialize server.
         Grasscutter.getLogger().info(translate("messages.status.starting"));
