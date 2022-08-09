@@ -1,9 +1,7 @@
 package emu.grasscutter.tools;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
@@ -11,8 +9,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import com.google.gson.reflect.TypeToken;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
@@ -24,7 +20,6 @@ import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.utils.Language;
-import emu.grasscutter.utils.Utils;
 import emu.grasscutter.utils.Language.TextStrings;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
@@ -111,7 +106,110 @@ public final class Tools {
     }
 
     public static void createGachaMapping(String location) throws Exception {
-        ToolsWithLanguageOption.createGachaMapping(location, getLanguageOption());
+        createGachaMappings(location);
+    }
+
+    public static List<String> createGachaMappingJsons() {
+        final int NUM_LANGUAGES = Language.TextStrings.NUM_LANGUAGES;
+        final Language.TextStrings CHARACTER = Language.getTextMapKey(4233146695L);  // "Character" in EN
+        final Language.TextStrings WEAPON = Language.getTextMapKey(4231343903L);  // "Weapon" in EN
+        final Language.TextStrings STANDARD_WISH = Language.getTextMapKey(332935371L);  // "Standard Wish" in EN
+        final Language.TextStrings CHARACTER_EVENT_WISH = Language.getTextMapKey(2272170627L);  // "Character Event Wish" in EN
+        final Language.TextStrings CHARACTER_EVENT_WISH_2 = Language.getTextMapKey(3352513147L);  // "Character Event Wish-2" in EN
+        final Language.TextStrings WEAPON_EVENT_WISH = Language.getTextMapKey(2864268523L);  // "Weapon Event Wish" in EN
+        final List<StringBuilder> sbs = new ArrayList<>(NUM_LANGUAGES);
+        for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++)
+            sbs.add(new StringBuilder("{\n"));  // Web requests should never need Windows line endings
+
+        // Avatars
+        GameData.getAvatarDataMap().keySet().intStream().sorted().forEach(id -> {
+            AvatarData data = GameData.getAvatarDataMap().get(id);
+            int avatarID = data.getId();
+            if (avatarID >= 11000000) { // skip test avatar
+                return;
+            }
+            String color = switch (data.getQualityType()) {
+                case "QUALITY_PURPLE" -> "purple";
+                case "QUALITY_ORANGE" -> "yellow";
+                case "QUALITY_BLUE" -> "blue";
+                default -> "";
+            };
+            Language.TextStrings avatarName = Language.getTextMapKey(data.getNameTextMapHash());
+            for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++) {
+                sbs.get(langIdx)
+                    .append("\t\"")
+                    .append(avatarID % 1000 + 1000)
+                    .append("\": [\"")
+                    .append(avatarName.get(langIdx))
+                    .append(" (")
+                    .append(CHARACTER.get(langIdx))
+                    .append(")\", \"")
+                    .append(color)
+                    .append("\"],\n");
+            }
+        });
+
+        // Weapons
+        GameData.getItemDataMap().keySet().intStream().sorted().forEach(id -> {
+            ItemData data = GameData.getItemDataMap().get(id);
+            if (data.getId() <= 11101 || data.getId() >= 20000) {
+                return; //skip non weapon items
+            }
+            String color = switch (data.getRankLevel()) {
+                case 3 -> "blue";
+                case 4 -> "purple";
+                case 5 -> "yellow";
+                default -> null;
+            };
+            if (color == null) return;  // skip unnecessary entries
+            Language.TextStrings weaponName = Language.getTextMapKey(data.getNameTextMapHash());
+            for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++) {
+                sbs.get(langIdx)
+                    .append("\t\"")
+                    .append(data.getId())
+                    .append("\": [\"")
+                    .append(weaponName.get(langIdx).replaceAll("\"", "\\\\\""))
+                    .append(" (")
+                    .append(WEAPON.get(langIdx))
+                    .append(")\", \"")
+                    .append(color)
+                    .append("\"],\n");
+            }
+        });
+
+        for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++) {
+            sbs.get(langIdx)
+                .append("\t\"200\": \"")
+                .append(STANDARD_WISH.get(langIdx))
+                .append("\",\n\t\"301\": \"")
+                .append(CHARACTER_EVENT_WISH.get(langIdx))
+                .append("\",\n\t\"400\": \"")
+                .append(CHARACTER_EVENT_WISH_2.get(langIdx))
+                .append("\",\n\t\"302\": \"")
+                .append(WEAPON_EVENT_WISH.get(langIdx))
+                .append("\"\n}");
+        }
+        return sbs.stream().map(StringBuilder::toString).toList();
+    }
+
+    public static void createGachaMappings(String location) throws Exception {
+        ResourceLoader.loadResources();
+        List<String> jsons = createGachaMappingJsons();
+        StringBuilder sb = new StringBuilder("mappings = {\n");
+        for (int i = 0; i < Language.TextStrings.NUM_LANGUAGES; i++) {
+            sb.append("\t\"%s\": ".formatted(Language.TextStrings.ARR_GC_LANGUAGES[i].toLowerCase()));  // TODO: change the templates to not use lowercased locale codes
+            sb.append(jsons.get(i).replace("\n", "\n\t") + ",\n");
+        }
+        sb.setLength(sb.length() - 2);  // Delete trailing ",\n"
+        sb.append("\n}");
+
+        try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(location), StandardCharsets.UTF_8), false)) {
+            // if the user made choices for language, I assume it's okay to assign his/her selected language to "en-us"
+            // since it's the fallback language and there will be no difference in the gacha record page.
+            // The enduser can still modify the `gacha/mappings.js` directly to enable multilingual for the gacha record system.
+            writer.println(sb);
+            Grasscutter.getLogger().info("Mappings generated to " + location + " !");
+        }
     }
 
     public static List<String> getAvailableLanguage() {
@@ -163,75 +261,4 @@ public final class Tools {
 }
 
 final class ToolsWithLanguageOption {
-    @SuppressWarnings("deprecation")
-    public static void createGachaMapping(String location, String language) throws Exception {
-        ResourceLoader.loadResources();
-
-        Map<Long, String> map;
-        try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(RESOURCE("TextMap/TextMap" + language + ".json"))), StandardCharsets.UTF_8)) {
-            map = Grasscutter.getGsonFactory().fromJson(fileReader, new TypeToken<Map<Long, String>>() {}.getType());
-        }
-
-        List<Integer> list;
-
-        try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(location), StandardCharsets.UTF_8), false)) {
-            list = new ArrayList<>(GameData.getAvatarDataMap().keySet());
-            Collections.sort(list);
-
-            // if the user made choices for language, I assume it's okay to assign his/her selected language to "en-us"
-            // since it's the fallback language and there will be no difference in the gacha record page.
-            // The enduser can still modify the `gacha/mappings.js` directly to enable multilingual for the gacha record system.
-            writer.println("mappings = {\"en-us\": {");
-
-            // Avatars
-            for (Integer id : list) {
-                AvatarData data = GameData.getAvatarDataMap().get(id);
-                int avatarID = data.getId();
-                if (avatarID >= 11000000) { // skip test avatar
-                    continue;
-                }
-                String color = switch (data.getQualityType()) {
-                    case "QUALITY_PURPLE" -> "purple";
-                    case "QUALITY_ORANGE" -> "yellow";
-                    default -> "blue";
-                };
-                // Got the magic number 4233146695 from manually search in the json file
-                writer.println(
-                    "\"" + (avatarID % 1000 + 1000) + "\" : [\""
-                    + map.get(data.getNameTextMapHash()) + "(" +  map.get(4233146695L)+ ")\", \""
-                    + color + "\"],");
-            }
-
-            writer.println();
-
-            list = new ArrayList<>(GameData.getItemDataMap().keySet());
-            Collections.sort(list);
-
-            // Weapons
-            for (Integer id : list) {
-                ItemData data = GameData.getItemDataMap().get(id);
-                if (data.getId() <= 11101 || data.getId() >= 20000) {
-                    continue; //skip non weapon items
-                }
-                String color = switch (data.getRankLevel()) {
-                    case 3 -> "blue";
-                    case 4 -> "purple";
-                    case 5 -> "yellow";
-                    default -> null;
-                };
-                if (color == null)
-                    continue; // skip unnecessary entries
-
-                // Got the magic number 4231343903 from manually search in the json file
-
-                writer.println("\"" + data.getId() +
-                         "\" : [\"" + map.getOrDefault(data.getNameTextMapHash(), id.toString()).replaceAll("\"", "")
-                         + "("+ map.get(4231343903L)+")\",\""+ color + "\"],");
-            }
-            writer.println("\"200\": \""+map.get(332935371L)+"\", \"301\": \""+ map.get(2272170627L) + "\", \"302\": \""+map.get(2864268523L)+"\"");
-            writer.println("}\n}");
-        }
-
-        Grasscutter.getLogger().info("Mappings generated to " + location + " !");
-    }
 }

@@ -371,6 +371,8 @@ public final class Language {
     }
 
     public static TextStrings getTextMapKey(long hash) {
+        if (textMapStrings == null)
+            loadTextMaps();
         return textMapStrings.get((int) hash);
     }
 
