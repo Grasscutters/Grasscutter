@@ -3,6 +3,8 @@ package emu.grasscutter.command;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.game.ReceiveCommandFeedbackEvent;
+import emu.grasscutter.utils.Language;
+
 import static emu.grasscutter.utils.Language.translate;
 
 import java.util.List;
@@ -68,10 +70,13 @@ public interface CommandHandler {
         return this.getClass().getAnnotation(Command.class).label();
     }
 
-    default String getDescriptionString(Player player) {
+    default String getDescriptionKey() {
         Command annotation = this.getClass().getAnnotation(Command.class);
-        String key = "commands.%s.description".formatted(annotation.label());
-        return translate(player, key);
+        return "commands.%s.description".formatted(annotation.label());
+    }
+
+    default String getDescriptionString(Player player) {
+        return translate(player, getDescriptionKey());
     }
 
     /**
