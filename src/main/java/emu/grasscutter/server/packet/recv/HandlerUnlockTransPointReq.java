@@ -11,6 +11,6 @@ public class HandlerUnlockTransPointReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         UnlockTransPointReq req = UnlockTransPointReq.parseFrom(payload);
-        session.getPlayer().getProgressManager().unlockTransPoint(req.getSceneId(), req.getPointId());
+        session.getPlayer().getProgressManager().unlockTransPoint(req.getSceneId(), req.getPointId(), false);
     }
 }

@@ -7,7 +7,10 @@ import emu.grasscutter.data.excels.OpenStateData;
 import emu.grasscutter.data.excels.OpenStateData.OpenStateCondType;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.quest.enums.QuestState;
+import emu.grasscutter.game.quest.enums.QuestTrigger;
+import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketOpenStateUpdateNotify;
@@ -203,7 +206,7 @@ public class PlayerProgressManager extends BasePlayerDataManager {
         }
     }
 
-    public void unlockTransPoint(int sceneId, int pointId) {
+    public void unlockTransPoint(int sceneId, int pointId, boolean isStatue) {
         // Check whether the unlocked point exists and whether it is still locked.
         String key = sceneId + "_" + pointId;
 		ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(key);
@@ -219,9 +222,17 @@ public class PlayerProgressManager extends BasePlayerDataManager {
         }
         this.player.getUnlockedScenePoints().get(sceneId).add(pointId);
 
-        // Give primogems for unlocking.
+        // Give primogems  and Adventure EXP for unlocking.
         var primos = new GameItem(GameData.getItemDataMap().get(201), 5);
         this.player.getInventory().addItem(primos, ActionReason.UnlockPointReward);
+
+        var exp = new GameItem(GameData.getItemDataMap().get(102), isStatue ? 50 : 10);
+        this.player.getInventory().addItem(exp, ActionReason.UnlockPointReward);
+
+        // this.player.sendPacket(new PacketPlayerPropChangeReasonNotify(this.player.getProperty(PlayerProperty.PROP_PLAYER_EXP), PlayerProperty.PROP_PLAYER_EXP, PropChangeReason.PROP_CHANGE_REASON_PLAYER_ADD_EXP));
+
+        // Fire quest trigger for trans point unlock.
+        this.player.getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_UNLOCK_TRANS_POINT, sceneId, pointId);
 
         // Send packet.
         this.player.sendPacket(new PacketScenePointUnlockNotify(sceneId, pointId));

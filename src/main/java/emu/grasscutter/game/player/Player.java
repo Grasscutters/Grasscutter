@@ -56,6 +56,7 @@ import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
+import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.data.SceneRegion;
@@ -1514,10 +1515,17 @@ public class Player {
         int min = this.getPropertyMin(prop);
         int max = this.getPropertyMax(prop);
         if (min <= value && value <= max) {
+            int currentValue = this.properties.get(prop.getId());
             this.properties.put(prop.getId(), value);
             if (sendPacket) {
                 // Update player with packet
                 this.sendPacket(new PacketPlayerPropNotify(this, prop));
+                this.sendPacket(new PacketPlayerPropChangeNotify(this, prop, value - currentValue));
+
+                // Make the Adventure EXP pop-up show on screen.
+                if (prop == PlayerProperty.PROP_PLAYER_EXP) {
+                    this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value, PropChangeReason.PROP_CHANGE_REASON_PLAYER_ADD_EXP));
+                }
             }
             return true;
         } else {
