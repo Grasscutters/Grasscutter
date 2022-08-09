@@ -95,15 +95,8 @@ public final class Grasscutter {
         boolean exitEarly = false;
         for (String arg : args) {
             switch (arg.toLowerCase()) {
-                case "-handbook", "-handbooks" -> {
-                    exitEarly = true;
-                }
                 case "-dumppacketids" -> {
                     PacketOpcodesUtils.dumpPacketIds();
-                    exitEarly = true;
-                }
-                case "-gachamap" -> {
-                    Tools.createGachaMapping(DATA("gacha_mappings.js"));
                     exitEarly = true;
                 }
                 case "-version" -> {

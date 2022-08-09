@@ -180,21 +180,15 @@ final class ToolsWithLanguageOption {
 
             // if the user made choices for language, I assume it's okay to assign his/her selected language to "en-us"
             // since it's the fallback language and there will be no difference in the gacha record page.
-            // The enduser can still modify the `gacha_mappings.js` directly to enable multilingual for the gacha record system.
+            // The enduser can still modify the `gacha/mappings.js` directly to enable multilingual for the gacha record system.
             writer.println("mappings = {\"en-us\": {");
 
             // Avatars
-            boolean first = true;
             for (Integer id : list) {
                 AvatarData data = GameData.getAvatarDataMap().get(id);
                 int avatarID = data.getId();
                 if (avatarID >= 11000000) { // skip test avatar
                     continue;
-                }
-                if (first) { // skip adding comma for the first element
-                    first = false;
-                } else {
-                    writer.print(",");
                 }
                 String color = switch (data.getQualityType()) {
                     case "QUALITY_PURPLE" -> "purple";
@@ -205,7 +199,7 @@ final class ToolsWithLanguageOption {
                 writer.println(
                     "\"" + (avatarID % 1000 + 1000) + "\" : [\""
                     + map.get(data.getNameTextMapHash()) + "(" +  map.get(4233146695L)+ ")\", \""
-                    + color + "\"]");
+                    + color + "\"],");
             }
 
             writer.println();
@@ -219,29 +213,22 @@ final class ToolsWithLanguageOption {
                 if (data.getId() <= 11101 || data.getId() >= 20000) {
                     continue; //skip non weapon items
                 }
-                String color;
-
-                switch (data.getRankLevel()) {
-                    case 3:
-                        color = "blue";
-                        break;
-                    case 4:
-                        color = "purple";
-                        break;
-                    case 5:
-                        color = "yellow";
-                        break;
-                    default:
-                        continue; // skip unnecessary entries
-                }
+                String color = switch (data.getRankLevel()) {
+                    case 3 -> "blue";
+                    case 4 -> "purple";
+                    case 5 -> "yellow";
+                    default -> null;
+                };
+                if (color == null)
+                    continue; // skip unnecessary entries
 
                 // Got the magic number 4231343903 from manually search in the json file
 
-                writer.println(",\"" + data.getId() +
-                         "\" : [\"" + map.get(data.getNameTextMapHash()).replaceAll("\"", "")
-                         + "("+ map.get(4231343903L)+")\",\""+ color + "\"]");
+                writer.println("\"" + data.getId() +
+                         "\" : [\"" + map.getOrDefault(data.getNameTextMapHash(), id.toString()).replaceAll("\"", "")
+                         + "("+ map.get(4231343903L)+")\",\""+ color + "\"],");
             }
-            writer.println(",\"200\": \""+map.get(332935371L)+"\", \"301\": \""+ map.get(2272170627L) + "\", \"302\": \""+map.get(2864268523L)+"\"");
+            writer.println("\"200\": \""+map.get(332935371L)+"\", \"301\": \""+ map.get(2272170627L) + "\", \"302\": \""+map.get(2864268523L)+"\"");
             writer.println("}\n}");
         }
 
