@@ -36,7 +36,9 @@ public final class StartupArguments {
 
         // Aliases.
         "-v", StartupArguments::printVersion,
-        "-debugall", StartupArguments::enableDebug
+        "-debugall", parameter -> {
+            StartupArguments.enableDebug("all"); return false;
+        }
     );
 
     /**
@@ -69,7 +71,7 @@ public final class StartupArguments {
      */
     private static boolean generateHandbook(String parameter) {
         try {
-            Tools.createGmHandbook();
+            Tools.createGmHandbooks();
         } catch (Exception exception) {
             Grasscutter.getLogger().error("Failed to generate GM Handbook.", exception);
         }
@@ -107,21 +109,25 @@ public final class StartupArguments {
      * @return False to continue execution.
      */
     private static boolean enableDebug(String parameter) {
+        // Get the level by parameter.
+        var loggerLevel = parameter != null && parameter.equals("all")
+            ? Level.DEBUG : Level.INFO;
+
         // Set the logger to debug.
         Grasscutter.getLogger().setLevel(Level.DEBUG);
         Grasscutter.getLogger().debug("The logger is now running in debug mode.");
 
         // Change loggers to debug.
         ((Logger) LoggerFactory.getLogger("express"))
-            .setLevel(Level.INFO);
+            .setLevel(loggerLevel);
         ((Logger) LoggerFactory.getLogger("org.quartz"))
-            .setLevel(Level.INFO);
+            .setLevel(loggerLevel);
         ((Logger) LoggerFactory.getLogger("org.reflections"))
-            .setLevel(Level.INFO);
+            .setLevel(loggerLevel);
         ((Logger) LoggerFactory.getLogger("org.eclipse.jetty"))
-            .setLevel(Level.INFO);
+            .setLevel(loggerLevel);
         ((Logger) LoggerFactory.getLogger("org.mongodb.driver"))
-            .setLevel(Level.INFO);
+            .setLevel(loggerLevel);
 
         return false;
     }
