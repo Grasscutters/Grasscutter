@@ -5,13 +5,10 @@ import ch.qos.logback.classic.Logger;
 import emu.grasscutter.BuildConfig;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
-import emu.grasscutter.tools.Tools;
 import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 import java.util.function.Function;
-
-import static emu.grasscutter.config.Configuration.DATA;
 
 /**
  * A parser for start-up arguments.
@@ -23,11 +20,9 @@ public final class StartupArguments {
 
     /* A map of parameter -> argument handler. */
     private static final Map<String, Function<String, Boolean>> argumentHandlers = Map.of(
-        "-handbook", StartupArguments::generateHandbook,
         "-dumppacketids", parameter -> {
             PacketOpcodesUtils.dumpPacketIds(); return true;
         },
-        "-gachamap", StartupArguments::generateGachaMap,
         "-version", StartupArguments::printVersion,
         "-debug", StartupArguments::enableDebug,
         "-lang", parameter -> {
@@ -65,36 +60,6 @@ public final class StartupArguments {
     }
 
     /**
-     * Generates the GM Handbook.
-     * @param parameter Additional parameters.
-     * @return True to exit early.
-     */
-    private static boolean generateHandbook(String parameter) {
-        try {
-            Tools.createGmHandbooks();
-        } catch (Exception exception) {
-            Grasscutter.getLogger().error("Failed to generate GM Handbook.", exception);
-        }
-
-        return true;
-    }
-
-    /**
-     * Generates the Gacha map.
-     * @param parameter Additional parameters.
-     * @return True to exit early.
-     */
-    private static boolean generateGachaMap(String parameter) {
-        try {
-            Tools.createGachaMapping(DATA("gacha_mappings.js"));
-        } catch (Exception exception) {
-            Grasscutter.getLogger().error("Failed to generate Gacha Map.", exception);
-        }
-
-        return true;
-    }
-
-    /**
      * Prints the server version.
      * @param parameter Additional parameters.
      * @return True to exit early.
@@ -110,6 +75,7 @@ public final class StartupArguments {
      */
     private static boolean enableDebug(String parameter) {
         // Get the level by parameter.
+        System.out.println(parameter);
         var loggerLevel = parameter != null && parameter.equals("all")
             ? Level.DEBUG : Level.INFO;
 
