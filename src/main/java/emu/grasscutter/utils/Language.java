@@ -105,7 +105,7 @@ public final class Language {
         }
 
         var langCode = Utils.getLanguageCode(player.getAccount().getLocale());
-        String translated = Grasscutter.getLanguage(langCode).get(key);
+        String translated = getLanguage(langCode).get(key);
 
         try {
             return translated.formatted(args);
@@ -210,7 +210,7 @@ public final class Language {
         }
 
         if (!isValueFound && !languageCode.equals("en-US")) {
-            var englishValue = Grasscutter.getLanguage("en-US").get(key);
+            var englishValue = getLanguage("en-US").get(key);
             if (!englishValue.contains(valueNotFoundPattern)) {
                 result += "\nhere is english version:\n" + englishValue;
             }
@@ -240,7 +240,7 @@ public final class Language {
     private static final int TEXTMAP_CACHE_VERSION = 0x9CCACE02;
     @EqualsAndHashCode public static class TextStrings implements Serializable {
         public static final String[] ARR_LANGUAGES = {"EN", "CHS", "CHT", "JP", "KR", "DE", "ES", "FR", "ID", "PT", "RU", "TH", "VI"};
-        public static final String[] ARR_GC_LANGUAGES = {"en-US", "zh-CN", "zh-TW", "ja-JP", "ko-KR", "DE", "es-ES", "fr-FR", "ID", "PT", "ru-RU", "TH", "VI"};
+        public static final String[] ARR_GC_LANGUAGES = {"en-US", "zh-CN", "zh-TW", "en-US", "ko-KR", "en-US", "es-ES", "fr-FR", "en-US", "en-US", "ru-RU", "en-US", "en-US"};  // TODO: Update the placeholder en-US entries if we ever add GC translations for the missing client languages
         public static final int NUM_LANGUAGES = ARR_LANGUAGES.length;
         public static final List<String> LIST_LANGUAGES = Arrays.asList(ARR_LANGUAGES);
         public static final Object2IntMap<String> MAP_LANGUAGES =  // Map "EN": 0, "CHS": 1, ..., "VI": 12
