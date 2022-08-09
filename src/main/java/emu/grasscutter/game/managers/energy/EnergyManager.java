@@ -31,9 +31,6 @@ import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +39,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
-import com.google.gson.reflect.TypeToken;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 public class EnergyManager extends BasePlayerManager {
@@ -60,12 +56,10 @@ public class EnergyManager extends BasePlayerManager {
 
     public static void initialize() {
         // Read the data we need for monster energy drops.
-        try (Reader fileReader = DataLoader.loadReader("EnergyDrop.json")) {
-            List<EnergyDropEntry> energyDropList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, EnergyDropEntry.class).getType());
-
-            for (EnergyDropEntry entry : energyDropList) {
+        try {
+            DataLoader.loadList("EnergyDrop.json", EnergyDropEntry.class).forEach(entry -> {
                 energyDropData.put(entry.getDropId(), entry.getDropList());
-            }
+            });
 
             Grasscutter.getLogger().debug("Energy drop data successfully loaded.");
         }
@@ -74,12 +68,10 @@ public class EnergyManager extends BasePlayerManager {
         }
 
         // Read the data for particle generation from skills
-        try (Reader fileReader = new InputStreamReader(DataLoader.load("SkillParticleGeneration.json"))) {
-            List<SkillParticleGenerationEntry> skillParticleGenerationList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, SkillParticleGenerationEntry.class).getType());
-
-            for (SkillParticleGenerationEntry entry : skillParticleGenerationList) {
+        try {
+            DataLoader.loadList("SkillParticleGeneration.json", SkillParticleGenerationEntry.class).forEach(entry -> {
                 skillParticleGenerationData.put(entry.getAvatarId(), entry.getAmountList());
-            }
+            });
 
             Grasscutter.getLogger().debug("Skill particle generation data successfully loaded.");
         }

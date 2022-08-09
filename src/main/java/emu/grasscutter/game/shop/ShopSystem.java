@@ -1,6 +1,5 @@
 package emu.grasscutter.game.shop;
 
-import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
@@ -14,11 +13,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 import static emu.grasscutter.config.Configuration.*;
 
-import java.io.FileReader;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -60,9 +55,9 @@ public class ShopSystem extends BaseGameSystem {
     }
 
     private void loadShop() {
-        try (Reader fileReader = DataLoader.loadReader("Shop.json")) {
-            getShopData().clear();
-            List<ShopTable> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopTable.class).getType());
+        getShopData().clear();
+        try {
+            List<ShopTable> banners = DataLoader.loadList("Shop.json", ShopTable.class);
             if (banners.size() > 0) {
                 for (ShopTable shopTable : banners) {
                     for (ShopInfo cost : shopTable.getItems()) {
@@ -104,9 +99,9 @@ public class ShopSystem extends BaseGameSystem {
     }
 
     private void loadShopChest() {
-        try (Reader fileReader = DataLoader.loadReader("ShopChest.json")) {
-            getShopChestData().clear();
-            List<ShopChestTable> shopChestTableList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopChestTable.class).getType());
+        getShopChestData().clear();
+        try {
+            List<ShopChestTable> shopChestTableList = DataLoader.loadList("ShopChest.json", ShopChestTable.class);
             if (shopChestTableList.size() > 0) {
                 getShopChestData().addAll(shopChestTableList);
                 Grasscutter.getLogger().debug("ShopChest data successfully loaded.");
@@ -119,9 +114,9 @@ public class ShopSystem extends BaseGameSystem {
     }
 
     private void loadShopChestBatchUse() {
-        try (Reader fileReader = DataLoader.loadReader("ShopChestBatchUse.json")) {
-            getShopChestBatchUseData().clear();
-            List<ShopChestBatchUseTable> shopChestBatchUseTableList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ShopChestBatchUseTable.class).getType());
+        getShopChestBatchUseData().clear();
+        try {
+            List<ShopChestBatchUseTable> shopChestBatchUseTableList = DataLoader.loadList("ShopChestBatchUse.json", ShopChestBatchUseTable.class);
             if (shopChestBatchUseTableList.size() > 0) {
                 getShopChestBatchUseData().addAll(shopChestBatchUseTableList);
                 Grasscutter.getLogger().debug("ShopChestBatchUse data successfully loaded.");

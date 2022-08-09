@@ -6,8 +6,6 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.CombineData;
 import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.Inventory;
-import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.ItemUseOp;
@@ -19,17 +17,11 @@ import emu.grasscutter.server.packet.send.PacketCombineFormulaDataNotify;
 import emu.grasscutter.server.packet.send.PacketCombineRsp;
 import emu.grasscutter.server.packet.send.PacketReliquaryDecomposeRsp;
 import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-
-import com.google.gson.reflect.TypeToken;
 
 public class CombineManger extends BaseGameSystem {
     private final static Int2ObjectMap<List<Integer>> reliquaryDecomposeData = new Int2ObjectOpenHashMap<>();
@@ -40,13 +32,10 @@ public class CombineManger extends BaseGameSystem {
 
     public static void initialize() {
         // Read the data we need for strongbox.
-        try (Reader fileReader = DataLoader.loadReader("ReliquaryDecompose.json")) {
-            List<ReliquaryDecomposeEntry> decomposeEntries = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ReliquaryDecomposeEntry.class).getType());
-
-            for (ReliquaryDecomposeEntry entry : decomposeEntries) {
+        try {
+            DataLoader.loadList("ReliquaryDecompose.json", ReliquaryDecomposeEntry.class).forEach(entry -> {
                 reliquaryDecomposeData.put(entry.getConfigId(), entry.getItems());
-            }
-
+            });
             Grasscutter.getLogger().debug("Loaded {} reliquary decompose entries.", reliquaryDecomposeData.size());
         }
         catch (Exception ex) {

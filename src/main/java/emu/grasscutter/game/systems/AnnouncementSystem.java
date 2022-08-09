@@ -1,6 +1,5 @@
 package emu.grasscutter.game.systems;
 
-import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.game.player.Player;
@@ -16,7 +15,6 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
-import java.io.InputStreamReader;
 import java.util.*;
 
 @Getter
@@ -30,9 +28,8 @@ public class AnnouncementSystem extends BaseGameSystem {
     }
 
     private int loadConfig() {
-        try (var fileReader = DataLoader.loadReader("Announcement.json")) {
-            List<AnnounceConfigItem> announceConfigItems = Grasscutter.getGsonFactory().fromJson(fileReader,
-                TypeToken.getParameterized(List.class, AnnounceConfigItem.class).getType());
+        try {
+            List<AnnounceConfigItem> announceConfigItems = DataLoader.loadList("Announcement.json", AnnounceConfigItem.class);
 
             announceConfigItemMap.clear();
             announceConfigItems.forEach(i -> announceConfigItemMap.put(i.getTemplateId(), i));
