@@ -1,6 +1,5 @@
 package emu.grasscutter.game.world;
 
-import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
@@ -17,9 +16,6 @@ import emu.grasscutter.scripts.data.SceneMonster;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,15 +38,11 @@ public class WorldDataSystem extends BaseGameSystem {
         // set the special chest first
         chestInteractHandlerMap.put("SceneObj_Chest_Flora", new BossChestInteractHandler());
 
-        try (Reader reader = DataLoader.loadReader("ChestReward.json")) {
-            List<ChestReward> chestReward = Grasscutter.getGsonFactory().fromJson(
-                    reader,
-                    TypeToken.getParameterized(List.class, ChestReward.class).getType());
-
-            chestReward.forEach(reward ->
-                    reward.getObjNames().forEach(
-                            name -> chestInteractHandlerMap.putIfAbsent(name, new NormalChestInteractHandler(reward))));
-
+        try {
+            DataLoader.loadList("ChestReward.json", ChestReward.class)
+                .forEach(reward ->
+                    reward.getObjNames().forEach(name ->
+                        chestInteractHandlerMap.putIfAbsent(name, new NormalChestInteractHandler(reward))));
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load chest reward config.", e);
         }

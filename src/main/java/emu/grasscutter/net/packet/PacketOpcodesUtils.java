@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -59,7 +60,7 @@ public class PacketOpcodesUtils {
                     .filter(e -> e.getIntKey() > 0)
                     .collect(Collectors.toMap(Int2ObjectMap.Entry::getIntKey, Int2ObjectMap.Entry::getValue, (k, v) -> v, TreeMap::new));
             // Write to file
-            writer.write(Grasscutter.getGsonFactory().toJson(packetIds));
+            writer.write(Utils.jsonEncode(packetIds));
             Grasscutter.getLogger().info("Dumped packet ids.");
         } catch (IOException e) {
             e.printStackTrace();

@@ -15,6 +15,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Map;
 
 public class DataLoader {
 
@@ -67,6 +68,24 @@ public class DataLoader {
         }
 
         return null;
+    }
+
+    public static <T> T loadClass(String resourcePath, Class<T> classType) throws IOException {
+        try (InputStreamReader reader = loadReader(resourcePath)) {
+            return Utils.loadJsonToClass(reader, classType);
+        }
+    }
+
+    public static <T> List<T> loadList(String resourcePath, Class<T> classType) throws IOException {
+        try (InputStreamReader reader = loadReader(resourcePath)) {
+            return Utils.loadJsonToList(reader, classType);
+        }
+    }
+
+    public static <T1,T2> Map<T1,T2> loadMap(String resourcePath, Class<T1> keyType, Class<T2> valueType) throws IOException {
+        try (InputStreamReader reader = loadReader(resourcePath)) {
+            return Utils.loadJsonToMap(reader, keyType, valueType);
+        }
     }
 
     public static void checkAllFiles() {
