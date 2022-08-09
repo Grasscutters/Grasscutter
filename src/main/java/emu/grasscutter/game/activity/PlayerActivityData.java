@@ -13,6 +13,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass;
 import emu.grasscutter.server.packet.send.PacketActivityUpdateWatcherNotify;
+import emu.grasscutter.utils.Utils;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -68,7 +69,7 @@ public class PlayerActivityData {
     }
 
     public void setDetail(Object detail){
-        this.detail = Grasscutter.getGsonFactory().toJson(detail);
+        this.detail = Utils.jsonEncode(detail);
     }
 
     public void takeWatcherReward(int watcherId) {

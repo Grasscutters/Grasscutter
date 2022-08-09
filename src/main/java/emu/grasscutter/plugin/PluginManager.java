@@ -82,7 +82,7 @@ public final class PluginManager {
                     InputStreamReader fileReader = new InputStreamReader(configFile.openStream());
 
                     // Create a plugin config instance from the config file.
-                    PluginConfig pluginConfig = Grasscutter.getGsonFactory().fromJson(fileReader, PluginConfig.class);
+                    PluginConfig pluginConfig = Utils.loadJsonToClass(fileReader, PluginConfig.class);
                     // Check if the plugin config is valid.
                     if (!pluginConfig.validate()) {
                         Grasscutter.getLogger().warn("Plugin " + plugin.getName() + " has an invalid config file.");

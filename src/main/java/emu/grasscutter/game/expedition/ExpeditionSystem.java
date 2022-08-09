@@ -1,6 +1,5 @@
 package emu.grasscutter.game.expedition;
 
-import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.server.game.BaseGameSystem;
@@ -8,12 +7,6 @@ import emu.grasscutter.server.game.GameServer;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
-import static emu.grasscutter.config.Configuration.*;
-
-import java.io.FileReader;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.Collection;
 import java.util.List;
 
 public class ExpeditionSystem extends BaseGameSystem {
@@ -30,9 +23,9 @@ public class ExpeditionSystem extends BaseGameSystem {
     }
 
     public synchronized void load() {
-        try (Reader fileReader = DataLoader.loadReader("ExpeditionReward.json")) {
-            getExpeditionRewardDataList().clear();
-            List<ExpeditionRewardInfo> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, ExpeditionRewardInfo.class).getType());
+        getExpeditionRewardDataList().clear();
+        try {
+            List<ExpeditionRewardInfo> banners = DataLoader.loadList("ExpeditionReward.json", ExpeditionRewardInfo.class);
             if (banners.size() > 0) {
                 for (ExpeditionRewardInfo di : banners) {
                     getExpeditionRewardDataList().put(di.getExpId(), di.getExpeditionRewardDataList());
