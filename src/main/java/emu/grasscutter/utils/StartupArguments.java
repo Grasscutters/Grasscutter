@@ -75,7 +75,6 @@ public final class StartupArguments {
      */
     private static boolean enableDebug(String parameter) {
         // Get the level by parameter.
-        System.out.println(parameter);
         var loggerLevel = parameter != null && parameter.equals("all")
             ? Level.DEBUG : Level.INFO;
 

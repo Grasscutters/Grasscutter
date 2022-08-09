@@ -65,6 +65,8 @@ public final class Grasscutter {
     private static HttpServer httpServer;
     private static GameServer gameServer;
     private static PluginManager pluginManager;
+    @Getter private static CommandMap commandMap;
+
     private static AuthenticationSystem authenticationSystem;
     private static PermissionHandler permissionHandler;
 
@@ -99,6 +101,9 @@ public final class Grasscutter {
             System.exit(0); // Exit early.
         }
 
+        // Create command map.
+        commandMap = new CommandMap(true);
+        // Generate handbooks.
         Tools.createGmHandbooks();
 
         // Initialize server.

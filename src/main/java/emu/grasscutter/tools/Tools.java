@@ -48,7 +48,7 @@ public final class Tools {
                 .append("// Created " + now + "\n\n")
                 .append("// Commands\n"));
         // Commands
-        final List<CommandHandler> cmdList = new CommandMap(true).getHandlersAsList();
+        final List<CommandHandler> cmdList = CommandMap.getInstance().getHandlersAsList();
         final String padCmdLabel = "%" + cmdList.stream().map(CommandHandler::getLabel).map(String::length).max(Integer::compare).get().toString() + "s : ";
         for (CommandHandler cmd : cmdList) {
             final String label = padCmdLabel.formatted(cmd.getLabel());
