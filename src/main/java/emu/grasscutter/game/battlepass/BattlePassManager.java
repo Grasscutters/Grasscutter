@@ -191,8 +191,6 @@ public class BattlePassManager extends BasePlayerDataManager {
     }
 
     private void takeRewardsFromSelectChest(ItemData rewardItemData, int index, ItemParamData entry, List<GameItem> rewardItems) {
-        Grasscutter.getLogger().info("Reward Item ID: {}, Index: {}, Use: {}", rewardItemData.getId(), index, rewardItemData.getItemUse().get(0).getUseOp());
-
         // Sanity checks.
         if (rewardItemData.getItemUse().size() < 1) {
             return;
@@ -267,7 +265,6 @@ public class BattlePassManager extends BasePlayerDataManager {
 
                 // Make sure we have reward data.
                 RewardData reward = GameData.getRewardDataMap().get(tag.getRewardId());
-                Grasscutter.getLogger().info("Reward ID: {}", tag.getRewardId());
                 if (reward == null) {
                     continue;
                 }
