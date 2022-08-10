@@ -14,6 +14,6 @@ public class HandlerSetOpenStateReq extends PacketHandler {
         int openState = req.getKey();
         int value = req.getValue();
 
-        session.getPlayer().getOpenStateManager().setOpenStateFromClient(openState, value);
+        session.getPlayer().getProgressManager().setOpenStateFromClient(openState, value);
     }
 }

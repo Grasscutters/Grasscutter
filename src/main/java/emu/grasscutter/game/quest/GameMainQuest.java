@@ -316,7 +316,7 @@ public class GameMainQuest {
                 List<QuestData.QuestCondition> finishCond = subQuestWithCond.getQuestData().getFinishCond();
                 int[] finish = new int[finishCond.size()];
 
-                for (int i = 0; i < subQuestWithCond.getQuestData().getFinishCond().size(); i++) {
+                for (int i = 0; i < finishCond.size(); i++) {
                     QuestData.QuestCondition condition = finishCond.get(i);
                     boolean result = this.getOwner().getServer().getQuestSystem().triggerContent(subQuestWithCond, condition, paramStr, params);
                     finish[i] = result ? 1 : 0;

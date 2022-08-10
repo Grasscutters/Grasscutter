@@ -142,7 +142,8 @@ public class ResourceLoader {
 
         List<ScenePointEntry> scenePointList = new ArrayList<>();
         for (File file : Objects.requireNonNull(folder.listFiles())) {
-            ScenePointConfig config; Integer sceneId;
+            ScenePointConfig config; 
+            Integer sceneId;
 
             Matcher matcher = pattern.matcher(file.getName());
             if (matcher.find()) {
@@ -173,8 +174,10 @@ public class ResourceLoader {
                 pointData.updateDailyDungeon();
             }
 
+            GameData.getScenePointsPerScene().put(sceneId, new ArrayList<>());
             for (ScenePointEntry entry : scenePointList) {
                 GameData.getScenePointEntries().put(entry.getName(), entry);
+                GameData.getScenePointsPerScene().get(sceneId).add(entry.getPointData().getId());
             }
         }
     }

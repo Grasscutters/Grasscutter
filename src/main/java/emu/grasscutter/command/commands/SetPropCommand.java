@@ -1,15 +1,19 @@
 package emu.grasscutter.command.commands;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.tower.TowerLevelRecord;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
+import emu.grasscutter.server.packet.send.PacketSceneAreaUnlockNotify;
+import emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify;
 
 @Command(label = "setProp", aliases = {"prop"}, usage = {"<prop> <value>"}, permission = "player.setprop", permissionTargeted = "player.setprop.others")
 public final class SetPropCommand implements CommandHandler {
@@ -22,7 +26,8 @@ public final class SetPropCommand implements CommandHandler {
         NO_STAMINA,
         UNLIMITED_ENERGY,
         SET_OPENSTATE,
-        UNSET_OPENSTATE
+        UNSET_OPENSTATE,
+        UNLOCKMAP
     }
 
     static class Prop {
@@ -101,6 +106,10 @@ public final class SetPropCommand implements CommandHandler {
         Prop unsetopenstate = new Prop("unsetopenstate", PseudoProp.UNSET_OPENSTATE);
         this.props.put("unsetopenstate", unsetopenstate);
         this.props.put("uo", unsetopenstate);
+
+        Prop unlockmap = new Prop("unlockmap", PseudoProp.UNLOCKMAP);
+        this.props.put("unlockmap", unlockmap);
+        this.props.put("um", unlockmap);
     }
 
     @Override
@@ -139,6 +148,7 @@ public final class SetPropCommand implements CommandHandler {
             case GOD_MODE, NO_STAMINA, UNLIMITED_ENERGY -> this.setBool(sender, targetPlayer, prop.pseudoProp, value);
             case SET_OPENSTATE -> this.setOpenState(targetPlayer, value, 1);
             case UNSET_OPENSTATE -> this.setOpenState(targetPlayer, value, 0);
+            case UNLOCKMAP -> unlockMap(targetPlayer);
             default -> targetPlayer.setProperty(prop.prop, value);
         };
 
@@ -218,6 +228,28 @@ public final class SetPropCommand implements CommandHandler {
 
     private boolean setOpenState(Player targetPlayer, int state, int value) {
         targetPlayer.sendPacket(new PacketOpenStateChangeNotify(state, value));
+        return true;
+    }
+
+    private boolean unlockMap(Player targetPlayer) {
+        // Unlock.
+        targetPlayer.setUnlockedScenePoints(new HashMap<>());
+        targetPlayer.setUnlockedSceneAreas(new HashMap<>());
+        for (int sceneId : GameData.getScenePointsPerScene().keySet()) {
+            // Unlock trans points.
+            targetPlayer.getUnlockedScenePoints().put(sceneId, new ArrayList<>());
+            targetPlayer.getUnlockedScenePoints().get(sceneId).addAll(GameData.getScenePointsPerScene().get(sceneId));
+
+            // Unlock map areas. Unfortunately, there is no readily available source for them in excels or bins.
+            targetPlayer.getUnlockedSceneAreas().put(sceneId, new ArrayList<>());
+            targetPlayer.getUnlockedSceneAreas().get(sceneId).addAll(List.of(1,2,3,4,5,6,7,8,9,10,11,12,13,14,17,18,19,20,21,22,23,24,25,29,100,101,102,103,200,210,300,400,401,402,403));
+        }
+
+        // Send notify.
+        int playerScene = targetPlayer.getSceneId();
+        targetPlayer.sendPacket(new PacketScenePointUnlockNotify(playerScene, targetPlayer.getUnlockedScenePoints().get(playerScene)));
+        targetPlayer.sendPacket(new PacketSceneAreaUnlockNotify(playerScene, targetPlayer.getUnlockedSceneAreas().get(playerScene)));
+
         return true;
     }
 }
