@@ -14,7 +14,7 @@ public class HandlerGetScenePointReq extends PacketHandler {
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		GetScenePointReq req = GetScenePointReq.parseFrom(payload);
 		
-		session.send(new PacketGetScenePointRsp(req.getSceneId()));
+		session.send(new PacketGetScenePointRsp(session.getPlayer(), req.getSceneId()));
 	}
 
 }

@@ -56,6 +56,7 @@ import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
+import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.data.SceneRegion;
@@ -122,6 +123,9 @@ public class Player {
     @Getter private Map<Integer, Integer> unlockedRecipies;
     @Getter private List<ActiveForgeData> activeForges;
     @Getter private Map<Integer,Integer> questGlobalVariables;
+    @Getter private Map<Integer, Integer> openStates;
+    @Getter @Setter private Map<Integer, List<Integer>> unlockedSceneAreas;
+    @Getter @Setter private Map<Integer, List<Integer>> unlockedScenePoints;
 
     @Transient private long nextGuid = 0;
     @Transient private int peerId;
@@ -151,13 +155,13 @@ public class Player {
     @Getter private transient CookingManager cookingManager;
     @Getter private transient ActivityManager activityManager;
     @Getter private transient PlayerBuffManager buffManager;
+    @Getter private transient PlayerProgressManager progressManager;
 
     // Manager data (Save-able to the database)
     private PlayerProfile playerProfile;
     private TeamManager teamManager;
     private TowerData towerData;
     private PlayerGachaInfo gachaInfo;
-    private PlayerOpenStateManager openStateManager;
     private PlayerCollectionRecords collectionRecordStore;
     private ArrayList<ShopLimit> shopLimit;
 
@@ -221,6 +225,9 @@ public class Player {
         this.unlockedFurnitureSuite = new HashSet<>();
         this.activeForges = new ArrayList<>();
         this.unlockedRecipies = new HashMap<>();
+        this.openStates = new HashMap<>();
+        this.unlockedSceneAreas = new HashMap<>();
+        this.unlockedScenePoints = new HashMap<>();
         this.sceneState = SceneLoadState.NONE;
 
         this.attackResults = new LinkedBlockingQueue<>();
@@ -233,7 +240,7 @@ public class Player {
         this.rewardedLevels = new HashSet<>();
         this.moonCardGetTimes = new HashSet<>();
         this.codex = new PlayerCodex(this);
-        this.openStateManager = new PlayerOpenStateManager(this);
+        this.progressManager = new PlayerProgressManager(this);
         this.shopLimit = new ArrayList<>();
         this.expeditionInfo = new HashMap<>();
         this.messageHandler = null;
@@ -243,6 +250,7 @@ public class Player {
         this.energyManager = new EnergyManager(this);
         this.resinManager = new ResinManager(this);
         this.forgingManager = new ForgingManager(this);
+        this.progressManager = new PlayerProgressManager(this);
         this.furnitureManager = new FurnitureManager(this);
         this.cookingManager = new CookingManager(this);
     }
@@ -276,6 +284,7 @@ public class Player {
         this.resinManager = new ResinManager(this);
         this.deforestationManager = new DeforestationManager(this);
         this.forgingManager = new ForgingManager(this);
+        this.progressManager = new PlayerProgressManager(this);
         this.furnitureManager = new FurnitureManager(this);
         this.cookingManager = new CookingManager(this);
     }
@@ -436,7 +445,7 @@ public class Player {
             this.updateProfile();
 
             // Handle open state unlocks from level-up.
-            this.getOpenStateManager().tryUnlockOpenStates();
+            this.getProgressManager().tryUnlockOpenStates();
 
             return true;
         }
@@ -1191,13 +1200,6 @@ public class Player {
         return mapMarks;
     }
 
-    public PlayerOpenStateManager getOpenStateManager() {
-        if (this.openStateManager == null) {
-            this.openStateManager = new PlayerOpenStateManager(this);
-        }
-        return openStateManager;
-    }
-
     public synchronized void onTick() {
         // Check ping
         if (this.getLastPingTime() > System.currentTimeMillis() + 60000) {
@@ -1297,7 +1299,7 @@ public class Player {
     @PostLoad
     private void onLoad() {
         this.getCodex().setPlayer(this);
-        this.getOpenStateManager().setPlayer(this);
+        this.getProgressManager().setPlayer(this);
         this.getTeamManager().setPlayer(this);
     }
 
@@ -1356,16 +1358,17 @@ public class Player {
         // Execute daily reset logic if this is a new day.
         this.doDailyReset();
 
-
         // Rewind active quests, and put the player to a rewind position it finds (if any) of an active quest
         getQuestManager().onLogin();
-
 
         // Packets
         session.send(new PacketPlayerDataNotify(this)); // Player data
         session.send(new PacketStoreWeightLimitNotify());
         session.send(new PacketPlayerStoreNotify(this));
         session.send(new PacketAvatarDataNotify(this));
+
+        this.getProgressManager().onPlayerLogin();
+
         session.send(new PacketFinishedParentQuestNotify(this));
         session.send(new PacketBattlePassAllDataNotify(this));
         session.send(new PacketQuestListNotify(this));
@@ -1376,7 +1379,6 @@ public class Player {
         this.forgingManager.sendForgeDataNotify();
         this.resinManager.onPlayerLogin();
         this.cookingManager.sendCookDataNofity();
-        this.getOpenStateManager().onPlayerLogin();
 
         getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 
@@ -1513,10 +1515,17 @@ public class Player {
         int min = this.getPropertyMin(prop);
         int max = this.getPropertyMax(prop);
         if (min <= value && value <= max) {
+            int currentValue = this.properties.get(prop.getId());
             this.properties.put(prop.getId(), value);
             if (sendPacket) {
                 // Update player with packet
                 this.sendPacket(new PacketPlayerPropNotify(this, prop));
+                this.sendPacket(new PacketPlayerPropChangeNotify(this, prop, value - currentValue));
+
+                // Make the Adventure EXP pop-up show on screen.
+                if (prop == PlayerProperty.PROP_PLAYER_EXP) {
+                    this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value, PropChangeReason.PROP_CHANGE_REASON_PLAYER_ADD_EXP));
+                }
             }
             return true;
         } else {
