@@ -212,7 +212,7 @@ public class BattlePassManager extends BasePlayerDataManager {
             rewardItems.add(rewardItem);
         }
         // For ITEM_USE_GRANT_SELECT_REWARD chests, we have to again look up reward data.
-        else if (rewardItemData.getItemUse().get(0).getUseOp().equals("ITEM_USE_GRANT_SELECT_REWARD")) {
+        else if (rewardItemData.getItemUse().get(0).getUseOp() == ItemUseOp.ITEM_USE_GRANT_SELECT_REWARD) {
             RewardData selectedReward = GameData.getRewardDataMap().get(chosenId);
 
             for (var r : selectedReward.getRewardItemList()) {
