@@ -63,7 +63,7 @@ public class ResourceLoader {
 		loadOpenConfig();
 		loadAbilityModifiers();
 		// Load resources
-		loadResources();
+		loadResources(true);
 		// Process into depots
 		GameDepot.load();
 		// Load spawn data and quests
