@@ -72,7 +72,6 @@ public final class GameServer extends KcpServer {
 
     // Extra
     private final ServerTaskScheduler scheduler;
-    private final CommandMap commandMap;
     private final TaskMap taskMap;
 
     private ChatManagerHandler chatManager;
@@ -107,7 +106,6 @@ public final class GameServer extends KcpServer {
 
         // Extra
         this.scheduler = new ServerTaskScheduler();
-        this.commandMap = new CommandMap(true);
         this.taskMap = new TaskMap(true);
 
         // Create game systems

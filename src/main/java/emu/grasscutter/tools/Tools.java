@@ -48,7 +48,7 @@ public final class Tools {
                 .append("// Created " + now + "\n\n")
                 .append("// Commands\n"));
         // Commands
-        final List<CommandHandler> cmdList = new CommandMap(true).getHandlersAsList();
+        final List<CommandHandler> cmdList = CommandMap.getInstance().getHandlersAsList();
         final String padCmdLabel = "%" + cmdList.stream().map(CommandHandler::getLabel).map(String::length).max(Integer::compare).get().toString() + "s : ";
         for (CommandHandler cmd : cmdList) {
             final String label = padCmdLabel.formatted(cmd.getLabel());
@@ -65,7 +65,7 @@ public final class Tools {
             final Int2IntMap h = handbookNames[section];
             final String s = "\n\n// " + handbookSections[section] + "\n";
             handbookBuilders.forEach(b -> b.append(s));
-            final String padId = "%" + Integer.toString(Integer.toString(h.keySet().intStream().max().getAsInt()).length()) + "s : ";
+            final String padId = "%" + Integer.toString(h.keySet().intStream().max().getAsInt()).length() + "s : ";
             h.keySet().intStream().sorted().forEach(id -> {
                 final String sId = padId.formatted(id);
                 final TextStrings t = textMaps.get(h.get(id));
@@ -76,7 +76,7 @@ public final class Tools {
         // Scenes - no translations
         handbookBuilders.forEach(b -> b.append("\n\n// Scenes\n"));
         final var sceneDataMap = GameData.getSceneDataMap();
-        final String padSceneId = "%" + Integer.toString(Integer.toString(sceneDataMap.keySet().intStream().max().getAsInt()).length()) + "d : ";
+        final String padSceneId = "%" + Integer.toString(sceneDataMap.keySet().intStream().max().getAsInt()).length() + "d : ";
         sceneDataMap.keySet().intStream().sorted().forEach(id -> {
             final String sId = padSceneId.formatted(id);
             final String data = sceneDataMap.get(id).getScriptData();
@@ -85,7 +85,7 @@ public final class Tools {
         // Quests
         handbookBuilders.forEach(b -> b.append("\n\n// Quests\n"));
         final var questDataMap = GameData.getQuestDataMap();
-        final String padQuestId = "%" + Integer.toString(Integer.toString(questDataMap.keySet().intStream().max().getAsInt()).length()) + "d : ";
+        final String padQuestId = "%" + Integer.toString(questDataMap.keySet().intStream().max().getAsInt()).length() + "d : ";
         questDataMap.keySet().intStream().sorted().forEach(id -> {
             final String sId = padQuestId.formatted(id);
             final QuestData data = questDataMap.get(id);
@@ -206,7 +206,7 @@ public final class Tools {
         try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(location), StandardCharsets.UTF_8), false)) {
             // if the user made choices for language, I assume it's okay to assign his/her selected language to "en-us"
             // since it's the fallback language and there will be no difference in the gacha record page.
-            // The enduser can still modify the `gacha/mappings.js` directly to enable multilingual for the gacha record system.
+            // The end-user can still modify the `gacha/mappings.js` directly to enable multilingual for the gacha record system.
             writer.println(sb);
             Grasscutter.getLogger().info("Mappings generated to " + location + " !");
         }
@@ -220,6 +220,7 @@ public final class Tools {
         } return availableLangList;
     }
 
+    @Deprecated(forRemoval = true, since = "1.2.3")
     public static String getLanguageOption() {
         List<String> availableLangList = getAvailableLanguage();
 
@@ -248,17 +249,13 @@ public final class Tools {
             stagedMessage.append(groupedLangList).append("\n");
         }
 
-        stagedMessage.append("\nYour choice:[EN] ");
+        stagedMessage.append("\nYour choice: [EN] ");
 
         input = Grasscutter.getConsole().readLine(stagedMessage.toString());
         if (availableLangList.contains(input.toLowerCase())) {
             return input.toUpperCase();
         }
-        Grasscutter.getLogger().info("Invalid option. Will use EN(English) as fallback");
 
-        return "EN";
+        Grasscutter.getLogger().info("Invalid option. Will use EN (English) as fallback."); return "EN";
     }
-}
-
-final class ToolsWithLanguageOption {
 }
