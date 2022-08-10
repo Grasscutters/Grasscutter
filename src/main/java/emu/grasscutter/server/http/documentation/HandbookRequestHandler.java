@@ -54,7 +54,7 @@ final class HandbookRequestHandler implements DocumentationHandler {
             sbs.add(new StringBuilder(""));
 
         // Commands table
-        new CommandMap(true).getHandlersAsList().forEach(cmd -> {
+        CommandMap.getInstance().getHandlersAsList().forEach(cmd -> {
             String label = cmd.getLabel();
             String descKey = cmd.getDescriptionKey();
             for (int langIdx = 0; langIdx < NUM_LANGUAGES; langIdx++)

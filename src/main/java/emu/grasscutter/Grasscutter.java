@@ -29,7 +29,10 @@ import emu.grasscutter.server.http.handlers.LogHandler;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Language;
+import emu.grasscutter.utils.StartupArguments;
 import emu.grasscutter.utils.Utils;
+import lombok.Getter;
+import lombok.Setter;
 import org.jline.reader.EndOfFileException;
 import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
@@ -57,10 +60,13 @@ public final class Grasscutter {
     public static final File configFile = new File("./config.json");
 
     private static int day; // Current day of week.
+    @Getter @Setter private static String preferredLanguage;
 
     private static HttpServer httpServer;
     private static GameServer gameServer;
     private static PluginManager pluginManager;
+    @Getter private static CommandMap commandMap;
+
     private static AuthenticationSystem authenticationSystem;
     private static PermissionHandler permissionHandler;
 
@@ -89,59 +95,16 @@ public final class Grasscutter {
 
     public static void main(String[] args) throws Exception {
         Crypto.loadKeys(); // Load keys from buffers.
-        Tools.createGmHandbooks();
 
-        // Parse arguments.
-        boolean exitEarly = false;
-        for (String arg : args) {
-            switch (arg.toLowerCase()) {
-                case "-dumppacketids" -> {
-                    PacketOpcodesUtils.dumpPacketIds();
-                    exitEarly = true;
-                }
-                case "-version" -> {
-                    System.out.println("Grasscutter version: " + BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH);
-                    exitEarly = true;
-                }
-                case "-debug" -> {
-                    // Set the logger to debug.
-                    log.setLevel(Level.DEBUG);
-                    log.debug("The logger is now running in debug mode.");
-
-                    // Change loggers to debug.
-                    ((Logger) LoggerFactory.getLogger("express"))
-                        .setLevel(Level.INFO);
-                    ((Logger) LoggerFactory.getLogger("org.quartz"))
-                        .setLevel(Level.INFO);
-                    ((Logger) LoggerFactory.getLogger("org.reflections"))
-                        .setLevel(Level.INFO);
-                    ((Logger) LoggerFactory.getLogger("org.eclipse.jetty"))
-                        .setLevel(Level.INFO);
-                    ((Logger) LoggerFactory.getLogger("org.mongodb.driver"))
-                        .setLevel(Level.INFO);
-                }
-                case "-debugall" -> {
-                    // Set the logger to debug.
-                    log.setLevel(Level.DEBUG);
-                    log.debug("The logger is now running in debug mode.");
-
-                    // Change loggers to debug.
-                    ((Logger) LoggerFactory.getLogger("express"))
-                        .setLevel(Level.DEBUG);
-                    ((Logger) LoggerFactory.getLogger("org.quartz"))
-                        .setLevel(Level.DEBUG);
-                    ((Logger) LoggerFactory.getLogger("org.reflections"))
-                        .setLevel(Level.DEBUG);
-                    ((Logger) LoggerFactory.getLogger("org.eclipse.jetty"))
-                        .setLevel(Level.DEBUG);
-                    ((Logger) LoggerFactory.getLogger("org.mongodb.driver"))
-                        .setLevel(Level.DEBUG);
-                }
-            }
+        // Parse start-up arguments.
+        if(StartupArguments.parse(args)) {
+            System.exit(0); // Exit early.
         }
 
-        // Exit early if an argument sets it.
-        if (exitEarly) System.exit(0);
+        // Create command map.
+        commandMap = new CommandMap(true);
+        // Generate handbooks.
+        Tools.createGmHandbooks();
 
         // Initialize server.
         Grasscutter.getLogger().info(translate("messages.status.starting"));
