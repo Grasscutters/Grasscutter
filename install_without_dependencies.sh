@@ -44,7 +44,7 @@ echo "If you are using version > 2.8 of the client, make sure to use the patched
 echo "Search for METADATA here: https://discord.gg/grasscutter."
 echo ""
 echo "#################################"
-
+echo "You can find plugins here: https://discord.com/channels/965284035985305680/970830969919664218"
 echo ""
 echo "Grasscutter will be installed to script's running directory"
 echo "Do you wish to proceed and install Grasscutter?"
@@ -127,15 +127,12 @@ echo "Building grasscutter.jar done!"
 cd ..
 
 # Generate handbook/config
-echo "Grasscutter will be started to generate its data files"
-echo "Please enter language for GM handbook when prompted"
-echo "Grasscutter will stop once GM handbook is generated"
-java -jar grasscutter.jar -handbook
+echo "Grasscutter will be started to generate data files"
+java -jar grasscutter.jar -version
 
 # Replaces "127.0.0.1" with given IP
 echo "Replacing IP address in server config..."
 sed -i "s/127.0.0.1/$SERVER_IP/g" config.json
-
 # Generates new keystore.p12 with the server's IP address
 # This is done to prevent a "Connection Timed Out" error from appearing
 #	   after clicking to enter the door in the main menu/title screen
@@ -207,7 +204,7 @@ if [ $SUDO_USER ]; then
 	chown -R $SUDO_USER:$SUDO_USER ./*
 fi
 
-echo "Asking Noelle to clean up..."
+echo "Removing unnecessary files..."
 rm -rf ./certs ./Grasscutter-src
 
 echo "All done!"
@@ -215,7 +212,10 @@ echo "-=-=-=-=-=--- !! IMPORTANT !! ---=-=-=-=-=-"
 echo "Please make sure that ports 80, 443, 8888 and 22102 are OPEN (both tcp and udp)"
 echo "In order to run the server, run the following command:"
 echo "    sudo java -jar grasscutter.jar"
+echo "Also remember that you can generate the Handbook with:"
+echo "    sudo java -jar grasscutter.jar -handbook"
 echo "You must run it using sudo as port 443 is a privileged port"
 echo "To play, use the IP you provided earlier ($SERVER_IP) via GrassClipper or Fiddler"
+echo ""
 
 exit
