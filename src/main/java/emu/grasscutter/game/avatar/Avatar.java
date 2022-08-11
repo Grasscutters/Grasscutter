@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Stream;
 import java.util.Set;
 
 import org.bson.types.ObjectId;
@@ -64,50 +65,51 @@ import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {
     @Id private ObjectId id;
-    @Indexed private int ownerId;	// Id of player that this avatar belongs to
+    @Indexed @Getter private int ownerId;	// Id of player that this avatar belongs to
 
     @Transient private Player owner;
-    @Transient private AvatarData data;
-    @Transient private AvatarSkillDepotData skillDepot;
-    @Transient private long guid;	// Player unique id
-    private int avatarId;			// Id of avatar
+    @Transient @Getter private AvatarData data;
+    @Transient @Getter private AvatarSkillDepotData skillDepot;
+    @Transient @Getter private long guid;	// Player unique id
+    @Getter private int avatarId;			// Id of avatar
 
-    private int level = 1;
-    private int exp;
-    private int promoteLevel;
-    private int satiation; // ?
-    private int satiationPenalty; // ?
-    private float currentHp;
+    @Getter @Setter private int level = 1;
+    @Getter @Setter private int exp;
+    @Getter @Setter private int promoteLevel;
+    @Getter @Setter private int satiation; // ?
+    @Getter @Setter private int satiationPenalty; // ?
+    @Getter @Setter private float currentHp;
     private float currentEnergy;
 
-    @Transient private final Int2ObjectMap<GameItem> equips;
+    @Transient @Getter private final Int2ObjectMap<GameItem> equips;
     @Transient private final Int2FloatOpenHashMap fightProp;
     @Transient @Getter private final Int2FloatOpenHashMap fightPropOverrides;
-    @Transient private Set<String> extraAbilityEmbryos;
+    @Transient @Getter private Set<String> extraAbilityEmbryos;
 
     private List<Integer> fetters;
 
-    private Map<Integer, Integer> skillLevelMap; // Talent levels
+    @Getter private Map<Integer, Integer> skillLevelMap; // Talent levels
     private Map<Integer, Integer> skillExtraChargeMap; // Charges
-    private Map<Integer, Integer> proudSkillBonusMap; // Talent bonus levels (from const)
-    private int skillDepotId;
-    private int coreProudSkillLevel; // Constellation level
-    private Set<Integer> talentIdList; // Constellation id list
-    private Set<Integer> proudSkillList; // Character passives
+    @Getter private Map<Integer, Integer> proudSkillBonusMap; // Talent bonus levels (from const)
+    @Getter private int skillDepotId;
+    @Getter @Setter private int coreProudSkillLevel; // Constellation level
+    @Getter private Set<Integer> talentIdList; // Constellation id list
+    @Getter private Set<Integer> proudSkillList; // Character passives
 
-    private int flyCloak;
-    private int costume;
-    private int bornTime;
+    @Getter @Setter private int flyCloak;
+    @Getter @Setter private int costume;
+    @Getter private int bornTime;
 
-    private int fetterLevel = 1;
-    private int fetterExp;
+    @Getter @Setter private int fetterLevel = 1;
+    @Getter @Setter private int fetterExp;
 
-    private int nameCardRewardId;
-    private int nameCardId;
+    @Getter @Setter private int nameCardRewardId;
+    @Getter @Setter private int nameCardId;
 
     @Deprecated // Do not use. Morhpia only!
     public Avatar() {
@@ -139,15 +141,13 @@ public class Avatar {
         this.proudSkillList = new HashSet<>();
 
         // Combat properties
-        for (FightProperty prop : FightProperty.values()) {
-            if (prop.getId() <= 0 || prop.getId() >= 3000) {
-                continue;
-            }
-            this.setFightProperty(prop, 0f);
-        }
+        Stream.of(FightProperty.values())
+            .map(FightProperty::getId)
+            .filter(id -> (id > 0) && (id < 3000))
+            .forEach(id -> this.setFightProperty(id, 0f));
 
         // Skill depot
-        this.setSkillDepotData(getAvatarData().getSkillDepot());
+        this.setSkillDepotData(data.getSkillDepot());
 
         // Set stats
         this.recalcStats();
@@ -175,74 +175,10 @@ public class Avatar {
         this.data = data; // Used while loading this from the database
     }
 
-    public int getOwnerId() {
-        return ownerId;
-    }
-
     public void setOwner(Player player) {
         this.owner = player;
         this.ownerId = player.getUid();
         this.guid = player.getNextGameGuid();
-    }
-
-    public int getSatiation() {
-        return satiation;
-    }
-
-    public void setSatiation(int satiation) {
-        this.satiation = satiation;
-    }
-
-    public int getNameCardRewardId() {
-        return nameCardRewardId;
-    }
-
-    public void setNameCardRewardId(int nameCardRewardId) {
-        this.nameCardRewardId = nameCardRewardId;
-    }
-
-    public int getSatiationPenalty() {
-        return satiationPenalty;
-    }
-
-    public void setSatiationPenalty(int satiationPenalty) {
-        this.satiationPenalty = satiationPenalty;
-    }
-
-    public AvatarData getData() {
-        return data;
-    }
-
-    public long getGuid() {
-        return guid;
-    }
-
-    public int getAvatarId() {
-        return avatarId;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public int getExp() {
-        return exp;
-    }
-
-    public void setExp(int exp) {
-        this.exp = exp;
-    }
-
-    public int getPromoteLevel() {
-        return promoteLevel;
-    }
-
-    public void setPromoteLevel(int promoteLevel) {
-        this.promoteLevel = promoteLevel;
     }
 
     static public int getMinPromoteLevel(int level) {
@@ -262,10 +198,6 @@ public class Avatar {
         return 0;
     }
 
-    public Int2ObjectMap<GameItem> getEquips() {
-        return equips;
-    }
-
     public GameItem getEquipBySlot(EquipType slot) {
         return this.getEquips().get(slot.getValue());
     }
@@ -276,14 +208,6 @@ public class Avatar {
 
     public GameItem getWeapon() {
         return this.getEquipBySlot(EquipType.EQUIP_WEAPON);
-    }
-
-    public int getSkillDepotId() {
-        return skillDepotId;
-    }
-
-    public AvatarSkillDepotData getSkillDepot() {
-        return skillDepot;
     }
 
     protected void setSkillDepot(AvatarSkillDepotData skillDepot) {
@@ -320,23 +244,11 @@ public class Avatar {
         }
     }
 
-    public Map<Integer, Integer> getSkillLevelMap() {
-        return skillLevelMap;
-    }
-
     public Map<Integer, Integer> getSkillExtraChargeMap() {
         if (skillExtraChargeMap == null) {
             skillExtraChargeMap = new HashMap<>();
         }
         return skillExtraChargeMap;
-    }
-
-    public Map<Integer, Integer> getProudSkillBonusMap() {
-        return proudSkillBonusMap;
-    }
-
-    public Set<String> getExtraAbilityEmbryos() {
-        return extraAbilityEmbryos;
     }
 
     public void setFetterList(List<Integer> fetterList) {
@@ -345,38 +257,6 @@ public class Avatar {
 
     public List<Integer> getFetterList() {
         return fetters;
-    }
-
-    public int getFetterLevel() {
-        return fetterLevel;
-    }
-
-    public void setFetterLevel(int fetterLevel) {
-        this.fetterLevel = fetterLevel;
-    }
-
-    public int getFetterExp() {
-        return fetterExp;
-    }
-
-    public void setFetterExp(int fetterExp) {
-        this.fetterExp = fetterExp;
-    }
-
-    public int getNameCardId() {
-        return nameCardId;
-    }
-
-    public void setNameCardId(int nameCardId) {
-        this.nameCardId = nameCardId;
-    }
-
-    public float getCurrentHp() {
-        return currentHp;
-    }
-
-    public void setCurrentHp(float currentHp) {
-        this.currentHp = currentHp;
     }
 
     public void setCurrentEnergy() {
@@ -425,42 +305,6 @@ public class Avatar {
 
     public float getFightProperty(FightProperty prop) {
         return getFightProperties().getOrDefault(prop.getId(), 0f);
-    }
-
-    public Set<Integer> getTalentIdList() {
-        return talentIdList;
-    }
-
-    public int getCoreProudSkillLevel() {
-        return coreProudSkillLevel;
-    }
-
-    public void setCoreProudSkillLevel(int constLevel) {
-        this.coreProudSkillLevel = constLevel;
-    }
-
-    public Set<Integer> getProudSkillList() {
-        return proudSkillList;
-    }
-
-    public int getFlyCloak() {
-        return flyCloak;
-    }
-
-    public void setFlyCloak(int flyCloak) {
-        this.flyCloak = flyCloak;
-    }
-
-    public int getCostume() {
-        return costume;
-    }
-
-    public void setCostume(int costume) {
-        this.costume = costume;
-    }
-
-    public int getBornTime() {
-        return bornTime;
     }
 
     public boolean equipItem(GameItem item, boolean shouldRecalc) {
@@ -776,7 +620,7 @@ public class Avatar {
         this.getSkillExtraChargeMap().clear();
 
         // Sanity checks
-        if (getData() == null || getData().getSkillDepot() == null) {
+        if (getData() == null || this.skillDepot == null) {
             return;
         }
 
@@ -811,12 +655,12 @@ public class Avatar {
                 // Check if a skill can be boosted by +3 levels
                 int skillId = 0;
 
-                if (entry.getExtraTalentIndex() == 2 && this.getData().getSkillDepot().getSkills().size() >= 2) {
+                if (entry.getExtraTalentIndex() == 2 && this.skillDepot.getSkills().size() >= 2) {
                     // E skill
-                    skillId = this.getData().getSkillDepot().getSkills().get(1);
+                    skillId = this.skillDepot.getSkills().get(1);
                 } else if (entry.getExtraTalentIndex() == 9) {
                     // Ult skill
-                    skillId = this.getData().getSkillDepot().getEnergySkill();
+                    skillId = this.skillDepot.getEnergySkill();
                 }
 
                 // Sanity check

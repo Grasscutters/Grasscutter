@@ -34,25 +34,26 @@ import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
 import emu.grasscutter.server.packet.send.PacketSceneTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketSetUpAvatarTeamRsp;
 import emu.grasscutter.server.packet.send.PacketWorldPlayerDieNotify;
-import it.unimi.dsi.fastutil.ints.Int2IntMap;
-import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
+import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 public class TeamManager extends BasePlayerDataManager {
-    private Map<Integer, TeamInfo> teams;
+    @Getter private Map<Integer, TeamInfo> teams;
     private int currentTeamIndex;
-    private int currentCharacterIndex;
+    @Getter @Setter private int currentCharacterIndex;
 
-    @Transient private TeamInfo mpTeam;
-    @Transient private int entityId;
+    @Transient @Getter @Setter private TeamInfo mpTeam;
+    @Transient @Getter @Setter private int entityId;
     @Transient private final List<EntityAvatar> avatars;
-    @Transient private final Set<EntityBaseGadget> gadgets;
-    @Transient private final IntSet teamResonances;
-    @Transient private final IntSet teamResonancesConfig;
+    @Transient @Getter private final Set<EntityBaseGadget> gadgets;
+    @Transient @Getter private final IntSet teamResonances;
+    @Transient @Getter private final IntSet teamResonancesConfig;
 
     @Transient private int useTemporarilyTeamIndex = -1;
     @Transient private List<TeamInfo> temporaryTeam; // Temporary Team for tower
@@ -80,18 +81,6 @@ public class TeamManager extends BasePlayerDataManager {
         return this.getPlayer().getWorld();
     }
 
-    public Map<Integer, TeamInfo> getTeams() {
-        return this.teams;
-    }
-
-    public TeamInfo getMpTeam() {
-        return mpTeam;
-    }
-
-    public void setMpTeam(TeamInfo mpTeam) {
-        this.mpTeam = mpTeam;
-    }
-
     /**
      * Search through all teams and if the team matches, return that index.
      * Otherwise, return -1.
@@ -115,14 +104,6 @@ public class TeamManager extends BasePlayerDataManager {
         this.currentTeamIndex = currentTeamIndex;
     }
 
-    public int getCurrentCharacterIndex() {
-        return currentCharacterIndex;
-    }
-
-    public void setCurrentCharacterIndex(int currentCharacterIndex) {
-        this.currentCharacterIndex = currentCharacterIndex;
-    }
-
     public long getCurrentCharacterGuid() {
         return this.getCurrentAvatarEntity().getAvatar().getGuid();
     }
@@ -140,26 +121,6 @@ public class TeamManager extends BasePlayerDataManager {
 
     public TeamInfo getCurrentSinglePlayerTeamInfo() {
         return this.getTeams().get(this.currentTeamIndex);
-    }
-
-    public int getEntityId() {
-        return entityId;
-    }
-
-    public void setEntityId(int entityId) {
-        this.entityId = entityId;
-    }
-
-    public Set<EntityBaseGadget> getGadgets() {
-        return gadgets;
-    }
-
-    public IntSet getTeamResonances() {
-        return teamResonances;
-    }
-
-    public IntSet getTeamResonancesConfig() {
-        return teamResonancesConfig;
     }
 
     public List<EntityAvatar> getActiveTeam() {
@@ -290,32 +251,34 @@ public class TeamManager extends BasePlayerDataManager {
     }
 
     private void updateTeamResonances() {
-        Int2IntOpenHashMap map = new Int2IntOpenHashMap();
-
         this.getTeamResonances().clear();
         this.getTeamResonancesConfig().clear();
+        // Official resonances require a full party
+        if (this.avatars.size() < 4) return;
 
-        for (EntityAvatar entity : this.getActiveTeam()) {
-            AvatarSkillDepotData skillData = entity.getAvatar().getAvatarData().getSkillDepot();
-            if (skillData != null) {
-                map.addTo(skillData.getElementType().getValue(), 1);
-            }
-        }
+        // TODO: make this actually read from TeamResonanceExcelConfigData.json for the real resonances and conditions
+        // Currently we just hardcode these conditions, but this won't work for modded resources or future changes
+        var elementCounts = new Object2IntOpenHashMap<ElementType>();
+        this.getActiveTeam().stream()
+            .map(EntityAvatar::getAvatar).filter(Objects::nonNull)
+            .map(Avatar::getSkillDepot).filter(Objects::nonNull)
+            .map(AvatarSkillDepotData::getElementType).filter(Objects::nonNull)
+            .forEach(elementType -> elementCounts.addTo(elementType, 1));
 
-        for (Int2IntMap.Entry e : map.int2IntEntrySet()) {
-            if (e.getIntValue() >= 2) {
-                ElementType element = ElementType.getTypeByValue(e.getIntKey());
-                if (element.getTeamResonanceId() != 0) {
-                    this.getTeamResonances().add(element.getTeamResonanceId());
-                    this.getTeamResonancesConfig().add(element.getConfigHash());
-                }
-            }
-        }
+        // Dual element resonances
+        elementCounts.object2IntEntrySet().stream()
+            .filter(e -> e.getIntValue() >= 2)
+            .map(e -> e.getKey())
+            .filter(elementType -> elementType.getTeamResonanceId() != 0)
+            .forEach(elementType -> {
+                    this.teamResonances.add(elementType.getTeamResonanceId());
+                    this.teamResonancesConfig.add(elementType.getConfigHash());
+            });
 
-        // No resonances
-        if (this.getTeamResonances().size() == 0) {
-            this.getTeamResonances().add(ElementType.Default.getTeamResonanceId());
-            this.getTeamResonancesConfig().add(ElementType.Default.getTeamResonanceId());
+        // Four element resonance
+        if (elementCounts.size() >= 4) {
+            this.teamResonances.add(ElementType.Default.getTeamResonanceId());
+            this.teamResonancesConfig.add(ElementType.Default.getConfigHash());
         }
     }
 
@@ -676,5 +639,9 @@ public class TeamManager extends BasePlayerDataManager {
         for (EntityAvatar entity : this.getActiveTeam()) {
             entity.getAvatar().save();
         }
+    }
+
+    public void onPlayerLogin() {  // Hack for now to fix resonances on login
+        this.updateTeamResonances();
     }
 }
