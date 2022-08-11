@@ -209,7 +209,5 @@ public class ChatManager implements ChatManagerHandler {
         if (joinOptions.welcomeMessage != null && joinOptions.welcomeMessage.length() > 0) {
             this.sendPrivateMessageFromServer(player.getUid(), joinOptions.welcomeMessage);
         }
-
-        this.sendPrivateMessageFromServer(player.getUid(), "THIS IS AN EXPERIMENTAL BUILD OF GRASSCUTTER FOR 2.7.50/2.8\nDON'T LEAK <3");
     }
 }
