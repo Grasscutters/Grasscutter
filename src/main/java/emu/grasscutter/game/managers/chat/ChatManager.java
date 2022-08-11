@@ -136,11 +136,6 @@ public class ChatManager implements ChatManagerHandler {
         // Get target.
         Player target = getServer().getPlayerByUid(targetUid);
 
-        // Check if command
-        if (tryInvokeCommand(player, target, message)) {
-            return;
-        }
-
         if (target == null && targetUid != GameConstants.SERVER_CONSOLE_UID) {
             return;
         }
@@ -152,7 +147,10 @@ public class ChatManager implements ChatManagerHandler {
         player.sendPacket(packet);
         putInHistory(player.getUid(), targetUid, packet.getChatInfo());
 
-        if (target != null) {
+        // Check if command
+        boolean isCommand = tryInvokeCommand(player, target, message);
+
+        if ((target != null) && (!isCommand)) {
             target.sendPacket(packet);
             putInHistory(targetUid, player.getUid(), packet.getChatInfo());
         }
