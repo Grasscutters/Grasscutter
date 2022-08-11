@@ -191,6 +191,7 @@ public class ConfigContainer {
         public boolean enableShopItems = true;
         public boolean staminaUsage = true;
         public boolean energyUsage = false;
+        public boolean fishhookTeleport = true;
         public ResinOptions resinOptions = new ResinOptions();
         public Rates rates = new Rates();
 
