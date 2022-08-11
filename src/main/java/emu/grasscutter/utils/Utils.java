@@ -20,25 +20,12 @@ import it.unimi.dsi.fastutil.ints.IntList;
 
 import org.slf4j.Logger;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.reflect.TypeToken;
-
 import javax.annotation.Nullable;
 
 import static emu.grasscutter.utils.Language.translate;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
 public final class Utils {
-    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
-    @Deprecated(forRemoval = true)
-    public static Gson getGsonFactory() {
-        return gson;
-    }
-
     public static final Random random = new Random();
 
     public static int randomRange(int min, int max) {
@@ -171,7 +158,7 @@ public final class Utils {
      * @param object The object to log.
      */
     public static void logObject(Object object) {
-        Grasscutter.getLogger().info(jsonEncode(object));
+        Grasscutter.getLogger().info(JsonUtils.encode(object));
     }
 
     /**
@@ -367,57 +354,6 @@ public final class Utils {
      */
     public static byte[] base64Decode(String toDecode) {
         return Base64.getDecoder().decode(toDecode);
-    }
-
-    /*
-     * Encode an object to a JSON string
-     */
-    public static String jsonEncode(Object object) {
-        return gson.toJson(object);
-    }
-
-    public static <T> T jsonDecode(JsonElement jsonElement, Class<T> classType) throws JsonSyntaxException {
-        return gson.fromJson(jsonElement, classType);
-    }
-
-    public static <T> T loadJsonToClass(InputStreamReader fileReader, Class<T> classType) throws IOException {
-        return gson.fromJson(fileReader, classType);
-    }
-    public static <T> T loadJsonToClass(String filename, Class<T> classType) throws IOException {
-        try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(filename)), StandardCharsets.UTF_8)) {
-            return loadJsonToClass(fileReader, classType);
-        }
-    }
-
-    public static <T> List<T> loadJsonToList(InputStreamReader fileReader, Class<T> classType) throws IOException {
-        return gson.fromJson(fileReader, TypeToken.getParameterized(List.class, classType).getType());
-    }
-    public static <T> List<T> loadJsonToList(String filename, Class<T> classType) throws IOException {
-        try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(filename)), StandardCharsets.UTF_8)) {
-            return loadJsonToList(fileReader, classType);
-        }
-    }
-
-    public static <T1,T2> Map<T1,T2> loadJsonToMap(InputStreamReader fileReader, Class<T1> keyType, Class<T2> valueType) throws IOException {
-        return gson.fromJson(fileReader, TypeToken.getParameterized(Map.class, keyType, valueType).getType());
-    }
-    public static <T1,T2> Map<T1,T2> loadJsonToMap(String filename, Class<T1> keyType, Class<T2> valueType) throws IOException {
-        try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(filename)), StandardCharsets.UTF_8)) {
-            return loadJsonToMap(fileReader, keyType, valueType);
-        }
-    }
-
-    /**
-     * Safely JSON decodes a given string.
-     * @param jsonData The JSON-encoded data.
-     * @return JSON decoded data, or null if an exception occurred.
-     */
-    public static <T> T jsonDecode(String jsonData, Class<T> classType) {
-        try {
-            return gson.fromJson(jsonData, classType);
-        } catch (Exception ignored) {
-            return null;
-        }
     }
 
     /***

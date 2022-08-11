@@ -130,7 +130,7 @@ public final class Language {
         languageCode = description.getLanguageCode();
 
         try {
-            languageData = Utils.jsonDecode(Utils.readFromInputStream(description.getLanguageFile()), JsonObject.class);
+            languageData = JsonUtils.decode(Utils.readFromInputStream(description.getLanguageFile()), JsonObject.class);
         } catch (Exception exception) {
             Grasscutter.getLogger().warn("Failed to load language file: " + description.getLanguageCode(), exception);
         }
