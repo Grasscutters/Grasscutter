@@ -44,6 +44,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
 
 import static emu.grasscutter.config.Configuration.DATA;
@@ -203,7 +204,7 @@ public final class Grasscutter {
         }
 
         // If the file already exists, we attempt to load it.
-        try (FileReader file = new FileReader(configFile)) {
+        try (FileReader file = new FileReader(configFile, StandardCharsets.UTF_8)) {
             config = gson.fromJson(file, ConfigContainer.class);
         } catch (Exception exception) {
             getLogger().error("There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
