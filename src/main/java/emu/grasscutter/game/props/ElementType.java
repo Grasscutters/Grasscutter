@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
 
 public enum ElementType {
 	None		(0, FightProperty.FIGHT_PROP_CUR_FIRE_ENERGY, FightProperty.FIGHT_PROP_MAX_FIRE_ENERGY),
@@ -21,12 +22,12 @@ public enum ElementType {
 	AntiFire	(9, FightProperty.FIGHT_PROP_CUR_FIRE_ENERGY, FightProperty.FIGHT_PROP_MAX_FIRE_ENERGY),
 	Default		(255, FightProperty.FIGHT_PROP_CUR_FIRE_ENERGY, FightProperty.FIGHT_PROP_MAX_FIRE_ENERGY, 10801, "TeamResonance_AllDifferent");
 	
-	private final int value;
-	private final int teamResonanceId;
-	private final FightProperty curEnergyProp;
-	private final FightProperty maxEnergyProp;
-	private int depotValue;
-	private final int configHash;
+	@Getter private final int value;
+	@Getter private final int teamResonanceId;
+	@Getter private final FightProperty curEnergyProp;
+	@Getter private final FightProperty maxEnergyProp;
+	@Getter private int depotValue;
+	@Getter private final int configHash;
 	private static final Int2ObjectMap<ElementType> map = new Int2ObjectOpenHashMap<>();
 	private static final Map<String, ElementType> stringMap = new HashMap<>();
 	
@@ -56,30 +57,6 @@ public enum ElementType {
 	private ElementType(int value, FightProperty curEnergyProp, FightProperty maxEnergyProp, int teamResonanceId, String configName, int depotValue) {
 		this(value, curEnergyProp, maxEnergyProp, teamResonanceId, configName);
 		this.depotValue = depotValue;
-	}
-
-	public int getValue() {
-		return value;
-	}
-	
-	public FightProperty getCurEnergyProp() {
-		return curEnergyProp;
-	}
-
-	public FightProperty getMaxEnergyProp() {
-		return maxEnergyProp;
-	}
-
-	public int getDepotValue() {
-		return depotValue;
-	}
-
-	public int getTeamResonanceId() {
-		return teamResonanceId;
-	}
-
-	public int getConfigHash() {
-		return configHash;
 	}
 
 	public static ElementType getTypeByValue(int value) {

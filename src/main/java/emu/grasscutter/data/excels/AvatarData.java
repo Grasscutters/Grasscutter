@@ -14,28 +14,29 @@ import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import lombok.Getter;
 
 @ResourceType(name = "AvatarExcelConfigData.json", loadPriority = LoadPriority.LOW)
 public class AvatarData extends GameResource {
-	
-	private String iconName;
-    private String bodyType;
-    private String qualityType;
-    private int chargeEfficiency;
-    private int initialWeapon;
-    private WeaponType weaponType;
-    private String imageName;
-    private int avatarPromoteId;
-    private String cutsceneShow;
-    private int skillDepotId;
-    private int staminaRecoverSpeed;
-    private List<String> candSkillDepotIds;
-    private String avatarIdentityType;
-    private List<Integer> avatarPromoteRewardLevelList;
-    private List<Integer> avatarPromoteRewardIdList;
 
-    private long nameTextMapHash;
-    
+    private String iconName;
+    @Getter private String bodyType;
+    @Getter private String qualityType;
+    @Getter private int chargeEfficiency;
+    @Getter private int initialWeapon;
+    @Getter private WeaponType weaponType;
+    @Getter private String imageName;
+    @Getter private int avatarPromoteId;
+    @Getter private String cutsceneShow;
+    @Getter private int skillDepotId;
+    @Getter private int staminaRecoverSpeed;
+    @Getter private List<String> candSkillDepotIds;
+    @Getter private String avatarIdentityType;
+    @Getter private List<Integer> avatarPromoteRewardLevelList;
+    @Getter private List<Integer> avatarPromoteRewardIdList;
+
+    @Getter private long nameTextMapHash;
+
     private float hpBase;
     private float attackBase;
     private float defenseBase;
@@ -44,84 +45,24 @@ public class AvatarData extends GameResource {
 
     private List<PropGrowCurve> propGrowCurves;
     private int id;
-    
+
     // Transient
-	private String name;
-	
+    @Getter private String name;
+
     private Int2ObjectMap<String> growthCurveMap;
     private float[] hpGrowthCurve;
     private float[] attackGrowthCurve;
     private float[] defenseGrowthCurve;
-    private AvatarSkillDepotData skillDepot;
-    private IntList abilities;
+    @Getter private AvatarSkillDepotData skillDepot;
+    @Getter private IntList abilities;
 
-    private List<Integer> fetters;
-    private int nameCardRewardId;
-    private int nameCardId;
-    
+    @Getter private List<Integer> fetters;
+    @Getter private int nameCardRewardId;
+    @Getter private int nameCardId;
+
 	@Override
 	public int getId(){
         return this.id;
-    }
-    
-    public String getName() {
-		return name;
-	}
-    
-    public String getBodyType(){
-        return this.bodyType;
-    }
-    
-    public String getQualityType(){
-        return this.qualityType;
-    }
-    
-    public int getChargeEfficiency(){
-        return this.chargeEfficiency;
-    }
-
-    public int getInitialWeapon(){
-        return this.initialWeapon;
-    }
-
-    public WeaponType getWeaponType(){
-        return this.weaponType;
-    }
-
-    public String getImageName(){
-        return this.imageName;
-    }
-
-    public int getAvatarPromoteId(){
-        return this.avatarPromoteId;
-    }
-
-    public String getCutsceneShow(){
-        return this.cutsceneShow;
-    }
-
-    public int getSkillDepotId(){
-        return this.skillDepotId;
-    }
-
-    public int getStaminaRecoverSpeed(){
-        return this.staminaRecoverSpeed;
-    }
-
-    public List<String> getCandSkillDepotIds(){
-        return this.candSkillDepotIds;
-    }
-    
-    public String getAvatarIdentityType(){
-        return this.avatarIdentityType;
-    }
-
-    public List<Integer> getAvatarPromoteRewardLevelList(){
-        return this.avatarPromoteRewardLevelList;
-    }
-
-    public List<Integer> getAvatarPromoteRewardIdList(){
-        return this.avatarPromoteRewardIdList;
     }
 
     public float getBaseHp(int level){
@@ -167,30 +108,6 @@ public class AvatarData extends GameResource {
     	}
 		return curveData.getCurveInfos().getOrDefault(growCurve, 1f);
 	}
-
-    public long getNameTextMapHash(){
-        return this.nameTextMapHash;
-    }
-    
-    public AvatarSkillDepotData getSkillDepot() {
-		return skillDepot;
-	}
-    
-	public IntList getAbilities() {
-		return abilities;
-	}
-
-    public List<Integer> getFetters() {
-        return fetters;
-    }
-
-    public int getNameCardRewardId() {
-        return nameCardRewardId;
-    }
-
-    public int getNameCardId() {
-        return nameCardId;
-    }
 
 	@Override
 	public void onLoad() {
