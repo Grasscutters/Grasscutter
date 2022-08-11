@@ -147,12 +147,13 @@ public class ChatManager implements ChatManagerHandler {
         player.sendPacket(packet);
         putInHistory(player.getUid(), targetUid, packet.getChatInfo());
 
-        if (target != null) {
+        // Check if command
+        boolean isCommand = tryInvokeCommand(player, target, message);
+
+        if ((target != null) && (!isCommand)) {
             target.sendPacket(packet);
             putInHistory(targetUid, player.getUid(), packet.getChatInfo());
         }
-        // Check if command
-        tryInvokeCommand(player, target, message);
     }
 
     public void sendPrivateMessage(Player player, int targetUid, int emote) {
