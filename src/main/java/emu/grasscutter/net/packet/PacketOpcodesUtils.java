@@ -1,10 +1,8 @@
 package emu.grasscutter.net.packet;
 
-import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -12,6 +10,7 @@ import java.util.stream.Collectors;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.utils.JsonUtils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -59,7 +58,7 @@ public class PacketOpcodesUtils {
                     .filter(e -> e.getIntKey() > 0)
                     .collect(Collectors.toMap(Int2ObjectMap.Entry::getIntKey, Int2ObjectMap.Entry::getValue, (k, v) -> v, TreeMap::new));
             // Write to file
-            writer.write(Grasscutter.getGsonFactory().toJson(packetIds));
+            writer.write(JsonUtils.encode(packetIds));
             Grasscutter.getLogger().info("Dumped packet ids.");
         } catch (IOException e) {
             e.printStackTrace();

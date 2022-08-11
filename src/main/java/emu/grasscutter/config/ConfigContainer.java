@@ -4,10 +4,9 @@ import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.Grasscutter.ServerRunMode;
+import emu.grasscutter.utils.JsonUtils;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Set;
-import java.io.FileReader;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Locale;
@@ -27,8 +26,7 @@ public class ConfigContainer {
      */
     public static void updateConfig() {
         try { // Check if the server is using a legacy config.
-            JsonObject configObject = Grasscutter.getGsonFactory()
-                    .fromJson(new FileReader(Grasscutter.configFile, StandardCharsets.UTF_8), JsonObject.class);
+            JsonObject configObject = JsonUtils.loadToClass(Grasscutter.configFile.getPath(), JsonObject.class);
             if (!configObject.has("version")) {
                 Grasscutter.getLogger().info("Updating legacy ..");
                 Grasscutter.saveConfig(null);
@@ -193,6 +191,7 @@ public class ConfigContainer {
         public boolean enableShopItems = true;
         public boolean staminaUsage = true;
         public boolean energyUsage = true;
+        public boolean fishhookTeleport = true;
         public ResinOptions resinOptions = new ResinOptions();
         public Rates rates = new Rates();
 

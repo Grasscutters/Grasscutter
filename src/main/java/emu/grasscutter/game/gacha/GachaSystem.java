@@ -3,17 +3,10 @@ package emu.grasscutter.game.gacha;
 import static emu.grasscutter.config.Configuration.*;
 
 import java.io.File;
-import java.io.FileReader;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.nio.file.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-
-import com.google.gson.reflect.TypeToken;
 
 import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
@@ -76,9 +69,9 @@ public class GachaSystem extends BaseGameSystem {
     }
 
     public synchronized void load() {
-        try (Reader fileReader = DataLoader.loadReader("Banners.json")) {
-            getGachaBanners().clear();
-            List<GachaBanner> banners = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, GachaBanner.class).getType());
+        getGachaBanners().clear();
+        try {
+            List<GachaBanner> banners = DataLoader.loadList("Banners.json", GachaBanner.class);
             if (banners.size() > 0) {
                 for (GachaBanner banner : banners) {
                     getGachaBanners().put(banner.getScheduleId(), banner);

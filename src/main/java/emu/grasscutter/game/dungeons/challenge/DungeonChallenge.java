@@ -24,15 +24,10 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
-import com.google.gson.reflect.TypeToken;
 
 public class DungeonChallenge extends WorldChallenge {
 
@@ -46,13 +41,10 @@ public class DungeonChallenge extends WorldChallenge {
 
     public static void initialize() {
         // Read the data we need for dungeon rewards drops.
-        try (Reader fileReader = DataLoader.loadReader("DungeonDrop.json")) {
-            List<DungeonDrop> dungeonDropList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, DungeonDrop.class).getType());
-
-            for (DungeonDrop entry : dungeonDropList) {
+        try {
+            DataLoader.loadList("DungeonDrop.json", DungeonDrop.class).forEach(entry -> {
                 dungeonDropData.put(entry.getDungeonId(), entry.getDrops());
-            }
-
+            });
             Grasscutter.getLogger().debug("Loaded {} dungeon drop data entries.", dungeonDropData.size());
         }
         catch (Exception ex) {

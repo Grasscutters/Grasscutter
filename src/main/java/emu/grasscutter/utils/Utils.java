@@ -158,8 +158,7 @@ public final class Utils {
      * @param object The object to log.
      */
     public static void logObject(Object object) {
-        String asJson = Grasscutter.getGsonFactory().toJson(object);
-        Grasscutter.getLogger().info(asJson);
+        Grasscutter.getLogger().info(JsonUtils.encode(object));
     }
 
     /**
@@ -355,19 +354,6 @@ public final class Utils {
      */
     public static byte[] base64Decode(String toDecode) {
         return Base64.getDecoder().decode(toDecode);
-    }
-
-    /**
-     * Safely JSON decodes a given string.
-     * @param jsonData The JSON-encoded data.
-     * @return JSON decoded data, or null if an exception occurred.
-     */
-    public static <T> T jsonDecode(String jsonData, Class<T> classType) {
-        try {
-            return Grasscutter.getGsonFactory().fromJson(jsonData, classType);
-        } catch (Exception ignored) {
-            return null;
-        }
     }
 
     /***

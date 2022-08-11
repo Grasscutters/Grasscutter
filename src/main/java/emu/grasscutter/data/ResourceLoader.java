@@ -2,7 +2,6 @@ package emu.grasscutter.data;
 
 import com.google.gson.JsonElement;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityConfigData;
@@ -15,13 +14,13 @@ import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
 import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.scripts.SceneIndexManager;
+import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import lombok.SneakyThrows;
 import org.reflections.Reflections;
 
 import java.io.*;
-import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
@@ -29,6 +28,7 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static emu.grasscutter.config.Configuration.DATA;
 import static emu.grasscutter.config.Configuration.RESOURCE;
 import static emu.grasscutter.utils.Language.translate;
 
@@ -119,15 +119,13 @@ public class ResourceLoader {
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
-    protected static void loadFromResource(Class<?> c, String fileName, Int2ObjectMap map) throws Exception {
-        try (FileReader fileReader = new FileReader(RESOURCE("ExcelBinOutput/" + fileName))) {
-            List list = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, c).getType());
+    protected static <T> void loadFromResource(Class<T> c, String fileName, Int2ObjectMap map) throws Exception {
+        List<T> list = JsonUtils.loadToList(RESOURCE("ExcelBinOutput/" + fileName), c);
 
-            for (Object o : list) {
-                GameResource res = (GameResource) o;
-                res.onLoad();
-                map.put(res.getId(), res);
-            }
+        for (T o : list) {
+            GameResource res = (GameResource) o;
+            res.onLoad();
+            map.put(res.getId(), res);
         }
     }
 
@@ -140,7 +138,6 @@ public class ResourceLoader {
             return;
         }
 
-        List<ScenePointEntry> scenePointList = new ArrayList<>();
         for (File file : Objects.requireNonNull(folder.listFiles())) {
             ScenePointConfig config; 
             Integer sceneId;
@@ -152,8 +149,8 @@ public class ResourceLoader {
                 continue;
             }
 
-            try (FileReader fileReader = new FileReader(file)) {
-                config = Grasscutter.getGsonFactory().fromJson(fileReader, ScenePointConfig.class);
+            try {
+                config = JsonUtils.loadToClass(file.getPath(), ScenePointConfig.class);
             } catch (Exception e) {
                 e.printStackTrace();
                 continue;
@@ -163,22 +160,20 @@ public class ResourceLoader {
                 continue;
             }
 
+            List<Integer> scenePoints = new ArrayList<>();
             for (Map.Entry<String, JsonElement> entry : config.points.entrySet()) {
-                PointData pointData = Grasscutter.getGsonFactory().fromJson(entry.getValue(), PointData.class);
-                pointData.setId(Integer.parseInt(entry.getKey()));
+                int id = Integer.parseInt(entry.getKey());
+                String name = sceneId + "_" + entry.getKey();
+                PointData pointData = JsonUtils.decode(entry.getValue(), PointData.class);
+                pointData.setId(id);
 
-                ScenePointEntry sl = new ScenePointEntry(sceneId + "_" + entry.getKey(), pointData);
-                scenePointList.add(sl);
-                GameData.getScenePointIdList().add(pointData.getId());
+                GameData.getScenePointIdList().add(id);
+                GameData.getScenePointEntries().put(name, new ScenePointEntry(name, pointData));
+                scenePoints.add(id);
 
                 pointData.updateDailyDungeon();
             }
-
-            GameData.getScenePointsPerScene().put(sceneId, new ArrayList<>());
-            for (ScenePointEntry entry : scenePointList) {
-                GameData.getScenePointEntries().put(entry.getName(), entry);
-                GameData.getScenePointsPerScene().get(sceneId).add(entry.getPointData().getId());
-            }
+            GameData.getScenePointsPerScene().put(sceneId, scenePoints);
         }
     }
 
@@ -186,15 +181,15 @@ public class ResourceLoader {
         List<AbilityEmbryoEntry> embryoList = null;
 
         // Read from cached file if exists
-        try (InputStream embryoCache = DataLoader.load("AbilityEmbryos.json", false)) {
-            embryoList = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(embryoCache), TypeToken.getParameterized(Collection.class, AbilityEmbryoEntry.class).getType());
+        try {
+            embryoList = JsonUtils.loadToList(DATA("AbilityEmbryos.json"), AbilityEmbryoEntry.class);
         } catch (Exception ignored) {}
 
         if (embryoList == null) {
             // Load from BinOutput
             Pattern pattern = Pattern.compile("(?<=ConfigAvatar_)(.*?)(?=.json)");
 
-            embryoList = new LinkedList<>();
+            embryoList = new ArrayList<>();
             File folder = new File(Utils.toFilePath(RESOURCE("BinOutput/Avatar/")));
             File[] files = folder.listFiles();
             if (files == null) {
@@ -213,8 +208,8 @@ public class ResourceLoader {
                     continue;
                 }
 
-                try (FileReader fileReader = new FileReader(file)) {
-                    config = Grasscutter.getGsonFactory().fromJson(fileReader, AvatarConfig.class);
+                try {
+                    config = JsonUtils.loadToClass(file.getPath(), AvatarConfig.class);
                 } catch (Exception e) {
                     e.printStackTrace();
                     continue;
@@ -229,14 +224,10 @@ public class ResourceLoader {
                 embryoList.add(al);
             }
 
-            File playerElementsFile = new File(Utils.toFilePath(RESOURCE("BinOutput/AbilityGroup/AbilityGroup_Other_PlayerElementAbility.json")));
-
-            if (playerElementsFile.exists()) {
-                try (FileReader fileReader = new FileReader(playerElementsFile)) {
-                    GameDepot.setPlayerAbilities(Grasscutter.getGsonFactory().fromJson(fileReader, new TypeToken<Map<String, AvatarConfig>>(){}.getType()));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            try {
+                GameDepot.setPlayerAbilities(JsonUtils.loadToMap(RESOURCE("BinOutput/AbilityGroup/AbilityGroup_Other_PlayerElementAbility.json"), String.class, AvatarConfig.class));
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 
@@ -262,8 +253,8 @@ public class ResourceLoader {
         for (File file : files) {
             List<AbilityConfigData> abilityConfigList;
 
-            try (FileReader fileReader = new FileReader(file)) {
-                abilityConfigList = Grasscutter.getGsonFactory().fromJson(fileReader, TypeToken.getParameterized(Collection.class, AbilityConfigData.class).getType());
+            try {
+                abilityConfigList = JsonUtils.loadToList(file.getPath(), AbilityConfigData.class);
             } catch (Exception e) {
                 e.printStackTrace();
                 continue;
@@ -320,11 +311,8 @@ public class ResourceLoader {
         for (String name : spawnDataNames) {
             // Load spawn entries from file
             try (InputStreamReader reader = DataLoader.loadReader(name)) {
-                Type type = TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType();
-                List<SpawnGroupEntry> list = Grasscutter.getGsonFactory().fromJson(reader, type);
-
                 // Add spawns to group if it already exists in our spawn group map
-                spawnEntryMap.addAll(list);
+                spawnEntryMap.addAll(JsonUtils.loadToList(reader, SpawnGroupEntry.class));
             } catch (Exception ignored) {}
         }
 
@@ -354,13 +342,12 @@ public class ResourceLoader {
         // Read from cached file if exists
         List<OpenConfigEntry> list = null;
 
-        try (InputStream openConfigCache = DataLoader.load("OpenConfig.json", false)) {
-            list = Grasscutter.getGsonFactory().fromJson(new InputStreamReader(openConfigCache), TypeToken.getParameterized(Collection.class, SpawnGroupEntry.class).getType());
+        try {
+            list = JsonUtils.loadToList(DATA("OpenConfig.json"), OpenConfigEntry.class);
         } catch (Exception ignored) {}
 
         if (list == null) {
             Map<String, OpenConfigEntry> map = new TreeMap<>();
-            java.lang.reflect.Type type = new TypeToken<Map<String, OpenConfigData[]>>() {}.getType();
             String[] folderNames = {"BinOutput/Talent/EquipTalents/", "BinOutput/Talent/AvatarTalents/"};
 
             for (String name : folderNames) {
@@ -374,11 +361,10 @@ public class ResourceLoader {
                     if (!file.getName().endsWith(".json")) {
                         continue;
                     }
-
                     Map<String, OpenConfigData[]> config;
 
-                    try (FileReader fileReader = new FileReader(file)) {
-                        config = Grasscutter.getGsonFactory().fromJson(fileReader, type);
+                    try {
+                        config = JsonUtils.loadToMap(file.getPath(), String.class, OpenConfigData[].class);
                     } catch (Exception e) {
                         e.printStackTrace();
                         continue;
@@ -414,8 +400,8 @@ public class ResourceLoader {
         for (File file : folder.listFiles()) {
             MainQuestData mainQuest = null;
 
-            try (FileReader fileReader = new FileReader(file)) {
-                mainQuest = Grasscutter.getGsonFactory().fromJson(fileReader, MainQuestData.class);
+            try {
+                mainQuest = JsonUtils.loadToClass(file.getPath(), MainQuestData.class);
             } catch (Exception e) {
                 e.printStackTrace();
                 continue;
@@ -424,16 +410,14 @@ public class ResourceLoader {
             GameData.getMainQuestDataMap().put(mainQuest.getId(), mainQuest);
         }
 
-        try (Reader reader = new FileReader(RESOURCE("QuestEncryptionKeys.json"))) {
-            List<QuestEncryptionKey> keys = Grasscutter.getGsonFactory().fromJson(
-                reader,
-                TypeToken.getParameterized(List.class, QuestEncryptionKey.class).getType());
+        try {
+            List<QuestEncryptionKey> keys = DataLoader.loadList("QuestEncryptionKeys.json", QuestEncryptionKey.class);
 
             Int2ObjectMap<QuestEncryptionKey> questEncryptionMap = GameData.getMainQuestEncryptionMap();
             keys.forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
             Grasscutter.getLogger().debug("Loaded {} quest keys.", questEncryptionMap.size());
-        } catch (FileNotFoundException ignored) {
-            Grasscutter.getLogger().error("Unable to load quest keys - ./resources/QuestEncryptionKeys.json not found.");
+        } catch (FileNotFoundException | NullPointerException ignored) {
+            Grasscutter.getLogger().warn("Unable to load quest keys - ./resources/QuestEncryptionKeys.json not found.");
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load quest keys.", e);
         }
@@ -450,8 +434,8 @@ public class ResourceLoader {
 
         for (File file : folder.listFiles()) {
             ScriptSceneData sceneData;
-            try (FileReader fileReader = new FileReader(file)) {
-                sceneData = Grasscutter.getGsonFactory().fromJson(fileReader, ScriptSceneData.class);
+            try {
+                sceneData = JsonUtils.loadToClass(file.getPath(), ScriptSceneData.class);
             } catch (Exception e) {
                 e.printStackTrace();
                 continue;
@@ -463,43 +447,41 @@ public class ResourceLoader {
         Grasscutter.getLogger().debug("Loaded " + GameData.getScriptSceneDataMap().size() + " ScriptSceneDatas.");
     }
 
-	@SneakyThrows
-	private static void loadHomeworldDefaultSaveData(){
-		var folder = Files.list(Path.of(RESOURCE("BinOutput/HomeworldDefaultSave"))).toList();
-		var pattern = Pattern.compile("scene(.*)_home_config.json");
-
-        for (var file : folder) {
-            var matcher = pattern.matcher(file.getFileName().toString());
+    @SneakyThrows
+    private static void loadHomeworldDefaultSaveData() {
+        var pattern = Pattern.compile("scene(.*)_home_config.json");
+        Files.list(Path.of(RESOURCE("BinOutput/HomeworldDefaultSave"))).forEach(file -> {
+            String filename = file.getFileName().toString();
+            var matcher = pattern.matcher(filename);
             if (!matcher.find()) {
-                continue;
+                return;
             }
-            var sceneId = matcher.group(1);
-
-            var data = Grasscutter.getGsonFactory().fromJson(Files.readString(file), HomeworldDefaultSaveData.class);
-
-            GameData.getHomeworldDefaultSaveData().put(Integer.parseInt(sceneId), data);
-        }
+            try {
+                var sceneId = Integer.parseInt(matcher.group(1));
+                var data = JsonUtils.loadToClass(filename, HomeworldDefaultSaveData.class);
+                GameData.getHomeworldDefaultSaveData().put(sceneId, data);
+            } catch (Exception ignored) {}
+        });
 
         Grasscutter.getLogger().debug("Loaded " + GameData.getHomeworldDefaultSaveData().size() + " HomeworldDefaultSaveDatas.");
     }
 
     @SneakyThrows
     private static void loadNpcBornData() {
-        var folder = Files.list(Path.of(RESOURCE("BinOutput/Scene/SceneNpcBorn"))).toList();
-
-        for (var file : folder) {
+        Files.list(Path.of(RESOURCE("BinOutput/Scene/SceneNpcBorn"))).forEach(file -> {
             if (file.toFile().isDirectory()) {
-                continue;
+                return;
             }
+            try {
+                var data = JsonUtils.loadToClass(file.getFileName().toString(), SceneNpcBornData.class);
+                if (data.getBornPosList() == null || data.getBornPosList().size() == 0) {
+                    return;
+                }
 
-            var data = Grasscutter.getGsonFactory().fromJson(Files.readString(file), SceneNpcBornData.class);
-            if (data.getBornPosList() == null || data.getBornPosList().size() == 0) {
-                continue;
-            }
-
-            data.setIndex(SceneIndexManager.buildIndex(3, data.getBornPosList(), item -> item.getPos().toPoint()));
-            GameData.getSceneNpcBornData().put(data.getSceneId(), data);
-        }
+                data.setIndex(SceneIndexManager.buildIndex(3, data.getBornPosList(), item -> item.getPos().toPoint()));
+                GameData.getSceneNpcBornData().put(data.getSceneId(), data);
+            } catch (Exception ignored) {}
+        });
 
         Grasscutter.getLogger().debug("Loaded " + GameData.getSceneNpcBornData().size() + " SceneNpcBornDatas.");
     }
