@@ -12,7 +12,6 @@ import emu.grasscutter.command.PermissionHandler;
 import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
-import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
@@ -27,6 +26,7 @@ import emu.grasscutter.server.http.handlers.GenericHandler;
 import emu.grasscutter.server.http.handlers.LogHandler;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
+import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.StartupArguments;
 import emu.grasscutter.utils.Utils;
@@ -202,7 +202,7 @@ public final class Grasscutter {
 
         // If the file already exists, we attempt to load it.
         try {
-            config = Utils.loadJsonToClass(configFile.getPath(), ConfigContainer.class);
+            config = JsonUtils.loadToClass(configFile.getPath(), ConfigContainer.class);
         } catch (Exception exception) {
             getLogger().error("There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
             System.exit(1);
@@ -218,7 +218,7 @@ public final class Grasscutter {
         if (config == null) config = new ConfigContainer();
 
         try (FileWriter file = new FileWriter(configFile)) {
-            file.write(Utils.jsonEncode(config));
+            file.write(JsonUtils.encode(config));
         } catch (IOException ignored) {
             Grasscutter.getLogger().error("Unable to write to config file.");
         } catch (Exception e) {
@@ -272,7 +272,7 @@ public final class Grasscutter {
 
     @Deprecated(forRemoval = true)
     public static Gson getGsonFactory() {
-        return Utils.getGsonFactory();
+        return JsonUtils.getGsonFactory();
     }
 
     public static HttpServer getHttpServer() {

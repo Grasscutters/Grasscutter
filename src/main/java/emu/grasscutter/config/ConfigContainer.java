@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.Grasscutter.ServerRunMode;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.JsonUtils;
 
 import java.util.Set;
 import java.lang.reflect.Field;
@@ -26,7 +26,7 @@ public class ConfigContainer {
      */
     public static void updateConfig() {
         try { // Check if the server is using a legacy config.
-            JsonObject configObject = Utils.loadJsonToClass(Grasscutter.configFile.getPath(), JsonObject.class);
+            JsonObject configObject = JsonUtils.loadToClass(Grasscutter.configFile.getPath(), JsonObject.class);
             if (!configObject.has("version")) {
                 Grasscutter.getLogger().info("Updating legacy ..");
                 Grasscutter.saveConfig(null);

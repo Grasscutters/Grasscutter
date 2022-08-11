@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.FileUtils;
+import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Utils;
 
 import static emu.grasscutter.config.Configuration.DATA;
@@ -72,19 +73,19 @@ public class DataLoader {
 
     public static <T> T loadClass(String resourcePath, Class<T> classType) throws IOException {
         try (InputStreamReader reader = loadReader(resourcePath)) {
-            return Utils.loadJsonToClass(reader, classType);
+            return JsonUtils.loadToClass(reader, classType);
         }
     }
 
     public static <T> List<T> loadList(String resourcePath, Class<T> classType) throws IOException {
         try (InputStreamReader reader = loadReader(resourcePath)) {
-            return Utils.loadJsonToList(reader, classType);
+            return JsonUtils.loadToList(reader, classType);
         }
     }
 
     public static <T1,T2> Map<T1,T2> loadMap(String resourcePath, Class<T1> keyType, Class<T2> valueType) throws IOException {
         try (InputStreamReader reader = loadReader(resourcePath)) {
-            return Utils.loadJsonToMap(reader, keyType, valueType);
+            return JsonUtils.loadToMap(reader, keyType, valueType);
         }
     }
 
