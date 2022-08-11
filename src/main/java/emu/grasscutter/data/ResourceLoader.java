@@ -14,6 +14,7 @@ import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
 import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.scripts.SceneIndexManager;
+import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import lombok.SneakyThrows;
@@ -119,7 +120,7 @@ public class ResourceLoader {
 
     @SuppressWarnings({"rawtypes", "unchecked"})
     protected static <T> void loadFromResource(Class<T> c, String fileName, Int2ObjectMap map) throws Exception {
-        List<T> list = Utils.loadJsonToList(RESOURCE("ExcelBinOutput/" + fileName), c);
+        List<T> list = JsonUtils.loadToList(RESOURCE("ExcelBinOutput/" + fileName), c);
 
         for (T o : list) {
             GameResource res = (GameResource) o;
@@ -149,7 +150,7 @@ public class ResourceLoader {
             }
 
             try {
-                config = Utils.loadJsonToClass(file.getPath(), ScenePointConfig.class);
+                config = JsonUtils.loadToClass(file.getPath(), ScenePointConfig.class);
             } catch (Exception e) {
                 e.printStackTrace();
                 continue;
@@ -163,7 +164,7 @@ public class ResourceLoader {
             for (Map.Entry<String, JsonElement> entry : config.points.entrySet()) {
                 int id = Integer.parseInt(entry.getKey());
                 String name = sceneId + "_" + entry.getKey();
-                PointData pointData = Utils.jsonDecode(entry.getValue(), PointData.class);
+                PointData pointData = JsonUtils.decode(entry.getValue(), PointData.class);
                 pointData.setId(id);
 
                 GameData.getScenePointIdList().add(id);
@@ -181,7 +182,7 @@ public class ResourceLoader {
 
         // Read from cached file if exists
         try {
-            embryoList = Utils.loadJsonToList(DATA("AbilityEmbryos.json"), AbilityEmbryoEntry.class);
+            embryoList = JsonUtils.loadToList(DATA("AbilityEmbryos.json"), AbilityEmbryoEntry.class);
         } catch (Exception ignored) {}
 
         if (embryoList == null) {
@@ -208,7 +209,7 @@ public class ResourceLoader {
                 }
 
                 try {
-                    config = Utils.loadJsonToClass(file.getPath(), AvatarConfig.class);
+                    config = JsonUtils.loadToClass(file.getPath(), AvatarConfig.class);
                 } catch (Exception e) {
                     e.printStackTrace();
                     continue;
@@ -224,7 +225,7 @@ public class ResourceLoader {
             }
 
             try {
-                GameDepot.setPlayerAbilities(Utils.loadJsonToMap(RESOURCE("BinOutput/AbilityGroup/AbilityGroup_Other_PlayerElementAbility.json"), String.class, AvatarConfig.class));
+                GameDepot.setPlayerAbilities(JsonUtils.loadToMap(RESOURCE("BinOutput/AbilityGroup/AbilityGroup_Other_PlayerElementAbility.json"), String.class, AvatarConfig.class));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -253,7 +254,7 @@ public class ResourceLoader {
             List<AbilityConfigData> abilityConfigList;
 
             try {
-                abilityConfigList = Utils.loadJsonToList(file.getPath(), AbilityConfigData.class);
+                abilityConfigList = JsonUtils.loadToList(file.getPath(), AbilityConfigData.class);
             } catch (Exception e) {
                 e.printStackTrace();
                 continue;
@@ -311,7 +312,7 @@ public class ResourceLoader {
             // Load spawn entries from file
             try (InputStreamReader reader = DataLoader.loadReader(name)) {
                 // Add spawns to group if it already exists in our spawn group map
-                spawnEntryMap.addAll(Utils.loadJsonToList(reader, SpawnGroupEntry.class));
+                spawnEntryMap.addAll(JsonUtils.loadToList(reader, SpawnGroupEntry.class));
             } catch (Exception ignored) {}
         }
 
@@ -342,7 +343,7 @@ public class ResourceLoader {
         List<OpenConfigEntry> list = null;
 
         try {
-            list = Utils.loadJsonToList(DATA("OpenConfig.json"), OpenConfigEntry.class);
+            list = JsonUtils.loadToList(DATA("OpenConfig.json"), OpenConfigEntry.class);
         } catch (Exception ignored) {}
 
         if (list == null) {
@@ -363,7 +364,7 @@ public class ResourceLoader {
                     Map<String, OpenConfigData[]> config;
 
                     try {
-                        config = Utils.loadJsonToMap(file.getPath(), String.class, OpenConfigData[].class);
+                        config = JsonUtils.loadToMap(file.getPath(), String.class, OpenConfigData[].class);
                     } catch (Exception e) {
                         e.printStackTrace();
                         continue;
@@ -400,7 +401,7 @@ public class ResourceLoader {
             MainQuestData mainQuest = null;
 
             try {
-                mainQuest = Utils.loadJsonToClass(file.getPath(), MainQuestData.class);
+                mainQuest = JsonUtils.loadToClass(file.getPath(), MainQuestData.class);
             } catch (Exception e) {
                 e.printStackTrace();
                 continue;
@@ -434,7 +435,7 @@ public class ResourceLoader {
         for (File file : folder.listFiles()) {
             ScriptSceneData sceneData;
             try {
-                sceneData = Utils.loadJsonToClass(file.getPath(), ScriptSceneData.class);
+                sceneData = JsonUtils.loadToClass(file.getPath(), ScriptSceneData.class);
             } catch (Exception e) {
                 e.printStackTrace();
                 continue;
@@ -457,7 +458,7 @@ public class ResourceLoader {
             }
             try {
                 var sceneId = Integer.parseInt(matcher.group(1));
-                var data = Utils.loadJsonToClass(filename, HomeworldDefaultSaveData.class);
+                var data = JsonUtils.loadToClass(filename, HomeworldDefaultSaveData.class);
                 GameData.getHomeworldDefaultSaveData().put(sceneId, data);
             } catch (Exception ignored) {}
         });
@@ -472,7 +473,7 @@ public class ResourceLoader {
                 return;
             }
             try {
-                var data = Utils.loadJsonToClass(file.getFileName().toString(), SceneNpcBornData.class);
+                var data = JsonUtils.loadToClass(file.getFileName().toString(), SceneNpcBornData.class);
                 if (data.getBornPosList() == null || data.getBornPosList().size() == 0) {
                     return;
                 }
