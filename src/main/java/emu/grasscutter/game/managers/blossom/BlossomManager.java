@@ -15,6 +15,8 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.SpawnDataEntry;
+import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
+import emu.grasscutter.net.proto.BlossomBriefInfoOuterClass;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.packet.send.PacketBlossomBriefInfoNotify;
 import emu.grasscutter.utils.Utils;
@@ -123,45 +125,67 @@ public class BlossomManager {
     }
 
     public void notifyIcon() {
-        Int2ObjectMap<List<SpawnDataEntry>> spawnsPerScene = new Int2ObjectLinkedOpenHashMap<>();
-        GameDepot.getSpawnLists().forEach((gridBlockId, spawnList) -> {
-            var list = spawnsPerScene.computeIfAbsent(gridBlockId.getSceneId(), k -> new ArrayList<SpawnDataEntry>());
-            spawnList.stream()
-                .map(entry -> entry.getGroup())
-                .forEach(groupEntry -> {
-                    groupEntry.getSpawns().stream()
-                        .filter(spawn -> BlossomType.valueOf(spawn.getGadgetId()) != null)
-                        .filter(spawn -> !blossomConsumed.contains(spawn))
-                        .forEach(spawn -> list.add(spawn));
+        final int wl = getWorldLevel();
+        final int worldLevel = (wl < 0) ? 0 : ((wl > 8) ? 8 : wl);
+        final int monsterLevel = GameData.getWorldLevelDataMap().get(worldLevel).getMonsterLevel();
+        List<BlossomBriefInfoOuterClass.BlossomBriefInfo> blossoms = new ArrayList<>();
+        GameDepot.getSpawnLists().forEach((gridBlockId, spawnDataEntryList) -> {
+            int sceneId = gridBlockId.getSceneId();
+            spawnDataEntryList.stream()
+                .map(SpawnDataEntry::getGroup)
+                .map(SpawnGroupEntry::getSpawns)
+                .flatMap(List::stream)
+                .filter(spawn -> !blossomConsumed.contains(spawn))
+                .filter(spawn -> BlossomType.valueOf(spawn.getGadgetId()) != null)
+                .forEach(spawn -> {
+                    var type = BlossomType.valueOf(spawn.getGadgetId());
+                    int previewReward = getPreviewReward(type, worldLevel);
+                    blossoms.add(BlossomBriefInfoOuterClass.BlossomBriefInfo.newBuilder()
+                        .setSceneId(sceneId)
+                        .setPos(spawn.getPos().toProto())
+                        .setResin(20)
+                        .setMonsterLevel(monsterLevel)
+                        .setRewardId(previewReward)
+                        .setCircleCampId(type.getCircleCampId())
+                        .setRefreshId(type.getBlossomChestId())  // TODO: replace when using actual leylines
+                        .build()
+                    );
                 });
         });
-        scene.broadcastPacket(new PacketBlossomBriefInfoNotify(spawnsPerScene));
+        scene.broadcastPacket(new PacketBlossomBriefInfoNotify(blossoms));
     }
 
     public int getWorldLevel(){
         return scene.getWorld().getWorldLevel();
     }
 
-    private RewardPreviewData getRewardList(BlossomType type , int worldLevel){
+    private static Integer getPreviewReward(BlossomType type, int worldLevel) {
+        // TODO: blossoms should be based on their city
         if (type == null) {
             Grasscutter.getLogger().error("Illegal blossom type {}",type);
             return null;
         }
 
-        String freshType = type.getFreshType();
-        var dataList = GameData.getBlossomRefreshExcelConfigDataMap();
-        for (var data : dataList.values()) {
-            if (freshType.equals(data.getRefreshType())) {
+        int blossomChestId = type.getBlossomChestId();
+        var dataMap = GameData.getBlossomRefreshExcelConfigDataMap();
+        for (var data : dataMap.values()) {
+            if (blossomChestId == data.getBlossomChestId()) {
                 var dropVecList = data.getDropVec();
                 if (worldLevel > dropVecList.length) {
-                    Grasscutter.getLogger().error("Illegal world level {}",worldLevel);
+                    Grasscutter.getLogger().error("Illegal world level {}", worldLevel);
                     return null;
                 }
-                return GameData.getRewardPreviewDataMap().get(dropVecList[worldLevel].getPreviewReward());
+                return dropVecList[worldLevel].getPreviewReward();
             }
         }
         Grasscutter.getLogger().error("Cannot find blossom type {}",type);
         return null;
+    }
+
+    private static RewardPreviewData getRewardList(BlossomType type, int worldLevel) {
+        Integer previewReward = getPreviewReward(type, worldLevel);
+        if (previewReward == null) return null;
+        return GameData.getRewardPreviewDataMap().get((int) previewReward);
     }
 
     public List<GameItem> onReward(Player player, EntityGadget chest, boolean useCondensedResin) {

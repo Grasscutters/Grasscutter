@@ -22,7 +22,7 @@ public class BlossomRefreshExcelConfigData extends GameResource {
     @Getter private RefreshCond[] refreshCondVec;  // AR requirements etc.
 
     @Getter private int cityId;
-    @Getter private int blossomChestId;
+    @Getter private int blossomChestId;  // 1 for mora, 2 for exp
     @Getter private Drop[] dropVec;
 
     // Unknown details
