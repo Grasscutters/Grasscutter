@@ -8,8 +8,6 @@ import emu.grasscutter.utils.Utils;
 public final class GameConstants {
     public static String VERSION = "2.8.0";
 
-    // it isn't the number of monsters, it is fighting volume at every blossom
-    public static final int BLOSSOM_MONSTER_FIGHTING_VOLUME = 100;
     public static final int MAX_TEAMS = 4;
     public static final int MAIN_CHARACTER_MALE = 10000005;
     public static final int MAIN_CHARACTER_FEMALE = 10000007;

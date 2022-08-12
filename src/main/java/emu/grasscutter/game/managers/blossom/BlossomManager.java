@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
@@ -88,7 +87,7 @@ public class BlossomManager {
                 int volume=0;
                 IntList monsters = new IntArrayList();
                 while(true){
-                    var remain = GameConstants.BLOSSOM_MONSTER_FIGHTING_VOLUME-volume;
+                    var remain = GameDepot.blossomConfig.getMonsterFightingVolume() - volume;
                     if(remain<=0){
                         break;
                     }
@@ -203,7 +202,7 @@ public class BlossomManager {
 
     public static IntList getRandomMonstersID(int difficulty,int count){
       IntList result = new IntArrayList();
-      List<Integer> monsters = GameDepot.blossomConfig.monsterIdsPerDifficulty.get(difficulty);
+      List<Integer> monsters = GameDepot.blossomConfig.getMonsterIdsPerDifficulty().get(difficulty);
         for(int i=0; i<count; i++){
             result.add((int) monsters.get(Utils.randomRange(0, monsters.size()-1)));
         }

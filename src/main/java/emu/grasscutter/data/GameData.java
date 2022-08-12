@@ -32,7 +32,7 @@ public class GameData {
 
 	// ExcelConfigs
 	private static final Int2ObjectMap<PlayerLevelData> playerLevelDataMap = new Int2ObjectOpenHashMap<>();
-    private static final Int2ObjectMap<BlossomRefreshExcelConfigData> blossomRefreshExcelConfigDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<BlossomRefreshExcelConfigData> blossomRefreshExcelConfigDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarData> avatarDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarLevelData> avatarLevelDataMap = new Int2ObjectOpenHashMap<>();
 	private static final Int2ObjectMap<AvatarSkillDepotData> avatarSkillDepotDataMap = new Int2ObjectOpenHashMap<>();
@@ -143,7 +143,6 @@ public class GameData {
 		return map;
 	}
 
-    public static Int2ObjectMap<BlossomRefreshExcelConfigData> getBlossomRefreshExcelConfigDataMap(){ return blossomRefreshExcelConfigDataMap; }
 	public static Int2ObjectMap<String> getAbilityHashes() {
 		return abilityHashes;
 	}
