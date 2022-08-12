@@ -26,10 +26,10 @@ option java_package = "emu.grasscutter.net.proto";
 // EnetIsReliable: true
 // IsAllowClient: true
 message GadgetInteractReq {
-    uint32 gadget_id = 8;
-    //bool is_use_condense_resin = 15; it doesn't work,should use if(resin_cost_type==RESIN_COST_TYPE_CONDENSE)
-    InterOpType op_type = 5;
-    ResinCostType resin_cost_type = 1;
-    uint32 Unk2700_DCPBGMKCHGJ = 2;
-    uint32 gadget_entity_id = 4;
+	uint32 gadget_id = 8;
+	bool is_use_condense_resin = 15;
+	InterOpType op_type = 5;
+	ResinCostType resin_cost_type = 1;
+	uint32 Unk2700_DCPBGMKCHGJ = 2;
+	uint32 gadget_entity_id = 4;
 }
