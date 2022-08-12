@@ -9,6 +9,7 @@ import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
 import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.common.ScenePointConfig;
+import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
@@ -51,13 +52,6 @@ public class ResourceLoader {
         classList.sort((a, b) -> b.getAnnotation(ResourceType.class).loadPriority().value() - a.getAnnotation(ResourceType.class).loadPriority().value());
 
         return classList;
-    }
-    private static void loadBlossomResources() {
-
-        try (InputStream data = DataLoader.load("BlossomMonsters.json", false)) {
-            GameDepot.BLOSSOM_MONSTERS_DIFFICULTY.putAll(Grasscutter.getGsonFactory().fromJson(new InputStreamReader(data),
-                TypeToken.getParameterized(HashMap.class,Integer.class,TypeToken.getParameterized(ArrayList.class,Integer.class).getType()).getType()));
-        } catch (Exception ignored) {}
     }
 
     private static boolean loadedAll = false;
@@ -492,6 +486,12 @@ public class ResourceLoader {
         });
 
         Grasscutter.getLogger().debug("Loaded " + GameData.getSceneNpcBornData().size() + " SceneNpcBornDatas.");
+    }
+
+    @SneakyThrows
+    private static void loadBlossomResources() {
+        GameDepot.blossomConfig = DataLoader.loadClass("BlossomConfig.json", BlossomConfig.class);
+        Grasscutter.getLogger().debug("Loaded BlossomConfig.");
     }
 
     // BinOutput configs

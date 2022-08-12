@@ -20,6 +20,8 @@ import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.packet.send.PacketBlossomBriefInfoNotify;
 import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+import it.unimi.dsi.fastutil.ints.IntList;
 
 public class BlossomManager {
     public BlossomManager(Scene scene) {
@@ -27,11 +29,11 @@ public class BlossomManager {
     }
 
     private final Scene scene;
-    private final ArrayList<BlossomActivity> blossomActivities = new ArrayList<>();
-    private final ArrayList<BlossomActivity> activeChests = new ArrayList<>();
-    private final ArrayList<EntityGadget> createdEntity = new ArrayList<>();
+    private final List<BlossomActivity> blossomActivities = new ArrayList<>();
+    private final List<BlossomActivity> activeChests = new ArrayList<>();
+    private final List<EntityGadget> createdEntity = new ArrayList<>();
 
-    private final ArrayList<SpawnDataEntry> blossomConsumed = new ArrayList<>();
+    private final List<SpawnDataEntry> blossomConsumed = new ArrayList<>();
 
     public void onTick(){
         synchronized (blossomActivities){
@@ -84,7 +86,7 @@ public class BlossomManager {
                 }
 
                 int volume=0;
-                List<Integer> monsters = new ArrayList<>();
+                IntList monsters = new IntArrayList();
                 while(true){
                     var remain = GameConstants.BLOSSOM_MONSTER_FIGHTING_VOLUME-volume;
                     if(remain<=0){
@@ -199,11 +201,11 @@ public class BlossomManager {
         return null;
     }
 
-    public static List<Integer> getRandomMonstersID(int difficulty,int count){
-        List<Integer> result = new ArrayList<>();
-        List<Integer> monsters = GameDepot.BLOSSOM_MONSTERS_DIFFICULTY.get(difficulty);
-        for(int i=0;i<count;i++){
-            result.add(monsters.get(Utils.randomRange(0,monsters.size()-1)));
+    public static IntList getRandomMonstersID(int difficulty,int count){
+      IntList result = new IntArrayList();
+      List<Integer> monsters = GameDepot.blossomConfig.monsterIdsPerDifficulty.get(difficulty);
+        for(int i=0; i<count; i++){
+            result.add((int) monsters.get(Utils.randomRange(0, monsters.size()-1)));
         }
         return result;
     }

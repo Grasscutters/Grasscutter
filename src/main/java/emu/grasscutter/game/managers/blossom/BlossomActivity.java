@@ -1,6 +1,5 @@
 package emu.grasscutter.game.managers.blossom;
 
-import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.MonsterData;
 import emu.grasscutter.data.excels.WorldLevelData;
