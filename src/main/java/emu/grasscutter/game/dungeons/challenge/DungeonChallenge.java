@@ -88,11 +88,12 @@ public class DungeonChallenge extends WorldChallenge {
 
     private void settle() {
         if (!stage) {
-            getScene().getDungeonSettleObservers().forEach(o -> o.onDungeonSettle(getScene()));
-            getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE,
+            var scene = this.getScene();
+            scene.getDungeonSettleListeners().forEach(o -> o.onDungeonSettle(getScene()));
+            scene.getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE,
                     new ScriptArgs(this.isSuccess() ? 1 : 0));
             // Battle pass trigger
-            this.getScene().getPlayers().forEach(p -> p.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_FINISH_DUNGEON));
+            scene.getPlayers().forEach(p -> p.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_FINISH_DUNGEON));
         }
     }
 
