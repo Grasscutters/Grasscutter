@@ -2,7 +2,6 @@ package emu.grasscutter.game.managers.blossom;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
@@ -19,6 +18,8 @@ import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.packet.send.PacketBlossomBriefInfoNotify;
 import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 
@@ -50,6 +51,7 @@ public class BlossomManager {
             }
         }
     }
+
     public void recycleLeyLineGadgetEntity(List<GameEntity> entities){
         for(var entity : entities){
             if(entity instanceof EntityGadget gadget){
@@ -58,6 +60,7 @@ public class BlossomManager {
         }
         notifyIcon();
     }
+
     public void initBlossom(EntityGadget gadget){
         if(createdEntity.contains(gadget)){
             return;
@@ -87,7 +90,7 @@ public class BlossomManager {
                 int volume=0;
                 IntList monsters = new IntArrayList();
                 while(true){
-                    var remain = GameDepot.blossomConfig.getMonsterFightingVolume() - volume;
+                    var remain = GameDepot.getBlossomConfig().getMonsterFightingVolume() - volume;
                     if(remain<=0){
                         break;
                     }
@@ -118,38 +121,39 @@ public class BlossomManager {
         createdEntity.add(gadget);
         notifyIcon();
     }
-    public void notifyIcon(){
-        var spawnLists = GameDepot.getSpawnLists();
-        var spawns = new ArrayList<Map.Entry<Integer,SpawnDataEntry>>();
-        for(var spawnList : spawnLists.values()){
-            for(var entry : spawnList){
-                for(var spawn : entry.getGroup().getSpawns()){
-                    if(BlossomType.valueOf(spawn.getGadgetId())!=null && !blossomConsumed.contains(spawn)){
-                        spawns.add(Map.entry(entry.getGroup().getSceneId(),spawn));
-                    }
-                }
-            }
-        }
-        scene.broadcastPacket(new PacketBlossomBriefInfoNotify(spawns));
+
+    public void notifyIcon() {
+        Int2ObjectMap<List<SpawnDataEntry>> spawnsPerScene = new Int2ObjectLinkedOpenHashMap<>();
+        GameDepot.getSpawnLists().forEach((gridBlockId, spawnList) -> {
+            var list = spawnsPerScene.computeIfAbsent(gridBlockId.getSceneId(), k -> new ArrayList<SpawnDataEntry>());
+            spawnList.stream()
+                .map(entry -> entry.getGroup())
+                .forEach(groupEntry -> {
+                    groupEntry.getSpawns().stream()
+                        .filter(spawn -> BlossomType.valueOf(spawn.getGadgetId()) != null)
+                        .filter(spawn -> !blossomConsumed.contains(spawn))
+                        .forEach(spawn -> list.add(spawn));
+                });
+        });
+        scene.broadcastPacket(new PacketBlossomBriefInfoNotify(spawnsPerScene));
     }
+
     public int getWorldLevel(){
         return scene.getWorld().getWorldLevel();
     }
+
     private RewardPreviewData getRewardList(BlossomType type , int worldLevel){
-        String freshType;
-        if(type == BlossomType.GOLDEN_GADGET_ID){
-            freshType = "BLOSSOM_REFRESH_SCOIN";
-        }else if(type == BlossomType.BLUE_GADGET_ID){
-            freshType = "BLOSSOM_REFRESH_EXP";
-        }else{
+        if (type == null) {
             Grasscutter.getLogger().error("Illegal blossom type {}",type);
             return null;
         }
+
+        String freshType = type.getFreshType();
         var dataList = GameData.getBlossomRefreshExcelConfigDataMap();
-        for(var data : dataList.values()){
-            if(freshType.equals(data.getRefreshType())){
+        for (var data : dataList.values()) {
+            if (freshType.equals(data.getRefreshType())) {
                 var dropVecList = data.getDropVec();
-                if((worldLevel+1)>dropVecList.length){
+                if (worldLevel > dropVecList.length) {
                     Grasscutter.getLogger().error("Illegal world level {}",worldLevel);
                     return null;
                 }
@@ -159,38 +163,36 @@ public class BlossomManager {
         Grasscutter.getLogger().error("Cannot find blossom type {}",type);
         return null;
     }
-    public List<GameItem> onReward(Player who,EntityGadget chest,boolean useCondensedResin) {
+
+    public List<GameItem> onReward(Player player, EntityGadget chest, boolean useCondensedResin) {
+        var resinManager = player.getResinManager();
         synchronized (activeChests) {
             var it = activeChests.iterator();
             while (it.hasNext()) {
                 var activeChest = it.next();
                 if (activeChest.getChest() == chest) {
-                    boolean pay;
-                    if(useCondensedResin){
-                        pay = who.getInventory().payItem(220007, 1);
-                    }else{
-                        pay = who.getInventory().payItem(106, 20);
-                    }
+                    boolean pay = useCondensedResin ? resinManager.useCondensedResin(1) : resinManager.useResin(20);
                     if (pay) {
                         int worldLevel = getWorldLevel();
                         List<GameItem> items = new ArrayList<>();
-                        var type = BlossomType.valueOf(activeChest.getGadget().getGadgetId());
-                        RewardPreviewData blossomRewards = getRewardList(type,worldLevel);
-                        if(blossomRewards ==null){
+                        var gadget = activeChest.getGadget();
+                        var type = BlossomType.valueOf(gadget.getGadgetId());
+                        RewardPreviewData blossomRewards = getRewardList(type, worldLevel);
+                        if (blossomRewards == null) {
                             Grasscutter.getLogger().error("Blossom could not support world level : "+worldLevel);
                             return null;
                         }
                         var rewards = blossomRewards.getPreviewItems();
                         for (ItemParamData blossomReward : rewards) {
                             int rewardCount = blossomReward.getCount();
-                            if(useCondensedResin){
-                                rewardCount += blossomReward.getCount();//Double!
+                            if (useCondensedResin) {
+                                rewardCount += blossomReward.getCount();  // Double!
                             }
                             items.add(new GameItem(blossomReward.getItemId(),rewardCount));
                         }
                         it.remove();
-                        recycleLeyLineGadgetEntity(List.of(activeChest.getGadget()));
-                        blossomConsumed.add(activeChest.getGadget().getSpawnEntry());
+                        recycleLeyLineGadgetEntity(List.of(gadget));
+                        blossomConsumed.add(gadget.getSpawnEntry());
                         return items;
                     }
                     return null;
@@ -202,7 +204,7 @@ public class BlossomManager {
 
     public static IntList getRandomMonstersID(int difficulty,int count){
       IntList result = new IntArrayList();
-      List<Integer> monsters = GameDepot.blossomConfig.getMonsterIdsPerDifficulty().get(difficulty);
+      List<Integer> monsters = GameDepot.getBlossomConfig().getMonsterIdsPerDifficulty().get(difficulty);
         for(int i=0; i<count; i++){
             result.add((int) monsters.get(Utils.randomRange(0, monsters.size()-1)));
         }

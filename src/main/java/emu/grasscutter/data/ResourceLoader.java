@@ -490,7 +490,7 @@ public class ResourceLoader {
 
     @SneakyThrows
     private static void loadBlossomResources() {
-        GameDepot.blossomConfig = DataLoader.loadClass("BlossomConfig.json", BlossomConfig.class);
+        GameDepot.setBlossomConfig(DataLoader.loadClass("BlossomConfig.json", BlossomConfig.class));
         Grasscutter.getLogger().debug("Loaded BlossomConfig.");
     }
 

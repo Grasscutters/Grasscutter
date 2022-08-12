@@ -1,31 +1,41 @@
 package emu.grasscutter.game.managers.blossom;
 
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
 
 public enum BlossomType {
-    GOLDEN_GADGET_ID(70360056), BLUE_GADGET_ID(70360057);
+    GOLD(70360056, 4108, 101001001, 1, "BLOSSOM_REFRESH_SCOIN"),
+    BLUE(70360057, 4008, 101002003, 2, "BLOSSOM_REFRESH_EXP");
 
-    private final int gadgetId;
-    BlossomType(int gadgetId) {
-        this.gadgetId=gadgetId;
+    @Getter private final int gadgetId;
+    @Getter private final int rewardId;
+    @Getter private final int circleCampId;
+    @Getter private final int refreshId;
+    @Getter private final String freshType;
+
+    BlossomType(int gadgetId, int rewardId, int circleCampId, int refreshId, String freshType) {
+        this.gadgetId = gadgetId;
+        this.rewardId = rewardId;
+        this.circleCampId = circleCampId;
+        this.refreshId = refreshId;
+        this.freshType = freshType;
     }
-    public int getGadgetId(){
-        return this.gadgetId;
-    }
+
+    private static final Int2ObjectMap<BlossomType> map = new Int2ObjectOpenHashMap<>(
+        Stream.of(values()).collect(Collectors.toMap(x -> x.getGadgetId(), x -> x))
+    );
+
     public static BlossomType valueOf(int i){
-        if(i == GOLDEN_GADGET_ID.gadgetId){
-            return GOLDEN_GADGET_ID;
-        }else if(i == BLUE_GADGET_ID.gadgetId){
-            return BLUE_GADGET_ID;
-        }
-        return null;
+        return map.get(i);
     }
+
     public static BlossomType random(){
-        int rand = Utils.randomRange(0,1);
-        if(rand == 0){
-            return GOLDEN_GADGET_ID;
-        }else{
-            return BLUE_GADGET_ID;
-        }
+        BlossomType[] values = values();
+        return values[Utils.randomRange(0, values.length)];
     }
 }
