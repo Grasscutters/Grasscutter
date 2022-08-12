@@ -120,16 +120,16 @@ public class BlossomActivity {
     }
     public EntityGadget getChest(){
         if(chest==null) {
-            EntityGadget rewordGadget = new EntityGadget(gadget.getScene(), BLOOMING_GADGET_ID, gadget.getPosition());
+            EntityGadget rewardGadget = new EntityGadget(gadget.getScene(), BLOOMING_GADGET_ID, gadget.getPosition());
             SceneGadget metaGadget = new SceneGadget();
             metaGadget.boss_chest = new SceneBossChest();
             metaGadget.boss_chest.resin = 20;
-            rewordGadget.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, Float.POSITIVE_INFINITY);
-            rewordGadget.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, Float.POSITIVE_INFINITY);
-            rewordGadget.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, Float.POSITIVE_INFINITY);
-            rewordGadget.setMetaGadget(metaGadget);
-            rewordGadget.buildContent();
-            chest = rewordGadget;
+            rewardGadget.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, Float.POSITIVE_INFINITY);
+            rewardGadget.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, Float.POSITIVE_INFINITY);
+            rewardGadget.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, Float.POSITIVE_INFINITY);
+            rewardGadget.setMetaGadget(metaGadget);
+            rewardGadget.buildContent();
+            chest = rewardGadget;
         }
         return chest;
     }
