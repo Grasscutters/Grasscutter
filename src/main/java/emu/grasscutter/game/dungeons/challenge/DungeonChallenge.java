@@ -8,7 +8,6 @@ import emu.grasscutter.game.dungeons.DungeonDrop;
 import emu.grasscutter.game.dungeons.DungeonDropEntry;
 import emu.grasscutter.game.dungeons.challenge.trigger.ChallengeTrigger;
 import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.WatcherTriggerType;
@@ -175,25 +174,15 @@ public class DungeonChallenge extends WorldChallenge {
                 return;
             }
 
-            // Make sure the player has condensed resin.
-            GameItem condensedResin = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(220007);
-            if (condensedResin == null || condensedResin.getCount() <= 0) {
-                return;
-            }
-
-            // Deduct.
-            player.getInventory().removeItem(condensedResin, 1);
+            // Spend the condensed resin and only proceed if the transaction succeeds.
+            if (!player.getResinManager().useCondensedResin(1)) return;
 
             // Roll rewards.
             rewards.addAll(this.rollRewards(true));
         }
         else {
-            // If the player used regular resin, try to deduct.
-            // Stop if insufficient resin.
-            boolean success = player.getResinManager().useResin(resinCost);
-            if (!success) {
-                return;
-            }
+            // Spend the resin and only proceed if the transaction succeeds.
+            if (!player.getResinManager().useResin(resinCost)) return;
 
             // Roll rewards.
             rewards.addAll(this.rollRewards(false));
