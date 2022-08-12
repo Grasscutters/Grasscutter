@@ -3,7 +3,6 @@ package emu.grasscutter.game.entity;
 import java.util.HashMap;
 import java.util.Map;
 
-import emu.grasscutter.GameConstants;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;

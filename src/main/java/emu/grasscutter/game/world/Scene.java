@@ -1,6 +1,5 @@
 package emu.grasscutter.game.world;
 
-import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
@@ -28,6 +27,7 @@ import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
+import lombok.Getter;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -41,7 +41,7 @@ public class Scene {
     private final Set<SpawnDataEntry> spawnedEntities;
     private final Set<SpawnDataEntry> deadSpawnedEntities;
     private final Set<SceneBlock> loadedBlocks;
-    private final BlossomManager blossomManager;
+    @Getter private final BlossomManager blossomManager;
     private Set<SpawnDataEntry.GridBlockId> loadedGridBlocks;
     private boolean dontDestroyWhenEmpty;
 
@@ -852,9 +852,5 @@ public class Scene {
                 }
             }
         }
-    }
-
-    public BlossomManager getBlossomManager() {
-        return blossomManager;
     }
 }
