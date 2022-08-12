@@ -7,7 +7,7 @@ import emu.grasscutter.auth.OAuthAuthenticator.ClientType;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.server.http.objects.*;
 import emu.grasscutter.server.http.objects.ComboTokenReqJson.LoginTokenData;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.JsonUtils;
 import express.Express;
 import express.http.Request;
 import express.http.Response;
@@ -53,7 +53,7 @@ public final class DispatchHandler implements Router {
     private static void clientLogin(Request request, Response response) {
         // Parse body data.
         String rawBodyData = request.ctx().body();
-        var bodyData = Utils.jsonDecode(rawBodyData, LoginAccountRequestJson.class);
+        var bodyData = JsonUtils.decode(rawBodyData, LoginAccountRequestJson.class);
         
         // Validate body data.
         if(bodyData == null)
@@ -76,7 +76,7 @@ public final class DispatchHandler implements Router {
     private static void tokenLogin(Request request, Response response) {
         // Parse body data.
         String rawBodyData = request.ctx().body();
-        var bodyData = Utils.jsonDecode(rawBodyData, LoginTokenRequestJson.class);
+        var bodyData = JsonUtils.decode(rawBodyData, LoginTokenRequestJson.class);
 
         // Validate body data.
         if(bodyData == null)
@@ -99,14 +99,14 @@ public final class DispatchHandler implements Router {
     private static void sessionKeyLogin(Request request, Response response) {
         // Parse body data.
         String rawBodyData = request.ctx().body();
-        var bodyData = Utils.jsonDecode(rawBodyData, ComboTokenReqJson.class);
+        var bodyData = JsonUtils.decode(rawBodyData, ComboTokenReqJson.class);
 
         // Validate body data.
         if(bodyData == null || bodyData.data == null)
             return;
         
         // Decode additional body data.
-        var tokenData = Utils.jsonDecode(bodyData.data, LoginTokenData.class);
+        var tokenData = JsonUtils.decode(bodyData.data, LoginTokenData.class);
 
         // Pass data to authentication handler.
         var responseData = Grasscutter.getAuthenticationSystem()

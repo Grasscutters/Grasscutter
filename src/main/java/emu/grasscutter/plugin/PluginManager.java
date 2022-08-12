@@ -2,6 +2,7 @@ package emu.grasscutter.plugin;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.*;
+import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Utils;
 import lombok.*;
 
@@ -82,10 +83,9 @@ public final class PluginManager {
                     InputStreamReader fileReader = new InputStreamReader(configFile.openStream());
 
                     // Create a plugin config instance from the config file.
-                    PluginConfig pluginConfig = Grasscutter.getGsonFactory().fromJson(fileReader, PluginConfig.class);
+                    PluginConfig pluginConfig = JsonUtils.loadToClass(fileReader, PluginConfig.class);
                     // Check if the plugin config is valid.
                     if (!pluginConfig.validate()) {
-                        Utils.logObject(pluginConfig);
                         Grasscutter.getLogger().warn("Plugin " + plugin.getName() + " has an invalid config file.");
                         return;
                     }
@@ -211,11 +211,7 @@ public final class PluginManager {
     public void disablePlugins() {
         this.plugins.forEach((name, plugin) -> {
             Grasscutter.getLogger().info("Disabling plugin: " + name);
-            try {
-                plugin.onDisable();
-            } catch (Throwable exception) {
-                Grasscutter.getLogger().error("Failed to disable plugin: " + name, exception);
-            }
+            this.disablePlugin(plugin);
         });
     }
 

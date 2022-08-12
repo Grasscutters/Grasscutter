@@ -30,6 +30,7 @@ class JsonHelpers:
     def save(filename: str, data: dict) -> None:
         with open(filename, 'w', encoding='utf-8', newline='\n') as file:
             json.dump(data, file, ensure_ascii=False, indent=INDENT)
+            file.write('\n')  # json.dump doesn't terminate last line
 
     @staticmethod
     def flatten(data: dict, prefix='') -> dict:

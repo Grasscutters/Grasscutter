@@ -23,7 +23,7 @@ public final class CommandMap {
     }
 
     public static CommandMap getInstance() {
-        return Grasscutter.getGameServer().getCommandMap();
+        return Grasscutter.getCommandMap();
     }
 
     /**

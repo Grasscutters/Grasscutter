@@ -112,6 +112,7 @@ public class GameData {
     @Getter private static final Int2ObjectMap<ChapterData> chapterDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<TriggerExcelConfigData> triggerExcelConfigDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Map<String,ScriptSceneData> scriptSceneDataMap = new HashMap<>();
+	@Getter private static final Map<Integer, List<Integer>> scenePointsPerScene = new HashMap<>();
 
     @Getter private static final Int2ObjectMap<OpenStateData> openStateDataMap = new Int2ObjectOpenHashMap<>();
 

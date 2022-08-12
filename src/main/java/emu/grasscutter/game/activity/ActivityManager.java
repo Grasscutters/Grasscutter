@@ -1,7 +1,6 @@
 package emu.grasscutter.game.activity;
 
 import com.esotericsoftware.reflectasm.ConstructorAccess;
-import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
@@ -14,9 +13,6 @@ import emu.grasscutter.server.packet.send.PacketActivityScheduleInfoNotify;
 import lombok.Getter;
 import org.reflections.Reflections;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -45,13 +41,8 @@ public class ActivityManager extends BasePlayerManager {
             activityWatcherTypeMap.put(typeName.value(), ConstructorAccess.get(item));
         });
 
-        try (Reader reader = DataLoader.loadReader("ActivityConfig.json")) {
-            List<ActivityConfigItem> activities = Grasscutter.getGsonFactory().fromJson(
-                reader,
-                TypeToken.getParameterized(List.class, ActivityConfigItem.class).getType());
-
-
-            activities.forEach(item -> {
+        try {
+            DataLoader.loadList("ActivityConfig.json", ActivityConfigItem.class).forEach(item -> {
                 var activityData = GameData.getActivityDataMap().get(item.getActivityId());
                 if (activityData == null) {
                     Grasscutter.getLogger().warn("activity {} not exist.", item.getActivityId());

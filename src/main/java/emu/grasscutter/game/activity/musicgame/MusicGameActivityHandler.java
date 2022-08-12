@@ -1,6 +1,5 @@
 package emu.grasscutter.game.activity.musicgame;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.activity.ActivityHandler;
 import emu.grasscutter.game.activity.GameActivity;
 import emu.grasscutter.game.activity.PlayerActivityData;
@@ -8,6 +7,7 @@ import emu.grasscutter.game.props.ActivityType;
 import emu.grasscutter.net.proto.ActivityInfoOuterClass;
 import emu.grasscutter.net.proto.MusicBriefInfoOuterClass;
 import emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass;
+import emu.grasscutter.utils.JsonUtils;
 
 import java.util.stream.Collectors;
 
@@ -47,8 +47,7 @@ public class MusicGameActivityHandler extends ActivityHandler {
             playerActivityData.save();
         }
 
-        return Grasscutter.getGsonFactory().fromJson(playerActivityData.getDetail(),
-            MusicGamePlayerData.class);
+        return JsonUtils.decode(playerActivityData.getDetail(), MusicGamePlayerData.class);
     }
 
     public boolean setMusicGameRecord(PlayerActivityData playerActivityData, MusicGamePlayerData.MusicGameRecord newRecord) {

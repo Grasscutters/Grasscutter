@@ -3,7 +3,6 @@ package emu.grasscutter.game.activity;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import dev.morphia.annotations.Transient;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ActivityWatcherData;
@@ -13,6 +12,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass;
 import emu.grasscutter.server.packet.send.PacketActivityUpdateWatcherNotify;
+import emu.grasscutter.utils.JsonUtils;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -68,7 +68,7 @@ public class PlayerActivityData {
     }
 
     public void setDetail(Object detail){
-        this.detail = Grasscutter.getGsonFactory().toJson(detail);
+        this.detail = JsonUtils.encode(detail);
     }
 
     public void takeWatcherReward(int watcherId) {

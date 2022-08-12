@@ -3,7 +3,6 @@ package emu.grasscutter;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.auth.DefaultAuthentication;
@@ -13,7 +12,6 @@ import emu.grasscutter.command.PermissionHandler;
 import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
-import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
@@ -28,8 +26,12 @@ import emu.grasscutter.server.http.handlers.GenericHandler;
 import emu.grasscutter.server.http.handlers.LogHandler;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Crypto;
+import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Language;
+import emu.grasscutter.utils.StartupArguments;
 import emu.grasscutter.utils.Utils;
+import lombok.Getter;
+import lombok.Setter;
 import org.jline.reader.EndOfFileException;
 import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
@@ -53,14 +55,16 @@ public final class Grasscutter {
 
     private static Language language;
 
-    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     public static final File configFile = new File("./config.json");
 
     private static int day; // Current day of week.
+    @Getter @Setter private static String preferredLanguage;
 
     private static HttpServer httpServer;
     private static GameServer gameServer;
     private static PluginManager pluginManager;
+    @Getter private static CommandMap commandMap;
+
     private static AuthenticationSystem authenticationSystem;
     private static PermissionHandler permissionHandler;
 
@@ -90,65 +94,15 @@ public final class Grasscutter {
     public static void main(String[] args) throws Exception {
         Crypto.loadKeys(); // Load keys from buffers.
 
-        // Parse arguments.
-        boolean exitEarly = false;
-        for (String arg : args) {
-            switch (arg.toLowerCase()) {
-                case "-handbook" -> {
-                    Tools.createGmHandbook();
-                    exitEarly = true;
-                }
-                case "-dumppacketids" -> {
-                    PacketOpcodesUtils.dumpPacketIds();
-                    exitEarly = true;
-                }
-                case "-gachamap" -> {
-                    Tools.createGachaMapping(DATA("gacha_mappings.js"));
-                    exitEarly = true;
-                }
-                case "-version" -> {
-                    System.out.println("Grasscutter version: " + BuildConfig.VERSION + "-" + BuildConfig.GIT_HASH);
-                    exitEarly = true;
-                }
-                case "-debug" -> {
-                    // Set the logger to debug.
-                    log.setLevel(Level.DEBUG);
-                    log.debug("The logger is now running in debug mode.");
-
-                    // Change loggers to debug.
-                    ((Logger) LoggerFactory.getLogger("express"))
-                        .setLevel(Level.INFO);
-                    ((Logger) LoggerFactory.getLogger("org.quartz"))
-                        .setLevel(Level.INFO);
-                    ((Logger) LoggerFactory.getLogger("org.reflections"))
-                        .setLevel(Level.INFO);
-                    ((Logger) LoggerFactory.getLogger("org.eclipse.jetty"))
-                        .setLevel(Level.INFO);
-                    ((Logger) LoggerFactory.getLogger("org.mongodb.driver"))
-                        .setLevel(Level.INFO);
-                }
-                case "-debugall" -> {
-                    // Set the logger to debug.
-                    log.setLevel(Level.DEBUG);
-                    log.debug("The logger is now running in debug mode.");
-
-                    // Change loggers to debug.
-                    ((Logger) LoggerFactory.getLogger("express"))
-                        .setLevel(Level.DEBUG);
-                    ((Logger) LoggerFactory.getLogger("org.quartz"))
-                        .setLevel(Level.DEBUG);
-                    ((Logger) LoggerFactory.getLogger("org.reflections"))
-                        .setLevel(Level.DEBUG);
-                    ((Logger) LoggerFactory.getLogger("org.eclipse.jetty"))
-                        .setLevel(Level.DEBUG);
-                    ((Logger) LoggerFactory.getLogger("org.mongodb.driver"))
-                        .setLevel(Level.DEBUG);
-                }
-            }
+        // Parse start-up arguments.
+        if(StartupArguments.parse(args)) {
+            System.exit(0); // Exit early.
         }
 
-        // Exit early if an argument sets it.
-        if (exitEarly) System.exit(0);
+        // Create command map.
+        commandMap = new CommandMap(true);
+        // Generate handbooks.
+        Tools.createGmHandbooks();
 
         // Initialize server.
         Grasscutter.getLogger().info(translate("messages.status.starting"));
@@ -247,8 +201,8 @@ public final class Grasscutter {
         }
 
         // If the file already exists, we attempt to load it.
-        try (FileReader file = new FileReader(configFile)) {
-            config = gson.fromJson(file, ConfigContainer.class);
+        try {
+            config = JsonUtils.loadToClass(configFile.getPath(), ConfigContainer.class);
         } catch (Exception exception) {
             getLogger().error("There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
             System.exit(1);
@@ -264,7 +218,7 @@ public final class Grasscutter {
         if (config == null) config = new ConfigContainer();
 
         try (FileWriter file = new FileWriter(configFile)) {
-            file.write(gson.toJson(config));
+            file.write(JsonUtils.encode(config));
         } catch (IOException ignored) {
             Grasscutter.getLogger().error("Unable to write to config file.");
         } catch (Exception e) {
@@ -316,8 +270,9 @@ public final class Grasscutter {
         return consoleLineReader;
     }
 
+    @Deprecated(forRemoval = true)
     public static Gson getGsonFactory() {
-        return gson;
+        return JsonUtils.getGsonFactory();
     }
 
     public static HttpServer getHttpServer() {
