@@ -28,32 +28,33 @@ import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Scene {
-    private final World world;
-    private final SceneData sceneData;
-    private final List<Player> players;
-    private final Map<Integer, GameEntity> entities;
-    private final Set<SpawnDataEntry> spawnedEntities;
-    private final Set<SpawnDataEntry> deadSpawnedEntities;
-    private final Set<SceneBlock> loadedBlocks;
+    @Getter private final World world;
+    @Getter private final SceneData sceneData;
+    @Getter private final List<Player> players;
+    @Getter private final Map<Integer, GameEntity> entities;
+    @Getter private final Set<SpawnDataEntry> spawnedEntities;
+    @Getter private final Set<SpawnDataEntry> deadSpawnedEntities;
+    @Getter private final Set<SceneBlock> loadedBlocks;
     @Getter private final BlossomManager blossomManager;
     private Set<SpawnDataEntry.GridBlockId> loadedGridBlocks;
-    private boolean dontDestroyWhenEmpty;
+    @Getter @Setter private boolean dontDestroyWhenEmpty;
 
-    private int autoCloseTime;
-    private int time;
+    @Getter @Setter private int autoCloseTime;
+    @Getter private int time;
 
-    private SceneScriptManager scriptManager;
-    private WorldChallenge challenge;
-    private List<DungeonSettleListener> dungeonSettleListeners;
-    private DungeonData dungeonData;
-    private int prevScene; // Id of the previous scene
-    private int prevScenePoint;
+    @Getter private SceneScriptManager scriptManager;
+    @Getter @Setter private WorldChallenge challenge;
+    @Getter private List<DungeonSettleListener> dungeonSettleListeners;
+    @Getter private DungeonData dungeonData;
+    @Getter @Setter private int prevScene; // Id of the previous scene
+    @Getter @Setter private int prevScenePoint;
     private Set<SceneNpcBornEntry> npcBornEntrySet;
     public Scene(World world, SceneData sceneData) {
         this.world = world;
@@ -77,28 +78,12 @@ public class Scene {
         return sceneData.getId();
     }
 
-    public World getWorld() {
-        return world;
-    }
-
-    public SceneData getSceneData() {
-        return this.sceneData;
-    }
-
     public SceneType getSceneType() {
         return getSceneData().getSceneType();
     }
 
-    public List<Player> getPlayers() {
-        return players;
-    }
-
     public int getPlayerCount() {
         return this.getPlayers().size();
-    }
-
-    public Map<Integer, GameEntity> getEntities() {
-        return entities;
     }
 
     public GameEntity getEntityById(int id) {
@@ -111,70 +96,9 @@ public class Scene {
                 .findFirst()
                 .orElse(null);
     }
-    /**
-     * @return the autoCloseTime
-     */
-    public int getAutoCloseTime() {
-        return autoCloseTime;
-    }
-
-    /**
-     * @param autoCloseTime the autoCloseTime to set
-     */
-    public void setAutoCloseTime(int autoCloseTime) {
-        this.autoCloseTime = autoCloseTime;
-    }
-
-    public int getTime() {
-        return time;
-    }
 
     public void changeTime(int time) {
         this.time = time % 1440;
-    }
-
-    public int getPrevScene() {
-        return prevScene;
-    }
-
-    public void setPrevScene(int prevScene) {
-        this.prevScene = prevScene;
-    }
-
-    public int getPrevScenePoint() {
-        return prevScenePoint;
-    }
-
-    public void setPrevScenePoint(int prevPoint) {
-        this.prevScenePoint = prevPoint;
-    }
-
-    public boolean dontDestroyWhenEmpty() {
-        return dontDestroyWhenEmpty;
-    }
-
-    public void setDontDestroyWhenEmpty(boolean dontDestroyWhenEmpty) {
-        this.dontDestroyWhenEmpty = dontDestroyWhenEmpty;
-    }
-
-    public Set<SceneBlock> getLoadedBlocks() {
-        return loadedBlocks;
-    }
-
-    public Set<SpawnDataEntry> getSpawnedEntities() {
-        return spawnedEntities;
-    }
-
-    public Set<SpawnDataEntry> getDeadSpawnedEntities() {
-        return deadSpawnedEntities;
-    }
-
-    public SceneScriptManager getScriptManager() {
-        return scriptManager;
-    }
-
-    public DungeonData getDungeonData() {
-        return dungeonData;
     }
 
     public void setDungeonData(DungeonData dungeonData) {
@@ -184,23 +108,11 @@ public class Scene {
         this.dungeonData = dungeonData;
     }
 
-    public WorldChallenge getChallenge() {
-        return challenge;
-    }
-
-    public void setChallenge(WorldChallenge challenge) {
-        this.challenge = challenge;
-    }
-
     public void addDungeonSettleObserver(DungeonSettleListener dungeonSettleListener) {
         if (dungeonSettleListeners == null) {
             dungeonSettleListeners = new ArrayList<>();
         }
         dungeonSettleListeners.add(dungeonSettleListener);
-    }
-
-    public List<DungeonSettleListener> getDungeonSettleObservers() {
-        return dungeonSettleListeners;
     }
 
     public boolean isInScene(GameEntity entity) {
@@ -245,7 +157,7 @@ public class Scene {
         }
 
         // Deregister scene if not in use
-        if (this.getPlayerCount() <= 0 && !this.dontDestroyWhenEmpty()) {
+        if (this.getPlayerCount() <= 0 && !this.dontDestroyWhenEmpty) {
             this.getWorld().deregisterScene(this);
         }
     }
