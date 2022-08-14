@@ -480,7 +480,7 @@ public class Scene {
         if (toRemove.size() > 0) {
             toRemove.stream().forEach(this::removeEntityDirectly);
             this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_TYPE_REMOVE));
-            blossomManager.recycleLeyLineGadgetEntity(toRemove);
+            blossomManager.recycleGadgetEntity(toRemove);
         }
     }
 
