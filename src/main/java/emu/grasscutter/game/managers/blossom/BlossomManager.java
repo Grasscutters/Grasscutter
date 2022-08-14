@@ -83,8 +83,8 @@ public class BlossomManager {
             BlossomActivity activity;
             EntityGadget entityGadget = context.getGadget();
             synchronized (blossomActivities) {
-                for (BlossomActivity activity : this.blossomActivities) {
-                    if (activity.getGadget() == entityGadget) {
+                for (BlossomActivity i : this.blossomActivities) {
+                    if (i.getGadget() == entityGadget) {
                         return false;
                     }
                 }
