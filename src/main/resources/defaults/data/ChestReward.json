@@ -409,14 +409,16 @@
     "objNames": [
       "SceneObj_Area_Dq_Property_Ani_Prop_JunkChest_01",
       "SceneObj_Area_Common_Property_Ani_Prop_JunkChest_02",
+      "SceneObj_Area_Common_Property_Ani_Prop_BGM_01",
       "SearchPoint",
+      "SearchPoint_Rock",
       "SearchPoint_OnWater"
     ],
-    "mora": 1,
+    "sigil": 2,
     "content": [
       {
-        "itemId": 201,
-        "count": 114
+        "itemId": 202,
+        "count": 10000
       }
     ]
   }
