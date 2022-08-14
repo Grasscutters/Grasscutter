@@ -54,7 +54,7 @@ public class BlossomManager {
         }
     }
 
-    public void recycleLeyLineGadgetEntity(List<GameEntity> entities){
+    public void recycleGadgetEntity(List<GameEntity> entities){
         for(var entity : entities){
             if(entity instanceof EntityGadget gadget){
                 createdEntity.remove(gadget);
@@ -215,7 +215,7 @@ public class BlossomManager {
                             items.add(new GameItem(blossomReward.getItemId(),rewardCount));
                         }
                         it.remove();
-                        recycleLeyLineGadgetEntity(List.of(gadget));
+                        recycleGadgetEntity(List.of(gadget));
                         blossomConsumed.add(gadget.getSpawnEntry());
                         return items;
                     }
