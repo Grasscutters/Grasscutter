@@ -18,7 +18,7 @@ import static emu.grasscutter.Grasscutter.config;
  */
 public class ConfigContainer {
     private static int version() {
-        return 3;
+        return 4;
     }
 
     /**
