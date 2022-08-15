@@ -33,7 +33,7 @@ public class PacketAllWidgetDataNotify extends BasePacket {
             // Good luck, my boy.
             .addAllNormalCoolDownDataList(List.of());
 
-        if (player.getWidgetId() == null) {
+        if (player.getWidgetId() == 0) {  // TODO: check this logic later, it was null-checking an int before which made it dead code
             proto.addAllSlotList(List.of());
         } else {
             proto.addSlotList(

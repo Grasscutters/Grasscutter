@@ -4,6 +4,7 @@ import java.util.stream.Stream;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
 
 public enum PlayerProperty {
     PROP_NONE                               (0),
@@ -53,8 +54,8 @@ public enum PlayerProperty {
     PROP_PLAYER_WAIT_SUB_HOME_COIN			(10043);
 
     private static final int inf = Integer.MAX_VALUE;  // Maybe this should be something else?
-    private final int id, min, max;
-    private final boolean dynamicRange;
+    @Getter private final int id, min, max;
+    @Getter private final boolean dynamicRange;
     private static final Int2ObjectMap<PlayerProperty> map = new Int2ObjectOpenHashMap<>();
 
     static {
@@ -82,22 +83,6 @@ public enum PlayerProperty {
 
     PlayerProperty(int id, boolean dynamicRange) {
         this(id, Integer.MIN_VALUE, inf, dynamicRange);
-    }
-
-    public int getId() {
-        return this.id;
-    }
-
-    public int getMin() {
-        return this.min;
-    }
-
-    public int getMax() {
-        return this.max;
-    }
-
-    public boolean getDynamicRange() {
-        return dynamicRange;
     }
 
     public static PlayerProperty getPropById(int value) {
