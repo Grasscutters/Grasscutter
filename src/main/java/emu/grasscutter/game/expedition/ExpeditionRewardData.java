@@ -1,18 +1,15 @@
 package emu.grasscutter.game.expedition;
 
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.utils.Utils;
+import lombok.Getter;
+
 public class ExpeditionRewardData {
-    private int itemId;
-    private int minCount;
-    private int maxCount;
+    @Getter private int itemId;
+    @Getter private int minCount;
+    @Getter private int maxCount;
 
-    public int getItemId() {
-        return itemId;
+    public GameItem getReward() {
+        return new GameItem(itemId, Utils.randomRange(minCount, maxCount));
     }
-
-    public int getMinCount() { return minCount; }
-
-    public int getMaxCount() {
-        return maxCount;
-    }
-
 }

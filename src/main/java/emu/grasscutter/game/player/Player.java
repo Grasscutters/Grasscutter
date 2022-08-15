@@ -869,21 +869,21 @@ public class Player {
         session.send(new PacketCardProductRewardNotify(getMoonCardRemainDays()));
     }
 
-    public void addExpeditionInfo(long avaterGuid, int expId, int hourTime, int startTime) {
+    public void addExpeditionInfo(long avatarGuid, int expId, int hourTime, int startTime) {
         ExpeditionInfo exp = new ExpeditionInfo();
         exp.setExpId(expId);
         exp.setHourTime(hourTime);
         exp.setState(1);
         exp.setStartTime(startTime);
-        expeditionInfo.put(avaterGuid, exp);
+        expeditionInfo.put(avatarGuid, exp);
     }
 
-    public void removeExpeditionInfo(long avaterGuid) {
-        expeditionInfo.remove(avaterGuid);
+    public void removeExpeditionInfo(long avatarGuid) {
+        expeditionInfo.remove(avatarGuid);
     }
 
-    public ExpeditionInfo getExpeditionInfo(long avaterGuid) {
-        return expeditionInfo.get(avaterGuid);
+    public ExpeditionInfo getExpeditionInfo(long avatarGuid) {
+        return expeditionInfo.get(avatarGuid);
     }
 
     public List<ShopLimit> getShopLimit() {
