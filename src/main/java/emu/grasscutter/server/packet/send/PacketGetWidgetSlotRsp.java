@@ -17,7 +17,7 @@ public class PacketGetWidgetSlotRsp extends BasePacket {
         GetWidgetSlotRspOuterClass.GetWidgetSlotRsp.Builder proto =
                 GetWidgetSlotRspOuterClass.GetWidgetSlotRsp.newBuilder();
 
-        if (player.getWidgetId() == null) {
+        if (player.getWidgetId() == 0) {  // TODO: check this logic later, it was null-checking an int before which made it dead code
             proto.addAllSlotList(List.of());
         } else {
             proto.addSlotList(

@@ -1,44 +1,24 @@
 package emu.grasscutter.game.expedition;
 
 import dev.morphia.annotations.Entity;
+import emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter @Setter
 public class ExpeditionInfo {
-
-    public int getState() {
-        return state;
-    }
-
-    public void setState(int state) {
-        this.state = state;
-    }
-
-    public int getExpId() {
-        return expId;
-    }
-
-    public void setExpId(int expId) {
-        this.expId = expId;
-    }
-
-    public int getHourTime() {
-        return hourTime;
-    }
-
-    public void setHourTime(int hourTime) {
-        this.hourTime = hourTime;
-    }
-
-    public int getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(int startTime) {
-        this.startTime = startTime;
-    }
-
     private int state;
     private int expId;
     private int hourTime;
     private int startTime;
+
+    public AvatarExpeditionInfo toProto() {
+        return AvatarExpeditionInfo.newBuilder()
+                    .setStateValue(this.getState())
+                    .setExpId(this.getExpId())
+                    .setHourTime(this.getHourTime())
+                    .setStartTime(this.getStartTime())
+                    .build();
+    }
 }

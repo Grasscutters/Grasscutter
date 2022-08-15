@@ -3,7 +3,6 @@ package emu.grasscutter.game.shop;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ShopGoodsData;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
@@ -14,7 +13,6 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import static emu.grasscutter.config.Configuration.*;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class ShopSystem extends BaseGameSystem {
@@ -60,22 +58,7 @@ public class ShopSystem extends BaseGameSystem {
             List<ShopTable> banners = DataLoader.loadList("Shop.json", ShopTable.class);
             if (banners.size() > 0) {
                 for (ShopTable shopTable : banners) {
-                    for (ShopInfo cost : shopTable.getItems()) {
-                        if (cost.getCostItemList() != null) {
-                            Iterator<ItemParamData> iterator = cost.getCostItemList().iterator();
-                            while (iterator.hasNext()) {
-                                ItemParamData ipd = iterator.next();
-                                if (ipd.getId() == 201) {
-                                    cost.setHcoin(cost.getHcoin() + ipd.getCount());
-                                    iterator.remove();
-                                }
-                                if (ipd.getId() == 203) {
-                                    cost.setMcoin(cost.getMcoin() + ipd.getCount());
-                                    iterator.remove();
-                                }
-                            }
-                        }
-                    }
+                    shopTable.getItems().forEach(ShopInfo::removeVirtualCosts);
                     getShopData().put(shopTable.getShopId(), shopTable.getItems());
                 }
                 Grasscutter.getLogger().debug("Shop data successfully loaded.");

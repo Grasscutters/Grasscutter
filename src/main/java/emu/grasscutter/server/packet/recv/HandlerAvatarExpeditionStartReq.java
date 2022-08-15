@@ -1,6 +1,5 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -14,10 +13,11 @@ public class HandlerAvatarExpeditionStartReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         AvatarExpeditionStartReq req = AvatarExpeditionStartReq.parseFrom(payload);
+        var player = session.getPlayer();
 
         int startTime = Utils.getCurrentSeconds();
-        session.getPlayer().addExpeditionInfo(req.getAvatarGuid(), req.getExpId(), req.getHourTime(), startTime);
-        session.getPlayer().save();
-        session.send(new PacketAvatarExpeditionStartRsp(session.getPlayer()));
+        player.addExpeditionInfo(req.getAvatarGuid(), req.getExpId(), req.getHourTime(), startTime);
+        player.save();
+        session.send(new PacketAvatarExpeditionStartRsp(player.getExpeditionInfo()));
     }
 }

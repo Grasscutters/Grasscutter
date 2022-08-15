@@ -28,6 +28,7 @@ import emu.grasscutter.utils.Position;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.stream.Collectors;
 
 public class Scene {
     private final World world;
@@ -261,12 +262,11 @@ public class Scene {
         }
     }
 
-    private void removePlayerAvatars(Player player) {
-        Iterator<EntityAvatar> it = player.getTeamManager().getActiveTeam().iterator();
-        while (it.hasNext()) {
-            this.removeEntity(it.next(), VisionType.VISION_TYPE_REMOVE);
-            it.remove();
-        }
+    private synchronized void removePlayerAvatars(Player player) {
+        var team = player.getTeamManager().getActiveTeam();
+        // removeEntities(team, VisionType.VISION_TYPE_REMOVE);  // List<SubType> isn't cool apparently :(
+        team.forEach(e -> removeEntity(e, VisionType.VISION_TYPE_REMOVE));
+        team.clear();
     }
 
     public void spawnPlayer(Player player) {
@@ -567,40 +567,40 @@ public class Scene {
         return SceneIndexManager.queryNeighbors(getScriptManager().getBlocksIndex(),
                 player.getPosition().toXZDoubleArray(), Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);
     }
-    public void checkBlocks() {
-        Set<SceneBlock> visible = new HashSet<>();
-        for (Player player : this.getPlayers()) {
-            var blocks = getPlayerActiveBlocks(player);
-            visible.addAll(blocks);
-        }
 
-        Iterator<SceneBlock> it = this.getLoadedBlocks().iterator();
-        while (it.hasNext()) {
-            SceneBlock block = it.next();
-
-            if (!visible.contains(block)) {
-                it.remove();
-
-                onUnloadBlock(block);
-            }
-        }
-
-        for (var block : visible) {
-            if (!this.getLoadedBlocks().contains(block)) {
-                this.onLoadBlock(block, this.getPlayers());
-                this.getLoadedBlocks().add(block);
-            }else {
-                // dynamic load the groups for players in a loaded block
-                var toLoad = this.getPlayers().stream()
-                        .filter(p -> block.contains(p.getPosition()))
-                        .map(p -> playerMeetGroups(p, block))
-                        .flatMap(Collection::stream)
-                        .toList();
-                onLoadGroup(toLoad);
-            }
-        }
-
+    private boolean unloadBlockIfNotVisible(Collection<SceneBlock> visible, SceneBlock block) {
+        if (visible.contains(block)) return false;
+        this.onUnloadBlock(block);
+        return true;
     }
+
+    private synchronized boolean loadBlock(SceneBlock block) {
+        if (this.loadedBlocks.contains(block)) return false;
+        this.onLoadBlock(block, this.players);
+        this.loadedBlocks.add(block);
+        return true;
+    }
+
+    public synchronized void checkBlocks() {
+        Set<SceneBlock> visible = this.players.stream()
+            .map(player -> this.getPlayerActiveBlocks(player))
+            .flatMap(Collection::stream)
+            .collect(Collectors.toSet());
+
+        this.loadedBlocks.removeIf(block -> unloadBlockIfNotVisible(visible, block));
+        visible.stream()
+            .filter(block -> !this.loadBlock(block))
+            .forEach(block -> {
+                // dynamic load the groups for players in a loaded block
+                var toLoad = this.players.stream()
+                    .filter(p -> block.contains(p.getPosition()))
+                    .map(p -> this.playerMeetGroups(p, block))
+                    .flatMap(Collection::stream)
+                    .toList();
+                this.onLoadGroup(toLoad);
+            });
+    }
+
     public List<SceneGroup> playerMeetGroups(Player player, SceneBlock block) {
         List<SceneGroup> sceneGroups = SceneIndexManager.queryNeighbors(block.sceneGroupIndex, player.getPosition().toDoubleArray(),
                 Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);

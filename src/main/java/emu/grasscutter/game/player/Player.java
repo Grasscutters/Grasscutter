@@ -88,33 +88,33 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class Player {
     @Id private int id;
     @Indexed(options = @IndexOptions(unique = true)) private String accountId;
-    private transient Account account;
-    private transient GameSession session;
+    @Setter private transient Account account;
+    @Getter @Setter private transient GameSession session;
 
-    private String nickname;
-    private String signature;
-    private int headImage;
-    private int nameCardId = 210001;
-    private Position position;
-    private Position rotation;
-    private PlayerBirthday birthday;
-    private PlayerCodex codex;
-    private boolean showAvatars;
-    private List<Integer> showAvatarList;
-    private Map<Integer, Integer> properties;
-    private int currentRealmId;
-    private int widgetId;
-    private int sceneId;
-    private int regionId;
-    private int mainCharacterId;
-    private boolean godmode;
-    private boolean stamina;
+    @Getter private String nickname;
+    @Getter private String signature;
+    @Getter private int headImage;
+    @Getter private int nameCardId = 210001;
+    @Getter private Position position;
+    @Getter private Position rotation;
+    @Getter private PlayerBirthday birthday;
+    @Getter private PlayerCodex codex;
+    @Getter @Setter private boolean showAvatars;
+    @Getter @Setter private List<Integer> showAvatarList;
+    @Getter private Map<Integer, Integer> properties;
+    @Getter @Setter private int currentRealmId;
+    @Getter @Setter private int widgetId;
+    @Getter @Setter private int sceneId;
+    @Getter @Setter private int regionId;
+    @Getter private int mainCharacterId;
+    @Setter private boolean godmode;  // Getter is inGodmode
+    private boolean stamina;  // Getter is getUnlimitedStamina, Setter is setUnlimitedStamina
 
     @Getter private Set<Integer> nameCardList;
     @Getter private Set<Integer> flyCloakList;
     @Getter private Set<Integer> costumeList;
     @Getter private Set<Integer> rewardedLevels;
-    @Getter private Set<Integer> realmList;
+    @Getter @Setter private Set<Integer> realmList;
     @Getter private Set<Integer> unlockedForgingBlueprints;
     @Getter private Set<Integer> unlockedCombines;
     @Getter private Set<Integer> unlockedFurniture;
@@ -128,9 +128,9 @@ public class Player {
     @Getter @Setter private Map<Integer, List<Integer>> unlockedScenePoints;
 
     @Transient private long nextGuid = 0;
-    @Transient private int peerId;
-    @Transient private World world;
-    @Transient private Scene scene;
+    @Transient @Getter @Setter private int peerId;
+    @Transient private World world;  // Synchronized getter and setter
+    @Transient private Scene scene;  // Synchronized getter and setter
     @Transient @Getter private int weatherId = 0;
     @Transient @Getter private ClimateType climate = ClimateType.CLIMATE_SUNNY;
 
@@ -139,9 +139,9 @@ public class Player {
     @Getter private transient Inventory inventory;
     @Getter private transient FriendsList friendsList;
     @Getter private transient MailHandler mailHandler;
-    @Getter private transient MessageHandler messageHandler;
+    @Getter @Setter private transient MessageHandler messageHandler;
     @Getter private transient AbilityManager abilityManager;
-    @Getter private transient QuestManager questManager;
+    @Getter @Setter private transient QuestManager questManager;
     @Getter private transient TowerManager towerManager;
     @Getter private transient SotSManager sotsManager;
     @Getter private transient MapMarksManager mapMarksManager;
@@ -158,36 +158,37 @@ public class Player {
     @Getter private transient PlayerProgressManager progressManager;
 
     // Manager data (Save-able to the database)
-    private PlayerProfile playerProfile;
-    private TeamManager teamManager;
-    private TowerData towerData;
-    private PlayerGachaInfo gachaInfo;
-    private PlayerCollectionRecords collectionRecordStore;
-    private ArrayList<ShopLimit> shopLimit;
+    private PlayerProfile playerProfile;  // Getter has null-check
+    @Getter private TeamManager teamManager;
+    private TowerData towerData;  // Getter has null-check
+    @Getter private PlayerGachaInfo gachaInfo;
+    private PlayerCollectionRecords collectionRecordStore;  // Getter has null-check
+    @Getter private ArrayList<ShopLimit> shopLimit;
 
     @Getter private transient GameHome home;
 
-    private boolean moonCard;
-    private Date moonCardStartTime;
-    private int moonCardDuration;
-    private Set<Date> moonCardGetTimes;
+    @Setter private boolean moonCard;  // Getter is inMoonCard
+    @Getter @Setter private Date moonCardStartTime;
+    @Getter @Setter private int moonCardDuration;
+    @Getter @Setter private Set<Date> moonCardGetTimes;
 
-    @Transient private boolean paused;
-    @Transient private int enterSceneToken;
-    @Transient private SceneLoadState sceneState;
+    @Transient @Getter private boolean paused;
+    @Transient @Getter @Setter private int enterSceneToken;
+    @Transient @Getter @Setter private SceneLoadState sceneLoadState = SceneLoadState.NONE;
     @Transient private boolean hasSentLoginPackets;
     @Transient private long nextSendPlayerLocTime = 0;
 
-    private transient final Int2ObjectMap<CoopRequest> coopRequests;
-    private transient final Queue<AttackResult> attackResults;
+    private transient final Int2ObjectMap<CoopRequest> coopRequests;  // Synchronized getter
+    @Getter private transient final Queue<AttackResult> attackResults;
     @Getter private transient final InvokeHandler<CombatInvokeEntry> combatInvokeHandler;
     @Getter private transient final InvokeHandler<AbilityInvokeEntry> abilityInvokeHandler;
     @Getter private transient final InvokeHandler<AbilityInvokeEntry> clientAbilityInitFinishHandler;
 
-    private long springLastUsed;
-    private HashMap<String, MapMark> mapMarks;
-    private int nextResinRefresh;
-    private int lastDailyReset;
+    @Getter @Setter private long springLastUsed;
+    private HashMap<String, MapMark> mapMarks;  // Getter makes an empty hashmap - maybe do this elsewhere?
+    @Getter @Setter private int nextResinRefresh;
+    @Getter @Setter private int lastDailyReset;
+    @Getter private transient MpSettingType mpSetting = MpSettingType.MP_SETTING_TYPE_ENTER_AFTER_APPLY;  // TODO
 
     @Deprecated
     @SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
@@ -228,7 +229,6 @@ public class Player {
         this.openStates = new HashMap<>();
         this.unlockedSceneAreas = new HashMap<>();
         this.unlockedScenePoints = new HashMap<>();
-        this.sceneState = SceneLoadState.NONE;
 
         this.attackResults = new LinkedBlockingQueue<>();
         this.coopRequests = new Int2ObjectOpenHashMap<>();
@@ -308,18 +308,6 @@ public class Player {
         return this.account;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-
-    public GameSession getSession() {
-        return session;
-    }
-
-    public void setSession(GameSession session) {
-        this.session = session;
-    }
-
     public boolean isOnline() {
         return this.getSession() != null && this.getSession().isActive();
     }
@@ -366,17 +354,9 @@ public class Player {
         this.session.send(new PacketSceneAreaWeatherNotify(this));
     }
 
-    public String getNickname() {
-        return nickname;
-    }
-
     public void setNickname(String nickName) {
         this.nickname = nickName;
         this.updateProfile();
-    }
-
-    public int getHeadImage() {
-        return headImage;
     }
 
     public void setHeadImage(int picture) {
@@ -384,25 +364,9 @@ public class Player {
         this.updateProfile();
     }
 
-    public String getSignature() {
-        return signature;
-    }
-
     public void setSignature(String signature) {
         this.signature = signature;
         this.updateProfile();
-    }
-
-    public Integer getWidgetId() {
-        return widgetId;
-    }
-
-    public void setWidgetId(Integer widgetId) {
-        this.widgetId = widgetId;
-    }
-
-    public void setRealmList(Set<Integer> realmList) {
-        this.realmList = realmList;
     }
 
     public void addRealmList(int realmId) {
@@ -414,20 +378,16 @@ public class Player {
         this.realmList.add(realmId);
     }
 
-    public int getCurrentRealmId() {
-        return currentRealmId;
-    }
-
-    public void setCurrentRealmId(int currentRealmId) {
-        this.currentRealmId = currentRealmId;
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public Position getRotation() {
-        return rotation;
+    public int getExpeditionLimit() {
+        final int CONST_VALUE_EXPEDITION_INIT_LIMIT = 2;  // TODO: pull from ConstValueExcelConfigData.json
+        int expeditionLimit = CONST_VALUE_EXPEDITION_INIT_LIMIT;
+        var levelMap = GameData.getPlayerLevelDataMap();
+        for (int i = 1; i <= this.getLevel(); i++) {  // 1-indexed
+            var data = levelMap.get(i);
+            if (data != null)
+                expeditionLimit += data.getExpeditionLimitAdd();
+        }
+        return expeditionLimit;
     }
 
     public int getLevel() {
@@ -576,10 +536,6 @@ public class Player {
         return !this.hasSentLoginPackets;
     }
 
-    public TeamManager getTeamManager() {
-        return this.teamManager;
-    }
-
     public TowerData getTowerData() {
         if (towerData == null) {
             // because of mistake, null may be saved as storage at some machine, this if can be removed in future
@@ -587,10 +543,6 @@ public class Player {
         }
         return towerData;
     }
-
-	public void setQuestManager(QuestManager questManager) {
-		this.questManager = questManager;
-	}
 
     public void onEnterRegion(SceneRegion region) {
         getQuestManager().forEachActiveQuest(quest -> {
@@ -615,23 +567,13 @@ public class Player {
                 }
             }
         });
-
     }
-	public PlayerGachaInfo getGachaInfo() {
-		return gachaInfo;
-	}
 
     public PlayerProfile getProfile() {
         if (this.playerProfile == null) {
             this.playerProfile = new PlayerProfile(this);
         }
         return playerProfile;
-    }
-
-    // TODO: Based on the proto, property value could be int or float.
-    //  Although there's no float value at this moment, our code should be prepared for float values.
-    public Map<Integer, Integer> getProperties() {
-        return properties;
     }
 
     public boolean setProperty(PlayerProperty prop, int value) {
@@ -646,37 +588,13 @@ public class Player {
         return getProperties().get(prop.getId());
     }
 
-    public MpSettingType getMpSetting() {
-        return MpSettingType.MP_SETTING_TYPE_ENTER_AFTER_APPLY; // TEMP
-    }
-
-    public Queue<AttackResult> getAttackResults() {
-        return this.attackResults;
-    }
-
     public synchronized Int2ObjectMap<CoopRequest> getCoopRequests() {
         return coopRequests;
-    }
-
-    public int getEnterSceneToken() {
-        return enterSceneToken;
-    }
-
-    public void setEnterSceneToken(int enterSceneToken) {
-        this.enterSceneToken = enterSceneToken;
-    }
-
-    public int getNameCardId() {
-        return nameCardId;
     }
 
     public void setNameCardId(int nameCardId) {
         this.nameCardId = nameCardId;
         this.updateProfile();
-    }
-
-    public int getMainCharacterId() {
-        return mainCharacterId;
     }
 
     public void setMainCharacterId(int mainCharacterId) {
@@ -686,24 +604,12 @@ public class Player {
         this.mainCharacterId = mainCharacterId;
     }
 
-    public int getPeerId() {
-        return peerId;
-    }
-
-    public void setPeerId(int peerId) {
-        this.peerId = peerId;
-    }
-
     public int getClientTime() {
         return session.getClientTime();
     }
 
     public long getLastPingTime() {
         return session.getLastPingTime();
-    }
-
-    public boolean isPaused() {
-        return paused;
     }
 
     public void setPaused(boolean newPauseState) {
@@ -717,108 +623,16 @@ public class Player {
         }
     }
 
-    public long getSpringLastUsed() {
-        return springLastUsed;
-    }
-
-    public void setSpringLastUsed(long val) {
-        springLastUsed = val;
-    }
-
-    public int getNextResinRefresh() {
-        return nextResinRefresh;
-    }
-
-    public void setNextResinRefresh(int value) {
-        this.nextResinRefresh = value;
-    }
-
-    public SceneLoadState getSceneLoadState() {
-        return sceneState;
-    }
-
-    public void setSceneLoadState(SceneLoadState sceneState) {
-        this.sceneState = sceneState;
-    }
-
     public boolean isInMultiplayer() {
         return this.getWorld() != null && this.getWorld().isMultiplayer();
-    }
-
-    public int getSceneId() {
-        return sceneId;
-    }
-
-    public void setSceneId(int sceneId) {
-        this.sceneId = sceneId;
-    }
-
-    public int getRegionId() {
-        return regionId;
-    }
-
-    public void setRegionId(int regionId) {
-        this.regionId = regionId;
-    }
-
-    public void setShowAvatars(boolean showAvatars) {
-        this.showAvatars = showAvatars;
-    }
-
-    public boolean isShowAvatars() {
-        return showAvatars;
-    }
-
-    public void setShowAvatarList(List<Integer> showAvatarList) {
-        this.showAvatarList = showAvatarList;
-    }
-
-    public List<Integer> getShowAvatarList() {
-        return showAvatarList;
-    }
-
-    public int getLastDailyReset() {
-        return this.lastDailyReset;
-    }
-
-    public void setLastDailyReset(int value) {
-        this.lastDailyReset = value;
     }
 
     public boolean inMoonCard() {
         return moonCard;
     }
 
-    public void setMoonCard(boolean moonCard) {
-        this.moonCard = moonCard;
-    }
-
     public void addMoonCardDays(int days) {
         this.moonCardDuration += days;
-    }
-
-    public int getMoonCardDuration() {
-        return moonCardDuration;
-    }
-
-    public void setMoonCardDuration(int moonCardDuration) {
-        this.moonCardDuration = moonCardDuration;
-    }
-
-    public Date getMoonCardStartTime() {
-        return moonCardStartTime;
-    }
-
-    public void setMoonCardStartTime(Date moonCardStartTime) {
-        this.moonCardStartTime = moonCardStartTime;
-    }
-
-    public Set<Date> getMoonCardGetTimes() {
-        return moonCardGetTimes;
-    }
-
-    public void setMoonCardGetTimes(Set<Date> moonCardGetTimes) {
-        this.moonCardGetTimes = moonCardGetTimes;
     }
 
     public int getMoonCardRemainDays() {
@@ -869,25 +683,21 @@ public class Player {
         session.send(new PacketCardProductRewardNotify(getMoonCardRemainDays()));
     }
 
-    public void addExpeditionInfo(long avaterGuid, int expId, int hourTime, int startTime) {
+    public void addExpeditionInfo(long avatarGuid, int expId, int hourTime, int startTime) {
         ExpeditionInfo exp = new ExpeditionInfo();
         exp.setExpId(expId);
         exp.setHourTime(hourTime);
         exp.setState(1);
         exp.setStartTime(startTime);
-        expeditionInfo.put(avaterGuid, exp);
+        expeditionInfo.put(avatarGuid, exp);
     }
 
-    public void removeExpeditionInfo(long avaterGuid) {
-        expeditionInfo.remove(avaterGuid);
+    public void removeExpeditionInfo(long avatarGuid) {
+        expeditionInfo.remove(avatarGuid);
     }
 
-    public ExpeditionInfo getExpeditionInfo(long avaterGuid) {
-        return expeditionInfo.get(avaterGuid);
-    }
-
-    public List<ShopLimit> getShopLimit() {
-        return shopLimit;
+    public ExpeditionInfo getExpeditionInfo(long avatarGuid) {
+        return expeditionInfo.get(avatarGuid);
     }
 
     public ShopLimit getGoodsLimit(int goodsId) {
@@ -913,18 +723,17 @@ public class Player {
         }
         this.save();
     }
+
     public boolean getUnlimitedStamina() {
         return stamina;
     }
+
     public void setUnlimitedStamina(boolean stamina) {
         this.stamina = stamina;
     }
+
     public boolean inGodmode() {
         return godmode;
-    }
-
-    public void setGodmode(boolean godmode) {
-        this.godmode = godmode;
     }
 
     public boolean hasSentLoginPackets() {
@@ -1067,10 +876,6 @@ public class Player {
         return onlineInfo.build();
     }
 
-    public PlayerBirthday getBirthday() {
-        return this.birthday;
-    }
-
     public void setBirthday(int d, int m) {
         this.birthday = new PlayerBirthday(d, m);
         this.updateProfile();
@@ -1078,10 +883,6 @@ public class Player {
 
     public boolean hasBirthday() {
         return this.birthday.getDay() > 0;
-    }
-
-    public PlayerCodex getCodex() {
-        return this.codex;
     }
 
     public void setRewardedLevels(Set<Integer> rewardedLevels) {
@@ -1200,6 +1001,15 @@ public class Player {
         return mapMarks;
     }
 
+    private boolean expireCoopRequest(CoopRequest req) {
+        if (!req.isExpired()) return false;
+        req.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(
+            this,
+            false,
+            PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.REASON_SYSTEM_JUDGE));
+        return true;
+    }
+
     public synchronized void onTick() {
         // Check ping
         if (this.getLastPingTime() > System.currentTimeMillis() + 60000) {
@@ -1207,17 +1017,7 @@ public class Player {
             return;
         }
         // Check co-op requests
-        Iterator<CoopRequest> it = this.getCoopRequests().values().iterator();
-        while (it.hasNext()) {
-            CoopRequest req = it.next();
-            if (req.isExpired()) {
-                req.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(
-                        this,
-                        false,
-                        PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.REASON_SYSTEM_JUDGE));
-                it.remove();
-            }
-        }
+        this.getCoopRequests().values().removeIf(this::expireCoopRequest);
         // Handle buff
         this.getBuffManager().onTick();
         // Ping
@@ -1240,8 +1040,7 @@ public class Player {
         // Expedition
         var timeNow = Utils.getCurrentSeconds();
         var needNotify = false;
-        for (Long key : expeditionInfo.keySet()) {
-            ExpeditionInfo e = expeditionInfo.get(key);
+        for (ExpeditionInfo e : expeditionInfo.values()) {
             if (e.getState() == 1) {
                 if (timeNow - e.getStartTime() >= e.getHourTime() * 60 * 60) {
                     e.setState(2);
@@ -1251,7 +1050,7 @@ public class Player {
         }
         if (needNotify) {
             this.save();
-            this.sendPacket(new PacketAvatarExpeditionDataNotify(this));
+            this.sendPacket(new PacketAvatarExpeditionDataNotify(this.getExpeditionInfo()));
         }
 
         // Send updated forge queue data, if necessary.
@@ -1474,23 +1273,15 @@ public class Player {
     public enum SceneLoadState {
         NONE(0), LOADING(1), INIT(2), LOADED(3);
 
-        private final int value;
+        @Getter private final int value;
 
         private SceneLoadState(int value) {
             this.value = value;
         }
-
-        public int getValue() {
-            return this.value;
-        }
-    }
-
-    public void setMessageHandler(MessageHandler messageHandler) {
-        this.messageHandler = messageHandler;
     }
 
     public int getPropertyMin(PlayerProperty prop) {
-        if (prop.getDynamicRange()) {
+        if (prop.isDynamicRange()) {
             return switch (prop) {
                 default -> 0;
             };
@@ -1500,7 +1291,7 @@ public class Player {
     }
 
     public int getPropertyMax(PlayerProperty prop) {
-        if (prop.getDynamicRange()) {
+        if (prop.isDynamicRange()) {
             return switch (prop) {
                 case PROP_CUR_SPRING_VOLUME -> getProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME);
                 case PROP_CUR_PERSIST_STAMINA -> getProperty(PlayerProperty.PROP_MAX_STAMINA);
@@ -1529,8 +1320,8 @@ public class Player {
             }
             return true;
         } else {
-        return false;
-    }
+            return false;
+        }
     }
 
 }

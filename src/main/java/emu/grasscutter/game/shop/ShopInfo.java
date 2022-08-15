@@ -2,26 +2,28 @@ package emu.grasscutter.game.shop;
 
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ShopGoodsData;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShopInfo {
-    private int goodsId = 0;
-    private ItemParamData goodsItem;
-    private int scoin = 0;
-    private List<ItemParamData> costItemList;
-    private int boughtNum = 0;
-    private int buyLimit = 0;
-    private int beginTime = 0;
-    private int endTime = 1924992000;
-    private int minLevel = 0;
-    private int maxLevel = 61;
-    private List<Integer> preGoodsIdList = new ArrayList<>();
-    private int mcoin = 0;
-    private int hcoin = 0;
-    private int disableType = 0;
-    private int secondarySheetId = 0;
+    @Getter @Setter private int goodsId = 0;
+    @Getter @Setter private ItemParamData goodsItem;
+    @Getter @Setter private int scoin = 0;
+    @Getter @Setter private List<ItemParamData> costItemList;
+    @Getter @Setter private int boughtNum = 0;
+    @Getter @Setter private int buyLimit = 0;
+    @Getter @Setter private int beginTime = 0;
+    @Getter @Setter private int endTime = 1924992000;
+    @Getter @Setter private int minLevel = 0;
+    @Getter @Setter private int maxLevel = 61;
+    @Getter @Setter private List<Integer> preGoodsIdList = new ArrayList<>();
+    @Getter @Setter private int mcoin = 0;
+    @Getter @Setter private int hcoin = 0;
+    @Getter @Setter private int disableType = 0;
+    @Getter @Setter private int secondarySheetId = 0;
 
     private String refreshType;
 
@@ -41,8 +43,8 @@ public class ShopInfo {
         }
     }
 
-    private transient ShopRefreshType shopRefreshType;
-    private int shopRefreshParam;
+    @Setter private transient ShopRefreshType shopRefreshType;
+    @Getter @Setter private int shopRefreshParam;
 
     public ShopInfo(ShopGoodsData sgd) {
         this.goodsId = sgd.getGoodsId();
@@ -60,126 +62,6 @@ public class ShopInfo {
         this.shopRefreshParam = sgd.getRefreshParam();
     }
 
-    public int getHcoin() {
-        return hcoin;
-    }
-
-    public void setHcoin(int hcoin) {
-        this.hcoin = hcoin;
-    }
-
-    public List<Integer> getPreGoodsIdList() {
-        return preGoodsIdList;
-    }
-
-    public void setPreGoodsIdList(List<Integer> preGoodsIdList) {
-        this.preGoodsIdList = preGoodsIdList;
-    }
-
-    public int getMcoin() {
-        return mcoin;
-    }
-
-    public void setMcoin(int mcoin) {
-        this.mcoin = mcoin;
-    }
-
-    public int getDisableType() {
-        return disableType;
-    }
-
-    public void setDisableType(int disableType) {
-        this.disableType = disableType;
-    }
-
-    public int getSecondarySheetId() {
-        return secondarySheetId;
-    }
-
-    public void setSecondarySheetId(int secondarySheetId) {
-        this.secondarySheetId = secondarySheetId;
-    }
-
-    public int getGoodsId() {
-        return goodsId;
-    }
-
-    public void setGoodsId(int goodsId) {
-        this.goodsId = goodsId;
-    }
-
-    public ItemParamData getGoodsItem() {
-        return goodsItem;
-    }
-
-    public void setGoodsItem(ItemParamData goodsItem) {
-        this.goodsItem = goodsItem;
-    }
-
-    public int getScoin() {
-        return scoin;
-    }
-
-    public void setScoin(int scoin) {
-        this.scoin = scoin;
-    }
-
-    public List<ItemParamData> getCostItemList() {
-        return costItemList;
-    }
-
-    public void setCostItemList(List<ItemParamData> costItemList) {
-        this.costItemList = costItemList;
-    }
-
-    public int getBoughtNum() {
-        return boughtNum;
-    }
-
-    public void setBoughtNum(int boughtNum) {
-        this.boughtNum = boughtNum;
-    }
-
-    public int getBuyLimit() {
-        return buyLimit;
-    }
-
-    public void setBuyLimit(int buyLimit) {
-        this.buyLimit = buyLimit;
-    }
-
-    public int getBeginTime() {
-        return beginTime;
-    }
-
-    public void setBeginTime(int beginTime) {
-        this.beginTime = beginTime;
-    }
-
-    public int getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(int endTime) {
-        this.endTime = endTime;
-    }
-
-    public int getMinLevel() {
-        return minLevel;
-    }
-
-    public void setMinLevel(int minLevel) {
-        this.minLevel = minLevel;
-    }
-
-    public int getMaxLevel() {
-        return maxLevel;
-    }
-
-    public void setMaxLevel(int maxLevel) {
-        this.maxLevel = maxLevel;
-    }
-
     public ShopRefreshType getShopRefreshType() {
         if (refreshType == null)
             return ShopRefreshType.NONE;
@@ -191,15 +73,16 @@ public class ShopInfo {
         };
     }
 
-    public void setShopRefreshType(ShopRefreshType shopRefreshType) {
-        this.shopRefreshType = shopRefreshType;
+    private boolean evaluateVirtualCost(ItemParamData item) {
+        return switch (item.getId()) {
+            case 201 -> {this.hcoin += item.getCount(); yield true;}
+            case 203 -> {this.mcoin += item.getCount(); yield true;}
+            default -> false;
+        };
     }
 
-    public int getShopRefreshParam() {
-        return shopRefreshParam;
-    }
-
-    public void setShopRefreshParam(int shopRefreshParam) {
-        this.shopRefreshParam = shopRefreshParam;
+    public void removeVirtualCosts() {
+        if (this.costItemList != null)
+            this.costItemList.removeIf(item -> evaluateVirtualCost(item));
     }
 }
