@@ -330,10 +330,11 @@ public class World implements Iterable<Player> {
         }
     }
 
+    // Returns true if the world should be deleted
     public boolean onTick() {
-        if (this.getPlayerCount() == 0) return false;
+        if (this.getPlayerCount() == 0) return true;
         this.scenes.forEach((k, scene) -> scene.onTick());
-        return true;
+        return false;
     }
 
     public void close() {
