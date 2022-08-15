@@ -1281,7 +1281,7 @@ public class Player {
     }
 
     public int getPropertyMin(PlayerProperty prop) {
-        if (prop.getDynamicRange()) {
+        if (prop.isDynamicRange()) {
             return switch (prop) {
                 default -> 0;
             };
@@ -1291,7 +1291,7 @@ public class Player {
     }
 
     public int getPropertyMax(PlayerProperty prop) {
-        if (prop.getDynamicRange()) {
+        if (prop.isDynamicRange()) {
             return switch (prop) {
                 case PROP_CUR_SPRING_VOLUME -> getProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME);
                 case PROP_CUR_PERSIST_STAMINA -> getProperty(PlayerProperty.PROP_MAX_STAMINA);
