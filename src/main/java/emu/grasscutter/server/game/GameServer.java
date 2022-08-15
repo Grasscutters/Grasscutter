@@ -218,8 +218,7 @@ public final class GameServer extends KcpServer {
         var tickStart = Instant.now();
 
         // Tick worlds.
-        this.worlds.removeIf(world -> world.getPlayerCount() == 0);
-        this.worlds.forEach(World::onTick);
+        this.worlds.removeIf(world -> !world.onTick());
 
         // Tick players.
         this.players.values().forEach(Player::onTick);

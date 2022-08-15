@@ -330,10 +330,10 @@ public class World implements Iterable<Player> {
         }
     }
 
-    public void onTick() {
-        for (Scene scene : this.getScenes().values()) {
-            scene.onTick();
-        }
+    public boolean onTick() {
+        if (this.getPlayerCount() == 0) return false;
+        this.scenes.forEach((k, scene) -> scene.onTick());
+        return true;
     }
 
     public void close() {
