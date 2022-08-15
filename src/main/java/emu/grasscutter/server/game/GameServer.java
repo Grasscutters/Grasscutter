@@ -218,21 +218,11 @@ public final class GameServer extends KcpServer {
         var tickStart = Instant.now();
 
         // Tick worlds.
-        Iterator<World> it = this.getWorlds().iterator();
-        while (it.hasNext()) {
-            World world = it.next();
-
-            if (world.getPlayerCount() == 0) {
-                it.remove();
-            }
-
-            world.onTick();
-        }
+        this.worlds.removeIf(world -> world.getPlayerCount() == 0);
+        this.worlds.forEach(World::onTick);
 
         // Tick players.
-        for (Player player : this.getPlayers().values()) {
-            player.onTick();
-        }
+        this.players.values().forEach(Player::onTick);
 
         // Tick scheduler.
         this.getScheduler().runTasks();

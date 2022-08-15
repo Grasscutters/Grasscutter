@@ -261,12 +261,11 @@ public class Scene {
         }
     }
 
-    private void removePlayerAvatars(Player player) {
-        Iterator<EntityAvatar> it = player.getTeamManager().getActiveTeam().iterator();
-        while (it.hasNext()) {
-            this.removeEntity(it.next(), VisionType.VISION_TYPE_REMOVE);
-            it.remove();
-        }
+    private synchronized void removePlayerAvatars(Player player) {
+        var team = player.getTeamManager().getActiveTeam();
+        // removeEntities(team, VisionType.VISION_TYPE_REMOVE);  // List<SubType> isn't cool apparently :(
+        team.forEach(e -> removeEntity(e, VisionType.VISION_TYPE_REMOVE));
+        team.clear();
     }
 
     public void spawnPlayer(Player player) {
