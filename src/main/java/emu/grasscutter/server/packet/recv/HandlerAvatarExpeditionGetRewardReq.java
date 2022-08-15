@@ -1,7 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.game.expedition.ExpeditionInfo;
-import emu.grasscutter.game.expedition.ExpeditionRewardData;
 import emu.grasscutter.game.expedition.ExpeditionRewardDataList;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
@@ -12,9 +11,8 @@ import emu.grasscutter.net.proto.AvatarExpeditionGetRewardReqOuterClass.AvatarEx
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketAvatarExpeditionGetRewardRsp;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
-import emu.grasscutter.utils.Utils;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 @Opcodes(PacketOpcodes.AvatarExpeditionGetRewardReq)
@@ -25,23 +23,14 @@ public class HandlerAvatarExpeditionGetRewardReq extends PacketHandler {
         var player = session.getPlayer();
 
         ExpeditionInfo expInfo = player.getExpeditionInfo(req.getAvatarGuid());
+        List<GameItem> items = new ArrayList<>();
+        List<ExpeditionRewardDataList> expeditionRewardDataLists = session.getServer().getExpeditionSystem().getExpeditionRewardDataList().get(expInfo.getExpId());
 
-        List<GameItem> items = new LinkedList<>();
-
-        if (session.getServer().getExpeditionSystem().getExpeditionRewardDataList().containsKey(expInfo.getExpId())) {
-            for (ExpeditionRewardDataList RewardDataList : session.getServer().getExpeditionSystem().getExpeditionRewardDataList().get(expInfo.getExpId())) {
-                if (RewardDataList.getHourTime() == expInfo.getHourTime()) {
-                    if (!RewardDataList.getExpeditionRewardData().isEmpty()) {
-                        for (ExpeditionRewardData RewardData :RewardDataList.getExpeditionRewardData()) {
-                            int num = RewardData.getMinCount();
-                            if (RewardData.getMinCount() != RewardData.getMaxCount()) {
-                                num = Utils.randomRange(RewardData.getMinCount(), RewardData.getMaxCount());
-                            }
-                            items.add(new GameItem(RewardData.getItemId(), num));
-                        }
-                    }
-                }
-            }
+        if (expeditionRewardDataLists != null) {
+            expeditionRewardDataLists.stream()
+                .filter(r -> r.getHourTime() == expInfo.getHourTime())
+                .map(ExpeditionRewardDataList::getRewards)
+                .forEach(items::addAll);
         }
 
         player.getInventory().addItems(items);
