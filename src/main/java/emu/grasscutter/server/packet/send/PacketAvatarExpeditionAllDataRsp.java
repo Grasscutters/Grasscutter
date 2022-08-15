@@ -9,14 +9,14 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class PacketAvatarExpeditionAllDataRsp extends BasePacket {
-    public PacketAvatarExpeditionAllDataRsp(Map<Long, ExpeditionInfo> expeditionInfo) {
+    public PacketAvatarExpeditionAllDataRsp(Map<Long, ExpeditionInfo> expeditionInfo, int expeditionCountLimit) {
         super(PacketOpcodes.AvatarExpeditionAllDataRsp);
 
         List<Integer> openExpeditionList  = new ArrayList<>(List.of(306,305,304,303,302,301,206,105,204,104,203,103,202,101,102,201,106,205));
 
         this.setData(AvatarExpeditionAllDataRsp.newBuilder()
             .addAllOpenExpeditionList(openExpeditionList)
-            .setExpeditionCountLimit(5)
+            .setExpeditionCountLimit(expeditionCountLimit)
             .putAllExpeditionInfoMap(
                 expeditionInfo.entrySet().stream()
                     .collect(Collectors.toMap(

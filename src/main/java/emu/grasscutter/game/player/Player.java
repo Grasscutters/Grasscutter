@@ -378,6 +378,18 @@ public class Player {
         this.realmList.add(realmId);
     }
 
+    public int getExpeditionLimit() {
+        final int CONST_VALUE_EXPEDITION_INIT_LIMIT = 2;  // TODO: pull from ConstValueExcelConfigData.json
+        int expeditionLimit = CONST_VALUE_EXPEDITION_INIT_LIMIT;
+        var levelMap = GameData.getPlayerLevelDataMap();
+        for (int i = 1; i <= this.getLevel(); i++) {  // 1-indexed
+            var data = levelMap.get(i);
+            if (data != null)
+                expeditionLimit += data.getExpeditionLimitAdd();
+        }
+        return expeditionLimit;
+    }
+
     public int getLevel() {
         return this.getProperty(PlayerProperty.PROP_PLAYER_LEVEL);
     }
