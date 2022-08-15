@@ -10,6 +10,6 @@ import emu.grasscutter.server.packet.send.PacketAvatarExpeditionAllDataRsp;
 public class HandlerAvatarExpeditionAllDataReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        session.send(new PacketAvatarExpeditionAllDataRsp(session.getPlayer()));
+        session.send(new PacketAvatarExpeditionAllDataRsp(session.getPlayer().getExpeditionInfo()));
     }
 }

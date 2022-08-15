@@ -1200,6 +1200,15 @@ public class Player {
         return mapMarks;
     }
 
+    private boolean expireCoopRequest(CoopRequest req) {
+        if (!req.isExpired()) return false;
+        req.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(
+            this,
+            false,
+            PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.REASON_SYSTEM_JUDGE));
+        return true;
+    }
+
     public synchronized void onTick() {
         // Check ping
         if (this.getLastPingTime() > System.currentTimeMillis() + 60000) {
@@ -1207,17 +1216,7 @@ public class Player {
             return;
         }
         // Check co-op requests
-        Iterator<CoopRequest> it = this.getCoopRequests().values().iterator();
-        while (it.hasNext()) {
-            CoopRequest req = it.next();
-            if (req.isExpired()) {
-                req.getRequester().sendPacket(new PacketPlayerApplyEnterMpResultNotify(
-                        this,
-                        false,
-                        PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Reason.REASON_SYSTEM_JUDGE));
-                it.remove();
-            }
-        }
+        this.getCoopRequests().values().removeIf(this::expireCoopRequest);
         // Handle buff
         this.getBuffManager().onTick();
         // Ping
@@ -1240,8 +1239,7 @@ public class Player {
         // Expedition
         var timeNow = Utils.getCurrentSeconds();
         var needNotify = false;
-        for (Long key : expeditionInfo.keySet()) {
-            ExpeditionInfo e = expeditionInfo.get(key);
+        for (ExpeditionInfo e : expeditionInfo.values()) {
             if (e.getState() == 1) {
                 if (timeNow - e.getStartTime() >= e.getHourTime() * 60 * 60) {
                     e.setState(2);
@@ -1251,7 +1249,7 @@ public class Player {
         }
         if (needNotify) {
             this.save();
-            this.sendPacket(new PacketAvatarExpeditionDataNotify(this));
+            this.sendPacket(new PacketAvatarExpeditionDataNotify(this.getExpeditionInfo()));
         }
 
         // Send updated forge queue data, if necessary.
