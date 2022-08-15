@@ -51,7 +51,7 @@ EN | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.m
 
       Trust CA certificate:
 
-      ​	**Note:**The CA certificate is usually stored in `%USERPROFILE%\ .mitmproxy`, or you can download it from `http://mitm.it`
+      ​	**Note:** The CA certificate is usually stored in `%USERPROFILE%\ .mitmproxy`, or you can download it from `http://mitm.it`
 
       ​	Double click for [install](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) or ...
 
