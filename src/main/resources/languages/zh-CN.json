@@ -47,7 +47,7 @@
       "router_error": "[Dispatch] 无法连接路由"
     },
     "status": {
-      "free_software": "Grasscutter 是免费开源软件，遵循 AGPL-3.0 license。如果你是付费购买的，那你已经被骗了。项目地址：https://github.com/Grasscutters/Grasscutter",
+      "free_software": "Grasscutter 是免费开源软件，遵循 AGPL-3.0 license。如果你是付费购买的，那你已经被骗了。\n\t项目地址：https://github.com/Grasscutters/Grasscutter",
       "starting": "正在启动 Grasscutter...",
       "shutdown": "正在关闭...",
       "done": "加载完成！输入 \"help\" 查看命令列表",
@@ -231,7 +231,7 @@
     },
     "sendMail": {
       "give_usage": "🇺🇸Usage: give <player> <itemID|itemName> [amount] [level] [refinement]",
-      "user_not_exist": "用户 '%s' 不存在。",
+      "user_not_exist": "玩家 '%s' 不存在。",
       "start_composition": "开始撰写邮件。\n请使用 '/sendmail <标题>' 继续。\n你可以随时使用 '/sendmail stop' 停止。",
       "templates": "邮件模板尚未实装...",
       "invalid_arguments": "无效的参数。",
@@ -275,10 +275,10 @@
     },
     "setStats": {
       "description": "设置当前角色的属性\n\t可更改的属性列表：hp(生命值)|maxhp(最大生命值)|def(防御力)|atk(攻击力)|em(元素精通)|er(元素充能效率)|crate(暴击率)|cdmg(暴击伤害)|cdr(冷却缩减)|heal(治疗加成)|heali(受治疗加成)|shield(护盾强效)|defi(无视防御)\n元素增伤：epyro(火)|ecryo(冰)|ehydro(水)|egeo(岩)|edendro(草)|eelectro(雷)|ephys(物理)\n元素抗性：respyro(火)|rescryo(冰)|reshydro(水)|resgeo(岩)|resdendro(草)|reselectro(雷)|resphys(物理)",
-      "locked_to": "🇺🇸%s locked to %s.",
-      "locked_for_to": "🇺🇸%s for %s locked to %s.",
-      "unlocked": "🇺🇸%s unlocked.",
-      "unlocked_for": "🇺🇸%s for %s unlocked."
+      "locked_to": "%s 已锁定为：%s。",
+      "locked_for_to": "%s 属于 %s 的，已锁定为：%s。",
+      "unlocked": "%s 已解锁。",
+      "unlocked_for": "%s 属于 %s 的，已解锁。"
     },
     "spawn": {
       "success": "已生成 %s 个 %s。",
@@ -330,7 +330,7 @@
     "weather": {
       "success": "已设置天气ID 为 %s，气候类型为 %s。",
       "status": "当前天气ID 为 %s，气候类型为 %s。",
-      "description": "更改天气ID和气候类型。天气ID可以在 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json 中找到。\n气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
+      "description": "更改天气ID和气候类型。天气ID可以在 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json 中找到。\n\t气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
     },
     "ban": {
       "success": "成功封禁玩家。",
@@ -339,8 +339,8 @@
       "description": "封禁玩家"
     },
     "unlockall": {
-      "success": "🇺🇸Unlocked all open states for %s.",
-      "description": "🇺🇸Unlocks all open states for a player."
+      "success": "已为：%s 解锁全部开放状态。",
+      "description": "为玩家解锁全部开放状态"
     },
     "unban": {
       "success": "成功取消玩家的封禁。",
