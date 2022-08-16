@@ -51,34 +51,24 @@ public class ChatSystem implements ChatSystemHandler {
      * Chat history handling
      ********************/
     private void putInHistory(int uid, int partnerId, ChatInfo info) {
-        if (!this.history.containsKey(uid)) {
-            this.history.put(uid, new HashMap<>());
-        }
-        if (!this.history.get(uid).containsKey(partnerId)) {
-            this.history.get(uid).put(partnerId, new ArrayList<>());
-        }
-
-        this.history.get(uid).get(partnerId).add(info);
+        this.history.computeIfAbsent(uid, HashMap::new)
+                    .computeIfAbsent(partnerId, ArrayList::new)
+                    .add(info);
     }
 
     public void clearHistoryOnLogout(Player player) {
-        if (this.history.containsKey(player.getUid())) {
-            this.history.remove(player.getUid());
-        }
+        this.history.remove(player.getUid());
     }
 
     public void handlePullPrivateChatReq(Player player, int partnerId) {
-        if (this.history.getOrDefault(player.getUid(), Map.of()).containsKey(partnerId)) {
-            player.sendPacket(new PacketPullPrivateChatRsp(this.history.get(player.getUid()).get(partnerId)));
-        }
-        else {
-            player.sendPacket(new PacketPullPrivateChatRsp(List.of()));
-        }
+        var chatHistory = this.history.computeIfAbsent(player.getUid(), HashMap::new)
+                                .computeIfAbsent(partnerId, ArrayList::new);
+        player.sendPacket(new PacketPullPrivateChatRsp(chatHistory));
     }
 
     public void handlePullRecentChatReq(Player player) {
         // If this user has no chat history yet, create it by sending the server welcome messages.
-        if (!this.history.getOrDefault(player.getUid(), Map.of()).containsKey(GameConstants.SERVER_CONSOLE_UID)) {
+        if (!this.history.computeIfAbsent(player.getUid(), HashMap::new).containsKey(GameConstants.SERVER_CONSOLE_UID)) {
             this.sendServerWelcomeMessages(player);
         }
 
