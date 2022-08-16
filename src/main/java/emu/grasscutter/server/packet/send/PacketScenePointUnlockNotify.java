@@ -1,7 +1,5 @@
 package emu.grasscutter.server.packet.send;
 
-import java.util.List;
-
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ScenePointUnlockNotifyOuterClass.ScenePointUnlockNotify;
@@ -17,7 +15,7 @@ public class PacketScenePointUnlockNotify extends BasePacket {
 		this.setData(p);
 	}
 
-	public PacketScenePointUnlockNotify(int sceneId, List<Integer> pointIds) {
+	public PacketScenePointUnlockNotify(int sceneId, Iterable<Integer> pointIds) {
 		super(PacketOpcodes.ScenePointUnlockNotify);
 
 		ScenePointUnlockNotify.Builder p = ScenePointUnlockNotify.newBuilder()
