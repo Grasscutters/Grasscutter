@@ -40,7 +40,7 @@ public class ChatManager implements ChatManagerHandler {
     }
 
     private boolean tryInvokeCommand(Player sender, Player target, String rawMessage) {
-        if (!RE_PREFIXES.matcher(rawMessage.substring(0, 1)).matches())
+        if ((!RE_PREFIXES.matcher(rawMessage.substring(0, 1)).matches()) && target.getUid() != GameConstants.SERVER_CONSOLE_UID)
             return false;
         for (String line : rawMessage.substring(1).split("\n[/!]"))
             CommandMap.getInstance().invoke(sender, target, line);
