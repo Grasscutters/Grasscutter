@@ -230,6 +230,7 @@
       "description": "重置指定玩家的商店刷新时间"
     },
     "sendMail": {
+      "give_usage": "🇺🇸Usage: give <player> <itemID|itemName> [amount] [level] [refinement]",
       "user_not_exist": "玩家 '%s' 不存在。",
       "start_composition": "开始撰写邮件。\n请使用 '/sendmail <标题>' 继续。\n你可以随时使用 '/sendmail stop' 停止。",
       "templates": "邮件模板尚未实装...",
@@ -329,7 +330,7 @@
     "weather": {
       "success": "已设置天气ID 为 %s，气候类型为 %s。",
       "status": "当前天气ID 为 %s，气候类型为 %s。",
-      "description": "更改天气ID和气候类型。\n\t气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
+      "description": "更改天气ID和气候类型。天气ID可以在 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json 中找到。\n\t气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
     },
     "ban": {
       "success": "成功封禁玩家。",
