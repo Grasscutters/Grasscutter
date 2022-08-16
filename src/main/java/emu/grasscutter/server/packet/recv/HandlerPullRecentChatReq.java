@@ -10,6 +10,6 @@ import emu.grasscutter.server.packet.send.PacketPullRecentChatRsp;
 public class HandlerPullRecentChatReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        session.getServer().getChatManager().handlePullRecentChatReq(session.getPlayer());
+        session.getServer().getChatSystem().handlePullRecentChatReq(session.getPlayer());
     }
 }
