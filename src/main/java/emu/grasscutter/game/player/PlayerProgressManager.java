@@ -44,19 +44,8 @@ public class PlayerProgressManager extends BasePlayerDataManager {
 
         // Auto-unlock the first statue and map area, until we figure out how to make
         // that particular statue interactable.
-        if (!this.player.getUnlockedScenePoints().containsKey(3)) {
-            this.player.getUnlockedScenePoints().put(3, new ArrayList<>());
-        }
-        if (!this.player.getUnlockedScenePoints().get(3).contains(7)) {
-            this.player.getUnlockedScenePoints().get(3).add(7);
-        }
-
-        if (!this.player.getUnlockedSceneAreas().containsKey(3)) {
-            this.player.getUnlockedSceneAreas().put(3, new ArrayList<>());
-        }
-        if (!this.player.getUnlockedSceneAreas().get(3).contains(1)) {
-            this.player.getUnlockedSceneAreas().get(3).add(1);
-        }
+        this.player.getUnlockedScenePoints(3).add(7);
+        this.player.getUnlockedSceneAreas(3).add(1);
     }
 
     /******************************************************************************************************************
@@ -211,16 +200,13 @@ public class PlayerProgressManager extends BasePlayerDataManager {
         String key = sceneId + "_" + pointId;
 		ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(key);
 		
-		if (scenePointEntry == null || this.player.getUnlockedScenePoints().getOrDefault(sceneId, List.of()).contains(pointId)) {
+		if (scenePointEntry == null || this.player.getUnlockedScenePoints(sceneId).contains(pointId)) {
             this.player.sendPacket(new PacketUnlockTransPointRsp(Retcode.RET_FAIL));
             return;
         }
 
         // Add the point to the list of unlocked points for its scene.
-        if (!this.player.getUnlockedScenePoints().containsKey(sceneId)) {
-            this.player.getUnlockedScenePoints().put(sceneId, new ArrayList<>());
-        }
-        this.player.getUnlockedScenePoints().get(sceneId).add(pointId);
+        this.player.getUnlockedScenePoints(sceneId).add(pointId);
 
         // Give primogems  and Adventure EXP for unlocking.
         var primos = new GameItem(GameData.getItemDataMap().get(201), 5);
@@ -240,16 +226,8 @@ public class PlayerProgressManager extends BasePlayerDataManager {
     }
 
     public void unlockSceneArea(int sceneId, int areaId) {
-        // Check whether this area is already unlocked.
-        if (this.player.getUnlockedSceneAreas().getOrDefault(sceneId, List.of()).contains(areaId)) {
-            return;
-        }
-
         // Add the area to the list of unlocked areas in its scene.
-        if (!this.player.getUnlockedSceneAreas().containsKey(sceneId)) {
-            this.player.getUnlockedSceneAreas().put(sceneId, new ArrayList<>());
-        }
-        this.player.getUnlockedSceneAreas().get(sceneId).add(areaId);
+        this.player.getUnlockedSceneAreas(sceneId).add(areaId);
 
         // Send packet.
         this.player.sendPacket(new PacketSceneAreaUnlockNotify(sceneId, areaId));

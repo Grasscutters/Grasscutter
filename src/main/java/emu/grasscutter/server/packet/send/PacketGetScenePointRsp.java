@@ -1,7 +1,5 @@
 package emu.grasscutter.server.packet.send;
 
-import java.util.List;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
@@ -21,7 +19,7 @@ public class PacketGetScenePointRsp extends BasePacket {
 				p.addUnlockedPointList(i);
 			}
 		} else {
-			p.addAllUnlockedPointList(player.getUnlockedScenePoints().getOrDefault(sceneId, List.of()));
+			p.addAllUnlockedPointList(player.getUnlockedScenePoints(sceneId));
 		}
 		
 		for (int i = 1; i < 9; i++) {

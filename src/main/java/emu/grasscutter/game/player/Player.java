@@ -80,6 +80,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.LinkedBlockingQueue;
 
 @Entity(value = "players", useDiscriminator = false)
@@ -111,7 +112,7 @@ public class Player {
     @Getter private Set<Integer> nameCardList;
     @Getter private Set<Integer> flyCloakList;
     @Getter private Set<Integer> costumeList;
-    @Getter private Set<Integer> rewardedLevels;
+    @Getter @Setter private Set<Integer> rewardedLevels;
     @Getter @Setter private Set<Integer> realmList;
     @Getter private Set<Integer> unlockedForgingBlueprints;
     @Getter private Set<Integer> unlockedCombines;
@@ -120,10 +121,10 @@ public class Player {
     @Getter private Map<Long, ExpeditionInfo> expeditionInfo;
     @Getter private Map<Integer, Integer> unlockedRecipies;
     @Getter private List<ActiveForgeData> activeForges;
-    @Getter private Map<Integer,Integer> questGlobalVariables;
+    @Getter private Map<Integer, Integer> questGlobalVariables;
     @Getter private Map<Integer, Integer> openStates;
-    @Getter @Setter private Map<Integer, List<Integer>> unlockedSceneAreas;
-    @Getter @Setter private Map<Integer, List<Integer>> unlockedScenePoints;
+    @Getter @Setter private Map<Integer, Set<Integer>> unlockedSceneAreas;
+    @Getter @Setter private Map<Integer, Set<Integer>> unlockedScenePoints;
 
     @Transient private long nextGuid = 0;
     @Transient @Getter @Setter private int peerId;
@@ -386,6 +387,14 @@ public class Player {
                 expeditionLimit += data.getExpeditionLimitAdd();
         }
         return expeditionLimit;
+    }
+
+    public Set<Integer> getUnlockedSceneAreas(int sceneId) {
+        return this.unlockedSceneAreas.computeIfAbsent(sceneId, i -> new CopyOnWriteArraySet<>());
+    }
+
+    public Set<Integer> getUnlockedScenePoints(int sceneId) {
+        return this.unlockedScenePoints.computeIfAbsent(sceneId, i -> new CopyOnWriteArraySet<>());
     }
 
     public int getLevel() {
@@ -879,10 +888,6 @@ public class Player {
 
     public boolean hasBirthday() {
         return this.birthday.getDay() > 0;
-    }
-
-    public void setRewardedLevels(Set<Integer> rewardedLevels) {
-        this.rewardedLevels = rewardedLevels;
     }
 
     public SocialDetail.Builder getSocialDetail() {

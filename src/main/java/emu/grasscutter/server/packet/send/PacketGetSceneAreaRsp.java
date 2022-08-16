@@ -1,7 +1,5 @@
 package emu.grasscutter.server.packet.send;
 
-import java.util.List;
-
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -17,7 +15,7 @@ public class PacketGetSceneAreaRsp extends BasePacket {
 
         GetSceneAreaRsp p = GetSceneAreaRsp.newBuilder()
                 .setSceneId(sceneId)
-                .addAllAreaIdList(player.getUnlockedSceneAreas().getOrDefault(sceneId, List.of()))
+                .addAllAreaIdList(player.getUnlockedSceneAreas(sceneId))
                 .addCityInfoList(CityInfo.newBuilder().setCityId(1).setLevel(1).build())
                 .addCityInfoList(CityInfo.newBuilder().setCityId(2).setLevel(1).build())
                 .addCityInfoList(CityInfo.newBuilder().setCityId(3).setLevel(1).build())
