@@ -1,9 +1,9 @@
-package emu.grasscutter.game.managers.chat;
+package emu.grasscutter.game.chat;
 
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.game.GameServer;
 
-public interface ChatManagerHandler {
+public interface ChatSystemHandler {
     GameServer getServer();
     void sendPrivateMessage(Player player, int targetUid, String message);
     void sendPrivateMessage(Player player, int targetUid, int emote);
@@ -13,6 +13,5 @@ public interface ChatManagerHandler {
     void sendPrivateMessageFromServer(int targetUid, int emote);
     void handlePullPrivateChatReq(Player player, int targetUid);
     void clearHistoryOnLogout(Player player);
-    void sendServerWelcomeMessages(Player player);
     void handlePullRecentChatReq(Player player);
 }

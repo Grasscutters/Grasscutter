@@ -51,14 +51,12 @@ import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
-import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
@@ -799,7 +797,6 @@ public class Player {
         }
 
         this.getServer().getChatSystem().sendPrivateMessageFromServer(getUid(), message.toString());
-        // this.sendPacket(new PacketPrivateChatNotify(GameConstants.SERVER_CONSOLE_UID, getUid(), message.toString()));
     }
 
     /**
@@ -809,7 +806,6 @@ public class Player {
      * @param message The message to send.
      */
     public void sendMessage(Player sender, Object message) {
-        // this.sendPacket(new PacketPrivateChatNotify(sender.getUid(), this.getUid(), message.toString()));
         this.getServer().getChatSystem().sendPrivateMessage(sender, this.getUid(), message.toString());
     }
 
@@ -1194,12 +1190,8 @@ public class Player {
         session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
         session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
 
-
         // First notify packets sent
-        this.hasSentLoginPackets = true;
-
-        // Send server welcome chat.
-        this.getServer().getChatSystem().sendServerWelcomeMessages(this);
+        this.hasSentLoginPackets = true; 
 
         // Set session state
         session.setState(SessionState.ACTIVE);

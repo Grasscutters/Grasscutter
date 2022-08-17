@@ -2,10 +2,11 @@ package emu.grasscutter.server.game;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.battlepass.BattlePassSystem;
+import emu.grasscutter.game.chat.ChatSystem;
+import emu.grasscutter.game.chat.ChatSystemHandler;
 import emu.grasscutter.game.combine.CombineManger;
 import emu.grasscutter.game.drop.DropSystem;
 import emu.grasscutter.game.dungeons.DungeonSystem;
@@ -13,8 +14,6 @@ import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
 import emu.grasscutter.game.expedition.ExpeditionSystem;
 import emu.grasscutter.game.gacha.GachaSystem;
 import emu.grasscutter.game.managers.CookingManager;
-import emu.grasscutter.game.managers.chat.ChatManager;
-import emu.grasscutter.game.managers.chat.ChatManagerHandler;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.player.Player;
@@ -74,7 +73,7 @@ public final class GameServer extends KcpServer {
     private final ServerTaskScheduler scheduler;
     private final TaskMap taskMap;
 
-    private ChatManagerHandler chatManager;
+    private ChatSystemHandler chatManager;
 
     public GameServer() {
         this(getAdapterInetSocketAddress());
@@ -124,27 +123,27 @@ public final class GameServer extends KcpServer {
         this.questSystem = new QuestSystem(this);
 
         // Chata manager
-        this.chatManager = new ChatManager(this);
+        this.chatManager = new ChatSystem(this);
 
         // Hook into shutdown event.
         Runtime.getRuntime().addShutdownHook(new Thread(this::onServerShutdown));
     }
 
     @Deprecated
-    public ChatManagerHandler getChatManager() {
+    public ChatSystemHandler getChatManager() {
         return chatManager;
     }
 
     @Deprecated
-    public void setChatManager(ChatManagerHandler chatManager) {
+    public void setChatManager(ChatSystemHandler chatManager) {
         this.chatManager = chatManager;
     }
 
-    public ChatManagerHandler getChatSystem() {
+    public ChatSystemHandler getChatSystem() {
         return chatManager;
     }
 
-    public void setChatSystem(ChatManagerHandler chatManager) {
+    public void setChatSystem(ChatSystemHandler chatManager) {
         this.chatManager = chatManager;
     }
 
