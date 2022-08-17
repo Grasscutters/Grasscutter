@@ -81,7 +81,7 @@ public class CombineManger extends BaseGameSystem {
         List<ItemParamData> material = new ArrayList<>(combineData.getMaterialItems());
         material.add(new ItemParamData(202, combineData.getScoinCost()));
 
-        boolean success = player.getInventory().payItems(material.toArray(new ItemParamData[0]), count, ActionReason.Combine);
+        boolean success = player.getInventory().payItems(material, count, ActionReason.Combine);
 
         // abort if not enough material
         if (!success) {

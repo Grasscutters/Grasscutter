@@ -61,7 +61,7 @@ public class HandlerBuyGoodsReq extends PacketHandler {
             costs.add(new ItemParamData(202, sg.getScoin()));
             costs.add(new ItemParamData(201, sg.getHcoin()));
             costs.add(new ItemParamData(203, sg.getMcoin()));
-            if (!session.getPlayer().getInventory().payItems(costs.toArray(new ItemParamData[0]), buyGoodsReq.getBuyCount())) {
+            if (!session.getPlayer().getInventory().payItems(costs, buyGoodsReq.getBuyCount())) {
                 return;
             }
 

@@ -71,7 +71,7 @@ public class FurnitureManager extends BasePlayerManager {
         }
 
         // pay items first
-        if (!player.getInventory().payItems(makeData.getMaterialItems().toArray(new ItemParamData[0]))) {
+        if (!player.getInventory().payItems(makeData.getMaterialItems())) {
             player.getSession().send(new PacketFurnitureMakeStartRsp(Retcode.RET_HOME_FURNITURE_COUNT_NOT_ENOUGH_VALUE, null));
             return;
         }

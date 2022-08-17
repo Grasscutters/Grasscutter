@@ -157,7 +157,7 @@ public class ForgingManager extends BasePlayerManager {
         List<ItemParamData> material = new ArrayList<>(forgeData.getMaterialItems());
         material.add(new ItemParamData(202, forgeData.getScoinCost()));
 
-        boolean success = player.getInventory().payItems(material.toArray(new ItemParamData[0]), req.getForgeCount(), ActionReason.ForgeCost);
+        boolean success = player.getInventory().payItems(material, req.getForgeCount(), ActionReason.ForgeCost);
 
         if (!success) {
             this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_POINT_NOT_ENOUGH)); //ToDo: Probably the wrong return code.
