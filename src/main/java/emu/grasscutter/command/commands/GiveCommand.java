@@ -244,32 +244,11 @@ public final class GiveCommand implements CommandHandler {
     }
 
     private static Avatar makeAvatar(AvatarData avatarData, int level, int promoteLevel, int constellation) {
-        // Calculate ascension level.
         Avatar avatar = new Avatar(avatarData);
         avatar.setLevel(level);
         avatar.setPromoteLevel(promoteLevel);
-
-        // Add constellations.
-        int talentBase = switch (avatar.getAvatarId()) {
-            case 10000005 -> 70;
-            case 10000006 -> 40;
-            default -> (avatar.getAvatarId() - 10000000) * 10;
-        };
-
-        for (int i = 1; i <= constellation; i++) {
-            avatar.getTalentIdList().add(talentBase + i);
-        }
-
-        // Main character needs skill depot manually added.
-        if (avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_MALE) {
-            avatar.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(504));
-        }
-        else if (avatar.getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
-            avatar.setSkillDepotData(GameData.getAvatarSkillDepotDataMap().get(704));
-        }
-
+        avatar.forceConstellationLevel(constellation);
         avatar.recalcStats();
-
         return avatar;
     }
 

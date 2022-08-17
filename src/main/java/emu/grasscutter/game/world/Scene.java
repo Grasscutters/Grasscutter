@@ -5,6 +5,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.binout.SceneNpcBornEntry;
 import emu.grasscutter.data.excels.*;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
@@ -270,22 +271,19 @@ public class Scene {
     }
 
     public void spawnPlayer(Player player) {
-        if (this.isInScene(player.getTeamManager().getCurrentAvatarEntity())) {
+        var teamManager = player.getTeamManager();
+        if (this.isInScene(teamManager.getCurrentAvatarEntity())) {
             return;
         }
 
-        if (player.getTeamManager().getCurrentAvatarEntity().getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
-            player.getTeamManager().getCurrentAvatarEntity().setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 1f);
+        if (teamManager.getCurrentAvatarEntity().getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
+            teamManager.getCurrentAvatarEntity().setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 1f);
         }
 
-        this.addEntity(player.getTeamManager().getCurrentAvatarEntity());
+        this.addEntity(teamManager.getCurrentAvatarEntity());
 
         // Notify the client of any extra skill charges
-        for (EntityAvatar entity : player.getTeamManager().getActiveTeam()) {
-            if (entity.getAvatar().getSkillExtraChargeMap().size() > 0) {
-                player.sendPacket(new PacketAvatarSkillInfoNotify(entity.getAvatar()));
-            }
-        }
+        teamManager.getActiveTeam().stream().map(EntityAvatar::getAvatar).forEach(Avatar::sendSkillExtraChargeMap);
     }
 
     private void addEntityDirectly(GameEntity entity) {
