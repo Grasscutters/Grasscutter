@@ -1,6 +1,7 @@
 package emu.grasscutter.data.excels;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
@@ -70,5 +71,10 @@ public class AvatarSkillDepotData extends GameResource {
     public static class InherentProudSkillOpens {
         @Getter private int proudSkillGroupId;
         @Getter private int needAvatarPromoteLevel;
+    }
+
+    public IntStream getSkillsAndEnergySkill() {
+        return IntStream.concat(this.skills.stream().mapToInt(i -> i), IntStream.of(this.energySkill))
+                        .filter(skillId -> skillId > 0);
     }
 }

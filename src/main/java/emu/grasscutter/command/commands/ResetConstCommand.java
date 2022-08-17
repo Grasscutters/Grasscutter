@@ -37,9 +37,6 @@ public final class ResetConstCommand implements CommandHandler {
     }
 
     private void resetConstellation(Avatar avatar) {
-        avatar.getTalentIdList().clear();
-        avatar.setCoreProudSkillLevel(0);
-        avatar.recalcStats();
-        avatar.save();
+        avatar.forceConstellationLevel(-1);
     }
 }

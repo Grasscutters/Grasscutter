@@ -13,8 +13,10 @@ public class HandlerAvatarSkillUpgradeReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         AvatarSkillUpgradeReq req = AvatarSkillUpgradeReq.parseFrom(payload);
 
+        // Sanity checks
+        var avatar = session.getPlayer().getAvatars().getAvatarByGuid(req.getAvatarGuid());
+        if (avatar == null) return;
         // Level up avatar talent
-        session.getServer().getInventorySystem().upgradeAvatarSkill(session.getPlayer(), req.getAvatarGuid(), req.getAvatarSkillId());
+        avatar.upgradeSkill(req.getAvatarSkillId());
     }
-
 }

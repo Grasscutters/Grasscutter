@@ -338,11 +338,7 @@ public class TeamManager extends BasePlayerDataManager {
         this.getPlayer().getWorld().broadcastPacket(new PacketSceneTeamUpdateNotify(this.getPlayer()));
 
         // Skill charges packet - Yes, this is official server behavior as of 2.6.0
-        for (EntityAvatar entity : this.getActiveTeam()) {
-            if (entity.getAvatar().getSkillExtraChargeMap().size() > 0) {
-                this.getPlayer().sendPacket(new PacketAvatarSkillInfoNotify(entity.getAvatar()));
-            }
-        }
+        this.getActiveTeam().stream().map(EntityAvatar::getAvatar).forEach(Avatar::sendSkillExtraChargeMap);
 
         // Run callback
         if (responsePacket != null) {

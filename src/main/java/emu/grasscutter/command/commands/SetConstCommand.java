@@ -15,7 +15,6 @@ import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 
 import java.util.List;
-import java.util.Set;
 
 @Command(
     label = "setConst",
@@ -33,7 +32,7 @@ public final class SetConstCommand implements CommandHandler {
 
         try {
             int constLevel = Integer.parseInt(args.get(0));
-            if (constLevel < 0 || constLevel > 6) {
+            if (constLevel < -1 || constLevel > 6) {
                 CommandHandler.sendTranslatedMessage(sender, "commands.setConst.range_error");
                 return;
             }
@@ -52,19 +51,7 @@ public final class SetConstCommand implements CommandHandler {
 
     private void setConstellation(Player player, Avatar avatar, int constLevel) {
         int currentConstLevel = avatar.getCoreProudSkillLevel();
-        IntArrayList talentIds = new IntArrayList(avatar.getSkillDepot().getTalents());
-        Set<Integer> talentIdList = avatar.getTalentIdList();
-
-        talentIdList.clear();
-        avatar.setCoreProudSkillLevel(0);
-
-        for(int talent = 0; talent < constLevel; talent++) {
-            AvatarTalentData talentData = GameData.getAvatarTalentDataMap().get(talentIds.getInt(talent));
-            int mainCostItemId = talentData.getMainCostItemId();
-
-            player.getInventory().addItem(mainCostItemId);
-            Grasscutter.getGameServer().getInventorySystem().unlockAvatarConstellation(player, avatar.getGuid());
-        }
+        avatar.forceConstellationLevel(constLevel);
 
         // force player to reload scene when necessary
         if (constLevel < currentConstLevel) {

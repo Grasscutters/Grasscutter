@@ -7,14 +7,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.binout.OpenConfigEntry;
-import emu.grasscutter.data.binout.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.common.ItemUseData;
 import emu.grasscutter.data.excels.AvatarPromoteData;
 import emu.grasscutter.data.excels.AvatarSkillData;
 import emu.grasscutter.data.excels.AvatarSkillDepotData;
-import emu.grasscutter.data.excels.AvatarTalentData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.ProudSkillData;
 import emu.grasscutter.data.excels.WeaponPromoteData;
@@ -649,120 +646,22 @@ public class InventorySystem extends BaseGameSystem {
         player.sendPacket(new PacketAvatarFetterDataNotify(avatar));
     }
 
+    @Deprecated(forRemoval = true)
     public void upgradeAvatarSkill(Player player, long guid, int skillId) {
         // Sanity checks
         Avatar avatar = player.getAvatars().getAvatarByGuid(guid);
-        if (avatar == null) {
-            return;
-        }
+        if (avatar == null) return;
 
-        // Make sure avatar has skill
-        if (!avatar.getSkillLevelMap().containsKey(skillId)) {
-            return;
-        }
-
-        AvatarSkillData skillData = GameData.getAvatarSkillDataMap().get(skillId);
-        if (skillData == null) {
-            return;
-        }
-
-        // Get data for next skill level
-        int currentLevel = avatar.getSkillLevelMap().get(skillId);
-        int nextLevel = currentLevel + 1;
-        int proudSkillId = (skillData.getProudSkillGroupId() * 100) + nextLevel;
-
-        // Capped at level 10 talent
-        if (nextLevel > 10) {
-            return;
-        }
-
-        // Proud skill data
-        ProudSkillData proudSkill = GameData.getProudSkillDataMap().get(proudSkillId);
-        if (proudSkill == null) {
-            return;
-        }
-
-        // Make sure break level is correct
-        if (avatar.getPromoteLevel() < proudSkill.getBreakLevel()) {
-            return;
-        }
-
-        // Pay materials and mora if possible
-        List<ItemParamData> costs = new ArrayList<ItemParamData>(proudSkill.getCostItems());  // Can this be null?
-        if (proudSkill.getCoinCost() > 0) {
-            costs.add(new ItemParamData(202, proudSkill.getCoinCost()));
-        }
-        if (!player.getInventory().payItems(costs)) {
-            return;
-        }
-
-        // Upgrade skill
-        avatar.getSkillLevelMap().put(skillId, nextLevel);
-        avatar.save();
-
-        // Packet
-        player.sendPacket(new PacketAvatarSkillChangeNotify(avatar, skillId, currentLevel, nextLevel));
-        player.sendPacket(new PacketAvatarSkillUpgradeRsp(avatar, skillId, currentLevel, nextLevel));
+        avatar.upgradeSkill(skillId);
     }
 
+    @Deprecated(forRemoval = true)
     public void unlockAvatarConstellation(Player player, long guid) {
-        // Sanity checks
+        // Sanity check
         Avatar avatar = player.getAvatars().getAvatarByGuid(guid);
-        if (avatar == null) {
-            return;
-        }
+        if (avatar == null) return;
 
-        // Get talent
-        int currentTalentLevel = avatar.getCoreProudSkillLevel();
-        int nextTalentId = ((avatar.getAvatarId() % 10000000) * 10) + currentTalentLevel + 1;
-
-        if (avatar.getAvatarId() == 10000006) {
-            // Lisa is special in that her talentId starts with 4 instead of 6.
-            nextTalentId = 40 + currentTalentLevel + 1;
-        }
-
-        AvatarTalentData talentData = GameData.getAvatarTalentDataMap().get(nextTalentId);
-
-        if (talentData == null) {
-            return;
-        }
-
-        // Pay constellation item if possible
-        if (!player.getInventory().payItem(talentData.getMainCostItemId(), 1)) {
-            return;
-        }
-
-        // Apply + recalc
-        avatar.getTalentIdList().add(talentData.getId());
-        avatar.setCoreProudSkillLevel(currentTalentLevel + 1);
-
-        // Packet
-        player.sendPacket(new PacketAvatarUnlockTalentNotify(avatar, nextTalentId));
-        player.sendPacket(new PacketUnlockAvatarTalentRsp(avatar, nextTalentId));
-
-        // Proud skill bonus map (Extra skills)
-        OpenConfigEntry entry = GameData.getOpenConfigEntries().get(talentData.getOpenConfig());
-        if (entry != null) {
-            if (entry.getExtraTalentIndex() > 0) {
-                // Check if new constellation adds +3 to a skill level
-                avatar.recalcConstellations();
-                // Packet
-                player.sendPacket(new PacketProudSkillExtraLevelNotify(avatar, entry.getExtraTalentIndex()));
-            } else if (entry.getSkillPointModifiers() != null) {
-                // Check if new constellation adds skill charges
-                avatar.recalcConstellations();
-                // Packet
-                for (SkillPointModifier mod : entry.getSkillPointModifiers()) {
-                    player.sendPacket(
-                        new PacketAvatarSkillMaxChargeCountNotify(avatar, mod.getSkillId(), avatar.getSkillExtraChargeMap().getOrDefault(mod.getSkillId(), 0))
-                    );
-                }
-            }
-        }
-
-        // Recalc + save avatar
-        avatar.recalcStats(true);
-        avatar.save();
+        avatar.unlockConstellation();
     }
 
     public void destroyMaterial(Player player, List<MaterialInfo> list) {

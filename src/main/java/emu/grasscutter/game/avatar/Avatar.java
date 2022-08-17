@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.stream.Stream;
 import java.util.Set;
 
@@ -19,6 +19,7 @@ import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.PostLoad;
 import dev.morphia.annotations.PrePersist;
 import dev.morphia.annotations.Transient;
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.OpenConfigEntry;
 import emu.grasscutter.data.binout.OpenConfigEntry.SkillPointModifier;
@@ -56,14 +57,14 @@ import emu.grasscutter.net.proto.FetterDataOuterClass.FetterData;
 import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo;
 import emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip;
-import emu.grasscutter.server.packet.send.PacketAbilityChangeNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarEquipChangeNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarFightPropNotify;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
+import it.unimi.dsi.fastutil.ints.IntSet;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -93,12 +94,11 @@ public class Avatar {
 
     private List<Integer> fetters;
 
-    @Getter private Map<Integer, Integer> skillLevelMap; // Talent levels
+    private Map<Integer, Integer> skillLevelMap; // Talent levels
     private Map<Integer, Integer> skillExtraChargeMap; // Charges
     @Getter private Map<Integer, Integer> proudSkillBonusMap; // Talent bonus levels (from const)
     @Getter private int skillDepotId;
-    @Getter @Setter private int coreProudSkillLevel; // Constellation level
-    @Getter private Set<Integer> talentIdList; // Constellation id list
+    private Set<Integer> talentIdList; // Constellation id list
     @Getter private Set<Integer> proudSkillList; // Character passives
 
     @Getter @Setter private int flyCloak;
@@ -147,7 +147,14 @@ public class Avatar {
             .forEach(id -> this.setFightProperty(id, 0f));
 
         // Skill depot
-        this.setSkillDepotData(data.getSkillDepot());
+        this.setSkillDepotData(switch (this.avatarId) {
+            case GameConstants.MAIN_CHARACTER_MALE ->
+                GameData.getAvatarSkillDepotDataMap().get(504);  // Hack to start with anemo skills
+            case GameConstants.MAIN_CHARACTER_FEMALE ->
+                GameData.getAvatarSkillDepotDataMap().get(704);
+            default ->
+                data.getSkillDepot();
+        });
 
         // Set stats
         this.recalcStats();
@@ -219,32 +226,21 @@ public class Avatar {
         // Set id and depot
         this.skillDepotId = skillDepot.getId();
         this.skillDepot = skillDepot;
-        // Clear, then add skills
-        getSkillLevelMap().clear();
-        if (skillDepot.getEnergySkill() > 0) {
-            getSkillLevelMap().put(skillDepot.getEnergySkill(), 1);
-        }
-        for (int skillId : skillDepot.getSkills()) {
-            if (skillId > 0) {
-                getSkillLevelMap().put(skillId, 1);
-            }
-        }
+        // Add any missing skills
+        this.skillDepot.getSkillsAndEnergySkill()
+            .forEach(skillId -> this.skillLevelMap.putIfAbsent(skillId, 1));
         // Add proud skills
-        this.getProudSkillList().clear();
-        for (InherentProudSkillOpens openData : skillDepot.getInherentProudSkillOpens()) {
-            if (openData.getProudSkillGroupId() == 0) {
-                continue;
-            }
-            if (openData.getNeedAvatarPromoteLevel() <= this.getPromoteLevel()) {
-                int proudSkillId = (openData.getProudSkillGroupId() * 100) + 1;
-                if (GameData.getProudSkillDataMap().containsKey(proudSkillId)) {
-                    this.getProudSkillList().add(proudSkillId);
-                }
-            }
-        }
+        this.proudSkillList.clear();
+        skillDepot.getInherentProudSkillOpens().stream()
+            .filter(openData -> openData.getProudSkillGroupId() > 0)
+            .filter(openData -> openData.getNeedAvatarPromoteLevel() <= this.getPromoteLevel())
+            .mapToInt(openData -> (openData.getProudSkillGroupId() * 100) + 1)
+            .filter(proudSkillId -> GameData.getProudSkillDataMap().containsKey(proudSkillId))
+            .forEach(proudSkillId -> this.proudSkillList.add(proudSkillId));
+        this.recalcStats();
     }
 
-    public Map<Integer, Integer> getSkillExtraChargeMap() {
+    private Map<Integer, Integer> getSkillExtraChargeMap() {
         if (skillExtraChargeMap == null) {
             skillExtraChargeMap = new HashMap<>();
         }
@@ -266,16 +262,12 @@ public class Avatar {
     }
 
     public void setCurrentEnergy(float currentEnergy) {
-        if (this.getSkillDepot() != null && this.getSkillDepot().getEnergySkillData() != null) {
-            ElementType element = this.getSkillDepot().getElementType();
-            this.setFightProperty(element.getMaxEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
-
-            if (GAME_OPTIONS.energyUsage) {
-                this.setFightProperty(element.getCurEnergyProp(), currentEnergy);
-            }
-            else {
-                this.setFightProperty(element.getCurEnergyProp(), this.getSkillDepot().getEnergySkillData().getCostElemVal());
-            }
+        var depot = this.skillDepot;
+        if (depot != null && depot.getEnergySkillData() != null) {
+            ElementType element = depot.getElementType();
+            var maxEnergy = depot.getEnergySkillData().getCostElemVal();
+            this.setFightProperty(element.getMaxEnergyProp(), maxEnergy);
+            this.setFightProperty(element.getCurEnergyProp(), GAME_OPTIONS.energyUsage ? currentEnergy : maxEnergy);
         }
     }
 
@@ -305,6 +297,26 @@ public class Avatar {
 
     public float getFightProperty(FightProperty prop) {
         return getFightProperties().getOrDefault(prop.getId(), 0f);
+    }
+
+    public Map<Integer, Integer> getSkillLevelMap() {  // Returns a copy of the skill levels for the current skillDepot.
+        var map = new Int2IntOpenHashMap();
+        this.skillDepot.getSkillsAndEnergySkill()
+            .forEach(skillId -> map.computeIfAbsent(skillId, this.skillLevelMap::get));
+        return map;
+    }
+
+    public IntSet getTalentIdList() {  // Returns a copy of the unlocked constellations for the current skillDepot.
+        var talents = new IntOpenHashSet(this.getSkillDepot().getTalents());
+        talents.removeIf(id -> !this.talentIdList.contains(id));
+        return talents;
+    }
+
+    public int getCoreProudSkillLevel() {
+        var lockedTalents = new IntOpenHashSet(this.getSkillDepot().getTalents());
+        lockedTalents.removeAll(this.getTalentIdList());
+        // One below the lowest locked talent, or 6 if there are no locked talents.
+        return lockedTalents.intStream().map(i -> i % 10).min().orElse(7) - 1;
     }
 
     public boolean equipItem(GameItem item, boolean shouldRecalc) {
@@ -549,17 +561,13 @@ public class Avatar {
         }
 
         // Constellations
-        if (this.getTalentIdList().size() > 0) {
-            for (int talentId : this.getTalentIdList()) {
-                AvatarTalentData avatarTalentData = GameData.getAvatarTalentDataMap().get(talentId);
-                if (avatarTalentData == null) {
-                    return;
-                }
-
-                // Add any skill strings from this constellation
-                this.addToExtraAbilityEmbryos(avatarTalentData.getOpenConfig(), false);
-            }
-        }
+        this.getTalentIdList().intStream()
+            .mapToObj(GameData.getAvatarTalentDataMap()::get)
+            .filter(Objects::nonNull)
+            .map(AvatarTalentData::getOpenConfig)
+            .filter(Objects::nonNull)
+            .forEach(openConfig -> this.addToExtraAbilityEmbryos(openConfig, false));
+            // Add any skill strings from this constellation
 
         // Set % stats
         this.setFightProperty(
@@ -614,71 +622,179 @@ public class Avatar {
         }
     }
 
+    public void calcConstellation(OpenConfigEntry entry, boolean notifyClient) {
+        if (entry == null) return;
+
+        // Check if new constellation adds +3 to a skill level
+        if (this.calcConstellationExtraLevels(entry) && notifyClient) {
+            // Packet
+            this.getPlayer().sendPacket(new PacketProudSkillExtraLevelNotify(this, entry.getExtraTalentIndex()));
+        }
+        // Check if new constellation adds skill charges
+        if (this.calcConstellationExtraCharges(entry) && notifyClient) {
+            // Packet
+            Stream.of(entry.getSkillPointModifiers())
+                .mapToInt(SkillPointModifier::getSkillId)
+                .forEach(skillId -> {
+                    this.getPlayer().sendPacket(
+                        new PacketAvatarSkillMaxChargeCountNotify(this, skillId, this.getSkillExtraChargeMap().getOrDefault(skillId, 0))
+                    );
+                });
+        }
+    }
+
     public void recalcConstellations() {
         // Clear first
         this.getProudSkillBonusMap().clear();
         this.getSkillExtraChargeMap().clear();
 
         // Sanity checks
-        if (getData() == null || this.skillDepot == null) {
+        if (this.data == null || this.skillDepot == null) {
             return;
         }
 
-        if (this.getTalentIdList().size() > 0) {
-            for (int talentId : this.getTalentIdList()) {
-                AvatarTalentData avatarTalentData = GameData.getAvatarTalentDataMap().get(talentId);
+        this.getTalentIdList().intStream()
+            .mapToObj(GameData.getAvatarTalentDataMap()::get)
+            .filter(Objects::nonNull)
+            .map(AvatarTalentData::getOpenConfig)
+            .filter(Objects::nonNull)
+            .filter(openConfig -> openConfig.length() > 0)
+            .map(GameData.getOpenConfigEntries()::get)
+            .filter(Objects::nonNull)
+            .forEach(e -> this.calcConstellation(e, false));
+    }
 
-                if (avatarTalentData == null || avatarTalentData.getOpenConfig() == null || avatarTalentData.getOpenConfig().length() == 0) {
-                    continue;
-                }
+    private boolean calcConstellationExtraCharges(OpenConfigEntry entry) {
+        var skillPointModifiers = entry.getSkillPointModifiers();
+        if (skillPointModifiers == null) return false;
 
-                // Get open config to find which skill should be boosted
-                OpenConfigEntry entry = GameData.getOpenConfigEntries().get(avatarTalentData.getOpenConfig());
-                if (entry == null) {
-                    continue;
-                }
+        for (var mod : skillPointModifiers) {
+            AvatarSkillData skillData = GameData.getAvatarSkillDataMap().get(mod.getSkillId());
 
-                // Check if we can add charges to a skill
-                if (entry.getSkillPointModifiers() != null) {
-                    for (SkillPointModifier mod : entry.getSkillPointModifiers()) {
-                        AvatarSkillData skillData = GameData.getAvatarSkillDataMap().get(mod.getSkillId());
+            if (skillData == null) continue;
 
-                        if (skillData == null) continue;
+            int charges = skillData.getMaxChargeNum() + mod.getDelta();
 
-                        int charges = skillData.getMaxChargeNum() + mod.getDelta();
-
-                        this.getSkillExtraChargeMap().put(mod.getSkillId(), charges);
-                    }
-                    continue;
-                }
-
-                // Check if a skill can be boosted by +3 levels
-                int skillId = 0;
-
-                if (entry.getExtraTalentIndex() == 2 && this.skillDepot.getSkills().size() >= 2) {
-                    // E skill
-                    skillId = this.skillDepot.getSkills().get(1);
-                } else if (entry.getExtraTalentIndex() == 9) {
-                    // Ult skill
-                    skillId = this.skillDepot.getEnergySkill();
-                }
-
-                // Sanity check
-                if (skillId == 0) {
-                    continue;
-                }
-
-                // Get proud skill group id
-                AvatarSkillData skillData = GameData.getAvatarSkillDataMap().get(skillId);
-
-                if (skillData == null) {
-                    continue;
-                }
-
-                // Add to bonus list
-                this.getProudSkillBonusMap().put(skillData.getProudSkillGroupId(), 3);
-            }
+            this.getSkillExtraChargeMap().put(mod.getSkillId(), charges);
         }
+        return true;
+    }
+
+    private boolean calcConstellationExtraLevels(OpenConfigEntry entry) {
+        int skillId = switch(entry.getExtraTalentIndex()) {
+            case 9 -> this.skillDepot.getEnergySkill();  // Ult skill
+            case 2 -> (this.skillDepot.getSkills().size() >= 2) ? this.skillDepot.getSkills().get(1) : 0;  // E skill
+            default -> 0;
+        };
+        // Sanity check
+        if (skillId == 0) {
+            return false;
+        }
+
+        // Get proud skill group id
+        AvatarSkillData skillData = GameData.getAvatarSkillDataMap().get(skillId);
+
+        if (skillData == null) {
+            return false;
+        }
+
+        // Add to bonus list
+        this.getProudSkillBonusMap().put(skillData.getProudSkillGroupId(), 3);
+        return true;
+    }
+
+    public boolean upgradeSkill(int skillId) {
+        AvatarSkillData skillData = GameData.getAvatarSkillDataMap().get(skillId);
+        if (skillData == null) return false;
+
+        // Get data for next skill level
+        int newLevel = this.skillLevelMap.getOrDefault(skillId, 0) + 1;
+        if (newLevel > 10) return false;
+
+        // Proud skill data
+        int proudSkillId = (skillData.getProudSkillGroupId() * 100) + newLevel;
+        ProudSkillData proudSkill = GameData.getProudSkillDataMap().get(proudSkillId);
+        if (proudSkill == null) return false;
+
+        // Make sure break level is correct
+        if (this.getPromoteLevel() < proudSkill.getBreakLevel()) return false;
+
+        // Pay materials and mora if possible
+        if (!this.getPlayer().getInventory().payItems(proudSkill.getTotalCostItems())) return false;
+
+        // Upgrade skill
+        this.setSkillLevel(skillId, newLevel);
+        return true;
+    }
+
+    public boolean setSkillLevel(int skillId, int level) {
+        if (level < 0 || level > 15) return false;
+        int oldLevel = this.skillLevelMap.getOrDefault(skillId, 0);  // just taking the return value of put would have null concerns
+        this.skillLevelMap.put(skillId, level);
+        this.save();
+
+        // Packet
+        this.getPlayer().sendPacket(new PacketAvatarSkillChangeNotify(this, skillId, oldLevel, level));
+        this.getPlayer().sendPacket(new PacketAvatarSkillUpgradeRsp(this, skillId, oldLevel, level));
+        return true;
+    }
+
+    public boolean unlockConstellation() {
+        return this.unlockConstellation(false);
+    }
+    public boolean unlockConstellation(boolean skipPayment) {
+        int currentTalentLevel = this.getCoreProudSkillLevel();
+        int talentId = this.skillDepot.getTalents().get(currentTalentLevel);
+        return this.unlockConstellation(talentId, skipPayment);
+    }
+    public boolean unlockConstellation(int talentId) {
+        return unlockConstellation(talentId, false);
+    }
+    public boolean unlockConstellation(int talentId, boolean skipPayment) {
+        // Get talent
+        AvatarTalentData talentData = GameData.getAvatarTalentDataMap().get(talentId);
+        if (talentData == null) return false;
+
+        // Pay constellation item if possible
+        if (!skipPayment && !this.getPlayer().getInventory().payItem(talentData.getMainCostItemId(), 1)) {
+            return false;
+        }
+
+        // Apply + recalc
+        this.talentIdList.add(talentData.getId());
+
+        // Packet
+        this.getPlayer().sendPacket(new PacketAvatarUnlockTalentNotify(this, talentId));
+        this.getPlayer().sendPacket(new PacketUnlockAvatarTalentRsp(this, talentId));
+
+        // Proud skill bonus map (Extra skills)
+        this.calcConstellation(GameData.getOpenConfigEntries().get(talentData.getOpenConfig()), true);
+
+        // Recalc + save avatar
+        this.recalcStats(true);
+        this.save();
+        return true;
+    }
+
+    public void forceConstellationLevel(int level) {
+        if (level > 6) return;  // Sanity check
+
+        if (level < 0) {  // Special case for resetConst to remove inactive depots too
+            this.talentIdList.clear();
+            this.recalcStats();
+            return;
+        }
+        this.talentIdList.removeAll(this.getTalentIdList());  // Only remove constellations from active depot
+        for (int i = 0; i < level; i++)
+            this.unlockConstellation(true);
+        this.recalcStats();
+    }
+
+    public boolean sendSkillExtraChargeMap() {
+        var map = this.getSkillExtraChargeMap();
+        if (map.isEmpty()) return false;
+        this.getPlayer().sendPacket(new PacketAvatarSkillInfoNotify(this.guid, new Int2IntOpenHashMap(map)));
+        return true;
     }
 
     public EntityAvatar getAsEntity() {
@@ -709,14 +825,11 @@ public class Avatar {
         }
 
 
-        if (this.getFetterList() != null) {
-            for (int i = 0; i < this.getFetterList().size(); i++) {
-                avatarFetter.addFetterList(
-                    FetterData.newBuilder()
-                        .setFetterId(this.getFetterList().get(i))
-                        .setFetterState(FetterState.FINISH.getValue())
-                );
-            }
+        if (this.fetters != null) {
+            this.fetters.forEach(fetterId -> avatarFetter.addFetterList(
+                FetterData.newBuilder()
+                    .setFetterId(fetterId)
+                    .setFetterState(FetterState.FINISH.getValue())));
         }
 
         int cardId = this.getNameCardId();
@@ -742,13 +855,10 @@ public class Avatar {
                 .setWearingFlycloakId(this.getFlyCloak())
                 .setCostumeId(this.getCostume());
 
-        for (Entry<Integer, Integer> entry : this.getSkillExtraChargeMap().entrySet()) {
-            avatarInfo.putSkillMap(entry.getKey(), AvatarSkillInfo.newBuilder().setMaxChargeCount(entry.getValue()).build());
-        }
+        this.getSkillExtraChargeMap().forEach((skillId, count) ->
+            avatarInfo.putSkillMap(skillId, AvatarSkillInfo.newBuilder().setMaxChargeCount(count).build()));
 
-        for (GameItem item : this.getEquips().values()) {
-            avatarInfo.addEquipGuidList(item.getGuid());
-        }
+        this.getEquips().forEach((k, item) -> avatarInfo.addEquipGuidList(item.getGuid()));
 
         avatarInfo.putPropMap(PlayerProperty.PROP_LEVEL.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, this.getLevel()));
         avatarInfo.putPropMap(PlayerProperty.PROP_EXP.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_EXP, this.getExp()));
