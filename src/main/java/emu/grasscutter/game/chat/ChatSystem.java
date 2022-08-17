@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers.chat;
+package emu.grasscutter.game.chat;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.command.CommandMap;
@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ChatManager implements ChatManagerHandler {
+public class ChatSystem implements ChatSystemHandler {
     static final String PREFIXES = "[/!]";
     static final Pattern RE_PREFIXES = Pattern.compile(PREFIXES);
     static final Pattern RE_COMMANDS = Pattern.compile("\n" + PREFIXES);
@@ -31,7 +31,7 @@ public class ChatManager implements ChatManagerHandler {
 
     private final GameServer server;
 
-    public ChatManager(GameServer server) {
+    public ChatSystem(GameServer server) {
         this.server = server;
     }
 
@@ -50,15 +50,15 @@ public class ChatManager implements ChatManagerHandler {
     /********************
      * Chat history handling
      ********************/
-    private void putInHistory(int uid, int targetId, ChatInfo info) {
+    private void putInHistory(int uid, int partnerId, ChatInfo info) {
         if (!this.history.containsKey(uid)) {
             this.history.put(uid, new HashMap<>());
         }
-        if (!this.history.get(uid).containsKey(targetId)) {
-            this.history.get(uid).put(targetId, new ArrayList<>());
+        if (!this.history.get(uid).containsKey(partnerId)) {
+            this.history.get(uid).put(partnerId, new ArrayList<>());
         }
 
-        this.history.get(uid).get(targetId).add(info);
+        this.history.get(uid).get(partnerId).add(info);
     }
 
     public void clearHistoryOnLogout(Player player) {
@@ -67,9 +67,9 @@ public class ChatManager implements ChatManagerHandler {
         }
     }
 
-    public void handlePullPrivateChatReq(Player player, int targetUid) {
-        if (this.history.containsKey(player.getUid()) && this.history.get(player.getUid()).containsKey(targetUid)) {
-            player.sendPacket(new PacketPullPrivateChatRsp(this.history.get(player.getUid()).get(targetUid)));
+    public void handlePullPrivateChatReq(Player player, int partnerId) {
+        if (this.history.getOrDefault(player.getUid(), Map.of()).containsKey(partnerId)) {
+            player.sendPacket(new PacketPullPrivateChatRsp(this.history.get(player.getUid()).get(partnerId)));
         }
         else {
             player.sendPacket(new PacketPullPrivateChatRsp(List.of()));
@@ -77,17 +77,17 @@ public class ChatManager implements ChatManagerHandler {
     }
 
     public void handlePullRecentChatReq(Player player) {
+        // If this user has no chat history yet, create it by sending the server welcome messages.
+        if (!this.history.getOrDefault(player.getUid(), Map.of()).containsKey(GameConstants.SERVER_CONSOLE_UID)) {
+            this.sendServerWelcomeMessages(player);
+        }
+
         // For now, we send the list three messages from the server for the recent chat history.
         // This matches the previous behavior, but ultimately, we should probably keep track of the last chat partner
         // for every given player and return the last messages exchanged with that partner.
-        if (this.history.containsKey(player.getUid()) && this.history.get(player.getUid()).containsKey(GameConstants.SERVER_CONSOLE_UID)) {
-            int historyLength = this.history.get(player.getUid()).get(GameConstants.SERVER_CONSOLE_UID).size();
-            var messages = this.history.get(player.getUid()).get(GameConstants.SERVER_CONSOLE_UID).subList(Math.max(historyLength - 3, 0), historyLength);
-            player.sendPacket(new PacketPullRecentChatRsp(messages));
-        }
-        else {
-            player.sendPacket(new PacketPullRecentChatRsp(List.of()));
-        }
+        int historyLength = this.history.get(player.getUid()).get(GameConstants.SERVER_CONSOLE_UID).size();
+        var messages = this.history.get(player.getUid()).get(GameConstants.SERVER_CONSOLE_UID).subList(Math.max(historyLength - 3, 0), historyLength);
+        player.sendPacket(new PacketPullRecentChatRsp(messages));
     }
 
     /********************
@@ -199,7 +199,7 @@ public class ChatManager implements ChatManagerHandler {
     /********************
      * Welcome messages
      ********************/
-    public void sendServerWelcomeMessages(Player player) {
+    private void sendServerWelcomeMessages(Player player) {
         var joinOptions = GAME_INFO.joinOptions;
 
         if (joinOptions.welcomeEmotes != null && joinOptions.welcomeEmotes.length > 0) {
