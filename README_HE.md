@@ -3,7 +3,8 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-עברית | [PL](README_pl-PL.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [EN](README.md) | [ES](README_es-ES.md) | [RU](README_ru-RU.md)
+[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | HE | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md)
+
 **תשומת לב בבקשה:** אנחנו מקבלים עזרה בפיתוח התוכנה. לפני שאתם תורמים לפרויקט בבקשה תקראו את [תנאי השימוש](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
 ## אפשרויות זמינות כרגע
