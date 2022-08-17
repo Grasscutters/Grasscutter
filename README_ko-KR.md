@@ -20,7 +20,7 @@
 
 ## 설치 가이드
 
-**각주 :** 도움이 필요할 경우 [디스코드](https://discord.gg/T5vZU6UyeG)에 가입하세요.
+**각주 :** 도움이 필요할 경우 [Discord](https://discord.gg/T5vZU6UyeG)에 가입하세요.
 
 ### 설치에 필요한 것들
 
