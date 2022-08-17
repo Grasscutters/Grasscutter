@@ -293,6 +293,29 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         }
     }
 
+    private GameItem payVirtualItem(int itemId, int count) {
+        switch (itemId) {
+            case 201 ->  // Primogem
+                player.setPrimogems(player.getPrimogems() - count);
+            case 202 ->  // Mora
+                player.setMora(player.getMora() - count);
+            case 203 ->  // Genesis Crystals
+                player.setCrystals(player.getCrystals() - count);
+            case 106 ->  // Resin
+                player.getResinManager().useResin(count);
+            case 107 ->  // LegendaryKey
+                player.useLegendaryKey(count);
+            case 204 ->  // Home Coin
+                player.setHomeCoin(player.getHomeCoin() - count);
+            default -> {
+                var gameItem = getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId);
+                removeItem(gameItem, count);
+                return gameItem;
+            }
+        }
+        return null;
+    }
+
     private int getVirtualItemCount(int itemId) {
         switch (itemId) {
             case 201:  // Primogem
@@ -313,53 +336,57 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         }
     }
 
-    public boolean payItem(int id, int count) {
-        return payItem(new ItemParamData(id, count));
+    public synchronized boolean payItem(int id, int count) {
+        if (this.getVirtualItemCount(id) < count)
+            return false;
+        this.payVirtualItem(id, count);
+        return true;
     }
 
     public boolean payItem(ItemParamData costItem) {
-        return payItems(new ItemParamData[] {costItem}, 1, null);
+        return this.payItem(costItem.getId(), costItem.getCount());
     }
 
     public boolean payItems(ItemParamData[] costItems) {
-        return payItems(costItems, 1, null);
+        return this.payItems(costItems, 1, null);
     }
 
     public boolean payItems(ItemParamData[] costItems, int quantity) {
-        return payItems(costItems, quantity, null);
+        return this.payItems(costItems, quantity, null);
     }
 
     public synchronized boolean payItems(ItemParamData[] costItems, int quantity, ActionReason reason) {
         // Make sure player has requisite items
-        for (ItemParamData cost : costItems) {
-            if (getVirtualItemCount(cost.getId()) < (cost.getCount() * quantity)) {
+        for (ItemParamData cost : costItems)
+            if (this.getVirtualItemCount(cost.getId()) < (cost.getCount() * quantity))
                 return false;
-            }
-        }
         // All costs are satisfied, now remove them all
         for (ItemParamData cost : costItems) {
-            switch (cost.getId()) {
-                case 201 ->  // Primogem
-                    player.setPrimogems(player.getPrimogems() - (cost.getCount() * quantity));
-                case 202 ->  // Mora
-                    player.setMora(player.getMora() - (cost.getCount() * quantity));
-                case 203 ->  // Genesis Crystals
-                    player.setCrystals(player.getCrystals() - (cost.getCount() * quantity));
-                case 106 ->  // Resin
-                    player.getResinManager().useResin(cost.getCount() * quantity);
-                case 107 ->  // LegendaryKey
-                    player.useLegendaryKey(cost.getCount() * quantity);
-                case 204 ->  // Home Coin
-                        player.setHomeCoin(player.getHomeCoin() - (cost.getCount() * quantity));
-                default ->
-                    removeItem(getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(cost.getId()), cost.getCount() * quantity);
-            }
+            this.payVirtualItem(cost.getId(), cost.getCount() * quantity);
         }
 
         if (reason != null) {  // Do we need these?
             // getPlayer().sendPacket(new PacketItemAddHintNotify(changedItems, reason));
         }
         // getPlayer().sendPacket(new PacketStoreItemChangeNotify(changedItems));
+        return true;
+    }
+
+    public boolean payItems(Iterable<ItemParamData> costItems) {
+        return this.payItems(costItems, 1, null);
+    }
+
+    public boolean payItems(Iterable<ItemParamData> costItems, int quantity) {
+        return this.payItems(costItems, quantity, null);
+    }
+
+    public synchronized boolean payItems(Iterable<ItemParamData> costItems, int quantity, ActionReason reason) {
+        // Make sure player has requisite items
+        for (ItemParamData cost : costItems)
+            if (getVirtualItemCount(cost.getId()) < (cost.getCount() * quantity))
+                return false;
+        // All costs are satisfied, now remove them all
+        costItems.forEach(cost -> this.payVirtualItem(cost.getId(), cost.getCount() * quantity));
         return true;
     }
 

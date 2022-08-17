@@ -97,7 +97,7 @@ public class CookingManager extends BasePlayerManager {
         int proficiency = this.player.getUnlockedRecipies().getOrDefault(recipeId, 0);
 
         // Try consuming materials.
-        boolean success = player.getInventory().payItems(recipeData.getInputVec().toArray(new ItemParamData[0]), count, ActionReason.Cook);
+        boolean success = player.getInventory().payItems(recipeData.getInputVec(), count, ActionReason.Cook);
         if (!success) {
             this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
         }

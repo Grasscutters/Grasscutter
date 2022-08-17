@@ -122,7 +122,7 @@ public class InventorySystem extends BaseGameSystem {
 
         // Confirm payment of materials and mora (assume food relics are payable afterwards)
         payList.add(new ItemParamData(202, moraCost));
-        if (!player.getInventory().payItems(payList.toArray(new ItemParamData[0]))) {
+        if (!player.getInventory().payItems(payList)) {
             return;
         }
 
@@ -297,7 +297,7 @@ public class InventorySystem extends BaseGameSystem {
 
         // Confirm payment of materials and mora (assume food weapons are payable afterwards)
         payList.add(new ItemParamData(202, moraCost));
-        if (!player.getInventory().payItems(payList.toArray(new ItemParamData[0]))) {
+        if (!player.getInventory().payItems(payList)) {
             return;
         }
         player.getInventory().removeItems(foodWeapons);
@@ -692,7 +692,7 @@ public class InventorySystem extends BaseGameSystem {
         if (proudSkill.getCoinCost() > 0) {
             costs.add(new ItemParamData(202, proudSkill.getCoinCost()));
         }
-        if (!player.getInventory().payItems(costs.toArray(new ItemParamData[0]))) {
+        if (!player.getInventory().payItems(costs)) {
             return;
         }
 
