@@ -60,6 +60,8 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
 
+    implementation group: 'it.unimi.dsi', name: 'fastutil', version: '8.5.8'
+
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.36'
     implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.11'
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.11'
