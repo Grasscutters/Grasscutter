@@ -21,8 +21,8 @@ import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Language.TextStrings;
-import it.unimi.dsi.fastutil.ints.Int2IntMap;
-import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
+import it.unimi.dsi.fastutil.ints.Int2IntSortedMap;
+import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 import static emu.grasscutter.config.Configuration.*;
@@ -33,11 +33,11 @@ public final class Tools {
         final Int2ObjectMap<TextStrings> textMaps = Language.getTextMapStrings();
 
         ResourceLoader.loadAll();
-        final Int2IntMap avatarNames = new Int2IntOpenHashMap(GameData.getAvatarDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getNameTextMapHash())));
-        final Int2IntMap itemNames = new Int2IntOpenHashMap(GameData.getItemDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getNameTextMapHash())));
-        final Int2IntMap monsterNames = new Int2IntOpenHashMap(GameData.getMonsterDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getNameTextMapHash())));
-        final Int2IntMap mainQuestTitles = new Int2IntOpenHashMap(GameData.getMainQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getTitleTextMapHash())));
-        // Int2IntMap questDescs = new Int2IntOpenHashMap(GameData.getQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getDescTextMapHash())));
+        final Int2IntSortedMap avatarNames = new Int2IntRBTreeMap(GameData.getAvatarDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getNameTextMapHash())));
+        final Int2IntSortedMap itemNames = new Int2IntRBTreeMap(GameData.getItemDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getNameTextMapHash())));
+        final Int2IntSortedMap monsterNames = new Int2IntRBTreeMap(GameData.getMonsterDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getNameTextMapHash())));
+        final Int2IntSortedMap mainQuestTitles = new Int2IntRBTreeMap(GameData.getMainQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getTitleTextMapHash())));
+        // Int2IntSortedMap questDescs = new Int2IntRBTreeMap(GameData.getQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getDescTextMapHash())));
 
         // Preamble
         final List<StringBuilder> handbookBuilders = new ArrayList<>(TextStrings.NUM_LANGUAGES);
@@ -60,15 +60,15 @@ public final class Tools {
         }
         // Avatars, Items, Monsters
         final String[] handbookSections = {"Avatars", "Items", "Monsters"};
-        final Int2IntMap[] handbookNames = {avatarNames, itemNames, monsterNames};
+        final Int2IntSortedMap[] handbookNames = {avatarNames, itemNames, monsterNames};
         for (int section = 0; section < handbookSections.length; section++) {
-            final Int2IntMap h = handbookNames[section];
+            final var h = handbookNames[section];
             final String s = "\n\n// " + handbookSections[section] + "\n";
             handbookBuilders.forEach(b -> b.append(s));
-            final String padId = "%" + Integer.toString(h.keySet().intStream().max().getAsInt()).length() + "s : ";
-            h.keySet().intStream().sorted().forEach(id -> {
+            final String padId = "%" + Integer.toString(h.keySet().lastInt()).length() + "s : ";
+            h.forEach((id, hash) -> {
                 final String sId = padId.formatted(id);
-                final TextStrings t = textMaps.get(h.get(id));
+                final TextStrings t = textMaps.get((int) hash);
                 for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++)
                     handbookBuilders.get(i).append(sId + t.strings[i] + "\n");
             });
