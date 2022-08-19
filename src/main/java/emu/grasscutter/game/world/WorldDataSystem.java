@@ -42,7 +42,7 @@ public class WorldDataSystem extends BaseGameSystem {
             DataLoader.loadList("ChestReward.json", ChestReward.class)
                 .forEach(reward ->
                     reward.getObjNames().forEach(name ->
-                        chestInteractHandlerMap.putIfAbsent(name, new NormalChestInteractHandler(reward))));
+                        chestInteractHandlerMap.computeIfAbsent(name, x -> new NormalChestInteractHandler(reward))));
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load chest reward config.", e);
         }

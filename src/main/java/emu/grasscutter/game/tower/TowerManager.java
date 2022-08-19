@@ -106,8 +106,9 @@ public class TowerManager extends BasePlayerManager {
 
         if (!hasNextLevel()) {
             // set up the next floor
-            recordMap.putIfAbsent(getNextFloorId(), new TowerLevelRecord(getNextFloorId()));
-            player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(getNextFloorId(), 1));
+            var nextFloorId = this.getNextFloorId();
+            recordMap.computeIfAbsent(nextFloorId, TowerLevelRecord::new);
+            player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(nextFloorId, 1));
         }else {
             player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(currentFloorId, getCurrentLevel()));
         }
