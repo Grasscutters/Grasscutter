@@ -53,7 +53,7 @@ public final class TalentCommand implements CommandHandler {
                 try {
                     newLevel = Integer.parseInt(args.get(2));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendTranslatedMessage(sender, "commands.talent.invalid_skill_level");
+                    CommandHandler.sendTranslatedMessage(sender, "commands.talent.invalid_level");
                     return;
                 }
 
