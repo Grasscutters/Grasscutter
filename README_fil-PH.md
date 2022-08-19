@@ -69,7 +69,7 @@ EN | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.m
 
 2. Set mo ung proxy sa `127.0.0.1:8080` or dun sa proxy port na iyong inilagay.
 
-**pwede mo run gamitin ang `start.cmd` to start the servers and proxy daemons automatically, pero kailagan mong i-setup ang JAVA_HOME enviroment**
+**pwede mo rin gamitin ang `start.cmd` to start the servers and proxy daemons automatically, pero kailagan mong i-setup ang JAVA_HOME enviroment**
 
 ### Building
 
