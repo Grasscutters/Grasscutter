@@ -139,9 +139,9 @@
       "SceneObj_Chest_Bramble_Lv3",
       "SceneObj_Chest_Frozen_Lv3"
     ],
-    "advExp": 200,
+    "advExp": 30,
     "resin": 20,
-    "mora": 8888,
+    "mora": 1433,
     "sigil": 20,
     "content": [
       {
@@ -208,9 +208,9 @@
       "SceneObj_Chest_Bramble_Lv4",
       "SceneObj_Chest_Frozen_Lv4"
     ],
-    "advExp": 20000,
+    "advExp": 30,
     "resin": 2,
-    "mora": 88888,
+    "mora": 8888,
     "sigil": 2,
     "content": [
       {
@@ -277,7 +277,7 @@
       "SceneObj_Chest_Bramble_Lv5",
       "SceneObj_Chest_Frozen_Lv5"
     ],
-    "advExp": 20000,
+    "advExp": 60,
     "resin": 2,
     "mora": 88888,
     "sigil": 2,
@@ -343,21 +343,20 @@
     "objNames": [
       "SceneObj_Area_Common_Property_Ani_Prop_MoonlitBox_01"
     ],
-    "advExp": 20000,
     "resin": 2,
-    "mora": 88888,
+    "mora": 2500,
     "sigil": 2,
     "content": [
       {
-        "itemId": 104012,
+        "itemId": 201,
+        "count": 5
+      },
+      {
+        "itemId": 104013,
         "count": 3
       },
       {
-        "itemId": 223,
-        "count": 100
-      },
-      {
-        "itemId": 104002,
+        "itemId": 104003,
         "count": 1
       }
     ],
