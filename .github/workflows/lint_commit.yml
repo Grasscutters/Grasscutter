@@ -8,7 +8,7 @@ on:
     branches:
       - "development"
 jobs:
-  Build-Server-Jar:
+  Make-Lint-Commits:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,7 +31,7 @@ jobs:
       - run: git checkout LintRatchet
       # - run: git merge development
       - run: git reset --hard development
-      - run: git stash pop
+      - run: git stash pop || true
       - name: Commit any whitespace changes
         run: git add -u && git commit -m 'Fix whitespace [skip actions]' || true
       - name: Update Languages
