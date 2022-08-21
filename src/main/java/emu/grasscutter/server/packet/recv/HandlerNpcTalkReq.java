@@ -26,7 +26,7 @@ public class HandlerNpcTalkReq extends PacketHandler {
         int mainQuestId = talkId/100;
         MainQuestData mainQuestData = GameData.getMainQuestDataMap().get(mainQuestId);
 
-        if(mainQuestData != null) {
+        if (mainQuestData != null) {
             // This talk is associated with a quest. Handle it.
             // If the quest has no talk data defined on it, create one.
             TalkData talkForQuest = new TalkData(talkId, "");
@@ -37,13 +37,13 @@ public class HandlerNpcTalkReq extends PacketHandler {
                     talkForQuest = talks.get(0);
                 }
             }
-            
+
             // Add to the list of done talks for this quest.
             var mainQuest = session.getPlayer().getQuestManager().getMainQuestById(mainQuestId);
             if (mainQuest != null) {
                 session.getPlayer().getQuestManager().getMainQuestById(mainQuestId).getTalks().put(talkId, talkForQuest);
             }
-            
+
             // Fire quest triggers.
             session.getPlayer().getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_COMPLETE_ANY_TALK, String.valueOf(req.getTalkId()), 0, 0);
             session.getPlayer().getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_COMPLETE_TALK, req.getTalkId(), 0);

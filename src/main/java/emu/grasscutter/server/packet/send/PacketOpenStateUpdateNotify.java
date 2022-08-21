@@ -30,7 +30,7 @@ public class PacketOpenStateUpdateNotify extends BasePacket {
             if (player.getOpenStates().containsKey(id)) {
                 proto.putOpenStateMap(id, player.getProgressManager().getOpenState(id));
             }
-            // Otherwise, add the state if it is contained in the set of default open states. 
+            // Otherwise, add the state if it is contained in the set of default open states.
             else if (PlayerProgressManager.DEFAULT_OPEN_STATES.contains(id)) {
                 proto.putOpenStateMap(id, 1);
             }

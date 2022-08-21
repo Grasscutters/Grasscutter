@@ -24,15 +24,15 @@ import emu.grasscutter.utils.Position;
 @Opcodes(PacketOpcodes.CombatInvocationsNotify)
 public class HandlerCombatInvocationsNotify extends PacketHandler {
 
-	private float cachedLandingSpeed = 0;
-	private long cachedLandingTimeMillisecond = 0;
-	private boolean monitorLandingEvent = false;
+    private float cachedLandingSpeed = 0;
+    private long cachedLandingTimeMillisecond = 0;
+    private boolean monitorLandingEvent = false;
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		CombatInvocationsNotify notif = CombatInvocationsNotify.parseFrom(payload);
-		for (CombatInvokeEntry entry : notif.getInvokeListList()) {
-		    // Handle combat invoke
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        CombatInvocationsNotify notif = CombatInvocationsNotify.parseFrom(payload);
+        for (CombatInvokeEntry entry : notif.getInvokeListList()) {
+            // Handle combat invoke
             switch (entry.getArgumentType()) {
                 case COMBAT_TYPE_ARGUMENT_EVT_BEING_HIT -> {
                     EvtBeingHitInfo hitInfo = EvtBeingHitInfo.parseFrom(entry.getCombatData());
@@ -106,55 +106,55 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                 }
             }
 
-			session.getPlayer().getCombatInvokeHandler().addEntry(entry.getForwardType(), entry);
-		}
-	}
+            session.getPlayer().getCombatInvokeHandler().addEntry(entry.getForwardType(), entry);
+        }
+    }
 
-	private void handleFallOnGround(GameSession session, GameEntity entity, MotionState motionState) {
-		if (session.getPlayer().inGodmode()) {
-			return;
-		}
-		// People have reported that after plunge attack (client sends a FIGHT instead of FALL_ON_GROUND) they will die
-		// 		if they talk to an NPC (this is when the client sends a FALL_ON_GROUND) without jumping again.
-		// A dirty patch: if not received immediately after MOTION_LAND_SPEED, discard this packet.
-		// 200ms seems to be a reasonable delay.
-		int maxDelay = 200;
-		long actualDelay = System.currentTimeMillis() - cachedLandingTimeMillisecond;
-		Grasscutter.getLogger().trace("MOTION_FALL_ON_GROUND received after " + actualDelay + "/" + maxDelay + "ms." + (actualDelay > maxDelay ? " Discard" : ""));
-		if (actualDelay > maxDelay) {
-			return;
-		}
-		float currentHP = entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
-		float maxHP = entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-		float damageFactor = 0;
-		if (cachedLandingSpeed < -23.5) {
-			damageFactor = 0.33f;
-		}
-		if (cachedLandingSpeed < -25) {
-			damageFactor = 0.5f;
-		}
-		if (cachedLandingSpeed < -26.5) {
-			damageFactor = 0.66f;
-		}
-		if (cachedLandingSpeed < -28) {
-			damageFactor = 1f;
-		}
-		float damage = maxHP * damageFactor;
-		float newHP = currentHP - damage;
-		if (newHP < 0) {
-			newHP = 0;
-		}
-		if (damageFactor > 0) {
-			Grasscutter.getLogger().debug(currentHP + "/" + maxHP + "\tLandingSpeed: " + cachedLandingSpeed +
-					"\tDamageFactor: " + damageFactor + "\tDamage: " + damage + "\tNewHP: " + newHP);
-		} else {
-			Grasscutter.getLogger().trace(currentHP + "/" + maxHP + "\tLandingSpeed: 0\tNo damage");
-		}
-		entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
-		entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
-		if (newHP == 0) {
-			session.getPlayer().getStaminaManager().killAvatar(session, entity, PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_FALL);
-		}
-		cachedLandingSpeed = 0;
-	}
+    private void handleFallOnGround(GameSession session, GameEntity entity, MotionState motionState) {
+        if (session.getPlayer().inGodmode()) {
+            return;
+        }
+        // People have reported that after plunge attack (client sends a FIGHT instead of FALL_ON_GROUND) they will die
+        // 		if they talk to an NPC (this is when the client sends a FALL_ON_GROUND) without jumping again.
+        // A dirty patch: if not received immediately after MOTION_LAND_SPEED, discard this packet.
+        // 200ms seems to be a reasonable delay.
+        int maxDelay = 200;
+        long actualDelay = System.currentTimeMillis() - cachedLandingTimeMillisecond;
+        Grasscutter.getLogger().trace("MOTION_FALL_ON_GROUND received after " + actualDelay + "/" + maxDelay + "ms." + (actualDelay > maxDelay ? " Discard" : ""));
+        if (actualDelay > maxDelay) {
+            return;
+        }
+        float currentHP = entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+        float maxHP = entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+        float damageFactor = 0;
+        if (cachedLandingSpeed < -23.5) {
+            damageFactor = 0.33f;
+        }
+        if (cachedLandingSpeed < -25) {
+            damageFactor = 0.5f;
+        }
+        if (cachedLandingSpeed < -26.5) {
+            damageFactor = 0.66f;
+        }
+        if (cachedLandingSpeed < -28) {
+            damageFactor = 1f;
+        }
+        float damage = maxHP * damageFactor;
+        float newHP = currentHP - damage;
+        if (newHP < 0) {
+            newHP = 0;
+        }
+        if (damageFactor > 0) {
+            Grasscutter.getLogger().debug(currentHP + "/" + maxHP + "\tLandingSpeed: " + cachedLandingSpeed +
+                    "\tDamageFactor: " + damageFactor + "\tDamage: " + damage + "\tNewHP: " + newHP);
+        } else {
+            Grasscutter.getLogger().trace(currentHP + "/" + maxHP + "\tLandingSpeed: 0\tNo damage");
+        }
+        entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
+        entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
+        if (newHP == 0) {
+            session.getPlayer().getStaminaManager().killAvatar(session, entity, PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_FALL);
+        }
+        cachedLandingSpeed = 0;
+    }
 }

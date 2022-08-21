@@ -45,7 +45,7 @@ public final class StartupArguments {
         boolean exitEarly = false;
 
         // Parse the arguments.
-        for(var input : args) {
+        for (var input : args) {
             var containsParameter = input.contains("=");
 
             var argument = containsParameter ? input.split("=")[0] : input;

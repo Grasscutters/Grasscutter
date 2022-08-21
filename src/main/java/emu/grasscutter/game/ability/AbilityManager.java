@@ -56,7 +56,7 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         // Check if the caster matches the player.
-        if(player.getTeamManager().getCurrentAvatarEntity().getId() != casterId) {
+        if (player.getTeamManager().getCurrentAvatarEntity().getId() != casterId) {
             return;
         }
 
@@ -66,7 +66,7 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         // Check if the skill is an elemental burst.
-        if(skillData.getCostElemVal() <= 0) {
+        if (skillData.getCostElemVal() <= 0) {
             return;
         }
 
@@ -85,7 +85,7 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         // Check if the player is invulnerable.
-        if(!this.abilityInvulnerable) {
+        if (!this.abilityInvulnerable) {
             return;
         }
 

@@ -36,7 +36,7 @@ public class FurnitureManager extends BasePlayerManager {
 
     public synchronized boolean unlockFurnitureOrSuite(GameItem useItem) {
         ItemUseOp itemUseOp = useItem.getItemData().getItemUse().get(0).getUseOp();
-        
+
         // Check
         if (itemUseOp != ItemUseOp.ITEM_USE_UNLOCK_FURNITURE_SUITE && itemUseOp != ItemUseOp.ITEM_USE_UNLOCK_FURNITURE_FORMULA) {
             return false;

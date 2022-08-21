@@ -46,7 +46,7 @@ public class PlayerProgressManager extends BasePlayerDataManager {
         // that particular statue interactable.
         this.player.getUnlockedScenePoints(3).add(7);
         this.player.getUnlockedSceneAreas(3).add(1);
-        
+
     }
 
     /******************************************************************************************************************
@@ -199,9 +199,9 @@ public class PlayerProgressManager extends BasePlayerDataManager {
     public boolean unlockTransPoint(int sceneId, int pointId, boolean isStatue) {
         // Check whether the unlocked point exists and whether it is still locked.
         String key = sceneId + "_" + pointId;
-		ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(key);
+        ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(key);
 
-		if (scenePointEntry == null || this.player.getUnlockedScenePoints(sceneId).contains(pointId)) {
+        if (scenePointEntry == null || this.player.getUnlockedScenePoints(sceneId).contains(pointId)) {
             return false;
         }
 

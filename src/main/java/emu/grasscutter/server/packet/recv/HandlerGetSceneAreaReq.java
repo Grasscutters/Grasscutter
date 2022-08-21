@@ -9,12 +9,12 @@ import emu.grasscutter.server.packet.send.PacketGetSceneAreaRsp;
 
 @Opcodes(PacketOpcodes.GetSceneAreaReq)
 public class HandlerGetSceneAreaReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		GetSceneAreaReq req = GetSceneAreaReq.parseFrom(payload);
-		
-		session.send(new PacketGetSceneAreaRsp(session.getPlayer(), req.getSceneId()));
-	}
+
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        GetSceneAreaReq req = GetSceneAreaReq.parseFrom(payload);
+
+        session.send(new PacketGetSceneAreaRsp(session.getPlayer(), req.getSceneId()));
+    }
 
 }

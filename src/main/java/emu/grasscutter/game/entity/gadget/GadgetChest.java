@@ -35,10 +35,10 @@ public class GadgetChest extends GadgetContent {
             return false;
         }else {
             boolean success;
-            if(handler instanceof BossChestInteractHandler bossChestInteractHandler){
+            if (handler instanceof BossChestInteractHandler bossChestInteractHandler) {
                 success = bossChestInteractHandler.onInteract(this, player,
                     req.getResinCostType()== ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_CONDENSE);
-            }else{
+            }else {
                 success = handler.onInteract(this, player);
             }
             if (!success) {

@@ -70,7 +70,7 @@ public final class ServerHook {
      */
     public void registerCommand(CommandHandler handler) {
         Class<? extends CommandHandler> clazz = handler.getClass();
-        if(!clazz.isAnnotationPresent(Command.class))
+        if (!clazz.isAnnotationPresent(Command.class))
             throw new IllegalArgumentException("Command handler must be annotated with @Command.");
         Command commandData = clazz.getAnnotation(Command.class);
         CommandMap.getInstance().registerCommand(commandData.label(), handler);

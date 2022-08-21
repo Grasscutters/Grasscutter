@@ -85,7 +85,7 @@ public final class Language {
         String translated = Grasscutter.getLanguage().get(key);
 
         for (int i = 0; i < args.length; i++) {
-            args[i] = switch(args[i].getClass().getSimpleName()) {
+            args[i] = switch (args[i].getClass().getSimpleName()) {
                 case "String" -> args[i];
                 case "TextStrings" -> ((TextStrings) args[i]).get(0).replace("\\\\n", "\\n");  // TODO: Change this to server language
                 default -> args[i].toString();
@@ -116,7 +116,7 @@ public final class Language {
         String translated = getLanguage(langCode).get(key);
 
         for (int i = 0; i < args.length; i++) {
-            args[i] = switch(args[i].getClass().getSimpleName()) {
+            args[i] = switch (args[i].getClass().getSimpleName()) {
                 case "String" -> args[i];
                 case "TextStrings" -> ((TextStrings) args[i]).getGC(langCode).replace("\\\\n", "\n");  // Note that we don't unescape \n for server console
                 default -> args[i].toString();
@@ -347,7 +347,7 @@ public final class Language {
         Map<Integer, Int2ObjectMap<String>> mapLanguageMaps =  // Separate step to process the textmaps in parallel
             TextStrings.LIST_LANGUAGES.parallelStream().collect(
             Collectors.toConcurrentMap(s -> TextStrings.MAP_LANGUAGES.getInt(s), s -> loadTextMapFile(s, nameHashes)));
-        List<Int2ObjectMap<String>> languageMaps = 
+        List<Int2ObjectMap<String>> languageMaps =
             IntStream.range(0, TextStrings.NUM_LANGUAGES)
             .mapToObj(i -> mapLanguageMaps.get(i))
             .collect(Collectors.toList());

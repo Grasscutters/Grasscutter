@@ -14,8 +14,8 @@ import java.util.stream.Collectors;
 
 public class PacketPersonalLineAllDataRsp extends BasePacket {
 
-	public PacketPersonalLineAllDataRsp(Collection<GameMainQuest> gameMainQuestList) {
-		super(PacketOpcodes.PersonalLineAllDataRsp);
+    public PacketPersonalLineAllDataRsp(Collection<GameMainQuest> gameMainQuestList) {
+        super(PacketOpcodes.PersonalLineAllDataRsp);
 
         var proto = PersonalLineAllDataRspOuterClass.PersonalLineAllDataRsp.newBuilder();
 
@@ -31,5 +31,5 @@ public class PacketPersonalLineAllDataRsp extends BasePacket {
             .forEach(i -> proto.addCanBeUnlockedPersonalLineList(i.getId()));
 
         this.setData(proto);
-	}
+    }
 }
