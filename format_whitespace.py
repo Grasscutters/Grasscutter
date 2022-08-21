@@ -53,7 +53,7 @@ def format_file(filename: str) -> bool:
 
 
 def main():
-    filelist = [f for f in get_changed_filelist() if f.endswith('.java')]
+    filelist = [f for f in get_changed_filelist() if f.endswith('.java') and not f.startswith('src/generated')]
     replaced = 0
     not_found = 0
     if not filelist:
