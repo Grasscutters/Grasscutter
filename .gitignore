@@ -60,7 +60,7 @@ tmp/
 /keys
 /language
 /languages
-/src/generated
+/proto
 
 /*.jar
 /*.sh

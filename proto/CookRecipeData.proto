@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message CookRecipeData {
-	uint32 recipe_id = 9;
-	uint32 proficiency = 13;
-}

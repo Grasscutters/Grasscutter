@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-
-message MusicBeatmapNote {
-	uint32 start_time = 1;
-	uint32 end_time = 2;
-}
