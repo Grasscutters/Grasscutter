@@ -87,7 +87,7 @@ public final class AccountCommand implements CommandHandler {
                     account.addPermission("*");
                     account.save(); // Save account to database.
 
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.account.create", Integer.toString(account.getReservedPlayerUid())));
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.account.create", account.getReservedPlayerUid()));
                 }
                 return;
             case "delete":

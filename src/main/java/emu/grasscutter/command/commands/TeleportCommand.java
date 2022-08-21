@@ -60,8 +60,7 @@ public final class TeleportCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.exists_error"));
         } else {
             CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.success",
-                    targetPlayer.getNickname(), Float.toString(x), Float.toString(y),
-                    Float.toString(z), Integer.toString(sceneId))
+                    targetPlayer.getNickname(), x, y, z, sceneId)
             );
         }
 

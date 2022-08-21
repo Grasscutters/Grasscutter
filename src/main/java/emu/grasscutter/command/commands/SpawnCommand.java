@@ -116,7 +116,7 @@ public final class SpawnCommand implements CommandHandler {
 
             scene.addEntity(entity);
         }
-        CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.success", Integer.toString(amount), Integer.toString(id)));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.success", amount, id));
     }
 
     private Position GetRandomPositionInCircle(Position origin, double radius) {
