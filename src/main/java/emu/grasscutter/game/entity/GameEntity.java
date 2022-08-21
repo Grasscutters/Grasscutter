@@ -215,12 +215,15 @@ public abstract class GameEntity {
 
         // Invoke entity damage event.
         EntityDamageEvent event = new EntityDamageEvent(this, amount, this.getScene().getEntityById(killerId));
-        event.call(); if (event.isCanceled()) {
+        event.call(); 
+        if (event.isCanceled()) {
             return; // If the event is canceled, do not damage the entity.
         }
-
-        // Add negative HP to the current HP property.
-        this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -(event.getDamage()));
+        
+        if(getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) != Float.POSITIVE_INFINITY){
+          // Add negative HP to the current HP property.
+          this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -(event.getDamage()));
+        }
 
         // Check if dead
         boolean isDead = false;

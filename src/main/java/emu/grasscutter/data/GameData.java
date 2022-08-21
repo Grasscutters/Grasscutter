@@ -113,6 +113,7 @@ public class GameData {
     @Getter private static final Int2ObjectMap<TriggerExcelConfigData> triggerExcelConfigDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Map<String,ScriptSceneData> scriptSceneDataMap = new HashMap<>();
 	@Getter private static final Map<Integer, List<Integer>> scenePointsPerScene = new HashMap<>();
+    @Getter private static final Int2ObjectMap<BlossomRefreshExcelConfigData> blossomRefreshExcelConfigDataMap = new Int2ObjectOpenHashMap<>();
 
     @Getter private static final Int2ObjectMap<OpenStateData> openStateDataMap = new Int2ObjectOpenHashMap<>();
 
@@ -124,7 +125,7 @@ public class GameData {
 
 
 	@Getter private static final List<OpenStateData> openStateList = new ArrayList<>();
-	
+
 
 	public static Int2ObjectMap<?> getMapByResourceDef(Class<?> resourceDefinition) {
 		Int2ObjectMap<?> map = null;
