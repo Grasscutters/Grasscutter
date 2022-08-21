@@ -112,6 +112,8 @@ application {
 
 
 jar {
+    exclude '*.proto'
+
     manifest {
         attributes 'Main-Class': 'emu.grasscutter.Grasscutter'
     }
