@@ -624,6 +624,8 @@ public class Avatar {
 
     public void calcConstellation(OpenConfigEntry entry, boolean notifyClient) {
         if (entry == null) return;
+        if (this.getPlayer() == null)
+            notifyClient = false;
 
         // Check if new constellation adds +3 to a skill level
         if (this.calcConstellationExtraLevels(entry) && notifyClient) {
@@ -754,9 +756,10 @@ public class Avatar {
         // Get talent
         AvatarTalentData talentData = GameData.getAvatarTalentDataMap().get(talentId);
         if (talentData == null) return false;
+        var player = this.getPlayer();
 
         // Pay constellation item if possible
-        if (!skipPayment && !this.getPlayer().getInventory().payItem(talentData.getMainCostItemId(), 1)) {
+        if (!skipPayment && (player != null) && !player.getInventory().payItem(talentData.getMainCostItemId(), 1)) {
             return false;
         }
 
@@ -764,8 +767,10 @@ public class Avatar {
         this.talentIdList.add(talentData.getId());
 
         // Packet
-        this.getPlayer().sendPacket(new PacketAvatarUnlockTalentNotify(this, talentId));
-        this.getPlayer().sendPacket(new PacketUnlockAvatarTalentRsp(this, talentId));
+        if (player != null) {
+            player.sendPacket(new PacketAvatarUnlockTalentNotify(this, talentId));
+            player.sendPacket(new PacketUnlockAvatarTalentRsp(this, talentId));
+        }
 
         // Proud skill bonus map (Extra skills)
         this.calcConstellation(GameData.getOpenConfigEntries().get(talentData.getOpenConfig()), true);
