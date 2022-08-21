@@ -681,7 +681,7 @@ public class Avatar {
     }
 
     private boolean calcConstellationExtraLevels(OpenConfigEntry entry) {
-        int skillId = switch(entry.getExtraTalentIndex()) {
+        int skillId = switch (entry.getExtraTalentIndex()) {
             case 9 -> this.skillDepot.getEnergySkill();  // Ult skill
             case 2 -> (this.skillDepot.getSkills().size() >= 2) ? this.skillDepot.getSkills().get(1) : 0;  // E skill
             default -> 0;

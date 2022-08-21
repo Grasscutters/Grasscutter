@@ -27,13 +27,13 @@ public final class UnlockAllCommand implements CommandHandler {
             }
 
             if (targetPlayer.getProgressManager().getOpenState(state.getId()) == 0) {
-                targetPlayer.getOpenStates().put(state.getId(), 1); 
+                targetPlayer.getOpenStates().put(state.getId(), 1);
                 changed.put(state.getId(), 1);
             }
         }
-        
+
         targetPlayer.sendPacket(new PacketOpenStateChangeNotify(changed));
-        
+
         CommandHandler.sendMessage(sender, translate(sender, "commands.unlockall.success", targetPlayer.getNickname()));
     }
 }

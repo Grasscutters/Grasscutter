@@ -37,10 +37,10 @@ public class BlossomManager {
 
     private final List<SpawnDataEntry> blossomConsumed = new ArrayList<>();
 
-    public void onTick(){
-        synchronized (blossomActivities){
+    public void onTick() {
+        synchronized (blossomActivities) {
             var it = blossomActivities.iterator();
-            while(it.hasNext()){
+            while (it.hasNext()) {
                 var active = it.next();
                 active.onTick();
                 if (active.getPass()) {
@@ -54,24 +54,24 @@ public class BlossomManager {
         }
     }
 
-    public void recycleGadgetEntity(List<GameEntity> entities){
-        for(var entity : entities){
-            if(entity instanceof EntityGadget gadget){
+    public void recycleGadgetEntity(List<GameEntity> entities) {
+        for (var entity : entities) {
+            if (entity instanceof EntityGadget gadget) {
                 createdEntity.remove(gadget);
             }
         }
         notifyIcon();
     }
 
-    public void initBlossom(EntityGadget gadget){
-        if(createdEntity.contains(gadget)){
+    public void initBlossom(EntityGadget gadget) {
+        if (createdEntity.contains(gadget)) {
             return;
         }
-        if(blossomConsumed.contains(gadget.getSpawnEntry())){
+        if (blossomConsumed.contains(gadget.getSpawnEntry())) {
             return;
         }
         var id = gadget.getGadgetId();
-        if(BlossomType.valueOf(id)==null){
+        if (BlossomType.valueOf(id)==null) {
             return;
         }
         gadget.buildContent();
@@ -91,19 +91,19 @@ public class BlossomManager {
 
                 int volume=0;
                 IntList monsters = new IntArrayList();
-                while(true){
+                while (true) {
                     var remain = GameDepot.getBlossomConfig().getMonsterFightingVolume() - volume;
-                    if(remain<=0){
+                    if (remain<=0) {
                         break;
                     }
                     var rand = Utils.randomRange(1,100);
-                    if(rand>85 && remain>=50){//15% ,generate strong monster
+                    if (rand>85 && remain>=50) {//15% ,generate strong monster
                         monsters.addAll(getRandomMonstersID(2,1));
                         volume+=50;
-                    }else if(rand>50 && remain>=20) {//35% ,generate normal monster
+                    }else if (rand>50 && remain>=20) {//35% ,generate normal monster
                         monsters.addAll(getRandomMonstersID(1,1));
                         volume+=20;
-                    }else{//50% ,generate weak monster
+                    }else {//50% ,generate weak monster
                         monsters.addAll(getRandomMonstersID(0,1));
                         volume+=10;
                     }
@@ -155,7 +155,7 @@ public class BlossomManager {
         scene.broadcastPacket(new PacketBlossomBriefInfoNotify(blossoms));
     }
 
-    public int getWorldLevel(){
+    public int getWorldLevel() {
         return scene.getWorld().getWorldLevel();
     }
 
@@ -226,10 +226,10 @@ public class BlossomManager {
         return null;
     }
 
-    public static IntList getRandomMonstersID(int difficulty,int count){
+    public static IntList getRandomMonstersID(int difficulty,int count) {
       IntList result = new IntArrayList();
       List<Integer> monsters = GameDepot.getBlossomConfig().getMonsterIdsPerDifficulty().get(difficulty);
-        for(int i=0; i<count; i++){
+        for (int i=0; i<count; i++) {
             result.add((int) monsters.get(Utils.randomRange(0, monsters.size()-1)));
         }
         return result;

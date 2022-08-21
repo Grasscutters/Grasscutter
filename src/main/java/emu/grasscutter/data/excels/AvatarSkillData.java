@@ -21,12 +21,12 @@ public class AvatarSkillData extends GameResource {
     @Getter private String abilityName;
 
     @Override
-	public int getId(){
+    public int getId() {
         return this.id;
     }
-	
-	@Override
-	public void onLoad() {
-		
-	}
+
+    @Override
+    public void onLoad() {
+
+    }
 }

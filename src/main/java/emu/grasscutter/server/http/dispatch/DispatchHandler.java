@@ -26,7 +26,7 @@ public final class DispatchHandler implements Router {
         express.post("/hk4e_global/mdk/shield/api/verify", DispatchHandler::tokenLogin);
         // Combo token login (from session key).
         express.post("/hk4e_global/combo/granter/login/v2/login", DispatchHandler::sessionKeyLogin);
-        
+
         // External login (from other clients).
         express.get("/authentication/type", (request, response) -> response.send(Grasscutter.getAuthenticationSystem().getClass().getSimpleName()));
         express.post("/authentication/login", (request, response) -> Grasscutter.getAuthenticationSystem().getExternalAuthenticator()
@@ -54,18 +54,18 @@ public final class DispatchHandler implements Router {
         // Parse body data.
         String rawBodyData = request.ctx().body();
         var bodyData = JsonUtils.decode(rawBodyData, LoginAccountRequestJson.class);
-        
+
         // Validate body data.
-        if(bodyData == null)
+        if (bodyData == null)
             return;
-        
+
         // Pass data to authentication handler.
         var responseData = Grasscutter.getAuthenticationSystem()
                 .getPasswordAuthenticator()
                 .authenticate(AuthenticationSystem.fromPasswordRequest(request, bodyData));
         // Send response.
         response.send(responseData);
-        
+
         // Log to console.
         Grasscutter.getLogger().info(translate("messages.dispatch.account.login_attempt", request.ip()));
     }
@@ -79,7 +79,7 @@ public final class DispatchHandler implements Router {
         var bodyData = JsonUtils.decode(rawBodyData, LoginTokenRequestJson.class);
 
         // Validate body data.
-        if(bodyData == null)
+        if (bodyData == null)
             return;
 
         // Pass data to authentication handler.
@@ -102,9 +102,9 @@ public final class DispatchHandler implements Router {
         var bodyData = JsonUtils.decode(rawBodyData, ComboTokenReqJson.class);
 
         // Validate body data.
-        if(bodyData == null || bodyData.data == null)
+        if (bodyData == null || bodyData.data == null)
             return;
-        
+
         // Decode additional body data.
         var tokenData = JsonUtils.decode(bodyData.data, LoginTokenData.class);
 

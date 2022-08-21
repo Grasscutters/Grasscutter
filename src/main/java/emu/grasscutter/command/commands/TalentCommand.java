@@ -28,12 +28,12 @@ public final class TalentCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() < 1){
+        if (args.size() < 1) {
             sendUsageMessage(sender);
             return;
         }
 
-        Avatar avatar = targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar(); 
+        Avatar avatar = targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar();
         AvatarSkillDepotData skillDepot = avatar.getSkillDepot();
         if (skillDepot == null) {  // Avatars without skill depots aren't a suitable target even with manual skillId specified
             CommandHandler.sendTranslatedMessage(sender, "commands.talent.invalid_skill_id");

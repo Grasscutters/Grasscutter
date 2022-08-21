@@ -25,64 +25,64 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public abstract class GameEntity {
-	protected int id;
-	private final Scene scene;
-	private SpawnDataEntry spawnEntry;
+    protected int id;
+    private final Scene scene;
+    private SpawnDataEntry spawnEntry;
 
-	private int blockId;
-	private int configId;
-	private int groupId;
+    private int blockId;
+    private int configId;
+    private int groupId;
 
-	private MotionState moveState;
-	private int lastMoveSceneTimeMs;
-	private int lastMoveReliableSeq;
+    private MotionState moveState;
+    private int lastMoveSceneTimeMs;
+    private int lastMoveReliableSeq;
 
-	// Abilities
-	private Map<String, Float> metaOverrideMap;
-	private Int2ObjectMap<String> metaModifiers;
+    // Abilities
+    private Map<String, Float> metaOverrideMap;
+    private Int2ObjectMap<String> metaModifiers;
 
-	public GameEntity(Scene scene) {
-		this.scene = scene;
-		this.moveState = MotionState.MOTION_STATE_NONE;
-	}
+    public GameEntity(Scene scene) {
+        this.scene = scene;
+        this.moveState = MotionState.MOTION_STATE_NONE;
+    }
 
-	public int getId() {
-		return this.id;
-	}
+    public int getId() {
+        return this.id;
+    }
 
-	public int getEntityType() {
-		return this.getId() >> 24;
-	}
+    public int getEntityType() {
+        return this.getId() >> 24;
+    }
 
-	public World getWorld() {
-		return this.getScene().getWorld();
-	}
+    public World getWorld() {
+        return this.getScene().getWorld();
+    }
 
-	public Scene getScene() {
-		return this.scene;
-	}
+    public Scene getScene() {
+        return this.scene;
+    }
 
-	public boolean isAlive() {
-		return true;
-	}
+    public boolean isAlive() {
+        return true;
+    }
 
-	public LifeState getLifeState() {
-		return this.isAlive() ? LifeState.LIFE_ALIVE : LifeState.LIFE_DEAD;
-	}
+    public LifeState getLifeState() {
+        return this.isAlive() ? LifeState.LIFE_ALIVE : LifeState.LIFE_DEAD;
+    }
 
-	public Map<String, Float> getMetaOverrideMap() {
-		if (this.metaOverrideMap == null) {
-			this.metaOverrideMap = new HashMap<>();
-		}
-		return this.metaOverrideMap;
-	}
+    public Map<String, Float> getMetaOverrideMap() {
+        if (this.metaOverrideMap == null) {
+            this.metaOverrideMap = new HashMap<>();
+        }
+        return this.metaOverrideMap;
+    }
 
-	public Int2ObjectMap<String> getMetaModifiers() {
-		if (this.metaModifiers == null) {
-			this.metaModifiers = new Int2ObjectOpenHashMap<>();
-		}
-		return this.metaModifiers;
-	}
+    public Int2ObjectMap<String> getMetaModifiers() {
+        if (this.metaModifiers == null) {
+            this.metaModifiers = new Int2ObjectOpenHashMap<>();
+        }
+        return this.metaModifiers;
+    }
 
     public abstract Int2FloatOpenHashMap getFightProperties();
 
@@ -215,12 +215,12 @@ public abstract class GameEntity {
 
         // Invoke entity damage event.
         EntityDamageEvent event = new EntityDamageEvent(this, amount, this.getScene().getEntityById(killerId));
-        event.call(); 
+        event.call();
         if (event.isCanceled()) {
             return; // If the event is canceled, do not damage the entity.
         }
-        
-        if(getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) != Float.POSITIVE_INFINITY){
+
+        if (getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) != Float.POSITIVE_INFINITY) {
           // Add negative HP to the current HP property.
           this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -(event.getDamage()));
         }

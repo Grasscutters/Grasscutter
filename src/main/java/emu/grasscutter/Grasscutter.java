@@ -95,7 +95,7 @@ public final class Grasscutter {
         Crypto.loadKeys(); // Load keys from buffers.
 
         // Parse start-up arguments.
-        if(StartupArguments.parse(args)) {
+        if (StartupArguments.parse(args)) {
             System.exit(0); // Exit early.
         }
 

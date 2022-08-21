@@ -725,7 +725,7 @@ public class InventorySystem extends BaseGameSystem {
                     // Invoke player use food event.
                     PlayerUseFoodEvent event = new PlayerUseFoodEvent(player, itemData, target.getAsEntity());
                     // Call the event.
-                    event.call(); if(!event.isCanceled()) {
+                    event.call(); if (!event.isCanceled()) {
                         used = player.getTeamManager().reviveAvatar(target) ? 1 : 0;
                     }
                 } else {
@@ -741,7 +741,7 @@ public class InventorySystem extends BaseGameSystem {
                     // Invoke player use food event.
                     PlayerUseFoodEvent event = new PlayerUseFoodEvent(player, itemData, target.getAsEntity());
                     // Call the event.
-                    event.call(); if(!event.isCanceled()) {
+                    event.call(); if (!event.isCanceled()) {
                         int[] SatiationParams = itemData.getSatiationParams();
                         used = player.getTeamManager().healAvatar(target, SatiationParams[0], SatiationParams[1]) ? 1 : 0;
                     }

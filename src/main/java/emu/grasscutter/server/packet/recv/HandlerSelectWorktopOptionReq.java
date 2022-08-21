@@ -14,25 +14,25 @@ import emu.grasscutter.server.packet.send.PacketSelectWorktopOptionRsp;
 @Opcodes(PacketOpcodes.SelectWorktopOptionReq)
 public class HandlerSelectWorktopOptionReq extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		SelectWorktopOptionReq req = SelectWorktopOptionReq.parseFrom(payload);
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        SelectWorktopOptionReq req = SelectWorktopOptionReq.parseFrom(payload);
 
-		try {
-			GameEntity entity = session.getPlayer().getScene().getEntityById(req.getGadgetEntityId());
+        try {
+            GameEntity entity = session.getPlayer().getScene().getEntityById(req.getGadgetEntityId());
 
-			if (!(entity instanceof EntityGadget)) {
-				return;
-			}
+            if (!(entity instanceof EntityGadget)) {
+                return;
+            }
             session.getPlayer().getScene().selectWorktopOptionWith(req);
-			session.getPlayer().getScene().getScriptManager().callEvent(
-					EventType.EVENT_SELECT_OPTION,
-					new ScriptArgs(entity.getConfigId(), req.getOptionId())
-			);
-		} finally {
-			// Always send packet
-			session.send(new PacketSelectWorktopOptionRsp(req.getGadgetEntityId(), req.getOptionId()));
-		}
-	}
+            session.getPlayer().getScene().getScriptManager().callEvent(
+                    EventType.EVENT_SELECT_OPTION,
+                    new ScriptArgs(entity.getConfigId(), req.getOptionId())
+            );
+        } finally {
+            // Always send packet
+            session.send(new PacketSelectWorktopOptionRsp(req.getGadgetEntityId(), req.getOptionId()));
+        }
+    }
 
 }

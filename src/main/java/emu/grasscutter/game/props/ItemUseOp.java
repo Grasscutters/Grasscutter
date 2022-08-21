@@ -48,25 +48,25 @@ public enum ItemUseOp {
     ITEM_USE_UNLOCK_HOME_MODULE (44),
     ITEM_USE_UNLOCK_HOME_BGM (45),
     ITEM_USE_ADD_REGIONAL_PLAY_VAR (46);
-	
-	private final int value;
-	private static final Int2ObjectMap<ItemUseOp> map = new Int2ObjectOpenHashMap<>();
-	
-	static {
-		Stream.of(values()).forEach(e -> {
-			map.put(e.getValue(), e);
-		});
-	}
-	
-	private ItemUseOp(int value) {
-		this.value = value;
-	}
 
-	public int getValue() {
-		return value;
-	}
-	
-	public static ItemUseOp getTypeByValue(int value) {
-		return map.getOrDefault(value, ITEM_USE_NONE);
-	}
+    private final int value;
+    private static final Int2ObjectMap<ItemUseOp> map = new Int2ObjectOpenHashMap<>();
+
+    static {
+        Stream.of(values()).forEach(e -> {
+            map.put(e.getValue(), e);
+        });
+    }
+
+    private ItemUseOp(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public static ItemUseOp getTypeByValue(int value) {
+        return map.getOrDefault(value, ITEM_USE_NONE);
+    }
 }

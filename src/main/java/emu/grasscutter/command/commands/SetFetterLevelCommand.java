@@ -38,13 +38,13 @@ public final class SetFetterLevelCommand implements CommandHandler {
             if (fetterLevel != 10) {
                 avatar.setFetterExp(GameData.getAvatarFetterLevelDataMap().get(fetterLevel).getExp());
             }
-		    avatar.save();
-		
-		    targetPlayer.sendPacket(new PacketAvatarFetterDataNotify(avatar));
+            avatar.save();
+
+            targetPlayer.sendPacket(new PacketAvatarFetterDataNotify(avatar));
             CommandHandler.sendMessage(sender, translate(sender, "commands.setFetterLevel.success", fetterLevel));
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.setFetterLevel.level_error"));
         }
     }
-    
+
 }

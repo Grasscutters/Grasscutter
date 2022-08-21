@@ -54,36 +54,36 @@ public class BlossomActivity {
         challengeTriggers.add(new KillMonsterTrigger());
         //this.challengeTriggers.add(new InTimeTrigger());
     }
-    public WorldChallenge getChallenge(){
+    public WorldChallenge getChallenge() {
         return this.challenge;
     }
     public void setMonsters(List<EntityMonster> monsters) {
         this.activeMonsters.clear();
         this.activeMonsters.addAll(monsters);
-        for(EntityMonster monster : monsters){
+        for (EntityMonster monster : monsters) {
             monster.setGroupId(this.tempSceneGroup.id);
         }
     }
-    public int getAliveMonstersCount(){
+    public int getAliveMonstersCount() {
         int count=0;
-        for(EntityMonster monster: activeMonsters) {
-            if(monster.isAlive()){
+        for (EntityMonster monster: activeMonsters) {
+            if (monster.isAlive()) {
                 count++;
             }
         }
         return count;
     }
-    public boolean getPass(){
+    public boolean getPass() {
         return pass;
     }
-    public void start(){
+    public void start() {
         challenge.start();
     }
     public void onTick() {
         Scene scene = gadget.getScene();
         Position pos = gadget.getPosition();
-        if(getAliveMonstersCount() <= 2){
-            if(generatedCount<goal){
+        if (getAliveMonstersCount() <= 2) {
+            if (generatedCount<goal) {
                 step++;
 
                 WorldLevelData worldLevelData = GameData.getWorldLevelDataMap().get(worldLevel);
@@ -94,7 +94,7 @@ public class BlossomActivity {
 
                 List<EntityMonster> newMonsters = new ArrayList<>();
                 int willSpawn = Utils.randomRange(3,5);
-                if(generatedCount+willSpawn>goal){
+                if (generatedCount+willSpawn>goal) {
                     willSpawn = goal - generatedCount;
                 }
                 generatedCount+=willSpawn;
@@ -106,19 +106,19 @@ public class BlossomActivity {
                     newMonsters.add(entity);
                 }
                 setMonsters(newMonsters);
-            }else{
-                if(getAliveMonstersCount() == 0) {
+            }else {
+                if (getAliveMonstersCount() == 0) {
                     this.pass = true;
                     this.challenge.done();
                 }
             }
         }
     }
-    public EntityGadget getGadget(){
+    public EntityGadget getGadget() {
         return gadget;
     }
-    public EntityGadget getChest(){
-        if(chest==null) {
+    public EntityGadget getChest() {
+        if (chest==null) {
             EntityGadget rewardGadget = new EntityGadget(gadget.getScene(), BLOOMING_GADGET_ID, gadget.getPosition());
             SceneGadget metaGadget = new SceneGadget();
             metaGadget.boss_chest = new SceneBossChest();

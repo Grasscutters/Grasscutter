@@ -39,21 +39,21 @@ public class PlayerActivityData {
     String detail;
     @Transient Player player;
     @Transient ActivityHandler activityHandler;
-    public void save(){
+    public void save() {
         DatabaseHelper.savePlayerActivityData(this);
     }
 
-    public static PlayerActivityData getByPlayer(Player player, int activityId){
+    public static PlayerActivityData getByPlayer(Player player, int activityId) {
         return DatabaseHelper.getPlayerActivityData(player.getUid(), activityId);
     }
 
-    public synchronized void addWatcherProgress(int watcherId){
+    public synchronized void addWatcherProgress(int watcherId) {
         var watcherInfo = watcherInfoMap.get(watcherId);
-        if(watcherInfo == null){
+        if (watcherInfo == null) {
             return;
         }
 
-        if(watcherInfo.curProgress >= watcherInfo.totalProgress){
+        if (watcherInfo.curProgress >= watcherInfo.totalProgress) {
             return;
         }
 
@@ -67,13 +67,13 @@ public class PlayerActivityData {
             .toList();
     }
 
-    public void setDetail(Object detail){
+    public void setDetail(Object detail) {
         this.detail = JsonUtils.encode(detail);
     }
 
     public void takeWatcherReward(int watcherId) {
         var watcher = watcherInfoMap.get(watcherId);
-        if(watcher == null || watcher.isTakenReward()){
+        if (watcher == null || watcher.isTakenReward()) {
             return;
         }
 
@@ -82,7 +82,7 @@ public class PlayerActivityData {
             .map(ActivityWatcherData::getRewardID)
             .map(id -> GameData.getRewardDataMap().get(id.intValue()));
 
-        if(reward.isEmpty()){
+        if (reward.isEmpty()) {
             return;
         }
 
@@ -106,11 +106,11 @@ public class PlayerActivityData {
         int curProgress;
         boolean isTakenReward;
 
-        public ActivityWatcherData getMetadata(){
+        public ActivityWatcherData getMetadata() {
             return GameData.getActivityWatcherDataMap().get(watcherId);
         }
 
-        public static WatcherInfo init(ActivityWatcher watcher){
+        public static WatcherInfo init(ActivityWatcher watcher) {
             return WatcherInfo.of()
                 .watcherId(watcher.getWatcherId())
                 .totalProgress(watcher.getActivityWatcherData().getProgress())
@@ -118,7 +118,7 @@ public class PlayerActivityData {
                 .build();
         }
 
-        public ActivityWatcherInfoOuterClass.ActivityWatcherInfo toProto(){
+        public ActivityWatcherInfoOuterClass.ActivityWatcherInfo toProto() {
             return ActivityWatcherInfoOuterClass.ActivityWatcherInfo.newBuilder()
                 .setWatcherId(watcherId)
                 .setCurProgress(curProgress)

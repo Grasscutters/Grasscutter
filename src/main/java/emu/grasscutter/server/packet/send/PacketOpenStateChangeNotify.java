@@ -18,7 +18,7 @@ public class PacketOpenStateChangeNotify extends BasePacket {
 
         this.setData(proto);
     }
-    
+
     public PacketOpenStateChangeNotify(Map<Integer, Integer> map) {
         super(PacketOpcodes.OpenStateChangeNotify);
 

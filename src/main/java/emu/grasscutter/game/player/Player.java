@@ -554,9 +554,9 @@ public class Player {
 
     public void onEnterRegion(SceneRegion region) {
         getQuestManager().forEachActiveQuest(quest -> {
-            if(quest.getTriggers().containsKey("ENTER_REGION_"+ String.valueOf(region.config_id))) {
+            if (quest.getTriggers().containsKey("ENTER_REGION_"+ String.valueOf(region.config_id))) {
                 // If trigger hasn't been fired yet
-                if(!Boolean.TRUE.equals(quest.getTriggers().put("ENTER_REGION_"+ String.valueOf(region.config_id), true))) {
+                if (!Boolean.TRUE.equals(quest.getTriggers().put("ENTER_REGION_"+ String.valueOf(region.config_id), true))) {
                     //getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
                     getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_TRIGGER_FIRE, quest.getTriggerData().get("ENTER_REGION_"+ String.valueOf(region.config_id)).getId(),0);
                 }
@@ -567,9 +567,9 @@ public class Player {
 
     public void onLeaveRegion(SceneRegion region) {
         getQuestManager().forEachActiveQuest(quest -> {
-            if(quest.getTriggers().containsKey("LEAVE_REGION_"+ String.valueOf(region.config_id))) {
+            if (quest.getTriggers().containsKey("LEAVE_REGION_"+ String.valueOf(region.config_id))) {
                 // If trigger hasn't been fired yet
-                if(!Boolean.TRUE.equals(quest.getTriggers().put("LEAVE_REGION_"+ String.valueOf(region.config_id), true))) {
+                if (!Boolean.TRUE.equals(quest.getTriggers().put("LEAVE_REGION_"+ String.valueOf(region.config_id), true))) {
                     getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
                     getQuestManager().triggerEvent(QuestTrigger.QUEST_CONTENT_TRIGGER_FIRE, quest.getTriggerData().get("LEAVE_REGION_"+ String.valueOf(region.config_id)).getId(),0);
                 }
