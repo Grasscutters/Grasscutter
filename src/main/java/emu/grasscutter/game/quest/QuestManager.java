@@ -25,8 +25,6 @@ import lombok.Getter;
 public class QuestManager extends BasePlayerManager {
 
 	@Getter private final Player player;
-    @Getter private Map<Integer,Integer> questGlobalVariables;
-
     @Getter private final Int2ObjectMap<GameMainQuest> mainQuests;
     @Getter private List<GameQuest> addToQuestListUpdateNotify;
     /*
@@ -63,7 +61,7 @@ public class QuestManager extends BasePlayerManager {
         );
 
     */
-    
+
         public static long getQuestKey(int mainQuestId){
         QuestEncryptionKey questEncryptionKey = GameData.getMainQuestEncryptionMap().get(mainQuestId);
         return questEncryptionKey != null ? questEncryptionKey.getEncryptionKey() : 0L;
@@ -72,7 +70,6 @@ public class QuestManager extends BasePlayerManager {
 
         super(player);
 		this.player = player;
-        this.questGlobalVariables = player.getQuestGlobalVariables();
 		this.mainQuests = new Int2ObjectOpenHashMap<>();
         this.addToQuestListUpdateNotify = new ArrayList<>();
 	}
@@ -81,7 +78,7 @@ public class QuestManager extends BasePlayerManager {
 
         List<GameMainQuest> newQuests = this.addMultMainQuests(newPlayerMainQuests);
         //getPlayer().sendPacket(new PacketServerCondMeetQuestListUpdateNotify(newPlayerServerCondMeetQuestListUpdateNotify));
-        getPlayer().sendPacket(new PacketFinishedParentQuestUpdateNotify(newQuests));
+        //getPlayer().sendPacket(new PacketFinishedParentQuestUpdateNotify(newQuests));
 
 
     }
@@ -112,24 +109,24 @@ public class QuestManager extends BasePlayerManager {
         Looking through mainQuests 72201-72208 and 72174, we can infer that a questGlobalVar's default value is 0
     */
     public Integer getQuestGlobalVarValue(Integer variable) {
-        return this.questGlobalVariables.getOrDefault(variable,0);
+        return getPlayer().getQuestGlobalVariables().getOrDefault(variable,0);
     }
 
     public void setQuestGlobalVarValue(Integer variable, Integer value) {
-        Integer previousValue = this.questGlobalVariables.put(variable,value);
+        Integer previousValue = getPlayer().getQuestGlobalVariables().put(variable,value);
         Grasscutter.getLogger().debug("Changed questGlobalVar {} value from {} to {}", variable, previousValue==null ? 0: previousValue, value);
     }
     public void incQuestGlobalVarValue(Integer variable, Integer inc) {
         //
-        Integer previousValue = this.questGlobalVariables.getOrDefault(variable,0);
-        this.questGlobalVariables.put(variable,previousValue + inc);
+        Integer previousValue = getPlayer().getQuestGlobalVariables().getOrDefault(variable,0);
+        getPlayer().getQuestGlobalVariables().put(variable,previousValue + inc);
         Grasscutter.getLogger().debug("Incremented questGlobalVar {} value from {} to {}", variable, previousValue, previousValue + inc);
     }
     //In MainQuest 998, dec is passed as a positive integer
     public void decQuestGlobalVarValue(Integer variable, Integer dec) {
         //
-        Integer previousValue = this.questGlobalVariables.getOrDefault(variable,0);
-        this.questGlobalVariables.put(variable,previousValue - dec);
+        Integer previousValue = getPlayer().getQuestGlobalVariables().getOrDefault(variable,0);
+        getPlayer().getQuestGlobalVariables().put(variable,previousValue - dec);
         Grasscutter.getLogger().debug("Decremented questGlobalVar {} value from {} to {}", variable, previousValue, previousValue - dec);
     }
 

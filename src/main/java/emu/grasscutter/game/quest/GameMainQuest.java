@@ -194,8 +194,9 @@ public class GameMainQuest {
         CompiledScript cs = ScriptLoader.getScriptByPath(
             SCRIPT("Quest/Share/Q" + getParentQuestId() + "ShareConfig." + ScriptLoader.getScriptType()));
 
+        //mainQuest 303 doesn't have a ShareConfig
         if (cs == null) {
-            Grasscutter.getLogger().error("Couldn't find Q" + getParentQuestId() + "ShareConfig." + ScriptLoader.getScriptType());
+            Grasscutter.getLogger().debug("Couldn't find Q" + getParentQuestId() + "ShareConfig." + ScriptLoader.getScriptType());
             return;
         }
 
@@ -283,15 +284,19 @@ public class GameMainQuest {
 
             for (GameQuest subQuestWithCond : subQuestsWithCond) {
                 List<QuestData.QuestCondition> failCond = subQuestWithCond.getQuestData().getFailCond();
-                int[] fail = new int[failCond.size()];
 
                 for (int i = 0; i < subQuestWithCond.getQuestData().getFailCond().size(); i++) {
                     QuestData.QuestCondition condition = failCond.get(i);
-                    boolean result = this.getOwner().getServer().getQuestSystem().triggerContent(subQuestWithCond, condition, paramStr, params);
-                    fail[i] = result ? 1 : 0;
+                    if(condition.getType() == condType) {
+                        boolean result = this.getOwner().getServer().getQuestSystem().triggerContent(subQuestWithCond, condition, paramStr, params);
+                        subQuestWithCond.getFailProgressList()[i] = result ? 1 : 0;
+                        if(result) {
+                            getOwner().getSession().send(new PacketQuestProgressUpdateNotify(subQuestWithCond));
+                        }
+                    }
                 }
 
-                boolean shouldFail = LogicType.calculate(subQuestWithCond.getQuestData().getFailCondComb(), fail);
+                boolean shouldFail = LogicType.calculate(subQuestWithCond.getQuestData().getFailCondComb(), subQuestWithCond.getFailProgressList());
 
                 if (shouldFail) {
                     subQuestWithCond.fail();
@@ -314,15 +319,19 @@ public class GameMainQuest {
 
             for (GameQuest subQuestWithCond : subQuestsWithCond) {
                 List<QuestData.QuestCondition> finishCond = subQuestWithCond.getQuestData().getFinishCond();
-                int[] finish = new int[finishCond.size()];
 
                 for (int i = 0; i < finishCond.size(); i++) {
                     QuestData.QuestCondition condition = finishCond.get(i);
-                    boolean result = this.getOwner().getServer().getQuestSystem().triggerContent(subQuestWithCond, condition, paramStr, params);
-                    finish[i] = result ? 1 : 0;
+                    if(condition.getType() == condType) {
+                        boolean result = this.getOwner().getServer().getQuestSystem().triggerContent(subQuestWithCond, condition, paramStr, params);
+                        subQuestWithCond.getFinishProgressList()[i] = result ? 1 : 0;
+                        if(result) {
+                            getOwner().getSession().send(new PacketQuestProgressUpdateNotify(subQuestWithCond));
+                        }
+                    }
                 }
 
-                boolean shouldFinish = LogicType.calculate(subQuestWithCond.getQuestData().getFinishCondComb(), finish);
+                boolean shouldFinish = LogicType.calculate(subQuestWithCond.getQuestData().getFinishCondComb(), subQuestWithCond.getFinishProgressList());
 
                 if (shouldFinish) {
                     subQuestWithCond.finish();

@@ -225,6 +225,7 @@ public class Player {
         this.unlockedFurnitureSuite = new HashSet<>();
         this.activeForges = new ArrayList<>();
         this.unlockedRecipies = new HashMap<>();
+        this.questGlobalVariables = new HashMap<>();
         this.openStates = new HashMap<>();
         this.unlockedSceneAreas = new HashMap<>();
         this.unlockedScenePoints = new HashMap<>();
@@ -1197,7 +1198,7 @@ public class Player {
         session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
 
         // First notify packets sent
-        this.hasSentLoginPackets = true; 
+        this.hasSentLoginPackets = true;
 
         // Set session state
         session.setState(SessionState.ACTIVE);
