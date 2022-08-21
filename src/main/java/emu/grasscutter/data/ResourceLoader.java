@@ -9,6 +9,7 @@ import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
 import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.common.ScenePointConfig;
+import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
@@ -75,6 +76,7 @@ public class ResourceLoader {
 		// Load default home layout
 		loadHomeworldDefaultSaveData();
 		loadNpcBornData();
+        loadBlossomResources();
 
         Grasscutter.getLogger().info(translate("messages.status.resources.finish"));
         loadedAll = true;
@@ -484,6 +486,12 @@ public class ResourceLoader {
         });
 
         Grasscutter.getLogger().debug("Loaded " + GameData.getSceneNpcBornData().size() + " SceneNpcBornDatas.");
+    }
+
+    @SneakyThrows
+    private static void loadBlossomResources() {
+        GameDepot.setBlossomConfig(DataLoader.loadClass("BlossomConfig.json", BlossomConfig.class));
+        Grasscutter.getLogger().debug("Loaded BlossomConfig.");
     }
 
     // BinOutput configs

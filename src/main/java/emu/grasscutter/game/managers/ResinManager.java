@@ -52,6 +52,12 @@ public class ResinManager extends BasePlayerManager {
         return true;
     }
 
+    public synchronized boolean useCondensedResin(int amount) {
+        // Don't deduct if resin disabled.
+        if (!GAME_OPTIONS.resinOptions.resinUsage) return true;
+        return this.player.getInventory().payItem(220007, amount);
+    }
+
     public synchronized void addResin(int amount) {
         // Check if resin enabled.
         if (!GAME_OPTIONS.resinOptions.resinUsage) {

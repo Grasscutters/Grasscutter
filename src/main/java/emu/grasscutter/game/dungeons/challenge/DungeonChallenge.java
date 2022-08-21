@@ -8,12 +8,12 @@ import emu.grasscutter.game.dungeons.DungeonDrop;
 import emu.grasscutter.game.dungeons.DungeonDropEntry;
 import emu.grasscutter.game.dungeons.challenge.trigger.ChallengeTrigger;
 import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
+import emu.grasscutter.net.proto.ResinCostTypeOuterClass;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.ScriptArgs;
@@ -88,11 +88,12 @@ public class DungeonChallenge extends WorldChallenge {
 
     private void settle() {
         if (!stage) {
-            getScene().getDungeonSettleObservers().forEach(o -> o.onDungeonSettle(getScene()));
-            getScene().getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE,
+            var scene = this.getScene();
+            scene.getDungeonSettleListeners().forEach(o -> o.onDungeonSettle(getScene()));
+            scene.getScriptManager().callEvent(EventType.EVENT_DUNGEON_SETTLE,
                     new ScriptArgs(this.isSuccess() ? 1 : 0));
             // Battle pass trigger
-            this.getScene().getPlayers().forEach(p -> p.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_FINISH_DUNGEON));
+            scene.getPlayers().forEach(p -> p.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_FINISH_DUNGEON));
         }
     }
 
@@ -166,7 +167,7 @@ public class DungeonChallenge extends WorldChallenge {
         // Get rewards.
         List<GameItem> rewards = new ArrayList<>();
 
-        if (request.getIsUseCondenseResin()) {
+        if (request.getResinCostType() == ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_CONDENSE) {
             // Check if condensed resin is usable here.
             // For this, we use the following logic for now:
             // The normal resin cost of the dungeon has to be 20.
@@ -174,25 +175,15 @@ public class DungeonChallenge extends WorldChallenge {
                 return;
             }
 
-            // Make sure the player has condensed resin.
-            GameItem condensedResin = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(220007);
-            if (condensedResin == null || condensedResin.getCount() <= 0) {
-                return;
-            }
-
-            // Deduct.
-            player.getInventory().removeItem(condensedResin, 1);
+            // Spend the condensed resin and only proceed if the transaction succeeds.
+            if (!player.getResinManager().useCondensedResin(1)) return;
 
             // Roll rewards.
             rewards.addAll(this.rollRewards(true));
         }
         else {
-            // If the player used regular resin, try to deduct.
-            // Stop if insufficient resin.
-            boolean success = player.getResinManager().useResin(resinCost);
-            if (!success) {
-                return;
-            }
+            // Spend the resin and only proceed if the transaction succeeds.
+            if (!player.getResinManager().useResin(resinCost)) return;
 
             // Roll rewards.
             rewards.addAll(this.rollRewards(false));

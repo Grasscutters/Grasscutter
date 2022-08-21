@@ -5,62 +5,20 @@ import java.util.Objects;
 
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.utils.Position;
+import lombok.Getter;
+import lombok.Setter;
 
 public class SpawnDataEntry {
-    private transient SpawnGroupEntry group;
-    private int monsterId;
-    private int gadgetId;
-    private int configId;
-    private int level;
-    private int poseId;
-    private int gatherItemId;
-    private int gadgetState;
-    private Position pos;
-    private Position rot;
-
-    public SpawnGroupEntry getGroup() {
-        return group;
-    }
-
-    public void setGroup(SpawnGroupEntry group) {
-        this.group = group;
-    }
-
-    public int getMonsterId() {
-        return monsterId;
-    }
-
-    public int getGadgetId() {
-        return gadgetId;
-    }
-
-    public int getGadgetState() {
-        return gadgetState;
-    }
-
-    public int getConfigId() {
-        return configId;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public int getPoseId() {
-        return poseId;
-    }
-
-    public int getGatherItemId() {
-        return gatherItemId;
-    }
-
-    public Position getPos() {
-        return pos;
-    }
-
-    public Position getRot() {
-        return rot;
-    }
+    @Getter @Setter private transient SpawnGroupEntry group;
+    @Getter private int monsterId;
+    @Getter private int gadgetId;
+    @Getter private int configId;
+    @Getter private int level;
+    @Getter private int poseId;
+    @Getter private int gatherItemId;
+    @Getter private int gadgetState;
+    @Getter private Position pos;
+    @Getter private Position rot;
 
     public GridBlockId getBlockId() {
         int scale = GridBlockId.getScale(gadgetId);
@@ -71,37 +29,17 @@ public class SpawnDataEntry {
     }
 
     public static class SpawnGroupEntry {
-        private int sceneId;
-        private int groupId;
-        private int blockId;
-        private List<SpawnDataEntry> spawns;
-
-        public int getSceneId() {
-            return sceneId;
-        }
-
-        public int getGroupId() {
-            return groupId;
-        }
-
-        public int getBlockId() {
-            return blockId;
-        }
-
-        public void setBlockId(int blockId) {
-            this.blockId = blockId;
-        }
-
-        public List<SpawnDataEntry> getSpawns() {
-            return spawns;
-        }
+        @Getter private int sceneId;
+        @Getter private int groupId;
+        @Getter private int blockId;
+        @Getter @Setter private List<SpawnDataEntry> spawns;
     }
 
     public static class GridBlockId {
-        int sceneId;
-        int scale;
-        int x;
-        int z;
+        @Getter private int sceneId;
+        @Getter private int scale;
+        @Getter private int x;
+        @Getter private int z;
 
         public GridBlockId(int sceneId, int scale, int x, int z) {
             this.sceneId = sceneId;

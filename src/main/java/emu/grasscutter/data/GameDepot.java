@@ -10,10 +10,13 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.ResourceLoader.AvatarConfig;
 import emu.grasscutter.data.excels.ReliquaryAffixData;
 import emu.grasscutter.data.excels.ReliquaryMainPropData;
+import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.utils.WeightedList;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
+import lombok.Setter;
 
 public class GameDepot {
     public static final int[] BLOCK_SIZE = new int[]{50,500};//Scales
@@ -22,8 +25,9 @@ public class GameDepot {
     private static Int2ObjectMap<List<ReliquaryMainPropData>> relicMainPropDepot = new Int2ObjectOpenHashMap<>();
     private static Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot = new Int2ObjectOpenHashMap<>();
 
-    private static Map<String, AvatarConfig> playerAbilities = new HashMap<>();
-    private static HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> spawnLists = new HashMap<>();
+    @Getter @Setter private static Map<String, AvatarConfig> playerAbilities = new HashMap<>();
+    @Getter private static HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> spawnLists = new HashMap<>();
+    @Getter @Setter private static BlossomConfig blossomConfig;
 
     public static void load() {
         for (ReliquaryMainPropData data : GameData.getReliquaryMainPropDataMap().values()) {
@@ -64,19 +68,7 @@ public class GameDepot {
         return relicAffixDepot.get(depot);
     }
 
-    public static HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> getSpawnLists() {
-        return spawnLists;
-    }
-
     public static void addSpawnListById(HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> data) {
         spawnLists.putAll(data);
-    }
-
-    public static void setPlayerAbilities(Map<String, AvatarConfig> playerAbilities) {
-        GameDepot.playerAbilities = playerAbilities;
-    }
-
-    public static Map<String, AvatarConfig> getPlayerAbilities() {
-        return playerAbilities;
     }
 }
