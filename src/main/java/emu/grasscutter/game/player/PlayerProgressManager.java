@@ -46,6 +46,7 @@ public class PlayerProgressManager extends BasePlayerDataManager {
         // that particular statue interactable.
         this.player.getUnlockedScenePoints(3).add(7);
         this.player.getUnlockedSceneAreas(3).add(1);
+        
     }
 
     /******************************************************************************************************************
@@ -61,12 +62,12 @@ public class PlayerProgressManager extends BasePlayerDataManager {
 
     // Set of open states that are set per default for all accounts. Can be overwritten by an entry in `map`.
     public static final Set<Integer> DEFAULT_OPEN_STATES = GameData.getOpenStateList().stream()
-        .filter(s -> 
+        .filter(s ->
             s.isDefaultState()      // Actual default-opened states.
             // All states whose unlock we don't handle correctly yet.
             || (s.getCond().stream().filter(c -> c.getCondType() == OpenStateCondType.OPEN_STATE_COND_PLAYER_LEVEL).count() == 0)
             // Always unlock OPEN_STATE_PAIMON, otherwise the player will not have a working chat.
-            || s.getId() == 1 
+            || s.getId() == 1
         )
         .filter(s -> !BLACKLIST_OPEN_STATES.contains(s.getId()))    // Filter out states in the blacklist.
         .map(s -> s.getId())
@@ -119,7 +120,7 @@ public class PlayerProgressManager extends BasePlayerDataManager {
                 // ToDo: Implement.
             }
         }
-        
+
         // Done. If we didn't find any violations, all conditions are met.
         return true;
     }
@@ -195,14 +196,13 @@ public class PlayerProgressManager extends BasePlayerDataManager {
         }
     }
 
-    public void unlockTransPoint(int sceneId, int pointId, boolean isStatue) {
+    public boolean unlockTransPoint(int sceneId, int pointId, boolean isStatue) {
         // Check whether the unlocked point exists and whether it is still locked.
         String key = sceneId + "_" + pointId;
 		ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(key);
-		
+
 		if (scenePointEntry == null || this.player.getUnlockedScenePoints(sceneId).contains(pointId)) {
-            this.player.sendPacket(new PacketUnlockTransPointRsp(Retcode.RET_FAIL));
-            return;
+            return false;
         }
 
         // Add the point to the list of unlocked points for its scene.
@@ -222,7 +222,7 @@ public class PlayerProgressManager extends BasePlayerDataManager {
 
         // Send packet.
         this.player.sendPacket(new PacketScenePointUnlockNotify(sceneId, pointId));
-        this.player.sendPacket(new PacketUnlockTransPointRsp(Retcode.RET_SUCC));
+        return true;
     }
 
     public void unlockSceneArea(int sceneId, int areaId) {

@@ -137,13 +137,6 @@ public class GameQuest {
 		this.state = QuestState.QUEST_STATE_FINISHED;
 		this.finishTime = Utils.getCurrentSeconds();
 
-		if (getFinishProgressList() != null) {
-            Arrays.fill(getFinishProgressList(), 1);
-		}
-
-		getOwner().getSession().send(new PacketQuestProgressUpdateNotify(this));
-
-
 		if (getQuestData().finishParent()) {
 			// This quest finishes the questline - the main quest will also save the quest to db, so we don't have to call save() here
 			getMainQuest().finish();
@@ -168,12 +161,6 @@ public class GameQuest {
     public void fail() {
         this.state = QuestState.QUEST_STATE_FAILED;
         this.finishTime = Utils.getCurrentSeconds();
-
-        if (getFailProgressList() != null) {
-            Arrays.fill(getFailProgressList(), 1);
-        }
-
-        getOwner().getSession().send(new PacketQuestProgressUpdateNotify(this));
 
         getQuestData().getFailExec().forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
         //Some subQuests have conditions that subQuests fail (even from different MainQuests)
