@@ -9,7 +9,7 @@
     },
     "dispatch": {
       "port_bind": "[Dispatch] 디스패치 서버가 포트 %s에서 열렸습니다.",
-      "request": "[Dispatch] Client %s %s request: %s",
+      "request": "🇺🇸[Dispatch] Client %s %s request: %s",
       "keystore": {
         "general_error": "[Dispatch] 키스토어 로딩중 오류가 발생했습니다!",
         "password_error": "[Dispatch] 키스토어를 로딩할 수 없습니다. 기본 키스토어 암호로 시도 중...",
@@ -17,10 +17,10 @@
         "default_password": "[Dispatch] 기본 키스토어 암호가 성공적으로 로딩됐습니다. config.json에서 암호를 123456으로 설정해 보십시오."
       },
       "authentication": {
-        "default_unable_to_verify": "[Authentication] Something called the verifyUser method which is unavailable in the default authentication handler."
+        "default_unable_to_verify": "🇺🇸[Authentication] Something called the verifyUser method which is unavailable in the default authentication handler."
       },
       "no_commands_error": "디스패치 전용 모드에서는 명령어가 지원되지 않습니다.",
-      "unhandled_request_error": "[Dispatch] Potential unhandled %s request: %s.",
+      "unhandled_request_error": "🇺🇸[Dispatch] Potential unhandled %s request: %s.",
       "account": {
         "login_attempt": "[Dispatch] %s 클라이언트에서 로그인을 시도하고 있습니다.",
         "login_success": "[Dispatch] %s 클라이언트가 %s로 로그인 했습니다.",
@@ -111,11 +111,10 @@
     "status": {
       "enabled": "활성화됨",
       "disabled": "비활성화됨",
-      "help": "Help",
+      "help": "🇺🇸Help",
       "success": "성공"
     },
     "account": {
-      "command_usage": "사용법: account <create|delete> <아이디> [UID]",
       "invalid": "잘못된 UID.",
       "exists": "이 아이디 또는 UID를 가진 계정이 이미 존재합니다.",
       "create": "UID %s로 계정이 생성되었습니다.",
@@ -124,7 +123,6 @@
       "description": "사용자 계정을 수정합니다"
     },
     "announce": {
-      "command_usage": "사용법: announce|a <\"tpl\" templateId|\"refresh\"|\"revoke\" templateId|content>",
       "send_success": "공지 발송에 성공했습니다, 취소하고 싶으면 /a revoke %s를 입력하세요.",
       "refresh_success": "공지 구성파일을 새로 고쳤습니다. [Total %s]",
       "revoke_done": "%s공지 취소 시도중.",
@@ -132,36 +130,32 @@
       "description": "모든 온라인 플레이어로부터 공지사항 발표하거나, 서버 공지사항을 관리합니다."
     },
     "clear": {
-      "command_usage": "사용법: clear <all|wp|art|mat> [lv<최고레벨>] [r<최고 제련레벨>] [<최고 희귀도>*]",
       "weapons": "%s의 무기를 초기화했습니다.",
       "artifacts": "%s의 성유물을 초기화했습니다.",
       "materials": "%s의 재료를 초기화했습니다.",
       "furniture": "%s의 가구를 초기화했습니다.",
-      "displays": "Cleared displays for %s.",
-      "virtuals": "Cleared virtuals for %s.",
+      "displays": "🇺🇸Cleared displays for %s.",
+      "virtuals": "🇺🇸Cleared virtuals for %s.",
       "everything": "%s의 모든 아이템을 초기화했습니다.",
       "description": "인벤토레에서 잠금된 물건을 제외한 항목을 삭제합니다. 기본적으로 4성, 1레벨, 1재련보다 낮은것만을 기준으로 하지만, 더 높게 설정할 수 있습니다."
     },
     "coop": {
-      "usage": "사용법: coop [호스트 UID]",
       "success": "%s가 %s의 월드에 소환되었습니다.",
       "description": "누군가를 다른 사람의 월드에 참여하도록 합니다. 목표가 지정되지 않으면 당신을 다인 모드로 진입시킵니다."
     },
     "enter_dungeon": {
-      "usage": "사용법: enterdungeon <던전ID>",
       "changed": "%s던전으로 전환되었습니다.",
       "not_found_error": "던전이 존재하지 않습니다.",
       "in_dungeon_error": "이미 당신은 그 던전에 있습니다.",
       "description": "던전에 진입합니다."
     },
     "give": {
-      "usage": "사용법: give <아이템ID|캐릭터ID|\"all\"|\"weapons\"|\"mats\"|\"avatars\"> [x<개수>] [lv<레벨>] [r<제련레벨>]",
       "usage_relic": "사용법: give <성유물ID> [mainPropID] [<appendPropID>[,<times>]]... [lv<레벨 0-20>]",
       "illegal_relic": "이 성유물ID는 블랙리스트 범위에 있습니다. 원하는 ID가 아닐 수 있습니다.",
       "given": "%s개의 %s를 %s에게 지급했습니다.",
       "given_with_level_and_refinement": "Give %s with level %s, refinement %s %s times to %s.",
-      "given_level": "Given %s with level %s %s times to %s.",
-      "given_avatar": "Given %s with level %s to %s.",
+      "given_level": "🇺🇸Given %s with level %s %s times to %s.",
+      "given_avatar": "🇺🇸Given %s with level %s to %s.",
       "giveall_success": "모든 아이템이 성공적으로 지급되었습니다.",
       "description": "지정된 플레이어가 아이템을 획득합니다. 모든 무기, 캐릭터, 재료를 제공할 수 있으며, 맞춤 성유물을 제공할 수도 있습니다."
     },
@@ -170,7 +164,6 @@
       "description": "파티 내 모든 캐릭터를 치유합니다."
     },
     "help": {
-      "usage": "사용법: ",
       "aliases": "별칭: ",
       "available_commands": "사용 가능한 명령어: ",
       "tip_need_permission": "권한: ",
@@ -185,13 +178,11 @@
       "description": "지정된 플레이어를 서버에서 강제퇴장합니다 (WIP)"
     },
     "killall": {
-      "usage": "사용법: killall [플레이어UID] [sceneID]",
       "scene_not_found_in_player_world": "해당 scene에 플레이어가 없습니다.",
       "kill_monsters_in_scene": "%s마리의 몬스터가 scene %s에서 모두 죽었습니다.",
       "description": "모든 엔티티를 죽입니다."
     },
     "killCharacter": {
-      "usage": "사용법: killcharacter [플레이어ID]",
       "success": "%s의 캐릭터를 죽였습니다.",
       "description": "플레이어의 현재 캐릭터를 죽입니다"
     },
@@ -206,7 +197,6 @@
       "description": "온라인 상태의 플레이어를 표시합니다."
     },
     "permission": {
-      "usage": "사용법: permission <add|remove> <아이디> <permission>",
       "add": "권한이 추가되었습니다.",
       "has_error": "이미 해당 권한이 있습니다!",
       "remove": "권한이 삭제되었습니다.",
@@ -219,7 +209,6 @@
       "description": "좌표를 출력합니다"
     },
     "quest": {
-      "usage": "사용법: quest <add|finish> [questID]",
       "added": "%s 퀘스트가 추가되었습니다.",
       "finished": "%s 퀘스트를 마쳤습니다.",
       "not_found": "퀘스트를 찾을 수 없습니다.",
@@ -237,15 +226,14 @@
       "description": "현재 캐릭터의 별자리를 초기화합니다, 변경 사항을 보려면 명령을 사용한 후 다시 로그인 해야합니다."
     },
     "resetShopLimit": {
-      "usage": "사용법: resetshop <playerID>",
       "success": "리셋 완료됨.",
       "description": "대상 플레이어의 상점의 새로고침 시간을 초기화합니다"
     },
     "sendMail": {
-      "usage": "사용법: sendmail <userID|all|help> [templateID]",
+      "give_usage": "🇺🇸Usage: give <player> <itemID|itemName> [amount] [level] [refinement]",
       "user_not_exist": "아이디가 '%s'인 사용자가 없습니다.",
       "start_composition": "메세지 작성 시작중.\n계속하려면 '/sendmail <title>'을 입력하십시오.\n'/sendmail stop'도 언제든지 사용할 수 있습니다.",
-      "templates": "Mail templates coming soon implemented...",
+      "templates": "🇺🇸Mail templates coming soon implemented...",
       "invalid_arguments": "잘못된 인수입니다.",
       "send_cancel": "메세지 전송이 취소되었습니다",
       "send_done": "%s에게 메세지가 전송되었습니다!",
@@ -257,35 +245,42 @@
       "set_message_sender": "메세지 발송자가 '%s'으로 설정되었습니다.\n계속하려면 '/sendmail <itemID|itemName|finish> [amount] [level]'을 사용하십시오.",
       "send": "%s 의 %s을 (레벨 %s)을 메세지에 첨부했습니다.\n계속 항목을 추가하거나, '/sendmail finish'을 사용해 메세지를 보낼 수 있습니다..",
       "invalid_arguments_please_use": "잘못된 인수입니다.\n '/sendmail %s'을 사용하십시오",
-      "title": "<title>",
-      "message": "<message>",
-      "sender": "<sender>",
-      "arguments": "<itemID|itemName|finish> [amount] [level]",
+      "title": "🇺🇸<title>",
+      "message": "🇺🇸<message>",
+      "sender": "🇺🇸<sender>",
+      "arguments": "🇺🇸<itemID|itemName|finish> [amount] [level]",
       "error": "오류: Invalid construction stage %s. Check console for stacktrace.",
       "description": "지정된 사용자에게 메세지를 보냅니다. 이 명령어의 사용법은 세부 내용에 따라 달라집니다."
     },
     "sendMessage": {
-      "usage": "사용법: sendmessage <메세지>",
       "success": "메세지 전송 성공.",
       "description": "서버가 플레이어에게 메세지를 전송합니다. 목표를 지정하지 않고 명령어를 사용하는 경우, 서버의 모든 인원에게 메세지가 발송됩니다."
     },
+    "setConst": {
+      "range_error": "🇺🇸Constellation level must be between 0 and 6.",
+      "level_error": "🇺🇸Invalid constellation level.",
+      "fail": "🇺🇸Failed to set constellation.",
+      "failed_success": "🇺🇸Constellations for %s have been set to %s. Please reload scene to see changes.",
+      "success": "🇺🇸Constellations for %s have been set to %s.",
+      "description": "🇺🇸Sets constellation level for your current active character"
+    },
     "setFetterLevel": {
-      "usage": "사용법: setfetterlevel <레벨>",
       "range_error": "호감도 지수는 0 과 10 사이에 위치해야합니다.",
       "success": "호감도 지수가 %s로 설정되었습니다.",
       "level_error": "잘못된 호감도 지수",
       "description": "파티 내 자신의 캐릭터의 호감도를 설정합니다."
     },
     "setProp": {
-      "usage": "사용법: setprop|prop <prop> <값>\n\t사용할 수 있는 <prop> 종류: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume",
       "description": "계정의 속성을 변경합니다. godmode등이 이를 통해 활성화 될 수 있으며, 나선비경을 잠금해제하거나, 기행의 레벨을 조정하는 등의 명령또한 이를 통해 가능합니다."
     },
     "setStats": {
-      "usage": "사용법: setstats|stats <stat> <값>\n\t사용할 수 있는 <stat> 종류: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys\n",
-      "description": "당신의 현재 캐릭터의 스텟들을 조절합니다."
+      "description": "당신의 현재 캐릭터의 스텟들을 조절합니다.",
+      "locked_to": "🇺🇸%s locked to %s.",
+      "locked_for_to": "🇺🇸%s for %s locked to %s.",
+      "unlocked": "🇺🇸%s unlocked.",
+      "unlocked_for": "🇺🇸%s for %s unlocked."
     },
     "spawn": {
-      "usage": "사용법: spawn <엔티티ID> [개체 수] [level(몬스터만)] [<x> <y> <z>(몬스터만 가능, 선택형)]",
       "success": " %s 개의 %s 를 소환하는데 성공했습니다.",
       "limit_reached": "scene당 소환 엔티티 한계입니다. 대신 %s 개의 엔티티를 소환합니다.",
       "description": "엔티티를 당신 근처에 소환합니다"
@@ -295,16 +290,10 @@
       "description": "서버를 중지합니다"
     },
     "talent": {
-      "usage_1": "특성 레벨을 저잘하기위한 방법으로는: /talent set <특성ID> <값>",
-      "usage_2": "특성 레벨을 조절하는 다른 방법으로는: /talent <n 또는 e 또는 q> <값>",
-      "usage_3": "특성 ID를 가지기 위해서는: /talent getid",
       "lower_16": "불분명한 특성 레벨. 특성의 레벨은 16 미만이여야합니다.",
-      "set_id": "틀성을 %s 로 조정합니다.",
-      "set_atk": "일반 공격 특성을 %s 로 조정합니다.",
-      "set_e": "특성 E를 %s 로 조정합니다.",
-      "set_q": "특성 Q를 %s 로 조정합니다.",
+      "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
+      "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "잘못된 스킬ID.",
-      "set_this": "이 스킬의 레벨을 %s로 조정합니다.",
       "invalid_level": "불분명한 스킬 레벨.",
       "normal_attack_id": "기본공격 ID %s.",
       "e_skill_id": "E 스킬 ID %s.",
@@ -312,17 +301,13 @@
       "description": "현재 캐릭터의 특성 레벨을 조정합니다"
     },
     "team": {
-      "usage": "사용법: team <add|remove|set> [캐릭터ID,...] [index|first|last|index-index,...]",
       "invalid_usage": "잘못된 사용.",
-      "add_usage": "Usage (add): team add <캐릭터ID,...> [index]",
       "invalid_index": "잘못된 목차.",
       "add_too_much": "팀에 넣을 수 있는 캐릭터 수의 최대는 %d 명 입니다.",
       "failed_to_add_avatar": "추가하는데 실패했습니다 캐릭터 ID %s.",
-      "remove_usage": "Usage (remove): team remove <index|first|last|index-index,...>",
       "failed_to_parse_index": "분석에 실패함 index: %s",
       "remove_too_much": "팀에는 최소 1명의 캐릭터가 편성 되어야 합니다.",
-      "ignore_index": "Ignored index(es): %s",
-      "set_usage": "Usage (set): team set <index> <캐릭터ID>",
+      "ignore_index": "🇺🇸Ignored index(es): %s",
       "index_out_of_range": "지정된 목차는 범위 밖에 있습니다.",
       "failed_parse_avatar_id": "분석에 실패한 캐릭터 ID: %s",
       "avatar_already_in_team": "해당 캐릭터는 이미 팀에 포함되어 있습니다.",
@@ -335,9 +320,6 @@
       "description": "당신의 월드에 있는 모든 플레이어들을 당신의 위치로 이동시킵니다."
     },
     "teleport": {
-      "usage_server": "사용법: tp @<플레이어ID> <x> <y> <z> [sceneID]",
-      "usage": "사용법: tp [@<플레이어ID>] <x> <y> <z> [sceneID]",
-      "specify_player_id": "플레이어 ID를 측정하십시오.",
       "invalid_position": "위치가 잘못되었습니다.",
       "exists_error": "scene가 존재하지 않습니다..",
       "success": " %s 을(를) %s, %s, %s 로 이동시켰습니다. scene %s.",
@@ -349,7 +331,6 @@
       "description": "날씨 ID와 기후를 변경합니다. 날씨 ID들은 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json에서 찾을 수 있습니다.\n날씨 타입: sunny, cloudy, rain, thunderstorm, snow, mist"
     },
     "ban": {
-      "command_usage": "사용법: ban <@플레이어ID> [timestamp] [reason]",
       "success": "성공.",
       "failure": "실패, 플레이어가 발견되지 않았습니다.",
       "invalid_time": "timestamp를 분석할 수 없습니다.",
@@ -360,7 +341,6 @@
       "description": "플레이어의 모든 오픈 스탯을 잠금 해제합니다."
     },
     "unban": {
-      "command_usage": "사용법: unban <@플레이어ID>",
       "success": "성공.",
       "failure": "실패, 플레이어를 찾을 수 없습니다.",
       "description": "플레이어에 대한 밴을 해제합니다"
@@ -387,7 +367,7 @@
       "title_items": "아이템",
       "title_scenes": "장면",
       "title_monsters": "몬스터",
-      "header_id": "Id",
+      "header_id": "🇺🇸Id",
       "header_command": "명령러",
       "header_description": "설명",
       "header_avatar": "캐릭터",
@@ -396,9 +376,9 @@
       "header_monster": "몬스터"
     },
     "index": {
-      "title": "Documentation",
-      "handbook": "GM Handbook",
-      "gacha_mapping": "Gacha mapping JSON"
+      "title": "🇺🇸Documentation",
+      "handbook": "🇺🇸GM Handbook",
+      "gacha_mapping": "🇺🇸Gacha mapping JSON"
     }
   }
 }

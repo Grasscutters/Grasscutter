@@ -291,10 +291,8 @@
     },
     "talent": {
       "lower_16": "Nivel de talent nevalabil. Nivelul trebuie să fie mai mic ca 16.",
-      "set_id": "Setat nivelul ca %s.",
-      "set_atk": "Setat talentul Normal Attack ca %s.",
-      "set_e": "Setat talentul E ca %s.",
-      "set_q": "Setat talentul Q ca %s.",
+      "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
+      "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "Skill ID nevalabil.",
       "invalid_level": "Nivel de talent nevalabil.",
       "normal_attack_id": "🇺🇸Normal Attack ID %s.",

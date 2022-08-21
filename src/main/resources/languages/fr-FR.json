@@ -291,10 +291,8 @@
     },
     "talent": {
       "lower_16": "Niveau de talent invalide. Le niveau doit être inférieur a 16.",
-      "set_id": "Talent défini à %s.",
-      "set_atk": "Le talent ATK normale a été défini à %s.",
-      "set_e": "Le talent E a été défini a %s.",
-      "set_q": "Le talent A/Q a été défini à %s.",
+      "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
+      "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "ID de talent invalide.",
       "invalid_level": "Niveau de talent invalide.",
       "normal_attack_id": "ID de l'attaque normale ID %s.",
