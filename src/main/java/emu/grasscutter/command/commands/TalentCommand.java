@@ -91,9 +91,9 @@ public final class TalentCommand implements CommandHandler {
                 }
             }
             case "getid" -> {
-                CommandHandler.sendTranslatedMessage(sender, "commands.talent.normal_attack_id", Integer.toString(skillIdNorAtk));
-                CommandHandler.sendTranslatedMessage(sender, "commands.talent.e_skill_id", Integer.toString(skillIdE));
-                CommandHandler.sendTranslatedMessage(sender, "commands.talent.q_skill_id", Integer.toString(skillIdQ));
+                CommandHandler.sendTranslatedMessage(sender, "commands.talent.normal_attack_id", skillIdNorAtk);
+                CommandHandler.sendTranslatedMessage(sender, "commands.talent.e_skill_id", skillIdE);
+                CommandHandler.sendTranslatedMessage(sender, "commands.talent.q_skill_id", skillIdQ);
             }
         }
     }

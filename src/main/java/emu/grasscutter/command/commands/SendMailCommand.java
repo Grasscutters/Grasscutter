@@ -76,7 +76,7 @@ public final class SendMailCommand implements CommandHandler {
                         if (mailBuilder.constructionStage == 3) {
                             if (!mailBuilder.sendToAll) {
                                 Grasscutter.getGameServer().getPlayerByUid(mailBuilder.recipient, true).sendMail(mailBuilder.mail);
-                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.send_done", Integer.toString(mailBuilder.recipient)));
+                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.send_done", mailBuilder.recipient));
                             } else {
                                 for (Player player : DatabaseHelper.getAllPlayers()) {
                                     Grasscutter.getGameServer().getPlayerByUid(player.getUid(), true).sendMail(mailBuilder.mail);
@@ -154,7 +154,7 @@ public final class SendMailCommand implements CommandHandler {
                                         return;
                                 }
                                 mailBuilder.mail.itemList.add(new Mail.MailItem(item, amount, lvl));
-                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.send", Integer.toString(amount), Integer.toString(item), Integer.toString(lvl)));
+                                CommandHandler.sendMessage(sender, translate(sender, "commands.sendMail.send", amount, item, lvl));
                             }
                         }
                     }
@@ -171,7 +171,7 @@ public final class SendMailCommand implements CommandHandler {
             case 1 -> translate(sender, "commands.sendMail.message");
             case 2 -> translate(sender, "commands.sendMail.sender");
             case 3 -> translate(sender, "commands.sendMail.arguments");
-            default -> translate(sender, "commands.sendMail.error", Integer.toString(stage));
+            default -> translate(sender, "commands.sendMail.error", stage);
         };
     }
 

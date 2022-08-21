@@ -211,7 +211,7 @@ public final class GiveCommand implements CommandHandler {
             if (param.avatarData != null) {
                 Avatar avatar = makeAvatar(param);
                 targetPlayer.addAvatar(avatar);
-                CommandHandler.sendTranslatedMessage(sender, "commands.give.given_avatar", Integer.toString(param.id), Integer.toString(param.lvl), Integer.toString(targetPlayer.getUid()));
+                CommandHandler.sendTranslatedMessage(sender, "commands.give.given_avatar", param.id, param.lvl, targetPlayer.getUid());
                 return;
             }
             // If it's not an avatar, it needs to be a valid item
@@ -223,15 +223,15 @@ public final class GiveCommand implements CommandHandler {
             switch (param.data.getItemType()) {
                 case ITEM_WEAPON:
                     targetPlayer.getInventory().addItems(makeUnstackableItems(param), ActionReason.SubfieldDrop);
-                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given_with_level_and_refinement", Integer.toString(param.id), Integer.toString(param.lvl), Integer.toString(param.refinement), Integer.toString(param.amount), Integer.toString(targetPlayer.getUid()));
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given_with_level_and_refinement", param.id, param.lvl, param.refinement, param.amount, targetPlayer.getUid());
                     return;
                 case ITEM_RELIQUARY:
                     targetPlayer.getInventory().addItems(makeArtifacts(param), ActionReason.SubfieldDrop);
-                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given_level", Integer.toString(param.id), Integer.toString(param.lvl), Integer.toString(param.amount), Integer.toString(targetPlayer.getUid()));
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given_level", param.id, param.lvl, param.amount, targetPlayer.getUid());
                     return;
                 default:
                     targetPlayer.getInventory().addItem(new GameItem(param.data, param.amount), ActionReason.SubfieldDrop);
-                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given", Integer.toString(param.amount), Integer.toString(param.id), Integer.toString(targetPlayer.getUid()));
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given", param.amount, param.id, targetPlayer.getUid());
                     return;
             }
         } catch (IllegalArgumentException ignored) {

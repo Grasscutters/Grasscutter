@@ -17,7 +17,7 @@ public final class WeatherCommand implements CommandHandler {
 
         if (args.isEmpty()) {
             climate = targetPlayer.getClimate();
-            CommandHandler.sendTranslatedMessage(sender, "commands.weather.status", Integer.toString(weatherId), climate.getShortName());
+            CommandHandler.sendTranslatedMessage(sender, "commands.weather.status", weatherId, climate.getShortName());
             return;
         }
 
@@ -38,6 +38,6 @@ public final class WeatherCommand implements CommandHandler {
 
         targetPlayer.setWeather(weatherId, climate);
         climate = targetPlayer.getClimate();  // Might be different to what we set
-        CommandHandler.sendTranslatedMessage(sender, "commands.weather.success", Integer.toString(weatherId), climate.getShortName());
+        CommandHandler.sendTranslatedMessage(sender, "commands.weather.success", weatherId, climate.getShortName());
     }
 }

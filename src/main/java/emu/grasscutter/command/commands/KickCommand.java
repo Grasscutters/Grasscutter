@@ -13,11 +13,11 @@ public final class KickCommand implements CommandHandler {
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (sender != null) {
             CommandHandler.sendTranslatedMessage(sender, "commands.kick.player_kick_player",
-                Integer.toString(sender.getUid()), sender.getAccount().getUsername(),
-                Integer.toString(targetPlayer.getUid()), targetPlayer.getAccount().getUsername());
+                sender.getUid(), sender.getAccount().getUsername(),
+                targetPlayer.getUid(), targetPlayer.getAccount().getUsername());
         } else {
             CommandHandler.sendTranslatedMessage(sender, "commands.kick.server_kick_player",
-                Integer.toString(targetPlayer.getUid()), targetPlayer.getAccount().getUsername());
+                targetPlayer.getUid(), targetPlayer.getAccount().getUsername());
         }
 
         targetPlayer.getSession().close();
