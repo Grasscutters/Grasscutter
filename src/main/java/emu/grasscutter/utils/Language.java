@@ -253,7 +253,7 @@ public final class Language {
         }
     }
 
-    private static final int TEXTMAP_CACHE_VERSION = 0x9CCACE02;
+    private static final int TEXTMAP_CACHE_VERSION = 0x9CCACE03;
     @EqualsAndHashCode public static class TextStrings implements Serializable {
         public static final String[] ARR_LANGUAGES = {"EN", "CHS", "CHT", "JP", "KR", "DE", "ES", "FR", "ID", "PT", "RU", "TH", "VI"};
         public static final String[] ARR_GC_LANGUAGES = {"en-US", "zh-CN", "zh-TW", "en-US", "ko-KR", "en-US", "es-ES", "fr-FR", "en-US", "en-US", "ru-RU", "en-US", "en-US"};  // TODO: Update the placeholder en-US entries if we ever add GC translations for the missing client languages
@@ -437,6 +437,7 @@ public final class Language {
         GameData.getAvatarDataMap().forEach((k, v) -> usedHashes.add((int) v.getNameTextMapHash()));
         GameData.getAvatarSkillDataMap().forEach((k, v) -> {
             usedHashes.add((int) v.getNameTextMapHash());
+            usedHashes.add((int) v.getDescTextMapHash());
         });
         GameData.getItemDataMap().forEach((k, v) -> usedHashes.add((int) v.getNameTextMapHash()));
         GameData.getMonsterDataMap().forEach((k, v) -> usedHashes.add((int) v.getNameTextMapHash()));

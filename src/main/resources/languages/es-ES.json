@@ -291,10 +291,8 @@
     },
     "talent": {
       "lower_16": "Nivel de talento inválido. El nivel debe ser menor que 16.",
-      "set_id": "Establecido el talento a %s.",
-      "set_atk": "Establecido el talento del ataque normal a %s.",
-      "set_e": "Establecido el talento E a %s.",
-      "set_q": "Establecido el talento Q a %s.",
+      "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
+      "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "ID de habilidad inválido.",
       "invalid_level": "Nivel de talento inválido.",
       "normal_attack_id": "ID del ataque normal %s.",
@@ -363,23 +361,23 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "Comandos",
       "title_avatars": "Avatares",
       "title_items": "Objetos",
       "title_scenes": "Escenario",
       "title_monsters": "Monstruos",
-      "header_id": "Id",
+      "header_id": "🇺🇸Id",
       "header_command": "Comando",
       "header_description": "Descripción",
-      "header_avatar": "Avatar",
+      "header_avatar": "🇺🇸Avatar",
       "header_item": "Objeto",
       "header_scene": "Escenario",
       "header_monster": "Monstruo"
     },
     "index": {
       "title": "Documentación",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "JSON de mapeo del Gacha"
     }
   }

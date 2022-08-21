@@ -291,10 +291,8 @@
     },
     "talent": {
       "lower_16": "Invalid talent level. Level should be lower than 16.",
-      "set_id": "Set talent to %s.",
-      "set_atk": "Set talent Normal ATK to %s.",
-      "set_e": "Set talent E to %s.",
-      "set_q": "Set talent Q to %s.",
+      "set_id": "Set talent %s - \"%s\" to %s.",
+      "id_desc": "Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "Invalid skill ID.",
       "invalid_level": "Invalid talent level.",
       "normal_attack_id": "Normal Attack ID %s.",
