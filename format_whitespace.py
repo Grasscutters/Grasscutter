@@ -4,7 +4,7 @@ import subprocess
 
 UPSTREAM = 'https://github.com/Grasscutters/Grasscutter.git'
 RATCHET = 'LintRatchet'
-RATCHET_FALLBACK = '8e3deb9'
+RATCHET_FALLBACK = 'c517b8a2c95473811eb07e12e73c4a69e59fbbdc'
 
 
 re_leading_whitespace = re.compile(r'^[ \t]+', re.MULTILINE)  # Replace with \1.replace('\t', '    ')
