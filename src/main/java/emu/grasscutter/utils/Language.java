@@ -84,6 +84,14 @@ public final class Language {
     public static String translate(String key, Object... args) {
         String translated = Grasscutter.getLanguage().get(key);
 
+        for (int i = 0; i < args.length; i++) {
+            args[i] = switch(args[i].getClass().getSimpleName()) {
+                case "String" -> args[i];
+                case "TextStrings" -> ((TextStrings) args[i]).get(0).replace("\\\\n", "\\n");  // TODO: Change this to server language
+                default -> args[i].toString();
+            };
+        }
+
         try {
             return translated.formatted(args);
         } catch (Exception exception) {
@@ -106,6 +114,14 @@ public final class Language {
 
         var langCode = Utils.getLanguageCode(player.getAccount().getLocale());
         String translated = getLanguage(langCode).get(key);
+
+        for (int i = 0; i < args.length; i++) {
+            args[i] = switch(args[i].getClass().getSimpleName()) {
+                case "String" -> args[i];
+                case "TextStrings" -> ((TextStrings) args[i]).getGC(langCode).replace("\\\\n", "\n");  // Note that we don't unescape \n for server console
+                default -> args[i].toString();
+            };
+        }
 
         try {
             return translated.formatted(args);
@@ -248,6 +264,11 @@ public final class Language {
                 IntStream.range(0, ARR_LANGUAGES.length)
                 .boxed()
                 .collect(Collectors.toMap(i -> ARR_LANGUAGES[i], i -> i)));
+        public static final Object2IntMap<String> MAP_GC_LANGUAGES =  // Map "en-US": 0, "zh-CN": 1, ...
+            new Object2IntOpenHashMap<>(
+                IntStream.range(0, ARR_GC_LANGUAGES.length)
+                .boxed()
+                .collect(Collectors.toMap(i -> ARR_GC_LANGUAGES[i], i -> i, (i1, i2) -> i1)));  // Have to handle duplicates referring back to the first
         public String[] strings = new String[ARR_LANGUAGES.length];
 
         public TextStrings() {};
@@ -286,6 +307,10 @@ public final class Language {
 
         public String get(String languageCode) {
             return strings[MAP_LANGUAGES.getOrDefault(languageCode, 0)];
+        }
+
+        public String getGC(String languageCode) {
+            return strings[MAP_GC_LANGUAGES.getOrDefault(languageCode, 0)];
         }
 
         public boolean set(String languageCode, String string) {
@@ -410,6 +435,9 @@ public final class Language {
         ResourceLoader.loadAll();
         IntSet usedHashes = new IntOpenHashSet();
         GameData.getAvatarDataMap().forEach((k, v) -> usedHashes.add((int) v.getNameTextMapHash()));
+        GameData.getAvatarSkillDataMap().forEach((k, v) -> {
+            usedHashes.add((int) v.getNameTextMapHash());
+        });
         GameData.getItemDataMap().forEach((k, v) -> usedHashes.add((int) v.getNameTextMapHash()));
         GameData.getMonsterDataMap().forEach((k, v) -> usedHashes.add((int) v.getNameTextMapHash()));
         GameData.getMainQuestDataMap().forEach((k, v) -> usedHashes.add((int) v.getTitleTextMapHash()));

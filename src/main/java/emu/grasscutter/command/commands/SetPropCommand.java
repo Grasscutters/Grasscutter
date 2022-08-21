@@ -160,8 +160,8 @@ public final class SetPropCommand implements CommandHandler {
             }
         } else {
             if (prop.prop != PlayerProperty.PROP_NONE) {  // PseudoProps need to do their own error messages
-                String min = Integer.toString(targetPlayer.getPropertyMin(prop.prop));
-                String max = Integer.toString(targetPlayer.getPropertyMax(prop.prop));
+                int min = targetPlayer.getPropertyMin(prop.prop);
+                int max = targetPlayer.getPropertyMax(prop.prop);
                 CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.value_between", prop.name, min, max);
             }
         }
@@ -170,9 +170,7 @@ public final class SetPropCommand implements CommandHandler {
     private boolean setTowerLevel(Player sender, Player targetPlayer, int topFloor) {
         List<Integer> floorIds = targetPlayer.getServer().getTowerSystem().getAllFloors();
         if (topFloor < 0 || topFloor > floorIds.size()) {
-            String min = Integer.toString(0);
-            String max = Integer.toString(floorIds.size());
-            CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.value_between", "Tower Level", min, max);
+            CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.value_between", "Tower Level", 0, floorIds.size());
             return false;
         }
 

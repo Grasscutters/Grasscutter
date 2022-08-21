@@ -42,6 +42,6 @@ public final class KillAllCommand implements CommandHandler {
                 .filter(entity -> entity instanceof EntityMonster)
                 .toList();
         toKill.forEach(entity -> sceneF.killEntity(entity, 0));
-        CommandHandler.sendMessage(sender, translate(sender, "commands.killall.kill_monsters_in_scene", Integer.toString(toKill.size()), Integer.toString(scene.getId())));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.killall.kill_monsters_in_scene", toKill.size(), scene.getId()));
     }
 }

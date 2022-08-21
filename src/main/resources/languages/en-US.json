@@ -305,7 +305,7 @@
     "team": {
       "invalid_usage": "Invalid usage.",
       "invalid_index": "Index is invalid.",
-      "add_too_much": "The server only allows you to have at most %d avatar(s) in your team.",
+      "add_too_much": "The server only allows you to have at most %s avatar(s) in your team.",
       "failed_to_add_avatar": "Failed to add avatar ID %s.",
       "failed_to_parse_index": "Failed to parse index: %s",
       "remove_too_much": "You can't remove all your avatars.",
@@ -313,7 +313,7 @@
       "index_out_of_range": "The index you specified is out of range.",
       "failed_parse_avatar_id": "Failed to parse avatar ID: %s",
       "avatar_already_in_team": "Avatar is already in team.",
-      "avatar_not_found": "Avatar %d not found.",
+      "avatar_not_found": "Avatar %s not found.",
       "description": "Modify your team manually."
     },
     "teleportAll": {
