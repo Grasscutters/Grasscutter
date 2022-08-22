@@ -126,6 +126,11 @@ public class EntityAvatar extends GameEntity {
 
     @Override
     public float heal(float amount) {
+        // Do not heal character if they are dead
+        if (!this.isAlive()) {
+            return 0f;
+        }
+        
         float healed = super.heal(amount);
 
         if (healed > 0f) {
