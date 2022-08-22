@@ -1,0 +1,22 @@
+[
+  {
+    "templateId" : 1,
+    "type" : "CENTER",
+    "frequency" : 1,
+    "content": "Welcome to Grasscutter PS!",
+    "beginTime": "2022-06-01T00:00:00+08:00",
+    "endTime": "2022-06-01T00:08:00+08:00",
+    "tick" : false,
+    "interval": 1
+  },
+  {
+    "templateId" : 2,
+    "type" : "COUNTDOWN",
+    "frequency" : 1,
+    "content": "Welcome to Grasscutter PS!",
+    "beginTime": "2022-06-01T00:00:00+08:00",
+    "endTime": "2022-06-01T00:08:00+08:00",
+    "tick" : false,
+    "interval": 1
+  }
+]

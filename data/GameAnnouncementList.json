@@ -1,0 +1,62 @@
+{
+  "t": "{{SYSTEM_TIME}}",
+  "list": [
+    {
+      "list": [
+        {
+          "ann_id": 1,
+          "title": "<strong>Welcome to Grasscutter!</strong>",
+          "subtitle": "Welcome!",
+          "banner": "{{DISPATCH_PUBLIC}}/hk4e/announcement/assets/banner/1.jpg",
+          "tag_icon": "{{DISPATCH_PUBLIC}}/hk4e/announcement/assets/tag_icon.png",
+          "type": 2,
+          "type_label": "System",
+          "lang": "en-US",
+          "start_time": "2020-09-25 04:05:30",
+          "end_time": "2030-10-30 11:00:00",
+          "content": "",
+          "has_content": true
+        },
+        {
+          "ann_id": 2,
+          "title": "<strong>How to use announcements</strong>",
+          "subtitle": "How to use announcements",
+          "banner": "{{DISPATCH_PUBLIC}}/hk4e/announcement/assets/banner/2.jpg",
+          "tag_icon": "{{DISPATCH_PUBLIC}}/hk4e/announcement/assets/tag_icon.png",
+          "type": 2,
+          "type_label": "System",
+          "lang": "en-US",
+          "start_time": "2020-09-25 04:05:30",
+          "end_time": "2030-10-30 11:00:00",
+          "content": "",
+          "has_content": true
+        }
+      ],
+      "type_id": 2,
+      "type_label": "System"
+    },
+    {
+      "list": [
+        {}
+      ],
+      "type_id": 3,
+      "type_label": "Events"
+    }
+  ],
+  "total": 2,
+  "type_list": [
+    {
+      "id": 2,
+      "name": "游戏系统公告",
+      "mi18n_name": "System"
+    },
+    {
+      "id": 1,
+      "name": "活动公告",
+      "mi18n_name": "Activity"
+    }
+  ],
+  "timezone": -5,
+  "alert": false,
+  "alert_id": 0
+}

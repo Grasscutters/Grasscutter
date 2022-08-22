@@ -1,0 +1,1072 @@
+[
+	{
+		"expId": 101,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 101001,
+						"minCount": 4,
+						"maxCount": 5
+					}, {
+						"itemId": 101002,
+						"minCount": 2,
+						"maxCount": 3
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 101002,
+						"minCount": 6,
+						"maxCount": 7
+					}, {
+						"itemId": 101003,
+						"minCount": 1,
+						"maxCount": 2
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 101002,
+						"minCount": 6,
+						"maxCount": 7
+					}, {
+						"itemId": 101003,
+						"minCount": 2,
+						"maxCount": 3
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 101002,
+						"minCount": 3,
+						"maxCount": 4
+					}, {
+						"itemId": 101003,
+						"minCount": 7,
+						"maxCount": 8
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 102,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100061,
+						"minCount": 1,
+						"maxCount": 1
+					}, {
+						"itemId": 100064,
+						"minCount": 1,
+						"maxCount": 1
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100061,
+						"minCount": 2,
+						"maxCount": 4
+					}, {
+						"itemId": 100064,
+						"minCount": 2,
+						"maxCount": 4
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100061,
+						"minCount": 4,
+						"maxCount": 6
+					}, {
+						"itemId": 100064,
+						"minCount": 4,
+						"maxCount": 6
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100061,
+						"minCount": 8,
+						"maxCount": 12
+					}, {
+						"itemId": 100064,
+						"minCount": 8,
+						"maxCount": 12
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 103,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 101001,
+						"minCount": 4,
+						"maxCount": 5
+					}, {
+						"itemId": 101002,
+						"minCount": 2,
+						"maxCount": 3
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 101002,
+						"minCount": 6,
+						"maxCount": 7
+					}, {
+						"itemId": 101003,
+						"minCount": 1,
+						"maxCount": 2
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 101002,
+						"minCount": 6,
+						"maxCount": 7
+					}, {
+						"itemId": 101003,
+						"minCount": 2,
+						"maxCount": 3
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 101002,
+						"minCount": 3,
+						"maxCount": 4
+					}, {
+						"itemId": 101003,
+						"minCount": 7,
+						"maxCount": 8
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 104,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100012,
+						"minCount": 1,
+						"maxCount": 1
+					}, {
+						"itemId": 100062,
+						"minCount": 1,
+						"maxCount": 1
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100012,
+						"minCount": 2,
+						"maxCount": 4
+					}, {
+						"itemId": 100062,
+						"minCount": 2,
+						"maxCount": 4
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100012,
+						"minCount": 4,
+						"maxCount": 6
+					}, {
+						"itemId": 100062,
+						"minCount": 4,
+						"maxCount": 6
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100012,
+						"minCount": 8,
+						"maxCount": 12
+					}, {
+						"itemId": 100062,
+						"minCount": 8,
+						"maxCount": 12
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 105,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100014,
+						"minCount": 1,
+						"maxCount": 1
+					}, {
+						"itemId": 100013,
+						"minCount": 1,
+						"maxCount": 1
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100014,
+						"minCount": 2,
+						"maxCount": 4
+					}, {
+						"itemId": 100013,
+						"minCount": 2,
+						"maxCount": 4
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100014,
+						"minCount": 4,
+						"maxCount": 6
+					}, {
+						"itemId": 100013,
+						"minCount": 4,
+						"maxCount": 6
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100014,
+						"minCount": 8,
+						"maxCount": 12
+					}, {
+						"itemId": 100013,
+						"minCount": 8,
+						"maxCount": 12
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 106,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 625,
+						"maxCount": 625
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 1575,
+						"maxCount": 1575
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 2500,
+						"maxCount": 2500
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 5000,
+						"maxCount": 5000
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 201,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 625,
+						"maxCount": 625
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 1575,
+						"maxCount": 1575
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 2500,
+						"maxCount": 2500
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 5000,
+						"maxCount": 5000
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 202,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100026,
+						"minCount": 1,
+						"maxCount": 1
+					}, {
+						"itemId": 100063,
+						"minCount": 1,
+						"maxCount": 1
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100026,
+						"minCount": 2,
+						"maxCount": 4
+					}, {
+						"itemId": 100063,
+						"minCount": 2,
+						"maxCount": 4
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100026,
+						"minCount": 4,
+						"maxCount": 6
+					}, {
+						"itemId": 100063,
+						"minCount": 4,
+						"maxCount": 6
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100026,
+						"minCount": 8,
+						"maxCount": 12
+					}, {
+						"itemId": 100063,
+						"minCount": 8,
+						"maxCount": 12
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 203,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 101001,
+						"minCount": 4,
+						"maxCount": 5
+					}, {
+						"itemId": 101002,
+						"minCount": 2,
+						"maxCount": 3
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 101002,
+						"minCount": 6,
+						"maxCount": 7
+					}, {
+						"itemId": 101003,
+						"minCount": 1,
+						"maxCount": 2
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 101002,
+						"minCount": 6,
+						"maxCount": 7
+					}, {
+						"itemId": 101003,
+						"minCount": 2,
+						"maxCount": 3
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 101002,
+						"minCount": 3,
+						"maxCount": 4
+					}, {
+						"itemId": 101003,
+						"minCount": 7,
+						"maxCount": 8
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 204,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100014,
+						"minCount": 1,
+						"maxCount": 1
+					}, {
+						"itemId": 100013,
+						"minCount": 1,
+						"maxCount": 1
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100014,
+						"minCount": 2,
+						"maxCount": 4
+					}, {
+						"itemId": 100013,
+						"minCount": 2,
+						"maxCount": 4
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100014,
+						"minCount": 4,
+						"maxCount": 6
+					}, {
+						"itemId": 100013,
+						"minCount": 4,
+						"maxCount": 6
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100014,
+						"minCount": 8,
+						"maxCount": 12
+					}, {
+						"itemId": 100013,
+						"minCount": 8,
+						"maxCount": 12
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 205,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 625,
+						"maxCount": 625
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 1575,
+						"maxCount": 1575
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 2500,
+						"maxCount": 2500
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 5000,
+						"maxCount": 5000
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 206,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100026,
+						"minCount": 1,
+						"maxCount": 1
+					}, {
+						"itemId": 100063,
+						"minCount": 1,
+						"maxCount": 1
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100026,
+						"minCount": 2,
+						"maxCount": 4
+					}, {
+						"itemId": 100063,
+						"minCount": 2,
+						"maxCount": 4
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100026,
+						"minCount": 4,
+						"maxCount": 6
+					}, {
+						"itemId": 100063,
+						"minCount": 4,
+						"maxCount": 6
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100026,
+						"minCount": 8,
+						"maxCount": 12
+					}, {
+						"itemId": 100063,
+						"minCount": 8,
+						"maxCount": 12
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 301,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 625,
+						"maxCount": 625
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 1575,
+						"maxCount": 1575
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 2500,
+						"maxCount": 2500
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 5000,
+						"maxCount": 5000
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 302,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100014,
+						"minCount": 1,
+						"maxCount": 1
+					}, {
+						"itemId": 101211,
+						"minCount": 1,
+						"maxCount": 1
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100014,
+						"minCount": 2,
+						"maxCount": 4
+					}, {
+						"itemId": 101211,
+						"minCount": 2,
+						"maxCount": 4
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100014,
+						"minCount": 4,
+						"maxCount": 6
+					}, {
+						"itemId": 101211,
+						"minCount": 4,
+						"maxCount": 6
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100014,
+						"minCount": 8,
+						"maxCount": 12
+					}, {
+						"itemId": 101211,
+						"minCount": 8,
+						"maxCount": 12
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 303,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100012,
+						"minCount": 1,
+						"maxCount": 1
+					}, {
+						"itemId": 100002,
+						"minCount": 1,
+						"maxCount": 1
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100012,
+						"minCount": 2,
+						"maxCount": 4
+					}, {
+						"itemId": 100002,
+						"minCount": 2,
+						"maxCount": 4
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100012,
+						"minCount": 4,
+						"maxCount": 6
+					}, {
+						"itemId": 100002,
+						"minCount": 4,
+						"maxCount": 6
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100012,
+						"minCount": 8,
+						"maxCount": 12
+					}, {
+						"itemId": 100002,
+						"minCount": 8,
+						"maxCount": 12
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 304,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 625,
+						"maxCount": 625
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 1575,
+						"maxCount": 1575
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 2500,
+						"maxCount": 2500
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"expeditionRewardData": [
+					{
+						"itemId": 202,
+						"minCount": 5000,
+						"maxCount": 5000
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 305,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100064,
+						"minCount": 1,
+						"maxCount": 1
+					}, {
+						"itemId": 101210,
+						"minCount": 1,
+						"maxCount": 1
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100064,
+						"minCount": 2,
+						"maxCount": 4
+					}, {
+						"itemId": 101210,
+						"minCount": 2,
+						"maxCount": 4
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100064,
+						"minCount": 4,
+						"maxCount": 6
+					}, {
+						"itemId": 101210,
+						"minCount": 4,
+						"maxCount": 6
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100064,
+						"minCount": 8,
+						"maxCount": 12
+					}, {
+						"itemId": 101210,
+						"minCount": 8,
+						"maxCount": 12
+					}
+				]
+			}
+		]
+	},
+	{
+		"expId": 306,
+		"expeditionRewardDataList": [
+			{
+				"hourTime": 4,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100061,
+						"minCount": 1,
+						"maxCount": 1
+					}, {
+						"itemId": 100062,
+						"minCount": 1,
+						"maxCount": 1
+					}
+				]
+			},
+			{
+				"hourTime": 8,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100061,
+						"minCount": 2,
+						"maxCount": 4
+					}, {
+						"itemId": 100062,
+						"minCount": 2,
+						"maxCount": 4
+					}
+				]
+			},
+			{
+				"hourTime": 12,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100061,
+						"minCount": 4,
+						"maxCount": 6
+					}, {
+						"itemId": 100062,
+						"minCount": 4,
+						"maxCount": 6
+					}
+				]
+			},
+			{
+				"hourTime": 20,
+				"rewardMora": 0,
+				"expeditionRewardData": [
+					{
+						"itemId": 100061,
+						"minCount": 8,
+						"maxCount": 12
+					}, {
+						"itemId": 100062,
+						"minCount": 8,
+						"maxCount": 12
+					}
+				]
+			}
+		]
+	}
+]

@@ -133,6 +133,11 @@ jar {
         include '*.xml'
     }
 
+    from('./data') {
+        include '*'
+        into 'defaults/data'
+    }
+
     destinationDirectory = file(".")
 }
 
