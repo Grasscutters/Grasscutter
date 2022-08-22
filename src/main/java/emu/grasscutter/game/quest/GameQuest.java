@@ -181,6 +181,7 @@ public class GameQuest {
         }
         return false;
     }
+    
     public void save() {
         getMainQuest().save();
     }

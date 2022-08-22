@@ -313,16 +313,27 @@ public class QuestManager extends BasePlayerManager {
     }
     public void loadFromDatabase() {
         List<GameMainQuest> quests = DatabaseHelper.getAllQuests(getPlayer());
-
+        
         for (GameMainQuest mainQuest : quests) {
+            boolean cancelAdd = false;
             mainQuest.setOwner(this.getPlayer());
 
             for (GameQuest quest : mainQuest.getChildQuests().values()) {
+                QuestData questConfig = GameData.getQuestDataMap().get(quest.getSubQuestId());
+                
+                if (questConfig == null) {
+                    mainQuest.delete();
+                    cancelAdd = true;
+                    break;
+                }
+                
                 quest.setMainQuest(mainQuest);
-                quest.setConfig(GameData.getQuestDataMap().get(quest.getSubQuestId()));
+                quest.setConfig(questConfig);
             }
 
-            this.getMainQuests().put(mainQuest.getParentQuestId(), mainQuest);
+            if (!cancelAdd) {
+                this.getMainQuests().put(mainQuest.getParentQuestId(), mainQuest);
+            }
         }
     }
 
