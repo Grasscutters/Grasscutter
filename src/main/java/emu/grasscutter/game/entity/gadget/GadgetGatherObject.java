@@ -13,7 +13,6 @@ import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
-import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 
 public class GadgetGatherObject extends GadgetContent {
@@ -69,11 +68,10 @@ public class GadgetGatherObject extends GadgetContent {
             		scene,
             		player,
                     GameData.getItemDataMap().get(itemId),
-                    new Position(
-                            getGadget().getPosition().getX() + (float)Utils.randomRange(1,5) / 5,
-                            getGadget().getPosition().getY() + 2f,
-                            getGadget().getPosition().getZ() + (float)Utils.randomRange(1,5) / 5
-                    ),
+                    getGadget().getPosition().clone()
+                        .addY(2f)
+                        .addX(Utils.randomFloatRange(-1f, 1f))
+                        .addZ(Utils.randomFloatRange(-1f, 1f)),
                     1,
                     true);
             

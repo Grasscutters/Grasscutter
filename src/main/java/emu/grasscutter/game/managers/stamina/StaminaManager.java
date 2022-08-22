@@ -497,11 +497,7 @@ public class StaminaManager extends BasePlayerManager {
                 }
             }
             previousState = currentState;
-            previousCoordinates = new Position(
-                    currentCoordinates.getX(),
-                    currentCoordinates.getY(),
-                    currentCoordinates.getZ()
-            );
+            previousCoordinates = currentCoordinates.clone();
         }
     }
 

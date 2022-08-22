@@ -11,7 +11,6 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
-import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 
 public class GadgetGatherPoint extends GadgetContent {
@@ -61,14 +60,13 @@ public class GadgetGatherPoint extends GadgetContent {
 		
         for (int i = 0 ; i < times ; i++) {
             EntityItem item = new EntityItem(
-            		scene,
-            		player,
+                    scene,
+                    player,
                     GameData.getItemDataMap().get(itemId),
-                    new Position(
-                            getGadget().getPosition().getX() + (float)Utils.randomRange(1,5) / 5,
-                            getGadget().getPosition().getY() + 2f,
-                            getGadget().getPosition().getZ() + (float)Utils.randomRange(1,5) / 5
-                    ),
+                    getGadget().getPosition().clone()
+                        .addY(2f)
+                        .addX(Utils.randomFloatRange(-1f, 1f))
+                        .addZ(Utils.randomFloatRange(-1f, 1f)),
                     1,
                     true);
             

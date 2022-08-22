@@ -17,19 +17,17 @@ public class HandlerPersonalSceneJumpReq extends PacketHandler {
 	@Override
 	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 		PersonalSceneJumpReq req = PersonalSceneJumpReq.parseFrom(payload);
+		var player = session.getPlayer();
 
 		// get the scene point
-		String code = session.getPlayer().getSceneId() + "_" + req.getPointId();
+		String code = player.getSceneId() + "_" + req.getPointId();
 		ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(code);
 
 		if (scenePointEntry != null) {
-			float x = scenePointEntry.getPointData().getTranPos().getX();
-			float y = scenePointEntry.getPointData().getTranPos().getY();
-			float z = scenePointEntry.getPointData().getTranPos().getZ();
-			Position pos = new Position(x, y, z);
+			Position pos = scenePointEntry.getPointData().getTranPos().clone();  // This might not need cloning
 			int sceneId = scenePointEntry.getPointData().getTranSceneId();
 
-			session.getPlayer().getWorld().transferPlayerToScene(session.getPlayer(), sceneId, pos);
+			player.getWorld().transferPlayerToScene(player, sceneId, pos);
 			session.send(new PacketPersonalSceneJumpRsp(sceneId, pos));
 		}
 

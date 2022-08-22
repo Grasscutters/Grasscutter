@@ -25,11 +25,7 @@ public class MapMark {
     public MapMark(MapMarkPoint mapMarkPoint) {
         this.sceneId = mapMarkPoint.getSceneId();
         this.name = mapMarkPoint.getName();
-        this.position = new Position(
-                mapMarkPoint.getPos().getX(),
-                mapMarkPoint.getPos().getY(),
-                mapMarkPoint.getPos().getZ()
-        );
+        this.position = new Position(mapMarkPoint.getPos());
         this.mapMarkPointType = mapMarkPoint.getPointType();
         this.monsterId = mapMarkPoint.getMonsterId();
         this.mapMarkFromType = mapMarkPoint.getFromType();
