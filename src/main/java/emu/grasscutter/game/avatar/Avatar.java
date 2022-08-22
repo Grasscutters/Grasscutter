@@ -302,7 +302,7 @@ public class Avatar {
     public Map<Integer, Integer> getSkillLevelMap() {  // Returns a copy of the skill levels for the current skillDepot.
         var map = new Int2IntOpenHashMap();
         this.skillDepot.getSkillsAndEnergySkill()
-            .forEach(skillId -> map.computeIfAbsent(skillId, this.skillLevelMap::get));
+            .forEach(skillId -> map.put(skillId, this.skillLevelMap.computeIfAbsent(skillId, id -> 1).intValue()));
         return map;
     }
 
