@@ -230,6 +230,7 @@
       "description": "重置指定玩家的商店刷新时间"
     },
     "sendMail": {
+      "give_usage": "使用：/give <UID> <物品ID|物品名称> [数量] [等级] [精炼等级]",
       "user_not_exist": "玩家 '%s' 不存在。",
       "start_composition": "开始撰写邮件。\n请使用 '/sendmail <标题>' 继续。\n你可以随时使用 '/sendmail stop' 停止。",
       "templates": "邮件模板尚未实装...",
