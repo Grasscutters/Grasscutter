@@ -419,7 +419,7 @@ public class ResourceLoader {
             keys.forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
             Grasscutter.getLogger().debug("Loaded {} quest keys.", questEncryptionMap.size());
         } catch (FileNotFoundException | NullPointerException ignored) {
-            Grasscutter.getLogger().warn("Unable to load quest keys - ./resources/QuestEncryptionKeys.json not found.");
+            Grasscutter.getLogger().warn("Unable to load quest keys - '" + DATA() + "QuestEncryptionKeys.json' not found.");
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load quest keys.", e);
         }
