@@ -34,7 +34,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
    * <pre>
    * CmdId: 1802
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -317,7 +317,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
      * <pre>
      * CmdId: 1802
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

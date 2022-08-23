@@ -70,7 +70,8 @@ public final class WeaponUpgradeRspOuterClass {
    * <pre>
    * CmdId: 653
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code WeaponUpgradeRsp}
@@ -473,7 +474,8 @@ public final class WeaponUpgradeRspOuterClass {
      * <pre>
      * CmdId: 653
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code WeaponUpgradeRsp}

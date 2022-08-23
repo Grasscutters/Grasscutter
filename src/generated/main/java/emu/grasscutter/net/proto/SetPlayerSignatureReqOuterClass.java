@@ -34,7 +34,7 @@ public final class SetPlayerSignatureReqOuterClass {
    * <pre>
    * CmdId: 4081
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -317,7 +317,7 @@ public final class SetPlayerSignatureReqOuterClass {
      * <pre>
      * CmdId: 4081
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

@@ -40,7 +40,8 @@ public final class SceneTransToPointRspOuterClass {
    * <pre>
    * CmdId: 253
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code SceneTransToPointRsp}
@@ -348,7 +349,8 @@ public final class SceneTransToPointRspOuterClass {
      * <pre>
      * CmdId: 253
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code SceneTransToPointRsp}

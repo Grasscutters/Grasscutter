@@ -46,7 +46,7 @@ public final class TakeBattlePassRewardReqOuterClass {
    * <pre>
    * CmdId: 2602
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -341,7 +341,7 @@ public final class TakeBattlePassRewardReqOuterClass {
      * <pre>
      * CmdId: 2602
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

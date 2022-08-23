@@ -400,7 +400,7 @@ public final class PlayerLoginReqOuterClass {
    * <pre>
    * CmdId: 112
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -2329,7 +2329,7 @@ public final class PlayerLoginReqOuterClass {
      * <pre>
      * CmdId: 112
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

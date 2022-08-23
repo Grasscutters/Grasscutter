@@ -34,7 +34,8 @@ public final class CombineFormulaDataNotifyOuterClass {
    * <pre>
    * CmdId: 632
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code CombineFormulaDataNotify}
@@ -316,7 +317,8 @@ public final class CombineFormulaDataNotifyOuterClass {
      * <pre>
      * CmdId: 632
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code CombineFormulaDataNotify}

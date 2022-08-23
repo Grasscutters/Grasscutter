@@ -70,7 +70,8 @@ public final class WidgetCoolDownNotifyOuterClass {
    * <pre>
    * CmdId: 4295
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code WidgetCoolDownNotify}
@@ -430,7 +431,8 @@ public final class WidgetCoolDownNotifyOuterClass {
      * <pre>
      * CmdId: 4295
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code WidgetCoolDownNotify}

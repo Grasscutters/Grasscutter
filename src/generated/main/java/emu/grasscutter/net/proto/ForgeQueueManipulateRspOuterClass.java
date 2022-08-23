@@ -111,7 +111,8 @@ public final class ForgeQueueManipulateRspOuterClass {
    * <pre>
    * CmdId: 656
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ForgeQueueManipulateRsp}
@@ -600,7 +601,8 @@ public final class ForgeQueueManipulateRspOuterClass {
      * <pre>
      * CmdId: 656
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ForgeQueueManipulateRsp}

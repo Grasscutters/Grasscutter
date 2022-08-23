@@ -19,27 +19,6 @@ public final class ParentQuestOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ParentQuestRandomInfo random_info = 12;</code>
-     * @return Whether the randomInfo field is set.
-     */
-    boolean hasRandomInfo();
-    /**
-     * <code>.ParentQuestRandomInfo random_info = 12;</code>
-     * @return The randomInfo.
-     */
-    emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo getRandomInfo();
-    /**
-     * <code>.ParentQuestRandomInfo random_info = 12;</code>
-     */
-    emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder getRandomInfoOrBuilder();
-
-    /**
-     * <code>uint32 quest_var_seq = 11;</code>
-     * @return The questVarSeq.
-     */
-    int getQuestVarSeq();
-
-    /**
      * <code>repeated int32 quest_var = 14;</code>
      * @return A list containing the questVar.
      */
@@ -55,30 +34,6 @@ public final class ParentQuestOuterClass {
      * @return The questVar at the given index.
      */
     int getQuestVar(int index);
-
-    /**
-     * <code>uint64 cutscene_encryption_key = 6;</code>
-     * @return The cutsceneEncryptionKey.
-     */
-    long getCutsceneEncryptionKey();
-
-    /**
-     * <code>bool is_random = 13;</code>
-     * @return The isRandom.
-     */
-    boolean getIsRandom();
-
-    /**
-     * <code>uint32 parent_quest_id = 3;</code>
-     * @return The parentQuestId.
-     */
-    int getParentQuestId();
-
-    /**
-     * <code>bool is_finished = 7;</code>
-     * @return The isFinished.
-     */
-    boolean getIsFinished();
 
     /**
      * <code>map&lt;uint32, uint32&gt; time_var_map = 8;</code>
@@ -121,6 +76,75 @@ public final class ParentQuestOuterClass {
     int getParentQuestState();
 
     /**
+     * <code>bool is_finished = 7;</code>
+     * @return The isFinished.
+     */
+    boolean getIsFinished();
+
+    /**
+     * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK> 
+        getUnk3000HLPGILIGGCBList();
+    /**
+     * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+     */
+    emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK getUnk3000HLPGILIGGCB(int index);
+    /**
+     * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+     */
+    int getUnk3000HLPGILIGGCBCount();
+    /**
+     * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCKOrBuilder> 
+        getUnk3000HLPGILIGGCBOrBuilderList();
+    /**
+     * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+     */
+    emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCKOrBuilder getUnk3000HLPGILIGGCBOrBuilder(
+        int index);
+
+    /**
+     * <code>.ParentQuestRandomInfo random_info = 12;</code>
+     * @return Whether the randomInfo field is set.
+     */
+    boolean hasRandomInfo();
+    /**
+     * <code>.ParentQuestRandomInfo random_info = 12;</code>
+     * @return The randomInfo.
+     */
+    emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo getRandomInfo();
+    /**
+     * <code>.ParentQuestRandomInfo random_info = 12;</code>
+     */
+    emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder getRandomInfoOrBuilder();
+
+    /**
+     * <code>uint32 parent_quest_id = 3;</code>
+     * @return The parentQuestId.
+     */
+    int getParentQuestId();
+
+    /**
+     * <code>bool is_random = 13;</code>
+     * @return The isRandom.
+     */
+    boolean getIsRandom();
+
+    /**
+     * <code>uint64 cutscene_encryption_key = 6;</code>
+     * @return The cutsceneEncryptionKey.
+     */
+    long getCutsceneEncryptionKey();
+
+    /**
+     * <code>uint32 quest_var_seq = 11;</code>
+     * @return The questVarSeq.
+     */
+    int getQuestVarSeq();
+
+    /**
      * <code>repeated .ChildQuest child_quest_list = 9;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest> 
@@ -158,6 +182,7 @@ public final class ParentQuestOuterClass {
     }
     private ParentQuest() {
       questVar_ = emptyIntList();
+      unk3000HLPGILIGGCB_ = java.util.Collections.emptyList();
       childQuestList_ = java.util.Collections.emptyList();
     }
 
@@ -226,9 +251,9 @@ public final class ParentQuestOuterClass {
               break;
             }
             case 74: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 childQuestList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               childQuestList_.add(
                   input.readMessage(emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest.parser(), extensionRegistry));
@@ -278,6 +303,15 @@ public final class ParentQuestOuterClass {
               input.popLimit(limit);
               break;
             }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                unk3000HLPGILIGGCB_ = new java.util.ArrayList<emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              unk3000HLPGILIGGCB_.add(
+                  input.readMessage(emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -293,11 +327,14 @@ public final class ParentQuestOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           childQuestList_ = java.util.Collections.unmodifiableList(childQuestList_);
         }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           questVar_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          unk3000HLPGILIGGCB_ = java.util.Collections.unmodifiableList(unk3000HLPGILIGGCB_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -328,43 +365,6 @@ public final class ParentQuestOuterClass {
               emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest.class, emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest.Builder.class);
     }
 
-    public static final int RANDOM_INFO_FIELD_NUMBER = 12;
-    private emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo randomInfo_;
-    /**
-     * <code>.ParentQuestRandomInfo random_info = 12;</code>
-     * @return Whether the randomInfo field is set.
-     */
-    @java.lang.Override
-    public boolean hasRandomInfo() {
-      return randomInfo_ != null;
-    }
-    /**
-     * <code>.ParentQuestRandomInfo random_info = 12;</code>
-     * @return The randomInfo.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo getRandomInfo() {
-      return randomInfo_ == null ? emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.getDefaultInstance() : randomInfo_;
-    }
-    /**
-     * <code>.ParentQuestRandomInfo random_info = 12;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder getRandomInfoOrBuilder() {
-      return getRandomInfo();
-    }
-
-    public static final int QUEST_VAR_SEQ_FIELD_NUMBER = 11;
-    private int questVarSeq_;
-    /**
-     * <code>uint32 quest_var_seq = 11;</code>
-     * @return The questVarSeq.
-     */
-    @java.lang.Override
-    public int getQuestVarSeq() {
-      return questVarSeq_;
-    }
-
     public static final int QUEST_VAR_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList questVar_;
     /**
@@ -392,50 +392,6 @@ public final class ParentQuestOuterClass {
       return questVar_.getInt(index);
     }
     private int questVarMemoizedSerializedSize = -1;
-
-    public static final int CUTSCENE_ENCRYPTION_KEY_FIELD_NUMBER = 6;
-    private long cutsceneEncryptionKey_;
-    /**
-     * <code>uint64 cutscene_encryption_key = 6;</code>
-     * @return The cutsceneEncryptionKey.
-     */
-    @java.lang.Override
-    public long getCutsceneEncryptionKey() {
-      return cutsceneEncryptionKey_;
-    }
-
-    public static final int IS_RANDOM_FIELD_NUMBER = 13;
-    private boolean isRandom_;
-    /**
-     * <code>bool is_random = 13;</code>
-     * @return The isRandom.
-     */
-    @java.lang.Override
-    public boolean getIsRandom() {
-      return isRandom_;
-    }
-
-    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 3;
-    private int parentQuestId_;
-    /**
-     * <code>uint32 parent_quest_id = 3;</code>
-     * @return The parentQuestId.
-     */
-    @java.lang.Override
-    public int getParentQuestId() {
-      return parentQuestId_;
-    }
-
-    public static final int IS_FINISHED_FIELD_NUMBER = 7;
-    private boolean isFinished_;
-    /**
-     * <code>bool is_finished = 7;</code>
-     * @return The isFinished.
-     */
-    @java.lang.Override
-    public boolean getIsFinished() {
-      return isFinished_;
-    }
 
     public static final int TIME_VAR_MAP_FIELD_NUMBER = 8;
     private static final class TimeVarMapDefaultEntryHolder {
@@ -527,6 +483,127 @@ public final class ParentQuestOuterClass {
     @java.lang.Override
     public int getParentQuestState() {
       return parentQuestState_;
+    }
+
+    public static final int IS_FINISHED_FIELD_NUMBER = 7;
+    private boolean isFinished_;
+    /**
+     * <code>bool is_finished = 7;</code>
+     * @return The isFinished.
+     */
+    @java.lang.Override
+    public boolean getIsFinished() {
+      return isFinished_;
+    }
+
+    public static final int UNK3000_HLPGILIGGCB_FIELD_NUMBER = 15;
+    private java.util.List<emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK> unk3000HLPGILIGGCB_;
+    /**
+     * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK> getUnk3000HLPGILIGGCBList() {
+      return unk3000HLPGILIGGCB_;
+    }
+    /**
+     * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCKOrBuilder> 
+        getUnk3000HLPGILIGGCBOrBuilderList() {
+      return unk3000HLPGILIGGCB_;
+    }
+    /**
+     * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+     */
+    @java.lang.Override
+    public int getUnk3000HLPGILIGGCBCount() {
+      return unk3000HLPGILIGGCB_.size();
+    }
+    /**
+     * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK getUnk3000HLPGILIGGCB(int index) {
+      return unk3000HLPGILIGGCB_.get(index);
+    }
+    /**
+     * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCKOrBuilder getUnk3000HLPGILIGGCBOrBuilder(
+        int index) {
+      return unk3000HLPGILIGGCB_.get(index);
+    }
+
+    public static final int RANDOM_INFO_FIELD_NUMBER = 12;
+    private emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo randomInfo_;
+    /**
+     * <code>.ParentQuestRandomInfo random_info = 12;</code>
+     * @return Whether the randomInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasRandomInfo() {
+      return randomInfo_ != null;
+    }
+    /**
+     * <code>.ParentQuestRandomInfo random_info = 12;</code>
+     * @return The randomInfo.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo getRandomInfo() {
+      return randomInfo_ == null ? emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.getDefaultInstance() : randomInfo_;
+    }
+    /**
+     * <code>.ParentQuestRandomInfo random_info = 12;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder getRandomInfoOrBuilder() {
+      return getRandomInfo();
+    }
+
+    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 3;
+    private int parentQuestId_;
+    /**
+     * <code>uint32 parent_quest_id = 3;</code>
+     * @return The parentQuestId.
+     */
+    @java.lang.Override
+    public int getParentQuestId() {
+      return parentQuestId_;
+    }
+
+    public static final int IS_RANDOM_FIELD_NUMBER = 13;
+    private boolean isRandom_;
+    /**
+     * <code>bool is_random = 13;</code>
+     * @return The isRandom.
+     */
+    @java.lang.Override
+    public boolean getIsRandom() {
+      return isRandom_;
+    }
+
+    public static final int CUTSCENE_ENCRYPTION_KEY_FIELD_NUMBER = 6;
+    private long cutsceneEncryptionKey_;
+    /**
+     * <code>uint64 cutscene_encryption_key = 6;</code>
+     * @return The cutsceneEncryptionKey.
+     */
+    @java.lang.Override
+    public long getCutsceneEncryptionKey() {
+      return cutsceneEncryptionKey_;
+    }
+
+    public static final int QUEST_VAR_SEQ_FIELD_NUMBER = 11;
+    private int questVarSeq_;
+    /**
+     * <code>uint32 quest_var_seq = 11;</code>
+     * @return The questVarSeq.
+     */
+    @java.lang.Override
+    public int getQuestVarSeq() {
+      return questVarSeq_;
     }
 
     public static final int CHILD_QUEST_LIST_FIELD_NUMBER = 9;
@@ -621,6 +698,9 @@ public final class ParentQuestOuterClass {
       for (int i = 0; i < questVar_.size(); i++) {
         output.writeInt32NoTag(questVar_.getInt(i));
       }
+      for (int i = 0; i < unk3000HLPGILIGGCB_.size(); i++) {
+        output.writeMessage(15, unk3000HLPGILIGGCB_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -686,6 +766,10 @@ public final class ParentQuestOuterClass {
         }
         questVarMemoizedSerializedSize = dataSize;
       }
+      for (int i = 0; i < unk3000HLPGILIGGCB_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, unk3000HLPGILIGGCB_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -701,27 +785,29 @@ public final class ParentQuestOuterClass {
       }
       emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest other = (emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest) obj;
 
+      if (!getQuestVarList()
+          .equals(other.getQuestVarList())) return false;
+      if (!internalGetTimeVarMap().equals(
+          other.internalGetTimeVarMap())) return false;
+      if (getParentQuestState()
+          != other.getParentQuestState()) return false;
+      if (getIsFinished()
+          != other.getIsFinished()) return false;
+      if (!getUnk3000HLPGILIGGCBList()
+          .equals(other.getUnk3000HLPGILIGGCBList())) return false;
       if (hasRandomInfo() != other.hasRandomInfo()) return false;
       if (hasRandomInfo()) {
         if (!getRandomInfo()
             .equals(other.getRandomInfo())) return false;
       }
-      if (getQuestVarSeq()
-          != other.getQuestVarSeq()) return false;
-      if (!getQuestVarList()
-          .equals(other.getQuestVarList())) return false;
-      if (getCutsceneEncryptionKey()
-          != other.getCutsceneEncryptionKey()) return false;
-      if (getIsRandom()
-          != other.getIsRandom()) return false;
       if (getParentQuestId()
           != other.getParentQuestId()) return false;
-      if (getIsFinished()
-          != other.getIsFinished()) return false;
-      if (!internalGetTimeVarMap().equals(
-          other.internalGetTimeVarMap())) return false;
-      if (getParentQuestState()
-          != other.getParentQuestState()) return false;
+      if (getIsRandom()
+          != other.getIsRandom()) return false;
+      if (getCutsceneEncryptionKey()
+          != other.getCutsceneEncryptionKey()) return false;
+      if (getQuestVarSeq()
+          != other.getQuestVarSeq()) return false;
       if (!getChildQuestListList()
           .equals(other.getChildQuestListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -735,33 +821,37 @@ public final class ParentQuestOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasRandomInfo()) {
-        hash = (37 * hash) + RANDOM_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getRandomInfo().hashCode();
-      }
-      hash = (37 * hash) + QUEST_VAR_SEQ_FIELD_NUMBER;
-      hash = (53 * hash) + getQuestVarSeq();
       if (getQuestVarCount() > 0) {
         hash = (37 * hash) + QUEST_VAR_FIELD_NUMBER;
         hash = (53 * hash) + getQuestVarList().hashCode();
       }
-      hash = (37 * hash) + CUTSCENE_ENCRYPTION_KEY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCutsceneEncryptionKey());
-      hash = (37 * hash) + IS_RANDOM_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsRandom());
-      hash = (37 * hash) + PARENT_QUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getParentQuestId();
-      hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinished());
       if (!internalGetTimeVarMap().getMap().isEmpty()) {
         hash = (37 * hash) + TIME_VAR_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetTimeVarMap().hashCode();
       }
       hash = (37 * hash) + PARENT_QUEST_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getParentQuestState();
+      hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinished());
+      if (getUnk3000HLPGILIGGCBCount() > 0) {
+        hash = (37 * hash) + UNK3000_HLPGILIGGCB_FIELD_NUMBER;
+        hash = (53 * hash) + getUnk3000HLPGILIGGCBList().hashCode();
+      }
+      if (hasRandomInfo()) {
+        hash = (37 * hash) + RANDOM_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getRandomInfo().hashCode();
+      }
+      hash = (37 * hash) + PARENT_QUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getParentQuestId();
+      hash = (37 * hash) + IS_RANDOM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsRandom());
+      hash = (37 * hash) + CUTSCENE_ENCRYPTION_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCutsceneEncryptionKey());
+      hash = (37 * hash) + QUEST_VAR_SEQ_FIELD_NUMBER;
+      hash = (53 * hash) + getQuestVarSeq();
       if (getChildQuestListCount() > 0) {
         hash = (37 * hash) + CHILD_QUEST_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getChildQuestListList().hashCode();
@@ -916,36 +1006,43 @@ public final class ParentQuestOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getUnk3000HLPGILIGGCBFieldBuilder();
           getChildQuestListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        questVar_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableTimeVarMap().clear();
+        parentQuestState_ = 0;
+
+        isFinished_ = false;
+
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          unk3000HLPGILIGGCB_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          unk3000HLPGILIGGCBBuilder_.clear();
+        }
         if (randomInfoBuilder_ == null) {
           randomInfo_ = null;
         } else {
           randomInfo_ = null;
           randomInfoBuilder_ = null;
         }
-        questVarSeq_ = 0;
-
-        questVar_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        cutsceneEncryptionKey_ = 0L;
+        parentQuestId_ = 0;
 
         isRandom_ = false;
 
-        parentQuestId_ = 0;
+        cutsceneEncryptionKey_ = 0L;
 
-        isFinished_ = false;
-
-        internalGetMutableTimeVarMap().clear();
-        parentQuestState_ = 0;
+        questVarSeq_ = 0;
 
         if (childQuestListBuilder_ == null) {
           childQuestList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           childQuestListBuilder_.clear();
         }
@@ -976,28 +1073,37 @@ public final class ParentQuestOuterClass {
       public emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest buildPartial() {
         emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest result = new emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest(this);
         int from_bitField0_ = bitField0_;
-        if (randomInfoBuilder_ == null) {
-          result.randomInfo_ = randomInfo_;
-        } else {
-          result.randomInfo_ = randomInfoBuilder_.build();
-        }
-        result.questVarSeq_ = questVarSeq_;
         if (((bitField0_ & 0x00000001) != 0)) {
           questVar_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.questVar_ = questVar_;
-        result.cutsceneEncryptionKey_ = cutsceneEncryptionKey_;
-        result.isRandom_ = isRandom_;
-        result.parentQuestId_ = parentQuestId_;
-        result.isFinished_ = isFinished_;
         result.timeVarMap_ = internalGetTimeVarMap();
         result.timeVarMap_.makeImmutable();
         result.parentQuestState_ = parentQuestState_;
-        if (childQuestListBuilder_ == null) {
+        result.isFinished_ = isFinished_;
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0)) {
-            childQuestList_ = java.util.Collections.unmodifiableList(childQuestList_);
+            unk3000HLPGILIGGCB_ = java.util.Collections.unmodifiableList(unk3000HLPGILIGGCB_);
             bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.unk3000HLPGILIGGCB_ = unk3000HLPGILIGGCB_;
+        } else {
+          result.unk3000HLPGILIGGCB_ = unk3000HLPGILIGGCBBuilder_.build();
+        }
+        if (randomInfoBuilder_ == null) {
+          result.randomInfo_ = randomInfo_;
+        } else {
+          result.randomInfo_ = randomInfoBuilder_.build();
+        }
+        result.parentQuestId_ = parentQuestId_;
+        result.isRandom_ = isRandom_;
+        result.cutsceneEncryptionKey_ = cutsceneEncryptionKey_;
+        result.questVarSeq_ = questVarSeq_;
+        if (childQuestListBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            childQuestList_ = java.util.Collections.unmodifiableList(childQuestList_);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.childQuestList_ = childQuestList_;
         } else {
@@ -1051,12 +1157,6 @@ public final class ParentQuestOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest other) {
         if (other == emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest.getDefaultInstance()) return this;
-        if (other.hasRandomInfo()) {
-          mergeRandomInfo(other.getRandomInfo());
-        }
-        if (other.getQuestVarSeq() != 0) {
-          setQuestVarSeq(other.getQuestVarSeq());
-        }
         if (!other.questVar_.isEmpty()) {
           if (questVar_.isEmpty()) {
             questVar_ = other.questVar_;
@@ -1067,28 +1167,60 @@ public final class ParentQuestOuterClass {
           }
           onChanged();
         }
-        if (other.getCutsceneEncryptionKey() != 0L) {
-          setCutsceneEncryptionKey(other.getCutsceneEncryptionKey());
-        }
-        if (other.getIsRandom() != false) {
-          setIsRandom(other.getIsRandom());
-        }
-        if (other.getParentQuestId() != 0) {
-          setParentQuestId(other.getParentQuestId());
-        }
-        if (other.getIsFinished() != false) {
-          setIsFinished(other.getIsFinished());
-        }
         internalGetMutableTimeVarMap().mergeFrom(
             other.internalGetTimeVarMap());
         if (other.getParentQuestState() != 0) {
           setParentQuestState(other.getParentQuestState());
         }
+        if (other.getIsFinished() != false) {
+          setIsFinished(other.getIsFinished());
+        }
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          if (!other.unk3000HLPGILIGGCB_.isEmpty()) {
+            if (unk3000HLPGILIGGCB_.isEmpty()) {
+              unk3000HLPGILIGGCB_ = other.unk3000HLPGILIGGCB_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureUnk3000HLPGILIGGCBIsMutable();
+              unk3000HLPGILIGGCB_.addAll(other.unk3000HLPGILIGGCB_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.unk3000HLPGILIGGCB_.isEmpty()) {
+            if (unk3000HLPGILIGGCBBuilder_.isEmpty()) {
+              unk3000HLPGILIGGCBBuilder_.dispose();
+              unk3000HLPGILIGGCBBuilder_ = null;
+              unk3000HLPGILIGGCB_ = other.unk3000HLPGILIGGCB_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              unk3000HLPGILIGGCBBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUnk3000HLPGILIGGCBFieldBuilder() : null;
+            } else {
+              unk3000HLPGILIGGCBBuilder_.addAllMessages(other.unk3000HLPGILIGGCB_);
+            }
+          }
+        }
+        if (other.hasRandomInfo()) {
+          mergeRandomInfo(other.getRandomInfo());
+        }
+        if (other.getParentQuestId() != 0) {
+          setParentQuestId(other.getParentQuestId());
+        }
+        if (other.getIsRandom() != false) {
+          setIsRandom(other.getIsRandom());
+        }
+        if (other.getCutsceneEncryptionKey() != 0L) {
+          setCutsceneEncryptionKey(other.getCutsceneEncryptionKey());
+        }
+        if (other.getQuestVarSeq() != 0) {
+          setQuestVarSeq(other.getQuestVarSeq());
+        }
         if (childQuestListBuilder_ == null) {
           if (!other.childQuestList_.isEmpty()) {
             if (childQuestList_.isEmpty()) {
               childQuestList_ = other.childQuestList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureChildQuestListIsMutable();
               childQuestList_.addAll(other.childQuestList_);
@@ -1101,7 +1233,7 @@ public final class ParentQuestOuterClass {
               childQuestListBuilder_.dispose();
               childQuestListBuilder_ = null;
               childQuestList_ = other.childQuestList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
               childQuestListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChildQuestListFieldBuilder() : null;
@@ -1139,156 +1271,6 @@ public final class ParentQuestOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo randomInfo_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder> randomInfoBuilder_;
-      /**
-       * <code>.ParentQuestRandomInfo random_info = 12;</code>
-       * @return Whether the randomInfo field is set.
-       */
-      public boolean hasRandomInfo() {
-        return randomInfoBuilder_ != null || randomInfo_ != null;
-      }
-      /**
-       * <code>.ParentQuestRandomInfo random_info = 12;</code>
-       * @return The randomInfo.
-       */
-      public emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo getRandomInfo() {
-        if (randomInfoBuilder_ == null) {
-          return randomInfo_ == null ? emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.getDefaultInstance() : randomInfo_;
-        } else {
-          return randomInfoBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.ParentQuestRandomInfo random_info = 12;</code>
-       */
-      public Builder setRandomInfo(emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo value) {
-        if (randomInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          randomInfo_ = value;
-          onChanged();
-        } else {
-          randomInfoBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ParentQuestRandomInfo random_info = 12;</code>
-       */
-      public Builder setRandomInfo(
-          emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder builderForValue) {
-        if (randomInfoBuilder_ == null) {
-          randomInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          randomInfoBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ParentQuestRandomInfo random_info = 12;</code>
-       */
-      public Builder mergeRandomInfo(emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo value) {
-        if (randomInfoBuilder_ == null) {
-          if (randomInfo_ != null) {
-            randomInfo_ =
-              emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.newBuilder(randomInfo_).mergeFrom(value).buildPartial();
-          } else {
-            randomInfo_ = value;
-          }
-          onChanged();
-        } else {
-          randomInfoBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ParentQuestRandomInfo random_info = 12;</code>
-       */
-      public Builder clearRandomInfo() {
-        if (randomInfoBuilder_ == null) {
-          randomInfo_ = null;
-          onChanged();
-        } else {
-          randomInfo_ = null;
-          randomInfoBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ParentQuestRandomInfo random_info = 12;</code>
-       */
-      public emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder getRandomInfoBuilder() {
-        
-        onChanged();
-        return getRandomInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ParentQuestRandomInfo random_info = 12;</code>
-       */
-      public emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder getRandomInfoOrBuilder() {
-        if (randomInfoBuilder_ != null) {
-          return randomInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return randomInfo_ == null ?
-              emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.getDefaultInstance() : randomInfo_;
-        }
-      }
-      /**
-       * <code>.ParentQuestRandomInfo random_info = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder> 
-          getRandomInfoFieldBuilder() {
-        if (randomInfoBuilder_ == null) {
-          randomInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder>(
-                  getRandomInfo(),
-                  getParentForChildren(),
-                  isClean());
-          randomInfo_ = null;
-        }
-        return randomInfoBuilder_;
-      }
-
-      private int questVarSeq_ ;
-      /**
-       * <code>uint32 quest_var_seq = 11;</code>
-       * @return The questVarSeq.
-       */
-      @java.lang.Override
-      public int getQuestVarSeq() {
-        return questVarSeq_;
-      }
-      /**
-       * <code>uint32 quest_var_seq = 11;</code>
-       * @param value The questVarSeq to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQuestVarSeq(int value) {
-        
-        questVarSeq_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 quest_var_seq = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearQuestVarSeq() {
-        
-        questVarSeq_ = 0;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.Internal.IntList questVar_ = emptyIntList();
       private void ensureQuestVarIsMutable() {
@@ -1365,130 +1347,6 @@ public final class ParentQuestOuterClass {
       public Builder clearQuestVar() {
         questVar_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private long cutsceneEncryptionKey_ ;
-      /**
-       * <code>uint64 cutscene_encryption_key = 6;</code>
-       * @return The cutsceneEncryptionKey.
-       */
-      @java.lang.Override
-      public long getCutsceneEncryptionKey() {
-        return cutsceneEncryptionKey_;
-      }
-      /**
-       * <code>uint64 cutscene_encryption_key = 6;</code>
-       * @param value The cutsceneEncryptionKey to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCutsceneEncryptionKey(long value) {
-        
-        cutsceneEncryptionKey_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 cutscene_encryption_key = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCutsceneEncryptionKey() {
-        
-        cutsceneEncryptionKey_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private boolean isRandom_ ;
-      /**
-       * <code>bool is_random = 13;</code>
-       * @return The isRandom.
-       */
-      @java.lang.Override
-      public boolean getIsRandom() {
-        return isRandom_;
-      }
-      /**
-       * <code>bool is_random = 13;</code>
-       * @param value The isRandom to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsRandom(boolean value) {
-        
-        isRandom_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_random = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsRandom() {
-        
-        isRandom_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int parentQuestId_ ;
-      /**
-       * <code>uint32 parent_quest_id = 3;</code>
-       * @return The parentQuestId.
-       */
-      @java.lang.Override
-      public int getParentQuestId() {
-        return parentQuestId_;
-      }
-      /**
-       * <code>uint32 parent_quest_id = 3;</code>
-       * @param value The parentQuestId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParentQuestId(int value) {
-        
-        parentQuestId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 parent_quest_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParentQuestId() {
-        
-        parentQuestId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isFinished_ ;
-      /**
-       * <code>bool is_finished = 7;</code>
-       * @return The isFinished.
-       */
-      @java.lang.Override
-      public boolean getIsFinished() {
-        return isFinished_;
-      }
-      /**
-       * <code>bool is_finished = 7;</code>
-       * @param value The isFinished to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinished(boolean value) {
-        
-        isFinished_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finished = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinished() {
-        
-        isFinished_ = false;
         onChanged();
         return this;
       }
@@ -1652,12 +1510,526 @@ public final class ParentQuestOuterClass {
         return this;
       }
 
+      private boolean isFinished_ ;
+      /**
+       * <code>bool is_finished = 7;</code>
+       * @return The isFinished.
+       */
+      @java.lang.Override
+      public boolean getIsFinished() {
+        return isFinished_;
+      }
+      /**
+       * <code>bool is_finished = 7;</code>
+       * @param value The isFinished to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinished(boolean value) {
+        
+        isFinished_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finished = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinished() {
+        
+        isFinished_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK> unk3000HLPGILIGGCB_ =
+        java.util.Collections.emptyList();
+      private void ensureUnk3000HLPGILIGGCBIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          unk3000HLPGILIGGCB_ = new java.util.ArrayList<emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK>(unk3000HLPGILIGGCB_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK, emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.Builder, emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCKOrBuilder> unk3000HLPGILIGGCBBuilder_;
+
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK> getUnk3000HLPGILIGGCBList() {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(unk3000HLPGILIGGCB_);
+        } else {
+          return unk3000HLPGILIGGCBBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public int getUnk3000HLPGILIGGCBCount() {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          return unk3000HLPGILIGGCB_.size();
+        } else {
+          return unk3000HLPGILIGGCBBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK getUnk3000HLPGILIGGCB(int index) {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          return unk3000HLPGILIGGCB_.get(index);
+        } else {
+          return unk3000HLPGILIGGCBBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public Builder setUnk3000HLPGILIGGCB(
+          int index, emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK value) {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk3000HLPGILIGGCBIsMutable();
+          unk3000HLPGILIGGCB_.set(index, value);
+          onChanged();
+        } else {
+          unk3000HLPGILIGGCBBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public Builder setUnk3000HLPGILIGGCB(
+          int index, emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.Builder builderForValue) {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          ensureUnk3000HLPGILIGGCBIsMutable();
+          unk3000HLPGILIGGCB_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          unk3000HLPGILIGGCBBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public Builder addUnk3000HLPGILIGGCB(emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK value) {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk3000HLPGILIGGCBIsMutable();
+          unk3000HLPGILIGGCB_.add(value);
+          onChanged();
+        } else {
+          unk3000HLPGILIGGCBBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public Builder addUnk3000HLPGILIGGCB(
+          int index, emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK value) {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk3000HLPGILIGGCBIsMutable();
+          unk3000HLPGILIGGCB_.add(index, value);
+          onChanged();
+        } else {
+          unk3000HLPGILIGGCBBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public Builder addUnk3000HLPGILIGGCB(
+          emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.Builder builderForValue) {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          ensureUnk3000HLPGILIGGCBIsMutable();
+          unk3000HLPGILIGGCB_.add(builderForValue.build());
+          onChanged();
+        } else {
+          unk3000HLPGILIGGCBBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public Builder addUnk3000HLPGILIGGCB(
+          int index, emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.Builder builderForValue) {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          ensureUnk3000HLPGILIGGCBIsMutable();
+          unk3000HLPGILIGGCB_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          unk3000HLPGILIGGCBBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public Builder addAllUnk3000HLPGILIGGCB(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK> values) {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          ensureUnk3000HLPGILIGGCBIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, unk3000HLPGILIGGCB_);
+          onChanged();
+        } else {
+          unk3000HLPGILIGGCBBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public Builder clearUnk3000HLPGILIGGCB() {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          unk3000HLPGILIGGCB_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          unk3000HLPGILIGGCBBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public Builder removeUnk3000HLPGILIGGCB(int index) {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          ensureUnk3000HLPGILIGGCBIsMutable();
+          unk3000HLPGILIGGCB_.remove(index);
+          onChanged();
+        } else {
+          unk3000HLPGILIGGCBBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.Builder getUnk3000HLPGILIGGCBBuilder(
+          int index) {
+        return getUnk3000HLPGILIGGCBFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCKOrBuilder getUnk3000HLPGILIGGCBOrBuilder(
+          int index) {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          return unk3000HLPGILIGGCB_.get(index);  } else {
+          return unk3000HLPGILIGGCBBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCKOrBuilder> 
+           getUnk3000HLPGILIGGCBOrBuilderList() {
+        if (unk3000HLPGILIGGCBBuilder_ != null) {
+          return unk3000HLPGILIGGCBBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(unk3000HLPGILIGGCB_);
+        }
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.Builder addUnk3000HLPGILIGGCBBuilder() {
+        return getUnk3000HLPGILIGGCBFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.Builder addUnk3000HLPGILIGGCBBuilder(
+          int index) {
+        return getUnk3000HLPGILIGGCBFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Unk3000_ENLDIHLGNCK Unk3000_HLPGILIGGCB = 15;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.Builder> 
+           getUnk3000HLPGILIGGCBBuilderList() {
+        return getUnk3000HLPGILIGGCBFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK, emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.Builder, emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCKOrBuilder> 
+          getUnk3000HLPGILIGGCBFieldBuilder() {
+        if (unk3000HLPGILIGGCBBuilder_ == null) {
+          unk3000HLPGILIGGCBBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK, emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCK.Builder, emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.Unk3000_ENLDIHLGNCKOrBuilder>(
+                  unk3000HLPGILIGGCB_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          unk3000HLPGILIGGCB_ = null;
+        }
+        return unk3000HLPGILIGGCBBuilder_;
+      }
+
+      private emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo randomInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder> randomInfoBuilder_;
+      /**
+       * <code>.ParentQuestRandomInfo random_info = 12;</code>
+       * @return Whether the randomInfo field is set.
+       */
+      public boolean hasRandomInfo() {
+        return randomInfoBuilder_ != null || randomInfo_ != null;
+      }
+      /**
+       * <code>.ParentQuestRandomInfo random_info = 12;</code>
+       * @return The randomInfo.
+       */
+      public emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo getRandomInfo() {
+        if (randomInfoBuilder_ == null) {
+          return randomInfo_ == null ? emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.getDefaultInstance() : randomInfo_;
+        } else {
+          return randomInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.ParentQuestRandomInfo random_info = 12;</code>
+       */
+      public Builder setRandomInfo(emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo value) {
+        if (randomInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          randomInfo_ = value;
+          onChanged();
+        } else {
+          randomInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ParentQuestRandomInfo random_info = 12;</code>
+       */
+      public Builder setRandomInfo(
+          emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder builderForValue) {
+        if (randomInfoBuilder_ == null) {
+          randomInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          randomInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ParentQuestRandomInfo random_info = 12;</code>
+       */
+      public Builder mergeRandomInfo(emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo value) {
+        if (randomInfoBuilder_ == null) {
+          if (randomInfo_ != null) {
+            randomInfo_ =
+              emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.newBuilder(randomInfo_).mergeFrom(value).buildPartial();
+          } else {
+            randomInfo_ = value;
+          }
+          onChanged();
+        } else {
+          randomInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ParentQuestRandomInfo random_info = 12;</code>
+       */
+      public Builder clearRandomInfo() {
+        if (randomInfoBuilder_ == null) {
+          randomInfo_ = null;
+          onChanged();
+        } else {
+          randomInfo_ = null;
+          randomInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ParentQuestRandomInfo random_info = 12;</code>
+       */
+      public emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder getRandomInfoBuilder() {
+        
+        onChanged();
+        return getRandomInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ParentQuestRandomInfo random_info = 12;</code>
+       */
+      public emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder getRandomInfoOrBuilder() {
+        if (randomInfoBuilder_ != null) {
+          return randomInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return randomInfo_ == null ?
+              emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.getDefaultInstance() : randomInfo_;
+        }
+      }
+      /**
+       * <code>.ParentQuestRandomInfo random_info = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder> 
+          getRandomInfoFieldBuilder() {
+        if (randomInfoBuilder_ == null) {
+          randomInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder>(
+                  getRandomInfo(),
+                  getParentForChildren(),
+                  isClean());
+          randomInfo_ = null;
+        }
+        return randomInfoBuilder_;
+      }
+
+      private int parentQuestId_ ;
+      /**
+       * <code>uint32 parent_quest_id = 3;</code>
+       * @return The parentQuestId.
+       */
+      @java.lang.Override
+      public int getParentQuestId() {
+        return parentQuestId_;
+      }
+      /**
+       * <code>uint32 parent_quest_id = 3;</code>
+       * @param value The parentQuestId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParentQuestId(int value) {
+        
+        parentQuestId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 parent_quest_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParentQuestId() {
+        
+        parentQuestId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isRandom_ ;
+      /**
+       * <code>bool is_random = 13;</code>
+       * @return The isRandom.
+       */
+      @java.lang.Override
+      public boolean getIsRandom() {
+        return isRandom_;
+      }
+      /**
+       * <code>bool is_random = 13;</code>
+       * @param value The isRandom to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsRandom(boolean value) {
+        
+        isRandom_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_random = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsRandom() {
+        
+        isRandom_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long cutsceneEncryptionKey_ ;
+      /**
+       * <code>uint64 cutscene_encryption_key = 6;</code>
+       * @return The cutsceneEncryptionKey.
+       */
+      @java.lang.Override
+      public long getCutsceneEncryptionKey() {
+        return cutsceneEncryptionKey_;
+      }
+      /**
+       * <code>uint64 cutscene_encryption_key = 6;</code>
+       * @param value The cutsceneEncryptionKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCutsceneEncryptionKey(long value) {
+        
+        cutsceneEncryptionKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 cutscene_encryption_key = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCutsceneEncryptionKey() {
+        
+        cutsceneEncryptionKey_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int questVarSeq_ ;
+      /**
+       * <code>uint32 quest_var_seq = 11;</code>
+       * @return The questVarSeq.
+       */
+      @java.lang.Override
+      public int getQuestVarSeq() {
+        return questVarSeq_;
+      }
+      /**
+       * <code>uint32 quest_var_seq = 11;</code>
+       * @param value The questVarSeq to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuestVarSeq(int value) {
+        
+        questVarSeq_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 quest_var_seq = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQuestVarSeq() {
+        
+        questVarSeq_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest> childQuestList_ =
         java.util.Collections.emptyList();
       private void ensureChildQuestListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           childQuestList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest>(childQuestList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1807,7 +2179,7 @@ public final class ParentQuestOuterClass {
       public Builder clearChildQuestList() {
         if (childQuestListBuilder_ == null) {
           childQuestList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           childQuestListBuilder_.clear();
@@ -1884,7 +2256,7 @@ public final class ParentQuestOuterClass {
           childQuestListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest, emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest.Builder, emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuestOrBuilder>(
                   childQuestList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           childQuestList_ = null;
@@ -1964,30 +2336,33 @@ public final class ParentQuestOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021ParentQuest.proto\032\020ChildQuest.proto\032\033P" +
-      "arentQuestRandomInfo.proto\"\360\002\n\013ParentQue" +
-      "st\022+\n\013random_info\030\014 \001(\0132\026.ParentQuestRan" +
-      "domInfo\022\025\n\rquest_var_seq\030\013 \001(\r\022\021\n\tquest_" +
-      "var\030\016 \003(\005\022\037\n\027cutscene_encryption_key\030\006 \001" +
-      "(\004\022\021\n\tis_random\030\r \001(\010\022\027\n\017parent_quest_id" +
-      "\030\003 \001(\r\022\023\n\013is_finished\030\007 \001(\010\0222\n\014time_var_" +
-      "map\030\010 \003(\0132\034.ParentQuest.TimeVarMapEntry\022" +
-      "\032\n\022parent_quest_state\030\001 \001(\r\022%\n\020child_que" +
-      "st_list\030\t \003(\0132\013.ChildQuest\0321\n\017TimeVarMap" +
-      "Entry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "arentQuestRandomInfo.proto\032\031Unk3000_ENLD" +
+      "IHLGNCK.proto\"\243\003\n\013ParentQuest\022\021\n\tquest_v" +
+      "ar\030\016 \003(\005\0222\n\014time_var_map\030\010 \003(\0132\034.ParentQ" +
+      "uest.TimeVarMapEntry\022\032\n\022parent_quest_sta" +
+      "te\030\001 \001(\r\022\023\n\013is_finished\030\007 \001(\010\0221\n\023Unk3000" +
+      "_HLPGILIGGCB\030\017 \003(\0132\024.Unk3000_ENLDIHLGNCK" +
+      "\022+\n\013random_info\030\014 \001(\0132\026.ParentQuestRando" +
+      "mInfo\022\027\n\017parent_quest_id\030\003 \001(\r\022\021\n\tis_ran" +
+      "dom\030\r \001(\010\022\037\n\027cutscene_encryption_key\030\006 \001" +
+      "(\004\022\025\n\rquest_var_seq\030\013 \001(\r\022%\n\020child_quest" +
+      "_list\030\t \003(\0132\013.ChildQuest\0321\n\017TimeVarMapEn" +
+      "try\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.ChildQuestOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.getDescriptor(),
         });
     internal_static_ParentQuest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ParentQuest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ParentQuest_descriptor,
-        new java.lang.String[] { "RandomInfo", "QuestVarSeq", "QuestVar", "CutsceneEncryptionKey", "IsRandom", "ParentQuestId", "IsFinished", "TimeVarMap", "ParentQuestState", "ChildQuestList", });
+        new java.lang.String[] { "QuestVar", "TimeVarMap", "ParentQuestState", "IsFinished", "Unk3000HLPGILIGGCB", "RandomInfo", "ParentQuestId", "IsRandom", "CutsceneEncryptionKey", "QuestVarSeq", "ChildQuestList", });
     internal_static_ParentQuest_TimeVarMapEntry_descriptor =
       internal_static_ParentQuest_descriptor.getNestedTypes().get(0);
     internal_static_ParentQuest_TimeVarMapEntry_fieldAccessorTable = new
@@ -1996,6 +2371,7 @@ public final class ParentQuestOuterClass {
         new java.lang.String[] { "Key", "Value", });
     emu.grasscutter.net.proto.ChildQuestOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.Unk3000ENLDIHLGNCK.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

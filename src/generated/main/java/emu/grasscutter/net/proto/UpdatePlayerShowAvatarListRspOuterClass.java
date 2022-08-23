@@ -51,7 +51,8 @@ public final class UpdatePlayerShowAvatarListRspOuterClass {
    * <pre>
    * CmdId: 4058
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code UpdatePlayerShowAvatarListRsp}
@@ -415,7 +416,8 @@ public final class UpdatePlayerShowAvatarListRspOuterClass {
      * <pre>
      * CmdId: 4058
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code UpdatePlayerShowAvatarListRsp}

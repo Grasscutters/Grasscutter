@@ -34,7 +34,7 @@ public final class SetEquipLockStateReqOuterClass {
    * <pre>
    * CmdId: 666
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -318,7 +318,7 @@ public final class SetEquipLockStateReqOuterClass {
      * <pre>
      * CmdId: 666
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

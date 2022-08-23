@@ -58,7 +58,7 @@ public final class UseWidgetCreateGadgetReqOuterClass {
    * <pre>
    * CmdId: 4293
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -423,7 +423,7 @@ public final class UseWidgetCreateGadgetReqOuterClass {
      * <pre>
      * CmdId: 4293
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

@@ -60,6 +60,10 @@ public final class ActivityInfoOuterClass {
     int getTakenRewardList(int index);
 
     /**
+     * <pre>
+     *bool Unk2700_NONJFHAIFLA = 102;
+     * </pre>
+     *
      * <code>uint32 selected_avatar_reward_id = 1290;</code>
      * @return The selectedAvatarRewardId.
      */
@@ -142,24 +146,44 @@ public final class ActivityInfoOuterClass {
     int getActivityType();
 
     /**
+     * <pre>
+     *bool Unk2700_EDKLLHBEEGE = 1449;
+     * </pre>
+     *
      * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
      */
     java.util.List<emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC> 
         getUnk2800KOMIPKKKOBEList();
     /**
+     * <pre>
+     *bool Unk2700_EDKLLHBEEGE = 1449;
+     * </pre>
+     *
      * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
      */
     emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC getUnk2800KOMIPKKKOBE(int index);
     /**
+     * <pre>
+     *bool Unk2700_EDKLLHBEEGE = 1449;
+     * </pre>
+     *
      * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
      */
     int getUnk2800KOMIPKKKOBECount();
     /**
+     * <pre>
+     *bool Unk2700_EDKLLHBEEGE = 1449;
+     * </pre>
+     *
      * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLCOrBuilder> 
         getUnk2800KOMIPKKKOBEOrBuilderList();
     /**
+     * <pre>
+     *bool Unk2700_EDKLLHBEEGE = 1449;
+     * </pre>
+     *
      * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
      */
     emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLCOrBuilder getUnk2800KOMIPKKKOBEOrBuilder(
@@ -183,16 +207,28 @@ public final class ActivityInfoOuterClass {
     int getMeetCondList(int index);
 
     /**
+     * <pre>
+     *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+     * </pre>
+     *
      * <code>repeated uint32 expire_cond_list = 3;</code>
      * @return A list containing the expireCondList.
      */
     java.util.List<java.lang.Integer> getExpireCondListList();
     /**
+     * <pre>
+     *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+     * </pre>
+     *
      * <code>repeated uint32 expire_cond_list = 3;</code>
      * @return The count of expireCondList.
      */
     int getExpireCondListCount();
     /**
+     * <pre>
+     *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+     * </pre>
+     *
      * <code>repeated uint32 expire_cond_list = 3;</code>
      * @param index The index of the element to return.
      * @return The expireCondList at the given index.
@@ -742,6 +778,10 @@ public final class ActivityInfoOuterClass {
     public static final int SELECTED_AVATAR_REWARD_ID_FIELD_NUMBER = 1290;
     private int selectedAvatarRewardId_;
     /**
+     * <pre>
+     *bool Unk2700_NONJFHAIFLA = 102;
+     * </pre>
+     *
      * <code>uint32 selected_avatar_reward_id = 1290;</code>
      * @return The selectedAvatarRewardId.
      */
@@ -911,6 +951,10 @@ public final class ActivityInfoOuterClass {
     public static final int UNK2800_KOMIPKKKOBE_FIELD_NUMBER = 864;
     private java.util.List<emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC> unk2800KOMIPKKKOBE_;
     /**
+     * <pre>
+     *bool Unk2700_EDKLLHBEEGE = 1449;
+     * </pre>
+     *
      * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
      */
     @java.lang.Override
@@ -918,6 +962,10 @@ public final class ActivityInfoOuterClass {
       return unk2800KOMIPKKKOBE_;
     }
     /**
+     * <pre>
+     *bool Unk2700_EDKLLHBEEGE = 1449;
+     * </pre>
+     *
      * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
      */
     @java.lang.Override
@@ -926,6 +974,10 @@ public final class ActivityInfoOuterClass {
       return unk2800KOMIPKKKOBE_;
     }
     /**
+     * <pre>
+     *bool Unk2700_EDKLLHBEEGE = 1449;
+     * </pre>
+     *
      * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
      */
     @java.lang.Override
@@ -933,6 +985,10 @@ public final class ActivityInfoOuterClass {
       return unk2800KOMIPKKKOBE_.size();
     }
     /**
+     * <pre>
+     *bool Unk2700_EDKLLHBEEGE = 1449;
+     * </pre>
+     *
      * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
      */
     @java.lang.Override
@@ -940,6 +996,10 @@ public final class ActivityInfoOuterClass {
       return unk2800KOMIPKKKOBE_.get(index);
     }
     /**
+     * <pre>
+     *bool Unk2700_EDKLLHBEEGE = 1449;
+     * </pre>
+     *
      * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
      */
     @java.lang.Override
@@ -979,6 +1039,10 @@ public final class ActivityInfoOuterClass {
     public static final int EXPIRE_COND_LIST_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList expireCondList_;
     /**
+     * <pre>
+     *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+     * </pre>
+     *
      * <code>repeated uint32 expire_cond_list = 3;</code>
      * @return A list containing the expireCondList.
      */
@@ -988,6 +1052,10 @@ public final class ActivityInfoOuterClass {
       return expireCondList_;
     }
     /**
+     * <pre>
+     *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+     * </pre>
+     *
      * <code>repeated uint32 expire_cond_list = 3;</code>
      * @return The count of expireCondList.
      */
@@ -995,6 +1063,10 @@ public final class ActivityInfoOuterClass {
       return expireCondList_.size();
     }
     /**
+     * <pre>
+     *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+     * </pre>
+     *
      * <code>repeated uint32 expire_cond_list = 3;</code>
      * @param index The index of the element to return.
      * @return The expireCondList at the given index.
@@ -2252,6 +2324,10 @@ public final class ActivityInfoOuterClass {
 
       private int selectedAvatarRewardId_ ;
       /**
+       * <pre>
+       *bool Unk2700_NONJFHAIFLA = 102;
+       * </pre>
+       *
        * <code>uint32 selected_avatar_reward_id = 1290;</code>
        * @return The selectedAvatarRewardId.
        */
@@ -2260,6 +2336,10 @@ public final class ActivityInfoOuterClass {
         return selectedAvatarRewardId_;
       }
       /**
+       * <pre>
+       *bool Unk2700_NONJFHAIFLA = 102;
+       * </pre>
+       *
        * <code>uint32 selected_avatar_reward_id = 1290;</code>
        * @param value The selectedAvatarRewardId to set.
        * @return This builder for chaining.
@@ -2271,6 +2351,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *bool Unk2700_NONJFHAIFLA = 102;
+       * </pre>
+       *
        * <code>uint32 selected_avatar_reward_id = 1290;</code>
        * @return This builder for chaining.
        */
@@ -2639,6 +2723,10 @@ public final class ActivityInfoOuterClass {
           emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC, emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC.Builder, emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLCOrBuilder> unk2800KOMIPKKKOBEBuilder_;
 
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC> getUnk2800KOMIPKKKOBEList() {
@@ -2649,6 +2737,10 @@ public final class ActivityInfoOuterClass {
         }
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public int getUnk2800KOMIPKKKOBECount() {
@@ -2659,6 +2751,10 @@ public final class ActivityInfoOuterClass {
         }
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC getUnk2800KOMIPKKKOBE(int index) {
@@ -2669,6 +2765,10 @@ public final class ActivityInfoOuterClass {
         }
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public Builder setUnk2800KOMIPKKKOBE(
@@ -2686,6 +2786,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public Builder setUnk2800KOMIPKKKOBE(
@@ -2700,6 +2804,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public Builder addUnk2800KOMIPKKKOBE(emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC value) {
@@ -2716,6 +2824,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public Builder addUnk2800KOMIPKKKOBE(
@@ -2733,6 +2845,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public Builder addUnk2800KOMIPKKKOBE(
@@ -2747,6 +2863,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public Builder addUnk2800KOMIPKKKOBE(
@@ -2761,6 +2881,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public Builder addAllUnk2800KOMIPKKKOBE(
@@ -2776,6 +2900,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public Builder clearUnk2800KOMIPKKKOBE() {
@@ -2789,6 +2917,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public Builder removeUnk2800KOMIPKKKOBE(int index) {
@@ -2802,6 +2934,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC.Builder getUnk2800KOMIPKKKOBEBuilder(
@@ -2809,6 +2945,10 @@ public final class ActivityInfoOuterClass {
         return getUnk2800KOMIPKKKOBEFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLCOrBuilder getUnk2800KOMIPKKKOBEOrBuilder(
@@ -2819,6 +2959,10 @@ public final class ActivityInfoOuterClass {
         }
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLCOrBuilder> 
@@ -2830,6 +2974,10 @@ public final class ActivityInfoOuterClass {
         }
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC.Builder addUnk2800KOMIPKKKOBEBuilder() {
@@ -2837,6 +2985,10 @@ public final class ActivityInfoOuterClass {
             emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC.getDefaultInstance());
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC.Builder addUnk2800KOMIPKKKOBEBuilder(
@@ -2845,6 +2997,10 @@ public final class ActivityInfoOuterClass {
             index, emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC.getDefaultInstance());
       }
       /**
+       * <pre>
+       *bool Unk2700_EDKLLHBEEGE = 1449;
+       * </pre>
+       *
        * <code>repeated .Unk2800_PHPHMILPOLC Unk2800_KOMIPKKKOBE = 864;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.Unk2800PHPHMILPOLC.Unk2800_PHPHMILPOLC.Builder> 
@@ -2953,6 +3109,10 @@ public final class ActivityInfoOuterClass {
          }
       }
       /**
+       * <pre>
+       *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+       * </pre>
+       *
        * <code>repeated uint32 expire_cond_list = 3;</code>
        * @return A list containing the expireCondList.
        */
@@ -2962,6 +3122,10 @@ public final class ActivityInfoOuterClass {
                  java.util.Collections.unmodifiableList(expireCondList_) : expireCondList_;
       }
       /**
+       * <pre>
+       *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+       * </pre>
+       *
        * <code>repeated uint32 expire_cond_list = 3;</code>
        * @return The count of expireCondList.
        */
@@ -2969,6 +3133,10 @@ public final class ActivityInfoOuterClass {
         return expireCondList_.size();
       }
       /**
+       * <pre>
+       *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+       * </pre>
+       *
        * <code>repeated uint32 expire_cond_list = 3;</code>
        * @param index The index of the element to return.
        * @return The expireCondList at the given index.
@@ -2977,6 +3145,10 @@ public final class ActivityInfoOuterClass {
         return expireCondList_.getInt(index);
       }
       /**
+       * <pre>
+       *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+       * </pre>
+       *
        * <code>repeated uint32 expire_cond_list = 3;</code>
        * @param index The index to set the value at.
        * @param value The expireCondList to set.
@@ -2990,6 +3162,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+       * </pre>
+       *
        * <code>repeated uint32 expire_cond_list = 3;</code>
        * @param value The expireCondList to add.
        * @return This builder for chaining.
@@ -3001,6 +3177,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+       * </pre>
+       *
        * <code>repeated uint32 expire_cond_list = 3;</code>
        * @param values The expireCondList to add.
        * @return This builder for chaining.
@@ -3014,6 +3194,10 @@ public final class ActivityInfoOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *map&lt;uint32, uint32&gt; Unk2700_IFPBCNLCKLG = 1399;
+       * </pre>
+       *
        * <code>repeated uint32 expire_cond_list = 3;</code>
        * @return This builder for chaining.
        */

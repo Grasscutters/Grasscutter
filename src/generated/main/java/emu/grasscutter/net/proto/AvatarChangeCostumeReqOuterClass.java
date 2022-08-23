@@ -34,7 +34,7 @@ public final class AvatarChangeCostumeReqOuterClass {
    * <pre>
    * CmdId: 1778
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -317,7 +317,7 @@ public final class AvatarChangeCostumeReqOuterClass {
      * <pre>
      * CmdId: 1778
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

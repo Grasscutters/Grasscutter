@@ -40,7 +40,8 @@ public final class ChangeGameTimeRspOuterClass {
    * <pre>
    * CmdId: 199
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ChangeGameTimeRsp}
@@ -348,7 +349,8 @@ public final class ChangeGameTimeRspOuterClass {
      * <pre>
      * CmdId: 199
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ChangeGameTimeRsp}

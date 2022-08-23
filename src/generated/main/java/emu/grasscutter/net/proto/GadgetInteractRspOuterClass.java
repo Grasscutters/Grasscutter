@@ -62,7 +62,8 @@ public final class GadgetInteractRspOuterClass {
    * <pre>
    * CmdId: 898
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GadgetInteractRsp}
@@ -442,7 +443,8 @@ public final class GadgetInteractRspOuterClass {
      * <pre>
      * CmdId: 898
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GadgetInteractRsp}

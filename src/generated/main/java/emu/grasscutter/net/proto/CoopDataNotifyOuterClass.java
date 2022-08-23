@@ -75,7 +75,8 @@ public final class CoopDataNotifyOuterClass {
    * <pre>
    * CmdId: 1979
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code CoopDataNotify}
@@ -505,7 +506,8 @@ public final class CoopDataNotifyOuterClass {
      * <pre>
      * CmdId: 1979
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code CoopDataNotify}

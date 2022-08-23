@@ -34,7 +34,8 @@ public final class AvatarPromoteRspOuterClass {
    * <pre>
    * CmdId: 1639
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code AvatarPromoteRsp}
@@ -316,7 +317,8 @@ public final class AvatarPromoteRspOuterClass {
      * <pre>
      * CmdId: 1639
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code AvatarPromoteRsp}

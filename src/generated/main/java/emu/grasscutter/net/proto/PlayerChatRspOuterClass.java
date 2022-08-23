@@ -34,7 +34,8 @@ public final class PlayerChatRspOuterClass {
    * <pre>
    * CmdId: 3228
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code PlayerChatRsp}
@@ -315,7 +316,8 @@ public final class PlayerChatRspOuterClass {
      * <pre>
      * CmdId: 3228
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code PlayerChatRsp}

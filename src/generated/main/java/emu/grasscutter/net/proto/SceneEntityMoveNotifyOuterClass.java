@@ -54,8 +54,9 @@ public final class SceneEntityMoveNotifyOuterClass {
   /**
    * <pre>
    * CmdId: 275
-   * EnetChannelId: 1
+   * EnetChannelId: 0
    * EnetIsReliable: true
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code SceneEntityMoveNotify}
@@ -417,8 +418,9 @@ public final class SceneEntityMoveNotifyOuterClass {
     /**
      * <pre>
      * CmdId: 275
-     * EnetChannelId: 1
+     * EnetChannelId: 0
      * EnetIsReliable: true
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code SceneEntityMoveNotify}

@@ -148,7 +148,8 @@ public final class AvatarSkillDepotChangeNotifyOuterClass {
    * <pre>
    * CmdId: 1035
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code AvatarSkillDepotChangeNotify}
@@ -892,7 +893,8 @@ public final class AvatarSkillDepotChangeNotifyOuterClass {
      * <pre>
      * CmdId: 1035
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code AvatarSkillDepotChangeNotify}

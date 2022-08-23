@@ -34,7 +34,8 @@ public final class CutSceneEndNotifyOuterClass {
    * <pre>
    * CmdId: 215
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code CutSceneEndNotify}
@@ -315,7 +316,8 @@ public final class CutSceneEndNotifyOuterClass {
      * <pre>
      * CmdId: 215
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code CutSceneEndNotify}

@@ -19,16 +19,16 @@ public final class CookRecipeDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 recipe_id = 9;</code>
-     * @return The recipeId.
-     */
-    int getRecipeId();
-
-    /**
      * <code>uint32 proficiency = 13;</code>
      * @return The proficiency.
      */
     int getProficiency();
+
+    /**
+     * <code>uint32 recipe_id = 9;</code>
+     * @return The recipeId.
+     */
+    int getRecipeId();
   }
   /**
    * Protobuf type {@code CookRecipeData}
@@ -117,17 +117,6 @@ public final class CookRecipeDataOuterClass {
               emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData.class, emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData.Builder.class);
     }
 
-    public static final int RECIPE_ID_FIELD_NUMBER = 9;
-    private int recipeId_;
-    /**
-     * <code>uint32 recipe_id = 9;</code>
-     * @return The recipeId.
-     */
-    @java.lang.Override
-    public int getRecipeId() {
-      return recipeId_;
-    }
-
     public static final int PROFICIENCY_FIELD_NUMBER = 13;
     private int proficiency_;
     /**
@@ -137,6 +126,17 @@ public final class CookRecipeDataOuterClass {
     @java.lang.Override
     public int getProficiency() {
       return proficiency_;
+    }
+
+    public static final int RECIPE_ID_FIELD_NUMBER = 9;
+    private int recipeId_;
+    /**
+     * <code>uint32 recipe_id = 9;</code>
+     * @return The recipeId.
+     */
+    @java.lang.Override
+    public int getRecipeId() {
+      return recipeId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,10 +191,10 @@ public final class CookRecipeDataOuterClass {
       }
       emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData other = (emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData) obj;
 
-      if (getRecipeId()
-          != other.getRecipeId()) return false;
       if (getProficiency()
           != other.getProficiency()) return false;
+      if (getRecipeId()
+          != other.getRecipeId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +206,10 @@ public final class CookRecipeDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RECIPE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRecipeId();
       hash = (37 * hash) + PROFICIENCY_FIELD_NUMBER;
       hash = (53 * hash) + getProficiency();
+      hash = (37 * hash) + RECIPE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRecipeId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -343,9 +343,9 @@ public final class CookRecipeDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        recipeId_ = 0;
-
         proficiency_ = 0;
+
+        recipeId_ = 0;
 
         return this;
       }
@@ -373,8 +373,8 @@ public final class CookRecipeDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData buildPartial() {
         emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData result = new emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData(this);
-        result.recipeId_ = recipeId_;
         result.proficiency_ = proficiency_;
+        result.recipeId_ = recipeId_;
         onBuilt();
         return result;
       }
@@ -423,11 +423,11 @@ public final class CookRecipeDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData other) {
         if (other == emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData.getDefaultInstance()) return this;
-        if (other.getRecipeId() != 0) {
-          setRecipeId(other.getRecipeId());
-        }
         if (other.getProficiency() != 0) {
           setProficiency(other.getProficiency());
+        }
+        if (other.getRecipeId() != 0) {
+          setRecipeId(other.getRecipeId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,37 +458,6 @@ public final class CookRecipeDataOuterClass {
         return this;
       }
 
-      private int recipeId_ ;
-      /**
-       * <code>uint32 recipe_id = 9;</code>
-       * @return The recipeId.
-       */
-      @java.lang.Override
-      public int getRecipeId() {
-        return recipeId_;
-      }
-      /**
-       * <code>uint32 recipe_id = 9;</code>
-       * @param value The recipeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRecipeId(int value) {
-        
-        recipeId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 recipe_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRecipeId() {
-        
-        recipeId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int proficiency_ ;
       /**
        * <code>uint32 proficiency = 13;</code>
@@ -516,6 +485,37 @@ public final class CookRecipeDataOuterClass {
       public Builder clearProficiency() {
         
         proficiency_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int recipeId_ ;
+      /**
+       * <code>uint32 recipe_id = 9;</code>
+       * @return The recipeId.
+       */
+      @java.lang.Override
+      public int getRecipeId() {
+        return recipeId_;
+      }
+      /**
+       * <code>uint32 recipe_id = 9;</code>
+       * @param value The recipeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecipeId(int value) {
+        
+        recipeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 recipe_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRecipeId() {
+        
+        recipeId_ = 0;
         onChanged();
         return this;
       }
@@ -587,7 +587,7 @@ public final class CookRecipeDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024CookRecipeData.proto\"8\n\016CookRecipeData" +
-      "\022\021\n\trecipe_id\030\t \001(\r\022\023\n\013proficiency\030\r \001(\r" +
+      "\022\023\n\013proficiency\030\r \001(\r\022\021\n\trecipe_id\030\t \001(\r" +
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -599,7 +599,7 @@ public final class CookRecipeDataOuterClass {
     internal_static_CookRecipeData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CookRecipeData_descriptor,
-        new java.lang.String[] { "RecipeId", "Proficiency", });
+        new java.lang.String[] { "Proficiency", "RecipeId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

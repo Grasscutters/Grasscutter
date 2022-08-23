@@ -46,7 +46,8 @@ public final class EnterScenePeerNotifyOuterClass {
    * <pre>
    * CmdId: 252
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code EnterScenePeerNotify}
@@ -381,7 +382,8 @@ public final class EnterScenePeerNotifyOuterClass {
      * <pre>
      * CmdId: 252
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code EnterScenePeerNotify}

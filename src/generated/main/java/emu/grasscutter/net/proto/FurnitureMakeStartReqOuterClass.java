@@ -34,7 +34,7 @@ public final class FurnitureMakeStartReqOuterClass {
    * <pre>
    * CmdId: 4633
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -316,7 +316,7 @@ public final class FurnitureMakeStartReqOuterClass {
      * <pre>
      * CmdId: 4633
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

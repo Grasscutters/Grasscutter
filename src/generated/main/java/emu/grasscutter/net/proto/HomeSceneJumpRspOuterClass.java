@@ -34,7 +34,8 @@ public final class HomeSceneJumpRspOuterClass {
    * <pre>
    * CmdId: 4698
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code HomeSceneJumpRsp}
@@ -316,7 +317,8 @@ public final class HomeSceneJumpRspOuterClass {
      * <pre>
      * CmdId: 4698
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code HomeSceneJumpRsp}

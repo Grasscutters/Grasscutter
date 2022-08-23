@@ -58,7 +58,8 @@ public final class AvatarSkillChangeNotifyOuterClass {
    * <pre>
    * CmdId: 1097
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code AvatarSkillChangeNotify}
@@ -448,7 +449,8 @@ public final class AvatarSkillChangeNotifyOuterClass {
      * <pre>
      * CmdId: 1097
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code AvatarSkillChangeNotify}

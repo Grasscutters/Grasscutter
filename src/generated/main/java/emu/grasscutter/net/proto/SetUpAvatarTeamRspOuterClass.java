@@ -57,7 +57,8 @@ public final class SetUpAvatarTeamRspOuterClass {
    * <pre>
    * CmdId: 1646
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code SetUpAvatarTeamRsp}
@@ -448,7 +449,8 @@ public final class SetUpAvatarTeamRspOuterClass {
      * <pre>
      * CmdId: 1646
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code SetUpAvatarTeamRsp}

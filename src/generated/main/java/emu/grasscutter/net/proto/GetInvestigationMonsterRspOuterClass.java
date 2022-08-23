@@ -58,7 +58,7 @@ public final class GetInvestigationMonsterRspOuterClass {
    * <pre>
    * CmdId: 1910
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -408,7 +408,7 @@ public final class GetInvestigationMonsterRspOuterClass {
      * <pre>
      * CmdId: 1910
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

@@ -45,7 +45,7 @@ public final class ChangeMailStarNotifyOuterClass {
    * <pre>
    * CmdId: 1448
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -383,7 +383,7 @@ public final class ChangeMailStarNotifyOuterClass {
      * <pre>
      * CmdId: 1448
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

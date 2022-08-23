@@ -52,7 +52,8 @@ public final class GetPlayerAskFriendListRspOuterClass {
    * <pre>
    * CmdId: 4066
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GetPlayerAskFriendListRsp}
@@ -373,7 +374,8 @@ public final class GetPlayerAskFriendListRspOuterClass {
      * <pre>
      * CmdId: 4066
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GetPlayerAskFriendListRsp}

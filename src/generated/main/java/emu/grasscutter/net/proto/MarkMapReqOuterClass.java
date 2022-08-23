@@ -63,7 +63,7 @@ public final class MarkMapReqOuterClass {
    * <pre>
    * CmdId: 3466
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -563,7 +563,7 @@ public final class MarkMapReqOuterClass {
      * <pre>
      * CmdId: 3466
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *
@@ -1099,20 +1099,18 @@ public final class MarkMapReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020MarkMapReq.proto\032\022MapMarkPoint.proto\032\017" +
-      "Operation.proto\"\301\001\n\nMarkMapReq\022\033\n\004mark\030\010" +
-      " \001(\0132\r.MapMarkPoint\022\032\n\003old\030\006 \001(\0132\r.MapMa" +
-      "rkPoint\022!\n\002op\030\t \001(\0162\025.MarkMapReq.Operati" +
-      "on\"W\n\tOperation\022\021\n\rOPERATION_ADD\020\000\022\021\n\rOP" +
-      "ERATION_MOD\020\001\022\021\n\rOPERATION_DEL\020\002\022\021\n\rOPER" +
-      "ATION_GET\020\003B\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "\n\020MarkMapReq.proto\032\022MapMarkPoint.proto\"\301" +
+      "\001\n\nMarkMapReq\022\033\n\004mark\030\010 \001(\0132\r.MapMarkPoi" +
+      "nt\022\032\n\003old\030\006 \001(\0132\r.MapMarkPoint\022!\n\002op\030\t \001" +
+      "(\0162\025.MarkMapReq.Operation\"W\n\tOperation\022\021" +
+      "\n\rOPERATION_ADD\020\000\022\021\n\rOPERATION_MOD\020\001\022\021\n\r" +
+      "OPERATION_DEL\020\002\022\021\n\rOPERATION_GET\020\003B\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.MapMarkPointOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.OperationOuterClass.getDescriptor(),
         });
     internal_static_MarkMapReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1121,7 +1119,6 @@ public final class MarkMapReqOuterClass {
         internal_static_MarkMapReq_descriptor,
         new java.lang.String[] { "Mark", "Old", "Op", });
     emu.grasscutter.net.proto.MapMarkPointOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.OperationOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

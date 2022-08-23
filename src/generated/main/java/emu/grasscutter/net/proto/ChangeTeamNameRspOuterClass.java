@@ -46,7 +46,8 @@ public final class ChangeTeamNameRspOuterClass {
    * <pre>
    * CmdId: 1666
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ChangeTeamNameRsp}
@@ -382,7 +383,8 @@ public final class ChangeTeamNameRspOuterClass {
      * <pre>
      * CmdId: 1666
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ChangeTeamNameRsp}

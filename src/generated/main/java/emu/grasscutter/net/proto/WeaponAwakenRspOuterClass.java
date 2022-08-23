@@ -114,7 +114,8 @@ public final class WeaponAwakenRspOuterClass {
    * <pre>
    * CmdId: 606
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code WeaponAwakenRsp}
@@ -698,7 +699,8 @@ public final class WeaponAwakenRspOuterClass {
      * <pre>
      * CmdId: 606
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code WeaponAwakenRsp}

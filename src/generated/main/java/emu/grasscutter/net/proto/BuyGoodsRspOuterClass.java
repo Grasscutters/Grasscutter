@@ -79,7 +79,8 @@ public final class BuyGoodsRspOuterClass {
    * <pre>
    * CmdId: 735
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code BuyGoodsRsp}
@@ -509,7 +510,8 @@ public final class BuyGoodsRspOuterClass {
      * <pre>
      * CmdId: 735
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code BuyGoodsRsp}

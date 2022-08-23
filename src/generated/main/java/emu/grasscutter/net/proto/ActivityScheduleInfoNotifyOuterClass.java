@@ -50,9 +50,9 @@ public final class ActivityScheduleInfoNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2033
+   * CmdId: 2073
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -372,9 +372,9 @@ public final class ActivityScheduleInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2033
+     * CmdId: 2073
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

@@ -91,6 +91,10 @@ public final class CombatTypeArgumentOuterClass {
      * <code>COMBAT_TYPE_ARGUMENT_Unk2700_KPLOMOIALGF = 17;</code>
      */
     COMBAT_TYPE_ARGUMENT_Unk2700_KPLOMOIALGF(17),
+    /**
+     * <code>COMBAT_TYPE_ARGUMENT_Unk3000_BJEHMPLCFHN = 18;</code>
+     */
+    COMBAT_TYPE_ARGUMENT_Unk3000_BJEHMPLCFHN(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -166,6 +170,10 @@ public final class CombatTypeArgumentOuterClass {
      * <code>COMBAT_TYPE_ARGUMENT_Unk2700_KPLOMOIALGF = 17;</code>
      */
     public static final int COMBAT_TYPE_ARGUMENT_Unk2700_KPLOMOIALGF_VALUE = 17;
+    /**
+     * <code>COMBAT_TYPE_ARGUMENT_Unk3000_BJEHMPLCFHN = 18;</code>
+     */
+    public static final int COMBAT_TYPE_ARGUMENT_Unk3000_BJEHMPLCFHN_VALUE = 18;
 
 
     public final int getNumber() {
@@ -210,6 +218,7 @@ public final class CombatTypeArgumentOuterClass {
         case 15: return COMBAT_TYPE_ARGUMENT_LIGHT_CORE_MOVE;
         case 16: return COMBAT_TYPE_ARGUMENT_Unk2700_KPDNFKCMKPG;
         case 17: return COMBAT_TYPE_ARGUMENT_Unk2700_KPLOMOIALGF;
+        case 18: return COMBAT_TYPE_ARGUMENT_Unk3000_BJEHMPLCFHN;
         default: return null;
       }
     }
@@ -275,7 +284,7 @@ public final class CombatTypeArgumentOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030CombatTypeArgument.proto*\227\006\n\022CombatTyp" +
+      "\n\030CombatTypeArgument.proto*\305\006\n\022CombatTyp" +
       "eArgument\022\035\n\031COMBAT_TYPE_ARGUMENT_NONE\020\000" +
       "\022&\n\"COMBAT_TYPE_ARGUMENT_EVT_BEING_HIT\020\001" +
       "\022/\n+COMBAT_TYPE_ARGUMENT_ANIMATOR_STATE_" +
@@ -295,8 +304,9 @@ public final class CombatTypeArgumentOuterClass {
       "FORM\020\016\022(\n$COMBAT_TYPE_ARGUMENT_LIGHT_COR" +
       "E_MOVE\020\017\022,\n(COMBAT_TYPE_ARGUMENT_Unk2700" +
       "_KPDNFKCMKPG\020\020\022,\n(COMBAT_TYPE_ARGUMENT_U" +
-      "nk2700_KPLOMOIALGF\020\021B\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "nk2700_KPLOMOIALGF\020\021\022,\n(COMBAT_TYPE_ARGU" +
+      "MENT_Unk3000_BJEHMPLCFHN\020\022B\033\n\031emu.grassc" +
+      "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

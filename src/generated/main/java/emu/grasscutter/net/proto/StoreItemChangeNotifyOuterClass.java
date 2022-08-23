@@ -57,7 +57,8 @@ public final class StoreItemChangeNotifyOuterClass {
    * <pre>
    * CmdId: 612
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code StoreItemChangeNotify}
@@ -387,7 +388,8 @@ public final class StoreItemChangeNotifyOuterClass {
      * <pre>
      * CmdId: 612
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code StoreItemChangeNotify}

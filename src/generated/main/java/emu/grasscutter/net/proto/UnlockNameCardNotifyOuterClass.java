@@ -28,7 +28,8 @@ public final class UnlockNameCardNotifyOuterClass {
    * <pre>
    * CmdId: 4006
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code UnlockNameCardNotify}
@@ -282,7 +283,8 @@ public final class UnlockNameCardNotifyOuterClass {
      * <pre>
      * CmdId: 4006
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code UnlockNameCardNotify}

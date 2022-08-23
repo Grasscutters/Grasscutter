@@ -80,7 +80,8 @@ public final class ReliquaryPromoteRspOuterClass {
    * <pre>
    * CmdId: 694
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ReliquaryPromoteRsp}
@@ -578,7 +579,8 @@ public final class ReliquaryPromoteRspOuterClass {
      * <pre>
      * CmdId: 694
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ReliquaryPromoteRsp}

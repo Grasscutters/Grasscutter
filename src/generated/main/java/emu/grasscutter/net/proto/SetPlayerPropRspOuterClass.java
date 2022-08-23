@@ -28,7 +28,8 @@ public final class SetPlayerPropRspOuterClass {
    * <pre>
    * CmdId: 181
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code SetPlayerPropRsp}
@@ -282,7 +283,8 @@ public final class SetPlayerPropRspOuterClass {
      * <pre>
      * CmdId: 181
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code SetPlayerPropRsp}

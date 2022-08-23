@@ -158,7 +158,8 @@ public final class PlayerEnterSceneNotifyOuterClass {
    * <pre>
    * CmdId: 272
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code PlayerEnterSceneNotify}
@@ -968,7 +969,8 @@ public final class PlayerEnterSceneNotifyOuterClass {
      * <pre>
      * CmdId: 272
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code PlayerEnterSceneNotify}

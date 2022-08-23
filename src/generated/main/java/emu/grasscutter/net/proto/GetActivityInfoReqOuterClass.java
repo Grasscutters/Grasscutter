@@ -37,9 +37,9 @@ public final class GetActivityInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2067
+   * CmdId: 2095
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -347,9 +347,9 @@ public final class GetActivityInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2067
+     * CmdId: 2095
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

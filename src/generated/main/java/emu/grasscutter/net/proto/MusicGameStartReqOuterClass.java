@@ -19,28 +19,28 @@ public final class MusicGameStartReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 music_basic_id = 10;</code>
+     * <code>uint32 music_basic_id = 2;</code>
      * @return The musicBasicId.
      */
     int getMusicBasicId();
 
     /**
-     * <code>uint64 music_share_id = 8;</code>
+     * <code>bool Unk2700_IOKPIKJDEHG = 11;</code>
+     * @return The unk2700IOKPIKJDEHG.
+     */
+    boolean getUnk2700IOKPIKJDEHG();
+
+    /**
+     * <code>uint64 music_share_id = 3;</code>
      * @return The musicShareId.
      */
     long getMusicShareId();
-
-    /**
-     * <code>bool KJNDJLBOJLM = 5;</code>
-     * @return The kJNDJLBOJLM.
-     */
-    boolean getKJNDJLBOJLM();
   }
   /**
    * <pre>
-   * CmdId: 8927
+   * CmdId: 8406
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -88,19 +88,19 @@ public final class MusicGameStartReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 16: {
 
-              kJNDJLBOJLM_ = input.readBool();
+              musicBasicId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 24: {
 
               musicShareId_ = input.readUInt64();
               break;
             }
-            case 80: {
+            case 88: {
 
-              musicBasicId_ = input.readUInt32();
+              unk2700IOKPIKJDEHG_ = input.readBool();
               break;
             }
             default: {
@@ -135,10 +135,10 @@ public final class MusicGameStartReqOuterClass {
               emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReq.class, emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReq.Builder.class);
     }
 
-    public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 10;
+    public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 2;
     private int musicBasicId_;
     /**
-     * <code>uint32 music_basic_id = 10;</code>
+     * <code>uint32 music_basic_id = 2;</code>
      * @return The musicBasicId.
      */
     @java.lang.Override
@@ -146,26 +146,26 @@ public final class MusicGameStartReqOuterClass {
       return musicBasicId_;
     }
 
-    public static final int MUSIC_SHARE_ID_FIELD_NUMBER = 8;
+    public static final int UNK2700_IOKPIKJDEHG_FIELD_NUMBER = 11;
+    private boolean unk2700IOKPIKJDEHG_;
+    /**
+     * <code>bool Unk2700_IOKPIKJDEHG = 11;</code>
+     * @return The unk2700IOKPIKJDEHG.
+     */
+    @java.lang.Override
+    public boolean getUnk2700IOKPIKJDEHG() {
+      return unk2700IOKPIKJDEHG_;
+    }
+
+    public static final int MUSIC_SHARE_ID_FIELD_NUMBER = 3;
     private long musicShareId_;
     /**
-     * <code>uint64 music_share_id = 8;</code>
+     * <code>uint64 music_share_id = 3;</code>
      * @return The musicShareId.
      */
     @java.lang.Override
     public long getMusicShareId() {
       return musicShareId_;
-    }
-
-    public static final int KJNDJLBOJLM_FIELD_NUMBER = 5;
-    private boolean kJNDJLBOJLM_;
-    /**
-     * <code>bool KJNDJLBOJLM = 5;</code>
-     * @return The kJNDJLBOJLM.
-     */
-    @java.lang.Override
-    public boolean getKJNDJLBOJLM() {
-      return kJNDJLBOJLM_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -182,14 +182,14 @@ public final class MusicGameStartReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (kJNDJLBOJLM_ != false) {
-        output.writeBool(5, kJNDJLBOJLM_);
+      if (musicBasicId_ != 0) {
+        output.writeUInt32(2, musicBasicId_);
       }
       if (musicShareId_ != 0L) {
-        output.writeUInt64(8, musicShareId_);
+        output.writeUInt64(3, musicShareId_);
       }
-      if (musicBasicId_ != 0) {
-        output.writeUInt32(10, musicBasicId_);
+      if (unk2700IOKPIKJDEHG_ != false) {
+        output.writeBool(11, unk2700IOKPIKJDEHG_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,17 +200,17 @@ public final class MusicGameStartReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (kJNDJLBOJLM_ != false) {
+      if (musicBasicId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, kJNDJLBOJLM_);
+          .computeUInt32Size(2, musicBasicId_);
       }
       if (musicShareId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(8, musicShareId_);
+          .computeUInt64Size(3, musicShareId_);
       }
-      if (musicBasicId_ != 0) {
+      if (unk2700IOKPIKJDEHG_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, musicBasicId_);
+          .computeBoolSize(11, unk2700IOKPIKJDEHG_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -229,10 +229,10 @@ public final class MusicGameStartReqOuterClass {
 
       if (getMusicBasicId()
           != other.getMusicBasicId()) return false;
+      if (getUnk2700IOKPIKJDEHG()
+          != other.getUnk2700IOKPIKJDEHG()) return false;
       if (getMusicShareId()
           != other.getMusicShareId()) return false;
-      if (getKJNDJLBOJLM()
-          != other.getKJNDJLBOJLM()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -246,12 +246,12 @@ public final class MusicGameStartReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MUSIC_BASIC_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMusicBasicId();
+      hash = (37 * hash) + UNK2700_IOKPIKJDEHG_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getUnk2700IOKPIKJDEHG());
       hash = (37 * hash) + MUSIC_SHARE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMusicShareId());
-      hash = (37 * hash) + KJNDJLBOJLM_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getKJNDJLBOJLM());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -349,9 +349,9 @@ public final class MusicGameStartReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8927
+     * CmdId: 8406
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *
@@ -394,9 +394,9 @@ public final class MusicGameStartReqOuterClass {
         super.clear();
         musicBasicId_ = 0;
 
-        musicShareId_ = 0L;
+        unk2700IOKPIKJDEHG_ = false;
 
-        kJNDJLBOJLM_ = false;
+        musicShareId_ = 0L;
 
         return this;
       }
@@ -425,8 +425,8 @@ public final class MusicGameStartReqOuterClass {
       public emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReq buildPartial() {
         emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReq result = new emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReq(this);
         result.musicBasicId_ = musicBasicId_;
+        result.unk2700IOKPIKJDEHG_ = unk2700IOKPIKJDEHG_;
         result.musicShareId_ = musicShareId_;
-        result.kJNDJLBOJLM_ = kJNDJLBOJLM_;
         onBuilt();
         return result;
       }
@@ -478,11 +478,11 @@ public final class MusicGameStartReqOuterClass {
         if (other.getMusicBasicId() != 0) {
           setMusicBasicId(other.getMusicBasicId());
         }
+        if (other.getUnk2700IOKPIKJDEHG() != false) {
+          setUnk2700IOKPIKJDEHG(other.getUnk2700IOKPIKJDEHG());
+        }
         if (other.getMusicShareId() != 0L) {
           setMusicShareId(other.getMusicShareId());
-        }
-        if (other.getKJNDJLBOJLM() != false) {
-          setKJNDJLBOJLM(other.getKJNDJLBOJLM());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -515,7 +515,7 @@ public final class MusicGameStartReqOuterClass {
 
       private int musicBasicId_ ;
       /**
-       * <code>uint32 music_basic_id = 10;</code>
+       * <code>uint32 music_basic_id = 2;</code>
        * @return The musicBasicId.
        */
       @java.lang.Override
@@ -523,7 +523,7 @@ public final class MusicGameStartReqOuterClass {
         return musicBasicId_;
       }
       /**
-       * <code>uint32 music_basic_id = 10;</code>
+       * <code>uint32 music_basic_id = 2;</code>
        * @param value The musicBasicId to set.
        * @return This builder for chaining.
        */
@@ -534,7 +534,7 @@ public final class MusicGameStartReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 music_basic_id = 10;</code>
+       * <code>uint32 music_basic_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearMusicBasicId() {
@@ -544,9 +544,40 @@ public final class MusicGameStartReqOuterClass {
         return this;
       }
 
+      private boolean unk2700IOKPIKJDEHG_ ;
+      /**
+       * <code>bool Unk2700_IOKPIKJDEHG = 11;</code>
+       * @return The unk2700IOKPIKJDEHG.
+       */
+      @java.lang.Override
+      public boolean getUnk2700IOKPIKJDEHG() {
+        return unk2700IOKPIKJDEHG_;
+      }
+      /**
+       * <code>bool Unk2700_IOKPIKJDEHG = 11;</code>
+       * @param value The unk2700IOKPIKJDEHG to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnk2700IOKPIKJDEHG(boolean value) {
+        
+        unk2700IOKPIKJDEHG_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool Unk2700_IOKPIKJDEHG = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnk2700IOKPIKJDEHG() {
+        
+        unk2700IOKPIKJDEHG_ = false;
+        onChanged();
+        return this;
+      }
+
       private long musicShareId_ ;
       /**
-       * <code>uint64 music_share_id = 8;</code>
+       * <code>uint64 music_share_id = 3;</code>
        * @return The musicShareId.
        */
       @java.lang.Override
@@ -554,7 +585,7 @@ public final class MusicGameStartReqOuterClass {
         return musicShareId_;
       }
       /**
-       * <code>uint64 music_share_id = 8;</code>
+       * <code>uint64 music_share_id = 3;</code>
        * @param value The musicShareId to set.
        * @return This builder for chaining.
        */
@@ -565,43 +596,12 @@ public final class MusicGameStartReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 music_share_id = 8;</code>
+       * <code>uint64 music_share_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearMusicShareId() {
         
         musicShareId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private boolean kJNDJLBOJLM_ ;
-      /**
-       * <code>bool KJNDJLBOJLM = 5;</code>
-       * @return The kJNDJLBOJLM.
-       */
-      @java.lang.Override
-      public boolean getKJNDJLBOJLM() {
-        return kJNDJLBOJLM_;
-      }
-      /**
-       * <code>bool KJNDJLBOJLM = 5;</code>
-       * @param value The kJNDJLBOJLM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKJNDJLBOJLM(boolean value) {
-        
-        kJNDJLBOJLM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool KJNDJLBOJLM = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKJNDJLBOJLM() {
-        
-        kJNDJLBOJLM_ = false;
         onChanged();
         return this;
       }
@@ -672,10 +672,10 @@ public final class MusicGameStartReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027MusicGameStartReq.proto\"X\n\021MusicGameSt" +
-      "artReq\022\026\n\016music_basic_id\030\n \001(\r\022\026\n\016music_" +
-      "share_id\030\010 \001(\004\022\023\n\013KJNDJLBOJLM\030\005 \001(\010B\033\n\031e" +
-      "mu.grasscutter.net.protob\006proto3"
+      "\n\027MusicGameStartReq.proto\"`\n\021MusicGameSt" +
+      "artReq\022\026\n\016music_basic_id\030\002 \001(\r\022\033\n\023Unk270" +
+      "0_IOKPIKJDEHG\030\013 \001(\010\022\026\n\016music_share_id\030\003 " +
+      "\001(\004B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -686,7 +686,7 @@ public final class MusicGameStartReqOuterClass {
     internal_static_MusicGameStartReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MusicGameStartReq_descriptor,
-        new java.lang.String[] { "MusicBasicId", "MusicShareId", "KJNDJLBOJLM", });
+        new java.lang.String[] { "MusicBasicId", "Unk2700IOKPIKJDEHG", "MusicShareId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

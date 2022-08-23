@@ -40,7 +40,7 @@ public final class GachaWishReqOuterClass {
    * <pre>
    * CmdId: 1507
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -349,7 +349,7 @@ public final class GachaWishReqOuterClass {
      * <pre>
      * CmdId: 1507
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

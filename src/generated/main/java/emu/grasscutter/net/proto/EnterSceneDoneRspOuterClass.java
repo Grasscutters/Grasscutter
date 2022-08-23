@@ -34,7 +34,8 @@ public final class EnterSceneDoneRspOuterClass {
    * <pre>
    * CmdId: 237
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code EnterSceneDoneRsp}
@@ -315,7 +316,8 @@ public final class EnterSceneDoneRspOuterClass {
      * <pre>
      * CmdId: 237
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code EnterSceneDoneRsp}

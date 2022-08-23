@@ -58,7 +58,8 @@ public final class TowerLevelStarCondNotifyOuterClass {
    * <pre>
    * CmdId: 2406
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code TowerLevelStarCondNotify}
@@ -406,7 +407,8 @@ public final class TowerLevelStarCondNotifyOuterClass {
      * <pre>
      * CmdId: 2406
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code TowerLevelStarCondNotify}

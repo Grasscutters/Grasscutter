@@ -34,7 +34,7 @@ public final class SelectWorktopOptionReqOuterClass {
    * <pre>
    * CmdId: 807
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -316,7 +316,7 @@ public final class SelectWorktopOptionReqOuterClass {
      * <pre>
      * CmdId: 807
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

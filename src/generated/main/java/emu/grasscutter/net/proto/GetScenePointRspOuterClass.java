@@ -193,7 +193,8 @@ public final class GetScenePointRspOuterClass {
    * <pre>
    * CmdId: 281
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GetScenePointRsp}
@@ -1223,7 +1224,8 @@ public final class GetScenePointRspOuterClass {
      * <pre>
      * CmdId: 281
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GetScenePointRsp}

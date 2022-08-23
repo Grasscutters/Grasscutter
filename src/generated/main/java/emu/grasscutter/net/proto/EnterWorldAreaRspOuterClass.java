@@ -40,7 +40,8 @@ public final class EnterWorldAreaRspOuterClass {
    * <pre>
    * CmdId: 243
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code EnterWorldAreaRsp}
@@ -348,7 +349,8 @@ public final class EnterWorldAreaRspOuterClass {
      * <pre>
      * CmdId: 243
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code EnterWorldAreaRsp}

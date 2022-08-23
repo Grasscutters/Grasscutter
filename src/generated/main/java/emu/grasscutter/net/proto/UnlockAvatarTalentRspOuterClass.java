@@ -40,7 +40,8 @@ public final class UnlockAvatarTalentRspOuterClass {
    * <pre>
    * CmdId: 1098
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code UnlockAvatarTalentRsp}
@@ -349,7 +350,8 @@ public final class UnlockAvatarTalentRspOuterClass {
      * <pre>
      * CmdId: 1098
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code UnlockAvatarTalentRsp}

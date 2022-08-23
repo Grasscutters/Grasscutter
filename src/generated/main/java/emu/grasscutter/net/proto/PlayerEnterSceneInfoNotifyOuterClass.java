@@ -88,7 +88,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
    * <pre>
    * CmdId: 214
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -547,7 +547,7 @@ public final class PlayerEnterSceneInfoNotifyOuterClass {
      * <pre>
      * CmdId: 214
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

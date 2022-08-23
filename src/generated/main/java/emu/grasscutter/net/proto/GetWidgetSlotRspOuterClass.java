@@ -52,7 +52,8 @@ public final class GetWidgetSlotRspOuterClass {
    * <pre>
    * CmdId: 4254
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GetWidgetSlotRsp}
@@ -373,7 +374,8 @@ public final class GetWidgetSlotRspOuterClass {
      * <pre>
      * CmdId: 4254
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GetWidgetSlotRsp}

@@ -28,7 +28,8 @@ public final class HomeBlockNotifyOuterClass {
    * <pre>
    * CmdId: 4543
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code HomeBlockNotify}
@@ -282,7 +283,8 @@ public final class HomeBlockNotifyOuterClass {
      * <pre>
      * CmdId: 4543
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code HomeBlockNotify}

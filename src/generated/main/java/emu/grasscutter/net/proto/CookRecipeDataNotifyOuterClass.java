@@ -37,7 +37,8 @@ public final class CookRecipeDataNotifyOuterClass {
    * <pre>
    * CmdId: 106
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code CookRecipeDataNotify}
@@ -319,7 +320,8 @@ public final class CookRecipeDataNotifyOuterClass {
      * <pre>
      * CmdId: 106
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code CookRecipeDataNotify}

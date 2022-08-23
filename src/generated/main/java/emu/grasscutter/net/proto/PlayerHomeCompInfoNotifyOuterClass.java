@@ -37,7 +37,8 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
    * <pre>
    * CmdId: 4880
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code PlayerHomeCompInfoNotify}
@@ -319,7 +320,8 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
      * <pre>
      * CmdId: 4880
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code PlayerHomeCompInfoNotify}

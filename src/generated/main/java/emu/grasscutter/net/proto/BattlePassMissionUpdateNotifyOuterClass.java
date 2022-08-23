@@ -44,9 +44,10 @@ public final class BattlePassMissionUpdateNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2609
+   * CmdId: 2618
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code BattlePassMissionUpdateNotify}
@@ -338,9 +339,10 @@ public final class BattlePassMissionUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2609
+     * CmdId: 2618
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code BattlePassMissionUpdateNotify}

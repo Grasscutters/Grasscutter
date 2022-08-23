@@ -64,7 +64,7 @@ public final class CreateVehicleReqOuterClass {
    * <pre>
    * CmdId: 893
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -456,7 +456,7 @@ public final class CreateVehicleReqOuterClass {
      * <pre>
      * CmdId: 893
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

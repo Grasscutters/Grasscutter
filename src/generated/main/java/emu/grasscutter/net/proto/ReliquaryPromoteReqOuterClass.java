@@ -34,7 +34,7 @@ public final class ReliquaryPromoteReqOuterClass {
    * <pre>
    * CmdId: 627
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -318,7 +318,7 @@ public final class ReliquaryPromoteReqOuterClass {
      * <pre>
      * CmdId: 627
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

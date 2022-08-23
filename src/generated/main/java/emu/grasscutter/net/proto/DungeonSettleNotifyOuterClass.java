@@ -248,19 +248,34 @@ public final class DungeonSettleNotifyOuterClass {
     emu.grasscutter.net.proto.CrystalLinkSettleInfoOuterClass.CrystalLinkSettleInfoOrBuilder getCrystalLinkSettleInfoOrBuilder();
 
     /**
-     * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+     * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
      * @return Whether the summerTimeV2DungeonSettleInfo field is set.
      */
     boolean hasSummerTimeV2DungeonSettleInfo();
     /**
-     * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+     * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
      * @return The summerTimeV2DungeonSettleInfo.
      */
     emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo getSummerTimeV2DungeonSettleInfo();
     /**
-     * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+     * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
      */
     emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfoOrBuilder getSummerTimeV2DungeonSettleInfoOrBuilder();
+
+    /**
+     * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+     * @return Whether the instableSpraySettleInfo field is set.
+     */
+    boolean hasInstableSpraySettleInfo();
+    /**
+     * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+     * @return The instableSpraySettleInfo.
+     */
+    emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB getInstableSpraySettleInfo();
+    /**
+     * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+     */
+    emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMBOrBuilder getInstableSpraySettleInfoOrBuilder();
 
     public emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass.DungeonSettleNotify.DetailCase getDetailCase();
   }
@@ -268,7 +283,8 @@ public final class DungeonSettleNotifyOuterClass {
    * <pre>
    * CmdId: 999
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code DungeonSettleNotify}
@@ -411,6 +427,20 @@ public final class DungeonSettleNotifyOuterClass {
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 112;
+              break;
+            }
+            case 1546: {
+              emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.Builder subBuilder = null;
+              if (detailCase_ == 193) {
+                subBuilder = ((emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 193;
               break;
             }
             case 2626: {
@@ -560,7 +590,8 @@ public final class DungeonSettleNotifyOuterClass {
       EFFIGY_CHALLENGE_DUNGEON_RESULT_INFO(328),
       ROGUELIKE_DUNGEON_SETTLE_INFO(1482),
       CRYSTAL_LINK_SETTLE_INFO(112),
-      SUMMER_TIME_V_2_DUNGEON_SETTLE_INFO(1882),
+      SUMMER_TIME_V2_DUNGEON_SETTLE_INFO(1882),
+      INSTABLE_SPRAY_SETTLE_INFO(193),
       DETAIL_NOT_SET(0);
       private final int value;
       private DetailCase(int value) {
@@ -584,7 +615,8 @@ public final class DungeonSettleNotifyOuterClass {
           case 328: return EFFIGY_CHALLENGE_DUNGEON_RESULT_INFO;
           case 1482: return ROGUELIKE_DUNGEON_SETTLE_INFO;
           case 112: return CRYSTAL_LINK_SETTLE_INFO;
-          case 1882: return SUMMER_TIME_V_2_DUNGEON_SETTLE_INFO;
+          case 1882: return SUMMER_TIME_V2_DUNGEON_SETTLE_INFO;
+          case 193: return INSTABLE_SPRAY_SETTLE_INFO;
           case 0: return DETAIL_NOT_SET;
           default: return null;
         }
@@ -1071,9 +1103,9 @@ public final class DungeonSettleNotifyOuterClass {
       return emu.grasscutter.net.proto.CrystalLinkSettleInfoOuterClass.CrystalLinkSettleInfo.getDefaultInstance();
     }
 
-    public static final int SUMMER_TIME_V_2_DUNGEON_SETTLE_INFO_FIELD_NUMBER = 1882;
+    public static final int SUMMER_TIME_V2_DUNGEON_SETTLE_INFO_FIELD_NUMBER = 1882;
     /**
-     * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+     * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
      * @return Whether the summerTimeV2DungeonSettleInfo field is set.
      */
     @java.lang.Override
@@ -1081,7 +1113,7 @@ public final class DungeonSettleNotifyOuterClass {
       return detailCase_ == 1882;
     }
     /**
-     * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+     * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
      * @return The summerTimeV2DungeonSettleInfo.
      */
     @java.lang.Override
@@ -1092,7 +1124,7 @@ public final class DungeonSettleNotifyOuterClass {
       return emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo.getDefaultInstance();
     }
     /**
-     * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+     * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfoOrBuilder getSummerTimeV2DungeonSettleInfoOrBuilder() {
@@ -1100,6 +1132,37 @@ public final class DungeonSettleNotifyOuterClass {
          return (emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo) detail_;
       }
       return emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo.getDefaultInstance();
+    }
+
+    public static final int INSTABLE_SPRAY_SETTLE_INFO_FIELD_NUMBER = 193;
+    /**
+     * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+     * @return Whether the instableSpraySettleInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasInstableSpraySettleInfo() {
+      return detailCase_ == 193;
+    }
+    /**
+     * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+     * @return The instableSpraySettleInfo.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB getInstableSpraySettleInfo() {
+      if (detailCase_ == 193) {
+         return (emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB) detail_;
+      }
+      return emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.getDefaultInstance();
+    }
+    /**
+     * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMBOrBuilder getInstableSpraySettleInfoOrBuilder() {
+      if (detailCase_ == 193) {
+         return (emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB) detail_;
+      }
+      return emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1156,6 +1219,9 @@ public final class DungeonSettleNotifyOuterClass {
           14);
       if (detailCase_ == 112) {
         output.writeMessage(112, (emu.grasscutter.net.proto.CrystalLinkSettleInfoOuterClass.CrystalLinkSettleInfo) detail_);
+      }
+      if (detailCase_ == 193) {
+        output.writeMessage(193, (emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB) detail_);
       }
       if (detailCase_ == 328) {
         output.writeMessage(328, (emu.grasscutter.net.proto.EffigyChallengeDungeonResultInfoOuterClass.EffigyChallengeDungeonResultInfo) detail_);
@@ -1246,6 +1312,10 @@ public final class DungeonSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(112, (emu.grasscutter.net.proto.CrystalLinkSettleInfoOuterClass.CrystalLinkSettleInfo) detail_);
       }
+      if (detailCase_ == 193) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(193, (emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB) detail_);
+      }
       if (detailCase_ == 328) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(328, (emu.grasscutter.net.proto.EffigyChallengeDungeonResultInfoOuterClass.EffigyChallengeDungeonResultInfo) detail_);
@@ -1333,6 +1403,10 @@ public final class DungeonSettleNotifyOuterClass {
           if (!getSummerTimeV2DungeonSettleInfo()
               .equals(other.getSummerTimeV2DungeonSettleInfo())) return false;
           break;
+        case 193:
+          if (!getInstableSpraySettleInfo()
+              .equals(other.getInstableSpraySettleInfo())) return false;
+          break;
         case 0:
         default:
       }
@@ -1400,8 +1474,12 @@ public final class DungeonSettleNotifyOuterClass {
           hash = (53 * hash) + getCrystalLinkSettleInfo().hashCode();
           break;
         case 1882:
-          hash = (37 * hash) + SUMMER_TIME_V_2_DUNGEON_SETTLE_INFO_FIELD_NUMBER;
+          hash = (37 * hash) + SUMMER_TIME_V2_DUNGEON_SETTLE_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getSummerTimeV2DungeonSettleInfo().hashCode();
+          break;
+        case 193:
+          hash = (37 * hash) + INSTABLE_SPRAY_SETTLE_INFO_FIELD_NUMBER;
+          hash = (53 * hash) + getInstableSpraySettleInfo().hashCode();
           break;
         case 0:
         default:
@@ -1505,7 +1583,8 @@ public final class DungeonSettleNotifyOuterClass {
      * <pre>
      * CmdId: 999
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code DungeonSettleNotify}
@@ -1693,6 +1772,13 @@ public final class DungeonSettleNotifyOuterClass {
             result.detail_ = summerTimeV2DungeonSettleInfoBuilder_.build();
           }
         }
+        if (detailCase_ == 193) {
+          if (instableSpraySettleInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = instableSpraySettleInfoBuilder_.build();
+          }
+        }
         result.detailCase_ = detailCase_;
         onBuilt();
         return result;
@@ -1822,8 +1908,12 @@ public final class DungeonSettleNotifyOuterClass {
             mergeCrystalLinkSettleInfo(other.getCrystalLinkSettleInfo());
             break;
           }
-          case SUMMER_TIME_V_2_DUNGEON_SETTLE_INFO: {
+          case SUMMER_TIME_V2_DUNGEON_SETTLE_INFO: {
             mergeSummerTimeV2DungeonSettleInfo(other.getSummerTimeV2DungeonSettleInfo());
+            break;
+          }
+          case INSTABLE_SPRAY_SETTLE_INFO: {
+            mergeInstableSpraySettleInfo(other.getInstableSpraySettleInfo());
             break;
           }
           case DETAIL_NOT_SET: {
@@ -3454,7 +3544,7 @@ public final class DungeonSettleNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo, emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo.Builder, emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfoOrBuilder> summerTimeV2DungeonSettleInfoBuilder_;
       /**
-       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
        * @return Whether the summerTimeV2DungeonSettleInfo field is set.
        */
       @java.lang.Override
@@ -3462,7 +3552,7 @@ public final class DungeonSettleNotifyOuterClass {
         return detailCase_ == 1882;
       }
       /**
-       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
        * @return The summerTimeV2DungeonSettleInfo.
        */
       @java.lang.Override
@@ -3480,7 +3570,7 @@ public final class DungeonSettleNotifyOuterClass {
         }
       }
       /**
-       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
        */
       public Builder setSummerTimeV2DungeonSettleInfo(emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo value) {
         if (summerTimeV2DungeonSettleInfoBuilder_ == null) {
@@ -3496,7 +3586,7 @@ public final class DungeonSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
        */
       public Builder setSummerTimeV2DungeonSettleInfo(
           emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo.Builder builderForValue) {
@@ -3510,7 +3600,7 @@ public final class DungeonSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
        */
       public Builder mergeSummerTimeV2DungeonSettleInfo(emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo value) {
         if (summerTimeV2DungeonSettleInfoBuilder_ == null) {
@@ -3532,7 +3622,7 @@ public final class DungeonSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
        */
       public Builder clearSummerTimeV2DungeonSettleInfo() {
         if (summerTimeV2DungeonSettleInfoBuilder_ == null) {
@@ -3551,13 +3641,13 @@ public final class DungeonSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
        */
       public emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo.Builder getSummerTimeV2DungeonSettleInfoBuilder() {
         return getSummerTimeV2DungeonSettleInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfoOrBuilder getSummerTimeV2DungeonSettleInfoOrBuilder() {
@@ -3571,7 +3661,7 @@ public final class DungeonSettleNotifyOuterClass {
         }
       }
       /**
-       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v_2_dungeon_settle_info = 1882;</code>
+       * <code>.SummerTimeV2DungeonSettleInfo summer_time_v2_dungeon_settle_info = 1882;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo, emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo.Builder, emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfoOrBuilder> 
@@ -3590,6 +3680,147 @@ public final class DungeonSettleNotifyOuterClass {
         detailCase_ = 1882;
         onChanged();;
         return summerTimeV2DungeonSettleInfoBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB, emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.Builder, emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMBOrBuilder> instableSpraySettleInfoBuilder_;
+      /**
+       * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+       * @return Whether the instableSpraySettleInfo field is set.
+       */
+      @java.lang.Override
+      public boolean hasInstableSpraySettleInfo() {
+        return detailCase_ == 193;
+      }
+      /**
+       * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+       * @return The instableSpraySettleInfo.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB getInstableSpraySettleInfo() {
+        if (instableSpraySettleInfoBuilder_ == null) {
+          if (detailCase_ == 193) {
+            return (emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB) detail_;
+          }
+          return emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.getDefaultInstance();
+        } else {
+          if (detailCase_ == 193) {
+            return instableSpraySettleInfoBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+       */
+      public Builder setInstableSpraySettleInfo(emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB value) {
+        if (instableSpraySettleInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          instableSpraySettleInfoBuilder_.setMessage(value);
+        }
+        detailCase_ = 193;
+        return this;
+      }
+      /**
+       * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+       */
+      public Builder setInstableSpraySettleInfo(
+          emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.Builder builderForValue) {
+        if (instableSpraySettleInfoBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          instableSpraySettleInfoBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 193;
+        return this;
+      }
+      /**
+       * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+       */
+      public Builder mergeInstableSpraySettleInfo(emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB value) {
+        if (instableSpraySettleInfoBuilder_ == null) {
+          if (detailCase_ == 193 &&
+              detail_ != emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.newBuilder((emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 193) {
+            instableSpraySettleInfoBuilder_.mergeFrom(value);
+          }
+          instableSpraySettleInfoBuilder_.setMessage(value);
+        }
+        detailCase_ = 193;
+        return this;
+      }
+      /**
+       * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+       */
+      public Builder clearInstableSpraySettleInfo() {
+        if (instableSpraySettleInfoBuilder_ == null) {
+          if (detailCase_ == 193) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 193) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          instableSpraySettleInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+       */
+      public emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.Builder getInstableSpraySettleInfoBuilder() {
+        return getInstableSpraySettleInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMBOrBuilder getInstableSpraySettleInfoOrBuilder() {
+        if ((detailCase_ == 193) && (instableSpraySettleInfoBuilder_ != null)) {
+          return instableSpraySettleInfoBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 193) {
+            return (emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB) detail_;
+          }
+          return emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.Unk3000_CCCOFNABDMB instable_spray_settle_info = 193;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB, emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.Builder, emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMBOrBuilder> 
+          getInstableSpraySettleInfoFieldBuilder() {
+        if (instableSpraySettleInfoBuilder_ == null) {
+          if (!(detailCase_ == 193)) {
+            detail_ = emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.getDefaultInstance();
+          }
+          instableSpraySettleInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB, emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB.Builder, emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMBOrBuilder>(
+                  (emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.Unk3000_CCCOFNABDMB) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 193;
+        onChanged();;
+        return instableSpraySettleInfoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3676,34 +3907,37 @@ public final class DungeonSettleNotifyOuterClass {
       "eDungeonSettleInfo.proto\032\031StrengthenPoin" +
       "tData.proto\032#SummerTimeV2DungeonSettleIn" +
       "fo.proto\032\031TowerLevelEndNotify.proto\032\'Tri" +
-      "alAvatarFirstPassDungeonNotify.proto\"\221\010\n" +
-      "\023DungeonSettleNotify\022S\n\031strengthen_point" +
-      "_data_map\030\016 \003(\01320.DungeonSettleNotify.St" +
-      "rengthenPointDataMapEntry\022\022\n\nis_success\030" +
-      "\007 \001(\010\022\022\n\nclose_time\030\004 \001(\r\022\033\n\023Unk2700_OMC" +
-      "CFBBDJMI\030\001 \001(\r\0229\n\013settle_show\030\005 \003(\0132$.Du" +
-      "ngeonSettleNotify.SettleShowEntry\022:\n\024exh" +
-      "ibition_info_list\030\010 \003(\0132\034.DungeonSettleE" +
-      "xhibitionInfo\022\026\n\016fail_cond_list\030\013 \003(\r\022\022\n" +
-      "\ndungeon_id\030\r \001(\r\022\016\n\006result\030\n \001(\r\0227\n\026tow" +
-      "er_level_end_notify\030\337\002 \001(\0132\024.TowerLevelE" +
-      "ndNotifyH\000\022U\n&trial_avatar_first_pass_du" +
-      "ngeon_notify\030\373\004 \001(\0132\".TrialAvatarFirstPa" +
-      "ssDungeonNotifyH\000\022X\n(channeller_slab_loo" +
-      "p_dungeon_result_info\030\256\005 \001(\0132#.Channeler" +
-      "SlabLoopDungeonResultInfoH\000\022R\n$effigy_ch" +
-      "allenge_dungeon_result_info\030\310\002 \001(\0132!.Eff" +
-      "igyChallengeDungeonResultInfoH\000\022E\n\035rogue" +
-      "like_dungeon_settle_info\030\312\013 \001(\0132\033.Roguel" +
-      "ikeDungeonSettleInfoH\000\022:\n\030crystal_link_s" +
-      "ettle_info\030p \001(\0132\026.CrystalLinkSettleInfo" +
-      "H\000\022N\n#summer_time_v_2_dungeon_settle_inf" +
-      "o\030\332\016 \001(\0132\036.SummerTimeV2DungeonSettleInfo" +
-      "H\000\032S\n\033StrengthenPointDataMapEntry\022\013\n\003key" +
-      "\030\001 \001(\r\022#\n\005value\030\002 \001(\0132\024.StrengthenPointD" +
-      "ata:\0028\001\032=\n\017SettleShowEntry\022\013\n\003key\030\001 \001(\r\022" +
-      "\031\n\005value\030\002 \001(\0132\n.ParamList:\0028\001B\010\n\006detail" +
-      "B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "alAvatarFirstPassDungeonNotify.proto\032\031Un" +
+      "k3000_CCCOFNABDMB.proto\"\315\010\n\023DungeonSettl" +
+      "eNotify\022S\n\031strengthen_point_data_map\030\016 \003" +
+      "(\01320.DungeonSettleNotify.StrengthenPoint" +
+      "DataMapEntry\022\022\n\nis_success\030\007 \001(\010\022\022\n\nclos" +
+      "e_time\030\004 \001(\r\022\033\n\023Unk2700_OMCCFBBDJMI\030\001 \001(" +
+      "\r\0229\n\013settle_show\030\005 \003(\0132$.DungeonSettleNo" +
+      "tify.SettleShowEntry\022:\n\024exhibition_info_" +
+      "list\030\010 \003(\0132\034.DungeonSettleExhibitionInfo" +
+      "\022\026\n\016fail_cond_list\030\013 \003(\r\022\022\n\ndungeon_id\030\r" +
+      " \001(\r\022\016\n\006result\030\n \001(\r\0227\n\026tower_level_end_" +
+      "notify\030\337\002 \001(\0132\024.TowerLevelEndNotifyH\000\022U\n" +
+      "&trial_avatar_first_pass_dungeon_notify\030" +
+      "\373\004 \001(\0132\".TrialAvatarFirstPassDungeonNoti" +
+      "fyH\000\022X\n(channeller_slab_loop_dungeon_res" +
+      "ult_info\030\256\005 \001(\0132#.ChannelerSlabLoopDunge" +
+      "onResultInfoH\000\022R\n$effigy_challenge_dunge" +
+      "on_result_info\030\310\002 \001(\0132!.EffigyChallengeD" +
+      "ungeonResultInfoH\000\022E\n\035roguelike_dungeon_" +
+      "settle_info\030\312\013 \001(\0132\033.RoguelikeDungeonSet" +
+      "tleInfoH\000\022:\n\030crystal_link_settle_info\030p " +
+      "\001(\0132\026.CrystalLinkSettleInfoH\000\022M\n\"summer_" +
+      "time_v2_dungeon_settle_info\030\332\016 \001(\0132\036.Sum" +
+      "merTimeV2DungeonSettleInfoH\000\022;\n\032instable" +
+      "_spray_settle_info\030\301\001 \001(\0132\024.Unk3000_CCCO" +
+      "FNABDMBH\000\032S\n\033StrengthenPointDataMapEntry" +
+      "\022\013\n\003key\030\001 \001(\r\022#\n\005value\030\002 \001(\0132\024.Strengthe" +
+      "nPointData:\0028\001\032=\n\017SettleShowEntry\022\013\n\003key" +
+      "\030\001 \001(\r\022\031\n\005value\030\002 \001(\0132\n.ParamList:\0028\001B\010\n" +
+      "\006detailB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3718,13 +3952,14 @@ public final class DungeonSettleNotifyOuterClass {
           emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.getDescriptor(),
         });
     internal_static_DungeonSettleNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_DungeonSettleNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DungeonSettleNotify_descriptor,
-        new java.lang.String[] { "StrengthenPointDataMap", "IsSuccess", "CloseTime", "Unk2700OMCCFBBDJMI", "SettleShow", "ExhibitionInfoList", "FailCondList", "DungeonId", "Result", "TowerLevelEndNotify", "TrialAvatarFirstPassDungeonNotify", "ChannellerSlabLoopDungeonResultInfo", "EffigyChallengeDungeonResultInfo", "RoguelikeDungeonSettleInfo", "CrystalLinkSettleInfo", "SummerTimeV2DungeonSettleInfo", "Detail", });
+        new java.lang.String[] { "StrengthenPointDataMap", "IsSuccess", "CloseTime", "Unk2700OMCCFBBDJMI", "SettleShow", "ExhibitionInfoList", "FailCondList", "DungeonId", "Result", "TowerLevelEndNotify", "TrialAvatarFirstPassDungeonNotify", "ChannellerSlabLoopDungeonResultInfo", "EffigyChallengeDungeonResultInfo", "RoguelikeDungeonSettleInfo", "CrystalLinkSettleInfo", "SummerTimeV2DungeonSettleInfo", "InstableSpraySettleInfo", "Detail", });
     internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_descriptor =
       internal_static_DungeonSettleNotify_descriptor.getNestedTypes().get(0);
     internal_static_DungeonSettleNotify_StrengthenPointDataMapEntry_fieldAccessorTable = new
@@ -3747,6 +3982,7 @@ public final class DungeonSettleNotifyOuterClass {
     emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.getDescriptor();
     emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.Unk3000CCCOFNABDMB.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

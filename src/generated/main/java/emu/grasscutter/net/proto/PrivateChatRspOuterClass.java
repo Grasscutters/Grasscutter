@@ -34,7 +34,8 @@ public final class PrivateChatRspOuterClass {
    * <pre>
    * CmdId: 5048
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code PrivateChatRsp}
@@ -315,7 +316,8 @@ public final class PrivateChatRspOuterClass {
      * <pre>
      * CmdId: 5048
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code PrivateChatRsp}

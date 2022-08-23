@@ -39,7 +39,7 @@ public final class ReadMailNotifyOuterClass {
    * <pre>
    * CmdId: 1412
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -349,7 +349,7 @@ public final class ReadMailNotifyOuterClass {
      * <pre>
      * CmdId: 1412
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

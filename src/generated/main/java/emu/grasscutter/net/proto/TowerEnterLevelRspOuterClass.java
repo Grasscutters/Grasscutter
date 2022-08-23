@@ -57,7 +57,8 @@ public final class TowerEnterLevelRspOuterClass {
    * <pre>
    * CmdId: 2475
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code TowerEnterLevelRsp}
@@ -447,7 +448,8 @@ public final class TowerEnterLevelRspOuterClass {
      * <pre>
      * CmdId: 2475
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code TowerEnterLevelRsp}

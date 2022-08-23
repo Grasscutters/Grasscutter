@@ -54,7 +54,8 @@ public final class DropHintNotifyOuterClass {
    * <pre>
    * CmdId: 650
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code DropHintNotify}
@@ -418,7 +419,8 @@ public final class DropHintNotifyOuterClass {
      * <pre>
      * CmdId: 650
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code DropHintNotify}

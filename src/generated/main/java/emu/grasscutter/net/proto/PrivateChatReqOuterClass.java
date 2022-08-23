@@ -58,7 +58,7 @@ public final class PrivateChatReqOuterClass {
    * <pre>
    * CmdId: 5022
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -478,7 +478,7 @@ public final class PrivateChatReqOuterClass {
      * <pre>
      * CmdId: 5022
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

@@ -40,7 +40,7 @@ public final class AvatarUpgradeReqOuterClass {
    * <pre>
    * CmdId: 1770
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -350,7 +350,7 @@ public final class AvatarUpgradeReqOuterClass {
      * <pre>
      * CmdId: 1770
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

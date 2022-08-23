@@ -40,7 +40,8 @@ public final class TakeoffEquipRspOuterClass {
    * <pre>
    * CmdId: 682
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code TakeoffEquipRsp}
@@ -349,7 +350,8 @@ public final class TakeoffEquipRspOuterClass {
      * <pre>
      * CmdId: 682
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code TakeoffEquipRsp}

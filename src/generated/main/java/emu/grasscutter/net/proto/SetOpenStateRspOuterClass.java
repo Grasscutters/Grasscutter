@@ -40,7 +40,8 @@ public final class SetOpenStateRspOuterClass {
    * <pre>
    * CmdId: 104
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code SetOpenStateRsp}
@@ -348,7 +349,8 @@ public final class SetOpenStateRspOuterClass {
      * <pre>
      * CmdId: 104
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code SetOpenStateRsp}

@@ -46,7 +46,8 @@ public final class ProudSkillExtraLevelNotifyOuterClass {
    * <pre>
    * CmdId: 1081
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ProudSkillExtraLevelNotify}
@@ -382,7 +383,8 @@ public final class ProudSkillExtraLevelNotifyOuterClass {
      * <pre>
      * CmdId: 1081
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ProudSkillExtraLevelNotify}

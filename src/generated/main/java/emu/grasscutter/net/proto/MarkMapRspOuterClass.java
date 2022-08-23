@@ -52,7 +52,8 @@ public final class MarkMapRspOuterClass {
    * <pre>
    * CmdId: 3079
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code MarkMapRsp}
@@ -373,7 +374,8 @@ public final class MarkMapRspOuterClass {
      * <pre>
      * CmdId: 3079
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code MarkMapRsp}

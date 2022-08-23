@@ -69,7 +69,7 @@ public final class CalcWeaponUpgradeReturnItemsReqOuterClass {
    * <pre>
    * CmdId: 633
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -473,7 +473,7 @@ public final class CalcWeaponUpgradeReturnItemsReqOuterClass {
      * <pre>
      * CmdId: 633
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

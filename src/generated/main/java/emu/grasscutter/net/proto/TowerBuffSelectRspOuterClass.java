@@ -34,7 +34,8 @@ public final class TowerBuffSelectRspOuterClass {
    * <pre>
    * CmdId: 2497
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code TowerBuffSelectRsp}
@@ -315,7 +316,8 @@ public final class TowerBuffSelectRspOuterClass {
      * <pre>
      * CmdId: 2497
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code TowerBuffSelectRsp}

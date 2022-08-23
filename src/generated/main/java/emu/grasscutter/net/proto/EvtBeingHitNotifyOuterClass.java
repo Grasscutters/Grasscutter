@@ -48,7 +48,7 @@ public final class EvtBeingHitNotifyOuterClass {
    * <pre>
    * CmdId: 372
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -367,7 +367,7 @@ public final class EvtBeingHitNotifyOuterClass {
      * <pre>
      * CmdId: 372
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

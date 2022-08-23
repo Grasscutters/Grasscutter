@@ -57,7 +57,8 @@ public final class PlayerApplyEnterMpResultNotifyOuterClass {
    * <pre>
    * CmdId: 1807
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code PlayerApplyEnterMpResultNotify}
@@ -646,7 +647,8 @@ public final class PlayerApplyEnterMpResultNotifyOuterClass {
      * <pre>
      * CmdId: 1807
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code PlayerApplyEnterMpResultNotify}

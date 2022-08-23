@@ -46,7 +46,8 @@ public final class WeaponPromoteRspOuterClass {
    * <pre>
    * CmdId: 665
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code WeaponPromoteRsp}
@@ -382,7 +383,8 @@ public final class WeaponPromoteRspOuterClass {
      * <pre>
      * CmdId: 665
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code WeaponPromoteRsp}

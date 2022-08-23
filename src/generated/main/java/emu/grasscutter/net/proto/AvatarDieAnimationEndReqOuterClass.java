@@ -49,7 +49,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
    * <pre>
    * CmdId: 1610
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -387,7 +387,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
      * <pre>
      * CmdId: 1610
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

@@ -73,7 +73,8 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
    * <pre>
    * CmdId: 692
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code CheckAddItemExceedLimitNotify}
@@ -652,7 +653,8 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
      * <pre>
      * CmdId: 692
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code CheckAddItemExceedLimitNotify}

@@ -86,7 +86,8 @@ public final class ReliquaryUpgradeRspOuterClass {
    * <pre>
    * CmdId: 693
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ReliquaryUpgradeRsp}
@@ -611,7 +612,8 @@ public final class ReliquaryUpgradeRspOuterClass {
      * <pre>
      * CmdId: 693
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ReliquaryUpgradeRsp}

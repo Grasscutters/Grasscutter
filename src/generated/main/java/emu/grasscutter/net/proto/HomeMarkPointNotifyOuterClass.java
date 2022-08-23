@@ -46,7 +46,8 @@ public final class HomeMarkPointNotifyOuterClass {
    * <pre>
    * CmdId: 4474
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code HomeMarkPointNotify}
@@ -340,7 +341,8 @@ public final class HomeMarkPointNotifyOuterClass {
      * <pre>
      * CmdId: 4474
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code HomeMarkPointNotify}

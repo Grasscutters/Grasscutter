@@ -46,7 +46,7 @@ public final class EvtAvatarStandUpNotifyOuterClass {
    * <pre>
    * CmdId: 356
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -383,7 +383,7 @@ public final class EvtAvatarStandUpNotifyOuterClass {
      * <pre>
      * CmdId: 356
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

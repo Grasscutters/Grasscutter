@@ -40,7 +40,8 @@ public final class GetWorldMpInfoRspOuterClass {
    * <pre>
    * CmdId: 3320
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GetWorldMpInfoRsp}
@@ -349,7 +350,8 @@ public final class GetWorldMpInfoRspOuterClass {
      * <pre>
      * CmdId: 3320
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GetWorldMpInfoRsp}

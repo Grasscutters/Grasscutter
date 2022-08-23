@@ -60,7 +60,8 @@ public final class VehicleInteractRspOuterClass {
    * <pre>
    * CmdId: 804
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code VehicleInteractRsp}
@@ -432,7 +433,8 @@ public final class VehicleInteractRspOuterClass {
      * <pre>
      * CmdId: 804
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code VehicleInteractRsp}

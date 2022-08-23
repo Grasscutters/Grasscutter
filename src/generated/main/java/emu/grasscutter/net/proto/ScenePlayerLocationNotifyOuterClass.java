@@ -75,8 +75,9 @@ public final class ScenePlayerLocationNotifyOuterClass {
   /**
    * <pre>
    * CmdId: 248
-   * EnetChannelId: 1
+   * EnetChannelId: 0
    * EnetIsReliable: true
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ScenePlayerLocationNotify}
@@ -462,8 +463,9 @@ public final class ScenePlayerLocationNotifyOuterClass {
     /**
      * <pre>
      * CmdId: 248
-     * EnetChannelId: 1
+     * EnetChannelId: 0
      * EnetIsReliable: true
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ScenePlayerLocationNotify}

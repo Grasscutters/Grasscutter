@@ -46,7 +46,8 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
    * <pre>
    * CmdId: 4498
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code FurnitureCurModuleArrangeCountNotify}
@@ -340,7 +341,8 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
      * <pre>
      * CmdId: 4498
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code FurnitureCurModuleArrangeCountNotify}

@@ -74,7 +74,8 @@ public final class SetWidgetSlotRspOuterClass {
    * <pre>
    * CmdId: 4277
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code SetWidgetSlotRsp}
@@ -502,7 +503,8 @@ public final class SetWidgetSlotRspOuterClass {
      * <pre>
      * CmdId: 4277
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code SetWidgetSlotRsp}

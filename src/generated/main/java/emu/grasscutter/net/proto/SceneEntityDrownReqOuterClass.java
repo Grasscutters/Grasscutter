@@ -28,7 +28,7 @@ public final class SceneEntityDrownReqOuterClass {
    * <pre>
    * CmdId: 227
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -283,7 +283,7 @@ public final class SceneEntityDrownReqOuterClass {
      * <pre>
      * CmdId: 227
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

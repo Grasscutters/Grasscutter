@@ -96,7 +96,8 @@ public final class ScenePointUnlockNotifyOuterClass {
    * <pre>
    * CmdId: 247
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ScenePointUnlockNotify}
@@ -672,7 +673,8 @@ public final class ScenePointUnlockNotifyOuterClass {
      * <pre>
      * CmdId: 247
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ScenePointUnlockNotify}

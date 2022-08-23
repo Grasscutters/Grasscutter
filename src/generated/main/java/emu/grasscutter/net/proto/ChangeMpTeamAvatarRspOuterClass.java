@@ -51,7 +51,8 @@ public final class ChangeMpTeamAvatarRspOuterClass {
    * <pre>
    * CmdId: 1753
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ChangeMpTeamAvatarRsp}
@@ -415,7 +416,8 @@ public final class ChangeMpTeamAvatarRspOuterClass {
      * <pre>
      * CmdId: 1753
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ChangeMpTeamAvatarRsp}

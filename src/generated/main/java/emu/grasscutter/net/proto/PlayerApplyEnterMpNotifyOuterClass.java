@@ -49,7 +49,8 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
    * <pre>
    * CmdId: 1826
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code PlayerApplyEnterMpNotify}
@@ -385,7 +386,8 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
      * <pre>
      * CmdId: 1826
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code PlayerApplyEnterMpNotify}

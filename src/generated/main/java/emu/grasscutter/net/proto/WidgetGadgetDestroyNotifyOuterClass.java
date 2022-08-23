@@ -28,7 +28,8 @@ public final class WidgetGadgetDestroyNotifyOuterClass {
    * <pre>
    * CmdId: 4274
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code WidgetGadgetDestroyNotify}
@@ -282,7 +283,8 @@ public final class WidgetGadgetDestroyNotifyOuterClass {
      * <pre>
      * CmdId: 4274
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code WidgetGadgetDestroyNotify}

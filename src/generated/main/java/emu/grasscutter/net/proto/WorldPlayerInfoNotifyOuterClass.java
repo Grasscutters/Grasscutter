@@ -19,21 +19,28 @@ public final class WorldPlayerInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 player_uid_list = 11;</code>
-     * @return A list containing the playerUidList.
+     * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
      */
-    java.util.List<java.lang.Integer> getPlayerUidListList();
+    java.util.List<emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN> 
+        getUnk3000GCJLJCJAADGList();
     /**
-     * <code>repeated uint32 player_uid_list = 11;</code>
-     * @return The count of playerUidList.
+     * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
      */
-    int getPlayerUidListCount();
+    emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN getUnk3000GCJLJCJAADG(int index);
     /**
-     * <code>repeated uint32 player_uid_list = 11;</code>
-     * @param index The index of the element to return.
-     * @return The playerUidList at the given index.
+     * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
      */
-    int getPlayerUidList(int index);
+    int getUnk3000GCJLJCJAADGCount();
+    /**
+     * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKNOrBuilder> 
+        getUnk3000GCJLJCJAADGOrBuilderList();
+    /**
+     * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+     */
+    emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKNOrBuilder getUnk3000GCJLJCJAADGOrBuilder(
+        int index);
 
     /**
      * <code>repeated .OnlinePlayerInfo player_info_list = 14;</code>
@@ -58,12 +65,29 @@ public final class WorldPlayerInfoNotifyOuterClass {
      */
     emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoListOrBuilder(
         int index);
+
+    /**
+     * <code>repeated uint32 player_uid_list = 11;</code>
+     * @return A list containing the playerUidList.
+     */
+    java.util.List<java.lang.Integer> getPlayerUidListList();
+    /**
+     * <code>repeated uint32 player_uid_list = 11;</code>
+     * @return The count of playerUidList.
+     */
+    int getPlayerUidListCount();
+    /**
+     * <code>repeated uint32 player_uid_list = 11;</code>
+     * @param index The index of the element to return.
+     * @return The playerUidList at the given index.
+     */
+    int getPlayerUidList(int index);
   }
   /**
    * <pre>
    * CmdId: 3116
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -79,8 +103,9 @@ public final class WorldPlayerInfoNotifyOuterClass {
       super(builder);
     }
     private WorldPlayerInfoNotify() {
-      playerUidList_ = emptyIntList();
+      unk3000GCJLJCJAADG_ = java.util.Collections.emptyList();
       playerInfoList_ = java.util.Collections.emptyList();
+      playerUidList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -114,10 +139,19 @@ public final class WorldPlayerInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                playerUidList_ = newIntList();
+                unk3000GCJLJCJAADG_ = new java.util.ArrayList<emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN>();
                 mutable_bitField0_ |= 0x00000001;
+              }
+              unk3000GCJLJCJAADG_.add(
+                  input.readMessage(emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.parser(), extensionRegistry));
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                playerUidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
               }
               playerUidList_.addInt(input.readUInt32());
               break;
@@ -125,9 +159,9 @@ public final class WorldPlayerInfoNotifyOuterClass {
             case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
                 playerUidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000004;
               }
               while (input.getBytesUntilLimit() > 0) {
                 playerUidList_.addInt(input.readUInt32());
@@ -160,6 +194,9 @@ public final class WorldPlayerInfoNotifyOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          unk3000GCJLJCJAADG_ = java.util.Collections.unmodifiableList(unk3000GCJLJCJAADG_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           playerUidList_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
@@ -182,33 +219,45 @@ public final class WorldPlayerInfoNotifyOuterClass {
               emu.grasscutter.net.proto.WorldPlayerInfoNotifyOuterClass.WorldPlayerInfoNotify.class, emu.grasscutter.net.proto.WorldPlayerInfoNotifyOuterClass.WorldPlayerInfoNotify.Builder.class);
     }
 
-    public static final int PLAYER_UID_LIST_FIELD_NUMBER = 11;
-    private com.google.protobuf.Internal.IntList playerUidList_;
+    public static final int UNK3000_GCJLJCJAADG_FIELD_NUMBER = 8;
+    private java.util.List<emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN> unk3000GCJLJCJAADG_;
     /**
-     * <code>repeated uint32 player_uid_list = 11;</code>
-     * @return A list containing the playerUidList.
+     * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
      */
     @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getPlayerUidListList() {
-      return playerUidList_;
+    public java.util.List<emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN> getUnk3000GCJLJCJAADGList() {
+      return unk3000GCJLJCJAADG_;
     }
     /**
-     * <code>repeated uint32 player_uid_list = 11;</code>
-     * @return The count of playerUidList.
+     * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
      */
-    public int getPlayerUidListCount() {
-      return playerUidList_.size();
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKNOrBuilder> 
+        getUnk3000GCJLJCJAADGOrBuilderList() {
+      return unk3000GCJLJCJAADG_;
     }
     /**
-     * <code>repeated uint32 player_uid_list = 11;</code>
-     * @param index The index of the element to return.
-     * @return The playerUidList at the given index.
+     * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
      */
-    public int getPlayerUidList(int index) {
-      return playerUidList_.getInt(index);
+    @java.lang.Override
+    public int getUnk3000GCJLJCJAADGCount() {
+      return unk3000GCJLJCJAADG_.size();
     }
-    private int playerUidListMemoizedSerializedSize = -1;
+    /**
+     * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN getUnk3000GCJLJCJAADG(int index) {
+      return unk3000GCJLJCJAADG_.get(index);
+    }
+    /**
+     * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKNOrBuilder getUnk3000GCJLJCJAADGOrBuilder(
+        int index) {
+      return unk3000GCJLJCJAADG_.get(index);
+    }
 
     public static final int PLAYER_INFO_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo> playerInfoList_;
@@ -250,6 +299,34 @@ public final class WorldPlayerInfoNotifyOuterClass {
       return playerInfoList_.get(index);
     }
 
+    public static final int PLAYER_UID_LIST_FIELD_NUMBER = 11;
+    private com.google.protobuf.Internal.IntList playerUidList_;
+    /**
+     * <code>repeated uint32 player_uid_list = 11;</code>
+     * @return A list containing the playerUidList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getPlayerUidListList() {
+      return playerUidList_;
+    }
+    /**
+     * <code>repeated uint32 player_uid_list = 11;</code>
+     * @return The count of playerUidList.
+     */
+    public int getPlayerUidListCount() {
+      return playerUidList_.size();
+    }
+    /**
+     * <code>repeated uint32 player_uid_list = 11;</code>
+     * @param index The index of the element to return.
+     * @return The playerUidList at the given index.
+     */
+    public int getPlayerUidList(int index) {
+      return playerUidList_.getInt(index);
+    }
+    private int playerUidListMemoizedSerializedSize = -1;
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -265,6 +342,9 @@ public final class WorldPlayerInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      for (int i = 0; i < unk3000GCJLJCJAADG_.size(); i++) {
+        output.writeMessage(8, unk3000GCJLJCJAADG_.get(i));
+      }
       if (getPlayerUidListList().size() > 0) {
         output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(playerUidListMemoizedSerializedSize);
@@ -284,6 +364,10 @@ public final class WorldPlayerInfoNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      for (int i = 0; i < unk3000GCJLJCJAADG_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, unk3000GCJLJCJAADG_.get(i));
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < playerUidList_.size(); i++) {
@@ -317,10 +401,12 @@ public final class WorldPlayerInfoNotifyOuterClass {
       }
       emu.grasscutter.net.proto.WorldPlayerInfoNotifyOuterClass.WorldPlayerInfoNotify other = (emu.grasscutter.net.proto.WorldPlayerInfoNotifyOuterClass.WorldPlayerInfoNotify) obj;
 
-      if (!getPlayerUidListList()
-          .equals(other.getPlayerUidListList())) return false;
+      if (!getUnk3000GCJLJCJAADGList()
+          .equals(other.getUnk3000GCJLJCJAADGList())) return false;
       if (!getPlayerInfoListList()
           .equals(other.getPlayerInfoListList())) return false;
+      if (!getPlayerUidListList()
+          .equals(other.getPlayerUidListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -332,13 +418,17 @@ public final class WorldPlayerInfoNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getPlayerUidListCount() > 0) {
-        hash = (37 * hash) + PLAYER_UID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getPlayerUidListList().hashCode();
+      if (getUnk3000GCJLJCJAADGCount() > 0) {
+        hash = (37 * hash) + UNK3000_GCJLJCJAADG_FIELD_NUMBER;
+        hash = (53 * hash) + getUnk3000GCJLJCJAADGList().hashCode();
       }
       if (getPlayerInfoListCount() > 0) {
         hash = (37 * hash) + PLAYER_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerInfoListList().hashCode();
+      }
+      if (getPlayerUidListCount() > 0) {
+        hash = (37 * hash) + PLAYER_UID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerUidListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -439,7 +529,7 @@ public final class WorldPlayerInfoNotifyOuterClass {
      * <pre>
      * CmdId: 3116
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *
@@ -475,20 +565,27 @@ public final class WorldPlayerInfoNotifyOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getUnk3000GCJLJCJAADGFieldBuilder();
           getPlayerInfoListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        playerUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          unk3000GCJLJCJAADG_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          unk3000GCJLJCJAADGBuilder_.clear();
+        }
         if (playerInfoListBuilder_ == null) {
           playerInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           playerInfoListBuilder_.clear();
         }
+        playerUidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -516,11 +613,15 @@ public final class WorldPlayerInfoNotifyOuterClass {
       public emu.grasscutter.net.proto.WorldPlayerInfoNotifyOuterClass.WorldPlayerInfoNotify buildPartial() {
         emu.grasscutter.net.proto.WorldPlayerInfoNotifyOuterClass.WorldPlayerInfoNotify result = new emu.grasscutter.net.proto.WorldPlayerInfoNotifyOuterClass.WorldPlayerInfoNotify(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          playerUidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            unk3000GCJLJCJAADG_ = java.util.Collections.unmodifiableList(unk3000GCJLJCJAADG_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.unk3000GCJLJCJAADG_ = unk3000GCJLJCJAADG_;
+        } else {
+          result.unk3000GCJLJCJAADG_ = unk3000GCJLJCJAADGBuilder_.build();
         }
-        result.playerUidList_ = playerUidList_;
         if (playerInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             playerInfoList_ = java.util.Collections.unmodifiableList(playerInfoList_);
@@ -530,6 +631,11 @@ public final class WorldPlayerInfoNotifyOuterClass {
         } else {
           result.playerInfoList_ = playerInfoListBuilder_.build();
         }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          playerUidList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.playerUidList_ = playerUidList_;
         onBuilt();
         return result;
       }
@@ -578,15 +684,31 @@ public final class WorldPlayerInfoNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WorldPlayerInfoNotifyOuterClass.WorldPlayerInfoNotify other) {
         if (other == emu.grasscutter.net.proto.WorldPlayerInfoNotifyOuterClass.WorldPlayerInfoNotify.getDefaultInstance()) return this;
-        if (!other.playerUidList_.isEmpty()) {
-          if (playerUidList_.isEmpty()) {
-            playerUidList_ = other.playerUidList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensurePlayerUidListIsMutable();
-            playerUidList_.addAll(other.playerUidList_);
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          if (!other.unk3000GCJLJCJAADG_.isEmpty()) {
+            if (unk3000GCJLJCJAADG_.isEmpty()) {
+              unk3000GCJLJCJAADG_ = other.unk3000GCJLJCJAADG_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureUnk3000GCJLJCJAADGIsMutable();
+              unk3000GCJLJCJAADG_.addAll(other.unk3000GCJLJCJAADG_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.unk3000GCJLJCJAADG_.isEmpty()) {
+            if (unk3000GCJLJCJAADGBuilder_.isEmpty()) {
+              unk3000GCJLJCJAADGBuilder_.dispose();
+              unk3000GCJLJCJAADGBuilder_ = null;
+              unk3000GCJLJCJAADG_ = other.unk3000GCJLJCJAADG_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              unk3000GCJLJCJAADGBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUnk3000GCJLJCJAADGFieldBuilder() : null;
+            } else {
+              unk3000GCJLJCJAADGBuilder_.addAllMessages(other.unk3000GCJLJCJAADG_);
+            }
+          }
         }
         if (playerInfoListBuilder_ == null) {
           if (!other.playerInfoList_.isEmpty()) {
@@ -613,6 +735,16 @@ public final class WorldPlayerInfoNotifyOuterClass {
               playerInfoListBuilder_.addAllMessages(other.playerInfoList_);
             }
           }
+        }
+        if (!other.playerUidList_.isEmpty()) {
+          if (playerUidList_.isEmpty()) {
+            playerUidList_ = other.playerUidList_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePlayerUidListIsMutable();
+            playerUidList_.addAll(other.playerUidList_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -644,83 +776,244 @@ public final class WorldPlayerInfoNotifyOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList playerUidList_ = emptyIntList();
-      private void ensurePlayerUidListIsMutable() {
+      private java.util.List<emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN> unk3000GCJLJCJAADG_ =
+        java.util.Collections.emptyList();
+      private void ensureUnk3000GCJLJCJAADGIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          playerUidList_ = mutableCopy(playerUidList_);
+          unk3000GCJLJCJAADG_ = new java.util.ArrayList<emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN>(unk3000GCJLJCJAADG_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN, emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.Builder, emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKNOrBuilder> unk3000GCJLJCJAADGBuilder_;
+
       /**
-       * <code>repeated uint32 player_uid_list = 11;</code>
-       * @return A list containing the playerUidList.
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
        */
-      public java.util.List<java.lang.Integer>
-          getPlayerUidListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(playerUidList_) : playerUidList_;
+      public java.util.List<emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN> getUnk3000GCJLJCJAADGList() {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(unk3000GCJLJCJAADG_);
+        } else {
+          return unk3000GCJLJCJAADGBuilder_.getMessageList();
+        }
       }
       /**
-       * <code>repeated uint32 player_uid_list = 11;</code>
-       * @return The count of playerUidList.
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
        */
-      public int getPlayerUidListCount() {
-        return playerUidList_.size();
+      public int getUnk3000GCJLJCJAADGCount() {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          return unk3000GCJLJCJAADG_.size();
+        } else {
+          return unk3000GCJLJCJAADGBuilder_.getCount();
+        }
       }
       /**
-       * <code>repeated uint32 player_uid_list = 11;</code>
-       * @param index The index of the element to return.
-       * @return The playerUidList at the given index.
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
        */
-      public int getPlayerUidList(int index) {
-        return playerUidList_.getInt(index);
+      public emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN getUnk3000GCJLJCJAADG(int index) {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          return unk3000GCJLJCJAADG_.get(index);
+        } else {
+          return unk3000GCJLJCJAADGBuilder_.getMessage(index);
+        }
       }
       /**
-       * <code>repeated uint32 player_uid_list = 11;</code>
-       * @param index The index to set the value at.
-       * @param value The playerUidList to set.
-       * @return This builder for chaining.
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
        */
-      public Builder setPlayerUidList(
-          int index, int value) {
-        ensurePlayerUidListIsMutable();
-        playerUidList_.setInt(index, value);
-        onChanged();
+      public Builder setUnk3000GCJLJCJAADG(
+          int index, emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN value) {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk3000GCJLJCJAADGIsMutable();
+          unk3000GCJLJCJAADG_.set(index, value);
+          onChanged();
+        } else {
+          unk3000GCJLJCJAADGBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>repeated uint32 player_uid_list = 11;</code>
-       * @param value The playerUidList to add.
-       * @return This builder for chaining.
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
        */
-      public Builder addPlayerUidList(int value) {
-        ensurePlayerUidListIsMutable();
-        playerUidList_.addInt(value);
-        onChanged();
+      public Builder setUnk3000GCJLJCJAADG(
+          int index, emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.Builder builderForValue) {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          ensureUnk3000GCJLJCJAADGIsMutable();
+          unk3000GCJLJCJAADG_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          unk3000GCJLJCJAADGBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
-       * <code>repeated uint32 player_uid_list = 11;</code>
-       * @param values The playerUidList to add.
-       * @return This builder for chaining.
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
        */
-      public Builder addAllPlayerUidList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensurePlayerUidListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, playerUidList_);
-        onChanged();
+      public Builder addUnk3000GCJLJCJAADG(emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN value) {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk3000GCJLJCJAADGIsMutable();
+          unk3000GCJLJCJAADG_.add(value);
+          onChanged();
+        } else {
+          unk3000GCJLJCJAADGBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
-       * <code>repeated uint32 player_uid_list = 11;</code>
-       * @return This builder for chaining.
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
        */
-      public Builder clearPlayerUidList() {
-        playerUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+      public Builder addUnk3000GCJLJCJAADG(
+          int index, emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN value) {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnk3000GCJLJCJAADGIsMutable();
+          unk3000GCJLJCJAADG_.add(index, value);
+          onChanged();
+        } else {
+          unk3000GCJLJCJAADGBuilder_.addMessage(index, value);
+        }
         return this;
+      }
+      /**
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+       */
+      public Builder addUnk3000GCJLJCJAADG(
+          emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.Builder builderForValue) {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          ensureUnk3000GCJLJCJAADGIsMutable();
+          unk3000GCJLJCJAADG_.add(builderForValue.build());
+          onChanged();
+        } else {
+          unk3000GCJLJCJAADGBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+       */
+      public Builder addUnk3000GCJLJCJAADG(
+          int index, emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.Builder builderForValue) {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          ensureUnk3000GCJLJCJAADGIsMutable();
+          unk3000GCJLJCJAADG_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          unk3000GCJLJCJAADGBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+       */
+      public Builder addAllUnk3000GCJLJCJAADG(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN> values) {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          ensureUnk3000GCJLJCJAADGIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, unk3000GCJLJCJAADG_);
+          onChanged();
+        } else {
+          unk3000GCJLJCJAADGBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+       */
+      public Builder clearUnk3000GCJLJCJAADG() {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          unk3000GCJLJCJAADG_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          unk3000GCJLJCJAADGBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+       */
+      public Builder removeUnk3000GCJLJCJAADG(int index) {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          ensureUnk3000GCJLJCJAADGIsMutable();
+          unk3000GCJLJCJAADG_.remove(index);
+          onChanged();
+        } else {
+          unk3000GCJLJCJAADGBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+       */
+      public emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.Builder getUnk3000GCJLJCJAADGBuilder(
+          int index) {
+        return getUnk3000GCJLJCJAADGFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+       */
+      public emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKNOrBuilder getUnk3000GCJLJCJAADGOrBuilder(
+          int index) {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          return unk3000GCJLJCJAADG_.get(index);  } else {
+          return unk3000GCJLJCJAADGBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKNOrBuilder> 
+           getUnk3000GCJLJCJAADGOrBuilderList() {
+        if (unk3000GCJLJCJAADGBuilder_ != null) {
+          return unk3000GCJLJCJAADGBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(unk3000GCJLJCJAADG_);
+        }
+      }
+      /**
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+       */
+      public emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.Builder addUnk3000GCJLJCJAADGBuilder() {
+        return getUnk3000GCJLJCJAADGFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+       */
+      public emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.Builder addUnk3000GCJLJCJAADGBuilder(
+          int index) {
+        return getUnk3000GCJLJCJAADGFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Unk3000_HKHFFDEMNKN Unk3000_GCJLJCJAADG = 8;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.Builder> 
+           getUnk3000GCJLJCJAADGBuilderList() {
+        return getUnk3000GCJLJCJAADGFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN, emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.Builder, emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKNOrBuilder> 
+          getUnk3000GCJLJCJAADGFieldBuilder() {
+        if (unk3000GCJLJCJAADGBuilder_ == null) {
+          unk3000GCJLJCJAADGBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN, emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKN.Builder, emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.Unk3000_HKHFFDEMNKNOrBuilder>(
+                  unk3000GCJLJCJAADG_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          unk3000GCJLJCJAADG_ = null;
+        }
+        return unk3000GCJLJCJAADGBuilder_;
       }
 
       private java.util.List<emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo> playerInfoList_ =
@@ -962,6 +1255,85 @@ public final class WorldPlayerInfoNotifyOuterClass {
         }
         return playerInfoListBuilder_;
       }
+
+      private com.google.protobuf.Internal.IntList playerUidList_ = emptyIntList();
+      private void ensurePlayerUidListIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          playerUidList_ = mutableCopy(playerUidList_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated uint32 player_uid_list = 11;</code>
+       * @return A list containing the playerUidList.
+       */
+      public java.util.List<java.lang.Integer>
+          getPlayerUidListList() {
+        return ((bitField0_ & 0x00000004) != 0) ?
+                 java.util.Collections.unmodifiableList(playerUidList_) : playerUidList_;
+      }
+      /**
+       * <code>repeated uint32 player_uid_list = 11;</code>
+       * @return The count of playerUidList.
+       */
+      public int getPlayerUidListCount() {
+        return playerUidList_.size();
+      }
+      /**
+       * <code>repeated uint32 player_uid_list = 11;</code>
+       * @param index The index of the element to return.
+       * @return The playerUidList at the given index.
+       */
+      public int getPlayerUidList(int index) {
+        return playerUidList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 player_uid_list = 11;</code>
+       * @param index The index to set the value at.
+       * @param value The playerUidList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayerUidList(
+          int index, int value) {
+        ensurePlayerUidListIsMutable();
+        playerUidList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 player_uid_list = 11;</code>
+       * @param value The playerUidList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPlayerUidList(int value) {
+        ensurePlayerUidListIsMutable();
+        playerUidList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 player_uid_list = 11;</code>
+       * @param values The playerUidList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPlayerUidList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensurePlayerUidListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, playerUidList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 player_uid_list = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayerUidList() {
+        playerUidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1030,23 +1402,27 @@ public final class WorldPlayerInfoNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033WorldPlayerInfoNotify.proto\032\026OnlinePla" +
-      "yerInfo.proto\"]\n\025WorldPlayerInfoNotify\022\027" +
-      "\n\017player_uid_list\030\013 \003(\r\022+\n\020player_info_l" +
-      "ist\030\016 \003(\0132\021.OnlinePlayerInfoB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "yerInfo.proto\032\031Unk3000_HKHFFDEMNKN.proto" +
+      "\"\220\001\n\025WorldPlayerInfoNotify\0221\n\023Unk3000_GC" +
+      "JLJCJAADG\030\010 \003(\0132\024.Unk3000_HKHFFDEMNKN\022+\n" +
+      "\020player_info_list\030\016 \003(\0132\021.OnlinePlayerIn" +
+      "fo\022\027\n\017player_uid_list\030\013 \003(\rB\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.getDescriptor(),
         });
     internal_static_WorldPlayerInfoNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_WorldPlayerInfoNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WorldPlayerInfoNotify_descriptor,
-        new java.lang.String[] { "PlayerUidList", "PlayerInfoList", });
+        new java.lang.String[] { "Unk3000GCJLJCJAADG", "PlayerInfoList", "PlayerUidList", });
     emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.Unk3000HKHFFDEMNKN.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

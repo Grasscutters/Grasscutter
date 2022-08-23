@@ -181,7 +181,7 @@ public final class EvtCreateGadgetNotifyOuterClass {
    * <pre>
    * CmdId: 307
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -1100,7 +1100,7 @@ public final class EvtCreateGadgetNotifyOuterClass {
      * <pre>
      * CmdId: 307
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

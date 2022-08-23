@@ -34,7 +34,8 @@ public final class SceneKickPlayerRspOuterClass {
    * <pre>
    * CmdId: 238
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code SceneKickPlayerRsp}
@@ -315,7 +316,8 @@ public final class SceneKickPlayerRspOuterClass {
      * <pre>
      * CmdId: 238
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code SceneKickPlayerRsp}

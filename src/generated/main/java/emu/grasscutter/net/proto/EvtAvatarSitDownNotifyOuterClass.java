@@ -49,7 +49,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
    * <pre>
    * CmdId: 324
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -387,7 +387,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
      * <pre>
      * CmdId: 324
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *
