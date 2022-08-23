@@ -62,7 +62,7 @@ EN | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.m
 
     - Fiddler Classic: Run Fiddler Classic, turn on `Decrypt https traffic` in setting and change the default port there (Tools -> Options -> Connections) to anything other than `8888`, and load [this script](https://github.com/Grasscutters/Grasscutter/wiki/Resources#fiddler-classic-jscript).
 
-    - [Hosts file](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
+    - [Hosts file](https://github.com/Grasscutters/Grasscutter/wiki/Resources#hosts-file)
 
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
 
