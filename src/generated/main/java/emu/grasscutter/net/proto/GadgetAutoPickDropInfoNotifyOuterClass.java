@@ -46,7 +46,8 @@ public final class GadgetAutoPickDropInfoNotifyOuterClass {
    * <pre>
    * CmdId: 897
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GadgetAutoPickDropInfoNotify}
@@ -340,7 +341,8 @@ public final class GadgetAutoPickDropInfoNotifyOuterClass {
      * <pre>
      * CmdId: 897
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GadgetAutoPickDropInfoNotify}

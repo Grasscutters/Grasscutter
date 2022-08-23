@@ -49,7 +49,7 @@ public final class BuyGoodsReqOuterClass {
    * <pre>
    * CmdId: 712
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -386,7 +386,7 @@ public final class BuyGoodsReqOuterClass {
      * <pre>
      * CmdId: 712
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

@@ -52,7 +52,8 @@ public final class AnchorPointDataNotifyOuterClass {
    * <pre>
    * CmdId: 4276
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code AnchorPointDataNotify}
@@ -373,7 +374,8 @@ public final class AnchorPointDataNotifyOuterClass {
      * <pre>
      * CmdId: 4276
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code AnchorPointDataNotify}

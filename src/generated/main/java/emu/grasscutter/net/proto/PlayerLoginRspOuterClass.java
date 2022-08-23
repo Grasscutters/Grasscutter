@@ -86,12 +86,12 @@ public final class PlayerLoginRspOuterClass {
     boolean getIsEnableClientHashDebug();
 
     /**
-     * <code>string client_md_5 = 1830;</code>
+     * <code>string client_md5 = 1830;</code>
      * @return The clientMd5.
      */
     java.lang.String getClientMd5();
     /**
-     * <code>string client_md_5 = 1830;</code>
+     * <code>string client_md5 = 1830;</code>
      * @return The bytes for clientMd5.
      */
     com.google.protobuf.ByteString
@@ -321,12 +321,12 @@ public final class PlayerLoginRspOuterClass {
         int index);
 
     /**
-     * <code>string client_silence_md_5 = 1746;</code>
+     * <code>string client_silence_md5 = 1746;</code>
      * @return The clientSilenceMd5.
      */
     java.lang.String getClientSilenceMd5();
     /**
-     * <code>string client_silence_md_5 = 1746;</code>
+     * <code>string client_silence_md5 = 1746;</code>
      * @return The bytes for clientSilenceMd5.
      */
     com.google.protobuf.ByteString
@@ -390,7 +390,8 @@ public final class PlayerLoginRspOuterClass {
    * <pre>
    * CmdId: 135
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code PlayerLoginRsp}
@@ -862,10 +863,10 @@ public final class PlayerLoginRspOuterClass {
       return isEnableClientHashDebug_;
     }
 
-    public static final int CLIENT_MD_5_FIELD_NUMBER = 1830;
+    public static final int CLIENT_MD5_FIELD_NUMBER = 1830;
     private volatile java.lang.Object clientMd5_;
     /**
-     * <code>string client_md_5 = 1830;</code>
+     * <code>string client_md5 = 1830;</code>
      * @return The clientMd5.
      */
     @java.lang.Override
@@ -882,7 +883,7 @@ public final class PlayerLoginRspOuterClass {
       }
     }
     /**
-     * <code>string client_md_5 = 1830;</code>
+     * <code>string client_md5 = 1830;</code>
      * @return The bytes for clientMd5.
      */
     @java.lang.Override
@@ -1398,10 +1399,10 @@ public final class PlayerLoginRspOuterClass {
       return featureBlockInfoList_.get(index);
     }
 
-    public static final int CLIENT_SILENCE_MD_5_FIELD_NUMBER = 1746;
+    public static final int CLIENT_SILENCE_MD5_FIELD_NUMBER = 1746;
     private volatile java.lang.Object clientSilenceMd5_;
     /**
-     * <code>string client_silence_md_5 = 1746;</code>
+     * <code>string client_silence_md5 = 1746;</code>
      * @return The clientSilenceMd5.
      */
     @java.lang.Override
@@ -1418,7 +1419,7 @@ public final class PlayerLoginRspOuterClass {
       }
     }
     /**
-     * <code>string client_silence_md_5 = 1746;</code>
+     * <code>string client_silence_md5 = 1746;</code>
      * @return The bytes for clientSilenceMd5.
      */
     @java.lang.Override
@@ -1955,7 +1956,7 @@ public final class PlayerLoginRspOuterClass {
       hash = (37 * hash) + IS_ENABLE_CLIENT_HASH_DEBUG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsEnableClientHashDebug());
-      hash = (37 * hash) + CLIENT_MD_5_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_MD5_FIELD_NUMBER;
       hash = (53 * hash) + getClientMd5().hashCode();
       hash = (37 * hash) + CLIENT_DATA_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getClientDataVersion();
@@ -2010,7 +2011,7 @@ public final class PlayerLoginRspOuterClass {
         hash = (37 * hash) + FEATURE_BLOCK_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFeatureBlockInfoListList().hashCode();
       }
-      hash = (37 * hash) + CLIENT_SILENCE_MD_5_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_SILENCE_MD5_FIELD_NUMBER;
       hash = (53 * hash) + getClientSilenceMd5().hashCode();
       hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetUid();
@@ -2127,7 +2128,8 @@ public final class PlayerLoginRspOuterClass {
      * <pre>
      * CmdId: 135
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code PlayerLoginRsp}
@@ -2939,7 +2941,7 @@ public final class PlayerLoginRspOuterClass {
 
       private java.lang.Object clientMd5_ = "";
       /**
-       * <code>string client_md_5 = 1830;</code>
+       * <code>string client_md5 = 1830;</code>
        * @return The clientMd5.
        */
       public java.lang.String getClientMd5() {
@@ -2955,7 +2957,7 @@ public final class PlayerLoginRspOuterClass {
         }
       }
       /**
-       * <code>string client_md_5 = 1830;</code>
+       * <code>string client_md5 = 1830;</code>
        * @return The bytes for clientMd5.
        */
       public com.google.protobuf.ByteString
@@ -2972,7 +2974,7 @@ public final class PlayerLoginRspOuterClass {
         }
       }
       /**
-       * <code>string client_md_5 = 1830;</code>
+       * <code>string client_md5 = 1830;</code>
        * @param value The clientMd5 to set.
        * @return This builder for chaining.
        */
@@ -2987,7 +2989,7 @@ public final class PlayerLoginRspOuterClass {
         return this;
       }
       /**
-       * <code>string client_md_5 = 1830;</code>
+       * <code>string client_md5 = 1830;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientMd5() {
@@ -2997,7 +2999,7 @@ public final class PlayerLoginRspOuterClass {
         return this;
       }
       /**
-       * <code>string client_md_5 = 1830;</code>
+       * <code>string client_md5 = 1830;</code>
        * @param value The bytes for clientMd5 to set.
        * @return This builder for chaining.
        */
@@ -4466,7 +4468,7 @@ public final class PlayerLoginRspOuterClass {
 
       private java.lang.Object clientSilenceMd5_ = "";
       /**
-       * <code>string client_silence_md_5 = 1746;</code>
+       * <code>string client_silence_md5 = 1746;</code>
        * @return The clientSilenceMd5.
        */
       public java.lang.String getClientSilenceMd5() {
@@ -4482,7 +4484,7 @@ public final class PlayerLoginRspOuterClass {
         }
       }
       /**
-       * <code>string client_silence_md_5 = 1746;</code>
+       * <code>string client_silence_md5 = 1746;</code>
        * @return The bytes for clientSilenceMd5.
        */
       public com.google.protobuf.ByteString
@@ -4499,7 +4501,7 @@ public final class PlayerLoginRspOuterClass {
         }
       }
       /**
-       * <code>string client_silence_md_5 = 1746;</code>
+       * <code>string client_silence_md5 = 1746;</code>
        * @param value The clientSilenceMd5 to set.
        * @return This builder for chaining.
        */
@@ -4514,7 +4516,7 @@ public final class PlayerLoginRspOuterClass {
         return this;
       }
       /**
-       * <code>string client_silence_md_5 = 1746;</code>
+       * <code>string client_silence_md5 = 1746;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientSilenceMd5() {
@@ -4524,7 +4526,7 @@ public final class PlayerLoginRspOuterClass {
         return this;
       }
       /**
-       * <code>string client_silence_md_5 = 1746;</code>
+       * <code>string client_silence_md5 = 1746;</code>
        * @param value The bytes for clientSilenceMd5 to set.
        * @return This builder for chaining.
        */
@@ -4928,38 +4930,38 @@ public final class PlayerLoginRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\024PlayerLoginRsp.proto\032\017BlockInfo.proto\032" +
       "\026FeatureBlockInfo.proto\032\026ResVersionConfi" +
-      "g.proto\032\032ShortAbilityHashPair.proto\"\236\t\n\016" +
+      "g.proto\032\032ShortAbilityHashPair.proto\"\234\t\n\016" +
       "PlayerLoginRsp\022=\n\020ability_hash_map\030\013 \003(\013" +
       "2#.PlayerLoginRsp.AbilityHashMapEntry\022\021\n" +
       "\010is_audit\030\225\r \001(\010\022\025\n\ris_new_player\030\010 \001(\010\022" +
       ".\n\022res_version_config\030\261\017 \001(\0132\021.ResVersio" +
       "nConfig\022$\n\033is_enable_client_hash_debug\030\244" +
-      "\007 \001(\010\022\024\n\013client_md_5\030\246\016 \001(\t\022\033\n\023client_da" +
-      "ta_version\030\001 \001(\r\022\025\n\014country_code\030\354\016 \001(\t\022" +
-      "\022\n\nis_relogin\030\n \001(\010\022\023\n\013player_data\030\r \001(\014" +
-      "\022\020\n\010game_biz\030\005 \001(\t\022:\n\016block_info_map\030\273\004 " +
-      "\003(\0132!.PlayerLoginRsp.BlockInfoMapEntry\022\025" +
-      "\n\014register_cps\030\370\017 \001(\t\0223\n\027next_res_versio" +
-      "n_config\030\245\014 \001(\0132\021.ResVersionConfig\022\024\n\013is" +
-      "_transfer\030\342\017 \001(\010\022\036\n\025target_home_owner_ui" +
-      "d\030\251\004 \001(\r\0226\n\026short_ability_hash_map\030\372\001 \003(" +
-      "\0132\025.ShortAbilityHashPair\022\031\n\021ability_hash" +
-      "_code\030\014 \001(\005\022\023\n\nis_sc_open\030\225\013 \001(\010\022#\n\033clie" +
-      "nt_silence_data_version\030\006 \001(\r\022\021\n\010birthda" +
-      "y\030\360\004 \001(\t\022\033\n\023is_use_ability_hash\030\002 \001(\010\022&\n" +
-      "\035client_silence_version_suffix\030\223\n \001(\t\022\033\n" +
-      "\023player_data_version\030\007 \001(\r\022\035\n\024is_data_ne" +
-      "ed_relogin\030\267\007 \001(\010\0223\n\027feature_block_info_" +
-      "list\030\310\n \003(\0132\021.FeatureBlockInfo\022\034\n\023client" +
-      "_silence_md_5\030\322\r \001(\t\022\022\n\ntarget_uid\030\016 \001(\r" +
-      "\022\027\n\017total_tick_time\030} \001(\001\022\022\n\nlogin_rand\030" +
-      "\004 \001(\004\022\020\n\007sc_info\030\350\017 \001(\014\022\036\n\025client_versio" +
-      "n_suffix\030\227\010 \001(\t\022\032\n\021next_resource_url\030\355\004 " +
-      "\001(\t\022\017\n\007retcode\030\017 \001(\005\0325\n\023AbilityHashMapEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\005:\0028\001\032?\n\021B" +
-      "lockInfoMapEntry\022\013\n\003key\030\001 \001(\r\022\031\n\005value\030\002" +
-      " \001(\0132\n.BlockInfo:\0028\001B\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "\007 \001(\010\022\023\n\nclient_md5\030\246\016 \001(\t\022\033\n\023client_dat" +
+      "a_version\030\001 \001(\r\022\025\n\014country_code\030\354\016 \001(\t\022\022" +
+      "\n\nis_relogin\030\n \001(\010\022\023\n\013player_data\030\r \001(\014\022" +
+      "\020\n\010game_biz\030\005 \001(\t\022:\n\016block_info_map\030\273\004 \003" +
+      "(\0132!.PlayerLoginRsp.BlockInfoMapEntry\022\025\n" +
+      "\014register_cps\030\370\017 \001(\t\0223\n\027next_res_version" +
+      "_config\030\245\014 \001(\0132\021.ResVersionConfig\022\024\n\013is_" +
+      "transfer\030\342\017 \001(\010\022\036\n\025target_home_owner_uid" +
+      "\030\251\004 \001(\r\0226\n\026short_ability_hash_map\030\372\001 \003(\013" +
+      "2\025.ShortAbilityHashPair\022\031\n\021ability_hash_" +
+      "code\030\014 \001(\005\022\023\n\nis_sc_open\030\225\013 \001(\010\022#\n\033clien" +
+      "t_silence_data_version\030\006 \001(\r\022\021\n\010birthday" +
+      "\030\360\004 \001(\t\022\033\n\023is_use_ability_hash\030\002 \001(\010\022&\n\035" +
+      "client_silence_version_suffix\030\223\n \001(\t\022\033\n\023" +
+      "player_data_version\030\007 \001(\r\022\035\n\024is_data_nee" +
+      "d_relogin\030\267\007 \001(\010\0223\n\027feature_block_info_l" +
+      "ist\030\310\n \003(\0132\021.FeatureBlockInfo\022\033\n\022client_" +
+      "silence_md5\030\322\r \001(\t\022\022\n\ntarget_uid\030\016 \001(\r\022\027" +
+      "\n\017total_tick_time\030} \001(\001\022\022\n\nlogin_rand\030\004 " +
+      "\001(\004\022\020\n\007sc_info\030\350\017 \001(\014\022\036\n\025client_version_" +
+      "suffix\030\227\010 \001(\t\022\032\n\021next_resource_url\030\355\004 \001(" +
+      "\t\022\017\n\007retcode\030\017 \001(\005\0325\n\023AbilityHashMapEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\005:\0028\001\032?\n\021Blo" +
+      "ckInfoMapEntry\022\013\n\003key\030\001 \001(\r\022\031\n\005value\030\002 \001" +
+      "(\0132\n.BlockInfo:\0028\001B\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

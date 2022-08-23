@@ -51,7 +51,8 @@ public final class PlayerPropChangeReasonNotifyOuterClass {
    * <pre>
    * CmdId: 1299
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code PlayerPropChangeReasonNotify}
@@ -399,7 +400,8 @@ public final class PlayerPropChangeReasonNotifyOuterClass {
      * <pre>
      * CmdId: 1299
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code PlayerPropChangeReasonNotify}

@@ -43,7 +43,8 @@ public final class AvatarAddNotifyOuterClass {
    * <pre>
    * CmdId: 1769
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code AvatarAddNotify}
@@ -353,7 +354,8 @@ public final class AvatarAddNotifyOuterClass {
      * <pre>
      * CmdId: 1769
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code AvatarAddNotify}

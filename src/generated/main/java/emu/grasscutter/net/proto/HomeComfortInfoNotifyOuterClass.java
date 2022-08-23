@@ -46,7 +46,8 @@ public final class HomeComfortInfoNotifyOuterClass {
    * <pre>
    * CmdId: 4699
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code HomeComfortInfoNotify}
@@ -340,7 +341,8 @@ public final class HomeComfortInfoNotifyOuterClass {
      * <pre>
      * CmdId: 4699
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code HomeComfortInfoNotify}

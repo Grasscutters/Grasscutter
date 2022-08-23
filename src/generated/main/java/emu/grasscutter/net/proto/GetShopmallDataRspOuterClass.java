@@ -45,7 +45,8 @@ public final class GetShopmallDataRspOuterClass {
    * <pre>
    * CmdId: 721
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GetShopmallDataRsp}
@@ -381,7 +382,8 @@ public final class GetShopmallDataRspOuterClass {
      * <pre>
      * CmdId: 721
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GetShopmallDataRsp}

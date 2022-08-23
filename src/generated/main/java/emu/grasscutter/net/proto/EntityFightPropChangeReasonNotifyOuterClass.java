@@ -90,7 +90,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
    * <pre>
    * CmdId: 1203
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code EntityFightPropChangeReasonNotify}
@@ -590,7 +591,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
      * <pre>
      * CmdId: 1203
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code EntityFightPropChangeReasonNotify}

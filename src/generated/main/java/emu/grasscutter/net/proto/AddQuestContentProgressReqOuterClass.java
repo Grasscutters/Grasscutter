@@ -40,7 +40,7 @@ public final class AddQuestContentProgressReqOuterClass {
    * <pre>
    * CmdId: 421
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -349,7 +349,7 @@ public final class AddQuestContentProgressReqOuterClass {
      * <pre>
      * CmdId: 421
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

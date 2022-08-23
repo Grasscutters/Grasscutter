@@ -56,7 +56,8 @@ public final class AvatarFetterDataNotifyOuterClass {
    * <pre>
    * CmdId: 1782
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code AvatarFetterDataNotify}
@@ -412,7 +413,8 @@ public final class AvatarFetterDataNotifyOuterClass {
      * <pre>
      * CmdId: 1782
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code AvatarFetterDataNotify}

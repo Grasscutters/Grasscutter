@@ -84,7 +84,7 @@ public final class QuickUseWidgetReqOuterClass {
    * <pre>
    * CmdId: 4299
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -606,7 +606,7 @@ public final class QuickUseWidgetReqOuterClass {
      * <pre>
      * CmdId: 4299
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

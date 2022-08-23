@@ -40,7 +40,8 @@ public final class AvatarChangeCostumeRspOuterClass {
    * <pre>
    * CmdId: 1645
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code AvatarChangeCostumeRsp}
@@ -349,7 +350,8 @@ public final class AvatarChangeCostumeRspOuterClass {
      * <pre>
      * CmdId: 1645
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code AvatarChangeCostumeRsp}

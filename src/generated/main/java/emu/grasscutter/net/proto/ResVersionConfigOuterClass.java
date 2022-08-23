@@ -31,12 +31,12 @@ public final class ResVersionConfigOuterClass {
     boolean getRelogin();
 
     /**
-     * <code>string md_5 = 3;</code>
+     * <code>string md5 = 3;</code>
      * @return The md5.
      */
     java.lang.String getMd5();
     /**
-     * <code>string md_5 = 3;</code>
+     * <code>string md5 = 3;</code>
      * @return The bytes for md5.
      */
     com.google.protobuf.ByteString
@@ -234,10 +234,10 @@ public final class ResVersionConfigOuterClass {
       return relogin_;
     }
 
-    public static final int MD_5_FIELD_NUMBER = 3;
+    public static final int MD5_FIELD_NUMBER = 3;
     private volatile java.lang.Object md5_;
     /**
-     * <code>string md_5 = 3;</code>
+     * <code>string md5 = 3;</code>
      * @return The md5.
      */
     @java.lang.Override
@@ -254,7 +254,7 @@ public final class ResVersionConfigOuterClass {
       }
     }
     /**
-     * <code>string md_5 = 3;</code>
+     * <code>string md5 = 3;</code>
      * @return The bytes for md5.
      */
     @java.lang.Override
@@ -536,7 +536,7 @@ public final class ResVersionConfigOuterClass {
       hash = (37 * hash) + RELOGIN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getRelogin());
-      hash = (37 * hash) + MD_5_FIELD_NUMBER;
+      hash = (37 * hash) + MD5_FIELD_NUMBER;
       hash = (53 * hash) + getMd5().hashCode();
       hash = (37 * hash) + RELEASE_TOTAL_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getReleaseTotalSize().hashCode();
@@ -893,7 +893,7 @@ public final class ResVersionConfigOuterClass {
 
       private java.lang.Object md5_ = "";
       /**
-       * <code>string md_5 = 3;</code>
+       * <code>string md5 = 3;</code>
        * @return The md5.
        */
       public java.lang.String getMd5() {
@@ -909,7 +909,7 @@ public final class ResVersionConfigOuterClass {
         }
       }
       /**
-       * <code>string md_5 = 3;</code>
+       * <code>string md5 = 3;</code>
        * @return The bytes for md5.
        */
       public com.google.protobuf.ByteString
@@ -926,7 +926,7 @@ public final class ResVersionConfigOuterClass {
         }
       }
       /**
-       * <code>string md_5 = 3;</code>
+       * <code>string md5 = 3;</code>
        * @param value The md5 to set.
        * @return This builder for chaining.
        */
@@ -941,7 +941,7 @@ public final class ResVersionConfigOuterClass {
         return this;
       }
       /**
-       * <code>string md_5 = 3;</code>
+       * <code>string md5 = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearMd5() {
@@ -951,7 +951,7 @@ public final class ResVersionConfigOuterClass {
         return this;
       }
       /**
-       * <code>string md_5 = 3;</code>
+       * <code>string md5 = 3;</code>
        * @param value The bytes for md5 to set.
        * @return This builder for chaining.
        */
@@ -1337,12 +1337,12 @@ public final class ResVersionConfigOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026ResVersionConfig.proto\"\243\001\n\020ResVersionC" +
+      "\n\026ResVersionConfig.proto\"\242\001\n\020ResVersionC" +
       "onfig\022\017\n\007version\030\001 \001(\r\022\017\n\007relogin\030\002 \001(\010\022" +
-      "\014\n\004md_5\030\003 \001(\t\022\032\n\022release_total_size\030\004 \001(" +
-      "\t\022\026\n\016version_suffix\030\005 \001(\t\022\016\n\006branch\030\006 \001(" +
-      "\t\022\033\n\023next_script_version\030\007 \001(\tB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "\013\n\003md5\030\003 \001(\t\022\032\n\022release_total_size\030\004 \001(\t" +
+      "\022\026\n\016version_suffix\030\005 \001(\t\022\016\n\006branch\030\006 \001(\t" +
+      "\022\033\n\023next_script_version\030\007 \001(\tB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

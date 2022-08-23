@@ -76,7 +76,8 @@ public final class GetAuthkeyRspOuterClass {
    * <pre>
    * CmdId: 1473
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GetAuthkeyRsp}
@@ -549,7 +550,8 @@ public final class GetAuthkeyRspOuterClass {
      * <pre>
      * CmdId: 1473
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GetAuthkeyRsp}

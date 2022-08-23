@@ -27,8 +27,9 @@ public final class ServerTimeNotifyOuterClass {
   /**
    * <pre>
    * CmdId: 99
-   * EnetChannelId: 1
+   * EnetChannelId: 0
    * EnetIsReliable: true
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ServerTimeNotify}
@@ -282,8 +283,9 @@ public final class ServerTimeNotifyOuterClass {
     /**
      * <pre>
      * CmdId: 99
-     * EnetChannelId: 1
+     * EnetChannelId: 0
      * EnetIsReliable: true
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ServerTimeNotify}

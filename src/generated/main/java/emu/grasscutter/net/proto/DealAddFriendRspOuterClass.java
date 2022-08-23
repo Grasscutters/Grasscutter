@@ -45,7 +45,7 @@ public final class DealAddFriendRspOuterClass {
    * <pre>
    * CmdId: 4090
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -363,7 +363,7 @@ public final class DealAddFriendRspOuterClass {
      * <pre>
      * CmdId: 4090
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

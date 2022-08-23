@@ -46,7 +46,8 @@ public final class OneofGatherPointDetectorDataNotifyOuterClass {
    * <pre>
    * CmdId: 4297
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code OneofGatherPointDetectorDataNotify}
@@ -340,7 +341,8 @@ public final class OneofGatherPointDetectorDataNotifyOuterClass {
      * <pre>
      * CmdId: 4297
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code OneofGatherPointDetectorDataNotify}

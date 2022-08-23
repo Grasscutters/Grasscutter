@@ -52,7 +52,7 @@ public final class PingReqOuterClass {
    * <pre>
    * CmdId: 7
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -420,7 +420,7 @@ public final class PingReqOuterClass {
      * <pre>
      * CmdId: 7
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

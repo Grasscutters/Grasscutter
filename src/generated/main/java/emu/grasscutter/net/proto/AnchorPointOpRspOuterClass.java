@@ -40,7 +40,8 @@ public final class AnchorPointOpRspOuterClass {
    * <pre>
    * CmdId: 4252
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code AnchorPointOpRsp}
@@ -348,7 +349,8 @@ public final class AnchorPointOpRspOuterClass {
      * <pre>
      * CmdId: 4252
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code AnchorPointOpRsp}

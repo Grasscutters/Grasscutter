@@ -28,7 +28,8 @@ public final class TowerTeamSelectRspOuterClass {
    * <pre>
    * CmdId: 2403
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code TowerTeamSelectRsp}
@@ -282,7 +283,8 @@ public final class TowerTeamSelectRspOuterClass {
      * <pre>
      * CmdId: 2403
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code TowerTeamSelectRsp}

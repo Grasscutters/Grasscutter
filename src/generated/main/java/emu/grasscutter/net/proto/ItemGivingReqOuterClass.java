@@ -97,7 +97,7 @@ public final class ItemGivingReqOuterClass {
    * <pre>
    * CmdId: 140
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -691,7 +691,7 @@ public final class ItemGivingReqOuterClass {
      * <pre>
      * CmdId: 140
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

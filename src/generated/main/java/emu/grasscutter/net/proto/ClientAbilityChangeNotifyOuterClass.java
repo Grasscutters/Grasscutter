@@ -58,7 +58,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
    * <pre>
    * CmdId: 1175
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -408,7 +408,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
      * <pre>
      * CmdId: 1175
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

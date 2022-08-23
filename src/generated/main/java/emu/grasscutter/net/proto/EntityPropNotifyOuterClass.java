@@ -62,7 +62,8 @@ public final class EntityPropNotifyOuterClass {
    * <pre>
    * CmdId: 1272
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code EntityPropNotify}
@@ -445,7 +446,8 @@ public final class EntityPropNotifyOuterClass {
      * <pre>
      * CmdId: 1272
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code EntityPropNotify}

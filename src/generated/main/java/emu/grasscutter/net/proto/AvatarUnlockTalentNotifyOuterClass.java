@@ -46,7 +46,8 @@ public final class AvatarUnlockTalentNotifyOuterClass {
    * <pre>
    * CmdId: 1012
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code AvatarUnlockTalentNotify}
@@ -382,7 +383,8 @@ public final class AvatarUnlockTalentNotifyOuterClass {
      * <pre>
      * CmdId: 1012
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code AvatarUnlockTalentNotify}

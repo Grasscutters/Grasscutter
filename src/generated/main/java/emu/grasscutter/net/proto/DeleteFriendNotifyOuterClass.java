@@ -28,7 +28,8 @@ public final class DeleteFriendNotifyOuterClass {
    * <pre>
    * CmdId: 4053
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code DeleteFriendNotify}
@@ -282,7 +283,8 @@ public final class DeleteFriendNotifyOuterClass {
      * <pre>
      * CmdId: 4053
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code DeleteFriendNotify}

@@ -45,7 +45,8 @@ public final class MarkNewNotifyOuterClass {
    * <pre>
    * CmdId: 1275
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code MarkNewNotify}
@@ -381,7 +382,8 @@ public final class MarkNewNotifyOuterClass {
      * <pre>
      * CmdId: 1275
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code MarkNewNotify}

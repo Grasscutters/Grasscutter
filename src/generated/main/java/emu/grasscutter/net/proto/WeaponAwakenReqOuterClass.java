@@ -68,7 +68,7 @@ public final class WeaponAwakenReqOuterClass {
    * <pre>
    * CmdId: 695
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -481,7 +481,7 @@ public final class WeaponAwakenReqOuterClass {
      * <pre>
      * CmdId: 695
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

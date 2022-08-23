@@ -28,7 +28,8 @@ public final class DungeonShowReminderNotifyOuterClass {
    * <pre>
    * CmdId: 997
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code DungeonShowReminderNotify}
@@ -282,7 +283,8 @@ public final class DungeonShowReminderNotifyOuterClass {
      * <pre>
      * CmdId: 997
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code DungeonShowReminderNotify}

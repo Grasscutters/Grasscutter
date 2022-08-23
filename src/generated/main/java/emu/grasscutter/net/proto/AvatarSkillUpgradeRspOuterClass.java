@@ -52,7 +52,8 @@ public final class AvatarSkillUpgradeRspOuterClass {
    * <pre>
    * CmdId: 1048
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code AvatarSkillUpgradeRsp}
@@ -415,7 +416,8 @@ public final class AvatarSkillUpgradeRspOuterClass {
      * <pre>
      * CmdId: 1048
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code AvatarSkillUpgradeRsp}

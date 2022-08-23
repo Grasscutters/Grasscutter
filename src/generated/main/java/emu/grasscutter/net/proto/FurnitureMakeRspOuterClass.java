@@ -115,7 +115,8 @@ public final class FurnitureMakeRspOuterClass {
    * <pre>
    * CmdId: 4782
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code FurnitureMakeRsp}
@@ -623,7 +624,8 @@ public final class FurnitureMakeRspOuterClass {
      * <pre>
      * CmdId: 4782
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code FurnitureMakeRsp}

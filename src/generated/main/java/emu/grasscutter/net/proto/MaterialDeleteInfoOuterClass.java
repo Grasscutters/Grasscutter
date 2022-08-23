@@ -3474,36 +3474,31 @@ public final class MaterialDeleteInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030MaterialDeleteInfo.proto\032\025CountDownDel" +
-      "ete.proto\032\024DateTimeDelete.proto\032\036DelayWe" +
-      "ekCountDownDelete.proto\"\357\005\n\022MaterialDele" +
-      "teInfo\022\031\n\021has_delete_config\030\001 \001(\010\022@\n\021cou" +
-      "nt_down_delete\030\002 \001(\0132#.MaterialDeleteInf" +
-      "o.CountDownDeleteH\000\0229\n\013date_delete\030\003 \001(\013" +
-      "2\".MaterialDeleteInfo.DateTimeDeleteH\000\022T" +
-      "\n\034delay_week_count_down_delete\030\004 \001(\0132,.M" +
-      "aterialDeleteInfo.DelayWeekCountDownDele" +
-      "teH\000\032\302\001\n\017CountDownDelete\022V\n\023delete_time_" +
-      "num_map\030\001 \003(\01329.MaterialDeleteInfo.Count" +
-      "DownDelete.DeleteTimeNumMapEntry\022\036\n\026conf" +
-      "ig_count_down_time\030\002 \001(\r\0327\n\025DeleteTimeNu" +
-      "mMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028" +
-      "\001\032%\n\016DateTimeDelete\022\023\n\013delete_time\030\001 \001(\r" +
-      "\032\357\001\n\030DelayWeekCountDownDelete\022_\n\023delete_" +
-      "time_num_map\030\001 \003(\0132B.MaterialDeleteInfo." +
-      "DelayWeekCountDownDelete.DeleteTimeNumMa" +
-      "pEntry\022\031\n\021config_delay_week\030\002 \001(\r\022\036\n\026con" +
-      "fig_count_down_time\030\003 \001(\r\0327\n\025DeleteTimeN" +
-      "umMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\002" +
-      "8\001B\r\n\013delete_infoB\033\n\031emu.grasscutter.net" +
-      ".protob\006proto3"
+      "\n\030MaterialDeleteInfo.proto\"\357\005\n\022MaterialD" +
+      "eleteInfo\022\031\n\021has_delete_config\030\001 \001(\010\022@\n\021" +
+      "count_down_delete\030\002 \001(\0132#.MaterialDelete" +
+      "Info.CountDownDeleteH\000\0229\n\013date_delete\030\003 " +
+      "\001(\0132\".MaterialDeleteInfo.DateTimeDeleteH" +
+      "\000\022T\n\034delay_week_count_down_delete\030\004 \001(\0132" +
+      ",.MaterialDeleteInfo.DelayWeekCountDownD" +
+      "eleteH\000\032\302\001\n\017CountDownDelete\022V\n\023delete_ti" +
+      "me_num_map\030\001 \003(\01329.MaterialDeleteInfo.Co" +
+      "untDownDelete.DeleteTimeNumMapEntry\022\036\n\026c" +
+      "onfig_count_down_time\030\002 \001(\r\0327\n\025DeleteTim" +
+      "eNumMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r" +
+      ":\0028\001\032%\n\016DateTimeDelete\022\023\n\013delete_time\030\001 " +
+      "\001(\r\032\357\001\n\030DelayWeekCountDownDelete\022_\n\023dele" +
+      "te_time_num_map\030\001 \003(\0132B.MaterialDeleteIn" +
+      "fo.DelayWeekCountDownDelete.DeleteTimeNu" +
+      "mMapEntry\022\031\n\021config_delay_week\030\002 \001(\r\022\036\n\026" +
+      "config_count_down_time\030\003 \001(\r\0327\n\025DeleteTi" +
+      "meNumMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(" +
+      "\r:\0028\001B\r\n\013delete_infoB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.CountDownDeleteOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.DateTimeDeleteOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.DelayWeekCountDownDeleteOuterClass.getDescriptor(),
         });
     internal_static_MaterialDeleteInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3541,9 +3536,6 @@ public final class MaterialDeleteInfoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MaterialDeleteInfo_DelayWeekCountDownDelete_DeleteTimeNumMapEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    emu.grasscutter.net.proto.CountDownDeleteOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.DateTimeDeleteOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.DelayWeekCountDownDeleteOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

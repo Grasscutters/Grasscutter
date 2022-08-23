@@ -40,7 +40,8 @@ public final class SelectWorktopOptionRspOuterClass {
    * <pre>
    * CmdId: 821
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code SelectWorktopOptionRsp}
@@ -348,7 +349,8 @@ public final class SelectWorktopOptionRspOuterClass {
      * <pre>
      * CmdId: 821
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code SelectWorktopOptionRsp}

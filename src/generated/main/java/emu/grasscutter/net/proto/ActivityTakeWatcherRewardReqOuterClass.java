@@ -32,9 +32,9 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2090
+   * CmdId: 2038
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -314,9 +314,9 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2090
+     * CmdId: 2038
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

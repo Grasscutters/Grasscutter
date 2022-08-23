@@ -58,7 +58,7 @@ public final class HitTreeNotifyOuterClass {
    * <pre>
    * CmdId: 3019
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -423,7 +423,7 @@ public final class HitTreeNotifyOuterClass {
      * <pre>
      * CmdId: 3019
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

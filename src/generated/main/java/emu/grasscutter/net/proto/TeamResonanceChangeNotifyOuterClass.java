@@ -46,7 +46,8 @@ public final class TeamResonanceChangeNotifyOuterClass {
    * <pre>
    * CmdId: 1082
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code TeamResonanceChangeNotify}
@@ -340,7 +341,8 @@ public final class TeamResonanceChangeNotifyOuterClass {
      * <pre>
      * CmdId: 1082
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code TeamResonanceChangeNotify}

@@ -2566,22 +2566,21 @@ public final class ShopCardProductOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025ShopCardProduct.proto\032\017ResinCard.proto" +
-      "\032\017ItemParam.proto\"\306\002\n\017ShopCardProduct\022\022\n" +
-      "\nproduct_id\030\001 \001(\t\022\022\n\nprice_tier\030\002 \001(\t\022\022\n" +
-      "\nmcoin_base\030\003 \001(\r\022\025\n\rhcoin_per_day\030\004 \001(\r" +
-      "\022\014\n\004days\030\005 \001(\r\022\032\n\022remain_reward_days\030\006 \001" +
-      "(\r\022\031\n\021card_product_type\030\007 \001(\r\0220\n\nresin_c" +
-      "ard\030e \001(\0132\032.ShopCardProduct.ResinCardH\000\032" +
-      "V\n\tResinCard\022\"\n\016base_item_list\030\001 \003(\0132\n.I" +
-      "temParam\022%\n\021per_day_item_list\030\002 \003(\0132\n.It" +
-      "emParamB\021\n\017extra_card_dataB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\n\025ShopCardProduct.proto\032\017ItemParam.proto" +
+      "\"\306\002\n\017ShopCardProduct\022\022\n\nproduct_id\030\001 \001(\t" +
+      "\022\022\n\nprice_tier\030\002 \001(\t\022\022\n\nmcoin_base\030\003 \001(\r" +
+      "\022\025\n\rhcoin_per_day\030\004 \001(\r\022\014\n\004days\030\005 \001(\r\022\032\n" +
+      "\022remain_reward_days\030\006 \001(\r\022\031\n\021card_produc" +
+      "t_type\030\007 \001(\r\0220\n\nresin_card\030e \001(\0132\032.ShopC" +
+      "ardProduct.ResinCardH\000\032V\n\tResinCard\022\"\n\016b" +
+      "ase_item_list\030\001 \003(\0132\n.ItemParam\022%\n\021per_d" +
+      "ay_item_list\030\002 \003(\0132\n.ItemParamB\021\n\017extra_" +
+      "card_dataB\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.ResinCardOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor(),
         });
     internal_static_ShopCardProduct_descriptor =
@@ -2596,7 +2595,6 @@ public final class ShopCardProductOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ShopCardProduct_ResinCard_descriptor,
         new java.lang.String[] { "BaseItemList", "PerDayItemList", });
-    emu.grasscutter.net.proto.ResinCardOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
   }
 

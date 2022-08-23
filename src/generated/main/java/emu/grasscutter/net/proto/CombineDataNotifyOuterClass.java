@@ -39,7 +39,8 @@ public final class CombineDataNotifyOuterClass {
    * <pre>
    * CmdId: 659
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code CombineDataNotify}
@@ -348,7 +349,8 @@ public final class CombineDataNotifyOuterClass {
      * <pre>
      * CmdId: 659
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code CombineDataNotify}

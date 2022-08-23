@@ -34,7 +34,8 @@ public final class ForgeFormulaDataNotifyOuterClass {
    * <pre>
    * CmdId: 689
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ForgeFormulaDataNotify}
@@ -316,7 +317,8 @@ public final class ForgeFormulaDataNotifyOuterClass {
      * <pre>
      * CmdId: 689
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ForgeFormulaDataNotify}

@@ -28,7 +28,8 @@ public final class AvatarChangeElementTypeRspOuterClass {
    * <pre>
    * CmdId: 1651
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code AvatarChangeElementTypeRsp}
@@ -282,7 +283,8 @@ public final class AvatarChangeElementTypeRspOuterClass {
      * <pre>
      * CmdId: 1651
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code AvatarChangeElementTypeRsp}

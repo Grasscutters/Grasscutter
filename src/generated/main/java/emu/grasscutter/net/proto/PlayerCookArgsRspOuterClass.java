@@ -34,7 +34,8 @@ public final class PlayerCookArgsRspOuterClass {
    * <pre>
    * CmdId: 168
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code PlayerCookArgsRsp}
@@ -317,7 +318,8 @@ public final class PlayerCookArgsRspOuterClass {
      * <pre>
      * CmdId: 168
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code PlayerCookArgsRsp}

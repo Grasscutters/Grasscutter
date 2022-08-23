@@ -70,7 +70,8 @@ public final class GetGachaInfoRspOuterClass {
    * <pre>
    * CmdId: 1598
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GetGachaInfoRsp}
@@ -473,7 +474,8 @@ public final class GetGachaInfoRspOuterClass {
      * <pre>
      * CmdId: 1598
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GetGachaInfoRsp}

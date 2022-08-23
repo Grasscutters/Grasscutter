@@ -75,7 +75,8 @@ public final class GetSceneAreaRspOuterClass {
    * <pre>
    * CmdId: 204
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GetSceneAreaRsp}
@@ -504,7 +505,8 @@ public final class GetSceneAreaRspOuterClass {
      * <pre>
      * CmdId: 204
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GetSceneAreaRsp}

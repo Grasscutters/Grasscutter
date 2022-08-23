@@ -34,7 +34,7 @@ public final class EnterWorldAreaReqOuterClass {
    * <pre>
    * CmdId: 250
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -316,7 +316,7 @@ public final class EnterWorldAreaReqOuterClass {
      * <pre>
      * CmdId: 250
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

@@ -43,7 +43,7 @@ public final class PlayerChatReqOuterClass {
    * <pre>
    * CmdId: 3185
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -353,7 +353,7 @@ public final class PlayerChatReqOuterClass {
      * <pre>
      * CmdId: 3185
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

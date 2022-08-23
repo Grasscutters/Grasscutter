@@ -39,7 +39,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
    * <pre>
    * CmdId: 1752
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -349,7 +349,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
      * <pre>
      * CmdId: 1752
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

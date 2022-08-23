@@ -37,7 +37,7 @@ public final class SetPlayerBirthdayReqOuterClass {
    * <pre>
    * CmdId: 4048
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -320,7 +320,7 @@ public final class SetPlayerBirthdayReqOuterClass {
      * <pre>
      * CmdId: 4048
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

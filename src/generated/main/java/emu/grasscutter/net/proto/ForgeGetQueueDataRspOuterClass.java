@@ -68,7 +68,8 @@ public final class ForgeGetQueueDataRspOuterClass {
    * <pre>
    * CmdId: 641
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ForgeGetQueueDataRsp}
@@ -478,7 +479,8 @@ public final class ForgeGetQueueDataRspOuterClass {
      * <pre>
      * CmdId: 641
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ForgeGetQueueDataRsp}

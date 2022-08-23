@@ -39,7 +39,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
    * <pre>
    * CmdId: 321
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -330,7 +330,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
      * <pre>
      * CmdId: 321
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

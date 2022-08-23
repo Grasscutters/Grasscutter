@@ -222,6 +222,12 @@ public final class SceneMonsterInfoOuterClass {
     boolean getUnk2800JEGLENPDPNI();
 
     /**
+     * <code>uint32 Unk3000_CCKJDCBDEKD = 23;</code>
+     * @return The unk3000CCKJDCBDEKD.
+     */
+    int getUnk3000CCKJDCBDEKD();
+
+    /**
      * <code>.SceneFishInfo fish_info = 50;</code>
      * @return Whether the fishInfo field is set.
      */
@@ -235,6 +241,21 @@ public final class SceneMonsterInfoOuterClass {
      * <code>.SceneFishInfo fish_info = 50;</code>
      */
     emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfoOrBuilder getFishInfoOrBuilder();
+
+    /**
+     * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+     * @return Whether the fishtankFishInfo field is set.
+     */
+    boolean hasFishtankFishInfo();
+    /**
+     * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+     * @return The fishtankFishInfo.
+     */
+    emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH getFishtankFishInfo();
+    /**
+     * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+     */
+    emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABHOrBuilder getFishtankFishInfoOrBuilder();
 
     public emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.ContentCase getContentCase();
   }
@@ -434,6 +455,11 @@ public final class SceneMonsterInfoOuterClass {
               unk2800JEGLENPDPNI_ = input.readBool();
               break;
             }
+            case 184: {
+
+              unk3000CCKJDCBDEKD_ = input.readUInt32();
+              break;
+            }
             case 402: {
               emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo.Builder subBuilder = null;
               if (contentCase_ == 50) {
@@ -446,6 +472,20 @@ public final class SceneMonsterInfoOuterClass {
                 content_ = subBuilder.buildPartial();
               }
               contentCase_ = 50;
+              break;
+            }
+            case 410: {
+              emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.Builder subBuilder = null;
+              if (contentCase_ == 51) {
+                subBuilder = ((emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 51;
               break;
             }
             default: {
@@ -504,6 +544,7 @@ public final class SceneMonsterInfoOuterClass {
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       FISH_INFO(50),
+      FISHTANK_FISH_INFO(51),
       CONTENT_NOT_SET(0);
       private final int value;
       private ContentCase(int value) {
@@ -522,6 +563,7 @@ public final class SceneMonsterInfoOuterClass {
       public static ContentCase forNumber(int value) {
         switch (value) {
           case 50: return FISH_INFO;
+          case 51: return FISHTANK_FISH_INFO;
           case 0: return CONTENT_NOT_SET;
           default: return null;
         }
@@ -918,6 +960,17 @@ public final class SceneMonsterInfoOuterClass {
       return unk2800JEGLENPDPNI_;
     }
 
+    public static final int UNK3000_CCKJDCBDEKD_FIELD_NUMBER = 23;
+    private int unk3000CCKJDCBDEKD_;
+    /**
+     * <code>uint32 Unk3000_CCKJDCBDEKD = 23;</code>
+     * @return The unk3000CCKJDCBDEKD.
+     */
+    @java.lang.Override
+    public int getUnk3000CCKJDCBDEKD() {
+      return unk3000CCKJDCBDEKD_;
+    }
+
     public static final int FISH_INFO_FIELD_NUMBER = 50;
     /**
      * <code>.SceneFishInfo fish_info = 50;</code>
@@ -947,6 +1000,37 @@ public final class SceneMonsterInfoOuterClass {
          return (emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo) content_;
       }
       return emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo.getDefaultInstance();
+    }
+
+    public static final int FISHTANK_FISH_INFO_FIELD_NUMBER = 51;
+    /**
+     * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+     * @return Whether the fishtankFishInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasFishtankFishInfo() {
+      return contentCase_ == 51;
+    }
+    /**
+     * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+     * @return The fishtankFishInfo.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH getFishtankFishInfo() {
+      if (contentCase_ == 51) {
+         return (emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH) content_;
+      }
+      return emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.getDefaultInstance();
+    }
+    /**
+     * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABHOrBuilder getFishtankFishInfoOrBuilder() {
+      if (contentCase_ == 51) {
+         return (emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH) content_;
+      }
+      return emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1037,8 +1121,14 @@ public final class SceneMonsterInfoOuterClass {
       if (unk2800JEGLENPDPNI_ != false) {
         output.writeBool(22, unk2800JEGLENPDPNI_);
       }
+      if (unk3000CCKJDCBDEKD_ != 0) {
+        output.writeUInt32(23, unk3000CCKJDCBDEKD_);
+      }
       if (contentCase_ == 50) {
         output.writeMessage(50, (emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo) content_);
+      }
+      if (contentCase_ == 51) {
+        output.writeMessage(51, (emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH) content_);
       }
       unknownFields.writeTo(output);
     }
@@ -1153,9 +1243,17 @@ public final class SceneMonsterInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(22, unk2800JEGLENPDPNI_);
       }
+      if (unk3000CCKJDCBDEKD_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(23, unk3000CCKJDCBDEKD_);
+      }
       if (contentCase_ == 50) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(50, (emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo) content_);
+      }
+      if (contentCase_ == 51) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(51, (emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH) content_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1218,11 +1316,17 @@ public final class SceneMonsterInfoOuterClass {
           != other.getInitPoseId()) return false;
       if (getUnk2800JEGLENPDPNI()
           != other.getUnk2800JEGLENPDPNI()) return false;
+      if (getUnk3000CCKJDCBDEKD()
+          != other.getUnk3000CCKJDCBDEKD()) return false;
       if (!getContentCase().equals(other.getContentCase())) return false;
       switch (contentCase_) {
         case 50:
           if (!getFishInfo()
               .equals(other.getFishInfo())) return false;
+          break;
+        case 51:
+          if (!getFishtankFishInfo()
+              .equals(other.getFishtankFishInfo())) return false;
           break;
         case 0:
         default:
@@ -1292,10 +1396,16 @@ public final class SceneMonsterInfoOuterClass {
       hash = (37 * hash) + UNK2800_JEGLENPDPNI_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getUnk2800JEGLENPDPNI());
+      hash = (37 * hash) + UNK3000_CCKJDCBDEKD_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk3000CCKJDCBDEKD();
       switch (contentCase_) {
         case 50:
           hash = (37 * hash) + FISH_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getFishInfo().hashCode();
+          break;
+        case 51:
+          hash = (37 * hash) + FISHTANK_FISH_INFO_FIELD_NUMBER;
+          hash = (53 * hash) + getFishtankFishInfo().hashCode();
           break;
         case 0:
         default:
@@ -1507,6 +1617,8 @@ public final class SceneMonsterInfoOuterClass {
 
         unk2800JEGLENPDPNI_ = false;
 
+        unk3000CCKJDCBDEKD_ = 0;
+
         contentCase_ = 0;
         content_ = null;
         return this;
@@ -1575,11 +1687,19 @@ public final class SceneMonsterInfoOuterClass {
         result.levelRouteId_ = levelRouteId_;
         result.initPoseId_ = initPoseId_;
         result.unk2800JEGLENPDPNI_ = unk2800JEGLENPDPNI_;
+        result.unk3000CCKJDCBDEKD_ = unk3000CCKJDCBDEKD_;
         if (contentCase_ == 50) {
           if (fishInfoBuilder_ == null) {
             result.content_ = content_;
           } else {
             result.content_ = fishInfoBuilder_.build();
+          }
+        }
+        if (contentCase_ == 51) {
+          if (fishtankFishInfoBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = fishtankFishInfoBuilder_.build();
           }
         }
         result.contentCase_ = contentCase_;
@@ -1726,9 +1846,16 @@ public final class SceneMonsterInfoOuterClass {
         if (other.getUnk2800JEGLENPDPNI() != false) {
           setUnk2800JEGLENPDPNI(other.getUnk2800JEGLENPDPNI());
         }
+        if (other.getUnk3000CCKJDCBDEKD() != 0) {
+          setUnk3000CCKJDCBDEKD(other.getUnk3000CCKJDCBDEKD());
+        }
         switch (other.getContentCase()) {
           case FISH_INFO: {
             mergeFishInfo(other.getFishInfo());
+            break;
+          }
+          case FISHTANK_FISH_INFO: {
+            mergeFishtankFishInfo(other.getFishtankFishInfo());
             break;
           }
           case CONTENT_NOT_SET: {
@@ -2927,6 +3054,37 @@ public final class SceneMonsterInfoOuterClass {
         return this;
       }
 
+      private int unk3000CCKJDCBDEKD_ ;
+      /**
+       * <code>uint32 Unk3000_CCKJDCBDEKD = 23;</code>
+       * @return The unk3000CCKJDCBDEKD.
+       */
+      @java.lang.Override
+      public int getUnk3000CCKJDCBDEKD() {
+        return unk3000CCKJDCBDEKD_;
+      }
+      /**
+       * <code>uint32 Unk3000_CCKJDCBDEKD = 23;</code>
+       * @param value The unk3000CCKJDCBDEKD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnk3000CCKJDCBDEKD(int value) {
+        
+        unk3000CCKJDCBDEKD_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 Unk3000_CCKJDCBDEKD = 23;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnk3000CCKJDCBDEKD() {
+        
+        unk3000CCKJDCBDEKD_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo, emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo.Builder, emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfoOrBuilder> fishInfoBuilder_;
       /**
@@ -3067,6 +3225,147 @@ public final class SceneMonsterInfoOuterClass {
         onChanged();;
         return fishInfoBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH, emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.Builder, emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABHOrBuilder> fishtankFishInfoBuilder_;
+      /**
+       * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+       * @return Whether the fishtankFishInfo field is set.
+       */
+      @java.lang.Override
+      public boolean hasFishtankFishInfo() {
+        return contentCase_ == 51;
+      }
+      /**
+       * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+       * @return The fishtankFishInfo.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH getFishtankFishInfo() {
+        if (fishtankFishInfoBuilder_ == null) {
+          if (contentCase_ == 51) {
+            return (emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH) content_;
+          }
+          return emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.getDefaultInstance();
+        } else {
+          if (contentCase_ == 51) {
+            return fishtankFishInfoBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+       */
+      public Builder setFishtankFishInfo(emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH value) {
+        if (fishtankFishInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          content_ = value;
+          onChanged();
+        } else {
+          fishtankFishInfoBuilder_.setMessage(value);
+        }
+        contentCase_ = 51;
+        return this;
+      }
+      /**
+       * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+       */
+      public Builder setFishtankFishInfo(
+          emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.Builder builderForValue) {
+        if (fishtankFishInfoBuilder_ == null) {
+          content_ = builderForValue.build();
+          onChanged();
+        } else {
+          fishtankFishInfoBuilder_.setMessage(builderForValue.build());
+        }
+        contentCase_ = 51;
+        return this;
+      }
+      /**
+       * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+       */
+      public Builder mergeFishtankFishInfo(emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH value) {
+        if (fishtankFishInfoBuilder_ == null) {
+          if (contentCase_ == 51 &&
+              content_ != emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.getDefaultInstance()) {
+            content_ = emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.newBuilder((emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH) content_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            content_ = value;
+          }
+          onChanged();
+        } else {
+          if (contentCase_ == 51) {
+            fishtankFishInfoBuilder_.mergeFrom(value);
+          }
+          fishtankFishInfoBuilder_.setMessage(value);
+        }
+        contentCase_ = 51;
+        return this;
+      }
+      /**
+       * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+       */
+      public Builder clearFishtankFishInfo() {
+        if (fishtankFishInfoBuilder_ == null) {
+          if (contentCase_ == 51) {
+            contentCase_ = 0;
+            content_ = null;
+            onChanged();
+          }
+        } else {
+          if (contentCase_ == 51) {
+            contentCase_ = 0;
+            content_ = null;
+          }
+          fishtankFishInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+       */
+      public emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.Builder getFishtankFishInfoBuilder() {
+        return getFishtankFishInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABHOrBuilder getFishtankFishInfoOrBuilder() {
+        if ((contentCase_ == 51) && (fishtankFishInfoBuilder_ != null)) {
+          return fishtankFishInfoBuilder_.getMessageOrBuilder();
+        } else {
+          if (contentCase_ == 51) {
+            return (emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH) content_;
+          }
+          return emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.Unk3000_GNOPDGELABH fishtank_fish_info = 51;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH, emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.Builder, emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABHOrBuilder> 
+          getFishtankFishInfoFieldBuilder() {
+        if (fishtankFishInfoBuilder_ == null) {
+          if (!(contentCase_ == 51)) {
+            content_ = emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.getDefaultInstance();
+          }
+          fishtankFishInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH, emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH.Builder, emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABHOrBuilder>(
+                  (emu.grasscutter.net.proto.Unk3000GNOPDGELABH.Unk3000_GNOPDGELABH) content_,
+                  getParentForChildren(),
+                  isClean());
+          content_ = null;
+        }
+        contentCase_ = 51;
+        onChanged();;
+        return fishtankFishInfoBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3141,25 +3440,28 @@ public final class SceneMonsterInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026SceneMonsterInfo.proto\032\025MonsterBornTyp" +
       "e.proto\032\022MonsterRoute.proto\032\023SceneFishIn" +
-      "fo.proto\032\025SceneWeaponInfo.proto\"\253\005\n\020Scen" +
-      "eMonsterInfo\022\022\n\nmonster_id\030\001 \001(\r\022\020\n\010grou" +
-      "p_id\030\002 \001(\r\022\021\n\tconfig_id\030\003 \001(\r\022%\n\013weapon_" +
-      "list\030\004 \003(\0132\020.SceneWeaponInfo\022\031\n\021authorit" +
-      "y_peer_id\030\005 \001(\r\022\022\n\naffix_list\030\006 \003(\r\022\020\n\010i" +
-      "s_elite\030\007 \001(\010\022\027\n\017owner_entity_id\030\010 \001(\r\022\024" +
-      "\n\014summoned_tag\030\t \001(\r\022;\n\016summon_tag_map\030\n" +
-      " \003(\0132#.SceneMonsterInfo.SummonTagMapEntr" +
-      "y\022\017\n\007pose_id\030\013 \001(\r\022#\n\tborn_type\030\014 \001(\0162\020." +
-      "MonsterBornType\022\020\n\010block_id\030\r \001(\r\022\021\n\tmar" +
-      "k_flag\030\016 \001(\r\022\020\n\010title_id\030\017 \001(\r\022\027\n\017specia" +
-      "l_name_id\030\020 \001(\r\022\030\n\020attack_target_id\030\021 \001(" +
-      "\r\022$\n\rmonster_route\030\022 \001(\0132\r.MonsterRoute\022" +
-      "\024\n\014ai_config_id\030\023 \001(\r\022\026\n\016level_route_id\030" +
-      "\024 \001(\r\022\024\n\014init_pose_id\030\025 \001(\r\022\033\n\023Unk2800_J" +
-      "EGLENPDPNI\030\026 \001(\010\022#\n\tfish_info\0302 \001(\0132\016.Sc" +
-      "eneFishInfoH\000\0323\n\021SummonTagMapEntry\022\013\n\003ke" +
-      "y\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\t\n\007contentB\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "fo.proto\032\025SceneWeaponInfo.proto\032\031Unk3000" +
+      "_GNOPDGELABH.proto\"\374\005\n\020SceneMonsterInfo\022" +
+      "\022\n\nmonster_id\030\001 \001(\r\022\020\n\010group_id\030\002 \001(\r\022\021\n" +
+      "\tconfig_id\030\003 \001(\r\022%\n\013weapon_list\030\004 \003(\0132\020." +
+      "SceneWeaponInfo\022\031\n\021authority_peer_id\030\005 \001" +
+      "(\r\022\022\n\naffix_list\030\006 \003(\r\022\020\n\010is_elite\030\007 \001(\010" +
+      "\022\027\n\017owner_entity_id\030\010 \001(\r\022\024\n\014summoned_ta" +
+      "g\030\t \001(\r\022;\n\016summon_tag_map\030\n \003(\0132#.SceneM" +
+      "onsterInfo.SummonTagMapEntry\022\017\n\007pose_id\030" +
+      "\013 \001(\r\022#\n\tborn_type\030\014 \001(\0162\020.MonsterBornTy" +
+      "pe\022\020\n\010block_id\030\r \001(\r\022\021\n\tmark_flag\030\016 \001(\r\022" +
+      "\020\n\010title_id\030\017 \001(\r\022\027\n\017special_name_id\030\020 \001" +
+      "(\r\022\030\n\020attack_target_id\030\021 \001(\r\022$\n\rmonster_" +
+      "route\030\022 \001(\0132\r.MonsterRoute\022\024\n\014ai_config_" +
+      "id\030\023 \001(\r\022\026\n\016level_route_id\030\024 \001(\r\022\024\n\014init" +
+      "_pose_id\030\025 \001(\r\022\033\n\023Unk2800_JEGLENPDPNI\030\026 " +
+      "\001(\010\022\033\n\023Unk3000_CCKJDCBDEKD\030\027 \001(\r\022#\n\tfish" +
+      "_info\0302 \001(\0132\016.SceneFishInfoH\000\0222\n\022fishtan" +
+      "k_fish_info\0303 \001(\0132\024.Unk3000_GNOPDGELABHH" +
+      "\000\0323\n\021SummonTagMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005v" +
+      "alue\030\002 \001(\r:\0028\001B\t\n\007contentB\033\n\031emu.grasscu" +
+      "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3168,13 +3470,14 @@ public final class SceneMonsterInfoOuterClass {
           emu.grasscutter.net.proto.MonsterRouteOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SceneFishInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.Unk3000GNOPDGELABH.getDescriptor(),
         });
     internal_static_SceneMonsterInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_SceneMonsterInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneMonsterInfo_descriptor,
-        new java.lang.String[] { "MonsterId", "GroupId", "ConfigId", "WeaponList", "AuthorityPeerId", "AffixList", "IsElite", "OwnerEntityId", "SummonedTag", "SummonTagMap", "PoseId", "BornType", "BlockId", "MarkFlag", "TitleId", "SpecialNameId", "AttackTargetId", "MonsterRoute", "AiConfigId", "LevelRouteId", "InitPoseId", "Unk2800JEGLENPDPNI", "FishInfo", "Content", });
+        new java.lang.String[] { "MonsterId", "GroupId", "ConfigId", "WeaponList", "AuthorityPeerId", "AffixList", "IsElite", "OwnerEntityId", "SummonedTag", "SummonTagMap", "PoseId", "BornType", "BlockId", "MarkFlag", "TitleId", "SpecialNameId", "AttackTargetId", "MonsterRoute", "AiConfigId", "LevelRouteId", "InitPoseId", "Unk2800JEGLENPDPNI", "Unk3000CCKJDCBDEKD", "FishInfo", "FishtankFishInfo", "Content", });
     internal_static_SceneMonsterInfo_SummonTagMapEntry_descriptor =
       internal_static_SceneMonsterInfo_descriptor.getNestedTypes().get(0);
     internal_static_SceneMonsterInfo_SummonTagMapEntry_fieldAccessorTable = new
@@ -3185,6 +3488,7 @@ public final class SceneMonsterInfoOuterClass {
     emu.grasscutter.net.proto.MonsterRouteOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SceneFishInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.Unk3000GNOPDGELABH.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

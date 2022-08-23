@@ -40,7 +40,7 @@ public final class ForgeStartReqOuterClass {
    * <pre>
    * CmdId: 649
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -349,7 +349,7 @@ public final class ForgeStartReqOuterClass {
      * <pre>
      * CmdId: 649
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

@@ -80,7 +80,8 @@ public final class DungeonChallengeBeginNotifyOuterClass {
    * <pre>
    * CmdId: 947
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code DungeonChallengeBeginNotify}
@@ -577,7 +578,8 @@ public final class DungeonChallengeBeginNotifyOuterClass {
      * <pre>
      * CmdId: 947
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code DungeonChallengeBeginNotify}

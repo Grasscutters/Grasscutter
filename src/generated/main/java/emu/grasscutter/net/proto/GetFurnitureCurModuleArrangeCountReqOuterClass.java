@@ -22,7 +22,7 @@ public final class GetFurnitureCurModuleArrangeCountReqOuterClass {
    * <pre>
    * CmdId: 4711
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -250,7 +250,7 @@ public final class GetFurnitureCurModuleArrangeCountReqOuterClass {
      * <pre>
      * CmdId: 4711
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

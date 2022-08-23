@@ -51,7 +51,7 @@ public final class ReliquaryDecomposeReqOuterClass {
    * <pre>
    * CmdId: 638
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -415,7 +415,7 @@ public final class ReliquaryDecomposeReqOuterClass {
      * <pre>
      * CmdId: 638
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

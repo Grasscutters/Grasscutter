@@ -19,22 +19,43 @@ public final class BattlePassScheduleOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 schedule_id = 9;</code>
-     * @return The scheduleId.
-     */
-    int getScheduleId();
-
-    /**
      * <code>uint32 level = 14;</code>
      * @return The level.
      */
     int getLevel();
 
     /**
+     * <code>uint32 begin_time = 2;</code>
+     * @return The beginTime.
+     */
+    int getBeginTime();
+
+    /**
+     * <code>uint32 end_time = 15;</code>
+     * @return The endTime.
+     */
+    int getEndTime();
+
+    /**
      * <code>uint32 point = 1;</code>
      * @return The point.
      */
     int getPoint();
+
+    /**
+     * <code>.BattlePassCycle cur_cycle = 4;</code>
+     * @return Whether the curCycle field is set.
+     */
+    boolean hasCurCycle();
+    /**
+     * <code>.BattlePassCycle cur_cycle = 4;</code>
+     * @return The curCycle.
+     */
+    emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle getCurCycle();
+    /**
+     * <code>.BattlePassCycle cur_cycle = 4;</code>
+     */
+    emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycleOrBuilder getCurCycleOrBuilder();
 
     /**
      * <code>.BattlePassUnlockStatus unlock_status = 7;</code>
@@ -72,37 +93,16 @@ public final class BattlePassScheduleOuterClass {
         int index);
 
     /**
-     * <code>uint32 begin_time = 2;</code>
-     * @return The beginTime.
+     * <code>uint32 cur_cycle_points = 10;</code>
+     * @return The curCyclePoints.
      */
-    int getBeginTime();
+    int getCurCyclePoints();
 
     /**
-     * <code>uint32 end_time = 15;</code>
-     * @return The endTime.
+     * <code>uint32 Unk2700_ODHAAHEPFAG = 12;</code>
+     * @return The unk2700ODHAAHEPFAG.
      */
-    int getEndTime();
-
-    /**
-     * <code>.BattlePassCycle cur_cycle = 4;</code>
-     * @return Whether the curCycle field is set.
-     */
-    boolean hasCurCycle();
-    /**
-     * <code>.BattlePassCycle cur_cycle = 4;</code>
-     * @return The curCycle.
-     */
-    emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle getCurCycle();
-    /**
-     * <code>.BattlePassCycle cur_cycle = 4;</code>
-     */
-    emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycleOrBuilder getCurCycleOrBuilder();
-
-    /**
-     * <code>bool is_extra_paid_reward_taken = 6;</code>
-     * @return The isExtraPaidRewardTaken.
-     */
-    boolean getIsExtraPaidRewardTaken();
+    int getUnk2700ODHAAHEPFAG();
 
     /**
      * <code>.BattlePassProduct product_info = 13;</code>
@@ -120,22 +120,22 @@ public final class BattlePassScheduleOuterClass {
     emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProductOrBuilder getProductInfoOrBuilder();
 
     /**
+     * <code>bool is_extra_paid_reward_taken = 6;</code>
+     * @return The isExtraPaidRewardTaken.
+     */
+    boolean getIsExtraPaidRewardTaken();
+
+    /**
      * <code>bool is_viewed = 3;</code>
      * @return The isViewed.
      */
     boolean getIsViewed();
 
     /**
-     * <code>uint32 cur_cycle_points = 10;</code>
-     * @return The curCyclePoints.
+     * <code>uint32 schedule_id = 9;</code>
+     * @return The scheduleId.
      */
-    int getCurCyclePoints();
-
-    /**
-     * <code>uint32 JPFMGBEBBBJ = 12;</code>
-     * @return The jPFMGBEBBBJ.
-     */
-    int getJPFMGBEBBBJ();
+    int getScheduleId();
   }
   /**
    * Protobuf type {@code BattlePassSchedule}
@@ -245,7 +245,7 @@ public final class BattlePassScheduleOuterClass {
             }
             case 96: {
 
-              jPFMGBEBBBJ_ = input.readUInt32();
+              unk2700ODHAAHEPFAG_ = input.readUInt32();
               break;
             }
             case 106: {
@@ -306,17 +306,6 @@ public final class BattlePassScheduleOuterClass {
               emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule.class, emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule.Builder.class);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
-    private int scheduleId_;
-    /**
-     * <code>uint32 schedule_id = 9;</code>
-     * @return The scheduleId.
-     */
-    @java.lang.Override
-    public int getScheduleId() {
-      return scheduleId_;
-    }
-
     public static final int LEVEL_FIELD_NUMBER = 14;
     private int level_;
     /**
@@ -328,6 +317,28 @@ public final class BattlePassScheduleOuterClass {
       return level_;
     }
 
+    public static final int BEGIN_TIME_FIELD_NUMBER = 2;
+    private int beginTime_;
+    /**
+     * <code>uint32 begin_time = 2;</code>
+     * @return The beginTime.
+     */
+    @java.lang.Override
+    public int getBeginTime() {
+      return beginTime_;
+    }
+
+    public static final int END_TIME_FIELD_NUMBER = 15;
+    private int endTime_;
+    /**
+     * <code>uint32 end_time = 15;</code>
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public int getEndTime() {
+      return endTime_;
+    }
+
     public static final int POINT_FIELD_NUMBER = 1;
     private int point_;
     /**
@@ -337,6 +348,32 @@ public final class BattlePassScheduleOuterClass {
     @java.lang.Override
     public int getPoint() {
       return point_;
+    }
+
+    public static final int CUR_CYCLE_FIELD_NUMBER = 4;
+    private emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle curCycle_;
+    /**
+     * <code>.BattlePassCycle cur_cycle = 4;</code>
+     * @return Whether the curCycle field is set.
+     */
+    @java.lang.Override
+    public boolean hasCurCycle() {
+      return curCycle_ != null;
+    }
+    /**
+     * <code>.BattlePassCycle cur_cycle = 4;</code>
+     * @return The curCycle.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle getCurCycle() {
+      return curCycle_ == null ? emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.getDefaultInstance() : curCycle_;
+    }
+    /**
+     * <code>.BattlePassCycle cur_cycle = 4;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycleOrBuilder getCurCycleOrBuilder() {
+      return getCurCycle();
     }
 
     public static final int UNLOCK_STATUS_FIELD_NUMBER = 7;
@@ -398,63 +435,26 @@ public final class BattlePassScheduleOuterClass {
       return rewardTakenList_.get(index);
     }
 
-    public static final int BEGIN_TIME_FIELD_NUMBER = 2;
-    private int beginTime_;
+    public static final int CUR_CYCLE_POINTS_FIELD_NUMBER = 10;
+    private int curCyclePoints_;
     /**
-     * <code>uint32 begin_time = 2;</code>
-     * @return The beginTime.
+     * <code>uint32 cur_cycle_points = 10;</code>
+     * @return The curCyclePoints.
      */
     @java.lang.Override
-    public int getBeginTime() {
-      return beginTime_;
+    public int getCurCyclePoints() {
+      return curCyclePoints_;
     }
 
-    public static final int END_TIME_FIELD_NUMBER = 15;
-    private int endTime_;
+    public static final int UNK2700_ODHAAHEPFAG_FIELD_NUMBER = 12;
+    private int unk2700ODHAAHEPFAG_;
     /**
-     * <code>uint32 end_time = 15;</code>
-     * @return The endTime.
+     * <code>uint32 Unk2700_ODHAAHEPFAG = 12;</code>
+     * @return The unk2700ODHAAHEPFAG.
      */
     @java.lang.Override
-    public int getEndTime() {
-      return endTime_;
-    }
-
-    public static final int CUR_CYCLE_FIELD_NUMBER = 4;
-    private emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle curCycle_;
-    /**
-     * <code>.BattlePassCycle cur_cycle = 4;</code>
-     * @return Whether the curCycle field is set.
-     */
-    @java.lang.Override
-    public boolean hasCurCycle() {
-      return curCycle_ != null;
-    }
-    /**
-     * <code>.BattlePassCycle cur_cycle = 4;</code>
-     * @return The curCycle.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle getCurCycle() {
-      return curCycle_ == null ? emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.getDefaultInstance() : curCycle_;
-    }
-    /**
-     * <code>.BattlePassCycle cur_cycle = 4;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycleOrBuilder getCurCycleOrBuilder() {
-      return getCurCycle();
-    }
-
-    public static final int IS_EXTRA_PAID_REWARD_TAKEN_FIELD_NUMBER = 6;
-    private boolean isExtraPaidRewardTaken_;
-    /**
-     * <code>bool is_extra_paid_reward_taken = 6;</code>
-     * @return The isExtraPaidRewardTaken.
-     */
-    @java.lang.Override
-    public boolean getIsExtraPaidRewardTaken() {
-      return isExtraPaidRewardTaken_;
+    public int getUnk2700ODHAAHEPFAG() {
+      return unk2700ODHAAHEPFAG_;
     }
 
     public static final int PRODUCT_INFO_FIELD_NUMBER = 13;
@@ -483,6 +483,17 @@ public final class BattlePassScheduleOuterClass {
       return getProductInfo();
     }
 
+    public static final int IS_EXTRA_PAID_REWARD_TAKEN_FIELD_NUMBER = 6;
+    private boolean isExtraPaidRewardTaken_;
+    /**
+     * <code>bool is_extra_paid_reward_taken = 6;</code>
+     * @return The isExtraPaidRewardTaken.
+     */
+    @java.lang.Override
+    public boolean getIsExtraPaidRewardTaken() {
+      return isExtraPaidRewardTaken_;
+    }
+
     public static final int IS_VIEWED_FIELD_NUMBER = 3;
     private boolean isViewed_;
     /**
@@ -494,26 +505,15 @@ public final class BattlePassScheduleOuterClass {
       return isViewed_;
     }
 
-    public static final int CUR_CYCLE_POINTS_FIELD_NUMBER = 10;
-    private int curCyclePoints_;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
+    private int scheduleId_;
     /**
-     * <code>uint32 cur_cycle_points = 10;</code>
-     * @return The curCyclePoints.
+     * <code>uint32 schedule_id = 9;</code>
+     * @return The scheduleId.
      */
     @java.lang.Override
-    public int getCurCyclePoints() {
-      return curCyclePoints_;
-    }
-
-    public static final int JPFMGBEBBBJ_FIELD_NUMBER = 12;
-    private int jPFMGBEBBBJ_;
-    /**
-     * <code>uint32 JPFMGBEBBBJ = 12;</code>
-     * @return The jPFMGBEBBBJ.
-     */
-    @java.lang.Override
-    public int getJPFMGBEBBBJ() {
-      return jPFMGBEBBBJ_;
+    public int getScheduleId() {
+      return scheduleId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -557,8 +557,8 @@ public final class BattlePassScheduleOuterClass {
       for (int i = 0; i < rewardTakenList_.size(); i++) {
         output.writeMessage(11, rewardTakenList_.get(i));
       }
-      if (jPFMGBEBBBJ_ != 0) {
-        output.writeUInt32(12, jPFMGBEBBBJ_);
+      if (unk2700ODHAAHEPFAG_ != 0) {
+        output.writeUInt32(12, unk2700ODHAAHEPFAG_);
       }
       if (productInfo_ != null) {
         output.writeMessage(13, getProductInfo());
@@ -614,9 +614,9 @@ public final class BattlePassScheduleOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, rewardTakenList_.get(i));
       }
-      if (jPFMGBEBBBJ_ != 0) {
+      if (unk2700ODHAAHEPFAG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, jPFMGBEBBBJ_);
+          .computeUInt32Size(12, unk2700ODHAAHEPFAG_);
       }
       if (productInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -645,37 +645,37 @@ public final class BattlePassScheduleOuterClass {
       }
       emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule other = (emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule) obj;
 
-      if (getScheduleId()
-          != other.getScheduleId()) return false;
       if (getLevel()
           != other.getLevel()) return false;
-      if (getPoint()
-          != other.getPoint()) return false;
-      if (unlockStatus_ != other.unlockStatus_) return false;
-      if (!getRewardTakenListList()
-          .equals(other.getRewardTakenListList())) return false;
       if (getBeginTime()
           != other.getBeginTime()) return false;
       if (getEndTime()
           != other.getEndTime()) return false;
+      if (getPoint()
+          != other.getPoint()) return false;
       if (hasCurCycle() != other.hasCurCycle()) return false;
       if (hasCurCycle()) {
         if (!getCurCycle()
             .equals(other.getCurCycle())) return false;
       }
-      if (getIsExtraPaidRewardTaken()
-          != other.getIsExtraPaidRewardTaken()) return false;
+      if (unlockStatus_ != other.unlockStatus_) return false;
+      if (!getRewardTakenListList()
+          .equals(other.getRewardTakenListList())) return false;
+      if (getCurCyclePoints()
+          != other.getCurCyclePoints()) return false;
+      if (getUnk2700ODHAAHEPFAG()
+          != other.getUnk2700ODHAAHEPFAG()) return false;
       if (hasProductInfo() != other.hasProductInfo()) return false;
       if (hasProductInfo()) {
         if (!getProductInfo()
             .equals(other.getProductInfo())) return false;
       }
+      if (getIsExtraPaidRewardTaken()
+          != other.getIsExtraPaidRewardTaken()) return false;
       if (getIsViewed()
           != other.getIsViewed()) return false;
-      if (getCurCyclePoints()
-          != other.getCurCyclePoints()) return false;
-      if (getJPFMGBEBBBJ()
-          != other.getJPFMGBEBBBJ()) return false;
+      if (getScheduleId()
+          != other.getScheduleId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -687,40 +687,40 @@ public final class BattlePassScheduleOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getScheduleId();
       hash = (37 * hash) + LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getLevel();
+      hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getBeginTime();
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime();
       hash = (37 * hash) + POINT_FIELD_NUMBER;
       hash = (53 * hash) + getPoint();
+      if (hasCurCycle()) {
+        hash = (37 * hash) + CUR_CYCLE_FIELD_NUMBER;
+        hash = (53 * hash) + getCurCycle().hashCode();
+      }
       hash = (37 * hash) + UNLOCK_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + unlockStatus_;
       if (getRewardTakenListCount() > 0) {
         hash = (37 * hash) + REWARD_TAKEN_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRewardTakenListList().hashCode();
       }
-      hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getBeginTime();
-      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getEndTime();
-      if (hasCurCycle()) {
-        hash = (37 * hash) + CUR_CYCLE_FIELD_NUMBER;
-        hash = (53 * hash) + getCurCycle().hashCode();
-      }
-      hash = (37 * hash) + IS_EXTRA_PAID_REWARD_TAKEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsExtraPaidRewardTaken());
+      hash = (37 * hash) + CUR_CYCLE_POINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getCurCyclePoints();
+      hash = (37 * hash) + UNK2700_ODHAAHEPFAG_FIELD_NUMBER;
+      hash = (53 * hash) + getUnk2700ODHAAHEPFAG();
       if (hasProductInfo()) {
         hash = (37 * hash) + PRODUCT_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getProductInfo().hashCode();
       }
+      hash = (37 * hash) + IS_EXTRA_PAID_REWARD_TAKEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsExtraPaidRewardTaken());
       hash = (37 * hash) + IS_VIEWED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsViewed());
-      hash = (37 * hash) + CUR_CYCLE_POINTS_FIELD_NUMBER;
-      hash = (53 * hash) + getCurCyclePoints();
-      hash = (37 * hash) + JPFMGBEBBBJ_FIELD_NUMBER;
-      hash = (53 * hash) + getJPFMGBEBBBJ();
+      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getScheduleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -855,12 +855,20 @@ public final class BattlePassScheduleOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        scheduleId_ = 0;
-
         level_ = 0;
+
+        beginTime_ = 0;
+
+        endTime_ = 0;
 
         point_ = 0;
 
+        if (curCycleBuilder_ == null) {
+          curCycle_ = null;
+        } else {
+          curCycle_ = null;
+          curCycleBuilder_ = null;
+        }
         unlockStatus_ = 0;
 
         if (rewardTakenListBuilder_ == null) {
@@ -869,17 +877,9 @@ public final class BattlePassScheduleOuterClass {
         } else {
           rewardTakenListBuilder_.clear();
         }
-        beginTime_ = 0;
+        curCyclePoints_ = 0;
 
-        endTime_ = 0;
-
-        if (curCycleBuilder_ == null) {
-          curCycle_ = null;
-        } else {
-          curCycle_ = null;
-          curCycleBuilder_ = null;
-        }
-        isExtraPaidRewardTaken_ = false;
+        unk2700ODHAAHEPFAG_ = 0;
 
         if (productInfoBuilder_ == null) {
           productInfo_ = null;
@@ -887,11 +887,11 @@ public final class BattlePassScheduleOuterClass {
           productInfo_ = null;
           productInfoBuilder_ = null;
         }
+        isExtraPaidRewardTaken_ = false;
+
         isViewed_ = false;
 
-        curCyclePoints_ = 0;
-
-        jPFMGBEBBBJ_ = 0;
+        scheduleId_ = 0;
 
         return this;
       }
@@ -920,9 +920,15 @@ public final class BattlePassScheduleOuterClass {
       public emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule buildPartial() {
         emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule result = new emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule(this);
         int from_bitField0_ = bitField0_;
-        result.scheduleId_ = scheduleId_;
         result.level_ = level_;
+        result.beginTime_ = beginTime_;
+        result.endTime_ = endTime_;
         result.point_ = point_;
+        if (curCycleBuilder_ == null) {
+          result.curCycle_ = curCycle_;
+        } else {
+          result.curCycle_ = curCycleBuilder_.build();
+        }
         result.unlockStatus_ = unlockStatus_;
         if (rewardTakenListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -933,22 +939,16 @@ public final class BattlePassScheduleOuterClass {
         } else {
           result.rewardTakenList_ = rewardTakenListBuilder_.build();
         }
-        result.beginTime_ = beginTime_;
-        result.endTime_ = endTime_;
-        if (curCycleBuilder_ == null) {
-          result.curCycle_ = curCycle_;
-        } else {
-          result.curCycle_ = curCycleBuilder_.build();
-        }
-        result.isExtraPaidRewardTaken_ = isExtraPaidRewardTaken_;
+        result.curCyclePoints_ = curCyclePoints_;
+        result.unk2700ODHAAHEPFAG_ = unk2700ODHAAHEPFAG_;
         if (productInfoBuilder_ == null) {
           result.productInfo_ = productInfo_;
         } else {
           result.productInfo_ = productInfoBuilder_.build();
         }
+        result.isExtraPaidRewardTaken_ = isExtraPaidRewardTaken_;
         result.isViewed_ = isViewed_;
-        result.curCyclePoints_ = curCyclePoints_;
-        result.jPFMGBEBBBJ_ = jPFMGBEBBBJ_;
+        result.scheduleId_ = scheduleId_;
         onBuilt();
         return result;
       }
@@ -997,14 +997,20 @@ public final class BattlePassScheduleOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule other) {
         if (other == emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule.getDefaultInstance()) return this;
-        if (other.getScheduleId() != 0) {
-          setScheduleId(other.getScheduleId());
-        }
         if (other.getLevel() != 0) {
           setLevel(other.getLevel());
         }
+        if (other.getBeginTime() != 0) {
+          setBeginTime(other.getBeginTime());
+        }
+        if (other.getEndTime() != 0) {
+          setEndTime(other.getEndTime());
+        }
         if (other.getPoint() != 0) {
           setPoint(other.getPoint());
+        }
+        if (other.hasCurCycle()) {
+          mergeCurCycle(other.getCurCycle());
         }
         if (other.unlockStatus_ != 0) {
           setUnlockStatusValue(other.getUnlockStatusValue());
@@ -1035,29 +1041,23 @@ public final class BattlePassScheduleOuterClass {
             }
           }
         }
-        if (other.getBeginTime() != 0) {
-          setBeginTime(other.getBeginTime());
+        if (other.getCurCyclePoints() != 0) {
+          setCurCyclePoints(other.getCurCyclePoints());
         }
-        if (other.getEndTime() != 0) {
-          setEndTime(other.getEndTime());
-        }
-        if (other.hasCurCycle()) {
-          mergeCurCycle(other.getCurCycle());
-        }
-        if (other.getIsExtraPaidRewardTaken() != false) {
-          setIsExtraPaidRewardTaken(other.getIsExtraPaidRewardTaken());
+        if (other.getUnk2700ODHAAHEPFAG() != 0) {
+          setUnk2700ODHAAHEPFAG(other.getUnk2700ODHAAHEPFAG());
         }
         if (other.hasProductInfo()) {
           mergeProductInfo(other.getProductInfo());
         }
+        if (other.getIsExtraPaidRewardTaken() != false) {
+          setIsExtraPaidRewardTaken(other.getIsExtraPaidRewardTaken());
+        }
         if (other.getIsViewed() != false) {
           setIsViewed(other.getIsViewed());
         }
-        if (other.getCurCyclePoints() != 0) {
-          setCurCyclePoints(other.getCurCyclePoints());
-        }
-        if (other.getJPFMGBEBBBJ() != 0) {
-          setJPFMGBEBBBJ(other.getJPFMGBEBBBJ());
+        if (other.getScheduleId() != 0) {
+          setScheduleId(other.getScheduleId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1089,37 +1089,6 @@ public final class BattlePassScheduleOuterClass {
       }
       private int bitField0_;
 
-      private int scheduleId_ ;
-      /**
-       * <code>uint32 schedule_id = 9;</code>
-       * @return The scheduleId.
-       */
-      @java.lang.Override
-      public int getScheduleId() {
-        return scheduleId_;
-      }
-      /**
-       * <code>uint32 schedule_id = 9;</code>
-       * @param value The scheduleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScheduleId(int value) {
-        
-        scheduleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 schedule_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScheduleId() {
-        
-        scheduleId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int level_ ;
       /**
        * <code>uint32 level = 14;</code>
@@ -1147,6 +1116,68 @@ public final class BattlePassScheduleOuterClass {
       public Builder clearLevel() {
         
         level_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int beginTime_ ;
+      /**
+       * <code>uint32 begin_time = 2;</code>
+       * @return The beginTime.
+       */
+      @java.lang.Override
+      public int getBeginTime() {
+        return beginTime_;
+      }
+      /**
+       * <code>uint32 begin_time = 2;</code>
+       * @param value The beginTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBeginTime(int value) {
+        
+        beginTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 begin_time = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBeginTime() {
+        
+        beginTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int endTime_ ;
+      /**
+       * <code>uint32 end_time = 15;</code>
+       * @return The endTime.
+       */
+      @java.lang.Override
+      public int getEndTime() {
+        return endTime_;
+      }
+      /**
+       * <code>uint32 end_time = 15;</code>
+       * @param value The endTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndTime(int value) {
+        
+        endTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 end_time = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndTime() {
+        
+        endTime_ = 0;
         onChanged();
         return this;
       }
@@ -1180,6 +1211,125 @@ public final class BattlePassScheduleOuterClass {
         point_ = 0;
         onChanged();
         return this;
+      }
+
+      private emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle curCycle_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.Builder, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycleOrBuilder> curCycleBuilder_;
+      /**
+       * <code>.BattlePassCycle cur_cycle = 4;</code>
+       * @return Whether the curCycle field is set.
+       */
+      public boolean hasCurCycle() {
+        return curCycleBuilder_ != null || curCycle_ != null;
+      }
+      /**
+       * <code>.BattlePassCycle cur_cycle = 4;</code>
+       * @return The curCycle.
+       */
+      public emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle getCurCycle() {
+        if (curCycleBuilder_ == null) {
+          return curCycle_ == null ? emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.getDefaultInstance() : curCycle_;
+        } else {
+          return curCycleBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.BattlePassCycle cur_cycle = 4;</code>
+       */
+      public Builder setCurCycle(emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle value) {
+        if (curCycleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          curCycle_ = value;
+          onChanged();
+        } else {
+          curCycleBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.BattlePassCycle cur_cycle = 4;</code>
+       */
+      public Builder setCurCycle(
+          emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.Builder builderForValue) {
+        if (curCycleBuilder_ == null) {
+          curCycle_ = builderForValue.build();
+          onChanged();
+        } else {
+          curCycleBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.BattlePassCycle cur_cycle = 4;</code>
+       */
+      public Builder mergeCurCycle(emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle value) {
+        if (curCycleBuilder_ == null) {
+          if (curCycle_ != null) {
+            curCycle_ =
+              emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.newBuilder(curCycle_).mergeFrom(value).buildPartial();
+          } else {
+            curCycle_ = value;
+          }
+          onChanged();
+        } else {
+          curCycleBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.BattlePassCycle cur_cycle = 4;</code>
+       */
+      public Builder clearCurCycle() {
+        if (curCycleBuilder_ == null) {
+          curCycle_ = null;
+          onChanged();
+        } else {
+          curCycle_ = null;
+          curCycleBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.BattlePassCycle cur_cycle = 4;</code>
+       */
+      public emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.Builder getCurCycleBuilder() {
+        
+        onChanged();
+        return getCurCycleFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.BattlePassCycle cur_cycle = 4;</code>
+       */
+      public emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycleOrBuilder getCurCycleOrBuilder() {
+        if (curCycleBuilder_ != null) {
+          return curCycleBuilder_.getMessageOrBuilder();
+        } else {
+          return curCycle_ == null ?
+              emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.getDefaultInstance() : curCycle_;
+        }
+      }
+      /**
+       * <code>.BattlePassCycle cur_cycle = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.Builder, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycleOrBuilder> 
+          getCurCycleFieldBuilder() {
+        if (curCycleBuilder_ == null) {
+          curCycleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.Builder, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycleOrBuilder>(
+                  getCurCycle(),
+                  getParentForChildren(),
+                  isClean());
+          curCycle_ = null;
+        }
+        return curCycleBuilder_;
       }
 
       private int unlockStatus_ = 0;
@@ -1476,214 +1626,64 @@ public final class BattlePassScheduleOuterClass {
         return rewardTakenListBuilder_;
       }
 
-      private int beginTime_ ;
+      private int curCyclePoints_ ;
       /**
-       * <code>uint32 begin_time = 2;</code>
-       * @return The beginTime.
+       * <code>uint32 cur_cycle_points = 10;</code>
+       * @return The curCyclePoints.
        */
       @java.lang.Override
-      public int getBeginTime() {
-        return beginTime_;
+      public int getCurCyclePoints() {
+        return curCyclePoints_;
       }
       /**
-       * <code>uint32 begin_time = 2;</code>
-       * @param value The beginTime to set.
+       * <code>uint32 cur_cycle_points = 10;</code>
+       * @param value The curCyclePoints to set.
        * @return This builder for chaining.
        */
-      public Builder setBeginTime(int value) {
+      public Builder setCurCyclePoints(int value) {
         
-        beginTime_ = value;
+        curCyclePoints_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 begin_time = 2;</code>
+       * <code>uint32 cur_cycle_points = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBeginTime() {
+      public Builder clearCurCyclePoints() {
         
-        beginTime_ = 0;
+        curCyclePoints_ = 0;
         onChanged();
         return this;
       }
 
-      private int endTime_ ;
+      private int unk2700ODHAAHEPFAG_ ;
       /**
-       * <code>uint32 end_time = 15;</code>
-       * @return The endTime.
+       * <code>uint32 Unk2700_ODHAAHEPFAG = 12;</code>
+       * @return The unk2700ODHAAHEPFAG.
        */
       @java.lang.Override
-      public int getEndTime() {
-        return endTime_;
+      public int getUnk2700ODHAAHEPFAG() {
+        return unk2700ODHAAHEPFAG_;
       }
       /**
-       * <code>uint32 end_time = 15;</code>
-       * @param value The endTime to set.
+       * <code>uint32 Unk2700_ODHAAHEPFAG = 12;</code>
+       * @param value The unk2700ODHAAHEPFAG to set.
        * @return This builder for chaining.
        */
-      public Builder setEndTime(int value) {
+      public Builder setUnk2700ODHAAHEPFAG(int value) {
         
-        endTime_ = value;
+        unk2700ODHAAHEPFAG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 end_time = 15;</code>
+       * <code>uint32 Unk2700_ODHAAHEPFAG = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEndTime() {
+      public Builder clearUnk2700ODHAAHEPFAG() {
         
-        endTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle curCycle_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.Builder, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycleOrBuilder> curCycleBuilder_;
-      /**
-       * <code>.BattlePassCycle cur_cycle = 4;</code>
-       * @return Whether the curCycle field is set.
-       */
-      public boolean hasCurCycle() {
-        return curCycleBuilder_ != null || curCycle_ != null;
-      }
-      /**
-       * <code>.BattlePassCycle cur_cycle = 4;</code>
-       * @return The curCycle.
-       */
-      public emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle getCurCycle() {
-        if (curCycleBuilder_ == null) {
-          return curCycle_ == null ? emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.getDefaultInstance() : curCycle_;
-        } else {
-          return curCycleBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.BattlePassCycle cur_cycle = 4;</code>
-       */
-      public Builder setCurCycle(emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle value) {
-        if (curCycleBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          curCycle_ = value;
-          onChanged();
-        } else {
-          curCycleBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BattlePassCycle cur_cycle = 4;</code>
-       */
-      public Builder setCurCycle(
-          emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.Builder builderForValue) {
-        if (curCycleBuilder_ == null) {
-          curCycle_ = builderForValue.build();
-          onChanged();
-        } else {
-          curCycleBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BattlePassCycle cur_cycle = 4;</code>
-       */
-      public Builder mergeCurCycle(emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle value) {
-        if (curCycleBuilder_ == null) {
-          if (curCycle_ != null) {
-            curCycle_ =
-              emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.newBuilder(curCycle_).mergeFrom(value).buildPartial();
-          } else {
-            curCycle_ = value;
-          }
-          onChanged();
-        } else {
-          curCycleBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BattlePassCycle cur_cycle = 4;</code>
-       */
-      public Builder clearCurCycle() {
-        if (curCycleBuilder_ == null) {
-          curCycle_ = null;
-          onChanged();
-        } else {
-          curCycle_ = null;
-          curCycleBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.BattlePassCycle cur_cycle = 4;</code>
-       */
-      public emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.Builder getCurCycleBuilder() {
-        
-        onChanged();
-        return getCurCycleFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.BattlePassCycle cur_cycle = 4;</code>
-       */
-      public emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycleOrBuilder getCurCycleOrBuilder() {
-        if (curCycleBuilder_ != null) {
-          return curCycleBuilder_.getMessageOrBuilder();
-        } else {
-          return curCycle_ == null ?
-              emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.getDefaultInstance() : curCycle_;
-        }
-      }
-      /**
-       * <code>.BattlePassCycle cur_cycle = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.Builder, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycleOrBuilder> 
-          getCurCycleFieldBuilder() {
-        if (curCycleBuilder_ == null) {
-          curCycleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.Builder, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycleOrBuilder>(
-                  getCurCycle(),
-                  getParentForChildren(),
-                  isClean());
-          curCycle_ = null;
-        }
-        return curCycleBuilder_;
-      }
-
-      private boolean isExtraPaidRewardTaken_ ;
-      /**
-       * <code>bool is_extra_paid_reward_taken = 6;</code>
-       * @return The isExtraPaidRewardTaken.
-       */
-      @java.lang.Override
-      public boolean getIsExtraPaidRewardTaken() {
-        return isExtraPaidRewardTaken_;
-      }
-      /**
-       * <code>bool is_extra_paid_reward_taken = 6;</code>
-       * @param value The isExtraPaidRewardTaken to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsExtraPaidRewardTaken(boolean value) {
-        
-        isExtraPaidRewardTaken_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_extra_paid_reward_taken = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsExtraPaidRewardTaken() {
-        
-        isExtraPaidRewardTaken_ = false;
+        unk2700ODHAAHEPFAG_ = 0;
         onChanged();
         return this;
       }
@@ -1807,6 +1807,37 @@ public final class BattlePassScheduleOuterClass {
         return productInfoBuilder_;
       }
 
+      private boolean isExtraPaidRewardTaken_ ;
+      /**
+       * <code>bool is_extra_paid_reward_taken = 6;</code>
+       * @return The isExtraPaidRewardTaken.
+       */
+      @java.lang.Override
+      public boolean getIsExtraPaidRewardTaken() {
+        return isExtraPaidRewardTaken_;
+      }
+      /**
+       * <code>bool is_extra_paid_reward_taken = 6;</code>
+       * @param value The isExtraPaidRewardTaken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsExtraPaidRewardTaken(boolean value) {
+        
+        isExtraPaidRewardTaken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_extra_paid_reward_taken = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsExtraPaidRewardTaken() {
+        
+        isExtraPaidRewardTaken_ = false;
+        onChanged();
+        return this;
+      }
+
       private boolean isViewed_ ;
       /**
        * <code>bool is_viewed = 3;</code>
@@ -1838,64 +1869,33 @@ public final class BattlePassScheduleOuterClass {
         return this;
       }
 
-      private int curCyclePoints_ ;
+      private int scheduleId_ ;
       /**
-       * <code>uint32 cur_cycle_points = 10;</code>
-       * @return The curCyclePoints.
+       * <code>uint32 schedule_id = 9;</code>
+       * @return The scheduleId.
        */
       @java.lang.Override
-      public int getCurCyclePoints() {
-        return curCyclePoints_;
+      public int getScheduleId() {
+        return scheduleId_;
       }
       /**
-       * <code>uint32 cur_cycle_points = 10;</code>
-       * @param value The curCyclePoints to set.
+       * <code>uint32 schedule_id = 9;</code>
+       * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
-      public Builder setCurCyclePoints(int value) {
+      public Builder setScheduleId(int value) {
         
-        curCyclePoints_ = value;
+        scheduleId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 cur_cycle_points = 10;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCurCyclePoints() {
+      public Builder clearScheduleId() {
         
-        curCyclePoints_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int jPFMGBEBBBJ_ ;
-      /**
-       * <code>uint32 JPFMGBEBBBJ = 12;</code>
-       * @return The jPFMGBEBBBJ.
-       */
-      @java.lang.Override
-      public int getJPFMGBEBBBJ() {
-        return jPFMGBEBBBJ_;
-      }
-      /**
-       * <code>uint32 JPFMGBEBBBJ = 12;</code>
-       * @param value The jPFMGBEBBBJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJPFMGBEBBBJ(int value) {
-        
-        jPFMGBEBBBJ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 JPFMGBEBBBJ = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJPFMGBEBBBJ() {
-        
-        jPFMGBEBBBJ_ = 0;
+        scheduleId_ = 0;
         onChanged();
         return this;
       }
@@ -1966,39 +1966,40 @@ public final class BattlePassScheduleOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030BattlePassSchedule.proto\032\034BattlePassUn" +
-      "lockStatus.proto\032\025BattlePassCycle.proto\032" +
-      "\027BattlePassProduct.proto\032\031BattlePassRewa" +
-      "rdTag.proto\"\203\003\n\022BattlePassSchedule\022\023\n\013sc" +
-      "hedule_id\030\t \001(\r\022\r\n\005level\030\016 \001(\r\022\r\n\005point\030" +
-      "\001 \001(\r\022.\n\runlock_status\030\007 \001(\0162\027.BattlePas" +
-      "sUnlockStatus\022/\n\021reward_taken_list\030\013 \003(\013" +
-      "2\024.BattlePassRewardTag\022\022\n\nbegin_time\030\002 \001" +
-      "(\r\022\020\n\010end_time\030\017 \001(\r\022#\n\tcur_cycle\030\004 \001(\0132" +
-      "\020.BattlePassCycle\022\"\n\032is_extra_paid_rewar" +
-      "d_taken\030\006 \001(\010\022(\n\014product_info\030\r \001(\0132\022.Ba" +
-      "ttlePassProduct\022\021\n\tis_viewed\030\003 \001(\010\022\030\n\020cu" +
-      "r_cycle_points\030\n \001(\r\022\023\n\013JPFMGBEBBBJ\030\014 \001(" +
-      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\030BattlePassSchedule.proto\032\025BattlePassCy" +
+      "cle.proto\032\027BattlePassProduct.proto\032\031Batt" +
+      "lePassRewardTag.proto\032\034BattlePassUnlockS" +
+      "tatus.proto\"\213\003\n\022BattlePassSchedule\022\r\n\005le" +
+      "vel\030\016 \001(\r\022\022\n\nbegin_time\030\002 \001(\r\022\020\n\010end_tim" +
+      "e\030\017 \001(\r\022\r\n\005point\030\001 \001(\r\022#\n\tcur_cycle\030\004 \001(" +
+      "\0132\020.BattlePassCycle\022.\n\runlock_status\030\007 \001" +
+      "(\0162\027.BattlePassUnlockStatus\022/\n\021reward_ta" +
+      "ken_list\030\013 \003(\0132\024.BattlePassRewardTag\022\030\n\020" +
+      "cur_cycle_points\030\n \001(\r\022\033\n\023Unk2700_ODHAAH" +
+      "EPFAG\030\014 \001(\r\022(\n\014product_info\030\r \001(\0132\022.Batt" +
+      "lePassProduct\022\"\n\032is_extra_paid_reward_ta" +
+      "ken\030\006 \001(\010\022\021\n\tis_viewed\030\003 \001(\010\022\023\n\013schedule" +
+      "_id\030\t \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.BattlePassCycleOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.BattlePassProductOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.getDescriptor(),
         });
     internal_static_BattlePassSchedule_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_BattlePassSchedule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BattlePassSchedule_descriptor,
-        new java.lang.String[] { "ScheduleId", "Level", "Point", "UnlockStatus", "RewardTakenList", "BeginTime", "EndTime", "CurCycle", "IsExtraPaidRewardTaken", "ProductInfo", "IsViewed", "CurCyclePoints", "JPFMGBEBBBJ", });
-    emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.getDescriptor();
+        new java.lang.String[] { "Level", "BeginTime", "EndTime", "Point", "CurCycle", "UnlockStatus", "RewardTakenList", "CurCyclePoints", "Unk2700ODHAAHEPFAG", "ProductInfo", "IsExtraPaidRewardTaken", "IsViewed", "ScheduleId", });
     emu.grasscutter.net.proto.BattlePassCycleOuterClass.getDescriptor();
     emu.grasscutter.net.proto.BattlePassProductOuterClass.getDescriptor();
     emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

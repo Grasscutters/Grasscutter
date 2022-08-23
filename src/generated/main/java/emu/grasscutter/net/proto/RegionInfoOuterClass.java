@@ -157,24 +157,24 @@ public final class RegionInfoOuterClass {
     int getClientSilenceDataVersion();
 
     /**
-     * <code>string client_data_md_5 = 19;</code>
+     * <code>string client_data_md5 = 19;</code>
      * @return The clientDataMd5.
      */
     java.lang.String getClientDataMd5();
     /**
-     * <code>string client_data_md_5 = 19;</code>
+     * <code>string client_data_md5 = 19;</code>
      * @return The bytes for clientDataMd5.
      */
     com.google.protobuf.ByteString
         getClientDataMd5Bytes();
 
     /**
-     * <code>string client_silence_data_md_5 = 20;</code>
+     * <code>string client_silence_data_md5 = 20;</code>
      * @return The clientSilenceDataMd5.
      */
     java.lang.String getClientSilenceDataMd5();
     /**
-     * <code>string client_silence_data_md_5 = 20;</code>
+     * <code>string client_silence_data_md5 = 20;</code>
      * @return The bytes for clientSilenceDataMd5.
      */
     com.google.protobuf.ByteString
@@ -1019,10 +1019,10 @@ public final class RegionInfoOuterClass {
       return clientSilenceDataVersion_;
     }
 
-    public static final int CLIENT_DATA_MD_5_FIELD_NUMBER = 19;
+    public static final int CLIENT_DATA_MD5_FIELD_NUMBER = 19;
     private volatile java.lang.Object clientDataMd5_;
     /**
-     * <code>string client_data_md_5 = 19;</code>
+     * <code>string client_data_md5 = 19;</code>
      * @return The clientDataMd5.
      */
     @java.lang.Override
@@ -1039,7 +1039,7 @@ public final class RegionInfoOuterClass {
       }
     }
     /**
-     * <code>string client_data_md_5 = 19;</code>
+     * <code>string client_data_md5 = 19;</code>
      * @return The bytes for clientDataMd5.
      */
     @java.lang.Override
@@ -1057,10 +1057,10 @@ public final class RegionInfoOuterClass {
       }
     }
 
-    public static final int CLIENT_SILENCE_DATA_MD_5_FIELD_NUMBER = 20;
+    public static final int CLIENT_SILENCE_DATA_MD5_FIELD_NUMBER = 20;
     private volatile java.lang.Object clientSilenceDataMd5_;
     /**
-     * <code>string client_silence_data_md_5 = 20;</code>
+     * <code>string client_silence_data_md5 = 20;</code>
      * @return The clientSilenceDataMd5.
      */
     @java.lang.Override
@@ -1077,7 +1077,7 @@ public final class RegionInfoOuterClass {
       }
     }
     /**
-     * <code>string client_silence_data_md_5 = 20;</code>
+     * <code>string client_silence_data_md5 = 20;</code>
      * @return The bytes for clientSilenceDataMd5.
      */
     @java.lang.Override
@@ -1823,9 +1823,9 @@ public final class RegionInfoOuterClass {
       hash = (53 * hash) + getHandbookUrl().hashCode();
       hash = (37 * hash) + CLIENT_SILENCE_DATA_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getClientSilenceDataVersion();
-      hash = (37 * hash) + CLIENT_DATA_MD_5_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_DATA_MD5_FIELD_NUMBER;
       hash = (53 * hash) + getClientDataMd5().hashCode();
-      hash = (37 * hash) + CLIENT_SILENCE_DATA_MD_5_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_SILENCE_DATA_MD5_FIELD_NUMBER;
       hash = (53 * hash) + getClientSilenceDataMd5().hashCode();
       if (hasResVersionConfig()) {
         hash = (37 * hash) + RES_VERSION_CONFIG_FIELD_NUMBER;
@@ -3154,7 +3154,7 @@ public final class RegionInfoOuterClass {
 
       private java.lang.Object clientDataMd5_ = "";
       /**
-       * <code>string client_data_md_5 = 19;</code>
+       * <code>string client_data_md5 = 19;</code>
        * @return The clientDataMd5.
        */
       public java.lang.String getClientDataMd5() {
@@ -3170,7 +3170,7 @@ public final class RegionInfoOuterClass {
         }
       }
       /**
-       * <code>string client_data_md_5 = 19;</code>
+       * <code>string client_data_md5 = 19;</code>
        * @return The bytes for clientDataMd5.
        */
       public com.google.protobuf.ByteString
@@ -3187,7 +3187,7 @@ public final class RegionInfoOuterClass {
         }
       }
       /**
-       * <code>string client_data_md_5 = 19;</code>
+       * <code>string client_data_md5 = 19;</code>
        * @param value The clientDataMd5 to set.
        * @return This builder for chaining.
        */
@@ -3202,7 +3202,7 @@ public final class RegionInfoOuterClass {
         return this;
       }
       /**
-       * <code>string client_data_md_5 = 19;</code>
+       * <code>string client_data_md5 = 19;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientDataMd5() {
@@ -3212,7 +3212,7 @@ public final class RegionInfoOuterClass {
         return this;
       }
       /**
-       * <code>string client_data_md_5 = 19;</code>
+       * <code>string client_data_md5 = 19;</code>
        * @param value The bytes for clientDataMd5 to set.
        * @return This builder for chaining.
        */
@@ -3230,7 +3230,7 @@ public final class RegionInfoOuterClass {
 
       private java.lang.Object clientSilenceDataMd5_ = "";
       /**
-       * <code>string client_silence_data_md_5 = 20;</code>
+       * <code>string client_silence_data_md5 = 20;</code>
        * @return The clientSilenceDataMd5.
        */
       public java.lang.String getClientSilenceDataMd5() {
@@ -3246,7 +3246,7 @@ public final class RegionInfoOuterClass {
         }
       }
       /**
-       * <code>string client_silence_data_md_5 = 20;</code>
+       * <code>string client_silence_data_md5 = 20;</code>
        * @return The bytes for clientSilenceDataMd5.
        */
       public com.google.protobuf.ByteString
@@ -3263,7 +3263,7 @@ public final class RegionInfoOuterClass {
         }
       }
       /**
-       * <code>string client_silence_data_md_5 = 20;</code>
+       * <code>string client_silence_data_md5 = 20;</code>
        * @param value The clientSilenceDataMd5 to set.
        * @return This builder for chaining.
        */
@@ -3278,7 +3278,7 @@ public final class RegionInfoOuterClass {
         return this;
       }
       /**
-       * <code>string client_silence_data_md_5 = 20;</code>
+       * <code>string client_silence_data_md5 = 20;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientSilenceDataMd5() {
@@ -3288,7 +3288,7 @@ public final class RegionInfoOuterClass {
         return this;
       }
       /**
-       * <code>string client_silence_data_md_5 = 20;</code>
+       * <code>string client_silence_data_md5 = 20;</code>
        * @param value The bytes for clientSilenceDataMd5 to set.
        * @return This builder for chaining.
        */
@@ -4358,7 +4358,7 @@ public final class RegionInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020RegionInfo.proto\032\026ResVersionConfig.pro" +
-      "to\"\237\006\n\nRegionInfo\022\025\n\rgateserver_ip\030\001 \001(\t" +
+      "to\"\235\006\n\nRegionInfo\022\025\n\rgateserver_ip\030\001 \001(\t" +
       "\022\027\n\017gateserver_port\030\002 \001(\r\022\030\n\020pay_callbac" +
       "k_url\030\003 \001(\t\022\021\n\tarea_type\030\007 \001(\t\022\024\n\014resour" +
       "ce_url\030\010 \001(\t\022\020\n\010data_url\030\t \001(\t\022\024\n\014feedba" +
@@ -4366,20 +4366,19 @@ public final class RegionInfoOuterClass {
       "source_url_bak\030\014 \001(\t\022\024\n\014data_url_bak\030\r \001" +
       "(\t\022\033\n\023client_data_version\030\016 \001(\r\022\024\n\014handb" +
       "ook_url\030\020 \001(\t\022#\n\033client_silence_data_ver" +
-      "sion\030\022 \001(\r\022\030\n\020client_data_md_5\030\023 \001(\t\022 \n\030" +
-      "client_silence_data_md_5\030\024 \001(\t\022-\n\022res_ve" +
-      "rsion_config\030\026 \001(\0132\021.ResVersionConfig\022\022\n" +
-      "\nsecret_key\030\027 \001(\014\022\036\n\026official_community_" +
-      "url\030\030 \001(\t\022\035\n\025client_version_suffix\030\032 \001(\t" +
-      "\022%\n\035client_silence_version_suffix\030\033 \001(\t\022" +
-      "\"\n\032use_gateserver_domain_name\030\034 \001(\010\022\036\n\026g" +
-      "ateserver_domain_name\030\035 \001(\t\022\027\n\017user_cent" +
-      "er_url\030\036 \001(\t\022\030\n\020account_bind_url\030\037 \001(\t\022\021" +
-      "\n\tcdkey_url\030  \001(\t\022\032\n\022privacy_policy_url\030" +
-      "! \001(\t\022\031\n\021next_resource_url\030\" \001(\t\0222\n\027next" +
-      "_res_version_config\030# \001(\0132\021.ResVersionCo" +
-      "nfigB\033\n\031emu.grasscutter.net.protob\006proto" +
-      "3"
+      "sion\030\022 \001(\r\022\027\n\017client_data_md5\030\023 \001(\t\022\037\n\027c" +
+      "lient_silence_data_md5\030\024 \001(\t\022-\n\022res_vers" +
+      "ion_config\030\026 \001(\0132\021.ResVersionConfig\022\022\n\ns" +
+      "ecret_key\030\027 \001(\014\022\036\n\026official_community_ur" +
+      "l\030\030 \001(\t\022\035\n\025client_version_suffix\030\032 \001(\t\022%" +
+      "\n\035client_silence_version_suffix\030\033 \001(\t\022\"\n" +
+      "\032use_gateserver_domain_name\030\034 \001(\010\022\036\n\026gat" +
+      "eserver_domain_name\030\035 \001(\t\022\027\n\017user_center" +
+      "_url\030\036 \001(\t\022\030\n\020account_bind_url\030\037 \001(\t\022\021\n\t" +
+      "cdkey_url\030  \001(\t\022\032\n\022privacy_policy_url\030! " +
+      "\001(\t\022\031\n\021next_resource_url\030\" \001(\t\0222\n\027next_r" +
+      "es_version_config\030# \001(\0132\021.ResVersionConf" +
+      "igB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

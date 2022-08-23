@@ -93,7 +93,8 @@ public final class LifeStateChangeNotifyOuterClass {
    * <pre>
    * CmdId: 1298
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code LifeStateChangeNotify}
@@ -586,7 +587,8 @@ public final class LifeStateChangeNotifyOuterClass {
      * <pre>
      * CmdId: 1298
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code LifeStateChangeNotify}

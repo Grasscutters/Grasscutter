@@ -46,7 +46,8 @@ public final class FinishedParentQuestUpdateNotifyOuterClass {
    * <pre>
    * CmdId: 407
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code FinishedParentQuestUpdateNotify}
@@ -340,7 +341,8 @@ public final class FinishedParentQuestUpdateNotifyOuterClass {
      * <pre>
      * CmdId: 407
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code FinishedParentQuestUpdateNotify}

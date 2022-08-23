@@ -46,7 +46,7 @@ public final class WidgetReportReqOuterClass {
    * <pre>
    * CmdId: 4291
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -385,7 +385,7 @@ public final class WidgetReportReqOuterClass {
      * <pre>
      * CmdId: 4291
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

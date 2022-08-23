@@ -28,7 +28,7 @@ public final class AvatarPromoteReqOuterClass {
    * <pre>
    * CmdId: 1664
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -284,7 +284,7 @@ public final class AvatarPromoteReqOuterClass {
      * <pre>
      * CmdId: 1664
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

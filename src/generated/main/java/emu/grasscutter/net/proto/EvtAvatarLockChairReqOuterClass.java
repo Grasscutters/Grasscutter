@@ -43,7 +43,7 @@ public final class EvtAvatarLockChairReqOuterClass {
    * <pre>
    * CmdId: 318
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -354,7 +354,7 @@ public final class EvtAvatarLockChairReqOuterClass {
      * <pre>
      * CmdId: 318
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

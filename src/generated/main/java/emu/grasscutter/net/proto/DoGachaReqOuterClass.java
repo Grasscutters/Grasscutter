@@ -58,7 +58,7 @@ public final class DoGachaReqOuterClass {
    * <pre>
    * CmdId: 1512
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -449,7 +449,7 @@ public final class DoGachaReqOuterClass {
      * <pre>
      * CmdId: 1512
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

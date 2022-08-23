@@ -75,7 +75,8 @@ public final class CodexDataFullNotifyOuterClass {
    * <pre>
    * CmdId: 4205
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code CodexDataFullNotify}
@@ -504,7 +505,8 @@ public final class CodexDataFullNotifyOuterClass {
      * <pre>
      * CmdId: 4205
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code CodexDataFullNotify}

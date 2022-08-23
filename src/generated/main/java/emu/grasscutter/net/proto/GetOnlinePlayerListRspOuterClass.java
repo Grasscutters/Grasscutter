@@ -58,7 +58,8 @@ public final class GetOnlinePlayerListRspOuterClass {
    * <pre>
    * CmdId: 73
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code GetOnlinePlayerListRsp}
@@ -406,7 +407,8 @@ public final class GetOnlinePlayerListRspOuterClass {
      * <pre>
      * CmdId: 73
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code GetOnlinePlayerListRsp}

@@ -45,7 +45,8 @@ public final class CodexDataUpdateNotifyOuterClass {
    * <pre>
    * CmdId: 4207
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code CodexDataUpdateNotify}
@@ -362,7 +363,8 @@ public final class CodexDataUpdateNotifyOuterClass {
      * <pre>
      * CmdId: 4207
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code CodexDataUpdateNotify}

@@ -40,7 +40,8 @@ public final class ChangeAvatarRspOuterClass {
    * <pre>
    * CmdId: 1607
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ChangeAvatarRsp}
@@ -349,7 +350,8 @@ public final class ChangeAvatarRspOuterClass {
      * <pre>
      * CmdId: 1607
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ChangeAvatarRsp}

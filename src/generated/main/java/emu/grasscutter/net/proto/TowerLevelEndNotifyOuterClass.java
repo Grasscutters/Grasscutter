@@ -81,7 +81,8 @@ public final class TowerLevelEndNotifyOuterClass {
    * <pre>
    * CmdId: 2495
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code TowerLevelEndNotify}
@@ -655,7 +656,8 @@ public final class TowerLevelEndNotifyOuterClass {
      * <pre>
      * CmdId: 2495
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code TowerLevelEndNotify}

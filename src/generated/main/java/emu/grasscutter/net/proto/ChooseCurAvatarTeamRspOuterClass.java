@@ -34,7 +34,8 @@ public final class ChooseCurAvatarTeamRspOuterClass {
    * <pre>
    * CmdId: 1661
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ChooseCurAvatarTeamRsp}
@@ -315,7 +316,8 @@ public final class ChooseCurAvatarTeamRspOuterClass {
      * <pre>
      * CmdId: 1661
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ChooseCurAvatarTeamRsp}

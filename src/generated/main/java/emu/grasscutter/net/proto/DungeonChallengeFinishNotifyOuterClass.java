@@ -165,7 +165,8 @@ public final class DungeonChallengeFinishNotifyOuterClass {
    * <pre>
    * CmdId: 939
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code DungeonChallengeFinishNotify}
@@ -1015,7 +1016,8 @@ public final class DungeonChallengeFinishNotifyOuterClass {
      * <pre>
      * CmdId: 939
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code DungeonChallengeFinishNotify}

@@ -80,7 +80,8 @@ public final class SceneAreaWeatherNotifyOuterClass {
    * <pre>
    * CmdId: 230
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code SceneAreaWeatherNotify}
@@ -546,7 +547,8 @@ public final class SceneAreaWeatherNotifyOuterClass {
      * <pre>
      * CmdId: 230
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code SceneAreaWeatherNotify}

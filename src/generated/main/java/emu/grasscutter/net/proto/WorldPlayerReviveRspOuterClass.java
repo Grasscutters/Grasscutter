@@ -28,7 +28,8 @@ public final class WorldPlayerReviveRspOuterClass {
    * <pre>
    * CmdId: 278
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code WorldPlayerReviveRsp}
@@ -282,7 +283,8 @@ public final class WorldPlayerReviveRspOuterClass {
      * <pre>
      * CmdId: 278
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code WorldPlayerReviveRsp}

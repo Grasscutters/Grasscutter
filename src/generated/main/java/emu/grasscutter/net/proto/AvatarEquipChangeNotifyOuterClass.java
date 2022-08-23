@@ -76,7 +76,7 @@ public final class AvatarEquipChangeNotifyOuterClass {
    * <pre>
    * CmdId: 647
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
    * IsAllowClient: true
    * </pre>
    *
@@ -524,7 +524,7 @@ public final class AvatarEquipChangeNotifyOuterClass {
      * <pre>
      * CmdId: 647
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
      * IsAllowClient: true
      * </pre>
      *

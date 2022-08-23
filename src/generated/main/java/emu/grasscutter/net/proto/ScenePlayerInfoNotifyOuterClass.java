@@ -46,7 +46,8 @@ public final class ScenePlayerInfoNotifyOuterClass {
    * <pre>
    * CmdId: 267
    * EnetChannelId: 0
-   * EnetIsReliable: true
+   * EnetIsReliable: false
+   * IsAllowClient: true
    * </pre>
    *
    * Protobuf type {@code ScenePlayerInfoNotify}
@@ -340,7 +341,8 @@ public final class ScenePlayerInfoNotifyOuterClass {
      * <pre>
      * CmdId: 267
      * EnetChannelId: 0
-     * EnetIsReliable: true
+     * EnetIsReliable: false
+     * IsAllowClient: true
      * </pre>
      *
      * Protobuf type {@code ScenePlayerInfoNotify}
