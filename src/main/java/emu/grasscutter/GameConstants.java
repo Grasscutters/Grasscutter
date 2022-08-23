@@ -6,7 +6,7 @@ import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 
 public final class GameConstants {
-    public static String VERSION = "2.8.0";
+    public static String VERSION = "3.0.0";
 
     public static final int MAX_TEAMS = 4;
     public static final int MAIN_CHARACTER_MALE = 10000005;
