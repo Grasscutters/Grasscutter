@@ -1,10 +1,11 @@
+
 package emu.grasscutter.net.packet;
 
 public class PacketOpcodes {
-  // Empty
-    public static final int  NONE = 0;
+    // Empty
+    public static final int NONE = 0;
 
-  // Opcodes
+    // Opcodes
     public static final int AbilityChangeNotify = 1131;
     public static final int AbilityInvocationFailNotify = 1107;
     public static final int AbilityInvocationFixedNotify = 1172;
@@ -1774,6 +1775,76 @@ public class PacketOpcodes {
     public static final int Unk2800_OFIHDGFMDGB = 171;
     public static final int Unk2800_OMGNOBICOCD = 843;
     public static final int Unk2800_OOKIPFHPJMG = 21054;
+    public static final int Unk3000_ACNMEFGKHKO = 4622;
+    public static final int Unk3000_AFMFIPPDAJE = 4576;
+    public static final int Unk3000_AGDEGMCKIAF = 20702;
+    public static final int Unk3000_BMLKKNEINNF = 1481;
+    public static final int Unk3000_CMKEPEDFOKE = 22391;
+    public static final int Unk3000_CNDHIGKNELM = 6173;
+    public static final int Unk3000_CPCMICDDBCH = 20011;
+    public static final int Unk3000_DCAHJINNNDM = 23107;
+    public static final int Unk3000_DCLAGIJJEHB = 402;
+    public static final int Unk3000_DFIIBIGPHGE = 1731;
+    public static final int Unk3000_DHEOMDCCMMC = 429;
+    public static final int Unk3000_DHOFMKPKFMF = 1749;
+    public static final int Unk3000_DJNBNBMIECP = 5588;
+    public static final int Unk3000_DLCDJPKNGBD = 185;
+    public static final int Unk3000_DPEJONKFONL = 21750;
+    public static final int Unk3000_EBNMMLENEII = 24857;
+    public static final int Unk3000_EDGJEBLODLF = 416;
+    public static final int Unk3000_EHJALCDEBKK = 23381;
+    public static final int Unk3000_EMGMOECAJDK = 6092;
+    public static final int Unk3000_EOLNDBMGCBP = 4473;
+    public static final int Unk3000_EPHGPACBEHL = 1497;
+    public static final int Unk3000_FAPNAHAEPBF = 21880;
+    public static final int Unk3000_FIPHHGCJIMO = 23678;
+    public static final int Unk3000_FPDBJJJLKEP = 6103;
+    public static final int Unk3000_GCBMILHPIKA = 4659;
+    public static final int Unk3000_GDMEIKLAMIB = 3295;
+    public static final int Unk3000_GMLAHHCDKOI = 841;
+    public static final int Unk3000_GNLFOLGMEPN = 21208;
+    public static final int Unk3000_HBIPKOBMGGD = 5995;
+    public static final int Unk3000_HIJKNFBBCFC = 23948;
+    public static final int Unk3000_HPFGNOIGNAG = 21961;
+    public static final int Unk3000_IBMFJMGHCNC = 6060;
+    public static final int Unk3000_IBNIGBFIEEF = 1735;
+    public static final int Unk3000_IGCECHKNKOO = 21804;
+    public static final int Unk3000_IMLAPBGLBFF = 1687;
+    public static final int Unk3000_IPAKLDNKDAO = 6275;
+    public static final int Unk3000_JDCOHPBDPED = 125;
+    public static final int Unk3000_JIEPEGAHDNH = 24152;
+    public static final int Unk3000_JIMGCFDPFCK = 20754;
+    public static final int Unk3000_KEJGDDMMBLP = 6376;
+    public static final int Unk3000_KGDKKLOOIPG = 457;
+    public static final int Unk3000_KHFMBKILMMD = 24081;
+    public static final int Unk3000_KIDDGDPKBEN = 1729;
+    public static final int Unk3000_KJNIKBPKAED = 461;
+    public static final int Unk3000_KKHPGFINACH = 24602;
+    public static final int Unk3000_KOKEHAPLNHF = 6190;
+    public static final int Unk3000_LAIAGAPKPLB = 3113;
+    public static final int Unk3000_LHEMAMBKEKI = 6107;
+    public static final int Unk3000_LJIMEHHNHJA = 3152;
+    public static final int Unk3000_LLBCFCDMCID = 24312;
+    public static final int Unk3000_MEFJDDHIAOK = 6135;
+    public static final int Unk3000_MFCAIADEPGJ = 6198;
+    public static final int Unk3000_MFHOOFLHNPH = 419;
+    public static final int Unk3000_MOIPPIJMIJC = 3323;
+    public static final int Unk3000_NBGBGODDBMP = 6121;
+    public static final int Unk3000_NHPPMHHJPMJ = 20005;
+    public static final int Unk3000_NJNPNJDFEOL = 6112;
+    public static final int Unk3000_NMEJCJFJPHM = 24923;
+    public static final int Unk3000_NMENEAHJGKE = 6172;
+    public static final int Unk3000_NNPCGEAHNHM = 6268;
+    public static final int Unk3000_NOMEJNJKGGL = 3345;
+    public static final int Unk3000_NPPMPMGBBLM = 6368;
+    public static final int Unk3000_ODGMCFAFADH = 5907;
+    public static final int Unk3000_PCGBDJJOIHH = 3475;
+    public static final int Unk3000_PDNJDOBPEKA = 22882;
+    public static final int Unk3000_PHCPMFMFOMO = 23864;
+    public static final int Unk3000_PILFPILPMFO = 3336;
+    public static final int Unk3000_PJLAPMPPIAG = 20681;
+    public static final int Unk3000_PNIEIHDLIDN = 2207;
+    public static final int Unk3000_PPDLLPNMJMK = 500;
     public static final int UnlockAvatarTalentReq = 1072;
     public static final int UnlockAvatarTalentRsp = 1098;
     public static final int UnlockCoopChapterReq = 1970;
@@ -1853,5 +1924,4 @@ public class PacketOpcodes {
     public static final int WorldRoutineChangeNotify = 3507;
     public static final int WorldRoutineTypeCloseNotify = 3502;
     public static final int WorldRoutineTypeRefreshNotify = 3525;
-
 }
