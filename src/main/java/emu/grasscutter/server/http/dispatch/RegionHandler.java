@@ -140,7 +140,7 @@ public final class RegionHandler implements Router {
                 regionData = region.getBase64();
         }
 
-        if ( versionName.contains("2.7.5") || versionName.contains("2.8.")) {
+        if ( versionName.contains("2.7.5") || versionName.contains("2.8.") || versionName.contains("3.0.0")) {
             try {
                 QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData); event.call();
 
