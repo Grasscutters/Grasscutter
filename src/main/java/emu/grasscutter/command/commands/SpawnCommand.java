@@ -93,6 +93,7 @@ public final class SpawnCommand implements CommandHandler {
                 entity = new EntityItem(scene, null, itemData, pos, 1, true);
             }
             if (gadgetData != null) {
+                pos.addY(-3);
                 entity = new EntityVehicle(scene, targetPlayer.getSession().getPlayer(), gadgetData.getId(), 0, pos, targetPlayer.getRotation());  // TODO: does targetPlayer.getSession().getPlayer() have some meaning?
                 int gadgetId = gadgetData.getId();
                 switch (gadgetId) {
