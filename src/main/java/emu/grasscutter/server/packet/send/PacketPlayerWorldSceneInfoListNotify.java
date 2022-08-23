@@ -6,6 +6,9 @@ import emu.grasscutter.net.proto.PlayerWorldSceneInfoListNotifyOuterClass.Player
 import emu.grasscutter.net.proto.PlayerWorldSceneInfoOuterClass;
 import emu.grasscutter.net.proto.SceneUnlockInfoOuterClass.SceneUnlockInfo;
 
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 import static emu.grasscutter.net.proto.PlayerWorldSceneInfoOuterClass.*;
 
 public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
@@ -27,6 +30,11 @@ public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
                                 .addSceneTagIdList(102)
                                 .addSceneTagIdList(113)
                                 .addSceneTagIdList(117)
+                                .addSceneTagIdList(1093) // Vanarana (real)
+                                //.addSceneTagIdList(1094) // Vanarana (dream))
+                                //.addSceneTagIdList(1095) // Vanarana (first))
+                                //.addSceneTagIdList(1096) // Vanarana (festival))
+                                //.addAllSceneTagIdList(IntStream.range(1000, 2000).boxed().collect(Collectors.toList()))
                                 .build()
                 )
                 .addInfoList(
