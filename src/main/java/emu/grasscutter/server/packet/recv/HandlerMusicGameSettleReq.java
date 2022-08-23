@@ -26,7 +26,13 @@ public class HandlerMusicGameSettleReq extends PacketHandler {
         var handler = (MusicGameActivityHandler) playerData.get().getActivityHandler();
         boolean isNewRecord = false;
         // check if custom beatmap
-        if(req.getMusicShareId() == 0){
+
+        // TODO: PROTO IS OBFUSCATED, NEED TO GET PROPER VALUES.
+        // Discovered: 23/08/2022.
+        // Probably was an issue in 2.8 but was discovered in 3.0 port.
+        // - Benj
+
+        /*if(req.getMusicShareId() == 0){
             session.getPlayer().getActivityManager().triggerWatcher(
                 WatcherTriggerType.TRIGGER_FLEUR_FAIR_MUSIC_GAME_REACH_SCORE,
                 String.valueOf(req.getMusicBasicId()),
@@ -52,7 +58,7 @@ public class HandlerMusicGameSettleReq extends PacketHandler {
         }
 
 
-		session.send(new PacketMusicGameSettleRsp(req.getMusicBasicId(), req.getMusicShareId(), isNewRecord));
+		session.send(new PacketMusicGameSettleRsp(req.getMusicBasicId(), req.getMusicShareId(), isNewRecord));*/
 	}
 
 }
