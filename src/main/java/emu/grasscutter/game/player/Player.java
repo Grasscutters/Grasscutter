@@ -126,6 +126,7 @@ public class Player {
     @Getter @Setter private Map<Integer, Set<Integer>> unlockedSceneAreas;
     @Getter @Setter private Map<Integer, Set<Integer>> unlockedScenePoints;
 
+    @Getter @Setter private int heroType;
     @Transient private long nextGuid = 0;
     @Transient @Getter @Setter private int peerId;
     @Transient private World world;  // Synchronized getter and setter
@@ -192,6 +193,7 @@ public class Player {
     @Deprecated
     @SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
     public Player() {
+        this.heroType = 0;
         this.inventory = new Inventory(this);
         this.avatars = new AvatarStorage(this);
         this.friendsList = new FriendsList(this);
