@@ -28,6 +28,7 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.security.Signature;
+import java.util.regex.Pattern;
 
 import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.QueryRegionListHttpRsp;
@@ -140,9 +141,10 @@ public final class RegionHandler implements Router {
                 regionData = region.getBase64();
         }
 
-        int versionMajor = Integer.parseInt(versionName.split(".")[0]);
-        int versionMinor = Integer.parseInt(versionName.split(".")[1]);
-        int versionFix   = Integer.parseInt(versionName.split(".")[2]);
+        String[] versionCode = versionName.replaceAll(Pattern.compile("[a-zA-Z]").pattern(), "").split("\\.");
+        int versionMajor = Integer.parseInt(versionCode[0]);
+        int versionMinor = Integer.parseInt(versionCode[1]);
+        int versionFix   = Integer.parseInt(versionCode[2]);
 
         if (versionMajor >= 3 || (versionMajor == 2 && versionMinor == 7 && versionFix >= 50) || (versionMajor == 2 && versionMinor == 8)) {
             try {
