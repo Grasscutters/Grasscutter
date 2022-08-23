@@ -3,15 +3,19 @@ on:
   workflow_dispatch: ~
   push:
     paths:
-      - "**.java"
+      - ".github/workflows/**"
+      - "src/main/**.java"
       - "**.json"
+      - "manage_languages.py"
     branches:
       - "stable"
       - "development"
   pull_request:
     paths:
-      - "**.java"
+      - ".github/workflows/**"
+      - "src/main/**.java"
       - "**.json"
+      - "manage_languages.py"
     types:
       - opened
       - synchronize

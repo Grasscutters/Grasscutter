@@ -3,8 +3,12 @@ on:
   workflow_dispatch: ~
   push:
     paths:
-      - "**.java"
+      - ".github/workflows/**"
+      - "src/main/**.java"
       - "**.json"
+      - "build.gradle"
+      - "format_whitespace.py"
+      - "manage_languages.py"
     branches:
       - "development"
 jobs:
