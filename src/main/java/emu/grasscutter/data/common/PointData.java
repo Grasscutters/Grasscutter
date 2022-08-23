@@ -56,25 +56,25 @@ public class PointData {
 	}
 
 	public void updateDailyDungeon() {
-		if (getDungeonRandomList() == null) {
-			return;
+        if (getDungeonRandomList() == null || getDungeonRandomList().length == 0) {
+            return;
 		}
-		
+
 		IntList newDungeons = new IntArrayList();
 		int day = Grasscutter.getCurrentDayOfWeek();
-		
+
 		for (int randomId : getDungeonRandomList()) {
 			DailyDungeonData data = GameData.getDailyDungeonDataMap().get(randomId);
-			
+
 			if (data != null) {
 				int[] addDungeons = data.getDungeonsByDay(day);
-				
+
 				for (int d : addDungeons) {
 					newDungeons.add(d);
 				}
 			}
 		}
-		
+
 		this.dungeonIds = newDungeons.toIntArray();
 	}
 }
