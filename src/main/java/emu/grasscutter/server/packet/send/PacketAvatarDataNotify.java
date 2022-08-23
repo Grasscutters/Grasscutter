@@ -2,6 +2,7 @@ package emu.grasscutter.server.packet.send;
 
 import java.util.Map.Entry;
 
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamInfo;
@@ -12,14 +13,15 @@ import emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam;
 
 public class PacketAvatarDataNotify extends BasePacket {
 
+
     public PacketAvatarDataNotify(Player player) {
         super(PacketOpcodes.AvatarDataNotify, true);
-
+        if (player.getHeroType() == 0) player.setHeroType(GameConstants.MAIN_CHARACTER_FEMALE);
         AvatarDataNotify.Builder proto = AvatarDataNotify.newBuilder()
-                .setCurAvatarTeamId(player.getTeamManager().getCurrentTeamId())
-                //.setChooseAvatarGuid(player.getTeamManager().getCurrentCharacterGuid())
-                .addAllOwnedFlycloakList(player.getFlyCloakList())
-                .addAllOwnedCostumeList(player.getCostumeList());
+            .setCurAvatarTeamId(player.getTeamManager().getCurrentTeamId())
+            .setChooseAvatarGuid(player.getAvatars().getAvatarById(player.getHeroType()).getGuid())
+            .addAllOwnedFlycloakList(player.getFlyCloakList())
+            .addAllOwnedCostumeList(player.getCostumeList());
 
         for (Avatar avatar : player.getAvatars()) {
             proto.addAvatarList(avatar.toProto());
