@@ -18,7 +18,6 @@ import java.util.List;
 public class ShopSystem extends BaseGameSystem {
     private final Int2ObjectMap<List<ShopInfo>> shopData;
     private final List<ShopChestTable> shopChestData;
-    private final List<ShopChestBatchUseTable> shopChestBatchUseData;
 
     private static final int REFRESH_HOUR = 4; // In GMT+8 server
     private static final String TIME_ZONE = "Asia/Shanghai"; // GMT+8 Timezone
@@ -27,7 +26,6 @@ public class ShopSystem extends BaseGameSystem {
         super(server);
         this.shopData = new Int2ObjectOpenHashMap<>();
         this.shopChestData = new ArrayList<>();
-        this.shopChestBatchUseData = new ArrayList<>();
         this.load();
     }
 
@@ -37,10 +35,6 @@ public class ShopSystem extends BaseGameSystem {
 
     public List<ShopChestTable> getShopChestData() {
         return shopChestData;
-    }
-
-    public List<ShopChestBatchUseTable> getShopChestBatchUseData() {
-        return shopChestBatchUseData;
     }
 
     public static int getShopNextRefreshTime(ShopInfo shopInfo) {
@@ -96,25 +90,9 @@ public class ShopSystem extends BaseGameSystem {
         }
     }
 
-    private void loadShopChestBatchUse() {
-        getShopChestBatchUseData().clear();
-        try {
-            List<ShopChestBatchUseTable> shopChestBatchUseTableList = DataLoader.loadList("ShopChestBatchUse.json", ShopChestBatchUseTable.class);
-            if (shopChestBatchUseTableList.size() > 0) {
-                getShopChestBatchUseData().addAll(shopChestBatchUseTableList);
-                Grasscutter.getLogger().debug("ShopChestBatchUse data successfully loaded.");
-            } else {
-                Grasscutter.getLogger().error("Unable to load ShopChestBatchUse data. ShopChestBatchUse data size is 0.");
-            }
-        } catch (Exception e) {
-            Grasscutter.getLogger().error("Unable to load ShopChestBatchUse data.", e);
-        }
-    }
-
     public synchronized void load() {
         loadShop();
         loadShopChest();
-        loadShopChestBatchUse();
     }
 
     public GameServer getServer() {
