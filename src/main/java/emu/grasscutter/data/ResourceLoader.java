@@ -413,13 +413,18 @@ public class ResourceLoader {
         }
 
         try {
-            List<QuestEncryptionKey> keys = DataLoader.loadList("QuestEncryptionKeys.json", QuestEncryptionKey.class);
-
+            List<QuestEncryptionKey> keys;
             Int2ObjectMap<QuestEncryptionKey> questEncryptionMap = GameData.getMainQuestEncryptionMap();
-            keys.forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
+            String path = "QuestEncryptionKeys.json";
+            if (Utils.fileExists(RESOURCE(path))) {
+                keys = JsonUtils.loadToList(RESOURCE(path), QuestEncryptionKey.class);
+                keys.forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
+            }
+            if (Utils.fileExists(DATA(path))) {
+                keys = DataLoader.loadList(path, QuestEncryptionKey.class);
+                keys.forEach(key -> questEncryptionMap.put(key.getMainQuestId(), key));
+            }
             Grasscutter.getLogger().debug("Loaded {} quest keys.", questEncryptionMap.size());
-        } catch (FileNotFoundException | NullPointerException ignored) {
-            Grasscutter.getLogger().warn("Unable to load quest keys - ./resources/QuestEncryptionKeys.json not found.");
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load quest keys.", e);
         }

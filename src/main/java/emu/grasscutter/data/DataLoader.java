@@ -112,7 +112,7 @@ public class DataLoader {
 
         if (!Utils.fileExists(filePath)) {
             // Check if file is in subdirectory
-            if (name.indexOf("/") != -1) {
+            if (name.contains("/")) {
                 String[] path = name.split("/");
 
                 String folder = "";
