@@ -94,6 +94,7 @@ cd Grasscutter
 chmod +x gradlew
 ./gradlew jar # Compile
 ```
+
 You can find the output jar in the root of the project folder.
 
 ### Commands have moved to the [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands)!
