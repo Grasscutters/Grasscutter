@@ -20,8 +20,6 @@ import emu.grasscutter.net.proto.BlossomBriefInfoOuterClass;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.packet.send.PacketBlossomBriefInfoNotify;
 import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 
@@ -127,7 +125,8 @@ public class BlossomManager {
     public void notifyIcon() {
         final int wl = getWorldLevel();
         final int worldLevel = (wl < 0) ? 0 : ((wl > 8) ? 8 : wl);
-        final int monsterLevel = GameData.getWorldLevelDataMap().get(worldLevel).getMonsterLevel();
+        final var worldLevelData = GameData.getWorldLevelDataMap().get(worldLevel);
+        final int monsterLevel = (worldLevelData != null) ? worldLevelData.getMonsterLevel() : 1;
         List<BlossomBriefInfoOuterClass.BlossomBriefInfo> blossoms = new ArrayList<>();
         GameDepot.getSpawnLists().forEach((gridBlockId, spawnDataEntryList) -> {
             int sceneId = gridBlockId.getSceneId();
