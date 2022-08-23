@@ -346,7 +346,7 @@ public class GameMainQuest {
     public void save() {
         DatabaseHelper.saveQuest(this);
     }
-    
+
     public void delete() {
         DatabaseHelper.deleteQuest(this);
     }
@@ -355,7 +355,6 @@ public class GameMainQuest {
         ParentQuest.Builder proto = ParentQuest.newBuilder()
                 .setParentQuestId(getParentQuestId())
                 .setIsFinished(isFinished());
-
 
             proto.setParentQuestState(getState().getValue())
                 .setCutsceneEncryptionKey(QuestManager.getQuestKey(parentQuestId));
