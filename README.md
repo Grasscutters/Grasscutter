@@ -24,7 +24,7 @@ EN | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.m
 
 ### Requirements
 
-* [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+* [Java SE - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 
   **Note:** If you just want to **run it**, then **jre** only is fine.
 
