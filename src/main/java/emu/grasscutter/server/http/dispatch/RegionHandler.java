@@ -144,7 +144,7 @@ public final class RegionHandler implements Router {
         int versionMinor = Integer.parseInt(versionName.split(".")[1]);
         int versionFix   = Integer.parseInt(versionName.split(".")[2]);
 
-        if (versionMajor >= 3 || (versionMajor == 2 && versionMinor == 7 && versionFix == 50) || (versionMajor == 2 && versionMinor == 8)) {
+        if (versionMajor >= 3 || (versionMajor == 2 && versionMinor == 7 && versionFix >= 50) || (versionMajor == 2 && versionMinor == 8)) {
             try {
                 QueryCurrentRegionEvent event = new QueryCurrentRegionEvent(regionData); event.call();
 
