@@ -5,7 +5,7 @@
 
 [EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [HE](README_HE.md) | RU | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md)
 
-**Внимание:** Мы всегда рады новому вкладу в проекте. Однако, перед тем, как сделать свой вклад, пожалуйста, прочтите наш [кодекс делового поведения](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
+**Внимание:** Мы всегда рады новому вкладу в проект. Однако, перед тем, как сделать свой вклад, пожалуйста, прочтите наш [кодекс делового поведения](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
 ## Реализованные функции
 
@@ -14,15 +14,15 @@
 * Список друзей
 * Телепортация
 * Гача-система
-* Кооп работает *частично*
+* Кооп *работает частично*
 * Спавн монстров через консоль
 * Функции инвентаря (получение предметов/персонажей, улучшение предметов/персонажей, и т.п.)
 
 ## Краткое руководство по установке
 
-**Заметка:** Для получения поддержки, присоединитесь к нашему серверу [Discord](https://discord.gg/T5vZU6UyeG).
+**Заметка:** Если вам требуется помощь, присоединитесь к нашему серверу [Discord](https://discord.gg/T5vZU6UyeG) (На Английском).
 
-### Требуется
+### Зависимости
 
 * Java SE - 17 ([link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
 
@@ -30,44 +30,44 @@
 
 * [MongoDB](https://www.mongodb.com/try/download/community) (рекомендуются версии 4.0+)
 
-* Прокси-демон: mitmproxy (mitmdump, рекомендуется), Fiddler Classic и т.п.
+* Прокси: mitmdump (рекомендуется), mitmproxy, Fiddler Classic и т.п.
 
 ### Запуск
 
-**Заметка:** При обновлении с более старой версии, удалите файл `config.json` для того, чтобы заново его сгенерировать.
+**Заметка:** Для обновления с более старой версии, удалите файл `config.json`, чтобы сгенерировать его заново.
 
-1. Получите файл `grasscutter.jar` одним из следующих образов:
+1. Получите файл `grasscutter.jar` одним из следующих способов:
    - Скачайте напрямую со вкладки [Actions](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297)
    - [Соберите самостоятельно](#Сборка)
 2. Создайте папку `resources` в той же директории, что и grasscutter.jar, и переместите туда свои папки `BinOutput` и `ExcelBinOutput` *(Посетите [вики](https://github.com/Grasscutters/Grasscutter/wiki) для получения более подробной информации о том, где их найти.)*
-3. Запустите Grasscutter с помощью команды `java -jar grasscutter.jar`. **Убедитесь, что в этот момент запущена служба mongodb.**
+3. Запустите Grasscutter с помощью команды `java -jar grasscutter.jar`. **Убедитесь, что в этот момент запущен сервер mongodb.**
 
-### Подключение с помощью клиента
+### Соединение с клиентом
 
 ½. Создайте аккаунт, введя [соответствующую команду в консоли сервера](https://github.com/Grasscutters/Grasscutter/wiki/Commands#targeting).
 
-1. Перенаправьте трафик: (выберите один из методов)
+1. Перенаправьте трафик: (воспользуйтесь одиним из способов)
     - mitmdump: `mitmdump -s proxy.py -k`
 
       Доверьтесь сертификату CA:
 
-      ​	**Заметка:**Обычно, сертификат CA хранится в папке `%USERPROFILE%\ .mitmproxy`. Также, вы можете скачать его с `http://mitm.it`
+      ​	**Заметка:** Обычно, сертификат CA хранится в папке `%USERPROFILE%\ .mitmproxy`. Также, вы можете скачать его с `http://mitm.it`
 
-      ​	Два раза нажмите для [установки](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate), либо ...
+      ​	Дважды нажмите для [установки](https://docs.microsoft.com/ru-ru/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate), или же ...
 
-      - Через командную строку
+      - С помощью командной строки
 
         ```shell
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
         ```
 
-    - Fiddler Classic: Запустите Fiddler Classic, включите настройку `Decrypt https traffic` в опциях и измените порт по умолчанию (Tools -> Options -> Connections) на что-то не равное `8888`, после чего запустите [этот скрипт](https://github.lunatic.moe/fiddlerscript).
+    - Fiddler Classic: Запустите Fiddler Classic, включите настройку `Decrypt https traffic` в опциях и измените порт по умолчанию (Меню -> Tools -> Options -> Connections) на что-то не равное `8888`, после чего запустите [этот скрипт](https://github.lunatic.moe/fiddlerscript) во вкладке FiddlerSrcipt.
 
     - [Файл hosts](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
 
 2. Установите прокси сети в `127.0.0.1:8080`, либо в тот порт прокси, который вы задали.
 
-**Также, вы можете использовать `start.cmd` для автоматического запуска прокси-демонов и серверов, но для этого необходимо задать переменную среды JAVA_HOME**
+**Также, вы можете использовать `start.cmd` для автоматического запуска прокси и серверов, но для этого необходимо задать переменную среды JAVA_HOME**
 
 ### Сборка
 
@@ -102,7 +102,7 @@ chmod +x gradlew
 
 # Краткое руководство по решению проблем
 
-* Если не компилируется, то проверьте инсталляцию своего JDK (JDK 17 и валидированная переменная JDK bin PATH)
-* Клиент не подключается, не входит, выдаёт ошибку 4206 и т.д. - Скорее всего, проблема в том, *как именно* вы настроили прокси-демонов. При использовании
+* Если скомпилировать не удается, то проверьте установку своего JDK (JDK 17 и валидность переменных JDK, bin, PATH)
+* Клиент не подключается, не входит, выдаёт ошибку 4206 и т.д. - Скорее всего, проблема в том, *как именно* вы настроили прокси. При использовании
   Fiddler убедитесь, что он запущен на любом порте, кроме 8888
-* Порядок запуска: MongoDB > Grasscutter > Прокси-демон (mitmdump, fiddler и т.д.) > Игра
+* Порядок запуска: MongoDB > Grasscutter > Прокси (mitmdump, fiddler и т.д.) > Игра
