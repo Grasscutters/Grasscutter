@@ -101,7 +101,7 @@ public class BlossomActivity {
                 for (int i = 0; i < willSpawn; i++) {
                     MonsterData monsterData = GameData.getMonsterDataMap().get(candidateMonsters.poll());
                     int level = scene.getEntityLevel(1, worldLevelOverride);
-                    EntityMonster entity = new EntityMonster(scene, monsterData, pos.nearby2d(40), level);
+                    EntityMonster entity = new EntityMonster(scene, monsterData, pos.nearby2d(4f), level);
                     scene.addEntity(entity);
                     newMonsters.add(entity);
                 }

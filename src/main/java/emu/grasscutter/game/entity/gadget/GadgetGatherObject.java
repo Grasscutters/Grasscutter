@@ -68,10 +68,7 @@ public class GadgetGatherObject extends GadgetContent {
             		scene,
             		player,
                     GameData.getItemDataMap().get(itemId),
-                    getGadget().getPosition().clone()
-                        .addY(2f)
-                        .addX(Utils.randomFloatRange(-1f, 1f))
-                        .addZ(Utils.randomFloatRange(-1f, 1f)),
+                    getGadget().getPosition().nearby2d(1f).addY(2f),
                     1,
                     true);
             

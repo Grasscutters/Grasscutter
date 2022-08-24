@@ -6,19 +6,21 @@ import com.google.gson.annotations.SerializedName;
 import com.github.davidmoten.rtreemulti.geometry.Point;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 public class Position implements Serializable {
     private static final long serialVersionUID = -2001232313615923575L;
 
     @SerializedName(value="x", alternate={"_x", "X"})
-    private float x;
+    @Getter @Setter private float x;
 
     @SerializedName(value="y", alternate={"_y", "Y"})
-    private float y;
+    @Getter @Setter private float y;
 
     @SerializedName(value="z", alternate={"_z", "Z"})
-    private float z;
+    @Getter @Setter private float z;
 
     public Position() {
 
@@ -49,30 +51,6 @@ public class Position implements Serializable {
 
     public Position(Position pos) {
         this.set(pos);
-    }
-
-    public float getX() {
-        return x;
-    }
-
-    public void setX(float x) {
-        this.x = x;
-    }
-
-    public float getZ() {
-        return z;
-    }
-
-    public void setZ(float z) {
-        this.z = z;
-    }
-
-    public float getY() {
-        return y;
-    }
-
-    public void setY(float y) {
-        this.y = y;
     }
 
     public Position set(float x, float y) {
@@ -150,10 +128,10 @@ public class Position implements Serializable {
         return Math.sqrt(detX*detX+detY*detY+detZ*detZ);
     }
 
-    public Position nearby2d(int range) {
+    public Position nearby2d(float range) {
         Position position = clone();
-        position.z += (float)Utils.randomRange(-range,range)/10;
-        position.x += (float)Utils.randomRange(-range,range)/10;
+        position.z += Utils.randomFloatRange(-range, range);
+        position.x += Utils.randomFloatRange(-range, range);
         return position;
     }
     public Position translateWithDegrees(float dist, float angle) {
