@@ -1,8 +1,5 @@
 package emu.grasscutter.game.entity;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
@@ -20,34 +17,33 @@ import emu.grasscutter.server.event.entity.EntityDeathEvent;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
-import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.objects.Object2FloatMap;
+import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
+import lombok.Getter;
+import lombok.Setter;
 
 public abstract class GameEntity {
-    protected int id;
-    private final Scene scene;
-    private SpawnDataEntry spawnEntry;
+    @Getter protected int id;
+    @Getter private final Scene scene;
+    @Getter @Setter private SpawnDataEntry spawnEntry;
 
-    private int blockId;
-    private int configId;
-    private int groupId;
+    @Getter @Setter private int blockId;
+    @Getter @Setter private int configId;
+    @Getter @Setter private int groupId;
 
     private MotionState moveState;
-    private int lastMoveSceneTimeMs;
-    private int lastMoveReliableSeq;
+    @Getter @Setter private int lastMoveSceneTimeMs;
+    @Getter @Setter private int lastMoveReliableSeq;
 
     // Abilities
-    private Map<String, Float> metaOverrideMap;
+    private Object2FloatMap<String> metaOverrideMap;
     private Int2ObjectMap<String> metaModifiers;
 
     public GameEntity(Scene scene) {
         this.scene = scene;
         this.moveState = MotionState.MOTION_STATE_NONE;
-    }
-
-    public int getId() {
-        return this.id;
     }
 
     public int getEntityType() {
@@ -58,10 +54,6 @@ public abstract class GameEntity {
         return this.getScene().getWorld();
     }
 
-    public Scene getScene() {
-        return this.scene;
-    }
-
     public boolean isAlive() {
         return true;
     }
@@ -70,9 +62,9 @@ public abstract class GameEntity {
         return this.isAlive() ? LifeState.LIFE_ALIVE : LifeState.LIFE_DEAD;
     }
 
-    public Map<String, Float> getMetaOverrideMap() {
+    public Object2FloatMap<String> getMetaOverrideMap() {
         if (this.metaOverrideMap == null) {
-            this.metaOverrideMap = new HashMap<>();
+            this.metaOverrideMap = new Object2FloatOpenHashMap<>();
         }
         return this.metaOverrideMap;
     }
@@ -84,7 +76,7 @@ public abstract class GameEntity {
         return this.metaModifiers;
     }
 
-    public abstract Int2FloatOpenHashMap getFightProperties();
+    public abstract Int2FloatMap getFightProperties();
 
     public abstract Position getPosition();
 
@@ -98,27 +90,11 @@ public abstract class GameEntity {
         this.moveState = moveState;
     }
 
-    public int getLastMoveSceneTimeMs() {
-        return lastMoveSceneTimeMs;
-    }
-
-    public void setLastMoveSceneTimeMs(int lastMoveSceneTimeMs) {
-        this.lastMoveSceneTimeMs = lastMoveSceneTimeMs;
-    }
-
-    public int getLastMoveReliableSeq() {
-        return lastMoveReliableSeq;
-    }
-
-    public void setLastMoveReliableSeq(int lastMoveReliableSeq) {
-        this.lastMoveReliableSeq = lastMoveReliableSeq;
-    }
-
     public void setFightProperty(FightProperty prop, float value) {
         this.getFightProperties().put(prop.getId(), value);
     }
 
-    private void setFightProperty(int id, float value) {
+    public void setFightProperty(int id, float value) {
         this.getFightProperties().put(id, value);
     }
 
@@ -140,30 +116,6 @@ public abstract class GameEntity {
         }
     }
 
-    public int getBlockId() {
-        return blockId;
-    }
-
-    public void setBlockId(int blockId) {
-        this.blockId = blockId;
-    }
-
-    public int getConfigId() {
-        return configId;
-    }
-
-    public void setConfigId(int configId) {
-        this.configId = configId;
-    }
-
-    public int getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(int groupId) {
-        this.groupId = groupId;
-    }
-
     protected MotionInfo getMotionInfo() {
         MotionInfo proto = MotionInfo.newBuilder()
                 .setPos(this.getPosition().toProto())
@@ -173,14 +125,6 @@ public abstract class GameEntity {
                 .build();
 
         return proto;
-    }
-
-    public SpawnDataEntry getSpawnEntry() {
-        return spawnEntry;
-    }
-
-    public void setSpawnEntry(SpawnDataEntry spawnEntry) {
-        this.spawnEntry = spawnEntry;
     }
 
     public float heal(float amount) {

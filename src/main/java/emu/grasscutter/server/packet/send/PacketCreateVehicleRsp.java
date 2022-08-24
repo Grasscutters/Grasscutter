@@ -2,7 +2,6 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.entity.EntityVehicle;
-import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.entity.GameEntity;
 
 import emu.grasscutter.net.packet.BasePacket;
@@ -40,22 +39,6 @@ public class PacketCreateVehicleRsp extends BasePacket {
 		});
 
 		EntityVehicle vehicle = new EntityVehicle(player.getScene(), player, vehicleId, pointId, pos, rot);
-
-		switch (vehicleId) {
-			// TODO: Not hardcode this. Waverider (skiff)
-			case 45001001,45001002 -> {
-				vehicle.addFightProperty(FightProperty.FIGHT_PROP_BASE_HP, 10000);
-				vehicle.addFightProperty(FightProperty.FIGHT_PROP_BASE_ATTACK, 100);
-				vehicle.addFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK, 100);
-				vehicle.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 10000);
-				vehicle.addFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE, 0);
-				vehicle.addFightProperty(FightProperty.FIGHT_PROP_CUR_SPEED, 0);
-				vehicle.addFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, 0);
-				vehicle.addFightProperty(FightProperty.FIGHT_PROP_MAX_HP, 10000);
-			}
-			default -> {}
-		}
-
 		player.getScene().addEntity(vehicle);
 
 		proto.setVehicleId(vehicleId);
