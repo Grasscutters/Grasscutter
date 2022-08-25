@@ -83,7 +83,7 @@ public final class CommandMap {
         return new LinkedList<>(this.annotations.values());
     }
 
-    public HashMap<String, Command> getAnnotations() {
+    public Map<String, Command> getAnnotations() {
         return new LinkedHashMap<>(this.annotations);
     }
 
@@ -96,8 +96,8 @@ public final class CommandMap {
         return new LinkedList<>(this.commands.values());
     }
 
-    public HashMap<String, CommandHandler> getHandlers() {
-        return new LinkedHashMap<>(this.commands);
+    public Map<String, CommandHandler> getHandlers() {
+        return this.commands;
     }
 
     /**
