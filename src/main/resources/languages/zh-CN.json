@@ -1,6 +1,7 @@
 {
   "messages": {
     "game": {
+      "address_bind": "🇺🇸Game Server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "游戏服务器已在端口 %s 上启动。",
       "connect": "客户端 %s 已连接。",
       "disconnect": "客户端 %s 已断开连接。",
@@ -8,6 +9,7 @@
       "command_error": "命令发生错误："
     },
     "dispatch": {
+      "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] 服务器已在端口 %s 上启动",
       "request": "[Dispatch] 客户端 %s 请求：%s %s",
       "keystore": {
