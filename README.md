@@ -24,22 +24,21 @@ EN | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.m
 
 ### Requirements
 
-* Java SE - 17 ([link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
+* [Java SE - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 
   **Note:** If you just want to **run it**, then **jre** only is fine.
 
 * [MongoDB](https://www.mongodb.com/try/download/community) (recommended 4.0+)
 
-* Proxy daemon: mitmproxy (mitmdump, recommended), Fiddler Classic, etc.
+* Proxy Daemon: [mitmproxy](https://mitmproxy.org/) (mitmdump, recommended), [Fiddler Classic](https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe), etc.
 
 ### Running
 
 **Note:** If you updated from an older version, delete `config.json` to regenerate it.
 
 1. Get `grasscutter.jar`
-   - Download from [actions](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297)
-   - [Build by yourself](#Building)
-2. Create a `resources` folder in the directory where grasscutter.jar is located and move your `BinOutput` and `ExcelBinOutput` folders there *(Check the [wiki](https://github.com/Grasscutters/Grasscutter/wiki) for more details how to get those.)*
+   - Download from [actions](https://github.com/Grasscutters/Grasscutter/actions) or [build by yourself](https://github.com/Grasscutters/Grasscutter#building)
+2. Create a `resources` folder in the directory where grasscutter.jar is located and move your `BinOutput, ExcelBinOutput, Readables, Scripts, Subtitle, TextMap` folders there *(Check the [wiki](https://github.com/Grasscutters/Grasscutter/wiki) for more details how to get those.)*
 3. Run Grasscutter with `java -jar grasscutter.jar`. **Make sure mongodb service is running as well.**
 
 ### Connecting with the client
@@ -51,7 +50,7 @@ EN | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.m
 
       Trust CA certificate:
 
-      ​	**Note:** The CA certificate is usually stored in `%USERPROFILE%\ .mitmproxy`, or you can download it from `http://mitm.it`
+      ​	**Note:** The CA certificate is usually stored in `%USERPROFILE%\.mitmproxy`, or you can download it from `http://mitm.it`
 
       ​	Double click for [install](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) or ...
 
@@ -61,13 +60,13 @@ EN | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.m
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
         ```
 
-    - Fiddler Classic: Run Fiddler Classic, turn on `Decrypt https traffic` in setting and change the default port there (Tools -> Options -> Connections) to anything other than `8888`, and load [this script](https://github.lunatic.moe/fiddlerscript).
+    - Fiddler Classic: Run Fiddler Classic, turn on `Decrypt https traffic` in setting and change the default port there (Tools -> Options -> Connections) to anything other than `8888`, and load [this script](https://github.com/Grasscutters/Grasscutter/wiki/Resources#fiddler-classic-jscript).
 
-    - [Hosts file](https://github.com/Melledy/Grasscutter/wiki/Running#traffic-route-map)
+    - [Hosts file](https://github.com/Grasscutters/Grasscutter/wiki/Resources#hosts-file)
 
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
 
-**you can also use `start.cmd` to start servers and proxy daemons automatically, but you have to set up JAVA_HOME enviroment**
+**You can also use `start.cmd` to start servers and proxy daemons automatically, but you have to set up JAVA_HOME enviroment and `start_config.cmd`.**
 
 ### Building
 

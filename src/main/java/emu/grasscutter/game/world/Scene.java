@@ -695,14 +695,14 @@ public class Scene {
             return;
         }
         if (itemData.isEquip()) {
-            float range = (3f + (.1f * amount));
+            float range = (1.5f + (.05f * amount));
             for (int i = 0; i < amount; i++) {
-                Position pos = bornForm.getPosition().clone().addX((float) (Math.random() * range) - (range / 2)).addZ((float) (Math.random() * range) - (range / 2)).addZ(.9f);
+                Position pos = bornForm.getPosition().nearby2d(range).addZ(.9f);  // Why Z?
                 EntityItem entity = new EntityItem(this, null, itemData, pos, 1);
                 addEntity(entity);
             }
         } else {
-            EntityItem entity = new EntityItem(this, null, itemData, bornForm.getPosition().clone().addZ(.9f), amount);
+            EntityItem entity = new EntityItem(this, null, itemData, bornForm.getPosition().clone().addZ(.9f), amount);  // Why Z?
             addEntity(entity);
         }
     }

@@ -2,6 +2,7 @@ package emu.grasscutter.game.entity;
 
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
 
@@ -10,7 +11,6 @@ import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.Animat
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
 import emu.grasscutter.net.proto.FightPropPairOuterClass.*;
-import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.PropPairOuterClass.PropPair;
 import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType;
@@ -25,23 +25,25 @@ import emu.grasscutter.utils.ProtoHelper;
 
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.ArrayList;
 
 public class EntityVehicle extends EntityBaseGadget {
 
-    private final Player owner;
-    private final Int2FloatOpenHashMap fightProp;
+    @Getter private final Player owner;
+    private final Int2FloatMap fightProp;
 
     private final Position pos;
     private final Position rot;
 
-    private final int pointId;
-    private final int gadgetId;
+    @Getter private final int pointId;
+    @Getter private final int gadgetId;
 
-    private float curStamina;
-    private List<VehicleMember> vehicleMembers;
+    @Getter @Setter private float curStamina;
+    @Getter private List<VehicleMember> vehicleMembers;
 
     public EntityVehicle(Scene scene, Player player, int gadgetId, int pointId, Position pos, Position rot) {
         super(scene);
@@ -54,25 +56,23 @@ public class EntityVehicle extends EntityBaseGadget {
         this.pointId = pointId;
         this.curStamina = 240;
         this.vehicleMembers = new ArrayList<VehicleMember>();
+
+        switch (gadgetId) {
+            case 45001001,45001002 -> {  // TODO: Not hardcode this. Waverider (skiff)
+                this.addFightProperty(FightProperty.FIGHT_PROP_BASE_HP, 10000);
+                this.addFightProperty(FightProperty.FIGHT_PROP_BASE_ATTACK, 100);
+                this.addFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK, 100);
+                this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 10000);
+                this.addFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE, 0);
+                this.addFightProperty(FightProperty.FIGHT_PROP_CUR_SPEED, 0);
+                this.addFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, 0);
+                this.addFightProperty(FightProperty.FIGHT_PROP_MAX_HP, 10000);
+            }
+        }
     }
 
     @Override
-    public int getGadgetId() { return gadgetId; }
-
-    public Player getOwner() {
-        return owner;
-    }
-
-    public float getCurStamina() { return curStamina; }
-
-    public void setCurStamina(float stamina) { this.curStamina = stamina; }
-
-    public int getPointId() { return pointId; }
-
-    public List<VehicleMember> getVehicleMembers() { return vehicleMembers; }
-
-    @Override
-    public Int2FloatOpenHashMap getFightProperties() {
+    public Int2FloatMap getFightProperties() {
         return fightProp;
     }
 

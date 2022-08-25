@@ -99,10 +99,6 @@ public final class AccountCommand implements CommandHandler {
                     return;
                 }
 
-                // Make sure player isn't online as we delete their account.
-                kickAccount(toDelete);
-
-                // Finally, we do the actual deletion.
                 DatabaseHelper.deleteAccount(toDelete);
                 CommandHandler.sendMessage(sender, translate(sender, "commands.account.delete"));
                 return;

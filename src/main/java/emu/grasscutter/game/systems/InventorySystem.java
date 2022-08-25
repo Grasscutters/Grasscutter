@@ -10,10 +10,8 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.common.ItemUseData;
 import emu.grasscutter.data.excels.AvatarPromoteData;
-import emu.grasscutter.data.excels.AvatarSkillData;
 import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.data.excels.ProudSkillData;
 import emu.grasscutter.data.excels.WeaponPromoteData;
 import emu.grasscutter.data.excels.AvatarSkillDepotData.InherentProudSkillOpens;
 import emu.grasscutter.game.avatar.Avatar;
@@ -23,7 +21,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.props.ItemUseTarget;
-import emu.grasscutter.game.shop.ShopChestBatchUseTable;
 import emu.grasscutter.game.shop.ShopChestTable;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
@@ -713,6 +710,7 @@ public class InventorySystem extends BaseGameSystem {
         int used = 0;
         boolean useSuccess = false;
         ItemData itemData = useItem.getItemData();
+        if (itemData == null) return null;
 
         // Use
         switch (itemData.getMaterialType()) {
@@ -816,26 +814,20 @@ public class InventorySystem extends BaseGameSystem {
                 }
                 break;
             case MATERIAL_CHEST_BATCH_USE:
-                if (optionId < 1) {
-                    break;
-                }
-                List<ShopChestBatchUseTable> shopChestBatchUseTableList = player.getServer().getShopSystem().getShopChestBatchUseData();
-                for (ShopChestBatchUseTable shopChestBatchUseTable : shopChestBatchUseTableList) {
-                    if (shopChestBatchUseTable.getItemId() != useItem.getItemId()) {
-                        continue;
-                    }
-
-                    if (shopChestBatchUseTable.getOptionItem() == null || optionId > shopChestBatchUseTable.getOptionItem().size()) {
-                        break;
-                    }
-
-                    int optionItemId = shopChestBatchUseTable.getOptionItem().get(optionId - 1);
+                if (optionId < 1) return null;  // 1-indexed selection
+                for (var use : itemData.getItemUse()) {
+                    if (use.getUseOp() != ItemUseOp.ITEM_USE_CHEST_SELECT_ITEM) continue;
+                    String[] choices = use.getUseParam()[0].split(",");
+                    if (optionId > choices.length) return null;
+                    String[] choiceParts = choices[optionId-1].split(":");
+                    int optionItemId = Integer.parseInt(choiceParts[0]);
+                    int optionItemCount = Integer.parseInt(choiceParts[1]);
                     ItemData optionItem = GameData.getItemDataMap().get(optionItemId);
                     if (optionItem == null) {
                         break;
                     }
 
-                    player.getInventory().addItem(new GameItem(optionItem, count), ActionReason.Shop);
+                    player.getInventory().addItem(new GameItem(optionItem, optionItemCount * count), ActionReason.Shop);
 
                     used = count;
                     break;

@@ -78,8 +78,8 @@ public class DropSystem extends BaseGameSystem {
             }
             if (itemData.isEquip()) {
                 for (int i = 0; i < num; i++) {
-                    float range = (5f + (.1f * num));
-                    Position pos = em.getPosition().clone().addX((float) (Math.random() * range) - (range / 2)).addY(3f).addZ((float) (Math.random() * range) - (range / 2));
+                    float range = (2.5f + (.05f * num));
+                    Position pos = em.getPosition().nearby2d(range).addY(3f);
                     addDropEntity(dd, em.getScene(), itemData, pos, num, gp);
                 }
             } else {

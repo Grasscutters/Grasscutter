@@ -120,6 +120,9 @@ public class ItemData extends GameResource {
         if (this.getFurnitureGadgetID() != null) {
             this.furnitureGadgetID = this.furnitureGadgetID.stream().filter(x -> x > 0).toList();
         }
+        
+        // Prevent material type from being null
+        this.materialType = this.materialType == null ? MaterialType.MATERIAL_NONE : this.materialType;
     }
 
     @Getter

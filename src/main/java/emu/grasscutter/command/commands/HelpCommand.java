@@ -46,25 +46,25 @@ public final class HelpCommand implements CommandHandler {
     @Override
     public void execute(Player player, Player targetPlayer, List<String> args) {
         Account account = (player == null) ? null : player.getAccount();
-        Map<String, CommandHandler> handlers = CommandMap.getInstance().getHandlers();
+        var commandMap = CommandMap.getInstance();
         List<String> commands = new ArrayList<>();
         List<String> commands_no_permission = new ArrayList<>();
         if (args.isEmpty()) {
-            for (String key : handlers.keySet()) {
-                CommandHandler command = handlers.get(key);
+            commandMap.getHandlers().forEach((key, command) -> {
                 Command annotation = command.getClass().getAnnotation(Command.class);
                 if (player == null || account.hasPermission(annotation.permission())) {
                     commands.add(createCommand(player, command, args));
                 } else if (SHOW_COMMANDS_WITHOUT_PERMISSIONS) {
                     commands_no_permission.add(createCommand(player, command, args));
                 }
-            }
+            });
             CommandHandler.sendTranslatedMessage(player, "commands.help.available_commands");
         } else {
             String command_str = args.remove(0).toLowerCase();
-            CommandHandler command = handlers.get(command_str);
+            CommandHandler command = commandMap.getHandler(command_str);
             if (command == null) {
                 CommandHandler.sendTranslatedMessage(player, "commands.generic.command_exist_error");
+                CommandHandler.sendMessage(player, "Command: " + command_str);
                 return;
             } else {
                 Command annotation = command.getClass().getAnnotation(Command.class);
@@ -75,9 +75,8 @@ public final class HelpCommand implements CommandHandler {
                 }
             }
         }
-        for (String s : commands)
-            CommandHandler.sendMessage(player, s);
-        for (String s : commands_no_permission)
-            CommandHandler.sendMessage(player, s + "\n\t" + translate(player, "commands.help.warn_player_has_no_permission"));
+        final String suf = "\n\t" + translate(player, "commands.help.warn_player_has_no_permission");
+        commands.forEach(s -> CommandHandler.sendMessage(player, s));
+        commands_no_permission.forEach(s -> CommandHandler.sendMessage(player, s + suf));
     }
 }
