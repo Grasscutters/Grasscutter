@@ -22,11 +22,11 @@ public final class SetPropCommand implements CommandHandler {
         TOWER_LEVEL,
         BP_LEVEL,
         GOD_MODE,
-        NO_STAMINA,
+        UNLIMITED_STAMINA,
         UNLIMITED_ENERGY,
         SET_OPENSTATE,
         UNSET_OPENSTATE,
-        UNLOCKMAP
+        UNLOCK_MAP
     }
 
     static class Prop {
@@ -85,28 +85,30 @@ public final class SetPropCommand implements CommandHandler {
         this.props.put("bp", bplevel);
         this.props.put("battlepass", bplevel);
 
-        Prop godmode = new Prop("godmode", PseudoProp.GOD_MODE);
+        Prop godmode = new Prop("GodMode", PseudoProp.GOD_MODE);
         this.props.put("godmode", godmode);
         this.props.put("god", godmode);
 
-        Prop nostamina = new Prop("nostamina", PseudoProp.NO_STAMINA);
+        Prop nostamina = new Prop("UnlimitedStamina", PseudoProp.UNLIMITED_STAMINA);
+        this.props.put("unlimitedstamina", nostamina);
+        this.props.put("us", nostamina);
         this.props.put("nostamina", nostamina);
         this.props.put("nostam", nostamina);
         this.props.put("ns", nostamina);
 
-        Prop unlimitedenergy = new Prop("unlimitedenergy", PseudoProp.UNLIMITED_ENERGY);
+        Prop unlimitedenergy = new Prop("UnlimitedEnergy", PseudoProp.UNLIMITED_ENERGY);
         this.props.put("unlimitedenergy", unlimitedenergy);
         this.props.put("ue", unlimitedenergy);
 
-        Prop setopenstate = new Prop("setopenstate", PseudoProp.SET_OPENSTATE);
+        Prop setopenstate = new Prop("SetOpenstate", PseudoProp.SET_OPENSTATE);
         this.props.put("setopenstate", setopenstate);
         this.props.put("so", setopenstate);
 
-        Prop unsetopenstate = new Prop("unsetopenstate", PseudoProp.UNSET_OPENSTATE);
+        Prop unsetopenstate = new Prop("UnsetOpenstate", PseudoProp.UNSET_OPENSTATE);
         this.props.put("unsetopenstate", unsetopenstate);
         this.props.put("uo", unsetopenstate);
 
-        Prop unlockmap = new Prop("unlockmap", PseudoProp.UNLOCKMAP);
+        Prop unlockmap = new Prop("UnlockMap", PseudoProp.UNLOCK_MAP);
         this.props.put("unlockmap", unlockmap);
         this.props.put("um", unlockmap);
     }
@@ -144,10 +146,10 @@ public final class SetPropCommand implements CommandHandler {
             case WORLD_LEVEL -> targetPlayer.setWorldLevel(value);
             case BP_LEVEL -> targetPlayer.getBattlePassManager().setLevel(value);
             case TOWER_LEVEL -> this.setTowerLevel(sender, targetPlayer, value);
-            case GOD_MODE, NO_STAMINA, UNLIMITED_ENERGY -> this.setBool(sender, targetPlayer, prop.pseudoProp, value);
+            case GOD_MODE, UNLIMITED_STAMINA, UNLIMITED_ENERGY -> this.setBool(sender, targetPlayer, prop.pseudoProp, value);
             case SET_OPENSTATE -> this.setOpenState(targetPlayer, value, 1);
             case UNSET_OPENSTATE -> this.setOpenState(targetPlayer, value, 0);
-            case UNLOCKMAP -> unlockMap(targetPlayer);
+            case UNLOCK_MAP -> unlockMap(targetPlayer);
             default -> targetPlayer.setProperty(prop.prop, value);
         };
 
@@ -197,7 +199,7 @@ public final class SetPropCommand implements CommandHandler {
     private boolean setBool(Player sender, Player targetPlayer, PseudoProp pseudoProp, int value) {
         boolean enabled = switch (pseudoProp) {
             case GOD_MODE -> targetPlayer.inGodmode();
-            case NO_STAMINA -> targetPlayer.getUnlimitedStamina();
+            case UNLIMITED_STAMINA -> targetPlayer.getUnlimitedStamina();
             case UNLIMITED_ENERGY -> !targetPlayer.getEnergyManager().getEnergyUsage();
             default -> false;
         };
@@ -211,7 +213,7 @@ public final class SetPropCommand implements CommandHandler {
             case GOD_MODE:
                 targetPlayer.setGodmode(enabled);
                 break;
-            case NO_STAMINA:
+            case UNLIMITED_STAMINA:
                 targetPlayer.setUnlimitedStamina(enabled);
                 break;
             case UNLIMITED_ENERGY:

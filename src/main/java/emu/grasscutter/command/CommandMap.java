@@ -253,16 +253,19 @@ public final class CommandMap {
         Command.TargetRequirement targetRequirement = annotation.targetRequirement();
         if (targetRequirement != Command.TargetRequirement.NONE) {
             if (targetPlayer == null) {
-                CommandHandler.sendTranslatedMessage(null, "commands.execution.need_target");
+                handler.sendUsageMessage(player);
+                CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target");
                 return;
             }
 
             if ((targetRequirement == Command.TargetRequirement.ONLINE) && !targetPlayer.isOnline()) {
+                handler.sendUsageMessage(player);
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_online");
                 return;
             }
 
             if ((targetRequirement == Command.TargetRequirement.OFFLINE) && targetPlayer.isOnline()) {
+                handler.sendUsageMessage(player);
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.need_target_offline");
                 return;
             }
