@@ -1,5 +1,7 @@
 package emu.grasscutter.data.excels;
 
+import com.google.gson.annotations.SerializedName;
+
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
@@ -7,9 +9,9 @@ import emu.grasscutter.data.ResourceType;
 public class ReliquarySetData extends GameResource {
 	private int setId;
     private int[] setNeedNum;
-    private int EquipAffixId;
-    private int disableFilter;
-    private int[] containsList;
+    
+    @SerializedName(value="equipAffixId", alternate={"EquipAffixId"})
+    private int equipAffixId;
 	
 	@Override
 	public int getId() {
@@ -21,15 +23,7 @@ public class ReliquarySetData extends GameResource {
 	}
 
 	public int getEquipAffixId() {
-		return EquipAffixId;
-	}
-
-	public int getDisableFilter() {
-		return disableFilter;
-	}
-
-	public int[] getContainsList() {
-		return containsList;
+		return equipAffixId;
 	}
 
 	@Override
