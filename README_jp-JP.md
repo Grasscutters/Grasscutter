@@ -108,4 +108,4 @@ chmod +x gradlew
 
 # JPサポート
 
-もし日本語以外でコミュニケーションが取れないもしくは取りたいくない場合[JP Discord](https://discord.gg/yD2DAQtCZ8)へ質問してください
+基本的には英語でコミュニケーションを取ることをお勧めしますが､もし日本語以外でコミュニケーションが取れないもしくは取りたいくない場合[JP Grasscutter Discord](https://discord.gg/yD2DAQtCZ8)へ質問してください
