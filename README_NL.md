@@ -57,7 +57,7 @@ EN | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.m
 
       - Via de commandoregel
 
-        ``Shell
+        ```Shell
         certutil -addstore root %USERPROFILE%%%.mitmproxymitmproxy-ca-cert.cer
         ```
 
@@ -80,7 +80,7 @@ Grasscutter gebruikt Gradle om afhankelijkheden en bouwen af te handelen.
 
 ##### Windows
 
-``Shell
+```Shell
 git clone https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
 .\gradlew.bat # Instellen van omgevingen
