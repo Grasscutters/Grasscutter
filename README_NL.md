@@ -107,3 +107,21 @@ U kunt de output jar vinden in de root van de project map.
   Fiddler gebruik, zorg ervoor dat het op een andere poort draait behalve 8888
 * Opstart volgorde: MongoDB > Grasscutter > Proxy daemon (mitmdump, fiddler, enz.) > Game
 
+
+
+
+# Bijdragen 
+
+Let op: we hebben een gedragscode, volg deze alsjeblieft in al je interacties met het project. Als je nog vragen hebt, maak dan een issue aan of vraag het in de Discord server.
+
+- Repareer/toevoeg alleen de functionaliteit in kwestie OF pak wijdverspreide witruimte/stijl problemen aan, niet beide.
+- Pak een enkel probleem aan met zo min mogelijk gewijzigde regels.
+
+**Maak geen pull request om samen te voegen in stable tenzij het een hotfix is. Gebruik in plaats daarvan de development branch.**
+
+## Pull Request Proces
+
+1. Zorg ervoor dat alle installatie- of build-afhankelijkheden verwijderd zijn voor het einde van de laag wanneer u een build doet.
+2. 2. Werk de README.md en wiki bij met details van wijzigingen aan de interface, inclusief nieuwe omgevingsvariabelen, blootgestelde poorten, nuttige bestandslocaties en containerparameters.
+3. Schrijf met detail op je pull request beschrijving wat je hebt gecommit, om het makkelijker te maken voor de medewerkers om een changelog te maken.
+
