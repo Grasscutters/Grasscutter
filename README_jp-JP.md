@@ -106,6 +106,6 @@ chmod +x gradlew
   Fiddlerを使用している場合はポートが8888以外に設定されていることを確認してください｡
 * 起動シーケンス(順番): MongoDB > Grasscutter > プロキシツール (mitmdumpかfiddler､その他) > ゲーム
 
-### JPサポート
+# JPサポート
 
 もし日本語以外でコミュニケーションが取れないもしくは取りたいくない場合[JP Discord](https://discord.gg/yD2DAQtCZ8)へ質問してください
