@@ -20,7 +20,7 @@
 
 ## クイックセットアップガイド
 
-**注:** サポートが必要な場合はGrasscutterの[Discord](https://discord.gg/T5vZU6UyeG)に参加してください.
+**＊:** サポートが必要な場合はGrasscutterの[Discord](https://discord.gg/T5vZU6UyeG)に参加してください.
 
 ### 動作環境
 
