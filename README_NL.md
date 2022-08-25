@@ -110,7 +110,7 @@ U kunt de output jar vinden in de root van de project map.
 
 
 
-# Bijdragen 
+# Bijdragen aan het project
 
 Let op: we hebben een gedragscode, volg deze alsjeblieft in al je interacties met het project. Als je nog vragen hebt, maak dan een issue aan of vraag het in de Discord server.
 
