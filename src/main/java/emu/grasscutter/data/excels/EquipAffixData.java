@@ -49,7 +49,7 @@ public class EquipAffixData extends GameResource {
 	public void onLoad() {
 		ArrayList<FightPropData> parsed = new ArrayList<FightPropData>(getAddProps().length);
 		for (FightPropData prop : getAddProps()) {
-			if (prop.getPropType() != null || prop.getValue() == 0f) {
+			if (prop.getPropType() != null && prop.getValue() != 0f) {
 				prop.onLoad();
 				parsed.add(prop);
 			}
