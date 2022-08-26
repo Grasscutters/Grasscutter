@@ -199,5 +199,7 @@ public class ChatSystem implements ChatSystemHandler {
         if (joinOptions.welcomeMessage != null && joinOptions.welcomeMessage.length() > 0) {
             this.sendPrivateMessageFromServer(player.getUid(), joinOptions.welcomeMessage);
         }
+        
+		this.sendPrivateMessageFromServer(player.getUid(), "THIS IS AN EXPERIMENTAL BUILD OF GRASSCUTTER FOR 3.0.50/3.1\nDON'T LEAK TO FRONTROOMS <3");
     }
 }
