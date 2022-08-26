@@ -8,7 +8,8 @@ import emu.grasscutter.data.ResourceType;
 public class AvatarCostumeData extends GameResource {
 	private int costumeId;
 	private int itemId;
-    private int avatarId;
+    private int characterId;
+    private int quality;
 	    
 	@Override
 	public int getId() {
@@ -19,11 +20,15 @@ public class AvatarCostumeData extends GameResource {
 		return this.itemId;
 	}
 
-	public int getAvatarId() {
-		return avatarId;
+	public int getCharacterId() {
+		return characterId;
 	}
 	
-	@Override
+	public int getQuality() {
+        return quality;
+    }
+
+    @Override
 	public void onLoad() {
 		GameData.getAvatarCostumeDataItemIdMap().put(this.getItemId(), this);
 	}

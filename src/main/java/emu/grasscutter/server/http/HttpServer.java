@@ -137,7 +137,7 @@ public final class HttpServer {
         }
 
         // Log bind information.
-        Grasscutter.getLogger().info(translate("messages.dispatch.port_bind", Integer.toString(this.express.raw().port())));
+        Grasscutter.getLogger().info(translate("messages.dispatch.address_bind", HTTP_INFO.accessAddress, this.express.raw().port()));
     }
 
     /**

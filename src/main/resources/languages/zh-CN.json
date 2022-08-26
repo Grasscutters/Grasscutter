@@ -1,6 +1,7 @@
 {
   "messages": {
     "game": {
+      "address_bind": "游戏服务器启动于 \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "游戏服务器已在端口 %s 上启动。",
       "connect": "客户端 %s 已连接。",
       "disconnect": "客户端 %s 已断开连接。",
@@ -8,7 +9,8 @@
       "command_error": "命令发生错误："
     },
     "dispatch": {
-      "port_bind": "[Dispatch] 服务器已在端口 %s 上启动",
+      "address_bind": "[Dispatch] Dispatch 服务器启动于 \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "port_bind": "[Dispatch] Dispatch 服务器已在端口 %s 上启动",
       "request": "[Dispatch] 客户端 %s 请求：%s %s",
       "keystore": {
         "general_error": "[Dispatch] 加载 keystore 文件时发生错误！",
@@ -39,8 +41,8 @@
         "session_key_error": "会话密钥错误",
         "username_error": "未找到用户名",
         "username_create_error": "用户名不存在，登录失败",
-        "password_error": "登录失败，请确认帐号/密码是否正确",
-        "password_length_error": "密码必须大于或等于8位",
+        "password_error": "登录失败，请确认账号/密码是否正确",
+        "password_length_error": "密码必须大于或等于 8 位",
         "password_storage_error": "你没有密码，请联系管理员",
         "server_max_player_limit": "服务器在线人数已满"
       },
@@ -276,9 +278,9 @@
     "setStats": {
       "description": "设置当前角色的属性\n\t可更改的属性列表：hp(生命值)|maxhp(最大生命值)|def(防御力)|atk(攻击力)|em(元素精通)|er(元素充能效率)|crate(暴击率)|cdmg(暴击伤害)|cdr(冷却缩减)|heal(治疗加成)|heali(受治疗加成)|shield(护盾强效)|defi(无视防御)\n\t元素增伤：epyro(火)|ecryo(冰)|ehydro(水)|egeo(岩)|edendro(草)|eelectro(雷)|ephys(物理)\n\t元素抗性：respyro(火)|rescryo(冰)|reshydro(水)|resgeo(岩)|resdendro(草)|reselectro(雷)|resphys(物理)",
       "locked_to": "%s 已锁定为：%s。",
-      "locked_for_to": "%s 属于 %s 的，已锁定为：%s。",
+      "locked_for_to": "%s [来自 %s] 已锁定为：%s。",
       "unlocked": "%s 已解锁。",
-      "unlocked_for": "%s 属于 %s 的，已解锁。"
+      "unlocked_for": "%s [来自 %s] 已解锁。"
     },
     "spawn": {
       "success": "已生成 %s 个 %s。",
@@ -361,7 +363,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM 手册",
+      "title": "GM手册",
       "title_commands": "命令",
       "title_avatars": "角色",
       "title_items": "物品",
@@ -377,7 +379,7 @@
     },
     "index": {
       "title": "文档",
-      "handbook": "GM 手册",
+      "handbook": "GM手册",
       "gacha_mapping": "祈愿物品映射JSON"
     }
   }

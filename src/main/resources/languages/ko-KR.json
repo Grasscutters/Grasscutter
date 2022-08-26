@@ -1,6 +1,7 @@
 {
   "messages": {
     "game": {
+      "address_bind": "🇺🇸Game Server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "게임 서버가 포트 %s에서 열렸습니다.",
       "connect": "클라이언트가 %s에서 연결됐습니다.",
       "disconnect": "클라이언트가 %s에서 연결이 끊겼습니다.",
@@ -8,6 +9,7 @@
       "command_error": "명령어 오류:"
     },
     "dispatch": {
+      "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] 디스패치 서버가 포트 %s에서 열렸습니다.",
       "request": "🇺🇸[Dispatch] Client %s %s request: %s",
       "keystore": {

@@ -1,6 +1,7 @@
 {
   "messages": {
     "game": {
+      "address_bind": "🇺🇸Game Server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "Serverul de joc a început pe port %s",
       "connect": "Client conectat de la %s",
       "disconnect": "Client deconectat de la %s",
@@ -8,6 +9,7 @@
       "command_error": "Eroare de comandă:"
     },
     "dispatch": {
+      "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Server de dispecerat pornit pe portul %s",
       "request": "[Dispatch] Clientul %s %s cere: %s",
       "keystore": {

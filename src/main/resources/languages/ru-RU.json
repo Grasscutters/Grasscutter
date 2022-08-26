@@ -1,6 +1,7 @@
 {
   "messages": {
     "game": {
+      "address_bind": "🇺🇸Game Server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "Игровой сервер запущен на порте %s",
       "connect": "Клиент подключился с %s",
       "disconnect": "Клиент отсоединился с %s",
@@ -8,6 +9,7 @@
       "command_error": "Командная ошибка:"
     },
     "dispatch": {
+      "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Распределительный сервер запущен на порте %s",
       "request": "[Dispatch] Клиент %s %s, запрос: %s",
       "keystore": {
