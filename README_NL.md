@@ -5,7 +5,7 @@
 
 [EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md) | [NL](README_NL.md) | [JP](README_ja-JP.md)
 
-**Aantekening:** We verwelkomen altijd bijdragers aan het project. Lees onze [Gedragscode](https://github.com/Pikachubolk/Grasscutter/blob/Dutch-Language-updates/README_NL.md#bijdragen-aan-het-project) zorgvuldig door voordat u uw bijdrage toevoegt.
+**Aantekening:** We verwelkomen altijd bijdragers aan het project. Lees onze [Gedragscode](https://github.com/Grasscutters/Grasscutter/blob/development/README_NL.md#bijdragen-aan-het-project) zorgvuldig door voordat u uw bijdrage toevoegt.
 
 ## Huidige functies
 
@@ -38,7 +38,7 @@
 **Note:** Als u vanaf een oudere versie heeft geupdate, verwijder dan `config.json` om het te regenereren.
 
 1. Verkrijg `grasscutter.jar`
-   - Download van [actions](https://github.com/Grasscutters/Grasscutter/actions) of [build by yourself](https://github.com/Grasscutters/Grasscutter#building)
+   - Download van [actions](https://github.com/Grasscutters/Grasscutter/actions) of [bouw de jar zelf](https://github.com/Grasscutters/Grasscutter/blob/development/README_NL.md#building)
 2. Maak een `resources` map aan in de directory waar grasscutter.jar staat en verplaats je `BinOutput, ExcelBinOutput, Readables, Scripts, Subtitle, TextMap` mappen daarheen *(Check de [wiki](https://github.com/Grasscutters/Grasscutter/wiki) voor meer details hoe je die krijgt.)*
 3. Start Grasscutter met `java -jar grasscutter.jar`. **Zorg ervoor dat de mongodb service ook draait.**
 
@@ -91,7 +91,7 @@ cd Grasscutter
 
 ```bash
 git clone https://github.com/Grasscutters/Grasscutter.git
-cd Grasmaaier
+cd Grasscutter
 chmod +x gradlew
 ./gradlew jar # Compileer
 ```
