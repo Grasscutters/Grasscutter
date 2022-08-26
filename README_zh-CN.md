@@ -37,7 +37,7 @@
 **注意:** 从旧版本升级到新版本, 需要删除 `config.json` 使其重新生成
 
 1. 获取 `grasscutter.jar`
-   - 从 [actions](https://github.com/Grasscutters/Grasscutter/actions) 下载，或 [自行编译](#编译)
+   - 从 [actions](https://github.com/Grasscutters/Grasscutter/actions) 下载，或 [自行编译](#构建)
 2. 在 JAR 文件根目录中创建 `resources` 文件夹并复制 `BinOutput` 和 `ExcelBinOutput` *(查看 [Wiki](https://github.com/Grasscutters/Grasscutter/wiki) 了解更多)*
 3. **确认 MongoDB 服务运行正常后**，使用命令行 `java -jar grasscutter.jar` 运行 Grasscutter。
 
@@ -82,10 +82,8 @@ Grasscutter 使用 Gradle 来处理依赖及编译。
 ```shell
 git clone https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
-:: 建立开发环境
-gradlew
-:: 编译
-gradlew jar
+.\gradlew.bat # 建立开发环境
+.\gradlew jar # 编译
 ```
 
 ##### Linux
@@ -104,6 +102,6 @@ chmod +x gradlew
 # 快速问题排除
 
 * 如果编译失败, 请检查 JDK 安装是否正确 (需要 JDK 17 并确认 JDK 的 bin 文件夹处于环境变量 `PATH` 中)
-* 客户端无法登录、连接、错误 420 等其他问题... - 大部分情况是因为代理设置出现了*问题*。
+* 客户端无法登录、连接、错误 4206 等其他问题... - 大部分情况是因为代理设置出现了*问题*。
   如果使用 Fiddler，请确认 Fiddler 监听端口不是 `8888`
 * 启动顺序: MongoDB > Grasscutter > 代理程序 (mitmdump, Fiddler 等) > 客户端
