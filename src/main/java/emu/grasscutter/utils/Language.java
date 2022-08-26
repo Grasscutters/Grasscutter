@@ -256,7 +256,7 @@ public final class Language {
     private static final int TEXTMAP_CACHE_VERSION = 0x9CCACE03;
     @EqualsAndHashCode public static class TextStrings implements Serializable {
         public static final String[] ARR_LANGUAGES = {"EN", "CHS", "CHT", "JP", "KR", "DE", "ES", "FR", "ID", "PT", "RU", "TH", "VI"};
-        public static final String[] ARR_GC_LANGUAGES = {"en-US", "zh-CN", "zh-TW", "en-US", "ko-KR", "en-US", "es-ES", "fr-FR", "en-US", "en-US", "ru-RU", "en-US", "en-US"};  // TODO: Update the placeholder en-US entries if we ever add GC translations for the missing client languages
+        public static final String[] ARR_GC_LANGUAGES = {"en-US", "zh-CN", "zh-TW", "ja-JP", "ko-KR", "en-US", "es-ES", "fr-FR", "en-US", "en-US", "ru-RU", "en-US", "en-US"};  // TODO: Update the placeholder en-US entries if we ever add GC translations for the missing client languages
         public static final int NUM_LANGUAGES = ARR_LANGUAGES.length;
         public static final List<String> LIST_LANGUAGES = Arrays.asList(ARR_LANGUAGES);
         public static final Object2IntMap<String> MAP_LANGUAGES =  // Map "EN": 0, "CHS": 1, ..., "VI": 12
