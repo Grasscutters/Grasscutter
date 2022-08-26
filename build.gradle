@@ -163,12 +163,7 @@ publishing {
                     developer {
                         id = 'meledy'
                         name = 'Meledy'
-                        email = 'meledy@xigam.tech' // not a real email kek
-                    }
-                    developer {
-                        id = 'magix'
-                        name = 'Magix'
-                        email = 'magix@xigam.tech'
+                        email = 'meledy@grasscutter.io' // not a real email kek
                     }
                 }
                 scm {
