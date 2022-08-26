@@ -82,10 +82,8 @@ Grasscutter 使用 Gradle 来处理依赖及编译。
 ```shell
 git clone https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
-:: 建立开发环境
-gradlew
-:: 编译
-gradlew jar
+.\gradlew.bat # 建立开发环境
+.\gradlew jar # 编译
 ```
 
 ##### Linux
@@ -94,8 +92,7 @@ gradlew jar
 git clone https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
 chmod +x gradlew
-:: 编译
-./gradlew jar
+./gradlew jar # 编译
 ```
 
 * 编译后的 JAR 文件会在源码根目录生成
