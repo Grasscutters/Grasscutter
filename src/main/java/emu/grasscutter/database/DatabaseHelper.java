@@ -116,7 +116,7 @@ public final class DatabaseHelper {
 		return DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("reservedPlayerId", reservedUid)).count() > 0;
 	}
 
-	public static void deleteAccount(Account target) {
+	public static synchronized void deleteAccount(Account target) {
 		// To delete an account, we need to also delete all the other documents in the database that reference the account.
 		// This should optimally be wrapped inside a transaction, to make sure an error thrown mid-way does not leave the
 		// database in an inconsistent state, but unfortunately Mongo only supports that when we have a replica set ...
@@ -126,25 +126,29 @@ public final class DatabaseHelper {
         // Close session first
         if (player != null) {
             player.getSession().close();
+        } else {
+            player = getPlayerByAccount(target);
+            if (player == null) return;
         }
+        int uid = player.getUid();
         // Delete data from collections
-        DatabaseManager.getGameDatabase().getCollection("activities").deleteMany(eq("uid",player.getUid()));
-        DatabaseManager.getGameDatabase().getCollection("homes").deleteMany(eq("ownerUid",player.getUid()));
-        DatabaseManager.getGameDatabase().getCollection("mail").deleteMany(eq("ownerUid", player.getUid()));
-        DatabaseManager.getGameDatabase().getCollection("avatars").deleteMany(eq("ownerId", player.getUid()));
-        DatabaseManager.getGameDatabase().getCollection("gachas").deleteMany(eq("ownerId", player.getUid()));
-        DatabaseManager.getGameDatabase().getCollection("items").deleteMany(eq("ownerId", player.getUid()));
-        DatabaseManager.getGameDatabase().getCollection("quests").deleteMany(eq("ownerUid", player.getUid()));
-        DatabaseManager.getGameDatabase().getCollection("battlepass").deleteMany(eq("ownerUid", player.getUid()));
+        DatabaseManager.getGameDatabase().getCollection("activities").deleteMany(eq("uid", uid));
+        DatabaseManager.getGameDatabase().getCollection("homes").deleteMany(eq("ownerUid", uid));
+        DatabaseManager.getGameDatabase().getCollection("mail").deleteMany(eq("ownerUid", uid));
+        DatabaseManager.getGameDatabase().getCollection("avatars").deleteMany(eq("ownerId", uid));
+        DatabaseManager.getGameDatabase().getCollection("gachas").deleteMany(eq("ownerId", uid));
+        DatabaseManager.getGameDatabase().getCollection("items").deleteMany(eq("ownerId", uid));
+        DatabaseManager.getGameDatabase().getCollection("quests").deleteMany(eq("ownerUid", uid));
+        DatabaseManager.getGameDatabase().getCollection("battlepass").deleteMany(eq("ownerUid", uid));
 
         // Delete friendships.
         // Here, we need to make sure to not only delete the deleted account's friendships,
         // but also all friendship entries for that account's friends.
-        DatabaseManager.getGameDatabase().getCollection("friendships").deleteMany(eq("ownerId", player.getUid()));
-        DatabaseManager.getGameDatabase().getCollection("friendships").deleteMany(eq("friendId", player.getUid()));
+        DatabaseManager.getGameDatabase().getCollection("friendships").deleteMany(eq("ownerId", uid));
+        DatabaseManager.getGameDatabase().getCollection("friendships").deleteMany(eq("friendId", uid));
 
         // Delete the player last.
-        DatabaseManager.getGameDatastore().find(Player.class).filter(Filters.eq("id", player.getUid())).delete();
+        DatabaseManager.getGameDatastore().find(Player.class).filter(Filters.eq("id", uid)).delete();
 
         // Finally, delete the account itself.
         DatabaseManager.getAccountDatastore().find(Account.class).filter(Filters.eq("id", target.getId())).delete();
