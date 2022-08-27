@@ -37,7 +37,7 @@
 **Note:** If you updated from an older version, delete `config.json` to regenerate it.
 
 1. Get `grasscutter.jar`
-   - Download from [actions](https://github.com/Grasscutters/Grasscutter/actions) or [build by yourself](https://github.com/Grasscutters/Grasscutter#building)
+   - Download from [actions](https://github.com/Grasscutters/Grasscutter/actions/workflows/build.yml) or [build the server by yourself](#building).
 2. Create a `resources` folder in the directory where grasscutter.jar is located and move your `BinOutput, ExcelBinOutput, Readables, Scripts, Subtitle, TextMap` folders there *(Check the [wiki](https://github.com/Grasscutters/Grasscutter/wiki) for more details how to get those.)*
 3. Run Grasscutter with `java -jar grasscutter.jar`. **Make sure mongodb service is running as well.**
 
@@ -54,19 +54,19 @@
 
       ​	Double click for [install](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) or ...
 
-      - Via command line
+      - Via command line (needs administration privileges)
 
         ```shell
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
         ```
 
-    - Fiddler Classic: Run Fiddler Classic, turn on `Decrypt https traffic` in setting and change the default port there (Tools -> Options -> Connections) to anything other than `8888`, and load [this script](https://github.com/Grasscutters/Grasscutter/wiki/Resources#fiddler-classic-jscript).
+    - Fiddler Classic: Run Fiddler Classic, turn on `Decrypt HTTPS traffic` in (Tools -> Options -> HTTPS) and change the default port in (Tools -> Options -> Connections) to anything other than `8888`, and load [this script](https://github.com/Grasscutters/Grasscutter/wiki/Resources#fiddler-classic-jscript) (copy and paste the script in the `FiddlerScript` tab).
 
     - [Hosts file](https://github.com/Grasscutters/Grasscutter/wiki/Resources#hosts-file)
 
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
 
-**You can also use `start.cmd` to start servers and proxy daemons automatically, but you have to set up JAVA_HOME enviroment and `start_config.cmd`.**
+**You can also use `start.cmd` to start servers and proxy daemons automatically, but you have to set up JAVA_HOME enviroment and configure the `start_config.cmd` file.**
 
 ### Building
 
