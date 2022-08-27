@@ -37,14 +37,13 @@
 **Note:** If you updated from an older version, delete `config.json` to regenerate it.
 
 1. Get `grasscutter.jar`
-   - Download from [actions](https://github.com/Grasscutters/Grasscutter/actions) or [build the server by yourself.](#building)
+   - Download from [actions](https://github.com/Grasscutters/Grasscutter/actions) or [build the server by yourself](#building).
 2. Create a `resources` folder in the directory where grasscutter.jar is located and move your `BinOutput, ExcelBinOutput, Readables, Scripts, Subtitle, TextMap` folders there *(Check the [wiki](https://github.com/Grasscutters/Grasscutter/wiki) for more details how to get those.)*
-
 3. Run Grasscutter with `java -jar grasscutter.jar`. **Make sure mongodb service is running as well.**
 
 ### Connecting with the client
 
-½. Create an account using [server console command.](https://github.com/Grasscutters/Grasscutter/wiki/Commands#targeting)
+½. Create an account using [server console command](https://github.com/Grasscutters/Grasscutter/wiki/Commands#targeting).
 
 1. Redirect traffic: (choose one)
     - mitmdump: `mitmdump -s proxy.py -k`
