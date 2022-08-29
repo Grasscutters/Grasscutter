@@ -34,7 +34,7 @@ public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
                                 //.addSceneTagIdList(1094)
                                 //.addSceneTagIdList(1095)
                                 //.addSceneTagIdList(1096)
-                                //.addAllSceneTagIdList(IntStream.range(1000, 2000).boxed().collect(Collectors.toList()))
+                                .addAllSceneTagIdList(IntStream.range(1094, 3000).boxed().collect(Collectors.toList()))
                                 .build()
                 )
                 .addInfoList(
