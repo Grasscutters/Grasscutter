@@ -3,7 +3,6 @@ package emu.grasscutter.command;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
 import org.reflections.Reflections;
-
 import java.util.*;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
@@ -22,7 +21,7 @@ public final class CommandMap {
         if (scan) this.scan();
     }
 
-    public static CommandMap getInstance() {
+    public static emu.grasscutter.command.CommandMap getInstance() {
         return Grasscutter.getCommandMap();
     }
 
@@ -33,7 +32,7 @@ public final class CommandMap {
      * @param command The command handler.
      * @return Instance chaining.
      */
-    public CommandMap registerCommand(String label, CommandHandler command) {
+    public emu.grasscutter.command.CommandMap registerCommand(String label, CommandHandler command) {
         Grasscutter.getLogger().debug("Registered command: " + label);
         label = label.toLowerCase();
 
@@ -58,7 +57,7 @@ public final class CommandMap {
      * @param label The command label.
      * @return Instance chaining.
      */
-    public CommandMap unregisterCommand(String label) {
+    public emu.grasscutter.command.CommandMap unregisterCommand(String label) {
         Grasscutter.getLogger().debug("Unregistered command: " + label);
 
         CommandHandler handler = this.commands.get(label);
@@ -164,9 +163,9 @@ public final class CommandMap {
 
     private boolean setPlayerTarget(String playerId, Player player, String targetUid) {
         if (targetUid.equals("")) { // Clears the default targetPlayer.
-                targetPlayerIds.remove(playerId);
-                CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
-                return true;
+            targetPlayerIds.remove(playerId);
+            CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
+            return true;
         }
 
         // Sets default targetPlayer to the UID provided.
@@ -195,6 +194,14 @@ public final class CommandMap {
      * @param rawMessage The messaged used to invoke the command.
      */
     public void invoke(Player player, Player targetPlayer, String rawMessage) {
+        //The console outputs in-game command ,[{Nickname}(Uid:{uid})]
+        String message = "";
+        if (player != null) {
+            Grasscutter.getLogger().info("[" + player.getAccount().getUsername() + ":" + player.getNickname() + "(uid:" + player.getUid() + ")]" + rawMessage);
+        }
+        else {
+            Grasscutter.getLogger().info("[SERVER]" + rawMessage);
+        }
         rawMessage = rawMessage.trim();
         if (rawMessage.length() == 0) {
             CommandHandler.sendTranslatedMessage(player, "commands.generic.not_specified");
@@ -218,7 +225,7 @@ public final class CommandMap {
                     targetUidStr = targetUidStr.substring(1);
                 }
                 this.setPlayerTarget(playerId, player, targetUidStr);
-            return;
+                return;
             } else {
                 this.setPlayerTarget(playerId, player, "");
                 return;
