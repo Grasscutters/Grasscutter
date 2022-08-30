@@ -95,7 +95,7 @@ public class ConfigContainer {
         public Set<Integer> debugWhitelist = Set.of();
         public Set<Integer> debugBlacklist = Set.of();
         public ServerRunMode runMode = ServerRunMode.HYBRID;
-
+        public boolean Output_player_command = false;
         public HTTP http = new HTTP();
         public Game game = new Game();
 
