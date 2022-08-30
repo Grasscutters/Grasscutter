@@ -21,7 +21,7 @@ public final class CommandMap {
         if (scan) this.scan();
     }
 
-    public static emu.grasscutter.command.CommandMap getInstance() {
+    public static CommandMap getInstance() {
         return Grasscutter.getCommandMap();
     }
 
@@ -32,7 +32,7 @@ public final class CommandMap {
      * @param command The command handler.
      * @return Instance chaining.
      */
-    public emu.grasscutter.command.CommandMap registerCommand(String label, CommandHandler command) {
+    public CommandMap registerCommand(String label, CommandHandler command) {
         Grasscutter.getLogger().debug("Registered command: " + label);
         label = label.toLowerCase();
 
@@ -57,7 +57,7 @@ public final class CommandMap {
      * @param label The command label.
      * @return Instance chaining.
      */
-    public emu.grasscutter.command.CommandMap unregisterCommand(String label) {
+    public CommandMap unregisterCommand(String label) {
         Grasscutter.getLogger().debug("Unregistered command: " + label);
 
         CommandHandler handler = this.commands.get(label);
@@ -195,7 +195,6 @@ public final class CommandMap {
      */
     public void invoke(Player player, Player targetPlayer, String rawMessage) {
         //The console outputs in-game command ,[{Nickname}(Uid:{uid})]
-        String message = "";
         if (player != null) {
             Grasscutter.getLogger().info("[" + player.getAccount().getUsername() + ":" + player.getNickname() + "(uid:" + player.getUid() + ")]" + rawMessage);
         }
