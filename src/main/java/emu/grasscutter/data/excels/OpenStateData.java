@@ -42,15 +42,12 @@ public class OpenStateData extends GameResource {
         // Add this open state to the global list.
         GameData.getOpenStateList().add(this);
 
-        // Clean up cond.
-        List<OpenStateCond> cleanedConds = new ArrayList<>();
-        for (var c : this.cond) {
-            if (c.getCondType() != null) {
-                cleanedConds.add(c);
-            }
+        // Remove any empty conditions
+        if (this.cond != null) {
+            this.cond.removeIf(c -> c.getCondType() == null);
+        } else {
+            this.cond = new ArrayList<>();
         }
-
-        this.cond = cleanedConds;
     }
 }
 
