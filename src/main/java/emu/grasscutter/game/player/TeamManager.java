@@ -47,7 +47,7 @@ import lombok.Setter;
 
 @Entity
 public class TeamManager extends BasePlayerDataManager {
-    // ToDo: This needs to be a LinkedHashMap to guarantee insertion order.
+    // This needs to be a LinkedHashMap to guarantee insertion order.
     @Getter private LinkedHashMap<Integer, TeamInfo> teams;
     private int currentTeamIndex;
     @Getter @Setter private int currentCharacterIndex;
