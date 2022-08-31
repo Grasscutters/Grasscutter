@@ -465,7 +465,7 @@ public class ResourceLoader {
             }
             try {
                 var sceneId = Integer.parseInt(matcher.group(1));
-                var data = JsonUtils.loadToClass(filename, HomeworldDefaultSaveData.class);
+                var data = JsonUtils.loadToClass(file.toString(), HomeworldDefaultSaveData.class);
                 GameData.getHomeworldDefaultSaveData().put(sceneId, data);
             } catch (Exception ignored) {}
         });
@@ -480,7 +480,7 @@ public class ResourceLoader {
                 return;
             }
             try {
-                var data = JsonUtils.loadToClass(file.getFileName().toString(), SceneNpcBornData.class);
+                var data = JsonUtils.loadToClass(file.toString(), SceneNpcBornData.class);
                 if (data.getBornPosList() == null || data.getBornPosList().size() == 0) {
                     return;
                 }
