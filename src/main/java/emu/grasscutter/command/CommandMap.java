@@ -4,7 +4,11 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
 import org.reflections.Reflections;
 
+import java.net.IDN;
 import java.util.*;
+
+import static emu.grasscutter.config.Configuration.ACCOUNT;
+import static emu.grasscutter.config.Configuration.SERVER;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class CommandMap {
@@ -164,9 +168,9 @@ public final class CommandMap {
 
     private boolean setPlayerTarget(String playerId, Player player, String targetUid) {
         if (targetUid.equals("")) { // Clears the default targetPlayer.
-                targetPlayerIds.remove(playerId);
-                CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
-                return true;
+            targetPlayerIds.remove(playerId);
+            CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
+            return true;
         }
 
         // Sets default targetPlayer to the UID provided.
@@ -195,6 +199,15 @@ public final class CommandMap {
      * @param rawMessage The messaged used to invoke the command.
      */
     public void invoke(Player player, Player targetPlayer, String rawMessage) {
+        // The console outputs in-game command. [{Account Username} (Player UID: {Player Uid})]
+        if (SERVER.logCommands) {
+            if (player != null) {
+                Grasscutter.getLogger().info("Command used by [" + player.getAccount().getUsername() + " (Player UID: " + player.getUid() + ")]: " + rawMessage);
+            } else {
+                Grasscutter.getLogger().info("Command used by server console: " + rawMessage);
+            }
+        }
+        
         rawMessage = rawMessage.trim();
         if (rawMessage.length() == 0) {
             CommandHandler.sendTranslatedMessage(player, "commands.generic.not_specified");
@@ -218,7 +231,7 @@ public final class CommandMap {
                     targetUidStr = targetUidStr.substring(1);
                 }
                 this.setPlayerTarget(playerId, player, targetUidStr);
-            return;
+                return;
             } else {
                 this.setPlayerTarget(playerId, player, "");
                 return;
