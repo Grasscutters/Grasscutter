@@ -1,7 +1,6 @@
 [
 	{
 		"comment": "Beginner's Banner. Do not change for no reason.",
-		"comment4": "4 stars: Noelle",
 		"gachaType": 100,
 		"scheduleId": 803,
 		"bannerType": "EVENT",
@@ -34,8 +33,6 @@
 	},
 	{
 		"comment": "Character Event Banner 1",
-		"comment5": "5 stars: Tighnari",
-		"comment4": "4 stars: Collei, Diona and Fischl",
 		"gachaType": 301,
 		"scheduleId": 903,
 		"bannerType": "EVENT",
@@ -52,8 +49,6 @@
 	},
 	{
 		"comment": "Character Event Banner 2",
-		"comment5": "5 stars: Zhongli",
-		"comment4": "4 stars: Collei, Diona and Fischl",
 		"gachaType": 400,
 		"scheduleId": 923,
 		"bannerType": "EVENT",
@@ -71,8 +66,6 @@
 	},
 	{
 		"comment": "Weapon Event Banner",
-		"comment5": "5 stars: Hunter's Path, Vortex Vanquisher",
-		"comment4": "4 stars: The Stringless, Favonius Sword, Favonius Lance, Favonius Codex, The Bell",
 		"gachaType": 302,
 		"scheduleId": 913,
 		"bannerType": "WEAPON",
