@@ -556,8 +556,8 @@ public class Avatar {
                 this.addFightProperty(prop.getProp(), prop.getValue());
             }
 
-            // Add any skill strings from this proud skill
-            this.addToExtraAbilityEmbryos(proudSkillData.getOpenConfig(), true);
+            // Add any embryos from this proud skill
+            this.addToExtraAbilityEmbryos(proudSkillData.getOpenConfig());
         }
 
         // Constellations
@@ -566,7 +566,7 @@ public class Avatar {
             .filter(Objects::nonNull)
             .map(AvatarTalentData::getOpenConfig)
             .filter(Objects::nonNull)
-            .forEach(openConfig -> this.addToExtraAbilityEmbryos(openConfig, false));
+            .forEach(this::addToExtraAbilityEmbryos);
             // Add any skill strings from this constellation
 
         // Set % stats
@@ -599,6 +599,10 @@ public class Avatar {
                 getPlayer().sendPacket(new PacketAbilityChangeNotify(entity));
             }
         }
+    }
+    
+    public void addToExtraAbilityEmbryos(String openConfig) {
+        this.addToExtraAbilityEmbryos(openConfig, false);
     }
 
     public void addToExtraAbilityEmbryos(String openConfig, boolean forceAdd) {
