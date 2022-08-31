@@ -7,23 +7,14 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.TeamInfo;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.AvatarDataNotifyOuterClass.AvatarDataNotify;
 import emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam;
+import emu.grasscutter.net.proto.CustomTeamListNotifyOuterClass.CustomTeamListNotify;
 
-public class PacketAvatarDataNotify extends BasePacket {
+public class PacketCustomTeamListNotify extends BasePacket {
+    public PacketCustomTeamListNotify(Player player) {
+        super(PacketOpcodes.CustomTeamListNotify);
 
-    public PacketAvatarDataNotify(Player player) {
-        super(PacketOpcodes.AvatarDataNotify, true);
-
-        AvatarDataNotify.Builder proto = AvatarDataNotify.newBuilder()
-                .setCurAvatarTeamId(player.getTeamManager().getCurrentTeamId())
-                //.setChooseAvatarGuid(player.getTeamManager().getCurrentCharacterGuid())
-                .addAllOwnedFlycloakList(player.getFlyCloakList())
-                .addAllOwnedCostumeList(player.getCostumeList());
-
-        for (Avatar avatar : player.getAvatars()) {
-            proto.addAvatarList(avatar.toProto());
-        }
+        CustomTeamListNotify.Builder proto = CustomTeamListNotify.newBuilder();
 
         // Add the id list for custom teams.
         for (int id : player.getTeamManager().getTeams().keySet()) {
@@ -32,10 +23,12 @@ public class PacketAvatarDataNotify extends BasePacket {
             }
         }
 
+        // Add the avatar lists for all the teams the player has.
         for (Entry<Integer, TeamInfo> entry : player.getTeamManager().getTeams().entrySet()) {
             TeamInfo teamInfo = entry.getValue();
+            
             AvatarTeam.Builder avatarTeam = AvatarTeam.newBuilder()
-                    .setTeamName(teamInfo.getName());
+                .setTeamName(teamInfo.getName());
 
             for (int i = 0; i < teamInfo.getAvatars().size(); i++) {
                 Avatar avatar = player.getAvatars().getAvatarById(teamInfo.getAvatars().get(i));
@@ -44,14 +37,7 @@ public class PacketAvatarDataNotify extends BasePacket {
 
             proto.putAvatarTeamMap(entry.getKey(), avatarTeam.build());
         }
-
-        // Set main character
-        Avatar mainCharacter = player.getAvatars().getAvatarById(player.getMainCharacterId());
-        if (mainCharacter != null) {
-            proto.setChooseAvatarGuid(mainCharacter.getGuid());
-        }
-
-        this.setData(proto.build());
+    
+        this.setData(proto);
     }
-
 }
