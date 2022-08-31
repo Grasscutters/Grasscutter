@@ -199,10 +199,10 @@ public final class CommandMap {
      * @param rawMessage The messaged used to invoke the command.
      */
     public void invoke(Player player, Player targetPlayer, String rawMessage) {
-        // The console outputs in-game command. [{Player Nickname} (UID: {Player Uid})]
+        // The console outputs in-game command. [{Account Username} (Player UID: {Player Uid})]
         if (SERVER.logCommands) {
             if (player != null) {
-                Grasscutter.getLogger().info("Command used by [" + player.getNickname() + " (UID: " + player.getUid() + ")]: " + rawMessage);
+                Grasscutter.getLogger().info("Command used by [" + player.getAccount().getUsername() + " (Player UID: " + player.getUid() + ")]: " + rawMessage);
             } else {
                 Grasscutter.getLogger().info("Command used by server console: " + rawMessage);
             }
