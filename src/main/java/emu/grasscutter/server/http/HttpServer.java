@@ -3,7 +3,6 @@ package emu.grasscutter.server.http;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.HttpUtils;
 import io.javalin.Javalin;
 import io.javalin.core.util.JavalinLogger;
 import io.javalin.http.ContentType;

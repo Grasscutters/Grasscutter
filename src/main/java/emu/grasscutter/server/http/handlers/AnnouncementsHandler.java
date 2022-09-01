@@ -5,7 +5,6 @@ import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.server.http.objects.HttpJsonResponse;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.HttpUtils;
 import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.ContentType;
@@ -23,15 +22,15 @@ import java.util.Objects;
 public final class AnnouncementsHandler implements Router {
     @Override public void applyRoutes(Javalin javalin) {
         // hk4e-api-os.hoyoverse.com
-        HttpUtils.allRoutes(javalin, "/common/hk4e_global/announcement/api/getAlertPic", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"total\":0,\"list\":[]}}"));
+        this.allRoutes(javalin, "/common/hk4e_global/announcement/api/getAlertPic", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"total\":0,\"list\":[]}}"));
         // hk4e-api-os.hoyoverse.com
-        HttpUtils.allRoutes(javalin,"/common/hk4e_global/announcement/api/getAlertAnn", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"alert\":false,\"alert_id\":0,\"remind\":true}}"));
+        this.allRoutes(javalin,"/common/hk4e_global/announcement/api/getAlertAnn", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"alert\":false,\"alert_id\":0,\"remind\":true}}"));
         // hk4e-api-os.hoyoverse.com
-        HttpUtils.allRoutes(javalin,"/common/hk4e_global/announcement/api/getAnnList", AnnouncementsHandler::getAnnouncement);
+        this.allRoutes(javalin,"/common/hk4e_global/announcement/api/getAnnList", AnnouncementsHandler::getAnnouncement);
         // hk4e-api-os-static.hoyoverse.com
-        HttpUtils.allRoutes(javalin,"/common/hk4e_global/announcement/api/getAnnContent", AnnouncementsHandler::getAnnouncement);
+        this.allRoutes(javalin,"/common/hk4e_global/announcement/api/getAnnContent", AnnouncementsHandler::getAnnouncement);
         // hk4e-sdk-os.hoyoverse.com
-        HttpUtils.allRoutes(javalin,"/hk4e_global/mdk/shopwindow/shopwindow/listPriceTier", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"suggest_currency\":\"USD\",\"tiers\":[]}}"));
+        this.allRoutes(javalin,"/hk4e_global/mdk/shopwindow/shopwindow/listPriceTier", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"suggest_currency\":\"USD\",\"tiers\":[]}}"));
 
         javalin.get("/hk4e/announcement/*", AnnouncementsHandler::getPageResources);
     }

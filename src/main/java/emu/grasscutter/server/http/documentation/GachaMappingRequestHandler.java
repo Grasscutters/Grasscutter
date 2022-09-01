@@ -1,7 +1,6 @@
 package emu.grasscutter.server.http.documentation;
 
 import emu.grasscutter.tools.Tools;
-import emu.grasscutter.utils.HttpUtils;
 import emu.grasscutter.utils.Language;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;

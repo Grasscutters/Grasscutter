@@ -10,7 +10,6 @@ import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.MonsterData;
 import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.HttpUtils;
 import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Utils;
 import io.javalin.http.ContentType;

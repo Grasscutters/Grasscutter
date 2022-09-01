@@ -2,7 +2,6 @@ package emu.grasscutter.server.http.objects;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.HttpUtils;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
