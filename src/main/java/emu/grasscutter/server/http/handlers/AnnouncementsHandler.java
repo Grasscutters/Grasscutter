@@ -6,43 +6,38 @@ import emu.grasscutter.server.http.objects.HttpJsonResponse;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
-import express.Express;
-import express.http.MediaType;
-import express.http.Request;
-import express.http.Response;
 import io.javalin.Javalin;
+import io.javalin.http.ContentType;
+import io.javalin.http.Context;
 
 import static emu.grasscutter.config.Configuration.*;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 /**
  * Handles requests related to the announcements page.
  */
 public final class AnnouncementsHandler implements Router {
-    @Override public void applyRoutes(Express express, Javalin handle) {
+    @Override public void applyRoutes(Javalin javalin) {
         // hk4e-api-os.hoyoverse.com
-        express.all("/common/hk4e_global/announcement/api/getAlertPic", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"total\":0,\"list\":[]}}"));
+        this.allRoutes(javalin, "/common/hk4e_global/announcement/api/getAlertPic", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"total\":0,\"list\":[]}}"));
         // hk4e-api-os.hoyoverse.com
-        express.all("/common/hk4e_global/announcement/api/getAlertAnn", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"alert\":false,\"alert_id\":0,\"remind\":true}}"));
+        this.allRoutes(javalin,"/common/hk4e_global/announcement/api/getAlertAnn", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"alert\":false,\"alert_id\":0,\"remind\":true}}"));
         // hk4e-api-os.hoyoverse.com
-        express.all("/common/hk4e_global/announcement/api/getAnnList", AnnouncementsHandler::getAnnouncement);
+        this.allRoutes(javalin,"/common/hk4e_global/announcement/api/getAnnList", AnnouncementsHandler::getAnnouncement);
         // hk4e-api-os-static.hoyoverse.com
-        express.all("/common/hk4e_global/announcement/api/getAnnContent", AnnouncementsHandler::getAnnouncement);
+        this.allRoutes(javalin,"/common/hk4e_global/announcement/api/getAnnContent", AnnouncementsHandler::getAnnouncement);
         // hk4e-sdk-os.hoyoverse.com
-        express.all("/hk4e_global/mdk/shopwindow/shopwindow/listPriceTier", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"suggest_currency\":\"USD\",\"tiers\":[]}}"));
+        this.allRoutes(javalin,"/hk4e_global/mdk/shopwindow/shopwindow/listPriceTier", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"suggest_currency\":\"USD\",\"tiers\":[]}}"));
 
-        express.get("/hk4e/announcement/*", AnnouncementsHandler::getPageResources);
+        javalin.get("/hk4e/announcement/*", AnnouncementsHandler::getPageResources);
     }
 
-    private static void getAnnouncement(Request request, Response response) {
+    private static void getAnnouncement(Context ctx) {
         String data = "";
-        if (Objects.equals(request.baseUrl(), "/common/hk4e_global/announcement/api/getAnnContent")) {
+        if (Objects.equals(ctx.endpointHandlerPath(), "/common/hk4e_global/announcement/api/getAnnContent")) {
             try {
                 data = FileUtils.readToString(DataLoader.load("GameAnnouncement.json"));
             } catch (Exception e) {
@@ -50,7 +45,7 @@ public final class AnnouncementsHandler implements Router {
                     Grasscutter.getLogger().info("Unable to read file 'GameAnnouncementList.json'. \n" + e);
                 }
             }
-        } else if (Objects.equals(request.baseUrl(), "/common/hk4e_global/announcement/api/getAnnList")) {
+        } else if (Objects.equals(ctx.endpointHandlerPath(), "/common/hk4e_global/announcement/api/getAnnList")) {
             try {
                 data = FileUtils.readToString(DataLoader.load("GameAnnouncementList.json"));
             } catch (Exception e) {
@@ -59,11 +54,11 @@ public final class AnnouncementsHandler implements Router {
                 }
             }
         } else {
-            response.send("{\"retcode\":404,\"message\":\"Unknown request path\"}");
+            ctx.result("{\"retcode\":404,\"message\":\"Unknown request path\"}");
         }
 
         if (data.isEmpty()) {
-            response.send("{\"retcode\":500,\"message\":\"Unable to fetch requsted content\"}");
+            ctx.result("{\"retcode\":500,\"message\":\"Unable to fetch requsted content\"}");
             return;
         }
 
@@ -74,19 +69,19 @@ public final class AnnouncementsHandler implements Router {
         data = data
             .replace("{{DISPATCH_PUBLIC}}", dispatchDomain)
             .replace("{{SYSTEM_TIME}}", String.valueOf(System.currentTimeMillis()));
-        response.send("{\"retcode\":0,\"message\":\"OK\",\"data\": " + data + "}");
+        ctx.result("{\"retcode\":0,\"message\":\"OK\",\"data\": " + data + "}");
     }
 
-    private static void getPageResources(Request request, Response response) {
-        try (InputStream filestream = DataLoader.load(request.path())) {
-            String possibleFilename = Utils.toFilePath(DATA(request.path()));
+    private static void getPageResources(Context ctx) {
+        try (InputStream filestream = DataLoader.load(ctx.path())) {
+            String possibleFilename = Utils.toFilePath(DATA(ctx.path()));
 
-            MediaType fromExtension = MediaType.getByExtension(possibleFilename.substring(possibleFilename.lastIndexOf(".") + 1));
-            response.type((fromExtension != null) ? fromExtension.getMIME() : "application/octet-stream");
-            response.send(filestream.readAllBytes());
+            ContentType fromExtension = ContentType.getContentTypeByExtension(possibleFilename.substring(possibleFilename.lastIndexOf(".") + 1));
+            ctx.contentType(fromExtension != null ? fromExtension : ContentType.APPLICATION_OCTET_STREAM);
+            ctx.result(filestream.readAllBytes());
         } catch (Exception e) {
-            Grasscutter.getLogger().warn("File does not exist: " + request.path());
-            response.status(404);
+            Grasscutter.getLogger().warn("File does not exist: " + ctx.path());
+            ctx.status(404);
         }
     }
 }

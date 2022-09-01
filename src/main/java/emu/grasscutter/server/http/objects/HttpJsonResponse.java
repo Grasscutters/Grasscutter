@@ -6,14 +6,14 @@ import java.util.Objects;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
-import express.http.HttpContextHandler;
-import express.http.Request;
-import express.http.Response;
+import io.javalin.http.Context;
+import io.javalin.http.Handler;
+import org.jetbrains.annotations.NotNull;
 
 import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
-public final class HttpJsonResponse implements HttpContextHandler {
+public final class HttpJsonResponse implements Handler {
     private final String response;
     private final String[] missingRoutes = { // TODO: When http requests for theses routes are found please remove it from this list and update the route request type in the DispatchServer
             "/common/hk4e_global/announcement/api/getAlertPic",
@@ -33,11 +33,11 @@ public final class HttpJsonResponse implements HttpContextHandler {
     }
 
     @Override
-    public void handle(Request req, Response res) throws IOException {
+    public void handle(@NotNull Context ctx) throws Exception {
         // Checking for ALL here isn't required as when ALL is enabled enableDevLogging() gets enabled
-        if (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING && Arrays.stream(missingRoutes).anyMatch(x -> Objects.equals(x, req.baseUrl()))) {
-            Grasscutter.getLogger().info(translate("messages.dispatch.request", req.ip(), req.method(), req.baseUrl()) + (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING ? "(MISSING)" : ""));
+        if (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING && Arrays.stream(missingRoutes).anyMatch(x -> Objects.equals(x, ctx.endpointHandlerPath()))) {
+            Grasscutter.getLogger().info(translate("messages.dispatch.request", ctx.ip(), ctx.method(), ctx.endpointHandlerPath()) + (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING ? "(MISSING)" : ""));
         }
-        res.send(response);
+        ctx.result(response);
     }
 }
