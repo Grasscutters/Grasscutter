@@ -7,6 +7,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.HttpUtils;
 import emu.grasscutter.utils.Utils;
+import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 
 import java.io.File;
@@ -36,7 +37,7 @@ final class RootRequestHandler implements DocumentationHandler {
         String content = template.replace("{{TITLE}}", translate("documentation.index.title"))
                 .replace("{{ITEM_HANDBOOK}}", translate("documentation.index.handbook"))
                 .replace("{{ITEM_GACHA_MAPPING}}", translate("documentation.index.gacha_mapping"));
-        ctx.contentType(HttpUtils.MediaType._html.getMIME());
+        ctx.contentType(ContentType.TEXT_HTML);
         ctx.result(content);
     }
 }

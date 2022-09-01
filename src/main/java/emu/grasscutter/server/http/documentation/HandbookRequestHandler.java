@@ -13,6 +13,7 @@ import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.HttpUtils;
 import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Utils;
+import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import java.io.File;
@@ -41,7 +42,7 @@ final class HandbookRequestHandler implements DocumentationHandler {
         if (template == null) {
             ctx.status(500);
         } else {
-            ctx.contentType(HttpUtils.MediaType._html.getMIME());
+            ctx.contentType(ContentType.TEXT_HTML);
             ctx.result(handbookHtmls.get(langIdx));
         }
     }

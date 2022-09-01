@@ -11,6 +11,7 @@ import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.HttpUtils;
 import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
+import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 import io.javalin.http.staticfiles.Location;
 
@@ -72,7 +73,7 @@ public final class GachaHandler implements Router {
             .replace("{{DATE}}", translate(player, "gacha.records.date"))
             .replace("{{ITEM}}", translate(player, "gacha.records.item"))
             .replace("{{LANGUAGE}}", Utils.getLanguageCode(account.getLocale()));
-        ctx.contentType(HttpUtils.MediaType._html.getMIME());
+        ctx.contentType(ContentType.TEXT_HTML);
         ctx.result(template);
     }
 
@@ -134,7 +135,7 @@ public final class GachaHandler implements Router {
         template = template.replace("{{THREE_STARS}}", "[" + String.join(",", threeStarItems) + "]");
 
         // Done.
-        ctx.contentType(HttpUtils.MediaType._html.getMIME());
+        ctx.contentType(ContentType.TEXT_HTML);
         ctx.result(template);
     }
 }
