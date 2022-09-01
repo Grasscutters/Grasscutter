@@ -3,9 +3,9 @@ package emu.grasscutter.server.http;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.utils.FileUtils;
-import express.Express;
-import express.http.MediaType;
+import emu.grasscutter.utils.HttpUtils;
 import io.javalin.Javalin;
+import io.javalin.core.util.JavalinLogger;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
@@ -21,14 +21,14 @@ import static emu.grasscutter.utils.Language.translate;
  * (including dispatch, announcements, gacha, etc.)
  */
 public final class HttpServer {
-    private final Express express;
+    private final Javalin javalin;
 
     /**
-     * Configures the Express application.
+     * Configures the Javalin application.
      */
     public HttpServer() {
-        this.express = new Express(config -> {
-            // Set the Express HTTP server.
+        this.javalin = Javalin.create(config -> {
+            // Set the Javalin HTTP server.
             config.server(HttpServer::createServer);
 
             // Configure encryption/HTTPS/SSL.
@@ -46,8 +46,7 @@ public final class HttpServer {
             if (DISPATCH_INFO.logRequests == ServerDebugMode.ALL)
                 config.enableDevLogging();
 
-            // Disable compression on static files.
-            config.precompressStaticFiles = false;
+            // Static files should be added like this https://javalin.io/documentation#static-files
         });
     }
 
@@ -100,7 +99,7 @@ public final class HttpServer {
      * @return A Javalin instance.
      */
     public Javalin getHandle() {
-        return this.express.raw();
+        return this.javalin;
     }
 
     /**
@@ -118,7 +117,7 @@ public final class HttpServer {
         try { // Create a router instance & apply routes.
             var constructor = router.getDeclaredConstructor(types); // Get the constructor.
             var routerInstance = constructor.newInstance(args); // Create instance.
-            routerInstance.applyRoutes(this.express, this.getHandle()); // Apply routes.
+            routerInstance.applyRoutes(this.javalin); // Apply routes.
         } catch (Exception exception) {
             Grasscutter.getLogger().warn(translate("messages.dispatch.router_error"), exception);
         } return this;
@@ -131,24 +130,24 @@ public final class HttpServer {
     public void start() throws UnsupportedEncodingException {
         // Attempt to start the HTTP server.
         if (HTTP_INFO.bindAddress.equals("")) {
-            this.express.listen(HTTP_INFO.bindPort);
+            this.javalin.start(HTTP_INFO.bindPort);
         }else {
-            this.express.listen(HTTP_INFO.bindAddress, HTTP_INFO.bindPort);
+            this.javalin.start(HTTP_INFO.bindAddress, HTTP_INFO.bindPort);
         }
 
         // Log bind information.
-        Grasscutter.getLogger().info(translate("messages.dispatch.address_bind", HTTP_INFO.accessAddress, this.express.raw().port()));
+        Grasscutter.getLogger().info(translate("messages.dispatch.address_bind", HTTP_INFO.accessAddress, this.javalin.port()));
     }
 
     /**
      * Handles the '/' (index) endpoint on the Express application.
      */
     public static class DefaultRequestRouter implements Router {
-        @Override public void applyRoutes(Express express, Javalin handle) {
-            express.get("/", (request, response) -> {
+        @Override public void applyRoutes(Javalin javalin) {
+            javalin.get("/", ctx -> {
                 File file = new File(HTTP_STATIC_FILES.indexFile);
                 if (!file.exists())
-                    response.send("""
+                    ctx.result("""
                             <!DOCTYPE html>
                             <html>
                                 <head>
@@ -159,9 +158,8 @@ public final class HttpServer {
                             """.formatted(translate("messages.status.welcome")));
                 else {
                     final var filePath = file.getPath();
-                    final MediaType fromExtension = MediaType.getByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
-                    response.type((fromExtension != null) ? fromExtension.getMIME() : "text/plain")
-                            .send(FileUtils.read(filePath));
+                    final HttpUtils.MediaType fromExtension = HttpUtils.MediaType.getByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
+                    ctx.contentType((fromExtension != null) ? fromExtension.getMIME() : "text/plain").result(FileUtils.read(filePath));
                 }
             });
         }
@@ -171,8 +169,8 @@ public final class HttpServer {
      * Handles unhandled endpoints on the Express application.
      */
     public static class UnhandledRequestRouter implements Router {
-        @Override public void applyRoutes(Express express, Javalin handle) {
-            handle.error(404, context -> {
+        @Override public void applyRoutes(Javalin javalin) {
+            javalin.error(404, context -> {
                 if (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING)
                     Grasscutter.getLogger().info(translate("messages.dispatch.unhandled_request_error", context.method(), context.url()));
                 context.contentType("text/html");
@@ -193,7 +191,7 @@ public final class HttpServer {
                         """);
                 else {
                     final var filePath = file.getPath();
-                    final MediaType fromExtension = MediaType.getByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
+                    final HttpUtils.MediaType fromExtension = HttpUtils.MediaType.getByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
                     context.contentType((fromExtension != null) ? fromExtension.getMIME() : "text/plain")
                             .result(FileUtils.read(filePath));
                 }

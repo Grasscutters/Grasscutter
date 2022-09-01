@@ -10,10 +10,10 @@ import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.MonsterData;
 import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.utils.FileUtils;
+import emu.grasscutter.utils.HttpUtils;
 import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Utils;
-import express.http.Request;
-import express.http.Response;
+import io.javalin.http.Context;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
@@ -36,12 +36,13 @@ final class HandbookRequestHandler implements DocumentationHandler {
     }
 
     @Override
-    public void handle(Request request, Response response) {
+    public void handle(Context ctx) {
         final int langIdx = Language.TextStrings.MAP_LANGUAGES.getOrDefault(DOCUMENT_LANGUAGE, 0);  // TODO: This should really be based off the client language somehow
         if (template == null) {
-            response.status(500);
+            ctx.status(500);
         } else {
-            response.send(handbookHtmls.get(langIdx));
+            ctx.contentType(HttpUtils.MediaType._html.getMIME());
+            ctx.result(handbookHtmls.get(langIdx));
         }
     }
 

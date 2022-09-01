@@ -36,7 +36,7 @@ public final class DefaultAuthenticators {
             int playerCount = Grasscutter.getGameServer().getPlayers().size();
 
             boolean successfulLogin = false;
-            String address = request.getRequest().ip();
+            String address = request.getContext().ip();
             String responseMessage = translate("messages.dispatch.account.username_error");
             String loggerMessage = "";
 
@@ -99,7 +99,7 @@ public final class DefaultAuthenticators {
             int playerCount = Grasscutter.getGameServer().getPlayers().size();
 
             boolean successfulLogin = false;
-            String address = request.getRequest().ip();
+            String address = request.getContext().ip();
             String responseMessage = translate("messages.dispatch.account.username_error");
             String loggerMessage = "";
             String decryptedPassword = "";
@@ -205,7 +205,7 @@ public final class DefaultAuthenticators {
             assert requestData != null;
 
             boolean successfulLogin;
-            String address = request.getRequest().ip();
+            String address = request.getContext().ip();
             String loggerMessage;
             int playerCount = Grasscutter.getGameServer().getPlayers().size();
 
@@ -263,7 +263,7 @@ public final class DefaultAuthenticators {
             assert loginData != null;
 
             boolean successfulLogin;
-            String address = request.getRequest().ip();
+            String address = request.getContext().ip();
             String loggerMessage;
             int playerCount = Grasscutter.getGameServer().getPlayers().size();
 
@@ -309,43 +309,37 @@ public final class DefaultAuthenticators {
     public static class ExternalAuthentication implements ExternalAuthenticator {
         @Override
         public void handleLogin(AuthenticationRequest request) {
-            assert request.getResponse() != null;
-            request.getResponse().send("Authentication is not available with the default authentication method.");
+            request.getContext().result("Authentication is not available with the default authentication method.");
         }
 
         @Override
         public void handleAccountCreation(AuthenticationRequest request) {
-            assert request.getResponse() != null;
-            request.getResponse().send("Authentication is not available with the default authentication method.");
+            request.getContext().result("Authentication is not available with the default authentication method.");
         }
 
         @Override
         public void handlePasswordReset(AuthenticationRequest request) {
-            assert request.getResponse() != null;
-            request.getResponse().send("Authentication is not available with the default authentication method.");
+            request.getContext().result("Authentication is not available with the default authentication method.");
         }
     }
 
     /**
-     * Handles authentication requests from OAuth sources.
+     * Handles authentication requests from OAuth sources.Zenlith
      */
     public static class OAuthAuthentication implements OAuthAuthenticator {
         @Override
         public void handleLogin(AuthenticationRequest request) {
-            assert request.getResponse() != null;
-            request.getResponse().send("Authentication is not available with the default authentication method.");
+            request.getContext().result("Authentication is not available with the default authentication method.");
         }
 
         @Override
         public void handleRedirection(AuthenticationRequest request, ClientType type) {
-            assert request.getResponse() != null;
-            request.getResponse().send("Authentication is not available with the default authentication method.");
+            request.getContext().result("Authentication is not available with the default authentication method.");
         }
 
         @Override
         public void handleTokenProcess(AuthenticationRequest request) {
-            assert request.getResponse() != null;
-            request.getResponse().send("Authentication is not available with the default authentication method.");
+            request.getContext().result("Authentication is not available with the default authentication method.");
         }
     }
 }
