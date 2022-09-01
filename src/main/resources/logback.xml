@@ -24,7 +24,7 @@
     </encoder>
   </appender>
 
-  <logger name="express" level="OFF" />
+  <logger name="io.javalin" level="OFF" />
   <logger name="org.quartz" level="OFF" />
   <logger name="org.reflections" level="OFF" />
   <logger name="org.eclipse.jetty" level="OFF" />
