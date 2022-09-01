@@ -7,6 +7,7 @@ import java.util.List;
 
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam;
 
 @Entity
 public class TeamInfo {
@@ -80,5 +81,17 @@ public class TeamInfo {
             int id = avatarIds.get(i);
             this.getAvatars().add(id);
         }
+    }
+
+    public AvatarTeam toProto(Player player) {
+        AvatarTeam.Builder avatarTeam = AvatarTeam.newBuilder()
+            .setTeamName(this.getName());
+
+        for (int i = 0; i < this.getAvatars().size(); i++) {
+            Avatar avatar = player.getAvatars().getAvatarById(this.getAvatars().get(i));
+            avatarTeam.addAvatarGuidList(avatar.getGuid());
+        }
+
+        return avatarTeam.build();
     }
 }

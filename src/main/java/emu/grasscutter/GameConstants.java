@@ -8,7 +8,8 @@ import emu.grasscutter.utils.Utils;
 public final class GameConstants {
     public static String VERSION = "3.0.0";
 
-    public static final int MAX_TEAMS = 4;
+    public static final int DEFAULT_TEAMS = 4;
+    public static final int MAX_TEAMS = 10;
     public static final int MAIN_CHARACTER_MALE = 10000005;
     public static final int MAIN_CHARACTER_FEMALE = 10000007;
     public static final Position START_POSITION = new Position(2747, 194, -1719);
