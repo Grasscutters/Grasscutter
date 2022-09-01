@@ -6,6 +6,8 @@ import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.HttpUtils;
 import io.javalin.Javalin;
 import io.javalin.core.util.JavalinLogger;
+import io.javalin.http.ContentType;
+
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
@@ -145,8 +147,10 @@ public final class HttpServer {
     public static class DefaultRequestRouter implements Router {
         @Override public void applyRoutes(Javalin javalin) {
             javalin.get("/", ctx -> {
+                // Send file
                 File file = new File(HTTP_STATIC_FILES.indexFile);
-                if (!file.exists())
+                if (!file.exists()) {
+                    ctx.contentType(ContentType.TEXT_HTML);
                     ctx.result("""
                             <!DOCTYPE html>
                             <html>
@@ -156,10 +160,11 @@ public final class HttpServer {
                                 <body>%s</body>
                             </html>
                             """.formatted(translate("messages.status.welcome")));
-                else {
-                    final var filePath = file.getPath();
-                    final HttpUtils.MediaType fromExtension = HttpUtils.MediaType.getByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
-                    ctx.contentType((fromExtension != null) ? fromExtension.getMIME() : "text/plain").result(FileUtils.read(filePath));
+                } else {
+                    var filePath = file.getPath();
+                    ContentType fromExtension = ContentType.getContentTypeByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
+                    ctx.contentType(fromExtension != null ? fromExtension : ContentType.TEXT_HTML);
+                    ctx.result(FileUtils.read(filePath));
                 }
             });
         }
@@ -170,30 +175,31 @@ public final class HttpServer {
      */
     public static class UnhandledRequestRouter implements Router {
         @Override public void applyRoutes(Javalin javalin) {
-            javalin.error(404, context -> {
+            javalin.error(404, ctx -> {
+                // Error log
                 if (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING)
-                    Grasscutter.getLogger().info(translate("messages.dispatch.unhandled_request_error", context.method(), context.url()));
-                context.contentType("text/html");
-
+                    Grasscutter.getLogger().info(translate("messages.dispatch.unhandled_request_error", ctx.method(), ctx.url()));
+                // Send file
                 File file = new File(HTTP_STATIC_FILES.errorFile);
-                if (!file.exists())
-                    context.result("""
-                        <!DOCTYPE html>
-                        <html>
-                            <head>
-                                <meta charset="utf8">
-                            </head>
+                if (!file.exists()) {
+                    ctx.contentType(ContentType.TEXT_HTML);
+                    ctx.result("""
+                            <!DOCTYPE html>
+                            <html>
+                                <head>
+                                    <meta charset="utf8">
+                                </head>
 
-                            <body>
-                                <img src="https://http.cat/404" />
-                            </body>
-                        </html>
-                        """);
-                else {
-                    final var filePath = file.getPath();
-                    final HttpUtils.MediaType fromExtension = HttpUtils.MediaType.getByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
-                    context.contentType((fromExtension != null) ? fromExtension.getMIME() : "text/plain")
-                            .result(FileUtils.read(filePath));
+                                <body>
+                                    <img src="https://http.cat/404" />
+                                </body>
+                            </html>
+                            """);
+                } else {
+                    var filePath = file.getPath();
+                    ContentType fromExtension = ContentType.getContentTypeByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
+                    ctx.contentType(fromExtension != null ? fromExtension : ContentType.TEXT_HTML);
+                    ctx.result(FileUtils.read(filePath));
                 }
             });
         }

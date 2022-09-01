@@ -8,6 +8,7 @@ import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.HttpUtils;
 import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
+import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 
 import static emu.grasscutter.config.Configuration.*;
@@ -76,8 +77,8 @@ public final class AnnouncementsHandler implements Router {
         try (InputStream filestream = DataLoader.load(ctx.path())) {
             String possibleFilename = Utils.toFilePath(DATA(ctx.path()));
 
-            HttpUtils.MediaType fromExtension = HttpUtils.MediaType.getByExtension(possibleFilename.substring(possibleFilename.lastIndexOf(".") + 1));
-            ctx.contentType((fromExtension != null) ? fromExtension.getMIME() : "application/octet-stream");
+            ContentType fromExtension = ContentType.getContentTypeByExtension(possibleFilename.substring(possibleFilename.lastIndexOf(".") + 1));
+            ctx.contentType(fromExtension != null ? fromExtension : ContentType.APPLICATION_OCTET_STREAM);
             ctx.result(filestream.readAllBytes());
         } catch (Exception e) {
             Grasscutter.getLogger().warn("File does not exist: " + ctx.path());
