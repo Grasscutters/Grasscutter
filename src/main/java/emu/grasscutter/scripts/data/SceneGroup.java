@@ -5,23 +5,22 @@ import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.utils.Position;
 import lombok.Setter;
 import lombok.ToString;
-import org.luaj.vm2.LuaValue;
+import org.terasology.jnlua.util.AbstractTableMap;
 
 import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
-
-import static emu.grasscutter.config.Configuration.SCRIPT;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import static emu.grasscutter.config.Configuration.SCRIPT;
+
 @ToString
 @Setter
 public class SceneGroup {
-    public transient int block_id; // Not an actual variable in the scripts but we will keep it here for reference
+	public transient int block_id; // Not an actual variable in the scripts but we will keep it here for reference
 
     public int id;
     public int refresh_id;
@@ -117,15 +116,16 @@ public class SceneGroup {
 
             this.init_config = ScriptLoader.getSerializer().toObject(SceneInitConfig.class, this.bindings.get("init_config"));
 
-            // Garbages // TODO: fix properly later
-            Object garbagesValue = this.bindings.get("garbages");
-            if (garbagesValue instanceof LuaValue garbagesTable) {
+			// Garbages // TODO: fix properly later
+			Object garbagesValue = this.bindings.get("garbages");
+			if (garbagesValue instanceof AbstractTableMap garbagesTable) {
                 this.garbages = new SceneGarbage();
-                if (garbagesTable.checktable().get("gadgets") != LuaValue.NIL) {
-                    this.garbages.gadgets = ScriptLoader.getSerializer().toList(SceneGadget.class, garbagesTable.checktable().get("gadgets").checktable());
+				if (garbagesTable.get("gadgets") != null) {
+                    this.garbages.gadgets = (List<SceneGadget>) ScriptLoader.getSerializer().toList(SceneGadget.class, garbagesTable.get("gadgets"));
                     this.garbages.gadgets.forEach(m -> m.group = this);
-                }
-            }
+				}
+                bindings.remove("garbages");
+			}
 
             // Add variables to suite
             this.variables = ScriptLoader.getSerializer().toList(SceneVar.class, this.bindings.get("variables"));
