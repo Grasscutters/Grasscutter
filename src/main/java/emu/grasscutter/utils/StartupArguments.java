@@ -5,6 +5,7 @@ import ch.qos.logback.classic.Logger;
 import emu.grasscutter.BuildConfig;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
+import io.javalin.core.util.JavalinLogger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Map;
@@ -83,7 +84,7 @@ public final class StartupArguments {
         Grasscutter.getLogger().debug("The logger is now running in debug mode.");
 
         // Change loggers to debug.
-        ((Logger) LoggerFactory.getLogger("express"))
+        ((Logger) LoggerFactory.getLogger("io.javalin"))
             .setLevel(loggerLevel);
         ((Logger) LoggerFactory.getLogger("org.quartz"))
             .setLevel(loggerLevel);
