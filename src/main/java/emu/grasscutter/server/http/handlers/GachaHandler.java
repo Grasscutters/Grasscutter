@@ -8,7 +8,6 @@ import emu.grasscutter.game.gacha.GachaSystem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.HttpUtils;
 import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.ContentType;

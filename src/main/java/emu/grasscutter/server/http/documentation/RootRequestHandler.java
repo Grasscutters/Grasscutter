@@ -5,7 +5,6 @@ import static emu.grasscutter.utils.Language.translate;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.HttpUtils;
 import emu.grasscutter.utils.Utils;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;

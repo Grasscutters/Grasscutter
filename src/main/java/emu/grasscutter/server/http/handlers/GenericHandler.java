@@ -7,7 +7,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.http.objects.HttpJsonResponse;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.server.http.objects.WebStaticVersionResponse;
-import emu.grasscutter.utils.HttpUtils;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
@@ -18,9 +17,8 @@ public final class GenericHandler implements Router {
     @Override public void applyRoutes(Javalin javalin) {
         // hk4e-sdk-os.hoyoverse.com
         javalin.get("/hk4e_global/mdk/agreement/api/getAgreementInfos", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"marketing_agreements\":[]}}"));
-        // hk4e-sdk-os.hoyoverse.com
-        // this could be either GET or POST based on the observation of different clients
-        HttpUtils.allRoutes(javalin, "/hk4e_global/combo/granter/api/compareProtocolVersion", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"modified\":true,\"protocol\":{\"id\":0,\"app_id\":4,\"language\":\"en\",\"user_proto\":\"\",\"priv_proto\":\"\",\"major\":7,\"minimum\":0,\"create_time\":\"0\",\"teenager_proto\":\"\",\"third_proto\":\"\"}}}"));
+        // hk4e-sdk-os.hoyoverse.com (this could be either GET or POST based on the observation of different clients)
+        this.allRoutes(javalin, "/hk4e_global/combo/granter/api/compareProtocolVersion", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"modified\":true,\"protocol\":{\"id\":0,\"app_id\":4,\"language\":\"en\",\"user_proto\":\"\",\"priv_proto\":\"\",\"major\":7,\"minimum\":0,\"create_time\":\"0\",\"teenager_proto\":\"\",\"third_proto\":\"\"}}}"));
 
         // api-account-os.hoyoverse.com
         javalin.post("/account/risky/api/check", new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"id\":\"none\",\"action\":\"ACTION_NONE\",\"geetest\":null}}"));
@@ -36,11 +34,11 @@ public final class GenericHandler implements Router {
         javalin.post("/data_abtest_api/config/experiment/list", new HttpJsonResponse("{\"retcode\":0,\"success\":true,\"message\":\"\",\"data\":[{\"code\":1000,\"type\":2,\"config_id\":\"14\",\"period_id\":\"6036_99\",\"version\":\"1\",\"configs\":{\"cardType\":\"old\"}}]}"));
 
         // log-upload-os.mihoyo.com
-        HttpUtils.allRoutes(javalin, "/log/sdk/upload", new HttpJsonResponse("{\"code\":0}"));
-        HttpUtils.allRoutes(javalin, "/sdk/upload", new HttpJsonResponse("{\"code\":0}"));
+        this.allRoutes(javalin, "/log/sdk/upload", new HttpJsonResponse("{\"code\":0}"));
+        this.allRoutes(javalin, "/sdk/upload", new HttpJsonResponse("{\"code\":0}"));
         javalin.post("/sdk/dataUpload", new HttpJsonResponse("{\"code\":0}"));
         // /perf/config/verify?device_id=xxx&platform=x&name=xxx
-        HttpUtils.allRoutes(javalin, "/perf/config/verify", new HttpJsonResponse("{\"code\":0}"));
+        this.allRoutes(javalin, "/perf/config/verify", new HttpJsonResponse("{\"code\":0}"));
 
         // webstatic-sea.hoyoverse.com
         javalin.get("/admin/mi18n/plat_oversea/*", new WebStaticVersionResponse());
