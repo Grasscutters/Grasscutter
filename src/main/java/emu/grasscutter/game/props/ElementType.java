@@ -26,7 +26,7 @@ public enum ElementType {
     @Getter private final int teamResonanceId;
     @Getter private final FightProperty curEnergyProp;
     @Getter private final FightProperty maxEnergyProp;
-    @Getter private int depotValue;
+    @Getter private final int depotValue;
     @Getter private final int configHash;
     private static final Int2ObjectMap<ElementType> map = new Int2ObjectOpenHashMap<>();
     private static final Map<String, ElementType> stringMap = new HashMap<>();
@@ -39,24 +39,24 @@ public enum ElementType {
     }
 
     private ElementType(int value, FightProperty curEnergyProp, FightProperty maxEnergyProp) {
-        this(value, curEnergyProp, maxEnergyProp, 0, null);
+        this(value, curEnergyProp, maxEnergyProp, 0, null, 1);
     }
 
     private ElementType(int value, FightProperty curEnergyProp, FightProperty maxEnergyProp, int teamResonanceId, String configName) {
+        this(value, curEnergyProp, maxEnergyProp, teamResonanceId, configName, 1);
+    }
+
+    private ElementType(int value, FightProperty curEnergyProp, FightProperty maxEnergyProp, int teamResonanceId, String configName, int depotValue) {
         this.value = value;
         this.curEnergyProp = curEnergyProp;
         this.maxEnergyProp = maxEnergyProp;
         this.teamResonanceId = teamResonanceId;
+        this.depotValue = depotValue;
         if (configName != null) {
             this.configHash = Utils.abilityHash(configName);
         } else {
             this.configHash = 0;
         }
-    }
-
-    private ElementType(int value, FightProperty curEnergyProp, FightProperty maxEnergyProp, int teamResonanceId, String configName, int depotValue) {
-        this(value, curEnergyProp, maxEnergyProp, teamResonanceId, configName);
-        this.depotValue = depotValue;
     }
 
     public static ElementType getTypeByValue(int value) {
