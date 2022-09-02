@@ -58,11 +58,14 @@
              certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
              ```
 
+
     - Fiddler Classic: Run Fiddler Classic, turn on `Decrypt HTTPS traffic` in (Tools -> Options -> HTTPS) and change the default port in (Tools -> Options -> Connections) to anything other than `8888`, load [this script](https://github.com/Grasscutters/Grasscutter/wiki/Resources#fiddler-classic-jscript) (copy and paste the script in the `FiddlerScript` tab) and click the `Save Script` button.
 
     - [Hosts file](https://github.com/Grasscutters/Grasscutter/wiki/Resources#hosts-file)
 
 2. Set network proxy to `127.0.0.1:8080` or the proxy port you specified.
+
+- For mitmproxy: After setting up the network proxy and installing the certificate, check http://mitm.it/ if traffic is passing through mitmproxy.
 
 **You can also use `start.cmd` to start servers and proxy daemons automatically, but you have to set up `JAVA_HOME` enviroment and configure the `start_config.cmd` file.**
 
