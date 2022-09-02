@@ -1,7 +1,11 @@
 package emu.grasscutter.command;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
+import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+
 import org.reflections.Reflections;
 
 import java.net.IDN;
@@ -15,7 +19,8 @@ public final class CommandMap {
     private final Map<String, CommandHandler> commands = new TreeMap<>();
     private final Map<String, CommandHandler> aliases = new TreeMap<>();
     private final Map<String, Command> annotations = new TreeMap<>();
-    private final Map<String, Integer> targetPlayerIds = new HashMap<>();
+    private final Object2IntMap<String> targetPlayerIds = new Object2IntOpenHashMap<>();
+    private static final int INVALID_UID = Integer.MIN_VALUE;
     private static final String consoleId = "console";
 
     public CommandMap() {
@@ -119,6 +124,20 @@ public final class CommandMap {
         return handler;
     }
 
+    private static int getUidFromString(String input) {
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException ignored) {
+            var account = DatabaseHelper.getAccountByName(input);
+            if (account == null) return INVALID_UID;
+            var player = DatabaseHelper.getPlayerByAccount(account);
+            if (player == null) return INVALID_UID;
+            // We will be immediately fetching the player again after this,
+            // but offline vs online Player safety is more important than saving a lookup
+            return player.getUid();
+        }
+    }
+
     private Player getTargetPlayer(String playerId, Player player, Player targetPlayer, List<String> args) {
         // Top priority: If any @UID argument is present, override targetPlayer with it.
         for (int i = 0; i < args.size(); i++) {
@@ -130,18 +149,17 @@ public final class CommandMap {
                     // This is specifically to allow in-game players to run a command without targeting themselves or anyone else.
                     return null;
                 }
-                try {
-                    int uid = Integer.parseInt(arg);
-                    targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
-                    if (targetPlayer == null) {
-                        CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
-                        throw new IllegalArgumentException();
-                    }
-                    return targetPlayer;
-                } catch (NumberFormatException e) {
+                int uid = getUidFromString(arg);
+                if (uid == INVALID_UID) {
                     CommandHandler.sendTranslatedMessage(player, "commands.generic.invalid.uid");
                     throw new IllegalArgumentException();
                 }
+                targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
+                if (targetPlayer == null) {
+                    CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
+                    throw new IllegalArgumentException();
+                }
+                return targetPlayer;
             }
         }
 
@@ -153,7 +171,7 @@ public final class CommandMap {
 
         // Next priority: Use previously-set target. (see /target [[@]UID])
         if (targetPlayerIds.containsKey(playerId)) {
-            targetPlayer = Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.get(playerId), true);
+            targetPlayer = Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.getInt(playerId), true);
             // We check every time in case the target is deleted after being targeted
             if (targetPlayer == null) {
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
@@ -168,28 +186,28 @@ public final class CommandMap {
 
     private boolean setPlayerTarget(String playerId, Player player, String targetUid) {
         if (targetUid.equals("")) { // Clears the default targetPlayer.
-            targetPlayerIds.remove(playerId);
+            targetPlayerIds.removeInt(playerId);
             CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
             return true;
         }
 
         // Sets default targetPlayer to the UID provided.
-        try {
-            int uid = Integer.parseInt(targetUid);
-            Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
-            if (targetPlayer == null) {
-                CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
-                return false;
-            }
-
-            targetPlayerIds.put(playerId, uid);
-            CommandHandler.sendTranslatedMessage(player, "commands.execution.set_target", targetUid);
-            CommandHandler.sendTranslatedMessage(player, targetPlayer.isOnline()? "commands.execution.set_target_online" : "commands.execution.set_target_offline", targetUid);
-            return true;
-        } catch (NumberFormatException e) {
+        int uid = getUidFromString(targetUid);
+        if (uid == INVALID_UID) {
             CommandHandler.sendTranslatedMessage(player, "commands.generic.invalid.uid");
             return false;
         }
+        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
+        if (targetPlayer == null) {
+            CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
+            return false;
+        }
+
+        targetPlayerIds.put(playerId, uid);
+        String target = uid + " (" + targetPlayer.getAccount().getUsername() + ")";
+        CommandHandler.sendTranslatedMessage(player, "commands.execution.set_target", target);
+        CommandHandler.sendTranslatedMessage(player, targetPlayer.isOnline() ? "commands.execution.set_target_online" : "commands.execution.set_target_offline", target);
+        return true;
     }
 
     /**
