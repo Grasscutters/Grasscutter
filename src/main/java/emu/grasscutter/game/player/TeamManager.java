@@ -20,17 +20,20 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
+import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.event.player.PlayerTeamDeathEvent;
+import emu.grasscutter.server.packet.send.PacketAddCustomTeamRsp;
 import emu.grasscutter.server.packet.send.PacketAvatarDieAnimationEndRsp;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarSkillInfoNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketChangeAvatarRsp;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 import emu.grasscutter.server.packet.send.PacketChangeTeamNameRsp;
 import emu.grasscutter.server.packet.send.PacketChooseCurAvatarTeamRsp;
+import emu.grasscutter.server.packet.send.PacketCustomTeamListNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
+import emu.grasscutter.server.packet.send.PacketRemoveCustomTeamRsp;
 import emu.grasscutter.server.packet.send.PacketSceneTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketSetUpAvatarTeamRsp;
 import emu.grasscutter.server.packet.send.PacketWorldPlayerDieNotify;
@@ -44,7 +47,8 @@ import lombok.Setter;
 
 @Entity
 public class TeamManager extends BasePlayerDataManager {
-    @Getter private Map<Integer, TeamInfo> teams;
+    // This needs to be a LinkedHashMap to guarantee insertion order.
+    @Getter private LinkedHashMap<Integer, TeamInfo> teams;
     private int currentTeamIndex;
     @Getter @Setter private int currentCharacterIndex;
 
@@ -70,9 +74,9 @@ public class TeamManager extends BasePlayerDataManager {
         this();
         this.setPlayer(player);
 
-        this.teams = new HashMap<>();
+        this.teams = new LinkedHashMap<>();
         this.currentTeamIndex = 1;
-        for (int i = 1; i <= GameConstants.MAX_TEAMS; i++) {
+        for (int i = 1; i <= GameConstants.DEFAULT_TEAMS; i++) {
             this.teams.put(i, new TeamInfo());
         }
     }
@@ -639,5 +643,43 @@ public class TeamManager extends BasePlayerDataManager {
 
     public void onPlayerLogin() {  // Hack for now to fix resonances on login
         this.updateTeamResonances();
+    }
+
+    public synchronized void addNewCustomTeam() {
+        // Sanity check - max number of teams.
+        if (this.teams.size() == GameConstants.MAX_TEAMS) {
+            player.sendPacket(new PacketAddCustomTeamRsp(Retcode.RET_FAIL));
+            return;
+        }
+
+        // The id of the new custom team is the lowest id in [5,MAX_TEAMS] that is not yet taken.
+        int id = -1;
+        for (int i = 5; i <= GameConstants.MAX_TEAMS; i++) {
+            if (!this.teams.keySet().contains(i)) {
+                id = i;
+                break;
+            }
+        }
+
+        // Create the new team.
+        this.teams.put(id, new TeamInfo());
+
+        // Send packets.
+        player.sendPacket(new PacketCustomTeamListNotify(player));
+        player.sendPacket(new PacketAddCustomTeamRsp());
+    }
+
+    public synchronized void removeCustomTeam(int id) {
+        // Check if the target id exists.
+        if (!this.teams.containsKey(id)) {
+            player.sendPacket(new PacketRemoveCustomTeamRsp(Retcode.RET_FAIL, id));
+        }
+
+        // Remove team.
+        this.teams.remove(id);
+
+        // Send packets.
+        player.sendPacket(new PacketCustomTeamListNotify(player));
+        player.sendPacket(new PacketRemoveCustomTeamRsp(id));
     }
 }

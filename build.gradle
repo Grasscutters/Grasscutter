@@ -93,6 +93,9 @@ dependencies {
     implementation group:  'com.esotericsoftware', name : 'reflectasm', version: '1.11.9'
     implementation group:  'com.github.davidmoten', name : 'rtree-multi', version: '0.1'
 
+    implementation group: 'io.javalin', name: 'javalin', version: '4.6.4'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
+
     protobuf files('proto/')
 
     compileOnly 'org.projectlombok:lombok:1.18.24'

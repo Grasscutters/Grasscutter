@@ -25,17 +25,16 @@ public class PacketAvatarDataNotify extends BasePacket {
             proto.addAvatarList(avatar.toProto());
         }
 
+        // Add the id list for custom teams.
+        for (int id : player.getTeamManager().getTeams().keySet()) {
+            if (id > 4) {
+                proto.addCustomTeamIds(id);
+            }
+        }
+
         for (Entry<Integer, TeamInfo> entry : player.getTeamManager().getTeams().entrySet()) {
             TeamInfo teamInfo = entry.getValue();
-            AvatarTeam.Builder avatarTeam = AvatarTeam.newBuilder()
-                    .setTeamName(teamInfo.getName());
-
-            for (int i = 0; i < teamInfo.getAvatars().size(); i++) {
-                Avatar avatar = player.getAvatars().getAvatarById(teamInfo.getAvatars().get(i));
-                avatarTeam.addAvatarGuidList(avatar.getGuid());
-            }
-
-            proto.putAvatarTeamMap(entry.getKey(), avatarTeam.build());
+            proto.putAvatarTeamMap(entry.getKey(), teamInfo.toProto(player));
         }
 
         // Set main character

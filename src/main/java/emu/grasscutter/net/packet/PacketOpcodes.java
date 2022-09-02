@@ -1784,9 +1784,9 @@ public class PacketOpcodes {
     public static final int Unk3000_CPCMICDDBCH = 20011;
     public static final int Unk3000_DCAHJINNNDM = 23107;
     public static final int Unk3000_DCLAGIJJEHB = 402;
-    public static final int Unk3000_DFIIBIGPHGE = 1731;
+    public static final int RemoveCustomTeamReq = 1731;
     public static final int Unk3000_DHEOMDCCMMC = 429;
-    public static final int Unk3000_DHOFMKPKFMF = 1749;
+    public static final int CustomTeamListNotify = 1749;
     public static final int Unk3000_DJNBNBMIECP = 5588;
     public static final int Unk3000_DLCDJPKNGBD = 185;
     public static final int Unk3000_DPEJONKFONL = 21750;
@@ -1807,9 +1807,9 @@ public class PacketOpcodes {
     public static final int Unk3000_HIJKNFBBCFC = 23948;
     public static final int Unk3000_HPFGNOIGNAG = 21961;
     public static final int Unk3000_IBMFJMGHCNC = 6060;
-    public static final int Unk3000_IBNIGBFIEEF = 1735;
+    public static final int AddCustomTeamRsp = 1735;
     public static final int Unk3000_IGCECHKNKOO = 21804;
-    public static final int Unk3000_IMLAPBGLBFF = 1687;
+    public static final int AddCustomTeamReq = 1687;
     public static final int Unk3000_IPAKLDNKDAO = 6275;
     public static final int Unk3000_JDCOHPBDPED = 125;
     public static final int Unk3000_JIEPEGAHDNH = 24152;
@@ -1817,7 +1817,7 @@ public class PacketOpcodes {
     public static final int Unk3000_KEJGDDMMBLP = 6376;
     public static final int Unk3000_KGDKKLOOIPG = 457;
     public static final int Unk3000_KHFMBKILMMD = 24081;
-    public static final int Unk3000_KIDDGDPKBEN = 1729;
+    public static final int RemoveCustomTeamRsp = 1729;
     public static final int Unk3000_KJNIKBPKAED = 461;
     public static final int Unk3000_KKHPGFINACH = 24602;
     public static final int Unk3000_KOKEHAPLNHF = 6190;
