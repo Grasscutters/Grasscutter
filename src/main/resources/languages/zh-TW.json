@@ -1,6 +1,7 @@
 {
   "messages": {
     "game": {
+      "address_bind": "🇺🇸Game Server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "遊戲伺服器已成功啟動。端口號：%s",
       "connect": "客戶端已連接至 %s",
       "disconnect": "客戶端 %s 已斷開連接。",
@@ -8,6 +9,7 @@
       "command_error": "指令發生錯誤："
     },
     "dispatch": {
+      "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] 伺服器已在端口 %s 上開啟。",
       "request": "[Dispatch] 客戶端 %s 請求： %s %s",
       "keystore": {
@@ -24,20 +26,25 @@
       "account": {
         "login_attempt": "[Dispatch] 客戶端 %s 正在嘗試登入",
         "login_success": "[Dispatch] 客戶端 %s 已登入，UID為 %s",
-        "login_max_player_limit": "[Dispatch] 客戶端 %s 登入失敗：在綫人數已滿",
+        "login_max_player_limit": "[Dispatch] 客戶端 %s 登入失敗：在線人數已滿",
         "login_token_attempt": "[Dispatch] 客戶端 %s 正在嘗試用憑證登入",
         "login_token_error": "[Dispatch] 客戶端 %s 使用憑證登入失敗",
         "login_token_success": "[Dispatch] 客戶端 %s 已透過憑證登入，UID為 %s",
+        "login_password_error": "[Dispatch] 客戶端 %s 使用密碼登入失敗",
+        "login_password_storage_error": "[Dispatch] 客戶端 %s 使用密碼登入失敗，因為該帳號在資料庫裡面沒有設定密碼。",
         "combo_token_success": "[Dispatch] 客戶端 %s 交換憑證成功",
         "combo_token_error": "[Dispatch] 客戶端 %s 交換憑證失敗",
-        "account_login_create_success": "[Dispatch] 客戶端 %s 登入失敗: 已註冊UID為 %s 的帳號",
+        "account_login_create_success": "[Dispatch] 客戶端 %s 登入失敗: 已註冊UID為 %s 的帳號。",
         "account_login_create_error": "[Dispatch] 客戶端 %s 登入失敗：帳號建立失敗。",
-        "account_login_exist_error": "[Dispatch] 客戶端 %s 登入失敗: 帳號不存在",
+        "account_login_exist_error": "[Dispatch] 客戶端 %s 登入失敗: 帳號不存在。",
         "account_cache_error": "遊戲帳號緩存資訊錯誤",
         "session_key_error": "對話密鑰不符。",
         "username_error": "未找到此用戶名。",
         "username_create_error": "未找到用戶名，建立失敗。",
-        "server_max_player_limit": "服務器在線人數已滿"
+        "password_error": "無效的密碼",
+        "password_length_error": "密碼長度必須大於或等於 8。",
+        "password_storage_error": "此帳號沒有設定密碼，請聯繫伺服器管理員。",
+        "server_max_player_limit": "伺服器在線人數已滿"
       },
       "router_error": "[Dispatch] 無法附加到路由上。"
     },
@@ -49,11 +56,15 @@
       "error": "發生了一個錯誤。",
       "welcome": "歡迎使用 Grasscutter",
       "run_mode_error": "無效的伺服器運行模式： %s。",
-      "run_mode_help": "伺服器運行模式必須為 HYBRID 或者 DISPATCH_ONLY 或者 GAME_ONLY。Grasscutter 啟動失敗...",
+      "run_mode_help": "伺服器運行模式必須為 HYBRID 或者 DISPATCH_ONLY 或者 GAME_ONLY。 Grasscutter 啟動失敗...",
       "create_resources": "正在建立 resources 資料夾...",
       "resources_error": "請將 BinOutput 和 ExcelBinOutput 複製到 resources 資料夾。",
       "version": "Grasscutter版本： %s-%s",
-      "game_version": "游戏版本: %s"
+      "game_version": "遊戲版本：%s",
+      "resources": {
+        "loading": "加載資源中...",
+        "finish": "資源加載完成.。"
+      }
     }
   },
   "commands": {
@@ -64,7 +75,10 @@
       "console_execute_error": "此指令只能在伺服器的命令提示字元執行。",
       "player_execute_error": "請在遊戲裡使用這條指令。",
       "command_exist_error": "找不到指令。",
+      "no_usage_specified": "沒有指定用法。",
       "no_description_specified": "没有指定說明。",
+      "set_to": "%s 已經設為 %s。",
+      "set_for_to": "%s 的使用者 %s 更改為 %s。",
       "invalid": {
         "amount": "無效的數量。",
         "artifactId": "無效的聖遺物ID。",
@@ -74,17 +88,18 @@
         "itemId": "無效的物品ID。",
         "itemLevel": "無效的物品等級。",
         "itemRefinement": "無效的物品精煉度。",
+        "statValue": "無效的數據值。",
+        "value_between": "無效的屬性值：%s 必須在 %s 到 %s 之間。",
         "playerId": "無效的玩家ID。",
-        "uid": "無效的UID。"
+        "uid": "無效的UID。",
+        "id": "無效的ID。"
       }
     },
     "execution": {
-      "uid_error": "無效的UID。",
+      "usage_prefix": "用法：",
       "player_exist_error": "用戶不存在。",
       "player_offline_error": "玩家已離線。",
-      "item_id_error": "無效的物品ID。.",
       "item_player_exist_error": "無效的物品/玩家UID。",
-      "entity_id_error": "無效的實體ID。",
       "player_exist_offline_error": "玩家不存在或已離線。",
       "argument_error": "無效的參數。",
       "clear_target": "目標已清除.",
@@ -98,33 +113,25 @@
     "status": {
       "enabled": "已啟用",
       "disabled": "未啟用",
-      "help": "幫助", 
+      "help": "幫助",
       "success": "成功"
     },
     "account": {
-      "modify": "修改使用者帳號",
       "invalid": "無效的UID。",
       "exists": "帳號已存在。",
       "create": "已建立帳號，UID 為 %s 。",
       "delete": "帳號已刪除。",
       "no_account": "帳號不存在。",
-      "command_usage": "用法：account <create|delete> <username> [uid]",
       "description": "建立或刪除帳號。"
     },
-    "broadcast": {
-      "command_usage": "用法：broadcast <message>",
-      "message_sent": "公告已發送。",
-      "description": "向所有玩家發送公告。"
-    },
-    "changescene": {
-      "usage": "用法：changescene <sceneId>",
-      "already_in_scene": "你已經在這個場景中了。",
-      "success": "已切換至場景 %s.",
-      "exists_error": "此場景不存在。",
-      "description": "切換指定場景。"
+    "announce": {
+      "send_success": "成功發送了一則公告，你可以通過 /a revoke %s 撤銷。",
+      "refresh_success": "已重新整理了%s個公告。",
+      "revoke_done": "嘗試撤回公告 %s。",
+      "not_found": "找不到公告 %s。",
+      "description": "發送公告給所有在線玩家，或者是更改伺服器的公告。"
     },
     "clear": {
-      "command_usage": "用法： clear <all|wp|art|mat>",
       "weapons": "已將 %s 的武器清空。",
       "artifacts": "已將 %s 的聖遺物清空。",
       "materials": "已將 %s 的材料清空。",
@@ -135,58 +142,37 @@
       "description": "從你的背包中刪除所有未裝備且未上鎖的物品，包括稀有物品。"
     },
     "coop": {
-      "usage": "用法：coop [host uid]",
       "success": "召喚了 %s 到 %s 的世界。",
-      "description": "強制傳送指定用戶到他人的世界。"
+      "description": "強制傳送指定用戶到他人的世界。如果未指定玩家，則會將你設為多人遊戲狀態。"
     },
     "enter_dungeon": {
-      "usage": "用法：enterdungeon <dungeonId>",
       "changed": "已進入祕境 %s",
       "not_found_error": "此祕境不存在。",
       "in_dungeon_error": "你已經在祕境中了。",
       "description": "進入指定祕境。"
     },
-    "giveAll": {
-      "usage": "用法：giveall [player] [amount]",
-      "started": "正在賦予全部物品...",
-      "success": "已賦予全部物品。",
-      "invalid_amount_or_playerId": "無效的數量/玩家ID。",
-      "description": "賦予所有物品。"
-    },
-    "giveArtifact": {
-      "usage": "用法：giveart|gart [player] <artifactId> <mainPropId> [<appendPropId>[,<times>]]... [level]",
-      "id_error": "無效的聖遺物ID。",
-      "success": "已把 %s 給予 %s。",
-      "description": "給予指定聖遺物。"
-    },
-    "giveChar": {
-      "usage": "用法：givechar <player> <avatarId> [level]",
-      "given": "已將 %s 等級 %s 給予 %s。",
-      "invalid_avatar_id": "無效的角色ID。",
-      "invalid_avatar_level": "無效的角色等級。.",
-      "invalid_avatar_or_player_id": "無效的角色ID/玩家ID。",
-      "description": "給予指定角色。"
-    },
     "give": {
-      "usage": "用法：give <player> <itemId|itemName> [amount] [level] [refinement]",
-      "refinement_only_applicable_weapons": "精煉度只能施加在武器上面。",
-      "refinement_must_between_1_and_5": "精煉度必需在 1 到 5 之間。",
+      "usage_relic": "用法： give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
+      "illegal_relic": "你不可以取得這個聖遺物，因為該聖遺物ID在黑名單列表內。",
       "given": "已經將 %s 個 %s 給予 %s。",
       "given_with_level_and_refinement": "已將 %s [等級%s, 精煉%s] %s個給予 %s",
       "given_level": "已將 %s 等級 %s %s 個給予 %s",
+      "given_avatar": "已將 %s 等級 %s 給予 %s。",
+      "giveall_success": "成功給予所有物品。",
       "description": "給予指定物品。"
-    },
-    "godmode": {
-      "success": "上帝模式設定為 %s 。 [用戶：%s]",
-      "description": "防止你受到傷害。"
-    },
-    "nostamina": {
-      "success": "無限體力狀態： %s。[使用者：%s]",
-      "description": "開啟後所有動作都不再消耗體力。"
     },
     "heal": {
       "success": "所有角色已被治療。",
       "description": "治療當前隊伍的角色。"
+    },
+    "help": {
+      "aliases": "別名：",
+      "available_commands": "可用指令：",
+      "tip_need_permission": "需要的權限: ",
+      "tip_need_no_permission": "無",
+      "tip_permission_targeted": "(對其他的玩家使用這個指令還需要權限%s)",
+      "warn_player_has_no_permission": "注意：你沒有執行這條指令的權限",
+      "description": "發送幫助信息或顯示特定命令的信息"
     },
     "kick": {
       "player_kick_player": "玩家 [%s:%s] 已把 [%s:%s] 踢出",
@@ -194,13 +180,11 @@
       "description": "從伺服器內踢出指定玩家。"
     },
     "killall": {
-      "usage": "用法：killall [playerUid] [sceneId]",
       "scene_not_found_in_player_world": "未在玩家世界中找到此場景",
       "kill_monsters_in_scene": "已殺死 %s 個怪物。 [場景ID： %s]",
       "description": "殺死所有怪物。"
     },
     "killCharacter": {
-      "usage": "用法：killcharacter [playerId]",
       "success": "已殺死 %s 目前的場上角色。",
       "description": "殺死玩家目前使用的場上角色。"
     },
@@ -211,11 +195,10 @@
       "description": "顯示或切換當前語言。"
     },
     "list": {
-      "success": "目前總線上人數：%s" ,
+      "success": "目前總線上人數：%s",
       "description": "查看所有在線玩家"
     },
     "permission": {
-      "usage": "用法：permission <add|remove> <username> <permission>",
       "add": "已指派權限。",
       "has_error": "此玩家已擁有權限！",
       "remove": "權限已移除。",
@@ -228,22 +211,16 @@
       "description": "獲取目前所在位置的座標。"
     },
     "quest": {
-      "description": "添加或完成任務",
-      "usage": "quest <add|finish> [任務ID]",
       "added": "已添加任務 %s",
       "finished": "已完成任務 %s",
       "not_found": "未找到任務",
-      "invalid_id": "無效的任務ID"
+      "invalid_id": "無效的任務ID",
+      "description": "添加或完成任務"
     },
     "reload": {
       "reload_start": "正在重新加載設定檔。",
       "reload_done": "重新加載已完成。",
       "description": "重新加載設定檔和數據。"
-    },
-    "remove": {
-      "usage": "用法: remove [多個角色在隊伍中的序號] 序號从1开始",
-      "invalid_index": "序號不合法，從1開始，最大值為隊内角色數量",
-      "description": "强制移除對内角色，例如`remove 1 2`表示將1號和2號角色從隊伍中移除"
     },
     "resetConst": {
       "reset_all": "重設所有角色的命座。",
@@ -251,12 +228,11 @@
       "description": "重置當前角色的命之座，重新登入後將會生效。"
     },
     "resetShopLimit": {
-      "usage": "用法：resetshop <playerId>",
       "success": "重置完成。",
       "description": "重置所選玩家的商店刷新時間。"
     },
     "sendMail": {
-      "usage": "用法：sendmail <userId|all|help> [templateId]",
+      "give_usage": "用法： give <player> <itemID|itemName> [amount] [level] [refinement]",
       "user_not_exist": "ID '%s' 的使用者不存在。",
       "start_composition": "發送郵件流程。\n請使用`/send <郵件標題>`來進到下一步。\n你可以在任何時間使用`/sendmail stop`來停止發送。",
       "templates": "郵件模板尚未實裝...",
@@ -270,7 +246,7 @@
       "set_contents": "成功將'%s'為郵件內容。\n接下來請打出 '/sendmail <寄件者名稱>' 來設定郵件寄件者名稱。",
       "set_message_sender": "郵件寄件者已設為 '%s'。\n使用 '/sendmail <itemId|itemName|finish> [amount] [level]' 以繼續操作。",
       "send": "已添加 %s 個 %s (等級為 %s) 到郵件附件。\n如果沒有要繼續添加道具請使用 `/sendmail finish` 來完成郵件發送。",
-      "invalid_arguments_please_use": "Invalid arguments \n Please use `/sendmail %s`",
+      "invalid_arguments_please_use": "無效的參數 \n 請改用 `/sendmail %s`",
       "title": "<標題>",
       "message": "<正文>",
       "sender": "<寄件者>",
@@ -279,57 +255,47 @@
       "description": "向指定用戶發送郵件。此指令的用法可根據附加的參數而改變。"
     },
     "sendMessage": {
-      "usage": "用法：sendmessage <player> <message>",
       "success": "訊息已發送。",
       "description": "向指定玩家發送訊息。"
     },
+    "setConst": {
+      "range_error": "命座必須在0到6之間。",
+      "level_error": "無效的命座等級。",
+      "fail": "設定命座失敗。",
+      "failed_success": "%s的命之座已設定為成%s，重新登入後將會生效。",
+      "success": "%s的命之座已設定為成%s。",
+      "description": "設定當前角色的命之座。"
+    },
     "setFetterLevel": {
-      "usage": "用法：setfetterlevel <level>",
       "range_error": "好感度必須在 0 到 10 之間。",
       "success": "好感等級已設定為 %s",
       "level_error": "無效的好感度。",
       "description": "設定當前角色的好感度等級。"
     },
-    "setStats": {
-      "usage_console": "用法：setstats|stats @<UID> <stat> <value>",
-      "usage_ingame": "用法：setstats|stats [@UID] <stat> <value>",
-      "help_message": "\n\t可使用的數據類型：hp (生命值)| maxhp (最大生命值) | def(防禦力) | atk (攻擊力)| em (元素精通) | er (元素充能效率) | crate(暴擊率) | cdmg (暴擊傷害)| cdr (冷卻縮減) | heal(治療加成)| heali (受治療加成)| shield (護盾強效)| defi (無視防禦)\n\t(cont.) 元素增傷類：epyro (火傷) | ecryo (冰傷)  | ehydro (水傷)  | egeo (岩傷)  | edendro (草傷) | eelectro (雷傷) | ephys (物傷)(cont.) 元素減傷類：respyro (火抗)  | rescryo (冰抗)  | reshydro (水抗)  | resgeo (岩抗) | resdendro (草抗) | reselectro (雷抗)  | resphys (物抗)\n",
-      "value_error": "無效的數據值。",
-      "uid_error": "無效的UID。",
-      "player_error": "玩家不存在或已離線。",
-      "set_self": "%s 已經設為 %s。",
-      "set_for_uid": "%s 的使用者 %s 更改為 %s。",
-      "set_max_hp": "最大生命值更改為 %s。",
-      "description": "設定當前角色的數據類型。"
+    "setProp": {
+      "description": "設定帳號屬性。 比如可以通過此命令啟用無敵，也可以解鎖深淵或更改紀行等級。\n\t可更改的屬性列表： godmode(無敵)|nostamina(無限體力)|unlimitedenergy(無限元素能量)|abyss(深淵螺旋)|worldlevel(世界等級)|bplevel(紀行等級)\n\t(cont.) `有關其他可能的數值，請參閱 PlayerProperty 列舉。 (範例 PROP_MAX_SPRING_VOLUME -> max_spring_volume)`"
     },
-    "setWorldLevel": {
-      "usage": "用法：setworldlevel <level>",
-      "value_error": "世界等級必須設定在0-8之間。",
-      "success": "已將世界等級設為%s。",
-      "invalid_world_level": "無效的世界等級。",
-      "description": "設定世界等級，執行指令後需重新登入後才會生效。"
+    "setStats": {
+      "description": "設定當前角色的數據類型。\n\t可使用的數據類型：hp (生命值)| maxhp (最大生命值) | def(防禦力) | atk (攻擊力)| em (元素精通) | er (元素充能效率) | crate(暴擊率) | cdmg (暴擊傷害)| cdr (冷卻縮減) | heal(治療加成)| heali (受治療加成)| shield (護盾強效)| defi (無視防禦)\n\t(cont.) 元素增傷類：epyro (火傷) | ecryo (冰傷)  | ehydro (水傷)  | egeo (岩傷)  | edendro (草傷) | eelectro (雷傷) | ephys (物傷)(cont.) 元素減傷類：respyro (火抗)  | rescryo (冰抗)  | reshydro (水抗)  | resgeo (岩抗) | resdendro (草抗) | reselectro (雷抗)  | resphys (物抗)",
+      "locked_to": "🇺🇸%s locked to %s.",
+      "locked_for_to": "🇺🇸%s for %s locked to %s.",
+      "unlocked": "🇺🇸%s unlocked.",
+      "unlocked_for": "🇺🇸%s for %s unlocked."
     },
     "spawn": {
-      "usage": "用法：spawn <entityId> [amount] [level(僅限怪物)]",
       "success": "已生成 %s 個 %s。",
-      "limit_reached": "場景中的生成數量已達上限。已替代為生成 %s 個實體。",
-      "description": "在你附近生成實體。"
+      "limit_reached": "已達到場景生成上限，已改為%s個實體。",
+      "description": "在你附近生成一個實體動物。"
     },
     "stop": {
       "success": "正在關閉伺服器...",
       "description": "以正常的方式關閉伺服器。"
     },
     "talent": {
-      "usage_1": "設定天賦等級：/talent set <talentID> <value>",
-      "usage_2": "另一種設定天賦等級的指令使用方法：/talent <n or e or q> <value>",
-      "usage_3": "獲取天賦ID指令用法：/talent getid",
       "lower_16": "無效的天賦等級，技能等級應低於 16。",
-      "set_id": "將天賦等級設為%s。",
-      "set_atk": "將普通攻擊等級設為 %s。",
-      "set_e": "設定元素戰技的天賦等級至 %s。",
-      "set_q": "設定元素爆發的天賦等級至 %s。",
+      "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
+      "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "無效的技能ID。",
-      "set_this": "將天賦等級設為 %s。",
       "invalid_level": "無效的天賦等級。",
       "normal_attack_id": "普通攻擊的 ID 為 %s。",
       "e_skill_id": "元素戰技技能ID %s。",
@@ -337,17 +303,13 @@
       "description": "設定當前角色的天賦等級"
     },
     "team": {
-      "usage": "用法：team <add|remove|set> [角色ID,...] [索引|first|last|索引-索引,...]",
       "invalid_usage": "無效的用法。",
-      "add_usage": "新增的用法：team add <角色ID,...> [索引]",
       "invalid_index": "無效索引。",
       "add_too_much": "服務端只允許您的隊伍裡最多 %d 名角色。",
       "failed_to_add_avatar": "無法根據ID %s 添加角色。",
-      "remove_usage": "移除的用法：team remove <索引|first|last|索引-索引,...>",
       "failed_to_parse_index": "無法解析的索引：%s",
       "remove_too_much": "您不能删除那麼多的角色，因為您的隊伍列表角色會全部被刪除。",
       "ignore_index": "無視的索引列表：%s",
-      "set_usage": "設定的用法：team set <索引> <角色ID>",
       "index_out_of_range": "您指定的索引超出了範圍。",
       "failed_parse_avatar_id": "無法解析的角色ID：%s",
       "avatar_already_in_team": "該角色已經在您的隊伍當中了。",
@@ -360,36 +322,30 @@
       "description": "將你世界裡的所有玩家傳送到你目前的所在位置。"
     },
     "teleport": {
-      "usage_server": "用法：tp @<playerId> <x> <y> <z> [sceneId]",
-      "usage": "用法：tp [@<playerId>] <x> <y> <z> [sceneId]",
-      "specify_player_id": "你必須指定一個玩家ID。",
       "invalid_position": "無效的座標。",
+      "exists_error": "此場景不存在。",
       "success": "傳送 %s 到座標 %s,%s,%s ，場景為 %s 。",
       "description": "將玩家的位置傳送到你所指定的座標。"
     },
     "weather": {
-      "usage": "用法：weather <氣候型別(天氣ID)> <天氣型別(氣候ID)>\n天氣型別：'0: 無, 1: 晴天, 2: 多雲, 3: 雨, 4: 雷雨, 5: 雪, 6: 霧'",
-      "success": "已將當前氣候型別設定為 %s，天氣型別為 %s。",
-      "invalid_id": "無效的ID。",
-      "description": "更改目前的天氣。"
+      "success": "已設定天氣ID 為 %s，氣候型別為 %s。",
+      "status": "當前天氣ID 為 %s，氣候型別為 %s。",
+      "description": "更改天氣ID和氣候型別。天氣ID可以在 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json 中找到。\n氣候型別：sunny(晴天), cloudy(多雲), rain(雨), thunderstorm(雷雨), snow(雪), mist(霧)"
     },
-    "drop": {
-      "command_usage": "用法：drop <itemId|itemName> [amount]",
-      "success": "已將 %s x %s 丟在附近。",
-      "description": "在你附近丟下一個物品。"
+    "ban": {
+      "success": "停權成功。",
+      "failure": "停權失敗，玩家帳號不存在。",
+      "invalid_time": "無效的時間戳。",
+      "description": "停權指定玩家。"
     },
-    "help": {
-      "usage": "用法：",
-      "aliases": "別名：",
-      "description": "發送幫助信息或顯示特定命令的信息",
-      "available_commands": "可用指令："
+    "unlockall": {
+      "success": "🇺🇸Unlocked all open states for %s.",
+      "description": "🇺🇸Unlocks all open states for a player."
     },
-    "restart": {
-      "description": "重新啟動伺服器。"
-    },
-    "unlocktower": {
-      "success": "解鎖完成。",
-      "description": "解鎖所有級別的深境螺旋。"
+    "unban": {
+      "success": "撤銷停權成功。",
+      "failure": "撤銷停權失敗，玩家帳號不存在。",
+      "description": "撤銷停權指定玩家。"
     }
   },
   "gacha": {
@@ -398,11 +354,16 @@
       "available_five_stars": "可獲得的5星物品",
       "available_four_stars": "可獲得的4星物品",
       "available_three_stars": "可獲得的3星物品"
+    },
+    "records": {
+      "title": "祈願記錄",
+      "date": "日期",
+      "item": "物品"
     }
   },
   "documentation": {
     "handbook": {
-      "title": "GM手冊",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "指令",
       "title_avatars": "角色",
       "title_items": "道具",
@@ -418,8 +379,24 @@
     },
     "index": {
       "title": "文件",
-      "handbook": "GM手冊",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "祈願物品映射到JSON上"
     }
+  },
+  "plugin": {
+    "directory_failed": "🇺🇸Failed to create plugins directory: ",
+    "unable_to_load": "🇺🇸Unable to load plugin.",
+    "invalid_config": "🇺🇸Plugin %s has an invalid config file.",
+    "invalid_main_class": "🇺🇸Plugin %s has an invalid main class.",
+    "missing_config": "🇺🇸Plugin %s lacks a valid config file.",
+    "failed_to_load_plugin": "🇺🇸Failed to load plugin: %s",
+    "failed_to_load": "🇺🇸Failed to load a plugin.",
+    "failed_to_load_dependencies": "🇺🇸Failed to load plugins with dependencies.",
+    "loading_plugin": "🇺🇸Loading plugin: %s",
+    "failed_add_id": "🇺🇸Failed to add plugin identifier: %s",
+    "enabling_plugin": "🇺🇸Enabling plugin: %s",
+    "enabling_failed": "🇺🇸Failed to enable plugin: %s",
+    "disabling_plugin": "🇺🇸Disabling plugin: %s",
+    "disabling_failed": "🇺🇸Failed to disable plugin: %s"
   }
 }

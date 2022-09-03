@@ -1,9 +1,8 @@
 package emu.grasscutter.server.http.documentation;
 
-import express.http.Request;
-import express.http.Response;
+import io.javalin.http.Context;
 
 interface DocumentationHandler {
 
-    void handle(Request request, Response response);
+    void handle(Context ctx);
 }

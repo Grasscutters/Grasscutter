@@ -10,7 +10,7 @@ import java.util.Map;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "list", usage = "list [uid]", aliases = {"players"}, description = "commands.list.description", targetRequirement = Command.TargetRequirement.NONE)
+@Command(label = "list", aliases = {"players"}, usage = {"[<UID>]"}, targetRequirement = Command.TargetRequirement.NONE)
 public final class ListCommand implements CommandHandler {
 
     @Override
@@ -22,7 +22,7 @@ public final class ListCommand implements CommandHandler {
             needUID = args.get(0).equals("uid");
         }
 
-        CommandHandler.sendMessage(sender, translate(sender, "commands.list.success", Integer.toString(playersMap.size())));
+        CommandHandler.sendMessage(sender, translate(sender, "commands.list.success", playersMap.size()));
 
         if (playersMap.size() != 0) {
             StringBuilder playerSet = new StringBuilder();

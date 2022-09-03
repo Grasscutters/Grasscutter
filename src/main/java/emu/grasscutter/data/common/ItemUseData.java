@@ -1,24 +1,19 @@
 package emu.grasscutter.data.common;
 
-import java.util.List;
+import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseData {
-	private String useOp;
-	private List<String> useParam;
+    private ItemUseOp useOp;
+    private String[] useParam;
 
-	public String getUseOp() {
-		return useOp;
-	}
+    public ItemUseOp getUseOp() {
+        if (useOp == null) {
+            useOp = ItemUseOp.ITEM_USE_NONE;
+        }
+        return useOp;
+    }
 
-	public void setUseOp(String useOp) {
-		this.useOp = useOp;
-	}
-
-	public List<String> getUseParam() {
-		return useParam;
-	}
-	
-	public void setUseParam(List<String> useParam) {
-		this.useParam = useParam;
-	}
+    public String[] getUseParam() {
+        return useParam;
+    }
 }

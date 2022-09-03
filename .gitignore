@@ -52,6 +52,7 @@ tmp/
 .vscode
 
 # Grasscutter
+/cache
 /resources
 /logs
 /plugins
@@ -59,12 +60,12 @@ tmp/
 /keys
 /language
 /languages
-/src/generated
+/proto
 
 /*.jar
 /*.sh
 
-GM Handbook.txt
+GM Handbook*.txt
 config.json
 mitmdump.exe
 mongod.exe
@@ -78,4 +79,5 @@ BuildConfig.java
 
 # macOS
 .DS_Store
+.directory
 data/hk4e/announcement/

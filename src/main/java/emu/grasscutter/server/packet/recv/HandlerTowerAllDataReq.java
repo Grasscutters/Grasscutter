@@ -8,13 +8,13 @@ import emu.grasscutter.server.packet.send.PacketTowerAllDataRsp;
 
 @Opcodes(PacketOpcodes.TowerAllDataReq)
 public class HandlerTowerAllDataReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		session.send(new PacketTowerAllDataRsp(
-				session.getServer().getTowerScheduleManager(),
-				session.getPlayer().getTowerManager()
-		));
-	}
+
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        session.send(new PacketTowerAllDataRsp(
+                session.getServer().getTowerSystem(),
+                session.getPlayer().getTowerManager()
+        ));
+    }
 
 }

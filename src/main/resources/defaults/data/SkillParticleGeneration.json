@@ -1,7 +1,6 @@
 [
 	{
 		"avatarId": 10000002,
-		"name": "Kamisato Ayaka",
 		"amountList": [
 			{
 				"value": 4,
@@ -15,7 +14,6 @@
 	},
 	{
 		"avatarId": 10000003,
-		"name": "Jean",
 		"amountList": [
 			{
 				"value": 2,
@@ -29,7 +27,6 @@
 	},
 	{
 		"avatarId": 10000005,
-		"name": "Traveler",
 		"amountList": [
 			{
 				"value": 3,
@@ -43,7 +40,6 @@
 	},
 	{
 		"avatarId": 10000006,
-		"name": "Lisa",
 		"amountList": [
 			{
 				"value": 5,
@@ -53,7 +49,6 @@
 	},
 	{
 		"avatarId": 10000007,
-		"name": "Traveler",
 		"amountList": [
 			{
 				"value": 3,
@@ -67,7 +62,6 @@
 	},
 	{
 		"avatarId": 10000014,
-		"name": "Barbara",
 		"amountList": [
 			{
 				"value": 0,
@@ -77,7 +71,6 @@
 	},
 	{
 		"avatarId": 10000015,
-		"name": "Kaeya",
 		"amountList": [
 			{
 				"value": 2,
@@ -91,7 +84,6 @@
 	},
 	{
 		"avatarId": 10000016,
-		"name": "Diluc",
 		"amountList": [
 			{
 				"value": 1,
@@ -105,7 +97,6 @@
 	},
 	{
 		"avatarId": 10000020,
-		"name": "Razor",
 		"amountList": [
 			{
 				"value": 3,
@@ -115,7 +106,6 @@
 	},
 	{
 		"avatarId": 10000021,
-		"name": "Amber",
 		"amountList": [
 			{
 				"value": 4,
@@ -125,7 +115,6 @@
 	},
 	{
 		"avatarId": 10000022,
-		"name": "Venti",
 		"amountList": [
 			{
 				"value": 3,
@@ -135,7 +124,6 @@
 	},
 	{
 		"avatarId": 10000023,
-		"name": "Xiangling",
 		"amountList": [
 			{
 				"value": 1,
@@ -145,7 +133,6 @@
 	},
 	{
 		"avatarId": 10000024,
-		"name": "Beidou",
 		"amountList": [
 			{
 				"value": 2,
@@ -155,7 +142,6 @@
 	},
 	{
 		"avatarId": 10000025,
-		"name": "Xingqiu",
 		"amountList": [
 			{
 				"value": 5,
@@ -165,7 +151,6 @@
 	},
 	{
 		"avatarId": 10000026,
-		"name": "Xiao",
 		"amountList": [
 			{
 				"value": 3,
@@ -175,7 +160,6 @@
 	},
 	{
 		"avatarId": 10000027,
-		"name": "Ningguang",
 		"amountList": [
 			{
 				"value": 3,
@@ -189,7 +173,6 @@
 	},
 	{
 		"avatarId": 10000029,
-		"name": "Klee",
 		"amountList": [
 			{
 				"value": 4,
@@ -199,7 +182,6 @@
 	},
 	{
 		"avatarId": 10000030,
-		"name": "Zhongli",
 		"amountList": [
 			{
 				"value": 1,
@@ -209,7 +191,6 @@
 	},
 	{
 		"avatarId": 10000031,
-		"name": "Fischl",
 		"amountList": [
 			{
 				"value": 1,
@@ -219,7 +200,6 @@
 	},
 	{
 		"avatarId": 10000032,
-		"name": "Bennett",
 		"amountList": [
 			{
 				"value": 2,
@@ -233,7 +213,6 @@
 	},
 	{
 		"avatarId": 10000033,
-		"name": "Tartaglia",
 		"amountList": [
 			{
 				"value": 1,
@@ -243,7 +222,6 @@
 	},
 	{
 		"avatarId": 10000034,
-		"name": "Noelle",
 		"amountList": [
 			{
 				"value": 0,
@@ -253,7 +231,6 @@
 	},
 	{
 		"avatarId": 10000035,
-		"name": "Qiqi",
 		"amountList": [
 			{
 				"value": 0,
@@ -263,7 +240,6 @@
 	},
 	{
 		"avatarId": 10000036,
-		"name": "Chongyun",
 		"amountList": [
 			{
 				"value": 4,
@@ -273,7 +249,6 @@
 	},
 	{
 		"avatarId": 10000037,
-		"name": "Ganyu",
 		"amountList": [
 			{
 				"value": 2,
@@ -283,7 +258,6 @@
 	},
 	{
 		"avatarId": 10000038,
-		"name": "Albedo",
 		"amountList": [
 			{
 				"value": 1,
@@ -293,7 +267,6 @@
 	},
 	{
 		"avatarId": 10000039,
-		"name": "Diona",
 		"amountList": [
 			{
 				"value": 1,
@@ -303,7 +276,6 @@
 	},
 	{
 		"avatarId": 10000041,
-		"name": "Mona",
 		"amountList": [
 			{
 				"value": 3,
@@ -317,7 +289,6 @@
 	},
 	{
 		"avatarId": 10000042,
-		"name": "Keqing",
 		"amountList": [
 			{
 				"value": 2,
@@ -331,7 +302,6 @@
 	},
 	{
 		"avatarId": 10000043,
-		"name": "Sucrose",
 		"amountList": [
 			{
 				"value": 4,
@@ -341,7 +311,6 @@
 	},
 	{
 		"avatarId": 10000044,
-		"name": "Xinyan",
 		"amountList": [
 			{
 				"value": 4,
@@ -351,7 +320,6 @@
 	},
 	{
 		"avatarId": 10000045,
-		"name": "Rosaria",
 		"amountList": [
 			{
 				"value": 3,
@@ -361,7 +329,6 @@
 	},
 	{
 		"avatarId": 10000046,
-		"name": "Hu Tao",
 		"amountList": [
 			{
 				"value": 2,
@@ -375,7 +342,6 @@
 	},
 	{
 		"avatarId": 10000047,
-		"name": "Kaedehara Kazuha",
 		"amountList": [
 			{
 				"value": 3,
@@ -389,7 +355,6 @@
 	},
 	{
 		"avatarId": 10000048,
-		"name": "Yanfei",
 		"amountList": [
 			{
 				"value": 3,
@@ -399,7 +364,6 @@
 	},
 	{
 		"avatarId": 10000049,
-		"name": "Yoimiya",
 		"amountList": [
 			{
 				"value": 1,
@@ -409,7 +373,6 @@
 	},
 	{
 		"avatarId": 10000050,
-		"name": "Thoma",
 		"amountList": [
 			{
 				"value": 3,
@@ -423,7 +386,6 @@
 	},
 	{
 		"avatarId": 10000051,
-		"name": "Eula",
 		"amountList": [
 			{
 				"value": 1,
@@ -437,7 +399,6 @@
 	},
 	{
 		"avatarId": 10000052,
-		"name": "Raiden Shogun",
 		"amountList": [
 			{
 				"value": 1,
@@ -447,7 +408,6 @@
 	},
 	{
 		"avatarId": 10000053,
-		"name": "Sayu",
 		"amountList": [
 			{
 				"value": 2,
@@ -457,7 +417,6 @@
 	},
 	{
 		"avatarId": 10000054,
-		"name": "Sangonomiya Kokomi",
 		"amountList": [
 			{
 				"value": 1,
@@ -467,7 +426,6 @@
 	},
 	{
 		"avatarId": 10000055,
-		"name": "Gorou",
 		"amountList": [
 			{
 				"value": 2,
@@ -477,7 +435,6 @@
 	},
 	{
 		"avatarId": 10000056,
-		"name": "Kujou Sara",
 		"amountList": [
 			{
 				"value": 3,
@@ -487,7 +444,6 @@
 	},
 	{
 		"avatarId": 10000057,
-		"name": "Arataki Itto",
 		"amountList": [
 			{
 				"value": 3,
@@ -501,7 +457,6 @@
 	},
 	{
 		"avatarId": 10000058,
-		"name": "Yae Miko",
 		"amountList": [
 			{
 				"value": 1,
@@ -511,7 +466,6 @@
 	},
 	{
 		"avatarId": 10000060,
-		"name": "Yelan",
 		"amountList": [
 			{
 				"value": 4,
@@ -521,7 +475,6 @@
 	},
 	{
 		"avatarId": 10000062,
-		"name": "Aloy",
 		"amountList": [
 			{
 				"value": 5,
@@ -531,7 +484,6 @@
 	},
 	{
 		"avatarId": 10000063,
-		"name": "Shenhe",
 		"amountList": [
 			{
 				"value": 3,
@@ -541,7 +493,6 @@
 	},
 	{
 		"avatarId": 10000064,
-		"name": "Yun Jin",
 		"amountList": [
 			{
 				"value": 2,
@@ -551,7 +502,6 @@
 	},
 	{
 		"avatarId": 10000065,
-		"name": "Kuki Shinobu",
 		"amountList": [
 			{
 				"value": 1,
@@ -561,7 +511,6 @@
 	},
 	{
 		"avatarId": 10000066,
-		"name": "Kamisato Ayato",
 		"amountList": [
 			{
 				"value": 1,
@@ -572,5 +521,36 @@
 				"chance": 50
 			}
 		]
-	}
+    },
+    {
+        "avatarId": 10000067,
+        "amountList": [
+            {
+                "value": 3,
+                "chance": 100
+            }
+        ]
+    },
+    {
+        "avatarId": 10000068,
+        "amountList": [
+            {
+                "value": 2,
+                "chance": 100
+            }
+        ]
+    },
+    {
+        "avatarId": 10000069,
+        "amountList": [
+            {
+                "value": 3,
+                "chance": 50
+            },
+            {
+                "value": 4,
+                "chance": 50
+            }
+        ]
+    }
 ]

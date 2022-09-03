@@ -32,7 +32,11 @@ public enum ClimateType {
 	}
 
 	public int getValue() {
-		return value;
+		return this.value;
+	}
+
+	public String getShortName() {
+		return this.name().substring(8).toLowerCase();
 	}
 	
 	public static ClimateType getTypeByValue(int value) {
@@ -40,6 +44,11 @@ public enum ClimateType {
 	}
 	
 	public static ClimateType getTypeByName(String name) {
+		return stringMap.getOrDefault(name, CLIMATE_NONE);
+	}
+	
+	public static ClimateType getTypeByShortName(String shortName) {
+		String name = "CLIMATE_" + shortName.toUpperCase();
 		return stringMap.getOrDefault(name, CLIMATE_NONE);
 	}
 }

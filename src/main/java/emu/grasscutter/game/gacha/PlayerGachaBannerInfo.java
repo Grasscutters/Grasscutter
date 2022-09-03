@@ -1,40 +1,38 @@
 package emu.grasscutter.game.gacha;
 
 import dev.morphia.annotations.Entity;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 public class PlayerGachaBannerInfo {
-	private int pity5 = 0;
-	private int pity4 = 0;
+	@Getter @Setter private int totalPulls = 0;
+	@Getter @Setter private int pity5 = 0;
+	@Getter @Setter private int pity4 = 0;
 	private int failedFeaturedItemPulls = 0;
 	private int failedFeatured4ItemPulls = 0;
 	private int pity5Pool1 = 0;
 	private int pity5Pool2 = 0;
 	private int pity4Pool1 = 0;
 	private int pity4Pool2 = 0;
-	
-	public int getPity5() {
-		return pity5;
+
+	@Getter @Setter private int failedChosenItemPulls = 0;
+	@Getter @Setter private int wishItemId = 0;
+
+	public void addTotalPulls(int amount) {
+		this.totalPulls += amount;
 	}
-	
-	public void setPity5(int pity5) {
-		this.pity5 = pity5;
-	}
-	
+
 	public void addPity5(int amount) {
 		this.pity5 += amount;
 	}
-	
-	public int getPity4() {
-		return pity4;
-	}
-	
-	public void setPity4(int pity4) {
-		this.pity4 = pity4;
-	}
-	
+
 	public void addPity4(int amount) {
 		this.pity4 += amount;
+	}
+
+	public void addFailedChosenItemPulls(int amount) {
+		failedChosenItemPulls += amount;
 	}
 	
 	public int getFailedFeaturedItemPulls(int rarity) {

@@ -12,6 +12,6 @@ import emu.grasscutter.server.game.GameSession;
 public class HandlerExitTransPointRegionNotify extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception{
-        session.getPlayer().getSotSManager().handleExitTransPointRegionNotify();
+        session.getPlayer().getSotsManager().handleExitTransPointRegionNotify();
     }
 }

@@ -1,5 +1,12 @@
 package emu.grasscutter.game.quest.enums;
 
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Stream;
+
 public enum QuestTrigger {
 	QUEST_COND_NONE (0),
 	QUEST_COND_STATE_EQUAL (1),
@@ -79,7 +86,7 @@ public enum QuestTrigger {
 	QUEST_COND_NEW_HOMEWORLD_SHOP_ITEM (75),
 	QUEST_COND_SCENE_POINT_UNLOCK (76),
 	QUEST_COND_SCENE_LEVEL_TAG_EQ (77),
-	
+
 	QUEST_CONTENT_NONE (0),
 	QUEST_CONTENT_KILL_MONSTER (1),
 	QUEST_CONTENT_COMPLETE_TALK (2),
@@ -153,7 +160,7 @@ public enum QuestTrigger {
 	QUEST_CONTENT_IRODORI_FINISH_FLOWER_COMBINATION (151),
 	QUEST_CONTENT_IRODORI_POETRY_REACH_MIN_PROGRESS (152),
 	QUEST_CONTENT_IRODORI_POETRY_FINISH_FILL_POETRY (153),
-	
+
 	QUEST_EXEC_NONE (0),
 	QUEST_EXEC_DEL_PACK_ITEM (1),
 	QUEST_EXEC_UNLOCK_POINT (2),
@@ -222,9 +229,9 @@ public enum QuestTrigger {
 	QUEST_EXEC_LOCK_PLAYER_WORLD_SCENE (66),
 	QUEST_EXEC_FAIL_MAINCOOP (67),
 	QUEST_EXEC_MODIFY_WEATHER_AREA (68);
-	
+
 	private final int value;
-	
+
 	QuestTrigger(int id) {
 		this.value = id;
 	}
@@ -232,4 +239,24 @@ public enum QuestTrigger {
 	public int getValue() {
 		return value;
 	}
+
+    private static final Int2ObjectMap<QuestTrigger> contentMap = new Int2ObjectOpenHashMap<>();
+    private static final Map<String, QuestTrigger> contentStringMap = new HashMap<>();
+
+    static {
+        Stream.of(values())
+            .filter(e -> e.name().startsWith("QUEST_CONTENT_"))
+            .forEach(e -> {
+            contentMap.put(e.getValue(), e);
+            contentStringMap.put(e.name(), e);
+        });
+    }
+
+    public static QuestTrigger getContentTriggerByValue(int value) {
+        return contentMap.getOrDefault(value, QUEST_CONTENT_NONE);
+    }
+
+    public static QuestTrigger getContentTriggerByName(String name) {
+        return contentStringMap.getOrDefault(name, QUEST_CONTENT_NONE);
+    }
 }

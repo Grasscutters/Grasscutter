@@ -30,21 +30,7 @@ public class PacketGetMailItemRsp  extends BasePacket {
                 if (!message.isAttachmentGot) {//No duplicated item
                     for (Mail.MailItem mailItem : message.itemList) {
                         EquipParamOuterClass.EquipParam.Builder item = EquipParamOuterClass.EquipParam.newBuilder();
-                        int promoteLevel = 0;
-
-                        if (mailItem.itemLevel > 80) { // 80/90
-                            promoteLevel = 6;
-                        } else if (mailItem.itemLevel > 70) { // 70/80
-                            promoteLevel = 5;
-                        } else if (mailItem.itemLevel > 60) { // 60/70
-                            promoteLevel = 4;
-                        } else if (mailItem.itemLevel > 50) { // 50/60
-                            promoteLevel = 3;
-                        } else if (mailItem.itemLevel > 40) { // 40/50
-                            promoteLevel = 2;
-                        } else if (mailItem.itemLevel > 20) { // 20/40
-                            promoteLevel = 1;
-                        }
+                        int promoteLevel = GameItem.getMinPromoteLevel(mailItem.itemLevel);
 
                         item.setItemId(mailItem.itemId);
                         item.setItemNum(mailItem.itemCount);

@@ -3,12 +3,12 @@ package emu.grasscutter.game.managers;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
-import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 
@@ -17,19 +17,18 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 // Statue of the Seven Manager
-public class SotSManager {
+public class SotSManager extends BasePlayerManager {
 
     // NOTE: Spring volume balance *1  = fight prop HP *100
 
-    private final Player player;
     private final Logger logger = Grasscutter.getLogger();
     private Timer autoRecoverTimer;
     private final boolean enablePriorityHealing = false;
 
-    public final static int GlobalMaximumSpringVolume = 8500000;
+    public final static int GlobalMaximumSpringVolume = PlayerProperty.PROP_MAX_SPRING_VOLUME.getMax();
 
     public SotSManager(Player player) {
-        this.player = player;
+        super(player);
     }
 
     public boolean getIsAutoRecoveryEnabled() {
@@ -159,7 +158,7 @@ public class SotSManager {
                 player.getTeamManager().healAvatar(entity.getAvatar(), 0, needHP);
                 player.getSession().send(new PacketEntityFightPropChangeReasonNotify(entity, FightProperty.FIGHT_PROP_CUR_HP,
                         ((float) needHP / 100), List.of(3), PropChangeReason.PROP_CHANGE_REASON_STATUE_RECOVER,
-                        ChangeHpReason.CHANGE_HP_REASON_CHANGE_HP_ADD_STATUE));
+                        ChangeHpReason.CHANGE_HP_REASON_ADD_STATUE));
                 player.getSession().send(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
 
             }

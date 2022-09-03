@@ -10,9 +10,9 @@ import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
 public class BaseContent extends QuestBaseHandler {
 
 	@Override
-	public boolean execute(GameQuest quest, QuestCondition condition, int... params) {
+	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
+
 }

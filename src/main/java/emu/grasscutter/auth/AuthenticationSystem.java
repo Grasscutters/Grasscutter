@@ -2,8 +2,7 @@ package emu.grasscutter.auth;
 
 import emu.grasscutter.game.Account;
 import emu.grasscutter.server.http.objects.*;
-import express.http.Request;
-import express.http.Response;
+import io.javalin.http.Context;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,7 +14,7 @@ import javax.annotation.Nullable;
  * Can be changed by plugins.
  */
 public interface AuthenticationSystem {
-    
+
     /**
      * Called when a user requests to make an account.
      * @param username The provided username.
@@ -71,9 +70,8 @@ public interface AuthenticationSystem {
      */
     @Builder @AllArgsConstructor @Getter
     class AuthenticationRequest {
-        private final Request request;
-        @Nullable private final Response response;
-        
+        private final Context context;
+
         @Nullable private final LoginAccountRequestJson passwordRequest;
         @Nullable private final LoginTokenRequestJson tokenRequest;
         @Nullable private final ComboTokenReqJson sessionKeyRequest;
@@ -82,53 +80,51 @@ public interface AuthenticationSystem {
 
     /**
      * Generates an authentication request from a {@link LoginAccountRequestJson} object.
-     * @param request The Express request.
+     * @param ctx The Javalin context.
      * @param jsonData The JSON data.
      * @return An authentication request.
      */
-    static AuthenticationRequest fromPasswordRequest(Request request, LoginAccountRequestJson jsonData) {
+    static AuthenticationRequest fromPasswordRequest(Context ctx, LoginAccountRequestJson jsonData) {
         return AuthenticationRequest.builder()
-                .request(request)
+                .context(ctx)
                 .passwordRequest(jsonData)
                 .build();
     }
 
     /**
      * Generates an authentication request from a {@link LoginTokenRequestJson} object.
-     * @param request The Express request.
+     * @param ctx The Javalin context.
      * @param jsonData The JSON data.
      * @return An authentication request.
      */
-    static AuthenticationRequest fromTokenRequest(Request request, LoginTokenRequestJson jsonData) {
+    static AuthenticationRequest fromTokenRequest(Context ctx, LoginTokenRequestJson jsonData) {
         return AuthenticationRequest.builder()
-                .request(request)
+                .context(ctx)
                 .tokenRequest(jsonData)
                 .build();
     }
 
     /**
      * Generates an authentication request from a {@link ComboTokenReqJson} object.
-     * @param request The Express request.
+     * @param ctx The Javalin context.
      * @param jsonData The JSON data.
      * @return An authentication request.
      */
-    static AuthenticationRequest fromComboTokenRequest(Request request, ComboTokenReqJson jsonData, 
+    static AuthenticationRequest fromComboTokenRequest(Context ctx, ComboTokenReqJson jsonData,
                                                        ComboTokenReqJson.LoginTokenData tokenData) {
         return AuthenticationRequest.builder()
-                .request(request)
+                .context(ctx)
                 .sessionKeyRequest(jsonData)
                 .sessionKeyData(tokenData)
                 .build();
     }
 
     /**
-     * Generates an authentication request from a {@link Response} object.
-     * @param request The Express request.
-     * @param response the Express response.
+     * Generates an authentication request from a {@link Context} object.
+     * @param ctx The Javalin context.
      * @return An authentication request.
      */
-    static AuthenticationRequest fromExternalRequest(Request request, Response response) {
-        return AuthenticationRequest.builder().request(request)
-                .response(response).build();
+    static AuthenticationRequest fromExternalRequest(Context ctx) {
+        return AuthenticationRequest.builder().context(ctx).build();
     }
 }

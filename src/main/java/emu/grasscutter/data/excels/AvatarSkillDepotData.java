@@ -1,9 +1,12 @@
 package emu.grasscutter.data.excels;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.GameResource;
+import emu.grasscutter.data.ResourceLoader.AvatarConfig;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.binout.AbilityEmbryoEntry;
@@ -11,108 +14,67 @@ import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import lombok.Getter;
 
 @ResourceType(name = "AvatarSkillDepotExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 public class AvatarSkillDepotData extends GameResource {
-	
+
     private int id;
-    private int energySkill;
-    private int attackModeSkill;
+    @Getter private int energySkill;
+    @Getter private int attackModeSkill;
 
-    private List<Integer> skills;
-    private List<Integer> subSkills;
-    private List<String> extraAbilities;
-    private List<Integer> talents;
-    private List<InherentProudSkillOpens> inherentProudSkillOpens;
+    @Getter private List<Integer> skills;
+    @Getter private List<Integer> subSkills;
+    @Getter private List<String> extraAbilities;
+    @Getter private List<Integer> talents;
+    @Getter private List<InherentProudSkillOpens> inherentProudSkillOpens;
 
-    private String talentStarName;
-    private String skillDepotAbilityGroup;
-    
+    @Getter private String talentStarName;
+    @Getter private String skillDepotAbilityGroup;
+
     // Transient
-    private AvatarSkillData energySkillData;
-    private ElementType elementType;
-    private IntList abilities;
+    @Getter private AvatarSkillData energySkillData;
+    @Getter private ElementType elementType;
+    @Getter private IntList abilities;
 
     @Override
-	public int getId(){
+    public int getId() {
         return this.id;
     }
-    
-    public int getEnergySkill(){
-        return this.energySkill;
-    }
-    
-    public List<Integer> getSkills(){
-        return this.skills;
-    }
-    
-    public List<Integer> getSubSkills(){
-        return this.subSkills;
-    }
-    
-    public int getAttackModeSkill(){
-        return this.attackModeSkill;
-    }
-    
-    public List<String> getExtraAbilities(){
-        return this.extraAbilities;
-    }
-    
-    public List<Integer> getTalents(){
-        return this.talents;
-    }
-    
-    public String getTalentStarName(){
-        return this.talentStarName;
-    }
-    
-    public List<InherentProudSkillOpens> getInherentProudSkillOpens(){
-        return this.inherentProudSkillOpens;
-    }
-    
-    public String getSkillDepotAbilityGroup(){
-        return this.skillDepotAbilityGroup;
-    }
-    
-	public AvatarSkillData getEnergySkillData() {
-		return this.energySkillData;
-	}
-	
-	public ElementType getElementType() {
-		return elementType;
-	}
-    
-    public IntList getAbilities() {
-		return abilities;
-	}
-    
-	public void setAbilities(AbilityEmbryoEntry info) {
-		this.abilities = new IntArrayList(info.getAbilities().length);
-		for (String ability : info.getAbilities()) {
-			this.abilities.add(Utils.abilityHash(ability));
-		}
-	}
-	
-	@Override
-	public void onLoad() {
-    	this.energySkillData = GameData.getAvatarSkillDataMap().get(this.energySkill);
-    	if (getEnergySkillData() != null) {
-    		this.elementType = getEnergySkillData().getCostElemType();
-    	} else {
-    		this.elementType = ElementType.None;
-    	}
-    }
-    
-    public static class InherentProudSkillOpens {
-        private int proudSkillGroupId;
-        private int needAvatarPromoteLevel;
 
-        public int getProudSkillGroupId(){
-            return this.proudSkillGroupId;
+    public void setAbilities(AbilityEmbryoEntry info) {
+        this.abilities = new IntArrayList(info.getAbilities().length);
+        for (String ability : info.getAbilities()) {
+            this.abilities.add(Utils.abilityHash(ability));
         }
-        
-        public int getNeedAvatarPromoteLevel(){
-            return this.needAvatarPromoteLevel;
+    }
+
+    @Override
+    public void onLoad() {
+        // Set energy skill data
+        this.energySkillData = GameData.getAvatarSkillDataMap().get(this.energySkill);
+        if (this.energySkillData != null) {
+            this.elementType = this.energySkillData.getCostElemType();
+        } else {
+            this.elementType = ElementType.None;
         }
+        // Set embryo abilities (if player skill depot)
+        if (getSkillDepotAbilityGroup() != null && getSkillDepotAbilityGroup().length() > 0) {
+            AvatarConfig config = GameDepot.getPlayerAbilities().get(getSkillDepotAbilityGroup());
+
+            if (config != null) {
+                this.setAbilities(new AbilityEmbryoEntry(getSkillDepotAbilityGroup(), config.abilities.stream().map(Object::toString).toArray(String[]::new)));
+            }
+        }
+    }
+
+    public static class InherentProudSkillOpens {
+        @Getter private int proudSkillGroupId;
+        @Getter private int needAvatarPromoteLevel;
+    }
+
+    public IntStream getSkillsAndEnergySkill() {
+        return IntStream.concat(this.skills.stream().mapToInt(i -> i), IntStream.of(this.energySkill))
+                        .filter(skillId -> skillId > 0);
     }
 }

@@ -1,29 +1,44 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameDepot;
+import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.ItemData;
+import emu.grasscutter.data.excels.ReliquaryAffixData;
+import emu.grasscutter.data.excels.ReliquaryMainPropData;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.utils.SparseSet;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static emu.grasscutter.utils.Language.translate;
-
-@Command(label = "give", usage = "give <itemId|itemName> [amount] [level]", aliases = {
-        "g", "item", "giveitem"}, permission = "player.give", permissionTargeted = "player.give.others", description = "commands.give.description")
+@Command(
+    label = "give",
+    aliases = {"g", "item", "giveitem"},
+    usage = {
+        "(<itemId>|<avatarId>|all|weapons|mats|avatars) [lv<level>] [r<refinement>] [x<amount>] [c<constellation>]",
+        "<artifactId> [lv<level>] [x<amount>] [<mainPropId>] [<appendPropId>[,<times>]]..."},
+    permission = "player.give",
+    permissionTargeted = "player.give.others",
+    threading = true)
 public final class GiveCommand implements CommandHandler {
-    Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java is a joke of a proglang that doesn't have raw string literals
-    Pattern refineRegex = Pattern.compile("r(\\d+)");
-    Pattern amountRegex = Pattern.compile("((?<=x)\\d+|\\d+(?=x)(?!x\\d))");
+    private static Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java doesn't have raw string literals :(
+    private static Pattern refineRegex = Pattern.compile("r(\\d+)");
+    private static Pattern constellationRegex = Pattern.compile("c(\\d+)");
+    private static Pattern amountRegex = Pattern.compile("((?<=x)\\d+|\\d+(?=x)(?!x\\d))");
 
-    private int matchIntOrNeg(Pattern pattern, String arg) {
+    private static int matchIntOrNeg(Pattern pattern, String arg) {
         Matcher match = pattern.matcher(arg);
         if (match.find()) {
             return Integer.parseInt(match.group(1));  // This should be exception-safe as only \d+ can be passed to it (i.e. non-empty string of pure digits)
@@ -31,27 +46,50 @@ public final class GiveCommand implements CommandHandler {
         return -1;
     }
 
-    @Override
-    public void execute(Player sender, Player targetPlayer, List<String> args) {
-        int item;
-        int lvl = 1;
-        int amount = 1;
-        int refinement = 0;
+    private static enum GiveAllType {
+        NONE,
+        ALL,
+        WEAPONS,
+        MATS,
+        AVATARS
+    }
 
-        for (int i = args.size()-1; i>=0; i--) {  // Reverse iteration as we are deleting elements
+    private static class GiveItemParameters {
+        public int id;
+        public int lvl = 0;
+        public int amount = 1;
+        public int refinement = 1;
+        public int constellation = -1;
+        public int mainPropId = -1;
+        public List<Integer> appendPropIdList;
+        public ItemData data;
+        public AvatarData avatarData;
+        public GiveAllType giveAllType = GiveAllType.NONE;
+    };
+
+    private GiveItemParameters parseArgs(Player sender, List<String> args) throws IllegalArgumentException {
+        GiveItemParameters param = new GiveItemParameters();
+
+        // Extract any tagged arguments (e.g. "lv90", "x100", "r5")
+        for (int i = args.size() - 1; i >= 0; i--) {  // Reverse iteration as we are deleting elements
             String arg = args.get(i).toLowerCase();
             boolean deleteArg = false;
             int argNum;
+            // Note that a single argument can actually match all of these, e.g. "lv90r5x100"
             if ((argNum = matchIntOrNeg(lvlRegex, arg)) != -1) {
-                lvl = argNum;
+                param.lvl = argNum;
                 deleteArg = true;
             }
             if ((argNum = matchIntOrNeg(refineRegex, arg)) != -1) {
-                refinement = argNum;
+                param.refinement = argNum;
+                deleteArg = true;
+            }
+            if ((argNum = matchIntOrNeg(constellationRegex, arg)) != -1) {
+                param.constellation = argNum;
                 deleteArg = true;
             }
             if ((argNum = matchIntOrNeg(amountRegex, arg)) != -1) {
-                amount = argNum;
+                param.amount = argNum;
                 deleteArg = true;
             }
             if (deleteArg) {
@@ -59,112 +97,379 @@ public final class GiveCommand implements CommandHandler {
             }
         }
 
-        switch (args.size()) {
-            case 4: // <itemId|itemName> [amount] [level] [refinement]
-                try {
-                    refinement = Integer.parseInt(args.get(3));
-                } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.itemRefinement"));
-                    return;
-                }  // Fallthrough
-            case 3: // <itemId|itemName> [amount] [level]
-                try {
-                    lvl = Integer.parseInt(args.get(2));
-                } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.itemLevel"));
-                    return;
-                }  // Fallthrough
-            case 2: // <itemId|itemName> [amount]
-                try {
-                    amount = Integer.parseInt(args.get(1));
-                } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.amount"));
-                    return;
-                }  // Fallthrough
-            case 1: // <itemId|itemName>
-                try {
-                    item = Integer.parseInt(args.get(0));
-                } catch (NumberFormatException ignored) {
-                    // TODO: Parse from item name using GM Handbook.
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.itemId"));
-                    return;
-                }
+        // At this point, first remaining argument MUST be itemId/avatarId
+        if (args.size() < 1) {
+            sendUsageMessage(sender);  // Reachable if someone does `/give lv90` or similar
+            throw new IllegalArgumentException();
+        }
+        String id = args.remove(0);
+        boolean isRelic = false;
+
+        switch (id) {
+            case "all":
+                param.giveAllType = GiveAllType.ALL;
                 break;
-            default: // *No args*
-                CommandHandler.sendMessage(sender, translate(sender, "commands.give.usage"));
-                return;
+            case "weapons":
+                param.giveAllType = GiveAllType.WEAPONS;
+                break;
+            case "mats":
+                param.giveAllType = GiveAllType.MATS;
+                break;
+            case "avatars":
+                param.giveAllType = GiveAllType.AVATARS;
+                break;
+            default:
+                try {
+                    param.id = Integer.parseInt(id);
+                } catch (NumberFormatException e) {
+                    // TODO: Parse from item name using GM Handbook.
+                    CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.itemId");
+                    throw e;
+                }
+                param.data = GameData.getItemDataMap().get(param.id);
+                if ((param.id > 10_000_000) && (param.id < 12_000_000))
+                    param.avatarData = GameData.getAvatarDataMap().get(param.id);
+                else if ((param.id > 1000) && (param.id < 1100))
+                    param.avatarData = GameData.getAvatarDataMap().get(param.id - 1000 + 10_000_000);
+                isRelic = ((param.data != null) && (param.data.getItemType() == ItemType.ITEM_RELIQUARY));
+
+                if (!isRelic && !args.isEmpty() && (param.amount == 1)) {  // A concession for the people that truly hate [x<amount>].
+                    try {
+                        param.amount = Integer.parseInt(args.remove(0));
+                    } catch (NumberFormatException e) {
+                        CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.amount");
+                        throw e;
+                    }
+                }
         }
 
-        ItemData itemData = GameData.getItemDataMap().get(item);
-        if (itemData == null) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.itemId"));
-            return;
+        if (param.amount < 1) param.amount = 1;
+        if (param.refinement < 1) param.refinement = 1;
+        if (param.refinement > 5) param.refinement = 5;
+        if (isRelic) {
+            // Input 0-20 to match game, instead of 1-21 which is the real level
+            if (param.lvl < 0) param.lvl = 0;
+            if (param.lvl > 20) param.lvl = 20;
+            param.lvl += 1;
+            if (illegalRelicIds.contains(param.id))
+                CommandHandler.sendTranslatedMessage(sender, "commands.give.illegal_relic");
+        } else {
+            // Suitable for Avatars and Weapons
+            if (param.lvl < 1) param.lvl = 1;
+            if (param.lvl > 90) param.lvl = 90;
         }
-        if (refinement != 0) {
-            if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
-                if (refinement < 1 || refinement > 5) {
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.give.refinement_must_between_1_and_5"));
-                    return;
+
+        if (!args.isEmpty()) {
+            if (isRelic) {
+                try {
+                    parseRelicArgs(param, args);
+                } catch (IllegalArgumentException e) {
+                    CommandHandler.sendTranslatedMessage(sender, "commands.execution.argument_error");
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.usage_relic");
+                    throw e;
                 }
             } else {
-                CommandHandler.sendMessage(sender, translate(sender, "commands.give.refinement_only_applicable_weapons"));
+                sendUsageMessage(sender);
+                throw new IllegalArgumentException();
+            }
+        }
+
+        return param;
+    }
+
+    @Override
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (args.size() < 1) { // *No args*
+            sendUsageMessage(sender);
+            return;
+        }
+        try {
+            GiveItemParameters param = parseArgs(sender, args);
+
+            switch (param.giveAllType) {
+                case ALL:
+                    giveAll(targetPlayer, param);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.giveall_success");
+                    return;
+                case WEAPONS:
+                    giveAllWeapons(targetPlayer, param);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.giveall_success");
+                    return;
+                case MATS:
+                    giveAllMats(targetPlayer, param);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.giveall_success");
+                    return;
+                case AVATARS:
+                    giveAllAvatars(targetPlayer, param);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.giveall_success");
+                    return;
+                case NONE:
+                    break;
+            }
+
+            // Check if this is an avatar
+            if (param.avatarData != null) {
+                Avatar avatar = makeAvatar(param);
+                targetPlayer.addAvatar(avatar);
+                CommandHandler.sendTranslatedMessage(sender, "commands.give.given_avatar", param.id, param.lvl, targetPlayer.getUid());
                 return;
             }
-        }
-
-        this.item(targetPlayer, itemData, amount, lvl, refinement);
-
-        if (!itemData.isEquip()) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.give.given", Integer.toString(amount), Integer.toString(item), Integer.toString(targetPlayer.getUid())));
-        } else if (itemData.getItemType() == ItemType.ITEM_WEAPON) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.give.given_with_level_and_refinement", Integer.toString(item), Integer.toString(lvl), Integer.toString(refinement), Integer.toString(amount), Integer.toString(targetPlayer.getUid())));
-        } else {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.give.given_level", Integer.toString(item), Integer.toString(lvl), Integer.toString(amount), Integer.toString(targetPlayer.getUid())));
-        }
-    }
-
-    private void item(Player player, ItemData itemData, int amount, int lvl, int refinement) {
-        if (itemData.isEquip()) {
-            List<GameItem> items = new LinkedList<>();
-            for (int i = 0; i < amount; i++) {
-                GameItem item = new GameItem(itemData);
-                if (item.isEquipped()) {
-                    // check item max level
-                    if (item.getItemType() == ItemType.ITEM_WEAPON) {
-                        if (lvl > 90) lvl = 90;
-                    } else {
-                        if (lvl > 21) lvl = 21;
-                    }
-                }
-                item.setCount(amount);
-                item.setLevel(lvl);
-                if (lvl > 80) {
-                    item.setPromoteLevel(6);
-                } else if (lvl > 70) {
-                    item.setPromoteLevel(5);
-                } else if (lvl > 60) {
-                    item.setPromoteLevel(4);
-                } else if (lvl > 50) {
-                    item.setPromoteLevel(3);
-                } else if (lvl > 40) {
-                    item.setPromoteLevel(2);
-                } else if (lvl > 20) {
-                    item.setPromoteLevel(1);
-                }
-                if (item.getItemType() == ItemType.ITEM_WEAPON) {
-                    if (refinement > 0) {
-                        item.setRefinement(refinement - 1);
-                    } else {
-                        item.setRefinement(0);
-                    }
-                }
-                items.add(item);
+            // If it's not an avatar, it needs to be a valid item
+            if (param.data == null) {
+                CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.itemId");
+                return;
             }
-            player.getInventory().addItems(items, ActionReason.SubfieldDrop);
-        } else {
-            GameItem item = new GameItem(itemData);
-            item.setCount(amount);
-            player.getInventory().addItem(item, ActionReason.SubfieldDrop);
+
+            switch (param.data.getItemType()) {
+                case ITEM_WEAPON:
+                    targetPlayer.getInventory().addItems(makeUnstackableItems(param), ActionReason.SubfieldDrop);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given_with_level_and_refinement", param.id, param.lvl, param.refinement, param.amount, targetPlayer.getUid());
+                    return;
+                case ITEM_RELIQUARY:
+                    targetPlayer.getInventory().addItems(makeArtifacts(param), ActionReason.SubfieldDrop);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given_level", param.id, param.lvl, param.amount, targetPlayer.getUid());
+                    return;
+                default:
+                    targetPlayer.getInventory().addItem(new GameItem(param.data, param.amount), ActionReason.SubfieldDrop);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.give.given", param.amount, param.id, targetPlayer.getUid());
+                    return;
+            }
+        } catch (IllegalArgumentException ignored) {
+                return;
         }
     }
+
+    private static Avatar makeAvatar(GiveItemParameters param) {
+        return makeAvatar(param.avatarData, param.lvl, Avatar.getMinPromoteLevel(param.lvl), param.constellation);
+    }
+
+    private static Avatar makeAvatar(AvatarData avatarData, int level, int promoteLevel, int constellation) {
+        Avatar avatar = new Avatar(avatarData);
+        avatar.setLevel(level);
+        avatar.setPromoteLevel(promoteLevel);
+        avatar.forceConstellationLevel(constellation);
+        avatar.recalcStats();
+        return avatar;
+    }
+
+    private static void giveAllAvatars(Player player, GiveItemParameters param) {
+        int promoteLevel = Avatar.getMinPromoteLevel(param.lvl);
+        if (param.constellation < 0) {
+            param.constellation = 6;
+        }
+        for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
+            // Exclude test avatars
+            int id = avatarData.getId();
+            if (id < 10000002 || id >= 11000000) continue;
+
+            // Don't try to add each avatar to the current team
+            player.addAvatar(makeAvatar(avatarData, param.lvl, promoteLevel, param.constellation), false);
+        }
+    }
+
+    private static List<GameItem> makeUnstackableItems(GiveItemParameters param) {
+        int promoteLevel = GameItem.getMinPromoteLevel(param.lvl);
+        int totalExp = 0;
+        if (param.data.getItemType() == ItemType.ITEM_WEAPON) {
+            int rankLevel = param.data.getRankLevel();
+            for (int i = 1; i < param.lvl; i++)
+                totalExp += GameData.getWeaponExpRequired(rankLevel, i);
+        }
+
+        List<GameItem> items = new ArrayList<>(param.amount);
+        for (int i = 0; i < param.amount; i++) {
+            GameItem item = new GameItem(param.data);
+            item.setLevel(param.lvl);
+            if (item.getItemType() == ItemType.ITEM_WEAPON) {
+                item.setPromoteLevel(promoteLevel);
+                item.setTotalExp(totalExp);
+                item.setRefinement(param.refinement - 1);  // Actual refinement data is 0..4 not 1..5
+            }
+            items.add(item);
+        }
+        return items;
+    }
+
+    private static List<GameItem> makeArtifacts(GiveItemParameters param) {
+        param.lvl = Math.min(param.lvl, param.data.getMaxLevel());
+        int rank = param.data.getRankLevel();
+        int totalExp = 0;
+        for (int i = 1; i < param.lvl; i++)
+            totalExp += GameData.getRelicExpRequired(rank, i);
+
+        List<GameItem> items = new ArrayList<>(param.amount);
+        for (int i = 0; i < param.amount; i++) {
+            // Create item for the artifact.
+            GameItem item = new GameItem(param.data);
+            item.setLevel(param.lvl);
+            item.setTotalExp(totalExp);
+            int numAffixes = param.data.getAppendPropNum() + (param.lvl-1)/4;
+            if (param.mainPropId > 0)  // Keep random mainProp if we didn't specify one
+                item.setMainPropId(param.mainPropId);
+            if (param.appendPropIdList != null) {
+                item.getAppendPropIdList().clear();
+                item.getAppendPropIdList().addAll(param.appendPropIdList);
+            }
+            // If we didn't include enough substats, top them up to the appropriate level at random
+            item.addAppendProps(numAffixes - item.getAppendPropIdList().size());
+            items.add(item);
+        }
+        return items;
+    }
+
+    private static int getArtifactMainProp(ItemData itemData, FightProperty prop) throws IllegalArgumentException {
+        if (prop != FightProperty.FIGHT_PROP_NONE)
+            for (ReliquaryMainPropData data : GameDepot.getRelicMainPropList(itemData.getMainPropDepotId()))
+                if (data.getWeight() > 0 && data.getFightProp() == prop)
+                    return data.getId();
+        throw new IllegalArgumentException();
+    }
+
+    private static List<Integer> getArtifactAffixes(ItemData itemData, FightProperty prop) throws IllegalArgumentException {
+        if (prop == FightProperty.FIGHT_PROP_NONE) {
+            throw new IllegalArgumentException();
+        }
+        List<Integer> affixes = new ArrayList<>();
+        for (ReliquaryAffixData data : GameDepot.getRelicAffixList(itemData.getAppendPropDepotId())) {
+            if (data.getWeight() > 0 && data.getFightProp() == prop) {
+                affixes.add(data.getId());
+            }
+        }
+        return affixes;
+    }
+
+    private static int getAppendPropId(String substatText, ItemData itemData) throws IllegalArgumentException {
+        // If the given substat text is an integer, we just use that as the append prop ID.
+        try {
+            return Integer.parseInt(substatText);
+        } catch (NumberFormatException ignored) {
+            // If the argument was not an integer, we try to determine
+            // the append prop ID from the given text + artifact information.
+            // A substat string has the format `substat_tier`, with the
+            // `_tier` part being optional, defaulting to the maximum.
+            String[] substatArgs = substatText.split("_");
+            String substatType = substatArgs[0];
+
+            int substatTier = 4;
+            if (substatArgs.length > 1) {
+                substatTier = Integer.parseInt(substatArgs[1]);
+            }
+
+            List<Integer> substats = getArtifactAffixes(itemData, FightProperty.getPropByShortName(substatType));
+
+            if (substats.isEmpty()) {
+                throw new IllegalArgumentException();
+            }
+
+            substatTier -= 1;  // 1-indexed to 0-indexed
+            substatTier = Math.min(Math.max(0, substatTier), substats.size() - 1);
+            return substats.get(substatTier);
+        }
+    }
+
+    private static void parseRelicArgs(GiveItemParameters param, List<String> args) throws IllegalArgumentException {
+        // Get the main stat from the arguments.
+        // If the given argument is an integer, we use that.
+        // If not, we check if the argument string is in the main prop map.
+        String mainPropIdString = args.remove(0);
+
+        try {
+            param.mainPropId = Integer.parseInt(mainPropIdString);
+        } catch (NumberFormatException ignored) {
+            // This can in turn throw an exception which we don't want to catch here.
+            param.mainPropId = getArtifactMainProp(param.data, FightProperty.getPropByShortName(mainPropIdString));
+        }
+
+        // Get substats.
+        param.appendPropIdList = new ArrayList<>();
+        // Every remaining argument is a substat.
+        for (String prop : args) {
+            // The substat syntax permits specifying a number of rolls for the given
+            // substat. Split the string into stat and number if that is the case here.
+            String[] arr = prop.split(",");
+            prop = arr[0];
+            int n = 1;
+            if (arr.length > 1) {
+                n = Math.min(Integer.parseInt(arr[1]), 200);
+            }
+
+            // Determine the substat ID.
+            int appendPropId = getAppendPropId(prop, param.data);
+
+            // Add the current substat.
+            for (int i = 0; i < n; i++) {
+                param.appendPropIdList.add(appendPropId);
+            }
+        };
+    }
+
+    private static void addItemsChunked(Player player, List<GameItem> items, int packetSize) {
+        // Send the items in multiple packets
+        int lastIdx = items.size() - 1;
+        for (int i = 0; i <= lastIdx; i += packetSize) {
+            player.getInventory().addItems(items.subList(i, Math.min(i + packetSize, lastIdx)));
+        }
+    }
+
+    private static void giveAllMats(Player player, GiveItemParameters param) {
+        List<GameItem> itemList = new ArrayList<>();
+        for (ItemData itemdata : GameData.getItemDataMap().values()) {
+            int id = itemdata.getId();
+            if (id < 100_000) continue;  // Nothing meaningful below this
+            if (illegalItemIds.contains(id)) continue;
+            if (itemdata.isEquip()) continue;
+
+            GameItem item = new GameItem(itemdata);
+            item.setCount(param.amount);
+            itemList.add(item);
+        }
+
+        addItemsChunked(player, itemList, 100);
+    }
+
+    private static void giveAllWeapons(Player player, GiveItemParameters param) {
+        int promoteLevel = GameItem.getMinPromoteLevel(param.lvl);
+        int quantity = Math.min(param.amount, 5);
+        int refinement = param.refinement - 1;
+
+        List<GameItem> itemList = new ArrayList<>();
+        for (ItemData itemdata : GameData.getItemDataMap().values()) {
+            int id = itemdata.getId();
+            if (id < 11100 || id > 16000) continue;  // All extant weapons are within this range
+            if (illegalWeaponIds.contains(id)) continue;
+            if (!itemdata.isEquip()) continue;
+            if (itemdata.getItemType() != ItemType.ITEM_WEAPON) continue;
+
+            for (int i = 0; i < quantity; i++) {
+                GameItem item = new GameItem(itemdata);
+                item.setLevel(param.lvl);
+                item.setPromoteLevel(promoteLevel);
+                item.setRefinement(refinement);
+                itemList.add(item);
+            }
+        }
+
+        addItemsChunked(player, itemList, 100);
+    }
+
+    private static void giveAll(Player player, GiveItemParameters param) {
+        giveAllAvatars(player, param);
+        giveAllMats(player, param);
+        giveAllWeapons(player, param);
+    }
+
+    private static final SparseSet illegalWeaponIds = new SparseSet("""
+        10000-10008, 11411, 11506-11508, 12505, 12506, 12508, 12509,
+        13503, 13506, 14411, 14503, 14505, 14508, 15504-15506
+        """);
+
+    private static final SparseSet illegalRelicIds = new SparseSet("""
+        20001, 23300-23340, 23383-23385, 78310-78554, 99310-99554
+        """);
+
+    private static final SparseSet illegalItemIds = new SparseSet("""
+        100086, 100087, 100100-101000, 101106-101110, 101306, 101500-104000,
+        105001, 105004, 106000-107000, 107011, 108000, 109000-110000,
+        115000-130000, 200200-200899, 220050, 220054
+        """);
 }

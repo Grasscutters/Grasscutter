@@ -10,8 +10,12 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "resetconst", usage = "resetconst [all]",
-        aliases = {"resetconstellation"}, permission = "player.resetconstellation", permissionTargeted = "player.resetconstellation.others", description = "commands.resetConst.description")
+@Command(
+    label = "resetConst",
+    aliases = {"resetconstellation"},
+    usage = "[all]",
+    permission = "player.resetconstellation",
+    permissionTargeted = "player.resetconstellation.others")
 public final class ResetConstCommand implements CommandHandler {
 
     @Override
@@ -33,9 +37,6 @@ public final class ResetConstCommand implements CommandHandler {
     }
 
     private void resetConstellation(Avatar avatar) {
-        avatar.getTalentIdList().clear();
-        avatar.setCoreProudSkillLevel(0);
-        avatar.recalcStats();
-        avatar.save();
+        avatar.forceConstellationLevel(-1);
     }
 }
