@@ -45,7 +45,7 @@ public class HomeBlockItem {
                 .toList();
     }
 
-    public int calComfort(){
+    public int calComfort() {
         return this.deployFurnitureList.stream()
                 .mapToInt(HomeFurnitureItem::getComfort)
                 .sum();

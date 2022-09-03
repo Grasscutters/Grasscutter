@@ -600,7 +600,7 @@ public class Avatar {
             }
         }
     }
-    
+
     public void addToExtraAbilityEmbryos(String openConfig) {
         this.addToExtraAbilityEmbryos(openConfig, false);
     }

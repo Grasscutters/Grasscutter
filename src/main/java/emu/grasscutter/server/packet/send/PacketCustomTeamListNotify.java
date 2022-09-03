@@ -28,7 +28,7 @@ public class PacketCustomTeamListNotify extends BasePacket {
             TeamInfo teamInfo = entry.getValue();
             proto.putAvatarTeamMap(entry.getKey(), teamInfo.toProto(player));
         }
-    
+
         this.setData(proto);
     }
 }

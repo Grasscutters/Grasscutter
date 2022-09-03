@@ -13,7 +13,7 @@ public class PacketRemoveCustomTeamRsp extends BasePacket {
             .setRetcode(retcode.getNumber())
             .setId(id)
             .build();
-    
+
         this.setData(proto);
     }
 

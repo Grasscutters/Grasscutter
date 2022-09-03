@@ -225,7 +225,7 @@ public final class CommandMap {
                 Grasscutter.getLogger().info("Command used by server console: " + rawMessage);
             }
         }
-        
+
         rawMessage = rawMessage.trim();
         if (rawMessage.length() == 0) {
             CommandHandler.sendTranslatedMessage(player, "commands.generic.not_specified");

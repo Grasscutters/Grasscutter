@@ -16,66 +16,66 @@ import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
 import emu.grasscutter.utils.Utils;
 
 public class GadgetGatherObject extends GadgetContent {
-	private int itemId;
-	private boolean isForbidGuest;
-	
-	public GadgetGatherObject(EntityGadget gadget) {
-		super(gadget);
-		
-		if (gadget.getSpawnEntry() != null) {
-			this.itemId = gadget.getSpawnEntry().getGatherItemId();
-		}
-	}
-	
-	public int getItemId() {
-		return this.itemId;
-	}
+    private int itemId;
+    private boolean isForbidGuest;
 
-	public boolean isForbidGuest() {
-		return isForbidGuest;
-	}
+    public GadgetGatherObject(EntityGadget gadget) {
+        super(gadget);
 
-	public boolean onInteract(Player player, GadgetInteractReq req) {
-		// Sanity check
-		ItemData itemData = GameData.getItemDataMap().get(getItemId());
-		if (itemData == null) {
-			return false;
-		}
+        if (gadget.getSpawnEntry() != null) {
+            this.itemId = gadget.getSpawnEntry().getGatherItemId();
+        }
+    }
 
-		GameItem item = new GameItem(itemData, 1);
-		player.getInventory().addItem(item, ActionReason.Gather);
-		
-		getGadget().getScene().broadcastPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_GATHER));
+    public int getItemId() {
+        return this.itemId;
+    }
 
-		return true;
-	}
+    public boolean isForbidGuest() {
+        return isForbidGuest;
+    }
 
-	public void onBuildProto(SceneGadgetInfo.Builder gadgetInfo) {
-		GatherGadgetInfo gatherGadgetInfo = GatherGadgetInfo.newBuilder()
-				.setItemId(this.getItemId())
-				.setIsForbidGuest(this.isForbidGuest())
-				.build();
+    public boolean onInteract(Player player, GadgetInteractReq req) {
+        // Sanity check
+        ItemData itemData = GameData.getItemDataMap().get(getItemId());
+        if (itemData == null) {
+            return false;
+        }
 
-		gadgetInfo.setGatherGadget(gatherGadgetInfo);
-	}
+        GameItem item = new GameItem(itemData, 1);
+        player.getInventory().addItem(item, ActionReason.Gather);
 
-	public void dropItems(Player player) {
-		Scene scene = getGadget().getScene();
-		int times = Utils.randomRange(1,2);
-		
+        getGadget().getScene().broadcastPacket(new PacketGadgetInteractRsp(getGadget(), InteractType.INTERACT_TYPE_GATHER));
+
+        return true;
+    }
+
+    public void onBuildProto(SceneGadgetInfo.Builder gadgetInfo) {
+        GatherGadgetInfo gatherGadgetInfo = GatherGadgetInfo.newBuilder()
+                .setItemId(this.getItemId())
+                .setIsForbidGuest(this.isForbidGuest())
+                .build();
+
+        gadgetInfo.setGatherGadget(gatherGadgetInfo);
+    }
+
+    public void dropItems(Player player) {
+        Scene scene = getGadget().getScene();
+        int times = Utils.randomRange(1,2);
+
         for (int i = 0 ; i < times ; i++) {
             EntityItem item = new EntityItem(
-            		scene,
-            		player,
+                    scene,
+                    player,
                     GameData.getItemDataMap().get(itemId),
                     getGadget().getPosition().nearby2d(1f).addY(2f),
                     1,
                     true);
-            
+
             scene.addEntity(item);
         }
-        
+
         scene.killEntity(this.getGadget(), player.getTeamManager().getCurrentAvatarEntity().getId());
         // Todo: add record
-	}
+    }
 }

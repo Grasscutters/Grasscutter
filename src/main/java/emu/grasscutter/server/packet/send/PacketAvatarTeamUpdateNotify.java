@@ -11,17 +11,17 @@ import emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam;
 import emu.grasscutter.net.proto.AvatarTeamUpdateNotifyOuterClass.AvatarTeamUpdateNotify;
 
 public class PacketAvatarTeamUpdateNotify extends BasePacket {
-	
-	public PacketAvatarTeamUpdateNotify(Player player) {
-		super(PacketOpcodes.AvatarTeamUpdateNotify);
 
-		AvatarTeamUpdateNotify.Builder proto = AvatarTeamUpdateNotify.newBuilder();
-		
-		for (Entry<Integer, TeamInfo> entry : player.getTeamManager().getTeams().entrySet()) {
-			TeamInfo teamInfo = entry.getValue();
-			proto.putAvatarTeamMap(entry.getKey(), teamInfo.toProto(player));
-		}
-		
-		this.setData(proto);
-	}
+    public PacketAvatarTeamUpdateNotify(Player player) {
+        super(PacketOpcodes.AvatarTeamUpdateNotify);
+
+        AvatarTeamUpdateNotify.Builder proto = AvatarTeamUpdateNotify.newBuilder();
+
+        for (Entry<Integer, TeamInfo> entry : player.getTeamManager().getTeams().entrySet()) {
+            TeamInfo teamInfo = entry.getValue();
+            proto.putAvatarTeamMap(entry.getKey(), teamInfo.toProto(player));
+        }
+
+        this.setData(proto);
+    }
 }
