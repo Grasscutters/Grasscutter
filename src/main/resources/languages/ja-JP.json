@@ -1,403 +1,402 @@
 {
-    "messages": {
-      "game": {
-        "address_bind": "ゲーム サーバーが \u001B[1m\u001B[33m%s:%s\u001B[0m で起動しました",
-        "port_bind": "ゲーム サーバーがポート %s で起動しました",
-        "connect": "ポート %s にクライアントが接続されました",
-        "disconnect": "ポート %s からクライアントが切断されました",
-        "game_update_error": "ゲームのアップデート中にエラーが発生しました。",
-        "command_error": "コマンドエラー"
-      },
-      "dispatch": {
-        "address_bind": "[Dispatch] ディスパッチサーバーが \u001B[1m\u001B[33m%s:%s\u001B[0m 番で開始されました",
-        "port_bind": "[Dispatch] ディスパッチサーバーがポート %s 番で開始されました",
-        "request": "[Dispatch] クライアント %s %s リクエスト: %s",
-        "keystore": {
-          "general_error": "[Dispatch] keystoreファイルの読み込み中にエラーが発生しました!",
-          "password_error": "[Dispatch] keystoreファイルを読み込めません｡ デフォルトのkeystoreパスワードを試行しています...",
-          "no_keystore_error": "[Dispatch] SSL証明書が見つかりません! HTTP サーバーにフォールバックします。",
-          "default_password": "[Dispatch] デフォルトのkeystoreパスワードが正常にロードされました。 config.json でパスワードを 123456 に設定することを検討してください。"
-        },
-        "authentication": {
-          "default_unable_to_verify": "[Authentication] 認証ユーザーは､デフォルトの認証ハンドラーでは使用できません"
-        },
-        "no_commands_error": "コマンドはディスパッチ専用モードではサポートされていません。",
-        "unhandled_request_error": "[Dispatch] 未処理の可能性があります %s リクエスト: %s.",
-        "account": {
-          "login_attempt": "[Dispatch] クライアント %s がログインしようとしています.",
-          "login_success": "[Dispatch] クライアントは %s としてログインしています｡",
-          "login_max_player_limit": "[Dispatch] クライアント %s はログインに失敗しました: オンライン プレイヤーの数が上限に達しました",
-          "login_token_attempt": "[Dispatch] クライアント %s はトークン経由でログインしようとしています｡",
-          "login_token_error": "[Dispatch] クライアント %s はトークンによるログインに失敗しました。",
-          "login_token_success": "[Dispatch] クライアント %s はトークン経由で %s としてログインしました。",
-          "login_password_error": "[Dispatch] クライアント %s はパスワードによるログインに失敗しました。",
-          "login_password_storage_error": "[Dispatch] データベースにパスワードがないため、クライアント %s はパスワードによるログインに失敗しました。",
-          "combo_token_success": "[Dispatch] クライアント %s はコンボ トークンの交換に成功しました。",
-          "combo_token_error": "[Dispatch] クライアント %s はコンボ トークンの交換に失敗しました。",
-          "account_login_create_success": "[Dispatch] クライアント %s はログインに失敗しました: アカウント %s が作成されました。",
-          "account_login_create_error": "[Dispatch] クライアント %s はログインに失敗しました: アカウントの作成に失敗しました。",
-          "account_login_exist_error": "[Dispatch] クライアント %s はログインに失敗しました: アカウントが見つかりません。",
-          "account_cache_error": "ゲーム アカウントのキャッシュエラーです。",
-          "session_key_error": "セッションキーが間違っています。",
-          "username_error": "ユーザー名が見つかりません。",
-          "username_create_error": "ユーザー名が見つかりません。作成に失敗しました。",
-          "password_error": "無効なパスワード",
-          "password_length_error": "パスワードの長さは8文字以上でなければなりません",
-          "password_storage_error": "アカウントのパスワードがありません。 管理者に連絡してください。",
-          "server_max_player_limit": "オンライン プレーヤーの数が上限に達しました"
-        },
-        "router_error": "[Dispatch] ルーターを接続できません。"
-      },
-      "status": {
-        "free_software": "グラスカッターはフリーソフトウェアです。 これにお金を払ったのなら、詐欺にあった可能性があります。 ホームページ: https://github.com/Grasscutters/Grasscutter",
-        "starting": "Grasscutterを起動中...",
-        "shutdown": "シャットダウンしています...",
-        "done": "起動完了!ヘルプが必要な場合は、次のように入力してください \"help\"",
-        "error": "エラーが発生しました｡",
-        "welcome": "Grasscutterへようこそ!",
-        "run_mode_error": "サーバー実行モードが無効です: %s 。",
-        "run_mode_help": "サーバーの実行モードは、'HYBRID'、'DISPATCH_ONLY'、または 'GAME_ONLY' でなければなりません。 Grasscutterを起動できません...",
-        "create_resources": "resourcesファルダを作成中...",
-        "resources_error": "(BinOutput)と(ExcelBinOutput)のコピーをresourcesフォルダーに配置します。",
-        "version": "Grasscutter バージョン: %s-%s",
-        "game_version": "ゲームバージョン: %s",
-        "resources": {
-          "loading": "resourcesファイルをロード中...",
-          "finish": "resourcesファイルのロードが完了｡"
-        }
-      }
+  "messages": {
+    "game": {
+      "address_bind": "ゲーム サーバーが \u001b[1m\u001b[33m%s:%s\u001b[0m で起動しました",
+      "port_bind": "ゲーム サーバーがポート %s で起動しました",
+      "connect": "ポート %s にクライアントが接続されました",
+      "disconnect": "ポート %s からクライアントが切断されました",
+      "game_update_error": "ゲームのアップデート中にエラーが発生しました。",
+      "command_error": "コマンドエラー"
     },
-    "commands": {
-      "generic": {
-        "not_specified": "コマンドが指定されていません。",
-        "unknown_command": "不明なコマンド: %s",
-        "permission_error": "このコマンドを実行する権限がありません。",
-        "console_execute_error": "このコマンドは、コンソールからのみ実行できます。",
-        "player_execute_error": "ゲーム内でこのコマンドを実行してください。",
-        "command_exist_error": "コマンドが見つかりません。",
-        "no_usage_specified": "値が指定されていません",
-        "no_description_specified": "値が設定されていません",
-        "set_to": "%s が %s に設定されました。",
-        "set_for_to": "%s の %s が %s に設定されました。",
-        "invalid": {
-          "amount": "値が無効です",
-          "artifactId": "聖遺物IDが無効な値です。",
-          "avatarId": "キャラIDが無効な値です｡",
-          "avatarLevel": "キャラレベルが無効な値です｡",
-          "entityId": "エンティティIDが無効な値です｡",
-          "itemId": "アイテムIDが無効な値です｡",
-          "itemLevel": "アイテムレベルが無効な値です｡",
-          "itemRefinement": "アイテムの精錬ランクが無効な値です｡",
-          "statValue": "ステータスIDが無効な値です｡.",
-          "value_between": "無効な値: %s は %s と %s の間にある必要があります。",
-          "playerId": "プレイヤーIDが無効な値です｡",
-          "uid": "UIDが無効です｡",
-          "id": "無効なID｡"
-        }
+    "dispatch": {
+      "address_bind": "[Dispatch] ディスパッチサーバーが \u001b[1m\u001b[33m%s:%s\u001b[0m 番で開始されました",
+      "port_bind": "[Dispatch] ディスパッチサーバーがポート %s 番で開始されました",
+      "request": "[Dispatch] クライアント %s %s リクエスト: %s",
+      "keystore": {
+        "general_error": "[Dispatch] keystoreファイルの読み込み中にエラーが発生しました!",
+        "password_error": "[Dispatch] keystoreファイルを読み込めません｡ デフォルトのkeystoreパスワードを試行しています...",
+        "no_keystore_error": "[Dispatch] SSL証明書が見つかりません! HTTP サーバーにフォールバックします。",
+        "default_password": "[Dispatch] デフォルトのkeystoreパスワードが正常にロードされました。 config.json でパスワードを 123456 に設定することを検討してください。"
       },
-      "execution": {
-        "usage_prefix": "使用方法: ",
-        "player_exist_error": "プレイヤーが見つかりません。",
-        "player_offline_error": "プレイヤーがオフラインです｡",
-        "item_player_exist_error": "アイテムIDまたはUIDが無効な値です｡",
-        "player_exist_offline_error": "プレイヤーが見つからないかオフラインです｡",
-        "argument_error": "無効な引数です｡",
-        "clear_target": "ターゲットをクリアしました｡",
-        "set_target": "以降のコマンドは、デフォルトで @%s をターゲットにします。",
-        "set_target_online": "@%s はオンラインです。 コマンドによっては、オフライン ターゲットが必要になる場合があります。",
-        "set_target_offline": "@%s はオフラインです。 一部のコマンドでは、オンライン ターゲットが必要になる場合があります。",
-        "need_target": "このコマンドには、ターゲット UID が必要です。 <@UID> 引数を追加するか、/target @UID で永続的なターゲットを設定します｡",
-        "need_target_online": "このコマンドにはオンラインのターゲット UID が必要ですが、現在のターゲットはオフラインです。 別の <@UID> 引数を追加するか、/target @UID で永続的なターゲットを設定してください。",
-        "need_target_offline": "このコマンドにはオフラインのターゲット UID が必要ですが、現在のターゲットはオンラインです。 別の <@UID> 引数を追加するか、/target @UID で永続的なターゲットを設定してください。"
+      "authentication": {
+        "default_unable_to_verify": "[Authentication] 認証ユーザーは､デフォルトの認証ハンドラーでは使用できません"
       },
-      "status": {
-        "enabled": "有効",
-        "disabled": "無効",
-        "help": "ヘルプ",
-        "success": "成功"
-      },
+      "no_commands_error": "コマンドはディスパッチ専用モードではサポートされていません。",
+      "unhandled_request_error": "[Dispatch] 未処理の可能性があります %s リクエスト: %s.",
       "account": {
-        "invalid": "無効なUID",
-        "exists": "このユーザー名または UID を持つアカウントは既に存在します。",
-        "create": "UID %s でアカウントが作成されました｡",
-        "delete": "アカウントを消去しました｡",
-        "no_account": "アカウントが見つかりません｡",
-        "description": "ユーザーアカウントを変更"
+        "login_attempt": "[Dispatch] クライアント %s がログインしようとしています.",
+        "login_success": "[Dispatch] クライアントは %s としてログインしています｡",
+        "login_max_player_limit": "[Dispatch] クライアント %s はログインに失敗しました: オンライン プレイヤーの数が上限に達しました",
+        "login_token_attempt": "[Dispatch] クライアント %s はトークン経由でログインしようとしています｡",
+        "login_token_error": "[Dispatch] クライアント %s はトークンによるログインに失敗しました。",
+        "login_token_success": "[Dispatch] クライアント %s はトークン経由で %s としてログインしました。",
+        "login_password_error": "[Dispatch] クライアント %s はパスワードによるログインに失敗しました。",
+        "login_password_storage_error": "[Dispatch] データベースにパスワードがないため、クライアント %s はパスワードによるログインに失敗しました。",
+        "combo_token_success": "[Dispatch] クライアント %s はコンボ トークンの交換に成功しました。",
+        "combo_token_error": "[Dispatch] クライアント %s はコンボ トークンの交換に失敗しました。",
+        "account_login_create_success": "[Dispatch] クライアント %s はログインに失敗しました: アカウント %s が作成されました。",
+        "account_login_create_error": "[Dispatch] クライアント %s はログインに失敗しました: アカウントの作成に失敗しました。",
+        "account_login_exist_error": "[Dispatch] クライアント %s はログインに失敗しました: アカウントが見つかりません。",
+        "account_cache_error": "ゲーム アカウントのキャッシュエラーです。",
+        "session_key_error": "セッションキーが間違っています。",
+        "username_error": "ユーザー名が見つかりません。",
+        "username_create_error": "ユーザー名が見つかりません。作成に失敗しました。",
+        "password_error": "無効なパスワード",
+        "password_length_error": "パスワードの長さは8文字以上でなければなりません",
+        "password_storage_error": "アカウントのパスワードがありません。 管理者に連絡してください。",
+        "server_max_player_limit": "オンライン プレーヤーの数が上限に達しました"
       },
-      "announce": {
-        "send_success": "アナウンスの送信に成功しました。アナウンスは /a revoke %s で取り消すことができます。",
-        "refresh_success": "アナウンス構成ファイルを正常に更新します。 [合計 %s]",
-        "revoke_done": "アナウンス %s の取り消しを試行中。",
-        "not_found": "アナウンス %s が見つかりませんでした｡",
-        "description": "すべてのオンライン プレイヤーにアナウンスを送信するか、サーバーのアナウンスを管理します"
-      },
-      "clear": {
-        "weapons": "%s の武器を消去しました。",
-        "artifacts": "%s の聖遺物を消去しました｡",
-        "materials": "%s の素材を消去しました｡",
-        "furniture": "%s の家具アイテムを消去しました｡",
-        "displays": "%s の表示を消去しました｡",
-        "virtuals": "%s の仮想を消去しました｡",
-        "everything": "%s の全てのアイテムを消去しました｡",
-        "description": "装備していないまたはロックされてないアイテムをバックの中から消去します｡ デフォルトでは星4以下でレベル1､精錬ランク1以下のアイテムを削除します｡"
-      },
-      "coop": {
-        "success": "%s を %s の世界に召喚しました。",
-        "description": "他人の世界に強制的に参加させます。 誰もターゲットにされていない場合は、マルチプレイモードに移行します｡"
-      },
-      "enter_dungeon": {
-        "changed": "秘境 %s に変更されました｡",
-        "not_found_error": "秘境は存在しません。",
-        "in_dungeon_error": "あなたはすでにその秘境にいます｡",
-        "description": "秘境に入る｡"
-      },
-      "give": {
-        "usage_relic": "使用方法: give <聖遺物ID> [メインステータスID] [<サブステータスID>[,<強化回数>]]... [lv<レベル 0-20>]",
-        "illegal_relic": "この聖遺物IDはブラックリストに登録された範囲に属しています。必要な範囲ではない可能性があります。",
-        "given": "%s の %s を %s に指定しました。",
-        "given_with_level_and_refinement": "%s をレベル %s で指定すると、%s を %s 回 %s に精錬します。",
-        "given_level": "レベル %s の %s が %s に %s 回与えられました。",
-        "given_avatar": "レベル %s から %s までの %s が与えられました。",
-        "giveall_success": "すべてのアイテムを与えました。",
-        "description": "あなたまたは指定されたプレイヤーにアイテムを与えます。 また、すべての武器、アバター、および/または材料を与えることができ、指定した聖遺物を構築することもできます。"
-      },
-      "heal": {
-        "success": "全キャラを回復しました｡",
-        "description": "現在のパーティーのキャラクターのみを回復します｡"
-      },
-      "help": {
-        "aliases": "エイリアス: ",
-        "available_commands": "利用可能なコマンド: ",
-        "tip_need_permission": "許可: ",
-        "tip_need_no_permission": " 無し",
-        "tip_permission_targeted": " (権限 %s は、他のプレーヤーで使用するためにも必要です)",
-        "warn_player_has_no_permission": "注意: このコマンドを実行する権限がありません。",
-        "description": "ヘルプ メッセージを送信するか、指定したコマンドに関する情報を表示します｡"
-      },
-      "kick": {
-        "player_kick_player": "プレーヤー [%s:%s] がプレーヤー [%s:%s] をキックしました｡",
-        "server_kick_player": "プレイヤーをキック [%s:%s]...",
-        "description": "指定したプレイヤーをサーバーから追い出します (WIP)"
-      },
-      "killall": {
-        "scene_not_found_in_player_world": "プレイヤーワールドにシーンがありません。",
-        "kill_monsters_in_scene": "シーン %s で %s 匹のモンスターを倒しました。",
-        "description": "全てのエンティティを殺しました｡"
-      },
-      "killCharacter": {
-        "success": "%s の現在のキャラクターを殺しました。",
-        "description": "プレイヤーの現在のキャラクターを殺します"
-      },
-      "language": {
-        "current_language": "現在の言語は %s です。",
-        "language_changed": "言語が %s に変更されました。",
-        "language_not_found": "現在、サーバーにはその言語がありません。",
-        "description": "現在の言語を表示または変更する｡"
-      },
-      "list": {
-        "success": "%a 人のプレーヤーがオンラインです:",
-        "description": "オンラインのプレイヤーのリスト"
-      },
-      "permission": {
-        "add": "権限を追加｡",
-        "has_error": "彼らはすでにこの権限を持っています！",
-        "remove": "権限を削除｡",
-        "not_have_error": "彼らにはこの権限がありません!",
-        "account_error": "アカウントが見つかりません。",
-        "description": "ユーザーの権限を付与または削除します"
-      },
-      "position": {
-        "success": "座標: %s、%s、%s\nシーンID: %s",
-        "description": "座標を取得する"
-      },
-      "quest": {
-        "added": "クエスト %s が追加されました。",
-        "finished": "クエスト %s を終了しました。",
-        "not_found": "クエストが見つかりません｡",
-        "invalid_id": "クエストIDが無効です｡",
-        "description": "クエストを追加または終了する｡"
-      },
-      "reload": {
-        "reload_start": "設定を再読み込みしています。",
-        "reload_done": "再読み込み完了｡",
-        "description": "サーバー設定を再読み込み"
-      },
-      "resetConst": {
-        "reset_all": "すべてのアバターの星座をリセットします。",
-        "success": "%s の星座がリセットされました。 変更を確認するには、再ログインしてください。",
-        "description": "現在アクティブなキャラクターの星座レベルをリセットします。変更を確認するには、コマンドを使用した後に再ログインする必要があります｡"
-      },
-      "resetShopLimit": {
-        "success": "リセット完了｡",
-        "description": "対象プレイヤーのショップ更新時間をリセットする"
-      },
-      "sendMail": {
-        "give_usage": "使用法: give <player> <itemID|itemName> [数] [レベル] [精錬]",
-        "user_not_exist": "ID「%s」のユーザーは存在しません。",
-        "start_composition": "メッセージの作成を開始しています。\n続行するには「/sendmail <title>」を使用してください。\n「/sendmail stop」はいつでも使用できます。",
-        "templates": "メールテンプレートは近日実装予定...",
-        "invalid_arguments": "引数が無効です。",
-        "send_cancel": "メッセージの送信がキャンセルされました。",
-        "send_done": "ユーザー %s にメッセージを送信しました!",
-        "send_all_done": "すべてのユーザーにメッセージを送信しました!",
-        "not_composition_end": "メッセージ作成は最終段階ではありません。\n/sendmail %s または/sendmail stop を使用してキャンセルしてください｡",
-        "please_use": "/sendmail %s を使用してください｡",
-        "set_title": "メッセージのタイトルは '%s' に設定されています。\n続行するには '/sendmail <content>' を使用してください。",
-        "set_contents": "メッセージの内容は '%s' に設定されています。\n続行するには '/sendmail <送信者>' を使用してください。",
-        "set_message_sender": "メッセージ送信者は「%s」に設定されています。\n続行するには、「/sendmail <アイテムID|アイテム名|finish> [数] [レベル]」を使用してください。",
-        "send": "メッセージに %s の %s (レベル %s) を添付しました。\nアイテムの追加を続行するか、'/sendmail finish' を使用してメッセージを送信してください。",
-        "invalid_arguments_please_use": "引数が無効です。\n '/sendmail %s' を使用してください｡",
-        "title": "<タイトル>",
-        "message": "<メッセージ>",
-        "sender": "<送信者>",
-        "arguments": "<アイテムID|アイテム名|finish> [数] [レベル]",
-        "error": "エラー: 建設ステージ %s が無効です。 コンソールでスタック トレースを確認します。",
-        "description": "指定したユーザーにメールを送信します。 このコマンドの使用法は、その合成状態に基づいて変化します"
-      },
-      "sendMessage": {
-        "success": "メッセージを送信しました。",
-        "description": "サーバーとしてプレイヤーにメッセージを送信します。 ターゲットなしで使用すると、サーバー上のすべてのプレイヤーに送信されます。"
-      },
-      "setConst": {
-        "range_error": "キャラの凸数はは 0 から 6 の間でなければなりません。",
-        "level_error": "キャラの星座のレベルが無効です｡",
-        "fail": "星座の設定に失敗しました。",
-        "failed_success": "%s の星座は %s に設定されました。 シーンをリロードして変更を確認してください。",
-        "success": "%s の星座は %s に設定されました。",
-        "description": "現在アクティブなキャラクターの星座レベルを設定します"
-      },
-      "setFetterLevel": {
-        "range_error": "キャラの突破レベルは0から10の間である必要があります｡",
-        "success": "突破レベルが %s に設定されました。",
-        "level_error": "突破レベルが無効です",
-        "description": "現在アクティブなキャラクターの突破レベルを設定します｡"
-      },
-      "setProp": {
-        "description": "アカウント全体のプロパティを設定します。 godmodeのようなものはこの方法で有効にすることができ、アンロックされた深淵の床やバトル パスの進行状況などを変更することもできます。\n\t<prop> の値: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\tmax_spring_volume の形式の他の設定可能な値についてはPlayerPropertyを参照してください｡"
-      },
-      "setStats": {
-        "description": "現在アクティブ状態のステータスを設定します｡\n\t <stat>の値: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
-        "locked_to": "%s は %s にロックされています。",
-        "locked_for_to": "%s の %s は %s にロックされています。",
-        "unlocked": "%s のロックが解除されました。",
-        "unlocked_for": "%s の %s がロック解除されました。"
-      },
-      "spawn": {
-        "success": "%s 体の %s をスポーンさせました｡",
-        "limit_reached": "シーンのスポーン上限に達しました。 代わりに %s 体のエンティティをスポーンしています。",
-        "description": "近くにエンティティをスポーンします｡"
-      },
-      "stop": {
-        "success": "サーバーをシャットダウン...",
-        "description": "サーバーを停止中"
-      },
-      "talent": {
-        "lower_16": "天賦レベルが無効です｡ レベルは16未満である必要があります｡",
-        "set_id": "%s - の天賦\"%s\" を %s に設定しました",
-        "id_desc": "天賦 %s - \"%s\" - \"%s\"",
-        "invalid_skill_id": "スキル ID が無効です。",
-        "invalid_level": "天賦レベルが無効です。",
-        "normal_attack_id": "通常攻撃のID %s.",
-        "e_skill_id": "元素スキルのID %s.",
-        "q_skill_id": "元素爆発のID %s.",
-        "description": "現在アクティブなキャラクターの天賦レベルを設定する"
-      },
-      "team": {
-        "invalid_usage": "使い方を間違えています｡",
-        "invalid_index": "インデックスが無効です。",
-        "add_too_much": "このサーバーでは、チームに最大 %s キャラクターしか入れることは出来ません。",
-        "failed_to_add_avatar": "キャラクターID %s の追加に失敗しました。",
-        "failed_to_parse_index": "インデックスの解析に失敗しました: %s",
-        "remove_too_much": "チームから全てのキャラクターをを削除することはできません。",
-        "ignore_index": "無視されたインデックス: %s",
-        "index_out_of_range": "指定したインデックスは範囲外です。",
-        "failed_parse_avatar_id": "キャラクターID の解析に失敗しました: %s",
-        "avatar_already_in_team": "キャラクターはすでにチームに所属しています。",
-        "avatar_not_found": "キャラクター %s が見つかりません。",
-        "description": "チームを手動で変更する."
-      },
-      "teleportAll": {
-        "success": "すべてのプレイヤーを自分の場所にテレポートしました。",
-        "error": "このコマンドはマルチプレイでのみ使用できます。",
-        "description": "あなたの世界のすべてのプレイヤーをあなたの位置にテレポートします｡"
-      },
-      "teleport": {
-        "invalid_position": "指定した位置が無効です。",
-        "exists_error": "指定されたシーンが存在しません。",
-        "success": "%s を %s、%s、%s のシーン %s にテレポートしました。",
-        "description": "プレイヤーの位置を変更する"
-      },
-      "weather": {
-        "success": "天気IDを %s に設定し、気候タイプは %s です。",
-        "status": "現在の天気 ID は %s で、気候タイプは %s です。",
-        "description": "天候 ID と気候タイプを変更します。 天気 ID は/Resources/ExcelBinOutput/WeatherExcelConfigData.json にあります。\n気候の種類:sunny, cloudy, rain, thunderstorm, snow, mist"
-      },
-      "ban": {
-        "success": "成功",
-        "failure": "失敗しました。プレーヤーが見つかりません。",
-        "invalid_time": "タイムスタンプを解析できません。",
-        "description": "プレイヤーをBANする｡"
-      },
-      "unlockall": {
-        "success": "%s の開いているステータスをすべてロック解除しました。",
-        "description": "プレーヤーのすべての開いているステータスのロックを解除します。"
-      },
-      "unban": {
-        "success": "成功",
-        "failure": "失敗しました。プレーヤーが見つかりません。",
-        "description": "プレイヤーのBANを解除する"
+      "router_error": "[Dispatch] ルーターを接続できません。"
+    },
+    "status": {
+      "free_software": "グラスカッターはフリーソフトウェアです。 これにお金を払ったのなら、詐欺にあった可能性があります。 ホームページ: https://github.com/Grasscutters/Grasscutter",
+      "starting": "Grasscutterを起動中...",
+      "shutdown": "シャットダウンしています...",
+      "done": "起動完了!ヘルプが必要な場合は、次のように入力してください \"help\"",
+      "error": "エラーが発生しました｡",
+      "welcome": "Grasscutterへようこそ!",
+      "run_mode_error": "サーバー実行モードが無効です: %s 。",
+      "run_mode_help": "サーバーの実行モードは、'HYBRID'、'DISPATCH_ONLY'、または 'GAME_ONLY' でなければなりません。 Grasscutterを起動できません...",
+      "create_resources": "resourcesファルダを作成中...",
+      "resources_error": "(BinOutput)と(ExcelBinOutput)のコピーをresourcesフォルダーに配置します。",
+      "version": "Grasscutter バージョン: %s-%s",
+      "game_version": "ゲームバージョン: %s",
+      "resources": {
+        "loading": "resourcesファイルをロード中...",
+        "finish": "resourcesファイルのロードが完了｡"
+      }
+    }
+  },
+  "commands": {
+    "generic": {
+      "not_specified": "コマンドが指定されていません。",
+      "unknown_command": "不明なコマンド: %s",
+      "permission_error": "このコマンドを実行する権限がありません。",
+      "console_execute_error": "このコマンドは、コンソールからのみ実行できます。",
+      "player_execute_error": "ゲーム内でこのコマンドを実行してください。",
+      "command_exist_error": "コマンドが見つかりません。",
+      "no_usage_specified": "値が指定されていません",
+      "no_description_specified": "値が設定されていません",
+      "set_to": "%s が %s に設定されました。",
+      "set_for_to": "%s の %s が %s に設定されました。",
+      "invalid": {
+        "amount": "値が無効です",
+        "artifactId": "聖遺物IDが無効な値です。",
+        "avatarId": "キャラIDが無効な値です｡",
+        "avatarLevel": "キャラレベルが無効な値です｡",
+        "entityId": "エンティティIDが無効な値です｡",
+        "itemId": "アイテムIDが無効な値です｡",
+        "itemLevel": "アイテムレベルが無効な値です｡",
+        "itemRefinement": "アイテムの精錬ランクが無効な値です｡",
+        "statValue": "ステータスIDが無効な値です｡.",
+        "value_between": "無効な値: %s は %s と %s の間にある必要があります。",
+        "playerId": "プレイヤーIDが無効な値です｡",
+        "uid": "UIDが無効です｡",
+        "id": "無効なID｡"
       }
     },
-    "gacha": {
-      "details": {
-        "title": "バナーの詳細",
-        "available_five_stars": "入手可能な星5アイテム",
-        "available_four_stars": "入手可能な星4アイテム",
-        "available_three_stars": "入手可能な星3アイテム"
-      },
-      "records": {
-        "title": "ガチャ履歴",
-        "date": "日付",
-        "item": "時間"
-      }
+    "execution": {
+      "usage_prefix": "使用方法: ",
+      "player_exist_error": "プレイヤーが見つかりません。",
+      "player_offline_error": "プレイヤーがオフラインです｡",
+      "item_player_exist_error": "アイテムIDまたはUIDが無効な値です｡",
+      "player_exist_offline_error": "プレイヤーが見つからないかオフラインです｡",
+      "argument_error": "無効な引数です｡",
+      "clear_target": "ターゲットをクリアしました｡",
+      "set_target": "以降のコマンドは、デフォルトで @%s をターゲットにします。",
+      "set_target_online": "@%s はオンラインです。 コマンドによっては、オフライン ターゲットが必要になる場合があります。",
+      "set_target_offline": "@%s はオフラインです。 一部のコマンドでは、オンライン ターゲットが必要になる場合があります。",
+      "need_target": "このコマンドには、ターゲット UID が必要です。 <@UID> 引数を追加するか、/target @UID で永続的なターゲットを設定します｡",
+      "need_target_online": "このコマンドにはオンラインのターゲット UID が必要ですが、現在のターゲットはオフラインです。 別の <@UID> 引数を追加するか、/target @UID で永続的なターゲットを設定してください。",
+      "need_target_offline": "このコマンドにはオフラインのターゲット UID が必要ですが、現在のターゲットはオンラインです。 別の <@UID> 引数を追加するか、/target @UID で永続的なターゲットを設定してください。"
     },
-    "documentation": {
-      "handbook": {
-        "title": "GM Handbook",
-        "title_commands": "コマンド",
-        "title_avatars": "キャラ",
-        "title_items": "アイテム",
-        "title_scenes": "シーン",
-        "title_monsters": "モンスター",
-        "header_id": "Id",
-        "header_command": "コマンド",
-        "header_description": "説明",
-        "header_avatar": "キャラ",
-        "header_item": "アイテム",
-        "header_scene": "シーン",
-        "header_monster": "モンスター"
-      },
-      "index": {
-        "title": "ドキュメント",
-        "handbook": "GM Handbook",
-        "gacha_mapping": "ガチャマップ JSON"
-      }
+    "status": {
+      "enabled": "有効",
+      "disabled": "無効",
+      "help": "ヘルプ",
+      "success": "成功"
     },
+    "account": {
+      "invalid": "無効なUID",
+      "exists": "このユーザー名または UID を持つアカウントは既に存在します。",
+      "create": "UID %s でアカウントが作成されました｡",
+      "delete": "アカウントを消去しました｡",
+      "no_account": "アカウントが見つかりません｡",
+      "description": "ユーザーアカウントを変更"
+    },
+    "announce": {
+      "send_success": "アナウンスの送信に成功しました。アナウンスは /a revoke %s で取り消すことができます。",
+      "refresh_success": "アナウンス構成ファイルを正常に更新します。 [合計 %s]",
+      "revoke_done": "アナウンス %s の取り消しを試行中。",
+      "not_found": "アナウンス %s が見つかりませんでした｡",
+      "description": "すべてのオンライン プレイヤーにアナウンスを送信するか、サーバーのアナウンスを管理します"
+    },
+    "clear": {
+      "weapons": "%s の武器を消去しました。",
+      "artifacts": "%s の聖遺物を消去しました｡",
+      "materials": "%s の素材を消去しました｡",
+      "furniture": "%s の家具アイテムを消去しました｡",
+      "displays": "%s の表示を消去しました｡",
+      "virtuals": "%s の仮想を消去しました｡",
+      "everything": "%s の全てのアイテムを消去しました｡",
+      "description": "装備していないまたはロックされてないアイテムをバックの中から消去します｡ デフォルトでは星4以下でレベル1､精錬ランク1以下のアイテムを削除します｡"
+    },
+    "coop": {
+      "success": "%s を %s の世界に召喚しました。",
+      "description": "他人の世界に強制的に参加させます。 誰もターゲットにされていない場合は、マルチプレイモードに移行します｡"
+    },
+    "enter_dungeon": {
+      "changed": "秘境 %s に変更されました｡",
+      "not_found_error": "秘境は存在しません。",
+      "in_dungeon_error": "あなたはすでにその秘境にいます｡",
+      "description": "秘境に入る｡"
+    },
+    "give": {
+      "usage_relic": "使用方法: give <聖遺物ID> [メインステータスID] [<サブステータスID>[,<強化回数>]]... [lv<レベル 0-20>]",
+      "illegal_relic": "この聖遺物IDはブラックリストに登録された範囲に属しています。必要な範囲ではない可能性があります。",
+      "given": "%s の %s を %s に指定しました。",
+      "given_with_level_and_refinement": "%s をレベル %s で指定すると、%s を %s 回 %s に精錬します。",
+      "given_level": "レベル %s の %s が %s に %s 回与えられました。",
+      "given_avatar": "レベル %s から %s までの %s が与えられました。",
+      "giveall_success": "すべてのアイテムを与えました。",
+      "description": "あなたまたは指定されたプレイヤーにアイテムを与えます。 また、すべての武器、アバター、および/または材料を与えることができ、指定した聖遺物を構築することもできます。"
+    },
+    "heal": {
+      "success": "全キャラを回復しました｡",
+      "description": "現在のパーティーのキャラクターのみを回復します｡"
+    },
+    "help": {
+      "aliases": "エイリアス: ",
+      "available_commands": "利用可能なコマンド: ",
+      "tip_need_permission": "許可: ",
+      "tip_need_no_permission": " 無し",
+      "tip_permission_targeted": " (権限 %s は、他のプレーヤーで使用するためにも必要です)",
+      "warn_player_has_no_permission": "注意: このコマンドを実行する権限がありません。",
+      "description": "ヘルプ メッセージを送信するか、指定したコマンドに関する情報を表示します｡"
+    },
+    "kick": {
+      "player_kick_player": "プレーヤー [%s:%s] がプレーヤー [%s:%s] をキックしました｡",
+      "server_kick_player": "プレイヤーをキック [%s:%s]...",
+      "description": "指定したプレイヤーをサーバーから追い出します (WIP)"
+    },
+    "killall": {
+      "scene_not_found_in_player_world": "プレイヤーワールドにシーンがありません。",
+      "kill_monsters_in_scene": "シーン %s で %s 匹のモンスターを倒しました。",
+      "description": "全てのエンティティを殺しました｡"
+    },
+    "killCharacter": {
+      "success": "%s の現在のキャラクターを殺しました。",
+      "description": "プレイヤーの現在のキャラクターを殺します"
+    },
+    "language": {
+      "current_language": "現在の言語は %s です。",
+      "language_changed": "言語が %s に変更されました。",
+      "language_not_found": "現在、サーバーにはその言語がありません。",
+      "description": "現在の言語を表示または変更する｡"
+    },
+    "list": {
+      "success": "%a 人のプレーヤーがオンラインです:",
+      "description": "オンラインのプレイヤーのリスト"
+    },
+    "permission": {
+      "add": "権限を追加｡",
+      "has_error": "彼らはすでにこの権限を持っています！",
+      "remove": "権限を削除｡",
+      "not_have_error": "彼らにはこの権限がありません!",
+      "account_error": "アカウントが見つかりません。",
+      "description": "ユーザーの権限を付与または削除します"
+    },
+    "position": {
+      "success": "座標: %s、%s、%s\nシーンID: %s",
+      "description": "座標を取得する"
+    },
+    "quest": {
+      "added": "クエスト %s が追加されました。",
+      "finished": "クエスト %s を終了しました。",
+      "not_found": "クエストが見つかりません｡",
+      "invalid_id": "クエストIDが無効です｡",
+      "description": "クエストを追加または終了する｡"
+    },
+    "reload": {
+      "reload_start": "設定を再読み込みしています。",
+      "reload_done": "再読み込み完了｡",
+      "description": "サーバー設定を再読み込み"
+    },
+    "resetConst": {
+      "reset_all": "すべてのアバターの星座をリセットします。",
+      "success": "%s の星座がリセットされました。 変更を確認するには、再ログインしてください。",
+      "description": "現在アクティブなキャラクターの星座レベルをリセットします。変更を確認するには、コマンドを使用した後に再ログインする必要があります｡"
+    },
+    "resetShopLimit": {
+      "success": "リセット完了｡",
+      "description": "対象プレイヤーのショップ更新時間をリセットする"
+    },
+    "sendMail": {
+      "give_usage": "使用法: give <player> <itemID|itemName> [数] [レベル] [精錬]",
+      "user_not_exist": "ID「%s」のユーザーは存在しません。",
+      "start_composition": "メッセージの作成を開始しています。\n続行するには「/sendmail <title>」を使用してください。\n「/sendmail stop」はいつでも使用できます。",
+      "templates": "メールテンプレートは近日実装予定...",
+      "invalid_arguments": "引数が無効です。",
+      "send_cancel": "メッセージの送信がキャンセルされました。",
+      "send_done": "ユーザー %s にメッセージを送信しました!",
+      "send_all_done": "すべてのユーザーにメッセージを送信しました!",
+      "not_composition_end": "メッセージ作成は最終段階ではありません。\n/sendmail %s または/sendmail stop を使用してキャンセルしてください｡",
+      "please_use": "/sendmail %s を使用してください｡",
+      "set_title": "メッセージのタイトルは '%s' に設定されています。\n続行するには '/sendmail <content>' を使用してください。",
+      "set_contents": "メッセージの内容は '%s' に設定されています。\n続行するには '/sendmail <送信者>' を使用してください。",
+      "set_message_sender": "メッセージ送信者は「%s」に設定されています。\n続行するには、「/sendmail <アイテムID|アイテム名|finish> [数] [レベル]」を使用してください。",
+      "send": "メッセージに %s の %s (レベル %s) を添付しました。\nアイテムの追加を続行するか、'/sendmail finish' を使用してメッセージを送信してください。",
+      "invalid_arguments_please_use": "引数が無効です。\n '/sendmail %s' を使用してください｡",
+      "title": "<タイトル>",
+      "message": "<メッセージ>",
+      "sender": "<送信者>",
+      "arguments": "<アイテムID|アイテム名|finish> [数] [レベル]",
+      "error": "エラー: 建設ステージ %s が無効です。 コンソールでスタック トレースを確認します。",
+      "description": "指定したユーザーにメールを送信します。 このコマンドの使用法は、その合成状態に基づいて変化します"
+    },
+    "sendMessage": {
+      "success": "メッセージを送信しました。",
+      "description": "サーバーとしてプレイヤーにメッセージを送信します。 ターゲットなしで使用すると、サーバー上のすべてのプレイヤーに送信されます。"
+    },
+    "setConst": {
+      "range_error": "キャラの凸数はは 0 から 6 の間でなければなりません。",
+      "level_error": "キャラの星座のレベルが無効です｡",
+      "fail": "星座の設定に失敗しました。",
+      "failed_success": "%s の星座は %s に設定されました。 シーンをリロードして変更を確認してください。",
+      "success": "%s の星座は %s に設定されました。",
+      "description": "現在アクティブなキャラクターの星座レベルを設定します"
+    },
+    "setFetterLevel": {
+      "range_error": "キャラの突破レベルは0から10の間である必要があります｡",
+      "success": "突破レベルが %s に設定されました。",
+      "level_error": "突破レベルが無効です",
+      "description": "現在アクティブなキャラクターの突破レベルを設定します｡"
+    },
+    "setProp": {
+      "description": "アカウント全体のプロパティを設定します。 godmodeのようなものはこの方法で有効にすることができ、アンロックされた深淵の床やバトル パスの進行状況などを変更することもできます。\n\t<prop> の値: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\tmax_spring_volume の形式の他の設定可能な値についてはPlayerPropertyを参照してください｡"
+    },
+    "setStats": {
+      "description": "現在アクティブ状態のステータスを設定します｡\n\t <stat>の値: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
+      "locked_to": "%s は %s にロックされています。",
+      "locked_for_to": "%s の %s は %s にロックされています。",
+      "unlocked": "%s のロックが解除されました。",
+      "unlocked_for": "%s の %s がロック解除されました。"
+    },
+    "spawn": {
+      "success": "%s 体の %s をスポーンさせました｡",
+      "limit_reached": "シーンのスポーン上限に達しました。 代わりに %s 体のエンティティをスポーンしています。",
+      "description": "近くにエンティティをスポーンします｡"
+    },
+    "stop": {
+      "success": "サーバーをシャットダウン...",
+      "description": "サーバーを停止中"
+    },
+    "talent": {
+      "lower_16": "天賦レベルが無効です｡ レベルは16未満である必要があります｡",
+      "set_id": "%s - の天賦\"%s\" を %s に設定しました",
+      "id_desc": "天賦 %s - \"%s\" - \"%s\"",
+      "invalid_skill_id": "スキル ID が無効です。",
+      "invalid_level": "天賦レベルが無効です。",
+      "normal_attack_id": "通常攻撃のID %s.",
+      "e_skill_id": "元素スキルのID %s.",
+      "q_skill_id": "元素爆発のID %s.",
+      "description": "現在アクティブなキャラクターの天賦レベルを設定する"
+    },
+    "team": {
+      "invalid_usage": "使い方を間違えています｡",
+      "invalid_index": "インデックスが無効です。",
+      "add_too_much": "このサーバーでは、チームに最大 %s キャラクターしか入れることは出来ません。",
+      "failed_to_add_avatar": "キャラクターID %s の追加に失敗しました。",
+      "failed_to_parse_index": "インデックスの解析に失敗しました: %s",
+      "remove_too_much": "チームから全てのキャラクターをを削除することはできません。",
+      "ignore_index": "無視されたインデックス: %s",
+      "index_out_of_range": "指定したインデックスは範囲外です。",
+      "failed_parse_avatar_id": "キャラクターID の解析に失敗しました: %s",
+      "avatar_already_in_team": "キャラクターはすでにチームに所属しています。",
+      "avatar_not_found": "キャラクター %s が見つかりません。",
+      "description": "チームを手動で変更する."
+    },
+    "teleportAll": {
+      "success": "すべてのプレイヤーを自分の場所にテレポートしました。",
+      "error": "このコマンドはマルチプレイでのみ使用できます。",
+      "description": "あなたの世界のすべてのプレイヤーをあなたの位置にテレポートします｡"
+    },
+    "teleport": {
+      "invalid_position": "指定した位置が無効です。",
+      "exists_error": "指定されたシーンが存在しません。",
+      "success": "%s を %s、%s、%s のシーン %s にテレポートしました。",
+      "description": "プレイヤーの位置を変更する"
+    },
+    "weather": {
+      "success": "天気IDを %s に設定し、気候タイプは %s です。",
+      "status": "現在の天気 ID は %s で、気候タイプは %s です。",
+      "description": "天候 ID と気候タイプを変更します。 天気 ID は/Resources/ExcelBinOutput/WeatherExcelConfigData.json にあります。\n気候の種類:sunny, cloudy, rain, thunderstorm, snow, mist"
+    },
+    "ban": {
+      "success": "成功",
+      "failure": "失敗しました。プレーヤーが見つかりません。",
+      "invalid_time": "タイムスタンプを解析できません。",
+      "description": "プレイヤーをBANする｡"
+    },
+    "unlockall": {
+      "success": "%s の開いているステータスをすべてロック解除しました。",
+      "description": "プレーヤーのすべての開いているステータスのロックを解除します。"
+    },
+    "unban": {
+      "success": "成功",
+      "failure": "失敗しました。プレーヤーが見つかりません。",
+      "description": "プレイヤーのBANを解除する"
+    }
+  },
+  "gacha": {
+    "details": {
+      "title": "バナーの詳細",
+      "available_five_stars": "入手可能な星5アイテム",
+      "available_four_stars": "入手可能な星4アイテム",
+      "available_three_stars": "入手可能な星3アイテム"
+    },
+    "records": {
+      "title": "ガチャ履歴",
+      "date": "日付",
+      "item": "時間"
+    }
+  },
+  "documentation": {
+    "handbook": {
+      "title": "🇺🇸GM Handbook",
+      "title_commands": "コマンド",
+      "title_avatars": "キャラ",
+      "title_items": "アイテム",
+      "title_scenes": "シーン",
+      "title_monsters": "モンスター",
+      "header_id": "🇺🇸Id",
+      "header_command": "コマンド",
+      "header_description": "説明",
+      "header_avatar": "キャラ",
+      "header_item": "アイテム",
+      "header_scene": "シーン",
+      "header_monster": "モンスター"
+    },
+    "index": {
+      "title": "ドキュメント",
+      "handbook": "🇺🇸GM Handbook",
+      "gacha_mapping": "ガチャマップ JSON"
+    }
+  },
   "plugin": {
-	  "directory_failed": "🇺🇸Failed to create plugins directory: ",
-	  "unable_to_load": "🇺🇸Unable to load plugin.",
-	  "invalid_config": "🇺🇸Plugin %s has an invalid config file.",
-	  "invalid_main_class": "🇺🇸Plugin %s has an invalid main class.",
-	  "missing_config": "🇺🇸Plugin %s lacks a valid config file.",
-	  "failed_to_load_plugin": "🇺🇸Failed to load plugin: %s",
-	  "failed_to_load": "🇺🇸Failed to load a plugin.",
-	  "failed_to_load_dependencies": "🇺🇸Failed to load plugins with dependencies.",
-	  "loading_plugin": "🇺🇸Loading plugin: %s",
-	  "failed_add_id": "🇺🇸Failed to add plugin identifier: %s",
-	  "enabling_plugin": "🇺🇸Enabling plugin: %s",
-	  "enabling_failed": "🇺🇸Failed to enable plugin: %s",
-	  "disabling_plugin": "🇺🇸Disabling plugin: %s",
-	  "disabling_failed": "🇺🇸Failed to disable plugin: %s"
+    "directory_failed": "🇺🇸Failed to create plugins directory: ",
+    "unable_to_load": "🇺🇸Unable to load plugin.",
+    "invalid_config": "🇺🇸Plugin %s has an invalid config file.",
+    "invalid_main_class": "🇺🇸Plugin %s has an invalid main class.",
+    "missing_config": "🇺🇸Plugin %s lacks a valid config file.",
+    "failed_to_load_plugin": "🇺🇸Failed to load plugin: %s",
+    "failed_to_load": "🇺🇸Failed to load a plugin.",
+    "failed_to_load_dependencies": "🇺🇸Failed to load plugins with dependencies.",
+    "loading_plugin": "🇺🇸Loading plugin: %s",
+    "failed_add_id": "🇺🇸Failed to add plugin identifier: %s",
+    "enabling_plugin": "🇺🇸Enabling plugin: %s",
+    "enabling_failed": "🇺🇸Failed to enable plugin: %s",
+    "disabling_plugin": "🇺🇸Disabling plugin: %s",
+    "disabling_failed": "🇺🇸Failed to disable plugin: %s"
   }
-  }
-  
+}
