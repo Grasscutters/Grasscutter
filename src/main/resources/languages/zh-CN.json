@@ -181,7 +181,7 @@
     },
     "killall": {
       "scene_not_found_in_player_world": "未在玩家世界中找到此场景。",
-      "kill_monsters_in_scene": "已杀死场景 %s 中的 %s 个怪物。",
+      "kill_monsters_in_scene": "已杀死 %s 个怪物。 [场景ID: %s ]",
       "description": "杀死所有怪物"
     },
     "killCharacter": {
@@ -207,9 +207,8 @@
       "description": "添加或移除指定玩家的权限"
     },
     "position": {
-      "success": "坐标：%s, %s, %s\n场景ID：%s",
-      "description": "获取所在位置"
-    },
+      "success": "坐标：%s, %s, %s\n旋转：%s, %s, %s\n场景ID：%s",
+      "description": "获取所在位置和旋转信息"},
     "quest": {
       "added": "已添加任务 %s。",
       "finished": "已完成任务 %s。",

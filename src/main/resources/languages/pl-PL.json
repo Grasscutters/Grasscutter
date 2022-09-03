@@ -207,8 +207,8 @@
       "description": "Dodaj lub usuń uprawnienia podanego gracza."
     },
     "position": {
-      "success": "Koordynaty: (%s, %s, %s).\nID sceny: %s.",
-      "description": "Pokaż gdzie znajduje się dany gracz."
+      "success": "Koordynaty: (%s, %s, %s).\nKrążyć：%s, %s, %s\nID sceny: %s.",
+      "description": "Pobiera informacje o pozycji i obrocie"
     },
     "quest": {
       "added": "Zadanie %s zostało dodane.",

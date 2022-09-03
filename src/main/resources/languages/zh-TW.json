@@ -207,8 +207,8 @@
       "description": "指派或移除指定玩家的權限。"
     },
     "position": {
-      "success": "座標：%s, %s, %s\n場景ID：%s",
-      "description": "獲取目前所在位置的座標。"
+      "success": "坐標：%s, %s, %s\n旋轉：%s, %s, %s\n場景ID：%s",
+      "description": "獲取所在坐標和旋轉信息"
     },
     "quest": {
       "added": "已添加任務 %s",

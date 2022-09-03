@@ -207,8 +207,8 @@
       "description": "Acordă sau elimină o permisiune de la un utilizator."
     },
     "position": {
-      "success": "Coordonate: %s, %s, %s\nScene ID: %s",
-      "description": "Obțineți coordonatele"
+      "success": "Coordonate: %s, %s, %s\nGravitează：%s, %s, %s\nScene ID: %s",
+      "description": "Obține informații despre poziție și rotație"
     },
     "quest": {
       "added": "Misiunea %s adăugată.",
