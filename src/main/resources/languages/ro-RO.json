@@ -382,5 +382,21 @@
       "handbook": "Manual GM",
       "gacha_mapping": "🇺🇸Gacha mapping JSON"
     }
+  },
+  "plugin": {
+	  "directory_failed": "🇺🇸Failed to create plugins directory: ",
+	  "unable_to_load": "🇺🇸Unable to load plugin.",
+	  "invalid_config": "🇺🇸Plugin %s has an invalid config file.",
+	  "invalid_main_class": "🇺🇸Plugin %s has an invalid main class.",
+	  "missing_config": "🇺🇸Plugin %s lacks a valid config file.",
+	  "failed_to_load_plugin": "🇺🇸Failed to load plugin: %s",
+	  "failed_to_load": "🇺🇸Failed to load a plugin.",
+	  "failed_to_load_dependencies": "🇺🇸Failed to load plugins with dependencies.",
+	  "loading_plugin": "🇺🇸Loading plugin: %s",
+	  "failed_add_id": "🇺🇸Failed to add plugin identifier: %s",
+	  "enabling_plugin": "🇺🇸Enabling plugin: %s",
+	  "enabling_failed": "🇺🇸Failed to enable plugin: %s",
+	  "disabling_plugin": "🇺🇸Disabling plugin: %s",
+	  "disabling_failed": "🇺🇸Failed to disable plugin: %s"
   }
 }
