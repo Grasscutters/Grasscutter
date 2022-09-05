@@ -207,8 +207,8 @@
       "description": "사용자에게 권한을 부여하거나 제거합니다."
     },
     "position": {
-      "success": "좌표: %s, %s, %s\nScene ID: %s",
-      "description": "좌표를 출력합니다"
+      "success": "좌표: %s, %s, %s\n회전：%s, %s, %s\nScene ID: %s",
+      "description": "위치 및 회전 정보를 가져옵니다"
     },
     "quest": {
       "added": "%s 퀘스트가 추가되었습니다.",

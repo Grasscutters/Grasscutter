@@ -207,8 +207,8 @@
       "description": "Accorde ou retire une permission a un utilisateur"
     },
     "position": {
-      "success": "Coordonées: %s, %s, %s\nID de la scène: %s",
-      "description": "Obtenir vos coordonnées"
+      "success": "Coordonées: %s, %s, %s\nRotatifs：%s, %s, %s\nID de la scène: %s",
+      "description": "Obtient des informations de position et de rotation"
     },
     "quest": {
       "added": "Quête %s ajoutée.",

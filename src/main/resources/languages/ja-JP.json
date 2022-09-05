@@ -207,8 +207,8 @@
       "description": "ユーザーの権限を付与または削除します"
     },
     "position": {
-      "success": "座標: %s、%s、%s\nシーンID: %s",
-      "description": "座標を取得する"
+      "success": "座標：%s、%s、%s\n回転：%s、%s、%s\nシーンID: %s",
+      "description": "位置と回転情報を取得します"
     },
     "quest": {
       "added": "クエスト %s が追加されました。",

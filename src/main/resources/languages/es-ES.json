@@ -207,8 +207,8 @@
       "description": "Da o quita un permiso a un jugador"
     },
     "position": {
-      "success": "Coordenadas: %s, %s, %s\nID del escenario: %s",
-      "description": "Da las coordenadas en el escenario actual"
+      "success": "Coordenadas: %s, %s, %s\nRotación: %s, %s, %s\nID del escenario: %s",
+      "description": "Obtener información sobre ubicación y rotación"
     },
     "quest": {
       "added": "Misión %s añadida.",

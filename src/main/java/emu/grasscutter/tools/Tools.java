@@ -97,7 +97,9 @@ public final class Tools {
 
         // Write txt files
         for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-            final String fileName = "./GM Handbook - %s.txt".formatted(TextStrings.ARR_LANGUAGES[i]);
+            File GMHandbookOutputpath=new File("./GM Handbook");
+            GMHandbookOutputpath.mkdir();
+            final String fileName = "./GM Handbook/GM Handbook - %s.txt".formatted(TextStrings.ARR_LANGUAGES[i]);
             try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8), false)) {
                 writer.write(handbookBuilders.get(i).toString());
             }
