@@ -3,11 +3,14 @@ package emu.grasscutter.game.player;
 import static emu.grasscutter.config.Configuration.*;
 
 import java.util.*;
-
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.ScenePointEntry;
 import emu.grasscutter.data.excels.AvatarSkillDepotData;
+import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityBaseGadget;
@@ -37,6 +40,7 @@ import emu.grasscutter.server.packet.send.PacketRemoveCustomTeamRsp;
 import emu.grasscutter.server.packet.send.PacketSceneTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketSetUpAvatarTeamRsp;
 import emu.grasscutter.server.packet.send.PacketWorldPlayerDieNotify;
+import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
@@ -114,7 +118,7 @@ public class TeamManager extends BasePlayerDataManager {
 
     public TeamInfo getCurrentTeamInfo() {
         if (useTemporarilyTeamIndex >= 0 &&
-                useTemporarilyTeamIndex < temporaryTeam.size()) {
+            useTemporarilyTeamIndex < temporaryTeam.size()) {
             return temporaryTeam.get(useTemporarilyTeamIndex);
         }
         if (this.getPlayer().isInMultiplayer()) {
@@ -275,8 +279,8 @@ public class TeamManager extends BasePlayerDataManager {
             .map(e -> e.getKey())
             .filter(elementType -> elementType.getTeamResonanceId() != 0)
             .forEach(elementType -> {
-                    this.teamResonances.add(elementType.getTeamResonanceId());
-                    this.teamResonancesConfig.add(elementType.getConfigHash());
+                this.teamResonances.add(elementType.getTeamResonanceId());
+                this.teamResonancesConfig.add(elementType.getConfigHash());
             });
 
         // Four element resonance
@@ -410,30 +414,30 @@ public class TeamManager extends BasePlayerDataManager {
 
     public void setupTemporaryTeam(List<List<Long>> guidList) {
         this.temporaryTeam = guidList.stream().map(list -> {
-                    // Sanity checks
-                    if (list.size() == 0 || list.size() > this.getMaxTeamSize()) {
+                // Sanity checks
+                if (list.size() == 0 || list.size() > this.getMaxTeamSize()) {
+                    return null;
+                }
+
+                // Set team data
+                LinkedHashSet<Avatar> newTeam = new LinkedHashSet<>();
+                for (Long aLong : list) {
+                    Avatar avatar = this.getPlayer().getAvatars().getAvatarByGuid(aLong);
+                    if (avatar == null || newTeam.contains(avatar)) {
+                        // Should never happen
                         return null;
                     }
+                    newTeam.add(avatar);
+                }
 
-                    // Set team data
-                    LinkedHashSet<Avatar> newTeam = new LinkedHashSet<>();
-                    for (Long aLong : list) {
-                        Avatar avatar = this.getPlayer().getAvatars().getAvatarByGuid(aLong);
-                        if (avatar == null || newTeam.contains(avatar)) {
-                            // Should never happen
-                            return null;
-                        }
-                        newTeam.add(avatar);
-                    }
-
-                    // convert to avatar ids
-                    return newTeam.stream()
-                            .map(Avatar::getAvatarId)
-                            .toList();
-                })
-                .filter(Objects::nonNull)
-                .map(TeamInfo::new)
-                .toList();
+                // convert to avatar ids
+                return newTeam.stream()
+                    .map(Avatar::getAvatarId)
+                    .toList();
+            })
+            .filter(Objects::nonNull)
+            .map(TeamInfo::new)
+            .toList();
     }
 
     public void useTemporaryTeam(int index) {
@@ -567,8 +571,8 @@ public class TeamManager extends BasePlayerDataManager {
                 }
 
                 entity.setFightProperty(
-                        FightProperty.FIGHT_PROP_CUR_HP,
-                        entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * .1f
+                    FightProperty.FIGHT_PROP_CUR_HP,
+                    entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * .1f
                 );
                 this.getPlayer().sendPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
                 this.getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
@@ -587,13 +591,13 @@ public class TeamManager extends BasePlayerDataManager {
                 }
 
                 entity.setFightProperty(
-                        FightProperty.FIGHT_PROP_CUR_HP,
-                        (float) Math.min(
-                                (entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) +
-                                        entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * (float) healRate / 100.0 +
-                                        (float) healAmount / 100.0),
-                                entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP)
-                        )
+                    FightProperty.FIGHT_PROP_CUR_HP,
+                    (float) Math.min(
+                        (entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) +
+                            entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * (float) healRate / 100.0 +
+                            (float) healAmount / 100.0),
+                        entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP)
+                    )
                 );
                 this.getPlayer().sendPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
                 this.getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
@@ -616,8 +620,8 @@ public class TeamManager extends BasePlayerDataManager {
         // Revive all team members
         for (EntityAvatar entity : this.getActiveTeam()) {
             entity.setFightProperty(
-                    FightProperty.FIGHT_PROP_CUR_HP,
-                    entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * .4f
+                FightProperty.FIGHT_PROP_CUR_HP,
+                entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * .4f
             );
             this.getPlayer().sendPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
             this.getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
@@ -627,12 +631,64 @@ public class TeamManager extends BasePlayerDataManager {
         this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
 
         // Set player position
-        player.setSceneId(3);
-        player.getPosition().set(GameConstants.START_POSITION);
+        try{
+            player.getPosition().set(getRespawnSceneTransPoint());
+        }catch(Exception e){
+            Position defaultRespawnPosition = GameConstants.START_POSITION;  // If something goes wrong, the resurrection is here
+            player.getPosition().set(defaultRespawnPosition);
+        }
 
         // Packets
         this.getPlayer().sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));
     }
+
+    public double dist(Position deadPos, Position pointPos){
+
+
+        double x = deadPos.getX() - pointPos.getX();
+        double y = deadPos.getY() - pointPos.getY();
+        double z = deadPos.getZ() - pointPos.getZ();
+
+        return Math.sqrt(x*x + y*y + z*z);
+    }
+    public Position getRespawnSceneTransPoint(){
+        Position deadPos = getPlayer().getPosition();
+
+        List<Integer> PointList = GameData.getScenePointsPerScene().get(player.getSceneId());  // Get all the point ids of the scene
+        if(player.getSceneId() == 3){  //This judgment may not be needed
+            int count = 1;
+            do {
+                ScenePointEntry entry = GameData.getScenePointEntryById(player.getSceneId(),count);
+                if (Objects.equals(entry.getPointData().getType(), "SceneTransPoint")){
+                    PointList.clear();
+                    PointList.add(count);  // Get all entity point
+                }
+            }while(count == PointList.size() + 1);
+        }
+
+        Position reSpawnPos = new Position();
+        ArrayList<Double> distList = new ArrayList<>();
+
+        ScenePointEntry defaultEntry = GameData.getScenePointEntryById(3, 1);  // Default Point id
+        double defaultDist = dist(deadPos, defaultEntry.getPointData().getTranPos());
+        reSpawnPos = defaultEntry.getPointData().getTranPos();
+
+        int count = 1;
+
+        distList.add(Math.pow(2, 32));
+        do {
+            ScenePointEntry entry = GameData.getScenePointEntryById(player.getSceneId(), PointList.get(count));
+            distList.add(dist(deadPos,entry.getPointData().getTranPos()));  // Calculate the distance from the coordinates of death to each point
+
+            if (Double.parseDouble(distList.get(count).toString()) < defaultDist){
+                reSpawnPos = entry.getPointData().getTranPos();
+            }
+            count++;
+        }while(count == PointList.size());
+
+        return reSpawnPos;
+    }
+
 
     public void saveAvatars() {
         // Save all avatars from active team
