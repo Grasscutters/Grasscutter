@@ -62,7 +62,7 @@ public class ScriptLib {
 	public void removeCurrentGroup(){
 		this.currentGroup.remove();
 	}
-	public int SetGadgetStateByConfigId(int configId, int gadgetState) {
+	public int SetGadgetStateByConfigId(Object context, int configId, int gadgetState) {
 		logger.debug("[LUA] Call SetGadgetStateByConfigId with {},{}",
 				configId,gadgetState);
 		Optional<GameEntity> entity = getSceneScriptManager().getScene().getEntities().values().stream()
@@ -80,7 +80,7 @@ public class ScriptLib {
 		return 1;
 	}
 
-	public int SetGroupGadgetStateByConfigId(int groupId, int configId, int gadgetState) {
+	public int SetGroupGadgetStateByConfigId(Object context, int groupId, int configId, int gadgetState) {
 		logger.debug("[LUA] Call SetGroupGadgetStateByConfigId with {},{},{}",
 				groupId,configId,gadgetState);
 
@@ -93,7 +93,7 @@ public class ScriptLib {
 		return 0;
 	}
 	
-	public int SetWorktopOptionsByGroupId(int groupId, int configId, int[] options) {
+	public int SetWorktopOptionsByGroupId(Object context, int groupId, int configId, int[] options) {
 		logger.debug("[LUA] Call SetWorktopOptionsByGroupId with {},{},{}",
 				groupId,configId,options);
 		
@@ -115,12 +115,12 @@ public class ScriptLib {
 		return 0;
 	}
 
-	public int SetWorktopOptions(LuaTable table){
+	public int SetWorktopOptions(Object context, LuaTable table){
 		logger.debug("[LUA] Call SetWorktopOptions with {}", printTable(table));
 		// TODO
 		return 0;
 	}
-	public int DelWorktopOptionByGroupId(int groupId, int configId, int option) {
+	public int DelWorktopOptionByGroupId(Object context, int groupId, int configId, int option) {
 		logger.debug("[LUA] Call DelWorktopOptionByGroupId with {},{},{}",groupId,configId,option);
 
 		Optional<GameEntity> entity = getSceneScriptManager().getScene().getEntities().values().stream()
@@ -141,7 +141,7 @@ public class ScriptLib {
 	}
 	
 	// Some fields are guessed
-	public int AutoMonsterTide(int challengeIndex, int groupId, Integer[] ordersConfigId, int tideCount, int sceneLimit, int param6) {
+	public int AutoMonsterTide(Object context, int challengeIndex, int groupId, Integer[] ordersConfigId, int tideCount, int sceneLimit, int param6) {
 		logger.debug("[LUA] Call AutoMonsterTide with {},{},{},{},{},{}",
 				challengeIndex,groupId,ordersConfigId,tideCount,sceneLimit,param6);
 
@@ -156,7 +156,7 @@ public class ScriptLib {
 		return 0;
 	}
 	
-	public int AddExtraGroupSuite(int groupId, int suite) {
+	public int AddExtraGroupSuite(Object context, int groupId, int suite) {
 		logger.debug("[LUA] Call AddExtraGroupSuite with {},{}",
 				groupId,suite);
 		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
@@ -178,7 +178,7 @@ public class ScriptLib {
 
 		return 0;
 	}
-	public int GoToGroupSuite(int groupId, int suite) {
+	public int GoToGroupSuite(Object context, int groupId, int suite) {
 		logger.debug("[LUA] Call GoToGroupSuite with {},{}",
 				groupId,suite);
 		SceneGroup group = getSceneScriptManager().getGroupById(groupId);
@@ -200,7 +200,7 @@ public class ScriptLib {
 
 		return 0;
 	}
-	public int RemoveExtraGroupSuite(int groupId, int suite) {
+	public int RemoveExtraGroupSuite(Object context, int groupId, int suite) {
 		logger.debug("[LUA] Call RemoveExtraGroupSuite with {},{}",
 				groupId,suite);
 
@@ -217,7 +217,7 @@ public class ScriptLib {
 
 		return 0;
 	}
-	public int KillExtraGroupSuite(int groupId, int suite) {
+	public int KillExtraGroupSuite(Object context, int groupId, int suite) {
 		logger.debug("[LUA] Call KillExtraGroupSuite with {},{}",
 				groupId,suite);
 
@@ -235,7 +235,7 @@ public class ScriptLib {
 		return 0;
 	}
 	// param3 (probably time limit for timed dungeons)
-	public int ActiveChallenge(int challengeId, int challengeIndex, int timeLimitOrGroupId, int groupId, int objectiveKills, int param5) {
+	public int ActiveChallenge(Object context, int challengeId, int challengeIndex, int timeLimitOrGroupId, int groupId, int objectiveKills, int param5) {
 		logger.debug("[LUA] Call ActiveChallenge with {},{},{},{},{},{}",
 				challengeId,challengeIndex,timeLimitOrGroupId,groupId,objectiveKills,param5);
 
@@ -264,7 +264,7 @@ public class ScriptLib {
 		return 0;
 	}
 	
-	public int GetGroupMonsterCountByGroupId(int groupId) {
+	public int GetGroupMonsterCountByGroupId(Object context, int groupId) {
 		logger.debug("[LUA] Call GetGroupMonsterCountByGroupId with {}",
 				groupId);
 		return (int) getSceneScriptManager().getScene().getEntities().values().stream()
@@ -272,20 +272,20 @@ public class ScriptLib {
 								.count();
 	}
 	
-	public int GetGroupVariableValue(String var) {
+	public int GetGroupVariableValue(Object context, String var) {
 		logger.debug("[LUA] Call GetGroupVariableValue with {}",
 				var);
 		return getSceneScriptManager().getVariables().getOrDefault(var, 0);
 	}
 	
-	public int SetGroupVariableValue(String var, int value) {
+	public int SetGroupVariableValue(Object context, String var, int value) {
 		logger.debug("[LUA] Call SetGroupVariableValue with {},{}",
 				var, value);
 		getSceneScriptManager().getVariables().put(var, value);
 		return 0;
 	}
 	
-	public LuaValue ChangeGroupVariableValue(String var, int value) {
+	public LuaValue ChangeGroupVariableValue(Object context, String var, int value) {
 		logger.debug("[LUA] Call ChangeGroupVariableValue with {},{}",
 				var, value);
 
@@ -296,7 +296,7 @@ public class ScriptLib {
 	/**
 	 * Set the actions and triggers to designated group
 	 */
-	public int RefreshGroup(LuaTable table) {
+	public int RefreshGroup(Object context, LuaTable table) {
 		logger.debug("[LUA] Call RefreshGroup with {}",
 				printTable(table));
 		// Kill and Respawn?
@@ -314,7 +314,7 @@ public class ScriptLib {
 		return 0;
 	}
 
-	public int GetRegionEntityCount(LuaTable table) {
+	public int GetRegionEntityCount(Object context, LuaTable table) {
 		logger.debug("[LUA] Call GetRegionEntityCount with {}",
 				printTable(table));
 		int regionId = table.get("region_eid").toint();
@@ -329,17 +329,17 @@ public class ScriptLib {
 		return (int) region.getEntities().stream().filter(e -> e >> 24 == entityType).count();
 	}
 
-	public void PrintContextLog(String msg) {
+	public void PrintContextLog(Object context, String msg) {
 		logger.info("[LUA] " + msg);
 	}
 
-	public int TowerCountTimeStatus(int isDone, int var2){
+	public int TowerCountTimeStatus(Object context, int isDone, int var2){
 		logger.debug("[LUA] Call TowerCountTimeStatus with {},{}",
 				isDone,var2);
 		// TODO record time
 		return 0;
 	}
-	public int GetGroupMonsterCount(){
+	public int GetGroupMonsterCount(Object context){
 		logger.debug("[LUA] Call GetGroupMonsterCount ");
 
 		return (int) getSceneScriptManager().getScene().getEntities().values().stream()
@@ -347,28 +347,28 @@ public class ScriptLib {
 						e.getGroupId() == getCurrentGroup().map(sceneGroup -> sceneGroup.id).orElse(-1))
 				.count();
 	}
-	public int SetMonsterBattleByGroup(int var1, int var2, int var3){
+	public int SetMonsterBattleByGroup(Object context, int var1, int var2, int var3){
 		logger.debug("[LUA] Call SetMonsterBattleByGroup with {},{},{}",
 				var1,var2,var3);
 		// TODO
 		return 0;
 	}
 
-	public int CauseDungeonFail(int var1){
+	public int CauseDungeonFail(Object context, int var1){
 		logger.debug("[LUA] Call CauseDungeonFail with {}",
 				var1);
 
 		return 0;
 	}
 
-	public int GetGroupVariableValueByGroup(String name, int groupId){
+	public int GetGroupVariableValueByGroup(Object context, String name, int groupId){
 		logger.debug("[LUA] Call GetGroupVariableValueByGroup with {},{}",
 				name,groupId);
 
 		return getSceneScriptManager().getVariables().getOrDefault(name, 0);
 	}
 
-	public int SetIsAllowUseSkill(int canUse, int var2){
+	public int SetIsAllowUseSkill(Object context, int canUse, int var2){
 		logger.debug("[LUA] Call SetIsAllowUseSkill with {},{}",
 				canUse,var2);
 
@@ -376,7 +376,7 @@ public class ScriptLib {
 		return 0;
 	}
 
-	public int KillEntityByConfigId(LuaTable table){
+	public int KillEntityByConfigId(Object context, LuaTable table){
 		logger.debug("[LUA] Call KillEntityByConfigId with {}",
 				printTable(table));
 		var configId = table.get("config_id");
@@ -392,7 +392,7 @@ public class ScriptLib {
 		return 0;
 	}
 
-	public int SetGroupVariableValueByGroup(String key, int value, int groupId){
+	public int SetGroupVariableValueByGroup(Object context, String key, int value, int groupId){
 		logger.debug("[LUA] Call SetGroupVariableValueByGroup with {},{},{}",
 				key,value,groupId);
 
@@ -400,7 +400,7 @@ public class ScriptLib {
 		return 0;
 	}
 
-	public int CreateMonster(LuaTable table){
+	public int CreateMonster(Object context, LuaTable table){
 		logger.debug("[LUA] Call CreateMonster with {}",
 				printTable(table));
 		var configId = table.get("config_id").toint();
@@ -414,7 +414,7 @@ public class ScriptLib {
 		return 0;
 	}
 
-	public int TowerMirrorTeamSetUp(int team, int var1) {
+	public int TowerMirrorTeamSetUp(Object context, int team, int var1) {
 		logger.debug("[LUA] Call TowerMirrorTeamSetUp with {},{}",
 				team,var1);
 
@@ -424,7 +424,7 @@ public class ScriptLib {
 		return 0;
 	}
 
-	public int CreateGadget(LuaTable table){
+	public int CreateGadget(Object context, LuaTable table){
 		logger.debug("[LUA] Call CreateGadget with {}",
 				printTable(table));
 		var configId = table.get("config_id").toint();
@@ -442,7 +442,7 @@ public class ScriptLib {
 
 		return 0;
 	}
-	public int CheckRemainGadgetCountByGroupId(LuaTable table){
+	public int CheckRemainGadgetCountByGroupId(Object context, LuaTable table){
 		logger.debug("[LUA] Call CheckRemainGadgetCountByGroupId with {}",
 				printTable(table));
 		var groupId = table.get("group_id").toint();
@@ -453,7 +453,7 @@ public class ScriptLib {
 		return (int)count;
 	}
 
-	public int GetGadgetStateByConfigId(int groupId, int configId){
+	public int GetGadgetStateByConfigId(Object context, int groupId, int configId){
 		logger.debug("[LUA] Call GetGadgetStateByConfigId with {},{}",
 				groupId, configId);
 
@@ -471,14 +471,14 @@ public class ScriptLib {
 		return ((EntityGadget)gadget.get()).getState();
 	}
 
-	public int MarkPlayerAction(int var1, int var2, int var3, int var4){
+	public int MarkPlayerAction(Object context, int var1, int var2, int var3, int var4){
 		logger.debug("[LUA] Call MarkPlayerAction with {},{},{},{}",
 				var1, var2,var3,var4);
 
 		return 0;
 	}
 
-	public int AddQuestProgress(String var1){
+	public int AddQuestProgress(Object context, String var1){
 		logger.debug("[LUA] Call AddQuestProgress with {}",
 				var1);
 
@@ -493,7 +493,7 @@ public class ScriptLib {
 	/**
 	 * change the state of gadget
 	 */
-	public int ChangeGroupGadget(LuaTable table){
+	public int ChangeGroupGadget(Object context, LuaTable table){
 		logger.debug("[LUA] Call ChangeGroupGadget with {}",
 				printTable(table));
 		var configId = table.get("config_id").toint();
@@ -512,7 +512,7 @@ public class ScriptLib {
 		return 1;
 	}
 
-    public int GetEntityType(int entityId){
+    public int GetEntityType(Object context, int entityId){
         var entity = getSceneScriptManager().getScene().getEntityById(entityId);
         if(entity == null){
             return EntityType.None.getValue();
@@ -521,7 +521,7 @@ public class ScriptLib {
         return entity.getEntityType();
     }
 
-    public int GetQuestState(int entityId, int questId){
+    public int GetQuestState(Object context, int entityId, int questId){
         var player = getSceneScriptManager().getScene().getWorld().getHost();
 
         var quest = player.getQuestManager().getQuestById(questId);
@@ -532,12 +532,12 @@ public class ScriptLib {
         return quest.getState().getValue();
     }
 
-    public int ShowReminder(int reminderId){
+    public int ShowReminder(Object context, int reminderId){
         getSceneScriptManager().getScene().broadcastPacket(new PacketDungeonShowReminderNotify(reminderId));
         return 0;
     }
 
-    public int RemoveEntityByConfigId(int groupId, int entityType, int configId){
+    public int RemoveEntityByConfigId(Object context, int groupId, int entityType, int configId){
         logger.debug("[LUA] Call RemoveEntityByConfigId");
 
         var entity = getSceneScriptManager().getScene().getEntities().values().stream()
