@@ -21,3 +21,4 @@ Your code should follow the standards set below:
     - Dependencies that use a separate language (ex. Kotlin) that can run on a JVM are acceptable.
     - Dependencies that require the use of native code (ex. JNI) are prohibited.
     - Directly adding foreign code (other languages, ex. Kotlin) into the main codebase is prohibited.
+- Certain files and folders are forbidden to modify in Pull Requests and may only be changed by Write-Access members. The current list for this can be found in `.github/workflows/protect_files.yml`.
