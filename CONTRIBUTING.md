@@ -19,5 +19,4 @@ Your code should follow the standards set below:
 
 - Your code can be run purely using a Java 17 JVM.
     - Dependencies that use a separate language (ex. Kotlin) that can run on a JVM are acceptable.
-    - Dependencies that require the use of native code (ex. JNI) are prohibited.
     - Directly adding foreign code (other languages, ex. Kotlin) into the main codebase is prohibited.
