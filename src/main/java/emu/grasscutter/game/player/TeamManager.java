@@ -631,61 +631,57 @@ public class TeamManager extends BasePlayerDataManager {
         this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
 
         // Set player position
-        try{
-            player.getPosition().set(getRespawnSceneTransPoint());
-        }catch(Exception e){
-            Position defaultRespawnPosition = GameConstants.START_POSITION;  // If something goes wrong, the resurrection is here
-            player.getPosition().set(defaultRespawnPosition);
-        }
+        //try{
+        player.getPosition().set(getRespawnSceneTransPoint());
+        //}catch(Exception e){
+        //    Position defaultRespawnPosition = GameConstants.START_POSITION;  // If something goes wrong, the resurrection is here
+        //    player.getPosition().set(defaultRespawnPosition);
+        //}
 
         // Packets
         this.getPlayer().sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));
     }
 
     public double dist(Position deadPos, Position pointPos){
-
-
         double x = deadPos.getX() - pointPos.getX();
         double y = deadPos.getY() - pointPos.getY();
         double z = deadPos.getZ() - pointPos.getZ();
-
         return Math.sqrt(x*x + y*y + z*z);
     }
     public Position getRespawnSceneTransPoint(){
         Position deadPos = getPlayer().getPosition();
+        int SceneID = player.getSceneId();
+        Position reSpawnPos = new Position(GameConstants.START_POSITION);
 
-        List<Integer> PointList = GameData.getScenePointsPerScene().get(player.getSceneId());  // Get all the point ids of the scene
-        if(player.getSceneId() == 3){  //This judgment may not be needed
-            int count = 1;
-            do {
-                ScenePointEntry entry = GameData.getScenePointEntryById(player.getSceneId(),count);
-                if (Objects.equals(entry.getPointData().getType(), "SceneTransPoint")){
-                    PointList.clear();
-                    PointList.add(count);  // Get all entity point
-                }
-            }while(count == PointList.size() + 1);
-        }
-
-        Position reSpawnPos = new Position();
+        ArrayList<Integer> rawPointList = new ArrayList<>();
+        ArrayList<Integer> PointList = new ArrayList<>();
         ArrayList<Double> distList = new ArrayList<>();
-
-        ScenePointEntry defaultEntry = GameData.getScenePointEntryById(3, 1);  // Default Point id
-        double defaultDist = dist(deadPos, defaultEntry.getPointData().getTranPos());
-        reSpawnPos = defaultEntry.getPointData().getTranPos();
-
-        int count = 1;
-
-        distList.add(Math.pow(2, 32));
+        int count = 0;
+        if(SceneID == 3){  //This judgment may not be needed
+            rawPointList = (ArrayList<Integer>) GameData.getScenePointsPerScene().get(3);  // Get all the point ids of the scene
+            do {
+                ScenePointEntry entry = GameData.getScenePointEntryById(3, rawPointList.get(count));
+                if (Objects.equals(entry.getPointData().getType(), "SceneTransPoint")){
+                    PointList.add(rawPointList.get(count));  // Get all scene trans point
+                }
+                count++;
+            }while(count < rawPointList.size());
+        }
+        else {
+            PointList = rawPointList;
+        }
+        count = 0;
         do {
-            ScenePointEntry entry = GameData.getScenePointEntryById(player.getSceneId(), PointList.get(count));
+            ScenePointEntry entry = GameData.getScenePointEntryById(SceneID, PointList.get(count));
             distList.add(dist(deadPos,entry.getPointData().getTranPos()));  // Calculate the distance from the coordinates of death to each point
 
-            if (Double.parseDouble(distList.get(count).toString()) < defaultDist){
+            if (Double.parseDouble(distList.get(count).toString()) < dist(deadPos, reSpawnPos)){
                 reSpawnPos = entry.getPointData().getTranPos();
             }
             count++;
-        }while(count == PointList.size());
+        }while(count < PointList.size());
 
+        reSpawnPos.setZ(reSpawnPos.getZ() + 0.5F);
         return reSpawnPos;
     }
 
