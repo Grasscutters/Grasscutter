@@ -1,402 +1,402 @@
 {
-    "messages": {
-        "game": {
-            "address_bind": "游戏服务器启动于 \u001b[1m\u001b[33m%s:%s\u001b[0m",
-            "port_bind": "游戏服务器已在端口 %s 上启动。",
-            "connect": "客户端 %s 已连接。",
-            "disconnect": "客户端 %s 已断开连接。",
-            "game_update_error": "游戏更新时发生错误。",
-            "command_error": "命令发生错误："
-        },
-        "dispatch": {
-            "address_bind": "[Dispatch] Dispatch 服务器启动于 \u001b[1m\u001b[33m%s:%s\u001b[0m",
-            "port_bind": "[Dispatch] Dispatch 服务器已在端口 %s 上启动",
-            "request": "[Dispatch] 客户端 %s 请求：%s %s",
-            "keystore": {
-                "general_error": "[Dispatch] 加载 keystore 文件时发生错误！",
-                "password_error": "[Dispatch] 加载 keystore 失败。正在尝试使用 keystore 默认密码...",
-                "no_keystore_error": "[Dispatch] 未找到 SSL 证书！已降级到 HTTP 模式",
-                "default_password": "[Dispatch] 成功加载 keystore 默认密码。请考虑将 config.json 中默认密码设置为 123456"
-            },
-            "authentication": {
-                "default_unable_to_verify": "[Authentication] 称为 verifyUser 的方法在默认验证程序中不可用"
-            },
-            "no_commands_error": "仅 Dispatch 模式不支持使用命令",
-            "unhandled_request_error": "[Dispatch] 潜在的未处理请求：%s %s",
-            "account": {
-                "login_attempt": "[Dispatch] 客户端 %s 正在尝试登录",
-                "login_success": "[Dispatch] 客户端 %s 已登录，UID 为 %s",
-                "login_max_player_limit": "[Dispatch] 客户端 %s 登录失败：在线人数已满",
-                "login_token_attempt": "[Dispatch] 客户端 %s 正在尝试通过 token 登录",
-                "login_token_error": "[Dispatch] 客户端 %s 通过 token 登录失败",
-                "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID 为 %s",
-                "login_password_error": "[Dispatch] 客户端 %s 无法通过密码登录",
-                "login_password_storage_error": "[Dispatch] 客户端 %s 无法登录！ 因为数据库中没有密码",
-                "combo_token_success": "[Dispatch] 客户端 %s 成功交换 token",
-                "combo_token_error": "[Dispatch] 客户端 %s 交换 token 失败",
-                "account_login_create_success": "[Dispatch] 客户端 %s 登录失败：已注册 UID 为 %s 的账号",
-                "account_login_create_error": "[Dispatch] 客户端 %s 登录失败：账号创建失败",
-                "account_login_exist_error": "[Dispatch] 客户端 %s 登录失败：账号不存在",
-                "account_cache_error": "游戏账号缓存信息错误",
-                "session_key_error": "会话密钥错误",
-                "username_error": "未找到用户名",
-                "username_create_error": "用户名不存在，登录失败",
-                "password_error": "登录失败，请确认账号/密码是否正确",
-                "password_length_error": "密码必须大于或等于 8 位",
-                "password_storage_error": "你没有密码，请联系管理员",
-                "server_max_player_limit": "服务器在线人数已满"
-            },
-            "router_error": "[Dispatch] 无法连接路由"
-        },
-        "status": {
-            "free_software": "Grasscutter 是免费开源软件，遵循 AGPL-3.0 license。\n\t如果你是付费购买的，那你已经被骗了。\n\t项目地址：https://github.com/Grasscutters/Grasscutter",
-            "starting": "正在启动 Grasscutter...",
-            "shutdown": "正在关闭...",
-            "done": "加载完成！输入 \"help\" 查看命令列表",
-            "error": "发生了一个错误。",
-            "welcome": "欢迎使用 Grasscutter！",
-            "run_mode_error": "无效的服务器运行模式：%s。",
-            "run_mode_help": "服务器运行模式必须为 'HYBRID'(混合)、'DISPATCH_ONLY'(仅 Dispatch) 或 'GAME_ONLY'(仅游戏)。Grasscutter 启动失败...",
-            "create_resources": "正在创建 resources 目录...",
-            "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。",
-            "version": "Grasscutter 版本：%s-%s",
-            "game_version": "游戏版本：%s",
-            "resources": {
-                "loading": "正在加载 resources...",
-                "finish": "完成加载 resources。"
-            }
-        }
+  "messages": {
+    "game": {
+      "address_bind": "游戏服务器启动于 \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "port_bind": "游戏服务器已在端口 %s 上启动。",
+      "connect": "客户端 %s 已连接。",
+      "disconnect": "客户端 %s 已断开连接。",
+      "game_update_error": "游戏更新时发生错误。",
+      "command_error": "命令发生错误："
     },
-    "commands": {
-        "generic": {
-            "not_specified": "未指定命令。",
-            "unknown_command": "未知命令：%s",
-            "permission_error": "你没有权限执行此命令。",
-            "console_execute_error": "此命令只能在控制台执行。",
-            "player_execute_error": "此命令只能在游戏内执行。",
-            "command_exist_error": "未找到命令。",
-            "no_usage_specified": "未指定用法",
-            "no_description_specified": "未指定说明",
-            "set_to": "%s 已设为 %s。",
-            "set_for_to": "%s [来自 %s] 已设为 %s。",
-            "invalid": {
-                "amount": "无效的数量。",
-                "artifactId": "无效的圣遗物ID。",
-                "avatarId": "无效的角色ID。",
-                "avatarLevel": "无效的角色等级。",
-                "entityId": "无效的实体ID。",
-                "itemId": "无效的物品ID。",
-                "itemLevel": "无效的物品等级。",
-                "itemRefinement": "无效的物品精炼等级。",
-                "statValue": "无效的属性值。",
-                "value_between": "无效的数值：%s 必须在 %s 和 %s 之间。",
-                "playerId": "无效的玩家ID。",
-                "uid": "无效的UID。",
-                "id": "无效的ID。"
-            }
-        },
-        "execution": {
-            "usage_prefix": "用法：",
-            "player_exist_error": "玩家不存在。",
-            "player_offline_error": "玩家已离线。",
-            "item_player_exist_error": "无效的物品/玩家UID。",
-            "player_exist_offline_error": "玩家不存在或已离线。",
-            "argument_error": "无效的参数。",
-            "clear_target": "目标已清除。",
-            "set_target": "随后的的命令都会以 @%s 为预设。",
-            "set_target_online": "@%s 在线。某些命令可能需要离线目标。",
-            "set_target_offline": "@%s 离线。某些命令可能需要在线目标。",
-            "need_target": "此命令需要一个目标 UID。添加 <@UID> 参数或使用 /target @UID 来指定默认目标。",
-            "need_target_online": "此命令需要在线目标 UID，但当前目标离线。添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。",
-            "need_target_offline": "此命令需要离线目标 UID，但当前目标在线。添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。"
-        },
-        "status": {
-            "enabled": "已启用",
-            "disabled": "未启用",
-            "help": "帮助",
-            "success": "成功"
-        },
-        "account": {
-            "invalid": "无效的UID。",
-            "exists": "具有此用户名和/或 UID 的账号已存在。",
-            "create": "已创建 UID 为 %s 的账号。",
-            "delete": "账号已删除。",
-            "no_account": "账号不存在。",
-            "description": "创建或删除账号"
-        },
-        "announce": {
-            "send_success": "成功发送了一则公告，你可以通过 /a revoke %s 撤销。",
-            "refresh_success": "成功刷新了公告配置。[共 %s 个]",
-            "revoke_done": "尝试撤回公告 %s。",
-            "not_found": "找不到公告 %s。",
-            "description": "向所有在线玩家发送公告，或者管理服务器的公告"
-        },
-        "clear": {
-            "weapons": "已清除 %s 的武器。",
-            "artifacts": "已清除 %s 的圣遗物。",
-            "materials": "已清除 %s 的材料。",
-            "furniture": "已清除 %s 的尘歌壶家具。",
-            "displays": "已清空 %s 的屏幕。",
-            "virtuals": "已清除 %s 的所有货币和经验值。",
-            "everything": "已清除 %s 的所有物品。",
-            "description": "从你的背包中删除所有未装备且已解锁的物品，包括稀有物品"
-        },
-        "coop": {
-            "success": "已强制传送 %s 到 %s 的世界。",
-            "description": "强制传送指定玩家到他人的世界。如果没有指定玩家，则会使你进入多人游戏状态"
-        },
-        "enter_dungeon": {
-            "changed": "已进入秘境 %s。",
-            "not_found_error": "秘境不存在。",
-            "in_dungeon_error": "你已经在这个秘境中了。",
-            "description": "进入指定秘境"
-        },
-        "give": {
-            "usage_relic": "用法：give <圣遗物ID> [主词条ID] [<副词条ID>[,<强化次数>]]... [lv<等级 0-20>]",
-            "illegal_relic": "此圣遗物ID属于黑名单范围，也许不是你想要的。",
-            "given": "已将 %s 个 %s 给予 %s。",
-            "given_with_level_and_refinement": "已将 %s [等级 %s, 精炼 %s] %s 个给予 %s。",
-            "given_level": "已将 %s [等级 %s] %s 个给予 %s。",
-            "given_avatar": "已将角色 %s [等级 %s] 给与 %s。",
-            "giveall_success": "成功给予全部物品。",
-            "description": "向你或指定的玩家给予物品。比如可以给予全部武器，角色和/或材料，也可以给予自定义圣遗物"
-        },
-        "heal": {
-            "success": "已治疗所有角色。",
-            "description": "治疗当前队伍的角色"
-        },
-        "help": {
-            "aliases": "别名：",
-            "available_commands": "可用命令：",
-            "tip_need_permission": "所需权限：",
-            "tip_need_no_permission": "无",
-            "tip_permission_targeted": " (对其他玩家使用这个命令还需要权限 %s)",
-            "warn_player_has_no_permission": "注意：你没有执行这个命令的权限。",
-            "description": "发送帮助信息或显示指定命令的信息"
-        },
-        "kick": {
-            "player_kick_player": "玩家 [%s:%s] 已将 [%s:%s] 踢出。",
-            "server_kick_player": "正在踢出玩家 [%s:%s]...",
-            "description": "从服务器内踢出指定玩家"
-        },
-        "killall": {
-            "scene_not_found_in_player_world": "未在玩家世界中找到此场景。",
-            "kill_monsters_in_scene": "已杀死 %s 个怪物。 [场景ID: %s ]",
-            "description": "杀死所有怪物"
-        },
-        "killCharacter": {
-            "success": "已杀死 %s 当前角色。",
-            "description": "杀死玩家当前角色"
-        },
-        "language": {
-            "current_language": "当前语言：%s",
-            "language_changed": "语言切换至：%s",
-            "language_not_found": "目前服务端没有这种语言：%s",
-            "description": "显示或切换当前语言"
-        },
-        "list": {
-            "success": "目前在线人数：%s",
-            "description": "查看所有玩家"
-        },
-        "permission": {
-            "add": "权限已添加。",
-            "has_error": "此玩家已拥有此权限！",
-            "remove": "权限已移除。",
-            "not_have_error": "此玩家未拥有权限！",
-            "account_error": "账号不存在。",
-            "description": "添加或移除指定玩家的权限"
-        },
-        "position": {
-            "success": "坐标：%s, %s, %s\n旋转：%s, %s, %s\n场景ID：%s",
-            "description": "获取所在位置和旋转信息"
-        },
-        "quest": {
-            "added": "已添加任务 %s。",
-            "finished": "已完成任务 %s。",
-            "not_found": "任务不存在。",
-            "invalid_id": "无效的任务ID。",
-            "description": "添加或完成任务"
-        },
-        "reload": {
-            "reload_start": "正在重载配置文件和数据...",
-            "reload_done": "重载完成。",
-            "description": "重载配置文件和数据"
-        },
-        "resetConst": {
-            "reset_all": "重置所有角色的命之座。",
-            "success": "已重置 %s 的命之座，重新登录后生效。",
-            "description": "重置当前角色的命之座，执行命令后需重新登录以生效"
-        },
-        "resetShopLimit": {
-            "success": "重置完成。",
-            "description": "重置指定玩家的商店刷新时间"
-        },
-        "sendMail": {
-            "give_usage": "使用：/give <UID> <物品ID|物品名称> [数量] [等级] [精炼等级]",
-            "user_not_exist": "玩家 '%s' 不存在。",
-            "start_composition": "开始撰写邮件。\n请使用 '/sendmail <标题>' 继续。\n你可以随时使用 '/sendmail stop' 停止。",
-            "templates": "邮件模板尚未实装...",
-            "invalid_arguments": "无效的参数。",
-            "send_cancel": "取消发送邮件",
-            "send_done": "已将邮件发送给 %s！",
-            "send_all_done": "邮件已发送给所有人！",
-            "not_composition_end": "邮件撰写未到最后阶段。\n请使用 '/sendmail %s' 继续，或使用 '/sendmail stop' 停止。",
-            "please_use": "请使用 '/sendmail %s'",
-            "set_title": "成功将邮件标题设为 '%s'。\n使用 '/sendmail <正文>' 来设置邮件内容。",
-            "set_contents": "成功将邮件内容设为 '%s'。\n使用 '/sendmail <发件人>' 来设置发件人。",
-            "set_message_sender": "发件人已设为 '%s'。\n使用 '/sendmail <物品ID|物品名称|finish> [数量] [等级]' 来添加附件。",
-            "send": "已添加 %s 个 %s [等级 %s] 附件。\n如果没有要继续添加的附件请使用 `/sendmail finish` 来发送邮件。",
-            "invalid_arguments_please_use": "无效的参数。\n请使用 '/sendmail %s'",
-            "title": "<标题>",
-            "message": "<正文>",
-            "sender": "<发件人>",
-            "arguments": "<物品ID|物品名称|finish> [数量] [等级]",
-            "error": "错误：无效的撰写阶段 %s。需要 StackTrace 请查看控制台。",
-            "description": "向指定用户发送邮件。此命令的用法会根据撰写阶段而改变"
-        },
-        "sendMessage": {
-            "success": "消息已发送。",
-            "description": "向玩家以服务器的身份发送消息。如果没有指定目标，则向服务器的全部玩家发送"
-        },
-        "setConst": {
-            "range_error": "命之座等级必须在 0-6 之间。",
-            "level_error": "无效的命之座等级。",
-            "fail": "命之座等级设置失败。",
-            "failed_success": "命之座 %s 已设置为 %s。",
-            "success": "命之座 %s 已设置为 %s。",
-            "description": "为当前活跃角色设置命座等级"
-        },
-        "setFetterLevel": {
-            "range_error": "好感度等级必须在 0-10 之间。",
-            "success": "好感度已设为 %s 级。",
-            "level_error": "无效的好感度等级。",
-            "description": "设置当前角色的好感度等级"
-        },
-        "setProp": {
-            "description": "设置账号的状态。比如可以通过此命令启用 godmode，也可以解锁深渊或更改纪行等级\n\t可更改的状态列表：godmode(上帝模式)|nostamina(无限体力)|unlimitedenergy(无限能量)|abyss(深渊)|worldlevel(世界等级)|bplevel(纪行等级)\n\t查看 PlayerProperty enum 以获得其他数值，格式为 PROP_MAX_SPRING_VOLUME -> max_spring_volume"
-        },
-        "setStats": {
-            "description": "设置当前角色的属性\n\t可更改的属性列表：hp(生命值)|maxhp(最大生命值)|def(防御力)|atk(攻击力)|em(元素精通)|er(元素充能效率)|crate(暴击率)|cdmg(暴击伤害)|cdr(冷却缩减)|heal(治疗加成)|heali(受治疗加成)|shield(护盾强效)|defi(无视防御)\n\t元素增伤：epyro(火)|ecryo(冰)|ehydro(水)|egeo(岩)|edendro(草)|eelectro(雷)|ephys(物理)\n\t元素抗性：respyro(火)|rescryo(冰)|reshydro(水)|resgeo(岩)|resdendro(草)|reselectro(雷)|resphys(物理)",
-            "locked_to": "%s 已锁定为：%s。",
-            "locked_for_to": "%s [来自 %s] 已锁定为：%s。",
-            "unlocked": "%s 已解锁。",
-            "unlocked_for": "%s [来自 %s] 已解锁。"
-        },
-        "spawn": {
-            "success": "已生成 %s 个 %s。",
-            "limit_reached": "场景中的生成数量已达上限。已替代为生成 %s 个实体。",
-            "description": "在你附近生成实体"
-        },
-        "stop": {
-            "success": "正在关闭服务器...",
-            "description": "停止服务器"
-        },
-        "talent": {
-            "lower_16": "无效的天赋等级，天赋等级应在 1-15 之间。",
-            "set_id": "修改技能 %s - \"%s\" 至 %s。",
-            "id_desc": "技能 %s - \"%s\" - \"%s\"",
-            "invalid_skill_id": "无效的技能ID。",
-            "invalid_level": "无效的天赋等级。",
-            "normal_attack_id": "普通攻击的 ID 为 %s。",
-            "e_skill_id": "元素战技的 ID 为 %s。",
-            "q_skill_id": "元素爆发的 ID 为 %s。",
-            "description": "设置当前角色的天赋等级"
-        },
-        "team": {
-            "invalid_usage": "无效的用法。",
-            "invalid_index": "无效的索引。",
-            "add_too_much": "服务端仅允许你队伍里至多有 %d 名角色。",
-            "failed_to_add_avatar": "无法根据ID %s 添加角色。",
-            "failed_to_parse_index": "无法解析索引：%s",
-            "remove_too_much": "你不能删除那么多角色，你的队伍列表将为空。",
-            "ignore_index": "忽略的索引列表：%s",
-            "index_out_of_range": "你指定的索引超出了范围。",
-            "failed_parse_avatar_id": "无法解析的角色ID：%s",
-            "avatar_already_in_team": "角色已经在你的队伍中了。",
-            "avatar_not_found": "无法找到该角色：%d",
-            "description": "手动修改你的队伍"
-        },
-        "teleportAll": {
-            "success": "已将所有玩家传送到你的位置。",
-            "error": "你只能在多人游戏状态下执行此命令。",
-            "description": "将你世界中的所有玩家传送到你所在的位置"
-        },
-        "teleport": {
-            "invalid_position": "无效的位置。",
-            "exists_error": "此场景不存在。",
-            "success": "传送 %s 到坐标 %s, %s, %s，场景为 %s。",
-            "description": "改变指定玩家的位置"
-        },
-        "weather": {
-            "success": "已设置天气ID 为 %s，气候类型为 %s。",
-            "status": "当前天气ID 为 %s，气候类型为 %s。",
-            "description": "更改天气ID和气候类型。\n\t天气ID可以在 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json 中找到。\n\t气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
-        },
-        "ban": {
-            "success": "成功封禁玩家。",
-            "failure": "封禁玩家失败，因为玩家不存在。",
-            "invalid_time": "无法解析时间戳。",
-            "description": "封禁玩家"
-        },
-        "unlockall": {
-            "success": "已为：%s 解锁全部开放状态。",
-            "description": "为玩家解锁全部开放状态"
-        },
-        "unban": {
-            "success": "成功取消玩家的封禁。",
-            "failure": "取消玩家的封禁失败，因为玩家不存在。",
-            "description": "取消玩家的封禁"
-        }
+    "dispatch": {
+      "address_bind": "[Dispatch] Dispatch 服务器启动于 \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "port_bind": "[Dispatch] Dispatch 服务器已在端口 %s 上启动",
+      "request": "[Dispatch] 客户端 %s 请求：%s %s",
+      "keystore": {
+        "general_error": "[Dispatch] 加载 keystore 文件时发生错误！",
+        "password_error": "[Dispatch] 加载 keystore 失败。正在尝试使用 keystore 默认密码...",
+        "no_keystore_error": "[Dispatch] 未找到 SSL 证书！已降级到 HTTP 模式",
+        "default_password": "[Dispatch] 成功加载 keystore 默认密码。请考虑将 config.json 中默认密码设置为 123456"
+      },
+      "authentication": {
+        "default_unable_to_verify": "[Authentication] 称为 verifyUser 的方法在默认验证程序中不可用"
+      },
+      "no_commands_error": "仅 Dispatch 模式不支持使用命令",
+      "unhandled_request_error": "[Dispatch] 潜在的未处理请求：%s %s",
+      "account": {
+        "login_attempt": "[Dispatch] 客户端 %s 正在尝试登录",
+        "login_success": "[Dispatch] 客户端 %s 已登录，UID 为 %s",
+        "login_max_player_limit": "[Dispatch] 客户端 %s 登录失败：在线人数已满",
+        "login_token_attempt": "[Dispatch] 客户端 %s 正在尝试通过 token 登录",
+        "login_token_error": "[Dispatch] 客户端 %s 通过 token 登录失败",
+        "login_token_success": "[Dispatch] 客户端 %s 已通过 token 登录，UID 为 %s",
+        "login_password_error": "[Dispatch] 客户端 %s 无法通过密码登录",
+        "login_password_storage_error": "[Dispatch] 客户端 %s 无法登录！ 因为数据库中没有密码",
+        "combo_token_success": "[Dispatch] 客户端 %s 成功交换 token",
+        "combo_token_error": "[Dispatch] 客户端 %s 交换 token 失败",
+        "account_login_create_success": "[Dispatch] 客户端 %s 登录失败：已注册 UID 为 %s 的账号",
+        "account_login_create_error": "[Dispatch] 客户端 %s 登录失败：账号创建失败",
+        "account_login_exist_error": "[Dispatch] 客户端 %s 登录失败：账号不存在",
+        "account_cache_error": "游戏账号缓存信息错误",
+        "session_key_error": "会话密钥错误",
+        "username_error": "未找到用户名",
+        "username_create_error": "用户名不存在，登录失败",
+        "password_error": "登录失败，请确认账号/密码是否正确",
+        "password_length_error": "密码必须大于或等于 8 位",
+        "password_storage_error": "你没有密码，请联系管理员",
+        "server_max_player_limit": "服务器在线人数已满"
+      },
+      "router_error": "[Dispatch] 无法连接路由"
     },
-    "gacha": {
-        "details": {
-            "title": "祈愿详情",
-            "available_five_stars": "可获得的5星物品",
-            "available_four_stars": "可获得的4星物品",
-            "available_three_stars": "可获得的3星物品"
-        },
-        "records": {
-            "title": "祈愿记录",
-            "date": "日期",
-            "item": "物品"
-        }
-    },
-    "documentation": {
-        "handbook": {
-            "title": "GM手册",
-            "title_commands": "命令",
-            "title_avatars": "角色",
-            "title_items": "物品",
-            "title_scenes": "场景",
-            "title_monsters": "怪物",
-            "header_id": "ID",
-            "header_command": "命令",
-            "header_description": "说明",
-            "header_avatar": "角色",
-            "header_item": "物品",
-            "header_scene": "场景",
-            "header_monster": "怪物"
-        },
-        "index": {
-            "title": "文档",
-            "handbook": "GM手册",
-            "gacha_mapping": "祈愿物品映射JSON"
-        }
-    },
-    "plugin": {
-        "directory_failed": "无法创建插件目录：",
-        "unable_to_load": "无法加载插件。",
-        "invalid_config": "插件：%s 的配置文件无效。",
-        "invalid_main_class": "插件：%s 的主类无效。",
-        "missing_config": "插件：%s 缺少有效的配置文件。",
-        "failed_to_load_plugin": "无法加载插件：%s",
-        "failed_to_load": "无法加载插件。",
-        "failed_to_load_dependencies": "无法加载插件依赖。",
-        "loading_plugin": "正在加载插件：%s",
-        "failed_add_id": "无法添加插件标识符：%s",
-        "enabling_plugin": "启用插件：%s",
-        "enabling_failed": "无法启用插件：%s",
-        "disabling_plugin": "正在禁用插件：%s",
-        "disabling_failed": "无法禁用插件：%s"
+    "status": {
+      "free_software": "Grasscutter 是免费开源软件，遵循 AGPL-3.0 license。\n\t如果你是付费购买的，那你已经被骗了。\n\t项目地址：https://github.com/Grasscutters/Grasscutter",
+      "starting": "正在启动 Grasscutter...",
+      "shutdown": "正在关闭...",
+      "done": "加载完成！输入 \"help\" 查看命令列表",
+      "error": "发生了一个错误。",
+      "welcome": "欢迎使用 Grasscutter！",
+      "run_mode_error": "无效的服务器运行模式：%s。",
+      "run_mode_help": "服务器运行模式必须为 'HYBRID'(混合)、'DISPATCH_ONLY'(仅 Dispatch) 或 'GAME_ONLY'(仅游戏)。Grasscutter 启动失败...",
+      "create_resources": "正在创建 resources 目录...",
+      "resources_error": "请将 BinOutput 和 ExcelBinOutput 复制到 resources 目录。",
+      "version": "Grasscutter 版本：%s-%s",
+      "game_version": "游戏版本：%s",
+      "resources": {
+        "loading": "正在加载 resources...",
+        "finish": "完成加载 resources。"
+      }
     }
+  },
+  "commands": {
+    "generic": {
+      "not_specified": "未指定命令。",
+      "unknown_command": "未知命令：%s",
+      "permission_error": "你没有权限执行此命令。",
+      "console_execute_error": "此命令只能在控制台执行。",
+      "player_execute_error": "此命令只能在游戏内执行。",
+      "command_exist_error": "未找到命令。",
+      "no_usage_specified": "未指定用法",
+      "no_description_specified": "未指定说明",
+      "set_to": "%s 已设为 %s。",
+      "set_for_to": "%s [来自 %s] 已设为 %s。",
+      "invalid": {
+        "amount": "无效的数量。",
+        "artifactId": "无效的圣遗物ID。",
+        "avatarId": "无效的角色ID。",
+        "avatarLevel": "无效的角色等级。",
+        "entityId": "无效的实体ID。",
+        "itemId": "无效的物品ID。",
+        "itemLevel": "无效的物品等级。",
+        "itemRefinement": "无效的物品精炼等级。",
+        "statValue": "无效的属性值。",
+        "value_between": "无效的数值：%s 必须在 %s 和 %s 之间。",
+        "playerId": "无效的玩家ID。",
+        "uid": "无效的UID。",
+        "id": "无效的ID。"
+      }
+    },
+    "execution": {
+      "usage_prefix": "用法：",
+      "player_exist_error": "玩家不存在。",
+      "player_offline_error": "玩家已离线。",
+      "item_player_exist_error": "无效的物品/玩家UID。",
+      "player_exist_offline_error": "玩家不存在或已离线。",
+      "argument_error": "无效的参数。",
+      "clear_target": "目标已清除。",
+      "set_target": "随后的的命令都会以 @%s 为预设。",
+      "set_target_online": "@%s 在线。某些命令可能需要离线目标。",
+      "set_target_offline": "@%s 离线。某些命令可能需要在线目标。",
+      "need_target": "此命令需要一个目标 UID。添加 <@UID> 参数或使用 /target @UID 来指定默认目标。",
+      "need_target_online": "此命令需要在线目标 UID，但当前目标离线。添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。",
+      "need_target_offline": "此命令需要离线目标 UID，但当前目标在线。添加不同的 <@UID> 参数或使用 /target @UID 设置持久目标。"
+    },
+    "status": {
+      "enabled": "已启用",
+      "disabled": "未启用",
+      "help": "帮助",
+      "success": "成功"
+    },
+    "account": {
+      "invalid": "无效的UID。",
+      "exists": "具有此用户名和/或 UID 的账号已存在。",
+      "create": "已创建 UID 为 %s 的账号。",
+      "delete": "账号已删除。",
+      "no_account": "账号不存在。",
+      "description": "创建或删除账号"
+    },
+    "announce": {
+      "send_success": "成功发送了一则公告，你可以通过 /a revoke %s 撤销。",
+      "refresh_success": "成功刷新了公告配置。[共 %s 个]",
+      "revoke_done": "尝试撤回公告 %s。",
+      "not_found": "找不到公告 %s。",
+      "description": "向所有在线玩家发送公告，或者管理服务器的公告"
+    },
+    "clear": {
+      "weapons": "已清除 %s 的武器。",
+      "artifacts": "已清除 %s 的圣遗物。",
+      "materials": "已清除 %s 的材料。",
+      "furniture": "已清除 %s 的尘歌壶家具。",
+      "displays": "已清空 %s 的屏幕。",
+      "virtuals": "已清除 %s 的所有货币和经验值。",
+      "everything": "已清除 %s 的所有物品。",
+      "description": "从你的背包中删除所有未装备且已解锁的物品，包括稀有物品"
+    },
+    "coop": {
+      "success": "已强制传送 %s 到 %s 的世界。",
+      "description": "强制传送指定玩家到他人的世界。如果没有指定玩家，则会使你进入多人游戏状态"
+    },
+    "enter_dungeon": {
+      "changed": "已进入秘境 %s。",
+      "not_found_error": "秘境不存在。",
+      "in_dungeon_error": "你已经在这个秘境中了。",
+      "description": "进入指定秘境"
+    },
+    "give": {
+      "usage_relic": "用法：give <圣遗物ID> [主词条ID] [<副词条ID>[,<强化次数>]]... [lv<等级 0-20>]",
+      "illegal_relic": "此圣遗物ID属于黑名单范围，也许不是你想要的。",
+      "given": "已将 %s 个 %s 给予 %s。",
+      "given_with_level_and_refinement": "已将 %s [等级 %s, 精炼 %s] %s 个给予 %s。",
+      "given_level": "已将 %s [等级 %s] %s 个给予 %s。",
+      "given_avatar": "已将角色 %s [等级 %s] 给与 %s。",
+      "giveall_success": "成功给予全部物品。",
+      "description": "向你或指定的玩家给予物品。比如可以给予全部武器，角色和/或材料，也可以给予自定义圣遗物"
+    },
+    "heal": {
+      "success": "已治疗所有角色。",
+      "description": "治疗当前队伍的角色"
+    },
+    "help": {
+      "aliases": "别名：",
+      "available_commands": "可用命令：",
+      "tip_need_permission": "所需权限：",
+      "tip_need_no_permission": "无",
+      "tip_permission_targeted": " (对其他玩家使用这个命令还需要权限 %s)",
+      "warn_player_has_no_permission": "注意：你没有执行这个命令的权限。",
+      "description": "发送帮助信息或显示指定命令的信息"
+    },
+    "kick": {
+      "player_kick_player": "玩家 [%s:%s] 已将 [%s:%s] 踢出。",
+      "server_kick_player": "正在踢出玩家 [%s:%s]...",
+      "description": "从服务器内踢出指定玩家"
+    },
+    "killall": {
+      "scene_not_found_in_player_world": "未在玩家世界中找到此场景。",
+      "kill_monsters_in_scene": "已杀死 %s 个怪物。 [场景ID: %s ]",
+      "description": "杀死所有怪物"
+    },
+    "killCharacter": {
+      "success": "已杀死 %s 当前角色。",
+      "description": "杀死玩家当前角色"
+    },
+    "language": {
+      "current_language": "当前语言：%s",
+      "language_changed": "语言切换至：%s",
+      "language_not_found": "目前服务端没有这种语言：%s",
+      "description": "显示或切换当前语言"
+    },
+    "list": {
+      "success": "目前在线人数：%s",
+      "description": "查看所有玩家"
+    },
+    "permission": {
+      "add": "权限已添加。",
+      "has_error": "此玩家已拥有此权限！",
+      "remove": "权限已移除。",
+      "not_have_error": "此玩家未拥有权限！",
+      "account_error": "账号不存在。",
+      "description": "添加或移除指定玩家的权限"
+    },
+    "position": {
+      "success": "坐标：%s, %s, %s\n旋转：%s, %s, %s\n场景ID：%s",
+      "description": "获取所在位置和旋转信息"
+    },
+    "quest": {
+      "added": "已添加任务 %s。",
+      "finished": "已完成任务 %s。",
+      "not_found": "任务不存在。",
+      "invalid_id": "无效的任务ID。",
+      "description": "添加或完成任务"
+    },
+    "reload": {
+      "reload_start": "正在重载配置文件和数据...",
+      "reload_done": "重载完成。",
+      "description": "重载配置文件和数据"
+    },
+    "resetConst": {
+      "reset_all": "重置所有角色的命之座。",
+      "success": "已重置 %s 的命之座，重新登录后生效。",
+      "description": "重置当前角色的命之座，执行命令后需重新登录以生效"
+    },
+    "resetShopLimit": {
+      "success": "重置完成。",
+      "description": "重置指定玩家的商店刷新时间"
+    },
+    "sendMail": {
+      "give_usage": "使用：/give <UID> <物品ID|物品名称> [数量] [等级] [精炼等级]",
+      "user_not_exist": "玩家 '%s' 不存在。",
+      "start_composition": "开始撰写邮件。\n请使用 '/sendmail <标题>' 继续。\n你可以随时使用 '/sendmail stop' 停止。",
+      "templates": "邮件模板尚未实装...",
+      "invalid_arguments": "无效的参数。",
+      "send_cancel": "取消发送邮件",
+      "send_done": "已将邮件发送给 %s！",
+      "send_all_done": "邮件已发送给所有人！",
+      "not_composition_end": "邮件撰写未到最后阶段。\n请使用 '/sendmail %s' 继续，或使用 '/sendmail stop' 停止。",
+      "please_use": "请使用 '/sendmail %s'",
+      "set_title": "成功将邮件标题设为 '%s'。\n使用 '/sendmail <正文>' 来设置邮件内容。",
+      "set_contents": "成功将邮件内容设为 '%s'。\n使用 '/sendmail <发件人>' 来设置发件人。",
+      "set_message_sender": "发件人已设为 '%s'。\n使用 '/sendmail <物品ID|物品名称|finish> [数量] [等级]' 来添加附件。",
+      "send": "已添加 %s 个 %s [等级 %s] 附件。\n如果没有要继续添加的附件请使用 `/sendmail finish` 来发送邮件。",
+      "invalid_arguments_please_use": "无效的参数。\n请使用 '/sendmail %s'",
+      "title": "<标题>",
+      "message": "<正文>",
+      "sender": "<发件人>",
+      "arguments": "<物品ID|物品名称|finish> [数量] [等级]",
+      "error": "错误：无效的撰写阶段 %s。需要 StackTrace 请查看控制台。",
+      "description": "向指定用户发送邮件。此命令的用法会根据撰写阶段而改变"
+    },
+    "sendMessage": {
+      "success": "消息已发送。",
+      "description": "向玩家以服务器的身份发送消息。如果没有指定目标，则向服务器的全部玩家发送"
+    },
+    "setConst": {
+      "range_error": "命之座等级必须在 0-6 之间。",
+      "level_error": "无效的命之座等级。",
+      "fail": "命之座等级设置失败。",
+      "failed_success": "命之座 %s 已设置为 %s。",
+      "success": "命之座 %s 已设置为 %s。",
+      "description": "为当前活跃角色设置命座等级"
+    },
+    "setFetterLevel": {
+      "range_error": "好感度等级必须在 0-10 之间。",
+      "success": "好感度已设为 %s 级。",
+      "level_error": "无效的好感度等级。",
+      "description": "设置当前角色的好感度等级"
+    },
+    "setProp": {
+      "description": "设置账号的状态。比如可以通过此命令启用 godmode，也可以解锁深渊或更改纪行等级\n\t可更改的状态列表：godmode(上帝模式)|nostamina(无限体力)|unlimitedenergy(无限能量)|abyss(深渊)|worldlevel(世界等级)|bplevel(纪行等级)\n\t查看 PlayerProperty enum 以获得其他数值，格式为 PROP_MAX_SPRING_VOLUME -> max_spring_volume"
+    },
+    "setStats": {
+      "description": "设置当前角色的属性\n\t可更改的属性列表：hp(生命值)|maxhp(最大生命值)|def(防御力)|atk(攻击力)|em(元素精通)|er(元素充能效率)|crate(暴击率)|cdmg(暴击伤害)|cdr(冷却缩减)|heal(治疗加成)|heali(受治疗加成)|shield(护盾强效)|defi(无视防御)\n\t元素增伤：epyro(火)|ecryo(冰)|ehydro(水)|egeo(岩)|edendro(草)|eelectro(雷)|ephys(物理)\n\t元素抗性：respyro(火)|rescryo(冰)|reshydro(水)|resgeo(岩)|resdendro(草)|reselectro(雷)|resphys(物理)",
+      "locked_to": "%s 已锁定为：%s。",
+      "locked_for_to": "%s [来自 %s] 已锁定为：%s。",
+      "unlocked": "%s 已解锁。",
+      "unlocked_for": "%s [来自 %s] 已解锁。"
+    },
+    "spawn": {
+      "success": "已生成 %s 个 %s。",
+      "limit_reached": "场景中的生成数量已达上限。已替代为生成 %s 个实体。",
+      "description": "在你附近生成实体"
+    },
+    "stop": {
+      "success": "正在关闭服务器...",
+      "description": "停止服务器"
+    },
+    "talent": {
+      "lower_16": "无效的天赋等级，天赋等级应在 1-15 之间。",
+      "set_id": "修改技能 %s - \"%s\" 至 %s。",
+      "id_desc": "技能 %s - \"%s\" - \"%s\"",
+      "invalid_skill_id": "无效的技能ID。",
+      "invalid_level": "无效的天赋等级。",
+      "normal_attack_id": "普通攻击的 ID 为 %s。",
+      "e_skill_id": "元素战技的 ID 为 %s。",
+      "q_skill_id": "元素爆发的 ID 为 %s。",
+      "description": "设置当前角色的天赋等级"
+    },
+    "team": {
+      "invalid_usage": "无效的用法。",
+      "invalid_index": "无效的索引。",
+      "add_too_much": "服务端仅允许你队伍里至多有 %d 名角色。",
+      "failed_to_add_avatar": "无法根据ID %s 添加角色。",
+      "failed_to_parse_index": "无法解析索引：%s",
+      "remove_too_much": "你不能删除那么多角色，你的队伍列表将为空。",
+      "ignore_index": "忽略的索引列表：%s",
+      "index_out_of_range": "你指定的索引超出了范围。",
+      "failed_parse_avatar_id": "无法解析的角色ID：%s",
+      "avatar_already_in_team": "角色已经在你的队伍中了。",
+      "avatar_not_found": "无法找到该角色：%d",
+      "description": "手动修改你的队伍"
+    },
+    "teleportAll": {
+      "success": "已将所有玩家传送到你的位置。",
+      "error": "你只能在多人游戏状态下执行此命令。",
+      "description": "将你世界中的所有玩家传送到你所在的位置"
+    },
+    "teleport": {
+      "invalid_position": "无效的位置。",
+      "exists_error": "此场景不存在。",
+      "success": "传送 %s 到坐标 %s, %s, %s，场景为 %s。",
+      "description": "改变指定玩家的位置"
+    },
+    "weather": {
+      "success": "已设置天气ID 为 %s，气候类型为 %s。",
+      "status": "当前天气ID 为 %s，气候类型为 %s。",
+      "description": "更改天气ID和气候类型。\n\t天气ID可以在 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json 中找到。\n\t气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
+    },
+    "ban": {
+      "success": "成功封禁玩家。",
+      "failure": "封禁玩家失败，因为玩家不存在。",
+      "invalid_time": "无法解析时间戳。",
+      "description": "封禁玩家"
+    },
+    "unlockall": {
+      "success": "已为：%s 解锁全部开放状态。",
+      "description": "为玩家解锁全部开放状态"
+    },
+    "unban": {
+      "success": "成功取消玩家的封禁。",
+      "failure": "取消玩家的封禁失败，因为玩家不存在。",
+      "description": "取消玩家的封禁"
+    }
+  },
+  "gacha": {
+    "details": {
+      "title": "祈愿详情",
+      "available_five_stars": "可获得的5星物品",
+      "available_four_stars": "可获得的4星物品",
+      "available_three_stars": "可获得的3星物品"
+    },
+    "records": {
+      "title": "祈愿记录",
+      "date": "日期",
+      "item": "物品"
+    }
+  },
+  "documentation": {
+    "handbook": {
+      "title": "GM手册",
+      "title_commands": "命令",
+      "title_avatars": "角色",
+      "title_items": "物品",
+      "title_scenes": "场景",
+      "title_monsters": "怪物",
+      "header_id": "ID",
+      "header_command": "命令",
+      "header_description": "说明",
+      "header_avatar": "角色",
+      "header_item": "物品",
+      "header_scene": "场景",
+      "header_monster": "怪物"
+    },
+    "index": {
+      "title": "文档",
+      "handbook": "GM手册",
+      "gacha_mapping": "祈愿物品映射JSON"
+    }
+  },
+  "plugin": {
+    "directory_failed": "无法创建插件目录：",
+    "unable_to_load": "无法加载插件。",
+    "invalid_config": "插件：%s 的配置文件无效。",
+    "invalid_main_class": "插件：%s 的主类无效。",
+    "missing_config": "插件：%s 缺少有效的配置文件。",
+    "failed_to_load_plugin": "无法加载插件：%s",
+    "failed_to_load": "无法加载插件。",
+    "failed_to_load_dependencies": "无法加载插件依赖。",
+    "loading_plugin": "正在加载插件：%s",
+    "failed_add_id": "无法添加插件标识符：%s",
+    "enabling_plugin": "启用插件：%s",
+    "enabling_failed": "无法启用插件：%s",
+    "disabling_plugin": "正在禁用插件：%s",
+    "disabling_failed": "无法禁用插件：%s"
+  }
 }
