@@ -627,17 +627,12 @@ public class TeamManager extends BasePlayerDataManager {
             this.getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
         }
 
-        // Teleport player
+        // Teleport player and set player position
         try{
             this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, player.getSceneId(), getRespawnSceneTransPoint()));
+            player.getPosition().set(getRespawnSceneTransPoint());
         }catch(Exception e){
             this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
-        }
-
-        // Set player position
-        try{
-        player.getPosition().set(getRespawnSceneTransPoint());
-        }catch(Exception e){
             player.getPosition().set(GameConstants.START_POSITION);  // If something goes wrong, the resurrection is here
         }
 
@@ -645,7 +640,7 @@ public class TeamManager extends BasePlayerDataManager {
         this.getPlayer().sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));
     }
 
-    public double dist(Position deadPos, Position pointPos){
+    public double CalculateDistanceInWorld(Position deadPos, Position pointPos){
         double x = deadPos.getX() - pointPos.getX();
         double y = deadPos.getY() - pointPos.getY();
         double z = deadPos.getZ() - pointPos.getZ();
@@ -654,14 +649,14 @@ public class TeamManager extends BasePlayerDataManager {
     public Position getRespawnSceneTransPoint(){
         Position deadPos = getPlayer().getPosition();
         int SceneID = player.getSceneId();
-        Position reSpawnPos = new Position(GameConstants.START_POSITION);
+        Position reSpawnPos = GameConstants.START_POSITION;
 
         ArrayList<Integer> rawPointList;
         ArrayList<Integer> PointList = new ArrayList<>();
         ArrayList<Double> distList = new ArrayList<>();
-        int count = 0;
 
-        if(SceneID == 3){  //This judgment may not be needed
+        int count = 0;
+        if(SceneID == 3){  // Make sure get all entities point in BigWorld
             rawPointList = (ArrayList<Integer>) GameData.getScenePointsPerScene().get(3);  // Get all the point ids of the scene
             do {
                 ScenePointEntry entry = GameData.getScenePointEntryById(3, rawPointList.get(count));
@@ -678,9 +673,9 @@ public class TeamManager extends BasePlayerDataManager {
         count = 0;
         do {
             ScenePointEntry entry = GameData.getScenePointEntryById(SceneID, PointList.get(count));
-            distList.add(dist(deadPos,entry.getPointData().getTranPos()));  // Calculate the distance from the coordinates of death to each point
+            distList.add(CalculateDistanceInWorld(deadPos,entry.getPointData().getTranPos()));  // Calculate the distance from the coordinates of death to each point
 
-            if (Double.parseDouble(distList.get(count).toString()) < dist(deadPos, reSpawnPos)){
+            if (Double.parseDouble(distList.get(count).toString()) < CalculateDistanceInWorld(deadPos, reSpawnPos)){
                 reSpawnPos = entry.getPointData().getTranPos();
             }
             count++;
@@ -688,8 +683,6 @@ public class TeamManager extends BasePlayerDataManager {
 
         return reSpawnPos;
     }
-
-
     public void saveAvatars() {
         // Save all avatars from active team
         for (EntityAvatar entity : this.getActiveTeam()) {
