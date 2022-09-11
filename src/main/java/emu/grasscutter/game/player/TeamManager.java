@@ -39,6 +39,7 @@ import emu.grasscutter.server.packet.send.PacketSceneTeamUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketSetUpAvatarTeamRsp;
 import emu.grasscutter.server.packet.send.PacketWorldPlayerDieNotify;
 import emu.grasscutter.utils.Position;
+import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
@@ -627,8 +628,8 @@ public class TeamManager extends BasePlayerDataManager {
 
         // Teleport player and set player position
         try{
-            this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, player.getSceneId(), getRespawnSceneTransPoint()));
-            player.getPosition().set(getRespawnSceneTransPoint());
+            this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, player.getSceneId(), getRespawnPosition()));
+            player.getPosition().set(getRespawnPosition());
         }catch(Exception e){
             this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
             player.getPosition().set(GameConstants.START_POSITION);  // If something goes wrong, the resurrection is here
@@ -637,49 +638,17 @@ public class TeamManager extends BasePlayerDataManager {
         // Packets
         this.getPlayer().sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));
     }
+    public Position getRespawnPosition() {
+        var deathPos = this.getPlayer().getPosition();
+        int sceneId = this.getPlayer().getSceneId();
 
-    public double CalculateDistanceInWorld(Position deadPos, Position pointPos){
-        double x = deadPos.getX() - pointPos.getX();
-        double y = deadPos.getY() - pointPos.getY();
-        double z = deadPos.getZ() - pointPos.getZ();
-        return Math.sqrt(x*x + y*y + z*z);
-    }
-    public Position getRespawnSceneTransPoint(){
-        Position deadPos = getPlayer().getPosition();
-        int SceneID = player.getSceneId();
-        Position reSpawnPos = GameConstants.START_POSITION;
+        // Get the closest trans point to where the player died.
+        var respawnPoint = GameData.getScenePointsPerScene().get(sceneId).stream()
+            .map(pointId -> GameData.getScenePointEntryById(sceneId, pointId))
+            .filter(point -> point.getPointData().getType().equals("SceneTransPoint"))
+            .min((Comparator.comparingDouble(pos -> Utils.getDist(pos.getPointData().getTranPos(), deathPos))));
 
-        ArrayList<Integer> rawPointList;
-        ArrayList<Integer> PointList = new ArrayList<>();
-        ArrayList<Double> distList = new ArrayList<>();
-
-        int count = 0;
-        if(SceneID == 3){  // Make sure get all entities point in BigWorld
-            rawPointList = (ArrayList<Integer>) GameData.getScenePointsPerScene().get(3);  // Get all the point ids of the scene
-            do {
-                ScenePointEntry entry = GameData.getScenePointEntryById(3, rawPointList.get(count));
-                if (Objects.equals(entry.getPointData().getType(), "SceneTransPoint")){
-                    PointList.add(rawPointList.get(count));  // Get all scene trans point
-                }
-                count++;
-            }while(count < rawPointList.size());
-        }
-        else {
-            rawPointList = (ArrayList<Integer>) GameData.getScenePointsPerScene().get(SceneID);
-            PointList = rawPointList;
-        }
-        count = 0;
-        do {
-            ScenePointEntry entry = GameData.getScenePointEntryById(SceneID, PointList.get(count));
-            distList.add(CalculateDistanceInWorld(deadPos,entry.getPointData().getTranPos()));  // Calculate the distance from the coordinates of death to each point
-
-            if (Double.parseDouble(distList.get(count).toString()) < CalculateDistanceInWorld(deadPos, reSpawnPos)){
-                reSpawnPos = entry.getPointData().getTranPos();
-            }
-            count++;
-        }while(count < PointList.size());
-
-        return reSpawnPos;
+        return respawnPoint.get().getPointData().getTranPos();
     }
     public void saveAvatars() {
         // Save all avatars from active team
