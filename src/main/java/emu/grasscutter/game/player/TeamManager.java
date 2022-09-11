@@ -628,15 +628,18 @@ public class TeamManager extends BasePlayerDataManager {
         }
 
         // Teleport player
-        this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
+        try{
+            this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, player.getSceneId(), getRespawnSceneTransPoint()));
+        }catch(Exception e){
+            this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
+        }
 
         // Set player position
-        //try{
+        try{
         player.getPosition().set(getRespawnSceneTransPoint());
-        //}catch(Exception e){
-        //    Position defaultRespawnPosition = GameConstants.START_POSITION;  // If something goes wrong, the resurrection is here
-        //    player.getPosition().set(defaultRespawnPosition);
-        //}
+        }catch(Exception e){
+            player.getPosition().set(GameConstants.START_POSITION);  // If something goes wrong, the resurrection is here
+        }
 
         // Packets
         this.getPlayer().sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));
@@ -653,10 +656,11 @@ public class TeamManager extends BasePlayerDataManager {
         int SceneID = player.getSceneId();
         Position reSpawnPos = new Position(GameConstants.START_POSITION);
 
-        ArrayList<Integer> rawPointList = new ArrayList<>();
+        ArrayList<Integer> rawPointList;
         ArrayList<Integer> PointList = new ArrayList<>();
         ArrayList<Double> distList = new ArrayList<>();
         int count = 0;
+
         if(SceneID == 3){  //This judgment may not be needed
             rawPointList = (ArrayList<Integer>) GameData.getScenePointsPerScene().get(3);  // Get all the point ids of the scene
             do {
@@ -668,6 +672,7 @@ public class TeamManager extends BasePlayerDataManager {
             }while(count < rawPointList.size());
         }
         else {
+            rawPointList = (ArrayList<Integer>) GameData.getScenePointsPerScene().get(SceneID);
             PointList = rawPointList;
         }
         count = 0;
@@ -681,7 +686,6 @@ public class TeamManager extends BasePlayerDataManager {
             count++;
         }while(count < PointList.size());
 
-        reSpawnPos.setZ(reSpawnPos.getZ() + 0.5F);
         return reSpawnPos;
     }
 
