@@ -22,3 +22,10 @@ Your code should follow the standards set below:
     - Dependencies that require the use of native code (ex. JNI) are prohibited.
     - Directly adding foreign code (other languages, ex. Kotlin) into the main codebase is prohibited.
 - Certain files and folders are forbidden to modify in Pull Requests and may only be changed by Write-Access members. The current list for this can be found in `.github/workflows/protect_files.yml`.
+
+## Intellectual Property
+
+Please avoid adding any direct references to the following, whenever possible:
+- Game names
+- Character names
+- Notable weapon names
