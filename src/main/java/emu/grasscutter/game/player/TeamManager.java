@@ -643,7 +643,7 @@ public class TeamManager extends BasePlayerDataManager {
         int sceneId = this.getPlayer().getSceneId();
 
         // Get the closest trans point to where the player died.
-        var respawnPoint = GameData.getScenePointsPerScene().get(sceneId).stream()
+        var respawnPoint = this.getPlayer().getUnlockedScenePoints(sceneId).stream()
             .map(pointId -> GameData.getScenePointEntryById(sceneId, pointId))
             .filter(point -> point.getPointData().getType().equals("SceneTransPoint"))
             .min((Comparator.comparingDouble(pos -> Utils.getDist(pos.getPointData().getTranPos(), deathPos))));
