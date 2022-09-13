@@ -6,12 +6,11 @@ import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
+import org.bson.types.ObjectId;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.bson.types.ObjectId;
 
 @Entity(value = "mail", useDiscriminator = false)
 public class Mail {

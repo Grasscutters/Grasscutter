@@ -1,11 +1,11 @@
 package emu.grasscutter.game.props;
 
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
-
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public enum WeaponType {
 	WEAPON_NONE (0),
@@ -22,25 +22,25 @@ public enum WeaponType {
 	WEAPON_CLAYMORE (11, 0, 10),
 	WEAPON_BOW (12, 0, 5),
 	WEAPON_POLE (13, 0, 4);
-	
+
 	private final int value;
 	private int energyGainInitialProbability;
 	private int energyGainIncreaseProbability;
-	
+
 	private static final Int2ObjectMap<WeaponType> map = new Int2ObjectOpenHashMap<>();
 	private static final Map<String, WeaponType> stringMap = new HashMap<>();
-	
+
 	static {
 		Stream.of(values()).forEach(e -> {
 			map.put(e.getValue(), e);
 			stringMap.put(e.name(), e);
 		});
 	}
-	
+
 	private WeaponType(int value) {
 		this.value = value;
 	}
-	
+
 	private WeaponType(int value, int energyGainInitialProbability, int energyGainIncreaseProbability) {
 		this.value = value;
 		this.energyGainInitialProbability = energyGainInitialProbability;
@@ -50,7 +50,7 @@ public enum WeaponType {
 	public int getValue() {
 		return value;
 	}
-	
+
 	public int getEnergyGainInitialProbability() {
 		return energyGainInitialProbability;
 	}
@@ -62,7 +62,7 @@ public enum WeaponType {
 	public static WeaponType getTypeByValue(int value) {
 		return map.getOrDefault(value, WEAPON_NONE);
 	}
-	
+
 	public static WeaponType getTypeByName(String name) {
 		return stringMap.getOrDefault(name, WEAPON_NONE);
 	}

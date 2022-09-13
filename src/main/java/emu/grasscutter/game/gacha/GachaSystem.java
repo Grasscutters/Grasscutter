@@ -1,13 +1,5 @@
 package emu.grasscutter.game.gacha;
 
-import static emu.grasscutter.config.Configuration.*;
-
-import java.io.File;
-import java.nio.file.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
-
 import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
@@ -32,13 +24,21 @@ import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameServerTickEvent;
 import emu.grasscutter.server.packet.send.PacketDoGachaRsp;
-import emu.grasscutter.server.packet.send.PacketGachaWishRsp;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import org.greenrobot.eventbus.Subscribe;
+
+import java.io.File;
+import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
+import static emu.grasscutter.config.Configuration.DATA;
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 public class GachaSystem extends BaseGameSystem {
     private final Int2ObjectMap<GachaBanner> gachaBanners;

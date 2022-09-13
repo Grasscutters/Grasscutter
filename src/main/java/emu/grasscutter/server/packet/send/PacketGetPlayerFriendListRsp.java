@@ -1,7 +1,5 @@
 package emu.grasscutter.server.packet.send;
 
-import static emu.grasscutter.config.Configuration.*;
-
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.player.Player;
@@ -10,8 +8,10 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief;
 import emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState;
 import emu.grasscutter.net.proto.GetPlayerFriendListRspOuterClass.GetPlayerFriendListRsp;
-import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.PlatformTypeOuterClass;
+import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
+
+import static emu.grasscutter.config.Configuration.GAME_INFO;
 
 public class PacketGetPlayerFriendListRsp extends BasePacket {
 

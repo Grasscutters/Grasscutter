@@ -1,7 +1,7 @@
 package emu.grasscutter.server.scheduler;
 
 import emu.grasscutter.Grasscutter;
-import lombok.*;
+import lombok.Getter;
 
 /**
  * This class works the same as a runnable, except with more information.

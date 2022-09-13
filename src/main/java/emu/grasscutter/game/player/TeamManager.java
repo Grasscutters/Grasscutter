@@ -1,8 +1,5 @@
 package emu.grasscutter.game.player;
 
-import static emu.grasscutter.config.Configuration.*;
-
-import java.util.*;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
@@ -22,21 +19,7 @@ import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.event.player.PlayerTeamDeathEvent;
-import emu.grasscutter.server.packet.send.PacketAddCustomTeamRsp;
-import emu.grasscutter.server.packet.send.PacketAvatarDieAnimationEndRsp;
-import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarTeamUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketChangeAvatarRsp;
-import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
-import emu.grasscutter.server.packet.send.PacketChangeTeamNameRsp;
-import emu.grasscutter.server.packet.send.PacketChooseCurAvatarTeamRsp;
-import emu.grasscutter.server.packet.send.PacketCustomTeamListNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
-import emu.grasscutter.server.packet.send.PacketRemoveCustomTeamRsp;
-import emu.grasscutter.server.packet.send.PacketSceneTeamUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketSetUpAvatarTeamRsp;
-import emu.grasscutter.server.packet.send.PacketWorldPlayerDieNotify;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -46,6 +29,10 @@ import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.*;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity
 public class TeamManager extends BasePlayerDataManager {

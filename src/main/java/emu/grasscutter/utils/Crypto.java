@@ -1,13 +1,13 @@
 package emu.grasscutter.utils;
 
+import emu.grasscutter.Grasscutter;
+
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
-
-import emu.grasscutter.Grasscutter;
 
 public final class Crypto {
     private static final SecureRandom secureRandom = new SecureRandom();

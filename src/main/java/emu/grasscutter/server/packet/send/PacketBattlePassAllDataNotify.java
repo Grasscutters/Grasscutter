@@ -4,18 +4,14 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotify;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class PacketBattlePassAllDataNotify extends BasePacket {
     public PacketBattlePassAllDataNotify(Player player) {
         super(PacketOpcodes.BattlePassAllDataNotify);
 
         var proto = BattlePassAllDataNotify.newBuilder();
-        
+
         proto
         	.setHaveCurSchedule(true)
         	.setCurSchedule(player.getBattlePassManager().getScheduleProto());
@@ -25,7 +21,7 @@ public class PacketBattlePassAllDataNotify extends BasePacket {
         	if (!missionData.isValidRefreshType()) {
         		continue;
         	}
-        	
+
         	// Check if player has mission in bp manager. If not, then add an empty proto from the mission data
         	if (player.getBattlePassManager().hasMission(missionData.getId())) {
         		proto.addMissionList(player.getBattlePassManager().loadMissionById(missionData.getId()).toProto());

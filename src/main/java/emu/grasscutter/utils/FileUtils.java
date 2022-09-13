@@ -9,7 +9,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -18,14 +17,14 @@ import java.util.stream.Collectors;
 public final class FileUtils {
 	public static void write(String dest, byte[] bytes) {
 		Path path = Paths.get(dest);
-		
+
 		try {
 			Files.write(path, bytes);
 		} catch (IOException e) {
 			Grasscutter.getLogger().warn("Failed to write file: " + dest);
 		}
 	}
-	
+
 	public static byte[] read(String dest) {
 		return read(Paths.get(dest));
 	}
@@ -36,7 +35,7 @@ public final class FileUtils {
 		} catch (IOException e) {
 			Grasscutter.getLogger().warn("Failed to read file: " + path);
 		}
-		
+
 		return new byte[0];
 	}
 
@@ -54,7 +53,7 @@ public final class FileUtils {
 
 		return new byte[0];
 	}
-	
+
 	public static byte[] read(File file) {
 		return read(file.getPath());
 	}
@@ -67,7 +66,7 @@ public final class FileUtils {
 			Grasscutter.getLogger().warn("Failed to copy resource: " + resourcePath + "\n" + exception);
 		}
 	}
-	
+
 	public static String getFilenameWithoutPath(String fileName) {
 		if (fileName.indexOf(".") > 0) {
 		   return fileName.substring(0, fileName.lastIndexOf("."));
@@ -97,14 +96,14 @@ public final class FileUtils {
 		} catch (Exception e) {
 			// Eclipse puts resources in its bin folder
 			File f = new File(System.getProperty("user.dir") + folder);
-			
+
 			if (!f.exists() || f.listFiles().length == 0) {
 				return null;
 			}
-			
+
 			result = Arrays.stream(f.listFiles()).map(File::toPath).toList();
 		}
-		
+
 		return result;
 	}
 

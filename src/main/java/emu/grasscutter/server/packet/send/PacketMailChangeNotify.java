@@ -1,7 +1,6 @@
 package emu.grasscutter.server.packet.send;
 
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;

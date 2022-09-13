@@ -7,16 +7,12 @@ import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Utils;
 
-import static emu.grasscutter.config.Configuration.DATA;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
+
+import static emu.grasscutter.config.Configuration.DATA;
 
 public class DataLoader {
 

@@ -1,7 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.excels.CombineData;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;

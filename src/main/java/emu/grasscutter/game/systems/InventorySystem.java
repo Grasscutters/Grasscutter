@@ -1,19 +1,13 @@
 package emu.grasscutter.game.systems;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.common.ItemUseData;
 import emu.grasscutter.data.excels.AvatarPromoteData;
 import emu.grasscutter.data.excels.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.AvatarSkillDepotData.InherentProudSkillOpens;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.WeaponPromoteData;
-import emu.grasscutter.data.excels.AvatarSkillDepotData.InherentProudSkillOpens;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
@@ -31,6 +25,12 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class InventorySystem extends BaseGameSystem {
     private final static int RELIC_MATERIAL_1 = 105002; // Sanctifying Unction

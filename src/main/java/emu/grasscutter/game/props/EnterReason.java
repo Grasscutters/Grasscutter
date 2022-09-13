@@ -1,11 +1,11 @@
 package emu.grasscutter.game.props;
 
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
-
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public enum EnterReason {
 	None(0),
@@ -40,18 +40,18 @@ public enum EnterReason {
 	Gallery(67),
 	HomeSceneJump(68),
 	HideAndSeek(69);
-	
+
 	private final int value;
 	private static final Int2ObjectMap<EnterReason> map = new Int2ObjectOpenHashMap<>();
 	private static final Map<String, EnterReason> stringMap = new HashMap<>();
-	
+
 	static {
 		Stream.of(values()).forEach(e -> {
 			map.put(e.getValue(), e);
 			stringMap.put(e.name(), e);
 		});
 	}
-	
+
 	private EnterReason(int value) {
 		this.value = value;
 	}
@@ -59,11 +59,11 @@ public enum EnterReason {
 	public int getValue() {
 		return value;
 	}
-	
+
 	public static EnterReason getTypeByValue(int value) {
 		return map.getOrDefault(value, None);
 	}
-	
+
 	public static EnterReason getTypeByName(String name) {
 		return stringMap.getOrDefault(name, None);
 	}

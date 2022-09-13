@@ -1,15 +1,5 @@
 package emu.grasscutter.tools;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
-import java.util.stream.Collectors;
-
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandHandler;
@@ -21,11 +11,23 @@ import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Language.TextStrings;
-import it.unimi.dsi.fastutil.ints.Int2IntSortedMap;
 import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
+import it.unimi.dsi.fastutil.ints.Int2IntSortedMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
-import static emu.grasscutter.config.Configuration.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
+import static emu.grasscutter.config.Configuration.RESOURCE;
 
 public final class Tools {
     public static void createGmHandbooks() throws Exception {

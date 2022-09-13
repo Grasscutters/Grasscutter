@@ -1,9 +1,9 @@
 package emu.grasscutter.game.props;
 
-import java.util.stream.Stream;
-
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
+import java.util.stream.Stream;
 
 public enum ItemUseTarget {
     ITEM_USE_TARGET_NONE (0),

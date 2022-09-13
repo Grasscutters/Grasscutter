@@ -4,8 +4,6 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
-import emu.grasscutter.game.props.SceneType;
-
 @ResourceType(name = "DungeonExcelConfigData.json")
 public class DungeonData extends GameResource {
 	private int id;
@@ -13,12 +11,12 @@ public class DungeonData extends GameResource {
 	private int showLevel;
 	private int passRewardPreviewID;
 	private String involveType; // TODO enum
-	
+
 	private RewardPreviewData previewData;
 
 	private int statueCostID;
 	private int statueCostCount;
-	    
+
 	@Override
 	public int getId() {
 		return this.id;
@@ -27,7 +25,7 @@ public class DungeonData extends GameResource {
 	public int getSceneId() {
 		return sceneId;
 	}
-	
+
 	public int getShowLevel() {
 		return showLevel;
 	}

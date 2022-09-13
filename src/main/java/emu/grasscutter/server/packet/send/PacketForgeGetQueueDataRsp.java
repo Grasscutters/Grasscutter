@@ -1,15 +1,15 @@
 package emu.grasscutter.server.packet.send;
 
-import java.util.Map;
-
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp;
 import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 
+import java.util.Map;
+
 public class PacketForgeGetQueueDataRsp extends BasePacket {
-	
+
 	public PacketForgeGetQueueDataRsp(Retcode retcode, int numQueues, Map<Integer, ForgeQueueData> queueData) {
 		super(PacketOpcodes.ForgeGetQueueDataRsp);
 

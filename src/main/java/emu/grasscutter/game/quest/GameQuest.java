@@ -13,16 +13,12 @@ import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.net.proto.ChapterStateOuterClass;
 import emu.grasscutter.net.proto.QuestOuterClass.Quest;
 import emu.grasscutter.scripts.data.SceneGroup;
-
 import emu.grasscutter.server.packet.send.PacketChapterStateNotify;
-import emu.grasscutter.server.packet.send.PacketQuestListUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketQuestProgressUpdateNotify;
 import emu.grasscutter.utils.Utils;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.script.Bindings;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

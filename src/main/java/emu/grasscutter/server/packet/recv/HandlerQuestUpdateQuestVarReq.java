@@ -4,12 +4,9 @@ import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.PacketHeadOuterClass;
-import emu.grasscutter.net.proto.PlayerSetPauseReqOuterClass;
 import emu.grasscutter.net.proto.QuestUpdateQuestVarReqOuterClass;
 import emu.grasscutter.net.proto.QuestVarOpOuterClass;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketPlayerSetPauseRsp;
 import emu.grasscutter.server.packet.send.PacketQuestUpdateQuestVarRsp;
 
 import java.util.List;

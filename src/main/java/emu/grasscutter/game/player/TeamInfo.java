@@ -1,13 +1,13 @@
 package emu.grasscutter.game.player;
 
-import static emu.grasscutter.config.Configuration.*;
+import dev.morphia.annotations.Entity;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import dev.morphia.annotations.Entity;
-import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam;
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity
 public class TeamInfo {

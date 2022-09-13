@@ -1,10 +1,10 @@
 package emu.grasscutter.game.expedition;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import emu.grasscutter.game.inventory.GameItem;
 import lombok.Getter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExpeditionRewardDataList {
     @Getter private int hourTime;

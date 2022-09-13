@@ -1,17 +1,12 @@
 package emu.grasscutter.game.props;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import static java.util.Map.entry;
-
-import java.util.Arrays;
-import java.util.stream.Stream;
-
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
+import java.util.*;
+import java.util.stream.Stream;
+
+import static java.util.Map.entry;
 
 public enum FightProperty {
 	FIGHT_PROP_NONE(0),
@@ -110,20 +105,20 @@ public enum FightProperty {
 	FIGHT_PROP_NONEXTRA_SKILL_CD_MINUS_RATIO(3022),
 	FIGHT_PROP_NONEXTRA_SHIELD_COST_MINUS_RATIO(3023),
 	FIGHT_PROP_NONEXTRA_PHYSICAL_ADD_HURT(3024);
-	
+
 	private final int id;
 	private static final Int2ObjectMap<FightProperty> map = new Int2ObjectOpenHashMap<>();
 	private static final Map<String, FightProperty> stringMap = new HashMap<>();
-	
+
 	public static final int[] fightProps = new int[] {1, 4, 7, 20, 21, 22, 23, 26, 27, 28, 29, 30, 40, 41, 42, 43, 44, 45, 46, 50, 51, 52, 53, 54, 55, 56, 2000, 2001, 2002, 2003, 1010};
-	
+
 	static {
 		Stream.of(values()).forEach(e -> {
 			map.put(e.getId(), e);
 			stringMap.put(e.name(), e);
 		});
 	}
-	
+
 	private FightProperty(int id) {
 		this.id = id;
 	}
@@ -131,11 +126,11 @@ public enum FightProperty {
 	public int getId() {
 		return id;
 	}
-	
+
 	public static FightProperty getPropById(int value) {
 		return map.getOrDefault(value, FIGHT_PROP_NONE);
 	}
-	
+
 	public static FightProperty getPropByName(String name) {
 		return stringMap.getOrDefault(name, FIGHT_PROP_NONE);
 	}
@@ -195,8 +190,8 @@ public enum FightProperty {
         FIGHT_PROP_BASE_HP, FIGHT_PROP_HP, FIGHT_PROP_BASE_ATTACK, FIGHT_PROP_ATTACK, FIGHT_PROP_BASE_DEFENSE,
         FIGHT_PROP_DEFENSE, FIGHT_PROP_HEALED_ADD, FIGHT_PROP_CUR_FIRE_ENERGY, FIGHT_PROP_CUR_ELEC_ENERGY,
         FIGHT_PROP_CUR_WATER_ENERGY, FIGHT_PROP_CUR_GRASS_ENERGY, FIGHT_PROP_CUR_WIND_ENERGY, FIGHT_PROP_CUR_ICE_ENERGY,
-        FIGHT_PROP_CUR_ROCK_ENERGY, FIGHT_PROP_CUR_HP, FIGHT_PROP_MAX_HP, FIGHT_PROP_CUR_ATTACK, FIGHT_PROP_CUR_DEFENSE); 
-    
+        FIGHT_PROP_CUR_ROCK_ENERGY, FIGHT_PROP_CUR_HP, FIGHT_PROP_MAX_HP, FIGHT_PROP_CUR_ATTACK, FIGHT_PROP_CUR_DEFENSE);
+
     public static boolean isPercentage(FightProperty prop) {
         return !flatProps.contains(prop);
     }

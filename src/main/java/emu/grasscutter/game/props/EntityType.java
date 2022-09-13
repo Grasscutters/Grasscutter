@@ -1,11 +1,11 @@
 package emu.grasscutter.game.props;
 
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
-
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public enum EntityType {
 	None (0),
@@ -63,18 +63,18 @@ public enum EntityType {
 	Foundation (52),
 	WidgetGadget (53),
 	PlaceHolder (99);
-	
+
 	private final int value;
 	private static final Int2ObjectMap<EntityType> map = new Int2ObjectOpenHashMap<>();
 	private static final Map<String, EntityType> stringMap = new HashMap<>();
-	
+
 	static {
 		Stream.of(values()).forEach(e -> {
 			map.put(e.getValue(), e);
 			stringMap.put(e.name(), e);
 		});
 	}
-	
+
 	private EntityType(int value) {
 		this.value = value;
 	}
@@ -82,11 +82,11 @@ public enum EntityType {
 	public int getValue() {
 		return value;
 	}
-	
+
 	public static EntityType getTypeByValue(int value) {
 		return map.getOrDefault(value, None);
 	}
-	
+
 	public static EntityType getTypeByName(String name) {
 		return stringMap.getOrDefault(name, None);
 	}

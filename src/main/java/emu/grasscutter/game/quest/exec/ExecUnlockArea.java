@@ -6,8 +6,6 @@ import emu.grasscutter.game.quest.QuestValue;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 
-import java.util.Arrays;
-
 @QuestValue(QuestTrigger.QUEST_EXEC_UNLOCK_AREA)
 public class ExecUnlockArea extends QuestExecHandler {
     @Override

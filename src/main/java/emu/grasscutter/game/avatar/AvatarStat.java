@@ -1,9 +1,9 @@
 package emu.grasscutter.game.avatar;
 
-import java.util.stream.Stream;
-
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
+import java.util.stream.Stream;
 
 public enum AvatarStat {
 	FIGHT_PROP_NONE(0),
@@ -102,22 +102,22 @@ public enum AvatarStat {
 	FIGHT_PROP_NONEXTRA_SKILL_CD_MINUS_RATIO(3022),
 	FIGHT_PROP_NONEXTRA_SHIELD_COST_MINUS_RATIO(3023),
 	FIGHT_PROP_NONEXTRA_PHYSICAL_ADD_HURT(3024);
-	
+
 	private final int id;
 	private static final Int2ObjectMap<AvatarStat> map = new Int2ObjectOpenHashMap<>();
-	
+
 	static {
 		Stream.of(values()).forEach(e -> map.put(e.getId(), e));
 	}
-	
+
 	private AvatarStat(int id) {
 		this.id = id;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public static AvatarStat getStatById(int value) {
 		return map.getOrDefault(value, FIGHT_PROP_NONE);
 	}

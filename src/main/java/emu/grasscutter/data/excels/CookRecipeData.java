@@ -1,12 +1,11 @@
 package emu.grasscutter.data.excels;
 
-import java.util.List;
-
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
+
+import java.util.List;
 
 @ResourceType(name = {"CookRecipeExcelConfigData.json"}, loadPriority = LoadPriority.LOW)
 public class CookRecipeData extends GameResource {

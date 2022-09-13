@@ -1,9 +1,9 @@
 package emu.grasscutter.data.binout;
 
-import java.util.Map;
-import java.io.Serializable;
-
 import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+import java.util.Map;
 
 public class AbilityModifier implements Serializable {
 	private static final long serialVersionUID = -2001232313615923575L;
@@ -17,13 +17,13 @@ public class AbilityModifier implements Serializable {
 	public static class AbilityConfigData {
 		public AbilityData Default;
 	}
-	
+
 	public static class AbilityData {
 		public String abilityName;
         @SerializedName(value="modifiers", alternate={"HNEIEGHMLKH"})
 		public Map<String, AbilityModifier> modifiers;
 	}
-	
+
 	public static class AbilityModifierAction {
 		public String $type;
 		public AbilityModifierActionType type;
@@ -31,13 +31,13 @@ public class AbilityModifier implements Serializable {
 		public AbilityModifierValue amount;
 		public AbilityModifierValue amountByTargetCurrentHPRatio;
 	}
-	
+
 	public static class AbilityModifierValue {
 		public boolean isFormula;
 		public boolean isDynamic;
 		public String dynamicKey;
 	}
-	
+
 	public enum AbilityModifierActionType {
 		HealHP, ApplyModifier, LoseHP;
 	}

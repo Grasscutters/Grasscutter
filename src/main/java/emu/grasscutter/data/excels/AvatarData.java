@@ -1,7 +1,5 @@
 package emu.grasscutter.data.excels;
 
-import java.util.List;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
@@ -15,6 +13,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.Getter;
+
+import java.util.List;
 
 @ResourceType(name = "AvatarExcelConfigData.json", loadPriority = LoadPriority.LOW)
 public class AvatarData extends GameResource {

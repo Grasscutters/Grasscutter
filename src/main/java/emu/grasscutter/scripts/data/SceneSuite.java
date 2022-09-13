@@ -1,15 +1,15 @@
 package emu.grasscutter.scripts.data;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import lombok.Setter;
 import lombok.ToString;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @ToString
 @Setter
 public class SceneSuite {
-    // make it refer the default empty list to avoid NPE caused by some group 
+    // make it refer the default empty list to avoid NPE caused by some group
 	public List<Integer> monsters = List.of();
 	public List<Integer> gadgets = List.of();
 	public List<String> triggers = List.of();

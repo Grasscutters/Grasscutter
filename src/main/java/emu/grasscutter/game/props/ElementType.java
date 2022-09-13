@@ -1,13 +1,13 @@
 package emu.grasscutter.game.props;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Stream;
-
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import lombok.Getter;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Stream;
 
 public enum ElementType {
     None		(0, FightProperty.FIGHT_PROP_CUR_FIRE_ENERGY, FightProperty.FIGHT_PROP_MAX_FIRE_ENERGY),

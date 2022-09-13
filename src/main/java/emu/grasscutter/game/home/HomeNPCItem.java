@@ -1,7 +1,6 @@
 package emu.grasscutter.game.home;
 
 import dev.morphia.annotations.Entity;
-import emu.grasscutter.net.proto.HomeAnimalDataOuterClass;
 import emu.grasscutter.net.proto.HomeNpcDataOuterClass;
 import emu.grasscutter.utils.Position;
 import lombok.AccessLevel;

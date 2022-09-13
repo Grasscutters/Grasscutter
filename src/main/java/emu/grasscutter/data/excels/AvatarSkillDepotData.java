@@ -1,8 +1,5 @@
 package emu.grasscutter.data.excels;
 
-import java.util.List;
-import java.util.stream.IntStream;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.GameResource;
@@ -15,6 +12,9 @@ import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.Getter;
+
+import java.util.List;
+import java.util.stream.IntStream;
 
 @ResourceType(name = "AvatarSkillDepotExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 public class AvatarSkillDepotData extends GameResource {

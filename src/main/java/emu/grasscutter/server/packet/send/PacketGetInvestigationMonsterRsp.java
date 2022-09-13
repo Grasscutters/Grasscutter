@@ -4,7 +4,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.WorldDataSystem;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.GetActivityInfoRspOuterClass;
 import emu.grasscutter.net.proto.GetInvestigationMonsterRspOuterClass;
 
 import java.util.List;

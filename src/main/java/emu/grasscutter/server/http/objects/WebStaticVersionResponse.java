@@ -6,10 +6,10 @@ import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
 
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
-
 import java.io.IOException;
 import java.io.InputStream;
+
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
 
 public class WebStaticVersionResponse implements Handler {
 

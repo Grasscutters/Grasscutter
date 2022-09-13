@@ -1,18 +1,20 @@
 package emu.grasscutter.data.excels;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.ItemUseData;
-import emu.grasscutter.game.inventory.*;
+import emu.grasscutter.game.inventory.EquipType;
+import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.ItemUseTarget;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import lombok.Getter;
+
+import java.util.Arrays;
+import java.util.List;
 
 @ResourceType(name = {"MaterialExcelConfigData.json",
         "WeaponExcelConfigData.json",

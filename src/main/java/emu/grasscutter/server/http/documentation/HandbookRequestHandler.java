@@ -1,7 +1,5 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.config.Configuration.*;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
@@ -15,10 +13,14 @@ import emu.grasscutter.utils.Utils;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+
+import static emu.grasscutter.config.Configuration.DATA;
+import static emu.grasscutter.config.Configuration.DOCUMENT_LANGUAGE;
 
 final class HandbookRequestHandler implements DocumentationHandler {
     private List<String> handbookHtmls;

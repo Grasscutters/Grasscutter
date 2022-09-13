@@ -11,13 +11,10 @@ import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.http.dispatch.RegionHandler;
 import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.FileUtils;
+
+import java.util.Objects;
 
 import static emu.grasscutter.config.Configuration.*;
-
-import java.io.File;
-import java.util.Base64;
-import java.util.Objects;
 
 public class PacketPlayerLoginRsp extends BasePacket {
 

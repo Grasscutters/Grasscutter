@@ -1,7 +1,6 @@
 package emu.grasscutter.data.common;
 
 import com.google.gson.annotations.SerializedName;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.DailyDungeonData;

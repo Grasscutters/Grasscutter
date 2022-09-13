@@ -2,19 +2,19 @@ package emu.grasscutter.server.http.handlers;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
-import emu.grasscutter.server.http.objects.HttpJsonResponse;
 import emu.grasscutter.server.http.Router;
+import emu.grasscutter.server.http.objects.HttpJsonResponse;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 
-import static emu.grasscutter.config.Configuration.*;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
+
+import static emu.grasscutter.config.Configuration.*;
 
 /**
  * Handles requests related to the announcements page.

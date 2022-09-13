@@ -1,9 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -13,6 +9,10 @@ import emu.grasscutter.game.tower.TowerLevelRecord;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneAreaUnlockNotify;
 import emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Command(label = "setProp", aliases = {"prop"}, usage = {"<prop> <value>"}, permission = "player.setprop", permissionTargeted = "player.setprop.others")
 public final class SetPropCommand implements CommandHandler {

@@ -1,9 +1,8 @@
 package emu.grasscutter.game.combine;
 
-import java.util.List;
-
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.excels.CombineData;
+
+import java.util.List;
 
 public class CombineResult {
     private List<ItemParamData> material;

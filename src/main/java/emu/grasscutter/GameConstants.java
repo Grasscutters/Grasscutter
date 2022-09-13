@@ -1,9 +1,9 @@
 package emu.grasscutter;
 
-import java.util.Arrays;
-
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
+
+import java.util.Arrays;
 
 public final class GameConstants {
     public static String VERSION = "3.0.0";

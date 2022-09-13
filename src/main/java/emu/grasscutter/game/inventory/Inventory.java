@@ -1,12 +1,5 @@
 package emu.grasscutter.game.inventory;
 
-import static emu.grasscutter.config.Configuration.*;
-
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
@@ -15,8 +8,8 @@ import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.AvatarFlycloakData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
@@ -31,6 +24,13 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
 
 public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     private final Long2ObjectMap<GameItem> store;

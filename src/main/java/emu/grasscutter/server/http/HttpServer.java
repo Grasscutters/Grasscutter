@@ -4,9 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.utils.FileUtils;
 import io.javalin.Javalin;
-import io.javalin.core.util.JavalinLogger;
 import io.javalin.http.ContentType;
-
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;

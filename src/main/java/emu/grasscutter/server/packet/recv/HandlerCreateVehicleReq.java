@@ -4,10 +4,8 @@ import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.CreateVehicleReqOuterClass;
-
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketCreateVehicleRsp;
-
 import emu.grasscutter.utils.Position;
 
 @Opcodes(PacketOpcodes.CreateVehicleReq)

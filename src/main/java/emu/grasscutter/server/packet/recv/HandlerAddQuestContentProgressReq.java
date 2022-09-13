@@ -1,8 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.QuestData;
-import emu.grasscutter.game.quest.GameQuest;
+import emu.grasscutter.data.excels.QuestData.QuestCondition;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
@@ -10,7 +9,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AddQuestContentProgressReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketAddQuestContentProgressRsp;
-import emu.grasscutter.data.excels.QuestData.QuestCondition;
+
 import java.util.List;
 import java.util.stream.Stream;
 

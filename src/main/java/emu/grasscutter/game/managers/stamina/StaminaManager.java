@@ -18,13 +18,16 @@ import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
+import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
+import emu.grasscutter.server.packet.send.PacketVehicleStaminaNotify;
 import emu.grasscutter.utils.Position;
 import org.jetbrains.annotations.NotNull;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import java.util.*;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 public class StaminaManager extends BasePlayerManager {
 

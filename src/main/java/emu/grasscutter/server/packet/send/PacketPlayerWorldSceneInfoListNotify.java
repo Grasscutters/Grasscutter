@@ -3,13 +3,8 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerWorldSceneInfoListNotifyOuterClass.PlayerWorldSceneInfoListNotify;
-import emu.grasscutter.net.proto.PlayerWorldSceneInfoOuterClass;
-import emu.grasscutter.net.proto.SceneUnlockInfoOuterClass.SceneUnlockInfo;
 
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
-import static emu.grasscutter.net.proto.PlayerWorldSceneInfoOuterClass.*;
+import static emu.grasscutter.net.proto.PlayerWorldSceneInfoOuterClass.PlayerWorldSceneInfo;
 
 public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
 

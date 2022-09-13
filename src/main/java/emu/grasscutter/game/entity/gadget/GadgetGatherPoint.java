@@ -8,8 +8,8 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
+import emu.grasscutter.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.utils.Utils;
 

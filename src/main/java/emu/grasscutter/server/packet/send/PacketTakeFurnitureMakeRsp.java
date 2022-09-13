@@ -1,6 +1,5 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.FurnitureMakeDataOuterClass;

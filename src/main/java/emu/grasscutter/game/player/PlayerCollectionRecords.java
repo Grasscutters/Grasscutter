@@ -1,9 +1,9 @@
 package emu.grasscutter.game.player;
 
+import dev.morphia.annotations.Entity;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import dev.morphia.annotations.Entity;
 
 @Entity(useDiscriminator = false)
 public class PlayerCollectionRecords {

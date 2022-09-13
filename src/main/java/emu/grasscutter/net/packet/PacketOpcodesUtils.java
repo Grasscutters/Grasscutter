@@ -1,5 +1,11 @@
 package emu.grasscutter.net.packet;
 
+import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.utils.JsonUtils;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -7,12 +13,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
-
-import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.utils.JsonUtils;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public class PacketOpcodesUtils {
     private static Int2ObjectMap<String> opcodeMap;

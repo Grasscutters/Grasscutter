@@ -1,16 +1,12 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.game.activity.musicgame.MusicGameActivityHandler;
-import emu.grasscutter.game.activity.musicgame.MusicGamePlayerData;
 import emu.grasscutter.game.props.ActivityType;
-import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.MusicGameSettleReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketActivityInfoNotify;
-import emu.grasscutter.server.packet.send.PacketMusicGameSettleRsp;
 
 @Opcodes(PacketOpcodes.MusicGameSettleReq)
 public class HandlerMusicGameSettleReq extends PacketHandler {

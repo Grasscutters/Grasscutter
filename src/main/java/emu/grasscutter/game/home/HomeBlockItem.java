@@ -4,7 +4,6 @@ import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo;
-import emu.grasscutter.utils.Position;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;

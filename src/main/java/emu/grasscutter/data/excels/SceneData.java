@@ -1,9 +1,7 @@
 package emu.grasscutter.data.excels;
 
-import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
-
 import emu.grasscutter.game.props.SceneType;
 
 @ResourceType(name = "SceneExcelConfigData.json")
