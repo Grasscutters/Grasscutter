@@ -68,6 +68,7 @@ public class ResourceLoader {
         // Process into depots
         GameDepot.load();
         // Load spawn data and quests
+        loadGadgetConfigData();
         loadSpawnData();
         loadQuests();
         loadScriptSceneData();
@@ -491,6 +492,31 @@ public class ResourceLoader {
         });
 
         Grasscutter.getLogger().debug("Loaded " + GameData.getSceneNpcBornData().size() + " SceneNpcBornDatas.");
+    }
+
+    @SneakyThrows
+    private static void loadGadgetConfigData() {
+        Files.list(Path.of(RESOURCE("BinOutput/Gadget/"))).forEach(filePath -> {
+            var file = filePath.toFile();
+            if (file.isDirectory() || !file.getName().endsWith("json")) {
+                return;
+            }
+
+            Map<String, ConfigGadget> config;
+
+            try {
+                config = JsonUtils.loadToMap(filePath.toString(), String.class, ConfigGadget.class);
+            } catch (Exception e) {
+                Grasscutter.getLogger().error("failed to load ConfigGadget entries for "+filePath, e);
+                return;
+            }
+
+            for (Entry<String, ConfigGadget> e : config.entrySet()) {
+                GameData.getGadgetConfigData().put(e.getKey(), e.getValue());
+            }
+        });
+
+        Grasscutter.getLogger().debug("Loaded {} ConfigGadget entries.", GameData.getGadgetConfigData().size());
     }
 
     @SneakyThrows

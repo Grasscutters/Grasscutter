@@ -106,6 +106,10 @@ public abstract class GameEntity {
         return this.getFightProperties().getOrDefault(prop.getId(), 0f);
     }
 
+    public boolean hasFightProperty(FightProperty prop) {
+        return this.getFightProperties().containsKey(prop.getId());
+    }
+
     public void addAllFightPropsToEntityInfo(SceneEntityInfo.Builder entityInfo) {
         for (Int2FloatMap.Entry entry : this.getFightProperties().int2FloatEntrySet()) {
             if (entry.getIntKey() == 0) {
@@ -153,7 +157,7 @@ public abstract class GameEntity {
 
     public void damage(float amount, int killerId) {
         // Check if the entity has properties.
-        if (this.getFightProperties() == null) {
+        if (this.getFightProperties() == null || !hasFightProperty(FightProperty.FIGHT_PROP_CUR_HP)) {
             return;
         }
 
