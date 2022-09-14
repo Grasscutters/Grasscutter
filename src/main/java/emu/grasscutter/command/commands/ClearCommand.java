@@ -8,9 +8,11 @@ import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
 
 import java.util.List;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
+
+import static emu.grasscutter.command.CommandHelpers.lvlRegex;
+import static emu.grasscutter.command.CommandHelpers.matchIntOrNeg;
 
 @Command(
     label = "clear",
@@ -18,17 +20,8 @@ import java.util.stream.Stream;
     permission = "player.clearinv",
     permissionTargeted = "player.clearinv.others")
 public final class ClearCommand implements CommandHandler {
-    private static Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java doesn't have raw string literals :(
     private static Pattern refineRegex = Pattern.compile("r(\\d+)");
     private static Pattern rankRegex = Pattern.compile("(\\d+)\\*");
-
-    private static int matchIntOrNeg(Pattern pattern, String arg) {
-        Matcher match = pattern.matcher(arg);
-        if (match.find()) {
-            return Integer.parseInt(match.group(1));  // This should be exception-safe as only \d+ can be passed to it (i.e. non-empty string of pure digits)
-        }
-        return -1;
-    }
 
     private static class ClearItemParameters {
         public int lvl = 1;

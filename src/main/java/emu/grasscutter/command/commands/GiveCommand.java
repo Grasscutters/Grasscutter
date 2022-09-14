@@ -1,6 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.GameConstants;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -20,8 +19,9 @@ import emu.grasscutter.utils.SparseSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static emu.grasscutter.command.CommandHelpers.*;
 
 @Command(
     label = "give",
@@ -33,20 +33,10 @@ import java.util.regex.Pattern;
     permissionTargeted = "player.give.others",
     threading = true)
 public final class GiveCommand implements CommandHandler {
-    private static Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java doesn't have raw string literals :(
     private static Pattern refineRegex = Pattern.compile("r(\\d+)");
     private static Pattern constellationRegex = Pattern.compile("c(\\d+)");
-    private static Pattern amountRegex = Pattern.compile("((?<=x)\\d+|\\d+(?=x)(?!x\\d))");
 
-    private static int matchIntOrNeg(Pattern pattern, String arg) {
-        Matcher match = pattern.matcher(arg);
-        if (match.find()) {
-            return Integer.parseInt(match.group(1));  // This should be exception-safe as only \d+ can be passed to it (i.e. non-empty string of pure digits)
-        }
-        return -1;
-    }
-
-    private static enum GiveAllType {
+    private enum GiveAllType {
         NONE,
         ALL,
         WEAPONS,
