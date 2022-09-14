@@ -1,6 +1,7 @@
 package emu.grasscutter.game.managers.forging;
 
 import dev.morphia.annotations.Entity;
+import emu.grasscutter.utils.Utils;
 
 @Entity
 public class ActiveForgeData {

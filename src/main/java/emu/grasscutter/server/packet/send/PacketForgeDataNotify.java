@@ -1,17 +1,18 @@
 package emu.grasscutter.server.packet.send;
 
+import java.util.Map;
+
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ForgeDataNotifyOuterClass.ForgeDataNotify;
 import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
 
-import java.util.Map;
-
 public class PacketForgeDataNotify extends BasePacket {
-
+	
 	public PacketForgeDataNotify(Iterable<Integer> unlockedItem, int numQueues, Map<Integer, ForgeQueueData> queueData) {
 		super(PacketOpcodes.ForgeDataNotify);
-
+		
 		ForgeDataNotify.Builder builder = ForgeDataNotify.newBuilder()
 			.addAllForgeIdList(unlockedItem)
 			.setMaxQueueNum(numQueues);

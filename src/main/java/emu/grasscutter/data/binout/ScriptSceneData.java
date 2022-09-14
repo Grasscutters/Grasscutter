@@ -1,6 +1,8 @@
 package emu.grasscutter.data.binout;
 
 import com.google.gson.annotations.SerializedName;
+import emu.grasscutter.scripts.data.SceneGroup;
+import emu.grasscutter.utils.Position;
 import lombok.Data;
 
 import java.util.List;

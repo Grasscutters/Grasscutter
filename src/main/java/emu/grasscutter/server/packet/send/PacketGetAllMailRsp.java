@@ -1,11 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EquipParamOuterClass;
 import emu.grasscutter.net.proto.GetAllMailRspOuterClass.GetAllMailRsp;
+import emu.grasscutter.net.proto.ItemParamOuterClass;
 import emu.grasscutter.net.proto.MailDataOuterClass;
 import emu.grasscutter.net.proto.MailDataOuterClass.MailData;
 import emu.grasscutter.net.proto.MailItemOuterClass;

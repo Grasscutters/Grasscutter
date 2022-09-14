@@ -1,5 +1,8 @@
 package emu.grasscutter.data.excels;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
@@ -10,8 +13,6 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
-
-import java.util.List;
 
 @ResourceType(name = "QuestExcelConfigData.json")
 @Getter

@@ -1,5 +1,11 @@
 package emu.grasscutter.game.managers;
 
+import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
@@ -17,11 +23,6 @@ import emu.grasscutter.server.packet.send.PacketCookRecipeDataNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerCookArgsRsp;
 import emu.grasscutter.server.packet.send.PacketPlayerCookRsp;
 import io.netty.util.internal.ThreadLocalRandom;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 public class CookingManager extends BasePlayerManager {
     private static final int MANUAL_PERFECT_COOK_QUALITY = 3;

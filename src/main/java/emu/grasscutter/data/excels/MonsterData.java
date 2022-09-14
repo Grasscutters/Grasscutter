@@ -1,5 +1,7 @@
 package emu.grasscutter.data.excels;
 
+import java.util.List;
+
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
@@ -7,12 +9,10 @@ import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.game.props.MonsterType;
 
-import java.util.List;
-
 @ResourceType(name = "MonsterExcelConfigData.json", loadPriority = LoadPriority.LOW)
 public class MonsterData extends GameResource {
 	private int id;
-
+	
 	private String monsterName;
     private MonsterType type;
     private String serverScript;
@@ -42,16 +42,16 @@ public class MonsterData extends GameResource {
     private List<PropGrowCurve> propGrowCurves;
     private long nameTextMapHash;
     private int campID;
-
+    
     // Transient
     private int weaponId;
     private MonsterDescribeData describeData;
-
+    
 	@Override
 	public int getId() {
 		return this.id;
 	}
-
+	
 	public String getMonsterName() {
 		return monsterName;
 	}
@@ -171,7 +171,7 @@ public class MonsterData extends GameResource {
 	@Override
 	public void onLoad() {
 		this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
-
+		
 		for (int id : this.equips) {
 			if (id == 0) {
 				continue;
@@ -185,7 +185,7 @@ public class MonsterData extends GameResource {
 			}
 		}
 	}
-
+	
 	public class HpDrops {
 	    private int DropId;
 	    private int HpPercent;

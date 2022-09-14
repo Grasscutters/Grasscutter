@@ -1,18 +1,22 @@
 package emu.grasscutter.data;
 
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.binout.*;
-import emu.grasscutter.data.excels.*;
-import emu.grasscutter.game.quest.QuestEncryptionKey;
-import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.*;
-import lombok.Getter;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.binout.*;
+import emu.grasscutter.game.quest.QuestEncryptionKey;
+import emu.grasscutter.utils.Utils;
+import emu.grasscutter.data.excels.*;
+import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+import it.unimi.dsi.fastutil.ints.IntList;
+import lombok.Getter;
 
 public class GameData {
     // BinOutputs

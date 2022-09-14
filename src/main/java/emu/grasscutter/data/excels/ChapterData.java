@@ -8,6 +8,7 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @ResourceType(name = "ChapterExcelConfigData.json")

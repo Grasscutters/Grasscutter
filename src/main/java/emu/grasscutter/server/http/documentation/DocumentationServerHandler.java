@@ -2,6 +2,7 @@ package emu.grasscutter.server.http.documentation;
 
 import emu.grasscutter.server.http.Router;
 import io.javalin.Javalin;
+import io.javalin.http.Context;
 
 public final class DocumentationServerHandler implements Router {
 

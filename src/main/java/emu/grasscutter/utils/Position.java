@@ -1,13 +1,13 @@
 package emu.grasscutter.utils;
 
-import com.github.davidmoten.rtreemulti.geometry.Point;
+import java.io.Serializable;
+
 import com.google.gson.annotations.SerializedName;
+import com.github.davidmoten.rtreemulti.geometry.Point;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.io.Serializable;
 
 @Entity
 public class Position implements Serializable {

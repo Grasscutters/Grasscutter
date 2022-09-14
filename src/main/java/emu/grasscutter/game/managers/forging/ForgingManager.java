@@ -1,5 +1,11 @@
 package emu.grasscutter.game.managers.forging;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ForgeData;
@@ -15,13 +21,13 @@ import emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueMan
 import emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType;
 import emu.grasscutter.net.proto.ForgeStartReqOuterClass.ForgeStartReq;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.server.packet.send.PacketForgeDataNotify;
+import emu.grasscutter.server.packet.send.PacketForgeFormulaDataNotify;
+import emu.grasscutter.server.packet.send.PacketForgeGetQueueDataRsp;
+import emu.grasscutter.server.packet.send.PacketForgeQueueDataNotify;
+import emu.grasscutter.server.packet.send.PacketForgeQueueManipulateRsp;
+import emu.grasscutter.server.packet.send.PacketForgeStartRsp;
 import emu.grasscutter.utils.Utils;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class ForgingManager extends BasePlayerManager {
 

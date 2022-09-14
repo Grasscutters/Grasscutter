@@ -1,15 +1,14 @@
 package emu.grasscutter.data.excels;
 
+import java.util.ArrayList;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.common.ItemParamData;
 
-import java.util.ArrayList;
-
 @ResourceType(name = "WeaponPromoteExcelConfigData.json")
 public class WeaponPromoteData extends GameResource {
-
+	
 	private int weaponPromoteId;
     private int promoteLevel;
     private ItemParamData[] costItems;
@@ -17,7 +16,7 @@ public class WeaponPromoteData extends GameResource {
     private FightPropData[] addProps;
     private int unlockMaxLevel;
     private int requiredPlayerLevel;
-
+	
 	@Override
 	public int getId() {
 		return (weaponPromoteId << 8) + promoteLevel;

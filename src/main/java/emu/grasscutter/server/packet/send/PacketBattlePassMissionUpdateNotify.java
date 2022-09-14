@@ -1,11 +1,11 @@
 package emu.grasscutter.server.packet.send;
 
+import java.util.Collection;
+
 import emu.grasscutter.game.battlepass.BattlePassMission;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.BattlePassMissionUpdateNotifyOuterClass.BattlePassMissionUpdateNotify;
-
-import java.util.Collection;
 
 public class PacketBattlePassMissionUpdateNotify extends BasePacket {
 
@@ -18,7 +18,7 @@ public class PacketBattlePassMissionUpdateNotify extends BasePacket {
 
         this.setData(proto);
     }
-
+    
     public PacketBattlePassMissionUpdateNotify(Collection<BattlePassMission> missions) {
         super(PacketOpcodes.BattlePassMissionUpdateNotify);
 
@@ -27,7 +27,7 @@ public class PacketBattlePassMissionUpdateNotify extends BasePacket {
         missions.forEach(mission -> {
         	proto.addMissionList(mission.toProto());
         });
-
+        
         this.setData(proto.build());
     }
 

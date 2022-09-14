@@ -5,6 +5,8 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.HomeBasicInfoNotifyOuterClass;
 import emu.grasscutter.net.proto.HomeBasicInfoOuterClass;
+import emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass;
+import emu.grasscutter.net.proto.VectorOuterClass;
 
 public class PacketHomeBasicInfoNotify extends BasePacket {
 

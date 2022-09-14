@@ -1,11 +1,11 @@
 package emu.grasscutter.game.dungeons.challenge.factory;
 
 import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
-import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.dungeons.challenge.trigger.InTimeTrigger;
 import emu.grasscutter.game.dungeons.challenge.trigger.KillMonsterTrigger;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.scripts.data.SceneGroup;
 
 import java.util.List;

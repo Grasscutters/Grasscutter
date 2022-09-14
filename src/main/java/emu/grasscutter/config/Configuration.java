@@ -1,7 +1,8 @@
 package emu.grasscutter.config;
 
-import java.nio.file.Paths;
 import java.util.Locale;
+
+import java.nio.file.Paths;
 
 import static emu.grasscutter.Grasscutter.config;
 

@@ -5,6 +5,7 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DelMailRspOuterClass.DelMailRsp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PacketDelMailRsp  extends BasePacket {
@@ -15,7 +16,7 @@ public class PacketDelMailRsp  extends BasePacket {
         DelMailRsp proto = DelMailRsp.newBuilder()
         		.addAllMailIdList(toDeleteIds)
         		.build();
-
+        
         this.setData(proto);
     }
 }

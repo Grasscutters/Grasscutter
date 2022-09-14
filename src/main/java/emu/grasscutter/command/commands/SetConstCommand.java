@@ -1,14 +1,18 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.AvatarTalentData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
-import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
+import it.unimi.dsi.fastutil.ints.IntArrayList;
 
 import java.util.List;
 

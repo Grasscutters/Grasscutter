@@ -11,11 +11,12 @@ import lombok.ToString;
 import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
+
+import static emu.grasscutter.config.Configuration.SCRIPT;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import static emu.grasscutter.config.Configuration.SCRIPT;
 
 @ToString
 @Setter

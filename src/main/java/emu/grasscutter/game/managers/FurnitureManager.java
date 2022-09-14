@@ -1,6 +1,7 @@
 package emu.grasscutter.game.managers;
 
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.home.FurnitureMakeSlotItem;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.BasePlayerManager;

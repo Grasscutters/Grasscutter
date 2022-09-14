@@ -1,6 +1,7 @@
 package emu.grasscutter.game.dungeons.challenge.factory;
 
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
+import emu.grasscutter.game.dungeons.challenge.factory.ChallengeFactoryHandler;
 import emu.grasscutter.game.dungeons.challenge.trigger.InTimeTrigger;
 import emu.grasscutter.game.dungeons.challenge.trigger.KillGadgetTrigger;
 import emu.grasscutter.game.world.Scene;

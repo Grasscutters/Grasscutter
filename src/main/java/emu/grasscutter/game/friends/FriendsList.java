@@ -1,14 +1,18 @@
 package emu.grasscutter.game.friends;
 
+import java.util.List;
+
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.DealAddFriendResultTypeOuterClass.DealAddFriendResultType;
-import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.server.packet.send.PacketAskAddFriendNotify;
+import emu.grasscutter.server.packet.send.PacketAskAddFriendRsp;
+import emu.grasscutter.server.packet.send.PacketDealAddFriendRsp;
+import emu.grasscutter.server.packet.send.PacketDeleteFriendNotify;
+import emu.grasscutter.server.packet.send.PacketDeleteFriendRsp;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
-import java.util.List;
 
 public class FriendsList extends BasePlayerManager {
     private final Int2ObjectMap<Friendship> friends;

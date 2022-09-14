@@ -1,10 +1,13 @@
 package emu.grasscutter.database;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import com.mongodb.MongoCommandException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoIterable;
+
 import dev.morphia.Datastore;
 import dev.morphia.Morphia;
 import dev.morphia.mapping.MapperOptions;
@@ -23,9 +26,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
-
-import static emu.grasscutter.config.Configuration.DATABASE;
-import static emu.grasscutter.config.Configuration.SERVER;
+import emu.grasscutter.game.quest.GameQuest;
 
 public final class DatabaseManager {
     private static Datastore gameDatastore;

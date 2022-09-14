@@ -4,13 +4,13 @@ import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
-import org.bson.Document;
+
+import static emu.grasscutter.config.Configuration.*;
 
 import java.util.*;
 import java.util.stream.Stream;
 
-import static emu.grasscutter.config.Configuration.ACCOUNT;
-import static emu.grasscutter.config.Configuration.LANGUAGE;
+import org.bson.Document;
 
 @Entity(value = "accounts", useDiscriminator = false)
 public class Account {

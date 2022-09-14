@@ -1,5 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
+import java.util.List;
+
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -7,8 +9,6 @@ import emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRsp;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-
-import java.util.List;
 
 public class PacketPlayerCookRsp extends BasePacket {
     public PacketPlayerCookRsp(Retcode retcode) {
@@ -28,7 +28,7 @@ public class PacketPlayerCookRsp extends BasePacket {
             .setRecipeData(
                 CookRecipeData.newBuilder()
                     .setRecipeId(recipeId)
-                    .setProficiency(proficiency)
+                    .setProficiency(proficiency)    
             )
             .setQteQuality(quality)
             .setCookCount(count);

@@ -1,13 +1,14 @@
 package emu.grasscutter.scripts;
 
-import emu.grasscutter.Grasscutter;
+import java.util.HashMap;
+
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 
-import java.util.HashMap;
+import emu.grasscutter.Grasscutter;
 
 public class ScriptUtils {
-
+	
 	public static HashMap<Object, Object> toMap(LuaTable table) {
 		HashMap<Object, Object> map = new HashMap<>();
 		LuaValue[] rootKeys = table.keys();
@@ -20,7 +21,7 @@ public class ScriptUtils {
 		}
 		return map;
 	}
-
+	
 	public static void print(LuaTable table) {
 		Grasscutter.getLogger().info(toMap(table).toString());
 	}

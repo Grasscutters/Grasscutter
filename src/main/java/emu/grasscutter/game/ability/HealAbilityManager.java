@@ -1,15 +1,36 @@
 package emu.grasscutter.game.ability;
 
+import java.util.*;
+import java.util.Optional;
+import java.util.Map.Entry;
+
+import com.google.protobuf.InvalidProtocolBufferException;
+
+import emu.grasscutter.Grasscutter;
+
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.AbilityModifierEntry;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
+import emu.grasscutter.data.excels.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.ItemData;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.entity.EntityClientGadget;
+import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.ElementType;
+import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall;
+import emu.grasscutter.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import emu.grasscutter.net.proto.AbilityMetaReInitOverrideMapOuterClass.AbilityMetaReInitOverrideMap;
+import emu.grasscutter.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinCostStamina;
+import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
+import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
+import emu.grasscutter.utils.Position;
+import emu.grasscutter.utils.Utils;
+import emu.grasscutter.game.props.FightProperty;
 
 public class HealAbilityManager {
     private class HealData {
@@ -20,7 +41,7 @@ public class HealAbilityManager {
         public float fRatio = 0;
         public float fBase = 0;
         public boolean healAll = false;
-
+        
         public HealData(String _abilityType, String _sRatio, String _sBase, boolean _healAll) {
             abilityType = _abilityType;
             isString = true;
@@ -67,12 +88,12 @@ public class HealAbilityManager {
 
     ArrayList<HealDataAvatar> healDataAvatarList;
 	private Player player;
-
+    
     public HealAbilityManager (Player player) {
 		this.player = player;
         healDataAvatarList = new ArrayList();
         healDataAvatarList.add(new HealDataAvatar(10000054, "Kokomi", 0).addHealData("E", "ElementalArt_Heal_MaxHP_Base_Percentage", "ElementalArt_Heal_Base_Amount", false).addHealData("Q", "Avatar_Kokomi_ElementalBurst_Heal", 0.0172f, 212f, false));
-        healDataAvatarList.add(new HealDataAvatar(10000003, "Qin", 1).addHealData("Q", "Heal", "BurstHealConst", true));
+        healDataAvatarList.add(new HealDataAvatar(10000003, "Qin", 1).addHealData("Q", "Heal", "BurstHealConst", true)); 
         healDataAvatarList.add(new HealDataAvatar(10000034, "Noel", 2).addHealData("E", "OnAttack_HealthRate", 0.452f, 282f, true));
         healDataAvatarList.add(new HealDataAvatar(10000032, "Bennett", 0).addHealData("Q", "HealMaxHpRatio", "HealConst", false));
         healDataAvatarList.add(new HealDataAvatar(10000039, "Diona", 0).addHealData("Q", "HealHPRatio", "HealHP_Const", false));
@@ -89,11 +110,11 @@ public class HealAbilityManager {
 
     public void healHandler(AbilityInvokeEntry invoke) throws Exception {
 		AbilityMetaModifierChange data = AbilityMetaModifierChange.parseFrom(invoke.getAbilityData());
-
+		
 		if (data == null) {
 			return;
 		}
-
+		
 		GameEntity sourceEntity = player.getScene().getEntityById(data.getApplyEntityId());
 
         String modifierString = "";

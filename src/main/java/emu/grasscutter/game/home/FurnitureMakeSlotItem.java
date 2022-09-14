@@ -3,6 +3,7 @@ package emu.grasscutter.game.home;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import emu.grasscutter.net.proto.FurnitureMakeDataOuterClass;
+import emu.grasscutter.net.proto.FurnitureMakeSlotOuterClass;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;

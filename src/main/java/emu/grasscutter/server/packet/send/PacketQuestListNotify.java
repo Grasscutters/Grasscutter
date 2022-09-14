@@ -1,6 +1,8 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.GameMainQuest;
+import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;

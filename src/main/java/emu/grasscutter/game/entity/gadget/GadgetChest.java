@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.gadget.chest.BossChestInteractHandler;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.net.proto.BossChestInfoOuterClass.BossChestInfo;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType;
@@ -13,6 +14,7 @@ import emu.grasscutter.net.proto.ResinCostTypeOuterClass;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.scripts.constants.ScriptGadgetState;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
+import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 
 public class GadgetChest extends GadgetContent {
 

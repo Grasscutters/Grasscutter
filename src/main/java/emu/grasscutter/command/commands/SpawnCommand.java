@@ -6,17 +6,15 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.MonsterData;
-import emu.grasscutter.game.entity.EntityItem;
-import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.entity.EntityVehicle;
-import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Scene;
 
 import java.util.List;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
 
 @Command(

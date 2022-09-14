@@ -1,16 +1,25 @@
 package emu.grasscutter.game.player;
 
+import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.ScenePointEntry;
 import emu.grasscutter.data.excels.OpenStateData;
 import emu.grasscutter.data.excels.OpenStateData.OpenStateCondType;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
+import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
+import emu.grasscutter.server.packet.send.PacketOpenStateUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketSceneAreaUnlockNotify;
+import emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify;
+import emu.grasscutter.server.packet.send.PacketSetOpenStateRsp;
+import emu.grasscutter.server.packet.send.PacketUnlockTransPointRsp;
 
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 // @Entity

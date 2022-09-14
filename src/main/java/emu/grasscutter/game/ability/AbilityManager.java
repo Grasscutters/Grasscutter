@@ -1,9 +1,10 @@
 package emu.grasscutter.game.ability;
 
 import com.google.protobuf.InvalidProtocolBufferException;
+
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.binout.AbilityModifierEntry;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.entity.gadget.GadgetGatherObject;

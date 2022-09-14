@@ -2,6 +2,7 @@ package emu.grasscutter.game.dungeons.challenge.trigger;
 
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.entity.EntityGadget;
+import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketChallengeDataNotify;
 

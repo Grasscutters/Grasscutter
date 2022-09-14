@@ -1,6 +1,5 @@
 package emu.grasscutter.game.managers.energy;
 
-import com.google.protobuf.InvalidProtocolBufferException;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
@@ -8,7 +7,11 @@ import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.MonsterData.HpDrops;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.entity.*;
+import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.entity.EntityClientGadget;
+import emu.grasscutter.game.entity.EntityItem;
+import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
@@ -35,6 +38,8 @@ import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
+import com.google.protobuf.InvalidProtocolBufferException;
 
 public class EnergyManager extends BasePlayerManager {
     private final Map<EntityAvatar, Integer> avatarNormalProbabilities;

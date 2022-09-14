@@ -3,8 +3,12 @@ package emu.grasscutter.utils;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
 import ch.qos.logback.core.encoder.Encoder;
+import ch.qos.logback.core.spi.DeferredProcessingAware;
+import ch.qos.logback.core.status.ErrorStatus;
 import emu.grasscutter.server.event.internal.ServerLogEvent;
+import emu.grasscutter.server.event.types.ServerEvent;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class ServerLogEventAppender<E> extends AppenderBase<E> {

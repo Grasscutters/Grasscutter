@@ -1,5 +1,8 @@
 package emu.grasscutter.server.http.documentation;
 
+import static emu.grasscutter.config.Configuration.DATA;
+import static emu.grasscutter.utils.Language.translate;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
@@ -8,9 +11,6 @@ import io.javalin.http.Context;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
-
-import static emu.grasscutter.config.Configuration.DATA;
-import static emu.grasscutter.utils.Language.translate;
 
 final class RootRequestHandler implements DocumentationHandler {
 

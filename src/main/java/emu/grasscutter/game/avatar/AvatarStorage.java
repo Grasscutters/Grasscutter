@@ -1,5 +1,8 @@
 package emu.grasscutter.game.avatar;
 
+import java.util.Iterator;
+import java.util.List;
+
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.AvatarSkillDepotData;
@@ -14,9 +17,6 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
-
-import java.util.Iterator;
-import java.util.List;
 
 public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar> {
     private final Int2ObjectMap<Avatar> avatars;

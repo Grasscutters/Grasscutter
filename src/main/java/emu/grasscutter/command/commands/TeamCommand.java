@@ -5,11 +5,12 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.config.Configuration.*;
+
+import java.util.ArrayList;
+import java.util.HashSet;
 
 @Command(
     label = "team",

@@ -1,5 +1,9 @@
 package emu.grasscutter.game.mail;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.BasePlayerManager;
@@ -7,10 +11,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.player.PlayerReceiveMailEvent;
 import emu.grasscutter.server.packet.send.PacketDelMailRsp;
 import emu.grasscutter.server.packet.send.PacketMailChangeNotify;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class MailHandler extends BasePlayerManager {
     private final List<Mail> mail;

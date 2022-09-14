@@ -14,6 +14,8 @@ import emu.grasscutter.server.packet.send.PacketWidgetDoBagRsp;
 import emu.grasscutter.server.packet.send.PacketWidgetGadgetDataNotify;
 import emu.grasscutter.utils.Position;
 
+import java.util.List;
+
 @Opcodes(PacketOpcodes.WidgetDoBagReq)
 public class HandlerWidgetDoBagReq extends PacketHandler {
 

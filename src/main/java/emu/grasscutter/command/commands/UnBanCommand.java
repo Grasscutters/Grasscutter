@@ -1,11 +1,11 @@
 package emu.grasscutter.command.commands;
 
+import java.util.List;
+
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
-
-import java.util.List;
 
 @Command(
     label = "unban",

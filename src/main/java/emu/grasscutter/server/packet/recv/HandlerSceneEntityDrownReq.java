@@ -4,6 +4,7 @@ import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -23,7 +24,7 @@ public class HandlerSceneEntityDrownReq extends PacketHandler {
         if (entity == null || !(entity instanceof EntityMonster || entity instanceof EntityAvatar)) {
         	return;
         }
-
+        
         entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0);
 
         //TODO: make a list somewhere of all entities to remove per tick rather than one by one

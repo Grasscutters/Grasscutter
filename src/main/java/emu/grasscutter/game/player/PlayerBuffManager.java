@@ -1,17 +1,19 @@
 package emu.grasscutter.game.player;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.BuffData;
 import emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType;
 import emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff;
 import emu.grasscutter.server.packet.send.PacketServerBuffChangeNotify;
+
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
 import lombok.AccessLevel;
 import lombok.Getter;
-
-import java.util.LinkedList;
-import java.util.List;
 
 @Getter(AccessLevel.PRIVATE)
 public class PlayerBuffManager extends BasePlayerManager {
