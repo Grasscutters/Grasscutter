@@ -23,6 +23,8 @@ public class ActivityShopData extends GameResource {
     }
 
     public int getShopTypeId() {
+        if (this.shopType == null)
+            this.shopType = ShopType.SHOP_TYPE_NONE;
         return shopType.shopTypeId;
     }
 }
