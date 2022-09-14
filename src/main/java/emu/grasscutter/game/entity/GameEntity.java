@@ -37,6 +37,8 @@ public abstract class GameEntity {
     @Getter @Setter private int lastMoveSceneTimeMs;
     @Getter @Setter private int lastMoveReliableSeq;
 
+    @Getter @Setter private boolean lockHP;
+
     // Abilities
     private Object2FloatMap<String> metaOverrideMap;
     private Int2ObjectMap<String> metaModifiers;
@@ -168,9 +170,10 @@ public abstract class GameEntity {
             return; // If the event is canceled, do not damage the entity.
         }
 
-        if (getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) != Float.POSITIVE_INFINITY) {
-          // Add negative HP to the current HP property.
-          this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -(event.getDamage()));
+        float curHp = getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+        if (curHp != Float.POSITIVE_INFINITY && !lockHP || lockHP && curHp <= event.getDamage()) {
+            // Add negative HP to the current HP property.
+            this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -(event.getDamage()));
         }
 
         // Check if dead

@@ -81,9 +81,11 @@ public class EntityGadget extends EntityBaseGadget {
 
         var targetHp = combatProperties.getHP();
         setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, targetHp);
+        if (combatProperties.isInvincible()) {
             targetHp = Float.POSITIVE_INFINITY;
         }
         setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, targetHp);
+        setLockHP(combatProperties.isLockHP());
     }
 
     public GadgetData getGadgetData() {
