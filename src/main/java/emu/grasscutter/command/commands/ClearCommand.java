@@ -6,13 +6,15 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
+import lombok.Setter;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-import static emu.grasscutter.command.CommandHelpers.lvlRegex;
-import static emu.grasscutter.command.CommandHelpers.matchIntOrNeg;
+import static emu.grasscutter.command.CommandHelpers.*;
 
 @Command(
     label = "clear",
@@ -20,14 +22,18 @@ import static emu.grasscutter.command.CommandHelpers.matchIntOrNeg;
     permission = "player.clearinv",
     permissionTargeted = "player.clearinv.others")
 public final class ClearCommand implements CommandHandler {
-    private static Pattern refineRegex = Pattern.compile("r(\\d+)");
-    private static Pattern rankRegex = Pattern.compile("(\\d+)\\*");
+
+    private static final Map<Pattern, BiConsumer<ClearItemParameters, Integer>> intCommandHandlers = Map.ofEntries(
+        Map.entry(lvlRegex, ClearItemParameters::setLvl),
+        Map.entry(refineRegex, ClearItemParameters::setRefinement),
+        Map.entry(rankRegex, ClearItemParameters::setRank)
+    );
 
     private static class ClearItemParameters {
-        public int lvl = 1;
-        public int refinement = 1;
-        public int rank = 4;
-    };
+        @Setter public int lvl = 1;
+        @Setter public int refinement = 1;
+        @Setter public int rank = 4;
+    }
 
     private Stream<GameItem> getOther(ItemType type, Inventory playerInventory, ClearItemParameters param) {
         return playerInventory.getItems().values().stream()
@@ -52,28 +58,8 @@ public final class ClearCommand implements CommandHandler {
         Inventory playerInventory = targetPlayer.getInventory();
         ClearItemParameters param = new ClearItemParameters();
 
-        // Extract any tagged arguments (e.g. "lv90", "x100", "r5")
-        for (int i = args.size() - 1; i >= 0; i--) {  // Reverse iteration as we are deleting elements
-            String arg = args.get(i).toLowerCase();
-            boolean deleteArg = false;
-            int argNum;
-            // Note that a single argument can actually match all of these, e.g. "lv90r5*"
-            if ((argNum = matchIntOrNeg(lvlRegex, arg)) != -1) {
-                param.lvl = argNum;
-                deleteArg = true;
-            }
-            if ((argNum = matchIntOrNeg(refineRegex, arg)) != -1) {
-                param.refinement = argNum;
-                deleteArg = true;
-            }
-            if ((argNum = matchIntOrNeg(rankRegex, arg)) != -1) {
-                param.rank = argNum;
-                deleteArg = true;
-            }
-            if (deleteArg) {
-                args.remove(i);
-            }
-        }
+        // Extract any tagged int arguments (e.g. "lv90", "x100", "r5")
+        parseIntParameters(args, param, intCommandHandlers);
 
         if (args.size() < 1) {
             sendUsageMessage(sender);

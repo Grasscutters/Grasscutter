@@ -15,10 +15,12 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.utils.SparseSet;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Map;
+import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
 
 import static emu.grasscutter.command.CommandHelpers.*;
@@ -33,9 +35,6 @@ import static emu.grasscutter.command.CommandHelpers.*;
     permissionTargeted = "player.give.others",
     threading = true)
 public final class GiveCommand implements CommandHandler {
-    private static Pattern refineRegex = Pattern.compile("r(\\d+)");
-    private static Pattern constellationRegex = Pattern.compile("c(\\d+)");
-
     private enum GiveAllType {
         NONE,
         ALL,
@@ -44,48 +43,31 @@ public final class GiveCommand implements CommandHandler {
         AVATARS
     }
 
+    private static final Map<Pattern, BiConsumer<GiveItemParameters, Integer>> intCommandHandlers = Map.ofEntries(
+        Map.entry(lvlRegex, GiveItemParameters::setLvl),
+        Map.entry(refineRegex, GiveItemParameters::setRefinement),
+        Map.entry(amountRegex, GiveItemParameters::setAmount),
+        Map.entry(constellationRegex, GiveItemParameters::setConstellation)
+    );
+
     private static class GiveItemParameters {
         public int id;
-        public int lvl = 0;
-        public int amount = 1;
-        public int refinement = 1;
-        public int constellation = -1;
+        @Setter public int lvl = 0;
+        @Setter public int amount = 1;
+        @Setter public int refinement = 1;
+        @Setter public int constellation = -1;
         public int mainPropId = -1;
         public List<Integer> appendPropIdList;
         public ItemData data;
         public AvatarData avatarData;
         public GiveAllType giveAllType = GiveAllType.NONE;
-    };
+    }
 
     private GiveItemParameters parseArgs(Player sender, List<String> args) throws IllegalArgumentException {
         GiveItemParameters param = new GiveItemParameters();
 
         // Extract any tagged arguments (e.g. "lv90", "x100", "r5")
-        for (int i = args.size() - 1; i >= 0; i--) {  // Reverse iteration as we are deleting elements
-            String arg = args.get(i).toLowerCase();
-            boolean deleteArg = false;
-            int argNum;
-            // Note that a single argument can actually match all of these, e.g. "lv90r5x100"
-            if ((argNum = matchIntOrNeg(lvlRegex, arg)) != -1) {
-                param.lvl = argNum;
-                deleteArg = true;
-            }
-            if ((argNum = matchIntOrNeg(refineRegex, arg)) != -1) {
-                param.refinement = argNum;
-                deleteArg = true;
-            }
-            if ((argNum = matchIntOrNeg(constellationRegex, arg)) != -1) {
-                param.constellation = argNum;
-                deleteArg = true;
-            }
-            if ((argNum = matchIntOrNeg(amountRegex, arg)) != -1) {
-                param.amount = argNum;
-                deleteArg = true;
-            }
-            if (deleteArg) {
-                args.remove(i);
-            }
-        }
+        parseIntParameters(args, param, intCommandHandlers);
 
         // At this point, first remaining argument MUST be itemId/avatarId
         if (args.size() < 1) {
