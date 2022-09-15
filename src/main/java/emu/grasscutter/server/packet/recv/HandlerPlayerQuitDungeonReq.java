@@ -10,7 +10,7 @@ public class HandlerPlayerQuitDungeonReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        session.getPlayer().getServer().getDungeonSystem().exitDungeon(session.getPlayer());
+        session.getPlayer().getTeamManager().respawnTeam();
     }
 
 }

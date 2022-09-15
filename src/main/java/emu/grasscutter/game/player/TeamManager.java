@@ -1,19 +1,24 @@
 package emu.grasscutter.game.player;
 
-import static emu.grasscutter.config.Configuration.*;
-
-import java.util.*;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.ScenePointEntry;
 import emu.grasscutter.data.excels.AvatarSkillDepotData;
+import emu.grasscutter.command.commands.HealCommand;
+import emu.grasscutter.data.excels.DungeonData;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.dungeons.DungeonSystem;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityBaseGadget;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.SceneType;
+import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -22,21 +27,7 @@ import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.event.player.PlayerTeamDeathEvent;
-import emu.grasscutter.server.packet.send.PacketAddCustomTeamRsp;
-import emu.grasscutter.server.packet.send.PacketAvatarDieAnimationEndRsp;
-import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarTeamUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketChangeAvatarRsp;
-import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
-import emu.grasscutter.server.packet.send.PacketChangeTeamNameRsp;
-import emu.grasscutter.server.packet.send.PacketChooseCurAvatarTeamRsp;
-import emu.grasscutter.server.packet.send.PacketCustomTeamListNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
-import emu.grasscutter.server.packet.send.PacketRemoveCustomTeamRsp;
-import emu.grasscutter.server.packet.send.PacketSceneTeamUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketSetUpAvatarTeamRsp;
-import emu.grasscutter.server.packet.send.PacketWorldPlayerDieNotify;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -46,6 +37,10 @@ import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.*;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity
 public class TeamManager extends BasePlayerDataManager {
@@ -619,19 +614,47 @@ public class TeamManager extends BasePlayerDataManager {
         for (EntityAvatar entity : this.getActiveTeam()) {
             entity.setFightProperty(
                 FightProperty.FIGHT_PROP_CUR_HP,
-                entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * .4f
+                entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP)
             );
             this.getPlayer().sendPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
             this.getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
         }
 
         // Teleport player and set player position
-        try{
-            this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, player.getSceneId(), getRespawnPosition()));
-            player.getPosition().set(getRespawnPosition());
-        }catch(Exception e){
-            this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
-            player.getPosition().set(GameConstants.START_POSITION);  // If something goes wrong, the resurrection is here
+        if (player.getScene().getSceneType() == SceneType.SCENE_WORLD){
+            try{
+                this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, player.getSceneId(), getRespawnPosition()));
+                player.getPosition().set(getRespawnPosition());
+            }catch(Exception e){
+                this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
+                player.getPosition().set(GameConstants.START_POSITION);  // If something goes wrong, the resurrection is here
+            }
+        }
+        if(player.getScene().getSceneType() == SceneType.SCENE_DUNGEON) {
+            Scene scene = player.getScene();
+
+            // Get previous scene
+            int prevScene = scene.getPrevScene() > 0 ? scene.getPrevScene() : 3;
+
+            // Get previous position
+            DungeonData dungeonData = scene.getDungeonData();
+            Position prevPos = new Position(GameConstants.START_POSITION);
+
+            if (dungeonData != null) {
+                ScenePointEntry entry = GameData.getScenePointEntryById(prevScene, scene.getPrevScenePoint());
+
+                if (entry != null) {
+                    prevPos.set(entry.getPointData().getTranPos());
+                    player.getPosition().set(prevPos);
+                }
+            }
+            // clean temp team if it has
+            player.getTeamManager().cleanTemporaryTeam();
+            player.getTowerManager().clearEntry();
+
+            player.getWorld().transferPlayerToScene(player, prevScene, prevPos);
+
+            player.sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));
         }
 
         // Packets

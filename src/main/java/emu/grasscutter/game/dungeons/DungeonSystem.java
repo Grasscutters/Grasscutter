@@ -76,36 +76,6 @@ public class DungeonSystem extends BaseGameSystem {
         return true;
     }
 
-    public void exitDungeon(Player player) {
-        Scene scene = player.getScene();
-
-        if (scene==null || scene.getSceneType() != SceneType.SCENE_DUNGEON) {
-            return;
-        }
-
-        // Get previous scene
-        int prevScene = scene.getPrevScene() > 0 ? scene.getPrevScene() : 3;
-
-        // Get previous position
-        DungeonData dungeonData = scene.getDungeonData();
-        Position prevPos = new Position(GameConstants.START_POSITION);
-
-        if (dungeonData != null) {
-            ScenePointEntry entry = GameData.getScenePointEntryById(prevScene, scene.getPrevScenePoint());
-
-            if (entry != null) {
-                prevPos.set(entry.getPointData().getTranPos());
-            }
-        }
-        // clean temp team if it has
-        player.getTeamManager().cleanTemporaryTeam();
-        player.getTowerManager().clearEntry();
-
-        // Transfer player back to world
-        player.getWorld().transferPlayerToScene(player, prevScene, prevPos);
-        player.sendPacket(new BasePacket(PacketOpcodes.PlayerQuitDungeonRsp));
-    }
-
     public void updateDailyDungeons() {
         for (ScenePointEntry entry : GameData.getScenePointEntries().values()) {
             entry.getPointData().updateDailyDungeon();
