@@ -7,6 +7,7 @@ import emu.grasscutter.game.entity.gadget.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.EntityType;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
