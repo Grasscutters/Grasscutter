@@ -1,6 +1,7 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.ConfigGadget;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.game.entity.gadget.*;
 import emu.grasscutter.game.player.Player;
@@ -28,7 +29,10 @@ import emu.grasscutter.server.packet.send.PacketGadgetStateNotify;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
+import lombok.Getter;
 import lombok.ToString;
+
+import javax.annotation.Nullable;
 
 @ToString(callSuper = true)
 public class EntityGadget extends EntityBaseGadget {
@@ -42,14 +46,20 @@ public class EntityGadget extends EntityBaseGadget {
     private GadgetContent content;
     private Int2FloatOpenHashMap fightProp;
     private SceneGadget metaGadget;
+    @Nullable @Getter
+    private ConfigGadget configGadget;
 
     public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot) {
         super(scene);
         this.data = GameData.getGadgetDataMap().get(gadgetId);
+        if(data!=null && data.getJsonName()!=null) {
+            this.configGadget = GameData.getGadgetConfigData().get(data.getJsonName());
+        }
         this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
         this.gadgetId = gadgetId;
         this.pos = pos.clone();
         this.rot = rot != null ? rot.clone() : new Position();
+        fillFightProps();
     }
 
     public EntityGadget(Scene scene, int gadgetId, Position pos) {
@@ -59,6 +69,22 @@ public class EntityGadget extends EntityBaseGadget {
     public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content) {
         this(scene, gadgetId, pos, rot);
         this.content = content;
+    }
+
+    private void fillFightProps() {
+        if (configGadget == null || configGadget.getCombat() == null) {
+            return;
+        }
+        var combatData = configGadget.getCombat();
+        var combatProperties = combatData.getProperty();
+
+        var targetHp = combatProperties.getHP();
+        setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, targetHp);
+        if (combatProperties.isInvincible()) {
+            targetHp = Float.POSITIVE_INFINITY;
+        }
+        setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, targetHp);
+        setLockHP(combatProperties.isLockHP());
     }
 
     public GadgetData getGadgetData() {
