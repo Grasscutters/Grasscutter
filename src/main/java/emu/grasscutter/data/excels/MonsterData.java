@@ -19,7 +19,7 @@ public class MonsterData extends GameResource {
     private List<Integer> affix;
     private String ai;
     private int[] equips;
-    private List<emu.grasscutter.data.excels.MonsterData.HpDrops> hpDrops;
+    private List<HpDrops> hpDrops;
     private int killDropId;
     private String excludeWeathers;
     private int featureTagGroupID;

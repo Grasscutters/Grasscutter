@@ -1,6 +1,8 @@
 package emu.grasscutter.command;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.LittleGameData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
