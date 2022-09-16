@@ -626,10 +626,10 @@ public class TeamManager extends BasePlayerDataManager {
         }
 
         // Teleport player and set player position
-        try{
+        try {
             this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, player.getSceneId(), getRespawnPosition()));
             player.getPosition().set(getRespawnPosition());
-        }catch(Exception e){
+        }catch (Exception e) {
             this.getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(this.getPlayer(), EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
             player.getPosition().set(GameConstants.START_POSITION);  // If something goes wrong, the resurrection is here
         }

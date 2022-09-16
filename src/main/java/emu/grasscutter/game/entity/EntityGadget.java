@@ -53,7 +53,7 @@ public class EntityGadget extends EntityBaseGadget {
     public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot) {
         super(scene);
         this.data = GameData.getGadgetDataMap().get(gadgetId);
-        if(data!=null && data.getJsonName()!=null) {
+        if (data!=null && data.getJsonName()!=null) {
             this.configGadget = GameData.getGadgetConfigData().get(data.getJsonName());
         }
         this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);

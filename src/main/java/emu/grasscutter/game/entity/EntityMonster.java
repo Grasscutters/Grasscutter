@@ -293,7 +293,7 @@ public class EntityMonster extends GameEntity {
 
             monsterInfo.addWeaponList(weaponInfo);
         }
-        if(this.aiId!=-1){
+        if (this.aiId!=-1) {
             monsterInfo.setAiConfigId(aiId);
         }
 
