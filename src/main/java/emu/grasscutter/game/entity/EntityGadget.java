@@ -60,7 +60,7 @@ public class EntityGadget extends EntityBaseGadget {
         this.gadgetId = gadgetId;
         this.pos = pos.clone();
         this.rot = rot != null ? rot.clone() : new Position();
-        fillFightProps();
+        fillFightProps(configGadget);
     }
 
     public EntityGadget(Scene scene, int gadgetId, Position pos) {
@@ -70,22 +70,6 @@ public class EntityGadget extends EntityBaseGadget {
     public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content) {
         this(scene, gadgetId, pos, rot);
         this.content = content;
-    }
-
-    private void fillFightProps() {
-        if (configGadget == null || configGadget.getCombat() == null) {
-            return;
-        }
-        var combatData = configGadget.getCombat();
-        var combatProperties = combatData.getProperty();
-
-        var targetHp = combatProperties.getHP();
-        setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, targetHp);
-        if (combatProperties.isInvincible()) {
-            targetHp = Float.POSITIVE_INFINITY;
-        }
-        setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, targetHp);
-        setLockHP(combatProperties.isLockHP());
     }
 
     public GadgetData getGadgetData() {

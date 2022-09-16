@@ -62,19 +62,32 @@ public enum EntityType {
 	MiracleRing (51),
 	Foundation (52),
 	WidgetGadget (53),
+    Vehicle (54),
+    SubEquip (55),
+    FishRod (56),
+    CustomTile (57),
+    FishPool (58),
+    CustomGadget (59),
+    BlackMud (60),
+    RoguelikeOperatorGadget (61),
+    NightCrowGadget (62),
+    Projector (63),
+    Screen (64),
+    EchoShell (65),
+    UIInteractGadget (66),
 	PlaceHolder (99);
-	
+
 	private final int value;
 	private static final Int2ObjectMap<EntityType> map = new Int2ObjectOpenHashMap<>();
 	private static final Map<String, EntityType> stringMap = new HashMap<>();
-	
+
 	static {
 		Stream.of(values()).forEach(e -> {
 			map.put(e.getValue(), e);
 			stringMap.put(e.name(), e);
 		});
 	}
-	
+
 	private EntityType(int value) {
 		this.value = value;
 	}
@@ -82,11 +95,11 @@ public enum EntityType {
 	public int getValue() {
 		return value;
 	}
-	
+
 	public static EntityType getTypeByValue(int value) {
 		return map.getOrDefault(value, None);
 	}
-	
+
 	public static EntityType getTypeByName(String name) {
 		return stringMap.getOrDefault(name, None);
 	}
