@@ -316,6 +316,11 @@
       "avatar_not_found": "无法找到该角色：%d",
       "description": "手动修改你的队伍"
     },
+    "build": {
+      "description": "创建实体组, 用法：/build <buildId> [<x> <y> <z>]",
+      "unknown_buildId": "未知的buildId",
+      "success": "已创建 %s 个实体，失败 %s 个"
+    },
     "teleportAll": {
       "success": "已将所有玩家传送到你的位置。",
       "error": "你只能在多人游戏状态下执行此命令。",

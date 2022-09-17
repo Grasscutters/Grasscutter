@@ -1,4 +1,4 @@
-package emu.grasscutter.data.excels;
+package emu.grasscutter.data.common;
 
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
@@ -7,11 +7,10 @@ import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.utils.Position;
 import org.luaj.vm2.ast.Str;
 
-@ResourceType(name = "LittleGameData.json")
+
 public class LittleGameData extends GameResource {
 
     private int id;
-    private int gameId;
     private int entityId;
     private String type;
     private Position pos;
@@ -32,9 +31,7 @@ public class LittleGameData extends GameResource {
     private String state;
 
 
-    public int getGameId() {
-        return this.gameId;
-    }
+
     @Override
     public int getId(){return this.id;}
 

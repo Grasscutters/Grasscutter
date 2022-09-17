@@ -56,7 +56,7 @@ public class GameData {
 
     private static final Int2ObjectMap<EnvAnimalGatherConfigData> envAnimalGatherConfigDataMap = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<MonsterData> monsterDataMap = new Int2ObjectOpenHashMap<>();
-    private static final Int2ObjectMap<LittleGameData> littleGameDataMap = new Int2ObjectOpenHashMap<>();
+    private static final Int2ObjectMap<BuildData> buildDataMap = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<NpcData> npcDataMap = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<GadgetData> gadgetDataMap = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<MonsterCurveData> monsterCurveDataMap = new Int2ObjectOpenHashMap<>();
@@ -291,8 +291,8 @@ public class GameData {
         return monsterDataMap;
     }
 
-    public static Int2ObjectMap<LittleGameData> getLittleGameDataMap() {
-        return littleGameDataMap;
+    public static Int2ObjectMap<BuildData> getBuildDataMap() {
+        return buildDataMap;
     }
 
     public static Int2ObjectMap<EnvAnimalGatherConfigData> getEnvAnimalGatherConfigDataMap() {

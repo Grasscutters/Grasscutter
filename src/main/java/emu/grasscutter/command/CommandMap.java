@@ -2,7 +2,6 @@ package emu.grasscutter.command;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.LittleGameData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
@@ -10,10 +9,8 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 
 import org.reflections.Reflections;
 
-import java.net.IDN;
 import java.util.*;
 
-import static emu.grasscutter.config.Configuration.ACCOUNT;
 import static emu.grasscutter.config.Configuration.SERVER;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
