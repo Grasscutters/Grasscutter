@@ -56,6 +56,7 @@ public final class Grasscutter {
     private static Language language;
 
     public static final File configFile = new File("./config.json");
+    @Setter private static ServerRunMode runModeOverride = null; // Config override for run mode
 
     private static int day; // Current day of week.
     @Getter @Setter private static String preferredLanguage;
@@ -141,7 +142,7 @@ public final class Grasscutter {
         httpServer.addRouter(DocumentationServerHandler.class);
 
         // Start servers.
-        var runMode = SERVER.runMode;
+        var runMode = Grasscutter.getRunMode();
         if (runMode == ServerRunMode.HYBRID) {
             httpServer.start();
             gameServer.start();
@@ -244,6 +245,10 @@ public final class Grasscutter {
 
     public static Language getLanguage(String langCode) {
         return Language.getLanguage(langCode);
+    }
+    
+    public static ServerRunMode getRunMode() {
+        return Grasscutter.runModeOverride != null ? Grasscutter.runModeOverride : SERVER.runMode;
     }
 
     public static Logger getLogger() {
