@@ -2,9 +2,11 @@ package emu.grasscutter.tools;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -215,11 +217,15 @@ public final class Tools {
     }
 
     public static List<String> getAvailableLanguage() {
-        File textMapFolder = new File(RESOURCE("TextMap"));
         List<String> availableLangList = new ArrayList<>();
-        for (String textMapFileName : Objects.requireNonNull(textMapFolder.list((dir, name) -> name.startsWith("TextMap") && name.endsWith(".json")))) {
-            availableLangList.add(textMapFileName.replace("TextMap", "").replace(".json", "").toLowerCase());
-        } return availableLangList;
+        try {
+            Files.newDirectoryStream(getResourcePath("TextMap"), "TextMap*.json").forEach(path -> {
+                availableLangList.add(path.getFileName().toString().replace("TextMap", "").replace(".json", "").toLowerCase());
+            });
+        } catch (IOException e) {
+            Grasscutter.getLogger().error("Failed to get available languages:", e);
+        }
+        return availableLangList;
     }
 
     @Deprecated(forRemoval = true, since = "1.2.3")

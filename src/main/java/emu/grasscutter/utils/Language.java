@@ -325,7 +325,7 @@ public final class Language {
 
     private static Int2ObjectMap<String> loadTextMapFile(String language, IntSet nameHashes) {
         Int2ObjectMap<String> output = new Int2ObjectOpenHashMap<>();
-        try (BufferedReader file = new BufferedReader(new FileReader(Utils.toFilePath(RESOURCE("TextMap/TextMap"+language+".json")), StandardCharsets.UTF_8))) {
+        try (BufferedReader file = Files.newBufferedReader(getResourcePath("TextMap/TextMap"+language+".json"), StandardCharsets.UTF_8)) {
             Matcher matcher = textMapKeyValueRegex.matcher("");
             return new Int2ObjectOpenHashMap<>(
                 file.lines()
@@ -406,7 +406,7 @@ public final class Language {
         try {
             long cacheModified = Files.getLastModifiedTime(TEXTMAP_CACHE_PATH).toMillis();
 
-            long textmapsModified = Files.list(Path.of(RESOURCE("TextMap")))
+            long textmapsModified = Files.list(getResourcePath("TextMap"))
                 .filter(path -> path.toString().endsWith(".json"))
                 .map(path -> {
                     try {
