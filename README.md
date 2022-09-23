@@ -24,7 +24,7 @@
 
 ### Requirements
 
-* [Java SE - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+* [Java SE - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or higher
 
   **Note:** If you just want to **run it**, then **jre** only is fine.
 
@@ -75,7 +75,7 @@ Grasscutter uses Gradle to handle dependencies & building.
 
 **Requirements:**
 
-- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or higher
 - [Git](https://git-scm.com/downloads)
 
 ##### Windows
@@ -102,7 +102,7 @@ You can find the output jar in the root of the project folder.
 
 # Quick Troubleshooting
 
-* If compiling wasn't successful, please check your JDK installation (JDK 17 and validated JDK's bin PATH variable)
+* If compiling wasn't successful, please check your JDK installation (Make sure its JDK 17 or higher and validated JDK's bin PATH variable)
 * My client doesn't connect, doesn't login, 4206, etc... - Mostly your proxy daemon setup is *the issue*, if using
   Fiddler make sure it running on another port except 8888
 * Startup sequence: MongoDB > Grasscutter > Proxy Daemon (mitmdump, fiddler, etc.) > Game
