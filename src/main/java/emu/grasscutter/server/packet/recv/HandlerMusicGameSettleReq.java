@@ -15,12 +15,12 @@ import emu.grasscutter.server.packet.send.PacketMusicGameSettleRsp;
 @Opcodes(PacketOpcodes.MusicGameSettleReq)
 public class HandlerMusicGameSettleReq extends PacketHandler {
 
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		var req = MusicGameSettleReqOuterClass.MusicGameSettleReq.parseFrom(payload);
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        var req = MusicGameSettleReqOuterClass.MusicGameSettleReq.parseFrom(payload);
 
         var playerData = session.getPlayer().getActivityManager().getPlayerActivityDataByActivityType(ActivityType.NEW_ACTIVITY_MUSIC_GAME);
-        if(playerData.isEmpty()){
+        if (playerData.isEmpty()) {
             return;
         }
         var handler = (MusicGameActivityHandler) playerData.get().getActivityHandler();
@@ -32,7 +32,7 @@ public class HandlerMusicGameSettleReq extends PacketHandler {
         // Probably was an issue in 2.8 but was discovered in 3.0 port.
         // - Benj
 
-        /*if(req.getMusicShareId() == 0){
+        /*if (req.getMusicShareId() == 0) {
             session.getPlayer().getActivityManager().triggerWatcher(
                 WatcherTriggerType.TRIGGER_FLEUR_FAIR_MUSIC_GAME_REACH_SCORE,
                 String.valueOf(req.getMusicBasicId()),
@@ -48,7 +48,7 @@ public class HandlerMusicGameSettleReq extends PacketHandler {
 
             // update activity info
             session.send(new PacketActivityInfoNotify(handler.toProto(playerData.get())));
-        }else{
+        }else {
             handler.setMusicGameCustomBeatmapRecord(playerData.get(),
                 MusicGamePlayerData.CustomBeatmapRecord.of()
                     .musicShareId(req.getMusicShareId())
@@ -58,7 +58,7 @@ public class HandlerMusicGameSettleReq extends PacketHandler {
         }
 
 
-		session.send(new PacketMusicGameSettleRsp(req.getMusicBasicId(), req.getMusicShareId(), isNewRecord));*/
-	}
+        session.send(new PacketMusicGameSettleRsp(req.getMusicBasicId(), req.getMusicShareId(), isNewRecord));*/
+    }
 
 }

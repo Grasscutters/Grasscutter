@@ -4,7 +4,9 @@ import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.BuildConfig;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
+import io.javalin.core.util.JavalinLogger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Map;
@@ -27,6 +29,10 @@ public final class StartupArguments {
         "-debug", StartupArguments::enableDebug,
         "-lang", parameter -> {
             Grasscutter.setPreferredLanguage(parameter); return false;
+        },"-game", parameter -> {
+            Grasscutter.setRunModeOverride(ServerRunMode.GAME_ONLY); return false;
+        },"-dispatch", parameter -> {
+            Grasscutter.setRunModeOverride(ServerRunMode.DISPATCH_ONLY); return false;
         },
 
         // Aliases.
@@ -83,7 +89,7 @@ public final class StartupArguments {
         Grasscutter.getLogger().debug("The logger is now running in debug mode.");
 
         // Change loggers to debug.
-        ((Logger) LoggerFactory.getLogger("express"))
+        ((Logger) LoggerFactory.getLogger("io.javalin"))
             .setLevel(loggerLevel);
         ((Logger) LoggerFactory.getLogger("org.quartz"))
             .setLevel(loggerLevel);

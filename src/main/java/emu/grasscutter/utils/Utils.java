@@ -22,6 +22,7 @@ import org.slf4j.Logger;
 
 import javax.annotation.Nullable;
 
+import static emu.grasscutter.config.Configuration.getResourcePath;
 import static emu.grasscutter.utils.Language.translate;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
@@ -169,19 +170,18 @@ public final class Utils {
         Logger logger = Grasscutter.getLogger();
         boolean exit = false;
 
-        String resourcesFolder = config.folderStructure.resources;
         String dataFolder = config.folderStructure.data;
 
         // Check for resources folder.
-        if (!fileExists(resourcesFolder)) {
+        if (!Files.exists(getResourcePath(""))) {
             logger.info(translate("messages.status.create_resources"));
             logger.info(translate("messages.status.resources_error"));
-            createFolder(resourcesFolder); exit = true;
+            createFolder(config.folderStructure.resources); exit = true;
         }
 
         // Check for BinOutput + ExcelBinOutput.
-        if (!fileExists(resourcesFolder + "BinOutput") ||
-                !fileExists(resourcesFolder + "ExcelBinOutput")) {
+        if (!Files.exists(getResourcePath("BinOutput")) ||
+            !Files.exists(getResourcePath("ExcelBinOutput"))) {
             logger.info(translate("messages.status.resources_error"));
             exit = true;
         }

@@ -19,10 +19,12 @@ import java.util.concurrent.ConcurrentHashMap;
 @Getter
 public class ActivityManager extends BasePlayerManager {
     private static final Map<Integer, ActivityConfigItem> activityConfigItemMap;
+    @Getter private static final Map<Integer, ActivityConfigItem> scheduleActivityConfigMap;
     private final Map<Integer, PlayerActivityData> playerActivityDataMap;
 
     static {
         activityConfigItemMap = new HashMap<>();
+        scheduleActivityConfigMap = new HashMap<>();
         loadActivityConfigData();
     }
 
@@ -61,6 +63,7 @@ public class ActivityManager extends BasePlayerManager {
                 item.setActivityHandler(activityHandler);
 
                 activityConfigItemMap.putIfAbsent(item.getActivityId(), item);
+                scheduleActivityConfigMap.putIfAbsent(item.getScheduleId(), item);
             });
 
             Grasscutter.getLogger().info("Enable {} activities.", activityConfigItemMap.size());

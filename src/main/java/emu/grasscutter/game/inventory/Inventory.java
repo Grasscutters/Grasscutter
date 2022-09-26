@@ -273,11 +273,15 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     private void addVirtualItem(int itemId, int count) {
         switch (itemId) {
             case 101 -> // Character exp
-                this.player.getServer().getInventorySystem().upgradeAvatar(this.player, this.player.getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
+                this.player.getTeamManager().getActiveTeam().stream().map(e -> e.getAvatar()).forEach(
+                    avatar -> this.player.getServer().getInventorySystem().upgradeAvatar(this.player, avatar, count)
+                );
             case 102 -> // Adventure exp
                 this.player.addExpDirectly(count);
             case 105 -> // Companionship exp
-                this.player.getServer().getInventorySystem().upgradeAvatarFetterLevel(this.player, this.player.getTeamManager().getCurrentAvatarEntity().getAvatar(), count);
+                this.player.getTeamManager().getActiveTeam().stream().map(e -> e.getAvatar()).forEach(
+                    avatar -> this.player.getServer().getInventorySystem().upgradeAvatarFetterLevel(this.player, avatar, count * (this.player.isInMultiplayer() ? 2 : 1))
+                );
             case 106 -> // Resin
                 this.player.getResinManager().addResin(count);
             case 107 ->  // Legendary Key

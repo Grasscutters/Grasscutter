@@ -26,7 +26,7 @@ public class ConfigContainer {
      */
     public static void updateConfig() {
         try { // Check if the server is using a legacy config.
-            JsonObject configObject = JsonUtils.loadToClass(Grasscutter.configFile.getPath(), JsonObject.class);
+            JsonObject configObject = JsonUtils.loadToClass(Grasscutter.configFile.toPath(), JsonObject.class);
             if (!configObject.has("version")) {
                 Grasscutter.getLogger().info("Updating legacy ..");
                 Grasscutter.saveConfig(null);
@@ -95,6 +95,7 @@ public class ConfigContainer {
         public Set<Integer> debugWhitelist = Set.of();
         public Set<Integer> debugBlacklist = Set.of();
         public ServerRunMode runMode = ServerRunMode.HYBRID;
+        public boolean logCommands = false;
 
         public HTTP http = new HTTP();
         public Game game = new Game();

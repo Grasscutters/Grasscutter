@@ -130,7 +130,7 @@ public class EntityAvatar extends GameEntity {
         if (!this.isAlive()) {
             return 0f;
         }
-        
+
         float healed = super.heal(amount);
 
         if (healed > 0f) {

@@ -45,9 +45,6 @@ public class ProudSkillData extends GameResource {
 
     @Override
     public void onLoad() {
-        if (this.getOpenConfig() != null & this.getOpenConfig().length() > 0) {
-            this.openConfig = "Avatar_" + this.getOpenConfig();
-        }
         // Fight props
         ArrayList<FightPropData> parsed = new ArrayList<FightPropData>(getAddProps().length);
         for (FightPropData prop : getAddProps()) {

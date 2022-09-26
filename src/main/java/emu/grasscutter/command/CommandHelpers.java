@@ -1,0 +1,52 @@
+package emu.grasscutter.command;
+
+import javax.annotation.Nonnull;
+import java.util.List;
+import java.util.Map;
+import java.util.function.BiConsumer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class CommandHelpers {
+    public static final Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java doesn't have raw string literals :(
+    public static final Pattern amountRegex = Pattern.compile("((?<=x)\\d+|\\d+(?=x)(?!x\\d))");
+    public static final Pattern refineRegex = Pattern.compile("r(\\d+)");
+    public static final Pattern rankRegex = Pattern.compile("(\\d+)\\*");
+    public static final Pattern constellationRegex = Pattern.compile("c(\\d+)");
+    public static final Pattern stateRegex = Pattern.compile("state(\\d+)");
+    public static final Pattern blockRegex = Pattern.compile("blk(\\d+)");
+    public static final Pattern groupRegex = Pattern.compile("grp(\\d+)");
+    public static final Pattern configRegex = Pattern.compile("cfg(\\d+)");
+    public static final Pattern hpRegex = Pattern.compile("hp(\\d+)");
+    public static final Pattern maxHPRegex = Pattern.compile("maxhp(\\d+)");
+    public static final Pattern atkRegex = Pattern.compile("atk(\\d+)");
+    public static final Pattern defRegex = Pattern.compile("def(\\d+)");
+    public static final Pattern aiRegex = Pattern.compile("ai(\\d+)");
+
+    public static int matchIntOrNeg(Pattern pattern, String arg) {
+        Matcher match = pattern.matcher(arg);
+        if (match.find()) {
+            return Integer.parseInt(match.group(1));  // This should be exception-safe as only \d+ can be passed to it (i.e. non-empty string of pure digits)
+        }
+        return -1;
+    }
+
+    public static <T> List<String> parseIntParameters(List<String> args, @Nonnull T params, Map<Pattern, BiConsumer<T, Integer>> map) {
+        for (int i = args.size() - 1; i >= 0; i--) {
+            String arg = args.get(i).toLowerCase();
+            boolean deleteArg = false;
+            int argNum;
+            for (var entry : map.entrySet()) {
+                if ((argNum = matchIntOrNeg(entry.getKey(), arg)) != -1) {
+                    entry.getValue().accept(params, argNum);
+                    deleteArg = true;
+                    break;
+                }
+            }
+            if (deleteArg) {
+                args.remove(i);
+            }
+        }
+        return args;
+    }
+}

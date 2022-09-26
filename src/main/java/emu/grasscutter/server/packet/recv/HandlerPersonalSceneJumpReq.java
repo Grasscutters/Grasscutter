@@ -13,24 +13,24 @@ import emu.grasscutter.utils.Position;
 
 @Opcodes(PacketOpcodes.PersonalSceneJumpReq)
 public class HandlerPersonalSceneJumpReq extends PacketHandler {
-	
-	@Override
-	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-		PersonalSceneJumpReq req = PersonalSceneJumpReq.parseFrom(payload);
-		var player = session.getPlayer();
 
-		// get the scene point
-		String code = player.getSceneId() + "_" + req.getPointId();
-		ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(code);
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        PersonalSceneJumpReq req = PersonalSceneJumpReq.parseFrom(payload);
+        var player = session.getPlayer();
 
-		if (scenePointEntry != null) {
-			Position pos = scenePointEntry.getPointData().getTranPos().clone();  // This might not need cloning
-			int sceneId = scenePointEntry.getPointData().getTranSceneId();
+        // get the scene point
+        String code = player.getSceneId() + "_" + req.getPointId();
+        ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(code);
 
-			player.getWorld().transferPlayerToScene(player, sceneId, pos);
-			session.send(new PacketPersonalSceneJumpRsp(sceneId, pos));
-		}
+        if (scenePointEntry != null) {
+            Position pos = scenePointEntry.getPointData().getTranPos().clone();  // This might not need cloning
+            int sceneId = scenePointEntry.getPointData().getTranSceneId();
 
-	}
+            player.getWorld().transferPlayerToScene(player, sceneId, pos);
+            session.send(new PacketPersonalSceneJumpRsp(sceneId, pos));
+        }
+
+    }
 
 }

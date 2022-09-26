@@ -2,8 +2,8 @@ package emu.grasscutter.server.http.documentation;
 
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.Language;
-import express.http.Request;
-import express.http.Response;
+import io.javalin.http.ContentType;
+import io.javalin.http.Context;
 
 import static emu.grasscutter.config.Configuration.DOCUMENT_LANGUAGE;
 
@@ -17,10 +17,8 @@ final class GachaMappingRequestHandler implements DocumentationHandler {
     }
 
     @Override
-    public void handle(Request request, Response response) {
+    public void handle(Context ctx) {
         final int langIdx = Language.TextStrings.MAP_LANGUAGES.getOrDefault(DOCUMENT_LANGUAGE, 0);  // TODO: This should really be based off the client language somehow
-        response.set("Content-Type", "application/json")
-                .ctx()
-                .result(gachaJsons.get(langIdx));
+        ctx.contentType(ContentType.APPLICATION_JSON).result(gachaJsons.get(langIdx));
     }
 }

@@ -1,5 +1,6 @@
 package emu.grasscutter.data.excels;
 
+import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.ItemParamData;
@@ -24,11 +25,12 @@ public class ShopGoodsData extends GameResource {
     private int maxPlayerLevel;
 
     private int buyLimit;
+    @SerializedName(value="subTabId", alternate={"secondarySheetId"})
     private int subTabId;
 
     private String refreshType;
     private transient ShopInfo.ShopRefreshType refreshTypeEnum;
-    
+
     private int refreshParam;
 
     @Override

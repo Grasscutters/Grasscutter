@@ -10,33 +10,20 @@ import com.mongodb.client.MongoIterable;
 
 import dev.morphia.Datastore;
 import dev.morphia.Morphia;
+import dev.morphia.annotations.Entity;
+import dev.morphia.mapping.Mapper;
 import dev.morphia.mapping.MapperOptions;
 import dev.morphia.query.experimental.filters.Filters;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.game.activity.PlayerActivityData;
-import emu.grasscutter.game.activity.musicgame.MusicGameBeatmap;
-import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.battlepass.BattlePassManager;
-import emu.grasscutter.game.friends.Friendship;
-import emu.grasscutter.game.gacha.GachaRecord;
-import emu.grasscutter.game.home.GameHome;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.mail.Mail;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.quest.GameMainQuest;
-import emu.grasscutter.game.quest.GameQuest;
+
+import org.reflections.Reflections;
 
 public final class DatabaseManager {
     private static Datastore gameDatastore;
     private static Datastore dispatchDatastore;
-
-    private static final Class<?>[] mappedClasses = new Class<?>[] {
-        DatabaseCounter.class, Account.class, Player.class, Avatar.class, GameItem.class, Friendship.class,
-        GachaRecord.class, Mail.class, GameMainQuest.class, GameHome.class, BattlePassManager.class,
-        PlayerActivityData.class, MusicGameBeatmap.class
-    };
 
     public static Datastore getGameDatastore() {
         return gameDatastore;
@@ -63,47 +50,54 @@ public final class DatabaseManager {
         // Set mapper options.
         MapperOptions mapperOptions = MapperOptions.builder()
                 .storeEmpties(true).storeNulls(false).build();
+        
         // Create data store.
         gameDatastore = Morphia.createDatastore(gameMongoClient, DATABASE.game.collection, mapperOptions);
+        
         // Map classes.
-        gameDatastore.getMapper().map(mappedClasses);
+        Class<?>[] entities = new Reflections(Grasscutter.class.getPackageName())
+                .getTypesAnnotatedWith(Entity.class)
+                .stream()
+                .filter(cls -> {
+                    Entity e = cls.getAnnotation(Entity.class);
+                    return e != null && !e.value().equals(Mapper.IGNORED_FIELDNAME);
+                })
+                .toArray(Class<?>[]::new);
 
-        // Ensure indexes
-        try {
-            gameDatastore.ensureIndexes();
-        } catch (MongoCommandException exception) {
-            Grasscutter.getLogger().info("Mongo index error: ", exception);
-            // Duplicate index error
-            if (exception.getCode() == 85) {
-                // Drop all indexes and re add them
-                MongoIterable<String> collections = gameDatastore.getDatabase().listCollectionNames();
-                for (String name : collections) {
-                    gameDatastore.getDatabase().getCollection(name).dropIndexes();
-                }
-                // Add back indexes
-                gameDatastore.ensureIndexes();
-            }
-        }
+        gameDatastore.getMapper().map(entities);
+
+        // Ensure indexes for the game datastore
+        ensureIndexes(gameDatastore);
 
         if (SERVER.runMode == ServerRunMode.GAME_ONLY) {
             MongoClient dispatchMongoClient = MongoClients.create(DATABASE.server.connectionUri);
-            dispatchDatastore = Morphia.createDatastore(dispatchMongoClient, DATABASE.server.collection);
-
-            // Ensure indexes for dispatch server
-            try {
-                dispatchDatastore.ensureIndexes();
-            } catch (MongoCommandException e) {
-                Grasscutter.getLogger().info("Mongo index error: ", e);
-                // Duplicate index error
-                if (e.getCode() == 85) {
-                    // Drop all indexes and re add them
-                    MongoIterable<String> collections = dispatchDatastore.getDatabase().listCollectionNames();
-                    for (String name : collections) {
-                        dispatchDatastore.getDatabase().getCollection(name).dropIndexes();
-                    }
-                    // Add back indexes
-                    dispatchDatastore.ensureIndexes();
+            
+            dispatchDatastore = Morphia.createDatastore(dispatchMongoClient, DATABASE.server.collection, mapperOptions);
+            dispatchDatastore.getMapper().map(new Class<?>[] {DatabaseCounter.class, Account.class});
+            
+            // Ensure indexes for dispatch datastore
+            ensureIndexes(dispatchDatastore);
+        }
+    }
+    
+    /**
+     * Ensures the database indexes exist and rebuilds them if there is an error with them
+     * @param datastore The datastore to ensure indexes on
+     */
+    private static void ensureIndexes(Datastore datastore) {
+        try {
+            datastore.ensureIndexes();
+        } catch (MongoCommandException e) {
+            Grasscutter.getLogger().info("Mongo index error: ", e);
+            // Duplicate index error
+            if (e.getCode() == 85) {
+                // Drop all indexes and re add them
+                MongoIterable<String> collections = datastore.getDatabase().listCollectionNames();
+                for (String name : collections) {
+                    datastore.getDatabase().getCollection(name).dropIndexes();
                 }
+                // Add back indexes
+                datastore.ensureIndexes();
             }
         }
     }
