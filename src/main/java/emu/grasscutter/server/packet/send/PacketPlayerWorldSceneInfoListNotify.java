@@ -42,8 +42,8 @@ public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
                                 .addSceneTagIdList(1164) // Arena (XMSM_CWLTop)
                                 .addSceneTagIdList(1166) // Pyramid (CWL_Trans_02)
 
-                                // Brute forace
-                                //.addAllSceneTagIdList(IntStream.range(1150, 1250).boxed().collect(Collectors.toList()))
+                                // Brute force
+                                //.addAllSceneTagIdList(IntStream.range(1150, 1250).boxed().toList())
                                 .build()
                 )
                 .addInfoList(
@@ -77,7 +77,7 @@ public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
                         PlayerWorldSceneInfo.newBuilder()
                                 .setSceneId(9)
                                 .setIsLocked(false)
-                                .addAllSceneTagIdList(IntStream.range(0, 3000).boxed().collect(Collectors.toList()))
+                                .addAllSceneTagIdList(IntStream.range(0, 3000).boxed().toList())
                                 .build()
                 );
 

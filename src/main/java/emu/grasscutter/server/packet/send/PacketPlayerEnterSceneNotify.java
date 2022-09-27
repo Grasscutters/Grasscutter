@@ -60,10 +60,6 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
                 .setWorldType(1)
                 .setSceneTransaction(newScene + "-" + target.getUid() + "-" + (int) (System.currentTimeMillis() / 1000) + "-" + 18402);
 
-        /*for (int i = 0; i < 3000; i++) {
-            proto.addSceneTagIdList(i);
-        }*/
-
-        this.setData(proto.build());
+        this.setData(proto);
     }
 }
