@@ -312,10 +312,10 @@ public class Scene {
             if (attacker instanceof EntityClientGadget gadgetAttacker) {
                 var clientGadgetOwner = getEntityById(gadgetAttacker.getOwnerEntityId());
                 if (clientGadgetOwner instanceof EntityAvatar) {
-                    ((EntityClientGadget) attacker).getOwner().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+                    ((EntityClientGadget) attacker).getOwner().getCodex().checkAnimal(target, CodexAnimalData.CountType.CODEX_COUNT_TYPE_KILL);
                 }
             } else if (attacker instanceof EntityAvatar avatarAttacker) {
-                avatarAttacker.getPlayer().getCodex().checkAnimal(target, CodexAnimalData.CodexAnimalUnlockCondition.CODEX_COUNT_TYPE_KILL);
+                avatarAttacker.getPlayer().getCodex().checkAnimal(target, CodexAnimalData.CountType.CODEX_COUNT_TYPE_KILL);
             }
         }
 
