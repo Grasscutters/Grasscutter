@@ -3,57 +3,44 @@ package emu.grasscutter.data.excels;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
+import it.unimi.dsi.fastutil.ints.IntCollection;
+import it.unimi.dsi.fastutil.ints.IntList;
+import lombok.Getter;
 
 @ResourceType(name = {"ReliquaryCodexExcelConfigData.json"})
 public class CodexReliquaryData extends GameResource {
-    private int Id;
-    private int suitId;
-    private int level;
-    private int cupId;
-    private int leatherId;
-    private int capId;
-    private int flowerId;
-    private int sandId;
-    private int sortOrder;
+    @Getter private int Id;
+    @Getter private int suitId;
+    @Getter private int level;
+    @Getter private int cupId;
+    @Getter private int leatherId;
+    @Getter private int capId;
+    @Getter private int flowerId;
+    @Getter private int sandId;
+    @Getter private int sortOrder;
+    private transient IntCollection ids;
 
-    public int getSortOrder() {
-        return sortOrder;
+    public boolean containsId(int id) {
+        return getIds().contains(id);
     }
 
-    public int getId() {
-        return Id;
-    }
-
-    public int getSuitId() {
-        return suitId;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public int getCupId() {
-        return cupId;
-    }
-
-    public int getLeatherId() {
-        return leatherId;
-    }
-
-    public int getCapId() {
-        return capId;
-    }
-
-    public int getFlowerId() {
-        return flowerId;
-    }
-
-    public int getSandId() {
-        return sandId;
+    public IntCollection getIds() {
+        if (this.ids == null) {
+            int[] idsArr = {cupId, leatherId, capId, flowerId, sandId};
+            this.ids = IntList.of(idsArr);
+        }
+        return this.ids;
     }
 
     @Override
     public void onLoad() {
+        // Normalize all itemIds to the 0-substat form
+        cupId = (cupId/10) * 10;
+        leatherId = (leatherId/10) * 10;
+        capId = (capId/10) * 10;
+        flowerId = (flowerId/10) * 10;
+        sandId = (sandId/10) * 10;
+
         GameData.getcodexReliquaryArrayList().add(this);
         GameData.getcodexReliquaryIdMap().put(getSuitId(), this);
     }
