@@ -35,7 +35,6 @@
 		"scheduleId": 903,
 		"bannerType": "EVENT",
 		"prefabPath": "GachaShowPanel_A097",
-		"previewPrefabPath": "UI_Tab_GachaShowPanel_A097",
 		"titlePath": "UI_GACHA_SHOW_PANEL_A097_TITLE",
 		"costItemId": 223,
 		"beginTime": 0,
