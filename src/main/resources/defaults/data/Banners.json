@@ -67,7 +67,6 @@
 		"scheduleId": 913,
 		"bannerType": "WEAPON",
 		"prefabPath": "GachaShowPanel_A099",
-		"previewPrefabPath": "UI_Tab_GachaShowPanel_A099",
 		"titlePath": "UI_GACHA_SHOW_PANEL_A021_TITLE",
 		"costItemId": 223,
 		"beginTime": 0,
