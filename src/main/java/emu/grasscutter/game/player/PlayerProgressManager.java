@@ -209,11 +209,8 @@ public class PlayerProgressManager extends BasePlayerDataManager {
         this.player.getUnlockedScenePoints(sceneId).add(pointId);
 
         // Give primogems  and Adventure EXP for unlocking.
-        var primos = new GameItem(GameData.getItemDataMap().get(201), 5);
-        this.player.getInventory().addItem(primos, ActionReason.UnlockPointReward);
-
-        var exp = new GameItem(GameData.getItemDataMap().get(102), isStatue ? 50 : 10);
-        this.player.getInventory().addItem(exp, ActionReason.UnlockPointReward);
+        this.player.getInventory().addItem(201, 5, ActionReason.UnlockPointReward);
+        this.player.getInventory().addItem(102, isStatue ? 50 : 10, ActionReason.UnlockPointReward);
 
         // this.player.sendPacket(new PacketPlayerPropChangeReasonNotify(this.player.getProperty(PlayerProperty.PROP_PLAYER_EXP), PlayerProperty.PROP_PLAYER_EXP, PropChangeReason.PROP_CHANGE_REASON_PLAYER_ADD_EXP));
 

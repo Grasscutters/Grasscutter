@@ -210,6 +210,10 @@ public class Account {
         return this.permissions.remove(permission);
     }
 
+    public void clearPermission() {
+        this.permissions.clear();
+    }
+
     // TODO make unique
     public String generateLoginToken() {
         this.token = Utils.bytesToHex(Crypto.createSessionKey(32));

@@ -45,7 +45,6 @@ import javax.annotation.Nullable;
 import java.io.*;
 import java.util.Calendar;
 
-import static emu.grasscutter.config.Configuration.DATA;
 import static emu.grasscutter.config.Configuration.SERVER;
 import static emu.grasscutter.utils.Language.translate;
 
@@ -56,6 +55,7 @@ public final class Grasscutter {
     private static Language language;
 
     public static final File configFile = new File("./config.json");
+    @Setter private static ServerRunMode runModeOverride = null; // Config override for run mode
 
     private static int day; // Current day of week.
     @Getter @Setter private static String preferredLanguage;
@@ -141,7 +141,7 @@ public final class Grasscutter {
         httpServer.addRouter(DocumentationServerHandler.class);
 
         // Start servers.
-        var runMode = SERVER.runMode;
+        var runMode = Grasscutter.getRunMode();
         if (runMode == ServerRunMode.HYBRID) {
             httpServer.start();
             gameServer.start();
@@ -202,7 +202,7 @@ public final class Grasscutter {
 
         // If the file already exists, we attempt to load it.
         try {
-            config = JsonUtils.loadToClass(configFile.getPath(), ConfigContainer.class);
+            config = JsonUtils.loadToClass(configFile.toPath(), ConfigContainer.class);
         } catch (Exception exception) {
             getLogger().error("There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
             System.exit(1);
@@ -244,6 +244,10 @@ public final class Grasscutter {
 
     public static Language getLanguage(String langCode) {
         return Language.getLanguage(langCode);
+    }
+    
+    public static ServerRunMode getRunMode() {
+        return Grasscutter.runModeOverride != null ? Grasscutter.runModeOverride : SERVER.runMode;
     }
 
     public static Logger getLogger() {

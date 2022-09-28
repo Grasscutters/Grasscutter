@@ -1,39 +1,33 @@
 package emu.grasscutter.data.excels;
 
+import com.google.gson.annotations.SerializedName;
+
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 
 @ResourceType(name = "ReliquarySetExcelConfigData.json")
 public class ReliquarySetData extends GameResource {
-	private int setId;
+    private int setId;
     private int[] setNeedNum;
-    private int EquipAffixId;
-    private int disableFilter;
-    private int[] containsList;
-	
-	@Override
-	public int getId() {
-		return setId;
-	}
-	
-	public int[] getSetNeedNum() {
-		return setNeedNum;
-	}
 
-	public int getEquipAffixId() {
-		return EquipAffixId;
-	}
+    @SerializedName(value="equipAffixId", alternate={"EquipAffixId"})
+    private int equipAffixId;
 
-	public int getDisableFilter() {
-		return disableFilter;
-	}
+    @Override
+    public int getId() {
+        return setId;
+    }
 
-	public int[] getContainsList() {
-		return containsList;
-	}
+    public int[] getSetNeedNum() {
+        return setNeedNum;
+    }
 
-	@Override
-	public void onLoad() {
+    public int getEquipAffixId() {
+        return equipAffixId;
+    }
 
-	}
+    @Override
+    public void onLoad() {
+
+    }
 }

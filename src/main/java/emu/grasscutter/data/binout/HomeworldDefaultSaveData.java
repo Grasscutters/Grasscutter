@@ -34,8 +34,11 @@ public class HomeworldDefaultSaveData {
         @SerializedName(value = "FGIJCELCGFI", alternate = "PGDPDIDJEEL")
         int blockId;
 
-        @SerializedName(value = "BEAPOFELABD", alternate = "MLIODLGDFHJ")
+        @SerializedName("BEAPOFELABD")
         List<HomeFurniture> furnitures;
+
+        @SerializedName("MLIODLGDFHJ")
+        List<HomeFurniture> persistentFurnitures;
     }
 
     @Data

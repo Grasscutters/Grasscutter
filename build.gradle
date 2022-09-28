@@ -43,7 +43,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'xyz.grasscutters'
-version = '1.2.3-dev'
+version = '1.3.2-dev'
 
 sourceCompatibility = 17
 targetCompatibility = 17
@@ -92,6 +92,9 @@ dependencies {
 
     implementation group:  'com.esotericsoftware', name : 'reflectasm', version: '1.11.9'
     implementation group:  'com.github.davidmoten', name : 'rtree-multi', version: '0.1'
+
+    implementation group: 'io.javalin', name: 'javalin', version: '4.6.4'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
 
     protobuf files('proto/')
 
@@ -163,12 +166,7 @@ publishing {
                     developer {
                         id = 'meledy'
                         name = 'Meledy'
-                        email = 'meledy@xigam.tech' // not a real email kek
-                    }
-                    developer {
-                        id = 'magix'
-                        name = 'Magix'
-                        email = 'magix@xigam.tech'
+                        email = 'meledy@grasscutter.io' // not a real email kek
                     }
                 }
                 scm {

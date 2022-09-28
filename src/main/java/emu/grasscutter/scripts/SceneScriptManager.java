@@ -310,6 +310,7 @@ public class SceneScriptManager {
 
     private void realCallEvent(int eventType, ScriptArgs params) {
         try {
+            ScriptLoader.getScriptLib().setSceneScriptManager(this);
             Set<SceneTrigger> relevantTriggers = new HashSet<>();
             if (eventType == EventType.EVENT_ENTER_REGION || eventType == EventType.EVENT_LEAVE_REGION) {
                 List<SceneTrigger> relevantTriggersList = this.getTriggersByEvent(eventType).stream()

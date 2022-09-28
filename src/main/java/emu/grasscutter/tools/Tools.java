@@ -2,9 +2,11 @@ package emu.grasscutter.tools;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -97,7 +99,9 @@ public final class Tools {
 
         // Write txt files
         for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-            final String fileName = "./GM Handbook - %s.txt".formatted(TextStrings.ARR_LANGUAGES[i]);
+            File GMHandbookOutputpath=new File("./GM Handbook");
+            GMHandbookOutputpath.mkdir();
+            final String fileName = "./GM Handbook/GM Handbook - %s.txt".formatted(TextStrings.ARR_LANGUAGES[i]);
             try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8), false)) {
                 writer.write(handbookBuilders.get(i).toString());
             }
@@ -213,11 +217,15 @@ public final class Tools {
     }
 
     public static List<String> getAvailableLanguage() {
-        File textMapFolder = new File(RESOURCE("TextMap"));
         List<String> availableLangList = new ArrayList<>();
-        for (String textMapFileName : Objects.requireNonNull(textMapFolder.list((dir, name) -> name.startsWith("TextMap") && name.endsWith(".json")))) {
-            availableLangList.add(textMapFileName.replace("TextMap", "").replace(".json", "").toLowerCase());
-        } return availableLangList;
+        try {
+            Files.newDirectoryStream(getResourcePath("TextMap"), "TextMap*.json").forEach(path -> {
+                availableLangList.add(path.getFileName().toString().replace("TextMap", "").replace(".json", "").toLowerCase());
+            });
+        } catch (IOException e) {
+            Grasscutter.getLogger().error("Failed to get available languages:", e);
+        }
+        return availableLangList;
     }
 
     @Deprecated(forRemoval = true, since = "1.2.3")

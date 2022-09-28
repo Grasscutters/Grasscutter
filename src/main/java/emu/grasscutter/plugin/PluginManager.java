@@ -9,6 +9,7 @@ import lombok.*;
 import javax.annotation.Nullable;
 
 import static emu.grasscutter.config.Configuration.PLUGIN;
+import static emu.grasscutter.utils.Language.translate;
 
 import java.io.*;
 import java.lang.reflect.Method;
@@ -44,7 +45,7 @@ public final class PluginManager {
     private void loadPlugins() {
         File pluginsDir = new File(Utils.toFilePath(PLUGIN()));
         if (!pluginsDir.exists() && !pluginsDir.mkdirs()) {
-            Grasscutter.getLogger().error("Failed to create plugins directory: " + pluginsDir.getAbsolutePath());
+            Grasscutter.getLogger().error(translate("plugin.directory_failed", pluginsDir.getAbsolutePath()));
             return;
         }
 
@@ -63,7 +64,7 @@ public final class PluginManager {
             try {
                 pluginNames[plugins.indexOf(plugin)] = plugin.toURI().toURL();
             } catch (MalformedURLException exception) {
-                Grasscutter.getLogger().warn("Unable to load plugin.", exception);
+                Grasscutter.getLogger().warn(translate("plugin.unable_to_load"), exception);
             }
         });
 
@@ -86,7 +87,7 @@ public final class PluginManager {
                     PluginConfig pluginConfig = JsonUtils.loadToClass(fileReader, PluginConfig.class);
                     // Check if the plugin config is valid.
                     if (!pluginConfig.validate()) {
-                        Grasscutter.getLogger().warn("Plugin " + plugin.getName() + " has an invalid config file.");
+                        Grasscutter.getLogger().warn(translate("plugin.invalid_config", plugin.getName()));
                         return;
                     }
 
@@ -120,12 +121,12 @@ public final class PluginManager {
                     // Load the plugin.
                     this.loadPlugin(pluginInstance, PluginIdentifier.fromPluginConfig(pluginConfig), loader);
                 } catch (ClassNotFoundException ignored) {
-                    Grasscutter.getLogger().warn("Plugin " + plugin.getName() + " has an invalid main class.");
+                    Grasscutter.getLogger().warn(translate("plugin.invalid_main_class", plugin.getName()));
                 } catch (FileNotFoundException ignored) {
-                    Grasscutter.getLogger().warn("Plugin " + plugin.getName() + " lacks a valid config file.");
+                    Grasscutter.getLogger().warn(translate("plugin.missing_config", plugin.getName()));
                 }
             } catch (Exception exception) {
-                Grasscutter.getLogger().error("Failed to load plugin: " + plugin.getName(), exception);
+                Grasscutter.getLogger().error(translate("plugin.failed_to_load_plugin", plugin.getName()), exception);
             }
         }
 
@@ -134,7 +135,7 @@ public final class PluginManager {
         while (!dependencies.isEmpty()) {
             // Check if the depth is too high.
             if (depth >= maxDepth) {
-                Grasscutter.getLogger().error("Failed to load plugins with dependencies.");
+                Grasscutter.getLogger().error(translate("plugin.failed_to_load_dependencies"));
                 break;
             }
 
@@ -154,7 +155,7 @@ public final class PluginManager {
                 // Load the plugin.
                 this.loadPlugin(pluginData.getPlugin(), pluginData.getIdentifier(), pluginData.getClassLoader());
             } catch (Exception exception) {
-                Grasscutter.getLogger().error("Failed to load a plugin.", exception); depth++;
+                Grasscutter.getLogger().error(translate("plugin.failed_to_load"), exception); depth++;
             }
         }
     }
@@ -165,7 +166,7 @@ public final class PluginManager {
      * @param plugin The plugin instance.
      */
     private void loadPlugin(Plugin plugin, PluginIdentifier identifier, URLClassLoader classLoader) {
-        Grasscutter.getLogger().info("Loading plugin: " + identifier.name);
+        Grasscutter.getLogger().info(translate("plugin.loading_plugin", identifier.name));
 
         // Add the plugin's identifier.
         try {
@@ -175,7 +176,7 @@ public final class PluginManager {
             method.invoke(plugin, identifier, classLoader);
             method.setAccessible(false);
         } catch (Exception ignored) {
-            Grasscutter.getLogger().warn("Failed to add plugin identifier: " + identifier.name);
+            Grasscutter.getLogger().warn(translate("plugin.failed_add_id", identifier.name));
         }
 
         // Add the plugin to the list of loaded plugins.
@@ -187,7 +188,7 @@ public final class PluginManager {
         try {
             plugin.onLoad();
         } catch (Throwable exception) {
-            Grasscutter.getLogger().error("Failed to load plugin: " + identifier.name, exception);
+            Grasscutter.getLogger().error(translate("plugin.failed_to_load_plugin", identifier.name), exception);
         }
     }
 
@@ -196,11 +197,11 @@ public final class PluginManager {
      */
     public void enablePlugins() {
         this.plugins.forEach((name, plugin) -> {
-            Grasscutter.getLogger().info("Enabling plugin: " + name);
+            Grasscutter.getLogger().info(translate("plugin.enabling_plugin", name));
             try {
                 plugin.onEnable();
             } catch (Throwable exception) {
-                Grasscutter.getLogger().error("Failed to enable plugin: " + name, exception);
+                Grasscutter.getLogger().error(translate("plugin.enabling_failed", name), exception);
             }
         });
     }
@@ -210,7 +211,7 @@ public final class PluginManager {
      */
     public void disablePlugins() {
         this.plugins.forEach((name, plugin) -> {
-            Grasscutter.getLogger().info("Disabling plugin: " + name);
+            Grasscutter.getLogger().info(translate("plugin.disabling_plugin", name));
             this.disablePlugin(plugin);
         });
     }
@@ -277,7 +278,7 @@ public final class PluginManager {
             // Call the plugin's onEnable method.
             plugin.onEnable();
         } catch (Exception exception) {
-            Grasscutter.getLogger().error("Failed to enable plugin: " + plugin.getName(), exception);
+            Grasscutter.getLogger().error(translate("plugin.enabling_failed", plugin.getName()), exception);
         }
     }
 
@@ -291,7 +292,7 @@ public final class PluginManager {
             // Call the plugin's onDisable method.
             plugin.onDisable();
         } catch (Exception exception) {
-            Grasscutter.getLogger().error("Failed to disable plugin: " + plugin.getName(), exception);
+            Grasscutter.getLogger().error(translate("plugin.disabling_failed", plugin.getName()), exception);
         }
 
         // Un-register all listeners.

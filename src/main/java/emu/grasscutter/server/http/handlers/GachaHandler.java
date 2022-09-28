@@ -7,13 +7,11 @@ import emu.grasscutter.game.gacha.GachaBanner;
 import emu.grasscutter.game.gacha.GachaSystem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.http.Router;
-import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
-import express.Express;
-import express.http.Request;
-import express.http.Response;
 import io.javalin.Javalin;
+import io.javalin.http.ContentType;
+import io.javalin.http.Context;
 import io.javalin.http.staticfiles.Location;
 
 import java.io.File;
@@ -31,38 +29,38 @@ import static emu.grasscutter.utils.Language.translate;
 public final class GachaHandler implements Router {
     public static final String gachaMappings = DATA(Utils.toFilePath("gacha/mappings.js"));
 
-    @Override public void applyRoutes(Express express, Javalin handle) {
-        express.get("/gacha", GachaHandler::gachaRecords);
-        express.get("/gacha/details", GachaHandler::gachaDetails);
+    @Override public void applyRoutes(Javalin javalin) {
+        javalin.get("/gacha", GachaHandler::gachaRecords);
+        javalin.get("/gacha/details", GachaHandler::gachaDetails);
 
-        express.useStaticFallback("/gacha/mappings", gachaMappings, Location.EXTERNAL);
+        javalin._conf.addSinglePageRoot("/gacha/mappings", gachaMappings, Location.EXTERNAL);
     }
 
-    private static void gachaRecords(Request request, Response response) {
+    private static void gachaRecords(Context ctx) {
         File recordsTemplate = new File(Utils.toFilePath(DATA("gacha/records.html")));
         if (!recordsTemplate.exists()) {
             Grasscutter.getLogger().warn("File does not exist: " + recordsTemplate);
-            response.status(500);
+            ctx.status(500);
             return;
         }
 
-        String sessionKey = request.query("s");
+        String sessionKey = ctx.queryParam("s");
         Account account = DatabaseHelper.getAccountBySessionKey(sessionKey);
         if (account == null) {
-            response.status(403).send("Requested account was not found");
+            ctx.status(403).result("Requested account was not found");
             return;
         }
         Player player = Grasscutter.getGameServer().getPlayerByAccountId(account.getId());
         if (player == null) {
-            response.status(403).send("No player associated with requested account");
+            ctx.status(403).result("No player associated with requested account");
             return;
         }
 
         int page = 0, gachaType = 0;
-        if (request.query("p") != null)
-            page = Integer.parseInt(request.query("p"));
-        if (request.query("gachaType") != null)
-            gachaType = Integer.parseInt(request.query("gachaType"));
+        if (ctx.queryParam("p") != null)
+            page = Integer.parseInt(ctx.queryParam("p"));
+        if (ctx.queryParam("gachaType") != null)
+            gachaType = Integer.parseInt(ctx.queryParam("gachaType"));
 
         String records = DatabaseHelper.getGachaRecords(player.getUid(), page, gachaType).toString();
         long maxPage = DatabaseHelper.getGachaRecordsMaxPage(player.getUid(), page, gachaType);
@@ -74,26 +72,27 @@ public final class GachaHandler implements Router {
             .replace("{{DATE}}", translate(player, "gacha.records.date"))
             .replace("{{ITEM}}", translate(player, "gacha.records.item"))
             .replace("{{LANGUAGE}}", Utils.getLanguageCode(account.getLocale()));
-        response.send(template);
+        ctx.contentType(ContentType.TEXT_HTML);
+        ctx.result(template);
     }
 
-    private static void gachaDetails(Request request, Response response) {
+    private static void gachaDetails(Context ctx) {
         File detailsTemplate = new File(Utils.toFilePath(DATA("gacha/details.html")));
         if (!detailsTemplate.exists()) {
             Grasscutter.getLogger().warn("File does not exist: " + detailsTemplate);
-            response.status(500);
+            ctx.status(500);
             return;
         }
 
-        String sessionKey = request.query("s");
+        String sessionKey = ctx.queryParam("s");
         Account account = DatabaseHelper.getAccountBySessionKey(sessionKey);
         if (account == null) {
-            response.status(403).send("Requested account was not found");
+            ctx.status(403).result("Requested account was not found");
             return;
         }
         Player player = Grasscutter.getGameServer().getPlayerByAccountId(account.getId());
         if (player == null) {
-            response.status(403).send("No player associated with requested account");
+            ctx.status(403).result("No player associated with requested account");
             return;
         }
 
@@ -107,7 +106,7 @@ public final class GachaHandler implements Router {
                 .replace("{{LANGUAGE}}", Utils.getLanguageCode(account.getLocale()));
 
         // Get the banner info for the banner we want.
-        int scheduleId = Integer.parseInt(request.query("scheduleId"));
+        int scheduleId = Integer.parseInt(ctx.queryParam("scheduleId"));
         GachaSystem manager = Grasscutter.getGameServer().getGachaSystem();
         GachaBanner banner = manager.getGachaBanners().get(scheduleId);
 
@@ -135,6 +134,7 @@ public final class GachaHandler implements Router {
         template = template.replace("{{THREE_STARS}}", "[" + String.join(",", threeStarItems) + "]");
 
         // Done.
-        response.send(template);
+        ctx.contentType(ContentType.TEXT_HTML);
+        ctx.result(template);
     }
 }

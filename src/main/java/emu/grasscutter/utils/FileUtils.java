@@ -9,7 +9,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -17,7 +16,7 @@ import java.util.stream.Collectors;
 
 public final class FileUtils {
 	public static void write(String dest, byte[] bytes) {
-		Path path = Paths.get(dest);
+		Path path = Path.of(dest);
 		
 		try {
 			Files.write(path, bytes);
@@ -27,7 +26,7 @@ public final class FileUtils {
 	}
 	
 	public static byte[] read(String dest) {
-		return read(Paths.get(dest));
+		return read(Path.of(dest));
 	}
 
 	public static byte[] read(Path path) {

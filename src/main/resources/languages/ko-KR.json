@@ -1,6 +1,7 @@
 {
   "messages": {
     "game": {
+      "address_bind": "🇺🇸Game Server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "게임 서버가 포트 %s에서 열렸습니다.",
       "connect": "클라이언트가 %s에서 연결됐습니다.",
       "disconnect": "클라이언트가 %s에서 연결이 끊겼습니다.",
@@ -8,6 +9,7 @@
       "command_error": "명령어 오류:"
     },
     "dispatch": {
+      "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] 디스패치 서버가 포트 %s에서 열렸습니다.",
       "request": "🇺🇸[Dispatch] Client %s %s request: %s",
       "keystore": {
@@ -205,8 +207,8 @@
       "description": "사용자에게 권한을 부여하거나 제거합니다."
     },
     "position": {
-      "success": "좌표: %s, %s, %s\nScene ID: %s",
-      "description": "좌표를 출력합니다"
+      "success": "좌표: %s, %s, %s\n회전：%s, %s, %s\nScene ID: %s",
+      "description": "위치 및 회전 정보를 가져옵니다"
     },
     "quest": {
       "added": "%s 퀘스트가 추가되었습니다.",
@@ -380,5 +382,21 @@
       "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "🇺🇸Gacha mapping JSON"
     }
+  },
+  "plugin": {
+    "directory_failed": "🇺🇸Failed to create plugins directory: ",
+    "unable_to_load": "🇺🇸Unable to load plugin.",
+    "invalid_config": "🇺🇸Plugin %s has an invalid config file.",
+    "invalid_main_class": "🇺🇸Plugin %s has an invalid main class.",
+    "missing_config": "🇺🇸Plugin %s lacks a valid config file.",
+    "failed_to_load_plugin": "🇺🇸Failed to load plugin: %s",
+    "failed_to_load": "🇺🇸Failed to load a plugin.",
+    "failed_to_load_dependencies": "🇺🇸Failed to load plugins with dependencies.",
+    "loading_plugin": "🇺🇸Loading plugin: %s",
+    "failed_add_id": "🇺🇸Failed to add plugin identifier: %s",
+    "enabling_plugin": "🇺🇸Enabling plugin: %s",
+    "enabling_failed": "🇺🇸Failed to enable plugin: %s",
+    "disabling_plugin": "🇺🇸Disabling plugin: %s",
+    "disabling_failed": "🇺🇸Failed to disable plugin: %s"
   }
 }

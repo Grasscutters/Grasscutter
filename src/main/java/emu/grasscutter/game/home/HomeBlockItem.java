@@ -45,7 +45,7 @@ public class HomeBlockItem {
                 .toList();
     }
 
-    public int calComfort(){
+    public int calComfort() {
         return this.deployFurnitureList.stream()
                 .mapToInt(HomeFurnitureItem::getComfort)
                 .sum();
@@ -75,9 +75,13 @@ public class HomeBlockItem {
                                 homeBlock.getFurnitures().stream()
                                         .map(HomeFurnitureItem::parseFrom)
                                         .toList())
+                .persistentFurnitureList(
+                        homeBlock.getPersistentFurnitures() == null ? List.of() :
+                                homeBlock.getPersistentFurnitures().stream()
+                                        .map(HomeFurnitureItem::parseFrom)
+                                        .toList())
                 .deployAnimalList(List.of())
                 .deployNPCList(List.of())
-                .persistentFurnitureList(List.of())
                 .build();
     }
 }

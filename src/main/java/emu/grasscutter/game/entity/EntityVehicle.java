@@ -1,16 +1,18 @@
 package emu.grasscutter.game.entity;
 
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.ConfigGadget;
+import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
-
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
-import emu.grasscutter.net.proto.FightPropPairOuterClass.*;
+import emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.PropPairOuterClass.PropPair;
 import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType;
@@ -18,18 +20,18 @@ import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
-import emu.grasscutter.net.proto.VehicleInfoOuterClass.*;
-import emu.grasscutter.net.proto.VehicleMemberOuterClass.*;
+import emu.grasscutter.net.proto.VehicleInfoOuterClass.VehicleInfo;
+import emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
-
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
+import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class EntityVehicle extends EntityBaseGadget {
 
@@ -44,6 +46,7 @@ public class EntityVehicle extends EntityBaseGadget {
 
     @Getter @Setter private float curStamina;
     @Getter private List<VehicleMember> vehicleMembers;
+    @Nullable @Getter private ConfigGadget configGadget;
 
     public EntityVehicle(Scene scene, Player player, int gadgetId, int pointId, Position pos, Position rot) {
         super(scene);
@@ -54,21 +57,21 @@ public class EntityVehicle extends EntityBaseGadget {
         this.rot = new Position(rot);
         this.gadgetId = gadgetId;
         this.pointId = pointId;
-        this.curStamina = 240;
-        this.vehicleMembers = new ArrayList<VehicleMember>();
-
-        switch (gadgetId) {
-            case 45001001,45001002 -> {  // TODO: Not hardcode this. Waverider (skiff)
-                this.addFightProperty(FightProperty.FIGHT_PROP_BASE_HP, 10000);
-                this.addFightProperty(FightProperty.FIGHT_PROP_BASE_ATTACK, 100);
-                this.addFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK, 100);
-                this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 10000);
-                this.addFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE, 0);
-                this.addFightProperty(FightProperty.FIGHT_PROP_CUR_SPEED, 0);
-                this.addFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, 0);
-                this.addFightProperty(FightProperty.FIGHT_PROP_MAX_HP, 10000);
-            }
+        this.curStamina = 240; // might be in configGadget.GCALKECLLLP.JBAKBEFIMBN.ANBMPHPOALP
+        this.vehicleMembers = new ArrayList<>();
+        GadgetData data = GameData.getGadgetDataMap().get(gadgetId);
+        if (data != null && data.getJsonName() != null) {
+            this.configGadget = GameData.getGadgetConfigData().get(data.getJsonName());
         }
+
+        fillFightProps(configGadget);
+    }
+
+    @Override
+    protected void fillFightProps(ConfigGadget configGadget) {
+        super.fillFightProps(configGadget);
+        this.addFightProperty(FightProperty.FIGHT_PROP_CUR_SPEED, 0);
+        this.addFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, 0);
     }
 
     @Override

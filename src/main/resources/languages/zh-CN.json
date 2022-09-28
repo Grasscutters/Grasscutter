@@ -1,6 +1,7 @@
 {
   "messages": {
     "game": {
+      "address_bind": "游戏服务器启动于 \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "游戏服务器已在端口 %s 上启动。",
       "connect": "客户端 %s 已连接。",
       "disconnect": "客户端 %s 已断开连接。",
@@ -8,7 +9,8 @@
       "command_error": "命令发生错误："
     },
     "dispatch": {
-      "port_bind": "[Dispatch] 服务器已在端口 %s 上启动",
+      "address_bind": "[Dispatch] Dispatch 服务器启动于 \u001b[1m\u001b[33m%s:%s\u001b[0m",
+      "port_bind": "[Dispatch] Dispatch 服务器已在端口 %s 上启动",
       "request": "[Dispatch] 客户端 %s 请求：%s %s",
       "keystore": {
         "general_error": "[Dispatch] 加载 keystore 文件时发生错误！",
@@ -39,8 +41,8 @@
         "session_key_error": "会话密钥错误",
         "username_error": "未找到用户名",
         "username_create_error": "用户名不存在，登录失败",
-        "password_error": "登录失败，请确认帐号/密码是否正确",
-        "password_length_error": "密码必须大于或等于8位",
+        "password_error": "登录失败，请确认账号/密码是否正确",
+        "password_length_error": "密码必须大于或等于 8 位",
         "password_storage_error": "你没有密码，请联系管理员",
         "server_max_player_limit": "服务器在线人数已满"
       },
@@ -179,7 +181,7 @@
     },
     "killall": {
       "scene_not_found_in_player_world": "未在玩家世界中找到此场景。",
-      "kill_monsters_in_scene": "已杀死场景 %s 中的 %s 个怪物。",
+      "kill_monsters_in_scene": "已杀死 %s 个怪物。 [场景ID: %s ]",
       "description": "杀死所有怪物"
     },
     "killCharacter": {
@@ -205,8 +207,8 @@
       "description": "添加或移除指定玩家的权限"
     },
     "position": {
-      "success": "坐标：%s, %s, %s\n场景ID：%s",
-      "description": "获取所在位置"
+      "success": "坐标：%s, %s, %s\n旋转：%s, %s, %s\n场景ID：%s",
+      "description": "获取所在位置和旋转信息"
     },
     "quest": {
       "added": "已添加任务 %s。",
@@ -276,9 +278,9 @@
     "setStats": {
       "description": "设置当前角色的属性\n\t可更改的属性列表：hp(生命值)|maxhp(最大生命值)|def(防御力)|atk(攻击力)|em(元素精通)|er(元素充能效率)|crate(暴击率)|cdmg(暴击伤害)|cdr(冷却缩减)|heal(治疗加成)|heali(受治疗加成)|shield(护盾强效)|defi(无视防御)\n\t元素增伤：epyro(火)|ecryo(冰)|ehydro(水)|egeo(岩)|edendro(草)|eelectro(雷)|ephys(物理)\n\t元素抗性：respyro(火)|rescryo(冰)|reshydro(水)|resgeo(岩)|resdendro(草)|reselectro(雷)|resphys(物理)",
       "locked_to": "%s 已锁定为：%s。",
-      "locked_for_to": "%s 属于 %s 的，已锁定为：%s。",
+      "locked_for_to": "%s [来自 %s] 已锁定为：%s。",
       "unlocked": "%s 已解锁。",
-      "unlocked_for": "%s 属于 %s 的，已解锁。"
+      "unlocked_for": "%s [来自 %s] 已解锁。"
     },
     "spawn": {
       "success": "已生成 %s 个 %s。",
@@ -328,7 +330,7 @@
     "weather": {
       "success": "已设置天气ID 为 %s，气候类型为 %s。",
       "status": "当前天气ID 为 %s，气候类型为 %s。",
-      "description": "更改天气ID和气候类型。天气ID可以在 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json 中找到。\n\t气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
+      "description": "更改天气ID和气候类型。\n\t天气ID可以在 ./Resources/ExcelBinOutput/WeatherExcelConfigData.json 中找到。\n\t气候类型：sunny(晴天), cloudy(多云), rain(雨), thunderstorm(雷雨), snow(雪), mist(雾)"
     },
     "ban": {
       "success": "成功封禁玩家。",
@@ -361,7 +363,7 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM 手册",
+      "title": "GM手册",
       "title_commands": "命令",
       "title_avatars": "角色",
       "title_items": "物品",
@@ -377,8 +379,24 @@
     },
     "index": {
       "title": "文档",
-      "handbook": "GM 手册",
+      "handbook": "GM手册",
       "gacha_mapping": "祈愿物品映射JSON"
     }
+  },
+  "plugin": {
+    "directory_failed": "无法创建插件目录：",
+    "unable_to_load": "无法加载插件。",
+    "invalid_config": "插件：%s 的配置文件无效。",
+    "invalid_main_class": "插件：%s 的主类无效。",
+    "missing_config": "插件：%s 缺少有效的配置文件。",
+    "failed_to_load_plugin": "无法加载插件：%s",
+    "failed_to_load": "无法加载插件。",
+    "failed_to_load_dependencies": "无法加载插件依赖。",
+    "loading_plugin": "正在加载插件：%s",
+    "failed_add_id": "无法添加插件标识符：%s",
+    "enabling_plugin": "启用插件：%s",
+    "enabling_failed": "无法启用插件：%s",
+    "disabling_plugin": "正在禁用插件：%s",
+    "disabling_failed": "无法禁用插件：%s"
   }
 }
