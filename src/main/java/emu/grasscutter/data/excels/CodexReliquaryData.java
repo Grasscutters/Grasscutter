@@ -34,6 +34,13 @@ public class CodexReliquaryData extends GameResource {
 
     @Override
     public void onLoad() {
+        // Normalize all itemIds to the 0-substat form
+        cupId = (cupId/10) * 10;
+        leatherId = (leatherId/10) * 10;
+        capId = (capId/10) * 10;
+        flowerId = (flowerId/10) * 10;
+        sandId = (sandId/10) * 10;
+
         GameData.getcodexReliquaryArrayList().add(this);
         GameData.getcodexReliquaryIdMap().put(getSuitId(), this);
     }

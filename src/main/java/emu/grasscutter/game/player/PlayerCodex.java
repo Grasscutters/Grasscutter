@@ -45,6 +45,7 @@ public class PlayerCodex {
 
     public void setPlayer(Player player) {
         this.player = player;
+        this.fixReliquaries();
     }
 
     public void checkAddedItem(GameItem item){
@@ -76,8 +77,9 @@ public class PlayerCodex {
                 }
             }
             case ITEM_RELIQUARY -> {
-                if (this.getUnlockedReliquary().add(itemId))
-                    checkUnlockedSuits(item);
+                val reliquaryId = (itemId/10) * 10;  // Normalize to 0-substat form
+                if (this.getUnlockedReliquary().add(reliquaryId))
+                    checkUnlockedSuits(reliquaryId);
             }
             default -> {}
         }
@@ -99,8 +101,7 @@ public class PlayerCodex {
         }
     }
 
-    public void checkUnlockedSuits(GameItem item){
-        int reliquaryId = item.getItemId();
+    public void checkUnlockedSuits(int reliquaryId){
         GameData.getcodexReliquaryArrayList().stream()
             .filter(x -> !this.getUnlockedReliquarySuitCodex().contains(x.getId()))
             .filter(x -> x.containsId(reliquaryId))
@@ -111,5 +112,19 @@ public class PlayerCodex {
                 this.player.save();
                 this.player.sendPacket(new PacketCodexDataUpdateNotify(8, id));
             });
+    }
+
+    @Deprecated  // Maybe remove this if we ever stop caring about older dbs
+    private void fixReliquaries() {
+        // Migrate older database entries which were using non-canonical forms of itemIds
+        val newReliquaries = new HashSet<Integer>();
+        this.unlockedReliquary.forEach(i -> newReliquaries.add((i/10)*10));
+        this.unlockedReliquary = newReliquaries;
+
+        GameData.getcodexReliquaryArrayList().stream()
+            .filter(x -> !this.getUnlockedReliquarySuitCodex().contains(x.getId()))
+            .filter(x -> this.getUnlockedReliquary().containsAll(x.getIds()))
+            .forEach(x -> this.getUnlockedReliquarySuitCodex().add(x.getId()));
+        this.player.save();
     }
 }
