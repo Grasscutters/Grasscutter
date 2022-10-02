@@ -291,6 +291,16 @@
       "success": "Server shutting down...",
       "description": "Stops the server"
     },
+    "switchelement": {
+      "usage": "Usage: se|switchelement <(white|common)|(anemo|wind|air)|(geo|rock)|electro|(dendro|grass|plant)> \nCorresponding to elementless/wind/rock/lightning/grass \nSwitching may be problematic if the traveler is not in the group", 
+      "success": "Successfully switch traveler's element to %s. ", 
+      "success_without_switch_scene": "Successfully switch traveler's element to %s, but reloading the scene failed. Please reload the scene manually.", 
+      "failed": "Failed to switch element. ", 
+      "failed_console": "The SwitchElement command cannot be executed on the console. ", 
+      "failed_no_element": "Switching failure, invalid element. ", 
+      "failed_unable_element": "Switching failed, this element is not yet available. ", 
+      "description": "Switching the elements of the traveler. "
+    },
     "talent": {
       "lower_16": "Invalid talent level. Level should be lower than 16.",
       "set_id": "Set talent %s - \"%s\" to %s.",

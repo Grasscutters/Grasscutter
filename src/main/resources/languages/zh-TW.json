@@ -291,6 +291,16 @@
       "success": "正在關閉伺服器...",
       "description": "以正常的方式關閉伺服器。"
     },
+    "switchelement": {
+      "usage": "用法: se|switchelement <(white|common)|(anemo|wind|air)|(geo|rock)|electro|(dendro|grass|plant)> \n分別對應 無元素/風/岩/雷/草 \n如果旅行者不在隊伍中, 切換可能會出現問題", 
+      "success": "成功切換旅行者的元素為 %s. ", 
+      "success_without_switch_scene": "成功切換旅行者的元素為 %s, 但重載場景失敗. 請手動重載場景.", 
+      "failed": "切換元素失敗. ", 
+      "failed_console": "SwitchElement 命令不能在控制台執行. ", 
+      "failed_no_element": "切換失敗, 無效元素. ", 
+      "failed_unable_element": "切換失敗, 這個元素還不可用. ", 
+      "description": "切換旅行者的元素. "
+    },
     "talent": {
       "lower_16": "無效的天賦等級，技能等級應低於 16。",
       "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",

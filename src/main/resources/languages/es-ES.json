@@ -291,6 +291,16 @@
       "success": "Finalizando el servidor...",
       "description": "Detiene el servidor"
     },
+    "switchelement": {
+      "usage": "Uso: se|switchelement <(white|common)|(anemo|wind|air)|(geo|rock)|electro|(dendro|grass|plant)> \nCorresponde a sin elementos/viento/roca/relámpago/hierba \nEl cambio puede ser un problema si el viajero no está en el grupo", 
+      "success": "Cambió con éxito el elemento viajero por el %s. ", 
+      "success_without_switch_scene": "Cambió con éxito el elemento viajero por el %s, pero la recarga de la escena falló. Por favor, recargue la escena manualmente.", 
+      "failed": "Fallo en el cambio de elementos. ", 
+      "failed_console": "El comando SwitchElement no puede ser ejecutado en la consola. ", 
+      "failed_no_element": "Conmutación fallida, elemento no válido. ", 
+      "failed_unable_element": "La conmutación ha fallado, este elemento aún no está disponible. ", 
+      "description": "Cambiar el elemento del viajero. "
+    },
     "talent": {
       "lower_16": "Nivel de talento inválido. El nivel debe ser menor que 16.",
       "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",

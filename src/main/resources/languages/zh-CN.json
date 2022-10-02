@@ -291,6 +291,16 @@
       "success": "正在关闭服务器...",
       "description": "停止服务器"
     },
+    "switchelement": {
+      "usage": "用法: se|switchelement <(white|common)|(anemo|wind|air)|(geo|rock)|electro|(dendro|grass|plant)> \n分别对应 无元素/风/岩/雷/草 \n如果旅行者不在队伍中, 切换可能会出现问题", 
+      "success": "成功切换旅行者的元素为 %s. ", 
+      "success_without_switch_scene": "成功切换旅行者的元素为 %s, 但重载场景失败. 请手动重载场景.", 
+      "failed": "切换元素失败. ", 
+      "failed_console": "SwitchElement 命令不能在控制台执行. ", 
+      "failed_no_element": "切换失败, 无效元素. ", 
+      "failed_unable_element": "切换失败, 这个元素还不可用. ", 
+      "description": "切换旅行者的元素. "
+    },
     "talent": {
       "lower_16": "无效的天赋等级，天赋等级应在 1-15 之间。",
       "set_id": "修改技能 %s - \"%s\" 至 %s。",

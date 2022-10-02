@@ -291,6 +291,16 @@
       "success": "サーバーをシャットダウン...",
       "description": "サーバーを停止中"
     },
+    "switchelement": {
+      "usage": "使用方法: se|switchelement <(white|common)|(anemo|wind|air)|(geo|rock)|electro|(dendro|grass|plant)> \nエレメントレス/風/岩/雷/草に対応します \n旅行者がグループ内にいない場合、スイッチングが問題になることがある", 
+      "success": "トラベラーズエレメントを %s に変更することに成功. ", 
+      "success_without_switch_scene": "トラベラーズエレメントを %s に変更することに成功, しかし、シーンの再読み込みは失敗しました。シーンを手動で再読み込みしてください.", 
+      "failed": "エレメントの切り替えに失敗しました. ", 
+      "failed_console": "コンソールでSwitchElementコマンドを実行できない. ", 
+      "failed_no_element": "スイッチングに失敗しました、無効な要素です. ", 
+      "failed_unable_element": "スイッチングに失敗しました. ", 
+      "description": "トラベラーズエレメントのスイッチング. "
+    },
     "talent": {
       "lower_16": "天賦レベルが無効です｡ レベルは16未満である必要があります｡",
       "set_id": "%s - の天賦\"%s\" を %s に設定しました",

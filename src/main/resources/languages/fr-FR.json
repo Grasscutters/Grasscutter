@@ -291,6 +291,16 @@
       "success": "Arrêt du serveur...",
       "description": "Arrête le serveur"
     },
+    "switchelement": {
+      "usage": "Utilisation: se|switchelement <(white|common)|(anemo|wind|air)|(geo|rock)|electro|(dendro|grass|plant)> \nCorrespond à élémentless/wind/rock/lightning/grass \nL'échange peut être un problème si le voyageur ne fait pas partie du groupe.", 
+      "success": "Succès de l'échange de l'élément de voyageur pour %s. ", 
+      "success_without_switch_scene": "Succès de l'échange de l'élément de voyageur pour %s, mais le rechargement de la scène a échoué. Veuillez recharger la scène manuellement.", 
+      "failed": "Échec de la commutation des éléments. ", 
+      "failed_console": "La commande SwitchElement ne peut pas être exécutée sur la console. ", 
+      "failed_no_element": "Échec de la commutation, élément non valide. ", 
+      "failed_unable_element": "La commutation a échoué, cet élément n'est pas encore disponible. ", 
+      "description": "Changement d'élément du voyageur. "
+    },
     "talent": {
       "lower_16": "Niveau de talent invalide. Le niveau doit être inférieur a 16.",
       "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",

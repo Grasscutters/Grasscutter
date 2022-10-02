@@ -291,6 +291,16 @@
       "success": "Serwer zatrzymuje się...",
       "description": "Zatrzymaj serwer."
     },
+    "switchelement": {
+      "usage": "Zastosowanie: se|switchelement <(white|common)|(anemo|wind|air)|(geo|rock)|electro|(dendro|grass|plant)> \nOdpowiada elementom/wiatrowi/skale/piorunowi/trawie \nPrzełączanie może być problemem, jeśli podróżny nie jest w grupie", 
+      "success": "Udało się zmienić element podróżny na %s. ", 
+      "success_without_switch_scene": "Udało się zmienić element podróżny na %s, ale przeładowanie sceny nie powiodło się. Proszę przeładować scenę ręcznie.", 
+      "failed": "Nie udało się przełączyć elementów. ", 
+      "failed_console": "Polecenie SwitchElement nie może być wykonane na konsoli. ", 
+      "failed_no_element": "Switching failed, invalid element. ", 
+      "failed_unable_element": "Przełączanie nie powiodło się, ten element nie jest jeszcze dostępny. ", 
+      "description": "Przełączenie elementu podróżnego. "
+    },
     "talent": {
       "lower_16": "Błędny poziom talentu. Poziom ten powinien być mniejszy niż 16.",
       "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",

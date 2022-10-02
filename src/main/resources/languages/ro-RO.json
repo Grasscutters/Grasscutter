@@ -291,6 +291,16 @@
       "success": "Serverul se oprește...",
       "description": "Oprește serverul"
     },
+    "switchelement": {
+      "usage": "Utilizare: se|switchelement <(white|common)|(anemo|wind|air)|(geo|rock)|electro|(dendro|grass|plant)> \nCorespunde la elementless/wind/rock/lightning/grass \nSchimbul poate fi o problemă dacă călătorul nu face parte din grup", 
+      "success": "A reușit să schimbe cu succes elementul călătorului în %s. ", 
+      "success_without_switch_scene": "A reușit să schimbe cu succes elementul călătorului în %s, dar reîncărcarea scenei a eșuat. Vă rugăm să reîncărcați manual scena.", 
+      "failed": "Nu s-a reușit comutarea elementelor. ", 
+      "failed_console": "Comanda SwitchElement nu poate fi executată pe consolă. ", 
+      "failed_no_element": "Comutare eșuată, element invalid. ", 
+      "failed_unable_element": "Comutarea a eșuat, acest element nu este încă disponibil. ", 
+      "description": "Schimbarea elementului călătorului. "
+    },
     "talent": {
       "lower_16": "Nivel de talent nevalabil. Nivelul trebuie să fie mai mic ca 16.",
       "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",

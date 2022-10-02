@@ -291,6 +291,16 @@
       "success": "서버 닫는중...",
       "description": "서버를 중지합니다"
     },
+    "switchelement": {
+      "usage": "용법: se|switchelement <(white|common)|(anemo|wind|air)|(geo|rock)|electro|(dendro|grass|plant)> \n무요소/바람/바위/번개/잔디에 해당 \n여행자가 그룹에 없는 경우 전환이 문제가 될 수 있습니다.", 
+      "success": "여행자를 성공적으로 전환하는 요소는 %s 입니다. ", 
+      "success_without_switch_scene": "여행자를 성공적으로 전환하는 요소는 %s 입니다, 그러나 장면을 다시 로드하지 못했습니다. 장면을 수동으로 다시 로드하십시오.", 
+      "failed": "요소를 전환하지 못했습니다. ", 
+      "failed_console": "SwitchElement 명령은 콘솔에서 실행할 수 없습니다. ", 
+      "failed_no_element": "스위치 실패, 잘못된 요소. ", 
+      "failed_unable_element": "전환 실패, 이 요소는 아직 사용할 수 없습니다. ", 
+      "description": "Toggle 여행자 요소. "
+    },
     "talent": {
       "lower_16": "불분명한 특성 레벨. 특성의 레벨은 16 미만이여야합니다.",
       "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
