@@ -9,7 +9,7 @@ import java.util.List;
 
 import static emu.grasscutter.utils.Language.translate;
 
-@Command(label = "stop", permission = "server.stop", targetRequirement = Command.TargetRequirement.NONE)
+@Command(label = "stop", aliases = {"shutdown"}, permission = "server.stop", targetRequirement = Command.TargetRequirement.NONE)
 public final class StopCommand implements CommandHandler {
 
     @Override
