@@ -88,7 +88,6 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
         // Checks if the player is banned
         if (session.getAccount().isBanned()) {
             session.send(new PacketGetPlayerTokenRsp(session, 21, "FORBID_CHEATING_PLUGINS", session.getAccount().getBanEndTime()));
-            session.close();
             return;
         }
 
