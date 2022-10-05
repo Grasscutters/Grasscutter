@@ -4,6 +4,7 @@ import static emu.grasscutter.config.Configuration.*;
 
 import java.util.Set;
 
+import emu.grasscutter.game.Account;
 import emu.grasscutter.server.event.game.ReceivePacketEvent;
 import org.reflections.Reflections;
 
@@ -57,6 +58,8 @@ public class GameServerPacketHandler {
     public void handle(GameSession session, int opcode, byte[] header, byte[] payload) {
         PacketHandler handler = this.handlers.get(opcode);
 
+        Account account = session.getAccount();
+
         if (handler != null) {
             try {
                 // Make sure session is ready for packets
@@ -68,6 +71,9 @@ public class GameServerPacketHandler {
                     if (state != SessionState.WAITING_FOR_TOKEN) {
                         return;
                     }
+                } else if (account.isBanned()) {
+                    session.close();
+                    return;
                 } else if (opcode == PacketOpcodes.PlayerLoginReq) {
                     if (state != SessionState.WAITING_FOR_LOGIN) {
                         return;
