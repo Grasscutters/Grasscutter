@@ -1,0 +1,257 @@
+{
+  "folderStructure": "各种资源的目录,，通常和jar在一个文件夹里",
+  "folderStructure": {
+    "resources": "资源文件夹，角色，地图等",
+    "resources": "./resources/",
+    "data": "数据文件夹，商店，抽卡，公告等",
+    "data": "./data/",
+    "packets": "包文件夹？暂时没用",
+    "packets": "./packets/",
+    "scripts": "脚本文件夹，lua写的剧情，任务等脚本",
+    "scripts": "./resources/Scripts/",
+    "plugins": "jar插件文件夹",
+    "plugins": "./plugins/"
+  },
+  "databaseInfo": "mongodb数据库设置",
+  "databaseInfo": {
+    "server": "账号数据库",
+    "server": {
+      "connectionUri": "数据库连接用uri",
+      "connectionUri": "mongodb://localhost:27017",
+      "collection": "数据库名称",
+      "collection": "grasscutter"
+    },
+    "game": "游戏数据库",
+    "game": {
+      "connectionUri": "数据库连接用uri",
+      "connectionUri": "mongodb://localhost:27017",
+      "collection": "数据库名称",
+      "collection": "grasscutter"
+    }
+  },
+  "language": "语言设置",
+  "language": {
+    "language": "默认语言",
+    "language": "zh_CN",
+    "fallback": "备用语言",
+    "fallback": "en_US",
+    "document": "文档语言",
+    "document": "EN"
+  },
+  "account": "默认账号配置",
+  "account": {
+    "autoCreate": "自动创建未注册账号",
+    "autoCreate": false,
+    "EXPERIMENTAL_RealPassword": "(实验型功能)校验密码，false无论密码是否正确都允许登录",
+    "EXPERIMENTAL_RealPassword": false,
+    "defaultPermissions": "默认可执行的命令",
+    "defaultPermissions": [
+      "[]内可以留空，拥有全部权限，包括重启服务器等危险命令",
+      "命令支持通配符*",
+      "在这里可以找到全部命令https://github.com/Grasscutters/Grasscutter/wiki/Commands",
+      "player.*",
+      "server.spawn",
+      "server.killall"
+    ],
+    "maxPlayer": "服务器人数上限，-1为无限",
+    "maxPlayer": -1
+  },
+  "server": "服务器总配置",
+  "server": {
+    "debugWhitelist": "(开发者专用)配合logPackets为WHITELIST时使用，打印指定id的日志，[]内填整数opcode",
+    "debugWhitelist": [],
+    "debugBlacklist": "(开发者专用)配合logPackets为BLACKLIST时使用，打印指定id的日志，[]内填整数opcode",
+    "debugBlacklist": [],
+    "runMode": "运行模式HYBRID：启动登录&游戏服务器, DISPATCH_ONLY：仅登录服务器, GAME_ONLY：仅游戏服务器",
+    "runMode": "HYBRID",
+    "logCommands": "记录命令",
+    "logCommands": false,
+    "http": "账号服务器配置",
+    "http": {
+      "bindAddress": "监听的ip地址",
+      "bindAddress": "0.0.0.0",
+      "bindPort": "监听的端口, 请在防火墙中放行此端口/tcp",
+      "bindPort": 443,
+      "accessAddress": "你的服务器ip/域名，用于登陆以后返回给客户端进入游戏的服务器地址，本地服127.0.0.1",
+      "accessAddress": "127.0.0.1",
+      "accessPort": "你的服务器端口，和bindPort相同即可",
+      "accessPort": 0,
+      "encryption": "https加密",
+      "encryption": {
+        "useEncryption": "是否启用加密",
+        "useEncryption": true,
+        "useInRouting": "是否添加https头",
+        "useInRouting": true,
+        "keystore": "服务器证书路径，通常和jar在一起",
+        "keystore": "./keystore.p12",
+        "keystorePassword": "服务器证书密码",
+        "keystorePassword": "123456"
+      },
+      "policies": "https同源策略",
+      "policies": {
+        "cors": "跨域配置",
+        "cors": {
+          "enabled": "是否启用跨域验证",
+          "enabled": false,
+          "allowedOrigins": "允许的来源列表",
+          "allowedOrigins": [
+            "*"
+          ]
+        }
+      },
+      "files": "http服务器静态路径",
+      "files": {
+        "indexFile": "直接使用浏览器访问时的网页",
+        "indexFile": "./index.html",
+        "errorFile": "找不到文件时返回的网页",
+        "errorFile": "./404.html"
+      }
+    },
+    "game": "游戏服务器配置",
+    "game": {
+      "bindAddress": "监听的ip地址",
+      "bindAddress": "0.0.0.0",
+      "bindPort": "监听的端口, 请在防火墙中放行此端口/udp",
+      "bindPort": 22102,
+      "accessAddress": "你的服务器ip/域名，用于登陆以后返回给客户端进入游戏的服务器地址，本地服127.0.0.1",
+      "accessAddress": "127.0.0.1",
+      "accessPort": "你的服务器端口，和bindPort相同即可",
+      "accessPort": 0,
+      "loadEntitiesForPlayerRange": "玩家周围实体加载范围，刷怪范围",
+      "loadEntitiesForPlayerRange": 100,
+      "enableScriptInBigWorld": "是否开启大世界脚本",
+      "enableScriptInBigWorld": false,
+      "enableConsole": "是否启用游戏内控制台，false则无法在游戏聊天框中使用命令",
+      "enableConsole": true,
+      "kcpInterval": "kcp内部时钟周期，单位：毫秒，kcp协议：https://github.com/skywind3000/kcp",
+      "kcpInterval": 20,
+      "logPackets": "(开发者专用)在日志中记录包信息，ALL, MISSING, WHITELIST, BLACKLIST, NONE",
+      "logPackets": "NONE",
+      "gameOptions": "游戏选项",
+      "gameOptions": {
+        "inventoryLimits": "背包上限",
+        "inventoryLimits": {
+          "weapons": "武器上限",
+          "weapons": 2000,
+          "relics": "圣遗物上限",
+          "relics": 2000,
+          "materials": "材料上限",
+          "materials": 2000,
+          "furniture": "家具上限",
+          "furniture": 2000,
+          "all": "总上限",
+          "all": 30000
+        },
+        "avatarLimits": "队伍人数上限",
+        "avatarLimits": {
+          "singlePlayerTeam": "单人队伍人数上限",
+          "singlePlayerTeam": 4,
+          "multiplayerTeam": "多人游戏队伍人数上限",
+          "multiplayerTeam": 4
+        },
+        "sceneEntityLimit": "场景实体上限(代码注释说未实现)",
+        "sceneEntityLimit": 1000,
+        "watchGachaConfig": "抽卡相关，检测banners.json文件变化，自动更新",
+        "watchGachaConfig": false,
+        "enableShopItems": "是否开启商店",
+        "enableShopItems": true,
+        "staminaUsage": "是否启用体力条",
+        "staminaUsage": true,
+        "energyUsage": "元素爆发是否消耗能量",
+        "energyUsage": true,
+        "fishhookTeleport": "是否启用鱼钩标记传送",
+        "fishhookTeleport": true,
+        "resinOptions": "树脂配置",
+        "resinOptions": {
+          "resinUsage": "是否启用树脂",
+          "resinUsage": false,
+          "cap": "树脂上限",
+          "cap": 160,
+          "rechargeTime": "树脂自动恢复时间，单位：秒",
+          "rechargeTime": 480
+        },
+        "rates": "掉落倍率",
+        "rates": {
+          "adventureExp": "冒险阅历倍率",
+          "adventureExp": 1.0,
+          "mora": "摩拉倍率",
+          "mora": 1.0,
+          "leyLines": "怪物掉落物倍率",
+          "leyLines": 1.0
+        }
+      },
+      "joinOptions": "每加入游戏时触发的选项",
+      "joinOptions": {
+        "welcomeEmotes": "欢迎表情，进服后随机发送，必须是三个，ID第一位是发送表情的页数，后三位是这页的第几个表情",
+        "welcomeEmotes": [
+          2007,
+          1002,
+          4010
+        ],
+        "welcomeMessage": "欢迎信息，如果需要输入中文，请使用\u0000这种格式以防乱码",
+        "welcomeMessage": "Welcome to a Grasscutter server.",
+        "welcomeMail": "首次进入游戏时发送的邮件",
+        "welcomeMail": {
+          "title": "邮件标题",
+          "title": "Welcome to Grasscutter!",
+          "content": "邮件内容",
+          "content": "Hi there!\r\nFirst of all, welcome to Grasscutter. If you have any issues, please let us know so that Lawnmower can help you! \r\n\r\nCheck out our:\r\n\u003ctype\u003d\"browser\" text\u003d\"Discord\" href\u003d\"https://discord.gg/T5vZU6UyeG\"/\u003e\n",
+          "sender": "邮件发送人",
+          "sender": "Lawnmower",
+          "items": "邮件附件，可空",
+          "items": [
+            {
+              "itemId": "物品id",
+              "itemCount": "物品数量",
+              "itemLevel": "物品等级"
+            },
+            {
+              "itemId": 201,
+              "itemCount": 99999,
+              "itemLevel": 1
+            }
+          ]
+        }
+      },
+      "serverAccount": "服务器控制台账号(执行命令的好友)",
+      "serverAccount": {
+        "avatarId": "头像id",
+        "avatarId": 10000007,
+        "nameCardId": "名片id",
+        "nameCardId": 210001,
+        "adventureRank": "冒险等级",
+        "adventureRank": 1,
+        "worldLevel": "世界等级",
+        "worldLevel": 0,
+        "nickName": "名称",
+        "nickName": "Server",
+        "signature": "签名",
+        "signature": "Welcome to Grasscutter!"
+      }
+    },
+    "dispatch": "多服务器配置",
+    "dispatch": {
+      "regions": "多服务器区域配置，[]内可以留空，使用默认服务器",
+      "regions": [
+        {
+          "Name": "服务器名称",
+          "Title": "服务器显示的标题",
+          "Ip": "服务器ip",
+          "Port": "服务器端口"
+        },
+        {
+          "Name": "os_usa",
+          "Title": "Grasscutter",
+          "Ip": "127.0.0.1",
+          "Port": 22102
+        }
+      ],
+      "defaultName": "默认服务器名称",
+      "defaultName": "Grasscutter",
+      "logRequests": "(开发者专用)在日志中记录信息，ALL, MISSING, WHITELIST, BLACKLIST, NONE",
+      "logRequests": "NONE"
+    }
+  },
+  "version": "服务器版本，恒为4，不要改(源码里注释这么说的)",
+  "version": 4
+}
