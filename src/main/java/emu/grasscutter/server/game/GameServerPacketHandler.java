@@ -58,8 +58,6 @@ public class GameServerPacketHandler {
     public void handle(GameSession session, int opcode, byte[] header, byte[] payload) {
         PacketHandler handler = this.handlers.get(opcode);
 
-        Account account = session.getAccount();
-
         if (handler != null) {
             try {
                 // Make sure session is ready for packets
@@ -71,7 +69,7 @@ public class GameServerPacketHandler {
                     if (state != SessionState.WAITING_FOR_TOKEN) {
                         return;
                     }
-                } else if (account.isBanned()) {
+                } else if (state == SessionState.ACCOUNT_BANNED) {
                     session.close();
                     return;
                 } else if (opcode == PacketOpcodes.PlayerLoginReq) {
@@ -89,7 +87,8 @@ public class GameServerPacketHandler {
                 }
 
                 // Invoke event.
-                ReceivePacketEvent event = new ReceivePacketEvent(session, opcode, payload); event.call();
+                ReceivePacketEvent event = new ReceivePacketEvent(session, opcode, payload);
+                event.call();
                 if (!event.isCanceled()) // If event is not canceled, continue.
                     handler.handle(session, header, event.getPacketData());
             } catch (Exception ex) {
