@@ -852,10 +852,7 @@ public class InventorySystem extends BaseGameSystem {
                     case ITEM_USE_ADD_SERVER_BUFF -> {
                         int buffId = Integer.parseInt(useData.getUseParam()[0]);
                         String timeString = useData.getUseParam()[1];
-                        float time = 0;
-                        if (!timeString.isEmpty()) {
-                            time = Float.parseFloat(timeString);
-                        }
+                        float time = timeString.isEmpty() ? 0 : Float.parseFloat(timeString);
 
                         player.getBuffManager().addBuff(buffId, time);
                     }
