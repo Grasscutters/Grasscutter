@@ -1,4 +1,4 @@
-package emu.grasscutter.database;
+package emu.grasscutter.database.mongo;
 
 import static emu.grasscutter.config.Configuration.*;
 
@@ -17,11 +17,12 @@ import dev.morphia.query.experimental.filters.Filters;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
+import emu.grasscutter.database.mongo.DatabaseCounter;
 import emu.grasscutter.game.Account;
 
 import org.reflections.Reflections;
 
-public final class DatabaseManager {
+class DatabaseManager {
     private static Datastore gameDatastore;
     private static Datastore dispatchDatastore;
 
@@ -50,10 +51,10 @@ public final class DatabaseManager {
         // Set mapper options.
         MapperOptions mapperOptions = MapperOptions.builder()
                 .storeEmpties(true).storeNulls(false).build();
-        
+
         // Create data store.
         gameDatastore = Morphia.createDatastore(gameMongoClient, DATABASE.game.collection, mapperOptions);
-        
+
         // Map classes.
         Class<?>[] entities = new Reflections(Grasscutter.class.getPackageName())
                 .getTypesAnnotatedWith(Entity.class)
@@ -71,15 +72,15 @@ public final class DatabaseManager {
 
         if (SERVER.runMode == ServerRunMode.GAME_ONLY) {
             MongoClient dispatchMongoClient = MongoClients.create(DATABASE.server.connectionUri);
-            
+
             dispatchDatastore = Morphia.createDatastore(dispatchMongoClient, DATABASE.server.collection, mapperOptions);
             dispatchDatastore.getMapper().map(new Class<?>[] {DatabaseCounter.class, Account.class});
-            
+
             // Ensure indexes for dispatch datastore
             ensureIndexes(dispatchDatastore);
         }
     }
-    
+
     /**
      * Ensures the database indexes exist and rebuilds them if there is an error with them
      * @param datastore The datastore to ensure indexes on

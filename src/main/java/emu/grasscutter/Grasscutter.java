@@ -11,7 +11,7 @@ import emu.grasscutter.command.DefaultPermissionHandler;
 import emu.grasscutter.command.PermissionHandler;
 import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.ResourceLoader;
-import emu.grasscutter.database.DatabaseManager;
+import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.scripts.ScriptLoader;
@@ -115,7 +115,7 @@ public final class Grasscutter {
         ScriptLoader.init();
 
         // Initialize database.
-        DatabaseManager.initialize();
+        DatabaseHelper.initialize();
 
         // Initialize the default systems.
         authenticationSystem = new DefaultAuthentication();
@@ -245,7 +245,7 @@ public final class Grasscutter {
     public static Language getLanguage(String langCode) {
         return Language.getLanguage(langCode);
     }
-    
+
     public static ServerRunMode getRunMode() {
         return Grasscutter.runModeOverride != null ? Grasscutter.runModeOverride : SERVER.runMode;
     }
