@@ -12,6 +12,7 @@ import dev.morphia.annotations.PostLoad;
 import dev.morphia.annotations.Transient;
 import dev.morphia.mapping.Mapper;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.activity.PlayerActivityData;
 import emu.grasscutter.game.avatar.Avatar;
@@ -349,18 +350,19 @@ class MorphiaSqlite {
                         var type = it.getType();
                         if (data == null) {
                             // do not modify init data.
-                        } else if (type == String.class ||
-                            type == Integer.class ||
-                            type == Long.class ||
-                            type == int.class ||
-                            type == long.class
-                        ) {
+                        } else if (type == String.class) {
                             // Account.id only
                             if (it.isAnnotationPresent(AutoIncrease.class)) {
                                 it.set(instance, String.valueOf(data));
                             } else {
                                 it.set(instance, data);
                             }
+                        } else if (type == int.class ||
+                            type == Integer.class) {
+                            it.set(instance, ((Number) data).intValue());
+                        } else if (type == long.class ||
+                            type == Long.class) {
+                            it.set(instance, ((Number) data).longValue());
                         } else if (type == double.class ||
                             type == Double.class) {
                             it.set(instance, ((Number) data).doubleValue());
@@ -371,6 +373,7 @@ class MorphiaSqlite {
                             type == boolean.class) {
                             it.set(instance, ((Integer) data) == 1);
                         } else {
+                            // handle runtime missing generic type
                             Type typeToken = null;
                             if (cls == GameMainQuest.class) {
                                 if (name.equals("childQuests")) {
@@ -381,6 +384,12 @@ class MorphiaSqlite {
                                     }.getType();
                                 } else if (name.equals("rewindPositions") || name.equals("rewindRotations")) {
                                     typeToken = new TypeToken<Map<Integer, Position>>() {
+                                    }.getType();
+                                } else if (name.equals("questVarsUpdate")) {
+                                    typeToken = new TypeToken<List<Integer>>() {
+                                    }.getType();
+                                } else if (name.equals("talks")) {
+                                    typeToken = new TypeToken<Map<Integer, MainQuestData.TalkData>>() {
                                     }.getType();
                                 }
                             } else if (cls == BattlePassManager.class) {
@@ -431,6 +440,18 @@ class MorphiaSqlite {
                                     name.equals("properties") ||
                                     name.equals("questGlobalVariables")) {
                                     typeToken = new TypeToken<Map<Integer, Integer>>() {
+                                    }.getType();
+                                }
+                                if (name.equals("nameCardList") ||
+                                    name.equals("flyCloakList") ||
+                                    name.equals("rewardedLevels") ||
+                                    name.equals("realmList") ||
+                                    name.equals("unlockedForgingBlueprints") ||
+                                    name.equals("unlockedCombines") ||
+                                    name.equals("unlockedFurniture") ||
+                                    name.equals("unlockedFurnitureSuite") ||
+                                    name.equals("costumeList")) {
+                                    typeToken = new TypeToken<Set<Integer>>() {
                                     }.getType();
                                 }
                                 if (name.equals("unlockedSceneAreas") ||

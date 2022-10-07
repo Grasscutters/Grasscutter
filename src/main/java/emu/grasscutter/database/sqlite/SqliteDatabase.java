@@ -27,8 +27,8 @@ public class SqliteDatabase implements BaseDatabase {
     @Override
     public void initialize() {
         try {
-            String server = "jdbc:" + DATABASE.server.connectionUri;
-            String game = "jdbc:" + DATABASE.game.connectionUri;
+            String server = DATABASE.server.connectionUri;
+            String game = DATABASE.game.connectionUri;
             MorphiaSqlite.connect(server, game);
             var entity = MorphiaSqlite.scanPackageEntity(Grasscutter.class.getPackageName());
             entity.forEach((cls) -> {
