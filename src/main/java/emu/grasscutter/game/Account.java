@@ -16,7 +16,7 @@ import org.bson.Document;
 @Entity(value = "accounts", useDiscriminator = false)
 public class Account {
     @AutoIncrease
-    @Id private int id;
+    @Id private String id;
 
     @Indexed(options = @IndexOptions(unique = true))
     @Collation(locale = "simple", caseLevel = true)
@@ -43,11 +43,11 @@ public class Account {
     }
 
     public String getId() {
-        return Integer.toString(id);
+        return id;
     }
 
     public void setId(String id) {
-        this.id = Integer.parseInt(id);
+        this.id = id;
     }
 
     public String getUsername() {

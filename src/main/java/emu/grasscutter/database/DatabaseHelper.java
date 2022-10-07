@@ -1,7 +1,7 @@
 package emu.grasscutter.database;
 
 import emu.grasscutter.GameConstants;
-import emu.grasscutter.database.mongo.MongoDatabase;
+import emu.grasscutter.database.sqlite.SqliteDatabase;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.activity.PlayerActivityData;
 import emu.grasscutter.game.activity.musicgame.MusicGameBeatmap;
@@ -19,7 +19,7 @@ import java.util.List;
 
 public final class DatabaseHelper {
 
-    private static final BaseDatabase impl = new MongoDatabase();
+    private static final BaseDatabase impl = new SqliteDatabase();
 
     public static void initialize() {
         impl.initialize();
