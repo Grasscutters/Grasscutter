@@ -131,7 +131,7 @@ public class ScriptLoader {
             scriptsCache.put(path, new SoftReference<>(script));
             return script;
         } catch (Exception e) {
-            Grasscutter.getLogger().error("Loading script {} failed!", path, e);
+            Grasscutter.getLogger().error("Loading script {} failed! - {}", path, e.getLocalizedMessage());
             return null;
         }
     }
