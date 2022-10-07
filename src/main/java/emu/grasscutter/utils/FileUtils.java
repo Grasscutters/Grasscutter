@@ -16,7 +16,6 @@ import java.util.stream.Stream;
 
 public final class FileUtils {
     private static final FileSystem JAR_FILE_SYSTEM;
-    // private static final FileSystem RESOURCES_FILE_SYSTEM;  // Not sure about lifetime rules on this one, might be safe to remove
     private static final Path DATA_DEFAULT_PATH;
     private static final Path DATA_USER_PATH = Path.of(Grasscutter.config.folderStructure.data);
     private static final Path PACKETS_PATH = Path.of(Grasscutter.config.folderStructure.packets);
@@ -33,12 +32,8 @@ public final class FileUtils {
                             .getCodeSource()
                             .getLocation()
                             .toURI();
-			// // file walks JAR
-			// URI uri = URI.create("jar:file:" + pathUri.getRawPath());
-			// try (FileSystem fs = FileSystems.newFileSystem(uri, Collections.emptyMap()))
             fs = FileSystems.newFileSystem(Path.of(jarUri));
             path = fs.getPath("/defaults/data");
-			System.out.println(Files.walk(path).filter(Files::isRegularFile).toList());
         } catch (URISyntaxException | IOException e) {
             // Failed to load this jar. How?
             System.err.println("Failed to load jar?????????????????????");
@@ -79,7 +74,6 @@ public final class FileUtils {
                 Grasscutter.getLogger().error("Failed to scan resources zip \"" + resources + "\"");
             }
         }
-        // RESOURCES_FILE_SYSTEM = fs;
         RESOURCES_PATH = path;
 
         // Setup Scripts path
@@ -91,10 +85,8 @@ public final class FileUtils {
 
     public static Path getDataPath(String path) {
         Path userPath = DATA_USER_PATH.resolve(path);
-		System.out.println(userPath);
         if (Files.exists(userPath)) return userPath;
         Path defaultPath = DATA_DEFAULT_PATH.resolve(path);
-		System.out.println(defaultPath);
         if (Files.exists(defaultPath)) return defaultPath;
         return userPath;  // Maybe they want to write to a new file
     }
