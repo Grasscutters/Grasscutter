@@ -2,7 +2,8 @@ package emu.grasscutter.server.game;
 
 import java.io.File;
 import java.net.InetSocketAddress;
-import java.util.Set;
+import java.nio.file.Path;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.game.Account;
@@ -16,6 +17,8 @@ import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import lombok.Getter;
+import lombok.Setter;
 
 import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.Language.translate;
@@ -24,14 +27,14 @@ public class GameSession implements GameSessionManager.KcpChannel {
     private final GameServer server;
     private GameSessionManager.KcpTunnel tunnel;
 
-    private Account account;
-    private Player player;
+    @Getter @Setter private Account account;
+    @Getter private Player player;
 
-    private boolean useSecretKey;
-    private SessionState state;
+    @Setter private boolean useSecretKey;
+    @Getter @Setter private SessionState state;
 
-    private int clientTime;
-    private long lastPingTime;
+    @Getter private int clientTime;
+    @Getter private long lastPingTime;
     private int lastClientSeq = 10;
 
     public GameSession(GameServer server) {
@@ -56,20 +59,8 @@ public class GameSession implements GameSessionManager.KcpChannel {
         return useSecretKey;
     }
 
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-
     public String getAccountId() {
         return this.getAccount().getId();
-    }
-
-    public Player getPlayer() {
-        return player;
     }
 
     public synchronized void setPlayer(Player player) {
@@ -78,28 +69,8 @@ public class GameSession implements GameSessionManager.KcpChannel {
         this.player.setAccount(this.getAccount());
     }
 
-    public SessionState getState() {
-        return state;
-    }
-
-    public void setState(SessionState state) {
-        this.state = state;
-    }
-
     public boolean isLoggedIn() {
         return this.getPlayer() != null;
-    }
-
-    public void setUseSecretKey(boolean useSecretKey) {
-        this.useSecretKey = useSecretKey;
-    }
-
-    public int getClientTime() {
-        return this.clientTime;
-    }
-
-    public long getLastPingTime() {
-        return lastPingTime;
     }
 
     public void updateLastPingTime(int clientTime) {
@@ -112,8 +83,8 @@ public class GameSession implements GameSessionManager.KcpChannel {
     }
 
     public void replayPacket(int opcode, String name) {
-        String filePath = PACKET(name);
-        File p = new File(filePath);
+        Path filePath = FileUtils.getPluginPath(name);
+        File p = filePath.toFile();
 
         if (!p.exists()) return;
 

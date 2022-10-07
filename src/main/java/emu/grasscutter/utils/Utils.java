@@ -22,7 +22,7 @@ import org.slf4j.Logger;
 
 import javax.annotation.Nullable;
 
-import static emu.grasscutter.config.Configuration.getResourcePath;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
 import static emu.grasscutter.utils.Language.translate;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})

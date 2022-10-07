@@ -13,31 +13,36 @@ import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 import io.javalin.http.staticfiles.Location;
+import lombok.Getter;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import static emu.grasscutter.config.Configuration.DATA;
 import static emu.grasscutter.utils.Language.translate;
 
 /**
  * Handles all gacha-related HTTP requests.
  */
 public final class GachaHandler implements Router {
-    public static final String gachaMappings = DATA(Utils.toFilePath("gacha/mappings.js"));
+    @Getter private static final Path gachaMappingsPath = FileUtils.getDataUserPath("gacha/mappings.js");
+    @Deprecated(forRemoval = true)
+    public static final String gachaMappings = gachaMappingsPath.toString();
 
     @Override public void applyRoutes(Javalin javalin) {
         javalin.get("/gacha", GachaHandler::gachaRecords);
         javalin.get("/gacha/details", GachaHandler::gachaDetails);
 
-        javalin._conf.addSinglePageRoot("/gacha/mappings", gachaMappings, Location.EXTERNAL);
+        javalin._conf.addSinglePageRoot("/gacha/mappings", gachaMappingsPath.toString(), Location.EXTERNAL);  // TODO: This ***must*** be changed to take the Path not a String. This might involve upgrading Javalin.
     }
 
     private static void gachaRecords(Context ctx) {
-        File recordsTemplate = new File(Utils.toFilePath(DATA("gacha/records.html")));
+        File recordsTemplate = FileUtils.getDataPath("gacha/records.html").toFile();
         if (!recordsTemplate.exists()) {
             Grasscutter.getLogger().warn("File does not exist: " + recordsTemplate);
             ctx.status(500);
@@ -77,13 +82,7 @@ public final class GachaHandler implements Router {
     }
 
     private static void gachaDetails(Context ctx) {
-        File detailsTemplate = new File(Utils.toFilePath(DATA("gacha/details.html")));
-        if (!detailsTemplate.exists()) {
-            Grasscutter.getLogger().warn("File does not exist: " + detailsTemplate);
-            ctx.status(500);
-            return;
-        }
-
+        Path detailsTemplate = FileUtils.getDataPath("gacha/details.html");
         String sessionKey = ctx.queryParam("s");
         Account account = DatabaseHelper.getAccountBySessionKey(sessionKey);
         if (account == null) {
@@ -96,7 +95,14 @@ public final class GachaHandler implements Router {
             return;
         }
 
-        String template = new String(FileUtils.read(detailsTemplate), StandardCharsets.UTF_8);
+        String template;
+        try {
+            template = Files.readString(detailsTemplate);
+        } catch (IOException e) {
+            Grasscutter.getLogger().warn("Failed to read data/gacha/details.html");
+            ctx.status(500);
+            return;
+        }
 
         // Add translated title etc. to the page.
         template = template.replace("{{TITLE}}", translate(player, "gacha.details.title"))

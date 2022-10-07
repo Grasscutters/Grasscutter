@@ -190,13 +190,12 @@ public class GameMainQuest {
     }
     public void addRewindPoints() {
         Bindings bindings = ScriptLoader.getEngine().createBindings();
-
-        CompiledScript cs = ScriptLoader.getScriptByPath(
-            SCRIPT("Quest/Share/Q" + getParentQuestId() + "ShareConfig." + ScriptLoader.getScriptType()));
+        String script = "Quest/Share/Q" + getParentQuestId() + "ShareConfig.lua";
+        CompiledScript cs = ScriptLoader.getScript(script);
 
         //mainQuest 303 doesn't have a ShareConfig
         if (cs == null) {
-            Grasscutter.getLogger().debug("Couldn't find Q" + getParentQuestId() + "ShareConfig." + ScriptLoader.getScriptType());
+            Grasscutter.getLogger().debug("Couldn't find " + script);
             return;
         }
 

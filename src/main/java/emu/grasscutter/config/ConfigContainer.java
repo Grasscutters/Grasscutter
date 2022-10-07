@@ -84,7 +84,7 @@ public class ConfigContainer {
         public String resources = "./resources/";
         public String data = "./data/";
         public String packets = "./packets/";
-        public String scripts = "./resources/Scripts/";
+        public String scripts = "resources:Scripts/";
         public String plugins = "./plugins/";
 
         // UNUSED (potentially added later?)

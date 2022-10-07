@@ -17,6 +17,7 @@ import lombok.EqualsAndHashCode;
 import javax.annotation.Nullable;
 
 import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
