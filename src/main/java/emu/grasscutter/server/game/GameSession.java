@@ -50,7 +50,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
     public InetSocketAddress getAddress() {
         try {
             return tunnel.getAddress();
-        }catch (Throwable ignore) {
+        } catch (Throwable ignore) {
             return null;
         }
     }
@@ -96,10 +96,11 @@ public class GameSession implements GameSessionManager.KcpChannel {
         send(basePacket);
     }
 
-    public void logPacket( String sendOrRecv, int opcode, byte[] payload) {
+    public void logPacket(String sendOrRecv, int opcode, byte[] payload) {
         Grasscutter.getLogger().info(sendOrRecv + ": " + PacketOpcodesUtils.getOpcodeName(opcode) + " (" + opcode + ")");
         System.out.println(Utils.bytesToHex(payload));
     }
+
     public void send(BasePacket packet) {
         // Test
         if (packet.getOpcode() <= 0) {
@@ -125,21 +126,23 @@ public class GameSession implements GameSessionManager.KcpChannel {
                     logPacket("SEND", packet.getOpcode(), packet.getData());
                 }
             }
-            case WHITELIST-> {
+            case WHITELIST -> {
                 if (SERVER.debugWhitelist.contains(packet.getOpcode())) {
                     logPacket("SEND", packet.getOpcode(), packet.getData());
                 }
             }
-            case BLACKLIST-> {
+            case BLACKLIST -> {
                 if (!SERVER.debugBlacklist.contains(packet.getOpcode())) {
                     logPacket("SEND", packet.getOpcode(), packet.getData());
                 }
             }
-            default -> {}
+            default -> {
+            }
         }
 
         // Invoke event.
-        SendPacketEvent event = new SendPacketEvent(this, packet); event.call();
+        SendPacketEvent event = new SendPacketEvent(this, packet);
+        event.call();
         if (!event.isCanceled()) { // If event is not cancelled, continue.
             tunnel.writeData(event.getPacket().build());
         }
@@ -172,7 +175,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
                 int const1 = packet.readShort();
                 if (const1 != 17767) {
                     if (allDebug) {
-                        Grasscutter.getLogger().error("Bad Data Package Received: got {} ,expect 17767",const1);
+                        Grasscutter.getLogger().error("Bad Data Package Received: got {} ,expect 17767", const1);
                     }
                     return; // Bad packet
                 }
@@ -189,7 +192,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
                 int const2 = packet.readShort();
                 if (const2 != -30293) {
                     if (allDebug) {
-                        Grasscutter.getLogger().error("Bad Data Package Received: got {} ,expect -30293",const2);
+                        Grasscutter.getLogger().error("Bad Data Package Received: got {} ,expect -30293", const2);
                     }
                     return; // Bad packet
                 }
@@ -198,20 +201,21 @@ public class GameSession implements GameSessionManager.KcpChannel {
                 switch (GAME_INFO.logPackets) {
                     case ALL -> {
                         if (!PacketOpcodesUtils.LOOP_PACKETS.contains(opcode)) {
-                            logPacket("RECV",opcode, payload);
+                            logPacket("RECV", opcode, payload);
                         }
                     }
-                    case WHITELIST-> {
+                    case WHITELIST -> {
                         if (SERVER.debugWhitelist.contains(opcode)) {
-                            logPacket("RECV",opcode, payload);
+                            logPacket("RECV", opcode, payload);
                         }
                     }
-                    case BLACKLIST-> {
+                    case BLACKLIST -> {
                         if (!(SERVER.debugBlacklist.contains(opcode))) {
-                            logPacket("RECV",opcode, payload);
+                            logPacket("RECV", opcode, payload);
                         }
                     }
-                    default -> {}
+                    default -> {
+                    }
                 }
 
                 // Handle
@@ -238,8 +242,8 @@ public class GameSession implements GameSessionManager.KcpChannel {
         }
         try {
             send(new BasePacket(PacketOpcodes.ServerDisconnectClientNotify));
-        }catch (Throwable ignore) {
-            Grasscutter.getLogger().warn("closing {} error",getAddress().getAddress().getHostAddress());
+        } catch (Throwable ignore) {
+            Grasscutter.getLogger().warn("closing {} error", getAddress().getAddress().getHostAddress());
         }
         tunnel = null;
     }
@@ -257,6 +261,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
         WAITING_FOR_TOKEN,
         WAITING_FOR_LOGIN,
         PICKING_CHARACTER,
-        ACTIVE
+        ACTIVE,
+        ACCOUNT_BANNED
     }
 }

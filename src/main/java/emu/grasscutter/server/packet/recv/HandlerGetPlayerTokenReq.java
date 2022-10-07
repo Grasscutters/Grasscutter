@@ -67,7 +67,8 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
         }
 
         // Call creation event.
-        PlayerCreationEvent event = new PlayerCreationEvent(session, Player.class); event.call();
+        PlayerCreationEvent event = new PlayerCreationEvent(session, Player.class);
+        event.call();
 
         // Get player.
         Player player = DatabaseHelper.getPlayerByAccount(account, event.getPlayerClass());
@@ -87,8 +88,8 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 
         // Checks if the player is banned
         if (session.getAccount().isBanned()) {
+            session.setState(SessionState.ACCOUNT_BANNED);
             session.send(new PacketGetPlayerTokenRsp(session, 21, "FORBID_CHEATING_PLUGINS", session.getAccount().getBanEndTime()));
-            session.close();
             return;
         }
 
@@ -132,8 +133,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 
                 session.send(new PacketGetPlayerTokenRsp(session, base64str, "bm90aGluZyBoZXJl"));
             }
-        }
-        else {
+        } else {
             // Send packet
             session.send(new PacketGetPlayerTokenRsp(session));
         }
