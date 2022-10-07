@@ -4,7 +4,10 @@ import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
@@ -23,15 +26,20 @@ import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.game.home.FurnitureMakeSlotItem;
 import emu.grasscutter.game.home.GameHome;
 import emu.grasscutter.game.home.HomeSceneItem;
+import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.managers.forging.ActiveForgeData;
 import emu.grasscutter.game.managers.mapmark.MapMark;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.PlayerCodex;
 import emu.grasscutter.game.player.TeamInfo;
 import emu.grasscutter.game.player.TeamManager;
 import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.QuestGroupSuite;
+import emu.grasscutter.game.shop.ShopLimit;
+import emu.grasscutter.game.tower.TowerData;
+import emu.grasscutter.game.tower.TowerLevelRecord;
 import emu.grasscutter.utils.Position;
 import org.bson.types.ObjectId;
 import org.jetbrains.annotations.NotNull;
@@ -48,6 +56,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -62,6 +71,20 @@ import static org.reflections.scanners.Scanners.TypesAnnotated;
 
 class MorphiaSqlite {
 
+    private static final Gson gsonInner = new GsonBuilder()
+        .setExclusionStrategies(new ExclusionStrategy() {
+            @Override
+            public boolean shouldSkipField(FieldAttributes f) {
+                return f.getAnnotation(Transient.class) != null;
+            }
+
+            @Override
+            public boolean shouldSkipClass(Class<?> clazz) {
+                return clazz == ObjectId.class;
+            }
+        })
+        .create();
+
     private static final Gson gson = new GsonBuilder()
         .setExclusionStrategies(new ExclusionStrategy() {
             @Override
@@ -74,7 +97,7 @@ class MorphiaSqlite {
                 return clazz == ObjectId.class;
             }
         })
-        .registerTypeAdapter(TeamManager.class, (JsonDeserializer) (json, typeOfT, context) -> {
+        .registerTypeAdapter(TeamManager.class, (JsonDeserializer<TeamManager>) (json, typeOfT, context) -> {
             var team = new TeamManager();
             try {
                 Field teams = TeamManager.class.getDeclaredField("teams");
@@ -82,7 +105,7 @@ class MorphiaSqlite {
                 String teams1 = json.getAsJsonObject().get("teams").toString();
                 Type type = new TypeToken<LinkedHashMap<Integer, TeamInfo>>() {
                 }.getType();
-                teams.set(team, new Gson().fromJson(teams1, type));
+                teams.set(team, gsonInner.fromJson(teams1, type));
                 Field currentTeamIndex = TeamManager.class.getDeclaredField("currentTeamIndex");
                 currentTeamIndex.setAccessible(true);
                 currentTeamIndex.set(team, json.getAsJsonObject().get("currentTeamIndex").getAsInt());
@@ -91,6 +114,86 @@ class MorphiaSqlite {
                 throw new RuntimeException(e);
             }
             return team;
+        })
+        .registerTypeAdapter(GameQuest.class, (JsonDeserializer<GameQuest>) (json, typeOfT, context) -> {
+            GameQuest o = gsonInner.fromJson(json, GameQuest.class);
+            var triggers = json.getAsJsonObject().get("triggers");
+            Type type = new TypeToken<Map<String, Boolean>>() {
+            }.getType();
+            var obj = gsonInner.fromJson(triggers, type);
+            try {
+                Field field = GameQuest.class.getDeclaredField("triggers");
+                field.setAccessible(true);
+                field.set(o, obj);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            return o;
+        })
+        .registerTypeAdapter(TowerData.class, (JsonDeserializer<TowerData>) (json, typeOfT, context) -> {
+            TowerData o = gsonInner.fromJson(json, TowerData.class);
+            var map = json.getAsJsonObject().get("recordMap");
+            Type type = new TypeToken<Map<Integer, TowerLevelRecord>>() {
+            }.getType();
+            var obj = gsonInner.fromJson(map, type);
+            try {
+                Field field = TowerData.class.getDeclaredField("recordMap");
+                field.setAccessible(true);
+                field.set(o, obj);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            return o;
+        })
+        .registerTypeAdapter(TowerLevelRecord.class, (JsonDeserializer<TowerLevelRecord>) (json, typeOfT, context) -> {
+            TowerLevelRecord o = gsonInner.fromJson(json, TowerLevelRecord.class);
+            var map = json.getAsJsonObject().get("passedLevelMap");
+            Type type = new TypeToken<Map<Integer, Integer>>() {
+            }.getType();
+            var obj = gsonInner.fromJson(map, type);
+            try {
+                Field field = TowerLevelRecord.class.getDeclaredField("passedLevelMap");
+                field.setAccessible(true);
+                field.set(o, obj);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            return o;
+        })
+        .registerTypeAdapter(PlayerCodex.class, (JsonDeserializer<PlayerCodex>) (json, typeOfT, context) -> {
+            var codex = new PlayerCodex();
+            Set<Field> fields = filterFields(PlayerCodex.class.getDeclaredFields());
+            fields.forEach((it) -> {
+                var name = it.getName();
+                var list = new String[]{
+                    "unlockedWeapon",
+                    "unlockedMaterial",
+                    "unlockedBook",
+                    "unlockedTip",
+                    "unlockedView",
+                    "unlockedReliquary",
+                    "unlockedReliquarySuitCodex"
+                };
+                Type type = null;
+                if (Arrays.asList(list).contains(name)) {
+                    type = new TypeToken<Set<Integer>>() {
+                    }.getType();
+                } else if (name.equals("unlockedAnimal")) {
+                    type = new TypeToken<Map<Integer, Integer>>() {
+                    }.getType();
+                }
+                if (type != null) {
+                    var j = json.getAsJsonObject().get(name);
+                    var obj = gsonInner.fromJson(j, type);
+                    it.setAccessible(true);
+                    try {
+                        it.set(codex, obj);
+                    } catch (IllegalAccessException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            });
+            return codex;
         })
         .create();
 
@@ -372,6 +475,8 @@ class MorphiaSqlite {
                         } else if (type == Boolean.class ||
                             type == boolean.class) {
                             it.set(instance, ((Integer) data) == 1);
+                        } else if (type == ObjectId.class) {
+                            it.set(instance, new ObjectId(data.toString()));
                         } else {
                             // handle runtime missing generic type
                             Type typeToken = null;
@@ -410,6 +515,11 @@ class MorphiaSqlite {
                                     typeToken = new TypeToken<Map<Integer, PlayerActivityData.WatcherInfo>>() {
                                     }.getType();
                                 }
+                            } else if (cls == Account.class) {
+                                if (name.equals("permissions")) {
+                                    typeToken = new TypeToken<List<String>>() {
+                                    }.getType();
+                                }
                             } else if (cls == GameHome.class) {
                                 if (name.equals("furnitureMakeSlotItemList")) {
                                     typeToken = new TypeToken<List<FurnitureMakeSlotItem>>() {
@@ -423,6 +533,19 @@ class MorphiaSqlite {
                                     name.equals("skillExtraChargeMap") ||
                                     name.equals("skillLevelMap")) {
                                     typeToken = new TypeToken<Map<Integer, Integer>>() {
+                                    }.getType();
+                                } else if (name.equals("fetters")) {
+                                    typeToken = new TypeToken<List<Integer>>() {
+                                    }.getType();
+                                } else if (name.equals("talentIdList") ||
+                                    name.equals("proudSkillList")) {
+                                    typeToken = new TypeToken<Set<Integer>>() {
+                                    }.getType();
+                                }
+                            } else if (cls == GameItem.class) {
+                                if (name.equals("affixes") ||
+                                    name.equals("appendPropIdList")) {
+                                    typeToken = new TypeToken<List<Integer>>() {
                                     }.getType();
                                 }
                             } else if (cls == Player.class) {
@@ -444,19 +567,31 @@ class MorphiaSqlite {
                                 }
                                 if (name.equals("nameCardList") ||
                                     name.equals("flyCloakList") ||
+                                    name.equals("costumeList") ||
                                     name.equals("rewardedLevels") ||
                                     name.equals("realmList") ||
                                     name.equals("unlockedForgingBlueprints") ||
                                     name.equals("unlockedCombines") ||
                                     name.equals("unlockedFurniture") ||
-                                    name.equals("unlockedFurnitureSuite") ||
-                                    name.equals("costumeList")) {
+                                    name.equals("unlockedFurnitureSuite")) {
                                     typeToken = new TypeToken<Set<Integer>>() {
                                     }.getType();
                                 }
                                 if (name.equals("unlockedSceneAreas") ||
                                     name.equals("unlockedScenePoints")) {
                                     typeToken = new TypeToken<Map<Integer, Set<Integer>>>() {
+                                    }.getType();
+                                }
+                                if (name.equals("showAvatarList")) {
+                                    typeToken = new TypeToken<List<Integer>>() {
+                                    }.getType();
+                                }
+                                if (name.equals("shopLimit")) {
+                                    typeToken = new TypeToken<ArrayList<ShopLimit>>() {
+                                    }.getType();
+                                }
+                                if (name.equals("moonCardGetTimes")) {
+                                    typeToken = new TypeToken<Set<Date>>() {
                                     }.getType();
                                 }
                             }
