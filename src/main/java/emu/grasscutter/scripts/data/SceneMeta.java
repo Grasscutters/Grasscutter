@@ -12,8 +12,6 @@ import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
 
-import static emu.grasscutter.config.Configuration.SCRIPT;
-
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -35,8 +33,7 @@ public class SceneMeta {
 
     public SceneMeta load(int sceneId) {
         // Get compiled script if cached
-        CompiledScript cs = ScriptLoader.getScriptByPath(
-                SCRIPT("Scene/" + sceneId + "/scene" + sceneId + "." + ScriptLoader.getScriptType()));
+        CompiledScript cs = ScriptLoader.getScript("Scene/" + sceneId + "/scene" + sceneId + ".lua");
 
         if (cs == null) {
             Grasscutter.getLogger().warn("No script found for scene " + sceneId);

@@ -2,13 +2,12 @@ package emu.grasscutter.plugin;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.*;
+import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
-import emu.grasscutter.utils.Utils;
 import lombok.*;
 
 import javax.annotation.Nullable;
 
-import static emu.grasscutter.config.Configuration.PLUGIN;
 import static emu.grasscutter.utils.Language.translate;
 
 import java.io.*;
@@ -43,7 +42,7 @@ public final class PluginManager {
      * Loads plugins from the config-specified directory.
      */
     private void loadPlugins() {
-        File pluginsDir = new File(Utils.toFilePath(PLUGIN()));
+        File pluginsDir = FileUtils.getPluginPath("").toFile();
         if (!pluginsDir.exists() && !pluginsDir.mkdirs()) {
             Grasscutter.getLogger().error(translate("plugin.directory_failed", pluginsDir.getAbsolutePath()));
             return;

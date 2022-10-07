@@ -5,7 +5,6 @@ import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.server.http.objects.HttpJsonResponse;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
@@ -74,7 +73,7 @@ public final class AnnouncementsHandler implements Router {
 
     private static void getPageResources(Context ctx) {
         try (InputStream filestream = DataLoader.load(ctx.path())) {
-            String possibleFilename = Utils.toFilePath(DATA(ctx.path()));
+            String possibleFilename = ctx.path();
 
             ContentType fromExtension = ContentType.getContentTypeByExtension(possibleFilename.substring(possibleFilename.lastIndexOf(".") + 1));
             ctx.contentType(fromExtension != null ? fromExtension : ContentType.APPLICATION_OCTET_STREAM);

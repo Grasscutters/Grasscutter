@@ -11,8 +11,6 @@ import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptException;
 
-import static emu.grasscutter.config.Configuration.SCRIPT;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -84,8 +82,7 @@ public class SceneGroup {
 
         this.bindings = ScriptLoader.getEngine().createBindings();
 
-        CompiledScript cs = ScriptLoader.getScriptByPath(
-                SCRIPT("Scene/" + sceneId + "/scene" + sceneId + "_group" + this.id + "." + ScriptLoader.getScriptType()));
+        CompiledScript cs = ScriptLoader.getScript("Scene/" + sceneId + "/scene" + sceneId + "_group" + this.id + ".lua");
 
         if (cs == null) {
             return this;

@@ -7,6 +7,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -28,6 +29,7 @@ import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
 
 public final class Tools {
     public static void createGmHandbooks() throws Exception {
@@ -107,10 +109,6 @@ public final class Tools {
             }
         }
         Grasscutter.getLogger().info("GM Handbooks generated!");
-    }
-
-    public static void createGachaMapping(String location) throws Exception {
-        createGachaMappings(location);
     }
 
     public static List<String> createGachaMappingJsons() {
@@ -196,7 +194,7 @@ public final class Tools {
         return sbs.stream().map(StringBuilder::toString).toList();
     }
 
-    public static void createGachaMappings(String location) throws Exception {
+    public static void createGachaMappings(Path location) throws IOException {
         ResourceLoader.loadResources();
         List<String> jsons = createGachaMappingJsons();
         StringBuilder sb = new StringBuilder("mappings = {\n");
@@ -207,13 +205,9 @@ public final class Tools {
         sb.setLength(sb.length() - 2);  // Delete trailing ",\n"
         sb.append("\n}");
 
-        try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(location), StandardCharsets.UTF_8), false)) {
-            // if the user made choices for language, I assume it's okay to assign his/her selected language to "en-us"
-            // since it's the fallback language and there will be no difference in the gacha record page.
-            // The end-user can still modify the `gacha/mappings.js` directly to enable multilingual for the gacha record system.
-            writer.println(sb);
-            Grasscutter.getLogger().info("Mappings generated to " + location + " !");
-        }
+        Files.createDirectories(location.getParent());
+        Files.writeString(location, sb);
+        Grasscutter.getLogger().info("Mappings generated to " + location);
     }
 
     public static List<String> getAvailableLanguage() {
