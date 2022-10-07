@@ -14,6 +14,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
+import org.bson.types.ObjectId;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -24,8 +25,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Builder(builderMethodName = "of")
 public class GameHome {
 
-    @Id
-    String id;
+    @Id ObjectId id;
 
     @Indexed(options = @IndexOptions(unique = true))
     long ownerUid;

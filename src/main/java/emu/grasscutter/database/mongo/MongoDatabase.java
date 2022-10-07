@@ -33,29 +33,6 @@ public class MongoDatabase implements BaseDatabase {
 
     @Override
     public Account createAccountWithUid(String username, int reservedUid) {
-        // Unique names only
-        if (DatabaseHelper.checkIfAccountExists(username)) {
-            return null;
-        }
-
-        // Make sure there are no id collisions
-        if (reservedUid > 0) {
-            // Cannot make account with the same uid as the server console
-            if (reservedUid == GameConstants.SERVER_CONSOLE_UID) {
-                return null;
-            }
-
-            if (DatabaseHelper.checkIfAccountExists(reservedUid)) {
-                return null;
-            }
-
-            // Make sure no existing player already has this id.
-            if (DatabaseHelper.checkIfPlayerExists(reservedUid)) {
-                return null;
-            }
-        }
-
-        // Account
         Account account = new Account();
         account.setUsername(username);
         account.setId(Integer.toString(DatabaseManager.getNextId(account)));
@@ -70,13 +47,6 @@ public class MongoDatabase implements BaseDatabase {
 
     @Override
     public Account createAccountWithPassword(String username, String password) {
-        // Unique names only
-        Account exists = DatabaseHelper.getAccountByName(username);
-        if (exists != null) {
-            return null;
-        }
-
-        // Account
         Account account = new Account();
         account.setId(Integer.toString(DatabaseManager.getNextId(account)));
         account.setUsername(username);
@@ -296,7 +266,7 @@ public class MongoDatabase implements BaseDatabase {
             Filters.eq("ownerId", ownerId),
             Filters.eq("gachaType", gachaType)
         ).count();
-        return count / 10 + (count % 10 > 0 ? 1 : 0);
+        return count / pageSize + (count % pageSize > 0 ? 1 : 0);
     }
 
     @Override
@@ -347,14 +317,7 @@ public class MongoDatabase implements BaseDatabase {
 
     @Override
     public BattlePassManager loadBattlePass(Player player) {
-        BattlePassManager manager = DatabaseManager.getGameDatastore().find(BattlePassManager.class).filter(Filters.eq("ownerUid", player.getUid())).first();
-        if (manager == null) {
-            manager = new BattlePassManager(player);
-            manager.save();
-        } else {
-            manager.setPlayer(player);
-        }
-        return manager;
+        return DatabaseManager.getGameDatastore().find(BattlePassManager.class).filter(Filters.eq("ownerUid", player.getUid())).first();
     }
 
     @Override

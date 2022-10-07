@@ -17,6 +17,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
+import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +29,7 @@ import java.util.Optional;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder(builderMethodName = "of")
 public class PlayerActivityData {
-    @Id
-    String id;
+    @Id ObjectId id;
     int uid;
     int activityId;
     Map<Integer, WatcherInfo> watcherInfoMap;

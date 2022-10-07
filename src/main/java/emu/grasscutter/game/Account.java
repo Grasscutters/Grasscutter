@@ -2,6 +2,7 @@ package emu.grasscutter.game;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.database.sqlite.AutoIncrease;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
 
@@ -14,7 +15,8 @@ import org.bson.Document;
 
 @Entity(value = "accounts", useDiscriminator = false)
 public class Account {
-    @Id private String id;
+    @AutoIncrease
+    @Id private int id;
 
     @Indexed(options = @IndexOptions(unique = true))
     @Collation(locale = "simple", caseLevel = true)
@@ -41,11 +43,11 @@ public class Account {
     }
 
     public String getId() {
-        return id;
+        return Integer.toString(id);
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.id = Integer.parseInt(id);
     }
 
     public String getUsername() {

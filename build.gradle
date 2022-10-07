@@ -60,6 +60,8 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
 
+    implementation 'org.xerial:sqlite-jdbc:3.39.3.0'
+
     implementation group: 'it.unimi.dsi', name: 'fastutil', version: '8.5.8'
 
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.36'

@@ -1,5 +1,6 @@
 package emu.grasscutter.database;
 
+import emu.grasscutter.GameConstants;
 import emu.grasscutter.database.mongo.MongoDatabase;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.activity.PlayerActivityData;
@@ -29,11 +30,39 @@ public final class DatabaseHelper {
     }
 
     public static Account createAccountWithUid(String username, int reservedUid) {
+        // Unique names only
+        if (DatabaseHelper.checkIfAccountExists(username)) {
+            return null;
+        }
+
+        // Make sure there are no id collisions
+        if (reservedUid > 0) {
+            // Cannot make account with the same uid as the server console
+            if (reservedUid == GameConstants.SERVER_CONSOLE_UID) {
+                return null;
+            }
+
+            if (DatabaseHelper.checkIfAccountExists(reservedUid)) {
+                return null;
+            }
+
+            // Make sure no existing player already has this id.
+            if (DatabaseHelper.checkIfPlayerExists(reservedUid)) {
+                return null;
+            }
+        }
+
         return impl.createAccountWithUid(username, reservedUid);
     }
 
     @Deprecated
     public static Account createAccountWithPassword(String username, String password) {
+        // Unique names only
+        Account exists = DatabaseHelper.getAccountByName(username);
+        if (exists != null) {
+            return null;
+        }
+
         return impl.createAccountWithPassword(username, password);
     }
 
@@ -201,7 +230,14 @@ public final class DatabaseHelper {
     }
 
     public static BattlePassManager loadBattlePass(Player player) {
-        return impl.loadBattlePass(player);
+        BattlePassManager manager = impl.loadBattlePass(player);
+        if (manager == null) {
+            manager = new BattlePassManager(player);
+            manager.save();
+        } else {
+            manager.setPlayer(player);
+        }
+        return manager;
     }
 
     public static void saveBattlePass(BattlePassManager manager) {
