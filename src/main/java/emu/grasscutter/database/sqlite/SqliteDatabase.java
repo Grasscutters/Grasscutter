@@ -19,6 +19,7 @@ import emu.grasscutter.game.quest.GameMainQuest;
 import java.sql.SQLException;
 import java.util.List;
 
+import static emu.grasscutter.config.Configuration.DATABASE;
 import static emu.grasscutter.database.sqlite.MorphiaSqlite.wrapString;
 
 public class SqliteDatabase implements BaseDatabase {
@@ -26,8 +27,8 @@ public class SqliteDatabase implements BaseDatabase {
     @Override
     public void initialize() {
         try {
-            MorphiaSqlite.connect("jdbc:sqlite:grasscutter.db");
-            var entity = MorphiaSqlite.scanPackageEntity("emu.grasscutter");
+            MorphiaSqlite.connect(DATABASE.game.connectionUri);
+            var entity = MorphiaSqlite.scanPackageEntity(Grasscutter.class.getPackageName());
             entity.forEach((cls) -> {
                 try {
                     MorphiaSqlite.createTable(cls);
@@ -102,7 +103,42 @@ public class SqliteDatabase implements BaseDatabase {
 
     @Override
     public void deleteAccount(Account target) {
-        // TODO impl delete account
+        // To delete an account, we need to also delete all the other documents in the database that reference the account.
+        // This should optimally be wrapped inside a transaction, to make sure an error thrown mid-way does not leave the
+        // database in an inconsistent state, but unfortunately Mongo only supports that when we have a replica set ...
+
+        Player player = Grasscutter.getGameServer().getPlayerByAccountId(target.getId());
+
+        // Close session first
+        if (player != null) {
+            player.getSession().close();
+        } else {
+            player = getPlayerByAccount(target, Player.class);
+            if (player == null) return;
+        }
+        int uid = player.getUid();
+        // Delete data from collections
+        MorphiaSqlite.delete(PlayerActivityData.class, "uid = " + uid);
+        MorphiaSqlite.delete(GameHome.class, "ownerUid = " + uid);
+        MorphiaSqlite.delete(Mail.class, "ownerUid = " + uid);
+        MorphiaSqlite.delete(Avatar.class, "ownerUid = " + uid);
+        MorphiaSqlite.delete(GachaRecord.class, "ownerUid = " + uid);
+        MorphiaSqlite.delete(GameItem.class, "ownerUid = " + uid);
+        MorphiaSqlite.delete(GameMainQuest.class, "ownerUid = " + uid);
+        MorphiaSqlite.delete(BattlePassManager.class, "ownerUid = " + uid);
+
+        // Delete friendships.
+        // Here, we need to make sure to not only delete the deleted account's friendships,
+        // but also all friendship entries for that account's friends.
+        MorphiaSqlite.delete(Friendship.class, "ownerUid = " + uid);
+        MorphiaSqlite.delete(Friendship.class, "friendId = " + uid);
+
+        // Delete the player last.
+        MorphiaSqlite.delete(Player.class, "id = " + uid);
+
+        // Finally, delete the account itself.
+        MorphiaSqlite.delete(Account.class, "id = " + uid);
+
     }
 
     @Override

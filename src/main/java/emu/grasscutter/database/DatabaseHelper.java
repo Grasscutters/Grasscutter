@@ -1,6 +1,8 @@
 package emu.grasscutter.database;
 
 import emu.grasscutter.GameConstants;
+import emu.grasscutter.config.ConfigContainer;
+import emu.grasscutter.database.mongo.MongoDatabase;
 import emu.grasscutter.database.sqlite.SqliteDatabase;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.activity.PlayerActivityData;
@@ -17,9 +19,19 @@ import emu.grasscutter.game.quest.GameMainQuest;
 
 import java.util.List;
 
+import static emu.grasscutter.config.Configuration.DATABASE;
+
 public final class DatabaseHelper {
 
-    private static final BaseDatabase impl = new SqliteDatabase();
+    private static final BaseDatabase impl;
+
+    static {
+        if (DATABASE.game.connectionUri.startsWith("mongo")) {
+            impl = new MongoDatabase();
+        } else {
+            impl = new SqliteDatabase();
+        }
+    }
 
     public static void initialize() {
         impl.initialize();

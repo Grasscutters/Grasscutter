@@ -91,33 +91,6 @@ class MorphiaSqlite {
         })
         .create();
 
-    //test only
-    public static void main(String[] args) throws Exception {
-//        Set<Class<?>> x = MorphiaSqlite.scanPackageEntity("emu.grasscutter");
-//        x.forEach((c)->{
-//            String value = c.getAnnotation(Entity.class).value();
-//            System.out.println(c);
-//            System.out.println(value);
-//        });
-
-        // exec fxxk static code blocks
-        Class.forName(Grasscutter.class.getName());
-
-        SqliteDatabase db = new SqliteDatabase();
-        db.initialize();
-
-//        var account = new Account();
-//        account.setUsername("ua");
-//        account.setPassword("pwd");
-//        account.setEmail("email");
-//        account.setBanReason("banReason");
-//        saveEntity(account);
-//        System.out.println(gson.toJson(loadEntity(Account.class, "id = 3")));
-
-        connection.close();
-    }
-
-
     private static Connection connection = null;
 
     public static void connect(String url) throws ClassNotFoundException, SQLException {
@@ -329,6 +302,8 @@ class MorphiaSqlite {
                 } else {
                     instance = cls.getDeclaredConstructor().newInstance();
                 }
+                // mock a Document to invoke @PreLoad is useless.
+                // gson can handle this automatic
 //                if (cls == Account.class) {
 //                    Document document = new Document();
 //                    ((Account) instance).onLoad(document);
@@ -481,8 +456,7 @@ class MorphiaSqlite {
         return query(cls, "1 = 1");
     }
 
-    public static <T> boolean delete(T entity, String condition) {
-        var cls = entity.getClass();
+    public static <T> boolean delete(Class<T> cls, String condition) {
         var tName = cls.getAnnotation(Entity.class).value();
         var sql = "DELETE FROM " + tName + " WHERE " + condition;
         return exec(sql);
