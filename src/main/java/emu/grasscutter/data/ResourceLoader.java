@@ -26,8 +26,8 @@ import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-import static emu.grasscutter.config.Configuration.DATA;
-import static emu.grasscutter.config.Configuration.getResourcePath;
+import static emu.grasscutter.utils.FileUtils.getDataPath;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
 import static emu.grasscutter.utils.Language.translate;
 
 public class ResourceLoader {
@@ -174,7 +174,7 @@ public class ResourceLoader {
 
         // Read from cached file if exists
         try {
-            embryoList = JsonUtils.loadToList(DATA("AbilityEmbryos.json"), AbilityEmbryoEntry.class);
+            embryoList = JsonUtils.loadToList(getDataPath("AbilityEmbryos.json"), AbilityEmbryoEntry.class);
         } catch (Exception ignored) {}
 
         if (embryoList == null) {
@@ -318,7 +318,7 @@ public class ResourceLoader {
         List<OpenConfigEntry> list = null;
 
         try {
-            list = JsonUtils.loadToList(DATA("OpenConfig.json"), OpenConfigEntry.class);
+            list = JsonUtils.loadToList(getDataPath("OpenConfig.json"), OpenConfigEntry.class);
         } catch (Exception ignored) {}
 
         if (list == null) {

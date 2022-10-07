@@ -10,11 +10,107 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public final class FileUtils {
+    private static final FileSystem JAR_FILE_SYSTEM;
+    private static final Path DATA_DEFAULT_PATH;
+    private static final Path DATA_USER_PATH = Path.of(Grasscutter.config.folderStructure.data);
+    private static final Path PACKETS_PATH = Path.of(Grasscutter.config.folderStructure.packets);
+    private static final Path PLUGINS_PATH = Path.of(Grasscutter.config.folderStructure.plugins);
+    private static final Path RESOURCES_PATH;
+    private static final Path SCRIPTS_PATH;
+    static {
+        FileSystem fs = null;
+        Path path = DATA_USER_PATH;
+        // Setup Data paths
+        // Get pathUri of the current running JAR
+        try {
+            URI jarUri = Grasscutter.class.getProtectionDomain()
+                            .getCodeSource()
+                            .getLocation()
+                            .toURI();
+            fs = FileSystems.newFileSystem(Path.of(jarUri));
+            path = fs.getPath("/defaults/data");
+        } catch (URISyntaxException | IOException e) {
+            // Failed to load this jar. How?
+            System.err.println("Failed to load jar?????????????????????");
+        } finally {
+            JAR_FILE_SYSTEM = fs;
+            DATA_DEFAULT_PATH = path;
+        }
+
+        // Setup Resources path
+        final String resources = Grasscutter.config.folderStructure.resources;
+        fs = null;
+        path = Path.of(resources);
+        if (resources.endsWith(".zip")) {  // Would be nice to support .tar.gz too at some point, but it doesn't come for free in Java
+            try {
+                fs = FileSystems.newFileSystem(path);
+            } catch (IOException e) {
+                Grasscutter.getLogger().error("Failed to load resources zip \"" + resources + "\"");
+            }
+        }
+
+        if (fs != null) {
+            var root = fs.getPath("");
+            try (Stream<Path> pathStream = Files.find(root, 3, (p, a) -> {
+                        var filename = p.getFileName();
+                        if (filename == null) return false;
+                        return filename.toString().equals("ExcelBinOutput");
+            })) {
+                var excelBinOutput = pathStream.findFirst();
+                if (excelBinOutput.isPresent()) {
+                    path = excelBinOutput.get().getParent();
+                    if (path == null)
+                        path = root;
+                    Grasscutter.getLogger().debug("Resources will be loaded from \"" + resources + "/" + path.toString() + "\"");
+                } else {
+                    Grasscutter.getLogger().error("Failed to find ExcelBinOutput in resources zip \"" + resources + "\"");
+                }
+            } catch (IOException e) {
+                Grasscutter.getLogger().error("Failed to scan resources zip \"" + resources + "\"");
+            }
+        }
+        RESOURCES_PATH = path;
+
+        // Setup Scripts path
+        final String scripts = Grasscutter.config.folderStructure.scripts;
+        SCRIPTS_PATH = (scripts.startsWith("resources:"))
+            ? RESOURCES_PATH.resolve(scripts.substring("resources:".length()))
+            : Path.of(scripts);
+    };
+
+    public static Path getDataPath(String path) {
+        Path userPath = DATA_USER_PATH.resolve(path);
+        if (Files.exists(userPath)) return userPath;
+        Path defaultPath = DATA_DEFAULT_PATH.resolve(path);
+        if (Files.exists(defaultPath)) return defaultPath;
+        return userPath;  // Maybe they want to write to a new file
+    }
+
+    public static Path getDataUserPath(String path) {
+        return DATA_USER_PATH.resolve(path);
+    }
+
+    public static Path getPacketPath(String path) {
+        return PACKETS_PATH.resolve(path);
+    }
+
+    public static Path getPluginPath(String path) {
+        return PLUGINS_PATH.resolve(path);
+    }
+
+    public static Path getResourcePath(String path) {
+        return RESOURCES_PATH.resolve(path);
+    }
+
+    public static Path getScriptPath(String path) {
+        return SCRIPTS_PATH.resolve(path);
+    }
+
 	public static void write(String dest, byte[] bytes) {
 		Path path = Path.of(dest);
 		
@@ -79,20 +175,11 @@ public final class FileUtils {
 	public static List<Path> getPathsFromResource(String folder) throws URISyntaxException {
 		List<Path> result = null;
 
-		// Get pathUri of the current running JAR
-		URI pathUri = Grasscutter.class.getProtectionDomain()
-				.getCodeSource()
-				.getLocation()
-				.toURI();
-
 		try {
 			// file walks JAR
-			URI uri = URI.create("jar:file:" + pathUri.getRawPath());
-			try (FileSystem fs = FileSystems.newFileSystem(uri, Collections.emptyMap())) {
-				result = Files.walk(fs.getPath(folder))
-						.filter(Files::isRegularFile)
-						.collect(Collectors.toList());
-			}
+			result = Files.walk(JAR_FILE_SYSTEM.getPath(folder))
+					.filter(Files::isRegularFile)
+					.collect(Collectors.toList());
 		} catch (Exception e) {
 			// Eclipse puts resources in its bin folder
 			File f = new File(System.getProperty("user.dir") + folder);

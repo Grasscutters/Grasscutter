@@ -3,10 +3,10 @@ package emu.grasscutter.plugin;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.server.game.GameServer;
+import emu.grasscutter.utils.FileUtils;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static emu.grasscutter.config.Configuration.*;
 
 import java.io.File;
 import java.io.InputStream;
@@ -37,7 +37,7 @@ public abstract class Plugin {
 
         this.identifier = identifier;
         this.classLoader = classLoader;
-        this.dataFolder = new File(PLUGIN(), identifier.name);
+        this.dataFolder = FileUtils.getPluginPath(identifier.name).toFile();
         this.logger = LoggerFactory.getLogger(identifier.name);
 
         if (!this.dataFolder.exists() && !this.dataFolder.mkdirs()) {

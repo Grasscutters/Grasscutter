@@ -1,16 +1,9 @@
 package emu.grasscutter.config;
 
-import java.util.Locale;
-import java.util.stream.Stream;
+import emu.grasscutter.utils.FileUtils;
 
-import emu.grasscutter.Grasscutter;
-
-import java.io.IOException;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.Locale;
 
 import static emu.grasscutter.Grasscutter.config;
 
@@ -34,46 +27,9 @@ public final class Configuration extends ConfigContainer {
     public static final Locale FALLBACK_LANGUAGE = config.language.fallback;
     public static final String DOCUMENT_LANGUAGE = config.language.document;
     private static final String DATA_FOLDER = config.folderStructure.data;
-    private static final String RESOURCES_FOLDER = config.folderStructure.resources;
     private static final String PLUGINS_FOLDER = config.folderStructure.plugins;
     private static final String SCRIPTS_FOLDER = config.folderStructure.scripts;
     private static final String PACKETS_FOLDER = config.folderStructure.packets;
-    private static final FileSystem RESOURCES_FILE_SYSTEM;  // Not sure about lifetime rules on this one, might be safe to remove
-    private static final Path RESOURCES_PATH;
-    static {
-        FileSystem fs = null;
-        Path path = Path.of(RESOURCES_FOLDER);
-        if (RESOURCES_FOLDER.endsWith(".zip")) {  // Would be nice to support .tar.gz too at some point, but it doesn't come for free in Java
-            try {
-                fs = FileSystems.newFileSystem(path);
-            } catch (IOException e) {
-                Grasscutter.getLogger().error("Failed to load resources zip \"" + RESOURCES_FOLDER + "\"");
-            }
-        }
-
-        if (fs != null) {
-            var root = fs.getPath("");
-            try (Stream<Path> pathStream = java.nio.file.Files.find(root, 3, (p, a) -> {
-                        var filename = p.getFileName();
-                        if (filename == null) return false;
-                        return filename.toString().equals("ExcelBinOutput");
-            })) {
-                var excelBinOutput = pathStream.findFirst();
-                if (excelBinOutput.isPresent()) {
-                    path = excelBinOutput.get().getParent();
-                    if (path == null)
-                        path = root;
-                    Grasscutter.getLogger().debug("Resources will be loaded from \"" + RESOURCES_FOLDER + "/" + path.toString() + "\"");
-                } else {
-                    Grasscutter.getLogger().error("Failed to find ExcelBinOutput in resources zip \"" + RESOURCES_FOLDER + "\"");
-                }
-            } catch (IOException e) {
-                Grasscutter.getLogger().error("Failed to scan resources zip \"" + RESOURCES_FOLDER + "\"");
-            }
-        }
-        RESOURCES_FILE_SYSTEM = fs;
-        RESOURCES_PATH = path;
-    };
 
     public static final Server SERVER = config.server;
     public static final Database DATABASE = config.databaseInfo;
@@ -93,22 +49,27 @@ public final class Configuration extends ConfigContainer {
     /*
      * Utilities
      */
+    @Deprecated(forRemoval = true)
     public static String DATA() {
         return DATA_FOLDER;
     }
 
+    @Deprecated(forRemoval = true)
     public static String DATA(String path) {
         return Path.of(DATA_FOLDER, path).toString();
     }
 
+    @Deprecated(forRemoval = true)
     public static Path getResourcePath(String path) {
-        return RESOURCES_PATH.resolve(path);
+        return FileUtils.getResourcePath(path);
     }
 
+    @Deprecated(forRemoval = true)
     public static String RESOURCE(String path) {
-        return getResourcePath(path).toString();
+        return FileUtils.getResourcePath(path).toString();
     }
 
+    @Deprecated(forRemoval = true)
     public static String PLUGIN() {
         return PLUGINS_FOLDER;
     }
@@ -117,10 +78,12 @@ public final class Configuration extends ConfigContainer {
         return Path.of(PLUGINS_FOLDER, path).toString();
     }
 
+    @Deprecated(forRemoval = true)
     public static String SCRIPT(String path) {
         return Path.of(SCRIPTS_FOLDER, path).toString();
     }
 
+    @Deprecated(forRemoval = true)
     public static String PACKET(String path) {
         return Path.of(PACKETS_FOLDER, path).toString();
     }

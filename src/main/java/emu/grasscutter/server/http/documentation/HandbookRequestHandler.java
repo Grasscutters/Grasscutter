@@ -11,42 +11,38 @@ import emu.grasscutter.data.excels.MonsterData;
 import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Language;
-import emu.grasscutter.utils.Utils;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import java.io.File;
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
 final class HandbookRequestHandler implements DocumentationHandler {
     private List<String> handbookHtmls;
-    private final String template;
 
     public HandbookRequestHandler() {
-        final File templateFile = new File(Utils.toFilePath(DATA("documentation/handbook.html")));
-        if (templateFile.exists()) {
-            this.template = new String(FileUtils.read(templateFile), StandardCharsets.UTF_8);
-            this.handbookHtmls = generateHandbookHtmls();
-        } else {
-            Grasscutter.getLogger().warn("File does not exist: " + templateFile);
-            this.template = null;
+        var templatePath = FileUtils.getDataPath("documentation/handbook.html");
+        try {
+            this.handbookHtmls = generateHandbookHtmls(Files.readString(templatePath));
+        } catch (IOException ignored) {
+            Grasscutter.getLogger().warn("File does not exist: " + templatePath);
         }
     }
 
     @Override
     public void handle(Context ctx) {
         final int langIdx = Language.TextStrings.MAP_LANGUAGES.getOrDefault(DOCUMENT_LANGUAGE, 0);  // TODO: This should really be based off the client language somehow
-        if (template == null) {
+        if (this.handbookHtmls == null) {
             ctx.status(500);
         } else {
             ctx.contentType(ContentType.TEXT_HTML);
-            ctx.result(handbookHtmls.get(langIdx));
+            ctx.result(this.handbookHtmls.get(langIdx));
         }
     }
 
-    private List<String> generateHandbookHtmls() {
+    private List<String> generateHandbookHtmls(String template) {
         final int NUM_LANGUAGES = Language.TextStrings.NUM_LANGUAGES;
         final List<String> output = new ArrayList<>(NUM_LANGUAGES);
         final List<Language> languages = Language.TextStrings.getLanguages();
