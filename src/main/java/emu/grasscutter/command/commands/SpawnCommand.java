@@ -25,7 +25,6 @@ import static emu.grasscutter.utils.Language.translate;
 
 @Command(
     label = "spawn",
-    aliases = {"spawn"},
     usage = {
         "<itemId> [x<amount>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>",
         "<gadgetId> [x<amount>] [state<state>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>",
