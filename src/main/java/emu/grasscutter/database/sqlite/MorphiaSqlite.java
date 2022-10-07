@@ -12,6 +12,7 @@ import dev.morphia.annotations.PostLoad;
 import dev.morphia.annotations.Transient;
 import dev.morphia.mapping.Mapper;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.Account;
 import emu.grasscutter.game.activity.PlayerActivityData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.battlepass.BattlePassManager;
@@ -54,6 +55,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+import static emu.grasscutter.config.Configuration.SERVER;
 import static org.reflections.scanners.Scanners.SubTypes;
 import static org.reflections.scanners.Scanners.TypesAnnotated;
 
@@ -91,11 +93,27 @@ class MorphiaSqlite {
         })
         .create();
 
-    private static Connection connection = null;
+    private static Connection server = null;
+    private static Connection game = null;
 
-    public static void connect(String url) throws ClassNotFoundException, SQLException {
+    public static void connect(String server1, String game1) throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
-        connection = DriverManager.getConnection(url);
+        switch (SERVER.runMode) {
+            case HYBRID -> {
+                server = DriverManager.getConnection(server1);
+                if (!game1.equals(server1)) {
+                    game = DriverManager.getConnection(game1);
+                } else {
+                    game = server;
+                }
+            }
+            case GAME_ONLY -> {
+                game = DriverManager.getConnection(game1);
+            }
+            case DISPATCH_ONLY -> {
+                server = DriverManager.getConnection(server1);
+            }
+        }
     }
 
     public static Set<Class<?>> scanPackageEntity(String root) {
@@ -154,7 +172,7 @@ class MorphiaSqlite {
     }
 
     public static boolean createTable(Class<?> cls) throws SQLException {
-        return exec(createTableSQL(cls));
+        return exec(createTableSQL(cls), cls == Account.class);
     }
 
     private static <T> String updateSQL(T entity, String condition) {
@@ -269,9 +287,9 @@ class MorphiaSqlite {
                 if (id == null && idField.getType() == ObjectId.class) {
                     idField.set(entity, new ObjectId());
                 }
-                return exec(insertSQL(entity));
+                return exec(insertSQL(entity), cls == Account.class);
             } else {
-                return exec(updateSQL(entity, "id = " + wrapString(id.toString())));
+                return exec(updateSQL(entity, "id = " + wrapString(id.toString())), cls == Account.class);
             }
         } catch (Exception e) {
             Grasscutter.getLogger().error(" sqlite insertOrUpdate failed: ", e);
@@ -293,7 +311,12 @@ class MorphiaSqlite {
         String sql = querySQL(cls, condition);
         try {
             Set<Field> fieldSet = filterFields(cls.getDeclaredFields());
-            Statement stmt = connection.createStatement();
+            Statement stmt;
+            if (cls == Account.class) {
+                stmt = server.createStatement();
+            } else {
+                stmt = game.createStatement();
+            }
             ResultSet resultSet = stmt.executeQuery(sql);
             while (resultSet.next()) {
                 T instance;
@@ -459,7 +482,7 @@ class MorphiaSqlite {
     public static <T> boolean delete(Class<T> cls, String condition) {
         var tName = cls.getAnnotation(Entity.class).value();
         var sql = "DELETE FROM " + tName + " WHERE " + condition;
-        return exec(sql);
+        return exec(sql, cls == Account.class);
     }
 
     public static <T> boolean delete(T entity) {
@@ -469,17 +492,22 @@ class MorphiaSqlite {
             Field idField = cls.getDeclaredField("id");
             idField.setAccessible(true);
             var sql = "DELETE FROM " + tName + " WHERE id = " + idField.get(entity);
-            return exec(sql);
+            return exec(sql, cls == Account.class);
         } catch (Exception e) {
             Grasscutter.getLogger().error(" sqlite delete failed: ", e);
         }
         return false;
     }
 
-    private static boolean exec(String sql) {
+    private static boolean exec(String sql, boolean isAccount) {
         boolean result;
         try {
-            Statement stmt = connection.createStatement();
+            Statement stmt;
+            if (isAccount) {
+                stmt = server.createStatement();
+            } else {
+                stmt = game.createStatement();
+            }
             result = stmt.execute(sql);
             stmt.close();
         } catch (SQLException e) {
