@@ -17,6 +17,6 @@ public class HandlerGetFriendShowNameCardInfoReq extends PacketHandler {
         int targetUid = req.getUid();
         Player target = session.getServer().getPlayerByUid(targetUid, true);
 
-        session.send(new PacketGetFriendShowNameCardInfoRsp(req.getUid(), target.getShowNameCardInfoList()));
+        session.send(new PacketGetFriendShowNameCardInfoRsp(targetUid, target.getShowNameCardInfoList()));
     }
 }

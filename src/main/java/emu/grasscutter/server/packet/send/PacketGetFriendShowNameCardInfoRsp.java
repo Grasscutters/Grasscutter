@@ -13,6 +13,7 @@ public class PacketGetFriendShowNameCardInfoRsp extends BasePacket {
         GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRsp rsp = GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRsp.newBuilder()
             .setUid(uid)
             .addAllShowNameCardIdList(cardIds)
+            .setRetcode(0)
             .build();
 
         this.setData(rsp);
