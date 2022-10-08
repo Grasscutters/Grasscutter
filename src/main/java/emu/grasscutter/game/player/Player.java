@@ -100,6 +100,7 @@ public class Player {
     @Getter private PlayerCodex codex;
     @Getter @Setter private boolean showAvatars;
     @Getter @Setter private List<Integer> showAvatarList;
+    @Getter @Setter private List<Integer> showNameCardList;
     @Getter private Map<Integer, Integer> properties;
     @Getter @Setter private int currentRealmId;
     @Getter @Setter private int widgetId;
@@ -935,6 +936,7 @@ public class Player {
                 .setNameCardId(this.getNameCardId())
                 .setIsShowAvatar(this.isShowAvatars())
                 .addAllShowAvatarInfoList(socialShowAvatarInfoList)
+                .addAllShowNameCardIdList(this.getShowNameCardInfoList())
                 .setFinishAchievementNum(0);
         return social;
     }
@@ -966,6 +968,18 @@ public class Player {
             }
         }
         return showAvatarInfoList;
+    }
+
+    public List<Integer> getShowNameCardInfoList() {
+        Player player;
+        if (this.isOnline()) {
+            player = this;
+        } else {
+            player = DatabaseHelper.getPlayerByUid(id);
+        }
+
+        List<Integer> info = player.getShowNameCardList();
+        return info == null ? new ArrayList<>() : info;
     }
 
     public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getWorldPlayerLocationInfo() {
