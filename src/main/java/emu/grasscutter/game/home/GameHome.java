@@ -35,7 +35,7 @@ public class GameHome {
     int exp;
     List<FurnitureMakeSlotItem> furnitureMakeSlotItemList;
     ConcurrentHashMap<Integer, HomeSceneItem> sceneMap;
-    List<Integer> unlockedHomeBgmList;
+    Set<Integer> unlockedHomeBgmList;
 
     public void save(){
         DatabaseHelper.saveHome(this);
