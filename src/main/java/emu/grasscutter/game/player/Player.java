@@ -971,9 +971,7 @@ public class Player {
     }
 
     public List<Integer> getShowNameCardInfoList() {
-        Player player = Grasscutter.getGameServer().getPlayerByUid(id, true);
-
-        List<Integer> info = player.getShowNameCardList();
+        List<Integer> info = this.getShowNameCardList();
         return info == null ? new ArrayList<>() : info;
     }
 
