@@ -10,7 +10,7 @@ public class PacketUpdatePlayerShowNameCardListRsp extends BasePacket {
     public PacketUpdatePlayerShowNameCardListRsp(List<Integer> cardIds) {
         super(PacketOpcodes.UpdatePlayerShowNameCardListRsp);
 
-        UpdatePlayerShowNameCardListRspOuterClass.UpdatePlayerShowNameCardListRsp rsp = UpdatePlayerShowNameCardListRspOuterClass.UpdatePlayerShowNameCardListRsp.newBuilder()
+        var rsp = UpdatePlayerShowNameCardListRspOuterClass.UpdatePlayerShowNameCardListRsp.newBuilder()
             .addAllShowNameCardIdList(cardIds)
             .setRetcode(0)
             .build();
