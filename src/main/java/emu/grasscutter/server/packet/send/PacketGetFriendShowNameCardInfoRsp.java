@@ -10,7 +10,7 @@ public class PacketGetFriendShowNameCardInfoRsp extends BasePacket {
     public PacketGetFriendShowNameCardInfoRsp(int uid, List<Integer> cardIds) {
         super(PacketOpcodes.GetFriendShowNameCardInfoRsp);
 
-        GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRsp rsp = GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRsp.newBuilder()
+        var rsp = GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRsp.newBuilder()
             .setUid(uid)
             .addAllShowNameCardIdList(cardIds)
             .setRetcode(0)
