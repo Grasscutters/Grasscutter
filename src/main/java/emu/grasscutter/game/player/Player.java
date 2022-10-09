@@ -971,12 +971,7 @@ public class Player {
     }
 
     public List<Integer> getShowNameCardInfoList() {
-        Player player;
-        if (this.isOnline()) {
-            player = this;
-        } else {
-            player = DatabaseHelper.getPlayerByUid(id);
-        }
+        Player player = Grasscutter.getGameServer().getPlayerByUid(id, true);
 
         List<Integer> info = player.getShowNameCardList();
         return info == null ? new ArrayList<>() : info;
