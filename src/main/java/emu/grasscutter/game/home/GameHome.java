@@ -15,8 +15,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Entity(value = "homes", useDiscriminator = false)
@@ -86,10 +87,10 @@ public class GameHome {
         save();
     }
 
-    public List<Integer> getUnlockedHomeBgmListInfo() {
+    public Set<Integer> getUnlockedHomeBgmListInfo() {
         var list = getUnlockedHomeBgmList();
         if (list == null) {
-            list = new ArrayList<>();
+            list = new HashSet<>();
             addAllDefaultUnlockedBgms(list);
             setUnlockedHomeBgmList(list);
             save();
@@ -98,7 +99,7 @@ public class GameHome {
         return list;
     }
 
-    private void addAllDefaultUnlockedBgms(List<Integer> list) {
+    private void addAllDefaultUnlockedBgms(Set<Integer> list) {
         list.add(105);//Pure Sky
         list.add(110);//The City Favored by Wind
         list.add(121);//Hence, Begins the Journey
