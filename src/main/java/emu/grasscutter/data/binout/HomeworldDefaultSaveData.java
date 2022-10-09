@@ -20,6 +20,7 @@ public class HomeworldDefaultSaveData {
     Position bornRot;
     @SerializedName("HHOLBNPIHEM")
     Position djinPos;
+    int homeBgmId;
     @SerializedName("KNHCJKHCOAN")
     HomeFurniture mainhouse;
 

@@ -833,6 +833,15 @@ public class InventorySystem extends BaseGameSystem {
                     break;
                 }
                 break;
+            case MATERIAL_BGM:
+                ItemUseData use = itemData.getItemUse().get(0);
+                if (use.getUseOp() == ItemUseOp.ITEM_USE_UNLOCK_HOME_BGM) {
+                    int bgmId = Integer.parseInt(use.getUseParam()[0]);
+                    player.getInventory().removeItem(useItem, 1);
+                    player.sendPacket(new PacketUnlockHomeBgmNotify(bgmId));
+                    return useItem;
+                }
+                break;
             default:
                 break;
         }
