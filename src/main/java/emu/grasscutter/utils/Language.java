@@ -14,8 +14,6 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import lombok.EqualsAndHashCode;
 
-import javax.annotation.Nullable;
-
 import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.FileUtils.getResourcePath;
 
@@ -46,9 +44,8 @@ import java.util.Map;
 public final class Language {
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
 
-    private final JsonObject languageData;
     private final String languageCode;
-    private final Map<String, String> cachedTranslations = new ConcurrentHashMap<>();
+    private final Map<String, String> translations = new ConcurrentHashMap<>();
 
     /**
      * Creates a language instance from a code.
@@ -140,19 +137,35 @@ public final class Language {
     }
 
     /**
+     * Recursive helper function to flatten a Json tree
+     * Converts input like {"foo": {"bar": "baz"}} to {"foo.bar": "baz"}
+     * @param map The map to insert the keys into
+     * @param key The flattened key of the current element
+     * @param element The current element
+     */
+    private static void putFlattenedKey(Map<String,String> map, String key, JsonElement element) {
+        if (element.isJsonObject()) {
+            element.getAsJsonObject().entrySet().forEach(entry -> {
+                String keyPrefix = key.isEmpty() ? "" : key + ".";
+                putFlattenedKey(map, keyPrefix + entry.getKey(), entry.getValue());
+            });
+        } else {
+            map.put(key, element.getAsString());
+        }
+    }
+
+    /**
      * Reads a file and creates a language instance.
      */
     private Language(LanguageStreamDescription description) {
-        @Nullable JsonObject languageData = null;
         languageCode = description.getLanguageCode();
 
         try {
-            languageData = JsonUtils.decode(Utils.readFromInputStream(description.getLanguageFile()), JsonObject.class);
+            var object = JsonUtils.decode(Utils.readFromInputStream(description.getLanguageFile()), JsonObject.class);
+            object.entrySet().forEach(entry -> putFlattenedKey(translations, entry.getKey(), entry.getValue()));
         } catch (Exception exception) {
             Grasscutter.getLogger().warn("Failed to load language file: " + description.getLanguageCode(), exception);
         }
-
-        this.languageData = languageData;
     }
 
     /**
@@ -199,41 +212,16 @@ public final class Language {
      * @return The value (as a string) from a nested key.
      */
     public String get(String key) {
-        if (this.cachedTranslations.containsKey(key)) {
-            return this.cachedTranslations.get(key);
-        }
-
-        String[] keys = key.split("\\.");
-        JsonObject object = this.languageData;
-
-        int index = 0;
+        if (translations.containsKey(key)) return translations.get(key);
         String valueNotFoundPattern = "This value does not exist. Please report this to the Discord: ";
         String result = valueNotFoundPattern + key;
-        boolean isValueFound = false;
-
-        while (true) {
-            if (index == keys.length) break;
-
-            String currentKey = keys[index++];
-            if (object.has(currentKey)) {
-                JsonElement element = object.get(currentKey);
-                if (element.isJsonObject())
-                    object = element.getAsJsonObject();
-                else {
-                    isValueFound = true;
-                    result = element.getAsString(); break;
-                }
-            } else break;
-        }
-
-        if (!isValueFound && !languageCode.equals("en-US")) {
-            var englishValue = getLanguage("en-US").get(key);
+        if (!languageCode.equals("en-US")) {
+            String englishValue = getLanguage("en-US").get(key);
             if (!englishValue.contains(valueNotFoundPattern)) {
                 result += "\nhere is english version:\n" + englishValue;
             }
         }
-
-        this.cachedTranslations.put(key, result); return result;
+        return result;
     }
 
     private static class LanguageStreamDescription {
