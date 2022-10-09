@@ -61,6 +61,7 @@ dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
 
     implementation 'org.xerial:sqlite-jdbc:3.39.3.0'
+    implementation 'org.mybatis:mybatis:3.5.11'
 
     implementation group: 'it.unimi.dsi', name: 'fastutil', version: '8.5.8'
 
