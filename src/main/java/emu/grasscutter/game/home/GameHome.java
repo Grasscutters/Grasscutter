@@ -15,6 +15,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -34,6 +35,7 @@ public class GameHome {
     int exp;
     List<FurnitureMakeSlotItem> furnitureMakeSlotItemList;
     ConcurrentHashMap<Integer, HomeSceneItem> sceneMap;
+    List<Integer> unlockedHomeBgmList;
 
     public void save(){
         DatabaseHelper.saveHome(this);
@@ -72,9 +74,36 @@ public class GameHome {
         player.getSession().send(new PacketHomeComfortInfoNotify(player));
         player.getSession().send(new PacketFurnitureCurModuleArrangeCountNotify());
         player.getSession().send(new PacketHomeMarkPointNotify(player));
+        player.getSession().send(new PacketUnlockedHomeBgmNotify(player));
     }
 
     public HomeWorldLevelData getLevelData(){
         return GameData.getHomeWorldLevelDataMap().get(level);
+    }
+
+    public void addUnlockedHomeBgm(int homeBgmId) {
+        getUnlockedHomeBgmList().add(homeBgmId);
+        save();
+    }
+
+    public List<Integer> getUnlockedHomeBgmListInfo() {
+        var list = getUnlockedHomeBgmList();
+        if (list == null) {
+            list = new ArrayList<>();
+            addAllDefaultUnlockedBgms(list);
+            setUnlockedHomeBgmList(list);
+            save();
+        }
+
+        return list;
+    }
+
+    private void addAllDefaultUnlockedBgms(List<Integer> list) {
+        list.add(105);//Pure Sky
+        list.add(110);//The City Favored by Wind
+        list.add(121);//Hence, Begins the Journey
+        list.add(201);//Moon in One's Cup
+        list.add(202);//Maiden's Longing
+        list.add(225);//Liyue
     }
 }

@@ -839,6 +839,8 @@ public class InventorySystem extends BaseGameSystem {
                     int bgmId = Integer.parseInt(use.getUseParam()[0]);
                     player.getInventory().removeItem(useItem, 1);
                     player.sendPacket(new PacketUnlockHomeBgmNotify(bgmId));
+                    player.getHome().addUnlockedHomeBgm(bgmId);
+                    player.sendPacket(new PacketUnlockedHomeBgmNotify(player));
                     return useItem;
                 }
                 break;
