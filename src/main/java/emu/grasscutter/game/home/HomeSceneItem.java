@@ -39,7 +39,6 @@ public class HomeSceneItem {
                 .djinnPos(defaultItem.getDjinPos() == null ? new Position() : defaultItem.getDjinPos())
                 .mainHouse(defaultItem.getMainhouse() == null ? null :
                         HomeFurnitureItem.parseFrom(defaultItem.getMainhouse()))
-                .homeBgmId(defaultItem.getHomeBgmId())
                 .build();
     }
 

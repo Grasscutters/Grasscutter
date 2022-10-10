@@ -91,7 +91,7 @@ public class GameHome {
         var list = getUnlockedHomeBgmList();
         if (list == null) {
             list = new HashSet<>();
-            addAllDefaultUnlockedBgms(list);
+            addAllDefaultUnlockedBgmIds(list);
             setUnlockedHomeBgmList(list);
             save();
         }
@@ -99,12 +99,9 @@ public class GameHome {
         return list;
     }
 
-    private void addAllDefaultUnlockedBgms(Set<Integer> list) {
-        list.add(105);//Pure Sky
-        list.add(110);//The City Favored by Wind
-        list.add(121);//Hence, Begins the Journey
-        list.add(201);//Moon in One's Cup
-        list.add(202);//Maiden's Longing
-        list.add(225);//Liyue
+    private void addAllDefaultUnlockedBgmIds(Set<Integer> list) {
+        GameData.getHomeWorldBgmDataMap().int2ObjectEntrySet().stream()
+            .filter(entry -> entry.getValue().isDefaultUnlock())
+            .forEach(entry -> list.add(entry.getIntKey()));
     }
 }
