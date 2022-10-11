@@ -16,8 +16,7 @@ public class HandlerUpdateAbilityCreatedMovingPlatformNotify extends PacketHandl
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var sequence = PacketHeadOuterClass.PacketHead.parseFrom(header).getClientSequenceId();
         var notify = UpdateAbilityCreatedMovingPlatformNotifyOuterClass.UpdateAbilityCreatedMovingPlatformNotify.parseFrom(payload);
-        var entityId = notify.getEntityId();
-        var entity = session.getPlayer().getScene().getEntityById(entityId);
+        var entity = session.getPlayer().getScene().getEntityById(notify.getEntityId());
 
         if (!(entity instanceof EntityPlatform)) {
             return;

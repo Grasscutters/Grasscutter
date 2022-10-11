@@ -9,6 +9,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.*;
+import emu.grasscutter.server.packet.send.PacketSceneTimeNotify;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 
@@ -104,5 +105,41 @@ public class EntityAlbedoElevatorPlatform extends EntityPlatform {
             .setEntityAuthorityInfo(authority);
 
         return info.build();
+    }
+
+    @Override
+    public PlatformInfoOuterClass.PlatformInfo onStartRoute() {
+        setStarted(true);
+        setActive(true);
+
+        var sceneTime = getScene().getSceneTime();
+        getOwner().sendPacket(new PacketSceneTimeNotify(getOwner()));
+
+        return PlatformInfoOuterClass.PlatformInfo.newBuilder()
+            .setStartSceneTime(sceneTime + 300)
+            .setIsStarted(true)
+            .setPosOffset(getPosition().toProto())
+            .setRotOffset(MathQuaternionOuterClass.MathQuaternion.newBuilder()
+                .setW(1.0F)
+                .build())
+            .setMovingPlatformType(getMovingPlatformType())
+            .setIsActive(true)
+            .build();
+    }
+
+    @Override
+    public PlatformInfoOuterClass.PlatformInfo onStopRoute() {
+        setStarted(false);
+        setActive(false);
+
+        return PlatformInfoOuterClass.PlatformInfo.newBuilder()
+            .setStartSceneTime(getScene().getSceneTime())
+            .setStopSceneTime(getScene().getSceneTime())
+            .setPosOffset(getPosition().toProto())
+            .setRotOffset(MathQuaternionOuterClass.MathQuaternion.newBuilder()
+                .setW(1.0F)
+                .build())
+            .setMovingPlatformType(getMovingPlatformType())
+            .build();
     }
 }

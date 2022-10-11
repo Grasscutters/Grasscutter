@@ -18,16 +18,25 @@ import lombok.Setter;
 import javax.annotation.Nullable;
 
 public class EntityPlatform extends EntityBaseGadget {
-    @Getter private final Player owner;
+    @Getter
+    private final Player owner;
     private final int gadgetId;
-    @Getter private final EntityClientGadget gadget;
+    @Getter
+    private final EntityClientGadget gadget;
     private final Int2FloatMap fightProp;
     private final Position pos;
     private final Position rot;
-    @Nullable @Getter private ConfigGadget configGadget;
-    @Getter private final MovingPlatformTypeOuterClass.MovingPlatformType movingPlatformType;
-    @Getter @Setter private boolean isStarted;
-    @Getter @Setter private boolean isActive;
+    @Nullable
+    @Getter
+    private ConfigGadget configGadget;
+    @Getter
+    private final MovingPlatformTypeOuterClass.MovingPlatformType movingPlatformType;
+    @Getter
+    @Setter
+    private boolean isStarted;
+    @Getter
+    @Setter
+    private boolean isActive;
 
     public EntityPlatform(EntityClientGadget gadget, Scene scene, Player player, int gadgetId, Position pos, Position rot, MovingPlatformTypeOuterClass.MovingPlatformType movingPlatformType) {
         super(scene);
@@ -73,26 +82,15 @@ public class EntityPlatform extends EntityBaseGadget {
             .setMovingPlatformType(movingPlatformType)
             .build();
 
-        var authority = EntityAuthorityInfoOuterClass.EntityAuthorityInfo.newBuilder()
-            .setAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder())
-            .setRendererChangedInfo(EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.newBuilder())
-            .setAiInfo(SceneEntityAiInfoOuterClass.SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(getPosition().toProto()))
-            .setBornPos(getPosition().toProto())
-            .build();
-
         var gadgetInfo = SceneGadgetInfoOuterClass.SceneGadgetInfo.newBuilder()
             .setGadgetId(getGadgetId())
             .setAuthorityPeerId(getOwner().getPeerId())
-            .setIsEnableInteract(true)
             .setPlatform(platform);
 
         var entityInfo = SceneEntityInfoOuterClass.SceneEntityInfo.newBuilder()
             .setEntityId(getId())
             .setEntityType(ProtEntityTypeOuterClass.ProtEntityType.PROT_ENTITY_TYPE_GADGET)
-            .setMotionInfo(MotionInfoOuterClass.MotionInfo.newBuilder().setPos(getPosition().toProto()).setRot(getRotation().toProto()).setSpeed(VectorOuterClass.Vector.newBuilder()))
-            .addAnimatorParaList(AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair.newBuilder())
             .setGadget(gadgetInfo)
-            .setEntityAuthorityInfo(authority)
             .setLifeState(1);
 
         for (Int2FloatMap.Entry entry : getFightProperties().int2FloatEntrySet()) {
@@ -104,5 +102,25 @@ public class EntityPlatform extends EntityBaseGadget {
         }
 
         return entityInfo.build();
+    }
+
+    public PlatformInfoOuterClass.PlatformInfo onStartRoute() {
+        return PlatformInfoOuterClass.PlatformInfo.newBuilder()
+            .setStartSceneTime(getScene().getSceneTime())
+            .setIsStarted(true)
+            .setPosOffset(getPosition().toProto())
+            .setMovingPlatformType(getMovingPlatformType())
+            .setIsActive(true)
+            .build();
+    }
+
+    public PlatformInfoOuterClass.PlatformInfo onStopRoute() {
+        var sceneTime = getScene().getSceneTime();
+        return PlatformInfoOuterClass.PlatformInfo.newBuilder()
+            .setStartSceneTime(sceneTime)
+            .setStopSceneTime(sceneTime)
+            .setPosOffset(getPosition().toProto())
+            .setMovingPlatformType(getMovingPlatformType())
+            .build();
     }
 }
