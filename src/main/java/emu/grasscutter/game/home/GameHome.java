@@ -15,7 +15,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Entity(value = "homes", useDiscriminator = false)
@@ -34,6 +36,7 @@ public class GameHome {
     int exp;
     List<FurnitureMakeSlotItem> furnitureMakeSlotItemList;
     ConcurrentHashMap<Integer, HomeSceneItem> sceneMap;
+    Set<Integer> unlockedHomeBgmList;
 
     public void save(){
         DatabaseHelper.saveHome(this);
@@ -72,9 +75,33 @@ public class GameHome {
         player.getSession().send(new PacketHomeComfortInfoNotify(player));
         player.getSession().send(new PacketFurnitureCurModuleArrangeCountNotify());
         player.getSession().send(new PacketHomeMarkPointNotify(player));
+        player.getSession().send(new PacketUnlockedHomeBgmNotify(player));
     }
 
     public HomeWorldLevelData getLevelData(){
         return GameData.getHomeWorldLevelDataMap().get(level);
+    }
+
+    public void addUnlockedHomeBgm(int homeBgmId) {
+        getUnlockedHomeBgmList().add(homeBgmId);
+        save();
+    }
+
+    public Set<Integer> getUnlockedHomeBgmListInfo() {
+        var list = getUnlockedHomeBgmList();
+        if (list == null) {
+            list = new HashSet<>();
+            addAllDefaultUnlockedBgmIds(list);
+            setUnlockedHomeBgmList(list);
+            save();
+        }
+
+        return list;
+    }
+
+    private void addAllDefaultUnlockedBgmIds(Set<Integer> list) {
+        GameData.getHomeWorldBgmDataMap().int2ObjectEntrySet().stream()
+            .filter(entry -> entry.getValue().isDefaultUnlock())
+            .forEach(entry -> list.add(entry.getIntKey()));
     }
 }

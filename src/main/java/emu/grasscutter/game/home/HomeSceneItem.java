@@ -25,6 +25,7 @@ public class HomeSceneItem {
     Position bornPos;
     Position bornRot;
     Position djinnPos;
+    int homeBgmId;
     HomeFurnitureItem mainHouse;
     int tmpVersion;
     public static HomeSceneItem parseFrom(HomeworldDefaultSaveData defaultItem, int sceneId) {
@@ -55,6 +56,7 @@ public class HomeSceneItem {
         this.bornPos = new Position(arrangementInfo.getBornPos());
         this.bornRot = new Position(arrangementInfo.getBornRot());
         this.djinnPos = new Position(arrangementInfo.getDjinnPos());
+        this.homeBgmId = arrangementInfo.getUnk2700BJHAMKKECEI();
         this.mainHouse = HomeFurnitureItem.parseFrom(arrangementInfo.getMainHouse());
         this.tmpVersion = arrangementInfo.getTmpVersion();
     }
@@ -82,6 +84,7 @@ public class HomeSceneItem {
                 .setDjinnPos(djinnPos.toProto())
                 .setIsSetBornPos(true)
                 .setSceneId(sceneId)
+                .setUnk2700BJHAMKKECEI(homeBgmId)
                 .setTmpVersion(tmpVersion);
 
         if(mainHouse != null){
