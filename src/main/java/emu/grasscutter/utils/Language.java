@@ -20,7 +20,6 @@ import static emu.grasscutter.utils.FileUtils.getResourcePath;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -46,6 +45,7 @@ public final class Language {
 
     private final String languageCode;
     private final Map<String, String> translations = new ConcurrentHashMap<>();
+    private static boolean scannedTextmaps = false;  // Ensure that we don't infinitely rescan on cache misses that don't exist
 
     /**
      * Creates a language instance from a code.
@@ -242,7 +242,7 @@ public final class Language {
         }
     }
 
-    private static final int TEXTMAP_CACHE_VERSION = 0x9CCACE03;
+    private static final int TEXTMAP_CACHE_VERSION = 0x9CCACE04;
     @EqualsAndHashCode public static class TextStrings implements Serializable {
         public static final String[] ARR_LANGUAGES = {"EN", "CHS", "CHT", "JP", "KR", "DE", "ES", "FR", "ID", "PT", "RU", "TH", "VI"};
         public static final String[] ARR_GC_LANGUAGES = {"en-US", "zh-CN", "zh-TW", "ja-JP", "ko-KR", "en-US", "es-ES", "fr-FR", "en-US", "en-US", "ru-RU", "en-US", "en-US"};  // TODO: Update the placeholder en-US entries if we ever add GC translations for the missing client languages
@@ -385,9 +385,10 @@ public final class Language {
     }
 
     public static TextStrings getTextMapKey(long hash) {
-        if (textMapStrings == null)
+        int key = (int) hash;
+        if ((textMapStrings == null) || (!scannedTextmaps && !textMapStrings.containsKey(key)))
             loadTextMaps();
-        return textMapStrings.get((int) hash);
+        return textMapStrings.get(key);
     }
 
     public static void loadTextMaps() {
@@ -429,6 +430,7 @@ public final class Language {
             usedHashes.add((int) v.getDescTextMapHash());
         });
         GameData.getItemDataMap().forEach((k, v) -> usedHashes.add((int) v.getNameTextMapHash()));
+        GameData.getHomeWorldBgmDataMap().forEach((k, v) -> usedHashes.add((int) v.getBgmNameTextMapHash()));
         GameData.getMonsterDataMap().forEach((k, v) -> usedHashes.add((int) v.getNameTextMapHash()));
         GameData.getMainQuestDataMap().forEach((k, v) -> usedHashes.add((int) v.getTitleTextMapHash()));
         GameData.getQuestDataMap().forEach((k, v) -> usedHashes.add((int) v.getDescTextMapHash()));
@@ -441,6 +443,7 @@ public final class Language {
         usedHashes.add((int) 2864268523L);  // Weapon Event Wish
 
         textMapStrings = loadTextMapFiles(usedHashes);
+        scannedTextmaps = true;
         try {
             saveTextMapsCache(textMapStrings);
         } catch (IOException e) {

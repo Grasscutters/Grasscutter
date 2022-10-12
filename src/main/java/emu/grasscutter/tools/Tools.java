@@ -11,7 +11,11 @@ import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
@@ -21,37 +25,53 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Language.TextStrings;
-import it.unimi.dsi.fastutil.ints.Int2IntSortedMap;
 import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectRBTreeMap;
+import it.unimi.dsi.fastutil.ints.IntList;
+import lombok.val;
 
 import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.FileUtils.getResourcePath;
 
 public final class Tools {
     public static void createGmHandbooks() throws Exception {
-        final List<Language> languages = Language.TextStrings.getLanguages();
-        final Int2ObjectMap<TextStrings> textMaps = Language.getTextMapStrings();
+        val languages = Language.TextStrings.getLanguages();
+        val textMaps = Language.getTextMapStrings();
 
         ResourceLoader.loadAll();
-        final Int2IntSortedMap avatarNames = new Int2IntRBTreeMap(GameData.getAvatarDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getNameTextMapHash())));
-        final Int2IntSortedMap itemNames = new Int2IntRBTreeMap(GameData.getItemDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getNameTextMapHash())));
-        final Int2IntSortedMap monsterNames = new Int2IntRBTreeMap(GameData.getMonsterDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getNameTextMapHash())));
-        final Int2IntSortedMap mainQuestTitles = new Int2IntRBTreeMap(GameData.getMainQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getTitleTextMapHash())));
-        // Int2IntSortedMap questDescs = new Int2IntRBTreeMap(GameData.getQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getDescTextMapHash())));
+        val mainQuestTitles = new Int2IntRBTreeMap(GameData.getMainQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getTitleTextMapHash())));
+        // val questDescs = new Int2IntRBTreeMap(GameData.getQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getDescTextMapHash())));
+
+        val avatarDataMap = new Int2ObjectRBTreeMap<>(GameData.getAvatarDataMap());
+        val itemDataMap = new Int2ObjectRBTreeMap<>(GameData.getItemDataMap());
+        val monsterDataMap = new Int2ObjectRBTreeMap<>(GameData.getMonsterDataMap());
+        val sceneDataMap = new Int2ObjectRBTreeMap<>(GameData.getSceneDataMap());
+        val questDataMap = new Int2ObjectRBTreeMap<>(GameData.getQuestDataMap());
+
+        Function<SortedMap, String> getPad = m -> "%" + m.lastKey().toString().length() + "s : ";
+
+        // Create builders and helper functions
+        val handbookBuilders = IntStream.range(0, TextStrings.NUM_LANGUAGES).mapToObj(i -> new StringBuilder()).toList();
+        Consumer<String> newSection = title -> handbookBuilders.forEach(b -> b.append("\n\n// " + title + "\n"));
+        Consumer<String> newLine = line -> handbookBuilders.forEach(b -> b.append(line + "\n"));
+        BiConsumer<String, IntList> newTranslatedLine = (template, textmapHashes) -> {
+            val textstrings = textmapHashes.intStream().mapToObj(textMaps::get).toList();
+            for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
+                String s = template;
+                for (int j = 0; j < textstrings.size(); j++)
+                    s = s.replace("{"+j+"}", textstrings.get(j).strings[i]);
+                handbookBuilders.get(i).append(s + "\n");
+            }
+        };
 
         // Preamble
-        final List<StringBuilder> handbookBuilders = new ArrayList<>(TextStrings.NUM_LANGUAGES);
-        final String now = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss").format(LocalDateTime.now());
-        for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++)
-            handbookBuilders.add(new StringBuilder()
-                .append("// Grasscutter " + GameConstants.VERSION + " GM Handbook\n")
-                .append("// Created " + now + "\n\n")
-                .append("// Commands\n"));
+        newLine.accept("// Grasscutter " + GameConstants.VERSION + " GM Handbook");
+        newLine.accept("// Created " + DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss").format(LocalDateTime.now()));
+
         // Commands
+        newSection.accept("Commands");
         final List<CommandHandler> cmdList = CommandMap.getInstance().getHandlersAsList();
         final String padCmdLabel = "%" + cmdList.stream().map(CommandHandler::getLabel).map(String::length).max(Integer::compare).get().toString() + "s : ";
         for (CommandHandler cmd : cmdList) {
@@ -62,42 +82,52 @@ public final class Tools {
                 handbookBuilders.get(i).append(label + desc + "\n");
             }
         }
-        // Avatars, Items, Monsters
-        final String[] handbookSections = {"Avatars", "Items", "Monsters"};
-        final Int2IntSortedMap[] handbookNames = {avatarNames, itemNames, monsterNames};
-        for (int section = 0; section < handbookSections.length; section++) {
-            final var h = handbookNames[section];
-            final String s = "\n\n// " + handbookSections[section] + "\n";
-            handbookBuilders.forEach(b -> b.append(s));
-            final String padId = "%" + Integer.toString(h.keySet().lastInt()).length() + "s : ";
-            h.forEach((id, hash) -> {
-                final String sId = padId.formatted(id);
-                final TextStrings t = textMaps.get((int) hash);
-                for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++)
-                    handbookBuilders.get(i).append(sId + t.strings[i] + "\n");
-            });
-        }
+        // Avatars
+        newSection.accept("Avatars");
+        val avatarPre = getPad.apply(avatarDataMap);
+        avatarDataMap.forEach((id, data) -> newTranslatedLine.accept(avatarPre.formatted(id) + "{0}", IntList.of((int) data.getNameTextMapHash())));
+        // Items
+        newSection.accept("Items");
+        val itemPre = getPad.apply(itemDataMap);
+        itemDataMap.forEach((id, data) -> {
+            val nameHash = (int) data.getNameTextMapHash();
+            switch (data.getMaterialType()) {
+                case MATERIAL_BGM:
+                    val bgmNameHash = Optional.ofNullable(data.getItemUse())
+                        .map(u -> u.get(0))
+                        .map(u -> u.getUseParam())
+                        .filter(u -> u.length > 0)
+                        .map(u -> Integer.parseInt(u[0]))
+                        .map(bgmId -> GameData.getHomeWorldBgmDataMap().get(bgmId))
+                        .map(bgm -> bgm.getBgmNameTextMapHash());
+                    if (bgmNameHash.isPresent()) {
+                        int trackNameHash = (int) ((long) bgmNameHash.get());  // Textmap hashes are u32, we index as i32 but store most of them as Long  :')
+                        if (textMaps.containsKey(trackNameHash)) {
+                            newTranslatedLine.accept(itemPre.formatted(id) + "{0} - {1}", IntList.of(nameHash, trackNameHash));
+                            return;
+                        }
+                    }  // Fall-through
+                default:
+                    newTranslatedLine.accept(itemPre.formatted(id) + "{0}", IntList.of(nameHash));
+                    return;
+            }
+        });
+        // Monsters
+        newSection.accept("Monsters");
+        val monsterPre = getPad.apply(monsterDataMap);
+        monsterDataMap.forEach((id, data) -> newTranslatedLine.accept(
+            monsterPre.formatted(id) + data.getMonsterName() + " - {0}",
+            IntList.of((int) data.getNameTextMapHash())));
         // Scenes - no translations
-        handbookBuilders.forEach(b -> b.append("\n\n// Scenes\n"));
-        final var sceneDataMap = GameData.getSceneDataMap();
-        final String padSceneId = "%" + Integer.toString(sceneDataMap.keySet().intStream().max().getAsInt()).length() + "d : ";
-        sceneDataMap.keySet().intStream().sorted().forEach(id -> {
-            final String sId = padSceneId.formatted(id);
-            final String data = sceneDataMap.get(id).getScriptData();
-            handbookBuilders.forEach(b -> b.append(sId + data + "\n"));
-        });
+        newSection.accept("Scenes");
+        val padSceneId = getPad.apply(sceneDataMap);
+        sceneDataMap.forEach((id, data) -> newLine.accept(padSceneId.formatted(id) + data.getScriptData()));
         // Quests
-        handbookBuilders.forEach(b -> b.append("\n\n// Quests\n"));
-        final var questDataMap = GameData.getQuestDataMap();
-        final String padQuestId = "%" + Integer.toString(questDataMap.keySet().intStream().max().getAsInt()).length() + "d : ";
-        questDataMap.keySet().intStream().sorted().forEach(id -> {
-            final String sId = padQuestId.formatted(id);
-            final QuestData data = questDataMap.get(id);
-            final TextStrings title = textMaps.get((int) mainQuestTitles.get(data.getMainId()));
-            final TextStrings desc = textMaps.get((int) data.getDescTextMapHash());
-            for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++)
-                handbookBuilders.get(i).append(sId + title.strings[i] + " - " + desc.strings[i] + "\n");
-        });
+        newSection.accept("Quests");
+        val padQuestId = getPad.apply(questDataMap);
+        questDataMap.forEach((id, data) -> newTranslatedLine.accept(
+            padQuestId.formatted(id) + "{0} - {1}",
+            IntList.of((int) mainQuestTitles.get(data.getMainId()), (int) data.getDescTextMapHash())));
 
         // Write txt files
         for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
