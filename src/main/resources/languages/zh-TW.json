@@ -292,7 +292,7 @@
       "description": "以正常的方式關閉伺服器。"
     },
     "talent": {
-      "lower_16": "無效的天賦等級，技能等級應低於 16。",
+      "out_of_range": "🇺🇸Invalid talent level. Level should be in range of 1-15.",
       "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
       "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "無效的技能ID。",

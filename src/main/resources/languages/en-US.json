@@ -292,7 +292,7 @@
       "description": "Stops the server"
     },
     "talent": {
-      "lower_16": "Invalid talent level. Level should be lower than 16.",
+      "out_of_range": "Invalid talent level. Level should be in range of 1-15.",
       "set_id": "Set talent %s - \"%s\" to %s.",
       "id_desc": "Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "Invalid skill ID.",
