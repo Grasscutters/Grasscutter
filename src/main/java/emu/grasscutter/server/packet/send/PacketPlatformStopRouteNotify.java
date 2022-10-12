@@ -7,8 +7,8 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlatformStopRouteNotifyOuterClass;
 
 public class PacketPlatformStopRouteNotify extends BasePacket {
-    public PacketPlatformStopRouteNotify(int clientSequence, EntityPlatform entity, Scene scene) {
-        super(PacketOpcodes.PlatformStopRouteNotify, clientSequence);
+    public PacketPlatformStopRouteNotify(EntityPlatform entity, Scene scene) {
+        super(PacketOpcodes.PlatformStopRouteNotify);
 
         var notify = PlatformStopRouteNotifyOuterClass.PlatformStopRouteNotify.newBuilder()
             .setPlatform(entity.onStopRoute())
