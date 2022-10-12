@@ -2,7 +2,7 @@ package emu.grasscutter.game.entity.platform;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.ConfigGadget;
-import emu.grasscutter.game.entity.EntityAlbedoSolarIsotomaClientGadget;
+import emu.grasscutter.game.entity.EntitySolarIsotomaClientGadget;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
@@ -13,8 +13,8 @@ import emu.grasscutter.server.packet.send.PacketSceneTimeNotify;
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.ProtoHelper;
 
-public class EntityAlbedoElevatorPlatform extends EntityPlatform {
-    public EntityAlbedoElevatorPlatform(EntityAlbedoSolarIsotomaClientGadget isotoma, Scene scene, Player player, int gadgetId, Position pos, Position rot) {
+public class EntitySolarIsotomaElevatorPlatform extends EntityPlatform {
+    public EntitySolarIsotomaElevatorPlatform(EntitySolarIsotomaClientGadget isotoma, Scene scene, Player player, int gadgetId, Position pos, Position rot) {
         super(isotoma, scene, player, gadgetId, pos, rot, MovingPlatformTypeOuterClass.MovingPlatformType.MOVING_PLATFORM_TYPE_ABILITY);
     }
 
@@ -27,13 +27,13 @@ public class EntityAlbedoElevatorPlatform extends EntityPlatform {
         var combatProperties = combatData.getProperty();
 
         if (combatProperties.isUseCreatorProperty()) {
-            //If useCreatorProperty == true, use Albedo's property;
-            GameEntity albedo = getScene().getEntityById(getGadget().getOwnerEntityId());
-            if (albedo != null) {
-                getFightProperties().putAll(albedo.getFightProperties());
+            //If useCreatorProperty == true, use owner's property;
+            GameEntity ownerAvatar = getScene().getEntityById(getGadget().getOwnerEntityId());
+            if (ownerAvatar != null) {
+                getFightProperties().putAll(ownerAvatar.getFightProperties());
                 return;
             } else {
-                Grasscutter.getLogger().warn("Why Albedo is null?");
+                Grasscutter.getLogger().warn("Why gadget owner is null?");
             }
         }
 
@@ -80,13 +80,13 @@ public class EntityAlbedoElevatorPlatform extends EntityPlatform {
                 .build());
 
         GameEntity entity = getScene().getEntityById(getGadget().getOwnerEntityId());
-        if (entity instanceof EntityAvatar albedo) {
+        if (entity instanceof EntityAvatar avatar) {
             info.addPropList(PropPairOuterClass.PropPair.newBuilder()
                 .setType(PlayerProperty.PROP_LEVEL.getId())
-                .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, albedo.getAvatar().getLevel()))
+                .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, avatar.getAvatar().getLevel()))
                 .build());
         } else {
-            Grasscutter.getLogger().warn("Why Albedo doesn't exist?");
+            Grasscutter.getLogger().warn("Why gadget owner doesn't exist?");
         }
 
         for (var entry : getFightProperties().int2FloatEntrySet()) {

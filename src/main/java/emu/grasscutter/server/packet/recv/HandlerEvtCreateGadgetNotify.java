@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.entity.EntityAlbedoSolarIsotomaClientGadget;
+import emu.grasscutter.game.entity.EntitySolarIsotomaClientGadget;
 import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -23,9 +23,9 @@ public class HandlerEvtCreateGadgetNotify extends PacketHandler {
 		// Create entity and summon in world
         var gadgetId = notify.getConfigId();
 		EntityClientGadget gadget = switch (gadgetId) {
-            //Albedo Solar Isotoma.
-            case EntityAlbedoSolarIsotomaClientGadget.GADGET_ID ->
-                new EntityAlbedoSolarIsotomaClientGadget(session.getPlayer().getScene(), session.getPlayer(), notify);
+            //Solar Isotoma.
+            case EntitySolarIsotomaClientGadget.GADGET_ID ->
+                new EntitySolarIsotomaClientGadget(session.getPlayer().getScene(), session.getPlayer(), notify);
 
             //Default.
             default ->
