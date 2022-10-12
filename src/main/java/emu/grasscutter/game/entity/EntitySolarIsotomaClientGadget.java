@@ -1,7 +1,7 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.game.entity.platform.EntitySolarIsotomaElevatorPlatform;
 import emu.grasscutter.game.entity.platform.EntityPlatform;
+import emu.grasscutter.game.entity.platform.EntitySolarIsotomaElevatorPlatform;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.EvtCreateGadgetNotifyOuterClass;
@@ -21,13 +21,11 @@ public class EntitySolarIsotomaClientGadget extends EntityClientGadget {
         //Create solar isotoma elevator and send to all.
         this.platformGadget = new EntitySolarIsotomaElevatorPlatform(this, getScene(), getOwner(), ELEVATOR_GADGET_ID, getPosition(), getRotation());
         getScene().addEntity(this.platformGadget);
-        getOwner().getTeamManager().getGadgets().add(this.platformGadget);
     }
 
     @Override
     public void onRemoved() {
         //Remove solar isotoma elevator entity.
         getScene().removeEntity(this.platformGadget);
-        getOwner().getTeamManager().getGadgets().remove(this.platformGadget);
     }
 }
