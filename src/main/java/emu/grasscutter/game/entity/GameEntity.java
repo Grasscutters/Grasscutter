@@ -219,6 +219,10 @@ public abstract class GameEntity {
 
     }
 
+    public void onRemoved() {
+
+    }
+
     /**
      * Called when this entity dies
      * @param killerId Entity id of the entity that killed this entity
