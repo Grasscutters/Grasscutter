@@ -176,7 +176,7 @@ public class ResourceLoader {
             GameData.proudSkillGroupLevels
                 .computeIfAbsent(data.getProudSkillGroupId(), i -> new IntArraySet())
                 .add(data.getLevel()));
-        GameData.getAvatarSkillDataMap().forEach((id, data) -> 
+        GameData.getAvatarSkillDataMap().forEach((id, data) ->
             GameData.avatarSkillLevels.put((int) id, GameData.proudSkillGroupLevels.get(data.getProudSkillGroupId())));
     }
 

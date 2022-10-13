@@ -50,10 +50,10 @@ public final class DatabaseManager {
         // Set mapper options.
         MapperOptions mapperOptions = MapperOptions.builder()
                 .storeEmpties(true).storeNulls(false).build();
-        
+
         // Create data store.
         gameDatastore = Morphia.createDatastore(gameMongoClient, DATABASE.game.collection, mapperOptions);
-        
+
         // Map classes.
         Class<?>[] entities = new Reflections(Grasscutter.class.getPackageName())
                 .getTypesAnnotatedWith(Entity.class)
@@ -71,15 +71,15 @@ public final class DatabaseManager {
 
         if (SERVER.runMode == ServerRunMode.GAME_ONLY) {
             MongoClient dispatchMongoClient = MongoClients.create(DATABASE.server.connectionUri);
-            
+
             dispatchDatastore = Morphia.createDatastore(dispatchMongoClient, DATABASE.server.collection, mapperOptions);
             dispatchDatastore.getMapper().map(new Class<?>[] {DatabaseCounter.class, Account.class});
-            
+
             // Ensure indexes for dispatch datastore
             ensureIndexes(dispatchDatastore);
         }
     }
-    
+
     /**
      * Ensures the database indexes exist and rebuilds them if there is an error with them
      * @param datastore The datastore to ensure indexes on

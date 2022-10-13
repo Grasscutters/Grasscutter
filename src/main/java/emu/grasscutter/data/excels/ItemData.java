@@ -137,7 +137,7 @@ public class ItemData extends GameResource {
         }
     }
 
-    
+
     @Getter
     public static class WeaponProperty {
         private FightProperty propType;

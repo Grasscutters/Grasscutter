@@ -27,7 +27,7 @@ public class PlayerCodex {
     @Getter private Set<Integer> unlockedReliquary;
     @Getter private Set<Integer> unlockedReliquarySuitCodex;
 
-    public PlayerCodex(){
+    public PlayerCodex() {
         this.unlockedWeapon = new HashSet<>();
         this.unlockedAnimal = new HashMap<>();
         this.unlockedMaterial = new HashSet<>();
@@ -38,7 +38,7 @@ public class PlayerCodex {
         this.unlockedReliquarySuitCodex = new HashSet<>();
     }
 
-    public PlayerCodex(Player player){
+    public PlayerCodex(Player player) {
         this();
         this.player = player;
     }
@@ -48,7 +48,7 @@ public class PlayerCodex {
         this.fixReliquaries();
     }
 
-    public void checkAddedItem(GameItem item){
+    public void checkAddedItem(GameItem item) {
         val itemData = item.getItemData();
         val itemId = item.getItemId();
         switch (itemData.getItemType()) {
@@ -85,7 +85,7 @@ public class PlayerCodex {
         }
     }
 
-    public void checkAnimal(GameEntity target, CodexAnimalData.CountType countType){
+    public void checkAnimal(GameEntity target, CodexAnimalData.CountType countType) {
         if (target instanceof EntityMonster) {
             val monsterId = ((EntityMonster) target).getMonsterData().getId();
             val codexAnimal = GameData.getCodexAnimalDataMap().get(monsterId);
@@ -101,7 +101,7 @@ public class PlayerCodex {
         }
     }
 
-    public void checkUnlockedSuits(int reliquaryId){
+    public void checkUnlockedSuits(int reliquaryId) {
         GameData.getCodexReliquaryArrayList().stream()
             .filter(x -> !this.getUnlockedReliquarySuitCodex().contains(x.getId()))
             .filter(x -> x.containsId(reliquaryId))

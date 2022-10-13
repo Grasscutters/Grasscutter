@@ -570,7 +570,7 @@ public class InventorySystem extends BaseGameSystem {
 
         // Calc exp
         int expGain = 0;
-        
+
         var data = GameData.getItemDataMap().get(itemId);
         if (data != null) {
             var actions = data.getItemUseActions();

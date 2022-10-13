@@ -246,7 +246,7 @@ public final class Grasscutter {
     public static Language getLanguage(String langCode) {
         return Language.getLanguage(langCode);
     }
-    
+
     public static ServerRunMode getRunMode() {
         return Grasscutter.runModeOverride != null ? Grasscutter.runModeOverride : SERVER.runMode;
     }

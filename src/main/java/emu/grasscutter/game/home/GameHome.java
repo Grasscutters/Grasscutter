@@ -39,11 +39,11 @@ public class GameHome {
     ConcurrentHashMap<Integer, HomeSceneItem> sceneMap;
     Set<Integer> unlockedHomeBgmList;
 
-    public void save(){
+    public void save() {
         DatabaseHelper.saveHome(this);
     }
 
-    public static GameHome getByUid(Integer uid){
+    public static GameHome getByUid(Integer uid) {
         var home = DatabaseHelper.getHomeByUid(uid);
         if (home == null) {
             home = GameHome.create(uid);
@@ -51,7 +51,7 @@ public class GameHome {
         return home;
     }
 
-    public static GameHome create(Integer uid){
+    public static GameHome create(Integer uid) {
         return GameHome.of()
                 .ownerUid(uid)
                 .level(1)
@@ -62,7 +62,7 @@ public class GameHome {
     public HomeSceneItem getHomeSceneItem(int sceneId) {
         return sceneMap.computeIfAbsent(sceneId, e -> {
             var defaultItem = GameData.getHomeworldDefaultSaveData().get(sceneId);
-            if (defaultItem != null){
+            if (defaultItem != null) {
                 Grasscutter.getLogger().info("Set player {} home {} to initial setting", ownerUid, sceneId);
                 return HomeSceneItem.parseFrom(defaultItem, sceneId);
             }
@@ -87,7 +87,7 @@ public class GameHome {
         return this.player;
     }
 
-    public HomeWorldLevelData getLevelData(){
+    public HomeWorldLevelData getLevelData() {
         return GameData.getHomeWorldLevelDataMap().get(level);
     }
 

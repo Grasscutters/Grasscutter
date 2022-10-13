@@ -7,14 +7,14 @@ import emu.grasscutter.net.proto.SceneTimeNotifyOuterClass.SceneTimeNotify;
 
 public class PacketSceneTimeNotify extends BasePacket {
 
-	public PacketSceneTimeNotify(Player player) {
-		super(PacketOpcodes.SceneTimeNotify);
+    public PacketSceneTimeNotify(Player player) {
+        super(PacketOpcodes.SceneTimeNotify);
 
-		SceneTimeNotify proto = SceneTimeNotify.newBuilder()
-				.setSceneId(player.getSceneId())
-				.setSceneTime(player.getScene().getSceneTime())
-				.build();
+        SceneTimeNotify proto = SceneTimeNotify.newBuilder()
+                .setSceneId(player.getSceneId())
+                .setSceneTime(player.getScene().getSceneTime())
+                .build();
 
-		this.setData(proto);
-	}
+        this.setData(proto);
+    }
 }

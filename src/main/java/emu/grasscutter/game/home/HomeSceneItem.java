@@ -42,10 +42,10 @@ public class HomeSceneItem {
                 .build();
     }
 
-    public void update(HomeSceneArrangementInfo arrangementInfo){
-        for(var blockItem : arrangementInfo.getBlockArrangementInfoListList()){
+    public void update(HomeSceneArrangementInfo arrangementInfo) {
+        for (var blockItem : arrangementInfo.getBlockArrangementInfoListList()) {
             var block = this.blockItems.get(blockItem.getBlockId());
-            if(block == null){
+            if (block == null) {
                 Grasscutter.getLogger().warn("Could not found the Home Block {}", blockItem.getBlockId());
                 continue;
             }
@@ -61,20 +61,20 @@ public class HomeSceneItem {
         this.tmpVersion = arrangementInfo.getTmpVersion();
     }
 
-    public int getRoomSceneId(){
-        if(mainHouse == null || mainHouse.getAsItem() == null){
+    public int getRoomSceneId() {
+        if (mainHouse == null || mainHouse.getAsItem() == null) {
             return 0;
         }
         return mainHouse.getAsItem().getRoomSceneId();
     }
 
-    public int calComfort(){
+    public int calComfort() {
         return this.blockItems.values().stream()
                 .mapToInt(HomeBlockItem::calComfort)
                 .sum();
     }
 
-    public HomeSceneArrangementInfo toProto(){
+    public HomeSceneArrangementInfo toProto() {
         var proto = HomeSceneArrangementInfo.newBuilder();
         blockItems.values().forEach(b -> proto.addBlockArrangementInfoList(b.toProto()));
 
@@ -87,7 +87,7 @@ public class HomeSceneItem {
                 .setUnk2700BJHAMKKECEI(homeBgmId)
                 .setTmpVersion(tmpVersion);
 
-        if(mainHouse != null){
+        if (mainHouse != null) {
             proto.setMainHouse(mainHouse.toProto());
         }
         return proto.build();
