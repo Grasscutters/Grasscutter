@@ -7,7 +7,6 @@ import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,48 +14,18 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
-import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 
 import emu.grasscutter.data.common.DynamicFloat;
-import lombok.val;
+import emu.grasscutter.utils.JsonAdapters.*;
+import it.unimi.dsi.fastutil.ints.IntList;
 
 public final class JsonUtils {
-    // Adapters
-    static class DynamicFloatAdapter extends TypeAdapter<DynamicFloat> {
-        @Override
-        public DynamicFloat read(JsonReader reader) throws IOException {
-            switch (reader.peek()) {
-                case STRING:
-                    return new DynamicFloat(reader.nextString());
-                case NUMBER:
-                    return new DynamicFloat((float) reader.nextDouble());
-                case BEGIN_ARRAY:
-                    reader.beginArray();
-                    val opStack = new ArrayList<DynamicFloat.StackOp>();
-                    while (reader.hasNext()) {
-                        opStack.add(switch (reader.peek()) {
-                            case STRING -> new DynamicFloat.StackOp(reader.nextString());
-                            case NUMBER -> new DynamicFloat.StackOp((float) reader.nextDouble());
-                            default -> throw new IOException("Invalid DynamicFloat definition - " + reader.peek().name());
-                        });
-                    }
-                    reader.endArray();
-                    return new DynamicFloat(opStack);
-                default:
-                    throw new IOException("Invalid DynamicFloat definition - " + reader.peek().name());
-            }
-        }
-
-        @Override
-        public void write(JsonWriter writer, DynamicFloat f) {};
-    }
-
     static final Gson gson = new GsonBuilder()
         .setPrettyPrinting()
         .registerTypeAdapter(DynamicFloat.class, new DynamicFloatAdapter())
+        .registerTypeAdapter(IntList.class, new IntListAdapter())
+        .registerTypeAdapterFactory(new EnumTypeAdapterFactory())
         .create();
 
     /*
