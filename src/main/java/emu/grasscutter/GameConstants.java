@@ -14,7 +14,7 @@ public final class GameConstants {
     public static final int MAIN_CHARACTER_FEMALE = 10000007;
     public static final Position START_POSITION = new Position(2747, 194, -1719);
 
-    public static final int MAX_FRIENDS = 45;
+    public static final int MAX_FRIENDS = 60;
     public static final int MAX_FRIEND_REQUESTS = 50;
 
     public static final int SERVER_CONSOLE_UID = 99; // The UID of the server console's "player".
