@@ -65,6 +65,7 @@ public class GameData {
     @Getter private static final Int2ObjectMap<CookBonusData> cookBonusDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<CookRecipeData> cookRecipeDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<DailyDungeonData> dailyDungeonDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<DailyTaskData> dailyTaskDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<DungeonData> dungeonDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<DungeonEntryData> dungeonEntryDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<EnvAnimalGatherConfigData> envAnimalGatherConfigDataMap = new Int2ObjectOpenHashMap<>();

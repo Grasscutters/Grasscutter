@@ -1184,6 +1184,8 @@ public class Player {
         session.send(new PacketAllWidgetDataNotify(this));
         session.send(new PacketWidgetGadgetAllDataNotify());
         session.send(new PacketCombineDataNotify(this.unlockedCombines));
+        session.send(new PacketDailyTaskUnlockedCitiesNotify(Set.of(1, 2, 3, 4)));//Test
+        session.send(new PacketDailyTaskDataNotify());//Test
         this.forgingManager.sendForgeDataNotify();
         this.resinManager.onPlayerLogin();
         this.cookingManager.sendCookDataNofity();
