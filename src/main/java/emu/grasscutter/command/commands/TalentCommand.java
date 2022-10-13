@@ -12,7 +12,7 @@ import java.util.List;
 
 @Command(
     label = "talent",
-    usage = {"set <talentId> <level>", "(n|e|q) <level>", "getid"},
+    usage = {"set <talentId> <level>", "(n|e|q|all) <level>", "getid"},
     permission = "player.settalent",
     permissionTargeted = "player.settalent.others")
 public final class TalentCommand implements CommandHandler {
@@ -22,7 +22,7 @@ public final class TalentCommand implements CommandHandler {
             var name = Language.getTextMapKey(nameHash);
             CommandHandler.sendTranslatedMessage(sender, "commands.talent.set_id", skillId, name, newLevel);
         } else {
-            CommandHandler.sendTranslatedMessage(sender, "commands.talent.lower_16");
+            CommandHandler.sendTranslatedMessage(sender, "commands.talent.out_of_range");
         }
     }
 
@@ -86,6 +86,27 @@ public final class TalentCommand implements CommandHandler {
                     case "q" -> skillDepot.getEnergySkill();
                 };
                 setTalentLevel(sender, avatar, skillId, newLevel);
+            }
+            case "all" -> {
+                if (args.size() < 2) {
+                    sendUsageMessage(sender);
+                    return;
+                }
+                try {
+                    newLevel = Integer.parseInt(args.get(1));
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendTranslatedMessage(sender, "commands.talent.invalid_level");
+                    return;
+                }
+                // This stops setTalentLevel from outputting 3 "levels out of range" messages
+                if (newLevel < 1 || newLevel > 15) {
+                    CommandHandler.sendTranslatedMessage(sender, "commands.talent.out_of_range");
+                    return;
+                }
+                // This is small so array is not needed imo
+                setTalentLevel(sender, avatar, skillDepot.getSkills().get(0), newLevel);
+                setTalentLevel(sender, avatar, skillDepot.getSkills().get(1), newLevel);
+                setTalentLevel(sender, avatar, skillDepot.getEnergySkill(), newLevel);
             }
             case "getid" -> {
                 var map = GameData.getAvatarSkillDataMap();
