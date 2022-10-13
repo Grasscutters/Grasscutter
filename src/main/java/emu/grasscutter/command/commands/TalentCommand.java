@@ -104,12 +104,9 @@ public final class TalentCommand implements CommandHandler {
                     return;
                 }
                 // This is small so array is not needed imo
-                skillId = skillDepot.getSkills().get(0);
-                setTalentLevel(sender, avatar, skillId, newLevel);
-                skillId = skillDepot.getSkills().get(1);
-                setTalentLevel(sender, avatar, skillId, newLevel);
-                skillId = skillDepot.getEnergySkill();
-                setTalentLevel(sender, avatar, skillId, newLevel);
+                setTalentLevel(sender, avatar, skillDepot.getSkills().get(0), newLevel);
+                setTalentLevel(sender, avatar, skillDepot.getSkills().get(1), newLevel);
+                setTalentLevel(sender, avatar, skillDepot.getEnergySkill(), newLevel);
             }
             case "getid" -> {
                 var map = GameData.getAvatarSkillDataMap();
