@@ -13,12 +13,17 @@ import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.ItemUseOp;
+import emu.grasscutter.game.props.ItemUseTarget;
 import emu.grasscutter.game.props.MonsterType;
 import emu.grasscutter.game.props.WeaponType;
+import emu.grasscutter.game.props.ItemUseAction.ItemUseAction;
+import emu.grasscutter.game.props.ItemUseAction.ItemUseAddEnergy;
 import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall;
 import emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
@@ -30,10 +35,10 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -42,7 +47,7 @@ import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 public class EnergyManager extends BasePlayerManager {
-    private final Map<EntityAvatar, Integer> avatarNormalProbabilities;
+    private final Object2IntMap<EntityAvatar> avatarNormalProbabilities;
 
     private boolean energyUsage; // Should energy usage be enabled for this player?
     private final static Int2ObjectMap<List<EnergyDropInfo>> energyDropData = new Int2ObjectOpenHashMap<>();
@@ -50,7 +55,7 @@ public class EnergyManager extends BasePlayerManager {
 
     public EnergyManager(Player player) {
         super(player);
-        this.avatarNormalProbabilities = new HashMap<>();
+        this.avatarNormalProbabilities = new Object2IntOpenHashMap<>();
         this.energyUsage=GAME_OPTIONS.energyUsage;
     }
 
@@ -170,66 +175,9 @@ public class EnergyManager extends BasePlayerManager {
         }
 
         // Generate the particles.
+        var pos = new Position(action.getPos());
         for (int i = 0; i < amount; i++) {
-            this.generateElemBall(itemId, new Position(action.getPos()), 1);
-        }
-    }
-
-    /**
-     * Pickup of elemental particles and orbs.
-     * @param elemBall The elemental particle or orb.
-     */
-    public void handlePickupElemBall(GameItem elemBall) {
-        // Check if the item is indeed an energy particle/orb.
-        if (elemBall.getItemId() < 2001 ||elemBall.getItemId() > 2024) {
-            return;
-        }
-
-        // Determine the base amount of energy given by the particle/orb.
-        // Particles have a base amount of 1.0, and orbs a base amount of 3.0.
-        float baseEnergy = (elemBall.getItemId() <= 2008) ? 3.0f : 1.0f;
-
-        // Add energy to every team member.
-        for (int i = 0; i < this.player.getTeamManager().getActiveTeam().size(); i++) {
-            EntityAvatar entity = this.player.getTeamManager().getActiveTeam().get(i);
-
-            // On-field vs off-field multiplier.
-            // The on-field character gets no penalty.
-            // Off-field characters get a penalty depending on the team size, as follows:
-            // 		- 2 character team: 0.8
-            // 		- 3 character team: 0.7
-            // 		- 4 character team: 0.6
-            // 		- etc.
-            // We set a lower bound of 0.1 here, to avoid gaining no or negative energy.
-            float offFieldPenalty =
-                    (this.player.getTeamManager().getCurrentCharacterIndex() == i)
-                            ? 1.0f
-                            : 1.0f - this.player.getTeamManager().getActiveTeam().size() * 0.1f;
-            offFieldPenalty = Math.max(offFieldPenalty, 0.1f);
-
-            // Same element/neutral bonus.
-            // Same-element characters get a bonus of *3, while different-element characters get no bonus at all.
-            // For neutral particles/orbs, the multiplier is always *2.
-            if (entity.getAvatar().getSkillDepot() == null) {
-                continue;
-            }
-
-            ElementType avatarElement = entity.getAvatar().getSkillDepot().getElementType();
-            ElementType ballElement = switch (elemBall.getItemId()) {
-                case 2001, 2017 -> ElementType.Fire;
-                case 2002, 2018 -> ElementType.Water;
-                case 2003, 2019 -> ElementType.Grass;
-                case 2004, 2020 -> ElementType.Electric;
-                case 2005, 2021 -> ElementType.Wind;
-                case 2006, 2022 -> ElementType.Ice;
-                case 2007, 2023 -> ElementType.Rock;
-                default -> null;
-            };
-
-            float elementBonus = (ballElement == null) ? 2.0f : (avatarElement == ballElement) ? 3.0f : 1.0f;
-
-            // Add the energy.
-            entity.addEnergy(baseEnergy * elementBonus * offFieldPenalty * elemBall.getCount(), PropChangeReason.PROP_CHANGE_REASON_ENERGY_BALL);
+            this.generateElemBall(itemId, pos, 1);
         }
     }
 
@@ -256,7 +204,7 @@ public class EnergyManager extends BasePlayerManager {
         }
 
         // Roll for energy.
-        int currentProbability = this.avatarNormalProbabilities.get(avatar);
+        int currentProbability = this.avatarNormalProbabilities.getInt(avatar);
         int roll = ThreadLocalRandom.current().nextInt(0, 100);
 
         // If the player wins the roll, we increase the avatar's energy and reset the probability.

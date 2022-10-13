@@ -1,7 +1,6 @@
 package emu.grasscutter.game.managers;
 
 import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -46,22 +45,13 @@ public class CookingManager extends BasePlayerManager {
     /********************
      * Unlocking for recipies.
      ********************/
-    public synchronized boolean unlockRecipe(GameItem recipeItem) {
-        // Make sure this is actually a cooking recipe.
-        if (recipeItem.getItemData().getItemUse().get(0).getUseOp() != ItemUseOp.ITEM_USE_UNLOCK_COOK_RECIPE) {
-            return false;
+    public boolean unlockRecipe(int id) {
+        if (this.player.getUnlockedRecipies().containsKey(id)) {
+            return false;  // Recipe already unlocked
         }
-
-        // Determine the recipe we should unlock.
-        int recipeId = Integer.parseInt(recipeItem.getItemData().getItemUse().get(0).getUseParam()[0]);
-
-        // Remove the item from the player's inventory.
-        // We need to do this here, before sending CookRecipeDataNotify, or the the UI won't correctly update.
-        player.getInventory().removeItem(recipeItem, 1);
-
         // Tell the client that this blueprint is now unlocked and add the unlocked item to the player.
-        this.player.getUnlockedRecipies().put(recipeId, 0);
-        this.player.sendPacket(new PacketCookRecipeDataNotify(recipeId));
+        this.player.getUnlockedRecipies().put(id, 0);
+        this.player.sendPacket(new PacketCookRecipeDataNotify(id));
 
         return true;
     }

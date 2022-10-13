@@ -7,7 +7,6 @@ import emu.grasscutter.net.proto.Unk2700BEDLIGJANCJClientReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketChangeHomeBgmNotify;
 import emu.grasscutter.server.packet.send.PacketChangeHomeBgmRsp;
-import emu.grasscutter.server.packet.send.PacketUnlockedHomeBgmNotify;
 
 @Opcodes(PacketOpcodes.Unk2700_BEDLIGJANCJ_ClientReq)
 public class HandlerChangeHomeBgmReq extends PacketHandler {
@@ -17,11 +16,8 @@ public class HandlerChangeHomeBgmReq extends PacketHandler {
 
         int homeBgmId = req.getUnk2700BJHAMKKECEI();
         var home = session.getPlayer().getHome();
-        if (!home.getUnlockedHomeBgmListInfo().contains(homeBgmId)) {
-            home.addUnlockedHomeBgm(homeBgmId);
-            session.send(new PacketUnlockedHomeBgmNotify(session.getPlayer()));
-        }
 
+        home.addUnlockedHomeBgm(homeBgmId);  // Not sure if this is sane
         home.getHomeSceneItem(session.getPlayer().getSceneId()).setHomeBgmId(homeBgmId);
         home.save();
 

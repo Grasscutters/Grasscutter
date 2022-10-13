@@ -15,6 +15,7 @@ import dev.morphia.annotations.Transient;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.ReliquaryAffixData;
 import emu.grasscutter.data.excels.ReliquaryMainPropData;
@@ -74,6 +75,10 @@ public class GameItem {
 	
 	public GameItem(int itemId, int count) {
 		this(GameData.getItemDataMap().get(itemId), count);
+	}
+
+	public GameItem(ItemParamData itemParamData) {
+		this(itemParamData.getId(), itemParamData.getCount());
 	}
 	
 	public GameItem(ItemData data) {

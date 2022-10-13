@@ -25,10 +25,12 @@ public class GameData {
     // BinOutputs
     @Getter private static final Int2ObjectMap<HomeworldDefaultSaveData> homeworldDefaultSaveData = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<String> abilityHashes = new Int2ObjectOpenHashMap<>();
+    @Deprecated(forRemoval = true)
     @Getter private static final Map<String, AbilityModifierEntry> abilityModifiers = new HashMap<>();
     @Getter private static final Map<String, ConfigGadget> gadgetConfigData = new HashMap<>();
     @Getter private static final Map<String, OpenConfigEntry> openConfigEntries = new HashMap<>();
     @Deprecated(forRemoval = true) @Getter private static final Map<String, ScenePointEntry> scenePointEntries = new HashMap<>();
+    protected static final Map<String, AbilityData> abilityDataMap = new HashMap<>();
     protected static final Int2ObjectMap<ScenePointEntry> scenePointEntryMap = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<MainQuestData> mainQuestData = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<QuestEncryptionKey> questsKeys = new Int2ObjectOpenHashMap<>();
@@ -136,6 +138,7 @@ public class GameData {
     public static Map<String, AbilityEmbryoEntry> getAbilityEmbryoInfo() {return abilityEmbryos;}
 
     // Getters that get values rather than containers. If Lombok ever gets syntactic sugar for this, we should adopt that.
+    public static AbilityData getAbilityData(String abilityName) {return abilityDataMap.get(abilityName);}
     public static IntSet getAvatarSkillLevels(int avatarSkillId) {return avatarSkillLevels.get(avatarSkillId);}
     public static IntSet getProudSkillGroupLevels(int proudSkillGroupId) {return proudSkillGroupLevels.get(proudSkillGroupId);}
 

@@ -29,49 +29,49 @@ import java.util.*;
 public class StaminaManager extends BasePlayerManager {
 
     // TODO: Skiff state detection?
-    private static final HashMap<String, HashSet<MotionState>> MotionStatesCategorized = new HashMap<>() {{
-        put("CLIMB", new HashSet<>(List.of(
+    private static final Map<String, Set<MotionState>> MotionStatesCategorized = new HashMap<>() {{
+        put("CLIMB", Set.of(
                 MotionState.MOTION_STATE_CLIMB, // sustained, when not moving no cost no recover
                 MotionState.MOTION_STATE_STANDBY_TO_CLIMB // NOT OBSERVED, see MOTION_JUMP_UP_WALL_FOR_STANDBY
-        )));
-        put("DASH", new HashSet<>(List.of(
+        ));
+        put("DASH", Set.of(
                 MotionState.MOTION_STATE_DANGER_DASH, // sustained
                 MotionState.MOTION_STATE_DASH // sustained
-        )));
-        put("FLY", new HashSet<>(List.of(
+        ));
+        put("FLY", Set.of(
                 MotionState.MOTION_STATE_FLY, // sustained
                 MotionState.MOTION_STATE_FLY_FAST, // sustained
                 MotionState.MOTION_STATE_FLY_SLOW, // sustained
                 MotionState.MOTION_STATE_POWERED_FLY // sustained, recover
-        )));
-        put("RUN", new HashSet<>(List.of(
+        ));
+        put("RUN", Set.of(
                 MotionState.MOTION_STATE_DANGER_RUN, // sustained, recover
                 MotionState.MOTION_STATE_RUN // sustained, recover
-        )));
-        put("SKIFF", new HashSet<>(List.of(
+        ));
+        put("SKIFF", Set.of(
                 MotionState.MOTION_STATE_SKIFF_BOARDING, // NOT OBSERVED even when boarding
                 MotionState.MOTION_STATE_SKIFF_DASH, // sustained, observed with waverider entity ID.
                 MotionState.MOTION_STATE_SKIFF_NORMAL, // sustained, OBSERVED when both normal and dashing
                 MotionState.MOTION_STATE_SKIFF_POWERED_DASH // sustained, recover
-        )));
-        put("STANDBY", new HashSet<>(List.of(
+        ));
+        put("STANDBY", Set.of(
                 MotionState.MOTION_STATE_DANGER_STANDBY_MOVE, // sustained, recover
                 MotionState.MOTION_STATE_DANGER_STANDBY, // sustained, recover
                 MotionState.MOTION_STATE_LADDER_TO_STANDBY, // NOT OBSERVED
                 MotionState.MOTION_STATE_STANDBY_MOVE, // sustained, recover
                 MotionState.MOTION_STATE_STANDBY // sustained, recover
-        )));
-        put("SWIM", new HashSet<>(List.of(
+        ));
+        put("SWIM", Set.of(
                 MotionState.MOTION_STATE_SWIM_IDLE, // sustained
                 MotionState.MOTION_STATE_SWIM_DASH, // immediate and sustained
                 MotionState.MOTION_STATE_SWIM_JUMP, // NOT OBSERVED
                 MotionState.MOTION_STATE_SWIM_MOVE // sustained
-        )));
-        put("WALK", new HashSet<>(List.of(
+        ));
+        put("WALK", Set.of(
                 MotionState.MOTION_STATE_DANGER_WALK, // sustained, recover
                 MotionState.MOTION_STATE_WALK // sustained, recover
-        )));
-        put("OTHER", new HashSet<>(List.of(
+        ));
+        put("OTHER", Set.of(
                 MotionState.MOTION_STATE_CLIMB_JUMP, // cost only once if repeated without switching state
                 MotionState.MOTION_STATE_DASH_BEFORE_SHAKE, // immediate one time sprint charge.
                 MotionState.MOTION_STATE_FIGHT, // immediate, if sustained then subsequent will be MOTION_NOTIFY
@@ -79,13 +79,13 @@ public class StaminaManager extends BasePlayerManager {
                 MotionState.MOTION_STATE_NOTIFY, // can be either cost or recover - check previous state and check skill casting
                 MotionState.MOTION_STATE_SIT_IDLE, // sustained, recover
                 MotionState.MOTION_STATE_JUMP // recover
-        )));
-        put("NOCOST_NORECOVER", new HashSet<>(List.of(
+        ));
+        put("NOCOST_NORECOVER", Set.of(
                 MotionState.MOTION_STATE_LADDER_SLIP, // NOT OBSERVED
                 MotionState.MOTION_STATE_SLIP, // sustained, no cost no recover
                 MotionState.MOTION_STATE_FLY_IDLE // NOT OBSERVED
-        )));
-        put("IGNORE", new HashSet<>(List.of(
+        ));
+        put("IGNORE", Set.of(
                 // these states have no impact on stamina
                 MotionState.MOTION_STATE_CROUCH_IDLE,
                 MotionState.MOTION_STATE_CROUCH_MOVE,
@@ -106,7 +106,7 @@ public class StaminaManager extends BasePlayerManager {
                 MotionState.MOTION_STATE_RESET,
                 MotionState.MOTION_STATE_STANDBY_TO_LADDER,
                 MotionState.MOTION_STATE_WATERFALL
-        )));
+        ));
     }};
 
     private final Logger logger = Grasscutter.getLogger();
@@ -127,9 +127,7 @@ public class StaminaManager extends BasePlayerManager {
     private boolean lastSkillFirstTick = true;
     private int vehicleId = -1;
     private int vehicleStamina = GlobalVehicleMaxStamina;
-    private static final HashSet<Integer> TalentMovements = new HashSet<>(List.of(
-            10013, 10413
-    ));
+    private static final Set<Integer> TalentMovements = Set.of(10013, 10413);
     private static final HashMap<Integer, Float> ClimbFoodReductionMap = new HashMap<>() {{
         // TODO: get real food id
         put(0, 0.8f); // Sample food
@@ -188,6 +186,17 @@ public class StaminaManager extends BasePlayerManager {
 
     public int getCurrentVehicleStamina() {
         return vehicleStamina;
+    }
+
+    public boolean addCurrentStamina(int amount) {
+        var cur = this.getCurrentCharacterStamina();
+        var max = this.getMaxCharacterStamina();
+        if (cur >= max) return false;
+        var value = cur + amount;
+        if (value > max)
+            value = max;
+        this.player.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, value);
+        return true;
     }
 
     public boolean registerBeforeUpdateStaminaListener(String listenerName, BeforeUpdateStaminaListener listener) {
@@ -405,27 +414,17 @@ public class StaminaManager extends BasePlayerManager {
     // Internal handler
 
     private void handleImmediateStamina(GameSession session, @NotNull MotionState motionState) {
+        if (currentState == motionState) return;
         switch (motionState) {
-            case MOTION_STATE_CLIMB:
-                if (currentState != MotionState.MOTION_STATE_CLIMB) {
+            case MOTION_STATE_CLIMB ->
                     updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_START), true);
-                }
-                break;
-            case MOTION_STATE_DASH_BEFORE_SHAKE:
-                if (previousState != MotionState.MOTION_STATE_DASH_BEFORE_SHAKE) {
+            case MOTION_STATE_DASH_BEFORE_SHAKE ->
                     updateStaminaRelative(session, new Consumption(ConsumptionType.SPRINT), true);
-                }
-                break;
-            case MOTION_STATE_CLIMB_JUMP:
-                if (previousState != MotionState.MOTION_STATE_CLIMB_JUMP) {
+            case MOTION_STATE_CLIMB_JUMP ->
                     updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_JUMP), true);
-                }
-                break;
-            case MOTION_STATE_SWIM_DASH:
-                if (previousState != MotionState.MOTION_STATE_SWIM_DASH) {
+            case MOTION_STATE_SWIM_DASH ->
                     updateStaminaRelative(session, new Consumption(ConsumptionType.SWIM_DASH_START), true);
-                }
-                break;
+            default -> {}
         }
     }
 
@@ -526,20 +525,14 @@ public class StaminaManager extends BasePlayerManager {
         // Bow avatar charged attack
         Avatar currentAvatar = player.getTeamManager().getCurrentAvatarEntity().getAvatar();
 
-        switch (currentAvatar.getAvatarData().getWeaponType()) {
-            case WEAPON_BOW:
-                return getBowSustainedCost(skillCasting);
-            case WEAPON_CLAYMORE:
-                return getClaymoreSustainedCost(skillCasting);
-            case WEAPON_CATALYST:
-                return getCatalystCost(skillCasting);
-            case WEAPON_POLE:
-                return getPolearmCost(skillCasting);
-            case WEAPON_SWORD_ONE_HAND:
-                return getSwordCost(skillCasting);
-        }
-
-        return new Consumption();
+        return switch (currentAvatar.getAvatarData().getWeaponType()) {
+            case WEAPON_BOW -> getBowSustainedCost(skillCasting);
+            case WEAPON_CLAYMORE -> getClaymoreSustainedCost(skillCasting);
+            case WEAPON_CATALYST -> getCatalystCost(skillCasting);
+            case WEAPON_POLE -> getPolearmCost(skillCasting);
+            case WEAPON_SWORD_ONE_HAND -> getSwordCost(skillCasting);
+            default -> new Consumption();
+        };
     }
 
     private Consumption getClimbConsumption() {

@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ForgeData;
@@ -14,7 +13,6 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
 import emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueManipulateReq;
@@ -38,24 +36,12 @@ public class ForgingManager extends BasePlayerManager {
     /**********
         Blueprint unlocking.
     **********/
-    public synchronized boolean unlockForgingBlueprint(GameItem blueprintItem) {
-        // Make sure this is actually a forging blueprint.
-        if (blueprintItem.getItemData().getItemUse().get(0).getUseOp() != ItemUseOp.ITEM_USE_UNLOCK_FORGE) {
-            return false;
-        }
-
-        // Determine the forging item we should unlock.
-        int forgeId = Integer.parseInt(blueprintItem.getItemData().getItemUse().get(0).getUseParam()[0]);
-
-        // Remove the blueprint from the player's inventory.
-        // We need to do this here, before sending ForgeFormulaDataNotify, or the the forging UI won't correctly
-        // update when unlocking the blueprint.
-        player.getInventory().removeItem(blueprintItem, 1);
-
+    public boolean unlockForgingBlueprint(int id) {
         // Tell the client that this blueprint is now unlocked and add the unlocked item to the player.
-        this.player.getUnlockedForgingBlueprints().add(forgeId);
-        this.player.sendPacket(new PacketForgeFormulaDataNotify(forgeId));
-
+        if (!this.player.getUnlockedForgingBlueprints().add(id)) {
+            return false;  // Already unlocked
+        }
+        this.player.sendPacket(new PacketForgeFormulaDataNotify(id));
         return true;
     }
 
