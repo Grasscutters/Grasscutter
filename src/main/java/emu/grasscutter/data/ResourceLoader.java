@@ -1,13 +1,11 @@
 package emu.grasscutter.data;
 
-import com.google.gson.JsonElement;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityConfigData;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
 import emu.grasscutter.data.common.PointData;
-import emu.grasscutter.data.common.ScenePointConfig;
 import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
 import emu.grasscutter.game.world.SpawnDataEntry;
@@ -16,6 +14,8 @@ import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.utils.JsonUtils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+import it.unimi.dsi.fastutil.ints.IntArraySet;
 import lombok.val;
 
 import org.reflections.Reflections;
@@ -75,6 +75,7 @@ public class ResourceLoader {
         loadHomeworldDefaultSaveData();
         loadNpcBornData();
         loadBlossomResources();
+        cacheTalentLevelSets();
 
         Grasscutter.getLogger().info(translate("messages.status.resources.finish"));
         loadedAll = true;
@@ -129,6 +130,9 @@ public class ResourceLoader {
         }
     }
 
+    public class ScenePointConfig {  // Sadly this doesn't work as a local class in loadScenePoints()
+        public Map<Integer, PointData> points;
+    }
     private static void loadScenePoints() {
         val pattern = Pattern.compile("scene([0-9]+)_point\\.json");
         try {
@@ -136,8 +140,8 @@ public class ResourceLoader {
                 val matcher = pattern.matcher(path.getFileName().toString());
                 if (!matcher.find()) return;
                 int sceneId = Integer.parseInt(matcher.group(1));
-                ScenePointConfig config;
 
+                ScenePointConfig config;
                 try {
                     config = JsonUtils.loadToClass(path, ScenePointConfig.class);
                 } catch (Exception e) {
@@ -147,26 +151,33 @@ public class ResourceLoader {
 
                 if (config.points == null) return;
 
-                List<Integer> scenePoints = new ArrayList<>();
-                for (Map.Entry<String, JsonElement> entry : config.points.entrySet()) {
-                    String key = entry.getKey();
-                    String name = sceneId + "_" + key;
-                    int id = Integer.parseInt(key);
-                    PointData pointData = JsonUtils.decode(entry.getValue(), PointData.class);
-                    pointData.setId(id);
+                val scenePoints = new IntArrayList();
+                config.points.forEach((pointId, pointData) -> {
+                    val scenePoint = new ScenePointEntry(sceneId, pointData);
+                    scenePoints.add(pointId);
+                    pointData.setId(pointId);
 
-                    GameData.getScenePointIdList().add(id);
-                    GameData.getScenePointEntries().put(name, new ScenePointEntry(name, pointData));
-                    scenePoints.add(id);
+                    GameData.getScenePointIdList().add(pointId);
+                    GameData.getScenePointEntries().put(scenePoint.getName(), scenePoint);
+                    GameData.scenePointEntryMap.put((sceneId << 16) + pointId, scenePoint);
 
                     pointData.updateDailyDungeon();
-                }
+                });
                 GameData.getScenePointsPerScene().put(sceneId, scenePoints);
             });
         } catch (IOException e) {
             Grasscutter.getLogger().error("Scene point files cannot be found, you cannot use teleport waypoints!");
             return;
         }
+    }
+
+    private static void cacheTalentLevelSets() {
+        GameData.getProudSkillDataMap().forEach((id, data) ->
+            GameData.proudSkillGroupLevels
+                .computeIfAbsent(data.getProudSkillGroupId(), i -> new IntArraySet())
+                .add(data.getLevel()));
+        GameData.getAvatarSkillDataMap().forEach((id, data) -> 
+            GameData.avatarSkillLevels.put((int) id, GameData.proudSkillGroupLevels.get(data.getProudSkillGroupId())));
     }
 
     private static void loadAbilityEmbryos() {

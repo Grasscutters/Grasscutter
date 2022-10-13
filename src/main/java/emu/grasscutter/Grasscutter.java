@@ -101,8 +101,6 @@ public final class Grasscutter {
 
         // Create command map.
         commandMap = new CommandMap(true);
-        // Generate handbooks.
-        Tools.createGmHandbooks();
 
         // Initialize server.
         Grasscutter.getLogger().info(translate("messages.status.starting"));
@@ -113,6 +111,9 @@ public final class Grasscutter {
         Grasscutter.updateDayOfWeek();
         ResourceLoader.loadAll();
         ScriptLoader.init();
+
+        // Generate handbooks.
+        Tools.createGmHandbooks();
 
         // Initialize database.
         DatabaseManager.initialize();
@@ -274,11 +275,6 @@ public final class Grasscutter {
         return consoleLineReader;
     }
 
-    @Deprecated(forRemoval = true)
-    public static Gson getGsonFactory() {
-        return JsonUtils.getGsonFactory();
-    }
-
     public static HttpServer getHttpServer() {
         return httpServer;
     }
@@ -310,6 +306,7 @@ public final class Grasscutter {
     public static void updateDayOfWeek() {
         Calendar calendar = Calendar.getInstance();
         day = calendar.get(Calendar.DAY_OF_WEEK);
+        Grasscutter.getLogger().debug("Set day of week to "+day);
     }
 
     public static void startConsole() {

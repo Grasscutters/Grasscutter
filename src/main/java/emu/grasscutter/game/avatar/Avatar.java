@@ -67,6 +67,7 @@ import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.val;
 
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {
@@ -96,7 +97,7 @@ public class Avatar {
 
     private Map<Integer, Integer> skillLevelMap; // Talent levels
     private Map<Integer, Integer> skillExtraChargeMap; // Charges
-    @Getter private Map<Integer, Integer> proudSkillBonusMap; // Talent bonus levels (from const)
+    private Map<Integer, Integer> proudSkillBonusMap; // Talent bonus levels (from const)
     @Getter private int skillDepotId;
     private Set<Integer> talentIdList; // Constellation id list
     @Getter private Set<Integer> proudSkillList; // Character passives
@@ -301,8 +302,28 @@ public class Avatar {
 
     public Map<Integer, Integer> getSkillLevelMap() {  // Returns a copy of the skill levels for the current skillDepot.
         var map = new Int2IntOpenHashMap();
-        this.skillDepot.getSkillsAndEnergySkill()
-            .forEach(skillId -> map.put(skillId, this.skillLevelMap.computeIfAbsent(skillId, id -> 1).intValue()));
+        this.skillDepot.getSkillsAndEnergySkill().forEach(skillId ->
+            map.put(skillId, this.skillLevelMap.putIfAbsent(skillId, 1).intValue()));
+        return map;
+    }
+
+    // Returns a copy of the skill bonus levels for the current skillDepot, capped to avoid invalid levels.
+    public Map<Integer, Integer> getProudSkillBonusMap() {
+        var map = new Int2IntOpenHashMap();
+        this.skillDepot.getSkillsAndEnergySkill().forEach(skillId -> {
+            val skillData = GameData.getAvatarSkillDataMap().get(skillId);
+            if (skillData == null) return;
+            int proudSkillGroupId = skillData.getProudSkillGroupId();
+            int bonus = this.proudSkillBonusMap.getOrDefault(proudSkillGroupId, 0);
+            val validLevels = GameData.getProudSkillGroupLevels(proudSkillGroupId);
+            if (validLevels != null && validLevels.size() > 0) {
+                int maxLevel = validLevels.intStream().max().getAsInt();
+                int maxBonus = maxLevel - this.skillLevelMap.getOrDefault(skillId, 0);
+                if (maxBonus < bonus)
+                    bonus = maxBonus;
+            }
+            map.put(proudSkillGroupId, bonus);
+        });
         return map;
     }
 
@@ -705,8 +726,12 @@ public class Avatar {
         }
 
         // Add to bonus list
-        this.getProudSkillBonusMap().put(skillData.getProudSkillGroupId(), 3);
+        this.addProudSkillLevelBonus(skillId, 3);
         return true;
+    }
+
+    private int addProudSkillLevelBonus(int proudSkillGroupId, int bonus) {
+        return this.proudSkillBonusMap.compute(proudSkillGroupId, (k,v) -> (v==null) ? bonus : v + bonus);
     }
 
     public boolean upgradeSkill(int skillId) {
@@ -735,6 +760,9 @@ public class Avatar {
 
     public boolean setSkillLevel(int skillId, int level) {
         if (level < 0 || level > 15) return false;
+        var validLevels = GameData.getAvatarSkillLevels(skillId);
+        if (validLevels != null && !validLevels.contains(level)) return false;
+
         int oldLevel = this.skillLevelMap.getOrDefault(skillId, 0);  // just taking the return value of put would have null concerns
         this.skillLevelMap.put(skillId, level);
         this.save();

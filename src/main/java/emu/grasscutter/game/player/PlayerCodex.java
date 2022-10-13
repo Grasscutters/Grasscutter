@@ -102,7 +102,7 @@ public class PlayerCodex {
     }
 
     public void checkUnlockedSuits(int reliquaryId){
-        GameData.getcodexReliquaryArrayList().stream()
+        GameData.getCodexReliquaryArrayList().stream()
             .filter(x -> !this.getUnlockedReliquarySuitCodex().contains(x.getId()))
             .filter(x -> x.containsId(reliquaryId))
             .filter(x -> this.getUnlockedReliquary().containsAll(x.getIds()))
@@ -121,7 +121,7 @@ public class PlayerCodex {
         this.unlockedReliquary.forEach(i -> newReliquaries.add((i/10)*10));
         this.unlockedReliquary = newReliquaries;
 
-        GameData.getcodexReliquaryArrayList().stream()
+        GameData.getCodexReliquaryArrayList().stream()
             .filter(x -> !this.getUnlockedReliquarySuitCodex().contains(x.getId()))
             .filter(x -> this.getUnlockedReliquary().containsAll(x.getIds()))
             .forEach(x -> this.getUnlockedReliquarySuitCodex().add(x.getId()));

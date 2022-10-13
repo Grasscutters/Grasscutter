@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.*;
@@ -16,6 +17,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import it.unimi.dsi.fastutil.ints.IntSet;
 import lombok.Getter;
 import lombok.experimental.Tolerate;
 
@@ -26,7 +28,8 @@ public class GameData {
     @Getter private static final Map<String, AbilityModifierEntry> abilityModifiers = new HashMap<>();
     @Getter private static final Map<String, ConfigGadget> gadgetConfigData = new HashMap<>();
     @Getter private static final Map<String, OpenConfigEntry> openConfigEntries = new HashMap<>();
-    @Getter private static final Map<String, ScenePointEntry> scenePointEntries = new HashMap<>();
+    @Deprecated(forRemoval = true) @Getter private static final Map<String, ScenePointEntry> scenePointEntries = new HashMap<>();
+    protected static final Int2ObjectMap<ScenePointEntry> scenePointEntryMap = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<MainQuestData> mainQuestData = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<QuestEncryptionKey> questsKeys = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<SceneNpcBornData> npcBornData = new Int2ObjectOpenHashMap<>();
@@ -118,6 +121,8 @@ public class GameData {
     @Getter private static final Map<String, ScriptSceneData> scriptSceneDataMap = new HashMap<>();
     private static Map<Integer, List<Integer>> fetters = new HashMap<>();
     private static Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
+    protected static Int2ObjectMap<IntSet> proudSkillGroupLevels = new Int2ObjectOpenHashMap<>();
+    protected static Int2ObjectMap<IntSet> avatarSkillLevels = new Int2ObjectOpenHashMap<>();
 
     // Getters with wrong names, remove later
     @Deprecated(forRemoval = true) public static Int2ObjectMap<CodexReliquaryData> getcodexReliquaryIdMap() {return codexReliquaryDataIdMap;}
@@ -130,7 +135,42 @@ public class GameData {
     public static Int2ObjectMap<SceneNpcBornData> getSceneNpcBornData() {return npcBornData;}
     public static Map<String, AbilityEmbryoEntry> getAbilityEmbryoInfo() {return abilityEmbryos;}
 
+    // Getters that get values rather than containers. If Lombok ever gets syntactic sugar for this, we should adopt that.
+    public static IntSet getAvatarSkillLevels(int avatarSkillId) {return avatarSkillLevels.get(avatarSkillId);}
+    public static IntSet getProudSkillGroupLevels(int proudSkillGroupId) {return proudSkillGroupLevels.get(proudSkillGroupId);}
 
+    // Multi-keyed getters
+    public static AvatarPromoteData getAvatarPromoteData(int promoteId, int promoteLevel) {
+        return avatarPromoteDataMap.get((promoteId << 8) + promoteLevel);
+    }
+
+    public static WeaponPromoteData getWeaponPromoteData(int promoteId, int promoteLevel) {
+        return weaponPromoteDataMap.get((promoteId << 8) + promoteLevel);
+    }
+
+    public static ReliquaryLevelData getRelicLevelData(int rankLevel, int level) {
+        return reliquaryLevelDataMap.get((rankLevel << 8) + level);
+    }
+
+    public static ScenePointEntry getScenePointEntryById(int sceneId, int pointId) {
+        return scenePointEntryMap.get((sceneId << 16) + pointId);
+    }
+
+    // Non-nullable value getters
+    public static int getAvatarLevelExpRequired(int level) {
+        return Optional.ofNullable(avatarLevelDataMap.get(level)).map(d -> d.getExp()).orElse(0);
+    }
+
+    public static int getAvatarFetterLevelExpRequired(int level) {
+        return Optional.ofNullable(avatarFetterLevelDataMap.get(level)).map(d -> d.getExp()).orElse(0);
+    }
+
+    public static int getRelicExpRequired(int rankLevel, int level) {
+        return Optional.ofNullable(getRelicLevelData(rankLevel, level)).map(d -> d.getExp()).orElse(0);
+    }
+
+
+    // Generic getter
     public static Int2ObjectMap<?> getMapByResourceDef(Class<?> resourceDefinition) {
         Int2ObjectMap<?> map = null;
 
@@ -149,24 +189,6 @@ public class GameData {
 
 
 
-    // TODO optimize
-    public static ScenePointEntry getScenePointEntryById(int sceneId, int pointId) {
-        return getScenePointEntries().get(sceneId + "_" + pointId);
-    }
-
-    public static int getRelicExpRequired(int rankLevel, int level) {
-        ReliquaryLevelData levelData = reliquaryLevelDataMap.get((rankLevel << 8) + level);
-        return levelData != null ? levelData.getExp() : 0;
-    }
-
-    public static ReliquaryLevelData getRelicLevelData(int rankLevel, int level) {
-        return reliquaryLevelDataMap.get((rankLevel << 8) + level);
-    }
-
-    public static WeaponPromoteData getWeaponPromoteData(int promoteId, int promoteLevel) {
-        return weaponPromoteDataMap.get((promoteId << 8) + promoteLevel);
-    }
-
     public static int getWeaponExpRequired(int rankLevel, int level) {
         WeaponLevelData levelData = weaponLevelDataMap.get(level);
         if (levelData == null) {
@@ -178,21 +200,6 @@ public class GameData {
             return 0;
         }
     }
-
-    public static AvatarPromoteData getAvatarPromoteData(int promoteId, int promoteLevel) {
-        return avatarPromoteDataMap.get((promoteId << 8) + promoteLevel);
-    }
-
-    public static int getAvatarLevelExpRequired(int level) {
-        AvatarLevelData levelData = avatarLevelDataMap.get(level);
-        return levelData != null ? levelData.getExp() : 0;
-    }
-
-    public static int getAvatarFetterLevelExpRequired(int level) {
-        AvatarFetterLevelData levelData = avatarFetterLevelDataMap.get(level);
-        return levelData != null ? levelData.getExp() : 0;
-    }
-
 
     public static Map<Integer, List<Integer>> getFetterDataEntries() {
         if (fetters.isEmpty()) {
