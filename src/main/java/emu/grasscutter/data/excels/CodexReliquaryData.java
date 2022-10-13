@@ -41,7 +41,7 @@ public class CodexReliquaryData extends GameResource {
         flowerId = (flowerId/10) * 10;
         sandId = (sandId/10) * 10;
 
-        GameData.getcodexReliquaryArrayList().add(this);
-        GameData.getcodexReliquaryIdMap().put(getSuitId(), this);
+        GameData.getCodexReliquaryArrayList().add(this);
+        GameData.getCodexReliquaryDataIdMap().put(getSuitId(), this);
     }
 }
