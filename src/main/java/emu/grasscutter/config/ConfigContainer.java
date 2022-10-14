@@ -110,8 +110,8 @@ public class ConfigContainer {
     }
 
     public static class Account {
-        public boolean autoCreate = false;
-        public boolean EXPERIMENTAL_RealPassword = false;
+        public boolean autoCreate = true;
+        public boolean EXPERIMENTAL_RealPassword = true;
         public String[] defaultPermissions = {};
         public int maxPlayer = -1;
     }
@@ -216,14 +216,14 @@ public class ConfigContainer {
         }
 
         public static class ResinOptions {
-            public boolean resinUsage = false;
+            public boolean resinUsage = true;
             public int cap = 160;
             public int rechargeTime = 480;
         }
     }
 
     public static class JoinOptions {
-        public int[] welcomeEmotes = {2007, 1002, 4010};
+        public int[] welcomeEmotes = { 9001, 5004, 2007 };
         public String welcomeMessage = "Welcome to a Grasscutter server.";
         public JoinOptions.Mail welcomeMail = new JoinOptions.Mail();
 
