@@ -292,7 +292,7 @@
       "description": "Zatrzymaj serwer."
     },
     "talent": {
-      "lower_16": "Błędny poziom talentu. Poziom ten powinien być mniejszy niż 16.",
+      "out_of_range": "🇺🇸Invalid talent level. Level should be in range of 1-15.",
       "set_id": "🇺🇸Set talent %s - \"%s\" to %s.",
       "id_desc": "🇺🇸Talent %s - \"%s\" - \"%s\"",
       "invalid_skill_id": "Błędne ID umiejętności.",

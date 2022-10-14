@@ -198,8 +198,7 @@ public class PlayerProgressManager extends BasePlayerDataManager {
 
     public boolean unlockTransPoint(int sceneId, int pointId, boolean isStatue) {
         // Check whether the unlocked point exists and whether it is still locked.
-        String key = sceneId + "_" + pointId;
-        ScenePointEntry scenePointEntry = GameData.getScenePointEntries().get(key);
+        ScenePointEntry scenePointEntry = GameData.getScenePointEntryById(sceneId, pointId);
 
         if (scenePointEntry == null || this.player.getUnlockedScenePoints(sceneId).contains(pointId)) {
             return false;

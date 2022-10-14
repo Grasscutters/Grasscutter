@@ -102,6 +102,7 @@ public class Player {
     @Getter private PlayerCodex codex;
     @Getter @Setter private boolean showAvatars;
     @Getter @Setter private List<Integer> showAvatarList;
+    @Getter @Setter private List<Integer> showNameCardList;
     @Getter private Map<Integer, Integer> properties;
     @Getter @Setter private int currentRealmId;
     @Getter @Setter private int widgetId;
@@ -659,7 +660,8 @@ public class Player {
         return (int) ((theLastDay.getTime() - now.getTime()) / (24 * 60 * 60 * 1000)); // By copilot
     }
 
-    public void rechargeMoonCard() {
+    public boolean rechargeMoonCard() {
+        if (this.moonCardDuration > 150) return false;  // Can only stack up to 180 days
         inventory.addItem(new GameItem(203, 300));
         if (!moonCard) {
             moonCard = true;
@@ -669,7 +671,10 @@ public class Player {
         } else {
             moonCardDuration += 30;
         }
-        moonCardGetTimes.add(moonCardStartTime);
+        if (!moonCardGetTimes.contains(moonCardStartTime)) {
+            moonCardGetTimes.add(moonCardStartTime);
+        }
+        return true;
     }
 
     public void getTodayMoonCard() {
@@ -940,6 +945,7 @@ public class Player {
                 .setNameCardId(this.getNameCardId())
                 .setIsShowAvatar(this.isShowAvatars())
                 .addAllShowAvatarInfoList(socialShowAvatarInfoList)
+                .addAllShowNameCardIdList(this.getShowNameCardInfoList())
                 .setFinishAchievementNum(0);
         return social;
     }
@@ -971,6 +977,11 @@ public class Player {
             }
         }
         return showAvatarInfoList;
+    }
+
+    public List<Integer> getShowNameCardInfoList() {
+        List<Integer> info = this.getShowNameCardList();
+        return info == null ? new ArrayList<>() : info;
     }
 
     public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getWorldPlayerLocationInfo() {
