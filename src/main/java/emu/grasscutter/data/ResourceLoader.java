@@ -3,8 +3,7 @@ package emu.grasscutter.data;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.*;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityConfigData;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierActionType;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
@@ -22,6 +21,7 @@ import org.reflections.Reflections;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -176,7 +176,7 @@ public class ResourceLoader {
             GameData.proudSkillGroupLevels
                 .computeIfAbsent(data.getProudSkillGroupId(), i -> new IntArraySet())
                 .add(data.getLevel()));
-        GameData.getAvatarSkillDataMap().forEach((id, data) -> 
+        GameData.getAvatarSkillDataMap().forEach((id, data) ->
             GameData.avatarSkillLevels.put((int) id, GameData.proudSkillGroupLevels.get(data.getProudSkillGroupId())));
     }
 
@@ -237,57 +237,54 @@ public class ResourceLoader {
         }
     }
 
+    // private static HashSet<String> modifierActionTypes = new HashSet<>();
+    public static class AbilityConfigData {
+        public AbilityData Default;
+    }
     private static void loadAbilityModifiers() {
         // Load from BinOutput
-        try {
-            Files.newDirectoryStream(getResourcePath("BinOutput/Ability/Temp/AvatarAbilities/")).forEach(path -> {
-                List<AbilityConfigData> abilityConfigList;
-
-                try {
-                    abilityConfigList = JsonUtils.loadToList(path, AbilityConfigData.class);
-                } catch (IOException e) {
-                    Grasscutter.getLogger().error("Error loading ability modifiers from path " + path.toString() + ": ", e);
-                    return;
-                }
-
-                abilityConfigList.forEach(data -> {
-                    if (data.Default.modifiers == null || data.Default.modifiers.size() == 0) {
-                        return;
-                    }
-
-                    String name = data.Default.abilityName;
-                    AbilityModifierEntry modifierEntry = new AbilityModifierEntry(name);
-                    data.Default.modifiers.forEach((key, modifier) -> {
-                        Stream.ofNullable(modifier.onAdded)
-                            .flatMap(Stream::of)
-                            .filter(action -> action.$type.contains("HealHP"))
-                            .forEach(action -> {
-                                action.type = AbilityModifierActionType.HealHP;
-                                modifierEntry.getOnAdded().add(action);
-                            });
-                        Stream.ofNullable(modifier.onThinkInterval)
-                            .flatMap(Stream::of)
-                            .filter(action -> action.$type.contains("HealHP"))
-                            .forEach(action -> {
-                                action.type = AbilityModifierActionType.HealHP;
-                                modifierEntry.getOnThinkInterval().add(action);
-                            });
-                        Stream.ofNullable(modifier.onRemoved)
-                            .flatMap(Stream::of)
-                            .filter(action -> action.$type.contains("HealHP"))
-                            .forEach(action -> {
-                                action.type = AbilityModifierActionType.HealHP;
-                                modifierEntry.getOnRemoved().add(action);
-                            });
-                    });
-
-                    GameData.getAbilityModifiers().put(name, modifierEntry);
-                });
-            });
+        try (Stream<Path> paths = Files.walk(getResourcePath("BinOutput/Ability/Temp/"))) {
+            paths.filter(Files::isRegularFile).filter(path -> path.toString().endsWith(".json")).forEach(ResourceLoader::loadAbilityModifiers);
         } catch (IOException e) {
             Grasscutter.getLogger().error("Error loading ability modifiers: ", e);
             return;
         }
+        // System.out.println("Loaded modifiers, found types:");
+        // modifierActionTypes.stream().sorted().forEach(s -> System.out.printf("%s, ", s));
+        // System.out.println("[End]");
+    }
+    private static void loadAbilityModifiers(Path path) {
+        try {
+            JsonUtils.loadToList(path, AbilityConfigData.class).forEach(data -> loadAbilityData(data.Default));
+        } catch (IOException e) {
+            Grasscutter.getLogger().error("Error loading ability modifiers from path " + path.toString() + ": ", e);
+            return;
+        }
+    }
+    private static void loadAbilityData(AbilityData data) {
+        GameData.abilityDataMap.put(data.abilityName, data);
+
+        val modifiers = data.modifiers;
+        if (modifiers == null || modifiers.size() == 0) return;
+
+        String name = data.abilityName;
+        AbilityModifierEntry modifierEntry = new AbilityModifierEntry(name);
+        modifiers.forEach((key, modifier) -> {
+            Stream.ofNullable(modifier.onAdded).flatMap(Stream::of)
+                // .map(action -> {modifierActionTypes.add(action.$type); return action;})
+                .filter(action -> action.type == AbilityModifierAction.Type.HealHP)
+                .forEach(action -> modifierEntry.getOnAdded().add(action));
+            Stream.ofNullable(modifier.onThinkInterval).flatMap(Stream::of)
+                // .map(action -> {modifierActionTypes.add(action.$type); return action;})
+                .filter(action -> action.type == AbilityModifierAction.Type.HealHP)
+                .forEach(action -> modifierEntry.getOnThinkInterval().add(action));
+            Stream.ofNullable(modifier.onRemoved).flatMap(Stream::of)
+                // .map(action -> {modifierActionTypes.add(action.$type); return action;})
+                .filter(action -> action.type == AbilityModifierAction.Type.HealHP)
+                .forEach(action -> modifierEntry.getOnRemoved().add(action));
+        });
+
+        GameData.getAbilityModifiers().put(name, modifierEntry);
     }
 
     private static void loadSpawnData() {

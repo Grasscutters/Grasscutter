@@ -8,6 +8,8 @@ import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import lombok.val;
 
 public class DynamicFloat {
+    public static DynamicFloat ZERO = new DynamicFloat(0f);
+
     public static class StackOp {
         enum Op {CONSTANT, KEY, ADD, SUB, MUL, DIV};
         public Op op;

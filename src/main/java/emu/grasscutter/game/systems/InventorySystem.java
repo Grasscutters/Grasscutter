@@ -2,26 +2,33 @@ package emu.grasscutter.game.systems;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.common.ItemUseData;
 import emu.grasscutter.data.excels.AvatarPromoteData;
 import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.WeaponPromoteData;
-import emu.grasscutter.data.excels.AvatarSkillDepotData.InherentProudSkillOpens;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.ItemUseOp;
-import emu.grasscutter.game.props.ItemUseTarget;
-import emu.grasscutter.game.shop.ShopChestTable;
+import emu.grasscutter.game.props.ItemUseAction.ItemUseAddExp;
+import emu.grasscutter.game.props.ItemUseAction.ItemUseAddReliquaryExp;
+import emu.grasscutter.game.props.ItemUseAction.ItemUseAddWeaponExp;
+import emu.grasscutter.game.props.ItemUseAction.UseItemParams;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
 import emu.grasscutter.server.event.player.PlayerUseFoodEvent;
@@ -29,28 +36,32 @@ import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.Int2IntArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
+import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
+import lombok.val;
 
 public class InventorySystem extends BaseGameSystem {
-    private final static int RELIC_MATERIAL_1 = 105002; // Sanctifying Unction
-    private final static int RELIC_MATERIAL_2 = 105003; // Sanctifying Essence
-    private final static int RELIC_MATERIAL_EXP_1 = 2500; // Sanctifying Unction
-    private final static int RELIC_MATERIAL_EXP_2 = 10000; // Sanctifying Essence
-
-    private final static int WEAPON_ORE_1 = 104011; // Enhancement Ore
-    private final static int WEAPON_ORE_2 = 104012; // Fine Enhancement Ore
-    private final static int WEAPON_ORE_3 = 104013; // Mystic Enhancement Ore
-    private final static int WEAPON_ORE_EXP_1 = 400; // Enhancement Ore
-    private final static int WEAPON_ORE_EXP_2 = 2000; // Fine Enhancement Ore
-    private final static int WEAPON_ORE_EXP_3 = 10000; // Mystic Enhancement Ore
-
-    private final static int AVATAR_BOOK_1 = 104001; // Wanderer's Advice
-    private final static int AVATAR_BOOK_2 = 104002; // Adventurer's Experience
-    private final static int AVATAR_BOOK_3 = 104003; // Hero's Wit
-    private final static int AVATAR_BOOK_EXP_1 = 1000; // Wanderer's Advice
-    private final static int AVATAR_BOOK_EXP_2 = 5000; // Adventurer's Experience
-    private final static int AVATAR_BOOK_EXP_3 = 20000; // Hero's Wit
+    private static final Int2IntMap weaponRefundMaterials = new Int2IntArrayMap();
+    {
+        // Use a sorted map, use exp as key to sort by exp
+        // We want to have weaponRefundMaterials as (id, exp) in descending exp order
+        var temp = new Int2IntRBTreeMap(Collections.reverseOrder());
+        GameData.getItemDataMap().forEach((id, data) -> {
+            if (data == null) return;
+            if (data.getMaterialType() != MaterialType.MATERIAL_WEAPON_EXP_STONE) return;
+            var actions = data.getItemUseActions();
+            if (actions == null) return;
+            for (var action : actions) {
+                if (action.getItemUseOp() == ItemUseOp.ITEM_USE_ADD_WEAPON_EXP) {
+                    temp.putIfAbsent((int) ((ItemUseAddWeaponExp) action).getExp(), (int) id);
+                    return;
+                }
+            }
+        });
+        temp.forEach((exp, id) -> weaponRefundMaterials.putIfAbsent((int) id, (int) exp));
+    }
 
     public InventorySystem(GameServer server) {
         super(server);
@@ -88,8 +99,9 @@ public class InventorySystem extends BaseGameSystem {
                 continue;
             }
             // Calculate mora cost
-            moraCost += food.getItemData().getBaseConvExp();
-            expGain += food.getItemData().getBaseConvExp();
+            int exp = food.getItemData().getBaseConvExp();
+            moraCost += exp;
+            expGain += exp;
             // Feeding artifact with exp already
             if (food.getTotalExp() > 0) {
                 expGain += (food.getTotalExp() * 4) / 5;
@@ -99,11 +111,19 @@ public class InventorySystem extends BaseGameSystem {
         List<ItemParamData> payList = new ArrayList<ItemParamData>();
         for (ItemParam itemParam : list) {
             int amount = itemParam.getCount();  // Previously this capped to inventory amount, but rejecting the payment makes more sense for an invalid order
-            int gain = amount * switch (itemParam.getItemId()) {
-                case RELIC_MATERIAL_1 -> RELIC_MATERIAL_EXP_1;
-                case RELIC_MATERIAL_2 -> RELIC_MATERIAL_EXP_2;
-                default -> 0;
-            };
+            int gain = 0;
+            var data = GameData.getItemDataMap().get(itemParam.getItemId());
+            if (data != null) {
+                var actions = data.getItemUseActions();
+                if (actions != null) {
+                    for (var action : actions) {
+                        if (action.getItemUseOp() == ItemUseOp.ITEM_USE_ADD_RELIQUARY_EXP) {
+                            gain += ((ItemUseAddReliquaryExp) action).getExp();
+                        }
+                    }
+                }
+            }
+            gain *= amount;
             expGain += gain;
             moraCost += gain;
             payList.add(new ItemParamData(itemParam.getItemId(), itemParam.getCount()));
@@ -197,25 +217,39 @@ public class InventorySystem extends BaseGameSystem {
         }
 
         // Get exp gain
-        int expGain = 0;
-        for (long guid : foodWeaponGuidList) {
-            GameItem food = player.getInventory().getItemByGuid(guid);
-            if (food == null) {
-                continue;
-            }
-            expGain += food.getItemData().getWeaponBaseExp();
-            if (food.getTotalExp() > 0) {
-                expGain += (food.getTotalExp() * 4) / 5;
-            }
-        }
-        for (ItemParam param : itemParamList) {
-            expGain += param.getCount() * switch (param.getItemId()) {
-                case WEAPON_ORE_1 -> WEAPON_ORE_EXP_1;
-                case WEAPON_ORE_2 -> WEAPON_ORE_EXP_2;
-                case WEAPON_ORE_3 -> WEAPON_ORE_EXP_3;
-                default -> 0;
-            };
-        }
+        int expGain = foodWeaponGuidList.stream()
+            .map(player.getInventory()::getItemByGuid)
+            .filter(Objects::nonNull)
+            .mapToInt(food -> food.getItemData().getWeaponBaseExp() + ((food.getTotalExp() * 4) / 5))
+            .sum();
+        // Stream::ofNullable version
+        expGain += itemParamList.stream()
+            .mapToInt(param -> {
+                int exp = Stream.ofNullable(GameData.getItemDataMap().get(param.getItemId()))
+                    .map(ItemData::getItemUseActions)
+                    .filter(Objects::nonNull)
+                    .flatMap(Collection::stream)
+                    .filter(action -> action.getItemUseOp() == ItemUseOp.ITEM_USE_ADD_WEAPON_EXP)
+                    .mapToInt(action -> ((ItemUseAddWeaponExp) action).getExp())
+                    .sum();
+                return exp * param.getCount();
+            })
+            .sum();
+        // Optional::ofNullable version
+        // expGain += itemParamList.stream()
+        //     .mapToInt(param -> {
+        //         int exp = Optional.ofNullable(GameData.getItemDataMap().get(param.getItemId()))
+        //             .map(ItemData::getItemUseActions)
+        //             .map(actions -> {
+        //                 return actions.stream()
+        //                     .filter(action -> action.getItemUseOp() == ItemUseOp.ITEM_USE_ADD_WEAPON_EXP)
+        //                     .mapToInt(action -> ((ItemUseAddWeaponExp) action).getExp())
+        //                     .sum();
+        //             })
+        //             .orElse(0);
+        //         return exp * param.getCount();
+        //     })
+        //     .sum();
 
         // Try
         int maxLevel = promoteData.getUnlockMaxLevel();
@@ -272,13 +306,19 @@ public class InventorySystem extends BaseGameSystem {
         List<ItemParamData> payList = new ArrayList<ItemParamData>();
         for (ItemParam param : itemParamList) {
             int amount = param.getCount();  // Previously this capped to inventory amount, but rejecting the payment makes more sense for an invalid order
-            int gain = amount * switch (param.getItemId()) {
-                case WEAPON_ORE_1 -> WEAPON_ORE_EXP_1;
-                case WEAPON_ORE_2 -> WEAPON_ORE_EXP_2;
-                case WEAPON_ORE_3 -> WEAPON_ORE_EXP_3;
-                default -> 0;
-            };
-            expGain += gain;
+
+            var data = GameData.getItemDataMap().get(param.getItemId());
+            if (data != null) {
+                var actions = data.getItemUseActions();
+                if (actions != null) {
+                    for (var action : actions) {
+                        if (action.getItemUseOp() == ItemUseOp.ITEM_USE_ADD_WEAPON_EXP) {
+                            expGain += ((ItemUseAddWeaponExp) action).getExp() * amount;
+                        }
+                    }
+                }
+            }
+
             payList.add(new ItemParamData(param.getItemId(), amount));
         }
 
@@ -344,23 +384,13 @@ public class InventorySystem extends BaseGameSystem {
     private List<ItemParam> getLeftoverOres(int leftover) {
         List<ItemParam> leftoverOreList = new ArrayList<>(3);
 
-        if (leftover < WEAPON_ORE_EXP_1) {
-            return leftoverOreList;
-        }
+        for (var e : weaponRefundMaterials.int2IntEntrySet()) {
+            int exp = e.getIntValue();
+            int ores = leftover / exp;
+            leftover = leftover % exp;
 
-        // Get leftovers
-        int ore3 = leftover / WEAPON_ORE_EXP_3;
-        leftover = leftover % WEAPON_ORE_EXP_3;
-        int ore2 = leftover / WEAPON_ORE_EXP_2;
-        leftover = leftover % WEAPON_ORE_EXP_2;
-        int ore1 = leftover / WEAPON_ORE_EXP_1;
-
-        if (ore3 > 0) {
-            leftoverOreList.add(ItemParam.newBuilder().setItemId(WEAPON_ORE_3).setCount(ore3).build());
-        } if (ore2 > 0) {
-            leftoverOreList.add(ItemParam.newBuilder().setItemId(WEAPON_ORE_2).setCount(ore2).build());
-        } if (ore1 > 0) {
-            leftoverOreList.add(ItemParam.newBuilder().setItemId(WEAPON_ORE_1).setCount(ore1).build());
+            if (ores > 0)
+                leftoverOreList.add(ItemParam.newBuilder().setItemId(e.getIntKey()).setCount(ores).build());
         }
 
         return leftoverOreList;
@@ -503,22 +533,18 @@ public class InventorySystem extends BaseGameSystem {
         avatar.setPromoteLevel(nextPromoteLevel);
 
         // Update proud skills
-        AvatarSkillDepotData skillDepot = GameData.getAvatarSkillDepotDataMap().get(avatar.getSkillDepotId());
-
-        if (skillDepot != null && skillDepot.getInherentProudSkillOpens() != null) {
-            for (InherentProudSkillOpens openData : skillDepot.getInherentProudSkillOpens()) {
-                if (openData.getProudSkillGroupId() == 0) {
-                    continue;
-                }
-                if (openData.getNeedAvatarPromoteLevel() == avatar.getPromoteLevel()) {
-                    int proudSkillId = (openData.getProudSkillGroupId() * 100) + 1;
-                    if (GameData.getProudSkillDataMap().containsKey(proudSkillId)) {
-                        avatar.getProudSkillList().add(proudSkillId);
-                        player.sendPacket(new PacketProudSkillChangeNotify(avatar));
-                    }
-                }
-            }
-        }
+        Optional.ofNullable(GameData.getAvatarSkillDepotDataMap().get(avatar.getSkillDepotId()))
+            .map(AvatarSkillDepotData::getInherentProudSkillOpens)
+            .ifPresent(d -> d.stream()
+                .filter(openData -> openData.getProudSkillGroupId() > 0)
+                .filter(openData -> openData.getNeedAvatarPromoteLevel() == avatar.getPromoteLevel())
+                .mapToInt(openData -> (openData.getProudSkillGroupId() * 100) + 1)
+                .filter(GameData.getProudSkillDataMap()::containsKey)
+                .forEach(proudSkillId -> {
+                    avatar.getProudSkillList().add(proudSkillId);
+                    player.sendPacket(new PacketProudSkillChangeNotify(avatar));
+                })
+        );
 
         // Packets
         player.sendPacket(new PacketAvatarPropNotify(avatar));
@@ -543,12 +569,19 @@ public class InventorySystem extends BaseGameSystem {
         }
 
         // Calc exp
-        int expGain = switch (itemId) {
-            case AVATAR_BOOK_1 -> AVATAR_BOOK_EXP_1 * count;
-            case AVATAR_BOOK_2 -> AVATAR_BOOK_EXP_2 * count;
-            case AVATAR_BOOK_3 -> AVATAR_BOOK_EXP_3 * count;
-            default -> 0;
-        };
+        int expGain = 0;
+
+        var data = GameData.getItemDataMap().get(itemId);
+        if (data != null) {
+            var actions = data.getItemUseActions();
+            if (actions != null) {
+                for (var action : actions) {
+                    if (action.getItemUseOp() == ItemUseOp.ITEM_USE_ADD_EXP) {
+                        expGain += ((ItemUseAddExp) action).getExp() * count;
+                    }
+                }
+            }
+        }
 
         // Sanity check
         if (expGain <= 0) {
@@ -699,187 +732,85 @@ public class InventorySystem extends BaseGameSystem {
         player.sendPacket(new PacketDestroyMaterialRsp(returnMaterialMap));
     }
 
-    public GameItem useItem(Player player, long targetGuid, long itemGuid, int count, int optionId) {
+    // Uses an item from the player's inventory.
+    public synchronized GameItem useItem(Player player, long targetGuid, long itemGuid, int count, int optionId, boolean isEnterMpDungeonTeam) {
+        Grasscutter.getLogger().info("Attempting to use item from inventory");
         Avatar target = player.getAvatars().getAvatarByGuid(targetGuid);
-        GameItem useItem = player.getInventory().getItemByGuid(itemGuid);
-
-        if (useItem == null) {
-            return null;
-        }
-
-        int used = 0;
-        boolean useSuccess = false;
-        ItemData itemData = useItem.getItemData();
+        GameItem item = player.getInventory().getItemByGuid(itemGuid);
+        if (item == null) return null;
+        if (item.getCount() < count) return null;
+        ItemData itemData = item.getItemData();
         if (itemData == null) return null;
 
-        // Use
-        switch (itemData.getMaterialType()) {
-            case MATERIAL_FOOD:
-                if (itemData.getUseTarget() == ItemUseTarget.ITEM_USE_TARGET_SPECIFY_DEAD_AVATAR) {
-                    if (target == null) {
-                        break;
-                    }
-
-                    // Invoke player use food event.
-                    PlayerUseFoodEvent event = new PlayerUseFoodEvent(player, itemData, target.getAsEntity());
-                    // Call the event.
-                    event.call(); if (!event.isCanceled()) {
-                        used = player.getTeamManager().reviveAvatar(target) ? 1 : 0;
-                    }
-                } else {
-                    used = 1;
-                }
-                break;
-            case MATERIAL_NOTICE_ADD_HP:
-                if (itemData.getUseTarget() == ItemUseTarget.ITEM_USE_TARGET_SPECIFY_ALIVE_AVATAR) {
-                    if (target == null) {
-                        break;
-                    }
-
-                    // Invoke player use food event.
-                    PlayerUseFoodEvent event = new PlayerUseFoodEvent(player, itemData, target.getAsEntity());
-                    // Call the event.
-                    event.call(); if (!event.isCanceled()) {
-                        int[] SatiationParams = itemData.getSatiationParams();
-                        used = player.getTeamManager().healAvatar(target, SatiationParams[0], SatiationParams[1]) ? 1 : 0;
-                    }
-                }
-                break;
-            case MATERIAL_CONSUME:
-                // Make sure we have usage data for this material.
-                if (itemData.getItemUse() == null) {
-                    break;
-                }
-
-                ItemUseOp useOp = itemData.getItemUse().get(0).getUseOp();
-
-                // Unlock item based on use operation
-                useSuccess = switch (useOp) {
-                    case ITEM_USE_UNLOCK_FORGE -> player.getForgingManager().unlockForgingBlueprint(useItem);
-                    case ITEM_USE_UNLOCK_COMBINE -> player.getServer().getCombineSystem().unlockCombineDiagram(player, useItem);
-                    case ITEM_USE_UNLOCK_COOK_RECIPE -> player.getCookingManager().unlockRecipe(useItem);
-                    default -> useSuccess;
-                };
-                break;
-            case MATERIAL_FURNITURE_FORMULA:
-            case MATERIAL_FURNITURE_SUITE_FORMULA:
-                if (itemData.getItemUse() == null) {
-                    break;
-                }
-                useSuccess = player.getFurnitureManager().unlockFurnitureOrSuite(useItem);
-
-                break;
-            case MATERIAL_CONSUME_BATCH_USE:
-                // Make sure we have usage data for this material.
-                if (itemData.getItemUse() == null) {
-                    break;
-                }
-
-                // Handle fragile/transient resin.
-                if (useItem.getItemId() == 107009 || useItem.getItemId() == 107012) {
-                    // Add resin to the inventory.
-                    ItemData resinItemData = GameData.getItemDataMap().get(106);
-                    player.getInventory().addItem(new GameItem(resinItemData, 60 * count), ActionReason.PlayerUseItem);
-
-                    // Set used amount.
-                    used = count;
-                }
-                break;
-            case MATERIAL_CHEST:
-                List<ShopChestTable> shopChestTableList = player.getServer().getShopSystem().getShopChestData();
-                List<GameItem> rewardItemList = new ArrayList<>();
-                for (ShopChestTable shopChestTable : shopChestTableList) {
-                    if (shopChestTable.getItemId() != useItem.getItemId()) {
-                        continue;
-                    }
-
-                    if (shopChestTable.getContainsItem() == null) {
-                        break;
-                    }
-
-                    for (ItemParamData itemParamData : shopChestTable.getContainsItem()) {
-                        ItemData containedItem = GameData.getItemDataMap().get(itemParamData.getId());
-                        if (containedItem == null) {
-                            continue;
-                        }
-                        rewardItemList.add(new GameItem(containedItem, itemParamData.getCount()));
-                    }
-
-                    if (!rewardItemList.isEmpty()) {
-                        player.getInventory().addItems(rewardItemList, ActionReason.Shop);
-                    }
-
-                    used = 1;
-                    break;
-                }
-                break;
-            case MATERIAL_CHEST_BATCH_USE:
-                if (optionId < 1) return null;  // 1-indexed selection
-                for (var use : itemData.getItemUse()) {
-                    if (use.getUseOp() != ItemUseOp.ITEM_USE_CHEST_SELECT_ITEM) continue;
-                    String[] choices = use.getUseParam()[0].split(",");
-                    if (optionId > choices.length) return null;
-                    String[] choiceParts = choices[optionId-1].split(":");
-                    int optionItemId = Integer.parseInt(choiceParts[0]);
-                    int optionItemCount = Integer.parseInt(choiceParts[1]);
-                    ItemData optionItem = GameData.getItemDataMap().get(optionItemId);
-                    if (optionItem == null) {
-                        break;
-                    }
-
-                    player.getInventory().addItem(new GameItem(optionItem, optionItemCount * count), ActionReason.Shop);
-
-                    used = count;
-                    break;
-                }
-                break;
-            case MATERIAL_BGM:
-                ItemUseData use = itemData.getItemUse().get(0);
-                if (use.getUseOp() == ItemUseOp.ITEM_USE_UNLOCK_HOME_BGM) {
-                    int bgmId = Integer.parseInt(use.getUseParam()[0]);
-                    player.getInventory().removeItem(useItem, 1);
-                    player.sendPacket(new PacketUnlockHomeBgmNotify(bgmId));
-                    player.getHome().addUnlockedHomeBgm(bgmId);
-                    player.sendPacket(new PacketUnlockedHomeBgmNotify(player));
-                    return useItem;
-                }
-                break;
-            default:
-                break;
+        var params = new UseItemParams(player, itemData.getUseTarget(), target, count, optionId, isEnterMpDungeonTeam);
+        if (useItemDirect(itemData, params)) {
+            player.getInventory().removeItem(item, count);
+            var actions = itemData.getItemUseActions();
+            if (actions != null)
+                actions.forEach(use -> use.postUseItem(params));
+            Grasscutter.getLogger().info("Item use succeeded!");
+            return item;
+        } else {
+            Grasscutter.getLogger().info("Item use failed!");
+            return null;
         }
+    }
 
-        // Welkin
-        if (useItem.getItemId() == 1202) {
-            player.rechargeMoonCard();
-            used = 1;
-        }
+    // Uses an item without checking the player's inventory.
+    public synchronized boolean useItemDirect(ItemData itemData, UseItemParams params) {
+        if (itemData == null) return false;
 
-        // If we used at least one item, or one of the methods called here reports using the item successfully,
-        // we return the item to make UseItemRsp a success.
-        if (used > 0) {
-            // Handle use params, mainly server buffs
-            for (ItemUseData useData : itemData.getItemUse()) {
-                switch (useData.getUseOp()) {
-                    case ITEM_USE_ADD_SERVER_BUFF -> {
-                        int buffId = Integer.parseInt(useData.getUseParam()[0]);
-                        String timeString = useData.getUseParam()[1];
-                        float time = timeString.isEmpty() ? 0 : Float.parseFloat(timeString);
-
-                        player.getBuffManager().addBuff(buffId, time);
-                    }
-                    default -> {}
-                }
+        // Ensure targeting conditions are satisfied
+        val target = Optional.ofNullable(params.targetAvatar);
+        switch (params.itemUseTarget) {
+            case ITEM_USE_TARGET_NONE -> {}
+            case ITEM_USE_TARGET_SPECIFY_AVATAR -> {
+                if (target.isEmpty()) return false;
             }
-
-            // Remove item from inventory since we used it
-            player.getInventory().removeItem(useItem, used);
-            return useItem;
+            case ITEM_USE_TARGET_SPECIFY_ALIVE_AVATAR -> {
+                if (target.map(a -> !a.getAsEntity().isAlive()).orElse(true)) return false;
+            }
+            case ITEM_USE_TARGET_SPECIFY_DEAD_AVATAR -> {
+                if (target.map(a -> a.getAsEntity().isAlive()).orElse(true)) return false;
+            }
+            case ITEM_USE_TARGET_CUR_AVATAR -> {}
+            case ITEM_USE_TARGET_CUR_TEAM -> {}
         }
 
-        if (useSuccess) {
-            return useItem;
+        int[] satiationParams = itemData.getSatiationParams();
+        if (satiationParams != null && target.isPresent()) {
+            // Invoke and call player use food event.
+            var event = new PlayerUseFoodEvent(params.player, itemData, params.targetAvatar.getAsEntity()); event.call();
+            if (event.isCanceled()) return false;
+
+            float satiationIncrease = satiationParams[0] + ((float)satiationParams[1])/params.targetAvatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+            if (!params.targetAvatar.addSatiation(satiationIncrease)) {  // Make sure avatar can eat
+                return false;
+            }
         }
 
-        return null;
+        // Use
+        var actions = itemData.getItemUseActions();
+        Grasscutter.getLogger().info("Using - actions - {}", actions);
+        if (actions == null) return true;  // Maybe returning false would be more appropriate?
+        return actions.stream()
+                .map(use -> use.useItem(params))
+                .reduce(false, (a,b) -> a || b);  // Don't short-circuit!!!
+    }
+
+    public static synchronized int checkPlayerAvatarConstellationLevel(Player player, int itemId) {
+        ItemData itemData = GameData.getItemDataMap().get(itemId);
+        if ((itemData == null) || (itemData.getMaterialType() != MaterialType.MATERIAL_AVATAR)) {
+            return -2;  // Not an Avatar
+        }
+        Avatar avatar = player.getAvatars().getAvatarById((itemId % 1000) + 10000000);
+        if (avatar == null) {
+            return -1;  // Doesn't have
+        }
+        // Constellation
+        int constLevel = avatar.getCoreProudSkillLevel();
+        GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId + 100);
+        constLevel += Optional.ofNullable(constItem).map(GameItem::getCount).orElse(0);
+        return constLevel;
     }
 }

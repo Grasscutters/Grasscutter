@@ -15,14 +15,13 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.gacha.GachaBanner.BannerType;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
-import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.game.systems.InventorySystem;
 import emu.grasscutter.net.proto.GachaItemOuterClass.GachaItem;
 import emu.grasscutter.net.proto.GachaTransferItemOuterClass.GachaTransferItem;
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
@@ -32,7 +31,6 @@ import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameServerTickEvent;
 import emu.grasscutter.server.packet.send.PacketDoGachaRsp;
-import emu.grasscutter.server.packet.send.PacketGachaWishRsp;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -121,26 +119,10 @@ public class GachaSystem extends BaseGameSystem {
         }
     }
 
-    private synchronized int checkPlayerAvatarConstellationLevel(Player player, int itemId) {  // Maybe this would be useful in the Player class?
-        ItemData itemData = GameData.getItemDataMap().get(itemId);
-        if ((itemData == null) || (itemData.getMaterialType() != MaterialType.MATERIAL_AVATAR)) {
-            return -2;  // Not an Avatar
-        }
-        Avatar avatar = player.getAvatars().getAvatarById((itemId % 1000) + 10000000);
-        if (avatar == null) {
-            return -1;  // Doesn't have
-        }
-        // Constellation
-        int constLevel = avatar.getCoreProudSkillLevel();
-        GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId + 100);
-        constLevel += (constItem == null)? 0 : constItem.getCount();
-        return constLevel;
-    }
-
     private synchronized int[] removeC6FromPool(int[] itemPool, Player player) {
         IntList temp = new IntArrayList();
         for (int itemId : itemPool) {
-            if (checkPlayerAvatarConstellationLevel(player, itemId) < 6) {
+            if (InventorySystem.checkPlayerAvatarConstellationLevel(player, itemId) < 6) {
                 temp.add(itemId);
             }
         }
@@ -314,7 +296,7 @@ public class GachaSystem extends BaseGameSystem {
             boolean isTransferItem = false;
 
             // Const check
-            int constellation = checkPlayerAvatarConstellationLevel(player, itemId);
+            int constellation = InventorySystem.checkPlayerAvatarConstellationLevel(player, itemId);
             switch (constellation) {
                 case -2:  // Is weapon
                     switch (itemData.getRankLevel()) {
