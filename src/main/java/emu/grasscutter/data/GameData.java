@@ -103,8 +103,9 @@ public class GameData {
     private static final Int2ObjectMap<WeatherData> weatherDataMap = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<BattlePassMissionData> battlePassMissionDataMap = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<BattlePassRewardData> battlePassRewardDataMap = new Int2ObjectOpenHashMap<>();
-    private static final Int2ObjectMap<CookRecipeData> cookRecipeDataMap = new Int2ObjectOpenHashMap<>();
-    private static final Int2ObjectMap<CookBonusData> cookBonusDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<CookRecipeData> cookRecipeDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<CookBonusData> cookBonusDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<CompoundData> compoundDataMap=new Int2ObjectOpenHashMap<>();
 
     @Getter private static final Int2ObjectMap<ActivityData> activityDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<ActivityShopData> activityShopDataMap = new Int2ObjectOpenHashMap<>();
@@ -116,12 +117,11 @@ public class GameData {
     @Getter private static final Map<String,ScriptSceneData> scriptSceneDataMap = new HashMap<>();
     @Getter private static final Map<Integer, List<Integer>> scenePointsPerScene = new HashMap<>();
     @Getter private static final Int2ObjectMap<BlossomRefreshExcelConfigData> blossomRefreshExcelConfigDataMap = new Int2ObjectOpenHashMap<>();
-
     @Getter private static final Int2ObjectMap<OpenStateData> openStateDataMap = new Int2ObjectOpenHashMap<>();
 
     // Cache
-    private static Map<Integer, List<Integer>> fetters = new HashMap<>();
-    private static Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
+    private static final Map<Integer, List<Integer>> fetters = new HashMap<>();
+    private static final Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
     private static final IntList scenePointIdList = new IntArrayList();
 
 
@@ -462,13 +462,6 @@ public class GameData {
         return battlePassRewardDataMap;
     }
 
-    public static Int2ObjectMap<CookRecipeData> getCookRecipeDataMap() {
-        return cookRecipeDataMap;
-    }
-
-    public static Int2ObjectMap<CookBonusData> getCookBonusDataMap() {
-        return cookBonusDataMap;
-    }
 
     public static Int2ObjectMap<BuffData> getBuffDataMap() {
         return buffDataMap;
