@@ -154,8 +154,12 @@ public final class RegionHandler implements Router {
                 }
 
                 String key_id = ctx.queryParam("key_id");
+
+                if(key_id == null)
+                    throw new Exception("Key ID was not set");
+
                 Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
-                cipher.init(Cipher.ENCRYPT_MODE, key_id.equals("3") ? Crypto.CUR_OS_ENCRYPT_KEY : Crypto.CUR_CN_ENCRYPT_KEY);
+                cipher.init(Cipher.ENCRYPT_MODE, Crypto.EncryptionKeys.get(Integer.valueOf(key_id)));
                 var regionInfo = Utils.base64Decode(event.getRegionInfo());
 
                 //Encrypt regionInfo in chunks

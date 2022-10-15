@@ -114,8 +114,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
                     .putLong(Crypto.ENCRYPT_SEED ^ client_seed)
                     .array();
 
-                //Kind of a hack, but whatever
-                cipher.init(Cipher.ENCRYPT_MODE, req.getKeyId() == 3 ? Crypto.CUR_OS_ENCRYPT_KEY : Crypto.CUR_CN_ENCRYPT_KEY);
+                cipher.init(Cipher.ENCRYPT_MODE, Crypto.EncryptionKeys.get(req.getKeyId()));
                 var seed_encrypted = cipher.doFinal(seed_bytes);
 
                 Signature privateSignature = Signature.getInstance("SHA256withRSA");
