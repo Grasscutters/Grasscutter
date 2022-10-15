@@ -11,11 +11,10 @@ import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
@@ -29,16 +28,15 @@ import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Language.TextStrings;
 import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectRBTreeMap;
-import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.val;
 
 import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.Language.getTextMapKey;
 
 public final class Tools {
     public static void createGmHandbooks() throws Exception {
         val languages = Language.TextStrings.getLanguages();
-        val textMaps = Language.getTextMapStrings();
 
         ResourceLoader.loadAll();
         val mainQuestTitles = new Int2IntRBTreeMap(GameData.getMainQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getTitleTextMapHash())));
@@ -54,24 +52,32 @@ public final class Tools {
 
         // Create builders and helper functions
         val handbookBuilders = IntStream.range(0, TextStrings.NUM_LANGUAGES).mapToObj(i -> new StringBuilder()).toList();
-        Consumer<String> newSection = title -> handbookBuilders.forEach(b -> b.append("\n\n// " + title + "\n"));
-        Consumer<String> newLine = line -> handbookBuilders.forEach(b -> b.append(line + "\n"));
-        BiConsumer<String, IntList> newTranslatedLine = (template, textmapHashes) -> {
-            val textstrings = textmapHashes.intStream().mapToObj(textMaps::get).toList();
-            for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
-                String s = template;
-                for (int j = 0; j < textstrings.size(); j++)
-                    s = s.replace("{"+j+"}", textstrings.get(j).strings[i]);
-                handbookBuilders.get(i).append(s + "\n");
+        var h = new Object() {
+            void newLine(String line) {
+                handbookBuilders.forEach(b -> b.append(line + "\n"));
+            }
+            void newSection(String title) {
+                newLine("\n\n// " + title);
+            }
+            void newTranslatedLine(String template, TextStrings... textstrings) {
+                for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
+                    String s = template;
+                    for (int j = 0; j < textstrings.length; j++)
+                        s = s.replace("{"+j+"}", textstrings[j].strings[i]);
+                    handbookBuilders.get(i).append(s + "\n");
+                }
+            }
+            void newTranslatedLine(String template, long... hashes) {
+                newTranslatedLine(template, LongStream.of(hashes).mapToObj(hash -> getTextMapKey(hash)).toArray(TextStrings[]::new));
             }
         };
 
         // Preamble
-        newLine.accept("// Grasscutter " + GameConstants.VERSION + " GM Handbook");
-        newLine.accept("// Created " + DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss").format(LocalDateTime.now()));
+        h.newLine("// Grasscutter " + GameConstants.VERSION + " GM Handbook");
+        h.newLine("// Created " + DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss").format(LocalDateTime.now()));
 
         // Commands
-        newSection.accept("Commands");
+        h.newSection("Commands");
         final List<CommandHandler> cmdList = CommandMap.getInstance().getHandlersAsList();
         final String padCmdLabel = "%" + cmdList.stream().map(CommandHandler::getLabel).map(String::length).max(Integer::compare).get().toString() + "s : ";
         for (CommandHandler cmd : cmdList) {
@@ -83,51 +89,50 @@ public final class Tools {
             }
         }
         // Avatars
-        newSection.accept("Avatars");
+        h.newSection("Avatars");
         val avatarPre = getPad.apply(avatarDataMap);
-        avatarDataMap.forEach((id, data) -> newTranslatedLine.accept(avatarPre.formatted(id) + "{0}", IntList.of((int) data.getNameTextMapHash())));
+        avatarDataMap.forEach((id, data) -> h.newTranslatedLine(avatarPre.formatted(id) + "{0}", data.getNameTextMapHash()));
         // Items
-        newSection.accept("Items");
+        h.newSection("Items");
         val itemPre = getPad.apply(itemDataMap);
         itemDataMap.forEach((id, data) -> {
-            val nameHash = (int) data.getNameTextMapHash();
+            val name = getTextMapKey(data.getNameTextMapHash());
             switch (data.getMaterialType()) {
                 case MATERIAL_BGM:
-                    val bgmNameHash = Optional.ofNullable(data.getItemUse())
+                    val bgmName = Optional.ofNullable(data.getItemUse())
                         .map(u -> u.get(0))
                         .map(u -> u.getUseParam())
                         .filter(u -> u.length > 0)
                         .map(u -> Integer.parseInt(u[0]))
                         .map(bgmId -> GameData.getHomeWorldBgmDataMap().get(bgmId))
-                        .map(bgm -> bgm.getBgmNameTextMapHash());
-                    if (bgmNameHash.isPresent()) {
-                        int trackNameHash = (int) ((long) bgmNameHash.get());  // Textmap hashes are u32, we index as i32 but store most of them as Long  :')
-                        if (textMaps.containsKey(trackNameHash)) {
-                            newTranslatedLine.accept(itemPre.formatted(id) + "{0} - {1}", IntList.of(nameHash, trackNameHash));
-                            return;
-                        }
+                        .map(bgm -> bgm.getBgmNameTextMapHash())
+                        .map(hash -> getTextMapKey(hash));
+                    if (bgmName.isPresent()) {
+                        h.newTranslatedLine(itemPre.formatted(id) + "{0} - {1}", name, bgmName.get());
+                        return;
                     }  // Fall-through
                 default:
-                    newTranslatedLine.accept(itemPre.formatted(id) + "{0}", IntList.of(nameHash));
+                    h.newTranslatedLine(itemPre.formatted(id) + "{0}", name);
                     return;
             }
         });
         // Monsters
-        newSection.accept("Monsters");
+        h.newSection("Monsters");
         val monsterPre = getPad.apply(monsterDataMap);
-        monsterDataMap.forEach((id, data) -> newTranslatedLine.accept(
+        monsterDataMap.forEach((id, data) -> h.newTranslatedLine(
             monsterPre.formatted(id) + data.getMonsterName() + " - {0}",
-            IntList.of((int) data.getNameTextMapHash())));
+            data.getNameTextMapHash()));
         // Scenes - no translations
-        newSection.accept("Scenes");
+        h.newSection("Scenes");
         val padSceneId = getPad.apply(sceneDataMap);
-        sceneDataMap.forEach((id, data) -> newLine.accept(padSceneId.formatted(id) + data.getScriptData()));
+        sceneDataMap.forEach((id, data) -> h.newLine(padSceneId.formatted(id) + data.getScriptData()));
         // Quests
-        newSection.accept("Quests");
+        h.newSection("Quests");
         val padQuestId = getPad.apply(questDataMap);
-        questDataMap.forEach((id, data) -> newTranslatedLine.accept(
+        questDataMap.forEach((id, data) -> h.newTranslatedLine(
             padQuestId.formatted(id) + "{0} - {1}",
-            IntList.of((int) mainQuestTitles.get(data.getMainId()), (int) data.getDescTextMapHash())));
+            mainQuestTitles.get(data.getMainId()),
+            data.getDescTextMapHash()));
 
         // Write txt files
         for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {

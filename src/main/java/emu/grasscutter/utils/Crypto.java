@@ -6,6 +6,8 @@ import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.Map;
+import java.util.HashMap;
 
 import emu.grasscutter.Grasscutter;
 
@@ -19,9 +21,9 @@ public final class Crypto {
     public static long ENCRYPT_SEED = Long.parseUnsignedLong("11468049314633205968");
     public static byte[] ENCRYPT_SEED_BUFFER = new byte[0];
 
-    public static PublicKey CUR_OS_ENCRYPT_KEY;
-    public static PublicKey CUR_CN_ENCRYPT_KEY;
     public static PrivateKey CUR_SIGNING_KEY;
+
+    public static Map<Integer, PublicKey> EncryptionKeys = new HashMap<>();
 
     public static void loadKeys() {
         DISPATCH_KEY = FileUtils.readResource("/keys/dispatchKey.bin");
@@ -31,15 +33,17 @@ public final class Crypto {
         ENCRYPT_SEED_BUFFER = FileUtils.readResource("/keys/secretKeyBuffer.bin");
 
         try {
-            //These should be loaded from ChannelConfig_whatever.json
             CUR_SIGNING_KEY = KeyFactory.getInstance("RSA")
                 .generatePrivate(new PKCS8EncodedKeySpec(FileUtils.readResource("/keys/SigningKey.der")));
 
-            CUR_OS_ENCRYPT_KEY = KeyFactory.getInstance("RSA")
-                .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/OSCB_Pub.der")));
+            var CNRelSign = KeyFactory.getInstance("RSA")
+                .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/CNRel_Pub.der")));
 
-            CUR_CN_ENCRYPT_KEY = KeyFactory.getInstance("RSA")
-                .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/OSCN_Pub.der")));
+            var OSRelSign = KeyFactory.getInstance("RSA")
+                .generatePublic(new X509EncodedKeySpec(FileUtils.readResource("/keys/OSRel_Pub.der")));
+
+            EncryptionKeys.put(2, CNRelSign);
+            EncryptionKeys.put(3, OSRelSign);
         }
         catch (Exception e) {
             Grasscutter.getLogger().error("An error occurred while loading keys.", e);
