@@ -378,17 +378,21 @@ public final class Language {
     private static Int2ObjectMap<TextStrings> textMapStrings;
     private static final Path TEXTMAP_CACHE_PATH = Path.of(Utils.toFilePath("cache/TextMapCache.bin"));
 
+    @Deprecated(forRemoval = true)
     public static Int2ObjectMap<TextStrings> getTextMapStrings() {
         if (textMapStrings == null)
             loadTextMaps();
         return textMapStrings;
     }
 
-    public static TextStrings getTextMapKey(long hash) {
-        int key = (int) hash;
+    public static TextStrings getTextMapKey(int key) {
         if ((textMapStrings == null) || (!scannedTextmaps && !textMapStrings.containsKey(key)))
             loadTextMaps();
         return textMapStrings.get(key);
+    }
+
+    public static TextStrings getTextMapKey(long hash) {
+        return getTextMapKey((int) hash);
     }
 
     public static void loadTextMaps() {
