@@ -5,13 +5,12 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass;
 
 public class PacketDailyTaskDataNotify extends BasePacket {
-    public PacketDailyTaskDataNotify() {
+    public PacketDailyTaskDataNotify(int finished, int scoreRewardId) {
         super(PacketOpcodes.DailyTaskDataNotify);
 
-        //Test
         var notify = DailyTaskDataNotifyOuterClass.DailyTaskDataNotify.newBuilder()
-            .setFinishedNum(0)
-            .setScoreRewardId(2012)
+            .setFinishedNum(finished)
+            .setScoreRewardId(scoreRewardId)
             .build();
 
         this.setData(notify);

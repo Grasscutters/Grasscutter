@@ -14,6 +14,7 @@ import emu.grasscutter.game.activity.PlayerActivityData;
 import emu.grasscutter.game.activity.musicgame.MusicGameBeatmap;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.battlepass.BattlePassManager;
+import emu.grasscutter.game.dailytask.DailyTaskManager;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.gacha.GachaRecord;
 import emu.grasscutter.game.home.GameHome;
@@ -21,6 +22,8 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
+
+import javax.xml.crypto.Data;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -133,6 +136,7 @@ public final class DatabaseHelper {
         int uid = player.getUid();
         // Delete data from collections
         DatabaseManager.getGameDatabase().getCollection("activities").deleteMany(eq("uid", uid));
+        DatabaseManager.getGameDatabase().getCollection("dailytasks").deleteMany(eq("ownerUid", uid));
         DatabaseManager.getGameDatabase().getCollection("homes").deleteMany(eq("ownerUid", uid));
         DatabaseManager.getGameDatabase().getCollection("mail").deleteMany(eq("ownerUid", uid));
         DatabaseManager.getGameDatabase().getCollection("avatars").deleteMany(eq("ownerId", uid));
@@ -309,6 +313,14 @@ public final class DatabaseHelper {
 
     public static boolean deleteQuest(GameMainQuest quest) {
         return DatabaseManager.getGameDatastore().delete(quest).wasAcknowledged();
+    }
+
+    public static DailyTaskManager getDailyTasksByUid(int id) {
+        return DatabaseManager.getGameDatastore().find(DailyTaskManager.class).filter(Filters.eq("ownerUid", id)).first();
+    }
+
+    public static void saveDailyTasks(DailyTaskManager manager) {
+        DatabaseManager.getGameDatastore().save(manager);
     }
 
     public static GameHome getHomeByUid(int id) {

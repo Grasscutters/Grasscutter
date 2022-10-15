@@ -16,7 +16,7 @@ public class HandlerSceneInitFinishReq extends PacketHandler {
 		// Info packets
 		session.send(new PacketServerTimeNotify());
 		session.send(new PacketWorldPlayerInfoNotify(session.getPlayer().getWorld()));
-        session.send(new PacketWorldOwnerDailyTaskNotify());//Test
+        session.send(new PacketWorldOwnerDailyTaskNotify(session.getPlayer()));
 		session.send(new PacketWorldDataNotify(session.getPlayer().getWorld()));
 		session.send(new PacketPlayerWorldSceneInfoListNotify());
 		session.send(new BasePacket(PacketOpcodes.SceneForceUnlockNotify));

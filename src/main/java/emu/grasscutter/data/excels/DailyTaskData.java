@@ -10,7 +10,7 @@ import java.util.List;
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@ResourceType(name = {"DailyTaskLevelExcelConfigData.json"})
+@ResourceType(name = {"DailyTaskExcelConfigData.json"})
 public class DailyTaskData extends GameResource {
     int id;
     int cityId;
@@ -32,6 +32,7 @@ public class DailyTaskData extends GameResource {
     long targetTextMapHash;
     int radarRadius;
 
+    @Override
     public int getId() {
         return id;
     }

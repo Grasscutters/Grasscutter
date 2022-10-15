@@ -14,6 +14,7 @@ import emu.grasscutter.game.activity.ActivityManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.battlepass.BattlePassManager;
+import emu.grasscutter.game.dailytask.DailyTaskManager;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.home.GameHome;
 import emu.grasscutter.game.expedition.ExpeditionInfo;
@@ -158,6 +159,7 @@ public class Player {
     @Getter private transient PlayerProgressManager progressManager;
 
     // Manager data (Save-able to the database)
+    @Getter private transient DailyTaskManager dailyTaskManager;
     private PlayerProfile playerProfile;  // Getter has null-check
     @Getter private TeamManager teamManager;
     private TowerData towerData;  // Getter has null-check
@@ -1186,12 +1188,16 @@ public class Player {
         session.send(new PacketAllWidgetDataNotify(this));
         session.send(new PacketWidgetGadgetAllDataNotify());
         session.send(new PacketCombineDataNotify(this.unlockedCombines));
-        session.send(new PacketDailyTaskUnlockedCitiesNotify(Set.of(1, 2, 3, 4)));//Test
-        session.send(new PacketDailyTaskDataNotify());//Test
         this.forgingManager.sendForgeDataNotify();
         this.resinManager.onPlayerLogin();
         this.cookingManager.sendCookDataNofity();
         this.teamManager.onPlayerLogin();
+
+        this.dailyTaskManager = DailyTaskManager.getByUid(getUid());
+        this.dailyTaskManager.onPlayerLogin(this);
+        if (this.dailyTaskManager.getDailyTasks().isEmpty()) {
+            this.dailyTaskManager.resetDailyTasks();
+        }
 
         getTodayMoonCard(); // The timer works at 0:0, some users log in after that, use this method to check if they have received a reward today or not. If not, send the reward.
 

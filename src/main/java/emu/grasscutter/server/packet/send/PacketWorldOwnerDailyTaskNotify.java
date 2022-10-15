@@ -1,38 +1,19 @@
 package emu.grasscutter.server.packet.send;
 
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.DailyTaskInfoOuterClass;
 import emu.grasscutter.net.proto.WorldOwnerDailyTaskNotifyOuterClass;
 
 public class PacketWorldOwnerDailyTaskNotify extends BasePacket {
-    public PacketWorldOwnerDailyTaskNotify() {
+    public PacketWorldOwnerDailyTaskNotify(Player player) {
         super(PacketOpcodes.WorldOwnerDailyTaskNotify);
 
+        var manager = player.getDailyTaskManager();
         var notify = WorldOwnerDailyTaskNotifyOuterClass.WorldOwnerDailyTaskNotify.newBuilder();
 
-        //Test - from my today's daily tasks.
-        notify.addTaskList(DailyTaskInfoOuterClass.DailyTaskInfo.newBuilder()
-                .setRewardId(2112)
-                .setDailyTaskId(32351)
-                .setFinishProgress(1)
-            .build());
-        notify.addTaskList(DailyTaskInfoOuterClass.DailyTaskInfo.newBuilder()
-            .setRewardId(2112)
-            .setDailyTaskId(32362)
-            .setFinishProgress(1)
-            .build());
-        notify.addTaskList(DailyTaskInfoOuterClass.DailyTaskInfo.newBuilder()
-            .setRewardId(2112)
-            .setDailyTaskId(32381)
-            .setFinishProgress(1)
-            .build());
-        notify.addTaskList(DailyTaskInfoOuterClass.DailyTaskInfo.newBuilder()
-            .setRewardId(2112)
-            .setDailyTaskId(42080)
-            .setFinishProgress(1)
-            .build());
-        notify.setFilterCityId(4);
+        manager.getDailyTasks().forEach(dailyTask -> notify.addTaskList(dailyTask.toProto()));
+        notify.setFilterCityId(manager.getCityId());
 
         this.setData(notify.build());
     }
