@@ -38,6 +38,7 @@ public class GameHome {
     List<FurnitureMakeSlotItem> furnitureMakeSlotItemList;
     ConcurrentHashMap<Integer, HomeSceneItem> sceneMap;
     Set<Integer> unlockedHomeBgmList;
+    int enterHomeOption;
 
     public void save() {
         DatabaseHelper.saveHome(this);

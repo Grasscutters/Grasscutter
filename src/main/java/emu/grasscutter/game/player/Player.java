@@ -939,7 +939,8 @@ public class Player {
                 .setIsShowAvatar(this.isShowAvatars())
                 .addAllShowAvatarInfoList(socialShowAvatarInfoList)
                 .addAllShowNameCardIdList(this.getShowNameCardInfoList())
-                .setFinishAchievementNum(0);
+                .setFinishAchievementNum(0)
+                .setFriendEnterHomeOptionValue(this.getHome() == null ? 0 : this.getHome().getEnterHomeOption());
         return social;
     }
 
