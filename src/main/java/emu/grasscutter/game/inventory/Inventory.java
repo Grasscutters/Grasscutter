@@ -26,10 +26,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
 
@@ -138,11 +135,11 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         this.addItems(items, null);
     }
 
-    public synchronized void addItems(Iterable<ItemParamData> costItems, int quantity, ActionReason reason) {
-        List<GameItem> changedItems = new LinkedList<>();
-        for (ItemParamData item : costItems) {
-            if (item.getId() != 0) {
-                GameItem result = putItem(new GameItem(item.getId(), item.getCount() * quantity));
+    public synchronized void addItems(Iterable<GameItem> costItems, int quantity, ActionReason reason) {
+        List<GameItem> changedItems = new ArrayList<>();
+        for (var item : costItems) {
+            if (item.getItemId() != 0) {
+                GameItem result = putItem(new GameItem(item.getItemId(), item.getCount() * quantity));
                 if (result != null) {
                     getPlayer().getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
                     changedItems.add(result);
@@ -159,26 +156,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     }
 
     public void addItems(Collection<GameItem> items, ActionReason reason) {
-        List<GameItem> changedItems = new LinkedList<>();
-
-        for (GameItem item : items) {
-            GameItem result = putItem(item);
-
-            if (result != null) {
-                getPlayer().getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
-                changedItems.add(result);
-            }
-        }
-
-        if (changedItems.size() == 0) {
-            return;
-        }
-
-        if (reason != null) {
-            getPlayer().sendPacket(new PacketItemAddHintNotify(changedItems, reason));
-        }
-
-        getPlayer().sendPacket(new PacketStoreItemChangeNotify(changedItems));
+        addItems(items,1,reason);
     }
 
     public void addItemParams(Collection<ItemParam> items) {
