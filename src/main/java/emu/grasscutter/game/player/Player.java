@@ -126,6 +126,7 @@ public class Player {
     @Getter private Map<Integer, Integer> openStates;
     @Getter @Setter private Map<Integer, Set<Integer>> unlockedSceneAreas;
     @Getter @Setter private Map<Integer, Set<Integer>> unlockedScenePoints;
+    @Getter @Setter private List<Integer> chatEmojiIdList;
 
     @Transient private long nextGuid = 0;
     @Transient @Getter @Setter private int peerId;
@@ -230,6 +231,7 @@ public class Player {
         this.openStates = new HashMap<>();
         this.unlockedSceneAreas = new HashMap<>();
         this.unlockedScenePoints = new HashMap<>();
+        this.chatEmojiIdList = new ArrayList<>();
 
         this.attackResults = new LinkedBlockingQueue<>();
         this.coopRequests = new Int2ObjectOpenHashMap<>();
@@ -1187,6 +1189,7 @@ public class Player {
         session.send(new PacketAllWidgetDataNotify(this));
         session.send(new PacketWidgetGadgetAllDataNotify());
         session.send(new PacketCombineDataNotify(this.unlockedCombines));
+        session.send(new PacketGetChatEmojiCollectionRsp(this.getChatEmojiIdList()));
         this.forgingManager.sendForgeDataNotify();
         this.resinManager.onPlayerLogin();
         this.cookingManager.sendCookDataNofity();
