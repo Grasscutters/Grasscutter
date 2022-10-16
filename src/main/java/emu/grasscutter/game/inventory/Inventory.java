@@ -135,9 +135,9 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         this.addItems(items, null);
     }
 
-    public synchronized void addItems(Iterable<GameItem> costItems, int quantity, ActionReason reason) {
+    public synchronized void addItems(Iterable<GameItem> items, int quantity, ActionReason reason) {
         List<GameItem> changedItems = new ArrayList<>();
-        for (var item : costItems) {
+        for (var item : items) {
             if (item.getItemId() != 0) {
                 GameItem result = putItem(new GameItem(item.getItemId(), item.getCount() * quantity));
                 if (result != null) {
