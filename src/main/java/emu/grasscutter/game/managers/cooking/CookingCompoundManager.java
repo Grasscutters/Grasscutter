@@ -123,7 +123,7 @@ public class CookingCompoundManager extends BasePlayerManager {
         }
         //give player the rewards
         if (success) {
-            player.getInventory().addItems(allRewards.values(), 1, ActionReason.Compound);
+            player.getInventory().addItems(allRewards.values(), ActionReason.Compound);
             player.sendPacket(new PackageTakeCompoundOutputRsp(allRewards.values().stream().map(i -> ItemParam.newBuilder().setItemId(i.getItemId()).setCount(i.getCount()).build()).toList(), Retcode.RET_SUCC_VALUE));
         } else {
             player.sendPacket(new PackageTakeCompoundOutputRsp(null, Retcode.RET_COMPOUND_NOT_FINISH_VALUE));

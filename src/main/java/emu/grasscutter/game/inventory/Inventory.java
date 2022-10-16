@@ -13,9 +13,9 @@ import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.ItemUseAction.UseItemParams;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.WatcherTriggerType;
-import emu.grasscutter.game.props.ItemUseAction.UseItemParams;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.packet.send.PacketAvatarEquipChangeNotify;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
@@ -26,7 +26,10 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
 import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
 
@@ -135,15 +138,15 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         this.addItems(items, null);
     }
 
-    public synchronized void addItems(Iterable<GameItem> items, int quantity, ActionReason reason) {
+
+    public void addItems(Collection<GameItem> items, ActionReason reason) {
         List<GameItem> changedItems = new ArrayList<>();
         for (var item : items) {
-            if (item.getItemId() != 0) {
-                GameItem result = putItem(new GameItem(item.getItemId(), item.getCount() * quantity));
-                if (result != null) {
-                    getPlayer().getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
-                    changedItems.add(result);
-                }
+            if (item.getItemId() == 0) continue;
+            GameItem result = putItem(item);
+            if (result != null) {
+                getPlayer().getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
+                changedItems.add(result);
             }
         }
         if (changedItems.size() == 0) {
@@ -153,10 +156,6 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
             getPlayer().sendPacket(new PacketItemAddHintNotify(changedItems, reason));
         }
         getPlayer().sendPacket(new PacketStoreItemChangeNotify(changedItems));
-    }
-
-    public void addItems(Collection<GameItem> items, ActionReason reason) {
-        addItems(items,1,reason);
     }
 
     public void addItemParams(Collection<ItemParam> items) {
