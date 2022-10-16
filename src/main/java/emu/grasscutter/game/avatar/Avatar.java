@@ -779,6 +779,15 @@ public class Avatar {
         return true;
     }
 
+    public void changeSkillLevel(int skillLevel) {
+        if (skillLevel < 1) skillLevel = 1;
+        if (skillLevel > 12) skillLevel = 12; // Set max to 12 at the moment instead of 15 (it will conflict with constellation's talent level bonus)
+        int finalSkillLevel = skillLevel;
+        skillDepot.getCombatSkills().forEach(id -> this.skillLevelMap.put(id, finalSkillLevel));
+        this.save();
+        this.recalcStats(true);
+    }
+
     public boolean unlockConstellation() {
         return this.unlockConstellation(false);
     }
