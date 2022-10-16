@@ -18,7 +18,10 @@ import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import org.bson.types.ObjectId;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Entity(value = "dailytasks", useDiscriminator = false)
@@ -26,7 +29,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder(builderMethodName = "of")
 public class DailyTaskManager {
-    @Id ObjectId id;
+    @Id
+    ObjectId id;
     @Indexed(options = @IndexOptions(unique = true))
     int ownerUid;
     transient Player player;
@@ -102,27 +106,19 @@ public class DailyTaskManager {
         return rewardId;
     }
 
-    private List<DailyTask> chooseDailyTasks(int cityId, Random random) {
+    private Set<DailyTask> chooseDailyTasks(int cityId, Random random) {
         var list = GameData.getDailyTaskDataMap().int2ObjectEntrySet().stream()
-            .filter(e -> e.getIntKey() == cityId)
+            .filter(e -> e.getValue().getCityId() == cityId)
             .map(e -> new DailyTask(getRewardId(e.getValue().getTaskRewardId()), e.getValue().getId(), e.getValue().getFinishProgress(), 0))
             .toList();
 
-        return chooseRandom(list, 4, random);
-    }
+        var sizeToChoose = Math.min(4, list.size());
+        var copy = new ArrayList<>(list);
+        var result = new HashSet<DailyTask>();
+        for (int i = 0; i < sizeToChoose; i++) {
+            result.add(copy.remove(random.nextInt(copy.size())));
+        }
 
-    private static <E> List<E> chooseRandom(Collection<E> list, int pullSize, Random random) {
-        int size = list.size();
-        if (pullSize < 0 || size < pullSize) {
-            pullSize = 0;
-        }
-        List<E> result = new ArrayList<>(pullSize);
-        List<E> copied = new ArrayList<>(list);
-        for (int i = 0; i < pullSize; ++i) {
-            int j = (int) (random.nextDouble() * (size - i));
-            result.add(copied.get(j));
-            copied.set(j, copied.get(size - i - 1));
-        }
         return result;
     }
 
