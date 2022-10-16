@@ -79,7 +79,7 @@ public class AvatarSkillDepotData extends GameResource {
     }
 
     public IntStream getCombatSkills() {
-        return IntStream.concat(IntStream.of(this.getSkills().get(0), this.getSkills().get(1)), IntStream.of(this.energySkill))
+        return IntStream.of(this.getSkills().get(0), this.getSkills().get(1), this.energySkill)
                         .filter(SkillId -> SkillId > 0);
     }
 
