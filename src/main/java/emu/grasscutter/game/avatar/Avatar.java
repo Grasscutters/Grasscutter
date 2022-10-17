@@ -752,9 +752,10 @@ public class Avatar {
         return true;
     }
 
-    public boolean setSkillLevel(Integer skillId, int level) {
+    public boolean setSkillLevel(int skillId, int level) {
         if (level < 0 || level > 15) return false;
-        if (skillId == null) {
+        // Special case for GiveCommand
+        if (skillId == -1) {
             skillDepot.getSkillsAndEnergySkill().forEach(id -> this.setSkillLevel(id, level));
         }
         else {
