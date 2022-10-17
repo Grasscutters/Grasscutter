@@ -4,19 +4,18 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DestroyMaterialRspOuterClass.DestroyMaterialRsp;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
-import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 
 public class PacketDestroyMaterialRsp extends BasePacket {
 	
-	public PacketDestroyMaterialRsp(Int2IntOpenHashMap returnMaterialMap) {
+	public PacketDestroyMaterialRsp(Int2IntMap returnMaterialMap) {
 		super(PacketOpcodes.DestroyMaterialRsp);
 		
-		DestroyMaterialRsp.Builder proto = DestroyMaterialRsp.newBuilder();
+        var proto = DestroyMaterialRsp.newBuilder();
 		
-		for (Int2IntMap.Entry e : returnMaterialMap.int2IntEntrySet()) {
-			proto.addItemIdList(e.getIntKey());
-			proto.addItemCountList(e.getIntValue());
-		}
+        returnMaterialMap.forEach((id, count) -> {
+            proto.addItemIdList(id);
+            proto.addItemCountList(count);
+        });
 		
 		this.setData(proto);
 	}

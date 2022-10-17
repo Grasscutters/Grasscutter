@@ -172,16 +172,11 @@ public class CookingManager extends BasePlayerManager {
 
         // Construct CookRecipeData protos.
         List<CookRecipeDataOuterClass.CookRecipeData> data = new ArrayList<>();
-        for (var recipe : unlockedRecipes.entrySet()) {
-            int recipeId = recipe.getKey();
-            int proficiency = recipe.getValue();
-
-            CookRecipeDataOuterClass.CookRecipeData proto = CookRecipeDataOuterClass.CookRecipeData.newBuilder()
+        unlockedRecipes.forEach((recipeId, proficiency) ->
+            data.add(CookRecipeDataOuterClass.CookRecipeData.newBuilder()
                 .setRecipeId(recipeId)
                 .setProficiency(proficiency)
-                .build();
-            data.add(proto);
-        }
+                .build()));
 
         // Send packet.
         this.player.sendPacket(new PacketCookDataNotify(data));

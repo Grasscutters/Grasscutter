@@ -247,13 +247,7 @@ public class EntityAvatar extends GameEntity {
             entityInfo.setMotionInfo(this.getMotionInfo());
         }
 
-        for (Int2FloatMap.Entry entry : getFightProperties().int2FloatEntrySet()) {
-            if (entry.getIntKey() == 0) {
-                continue;
-            }
-            FightPropPair fightProp = FightPropPair.newBuilder().setPropType(entry.getIntKey()).setPropValue(entry.getFloatValue()).build();
-            entityInfo.addFightPropList(fightProp);
-        }
+        this.addAllFightPropsToEntityInfo(entityInfo);
 
         PropPair pair = PropPair.newBuilder()
                 .setType(PlayerProperty.PROP_LEVEL.getId())

@@ -122,14 +122,7 @@ public class EntityVehicle extends EntityBaseGadget {
                 .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 47))
                 .build();
 
-        for (Int2FloatMap.Entry entry : getFightProperties().int2FloatEntrySet()) {
-            if (entry.getIntKey() == 0) {
-                continue;
-            }
-            FightPropPair fightProp = FightPropPair.newBuilder().setPropType(entry.getIntKey()).setPropValue(entry.getFloatValue()).build();
-            entityInfo.addFightPropList(fightProp);
-        }
-
+        this.addAllFightPropsToEntityInfo(entityInfo);
         entityInfo.addPropList(pair);
 
         return entityInfo.build();

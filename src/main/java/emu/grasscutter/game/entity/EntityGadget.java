@@ -217,7 +217,7 @@ public class EntityGadget extends EntityBaseGadget {
 
         // We do not use the getter to null check because the getter will create a fight prop map if it is null
         if (this.fightProp != null) {
-            this.addAllFightPropsToEntityInfo(entityInfo);
+            addAllFightPropsToEntityInfo(entityInfo);
         }
 
         SceneGadgetInfo.Builder gadgetInfo = SceneGadgetInfo.newBuilder()

@@ -304,9 +304,8 @@ public class StaminaManager extends BasePlayerManager {
             session.send(new PacketVehicleStaminaNotify(vehicleId, ((float) newStamina) / 100));
         }
         // notify updated
-        for (Map.Entry<String, AfterUpdateStaminaListener> listener : afterUpdateStaminaListeners.entrySet()) {
-            listener.getValue().onAfterUpdateStamina(reason, newStamina, isCharacterStamina);
-        }
+        int s = newStamina;
+        afterUpdateStaminaListeners.forEach((k, v) -> v.onAfterUpdateStamina(reason, s, isCharacterStamina));
         return newStamina;
     }
 

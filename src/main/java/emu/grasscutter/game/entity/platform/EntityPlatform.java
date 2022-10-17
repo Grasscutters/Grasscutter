@@ -93,14 +93,7 @@ public class EntityPlatform extends EntityBaseGadget {
             .setGadget(gadgetInfo)
             .setLifeState(1);
 
-        for (Int2FloatMap.Entry entry : getFightProperties().int2FloatEntrySet()) {
-            if (entry.getIntKey() == 0) {
-                continue;
-            }
-            FightPropPairOuterClass.FightPropPair fightProp = FightPropPairOuterClass.FightPropPair.newBuilder().setPropType(entry.getIntKey()).setPropValue(entry.getFloatValue()).build();
-            entityInfo.addFightPropList(fightProp);
-        }
-
+        this.addAllFightPropsToEntityInfo(entityInfo);
         return entityInfo.build();
     }
 
