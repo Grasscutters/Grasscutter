@@ -753,7 +753,8 @@ public class Avatar {
     }
 
     public boolean setSkillLevel(int skillId, int level) {
-        if (level < 0 || level > 15) return false;
+        if (level < 1) level = 1;
+        if (level >15) level = 15;
         var validLevels = GameData.getAvatarSkillLevels(skillId);
         if (validLevels != null && !validLevels.contains(level)) return false;
 
