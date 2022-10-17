@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Set;
 
 public class PacketGetCompoundDataRsp extends BasePacket {
-    public PacketGetCompoundDataRsp(Set<Integer> unlockedCompounds, List<CompoundQueueData> compundQueueData) {
+    public PacketGetCompoundDataRsp(Set<Integer> unlockedCompounds, List<CompoundQueueData> compoundQueueData) {
         super(PacketOpcodes.GetCompoundDataRsp);
         var proto = GetCompoundDataRsp.newBuilder()
             .addAllUnlockCompoundList(unlockedCompounds)
-            .addAllCompoundQueDataList(compundQueueData)
+            .addAllCompoundQueDataList(compoundQueueData)
             .setRetcode(Retcode.RET_SUCC_VALUE)
             .build();
         setData(proto);

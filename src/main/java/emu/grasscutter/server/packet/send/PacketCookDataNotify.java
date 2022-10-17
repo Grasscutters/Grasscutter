@@ -8,14 +8,14 @@ import emu.grasscutter.net.proto.CookDataNotifyOuterClass.CookDataNotify;
 import emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData;
 
 public class PacketCookDataNotify extends BasePacket {
-    
-    public PacketCookDataNotify(List<CookRecipeData> recipies) {
+
+    public PacketCookDataNotify(List<CookRecipeData> recipes) {
         super(PacketOpcodes.CookDataNotify);
 
         CookDataNotify proto = CookDataNotify.newBuilder()
-                .addAllRecipeDataList(recipies)
+                .addAllRecipeDataList(recipes)
                 .build();
-        
+
         this.setData(proto);
     }
 }
