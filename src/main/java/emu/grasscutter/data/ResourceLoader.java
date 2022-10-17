@@ -172,12 +172,17 @@ public class ResourceLoader {
     }
 
     private static void cacheTalentLevelSets() {
+        // All known levels, keyed by proudSkillGroupId
         GameData.getProudSkillDataMap().forEach((id, data) ->
             GameData.proudSkillGroupLevels
                 .computeIfAbsent(data.getProudSkillGroupId(), i -> new IntArraySet())
                 .add(data.getLevel()));
+        // All known levels, keyed by avatarSkillId
         GameData.getAvatarSkillDataMap().forEach((id, data) ->
             GameData.avatarSkillLevels.put((int) id, GameData.proudSkillGroupLevels.get(data.getProudSkillGroupId())));
+        // Maximum known levels, keyed by proudSkillGroupId
+        GameData.proudSkillGroupLevels.forEach((id, set) ->
+            GameData.proudSkillGroupMaxLevels.put((int) id, set.intStream().max().getAsInt()));
     }
 
     private static void loadAbilityEmbryos() {
