@@ -39,6 +39,7 @@ import emu.grasscutter.utils.ProtoHelper;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
+import lombok.val;
 
 public class EntityAvatar extends GameEntity {
     private final Avatar avatar;
@@ -193,21 +194,23 @@ public class EntityAvatar extends GameEntity {
     }
 
     public SceneAvatarInfo getSceneAvatarInfo() {
+        val avatar = this.getAvatar();
+        val player = this.getPlayer();
         SceneAvatarInfo.Builder avatarInfo = SceneAvatarInfo.newBuilder()
-                .setUid(this.getPlayer().getUid())
-                .setAvatarId(this.getAvatar().getAvatarId())
-                .setGuid(this.getAvatar().getGuid())
-                .setPeerId(this.getPlayer().getPeerId())
-                .addAllTalentIdList(this.getAvatar().getTalentIdList())
-                .setCoreProudSkillLevel(this.getAvatar().getCoreProudSkillLevel())
-                .putAllSkillLevelMap(this.getAvatar().getSkillLevelMap())
-                .setSkillDepotId(this.getAvatar().getSkillDepotId())
-                .addAllInherentProudSkillList(this.getAvatar().getProudSkillList())
-                .putAllProudSkillExtraLevelMap(this.getAvatar().getProudSkillBonusMap())
-                .addAllTeamResonanceList(this.getAvatar().getPlayer().getTeamManager().getTeamResonances())
-                .setWearingFlycloakId(this.getAvatar().getFlyCloak())
-                .setCostumeId(this.getAvatar().getCostume())
-                .setBornTime(this.getAvatar().getBornTime());
+                .setUid(player.getUid())
+                .setAvatarId(avatar.getAvatarId())
+                .setGuid(avatar.getGuid())
+                .setPeerId(player.getPeerId())
+                .addAllTalentIdList(avatar.getTalentIdList())
+                .setCoreProudSkillLevel(avatar.getCoreProudSkillLevel())
+                .putAllSkillLevelMap(avatar.getSkillLevelMap())
+                .setSkillDepotId(avatar.getSkillDepotId())
+                .addAllInherentProudSkillList(avatar.getProudSkillList())
+                .putAllProudSkillExtraLevelMap(avatar.getProudSkillBonusMap())
+                .addAllTeamResonanceList(player.getTeamManager().getTeamResonances())
+                .setWearingFlycloakId(avatar.getFlyCloak())
+                .setCostumeId(avatar.getCostume())
+                .setBornTime(avatar.getBornTime());
 
         for (GameItem item : avatar.getEquips().values()) {
             if (item.getItemData().getEquipType() == EquipType.EQUIP_WEAPON) {
