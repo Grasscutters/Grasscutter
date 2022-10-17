@@ -8,16 +8,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CommandHelpers {
-    public static final Pattern lvlRegex = Pattern.compile("l(?:vl?)?(\\d+)");  // Java doesn't have raw string literals :(
-    public static final Pattern amountRegex = Pattern.compile("((?<=x)\\d+|\\d+(?=x)(?!x\\d))");
-    public static final Pattern refineRegex = Pattern.compile("r(\\d+)");
+    public static final Pattern lvlRegex = Pattern.compile("(?<!\\w)l(?:vl?)?(\\d+)");  // Java doesn't have raw string literals :(
+    public static final Pattern amountRegex = Pattern.compile("((?<=(?<!\\w)x)\\d+|\\d+(?=x)(?!x\\d))");
+    public static final Pattern refineRegex = Pattern.compile("(?<!\\w)r(\\d+)");
     public static final Pattern rankRegex = Pattern.compile("(\\d+)\\*");
-    public static final Pattern constellationRegex = Pattern.compile("c(\\d+)");
+    public static final Pattern constellationRegex = Pattern.compile("(?<!\\w)c(\\d+)");
     public static final Pattern stateRegex = Pattern.compile("state(\\d+)");
     public static final Pattern blockRegex = Pattern.compile("blk(\\d+)");
     public static final Pattern groupRegex = Pattern.compile("grp(\\d+)");
     public static final Pattern configRegex = Pattern.compile("cfg(\\d+)");
-    public static final Pattern hpRegex = Pattern.compile("hp(\\d+)");
+    public static final Pattern hpRegex = Pattern.compile("(?<!\\w)hp(\\d+)");
     public static final Pattern maxHPRegex = Pattern.compile("maxhp(\\d+)");
     public static final Pattern atkRegex = Pattern.compile("atk(\\d+)");
     public static final Pattern defRegex = Pattern.compile("def(\\d+)");
