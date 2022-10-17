@@ -12,7 +12,6 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.net.proto.CookRecipeDataOuterClass;
 import emu.grasscutter.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq;
 import emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReq;
@@ -164,16 +163,16 @@ public class CookingManager extends BasePlayerManager {
         }
     }
 
-    public void sendCookDataNofity() {
-        // Default unlocked recipies to player if they don't have them yet.
+    public void sendCookDataNotify() {
+        // Default unlocked recipes to player if they don't have them yet.
         this.addDefaultUnlocked();
 
-        // Get unlocked recipies.
-        var unlockedRecipies = this.player.getUnlockedRecipies();
+        // Get unlocked recipes.
+        var unlockedRecipes = this.player.getUnlockedRecipies();
 
         // Construct CookRecipeData protos.
         List<CookRecipeDataOuterClass.CookRecipeData> data = new ArrayList<>();
-        for (var recipe : unlockedRecipies.entrySet()) {
+        for (var recipe : unlockedRecipes.entrySet()) {
             int recipeId = recipe.getKey();
             int proficiency = recipe.getValue();
 

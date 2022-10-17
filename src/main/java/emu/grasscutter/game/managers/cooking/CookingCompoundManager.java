@@ -14,6 +14,7 @@ import emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompo
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq;
 import emu.grasscutter.server.packet.send.PackageTakeCompoundOutputRsp;
+import emu.grasscutter.server.packet.send.PacketCompoundDataNotify;
 import emu.grasscutter.server.packet.send.PacketGetCompoundDataRsp;
 import emu.grasscutter.server.packet.send.PacketPlayerCompoundMaterialRsp;
 import emu.grasscutter.utils.Utils;
@@ -128,5 +129,9 @@ public class CookingCompoundManager extends BasePlayerManager {
         } else {
             player.sendPacket(new PackageTakeCompoundOutputRsp(null, Retcode.RET_COMPOUND_NOT_FINISH_VALUE));
         }
+    }
+
+    public void onPlayerLogin() {
+        player.sendPacket(new PacketCompoundDataNotify(unlocked,getCompoundQueueData()));
     }
 }
