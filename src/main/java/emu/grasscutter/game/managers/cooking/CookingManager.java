@@ -1,4 +1,4 @@
-package emu.grasscutter.game.managers;
+package emu.grasscutter.game.managers.cooking;
 
 import java.util.ArrayList;
 import java.util.HashSet;
