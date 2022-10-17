@@ -752,28 +752,27 @@ public class Avatar {
         return true;
     }
 
-    public boolean setSkillLevel(int skillId, int level) {
-        if (level < 1) level = 1;
-        if (level >15) level = 15;
-        var validLevels = GameData.getAvatarSkillLevels(skillId);
-        if (validLevels != null && !validLevels.contains(level)) return false;
+    public boolean setSkillLevel(Integer skillId, int level) {
+        if (level < 0 || level > 15) return false;
+        if (skillId == null) {
+            skillDepot.getSkillsAndEnergySkill().forEach(id -> this.setSkillLevel(id, level));
+        }
+        else {
+            var validLevels = GameData.getAvatarSkillLevels(skillId);
+            if (validLevels != null && !validLevels.contains(level)) return false;
 
-        int oldLevel = this.skillLevelMap.getOrDefault(skillId, 0);  // just taking the return value of put would have null concerns
-        this.skillLevelMap.put(skillId, level);
-        this.save();
+            int oldLevel = this.skillLevelMap.getOrDefault(skillId, 0);  // just taking the return value of put would have null concerns
+            this.skillLevelMap.put(skillId, level);
+            this.save();
 
-        // Packet
-        val player = this.getPlayer();
-        if (player != null) {
-            player.sendPacket(new PacketAvatarSkillChangeNotify(this, skillId, oldLevel, level));
-            player.sendPacket(new PacketAvatarSkillUpgradeRsp(this, skillId, oldLevel, level));
+            // Packet
+            val player = this.getPlayer();
+            if (player != null) {
+                player.sendPacket(new PacketAvatarSkillChangeNotify(this, skillId, oldLevel, level));
+                player.sendPacket(new PacketAvatarSkillUpgradeRsp(this, skillId, oldLevel, level));
+            }
         }
         return true;
-    }
-
-    public void changeSkillLevel(int skillLevel) {
-        int finalSkillLevel = skillLevel;
-        skillDepot.getCombatSkills().forEach(id -> this.setSkillLevel(id, skillLevel));
     }
 
     public boolean unlockConstellation() {

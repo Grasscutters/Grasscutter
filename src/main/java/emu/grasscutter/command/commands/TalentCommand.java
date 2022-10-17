@@ -104,7 +104,7 @@ public final class TalentCommand implements CommandHandler {
                     return;
                 }
                 int finalNewLevel = newLevel;
-                skillDepot.getCombatSkills().forEach(id -> setTalentLevel(sender, avatar, id, finalNewLevel));
+                skillDepot.getSkillsAndEnergySkill().forEach(id -> setTalentLevel(sender, avatar, id, finalNewLevel));
             }
             case "getid" -> {
                 var map = GameData.getAvatarSkillDataMap();
