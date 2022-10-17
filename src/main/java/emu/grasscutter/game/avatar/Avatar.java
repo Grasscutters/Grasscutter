@@ -774,18 +774,17 @@ public class Avatar {
         this.save();
 
         // Packet
-        this.getPlayer().sendPacket(new PacketAvatarSkillChangeNotify(this, skillId, oldLevel, level));
-        this.getPlayer().sendPacket(new PacketAvatarSkillUpgradeRsp(this, skillId, oldLevel, level));
+        val player = this.getPlayer();
+        if (player != null) {
+            player.sendPacket(new PacketAvatarSkillChangeNotify(this, skillId, oldLevel, level));
+            player.sendPacket(new PacketAvatarSkillUpgradeRsp(this, skillId, oldLevel, level));
+        }
         return true;
     }
 
     public void changeSkillLevel(int skillLevel) {
-        if (skillLevel < 1) skillLevel = 1;
-        if (skillLevel > 12) skillLevel = 12; // Set max to 12 at the moment instead of 15 (it will conflict with constellation's talent level bonus)
         int finalSkillLevel = skillLevel;
-        skillDepot.getCombatSkills().forEach(id -> this.skillLevelMap.put(id, finalSkillLevel));
-        this.save();
-        this.recalcStats(true);
+        skillDepot.getCombatSkills().forEach(id -> this.setSkillLevel(id, skillLevel));
     }
 
     public boolean unlockConstellation() {
