@@ -34,18 +34,16 @@ public class CookingCompoundManager extends BasePlayerManager {
     public static void initialize() {
         defaultUnlockedCompounds = new HashSet<>();
         compoundGroups = new HashMap<>();
-        for (var compound : GameData.getCompoundDataMap().values()) {
+        GameData.getCompoundDataMap().forEach((id, compound) -> {
             if (compound.isDefaultUnlocked()) {
-                defaultUnlockedCompounds.add(compound.getId());
+                defaultUnlockedCompounds.add(id);
             }
-            if (!compoundGroups.containsKey(compound.getGroupId())) {
-                compoundGroups.put(compound.getGroupId(), new HashSet<>());
-            }
-            compoundGroups.get(compound.getGroupId()).add(compound.getId());
-        }
+            compoundGroups.computeIfAbsent(compound.getGroupId(), gid -> new HashSet<>()).add(id);
+        });
         //TODO:Because we haven't implemented fishing feature,unlock all compounds related to fish.Besides,it should be bound to player rather than manager.
         unlocked = new HashSet<>(defaultUnlockedCompounds);
-        unlocked.addAll(compoundGroups.get(3));
+        if (compoundGroups.containsKey(3))  // Avoid NPE from Resources error
+            unlocked.addAll(compoundGroups.get(3));
     }
 
     private synchronized List<CompoundQueueData> getCompoundQueueData() {
