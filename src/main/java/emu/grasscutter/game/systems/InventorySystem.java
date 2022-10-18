@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import emu.grasscutter.Grasscutter;
@@ -799,18 +798,38 @@ public class InventorySystem extends BaseGameSystem {
                 .reduce(false, (a,b) -> a || b);  // Don't short-circuit!!!
     }
 
-    public static synchronized int checkPlayerAvatarConstellationLevel(Player player, int itemId) {
-        ItemData itemData = GameData.getItemDataMap().get(itemId);
-        if ((itemData == null) || (itemData.getMaterialType() != MaterialType.MATERIAL_AVATAR)) {
+    public static synchronized int checkPlayerAvatarConstellationLevel(Player player, int id) {
+        // Try to accept itemId OR avatarId
+        int avatarId = 0;
+        if (GameData.getAvatarDataMap().containsKey(id)) {
+            avatarId = id;
+        } else {
+            avatarId = Optional.ofNullable(GameData.getItemDataMap().get(id))
+                .map(itemData -> itemData.getItemUseActions())
+                .flatMap(actions ->
+                    actions.stream()
+                        .filter(action -> action.getItemUseOp() == ItemUseOp.ITEM_USE_GAIN_AVATAR)
+                        .map(action -> ((emu.grasscutter.game.props.ItemUseAction.ItemUseGainAvatar) action).getI())
+                        .findFirst())
+                .orElse(0);
+        }
+
+        if (avatarId == 0)
             return -2;  // Not an Avatar
-        }
-        Avatar avatar = player.getAvatars().getAvatarById((itemId % 1000) + 10000000);
-        if (avatar == null) {
+
+        Avatar avatar = player.getAvatars().getAvatarById(avatarId);
+        if (avatar == null)
             return -1;  // Doesn't have
-        }
+
         // Constellation
         int constLevel = avatar.getCoreProudSkillLevel();
-        GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(itemId + 100);
+        val avatarData = avatar.getSkillDepot();
+        if (avatarData == null) {
+            Grasscutter.getLogger().error("Attempted to check constellation level for UID"+player.getUid()+"'s avatar "+avatarId+" but avatar has no skillDepot!");
+            return 0;
+        }
+        int constItemId = avatarData.getTalentCostItemId();
+        GameItem constItem = player.getInventory().getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId);
         constLevel += Optional.ofNullable(constItem).map(GameItem::getCount).orElse(0);
         return constLevel;
     }

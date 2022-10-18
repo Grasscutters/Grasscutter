@@ -1,6 +1,7 @@
 package emu.grasscutter.data.excels;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.IntStream;
 
 import emu.grasscutter.data.GameData;
@@ -36,6 +37,7 @@ public class AvatarSkillDepotData extends GameResource {
     @Getter private AvatarSkillData energySkillData;
     @Getter private ElementType elementType;
     @Getter private IntList abilities;
+    @Getter private int talentCostItemId;
 
     @Override
     public int getId() {
@@ -66,6 +68,13 @@ public class AvatarSkillDepotData extends GameResource {
                 this.setAbilities(new AbilityEmbryoEntry(getSkillDepotAbilityGroup(), config.abilities.stream().map(Object::toString).toArray(String[]::new)));
             }
         }
+
+        // Get constellation item from GameData
+        Optional.ofNullable(this.talents)
+            .map(talents -> talents.get(0))
+            .map(i -> GameData.getAvatarTalentDataMap().get((int) i))
+            .map(talentData -> talentData.getMainCostItemId())
+            .ifPresent(itemId -> this.talentCostItemId = itemId);
     }
 
     public static class InherentProudSkillOpens {
