@@ -12,7 +12,7 @@ public class PacketAvatarExpeditionAllDataRsp extends BasePacket {
     public PacketAvatarExpeditionAllDataRsp(Map<Long, ExpeditionInfo> expeditionInfo, int expeditionCountLimit) {
         super(PacketOpcodes.AvatarExpeditionAllDataRsp);
 
-        List<Integer> openExpeditionList  = new ArrayList<>(List.of(306,305,304,303,302,301,206,105,204,104,203,103,202,101,102,201,106,205,401,402,403,404,405,406));
+        var openExpeditionList  = List.of(306,305,304,303,302,301,206,105,204,104,203,103,202,101,102,201,106,205,401,402,403,404,405,406);
 
         this.setData(AvatarExpeditionAllDataRsp.newBuilder()
             .addAllOpenExpeditionList(openExpeditionList)

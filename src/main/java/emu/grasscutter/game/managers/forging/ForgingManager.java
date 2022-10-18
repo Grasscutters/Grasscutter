@@ -146,7 +146,8 @@ public class ForgingManager extends BasePlayerManager {
         boolean success = player.getInventory().payItems(material, req.getForgeCount(), ActionReason.ForgeCost);
 
         if (!success) {
-            this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_FORGE_POINT_NOT_ENOUGH)); //ToDo: Probably the wrong return code.
+            //TODO:I'm not sure this one is correct.
+            this.player.sendPacket(new PacketForgeStartRsp(Retcode.RET_ITEM_COUNT_NOT_ENOUGH)); //ToDo: Probably the wrong return code.
         }
 
         // Consume forge points.
@@ -171,7 +172,7 @@ public class ForgingManager extends BasePlayerManager {
         Forge queue manipulation (obtaining results and cancelling forges).
     **********/
     private synchronized void obtainItems(int queueId) {
-        // Determin how many items are finished.
+        // Determine how many items are finished.
         int currentTime = Utils.getCurrentSeconds();
         ActiveForgeData forge = this.player.getActiveForges().get(queueId - 1);
 
@@ -271,14 +272,10 @@ public class ForgingManager extends BasePlayerManager {
 
         // Handle according to the manipulation type.
         switch (manipulateType) {
-            case FORGE_QUEUE_MANIPULATE_TYPE_RECEIVE_OUTPUT:
-                this.obtainItems(queueId);
-                break;
-            case FORGE_QUEUE_MANIPULATE_TYPE_STOP_FORGE:
-                this.cancelForge(queueId);
-                break;
-            default:
-                break; //Should never happen.
+            case FORGE_QUEUE_MANIPULATE_TYPE_RECEIVE_OUTPUT -> this.obtainItems(queueId);
+            case FORGE_QUEUE_MANIPULATE_TYPE_STOP_FORGE -> this.cancelForge(queueId);
+            default -> {
+            } //Should never happen.
         }
     }
 
@@ -296,9 +293,7 @@ public class ForgingManager extends BasePlayerManager {
         }
 
         boolean hasChanges = this.player.getActiveForges().stream()
-                                    .filter(forge -> forge.updateChanged(currentTime))
-                                    .findAny()
-                                    .isPresent();
+                                    .anyMatch(forge -> forge.updateChanged(currentTime));
 
         if (!hasChanges) {
             return;

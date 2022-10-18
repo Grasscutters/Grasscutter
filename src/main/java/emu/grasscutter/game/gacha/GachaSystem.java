@@ -316,10 +316,10 @@ public class GachaSystem extends BaseGameSystem {
                             pools.removeFromAllPools(new int[] {itemId});
                         }
                         addStarglitter = (itemData.getRankLevel()==5)? 10 : 2;
-                        int constItemId = itemId + 100;
-                        GameItem constItem = inventory.getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId);
-                        gachaItem.addTransferItems(GachaTransferItem.newBuilder().setItem(ItemParam.newBuilder().setItemId(constItemId).setCount(1)).setIsTransferItemNew(constItem == null));
-                        inventory.addItem(constItemId, 1);
+                        int constItemId = itemId + 100;  // This may not hold true for future characters. Examples of strictly correct constellation item lookup are elsewhere for now.
+                        boolean haveConstItem = inventory.getInventoryTab(ItemType.ITEM_MATERIAL).getItemById(constItemId) == null;
+                        gachaItem.addTransferItems(GachaTransferItem.newBuilder().setItem(ItemParam.newBuilder().setItemId(constItemId).setCount(1)).setIsTransferItemNew(haveConstItem));
+                        //inventory.addItem(constItemId, 1);  // This is now managed by the avatar card item itself
                     }
                     isTransferItem = true;
                     break;

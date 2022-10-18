@@ -12,6 +12,8 @@ import emu.grasscutter.data.binout.*;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.data.excels.*;
+import it.unimi.dsi.fastutil.ints.Int2IntMap;
+import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -66,6 +68,7 @@ public class GameData {
     @Getter private static final Int2ObjectMap<CombineData> combineDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<CookBonusData> cookBonusDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<CookRecipeData> cookRecipeDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<CompoundData> compoundDataMap=new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<DailyDungeonData> dailyDungeonDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<DailyTaskData> dailyTaskDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<DailyTaskLevelData> dailyTaskLevelDataMap = new Int2ObjectOpenHashMap<>();
@@ -127,6 +130,7 @@ public class GameData {
     private static Map<Integer, List<Integer>> fetters = new HashMap<>();
     private static Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
     protected static Int2ObjectMap<IntSet> proudSkillGroupLevels = new Int2ObjectOpenHashMap<>();
+    protected static Int2IntMap proudSkillGroupMaxLevels = new Int2IntOpenHashMap();
     protected static Int2ObjectMap<IntSet> avatarSkillLevels = new Int2ObjectOpenHashMap<>();
 
     // Getters with wrong names, remove later
@@ -144,6 +148,7 @@ public class GameData {
     public static AbilityData getAbilityData(String abilityName) {return abilityDataMap.get(abilityName);}
     public static IntSet getAvatarSkillLevels(int avatarSkillId) {return avatarSkillLevels.get(avatarSkillId);}
     public static IntSet getProudSkillGroupLevels(int proudSkillGroupId) {return proudSkillGroupLevels.get(proudSkillGroupId);}
+    public static int getProudSkillGroupMaxLevel(int proudSkillGroupId) {return proudSkillGroupMaxLevels.getOrDefault(proudSkillGroupId, 0);}
 
     // Multi-keyed getters
     public static AvatarPromoteData getAvatarPromoteData(int promoteId, int promoteLevel) {
