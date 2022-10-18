@@ -1,7 +1,6 @@
 package emu.grasscutter.game.managers.forging;
 
 import dev.morphia.annotations.Entity;
-import emu.grasscutter.utils.Utils;
 
 @Entity
 public class ActiveForgeData {
@@ -17,7 +16,7 @@ public class ActiveForgeData {
 
 	public int getFinishedCount(int currentTime) {
 		int timeDelta = currentTime - this.startTime;
-		int finishedCount = (int)Math.floor(timeDelta / this.forgeTime);
+		int finishedCount = timeDelta / this.forgeTime;
 
 		return Math.min(finishedCount, this.count);
 	}

@@ -734,7 +734,7 @@ public class InventorySystem extends BaseGameSystem {
 
     // Uses an item from the player's inventory.
     public synchronized GameItem useItem(Player player, long targetGuid, long itemGuid, int count, int optionId, boolean isEnterMpDungeonTeam) {
-        Grasscutter.getLogger().info("Attempting to use item from inventory");
+        Grasscutter.getLogger().debug("Attempting to use item from inventory");
         Avatar target = player.getAvatars().getAvatarByGuid(targetGuid);
         GameItem item = player.getInventory().getItemByGuid(itemGuid);
         if (item == null) return null;
@@ -748,10 +748,10 @@ public class InventorySystem extends BaseGameSystem {
             var actions = itemData.getItemUseActions();
             if (actions != null)
                 actions.forEach(use -> use.postUseItem(params));
-            Grasscutter.getLogger().info("Item use succeeded!");
+            Grasscutter.getLogger().debug("Item use succeeded!");
             return item;
         } else {
-            Grasscutter.getLogger().info("Item use failed!");
+            Grasscutter.getLogger().debug("Item use failed!");
             return null;
         }
     }
@@ -791,7 +791,7 @@ public class InventorySystem extends BaseGameSystem {
 
         // Use
         var actions = itemData.getItemUseActions();
-        Grasscutter.getLogger().info("Using - actions - {}", actions);
+        Grasscutter.getLogger().debug("Using - actions - {}", actions);
         if (actions == null) return true;  // Maybe returning false would be more appropriate?
         return actions.stream()
                 .map(use -> use.useItem(params))

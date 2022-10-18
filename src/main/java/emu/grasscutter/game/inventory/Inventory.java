@@ -1,12 +1,5 @@
 package emu.grasscutter.game.inventory;
 
-import static emu.grasscutter.config.Configuration.*;
-
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
@@ -15,14 +8,14 @@ import emu.grasscutter.data.excels.AvatarData;
 import emu.grasscutter.data.excels.AvatarFlycloakData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.ItemUseAction.UseItemParams;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.WatcherTriggerType;
-import emu.grasscutter.game.props.ItemUseAction.UseItemParams;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.packet.send.PacketAvatarEquipChangeNotify;
 import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
@@ -32,6 +25,13 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
+import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
 
 public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     private final Long2ObjectMap<GameItem> store;
@@ -138,26 +138,23 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         this.addItems(items, null);
     }
 
+
     public void addItems(Collection<GameItem> items, ActionReason reason) {
-        List<GameItem> changedItems = new LinkedList<>();
-
-        for (GameItem item : items) {
+        List<GameItem> changedItems = new ArrayList<>();
+        for (var item : items) {
+            if (item.getItemId() == 0) continue;
             GameItem result = putItem(item);
-
             if (result != null) {
                 getPlayer().getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
                 changedItems.add(result);
             }
         }
-
         if (changedItems.size() == 0) {
             return;
         }
-
         if (reason != null) {
             getPlayer().sendPacket(new PacketItemAddHintNotify(changedItems, reason));
         }
-
         getPlayer().sendPacket(new PacketStoreItemChangeNotify(changedItems));
     }
 
@@ -394,6 +391,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
                 return false;
         // All costs are satisfied, now remove them all
         costItems.forEach(cost -> this.payVirtualItem(cost.getId(), cost.getCount() * quantity));
+        //TODO:handle the reason(need to send certain package)
         return true;
     }
 
