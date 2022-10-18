@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public final class FileUtils {
-    private static final Path JAR_PATH;
     private static final Path DATA_DEFAULT_PATH;
     private static final Path DATA_USER_PATH = Path.of(Grasscutter.config.folderStructure.data);
     private static final Path PACKETS_PATH = Path.of(Grasscutter.config.folderStructure.packets);
@@ -27,38 +26,26 @@ public final class FileUtils {
         Path path = null;
         // Setup access to jar resources
         try {
-            var uri = Grasscutter.class.getResource("").toURI();
+            var uri = Grasscutter.class.getResource("/defaults/data").toURI();
             switch (uri.getScheme()) {
-                case "file":  // When running in an IDE
-                    path = Path.of(uri);  // Can access directly, but it will be [...]/Grasscutter/build/classes/java/main/emu/grasscutter
-                    path = path.getParent()  // I hate it
-                            .getParent()
-                            .getParent()
-                            .getParent()
-                            .getParent()
-                            .resolve("resources/main");
-                    break;
                 case "jar":  // When running normally, as a jar
                 case "zip":  // Honestly I have no idea what setup would result in this, but this should work regardless
                     fs = FileSystems.newFileSystem(uri, Map.of());  // Have to mount zip filesystem. This leaks, but we want to keep it forever anyway.
-                    path = fs.getPath("");
+                    // Fall-through
+                case "file":  // When running in an IDE
+                    path = Path.of(uri);  // Can access directly
+                    break;
                 default:
-                    System.err.println("Invalid URI scheme for class resources: "+uri.getScheme());
+                Grasscutter.getLogger().error("Invalid URI scheme for class resources: "+uri.getScheme());
                     break;
             }
         } catch (URISyntaxException | IOException e) {
             // Failed to load this jar. How?
-            System.err.println("Failed to load jar?!");
+            Grasscutter.getLogger().error("Failed to load jar?!");
         } finally {
-            JAR_PATH = path;
+            DATA_DEFAULT_PATH = path;
+            Grasscutter.getLogger().debug("Setting path for default data: "+path.toAbsolutePath());
         }
-
-        // Setup Data paths
-        path = DATA_USER_PATH;
-        try {
-            path = JAR_PATH.resolve("defaults/data");
-        } catch (Exception e) {};
-        DATA_DEFAULT_PATH = path;
 
         // Setup Resources path
         final String resources = Grasscutter.config.folderStructure.resources;
@@ -195,7 +182,7 @@ public final class FileUtils {
 
         try {
             // file walks JAR
-            result = Files.walk(JAR_PATH.resolve(folder))
+            result = Files.walk(RESOURCES_PATH.resolve(folder))
                     .filter(Files::isRegularFile)
                     .collect(Collectors.toList());
         } catch (Exception e) {
