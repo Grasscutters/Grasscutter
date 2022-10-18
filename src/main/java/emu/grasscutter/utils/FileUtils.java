@@ -5,17 +5,17 @@ import emu.grasscutter.Grasscutter;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public final class FileUtils {
-    private static final FileSystem JAR_FILE_SYSTEM;
+    private static final Path JAR_PATH;
     private static final Path DATA_DEFAULT_PATH;
     private static final Path DATA_USER_PATH = Path.of(Grasscutter.config.folderStructure.data);
     private static final Path PACKETS_PATH = Path.of(Grasscutter.config.folderStructure.packets);
@@ -24,23 +24,41 @@ public final class FileUtils {
     private static final Path SCRIPTS_PATH;
     static {
         FileSystem fs = null;
-        Path path = DATA_USER_PATH;
-        // Setup Data paths
-        // Get pathUri of the current running JAR
+        Path path = null;
+        // Setup access to jar resources
         try {
-            URI jarUri = Grasscutter.class.getProtectionDomain()
-                            .getCodeSource()
-                            .getLocation()
-                            .toURI();
-            fs = FileSystems.newFileSystem(Path.of(jarUri));
-            path = fs.getPath("/defaults/data");
+            var uri = Grasscutter.class.getResource("").toURI();
+            switch (uri.getScheme()) {
+                case "file":  // When running in an IDE
+                    path = Path.of(uri);  // Can access directly, but it will be [...]/Grasscutter/build/classes/java/main/emu/grasscutter
+                    path = path.getParent()  // I hate it
+                            .getParent()
+                            .getParent()
+                            .getParent()
+                            .getParent()
+                            .resolve("resources/main");
+                    break;
+                case "jar":  // When running normally, as a jar
+                case "zip":  // Honestly I have no idea what setup would result in this, but this should work regardless
+                    fs = FileSystems.newFileSystem(uri, Map.of());  // Have to mount zip filesystem. This leaks, but we want to keep it forever anyway.
+                    path = fs.getPath("");
+                default:
+                    System.err.println("Invalid URI scheme for class resources: "+uri.getScheme());
+                    break;
+            }
         } catch (URISyntaxException | IOException e) {
             // Failed to load this jar. How?
-            System.err.println("Failed to load jar?????????????????????");
+            System.err.println("Failed to load jar?!");
         } finally {
-            JAR_FILE_SYSTEM = fs;
-            DATA_DEFAULT_PATH = path;
+            JAR_PATH = path;
         }
+
+        // Setup Data paths
+        path = DATA_USER_PATH;
+        try {
+            path = JAR_PATH.resolve("defaults/data");
+        } catch (Exception e) {};
+        DATA_DEFAULT_PATH = path;
 
         // Setup Resources path
         final String resources = Grasscutter.config.folderStructure.resources;
@@ -177,7 +195,7 @@ public final class FileUtils {
 
         try {
             // file walks JAR
-            result = Files.walk(JAR_FILE_SYSTEM.getPath(folder))
+            result = Files.walk(JAR_PATH.resolve(folder))
                     .filter(Files::isRegularFile)
                     .collect(Collectors.toList());
         } catch (Exception e) {

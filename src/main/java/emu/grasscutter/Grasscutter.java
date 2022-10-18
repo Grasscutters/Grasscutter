@@ -2,7 +2,6 @@ package emu.grasscutter;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
-import com.google.gson.Gson;
 
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.auth.DefaultAuthentication;
