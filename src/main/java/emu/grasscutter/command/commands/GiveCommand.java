@@ -5,6 +5,7 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.excels.AvatarData;
+import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.ReliquaryAffixData;
 import emu.grasscutter.data.excels.ReliquaryMainPropData;
@@ -221,7 +222,7 @@ public final class GiveCommand implements CommandHandler {
         Avatar avatar = new Avatar(avatarData);
         avatar.setLevel(level);
         avatar.setPromoteLevel(promoteLevel);
-        avatar.setSkillLevel(-1 , skillLevel);
+        avatar.getSkillDepot().getSkillsAndEnergySkill().forEach(id -> avatar.setSkillLevel(id, skillLevel));
         avatar.forceConstellationLevel(constellation);
         avatar.recalcStats(true);
         avatar.save();
