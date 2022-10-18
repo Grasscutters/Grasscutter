@@ -145,6 +145,15 @@
       "success": "已强制传送 %s 到 %s 的世界。",
       "description": "强制传送指定玩家到他人的世界。如果没有指定玩家，则会使你进入多人游戏状态"
     },
+    "dailytask": {
+      "notfound": "🇺🇸Daily task not found.",
+      "add": "🇺🇸Added the daily task.",
+      "exists": "🇺🇸The specified daily task has already been added.",
+      "finish": "🇺🇸Finished the daily task.",
+      "finishall": "🇺🇸Finished all daily tasks.",
+      "reset": "🇺🇸Reset daily tasks.",
+      "description": "🇺🇸Add, Finish or Reset daily tasks."
+    },
     "enter_dungeon": {
       "changed": "已进入秘境 %s。",
       "not_found_error": "秘境不存在。",

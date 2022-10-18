@@ -11,6 +11,7 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketDailyTaskDataNotify;
 import emu.grasscutter.server.packet.send.PacketDailyTaskUnlockedCitiesNotify;
+import emu.grasscutter.server.packet.send.PacketWorldOwnerDailyTaskNotify;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -54,6 +55,29 @@ public class DailyTaskManager {
         return manager;
     }
 
+    public boolean addDailyTask(DailyTask dailyTask) {
+        var added = this.getDailyTasks().add(dailyTask);
+
+        if (added) {
+            this.save();
+
+            if (this.player != null && this.player.isOnline()) {
+                this.player.getScene().broadcastPacket(new PacketWorldOwnerDailyTaskNotify(this.player));
+            }
+        }
+
+        return added;
+    }
+
+    public void finishDailyTask(int taskId) {
+        this.getDailyTasks().stream().filter(dailyTask -> dailyTask.getTaskId() == taskId).forEach(dailyTask -> {
+            dailyTask.finish();
+            if (this.player != null) {
+                dailyTask.broadcastFinishPacket(this.player);
+            }
+        });
+    }
+
     public void resetDailyTasks() {
         AtomicInteger min = new AtomicInteger(1);
         AtomicInteger max = new AtomicInteger(4);
@@ -68,6 +92,10 @@ public class DailyTaskManager {
         this.getDailyTasks().clear();
         this.getDailyTasks().addAll(chooseDailyTasks(cityId, random));
         this.save();
+
+        if (this.player != null && this.player.isOnline()) {
+            this.player.getScene().broadcastPacket(new PacketWorldOwnerDailyTaskNotify(this.player));
+        }
     }
 
     public int getScoreRewardId() {
@@ -109,7 +137,7 @@ public class DailyTaskManager {
     private Set<DailyTask> chooseDailyTasks(int cityId, Random random) {
         var list = GameData.getDailyTaskDataMap().int2ObjectEntrySet().stream()
             .filter(e -> e.getValue().getCityId() == cityId)
-            .map(e -> new DailyTask(getRewardId(e.getValue().getTaskRewardId()), e.getValue().getId(), e.getValue().getFinishProgress(), 0))
+            .map(e -> DailyTask.create(this.player, e.getValue().getId()))
             .toList();
 
         var sizeToChoose = Math.min(4, list.size());

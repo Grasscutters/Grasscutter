@@ -145,6 +145,15 @@
       "success": "Invocat %s în lumea lui %s.",
       "description": "Forțează pe cineva să se alăture lumii celorlalți. Dacă nu este nimeni vizat, te trimite oricum în modul cooperativ."
     },
+    "dailytask": {
+      "notfound": "🇺🇸Daily task not found.",
+      "add": "🇺🇸Added the daily task.",
+      "exists": "🇺🇸The specified daily task has already been added.",
+      "finish": "🇺🇸Finished the daily task.",
+      "finishall": "🇺🇸Finished all daily tasks.",
+      "reset": "🇺🇸Reset daily tasks.",
+      "description": "🇺🇸Add, Finish or Reset daily tasks."
+    },
     "enter_dungeon": {
       "changed": "Schimbat în temnița %s.",
       "not_found_error": "Temnița nu există.",

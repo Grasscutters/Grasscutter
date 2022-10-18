@@ -4,12 +4,10 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.dailytask.DailyTask;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.packet.send.PacketDailyTaskProgressNotify;
-import emu.grasscutter.server.packet.send.PacketWorldOwnerDailyTaskNotify;
 
 import java.util.List;
 
-@Command(label = "daily", usage = {"(add|finish) dailyTaskId", "finishall", "reset"})
+@Command(label = "dailytask", aliases = "daily", usage = {"(add|finish) <dailyTaskId>", "finishall", "reset"}, permission = "player.dailytask", permissionTargeted = "player.dailytask.others")
 public final class DailyCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
@@ -28,23 +26,39 @@ public final class DailyCommand implements CommandHandler {
                 }
 
                 try {
-                    var id = Integer.parseInt(args.remove(0));
+                    var taskId = Integer.parseInt(args.remove(0));
+                    var task = DailyTask.create(targetPlayer, taskId);
 
+                    if (task == null) {
+                        CommandHandler.sendTranslatedMessage(sender, "commands.dailytask.notfound");
+                        return;
+                    }
+
+                    if (cmd.equals("add")) {
+                        var r = manager.addDailyTask(task);
+                        if (r) {
+                            CommandHandler.sendTranslatedMessage(sender, "commands.dailytask.add");
+                        } else {
+                            CommandHandler.sendTranslatedMessage(sender, "commands.dailytask.exists");
+                        }
+                    } else {
+                        manager.finishDailyTask(taskId);
+                        CommandHandler.sendTranslatedMessage(sender, "commands.dailytask.finish");
+                    }
                 } catch (NumberFormatException e) {
                     sendUsageMessage(sender);
                 }
             }
             case "finishall" -> {
                 manager.getDailyTasks().forEach(DailyTask::finish);
-                manager.getDailyTasks().forEach(dailyTask -> targetPlayer.sendPacket(new PacketDailyTaskProgressNotify(dailyTask.toProto())));
+                manager.getDailyTasks().forEach(dailyTask -> dailyTask.broadcastFinishPacket(targetPlayer));
+                CommandHandler.sendTranslatedMessage(sender, "commands.dailytask.finishall");
             }
             case "reset" -> {
                 manager.getDailyTasks().forEach(DailyTask::finish);
-                manager.getDailyTasks().forEach(dailyTask -> targetPlayer.sendPacket(new PacketDailyTaskProgressNotify(dailyTask.toProto())));
+                manager.getDailyTasks().forEach(dailyTask -> dailyTask.broadcastFinishPacket(targetPlayer));
                 targetPlayer.getDailyTaskManager().resetDailyTasks();
-                if (targetPlayer.isOnline()) {
-                    targetPlayer.sendPacket(new PacketWorldOwnerDailyTaskNotify(targetPlayer));
-                }
+                CommandHandler.sendTranslatedMessage(sender, "commands.dailytask.reset");
             }
         }
     }

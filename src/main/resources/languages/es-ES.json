@@ -145,6 +145,15 @@
       "success": "Invocado %s al mundo de %s.",
       "description": "Fuerza a alguien a ser invocado al mundo de otro. Si no se establece un objetivo, te envía a ti al modo cooperativo."
     },
+    "dailytask": {
+      "notfound": "🇺🇸Daily task not found.",
+      "add": "🇺🇸Added the daily task.",
+      "exists": "🇺🇸The specified daily task has already been added.",
+      "finish": "🇺🇸Finished the daily task.",
+      "finishall": "🇺🇸Finished all daily tasks.",
+      "reset": "🇺🇸Reset daily tasks.",
+      "description": "🇺🇸Add, Finish or Reset daily tasks."
+    },
     "enter_dungeon": {
       "changed": "Cambiado a la mazmorra %s.",
       "not_found_error": "La mazmorra no existe.",

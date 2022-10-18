@@ -145,6 +145,15 @@
       "success": "%s가 %s의 월드에 소환되었습니다.",
       "description": "누군가를 다른 사람의 월드에 참여하도록 합니다. 목표가 지정되지 않으면 당신을 다인 모드로 진입시킵니다."
     },
+    "dailytask": {
+      "notfound": "🇺🇸Daily task not found.",
+      "add": "🇺🇸Added the daily task.",
+      "exists": "🇺🇸The specified daily task has already been added.",
+      "finish": "🇺🇸Finished the daily task.",
+      "finishall": "🇺🇸Finished all daily tasks.",
+      "reset": "🇺🇸Reset daily tasks.",
+      "description": "🇺🇸Add, Finish or Reset daily tasks."
+    },
     "enter_dungeon": {
       "changed": "%s던전으로 전환되었습니다.",
       "not_found_error": "던전이 존재하지 않습니다.",

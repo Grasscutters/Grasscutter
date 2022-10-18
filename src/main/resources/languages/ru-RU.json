@@ -145,6 +145,15 @@
       "success": "Игрок %s был призван в мир %s.",
       "description": "Принудительно присоединяет к мирам других людей. Если цель не была выбрана, то отправляет в совместный режим."
     },
+    "dailytask": {
+      "notfound": "🇺🇸Daily task not found.",
+      "add": "🇺🇸Added the daily task.",
+      "exists": "🇺🇸The specified daily task has already been added.",
+      "finish": "🇺🇸Finished the daily task.",
+      "finishall": "🇺🇸Finished all daily tasks.",
+      "reset": "🇺🇸Reset daily tasks.",
+      "description": "🇺🇸Add, Finish or Reset daily tasks."
+    },
     "enter_dungeon": {
       "changed": "Произошёл переход в подземелье %s.",
       "not_found_error": "Подземелье не существует.",

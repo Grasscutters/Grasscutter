@@ -145,6 +145,15 @@
       "success": "召喚了 %s 到 %s 的世界。",
       "description": "強制傳送指定用戶到他人的世界。如果未指定玩家，則會將你設為多人遊戲狀態。"
     },
+    "dailytask": {
+      "notfound": "🇺🇸Daily task not found.",
+      "add": "🇺🇸Added the daily task.",
+      "exists": "🇺🇸The specified daily task has already been added.",
+      "finish": "🇺🇸Finished the daily task.",
+      "finishall": "🇺🇸Finished all daily tasks.",
+      "reset": "🇺🇸Reset daily tasks.",
+      "description": "🇺🇸Add, Finish or Reset daily tasks."
+    },
     "enter_dungeon": {
       "changed": "已進入祕境 %s",
       "not_found_error": "此祕境不存在。",
