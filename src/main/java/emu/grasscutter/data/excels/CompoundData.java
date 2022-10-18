@@ -12,7 +12,7 @@ public class CompoundData extends GameResource {
     private int id;
 
     @Override
-    public int getId(){return this.id;}
+    public int getId() {return this.id;}
     @Getter private int groupId;
     @Getter private int rankLevel;
     @Getter private boolean isDefaultUnlocked;

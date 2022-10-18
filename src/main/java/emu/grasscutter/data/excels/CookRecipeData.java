@@ -20,9 +20,9 @@ public class CookRecipeData extends GameResource {
     @Getter List<ItemParamData> inputVec;
 
     @Override
-	public int getId() {
-		return this.id;
-	}
+    public int getId() {
+        return this.id;
+    }
     @Override
     public void onLoad() {
     }

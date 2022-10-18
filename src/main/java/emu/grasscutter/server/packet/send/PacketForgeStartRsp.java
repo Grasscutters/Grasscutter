@@ -12,7 +12,7 @@ public class PacketForgeStartRsp extends BasePacket {
 
         ForgeStartRsp proto = ForgeStartRsp.newBuilder()
                 .setRetcode(retcode.getNumber())
-        		.build();
+                .build();
 
         this.setData(proto);
     }
