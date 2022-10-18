@@ -155,7 +155,7 @@ public final class RegionHandler implements Router {
 
                 String key_id = ctx.queryParam("key_id");
 
-                if(key_id == null)
+                if (key_id == null)
                     throw new Exception("Key ID was not set");
 
                 Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
