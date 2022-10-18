@@ -1,11 +1,8 @@
 package emu.grasscutter.game.inventory;
 
-import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.excels.AvatarCostumeData;
-import emu.grasscutter.data.excels.AvatarData;
-import emu.grasscutter.data.excels.AvatarFlycloakData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.Avatar;
@@ -206,34 +203,10 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
             default:
                 switch (item.getItemData().getMaterialType()) {
                     case MATERIAL_AVATAR:
-                        // Get avatar id
-                        int avatarId = (item.getItemId() % 1000) + 10000000;
-                        // Dont let people give themselves extra main characters
-                        if (avatarId == GameConstants.MAIN_CHARACTER_MALE || avatarId == GameConstants.MAIN_CHARACTER_FEMALE) {
-                            return null;
-                        }
-                        // Add avatar
-                        AvatarData avatarData = GameData.getAvatarDataMap().get(avatarId);
-                        if (avatarData != null && !this.player.getAvatars().hasAvatar(avatarId)) {
-                            this.player.addAvatar(new Avatar(avatarData));
-                        }
-                        return null;
                     case MATERIAL_FLYCLOAK:
-                        AvatarFlycloakData flycloakData = GameData.getAvatarFlycloakDataMap().get(item.getItemId());
-                        if (flycloakData != null && !this.player.getFlyCloakList().contains(item.getItemId())) {
-                            this.player.addFlycloak(item.getItemId());
-                        }
-                        return null;
                     case MATERIAL_COSTUME:
-                        AvatarCostumeData costumeData = GameData.getAvatarCostumeDataItemIdMap().get(item.getItemId());
-                        if (costumeData != null && !this.player.getCostumeList().contains(costumeData.getId())) {
-                            this.player.addCostume(costumeData.getId());
-                        }
-                        return null;
                     case MATERIAL_NAMECARD:
-                        if (!this.player.getNameCardList().contains(item.getItemId())) {
-                            this.player.addNameCard(item.getItemId());
-                        }
+                        Grasscutter.getLogger().warn("Attempted to add a "+item.getItemData().getMaterialType().name()+" to inventory, but item definition lacks isUseOnGain. This indicates a Resources error.");
                         return null;
                     default:
                         if (tab == null) {
