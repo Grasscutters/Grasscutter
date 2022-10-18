@@ -90,7 +90,7 @@ public class DataLoader {
 
     public static void checkAllFiles() {
         try {
-            List<Path> filenames = FileUtils.getPathsFromResource("");
+            List<Path> filenames = FileUtils.getPathsFromResource("/defaults/data/");
 
             if (filenames == null) {
                 Grasscutter.getLogger().error("We were unable to locate your default data files.");

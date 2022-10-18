@@ -8,7 +8,6 @@ import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -176,27 +175,22 @@ public final class FileUtils {
         }
     }
 
-    // From https://mkyong.com/java/java-read-a-file-from-resources-folder/
     public static List<Path> getPathsFromResource(String folder) throws URISyntaxException {
-        List<Path> result = null;
-
         try {
             // file walks JAR
-            result = Files.walk(RESOURCES_PATH.resolve(folder))
+            return Files.walk(Path.of(Grasscutter.class.getResource(folder).toURI()))
                     .filter(Files::isRegularFile)
                     .collect(Collectors.toList());
-        } catch (Exception e) {
+        } catch (IOException e) {
             // Eclipse puts resources in its bin folder
-            File f = new File(System.getProperty("user.dir") + folder);
-
-            if (!f.exists() || f.listFiles().length == 0) {
+            try {
+                return Files.walk(Path.of(System.getProperty("user.dir"), folder))
+                        .filter(Files::isRegularFile)
+                        .collect(Collectors.toList());
+            } catch (IOException ignored) {
                 return null;
             }
-
-            result = Arrays.stream(f.listFiles()).map(File::toPath).toList();
         }
-
-        return result;
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
