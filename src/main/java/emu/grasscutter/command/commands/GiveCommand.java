@@ -5,6 +5,7 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.excels.AvatarData;
+import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.ReliquaryAffixData;
 import emu.grasscutter.data.excels.ReliquaryMainPropData;
@@ -29,7 +30,7 @@ import static emu.grasscutter.command.CommandHelpers.*;
     label = "give",
     aliases = {"g", "item", "giveitem"},
     usage = {
-        "(<itemId>|<avatarId>|all|weapons|mats|avatars) [lv<level>] [r<refinement>] [x<amount>] [c<constellation>]",
+        "(<itemId>|<avatarId>|all|weapons|mats|avatars) [lv<level>] [r<refinement>] [x<amount>] [c<constellation>] [sl<skilllevel>]",
         "<artifactId> [lv<level>] [x<amount>] [<mainPropId>] [<appendPropId>[,<times>]]..."},
     permission = "player.give",
     permissionTargeted = "player.give.others",
@@ -47,7 +48,8 @@ public final class GiveCommand implements CommandHandler {
         Map.entry(lvlRegex, GiveItemParameters::setLvl),
         Map.entry(refineRegex, GiveItemParameters::setRefinement),
         Map.entry(amountRegex, GiveItemParameters::setAmount),
-        Map.entry(constellationRegex, GiveItemParameters::setConstellation)
+        Map.entry(constellationRegex, GiveItemParameters::setConstellation),
+        Map.entry(skillLevelRegex, GiveItemParameters::setSkillLevel)
     );
 
     private static class GiveItemParameters {
@@ -56,6 +58,7 @@ public final class GiveCommand implements CommandHandler {
         @Setter public int amount = 1;
         @Setter public int refinement = 1;
         @Setter public int constellation = -1;
+        @Setter public int skillLevel = 1;
         public int mainPropId = -1;
         public List<Integer> appendPropIdList;
         public ItemData data;
@@ -212,30 +215,28 @@ public final class GiveCommand implements CommandHandler {
     }
 
     private static Avatar makeAvatar(GiveItemParameters param) {
-        return makeAvatar(param.avatarData, param.lvl, Avatar.getMinPromoteLevel(param.lvl), param.constellation);
+        return makeAvatar(param.avatarData, param.lvl, Avatar.getMinPromoteLevel(param.lvl), param.constellation, param.skillLevel);
     }
 
-    private static Avatar makeAvatar(AvatarData avatarData, int level, int promoteLevel, int constellation) {
+    private static Avatar makeAvatar(AvatarData avatarData, int level, int promoteLevel, int constellation, int skillLevel) {
         Avatar avatar = new Avatar(avatarData);
         avatar.setLevel(level);
         avatar.setPromoteLevel(promoteLevel);
+        avatar.getSkillDepot().getSkillsAndEnergySkill().forEach(id -> avatar.setSkillLevel(id, skillLevel));
         avatar.forceConstellationLevel(constellation);
-        avatar.recalcStats();
+        avatar.recalcStats(true);
+        avatar.save();
         return avatar;
     }
 
     private static void giveAllAvatars(Player player, GiveItemParameters param) {
         int promoteLevel = Avatar.getMinPromoteLevel(param.lvl);
-        if (param.constellation < 0) {
-            param.constellation = 6;
-        }
+        if (param.constellation < 0 || param.constellation > 6) param.constellation = 6; // constellation's default is -1 so if no parameters set for constellations it'll automatically be 6
         for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
-            // Exclude test avatars
             int id = avatarData.getId();
-            if (id < 10000002 || id >= 11000000) continue;
-
+            if (id < 10000002 || id >= 11000000) continue; // Exclude test avatars
             // Don't try to add each avatar to the current team
-            player.addAvatar(makeAvatar(avatarData, param.lvl, promoteLevel, param.constellation), false);
+            player.addAvatar(makeAvatar(avatarData, param.lvl, promoteLevel, param.constellation, param.skillLevel), false);
         }
     }
 
@@ -372,7 +373,7 @@ public final class GiveCommand implements CommandHandler {
             for (int i = 0; i < n; i++) {
                 param.appendPropIdList.add(appendPropId);
             }
-        };
+        }
     }
 
     private static void addItemsChunked(Player player, List<GameItem> items, int packetSize) {

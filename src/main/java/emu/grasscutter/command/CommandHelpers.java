@@ -13,6 +13,7 @@ public class CommandHelpers {
     public static final Pattern refineRegex = Pattern.compile("(?<!\\w)r(\\d+)");
     public static final Pattern rankRegex = Pattern.compile("(\\d+)\\*");
     public static final Pattern constellationRegex = Pattern.compile("(?<!\\w)c(\\d+)");
+    public static final Pattern skillLevelRegex = Pattern.compile("sl(\\d+)");
     public static final Pattern stateRegex = Pattern.compile("state(\\d+)");
     public static final Pattern blockRegex = Pattern.compile("blk(\\d+)");
     public static final Pattern groupRegex = Pattern.compile("grp(\\d+)");

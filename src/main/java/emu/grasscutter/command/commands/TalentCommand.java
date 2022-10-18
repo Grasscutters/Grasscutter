@@ -103,10 +103,8 @@ public final class TalentCommand implements CommandHandler {
                     CommandHandler.sendTranslatedMessage(sender, "commands.talent.out_of_range");
                     return;
                 }
-                // This is small so array is not needed imo
-                setTalentLevel(sender, avatar, skillDepot.getSkills().get(0), newLevel);
-                setTalentLevel(sender, avatar, skillDepot.getSkills().get(1), newLevel);
-                setTalentLevel(sender, avatar, skillDepot.getEnergySkill(), newLevel);
+                int finalNewLevel = newLevel;
+                skillDepot.getSkillsAndEnergySkill().forEach(id -> setTalentLevel(sender, avatar, id, finalNewLevel));
             }
             case "getid" -> {
                 var map = GameData.getAvatarSkillDataMap();
