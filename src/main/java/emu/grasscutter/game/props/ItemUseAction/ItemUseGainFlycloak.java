@@ -3,7 +3,6 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AvatarFlycloakData;
 
 public class ItemUseGainFlycloak extends ItemUseInt {
     @Override
@@ -17,8 +16,7 @@ public class ItemUseGainFlycloak extends ItemUseInt {
 
     @Override
     public boolean useItem(UseItemParams params) {
-        AvatarFlycloakData flycloakData = GameData.getAvatarFlycloakDataMap().get(this.i);
-        if (flycloakData != null && !params.player.getFlyCloakList().contains(this.i)) {
+		if (GameData.getAvatarFlycloakDataMap().containsKey(this.i)) {
             params.player.addFlycloak(this.i);
         }
         return true;

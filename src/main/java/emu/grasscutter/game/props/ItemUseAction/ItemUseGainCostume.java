@@ -3,7 +3,6 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AvatarCostumeData;
 
 public class ItemUseGainCostume extends ItemUseInt {
     @Override
@@ -17,9 +16,8 @@ public class ItemUseGainCostume extends ItemUseInt {
 
     @Override
     public boolean useItem(UseItemParams params) {
-        AvatarCostumeData costumeData = GameData.getAvatarCostumeDataItemIdMap().get(this.i);
-        if (costumeData != null && !params.player.getCostumeList().contains(costumeData.getId())) {
-            params.player.addCostume(costumeData.getId());
+        if (GameData.getAvatarCostumeDataMap().containsKey(this.i)) {
+            params.player.addCostume(this.i);
         }
         return true;
     }
