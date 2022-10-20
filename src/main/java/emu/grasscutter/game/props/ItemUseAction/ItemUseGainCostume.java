@@ -2,6 +2,9 @@ package emu.grasscutter.game.props.ItemUseAction;
 
 import emu.grasscutter.game.props.ItemUseOp;
 
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.AvatarCostumeData;
+
 public class ItemUseGainCostume extends ItemUseInt {
     @Override
     public ItemUseOp getItemUseOp() {
@@ -14,7 +17,10 @@ public class ItemUseGainCostume extends ItemUseInt {
 
     @Override
     public boolean useItem(UseItemParams params) {
-        params.player.getInventory().addItem(this.i);  // TODO: Currently this returns false for all virtual items - need to have a proper success/fail
+        AvatarCostumeData costumeData = GameData.getAvatarCostumeDataItemIdMap().get(this.i);
+        if (costumeData != null && !params.player.getCostumeList().contains(costumeData.getId())) {
+            params.player.addCostume(costumeData.getId());
+        }
         return true;
     }
 }
